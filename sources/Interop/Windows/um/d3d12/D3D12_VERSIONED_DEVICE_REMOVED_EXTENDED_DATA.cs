@@ -15,30 +15,42 @@ namespace TerraFX.Interop
         [NativeTypeName("D3D12_VERSIONED_DEVICE_REMOVED_EXTENDED_DATA::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/d3d12.h:13459:5)")]
         public _Anonymous_e__Union Anonymous;
 
-        public ref D3D12_DEVICE_REMOVED_EXTENDED_DATA Dred_1_0
+        public unsafe ref D3D12_DEVICE_REMOVED_EXTENDED_DATA Dred_1_0
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Dred_1_0, 1));
+#else
+                return ref ((_Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous))->Dred_1_0;
+#endif
             }
         }
 
-        public ref D3D12_DEVICE_REMOVED_EXTENDED_DATA1 Dred_1_1
+        public unsafe ref D3D12_DEVICE_REMOVED_EXTENDED_DATA1 Dred_1_1
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Dred_1_1, 1));
+#else
+                return ref ((_Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous))->Dred_1_1;
+#endif
             }
         }
 
-        public ref D3D12_DEVICE_REMOVED_EXTENDED_DATA2 Dred_1_2
+        public unsafe ref D3D12_DEVICE_REMOVED_EXTENDED_DATA2 Dred_1_2
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Dred_1_2, 1));
+#else
+                return ref ((_Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous))->Dred_1_2;
+#endif
             }
         }
 

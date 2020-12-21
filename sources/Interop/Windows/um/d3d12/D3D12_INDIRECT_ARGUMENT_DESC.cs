@@ -15,48 +15,68 @@ namespace TerraFX.Interop
         [NativeTypeName("D3D12_INDIRECT_ARGUMENT_DESC::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/d3d12.h:3951:5)")]
         public _Anonymous_e__Union Anonymous;
 
-        public ref _Anonymous_e__Union._VertexBuffer_e__Struct VertexBuffer
+        public unsafe ref _Anonymous_e__Union._VertexBuffer_e__Struct VertexBuffer
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.VertexBuffer, 1));
+#else
+                return ref ((_Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous))->VertexBuffer;
+#endif
             }
         }
 
-        public ref _Anonymous_e__Union._Constant_e__Struct Constant
+        public unsafe ref _Anonymous_e__Union._Constant_e__Struct Constant
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Constant, 1));
+#else
+                return ref ((_Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous))->Constant;
+#endif
             }
         }
 
-        public ref _Anonymous_e__Union._ConstantBufferView_e__Struct ConstantBufferView
+        public unsafe ref _Anonymous_e__Union._ConstantBufferView_e__Struct ConstantBufferView
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.ConstantBufferView, 1));
+#else
+                return ref ((_Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous))->ConstantBufferView;
+#endif
             }
         }
 
-        public ref _Anonymous_e__Union._ShaderResourceView_e__Struct ShaderResourceView
+        public unsafe ref _Anonymous_e__Union._ShaderResourceView_e__Struct ShaderResourceView
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.ShaderResourceView, 1));
+#else
+                return ref ((_Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous))->ShaderResourceView;
+#endif
             }
         }
 
-        public ref _Anonymous_e__Union._UnorderedAccessView_e__Struct UnorderedAccessView
+        public unsafe ref _Anonymous_e__Union._UnorderedAccessView_e__Struct UnorderedAccessView
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.UnorderedAccessView, 1));
+#else
+                return ref ((_Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous))->UnorderedAccessView;
+#endif
             }
         }
 

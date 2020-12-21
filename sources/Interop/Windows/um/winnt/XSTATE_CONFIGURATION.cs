@@ -23,16 +23,20 @@ namespace TerraFX.Interop
         [NativeTypeName("_XSTATE_CONFIGURATION::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:12817:5)")]
         public _Anonymous_e__Union Anonymous;
 
-        public ref uint ControlFlags
+        public unsafe ref uint ControlFlags
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.ControlFlags, 1));
+#else
+                return ref ((_Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous))->ControlFlags;
+#endif
             }
         }
 
-        public uint OptimizedSave
+        public unsafe uint OptimizedSave
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
@@ -47,7 +51,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public uint CompactionEnabled
+        public unsafe uint CompactionEnabled
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
@@ -196,7 +200,7 @@ namespace TerraFX.Interop
             public XSTATE_FEATURE e62;
             public XSTATE_FEATURE e63;
 
-            public ref XSTATE_FEATURE this[int index]
+            public unsafe ref XSTATE_FEATURE this[int index]
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
                 get
@@ -206,7 +210,14 @@ namespace TerraFX.Interop
             }
 
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public Span<XSTATE_FEATURE> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 64);
+            public unsafe Span<XSTATE_FEATURE> AsSpan()
+            {
+#if !NETSTANDARD2_0
+                return MemoryMarshal.CreateSpan(ref e0, 64);
+#else
+                return new Span<XSTATE_FEATURE>((XSTATE_FEATURE*)Unsafe.AsPointer(ref this), 64);
+#endif
+            }
         }
     }
 }

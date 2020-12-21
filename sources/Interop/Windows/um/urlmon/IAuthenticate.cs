@@ -19,28 +19,28 @@ namespace TerraFX.Interop
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return ((delegate* unmanaged<IAuthenticate*, Guid*, void**, int>)(lpVtbl[0]))((IAuthenticate*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* unmanaged[Stdcall]<IAuthenticate*, Guid*, void**, int>)(lpVtbl[0]))((IAuthenticate*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return ((delegate* unmanaged<IAuthenticate*, uint>)(lpVtbl[1]))((IAuthenticate*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged[Stdcall]<IAuthenticate*, uint>)(lpVtbl[1]))((IAuthenticate*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return ((delegate* unmanaged<IAuthenticate*, uint>)(lpVtbl[2]))((IAuthenticate*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged[Stdcall]<IAuthenticate*, uint>)(lpVtbl[2]))((IAuthenticate*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int Authenticate([NativeTypeName("HWND *")] IntPtr* phwnd, [NativeTypeName("LPWSTR *")] ushort** pszUsername, [NativeTypeName("LPWSTR *")] ushort** pszPassword)
         {
-            return ((delegate* unmanaged<IAuthenticate*, IntPtr*, ushort**, ushort**, int>)(lpVtbl[3]))((IAuthenticate*)Unsafe.AsPointer(ref this), phwnd, pszUsername, pszPassword);
+            return ((delegate* unmanaged[Stdcall]<IAuthenticate*, IntPtr*, ushort**, ushort**, int>)(lpVtbl[3]))((IAuthenticate*)Unsafe.AsPointer(ref this), phwnd, pszUsername, pszPassword);
         }
     }
 }

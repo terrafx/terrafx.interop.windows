@@ -19,63 +19,63 @@ namespace TerraFX.Interop
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return ((delegate* unmanaged<ISpatialAudioObject*, Guid*, void**, int>)(lpVtbl[0]))((ISpatialAudioObject*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* unmanaged[Stdcall]<ISpatialAudioObject*, Guid*, void**, int>)(lpVtbl[0]))((ISpatialAudioObject*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return ((delegate* unmanaged<ISpatialAudioObject*, uint>)(lpVtbl[1]))((ISpatialAudioObject*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged[Stdcall]<ISpatialAudioObject*, uint>)(lpVtbl[1]))((ISpatialAudioObject*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return ((delegate* unmanaged<ISpatialAudioObject*, uint>)(lpVtbl[2]))((ISpatialAudioObject*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged[Stdcall]<ISpatialAudioObject*, uint>)(lpVtbl[2]))((ISpatialAudioObject*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetBuffer([NativeTypeName("BYTE **")] byte** buffer, [NativeTypeName("UINT32 *")] uint* bufferLength)
         {
-            return ((delegate* unmanaged<ISpatialAudioObject*, byte**, uint*, int>)(lpVtbl[3]))((ISpatialAudioObject*)Unsafe.AsPointer(ref this), buffer, bufferLength);
+            return ((delegate* unmanaged[Stdcall]<ISpatialAudioObject*, byte**, uint*, int>)(lpVtbl[3]))((ISpatialAudioObject*)Unsafe.AsPointer(ref this), buffer, bufferLength);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int SetEndOfStream([NativeTypeName("UINT32")] uint frameCount)
         {
-            return ((delegate* unmanaged<ISpatialAudioObject*, uint, int>)(lpVtbl[4]))((ISpatialAudioObject*)Unsafe.AsPointer(ref this), frameCount);
+            return ((delegate* unmanaged[Stdcall]<ISpatialAudioObject*, uint, int>)(lpVtbl[4]))((ISpatialAudioObject*)Unsafe.AsPointer(ref this), frameCount);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int IsActive([NativeTypeName("BOOL *")] int* isActive)
         {
-            return ((delegate* unmanaged<ISpatialAudioObject*, int*, int>)(lpVtbl[5]))((ISpatialAudioObject*)Unsafe.AsPointer(ref this), isActive);
+            return ((delegate* unmanaged[Stdcall]<ISpatialAudioObject*, int*, int>)(lpVtbl[5]))((ISpatialAudioObject*)Unsafe.AsPointer(ref this), isActive);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetAudioObjectType([NativeTypeName("AudioObjectType *")] AudioObjectType* audioObjectType)
         {
-            return ((delegate* unmanaged<ISpatialAudioObject*, AudioObjectType*, int>)(lpVtbl[6]))((ISpatialAudioObject*)Unsafe.AsPointer(ref this), audioObjectType);
+            return ((delegate* unmanaged[Stdcall]<ISpatialAudioObject*, AudioObjectType*, int>)(lpVtbl[6]))((ISpatialAudioObject*)Unsafe.AsPointer(ref this), audioObjectType);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int SetPosition(float x, float y, float z)
         {
-            return ((delegate* unmanaged<ISpatialAudioObject*, float, float, float, int>)(lpVtbl[7]))((ISpatialAudioObject*)Unsafe.AsPointer(ref this), x, y, z);
+            return ((delegate* unmanaged[Stdcall]<ISpatialAudioObject*, float, float, float, int>)(lpVtbl[7]))((ISpatialAudioObject*)Unsafe.AsPointer(ref this), x, y, z);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int SetVolume(float volume)
         {
-            return ((delegate* unmanaged<ISpatialAudioObject*, float, int>)(lpVtbl[8]))((ISpatialAudioObject*)Unsafe.AsPointer(ref this), volume);
+            return ((delegate* unmanaged[Stdcall]<ISpatialAudioObject*, float, int>)(lpVtbl[8]))((ISpatialAudioObject*)Unsafe.AsPointer(ref this), volume);
         }
     }
 }

@@ -27,24 +27,25 @@ namespace TerraFX.Interop
         [NativeTypeName("_CMSG_MAIL_LIST_RECIPIENT_ENCODE_INFO::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/wincrypt.h:6991:5)")]
         public _Anonymous_e__Union Anonymous;
 
-        public ref nuint hKeyEncryptionKey
+        public unsafe ref nuint hKeyEncryptionKey
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.hKeyEncryptionKey, 1));
+#else
+                return ref ((_Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous))->hKeyEncryptionKey;
+#endif
             }
         }
 
-        public ref void* pvKeyEncryptionKey
+        public unsafe ref void* pvKeyEncryptionKey
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
-                fixed (_Anonymous_e__Union* pField = &Anonymous)
-                {
-                    return ref pField->pvKeyEncryptionKey;
-                }
+                return ref ((_Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous))->pvKeyEncryptionKey;
             }
         }
 

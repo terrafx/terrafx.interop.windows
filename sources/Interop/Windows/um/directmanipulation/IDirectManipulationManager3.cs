@@ -19,84 +19,84 @@ namespace TerraFX.Interop
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return ((delegate* unmanaged<IDirectManipulationManager3*, Guid*, void**, int>)(lpVtbl[0]))((IDirectManipulationManager3*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* unmanaged[Stdcall]<IDirectManipulationManager3*, Guid*, void**, int>)(lpVtbl[0]))((IDirectManipulationManager3*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return ((delegate* unmanaged<IDirectManipulationManager3*, uint>)(lpVtbl[1]))((IDirectManipulationManager3*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged[Stdcall]<IDirectManipulationManager3*, uint>)(lpVtbl[1]))((IDirectManipulationManager3*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return ((delegate* unmanaged<IDirectManipulationManager3*, uint>)(lpVtbl[2]))((IDirectManipulationManager3*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged[Stdcall]<IDirectManipulationManager3*, uint>)(lpVtbl[2]))((IDirectManipulationManager3*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int Activate([NativeTypeName("HWND")] IntPtr window)
         {
-            return ((delegate* unmanaged<IDirectManipulationManager3*, IntPtr, int>)(lpVtbl[3]))((IDirectManipulationManager3*)Unsafe.AsPointer(ref this), window);
+            return ((delegate* unmanaged[Stdcall]<IDirectManipulationManager3*, IntPtr, int>)(lpVtbl[3]))((IDirectManipulationManager3*)Unsafe.AsPointer(ref this), window);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int Deactivate([NativeTypeName("HWND")] IntPtr window)
         {
-            return ((delegate* unmanaged<IDirectManipulationManager3*, IntPtr, int>)(lpVtbl[4]))((IDirectManipulationManager3*)Unsafe.AsPointer(ref this), window);
+            return ((delegate* unmanaged[Stdcall]<IDirectManipulationManager3*, IntPtr, int>)(lpVtbl[4]))((IDirectManipulationManager3*)Unsafe.AsPointer(ref this), window);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int RegisterHitTestTarget([NativeTypeName("HWND")] IntPtr window, [NativeTypeName("HWND")] IntPtr hitTestWindow, DIRECTMANIPULATION_HITTEST_TYPE type)
         {
-            return ((delegate* unmanaged<IDirectManipulationManager3*, IntPtr, IntPtr, DIRECTMANIPULATION_HITTEST_TYPE, int>)(lpVtbl[5]))((IDirectManipulationManager3*)Unsafe.AsPointer(ref this), window, hitTestWindow, type);
+            return ((delegate* unmanaged[Stdcall]<IDirectManipulationManager3*, IntPtr, IntPtr, DIRECTMANIPULATION_HITTEST_TYPE, int>)(lpVtbl[5]))((IDirectManipulationManager3*)Unsafe.AsPointer(ref this), window, hitTestWindow, type);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int ProcessInput([NativeTypeName("const MSG *")] MSG* message, [NativeTypeName("BOOL *")] int* handled)
         {
-            return ((delegate* unmanaged<IDirectManipulationManager3*, MSG*, int*, int>)(lpVtbl[6]))((IDirectManipulationManager3*)Unsafe.AsPointer(ref this), message, handled);
+            return ((delegate* unmanaged[Stdcall]<IDirectManipulationManager3*, MSG*, int*, int>)(lpVtbl[6]))((IDirectManipulationManager3*)Unsafe.AsPointer(ref this), message, handled);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetUpdateManager([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** @object)
         {
-            return ((delegate* unmanaged<IDirectManipulationManager3*, Guid*, void**, int>)(lpVtbl[7]))((IDirectManipulationManager3*)Unsafe.AsPointer(ref this), riid, @object);
+            return ((delegate* unmanaged[Stdcall]<IDirectManipulationManager3*, Guid*, void**, int>)(lpVtbl[7]))((IDirectManipulationManager3*)Unsafe.AsPointer(ref this), riid, @object);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int CreateViewport([NativeTypeName("IDirectManipulationFrameInfoProvider *")] IDirectManipulationFrameInfoProvider* frameInfo, [NativeTypeName("HWND")] IntPtr window, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** @object)
         {
-            return ((delegate* unmanaged<IDirectManipulationManager3*, IDirectManipulationFrameInfoProvider*, IntPtr, Guid*, void**, int>)(lpVtbl[8]))((IDirectManipulationManager3*)Unsafe.AsPointer(ref this), frameInfo, window, riid, @object);
+            return ((delegate* unmanaged[Stdcall]<IDirectManipulationManager3*, IDirectManipulationFrameInfoProvider*, IntPtr, Guid*, void**, int>)(lpVtbl[8]))((IDirectManipulationManager3*)Unsafe.AsPointer(ref this), frameInfo, window, riid, @object);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int CreateContent([NativeTypeName("IDirectManipulationFrameInfoProvider *")] IDirectManipulationFrameInfoProvider* frameInfo, [NativeTypeName("const IID &")] Guid* clsid, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** @object)
         {
-            return ((delegate* unmanaged<IDirectManipulationManager3*, IDirectManipulationFrameInfoProvider*, Guid*, Guid*, void**, int>)(lpVtbl[9]))((IDirectManipulationManager3*)Unsafe.AsPointer(ref this), frameInfo, clsid, riid, @object);
+            return ((delegate* unmanaged[Stdcall]<IDirectManipulationManager3*, IDirectManipulationFrameInfoProvider*, Guid*, Guid*, void**, int>)(lpVtbl[9]))((IDirectManipulationManager3*)Unsafe.AsPointer(ref this), frameInfo, clsid, riid, @object);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int CreateBehavior([NativeTypeName("const IID &")] Guid* clsid, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** @object)
         {
-            return ((delegate* unmanaged<IDirectManipulationManager3*, Guid*, Guid*, void**, int>)(lpVtbl[10]))((IDirectManipulationManager3*)Unsafe.AsPointer(ref this), clsid, riid, @object);
+            return ((delegate* unmanaged[Stdcall]<IDirectManipulationManager3*, Guid*, Guid*, void**, int>)(lpVtbl[10]))((IDirectManipulationManager3*)Unsafe.AsPointer(ref this), clsid, riid, @object);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetService([NativeTypeName("const IID &")] Guid* clsid, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** @object)
         {
-            return ((delegate* unmanaged<IDirectManipulationManager3*, Guid*, Guid*, void**, int>)(lpVtbl[11]))((IDirectManipulationManager3*)Unsafe.AsPointer(ref this), clsid, riid, @object);
+            return ((delegate* unmanaged[Stdcall]<IDirectManipulationManager3*, Guid*, Guid*, void**, int>)(lpVtbl[11]))((IDirectManipulationManager3*)Unsafe.AsPointer(ref this), clsid, riid, @object);
         }
     }
 }

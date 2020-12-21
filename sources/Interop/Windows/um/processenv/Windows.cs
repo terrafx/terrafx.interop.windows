@@ -10,99 +10,99 @@ namespace TerraFX.Interop
 {
     public static unsafe partial class Windows
     {
-        [DllImport("kernel32", ExactSpelling = true)]
+        [DllImport("kernel32", CallingConvention = CallingConvention.StdCall, ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int SetEnvironmentStringsW([NativeTypeName("LPWCH")] ushort* NewEnvironment);
 
-        [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
+        [DllImport("kernel32", CallingConvention = CallingConvention.StdCall, ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("HANDLE")]
         public static extern IntPtr GetStdHandle([NativeTypeName("DWORD")] uint nStdHandle);
 
-        [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
+        [DllImport("kernel32", CallingConvention = CallingConvention.StdCall, ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int SetStdHandle([NativeTypeName("DWORD")] uint nStdHandle, [NativeTypeName("HANDLE")] IntPtr hHandle);
 
-        [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
+        [DllImport("kernel32", CallingConvention = CallingConvention.StdCall, ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int SetStdHandleEx([NativeTypeName("DWORD")] uint nStdHandle, [NativeTypeName("HANDLE")] IntPtr hHandle, [NativeTypeName("PHANDLE")] IntPtr* phPrevValue);
 
-        [DllImport("kernel32", ExactSpelling = true)]
+        [DllImport("kernel32", CallingConvention = CallingConvention.StdCall, ExactSpelling = true)]
         [return: NativeTypeName("LPSTR")]
         public static extern sbyte* GetCommandLineA();
 
-        [DllImport("kernel32", ExactSpelling = true)]
+        [DllImport("kernel32", CallingConvention = CallingConvention.StdCall, ExactSpelling = true)]
         [return: NativeTypeName("LPWSTR")]
         public static extern ushort* GetCommandLineW();
 
-        [DllImport("kernel32", EntryPoint = "GetEnvironmentStrings", ExactSpelling = true)]
+        [DllImport("kernel32", CallingConvention = CallingConvention.StdCall, EntryPoint = "GetEnvironmentStrings", ExactSpelling = true)]
         [return: NativeTypeName("LPCH")]
         public static extern sbyte* GetEnvironmentStringsA();
 
-        [DllImport("kernel32", ExactSpelling = true)]
+        [DllImport("kernel32", CallingConvention = CallingConvention.StdCall, ExactSpelling = true)]
         [return: NativeTypeName("LPWCH")]
         public static extern ushort* GetEnvironmentStringsW();
 
-        [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
+        [DllImport("kernel32", CallingConvention = CallingConvention.StdCall, ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int FreeEnvironmentStringsA([NativeTypeName("LPCH")] sbyte* penv);
 
-        [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
+        [DllImport("kernel32", CallingConvention = CallingConvention.StdCall, ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int FreeEnvironmentStringsW([NativeTypeName("LPWCH")] ushort* penv);
 
-        [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
+        [DllImport("kernel32", CallingConvention = CallingConvention.StdCall, ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("DWORD")]
         public static extern uint GetEnvironmentVariableA([NativeTypeName("LPCSTR")] sbyte* lpName, [NativeTypeName("LPSTR")] sbyte* lpBuffer, [NativeTypeName("DWORD")] uint nSize);
 
-        [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
+        [DllImport("kernel32", CallingConvention = CallingConvention.StdCall, ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("DWORD")]
         public static extern uint GetEnvironmentVariableW([NativeTypeName("LPCWSTR")] ushort* lpName, [NativeTypeName("LPWSTR")] ushort* lpBuffer, [NativeTypeName("DWORD")] uint nSize);
 
-        [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
+        [DllImport("kernel32", CallingConvention = CallingConvention.StdCall, ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int SetEnvironmentVariableA([NativeTypeName("LPCSTR")] sbyte* lpName, [NativeTypeName("LPCSTR")] sbyte* lpValue);
 
-        [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
+        [DllImport("kernel32", CallingConvention = CallingConvention.StdCall, ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int SetEnvironmentVariableW([NativeTypeName("LPCWSTR")] ushort* lpName, [NativeTypeName("LPCWSTR")] ushort* lpValue);
 
-        [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
+        [DllImport("kernel32", CallingConvention = CallingConvention.StdCall, ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("DWORD")]
         public static extern uint ExpandEnvironmentStringsA([NativeTypeName("LPCSTR")] sbyte* lpSrc, [NativeTypeName("LPSTR")] sbyte* lpDst, [NativeTypeName("DWORD")] uint nSize);
 
-        [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
+        [DllImport("kernel32", CallingConvention = CallingConvention.StdCall, ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("DWORD")]
         public static extern uint ExpandEnvironmentStringsW([NativeTypeName("LPCWSTR")] ushort* lpSrc, [NativeTypeName("LPWSTR")] ushort* lpDst, [NativeTypeName("DWORD")] uint nSize);
 
-        [DllImport("kernel32", ExactSpelling = true)]
+        [DllImport("kernel32", CallingConvention = CallingConvention.StdCall, ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int SetCurrentDirectoryA([NativeTypeName("LPCSTR")] sbyte* lpPathName);
 
-        [DllImport("kernel32", ExactSpelling = true)]
+        [DllImport("kernel32", CallingConvention = CallingConvention.StdCall, ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int SetCurrentDirectoryW([NativeTypeName("LPCWSTR")] ushort* lpPathName);
 
-        [DllImport("kernel32", ExactSpelling = true)]
+        [DllImport("kernel32", CallingConvention = CallingConvention.StdCall, ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
         public static extern uint GetCurrentDirectoryA([NativeTypeName("DWORD")] uint nBufferLength, [NativeTypeName("LPSTR")] sbyte* lpBuffer);
 
-        [DllImport("kernel32", ExactSpelling = true)]
+        [DllImport("kernel32", CallingConvention = CallingConvention.StdCall, ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
         public static extern uint GetCurrentDirectoryW([NativeTypeName("DWORD")] uint nBufferLength, [NativeTypeName("LPWSTR")] ushort* lpBuffer);
 
-        [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
+        [DllImport("kernel32", CallingConvention = CallingConvention.StdCall, ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("DWORD")]
         public static extern uint SearchPathW([NativeTypeName("LPCWSTR")] ushort* lpPath, [NativeTypeName("LPCWSTR")] ushort* lpFileName, [NativeTypeName("LPCWSTR")] ushort* lpExtension, [NativeTypeName("DWORD")] uint nBufferLength, [NativeTypeName("LPWSTR")] ushort* lpBuffer, [NativeTypeName("LPWSTR *")] ushort** lpFilePart);
 
-        [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
+        [DllImport("kernel32", CallingConvention = CallingConvention.StdCall, ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("DWORD")]
         public static extern uint SearchPathA([NativeTypeName("LPCSTR")] sbyte* lpPath, [NativeTypeName("LPCSTR")] sbyte* lpFileName, [NativeTypeName("LPCSTR")] sbyte* lpExtension, [NativeTypeName("DWORD")] uint nBufferLength, [NativeTypeName("LPSTR")] sbyte* lpBuffer, [NativeTypeName("LPSTR *")] sbyte** lpFilePart);
 
-        [DllImport("kernel32", ExactSpelling = true)]
+        [DllImport("kernel32", CallingConvention = CallingConvention.StdCall, ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int NeedCurrentDirectoryForExePathA([NativeTypeName("LPCSTR")] sbyte* ExeName);
 
-        [DllImport("kernel32", ExactSpelling = true)]
+        [DllImport("kernel32", CallingConvention = CallingConvention.StdCall, ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int NeedCurrentDirectoryForExePathW([NativeTypeName("LPCWSTR")] ushort* ExeName);
 

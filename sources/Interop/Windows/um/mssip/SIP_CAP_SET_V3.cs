@@ -22,21 +22,29 @@ namespace TerraFX.Interop
         [NativeTypeName("_SIP_CAP_SET_V3::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/mssip.h:193:5)")]
         public _Anonymous_e__Union Anonymous;
 
-        public ref uint dwFlags
+        public unsafe ref uint dwFlags
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.dwFlags, 1));
+#else
+                return ref ((_Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous))->dwFlags;
+#endif
             }
         }
 
-        public ref uint dwReserved
+        public unsafe ref uint dwReserved
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.dwReserved, 1));
+#else
+                return ref ((_Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous))->dwReserved;
+#endif
             }
         }
 

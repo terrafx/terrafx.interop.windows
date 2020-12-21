@@ -30,7 +30,7 @@ namespace TerraFX.Interop
         {
             public SCRUB_PARITY_EXTENT e0;
 
-            public ref SCRUB_PARITY_EXTENT this[int index]
+            public unsafe ref SCRUB_PARITY_EXTENT this[int index]
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
                 get
@@ -40,7 +40,14 @@ namespace TerraFX.Interop
             }
 
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public Span<SCRUB_PARITY_EXTENT> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
+            public unsafe Span<SCRUB_PARITY_EXTENT> AsSpan(int length)
+            {
+#if !NETSTANDARD2_0
+                return MemoryMarshal.CreateSpan(ref e0, length);
+#else
+                return new Span<SCRUB_PARITY_EXTENT>((SCRUB_PARITY_EXTENT*)Unsafe.AsPointer(ref this), length);
+#endif
+            }
         }
     }
 }

@@ -34,7 +34,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const IID")]
         public static readonly Guid MF_CONTENTDECRYPTIONMODULE_SERVICE = new Guid(0x15320c45, 0xff80, 0x484a, 0x9d, 0xcb, 0xd, 0xf8, 0x94, 0xe6, 0x9a, 0x1);
 
-        [DllImport("mf", ExactSpelling = true)]
+        [DllImport("mf", CallingConvention = CallingConvention.StdCall, ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int MFCreateEncryptedMediaExtensionsStoreActivate([NativeTypeName("IMFPMPHostApp *")] IMFPMPHostApp* pmpHost, [NativeTypeName("IStream *")] IStream* objectStream, [NativeTypeName("LPCWSTR")] ushort* classId, [NativeTypeName("IMFActivate **")] IMFActivate** activate);
 

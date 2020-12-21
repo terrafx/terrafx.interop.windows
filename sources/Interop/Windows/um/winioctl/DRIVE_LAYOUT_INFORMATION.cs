@@ -24,7 +24,7 @@ namespace TerraFX.Interop
         {
             public PARTITION_INFORMATION e0;
 
-            public ref PARTITION_INFORMATION this[int index]
+            public unsafe ref PARTITION_INFORMATION this[int index]
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
                 get
@@ -34,7 +34,14 @@ namespace TerraFX.Interop
             }
 
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public Span<PARTITION_INFORMATION> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
+            public unsafe Span<PARTITION_INFORMATION> AsSpan(int length)
+            {
+#if !NETSTANDARD2_0
+                return MemoryMarshal.CreateSpan(ref e0, length);
+#else
+                return new Span<PARTITION_INFORMATION>((PARTITION_INFORMATION*)Unsafe.AsPointer(ref this), length);
+#endif
+            }
         }
     }
 }

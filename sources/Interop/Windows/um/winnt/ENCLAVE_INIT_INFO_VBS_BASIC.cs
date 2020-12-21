@@ -29,21 +29,29 @@ namespace TerraFX.Interop
         [NativeTypeName("_ENCLAVE_INIT_INFO_VBS_BASIC::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:13118:5)")]
         public _Anonymous_e__Union Anonymous;
 
-        public ref IntPtr SignatureInfoHandle
+        public unsafe ref IntPtr SignatureInfoHandle
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.SignatureInfoHandle, 1));
+#else
+                return ref ((_Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous))->SignatureInfoHandle;
+#endif
             }
         }
 
-        public ref ulong Unused
+        public unsafe ref ulong Unused
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Unused, 1));
+#else
+                return ref ((_Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous))->Unused;
+#endif
             }
         }
 

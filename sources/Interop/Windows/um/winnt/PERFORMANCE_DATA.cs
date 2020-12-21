@@ -57,7 +57,7 @@ namespace TerraFX.Interop
             public HARDWARE_COUNTER_DATA e14;
             public HARDWARE_COUNTER_DATA e15;
 
-            public ref HARDWARE_COUNTER_DATA this[int index]
+            public unsafe ref HARDWARE_COUNTER_DATA this[int index]
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
                 get
@@ -67,7 +67,14 @@ namespace TerraFX.Interop
             }
 
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public Span<HARDWARE_COUNTER_DATA> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 16);
+            public unsafe Span<HARDWARE_COUNTER_DATA> AsSpan()
+            {
+#if !NETSTANDARD2_0
+                return MemoryMarshal.CreateSpan(ref e0, 16);
+#else
+                return new Span<HARDWARE_COUNTER_DATA>((HARDWARE_COUNTER_DATA*)Unsafe.AsPointer(ref this), 16);
+#endif
+            }
         }
     }
 }

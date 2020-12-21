@@ -30,7 +30,7 @@ namespace TerraFX.Interop
         {
             public PPM_IDLE_STATE_ACCOUNTING e0;
 
-            public ref PPM_IDLE_STATE_ACCOUNTING this[int index]
+            public unsafe ref PPM_IDLE_STATE_ACCOUNTING this[int index]
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
                 get
@@ -40,7 +40,14 @@ namespace TerraFX.Interop
             }
 
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public Span<PPM_IDLE_STATE_ACCOUNTING> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
+            public unsafe Span<PPM_IDLE_STATE_ACCOUNTING> AsSpan(int length)
+            {
+#if !NETSTANDARD2_0
+                return MemoryMarshal.CreateSpan(ref e0, length);
+#else
+                return new Span<PPM_IDLE_STATE_ACCOUNTING>((PPM_IDLE_STATE_ACCOUNTING*)Unsafe.AsPointer(ref this), length);
+#endif
+            }
         }
     }
 }

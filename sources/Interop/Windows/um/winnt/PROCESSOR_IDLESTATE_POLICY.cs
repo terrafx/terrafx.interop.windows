@@ -34,7 +34,7 @@ namespace TerraFX.Interop
             [NativeTypeName("PROCESSOR_IDLESTATE_POLICY::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:16588:9)")]
             public _Anonymous_e__Struct Anonymous;
 
-            public ushort AllowScaling
+            public unsafe ushort AllowScaling
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
                 get
@@ -49,7 +49,7 @@ namespace TerraFX.Interop
                 }
             }
 
-            public ushort Disabled
+            public unsafe ushort Disabled
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
                 get
@@ -64,7 +64,7 @@ namespace TerraFX.Interop
                 }
             }
 
-            public ushort Reserved
+            public unsafe ushort Reserved
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
                 get
@@ -139,7 +139,7 @@ namespace TerraFX.Interop
             public PROCESSOR_IDLESTATE_INFO e1;
             public PROCESSOR_IDLESTATE_INFO e2;
 
-            public ref PROCESSOR_IDLESTATE_INFO this[int index]
+            public unsafe ref PROCESSOR_IDLESTATE_INFO this[int index]
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
                 get
@@ -149,7 +149,14 @@ namespace TerraFX.Interop
             }
 
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public Span<PROCESSOR_IDLESTATE_INFO> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 3);
+            public unsafe Span<PROCESSOR_IDLESTATE_INFO> AsSpan()
+            {
+#if !NETSTANDARD2_0
+                return MemoryMarshal.CreateSpan(ref e0, 3);
+#else
+                return new Span<PROCESSOR_IDLESTATE_INFO>((PROCESSOR_IDLESTATE_INFO*)Unsafe.AsPointer(ref this), 3);
+#endif
+            }
         }
     }
 }

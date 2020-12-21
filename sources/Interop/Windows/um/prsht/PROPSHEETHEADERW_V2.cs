@@ -26,24 +26,25 @@ namespace TerraFX.Interop
         [NativeTypeName("_PROPSHEETHEADERW_V2::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/prsht.h:526:5)")]
         public _Anonymous1_e__Union Anonymous1;
 
-        public ref IntPtr hIcon
+        public unsafe ref IntPtr hIcon
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous1.hIcon, 1));
+#else
+                return ref ((_Anonymous1_e__Union*)Unsafe.AsPointer(ref Anonymous1))->hIcon;
+#endif
             }
         }
 
-        public ref ushort* pszIcon
+        public unsafe ref ushort* pszIcon
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
-                fixed (_Anonymous1_e__Union* pField = &Anonymous1)
-                {
-                    return ref pField->pszIcon;
-                }
+                return ref ((_Anonymous1_e__Union*)Unsafe.AsPointer(ref Anonymous1))->pszIcon;
             }
         }
 
@@ -56,78 +57,93 @@ namespace TerraFX.Interop
         [NativeTypeName("_PROPSHEETHEADERW_V2::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/prsht.h:526:5)")]
         public _Anonymous2_e__Union Anonymous2;
 
-        public ref uint nStartPage
+        public unsafe ref uint nStartPage
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous2.nStartPage, 1));
+#else
+                return ref ((_Anonymous2_e__Union*)Unsafe.AsPointer(ref Anonymous2))->nStartPage;
+#endif
             }
         }
 
-        public ref ushort* pStartPage
+        public unsafe ref ushort* pStartPage
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
-                fixed (_Anonymous2_e__Union* pField = &Anonymous2)
-                {
-                    return ref pField->pStartPage;
-                }
+                return ref ((_Anonymous2_e__Union*)Unsafe.AsPointer(ref Anonymous2))->pStartPage;
             }
         }
 
         [NativeTypeName("_PROPSHEETHEADERW_V2::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/prsht.h:526:5)")]
         public _Anonymous3_e__Union Anonymous3;
 
-        public ref PROPSHEETPAGEW* ppsp
+        public unsafe ref PROPSHEETPAGEW* ppsp
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
-                fixed (_Anonymous3_e__Union* pField = &Anonymous3)
-                {
-                    return ref pField->ppsp;
-                }
+                return ref ((_Anonymous3_e__Union*)Unsafe.AsPointer(ref Anonymous3))->ppsp;
             }
         }
 
-        public ref IntPtr* phpage
+        public unsafe ref IntPtr* phpage
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
-                fixed (_Anonymous3_e__Union* pField = &Anonymous3)
-                {
-                    return ref pField->phpage;
-                }
+                return ref ((_Anonymous3_e__Union*)Unsafe.AsPointer(ref Anonymous3))->phpage;
             }
         }
 
         [NativeTypeName("PFNPROPSHEETCALLBACK")]
+#if !NETSTANDARD2_0
         public delegate* unmanaged<IntPtr, uint, nint, int> pfnCallback;
+#else
+        public void* _pfnCallback;
+
+        public delegate* unmanaged[Stdcall]<IntPtr, uint, nint, int> pfnCallback
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                return (delegate* unmanaged[Stdcall]<IntPtr, uint, nint, int>)_pfnCallback;
+            }
+
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            set
+            {
+                _pfnCallback = value;
+            }
+        }
+#endif
 
         [NativeTypeName("_PROPSHEETHEADERW_V2::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/prsht.h:527:5)")]
         public _Anonymous4_e__Union Anonymous4;
 
-        public ref IntPtr hbmWatermark
+        public unsafe ref IntPtr hbmWatermark
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous4.hbmWatermark, 1));
+#else
+                return ref ((_Anonymous4_e__Union*)Unsafe.AsPointer(ref Anonymous4))->hbmWatermark;
+#endif
             }
         }
 
-        public ref ushort* pszbmWatermark
+        public unsafe ref ushort* pszbmWatermark
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
-                fixed (_Anonymous4_e__Union* pField = &Anonymous4)
-                {
-                    return ref pField->pszbmWatermark;
-                }
+                return ref ((_Anonymous4_e__Union*)Unsafe.AsPointer(ref Anonymous4))->pszbmWatermark;
             }
         }
 
@@ -137,24 +153,25 @@ namespace TerraFX.Interop
         [NativeTypeName("_PROPSHEETHEADERW_V2::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/prsht.h:533:5)")]
         public _Anonymous5_e__Union Anonymous5;
 
-        public ref IntPtr hbmHeader
+        public unsafe ref IntPtr hbmHeader
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous5.hbmHeader, 1));
+#else
+                return ref ((_Anonymous5_e__Union*)Unsafe.AsPointer(ref Anonymous5))->hbmHeader;
+#endif
             }
         }
 
-        public ref ushort* pszbmHeader
+        public unsafe ref ushort* pszbmHeader
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
-                fixed (_Anonymous5_e__Union* pField = &Anonymous5)
-                {
-                    return ref pField->pszbmHeader;
-                }
+                return ref ((_Anonymous5_e__Union*)Unsafe.AsPointer(ref Anonymous5))->pszbmHeader;
             }
         }
 

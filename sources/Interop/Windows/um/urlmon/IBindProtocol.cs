@@ -19,28 +19,28 @@ namespace TerraFX.Interop
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return ((delegate* unmanaged<IBindProtocol*, Guid*, void**, int>)(lpVtbl[0]))((IBindProtocol*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* unmanaged[Stdcall]<IBindProtocol*, Guid*, void**, int>)(lpVtbl[0]))((IBindProtocol*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return ((delegate* unmanaged<IBindProtocol*, uint>)(lpVtbl[1]))((IBindProtocol*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged[Stdcall]<IBindProtocol*, uint>)(lpVtbl[1]))((IBindProtocol*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return ((delegate* unmanaged<IBindProtocol*, uint>)(lpVtbl[2]))((IBindProtocol*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged[Stdcall]<IBindProtocol*, uint>)(lpVtbl[2]))((IBindProtocol*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int CreateBinding([NativeTypeName("LPCWSTR")] ushort* szUrl, [NativeTypeName("IBindCtx *")] IBindCtx* pbc, [NativeTypeName("IBinding **")] IBinding** ppb)
         {
-            return ((delegate* unmanaged<IBindProtocol*, ushort*, IBindCtx*, IBinding**, int>)(lpVtbl[3]))((IBindProtocol*)Unsafe.AsPointer(ref this), szUrl, pbc, ppb);
+            return ((delegate* unmanaged[Stdcall]<IBindProtocol*, ushort*, IBindCtx*, IBinding**, int>)(lpVtbl[3]))((IBindProtocol*)Unsafe.AsPointer(ref this), szUrl, pbc, ppb);
         }
     }
 }

@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 
 namespace TerraFX.Interop
 {
@@ -15,7 +16,26 @@ namespace TerraFX.Interop
         public WS_USERNAME_CREDENTIAL* clientCredential;
 
         [NativeTypeName("WS_VALIDATE_PASSWORD_CALLBACK")]
+#if !NETSTANDARD2_0
         public delegate* unmanaged<void*, WS_STRING*, WS_STRING*, WS_ASYNC_CONTEXT*, IntPtr, int> passwordValidator;
+#else
+        public void* _passwordValidator;
+
+        public delegate* unmanaged[Stdcall]<void*, WS_STRING*, WS_STRING*, WS_ASYNC_CONTEXT*, IntPtr, int> passwordValidator
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                return (delegate* unmanaged[Stdcall]<void*, WS_STRING*, WS_STRING*, WS_ASYNC_CONTEXT*, IntPtr, int>)_passwordValidator;
+            }
+
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            set
+            {
+                _passwordValidator = value;
+            }
+        }
+#endif
 
         [NativeTypeName("void *")]
         public void* passwordValidatorCallbackState;

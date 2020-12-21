@@ -19,28 +19,28 @@ namespace TerraFX.Interop
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return ((delegate* unmanaged<IMFMediaSinkPreroll*, Guid*, void**, int>)(lpVtbl[0]))((IMFMediaSinkPreroll*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* unmanaged[Stdcall]<IMFMediaSinkPreroll*, Guid*, void**, int>)(lpVtbl[0]))((IMFMediaSinkPreroll*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return ((delegate* unmanaged<IMFMediaSinkPreroll*, uint>)(lpVtbl[1]))((IMFMediaSinkPreroll*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged[Stdcall]<IMFMediaSinkPreroll*, uint>)(lpVtbl[1]))((IMFMediaSinkPreroll*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return ((delegate* unmanaged<IMFMediaSinkPreroll*, uint>)(lpVtbl[2]))((IMFMediaSinkPreroll*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged[Stdcall]<IMFMediaSinkPreroll*, uint>)(lpVtbl[2]))((IMFMediaSinkPreroll*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int NotifyPreroll([NativeTypeName("MFTIME")] long hnsUpcomingStartTime)
         {
-            return ((delegate* unmanaged<IMFMediaSinkPreroll*, long, int>)(lpVtbl[3]))((IMFMediaSinkPreroll*)Unsafe.AsPointer(ref this), hnsUpcomingStartTime);
+            return ((delegate* unmanaged[Stdcall]<IMFMediaSinkPreroll*, long, int>)(lpVtbl[3]))((IMFMediaSinkPreroll*)Unsafe.AsPointer(ref this), hnsUpcomingStartTime);
         }
     }
 }

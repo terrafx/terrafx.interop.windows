@@ -27,7 +27,7 @@ namespace TerraFX.Interop
         {
             public SCM_INTERLEAVED_PD_INFO e0;
 
-            public ref SCM_INTERLEAVED_PD_INFO this[int index]
+            public unsafe ref SCM_INTERLEAVED_PD_INFO this[int index]
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
                 get
@@ -37,7 +37,14 @@ namespace TerraFX.Interop
             }
 
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public Span<SCM_INTERLEAVED_PD_INFO> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
+            public unsafe Span<SCM_INTERLEAVED_PD_INFO> AsSpan(int length)
+            {
+#if !NETSTANDARD2_0
+                return MemoryMarshal.CreateSpan(ref e0, length);
+#else
+                return new Span<SCM_INTERLEAVED_PD_INFO>((SCM_INTERLEAVED_PD_INFO*)Unsafe.AsPointer(ref this), length);
+#endif
+            }
         }
     }
 }

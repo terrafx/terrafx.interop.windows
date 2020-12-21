@@ -10,7 +10,7 @@ namespace TerraFX.Interop
 {
     public static unsafe partial class Windows
     {
-        [DllImport("Windows.Media.Audio", ExactSpelling = true)]
+        [DllImport("Windows.Media.Audio", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int CreateFX([NativeTypeName("const IID &")] Guid* clsid, [NativeTypeName("IUnknown **")] IUnknown** pEffect, [NativeTypeName("const void *")] void* pInitDat = null, [NativeTypeName("UINT32")] uint InitDataByteSize = 0);
 

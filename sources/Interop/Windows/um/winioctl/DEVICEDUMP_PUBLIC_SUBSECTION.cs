@@ -44,7 +44,7 @@ namespace TerraFX.Interop
             public GP_LOG_PAGE_DESCRIPTOR e14;
             public GP_LOG_PAGE_DESCRIPTOR e15;
 
-            public ref GP_LOG_PAGE_DESCRIPTOR this[int index]
+            public unsafe ref GP_LOG_PAGE_DESCRIPTOR this[int index]
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
                 get
@@ -54,7 +54,14 @@ namespace TerraFX.Interop
             }
 
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public Span<GP_LOG_PAGE_DESCRIPTOR> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 16);
+            public unsafe Span<GP_LOG_PAGE_DESCRIPTOR> AsSpan()
+            {
+#if !NETSTANDARD2_0
+                return MemoryMarshal.CreateSpan(ref e0, 16);
+#else
+                return new Span<GP_LOG_PAGE_DESCRIPTOR>((GP_LOG_PAGE_DESCRIPTOR*)Unsafe.AsPointer(ref this), 16);
+#endif
+            }
         }
     }
 }

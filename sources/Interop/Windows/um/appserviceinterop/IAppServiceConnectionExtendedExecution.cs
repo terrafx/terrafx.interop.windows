@@ -19,28 +19,28 @@ namespace TerraFX.Interop
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return ((delegate* unmanaged<IAppServiceConnectionExtendedExecution*, Guid*, void**, int>)(lpVtbl[0]))((IAppServiceConnectionExtendedExecution*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* unmanaged[Stdcall]<IAppServiceConnectionExtendedExecution*, Guid*, void**, int>)(lpVtbl[0]))((IAppServiceConnectionExtendedExecution*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return ((delegate* unmanaged<IAppServiceConnectionExtendedExecution*, uint>)(lpVtbl[1]))((IAppServiceConnectionExtendedExecution*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged[Stdcall]<IAppServiceConnectionExtendedExecution*, uint>)(lpVtbl[1]))((IAppServiceConnectionExtendedExecution*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return ((delegate* unmanaged<IAppServiceConnectionExtendedExecution*, uint>)(lpVtbl[2]))((IAppServiceConnectionExtendedExecution*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged[Stdcall]<IAppServiceConnectionExtendedExecution*, uint>)(lpVtbl[2]))((IAppServiceConnectionExtendedExecution*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int OpenForExtendedExecutionAsync([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** operation)
         {
-            return ((delegate* unmanaged<IAppServiceConnectionExtendedExecution*, Guid*, void**, int>)(lpVtbl[3]))((IAppServiceConnectionExtendedExecution*)Unsafe.AsPointer(ref this), riid, operation);
+            return ((delegate* unmanaged[Stdcall]<IAppServiceConnectionExtendedExecution*, Guid*, void**, int>)(lpVtbl[3]))((IAppServiceConnectionExtendedExecution*)Unsafe.AsPointer(ref this), riid, operation);
         }
     }
 }

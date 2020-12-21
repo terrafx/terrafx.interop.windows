@@ -16,30 +16,42 @@ namespace TerraFX.Interop
         [NativeTypeName("tagDEC::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/shared/wtypes.h:697:5)")]
         public _Anonymous1_e__Union Anonymous1;
 
-        public ref byte scale
+        public unsafe ref byte scale
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous1.Anonymous.scale, 1));
+#else
+                return ref ((_Anonymous1_e__Union._Anonymous_e__Struct*)Unsafe.AsPointer(ref Anonymous1.Anonymous))->scale;
+#endif
             }
         }
 
-        public ref byte sign
+        public unsafe ref byte sign
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous1.Anonymous.sign, 1));
+#else
+                return ref ((_Anonymous1_e__Union._Anonymous_e__Struct*)Unsafe.AsPointer(ref Anonymous1.Anonymous))->sign;
+#endif
             }
         }
 
-        public ref ushort signscale
+        public unsafe ref ushort signscale
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous1.signscale, 1));
+#else
+                return ref ((_Anonymous1_e__Union*)Unsafe.AsPointer(ref Anonymous1))->signscale;
+#endif
             }
         }
 
@@ -49,30 +61,42 @@ namespace TerraFX.Interop
         [NativeTypeName("tagDEC::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/shared/wtypes.h:705:5)")]
         public _Anonymous2_e__Union Anonymous2;
 
-        public ref uint Lo32
+        public unsafe ref uint Lo32
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous2.Anonymous.Lo32, 1));
+#else
+                return ref ((_Anonymous2_e__Union._Anonymous_e__Struct*)Unsafe.AsPointer(ref Anonymous2.Anonymous))->Lo32;
+#endif
             }
         }
 
-        public ref uint Mid32
+        public unsafe ref uint Mid32
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous2.Anonymous.Mid32, 1));
+#else
+                return ref ((_Anonymous2_e__Union._Anonymous_e__Struct*)Unsafe.AsPointer(ref Anonymous2.Anonymous))->Mid32;
+#endif
             }
         }
 
-        public ref ulong Lo64
+        public unsafe ref ulong Lo64
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous2.Lo64, 1));
+#else
+                return ref ((_Anonymous2_e__Union*)Unsafe.AsPointer(ref Anonymous2))->Lo64;
+#endif
             }
         }
 

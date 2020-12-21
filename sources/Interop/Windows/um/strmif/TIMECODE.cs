@@ -15,30 +15,42 @@ namespace TerraFX.Interop
         [NativeTypeName("_timecode::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/strmif.h:13483:4)")]
         public _Anonymous_e__Struct Anonymous;
 
-        public ref ushort wFrameRate
+        public unsafe ref ushort wFrameRate
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.wFrameRate, 1));
+#else
+                return ref ((_Anonymous_e__Struct*)Unsafe.AsPointer(ref Anonymous))->wFrameRate;
+#endif
             }
         }
 
-        public ref ushort wFrameFract
+        public unsafe ref ushort wFrameFract
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.wFrameFract, 1));
+#else
+                return ref ((_Anonymous_e__Struct*)Unsafe.AsPointer(ref Anonymous))->wFrameFract;
+#endif
             }
         }
 
-        public ref uint dwFrames
+        public unsafe ref uint dwFrames
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.dwFrames, 1));
+#else
+                return ref ((_Anonymous_e__Struct*)Unsafe.AsPointer(ref Anonymous))->dwFrames;
+#endif
             }
         }
 

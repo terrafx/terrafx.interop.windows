@@ -10,133 +10,168 @@ namespace TerraFX.Interop
 {
     public static unsafe partial class Windows
     {
-        [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
+        [DllImport("kernel32", CallingConvention = CallingConvention.StdCall, ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int DisableThreadLibraryCalls([NativeTypeName("HMODULE")] IntPtr hLibModule);
 
-        [DllImport("kernel32", ExactSpelling = true)]
+        [DllImport("kernel32", CallingConvention = CallingConvention.StdCall, ExactSpelling = true)]
         [return: NativeTypeName("HRSRC")]
         public static extern IntPtr FindResourceExW([NativeTypeName("HMODULE")] IntPtr hModule, [NativeTypeName("LPCWSTR")] ushort* lpType, [NativeTypeName("LPCWSTR")] ushort* lpName, [NativeTypeName("WORD")] ushort wLanguage);
 
-        [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
+        [DllImport("kernel32", CallingConvention = CallingConvention.StdCall, ExactSpelling = true, SetLastError = true)]
         public static extern int FindStringOrdinal([NativeTypeName("DWORD")] uint dwFindStringOrdinalFlags, [NativeTypeName("LPCWSTR")] ushort* lpStringSource, int cchSource, [NativeTypeName("LPCWSTR")] ushort* lpStringValue, int cchValue, [NativeTypeName("BOOL")] int bIgnoreCase);
 
-        [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
+        [DllImport("kernel32", CallingConvention = CallingConvention.StdCall, ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int FreeLibrary([NativeTypeName("HMODULE")] IntPtr hLibModule);
 
-        [DllImport("kernel32", ExactSpelling = true)]
+        [DllImport("kernel32", CallingConvention = CallingConvention.StdCall, ExactSpelling = true)]
         public static extern void FreeLibraryAndExitThread([NativeTypeName("HMODULE")] IntPtr hLibModule, [NativeTypeName("DWORD")] uint dwExitCode);
 
-        [DllImport("kernel32", ExactSpelling = true)]
+        [DllImport("kernel32", CallingConvention = CallingConvention.StdCall, ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int FreeResource([NativeTypeName("HGLOBAL")] IntPtr hResData);
 
-        [DllImport("kernel32", ExactSpelling = true)]
+        [DllImport("kernel32", CallingConvention = CallingConvention.StdCall, ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
         public static extern uint GetModuleFileNameA([NativeTypeName("HMODULE")] IntPtr hModule, [NativeTypeName("LPSTR")] sbyte* lpFilename, [NativeTypeName("DWORD")] uint nSize);
 
-        [DllImport("kernel32", ExactSpelling = true)]
+        [DllImport("kernel32", CallingConvention = CallingConvention.StdCall, ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
         public static extern uint GetModuleFileNameW([NativeTypeName("HMODULE")] IntPtr hModule, [NativeTypeName("LPWSTR")] ushort* lpFilename, [NativeTypeName("DWORD")] uint nSize);
 
-        [DllImport("kernel32", ExactSpelling = true)]
+        [DllImport("kernel32", CallingConvention = CallingConvention.StdCall, ExactSpelling = true)]
         [return: NativeTypeName("HMODULE")]
         public static extern IntPtr GetModuleHandleA([NativeTypeName("LPCSTR")] sbyte* lpModuleName);
 
-        [DllImport("kernel32", ExactSpelling = true)]
+        [DllImport("kernel32", CallingConvention = CallingConvention.StdCall, ExactSpelling = true)]
         [return: NativeTypeName("HMODULE")]
         public static extern IntPtr GetModuleHandleW([NativeTypeName("LPCWSTR")] ushort* lpModuleName);
 
-        [DllImport("kernel32", ExactSpelling = true)]
+        [DllImport("kernel32", CallingConvention = CallingConvention.StdCall, ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int GetModuleHandleExA([NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LPCSTR")] sbyte* lpModuleName, [NativeTypeName("HMODULE *")] IntPtr* phModule);
 
-        [DllImport("kernel32", ExactSpelling = true)]
+        [DllImport("kernel32", CallingConvention = CallingConvention.StdCall, ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int GetModuleHandleExW([NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LPCWSTR")] ushort* lpModuleName, [NativeTypeName("HMODULE *")] IntPtr* phModule);
 
-        [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
+        [DllImport("kernel32", CallingConvention = CallingConvention.StdCall, ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("FARPROC")]
-        public static extern delegate* unmanaged<int> GetProcAddress([NativeTypeName("HMODULE")] IntPtr hModule, [NativeTypeName("LPCSTR")] sbyte* lpProcName);
+        public static extern delegate* unmanaged[Stdcall]<int> GetProcAddress([NativeTypeName("HMODULE")] IntPtr hModule, [NativeTypeName("LPCSTR")] sbyte* lpProcName);
 
-        [DllImport("kernel32", ExactSpelling = true)]
+        [DllImport("kernel32", CallingConvention = CallingConvention.StdCall, ExactSpelling = true)]
         [return: NativeTypeName("HMODULE")]
         public static extern IntPtr LoadLibraryExA([NativeTypeName("LPCSTR")] sbyte* lpLibFileName, [NativeTypeName("HANDLE")] IntPtr hFile, [NativeTypeName("DWORD")] uint dwFlags);
 
-        [DllImport("kernel32", ExactSpelling = true)]
+        [DllImport("kernel32", CallingConvention = CallingConvention.StdCall, ExactSpelling = true)]
         [return: NativeTypeName("HMODULE")]
         public static extern IntPtr LoadLibraryExW([NativeTypeName("LPCWSTR")] ushort* lpLibFileName, [NativeTypeName("HANDLE")] IntPtr hFile, [NativeTypeName("DWORD")] uint dwFlags);
 
-        [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
+        [DllImport("kernel32", CallingConvention = CallingConvention.StdCall, ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("HGLOBAL")]
         public static extern IntPtr LoadResource([NativeTypeName("HMODULE")] IntPtr hModule, [NativeTypeName("HRSRC")] IntPtr hResInfo);
 
-        [DllImport("kernel32", ExactSpelling = true)]
+        [DllImport("kernel32", CallingConvention = CallingConvention.StdCall, ExactSpelling = true)]
         public static extern int LoadStringA([NativeTypeName("HINSTANCE")] IntPtr hInstance, [NativeTypeName("UINT")] uint uID, [NativeTypeName("LPSTR")] sbyte* lpBuffer, int cchBufferMax);
 
-        [DllImport("kernel32", ExactSpelling = true)]
+        [DllImport("kernel32", CallingConvention = CallingConvention.StdCall, ExactSpelling = true)]
         public static extern int LoadStringW([NativeTypeName("HINSTANCE")] IntPtr hInstance, [NativeTypeName("UINT")] uint uID, [NativeTypeName("LPWSTR")] ushort* lpBuffer, int cchBufferMax);
 
-        [DllImport("kernel32", ExactSpelling = true)]
+        [DllImport("kernel32", CallingConvention = CallingConvention.StdCall, ExactSpelling = true)]
         [return: NativeTypeName("LPVOID")]
         public static extern void* LockResource([NativeTypeName("HGLOBAL")] IntPtr hResData);
 
-        [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
+        [DllImport("kernel32", CallingConvention = CallingConvention.StdCall, ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("DWORD")]
         public static extern uint SizeofResource([NativeTypeName("HMODULE")] IntPtr hModule, [NativeTypeName("HRSRC")] IntPtr hResInfo);
 
-        [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
+        [DllImport("kernel32", CallingConvention = CallingConvention.StdCall, ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("DLL_DIRECTORY_COOKIE")]
         public static extern void* AddDllDirectory([NativeTypeName("PCWSTR")] ushort* NewDirectory);
 
-        [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
+        [DllImport("kernel32", CallingConvention = CallingConvention.StdCall, ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int RemoveDllDirectory([NativeTypeName("DLL_DIRECTORY_COOKIE")] void* Cookie);
 
-        [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
+        [DllImport("kernel32", CallingConvention = CallingConvention.StdCall, ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int SetDefaultDllDirectories([NativeTypeName("DWORD")] uint DirectoryFlags);
 
-        [DllImport("kernel32", ExactSpelling = true)]
+        [DllImport("kernel32", CallingConvention = CallingConvention.StdCall, ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
+#if !NETSTANDARD2_0
         public static extern int EnumResourceLanguagesExA([NativeTypeName("HMODULE")] IntPtr hModule, [NativeTypeName("LPCSTR")] sbyte* lpType, [NativeTypeName("LPCSTR")] sbyte* lpName, [NativeTypeName("ENUMRESLANGPROCA")] delegate* unmanaged<IntPtr, sbyte*, sbyte*, ushort, nint, int> lpEnumFunc, [NativeTypeName("LONG_PTR")] nint lParam, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LANGID")] ushort LangId);
+#else
+        public static extern int EnumResourceLanguagesExA([NativeTypeName("HMODULE")] IntPtr hModule, [NativeTypeName("LPCSTR")] sbyte* lpType, [NativeTypeName("LPCSTR")] sbyte* lpName, [NativeTypeName("ENUMRESLANGPROCA")] delegate* unmanaged[Stdcall]<IntPtr, sbyte*, sbyte*, ushort, nint, int> lpEnumFunc, [NativeTypeName("LONG_PTR")] nint lParam, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LANGID")] ushort LangId);
+#endif
 
-        [DllImport("kernel32", ExactSpelling = true)]
+
+        [DllImport("kernel32", CallingConvention = CallingConvention.StdCall, ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
+#if !NETSTANDARD2_0
         public static extern int EnumResourceLanguagesExW([NativeTypeName("HMODULE")] IntPtr hModule, [NativeTypeName("LPCWSTR")] ushort* lpType, [NativeTypeName("LPCWSTR")] ushort* lpName, [NativeTypeName("ENUMRESLANGPROCW")] delegate* unmanaged<IntPtr, ushort*, ushort*, ushort, nint, int> lpEnumFunc, [NativeTypeName("LONG_PTR")] nint lParam, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LANGID")] ushort LangId);
+#else
+        public static extern int EnumResourceLanguagesExW([NativeTypeName("HMODULE")] IntPtr hModule, [NativeTypeName("LPCWSTR")] ushort* lpType, [NativeTypeName("LPCWSTR")] ushort* lpName, [NativeTypeName("ENUMRESLANGPROCW")] delegate* unmanaged[Stdcall]<IntPtr, ushort*, ushort*, ushort, nint, int> lpEnumFunc, [NativeTypeName("LONG_PTR")] nint lParam, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LANGID")] ushort LangId);
+#endif
 
-        [DllImport("kernel32", ExactSpelling = true)]
+
+        [DllImport("kernel32", CallingConvention = CallingConvention.StdCall, ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
+#if !NETSTANDARD2_0
         public static extern int EnumResourceNamesExA([NativeTypeName("HMODULE")] IntPtr hModule, [NativeTypeName("LPCSTR")] sbyte* lpType, [NativeTypeName("ENUMRESNAMEPROCA")] delegate* unmanaged<IntPtr, sbyte*, sbyte*, nint, int> lpEnumFunc, [NativeTypeName("LONG_PTR")] nint lParam, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LANGID")] ushort LangId);
+#else
+        public static extern int EnumResourceNamesExA([NativeTypeName("HMODULE")] IntPtr hModule, [NativeTypeName("LPCSTR")] sbyte* lpType, [NativeTypeName("ENUMRESNAMEPROCA")] delegate* unmanaged[Stdcall]<IntPtr, sbyte*, sbyte*, nint, int> lpEnumFunc, [NativeTypeName("LONG_PTR")] nint lParam, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LANGID")] ushort LangId);
+#endif
 
-        [DllImport("kernel32", ExactSpelling = true)]
+
+        [DllImport("kernel32", CallingConvention = CallingConvention.StdCall, ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
+#if !NETSTANDARD2_0
         public static extern int EnumResourceNamesExW([NativeTypeName("HMODULE")] IntPtr hModule, [NativeTypeName("LPCWSTR")] ushort* lpType, [NativeTypeName("ENUMRESNAMEPROCW")] delegate* unmanaged<IntPtr, ushort*, ushort*, nint, int> lpEnumFunc, [NativeTypeName("LONG_PTR")] nint lParam, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LANGID")] ushort LangId);
+#else
+        public static extern int EnumResourceNamesExW([NativeTypeName("HMODULE")] IntPtr hModule, [NativeTypeName("LPCWSTR")] ushort* lpType, [NativeTypeName("ENUMRESNAMEPROCW")] delegate* unmanaged[Stdcall]<IntPtr, ushort*, ushort*, nint, int> lpEnumFunc, [NativeTypeName("LONG_PTR")] nint lParam, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LANGID")] ushort LangId);
+#endif
 
-        [DllImport("kernel32", ExactSpelling = true)]
+
+        [DllImport("kernel32", CallingConvention = CallingConvention.StdCall, ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
+#if !NETSTANDARD2_0
         public static extern int EnumResourceTypesExA([NativeTypeName("HMODULE")] IntPtr hModule, [NativeTypeName("ENUMRESTYPEPROCA")] delegate* unmanaged<IntPtr, sbyte*, nint, int> lpEnumFunc, [NativeTypeName("LONG_PTR")] nint lParam, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LANGID")] ushort LangId);
+#else
+        public static extern int EnumResourceTypesExA([NativeTypeName("HMODULE")] IntPtr hModule, [NativeTypeName("ENUMRESTYPEPROCA")] delegate* unmanaged[Stdcall]<IntPtr, sbyte*, nint, int> lpEnumFunc, [NativeTypeName("LONG_PTR")] nint lParam, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LANGID")] ushort LangId);
+#endif
 
-        [DllImport("kernel32", ExactSpelling = true)]
+
+        [DllImport("kernel32", CallingConvention = CallingConvention.StdCall, ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
+#if !NETSTANDARD2_0
         public static extern int EnumResourceTypesExW([NativeTypeName("HMODULE")] IntPtr hModule, [NativeTypeName("ENUMRESTYPEPROCW")] delegate* unmanaged<IntPtr, ushort*, nint, int> lpEnumFunc, [NativeTypeName("LONG_PTR")] nint lParam, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LANGID")] ushort LangId);
+#else
+        public static extern int EnumResourceTypesExW([NativeTypeName("HMODULE")] IntPtr hModule, [NativeTypeName("ENUMRESTYPEPROCW")] delegate* unmanaged[Stdcall]<IntPtr, ushort*, nint, int> lpEnumFunc, [NativeTypeName("LONG_PTR")] nint lParam, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LANGID")] ushort LangId);
+#endif
 
-        [DllImport("kernel32", ExactSpelling = true)]
+
+        [DllImport("kernel32", CallingConvention = CallingConvention.StdCall, ExactSpelling = true)]
         [return: NativeTypeName("HRSRC")]
         public static extern IntPtr FindResourceW([NativeTypeName("HMODULE")] IntPtr hModule, [NativeTypeName("LPCWSTR")] ushort* lpName, [NativeTypeName("LPCWSTR")] ushort* lpType);
 
-        [DllImport("kernel32", ExactSpelling = true)]
+        [DllImport("kernel32", CallingConvention = CallingConvention.StdCall, ExactSpelling = true)]
         [return: NativeTypeName("HMODULE")]
         public static extern IntPtr LoadLibraryA([NativeTypeName("LPCSTR")] sbyte* lpLibFileName);
 
-        [DllImport("kernel32", ExactSpelling = true)]
+        [DllImport("kernel32", CallingConvention = CallingConvention.StdCall, ExactSpelling = true)]
         [return: NativeTypeName("HMODULE")]
         public static extern IntPtr LoadLibraryW([NativeTypeName("LPCWSTR")] ushort* lpLibFileName);
 
-        [DllImport("kernel32", ExactSpelling = true)]
+        [DllImport("kernel32", CallingConvention = CallingConvention.StdCall, ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
+#if !NETSTANDARD2_0
         public static extern int EnumResourceNamesW([NativeTypeName("HMODULE")] IntPtr hModule, [NativeTypeName("LPCWSTR")] ushort* lpType, [NativeTypeName("ENUMRESNAMEPROCW")] delegate* unmanaged<IntPtr, ushort*, ushort*, nint, int> lpEnumFunc, [NativeTypeName("LONG_PTR")] nint lParam);
+#else
+        public static extern int EnumResourceNamesW([NativeTypeName("HMODULE")] IntPtr hModule, [NativeTypeName("LPCWSTR")] ushort* lpType, [NativeTypeName("ENUMRESNAMEPROCW")] delegate* unmanaged[Stdcall]<IntPtr, ushort*, ushort*, nint, int> lpEnumFunc, [NativeTypeName("LONG_PTR")] nint lParam);
+#endif
+
 
         [NativeTypeName("#define FIND_RESOURCE_DIRECTORY_TYPES (0x0100)")]
         public const int FIND_RESOURCE_DIRECTORY_TYPES = (0x0100);
@@ -241,13 +276,25 @@ namespace TerraFX.Interop
         public static readonly delegate*<IntPtr, uint, ushort*, int, int> LoadString = &LoadStringW;
 
         [NativeTypeName("#define EnumResourceLanguagesEx EnumResourceLanguagesExW")]
+#if !NETSTANDARD2_0
         public static readonly delegate*<IntPtr, ushort*, ushort*, delegate* unmanaged<IntPtr, ushort*, ushort*, ushort, nint, int>, nint, uint, ushort, int> EnumResourceLanguagesEx = &EnumResourceLanguagesExW;
+#else
+        public static readonly delegate*<IntPtr, ushort*, ushort*, delegate* unmanaged[Stdcall]<IntPtr, ushort*, ushort*, ushort, nint, int>, nint, uint, ushort, int> EnumResourceLanguagesEx = &EnumResourceLanguagesExW;
+#endif
 
         [NativeTypeName("#define EnumResourceNamesEx EnumResourceNamesExW")]
+#if !NETSTANDARD2_0
         public static readonly delegate*<IntPtr, ushort*, delegate* unmanaged<IntPtr, ushort*, ushort*, nint, int>, nint, uint, ushort, int> EnumResourceNamesEx = &EnumResourceNamesExW;
+#else
+        public static readonly delegate*<IntPtr, ushort*, delegate* unmanaged[Stdcall]<IntPtr, ushort*, ushort*, nint, int>, nint, uint, ushort, int> EnumResourceNamesEx = &EnumResourceNamesExW;
+#endif
 
         [NativeTypeName("#define EnumResourceTypesEx EnumResourceTypesExW")]
+#if !NETSTANDARD2_0
         public static readonly delegate*<IntPtr, delegate* unmanaged<IntPtr, ushort*, nint, int>, nint, uint, ushort, int> EnumResourceTypesEx = &EnumResourceTypesExW;
+#else
+        public static readonly delegate*<IntPtr, delegate* unmanaged[Stdcall]<IntPtr, ushort*, nint, int>, nint, uint, ushort, int> EnumResourceTypesEx = &EnumResourceTypesExW;
+#endif
 
         [NativeTypeName("#define FindResource FindResourceW")]
         public static readonly delegate*<IntPtr, ushort*, ushort*, IntPtr> FindResource = &FindResourceW;
@@ -256,6 +303,10 @@ namespace TerraFX.Interop
         public static readonly delegate*<ushort*, IntPtr> LoadLibrary = &LoadLibraryW;
 
         [NativeTypeName("#define EnumResourceNames EnumResourceNamesW")]
+#if !NETSTANDARD2_0
         public static readonly delegate*<IntPtr, ushort*, delegate* unmanaged<IntPtr, ushort*, ushort*, nint, int>, nint, int> EnumResourceNames = &EnumResourceNamesW;
+#else
+        public static readonly delegate*<IntPtr, ushort*, delegate* unmanaged[Stdcall]<IntPtr, ushort*, ushort*, nint, int>, nint, int> EnumResourceNames = &EnumResourceNamesW;
+#endif
     }
 }

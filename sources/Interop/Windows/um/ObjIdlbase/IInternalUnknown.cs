@@ -19,28 +19,28 @@ namespace TerraFX.Interop
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return ((delegate* unmanaged<IInternalUnknown*, Guid*, void**, int>)(lpVtbl[0]))((IInternalUnknown*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* unmanaged[Stdcall]<IInternalUnknown*, Guid*, void**, int>)(lpVtbl[0]))((IInternalUnknown*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return ((delegate* unmanaged<IInternalUnknown*, uint>)(lpVtbl[1]))((IInternalUnknown*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged[Stdcall]<IInternalUnknown*, uint>)(lpVtbl[1]))((IInternalUnknown*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return ((delegate* unmanaged<IInternalUnknown*, uint>)(lpVtbl[2]))((IInternalUnknown*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged[Stdcall]<IInternalUnknown*, uint>)(lpVtbl[2]))((IInternalUnknown*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int QueryInternalInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppv)
         {
-            return ((delegate* unmanaged<IInternalUnknown*, Guid*, void**, int>)(lpVtbl[3]))((IInternalUnknown*)Unsafe.AsPointer(ref this), riid, ppv);
+            return ((delegate* unmanaged[Stdcall]<IInternalUnknown*, Guid*, void**, int>)(lpVtbl[3]))((IInternalUnknown*)Unsafe.AsPointer(ref this), riid, ppv);
         }
     }
 }

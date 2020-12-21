@@ -19,28 +19,28 @@ namespace TerraFX.Interop
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return ((delegate* unmanaged<ITensorStaticsNative*, Guid*, void**, int>)(lpVtbl[0]))((ITensorStaticsNative*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* unmanaged[Stdcall]<ITensorStaticsNative*, Guid*, void**, int>)(lpVtbl[0]))((ITensorStaticsNative*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return ((delegate* unmanaged<ITensorStaticsNative*, uint>)(lpVtbl[1]))((ITensorStaticsNative*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged[Stdcall]<ITensorStaticsNative*, uint>)(lpVtbl[1]))((ITensorStaticsNative*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return ((delegate* unmanaged<ITensorStaticsNative*, uint>)(lpVtbl[2]))((ITensorStaticsNative*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged[Stdcall]<ITensorStaticsNative*, uint>)(lpVtbl[2]))((ITensorStaticsNative*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int CreateFromD3D12Resource([NativeTypeName("ID3D12Resource *")] ID3D12Resource* value, [NativeTypeName("long long *")] long* shape, int shapeCount, [NativeTypeName("IUnknown **")] IUnknown** result)
         {
-            return ((delegate* unmanaged<ITensorStaticsNative*, ID3D12Resource*, long*, int, IUnknown**, int>)(lpVtbl[3]))((ITensorStaticsNative*)Unsafe.AsPointer(ref this), value, shape, shapeCount, result);
+            return ((delegate* unmanaged[Stdcall]<ITensorStaticsNative*, ID3D12Resource*, long*, int, IUnknown**, int>)(lpVtbl[3]))((ITensorStaticsNative*)Unsafe.AsPointer(ref this), value, shape, shapeCount, result);
         }
     }
 }

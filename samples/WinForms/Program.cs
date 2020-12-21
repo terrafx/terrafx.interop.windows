@@ -11,7 +11,10 @@ namespace TerraFX.Samples.WinForms
         [STAThread]
         public static void Main()
         {
+#if NET5_0
             _ = Application.SetHighDpiMode(HighDpiMode.SystemAware);
+#endif
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new MainForm());

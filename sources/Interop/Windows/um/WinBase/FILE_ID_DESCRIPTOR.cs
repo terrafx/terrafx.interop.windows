@@ -19,30 +19,42 @@ namespace TerraFX.Interop
         [NativeTypeName("FILE_ID_DESCRIPTOR::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/WinBase.h:9069:5)")]
         public _Anonymous_e__Union Anonymous;
 
-        public ref LARGE_INTEGER FileId
+        public unsafe ref LARGE_INTEGER FileId
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.FileId, 1));
+#else
+                return ref ((_Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous))->FileId;
+#endif
             }
         }
 
-        public ref Guid ObjectId
+        public unsafe ref Guid ObjectId
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.ObjectId, 1));
+#else
+                return ref ((_Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous))->ObjectId;
+#endif
             }
         }
 
-        public ref FILE_ID_128 ExtendedFileId
+        public unsafe ref FILE_ID_128 ExtendedFileId
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.ExtendedFileId, 1));
+#else
+                return ref ((_Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous))->ExtendedFileId;
+#endif
             }
         }
 

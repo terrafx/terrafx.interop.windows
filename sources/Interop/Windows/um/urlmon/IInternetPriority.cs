@@ -19,35 +19,35 @@ namespace TerraFX.Interop
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return ((delegate* unmanaged<IInternetPriority*, Guid*, void**, int>)(lpVtbl[0]))((IInternetPriority*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* unmanaged[Stdcall]<IInternetPriority*, Guid*, void**, int>)(lpVtbl[0]))((IInternetPriority*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return ((delegate* unmanaged<IInternetPriority*, uint>)(lpVtbl[1]))((IInternetPriority*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged[Stdcall]<IInternetPriority*, uint>)(lpVtbl[1]))((IInternetPriority*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return ((delegate* unmanaged<IInternetPriority*, uint>)(lpVtbl[2]))((IInternetPriority*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged[Stdcall]<IInternetPriority*, uint>)(lpVtbl[2]))((IInternetPriority*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int SetPriority([NativeTypeName("LONG")] int nPriority)
         {
-            return ((delegate* unmanaged<IInternetPriority*, int, int>)(lpVtbl[3]))((IInternetPriority*)Unsafe.AsPointer(ref this), nPriority);
+            return ((delegate* unmanaged[Stdcall]<IInternetPriority*, int, int>)(lpVtbl[3]))((IInternetPriority*)Unsafe.AsPointer(ref this), nPriority);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetPriority([NativeTypeName("LONG *")] int* pnPriority)
         {
-            return ((delegate* unmanaged<IInternetPriority*, int*, int>)(lpVtbl[4]))((IInternetPriority*)Unsafe.AsPointer(ref this), pnPriority);
+            return ((delegate* unmanaged[Stdcall]<IInternetPriority*, int*, int>)(lpVtbl[4]))((IInternetPriority*)Unsafe.AsPointer(ref this), pnPriority);
         }
     }
 }

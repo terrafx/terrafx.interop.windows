@@ -21,7 +21,7 @@ namespace TerraFX.Interop
         {
             public LUID_AND_ATTRIBUTES e0;
 
-            public ref LUID_AND_ATTRIBUTES this[int index]
+            public unsafe ref LUID_AND_ATTRIBUTES this[int index]
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
                 get
@@ -31,7 +31,14 @@ namespace TerraFX.Interop
             }
 
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public Span<LUID_AND_ATTRIBUTES> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
+            public unsafe Span<LUID_AND_ATTRIBUTES> AsSpan(int length)
+            {
+#if !NETSTANDARD2_0
+                return MemoryMarshal.CreateSpan(ref e0, length);
+#else
+                return new Span<LUID_AND_ATTRIBUTES>((LUID_AND_ATTRIBUTES*)Unsafe.AsPointer(ref this), length);
+#endif
+            }
         }
     }
 }

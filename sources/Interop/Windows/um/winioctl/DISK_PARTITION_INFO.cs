@@ -19,21 +19,29 @@ namespace TerraFX.Interop
         [NativeTypeName("_DISK_PARTITION_INFO::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winioctl.h:8651:9)")]
         public _Anonymous_e__Union Anonymous;
 
-        public ref _Anonymous_e__Union._Mbr_e__Struct Mbr
+        public unsafe ref _Anonymous_e__Union._Mbr_e__Struct Mbr
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Mbr, 1));
+#else
+                return ref ((_Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous))->Mbr;
+#endif
             }
         }
 
-        public ref _Anonymous_e__Union._Gpt_e__Struct Gpt
+        public unsafe ref _Anonymous_e__Union._Gpt_e__Struct Gpt
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Gpt, 1));
+#else
+                return ref ((_Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous))->Gpt;
+#endif
             }
         }
 

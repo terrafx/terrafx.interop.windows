@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
@@ -13,21 +14,98 @@ namespace TerraFX.Interop
     {
         [FieldOffset(0)]
         [NativeTypeName("KSDATAFORMAT::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/shared/ks.h:1096:5)")]
-        internal _Anonymous_e__Struct Anonymous;
+        public _Anonymous_e__Struct Anonymous;
 
-        public ref uint FormatSize => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.FormatSize, 1));
+        public unsafe ref uint FormatSize
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+#if !NETSTANDARD2_0
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.FormatSize, 1));
+#else
+                return ref ((_Anonymous_e__Struct*)Unsafe.AsPointer(ref Anonymous))->FormatSize;
+#endif
+            }
+        }
 
-        public ref uint Flags => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Flags, 1));
+        public unsafe ref uint Flags
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+#if !NETSTANDARD2_0
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Flags, 1));
+#else
+                return ref ((_Anonymous_e__Struct*)Unsafe.AsPointer(ref Anonymous))->Flags;
+#endif
+            }
+        }
 
-        public ref uint SampleSize => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.SampleSize, 1));
+        public unsafe ref uint SampleSize
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+#if !NETSTANDARD2_0
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.SampleSize, 1));
+#else
+                return ref ((_Anonymous_e__Struct*)Unsafe.AsPointer(ref Anonymous))->SampleSize;
+#endif
+            }
+        }
 
-        public ref uint Reserved => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Reserved, 1));
+        public unsafe ref uint Reserved
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+#if !NETSTANDARD2_0
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Reserved, 1));
+#else
+                return ref ((_Anonymous_e__Struct*)Unsafe.AsPointer(ref Anonymous))->Reserved;
+#endif
+            }
+        }
 
-        public ref Guid MajorFormat => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.MajorFormat, 1));
+        public unsafe ref Guid MajorFormat
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+#if !NETSTANDARD2_0
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.MajorFormat, 1));
+#else
+                return ref ((_Anonymous_e__Struct*)Unsafe.AsPointer(ref Anonymous))->MajorFormat;
+#endif
+            }
+        }
 
-        public ref Guid SubFormat => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.SubFormat, 1));
+        public unsafe ref Guid SubFormat
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+#if !NETSTANDARD2_0
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.SubFormat, 1));
+#else
+                return ref ((_Anonymous_e__Struct*)Unsafe.AsPointer(ref Anonymous))->SubFormat;
+#endif
+            }
+        }
 
-        public ref Guid Specifier => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Specifier, 1));
+        public unsafe ref Guid Specifier
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+#if !NETSTANDARD2_0
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Specifier, 1));
+#else
+                return ref ((_Anonymous_e__Struct*)Unsafe.AsPointer(ref Anonymous))->Specifier;
+#endif
+            }
+        }
 
         [FieldOffset(0)]
         [NativeTypeName("LONGLONG")]

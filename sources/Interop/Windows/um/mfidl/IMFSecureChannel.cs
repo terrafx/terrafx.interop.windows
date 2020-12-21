@@ -19,35 +19,35 @@ namespace TerraFX.Interop
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return ((delegate* unmanaged<IMFSecureChannel*, Guid*, void**, int>)(lpVtbl[0]))((IMFSecureChannel*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* unmanaged[Stdcall]<IMFSecureChannel*, Guid*, void**, int>)(lpVtbl[0]))((IMFSecureChannel*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return ((delegate* unmanaged<IMFSecureChannel*, uint>)(lpVtbl[1]))((IMFSecureChannel*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged[Stdcall]<IMFSecureChannel*, uint>)(lpVtbl[1]))((IMFSecureChannel*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return ((delegate* unmanaged<IMFSecureChannel*, uint>)(lpVtbl[2]))((IMFSecureChannel*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged[Stdcall]<IMFSecureChannel*, uint>)(lpVtbl[2]))((IMFSecureChannel*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetCertificate([NativeTypeName("BYTE **")] byte** ppCert, [NativeTypeName("DWORD *")] uint* pcbCert)
         {
-            return ((delegate* unmanaged<IMFSecureChannel*, byte**, uint*, int>)(lpVtbl[3]))((IMFSecureChannel*)Unsafe.AsPointer(ref this), ppCert, pcbCert);
+            return ((delegate* unmanaged[Stdcall]<IMFSecureChannel*, byte**, uint*, int>)(lpVtbl[3]))((IMFSecureChannel*)Unsafe.AsPointer(ref this), ppCert, pcbCert);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int SetupSession([NativeTypeName("BYTE *")] byte* pbEncryptedSessionKey, [NativeTypeName("DWORD")] uint cbSessionKey)
         {
-            return ((delegate* unmanaged<IMFSecureChannel*, byte*, uint, int>)(lpVtbl[4]))((IMFSecureChannel*)Unsafe.AsPointer(ref this), pbEncryptedSessionKey, cbSessionKey);
+            return ((delegate* unmanaged[Stdcall]<IMFSecureChannel*, byte*, uint, int>)(lpVtbl[4]))((IMFSecureChannel*)Unsafe.AsPointer(ref this), pbEncryptedSessionKey, cbSessionKey);
         }
     }
 }

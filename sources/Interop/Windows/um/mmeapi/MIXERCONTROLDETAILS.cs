@@ -24,21 +24,29 @@ namespace TerraFX.Interop
         [NativeTypeName("tMIXERCONTROLDETAILS::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/mmeapi.h:2341:5)")]
         public _Anonymous_e__Union Anonymous;
 
-        public ref IntPtr hwndOwner
+        public unsafe ref IntPtr hwndOwner
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.hwndOwner, 1));
+#else
+                return ref ((_Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous))->hwndOwner;
+#endif
             }
         }
 
-        public ref uint cMultipleItems
+        public unsafe ref uint cMultipleItems
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.cMultipleItems, 1));
+#else
+                return ref ((_Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous))->cMultipleItems;
+#endif
             }
         }
 

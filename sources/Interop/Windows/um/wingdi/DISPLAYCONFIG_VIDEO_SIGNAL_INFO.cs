@@ -24,21 +24,29 @@ namespace TerraFX.Interop
         [NativeTypeName("DISPLAYCONFIG_VIDEO_SIGNAL_INFO::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/wingdi.h:2850:5)")]
         public _Anonymous_e__Union Anonymous;
 
-        public ref _Anonymous_e__Union._AdditionalSignalInfo_e__Struct AdditionalSignalInfo
+        public unsafe ref _Anonymous_e__Union._AdditionalSignalInfo_e__Struct AdditionalSignalInfo
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.AdditionalSignalInfo, 1));
+#else
+                return ref ((_Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous))->AdditionalSignalInfo;
+#endif
             }
         }
 
-        public ref uint videoStandard
+        public unsafe ref uint videoStandard
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.videoStandard, 1));
+#else
+                return ref ((_Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous))->videoStandard;
+#endif
             }
         }
 

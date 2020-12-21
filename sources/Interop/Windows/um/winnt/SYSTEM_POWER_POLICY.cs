@@ -93,7 +93,7 @@ namespace TerraFX.Interop
             public SYSTEM_POWER_LEVEL e2;
             public SYSTEM_POWER_LEVEL e3;
 
-            public ref SYSTEM_POWER_LEVEL this[int index]
+            public unsafe ref SYSTEM_POWER_LEVEL this[int index]
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
                 get
@@ -103,7 +103,14 @@ namespace TerraFX.Interop
             }
 
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public Span<SYSTEM_POWER_LEVEL> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 4);
+            public unsafe Span<SYSTEM_POWER_LEVEL> AsSpan()
+            {
+#if !NETSTANDARD2_0
+                return MemoryMarshal.CreateSpan(ref e0, 4);
+#else
+                return new Span<SYSTEM_POWER_LEVEL>((SYSTEM_POWER_LEVEL*)Unsafe.AsPointer(ref this), 4);
+#endif
+            }
         }
     }
 }

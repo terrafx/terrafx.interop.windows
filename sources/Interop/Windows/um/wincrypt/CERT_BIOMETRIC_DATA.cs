@@ -16,24 +16,25 @@ namespace TerraFX.Interop
         [NativeTypeName("_CERT_BIOMETRIC_DATA::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/wincrypt.h:5553:5)")]
         public _Anonymous_e__Union Anonymous;
 
-        public ref uint dwPredefined
+        public unsafe ref uint dwPredefined
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.dwPredefined, 1));
+#else
+                return ref ((_Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous))->dwPredefined;
+#endif
             }
         }
 
-        public ref sbyte* pszObjId
+        public unsafe ref sbyte* pszObjId
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
-                fixed (_Anonymous_e__Union* pField = &Anonymous)
-                {
-                    return ref pField->pszObjId;
-                }
+                return ref ((_Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous))->pszObjId;
             }
         }
 

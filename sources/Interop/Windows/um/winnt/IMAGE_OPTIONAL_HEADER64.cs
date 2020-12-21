@@ -122,7 +122,7 @@ namespace TerraFX.Interop
             public IMAGE_DATA_DIRECTORY e14;
             public IMAGE_DATA_DIRECTORY e15;
 
-            public ref IMAGE_DATA_DIRECTORY this[int index]
+            public unsafe ref IMAGE_DATA_DIRECTORY this[int index]
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
                 get
@@ -132,7 +132,14 @@ namespace TerraFX.Interop
             }
 
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public Span<IMAGE_DATA_DIRECTORY> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 16);
+            public unsafe Span<IMAGE_DATA_DIRECTORY> AsSpan()
+            {
+#if !NETSTANDARD2_0
+                return MemoryMarshal.CreateSpan(ref e0, 16);
+#else
+                return new Span<IMAGE_DATA_DIRECTORY>((IMAGE_DATA_DIRECTORY*)Unsafe.AsPointer(ref this), 16);
+#endif
+            }
         }
     }
 }

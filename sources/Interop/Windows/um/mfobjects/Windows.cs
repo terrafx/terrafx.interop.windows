@@ -11,11 +11,11 @@ namespace TerraFX.Interop
 {
     public static unsafe partial class Windows
     {
-        [DllImport("mfplat", ExactSpelling = true)]
+        [DllImport("mfplat", CallingConvention = CallingConvention.StdCall, ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int MFSerializeAttributesToStream([NativeTypeName("IMFAttributes *")] IMFAttributes* pAttr, [NativeTypeName("DWORD")] uint dwOptions, [NativeTypeName("IStream *")] IStream* pStm);
 
-        [DllImport("mfplat", ExactSpelling = true)]
+        [DllImport("mfplat", CallingConvention = CallingConvention.StdCall, ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int MFDeserializeAttributesFromStream([NativeTypeName("IMFAttributes *")] IMFAttributes* pAttr, [NativeTypeName("DWORD")] uint dwOptions, [NativeTypeName("IStream *")] IStream* pStm);
 

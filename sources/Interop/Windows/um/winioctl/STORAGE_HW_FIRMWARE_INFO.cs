@@ -79,7 +79,7 @@ namespace TerraFX.Interop
         {
             public STORAGE_HW_FIRMWARE_SLOT_INFO e0;
 
-            public ref STORAGE_HW_FIRMWARE_SLOT_INFO this[int index]
+            public unsafe ref STORAGE_HW_FIRMWARE_SLOT_INFO this[int index]
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
                 get
@@ -89,7 +89,14 @@ namespace TerraFX.Interop
             }
 
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public Span<STORAGE_HW_FIRMWARE_SLOT_INFO> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
+            public unsafe Span<STORAGE_HW_FIRMWARE_SLOT_INFO> AsSpan(int length)
+            {
+#if !NETSTANDARD2_0
+                return MemoryMarshal.CreateSpan(ref e0, length);
+#else
+                return new Span<STORAGE_HW_FIRMWARE_SLOT_INFO>((STORAGE_HW_FIRMWARE_SLOT_INFO*)Unsafe.AsPointer(ref this), length);
+#endif
+            }
         }
     }
 }

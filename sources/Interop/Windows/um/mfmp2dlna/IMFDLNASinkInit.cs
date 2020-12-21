@@ -19,28 +19,28 @@ namespace TerraFX.Interop
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return ((delegate* unmanaged<IMFDLNASinkInit*, Guid*, void**, int>)(lpVtbl[0]))((IMFDLNASinkInit*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* unmanaged[Stdcall]<IMFDLNASinkInit*, Guid*, void**, int>)(lpVtbl[0]))((IMFDLNASinkInit*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return ((delegate* unmanaged<IMFDLNASinkInit*, uint>)(lpVtbl[1]))((IMFDLNASinkInit*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged[Stdcall]<IMFDLNASinkInit*, uint>)(lpVtbl[1]))((IMFDLNASinkInit*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return ((delegate* unmanaged<IMFDLNASinkInit*, uint>)(lpVtbl[2]))((IMFDLNASinkInit*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged[Stdcall]<IMFDLNASinkInit*, uint>)(lpVtbl[2]))((IMFDLNASinkInit*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int Initialize([NativeTypeName("IMFByteStream *")] IMFByteStream* pByteStream, [NativeTypeName("BOOL")] int fPal)
         {
-            return ((delegate* unmanaged<IMFDLNASinkInit*, IMFByteStream*, int, int>)(lpVtbl[3]))((IMFDLNASinkInit*)Unsafe.AsPointer(ref this), pByteStream, fPal);
+            return ((delegate* unmanaged[Stdcall]<IMFDLNASinkInit*, IMFByteStream*, int, int>)(lpVtbl[3]))((IMFDLNASinkInit*)Unsafe.AsPointer(ref this), pByteStream, fPal);
         }
     }
 }

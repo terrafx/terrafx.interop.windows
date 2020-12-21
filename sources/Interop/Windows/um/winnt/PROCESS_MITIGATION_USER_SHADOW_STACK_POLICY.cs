@@ -13,16 +13,20 @@ namespace TerraFX.Interop
         [NativeTypeName("_PROCESS_MITIGATION_USER_SHADOW_STACK_POLICY::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:11912:5)")]
         public _Anonymous_e__Union Anonymous;
 
-        public ref uint Flags
+        public unsafe ref uint Flags
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Flags, 1));
+#else
+                return ref ((_Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous))->Flags;
+#endif
             }
         }
 
-        public uint EnableUserShadowStack
+        public unsafe uint EnableUserShadowStack
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
@@ -37,7 +41,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public uint ReservedFlags
+        public unsafe uint ReservedFlags
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get

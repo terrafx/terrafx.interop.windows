@@ -50,7 +50,7 @@ namespace TerraFX.Interop
             public SCM_PD_OPERATIONAL_STATUS e14;
             public SCM_PD_OPERATIONAL_STATUS e15;
 
-            public ref SCM_PD_OPERATIONAL_STATUS this[int index]
+            public unsafe ref SCM_PD_OPERATIONAL_STATUS this[int index]
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
                 get
@@ -60,14 +60,21 @@ namespace TerraFX.Interop
             }
 
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public Span<SCM_PD_OPERATIONAL_STATUS> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 16);
+            public unsafe Span<SCM_PD_OPERATIONAL_STATUS> AsSpan()
+            {
+#if !NETSTANDARD2_0
+                return MemoryMarshal.CreateSpan(ref e0, 16);
+#else
+                return new Span<SCM_PD_OPERATIONAL_STATUS>((SCM_PD_OPERATIONAL_STATUS*)Unsafe.AsPointer(ref this), 16);
+#endif
+            }
         }
 
         public partial struct _AdditionalReasons_e__FixedBuffer
         {
             public SCM_PD_OPERATIONAL_STATUS_REASON e0;
 
-            public ref SCM_PD_OPERATIONAL_STATUS_REASON this[int index]
+            public unsafe ref SCM_PD_OPERATIONAL_STATUS_REASON this[int index]
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
                 get
@@ -77,7 +84,14 @@ namespace TerraFX.Interop
             }
 
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public Span<SCM_PD_OPERATIONAL_STATUS_REASON> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
+            public unsafe Span<SCM_PD_OPERATIONAL_STATUS_REASON> AsSpan(int length)
+            {
+#if !NETSTANDARD2_0
+                return MemoryMarshal.CreateSpan(ref e0, length);
+#else
+                return new Span<SCM_PD_OPERATIONAL_STATUS_REASON>((SCM_PD_OPERATIONAL_STATUS_REASON*)Unsafe.AsPointer(ref this), length);
+#endif
+            }
         }
     }
 }

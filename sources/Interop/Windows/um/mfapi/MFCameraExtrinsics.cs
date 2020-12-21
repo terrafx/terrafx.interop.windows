@@ -21,7 +21,7 @@ namespace TerraFX.Interop
         {
             public MFCameraExtrinsic_CalibratedTransform e0;
 
-            public ref MFCameraExtrinsic_CalibratedTransform this[int index]
+            public unsafe ref MFCameraExtrinsic_CalibratedTransform this[int index]
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
                 get
@@ -31,7 +31,14 @@ namespace TerraFX.Interop
             }
 
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public Span<MFCameraExtrinsic_CalibratedTransform> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
+            public unsafe Span<MFCameraExtrinsic_CalibratedTransform> AsSpan(int length)
+            {
+#if !NETSTANDARD2_0
+                return MemoryMarshal.CreateSpan(ref e0, length);
+#else
+                return new Span<MFCameraExtrinsic_CalibratedTransform>((MFCameraExtrinsic_CalibratedTransform*)Unsafe.AsPointer(ref this), length);
+#endif
+            }
         }
     }
 }

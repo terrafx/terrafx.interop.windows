@@ -66,7 +66,7 @@ namespace TerraFX.Interop
             public PROCESSOR_POWER_POLICY_INFO e1;
             public PROCESSOR_POWER_POLICY_INFO e2;
 
-            public ref PROCESSOR_POWER_POLICY_INFO this[int index]
+            public unsafe ref PROCESSOR_POWER_POLICY_INFO this[int index]
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
                 get
@@ -76,7 +76,14 @@ namespace TerraFX.Interop
             }
 
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public Span<PROCESSOR_POWER_POLICY_INFO> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 3);
+            public unsafe Span<PROCESSOR_POWER_POLICY_INFO> AsSpan()
+            {
+#if !NETSTANDARD2_0
+                return MemoryMarshal.CreateSpan(ref e0, 3);
+#else
+                return new Span<PROCESSOR_POWER_POLICY_INFO>((PROCESSOR_POWER_POLICY_INFO*)Unsafe.AsPointer(ref this), 3);
+#endif
+            }
         }
     }
 }

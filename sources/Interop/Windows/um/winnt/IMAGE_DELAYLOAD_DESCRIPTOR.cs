@@ -45,7 +45,7 @@ namespace TerraFX.Interop
             [NativeTypeName("_IMAGE_DELAYLOAD_DESCRIPTOR::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:18282:9)")]
             public _Anonymous_e__Struct Anonymous;
 
-            public uint RvaBased
+            public unsafe uint RvaBased
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
                 get
@@ -60,7 +60,7 @@ namespace TerraFX.Interop
                 }
             }
 
-            public uint ReservedAttributes
+            public unsafe uint ReservedAttributes
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
                 get

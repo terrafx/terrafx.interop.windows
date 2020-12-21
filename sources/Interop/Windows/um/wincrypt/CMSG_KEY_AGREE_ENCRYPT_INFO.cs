@@ -27,21 +27,29 @@ namespace TerraFX.Interop
         [NativeTypeName("_CMSG_KEY_AGREE_ENCRYPT_INFO::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/wincrypt.h:8615:5)")]
         public _Anonymous_e__Union Anonymous;
 
-        public ref CERT_ID OriginatorCertId
+        public unsafe ref CERT_ID OriginatorCertId
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.OriginatorCertId, 1));
+#else
+                return ref ((_Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous))->OriginatorCertId;
+#endif
             }
         }
 
-        public ref CERT_PUBLIC_KEY_INFO OriginatorPublicKeyInfo
+        public unsafe ref CERT_PUBLIC_KEY_INFO OriginatorPublicKeyInfo
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.OriginatorPublicKeyInfo, 1));
+#else
+                return ref ((_Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous))->OriginatorPublicKeyInfo;
+#endif
             }
         }
 

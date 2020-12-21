@@ -19,35 +19,35 @@ namespace TerraFX.Interop
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return ((delegate* unmanaged<IMLOperatorRegistry*, Guid*, void**, int>)(lpVtbl[0]))((IMLOperatorRegistry*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* unmanaged[Stdcall]<IMLOperatorRegistry*, Guid*, void**, int>)(lpVtbl[0]))((IMLOperatorRegistry*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return ((delegate* unmanaged<IMLOperatorRegistry*, uint>)(lpVtbl[1]))((IMLOperatorRegistry*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged[Stdcall]<IMLOperatorRegistry*, uint>)(lpVtbl[1]))((IMLOperatorRegistry*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return ((delegate* unmanaged<IMLOperatorRegistry*, uint>)(lpVtbl[2]))((IMLOperatorRegistry*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged[Stdcall]<IMLOperatorRegistry*, uint>)(lpVtbl[2]))((IMLOperatorRegistry*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int RegisterOperatorSetSchema([NativeTypeName("const MLOperatorSetId *")] MLOperatorSetId* operatorSetId, [NativeTypeName("int32_t")] int baselineVersion, [NativeTypeName("const MLOperatorSchemaDescription *const *")] MLOperatorSchemaDescription** schema, [NativeTypeName("uint32_t")] uint schemaCount, [NativeTypeName("IMLOperatorTypeInferrer *")] IMLOperatorTypeInferrer* typeInferrer, [NativeTypeName("IMLOperatorShapeInferrer *")] IMLOperatorShapeInferrer* shapeInferrer)
         {
-            return ((delegate* unmanaged<IMLOperatorRegistry*, MLOperatorSetId*, int, MLOperatorSchemaDescription**, uint, IMLOperatorTypeInferrer*, IMLOperatorShapeInferrer*, int>)(lpVtbl[3]))((IMLOperatorRegistry*)Unsafe.AsPointer(ref this), operatorSetId, baselineVersion, schema, schemaCount, typeInferrer, shapeInferrer);
+            return ((delegate* unmanaged[Stdcall]<IMLOperatorRegistry*, MLOperatorSetId*, int, MLOperatorSchemaDescription**, uint, IMLOperatorTypeInferrer*, IMLOperatorShapeInferrer*, int>)(lpVtbl[3]))((IMLOperatorRegistry*)Unsafe.AsPointer(ref this), operatorSetId, baselineVersion, schema, schemaCount, typeInferrer, shapeInferrer);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int RegisterOperatorKernel([NativeTypeName("const MLOperatorKernelDescription *")] MLOperatorKernelDescription* operatorKernel, [NativeTypeName("IMLOperatorKernelFactory *")] IMLOperatorKernelFactory* operatorKernelFactory, [NativeTypeName("IMLOperatorShapeInferrer *")] IMLOperatorShapeInferrer* shapeInferrer)
         {
-            return ((delegate* unmanaged<IMLOperatorRegistry*, MLOperatorKernelDescription*, IMLOperatorKernelFactory*, IMLOperatorShapeInferrer*, int>)(lpVtbl[4]))((IMLOperatorRegistry*)Unsafe.AsPointer(ref this), operatorKernel, operatorKernelFactory, shapeInferrer);
+            return ((delegate* unmanaged[Stdcall]<IMLOperatorRegistry*, MLOperatorKernelDescription*, IMLOperatorKernelFactory*, IMLOperatorShapeInferrer*, int>)(lpVtbl[4]))((IMLOperatorRegistry*)Unsafe.AsPointer(ref this), operatorKernel, operatorKernelFactory, shapeInferrer);
         }
     }
 }

@@ -16,21 +16,29 @@ namespace TerraFX.Interop
         [NativeTypeName("_CMSG_CTRL_DECRYPT_PARA::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/wincrypt.h:8005:5)")]
         public _Anonymous_e__Union Anonymous;
 
-        public ref nuint hCryptProv
+        public unsafe ref nuint hCryptProv
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.hCryptProv, 1));
+#else
+                return ref ((_Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous))->hCryptProv;
+#endif
             }
         }
 
-        public ref nuint hNCryptKey
+        public unsafe ref nuint hNCryptKey
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.hNCryptKey, 1));
+#else
+                return ref ((_Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous))->hNCryptKey;
+#endif
             }
         }
 

@@ -19,41 +19,41 @@ namespace TerraFX.Interop
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return ((delegate* unmanaged<ID2D1CommandList*, Guid*, void**, int>)(lpVtbl[0]))((ID2D1CommandList*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* unmanaged[Stdcall]<ID2D1CommandList*, Guid*, void**, int>)(lpVtbl[0]))((ID2D1CommandList*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return ((delegate* unmanaged<ID2D1CommandList*, uint>)(lpVtbl[1]))((ID2D1CommandList*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged[Stdcall]<ID2D1CommandList*, uint>)(lpVtbl[1]))((ID2D1CommandList*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return ((delegate* unmanaged<ID2D1CommandList*, uint>)(lpVtbl[2]))((ID2D1CommandList*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged[Stdcall]<ID2D1CommandList*, uint>)(lpVtbl[2]))((ID2D1CommandList*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public void GetFactory([NativeTypeName("ID2D1Factory **")] ID2D1Factory** factory)
         {
-            ((delegate* unmanaged<ID2D1CommandList*, ID2D1Factory**, void>)(lpVtbl[3]))((ID2D1CommandList*)Unsafe.AsPointer(ref this), factory);
+            ((delegate* unmanaged[Stdcall]<ID2D1CommandList*, ID2D1Factory**, void>)(lpVtbl[3]))((ID2D1CommandList*)Unsafe.AsPointer(ref this), factory);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int Stream([NativeTypeName("ID2D1CommandSink *")] ID2D1CommandSink* sink)
         {
-            return ((delegate* unmanaged<ID2D1CommandList*, ID2D1CommandSink*, int>)(lpVtbl[4]))((ID2D1CommandList*)Unsafe.AsPointer(ref this), sink);
+            return ((delegate* unmanaged[Stdcall]<ID2D1CommandList*, ID2D1CommandSink*, int>)(lpVtbl[4]))((ID2D1CommandList*)Unsafe.AsPointer(ref this), sink);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int Close()
         {
-            return ((delegate* unmanaged<ID2D1CommandList*, int>)(lpVtbl[5]))((ID2D1CommandList*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged[Stdcall]<ID2D1CommandList*, int>)(lpVtbl[5]))((ID2D1CommandList*)Unsafe.AsPointer(ref this));
         }
     }
 }

@@ -19,28 +19,28 @@ namespace TerraFX.Interop
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return ((delegate* unmanaged<IMFTrackedSample*, Guid*, void**, int>)(lpVtbl[0]))((IMFTrackedSample*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* unmanaged[Stdcall]<IMFTrackedSample*, Guid*, void**, int>)(lpVtbl[0]))((IMFTrackedSample*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return ((delegate* unmanaged<IMFTrackedSample*, uint>)(lpVtbl[1]))((IMFTrackedSample*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged[Stdcall]<IMFTrackedSample*, uint>)(lpVtbl[1]))((IMFTrackedSample*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return ((delegate* unmanaged<IMFTrackedSample*, uint>)(lpVtbl[2]))((IMFTrackedSample*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged[Stdcall]<IMFTrackedSample*, uint>)(lpVtbl[2]))((IMFTrackedSample*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int SetAllocator([NativeTypeName("IMFAsyncCallback *")] IMFAsyncCallback* pSampleAllocator, [NativeTypeName("IUnknown *")] IUnknown* pUnkState)
         {
-            return ((delegate* unmanaged<IMFTrackedSample*, IMFAsyncCallback*, IUnknown*, int>)(lpVtbl[3]))((IMFTrackedSample*)Unsafe.AsPointer(ref this), pSampleAllocator, pUnkState);
+            return ((delegate* unmanaged[Stdcall]<IMFTrackedSample*, IMFAsyncCallback*, IUnknown*, int>)(lpVtbl[3]))((IMFTrackedSample*)Unsafe.AsPointer(ref this), pSampleAllocator, pUnkState);
         }
     }
 }

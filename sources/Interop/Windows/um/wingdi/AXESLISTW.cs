@@ -39,7 +39,7 @@ namespace TerraFX.Interop
             public AXISINFOW e14;
             public AXISINFOW e15;
 
-            public ref AXISINFOW this[int index]
+            public unsafe ref AXISINFOW this[int index]
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
                 get
@@ -49,7 +49,14 @@ namespace TerraFX.Interop
             }
 
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public Span<AXISINFOW> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 16);
+            public unsafe Span<AXISINFOW> AsSpan()
+            {
+#if !NETSTANDARD2_0
+                return MemoryMarshal.CreateSpan(ref e0, 16);
+#else
+                return new Span<AXISINFOW>((AXISINFOW*)Unsafe.AsPointer(ref this), 16);
+#endif
+            }
         }
     }
 }

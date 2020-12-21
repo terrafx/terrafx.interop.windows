@@ -21,7 +21,7 @@ namespace TerraFX.Interop
         {
             public BIN_COUNT e0;
 
-            public ref BIN_COUNT this[int index]
+            public unsafe ref BIN_COUNT this[int index]
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
                 get
@@ -31,7 +31,14 @@ namespace TerraFX.Interop
             }
 
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public Span<BIN_COUNT> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
+            public unsafe Span<BIN_COUNT> AsSpan(int length)
+            {
+#if !NETSTANDARD2_0
+                return MemoryMarshal.CreateSpan(ref e0, length);
+#else
+                return new Span<BIN_COUNT>((BIN_COUNT*)Unsafe.AsPointer(ref this), length);
+#endif
+            }
         }
     }
 }

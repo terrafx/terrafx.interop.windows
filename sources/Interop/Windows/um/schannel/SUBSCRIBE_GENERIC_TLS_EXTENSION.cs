@@ -24,7 +24,7 @@ namespace TerraFX.Interop
         {
             public TLS_EXTENSION_SUBSCRIPTION e0;
 
-            public ref TLS_EXTENSION_SUBSCRIPTION this[int index]
+            public unsafe ref TLS_EXTENSION_SUBSCRIPTION this[int index]
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
                 get
@@ -34,7 +34,14 @@ namespace TerraFX.Interop
             }
 
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public Span<TLS_EXTENSION_SUBSCRIPTION> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
+            public unsafe Span<TLS_EXTENSION_SUBSCRIPTION> AsSpan(int length)
+            {
+#if !NETSTANDARD2_0
+                return MemoryMarshal.CreateSpan(ref e0, length);
+#else
+                return new Span<TLS_EXTENSION_SUBSCRIPTION>((TLS_EXTENSION_SUBSCRIPTION*)Unsafe.AsPointer(ref this), length);
+#endif
+            }
         }
     }
 }

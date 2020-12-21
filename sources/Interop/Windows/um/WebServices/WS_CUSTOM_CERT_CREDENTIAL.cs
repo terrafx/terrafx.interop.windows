@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 
 namespace TerraFX.Interop
 {
@@ -12,13 +13,51 @@ namespace TerraFX.Interop
         public WS_CERT_CREDENTIAL credential;
 
         [NativeTypeName("WS_GET_CERT_CALLBACK")]
+#if !NETSTANDARD2_0
         public delegate* unmanaged<void*, WS_ENDPOINT_ADDRESS*, WS_STRING*, CERT_CONTEXT**, IntPtr, int> getCertCallback;
+#else
+        public void* _getCertCallback;
+
+        public delegate* unmanaged[Stdcall]<void*, WS_ENDPOINT_ADDRESS*, WS_STRING*, CERT_CONTEXT**, IntPtr, int> getCertCallback
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                return (delegate* unmanaged[Stdcall]<void*, WS_ENDPOINT_ADDRESS*, WS_STRING*, CERT_CONTEXT**, IntPtr, int>)_getCertCallback;
+            }
+
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            set
+            {
+                _getCertCallback = value;
+            }
+        }
+#endif
 
         [NativeTypeName("void *")]
         public void* getCertCallbackState;
 
         [NativeTypeName("WS_CERT_ISSUER_LIST_NOTIFICATION_CALLBACK")]
+#if !NETSTANDARD2_0
         public delegate* unmanaged<void*, SecPkgContext_IssuerListInfoEx*, IntPtr, int> certIssuerListNotificationCallback;
+#else
+        public void* _certIssuerListNotificationCallback;
+
+        public delegate* unmanaged[Stdcall]<void*, SecPkgContext_IssuerListInfoEx*, IntPtr, int> certIssuerListNotificationCallback
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                return (delegate* unmanaged[Stdcall]<void*, SecPkgContext_IssuerListInfoEx*, IntPtr, int>)_certIssuerListNotificationCallback;
+            }
+
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            set
+            {
+                _certIssuerListNotificationCallback = value;
+            }
+        }
+#endif
 
         [NativeTypeName("void *")]
         public void* certIssuerListNotificationCallbackState;

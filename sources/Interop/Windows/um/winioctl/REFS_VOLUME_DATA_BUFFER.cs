@@ -65,7 +65,7 @@ namespace TerraFX.Interop
             public LARGE_INTEGER e7;
             public LARGE_INTEGER e8;
 
-            public ref LARGE_INTEGER this[int index]
+            public unsafe ref LARGE_INTEGER this[int index]
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
                 get
@@ -75,7 +75,14 @@ namespace TerraFX.Interop
             }
 
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public Span<LARGE_INTEGER> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 9);
+            public unsafe Span<LARGE_INTEGER> AsSpan()
+            {
+#if !NETSTANDARD2_0
+                return MemoryMarshal.CreateSpan(ref e0, 9);
+#else
+                return new Span<LARGE_INTEGER>((LARGE_INTEGER*)Unsafe.AsPointer(ref this), 9);
+#endif
+            }
         }
     }
 }

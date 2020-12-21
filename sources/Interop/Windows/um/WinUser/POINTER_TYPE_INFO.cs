@@ -17,21 +17,29 @@ namespace TerraFX.Interop
         [NativeTypeName("tagPOINTER_TYPE_INFO::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/WinUser.h:6481:5)")]
         public _Anonymous_e__Union Anonymous;
 
-        public ref POINTER_TOUCH_INFO touchInfo
+        public unsafe ref POINTER_TOUCH_INFO touchInfo
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.touchInfo, 1));
+#else
+                return ref ((_Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous))->touchInfo;
+#endif
             }
         }
 
-        public ref POINTER_PEN_INFO penInfo
+        public unsafe ref POINTER_PEN_INFO penInfo
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.penInfo, 1));
+#else
+                return ref ((_Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous))->penInfo;
+#endif
             }
         }
 

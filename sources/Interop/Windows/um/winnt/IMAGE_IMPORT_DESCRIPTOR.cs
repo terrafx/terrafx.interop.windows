@@ -13,21 +13,29 @@ namespace TerraFX.Interop
         [NativeTypeName("_IMAGE_IMPORT_DESCRIPTOR::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:18247:5)")]
         public _Anonymous_e__Union Anonymous;
 
-        public ref uint Characteristics
+        public unsafe ref uint Characteristics
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Characteristics, 1));
+#else
+                return ref ((_Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous))->Characteristics;
+#endif
             }
         }
 
-        public ref uint OriginalFirstThunk
+        public unsafe ref uint OriginalFirstThunk
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.OriginalFirstThunk, 1));
+#else
+                return ref ((_Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous))->OriginalFirstThunk;
+#endif
             }
         }
 

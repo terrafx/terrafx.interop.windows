@@ -42,7 +42,7 @@ namespace TerraFX.Interop
         {
             public USN_RECORD_EXTENT e0;
 
-            public ref USN_RECORD_EXTENT this[int index]
+            public unsafe ref USN_RECORD_EXTENT this[int index]
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
                 get
@@ -52,7 +52,14 @@ namespace TerraFX.Interop
             }
 
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public Span<USN_RECORD_EXTENT> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
+            public unsafe Span<USN_RECORD_EXTENT> AsSpan(int length)
+            {
+#if !NETSTANDARD2_0
+                return MemoryMarshal.CreateSpan(ref e0, length);
+#else
+                return new Span<USN_RECORD_EXTENT>((USN_RECORD_EXTENT*)Unsafe.AsPointer(ref this), length);
+#endif
+            }
         }
     }
 }

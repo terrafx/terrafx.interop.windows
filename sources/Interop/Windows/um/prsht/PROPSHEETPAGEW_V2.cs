@@ -23,51 +23,46 @@ namespace TerraFX.Interop
         [NativeTypeName("_PROPSHEETPAGEW_V2::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/prsht.h:250:5)")]
         public _Anonymous1_e__Union Anonymous1;
 
-        public ref ushort* pszTemplate
+        public unsafe ref ushort* pszTemplate
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
-                fixed (_Anonymous1_e__Union* pField = &Anonymous1)
-                {
-                    return ref pField->pszTemplate;
-                }
+                return ref ((_Anonymous1_e__Union*)Unsafe.AsPointer(ref Anonymous1))->pszTemplate;
             }
         }
 
-        public ref DLGTEMPLATE* pResource
+        public unsafe ref DLGTEMPLATE* pResource
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
-                fixed (_Anonymous1_e__Union* pField = &Anonymous1)
-                {
-                    return ref pField->pResource;
-                }
+                return ref ((_Anonymous1_e__Union*)Unsafe.AsPointer(ref Anonymous1))->pResource;
             }
         }
 
         [NativeTypeName("_PROPSHEETPAGEW_V2::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/prsht.h:250:5)")]
         public _Anonymous2_e__Union Anonymous2;
 
-        public ref IntPtr hIcon
+        public unsafe ref IntPtr hIcon
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous2.hIcon, 1));
+#else
+                return ref ((_Anonymous2_e__Union*)Unsafe.AsPointer(ref Anonymous2))->hIcon;
+#endif
             }
         }
 
-        public ref ushort* pszIcon
+        public unsafe ref ushort* pszIcon
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
-                fixed (_Anonymous2_e__Union* pField = &Anonymous2)
-                {
-                    return ref pField->pszIcon;
-                }
+                return ref ((_Anonymous2_e__Union*)Unsafe.AsPointer(ref Anonymous2))->pszIcon;
             }
         }
 
@@ -75,13 +70,51 @@ namespace TerraFX.Interop
         public ushort* pszTitle;
 
         [NativeTypeName("DLGPROC")]
+#if !NETSTANDARD2_0
         public delegate* unmanaged<IntPtr, uint, nuint, nint, nint> pfnDlgProc;
+#else
+        public void* _pfnDlgProc;
+
+        public delegate* unmanaged[Stdcall]<IntPtr, uint, nuint, nint, nint> pfnDlgProc
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                return (delegate* unmanaged[Stdcall]<IntPtr, uint, nuint, nint, nint>)_pfnDlgProc;
+            }
+
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            set
+            {
+                _pfnDlgProc = value;
+            }
+        }
+#endif
 
         [NativeTypeName("LPARAM")]
         public nint lParam;
 
         [NativeTypeName("LPFNPSPCALLBACKW")]
+#if !NETSTANDARD2_0
         public delegate* unmanaged<IntPtr, uint, PROPSHEETPAGEW*, uint> pfnCallback;
+#else
+        public void* _pfnCallback;
+
+        public delegate* unmanaged[Stdcall]<IntPtr, uint, PROPSHEETPAGEW*, uint> pfnCallback
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                return (delegate* unmanaged[Stdcall]<IntPtr, uint, PROPSHEETPAGEW*, uint>)_pfnCallback;
+            }
+
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            set
+            {
+                _pfnCallback = value;
+            }
+        }
+#endif
 
         [NativeTypeName("UINT *")]
         public uint* pcRefParent;

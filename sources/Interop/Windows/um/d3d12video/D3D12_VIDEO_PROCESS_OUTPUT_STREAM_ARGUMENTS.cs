@@ -22,7 +22,7 @@ namespace TerraFX.Interop
             public D3D12_VIDEO_PROCESS_OUTPUT_STREAM e0;
             public D3D12_VIDEO_PROCESS_OUTPUT_STREAM e1;
 
-            public ref D3D12_VIDEO_PROCESS_OUTPUT_STREAM this[int index]
+            public unsafe ref D3D12_VIDEO_PROCESS_OUTPUT_STREAM this[int index]
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
                 get
@@ -32,7 +32,14 @@ namespace TerraFX.Interop
             }
 
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public Span<D3D12_VIDEO_PROCESS_OUTPUT_STREAM> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 2);
+            public unsafe Span<D3D12_VIDEO_PROCESS_OUTPUT_STREAM> AsSpan()
+            {
+#if !NETSTANDARD2_0
+                return MemoryMarshal.CreateSpan(ref e0, 2);
+#else
+                return new Span<D3D12_VIDEO_PROCESS_OUTPUT_STREAM>((D3D12_VIDEO_PROCESS_OUTPUT_STREAM*)Unsafe.AsPointer(ref this), 2);
+#endif
+            }
         }
     }
 }

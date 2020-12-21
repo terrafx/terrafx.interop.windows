@@ -13,16 +13,20 @@ namespace TerraFX.Interop
         [NativeTypeName("_PROCESS_MITIGATION_IMAGE_LOAD_POLICY::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:11803:5)")]
         public _Anonymous_e__Union Anonymous;
 
-        public ref uint Flags
+        public unsafe ref uint Flags
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Flags, 1));
+#else
+                return ref ((_Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous))->Flags;
+#endif
             }
         }
 
-        public uint NoRemoteImages
+        public unsafe uint NoRemoteImages
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
@@ -37,7 +41,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public uint NoLowMandatoryLabelImages
+        public unsafe uint NoLowMandatoryLabelImages
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
@@ -52,7 +56,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public uint PreferSystem32Images
+        public unsafe uint PreferSystem32Images
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
@@ -67,7 +71,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public uint AuditNoRemoteImages
+        public unsafe uint AuditNoRemoteImages
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
@@ -82,7 +86,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public uint AuditNoLowMandatoryLabelImages
+        public unsafe uint AuditNoLowMandatoryLabelImages
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
@@ -97,7 +101,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public uint ReservedFlags
+        public unsafe uint ReservedFlags
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get

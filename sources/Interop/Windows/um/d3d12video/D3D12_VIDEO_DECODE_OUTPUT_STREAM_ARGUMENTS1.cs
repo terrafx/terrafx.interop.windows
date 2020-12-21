@@ -29,7 +29,7 @@ namespace TerraFX.Interop
             public D3D12_VIDEO_DECODE_OUTPUT_HISTOGRAM e2;
             public D3D12_VIDEO_DECODE_OUTPUT_HISTOGRAM e3;
 
-            public ref D3D12_VIDEO_DECODE_OUTPUT_HISTOGRAM this[int index]
+            public unsafe ref D3D12_VIDEO_DECODE_OUTPUT_HISTOGRAM this[int index]
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
                 get
@@ -39,7 +39,14 @@ namespace TerraFX.Interop
             }
 
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public Span<D3D12_VIDEO_DECODE_OUTPUT_HISTOGRAM> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 4);
+            public unsafe Span<D3D12_VIDEO_DECODE_OUTPUT_HISTOGRAM> AsSpan()
+            {
+#if !NETSTANDARD2_0
+                return MemoryMarshal.CreateSpan(ref e0, 4);
+#else
+                return new Span<D3D12_VIDEO_DECODE_OUTPUT_HISTOGRAM>((D3D12_VIDEO_DECODE_OUTPUT_HISTOGRAM*)Unsafe.AsPointer(ref this), 4);
+#endif
+            }
         }
     }
 }

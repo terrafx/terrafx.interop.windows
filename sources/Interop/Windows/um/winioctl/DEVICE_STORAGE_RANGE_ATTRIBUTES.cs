@@ -16,16 +16,20 @@ namespace TerraFX.Interop
         [NativeTypeName("_DEVICE_STORAGE_RANGE_ATTRIBUTES::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winioctl.h:4326:5)")]
         public _Anonymous_e__Union Anonymous;
 
-        public ref uint AllFlags
+        public unsafe ref uint AllFlags
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.AllFlags, 1));
+#else
+                return ref ((_Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous))->AllFlags;
+#endif
             }
         }
 
-        public uint IsRangeBad
+        public unsafe uint IsRangeBad
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get

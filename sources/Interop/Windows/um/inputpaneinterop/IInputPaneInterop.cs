@@ -19,49 +19,49 @@ namespace TerraFX.Interop
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return ((delegate* unmanaged<IInputPaneInterop*, Guid*, void**, int>)(lpVtbl[0]))((IInputPaneInterop*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* unmanaged[Stdcall]<IInputPaneInterop*, Guid*, void**, int>)(lpVtbl[0]))((IInputPaneInterop*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return ((delegate* unmanaged<IInputPaneInterop*, uint>)(lpVtbl[1]))((IInputPaneInterop*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged[Stdcall]<IInputPaneInterop*, uint>)(lpVtbl[1]))((IInputPaneInterop*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return ((delegate* unmanaged<IInputPaneInterop*, uint>)(lpVtbl[2]))((IInputPaneInterop*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged[Stdcall]<IInputPaneInterop*, uint>)(lpVtbl[2]))((IInputPaneInterop*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetIids([NativeTypeName("ULONG *")] uint* iidCount, [NativeTypeName("IID **")] Guid** iids)
         {
-            return ((delegate* unmanaged<IInputPaneInterop*, uint*, Guid**, int>)(lpVtbl[3]))((IInputPaneInterop*)Unsafe.AsPointer(ref this), iidCount, iids);
+            return ((delegate* unmanaged[Stdcall]<IInputPaneInterop*, uint*, Guid**, int>)(lpVtbl[3]))((IInputPaneInterop*)Unsafe.AsPointer(ref this), iidCount, iids);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetRuntimeClassName([NativeTypeName("HSTRING *")] IntPtr* className)
         {
-            return ((delegate* unmanaged<IInputPaneInterop*, IntPtr*, int>)(lpVtbl[4]))((IInputPaneInterop*)Unsafe.AsPointer(ref this), className);
+            return ((delegate* unmanaged[Stdcall]<IInputPaneInterop*, IntPtr*, int>)(lpVtbl[4]))((IInputPaneInterop*)Unsafe.AsPointer(ref this), className);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetTrustLevel([NativeTypeName("TrustLevel *")] TrustLevel* trustLevel)
         {
-            return ((delegate* unmanaged<IInputPaneInterop*, TrustLevel*, int>)(lpVtbl[5]))((IInputPaneInterop*)Unsafe.AsPointer(ref this), trustLevel);
+            return ((delegate* unmanaged[Stdcall]<IInputPaneInterop*, TrustLevel*, int>)(lpVtbl[5]))((IInputPaneInterop*)Unsafe.AsPointer(ref this), trustLevel);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetForWindow([NativeTypeName("HWND")] IntPtr appWindow, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** inputPane)
         {
-            return ((delegate* unmanaged<IInputPaneInterop*, IntPtr, Guid*, void**, int>)(lpVtbl[6]))((IInputPaneInterop*)Unsafe.AsPointer(ref this), appWindow, riid, inputPane);
+            return ((delegate* unmanaged[Stdcall]<IInputPaneInterop*, IntPtr, Guid*, void**, int>)(lpVtbl[6]))((IInputPaneInterop*)Unsafe.AsPointer(ref this), appWindow, riid, inputPane);
         }
     }
 }

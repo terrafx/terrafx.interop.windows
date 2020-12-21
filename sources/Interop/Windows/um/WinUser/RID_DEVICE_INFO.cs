@@ -19,30 +19,42 @@ namespace TerraFX.Interop
         [NativeTypeName("tagRID_DEVICE_INFO::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/WinUser.h:15159:5)")]
         public _Anonymous_e__Union Anonymous;
 
-        public ref RID_DEVICE_INFO_MOUSE mouse
+        public unsafe ref RID_DEVICE_INFO_MOUSE mouse
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.mouse, 1));
+#else
+                return ref ((_Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous))->mouse;
+#endif
             }
         }
 
-        public ref RID_DEVICE_INFO_KEYBOARD keyboard
+        public unsafe ref RID_DEVICE_INFO_KEYBOARD keyboard
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.keyboard, 1));
+#else
+                return ref ((_Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous))->keyboard;
+#endif
             }
         }
 
-        public ref RID_DEVICE_INFO_HID hid
+        public unsafe ref RID_DEVICE_INFO_HID hid
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.hid, 1));
+#else
+                return ref ((_Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous))->hid;
+#endif
             }
         }
 

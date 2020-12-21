@@ -14,43 +14,43 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public void OnVoiceProcessingPassStart([NativeTypeName("UINT32")] uint BytesRequired)
         {
-            ((delegate* unmanaged<IXAudio2VoiceCallback*, uint, void>)(lpVtbl[0]))((IXAudio2VoiceCallback*)Unsafe.AsPointer(ref this), BytesRequired);
+            ((delegate* unmanaged[Stdcall]<IXAudio2VoiceCallback*, uint, void>)(lpVtbl[0]))((IXAudio2VoiceCallback*)Unsafe.AsPointer(ref this), BytesRequired);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public void OnVoiceProcessingPassEnd()
         {
-            ((delegate* unmanaged<IXAudio2VoiceCallback*, void>)(lpVtbl[1]))((IXAudio2VoiceCallback*)Unsafe.AsPointer(ref this));
+            ((delegate* unmanaged[Stdcall]<IXAudio2VoiceCallback*, void>)(lpVtbl[1]))((IXAudio2VoiceCallback*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public void OnStreamEnd()
         {
-            ((delegate* unmanaged<IXAudio2VoiceCallback*, void>)(lpVtbl[2]))((IXAudio2VoiceCallback*)Unsafe.AsPointer(ref this));
+            ((delegate* unmanaged[Stdcall]<IXAudio2VoiceCallback*, void>)(lpVtbl[2]))((IXAudio2VoiceCallback*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public void OnBufferStart([NativeTypeName("void *")] void* pBufferContext)
         {
-            ((delegate* unmanaged<IXAudio2VoiceCallback*, void*, void>)(lpVtbl[3]))((IXAudio2VoiceCallback*)Unsafe.AsPointer(ref this), pBufferContext);
+            ((delegate* unmanaged[Stdcall]<IXAudio2VoiceCallback*, void*, void>)(lpVtbl[3]))((IXAudio2VoiceCallback*)Unsafe.AsPointer(ref this), pBufferContext);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public void OnBufferEnd([NativeTypeName("void *")] void* pBufferContext)
         {
-            ((delegate* unmanaged<IXAudio2VoiceCallback*, void*, void>)(lpVtbl[4]))((IXAudio2VoiceCallback*)Unsafe.AsPointer(ref this), pBufferContext);
+            ((delegate* unmanaged[Stdcall]<IXAudio2VoiceCallback*, void*, void>)(lpVtbl[4]))((IXAudio2VoiceCallback*)Unsafe.AsPointer(ref this), pBufferContext);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public void OnLoopEnd([NativeTypeName("void *")] void* pBufferContext)
         {
-            ((delegate* unmanaged<IXAudio2VoiceCallback*, void*, void>)(lpVtbl[5]))((IXAudio2VoiceCallback*)Unsafe.AsPointer(ref this), pBufferContext);
+            ((delegate* unmanaged[Stdcall]<IXAudio2VoiceCallback*, void*, void>)(lpVtbl[5]))((IXAudio2VoiceCallback*)Unsafe.AsPointer(ref this), pBufferContext);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public void OnVoiceError([NativeTypeName("void *")] void* pBufferContext, [NativeTypeName("HRESULT")] int Error)
         {
-            ((delegate* unmanaged<IXAudio2VoiceCallback*, void*, int, void>)(lpVtbl[6]))((IXAudio2VoiceCallback*)Unsafe.AsPointer(ref this), pBufferContext, Error);
+            ((delegate* unmanaged[Stdcall]<IXAudio2VoiceCallback*, void*, int, void>)(lpVtbl[6]))((IXAudio2VoiceCallback*)Unsafe.AsPointer(ref this), pBufferContext, Error);
         }
     }
 }

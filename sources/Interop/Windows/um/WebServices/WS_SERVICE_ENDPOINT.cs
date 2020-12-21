@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 
 namespace TerraFX.Interop
 {
@@ -22,7 +23,26 @@ namespace TerraFX.Interop
         public WS_SERVICE_CONTRACT* contract;
 
         [NativeTypeName("WS_SERVICE_SECURITY_CALLBACK")]
+#if !NETSTANDARD2_0
         public delegate* unmanaged<IntPtr, int*, IntPtr, int> authorizationCallback;
+#else
+        public void* _authorizationCallback;
+
+        public delegate* unmanaged[Stdcall]<IntPtr, int*, IntPtr, int> authorizationCallback
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                return (delegate* unmanaged[Stdcall]<IntPtr, int*, IntPtr, int>)_authorizationCallback;
+            }
+
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            set
+            {
+                _authorizationCallback = value;
+            }
+        }
+#endif
 
         [NativeTypeName("const WS_SERVICE_ENDPOINT_PROPERTY *")]
         public WS_SERVICE_ENDPOINT_PROPERTY* properties;

@@ -19,28 +19,28 @@ namespace TerraFX.Interop
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return ((delegate* unmanaged<ILearningModelDeviceFactoryNative*, Guid*, void**, int>)(lpVtbl[0]))((ILearningModelDeviceFactoryNative*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* unmanaged[Stdcall]<ILearningModelDeviceFactoryNative*, Guid*, void**, int>)(lpVtbl[0]))((ILearningModelDeviceFactoryNative*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return ((delegate* unmanaged<ILearningModelDeviceFactoryNative*, uint>)(lpVtbl[1]))((ILearningModelDeviceFactoryNative*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged[Stdcall]<ILearningModelDeviceFactoryNative*, uint>)(lpVtbl[1]))((ILearningModelDeviceFactoryNative*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return ((delegate* unmanaged<ILearningModelDeviceFactoryNative*, uint>)(lpVtbl[2]))((ILearningModelDeviceFactoryNative*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged[Stdcall]<ILearningModelDeviceFactoryNative*, uint>)(lpVtbl[2]))((ILearningModelDeviceFactoryNative*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int CreateFromD3D12CommandQueue([NativeTypeName("ID3D12CommandQueue *")] ID3D12CommandQueue* value, [NativeTypeName("IUnknown **")] IUnknown** result)
         {
-            return ((delegate* unmanaged<ILearningModelDeviceFactoryNative*, ID3D12CommandQueue*, IUnknown**, int>)(lpVtbl[3]))((ILearningModelDeviceFactoryNative*)Unsafe.AsPointer(ref this), value, result);
+            return ((delegate* unmanaged[Stdcall]<ILearningModelDeviceFactoryNative*, ID3D12CommandQueue*, IUnknown**, int>)(lpVtbl[3]))((ILearningModelDeviceFactoryNative*)Unsafe.AsPointer(ref this), value, result);
         }
     }
 }

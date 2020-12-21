@@ -10,7 +10,7 @@ namespace TerraFX.Interop
 {
     public static unsafe partial class Windows
     {
-        [DllImport("d2d1", ExactSpelling = true)]
+        [DllImport("d2d1", CallingConvention = CallingConvention.StdCall, ExactSpelling = true)]
         public static extern void D2D1GetGradientMeshInteriorPointsFromCoonsPatch([NativeTypeName("const D2D1_POINT_2F *")] D2D_POINT_2F* pPoint0, [NativeTypeName("const D2D1_POINT_2F *")] D2D_POINT_2F* pPoint1, [NativeTypeName("const D2D1_POINT_2F *")] D2D_POINT_2F* pPoint2, [NativeTypeName("const D2D1_POINT_2F *")] D2D_POINT_2F* pPoint3, [NativeTypeName("const D2D1_POINT_2F *")] D2D_POINT_2F* pPoint4, [NativeTypeName("const D2D1_POINT_2F *")] D2D_POINT_2F* pPoint5, [NativeTypeName("const D2D1_POINT_2F *")] D2D_POINT_2F* pPoint6, [NativeTypeName("const D2D1_POINT_2F *")] D2D_POINT_2F* pPoint7, [NativeTypeName("const D2D1_POINT_2F *")] D2D_POINT_2F* pPoint8, [NativeTypeName("const D2D1_POINT_2F *")] D2D_POINT_2F* pPoint9, [NativeTypeName("const D2D1_POINT_2F *")] D2D_POINT_2F* pPoint10, [NativeTypeName("const D2D1_POINT_2F *")] D2D_POINT_2F* pPoint11, [NativeTypeName("D2D1_POINT_2F *")] D2D_POINT_2F* pTensorPoint11, [NativeTypeName("D2D1_POINT_2F *")] D2D_POINT_2F* pTensorPoint12, [NativeTypeName("D2D1_POINT_2F *")] D2D_POINT_2F* pTensorPoint21, [NativeTypeName("D2D1_POINT_2F *")] D2D_POINT_2F* pTensorPoint22);
 
         public static readonly Guid IID_ID2D1InkStyle = new Guid(0xBAE8B344, 0x23FC, 0x4071, 0x8C, 0xB5, 0xD0, 0x5D, 0x6F, 0x07, 0x38, 0x48);

@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 
 namespace TerraFX.Interop
 {
@@ -16,7 +17,26 @@ namespace TerraFX.Interop
         public uint style;
 
         [NativeTypeName("WNDPROC")]
+#if !NETSTANDARD2_0
         public delegate* unmanaged<IntPtr, uint, nuint, nint, nint> lpfnWndProc;
+#else
+        public void* _lpfnWndProc;
+
+        public delegate* unmanaged[Stdcall]<IntPtr, uint, nuint, nint, nint> lpfnWndProc
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                return (delegate* unmanaged[Stdcall]<IntPtr, uint, nuint, nint, nint>)_lpfnWndProc;
+            }
+
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            set
+            {
+                _lpfnWndProc = value;
+            }
+        }
+#endif
 
         public int cbClsExtra;
 

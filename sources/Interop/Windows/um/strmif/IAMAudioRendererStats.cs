@@ -19,28 +19,28 @@ namespace TerraFX.Interop
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return ((delegate* unmanaged<IAMAudioRendererStats*, Guid*, void**, int>)(lpVtbl[0]))((IAMAudioRendererStats*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* unmanaged[Stdcall]<IAMAudioRendererStats*, Guid*, void**, int>)(lpVtbl[0]))((IAMAudioRendererStats*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return ((delegate* unmanaged<IAMAudioRendererStats*, uint>)(lpVtbl[1]))((IAMAudioRendererStats*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged[Stdcall]<IAMAudioRendererStats*, uint>)(lpVtbl[1]))((IAMAudioRendererStats*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return ((delegate* unmanaged<IAMAudioRendererStats*, uint>)(lpVtbl[2]))((IAMAudioRendererStats*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged[Stdcall]<IAMAudioRendererStats*, uint>)(lpVtbl[2]))((IAMAudioRendererStats*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetStatParam([NativeTypeName("DWORD")] uint dwParam, [NativeTypeName("DWORD *")] uint* pdwParam1, [NativeTypeName("DWORD *")] uint* pdwParam2)
         {
-            return ((delegate* unmanaged<IAMAudioRendererStats*, uint, uint*, uint*, int>)(lpVtbl[3]))((IAMAudioRendererStats*)Unsafe.AsPointer(ref this), dwParam, pdwParam1, pdwParam2);
+            return ((delegate* unmanaged[Stdcall]<IAMAudioRendererStats*, uint, uint*, uint*, int>)(lpVtbl[3]))((IAMAudioRendererStats*)Unsafe.AsPointer(ref this), dwParam, pdwParam1, pdwParam2);
         }
     }
 }

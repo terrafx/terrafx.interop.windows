@@ -70,7 +70,7 @@ namespace TerraFX.Interop
             public M128A e6;
             public M128A e7;
 
-            public ref M128A this[int index]
+            public unsafe ref M128A this[int index]
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
                 get
@@ -80,7 +80,14 @@ namespace TerraFX.Interop
             }
 
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public Span<M128A> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 8);
+            public unsafe Span<M128A> AsSpan()
+            {
+#if !NETSTANDARD2_0
+                return MemoryMarshal.CreateSpan(ref e0, 8);
+#else
+                return new Span<M128A>((M128A*)Unsafe.AsPointer(ref this), 8);
+#endif
+            }
         }
 
         public partial struct _XmmRegisters_e__FixedBuffer
@@ -94,7 +101,7 @@ namespace TerraFX.Interop
             public M128A e6;
             public M128A e7;
 
-            public ref M128A this[int index]
+            public unsafe ref M128A this[int index]
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
                 get
@@ -104,7 +111,14 @@ namespace TerraFX.Interop
             }
 
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public Span<M128A> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 8);
+            public unsafe Span<M128A> AsSpan()
+            {
+#if !NETSTANDARD2_0
+                return MemoryMarshal.CreateSpan(ref e0, 8);
+#else
+                return new Span<M128A>((M128A*)Unsafe.AsPointer(ref this), 8);
+#endif
+            }
         }
     }
 }

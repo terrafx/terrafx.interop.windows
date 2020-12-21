@@ -19,42 +19,42 @@ namespace TerraFX.Interop
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return ((delegate* unmanaged<IDesktopWindowContentBridgeInterop*, Guid*, void**, int>)(lpVtbl[0]))((IDesktopWindowContentBridgeInterop*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* unmanaged[Stdcall]<IDesktopWindowContentBridgeInterop*, Guid*, void**, int>)(lpVtbl[0]))((IDesktopWindowContentBridgeInterop*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return ((delegate* unmanaged<IDesktopWindowContentBridgeInterop*, uint>)(lpVtbl[1]))((IDesktopWindowContentBridgeInterop*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged[Stdcall]<IDesktopWindowContentBridgeInterop*, uint>)(lpVtbl[1]))((IDesktopWindowContentBridgeInterop*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return ((delegate* unmanaged<IDesktopWindowContentBridgeInterop*, uint>)(lpVtbl[2]))((IDesktopWindowContentBridgeInterop*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged[Stdcall]<IDesktopWindowContentBridgeInterop*, uint>)(lpVtbl[2]))((IDesktopWindowContentBridgeInterop*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int Initialize([NativeTypeName("Windows::UI::Composition::ICompositor *")] void* compositor, [NativeTypeName("HWND")] IntPtr parentHwnd)
         {
-            return ((delegate* unmanaged<IDesktopWindowContentBridgeInterop*, void*, IntPtr, int>)(lpVtbl[3]))((IDesktopWindowContentBridgeInterop*)Unsafe.AsPointer(ref this), compositor, parentHwnd);
+            return ((delegate* unmanaged[Stdcall]<IDesktopWindowContentBridgeInterop*, void*, IntPtr, int>)(lpVtbl[3]))((IDesktopWindowContentBridgeInterop*)Unsafe.AsPointer(ref this), compositor, parentHwnd);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int get_Hwnd([NativeTypeName("HWND *")] IntPtr* value)
         {
-            return ((delegate* unmanaged<IDesktopWindowContentBridgeInterop*, IntPtr*, int>)(lpVtbl[4]))((IDesktopWindowContentBridgeInterop*)Unsafe.AsPointer(ref this), value);
+            return ((delegate* unmanaged[Stdcall]<IDesktopWindowContentBridgeInterop*, IntPtr*, int>)(lpVtbl[4]))((IDesktopWindowContentBridgeInterop*)Unsafe.AsPointer(ref this), value);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int get_AppliedScaleFactor([NativeTypeName("float *")] float* value)
         {
-            return ((delegate* unmanaged<IDesktopWindowContentBridgeInterop*, float*, int>)(lpVtbl[5]))((IDesktopWindowContentBridgeInterop*)Unsafe.AsPointer(ref this), value);
+            return ((delegate* unmanaged[Stdcall]<IDesktopWindowContentBridgeInterop*, float*, int>)(lpVtbl[5]))((IDesktopWindowContentBridgeInterop*)Unsafe.AsPointer(ref this), value);
         }
     }
 }

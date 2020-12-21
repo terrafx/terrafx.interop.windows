@@ -32,63 +32,48 @@ namespace TerraFX.Interop
         [NativeTypeName("_WINTRUST_DATA::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/WinTrust.h:116:5)")]
         public _Anonymous_e__Union Anonymous;
 
-        public ref WINTRUST_FILE_INFO* pFile
+        public unsafe ref WINTRUST_FILE_INFO* pFile
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
-                fixed (_Anonymous_e__Union* pField = &Anonymous)
-                {
-                    return ref pField->pFile;
-                }
+                return ref ((_Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous))->pFile;
             }
         }
 
-        public ref WINTRUST_CATALOG_INFO* pCatalog
+        public unsafe ref WINTRUST_CATALOG_INFO* pCatalog
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
-                fixed (_Anonymous_e__Union* pField = &Anonymous)
-                {
-                    return ref pField->pCatalog;
-                }
+                return ref ((_Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous))->pCatalog;
             }
         }
 
-        public ref WINTRUST_BLOB_INFO* pBlob
+        public unsafe ref WINTRUST_BLOB_INFO* pBlob
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
-                fixed (_Anonymous_e__Union* pField = &Anonymous)
-                {
-                    return ref pField->pBlob;
-                }
+                return ref ((_Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous))->pBlob;
             }
         }
 
-        public ref WINTRUST_SGNR_INFO* pSgnr
+        public unsafe ref WINTRUST_SGNR_INFO* pSgnr
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
-                fixed (_Anonymous_e__Union* pField = &Anonymous)
-                {
-                    return ref pField->pSgnr;
-                }
+                return ref ((_Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous))->pSgnr;
             }
         }
 
-        public ref WINTRUST_CERT_INFO* pCert
+        public unsafe ref WINTRUST_CERT_INFO* pCert
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
-                fixed (_Anonymous_e__Union* pField = &Anonymous)
-                {
-                    return ref pField->pCert;
-                }
+                return ref ((_Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous))->pCert;
             }
         }
 

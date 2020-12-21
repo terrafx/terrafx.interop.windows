@@ -18,21 +18,29 @@ namespace TerraFX.Interop
         [NativeTypeName("D3D12_TEXTURE_COPY_LOCATION::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/d3d12.h:2788:5)")]
         public _Anonymous_e__Union Anonymous;
 
-        public ref D3D12_PLACED_SUBRESOURCE_FOOTPRINT PlacedFootprint
+        public unsafe ref D3D12_PLACED_SUBRESOURCE_FOOTPRINT PlacedFootprint
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.PlacedFootprint, 1));
+#else
+                return ref ((_Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous))->PlacedFootprint;
+#endif
             }
         }
 
-        public ref uint SubresourceIndex
+        public unsafe ref uint SubresourceIndex
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.SubresourceIndex, 1));
+#else
+                return ref ((_Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous))->SubresourceIndex;
+#endif
             }
         }
 

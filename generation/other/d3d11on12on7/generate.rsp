@@ -7,6 +7,6 @@ other-d3d11on12on7.h
 --test-output
 ../../../tests/Interop/Windows/other/d3d11on12on7
 --traverse
-d3d11on12on7.h
+./d3d11on12on7.h
 --with-librarypath
 *=d3d11on12

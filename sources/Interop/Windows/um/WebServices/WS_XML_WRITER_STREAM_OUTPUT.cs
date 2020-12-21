@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 
 namespace TerraFX.Interop
 {
@@ -12,7 +13,26 @@ namespace TerraFX.Interop
         public WS_XML_WRITER_OUTPUT output;
 
         [NativeTypeName("WS_WRITE_CALLBACK")]
+#if !NETSTANDARD2_0
         public delegate* unmanaged<void*, WS_BYTES*, uint, WS_ASYNC_CONTEXT*, IntPtr, int> writeCallback;
+#else
+        public void* _writeCallback;
+
+        public delegate* unmanaged[Stdcall]<void*, WS_BYTES*, uint, WS_ASYNC_CONTEXT*, IntPtr, int> writeCallback
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                return (delegate* unmanaged[Stdcall]<void*, WS_BYTES*, uint, WS_ASYNC_CONTEXT*, IntPtr, int>)_writeCallback;
+            }
+
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            set
+            {
+                _writeCallback = value;
+            }
+        }
+#endif
 
         [NativeTypeName("void *")]
         public void* writeCallbackState;

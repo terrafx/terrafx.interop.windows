@@ -14,798 +14,893 @@ namespace TerraFX.Interop
         [NativeTypeName("tagPROPVARIANT::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/PropIdlBase.h:295:3)")]
         public _Anonymous_e__Union Anonymous;
 
-        public ref ushort vt
+        public unsafe ref ushort vt
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.vt, 1));
+#else
+                return ref ((_Anonymous_e__Union._Anonymous_e__Struct*)Unsafe.AsPointer(ref Anonymous.Anonymous))->vt;
+#endif
             }
         }
 
-        public ref ushort wReserved1
+        public unsafe ref ushort wReserved1
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.wReserved1, 1));
+#else
+                return ref ((_Anonymous_e__Union._Anonymous_e__Struct*)Unsafe.AsPointer(ref Anonymous.Anonymous))->wReserved1;
+#endif
             }
         }
 
-        public ref ushort wReserved2
+        public unsafe ref ushort wReserved2
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.wReserved2, 1));
+#else
+                return ref ((_Anonymous_e__Union._Anonymous_e__Struct*)Unsafe.AsPointer(ref Anonymous.Anonymous))->wReserved2;
+#endif
             }
         }
 
-        public ref ushort wReserved3
+        public unsafe ref ushort wReserved3
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.wReserved3, 1));
+#else
+                return ref ((_Anonymous_e__Union._Anonymous_e__Struct*)Unsafe.AsPointer(ref Anonymous.Anonymous))->wReserved3;
+#endif
             }
         }
 
-        public ref sbyte cVal
+        public unsafe ref sbyte cVal
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.Anonymous.cVal, 1));
+#else
+                return ref ((_Anonymous_e__Union._Anonymous_e__Struct._Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous.Anonymous.Anonymous))->cVal;
+#endif
             }
         }
 
-        public ref byte bVal
+        public unsafe ref byte bVal
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.Anonymous.bVal, 1));
+#else
+                return ref ((_Anonymous_e__Union._Anonymous_e__Struct._Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous.Anonymous.Anonymous))->bVal;
+#endif
             }
         }
 
-        public ref short iVal
+        public unsafe ref short iVal
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.Anonymous.iVal, 1));
+#else
+                return ref ((_Anonymous_e__Union._Anonymous_e__Struct._Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous.Anonymous.Anonymous))->iVal;
+#endif
             }
         }
 
-        public ref ushort uiVal
+        public unsafe ref ushort uiVal
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.Anonymous.uiVal, 1));
+#else
+                return ref ((_Anonymous_e__Union._Anonymous_e__Struct._Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous.Anonymous.Anonymous))->uiVal;
+#endif
             }
         }
 
-        public ref int lVal
+        public unsafe ref int lVal
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.Anonymous.lVal, 1));
+#else
+                return ref ((_Anonymous_e__Union._Anonymous_e__Struct._Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous.Anonymous.Anonymous))->lVal;
+#endif
             }
         }
 
-        public ref uint ulVal
+        public unsafe ref uint ulVal
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.Anonymous.ulVal, 1));
+#else
+                return ref ((_Anonymous_e__Union._Anonymous_e__Struct._Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous.Anonymous.Anonymous))->ulVal;
+#endif
             }
         }
 
-        public ref int intVal
+        public unsafe ref int intVal
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.Anonymous.intVal, 1));
+#else
+                return ref ((_Anonymous_e__Union._Anonymous_e__Struct._Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous.Anonymous.Anonymous))->intVal;
+#endif
             }
         }
 
-        public ref uint uintVal
+        public unsafe ref uint uintVal
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.Anonymous.uintVal, 1));
+#else
+                return ref ((_Anonymous_e__Union._Anonymous_e__Struct._Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous.Anonymous.Anonymous))->uintVal;
+#endif
             }
         }
 
-        public ref LARGE_INTEGER hVal
+        public unsafe ref LARGE_INTEGER hVal
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.Anonymous.hVal, 1));
+#else
+                return ref ((_Anonymous_e__Union._Anonymous_e__Struct._Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous.Anonymous.Anonymous))->hVal;
+#endif
             }
         }
 
-        public ref ULARGE_INTEGER uhVal
+        public unsafe ref ULARGE_INTEGER uhVal
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.Anonymous.uhVal, 1));
+#else
+                return ref ((_Anonymous_e__Union._Anonymous_e__Struct._Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous.Anonymous.Anonymous))->uhVal;
+#endif
             }
         }
 
-        public ref float fltVal
+        public unsafe ref float fltVal
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.Anonymous.fltVal, 1));
+#else
+                return ref ((_Anonymous_e__Union._Anonymous_e__Struct._Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous.Anonymous.Anonymous))->fltVal;
+#endif
             }
         }
 
-        public ref double dblVal
+        public unsafe ref double dblVal
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.Anonymous.dblVal, 1));
+#else
+                return ref ((_Anonymous_e__Union._Anonymous_e__Struct._Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous.Anonymous.Anonymous))->dblVal;
+#endif
             }
         }
 
-        public ref short boolVal
+        public unsafe ref short boolVal
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.Anonymous.boolVal, 1));
+#else
+                return ref ((_Anonymous_e__Union._Anonymous_e__Struct._Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous.Anonymous.Anonymous))->boolVal;
+#endif
             }
         }
 
-        public ref short __OBSOLETE__VARIANT_BOOL
+        public unsafe ref short __OBSOLETE__VARIANT_BOOL
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.Anonymous.__OBSOLETE__VARIANT_BOOL, 1));
+#else
+                return ref ((_Anonymous_e__Union._Anonymous_e__Struct._Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous.Anonymous.Anonymous))->__OBSOLETE__VARIANT_BOOL;
+#endif
             }
         }
 
-        public ref int scode
+        public unsafe ref int scode
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.Anonymous.scode, 1));
+#else
+                return ref ((_Anonymous_e__Union._Anonymous_e__Struct._Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous.Anonymous.Anonymous))->scode;
+#endif
             }
         }
 
-        public ref CY cyVal
+        public unsafe ref CY cyVal
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.Anonymous.cyVal, 1));
+#else
+                return ref ((_Anonymous_e__Union._Anonymous_e__Struct._Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous.Anonymous.Anonymous))->cyVal;
+#endif
             }
         }
 
-        public ref double date
+        public unsafe ref double date
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.Anonymous.date, 1));
+#else
+                return ref ((_Anonymous_e__Union._Anonymous_e__Struct._Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous.Anonymous.Anonymous))->date;
+#endif
             }
         }
 
-        public ref FILETIME filetime
+        public unsafe ref FILETIME filetime
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.Anonymous.filetime, 1));
+#else
+                return ref ((_Anonymous_e__Union._Anonymous_e__Struct._Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous.Anonymous.Anonymous))->filetime;
+#endif
             }
         }
 
-        public ref Guid* puuid
+        public unsafe ref Guid* puuid
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
-                fixed (_Anonymous_e__Union._Anonymous_e__Struct._Anonymous_e__Union* pField = &Anonymous.Anonymous.Anonymous)
-                {
-                    return ref pField->puuid;
-                }
+                return ref ((_Anonymous_e__Union._Anonymous_e__Struct._Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous.Anonymous.Anonymous))->puuid;
             }
         }
 
-        public ref CLIPDATA* pclipdata
+        public unsafe ref CLIPDATA* pclipdata
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
-                fixed (_Anonymous_e__Union._Anonymous_e__Struct._Anonymous_e__Union* pField = &Anonymous.Anonymous.Anonymous)
-                {
-                    return ref pField->pclipdata;
-                }
+                return ref ((_Anonymous_e__Union._Anonymous_e__Struct._Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous.Anonymous.Anonymous))->pclipdata;
             }
         }
 
-        public ref ushort* bstrVal
+        public unsafe ref ushort* bstrVal
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
-                fixed (_Anonymous_e__Union._Anonymous_e__Struct._Anonymous_e__Union* pField = &Anonymous.Anonymous.Anonymous)
-                {
-                    return ref pField->bstrVal;
-                }
+                return ref ((_Anonymous_e__Union._Anonymous_e__Struct._Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous.Anonymous.Anonymous))->bstrVal;
             }
         }
 
-        public ref BSTRBLOB bstrblobVal
+        public unsafe ref BSTRBLOB bstrblobVal
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.Anonymous.bstrblobVal, 1));
+#else
+                return ref ((_Anonymous_e__Union._Anonymous_e__Struct._Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous.Anonymous.Anonymous))->bstrblobVal;
+#endif
             }
         }
 
-        public ref BLOB blob
+        public unsafe ref BLOB blob
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.Anonymous.blob, 1));
+#else
+                return ref ((_Anonymous_e__Union._Anonymous_e__Struct._Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous.Anonymous.Anonymous))->blob;
+#endif
             }
         }
 
-        public ref sbyte* pszVal
+        public unsafe ref sbyte* pszVal
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
-                fixed (_Anonymous_e__Union._Anonymous_e__Struct._Anonymous_e__Union* pField = &Anonymous.Anonymous.Anonymous)
-                {
-                    return ref pField->pszVal;
-                }
+                return ref ((_Anonymous_e__Union._Anonymous_e__Struct._Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous.Anonymous.Anonymous))->pszVal;
             }
         }
 
-        public ref ushort* pwszVal
+        public unsafe ref ushort* pwszVal
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
-                fixed (_Anonymous_e__Union._Anonymous_e__Struct._Anonymous_e__Union* pField = &Anonymous.Anonymous.Anonymous)
-                {
-                    return ref pField->pwszVal;
-                }
+                return ref ((_Anonymous_e__Union._Anonymous_e__Struct._Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous.Anonymous.Anonymous))->pwszVal;
             }
         }
 
-        public ref IUnknown* punkVal
+        public unsafe ref IUnknown* punkVal
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
-                fixed (_Anonymous_e__Union._Anonymous_e__Struct._Anonymous_e__Union* pField = &Anonymous.Anonymous.Anonymous)
-                {
-                    return ref pField->punkVal;
-                }
+                return ref ((_Anonymous_e__Union._Anonymous_e__Struct._Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous.Anonymous.Anonymous))->punkVal;
             }
         }
 
-        public ref IDispatch* pdispVal
+        public unsafe ref IDispatch* pdispVal
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
-                fixed (_Anonymous_e__Union._Anonymous_e__Struct._Anonymous_e__Union* pField = &Anonymous.Anonymous.Anonymous)
-                {
-                    return ref pField->pdispVal;
-                }
+                return ref ((_Anonymous_e__Union._Anonymous_e__Struct._Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous.Anonymous.Anonymous))->pdispVal;
             }
         }
 
-        public ref IStream* pStream
+        public unsafe ref IStream* pStream
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
-                fixed (_Anonymous_e__Union._Anonymous_e__Struct._Anonymous_e__Union* pField = &Anonymous.Anonymous.Anonymous)
-                {
-                    return ref pField->pStream;
-                }
+                return ref ((_Anonymous_e__Union._Anonymous_e__Struct._Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous.Anonymous.Anonymous))->pStream;
             }
         }
 
-        public ref IStorage* pStorage
+        public unsafe ref IStorage* pStorage
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
-                fixed (_Anonymous_e__Union._Anonymous_e__Struct._Anonymous_e__Union* pField = &Anonymous.Anonymous.Anonymous)
-                {
-                    return ref pField->pStorage;
-                }
+                return ref ((_Anonymous_e__Union._Anonymous_e__Struct._Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous.Anonymous.Anonymous))->pStorage;
             }
         }
 
-        public ref VERSIONEDSTREAM* pVersionedStream
+        public unsafe ref VERSIONEDSTREAM* pVersionedStream
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
-                fixed (_Anonymous_e__Union._Anonymous_e__Struct._Anonymous_e__Union* pField = &Anonymous.Anonymous.Anonymous)
-                {
-                    return ref pField->pVersionedStream;
-                }
+                return ref ((_Anonymous_e__Union._Anonymous_e__Struct._Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous.Anonymous.Anonymous))->pVersionedStream;
             }
         }
 
-        public ref SAFEARRAY* parray
+        public unsafe ref SAFEARRAY* parray
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
-                fixed (_Anonymous_e__Union._Anonymous_e__Struct._Anonymous_e__Union* pField = &Anonymous.Anonymous.Anonymous)
-                {
-                    return ref pField->parray;
-                }
+                return ref ((_Anonymous_e__Union._Anonymous_e__Struct._Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous.Anonymous.Anonymous))->parray;
             }
         }
 
-        public ref CAC cac
+        public unsafe ref CAC cac
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.Anonymous.cac, 1));
+#else
+                return ref ((_Anonymous_e__Union._Anonymous_e__Struct._Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous.Anonymous.Anonymous))->cac;
+#endif
             }
         }
 
-        public ref CAUB caub
+        public unsafe ref CAUB caub
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.Anonymous.caub, 1));
+#else
+                return ref ((_Anonymous_e__Union._Anonymous_e__Struct._Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous.Anonymous.Anonymous))->caub;
+#endif
             }
         }
 
-        public ref CAI cai
+        public unsafe ref CAI cai
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.Anonymous.cai, 1));
+#else
+                return ref ((_Anonymous_e__Union._Anonymous_e__Struct._Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous.Anonymous.Anonymous))->cai;
+#endif
             }
         }
 
-        public ref CAUI caui
+        public unsafe ref CAUI caui
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.Anonymous.caui, 1));
+#else
+                return ref ((_Anonymous_e__Union._Anonymous_e__Struct._Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous.Anonymous.Anonymous))->caui;
+#endif
             }
         }
 
-        public ref CAL cal
+        public unsafe ref CAL cal
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.Anonymous.cal, 1));
+#else
+                return ref ((_Anonymous_e__Union._Anonymous_e__Struct._Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous.Anonymous.Anonymous))->cal;
+#endif
             }
         }
 
-        public ref CAUL caul
+        public unsafe ref CAUL caul
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.Anonymous.caul, 1));
+#else
+                return ref ((_Anonymous_e__Union._Anonymous_e__Struct._Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous.Anonymous.Anonymous))->caul;
+#endif
             }
         }
 
-        public ref CAH cah
+        public unsafe ref CAH cah
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.Anonymous.cah, 1));
+#else
+                return ref ((_Anonymous_e__Union._Anonymous_e__Struct._Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous.Anonymous.Anonymous))->cah;
+#endif
             }
         }
 
-        public ref CAUH cauh
+        public unsafe ref CAUH cauh
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.Anonymous.cauh, 1));
+#else
+                return ref ((_Anonymous_e__Union._Anonymous_e__Struct._Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous.Anonymous.Anonymous))->cauh;
+#endif
             }
         }
 
-        public ref CAFLT caflt
+        public unsafe ref CAFLT caflt
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.Anonymous.caflt, 1));
+#else
+                return ref ((_Anonymous_e__Union._Anonymous_e__Struct._Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous.Anonymous.Anonymous))->caflt;
+#endif
             }
         }
 
-        public ref CADBL cadbl
+        public unsafe ref CADBL cadbl
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.Anonymous.cadbl, 1));
+#else
+                return ref ((_Anonymous_e__Union._Anonymous_e__Struct._Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous.Anonymous.Anonymous))->cadbl;
+#endif
             }
         }
 
-        public ref CABOOL cabool
+        public unsafe ref CABOOL cabool
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.Anonymous.cabool, 1));
+#else
+                return ref ((_Anonymous_e__Union._Anonymous_e__Struct._Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous.Anonymous.Anonymous))->cabool;
+#endif
             }
         }
 
-        public ref CASCODE cascode
+        public unsafe ref CASCODE cascode
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.Anonymous.cascode, 1));
+#else
+                return ref ((_Anonymous_e__Union._Anonymous_e__Struct._Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous.Anonymous.Anonymous))->cascode;
+#endif
             }
         }
 
-        public ref CACY cacy
+        public unsafe ref CACY cacy
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.Anonymous.cacy, 1));
+#else
+                return ref ((_Anonymous_e__Union._Anonymous_e__Struct._Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous.Anonymous.Anonymous))->cacy;
+#endif
             }
         }
 
-        public ref CADATE cadate
+        public unsafe ref CADATE cadate
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.Anonymous.cadate, 1));
+#else
+                return ref ((_Anonymous_e__Union._Anonymous_e__Struct._Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous.Anonymous.Anonymous))->cadate;
+#endif
             }
         }
 
-        public ref CAFILETIME cafiletime
+        public unsafe ref CAFILETIME cafiletime
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.Anonymous.cafiletime, 1));
+#else
+                return ref ((_Anonymous_e__Union._Anonymous_e__Struct._Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous.Anonymous.Anonymous))->cafiletime;
+#endif
             }
         }
 
-        public ref CACLSID cauuid
+        public unsafe ref CACLSID cauuid
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.Anonymous.cauuid, 1));
+#else
+                return ref ((_Anonymous_e__Union._Anonymous_e__Struct._Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous.Anonymous.Anonymous))->cauuid;
+#endif
             }
         }
 
-        public ref CACLIPDATA caclipdata
+        public unsafe ref CACLIPDATA caclipdata
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.Anonymous.caclipdata, 1));
+#else
+                return ref ((_Anonymous_e__Union._Anonymous_e__Struct._Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous.Anonymous.Anonymous))->caclipdata;
+#endif
             }
         }
 
-        public ref CABSTR cabstr
+        public unsafe ref CABSTR cabstr
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.Anonymous.cabstr, 1));
+#else
+                return ref ((_Anonymous_e__Union._Anonymous_e__Struct._Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous.Anonymous.Anonymous))->cabstr;
+#endif
             }
         }
 
-        public ref CABSTRBLOB cabstrblob
+        public unsafe ref CABSTRBLOB cabstrblob
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.Anonymous.cabstrblob, 1));
+#else
+                return ref ((_Anonymous_e__Union._Anonymous_e__Struct._Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous.Anonymous.Anonymous))->cabstrblob;
+#endif
             }
         }
 
-        public ref CALPSTR calpstr
+        public unsafe ref CALPSTR calpstr
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.Anonymous.calpstr, 1));
+#else
+                return ref ((_Anonymous_e__Union._Anonymous_e__Struct._Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous.Anonymous.Anonymous))->calpstr;
+#endif
             }
         }
 
-        public ref CALPWSTR calpwstr
+        public unsafe ref CALPWSTR calpwstr
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.Anonymous.calpwstr, 1));
+#else
+                return ref ((_Anonymous_e__Union._Anonymous_e__Struct._Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous.Anonymous.Anonymous))->calpwstr;
+#endif
             }
         }
 
-        public ref CAPROPVARIANT capropvar
+        public unsafe ref CAPROPVARIANT capropvar
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.Anonymous.capropvar, 1));
+#else
+                return ref ((_Anonymous_e__Union._Anonymous_e__Struct._Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous.Anonymous.Anonymous))->capropvar;
+#endif
             }
         }
 
-        public ref sbyte* pcVal
+        public unsafe ref sbyte* pcVal
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
-                fixed (_Anonymous_e__Union._Anonymous_e__Struct._Anonymous_e__Union* pField = &Anonymous.Anonymous.Anonymous)
-                {
-                    return ref pField->pcVal;
-                }
+                return ref ((_Anonymous_e__Union._Anonymous_e__Struct._Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous.Anonymous.Anonymous))->pcVal;
             }
         }
 
-        public ref byte* pbVal
+        public unsafe ref byte* pbVal
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
-                fixed (_Anonymous_e__Union._Anonymous_e__Struct._Anonymous_e__Union* pField = &Anonymous.Anonymous.Anonymous)
-                {
-                    return ref pField->pbVal;
-                }
+                return ref ((_Anonymous_e__Union._Anonymous_e__Struct._Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous.Anonymous.Anonymous))->pbVal;
             }
         }
 
-        public ref short* piVal
+        public unsafe ref short* piVal
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
-                fixed (_Anonymous_e__Union._Anonymous_e__Struct._Anonymous_e__Union* pField = &Anonymous.Anonymous.Anonymous)
-                {
-                    return ref pField->piVal;
-                }
+                return ref ((_Anonymous_e__Union._Anonymous_e__Struct._Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous.Anonymous.Anonymous))->piVal;
             }
         }
 
-        public ref ushort* puiVal
+        public unsafe ref ushort* puiVal
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
-                fixed (_Anonymous_e__Union._Anonymous_e__Struct._Anonymous_e__Union* pField = &Anonymous.Anonymous.Anonymous)
-                {
-                    return ref pField->puiVal;
-                }
+                return ref ((_Anonymous_e__Union._Anonymous_e__Struct._Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous.Anonymous.Anonymous))->puiVal;
             }
         }
 
-        public ref int* plVal
+        public unsafe ref int* plVal
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
-                fixed (_Anonymous_e__Union._Anonymous_e__Struct._Anonymous_e__Union* pField = &Anonymous.Anonymous.Anonymous)
-                {
-                    return ref pField->plVal;
-                }
+                return ref ((_Anonymous_e__Union._Anonymous_e__Struct._Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous.Anonymous.Anonymous))->plVal;
             }
         }
 
-        public ref uint* pulVal
+        public unsafe ref uint* pulVal
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
-                fixed (_Anonymous_e__Union._Anonymous_e__Struct._Anonymous_e__Union* pField = &Anonymous.Anonymous.Anonymous)
-                {
-                    return ref pField->pulVal;
-                }
+                return ref ((_Anonymous_e__Union._Anonymous_e__Struct._Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous.Anonymous.Anonymous))->pulVal;
             }
         }
 
-        public ref int* pintVal
+        public unsafe ref int* pintVal
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
-                fixed (_Anonymous_e__Union._Anonymous_e__Struct._Anonymous_e__Union* pField = &Anonymous.Anonymous.Anonymous)
-                {
-                    return ref pField->pintVal;
-                }
+                return ref ((_Anonymous_e__Union._Anonymous_e__Struct._Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous.Anonymous.Anonymous))->pintVal;
             }
         }
 
-        public ref uint* puintVal
+        public unsafe ref uint* puintVal
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
-                fixed (_Anonymous_e__Union._Anonymous_e__Struct._Anonymous_e__Union* pField = &Anonymous.Anonymous.Anonymous)
-                {
-                    return ref pField->puintVal;
-                }
+                return ref ((_Anonymous_e__Union._Anonymous_e__Struct._Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous.Anonymous.Anonymous))->puintVal;
             }
         }
 
-        public ref float* pfltVal
+        public unsafe ref float* pfltVal
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
-                fixed (_Anonymous_e__Union._Anonymous_e__Struct._Anonymous_e__Union* pField = &Anonymous.Anonymous.Anonymous)
-                {
-                    return ref pField->pfltVal;
-                }
+                return ref ((_Anonymous_e__Union._Anonymous_e__Struct._Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous.Anonymous.Anonymous))->pfltVal;
             }
         }
 
-        public ref double* pdblVal
+        public unsafe ref double* pdblVal
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
-                fixed (_Anonymous_e__Union._Anonymous_e__Struct._Anonymous_e__Union* pField = &Anonymous.Anonymous.Anonymous)
-                {
-                    return ref pField->pdblVal;
-                }
+                return ref ((_Anonymous_e__Union._Anonymous_e__Struct._Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous.Anonymous.Anonymous))->pdblVal;
             }
         }
 
-        public ref short* pboolVal
+        public unsafe ref short* pboolVal
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
-                fixed (_Anonymous_e__Union._Anonymous_e__Struct._Anonymous_e__Union* pField = &Anonymous.Anonymous.Anonymous)
-                {
-                    return ref pField->pboolVal;
-                }
+                return ref ((_Anonymous_e__Union._Anonymous_e__Struct._Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous.Anonymous.Anonymous))->pboolVal;
             }
         }
 
-        public ref DECIMAL* pdecVal
+        public unsafe ref DECIMAL* pdecVal
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
-                fixed (_Anonymous_e__Union._Anonymous_e__Struct._Anonymous_e__Union* pField = &Anonymous.Anonymous.Anonymous)
-                {
-                    return ref pField->pdecVal;
-                }
+                return ref ((_Anonymous_e__Union._Anonymous_e__Struct._Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous.Anonymous.Anonymous))->pdecVal;
             }
         }
 
-        public ref int* pscode
+        public unsafe ref int* pscode
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
-                fixed (_Anonymous_e__Union._Anonymous_e__Struct._Anonymous_e__Union* pField = &Anonymous.Anonymous.Anonymous)
-                {
-                    return ref pField->pscode;
-                }
+                return ref ((_Anonymous_e__Union._Anonymous_e__Struct._Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous.Anonymous.Anonymous))->pscode;
             }
         }
 
-        public ref CY* pcyVal
+        public unsafe ref CY* pcyVal
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
-                fixed (_Anonymous_e__Union._Anonymous_e__Struct._Anonymous_e__Union* pField = &Anonymous.Anonymous.Anonymous)
-                {
-                    return ref pField->pcyVal;
-                }
+                return ref ((_Anonymous_e__Union._Anonymous_e__Struct._Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous.Anonymous.Anonymous))->pcyVal;
             }
         }
 
-        public ref double* pdate
+        public unsafe ref double* pdate
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
-                fixed (_Anonymous_e__Union._Anonymous_e__Struct._Anonymous_e__Union* pField = &Anonymous.Anonymous.Anonymous)
-                {
-                    return ref pField->pdate;
-                }
+                return ref ((_Anonymous_e__Union._Anonymous_e__Struct._Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous.Anonymous.Anonymous))->pdate;
             }
         }
 
-        public ref ushort** pbstrVal
+        public unsafe ref ushort** pbstrVal
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
-                fixed (_Anonymous_e__Union._Anonymous_e__Struct._Anonymous_e__Union* pField = &Anonymous.Anonymous.Anonymous)
-                {
-                    return ref pField->pbstrVal;
-                }
+                return ref ((_Anonymous_e__Union._Anonymous_e__Struct._Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous.Anonymous.Anonymous))->pbstrVal;
             }
         }
 
-        public ref IUnknown** ppunkVal
+        public unsafe ref IUnknown** ppunkVal
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
-                fixed (_Anonymous_e__Union._Anonymous_e__Struct._Anonymous_e__Union* pField = &Anonymous.Anonymous.Anonymous)
-                {
-                    return ref pField->ppunkVal;
-                }
+                return ref ((_Anonymous_e__Union._Anonymous_e__Struct._Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous.Anonymous.Anonymous))->ppunkVal;
             }
         }
 
-        public ref IDispatch** ppdispVal
+        public unsafe ref IDispatch** ppdispVal
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
-                fixed (_Anonymous_e__Union._Anonymous_e__Struct._Anonymous_e__Union* pField = &Anonymous.Anonymous.Anonymous)
-                {
-                    return ref pField->ppdispVal;
-                }
+                return ref ((_Anonymous_e__Union._Anonymous_e__Struct._Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous.Anonymous.Anonymous))->ppdispVal;
             }
         }
 
-        public ref SAFEARRAY** pparray
+        public unsafe ref SAFEARRAY** pparray
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
-                fixed (_Anonymous_e__Union._Anonymous_e__Struct._Anonymous_e__Union* pField = &Anonymous.Anonymous.Anonymous)
-                {
-                    return ref pField->pparray;
-                }
+                return ref ((_Anonymous_e__Union._Anonymous_e__Struct._Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous.Anonymous.Anonymous))->pparray;
             }
         }
 
-        public ref PROPVARIANT* pvarVal
+        public unsafe ref PROPVARIANT* pvarVal
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
-                fixed (_Anonymous_e__Union._Anonymous_e__Struct._Anonymous_e__Union* pField = &Anonymous.Anonymous.Anonymous)
-                {
-                    return ref pField->pvarVal;
-                }
+                return ref ((_Anonymous_e__Union._Anonymous_e__Struct._Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous.Anonymous.Anonymous))->pvarVal;
             }
         }
 
-        public ref DECIMAL decVal
+        public unsafe ref DECIMAL decVal
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.decVal, 1));
+#else
+                return ref ((_Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous))->decVal;
+#endif
             }
         }
 

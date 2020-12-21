@@ -13,7 +13,7 @@ namespace TerraFX.Interop
         [NativeTypeName("_HIDP_KEYBOARD_MODIFIER_STATE::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/shared/hidpi.h:1728:4)")]
         public _Anonymous_e__Union Anonymous;
 
-        public uint LeftControl
+        public unsafe uint LeftControl
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
@@ -28,7 +28,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public uint LeftShift
+        public unsafe uint LeftShift
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
@@ -43,7 +43,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public uint LeftAlt
+        public unsafe uint LeftAlt
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
@@ -58,7 +58,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public uint LeftGUI
+        public unsafe uint LeftGUI
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
@@ -73,7 +73,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public uint RightControl
+        public unsafe uint RightControl
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
@@ -88,7 +88,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public uint RightShift
+        public unsafe uint RightShift
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
@@ -103,7 +103,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public uint RightAlt
+        public unsafe uint RightAlt
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
@@ -118,7 +118,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public uint RigthGUI
+        public unsafe uint RigthGUI
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
@@ -133,7 +133,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public uint CapsLock
+        public unsafe uint CapsLock
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
@@ -148,7 +148,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public uint ScollLock
+        public unsafe uint ScollLock
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
@@ -163,7 +163,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public uint NumLock
+        public unsafe uint NumLock
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
@@ -178,7 +178,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public uint Reserved
+        public unsafe uint Reserved
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
@@ -193,12 +193,16 @@ namespace TerraFX.Interop
             }
         }
 
-        public ref uint ul
+        public unsafe ref uint ul
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.ul, 1));
+#else
+                return ref ((_Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous))->ul;
+#endif
             }
         }
 

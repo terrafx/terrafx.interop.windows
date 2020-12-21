@@ -19,56 +19,56 @@ namespace TerraFX.Interop
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return ((delegate* unmanaged<IPrintManagerInterop*, Guid*, void**, int>)(lpVtbl[0]))((IPrintManagerInterop*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* unmanaged[Stdcall]<IPrintManagerInterop*, Guid*, void**, int>)(lpVtbl[0]))((IPrintManagerInterop*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return ((delegate* unmanaged<IPrintManagerInterop*, uint>)(lpVtbl[1]))((IPrintManagerInterop*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged[Stdcall]<IPrintManagerInterop*, uint>)(lpVtbl[1]))((IPrintManagerInterop*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return ((delegate* unmanaged<IPrintManagerInterop*, uint>)(lpVtbl[2]))((IPrintManagerInterop*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged[Stdcall]<IPrintManagerInterop*, uint>)(lpVtbl[2]))((IPrintManagerInterop*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetIids([NativeTypeName("ULONG *")] uint* iidCount, [NativeTypeName("IID **")] Guid** iids)
         {
-            return ((delegate* unmanaged<IPrintManagerInterop*, uint*, Guid**, int>)(lpVtbl[3]))((IPrintManagerInterop*)Unsafe.AsPointer(ref this), iidCount, iids);
+            return ((delegate* unmanaged[Stdcall]<IPrintManagerInterop*, uint*, Guid**, int>)(lpVtbl[3]))((IPrintManagerInterop*)Unsafe.AsPointer(ref this), iidCount, iids);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetRuntimeClassName([NativeTypeName("HSTRING *")] IntPtr* className)
         {
-            return ((delegate* unmanaged<IPrintManagerInterop*, IntPtr*, int>)(lpVtbl[4]))((IPrintManagerInterop*)Unsafe.AsPointer(ref this), className);
+            return ((delegate* unmanaged[Stdcall]<IPrintManagerInterop*, IntPtr*, int>)(lpVtbl[4]))((IPrintManagerInterop*)Unsafe.AsPointer(ref this), className);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetTrustLevel([NativeTypeName("TrustLevel *")] TrustLevel* trustLevel)
         {
-            return ((delegate* unmanaged<IPrintManagerInterop*, TrustLevel*, int>)(lpVtbl[5]))((IPrintManagerInterop*)Unsafe.AsPointer(ref this), trustLevel);
+            return ((delegate* unmanaged[Stdcall]<IPrintManagerInterop*, TrustLevel*, int>)(lpVtbl[5]))((IPrintManagerInterop*)Unsafe.AsPointer(ref this), trustLevel);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetForWindow([NativeTypeName("HWND")] IntPtr appWindow, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** printManager)
         {
-            return ((delegate* unmanaged<IPrintManagerInterop*, IntPtr, Guid*, void**, int>)(lpVtbl[6]))((IPrintManagerInterop*)Unsafe.AsPointer(ref this), appWindow, riid, printManager);
+            return ((delegate* unmanaged[Stdcall]<IPrintManagerInterop*, IntPtr, Guid*, void**, int>)(lpVtbl[6]))((IPrintManagerInterop*)Unsafe.AsPointer(ref this), appWindow, riid, printManager);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int ShowPrintUIForWindowAsync([NativeTypeName("HWND")] IntPtr appWindow, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** asyncOperation)
         {
-            return ((delegate* unmanaged<IPrintManagerInterop*, IntPtr, Guid*, void**, int>)(lpVtbl[7]))((IPrintManagerInterop*)Unsafe.AsPointer(ref this), appWindow, riid, asyncOperation);
+            return ((delegate* unmanaged[Stdcall]<IPrintManagerInterop*, IntPtr, Guid*, void**, int>)(lpVtbl[7]))((IPrintManagerInterop*)Unsafe.AsPointer(ref this), appWindow, riid, asyncOperation);
         }
     }
 }

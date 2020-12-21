@@ -27,21 +27,29 @@ namespace TerraFX.Interop
         [NativeTypeName("IMAGE_COR20_HEADER::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:19208:5)")]
         public _Anonymous_e__Union Anonymous;
 
-        public ref uint EntryPointToken
+        public unsafe ref uint EntryPointToken
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.EntryPointToken, 1));
+#else
+                return ref ((_Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous))->EntryPointToken;
+#endif
             }
         }
 
-        public ref uint EntryPointRVA
+        public unsafe ref uint EntryPointRVA
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.EntryPointRVA, 1));
+#else
+                return ref ((_Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous))->EntryPointRVA;
+#endif
             }
         }
 

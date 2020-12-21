@@ -59,7 +59,7 @@ namespace TerraFX.Interop
             public IntPtr e18;
             public IntPtr e19;
 
-            public ref IntPtr this[int index]
+            public unsafe ref IntPtr this[int index]
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
                 get
@@ -69,7 +69,14 @@ namespace TerraFX.Interop
             }
 
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public Span<IntPtr> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 20);
+            public unsafe Span<IntPtr> AsSpan()
+            {
+#if !NETSTANDARD2_0
+                return MemoryMarshal.CreateSpan(ref e0, 20);
+#else
+                return new Span<IntPtr>((IntPtr*)Unsafe.AsPointer(ref this), 20);
+#endif
+            }
         }
     }
 }

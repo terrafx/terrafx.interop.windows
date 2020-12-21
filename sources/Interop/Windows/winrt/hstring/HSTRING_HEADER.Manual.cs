@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
@@ -20,11 +21,28 @@ namespace TerraFX.Interop
         // Since the contents of this structure are undefined, it is not important to provide the same definitions.
         public unsafe partial struct _Reserved_e__Union
         {
-            internal fixed byte Reserved1_0[16];
-            internal nuint Reserved1_1;
+            public fixed byte Reserved1_0[16];
 
-            public ref byte this[int index] => ref AsSpan()[index];
-            public Span<byte> AsSpan() => MemoryMarshal.CreateSpan(ref Reserved1_0[0], sizeof(_Reserved_e__Union));
+            public nuint Reserved1_1;
+
+            public ref byte this[int index]
+            {
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                get
+                {
+                    return ref AsSpan()[index];
+                }
+            }
+
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            public Span<byte> AsSpan()
+            {
+#if !NETSTANDARD2_0
+                return MemoryMarshal.CreateSpan(ref Reserved1_0[0], sizeof(_Reserved_e__Union));
+#else
+                return new Span<byte>((byte*)Unsafe.AsPointer(ref this), sizeof(_Reserved_e__Union));
+#endif
+            }
         }
     }
 }

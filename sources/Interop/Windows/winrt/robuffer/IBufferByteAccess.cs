@@ -19,28 +19,28 @@ namespace TerraFX.Interop
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return ((delegate* unmanaged<IBufferByteAccess*, Guid*, void**, int>)(lpVtbl[0]))((IBufferByteAccess*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* unmanaged[Stdcall]<IBufferByteAccess*, Guid*, void**, int>)(lpVtbl[0]))((IBufferByteAccess*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return ((delegate* unmanaged<IBufferByteAccess*, uint>)(lpVtbl[1]))((IBufferByteAccess*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged[Stdcall]<IBufferByteAccess*, uint>)(lpVtbl[1]))((IBufferByteAccess*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return ((delegate* unmanaged<IBufferByteAccess*, uint>)(lpVtbl[2]))((IBufferByteAccess*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged[Stdcall]<IBufferByteAccess*, uint>)(lpVtbl[2]))((IBufferByteAccess*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int Buffer([NativeTypeName("byte **")] byte** value)
         {
-            return ((delegate* unmanaged<IBufferByteAccess*, byte**, int>)(lpVtbl[3]))((IBufferByteAccess*)Unsafe.AsPointer(ref this), value);
+            return ((delegate* unmanaged[Stdcall]<IBufferByteAccess*, byte**, int>)(lpVtbl[3]))((IBufferByteAccess*)Unsafe.AsPointer(ref this), value);
         }
     }
 }

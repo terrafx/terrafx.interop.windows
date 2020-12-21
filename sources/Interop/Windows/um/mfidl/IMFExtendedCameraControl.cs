@@ -19,63 +19,63 @@ namespace TerraFX.Interop
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return ((delegate* unmanaged<IMFExtendedCameraControl*, Guid*, void**, int>)(lpVtbl[0]))((IMFExtendedCameraControl*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* unmanaged[Stdcall]<IMFExtendedCameraControl*, Guid*, void**, int>)(lpVtbl[0]))((IMFExtendedCameraControl*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return ((delegate* unmanaged<IMFExtendedCameraControl*, uint>)(lpVtbl[1]))((IMFExtendedCameraControl*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged[Stdcall]<IMFExtendedCameraControl*, uint>)(lpVtbl[1]))((IMFExtendedCameraControl*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return ((delegate* unmanaged<IMFExtendedCameraControl*, uint>)(lpVtbl[2]))((IMFExtendedCameraControl*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged[Stdcall]<IMFExtendedCameraControl*, uint>)(lpVtbl[2]))((IMFExtendedCameraControl*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONGLONG")]
         public ulong GetCapabilities()
         {
-            return ((delegate* unmanaged<IMFExtendedCameraControl*, ulong>)(lpVtbl[3]))((IMFExtendedCameraControl*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged[Stdcall]<IMFExtendedCameraControl*, ulong>)(lpVtbl[3]))((IMFExtendedCameraControl*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int SetFlags([NativeTypeName("ULONGLONG")] ulong ulFlags)
         {
-            return ((delegate* unmanaged<IMFExtendedCameraControl*, ulong, int>)(lpVtbl[4]))((IMFExtendedCameraControl*)Unsafe.AsPointer(ref this), ulFlags);
+            return ((delegate* unmanaged[Stdcall]<IMFExtendedCameraControl*, ulong, int>)(lpVtbl[4]))((IMFExtendedCameraControl*)Unsafe.AsPointer(ref this), ulFlags);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONGLONG")]
         public ulong GetFlags()
         {
-            return ((delegate* unmanaged<IMFExtendedCameraControl*, ulong>)(lpVtbl[5]))((IMFExtendedCameraControl*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged[Stdcall]<IMFExtendedCameraControl*, ulong>)(lpVtbl[5]))((IMFExtendedCameraControl*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int LockPayload([NativeTypeName("BYTE **")] byte** ppPayload, [NativeTypeName("ULONG *")] uint* pulPayload)
         {
-            return ((delegate* unmanaged<IMFExtendedCameraControl*, byte**, uint*, int>)(lpVtbl[6]))((IMFExtendedCameraControl*)Unsafe.AsPointer(ref this), ppPayload, pulPayload);
+            return ((delegate* unmanaged[Stdcall]<IMFExtendedCameraControl*, byte**, uint*, int>)(lpVtbl[6]))((IMFExtendedCameraControl*)Unsafe.AsPointer(ref this), ppPayload, pulPayload);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int UnlockPayload()
         {
-            return ((delegate* unmanaged<IMFExtendedCameraControl*, int>)(lpVtbl[7]))((IMFExtendedCameraControl*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged[Stdcall]<IMFExtendedCameraControl*, int>)(lpVtbl[7]))((IMFExtendedCameraControl*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int CommitSettings()
         {
-            return ((delegate* unmanaged<IMFExtendedCameraControl*, int>)(lpVtbl[8]))((IMFExtendedCameraControl*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged[Stdcall]<IMFExtendedCameraControl*, int>)(lpVtbl[8]))((IMFExtendedCameraControl*)Unsafe.AsPointer(ref this));
         }
     }
 }

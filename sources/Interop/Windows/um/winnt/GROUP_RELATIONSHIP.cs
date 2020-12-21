@@ -27,7 +27,7 @@ namespace TerraFX.Interop
         {
             public PROCESSOR_GROUP_INFO e0;
 
-            public ref PROCESSOR_GROUP_INFO this[int index]
+            public unsafe ref PROCESSOR_GROUP_INFO this[int index]
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
                 get
@@ -37,7 +37,14 @@ namespace TerraFX.Interop
             }
 
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public Span<PROCESSOR_GROUP_INFO> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
+            public unsafe Span<PROCESSOR_GROUP_INFO> AsSpan(int length)
+            {
+#if !NETSTANDARD2_0
+                return MemoryMarshal.CreateSpan(ref e0, length);
+#else
+                return new Span<PROCESSOR_GROUP_INFO>((PROCESSOR_GROUP_INFO*)Unsafe.AsPointer(ref this), length);
+#endif
+            }
         }
     }
 }

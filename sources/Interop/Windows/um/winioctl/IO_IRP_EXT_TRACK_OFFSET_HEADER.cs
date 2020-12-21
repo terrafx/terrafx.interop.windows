@@ -3,6 +3,8 @@
 // Ported from um/winioctl.h in the Windows SDK for Windows 10.0.19041.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Runtime.CompilerServices;
+
 namespace TerraFX.Interop
 {
     public unsafe partial struct IO_IRP_EXT_TRACK_OFFSET_HEADER
@@ -14,6 +16,25 @@ namespace TerraFX.Interop
         public ushort Flags;
 
         [NativeTypeName("PIO_IRP_EXT_PROCESS_TRACKED_OFFSET_CALLBACK")]
-        public delegate* unmanaged<IO_IRP_EXT_TRACK_OFFSET_HEADER*, IO_IRP_EXT_TRACK_OFFSET_HEADER*, long, void> TrackedOffsetCallback;
+#if !NETSTANDARD2_0
+        public delegate* unmanaged[Cdecl]<IO_IRP_EXT_TRACK_OFFSET_HEADER*, IO_IRP_EXT_TRACK_OFFSET_HEADER*, long, void> TrackedOffsetCallback;
+#else
+        public void* _TrackedOffsetCallback;
+
+        public delegate* unmanaged[Cdecl]<IO_IRP_EXT_TRACK_OFFSET_HEADER*, IO_IRP_EXT_TRACK_OFFSET_HEADER*, long, void> TrackedOffsetCallback
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                return (delegate* unmanaged[Cdecl]<IO_IRP_EXT_TRACK_OFFSET_HEADER*, IO_IRP_EXT_TRACK_OFFSET_HEADER*, long, void>)_TrackedOffsetCallback;
+            }
+
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            set
+            {
+                _TrackedOffsetCallback = value;
+            }
+        }
+#endif
     }
 }

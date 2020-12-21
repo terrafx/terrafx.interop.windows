@@ -25,21 +25,29 @@ namespace TerraFX.Interop
         [NativeTypeName("PROCESSOR_PERFSTATE_POLICY::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:16660:5)")]
         public _Anonymous_e__Union Anonymous;
 
-        public ref byte Spare
+        public unsafe ref byte Spare
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Spare, 1));
+#else
+                return ref ((_Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous))->Spare;
+#endif
             }
         }
 
-        public ref _Anonymous_e__Union._Flags_e__Union Flags
+        public unsafe ref _Anonymous_e__Union._Flags_e__Union Flags
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Flags, 1));
+#else
+                return ref ((_Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous))->Flags;
+#endif
             }
         }
 
@@ -80,7 +88,7 @@ namespace TerraFX.Interop
                 [NativeTypeName("PROCESSOR_PERFSTATE_POLICY::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:16664:13)")]
                 public _Anonymous_e__Struct Anonymous;
 
-                public byte NoDomainAccounting
+                public unsafe byte NoDomainAccounting
                 {
                     [MethodImpl(MethodImplOptions.AggressiveInlining)]
                     get
@@ -95,7 +103,7 @@ namespace TerraFX.Interop
                     }
                 }
 
-                public byte IncreasePolicy
+                public unsafe byte IncreasePolicy
                 {
                     [MethodImpl(MethodImplOptions.AggressiveInlining)]
                     get
@@ -110,7 +118,7 @@ namespace TerraFX.Interop
                     }
                 }
 
-                public byte DecreasePolicy
+                public unsafe byte DecreasePolicy
                 {
                     [MethodImpl(MethodImplOptions.AggressiveInlining)]
                     get
@@ -125,7 +133,7 @@ namespace TerraFX.Interop
                     }
                 }
 
-                public byte Reserved
+                public unsafe byte Reserved
                 {
                     [MethodImpl(MethodImplOptions.AggressiveInlining)]
                     get

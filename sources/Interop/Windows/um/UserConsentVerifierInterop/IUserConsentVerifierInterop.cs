@@ -19,49 +19,49 @@ namespace TerraFX.Interop
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return ((delegate* unmanaged<IUserConsentVerifierInterop*, Guid*, void**, int>)(lpVtbl[0]))((IUserConsentVerifierInterop*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* unmanaged[Stdcall]<IUserConsentVerifierInterop*, Guid*, void**, int>)(lpVtbl[0]))((IUserConsentVerifierInterop*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return ((delegate* unmanaged<IUserConsentVerifierInterop*, uint>)(lpVtbl[1]))((IUserConsentVerifierInterop*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged[Stdcall]<IUserConsentVerifierInterop*, uint>)(lpVtbl[1]))((IUserConsentVerifierInterop*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return ((delegate* unmanaged<IUserConsentVerifierInterop*, uint>)(lpVtbl[2]))((IUserConsentVerifierInterop*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged[Stdcall]<IUserConsentVerifierInterop*, uint>)(lpVtbl[2]))((IUserConsentVerifierInterop*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetIids([NativeTypeName("ULONG *")] uint* iidCount, [NativeTypeName("IID **")] Guid** iids)
         {
-            return ((delegate* unmanaged<IUserConsentVerifierInterop*, uint*, Guid**, int>)(lpVtbl[3]))((IUserConsentVerifierInterop*)Unsafe.AsPointer(ref this), iidCount, iids);
+            return ((delegate* unmanaged[Stdcall]<IUserConsentVerifierInterop*, uint*, Guid**, int>)(lpVtbl[3]))((IUserConsentVerifierInterop*)Unsafe.AsPointer(ref this), iidCount, iids);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetRuntimeClassName([NativeTypeName("HSTRING *")] IntPtr* className)
         {
-            return ((delegate* unmanaged<IUserConsentVerifierInterop*, IntPtr*, int>)(lpVtbl[4]))((IUserConsentVerifierInterop*)Unsafe.AsPointer(ref this), className);
+            return ((delegate* unmanaged[Stdcall]<IUserConsentVerifierInterop*, IntPtr*, int>)(lpVtbl[4]))((IUserConsentVerifierInterop*)Unsafe.AsPointer(ref this), className);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetTrustLevel([NativeTypeName("TrustLevel *")] TrustLevel* trustLevel)
         {
-            return ((delegate* unmanaged<IUserConsentVerifierInterop*, TrustLevel*, int>)(lpVtbl[5]))((IUserConsentVerifierInterop*)Unsafe.AsPointer(ref this), trustLevel);
+            return ((delegate* unmanaged[Stdcall]<IUserConsentVerifierInterop*, TrustLevel*, int>)(lpVtbl[5]))((IUserConsentVerifierInterop*)Unsafe.AsPointer(ref this), trustLevel);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int RequestVerificationForWindowAsync([NativeTypeName("HWND")] IntPtr appWindow, [NativeTypeName("HSTRING")] IntPtr message, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** asyncOperation)
         {
-            return ((delegate* unmanaged<IUserConsentVerifierInterop*, IntPtr, IntPtr, Guid*, void**, int>)(lpVtbl[6]))((IUserConsentVerifierInterop*)Unsafe.AsPointer(ref this), appWindow, message, riid, asyncOperation);
+            return ((delegate* unmanaged[Stdcall]<IUserConsentVerifierInterop*, IntPtr, IntPtr, Guid*, void**, int>)(lpVtbl[6]))((IUserConsentVerifierInterop*)Unsafe.AsPointer(ref this), appWindow, message, riid, asyncOperation);
         }
     }
 }

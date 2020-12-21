@@ -19,42 +19,42 @@ namespace TerraFX.Interop
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return ((delegate* unmanaged<IQuickActivate*, Guid*, void**, int>)(lpVtbl[0]))((IQuickActivate*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* unmanaged[Stdcall]<IQuickActivate*, Guid*, void**, int>)(lpVtbl[0]))((IQuickActivate*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return ((delegate* unmanaged<IQuickActivate*, uint>)(lpVtbl[1]))((IQuickActivate*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged[Stdcall]<IQuickActivate*, uint>)(lpVtbl[1]))((IQuickActivate*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return ((delegate* unmanaged<IQuickActivate*, uint>)(lpVtbl[2]))((IQuickActivate*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged[Stdcall]<IQuickActivate*, uint>)(lpVtbl[2]))((IQuickActivate*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int QuickActivate([NativeTypeName("QACONTAINER *")] QACONTAINER* pQaContainer, [NativeTypeName("QACONTROL *")] QACONTROL* pQaControl)
         {
-            return ((delegate* unmanaged<IQuickActivate*, QACONTAINER*, QACONTROL*, int>)(lpVtbl[3]))((IQuickActivate*)Unsafe.AsPointer(ref this), pQaContainer, pQaControl);
+            return ((delegate* unmanaged[Stdcall]<IQuickActivate*, QACONTAINER*, QACONTROL*, int>)(lpVtbl[3]))((IQuickActivate*)Unsafe.AsPointer(ref this), pQaContainer, pQaControl);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int SetContentExtent([NativeTypeName("LPSIZEL")] SIZE* pSizel)
         {
-            return ((delegate* unmanaged<IQuickActivate*, SIZE*, int>)(lpVtbl[4]))((IQuickActivate*)Unsafe.AsPointer(ref this), pSizel);
+            return ((delegate* unmanaged[Stdcall]<IQuickActivate*, SIZE*, int>)(lpVtbl[4]))((IQuickActivate*)Unsafe.AsPointer(ref this), pSizel);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetContentExtent([NativeTypeName("LPSIZEL")] SIZE* pSizel)
         {
-            return ((delegate* unmanaged<IQuickActivate*, SIZE*, int>)(lpVtbl[5]))((IQuickActivate*)Unsafe.AsPointer(ref this), pSizel);
+            return ((delegate* unmanaged[Stdcall]<IQuickActivate*, SIZE*, int>)(lpVtbl[5]))((IQuickActivate*)Unsafe.AsPointer(ref this), pSizel);
         }
     }
 }

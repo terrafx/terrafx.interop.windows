@@ -19,39 +19,30 @@ namespace TerraFX.Interop
         [NativeTypeName("_CERT_STRONG_SIGN_PARA::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/wincrypt.h:6533:5)")]
         public _Anonymous_e__Union Anonymous;
 
-        public ref void* pvInfo
+        public unsafe ref void* pvInfo
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
-                fixed (_Anonymous_e__Union* pField = &Anonymous)
-                {
-                    return ref pField->pvInfo;
-                }
+                return ref ((_Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous))->pvInfo;
             }
         }
 
-        public ref CERT_STRONG_SIGN_SERIALIZED_INFO* pSerializedInfo
+        public unsafe ref CERT_STRONG_SIGN_SERIALIZED_INFO* pSerializedInfo
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
-                fixed (_Anonymous_e__Union* pField = &Anonymous)
-                {
-                    return ref pField->pSerializedInfo;
-                }
+                return ref ((_Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous))->pSerializedInfo;
             }
         }
 
-        public ref sbyte* pszOID
+        public unsafe ref sbyte* pszOID
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
-                fixed (_Anonymous_e__Union* pField = &Anonymous)
-                {
-                    return ref pField->pszOID;
-                }
+                return ref ((_Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous))->pszOID;
             }
         }
 

@@ -379,15 +379,15 @@ namespace TerraFX.Interop
         [NativeTypeName("const GUID")]
         public static readonly Guid CLSID_WICWebpAnmfMetadataReader = new Guid(0x85a10b03, 0xc9f6, 0x439f, 0xbe, 0x5e, 0xc0, 0xfb, 0xef, 0x67, 0x80, 0x7c);
 
-        [DllImport("WindowsCodecs", ExactSpelling = true)]
+        [DllImport("WindowsCodecs", CallingConvention = CallingConvention.StdCall, ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int WICMatchMetadataContent([NativeTypeName("const GUID &")] Guid* guidContainerFormat, [NativeTypeName("const GUID *")] Guid* pguidVendor, [NativeTypeName("IStream *")] IStream* pIStream, [NativeTypeName("GUID *")] Guid* pguidMetadataFormat);
 
-        [DllImport("WindowsCodecs", ExactSpelling = true)]
+        [DllImport("WindowsCodecs", CallingConvention = CallingConvention.StdCall, ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int WICSerializeMetadataContent([NativeTypeName("const GUID &")] Guid* guidContainerFormat, [NativeTypeName("IWICMetadataWriter *")] IWICMetadataWriter* pIWriter, [NativeTypeName("DWORD")] uint dwPersistOptions, [NativeTypeName("IStream *")] IStream* pIStream);
 
-        [DllImport("WindowsCodecs", ExactSpelling = true)]
+        [DllImport("WindowsCodecs", CallingConvention = CallingConvention.StdCall, ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int WICGetMetadataContentSize([NativeTypeName("const GUID &")] Guid* guidContainerFormat, [NativeTypeName("IWICMetadataWriter *")] IWICMetadataWriter* pIWriter, [NativeTypeName("ULARGE_INTEGER *")] ULARGE_INTEGER* pcbSize);
 

@@ -10,7 +10,7 @@ namespace TerraFX.Interop
 {
     public static unsafe partial class Windows
     {
-        [DllImport("d2d1", ExactSpelling = true)]
+        [DllImport("d2d1", CallingConvention = CallingConvention.StdCall, ExactSpelling = true)]
         [return: NativeTypeName("FLOAT")]
         public static extern float D2D1ComputeMaximumScaleFactor([NativeTypeName("const D2D1_MATRIX_3X2_F *")] D2D_MATRIX_3X2_F* matrix);
 

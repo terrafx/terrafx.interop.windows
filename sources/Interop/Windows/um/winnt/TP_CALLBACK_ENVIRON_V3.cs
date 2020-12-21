@@ -21,7 +21,26 @@ namespace TerraFX.Interop
         public IntPtr CleanupGroup;
 
         [NativeTypeName("PTP_CLEANUP_GROUP_CANCEL_CALLBACK")]
+#if !NETSTANDARD2_0
         public delegate* unmanaged<void*, void*, void> CleanupGroupCancelCallback;
+#else
+        public void* _CleanupGroupCancelCallback;
+
+        public delegate* unmanaged[Stdcall]<void*, void*, void> CleanupGroupCancelCallback
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                return (delegate* unmanaged[Stdcall]<void*, void*, void>)_CleanupGroupCancelCallback;
+            }
+
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            set
+            {
+                _CleanupGroupCancelCallback = value;
+            }
+        }
+#endif
 
         [NativeTypeName("PVOID")]
         public void* RaceDll;
@@ -30,7 +49,26 @@ namespace TerraFX.Interop
         public IntPtr ActivationContext;
 
         [NativeTypeName("PTP_SIMPLE_CALLBACK")]
+#if !NETSTANDARD2_0
         public delegate* unmanaged<IntPtr, void*, void> FinalizationCallback;
+#else
+        public void* _FinalizationCallback;
+
+        public delegate* unmanaged[Stdcall]<IntPtr, void*, void> FinalizationCallback
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                return (delegate* unmanaged[Stdcall]<IntPtr, void*, void>)_FinalizationCallback;
+            }
+
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            set
+            {
+                _FinalizationCallback = value;
+            }
+        }
+#endif
 
         [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:22629:5)")]
         public _u_e__Union u;

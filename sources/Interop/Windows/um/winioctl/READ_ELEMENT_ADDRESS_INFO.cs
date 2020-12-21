@@ -21,7 +21,7 @@ namespace TerraFX.Interop
         {
             public CHANGER_ELEMENT_STATUS e0;
 
-            public ref CHANGER_ELEMENT_STATUS this[int index]
+            public unsafe ref CHANGER_ELEMENT_STATUS this[int index]
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
                 get
@@ -31,7 +31,14 @@ namespace TerraFX.Interop
             }
 
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public Span<CHANGER_ELEMENT_STATUS> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
+            public unsafe Span<CHANGER_ELEMENT_STATUS> AsSpan(int length)
+            {
+#if !NETSTANDARD2_0
+                return MemoryMarshal.CreateSpan(ref e0, length);
+#else
+                return new Span<CHANGER_ELEMENT_STATUS>((CHANGER_ELEMENT_STATUS*)Unsafe.AsPointer(ref this), length);
+#endif
+            }
         }
     }
 }

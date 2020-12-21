@@ -31,10 +31,7 @@ namespace TerraFX.Interop
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
                 get
                 {
-                    fixed (sbyte** pThis = &e0)
-                    {
-                        return ref pThis[index];
-                    }
+                    return ref ((sbyte**)Unsafe.AsPointer(ref this))[index];
                 }
             }
         }

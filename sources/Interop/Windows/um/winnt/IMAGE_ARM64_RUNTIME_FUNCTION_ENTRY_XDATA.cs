@@ -19,7 +19,7 @@ namespace TerraFX.Interop
         [NativeTypeName("IMAGE_ARM64_RUNTIME_FUNCTION_ENTRY_XDATA::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:18778:5)")]
         public _Anonymous_e__Struct Anonymous;
 
-        public uint FunctionLength
+        public unsafe uint FunctionLength
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
@@ -34,7 +34,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public uint Version
+        public unsafe uint Version
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
@@ -49,7 +49,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public uint ExceptionDataPresent
+        public unsafe uint ExceptionDataPresent
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
@@ -64,7 +64,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public uint EpilogInHeader
+        public unsafe uint EpilogInHeader
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
@@ -79,7 +79,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public uint EpilogCount
+        public unsafe uint EpilogCount
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
@@ -94,7 +94,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public uint CodeWords
+        public unsafe uint CodeWords
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get

@@ -16,15 +16,15 @@ namespace TerraFX.Interop
         [NativeTypeName("const IID")]
         public static readonly Guid CLSID_MFSourceReader = new Guid(0x1777133c, 0x0881, 0x411b, 0xa5, 0x77, 0xad, 0x54, 0x5f, 0x07, 0x14, 0xc4);
 
-        [DllImport("mfreadwrite", ExactSpelling = true)]
+        [DllImport("mfreadwrite", CallingConvention = CallingConvention.StdCall, ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int MFCreateSourceReaderFromURL([NativeTypeName("LPCWSTR")] ushort* pwszURL, [NativeTypeName("IMFAttributes *")] IMFAttributes* pAttributes, [NativeTypeName("IMFSourceReader **")] IMFSourceReader** ppSourceReader);
 
-        [DllImport("mfreadwrite", ExactSpelling = true)]
+        [DllImport("mfreadwrite", CallingConvention = CallingConvention.StdCall, ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int MFCreateSourceReaderFromByteStream([NativeTypeName("IMFByteStream *")] IMFByteStream* pByteStream, [NativeTypeName("IMFAttributes *")] IMFAttributes* pAttributes, [NativeTypeName("IMFSourceReader **")] IMFSourceReader** ppSourceReader);
 
-        [DllImport("mfreadwrite", ExactSpelling = true)]
+        [DllImport("mfreadwrite", CallingConvention = CallingConvention.StdCall, ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int MFCreateSourceReaderFromMediaSource([NativeTypeName("IMFMediaSource *")] IMFMediaSource* pMediaSource, [NativeTypeName("IMFAttributes *")] IMFAttributes* pAttributes, [NativeTypeName("IMFSourceReader **")] IMFSourceReader** ppSourceReader);
 
@@ -64,11 +64,11 @@ namespace TerraFX.Interop
         [NativeTypeName("const IID")]
         public static readonly Guid CLSID_MFSinkWriter = new Guid(0xa3bbfb17, 0x8273, 0x4e52, 0x9e, 0x0e, 0x97, 0x39, 0xdc, 0x88, 0x79, 0x90);
 
-        [DllImport("mfreadwrite", ExactSpelling = true)]
+        [DllImport("mfreadwrite", CallingConvention = CallingConvention.StdCall, ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int MFCreateSinkWriterFromURL([NativeTypeName("LPCWSTR")] ushort* pwszOutputURL, [NativeTypeName("IMFByteStream *")] IMFByteStream* pByteStream, [NativeTypeName("IMFAttributes *")] IMFAttributes* pAttributes, [NativeTypeName("IMFSinkWriter **")] IMFSinkWriter** ppSinkWriter);
 
-        [DllImport("mfreadwrite", ExactSpelling = true)]
+        [DllImport("mfreadwrite", CallingConvention = CallingConvention.StdCall, ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int MFCreateSinkWriterFromMediaSink([NativeTypeName("IMFMediaSink *")] IMFMediaSink* pMediaSink, [NativeTypeName("IMFAttributes *")] IMFAttributes* pAttributes, [NativeTypeName("IMFSinkWriter **")] IMFSinkWriter** ppSinkWriter);
 

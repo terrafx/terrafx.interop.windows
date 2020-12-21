@@ -15,21 +15,29 @@ namespace TerraFX.Interop
         [NativeTypeName("_STORAGE_SPEC_VERSION::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winioctl.h:2461:5)")]
         public _Anonymous_e__Struct Anonymous;
 
-        public ref _Anonymous_e__Struct._MinorVersion_e__Union MinorVersion
+        public unsafe ref _Anonymous_e__Struct._MinorVersion_e__Union MinorVersion
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.MinorVersion, 1));
+#else
+                return ref ((_Anonymous_e__Struct*)Unsafe.AsPointer(ref Anonymous))->MinorVersion;
+#endif
             }
         }
 
-        public ref ushort MajorVersion
+        public unsafe ref ushort MajorVersion
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.MajorVersion, 1));
+#else
+                return ref ((_Anonymous_e__Struct*)Unsafe.AsPointer(ref Anonymous))->MajorVersion;
+#endif
             }
         }
 
@@ -52,21 +60,29 @@ namespace TerraFX.Interop
                 [NativeTypeName("_STORAGE_SPEC_VERSION::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winioctl.h:2463:13)")]
                 public _Anonymous_e__Struct Anonymous;
 
-                public ref byte SubMinor
+                public unsafe ref byte SubMinor
                 {
                     [MethodImpl(MethodImplOptions.AggressiveInlining)]
                     get
                     {
+#if !NETSTANDARD2_0
                         return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.SubMinor, 1));
+#else
+                        return ref ((_Anonymous_e__Struct*)Unsafe.AsPointer(ref Anonymous))->SubMinor;
+#endif
                     }
                 }
 
-                public ref byte Minor
+                public unsafe ref byte Minor
                 {
                     [MethodImpl(MethodImplOptions.AggressiveInlining)]
                     get
                     {
+#if !NETSTANDARD2_0
                         return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Minor, 1));
+#else
+                        return ref ((_Anonymous_e__Struct*)Unsafe.AsPointer(ref Anonymous))->Minor;
+#endif
                     }
                 }
 

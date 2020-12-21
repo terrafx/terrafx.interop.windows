@@ -15,30 +15,42 @@ namespace TerraFX.Interop
         [NativeTypeName("D3D12_ROOT_PARAMETER::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/d3d12.h:3451:5)")]
         public _Anonymous_e__Union Anonymous;
 
-        public ref D3D12_ROOT_DESCRIPTOR_TABLE DescriptorTable
+        public unsafe ref D3D12_ROOT_DESCRIPTOR_TABLE DescriptorTable
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.DescriptorTable, 1));
+#else
+                return ref ((_Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous))->DescriptorTable;
+#endif
             }
         }
 
-        public ref D3D12_ROOT_CONSTANTS Constants
+        public unsafe ref D3D12_ROOT_CONSTANTS Constants
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Constants, 1));
+#else
+                return ref ((_Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous))->Constants;
+#endif
             }
         }
 
-        public ref D3D12_ROOT_DESCRIPTOR Descriptor
+        public unsafe ref D3D12_ROOT_DESCRIPTOR Descriptor
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Descriptor, 1));
+#else
+                return ref ((_Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous))->Descriptor;
+#endif
             }
         }
 

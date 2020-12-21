@@ -24,7 +24,7 @@ namespace TerraFX.Interop
         {
             public FILE_LEVEL_TRIM_RANGE e0;
 
-            public ref FILE_LEVEL_TRIM_RANGE this[int index]
+            public unsafe ref FILE_LEVEL_TRIM_RANGE this[int index]
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
                 get
@@ -34,7 +34,14 @@ namespace TerraFX.Interop
             }
 
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public Span<FILE_LEVEL_TRIM_RANGE> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
+            public unsafe Span<FILE_LEVEL_TRIM_RANGE> AsSpan(int length)
+            {
+#if !NETSTANDARD2_0
+                return MemoryMarshal.CreateSpan(ref e0, length);
+#else
+                return new Span<FILE_LEVEL_TRIM_RANGE>((FILE_LEVEL_TRIM_RANGE*)Unsafe.AsPointer(ref this), length);
+#endif
+            }
         }
     }
 }

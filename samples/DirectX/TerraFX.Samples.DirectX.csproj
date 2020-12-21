@@ -3,8 +3,12 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net5.0</TargetFramework>
+    <TargetFrameworks>net5.0;net461</TargetFrameworks>
   </PropertyGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)' == 'net461'">
+    <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" />
+  </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\..\sources\Interop\Windows\TerraFX.Interop.Windows.csproj" />

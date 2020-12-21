@@ -19,42 +19,42 @@ namespace TerraFX.Interop
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return ((delegate* unmanaged<ISpRecognizer2*, Guid*, void**, int>)(lpVtbl[0]))((ISpRecognizer2*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* unmanaged[Stdcall]<ISpRecognizer2*, Guid*, void**, int>)(lpVtbl[0]))((ISpRecognizer2*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return ((delegate* unmanaged<ISpRecognizer2*, uint>)(lpVtbl[1]))((ISpRecognizer2*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged[Stdcall]<ISpRecognizer2*, uint>)(lpVtbl[1]))((ISpRecognizer2*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return ((delegate* unmanaged<ISpRecognizer2*, uint>)(lpVtbl[2]))((ISpRecognizer2*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged[Stdcall]<ISpRecognizer2*, uint>)(lpVtbl[2]))((ISpRecognizer2*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int EmulateRecognitionEx([NativeTypeName("ISpPhrase *")] ISpPhrase* pPhrase, [NativeTypeName("DWORD")] uint dwCompareFlags)
         {
-            return ((delegate* unmanaged<ISpRecognizer2*, ISpPhrase*, uint, int>)(lpVtbl[3]))((ISpRecognizer2*)Unsafe.AsPointer(ref this), pPhrase, dwCompareFlags);
+            return ((delegate* unmanaged[Stdcall]<ISpRecognizer2*, ISpPhrase*, uint, int>)(lpVtbl[3]))((ISpRecognizer2*)Unsafe.AsPointer(ref this), pPhrase, dwCompareFlags);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int SetTrainingState([NativeTypeName("BOOL")] int fDoingTraining, [NativeTypeName("BOOL")] int fAdaptFromTrainingData)
         {
-            return ((delegate* unmanaged<ISpRecognizer2*, int, int, int>)(lpVtbl[4]))((ISpRecognizer2*)Unsafe.AsPointer(ref this), fDoingTraining, fAdaptFromTrainingData);
+            return ((delegate* unmanaged[Stdcall]<ISpRecognizer2*, int, int, int>)(lpVtbl[4]))((ISpRecognizer2*)Unsafe.AsPointer(ref this), fDoingTraining, fAdaptFromTrainingData);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int ResetAcousticModelAdaptation()
         {
-            return ((delegate* unmanaged<ISpRecognizer2*, int>)(lpVtbl[5]))((ISpRecognizer2*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged[Stdcall]<ISpRecognizer2*, int>)(lpVtbl[5]))((ISpRecognizer2*)Unsafe.AsPointer(ref this));
         }
     }
 }

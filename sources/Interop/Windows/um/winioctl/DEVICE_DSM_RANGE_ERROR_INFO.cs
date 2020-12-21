@@ -30,7 +30,7 @@ namespace TerraFX.Interop
         {
             public DEVICE_STORAGE_RANGE_ATTRIBUTES e0;
 
-            public ref DEVICE_STORAGE_RANGE_ATTRIBUTES this[int index]
+            public unsafe ref DEVICE_STORAGE_RANGE_ATTRIBUTES this[int index]
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
                 get
@@ -40,7 +40,14 @@ namespace TerraFX.Interop
             }
 
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public Span<DEVICE_STORAGE_RANGE_ATTRIBUTES> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
+            public unsafe Span<DEVICE_STORAGE_RANGE_ATTRIBUTES> AsSpan(int length)
+            {
+#if !NETSTANDARD2_0
+                return MemoryMarshal.CreateSpan(ref e0, length);
+#else
+                return new Span<DEVICE_STORAGE_RANGE_ATTRIBUTES>((DEVICE_STORAGE_RANGE_ATTRIBUTES*)Unsafe.AsPointer(ref this), length);
+#endif
+            }
         }
     }
 }

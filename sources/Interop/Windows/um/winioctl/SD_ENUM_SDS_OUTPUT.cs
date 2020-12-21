@@ -27,7 +27,7 @@ namespace TerraFX.Interop
         {
             public SD_ENUM_SDS_ENTRY e0;
 
-            public ref SD_ENUM_SDS_ENTRY this[int index]
+            public unsafe ref SD_ENUM_SDS_ENTRY this[int index]
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
                 get
@@ -37,7 +37,14 @@ namespace TerraFX.Interop
             }
 
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public Span<SD_ENUM_SDS_ENTRY> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
+            public unsafe Span<SD_ENUM_SDS_ENTRY> AsSpan(int length)
+            {
+#if !NETSTANDARD2_0
+                return MemoryMarshal.CreateSpan(ref e0, length);
+#else
+                return new Span<SD_ENUM_SDS_ENTRY>((SD_ENUM_SDS_ENTRY*)Unsafe.AsPointer(ref this), length);
+#endif
+            }
         }
     }
 }

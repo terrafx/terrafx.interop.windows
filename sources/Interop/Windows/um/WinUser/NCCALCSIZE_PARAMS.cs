@@ -23,7 +23,7 @@ namespace TerraFX.Interop
             public RECT e1;
             public RECT e2;
 
-            public ref RECT this[int index]
+            public unsafe ref RECT this[int index]
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
                 get
@@ -33,7 +33,14 @@ namespace TerraFX.Interop
             }
 
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public Span<RECT> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 3);
+            public unsafe Span<RECT> AsSpan()
+            {
+#if !NETSTANDARD2_0
+                return MemoryMarshal.CreateSpan(ref e0, 3);
+#else
+                return new Span<RECT>((RECT*)Unsafe.AsPointer(ref this), 3);
+#endif
+            }
         }
     }
 }

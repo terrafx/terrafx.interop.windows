@@ -19,30 +19,42 @@ namespace TerraFX.Interop
         [NativeTypeName("_SLIST_HEADER::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:19893:5)")]
         public _Anonymous_e__Struct Anonymous;
 
-        public ref SINGLE_LIST_ENTRY Next
+        public unsafe ref SINGLE_LIST_ENTRY Next
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Next, 1));
+#else
+                return ref ((_Anonymous_e__Struct*)Unsafe.AsPointer(ref Anonymous))->Next;
+#endif
             }
         }
 
-        public ref ushort Depth
+        public unsafe ref ushort Depth
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Depth, 1));
+#else
+                return ref ((_Anonymous_e__Struct*)Unsafe.AsPointer(ref Anonymous))->Depth;
+#endif
             }
         }
 
-        public ref ushort CpuId
+        public unsafe ref ushort CpuId
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.CpuId, 1));
+#else
+                return ref ((_Anonymous_e__Struct*)Unsafe.AsPointer(ref Anonymous))->CpuId;
+#endif
             }
         }
 

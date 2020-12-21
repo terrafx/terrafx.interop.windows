@@ -16,15 +16,12 @@ namespace TerraFX.Interop
         [NativeTypeName("_CMC_TAGGED_REQUEST::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/wincrypt.h:5231:5)")]
         public _Anonymous_e__Union Anonymous;
 
-        public ref CMC_TAGGED_CERT_REQUEST* pTaggedCertRequest
+        public unsafe ref CMC_TAGGED_CERT_REQUEST* pTaggedCertRequest
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
-                fixed (_Anonymous_e__Union* pField = &Anonymous)
-                {
-                    return ref pField->pTaggedCertRequest;
-                }
+                return ref ((_Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous))->pTaggedCertRequest;
             }
         }
 

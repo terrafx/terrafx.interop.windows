@@ -21,7 +21,7 @@ namespace TerraFX.Interop
         {
             public MESSAGE_RESOURCE_BLOCK e0;
 
-            public ref MESSAGE_RESOURCE_BLOCK this[int index]
+            public unsafe ref MESSAGE_RESOURCE_BLOCK this[int index]
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
                 get
@@ -31,7 +31,14 @@ namespace TerraFX.Interop
             }
 
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public Span<MESSAGE_RESOURCE_BLOCK> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
+            public unsafe Span<MESSAGE_RESOURCE_BLOCK> AsSpan(int length)
+            {
+#if !NETSTANDARD2_0
+                return MemoryMarshal.CreateSpan(ref e0, length);
+#else
+                return new Span<MESSAGE_RESOURCE_BLOCK>((MESSAGE_RESOURCE_BLOCK*)Unsafe.AsPointer(ref this), length);
+#endif
+            }
         }
     }
 }

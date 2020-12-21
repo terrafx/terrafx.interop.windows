@@ -39,7 +39,7 @@ namespace TerraFX.Interop
         {
             public STORAGE_TEMPERATURE_INFO e0;
 
-            public ref STORAGE_TEMPERATURE_INFO this[int index]
+            public unsafe ref STORAGE_TEMPERATURE_INFO this[int index]
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
                 get
@@ -49,7 +49,14 @@ namespace TerraFX.Interop
             }
 
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public Span<STORAGE_TEMPERATURE_INFO> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
+            public unsafe Span<STORAGE_TEMPERATURE_INFO> AsSpan(int length)
+            {
+#if !NETSTANDARD2_0
+                return MemoryMarshal.CreateSpan(ref e0, length);
+#else
+                return new Span<STORAGE_TEMPERATURE_INFO>((STORAGE_TEMPERATURE_INFO*)Unsafe.AsPointer(ref this), length);
+#endif
+            }
         }
     }
 }

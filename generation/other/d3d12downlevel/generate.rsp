@@ -7,7 +7,7 @@ other-d3d12downlevel.h
 --test-output
 ../../../tests/Interop/Windows/other/d3d12downlevel
 --traverse
-d3d12downlevel.h
+./d3d12downlevel.h
 --with-librarypath
 *=d3d12
 --with-attribute

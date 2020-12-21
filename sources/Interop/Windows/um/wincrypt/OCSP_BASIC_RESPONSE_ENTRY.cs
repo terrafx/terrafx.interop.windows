@@ -18,15 +18,12 @@ namespace TerraFX.Interop
         [NativeTypeName("_OCSP_BASIC_RESPONSE_ENTRY::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/wincrypt.h:5682:5)")]
         public _Anonymous_e__Union Anonymous;
 
-        public ref OCSP_BASIC_REVOKED_INFO* pRevokedInfo
+        public unsafe ref OCSP_BASIC_REVOKED_INFO* pRevokedInfo
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
-                fixed (_Anonymous_e__Union* pField = &Anonymous)
-                {
-                    return ref pField->pRevokedInfo;
-                }
+                return ref ((_Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous))->pRevokedInfo;
             }
         }
 

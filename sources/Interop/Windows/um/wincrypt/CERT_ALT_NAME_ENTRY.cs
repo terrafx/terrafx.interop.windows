@@ -16,81 +16,74 @@ namespace TerraFX.Interop
         [NativeTypeName("_CERT_ALT_NAME_ENTRY::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/wincrypt.h:3957:5)")]
         public _Anonymous_e__Union Anonymous;
 
-        public ref CERT_OTHER_NAME* pOtherName
+        public unsafe ref CERT_OTHER_NAME* pOtherName
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
-                fixed (_Anonymous_e__Union* pField = &Anonymous)
-                {
-                    return ref pField->pOtherName;
-                }
+                return ref ((_Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous))->pOtherName;
             }
         }
 
-        public ref ushort* pwszRfc822Name
+        public unsafe ref ushort* pwszRfc822Name
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
-                fixed (_Anonymous_e__Union* pField = &Anonymous)
-                {
-                    return ref pField->pwszRfc822Name;
-                }
+                return ref ((_Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous))->pwszRfc822Name;
             }
         }
 
-        public ref ushort* pwszDNSName
+        public unsafe ref ushort* pwszDNSName
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
-                fixed (_Anonymous_e__Union* pField = &Anonymous)
-                {
-                    return ref pField->pwszDNSName;
-                }
+                return ref ((_Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous))->pwszDNSName;
             }
         }
 
-        public ref CRYPTOAPI_BLOB DirectoryName
+        public unsafe ref CRYPTOAPI_BLOB DirectoryName
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.DirectoryName, 1));
+#else
+                return ref ((_Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous))->DirectoryName;
+#endif
             }
         }
 
-        public ref ushort* pwszURL
+        public unsafe ref ushort* pwszURL
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
-                fixed (_Anonymous_e__Union* pField = &Anonymous)
-                {
-                    return ref pField->pwszURL;
-                }
+                return ref ((_Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous))->pwszURL;
             }
         }
 
-        public ref CRYPTOAPI_BLOB IPAddress
+        public unsafe ref CRYPTOAPI_BLOB IPAddress
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.IPAddress, 1));
+#else
+                return ref ((_Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous))->IPAddress;
+#endif
             }
         }
 
-        public ref sbyte* pszRegisteredID
+        public unsafe ref sbyte* pszRegisteredID
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
-                fixed (_Anonymous_e__Union* pField = &Anonymous)
-                {
-                    return ref pField->pszRegisteredID;
-                }
+                return ref ((_Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous))->pszRegisteredID;
             }
         }
 

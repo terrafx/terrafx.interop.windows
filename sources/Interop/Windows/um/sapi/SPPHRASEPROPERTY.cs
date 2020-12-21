@@ -16,39 +16,55 @@ namespace TerraFX.Interop
         [NativeTypeName("SPPHRASEPROPERTY::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/sapi.h:5475:5)")]
         public _Anonymous_e__Union Anonymous;
 
-        public ref uint ulId
+        public unsafe ref uint ulId
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.ulId, 1));
+#else
+                return ref ((_Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous))->ulId;
+#endif
             }
         }
 
-        public ref byte bType
+        public unsafe ref byte bType
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.bType, 1));
+#else
+                return ref ((_Anonymous_e__Union._Anonymous_e__Struct*)Unsafe.AsPointer(ref Anonymous.Anonymous))->bType;
+#endif
             }
         }
 
-        public ref byte bReserved
+        public unsafe ref byte bReserved
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.bReserved, 1));
+#else
+                return ref ((_Anonymous_e__Union._Anonymous_e__Struct*)Unsafe.AsPointer(ref Anonymous.Anonymous))->bReserved;
+#endif
             }
         }
 
-        public ref ushort usArrayIndex
+        public unsafe ref ushort usArrayIndex
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.usArrayIndex, 1));
+#else
+                return ref ((_Anonymous_e__Union._Anonymous_e__Struct*)Unsafe.AsPointer(ref Anonymous.Anonymous))->usArrayIndex;
+#endif
             }
         }
 

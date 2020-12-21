@@ -28,7 +28,7 @@ namespace TerraFX.Interop
             public DVD_MUA_MixingInfo e6;
             public DVD_MUA_MixingInfo e7;
 
-            public ref DVD_MUA_MixingInfo this[int index]
+            public unsafe ref DVD_MUA_MixingInfo this[int index]
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
                 get
@@ -38,7 +38,14 @@ namespace TerraFX.Interop
             }
 
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public Span<DVD_MUA_MixingInfo> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 8);
+            public unsafe Span<DVD_MUA_MixingInfo> AsSpan()
+            {
+#if !NETSTANDARD2_0
+                return MemoryMarshal.CreateSpan(ref e0, 8);
+#else
+                return new Span<DVD_MUA_MixingInfo>((DVD_MUA_MixingInfo*)Unsafe.AsPointer(ref this), 8);
+#endif
+            }
         }
 
         public partial struct _Coeff_e__FixedBuffer
@@ -52,7 +59,7 @@ namespace TerraFX.Interop
             public DVD_MUA_Coeff e6;
             public DVD_MUA_Coeff e7;
 
-            public ref DVD_MUA_Coeff this[int index]
+            public unsafe ref DVD_MUA_Coeff this[int index]
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
                 get
@@ -62,7 +69,14 @@ namespace TerraFX.Interop
             }
 
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public Span<DVD_MUA_Coeff> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 8);
+            public unsafe Span<DVD_MUA_Coeff> AsSpan()
+            {
+#if !NETSTANDARD2_0
+                return MemoryMarshal.CreateSpan(ref e0, 8);
+#else
+                return new Span<DVD_MUA_Coeff>((DVD_MUA_Coeff*)Unsafe.AsPointer(ref this), 8);
+#endif
+            }
         }
     }
 }

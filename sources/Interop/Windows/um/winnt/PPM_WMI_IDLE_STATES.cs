@@ -33,7 +33,7 @@ namespace TerraFX.Interop
         {
             public PPM_WMI_IDLE_STATE e0;
 
-            public ref PPM_WMI_IDLE_STATE this[int index]
+            public unsafe ref PPM_WMI_IDLE_STATE this[int index]
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
                 get
@@ -43,7 +43,14 @@ namespace TerraFX.Interop
             }
 
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public Span<PPM_WMI_IDLE_STATE> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
+            public unsafe Span<PPM_WMI_IDLE_STATE> AsSpan(int length)
+            {
+#if !NETSTANDARD2_0
+                return MemoryMarshal.CreateSpan(ref e0, length);
+#else
+                return new Span<PPM_WMI_IDLE_STATE>((PPM_WMI_IDLE_STATE*)Unsafe.AsPointer(ref this), length);
+#endif
+            }
         }
     }
 }

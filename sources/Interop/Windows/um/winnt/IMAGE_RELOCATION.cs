@@ -14,21 +14,29 @@ namespace TerraFX.Interop
         [NativeTypeName("_IMAGE_RELOCATION::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:17622:5)")]
         public _Anonymous_e__Union Anonymous;
 
-        public ref uint VirtualAddress
+        public unsafe ref uint VirtualAddress
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.VirtualAddress, 1));
+#else
+                return ref ((_Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous))->VirtualAddress;
+#endif
             }
         }
 
-        public ref uint RelocCount
+        public unsafe ref uint RelocCount
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.RelocCount, 1));
+#else
+                return ref ((_Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous))->RelocCount;
+#endif
             }
         }
 

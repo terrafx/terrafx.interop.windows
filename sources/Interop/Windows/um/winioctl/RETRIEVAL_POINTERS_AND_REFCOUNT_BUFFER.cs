@@ -33,7 +33,7 @@ namespace TerraFX.Interop
         {
             public _Anonymous_e__Struct e0;
 
-            public ref _Anonymous_e__Struct this[int index]
+            public unsafe ref _Anonymous_e__Struct this[int index]
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
                 get
@@ -43,7 +43,14 @@ namespace TerraFX.Interop
             }
 
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public Span<_Anonymous_e__Struct> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
+            public unsafe Span<_Anonymous_e__Struct> AsSpan(int length)
+            {
+#if !NETSTANDARD2_0
+                return MemoryMarshal.CreateSpan(ref e0, length);
+#else
+                return new Span<_Anonymous_e__Struct>((_Anonymous_e__Struct*)Unsafe.AsPointer(ref this), length);
+#endif
+            }
         }
     }
 }

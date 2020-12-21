@@ -19,28 +19,28 @@ namespace TerraFX.Interop
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return ((delegate* unmanaged<ISpecifyPropertyPages*, Guid*, void**, int>)(lpVtbl[0]))((ISpecifyPropertyPages*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* unmanaged[Stdcall]<ISpecifyPropertyPages*, Guid*, void**, int>)(lpVtbl[0]))((ISpecifyPropertyPages*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return ((delegate* unmanaged<ISpecifyPropertyPages*, uint>)(lpVtbl[1]))((ISpecifyPropertyPages*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged[Stdcall]<ISpecifyPropertyPages*, uint>)(lpVtbl[1]))((ISpecifyPropertyPages*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return ((delegate* unmanaged<ISpecifyPropertyPages*, uint>)(lpVtbl[2]))((ISpecifyPropertyPages*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged[Stdcall]<ISpecifyPropertyPages*, uint>)(lpVtbl[2]))((ISpecifyPropertyPages*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetPages([NativeTypeName("CAUUID *")] CAUUID* pPages)
         {
-            return ((delegate* unmanaged<ISpecifyPropertyPages*, CAUUID*, int>)(lpVtbl[3]))((ISpecifyPropertyPages*)Unsafe.AsPointer(ref this), pPages);
+            return ((delegate* unmanaged[Stdcall]<ISpecifyPropertyPages*, CAUUID*, int>)(lpVtbl[3]))((ISpecifyPropertyPages*)Unsafe.AsPointer(ref this), pPages);
         }
     }
 }

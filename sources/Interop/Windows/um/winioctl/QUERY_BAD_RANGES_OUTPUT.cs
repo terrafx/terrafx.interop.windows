@@ -27,7 +27,7 @@ namespace TerraFX.Interop
         {
             public QUERY_BAD_RANGES_OUTPUT_RANGE e0;
 
-            public ref QUERY_BAD_RANGES_OUTPUT_RANGE this[int index]
+            public unsafe ref QUERY_BAD_RANGES_OUTPUT_RANGE this[int index]
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
                 get
@@ -37,7 +37,14 @@ namespace TerraFX.Interop
             }
 
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public Span<QUERY_BAD_RANGES_OUTPUT_RANGE> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
+            public unsafe Span<QUERY_BAD_RANGES_OUTPUT_RANGE> AsSpan(int length)
+            {
+#if !NETSTANDARD2_0
+                return MemoryMarshal.CreateSpan(ref e0, length);
+#else
+                return new Span<QUERY_BAD_RANGES_OUTPUT_RANGE>((QUERY_BAD_RANGES_OUTPUT_RANGE*)Unsafe.AsPointer(ref this), length);
+#endif
+            }
         }
     }
 }

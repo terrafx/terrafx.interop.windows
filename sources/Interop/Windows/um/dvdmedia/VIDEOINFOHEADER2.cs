@@ -38,21 +38,29 @@ namespace TerraFX.Interop
         [NativeTypeName("tagVIDEOINFOHEADER2::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/dvdmedia.h:317:5)")]
         public _Anonymous_e__Union Anonymous;
 
-        public ref uint dwControlFlags
+        public unsafe ref uint dwControlFlags
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.dwControlFlags, 1));
+#else
+                return ref ((_Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous))->dwControlFlags;
+#endif
             }
         }
 
-        public ref uint dwReserved1
+        public unsafe ref uint dwReserved1
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.dwReserved1, 1));
+#else
+                return ref ((_Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous))->dwReserved1;
+#endif
             }
         }
 

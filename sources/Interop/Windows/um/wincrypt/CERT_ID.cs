@@ -16,30 +16,42 @@ namespace TerraFX.Interop
         [NativeTypeName("_CERT_ID::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/wincrypt.h:6665:5)")]
         public _Anonymous_e__Union Anonymous;
 
-        public ref CERT_ISSUER_SERIAL_NUMBER IssuerSerialNumber
+        public unsafe ref CERT_ISSUER_SERIAL_NUMBER IssuerSerialNumber
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.IssuerSerialNumber, 1));
+#else
+                return ref ((_Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous))->IssuerSerialNumber;
+#endif
             }
         }
 
-        public ref CRYPTOAPI_BLOB KeyId
+        public unsafe ref CRYPTOAPI_BLOB KeyId
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.KeyId, 1));
+#else
+                return ref ((_Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous))->KeyId;
+#endif
             }
         }
 
-        public ref CRYPTOAPI_BLOB HashId
+        public unsafe ref CRYPTOAPI_BLOB HashId
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.HashId, 1));
+#else
+                return ref ((_Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous))->HashId;
+#endif
             }
         }
 

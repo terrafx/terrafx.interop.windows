@@ -9,7 +9,7 @@ namespace TerraFX.Interop
 {
     public static unsafe partial class Windows
     {
-        [DllImport("d3d11on12", ExactSpelling = true)]
+        [DllImport("d3d11on12", CallingConvention = CallingConvention.StdCall, ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int GetD3D11On12On7Interface([NativeTypeName("ID3D11On12On7 **")] ID3D11On12On7** ppIface);
     }

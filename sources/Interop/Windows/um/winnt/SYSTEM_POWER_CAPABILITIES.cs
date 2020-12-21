@@ -111,7 +111,7 @@ namespace TerraFX.Interop
             public BATTERY_REPORTING_SCALE e1;
             public BATTERY_REPORTING_SCALE e2;
 
-            public ref BATTERY_REPORTING_SCALE this[int index]
+            public unsafe ref BATTERY_REPORTING_SCALE this[int index]
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
                 get
@@ -121,7 +121,14 @@ namespace TerraFX.Interop
             }
 
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public Span<BATTERY_REPORTING_SCALE> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 3);
+            public unsafe Span<BATTERY_REPORTING_SCALE> AsSpan()
+            {
+#if !NETSTANDARD2_0
+                return MemoryMarshal.CreateSpan(ref e0, 3);
+#else
+                return new Span<BATTERY_REPORTING_SCALE>((BATTERY_REPORTING_SCALE*)Unsafe.AsPointer(ref this), 3);
+#endif
+            }
         }
     }
 }

@@ -18,39 +18,55 @@ namespace TerraFX.Interop
         [NativeTypeName("_SYSTEM_LOGICAL_PROCESSOR_INFORMATION_EX::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:12567:5)")]
         public _Anonymous_e__Union Anonymous;
 
-        public ref PROCESSOR_RELATIONSHIP Processor
+        public unsafe ref PROCESSOR_RELATIONSHIP Processor
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Processor, 1));
+#else
+                return ref ((_Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous))->Processor;
+#endif
             }
         }
 
-        public ref NUMA_NODE_RELATIONSHIP NumaNode
+        public unsafe ref NUMA_NODE_RELATIONSHIP NumaNode
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.NumaNode, 1));
+#else
+                return ref ((_Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous))->NumaNode;
+#endif
             }
         }
 
-        public ref CACHE_RELATIONSHIP Cache
+        public unsafe ref CACHE_RELATIONSHIP Cache
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Cache, 1));
+#else
+                return ref ((_Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous))->Cache;
+#endif
             }
         }
 
-        public ref GROUP_RELATIONSHIP Group
+        public unsafe ref GROUP_RELATIONSHIP Group
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Group, 1));
+#else
+                return ref ((_Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous))->Group;
+#endif
             }
         }
 

@@ -32,7 +32,7 @@ namespace TerraFX.Interop
         {
             public SAFEARRAYBOUND e0;
 
-            public ref SAFEARRAYBOUND this[int index]
+            public unsafe ref SAFEARRAYBOUND this[int index]
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
                 get
@@ -42,7 +42,14 @@ namespace TerraFX.Interop
             }
 
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public Span<SAFEARRAYBOUND> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
+            public unsafe Span<SAFEARRAYBOUND> AsSpan(int length)
+            {
+#if !NETSTANDARD2_0
+                return MemoryMarshal.CreateSpan(ref e0, length);
+#else
+                return new Span<SAFEARRAYBOUND>((SAFEARRAYBOUND*)Unsafe.AsPointer(ref this), length);
+#endif
+            }
         }
     }
 }

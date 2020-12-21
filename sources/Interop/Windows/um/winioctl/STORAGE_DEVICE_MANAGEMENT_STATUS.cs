@@ -50,7 +50,7 @@ namespace TerraFX.Interop
             public STORAGE_DISK_OPERATIONAL_STATUS e14;
             public STORAGE_DISK_OPERATIONAL_STATUS e15;
 
-            public ref STORAGE_DISK_OPERATIONAL_STATUS this[int index]
+            public unsafe ref STORAGE_DISK_OPERATIONAL_STATUS this[int index]
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
                 get
@@ -60,14 +60,21 @@ namespace TerraFX.Interop
             }
 
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public Span<STORAGE_DISK_OPERATIONAL_STATUS> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 16);
+            public unsafe Span<STORAGE_DISK_OPERATIONAL_STATUS> AsSpan()
+            {
+#if !NETSTANDARD2_0
+                return MemoryMarshal.CreateSpan(ref e0, 16);
+#else
+                return new Span<STORAGE_DISK_OPERATIONAL_STATUS>((STORAGE_DISK_OPERATIONAL_STATUS*)Unsafe.AsPointer(ref this), 16);
+#endif
+            }
         }
 
         public partial struct _AdditionalReasons_e__FixedBuffer
         {
             public STORAGE_OPERATIONAL_REASON e0;
 
-            public ref STORAGE_OPERATIONAL_REASON this[int index]
+            public unsafe ref STORAGE_OPERATIONAL_REASON this[int index]
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
                 get
@@ -77,7 +84,14 @@ namespace TerraFX.Interop
             }
 
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public Span<STORAGE_OPERATIONAL_REASON> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
+            public unsafe Span<STORAGE_OPERATIONAL_REASON> AsSpan(int length)
+            {
+#if !NETSTANDARD2_0
+                return MemoryMarshal.CreateSpan(ref e0, length);
+#else
+                return new Span<STORAGE_OPERATIONAL_REASON>((STORAGE_OPERATIONAL_REASON*)Unsafe.AsPointer(ref this), length);
+#endif
+            }
         }
     }
 }

@@ -20,21 +20,29 @@ namespace TerraFX.Interop
         [NativeTypeName("_DRIVE_LAYOUT_INFORMATION_EX::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winioctl.h:8568:5)")]
         public _Anonymous_e__Union Anonymous;
 
-        public ref DRIVE_LAYOUT_INFORMATION_MBR Mbr
+        public unsafe ref DRIVE_LAYOUT_INFORMATION_MBR Mbr
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Mbr, 1));
+#else
+                return ref ((_Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous))->Mbr;
+#endif
             }
         }
 
-        public ref DRIVE_LAYOUT_INFORMATION_GPT Gpt
+        public unsafe ref DRIVE_LAYOUT_INFORMATION_GPT Gpt
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Gpt, 1));
+#else
+                return ref ((_Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous))->Gpt;
+#endif
             }
         }
 
@@ -55,7 +63,7 @@ namespace TerraFX.Interop
         {
             public PARTITION_INFORMATION_EX e0;
 
-            public ref PARTITION_INFORMATION_EX this[int index]
+            public unsafe ref PARTITION_INFORMATION_EX this[int index]
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
                 get
@@ -65,7 +73,14 @@ namespace TerraFX.Interop
             }
 
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public Span<PARTITION_INFORMATION_EX> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
+            public unsafe Span<PARTITION_INFORMATION_EX> AsSpan(int length)
+            {
+#if !NETSTANDARD2_0
+                return MemoryMarshal.CreateSpan(ref e0, length);
+#else
+                return new Span<PARTITION_INFORMATION_EX>((PARTITION_INFORMATION_EX*)Unsafe.AsPointer(ref this), length);
+#endif
+            }
         }
     }
 }

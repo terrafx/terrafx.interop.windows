@@ -24,7 +24,7 @@ namespace TerraFX.Interop
         {
             public MFPaletteEntry e0;
 
-            public ref MFPaletteEntry this[int index]
+            public unsafe ref MFPaletteEntry this[int index]
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
                 get
@@ -34,7 +34,14 @@ namespace TerraFX.Interop
             }
 
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public Span<MFPaletteEntry> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
+            public unsafe Span<MFPaletteEntry> AsSpan(int length)
+            {
+#if !NETSTANDARD2_0
+                return MemoryMarshal.CreateSpan(ref e0, length);
+#else
+                return new Span<MFPaletteEntry>((MFPaletteEntry*)Unsafe.AsPointer(ref this), length);
+#endif
+            }
         }
     }
 }

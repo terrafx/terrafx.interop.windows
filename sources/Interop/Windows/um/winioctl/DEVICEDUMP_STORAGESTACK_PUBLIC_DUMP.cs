@@ -31,7 +31,7 @@ namespace TerraFX.Interop
         {
             public DEVICEDUMP_STORAGESTACK_PUBLIC_STATE_RECORD e0;
 
-            public ref DEVICEDUMP_STORAGESTACK_PUBLIC_STATE_RECORD this[int index]
+            public unsafe ref DEVICEDUMP_STORAGESTACK_PUBLIC_STATE_RECORD this[int index]
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
                 get
@@ -41,7 +41,14 @@ namespace TerraFX.Interop
             }
 
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public Span<DEVICEDUMP_STORAGESTACK_PUBLIC_STATE_RECORD> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
+            public unsafe Span<DEVICEDUMP_STORAGESTACK_PUBLIC_STATE_RECORD> AsSpan(int length)
+            {
+#if !NETSTANDARD2_0
+                return MemoryMarshal.CreateSpan(ref e0, length);
+#else
+                return new Span<DEVICEDUMP_STORAGESTACK_PUBLIC_STATE_RECORD>((DEVICEDUMP_STORAGESTACK_PUBLIC_STATE_RECORD*)Unsafe.AsPointer(ref this), length);
+#endif
+            }
         }
     }
 }

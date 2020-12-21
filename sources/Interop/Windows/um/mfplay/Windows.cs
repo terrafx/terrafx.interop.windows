@@ -10,7 +10,7 @@ namespace TerraFX.Interop
 {
     public static unsafe partial class Windows
     {
-        [DllImport("mfplat", ExactSpelling = true)]
+        [DllImport("mfplat", CallingConvention = CallingConvention.StdCall, ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int MFPCreateMediaPlayer([NativeTypeName("LPCWSTR")] ushort* pwszURL, [NativeTypeName("BOOL")] int fStartPlayback, [NativeTypeName("MFP_CREATION_OPTIONS")] uint creationOptions, [NativeTypeName("IMFPMediaPlayerCallback *")] IMFPMediaPlayerCallback* pCallback, [NativeTypeName("HWND")] IntPtr hWnd, [NativeTypeName("IMFPMediaPlayer **")] IMFPMediaPlayer** ppMediaPlayer);
 

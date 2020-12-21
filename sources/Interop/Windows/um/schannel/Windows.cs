@@ -10,41 +10,41 @@ namespace TerraFX.Interop
 {
     public static unsafe partial class Windows
     {
-        [DllImport("schannel", ExactSpelling = true)]
+        [DllImport("schannel", CallingConvention = CallingConvention.StdCall, ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int SslEmptyCacheA([NativeTypeName("LPSTR")] sbyte* pszTargetName, [NativeTypeName("DWORD")] uint dwFlags);
 
-        [DllImport("schannel", ExactSpelling = true)]
+        [DllImport("schannel", CallingConvention = CallingConvention.StdCall, ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int SslEmptyCacheW([NativeTypeName("LPWSTR")] ushort* pszTargetName, [NativeTypeName("DWORD")] uint dwFlags);
 
-        [DllImport("schannel", ExactSpelling = true)]
+        [DllImport("schannel", CallingConvention = CallingConvention.StdCall, ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int SslGenerateKeyPair([NativeTypeName("PSSL_CREDENTIAL_CERTIFICATE")] SSL_CREDENTIAL_CERTIFICATE* pCerts, [NativeTypeName("PSTR")] sbyte* pszDN, [NativeTypeName("PSTR")] sbyte* pszPassword, [NativeTypeName("DWORD")] uint Bits);
 
-        [DllImport("schannel", ExactSpelling = true)]
+        [DllImport("schannel", CallingConvention = CallingConvention.StdCall, ExactSpelling = true)]
         public static extern void SslGenerateRandomBits([NativeTypeName("PUCHAR")] byte* pRandomData, [NativeTypeName("LONG")] int cRandomData);
 
-        [DllImport("schannel", ExactSpelling = true)]
+        [DllImport("schannel", CallingConvention = CallingConvention.StdCall, ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int SslCrackCertificate([NativeTypeName("PUCHAR")] byte* pbCertificate, [NativeTypeName("DWORD")] uint cbCertificate, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("PX509Certificate *")] X509Certificate** ppCertificate);
 
-        [DllImport("schannel", ExactSpelling = true)]
+        [DllImport("schannel", CallingConvention = CallingConvention.StdCall, ExactSpelling = true)]
         public static extern void SslFreeCertificate([NativeTypeName("PX509Certificate")] X509Certificate* pCertificate);
 
-        [DllImport("schannel", ExactSpelling = true)]
+        [DllImport("schannel", CallingConvention = CallingConvention.StdCall, ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
         public static extern uint SslGetMaximumKeySize([NativeTypeName("DWORD")] uint Reserved);
 
-        [DllImport("schannel", ExactSpelling = true)]
+        [DllImport("schannel", CallingConvention = CallingConvention.StdCall, ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int SslGetDefaultIssuers([NativeTypeName("PBYTE")] byte* pbIssuers, [NativeTypeName("DWORD *")] uint* pcbIssuers);
 
-        [DllImport("schannel", ExactSpelling = true)]
+        [DllImport("schannel", CallingConvention = CallingConvention.StdCall, ExactSpelling = true)]
         [return: NativeTypeName("SECURITY_STATUS")]
         public static extern int SslGetServerIdentity([NativeTypeName("PBYTE")] byte* ClientHello, [NativeTypeName("DWORD")] uint ClientHelloSize, [NativeTypeName("PBYTE *")] byte** ServerIdentity, [NativeTypeName("PDWORD")] uint* ServerIdentitySize, [NativeTypeName("DWORD")] uint Flags);
 
-        [DllImport("schannel", ExactSpelling = true)]
+        [DllImport("schannel", CallingConvention = CallingConvention.StdCall, ExactSpelling = true)]
         [return: NativeTypeName("SECURITY_STATUS")]
         public static extern int SslGetExtensions([NativeTypeName("const BYTE *")] byte* clientHello, [NativeTypeName("DWORD")] uint clientHelloByteSize, [NativeTypeName("SCH_EXTENSION_DATA *")] SCH_EXTENSION_DATA* genericExtensions, [NativeTypeName("BYTE")] byte genericExtensionsCount, [NativeTypeName("DWORD *")] uint* bytesToRead, SchGetExtensionsOptions flags);
 

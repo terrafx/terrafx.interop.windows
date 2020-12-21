@@ -23,21 +23,29 @@ namespace TerraFX.Interop
         [NativeTypeName("_STORAGE_OFFLOAD_TOKEN::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winioctl.h:3330:5)")]
         public _Anonymous_e__Union Anonymous;
 
-        public ref _Anonymous_e__Union._StorageOffloadZeroDataToken_e__Struct StorageOffloadZeroDataToken
+        public unsafe ref _Anonymous_e__Union._StorageOffloadZeroDataToken_e__Struct StorageOffloadZeroDataToken
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.StorageOffloadZeroDataToken, 1));
+#else
+                return ref ((_Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous))->StorageOffloadZeroDataToken;
+#endif
             }
         }
 
-        public Span<byte> Token
+        public unsafe Span<byte> Token
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return MemoryMarshal.CreateSpan(ref Anonymous.Token[0], 504);
+#else
+                return new Span<byte>(((_Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous))->Token, 504);
+#endif
             }
         }
 

@@ -19,45 +19,47 @@ namespace TerraFX.Interop
         [NativeTypeName("REGFILTER2::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/strmif.h:5070:36)")]
         public _Anonymous_e__Union Anonymous;
 
-        public ref uint cPins
+        public unsafe ref uint cPins
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous1.cPins, 1));
+#else
+                return ref ((_Anonymous_e__Union._Anonymous1_e__Struct*)Unsafe.AsPointer(ref Anonymous.Anonymous1))->cPins;
+#endif
             }
         }
 
-        public ref REGFILTERPINS* rgPins
+        public unsafe ref REGFILTERPINS* rgPins
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
-                fixed (_Anonymous_e__Union._Anonymous1_e__Struct* pField = &Anonymous.Anonymous1)
-                {
-                    return ref pField->rgPins;
-                }
+                return ref ((_Anonymous_e__Union._Anonymous1_e__Struct*)Unsafe.AsPointer(ref Anonymous.Anonymous1))->rgPins;
             }
         }
 
-        public ref uint cPins2
+        public unsafe ref uint cPins2
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous2.cPins2, 1));
+#else
+                return ref ((_Anonymous_e__Union._Anonymous2_e__Struct*)Unsafe.AsPointer(ref Anonymous.Anonymous2))->cPins2;
+#endif
             }
         }
 
-        public ref REGFILTERPINS2* rgPins2
+        public unsafe ref REGFILTERPINS2* rgPins2
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
-                fixed (_Anonymous_e__Union._Anonymous2_e__Struct* pField = &Anonymous.Anonymous2)
-                {
-                    return ref pField->rgPins2;
-                }
+                return ref ((_Anonymous_e__Union._Anonymous2_e__Struct*)Unsafe.AsPointer(ref Anonymous.Anonymous2))->rgPins2;
             }
         }
 

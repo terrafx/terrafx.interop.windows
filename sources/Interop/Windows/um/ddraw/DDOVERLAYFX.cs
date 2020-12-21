@@ -28,24 +28,25 @@ namespace TerraFX.Interop
         [NativeTypeName("_DDOVERLAYFX::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/ddraw.h:775:5)")]
         public _Anonymous1_e__Union Anonymous1;
 
-        public ref uint dwAlphaDestConst
+        public unsafe ref uint dwAlphaDestConst
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous1.dwAlphaDestConst, 1));
+#else
+                return ref ((_Anonymous1_e__Union*)Unsafe.AsPointer(ref Anonymous1))->dwAlphaDestConst;
+#endif
             }
         }
 
-        public ref IDirectDrawSurface* lpDDSAlphaDest
+        public unsafe ref IDirectDrawSurface* lpDDSAlphaDest
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
-                fixed (_Anonymous1_e__Union* pField = &Anonymous1)
-                {
-                    return ref pField->lpDDSAlphaDest;
-                }
+                return ref ((_Anonymous1_e__Union*)Unsafe.AsPointer(ref Anonymous1))->lpDDSAlphaDest;
             }
         }
 
@@ -55,24 +56,25 @@ namespace TerraFX.Interop
         [NativeTypeName("_DDOVERLAYFX::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/ddraw.h:781:5)")]
         public _Anonymous2_e__Union Anonymous2;
 
-        public ref uint dwAlphaSrcConst
+        public unsafe ref uint dwAlphaSrcConst
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous2.dwAlphaSrcConst, 1));
+#else
+                return ref ((_Anonymous2_e__Union*)Unsafe.AsPointer(ref Anonymous2))->dwAlphaSrcConst;
+#endif
             }
         }
 
-        public ref IDirectDrawSurface* lpDDSAlphaSrc
+        public unsafe ref IDirectDrawSurface* lpDDSAlphaSrc
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
-                fixed (_Anonymous2_e__Union* pField = &Anonymous2)
-                {
-                    return ref pField->lpDDSAlphaSrc;
-                }
+                return ref ((_Anonymous2_e__Union*)Unsafe.AsPointer(ref Anonymous2))->lpDDSAlphaSrc;
             }
         }
 

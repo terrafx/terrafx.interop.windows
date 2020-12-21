@@ -69,7 +69,7 @@ namespace TerraFX.Interop
             public DXGI_FORMAT e6;
             public DXGI_FORMAT e7;
 
-            public ref DXGI_FORMAT this[int index]
+            public unsafe ref DXGI_FORMAT this[int index]
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
                 get
@@ -79,7 +79,14 @@ namespace TerraFX.Interop
             }
 
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public Span<DXGI_FORMAT> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 8);
+            public unsafe Span<DXGI_FORMAT> AsSpan()
+            {
+#if !NETSTANDARD2_0
+                return MemoryMarshal.CreateSpan(ref e0, 8);
+#else
+                return new Span<DXGI_FORMAT>((DXGI_FORMAT*)Unsafe.AsPointer(ref this), 8);
+#endif
+            }
         }
     }
 }

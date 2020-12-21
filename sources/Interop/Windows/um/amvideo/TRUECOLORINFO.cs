@@ -276,7 +276,7 @@ namespace TerraFX.Interop
             public RGBQUAD e254;
             public RGBQUAD e255;
 
-            public ref RGBQUAD this[int index]
+            public unsafe ref RGBQUAD this[int index]
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
                 get
@@ -286,7 +286,14 @@ namespace TerraFX.Interop
             }
 
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public Span<RGBQUAD> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 256);
+            public unsafe Span<RGBQUAD> AsSpan()
+            {
+#if !NETSTANDARD2_0
+                return MemoryMarshal.CreateSpan(ref e0, 256);
+#else
+                return new Span<RGBQUAD>((RGBQUAD*)Unsafe.AsPointer(ref this), 256);
+#endif
+            }
         }
     }
 }

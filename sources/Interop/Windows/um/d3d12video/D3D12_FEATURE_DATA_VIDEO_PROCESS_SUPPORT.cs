@@ -78,7 +78,7 @@ namespace TerraFX.Interop
             public D3D12_VIDEO_PROCESS_FILTER_RANGE e30;
             public D3D12_VIDEO_PROCESS_FILTER_RANGE e31;
 
-            public ref D3D12_VIDEO_PROCESS_FILTER_RANGE this[int index]
+            public unsafe ref D3D12_VIDEO_PROCESS_FILTER_RANGE this[int index]
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
                 get
@@ -88,7 +88,14 @@ namespace TerraFX.Interop
             }
 
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public Span<D3D12_VIDEO_PROCESS_FILTER_RANGE> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 32);
+            public unsafe Span<D3D12_VIDEO_PROCESS_FILTER_RANGE> AsSpan()
+            {
+#if !NETSTANDARD2_0
+                return MemoryMarshal.CreateSpan(ref e0, 32);
+#else
+                return new Span<D3D12_VIDEO_PROCESS_FILTER_RANGE>((D3D12_VIDEO_PROCESS_FILTER_RANGE*)Unsafe.AsPointer(ref this), 32);
+#endif
+            }
         }
     }
 }

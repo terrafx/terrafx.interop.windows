@@ -13,42 +13,58 @@ namespace TerraFX.Interop
         [NativeTypeName("D3D11_BUFFER_RTV::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/d3d11.h:3745:5)")]
         public _Anonymous1_e__Union Anonymous1;
 
-        public ref uint FirstElement
+        public unsafe ref uint FirstElement
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous1.FirstElement, 1));
+#else
+                return ref ((_Anonymous1_e__Union*)Unsafe.AsPointer(ref Anonymous1))->FirstElement;
+#endif
             }
         }
 
-        public ref uint ElementOffset
+        public unsafe ref uint ElementOffset
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous1.ElementOffset, 1));
+#else
+                return ref ((_Anonymous1_e__Union*)Unsafe.AsPointer(ref Anonymous1))->ElementOffset;
+#endif
             }
         }
 
         [NativeTypeName("D3D11_BUFFER_RTV::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/d3d11.h:3750:5)")]
         public _Anonymous2_e__Union Anonymous2;
 
-        public ref uint NumElements
+        public unsafe ref uint NumElements
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous2.NumElements, 1));
+#else
+                return ref ((_Anonymous2_e__Union*)Unsafe.AsPointer(ref Anonymous2))->NumElements;
+#endif
             }
         }
 
-        public ref uint ElementWidth
+        public unsafe ref uint ElementWidth
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous2.ElementWidth, 1));
+#else
+                return ref ((_Anonymous2_e__Union*)Unsafe.AsPointer(ref Anonymous2))->ElementWidth;
+#endif
             }
         }
 

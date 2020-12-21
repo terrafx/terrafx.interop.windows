@@ -15,21 +15,29 @@ namespace TerraFX.Interop
         [NativeTypeName("tagELEMDESC::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/OAIdl.h:725:5)")]
         public _Anonymous_e__Union Anonymous;
 
-        public ref IDLDESC idldesc
+        public unsafe ref IDLDESC idldesc
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.idldesc, 1));
+#else
+                return ref ((_Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous))->idldesc;
+#endif
             }
         }
 
-        public ref PARAMDESC paramdesc
+        public unsafe ref PARAMDESC paramdesc
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.paramdesc, 1));
+#else
+                return ref ((_Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous))->paramdesc;
+#endif
             }
         }
 

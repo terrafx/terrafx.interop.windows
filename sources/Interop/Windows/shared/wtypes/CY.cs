@@ -15,21 +15,29 @@ namespace TerraFX.Interop
         [NativeTypeName("tagCY::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/shared/wtypes.h:671:5)")]
         public _Anonymous_e__Struct Anonymous;
 
-        public ref uint Lo
+        public unsafe ref uint Lo
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Lo, 1));
+#else
+                return ref ((_Anonymous_e__Struct*)Unsafe.AsPointer(ref Anonymous))->Lo;
+#endif
             }
         }
 
-        public ref int Hi
+        public unsafe ref int Hi
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Hi, 1));
+#else
+                return ref ((_Anonymous_e__Struct*)Unsafe.AsPointer(ref Anonymous))->Hi;
+#endif
             }
         }
 

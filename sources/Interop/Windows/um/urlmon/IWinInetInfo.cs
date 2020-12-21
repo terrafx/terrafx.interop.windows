@@ -19,28 +19,28 @@ namespace TerraFX.Interop
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return ((delegate* unmanaged<IWinInetInfo*, Guid*, void**, int>)(lpVtbl[0]))((IWinInetInfo*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* unmanaged[Stdcall]<IWinInetInfo*, Guid*, void**, int>)(lpVtbl[0]))((IWinInetInfo*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return ((delegate* unmanaged<IWinInetInfo*, uint>)(lpVtbl[1]))((IWinInetInfo*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged[Stdcall]<IWinInetInfo*, uint>)(lpVtbl[1]))((IWinInetInfo*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return ((delegate* unmanaged<IWinInetInfo*, uint>)(lpVtbl[2]))((IWinInetInfo*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged[Stdcall]<IWinInetInfo*, uint>)(lpVtbl[2]))((IWinInetInfo*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int QueryOption([NativeTypeName("DWORD")] uint dwOption, [NativeTypeName("LPVOID")] void* pBuffer, [NativeTypeName("DWORD *")] uint* pcbBuf)
         {
-            return ((delegate* unmanaged<IWinInetInfo*, uint, void*, uint*, int>)(lpVtbl[3]))((IWinInetInfo*)Unsafe.AsPointer(ref this), dwOption, pBuffer, pcbBuf);
+            return ((delegate* unmanaged[Stdcall]<IWinInetInfo*, uint, void*, uint*, int>)(lpVtbl[3]))((IWinInetInfo*)Unsafe.AsPointer(ref this), dwOption, pBuffer, pcbBuf);
         }
     }
 }

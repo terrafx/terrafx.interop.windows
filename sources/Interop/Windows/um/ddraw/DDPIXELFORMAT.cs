@@ -22,258 +22,366 @@ namespace TerraFX.Interop
         [NativeTypeName("_DDPIXELFORMAT::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/ddraw.h:712:5)")]
         public _Anonymous1_e__Union Anonymous1;
 
-        public ref uint dwRGBBitCount
+        public unsafe ref uint dwRGBBitCount
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous1.dwRGBBitCount, 1));
+#else
+                return ref ((_Anonymous1_e__Union*)Unsafe.AsPointer(ref Anonymous1))->dwRGBBitCount;
+#endif
             }
         }
 
-        public ref uint dwYUVBitCount
+        public unsafe ref uint dwYUVBitCount
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous1.dwYUVBitCount, 1));
+#else
+                return ref ((_Anonymous1_e__Union*)Unsafe.AsPointer(ref Anonymous1))->dwYUVBitCount;
+#endif
             }
         }
 
-        public ref uint dwZBufferBitDepth
+        public unsafe ref uint dwZBufferBitDepth
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous1.dwZBufferBitDepth, 1));
+#else
+                return ref ((_Anonymous1_e__Union*)Unsafe.AsPointer(ref Anonymous1))->dwZBufferBitDepth;
+#endif
             }
         }
 
-        public ref uint dwAlphaBitDepth
+        public unsafe ref uint dwAlphaBitDepth
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous1.dwAlphaBitDepth, 1));
+#else
+                return ref ((_Anonymous1_e__Union*)Unsafe.AsPointer(ref Anonymous1))->dwAlphaBitDepth;
+#endif
             }
         }
 
-        public ref uint dwLuminanceBitCount
+        public unsafe ref uint dwLuminanceBitCount
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous1.dwLuminanceBitCount, 1));
+#else
+                return ref ((_Anonymous1_e__Union*)Unsafe.AsPointer(ref Anonymous1))->dwLuminanceBitCount;
+#endif
             }
         }
 
-        public ref uint dwBumpBitCount
+        public unsafe ref uint dwBumpBitCount
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous1.dwBumpBitCount, 1));
+#else
+                return ref ((_Anonymous1_e__Union*)Unsafe.AsPointer(ref Anonymous1))->dwBumpBitCount;
+#endif
             }
         }
 
-        public ref uint dwPrivateFormatBitCount
+        public unsafe ref uint dwPrivateFormatBitCount
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous1.dwPrivateFormatBitCount, 1));
+#else
+                return ref ((_Anonymous1_e__Union*)Unsafe.AsPointer(ref Anonymous1))->dwPrivateFormatBitCount;
+#endif
             }
         }
 
         [NativeTypeName("_DDPIXELFORMAT::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/ddraw.h:723:5)")]
         public _Anonymous2_e__Union Anonymous2;
 
-        public ref uint dwRBitMask
+        public unsafe ref uint dwRBitMask
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous2.dwRBitMask, 1));
+#else
+                return ref ((_Anonymous2_e__Union*)Unsafe.AsPointer(ref Anonymous2))->dwRBitMask;
+#endif
             }
         }
 
-        public ref uint dwYBitMask
+        public unsafe ref uint dwYBitMask
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous2.dwYBitMask, 1));
+#else
+                return ref ((_Anonymous2_e__Union*)Unsafe.AsPointer(ref Anonymous2))->dwYBitMask;
+#endif
             }
         }
 
-        public ref uint dwStencilBitDepth
+        public unsafe ref uint dwStencilBitDepth
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous2.dwStencilBitDepth, 1));
+#else
+                return ref ((_Anonymous2_e__Union*)Unsafe.AsPointer(ref Anonymous2))->dwStencilBitDepth;
+#endif
             }
         }
 
-        public ref uint dwLuminanceBitMask
+        public unsafe ref uint dwLuminanceBitMask
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous2.dwLuminanceBitMask, 1));
+#else
+                return ref ((_Anonymous2_e__Union*)Unsafe.AsPointer(ref Anonymous2))->dwLuminanceBitMask;
+#endif
             }
         }
 
-        public ref uint dwBumpDuBitMask
+        public unsafe ref uint dwBumpDuBitMask
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous2.dwBumpDuBitMask, 1));
+#else
+                return ref ((_Anonymous2_e__Union*)Unsafe.AsPointer(ref Anonymous2))->dwBumpDuBitMask;
+#endif
             }
         }
 
-        public ref uint dwOperations
+        public unsafe ref uint dwOperations
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous2.dwOperations, 1));
+#else
+                return ref ((_Anonymous2_e__Union*)Unsafe.AsPointer(ref Anonymous2))->dwOperations;
+#endif
             }
         }
 
         [NativeTypeName("_DDPIXELFORMAT::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/ddraw.h:732:5)")]
         public _Anonymous3_e__Union Anonymous3;
 
-        public ref uint dwGBitMask
+        public unsafe ref uint dwGBitMask
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous3.dwGBitMask, 1));
+#else
+                return ref ((_Anonymous3_e__Union*)Unsafe.AsPointer(ref Anonymous3))->dwGBitMask;
+#endif
             }
         }
 
-        public ref uint dwUBitMask
+        public unsafe ref uint dwUBitMask
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous3.dwUBitMask, 1));
+#else
+                return ref ((_Anonymous3_e__Union*)Unsafe.AsPointer(ref Anonymous3))->dwUBitMask;
+#endif
             }
         }
 
-        public ref uint dwZBitMask
+        public unsafe ref uint dwZBitMask
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous3.dwZBitMask, 1));
+#else
+                return ref ((_Anonymous3_e__Union*)Unsafe.AsPointer(ref Anonymous3))->dwZBitMask;
+#endif
             }
         }
 
-        public ref uint dwBumpDvBitMask
+        public unsafe ref uint dwBumpDvBitMask
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous3.dwBumpDvBitMask, 1));
+#else
+                return ref ((_Anonymous3_e__Union*)Unsafe.AsPointer(ref Anonymous3))->dwBumpDvBitMask;
+#endif
             }
         }
 
-        public ref _Anonymous3_e__Union._MultiSampleCaps_e__Struct MultiSampleCaps
+        public unsafe ref _Anonymous3_e__Union._MultiSampleCaps_e__Struct MultiSampleCaps
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous3.MultiSampleCaps, 1));
+#else
+                return ref ((_Anonymous3_e__Union*)Unsafe.AsPointer(ref Anonymous3))->MultiSampleCaps;
+#endif
             }
         }
 
         [NativeTypeName("_DDPIXELFORMAT::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/ddraw.h:745:5)")]
         public _Anonymous4_e__Union Anonymous4;
 
-        public ref uint dwBBitMask
+        public unsafe ref uint dwBBitMask
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous4.dwBBitMask, 1));
+#else
+                return ref ((_Anonymous4_e__Union*)Unsafe.AsPointer(ref Anonymous4))->dwBBitMask;
+#endif
             }
         }
 
-        public ref uint dwVBitMask
+        public unsafe ref uint dwVBitMask
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous4.dwVBitMask, 1));
+#else
+                return ref ((_Anonymous4_e__Union*)Unsafe.AsPointer(ref Anonymous4))->dwVBitMask;
+#endif
             }
         }
 
-        public ref uint dwStencilBitMask
+        public unsafe ref uint dwStencilBitMask
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous4.dwStencilBitMask, 1));
+#else
+                return ref ((_Anonymous4_e__Union*)Unsafe.AsPointer(ref Anonymous4))->dwStencilBitMask;
+#endif
             }
         }
 
-        public ref uint dwBumpLuminanceBitMask
+        public unsafe ref uint dwBumpLuminanceBitMask
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous4.dwBumpLuminanceBitMask, 1));
+#else
+                return ref ((_Anonymous4_e__Union*)Unsafe.AsPointer(ref Anonymous4))->dwBumpLuminanceBitMask;
+#endif
             }
         }
 
         [NativeTypeName("_DDPIXELFORMAT::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/ddraw.h:752:5)")]
         public _Anonymous5_e__Union Anonymous5;
 
-        public ref uint dwRGBAlphaBitMask
+        public unsafe ref uint dwRGBAlphaBitMask
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous5.dwRGBAlphaBitMask, 1));
+#else
+                return ref ((_Anonymous5_e__Union*)Unsafe.AsPointer(ref Anonymous5))->dwRGBAlphaBitMask;
+#endif
             }
         }
 
-        public ref uint dwYUVAlphaBitMask
+        public unsafe ref uint dwYUVAlphaBitMask
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous5.dwYUVAlphaBitMask, 1));
+#else
+                return ref ((_Anonymous5_e__Union*)Unsafe.AsPointer(ref Anonymous5))->dwYUVAlphaBitMask;
+#endif
             }
         }
 
-        public ref uint dwLuminanceAlphaBitMask
+        public unsafe ref uint dwLuminanceAlphaBitMask
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous5.dwLuminanceAlphaBitMask, 1));
+#else
+                return ref ((_Anonymous5_e__Union*)Unsafe.AsPointer(ref Anonymous5))->dwLuminanceAlphaBitMask;
+#endif
             }
         }
 
-        public ref uint dwRGBZBitMask
+        public unsafe ref uint dwRGBZBitMask
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous5.dwRGBZBitMask, 1));
+#else
+                return ref ((_Anonymous5_e__Union*)Unsafe.AsPointer(ref Anonymous5))->dwRGBZBitMask;
+#endif
             }
         }
 
-        public ref uint dwYUVZBitMask
+        public unsafe ref uint dwYUVZBitMask
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous5.dwYUVZBitMask, 1));
+#else
+                return ref ((_Anonymous5_e__Union*)Unsafe.AsPointer(ref Anonymous5))->dwYUVZBitMask;
+#endif
             }
         }
 

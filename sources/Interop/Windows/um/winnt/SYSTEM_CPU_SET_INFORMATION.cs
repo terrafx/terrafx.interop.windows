@@ -18,12 +18,16 @@ namespace TerraFX.Interop
         [NativeTypeName("_SYSTEM_CPU_SET_INFORMATION::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:12584:5)")]
         public _Anonymous_e__Union Anonymous;
 
-        public ref _Anonymous_e__Union._CpuSet_e__Struct CpuSet
+        public unsafe ref _Anonymous_e__Union._CpuSet_e__Struct CpuSet
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.CpuSet, 1));
+#else
+                return ref ((_Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous))->CpuSet;
+#endif
             }
         }
 
@@ -60,16 +64,20 @@ namespace TerraFX.Interop
                 [NativeTypeName("_SYSTEM_CPU_SET_INFORMATION::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:12593:13)")]
                 public _Anonymous1_e__Union Anonymous1;
 
-                public ref byte AllFlags
+                public unsafe ref byte AllFlags
                 {
                     [MethodImpl(MethodImplOptions.AggressiveInlining)]
                     get
                     {
+#if !NETSTANDARD2_0
                         return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous1.AllFlags, 1));
+#else
+                        return ref ((_Anonymous1_e__Union*)Unsafe.AsPointer(ref Anonymous1))->AllFlags;
+#endif
                     }
                 }
 
-                public byte Parked
+                public unsafe byte Parked
                 {
                     [MethodImpl(MethodImplOptions.AggressiveInlining)]
                     get
@@ -84,7 +92,7 @@ namespace TerraFX.Interop
                     }
                 }
 
-                public byte Allocated
+                public unsafe byte Allocated
                 {
                     [MethodImpl(MethodImplOptions.AggressiveInlining)]
                     get
@@ -99,7 +107,7 @@ namespace TerraFX.Interop
                     }
                 }
 
-                public byte AllocatedToTargetProcess
+                public unsafe byte AllocatedToTargetProcess
                 {
                     [MethodImpl(MethodImplOptions.AggressiveInlining)]
                     get
@@ -114,7 +122,7 @@ namespace TerraFX.Interop
                     }
                 }
 
-                public byte RealTime
+                public unsafe byte RealTime
                 {
                     [MethodImpl(MethodImplOptions.AggressiveInlining)]
                     get
@@ -129,7 +137,7 @@ namespace TerraFX.Interop
                     }
                 }
 
-                public byte ReservedFlags
+                public unsafe byte ReservedFlags
                 {
                     [MethodImpl(MethodImplOptions.AggressiveInlining)]
                     get
@@ -147,21 +155,29 @@ namespace TerraFX.Interop
                 [NativeTypeName("_SYSTEM_CPU_SET_INFORMATION::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:12610:13)")]
                 public _Anonymous2_e__Union Anonymous2;
 
-                public ref uint Reserved
+                public unsafe ref uint Reserved
                 {
                     [MethodImpl(MethodImplOptions.AggressiveInlining)]
                     get
                     {
+#if !NETSTANDARD2_0
                         return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous2.Reserved, 1));
+#else
+                        return ref ((_Anonymous2_e__Union*)Unsafe.AsPointer(ref Anonymous2))->Reserved;
+#endif
                     }
                 }
 
-                public ref byte SchedulingClass
+                public unsafe ref byte SchedulingClass
                 {
                     [MethodImpl(MethodImplOptions.AggressiveInlining)]
                     get
                     {
+#if !NETSTANDARD2_0
                         return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous2.SchedulingClass, 1));
+#else
+                        return ref ((_Anonymous2_e__Union*)Unsafe.AsPointer(ref Anonymous2))->SchedulingClass;
+#endif
                     }
                 }
 

@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
@@ -24,7 +25,26 @@ namespace TerraFX.Interop
         public IntPtr hwndParent;
 
         [NativeTypeName("PSP_FILE_CALLBACK_W")]
+#if !NETSTANDARD2_0
         public delegate* unmanaged<void*, uint, nuint, nuint, uint> InstallMsgHandler;
+#else
+        public void* _InstallMsgHandler;
+
+        public delegate* unmanaged[Stdcall]<void*, uint, nuint, nuint, uint> InstallMsgHandler
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                return (delegate* unmanaged[Stdcall]<void*, uint, nuint, nuint, uint>)_InstallMsgHandler;
+            }
+
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            set
+            {
+                _InstallMsgHandler = value;
+            }
+        }
+#endif
 
         [NativeTypeName("PVOID")]
         public void* InstallMsgHandlerContext;

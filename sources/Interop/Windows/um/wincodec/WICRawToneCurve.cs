@@ -21,7 +21,7 @@ namespace TerraFX.Interop
         {
             public WICRawToneCurvePoint e0;
 
-            public ref WICRawToneCurvePoint this[int index]
+            public unsafe ref WICRawToneCurvePoint this[int index]
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
                 get
@@ -31,7 +31,14 @@ namespace TerraFX.Interop
             }
 
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public Span<WICRawToneCurvePoint> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
+            public unsafe Span<WICRawToneCurvePoint> AsSpan(int length)
+            {
+#if !NETSTANDARD2_0
+                return MemoryMarshal.CreateSpan(ref e0, length);
+#else
+                return new Span<WICRawToneCurvePoint>((WICRawToneCurvePoint*)Unsafe.AsPointer(ref this), length);
+#endif
+            }
         }
     }
 }

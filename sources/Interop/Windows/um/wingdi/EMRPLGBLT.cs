@@ -77,7 +77,7 @@ namespace TerraFX.Interop
             public POINTL e1;
             public POINTL e2;
 
-            public ref POINTL this[int index]
+            public unsafe ref POINTL this[int index]
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
                 get
@@ -87,7 +87,14 @@ namespace TerraFX.Interop
             }
 
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public Span<POINTL> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 3);
+            public unsafe Span<POINTL> AsSpan()
+            {
+#if !NETSTANDARD2_0
+                return MemoryMarshal.CreateSpan(ref e0, 3);
+#else
+                return new Span<POINTL>((POINTL*)Unsafe.AsPointer(ref this), 3);
+#endif
+            }
         }
     }
 }

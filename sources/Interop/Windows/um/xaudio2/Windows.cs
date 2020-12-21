@@ -17,7 +17,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const GUID")]
         public static readonly Guid IID_IXAudio2 = typeof(IXAudio2).GUID;
 
-        [DllImport("XAudio2_9", ExactSpelling = true)]
+        [DllImport("XAudio2_9", CallingConvention = CallingConvention.StdCall, ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int XAudio2CreateWithVersionInfo([NativeTypeName("IXAudio2 **")] IXAudio2** ppXAudio2, [NativeTypeName("UINT32")] uint Flags = 0, [NativeTypeName("XAUDIO2_PROCESSOR")] uint XAudio2Processor = 0x00000001, [NativeTypeName("DWORD")] uint ntddiVersion = 0x0A000008);
 

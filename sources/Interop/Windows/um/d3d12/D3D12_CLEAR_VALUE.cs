@@ -16,21 +16,29 @@ namespace TerraFX.Interop
         [NativeTypeName("D3D12_CLEAR_VALUE::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/d3d12.h:2582:5)")]
         public _Anonymous_e__Union Anonymous;
 
-        public Span<float> Color
+        public unsafe Span<float> Color
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return MemoryMarshal.CreateSpan(ref Anonymous.Color[0], 4);
+#else
+                return new Span<float>(((_Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous))->Color, 4);
+#endif
             }
         }
 
-        public ref D3D12_DEPTH_STENCIL_VALUE DepthStencil
+        public unsafe ref D3D12_DEPTH_STENCIL_VALUE DepthStencil
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.DepthStencil, 1));
+#else
+                return ref ((_Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous))->DepthStencil;
+#endif
             }
         }
 

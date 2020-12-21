@@ -30,7 +30,7 @@ namespace TerraFX.Interop
         {
             public GROUP_AFFINITY e0;
 
-            public ref GROUP_AFFINITY this[int index]
+            public unsafe ref GROUP_AFFINITY this[int index]
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
                 get
@@ -40,7 +40,14 @@ namespace TerraFX.Interop
             }
 
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public Span<GROUP_AFFINITY> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
+            public unsafe Span<GROUP_AFFINITY> AsSpan(int length)
+            {
+#if !NETSTANDARD2_0
+                return MemoryMarshal.CreateSpan(ref e0, length);
+#else
+                return new Span<GROUP_AFFINITY>((GROUP_AFFINITY*)Unsafe.AsPointer(ref this), length);
+#endif
+            }
         }
     }
 }

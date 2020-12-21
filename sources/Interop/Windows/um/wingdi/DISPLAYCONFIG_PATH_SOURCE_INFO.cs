@@ -18,16 +18,20 @@ namespace TerraFX.Interop
         [NativeTypeName("DISPLAYCONFIG_PATH_SOURCE_INFO::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/wingdi.h:2950:5)")]
         public _Anonymous_e__Union Anonymous;
 
-        public ref uint modeInfoIdx
+        public unsafe ref uint modeInfoIdx
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.modeInfoIdx, 1));
+#else
+                return ref ((_Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous))->modeInfoIdx;
+#endif
             }
         }
 
-        public uint cloneGroupId
+        public unsafe uint cloneGroupId
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
@@ -42,7 +46,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public uint sourceModeInfoIdx
+        public unsafe uint sourceModeInfoIdx
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get

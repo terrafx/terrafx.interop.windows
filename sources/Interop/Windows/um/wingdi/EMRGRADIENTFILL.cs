@@ -31,7 +31,7 @@ namespace TerraFX.Interop
         {
             public TRIVERTEX e0;
 
-            public ref TRIVERTEX this[int index]
+            public unsafe ref TRIVERTEX this[int index]
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
                 get
@@ -41,7 +41,14 @@ namespace TerraFX.Interop
             }
 
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public Span<TRIVERTEX> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
+            public unsafe Span<TRIVERTEX> AsSpan(int length)
+            {
+#if !NETSTANDARD2_0
+                return MemoryMarshal.CreateSpan(ref e0, length);
+#else
+                return new Span<TRIVERTEX>((TRIVERTEX*)Unsafe.AsPointer(ref this), length);
+#endif
+            }
         }
     }
 }

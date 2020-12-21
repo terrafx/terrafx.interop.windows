@@ -176,7 +176,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const GUID")]
         public static readonly Guid MFT_ENUM_TRANSCODE_ONLY_ATTRIBUTE = new Guid(0x111ea8cd, 0xb62a, 0x4bdb, 0x89, 0xf6, 0x67, 0xff, 0xcd, 0xc2, 0x45, 0x8b);
 
-        [DllImport("mfplat", ExactSpelling = true)]
+        [DllImport("mfplat", CallingConvention = CallingConvention.StdCall, ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int MFCreateTransformActivate([NativeTypeName("IMFActivate **")] IMFActivate** ppActivate);
 

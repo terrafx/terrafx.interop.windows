@@ -17,36 +17,34 @@ namespace TerraFX.Interop
         [NativeTypeName("MLOperatorSchemaEdgeDescription::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/MLOperatorAuthor.h:426:5)")]
         public _Anonymous_e__Union Anonymous;
 
-        public ref void* reserved
+        public unsafe ref void* reserved
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
-                fixed (_Anonymous_e__Union* pField = &Anonymous)
-                {
-                    return ref pField->reserved;
-                }
+                return ref ((_Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous))->reserved;
             }
         }
 
-        public ref sbyte* typeLabel
+        public unsafe ref sbyte* typeLabel
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
-                fixed (_Anonymous_e__Union* pField = &Anonymous)
-                {
-                    return ref pField->typeLabel;
-                }
+                return ref ((_Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous))->typeLabel;
             }
         }
 
-        public ref MLOperatorEdgeDescription edgeDescription
+        public unsafe ref MLOperatorEdgeDescription edgeDescription
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.edgeDescription, 1));
+#else
+                return ref ((_Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous))->edgeDescription;
+#endif
             }
         }
 

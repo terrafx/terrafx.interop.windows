@@ -28,16 +28,20 @@ namespace TerraFX.Interop
         [NativeTypeName("_IMAGE_TLS_DIRECTORY32::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:18215:5)")]
         public _Anonymous_e__Union Anonymous;
 
-        public ref uint Characteristics
+        public unsafe ref uint Characteristics
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Characteristics, 1));
+#else
+                return ref ((_Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous))->Characteristics;
+#endif
             }
         }
 
-        public uint Reserved0
+        public unsafe uint Reserved0
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
@@ -52,7 +56,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public uint Alignment
+        public unsafe uint Alignment
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
@@ -67,7 +71,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public uint Reserved1
+        public unsafe uint Reserved1
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get

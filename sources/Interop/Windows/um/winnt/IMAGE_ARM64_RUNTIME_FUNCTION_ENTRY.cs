@@ -16,16 +16,20 @@ namespace TerraFX.Interop
         [NativeTypeName("_IMAGE_ARM64_RUNTIME_FUNCTION_ENTRY::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:18762:5)")]
         public _Anonymous_e__Union Anonymous;
 
-        public ref uint UnwindData
+        public unsafe ref uint UnwindData
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.UnwindData, 1));
+#else
+                return ref ((_Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous))->UnwindData;
+#endif
             }
         }
 
-        public uint Flag
+        public unsafe uint Flag
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
@@ -40,7 +44,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public uint FunctionLength
+        public unsafe uint FunctionLength
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
@@ -55,7 +59,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public uint RegF
+        public unsafe uint RegF
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
@@ -70,7 +74,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public uint RegI
+        public unsafe uint RegI
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
@@ -85,7 +89,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public uint H
+        public unsafe uint H
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
@@ -100,7 +104,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public uint CR
+        public unsafe uint CR
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
@@ -115,7 +119,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public uint FrameSize
+        public unsafe uint FrameSize
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get

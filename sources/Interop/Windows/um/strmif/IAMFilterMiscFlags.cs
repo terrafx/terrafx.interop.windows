@@ -19,28 +19,28 @@ namespace TerraFX.Interop
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return ((delegate* unmanaged<IAMFilterMiscFlags*, Guid*, void**, int>)(lpVtbl[0]))((IAMFilterMiscFlags*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* unmanaged[Stdcall]<IAMFilterMiscFlags*, Guid*, void**, int>)(lpVtbl[0]))((IAMFilterMiscFlags*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return ((delegate* unmanaged<IAMFilterMiscFlags*, uint>)(lpVtbl[1]))((IAMFilterMiscFlags*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged[Stdcall]<IAMFilterMiscFlags*, uint>)(lpVtbl[1]))((IAMFilterMiscFlags*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return ((delegate* unmanaged<IAMFilterMiscFlags*, uint>)(lpVtbl[2]))((IAMFilterMiscFlags*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged[Stdcall]<IAMFilterMiscFlags*, uint>)(lpVtbl[2]))((IAMFilterMiscFlags*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint GetMiscFlags()
         {
-            return ((delegate* unmanaged<IAMFilterMiscFlags*, uint>)(lpVtbl[3]))((IAMFilterMiscFlags*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged[Stdcall]<IAMFilterMiscFlags*, uint>)(lpVtbl[3]))((IAMFilterMiscFlags*)Unsafe.AsPointer(ref this));
         }
     }
 }

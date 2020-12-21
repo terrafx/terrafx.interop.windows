@@ -135,7 +135,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const GUID")]
         public static readonly Guid DEVINTERFACE_MIDI_INPUT = new Guid(0x504be32c, 0xccf6, 0x4d2c, 0xb7, 0x3f, 0x6f, 0x8b, 0x37, 0x47, 0xe2, 0x2b);
 
-        [DllImport("mmdevapi", ExactSpelling = true)]
+        [DllImport("mmdevapi", CallingConvention = CallingConvention.StdCall, ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int ActivateAudioInterfaceAsync([NativeTypeName("LPCWSTR")] ushort* deviceInterfacePath, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("PROPVARIANT *")] PROPVARIANT* activationParams, [NativeTypeName("IActivateAudioInterfaceCompletionHandler *")] IActivateAudioInterfaceCompletionHandler* completionHandler, [NativeTypeName("IActivateAudioInterfaceAsyncOperation **")] IActivateAudioInterfaceAsyncOperation** activationOperation);
 

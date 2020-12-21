@@ -13,16 +13,20 @@ namespace TerraFX.Interop
         [NativeTypeName("_PROCESS_MITIGATION_PAYLOAD_RESTRICTION_POLICY::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:11827:5)")]
         public _Anonymous_e__Union Anonymous;
 
-        public ref uint Flags
+        public unsafe ref uint Flags
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Flags, 1));
+#else
+                return ref ((_Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous))->Flags;
+#endif
             }
         }
 
-        public uint EnableExportAddressFilter
+        public unsafe uint EnableExportAddressFilter
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
@@ -37,7 +41,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public uint AuditExportAddressFilter
+        public unsafe uint AuditExportAddressFilter
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
@@ -52,7 +56,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public uint EnableExportAddressFilterPlus
+        public unsafe uint EnableExportAddressFilterPlus
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
@@ -67,7 +71,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public uint AuditExportAddressFilterPlus
+        public unsafe uint AuditExportAddressFilterPlus
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
@@ -82,7 +86,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public uint EnableImportAddressFilter
+        public unsafe uint EnableImportAddressFilter
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
@@ -97,7 +101,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public uint AuditImportAddressFilter
+        public unsafe uint AuditImportAddressFilter
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
@@ -112,7 +116,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public uint EnableRopStackPivot
+        public unsafe uint EnableRopStackPivot
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
@@ -127,7 +131,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public uint AuditRopStackPivot
+        public unsafe uint AuditRopStackPivot
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
@@ -142,7 +146,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public uint EnableRopCallerCheck
+        public unsafe uint EnableRopCallerCheck
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
@@ -157,7 +161,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public uint AuditRopCallerCheck
+        public unsafe uint AuditRopCallerCheck
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
@@ -172,7 +176,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public uint EnableRopSimExec
+        public unsafe uint EnableRopSimExec
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
@@ -187,7 +191,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public uint AuditRopSimExec
+        public unsafe uint AuditRopSimExec
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
@@ -202,7 +206,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public uint ReservedFlags
+        public unsafe uint ReservedFlags
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get

@@ -18,21 +18,29 @@ namespace TerraFX.Interop
         [NativeTypeName("_DISK_DETECTION_INFO::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winioctl.h:8627:9)")]
         public _Anonymous_e__Union Anonymous;
 
-        public ref DISK_INT13_INFO Int13
+        public unsafe ref DISK_INT13_INFO Int13
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.Int13, 1));
+#else
+                return ref ((_Anonymous_e__Union._Anonymous_e__Struct*)Unsafe.AsPointer(ref Anonymous.Anonymous))->Int13;
+#endif
             }
         }
 
-        public ref DISK_EX_INT13_INFO ExInt13
+        public unsafe ref DISK_EX_INT13_INFO ExInt13
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.ExInt13, 1));
+#else
+                return ref ((_Anonymous_e__Union._Anonymous_e__Struct*)Unsafe.AsPointer(ref Anonymous.Anonymous))->ExInt13;
+#endif
             }
         }
 

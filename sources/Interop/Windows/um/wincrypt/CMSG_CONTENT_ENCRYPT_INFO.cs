@@ -28,10 +28,48 @@ namespace TerraFX.Interop
         public CMSG_RECIPIENT_ENCODE_INFO* rgCmsRecipients;
 
         [NativeTypeName("PFN_CMSG_ALLOC")]
+#if !NETSTANDARD2_0
         public delegate* unmanaged<nuint, void*> pfnAlloc;
+#else
+        public void* _pfnAlloc;
+
+        public delegate* unmanaged[Stdcall]<nuint, void*> pfnAlloc
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                return (delegate* unmanaged[Stdcall]<nuint, void*>)_pfnAlloc;
+            }
+
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            set
+            {
+                _pfnAlloc = value;
+            }
+        }
+#endif
 
         [NativeTypeName("PFN_CMSG_FREE")]
+#if !NETSTANDARD2_0
         public delegate* unmanaged<void*, void> pfnFree;
+#else
+        public void* _pfnFree;
+
+        public delegate* unmanaged[Stdcall]<void*, void> pfnFree
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                return (delegate* unmanaged[Stdcall]<void*, void>)_pfnFree;
+            }
+
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            set
+            {
+                _pfnFree = value;
+            }
+        }
+#endif
 
         [NativeTypeName("DWORD")]
         public uint dwEncryptFlags;
@@ -39,24 +77,25 @@ namespace TerraFX.Interop
         [NativeTypeName("_CMSG_CONTENT_ENCRYPT_INFO::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/wincrypt.h:8442:5)")]
         public _Anonymous_e__Union Anonymous;
 
-        public ref nuint hContentEncryptKey
+        public unsafe ref nuint hContentEncryptKey
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.hContentEncryptKey, 1));
+#else
+                return ref ((_Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous))->hContentEncryptKey;
+#endif
             }
         }
 
-        public ref void* hCNGContentEncryptKey
+        public unsafe ref void* hCNGContentEncryptKey
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
-                fixed (_Anonymous_e__Union* pField = &Anonymous)
-                {
-                    return ref pField->hCNGContentEncryptKey;
-                }
+                return ref ((_Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous))->hCNGContentEncryptKey;
             }
         }
 

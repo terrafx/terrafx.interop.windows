@@ -19,154 +19,154 @@ namespace TerraFX.Interop
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return ((delegate* unmanaged<IDCompositionVisual2*, Guid*, void**, int>)(lpVtbl[0]))((IDCompositionVisual2*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* unmanaged[Stdcall]<IDCompositionVisual2*, Guid*, void**, int>)(lpVtbl[0]))((IDCompositionVisual2*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return ((delegate* unmanaged<IDCompositionVisual2*, uint>)(lpVtbl[1]))((IDCompositionVisual2*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged[Stdcall]<IDCompositionVisual2*, uint>)(lpVtbl[1]))((IDCompositionVisual2*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return ((delegate* unmanaged<IDCompositionVisual2*, uint>)(lpVtbl[2]))((IDCompositionVisual2*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged[Stdcall]<IDCompositionVisual2*, uint>)(lpVtbl[2]))((IDCompositionVisual2*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int SetOffsetX(float offsetX)
         {
-            return ((delegate* unmanaged<IDCompositionVisual2*, float, int>)(lpVtbl[3]))((IDCompositionVisual2*)Unsafe.AsPointer(ref this), offsetX);
+            return ((delegate* unmanaged[Stdcall]<IDCompositionVisual2*, float, int>)(lpVtbl[3]))((IDCompositionVisual2*)Unsafe.AsPointer(ref this), offsetX);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int SetOffsetX([NativeTypeName("IDCompositionAnimation *")] IDCompositionAnimation* animation)
         {
-            return ((delegate* unmanaged<IDCompositionVisual2*, IDCompositionAnimation*, int>)(lpVtbl[4]))((IDCompositionVisual2*)Unsafe.AsPointer(ref this), animation);
+            return ((delegate* unmanaged[Stdcall]<IDCompositionVisual2*, IDCompositionAnimation*, int>)(lpVtbl[4]))((IDCompositionVisual2*)Unsafe.AsPointer(ref this), animation);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int SetOffsetY(float offsetY)
         {
-            return ((delegate* unmanaged<IDCompositionVisual2*, float, int>)(lpVtbl[5]))((IDCompositionVisual2*)Unsafe.AsPointer(ref this), offsetY);
+            return ((delegate* unmanaged[Stdcall]<IDCompositionVisual2*, float, int>)(lpVtbl[5]))((IDCompositionVisual2*)Unsafe.AsPointer(ref this), offsetY);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int SetOffsetY([NativeTypeName("IDCompositionAnimation *")] IDCompositionAnimation* animation)
         {
-            return ((delegate* unmanaged<IDCompositionVisual2*, IDCompositionAnimation*, int>)(lpVtbl[6]))((IDCompositionVisual2*)Unsafe.AsPointer(ref this), animation);
+            return ((delegate* unmanaged[Stdcall]<IDCompositionVisual2*, IDCompositionAnimation*, int>)(lpVtbl[6]))((IDCompositionVisual2*)Unsafe.AsPointer(ref this), animation);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int SetTransform([NativeTypeName("const D2D_MATRIX_3X2_F &")] D2D_MATRIX_3X2_F* matrix)
         {
-            return ((delegate* unmanaged<IDCompositionVisual2*, D2D_MATRIX_3X2_F*, int>)(lpVtbl[7]))((IDCompositionVisual2*)Unsafe.AsPointer(ref this), matrix);
+            return ((delegate* unmanaged[Stdcall]<IDCompositionVisual2*, D2D_MATRIX_3X2_F*, int>)(lpVtbl[7]))((IDCompositionVisual2*)Unsafe.AsPointer(ref this), matrix);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int SetTransform([NativeTypeName("IDCompositionTransform *")] IDCompositionTransform* transform)
         {
-            return ((delegate* unmanaged<IDCompositionVisual2*, IDCompositionTransform*, int>)(lpVtbl[8]))((IDCompositionVisual2*)Unsafe.AsPointer(ref this), transform);
+            return ((delegate* unmanaged[Stdcall]<IDCompositionVisual2*, IDCompositionTransform*, int>)(lpVtbl[8]))((IDCompositionVisual2*)Unsafe.AsPointer(ref this), transform);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int SetTransformParent([NativeTypeName("IDCompositionVisual *")] IDCompositionVisual* visual)
         {
-            return ((delegate* unmanaged<IDCompositionVisual2*, IDCompositionVisual*, int>)(lpVtbl[9]))((IDCompositionVisual2*)Unsafe.AsPointer(ref this), visual);
+            return ((delegate* unmanaged[Stdcall]<IDCompositionVisual2*, IDCompositionVisual*, int>)(lpVtbl[9]))((IDCompositionVisual2*)Unsafe.AsPointer(ref this), visual);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int SetEffect([NativeTypeName("IDCompositionEffect *")] IDCompositionEffect* effect)
         {
-            return ((delegate* unmanaged<IDCompositionVisual2*, IDCompositionEffect*, int>)(lpVtbl[10]))((IDCompositionVisual2*)Unsafe.AsPointer(ref this), effect);
+            return ((delegate* unmanaged[Stdcall]<IDCompositionVisual2*, IDCompositionEffect*, int>)(lpVtbl[10]))((IDCompositionVisual2*)Unsafe.AsPointer(ref this), effect);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int SetBitmapInterpolationMode(DCOMPOSITION_BITMAP_INTERPOLATION_MODE interpolationMode)
         {
-            return ((delegate* unmanaged<IDCompositionVisual2*, DCOMPOSITION_BITMAP_INTERPOLATION_MODE, int>)(lpVtbl[11]))((IDCompositionVisual2*)Unsafe.AsPointer(ref this), interpolationMode);
+            return ((delegate* unmanaged[Stdcall]<IDCompositionVisual2*, DCOMPOSITION_BITMAP_INTERPOLATION_MODE, int>)(lpVtbl[11]))((IDCompositionVisual2*)Unsafe.AsPointer(ref this), interpolationMode);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int SetBorderMode(DCOMPOSITION_BORDER_MODE borderMode)
         {
-            return ((delegate* unmanaged<IDCompositionVisual2*, DCOMPOSITION_BORDER_MODE, int>)(lpVtbl[12]))((IDCompositionVisual2*)Unsafe.AsPointer(ref this), borderMode);
+            return ((delegate* unmanaged[Stdcall]<IDCompositionVisual2*, DCOMPOSITION_BORDER_MODE, int>)(lpVtbl[12]))((IDCompositionVisual2*)Unsafe.AsPointer(ref this), borderMode);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int SetClip([NativeTypeName("const D2D_RECT_F &")] D2D_RECT_F* rect)
         {
-            return ((delegate* unmanaged<IDCompositionVisual2*, D2D_RECT_F*, int>)(lpVtbl[13]))((IDCompositionVisual2*)Unsafe.AsPointer(ref this), rect);
+            return ((delegate* unmanaged[Stdcall]<IDCompositionVisual2*, D2D_RECT_F*, int>)(lpVtbl[13]))((IDCompositionVisual2*)Unsafe.AsPointer(ref this), rect);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int SetClip([NativeTypeName("IDCompositionClip *")] IDCompositionClip* clip)
         {
-            return ((delegate* unmanaged<IDCompositionVisual2*, IDCompositionClip*, int>)(lpVtbl[14]))((IDCompositionVisual2*)Unsafe.AsPointer(ref this), clip);
+            return ((delegate* unmanaged[Stdcall]<IDCompositionVisual2*, IDCompositionClip*, int>)(lpVtbl[14]))((IDCompositionVisual2*)Unsafe.AsPointer(ref this), clip);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int SetContent([NativeTypeName("IUnknown *")] IUnknown* content)
         {
-            return ((delegate* unmanaged<IDCompositionVisual2*, IUnknown*, int>)(lpVtbl[15]))((IDCompositionVisual2*)Unsafe.AsPointer(ref this), content);
+            return ((delegate* unmanaged[Stdcall]<IDCompositionVisual2*, IUnknown*, int>)(lpVtbl[15]))((IDCompositionVisual2*)Unsafe.AsPointer(ref this), content);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int AddVisual([NativeTypeName("IDCompositionVisual *")] IDCompositionVisual* visual, [NativeTypeName("BOOL")] int insertAbove, [NativeTypeName("IDCompositionVisual *")] IDCompositionVisual* referenceVisual)
         {
-            return ((delegate* unmanaged<IDCompositionVisual2*, IDCompositionVisual*, int, IDCompositionVisual*, int>)(lpVtbl[16]))((IDCompositionVisual2*)Unsafe.AsPointer(ref this), visual, insertAbove, referenceVisual);
+            return ((delegate* unmanaged[Stdcall]<IDCompositionVisual2*, IDCompositionVisual*, int, IDCompositionVisual*, int>)(lpVtbl[16]))((IDCompositionVisual2*)Unsafe.AsPointer(ref this), visual, insertAbove, referenceVisual);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int RemoveVisual([NativeTypeName("IDCompositionVisual *")] IDCompositionVisual* visual)
         {
-            return ((delegate* unmanaged<IDCompositionVisual2*, IDCompositionVisual*, int>)(lpVtbl[17]))((IDCompositionVisual2*)Unsafe.AsPointer(ref this), visual);
+            return ((delegate* unmanaged[Stdcall]<IDCompositionVisual2*, IDCompositionVisual*, int>)(lpVtbl[17]))((IDCompositionVisual2*)Unsafe.AsPointer(ref this), visual);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int RemoveAllVisuals()
         {
-            return ((delegate* unmanaged<IDCompositionVisual2*, int>)(lpVtbl[18]))((IDCompositionVisual2*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged[Stdcall]<IDCompositionVisual2*, int>)(lpVtbl[18]))((IDCompositionVisual2*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int SetCompositeMode(DCOMPOSITION_COMPOSITE_MODE compositeMode)
         {
-            return ((delegate* unmanaged<IDCompositionVisual2*, DCOMPOSITION_COMPOSITE_MODE, int>)(lpVtbl[19]))((IDCompositionVisual2*)Unsafe.AsPointer(ref this), compositeMode);
+            return ((delegate* unmanaged[Stdcall]<IDCompositionVisual2*, DCOMPOSITION_COMPOSITE_MODE, int>)(lpVtbl[19]))((IDCompositionVisual2*)Unsafe.AsPointer(ref this), compositeMode);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int SetOpacityMode(DCOMPOSITION_OPACITY_MODE mode)
         {
-            return ((delegate* unmanaged<IDCompositionVisual2*, DCOMPOSITION_OPACITY_MODE, int>)(lpVtbl[20]))((IDCompositionVisual2*)Unsafe.AsPointer(ref this), mode);
+            return ((delegate* unmanaged[Stdcall]<IDCompositionVisual2*, DCOMPOSITION_OPACITY_MODE, int>)(lpVtbl[20]))((IDCompositionVisual2*)Unsafe.AsPointer(ref this), mode);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int SetBackFaceVisibility(DCOMPOSITION_BACKFACE_VISIBILITY visibility)
         {
-            return ((delegate* unmanaged<IDCompositionVisual2*, DCOMPOSITION_BACKFACE_VISIBILITY, int>)(lpVtbl[21]))((IDCompositionVisual2*)Unsafe.AsPointer(ref this), visibility);
+            return ((delegate* unmanaged[Stdcall]<IDCompositionVisual2*, DCOMPOSITION_BACKFACE_VISIBILITY, int>)(lpVtbl[21]))((IDCompositionVisual2*)Unsafe.AsPointer(ref this), visibility);
         }
     }
 }

@@ -14,21 +14,29 @@ namespace TerraFX.Interop
         [NativeTypeName("tagDVD_TitleMainAttributes::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/strmif.h:21262:5)")]
         public _Anonymous_e__Union Anonymous;
 
-        public ref DVD_TITLE_APPMODE AppMode
+        public unsafe ref DVD_TITLE_APPMODE AppMode
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.AppMode, 1));
+#else
+                return ref ((_Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous))->AppMode;
+#endif
             }
         }
 
-        public ref DVD_HMSF_TIMECODE TitleLength
+        public unsafe ref DVD_HMSF_TIMECODE TitleLength
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.TitleLength, 1));
+#else
+                return ref ((_Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous))->TitleLength;
+#endif
             }
         }
 
@@ -70,7 +78,7 @@ namespace TerraFX.Interop
             public DVD_AudioAttributes e6;
             public DVD_AudioAttributes e7;
 
-            public ref DVD_AudioAttributes this[int index]
+            public unsafe ref DVD_AudioAttributes this[int index]
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
                 get
@@ -80,7 +88,14 @@ namespace TerraFX.Interop
             }
 
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public Span<DVD_AudioAttributes> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 8);
+            public unsafe Span<DVD_AudioAttributes> AsSpan()
+            {
+#if !NETSTANDARD2_0
+                return MemoryMarshal.CreateSpan(ref e0, 8);
+#else
+                return new Span<DVD_AudioAttributes>((DVD_AudioAttributes*)Unsafe.AsPointer(ref this), 8);
+#endif
+            }
         }
 
         public partial struct _MultichannelAudioAttributes_e__FixedBuffer
@@ -94,7 +109,7 @@ namespace TerraFX.Interop
             public DVD_MultichannelAudioAttributes e6;
             public DVD_MultichannelAudioAttributes e7;
 
-            public ref DVD_MultichannelAudioAttributes this[int index]
+            public unsafe ref DVD_MultichannelAudioAttributes this[int index]
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
                 get
@@ -104,7 +119,14 @@ namespace TerraFX.Interop
             }
 
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public Span<DVD_MultichannelAudioAttributes> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 8);
+            public unsafe Span<DVD_MultichannelAudioAttributes> AsSpan()
+            {
+#if !NETSTANDARD2_0
+                return MemoryMarshal.CreateSpan(ref e0, 8);
+#else
+                return new Span<DVD_MultichannelAudioAttributes>((DVD_MultichannelAudioAttributes*)Unsafe.AsPointer(ref this), 8);
+#endif
+            }
         }
 
         public partial struct _SubpictureAttributes_e__FixedBuffer
@@ -142,7 +164,7 @@ namespace TerraFX.Interop
             public DVD_SubpictureAttributes e30;
             public DVD_SubpictureAttributes e31;
 
-            public ref DVD_SubpictureAttributes this[int index]
+            public unsafe ref DVD_SubpictureAttributes this[int index]
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
                 get
@@ -152,7 +174,14 @@ namespace TerraFX.Interop
             }
 
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public Span<DVD_SubpictureAttributes> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 32);
+            public unsafe Span<DVD_SubpictureAttributes> AsSpan()
+            {
+#if !NETSTANDARD2_0
+                return MemoryMarshal.CreateSpan(ref e0, 32);
+#else
+                return new Span<DVD_SubpictureAttributes>((DVD_SubpictureAttributes*)Unsafe.AsPointer(ref this), 32);
+#endif
+            }
         }
     }
 }

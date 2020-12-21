@@ -36,7 +36,7 @@ namespace TerraFX.Interop
         {
             public PHYSICAL_ELEMENT_STATUS_DESCRIPTOR e0;
 
-            public ref PHYSICAL_ELEMENT_STATUS_DESCRIPTOR this[int index]
+            public unsafe ref PHYSICAL_ELEMENT_STATUS_DESCRIPTOR this[int index]
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
                 get
@@ -46,7 +46,14 @@ namespace TerraFX.Interop
             }
 
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public Span<PHYSICAL_ELEMENT_STATUS_DESCRIPTOR> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
+            public unsafe Span<PHYSICAL_ELEMENT_STATUS_DESCRIPTOR> AsSpan(int length)
+            {
+#if !NETSTANDARD2_0
+                return MemoryMarshal.CreateSpan(ref e0, length);
+#else
+                return new Span<PHYSICAL_ELEMENT_STATUS_DESCRIPTOR>((PHYSICAL_ELEMENT_STATUS_DESCRIPTOR*)Unsafe.AsPointer(ref this), length);
+#endif
+            }
         }
     }
 }

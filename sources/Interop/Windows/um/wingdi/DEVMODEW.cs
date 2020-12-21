@@ -31,102 +31,146 @@ namespace TerraFX.Interop
         [NativeTypeName("_devicemodeW::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/wingdi.h:2256:5)")]
         public _Anonymous1_e__Union Anonymous1;
 
-        public ref short dmOrientation
+        public unsafe ref short dmOrientation
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous1.Anonymous1.dmOrientation, 1));
+#else
+                return ref ((_Anonymous1_e__Union._Anonymous1_e__Struct*)Unsafe.AsPointer(ref Anonymous1.Anonymous1))->dmOrientation;
+#endif
             }
         }
 
-        public ref short dmPaperSize
+        public unsafe ref short dmPaperSize
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous1.Anonymous1.dmPaperSize, 1));
+#else
+                return ref ((_Anonymous1_e__Union._Anonymous1_e__Struct*)Unsafe.AsPointer(ref Anonymous1.Anonymous1))->dmPaperSize;
+#endif
             }
         }
 
-        public ref short dmPaperLength
+        public unsafe ref short dmPaperLength
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous1.Anonymous1.dmPaperLength, 1));
+#else
+                return ref ((_Anonymous1_e__Union._Anonymous1_e__Struct*)Unsafe.AsPointer(ref Anonymous1.Anonymous1))->dmPaperLength;
+#endif
             }
         }
 
-        public ref short dmPaperWidth
+        public unsafe ref short dmPaperWidth
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous1.Anonymous1.dmPaperWidth, 1));
+#else
+                return ref ((_Anonymous1_e__Union._Anonymous1_e__Struct*)Unsafe.AsPointer(ref Anonymous1.Anonymous1))->dmPaperWidth;
+#endif
             }
         }
 
-        public ref short dmScale
+        public unsafe ref short dmScale
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous1.Anonymous1.dmScale, 1));
+#else
+                return ref ((_Anonymous1_e__Union._Anonymous1_e__Struct*)Unsafe.AsPointer(ref Anonymous1.Anonymous1))->dmScale;
+#endif
             }
         }
 
-        public ref short dmCopies
+        public unsafe ref short dmCopies
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous1.Anonymous1.dmCopies, 1));
+#else
+                return ref ((_Anonymous1_e__Union._Anonymous1_e__Struct*)Unsafe.AsPointer(ref Anonymous1.Anonymous1))->dmCopies;
+#endif
             }
         }
 
-        public ref short dmDefaultSource
+        public unsafe ref short dmDefaultSource
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous1.Anonymous1.dmDefaultSource, 1));
+#else
+                return ref ((_Anonymous1_e__Union._Anonymous1_e__Struct*)Unsafe.AsPointer(ref Anonymous1.Anonymous1))->dmDefaultSource;
+#endif
             }
         }
 
-        public ref short dmPrintQuality
+        public unsafe ref short dmPrintQuality
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous1.Anonymous1.dmPrintQuality, 1));
+#else
+                return ref ((_Anonymous1_e__Union._Anonymous1_e__Struct*)Unsafe.AsPointer(ref Anonymous1.Anonymous1))->dmPrintQuality;
+#endif
             }
         }
 
-        public ref POINTL dmPosition
+        public unsafe ref POINTL dmPosition
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous1.Anonymous2.dmPosition, 1));
+#else
+                return ref ((_Anonymous1_e__Union._Anonymous2_e__Struct*)Unsafe.AsPointer(ref Anonymous1.Anonymous2))->dmPosition;
+#endif
             }
         }
 
-        public ref uint dmDisplayOrientation
+        public unsafe ref uint dmDisplayOrientation
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous1.Anonymous2.dmDisplayOrientation, 1));
+#else
+                return ref ((_Anonymous1_e__Union._Anonymous2_e__Struct*)Unsafe.AsPointer(ref Anonymous1.Anonymous2))->dmDisplayOrientation;
+#endif
             }
         }
 
-        public ref uint dmDisplayFixedOutput
+        public unsafe ref uint dmDisplayFixedOutput
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous1.Anonymous2.dmDisplayFixedOutput, 1));
+#else
+                return ref ((_Anonymous1_e__Union._Anonymous2_e__Struct*)Unsafe.AsPointer(ref Anonymous1.Anonymous2))->dmDisplayFixedOutput;
+#endif
             }
         }
 
@@ -158,21 +202,29 @@ namespace TerraFX.Interop
         [NativeTypeName("_devicemodeW::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/wingdi.h:2285:5)")]
         public _Anonymous2_e__Union Anonymous2;
 
-        public ref uint dmDisplayFlags
+        public unsafe ref uint dmDisplayFlags
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous2.dmDisplayFlags, 1));
+#else
+                return ref ((_Anonymous2_e__Union*)Unsafe.AsPointer(ref Anonymous2))->dmDisplayFlags;
+#endif
             }
         }
 
-        public ref uint dmNup
+        public unsafe ref uint dmNup
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous2.dmNup, 1));
+#else
+                return ref ((_Anonymous2_e__Union*)Unsafe.AsPointer(ref Anonymous2))->dmNup;
+#endif
             }
         }
 

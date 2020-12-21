@@ -29,21 +29,29 @@ namespace TerraFX.Interop
         [NativeTypeName("_SP_ALTPLATFORM_INFO_V2::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/SetupAPI.h:221:5)")]
         public _Anonymous_e__Union Anonymous;
 
-        public ref ushort Reserved
+        public unsafe ref ushort Reserved
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Reserved, 1));
+#else
+                return ref ((_Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous))->Reserved;
+#endif
             }
         }
 
-        public ref ushort Flags
+        public unsafe ref ushort Flags
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Flags, 1));
+#else
+                return ref ((_Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous))->Flags;
+#endif
             }
         }
 

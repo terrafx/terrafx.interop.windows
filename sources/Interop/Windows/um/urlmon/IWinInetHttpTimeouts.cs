@@ -19,28 +19,28 @@ namespace TerraFX.Interop
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return ((delegate* unmanaged<IWinInetHttpTimeouts*, Guid*, void**, int>)(lpVtbl[0]))((IWinInetHttpTimeouts*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* unmanaged[Stdcall]<IWinInetHttpTimeouts*, Guid*, void**, int>)(lpVtbl[0]))((IWinInetHttpTimeouts*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return ((delegate* unmanaged<IWinInetHttpTimeouts*, uint>)(lpVtbl[1]))((IWinInetHttpTimeouts*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged[Stdcall]<IWinInetHttpTimeouts*, uint>)(lpVtbl[1]))((IWinInetHttpTimeouts*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return ((delegate* unmanaged<IWinInetHttpTimeouts*, uint>)(lpVtbl[2]))((IWinInetHttpTimeouts*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged[Stdcall]<IWinInetHttpTimeouts*, uint>)(lpVtbl[2]))((IWinInetHttpTimeouts*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetRequestTimeouts([NativeTypeName("DWORD *")] uint* pdwConnectTimeout, [NativeTypeName("DWORD *")] uint* pdwSendTimeout, [NativeTypeName("DWORD *")] uint* pdwReceiveTimeout)
         {
-            return ((delegate* unmanaged<IWinInetHttpTimeouts*, uint*, uint*, uint*, int>)(lpVtbl[3]))((IWinInetHttpTimeouts*)Unsafe.AsPointer(ref this), pdwConnectTimeout, pdwSendTimeout, pdwReceiveTimeout);
+            return ((delegate* unmanaged[Stdcall]<IWinInetHttpTimeouts*, uint*, uint*, uint*, int>)(lpVtbl[3]))((IWinInetHttpTimeouts*)Unsafe.AsPointer(ref this), pdwConnectTimeout, pdwSendTimeout, pdwReceiveTimeout);
         }
     }
 }

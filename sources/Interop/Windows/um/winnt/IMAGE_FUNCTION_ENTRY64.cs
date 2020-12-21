@@ -20,21 +20,29 @@ namespace TerraFX.Interop
         [NativeTypeName("_IMAGE_FUNCTION_ENTRY64::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:19009:5)")]
         public _Anonymous_e__Union Anonymous;
 
-        public ref ulong EndOfPrologue
+        public unsafe ref ulong EndOfPrologue
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.EndOfPrologue, 1));
+#else
+                return ref ((_Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous))->EndOfPrologue;
+#endif
             }
         }
 
-        public ref ulong UnwindInfoAddress
+        public unsafe ref ulong UnwindInfoAddress
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.UnwindInfoAddress, 1));
+#else
+                return ref ((_Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous))->UnwindInfoAddress;
+#endif
             }
         }
 

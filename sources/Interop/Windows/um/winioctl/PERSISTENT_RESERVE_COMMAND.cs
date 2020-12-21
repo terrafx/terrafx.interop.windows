@@ -19,21 +19,29 @@ namespace TerraFX.Interop
         [NativeTypeName("_PERSISTENT_RESERVE_COMMAND::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winioctl.h:5615:5)")]
         public _Anonymous_e__Union Anonymous;
 
-        public ref _Anonymous_e__Union._PR_IN_e__Struct PR_IN
+        public unsafe ref _Anonymous_e__Union._PR_IN_e__Struct PR_IN
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.PR_IN, 1));
+#else
+                return ref ((_Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous))->PR_IN;
+#endif
             }
         }
 
-        public ref _Anonymous_e__Union._PR_OUT_e__Struct PR_OUT
+        public unsafe ref _Anonymous_e__Union._PR_OUT_e__Struct PR_OUT
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.PR_OUT, 1));
+#else
+                return ref ((_Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous))->PR_OUT;
+#endif
             }
         }
 

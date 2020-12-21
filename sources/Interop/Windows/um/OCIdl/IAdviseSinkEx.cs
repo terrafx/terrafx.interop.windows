@@ -19,57 +19,57 @@ namespace TerraFX.Interop
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return ((delegate* unmanaged<IAdviseSinkEx*, Guid*, void**, int>)(lpVtbl[0]))((IAdviseSinkEx*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* unmanaged[Stdcall]<IAdviseSinkEx*, Guid*, void**, int>)(lpVtbl[0]))((IAdviseSinkEx*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return ((delegate* unmanaged<IAdviseSinkEx*, uint>)(lpVtbl[1]))((IAdviseSinkEx*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged[Stdcall]<IAdviseSinkEx*, uint>)(lpVtbl[1]))((IAdviseSinkEx*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return ((delegate* unmanaged<IAdviseSinkEx*, uint>)(lpVtbl[2]))((IAdviseSinkEx*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged[Stdcall]<IAdviseSinkEx*, uint>)(lpVtbl[2]))((IAdviseSinkEx*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public void OnDataChange([NativeTypeName("FORMATETC *")] FORMATETC* pFormatetc, [NativeTypeName("STGMEDIUM *")] STGMEDIUM* pStgmed)
         {
-            ((delegate* unmanaged<IAdviseSinkEx*, FORMATETC*, STGMEDIUM*, void>)(lpVtbl[3]))((IAdviseSinkEx*)Unsafe.AsPointer(ref this), pFormatetc, pStgmed);
+            ((delegate* unmanaged[Stdcall]<IAdviseSinkEx*, FORMATETC*, STGMEDIUM*, void>)(lpVtbl[3]))((IAdviseSinkEx*)Unsafe.AsPointer(ref this), pFormatetc, pStgmed);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public void OnViewChange([NativeTypeName("DWORD")] uint dwAspect, [NativeTypeName("LONG")] int lindex)
         {
-            ((delegate* unmanaged<IAdviseSinkEx*, uint, int, void>)(lpVtbl[4]))((IAdviseSinkEx*)Unsafe.AsPointer(ref this), dwAspect, lindex);
+            ((delegate* unmanaged[Stdcall]<IAdviseSinkEx*, uint, int, void>)(lpVtbl[4]))((IAdviseSinkEx*)Unsafe.AsPointer(ref this), dwAspect, lindex);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public void OnRename([NativeTypeName("IMoniker *")] IMoniker* pmk)
         {
-            ((delegate* unmanaged<IAdviseSinkEx*, IMoniker*, void>)(lpVtbl[5]))((IAdviseSinkEx*)Unsafe.AsPointer(ref this), pmk);
+            ((delegate* unmanaged[Stdcall]<IAdviseSinkEx*, IMoniker*, void>)(lpVtbl[5]))((IAdviseSinkEx*)Unsafe.AsPointer(ref this), pmk);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public void OnSave()
         {
-            ((delegate* unmanaged<IAdviseSinkEx*, void>)(lpVtbl[6]))((IAdviseSinkEx*)Unsafe.AsPointer(ref this));
+            ((delegate* unmanaged[Stdcall]<IAdviseSinkEx*, void>)(lpVtbl[6]))((IAdviseSinkEx*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public void OnClose()
         {
-            ((delegate* unmanaged<IAdviseSinkEx*, void>)(lpVtbl[7]))((IAdviseSinkEx*)Unsafe.AsPointer(ref this));
+            ((delegate* unmanaged[Stdcall]<IAdviseSinkEx*, void>)(lpVtbl[7]))((IAdviseSinkEx*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public void OnViewStatusChange([NativeTypeName("DWORD")] uint dwViewStatus)
         {
-            ((delegate* unmanaged<IAdviseSinkEx*, uint, void>)(lpVtbl[8]))((IAdviseSinkEx*)Unsafe.AsPointer(ref this), dwViewStatus);
+            ((delegate* unmanaged[Stdcall]<IAdviseSinkEx*, uint, void>)(lpVtbl[8]))((IAdviseSinkEx*)Unsafe.AsPointer(ref this), dwViewStatus);
         }
     }
 }

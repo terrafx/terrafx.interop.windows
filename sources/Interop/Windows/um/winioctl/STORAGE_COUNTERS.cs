@@ -27,7 +27,7 @@ namespace TerraFX.Interop
         {
             public STORAGE_COUNTER e0;
 
-            public ref STORAGE_COUNTER this[int index]
+            public unsafe ref STORAGE_COUNTER this[int index]
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
                 get
@@ -37,7 +37,14 @@ namespace TerraFX.Interop
             }
 
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public Span<STORAGE_COUNTER> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
+            public unsafe Span<STORAGE_COUNTER> AsSpan(int length)
+            {
+#if !NETSTANDARD2_0
+                return MemoryMarshal.CreateSpan(ref e0, length);
+#else
+                return new Span<STORAGE_COUNTER>((STORAGE_COUNTER*)Unsafe.AsPointer(ref this), length);
+#endif
+            }
         }
     }
 }

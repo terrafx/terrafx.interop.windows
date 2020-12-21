@@ -19,28 +19,28 @@ namespace TerraFX.Interop
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return ((delegate* unmanaged<IMFMediaEngineTransferSource*, Guid*, void**, int>)(lpVtbl[0]))((IMFMediaEngineTransferSource*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* unmanaged[Stdcall]<IMFMediaEngineTransferSource*, Guid*, void**, int>)(lpVtbl[0]))((IMFMediaEngineTransferSource*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return ((delegate* unmanaged<IMFMediaEngineTransferSource*, uint>)(lpVtbl[1]))((IMFMediaEngineTransferSource*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged[Stdcall]<IMFMediaEngineTransferSource*, uint>)(lpVtbl[1]))((IMFMediaEngineTransferSource*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return ((delegate* unmanaged<IMFMediaEngineTransferSource*, uint>)(lpVtbl[2]))((IMFMediaEngineTransferSource*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged[Stdcall]<IMFMediaEngineTransferSource*, uint>)(lpVtbl[2]))((IMFMediaEngineTransferSource*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int TransferSourceToMediaEngine([NativeTypeName("IMFMediaEngine *")] IMFMediaEngine* destination)
         {
-            return ((delegate* unmanaged<IMFMediaEngineTransferSource*, IMFMediaEngine*, int>)(lpVtbl[3]))((IMFMediaEngineTransferSource*)Unsafe.AsPointer(ref this), destination);
+            return ((delegate* unmanaged[Stdcall]<IMFMediaEngineTransferSource*, IMFMediaEngine*, int>)(lpVtbl[3]))((IMFMediaEngineTransferSource*)Unsafe.AsPointer(ref this), destination);
         }
     }
 }

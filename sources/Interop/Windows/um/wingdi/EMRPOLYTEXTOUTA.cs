@@ -34,7 +34,7 @@ namespace TerraFX.Interop
         {
             public EMRTEXT e0;
 
-            public ref EMRTEXT this[int index]
+            public unsafe ref EMRTEXT this[int index]
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
                 get
@@ -44,7 +44,14 @@ namespace TerraFX.Interop
             }
 
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public Span<EMRTEXT> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
+            public unsafe Span<EMRTEXT> AsSpan(int length)
+            {
+#if !NETSTANDARD2_0
+                return MemoryMarshal.CreateSpan(ref e0, length);
+#else
+                return new Span<EMRTEXT>((EMRTEXT*)Unsafe.AsPointer(ref this), length);
+#endif
+            }
         }
     }
 }

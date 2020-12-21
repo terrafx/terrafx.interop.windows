@@ -10,7 +10,7 @@ namespace TerraFX.Interop
 {
     public static unsafe partial class Windows
     {
-        [DllImport("Windows.AI.MachineLearning.dll", ExactSpelling = true)]
+        [DllImport("Windows.AI.MachineLearning.dll", CallingConvention = CallingConvention.StdCall, ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int MLCreateOperatorRegistry([NativeTypeName("IMLOperatorRegistry **")] IMLOperatorRegistry** registry);
 

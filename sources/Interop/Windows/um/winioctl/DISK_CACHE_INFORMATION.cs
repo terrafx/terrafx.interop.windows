@@ -32,21 +32,29 @@ namespace TerraFX.Interop
         [NativeTypeName("_DISK_CACHE_INFORMATION::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winioctl.h:8796:5)")]
         public _Anonymous_e__Union Anonymous;
 
-        public ref _Anonymous_e__Union._ScalarPrefetch_e__Struct ScalarPrefetch
+        public unsafe ref _Anonymous_e__Union._ScalarPrefetch_e__Struct ScalarPrefetch
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.ScalarPrefetch, 1));
+#else
+                return ref ((_Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous))->ScalarPrefetch;
+#endif
             }
         }
 
-        public ref _Anonymous_e__Union._BlockPrefetch_e__Struct BlockPrefetch
+        public unsafe ref _Anonymous_e__Union._BlockPrefetch_e__Struct BlockPrefetch
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.BlockPrefetch, 1));
+#else
+                return ref ((_Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous))->BlockPrefetch;
+#endif
             }
         }
 

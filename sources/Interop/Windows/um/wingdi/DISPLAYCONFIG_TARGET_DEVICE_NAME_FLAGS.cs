@@ -13,7 +13,7 @@ namespace TerraFX.Interop
         [NativeTypeName("DISPLAYCONFIG_TARGET_DEVICE_NAME_FLAGS::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/wingdi.h:3073:5)")]
         public _Anonymous_e__Union Anonymous;
 
-        public uint friendlyNameFromEdid
+        public unsafe uint friendlyNameFromEdid
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
@@ -28,7 +28,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public uint friendlyNameForced
+        public unsafe uint friendlyNameForced
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
@@ -43,7 +43,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public uint edidIdsValid
+        public unsafe uint edidIdsValid
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
@@ -58,7 +58,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public uint reserved
+        public unsafe uint reserved
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
@@ -73,12 +73,16 @@ namespace TerraFX.Interop
             }
         }
 
-        public ref uint value
+        public unsafe ref uint value
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.value, 1));
+#else
+                return ref ((_Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous))->value;
+#endif
             }
         }
 

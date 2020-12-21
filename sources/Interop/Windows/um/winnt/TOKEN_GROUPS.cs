@@ -21,7 +21,7 @@ namespace TerraFX.Interop
         {
             public SID_AND_ATTRIBUTES e0;
 
-            public ref SID_AND_ATTRIBUTES this[int index]
+            public unsafe ref SID_AND_ATTRIBUTES this[int index]
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
                 get
@@ -31,7 +31,14 @@ namespace TerraFX.Interop
             }
 
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public Span<SID_AND_ATTRIBUTES> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
+            public unsafe Span<SID_AND_ATTRIBUTES> AsSpan(int length)
+            {
+#if !NETSTANDARD2_0
+                return MemoryMarshal.CreateSpan(ref e0, length);
+#else
+                return new Span<SID_AND_ATTRIBUTES>((SID_AND_ATTRIBUTES*)Unsafe.AsPointer(ref this), length);
+#endif
+            }
         }
     }
 }

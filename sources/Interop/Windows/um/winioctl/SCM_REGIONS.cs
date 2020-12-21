@@ -27,7 +27,7 @@ namespace TerraFX.Interop
         {
             public SCM_REGION e0;
 
-            public ref SCM_REGION this[int index]
+            public unsafe ref SCM_REGION this[int index]
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
                 get
@@ -37,7 +37,14 @@ namespace TerraFX.Interop
             }
 
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public Span<SCM_REGION> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
+            public unsafe Span<SCM_REGION> AsSpan(int length)
+            {
+#if !NETSTANDARD2_0
+                return MemoryMarshal.CreateSpan(ref e0, length);
+#else
+                return new Span<SCM_REGION>((SCM_REGION*)Unsafe.AsPointer(ref this), length);
+#endif
+            }
         }
     }
 }

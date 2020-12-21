@@ -39,7 +39,7 @@ namespace TerraFX.Interop
         {
             public MFINPUTTRUSTAUTHORITY_ACCESS_ACTION e0;
 
-            public ref MFINPUTTRUSTAUTHORITY_ACCESS_ACTION this[int index]
+            public unsafe ref MFINPUTTRUSTAUTHORITY_ACCESS_ACTION this[int index]
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
                 get
@@ -49,7 +49,14 @@ namespace TerraFX.Interop
             }
 
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public Span<MFINPUTTRUSTAUTHORITY_ACCESS_ACTION> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
+            public unsafe Span<MFINPUTTRUSTAUTHORITY_ACCESS_ACTION> AsSpan(int length)
+            {
+#if !NETSTANDARD2_0
+                return MemoryMarshal.CreateSpan(ref e0, length);
+#else
+                return new Span<MFINPUTTRUSTAUTHORITY_ACCESS_ACTION>((MFINPUTTRUSTAUTHORITY_ACCESS_ACTION*)Unsafe.AsPointer(ref this), length);
+#endif
+            }
         }
     }
 }

@@ -14,63 +14,55 @@ namespace TerraFX.Interop
         [NativeTypeName("_CERT_SYSTEM_STORE_RELOCATE_PARA::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/wincrypt.h:9483:5)")]
         public _Anonymous1_e__Union Anonymous1;
 
-        public ref IntPtr hKeyBase
+        public unsafe ref IntPtr hKeyBase
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous1.hKeyBase, 1));
+#else
+                return ref ((_Anonymous1_e__Union*)Unsafe.AsPointer(ref Anonymous1))->hKeyBase;
+#endif
             }
         }
 
-        public ref void* pvBase
+        public unsafe ref void* pvBase
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
-                fixed (_Anonymous1_e__Union* pField = &Anonymous1)
-                {
-                    return ref pField->pvBase;
-                }
+                return ref ((_Anonymous1_e__Union*)Unsafe.AsPointer(ref Anonymous1))->pvBase;
             }
         }
 
         [NativeTypeName("_CERT_SYSTEM_STORE_RELOCATE_PARA::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/wincrypt.h:9487:5)")]
         public _Anonymous2_e__Union Anonymous2;
 
-        public ref void* pvSystemStore
+        public unsafe ref void* pvSystemStore
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
-                fixed (_Anonymous2_e__Union* pField = &Anonymous2)
-                {
-                    return ref pField->pvSystemStore;
-                }
+                return ref ((_Anonymous2_e__Union*)Unsafe.AsPointer(ref Anonymous2))->pvSystemStore;
             }
         }
 
-        public ref sbyte* pszSystemStore
+        public unsafe ref sbyte* pszSystemStore
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
-                fixed (_Anonymous2_e__Union* pField = &Anonymous2)
-                {
-                    return ref pField->pszSystemStore;
-                }
+                return ref ((_Anonymous2_e__Union*)Unsafe.AsPointer(ref Anonymous2))->pszSystemStore;
             }
         }
 
-        public ref ushort* pwszSystemStore
+        public unsafe ref ushort* pwszSystemStore
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
-                fixed (_Anonymous2_e__Union* pField = &Anonymous2)
-                {
-                    return ref pField->pwszSystemStore;
-                }
+                return ref ((_Anonymous2_e__Union*)Unsafe.AsPointer(ref Anonymous2))->pwszSystemStore;
             }
         }
 

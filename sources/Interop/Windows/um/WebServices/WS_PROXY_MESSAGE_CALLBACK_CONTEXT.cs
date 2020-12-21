@@ -4,13 +4,33 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 
 namespace TerraFX.Interop
 {
     public unsafe partial struct WS_PROXY_MESSAGE_CALLBACK_CONTEXT
     {
         [NativeTypeName("WS_PROXY_MESSAGE_CALLBACK")]
+#if !NETSTANDARD2_0
         public delegate* unmanaged<IntPtr, IntPtr, void*, IntPtr, int> callback;
+#else
+        public void* _callback;
+
+        public delegate* unmanaged[Stdcall]<IntPtr, IntPtr, void*, IntPtr, int> callback
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                return (delegate* unmanaged[Stdcall]<IntPtr, IntPtr, void*, IntPtr, int>)_callback;
+            }
+
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            set
+            {
+                _callback = value;
+            }
+        }
+#endif
 
         [NativeTypeName("void *")]
         public void* state;

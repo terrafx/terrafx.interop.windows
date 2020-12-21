@@ -18,102 +18,146 @@ namespace TerraFX.Interop
         [NativeTypeName("D3D11_SHADER_RESOURCE_VIEW_DESC1::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/d3d11_3.h:886:5)")]
         public _Anonymous_e__Union Anonymous;
 
-        public ref D3D11_BUFFER_SRV Buffer
+        public unsafe ref D3D11_BUFFER_SRV Buffer
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Buffer, 1));
+#else
+                return ref ((_Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous))->Buffer;
+#endif
             }
         }
 
-        public ref D3D11_TEX1D_SRV Texture1D
+        public unsafe ref D3D11_TEX1D_SRV Texture1D
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Texture1D, 1));
+#else
+                return ref ((_Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous))->Texture1D;
+#endif
             }
         }
 
-        public ref D3D11_TEX1D_ARRAY_SRV Texture1DArray
+        public unsafe ref D3D11_TEX1D_ARRAY_SRV Texture1DArray
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Texture1DArray, 1));
+#else
+                return ref ((_Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous))->Texture1DArray;
+#endif
             }
         }
 
-        public ref D3D11_TEX2D_SRV1 Texture2D
+        public unsafe ref D3D11_TEX2D_SRV1 Texture2D
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Texture2D, 1));
+#else
+                return ref ((_Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous))->Texture2D;
+#endif
             }
         }
 
-        public ref D3D11_TEX2D_ARRAY_SRV1 Texture2DArray
+        public unsafe ref D3D11_TEX2D_ARRAY_SRV1 Texture2DArray
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Texture2DArray, 1));
+#else
+                return ref ((_Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous))->Texture2DArray;
+#endif
             }
         }
 
-        public ref D3D11_TEX2DMS_SRV Texture2DMS
+        public unsafe ref D3D11_TEX2DMS_SRV Texture2DMS
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Texture2DMS, 1));
+#else
+                return ref ((_Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous))->Texture2DMS;
+#endif
             }
         }
 
-        public ref D3D11_TEX2DMS_ARRAY_SRV Texture2DMSArray
+        public unsafe ref D3D11_TEX2DMS_ARRAY_SRV Texture2DMSArray
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Texture2DMSArray, 1));
+#else
+                return ref ((_Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous))->Texture2DMSArray;
+#endif
             }
         }
 
-        public ref D3D11_TEX3D_SRV Texture3D
+        public unsafe ref D3D11_TEX3D_SRV Texture3D
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Texture3D, 1));
+#else
+                return ref ((_Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous))->Texture3D;
+#endif
             }
         }
 
-        public ref D3D11_TEXCUBE_SRV TextureCube
+        public unsafe ref D3D11_TEXCUBE_SRV TextureCube
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.TextureCube, 1));
+#else
+                return ref ((_Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous))->TextureCube;
+#endif
             }
         }
 
-        public ref D3D11_TEXCUBE_ARRAY_SRV TextureCubeArray
+        public unsafe ref D3D11_TEXCUBE_ARRAY_SRV TextureCubeArray
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.TextureCubeArray, 1));
+#else
+                return ref ((_Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous))->TextureCubeArray;
+#endif
             }
         }
 
-        public ref D3D11_BUFFEREX_SRV BufferEx
+        public unsafe ref D3D11_BUFFEREX_SRV BufferEx
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.BufferEx, 1));
+#else
+                return ref ((_Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous))->BufferEx;
+#endif
             }
         }
 

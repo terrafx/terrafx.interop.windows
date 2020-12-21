@@ -17,30 +17,42 @@ namespace TerraFX.Interop
         [NativeTypeName("D3D12_RESOURCE_BARRIER::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/d3d12.h:2754:5)")]
         public _Anonymous_e__Union Anonymous;
 
-        public ref D3D12_RESOURCE_TRANSITION_BARRIER Transition
+        public unsafe ref D3D12_RESOURCE_TRANSITION_BARRIER Transition
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Transition, 1));
+#else
+                return ref ((_Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous))->Transition;
+#endif
             }
         }
 
-        public ref D3D12_RESOURCE_ALIASING_BARRIER Aliasing
+        public unsafe ref D3D12_RESOURCE_ALIASING_BARRIER Aliasing
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Aliasing, 1));
+#else
+                return ref ((_Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous))->Aliasing;
+#endif
             }
         }
 
-        public ref D3D12_RESOURCE_UAV_BARRIER UAV
+        public unsafe ref D3D12_RESOURCE_UAV_BARRIER UAV
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.UAV, 1));
+#else
+                return ref ((_Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous))->UAV;
+#endif
             }
         }
 

@@ -3,6 +3,7 @@
 // Ported from um/SetupAPI.h in the Windows SDK for Windows 10.0.19041.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
@@ -13,7 +14,26 @@ namespace TerraFX.Interop
         public SP_CLASSINSTALL_HEADER ClassInstallHeader;
 
         [NativeTypeName("PDETECT_PROGRESS_NOTIFY")]
+#if !NETSTANDARD2_0
         public delegate* unmanaged<void*, uint, int> DetectProgressNotify;
+#else
+        public void* _DetectProgressNotify;
+
+        public delegate* unmanaged[Stdcall]<void*, uint, int> DetectProgressNotify
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                return (delegate* unmanaged[Stdcall]<void*, uint, int>)_DetectProgressNotify;
+            }
+
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            set
+            {
+                _DetectProgressNotify = value;
+            }
+        }
+#endif
 
         [NativeTypeName("PVOID")]
         public void* ProgressNotifyParam;

@@ -13,7 +13,7 @@ namespace TerraFX.Interop
         [NativeTypeName("_IMAGE_RESOURCE_DIRECTORY_ENTRY::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:18348:5)")]
         public _Anonymous1_e__Union Anonymous1;
 
-        public uint NameOffset
+        public unsafe uint NameOffset
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
@@ -28,7 +28,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public uint NameIsString
+        public unsafe uint NameIsString
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
@@ -43,37 +43,49 @@ namespace TerraFX.Interop
             }
         }
 
-        public ref uint Name
+        public unsafe ref uint Name
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous1.Name, 1));
+#else
+                return ref ((_Anonymous1_e__Union*)Unsafe.AsPointer(ref Anonymous1))->Name;
+#endif
             }
         }
 
-        public ref ushort Id
+        public unsafe ref ushort Id
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous1.Id, 1));
+#else
+                return ref ((_Anonymous1_e__Union*)Unsafe.AsPointer(ref Anonymous1))->Id;
+#endif
             }
         }
 
         [NativeTypeName("_IMAGE_RESOURCE_DIRECTORY_ENTRY::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:18356:5)")]
         public _Anonymous2_e__Union Anonymous2;
 
-        public ref uint OffsetToData
+        public unsafe ref uint OffsetToData
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous2.OffsetToData, 1));
+#else
+                return ref ((_Anonymous2_e__Union*)Unsafe.AsPointer(ref Anonymous2))->OffsetToData;
+#endif
             }
         }
 
-        public uint OffsetToDirectory
+        public unsafe uint OffsetToDirectory
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
@@ -88,7 +100,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public uint DataIsDirectory
+        public unsafe uint DataIsDirectory
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get

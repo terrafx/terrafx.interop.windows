@@ -21,7 +21,7 @@ namespace TerraFX.Interop
         {
             public MFPinholeCameraIntrinsic_IntrinsicModel e0;
 
-            public ref MFPinholeCameraIntrinsic_IntrinsicModel this[int index]
+            public unsafe ref MFPinholeCameraIntrinsic_IntrinsicModel this[int index]
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
                 get
@@ -31,7 +31,14 @@ namespace TerraFX.Interop
             }
 
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public Span<MFPinholeCameraIntrinsic_IntrinsicModel> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
+            public unsafe Span<MFPinholeCameraIntrinsic_IntrinsicModel> AsSpan(int length)
+            {
+#if !NETSTANDARD2_0
+                return MemoryMarshal.CreateSpan(ref e0, length);
+#else
+                return new Span<MFPinholeCameraIntrinsic_IntrinsicModel>((MFPinholeCameraIntrinsic_IntrinsicModel*)Unsafe.AsPointer(ref this), length);
+#endif
+            }
         }
     }
 }

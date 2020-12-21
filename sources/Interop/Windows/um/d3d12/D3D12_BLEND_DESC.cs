@@ -31,7 +31,7 @@ namespace TerraFX.Interop
             public D3D12_RENDER_TARGET_BLEND_DESC e6;
             public D3D12_RENDER_TARGET_BLEND_DESC e7;
 
-            public ref D3D12_RENDER_TARGET_BLEND_DESC this[int index]
+            public unsafe ref D3D12_RENDER_TARGET_BLEND_DESC this[int index]
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
                 get
@@ -41,7 +41,14 @@ namespace TerraFX.Interop
             }
 
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public Span<D3D12_RENDER_TARGET_BLEND_DESC> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 8);
+            public unsafe Span<D3D12_RENDER_TARGET_BLEND_DESC> AsSpan()
+            {
+#if !NETSTANDARD2_0
+                return MemoryMarshal.CreateSpan(ref e0, 8);
+#else
+                return new Span<D3D12_RENDER_TARGET_BLEND_DESC>((D3D12_RENDER_TARGET_BLEND_DESC*)Unsafe.AsPointer(ref this), 8);
+#endif
+            }
         }
     }
 }

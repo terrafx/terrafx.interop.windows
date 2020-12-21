@@ -16,24 +16,25 @@ namespace TerraFX.Interop
         [NativeTypeName("tagPROPSPEC::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/PropIdlBase.h:444:43)")]
         public _Anonymous_e__Union Anonymous;
 
-        public ref uint propid
+        public unsafe ref uint propid
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.propid, 1));
+#else
+                return ref ((_Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous))->propid;
+#endif
             }
         }
 
-        public ref ushort* lpwstr
+        public unsafe ref ushort* lpwstr
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
-                fixed (_Anonymous_e__Union* pField = &Anonymous)
-                {
-                    return ref pField->lpwstr;
-                }
+                return ref ((_Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous))->lpwstr;
             }
         }
 

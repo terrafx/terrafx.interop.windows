@@ -19,28 +19,28 @@ namespace TerraFX.Interop
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return ((delegate* unmanaged<IPropertyStoreCapabilities*, Guid*, void**, int>)(lpVtbl[0]))((IPropertyStoreCapabilities*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* unmanaged[Stdcall]<IPropertyStoreCapabilities*, Guid*, void**, int>)(lpVtbl[0]))((IPropertyStoreCapabilities*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return ((delegate* unmanaged<IPropertyStoreCapabilities*, uint>)(lpVtbl[1]))((IPropertyStoreCapabilities*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged[Stdcall]<IPropertyStoreCapabilities*, uint>)(lpVtbl[1]))((IPropertyStoreCapabilities*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return ((delegate* unmanaged<IPropertyStoreCapabilities*, uint>)(lpVtbl[2]))((IPropertyStoreCapabilities*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged[Stdcall]<IPropertyStoreCapabilities*, uint>)(lpVtbl[2]))((IPropertyStoreCapabilities*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int IsPropertyWritable([NativeTypeName("const PROPERTYKEY &")] PROPERTYKEY* key)
         {
-            return ((delegate* unmanaged<IPropertyStoreCapabilities*, PROPERTYKEY*, int>)(lpVtbl[3]))((IPropertyStoreCapabilities*)Unsafe.AsPointer(ref this), key);
+            return ((delegate* unmanaged[Stdcall]<IPropertyStoreCapabilities*, PROPERTYKEY*, int>)(lpVtbl[3]))((IPropertyStoreCapabilities*)Unsafe.AsPointer(ref this), key);
         }
     }
 }

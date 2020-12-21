@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 
 namespace TerraFX.Interop
 {
@@ -34,7 +35,26 @@ namespace TerraFX.Interop
         public nuint dwContextHelpId;
 
         [NativeTypeName("MSGBOXCALLBACK")]
+#if !NETSTANDARD2_0
         public delegate* unmanaged<HELPINFO*, void> lpfnMsgBoxCallback;
+#else
+        public void* _lpfnMsgBoxCallback;
+
+        public delegate* unmanaged[Stdcall]<HELPINFO*, void> lpfnMsgBoxCallback
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                return (delegate* unmanaged[Stdcall]<HELPINFO*, void>)_lpfnMsgBoxCallback;
+            }
+
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            set
+            {
+                _lpfnMsgBoxCallback = value;
+            }
+        }
+#endif
 
         [NativeTypeName("DWORD")]
         public uint dwLanguageId;

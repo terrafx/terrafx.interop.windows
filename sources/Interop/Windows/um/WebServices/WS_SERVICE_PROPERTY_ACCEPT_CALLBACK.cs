@@ -4,12 +4,32 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 
 namespace TerraFX.Interop
 {
     public unsafe partial struct WS_SERVICE_PROPERTY_ACCEPT_CALLBACK
     {
         [NativeTypeName("WS_SERVICE_ACCEPT_CHANNEL_CALLBACK")]
+#if !NETSTANDARD2_0
         public delegate* unmanaged<IntPtr, void**, WS_ASYNC_CONTEXT*, IntPtr, int> callback;
+#else
+        public void* _callback;
+
+        public delegate* unmanaged[Stdcall]<IntPtr, void**, WS_ASYNC_CONTEXT*, IntPtr, int> callback
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                return (delegate* unmanaged[Stdcall]<IntPtr, void**, WS_ASYNC_CONTEXT*, IntPtr, int>)_callback;
+            }
+
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            set
+            {
+                _callback = value;
+            }
+        }
+#endif
     }
 }

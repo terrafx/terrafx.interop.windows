@@ -33,7 +33,7 @@ namespace TerraFX.Interop
             public AM_DVD_YUV e14;
             public AM_DVD_YUV e15;
 
-            public ref AM_DVD_YUV this[int index]
+            public unsafe ref AM_DVD_YUV this[int index]
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
                 get
@@ -43,7 +43,14 @@ namespace TerraFX.Interop
             }
 
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public Span<AM_DVD_YUV> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 16);
+            public unsafe Span<AM_DVD_YUV> AsSpan()
+            {
+#if !NETSTANDARD2_0
+                return MemoryMarshal.CreateSpan(ref e0, 16);
+#else
+                return new Span<AM_DVD_YUV>((AM_DVD_YUV*)Unsafe.AsPointer(ref this), 16);
+#endif
+            }
         }
     }
 }

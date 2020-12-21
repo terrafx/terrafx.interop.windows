@@ -39,7 +39,7 @@ namespace TerraFX.Interop
         {
             public FILE_STORAGE_TIER_REGION e0;
 
-            public ref FILE_STORAGE_TIER_REGION this[int index]
+            public unsafe ref FILE_STORAGE_TIER_REGION this[int index]
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
                 get
@@ -49,7 +49,14 @@ namespace TerraFX.Interop
             }
 
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public Span<FILE_STORAGE_TIER_REGION> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
+            public unsafe Span<FILE_STORAGE_TIER_REGION> AsSpan(int length)
+            {
+#if !NETSTANDARD2_0
+                return MemoryMarshal.CreateSpan(ref e0, length);
+#else
+                return new Span<FILE_STORAGE_TIER_REGION>((FILE_STORAGE_TIER_REGION*)Unsafe.AsPointer(ref this), length);
+#endif
+            }
         }
     }
 }

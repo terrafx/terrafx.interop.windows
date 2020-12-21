@@ -19,28 +19,28 @@ namespace TerraFX.Interop
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return ((delegate* unmanaged<IRemoteSystemAdditionalInfoProvider*, Guid*, void**, int>)(lpVtbl[0]))((IRemoteSystemAdditionalInfoProvider*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* unmanaged[Stdcall]<IRemoteSystemAdditionalInfoProvider*, Guid*, void**, int>)(lpVtbl[0]))((IRemoteSystemAdditionalInfoProvider*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return ((delegate* unmanaged<IRemoteSystemAdditionalInfoProvider*, uint>)(lpVtbl[1]))((IRemoteSystemAdditionalInfoProvider*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged[Stdcall]<IRemoteSystemAdditionalInfoProvider*, uint>)(lpVtbl[1]))((IRemoteSystemAdditionalInfoProvider*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return ((delegate* unmanaged<IRemoteSystemAdditionalInfoProvider*, uint>)(lpVtbl[2]))((IRemoteSystemAdditionalInfoProvider*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged[Stdcall]<IRemoteSystemAdditionalInfoProvider*, uint>)(lpVtbl[2]))((IRemoteSystemAdditionalInfoProvider*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetAdditionalInfo([NativeTypeName("HSTRING *")] IntPtr* deduplicationId, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** mapView)
         {
-            return ((delegate* unmanaged<IRemoteSystemAdditionalInfoProvider*, IntPtr*, Guid*, void**, int>)(lpVtbl[3]))((IRemoteSystemAdditionalInfoProvider*)Unsafe.AsPointer(ref this), deduplicationId, riid, mapView);
+            return ((delegate* unmanaged[Stdcall]<IRemoteSystemAdditionalInfoProvider*, IntPtr*, Guid*, void**, int>)(lpVtbl[3]))((IRemoteSystemAdditionalInfoProvider*)Unsafe.AsPointer(ref this), deduplicationId, riid, mapView);
         }
     }
 }

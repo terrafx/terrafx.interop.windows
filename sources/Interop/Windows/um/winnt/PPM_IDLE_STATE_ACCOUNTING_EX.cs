@@ -54,7 +54,7 @@ namespace TerraFX.Interop
             public PPM_IDLE_STATE_BUCKET_EX e14;
             public PPM_IDLE_STATE_BUCKET_EX e15;
 
-            public ref PPM_IDLE_STATE_BUCKET_EX this[int index]
+            public unsafe ref PPM_IDLE_STATE_BUCKET_EX this[int index]
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
                 get
@@ -64,7 +64,14 @@ namespace TerraFX.Interop
             }
 
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public Span<PPM_IDLE_STATE_BUCKET_EX> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 16);
+            public unsafe Span<PPM_IDLE_STATE_BUCKET_EX> AsSpan()
+            {
+#if !NETSTANDARD2_0
+                return MemoryMarshal.CreateSpan(ref e0, 16);
+#else
+                return new Span<PPM_IDLE_STATE_BUCKET_EX>((PPM_IDLE_STATE_BUCKET_EX*)Unsafe.AsPointer(ref this), 16);
+#endif
+            }
         }
     }
 }

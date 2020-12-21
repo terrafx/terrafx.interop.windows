@@ -30,7 +30,7 @@ namespace TerraFX.Interop
         {
             public FILE_REGION_INFO e0;
 
-            public ref FILE_REGION_INFO this[int index]
+            public unsafe ref FILE_REGION_INFO this[int index]
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
                 get
@@ -40,7 +40,14 @@ namespace TerraFX.Interop
             }
 
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public Span<FILE_REGION_INFO> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
+            public unsafe Span<FILE_REGION_INFO> AsSpan(int length)
+            {
+#if !NETSTANDARD2_0
+                return MemoryMarshal.CreateSpan(ref e0, length);
+#else
+                return new Span<FILE_REGION_INFO>((FILE_REGION_INFO*)Unsafe.AsPointer(ref this), length);
+#endif
+            }
         }
     }
 }

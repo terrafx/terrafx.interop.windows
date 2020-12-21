@@ -19,28 +19,28 @@ namespace TerraFX.Interop
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return ((delegate* unmanaged<IProvideClassInfo*, Guid*, void**, int>)(lpVtbl[0]))((IProvideClassInfo*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* unmanaged[Stdcall]<IProvideClassInfo*, Guid*, void**, int>)(lpVtbl[0]))((IProvideClassInfo*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return ((delegate* unmanaged<IProvideClassInfo*, uint>)(lpVtbl[1]))((IProvideClassInfo*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged[Stdcall]<IProvideClassInfo*, uint>)(lpVtbl[1]))((IProvideClassInfo*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return ((delegate* unmanaged<IProvideClassInfo*, uint>)(lpVtbl[2]))((IProvideClassInfo*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged[Stdcall]<IProvideClassInfo*, uint>)(lpVtbl[2]))((IProvideClassInfo*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetClassInfo([NativeTypeName("ITypeInfo **")] ITypeInfo** ppTI)
         {
-            return ((delegate* unmanaged<IProvideClassInfo*, ITypeInfo**, int>)(lpVtbl[3]))((IProvideClassInfo*)Unsafe.AsPointer(ref this), ppTI);
+            return ((delegate* unmanaged[Stdcall]<IProvideClassInfo*, ITypeInfo**, int>)(lpVtbl[3]))((IProvideClassInfo*)Unsafe.AsPointer(ref this), ppTI);
         }
     }
 }

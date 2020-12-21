@@ -45,21 +45,29 @@ namespace TerraFX.Interop
             [NativeTypeName("tagMIXERCONTROLW::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/mmeapi.h:2114:9)")]
             public _Anonymous1_e__Struct Anonymous1;
 
-            public ref int lMinimum
+            public unsafe ref int lMinimum
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
                 get
                 {
+#if !NETSTANDARD2_0
                     return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous1.lMinimum, 1));
+#else
+                    return ref ((_Anonymous1_e__Struct*)Unsafe.AsPointer(ref Anonymous1))->lMinimum;
+#endif
                 }
             }
 
-            public ref int lMaximum
+            public unsafe ref int lMaximum
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
                 get
                 {
+#if !NETSTANDARD2_0
                     return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous1.lMaximum, 1));
+#else
+                    return ref ((_Anonymous1_e__Struct*)Unsafe.AsPointer(ref Anonymous1))->lMaximum;
+#endif
                 }
             }
 
@@ -67,21 +75,29 @@ namespace TerraFX.Interop
             [NativeTypeName("tagMIXERCONTROLW::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/mmeapi.h:2118:9)")]
             public _Anonymous2_e__Struct Anonymous2;
 
-            public ref uint dwMinimum
+            public unsafe ref uint dwMinimum
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
                 get
                 {
+#if !NETSTANDARD2_0
                     return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous2.dwMinimum, 1));
+#else
+                    return ref ((_Anonymous2_e__Struct*)Unsafe.AsPointer(ref Anonymous2))->dwMinimum;
+#endif
                 }
             }
 
-            public ref uint dwMaximum
+            public unsafe ref uint dwMaximum
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
                 get
                 {
+#if !NETSTANDARD2_0
                     return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous2.dwMaximum, 1));
+#else
+                    return ref ((_Anonymous2_e__Struct*)Unsafe.AsPointer(ref Anonymous2))->dwMaximum;
+#endif
                 }
             }
 

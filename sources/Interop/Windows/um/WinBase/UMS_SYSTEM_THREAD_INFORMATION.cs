@@ -16,7 +16,7 @@ namespace TerraFX.Interop
         [NativeTypeName("_UMS_SYSTEM_THREAD_INFORMATION::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/WinBase.h:1613:5)")]
         public _Anonymous_e__Union Anonymous;
 
-        public uint IsUmsSchedulerThread
+        public unsafe uint IsUmsSchedulerThread
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
@@ -31,7 +31,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public uint IsUmsWorkerThread
+        public unsafe uint IsUmsWorkerThread
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
@@ -46,12 +46,16 @@ namespace TerraFX.Interop
             }
         }
 
-        public ref uint ThreadUmsFlags
+        public unsafe ref uint ThreadUmsFlags
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.ThreadUmsFlags, 1));
+#else
+                return ref ((_Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous))->ThreadUmsFlags;
+#endif
             }
         }
 

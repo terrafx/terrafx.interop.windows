@@ -33,7 +33,7 @@ namespace TerraFX.Interop
         {
             public STORAGE_TIER e0;
 
-            public ref STORAGE_TIER this[int index]
+            public unsafe ref STORAGE_TIER this[int index]
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
                 get
@@ -43,7 +43,14 @@ namespace TerraFX.Interop
             }
 
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public Span<STORAGE_TIER> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
+            public unsafe Span<STORAGE_TIER> AsSpan(int length)
+            {
+#if !NETSTANDARD2_0
+                return MemoryMarshal.CreateSpan(ref e0, length);
+#else
+                return new Span<STORAGE_TIER>((STORAGE_TIER*)Unsafe.AsPointer(ref this), length);
+#endif
+            }
         }
     }
 }

@@ -28,21 +28,29 @@ namespace TerraFX.Interop
         [NativeTypeName("_IMAGE_AUX_SYMBOL_EX::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:17584:5)")]
         public _Anonymous_e__Struct Anonymous;
 
-        public ref IMAGE_AUX_SYMBOL_TOKEN_DEF TokenDef
+        public unsafe ref IMAGE_AUX_SYMBOL_TOKEN_DEF TokenDef
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.TokenDef, 1));
+#else
+                return ref ((_Anonymous_e__Struct*)Unsafe.AsPointer(ref Anonymous))->TokenDef;
+#endif
             }
         }
 
-        public Span<byte> rgbReserved
+        public unsafe Span<byte> rgbReserved
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return MemoryMarshal.CreateSpan(ref Anonymous.rgbReserved[0], 2);
+#else
+                return new Span<byte>(((_Anonymous_e__Struct*)Unsafe.AsPointer(ref Anonymous))->rgbReserved, 2);
+#endif
             }
         }
 

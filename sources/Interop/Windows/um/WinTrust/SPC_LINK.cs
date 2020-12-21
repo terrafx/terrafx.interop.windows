@@ -16,36 +16,34 @@ namespace TerraFX.Interop
         [NativeTypeName("SPC_LINK_::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/WinTrust.h:1280:5)")]
         public _Anonymous_e__Union Anonymous;
 
-        public ref ushort* pwszUrl
+        public unsafe ref ushort* pwszUrl
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
-                fixed (_Anonymous_e__Union* pField = &Anonymous)
-                {
-                    return ref pField->pwszUrl;
-                }
+                return ref ((_Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous))->pwszUrl;
             }
         }
 
-        public ref SPC_SERIALIZED_OBJECT Moniker
+        public unsafe ref SPC_SERIALIZED_OBJECT Moniker
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Moniker, 1));
+#else
+                return ref ((_Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous))->Moniker;
+#endif
             }
         }
 
-        public ref ushort* pwszFile
+        public unsafe ref ushort* pwszFile
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
-                fixed (_Anonymous_e__Union* pField = &Anonymous)
-                {
-                    return ref pField->pwszFile;
-                }
+                return ref ((_Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous))->pwszFile;
             }
         }
 

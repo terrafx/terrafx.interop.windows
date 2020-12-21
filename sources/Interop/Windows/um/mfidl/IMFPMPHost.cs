@@ -19,42 +19,42 @@ namespace TerraFX.Interop
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return ((delegate* unmanaged<IMFPMPHost*, Guid*, void**, int>)(lpVtbl[0]))((IMFPMPHost*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* unmanaged[Stdcall]<IMFPMPHost*, Guid*, void**, int>)(lpVtbl[0]))((IMFPMPHost*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return ((delegate* unmanaged<IMFPMPHost*, uint>)(lpVtbl[1]))((IMFPMPHost*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged[Stdcall]<IMFPMPHost*, uint>)(lpVtbl[1]))((IMFPMPHost*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return ((delegate* unmanaged<IMFPMPHost*, uint>)(lpVtbl[2]))((IMFPMPHost*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged[Stdcall]<IMFPMPHost*, uint>)(lpVtbl[2]))((IMFPMPHost*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int LockProcess()
         {
-            return ((delegate* unmanaged<IMFPMPHost*, int>)(lpVtbl[3]))((IMFPMPHost*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged[Stdcall]<IMFPMPHost*, int>)(lpVtbl[3]))((IMFPMPHost*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int UnlockProcess()
         {
-            return ((delegate* unmanaged<IMFPMPHost*, int>)(lpVtbl[4]))((IMFPMPHost*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged[Stdcall]<IMFPMPHost*, int>)(lpVtbl[4]))((IMFPMPHost*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int CreateObjectByCLSID([NativeTypeName("const IID &")] Guid* clsid, [NativeTypeName("IStream *")] IStream* pStream, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppv)
         {
-            return ((delegate* unmanaged<IMFPMPHost*, Guid*, IStream*, Guid*, void**, int>)(lpVtbl[5]))((IMFPMPHost*)Unsafe.AsPointer(ref this), clsid, pStream, riid, ppv);
+            return ((delegate* unmanaged[Stdcall]<IMFPMPHost*, Guid*, IStream*, Guid*, void**, int>)(lpVtbl[5]))((IMFPMPHost*)Unsafe.AsPointer(ref this), clsid, pStream, riid, ppv);
         }
     }
 }

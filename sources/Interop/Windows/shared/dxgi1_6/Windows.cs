@@ -10,7 +10,7 @@ namespace TerraFX.Interop
 {
     public static partial class Windows
     {
-        [DllImport("dxgi", ExactSpelling = true)]
+        [DllImport("dxgi", CallingConvention = CallingConvention.StdCall, ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int DXGIDeclareAdapterRemovalSupport();
 

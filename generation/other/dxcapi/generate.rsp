@@ -3,15 +3,14 @@
 --exclude
 CLSID_DxcAssembler
 CLSID_DxcCompiler
-CLSID_DxcCompilerArgs
 CLSID_DxcContainerBuilder
 CLSID_DxcContainerReflection
 CLSID_DxcDiaDataSource
 CLSID_DxcLibrary
 CLSID_DxcLinker
 CLSID_DxcOptimizer
-CLSID_DxcUtils
 CLSID_DxcValidator
+CROSS_PLATFORM_UUIDOF
 DxcCreateInstance
 DxcCreateInstance2
 DxcCreateInstance2Proc
@@ -25,6 +24,7 @@ DxcValidatorFlags_ValidMask
 DxcVersionInfoFlags_Debug
 DxcVersionInfoFlags_Internal
 DxcVersionInfoFlags_None
+DXC_FOURCC
 IDxcAssembler
 IDxcAssembly
 IDxcBlob
@@ -49,7 +49,7 @@ other-dxcapi.h
 --test-output
 ../../../tests/Interop/Windows/other/dxcapi
 --traverse
-dxcapi.h
+./dxcapi.h
 --with-librarypath
 *=dxcompiler
 --with-type

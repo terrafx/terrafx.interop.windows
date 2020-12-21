@@ -24,7 +24,7 @@ namespace TerraFX.Interop
         {
             public DEVICE_MEDIA_INFO e0;
 
-            public ref DEVICE_MEDIA_INFO this[int index]
+            public unsafe ref DEVICE_MEDIA_INFO this[int index]
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
                 get
@@ -34,7 +34,14 @@ namespace TerraFX.Interop
             }
 
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public Span<DEVICE_MEDIA_INFO> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
+            public unsafe Span<DEVICE_MEDIA_INFO> AsSpan(int length)
+            {
+#if !NETSTANDARD2_0
+                return MemoryMarshal.CreateSpan(ref e0, length);
+#else
+                return new Span<DEVICE_MEDIA_INFO>((DEVICE_MEDIA_INFO*)Unsafe.AsPointer(ref this), length);
+#endif
+            }
         }
     }
 }

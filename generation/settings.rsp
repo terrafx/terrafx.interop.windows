@@ -13,11 +13,13 @@ exclude-com-proxies
 exclude-empty-records
 exclude-enum-operators
 generate-aggressive-inlining
+generate-compatible-ifdef
+generate-fnptr
 generate-macro-bindings
+generate-nint
 generate-tests-nunit
+generate-unsafe-aspointer
 multi-file
-preview-codegen-fnptr
-preview-codegen-nint
 --define-macro
 INITGUID
 NOSYSPARAMSINFO
@@ -32,5 +34,3 @@ C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/winrt
 Windows
 --namespace
 TerraFX.Interop
---with-callconv
-*=Winapi

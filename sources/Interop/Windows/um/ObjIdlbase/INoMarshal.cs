@@ -19,21 +19,21 @@ namespace TerraFX.Interop
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return ((delegate* unmanaged<INoMarshal*, Guid*, void**, int>)(lpVtbl[0]))((INoMarshal*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* unmanaged[Stdcall]<INoMarshal*, Guid*, void**, int>)(lpVtbl[0]))((INoMarshal*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return ((delegate* unmanaged<INoMarshal*, uint>)(lpVtbl[1]))((INoMarshal*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged[Stdcall]<INoMarshal*, uint>)(lpVtbl[1]))((INoMarshal*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return ((delegate* unmanaged<INoMarshal*, uint>)(lpVtbl[2]))((INoMarshal*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged[Stdcall]<INoMarshal*, uint>)(lpVtbl[2]))((INoMarshal*)Unsafe.AsPointer(ref this));
         }
     }
 }

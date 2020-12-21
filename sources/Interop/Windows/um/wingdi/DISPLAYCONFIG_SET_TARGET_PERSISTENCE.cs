@@ -15,7 +15,7 @@ namespace TerraFX.Interop
         [NativeTypeName("DISPLAYCONFIG_SET_TARGET_PERSISTENCE::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/wingdi.h:3121:5)")]
         public _Anonymous_e__Union Anonymous;
 
-        public uint bootPersistenceOn
+        public unsafe uint bootPersistenceOn
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
@@ -30,7 +30,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public uint reserved
+        public unsafe uint reserved
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
@@ -45,12 +45,16 @@ namespace TerraFX.Interop
             }
         }
 
-        public ref uint value
+        public unsafe ref uint value
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.value, 1));
+#else
+                return ref ((_Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous))->value;
+#endif
             }
         }
 

@@ -17,39 +17,55 @@ namespace TerraFX.Interop
         [NativeTypeName("_FILE_OBJECTID_BUFFER::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winioctl.h:11649:5)")]
         public _Anonymous_e__Union Anonymous;
 
-        public Span<byte> BirthVolumeId
+        public unsafe Span<byte> BirthVolumeId
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.BirthVolumeId[0], 16);
+#else
+                return new Span<byte>(((_Anonymous_e__Union._Anonymous_e__Struct*)Unsafe.AsPointer(ref Anonymous.Anonymous))->BirthVolumeId, 16);
+#endif
             }
         }
 
-        public Span<byte> BirthObjectId
+        public unsafe Span<byte> BirthObjectId
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.BirthObjectId[0], 16);
+#else
+                return new Span<byte>(((_Anonymous_e__Union._Anonymous_e__Struct*)Unsafe.AsPointer(ref Anonymous.Anonymous))->BirthObjectId, 16);
+#endif
             }
         }
 
-        public Span<byte> DomainId
+        public unsafe Span<byte> DomainId
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.DomainId[0], 16);
+#else
+                return new Span<byte>(((_Anonymous_e__Union._Anonymous_e__Struct*)Unsafe.AsPointer(ref Anonymous.Anonymous))->DomainId, 16);
+#endif
             }
         }
 
-        public Span<byte> ExtendedInfo
+        public unsafe Span<byte> ExtendedInfo
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return MemoryMarshal.CreateSpan(ref Anonymous.ExtendedInfo[0], 48);
+#else
+                return new Span<byte>(((_Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous))->ExtendedInfo, 48);
+#endif
             }
         }
 

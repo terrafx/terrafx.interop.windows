@@ -19,28 +19,28 @@ namespace TerraFX.Interop
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return ((delegate* unmanaged<IDirectManipulationAutoScrollBehavior*, Guid*, void**, int>)(lpVtbl[0]))((IDirectManipulationAutoScrollBehavior*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* unmanaged[Stdcall]<IDirectManipulationAutoScrollBehavior*, Guid*, void**, int>)(lpVtbl[0]))((IDirectManipulationAutoScrollBehavior*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return ((delegate* unmanaged<IDirectManipulationAutoScrollBehavior*, uint>)(lpVtbl[1]))((IDirectManipulationAutoScrollBehavior*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged[Stdcall]<IDirectManipulationAutoScrollBehavior*, uint>)(lpVtbl[1]))((IDirectManipulationAutoScrollBehavior*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return ((delegate* unmanaged<IDirectManipulationAutoScrollBehavior*, uint>)(lpVtbl[2]))((IDirectManipulationAutoScrollBehavior*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged[Stdcall]<IDirectManipulationAutoScrollBehavior*, uint>)(lpVtbl[2]))((IDirectManipulationAutoScrollBehavior*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int SetConfiguration(DIRECTMANIPULATION_MOTION_TYPES motionTypes, DIRECTMANIPULATION_AUTOSCROLL_CONFIGURATION scrollMotion)
         {
-            return ((delegate* unmanaged<IDirectManipulationAutoScrollBehavior*, DIRECTMANIPULATION_MOTION_TYPES, DIRECTMANIPULATION_AUTOSCROLL_CONFIGURATION, int>)(lpVtbl[3]))((IDirectManipulationAutoScrollBehavior*)Unsafe.AsPointer(ref this), motionTypes, scrollMotion);
+            return ((delegate* unmanaged[Stdcall]<IDirectManipulationAutoScrollBehavior*, DIRECTMANIPULATION_MOTION_TYPES, DIRECTMANIPULATION_AUTOSCROLL_CONFIGURATION, int>)(lpVtbl[3]))((IDirectManipulationAutoScrollBehavior*)Unsafe.AsPointer(ref this), motionTypes, scrollMotion);
         }
     }
 }

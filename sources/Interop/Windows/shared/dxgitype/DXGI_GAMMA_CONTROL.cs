@@ -1046,7 +1046,7 @@ namespace TerraFX.Interop
             public DXGI_RGB e1023;
             public DXGI_RGB e1024;
 
-            public ref DXGI_RGB this[int index]
+            public unsafe ref DXGI_RGB this[int index]
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
                 get
@@ -1056,7 +1056,14 @@ namespace TerraFX.Interop
             }
 
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public Span<DXGI_RGB> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 1025);
+            public unsafe Span<DXGI_RGB> AsSpan()
+            {
+#if !NETSTANDARD2_0
+                return MemoryMarshal.CreateSpan(ref e0, 1025);
+#else
+                return new Span<DXGI_RGB>((DXGI_RGB*)Unsafe.AsPointer(ref this), 1025);
+#endif
+            }
         }
     }
 }

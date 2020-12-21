@@ -16,39 +16,30 @@ namespace TerraFX.Interop
         [NativeTypeName("_CMSG_RECIPIENT_ENCODE_INFO::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/wincrypt.h:7013:5)")]
         public _Anonymous_e__Union Anonymous;
 
-        public ref CMSG_KEY_TRANS_RECIPIENT_ENCODE_INFO* pKeyTrans
+        public unsafe ref CMSG_KEY_TRANS_RECIPIENT_ENCODE_INFO* pKeyTrans
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
-                fixed (_Anonymous_e__Union* pField = &Anonymous)
-                {
-                    return ref pField->pKeyTrans;
-                }
+                return ref ((_Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous))->pKeyTrans;
             }
         }
 
-        public ref CMSG_KEY_AGREE_RECIPIENT_ENCODE_INFO* pKeyAgree
+        public unsafe ref CMSG_KEY_AGREE_RECIPIENT_ENCODE_INFO* pKeyAgree
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
-                fixed (_Anonymous_e__Union* pField = &Anonymous)
-                {
-                    return ref pField->pKeyAgree;
-                }
+                return ref ((_Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous))->pKeyAgree;
             }
         }
 
-        public ref CMSG_MAIL_LIST_RECIPIENT_ENCODE_INFO* pMailList
+        public unsafe ref CMSG_MAIL_LIST_RECIPIENT_ENCODE_INFO* pMailList
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
-                fixed (_Anonymous_e__Union* pField = &Anonymous)
-                {
-                    return ref pField->pMailList;
-                }
+                return ref ((_Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous))->pMailList;
             }
         }
 

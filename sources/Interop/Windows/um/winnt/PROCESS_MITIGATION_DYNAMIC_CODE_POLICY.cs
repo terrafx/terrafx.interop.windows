@@ -13,16 +13,20 @@ namespace TerraFX.Interop
         [NativeTypeName("_PROCESS_MITIGATION_DYNAMIC_CODE_POLICY::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:11753:5)")]
         public _Anonymous_e__Union Anonymous;
 
-        public ref uint Flags
+        public unsafe ref uint Flags
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Flags, 1));
+#else
+                return ref ((_Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous))->Flags;
+#endif
             }
         }
 
-        public uint ProhibitDynamicCode
+        public unsafe uint ProhibitDynamicCode
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
@@ -37,7 +41,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public uint AllowThreadOptOut
+        public unsafe uint AllowThreadOptOut
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
@@ -52,7 +56,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public uint AllowRemoteDowngrade
+        public unsafe uint AllowRemoteDowngrade
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
@@ -67,7 +71,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public uint AuditProhibitDynamicCode
+        public unsafe uint AuditProhibitDynamicCode
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
@@ -82,7 +86,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public uint ReservedFlags
+        public unsafe uint ReservedFlags
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get

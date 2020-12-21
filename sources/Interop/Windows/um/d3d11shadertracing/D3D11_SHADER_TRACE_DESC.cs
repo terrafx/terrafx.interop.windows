@@ -18,57 +18,81 @@ namespace TerraFX.Interop
         [NativeTypeName("D3D11_SHADER_TRACE_DESC::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/d3d11shadertracing.h:126:5)")]
         public _Anonymous_e__Union Anonymous;
 
-        public ref D3D11_VERTEX_SHADER_TRACE_DESC VertexShaderTraceDesc
+        public unsafe ref D3D11_VERTEX_SHADER_TRACE_DESC VertexShaderTraceDesc
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.VertexShaderTraceDesc, 1));
+#else
+                return ref ((_Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous))->VertexShaderTraceDesc;
+#endif
             }
         }
 
-        public ref D3D11_HULL_SHADER_TRACE_DESC HullShaderTraceDesc
+        public unsafe ref D3D11_HULL_SHADER_TRACE_DESC HullShaderTraceDesc
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.HullShaderTraceDesc, 1));
+#else
+                return ref ((_Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous))->HullShaderTraceDesc;
+#endif
             }
         }
 
-        public ref D3D11_DOMAIN_SHADER_TRACE_DESC DomainShaderTraceDesc
+        public unsafe ref D3D11_DOMAIN_SHADER_TRACE_DESC DomainShaderTraceDesc
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.DomainShaderTraceDesc, 1));
+#else
+                return ref ((_Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous))->DomainShaderTraceDesc;
+#endif
             }
         }
 
-        public ref D3D11_GEOMETRY_SHADER_TRACE_DESC GeometryShaderTraceDesc
+        public unsafe ref D3D11_GEOMETRY_SHADER_TRACE_DESC GeometryShaderTraceDesc
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.GeometryShaderTraceDesc, 1));
+#else
+                return ref ((_Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous))->GeometryShaderTraceDesc;
+#endif
             }
         }
 
-        public ref D3D11_PIXEL_SHADER_TRACE_DESC PixelShaderTraceDesc
+        public unsafe ref D3D11_PIXEL_SHADER_TRACE_DESC PixelShaderTraceDesc
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.PixelShaderTraceDesc, 1));
+#else
+                return ref ((_Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous))->PixelShaderTraceDesc;
+#endif
             }
         }
 
-        public ref D3D11_COMPUTE_SHADER_TRACE_DESC ComputeShaderTraceDesc
+        public unsafe ref D3D11_COMPUTE_SHADER_TRACE_DESC ComputeShaderTraceDesc
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.ComputeShaderTraceDesc, 1));
+#else
+                return ref ((_Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous))->ComputeShaderTraceDesc;
+#endif
             }
         }
 

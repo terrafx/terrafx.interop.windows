@@ -25,39 +25,55 @@ namespace TerraFX.Interop
         [NativeTypeName("_DEVICE_LOCATION::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winioctl.h:2922:5)")]
         public _Anonymous_e__Union Anonymous;
 
-        public ref uint Channel
+        public unsafe ref uint Channel
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous1.Channel, 1));
+#else
+                return ref ((_Anonymous_e__Union._Anonymous1_e__Struct*)Unsafe.AsPointer(ref Anonymous.Anonymous1))->Channel;
+#endif
             }
         }
 
-        public ref uint Device
+        public unsafe ref uint Device
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous1.Device, 1));
+#else
+                return ref ((_Anonymous_e__Union._Anonymous1_e__Struct*)Unsafe.AsPointer(ref Anonymous.Anonymous1))->Device;
+#endif
             }
         }
 
-        public ref uint Target
+        public unsafe ref uint Target
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous2.Target, 1));
+#else
+                return ref ((_Anonymous_e__Union._Anonymous2_e__Struct*)Unsafe.AsPointer(ref Anonymous.Anonymous2))->Target;
+#endif
             }
         }
 
-        public ref uint Lun
+        public unsafe ref uint Lun
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous2.Lun, 1));
+#else
+                return ref ((_Anonymous_e__Union._Anonymous2_e__Struct*)Unsafe.AsPointer(ref Anonymous.Anonymous2))->Lun;
+#endif
             }
         }
 

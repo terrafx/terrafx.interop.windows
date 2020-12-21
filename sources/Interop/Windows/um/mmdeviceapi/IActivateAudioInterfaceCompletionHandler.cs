@@ -19,28 +19,28 @@ namespace TerraFX.Interop
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return ((delegate* unmanaged<IActivateAudioInterfaceCompletionHandler*, Guid*, void**, int>)(lpVtbl[0]))((IActivateAudioInterfaceCompletionHandler*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* unmanaged[Stdcall]<IActivateAudioInterfaceCompletionHandler*, Guid*, void**, int>)(lpVtbl[0]))((IActivateAudioInterfaceCompletionHandler*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return ((delegate* unmanaged<IActivateAudioInterfaceCompletionHandler*, uint>)(lpVtbl[1]))((IActivateAudioInterfaceCompletionHandler*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged[Stdcall]<IActivateAudioInterfaceCompletionHandler*, uint>)(lpVtbl[1]))((IActivateAudioInterfaceCompletionHandler*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return ((delegate* unmanaged<IActivateAudioInterfaceCompletionHandler*, uint>)(lpVtbl[2]))((IActivateAudioInterfaceCompletionHandler*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged[Stdcall]<IActivateAudioInterfaceCompletionHandler*, uint>)(lpVtbl[2]))((IActivateAudioInterfaceCompletionHandler*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int ActivateCompleted([NativeTypeName("IActivateAudioInterfaceAsyncOperation *")] IActivateAudioInterfaceAsyncOperation* activateOperation)
         {
-            return ((delegate* unmanaged<IActivateAudioInterfaceCompletionHandler*, IActivateAudioInterfaceAsyncOperation*, int>)(lpVtbl[3]))((IActivateAudioInterfaceCompletionHandler*)Unsafe.AsPointer(ref this), activateOperation);
+            return ((delegate* unmanaged[Stdcall]<IActivateAudioInterfaceCompletionHandler*, IActivateAudioInterfaceAsyncOperation*, int>)(lpVtbl[3]))((IActivateAudioInterfaceCompletionHandler*)Unsafe.AsPointer(ref this), activateOperation);
         }
     }
 }

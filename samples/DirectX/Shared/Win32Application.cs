@@ -6,6 +6,7 @@
 using System;
 using System.Drawing;
 using System.Numerics;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using TerraFX.Interop;
 using static TerraFX.Interop.DXGI_FORMAT;
@@ -15,6 +16,13 @@ namespace TerraFX.Samples.DirectX
 {
     public static unsafe class Win32Application
     {
+#if NET5_0
+        private static readonly delegate* unmanaged<IntPtr, uint, nuint, nint, nint> s_fnWindowProc = &WindowProc;
+#else
+        private static readonly WNDPROC s_windowProc = WindowProc;
+        private static readonly delegate* unmanaged[Stdcall]<IntPtr, uint, nuint, nint, nint> s_fnWindowProc = (delegate* unmanaged[Stdcall] < IntPtr, uint, nuint, nint, nint>)Marshal.GetFunctionPointerForDelegate(s_windowProc);
+#endif
+
         private static HWND s_hwnd;
 
         public static HWND Hwnd => s_hwnd;
@@ -40,9 +48,9 @@ namespace TerraFX.Samples.DirectX
                 var windowClass = new WNDCLASSEXW {
                     cbSize = (uint)sizeof(WNDCLASSEXW),
                     style = CS_HREDRAW | CS_VREDRAW,
-                    lpfnWndProc = &WindowProc,
+                    lpfnWndProc = s_fnWindowProc,
                     hInstance = hInstance,
-                    hCursor = LoadCursorW(IntPtr.Zero, (ushort*)IDC_ARROW),
+                    hCursor = LoadCursorW(IntPtr.Zero, IDC_ARROW),
                     lpszClassName = (ushort*)lpszClassName
                 };
                 _ = RegisterClassExW(&windowClass);
@@ -96,7 +104,9 @@ namespace TerraFX.Samples.DirectX
         }
 
         // Main message handler for the sample
+#if NET5_0
         [UnmanagedCallersOnly]
+#endif
         private static nint WindowProc(IntPtr hWnd, uint message, nuint wParam, nint lParam)
         {
             var handle = GetWindowLongPtrW(hWnd, GWLP_USERDATA);
@@ -156,5 +166,10 @@ namespace TerraFX.Samples.DirectX
                 }
             }
         }
+
+#if !NET5_0
+        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
+        private delegate nint WNDPROC(IntPtr hWnd, uint message, nuint wParam, nint lParam);
+#endif
     }
 }

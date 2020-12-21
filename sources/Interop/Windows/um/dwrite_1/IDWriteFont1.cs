@@ -19,119 +19,119 @@ namespace TerraFX.Interop
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return ((delegate* unmanaged<IDWriteFont1*, Guid*, void**, int>)(lpVtbl[0]))((IDWriteFont1*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* unmanaged[Stdcall]<IDWriteFont1*, Guid*, void**, int>)(lpVtbl[0]))((IDWriteFont1*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return ((delegate* unmanaged<IDWriteFont1*, uint>)(lpVtbl[1]))((IDWriteFont1*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged[Stdcall]<IDWriteFont1*, uint>)(lpVtbl[1]))((IDWriteFont1*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return ((delegate* unmanaged<IDWriteFont1*, uint>)(lpVtbl[2]))((IDWriteFont1*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged[Stdcall]<IDWriteFont1*, uint>)(lpVtbl[2]))((IDWriteFont1*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetFontFamily([NativeTypeName("IDWriteFontFamily **")] IDWriteFontFamily** fontFamily)
         {
-            return ((delegate* unmanaged<IDWriteFont1*, IDWriteFontFamily**, int>)(lpVtbl[3]))((IDWriteFont1*)Unsafe.AsPointer(ref this), fontFamily);
+            return ((delegate* unmanaged[Stdcall]<IDWriteFont1*, IDWriteFontFamily**, int>)(lpVtbl[3]))((IDWriteFont1*)Unsafe.AsPointer(ref this), fontFamily);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public DWRITE_FONT_WEIGHT GetWeight()
         {
-            return ((delegate* unmanaged<IDWriteFont1*, DWRITE_FONT_WEIGHT>)(lpVtbl[4]))((IDWriteFont1*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged[Stdcall]<IDWriteFont1*, DWRITE_FONT_WEIGHT>)(lpVtbl[4]))((IDWriteFont1*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public DWRITE_FONT_STRETCH GetStretch()
         {
-            return ((delegate* unmanaged<IDWriteFont1*, DWRITE_FONT_STRETCH>)(lpVtbl[5]))((IDWriteFont1*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged[Stdcall]<IDWriteFont1*, DWRITE_FONT_STRETCH>)(lpVtbl[5]))((IDWriteFont1*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public DWRITE_FONT_STYLE GetStyle()
         {
-            return ((delegate* unmanaged<IDWriteFont1*, DWRITE_FONT_STYLE>)(lpVtbl[6]))((IDWriteFont1*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged[Stdcall]<IDWriteFont1*, DWRITE_FONT_STYLE>)(lpVtbl[6]))((IDWriteFont1*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("BOOL")]
         public int IsSymbolFont()
         {
-            return ((delegate* unmanaged<IDWriteFont1*, int>)(lpVtbl[7]))((IDWriteFont1*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged[Stdcall]<IDWriteFont1*, int>)(lpVtbl[7]))((IDWriteFont1*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetFaceNames([NativeTypeName("IDWriteLocalizedStrings **")] IDWriteLocalizedStrings** names)
         {
-            return ((delegate* unmanaged<IDWriteFont1*, IDWriteLocalizedStrings**, int>)(lpVtbl[8]))((IDWriteFont1*)Unsafe.AsPointer(ref this), names);
+            return ((delegate* unmanaged[Stdcall]<IDWriteFont1*, IDWriteLocalizedStrings**, int>)(lpVtbl[8]))((IDWriteFont1*)Unsafe.AsPointer(ref this), names);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetInformationalStrings(DWRITE_INFORMATIONAL_STRING_ID informationalStringID, [NativeTypeName("IDWriteLocalizedStrings **")] IDWriteLocalizedStrings** informationalStrings, [NativeTypeName("BOOL *")] int* exists)
         {
-            return ((delegate* unmanaged<IDWriteFont1*, DWRITE_INFORMATIONAL_STRING_ID, IDWriteLocalizedStrings**, int*, int>)(lpVtbl[9]))((IDWriteFont1*)Unsafe.AsPointer(ref this), informationalStringID, informationalStrings, exists);
+            return ((delegate* unmanaged[Stdcall]<IDWriteFont1*, DWRITE_INFORMATIONAL_STRING_ID, IDWriteLocalizedStrings**, int*, int>)(lpVtbl[9]))((IDWriteFont1*)Unsafe.AsPointer(ref this), informationalStringID, informationalStrings, exists);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public DWRITE_FONT_SIMULATIONS GetSimulations()
         {
-            return ((delegate* unmanaged<IDWriteFont1*, DWRITE_FONT_SIMULATIONS>)(lpVtbl[10]))((IDWriteFont1*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged[Stdcall]<IDWriteFont1*, DWRITE_FONT_SIMULATIONS>)(lpVtbl[10]))((IDWriteFont1*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public void GetMetrics([NativeTypeName("DWRITE_FONT_METRICS *")] DWRITE_FONT_METRICS* fontMetrics)
         {
-            ((delegate* unmanaged<IDWriteFont1*, DWRITE_FONT_METRICS*, void>)(lpVtbl[11]))((IDWriteFont1*)Unsafe.AsPointer(ref this), fontMetrics);
+            ((delegate* unmanaged[Stdcall]<IDWriteFont1*, DWRITE_FONT_METRICS*, void>)(lpVtbl[11]))((IDWriteFont1*)Unsafe.AsPointer(ref this), fontMetrics);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int HasCharacter([NativeTypeName("UINT32")] uint unicodeValue, [NativeTypeName("BOOL *")] int* exists)
         {
-            return ((delegate* unmanaged<IDWriteFont1*, uint, int*, int>)(lpVtbl[12]))((IDWriteFont1*)Unsafe.AsPointer(ref this), unicodeValue, exists);
+            return ((delegate* unmanaged[Stdcall]<IDWriteFont1*, uint, int*, int>)(lpVtbl[12]))((IDWriteFont1*)Unsafe.AsPointer(ref this), unicodeValue, exists);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int CreateFontFace([NativeTypeName("IDWriteFontFace **")] IDWriteFontFace** fontFace)
         {
-            return ((delegate* unmanaged<IDWriteFont1*, IDWriteFontFace**, int>)(lpVtbl[13]))((IDWriteFont1*)Unsafe.AsPointer(ref this), fontFace);
+            return ((delegate* unmanaged[Stdcall]<IDWriteFont1*, IDWriteFontFace**, int>)(lpVtbl[13]))((IDWriteFont1*)Unsafe.AsPointer(ref this), fontFace);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public void GetMetrics([NativeTypeName("DWRITE_FONT_METRICS1 *")] DWRITE_FONT_METRICS1* fontMetrics)
         {
-            ((delegate* unmanaged<IDWriteFont1*, DWRITE_FONT_METRICS1*, void>)(lpVtbl[14]))((IDWriteFont1*)Unsafe.AsPointer(ref this), fontMetrics);
+            ((delegate* unmanaged[Stdcall]<IDWriteFont1*, DWRITE_FONT_METRICS1*, void>)(lpVtbl[14]))((IDWriteFont1*)Unsafe.AsPointer(ref this), fontMetrics);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public void GetPanose([NativeTypeName("DWRITE_PANOSE *")] DWRITE_PANOSE* panose)
         {
-            ((delegate* unmanaged<IDWriteFont1*, DWRITE_PANOSE*, void>)(lpVtbl[15]))((IDWriteFont1*)Unsafe.AsPointer(ref this), panose);
+            ((delegate* unmanaged[Stdcall]<IDWriteFont1*, DWRITE_PANOSE*, void>)(lpVtbl[15]))((IDWriteFont1*)Unsafe.AsPointer(ref this), panose);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetUnicodeRanges([NativeTypeName("UINT32")] uint maxRangeCount, [NativeTypeName("DWRITE_UNICODE_RANGE *")] DWRITE_UNICODE_RANGE* unicodeRanges, [NativeTypeName("UINT32 *")] uint* actualRangeCount)
         {
-            return ((delegate* unmanaged<IDWriteFont1*, uint, DWRITE_UNICODE_RANGE*, uint*, int>)(lpVtbl[16]))((IDWriteFont1*)Unsafe.AsPointer(ref this), maxRangeCount, unicodeRanges, actualRangeCount);
+            return ((delegate* unmanaged[Stdcall]<IDWriteFont1*, uint, DWRITE_UNICODE_RANGE*, uint*, int>)(lpVtbl[16]))((IDWriteFont1*)Unsafe.AsPointer(ref this), maxRangeCount, unicodeRanges, actualRangeCount);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("BOOL")]
         public int IsMonospacedFont()
         {
-            return ((delegate* unmanaged<IDWriteFont1*, int>)(lpVtbl[17]))((IDWriteFont1*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged[Stdcall]<IDWriteFont1*, int>)(lpVtbl[17]))((IDWriteFont1*)Unsafe.AsPointer(ref this));
         }
     }
 }

@@ -19,39 +19,55 @@ namespace TerraFX.Interop
         [NativeTypeName("_SYSTEM_LOGICAL_PROCESSOR_INFORMATION::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:12514:5)")]
         public _Anonymous_e__Union Anonymous;
 
-        public ref _Anonymous_e__Union._ProcessorCore_e__Struct ProcessorCore
+        public unsafe ref _Anonymous_e__Union._ProcessorCore_e__Struct ProcessorCore
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.ProcessorCore, 1));
+#else
+                return ref ((_Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous))->ProcessorCore;
+#endif
             }
         }
 
-        public ref _Anonymous_e__Union._NumaNode_e__Struct NumaNode
+        public unsafe ref _Anonymous_e__Union._NumaNode_e__Struct NumaNode
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.NumaNode, 1));
+#else
+                return ref ((_Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous))->NumaNode;
+#endif
             }
         }
 
-        public ref CACHE_DESCRIPTOR Cache
+        public unsafe ref CACHE_DESCRIPTOR Cache
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Cache, 1));
+#else
+                return ref ((_Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous))->Cache;
+#endif
             }
         }
 
-        public Span<ulong> Reserved
+        public unsafe Span<ulong> Reserved
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return MemoryMarshal.CreateSpan(ref Anonymous.Reserved[0], 2);
+#else
+                return new Span<ulong>(((_Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous))->Reserved, 2);
+#endif
             }
         }
 

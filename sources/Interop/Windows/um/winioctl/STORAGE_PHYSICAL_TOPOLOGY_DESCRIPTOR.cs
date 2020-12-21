@@ -30,7 +30,7 @@ namespace TerraFX.Interop
         {
             public STORAGE_PHYSICAL_NODE_DATA e0;
 
-            public ref STORAGE_PHYSICAL_NODE_DATA this[int index]
+            public unsafe ref STORAGE_PHYSICAL_NODE_DATA this[int index]
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
                 get
@@ -40,7 +40,14 @@ namespace TerraFX.Interop
             }
 
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public Span<STORAGE_PHYSICAL_NODE_DATA> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
+            public unsafe Span<STORAGE_PHYSICAL_NODE_DATA> AsSpan(int length)
+            {
+#if !NETSTANDARD2_0
+                return MemoryMarshal.CreateSpan(ref e0, length);
+#else
+                return new Span<STORAGE_PHYSICAL_NODE_DATA>((STORAGE_PHYSICAL_NODE_DATA*)Unsafe.AsPointer(ref this), length);
+#endif
+            }
         }
     }
 }

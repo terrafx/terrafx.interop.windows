@@ -21,7 +21,7 @@ namespace TerraFX.Interop
         {
             public TRANSACTION_ENLISTMENT_PAIR e0;
 
-            public ref TRANSACTION_ENLISTMENT_PAIR this[int index]
+            public unsafe ref TRANSACTION_ENLISTMENT_PAIR this[int index]
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
                 get
@@ -31,7 +31,14 @@ namespace TerraFX.Interop
             }
 
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public Span<TRANSACTION_ENLISTMENT_PAIR> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
+            public unsafe Span<TRANSACTION_ENLISTMENT_PAIR> AsSpan(int length)
+            {
+#if !NETSTANDARD2_0
+                return MemoryMarshal.CreateSpan(ref e0, length);
+#else
+                return new Span<TRANSACTION_ENLISTMENT_PAIR>((TRANSACTION_ENLISTMENT_PAIR*)Unsafe.AsPointer(ref this), length);
+#endif
+            }
         }
     }
 }

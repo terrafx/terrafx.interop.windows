@@ -16,27 +16,21 @@ namespace TerraFX.Interop
         [NativeTypeName("_CERT_LOGOTYPE_INFO::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/wincrypt.h:5512:5)")]
         public _Anonymous_e__Union Anonymous;
 
-        public ref CERT_LOGOTYPE_DATA* pLogotypeDirectInfo
+        public unsafe ref CERT_LOGOTYPE_DATA* pLogotypeDirectInfo
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
-                fixed (_Anonymous_e__Union* pField = &Anonymous)
-                {
-                    return ref pField->pLogotypeDirectInfo;
-                }
+                return ref ((_Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous))->pLogotypeDirectInfo;
             }
         }
 
-        public ref CERT_LOGOTYPE_REFERENCE* pLogotypeIndirectInfo
+        public unsafe ref CERT_LOGOTYPE_REFERENCE* pLogotypeIndirectInfo
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
-                fixed (_Anonymous_e__Union* pField = &Anonymous)
-                {
-                    return ref pField->pLogotypeIndirectInfo;
-                }
+                return ref ((_Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous))->pLogotypeIndirectInfo;
             }
         }
 

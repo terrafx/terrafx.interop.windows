@@ -14,21 +14,29 @@ namespace TerraFX.Interop
         [NativeTypeName("_TXFS_READ_BACKUP_INFORMATION_OUT::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winioctl.h:12887:5)")]
         public _Anonymous_e__Union Anonymous;
 
-        public ref uint BufferLength
+        public unsafe ref uint BufferLength
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.BufferLength, 1));
+#else
+                return ref ((_Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous))->BufferLength;
+#endif
             }
         }
 
-        public Span<byte> Buffer
+        public unsafe Span<byte> Buffer
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return MemoryMarshal.CreateSpan(ref Anonymous.Buffer[0], 1);
+#else
+                return new Span<byte>(((_Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous))->Buffer, 1);
+#endif
             }
         }
 

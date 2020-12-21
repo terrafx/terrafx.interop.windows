@@ -21,7 +21,7 @@ namespace TerraFX.Interop
         {
             public TRANSACTION_LIST_ENTRY e0;
 
-            public ref TRANSACTION_LIST_ENTRY this[int index]
+            public unsafe ref TRANSACTION_LIST_ENTRY this[int index]
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
                 get
@@ -31,7 +31,14 @@ namespace TerraFX.Interop
             }
 
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public Span<TRANSACTION_LIST_ENTRY> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
+            public unsafe Span<TRANSACTION_LIST_ENTRY> AsSpan(int length)
+            {
+#if !NETSTANDARD2_0
+                return MemoryMarshal.CreateSpan(ref e0, length);
+#else
+                return new Span<TRANSACTION_LIST_ENTRY>((TRANSACTION_LIST_ENTRY*)Unsafe.AsPointer(ref this), length);
+#endif
+            }
         }
     }
 }

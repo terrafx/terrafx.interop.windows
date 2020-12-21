@@ -29,7 +29,7 @@ namespace TerraFX.Interop
         {
             public STORAGE_ZONE_DESCRIPTOR e0;
 
-            public ref STORAGE_ZONE_DESCRIPTOR this[int index]
+            public unsafe ref STORAGE_ZONE_DESCRIPTOR this[int index]
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
                 get
@@ -39,7 +39,14 @@ namespace TerraFX.Interop
             }
 
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public Span<STORAGE_ZONE_DESCRIPTOR> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
+            public unsafe Span<STORAGE_ZONE_DESCRIPTOR> AsSpan(int length)
+            {
+#if !NETSTANDARD2_0
+                return MemoryMarshal.CreateSpan(ref e0, length);
+#else
+                return new Span<STORAGE_ZONE_DESCRIPTOR>((STORAGE_ZONE_DESCRIPTOR*)Unsafe.AsPointer(ref this), length);
+#endif
+            }
         }
     }
 }

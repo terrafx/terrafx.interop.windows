@@ -14,21 +14,29 @@ namespace TerraFX.Interop
         [NativeTypeName("_QUERY_FILE_LAYOUT_INPUT::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winioctl.h:14318:5)")]
         public _Anonymous_e__Union Anonymous;
 
-        public ref uint FilterEntryCount
+        public unsafe ref uint FilterEntryCount
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.FilterEntryCount, 1));
+#else
+                return ref ((_Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous))->FilterEntryCount;
+#endif
             }
         }
 
-        public ref uint NumberOfPairs
+        public unsafe ref uint NumberOfPairs
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.NumberOfPairs, 1));
+#else
+                return ref ((_Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous))->NumberOfPairs;
+#endif
             }
         }
 
@@ -74,7 +82,7 @@ namespace TerraFX.Interop
             {
                 public CLUSTER_RANGE e0;
 
-                public ref CLUSTER_RANGE this[int index]
+                public unsafe ref CLUSTER_RANGE this[int index]
                 {
                     [MethodImpl(MethodImplOptions.AggressiveInlining)]
                     get
@@ -84,14 +92,21 @@ namespace TerraFX.Interop
                 }
 
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                public Span<CLUSTER_RANGE> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
+                public unsafe Span<CLUSTER_RANGE> AsSpan(int length)
+                {
+#if !NETSTANDARD2_0
+                    return MemoryMarshal.CreateSpan(ref e0, length);
+#else
+                    return new Span<CLUSTER_RANGE>((CLUSTER_RANGE*)Unsafe.AsPointer(ref this), length);
+#endif
+                }
             }
 
             public partial struct _FileReferenceRanges_e__FixedBuffer
             {
                 public FILE_REFERENCE_RANGE e0;
 
-                public ref FILE_REFERENCE_RANGE this[int index]
+                public unsafe ref FILE_REFERENCE_RANGE this[int index]
                 {
                     [MethodImpl(MethodImplOptions.AggressiveInlining)]
                     get
@@ -101,14 +116,21 @@ namespace TerraFX.Interop
                 }
 
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                public Span<FILE_REFERENCE_RANGE> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
+                public unsafe Span<FILE_REFERENCE_RANGE> AsSpan(int length)
+                {
+#if !NETSTANDARD2_0
+                    return MemoryMarshal.CreateSpan(ref e0, length);
+#else
+                    return new Span<FILE_REFERENCE_RANGE>((FILE_REFERENCE_RANGE*)Unsafe.AsPointer(ref this), length);
+#endif
+                }
             }
 
             public partial struct _StorageReserveIds_e__FixedBuffer
             {
                 public STORAGE_RESERVE_ID e0;
 
-                public ref STORAGE_RESERVE_ID this[int index]
+                public unsafe ref STORAGE_RESERVE_ID this[int index]
                 {
                     [MethodImpl(MethodImplOptions.AggressiveInlining)]
                     get
@@ -118,7 +140,14 @@ namespace TerraFX.Interop
                 }
 
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                public Span<STORAGE_RESERVE_ID> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
+                public unsafe Span<STORAGE_RESERVE_ID> AsSpan(int length)
+                {
+#if !NETSTANDARD2_0
+                    return MemoryMarshal.CreateSpan(ref e0, length);
+#else
+                    return new Span<STORAGE_RESERVE_ID>((STORAGE_RESERVE_ID*)Unsafe.AsPointer(ref this), length);
+#endif
+                }
             }
         }
     }

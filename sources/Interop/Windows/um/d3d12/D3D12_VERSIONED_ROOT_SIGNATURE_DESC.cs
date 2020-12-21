@@ -15,21 +15,29 @@ namespace TerraFX.Interop
         [NativeTypeName("D3D12_VERSIONED_ROOT_SIGNATURE_DESC::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/d3d12.h:3580:5)")]
         public _Anonymous_e__Union Anonymous;
 
-        public ref D3D12_ROOT_SIGNATURE_DESC Desc_1_0
+        public unsafe ref D3D12_ROOT_SIGNATURE_DESC Desc_1_0
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Desc_1_0, 1));
+#else
+                return ref ((_Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous))->Desc_1_0;
+#endif
             }
         }
 
-        public ref D3D12_ROOT_SIGNATURE_DESC1 Desc_1_1
+        public unsafe ref D3D12_ROOT_SIGNATURE_DESC1 Desc_1_1
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Desc_1_1, 1));
+#else
+                return ref ((_Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous))->Desc_1_1;
+#endif
             }
         }
 

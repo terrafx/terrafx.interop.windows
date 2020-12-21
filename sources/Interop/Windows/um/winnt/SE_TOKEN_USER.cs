@@ -14,42 +14,58 @@ namespace TerraFX.Interop
         [NativeTypeName("_SE_TOKEN_USER::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:10851:5)")]
         public _Anonymous1_e__Union Anonymous1;
 
-        public ref TOKEN_USER TokenUser
+        public unsafe ref TOKEN_USER TokenUser
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous1.TokenUser, 1));
+#else
+                return ref ((_Anonymous1_e__Union*)Unsafe.AsPointer(ref Anonymous1))->TokenUser;
+#endif
             }
         }
 
-        public ref SID_AND_ATTRIBUTES User
+        public unsafe ref SID_AND_ATTRIBUTES User
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous1.User, 1));
+#else
+                return ref ((_Anonymous1_e__Union*)Unsafe.AsPointer(ref Anonymous1))->User;
+#endif
             }
         }
 
         [NativeTypeName("_SE_TOKEN_USER::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:10856:5)")]
         public _Anonymous2_e__Union Anonymous2;
 
-        public ref SID Sid
+        public unsafe ref SID Sid
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous2.Sid, 1));
+#else
+                return ref ((_Anonymous2_e__Union*)Unsafe.AsPointer(ref Anonymous2))->Sid;
+#endif
             }
         }
 
-        public Span<byte> Buffer
+        public unsafe Span<byte> Buffer
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return MemoryMarshal.CreateSpan(ref Anonymous2.Buffer[0], 68);
+#else
+                return new Span<byte>(((_Anonymous2_e__Union*)Unsafe.AsPointer(ref Anonymous2))->Buffer, 68);
+#endif
             }
         }
 

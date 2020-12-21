@@ -19,56 +19,56 @@ namespace TerraFX.Interop
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return ((delegate* unmanaged<IPlayToManagerInterop*, Guid*, void**, int>)(lpVtbl[0]))((IPlayToManagerInterop*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* unmanaged[Stdcall]<IPlayToManagerInterop*, Guid*, void**, int>)(lpVtbl[0]))((IPlayToManagerInterop*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return ((delegate* unmanaged<IPlayToManagerInterop*, uint>)(lpVtbl[1]))((IPlayToManagerInterop*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged[Stdcall]<IPlayToManagerInterop*, uint>)(lpVtbl[1]))((IPlayToManagerInterop*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return ((delegate* unmanaged<IPlayToManagerInterop*, uint>)(lpVtbl[2]))((IPlayToManagerInterop*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged[Stdcall]<IPlayToManagerInterop*, uint>)(lpVtbl[2]))((IPlayToManagerInterop*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetIids([NativeTypeName("ULONG *")] uint* iidCount, [NativeTypeName("IID **")] Guid** iids)
         {
-            return ((delegate* unmanaged<IPlayToManagerInterop*, uint*, Guid**, int>)(lpVtbl[3]))((IPlayToManagerInterop*)Unsafe.AsPointer(ref this), iidCount, iids);
+            return ((delegate* unmanaged[Stdcall]<IPlayToManagerInterop*, uint*, Guid**, int>)(lpVtbl[3]))((IPlayToManagerInterop*)Unsafe.AsPointer(ref this), iidCount, iids);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetRuntimeClassName([NativeTypeName("HSTRING *")] IntPtr* className)
         {
-            return ((delegate* unmanaged<IPlayToManagerInterop*, IntPtr*, int>)(lpVtbl[4]))((IPlayToManagerInterop*)Unsafe.AsPointer(ref this), className);
+            return ((delegate* unmanaged[Stdcall]<IPlayToManagerInterop*, IntPtr*, int>)(lpVtbl[4]))((IPlayToManagerInterop*)Unsafe.AsPointer(ref this), className);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetTrustLevel([NativeTypeName("TrustLevel *")] TrustLevel* trustLevel)
         {
-            return ((delegate* unmanaged<IPlayToManagerInterop*, TrustLevel*, int>)(lpVtbl[5]))((IPlayToManagerInterop*)Unsafe.AsPointer(ref this), trustLevel);
+            return ((delegate* unmanaged[Stdcall]<IPlayToManagerInterop*, TrustLevel*, int>)(lpVtbl[5]))((IPlayToManagerInterop*)Unsafe.AsPointer(ref this), trustLevel);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetForWindow([NativeTypeName("HWND")] IntPtr appWindow, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** playToManager)
         {
-            return ((delegate* unmanaged<IPlayToManagerInterop*, IntPtr, Guid*, void**, int>)(lpVtbl[6]))((IPlayToManagerInterop*)Unsafe.AsPointer(ref this), appWindow, riid, playToManager);
+            return ((delegate* unmanaged[Stdcall]<IPlayToManagerInterop*, IntPtr, Guid*, void**, int>)(lpVtbl[6]))((IPlayToManagerInterop*)Unsafe.AsPointer(ref this), appWindow, riid, playToManager);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int ShowPlayToUIForWindow([NativeTypeName("HWND")] IntPtr appWindow)
         {
-            return ((delegate* unmanaged<IPlayToManagerInterop*, IntPtr, int>)(lpVtbl[7]))((IPlayToManagerInterop*)Unsafe.AsPointer(ref this), appWindow);
+            return ((delegate* unmanaged[Stdcall]<IPlayToManagerInterop*, IntPtr, int>)(lpVtbl[7]))((IPlayToManagerInterop*)Unsafe.AsPointer(ref this), appWindow);
         }
     }
 }

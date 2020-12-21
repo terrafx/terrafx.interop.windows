@@ -20,7 +20,7 @@ namespace TerraFX.Interop
         {
             public RGBTRIPLE e0;
 
-            public ref RGBTRIPLE this[int index]
+            public unsafe ref RGBTRIPLE this[int index]
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
                 get
@@ -30,7 +30,14 @@ namespace TerraFX.Interop
             }
 
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public Span<RGBTRIPLE> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
+            public unsafe Span<RGBTRIPLE> AsSpan(int length)
+            {
+#if !NETSTANDARD2_0
+                return MemoryMarshal.CreateSpan(ref e0, length);
+#else
+                return new Span<RGBTRIPLE>((RGBTRIPLE*)Unsafe.AsPointer(ref this), length);
+#endif
+            }
         }
     }
 }

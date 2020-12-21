@@ -30,7 +30,7 @@ namespace TerraFX.Interop
         {
             public STORAGE_CRYPTO_CAPABILITY e0;
 
-            public ref STORAGE_CRYPTO_CAPABILITY this[int index]
+            public unsafe ref STORAGE_CRYPTO_CAPABILITY this[int index]
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
                 get
@@ -40,7 +40,14 @@ namespace TerraFX.Interop
             }
 
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public Span<STORAGE_CRYPTO_CAPABILITY> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
+            public unsafe Span<STORAGE_CRYPTO_CAPABILITY> AsSpan(int length)
+            {
+#if !NETSTANDARD2_0
+                return MemoryMarshal.CreateSpan(ref e0, length);
+#else
+                return new Span<STORAGE_CRYPTO_CAPABILITY>((STORAGE_CRYPTO_CAPABILITY*)Unsafe.AsPointer(ref this), length);
+#endif
+            }
         }
     }
 }

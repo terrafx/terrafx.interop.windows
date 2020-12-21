@@ -27,7 +27,7 @@ namespace TerraFX.Interop
         {
             public SCM_PHYSICAL_DEVICE_INSTANCE e0;
 
-            public ref SCM_PHYSICAL_DEVICE_INSTANCE this[int index]
+            public unsafe ref SCM_PHYSICAL_DEVICE_INSTANCE this[int index]
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
                 get
@@ -37,7 +37,14 @@ namespace TerraFX.Interop
             }
 
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public Span<SCM_PHYSICAL_DEVICE_INSTANCE> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
+            public unsafe Span<SCM_PHYSICAL_DEVICE_INSTANCE> AsSpan(int length)
+            {
+#if !NETSTANDARD2_0
+                return MemoryMarshal.CreateSpan(ref e0, length);
+#else
+                return new Span<SCM_PHYSICAL_DEVICE_INSTANCE>((SCM_PHYSICAL_DEVICE_INSTANCE*)Unsafe.AsPointer(ref this), length);
+#endif
+            }
         }
     }
 }

@@ -21,7 +21,7 @@ namespace TerraFX.Interop
         {
             public DISK_EXTENT e0;
 
-            public ref DISK_EXTENT this[int index]
+            public unsafe ref DISK_EXTENT this[int index]
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
                 get
@@ -31,7 +31,14 @@ namespace TerraFX.Interop
             }
 
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public Span<DISK_EXTENT> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
+            public unsafe Span<DISK_EXTENT> AsSpan(int length)
+            {
+#if !NETSTANDARD2_0
+                return MemoryMarshal.CreateSpan(ref e0, length);
+#else
+                return new Span<DISK_EXTENT>((DISK_EXTENT*)Unsafe.AsPointer(ref this), length);
+#endif
+            }
         }
     }
 }

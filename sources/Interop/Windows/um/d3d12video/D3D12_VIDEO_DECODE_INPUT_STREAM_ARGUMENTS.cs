@@ -37,7 +37,7 @@ namespace TerraFX.Interop
             public D3D12_VIDEO_DECODE_FRAME_ARGUMENT e8;
             public D3D12_VIDEO_DECODE_FRAME_ARGUMENT e9;
 
-            public ref D3D12_VIDEO_DECODE_FRAME_ARGUMENT this[int index]
+            public unsafe ref D3D12_VIDEO_DECODE_FRAME_ARGUMENT this[int index]
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
                 get
@@ -47,7 +47,14 @@ namespace TerraFX.Interop
             }
 
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public Span<D3D12_VIDEO_DECODE_FRAME_ARGUMENT> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 10);
+            public unsafe Span<D3D12_VIDEO_DECODE_FRAME_ARGUMENT> AsSpan()
+            {
+#if !NETSTANDARD2_0
+                return MemoryMarshal.CreateSpan(ref e0, 10);
+#else
+                return new Span<D3D12_VIDEO_DECODE_FRAME_ARGUMENT>((D3D12_VIDEO_DECODE_FRAME_ARGUMENT*)Unsafe.AsPointer(ref this), 10);
+#endif
+            }
         }
     }
 }

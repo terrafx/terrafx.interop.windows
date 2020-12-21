@@ -10,23 +10,23 @@ namespace TerraFX.Interop
 {
     public static unsafe partial class Windows
     {
-        [DllImport("comctl32", ExactSpelling = true)]
+        [DllImport("comctl32", CallingConvention = CallingConvention.StdCall, ExactSpelling = true)]
         [return: NativeTypeName("HPROPSHEETPAGE")]
         public static extern IntPtr CreatePropertySheetPageA([NativeTypeName("LPCPROPSHEETPAGEA")] PROPSHEETPAGEA* constPropSheetPagePointer);
 
-        [DllImport("comctl32", ExactSpelling = true)]
+        [DllImport("comctl32", CallingConvention = CallingConvention.StdCall, ExactSpelling = true)]
         [return: NativeTypeName("HPROPSHEETPAGE")]
         public static extern IntPtr CreatePropertySheetPageW([NativeTypeName("LPCPROPSHEETPAGEW")] PROPSHEETPAGEW* constPropSheetPagePointer);
 
-        [DllImport("comctl32", ExactSpelling = true)]
+        [DllImport("comctl32", CallingConvention = CallingConvention.StdCall, ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int DestroyPropertySheetPage([NativeTypeName("HPROPSHEETPAGE")] IntPtr param0);
 
-        [DllImport("comctl32", ExactSpelling = true)]
+        [DllImport("comctl32", CallingConvention = CallingConvention.StdCall, ExactSpelling = true)]
         [return: NativeTypeName("INT_PTR")]
         public static extern nint PropertySheetA([NativeTypeName("LPCPROPSHEETHEADERA")] PROPSHEETHEADERA_V2* param0);
 
-        [DllImport("comctl32", ExactSpelling = true)]
+        [DllImport("comctl32", CallingConvention = CallingConvention.StdCall, ExactSpelling = true)]
         [return: NativeTypeName("INT_PTR")]
         public static extern nint PropertySheetW([NativeTypeName("LPCPROPSHEETHEADERW")] PROPSHEETHEADERW_V2* param0);
 

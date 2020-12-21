@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 
 namespace TerraFX.Interop
 {
@@ -16,6 +17,25 @@ namespace TerraFX.Interop
         public void* lpThreadLocalBase;
 
         [NativeTypeName("LPTHREAD_START_ROUTINE")]
+#if !NETSTANDARD2_0
         public delegate* unmanaged<void*, uint> lpStartAddress;
+#else
+        public void* _lpStartAddress;
+
+        public delegate* unmanaged[Stdcall]<void*, uint> lpStartAddress
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                return (delegate* unmanaged[Stdcall]<void*, uint>)_lpStartAddress;
+            }
+
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            set
+            {
+                _lpStartAddress = value;
+            }
+        }
+#endif
     }
 }

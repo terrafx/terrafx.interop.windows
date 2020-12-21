@@ -19,28 +19,28 @@ namespace TerraFX.Interop
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return ((delegate* unmanaged<IMLOperatorShapeInferrer*, Guid*, void**, int>)(lpVtbl[0]))((IMLOperatorShapeInferrer*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* unmanaged[Stdcall]<IMLOperatorShapeInferrer*, Guid*, void**, int>)(lpVtbl[0]))((IMLOperatorShapeInferrer*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return ((delegate* unmanaged<IMLOperatorShapeInferrer*, uint>)(lpVtbl[1]))((IMLOperatorShapeInferrer*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged[Stdcall]<IMLOperatorShapeInferrer*, uint>)(lpVtbl[1]))((IMLOperatorShapeInferrer*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return ((delegate* unmanaged<IMLOperatorShapeInferrer*, uint>)(lpVtbl[2]))((IMLOperatorShapeInferrer*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged[Stdcall]<IMLOperatorShapeInferrer*, uint>)(lpVtbl[2]))((IMLOperatorShapeInferrer*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int InferOutputShapes([NativeTypeName("IMLOperatorShapeInferenceContext *")] IMLOperatorShapeInferenceContext* context)
         {
-            return ((delegate* unmanaged<IMLOperatorShapeInferrer*, IMLOperatorShapeInferenceContext*, int>)(lpVtbl[3]))((IMLOperatorShapeInferrer*)Unsafe.AsPointer(ref this), context);
+            return ((delegate* unmanaged[Stdcall]<IMLOperatorShapeInferrer*, IMLOperatorShapeInferenceContext*, int>)(lpVtbl[3]))((IMLOperatorShapeInferrer*)Unsafe.AsPointer(ref this), context);
         }
     }
 }

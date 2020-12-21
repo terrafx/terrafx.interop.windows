@@ -16,30 +16,42 @@ namespace TerraFX.Interop
         [NativeTypeName("tagINPUT::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/WinUser.h:6130:5)")]
         public _Anonymous_e__Union Anonymous;
 
-        public ref MOUSEINPUT mi
+        public unsafe ref MOUSEINPUT mi
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.mi, 1));
+#else
+                return ref ((_Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous))->mi;
+#endif
             }
         }
 
-        public ref KEYBDINPUT ki
+        public unsafe ref KEYBDINPUT ki
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.ki, 1));
+#else
+                return ref ((_Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous))->ki;
+#endif
             }
         }
 
-        public ref HARDWAREINPUT hi
+        public unsafe ref HARDWAREINPUT hi
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.hi, 1));
+#else
+                return ref ((_Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous))->hi;
+#endif
             }
         }
 

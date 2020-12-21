@@ -14,7 +14,7 @@ namespace TerraFX.Interop
         [NativeTypeName("MEM_EXTENDED_PARAMETER::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:13032:5)")]
         public _Anonymous1_e__Struct Anonymous1;
 
-        public ulong Type
+        public unsafe ulong Type
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
@@ -29,7 +29,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public ulong Reserved
+        public unsafe ulong Reserved
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
@@ -47,51 +47,64 @@ namespace TerraFX.Interop
         [NativeTypeName("MEM_EXTENDED_PARAMETER::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:13037:5)")]
         public _Anonymous2_e__Union Anonymous2;
 
-        public ref ulong ULong64
+        public unsafe ref ulong ULong64
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous2.ULong64, 1));
+#else
+                return ref ((_Anonymous2_e__Union*)Unsafe.AsPointer(ref Anonymous2))->ULong64;
+#endif
             }
         }
 
-        public ref void* Pointer
+        public unsafe ref void* Pointer
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
-                fixed (_Anonymous2_e__Union* pField = &Anonymous2)
-                {
-                    return ref pField->Pointer;
-                }
+                return ref ((_Anonymous2_e__Union*)Unsafe.AsPointer(ref Anonymous2))->Pointer;
             }
         }
 
-        public ref nuint Size
+        public unsafe ref nuint Size
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous2.Size, 1));
+#else
+                return ref ((_Anonymous2_e__Union*)Unsafe.AsPointer(ref Anonymous2))->Size;
+#endif
             }
         }
 
-        public ref IntPtr Handle
+        public unsafe ref IntPtr Handle
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous2.Handle, 1));
+#else
+                return ref ((_Anonymous2_e__Union*)Unsafe.AsPointer(ref Anonymous2))->Handle;
+#endif
             }
         }
 
-        public ref uint ULong
+        public unsafe ref uint ULong
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous2.ULong, 1));
+#else
+                return ref ((_Anonymous2_e__Union*)Unsafe.AsPointer(ref Anonymous2))->ULong;
+#endif
             }
         }
 

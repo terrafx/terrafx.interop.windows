@@ -79,21 +79,29 @@ namespace TerraFX.Interop
         [NativeTypeName("_HIDP_VALUE_CAPS::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/shared/hidpi.h:134:5)")]
         public _Anonymous_e__Union Anonymous;
 
-        public ref _Anonymous_e__Union._Range_e__Struct Range
+        public unsafe ref _Anonymous_e__Union._Range_e__Struct Range
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Range, 1));
+#else
+                return ref ((_Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous))->Range;
+#endif
             }
         }
 
-        public ref _Anonymous_e__Union._NotRange_e__Struct NotRange
+        public unsafe ref _Anonymous_e__Union._NotRange_e__Struct NotRange
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.NotRange, 1));
+#else
+                return ref ((_Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous))->NotRange;
+#endif
             }
         }
 

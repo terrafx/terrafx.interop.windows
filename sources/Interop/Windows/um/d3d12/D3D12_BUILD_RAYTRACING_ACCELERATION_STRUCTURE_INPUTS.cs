@@ -22,36 +22,34 @@ namespace TerraFX.Interop
         [NativeTypeName("D3D12_BUILD_RAYTRACING_ACCELERATION_STRUCTURE_INPUTS::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/d3d12.h:12497:5)")]
         public _Anonymous_e__Union Anonymous;
 
-        public ref ulong InstanceDescs
+        public unsafe ref ulong InstanceDescs
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.InstanceDescs, 1));
+#else
+                return ref ((_Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous))->InstanceDescs;
+#endif
             }
         }
 
-        public ref D3D12_RAYTRACING_GEOMETRY_DESC* pGeometryDescs
+        public unsafe ref D3D12_RAYTRACING_GEOMETRY_DESC* pGeometryDescs
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
-                fixed (_Anonymous_e__Union* pField = &Anonymous)
-                {
-                    return ref pField->pGeometryDescs;
-                }
+                return ref ((_Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous))->pGeometryDescs;
             }
         }
 
-        public ref D3D12_RAYTRACING_GEOMETRY_DESC** ppGeometryDescs
+        public unsafe ref D3D12_RAYTRACING_GEOMETRY_DESC** ppGeometryDescs
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
-                fixed (_Anonymous_e__Union* pField = &Anonymous)
-                {
-                    return ref pField->ppGeometryDescs;
-                }
+                return ref ((_Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous))->ppGeometryDescs;
             }
         }
 

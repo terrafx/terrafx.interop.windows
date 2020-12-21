@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 
 namespace TerraFX.Interop
 {
@@ -31,7 +32,26 @@ namespace TerraFX.Interop
         public WS_PARAMETER_DESCRIPTION* parameterDescription;
 
         [NativeTypeName("WS_SERVICE_STUB_CALLBACK")]
+#if !NETSTANDARD2_0
         public delegate* unmanaged<IntPtr, void*, void*, WS_ASYNC_CONTEXT*, IntPtr, int> stubCallback;
+#else
+        public void* _stubCallback;
+
+        public delegate* unmanaged[Stdcall]<IntPtr, void*, void*, WS_ASYNC_CONTEXT*, IntPtr, int> stubCallback
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                return (delegate* unmanaged[Stdcall]<IntPtr, void*, void*, WS_ASYNC_CONTEXT*, IntPtr, int>)_stubCallback;
+            }
+
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            set
+            {
+                _stubCallback = value;
+            }
+        }
+#endif
 
         public WS_OPERATION_STYLE style;
     }

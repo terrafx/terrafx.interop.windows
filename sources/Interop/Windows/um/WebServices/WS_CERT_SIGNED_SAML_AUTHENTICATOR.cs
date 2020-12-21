@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 
 namespace TerraFX.Interop
 {
@@ -21,7 +22,26 @@ namespace TerraFX.Interop
         public CERT_CONTEXT* decryptionCert;
 
         [NativeTypeName("WS_VALIDATE_SAML_CALLBACK")]
+#if !NETSTANDARD2_0
         public delegate* unmanaged<void*, IntPtr, IntPtr, int> samlValidator;
+#else
+        public void* _samlValidator;
+
+        public delegate* unmanaged[Stdcall]<void*, IntPtr, IntPtr, int> samlValidator
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                return (delegate* unmanaged[Stdcall]<void*, IntPtr, IntPtr, int>)_samlValidator;
+            }
+
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            set
+            {
+                _samlValidator = value;
+            }
+        }
+#endif
 
         [NativeTypeName("void *")]
         public void* samlValidatorCallbackState;

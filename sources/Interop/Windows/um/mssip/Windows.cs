@@ -10,51 +10,51 @@ namespace TerraFX.Interop
 {
     public static unsafe partial class Windows
     {
-        [DllImport("crypt32", ExactSpelling = true, SetLastError = true)]
+        [DllImport("crypt32", CallingConvention = CallingConvention.StdCall, ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int CryptSIPGetSignedDataMsg([NativeTypeName("SIP_SUBJECTINFO *")] SIP_SUBJECTINFO* pSubjectInfo, [NativeTypeName("DWORD *")] uint* pdwEncodingType, [NativeTypeName("DWORD")] uint dwIndex, [NativeTypeName("DWORD *")] uint* pcbSignedDataMsg, [NativeTypeName("BYTE *")] byte* pbSignedDataMsg);
 
-        [DllImport("crypt32", ExactSpelling = true, SetLastError = true)]
+        [DllImport("crypt32", CallingConvention = CallingConvention.StdCall, ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int CryptSIPPutSignedDataMsg([NativeTypeName("SIP_SUBJECTINFO *")] SIP_SUBJECTINFO* pSubjectInfo, [NativeTypeName("DWORD")] uint dwEncodingType, [NativeTypeName("DWORD *")] uint* pdwIndex, [NativeTypeName("DWORD")] uint cbSignedDataMsg, [NativeTypeName("BYTE *")] byte* pbSignedDataMsg);
 
-        [DllImport("crypt32", ExactSpelling = true, SetLastError = true)]
+        [DllImport("crypt32", CallingConvention = CallingConvention.StdCall, ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int CryptSIPCreateIndirectData([NativeTypeName("SIP_SUBJECTINFO *")] SIP_SUBJECTINFO* pSubjectInfo, [NativeTypeName("DWORD *")] uint* pcbIndirectData, [NativeTypeName("SIP_INDIRECT_DATA *")] SIP_INDIRECT_DATA* pIndirectData);
 
-        [DllImport("crypt32", ExactSpelling = true, SetLastError = true)]
+        [DllImport("crypt32", CallingConvention = CallingConvention.StdCall, ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int CryptSIPVerifyIndirectData([NativeTypeName("SIP_SUBJECTINFO *")] SIP_SUBJECTINFO* pSubjectInfo, [NativeTypeName("SIP_INDIRECT_DATA *")] SIP_INDIRECT_DATA* pIndirectData);
 
-        [DllImport("crypt32", ExactSpelling = true, SetLastError = true)]
+        [DllImport("crypt32", CallingConvention = CallingConvention.StdCall, ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int CryptSIPRemoveSignedDataMsg([NativeTypeName("SIP_SUBJECTINFO *")] SIP_SUBJECTINFO* pSubjectInfo, [NativeTypeName("DWORD")] uint dwIndex);
 
-        [DllImport("crypt32", ExactSpelling = true, SetLastError = true)]
+        [DllImport("crypt32", CallingConvention = CallingConvention.StdCall, ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int CryptSIPLoad([NativeTypeName("const GUID *")] Guid* pgSubject, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("SIP_DISPATCH_INFO *")] SIP_DISPATCH_INFO* pSipDispatch);
 
-        [DllImport("crypt32", ExactSpelling = true, SetLastError = true)]
+        [DllImport("crypt32", CallingConvention = CallingConvention.StdCall, ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int CryptSIPRetrieveSubjectGuid([NativeTypeName("LPCWSTR")] ushort* FileName, [NativeTypeName("HANDLE")] IntPtr hFileIn, [NativeTypeName("GUID *")] Guid* pgSubject);
 
-        [DllImport("crypt32", ExactSpelling = true, SetLastError = true)]
+        [DllImport("crypt32", CallingConvention = CallingConvention.StdCall, ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int CryptSIPRetrieveSubjectGuidForCatalogFile([NativeTypeName("LPCWSTR")] ushort* FileName, [NativeTypeName("HANDLE")] IntPtr hFileIn, [NativeTypeName("GUID *")] Guid* pgSubject);
 
-        [DllImport("crypt32", ExactSpelling = true, SetLastError = true)]
+        [DllImport("crypt32", CallingConvention = CallingConvention.StdCall, ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int CryptSIPAddProvider([NativeTypeName("SIP_ADD_NEWPROVIDER *")] SIP_ADD_NEWPROVIDER* psNewProv);
 
-        [DllImport("crypt32", ExactSpelling = true, SetLastError = true)]
+        [DllImport("crypt32", CallingConvention = CallingConvention.StdCall, ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int CryptSIPRemoveProvider([NativeTypeName("GUID *")] Guid* pgProv);
 
-        [DllImport("crypt32", ExactSpelling = true)]
+        [DllImport("crypt32", CallingConvention = CallingConvention.StdCall, ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int CryptSIPGetCaps([NativeTypeName("SIP_SUBJECTINFO *")] SIP_SUBJECTINFO* pSubjInfo, [NativeTypeName("SIP_CAP_SET *")] SIP_CAP_SET_V3* pCaps);
 
-        [DllImport("crypt32", ExactSpelling = true)]
+        [DllImport("crypt32", CallingConvention = CallingConvention.StdCall, ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int CryptSIPGetSealedDigest([NativeTypeName("SIP_SUBJECTINFO *")] SIP_SUBJECTINFO* pSubjectInfo, [NativeTypeName("const BYTE *")] byte* pSig, [NativeTypeName("DWORD")] uint dwSig, [NativeTypeName("BYTE *")] byte* pbDigest, [NativeTypeName("DWORD *")] uint* pcbDigest);
 

@@ -19,21 +19,29 @@ namespace TerraFX.Interop
         [NativeTypeName("_OCSP_BASIC_RESPONSE_INFO::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/wincrypt.h:5706:5)")]
         public _Anonymous_e__Union Anonymous;
 
-        public ref CRYPTOAPI_BLOB ByNameResponderId
+        public unsafe ref CRYPTOAPI_BLOB ByNameResponderId
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.ByNameResponderId, 1));
+#else
+                return ref ((_Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous))->ByNameResponderId;
+#endif
             }
         }
 
-        public ref CRYPTOAPI_BLOB ByKeyResponderId
+        public unsafe ref CRYPTOAPI_BLOB ByKeyResponderId
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.ByKeyResponderId, 1));
+#else
+                return ref ((_Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous))->ByKeyResponderId;
+#endif
             }
         }
 

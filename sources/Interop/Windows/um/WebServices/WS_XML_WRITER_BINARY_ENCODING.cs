@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 
 namespace TerraFX.Interop
 {
@@ -15,7 +16,26 @@ namespace TerraFX.Interop
         public WS_XML_DICTIONARY* staticDictionary;
 
         [NativeTypeName("WS_DYNAMIC_STRING_CALLBACK")]
+#if !NETSTANDARD2_0
         public delegate* unmanaged<void*, WS_XML_STRING*, int*, uint*, IntPtr, int> dynamicStringCallback;
+#else
+        public void* _dynamicStringCallback;
+
+        public delegate* unmanaged[Stdcall]<void*, WS_XML_STRING*, int*, uint*, IntPtr, int> dynamicStringCallback
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                return (delegate* unmanaged[Stdcall]<void*, WS_XML_STRING*, int*, uint*, IntPtr, int>)_dynamicStringCallback;
+            }
+
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            set
+            {
+                _dynamicStringCallback = value;
+            }
+        }
+#endif
 
         [NativeTypeName("void *")]
         public void* dynamicStringCallbackState;

@@ -29,7 +29,7 @@ namespace TerraFX.Interop
         [NativeTypeName("tagVIDEOINFO::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/amvideo.h:319:5)")]
         public _Anonymous_e__Union Anonymous;
 
-        public Span<RGBQUAD> bmiColors
+        public unsafe Span<RGBQUAD> bmiColors
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
@@ -38,21 +38,29 @@ namespace TerraFX.Interop
             }
         }
 
-        public Span<uint> dwBitMasks
+        public unsafe Span<uint> dwBitMasks
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return MemoryMarshal.CreateSpan(ref Anonymous.dwBitMasks[0], 3);
+#else
+                return new Span<uint>(((_Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous))->dwBitMasks, 3);
+#endif
             }
         }
 
-        public ref TRUECOLORINFO TrueColorInfo
+        public unsafe ref TRUECOLORINFO TrueColorInfo
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.TrueColorInfo, 1));
+#else
+                return ref ((_Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous))->TrueColorInfo;
+#endif
             }
         }
 
@@ -329,7 +337,7 @@ namespace TerraFX.Interop
                 public RGBQUAD e254;
                 public RGBQUAD e255;
 
-                public ref RGBQUAD this[int index]
+                public unsafe ref RGBQUAD this[int index]
                 {
                     [MethodImpl(MethodImplOptions.AggressiveInlining)]
                     get
@@ -339,7 +347,14 @@ namespace TerraFX.Interop
                 }
 
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                public Span<RGBQUAD> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 256);
+                public unsafe Span<RGBQUAD> AsSpan()
+                {
+#if !NETSTANDARD2_0
+                    return MemoryMarshal.CreateSpan(ref e0, 256);
+#else
+                    return new Span<RGBQUAD>((RGBQUAD*)Unsafe.AsPointer(ref this), 256);
+#endif
+                }
             }
         }
     }

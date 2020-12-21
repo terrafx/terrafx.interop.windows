@@ -43,24 +43,25 @@ namespace TerraFX.Interop
         [NativeTypeName("_DDBLTFX::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/ddraw.h:287:5)")]
         public _Anonymous1_e__Union Anonymous1;
 
-        public ref uint dwZDestConst
+        public unsafe ref uint dwZDestConst
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous1.dwZDestConst, 1));
+#else
+                return ref ((_Anonymous1_e__Union*)Unsafe.AsPointer(ref Anonymous1))->dwZDestConst;
+#endif
             }
         }
 
-        public ref IDirectDrawSurface* lpDDSZBufferDest
+        public unsafe ref IDirectDrawSurface* lpDDSZBufferDest
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
-                fixed (_Anonymous1_e__Union* pField = &Anonymous1)
-                {
-                    return ref pField->lpDDSZBufferDest;
-                }
+                return ref ((_Anonymous1_e__Union*)Unsafe.AsPointer(ref Anonymous1))->lpDDSZBufferDest;
             }
         }
 
@@ -70,24 +71,25 @@ namespace TerraFX.Interop
         [NativeTypeName("_DDBLTFX::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/ddraw.h:293:5)")]
         public _Anonymous2_e__Union Anonymous2;
 
-        public ref uint dwZSrcConst
+        public unsafe ref uint dwZSrcConst
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous2.dwZSrcConst, 1));
+#else
+                return ref ((_Anonymous2_e__Union*)Unsafe.AsPointer(ref Anonymous2))->dwZSrcConst;
+#endif
             }
         }
 
-        public ref IDirectDrawSurface* lpDDSZBufferSrc
+        public unsafe ref IDirectDrawSurface* lpDDSZBufferSrc
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
-                fixed (_Anonymous2_e__Union* pField = &Anonymous2)
-                {
-                    return ref pField->lpDDSZBufferSrc;
-                }
+                return ref ((_Anonymous2_e__Union*)Unsafe.AsPointer(ref Anonymous2))->lpDDSZBufferSrc;
             }
         }
 
@@ -106,24 +108,25 @@ namespace TerraFX.Interop
         [NativeTypeName("_DDBLTFX::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/ddraw.h:302:5)")]
         public _Anonymous3_e__Union Anonymous3;
 
-        public ref uint dwAlphaDestConst
+        public unsafe ref uint dwAlphaDestConst
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous3.dwAlphaDestConst, 1));
+#else
+                return ref ((_Anonymous3_e__Union*)Unsafe.AsPointer(ref Anonymous3))->dwAlphaDestConst;
+#endif
             }
         }
 
-        public ref IDirectDrawSurface* lpDDSAlphaDest
+        public unsafe ref IDirectDrawSurface* lpDDSAlphaDest
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
-                fixed (_Anonymous3_e__Union* pField = &Anonymous3)
-                {
-                    return ref pField->lpDDSAlphaDest;
-                }
+                return ref ((_Anonymous3_e__Union*)Unsafe.AsPointer(ref Anonymous3))->lpDDSAlphaDest;
             }
         }
 
@@ -133,66 +136,76 @@ namespace TerraFX.Interop
         [NativeTypeName("_DDBLTFX::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/ddraw.h:308:5)")]
         public _Anonymous4_e__Union Anonymous4;
 
-        public ref uint dwAlphaSrcConst
+        public unsafe ref uint dwAlphaSrcConst
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous4.dwAlphaSrcConst, 1));
+#else
+                return ref ((_Anonymous4_e__Union*)Unsafe.AsPointer(ref Anonymous4))->dwAlphaSrcConst;
+#endif
             }
         }
 
-        public ref IDirectDrawSurface* lpDDSAlphaSrc
+        public unsafe ref IDirectDrawSurface* lpDDSAlphaSrc
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
-                fixed (_Anonymous4_e__Union* pField = &Anonymous4)
-                {
-                    return ref pField->lpDDSAlphaSrc;
-                }
+                return ref ((_Anonymous4_e__Union*)Unsafe.AsPointer(ref Anonymous4))->lpDDSAlphaSrc;
             }
         }
 
         [NativeTypeName("_DDBLTFX::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/ddraw.h:313:5)")]
         public _Anonymous5_e__Union Anonymous5;
 
-        public ref uint dwFillColor
+        public unsafe ref uint dwFillColor
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous5.dwFillColor, 1));
+#else
+                return ref ((_Anonymous5_e__Union*)Unsafe.AsPointer(ref Anonymous5))->dwFillColor;
+#endif
             }
         }
 
-        public ref uint dwFillDepth
+        public unsafe ref uint dwFillDepth
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous5.dwFillDepth, 1));
+#else
+                return ref ((_Anonymous5_e__Union*)Unsafe.AsPointer(ref Anonymous5))->dwFillDepth;
+#endif
             }
         }
 
-        public ref uint dwFillPixel
+        public unsafe ref uint dwFillPixel
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous5.dwFillPixel, 1));
+#else
+                return ref ((_Anonymous5_e__Union*)Unsafe.AsPointer(ref Anonymous5))->dwFillPixel;
+#endif
             }
         }
 
-        public ref IDirectDrawSurface* lpDDSPattern
+        public unsafe ref IDirectDrawSurface* lpDDSPattern
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
-                fixed (_Anonymous5_e__Union* pField = &Anonymous5)
-                {
-                    return ref pField->lpDDSPattern;
-                }
+                return ref ((_Anonymous5_e__Union*)Unsafe.AsPointer(ref Anonymous5))->lpDDSPattern;
             }
         }
 

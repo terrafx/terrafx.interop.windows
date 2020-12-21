@@ -14,21 +14,29 @@ namespace TerraFX.Interop
         [NativeTypeName("MARK_HANDLE_INFO::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winioctl.h:11047:5)")]
         public _Anonymous_e__Union Anonymous;
 
-        public ref uint UsnSourceInfo
+        public unsafe ref uint UsnSourceInfo
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.UsnSourceInfo, 1));
+#else
+                return ref ((_Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous))->UsnSourceInfo;
+#endif
             }
         }
 
-        public ref uint CopyNumber
+        public unsafe ref uint CopyNumber
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
+#if !NETSTANDARD2_0
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.CopyNumber, 1));
+#else
+                return ref ((_Anonymous_e__Union*)Unsafe.AsPointer(ref Anonymous))->CopyNumber;
+#endif
             }
         }
 
