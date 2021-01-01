@@ -15,46 +15,53 @@ namespace TerraFX.Interop
     {
         public void** lpVtbl;
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return ((delegate* stdcall<IHolographicQuadLayerUpdateParametersInterop*, Guid*, void**, int>)(lpVtbl[0]))((IHolographicQuadLayerUpdateParametersInterop*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* unmanaged<IHolographicQuadLayerUpdateParametersInterop*, Guid*, void**, int>)(lpVtbl[0]))((IHolographicQuadLayerUpdateParametersInterop*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return ((delegate* stdcall<IHolographicQuadLayerUpdateParametersInterop*, uint>)(lpVtbl[1]))((IHolographicQuadLayerUpdateParametersInterop*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IHolographicQuadLayerUpdateParametersInterop*, uint>)(lpVtbl[1]))((IHolographicQuadLayerUpdateParametersInterop*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return ((delegate* stdcall<IHolographicQuadLayerUpdateParametersInterop*, uint>)(lpVtbl[2]))((IHolographicQuadLayerUpdateParametersInterop*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IHolographicQuadLayerUpdateParametersInterop*, uint>)(lpVtbl[2]))((IHolographicQuadLayerUpdateParametersInterop*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetIids([NativeTypeName("ULONG *")] uint* iidCount, [NativeTypeName("IID **")] Guid** iids)
         {
-            return ((delegate* stdcall<IHolographicQuadLayerUpdateParametersInterop*, uint*, Guid**, int>)(lpVtbl[3]))((IHolographicQuadLayerUpdateParametersInterop*)Unsafe.AsPointer(ref this), iidCount, iids);
+            return ((delegate* unmanaged<IHolographicQuadLayerUpdateParametersInterop*, uint*, Guid**, int>)(lpVtbl[3]))((IHolographicQuadLayerUpdateParametersInterop*)Unsafe.AsPointer(ref this), iidCount, iids);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetRuntimeClassName([NativeTypeName("HSTRING *")] IntPtr* className)
         {
-            return ((delegate* stdcall<IHolographicQuadLayerUpdateParametersInterop*, IntPtr*, int>)(lpVtbl[4]))((IHolographicQuadLayerUpdateParametersInterop*)Unsafe.AsPointer(ref this), className);
+            return ((delegate* unmanaged<IHolographicQuadLayerUpdateParametersInterop*, IntPtr*, int>)(lpVtbl[4]))((IHolographicQuadLayerUpdateParametersInterop*)Unsafe.AsPointer(ref this), className);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetTrustLevel([NativeTypeName("TrustLevel *")] TrustLevel* trustLevel)
         {
-            return ((delegate* stdcall<IHolographicQuadLayerUpdateParametersInterop*, TrustLevel*, int>)(lpVtbl[5]))((IHolographicQuadLayerUpdateParametersInterop*)Unsafe.AsPointer(ref this), trustLevel);
+            return ((delegate* unmanaged<IHolographicQuadLayerUpdateParametersInterop*, TrustLevel*, int>)(lpVtbl[5]))((IHolographicQuadLayerUpdateParametersInterop*)Unsafe.AsPointer(ref this), trustLevel);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int CommitDirect3D12Resource([NativeTypeName("ID3D12Resource *")] ID3D12Resource* pColorResourceToCommit, [NativeTypeName("ID3D12Fence *")] ID3D12Fence* pColorResourceFence, [NativeTypeName("UINT64")] ulong colorResourceFenceSignalValue)
         {
-            return ((delegate* stdcall<IHolographicQuadLayerUpdateParametersInterop*, ID3D12Resource*, ID3D12Fence*, ulong, int>)(lpVtbl[6]))((IHolographicQuadLayerUpdateParametersInterop*)Unsafe.AsPointer(ref this), pColorResourceToCommit, pColorResourceFence, colorResourceFenceSignalValue);
+            return ((delegate* unmanaged<IHolographicQuadLayerUpdateParametersInterop*, ID3D12Resource*, ID3D12Fence*, ulong, int>)(lpVtbl[6]))((IHolographicQuadLayerUpdateParametersInterop*)Unsafe.AsPointer(ref this), pColorResourceToCommit, pColorResourceFence, colorResourceFenceSignalValue);
         }
     }
 }
