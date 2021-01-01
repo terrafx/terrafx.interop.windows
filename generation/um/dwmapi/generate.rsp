@@ -1,0 +1,17 @@
+@../../settings.rsp
+@../../remap.rsp
+--exclude
+DWMAPI_
+--file
+um-dwmapi.h
+--output
+../../../sources/Interop/Windows/um/dwmapi
+--test-output
+../../../tests/Interop/Windows/um/dwmapi
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/dwmapi.h
+--with-attribute
+DWM_SHOWCONTACT=Flags
+DWM_TAB_WINDOW_REQUIREMENTS=Flags
+--with-librarypath
+*=dwmapi
