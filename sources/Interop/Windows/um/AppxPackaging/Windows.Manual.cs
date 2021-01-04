@@ -1,0 +1,24 @@
+// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+
+// Ported from um/AppxPackaging.h in the Windows SDK for Windows 10.0.19041.0
+// Original source is Copyright © Microsoft. All rights reserved.
+
+using System;
+
+namespace TerraFX.Interop
+{
+    public static partial class Windows
+    {
+        public static readonly Guid LIBID_APPXPACKAGING = new Guid(0x5842A140, 0xFF9F, 0x4166, 0x8F, 0x5C, 0x62, 0xF5, 0xB7, 0xB0, 0xC7, 0x81);
+
+        public static readonly Guid CLSID_AppxFactory = new Guid(0x5842A140, 0xFF9F, 0x4166, 0x8F, 0x5C, 0x62, 0xF5, 0xB7, 0xB0, 0xC7, 0x81);
+
+        public static readonly Guid CLSID_AppxBundleFactory = new Guid(0x378E0446, 0x5384, 0x43B7, 0x88, 0x77, 0xE7, 0xDB, 0xDD, 0x88, 0x34, 0x46);
+
+        public static readonly Guid CLSID_AppxPackagingDiagnosticEventSinkManager = new Guid(0x50CA0A46, 0x1588, 0x4161, 0x8E, 0xD2, 0xEF, 0x9E, 0x46, 0x9C, 0xED, 0x5D);
+
+        public static readonly Guid CLSID_AppxEncryptionFactory = new Guid(0xDC664FDD, 0xD868, 0x46EE, 0x87, 0x80, 0x8D, 0x19, 0x6C, 0xB7, 0x39, 0xF7);
+
+        public static readonly Guid CLSID_AppxPackageEditor = new Guid(0xF004F2CA, 0xAEBC, 0x4B0D, 0xBF, 0x58, 0xE5, 0x16, 0xD5, 0xBC, 0xC0, 0xAB);
+    }
+}
