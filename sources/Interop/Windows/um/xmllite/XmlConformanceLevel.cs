@@ -10,5 +10,6 @@ namespace TerraFX.Interop
         XmlConformanceLevel_Auto = 0,
         XmlConformanceLevel_Fragment = 1,
         XmlConformanceLevel_Document = 2,
+        _XmlConformanceLevel_Last = 2,
     }
 }

@@ -9,5 +9,6 @@ namespace TerraFX.Interop
     {
         DtdProcessing_Prohibit = 0,
         DtdProcessing_Parse = (DtdProcessing_Prohibit + 1),
+        _DtdProcessing_Last = DtdProcessing_Parse,
     }
 }

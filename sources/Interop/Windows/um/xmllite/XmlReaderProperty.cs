@@ -15,5 +15,6 @@ namespace TerraFX.Interop
         XmlReaderProperty_ReadState = (XmlReaderProperty_DtdProcessing + 1),
         XmlReaderProperty_MaxElementDepth = (XmlReaderProperty_ReadState + 1),
         XmlReaderProperty_MaxEntityExpansion = (XmlReaderProperty_MaxElementDepth + 1),
+        _XmlReaderProperty_Last = XmlReaderProperty_MaxEntityExpansion,
     }
 }

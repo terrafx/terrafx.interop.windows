@@ -10,5 +10,6 @@ namespace TerraFX.Interop
         XmlStandalone_Omit = 0,
         XmlStandalone_Yes = 1,
         XmlStandalone_No = 2,
+        _XmlStandalone_Last = 2,
     }
 }

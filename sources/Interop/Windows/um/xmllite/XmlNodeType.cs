@@ -18,5 +18,6 @@ namespace TerraFX.Interop
         XmlNodeType_Whitespace = 13,
         XmlNodeType_EndElement = 15,
         XmlNodeType_XmlDeclaration = 17,
+        _XmlNodeType_Last = 17,
     }
 }

@@ -13,5 +13,6 @@ namespace TerraFX.Interop
         XmlWriterProperty_OmitXmlDeclaration = (XmlWriterProperty_ByteOrderMark + 1),
         XmlWriterProperty_ConformanceLevel = (XmlWriterProperty_OmitXmlDeclaration + 1),
         XmlWriterProperty_CompactEmptyElement = (XmlWriterProperty_ConformanceLevel + 1),
+        _XmlWriterProperty_Last = XmlWriterProperty_CompactEmptyElement,
     }
 }

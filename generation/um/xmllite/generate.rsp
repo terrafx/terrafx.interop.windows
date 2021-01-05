@@ -4,12 +4,6 @@
 IID_IXmlReader
 IID_IXmlWriter
 IID_IXmlResolver
-_DtdProcessing_Last
-_XmlConformanceLevel_Last
-_XmlNodeType_Last
-_XmlReaderProperty_Last
-_XmlStandalone_Last
-_XmlWriterProperty_Last
 --file
 um-xmllite.h
 --output
