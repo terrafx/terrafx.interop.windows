@@ -1,0 +1,22 @@
+@../../settings.rsp
+@../../remap.rsp
+--exclude
+IID_IXmlReader
+IID_IXmlWriter
+IID_IXmlResolver
+_DtdProcessing_Last
+_XmlConformanceLevel_Last
+_XmlNodeType_Last
+_XmlReaderProperty_Last
+_XmlStandalone_Last
+_XmlWriterProperty_Last
+--file
+um-xmllite.h
+--output
+../../../sources/Interop/Windows/um/xmllite
+--test-output
+../../../tests/Interop/Windows/um/xmllite
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/xmllite.h
+--with-librarypath
+*=xmllite
