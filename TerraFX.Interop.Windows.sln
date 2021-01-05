@@ -1533,6 +1533,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "projectedfslib", "projected
 		generation\um\projectedfslib\um-projectedfslib.h = generation\um\projectedfslib\um-projectedfslib.h
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "xmllite", "xmllite", "{845978C6-6FF3-4CA7-B0D3-EB4A0FF82359}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\xmllite\generate.rsp = generation\um\xmllite\generate.rsp
+		generation\um\xmllite\header.txt = generation\um\xmllite\header.txt
+		generation\um\xmllite\um-xmllite.h = generation\um\xmllite\um-xmllite.h
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -1774,6 +1781,7 @@ Global
 		{14004AB4-1BB4-4D9D-B495-37543A4992FB} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{600504FC-8E6B-4508-BFF5-8870B42E1EC7} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{47E77F2B-2797-4F00-AE21-80B6B5C3BE2E} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{845978C6-6FF3-4CA7-B0D3-EB4A0FF82359} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2FE36DF8-2D9C-4F20-8787-45DC74B57461}
