@@ -1,7 +1,7 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
 // Ported from https://docs.microsoft.com/en-us/windows/win32/appxpkg/how-to-programmatically-sign-a-package
-// Original source is Copyright © Microsoft. All rights reserved. License information available at https://github.com/MicrosoftDocs/win32/blob/docs/LICENSE-CODE
+// Original source is Copyright © Microsoft. All rights reserved. Licensed under the MIT License (MIT).
 
 using System;
 using System.Runtime.CompilerServices;
@@ -17,7 +17,7 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint dwCertChoice;
 
-        [NativeTypeName("_SIGNER_CERT::(anonymous union at ./mssign32.h:106:5)")]
+        [NativeTypeName("_SIGNER_CERT::(anonymous union at ./mssign32.h:109:5)")]
         public _Anonymous_e__Union Anonymous;
 
         public ref ushort* pwszSpcFile
