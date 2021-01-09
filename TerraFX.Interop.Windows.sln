@@ -1274,6 +1274,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "devicetopology", "devicetop
 		generation\um\devicetopology\um-devicetopology.h = generation\um\devicetopology\um-devicetopology.h
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "windows.graphics.holographic.interop", "windows.graphics.holographic.interop", "{2491BC5C-DEF9-4E68-AC7B-B53B53CAF7EB}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\windows.graphics.holographic.interop\generate.rsp = generation\um\windows.graphics.holographic.interop\generate.rsp
+		generation\um\windows.graphics.holographic.interop\header.txt = generation\um\windows.graphics.holographic.interop\header.txt
+		generation\um\windows.graphics.holographic.interop\um-windows.graphics.holographic.interop.h = generation\um\windows.graphics.holographic.interop\um-windows.graphics.holographic.interop.h
+	EndProjectSection
+EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DispatcherQueue", "DispatcherQueue", "{9CC7B81D-B969-4262-922E-37CF05B0C40A}"
 	ProjectSection(SolutionItems) = preProject
 		generation\um\DispatcherQueue\generate.rsp = generation\um\DispatcherQueue\generate.rsp
@@ -1583,6 +1590,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "xmllite", "xmllite", "{8459
 		generation\um\xmllite\um-xmllite.h = generation\um\xmllite\um-xmllite.h
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WinForms", "WinForms", "{96A9FCCC-D74F-47EA-9530-CF0C58590A8A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TerraFX.Samples.WinForms", "samples\WinForms\TerraFX.Samples.WinForms.csproj", "{8B15071A-F2CE-4127-BD71-0C04EE24BF49}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -1601,6 +1612,10 @@ Global
 		{37ACC069-F0C9-4DC3-8E13-12C61ACF269D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{37ACC069-F0C9-4DC3-8E13-12C61ACF269D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{37ACC069-F0C9-4DC3-8E13-12C61ACF269D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8B15071A-F2CE-4127-BD71-0C04EE24BF49}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8B15071A-F2CE-4127-BD71-0C04EE24BF49}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8B15071A-F2CE-4127-BD71-0C04EE24BF49}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8B15071A-F2CE-4127-BD71-0C04EE24BF49}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -1787,6 +1802,7 @@ Global
 		{62072728-90CD-44EA-9A0E-7E35D1275105} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{F725268B-0460-4AA3-B4DB-4117B8F8D0D4} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{20CF1C32-1F5E-43B3-AE1F-22A826E5BB9C} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{2491BC5C-DEF9-4E68-AC7B-B53B53CAF7EB} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{9CC7B81D-B969-4262-922E-37CF05B0C40A} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{BF8FA043-B447-43AA-A0FF-72943293010A} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{90EB0F1E-3DE0-4A44-A2AB-C0EF7C5633E0} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
@@ -1817,7 +1833,7 @@ Global
 		{8A99FF33-1ACF-4304-85E7-D4994DDB70EF} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{CD7FBCD8-0D9D-4452-9059-A882209D9903} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{95CB59A8-9E9C-483B-B5A7-0A19EE6B8734} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
-		{8132BF5E-738F-458B-9778-23C3737547C6} = {D9638FEE-50A4-44FF-B1F6-72E59548490B}
+		{8132BF5E-738F-458B-9778-23C3737547C6} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{AD0959E5-765F-4670-BD34-3D03C72813C7} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{E2054468-470F-46E2-AEF9-4FC6A41228EA} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{CBCCB0D7-2657-42CB-8819-0AD46B1C6346} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
@@ -1831,6 +1847,8 @@ Global
 		{B7B8B83A-8D49-4AE3-B586-97C460C72495} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{EAEB2AEC-C096-4D0D-855E-7F18D1B0DBEF} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{845978C6-6FF3-4CA7-B0D3-EB4A0FF82359} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{96A9FCCC-D74F-47EA-9530-CF0C58590A8A} = {1054E499-981F-4EFA-855B-EC6FA604C6FB}
+		{8B15071A-F2CE-4127-BD71-0C04EE24BF49} = {96A9FCCC-D74F-47EA-9530-CF0C58590A8A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2FE36DF8-2D9C-4F20-8787-45DC74B57461}

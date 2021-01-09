@@ -184,7 +184,7 @@ fi
 RepoRoot="$ScriptRoot/.."
 
 if [[ -z "$solution" ]]; then
-  solution="$RepoRoot/TerraFX.Interop.Windows.sln"
+  solution="$RepoRoot/TerraFX.Interop.Windows.NonDesktop.slnf"
 fi
 
 ArtifactsDir="$RepoRoot/artifacts"

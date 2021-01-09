@@ -1,0 +1,9 @@
+{
+  "profiles": {
+    "TerraFX.Samples.DirectX": {
+      "commandName": "Project",
+      "commandLineArgs": "all",
+      "nativeDebugging": true
+    }
+  }
+}
