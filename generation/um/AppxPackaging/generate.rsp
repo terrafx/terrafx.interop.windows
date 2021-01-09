@@ -1,0 +1,14 @@
+@../../settings.rsp
+@../../remap.rsp
+--file
+um-AppxPackaging.h
+--output
+../../../sources/Interop/Windows/um/AppxPackaging
+--test-output
+../../../tests/Interop/Windows/um/AppxPackaging
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/AppxPackaging.h
+--with-attribute
+APPX_CAPABILITIES=Flags
+APPX_ENCRYPTED_PACKAGE_OPTIONS=Flags
+APPX_PACKAGE_EDITOR_UPDATE_PACKAGE_MANIFEST_OPTIONS=Flags

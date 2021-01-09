@@ -1533,6 +1533,28 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "projectedfslib", "projected
 		generation\um\projectedfslib\um-projectedfslib.h = generation\um\projectedfslib\um-projectedfslib.h
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AppxPackaging", "AppxPackaging", "{5669D78F-33FF-4CC5-9F83-35D31E900C25}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\AppxPackaging\generate.rsp = generation\um\AppxPackaging\generate.rsp
+		generation\um\AppxPackaging\header.txt = generation\um\AppxPackaging\header.txt
+		generation\um\AppxPackaging\um-AppxPackaging.h = generation\um\AppxPackaging\um-AppxPackaging.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "appmodel", "appmodel", "{7475BAE7-8B6B-45E7-B29C-3720A18FD967}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\appmodel\generate.rsp = generation\um\appmodel\generate.rsp
+		generation\um\appmodel\header.txt = generation\um\appmodel\header.txt
+		generation\um\appmodel\um-appmodel.h = generation\um\appmodel\um-appmodel.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "mssign32", "mssign32", "{68C7C148-5188-4F15-9B1B-4F25EC8BB837}"
+	ProjectSection(SolutionItems) = preProject
+		generation\other\mssign32\generate.rsp = generation\other\mssign32\generate.rsp
+		generation\other\mssign32\header.txt = generation\other\mssign32\header.txt
+		generation\other\mssign32\mssign32.h = generation\other\mssign32\mssign32.h
+		generation\other\mssign32\other-mssign32.h = generation\other\mssign32\other-mssign32.h
+	EndProjectSection
+EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Windows.Devices.Display.Core.Interop", "Windows.Devices.Display.Core.Interop", "{21520D35-4F0C-42DD-9DA7-4A48A56329FD}"
 	ProjectSection(SolutionItems) = preProject
 		generation\um\Windows.Devices.Display.Core.Interop\generate.rsp = generation\um\Windows.Devices.Display.Core.Interop\generate.rsp
@@ -1802,6 +1824,9 @@ Global
 		{14004AB4-1BB4-4D9D-B495-37543A4992FB} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{600504FC-8E6B-4508-BFF5-8870B42E1EC7} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{47E77F2B-2797-4F00-AE21-80B6B5C3BE2E} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{5669D78F-33FF-4CC5-9F83-35D31E900C25} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{7475BAE7-8B6B-45E7-B29C-3720A18FD967} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{68C7C148-5188-4F15-9B1B-4F25EC8BB837} = {B09A774C-A2CD-4E0D-8DE8-AC48459E1699}
 		{21520D35-4F0C-42DD-9DA7-4A48A56329FD} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{B7B8B83A-8D49-4AE3-B586-97C460C72495} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{EAEB2AEC-C096-4D0D-855E-7F18D1B0DBEF} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
