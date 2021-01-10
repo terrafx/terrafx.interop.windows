@@ -1643,6 +1643,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "roerrorapi", "roerrorapi", 
 		generation\winrt\roerrorapi\winrt-roerrorapi.h = generation\winrt\roerrorapi\winrt-roerrorapi.h
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "rometadata", "rometadata", "{823696E2-78D4-4431-A7BA-D2E6A7B3B42B}"
+	ProjectSection(SolutionItems) = preProject
+		generation\winrt\rometadata\generate.rsp = generation\winrt\rometadata\generate.rsp
+		generation\winrt\rometadata\header.txt = generation\winrt\rometadata\header.txt
+		generation\winrt\rometadata\winrt-rometadata.h = generation\winrt\rometadata\winrt-rometadata.h
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -1905,6 +1912,7 @@ Global
 		{F64D1D55-C3BE-4574-B907-5697EA6B2406} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
 		{2C10C540-6DC5-49C5-A506-25A151D2FFCC} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{BC90C089-015A-41B0-B725-81C90698EFB0} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
+		{823696E2-78D4-4431-A7BA-D2E6A7B3B42B} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2FE36DF8-2D9C-4F20-8787-45DC74B57461}
