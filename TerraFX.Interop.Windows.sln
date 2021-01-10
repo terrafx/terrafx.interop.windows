@@ -1657,6 +1657,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "shcore", "shcore", "{C9F4D4
 		generation\winrt\shcore\winrt-shcore.h = generation\winrt\shcore\winrt-shcore.h
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WeakReference", "WeakReference", "{37B083E1-218C-4EE2-A9CE-D9D8A62071B5}"
+	ProjectSection(SolutionItems) = preProject
+		generation\winrt\WeakReference\generate.rsp = generation\winrt\WeakReference\generate.rsp
+		generation\winrt\WeakReference\header.txt = generation\winrt\WeakReference\header.txt
+		generation\winrt\WeakReference\winrt-WeakReference.h = generation\winrt\WeakReference\winrt-WeakReference.h
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -1921,6 +1928,7 @@ Global
 		{BC90C089-015A-41B0-B725-81C90698EFB0} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
 		{823696E2-78D4-4431-A7BA-D2E6A7B3B42B} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
 		{C9F4D47F-4278-45A8-B0D6-3F19B64613C9} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
+		{37B083E1-218C-4EE2-A9CE-D9D8A62071B5} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2FE36DF8-2D9C-4F20-8787-45DC74B57461}
