@@ -1601,6 +1601,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EventToken", "EventToken", 
 		generation\winrt\EventToken\winrt-EventToken.h = generation\winrt\EventToken\winrt-EventToken.h
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "activation", "activation", "{4376CDB5-DDBC-4681-B252-ABE0A7406969}"
+	ProjectSection(SolutionItems) = preProject
+		generation\winrt\activation\generate.rsp = generation\winrt\activation\generate.rsp
+		generation\winrt\activation\header.txt = generation\winrt\activation\header.txt
+		generation\winrt\activation\winrt-activation.h = generation\winrt\activation\winrt-activation.h
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -1857,6 +1864,7 @@ Global
 		{96A9FCCC-D74F-47EA-9530-CF0C58590A8A} = {1054E499-981F-4EFA-855B-EC6FA604C6FB}
 		{8B15071A-F2CE-4127-BD71-0C04EE24BF49} = {96A9FCCC-D74F-47EA-9530-CF0C58590A8A}
 		{278BB92B-490B-4D7B-8AE8-0728769B6FA8} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
+		{4376CDB5-DDBC-4681-B252-ABE0A7406969} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2FE36DF8-2D9C-4F20-8787-45DC74B57461}
