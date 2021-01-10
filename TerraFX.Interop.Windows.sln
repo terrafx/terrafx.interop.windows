@@ -1636,6 +1636,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "RestrictedErrorInfo", "Rest
 		generation\um\RestrictedErrorInfo\um-RestrictedErrorInfo.h = generation\um\RestrictedErrorInfo\um-RestrictedErrorInfo.h
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "roerrorapi", "roerrorapi", "{BC90C089-015A-41B0-B725-81C90698EFB0}"
+	ProjectSection(SolutionItems) = preProject
+		generation\winrt\roerrorapi\generate.rsp = generation\winrt\roerrorapi\generate.rsp
+		generation\winrt\roerrorapi\header.txt = generation\winrt\roerrorapi\header.txt
+		generation\winrt\roerrorapi\winrt-roerrorapi.h = generation\winrt\roerrorapi\winrt-roerrorapi.h
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -1897,6 +1904,7 @@ Global
 		{DF19AAEB-0817-4377-B484-5C41D69550EF} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
 		{F64D1D55-C3BE-4574-B907-5697EA6B2406} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
 		{2C10C540-6DC5-49C5-A506-25A151D2FFCC} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{BC90C089-015A-41B0-B725-81C90698EFB0} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2FE36DF8-2D9C-4F20-8787-45DC74B57461}
