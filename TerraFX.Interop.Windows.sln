@@ -1650,6 +1650,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "rometadata", "rometadata", 
 		generation\winrt\rometadata\winrt-rometadata.h = generation\winrt\rometadata\winrt-rometadata.h
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "shcore", "shcore", "{C9F4D47F-4278-45A8-B0D6-3F19B64613C9}"
+	ProjectSection(SolutionItems) = preProject
+		generation\winrt\shcore\generate.rsp = generation\winrt\shcore\generate.rsp
+		generation\winrt\shcore\header.txt = generation\winrt\shcore\header.txt
+		generation\winrt\shcore\winrt-shcore.h = generation\winrt\shcore\winrt-shcore.h
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -1913,6 +1920,7 @@ Global
 		{2C10C540-6DC5-49C5-A506-25A151D2FFCC} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{BC90C089-015A-41B0-B725-81C90698EFB0} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
 		{823696E2-78D4-4431-A7BA-D2E6A7B3B42B} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
+		{C9F4D47F-4278-45A8-B0D6-3F19B64613C9} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2FE36DF8-2D9C-4F20-8787-45DC74B57461}
