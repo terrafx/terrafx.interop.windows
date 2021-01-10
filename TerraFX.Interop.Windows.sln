@@ -1615,6 +1615,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "asyncinfo", "asyncinfo", "{
 		generation\winrt\asyncinfo\winrt-asyncinfo.h = generation\winrt\asyncinfo\winrt-asyncinfo.h
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ivectorchangedeventargs", "ivectorchangedeventargs", "{DF19AAEB-0817-4377-B484-5C41D69550EF}"
+	ProjectSection(SolutionItems) = preProject
+		generation\winrt\ivectorchangedeventargs\generate.rsp = generation\winrt\ivectorchangedeventargs\generate.rsp
+		generation\winrt\ivectorchangedeventargs\header.txt = generation\winrt\ivectorchangedeventargs\header.txt
+		generation\winrt\ivectorchangedeventargs\winrt-ivectorchangedeventargs.h = generation\winrt\ivectorchangedeventargs\winrt-ivectorchangedeventargs.h
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -1873,6 +1880,7 @@ Global
 		{278BB92B-490B-4D7B-8AE8-0728769B6FA8} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
 		{4376CDB5-DDBC-4681-B252-ABE0A7406969} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
 		{DC906520-7AE3-491F-AFC8-CD07C485E14B} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
+		{DF19AAEB-0817-4377-B484-5C41D69550EF} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2FE36DF8-2D9C-4F20-8787-45DC74B57461}
