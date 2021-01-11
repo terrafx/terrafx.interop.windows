@@ -1664,6 +1664,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WeakReference", "WeakRefere
 		generation\winrt\WeakReference\winrt-WeakReference.h = generation\winrt\WeakReference\winrt-WeakReference.h
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "roparameterizediid", "roparameterizediid", "{BAD52072-A488-45BA-AB3F-00CB382D2DC6}"
+	ProjectSection(SolutionItems) = preProject
+		generation\winrt\roparameterizediid\generate.rsp = generation\winrt\roparameterizediid\generate.rsp
+		generation\winrt\roparameterizediid\header.txt = generation\winrt\roparameterizediid\header.txt
+		generation\winrt\roparameterizediid\winrt-roparameterizediid.h = generation\winrt\roparameterizediid\winrt-roparameterizediid.h
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -1929,6 +1936,7 @@ Global
 		{823696E2-78D4-4431-A7BA-D2E6A7B3B42B} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
 		{C9F4D47F-4278-45A8-B0D6-3F19B64613C9} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
 		{37B083E1-218C-4EE2-A9CE-D9D8A62071B5} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
+		{BAD52072-A488-45BA-AB3F-00CB382D2DC6} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2FE36DF8-2D9C-4F20-8787-45DC74B57461}
