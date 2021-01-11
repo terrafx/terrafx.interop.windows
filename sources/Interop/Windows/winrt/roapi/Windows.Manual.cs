@@ -19,14 +19,13 @@ namespace TerraFX.Interop
             int hr = RoActivateInstance(activatableClassId, &pInspectable);
             if (SUCCEEDED(hr))
             {
-                if (typeof(T).GUID == typeof(IInspectable).GUID)
+                if (__uuidof<T>() == IID_IInspectable)
                 {
                     *instance = (T*) pInspectable;
                 }
                 else
                 {
-                    Guid iid = typeof(T).GUID;
-                    hr = pInspectable->QueryInterface(&iid, (void**) instance);
+                    hr = pInspectable->QueryInterface(__uuidof<T>(), (void**) instance);
                     pInspectable->Release();
                 }
             }
@@ -37,8 +36,7 @@ namespace TerraFX.Interop
         public static int GetActivationFactory<T>(IntPtr activatableClassId, T** factory)
             where T : unmanaged
         {
-            Guid iid = typeof(T).GUID;
-            return RoGetActivationFactory(activatableClassId, &iid, (void**) factory);
+            return RoGetActivationFactory(activatableClassId, __uuidof<T>(), (void**) factory);
         }
     }
 }

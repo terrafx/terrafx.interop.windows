@@ -9,45 +9,28 @@ using System.Runtime.CompilerServices;
 
 namespace TerraFX.Interop
 {
-    public unsafe partial struct Locator<Fn>
-        where Fn : unmanaged, Locator<Fn>.IRoMetaDataLocator
+    public unsafe struct _Locator
     {
         void** lpVtbl;
-        internal Fn _fn;
+        delegate*<ushort*, IRoSimpleMetaDataBuilder*, int> _fn;
 
-        public Locator(Fn fn)
+        public _Locator(delegate*<ushort*, IRoSimpleMetaDataBuilder*, int> fn)
         {
+            lpVtbl = computedVtbl;
             _fn = fn;
-            lpVtbl = vtblForType;
         }
 
-        static void** vtblForType;
-        static Locator()
+        static void** computedVtbl;
+        static _Locator()
         {
-            vtblForType = (void**) RuntimeHelpers.AllocateTypeAssociatedMemory(typeof(Locator<Fn>), sizeof(void*) * 2);
-            vtblForType[0] = (delegate* unmanaged<void***, ushort*, IRoSimpleMetaDataBuilder*, int>) &Locator.LocateThunk;
-            vtblForType[1] = (delegate* <void***, ushort*, IRoSimpleMetaDataBuilder*, int>) &Locate;
-        }
-        
-        static int Locate(void*** @this, ushort* nameElement, IRoSimpleMetaDataBuilder* metaDataDestination)
-        {
-            var locator = (Locator<Fn>*) (@this);
-            return locator->_fn.Locate(nameElement, metaDataDestination);
+            computedVtbl = (void**) RuntimeHelpers.AllocateTypeAssociatedMemory(typeof(_Locator), sizeof(void*) * 1);
+            computedVtbl[0] = (delegate* unmanaged<_Locator*, ushort*, IRoSimpleMetaDataBuilder*, int>) &Locate;
         }
 
-        public interface IRoMetaDataLocator
-        {
-            int Locate(ushort* nameElement, IRoSimpleMetaDataBuilder* metaDataDestination);
-        }
-    }
-
-    internal unsafe class Locator
-    {
         [UnmanagedCallersOnly]
-        internal static int LocateThunk(void*** @this, ushort* nameElement, IRoSimpleMetaDataBuilder* metaDataDestination)
+        static int Locate(_Locator* @this, ushort* name, IRoSimpleMetaDataBuilder* pushMetaData)
         {
-            void** locatorVtbl = *@this;
-            return ((delegate*<void***, ushort*, IRoSimpleMetaDataBuilder*, int>) locatorVtbl[1])(@this, nameElement, metaDataDestination);
+            return @this->_fn(name, pushMetaData);
         }
     }
 }

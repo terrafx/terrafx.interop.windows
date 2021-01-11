@@ -10,10 +10,9 @@ namespace TerraFX.Interop
 {
     public static unsafe partial class Windows
     {
-        public static Locator<Fn> Locator<Fn>(Fn fn)
-            where Fn : unmanaged, Locator<Fn>.IRoMetaDataLocator
+        public static _Locator Locator(delegate*<ushort*, IRoSimpleMetaDataBuilder*, int> fn)
         {
-            return new Locator<Fn>(fn);
+            return new _Locator(fn);
         }
     }
 }
