@@ -11,8 +11,8 @@ namespace TerraFX.Interop
 {
     public unsafe struct _Locator
     {
-        void** lpVtbl;
-        delegate*<ushort*, IRoSimpleMetaDataBuilder*, int> _fn;
+        private void** lpVtbl;
+        private delegate*<ushort*, IRoSimpleMetaDataBuilder*, int> _fn;
 
         public _Locator(delegate*<ushort*, IRoSimpleMetaDataBuilder*, int> fn)
         {
@@ -20,15 +20,17 @@ namespace TerraFX.Interop
             _fn = fn;
         }
 
-        static void** computedVtbl;
-        static _Locator()
+        private static void** computedVtbl = ComputeVtable();
+
+        private static void** ComputeVtable()
         {
-            computedVtbl = (void**) RuntimeHelpers.AllocateTypeAssociatedMemory(typeof(_Locator), sizeof(void*) * 1);
-            computedVtbl[0] = (delegate* unmanaged<_Locator*, ushort*, IRoSimpleMetaDataBuilder*, int>) &Locate;
+            var vtbl = (void**) RuntimeHelpers.AllocateTypeAssociatedMemory(typeof(_Locator), sizeof(void*) * 1);
+            vtbl[0] = (delegate* unmanaged<_Locator*, ushort*, IRoSimpleMetaDataBuilder*, int>) &Locate;
+            return vtbl;
         }
 
         [UnmanagedCallersOnly]
-        static int Locate(_Locator* @this, ushort* name, IRoSimpleMetaDataBuilder* pushMetaData)
+        private static int Locate(_Locator* @this, ushort* name, IRoSimpleMetaDataBuilder* pushMetaData)
         {
             return @this->_fn(name, pushMetaData);
         }
