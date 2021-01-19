@@ -1594,6 +1594,83 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WinForms", "WinForms", "{96
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TerraFX.Samples.WinForms", "samples\WinForms\TerraFX.Samples.WinForms.csproj", "{8B15071A-F2CE-4127-BD71-0C04EE24BF49}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EventToken", "EventToken", "{278BB92B-490B-4D7B-8AE8-0728769B6FA8}"
+	ProjectSection(SolutionItems) = preProject
+		generation\winrt\EventToken\generate.rsp = generation\winrt\EventToken\generate.rsp
+		generation\winrt\EventToken\header.txt = generation\winrt\EventToken\header.txt
+		generation\winrt\EventToken\winrt-EventToken.h = generation\winrt\EventToken\winrt-EventToken.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "activation", "activation", "{4376CDB5-DDBC-4681-B252-ABE0A7406969}"
+	ProjectSection(SolutionItems) = preProject
+		generation\winrt\activation\generate.rsp = generation\winrt\activation\generate.rsp
+		generation\winrt\activation\header.txt = generation\winrt\activation\header.txt
+		generation\winrt\activation\winrt-activation.h = generation\winrt\activation\winrt-activation.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "asyncinfo", "asyncinfo", "{DC906520-7AE3-491F-AFC8-CD07C485E14B}"
+	ProjectSection(SolutionItems) = preProject
+		generation\winrt\asyncinfo\generate.rsp = generation\winrt\asyncinfo\generate.rsp
+		generation\winrt\asyncinfo\header.txt = generation\winrt\asyncinfo\header.txt
+		generation\winrt\asyncinfo\winrt-asyncinfo.h = generation\winrt\asyncinfo\winrt-asyncinfo.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ivectorchangedeventargs", "ivectorchangedeventargs", "{DF19AAEB-0817-4377-B484-5C41D69550EF}"
+	ProjectSection(SolutionItems) = preProject
+		generation\winrt\ivectorchangedeventargs\generate.rsp = generation\winrt\ivectorchangedeventargs\generate.rsp
+		generation\winrt\ivectorchangedeventargs\header.txt = generation\winrt\ivectorchangedeventargs\header.txt
+		generation\winrt\ivectorchangedeventargs\winrt-ivectorchangedeventargs.h = generation\winrt\ivectorchangedeventargs\winrt-ivectorchangedeventargs.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "roapi", "roapi", "{F64D1D55-C3BE-4574-B907-5697EA6B2406}"
+	ProjectSection(SolutionItems) = preProject
+		generation\winrt\roapi\generate.rsp = generation\winrt\roapi\generate.rsp
+		generation\winrt\roapi\header.txt = generation\winrt\roapi\header.txt
+		generation\winrt\roapi\winrt-roapi.h = generation\winrt\roapi\winrt-roapi.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "RestrictedErrorInfo", "RestrictedErrorInfo", "{2C10C540-6DC5-49C5-A506-25A151D2FFCC}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\RestrictedErrorInfo\generate.rsp = generation\um\RestrictedErrorInfo\generate.rsp
+		generation\um\RestrictedErrorInfo\header.txt = generation\um\RestrictedErrorInfo\header.txt
+		generation\um\RestrictedErrorInfo\um-RestrictedErrorInfo.h = generation\um\RestrictedErrorInfo\um-RestrictedErrorInfo.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "roerrorapi", "roerrorapi", "{BC90C089-015A-41B0-B725-81C90698EFB0}"
+	ProjectSection(SolutionItems) = preProject
+		generation\winrt\roerrorapi\generate.rsp = generation\winrt\roerrorapi\generate.rsp
+		generation\winrt\roerrorapi\header.txt = generation\winrt\roerrorapi\header.txt
+		generation\winrt\roerrorapi\winrt-roerrorapi.h = generation\winrt\roerrorapi\winrt-roerrorapi.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "rometadata", "rometadata", "{823696E2-78D4-4431-A7BA-D2E6A7B3B42B}"
+	ProjectSection(SolutionItems) = preProject
+		generation\winrt\rometadata\generate.rsp = generation\winrt\rometadata\generate.rsp
+		generation\winrt\rometadata\header.txt = generation\winrt\rometadata\header.txt
+		generation\winrt\rometadata\winrt-rometadata.h = generation\winrt\rometadata\winrt-rometadata.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "shcore", "shcore", "{C9F4D47F-4278-45A8-B0D6-3F19B64613C9}"
+	ProjectSection(SolutionItems) = preProject
+		generation\winrt\shcore\generate.rsp = generation\winrt\shcore\generate.rsp
+		generation\winrt\shcore\header.txt = generation\winrt\shcore\header.txt
+		generation\winrt\shcore\winrt-shcore.h = generation\winrt\shcore\winrt-shcore.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WeakReference", "WeakReference", "{37B083E1-218C-4EE2-A9CE-D9D8A62071B5}"
+	ProjectSection(SolutionItems) = preProject
+		generation\winrt\WeakReference\generate.rsp = generation\winrt\WeakReference\generate.rsp
+		generation\winrt\WeakReference\header.txt = generation\winrt\WeakReference\header.txt
+		generation\winrt\WeakReference\winrt-WeakReference.h = generation\winrt\WeakReference\winrt-WeakReference.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "roparameterizediid", "roparameterizediid", "{BAD52072-A488-45BA-AB3F-00CB382D2DC6}"
+	ProjectSection(SolutionItems) = preProject
+		generation\winrt\roparameterizediid\generate.rsp = generation\winrt\roparameterizediid\generate.rsp
+		generation\winrt\roparameterizediid\header.txt = generation\winrt\roparameterizediid\header.txt
+		generation\winrt\roparameterizediid\winrt-roparameterizediid.h = generation\winrt\roparameterizediid\winrt-roparameterizediid.h
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -1849,6 +1926,17 @@ Global
 		{845978C6-6FF3-4CA7-B0D3-EB4A0FF82359} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{96A9FCCC-D74F-47EA-9530-CF0C58590A8A} = {1054E499-981F-4EFA-855B-EC6FA604C6FB}
 		{8B15071A-F2CE-4127-BD71-0C04EE24BF49} = {96A9FCCC-D74F-47EA-9530-CF0C58590A8A}
+		{278BB92B-490B-4D7B-8AE8-0728769B6FA8} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
+		{4376CDB5-DDBC-4681-B252-ABE0A7406969} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
+		{DC906520-7AE3-491F-AFC8-CD07C485E14B} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
+		{DF19AAEB-0817-4377-B484-5C41D69550EF} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
+		{F64D1D55-C3BE-4574-B907-5697EA6B2406} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
+		{2C10C540-6DC5-49C5-A506-25A151D2FFCC} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{BC90C089-015A-41B0-B725-81C90698EFB0} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
+		{823696E2-78D4-4431-A7BA-D2E6A7B3B42B} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
+		{C9F4D47F-4278-45A8-B0D6-3F19B64613C9} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
+		{37B083E1-218C-4EE2-A9CE-D9D8A62071B5} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
+		{BAD52072-A488-45BA-AB3F-00CB382D2DC6} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2FE36DF8-2D9C-4F20-8787-45DC74B57461}

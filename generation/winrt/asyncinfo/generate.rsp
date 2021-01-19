@@ -1,0 +1,12 @@
+@../../settings.rsp
+@../../remap.rsp
+--define-macro
+_HIDE_GLOBAL_ASYNC_STATUS
+--file
+winrt-asyncinfo.h
+--output
+../../../sources/Interop/Windows/winrt/asyncinfo
+--test-output
+../../../tests/Interop/Windows/winrt/asyncinfo
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/winrt/asyncinfo.h
