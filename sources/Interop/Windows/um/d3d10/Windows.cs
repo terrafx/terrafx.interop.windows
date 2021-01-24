@@ -735,12 +735,6 @@ namespace TerraFX.Interop
         [NativeTypeName("#define D3D_SPEC_VERSION ( 1.050005 )")]
         public const double D3D_SPEC_VERSION = (1.050005);
 
-        [NativeTypeName("#define D3D10_1_IA_VERTEX_INPUT_STRUCTURE_ELEMENT_COUNT D3D10_IA_VERTEX_INPUT_STRUCTURE_ELEMENT_COUNT")]
-        public const int D3D10_1_IA_VERTEX_INPUT_STRUCTURE_ELEMENT_COUNT = (16);
-
-        [NativeTypeName("#define D3D10_1_IA_VERTEX_INPUT_RESOURCE_SLOT_COUNT D3D10_IA_VERTEX_INPUT_STRUCTURE_ELEMENT_COUNT")]
-        public const int D3D10_1_IA_VERTEX_INPUT_RESOURCE_SLOT_COUNT = (16);
-
         [NativeTypeName("#define _FACD3D10 ( 0x879 )")]
         public const int _FACD3D10 = (0x879);
 
