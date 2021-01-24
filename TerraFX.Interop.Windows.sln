@@ -1692,6 +1692,20 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "d3d10_1", "d3d10_1", "{B1CD
 		generation\um\d3d10_1\um-d3d10_1.h = generation\um\d3d10_1\um-d3d10_1.h
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "d3d10shader", "d3d10shader", "{24B7FE33-CD0F-4222-96BF-19716810BBF4}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\d3d10shader\generate.rsp = generation\um\d3d10shader\generate.rsp
+		generation\um\d3d10shader\header.txt = generation\um\d3d10shader\header.txt
+		generation\um\d3d10shader\um-d3d10shader.h = generation\um\d3d10shader\um-d3d10shader.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "d3d10effect", "d3d10effect", "{3E969E6F-7198-4F83-B0C5-1936D6379E01}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\d3d10effect\generate.rsp = generation\um\d3d10effect\generate.rsp
+		generation\um\d3d10effect\header.txt = generation\um\d3d10effect\header.txt
+		generation\um\d3d10effect\um-d3d10effect.h = generation\um\d3d10effect\um-d3d10effect.h
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -1961,6 +1975,8 @@ Global
 		{BA1D5849-A003-473E-A47E-6E4D1B0898E7} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{60001564-602B-48AC-87F9-EF9472658DBA} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{B1CD89D3-AEAD-4A49-9F13-0B2ADA5E2C31} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{24B7FE33-CD0F-4222-96BF-19716810BBF4} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{3E969E6F-7198-4F83-B0C5-1936D6379E01} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2FE36DF8-2D9C-4F20-8787-45DC74B57461}
