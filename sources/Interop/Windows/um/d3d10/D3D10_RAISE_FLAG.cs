@@ -3,8 +3,11 @@
 // Ported from um/d3d10.h in the Windows SDK for Windows 10.0.19041.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System;
+
 namespace TerraFX.Interop
 {
+    [Flags]
     public enum D3D10_RAISE_FLAG
     {
         D3D10_RAISE_FLAG_DRIVER_INTERNAL_ERROR = 0x1,

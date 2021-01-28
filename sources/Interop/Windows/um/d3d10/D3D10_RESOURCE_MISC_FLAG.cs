@@ -3,8 +3,11 @@
 // Ported from um/d3d10.h in the Windows SDK for Windows 10.0.19041.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System;
+
 namespace TerraFX.Interop
 {
+    [Flags]
     public enum D3D10_RESOURCE_MISC_FLAG
     {
         D3D10_RESOURCE_MISC_GENERATE_MIPS = 0x1,

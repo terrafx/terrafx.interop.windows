@@ -10,7 +10,7 @@ namespace TerraFX.Interop
 {
     public partial struct D3D10_TEXTURE2D_DESC
     {
-        public D3D10_TEXTURE2D_DESC(DXGI_FORMAT format, [NativeTypeName("UINT")] uint width, [NativeTypeName("UINT")] uint height, [NativeTypeName("UINT")] uint arraySize = 1, [NativeTypeName("UINT")] uint mipLevels = 0, uint bindFlags = (uint) D3D10_BIND_SHADER_RESOURCE, D3D10_USAGE usage = D3D10_USAGE_DEFAULT, [NativeTypeName("UINT")] uint cpuaccessFlags = 0, [NativeTypeName("UINT")] uint sampleCount = 1, [NativeTypeName("UINT")] uint sampleQuality = 0, [NativeTypeName("UINT")] uint miscFlags = 0)
+        public D3D10_TEXTURE2D_DESC(DXGI_FORMAT format, [NativeTypeName("UINT")] uint width, [NativeTypeName("UINT")] uint height, [NativeTypeName("UINT")] uint arraySize = 1, [NativeTypeName("UINT")] uint mipLevels = 0, uint bindFlags = (uint)D3D10_BIND_SHADER_RESOURCE, D3D10_USAGE usage = D3D10_USAGE_DEFAULT, [NativeTypeName("UINT")] uint cpuaccessFlags = 0, [NativeTypeName("UINT")] uint sampleCount = 1, [NativeTypeName("UINT")] uint sampleQuality = 0, [NativeTypeName("UINT")] uint miscFlags = 0)
         {
             Width = width;
             Height = height;

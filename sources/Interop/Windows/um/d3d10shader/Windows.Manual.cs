@@ -7,7 +7,7 @@ namespace TerraFX.Interop
 {
     public static unsafe partial class Windows
     {
-        public static int D3D10_TX_VERSION(int _Major,int _Minor)
+        public static int D3D10_TX_VERSION(int _Major, int _Minor)
         {
             return (('T' << 24) | ('X' << 16) | ((_Major) << 8) | (_Minor));
         }
