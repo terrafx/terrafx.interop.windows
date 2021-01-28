@@ -632,6 +632,7 @@ tagCapturedMetadataExposureCompensation=CapturedMetadataExposureCompensation
 tagCapturedMetadataISOGains=CapturedMetadataISOGains
 tagCapturedMetadataWhiteBalanceGains=CapturedMetadataWhiteBalanceGains
 tagCASCODE=CASCODE
+tagCATEGORYINFO=CATEGORYINFO
 tagCAUB=CAUB
 tagCAUH=CAUH
 tagCAUI=CAUI
