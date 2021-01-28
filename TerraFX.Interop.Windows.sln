@@ -1671,6 +1671,55 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "roparameterizediid", "ropar
 		generation\winrt\roparameterizediid\winrt-roparameterizediid.h = generation\winrt\roparameterizediid\winrt-roparameterizediid.h
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "d3d10", "d3d10", "{BA1D5849-A003-473E-A47E-6E4D1B0898E7}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\d3d10\generate.rsp = generation\um\d3d10\generate.rsp
+		generation\um\d3d10\header.txt = generation\um\d3d10\header.txt
+		generation\um\d3d10\um-d3d10.h = generation\um\d3d10\um-d3d10.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "d3d10misc", "d3d10misc", "{60001564-602B-48AC-87F9-EF9472658DBA}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\d3d10misc\generate.rsp = generation\um\d3d10misc\generate.rsp
+		generation\um\d3d10misc\header.txt = generation\um\d3d10misc\header.txt
+		generation\um\d3d10misc\um-d3d10misc.h = generation\um\d3d10misc\um-d3d10misc.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "d3d10_1", "d3d10_1", "{B1CD89D3-AEAD-4A49-9F13-0B2ADA5E2C31}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\d3d10_1\generate.rsp = generation\um\d3d10_1\generate.rsp
+		generation\um\d3d10_1\header.txt = generation\um\d3d10_1\header.txt
+		generation\um\d3d10_1\um-d3d10_1.h = generation\um\d3d10_1\um-d3d10_1.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "d3d10shader", "d3d10shader", "{24B7FE33-CD0F-4222-96BF-19716810BBF4}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\d3d10shader\generate.rsp = generation\um\d3d10shader\generate.rsp
+		generation\um\d3d10shader\header.txt = generation\um\d3d10shader\header.txt
+		generation\um\d3d10shader\um-d3d10shader.h = generation\um\d3d10shader\um-d3d10shader.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "d3d10effect", "d3d10effect", "{3E969E6F-7198-4F83-B0C5-1936D6379E01}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\d3d10effect\generate.rsp = generation\um\d3d10effect\generate.rsp
+		generation\um\d3d10effect\header.txt = generation\um\d3d10effect\header.txt
+		generation\um\d3d10effect\um-d3d10effect.h = generation\um\d3d10effect\um-d3d10effect.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "d3d10sdklayers", "d3d10sdklayers", "{8BDC41A2-54B8-431D-B049-538F48D5E14C}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\d3d10sdklayers\generate.rsp = generation\um\d3d10sdklayers\generate.rsp
+		generation\um\d3d10sdklayers\header.txt = generation\um\d3d10sdklayers\header.txt
+		generation\um\d3d10sdklayers\um-d3d10sdklayers.h = generation\um\d3d10sdklayers\um-d3d10sdklayers.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "d3d10_1shader", "d3d10_1shader", "{22B8D2FA-95B4-4A27-A08C-8168FF8B81D3}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\d3d10_1shader\generate.rsp = generation\um\d3d10_1shader\generate.rsp
+		generation\um\d3d10_1shader\header.txt = generation\um\d3d10_1shader\header.txt
+		generation\um\d3d10_1shader\um-d3d10_1shader.h = generation\um\d3d10_1shader\um-d3d10_1shader.h
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -1937,6 +1986,13 @@ Global
 		{C9F4D47F-4278-45A8-B0D6-3F19B64613C9} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
 		{37B083E1-218C-4EE2-A9CE-D9D8A62071B5} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
 		{BAD52072-A488-45BA-AB3F-00CB382D2DC6} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
+		{BA1D5849-A003-473E-A47E-6E4D1B0898E7} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{60001564-602B-48AC-87F9-EF9472658DBA} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{B1CD89D3-AEAD-4A49-9F13-0B2ADA5E2C31} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{24B7FE33-CD0F-4222-96BF-19716810BBF4} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{3E969E6F-7198-4F83-B0C5-1936D6379E01} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{8BDC41A2-54B8-431D-B049-538F48D5E14C} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{22B8D2FA-95B4-4A27-A08C-8168FF8B81D3} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2FE36DF8-2D9C-4F20-8787-45DC74B57461}
