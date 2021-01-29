@@ -9,10 +9,10 @@ using static TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="__uuidof{T}"/> API.</summary>
+    /// <summary>Provides validation of the <see cref="__uuidof{T}()"/> API.</summary>
     public static unsafe class __uuidofTests
     {
-        /// <summary>Validates the <see cref="__uuidof{T}" /> pointer conversion.</summary>
+        /// <summary>Validates the <see cref="__uuidof{T}()" /> pointer conversion.</summary>
         [Test]
         public static void PointerTest()
         {
@@ -25,7 +25,7 @@ namespace TerraFX.Interop.UnitTests
             Assert.That(guid, Is.EqualTo(IID_IInspectable));
         }
 
-        /// <summary>Validates the <see cref="__uuidof{T}" /> <see cref="Guid"/> conversion.</summary>
+        /// <summary>Validates the <see cref="__uuidof{T}()" /> <see cref="Guid"/> conversion.</summary>
         [Test]
         public static void ValueTest()
         {
