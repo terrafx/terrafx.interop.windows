@@ -1,5 +1,11 @@
 @../../settings.rsp
 @../../remap.rsp
+--exclude
+IID_ITextStoreACP
+IID_ITextStoreAnchor
+IID_IAnchor
+IID_ITextStoreAnchorSink
+IID_ITextStoreACPSink
 --file
 um-MSAAText.h
 --output

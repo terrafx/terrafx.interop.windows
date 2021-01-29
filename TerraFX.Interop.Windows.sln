@@ -1776,6 +1776,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MsCtfMonitorApi", "MsCtfMon
 		generation\um\MsCtfMonitorApi\um-MsCtfMonitorApi.h = generation\um\MsCtfMonitorApi\um-MsCtfMonitorApi.h
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "InputScope", "InputScope", "{A40DA57D-3CE9-4CAA-B94F-62BEA1704A4F}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\InputScope\generate.rsp = generation\um\InputScope\generate.rsp
+		generation\um\InputScope\header.txt = generation\um\InputScope\header.txt
+		generation\um\InputScope\um-InputScope.h = generation\um\InputScope\um-InputScope.h
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -2057,6 +2064,7 @@ Global
 		{945CF661-EA84-4121-A6BD-094252A5A825} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{93BBD7BA-3E02-4691-BFE6-C15B9793D174} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{ED73B6ED-F05F-49B9-9E01-0A27AEAA69F5} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{A40DA57D-3CE9-4CAA-B94F-62BEA1704A4F} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2FE36DF8-2D9C-4F20-8787-45DC74B57461}
