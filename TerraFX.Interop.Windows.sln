@@ -1748,6 +1748,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "msctf", "msctf", "{94773A90
 		generation\um\msctf\um-msctf.h = generation\um\msctf\um-msctf.h
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ctffunc", "ctffunc", "{E135AD2D-F42B-4D3A-8BD2-A2BB23451F02}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\ctffunc\generate.rsp = generation\um\ctffunc\generate.rsp
+		generation\um\ctffunc\header.txt = generation\um\ctffunc\header.txt
+		generation\um\ctffunc\um-ctffunc.h = generation\um\ctffunc\um-ctffunc.h
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -2025,6 +2032,7 @@ Global
 		{A45CD075-761F-4703-8926-D10653692F82} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{631A693A-1FC5-4AB0-B46E-797A01BC8BF3} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{94773A90-4F44-44DC-A83D-8C5F1BDDE3BC} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{E135AD2D-F42B-4D3A-8BD2-A2BB23451F02} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2FE36DF8-2D9C-4F20-8787-45DC74B57461}
