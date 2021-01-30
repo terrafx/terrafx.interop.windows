@@ -1804,6 +1804,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "imapi2", "imapi2", "{565AEC
 		generation\um\imapi2\um-imapi2.h = generation\um\imapi2\um-imapi2.h
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "imapi2fs", "imapi2fs", "{56D9CA05-6CF6-458A-AB1D-C85FBC239634}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\imapi2fs\generate.rsp = generation\um\imapi2fs\generate.rsp
+		generation\um\imapi2fs\header.txt = generation\um\imapi2fs\header.txt
+		generation\um\imapi2fs\um-imapi2fs.h = generation\um\imapi2fs\um-imapi2fs.h
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -2089,6 +2096,7 @@ Global
 		{BB1D1950-8068-4353-A482-0A2C60ED4644} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{BC069863-A717-4C9E-8D98-ACF9239E903A} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{565AEC0D-94C9-46CB-8947-71E02C3C128D} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{56D9CA05-6CF6-458A-AB1D-C85FBC239634} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2FE36DF8-2D9C-4F20-8787-45DC74B57461}
