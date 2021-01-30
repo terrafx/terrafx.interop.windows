@@ -2331,6 +2331,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "gdiplusmem", "gdiplusmem", 
 		generation\um\gdiplusmem\um-gdiplusmem.h = generation\um\gdiplusmem\um-gdiplusmem.h
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "gdiplusenums", "gdiplusenums", "{F4F32736-FC1C-45CE-99A6-2317ED5685C7}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\gdiplusenums\generate.rsp = generation\um\gdiplusenums\generate.rsp
+		generation\um\gdiplusenums\header.txt = generation\um\gdiplusenums\header.txt
+		generation\um\gdiplusenums\um-gdiplusenums.h = generation\um\gdiplusenums\um-gdiplusenums.h
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -2692,6 +2699,7 @@ Global
 		{AEF32986-D77E-4FBC-93AB-C11B1226A427} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{3663C9FD-E555-44F4-87BD-D912A3554FAE} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{0ECE69E8-BA2B-4A71-B2F5-62F9265C0CD8} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{F4F32736-FC1C-45CE-99A6-2317ED5685C7} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2FE36DF8-2D9C-4F20-8787-45DC74B57461}

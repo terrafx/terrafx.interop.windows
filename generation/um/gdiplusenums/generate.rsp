@@ -1,0 +1,20 @@
+@../../settings.rsp
+@../../remap.rsp
+--exclude
+GDIPVER
+GDIP_EMFPLUS_RECORD_TO_WMF
+GDIP_IS_WMF_RECORDTYPE
+GDIP_WMF_RECORD_TO_EMFPLUS
+--file
+um-gdiplusenums.h
+--output
+../../../sources/Interop/Windows/um/gdiplusenums
+--test-output
+../../../tests/Interop/Windows/um/gdiplusenums
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/gdiplus.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/gdiplusenums.h
+--with-attribute
+EmfToWmfBitsFlags=Flags
+PathPointType=Flags
+StringFormatFlags=Flags
