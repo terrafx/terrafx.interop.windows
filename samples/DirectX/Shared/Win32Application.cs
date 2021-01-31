@@ -11,6 +11,7 @@ using System.Runtime.InteropServices;
 using TerraFX.Interop;
 using static TerraFX.Interop.DXGI_FORMAT;
 using static TerraFX.Interop.Windows;
+using Size = System.Drawing.Size;
 
 namespace TerraFX.Samples.DirectX
 {

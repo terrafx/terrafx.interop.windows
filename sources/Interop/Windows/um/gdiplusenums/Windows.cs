@@ -12,7 +12,7 @@ namespace TerraFX.Interop
         [return: NativeTypeName("BOOL")]
         public static int ObjectTypeIsValid(ObjectType type)
         {
-            return ((type >= (int)(ObjectTypeMin)) && (type <= (int)(ObjectTypeMax))) ? 1 : 0;
+            return ((type >= (ObjectTypeMin)) && (type <= (ObjectTypeMax))) ? 1 : 0;
         }
 
         [NativeTypeName("#define GDIP_EMFPLUS_RECORD_BASE 0x00004000")]

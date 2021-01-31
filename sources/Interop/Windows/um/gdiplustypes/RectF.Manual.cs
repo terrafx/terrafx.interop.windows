@@ -1,0 +1,31 @@
+// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+
+// Ported from um/gdiplustypes.h in the Windows SDK for Windows 10.0.19041.0
+// Original source is Copyright © Microsoft. All rights reserved.
+
+using System.Runtime.CompilerServices;
+using static TerraFX.Interop.Windows;
+
+namespace TerraFX.Interop
+{
+    public partial struct RectF
+    {
+        [return: NativeTypeName("Gdiplus::RectF *")]
+        public unsafe RectF* Clone()
+        {
+            byte* data = (byte*)_new((nuint)sizeof(RectF));
+            Unsafe.CopyBlockUnaligned(ref *data, ref Unsafe.As<RectF, byte>(ref this), (uint)sizeof(RectF));
+            return (RectF*)data;
+        }
+
+        [return: NativeTypeName("BOOL")]
+        public unsafe int Intersect([NativeTypeName("const Gdiplus::RectF &")] RectF* rect)
+        {
+            fixed (RectF* @this = &this)
+            {
+                return Intersect(@this, @this, rect);
+            }
+        }
+
+    }
+}
