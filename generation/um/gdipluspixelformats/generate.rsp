@@ -1,0 +1,15 @@
+@../../settings.rsp
+@../../remap.rsp
+--define-macro
+GDIPVER=0x0110
+--file
+um-gdipluspixelformats.h
+--output
+../../../sources/Interop/Windows/um/gdipluspixelformats
+--test-output
+../../../tests/Interop/Windows/um/gdipluspixelformats
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/gdiplus.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/gdipluspixelformats.h
+--with-attribute
+PaletteFlags=Flags
