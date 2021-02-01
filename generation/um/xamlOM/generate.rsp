@@ -1,6 +1,7 @@
 @../../settings.rsp
 @../../remap.rsp
 --exclude
+E_NOTFOUND
 InitializeXamlDiagnostic
 --file
 um-xamlOM.h
