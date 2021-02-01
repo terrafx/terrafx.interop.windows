@@ -10,7 +10,7 @@ namespace TerraFX.Interop
         [return: NativeTypeName("UINT")]
         public static uint GetPixelFormatSize([NativeTypeName("Gdiplus::PixelFormat")] int pixfmt)
         {
-            return (pixfmt >> 8) & 0xff;
+            return (uint)((pixfmt >> 8) & 0xff);
         }
 
         [return: NativeTypeName("BOOL")]
