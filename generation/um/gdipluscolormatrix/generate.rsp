@@ -1,0 +1,15 @@
+@../../settings.rsp
+@../../remap.rsp
+--define-macro
+GDIPVER=0x0110
+--file
+um-gdipluscolormatrix.h
+--output
+../../../sources/Interop/Windows/um/gdipluscolormatrix
+--test-output
+../../../tests/Interop/Windows/um/gdipluscolormatrix
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/gdiplus.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/gdipluscolormatrix.h
+--with-attribute
+ColorMatrixFlags=Flags
