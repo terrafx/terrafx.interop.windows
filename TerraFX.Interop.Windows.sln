@@ -2366,6 +2366,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "gdipluscolor", "gdipluscolo
 		generation\um\gdipluscolor\um-gdipluscolor.h = generation\um\gdipluscolor\um-gdipluscolor.h
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "gdiplusmetaheader", "gdiplusmetaheader", "{BFF9BDD8-B0FB-4789-8FAA-F3FE2F41B464}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\gdiplusmetaheader\generate.rsp = generation\um\gdiplusmetaheader\generate.rsp
+		generation\um\gdiplusmetaheader\header.txt = generation\um\gdiplusmetaheader\header.txt
+		generation\um\gdiplusmetaheader\um-gdiplusmetaheader.h = generation\um\gdiplusmetaheader\um-gdiplusmetaheader.h
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -2732,6 +2739,7 @@ Global
 		{C31FC2EE-F3D2-4FE8-A1ED-944BB214D8B2} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{FFA7B616-8364-420A-8646-57A701C6669D} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{169DCE21-CA7A-44C9-BEEF-4F93AC80C7A5} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{BFF9BDD8-B0FB-4789-8FAA-F3FE2F41B464} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2FE36DF8-2D9C-4F20-8787-45DC74B57461}
