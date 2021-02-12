@@ -1,22 +1,13 @@
---additional
--m32
---config
-multi-file
+@../../settings.rsp
+@../../remap.rsp
+--exclude
+MAKE_DXGI_HRESULT
+MAKE_DXGI_STATUS
 --file
 shared-dxgitype.h
---headerFile
-header.txt
---include-directory
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/shared
---include-directory
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um
---methodClassName
-DXGI
---namespace
-TerraFX.Interop
 --output
-../../../sources/Interop/DXGI/shared/dxgitype
---remap
-_D3DCOLORVALUE=DXGI_RGBA
+../../../sources/Interop/Windows/shared/dxgitype
+--test-output
+../../../tests/Interop/Windows/shared/dxgitype
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/shared/dxgitype.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/shared/dxgitype.h

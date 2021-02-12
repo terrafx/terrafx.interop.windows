@@ -1,29 +1,28 @@
---additional
--m32
---config
-multi-file
+@../../settings.rsp
+@../../remap.rsp
 --file
 um-heapapi.h
---headerFile
-header.txt
---include-directory
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/shared
---include-directory
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um
---methodClassName
-Kernel32
---namespace
-TerraFX.Interop
 --output
-../../../sources/Interop/Kernel32/um/heapapi
---remap
-_HEAP_INFORMATION_CLASS=HEAP_INFORMATION_CLASS
-_HEAP_SUMMARY=HEAP_SUMMARY
-_PROCESS_HEAP_ENTRY=PROCESS_HEAP_ENTRY
-HANDLE=IntPtr
-PSIZE_T=UIntPtr*
-SIZE_T=UIntPtr
+../../../sources/Interop/Windows/um/heapapi
+--test-output
+../../../tests/Interop/Windows/um/heapapi
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um/heapapi.h
---with-callconv
-*=Winapi
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/heapapi.h
+--with-librarypath
+*=kernel32
+--with-setlasterror
+GetProcessHeap
+GetProcessHeaps
+HeapAlloc
+HeapCompact
+HeapCreate
+HeapDestroy
+HeapFree
+HeapLock
+HeapQueryInformation
+HeapReAlloc
+HeapSetInformation
+HeapSize
+HeapUnlock
+HeapValidate
+HeapWalk

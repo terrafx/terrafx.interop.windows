@@ -1,25 +1,35 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-using System.Runtime.InteropServices;
+// Ported from shared/minwindef.h in the Windows SDK for Windows 10.0.19041.0
+// Original source is Copyright © Microsoft. All rights reserved.
+
 using NUnit.Framework;
+using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="FILETIME" /> struct.</summary>
-    public static class FILETIMETests
+    public static unsafe class FILETIMETests
     {
-        /// <summary>Validates that the layout of the <see cref="FILETIME" /> struct is <see cref="LayoutKind.Sequential" />.</summary>
+        /// <summary>Validates that the <see cref="FILETIME" /> struct is blittable.</summary>
+        [Test]
+        public static void IsBlittableTest()
+        {
+            Assert.That(Marshal.SizeOf<FILETIME>(), Is.EqualTo(sizeof(FILETIME)));
+        }
+
+        /// <summary>Validates that the <see cref="FILETIME" /> struct has the right <see cref="LayoutKind" />.</summary>
         [Test]
         public static void IsLayoutSequentialTest()
         {
             Assert.That(typeof(FILETIME).IsLayoutSequential, Is.True);
         }
 
-        /// <summary>Validates that the size of the <see cref="FILETIME" /> struct is correct.</summary>
+        /// <summary>Validates that the <see cref="FILETIME" /> struct has the correct size.</summary>
         [Test]
         public static void SizeOfTest()
         {
-            Assert.That(Marshal.SizeOf<FILETIME>(), Is.EqualTo(8));
+            Assert.That(sizeof(FILETIME), Is.EqualTo(8));
         }
     }
 }

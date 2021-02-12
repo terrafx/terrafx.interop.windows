@@ -1,31 +1,12 @@
---additional
--m32
---config
-multi-file
---exclude
-_HIDP_PREPARSED_DATA
+@../../settings.rsp
+@../../remap.rsp
 --file
 shared-hidsdi.h
---headerFile
-header.txt
---include-directory
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/shared
---include-directory
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um
---libraryPath
-hid
---methodClassName
-Hid
---namespace
-TerraFX.Interop
 --output
-../../../sources/Interop/Hid/shared/hidsdi
---remap
-_GUID=Guid
-_HIDD_ATTRIBUTES=HIDD_ATTRIBUTES
-_HIDD_CONFIGURATION=HIDD_CONFIGURATION
-_HIDP_PREPARSED_DATA=HIDP_PREPARSED_DATA
-HANDLE=IntPtr
-PHIDP_PREPARSED_DATA=IntPtr
+../../../sources/Interop/Windows/shared/hidsdi
+--test-output
+../../../tests/Interop/Windows/shared/hidsdi
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/shared/hidsdi.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/shared/hidsdi.h
+--with-librarypath
+*=hid

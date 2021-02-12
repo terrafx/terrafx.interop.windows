@@ -5,7 +5,11 @@
   <PropertyGroup>
     <NoWarn>1573;1591;$(NoWarn)</NoWarn>
     <RootNamespace>TerraFX.Interop</RootNamespace>
-    <TargetFrameworks>netcoreapp3.1;netcoreapp5.0</TargetFrameworks>
+    <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="um\Mferror\" />
+  </ItemGroup>
 
 </Project>

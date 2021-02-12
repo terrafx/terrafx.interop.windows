@@ -1,0 +1,12 @@
+@../../settings.rsp
+@../../remap.rsp
+--file
+other-mssign32.h
+--output
+../../../sources/Interop/Windows/other/mssign32
+--test-output
+../../../tests/Interop/Windows/other/mssign32
+--traverse
+.\mssign32.h
+--with-librarypath
+*=mssign32

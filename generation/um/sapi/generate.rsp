@@ -1,0 +1,12 @@
+@../../settings.rsp
+@../../remap.rsp
+--exclude
+SPFEI
+--file
+um-sapi.h
+--output
+../../../sources/Interop/Windows/um/sapi
+--test-output
+../../../tests/Interop/Windows/um/sapi
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/sapi.h

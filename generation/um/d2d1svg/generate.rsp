@@ -1,90 +1,16 @@
---additional
--m32
---config
-multi-file
+@../../settings.rsp
+@../../remap.rsp
 --exclude
-IID_ID2D1SvgAttribute
-IID_ID2D1SvgDocument
-IID_ID2D1SvgElement
-IID_ID2D1SvgPaint
-IID_ID2D1SvgPathData
-IID_ID2D1SvgPointCollection
-IID_ID2D1SvgStrokeDashArray
-HRESULT CreatePaint(D2D1_SVG_PAINT_TYPE, const D2D1_COLOR_F &, PCWSTR, ID2D1SvgPaint **)
-HRESULT GetAttributeValue(PCWSTR, D2D1_COLOR_F *)
-HRESULT GetAttributeValue(PCWSTR, D2D1_EXTEND_MODE *)
-HRESULT GetAttributeValue(PCWSTR, D2D1_FILL_MODE *)
-HRESULT GetAttributeValue(PCWSTR, D2D1_MATRIX_3X2_F *)
-HRESULT GetAttributeValue(PCWSTR, D2D1_SVG_DISPLAY *)
-HRESULT GetAttributeValue(PCWSTR, D2D1_SVG_LENGTH *)
-HRESULT GetAttributeValue(PCWSTR, D2D1_SVG_LINE_CAP *)
-HRESULT GetAttributeValue(PCWSTR, D2D1_SVG_LINE_JOIN *)
-HRESULT GetAttributeValue(PCWSTR, D2D1_SVG_OVERFLOW *)
-HRESULT GetAttributeValue(PCWSTR, D2D1_SVG_PRESERVE_ASPECT_RATIO *)
-HRESULT GetAttributeValue(PCWSTR, D2D1_SVG_UNIT_TYPE *)
-HRESULT GetAttributeValue(PCWSTR, D2D1_SVG_VISIBILITY *)
-HRESULT GetAttributeValue(PCWSTR, FLOAT *)
-HRESULT GetAttributeValue(PCWSTR, ID2D1SvgAttribute **)
-HRESULT GetAttributeValue(PCWSTR, ID2D1SvgPaint **)
-HRESULT GetAttributeValue(PCWSTR, ID2D1SvgPathData **)
-HRESULT GetAttributeValue(PCWSTR, ID2D1SvgPointCollection **)
-HRESULT GetAttributeValue(PCWSTR, ID2D1SvgStrokeDashArray **)
-HRESULT SetAttributeValue(PCWSTR, const D2D1_COLOR_F &)
-HRESULT SetAttributeValue(PCWSTR, const D2D1_MATRIX_3X2_F &)
-HRESULT SetAttributeValue(PCWSTR, const D2D1_SVG_LENGTH &)
-HRESULT SetAttributeValue(PCWSTR, const D2D1_SVG_PRESERVE_ASPECT_RATIO &)
-HRESULT SetAttributeValue(PCWSTR, D2D1_EXTEND_MODE)
-HRESULT SetAttributeValue(PCWSTR, D2D1_FILL_MODE)
-HRESULT SetAttributeValue(PCWSTR, D2D1_SVG_DISPLAY)
-HRESULT SetAttributeValue(PCWSTR, D2D1_SVG_LINE_CAP)
-HRESULT SetAttributeValue(PCWSTR, D2D1_SVG_LINE_JOIN)
-HRESULT SetAttributeValue(PCWSTR, D2D1_SVG_OVERFLOW)
-HRESULT SetAttributeValue(PCWSTR, D2D1_SVG_UNIT_TYPE)
-HRESULT SetAttributeValue(PCWSTR, D2D1_SVG_VISIBILITY)
-HRESULT SetAttributeValue(PCWSTR, FLOAT)
-HRESULT SetColor(const D2D1_COLOR_F &)
+ID2D1SvgElement.GetAttributeValue(PCWSTR, ID2D1SvgAttribute **):HRESULT nothrow
+ID2D1SvgElement.GetAttributeValue(PCWSTR, ID2D1SvgPaint **):HRESULT nothrow
+ID2D1SvgElement.GetAttributeValue(PCWSTR, ID2D1SvgPathData **):HRESULT nothrow
+ID2D1SvgElement.GetAttributeValue(PCWSTR, ID2D1SvgPointCollection **):HRESULT nothrow
+ID2D1SvgElement.GetAttributeValue(PCWSTR, ID2D1SvgStrokeDashArray **):HRESULT nothrow
 --file
 um-d2d1svg.h
---headerFile
-header.txt
---include-directory
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/shared
---include-directory
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um
---methodClassName
-D2D1
---namespace
-TerraFX.Interop
 --output
-../../../sources/Interop/D2D1/um/d2d1svg
---remap
-_D3DCOLORVALUE=DXGI_RGBA
-_GUID=Guid
+../../../sources/Interop/Windows/um/d2d1svg
+--test-output
+../../../tests/Interop/Windows/um/d2d1svg
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um/d2d1svg.h
---with-attribute
-ID2D1SvgAttribute=Guid("C9CDB0DD-F8C9-4E70-B7C2-301C80292C5E")
-ID2D1SvgDocument=Guid("86B88E4D-AFA4-4D7B-88E4-68A51C4A0AEC")
-ID2D1SvgElement=Guid("AC7B67A6-183E-49C1-A823-0EBE40B0DB29")
-ID2D1SvgPaint=Guid("D59BAB0A-68A2-455B-A5DC-9EB2854E2490")
-ID2D1SvgPathData=Guid("C095E4F4-BB98-43D6-9745-4D1B84EC9888")
-ID2D1SvgPointCollection=Guid("9DBE4C0D-3572-4DD9-9825-5530813BB712")
-ID2D1SvgStrokeDashArray=Guid("F1C0CA52-92A3-4F00-B4CE-F35691EFD9D9")
---with-type
-D2D1_SVG_ASPECT_ALIGN=uint
-D2D1_SVG_ASPECT_SCALING=uint
-D2D1_SVG_ATTRIBUTE_POD_TYPE=uint
-D2D1_SVG_ATTRIBUTE_STRING_TYPE=uint
-D2D1_SVG_DISPLAY=uint
-D2D1_SVG_LENGTH_UNITS=uint
-D2D1_SVG_LINE_CAP=uint
-D2D1_SVG_LINE_JOIN=uint
-D2D1_SVG_OVERFLOW=uint
-D2D1_SVG_PAINT_TYPE=uint
-D2D1_SVG_PATH_COMMAND=uint
-D2D1_SVG_UNIT_TYPE=uint
-D2D1_SVG_VISIBILITY=uint
---with-using
-D2D1_SVG_LINE_CAP=static TerraFX.Interop.D2D1_CAP_STYLE
-D2D1_SVG_LINE_JOIN=static TerraFX.Interop.D2D1_LINE_JOIN
-ID2D1SvgElement=static TerraFX.Interop.D2D1_SVG_ATTRIBUTE_POD_TYPE
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/d2d1svg.h

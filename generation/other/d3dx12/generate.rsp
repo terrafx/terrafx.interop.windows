@@ -1,0 +1,10 @@
+@../../settings.rsp
+@../../remap.rsp
+--file
+other-d3dx12.h
+--output
+../../../sources/Interop/Windows/other/d3dx12
+--test-output
+../../../tests/Interop/Windows/other/d3dx12
+--traverse
+d3dx12.h

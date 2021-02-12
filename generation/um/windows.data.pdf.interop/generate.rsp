@@ -1,0 +1,14 @@
+@../../settings.rsp
+@../../remap.rsp
+--exclude
+PdfRenderParams(const D2D_RECT_F &, UINT32, UINT32, const D2D_COLOR_F &, BOOLEAN):PDF_RENDER_PARAMS
+--file
+um-windows.data.pdf.interop.h
+--output
+../../../sources/Interop/Windows/um/windows.data.pdf.interop
+--test-output
+../../../tests/Interop/Windows/um/windows.data.pdf.interop
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/windows.data.pdf.interop.h
+--with-librarypath
+*=Windows.Data.Pdf.dll

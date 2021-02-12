@@ -1,0 +1,19 @@
+@../../settings.rsp
+@../../remap.rsp
+--exclude
+CLSID_AudioReverb
+CLSID_AudioVolumeMeter
+DEFAULT
+ReverbConvertI3DL2ToNative(const XAUDIO2FX_REVERB_I3DL2_PARAMETERS *, XAUDIO2FX_REVERB_PARAMETERS *, BOOL):void
+XAudio2CreateReverb(IUnknown **, UINT32):HRESULT
+XAudio2CreateVolumeMeter(IUnknown **, UINT32):HRESULT
+--file
+um-xaudio2fx.h
+--output
+../../../sources/Interop/Windows/um/xaudio2fx
+--test-output
+../../../tests/Interop/Windows/um/xaudio2fx
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/xaudio2fx.h
+--with-librarypath
+*=Windows.Media.Audio.dll

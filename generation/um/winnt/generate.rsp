@@ -1,47 +1,391 @@
---additional
--m32
---config
-multi-file
+@../../settings.rsp
+@../../remap.rsp
+--exclude
+ARRAYSIZE
+BitScanForward64
+BitScanReverse64
+BTYPE
+COMPILETIME_OR_2FLAGS
+COMPILETIME_OR_3FLAGS
+COMPILETIME_OR_4FLAGS
+COMPILETIME_OR_5FLAGS
+COMPILETIME_OR_6FLAGS
+CONTAINING_RECORD
+CpuIdEx
+CUSTOM_SYSTEM_EVENT_TRIGGER_INIT(PCUSTOM_SYSTEM_EVENT_TRIGGER_CONFIG, PCWSTR):void
+C_ASSERT
+DbgRaiseAssertionFailure
+DBG_UNREFERENCED_LOCAL_VARIABLE
+DBG_UNREFERENCED_PARAMETER
+DECLARE_HANDLE
+DECLSPEC_ALIGN
+DECLSPEC_UUID
+DECREF
+DEFINE_ENUM_FLAG_OPERATORS
+EXCEPTION_ROUTINE
+EXT_IMM64
+FIELD_OFFSET
+GetCurrentFiber():PVOID
+GetFiberData():PVOID
+IFACEMETHODIMPV_
+IFACEMETHODIMP_
+IMAGE_ENCLAVE_MINIMUM_CONFIG_SIZE
+IMAGE_FIRST_SECTION
+IMAGE_ORDINAL
+IMAGE_ORDINAL32
+IMAGE_ORDINAL64
+IMAGE_POLICY_ANSI_STRING
+IMAGE_POLICY_BOOL
+IMAGE_POLICY_END
+IMAGE_POLICY_INT8
+IMAGE_POLICY_INT16
+IMAGE_POLICY_INT32
+IMAGE_POLICY_INT64
+IMAGE_POLICY_OVERRIDE
+IMAGE_POLICY_START
+IMAGE_POLICY_UINT8
+IMAGE_POLICY_UINT16
+IMAGE_POLICY_UINT32
+IMAGE_POLICY_UINT64
+IMAGE_POLICY_UNICODE_STRING
+IMAGE_SNAP_BY_ORDINAL
+IMAGE_SNAP_BY_ORDINAL32
+IMAGE_SNAP_BY_ORDINAL64
+INCREF
+INS_IMM64
+Int32x32To64
+Int64ShllMod32(ULONGLONG, DWORD):ULONGLONG
+Int64ShraMod32(LONGLONG, DWORD):LONGLONG
+Int64ShrlMod32(ULONGLONG, DWORD):ULONGLONG
+InterlockedAdd
+InterlockedAdd64
+InterlockedAddAcquire
+InterlockedAddAcquire64
+InterlockedAddNoFence
+InterlockedAddNoFence64
+InterlockedAddRelease
+InterlockedAddRelease64
+InterlockedAnd64
+InterlockedAnd64Acquire
+InterlockedAnd64NoFence
+InterlockedAnd64Release
+InterlockedCompareExchangePointer
+InterlockedCompareExchangePointerAcquire
+InterlockedCompareExchangePointerNoFence
+InterlockedCompareExchangePointerRelease
+InterlockedDecrement64
+InterlockedDecrementAcquire64
+InterlockedDecrementNoFence64
+InterlockedDecrementRelease64
+InterlockedDecrementSizeT
+InterlockedDecrementSizeTNoFence
+InterlockedExchange64
+InterlockedExchangeAcquire64
+InterlockedExchangeAdd64
+InterlockedExchangeAddNoFence64
+InterlockedExchangeAddSizeT
+InterlockedExchangeAddSizeTAcquire
+InterlockedExchangeAddSizeTNoFence
+InterlockedExchangeNoFence64
+InterlockedExchangePointer
+InterlockedExchangePointerAcquire
+InterlockedExchangePointerNoFence
+InterlockedExchangePointerRelease
+InterlockedIncrement64
+InterlockedIncrementAcquire64
+InterlockedIncrementNoFence64
+InterlockedIncrementRelease64
+InterlockedIncrementSizeT
+InterlockedIncrementSizeTNoFence
+InterlockedOr64
+InterlockedXor64
+ISARY
+ISFCN
+ISPTR
+IsReparseTagDirectory
+IsReparseTagMicrosoft
+IsReparseTagNameSurrogate
+ISTAG
+IsVirtualDiskFileShared
+IS_DISPATCHING
+IS_TARGET_UNWIND
+IS_UNWINDING
+IS_VALIDATION_ENABLED
+LANGIDFROMLCID
+MAKELANGID
+MAKELCID
+MAKESORTLCID
+MANDATORY_LEVEL_TO_MANDATORY_RID
+MemoryBarrier():void
+NOP_FUNCTION
+NtCurrentTeb():struct _TEB *
+PEXCEPTION_ROUTINE
+PreFetchCacheLine
+PrefetchForWrite
+PRIMARYLANGID
+PROBE_ALIGNMENT
+PROBE_ALIGNMENT32
+ReadAcquire(const volatile LONG *):LONG
+ReadAcquire8(const volatile CHAR *):CHAR
+ReadAcquire16(const volatile SHORT *):SHORT
+ReadAcquire64(const volatile LONG64 *):LONG64
+ReadBooleanAcquire(const volatile BOOLEAN *):BYTE
+ReadBooleanNoFence(const volatile BOOLEAN *):BYTE
+ReadForWriteAccess
+ReadLongPtrAcquire
+ReadLongPtrNoFence
+ReadLongPtrRaw
+ReadNoFence(const volatile LONG *):LONG
+ReadNoFence8(const volatile CHAR *):CHAR
+ReadNoFence16(const volatile SHORT *):SHORT
+ReadNoFence64(const volatile LONG64 *):LONG64
+ReadPMC
+ReadPointerAcquire(const volatile PVOID *):PVOID
+ReadPointerNoFence(const volatile PVOID *):PVOID
+ReadPointerRaw(const volatile PVOID *):PVOID
+ReadRaw(const volatile LONG *):LONG
+ReadRaw8(const volatile CHAR *):CHAR
+ReadRaw16(const volatile SHORT *):SHORT
+ReadRaw64(const volatile LONG64 *):LONG64
+ReadSizeTAcquire
+ReadSizeTNoFence
+ReadSizeTRaw
+ReadTimeStampCounter
+ReadUCharAcquire(const volatile BYTE *):BYTE
+ReadUCharNoFence(const volatile BYTE *):BYTE
+ReadUCharRaw(const volatile BYTE *):BYTE
+ReadULong64Acquire(const volatile DWORD64 *):DWORD64
+ReadULong64NoFence(const volatile DWORD64 *):DWORD64
+ReadULong64Raw(const volatile DWORD64 *):DWORD64
+ReadULongAcquire(const volatile DWORD *):DWORD
+ReadULongNoFence(const volatile DWORD *):DWORD
+ReadULongPtrAcquire
+ReadULongPtrNoFence
+ReadULongPtrRaw
+ReadULongRaw(const volatile DWORD *):DWORD
+ReadUShortAcquire(const volatile WORD *):WORD
+ReadUShortNoFence(const volatile WORD *):WORD
+ReadUShortRaw(const volatile WORD *):WORD
+REPARSE_GUID_DATA_BUFFER_HEADER_SIZE
+RtlCaptureContext(PCONTEXT):void
+RtlCaptureStackBackTrace(DWORD, DWORD, PVOID *, PDWORD):WORD
+RtlCompareMemory(const void *, const void *, SIZE_T):SIZE_T
+RtlConvertDeviceFamilyInfoToString(PDWORD, PDWORD, PWSTR, PWSTR):DWORD
+RtlCopyMemory
+RtlCrc32(const void *, size_t, DWORD):DWORD
+RtlCrc64(const void *, size_t, ULONGLONG):ULONGLONG
+RtlDrainNonVolatileFlush
+RtlEqualMemory
+RtlExtendCorrelationVector(PCORRELATION_VECTOR):DWORD
+RtlFillMemory
+RtlFillNonVolatileMemory
+RtlFirstEntrySList(const SLIST_HEADER *):PSLIST_ENTRY
+RtlFlushNonVolatileMemory
+RtlFlushNonVolatileMemoryRanges
+RtlFreeNonVolatileToken
+RtlGetDeviceFamilyInfoEnum(ULONGLONG *, DWORD *, DWORD *):void
+RtlGetNonVolatileToken
+RtlGetProductInfo(DWORD, DWORD, DWORD, DWORD, PDWORD):BOOLEAN
+RtlGetReturnAddressHijackTarget():ULONG_PTR
+RtlIncrementCorrelationVector(PCORRELATION_VECTOR):DWORD
+RtlInitializeCorrelationVector(PCORRELATION_VECTOR, int, const GUID *):DWORD
+RtlInitializeSListHead(PSLIST_HEADER):void
+RtlInterlockedFlushSList(PSLIST_HEADER):PSLIST_ENTRY
+RtlInterlockedPopEntrySList(PSLIST_HEADER):PSLIST_ENTRY
+RtlInterlockedPushEntrySList(PSLIST_HEADER, PSLIST_ENTRY):PSLIST_ENTRY
+RtlInterlockedPushListSListEx(PSLIST_HEADER, PSLIST_ENTRY, PSLIST_ENTRY, DWORD):PSLIST_ENTRY
+RtlIsZeroMemory(PVOID, SIZE_T):BOOLEAN
+RtlMoveMemory
+RtlNormalizeSecurityDescriptor(PSECURITY_DESCRIPTOR *, DWORD, PSECURITY_DESCRIPTOR *, PDWORD, BOOLEAN):BOOLEAN
+RtlOsDeploymentState(DWORD):OS_DEPLOYEMENT_STATE_VALUES
+RtlPcToFileHeader(PVOID, PVOID *):PVOID
+RtlpNumberOf<T, N>(T (&)[N]):char (*)[N]
+RtlQueryDepthSList(PSLIST_HEADER):WORD
+RtlRaiseCustomSystemEventTrigger(PCUSTOM_SYSTEM_EVENT_TRIGGER_CONFIG):DWORD
+RtlRaiseException(PEXCEPTION_RECORD):void
+RtlSecureZeroMemory(PVOID, SIZE_T):PVOID
+RtlSwitchedVVI(PRTL_OSVERSIONINFOEXW, DWORD, ULONGLONG):DWORD
+RtlUnwind(PVOID, PVOID, PEXCEPTION_RECORD, PVOID):void
+RtlValidateCorrelationVector(PCORRELATION_VECTOR):DWORD
+RtlWriteNonVolatileMemory
+RtlZeroMemory
+RTL_BITS_OF
+RTL_BITS_OF_FIELD
+RTL_CONST_CAST
+RTL_CONTAINS_FIELD
+RTL_FIELD_SIZE
+RTL_FIELD_TYPE
+RTL_NUMBER_OF
+RTL_NUMBER_OF_FIELD
+RTL_NUMBER_OF_V1
+RTL_NUMBER_OF_V2
+RTL_PADDING_BETWEEN_FIELDS
+RTL_SIZEOF_THROUGH_FIELD
+SECURITY_SID_SIZE
+SORTIDFROMLCID
+SORTVERSIONFROMLCID
+STDAPIV_
+STDAPI_
+STDMETHODIMPV_
+STDMETHODIMP_
+STDOVERRIDEMETHODIMPV_
+STDOVERRIDEMETHODIMP_
+SUBLANGID
+TEXT
+TpDestroyCallbackEnviron(PTP_CALLBACK_ENVIRON):void
+TpInitializeCallbackEnviron(PTP_CALLBACK_ENVIRON):void
+TpSetCallbackActivationContext(PTP_CALLBACK_ENVIRON, struct _ACTIVATION_CONTEXT *):void
+TpSetCallbackCleanupGroup(PTP_CALLBACK_ENVIRON, PTP_CLEANUP_GROUP, PTP_CLEANUP_GROUP_CANCEL_CALLBACK):void
+TpSetCallbackFinalizationCallback(PTP_CALLBACK_ENVIRON, PTP_SIMPLE_CALLBACK):void
+TpSetCallbackLongFunction(PTP_CALLBACK_ENVIRON):void
+TpSetCallbackNoActivationContext(PTP_CALLBACK_ENVIRON):void
+TpSetCallbackPersistent(PTP_CALLBACK_ENVIRON):void
+TpSetCallbackPriority(PTP_CALLBACK_ENVIRON, TP_CALLBACK_PRIORITY):void
+TpSetCallbackRaceWithDll(PTP_CALLBACK_ENVIRON, PVOID):void
+TpSetCallbackThreadpool(PTP_CALLBACK_ENVIRON, PTP_POOL):void
+TraceLoggingCORRELATION_VECTOR
+TYPE_ALIGNMENT
+UFIELD_OFFSET
+UInt32x32To64
+UNREFERENCED_PARAMETER
+VALID_IMPERSONATION_LEVEL
+VerSetConditionMask(ULONGLONG, DWORD, BYTE):ULONGLONG
+VER_SET_CONDITION
+WriteBooleanNoFence(volatile BOOLEAN *, BOOLEAN):void
+WriteBooleanRelease(volatile BOOLEAN *, BOOLEAN):void
+WriteLongPtrNoFence
+WriteLongPtrRaw
+WriteLongPtrRelease
+WriteNoFence(volatile LONG *, LONG):void
+WriteNoFence8(volatile CHAR *, CHAR):void
+WriteNoFence16(volatile SHORT *, SHORT):void
+WriteNoFence64(volatile LONG64 *, LONG64):void
+WritePointerNoFence(volatile PVOID *, PVOID):void
+WritePointerRaw(volatile PVOID *, PVOID):void
+WritePointerRelease(volatile PVOID *, PVOID):void
+WriteRaw(volatile LONG *, LONG):void
+WriteRaw8(volatile CHAR *, CHAR):void
+WriteRaw16(volatile SHORT *, SHORT):void
+WriteRaw64(volatile LONG64 *, LONG64):void
+WriteRelease(volatile LONG *, LONG):void
+WriteRelease8(volatile CHAR *, CHAR):void
+WriteRelease16(volatile SHORT *, SHORT):void
+WriteRelease64(volatile LONG64 *, LONG64):void
+WriteSizeTNoFence
+WriteSizeTRaw
+WriteSizeTRelease
+WriteUCharNoFence(volatile BYTE *, BYTE):void
+WriteUCharRaw(volatile BYTE *, BYTE):void
+WriteUCharRelease(volatile BYTE *, BYTE):void
+WriteULong64NoFence(volatile DWORD64 *, DWORD64):void
+WriteULong64Raw(volatile DWORD64 *, DWORD64):void
+WriteULong64Release(volatile DWORD64 *, DWORD64):void
+WriteULongNoFence(volatile DWORD *, DWORD):void
+WriteULongPtrNoFence
+WriteULongPtrRaw
+WriteULongPtrRelease
+WriteULongRaw(volatile DWORD *, DWORD):void
+WriteULongRelease(volatile DWORD *, DWORD):void
+WriteUShortNoFence(volatile WORD *, WORD):void
+WriteUShortRaw(volatile WORD *, WORD):void
+WriteUShortRelease(volatile WORD *, WORD):void
+WT_SET_MAX_THREADPOOL_THREADS
+_ARRAYSIZE
+_BitScanForward(DWORD *, DWORD):BOOLEAN
+_BitScanReverse(DWORD *, DWORD):BOOLEAN
+_bittest(const LONG *, LONG):BOOLEAN
+_bittestandcomplement(LONG *, LONG):BOOLEAN
+_bittestandreset(LONG *, LONG):BOOLEAN
+_bittestandset(LONG *, LONG):BOOLEAN
+_ENUM_FLAG_INTEGER_FOR_SIZE<S>
+_ENUM_FLAG_SIZED_INTEGER<T>
+_EXCEPTION_REGISTRATION_RECORD
+_ImageArchitectureHeader
+_InlineBitScanForward64(DWORD *, DWORD64):BOOLEAN
+_InlineBitScanReverse64(DWORD *, DWORD64):BOOLEAN
+_InlineInterlockedAdd(volatile LONG *, LONG):LONG
+_InlineInterlockedAdd64(volatile LONG64 *, LONG64):LONG64
+_InlineInterlockedAnd64(volatile LONG64 *, LONG64):LONG64
+_InlineInterlockedCompareExchangePointer(volatile PVOID *, PVOID, PVOID):PVOID
+_InlineInterlockedDecrement64(volatile LONGLONG *):LONGLONG
+_InlineInterlockedExchange64(volatile LONGLONG *, LONGLONG):LONGLONG
+_InlineInterlockedExchangeAdd64(volatile LONGLONG *, LONGLONG):LONGLONG
+_InlineInterlockedExchangePointer(volatile PVOID *, PVOID):PVOID
+_InlineInterlockedIncrement64(volatile LONGLONG *):LONGLONG
+_InlineInterlockedOr64(volatile LONGLONG *, LONGLONG):LONGLONG
+_InlineInterlockedXor64(volatile LONG64 *, LONG64):LONG64
+_InterlockedAnd(volatile LONG *, LONG):LONG
+_InterlockedAnd8(volatile char *, char):char
+_InterlockedAnd16(volatile SHORT *, SHORT):SHORT
+_interlockedbittestandreset(volatile LONG *, LONG):BOOLEAN
+_interlockedbittestandset(volatile LONG *, LONG):BOOLEAN
+_InterlockedCompareExchange(volatile LONG *, LONG, LONG):LONG
+_InterlockedCompareExchange16(volatile SHORT *, SHORT, SHORT):SHORT
+_InterlockedCompareExchange64(volatile LONG64 *, LONG64, LONG64):LONG64
+_InterlockedDecrement(volatile LONG *):LONG
+_InterlockedDecrement16(volatile SHORT *):SHORT
+_InterlockedExchange(volatile LONG *, LONG):LONG
+_InterlockedExchange8(volatile CHAR *, CHAR):CHAR
+_InterlockedExchange16(volatile SHORT *, SHORT):SHORT
+_InterlockedExchangeAdd(volatile LONG *, LONG):LONG
+_InterlockedExchangeAdd8(volatile char *, char):char
+_InterlockedIncrement(volatile LONG *):LONG
+_InterlockedIncrement16(volatile SHORT *):SHORT
+_InterlockedOr(volatile LONG *, LONG):LONG
+_InterlockedOr8(volatile char *, char):char
+_InterlockedOr16(volatile SHORT *, SHORT):SHORT
+_InterlockedXor(volatile LONG *, LONG):LONG
+_InterlockedXor8(volatile char *, char):char
+_InterlockedXor16(volatile SHORT *, SHORT):SHORT
+_mm_pause():void
+_mm_prefetch(const CHAR *, int):void
+_NT_TIB
+_rotl(unsigned int, int):unsigned int
+_rotl64(unsigned long long, int):unsigned long long
+_rotr(unsigned int, int):unsigned int
+_rotr64(unsigned long long, int):unsigned long long
+__addfsbyte(DWORD, BYTE):void
+__addfsdword(DWORD, DWORD):void
+__addfsword(DWORD, WORD):void
+__cpuidex(int [4], int, int):void
+__fastfail(unsigned int):void
+__incfsbyte(DWORD):void
+__incfsdword(DWORD):void
+__incfsword(DWORD):void
+__int2c():void
+__rdtsc():DWORD64
+__readfsbyte(DWORD):BYTE
+__readfsdword(DWORD):DWORD
+__readfsword(DWORD):WORD
+__readpmc(DWORD):DWORD64
+__TEXT
+__writefsbyte(DWORD, BYTE):void
+__writefsdword(DWORD, DWORD):void
+__writefsword(DWORD, WORD):void
 --file
 um-winnt.h
---headerFile
-header.txt
---include-directory
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/shared
---include-directory
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um
---libraryPath
-unused
---methodClassName
-Windows
---namespace
-TerraFX.Interop
 --output
 ../../../sources/Interop/Windows/um/winnt
---remap
-__AnonymousField_winnt_L12420_C5=Anonymous
-__AnonymousField_winnt_L12473_C5=Anonymous
-__AnonymousRecord_winnt_L12420_C5=_Anonymous_e__Union
-__AnonymousRecord_winnt_L12421_C9=_ProcessorCore_e__Union
-__AnonymousRecord_winnt_L12424_C9=_NumaNode_e__Union
-__AnonymousRecord_winnt_L12473_C5=_Anonymous_e__Union
-_CACHE_DESCRIPTOR=CACHE_DESCRIPTOR
-_CACHE_RELATIONSHIP=CACHE_RELATIONSHIP
-_EXCEPTION_RECORD=EXCEPTION_RECORD
-_FILE_SEGMENT_ELEMENT=FILE_SEGMENT_ELEMENT
-_GROUP_AFFINITY=GROUP_AFFINITY
-_GROUP_RELATIONSHIP=GROUP_RELATIONSHIP
-_LOGICAL_PROCESSOR_RELATIONSHIP=LOGICAL_PROCESSOR_RELATIONSHIP
-_NUMA_NODE_RELATIONSHIP=NUMA_NODE_RELATIONSHIP
-_OSVERSIONINFOA=OSVERSIONINFOA
-_OSVERSIONINFOW=OSVERSIONINFOW
-_PROCESSOR_CACHE_TYPE=PROCESSOR_CACHE_TYPE
-_PROCESSOR_GROUP_INFO=PROCESSOR_GROUP_INFO
-_PROCESSOR_RELATIONSHIP=PROCESSOR_RELATIONSHIP
-_SYSTEM_LOGICAL_PROCESSOR_INFORMATION=SYSTEM_LOGICAL_PROCESSOR_INFORMATION
-_SYSTEM_LOGICAL_PROCESSOR_INFORMATION_EX=SYSTEM_LOGICAL_PROCESSOR_INFORMATION_EX
-_SYSTEM_PROCESSOR_CYCLE_TIME_INFORMATION=SYSTEM_PROCESSOR_CYCLE_TIME_INFORMATION
+--test-output
+../../../tests/Interop/Windows/um/winnt
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um/winnt.h
---with-callconv
-*=Winapi
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h
+--with-attribute
+ACCESS_REASON_TYPE=Flags
+CM_SERVICE_NODE_TYPE=Flags
+JOB_OBJECT_IO_RATE_CONTROL_FLAGS=Flags
+JOB_OBJECT_NET_RATE_CONTROL_FLAGS=Flags
+JOBOBJECT_IO_ATTRIBUTION_CONTROL_FLAGS=Flags
+ReplacesCorHdrNumericDefines=Flags
+--with-librarypath
+*=kernel32
+RtlAddGrowableFunctionTable=ntdll
+RtlCaptureStackBackTrace=ntdll
+RtlDeleteGrowableFunctionTable=ntdll
+RtlFirstEntrySList=ntdll
+RtlGrowFunctionTable=ntdll
+RtlInitializeSListHead=ntdll
+RtlInterlockedFlushSList=ntdll
+RtlInterlockedPopEntrySList=ntdll
+RtlInterlockedPushEntrySList=ntdll
+RtlQueryDepthSList=ntdll

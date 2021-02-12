@@ -1,39 +1,12 @@
---additional
--m32
---config
-multi-file
---exclude
-__MIDL_itf_d3d11ShaderTracing_0000_0000_v0_0_c_ifspec
-__MIDL_itf_d3d11ShaderTracing_0000_0000_v0_0_s_ifspec
-__MIDL_itf_d3d11ShaderTracing_0000_0002_v0_0_c_ifspec
-__MIDL_itf_d3d11ShaderTracing_0000_0002_v0_0_s_ifspec
-ID3D10Blob
-IID_ID3D11ShaderTrace
-IID_ID3D11ShaderTraceFactory
+@../../settings.rsp
+@../../remap.rsp
 --file
 um-d3d11shadertracing.h
---headerFile
-header.txt
---include-directory
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/shared
---include-directory
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um
---methodClassName
-D3D11
---namespace
-TerraFX.Interop
 --output
-../../../sources/Interop/D3D11/um/d3d11shadertracing
---remap
-__AnonymousField_d3d11shadertracing_L126_C5=Anonymous
-__AnonymousField_d3d11shadertracing_L226_C5=Anonymous
-__AnonymousRecord_d3d11shadertracing_L126_C5=_Anonymous_e__Union
-__AnonymousRecord_d3d11shadertracing_L226_C5=_Anonymous_e__Union
-_GUID=Guid
-ID3D10Blob=ID3DBlob
-SIZE_T=UIntPtr
+../../../sources/Interop/Windows/um/d3d11shadertracing
+--test-output
+../../../tests/Interop/Windows/um/d3d11shadertracing
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um/d3d11shadertracing.h
---with-attribute
-ID3D11ShaderTrace=Guid("36B013E6-2811-4845-BAA7-D623FE0DF104")
-ID3D11ShaderTraceFactory=Guid("1FBAD429-66AB-41CC-9617-667AC10E4459")
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/d3d11shadertracing.h
+--with-librarypath
+*=d3d11sdklayers

@@ -4,6 +4,7 @@ Param(
   [switch] $build,
   [switch] $ci,
   [ValidateSet("Debug", "Release")][string] $configuration = "Debug",
+  [switch] $generate,
   [switch] $help,
   [switch] $pack,
   [switch] $restore,
@@ -32,6 +33,17 @@ function Create-Directory([string[]] $Path) {
   }
 }
 
+function Generate() {
+  $generationDir = Join-Path -Path $RepoRoot -ChildPath "generation"
+  $generateRspFiles = Get-ChildItem -Path "$generationDir" -Recurse -Filter "generate.rsp"
+
+  $generateRspFiles | ForEach-Object -Process {
+    Push-Location -Path $_.DirectoryName
+    & ClangSharpPInvokeGenerator "@generate.rsp"
+    Pop-Location
+  }
+}
+
 function Help() {
     Write-Host -Object "Common settings:"
     Write-Host -Object "  -configuration <value>  Build configuration (Debug, Release)"
@@ -48,6 +60,7 @@ function Help() {
     Write-Host -Object "  -solution <value>       Path to solution to build"
     Write-Host -Object "  -ci                     Set when running on CI server"
     Write-Host -Object "  -architecture <value>   Test Architecture (<auto>, amd64, x64, x86, arm64, arm)"
+    Write-Host -Object "  -generate               Generates the bindings for the solution"
     Write-Host -Object ""
     Write-Host -Object "Command line arguments not listed above are passed through to MSBuild."
     Write-Host -Object "The above arguments can be shortened as much as to be unambiguous (e.g. -co for configuration, -t for test, etc.)."
@@ -120,10 +133,13 @@ try {
     $DotNetInstallDirectory = Join-Path -Path $ArtifactsDir -ChildPath "dotnet"
     Create-Directory -Path $DotNetInstallDirectory
 
-    & $DotNetInstallScript -Channel release/5.0.1xx-preview2 -Version latest -InstallDir $DotNetInstallDirectory -Architecture $architecture
-    & $DotNetInstallScript -Channel 3.1 -Version latest -InstallDir $DotNetInstallDirectory -Architecture $architecture -Runtime dotnet
+    & $DotNetInstallScript -Channel master -Version 5.0.100 -InstallDir $DotNetInstallDirectory -Architecture $architecture
 
     $env:PATH="$DotNetInstallDirectory;$env:PATH"
+  }
+
+  if ($generate) {
+    Generate
   }
 
   if ($restore) {

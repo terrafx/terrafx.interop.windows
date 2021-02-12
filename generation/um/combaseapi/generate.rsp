@@ -1,40 +1,29 @@
---additional
--m32
---config
-multi-file
+@../../settings.rsp
+@../../remap.rsp
 --exclude
-CO_MTA_USAGE_COOKIE__
+DECLARE_INTERFACE
+DECLARE_INTERFACE_
+DECLARE_INTERFACE_IID
+DECLARE_INTERFACE_IID_
+IFACEMETHOD
+IFACEMETHODV
+IFACEMETHODV_
+IFACEMETHOD_
+IID_PPV_ARGS
+IID_PPV_ARGS_Helper<T>(T **):void **
+LISet32
+STDMETHOD
+STDMETHODV
+STDMETHODV_
+STDMETHOD_
+ULISet32
+WINOLEAPI_
 --file
 um-combaseapi.h
---headerFile
-header.txt
---include-directory
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/shared
---include-directory
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um
---libraryPath
-Ole32
---methodClassName
-Ole32
---namespace
-TerraFX.Interop
 --output
-../../../sources/Interop/Ole32/um/combaseapi
---remap
-_APTTYPE=APTTYPE
-_APTTYPEQUALIFIER=APTTYPEQUALIFIER
-_COSERVERINFO=COSERVERINFO
-_FILETIME=FILETIME
-_GUID=Guid
-CO_MTA_USAGE_COOKIE__*=IntPtr
-tagCOINITBASE=COINITBASE
-tagCOWAIT_FLAGS=COWAIT_FLAGS
-tagMULTI_QI=MULTI_QI
-tagPROPVARIANT=PROPVARIANT
-tagREGCLS=REGCLS
-tagServerInformation=ServerInformation
-tagSOLE_AUTHENTICATION_SERVICE=SOLE_AUTHENTICATION_SERVICE
-tagSTDMSHLFLAGS=STDMSHLFLAGS
+../../../sources/Interop/Windows/um/combaseapi
+--test-output
+../../../tests/Interop/Windows/um/combaseapi
 --with-attribute
 COINITBASE=Flags
 COWAIT_FLAGS=Flags
@@ -42,6 +31,10 @@ CWMO_FLAGS=Flags
 REGCLS=Flags
 STDMSHLFLAGS=Flags
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um/combaseapi.h
---with-callconv
-*=Winapi
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/combaseapi.h
+--with-librarypath
+*=Ole32
+CoCreateInstanceFromApp=combase
+CoDecodeProxy=combase
+CoFreeUnusedLibrariesEx=combase
+CoWaitForMultipleObjects=combase

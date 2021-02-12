@@ -1,0 +1,19 @@
+@../../settings.rsp
+@../../remap.rsp
+--exclude
+__MIDL___MIDL_itf_mfreadwrite_0000_0001_0001
+__MIDL___MIDL_itf_mfreadwrite_0000_0001_0002
+__MIDL___MIDL_itf_mfreadwrite_0000_0005_0001
+--file
+um-mfreadwrite.h
+--output
+../../../sources/Interop/Windows/um/mfreadwrite
+--test-output
+../../../tests/Interop/Windows/um/mfreadwrite
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/mfreadwrite.h
+--with-attribute
+MF_SOURCE_READER_CONTROL_FLAG=Flags
+MF_SOURCE_READER_FLAG=Flags
+--with-librarypath
+*=mfreadwrite

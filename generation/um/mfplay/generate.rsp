@@ -1,0 +1,27 @@
+@../../settings.rsp
+@../../remap.rsp
+--exclude
+MFP_GET_ACQUIRE_USER_CREDENTIAL_EVENT
+MFP_GET_ERROR_EVENT
+MFP_GET_FRAME_STEP_EVENT
+MFP_GET_MEDIAITEM_CLEARED_EVENT
+MFP_GET_MEDIAITEM_CREATED_EVENT
+MFP_GET_MEDIAITEM_SET_EVENT
+MFP_GET_MF_EVENT
+MFP_GET_PAUSE_EVENT
+MFP_GET_PLAYBACK_ENDED_EVENT
+MFP_GET_PLAY_EVENT
+MFP_GET_POSITION_SET_EVENT
+MFP_GET_RATE_SET_EVENT
+MFP_GET_STOP_EVENT
+__MFP_CAST_EVENT
+--file
+um-mfplay.h
+--output
+../../../sources/Interop/Windows/um/mfplay
+--test-output
+../../../tests/Interop/Windows/um/mfplay
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/mfplay.h
+--with-librarypath
+*=mfplat

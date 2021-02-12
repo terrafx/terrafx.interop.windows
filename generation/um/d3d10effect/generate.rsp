@@ -1,0 +1,14 @@
+@../../settings.rsp
+@../../remap.rsp
+--exclude
+D3D10_BYTES_FROM_BITS
+--file
+um-d3d10effect.h
+--output
+../../../sources/Interop/Windows/um/d3d10effect
+--test-output
+../../../tests/Interop/Windows/um/d3d10effect
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/d3d10effect.h
+--with-librarypath
+*=d3d10

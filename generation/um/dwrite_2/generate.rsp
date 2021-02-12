@@ -1,44 +1,12 @@
---additional
--m32
---config
-multi-file
+@../../settings.rsp
+@../../remap.rsp
 --exclude
 _D3DCOLORVALUE
 --file
 um-dwrite_2.h
---headerFile
-header.txt
---include-directory
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/shared
---include-directory
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um
---libraryPath
-DWrite
---methodClassName
-DWrite
---namespace
-TerraFX.Interop
 --output
-../../../sources/Interop/DWrite/um/dwrite_2
---remap
-__AnonymousBase_dwrite_2_L67_C31=Base
-_FILETIME=FILETIME
-_GUID=Guid
-_D3DCOLORVALUE=DXGI_RGBA
-GetGlyphIndicesA=GetGlyphIndices
-HMONITOR__*=IntPtr
-ID2D1SimplifiedGeometrySink=IUnknown
+../../../sources/Interop/Windows/um/dwrite_2
+--test-output
+../../../tests/Interop/Windows/um/dwrite_2
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um/dwrite_2.h
---with-attribute
-IDWriteColorGlyphRunEnumerator=Guid("D31FBE17-F157-41A2-8D24-CB779E0560E8")
-IDWriteFactory2=Guid("0439FC60-CA44-4994-8DEE-3A9AF7B732EC")
-IDWriteFont2=Guid("29748ED6-8C9C-4A6A-BE0B-D912E8538944")
-IDWriteFontFace2=Guid("D8B768FF-64BC-4E66-982B-EC8E87F693F7")
-IDWriteFontFallback=Guid("EFA008F9-F7A1-48BF-B05C-F224713CC0FF")
-IDWriteFontFallbackBuilder=Guid("FD882D06-8ABA-4FB8-B849-8BE8B73E14DE")
-IDWriteRenderingParams2=Guid("F9D711C3-9777-40AE-87E8-3E5AF9BF0948")
-IDWriteTextAnalyzer2=Guid("553A9FF3-5693-4DF7-B52B-74806F7F2EB9")
-IDWriteTextFormat1=Guid("5F174B49-0D8B-4CFB-8BCA-F1CCE9D06C67")
-IDWriteTextLayout2=Guid("1093C18F-8D5E-43F0-B064-0917311B525E")
-IDWriteTextRenderer1=Guid("D3E0E934-22A0-427E-AAE4-7D9574B59DB1")
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/dwrite_2.h

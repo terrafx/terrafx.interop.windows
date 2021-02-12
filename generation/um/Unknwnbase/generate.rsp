@@ -1,0 +1,12 @@
+@../../settings.rsp
+@../../remap.rsp
+--exclude
+IUnknown.QueryInterface<Q>(Q **):HRESULT
+--file
+um-Unknwnbase.h
+--output
+../../../sources/Interop/Windows/um/Unknwnbase
+--test-output
+../../../tests/Interop/Windows/um/Unknwnbase
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/Unknwnbase.h

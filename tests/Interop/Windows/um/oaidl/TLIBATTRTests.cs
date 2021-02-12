@@ -1,25 +1,35 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-using System.Runtime.InteropServices;
+// Ported from um/OAIdl.h in the Windows SDK for Windows 10.0.19041.0
+// Original source is Copyright © Microsoft. All rights reserved.
+
 using NUnit.Framework;
+using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="TLIBATTR" /> struct.</summary>
-    public static class TLIBATTRTests
+    public static unsafe class TLIBATTRTests
     {
-        /// <summary>Validates that the layout of the <see cref="TLIBATTR" /> struct is <see cref="LayoutKind.Sequential" />.</summary>
+        /// <summary>Validates that the <see cref="TLIBATTR" /> struct is blittable.</summary>
+        [Test]
+        public static void IsBlittableTest()
+        {
+            Assert.That(Marshal.SizeOf<TLIBATTR>(), Is.EqualTo(sizeof(TLIBATTR)));
+        }
+
+        /// <summary>Validates that the <see cref="TLIBATTR" /> struct has the right <see cref="LayoutKind" />.</summary>
         [Test]
         public static void IsLayoutSequentialTest()
         {
             Assert.That(typeof(TLIBATTR).IsLayoutSequential, Is.True);
         }
 
-        /// <summary>Validates that the size of the <see cref="TLIBATTR" /> struct is correct.</summary>
+        /// <summary>Validates that the <see cref="TLIBATTR" /> struct has the correct size.</summary>
         [Test]
         public static void SizeOfTest()
         {
-            Assert.That(Marshal.SizeOf<TLIBATTR>(), Is.EqualTo(32));
+            Assert.That(sizeof(TLIBATTR), Is.EqualTo(32));
         }
     }
 }

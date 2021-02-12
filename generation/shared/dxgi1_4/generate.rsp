@@ -1,48 +1,13 @@
---additional
--m32
---config
-multi-file
---exclude
-__MIDL_itf_dxgi1_4_0000_0000_v0_0_c_ifspec
-__MIDL_itf_dxgi1_4_0000_0000_v0_0_s_ifspec
-__MIDL_itf_dxgi1_4_0000_0001_v0_0_c_ifspec
-__MIDL_itf_dxgi1_4_0000_0001_v0_0_s_ifspec
-__MIDL_itf_dxgi1_4_0000_0003_v0_0_c_ifspec
-__MIDL_itf_dxgi1_4_0000_0003_v0_0_s_ifspec
-__MIDL_itf_dxgi1_4_0000_0004_v0_0_c_ifspec
-__MIDL_itf_dxgi1_4_0000_0004_v0_0_s_ifspec
-IID_IDXGIAdapter3
-IID_IDXGIFactory4
-IID_IDXGIOutput4
-IID_IDXGISwapChain3
+@../../settings.rsp
+@../../remap.rsp
 --file
 shared-dxgi1_4.h
---headerFile
-header.txt
---include-directory
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/shared
---include-directory
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um
---methodClassName
-DXGI
---namespace
-TerraFX.Interop
 --output
-../../../sources/Interop/DXGI/shared/dxgi1_4
---remap
-_D3DCOLORVALUE=DXGI_RGBA
-_GUID=Guid
-_LARGE_INTEGER=LARGE_INTEGER
-_LUID=LUID
-HANDLE=IntPtr
-HINSTANCE__*=IntPtr
-HWND__*=IntPtr
+../../../sources/Interop/Windows/shared/dxgi1_4
+--test-output
+../../../tests/Interop/Windows/shared/dxgi1_4
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/shared/dxgi1_4.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/shared/dxgi1_4.h
 --with-attribute
 DXGI_OVERLAY_COLOR_SPACE_SUPPORT_FLAG=Flags
 DXGI_SWAP_CHAIN_COLOR_SPACE_SUPPORT_FLAG=Flags
-IDXGIAdapter3=Guid("645967A4-1392-4310-A798-8053CE3E93FD")
-IDXGIFactory4=Guid("1BC6EA02-EF36-464F-BF0C-21CA39E5168A")
-IDXGIOutput4=Guid("DC7DCA35-2196-414D-9F53-617884032A60")
-IDXGISwapChain3=Guid("94D99BDB-F1F8-4AB0-B236-7DA0170EDAB1")

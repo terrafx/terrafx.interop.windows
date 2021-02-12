@@ -1,0 +1,15 @@
+@../../settings.rsp
+@../../remap.rsp
+--exclude
+IID_INS_ARGS
+IID_INS_ARGS_Helper<T>(T **):void **
+--file
+winrt-inspectable.h
+--output
+../../../sources/Interop/Windows/winrt/inspectable
+--test-output
+../../../tests/Interop/Windows/winrt/inspectable
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/winrt/inspectable.h
+--with-librarypath
+*=ComBase

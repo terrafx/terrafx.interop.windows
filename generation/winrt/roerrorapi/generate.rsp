@@ -1,0 +1,23 @@
+@../../settings.rsp
+@../../remap.rsp
+--exclude
+ABI.Windows.Foundation.Diagnostics.RoErrorReportingFlags
+ABI.Windows.Foundation.Diagnostics.GetErrorReportingFlags(UINT32 *):HRESULT
+ABI.Windows.Foundation.Diagnostics.SetErrorReportingFlags(UINT32):HRESULT
+ABI.Windows.Foundation.Diagnostics.OriginateError(HRESULT, UINT, PCWSTR):BOOL
+ABI.Windows.Foundation.Diagnostics.OriginateError(HRESULT, HSTRING):BOOL
+ABI.Windows.Foundation.Diagnostics.TransformError(HRESULT, HRESULT, UINT, PCWSTR):BOOL
+ABI.Windows.Foundation.Diagnostics.TransformError(HRESULT, HRESULT, HSTRING):BOOL
+--file
+winrt-roerrorapi.h
+--output
+../../../sources/Interop/Windows/winrt/roerrorapi
+--test-output
+../../../tests/Interop/Windows/winrt/roerrorapi
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/winrt/roerrorapi.h
+--with-attribute
+RO_ERROR_REPORTING_FLAGS=Flags
+RoErrorReportingFlags=Flags
+--with-librarypath
+*=combase

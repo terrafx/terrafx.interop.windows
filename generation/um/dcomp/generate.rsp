@@ -1,0 +1,12 @@
+@../../settings.rsp
+@../../remap.rsp
+--file
+um-dcomp.h
+--output
+../../../sources/Interop/Windows/um/dcomp
+--test-output
+../../../tests/Interop/Windows/um/dcomp
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/dcomp.h
+--with-librarypath
+*=dcomp

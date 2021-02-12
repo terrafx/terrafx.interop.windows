@@ -35,9 +35,9 @@
   </PropertyGroup>
 
   <Target Name="GenerateSkipLocalsInit"
-          BeforeTargets="CoreCompile"
+          BeforeTargets="BeforeCompile;CoreCompile"
           DependsOnTargets="PrepareForBuild"
-          Condition="('$(Language)' == 'C#') AND ('$(TargetFramework)' != 'netcoreapp3.1')"
+          Condition="'$(Language)' == 'C#'"
           Inputs="$(MSBuildAllProjects)"
           Outputs="$(GeneratedSkipLocalsInitFile)">
     <WriteLinesToFile Lines="$(GeneratedSkipLocalsInitFileLines)" Overwrite="true" WriteOnlyWhenDifferent="true" File="$(GeneratedSkipLocalsInitFile)" />

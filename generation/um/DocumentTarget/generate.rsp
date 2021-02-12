@@ -1,0 +1,10 @@
+@../../settings.rsp
+@../../remap.rsp
+--file
+um-DocumentTarget.h
+--output
+../../../sources/Interop/Windows/um/DocumentTarget
+--test-output
+../../../tests/Interop/Windows/um/DocumentTarget
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/DocumentTarget.h

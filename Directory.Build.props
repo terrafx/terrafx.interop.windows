@@ -14,7 +14,7 @@
   <PropertyGroup>
     <BaseArtifactsPath>$(MSBuildThisFileDirectory)artifacts/</BaseArtifactsPath>
     <BaseArtifactsPathSuffix>$(TerraFXProjectCategory)/$(MSBuildProjectName)</BaseArtifactsPathSuffix>
-    <RepositoryUrl>https://github.com/terrafx/terrafx.interop.windows/</RepositoryUrl>
+    <RepositoryUrl>https://github.com/terrafx/terrafx.interop.windows</RepositoryUrl>
   </PropertyGroup>
 
   <!-- Default settings that explicitly differ from the Sdk.props defaults  -->
@@ -39,11 +39,12 @@
     <Authors>Tanner Gooding and Contributors</Authors>
     <BaseOutputPath>$(BaseArtifactsPath)bin/$(BaseArtifactsPathSuffix)/</BaseOutputPath>
     <Company>TerraFX</Company>
+    <ContinuousIntegrationBuild Condition="'$(GITHUB_RUN_ID)' != ''">true</ContinuousIntegrationBuild>
     <PackageOutputPath>$(BaseArtifactsPath)pkg/$(Configuration)/</PackageOutputPath>
     <Product>TerraFX.Interop.Windows</Product>
-    <VersionPrefix>10.0.18362</VersionPrefix>
-    <VersionSuffix>alpha</VersionSuffix>
-    <VersionSuffix Condition="'$(SYSTEM_PULLREQUEST_PULLREQUESTNUMBER)' != ''">pr$(SYSTEM_PULLREQUEST_PULLREQUESTNUMBER)</VersionSuffix>
+    <VersionPrefix>10.0.19041</VersionPrefix>
+    <VersionSuffix>beta2</VersionSuffix>
+    <VersionSuffix Condition="'$(GITHUB_EVENT_NAME)' == 'pull_request'">pr</VersionSuffix>
   </PropertyGroup>
 
   <!-- Default settings that are otherwise undefined -->
@@ -55,7 +56,7 @@
     <Features>strict</Features>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <HighEntropyVA>true</HighEntropyVA>
-    <LangVersion>preview</LangVersion>
+    <LangVersion>latest</LangVersion>
     <MinClientVersion>4.3</MinClientVersion>
     <NeutralLanguage>en-US</NeutralLanguage>
     <OverwriteReadOnlyFiles>true</OverwriteReadOnlyFiles>
@@ -66,15 +67,9 @@
     <RepositoryType>git</RepositoryType>
     <RestoreSources>
       https://api.nuget.org/v3/index.json;
-      https://dotnet.myget.org/F/roslyn/api/v3/index.json;
-      https://pkgs.terrafx.dev/nuget/v3/index.json;
+      https://pkgs.terrafx.dev/index.json;
     </RestoreSources>
     <UseSharedCompilation>true</UseSharedCompilation>
   </PropertyGroup>
-
-  <!-- Package references which are consumed by all projects -->
-  <ItemGroup>
-    <PackageReference Include="Microsoft.Net.Compilers.Toolset" IsImplicitlyDefined="true" PrivateAssets="all" />
-  </ItemGroup>
 
 </Project>
