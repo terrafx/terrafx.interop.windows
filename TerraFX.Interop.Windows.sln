@@ -1809,6 +1809,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "imapi2fs", "imapi2fs", "{56
 		generation\um\imapi2fs\generate.rsp = generation\um\imapi2fs\generate.rsp
 		generation\um\imapi2fs\header.txt = generation\um\imapi2fs\header.txt
 		generation\um\imapi2fs\um-imapi2fs.h = generation\um\imapi2fs\um-imapi2fs.h
+  EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "xamlOM", "xamlOM", "{9337A17E-7551-48F3-B73D-AF8086062660}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\xamlOM\generate.rsp = generation\um\xamlOM\generate.rsp
+		generation\um\xamlOM\header.txt = generation\um\xamlOM\header.txt
+		generation\um\xamlOM\um-xamlOM.h = generation\um\xamlOM\um-xamlOM.h
 	EndProjectSection
 EndProject
 Global
@@ -2097,6 +2104,7 @@ Global
 		{BC069863-A717-4C9E-8D98-ACF9239E903A} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{565AEC0D-94C9-46CB-8947-71E02C3C128D} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{56D9CA05-6CF6-458A-AB1D-C85FBC239634} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{9337A17E-7551-48F3-B73D-AF8086062660} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2FE36DF8-2D9C-4F20-8787-45DC74B57461}
