@@ -1729,6 +1729,104 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DirectXHelpers", "DirectXHe
 		generation\dxtk12\DirectXHelpers\header.txt = generation\dxtk12\DirectXHelpers\header.txt
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TextStor", "TextStor", "{1CDD97F4-D363-4DA6-878C-42A4518D8B98}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\TextStor\generate.rsp = generation\um\TextStor\generate.rsp
+		generation\um\TextStor\header.txt = generation\um\TextStor\header.txt
+		generation\um\TextStor\um-TextStor.h = generation\um\TextStor\um-TextStor.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ctfutb", "ctfutb", "{A45CD075-761F-4703-8926-D10653692F82}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\ctfutb\generate.rsp = generation\um\ctfutb\generate.rsp
+		generation\um\ctfutb\header.txt = generation\um\ctfutb\header.txt
+		generation\um\ctfutb\um-ctfutb.h = generation\um\ctfutb\um-ctfutb.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "comcat", "comcat", "{631A693A-1FC5-4AB0-B46E-797A01BC8BF3}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\comcat\generate.rsp = generation\um\comcat\generate.rsp
+		generation\um\comcat\header.txt = generation\um\comcat\header.txt
+		generation\um\comcat\um-comcat.h = generation\um\comcat\um-comcat.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "msctf", "msctf", "{94773A90-4F44-44DC-A83D-8C5F1BDDE3BC}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\msctf\generate.rsp = generation\um\msctf\generate.rsp
+		generation\um\msctf\header.txt = generation\um\msctf\header.txt
+		generation\um\msctf\um-msctf.h = generation\um\msctf\um-msctf.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ctffunc", "ctffunc", "{E135AD2D-F42B-4D3A-8BD2-A2BB23451F02}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\ctffunc\generate.rsp = generation\um\ctffunc\generate.rsp
+		generation\um\ctffunc\header.txt = generation\um\ctffunc\header.txt
+		generation\um\ctffunc\um-ctffunc.h = generation\um\ctffunc\um-ctffunc.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MSAAText", "MSAAText", "{945CF661-EA84-4121-A6BD-094252A5A825}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\MSAAText\generate.rsp = generation\um\MSAAText\generate.rsp
+		generation\um\MSAAText\header.txt = generation\um\MSAAText\header.txt
+		generation\um\MSAAText\um-MSAAText.h = generation\um\MSAAText\um-MSAAText.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ctfspui", "ctfspui", "{93BBD7BA-3E02-4691-BFE6-C15B9793D174}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\ctfspui\generate.rsp = generation\um\ctfspui\generate.rsp
+		generation\um\ctfspui\header.txt = generation\um\ctfspui\header.txt
+		generation\um\ctfspui\um-ctfspui.h = generation\um\ctfspui\um-ctfspui.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MsCtfMonitorApi", "MsCtfMonitorApi", "{ED73B6ED-F05F-49B9-9E01-0A27AEAA69F5}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\MsCtfMonitorApi\generate.rsp = generation\um\MsCtfMonitorApi\generate.rsp
+		generation\um\MsCtfMonitorApi\header.txt = generation\um\MsCtfMonitorApi\header.txt
+		generation\um\MsCtfMonitorApi\um-MsCtfMonitorApi.h = generation\um\MsCtfMonitorApi\um-MsCtfMonitorApi.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "InputScope", "InputScope", "{A40DA57D-3CE9-4CAA-B94F-62BEA1704A4F}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\InputScope\generate.rsp = generation\um\InputScope\generate.rsp
+		generation\um\InputScope\header.txt = generation\um\InputScope\header.txt
+		generation\um\InputScope\um-InputScope.h = generation\um\InputScope\um-InputScope.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TlHelp32", "TlHelp32", "{BB1D1950-8068-4353-A482-0A2C60ED4644}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\TlHelp32\generate.rsp = generation\um\TlHelp32\generate.rsp
+		generation\um\TlHelp32\header.txt = generation\um\TlHelp32\header.txt
+		generation\um\TlHelp32\um-TlHelp32.h = generation\um\TlHelp32\um-TlHelp32.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "imapi", "imapi", "{BC069863-A717-4C9E-8D98-ACF9239E903A}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\imapi\generate.rsp = generation\um\imapi\generate.rsp
+		generation\um\imapi\header.txt = generation\um\imapi\header.txt
+		generation\um\imapi\um-imapi.h = generation\um\imapi\um-imapi.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "imapi2", "imapi2", "{565AEC0D-94C9-46CB-8947-71E02C3C128D}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\imapi2\generate.rsp = generation\um\imapi2\generate.rsp
+		generation\um\imapi2\header.txt = generation\um\imapi2\header.txt
+		generation\um\imapi2\um-imapi2.h = generation\um\imapi2\um-imapi2.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "imapi2fs", "imapi2fs", "{56D9CA05-6CF6-458A-AB1D-C85FBC239634}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\imapi2fs\generate.rsp = generation\um\imapi2fs\generate.rsp
+		generation\um\imapi2fs\header.txt = generation\um\imapi2fs\header.txt
+		generation\um\imapi2fs\um-imapi2fs.h = generation\um\imapi2fs\um-imapi2fs.h
+  EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "xamlOM", "xamlOM", "{9337A17E-7551-48F3-B73D-AF8086062660}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\xamlOM\generate.rsp = generation\um\xamlOM\generate.rsp
+		generation\um\xamlOM\header.txt = generation\um\xamlOM\header.txt
+		generation\um\xamlOM\um-xamlOM.h = generation\um\xamlOM\um-xamlOM.h
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -2004,6 +2102,20 @@ Global
 		{22B8D2FA-95B4-4A27-A08C-8168FF8B81D3} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{2B494F8E-C80A-4E97-A16F-F5AACFE43825} = {D9638FEE-50A4-44FF-B1F6-72E59548490B}
 		{21A3721E-FCA8-445E-A95D-A73716F435CC} = {2B494F8E-C80A-4E97-A16F-F5AACFE43825}
+		{1CDD97F4-D363-4DA6-878C-42A4518D8B98} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{A45CD075-761F-4703-8926-D10653692F82} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{631A693A-1FC5-4AB0-B46E-797A01BC8BF3} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{94773A90-4F44-44DC-A83D-8C5F1BDDE3BC} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{E135AD2D-F42B-4D3A-8BD2-A2BB23451F02} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{945CF661-EA84-4121-A6BD-094252A5A825} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{93BBD7BA-3E02-4691-BFE6-C15B9793D174} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{ED73B6ED-F05F-49B9-9E01-0A27AEAA69F5} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{A40DA57D-3CE9-4CAA-B94F-62BEA1704A4F} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{BB1D1950-8068-4353-A482-0A2C60ED4644} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{BC069863-A717-4C9E-8D98-ACF9239E903A} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{565AEC0D-94C9-46CB-8947-71E02C3C128D} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{56D9CA05-6CF6-458A-AB1D-C85FBC239634} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{9337A17E-7551-48F3-B73D-AF8086062660} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2FE36DF8-2D9C-4F20-8787-45DC74B57461}
