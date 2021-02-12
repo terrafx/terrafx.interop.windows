@@ -1720,6 +1720,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "d3d10_1shader", "d3d10_1sha
 		generation\um\d3d10_1shader\um-d3d10_1shader.h = generation\um\d3d10_1shader\um-d3d10_1shader.h
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "dxtk12", "dxtk12", "{2B494F8E-C80A-4E97-A16F-F5AACFE43825}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DirectXHelpers", "DirectXHelpers", "{21A3721E-FCA8-445E-A95D-A73716F435CC}"
+	ProjectSection(SolutionItems) = preProject
+		generation\dxtk12\DirectXHelpers\dxtk12-DirectXHelpers.h = generation\dxtk12\DirectXHelpers\dxtk12-DirectXHelpers.h
+		generation\dxtk12\DirectXHelpers\generate.rsp = generation\dxtk12\DirectXHelpers\generate.rsp
+		generation\dxtk12\DirectXHelpers\header.txt = generation\dxtk12\DirectXHelpers\header.txt
+	EndProjectSection
+EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TextStor", "TextStor", "{1CDD97F4-D363-4DA6-878C-42A4518D8B98}"
 	ProjectSection(SolutionItems) = preProject
 		generation\um\TextStor\generate.rsp = generation\um\TextStor\generate.rsp
@@ -2091,6 +2100,8 @@ Global
 		{3E969E6F-7198-4F83-B0C5-1936D6379E01} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{8BDC41A2-54B8-431D-B049-538F48D5E14C} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{22B8D2FA-95B4-4A27-A08C-8168FF8B81D3} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{2B494F8E-C80A-4E97-A16F-F5AACFE43825} = {D9638FEE-50A4-44FF-B1F6-72E59548490B}
+		{21A3721E-FCA8-445E-A95D-A73716F435CC} = {2B494F8E-C80A-4E97-A16F-F5AACFE43825}
 		{1CDD97F4-D363-4DA6-878C-42A4518D8B98} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{A45CD075-761F-4703-8926-D10653692F82} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{631A693A-1FC5-4AB0-B46E-797A01BC8BF3} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
