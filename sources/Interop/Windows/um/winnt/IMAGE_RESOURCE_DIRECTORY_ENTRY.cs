@@ -10,7 +10,7 @@ namespace TerraFX.Interop
 {
     public partial struct IMAGE_RESOURCE_DIRECTORY_ENTRY
     {
-        [NativeTypeName("_IMAGE_RESOURCE_DIRECTORY_ENTRY::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:18348:5)")]
+        [NativeTypeName("_IMAGE_RESOURCE_DIRECTORY_ENTRY::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:18399:5)")]
         public _Anonymous1_e__Union Anonymous1;
 
         public uint NameOffset
@@ -61,7 +61,7 @@ namespace TerraFX.Interop
             }
         }
 
-        [NativeTypeName("_IMAGE_RESOURCE_DIRECTORY_ENTRY::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:18356:5)")]
+        [NativeTypeName("_IMAGE_RESOURCE_DIRECTORY_ENTRY::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:18407:5)")]
         public _Anonymous2_e__Union Anonymous2;
 
         public ref uint OffsetToData
@@ -107,7 +107,7 @@ namespace TerraFX.Interop
         public partial struct _Anonymous1_e__Union
         {
             [FieldOffset(0)]
-            [NativeTypeName("_IMAGE_RESOURCE_DIRECTORY_ENTRY::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:18349:9)")]
+            [NativeTypeName("_IMAGE_RESOURCE_DIRECTORY_ENTRY::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:18400:9)")]
             public _Anonymous_e__Struct Anonymous;
 
             [FieldOffset(0)]
@@ -164,7 +164,7 @@ namespace TerraFX.Interop
             public uint OffsetToData;
 
             [FieldOffset(0)]
-            [NativeTypeName("_IMAGE_RESOURCE_DIRECTORY_ENTRY::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:18358:9)")]
+            [NativeTypeName("_IMAGE_RESOURCE_DIRECTORY_ENTRY::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:18409:9)")]
             public _Anonymous_e__Struct Anonymous;
 
             public partial struct _Anonymous_e__Struct

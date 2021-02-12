@@ -10,7 +10,7 @@ namespace TerraFX.Interop
 {
     public partial struct IMAGE_IMPORT_DESCRIPTOR
     {
-        [NativeTypeName("_IMAGE_IMPORT_DESCRIPTOR::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:18247:5)")]
+        [NativeTypeName("_IMAGE_IMPORT_DESCRIPTOR::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:18298:5)")]
         public _Anonymous_e__Union Anonymous;
 
         public ref uint Characteristics

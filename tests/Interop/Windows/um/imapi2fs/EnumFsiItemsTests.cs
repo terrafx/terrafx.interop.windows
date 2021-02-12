@@ -17,7 +17,7 @@ namespace TerraFX.Interop.UnitTests
         [Test]
         public static void GuidOfTest()
         {
-            Assert.That(typeof(EnumFsiItems).GUID, Is.EqualTo(CLSID_EnumFsiItems ));
+            Assert.That(typeof(EnumFsiItems).GUID, Is.EqualTo(CLSID_EnumFsiItems));
         }
 
         /// <summary>Validates that the <see cref="EnumFsiItems" /> struct is blittable.</summary>

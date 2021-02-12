@@ -24,7 +24,7 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint Flags;
 
-        [NativeTypeName("IMAGE_COR20_HEADER::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:19208:5)")]
+        [NativeTypeName("IMAGE_COR20_HEADER::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:19265:5)")]
         public _Anonymous_e__Union Anonymous;
 
         public ref uint EntryPointToken

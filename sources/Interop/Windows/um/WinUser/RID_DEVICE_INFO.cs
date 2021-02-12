@@ -16,7 +16,7 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint dwType;
 
-        [NativeTypeName("tagRID_DEVICE_INFO::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/WinUser.h:15159:5)")]
+        [NativeTypeName("tagRID_DEVICE_INFO::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/WinUser.h:15154:5)")]
         public _Anonymous_e__Union Anonymous;
 
         public ref RID_DEVICE_INFO_MOUSE mouse

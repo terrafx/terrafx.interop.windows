@@ -21,7 +21,7 @@ namespace TerraFX.Interop
         [NativeTypeName("GUID")]
         public Guid ReparseGuid;
 
-        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:13402:5)")]
+        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:13453:5)")]
         public _GenericReparseBuffer_e__Struct GenericReparseBuffer;
 
         public unsafe partial struct _GenericReparseBuffer_e__Struct

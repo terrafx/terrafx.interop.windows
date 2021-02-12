@@ -10,7 +10,7 @@ namespace TerraFX.Interop
 {
     public partial struct IMAGE_DELAYLOAD_DESCRIPTOR
     {
-        [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:18280:5)")]
+        [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:18331:5)")]
         public _Attributes_e__Union Attributes;
 
         [NativeTypeName("DWORD")]
@@ -42,7 +42,7 @@ namespace TerraFX.Interop
             public uint AllAttributes;
 
             [FieldOffset(0)]
-            [NativeTypeName("_IMAGE_DELAYLOAD_DESCRIPTOR::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:18282:9)")]
+            [NativeTypeName("_IMAGE_DELAYLOAD_DESCRIPTOR::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:18333:9)")]
             public _Anonymous_e__Struct Anonymous;
 
             public uint RvaBased

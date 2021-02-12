@@ -23,5 +23,6 @@ namespace TerraFX.Interop
         ProcThreadAttributeSafeOpenPromptOriginClaim = 17,
         ProcThreadAttributeDesktopAppPolicy = 18,
         ProcThreadAttributePseudoConsole = 22,
+        ProcThreadAttributeMitigationAuditPolicy = 24,
     }
 }

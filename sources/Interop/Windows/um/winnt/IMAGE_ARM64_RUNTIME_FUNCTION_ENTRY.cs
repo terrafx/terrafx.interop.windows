@@ -13,7 +13,7 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint BeginAddress;
 
-        [NativeTypeName("_IMAGE_ARM64_RUNTIME_FUNCTION_ENTRY::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:18762:5)")]
+        [NativeTypeName("_IMAGE_ARM64_RUNTIME_FUNCTION_ENTRY::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:18814:5)")]
         public _Anonymous_e__Union Anonymous;
 
         public ref uint UnwindData
@@ -138,7 +138,7 @@ namespace TerraFX.Interop
             public uint UnwindData;
 
             [FieldOffset(0)]
-            [NativeTypeName("_IMAGE_ARM64_RUNTIME_FUNCTION_ENTRY::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:18764:9)")]
+            [NativeTypeName("_IMAGE_ARM64_RUNTIME_FUNCTION_ENTRY::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:18816:9)")]
             public _Anonymous_e__Struct Anonymous;
 
             public partial struct _Anonymous_e__Struct

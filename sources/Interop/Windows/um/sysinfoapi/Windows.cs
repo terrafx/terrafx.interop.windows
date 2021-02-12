@@ -194,6 +194,9 @@ namespace TerraFX.Interop
         [NativeTypeName("#define USER_CET_ENVIRONMENT_SGX2_ENCLAVE 0x00000002")]
         public const int USER_CET_ENVIRONMENT_SGX2_ENCLAVE = 0x00000002;
 
+        [NativeTypeName("#define USER_CET_ENVIRONMENT_VBS_ENCLAVE 0x00000010")]
+        public const int USER_CET_ENVIRONMENT_VBS_ENCLAVE = 0x00000010;
+
         [NativeTypeName("#define USER_CET_ENVIRONMENT_VBS_BASIC_ENCLAVE 0x00000011")]
         public const int USER_CET_ENVIRONMENT_VBS_BASIC_ENCLAVE = 0x00000011;
 

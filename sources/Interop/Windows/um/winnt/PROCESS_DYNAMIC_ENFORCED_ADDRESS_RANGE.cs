@@ -5,11 +5,15 @@
 
 namespace TerraFX.Interop
 {
-    public enum ARM64_FNPDATA_CR
+    public partial struct PROCESS_DYNAMIC_ENFORCED_ADDRESS_RANGE
     {
-        PdataCrUnchained = 0,
-        PdataCrUnchainedSavedLr = 1,
-        PdataCrChainedWithPac = 2,
-        PdataCrChained = 3,
+        [NativeTypeName("ULONG_PTR")]
+        public nuint BaseAddress;
+
+        [NativeTypeName("SIZE_T")]
+        public nuint Size;
+
+        [NativeTypeName("DWORD")]
+        public uint Flags;
     }
 }

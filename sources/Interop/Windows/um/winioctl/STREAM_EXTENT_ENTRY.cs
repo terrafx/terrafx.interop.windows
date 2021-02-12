@@ -12,7 +12,7 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint Flags;
 
-        [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winioctl.h:14692:5)")]
+        [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winioctl.h:14721:5)")]
         public _ExtentInformation_e__Union ExtentInformation;
 
         [StructLayout(LayoutKind.Explicit)]

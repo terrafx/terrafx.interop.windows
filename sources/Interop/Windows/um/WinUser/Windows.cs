@@ -2982,6 +2982,9 @@ namespace TerraFX.Interop
         [NativeTypeName("#define VK_HANGUL 0x15")]
         public const int VK_HANGUL = 0x15;
 
+        [NativeTypeName("#define VK_IME_ON 0x16")]
+        public const int VK_IME_ON = 0x16;
+
         [NativeTypeName("#define VK_JUNJA 0x17")]
         public const int VK_JUNJA = 0x17;
 
@@ -2993,6 +2996,9 @@ namespace TerraFX.Interop
 
         [NativeTypeName("#define VK_KANJI 0x19")]
         public const int VK_KANJI = 0x19;
+
+        [NativeTypeName("#define VK_IME_OFF 0x1A")]
+        public const int VK_IME_OFF = 0x1A;
 
         [NativeTypeName("#define VK_ESCAPE 0x1B")]
         public const int VK_ESCAPE = 0x1B;

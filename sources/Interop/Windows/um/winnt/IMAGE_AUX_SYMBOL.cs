@@ -11,22 +11,22 @@ namespace TerraFX.Interop
     public partial struct IMAGE_AUX_SYMBOL
     {
         [FieldOffset(0)]
-        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:17523:5)")]
+        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:17574:5)")]
         public _Sym_e__Struct Sym;
 
         [FieldOffset(0)]
-        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:17543:5)")]
+        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:17594:5)")]
         public _File_e__Struct File;
 
         [FieldOffset(0)]
-        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:17546:5)")]
+        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:17597:5)")]
         public _Section_e__Struct Section;
 
         [FieldOffset(0)]
         public IMAGE_AUX_SYMBOL_TOKEN_DEF TokenDef;
 
         [FieldOffset(0)]
-        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:17557:5)")]
+        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:17608:5)")]
         public _CRC_e__Struct CRC;
 
         [StructLayout(LayoutKind.Sequential, Pack = 2)]
@@ -35,10 +35,10 @@ namespace TerraFX.Interop
             [NativeTypeName("DWORD")]
             public uint TagIndex;
 
-            [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:17525:9)")]
+            [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:17576:9)")]
             public _Misc_e__Union Misc;
 
-            [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:17532:9)")]
+            [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:17583:9)")]
             public _FcnAry_e__Union FcnAry;
 
             [NativeTypeName("WORD")]
@@ -48,7 +48,7 @@ namespace TerraFX.Interop
             public partial struct _Misc_e__Union
             {
                 [FieldOffset(0)]
-                [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:17526:13)")]
+                [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:17577:13)")]
                 public _LnSz_e__Struct LnSz;
 
                 [FieldOffset(0)]
@@ -69,11 +69,11 @@ namespace TerraFX.Interop
             public partial struct _FcnAry_e__Union
             {
                 [FieldOffset(0)]
-                [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:17533:13)")]
+                [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:17584:13)")]
                 public _Function_e__Struct Function;
 
                 [FieldOffset(0)]
-                [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:17537:13)")]
+                [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:17588:13)")]
                 public _Array_e__Struct Array;
 
                 [StructLayout(LayoutKind.Sequential, Pack = 2)]

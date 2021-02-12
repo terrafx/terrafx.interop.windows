@@ -16,7 +16,7 @@ namespace TerraFX.Interop
 
         public FILE_ID_TYPE Type;
 
-        [NativeTypeName("FILE_ID_DESCRIPTOR::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/WinBase.h:9069:5)")]
+        [NativeTypeName("FILE_ID_DESCRIPTOR::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/WinBase.h:9139:5)")]
         public _Anonymous_e__Union Anonymous;
 
         public ref LARGE_INTEGER FileId

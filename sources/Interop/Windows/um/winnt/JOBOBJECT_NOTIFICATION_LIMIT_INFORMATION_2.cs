@@ -18,7 +18,7 @@ namespace TerraFX.Interop
 
         public LARGE_INTEGER PerJobUserTimeLimit;
 
-        [NativeTypeName("JOBOBJECT_NOTIFICATION_LIMIT_INFORMATION_2::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:12023:5)")]
+        [NativeTypeName("JOBOBJECT_NOTIFICATION_LIMIT_INFORMATION_2::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:12067:5)")]
         public _Anonymous1_e__Union Anonymous1;
 
         public ref ulong JobHighMemoryLimit
@@ -39,7 +39,7 @@ namespace TerraFX.Interop
             }
         }
 
-        [NativeTypeName("JOBOBJECT_NOTIFICATION_LIMIT_INFORMATION_2::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:12028:5)")]
+        [NativeTypeName("JOBOBJECT_NOTIFICATION_LIMIT_INFORMATION_2::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:12072:5)")]
         public _Anonymous2_e__Union Anonymous2;
 
         public ref JOBOBJECT_RATE_CONTROL_TOLERANCE RateControlTolerance
@@ -60,7 +60,7 @@ namespace TerraFX.Interop
             }
         }
 
-        [NativeTypeName("JOBOBJECT_NOTIFICATION_LIMIT_INFORMATION_2::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:12033:5)")]
+        [NativeTypeName("JOBOBJECT_NOTIFICATION_LIMIT_INFORMATION_2::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:12077:5)")]
         public _Anonymous3_e__Union Anonymous3;
 
         public ref JOBOBJECT_RATE_CONTROL_TOLERANCE_INTERVAL RateControlToleranceInterval

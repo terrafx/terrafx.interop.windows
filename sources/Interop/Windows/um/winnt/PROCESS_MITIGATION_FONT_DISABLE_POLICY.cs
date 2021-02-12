@@ -10,7 +10,7 @@ namespace TerraFX.Interop
 {
     public partial struct PROCESS_MITIGATION_FONT_DISABLE_POLICY
     {
-        [NativeTypeName("_PROCESS_MITIGATION_FONT_DISABLE_POLICY::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:11792:5)")]
+        [NativeTypeName("_PROCESS_MITIGATION_FONT_DISABLE_POLICY::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:11826:5)")]
         public _Anonymous_e__Union Anonymous;
 
         public ref uint Flags
@@ -75,7 +75,7 @@ namespace TerraFX.Interop
             public uint Flags;
 
             [FieldOffset(0)]
-            [NativeTypeName("_PROCESS_MITIGATION_FONT_DISABLE_POLICY::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:11794:9)")]
+            [NativeTypeName("_PROCESS_MITIGATION_FONT_DISABLE_POLICY::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:11828:9)")]
             public _Anonymous_e__Struct Anonymous;
 
             public partial struct _Anonymous_e__Struct

@@ -16,7 +16,7 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint EndAddress;
 
-        [NativeTypeName("_IMAGE_RUNTIME_FUNCTION_ENTRY::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:18807:5)")]
+        [NativeTypeName("_IMAGE_RUNTIME_FUNCTION_ENTRY::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:18859:5)")]
         public _Anonymous_e__Union Anonymous;
 
         public ref uint UnwindInfoAddress

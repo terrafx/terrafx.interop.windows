@@ -17,7 +17,7 @@ namespace TerraFX.Interop.UnitTests
         [Test]
         public static void GuidOfTest()
         {
-            Assert.That(typeof(BlockRangeList).GUID, Is.EqualTo(CLSID_BlockRangeList ));
+            Assert.That(typeof(BlockRangeList).GUID, Is.EqualTo(CLSID_BlockRangeList));
         }
 
         /// <summary>Validates that the <see cref="BlockRangeList" /> struct is blittable.</summary>

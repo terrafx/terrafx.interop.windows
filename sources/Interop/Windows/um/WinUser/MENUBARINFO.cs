@@ -54,5 +54,21 @@ namespace TerraFX.Interop
                 _bitfield = (_bitfield & ~(0x1 << 1)) | ((value & 0x1) << 1);
             }
         }
+
+        [NativeTypeName("BOOL : 30")]
+        public int fUnused
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                return (_bitfield >> 2) & 0x3FFFFFFF;
+            }
+
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            set
+            {
+                _bitfield = (_bitfield & ~(0x3FFFFFFF << 2)) | ((value & 0x3FFFFFFF) << 2);
+            }
+        }
     }
 }

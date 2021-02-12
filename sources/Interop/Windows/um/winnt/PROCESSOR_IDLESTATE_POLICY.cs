@@ -14,7 +14,7 @@ namespace TerraFX.Interop
         [NativeTypeName("WORD")]
         public ushort Revision;
 
-        [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:16586:5)")]
+        [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:16637:5)")]
         public _Flags_e__Union Flags;
 
         [NativeTypeName("DWORD")]
@@ -31,7 +31,7 @@ namespace TerraFX.Interop
             public ushort AsWORD;
 
             [FieldOffset(0)]
-            [NativeTypeName("PROCESSOR_IDLESTATE_POLICY::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:16588:9)")]
+            [NativeTypeName("PROCESSOR_IDLESTATE_POLICY::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:16639:9)")]
             public _Anonymous_e__Struct Anonymous;
 
             public ushort AllowScaling

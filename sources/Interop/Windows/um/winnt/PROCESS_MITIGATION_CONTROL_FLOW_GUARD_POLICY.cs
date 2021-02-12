@@ -10,7 +10,7 @@ namespace TerraFX.Interop
 {
     public partial struct PROCESS_MITIGATION_CONTROL_FLOW_GUARD_POLICY
     {
-        [NativeTypeName("_PROCESS_MITIGATION_CONTROL_FLOW_GUARD_POLICY::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:11766:5)")]
+        [NativeTypeName("_PROCESS_MITIGATION_CONTROL_FLOW_GUARD_POLICY::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:11800:5)")]
         public _Anonymous_e__Union Anonymous;
 
         public ref uint Flags
@@ -90,7 +90,7 @@ namespace TerraFX.Interop
             public uint Flags;
 
             [FieldOffset(0)]
-            [NativeTypeName("_PROCESS_MITIGATION_CONTROL_FLOW_GUARD_POLICY::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:11768:9)")]
+            [NativeTypeName("_PROCESS_MITIGATION_CONTROL_FLOW_GUARD_POLICY::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:11802:9)")]
             public _Anonymous_e__Struct Anonymous;
 
             public partial struct _Anonymous_e__Struct
