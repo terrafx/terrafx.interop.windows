@@ -37,7 +37,7 @@ function Generate() {
   $generationDir = Join-Path -Path $RepoRoot -ChildPath "generation"
   $generateRspFiles = Get-ChildItem -Path "$generationDir" -Recurse -Filter "generate.rsp"
 
-  $generateRspFiles | ForEach-Object -Process {
+  $generateRspFiles | ForEach-Object -Parallel {
     Push-Location -Path $_.DirectoryName
     & ClangSharpPInvokeGenerator "@generate.rsp"
     Pop-Location

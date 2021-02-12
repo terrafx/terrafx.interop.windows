@@ -11,7 +11,7 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct MEM_EXTENDED_PARAMETER
     {
-        [NativeTypeName("MEM_EXTENDED_PARAMETER::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:13032:5)")]
+        [NativeTypeName("MEM_EXTENDED_PARAMETER::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:13083:5)")]
         public _Anonymous1_e__Struct Anonymous1;
 
         public ulong Type
@@ -44,7 +44,7 @@ namespace TerraFX.Interop
             }
         }
 
-        [NativeTypeName("MEM_EXTENDED_PARAMETER::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:13037:5)")]
+        [NativeTypeName("MEM_EXTENDED_PARAMETER::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:13088:5)")]
         public _Anonymous2_e__Union Anonymous2;
 
         public ref ulong ULong64

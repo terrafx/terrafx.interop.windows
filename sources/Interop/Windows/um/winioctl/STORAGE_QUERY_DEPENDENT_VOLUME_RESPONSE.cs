@@ -16,7 +16,7 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint NumberEntries;
 
-        [NativeTypeName("_STORAGE_QUERY_DEPENDENT_VOLUME_RESPONSE::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winioctl.h:13374:5)")]
+        [NativeTypeName("_STORAGE_QUERY_DEPENDENT_VOLUME_RESPONSE::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winioctl.h:13403:5)")]
         public _Anonymous_e__Union Anonymous;
 
         public ref STORAGE_QUERY_DEPENDENT_VOLUME_LEV1_ENTRY Lev1Depends

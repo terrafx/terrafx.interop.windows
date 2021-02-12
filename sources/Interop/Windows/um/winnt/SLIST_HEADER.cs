@@ -16,7 +16,7 @@ namespace TerraFX.Interop
         public ulong Alignment;
 
         [FieldOffset(0)]
-        [NativeTypeName("_SLIST_HEADER::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:19893:5)")]
+        [NativeTypeName("_SLIST_HEADER::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:19950:5)")]
         public _Anonymous_e__Struct Anonymous;
 
         public ref SINGLE_LIST_ENTRY Next

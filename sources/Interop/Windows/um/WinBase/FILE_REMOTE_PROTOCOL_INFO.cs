@@ -33,10 +33,10 @@ namespace TerraFX.Interop
         [NativeTypeName("ULONG")]
         public uint Flags;
 
-        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/WinBase.h:9007:5)")]
+        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/WinBase.h:9077:5)")]
         public _GenericReserved_e__Struct GenericReserved;
 
-        [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/WinBase.h:9020:5)")]
+        [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/WinBase.h:9090:5)")]
         public _ProtocolSpecific_e__Union ProtocolSpecific;
 
         public unsafe partial struct _GenericReserved_e__Struct
@@ -49,7 +49,7 @@ namespace TerraFX.Interop
         public unsafe partial struct _ProtocolSpecific_e__Union
         {
             [FieldOffset(0)]
-            [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/WinBase.h:9022:9)")]
+            [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/WinBase.h:9092:9)")]
             public _Smb2_e__Struct Smb2;
 
             [FieldOffset(0)]
@@ -58,10 +58,10 @@ namespace TerraFX.Interop
 
             public partial struct _Smb2_e__Struct
             {
-                [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/WinBase.h:9024:13)")]
+                [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/WinBase.h:9094:13)")]
                 public _Server_e__Struct Server;
 
-                [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/WinBase.h:9028:13)")]
+                [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/WinBase.h:9098:13)")]
                 public _Share_e__Struct Share;
 
                 public partial struct _Server_e__Struct

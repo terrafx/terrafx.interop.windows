@@ -28,7 +28,7 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint SizeOfData;
 
-        [NativeTypeName("IMPORT_OBJECT_HEADER::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:19120:5)")]
+        [NativeTypeName("IMPORT_OBJECT_HEADER::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:19177:5)")]
         public _Anonymous_e__Union Anonymous;
 
         public ref ushort Ordinal

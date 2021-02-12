@@ -32,7 +32,7 @@ namespace TerraFX.Interop
         [NativeTypeName("PTP_SIMPLE_CALLBACK")]
         public delegate* unmanaged<IntPtr, void*, void> FinalizationCallback;
 
-        [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:22629:5)")]
+        [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:22686:5)")]
         public _u_e__Union u;
 
         public TP_CALLBACK_PRIORITY CallbackPriority;
@@ -48,7 +48,7 @@ namespace TerraFX.Interop
             public uint Flags;
 
             [FieldOffset(0)]
-            [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:22631:9)")]
+            [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:22688:9)")]
             public _s_e__Struct s;
 
             public partial struct _s_e__Struct

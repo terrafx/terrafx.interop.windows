@@ -11,7 +11,7 @@ namespace TerraFX.Interop
 {
     public partial struct QUERY_FILE_LAYOUT_INPUT
     {
-        [NativeTypeName("_QUERY_FILE_LAYOUT_INPUT::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winioctl.h:14318:5)")]
+        [NativeTypeName("_QUERY_FILE_LAYOUT_INPUT::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winioctl.h:14347:5)")]
         public _Anonymous_e__Union Anonymous;
 
         public ref uint FilterEntryCount
@@ -40,7 +40,7 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint Reserved;
 
-        [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winioctl.h:14345:5)")]
+        [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winioctl.h:14374:5)")]
         public _Filter_e__Union Filter;
 
         [StructLayout(LayoutKind.Explicit)]

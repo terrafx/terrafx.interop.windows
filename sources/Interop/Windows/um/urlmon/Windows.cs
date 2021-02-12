@@ -1163,8 +1163,11 @@ namespace TerraFX.Interop
         [NativeTypeName("#define URLACTION_ALLOW_VBSCRIPT_IE 0x0000140C")]
         public const int URLACTION_ALLOW_VBSCRIPT_IE = 0x0000140C;
 
-        [NativeTypeName("#define URLACTION_SCRIPT_CURR_MAX 0x0000140C")]
-        public const int URLACTION_SCRIPT_CURR_MAX = 0x0000140C;
+        [NativeTypeName("#define URLACTION_ALLOW_JSCRIPT_IE 0x0000140D")]
+        public const int URLACTION_ALLOW_JSCRIPT_IE = 0x0000140D;
+
+        [NativeTypeName("#define URLACTION_SCRIPT_CURR_MAX 0x0000140D")]
+        public const int URLACTION_SCRIPT_CURR_MAX = 0x0000140D;
 
         [NativeTypeName("#define URLACTION_SCRIPT_MAX 0x000015ff")]
         public const int URLACTION_SCRIPT_MAX = 0x000015ff;

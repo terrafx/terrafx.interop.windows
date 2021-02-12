@@ -3250,6 +3250,9 @@ namespace TerraFX.Interop
         [NativeTypeName("#define STATUS_CASE_SENSITIVE_PATH ((NTSTATUS)0xC00004BAL)")]
         public const int STATUS_CASE_SENSITIVE_PATH = unchecked((int)(0xC00004BA));
 
+        [NativeTypeName("#define STATUS_HAS_SYSTEM_CRITICAL_FILES ((NTSTATUS)0xC00004BDL)")]
+        public const int STATUS_HAS_SYSTEM_CRITICAL_FILES = unchecked((int)(0xC00004BD));
+
         [NativeTypeName("#define STATUS_INVALID_TASK_NAME ((NTSTATUS)0xC0000500L)")]
         public const int STATUS_INVALID_TASK_NAME = unchecked((int)(0xC0000500));
 

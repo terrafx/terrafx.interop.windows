@@ -11,7 +11,7 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct FILE_RENAME_INFO
     {
-        [NativeTypeName("_FILE_RENAME_INFO::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/WinBase.h:8783:5)")]
+        [NativeTypeName("_FILE_RENAME_INFO::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/WinBase.h:8853:5)")]
         public _Anonymous_e__Union Anonymous;
 
         public ref byte ReplaceIfExists

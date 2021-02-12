@@ -13,7 +13,7 @@ namespace TerraFX.Interop
         [NativeTypeName("USHORT")]
         public ushort usFlags;
 
-        [NativeTypeName("tagRAWMOUSE::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/WinUser.h:14919:5)")]
+        [NativeTypeName("tagRAWMOUSE::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/WinUser.h:14914:5)")]
         public _Anonymous_e__Union Anonymous;
 
         public ref uint ulButtons
@@ -63,7 +63,7 @@ namespace TerraFX.Interop
             public uint ulButtons;
 
             [FieldOffset(0)]
-            [NativeTypeName("tagRAWMOUSE::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/WinUser.h:14921:9)")]
+            [NativeTypeName("tagRAWMOUSE::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/WinUser.h:14916:9)")]
             public _Anonymous_e__Struct Anonymous;
 
             public partial struct _Anonymous_e__Struct

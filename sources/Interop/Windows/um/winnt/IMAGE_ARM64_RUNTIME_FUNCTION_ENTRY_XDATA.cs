@@ -16,7 +16,7 @@ namespace TerraFX.Interop
         public uint HeaderData;
 
         [FieldOffset(0)]
-        [NativeTypeName("IMAGE_ARM64_RUNTIME_FUNCTION_ENTRY_XDATA::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:18778:5)")]
+        [NativeTypeName("IMAGE_ARM64_RUNTIME_FUNCTION_ENTRY_XDATA::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:18830:5)")]
         public _Anonymous_e__Struct Anonymous;
 
         public uint FunctionLength

@@ -22,7 +22,7 @@ namespace TerraFX.Interop
         [NativeTypeName("BYTE")]
         public byte BusyAdjThreshold;
 
-        [NativeTypeName("PROCESSOR_PERFSTATE_POLICY::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:16660:5)")]
+        [NativeTypeName("PROCESSOR_PERFSTATE_POLICY::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:16711:5)")]
         public _Anonymous_e__Union Anonymous;
 
         public ref byte Spare
@@ -66,7 +66,7 @@ namespace TerraFX.Interop
             public byte Spare;
 
             [FieldOffset(0)]
-            [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:16662:9)")]
+            [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:16713:9)")]
             public _Flags_e__Union Flags;
 
             [StructLayout(LayoutKind.Explicit)]
@@ -77,7 +77,7 @@ namespace TerraFX.Interop
                 public byte AsBYTE;
 
                 [FieldOffset(0)]
-                [NativeTypeName("PROCESSOR_PERFSTATE_POLICY::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:16664:13)")]
+                [NativeTypeName("PROCESSOR_PERFSTATE_POLICY::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:16715:13)")]
                 public _Anonymous_e__Struct Anonymous;
 
                 public byte NoDomainAccounting

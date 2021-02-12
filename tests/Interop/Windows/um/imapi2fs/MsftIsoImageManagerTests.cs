@@ -17,7 +17,7 @@ namespace TerraFX.Interop.UnitTests
         [Test]
         public static void GuidOfTest()
         {
-            Assert.That(typeof(MsftIsoImageManager).GUID, Is.EqualTo(CLSID_MsftIsoImageManager  ));
+            Assert.That(typeof(MsftIsoImageManager).GUID, Is.EqualTo(CLSID_MsftIsoImageManager));
         }
 
         /// <summary>Validates that the <see cref="MsftIsoImageManager" /> struct is blittable.</summary>

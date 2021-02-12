@@ -10,7 +10,7 @@ namespace TerraFX.Interop
 {
     public partial struct PROCESS_MITIGATION_USER_SHADOW_STACK_POLICY
     {
-        [NativeTypeName("_PROCESS_MITIGATION_USER_SHADOW_STACK_POLICY::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:11912:5)")]
+        [NativeTypeName("_PROCESS_MITIGATION_USER_SHADOW_STACK_POLICY::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:11946:5)")]
         public _Anonymous_e__Union Anonymous;
 
         public ref uint Flags
@@ -37,6 +37,141 @@ namespace TerraFX.Interop
             }
         }
 
+        public uint AuditUserShadowStack
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                return Anonymous.Anonymous.AuditUserShadowStack;
+            }
+
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            set
+            {
+                Anonymous.Anonymous.AuditUserShadowStack = value;
+            }
+        }
+
+        public uint SetContextIpValidation
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                return Anonymous.Anonymous.SetContextIpValidation;
+            }
+
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            set
+            {
+                Anonymous.Anonymous.SetContextIpValidation = value;
+            }
+        }
+
+        public uint AuditSetContextIpValidation
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                return Anonymous.Anonymous.AuditSetContextIpValidation;
+            }
+
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            set
+            {
+                Anonymous.Anonymous.AuditSetContextIpValidation = value;
+            }
+        }
+
+        public uint EnableUserShadowStackStrictMode
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                return Anonymous.Anonymous.EnableUserShadowStackStrictMode;
+            }
+
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            set
+            {
+                Anonymous.Anonymous.EnableUserShadowStackStrictMode = value;
+            }
+        }
+
+        public uint BlockNonCetBinaries
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                return Anonymous.Anonymous.BlockNonCetBinaries;
+            }
+
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            set
+            {
+                Anonymous.Anonymous.BlockNonCetBinaries = value;
+            }
+        }
+
+        public uint BlockNonCetBinariesNonEhcont
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                return Anonymous.Anonymous.BlockNonCetBinariesNonEhcont;
+            }
+
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            set
+            {
+                Anonymous.Anonymous.BlockNonCetBinariesNonEhcont = value;
+            }
+        }
+
+        public uint AuditBlockNonCetBinaries
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                return Anonymous.Anonymous.AuditBlockNonCetBinaries;
+            }
+
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            set
+            {
+                Anonymous.Anonymous.AuditBlockNonCetBinaries = value;
+            }
+        }
+
+        public uint CetDynamicApisOutOfProcOnly
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                return Anonymous.Anonymous.CetDynamicApisOutOfProcOnly;
+            }
+
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            set
+            {
+                Anonymous.Anonymous.CetDynamicApisOutOfProcOnly = value;
+            }
+        }
+
+        public uint SetContextIpValidationRelaxedMode
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                return Anonymous.Anonymous.SetContextIpValidationRelaxedMode;
+            }
+
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            set
+            {
+                Anonymous.Anonymous.SetContextIpValidationRelaxedMode = value;
+            }
+        }
+
         public uint ReservedFlags
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -60,7 +195,7 @@ namespace TerraFX.Interop
             public uint Flags;
 
             [FieldOffset(0)]
-            [NativeTypeName("_PROCESS_MITIGATION_USER_SHADOW_STACK_POLICY::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:11914:9)")]
+            [NativeTypeName("_PROCESS_MITIGATION_USER_SHADOW_STACK_POLICY::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:11948:9)")]
             public _Anonymous_e__Struct Anonymous;
 
             public partial struct _Anonymous_e__Struct
@@ -83,19 +218,163 @@ namespace TerraFX.Interop
                     }
                 }
 
-                [NativeTypeName("DWORD : 31")]
-                public uint ReservedFlags
+                [NativeTypeName("DWORD : 1")]
+                public uint AuditUserShadowStack
                 {
                     [MethodImpl(MethodImplOptions.AggressiveInlining)]
                     get
                     {
-                        return (_bitfield >> 1) & 0x7FFFFFFFu;
+                        return (_bitfield >> 1) & 0x1u;
                     }
 
                     [MethodImpl(MethodImplOptions.AggressiveInlining)]
                     set
                     {
-                        _bitfield = (_bitfield & ~(0x7FFFFFFFu << 1)) | ((value & 0x7FFFFFFFu) << 1);
+                        _bitfield = (_bitfield & ~(0x1u << 1)) | ((value & 0x1u) << 1);
+                    }
+                }
+
+                [NativeTypeName("DWORD : 1")]
+                public uint SetContextIpValidation
+                {
+                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                    get
+                    {
+                        return (_bitfield >> 2) & 0x1u;
+                    }
+
+                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                    set
+                    {
+                        _bitfield = (_bitfield & ~(0x1u << 2)) | ((value & 0x1u) << 2);
+                    }
+                }
+
+                [NativeTypeName("DWORD : 1")]
+                public uint AuditSetContextIpValidation
+                {
+                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                    get
+                    {
+                        return (_bitfield >> 3) & 0x1u;
+                    }
+
+                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                    set
+                    {
+                        _bitfield = (_bitfield & ~(0x1u << 3)) | ((value & 0x1u) << 3);
+                    }
+                }
+
+                [NativeTypeName("DWORD : 1")]
+                public uint EnableUserShadowStackStrictMode
+                {
+                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                    get
+                    {
+                        return (_bitfield >> 4) & 0x1u;
+                    }
+
+                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                    set
+                    {
+                        _bitfield = (_bitfield & ~(0x1u << 4)) | ((value & 0x1u) << 4);
+                    }
+                }
+
+                [NativeTypeName("DWORD : 1")]
+                public uint BlockNonCetBinaries
+                {
+                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                    get
+                    {
+                        return (_bitfield >> 5) & 0x1u;
+                    }
+
+                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                    set
+                    {
+                        _bitfield = (_bitfield & ~(0x1u << 5)) | ((value & 0x1u) << 5);
+                    }
+                }
+
+                [NativeTypeName("DWORD : 1")]
+                public uint BlockNonCetBinariesNonEhcont
+                {
+                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                    get
+                    {
+                        return (_bitfield >> 6) & 0x1u;
+                    }
+
+                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                    set
+                    {
+                        _bitfield = (_bitfield & ~(0x1u << 6)) | ((value & 0x1u) << 6);
+                    }
+                }
+
+                [NativeTypeName("DWORD : 1")]
+                public uint AuditBlockNonCetBinaries
+                {
+                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                    get
+                    {
+                        return (_bitfield >> 7) & 0x1u;
+                    }
+
+                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                    set
+                    {
+                        _bitfield = (_bitfield & ~(0x1u << 7)) | ((value & 0x1u) << 7);
+                    }
+                }
+
+                [NativeTypeName("DWORD : 1")]
+                public uint CetDynamicApisOutOfProcOnly
+                {
+                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                    get
+                    {
+                        return (_bitfield >> 8) & 0x1u;
+                    }
+
+                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                    set
+                    {
+                        _bitfield = (_bitfield & ~(0x1u << 8)) | ((value & 0x1u) << 8);
+                    }
+                }
+
+                [NativeTypeName("DWORD : 1")]
+                public uint SetContextIpValidationRelaxedMode
+                {
+                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                    get
+                    {
+                        return (_bitfield >> 9) & 0x1u;
+                    }
+
+                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                    set
+                    {
+                        _bitfield = (_bitfield & ~(0x1u << 9)) | ((value & 0x1u) << 9);
+                    }
+                }
+
+                [NativeTypeName("DWORD : 22")]
+                public uint ReservedFlags
+                {
+                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                    get
+                    {
+                        return (_bitfield >> 10) & 0x3FFFFFu;
+                    }
+
+                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                    set
+                    {
+                        _bitfield = (_bitfield & ~(0x3FFFFFu << 10)) | ((value & 0x3FFFFFu) << 10);
                     }
                 }
             }

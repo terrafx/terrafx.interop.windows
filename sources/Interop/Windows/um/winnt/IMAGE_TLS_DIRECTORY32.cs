@@ -25,7 +25,7 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint SizeOfZeroFill;
 
-        [NativeTypeName("_IMAGE_TLS_DIRECTORY32::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:18215:5)")]
+        [NativeTypeName("_IMAGE_TLS_DIRECTORY32::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:18266:5)")]
         public _Anonymous_e__Union Anonymous;
 
         public ref uint Characteristics
@@ -90,7 +90,7 @@ namespace TerraFX.Interop
             public uint Characteristics;
 
             [FieldOffset(0)]
-            [NativeTypeName("_IMAGE_TLS_DIRECTORY32::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:18217:9)")]
+            [NativeTypeName("_IMAGE_TLS_DIRECTORY32::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:18268:9)")]
             public _Anonymous_e__Struct Anonymous;
 
             public partial struct _Anonymous_e__Struct

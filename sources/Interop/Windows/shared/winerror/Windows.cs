@@ -1483,6 +1483,18 @@ namespace TerraFX.Interop
         [NativeTypeName("#define ERROR_UNEXPECTED_NTCACHEMANAGER_ERROR 443L")]
         public const int ERROR_UNEXPECTED_NTCACHEMANAGER_ERROR = 443;
 
+        [NativeTypeName("#define ERROR_LINUX_SUBSYSTEM_UPDATE_REQUIRED 444L")]
+        public const int ERROR_LINUX_SUBSYSTEM_UPDATE_REQUIRED = 444;
+
+        [NativeTypeName("#define ERROR_DLP_POLICY_WARNS_AGAINST_OPERATION 445L")]
+        public const int ERROR_DLP_POLICY_WARNS_AGAINST_OPERATION = 445;
+
+        [NativeTypeName("#define ERROR_DLP_POLICY_DENIES_OPERATION 446L")]
+        public const int ERROR_DLP_POLICY_DENIES_OPERATION = 446;
+
+        [NativeTypeName("#define ERROR_DLP_POLICY_SILENTLY_FAIL 449L")]
+        public const int ERROR_DLP_POLICY_SILENTLY_FAIL = 449;
+
         [NativeTypeName("#define ERROR_CAPAUTHZ_NOT_DEVUNLOCKED 450L")]
         public const int ERROR_CAPAUTHZ_NOT_DEVUNLOCKED = 450;
 
@@ -1533,6 +1545,9 @@ namespace TerraFX.Interop
 
         [NativeTypeName("#define ERROR_INVALID_ADDRESS 487L")]
         public const int ERROR_INVALID_ADDRESS = 487;
+
+        [NativeTypeName("#define ERROR_HAS_SYSTEM_CRITICAL_FILES 488L")]
+        public const int ERROR_HAS_SYSTEM_CRITICAL_FILES = 488;
 
         [NativeTypeName("#define ERROR_VRF_CFG_AND_IO_ENABLED 1183L")]
         public const int ERROR_VRF_CFG_AND_IO_ENABLED = 1183;

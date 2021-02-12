@@ -16,7 +16,7 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint ChangeType;
 
-        [NativeTypeName("_SD_GLOBAL_CHANGE_INPUT::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winioctl.h:13653:5)")]
+        [NativeTypeName("_SD_GLOBAL_CHANGE_INPUT::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winioctl.h:13682:5)")]
         public _Anonymous_e__Union Anonymous;
 
         public ref SD_CHANGE_MACHINE_SID_INPUT SdChange

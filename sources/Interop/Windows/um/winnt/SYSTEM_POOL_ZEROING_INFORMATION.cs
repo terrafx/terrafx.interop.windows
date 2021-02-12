@@ -5,11 +5,9 @@
 
 namespace TerraFX.Interop
 {
-    public enum ARM64_FNPDATA_CR
+    public partial struct SYSTEM_POOL_ZEROING_INFORMATION
     {
-        PdataCrUnchained = 0,
-        PdataCrUnchainedSavedLr = 1,
-        PdataCrChainedWithPac = 2,
-        PdataCrChained = 3,
+        [NativeTypeName("BOOLEAN")]
+        public byte PoolZeroingSupportPresent;
     }
 }

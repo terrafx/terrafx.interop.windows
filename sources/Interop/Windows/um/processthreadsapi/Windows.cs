@@ -192,6 +192,10 @@ namespace TerraFX.Interop
         [return: NativeTypeName("BOOL")]
         public static extern int SetProcessDynamicEHContinuationTargets([NativeTypeName("HANDLE")] IntPtr Process, [NativeTypeName("USHORT")] ushort NumberOfTargets, [NativeTypeName("PPROCESS_DYNAMIC_EH_CONTINUATION_TARGET")] PROCESS_DYNAMIC_EH_CONTINUATION_TARGET* Targets);
 
+        [DllImport("kernel32", ExactSpelling = true)]
+        [return: NativeTypeName("BOOL")]
+        public static extern int SetProcessDynamicEnforcedCetCompatibleRanges([NativeTypeName("HANDLE")] IntPtr Process, [NativeTypeName("USHORT")] ushort NumberOfRanges, [NativeTypeName("PPROCESS_DYNAMIC_ENFORCED_ADDRESS_RANGE")] PROCESS_DYNAMIC_ENFORCED_ADDRESS_RANGE* Ranges);
+
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int SetProcessAffinityUpdateMode([NativeTypeName("HANDLE")] IntPtr hProcess, [NativeTypeName("DWORD")] uint dwFlags);

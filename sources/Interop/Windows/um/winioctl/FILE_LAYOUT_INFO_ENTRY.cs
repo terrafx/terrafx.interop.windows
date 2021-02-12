@@ -7,7 +7,7 @@ namespace TerraFX.Interop
 {
     public partial struct FILE_LAYOUT_INFO_ENTRY
     {
-        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winioctl.h:14547:5)")]
+        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winioctl.h:14576:5)")]
         public _BasicInformation_e__Struct BasicInformation;
 
         [NativeTypeName("DWORD")]
