@@ -1848,6 +1848,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ShellScalingApi", "ShellSca
 		generation\um\ShellScalingApi\um-ShellScalingApi.h = generation\um\ShellScalingApi\um-ShellScalingApi.h
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "IsolatedAppLauncher", "IsolatedAppLauncher", "{BCE829EE-FED2-4C17-9DFD-F9D6C4DB1D45}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\IsolatedAppLauncher\generate.rsp = generation\um\IsolatedAppLauncher\generate.rsp
+		generation\um\IsolatedAppLauncher\header.txt = generation\um\IsolatedAppLauncher\header.txt
+		generation\um\IsolatedAppLauncher\um-IsolatedAppLauncher.h = generation\um\IsolatedAppLauncher\um-IsolatedAppLauncher.h
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -2140,6 +2147,7 @@ Global
 		{3B2ED67D-9E95-4351-9A11-272C1104414F} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{E76B7894-62A5-41ED-9BF2-454BC2DE7565} = {F9716DD9-2967-4295-AC71-F1FD5A9EEFEF}
 		{42998229-3948-4CE4-B7AC-646C65CD0EC5} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{BCE829EE-FED2-4C17-9DFD-F9D6C4DB1D45} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2FE36DF8-2D9C-4F20-8787-45DC74B57461}
