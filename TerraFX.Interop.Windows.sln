@@ -1841,6 +1841,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "lmerr", "lmerr", "{E76B7894
 		generation\shared\lmerr\shared-lmerr.h = generation\shared\lmerr\shared-lmerr.h
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ShellScalingApi", "ShellScalingApi", "{42998229-3948-4CE4-B7AC-646C65CD0EC5}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\ShellScalingApi\generate.rsp = generation\um\ShellScalingApi\generate.rsp
+		generation\um\ShellScalingApi\header.txt = generation\um\ShellScalingApi\header.txt
+		generation\um\ShellScalingApi\um-ShellScalingApi.h = generation\um\ShellScalingApi\um-ShellScalingApi.h
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -2132,6 +2139,7 @@ Global
 		{9337A17E-7551-48F3-B73D-AF8086062660} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{3B2ED67D-9E95-4351-9A11-272C1104414F} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{E76B7894-62A5-41ED-9BF2-454BC2DE7565} = {F9716DD9-2967-4295-AC71-F1FD5A9EEFEF}
+		{42998229-3948-4CE4-B7AC-646C65CD0EC5} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2FE36DF8-2D9C-4F20-8787-45DC74B57461}
