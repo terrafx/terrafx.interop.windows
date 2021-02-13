@@ -1,0 +1,15 @@
+@../../settings.rsp
+@../../remap.rsp
+--file
+um-RestartManager.h
+--output
+../../../sources/Interop/Windows/um/RestartManager
+--test-output
+../../../tests/Interop/Windows/um/RestartManager
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/RestartManager.h
+--with-attribute
+RM_APP_TYPE=Flags
+RM_SHUTDOWN_TYPE=Flags
+--with-librarypath
+*=rstrtmgr

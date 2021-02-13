@@ -1890,6 +1890,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "compressapi", "compressapi"
 		generation\um\compressapi\um-compressapi.h = generation\um\compressapi\um-compressapi.h
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "RestartManager", "RestartManager", "{84673C32-22B3-49EC-8CF3-BE5A9FEDA5EB}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\RestartManager\generate.rsp = generation\um\RestartManager\generate.rsp
+		generation\um\RestartManager\header.txt = generation\um\RestartManager\header.txt
+		generation\um\RestartManager\um-RestartManager.h = generation\um\RestartManager\um-RestartManager.h
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -2188,6 +2195,7 @@ Global
 		{422885A5-CD79-42CF-A6B2-E1156ABFC075} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{B296E300-EC0C-4204-A1EE-2501C75C7B87} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{4C42B3B6-FED7-465D-9D7A-7565A1033C2F} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{84673C32-22B3-49EC-8CF3-BE5A9FEDA5EB} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2FE36DF8-2D9C-4F20-8787-45DC74B57461}
