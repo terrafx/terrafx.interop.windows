@@ -1876,6 +1876,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "swdevice", "swdevice", "{42
 		generation\um\swdevice\um-swdevice.h = generation\um\swdevice\um-swdevice.h
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ddpbackup", "ddpbackup", "{B296E300-EC0C-4204-A1EE-2501C75C7B87}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\ddpbackup\generate.rsp = generation\um\ddpbackup\generate.rsp
+		generation\um\ddpbackup\header.txt = generation\um\ddpbackup\header.txt
+		generation\um\ddpbackup\um-ddpbackup.h = generation\um\ddpbackup\um-ddpbackup.h
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -2172,6 +2179,7 @@ Global
 		{09434D80-A91A-464C-966E-2B8397AB6C29} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{AD839D00-8A71-4BC9-A9DF-F931C1241F1E} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{422885A5-CD79-42CF-A6B2-E1156ABFC075} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{B296E300-EC0C-4204-A1EE-2501C75C7B87} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2FE36DF8-2D9C-4F20-8787-45DC74B57461}
