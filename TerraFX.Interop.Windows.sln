@@ -1869,6 +1869,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "swdevicedef", "swdevicedef"
 		generation\um\swdevicedef\um-swdevicedef.h = generation\um\swdevicedef\um-swdevicedef.h
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "swdevice", "swdevice", "{422885A5-CD79-42CF-A6B2-E1156ABFC075}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\swdevice\generate.rsp = generation\um\swdevice\generate.rsp
+		generation\um\swdevice\header.txt = generation\um\swdevice\header.txt
+		generation\um\swdevice\um-swdevice.h = generation\um\swdevice\um-swdevice.h
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -2164,6 +2171,7 @@ Global
 		{BCE829EE-FED2-4C17-9DFD-F9D6C4DB1D45} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{09434D80-A91A-464C-966E-2B8397AB6C29} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{AD839D00-8A71-4BC9-A9DF-F931C1241F1E} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{422885A5-CD79-42CF-A6B2-E1156ABFC075} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2FE36DF8-2D9C-4F20-8787-45DC74B57461}
