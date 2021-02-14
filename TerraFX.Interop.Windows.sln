@@ -1967,6 +1967,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "rendezvoussession", "rendez
 		generation\um\rendezvoussession\um-rendezvoussession.h = generation\um\rendezvoussession\um-rendezvoussession.h
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "msports", "msports", "{0D590928-AA03-4324-BB11-424047D41EC3}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\msports\generate.rsp = generation\um\msports\generate.rsp
+		generation\um\msports\header.txt = generation\um\msports\header.txt
+		generation\um\msports\um-msports.h = generation\um\msports\um-msports.h
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -2276,6 +2283,7 @@ Global
 		{D1C8B976-2C97-4A0C-B22A-C3B47FBB8FF8} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{81CCE1E0-C734-40B8-B0BC-521F3668A8FD} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{C6167203-23F9-46E4-856A-C2DC40DFBB7A} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{0D590928-AA03-4324-BB11-424047D41EC3} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2FE36DF8-2D9C-4F20-8787-45DC74B57461}
