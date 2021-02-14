@@ -2009,6 +2009,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "davclnt", "davclnt", "{D9F5
 		generation\um\davclnt\um-davclnt.h = generation\um\davclnt\um-davclnt.h
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "wcmapi", "wcmapi", "{686A85CD-0BA2-4F6B-A9D9-E5F1FF3451B2}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\wcmapi\generate.rsp = generation\um\wcmapi\generate.rsp
+		generation\um\wcmapi\header.txt = generation\um\wcmapi\header.txt
+		generation\um\wcmapi\um-wcmapi.h = generation\um\wcmapi\um-wcmapi.h
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -2324,6 +2331,7 @@ Global
 		{68E9A8F5-C4A3-47FD-B449-748EC32A6FEB} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{2B0D3696-0540-4B74-8CD3-DADECBE1EDB3} = {F9716DD9-2967-4295-AC71-F1FD5A9EEFEF}
 		{D9F58364-B99D-4384-84C4-BC0EE0136523} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{686A85CD-0BA2-4F6B-A9D9-E5F1FF3451B2} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2FE36DF8-2D9C-4F20-8787-45DC74B57461}
