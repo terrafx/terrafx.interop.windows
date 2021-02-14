@@ -2002,6 +2002,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tbs", "tbs", "{2B0D3696-054
 		generation\shared\tbs\shared-tbs.h = generation\shared\tbs\shared-tbs.h
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "davclnt", "davclnt", "{D9F58364-B99D-4384-84C4-BC0EE0136523}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\davclnt\generate.rsp = generation\um\davclnt\generate.rsp
+		generation\um\davclnt\header.txt = generation\um\davclnt\header.txt
+		generation\um\davclnt\um-davclnt.h = generation\um\davclnt\um-davclnt.h
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -2316,6 +2323,7 @@ Global
 		{55B74712-EDD0-49F8-B6E2-0B3FD355CEEF} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{68E9A8F5-C4A3-47FD-B449-748EC32A6FEB} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{2B0D3696-0540-4B74-8CD3-DADECBE1EDB3} = {F9716DD9-2967-4295-AC71-F1FD5A9EEFEF}
+		{D9F58364-B99D-4384-84C4-BC0EE0136523} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2FE36DF8-2D9C-4F20-8787-45DC74B57461}
