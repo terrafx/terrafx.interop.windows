@@ -1897,6 +1897,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "RestartManager", "RestartMa
 		generation\um\RestartManager\um-RestartManager.h = generation\um\RestartManager\um-RestartManager.h
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "oobenotification", "oobenotification", "{C763A292-7CAB-4848-80B0-151D9A58591F}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\oobenotification\generate.rsp = generation\um\oobenotification\generate.rsp
+		generation\um\oobenotification\header.txt = generation\um\oobenotification\header.txt
+		generation\um\oobenotification\um-oobenotification.h = generation\um\oobenotification\um-oobenotification.h
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -2196,6 +2203,7 @@ Global
 		{B296E300-EC0C-4204-A1EE-2501C75C7B87} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{4C42B3B6-FED7-465D-9D7A-7565A1033C2F} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{84673C32-22B3-49EC-8CF3-BE5A9FEDA5EB} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{C763A292-7CAB-4848-80B0-151D9A58591F} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2FE36DF8-2D9C-4F20-8787-45DC74B57461}
