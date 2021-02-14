@@ -1939,6 +1939,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Wsdevlicensing", "Wsdevlice
 		generation\winrt\Wsdevlicensing\winrt-Wsdevlicensing.h = generation\winrt\Wsdevlicensing\winrt-Wsdevlicensing.h
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MSChapp", "MSChapp", "{DC0615E4-CFF8-47B5-AD41-80FEE842CE39}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\MSChapp\generate.rsp = generation\um\MSChapp\generate.rsp
+		generation\um\MSChapp\header.txt = generation\um\MSChapp\header.txt
+		generation\um\MSChapp\um-MSChapp.h = generation\um\MSChapp\um-MSChapp.h
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -2244,6 +2251,7 @@ Global
 		{2DACC2E6-8B04-448D-9780-1CB4C9BDD7EF} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{A68F348B-DDA4-4B37-85E2-F0936FB0ACAA} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
 		{611800BA-4A44-4D89-8A5F-89B3926AA7DF} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
+		{DC0615E4-CFF8-47B5-AD41-80FEE842CE39} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2FE36DF8-2D9C-4F20-8787-45DC74B57461}
