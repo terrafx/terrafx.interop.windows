@@ -1932,6 +1932,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MessageDispatcherApi", "Mes
 		generation\winrt\MessageDispatcherApi\winrt-MessageDispatcherApi.h = generation\winrt\MessageDispatcherApi\winrt-MessageDispatcherApi.h
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Wsdevlicensing", "Wsdevlicensing", "{611800BA-4A44-4D89-8A5F-89B3926AA7DF}"
+	ProjectSection(SolutionItems) = preProject
+		generation\winrt\Wsdevlicensing\generate.rsp = generation\winrt\Wsdevlicensing\generate.rsp
+		generation\winrt\Wsdevlicensing\header.txt = generation\winrt\Wsdevlicensing\header.txt
+		generation\winrt\Wsdevlicensing\winrt-Wsdevlicensing.h = generation\winrt\Wsdevlicensing\winrt-Wsdevlicensing.h
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -2236,6 +2243,7 @@ Global
 		{8FE8531C-3DE6-4015-904C-853AF211050C} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{2DACC2E6-8B04-448D-9780-1CB4C9BDD7EF} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{A68F348B-DDA4-4B37-85E2-F0936FB0ACAA} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
+		{611800BA-4A44-4D89-8A5F-89B3926AA7DF} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2FE36DF8-2D9C-4F20-8787-45DC74B57461}
