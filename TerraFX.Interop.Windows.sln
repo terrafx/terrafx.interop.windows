@@ -1960,6 +1960,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Psapi", "Psapi", "{81CCE1E0
 		generation\um\Psapi\um-Psapi.h = generation\um\Psapi\um-Psapi.h
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "rendezvoussession", "rendezvoussession", "{C6167203-23F9-46E4-856A-C2DC40DFBB7A}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\rendezvoussession\generate.rsp = generation\um\rendezvoussession\generate.rsp
+		generation\um\rendezvoussession\header.txt = generation\um\rendezvoussession\header.txt
+		generation\um\rendezvoussession\um-rendezvoussession.h = generation\um\rendezvoussession\um-rendezvoussession.h
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -2268,6 +2275,7 @@ Global
 		{DC0615E4-CFF8-47B5-AD41-80FEE842CE39} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{D1C8B976-2C97-4A0C-B22A-C3B47FBB8FF8} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{81CCE1E0-C734-40B8-B0BC-521F3668A8FD} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{C6167203-23F9-46E4-856A-C2DC40DFBB7A} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2FE36DF8-2D9C-4F20-8787-45DC74B57461}
