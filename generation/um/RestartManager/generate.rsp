@@ -9,7 +9,8 @@ um-RestartManager.h
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/RestartManager.h
 --with-attribute
-RM_APP_TYPE=Flags
+RM_APP_STATUS=Flags
+RM_REBOOT_REASON=Flags
 RM_SHUTDOWN_TYPE=Flags
 --with-librarypath
 *=rstrtmgr
