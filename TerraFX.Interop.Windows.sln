@@ -2016,6 +2016,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "wcmapi", "wcmapi", "{686A85
 		generation\um\wcmapi\um-wcmapi.h = generation\um\wcmapi\um-wcmapi.h
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "IContact", "IContact", "{1F5573A8-15AF-43CC-8879-F20398695556}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\IContact\generate.rsp = generation\um\IContact\generate.rsp
+		generation\um\IContact\header.txt = generation\um\IContact\header.txt
+		generation\um\IContact\um-IContact.h = generation\um\IContact\um-IContact.h
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -2332,6 +2339,7 @@ Global
 		{2B0D3696-0540-4B74-8CD3-DADECBE1EDB3} = {F9716DD9-2967-4295-AC71-F1FD5A9EEFEF}
 		{D9F58364-B99D-4384-84C4-BC0EE0136523} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{686A85CD-0BA2-4F6B-A9D9-E5F1FF3451B2} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{1F5573A8-15AF-43CC-8879-F20398695556} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2FE36DF8-2D9C-4F20-8787-45DC74B57461}
