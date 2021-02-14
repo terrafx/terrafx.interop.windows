@@ -1946,6 +1946,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MSChapp", "MSChapp", "{DC06
 		generation\um\MSChapp\um-MSChapp.h = generation\um\MSChapp\um-MSChapp.h
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ProcessSnapshot", "ProcessSnapshot", "{D1C8B976-2C97-4A0C-B22A-C3B47FBB8FF8}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\ProcessSnapshot\generate.rsp = generation\um\ProcessSnapshot\generate.rsp
+		generation\um\ProcessSnapshot\header.txt = generation\um\ProcessSnapshot\header.txt
+		generation\um\ProcessSnapshot\um-ProcessSnapshot.h = generation\um\ProcessSnapshot\um-ProcessSnapshot.h
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -2252,6 +2259,7 @@ Global
 		{A68F348B-DDA4-4B37-85E2-F0936FB0ACAA} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
 		{611800BA-4A44-4D89-8A5F-89B3926AA7DF} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
 		{DC0615E4-CFF8-47B5-AD41-80FEE842CE39} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{D1C8B976-2C97-4A0C-B22A-C3B47FBB8FF8} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2FE36DF8-2D9C-4F20-8787-45DC74B57461}
