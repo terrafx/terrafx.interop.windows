@@ -1981,6 +1981,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NotificationActivationCallb
 		generation\um\NotificationActivationCallback\um-NotificationActivationCallback.h = generation\um\NotificationActivationCallback\um-NotificationActivationCallback.h
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "gamingtcui", "gamingtcui", "{55B74712-EDD0-49F8-B6E2-0B3FD355CEEF}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\gamingtcui\generate.rsp = generation\um\gamingtcui\generate.rsp
+		generation\um\gamingtcui\header.txt = generation\um\gamingtcui\header.txt
+		generation\um\gamingtcui\um-gamingtcui.h = generation\um\gamingtcui\um-gamingtcui.h
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -2292,6 +2299,7 @@ Global
 		{C6167203-23F9-46E4-856A-C2DC40DFBB7A} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{0D590928-AA03-4324-BB11-424047D41EC3} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{2207882C-191C-40CB-86DE-6CC96860EDD5} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{55B74712-EDD0-49F8-B6E2-0B3FD355CEEF} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2FE36DF8-2D9C-4F20-8787-45DC74B57461}
