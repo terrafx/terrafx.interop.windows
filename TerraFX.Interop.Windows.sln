@@ -1911,6 +1911,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DocumentSource", "DocumentS
 		generation\winrt\DocumentSource\winrt-DocumentSource.h = generation\winrt\DocumentSource\winrt-DocumentSource.h
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "shtypes", "shtypes", "{8FE8531C-3DE6-4015-904C-853AF211050C}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\shtypes\generate.rsp = generation\um\shtypes\generate.rsp
+		generation\um\shtypes\header.txt = generation\um\shtypes\header.txt
+		generation\um\shtypes\um-shtypes.h = generation\um\shtypes\um-shtypes.h
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -2212,6 +2219,7 @@ Global
 		{84673C32-22B3-49EC-8CF3-BE5A9FEDA5EB} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{C763A292-7CAB-4848-80B0-151D9A58591F} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{173278D7-E38F-4DE6-853E-FF76BC4AAF81} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
+		{8FE8531C-3DE6-4015-904C-853AF211050C} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2FE36DF8-2D9C-4F20-8787-45DC74B57461}
