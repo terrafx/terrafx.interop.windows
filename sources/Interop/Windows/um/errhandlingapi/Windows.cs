@@ -21,13 +21,6 @@ namespace TerraFX.Interop
         public static extern delegate* unmanaged<EXCEPTION_POINTERS*, int> SetUnhandledExceptionFilter([NativeTypeName("LPTOP_LEVEL_EXCEPTION_FILTER")] delegate* unmanaged<EXCEPTION_POINTERS*, int> lpTopLevelExceptionFilter);
 
         [DllImport("kernel32", ExactSpelling = true)]
-        [return: NativeTypeName("DWORD")]
-        public static extern uint GetLastError();
-
-        [DllImport("kernel32", ExactSpelling = true)]
-        public static extern void SetLastError([NativeTypeName("DWORD")] uint dwErrCode);
-
-        [DllImport("kernel32", ExactSpelling = true)]
         [return: NativeTypeName("UINT")]
         public static extern uint GetErrorMode();
 
