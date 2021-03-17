@@ -14,7 +14,7 @@ namespace TerraFX.Samples.DirectX
 {
     public static unsafe class DXSampleHelper
     {
-        public static void ThrowIfFailed(string methodName, HRESULT hr)
+        public static void ThrowIfFailed(string _, HRESULT hr)
         {
             if (FAILED(hr))
             {
