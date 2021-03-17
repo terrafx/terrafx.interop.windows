@@ -18,7 +18,7 @@ namespace TerraFX.Interop
         [return: NativeTypeName("HRESULT")]
         public static extern int D3DWriteBlobToFile([NativeTypeName("ID3DBlob *")] ID3DBlob* pBlob, [NativeTypeName("LPCWSTR")] ushort* pFileName, [NativeTypeName("BOOL")] int bOverwrite);
 
-        [DllImport("D3DCompiler", ExactSpelling = true)]
+        [DllImport("D3DCompiler_47", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int D3DCompile([NativeTypeName("LPCVOID")] void* pSrcData, [NativeTypeName("SIZE_T")] nuint SrcDataSize, [NativeTypeName("LPCSTR")] sbyte* pSourceName, [NativeTypeName("const D3D_SHADER_MACRO *")] D3D_SHADER_MACRO* pDefines, [NativeTypeName("ID3DInclude *")] ID3DInclude* pInclude, [NativeTypeName("LPCSTR")] sbyte* pEntrypoint, [NativeTypeName("LPCSTR")] sbyte* pTarget, [NativeTypeName("UINT")] uint Flags1, [NativeTypeName("UINT")] uint Flags2, [NativeTypeName("ID3DBlob **")] ID3DBlob** ppCode, [NativeTypeName("ID3DBlob **")] ID3DBlob** ppErrorMsgs);
 
