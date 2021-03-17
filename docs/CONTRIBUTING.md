@@ -7,9 +7,9 @@ The following is a set of guidelines for contributing to TerraFX.
 * [Code of Conduct](#code-of-conduct)
 * [License](#license)
 * [What should I know?](#what-should-i-know)
-* [Pull Requests](#pull-requests)
 * [Issues](#issues)
 * [Questions](#questions)
+* [Pull Requests](#pull-requests)
 
 ### Code of Conduct
 
@@ -28,6 +28,16 @@ Copyright © Tanner Gooding and Contributors. Licensed under the MIT License
 Most of the basics of the project, such as what it is about, and its goals are
 covered in our [README](README.md).
 
+### Issues
+
+All issues should follow our [ISSUE_TEMPLATE](ISSUE_TEMPLATE.md). It is
+additionaly recommended to prefix your issue with an appriopriate "tag" such as
+`[QUESTION]`, `[BUG]`, `[REGRESSION]`, `[IDEA]`, or `[PROPOSAL]`.
+
+### Questions
+
+Feel free to open an issue prefixed with `[QUESTION]`.
+
 ### Pull Requests
 
 All pull requests should follow our
@@ -38,12 +48,19 @@ template will be requested to be updated. Any pull requests opened without a
 corresponding issue may be delayed or be required to undergo further changes
 before being accepted.
 
-### Issues
+#### Pull Request Workflow
 
-All issues should follow our [ISSUE_TEMPLATE](ISSUE_TEMPLATE.md). It is
-additionaly recommended to prefix your issue with an appriopriate "tag" such as
-`[QUESTION]`, `[BUG]`, `[REGRESSION]`, `[IDEA]`, or `[PROPOSAL]`.
+As workflow for Pull Requests (PR) it is recommended to follow [these steps]
+(https://help.github.com/en/github/collaborating-with-issues-and-pull-requests)
 
-### Questions
+#### Coding Conventions
 
-Feel free to open an issue prefixed with `[QUESTION]`.
+TerraFX follows most of [these recommend practices] 
+(https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/inside-a-program/coding-conventions).
+Those proactices and a few desirable deviations are specified via the .editorconfig file.
+Hence, they are and as enforced by the messages in Visual Studio 2019 
+when configured as *build + intellisense* .  
+Commits should be done such that under these settings there are no warnings.
+Due to limitations of .editorconfig syntax some required rules can not be specified. 
+Check with the project owner when in doubt about your commit.
+   
