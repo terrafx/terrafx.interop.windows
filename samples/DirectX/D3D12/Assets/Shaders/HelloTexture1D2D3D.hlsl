@@ -2,10 +2,10 @@
 
 // types
 
-//cbuffer SceneConstantBuffer : register(b0)
-//{
-//    matrix transform;
-//};
+cbuffer SceneConstantBuffer : register(b0)
+{
+    matrix transform;
+};
 
 struct VSInput
 {
@@ -26,7 +26,7 @@ PSInput VSMain(VSInput input)
     PSInput result;
 
     float4 pos4 = float4(input.position, 1.0f);
-    //pos4 = mul(pos4, transform);
+    pos4 = mul(pos4, transform);
     result.position = pos4;
     result.uv = input.uv;
 

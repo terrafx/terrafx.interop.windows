@@ -411,11 +411,10 @@ namespace TerraFX.Samples.DirectX.D3D12
                 featureData.HighestVersion = D3D_ROOT_SIGNATURE_VERSION_1_0;
             }
 
-            const int RootParametersCount = 1;
+            const int RootParametersCount = 2;
             var rootParameters = stackalloc D3D12_ROOT_PARAMETER1[RootParametersCount];
 
-            bool skipConstBuffer = true;
-            if (skipConstBuffer) { // const buffer
+            { // const buffer
                 const int RangesCount = 1;
                 var ranges = stackalloc D3D12_DESCRIPTOR_RANGE1[RangesCount];
 
@@ -429,7 +428,7 @@ namespace TerraFX.Samples.DirectX.D3D12
 
                 ranges[0].Init(D3D12_DESCRIPTOR_RANGE_TYPE_SRV, 1, 0, 0, D3D12_DESCRIPTOR_RANGE_FLAG_DATA_STATIC);
 
-                rootParameters[0].InitAsDescriptorTable(RangesCount, ranges, D3D12_SHADER_VISIBILITY_PIXEL);
+                rootParameters[1].InitAsDescriptorTable(RangesCount, ranges, D3D12_SHADER_VISIBILITY_PIXEL);
             }
 
             var sampler = new D3D12_STATIC_SAMPLER_DESC {
@@ -577,14 +576,14 @@ namespace TerraFX.Samples.DirectX.D3D12
         {
             base.SetGraphicsCommandListState();
 
-            const uint HeapsCount = 1;
+            const uint HeapsCount = 2;
             var ppHeaps = stackalloc ID3D12DescriptorHeap*[(int)HeapsCount] {
-                //_cbvHeap,
+                _cbvHeap,
                 _srvHeap,
             };
             GraphicsCommandList->SetDescriptorHeaps(HeapsCount, ppHeaps);
-            //GraphicsCommandList->SetGraphicsRootDescriptorTable(0, _cbvHeap->GetGPUDescriptorHandleForHeapStart());
-            GraphicsCommandList->SetGraphicsRootDescriptorTable(0, _srvHeap->GetGPUDescriptorHandleForHeapStart());
+            GraphicsCommandList->SetGraphicsRootDescriptorTable(0, _cbvHeap->GetGPUDescriptorHandleForHeapStart());
+            GraphicsCommandList->SetGraphicsRootDescriptorTable(1, _srvHeap->GetGPUDescriptorHandleForHeapStart());
         }
 
         public struct Vertex
