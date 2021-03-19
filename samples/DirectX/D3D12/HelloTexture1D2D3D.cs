@@ -6,6 +6,7 @@
 using System;
 using System.Numerics;
 using System.Runtime.CompilerServices;
+using System.Text;
 using TerraFX.Interop;
 using static TerraFX.Interop.D3D_PRIMITIVE_TOPOLOGY;
 using static TerraFX.Interop.D3D_ROOT_SIGNATURE_VERSION;
@@ -65,6 +66,8 @@ namespace TerraFX.Samples.DirectX.D3D12
 
         protected override void CreateAssets()
         {
+            using ComPtr<ID3D12Resource> texture1dUploadHeap = null;
+            using ComPtr<ID3D12Resource> texture2dUploadHeap = null;
             _constantBuffer = CreateConstantBuffer(out _constantBufferDataBegin);
             _texture1D = CreateTexture1D();
             _texture2D = CreateTexture2D();
@@ -105,7 +108,6 @@ namespace TerraFX.Samples.DirectX.D3D12
                 var uploadBufferSize = GetRequiredIntermediateSize(texture, 0, 1);
 
                 // Create the GPU upload buffer.
-                using ComPtr<ID3D12Resource> textureUploadHeap = null;
                 heapProperties = new D3D12_HEAP_PROPERTIES(D3D12_HEAP_TYPE_UPLOAD);
                 var bufferDesc = D3D12_RESOURCE_DESC.Buffer(uploadBufferSize);
                 ThrowIfFailed(nameof(ID3D12Device.CreateCommittedResource), D3DDevice->CreateCommittedResource(
@@ -115,7 +117,7 @@ namespace TerraFX.Samples.DirectX.D3D12
                     D3D12_RESOURCE_STATE_GENERIC_READ,
                     pOptimizedClearValue: null,
                     &iid,
-                    (void**)textureUploadHeap.GetAddressOf()
+                    (void**)texture1dUploadHeap.GetAddressOf()
                 ));
 
                 // Copy data to the intermediate upload heap and then schedule a copy
@@ -132,7 +134,7 @@ namespace TerraFX.Samples.DirectX.D3D12
                         SlicePitch = (nint)slicePitch,
                     };
                 }
-                UpdateSubresources(GraphicsCommandList, texture, textureUploadHeap, 0, 0, 1, &textureSubresourceData);
+                UpdateSubresources(GraphicsCommandList, texture, texture1dUploadHeap, 0, 0, 1, &textureSubresourceData);
                 var barrier = D3D12_RESOURCE_BARRIER.InitTransition(texture, D3D12_RESOURCE_STATE_COPY_DEST, D3D12_RESOURCE_STATE_PIXEL_SHADER_RESOURCE);
                 GraphicsCommandList->ResourceBarrier(1, &barrier);
 
@@ -148,6 +150,10 @@ namespace TerraFX.Samples.DirectX.D3D12
                 var incrementedHandle = new D3D12_CPU_DESCRIPTOR_HANDLE(_cbv_srv_Heap->GetCPUDescriptorHandleForHeapStart(), (int)incrementSize);
                 D3DDevice->CreateShaderResourceView(texture, &srvDesc, incrementedHandle);
 
+                fixed (char* name = "Texture1d")
+                {
+                    texture->SetName((ushort*)name);
+                }
                 return texture;
 
 
@@ -208,7 +214,6 @@ namespace TerraFX.Samples.DirectX.D3D12
                 var uploadBufferSize = GetRequiredIntermediateSize(texture, 0, 1);
 
                 // Create the GPU upload buffer.
-                using ComPtr<ID3D12Resource> textureUploadHeap = null;
                 heapProperties = new D3D12_HEAP_PROPERTIES(D3D12_HEAP_TYPE_UPLOAD);
                 var bufferDesc = D3D12_RESOURCE_DESC.Buffer(uploadBufferSize);
                 ThrowIfFailed(nameof(ID3D12Device.CreateCommittedResource), D3DDevice->CreateCommittedResource(
@@ -218,7 +223,7 @@ namespace TerraFX.Samples.DirectX.D3D12
                     D3D12_RESOURCE_STATE_GENERIC_READ,
                     pOptimizedClearValue: null,
                     &iid,
-                    (void**)textureUploadHeap.GetAddressOf()
+                    (void**)texture2dUploadHeap.GetAddressOf()
                 ));
 
                 // Copy data to the intermediate upload heap and then schedule a copy
@@ -235,7 +240,7 @@ namespace TerraFX.Samples.DirectX.D3D12
                         SlicePitch = (nint)slicePitch,
                     };
                 }
-                UpdateSubresources(GraphicsCommandList, texture, textureUploadHeap, 0, 0, 1, &textureSubresourceData);
+                UpdateSubresources(GraphicsCommandList, texture, texture2dUploadHeap, 0, 0, 1, &textureSubresourceData);
                 var barrier = D3D12_RESOURCE_BARRIER.InitTransition(texture, D3D12_RESOURCE_STATE_COPY_DEST, D3D12_RESOURCE_STATE_PIXEL_SHADER_RESOURCE);
                 GraphicsCommandList->ResourceBarrier(1, &barrier);
 
@@ -251,6 +256,10 @@ namespace TerraFX.Samples.DirectX.D3D12
                 var incrementedHandle = new D3D12_CPU_DESCRIPTOR_HANDLE(_cbv_srv_Heap->GetCPUDescriptorHandleForHeapStart(), (int)incrementSize);
                 D3DDevice->CreateShaderResourceView(texture, &srvDesc, incrementedHandle);
 
+                fixed (char* name = "Texture2d")
+                {
+                    texture->SetName((ushort*)name);
+                }
                 return texture;
 
                 byte[] GenerateTextureData2D()
@@ -344,6 +353,10 @@ namespace TerraFX.Samples.DirectX.D3D12
                 vertexBufferView.StrideInBytes = (uint)sizeof(Vertex);
                 vertexBufferView.SizeInBytes = vertexBufferSize;
 
+                fixed (char* name = "VertexBuffer")
+                {
+                    vertexBuffer->SetName((ushort*)name);
+                }
                 return vertexBuffer;
             }
 
@@ -374,6 +387,11 @@ namespace TerraFX.Samples.DirectX.D3D12
                     var readRange = new D3D12_RANGE(); // We do not intend to read from this resource on the CPU.
                     ThrowIfFailed(nameof(ID3D12Resource.Map), constantBuffer->Map(Subresource: 0, &readRange, (void**)pConstantBufferDataBegin));
                     Unsafe.CopyBlock(ref constantBufferDataBegin[0], ref Unsafe.As<SceneConstantBuffer, byte>(ref _constantBufferData), (uint)sizeof(SceneConstantBuffer));
+                }
+
+                fixed (char* name = "constantBuffer")
+                {
+                    constantBuffer->SetName((ushort*)name);
                 }
                 return constantBuffer;
             }
@@ -508,6 +526,7 @@ namespace TerraFX.Samples.DirectX.D3D12
 
                 ranges[0].Init(D3D12_DESCRIPTOR_RANGE_TYPE_CBV, 1, 0, 0, D3D12_DESCRIPTOR_RANGE_FLAG_DATA_STATIC);
                 rootParameters[0].InitAsDescriptorTable(RangesCount, ranges, D3D12_SHADER_VISIBILITY_VERTEX);
+
             }
 
             { // texture
@@ -553,6 +572,10 @@ namespace TerraFX.Samples.DirectX.D3D12
             var iid = IID_ID3D12RootSignature;
             ThrowIfFailed(nameof(ID3D12Device.CreateRootSignature), D3DDevice->CreateRootSignature(0, signature.Get()->GetBufferPointer(), signature.Get()->GetBufferSize(), &iid, (void**)&rootSignature));
 
+            fixed (char* name = "Texture1D2D3DRootSignature")
+            {
+                rootSignature->SetName((ushort*)name);
+            }
             return rootSignature;
         }
 
