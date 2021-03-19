@@ -56,7 +56,6 @@ namespace TerraFX.Samples.DirectX.D3D12
         {
         }
 
-
         protected override void CreateAssets()
         {
             using ComPtr<ID3D12Resource> textureUploadHeap = null;
@@ -139,10 +138,9 @@ namespace TerraFX.Samples.DirectX.D3D12
 
                 var incrementSize = D3DDevice->GetDescriptorHandleIncrementSize(D3D12_DESCRIPTOR_HEAP_TYPE_CBV_SRV_UAV);
                 var incrementedHandle = new D3D12_CPU_DESCRIPTOR_HANDLE(_cbv_srv_Heap->GetCPUDescriptorHandleForHeapStart(), (int)incrementSize);
-                D3DDevice->CreateShaderResourceView(texture, &srvDesc,  incrementedHandle);
+                D3DDevice->CreateShaderResourceView(texture, &srvDesc, incrementedHandle);
 
                 return texture;
-
 
                 byte[] GenerateTextureData()
                 {
@@ -177,11 +175,9 @@ namespace TerraFX.Samples.DirectX.D3D12
                             }
                         }
                     }
-
                     return data;
                 }
             }
-
 
             ID3D12Resource* CreateVertexBuffer(out D3D12_VERTEX_BUFFER_VIEW vertexBufferView)
             {
@@ -240,7 +236,6 @@ namespace TerraFX.Samples.DirectX.D3D12
                 return vertexBuffer;
             }
 
-
             ID3D12Resource* CreateConstantBuffer(out byte* constantBufferDataBegin)
             {
                 _constantBufferData = new SceneConstantBuffer();
@@ -269,7 +264,6 @@ namespace TerraFX.Samples.DirectX.D3D12
                     ThrowIfFailed(nameof(ID3D12Resource.Map), constantBuffer->Map(Subresource: 0, &readRange, (void**)pConstantBufferDataBegin));
                     Unsafe.CopyBlock(ref constantBufferDataBegin[0], ref Unsafe.As<SceneConstantBuffer, byte>(ref _constantBufferData), (uint)sizeof(SceneConstantBuffer));
                 }
-
                 return constantBuffer;
             }
         }
@@ -302,7 +296,6 @@ namespace TerraFX.Samples.DirectX.D3D12
             using ComPtr<ID3DBlob> vertexShader = null;
 
             var compileFlags = 0u;
-
 #if DEBUG
             // Enable better shader debugging with the graphics debugging tools.
             compileFlags |= D3DCOMPILE_DEBUG | D3DCOMPILE_SKIP_OPTIMIZATION;
@@ -552,6 +545,9 @@ namespace TerraFX.Samples.DirectX.D3D12
             };
             GraphicsCommandList->SetDescriptorHeaps(HeapsCount, ppHeaps);
             GraphicsCommandList->SetGraphicsRootDescriptorTable(0, _cbv_srv_Heap->GetGPUDescriptorHandleForHeapStart());
+            var incrementSize = D3DDevice->GetDescriptorHandleIncrementSize(D3D12_DESCRIPTOR_HEAP_TYPE_CBV_SRV_UAV);
+            var incrementedHandle = new D3D12_GPU_DESCRIPTOR_HANDLE(_cbv_srv_Heap->GetGPUDescriptorHandleForHeapStart(), (int)incrementSize);
+            GraphicsCommandList->SetGraphicsRootDescriptorTable(1, incrementedHandle);
         }
 
         public struct Vertex

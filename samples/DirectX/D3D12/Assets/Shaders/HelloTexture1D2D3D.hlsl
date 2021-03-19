@@ -38,6 +38,5 @@ SamplerState samplerInput : register(s0);
 float4 PSMain(PSInput input) : SV_TARGET
 {
     float4 color = textureInput.Sample(samplerInput, input.uv);
-    //color = float4(input.uv[0], input.uv[1], 1.0f, 1.0f);
     return color;
 }
