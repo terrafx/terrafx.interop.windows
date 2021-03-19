@@ -1,7 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
 // types
-
 cbuffer SceneConstantBuffer : register(b0)
 {
     matrix transform;
@@ -20,7 +19,6 @@ struct PSInput
 };
 
 // vertex shader
-
 PSInput VSMain(VSInput input)
 {
     PSInput result;
@@ -34,7 +32,6 @@ PSInput VSMain(VSInput input)
 }
 
 // pixel shader
-
 Texture2D textureInput : register(t0);
 SamplerState samplerInput : register(s0);
 

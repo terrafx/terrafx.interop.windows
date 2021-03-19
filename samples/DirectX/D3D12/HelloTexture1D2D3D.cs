@@ -42,14 +42,15 @@ namespace TerraFX.Samples.DirectX.D3D12
         private const uint TextureWidth = 256;
         private const uint TextureHeight = 256;
         private const uint TexturePixelSize = 4;
-        private ID3D12DescriptorHeap* _srvHeap;
         private ID3D12Resource* _texture;
 
         // animate the position (HelloConstBuffer)
-        private ID3D12DescriptorHeap* _cbvHeap;
         private ID3D12Resource* _constantBuffer;
         private byte* _constantBufferDataBegin;
         private SceneConstantBuffer _constantBufferData;
+
+        // heap for both
+        private ID3D12DescriptorHeap* _cbv_srv_Heap;
 
         public HelloTexture1D2D3D(string name) : base(name)
         {
@@ -136,7 +137,9 @@ namespace TerraFX.Samples.DirectX.D3D12
                 };
                 srvDesc.Anonymous.Texture2D.MipLevels = 1;
 
-                D3DDevice->CreateShaderResourceView(texture, &srvDesc, _srvHeap->GetCPUDescriptorHandleForHeapStart());
+                var incrementSize = D3DDevice->GetDescriptorHandleIncrementSize(D3D12_DESCRIPTOR_HEAP_TYPE_CBV_SRV_UAV);
+                var incrementedHandle = new D3D12_CPU_DESCRIPTOR_HANDLE(_cbv_srv_Heap->GetCPUDescriptorHandleForHeapStart(), (int)incrementSize);
+                D3DDevice->CreateShaderResourceView(texture, &srvDesc,  incrementedHandle);
 
                 return texture;
 
@@ -255,7 +258,7 @@ namespace TerraFX.Samples.DirectX.D3D12
                     BufferLocation = constantBuffer->GetGPUVirtualAddress(),
                     SizeInBytes = (uint)((sizeof(SceneConstantBuffer) + 255) & ~255)    // CB size is required to be 256-byte aligned.
                 };
-                D3DDevice->CreateConstantBufferView(&cbvDesc, _cbvHeap->GetCPUDescriptorHandleForHeapStart());
+                D3DDevice->CreateConstantBufferView(&cbvDesc, _cbv_srv_Heap->GetCPUDescriptorHandleForHeapStart());
 
                 // Map and initialize the constant buffer. We don't unmap this until the
                 // app closes. Keeping things mapped for the lifetime of the resource is okay.
@@ -274,42 +277,23 @@ namespace TerraFX.Samples.DirectX.D3D12
         protected override void CreateDescriptorHeaps()
         {
             base.CreateDescriptorHeaps();
-            _cbvHeap = CreateCBVHeap();
-            _srvHeap = CreateSRVHeap();
+            _cbv_srv_Heap = CreateCbvSrvHeap();
 
-
-            ID3D12DescriptorHeap* CreateCBVHeap()
+            ID3D12DescriptorHeap* CreateCbvSrvHeap()
             {
-                var cbvHeapDesc = new D3D12_DESCRIPTOR_HEAP_DESC {
-                    NumDescriptors = 1,
+                var cbvSrvHeapDesc = new D3D12_DESCRIPTOR_HEAP_DESC {
+                    NumDescriptors = 2,
                     Flags = D3D12_DESCRIPTOR_HEAP_FLAG_SHADER_VISIBLE,
                     Type = D3D12_DESCRIPTOR_HEAP_TYPE_CBV_SRV_UAV,
                 };
 
-                ID3D12DescriptorHeap* cbvHeap;
+                ID3D12DescriptorHeap* cbvSrvHeap;
 
                 var iid = IID_ID3D12DescriptorHeap;
-                ThrowIfFailed(nameof(ID3D12Device.CreateDescriptorHeap), D3DDevice->CreateDescriptorHeap(&cbvHeapDesc, &iid, (void**)&cbvHeap));
+                ThrowIfFailed(nameof(ID3D12Device.CreateDescriptorHeap), D3DDevice->CreateDescriptorHeap(&cbvSrvHeapDesc, &iid, (void**)&cbvSrvHeap));
 
-                return cbvHeap;
+                return cbvSrvHeap;
             }
-
-            ID3D12DescriptorHeap* CreateSRVHeap()
-            {
-                var srvHeapDesc = new D3D12_DESCRIPTOR_HEAP_DESC {
-                    NumDescriptors = 1,
-                    Type = D3D12_DESCRIPTOR_HEAP_TYPE_CBV_SRV_UAV,
-                    Flags = D3D12_DESCRIPTOR_HEAP_FLAG_SHADER_VISIBLE,
-                };
-
-                ID3D12DescriptorHeap* srvHeap;
-
-                var iid = IID_ID3D12DescriptorHeap;
-                ThrowIfFailed(nameof(ID3D12Device.CreateDescriptorHeap), D3DDevice->CreateDescriptorHeap(&srvHeapDesc, &iid, (void**)&srvHeap));
-
-                return srvHeap;
-            }
-
         }
 
         protected override unsafe ID3D12PipelineState* CreatePipelineState()
@@ -472,9 +456,8 @@ namespace TerraFX.Samples.DirectX.D3D12
             const float ScaleSpeed = 1.005f;
             const float ScaleBounds = 1.25f;
 
-            float scale = _constantBufferData.Matrix4x4.M11 + ScaleSpeed;
+            float scale = _constantBufferData.Matrix4x4.M11 * ScaleSpeed;
 
-            _constantBufferData.Matrix4x4.M11 += ScaleSpeed;
             if (scale > ScaleBounds)
             {
                 scale = 1.0f / ScaleBounds;
@@ -496,7 +479,6 @@ namespace TerraFX.Samples.DirectX.D3D12
 
             GraphicsCommandList->DrawInstanced(VertexCountPerInstance: 3, InstanceCount: 1, StartVertexLocation: 0, StartInstanceLocation: 0);
         }
-
 
         protected override void DestroyAssets()
         {
@@ -545,29 +527,17 @@ namespace TerraFX.Samples.DirectX.D3D12
 
         protected override void DestroyDescriptorHeaps()
         {
-            DestroyCBVHeap();
-            DestroySRVHeap();
+            DestroyCbvSrvHeap();
             base.DestroyDescriptorHeaps();
 
-            void DestroyCBVHeap()
+            void DestroyCbvSrvHeap()
             {
-                var cbvHeap = _cbvHeap;
+                var cbvSrvHeap = _cbv_srv_Heap;
 
-                if (cbvHeap != null)
+                if (cbvSrvHeap != null)
                 {
-                    _cbvHeap = null;
-                    _ = cbvHeap->Release();
-                }
-            }
-
-            void DestroySRVHeap()
-            {
-                var srvHeap = _srvHeap;
-
-                if (srvHeap != null)
-                {
-                    _srvHeap = null;
-                    _ = srvHeap->Release();
+                    _cbv_srv_Heap = null;
+                    _ = cbvSrvHeap->Release();
                 }
             }
         }
@@ -576,26 +546,23 @@ namespace TerraFX.Samples.DirectX.D3D12
         {
             base.SetGraphicsCommandListState();
 
-            const uint HeapsCount = 2;
+            const uint HeapsCount = 1;
             var ppHeaps = stackalloc ID3D12DescriptorHeap*[(int)HeapsCount] {
-                _cbvHeap,
-                _srvHeap,
+                _cbv_srv_Heap,
             };
             GraphicsCommandList->SetDescriptorHeaps(HeapsCount, ppHeaps);
-            GraphicsCommandList->SetGraphicsRootDescriptorTable(0, _cbvHeap->GetGPUDescriptorHandleForHeapStart());
-            GraphicsCommandList->SetGraphicsRootDescriptorTable(1, _srvHeap->GetGPUDescriptorHandleForHeapStart());
+            GraphicsCommandList->SetGraphicsRootDescriptorTable(0, _cbv_srv_Heap->GetGPUDescriptorHandleForHeapStart());
         }
 
         public struct Vertex
         {
             public Vector3 Position;
             public System.Numerics.Vector2 UV;
-
         }
 
         private struct SceneConstantBuffer
         {
             public System.Numerics.Matrix4x4 Matrix4x4;
-        };
+        }
     }
 }
