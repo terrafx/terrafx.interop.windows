@@ -1,0 +1,23 @@
+@../../settings.rsp
+@../../remap.rsp
+--define-macro
+DISABLE_NS_PREFIX_CHECKS
+--exclude
+DEPRECATEDENUMERATOR
+IID_IColorHelper
+IID_IColorHelperStatics
+IID_IColorHelperStatics2
+IID_IColors
+IID_IColorsStatics
+IID_IUIContentRoot
+IID_IUIContext
+WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION
+WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION
+--file
+winrt-windows.ui.h
+--output
+../../../sources/Interop/Windows/winrt/windows.ui
+--test-output
+../../../tests/Interop/Windows/winrt/windows.ui
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/winrt/windows.ui.h

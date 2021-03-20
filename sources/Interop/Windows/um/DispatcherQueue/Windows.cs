@@ -11,6 +11,6 @@ namespace TerraFX.Interop
     {
         [DllImport("CoreMessaging", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int CreateDispatcherQueueController(DispatcherQueueOptions options, [NativeTypeName("ABI::Windows::System::IDispatcherQueueController **")] void** dispatcherQueueController);
+        public static extern int CreateDispatcherQueueController(DispatcherQueueOptions options, [NativeTypeName("ABI::Windows::System::IDispatcherQueueController **")] IDispatcherQueueController** dispatcherQueueController);
     }
 }

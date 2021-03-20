@@ -1,0 +1,67 @@
+@../../settings.rsp
+@../../remap.rsp
+--define-macro
+DISABLE_NS_PREFIX_CHECKS
+--exclude
+ABI.Windows.Foundation.Collections.IIterable<?>
+ABI.Windows.Foundation.Collections.IIterator<?>
+ABI.Windows.Foundation.Collections.IKeyValuePair<?, ?>
+ABI.Windows.Foundation.Collections.IMap<?, ?>
+ABI.Windows.Foundation.Collections.IMapChangedEventArgs<?>
+ABI.Windows.Foundation.Collections.IMapView<?, ?>
+ABI.Windows.Foundation.Collections.IObservableMap<?, ?>
+ABI.Windows.Foundation.Collections.IVectorView<?>
+ABI.Windows.Foundation.Collections.MapChangedEventHandler<?, ?>
+ABI.Windows.Foundation.ITypedEventHandler<?, ?>
+DEPRECATEDENUMERATOR
+IID_IAsyncAction
+IID_IAsyncActionCompletedHandler
+IID_IClosable
+IID_IDeferral
+IID_IDeferralCompletedHandler
+IID_IDeferralFactory
+IID_IGetActivationFactory
+IID_IGuidHelperStatics
+IID_IMemoryBuffer
+IID_IMemoryBufferFactory
+IID_IMemoryBufferReference
+IID_IPropertySet
+IID_IPropertyValue
+IID_IPropertyValueStatics
+IID_IStringable
+IID_IUriEscapeStatics
+IID_IUriRuntimeClass
+IID_IUriRuntimeClassFactory
+IID_IUriRuntimeClassWithAbsoluteCanonicalUri
+IID_IWwwFormUrlDecoderEntry
+IID_IWwwFormUrlDecoderRuntimeClass
+IID_IWwwFormUrlDecoderRuntimeClassFactory
+WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION
+WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION
+__FIIterable_1_Windows__CFoundation__CIWwwFormUrlDecoderEntry_t
+__FIIterable_1___FIKeyValuePair_2_HSTRING_HSTRING_t
+__FIIterable_1___FIKeyValuePair_2_HSTRING_IInspectable_t
+__FIIterator_1_Windows__CFoundation__CIWwwFormUrlDecoderEntry_t
+__FIIterator_1___FIKeyValuePair_2_HSTRING_HSTRING_t
+__FIIterator_1___FIKeyValuePair_2_HSTRING_IInspectable_t
+__FIKeyValuePair_2_HSTRING_HSTRING_t
+__FIKeyValuePair_2_HSTRING_IInspectable_t
+__FIMapChangedEventArgs_1_HSTRING_t
+__FIMapView_2_HSTRING_HSTRING_t
+__FIMapView_2_HSTRING_IInspectable_t
+__FIMap_2_HSTRING_HSTRING_t
+__FIMap_2_HSTRING_IInspectable_t
+__FIObservableMap_2_HSTRING_HSTRING_t
+__FIObservableMap_2_HSTRING_IInspectable_t
+__FITypedEventHandler_2_Windows__CFoundation__CIMemoryBufferReference_IInspectable_t
+__FIVectorView_1_Windows__CFoundation__CIWwwFormUrlDecoderEntry_t
+__FMapChangedEventHandler_2_HSTRING_HSTRING_t
+__FMapChangedEventHandler_2_HSTRING_IInspectable_t
+--file
+winrt-windows.foundation.h
+--output
+../../../sources/Interop/Windows/winrt/windows.foundation
+--test-output
+../../../tests/Interop/Windows/winrt/windows.foundation
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/winrt/windows.foundation.h

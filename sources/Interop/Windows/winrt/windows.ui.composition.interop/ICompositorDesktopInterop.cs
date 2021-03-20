@@ -38,9 +38,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int CreateDesktopWindowTarget([NativeTypeName("HWND")] IntPtr hwndTarget, [NativeTypeName("BOOL")] int isTopmost, [NativeTypeName("ABI::Windows::UI::Composition::Desktop::IDesktopWindowTarget **")] void** result)
+        public int CreateDesktopWindowTarget([NativeTypeName("HWND")] IntPtr hwndTarget, [NativeTypeName("BOOL")] int isTopmost, [NativeTypeName("ABI::Windows::UI::Composition::Desktop::IDesktopWindowTarget **")] IInspectable** result)
         {
-            return ((delegate* unmanaged<ICompositorDesktopInterop*, IntPtr, int, void**, int>)(lpVtbl[3]))((ICompositorDesktopInterop*)Unsafe.AsPointer(ref this), hwndTarget, isTopmost, result);
+            return ((delegate* unmanaged<ICompositorDesktopInterop*, IntPtr, int, IInspectable**, int>)(lpVtbl[3]))((ICompositorDesktopInterop*)Unsafe.AsPointer(ref this), hwndTarget, isTopmost, result);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

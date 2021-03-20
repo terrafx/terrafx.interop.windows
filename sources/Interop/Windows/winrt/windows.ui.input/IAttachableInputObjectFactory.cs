@@ -1,0 +1,60 @@
+// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+
+// Ported from winrt/windows.ui.input.h in the Windows SDK for Windows 10.0.19041.0
+// Original source is Copyright © Microsoft. All rights reserved.
+
+using System;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
+
+namespace TerraFX.Interop
+{
+    [Guid("A4C54C4E-42BC-58FA-A640-EA1516F4C06B")]
+    [NativeTypeName("struct IAttachableInputObjectFactory : IInspectable")]
+    public unsafe partial struct IAttachableInputObjectFactory
+    {
+        public void** lpVtbl;
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [return: NativeTypeName("HRESULT")]
+        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
+        {
+            return ((delegate* unmanaged<IAttachableInputObjectFactory*, Guid*, void**, int>)(lpVtbl[0]))((IAttachableInputObjectFactory*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [return: NativeTypeName("ULONG")]
+        public uint AddRef()
+        {
+            return ((delegate* unmanaged<IAttachableInputObjectFactory*, uint>)(lpVtbl[1]))((IAttachableInputObjectFactory*)Unsafe.AsPointer(ref this));
+        }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [return: NativeTypeName("ULONG")]
+        public uint Release()
+        {
+            return ((delegate* unmanaged<IAttachableInputObjectFactory*, uint>)(lpVtbl[2]))((IAttachableInputObjectFactory*)Unsafe.AsPointer(ref this));
+        }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [return: NativeTypeName("HRESULT")]
+        public int GetIids([NativeTypeName("ULONG *")] uint* iidCount, [NativeTypeName("IID **")] Guid** iids)
+        {
+            return ((delegate* unmanaged<IAttachableInputObjectFactory*, uint*, Guid**, int>)(lpVtbl[3]))((IAttachableInputObjectFactory*)Unsafe.AsPointer(ref this), iidCount, iids);
+        }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [return: NativeTypeName("HRESULT")]
+        public int GetRuntimeClassName([NativeTypeName("HSTRING *")] IntPtr* className)
+        {
+            return ((delegate* unmanaged<IAttachableInputObjectFactory*, IntPtr*, int>)(lpVtbl[4]))((IAttachableInputObjectFactory*)Unsafe.AsPointer(ref this), className);
+        }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [return: NativeTypeName("HRESULT")]
+        public int GetTrustLevel([NativeTypeName("TrustLevel *")] TrustLevel* trustLevel)
+        {
+            return ((delegate* unmanaged<IAttachableInputObjectFactory*, TrustLevel*, int>)(lpVtbl[5]))((IAttachableInputObjectFactory*)Unsafe.AsPointer(ref this), trustLevel);
+        }
+    }
+}

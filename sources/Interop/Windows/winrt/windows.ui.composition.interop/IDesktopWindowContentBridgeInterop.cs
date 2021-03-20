@@ -38,9 +38,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int Initialize([NativeTypeName("Windows::UI::Composition::ICompositor *")] void* compositor, [NativeTypeName("HWND")] IntPtr parentHwnd)
+        public int Initialize([NativeTypeName("Windows::UI::Composition::ICompositor *")] IInspectable* compositor, [NativeTypeName("HWND")] IntPtr parentHwnd)
         {
-            return ((delegate* unmanaged<IDesktopWindowContentBridgeInterop*, void*, IntPtr, int>)(lpVtbl[3]))((IDesktopWindowContentBridgeInterop*)Unsafe.AsPointer(ref this), compositor, parentHwnd);
+            return ((delegate* unmanaged<IDesktopWindowContentBridgeInterop*, IInspectable*, IntPtr, int>)(lpVtbl[3]))((IDesktopWindowContentBridgeInterop*)Unsafe.AsPointer(ref this), compositor, parentHwnd);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

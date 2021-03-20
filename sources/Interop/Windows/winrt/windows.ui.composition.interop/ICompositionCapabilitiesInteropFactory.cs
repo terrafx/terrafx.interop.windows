@@ -59,9 +59,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int GetForWindow([NativeTypeName("HWND")] IntPtr hwnd, [NativeTypeName("ABI::Windows::UI::Composition::ICompositionCapabilities **")] void** result)
+        public int GetForWindow([NativeTypeName("HWND")] IntPtr hwnd, [NativeTypeName("ABI::Windows::UI::Composition::ICompositionCapabilities **")] IInspectable** result)
         {
-            return ((delegate* unmanaged<ICompositionCapabilitiesInteropFactory*, IntPtr, void**, int>)(lpVtbl[6]))((ICompositionCapabilitiesInteropFactory*)Unsafe.AsPointer(ref this), hwnd, result);
+            return ((delegate* unmanaged<ICompositionCapabilitiesInteropFactory*, IntPtr, IInspectable**, int>)(lpVtbl[6]))((ICompositionCapabilitiesInteropFactory*)Unsafe.AsPointer(ref this), hwnd, result);
         }
     }
 }

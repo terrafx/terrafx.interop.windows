@@ -22,6 +22,7 @@ using static TerraFX.Interop.D3D12_SHADER_VISIBILITY;
 using static TerraFX.Interop.DXGI_FORMAT;
 using static TerraFX.Interop.Windows;
 using static TerraFX.Samples.DirectX.DXSampleHelper;
+using Vector4 = System.Numerics.Vector4;
 
 namespace TerraFX.Samples.DirectX.D3D12
 {

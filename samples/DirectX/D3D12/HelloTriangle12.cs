@@ -17,6 +17,8 @@ using static TerraFX.Interop.D3D12_ROOT_SIGNATURE_FLAGS;
 using static TerraFX.Interop.DXGI_FORMAT;
 using static TerraFX.Interop.Windows;
 using static TerraFX.Samples.DirectX.DXSampleHelper;
+using Vector3 = System.Numerics.Vector3;
+using Vector4 = System.Numerics.Vector4;
 
 namespace TerraFX.Samples.DirectX.D3D12
 {

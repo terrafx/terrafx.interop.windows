@@ -28,6 +28,8 @@ using static TerraFX.Interop.D3D12_TEXTURE_ADDRESS_MODE;
 using static TerraFX.Interop.DXGI_FORMAT;
 using static TerraFX.Interop.Windows;
 using static TerraFX.Samples.DirectX.DXSampleHelper;
+using Vector2 = System.Numerics.Vector2;
+using Vector3 = System.Numerics.Vector3;
 
 namespace TerraFX.Samples.DirectX.D3D12
 {

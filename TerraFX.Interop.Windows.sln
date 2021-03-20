@@ -1818,13 +1818,118 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "imapi2fs", "imapi2fs", "{56
 		generation\um\imapi2fs\generate.rsp = generation\um\imapi2fs\generate.rsp
 		generation\um\imapi2fs\header.txt = generation\um\imapi2fs\header.txt
 		generation\um\imapi2fs\um-imapi2fs.h = generation\um\imapi2fs\um-imapi2fs.h
-  EndProjectSection
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "xamlOM", "xamlOM", "{9337A17E-7551-48F3-B73D-AF8086062660}"
 	ProjectSection(SolutionItems) = preProject
 		generation\um\xamlOM\generate.rsp = generation\um\xamlOM\generate.rsp
 		generation\um\xamlOM\header.txt = generation\um\xamlOM\header.txt
 		generation\um\xamlOM\um-xamlOM.h = generation\um\xamlOM\um-xamlOM.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "windows.foundation", "windows.foundation", "{2D8138B2-EAC0-4E36-B3BE-AA9AE0BDB763}"
+	ProjectSection(SolutionItems) = preProject
+		generation\winrt\windows.foundation\generate.rsp = generation\winrt\windows.foundation\generate.rsp
+		generation\winrt\windows.foundation\header.txt = generation\winrt\windows.foundation\header.txt
+		generation\winrt\windows.foundation\winrt-windows.foundation.h = generation\winrt\windows.foundation\winrt-windows.foundation.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "activationregistration", "activationregistration", "{778698DA-29CB-43C7-9620-8B182A7B417C}"
+	ProjectSection(SolutionItems) = preProject
+		generation\winrt\activationregistration\generate.rsp = generation\winrt\activationregistration\generate.rsp
+		generation\winrt\activationregistration\header.txt = generation\winrt\activationregistration\header.txt
+		generation\winrt\activationregistration\winrt-activationregistration.h = generation\winrt\activationregistration\winrt-activationregistration.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "roregistrationapi", "roregistrationapi", "{E5637D91-83E8-4E9D-B2A3-55095FC19982}"
+	ProjectSection(SolutionItems) = preProject
+		generation\winrt\roregistrationapi\generate.rsp = generation\winrt\roregistrationapi\generate.rsp
+		generation\winrt\roregistrationapi\header.txt = generation\winrt\roregistrationapi\header.txt
+		generation\winrt\roregistrationapi\winrt-roregistrationapi.h = generation\winrt\roregistrationapi\winrt-roregistrationapi.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "windows.foundation.metadata", "windows.foundation.metadata", "{208E6EE1-FE48-4BA6-86D2-52EA717DCC3A}"
+	ProjectSection(SolutionItems) = preProject
+		generation\winrt\windows.foundation.metadata\generate.rsp = generation\winrt\windows.foundation.metadata\generate.rsp
+		generation\winrt\windows.foundation.metadata\header.txt = generation\winrt\windows.foundation.metadata\header.txt
+		generation\winrt\windows.foundation.metadata\winrt-windows.foundation.metadata.h = generation\winrt\windows.foundation.metadata\winrt-windows.foundation.metadata.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "windows.foundation.numerics", "windows.foundation.numerics", "{F893999E-B50B-4C51-8262-AC1E443A46A5}"
+	ProjectSection(SolutionItems) = preProject
+		generation\winrt\windows.foundation.numerics\generate.rsp = generation\winrt\windows.foundation.numerics\generate.rsp
+		generation\winrt\windows.foundation.numerics\header.txt = generation\winrt\windows.foundation.numerics\header.txt
+		generation\winrt\windows.foundation.numerics\winrt-windows.foundation.numerics.h = generation\winrt\windows.foundation.numerics\winrt-windows.foundation.numerics.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WindowsContracts", "WindowsContracts", "{CF2720CE-C6E7-419E-838E-093B7886BF66}"
+	ProjectSection(SolutionItems) = preProject
+		generation\winrt\WindowsContracts\generate.rsp = generation\winrt\WindowsContracts\generate.rsp
+		generation\winrt\WindowsContracts\header.txt = generation\winrt\WindowsContracts\header.txt
+		generation\winrt\WindowsContracts\winrt-WindowsContracts.h = generation\winrt\WindowsContracts\winrt-WindowsContracts.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "windows.ui", "windows.ui", "{B96D82D3-EEB6-45F3-A8B3-BC032C186023}"
+	ProjectSection(SolutionItems) = preProject
+		generation\winrt\windows.ui\generate.rsp = generation\winrt\windows.ui\generate.rsp
+		generation\winrt\windows.ui\header.txt = generation\winrt\windows.ui\header.txt
+		generation\winrt\windows.ui\winrt-windows.ui.h = generation\winrt\windows.ui\winrt-windows.ui.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "windows.devices.haptics", "windows.devices.haptics", "{E0B73045-C890-4E67-9A54-15DCBABF6916}"
+	ProjectSection(SolutionItems) = preProject
+		generation\winrt\windows.devices.haptics\generate.rsp = generation\winrt\windows.devices.haptics\generate.rsp
+		generation\winrt\windows.devices.haptics\header.txt = generation\winrt\windows.devices.haptics\header.txt
+		generation\winrt\windows.devices.haptics\winrt-windows.devices.haptics.h = generation\winrt\windows.devices.haptics\winrt-windows.devices.haptics.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "windows.devices.input", "windows.devices.input", "{98A2C120-DD4D-4C55-AD52-7BD722174B82}"
+	ProjectSection(SolutionItems) = preProject
+		generation\winrt\windows.devices.input\generate.rsp = generation\winrt\windows.devices.input\generate.rsp
+		generation\winrt\windows.devices.input\header.txt = generation\winrt\windows.devices.input\header.txt
+		generation\winrt\windows.devices.input\winrt-windows.devices.input.h = generation\winrt\windows.devices.input\winrt-windows.devices.input.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "windows.storage.streams", "windows.storage.streams", "{7E1E188D-81DA-4482-A192-F66961BCCB87}"
+	ProjectSection(SolutionItems) = preProject
+		generation\winrt\windows.storage.streams\generate.rsp = generation\winrt\windows.storage.streams\generate.rsp
+		generation\winrt\windows.storage.streams\header.txt = generation\winrt\windows.storage.streams\header.txt
+		generation\winrt\windows.storage.streams\winrt-windows.storage.streams.h = generation\winrt\windows.storage.streams\winrt-windows.storage.streams.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "windows.ui.popups", "windows.ui.popups", "{AE4AD406-F9B4-4740-97CB-D5CEAAB720DB}"
+	ProjectSection(SolutionItems) = preProject
+		generation\winrt\windows.ui.popups\generate.rsp = generation\winrt\windows.ui.popups\generate.rsp
+		generation\winrt\windows.ui.popups\header.txt = generation\winrt\windows.ui.popups\header.txt
+		generation\winrt\windows.ui.popups\winrt-windows.ui.popups.h = generation\winrt\windows.ui.popups\winrt-windows.ui.popups.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "windows.system", "windows.system", "{018F5F7B-5FC5-45AB-A0DD-258E7880B66A}"
+	ProjectSection(SolutionItems) = preProject
+		generation\winrt\windows.system\generate.rsp = generation\winrt\windows.system\generate.rsp
+		generation\winrt\windows.system\header.txt = generation\winrt\windows.system\header.txt
+		generation\winrt\windows.system\winrt-windows.system.h = generation\winrt\windows.system\winrt-windows.system.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "windows.ui.input", "windows.ui.input", "{B6CCD5C1-481E-4A9E-BC3F-0D3288B4D1B2}"
+	ProjectSection(SolutionItems) = preProject
+		generation\winrt\windows.ui.input\generate.rsp = generation\winrt\windows.ui.input\generate.rsp
+		generation\winrt\windows.ui.input\header.txt = generation\winrt\windows.ui.input\header.txt
+		generation\winrt\windows.ui.input\winrt-windows.ui.input.h = generation\winrt\windows.ui.input\winrt-windows.ui.input.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "windows.ui.core", "windows.ui.core", "{3EB6A3F2-4F12-41C6-AF82-AB9EF51CB31C}"
+	ProjectSection(SolutionItems) = preProject
+		generation\winrt\windows.ui.core\generate.rsp = generation\winrt\windows.ui.core\generate.rsp
+		generation\winrt\windows.ui.core\header.txt = generation\winrt\windows.ui.core\header.txt
+		generation\winrt\windows.ui.core\winrt-windows.ui.core.h = generation\winrt\windows.ui.core\winrt-windows.ui.core.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Windows.ApplicationModel.core", "Windows.ApplicationModel.core", "{837DE6F2-51E0-460A-8692-9CC0845DD280}"
+	ProjectSection(SolutionItems) = preProject
+		generation\winrt\Windows.ApplicationModel.core\generate.rsp = generation\winrt\Windows.ApplicationModel.core\generate.rsp
+		generation\winrt\Windows.ApplicationModel.core\header.txt = generation\winrt\Windows.ApplicationModel.core\header.txt
+		generation\winrt\Windows.ApplicationModel.core\winrt-Windows.ApplicationModel.core.h = generation\winrt\Windows.ApplicationModel.core\winrt-Windows.ApplicationModel.core.h
 	EndProjectSection
 EndProject
 Global
@@ -2116,6 +2221,21 @@ Global
 		{565AEC0D-94C9-46CB-8947-71E02C3C128D} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{56D9CA05-6CF6-458A-AB1D-C85FBC239634} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{9337A17E-7551-48F3-B73D-AF8086062660} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{2D8138B2-EAC0-4E36-B3BE-AA9AE0BDB763} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
+		{778698DA-29CB-43C7-9620-8B182A7B417C} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
+		{E5637D91-83E8-4E9D-B2A3-55095FC19982} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
+		{208E6EE1-FE48-4BA6-86D2-52EA717DCC3A} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
+		{F893999E-B50B-4C51-8262-AC1E443A46A5} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
+		{CF2720CE-C6E7-419E-838E-093B7886BF66} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
+		{B96D82D3-EEB6-45F3-A8B3-BC032C186023} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
+		{E0B73045-C890-4E67-9A54-15DCBABF6916} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
+		{98A2C120-DD4D-4C55-AD52-7BD722174B82} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
+		{7E1E188D-81DA-4482-A192-F66961BCCB87} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
+		{AE4AD406-F9B4-4740-97CB-D5CEAAB720DB} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
+		{018F5F7B-5FC5-45AB-A0DD-258E7880B66A} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
+		{B6CCD5C1-481E-4A9E-BC3F-0D3288B4D1B2} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
+		{3EB6A3F2-4F12-41C6-AF82-AB9EF51CB31C} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
+		{837DE6F2-51E0-460A-8692-9CC0845DD280} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2FE36DF8-2D9C-4F20-8787-45DC74B57461}

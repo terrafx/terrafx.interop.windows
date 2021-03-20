@@ -1,0 +1,24 @@
+@../../settings.rsp
+@../../remap.rsp
+--define-macro
+DISABLE_NS_PREFIX_CHECKS
+--exclude
+IID_IActivatableClassRegistration
+IID_IDllServerActivatableClassRegistration
+IID_IExeServerActivatableClassRegistration
+IID_IExeServerRegistration
+WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION
+WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION
+WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION
+WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION
+WINDOWS_PHONE_PHONECONTRACT_VERSION
+WINDOWS_PHONE_PHONEINTERNALCONTRACT_VERSION
+WINDOWS_UI_WEBUI_CORE_WEBUICOMMANDBARCONTRACT_VERSION
+--file
+winrt-activationregistration.h
+--output
+../../../sources/Interop/Windows/winrt/activationregistration
+--test-output
+../../../tests/Interop/Windows/winrt/activationregistration
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/winrt/activationregistration.h

@@ -59,16 +59,16 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int GetProperty([NativeTypeName("UINT")] uint index, [NativeTypeName("Windows::Foundation::IPropertyValue **")] void** value)
+        public int GetProperty([NativeTypeName("UINT")] uint index, [NativeTypeName("Windows::Foundation::IPropertyValue **")] IPropertyValue** value)
         {
-            return ((delegate* unmanaged<IGraphicsEffectD2D1Interop*, uint, void**, int>)(lpVtbl[6]))((IGraphicsEffectD2D1Interop*)Unsafe.AsPointer(ref this), index, value);
+            return ((delegate* unmanaged<IGraphicsEffectD2D1Interop*, uint, IPropertyValue**, int>)(lpVtbl[6]))((IGraphicsEffectD2D1Interop*)Unsafe.AsPointer(ref this), index, value);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int GetSource([NativeTypeName("UINT")] uint index, [NativeTypeName("ABI::Windows::Graphics::Effects::IGraphicsEffectSource **")] void** source)
+        public int GetSource([NativeTypeName("UINT")] uint index, [NativeTypeName("ABI::Windows::Graphics::Effects::IGraphicsEffectSource **")] IInspectable** source)
         {
-            return ((delegate* unmanaged<IGraphicsEffectD2D1Interop*, uint, void**, int>)(lpVtbl[7]))((IGraphicsEffectD2D1Interop*)Unsafe.AsPointer(ref this), index, source);
+            return ((delegate* unmanaged<IGraphicsEffectD2D1Interop*, uint, IInspectable**, int>)(lpVtbl[7]))((IGraphicsEffectD2D1Interop*)Unsafe.AsPointer(ref this), index, source);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

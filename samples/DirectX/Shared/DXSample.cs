@@ -14,6 +14,8 @@ using static TerraFX.Interop.DXGI_ADAPTER_FLAG;
 using static TerraFX.Interop.DXGI_FORMAT;
 using static TerraFX.Interop.Windows;
 using static TerraFX.Samples.DirectX.DXSampleHelper;
+using Size = System.Drawing.Size;
+using Vector4 = System.Numerics.Vector4;
 
 namespace TerraFX.Samples.DirectX
 {

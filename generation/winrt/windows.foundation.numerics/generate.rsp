@@ -1,0 +1,16 @@
+@../../settings.rsp
+@../../remap.rsp
+--define-macro
+DISABLE_NS_PREFIX_CHECKS
+--exclude
+DEPRECATEDENUMERATOR
+WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION
+WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION
+--file
+winrt-windows.foundation.numerics.h
+--output
+../../../sources/Interop/Windows/winrt/windows.foundation.numerics
+--test-output
+../../../tests/Interop/Windows/winrt/windows.foundation.numerics
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/winrt/windows.foundation.numerics.h

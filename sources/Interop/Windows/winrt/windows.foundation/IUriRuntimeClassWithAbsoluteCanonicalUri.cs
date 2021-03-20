@@ -1,0 +1,74 @@
+// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+
+// Ported from winrt/windows.foundation.h in the Windows SDK for Windows 10.0.19041.0
+// Original source is Copyright © Microsoft. All rights reserved.
+
+using System;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
+
+namespace TerraFX.Interop
+{
+    [Guid("758D9661-221C-480F-A339-50656673F46F")]
+    [NativeTypeName("struct IUriRuntimeClassWithAbsoluteCanonicalUri : IInspectable")]
+    public unsafe partial struct IUriRuntimeClassWithAbsoluteCanonicalUri
+    {
+        public void** lpVtbl;
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [return: NativeTypeName("HRESULT")]
+        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
+        {
+            return ((delegate* unmanaged<IUriRuntimeClassWithAbsoluteCanonicalUri*, Guid*, void**, int>)(lpVtbl[0]))((IUriRuntimeClassWithAbsoluteCanonicalUri*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [return: NativeTypeName("ULONG")]
+        public uint AddRef()
+        {
+            return ((delegate* unmanaged<IUriRuntimeClassWithAbsoluteCanonicalUri*, uint>)(lpVtbl[1]))((IUriRuntimeClassWithAbsoluteCanonicalUri*)Unsafe.AsPointer(ref this));
+        }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [return: NativeTypeName("ULONG")]
+        public uint Release()
+        {
+            return ((delegate* unmanaged<IUriRuntimeClassWithAbsoluteCanonicalUri*, uint>)(lpVtbl[2]))((IUriRuntimeClassWithAbsoluteCanonicalUri*)Unsafe.AsPointer(ref this));
+        }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [return: NativeTypeName("HRESULT")]
+        public int GetIids([NativeTypeName("ULONG *")] uint* iidCount, [NativeTypeName("IID **")] Guid** iids)
+        {
+            return ((delegate* unmanaged<IUriRuntimeClassWithAbsoluteCanonicalUri*, uint*, Guid**, int>)(lpVtbl[3]))((IUriRuntimeClassWithAbsoluteCanonicalUri*)Unsafe.AsPointer(ref this), iidCount, iids);
+        }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [return: NativeTypeName("HRESULT")]
+        public int GetRuntimeClassName([NativeTypeName("HSTRING *")] IntPtr* className)
+        {
+            return ((delegate* unmanaged<IUriRuntimeClassWithAbsoluteCanonicalUri*, IntPtr*, int>)(lpVtbl[4]))((IUriRuntimeClassWithAbsoluteCanonicalUri*)Unsafe.AsPointer(ref this), className);
+        }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [return: NativeTypeName("HRESULT")]
+        public int GetTrustLevel([NativeTypeName("TrustLevel *")] TrustLevel* trustLevel)
+        {
+            return ((delegate* unmanaged<IUriRuntimeClassWithAbsoluteCanonicalUri*, TrustLevel*, int>)(lpVtbl[5]))((IUriRuntimeClassWithAbsoluteCanonicalUri*)Unsafe.AsPointer(ref this), trustLevel);
+        }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [return: NativeTypeName("HRESULT")]
+        public int get_AbsoluteCanonicalUri([NativeTypeName("HSTRING *")] IntPtr* value)
+        {
+            return ((delegate* unmanaged<IUriRuntimeClassWithAbsoluteCanonicalUri*, IntPtr*, int>)(lpVtbl[6]))((IUriRuntimeClassWithAbsoluteCanonicalUri*)Unsafe.AsPointer(ref this), value);
+        }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [return: NativeTypeName("HRESULT")]
+        public int get_DisplayIri([NativeTypeName("HSTRING *")] IntPtr* value)
+        {
+            return ((delegate* unmanaged<IUriRuntimeClassWithAbsoluteCanonicalUri*, IntPtr*, int>)(lpVtbl[7]))((IUriRuntimeClassWithAbsoluteCanonicalUri*)Unsafe.AsPointer(ref this), value);
+        }
+    }
+}

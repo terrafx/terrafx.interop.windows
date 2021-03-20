@@ -38,23 +38,23 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int CreateCompositionSurfaceForHandle([NativeTypeName("HANDLE")] IntPtr swapChain, [NativeTypeName("ABI::Windows::UI::Composition::ICompositionSurface **")] void** result)
+        public int CreateCompositionSurfaceForHandle([NativeTypeName("HANDLE")] IntPtr swapChain, [NativeTypeName("ABI::Windows::UI::Composition::ICompositionSurface **")] IInspectable** result)
         {
-            return ((delegate* unmanaged<ICompositorInterop*, IntPtr, void**, int>)(lpVtbl[3]))((ICompositorInterop*)Unsafe.AsPointer(ref this), swapChain, result);
+            return ((delegate* unmanaged<ICompositorInterop*, IntPtr, IInspectable**, int>)(lpVtbl[3]))((ICompositorInterop*)Unsafe.AsPointer(ref this), swapChain, result);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int CreateCompositionSurfaceForSwapChain([NativeTypeName("IUnknown *")] IUnknown* swapChain, [NativeTypeName("ABI::Windows::UI::Composition::ICompositionSurface **")] void** result)
+        public int CreateCompositionSurfaceForSwapChain([NativeTypeName("IUnknown *")] IUnknown* swapChain, [NativeTypeName("ABI::Windows::UI::Composition::ICompositionSurface **")] IInspectable** result)
         {
-            return ((delegate* unmanaged<ICompositorInterop*, IUnknown*, void**, int>)(lpVtbl[4]))((ICompositorInterop*)Unsafe.AsPointer(ref this), swapChain, result);
+            return ((delegate* unmanaged<ICompositorInterop*, IUnknown*, IInspectable**, int>)(lpVtbl[4]))((ICompositorInterop*)Unsafe.AsPointer(ref this), swapChain, result);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int CreateGraphicsDevice([NativeTypeName("IUnknown *")] IUnknown* renderingDevice, [NativeTypeName("ABI::Windows::UI::Composition::ICompositionGraphicsDevice **")] void** result)
+        public int CreateGraphicsDevice([NativeTypeName("IUnknown *")] IUnknown* renderingDevice, [NativeTypeName("ABI::Windows::UI::Composition::ICompositionGraphicsDevice **")] IInspectable** result)
         {
-            return ((delegate* unmanaged<ICompositorInterop*, IUnknown*, void**, int>)(lpVtbl[5]))((ICompositorInterop*)Unsafe.AsPointer(ref this), renderingDevice, result);
+            return ((delegate* unmanaged<ICompositorInterop*, IUnknown*, IInspectable**, int>)(lpVtbl[5]))((ICompositorInterop*)Unsafe.AsPointer(ref this), renderingDevice, result);
         }
     }
 }
