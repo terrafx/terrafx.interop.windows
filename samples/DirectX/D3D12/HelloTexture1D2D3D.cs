@@ -144,7 +144,7 @@ namespace TerraFX.Samples.DirectX.D3D12
                     Format = textureDesc.Format,
                     ViewDimension = D3D12_SRV_DIMENSION_TEXTURE1D,
                 };
-                srvDesc.Anonymous.Texture2D.MipLevels = 1;
+                srvDesc.Anonymous.Texture1D.MipLevels = 1;
 
                 var incrementSize = D3DDevice->GetDescriptorHandleIncrementSize(D3D12_DESCRIPTOR_HEAP_TYPE_CBV_SRV_UAV);
                 var incrementedHandle = new D3D12_CPU_DESCRIPTOR_HANDLE(_cbv_srv_Heap->GetCPUDescriptorHandleForHeapStart(), (int)incrementSize);
@@ -253,7 +253,7 @@ namespace TerraFX.Samples.DirectX.D3D12
                 srvDesc.Anonymous.Texture2D.MipLevels = 1;
 
                 var incrementSize = D3DDevice->GetDescriptorHandleIncrementSize(D3D12_DESCRIPTOR_HEAP_TYPE_CBV_SRV_UAV);
-                var incrementedHandle = new D3D12_CPU_DESCRIPTOR_HANDLE(_cbv_srv_Heap->GetCPUDescriptorHandleForHeapStart(), (int)incrementSize);
+                var incrementedHandle = new D3D12_CPU_DESCRIPTOR_HANDLE(_cbv_srv_Heap->GetCPUDescriptorHandleForHeapStart(), 2 * (int)incrementSize);
                 D3DDevice->CreateShaderResourceView(texture, &srvDesc, incrementedHandle);
 
                 fixed (char* name = "Texture2d")
@@ -526,7 +526,6 @@ namespace TerraFX.Samples.DirectX.D3D12
 
                 ranges[0].Init(D3D12_DESCRIPTOR_RANGE_TYPE_CBV, 1, 0, 0, D3D12_DESCRIPTOR_RANGE_FLAG_DATA_STATIC);
                 rootParameters[0].InitAsDescriptorTable(RangesCount, ranges, D3D12_SHADER_VISIBILITY_VERTEX);
-
             }
 
             { // texture
@@ -534,7 +533,7 @@ namespace TerraFX.Samples.DirectX.D3D12
                 var ranges = stackalloc D3D12_DESCRIPTOR_RANGE1[RangesCount];
 
                 ranges[0].Init(D3D12_DESCRIPTOR_RANGE_TYPE_SRV, 1, 0, 0, D3D12_DESCRIPTOR_RANGE_FLAG_DATA_STATIC);
-                ranges[1].Init(D3D12_DESCRIPTOR_RANGE_TYPE_SRV, 1, 1, 0, D3D12_DESCRIPTOR_RANGE_FLAG_DATA_STATIC);
+                ranges[1].Init(D3D12_DESCRIPTOR_RANGE_TYPE_SRV, 1, 0, 0, D3D12_DESCRIPTOR_RANGE_FLAG_DATA_STATIC);
 
                 rootParameters[1].InitAsDescriptorTable(RangesCount, ranges, D3D12_SHADER_VISIBILITY_PIXEL);
             }
