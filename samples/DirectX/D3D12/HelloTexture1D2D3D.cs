@@ -69,8 +69,8 @@ namespace TerraFX.Samples.DirectX.D3D12
             using ComPtr<ID3D12Resource> texture1dUploadHeap = null;
             using ComPtr<ID3D12Resource> texture2dUploadHeap = null;
             _constantBuffer = CreateConstantBuffer(out _constantBufferDataBegin);
-            _texture1D = CreateTexture1D();
             _texture2D = CreateTexture2D();
+            _texture1D = CreateTexture1D();
             _vertexBuffer = CreateVertexBuffer(out _vertexBufferView);
             base.CreateAssets();
 
@@ -147,7 +147,7 @@ namespace TerraFX.Samples.DirectX.D3D12
                 srvDesc.Anonymous.Texture1D.MipLevels = 1;
 
                 var incrementSize = D3DDevice->GetDescriptorHandleIncrementSize(D3D12_DESCRIPTOR_HEAP_TYPE_CBV_SRV_UAV);
-                var incrementedHandle = new D3D12_CPU_DESCRIPTOR_HANDLE(_cbv_srv_Heap->GetCPUDescriptorHandleForHeapStart(), (int)incrementSize);
+                var incrementedHandle = new D3D12_CPU_DESCRIPTOR_HANDLE(_cbv_srv_Heap->GetCPUDescriptorHandleForHeapStart(), 2 * (int)incrementSize);
                 D3DDevice->CreateShaderResourceView(texture, &srvDesc, incrementedHandle);
 
                 fixed (char* name = "Texture1d")
@@ -253,7 +253,7 @@ namespace TerraFX.Samples.DirectX.D3D12
                 srvDesc.Anonymous.Texture2D.MipLevels = 1;
 
                 var incrementSize = D3DDevice->GetDescriptorHandleIncrementSize(D3D12_DESCRIPTOR_HEAP_TYPE_CBV_SRV_UAV);
-                var incrementedHandle = new D3D12_CPU_DESCRIPTOR_HANDLE(_cbv_srv_Heap->GetCPUDescriptorHandleForHeapStart(), 2 * (int)incrementSize);
+                var incrementedHandle = new D3D12_CPU_DESCRIPTOR_HANDLE(_cbv_srv_Heap->GetCPUDescriptorHandleForHeapStart(), (int)incrementSize);
                 D3DDevice->CreateShaderResourceView(texture, &srvDesc, incrementedHandle);
 
                 fixed (char* name = "Texture2d")
@@ -529,16 +529,19 @@ namespace TerraFX.Samples.DirectX.D3D12
             }
 
             { // texture
-                const int RangesCount = 2;
+                const int RangesCount = 1;
                 var ranges = stackalloc D3D12_DESCRIPTOR_RANGE1[RangesCount];
 
                 ranges[0].Init(D3D12_DESCRIPTOR_RANGE_TYPE_SRV, 1, 0, 0, D3D12_DESCRIPTOR_RANGE_FLAG_DATA_STATIC);
-                ranges[1].Init(D3D12_DESCRIPTOR_RANGE_TYPE_SRV, 1, 0, 0, D3D12_DESCRIPTOR_RANGE_FLAG_DATA_STATIC);
+                //ranges[1].Init(D3D12_DESCRIPTOR_RANGE_TYPE_SRV, 1, 0, 0, D3D12_DESCRIPTOR_RANGE_FLAG_DATA_STATIC);
 
                 rootParameters[1].InitAsDescriptorTable(RangesCount, ranges, D3D12_SHADER_VISIBILITY_PIXEL);
             }
 
-            var sampler = new D3D12_STATIC_SAMPLER_DESC {
+            const int staticSamplersCount = 1;
+            var staticSamplers = stackalloc D3D12_STATIC_SAMPLER_DESC[staticSamplersCount];
+
+            staticSamplers[0] = new D3D12_STATIC_SAMPLER_DESC {
                 Filter = D3D12_FILTER.D3D12_FILTER_MIN_MAG_MIP_POINT,
                 AddressU = D3D12_TEXTURE_ADDRESS_MODE_BORDER,
                 AddressV = D3D12_TEXTURE_ADDRESS_MODE_BORDER,
@@ -554,6 +557,22 @@ namespace TerraFX.Samples.DirectX.D3D12
                 ShaderVisibility = D3D12_SHADER_VISIBILITY_PIXEL,
             };
 
+            //staticSamplers[1] = new D3D12_STATIC_SAMPLER_DESC {
+            //    Filter = D3D12_FILTER.D3D12_FILTER_MIN_MAG_MIP_POINT,
+            //    AddressU = D3D12_TEXTURE_ADDRESS_MODE_BORDER,
+            //    AddressV = D3D12_TEXTURE_ADDRESS_MODE_BORDER,
+            //    AddressW = D3D12_TEXTURE_ADDRESS_MODE_BORDER,
+            //    MipLODBias = 0,
+            //    MaxAnisotropy = 0,
+            //    ComparisonFunc = D3D12_COMPARISON_FUNC_NEVER,
+            //    BorderColor = D3D12_STATIC_BORDER_COLOR_TRANSPARENT_BLACK,
+            //    MinLOD = 0.0f,
+            //    MaxLOD = D3D12_FLOAT32_MAX,
+            //    ShaderRegister = 1,
+            //    RegisterSpace = 0,
+            //    ShaderVisibility = D3D12_SHADER_VISIBILITY_PIXEL,
+            //};
+
             var rootSignatureFlags = // Allow input layout and deny unnecessary access to certain pipeline stages.
                 D3D12_ROOT_SIGNATURE_FLAG_ALLOW_INPUT_ASSEMBLER_INPUT_LAYOUT
                 | D3D12_ROOT_SIGNATURE_FLAG_DENY_HULL_SHADER_ROOT_ACCESS
@@ -562,7 +581,7 @@ namespace TerraFX.Samples.DirectX.D3D12
                 ;
 
             var rootSignatureDesc = new D3D12_VERSIONED_ROOT_SIGNATURE_DESC();
-            rootSignatureDesc.Init_1_1(RootParametersCount, rootParameters, 1, &sampler, rootSignatureFlags);
+            rootSignatureDesc.Init_1_1(RootParametersCount, rootParameters, staticSamplersCount, staticSamplers, rootSignatureFlags);
 
             ThrowIfFailed(nameof(D3D12SerializeVersionedRootSignature), D3D12SerializeVersionedRootSignature(&rootSignatureDesc, featureData.HighestVersion, signature.GetAddressOf(), error.GetAddressOf()));
 
@@ -694,8 +713,8 @@ namespace TerraFX.Samples.DirectX.D3D12
             var incrementSize = D3DDevice->GetDescriptorHandleIncrementSize(D3D12_DESCRIPTOR_HEAP_TYPE_CBV_SRV_UAV);
             var incrementedHandle = new D3D12_GPU_DESCRIPTOR_HANDLE(_cbv_srv_Heap->GetGPUDescriptorHandleForHeapStart(), (int)incrementSize);
             GraphicsCommandList->SetGraphicsRootDescriptorTable(1, incrementedHandle);
-            incrementedHandle = new D3D12_GPU_DESCRIPTOR_HANDLE(_cbv_srv_Heap->GetGPUDescriptorHandleForHeapStart(), 2 * (int)incrementSize);
-            GraphicsCommandList->SetGraphicsRootDescriptorTable(2, incrementedHandle);
+            //incrementedHandle = new D3D12_GPU_DESCRIPTOR_HANDLE(_cbv_srv_Heap->GetGPUDescriptorHandleForHeapStart(), 2 * (int)incrementSize);
+            //GraphicsCommandList->SetGraphicsRootDescriptorTable(2, incrementedHandle);
         }
 
         public struct Vertex
