@@ -69,8 +69,8 @@ namespace TerraFX.Samples.DirectX.D3D12
             using ComPtr<ID3D12Resource> texture1dUploadHeap = null;
             using ComPtr<ID3D12Resource> texture2dUploadHeap = null;
             _constantBuffer = CreateConstantBuffer(out _constantBufferDataBegin);
-            _texture2D = CreateTexture2D();
             _texture1D = CreateTexture1D();
+            _texture2D = CreateTexture2D();
             _vertexBuffer = CreateVertexBuffer(out _vertexBufferView);
             base.CreateAssets();
 
@@ -147,7 +147,7 @@ namespace TerraFX.Samples.DirectX.D3D12
                 srvDesc.Anonymous.Texture1D.MipLevels = 1;
 
                 var incrementSize = D3DDevice->GetDescriptorHandleIncrementSize(D3D12_DESCRIPTOR_HEAP_TYPE_CBV_SRV_UAV);
-                var incrementedHandle = new D3D12_CPU_DESCRIPTOR_HANDLE(_cbv_srv_Heap->GetCPUDescriptorHandleForHeapStart(), 2 * (int)incrementSize);
+                var incrementedHandle = new D3D12_CPU_DESCRIPTOR_HANDLE(_cbv_srv_Heap->GetCPUDescriptorHandleForHeapStart(), 1 * (int)incrementSize);
                 D3DDevice->CreateShaderResourceView(texture, &srvDesc, incrementedHandle);
 
                 fixed (char* name = "Texture1d")
@@ -253,7 +253,7 @@ namespace TerraFX.Samples.DirectX.D3D12
                 srvDesc.Anonymous.Texture2D.MipLevels = 1;
 
                 var incrementSize = D3DDevice->GetDescriptorHandleIncrementSize(D3D12_DESCRIPTOR_HEAP_TYPE_CBV_SRV_UAV);
-                var incrementedHandle = new D3D12_CPU_DESCRIPTOR_HANDLE(_cbv_srv_Heap->GetCPUDescriptorHandleForHeapStart(), (int)incrementSize);
+                var incrementedHandle = new D3D12_CPU_DESCRIPTOR_HANDLE(_cbv_srv_Heap->GetCPUDescriptorHandleForHeapStart(), 2 * (int)incrementSize);
                 D3DDevice->CreateShaderResourceView(texture, &srvDesc, incrementedHandle);
 
                 fixed (char* name = "Texture2d")

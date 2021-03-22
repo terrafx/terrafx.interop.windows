@@ -15,7 +15,7 @@ struct VSInput
 struct PSInput
 {
     float4 position : SV_POSITION;
-    float2 uv : TEXCOORD;
+    float u : TEXCOORD;
 };
 
 // vertex shader
@@ -26,17 +26,17 @@ PSInput VSMain(VSInput input)
     float4 pos4 = float4(input.position, 1.0f);
     pos4 = mul(pos4, transform);
     result.position = pos4;
-    result.uv = input.uv;
+    result.u = input.uv[0];
 
     return result;
 }
 
 // pixel shader
-Texture2D textureInput : register(t0);
+Texture1D textureInput : register(t0);
 SamplerState samplerInput : register(s0);
 
 float4 PSMain(PSInput input) : SV_TARGET
 {
-    float4 color = textureInput.Sample(samplerInput, input.uv);
+    float4 color = textureInput.Sample(samplerInput, input.u);
     return color;
 }
