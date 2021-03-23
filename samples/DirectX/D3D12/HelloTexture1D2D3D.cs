@@ -52,6 +52,13 @@ namespace TerraFX.Samples.DirectX.D3D12
         private const uint Texture2DPixelSize = 4;
         private ID3D12Resource* _texture2D;
 
+        // 3d texture 
+        private const uint Texture3DWidth = 256;
+        private const uint Texture3DHeight = 256;
+        private const uint Texture3DDepth = 256;
+        private const uint Texture3DPixelSize = 4;
+        private ID3D12Resource* _texture3D;
+
         // animate the position 
         private ID3D12Resource* _constantBuffer;
         private byte* _constantBufferDataBegin;
@@ -68,9 +75,11 @@ namespace TerraFX.Samples.DirectX.D3D12
         {
             using ComPtr<ID3D12Resource> texture1dUploadHeap = null;
             using ComPtr<ID3D12Resource> texture2dUploadHeap = null;
+            using ComPtr<ID3D12Resource> texture3dUploadHeap = null;
             _constantBuffer = CreateConstantBuffer(out _constantBufferDataBegin);
             _texture1D = CreateTexture1D();
             _texture2D = CreateTexture2D();
+            _texture3D = CreateTexture3D();
             _vertexBuffer = CreateVertexBuffer(out _vertexBufferView);
             base.CreateAssets();
 
@@ -105,9 +114,8 @@ namespace TerraFX.Samples.DirectX.D3D12
                     (void**)&texture
                 ));
 
-                var uploadBufferSize = GetRequiredIntermediateSize(texture, 0, 1);
-
                 // Create the GPU upload buffer.
+                var uploadBufferSize = GetRequiredIntermediateSize(texture, 0, 1);
                 heapProperties = new D3D12_HEAP_PROPERTIES(D3D12_HEAP_TYPE_UPLOAD);
                 var bufferDesc = D3D12_RESOURCE_DESC.Buffer(uploadBufferSize);
                 ThrowIfFailed(nameof(ID3D12Device.CreateCommittedResource), D3DDevice->CreateCommittedResource(
@@ -120,8 +128,8 @@ namespace TerraFX.Samples.DirectX.D3D12
                     (void**)texture1dUploadHeap.GetAddressOf()
                 ));
 
-                // Copy data to the intermediate upload heap and then schedule a copy
-                // from the upload heap to the Texture1d.
+                // Copy data to the intermediate upload heap and 
+                // then schedule a copy from the upload heap to the texture.
                 var textureData = GenerateTextureData1d();
                 var rowPitch = Texture1DWidth * Texture1DPixelSize;
                 var slicePitch = rowPitch;
@@ -211,9 +219,9 @@ namespace TerraFX.Samples.DirectX.D3D12
                     (void**)&texture
                 ));
 
-                var uploadBufferSize = GetRequiredIntermediateSize(texture, 0, 1);
 
                 // Create the GPU upload buffer.
+                var uploadBufferSize = GetRequiredIntermediateSize(texture, 0, 1);
                 heapProperties = new D3D12_HEAP_PROPERTIES(D3D12_HEAP_TYPE_UPLOAD);
                 var bufferDesc = D3D12_RESOURCE_DESC.Buffer(uploadBufferSize);
                 ThrowIfFailed(nameof(ID3D12Device.CreateCommittedResource), D3DDevice->CreateCommittedResource(
@@ -226,8 +234,8 @@ namespace TerraFX.Samples.DirectX.D3D12
                     (void**)texture2dUploadHeap.GetAddressOf()
                 ));
 
-                // Copy data to the intermediate upload heap and then schedule a copy
-                // from the upload heap to the Texture2D.
+                // Copy data to the intermediate upload heap and 
+                // then schedule a copy from the upload heap to the texture.
                 var textureData = GenerateTextureData2D();
                 var rowPitch = Texture2DWidth * Texture2DPixelSize;
                 var slicePitch = rowPitch * Texture2DHeight;
@@ -299,26 +307,151 @@ namespace TerraFX.Samples.DirectX.D3D12
                 }
             }
 
-            ID3D12Resource* CreateVertexBuffer(out D3D12_VERTEX_BUFFER_VIEW vertexBufferView)
+            ID3D12Resource* CreateTexture3D()
             {
-                // Define the geometry for a triangle.
-                const int TriangleVerticesCount = 3;
-                var triangleVertices = stackalloc Vertex[TriangleVerticesCount] {
-                    new Vertex {
-                        Position = new Vector3(0.0f, 0.25f * AspectRatio, 0.0f),
-                        UV = new Vector2(0.5f, 0.0f)
+                var textureDesc = new D3D12_RESOURCE_DESC {
+                    MipLevels = 1,
+                    Format = DXGI_FORMAT_R8G8B8A8_UNORM,
+                    Width = Texture3DWidth,
+                    Height = Texture3DHeight,
+                    DepthOrArraySize = (ushort)Texture3DDepth,
+                    Flags = D3D12_RESOURCE_FLAG_NONE,
+                    SampleDesc = new DXGI_SAMPLE_DESC {
+                        Count = 1,
+                        Quality = 0,
                     },
-                    new Vertex {
-                        Position = new Vector3(0.25f, -0.25f * AspectRatio, 0.0f),
-                        UV = new Vector2(1.0f, 1.0f)
-                    },
-                    new Vertex {
-                        Position = new Vector3(-0.25f, -0.25f * AspectRatio, 0.0f),
-                        UV = new Vector2(0.0f, 1.0f)
-                    },
+                    Dimension = D3D12_RESOURCE_DIMENSION_TEXTURE3D,
                 };
 
-                var vertexBufferSize = (uint)sizeof(Vertex) * TriangleVerticesCount;
+                ID3D12Resource* texture;
+                var heapProperties = new D3D12_HEAP_PROPERTIES(D3D12_HEAP_TYPE_DEFAULT);
+                var iid = IID_ID3D12Resource;
+                ThrowIfFailed(nameof(ID3D12Device.CreateCommittedResource), D3DDevice->CreateCommittedResource(
+                    &heapProperties,
+                    D3D12_HEAP_FLAG_NONE,
+                    &textureDesc,
+                    D3D12_RESOURCE_STATE_COPY_DEST,
+                    pOptimizedClearValue: null,
+                    &iid,
+                    (void**)&texture
+                ));
+
+
+                // Create the GPU upload buffer.
+                var uploadBufferSize = GetRequiredIntermediateSize(texture, 0, 1);
+                heapProperties = new D3D12_HEAP_PROPERTIES(D3D12_HEAP_TYPE_UPLOAD);
+                var bufferDesc = D3D12_RESOURCE_DESC.Buffer(uploadBufferSize);
+                ThrowIfFailed(nameof(ID3D12Device.CreateCommittedResource), D3DDevice->CreateCommittedResource(
+                    &heapProperties,
+                    D3D12_HEAP_FLAG_NONE,
+                    &bufferDesc,
+                    D3D12_RESOURCE_STATE_GENERIC_READ,
+                    pOptimizedClearValue: null,
+                    &iid,
+                    (void**)texture3dUploadHeap.GetAddressOf()
+                ));
+
+                // Copy data to the intermediate upload heap and 
+                // then schedule a copy from the upload heap to the texture.
+                var textureData = GenerateTextureData3D();
+                var rowPitch = Texture3DWidth * Texture3DPixelSize;
+                var slicePitch = rowPitch * Texture3DHeight;
+                D3D12_SUBRESOURCE_DATA textureSubresourceData;
+                fixed (byte* pTextureData = &textureData[0])
+                {
+                    textureSubresourceData = new D3D12_SUBRESOURCE_DATA {
+                        pData = (void*)pTextureData,
+                        RowPitch = (nint)rowPitch,
+                        SlicePitch = (nint)slicePitch,
+                    };
+                }
+                UpdateSubresources(GraphicsCommandList, texture, texture3dUploadHeap, 0, 0, 1, &textureSubresourceData);
+                var barrier = D3D12_RESOURCE_BARRIER.InitTransition(texture, D3D12_RESOURCE_STATE_COPY_DEST, D3D12_RESOURCE_STATE_PIXEL_SHADER_RESOURCE);
+                GraphicsCommandList->ResourceBarrier(1, &barrier);
+
+                // Describe and create a SRV for the texture.
+                var srvDesc = new D3D12_SHADER_RESOURCE_VIEW_DESC {
+                    Shader4ComponentMapping = D3D12_DEFAULT_SHADER_4_COMPONENT_MAPPING,
+                    Format = textureDesc.Format,
+                    ViewDimension = D3D12_SRV_DIMENSION_TEXTURE3D,
+                };
+                srvDesc.Anonymous.Texture3D.MipLevels = 1;
+
+                var incrementSize = D3DDevice->GetDescriptorHandleIncrementSize(D3D12_DESCRIPTOR_HEAP_TYPE_CBV_SRV_UAV);
+                var incrementedHandle = new D3D12_CPU_DESCRIPTOR_HANDLE(_cbv_srv_Heap->GetCPUDescriptorHandleForHeapStart(), 3 * (int)incrementSize);
+                D3DDevice->CreateShaderResourceView(texture, &srvDesc, incrementedHandle);
+
+                fixed (char* name = "Texture3d")
+                {
+                    texture->SetName((ushort*)name);
+                }
+                return texture;
+
+                byte[] GenerateTextureData3D()
+                {
+                        const uint RowPitch = Texture3DWidth * Texture3DPixelSize;
+                        const uint SlicePitch = RowPitch * Texture3DHeight;
+                        const uint TextureSize = SlicePitch * Texture3DDepth;
+
+                        var data = new byte[TextureSize];
+                        fixed (byte* pData = &data[0])
+                        {
+                            for (uint n = 0; n < TextureSize; n += Texture3DPixelSize)
+                            {
+                                var i = (n % RowPitch) / Texture3DPixelSize;
+                                var j = (n % SlicePitch) / RowPitch;
+                                var k = n / SlicePitch;
+                                var x = 0.5f * (i / Texture3DWidth - 0.5f);
+                                var y = 0.5f * (j / Texture3DHeight - 0.5f);
+                                var z = 0.5f * (k / Texture3DDepth - 0.5f);
+                                //var voxel = (byte)(byte.MaxValue * (1.0f - MathF.Sqrt(x * x + y * y + z * z))); // sphere data distribution
+                                var voxel = (byte)(byte.MaxValue * (3 - x + y + z) / 3.0); // diagonal intensity ramp
+                                pData[n + 0] = (byte)(voxel & 0xff);
+                                pData[n + 1] = (byte)(voxel & 0xff);
+                                pData[n + 2] = (byte)(voxel & 0xff);
+                                pData[n + 3] = (byte)(voxel & 0xff);
+                            }
+                        }
+                        return data;
+                }
+            }
+
+            ID3D12Resource* CreateVertexBuffer(out D3D12_VERTEX_BUFFER_VIEW vertexBufferView)
+            {
+                // Define the geometry for a quad.
+
+                var y = 1.0f;
+                var x = y / AspectRatio;
+                var s = 0.0f;
+                var t = 1.0f;
+                var a = new PosTex3dVertex {                              //  
+                    Position = new System.Numerics.Vector3(-x, y, 0.0f),  //   y          Vertex position space: 
+                    UVW = new System.Numerics.Vector3(s, s, 0.0f),        //   ^     z    the origin o is
+                };                                                        //   |   /      in the middle
+                                                                          //   | /        of the rendered scene
+                var b = new PosTex3dVertex {                              //   o------>x  here the range is [-1,1] but x is shortened by aspectRatio
+                    Position = new System.Numerics.Vector3(x, y, 0.0f),   //  
+                    UVW = new System.Numerics.Vector3(t, s, 0.0f),        //   o------>x  Texture coordinate space:
+                };                                                        //   | \        the origin o is 
+                                                                          //   |   \      at the top left corner
+                var c = new PosTex3dVertex {                              //   v     z    and at the beginning of the texture memory
+                    Position = new System.Numerics.Vector3(x, -y, 0.0f),  //   y          here the range is [0,1] for x and y
+                    UVW = new System.Numerics.Vector3(t, t, 0.0f),        //  
+                };                                                        //   a ----- b  the numbers at the corners 
+                                                                          //   | \     |  are the indices into the 
+                var d = new PosTex3dVertex {                              //   |   \   |  vertex array
+                    Position = new System.Numerics.Vector3(-x, -y, 0.0f), //   |     \ |  
+                    UVW = new System.Numerics.Vector3(s, t, 0.0f),        //   d-------c  
+                };                                                        //
+
+
+                const int TriangleVerticesCount = 6;
+                var triangleVertices = stackalloc PosTex3dVertex[TriangleVerticesCount] {
+                    a, b, c,
+                    a, c, d,
+                };
+
+                var vertexBufferSize = (uint)sizeof(PosTex3dVertex) * TriangleVerticesCount;
 
                 // Note: using upload heaps to transfer static data like vert buffers is not
                 // recommended. Every time the GPU needs it, the upload heap will be marshalled
@@ -350,7 +483,7 @@ namespace TerraFX.Samples.DirectX.D3D12
 
                 // Initialize the vertex buffer view.
                 vertexBufferView.BufferLocation = vertexBuffer->GetGPUVirtualAddress();
-                vertexBufferView.StrideInBytes = (uint)sizeof(Vertex);
+                vertexBufferView.StrideInBytes = (uint)sizeof(PosTex3dVertex);
                 vertexBufferView.SizeInBytes = vertexBufferSize;
 
                 fixed (char* name = "VertexBuffer")
@@ -529,16 +662,17 @@ namespace TerraFX.Samples.DirectX.D3D12
             }
 
             { // texture
-                const int RangesCount = 2;
+                const int RangesCount = 3;
                 var ranges = stackalloc D3D12_DESCRIPTOR_RANGE1[RangesCount];
 
                 ranges[0].Init(D3D12_DESCRIPTOR_RANGE_TYPE_SRV, 1, 0, 0, D3D12_DESCRIPTOR_RANGE_FLAG_DATA_STATIC);
                 ranges[1].Init(D3D12_DESCRIPTOR_RANGE_TYPE_SRV, 1, 0, 0, D3D12_DESCRIPTOR_RANGE_FLAG_DATA_STATIC);
+                ranges[2].Init(D3D12_DESCRIPTOR_RANGE_TYPE_SRV, 1, 0, 0, D3D12_DESCRIPTOR_RANGE_FLAG_DATA_STATIC);
 
                 rootParameters[1].InitAsDescriptorTable(RangesCount, ranges, D3D12_SHADER_VISIBILITY_PIXEL);
             }
 
-            const int staticSamplersCount = 2;
+            const int staticSamplersCount = 3;
             var staticSamplers = stackalloc D3D12_STATIC_SAMPLER_DESC[staticSamplersCount];
 
             staticSamplers[0] = new D3D12_STATIC_SAMPLER_DESC {
@@ -569,6 +703,22 @@ namespace TerraFX.Samples.DirectX.D3D12
                 MinLOD = 0.0f,
                 MaxLOD = D3D12_FLOAT32_MAX,
                 ShaderRegister = 1,
+                RegisterSpace = 0,
+                ShaderVisibility = D3D12_SHADER_VISIBILITY_PIXEL,
+            };
+
+            staticSamplers[2] = new D3D12_STATIC_SAMPLER_DESC {
+                Filter = D3D12_FILTER.D3D12_FILTER_MIN_MAG_MIP_POINT,
+                AddressU = D3D12_TEXTURE_ADDRESS_MODE_BORDER,
+                AddressV = D3D12_TEXTURE_ADDRESS_MODE_BORDER,
+                AddressW = D3D12_TEXTURE_ADDRESS_MODE_BORDER,
+                MipLODBias = 0,
+                MaxAnisotropy = 0,
+                ComparisonFunc = D3D12_COMPARISON_FUNC_NEVER,
+                BorderColor = D3D12_STATIC_BORDER_COLOR_TRANSPARENT_BLACK,
+                MinLOD = 0.0f,
+                MaxLOD = D3D12_FLOAT32_MAX,
+                ShaderRegister = 2,
                 RegisterSpace = 0,
                 ShaderVisibility = D3D12_SHADER_VISIBILITY_PIXEL,
             };
@@ -623,7 +773,8 @@ namespace TerraFX.Samples.DirectX.D3D12
                 GraphicsCommandList->IASetVertexBuffers(StartSlot: 0, 1, vertexBufferView);
             }
 
-            GraphicsCommandList->DrawInstanced(VertexCountPerInstance: 3, InstanceCount: 1, StartVertexLocation: 0, StartInstanceLocation: 0);
+            // IB: why does setting the instance count to 2 not show the second triangle in the quad?
+            GraphicsCommandList->DrawInstanced(VertexCountPerInstance: 3, InstanceCount: 2, StartVertexLocation: 0, StartInstanceLocation: 0);
         }
 
         protected override void DestroyAssets()
@@ -631,6 +782,7 @@ namespace TerraFX.Samples.DirectX.D3D12
             DestroyConstantBuffer();
             DestroyTexture1D();
             DestroyTexture2D();
+            DestroyTexture3D();
             DestroyVertexBuffer();
             base.DestroyAssets();
 
@@ -667,6 +819,17 @@ namespace TerraFX.Samples.DirectX.D3D12
                 if (texture != null)
                 {
                     _texture2D = null;
+                    _ = texture->Release();
+                }
+            }
+
+            void DestroyTexture3D()
+            {
+                var texture = _texture3D;
+
+                if (texture != null)
+                {
+                    _texture3D = null;
                     _ = texture->Release();
                 }
             }
@@ -711,16 +874,19 @@ namespace TerraFX.Samples.DirectX.D3D12
             GraphicsCommandList->SetDescriptorHeaps(HeapsCount, ppHeaps);
             GraphicsCommandList->SetGraphicsRootDescriptorTable(0, _cbv_srv_Heap->GetGPUDescriptorHandleForHeapStart());
             var incrementSize = D3DDevice->GetDescriptorHandleIncrementSize(D3D12_DESCRIPTOR_HEAP_TYPE_CBV_SRV_UAV);
-            var incrementedHandle = new D3D12_GPU_DESCRIPTOR_HANDLE(_cbv_srv_Heap->GetGPUDescriptorHandleForHeapStart(), (int)incrementSize);
+            var incrementedHandle = new D3D12_GPU_DESCRIPTOR_HANDLE(_cbv_srv_Heap->GetGPUDescriptorHandleForHeapStart(), 1 * (int)incrementSize);
             GraphicsCommandList->SetGraphicsRootDescriptorTable(1, incrementedHandle);
             incrementedHandle = new D3D12_GPU_DESCRIPTOR_HANDLE(_cbv_srv_Heap->GetGPUDescriptorHandleForHeapStart(), 2 * (int)incrementSize);
             GraphicsCommandList->SetGraphicsRootDescriptorTable(2, incrementedHandle);
+            incrementedHandle = new D3D12_GPU_DESCRIPTOR_HANDLE(_cbv_srv_Heap->GetGPUDescriptorHandleForHeapStart(), 3 * (int)incrementSize);
+            GraphicsCommandList->SetGraphicsRootDescriptorTable(2, incrementedHandle);
         }
 
-        public struct Vertex
+
+        public struct PosTex3dVertex
         {
             public Vector3 Position;
-            public System.Numerics.Vector2 UV;
+            public Vector3 UVW;
         }
 
         private struct SceneConstantBuffer
