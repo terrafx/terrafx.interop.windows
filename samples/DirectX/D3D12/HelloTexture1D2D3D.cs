@@ -78,8 +78,8 @@ namespace TerraFX.Samples.DirectX.D3D12
             using ComPtr<ID3D12Resource> texture3dUploadHeap = null;
             _constantBuffer = CreateConstantBuffer(out _constantBufferDataBegin);
             _texture1D = CreateTexture1D(1);
-            _texture2D = CreateTexture2D(2);
-            _texture3D = CreateTexture3D(3);
+            _texture2D = CreateTexture2D(-1);
+            _texture3D = CreateTexture3D(-1);
             _vertexBuffer = CreateVertexBuffer(out _vertexBufferView);
             base.CreateAssets();
 
@@ -87,7 +87,7 @@ namespace TerraFX.Samples.DirectX.D3D12
             {
                 if (memorySlot < 0)
                     return null;
-                // Describe and create a Texture2D.
+                // Describe and create a Texture1D.
                 var textureDesc = new D3D12_RESOURCE_DESC {
                     MipLevels = 1,
                     Format = DXGI_FORMAT_R8G8B8A8_UNORM,
@@ -177,10 +177,11 @@ namespace TerraFX.Samples.DirectX.D3D12
                         for (uint n = 0; n < TextureSize; n += Texture1DPixelSize)
                         {
                             var i = n / Texture1DPixelSize;
-                            var x0 = Math.Clamp(255.0f / i, 0, 255.0f);
+                            var x = 255.0f * i / Texture1DWidth;
+                            var x0 = Math.Clamp(x, 0, 255.0f);
                             var x1 = Math.Clamp(255.0f - x0, 0, 255.0f);
 
-                            pData[n + 0] = 0x80;      // R
+                            pData[n + 0] = (byte)x0;  // R
                             pData[n + 1] = (byte)x0;  // G
                             pData[n + 2] = (byte)x1;  // B
                             pData[n + 3] = 0xff;      // A
@@ -619,7 +620,7 @@ namespace TerraFX.Samples.DirectX.D3D12
 
             var texCoordElement = new D3D12_INPUT_ELEMENT_DESC {
                 SemanticName = (sbyte*)semanticNameTexCoord,
-                Format = DXGI_FORMAT_R32G32_FLOAT,
+                Format = DXGI_FORMAT_R32G32B32_FLOAT,
                 AlignedByteOffset = 12,
                 InputSlotClass = D3D12_INPUT_CLASSIFICATION_PER_VERTEX_DATA,
             };
@@ -687,66 +688,72 @@ namespace TerraFX.Samples.DirectX.D3D12
             }
 
             { // texture
-                const int RangesCount = 3;
-                var ranges = stackalloc D3D12_DESCRIPTOR_RANGE1[RangesCount];
+                uint rangesCount = 1;
+                var ranges = stackalloc D3D12_DESCRIPTOR_RANGE1[(int)rangesCount];
 
-                ranges[0].Init(D3D12_DESCRIPTOR_RANGE_TYPE_SRV, 1, 0, 0, D3D12_DESCRIPTOR_RANGE_FLAG_DATA_STATIC);
-                ranges[1].Init(D3D12_DESCRIPTOR_RANGE_TYPE_SRV, 1, 0, 0, D3D12_DESCRIPTOR_RANGE_FLAG_DATA_STATIC);
-                ranges[2].Init(D3D12_DESCRIPTOR_RANGE_TYPE_SRV, 1, 0, 0, D3D12_DESCRIPTOR_RANGE_FLAG_DATA_STATIC);
+                if (rangesCount > 0)
+                    ranges[0].Init(D3D12_DESCRIPTOR_RANGE_TYPE_SRV, 1, 0, 0, D3D12_DESCRIPTOR_RANGE_FLAG_DATA_STATIC);
+                if (rangesCount > 1)
+                    ranges[1].Init(D3D12_DESCRIPTOR_RANGE_TYPE_SRV, 1, 0, 0, D3D12_DESCRIPTOR_RANGE_FLAG_DATA_STATIC);
+                if (rangesCount > 2)
+                    ranges[2].Init(D3D12_DESCRIPTOR_RANGE_TYPE_SRV, 1, 0, 0, D3D12_DESCRIPTOR_RANGE_FLAG_DATA_STATIC);
 
-                rootParameters[1].InitAsDescriptorTable(RangesCount, ranges, D3D12_SHADER_VISIBILITY_PIXEL);
+                rootParameters[1].InitAsDescriptorTable(rangesCount, ranges, D3D12_SHADER_VISIBILITY_PIXEL);
             }
 
-            const int staticSamplersCount = 3;
-            var staticSamplers = stackalloc D3D12_STATIC_SAMPLER_DESC[staticSamplersCount];
+            uint staticSamplersCount = 1;
+            var staticSamplers = stackalloc D3D12_STATIC_SAMPLER_DESC[(int)staticSamplersCount];
 
-            staticSamplers[0] = new D3D12_STATIC_SAMPLER_DESC {
-                Filter = D3D12_FILTER.D3D12_FILTER_MIN_MAG_MIP_POINT,
-                AddressU = D3D12_TEXTURE_ADDRESS_MODE_BORDER,
-                AddressV = D3D12_TEXTURE_ADDRESS_MODE_BORDER,
-                AddressW = D3D12_TEXTURE_ADDRESS_MODE_BORDER,
-                MipLODBias = 0,
-                MaxAnisotropy = 0,
-                ComparisonFunc = D3D12_COMPARISON_FUNC_NEVER,
-                BorderColor = D3D12_STATIC_BORDER_COLOR_TRANSPARENT_BLACK,
-                MinLOD = 0.0f,
-                MaxLOD = D3D12_FLOAT32_MAX,
-                ShaderRegister = 0,
-                RegisterSpace = 0,
-                ShaderVisibility = D3D12_SHADER_VISIBILITY_PIXEL,
-            };
+            if (staticSamplersCount > 0)
+                staticSamplers[0] = new D3D12_STATIC_SAMPLER_DESC {
+                    Filter = D3D12_FILTER.D3D12_FILTER_MIN_MAG_MIP_POINT,
+                    AddressU = D3D12_TEXTURE_ADDRESS_MODE_BORDER,
+                    AddressV = D3D12_TEXTURE_ADDRESS_MODE_BORDER,
+                    AddressW = D3D12_TEXTURE_ADDRESS_MODE_BORDER,
+                    MipLODBias = 0,
+                    MaxAnisotropy = 0,
+                    ComparisonFunc = D3D12_COMPARISON_FUNC_NEVER,
+                    BorderColor = D3D12_STATIC_BORDER_COLOR_TRANSPARENT_BLACK,
+                    MinLOD = 0.0f,
+                    MaxLOD = D3D12_FLOAT32_MAX,
+                    ShaderRegister = 0,
+                    RegisterSpace = 0,
+                    ShaderVisibility = D3D12_SHADER_VISIBILITY_PIXEL,
+                };
 
-            staticSamplers[1] = new D3D12_STATIC_SAMPLER_DESC {
-                Filter = D3D12_FILTER.D3D12_FILTER_MIN_MAG_MIP_POINT,
-                AddressU = D3D12_TEXTURE_ADDRESS_MODE_BORDER,
-                AddressV = D3D12_TEXTURE_ADDRESS_MODE_BORDER,
-                AddressW = D3D12_TEXTURE_ADDRESS_MODE_BORDER,
-                MipLODBias = 0,
-                MaxAnisotropy = 0,
-                ComparisonFunc = D3D12_COMPARISON_FUNC_NEVER,
-                BorderColor = D3D12_STATIC_BORDER_COLOR_TRANSPARENT_BLACK,
-                MinLOD = 0.0f,
-                MaxLOD = D3D12_FLOAT32_MAX,
-                ShaderRegister = 1,
-                RegisterSpace = 0,
-                ShaderVisibility = D3D12_SHADER_VISIBILITY_PIXEL,
-            };
+            if (staticSamplersCount > 1)
+                staticSamplers[1] = new D3D12_STATIC_SAMPLER_DESC {
+                    Filter = D3D12_FILTER.D3D12_FILTER_MIN_MAG_MIP_POINT,
+                    AddressU = D3D12_TEXTURE_ADDRESS_MODE_BORDER,
+                    AddressV = D3D12_TEXTURE_ADDRESS_MODE_BORDER,
+                    AddressW = D3D12_TEXTURE_ADDRESS_MODE_BORDER,
+                    MipLODBias = 0,
+                    MaxAnisotropy = 0,
+                    ComparisonFunc = D3D12_COMPARISON_FUNC_NEVER,
+                    BorderColor = D3D12_STATIC_BORDER_COLOR_TRANSPARENT_BLACK,
+                    MinLOD = 0.0f,
+                    MaxLOD = D3D12_FLOAT32_MAX,
+                    ShaderRegister = 1,
+                    RegisterSpace = 0,
+                    ShaderVisibility = D3D12_SHADER_VISIBILITY_PIXEL,
+                };
 
-            staticSamplers[2] = new D3D12_STATIC_SAMPLER_DESC {
-                Filter = D3D12_FILTER.D3D12_FILTER_MIN_MAG_MIP_POINT,
-                AddressU = D3D12_TEXTURE_ADDRESS_MODE_BORDER,
-                AddressV = D3D12_TEXTURE_ADDRESS_MODE_BORDER,
-                AddressW = D3D12_TEXTURE_ADDRESS_MODE_BORDER,
-                MipLODBias = 0,
-                MaxAnisotropy = 0,
-                ComparisonFunc = D3D12_COMPARISON_FUNC_NEVER,
-                BorderColor = D3D12_STATIC_BORDER_COLOR_TRANSPARENT_BLACK,
-                MinLOD = 0.0f,
-                MaxLOD = D3D12_FLOAT32_MAX,
-                ShaderRegister = 2,
-                RegisterSpace = 0,
-                ShaderVisibility = D3D12_SHADER_VISIBILITY_PIXEL,
-            };
+            if (staticSamplersCount > 2)
+                staticSamplers[2] = new D3D12_STATIC_SAMPLER_DESC {
+                    Filter = D3D12_FILTER.D3D12_FILTER_MIN_MAG_MIP_POINT,
+                    AddressU = D3D12_TEXTURE_ADDRESS_MODE_BORDER,
+                    AddressV = D3D12_TEXTURE_ADDRESS_MODE_BORDER,
+                    AddressW = D3D12_TEXTURE_ADDRESS_MODE_BORDER,
+                    MipLODBias = 0,
+                    MaxAnisotropy = 0,
+                    ComparisonFunc = D3D12_COMPARISON_FUNC_NEVER,
+                    BorderColor = D3D12_STATIC_BORDER_COLOR_TRANSPARENT_BLACK,
+                    MinLOD = 0.0f,
+                    MaxLOD = D3D12_FLOAT32_MAX,
+                    ShaderRegister = 2,
+                    RegisterSpace = 0,
+                    ShaderVisibility = D3D12_SHADER_VISIBILITY_PIXEL,
+                };
 
             var rootSignatureFlags = // Allow input layout and deny unnecessary access to certain pipeline stages.
                 D3D12_ROOT_SIGNATURE_FLAG_ALLOW_INPUT_ASSEMBLER_INPUT_LAYOUT
@@ -899,12 +906,22 @@ namespace TerraFX.Samples.DirectX.D3D12
             GraphicsCommandList->SetDescriptorHeaps(HeapsCount, ppHeaps);
             GraphicsCommandList->SetGraphicsRootDescriptorTable(0, _cbv_srv_Heap->GetGPUDescriptorHandleForHeapStart());
             var incrementSize = D3DDevice->GetDescriptorHandleIncrementSize(D3D12_DESCRIPTOR_HEAP_TYPE_CBV_SRV_UAV);
-            var incrementedHandle = new D3D12_GPU_DESCRIPTOR_HANDLE(_cbv_srv_Heap->GetGPUDescriptorHandleForHeapStart(), 1 * (int)incrementSize);
-            GraphicsCommandList->SetGraphicsRootDescriptorTable(1, incrementedHandle);
-            incrementedHandle = new D3D12_GPU_DESCRIPTOR_HANDLE(_cbv_srv_Heap->GetGPUDescriptorHandleForHeapStart(), 2 * (int)incrementSize);
-            GraphicsCommandList->SetGraphicsRootDescriptorTable(2, incrementedHandle);
-            incrementedHandle = new D3D12_GPU_DESCRIPTOR_HANDLE(_cbv_srv_Heap->GetGPUDescriptorHandleForHeapStart(), 3 * (int)incrementSize);
-            GraphicsCommandList->SetGraphicsRootDescriptorTable(2, incrementedHandle);
+            uint texturesCount = 1;
+            if (texturesCount > 0)
+            {
+                var incrementedHandle = new D3D12_GPU_DESCRIPTOR_HANDLE(_cbv_srv_Heap->GetGPUDescriptorHandleForHeapStart(), 1 * (int)incrementSize);
+                GraphicsCommandList->SetGraphicsRootDescriptorTable(1, incrementedHandle);
+            }
+            if (texturesCount > 1)
+            {
+                var incrementedHandle = new D3D12_GPU_DESCRIPTOR_HANDLE(_cbv_srv_Heap->GetGPUDescriptorHandleForHeapStart(), 2 * (int)incrementSize);
+                GraphicsCommandList->SetGraphicsRootDescriptorTable(2, incrementedHandle);
+            }
+            if (texturesCount > 2)
+            {
+                var incrementedHandle = new D3D12_GPU_DESCRIPTOR_HANDLE(_cbv_srv_Heap->GetGPUDescriptorHandleForHeapStart(), 3 * (int)incrementSize);
+                GraphicsCommandList->SetGraphicsRootDescriptorTable(2, incrementedHandle);
+            }
         }
 
 
