@@ -77,9 +77,9 @@ namespace TerraFX.Samples.DirectX.D3D12
             using ComPtr<ID3D12Resource> texture2dUploadHeap = null;
             using ComPtr<ID3D12Resource> texture3dUploadHeap = null;
             _constantBuffer = CreateConstantBuffer(out _constantBufferDataBegin);
-            _texture1D = CreateTexture1D(-1);
-            _texture2D = CreateTexture2D(-1);
-            _texture3D = CreateTexture3D(1);
+            _texture1D = CreateTexture1D(1);
+            _texture2D = CreateTexture2D(2);
+            _texture3D = CreateTexture3D(3);
             _vertexBuffer = CreateVertexBuffer(out _vertexBufferView);
             base.CreateAssets();
 
@@ -687,17 +687,17 @@ namespace TerraFX.Samples.DirectX.D3D12
             }
 
             { // texture
-                const int RangesCount = 1;
+                const int RangesCount = 3;
                 var ranges = stackalloc D3D12_DESCRIPTOR_RANGE1[RangesCount];
 
                 ranges[0].Init(D3D12_DESCRIPTOR_RANGE_TYPE_SRV, 1, 0, 0, D3D12_DESCRIPTOR_RANGE_FLAG_DATA_STATIC);
-                //ranges[1].Init(D3D12_DESCRIPTOR_RANGE_TYPE_SRV, 1, 0, 0, D3D12_DESCRIPTOR_RANGE_FLAG_DATA_STATIC);
-                //ranges[2].Init(D3D12_DESCRIPTOR_RANGE_TYPE_SRV, 1, 0, 0, D3D12_DESCRIPTOR_RANGE_FLAG_DATA_STATIC);
+                ranges[1].Init(D3D12_DESCRIPTOR_RANGE_TYPE_SRV, 1, 0, 0, D3D12_DESCRIPTOR_RANGE_FLAG_DATA_STATIC);
+                ranges[2].Init(D3D12_DESCRIPTOR_RANGE_TYPE_SRV, 1, 0, 0, D3D12_DESCRIPTOR_RANGE_FLAG_DATA_STATIC);
 
                 rootParameters[1].InitAsDescriptorTable(RangesCount, ranges, D3D12_SHADER_VISIBILITY_PIXEL);
             }
 
-            const int staticSamplersCount = 1;
+            const int staticSamplersCount = 3;
             var staticSamplers = stackalloc D3D12_STATIC_SAMPLER_DESC[staticSamplersCount];
 
             staticSamplers[0] = new D3D12_STATIC_SAMPLER_DESC {
@@ -716,7 +716,6 @@ namespace TerraFX.Samples.DirectX.D3D12
                 ShaderVisibility = D3D12_SHADER_VISIBILITY_PIXEL,
             };
 
-            /*
             staticSamplers[1] = new D3D12_STATIC_SAMPLER_DESC {
                 Filter = D3D12_FILTER.D3D12_FILTER_MIN_MAG_MIP_POINT,
                 AddressU = D3D12_TEXTURE_ADDRESS_MODE_BORDER,
@@ -748,7 +747,6 @@ namespace TerraFX.Samples.DirectX.D3D12
                 RegisterSpace = 0,
                 ShaderVisibility = D3D12_SHADER_VISIBILITY_PIXEL,
             };
-            */
 
             var rootSignatureFlags = // Allow input layout and deny unnecessary access to certain pipeline stages.
                 D3D12_ROOT_SIGNATURE_FLAG_ALLOW_INPUT_ASSEMBLER_INPUT_LAYOUT
@@ -903,10 +901,10 @@ namespace TerraFX.Samples.DirectX.D3D12
             var incrementSize = D3DDevice->GetDescriptorHandleIncrementSize(D3D12_DESCRIPTOR_HEAP_TYPE_CBV_SRV_UAV);
             var incrementedHandle = new D3D12_GPU_DESCRIPTOR_HANDLE(_cbv_srv_Heap->GetGPUDescriptorHandleForHeapStart(), 1 * (int)incrementSize);
             GraphicsCommandList->SetGraphicsRootDescriptorTable(1, incrementedHandle);
-            //incrementedHandle = new D3D12_GPU_DESCRIPTOR_HANDLE(_cbv_srv_Heap->GetGPUDescriptorHandleForHeapStart(), 2 * (int)incrementSize);
-            //GraphicsCommandList->SetGraphicsRootDescriptorTable(2, incrementedHandle);
-            //incrementedHandle = new D3D12_GPU_DESCRIPTOR_HANDLE(_cbv_srv_Heap->GetGPUDescriptorHandleForHeapStart(), 3 * (int)incrementSize);
-            //GraphicsCommandList->SetGraphicsRootDescriptorTable(2, incrementedHandle);
+            incrementedHandle = new D3D12_GPU_DESCRIPTOR_HANDLE(_cbv_srv_Heap->GetGPUDescriptorHandleForHeapStart(), 2 * (int)incrementSize);
+            GraphicsCommandList->SetGraphicsRootDescriptorTable(2, incrementedHandle);
+            incrementedHandle = new D3D12_GPU_DESCRIPTOR_HANDLE(_cbv_srv_Heap->GetGPUDescriptorHandleForHeapStart(), 3 * (int)incrementSize);
+            GraphicsCommandList->SetGraphicsRootDescriptorTable(2, incrementedHandle);
         }
 
 
