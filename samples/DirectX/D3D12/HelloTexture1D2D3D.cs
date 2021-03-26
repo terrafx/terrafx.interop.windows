@@ -78,8 +78,8 @@ namespace TerraFX.Samples.DirectX.D3D12
             using ComPtr<ID3D12Resource> texture3dUploadHeap = null;
             _constantBuffer = CreateConstantBuffer(out _constantBufferDataBegin);
             _texture1D = CreateTexture1D(1);
-            _texture2D = CreateTexture2D(-1);
-            _texture3D = CreateTexture3D(-1);
+            _texture2D = CreateTexture2D(2);
+            _texture3D = CreateTexture3D(3);
             _vertexBuffer = CreateVertexBuffer(out _vertexBufferView);
             base.CreateAssets();
 
@@ -564,7 +564,7 @@ namespace TerraFX.Samples.DirectX.D3D12
             ID3D12DescriptorHeap* CreateCbvSrvHeap()
             {
                 var cbvSrvHeapDesc = new D3D12_DESCRIPTOR_HEAP_DESC {
-                    NumDescriptors = 3,
+                    NumDescriptors = 5,
                     Flags = D3D12_DESCRIPTOR_HEAP_FLAG_SHADER_VISIBLE,
                     Type = D3D12_DESCRIPTOR_HEAP_TYPE_CBV_SRV_UAV,
                 };
@@ -688,7 +688,7 @@ namespace TerraFX.Samples.DirectX.D3D12
             }
 
             { // texture
-                uint rangesCount = 1;
+                uint rangesCount = 3;
                 var ranges = stackalloc D3D12_DESCRIPTOR_RANGE1[(int)rangesCount];
 
                 if (rangesCount > 0)
@@ -906,7 +906,7 @@ namespace TerraFX.Samples.DirectX.D3D12
             GraphicsCommandList->SetDescriptorHeaps(HeapsCount, ppHeaps);
             GraphicsCommandList->SetGraphicsRootDescriptorTable(0, _cbv_srv_Heap->GetGPUDescriptorHandleForHeapStart());
             var incrementSize = D3DDevice->GetDescriptorHandleIncrementSize(D3D12_DESCRIPTOR_HEAP_TYPE_CBV_SRV_UAV);
-            uint texturesCount = 1;
+            uint texturesCount = 3;
             if (texturesCount > 0)
             {
                 var incrementedHandle = new D3D12_GPU_DESCRIPTOR_HANDLE(_cbv_srv_Heap->GetGPUDescriptorHandleForHeapStart(), 1 * (int)incrementSize);

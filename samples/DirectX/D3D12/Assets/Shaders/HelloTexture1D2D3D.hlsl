@@ -42,8 +42,8 @@ SamplerState sampler3dInput : register(s2);
 float4 PSMain(PSInput input) : SV_TARGET
 {
     float4 color1d = texture1dInput.Sample(sampler1dInput, input.uvw[0]);
-    //float4 color2d = texture2dInput.Sample(sampler2dInput, float2(input.uvw[0], input.uvw[2]));
-    //float4 color3d = texture3dInput.Sample(sampler3dInput, input.uvw);
-    float4 color = 0.33f * color1d; // +0.33f * color2d + 0.33f * color3d;
+    float4 color2d = texture2dInput.Sample(sampler2dInput, float2(input.uvw[0], input.uvw[2]));
+    float4 color3d = texture3dInput.Sample(sampler3dInput, input.uvw);
+    float4 color = 0.33f * color1d +0.33f * color2d + 0.33f * color3d;
     return color;
 }
