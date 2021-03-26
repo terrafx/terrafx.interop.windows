@@ -694,9 +694,9 @@ namespace TerraFX.Samples.DirectX.D3D12
                 if (rangesCount > 0)
                     ranges[0].Init(D3D12_DESCRIPTOR_RANGE_TYPE_SRV, 1, 0, 0, D3D12_DESCRIPTOR_RANGE_FLAG_DATA_STATIC);
                 if (rangesCount > 1)
-                    ranges[1].Init(D3D12_DESCRIPTOR_RANGE_TYPE_SRV, 1, 0, 0, D3D12_DESCRIPTOR_RANGE_FLAG_DATA_STATIC);
+                    ranges[1].Init(D3D12_DESCRIPTOR_RANGE_TYPE_SRV, 1, 1, 0, D3D12_DESCRIPTOR_RANGE_FLAG_DATA_STATIC);
                 if (rangesCount > 2)
-                    ranges[2].Init(D3D12_DESCRIPTOR_RANGE_TYPE_SRV, 1, 0, 0, D3D12_DESCRIPTOR_RANGE_FLAG_DATA_STATIC);
+                    ranges[2].Init(D3D12_DESCRIPTOR_RANGE_TYPE_SRV, 1, 2, 0, D3D12_DESCRIPTOR_RANGE_FLAG_DATA_STATIC);
 
                 rootParameters[1].InitAsDescriptorTable(rangesCount, ranges, D3D12_SHADER_VISIBILITY_PIXEL);
             }
@@ -707,9 +707,9 @@ namespace TerraFX.Samples.DirectX.D3D12
             if (staticSamplersCount > 0)
                 staticSamplers[0] = new D3D12_STATIC_SAMPLER_DESC {
                     Filter = D3D12_FILTER.D3D12_FILTER_MIN_MAG_MIP_POINT,
-                    AddressU = D3D12_TEXTURE_ADDRESS_MODE_BORDER,
-                    AddressV = D3D12_TEXTURE_ADDRESS_MODE_BORDER,
-                    AddressW = D3D12_TEXTURE_ADDRESS_MODE_BORDER,
+                    AddressU = D3D12_TEXTURE_ADDRESS_MODE_CLAMP,
+                    AddressV = D3D12_TEXTURE_ADDRESS_MODE_CLAMP,
+                    AddressW = D3D12_TEXTURE_ADDRESS_MODE_CLAMP,
                     MipLODBias = 0,
                     MaxAnisotropy = 0,
                     ComparisonFunc = D3D12_COMPARISON_FUNC_NEVER,
@@ -724,9 +724,9 @@ namespace TerraFX.Samples.DirectX.D3D12
             if (staticSamplersCount > 1)
                 staticSamplers[1] = new D3D12_STATIC_SAMPLER_DESC {
                     Filter = D3D12_FILTER.D3D12_FILTER_MIN_MAG_MIP_POINT,
-                    AddressU = D3D12_TEXTURE_ADDRESS_MODE_BORDER,
-                    AddressV = D3D12_TEXTURE_ADDRESS_MODE_BORDER,
-                    AddressW = D3D12_TEXTURE_ADDRESS_MODE_BORDER,
+                    AddressU = D3D12_TEXTURE_ADDRESS_MODE_CLAMP,
+                    AddressV = D3D12_TEXTURE_ADDRESS_MODE_CLAMP,
+                    AddressW = D3D12_TEXTURE_ADDRESS_MODE_CLAMP,
                     MipLODBias = 0,
                     MaxAnisotropy = 0,
                     ComparisonFunc = D3D12_COMPARISON_FUNC_NEVER,
@@ -741,9 +741,9 @@ namespace TerraFX.Samples.DirectX.D3D12
             if (staticSamplersCount > 2)
                 staticSamplers[2] = new D3D12_STATIC_SAMPLER_DESC {
                     Filter = D3D12_FILTER.D3D12_FILTER_MIN_MAG_MIP_POINT,
-                    AddressU = D3D12_TEXTURE_ADDRESS_MODE_BORDER,
-                    AddressV = D3D12_TEXTURE_ADDRESS_MODE_BORDER,
-                    AddressW = D3D12_TEXTURE_ADDRESS_MODE_BORDER,
+                    AddressU = D3D12_TEXTURE_ADDRESS_MODE_CLAMP,
+                    AddressV = D3D12_TEXTURE_ADDRESS_MODE_CLAMP,
+                    AddressW = D3D12_TEXTURE_ADDRESS_MODE_CLAMP,
                     MipLODBias = 0,
                     MaxAnisotropy = 0,
                     ComparisonFunc = D3D12_COMPARISON_FUNC_NEVER,
@@ -920,7 +920,7 @@ namespace TerraFX.Samples.DirectX.D3D12
             if (texturesCount > 2)
             {
                 var incrementedHandle = new D3D12_GPU_DESCRIPTOR_HANDLE(_cbv_srv_Heap->GetGPUDescriptorHandleForHeapStart(), 3 * (int)incrementSize);
-                GraphicsCommandList->SetGraphicsRootDescriptorTable(2, incrementedHandle);
+                GraphicsCommandList->SetGraphicsRootDescriptorTable(3, incrementedHandle);
             }
         }
 
