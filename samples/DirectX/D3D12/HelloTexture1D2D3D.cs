@@ -77,14 +77,16 @@ namespace TerraFX.Samples.DirectX.D3D12
             using ComPtr<ID3D12Resource> texture2dUploadHeap = null;
             using ComPtr<ID3D12Resource> texture3dUploadHeap = null;
             _constantBuffer = CreateConstantBuffer(out _constantBufferDataBegin);
-            _texture1D = CreateTexture1D();
-            _texture2D = CreateTexture2D();
-            _texture3D = CreateTexture3D();
+            _texture1D = CreateTexture1D(-1);
+            _texture2D = CreateTexture2D(-1);
+            _texture3D = CreateTexture3D(1);
             _vertexBuffer = CreateVertexBuffer(out _vertexBufferView);
             base.CreateAssets();
 
-            ID3D12Resource* CreateTexture1D()
+            ID3D12Resource* CreateTexture1D(int memorySlot)
             {
+                if (memorySlot < 0)
+                    return null;
                 // Describe and create a Texture2D.
                 var textureDesc = new D3D12_RESOURCE_DESC {
                     MipLevels = 1,
@@ -155,7 +157,7 @@ namespace TerraFX.Samples.DirectX.D3D12
                 srvDesc.Anonymous.Texture1D.MipLevels = 1;
 
                 var incrementSize = D3DDevice->GetDescriptorHandleIncrementSize(D3D12_DESCRIPTOR_HEAP_TYPE_CBV_SRV_UAV);
-                var incrementedHandle = new D3D12_CPU_DESCRIPTOR_HANDLE(_cbv_srv_Heap->GetCPUDescriptorHandleForHeapStart(), 1 * (int)incrementSize);
+                var incrementedHandle = new D3D12_CPU_DESCRIPTOR_HANDLE(_cbv_srv_Heap->GetCPUDescriptorHandleForHeapStart(), memorySlot * (int)incrementSize);
                 D3DDevice->CreateShaderResourceView(texture, &srvDesc, incrementedHandle);
 
                 fixed (char* name = "Texture1d")
@@ -188,8 +190,10 @@ namespace TerraFX.Samples.DirectX.D3D12
                 }
             }
 
-            ID3D12Resource* CreateTexture2D()
+            ID3D12Resource* CreateTexture2D(int memorySlot)
             {
+                if (memorySlot < 0)
+                    return null;
                 // Describe and create a Texture2D.
                 var textureDesc = new D3D12_RESOURCE_DESC {
                     MipLevels = 1,
@@ -261,7 +265,7 @@ namespace TerraFX.Samples.DirectX.D3D12
                 srvDesc.Anonymous.Texture2D.MipLevels = 1;
 
                 var incrementSize = D3DDevice->GetDescriptorHandleIncrementSize(D3D12_DESCRIPTOR_HEAP_TYPE_CBV_SRV_UAV);
-                var incrementedHandle = new D3D12_CPU_DESCRIPTOR_HANDLE(_cbv_srv_Heap->GetCPUDescriptorHandleForHeapStart(), 2 * (int)incrementSize);
+                var incrementedHandle = new D3D12_CPU_DESCRIPTOR_HANDLE(_cbv_srv_Heap->GetCPUDescriptorHandleForHeapStart(), memorySlot * (int)incrementSize);
                 D3DDevice->CreateShaderResourceView(texture, &srvDesc, incrementedHandle);
 
                 fixed (char* name = "Texture2d")
@@ -307,8 +311,10 @@ namespace TerraFX.Samples.DirectX.D3D12
                 }
             }
 
-            ID3D12Resource* CreateTexture3D()
+            ID3D12Resource* CreateTexture3D(int memorySlot)
             {
+                if (memorySlot < 0)
+                    return null;
                 var textureDesc = new D3D12_RESOURCE_DESC {
                     MipLevels = 1,
                     Format = DXGI_FORMAT_R8G8B8A8_UNORM,
@@ -378,7 +384,7 @@ namespace TerraFX.Samples.DirectX.D3D12
                 srvDesc.Anonymous.Texture3D.MipLevels = 1;
 
                 var incrementSize = D3DDevice->GetDescriptorHandleIncrementSize(D3D12_DESCRIPTOR_HEAP_TYPE_CBV_SRV_UAV);
-                var incrementedHandle = new D3D12_CPU_DESCRIPTOR_HANDLE(_cbv_srv_Heap->GetCPUDescriptorHandleForHeapStart(), 3 * (int)incrementSize);
+                var incrementedHandle = new D3D12_CPU_DESCRIPTOR_HANDLE(_cbv_srv_Heap->GetCPUDescriptorHandleForHeapStart(), memorySlot * (int)incrementSize);
                 D3DDevice->CreateShaderResourceView(texture, &srvDesc, incrementedHandle);
 
                 fixed (char* name = "Texture3d")
@@ -389,30 +395,49 @@ namespace TerraFX.Samples.DirectX.D3D12
 
                 byte[] GenerateTextureData3D()
                 {
-                        const uint RowPitch = Texture3DWidth * Texture3DPixelSize;
-                        const uint SlicePitch = RowPitch * Texture3DHeight;
-                        const uint TextureSize = SlicePitch * Texture3DDepth;
+                    const uint RowPitch = Texture3DWidth * Texture3DPixelSize;
+                    const uint SlicePitch = RowPitch * Texture3DHeight;
+                    const uint TextureSize = SlicePitch * Texture3DDepth;
 
-                        var data = new byte[TextureSize];
-                        fixed (byte* pData = &data[0])
+                    var data = new byte[TextureSize];
+                    fixed (byte* pData = &data[0])
+                    {
+                        for (uint n = 0; n < TextureSize; n += Texture3DPixelSize)
                         {
-                            for (uint n = 0; n < TextureSize; n += Texture3DPixelSize)
+                            var i = (n % RowPitch) / Texture3DPixelSize;
+                            var j = (n % SlicePitch) / RowPitch;
+                            var k = n / SlicePitch;
+                            var x = (1.0f * i / Texture3DWidth);
+                            var y = (1.0f * j / Texture3DHeight);
+                            var z = (1.0f * k / Texture3DDepth);
+                            var isCenterOnOrigin = false;
+                            if (isCenterOnOrigin)
                             {
-                                var i = (n % RowPitch) / Texture3DPixelSize;
-                                var j = (n % SlicePitch) / RowPitch;
-                                var k = n / SlicePitch;
-                                var x = 0.5f * (i / Texture3DWidth - 0.5f);
-                                var y = 0.5f * (j / Texture3DHeight - 0.5f);
-                                var z = 0.5f * (k / Texture3DDepth - 0.5f);
-                                //var voxel = (byte)(byte.MaxValue * (1.0f - MathF.Sqrt(x * x + y * y + z * z))); // sphere data distribution
-                                var voxel = (byte)(byte.MaxValue * (3 - x + y + z) / 3.0); // diagonal intensity ramp
+                                x = x - 0.5f;
+                                y = y - 0.5f;
+                                z = z - 0.5f;
+                            }
+                            var isSphere = false;
+                            var isRgbCube = !isSphere;
+                            if (isSphere)
+                            {
+                                var voxel = (byte)(byte.MaxValue * (1.0f - 0.5f * MathF.Sqrt(x * x + y * y + z * z))); // sphere data distribution
+                                //var voxel = (byte)(byte.MaxValue * (3 - x + y + z) / 3.0); // diagonal intensity ramp
                                 pData[n + 0] = (byte)(voxel & 0xff);
                                 pData[n + 1] = (byte)(voxel & 0xff);
                                 pData[n + 2] = (byte)(voxel & 0xff);
                                 pData[n + 3] = (byte)(voxel & 0xff);
                             }
+                            else if (isRgbCube)
+                            {
+                                pData[n + 0] = (byte)(255.0f * x);
+                                pData[n + 1] = (byte)(255.0f * y);
+                                pData[n + 2] = (byte)(255.0f * z);
+                                pData[n + 3] = (byte)(0xff);
+                            }
                         }
-                        return data;
+                    }
+                    return data;
                 }
             }
 
@@ -662,17 +687,17 @@ namespace TerraFX.Samples.DirectX.D3D12
             }
 
             { // texture
-                const int RangesCount = 3;
+                const int RangesCount = 1;
                 var ranges = stackalloc D3D12_DESCRIPTOR_RANGE1[RangesCount];
 
                 ranges[0].Init(D3D12_DESCRIPTOR_RANGE_TYPE_SRV, 1, 0, 0, D3D12_DESCRIPTOR_RANGE_FLAG_DATA_STATIC);
-                ranges[1].Init(D3D12_DESCRIPTOR_RANGE_TYPE_SRV, 1, 0, 0, D3D12_DESCRIPTOR_RANGE_FLAG_DATA_STATIC);
-                ranges[2].Init(D3D12_DESCRIPTOR_RANGE_TYPE_SRV, 1, 0, 0, D3D12_DESCRIPTOR_RANGE_FLAG_DATA_STATIC);
+                //ranges[1].Init(D3D12_DESCRIPTOR_RANGE_TYPE_SRV, 1, 0, 0, D3D12_DESCRIPTOR_RANGE_FLAG_DATA_STATIC);
+                //ranges[2].Init(D3D12_DESCRIPTOR_RANGE_TYPE_SRV, 1, 0, 0, D3D12_DESCRIPTOR_RANGE_FLAG_DATA_STATIC);
 
                 rootParameters[1].InitAsDescriptorTable(RangesCount, ranges, D3D12_SHADER_VISIBILITY_PIXEL);
             }
 
-            const int staticSamplersCount = 3;
+            const int staticSamplersCount = 1;
             var staticSamplers = stackalloc D3D12_STATIC_SAMPLER_DESC[staticSamplersCount];
 
             staticSamplers[0] = new D3D12_STATIC_SAMPLER_DESC {
@@ -691,6 +716,7 @@ namespace TerraFX.Samples.DirectX.D3D12
                 ShaderVisibility = D3D12_SHADER_VISIBILITY_PIXEL,
             };
 
+            /*
             staticSamplers[1] = new D3D12_STATIC_SAMPLER_DESC {
                 Filter = D3D12_FILTER.D3D12_FILTER_MIN_MAG_MIP_POINT,
                 AddressU = D3D12_TEXTURE_ADDRESS_MODE_BORDER,
@@ -722,6 +748,7 @@ namespace TerraFX.Samples.DirectX.D3D12
                 RegisterSpace = 0,
                 ShaderVisibility = D3D12_SHADER_VISIBILITY_PIXEL,
             };
+            */
 
             var rootSignatureFlags = // Allow input layout and deny unnecessary access to certain pipeline stages.
                 D3D12_ROOT_SIGNATURE_FLAG_ALLOW_INPUT_ASSEMBLER_INPUT_LAYOUT
@@ -876,10 +903,10 @@ namespace TerraFX.Samples.DirectX.D3D12
             var incrementSize = D3DDevice->GetDescriptorHandleIncrementSize(D3D12_DESCRIPTOR_HEAP_TYPE_CBV_SRV_UAV);
             var incrementedHandle = new D3D12_GPU_DESCRIPTOR_HANDLE(_cbv_srv_Heap->GetGPUDescriptorHandleForHeapStart(), 1 * (int)incrementSize);
             GraphicsCommandList->SetGraphicsRootDescriptorTable(1, incrementedHandle);
-            incrementedHandle = new D3D12_GPU_DESCRIPTOR_HANDLE(_cbv_srv_Heap->GetGPUDescriptorHandleForHeapStart(), 2 * (int)incrementSize);
-            GraphicsCommandList->SetGraphicsRootDescriptorTable(2, incrementedHandle);
-            incrementedHandle = new D3D12_GPU_DESCRIPTOR_HANDLE(_cbv_srv_Heap->GetGPUDescriptorHandleForHeapStart(), 3 * (int)incrementSize);
-            GraphicsCommandList->SetGraphicsRootDescriptorTable(2, incrementedHandle);
+            //incrementedHandle = new D3D12_GPU_DESCRIPTOR_HANDLE(_cbv_srv_Heap->GetGPUDescriptorHandleForHeapStart(), 2 * (int)incrementSize);
+            //GraphicsCommandList->SetGraphicsRootDescriptorTable(2, incrementedHandle);
+            //incrementedHandle = new D3D12_GPU_DESCRIPTOR_HANDLE(_cbv_srv_Heap->GetGPUDescriptorHandleForHeapStart(), 3 * (int)incrementSize);
+            //GraphicsCommandList->SetGraphicsRootDescriptorTable(2, incrementedHandle);
         }
 
 
