@@ -910,17 +910,17 @@ namespace TerraFX.Samples.DirectX.D3D12
             if (texturesCount > 0)
             {
                 var incrementedHandle = new D3D12_GPU_DESCRIPTOR_HANDLE(_cbv_srv_Heap->GetGPUDescriptorHandleForHeapStart(), 1 * (int)incrementSize);
-                GraphicsCommandList->SetGraphicsRootDescriptorTable(1, incrementedHandle);
+                GraphicsCommandList->SetGraphicsRootDescriptorTable(0, incrementedHandle);
             }
             if (texturesCount > 1)
             {
                 var incrementedHandle = new D3D12_GPU_DESCRIPTOR_HANDLE(_cbv_srv_Heap->GetGPUDescriptorHandleForHeapStart(), 2 * (int)incrementSize);
-                GraphicsCommandList->SetGraphicsRootDescriptorTable(2, incrementedHandle);
+                GraphicsCommandList->SetGraphicsRootDescriptorTable(0, incrementedHandle);
             }
             if (texturesCount > 2)
             {
                 var incrementedHandle = new D3D12_GPU_DESCRIPTOR_HANDLE(_cbv_srv_Heap->GetGPUDescriptorHandleForHeapStart(), 3 * (int)incrementSize);
-                GraphicsCommandList->SetGraphicsRootDescriptorTable(3, incrementedHandle);
+                GraphicsCommandList->SetGraphicsRootDescriptorTable(0, incrementedHandle);
             }
         }
 
