@@ -26,7 +26,7 @@ PSInput VSMain(VSInput input)
     float4 pos4 = float4(input.position, 1.0f);
     pos4 = mul(pos4, transform);
     result.position = pos4;
-    result.uvw = input.uvw;
+    result.uvw = float3(input.uvw[0], input.uvw[1], transform[0][0] - 0.5f);
 
     return result;
 }
@@ -39,9 +39,12 @@ Texture3D texture3dInput : register(t2);
 
 float4 PSMain(PSInput input) : SV_TARGET
 {
+    // 1d linear color gradient
     float4 color1d = texture1dInput.Sample(samplerInput, input.uvw[0]);
-    float4 color2d = texture2dInput.Sample(samplerInput, float2(input.uvw[0], input.uvw[2]));
+    // 2d black/white checker board
+    float4 color2d = texture2dInput.Sample(samplerInput, float2(input.uvw[0], input.uvw[1]));
+    // 3d sphere
     float4 color3d = texture3dInput.Sample(samplerInput, input.uvw);
-    float4 color = 0.33f * color1d +0.33f * color2d + 0.33f * color3d;
+    float4 color = color1d * color2d * color3d;
     return color;
 }

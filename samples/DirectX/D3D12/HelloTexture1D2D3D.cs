@@ -411,18 +411,19 @@ namespace TerraFX.Samples.DirectX.D3D12
                             var x = (1.0f * i / Texture3DWidth);
                             var y = (1.0f * j / Texture3DHeight);
                             var z = (1.0f * k / Texture3DDepth);
-                            var isCenterOnOrigin = false;
+                            var isCenterOnOrigin = true;
                             if (isCenterOnOrigin)
                             {
                                 x = x - 0.5f;
                                 y = y - 0.5f;
                                 z = z - 0.5f;
                             }
-                            var isSphere = false;
+                            var isSphere = true;
                             var isRgbCube = !isSphere;
                             if (isSphere)
                             {
-                                var voxel = (byte)(byte.MaxValue * (1.0f - 0.5f * MathF.Sqrt(x * x + y * y + z * z))); // sphere data distribution
+                                var r = MathF.Sqrt(x * x + y * y + z * z);
+                                var voxel = (byte)(r < 0.5f ? 0xff : 0); // sphere data distribution
                                 //var voxel = (byte)(byte.MaxValue * (3 - x + y + z) / 3.0); // diagonal intensity ramp
                                 pData[n + 0] = (byte)(voxel & 0xff);
                                 pData[n + 1] = (byte)(voxel & 0xff);
@@ -688,15 +689,9 @@ namespace TerraFX.Samples.DirectX.D3D12
             }
 
             { // texture
-                uint rangesCount = 3;
+                uint rangesCount = 1;
                 var ranges = stackalloc D3D12_DESCRIPTOR_RANGE1[(int)rangesCount];
-
-                if (rangesCount > 0)
-                    ranges[0].Init(D3D12_DESCRIPTOR_RANGE_TYPE_SRV, 1, 0, 0, D3D12_DESCRIPTOR_RANGE_FLAG_DATA_STATIC);
-                if (rangesCount > 1)
-                    ranges[1].Init(D3D12_DESCRIPTOR_RANGE_TYPE_SRV, 1, 1, 0, D3D12_DESCRIPTOR_RANGE_FLAG_DATA_STATIC);
-                if (rangesCount > 2)
-                    ranges[2].Init(D3D12_DESCRIPTOR_RANGE_TYPE_SRV, 1, 2, 0, D3D12_DESCRIPTOR_RANGE_FLAG_DATA_STATIC);
+                ranges[0].Init(D3D12_DESCRIPTOR_RANGE_TYPE_SRV, 3, 0, 0, D3D12_DESCRIPTOR_RANGE_FLAG_DATA_STATIC);
 
                 rootParameters[1].InitAsDescriptorTable(rangesCount, ranges, D3D12_SHADER_VISIBILITY_PIXEL);
             }
@@ -717,40 +712,6 @@ namespace TerraFX.Samples.DirectX.D3D12
                     MinLOD = 0.0f,
                     MaxLOD = D3D12_FLOAT32_MAX,
                     ShaderRegister = 0,
-                    RegisterSpace = 0,
-                    ShaderVisibility = D3D12_SHADER_VISIBILITY_PIXEL,
-                };
-
-            if (staticSamplersCount > 1)
-                staticSamplers[1] = new D3D12_STATIC_SAMPLER_DESC {
-                    Filter = D3D12_FILTER.D3D12_FILTER_MIN_MAG_MIP_POINT,
-                    AddressU = D3D12_TEXTURE_ADDRESS_MODE_CLAMP,
-                    AddressV = D3D12_TEXTURE_ADDRESS_MODE_CLAMP,
-                    AddressW = D3D12_TEXTURE_ADDRESS_MODE_CLAMP,
-                    MipLODBias = 0,
-                    MaxAnisotropy = 0,
-                    ComparisonFunc = D3D12_COMPARISON_FUNC_NEVER,
-                    BorderColor = D3D12_STATIC_BORDER_COLOR_TRANSPARENT_BLACK,
-                    MinLOD = 0.0f,
-                    MaxLOD = D3D12_FLOAT32_MAX,
-                    ShaderRegister = 1,
-                    RegisterSpace = 0,
-                    ShaderVisibility = D3D12_SHADER_VISIBILITY_PIXEL,
-                };
-
-            if (staticSamplersCount > 2)
-                staticSamplers[2] = new D3D12_STATIC_SAMPLER_DESC {
-                    Filter = D3D12_FILTER.D3D12_FILTER_MIN_MAG_MIP_POINT,
-                    AddressU = D3D12_TEXTURE_ADDRESS_MODE_CLAMP,
-                    AddressV = D3D12_TEXTURE_ADDRESS_MODE_CLAMP,
-                    AddressW = D3D12_TEXTURE_ADDRESS_MODE_CLAMP,
-                    MipLODBias = 0,
-                    MaxAnisotropy = 0,
-                    ComparisonFunc = D3D12_COMPARISON_FUNC_NEVER,
-                    BorderColor = D3D12_STATIC_BORDER_COLOR_TRANSPARENT_BLACK,
-                    MinLOD = 0.0f,
-                    MaxLOD = D3D12_FLOAT32_MAX,
-                    ShaderRegister = 2,
                     RegisterSpace = 0,
                     ShaderVisibility = D3D12_SHADER_VISIBILITY_PIXEL,
                 };
@@ -782,13 +743,13 @@ namespace TerraFX.Samples.DirectX.D3D12
         public override void OnUpdate()
         {
             const float ScaleSpeed = 1.005f;
-            const float ScaleBounds = 1.25f;
+            const float ScaleBounds = 1.0f;
 
             float scale = _constantBufferData.Matrix4x4.M11 * ScaleSpeed;
 
             if (scale > ScaleBounds)
             {
-                scale = 1.0f / ScaleBounds;
+                scale = 0.5f;
             }
             _constantBufferData.Matrix4x4.M11 = scale;
             _constantBufferData.Matrix4x4.M22 = scale;
@@ -805,8 +766,7 @@ namespace TerraFX.Samples.DirectX.D3D12
                 GraphicsCommandList->IASetVertexBuffers(StartSlot: 0, 1, vertexBufferView);
             }
 
-            // IB: why does setting the instance count to 2 not show the second triangle in the quad?
-            GraphicsCommandList->DrawInstanced(VertexCountPerInstance: 3, InstanceCount: 2, StartVertexLocation: 0, StartInstanceLocation: 0);
+            GraphicsCommandList->DrawInstanced(VertexCountPerInstance: 6, InstanceCount: 1, StartVertexLocation: 0, StartInstanceLocation: 0);
         }
 
         protected override void DestroyAssets()
@@ -906,22 +866,8 @@ namespace TerraFX.Samples.DirectX.D3D12
             GraphicsCommandList->SetDescriptorHeaps(HeapsCount, ppHeaps);
             GraphicsCommandList->SetGraphicsRootDescriptorTable(0, _cbv_srv_Heap->GetGPUDescriptorHandleForHeapStart());
             var incrementSize = D3DDevice->GetDescriptorHandleIncrementSize(D3D12_DESCRIPTOR_HEAP_TYPE_CBV_SRV_UAV);
-            uint texturesCount = 3;
-            if (texturesCount > 0)
-            {
-                var incrementedHandle = new D3D12_GPU_DESCRIPTOR_HANDLE(_cbv_srv_Heap->GetGPUDescriptorHandleForHeapStart(), 1 * (int)incrementSize);
-                GraphicsCommandList->SetGraphicsRootDescriptorTable(0, incrementedHandle);
-            }
-            if (texturesCount > 1)
-            {
-                var incrementedHandle = new D3D12_GPU_DESCRIPTOR_HANDLE(_cbv_srv_Heap->GetGPUDescriptorHandleForHeapStart(), 2 * (int)incrementSize);
-                GraphicsCommandList->SetGraphicsRootDescriptorTable(0, incrementedHandle);
-            }
-            if (texturesCount > 2)
-            {
-                var incrementedHandle = new D3D12_GPU_DESCRIPTOR_HANDLE(_cbv_srv_Heap->GetGPUDescriptorHandleForHeapStart(), 3 * (int)incrementSize);
-                GraphicsCommandList->SetGraphicsRootDescriptorTable(0, incrementedHandle);
-            }
+            var incrementedHandle = new D3D12_GPU_DESCRIPTOR_HANDLE(_cbv_srv_Heap->GetGPUDescriptorHandleForHeapStart(), 1 * (int)incrementSize);
+            GraphicsCommandList->SetGraphicsRootDescriptorTable(1, incrementedHandle);
         }
 
 
