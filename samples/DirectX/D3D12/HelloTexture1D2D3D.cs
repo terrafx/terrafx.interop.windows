@@ -56,7 +56,7 @@ namespace TerraFX.Samples.DirectX.D3D12
         private const uint Texture3DWidth = 256;
         private const uint Texture3DHeight = 256;
         private const uint Texture3DDepth = 256;
-        private const uint Texture3DPixelSize = 4;
+        private const uint Texture3DPixelSize = 2;
         private ID3D12Resource* _texture3D;
 
         // animate the position 
@@ -318,7 +318,7 @@ namespace TerraFX.Samples.DirectX.D3D12
                     return null;
                 var textureDesc = new D3D12_RESOURCE_DESC {
                     MipLevels = 1,
-                    Format = DXGI_FORMAT_R8G8B8A8_UNORM,
+                    Format = DXGI_FORMAT_R16_UNORM,
                     Width = Texture3DWidth,
                     Height = Texture3DHeight,
                     DepthOrArraySize = (ushort)Texture3DDepth,
@@ -364,7 +364,7 @@ namespace TerraFX.Samples.DirectX.D3D12
                 var rowPitch = Texture3DWidth * Texture3DPixelSize;
                 var slicePitch = rowPitch * Texture3DHeight;
                 D3D12_SUBRESOURCE_DATA textureSubresourceData;
-                fixed (byte* pTextureData = &textureData[0])
+                fixed (ushort* pTextureData = &textureData[0])
                 {
                     textureSubresourceData = new D3D12_SUBRESOURCE_DATA {
                         pData = (void*)pTextureData,
@@ -394,18 +394,18 @@ namespace TerraFX.Samples.DirectX.D3D12
                 }
                 return texture;
 
-                byte[] GenerateTextureData3D()
+                ushort[] GenerateTextureData3D()
                 {
-                    const uint RowPitch = Texture3DWidth * Texture3DPixelSize;
+                    const uint RowPitch = Texture3DWidth;
                     const uint SlicePitch = RowPitch * Texture3DHeight;
                     const uint TextureSize = SlicePitch * Texture3DDepth;
 
-                    var data = new byte[TextureSize];
-                    fixed (byte* pData = &data[0])
+                    var data = new ushort[TextureSize];
+                    fixed (ushort* pData = &data[0])
                     {
-                        for (uint n = 0; n < TextureSize; n += Texture3DPixelSize)
+                        for (uint n = 0; n < TextureSize; n += 1)
                         {
-                            var i = (n % RowPitch) / Texture3DPixelSize;
+                            var i = (n % RowPitch);
                             var j = (n % SlicePitch) / RowPitch;
                             var k = n / SlicePitch;
                             var x = (1.0f * i / Texture3DWidth);
@@ -423,19 +423,12 @@ namespace TerraFX.Samples.DirectX.D3D12
                             if (isSphere)
                             {
                                 var r = MathF.Sqrt(x * x + y * y + z * z);
-                                var voxel = (byte)(r < 0.5f ? 0xff : 0); // sphere data distribution
-                                //var voxel = (byte)(byte.MaxValue * (3 - x + y + z) / 3.0); // diagonal intensity ramp
-                                pData[n + 0] = (byte)(voxel & 0xff);
-                                pData[n + 1] = (byte)(voxel & 0xff);
-                                pData[n + 2] = (byte)(voxel & 0xff);
-                                pData[n + 3] = (byte)(voxel & 0xff);
+                                var voxel = (ushort)(r < 0.5f ? 0xffff : 0); // sphere data distribution
+                                pData[n] = voxel;
                             }
                             else if (isRgbCube)
                             {
-                                pData[n + 0] = (byte)(255.0f * x);
-                                pData[n + 1] = (byte)(255.0f * y);
-                                pData[n + 2] = (byte)(255.0f * z);
-                                pData[n + 3] = (byte)(0xff);
+                                pData[n] = (ushort)(0xffff * x);
                             }
                         }
                     }

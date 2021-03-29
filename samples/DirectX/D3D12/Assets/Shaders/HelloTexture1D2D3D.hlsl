@@ -44,7 +44,8 @@ float4 PSMain(PSInput input) : SV_TARGET
     // 2d black/white checker board
     float4 color2d = texture2dInput.Sample(samplerInput, float2(input.uvw[0], input.uvw[1]));
     // 3d sphere
-    float4 color3d = texture3dInput.Sample(samplerInput, input.uvw);
+    float intensity = texture3dInput.Sample(samplerInput, input.uvw);
+    float4 color3d = float4(intensity, intensity, intensity, 1.0f);
     float4 color = color1d * color2d * color3d;
     return color;
 }
