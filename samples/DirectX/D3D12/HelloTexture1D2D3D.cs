@@ -34,6 +34,16 @@ using static TerraFX.Samples.DirectX.DXSampleHelper;
 
 namespace TerraFX.Samples.DirectX.D3D12
 {
+    /// <summary>
+    /// Demonstrates the use of
+    /// * a simple quad as draw target
+    /// * a simple const buffer to hold a transform that is updated on each frame to animate the scene
+    /// * three textures
+    ///   + 1d linear color gradient     DXGI_FORMAT_R8G8B8A8_UNORM
+    ///   + 2d black/white checker board DXGI_FORMAT_R8G8B8A8_UNORM
+    ///   + 3d sphere                    DXGI_FORMAT_R16_UNORM
+    /// * a pixel shader that multiplies the three sampled texels for an interesting visual effect
+    /// </summary>
     public unsafe class HelloTexture1D2D3D : DX12Sample
     {
         // triangle geometry 
@@ -278,7 +288,7 @@ namespace TerraFX.Samples.DirectX.D3D12
                 byte[] GenerateTextureData2D()
                 {
                     const uint RowPitch = Texture2DWidth * Texture2DPixelSize;
-                    const uint CellPitch = RowPitch >> 3;        // The width of a cell in the checkboard texture.
+                    const uint CellPitch = RowPitch >> 3;        // The width of a cell in the checkerboard texture.
                     const uint CellHeight = Texture2DWidth >> 3;    // The height of a cell in the checkerboard texture.
                     const uint TextureSize = RowPitch * Texture2DHeight;
 
@@ -405,18 +415,18 @@ namespace TerraFX.Samples.DirectX.D3D12
                     {
                         for (uint n = 0; n < TextureSize; n += 1)
                         {
-                            var i = (n % RowPitch);
-                            var j = (n % SlicePitch) / RowPitch;
+                            var i = n % RowPitch;
+                            var j = n % SlicePitch / RowPitch;
                             var k = n / SlicePitch;
-                            var x = (1.0f * i / Texture3DWidth);
-                            var y = (1.0f * j / Texture3DHeight);
-                            var z = (1.0f * k / Texture3DDepth);
+                            var x = 1.0f * i / Texture3DWidth;
+                            var y = 1.0f * j / Texture3DHeight;
+                            var z = 1.0f * k / Texture3DDepth;
                             var isCenterOnOrigin = true;
                             if (isCenterOnOrigin)
                             {
-                                x = x - 0.5f;
-                                y = y - 0.5f;
-                                z = z - 0.5f;
+                                x -= 0.5f;
+                                y -= 0.5f;
+                                z -= 0.5f;
                             }
                             var isSphere = true;
                             var isRgbCube = !isSphere;
@@ -463,7 +473,6 @@ namespace TerraFX.Samples.DirectX.D3D12
                     Position = new System.Numerics.Vector3(-x, -y, 0.0f), //   |     \ |  
                     UVW = new System.Numerics.Vector3(s, t, 0.0f),        //   d-------c  
                 };                                                        //
-
 
                 const int TriangleVerticesCount = 6;
                 var triangleVertices = stackalloc PosTex3dVertex[TriangleVerticesCount] {
@@ -692,22 +701,21 @@ namespace TerraFX.Samples.DirectX.D3D12
             uint staticSamplersCount = 1;
             var staticSamplers = stackalloc D3D12_STATIC_SAMPLER_DESC[(int)staticSamplersCount];
 
-            if (staticSamplersCount > 0)
-                staticSamplers[0] = new D3D12_STATIC_SAMPLER_DESC {
-                    Filter = D3D12_FILTER.D3D12_FILTER_MIN_MAG_MIP_POINT,
-                    AddressU = D3D12_TEXTURE_ADDRESS_MODE_CLAMP,
-                    AddressV = D3D12_TEXTURE_ADDRESS_MODE_CLAMP,
-                    AddressW = D3D12_TEXTURE_ADDRESS_MODE_CLAMP,
-                    MipLODBias = 0,
-                    MaxAnisotropy = 0,
-                    ComparisonFunc = D3D12_COMPARISON_FUNC_NEVER,
-                    BorderColor = D3D12_STATIC_BORDER_COLOR_TRANSPARENT_BLACK,
-                    MinLOD = 0.0f,
-                    MaxLOD = D3D12_FLOAT32_MAX,
-                    ShaderRegister = 0,
-                    RegisterSpace = 0,
-                    ShaderVisibility = D3D12_SHADER_VISIBILITY_PIXEL,
-                };
+            staticSamplers[0] = new D3D12_STATIC_SAMPLER_DESC {
+                Filter = D3D12_FILTER.D3D12_FILTER_MIN_MAG_MIP_POINT,
+                AddressU = D3D12_TEXTURE_ADDRESS_MODE_CLAMP,
+                AddressV = D3D12_TEXTURE_ADDRESS_MODE_CLAMP,
+                AddressW = D3D12_TEXTURE_ADDRESS_MODE_CLAMP,
+                MipLODBias = 0,
+                MaxAnisotropy = 0,
+                ComparisonFunc = D3D12_COMPARISON_FUNC_NEVER,
+                BorderColor = D3D12_STATIC_BORDER_COLOR_TRANSPARENT_BLACK,
+                MinLOD = 0.0f,
+                MaxLOD = D3D12_FLOAT32_MAX,
+                ShaderRegister = 0,
+                RegisterSpace = 0,
+                ShaderVisibility = D3D12_SHADER_VISIBILITY_PIXEL,
+            };
 
             var rootSignatureFlags = // Allow input layout and deny unnecessary access to certain pipeline stages.
                 D3D12_ROOT_SIGNATURE_FLAG_ALLOW_INPUT_ASSEMBLER_INPUT_LAYOUT
