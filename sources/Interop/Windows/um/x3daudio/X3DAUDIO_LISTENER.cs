@@ -23,7 +23,6 @@ namespace TerraFX.Interop
         [NativeTypeName("X3DAUDIO_VECTOR")]
         public Vector3 Velocity;
 
-        [NativeTypeName("X3DAUDIO_CONE *")]
         public X3DAUDIO_CONE* pCone;
     }
 }

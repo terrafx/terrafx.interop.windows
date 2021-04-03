@@ -22,22 +22,16 @@ namespace TerraFX.Interop
         [NativeTypeName("UINT")]
         public uint FutureFrames;
 
-        [NativeTypeName("ID3D11VideoProcessorInputView **")]
         public ID3D11VideoProcessorInputView** ppPastSurfaces;
 
-        [NativeTypeName("ID3D11VideoProcessorInputView *")]
         public ID3D11VideoProcessorInputView* pInputSurface;
 
-        [NativeTypeName("ID3D11VideoProcessorInputView **")]
         public ID3D11VideoProcessorInputView** ppFutureSurfaces;
 
-        [NativeTypeName("ID3D11VideoProcessorInputView **")]
         public ID3D11VideoProcessorInputView** ppPastSurfacesRight;
 
-        [NativeTypeName("ID3D11VideoProcessorInputView *")]
         public ID3D11VideoProcessorInputView* pInputSurfaceRight;
 
-        [NativeTypeName("ID3D11VideoProcessorInputView **")]
         public ID3D11VideoProcessorInputView** ppFutureSurfacesRight;
     }
 }

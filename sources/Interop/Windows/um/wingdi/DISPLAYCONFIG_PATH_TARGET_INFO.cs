@@ -18,6 +18,22 @@ namespace TerraFX.Interop
         [NativeTypeName("DISPLAYCONFIG_PATH_TARGET_INFO::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/wingdi.h:2973:5)")]
         public _Anonymous_e__Union Anonymous;
 
+        public DISPLAYCONFIG_VIDEO_OUTPUT_TECHNOLOGY outputTechnology;
+
+        public DISPLAYCONFIG_ROTATION rotation;
+
+        public DISPLAYCONFIG_SCALING scaling;
+
+        public DISPLAYCONFIG_RATIONAL refreshRate;
+
+        public DISPLAYCONFIG_SCANLINE_ORDERING scanLineOrdering;
+
+        [NativeTypeName("BOOL")]
+        public int targetAvailable;
+
+        [NativeTypeName("UINT32")]
+        public uint statusFlags;
+
         public ref uint modeInfoIdx
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -56,22 +72,6 @@ namespace TerraFX.Interop
                 Anonymous.Anonymous.targetModeInfoIdx = value;
             }
         }
-
-        public DISPLAYCONFIG_VIDEO_OUTPUT_TECHNOLOGY outputTechnology;
-
-        public DISPLAYCONFIG_ROTATION rotation;
-
-        public DISPLAYCONFIG_SCALING scaling;
-
-        public DISPLAYCONFIG_RATIONAL refreshRate;
-
-        public DISPLAYCONFIG_SCANLINE_ORDERING scanLineOrdering;
-
-        [NativeTypeName("BOOL")]
-        public int targetAvailable;
-
-        [NativeTypeName("UINT32")]
-        public uint statusFlags;
 
         [StructLayout(LayoutKind.Explicit)]
         public partial struct _Anonymous_e__Union

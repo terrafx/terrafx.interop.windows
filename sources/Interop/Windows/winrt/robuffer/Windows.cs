@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     {
         [DllImport("WinTypes", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int RoGetBufferMarshaler([NativeTypeName("IMarshal **")] IMarshal** bufferMarshaler);
+        public static extern int RoGetBufferMarshaler(IMarshal** bufferMarshaler);
 
         public static readonly Guid IID_IBufferByteAccess = new Guid(0x905A0FEF, 0xBC53, 0x11DF, 0x8C, 0x49, 0x00, 0x1E, 0x4F, 0xC6, 0x86, 0xDA);
     }

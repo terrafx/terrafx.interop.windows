@@ -17,7 +17,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
+        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<ID3D10InfoQueue*, Guid*, void**, int>)(lpVtbl[0]))((ID3D10InfoQueue*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -51,7 +51,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int GetMessageW([NativeTypeName("UINT64")] ulong MessageIndex, [NativeTypeName("D3D10_MESSAGE *")] D3D10_MESSAGE* pMessage, [NativeTypeName("SIZE_T *")] nuint* pMessageByteLength)
+        public int GetMessageW([NativeTypeName("UINT64")] ulong MessageIndex, D3D10_MESSAGE* pMessage, [NativeTypeName("SIZE_T *")] nuint* pMessageByteLength)
         {
             return ((delegate* unmanaged<ID3D10InfoQueue*, ulong, D3D10_MESSAGE*, nuint*, int>)(lpVtbl[5]))((ID3D10InfoQueue*)Unsafe.AsPointer(ref this), MessageIndex, pMessage, pMessageByteLength);
         }
@@ -100,14 +100,14 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int AddStorageFilterEntries([NativeTypeName("D3D10_INFO_QUEUE_FILTER *")] D3D10_INFO_QUEUE_FILTER* pFilter)
+        public int AddStorageFilterEntries(D3D10_INFO_QUEUE_FILTER* pFilter)
         {
             return ((delegate* unmanaged<ID3D10InfoQueue*, D3D10_INFO_QUEUE_FILTER*, int>)(lpVtbl[12]))((ID3D10InfoQueue*)Unsafe.AsPointer(ref this), pFilter);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int GetStorageFilter([NativeTypeName("D3D10_INFO_QUEUE_FILTER *")] D3D10_INFO_QUEUE_FILTER* pFilter, [NativeTypeName("SIZE_T *")] nuint* pFilterByteLength)
+        public int GetStorageFilter(D3D10_INFO_QUEUE_FILTER* pFilter, [NativeTypeName("SIZE_T *")] nuint* pFilterByteLength)
         {
             return ((delegate* unmanaged<ID3D10InfoQueue*, D3D10_INFO_QUEUE_FILTER*, nuint*, int>)(lpVtbl[13]))((ID3D10InfoQueue*)Unsafe.AsPointer(ref this), pFilter, pFilterByteLength);
         }
@@ -134,7 +134,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int PushStorageFilter([NativeTypeName("D3D10_INFO_QUEUE_FILTER *")] D3D10_INFO_QUEUE_FILTER* pFilter)
+        public int PushStorageFilter(D3D10_INFO_QUEUE_FILTER* pFilter)
         {
             return ((delegate* unmanaged<ID3D10InfoQueue*, D3D10_INFO_QUEUE_FILTER*, int>)(lpVtbl[17]))((ID3D10InfoQueue*)Unsafe.AsPointer(ref this), pFilter);
         }
@@ -154,14 +154,14 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int AddRetrievalFilterEntries([NativeTypeName("D3D10_INFO_QUEUE_FILTER *")] D3D10_INFO_QUEUE_FILTER* pFilter)
+        public int AddRetrievalFilterEntries(D3D10_INFO_QUEUE_FILTER* pFilter)
         {
             return ((delegate* unmanaged<ID3D10InfoQueue*, D3D10_INFO_QUEUE_FILTER*, int>)(lpVtbl[20]))((ID3D10InfoQueue*)Unsafe.AsPointer(ref this), pFilter);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int GetRetrievalFilter([NativeTypeName("D3D10_INFO_QUEUE_FILTER *")] D3D10_INFO_QUEUE_FILTER* pFilter, [NativeTypeName("SIZE_T *")] nuint* pFilterByteLength)
+        public int GetRetrievalFilter(D3D10_INFO_QUEUE_FILTER* pFilter, [NativeTypeName("SIZE_T *")] nuint* pFilterByteLength)
         {
             return ((delegate* unmanaged<ID3D10InfoQueue*, D3D10_INFO_QUEUE_FILTER*, nuint*, int>)(lpVtbl[21]))((ID3D10InfoQueue*)Unsafe.AsPointer(ref this), pFilter, pFilterByteLength);
         }
@@ -188,7 +188,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int PushRetrievalFilter([NativeTypeName("D3D10_INFO_QUEUE_FILTER *")] D3D10_INFO_QUEUE_FILTER* pFilter)
+        public int PushRetrievalFilter(D3D10_INFO_QUEUE_FILTER* pFilter)
         {
             return ((delegate* unmanaged<ID3D10InfoQueue*, D3D10_INFO_QUEUE_FILTER*, int>)(lpVtbl[25]))((ID3D10InfoQueue*)Unsafe.AsPointer(ref this), pFilter);
         }

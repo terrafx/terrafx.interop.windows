@@ -12,16 +12,12 @@ namespace TerraFX.Interop
         [NativeTypeName("ULONG")]
         public uint cbSize;
 
-        [NativeTypeName("IOleClientSite *")]
         public IOleClientSite* pClientSite;
 
-        [NativeTypeName("IAdviseSinkEx *")]
         public IAdviseSinkEx* pAdviseSink;
 
-        [NativeTypeName("IPropertyNotifySink *")]
         public IPropertyNotifySink* pPropertyNotifySink;
 
-        [NativeTypeName("IUnknown *")]
         public IUnknown* pUnkEventSink;
 
         [NativeTypeName("DWORD")]
@@ -33,10 +29,8 @@ namespace TerraFX.Interop
         [NativeTypeName("OLE_COLOR")]
         public uint colorBack;
 
-        [NativeTypeName("IFont *")]
         public IFont* pFont;
 
-        [NativeTypeName("IOleUndoManager *")]
         public IOleUndoManager* pUndoMgr;
 
         [NativeTypeName("DWORD")]
@@ -48,13 +42,10 @@ namespace TerraFX.Interop
         [NativeTypeName("HPALETTE")]
         public IntPtr hpal;
 
-        [NativeTypeName("IBindHost *")]
         public IBindHost* pBindHost;
 
-        [NativeTypeName("IOleControlSite *")]
         public IOleControlSite* pOleControlSite;
 
-        [NativeTypeName("IServiceProvider *")]
         public IServiceProvider* pServiceProvider;
     }
 }

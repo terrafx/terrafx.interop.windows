@@ -17,7 +17,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
+        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IAsyncInfo*, Guid*, void**, int>)(lpVtbl[0]))((IAsyncInfo*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -52,7 +52,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int GetTrustLevel([NativeTypeName("TrustLevel *")] TrustLevel* trustLevel)
+        public int GetTrustLevel(TrustLevel* trustLevel)
         {
             return ((delegate* unmanaged<IAsyncInfo*, TrustLevel*, int>)(lpVtbl[5]))((IAsyncInfo*)Unsafe.AsPointer(ref this), trustLevel);
         }

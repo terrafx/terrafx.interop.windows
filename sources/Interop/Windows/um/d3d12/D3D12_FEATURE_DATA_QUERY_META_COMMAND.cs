@@ -21,7 +21,6 @@ namespace TerraFX.Interop
         [NativeTypeName("SIZE_T")]
         public nuint QueryInputDataSizeInBytes;
 
-        [NativeTypeName("void *")]
         public void* pQueryOutputData;
 
         [NativeTypeName("SIZE_T")]

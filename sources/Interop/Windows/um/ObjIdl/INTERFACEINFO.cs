@@ -9,7 +9,6 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct INTERFACEINFO
     {
-        [NativeTypeName("IUnknown *")]
         public IUnknown* pUnk;
 
         [NativeTypeName("IID")]

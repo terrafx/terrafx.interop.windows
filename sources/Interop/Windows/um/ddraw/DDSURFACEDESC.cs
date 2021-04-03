@@ -25,6 +25,33 @@ namespace TerraFX.Interop
         [NativeTypeName("_DDSURFACEDESC::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/ddraw.h:2236:5)")]
         public _Anonymous1_e__Union Anonymous1;
 
+        [NativeTypeName("DWORD")]
+        public uint dwBackBufferCount;
+
+        [NativeTypeName("_DDSURFACEDESC::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/ddraw.h:2242:5)")]
+        public _Anonymous2_e__Union Anonymous2;
+
+        [NativeTypeName("DWORD")]
+        public uint dwAlphaBitDepth;
+
+        [NativeTypeName("DWORD")]
+        public uint dwReserved;
+
+        [NativeTypeName("LPVOID")]
+        public void* lpSurface;
+
+        public DDCOLORKEY ddckCKDestOverlay;
+
+        public DDCOLORKEY ddckCKDestBlt;
+
+        public DDCOLORKEY ddckCKSrcOverlay;
+
+        public DDCOLORKEY ddckCKSrcBlt;
+
+        public DDPIXELFORMAT ddpfPixelFormat;
+
+        public DDSCAPS ddsCaps;
+
         public ref int lPitch
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -42,12 +69,6 @@ namespace TerraFX.Interop
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous1.dwLinearSize, 1));
             }
         }
-
-        [NativeTypeName("DWORD")]
-        public uint dwBackBufferCount;
-
-        [NativeTypeName("_DDSURFACEDESC::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/ddraw.h:2242:5)")]
-        public _Anonymous2_e__Union Anonymous2;
 
         public ref uint dwMipMapCount
         {
@@ -75,27 +96,6 @@ namespace TerraFX.Interop
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous2.dwRefreshRate, 1));
             }
         }
-
-        [NativeTypeName("DWORD")]
-        public uint dwAlphaBitDepth;
-
-        [NativeTypeName("DWORD")]
-        public uint dwReserved;
-
-        [NativeTypeName("LPVOID")]
-        public void* lpSurface;
-
-        public DDCOLORKEY ddckCKDestOverlay;
-
-        public DDCOLORKEY ddckCKDestBlt;
-
-        public DDCOLORKEY ddckCKSrcOverlay;
-
-        public DDCOLORKEY ddckCKSrcBlt;
-
-        public DDPIXELFORMAT ddpfPixelFormat;
-
-        public DDSCAPS ddsCaps;
 
         [StructLayout(LayoutKind.Explicit)]
         public partial struct _Anonymous1_e__Union

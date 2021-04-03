@@ -12,7 +12,6 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint advf;
 
-        [NativeTypeName("IAdviseSink *")]
         public IAdviseSink* pAdvSink;
 
         [NativeTypeName("DWORD")]

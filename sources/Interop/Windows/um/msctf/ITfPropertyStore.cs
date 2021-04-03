@@ -17,7 +17,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
+        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<ITfPropertyStore*, Guid*, void**, int>)(lpVtbl[0]))((ITfPropertyStore*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -52,35 +52,35 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int GetData([NativeTypeName("VARIANT *")] VARIANT* pvarValue)
+        public int GetData(VARIANT* pvarValue)
         {
             return ((delegate* unmanaged<ITfPropertyStore*, VARIANT*, int>)(lpVtbl[5]))((ITfPropertyStore*)Unsafe.AsPointer(ref this), pvarValue);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int OnTextUpdated([NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("ITfRange *")] ITfRange* pRangeNew, [NativeTypeName("BOOL *")] int* pfAccept)
+        public int OnTextUpdated([NativeTypeName("DWORD")] uint dwFlags, ITfRange* pRangeNew, [NativeTypeName("BOOL *")] int* pfAccept)
         {
             return ((delegate* unmanaged<ITfPropertyStore*, uint, ITfRange*, int*, int>)(lpVtbl[6]))((ITfPropertyStore*)Unsafe.AsPointer(ref this), dwFlags, pRangeNew, pfAccept);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int Shrink([NativeTypeName("ITfRange *")] ITfRange* pRangeNew, [NativeTypeName("BOOL *")] int* pfFree)
+        public int Shrink(ITfRange* pRangeNew, [NativeTypeName("BOOL *")] int* pfFree)
         {
             return ((delegate* unmanaged<ITfPropertyStore*, ITfRange*, int*, int>)(lpVtbl[7]))((ITfPropertyStore*)Unsafe.AsPointer(ref this), pRangeNew, pfFree);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int Divide([NativeTypeName("ITfRange *")] ITfRange* pRangeThis, [NativeTypeName("ITfRange *")] ITfRange* pRangeNew, [NativeTypeName("ITfPropertyStore **")] ITfPropertyStore** ppPropStore)
+        public int Divide(ITfRange* pRangeThis, ITfRange* pRangeNew, ITfPropertyStore** ppPropStore)
         {
             return ((delegate* unmanaged<ITfPropertyStore*, ITfRange*, ITfRange*, ITfPropertyStore**, int>)(lpVtbl[8]))((ITfPropertyStore*)Unsafe.AsPointer(ref this), pRangeThis, pRangeNew, ppPropStore);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int Clone([NativeTypeName("ITfPropertyStore **")] ITfPropertyStore** pPropStore)
+        public int Clone(ITfPropertyStore** pPropStore)
         {
             return ((delegate* unmanaged<ITfPropertyStore*, ITfPropertyStore**, int>)(lpVtbl[9]))((ITfPropertyStore*)Unsafe.AsPointer(ref this), pPropStore);
         }
@@ -94,7 +94,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int Serialize([NativeTypeName("IStream *")] IStream* pStream, [NativeTypeName("ULONG *")] uint* pcb)
+        public int Serialize(IStream* pStream, [NativeTypeName("ULONG *")] uint* pcb)
         {
             return ((delegate* unmanaged<ITfPropertyStore*, IStream*, uint*, int>)(lpVtbl[11]))((ITfPropertyStore*)Unsafe.AsPointer(ref this), pStream, pcb);
         }

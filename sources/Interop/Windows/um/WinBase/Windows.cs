@@ -1104,7 +1104,7 @@ namespace TerraFX.Interop
 
         [DllImport("kernel32", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int CopyFile2([NativeTypeName("PCWSTR")] ushort* pwszExistingFileName, [NativeTypeName("PCWSTR")] ushort* pwszNewFileName, [NativeTypeName("COPYFILE2_EXTENDED_PARAMETERS *")] COPYFILE2_EXTENDED_PARAMETERS* pExtendedParameters);
+        public static extern int CopyFile2([NativeTypeName("PCWSTR")] ushort* pwszExistingFileName, [NativeTypeName("PCWSTR")] ushort* pwszNewFileName, COPYFILE2_EXTENDED_PARAMETERS* pExtendedParameters);
 
         [DllImport("kernel32", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
@@ -1304,11 +1304,11 @@ namespace TerraFX.Interop
 
         [DllImport("advapi32", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int OperationStart([NativeTypeName("OPERATION_START_PARAMETERS *")] OPERATION_START_PARAMETERS* OperationStartParams);
+        public static extern int OperationStart(OPERATION_START_PARAMETERS* OperationStartParams);
 
         [DllImport("advapi32", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int OperationEnd([NativeTypeName("OPERATION_END_PARAMETERS *")] OPERATION_END_PARAMETERS* OperationEndParams);
+        public static extern int OperationEnd(OPERATION_END_PARAMETERS* OperationEndParams);
 
         [DllImport("kernel32", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]

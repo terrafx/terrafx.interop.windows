@@ -17,7 +17,6 @@ namespace TerraFX.Interop
         [NativeTypeName("WS_XML_BUFFER *")]
         public IntPtr extensions;
 
-        [NativeTypeName("WS_ENDPOINT_IDENTITY *")]
         public WS_ENDPOINT_IDENTITY* identity;
     }
 }

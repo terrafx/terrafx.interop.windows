@@ -13,7 +13,6 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint dwAuthzSvc;
 
-        [NativeTypeName("void *")]
         public void* pAuthInfo;
     }
 }

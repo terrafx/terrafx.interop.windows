@@ -17,7 +17,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
+        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IBootOptions*, Guid*, void**, int>)(lpVtbl[0]))((IBootOptions*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -45,7 +45,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int GetTypeInfo([NativeTypeName("UINT")] uint iTInfo, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("ITypeInfo **")] ITypeInfo** ppTInfo)
+        public int GetTypeInfo([NativeTypeName("UINT")] uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
         {
             return ((delegate* unmanaged<IBootOptions*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IBootOptions*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
         }
@@ -59,14 +59,14 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, [NativeTypeName("DISPPARAMS *")] DISPPARAMS* pDispParams, [NativeTypeName("VARIANT *")] VARIANT* pVarResult, [NativeTypeName("EXCEPINFO *")] EXCEPINFO* pExcepInfo, [NativeTypeName("UINT *")] uint* puArgErr)
+        public int Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, [NativeTypeName("UINT *")] uint* puArgErr)
         {
             return ((delegate* unmanaged<IBootOptions*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IBootOptions*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int get_BootImage([NativeTypeName("IStream **")] IStream** pVal)
+        public int get_BootImage(IStream** pVal)
         {
             return ((delegate* unmanaged<IBootOptions*, IStream**, int>)(lpVtbl[7]))((IBootOptions*)Unsafe.AsPointer(ref this), pVal);
         }
@@ -87,7 +87,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int get_PlatformId([NativeTypeName("PlatformId *")] PlatformId* pVal)
+        public int get_PlatformId(PlatformId* pVal)
         {
             return ((delegate* unmanaged<IBootOptions*, PlatformId*, int>)(lpVtbl[10]))((IBootOptions*)Unsafe.AsPointer(ref this), pVal);
         }
@@ -101,7 +101,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int get_Emulation([NativeTypeName("EmulationType *")] EmulationType* pVal)
+        public int get_Emulation(EmulationType* pVal)
         {
             return ((delegate* unmanaged<IBootOptions*, EmulationType*, int>)(lpVtbl[12]))((IBootOptions*)Unsafe.AsPointer(ref this), pVal);
         }
@@ -122,7 +122,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int AssignBootImage([NativeTypeName("IStream *")] IStream* newVal)
+        public int AssignBootImage(IStream* newVal)
         {
             return ((delegate* unmanaged<IBootOptions*, IStream*, int>)(lpVtbl[15]))((IBootOptions*)Unsafe.AsPointer(ref this), newVal);
         }

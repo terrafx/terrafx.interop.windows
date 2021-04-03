@@ -17,7 +17,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
+        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<ISpRecoGrammar*, Guid*, void**, int>)(lpVtbl[0]))((ISpRecoGrammar*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -101,7 +101,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int GetRecoContext([NativeTypeName("ISpRecoContext **")] ISpRecoContext** ppRecoCtxt)
+        public int GetRecoContext(ISpRecoContext** ppRecoCtxt)
         {
             return ((delegate* unmanaged<ISpRecoGrammar*, ISpRecoContext**, int>)(lpVtbl[12]))((ISpRecoGrammar*)Unsafe.AsPointer(ref this), ppRecoCtxt);
         }
@@ -143,7 +143,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int SetRuleState([NativeTypeName("LPCWSTR")] ushort* pszName, [NativeTypeName("void *")] void* pReserved, SPRULESTATE NewState)
+        public int SetRuleState([NativeTypeName("LPCWSTR")] ushort* pszName, void* pReserved, SPRULESTATE NewState)
         {
             return ((delegate* unmanaged<ISpRecoGrammar*, ushort*, void*, SPRULESTATE, int>)(lpVtbl[18]))((ISpRecoGrammar*)Unsafe.AsPointer(ref this), pszName, pReserved, NewState);
         }
@@ -192,7 +192,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int IsPronounceable([NativeTypeName("LPCWSTR")] ushort* pszWord, [NativeTypeName("SPWORDPRONOUNCEABLE *")] SPWORDPRONOUNCEABLE* pWordPronounceable)
+        public int IsPronounceable([NativeTypeName("LPCWSTR")] ushort* pszWord, SPWORDPRONOUNCEABLE* pWordPronounceable)
         {
             return ((delegate* unmanaged<ISpRecoGrammar*, ushort*, SPWORDPRONOUNCEABLE*, int>)(lpVtbl[25]))((ISpRecoGrammar*)Unsafe.AsPointer(ref this), pszWord, pWordPronounceable);
         }
@@ -206,14 +206,14 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int SaveCmd([NativeTypeName("IStream *")] IStream* pStream, [NativeTypeName("LPWSTR *")] ushort** ppszCoMemErrorText)
+        public int SaveCmd(IStream* pStream, [NativeTypeName("LPWSTR *")] ushort** ppszCoMemErrorText)
         {
             return ((delegate* unmanaged<ISpRecoGrammar*, IStream*, ushort**, int>)(lpVtbl[27]))((ISpRecoGrammar*)Unsafe.AsPointer(ref this), pStream, ppszCoMemErrorText);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int GetGrammarState([NativeTypeName("SPGRAMMARSTATE *")] SPGRAMMARSTATE* peGrammarState)
+        public int GetGrammarState(SPGRAMMARSTATE* peGrammarState)
         {
             return ((delegate* unmanaged<ISpRecoGrammar*, SPGRAMMARSTATE*, int>)(lpVtbl[28]))((ISpRecoGrammar*)Unsafe.AsPointer(ref this), peGrammarState);
         }

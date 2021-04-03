@@ -17,7 +17,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
+        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<ID3D11DeviceContext1*, Guid*, void**, int>)(lpVtbl[0]))((ID3D11DeviceContext1*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -37,14 +37,14 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public void GetDevice([NativeTypeName("ID3D11Device **")] ID3D11Device** ppDevice)
+        public void GetDevice(ID3D11Device** ppDevice)
         {
             ((delegate* unmanaged<ID3D11DeviceContext1*, ID3D11Device**, void>)(lpVtbl[3]))((ID3D11DeviceContext1*)Unsafe.AsPointer(ref this), ppDevice);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int GetPrivateData([NativeTypeName("const GUID &")] Guid* guid, [NativeTypeName("UINT *")] uint* pDataSize, [NativeTypeName("void *")] void* pData)
+        public int GetPrivateData([NativeTypeName("const GUID &")] Guid* guid, [NativeTypeName("UINT *")] uint* pDataSize, void* pData)
         {
             return ((delegate* unmanaged<ID3D11DeviceContext1*, Guid*, uint*, void*, int>)(lpVtbl[4]))((ID3D11DeviceContext1*)Unsafe.AsPointer(ref this), guid, pDataSize, pData);
         }
@@ -76,7 +76,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public void PSSetShader([NativeTypeName("ID3D11PixelShader *")] ID3D11PixelShader* pPixelShader, [NativeTypeName("ID3D11ClassInstance *const *")] ID3D11ClassInstance** ppClassInstances, [NativeTypeName("UINT")] uint NumClassInstances)
+        public void PSSetShader(ID3D11PixelShader* pPixelShader, [NativeTypeName("ID3D11ClassInstance *const *")] ID3D11ClassInstance** ppClassInstances, [NativeTypeName("UINT")] uint NumClassInstances)
         {
             ((delegate* unmanaged<ID3D11DeviceContext1*, ID3D11PixelShader*, ID3D11ClassInstance**, uint, void>)(lpVtbl[9]))((ID3D11DeviceContext1*)Unsafe.AsPointer(ref this), pPixelShader, ppClassInstances, NumClassInstances);
         }
@@ -88,7 +88,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public void VSSetShader([NativeTypeName("ID3D11VertexShader *")] ID3D11VertexShader* pVertexShader, [NativeTypeName("ID3D11ClassInstance *const *")] ID3D11ClassInstance** ppClassInstances, [NativeTypeName("UINT")] uint NumClassInstances)
+        public void VSSetShader(ID3D11VertexShader* pVertexShader, [NativeTypeName("ID3D11ClassInstance *const *")] ID3D11ClassInstance** ppClassInstances, [NativeTypeName("UINT")] uint NumClassInstances)
         {
             ((delegate* unmanaged<ID3D11DeviceContext1*, ID3D11VertexShader*, ID3D11ClassInstance**, uint, void>)(lpVtbl[11]))((ID3D11DeviceContext1*)Unsafe.AsPointer(ref this), pVertexShader, ppClassInstances, NumClassInstances);
         }
@@ -107,13 +107,13 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int Map([NativeTypeName("ID3D11Resource *")] ID3D11Resource* pResource, [NativeTypeName("UINT")] uint Subresource, D3D11_MAP MapType, [NativeTypeName("UINT")] uint MapFlags, [NativeTypeName("D3D11_MAPPED_SUBRESOURCE *")] D3D11_MAPPED_SUBRESOURCE* pMappedResource)
+        public int Map(ID3D11Resource* pResource, [NativeTypeName("UINT")] uint Subresource, D3D11_MAP MapType, [NativeTypeName("UINT")] uint MapFlags, D3D11_MAPPED_SUBRESOURCE* pMappedResource)
         {
             return ((delegate* unmanaged<ID3D11DeviceContext1*, ID3D11Resource*, uint, D3D11_MAP, uint, D3D11_MAPPED_SUBRESOURCE*, int>)(lpVtbl[14]))((ID3D11DeviceContext1*)Unsafe.AsPointer(ref this), pResource, Subresource, MapType, MapFlags, pMappedResource);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public void Unmap([NativeTypeName("ID3D11Resource *")] ID3D11Resource* pResource, [NativeTypeName("UINT")] uint Subresource)
+        public void Unmap(ID3D11Resource* pResource, [NativeTypeName("UINT")] uint Subresource)
         {
             ((delegate* unmanaged<ID3D11DeviceContext1*, ID3D11Resource*, uint, void>)(lpVtbl[15]))((ID3D11DeviceContext1*)Unsafe.AsPointer(ref this), pResource, Subresource);
         }
@@ -125,7 +125,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public void IASetInputLayout([NativeTypeName("ID3D11InputLayout *")] ID3D11InputLayout* pInputLayout)
+        public void IASetInputLayout(ID3D11InputLayout* pInputLayout)
         {
             ((delegate* unmanaged<ID3D11DeviceContext1*, ID3D11InputLayout*, void>)(lpVtbl[17]))((ID3D11DeviceContext1*)Unsafe.AsPointer(ref this), pInputLayout);
         }
@@ -137,7 +137,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public void IASetIndexBuffer([NativeTypeName("ID3D11Buffer *")] ID3D11Buffer* pIndexBuffer, DXGI_FORMAT Format, [NativeTypeName("UINT")] uint Offset)
+        public void IASetIndexBuffer(ID3D11Buffer* pIndexBuffer, DXGI_FORMAT Format, [NativeTypeName("UINT")] uint Offset)
         {
             ((delegate* unmanaged<ID3D11DeviceContext1*, ID3D11Buffer*, DXGI_FORMAT, uint, void>)(lpVtbl[19]))((ID3D11DeviceContext1*)Unsafe.AsPointer(ref this), pIndexBuffer, Format, Offset);
         }
@@ -161,7 +161,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public void GSSetShader([NativeTypeName("ID3D11GeometryShader *")] ID3D11GeometryShader* pShader, [NativeTypeName("ID3D11ClassInstance *const *")] ID3D11ClassInstance** ppClassInstances, [NativeTypeName("UINT")] uint NumClassInstances)
+        public void GSSetShader(ID3D11GeometryShader* pShader, [NativeTypeName("ID3D11ClassInstance *const *")] ID3D11ClassInstance** ppClassInstances, [NativeTypeName("UINT")] uint NumClassInstances)
         {
             ((delegate* unmanaged<ID3D11DeviceContext1*, ID3D11GeometryShader*, ID3D11ClassInstance**, uint, void>)(lpVtbl[23]))((ID3D11DeviceContext1*)Unsafe.AsPointer(ref this), pShader, ppClassInstances, NumClassInstances);
         }
@@ -185,26 +185,26 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public void Begin([NativeTypeName("ID3D11Asynchronous *")] ID3D11Asynchronous* pAsync)
+        public void Begin(ID3D11Asynchronous* pAsync)
         {
             ((delegate* unmanaged<ID3D11DeviceContext1*, ID3D11Asynchronous*, void>)(lpVtbl[27]))((ID3D11DeviceContext1*)Unsafe.AsPointer(ref this), pAsync);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public void End([NativeTypeName("ID3D11Asynchronous *")] ID3D11Asynchronous* pAsync)
+        public void End(ID3D11Asynchronous* pAsync)
         {
             ((delegate* unmanaged<ID3D11DeviceContext1*, ID3D11Asynchronous*, void>)(lpVtbl[28]))((ID3D11DeviceContext1*)Unsafe.AsPointer(ref this), pAsync);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int GetData([NativeTypeName("ID3D11Asynchronous *")] ID3D11Asynchronous* pAsync, [NativeTypeName("void *")] void* pData, [NativeTypeName("UINT")] uint DataSize, [NativeTypeName("UINT")] uint GetDataFlags)
+        public int GetData(ID3D11Asynchronous* pAsync, void* pData, [NativeTypeName("UINT")] uint DataSize, [NativeTypeName("UINT")] uint GetDataFlags)
         {
             return ((delegate* unmanaged<ID3D11DeviceContext1*, ID3D11Asynchronous*, void*, uint, uint, int>)(lpVtbl[29]))((ID3D11DeviceContext1*)Unsafe.AsPointer(ref this), pAsync, pData, DataSize, GetDataFlags);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public void SetPredication([NativeTypeName("ID3D11Predicate *")] ID3D11Predicate* pPredicate, [NativeTypeName("BOOL")] int PredicateValue)
+        public void SetPredication(ID3D11Predicate* pPredicate, [NativeTypeName("BOOL")] int PredicateValue)
         {
             ((delegate* unmanaged<ID3D11DeviceContext1*, ID3D11Predicate*, int, void>)(lpVtbl[30]))((ID3D11DeviceContext1*)Unsafe.AsPointer(ref this), pPredicate, PredicateValue);
         }
@@ -222,25 +222,25 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public void OMSetRenderTargets([NativeTypeName("UINT")] uint NumViews, [NativeTypeName("ID3D11RenderTargetView *const *")] ID3D11RenderTargetView** ppRenderTargetViews, [NativeTypeName("ID3D11DepthStencilView *")] ID3D11DepthStencilView* pDepthStencilView)
+        public void OMSetRenderTargets([NativeTypeName("UINT")] uint NumViews, [NativeTypeName("ID3D11RenderTargetView *const *")] ID3D11RenderTargetView** ppRenderTargetViews, ID3D11DepthStencilView* pDepthStencilView)
         {
             ((delegate* unmanaged<ID3D11DeviceContext1*, uint, ID3D11RenderTargetView**, ID3D11DepthStencilView*, void>)(lpVtbl[33]))((ID3D11DeviceContext1*)Unsafe.AsPointer(ref this), NumViews, ppRenderTargetViews, pDepthStencilView);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public void OMSetRenderTargetsAndUnorderedAccessViews([NativeTypeName("UINT")] uint NumRTVs, [NativeTypeName("ID3D11RenderTargetView *const *")] ID3D11RenderTargetView** ppRenderTargetViews, [NativeTypeName("ID3D11DepthStencilView *")] ID3D11DepthStencilView* pDepthStencilView, [NativeTypeName("UINT")] uint UAVStartSlot, [NativeTypeName("UINT")] uint NumUAVs, [NativeTypeName("ID3D11UnorderedAccessView *const *")] ID3D11UnorderedAccessView** ppUnorderedAccessViews, [NativeTypeName("const UINT *")] uint* pUAVInitialCounts)
+        public void OMSetRenderTargetsAndUnorderedAccessViews([NativeTypeName("UINT")] uint NumRTVs, [NativeTypeName("ID3D11RenderTargetView *const *")] ID3D11RenderTargetView** ppRenderTargetViews, ID3D11DepthStencilView* pDepthStencilView, [NativeTypeName("UINT")] uint UAVStartSlot, [NativeTypeName("UINT")] uint NumUAVs, [NativeTypeName("ID3D11UnorderedAccessView *const *")] ID3D11UnorderedAccessView** ppUnorderedAccessViews, [NativeTypeName("const UINT *")] uint* pUAVInitialCounts)
         {
             ((delegate* unmanaged<ID3D11DeviceContext1*, uint, ID3D11RenderTargetView**, ID3D11DepthStencilView*, uint, uint, ID3D11UnorderedAccessView**, uint*, void>)(lpVtbl[34]))((ID3D11DeviceContext1*)Unsafe.AsPointer(ref this), NumRTVs, ppRenderTargetViews, pDepthStencilView, UAVStartSlot, NumUAVs, ppUnorderedAccessViews, pUAVInitialCounts);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public void OMSetBlendState([NativeTypeName("ID3D11BlendState *")] ID3D11BlendState* pBlendState, [NativeTypeName("const FLOAT [4]")] float* BlendFactor, [NativeTypeName("UINT")] uint SampleMask)
+        public void OMSetBlendState(ID3D11BlendState* pBlendState, [NativeTypeName("const FLOAT [4]")] float* BlendFactor, [NativeTypeName("UINT")] uint SampleMask)
         {
             ((delegate* unmanaged<ID3D11DeviceContext1*, ID3D11BlendState*, float*, uint, void>)(lpVtbl[35]))((ID3D11DeviceContext1*)Unsafe.AsPointer(ref this), pBlendState, BlendFactor, SampleMask);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public void OMSetDepthStencilState([NativeTypeName("ID3D11DepthStencilState *")] ID3D11DepthStencilState* pDepthStencilState, [NativeTypeName("UINT")] uint StencilRef)
+        public void OMSetDepthStencilState(ID3D11DepthStencilState* pDepthStencilState, [NativeTypeName("UINT")] uint StencilRef)
         {
             ((delegate* unmanaged<ID3D11DeviceContext1*, ID3D11DepthStencilState*, uint, void>)(lpVtbl[36]))((ID3D11DeviceContext1*)Unsafe.AsPointer(ref this), pDepthStencilState, StencilRef);
         }
@@ -258,13 +258,13 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public void DrawIndexedInstancedIndirect([NativeTypeName("ID3D11Buffer *")] ID3D11Buffer* pBufferForArgs, [NativeTypeName("UINT")] uint AlignedByteOffsetForArgs)
+        public void DrawIndexedInstancedIndirect(ID3D11Buffer* pBufferForArgs, [NativeTypeName("UINT")] uint AlignedByteOffsetForArgs)
         {
             ((delegate* unmanaged<ID3D11DeviceContext1*, ID3D11Buffer*, uint, void>)(lpVtbl[39]))((ID3D11DeviceContext1*)Unsafe.AsPointer(ref this), pBufferForArgs, AlignedByteOffsetForArgs);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public void DrawInstancedIndirect([NativeTypeName("ID3D11Buffer *")] ID3D11Buffer* pBufferForArgs, [NativeTypeName("UINT")] uint AlignedByteOffsetForArgs)
+        public void DrawInstancedIndirect(ID3D11Buffer* pBufferForArgs, [NativeTypeName("UINT")] uint AlignedByteOffsetForArgs)
         {
             ((delegate* unmanaged<ID3D11DeviceContext1*, ID3D11Buffer*, uint, void>)(lpVtbl[40]))((ID3D11DeviceContext1*)Unsafe.AsPointer(ref this), pBufferForArgs, AlignedByteOffsetForArgs);
         }
@@ -276,13 +276,13 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public void DispatchIndirect([NativeTypeName("ID3D11Buffer *")] ID3D11Buffer* pBufferForArgs, [NativeTypeName("UINT")] uint AlignedByteOffsetForArgs)
+        public void DispatchIndirect(ID3D11Buffer* pBufferForArgs, [NativeTypeName("UINT")] uint AlignedByteOffsetForArgs)
         {
             ((delegate* unmanaged<ID3D11DeviceContext1*, ID3D11Buffer*, uint, void>)(lpVtbl[42]))((ID3D11DeviceContext1*)Unsafe.AsPointer(ref this), pBufferForArgs, AlignedByteOffsetForArgs);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public void RSSetState([NativeTypeName("ID3D11RasterizerState *")] ID3D11RasterizerState* pRasterizerState)
+        public void RSSetState(ID3D11RasterizerState* pRasterizerState)
         {
             ((delegate* unmanaged<ID3D11DeviceContext1*, ID3D11RasterizerState*, void>)(lpVtbl[43]))((ID3D11DeviceContext1*)Unsafe.AsPointer(ref this), pRasterizerState);
         }
@@ -300,80 +300,80 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public void CopySubresourceRegion([NativeTypeName("ID3D11Resource *")] ID3D11Resource* pDstResource, [NativeTypeName("UINT")] uint DstSubresource, [NativeTypeName("UINT")] uint DstX, [NativeTypeName("UINT")] uint DstY, [NativeTypeName("UINT")] uint DstZ, [NativeTypeName("ID3D11Resource *")] ID3D11Resource* pSrcResource, [NativeTypeName("UINT")] uint SrcSubresource, [NativeTypeName("const D3D11_BOX *")] D3D11_BOX* pSrcBox)
+        public void CopySubresourceRegion(ID3D11Resource* pDstResource, [NativeTypeName("UINT")] uint DstSubresource, [NativeTypeName("UINT")] uint DstX, [NativeTypeName("UINT")] uint DstY, [NativeTypeName("UINT")] uint DstZ, ID3D11Resource* pSrcResource, [NativeTypeName("UINT")] uint SrcSubresource, [NativeTypeName("const D3D11_BOX *")] D3D11_BOX* pSrcBox)
         {
             ((delegate* unmanaged<ID3D11DeviceContext1*, ID3D11Resource*, uint, uint, uint, uint, ID3D11Resource*, uint, D3D11_BOX*, void>)(lpVtbl[46]))((ID3D11DeviceContext1*)Unsafe.AsPointer(ref this), pDstResource, DstSubresource, DstX, DstY, DstZ, pSrcResource, SrcSubresource, pSrcBox);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public void CopyResource([NativeTypeName("ID3D11Resource *")] ID3D11Resource* pDstResource, [NativeTypeName("ID3D11Resource *")] ID3D11Resource* pSrcResource)
+        public void CopyResource(ID3D11Resource* pDstResource, ID3D11Resource* pSrcResource)
         {
             ((delegate* unmanaged<ID3D11DeviceContext1*, ID3D11Resource*, ID3D11Resource*, void>)(lpVtbl[47]))((ID3D11DeviceContext1*)Unsafe.AsPointer(ref this), pDstResource, pSrcResource);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public void UpdateSubresource([NativeTypeName("ID3D11Resource *")] ID3D11Resource* pDstResource, [NativeTypeName("UINT")] uint DstSubresource, [NativeTypeName("const D3D11_BOX *")] D3D11_BOX* pDstBox, [NativeTypeName("const void *")] void* pSrcData, [NativeTypeName("UINT")] uint SrcRowPitch, [NativeTypeName("UINT")] uint SrcDepthPitch)
+        public void UpdateSubresource(ID3D11Resource* pDstResource, [NativeTypeName("UINT")] uint DstSubresource, [NativeTypeName("const D3D11_BOX *")] D3D11_BOX* pDstBox, [NativeTypeName("const void *")] void* pSrcData, [NativeTypeName("UINT")] uint SrcRowPitch, [NativeTypeName("UINT")] uint SrcDepthPitch)
         {
             ((delegate* unmanaged<ID3D11DeviceContext1*, ID3D11Resource*, uint, D3D11_BOX*, void*, uint, uint, void>)(lpVtbl[48]))((ID3D11DeviceContext1*)Unsafe.AsPointer(ref this), pDstResource, DstSubresource, pDstBox, pSrcData, SrcRowPitch, SrcDepthPitch);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public void CopyStructureCount([NativeTypeName("ID3D11Buffer *")] ID3D11Buffer* pDstBuffer, [NativeTypeName("UINT")] uint DstAlignedByteOffset, [NativeTypeName("ID3D11UnorderedAccessView *")] ID3D11UnorderedAccessView* pSrcView)
+        public void CopyStructureCount(ID3D11Buffer* pDstBuffer, [NativeTypeName("UINT")] uint DstAlignedByteOffset, ID3D11UnorderedAccessView* pSrcView)
         {
             ((delegate* unmanaged<ID3D11DeviceContext1*, ID3D11Buffer*, uint, ID3D11UnorderedAccessView*, void>)(lpVtbl[49]))((ID3D11DeviceContext1*)Unsafe.AsPointer(ref this), pDstBuffer, DstAlignedByteOffset, pSrcView);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public void ClearRenderTargetView([NativeTypeName("ID3D11RenderTargetView *")] ID3D11RenderTargetView* pRenderTargetView, [NativeTypeName("const FLOAT [4]")] float* ColorRGBA)
+        public void ClearRenderTargetView(ID3D11RenderTargetView* pRenderTargetView, [NativeTypeName("const FLOAT [4]")] float* ColorRGBA)
         {
             ((delegate* unmanaged<ID3D11DeviceContext1*, ID3D11RenderTargetView*, float*, void>)(lpVtbl[50]))((ID3D11DeviceContext1*)Unsafe.AsPointer(ref this), pRenderTargetView, ColorRGBA);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public void ClearUnorderedAccessViewUint([NativeTypeName("ID3D11UnorderedAccessView *")] ID3D11UnorderedAccessView* pUnorderedAccessView, [NativeTypeName("const UINT [4]")] uint* Values)
+        public void ClearUnorderedAccessViewUint(ID3D11UnorderedAccessView* pUnorderedAccessView, [NativeTypeName("const UINT [4]")] uint* Values)
         {
             ((delegate* unmanaged<ID3D11DeviceContext1*, ID3D11UnorderedAccessView*, uint*, void>)(lpVtbl[51]))((ID3D11DeviceContext1*)Unsafe.AsPointer(ref this), pUnorderedAccessView, Values);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public void ClearUnorderedAccessViewFloat([NativeTypeName("ID3D11UnorderedAccessView *")] ID3D11UnorderedAccessView* pUnorderedAccessView, [NativeTypeName("const FLOAT [4]")] float* Values)
+        public void ClearUnorderedAccessViewFloat(ID3D11UnorderedAccessView* pUnorderedAccessView, [NativeTypeName("const FLOAT [4]")] float* Values)
         {
             ((delegate* unmanaged<ID3D11DeviceContext1*, ID3D11UnorderedAccessView*, float*, void>)(lpVtbl[52]))((ID3D11DeviceContext1*)Unsafe.AsPointer(ref this), pUnorderedAccessView, Values);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public void ClearDepthStencilView([NativeTypeName("ID3D11DepthStencilView *")] ID3D11DepthStencilView* pDepthStencilView, [NativeTypeName("UINT")] uint ClearFlags, [NativeTypeName("FLOAT")] float Depth, [NativeTypeName("UINT8")] byte Stencil)
+        public void ClearDepthStencilView(ID3D11DepthStencilView* pDepthStencilView, [NativeTypeName("UINT")] uint ClearFlags, [NativeTypeName("FLOAT")] float Depth, [NativeTypeName("UINT8")] byte Stencil)
         {
             ((delegate* unmanaged<ID3D11DeviceContext1*, ID3D11DepthStencilView*, uint, float, byte, void>)(lpVtbl[53]))((ID3D11DeviceContext1*)Unsafe.AsPointer(ref this), pDepthStencilView, ClearFlags, Depth, Stencil);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public void GenerateMips([NativeTypeName("ID3D11ShaderResourceView *")] ID3D11ShaderResourceView* pShaderResourceView)
+        public void GenerateMips(ID3D11ShaderResourceView* pShaderResourceView)
         {
             ((delegate* unmanaged<ID3D11DeviceContext1*, ID3D11ShaderResourceView*, void>)(lpVtbl[54]))((ID3D11DeviceContext1*)Unsafe.AsPointer(ref this), pShaderResourceView);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public void SetResourceMinLOD([NativeTypeName("ID3D11Resource *")] ID3D11Resource* pResource, [NativeTypeName("FLOAT")] float MinLOD)
+        public void SetResourceMinLOD(ID3D11Resource* pResource, [NativeTypeName("FLOAT")] float MinLOD)
         {
             ((delegate* unmanaged<ID3D11DeviceContext1*, ID3D11Resource*, float, void>)(lpVtbl[55]))((ID3D11DeviceContext1*)Unsafe.AsPointer(ref this), pResource, MinLOD);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("FLOAT")]
-        public float GetResourceMinLOD([NativeTypeName("ID3D11Resource *")] ID3D11Resource* pResource)
+        public float GetResourceMinLOD(ID3D11Resource* pResource)
         {
             return ((delegate* unmanaged<ID3D11DeviceContext1*, ID3D11Resource*, float>)(lpVtbl[56]))((ID3D11DeviceContext1*)Unsafe.AsPointer(ref this), pResource);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public void ResolveSubresource([NativeTypeName("ID3D11Resource *")] ID3D11Resource* pDstResource, [NativeTypeName("UINT")] uint DstSubresource, [NativeTypeName("ID3D11Resource *")] ID3D11Resource* pSrcResource, [NativeTypeName("UINT")] uint SrcSubresource, DXGI_FORMAT Format)
+        public void ResolveSubresource(ID3D11Resource* pDstResource, [NativeTypeName("UINT")] uint DstSubresource, ID3D11Resource* pSrcResource, [NativeTypeName("UINT")] uint SrcSubresource, DXGI_FORMAT Format)
         {
             ((delegate* unmanaged<ID3D11DeviceContext1*, ID3D11Resource*, uint, ID3D11Resource*, uint, DXGI_FORMAT, void>)(lpVtbl[57]))((ID3D11DeviceContext1*)Unsafe.AsPointer(ref this), pDstResource, DstSubresource, pSrcResource, SrcSubresource, Format);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public void ExecuteCommandList([NativeTypeName("ID3D11CommandList *")] ID3D11CommandList* pCommandList, [NativeTypeName("BOOL")] int RestoreContextState)
+        public void ExecuteCommandList(ID3D11CommandList* pCommandList, [NativeTypeName("BOOL")] int RestoreContextState)
         {
             ((delegate* unmanaged<ID3D11DeviceContext1*, ID3D11CommandList*, int, void>)(lpVtbl[58]))((ID3D11DeviceContext1*)Unsafe.AsPointer(ref this), pCommandList, RestoreContextState);
         }
@@ -385,7 +385,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public void HSSetShader([NativeTypeName("ID3D11HullShader *")] ID3D11HullShader* pHullShader, [NativeTypeName("ID3D11ClassInstance *const *")] ID3D11ClassInstance** ppClassInstances, [NativeTypeName("UINT")] uint NumClassInstances)
+        public void HSSetShader(ID3D11HullShader* pHullShader, [NativeTypeName("ID3D11ClassInstance *const *")] ID3D11ClassInstance** ppClassInstances, [NativeTypeName("UINT")] uint NumClassInstances)
         {
             ((delegate* unmanaged<ID3D11DeviceContext1*, ID3D11HullShader*, ID3D11ClassInstance**, uint, void>)(lpVtbl[60]))((ID3D11DeviceContext1*)Unsafe.AsPointer(ref this), pHullShader, ppClassInstances, NumClassInstances);
         }
@@ -409,7 +409,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public void DSSetShader([NativeTypeName("ID3D11DomainShader *")] ID3D11DomainShader* pDomainShader, [NativeTypeName("ID3D11ClassInstance *const *")] ID3D11ClassInstance** ppClassInstances, [NativeTypeName("UINT")] uint NumClassInstances)
+        public void DSSetShader(ID3D11DomainShader* pDomainShader, [NativeTypeName("ID3D11ClassInstance *const *")] ID3D11ClassInstance** ppClassInstances, [NativeTypeName("UINT")] uint NumClassInstances)
         {
             ((delegate* unmanaged<ID3D11DeviceContext1*, ID3D11DomainShader*, ID3D11ClassInstance**, uint, void>)(lpVtbl[64]))((ID3D11DeviceContext1*)Unsafe.AsPointer(ref this), pDomainShader, ppClassInstances, NumClassInstances);
         }
@@ -439,7 +439,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public void CSSetShader([NativeTypeName("ID3D11ComputeShader *")] ID3D11ComputeShader* pComputeShader, [NativeTypeName("ID3D11ClassInstance *const *")] ID3D11ClassInstance** ppClassInstances, [NativeTypeName("UINT")] uint NumClassInstances)
+        public void CSSetShader(ID3D11ComputeShader* pComputeShader, [NativeTypeName("ID3D11ClassInstance *const *")] ID3D11ClassInstance** ppClassInstances, [NativeTypeName("UINT")] uint NumClassInstances)
         {
             ((delegate* unmanaged<ID3D11DeviceContext1*, ID3D11ComputeShader*, ID3D11ClassInstance**, uint, void>)(lpVtbl[69]))((ID3D11DeviceContext1*)Unsafe.AsPointer(ref this), pComputeShader, ppClassInstances, NumClassInstances);
         }
@@ -457,67 +457,67 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public void VSGetConstantBuffers([NativeTypeName("UINT")] uint StartSlot, [NativeTypeName("UINT")] uint NumBuffers, [NativeTypeName("ID3D11Buffer **")] ID3D11Buffer** ppConstantBuffers)
+        public void VSGetConstantBuffers([NativeTypeName("UINT")] uint StartSlot, [NativeTypeName("UINT")] uint NumBuffers, ID3D11Buffer** ppConstantBuffers)
         {
             ((delegate* unmanaged<ID3D11DeviceContext1*, uint, uint, ID3D11Buffer**, void>)(lpVtbl[72]))((ID3D11DeviceContext1*)Unsafe.AsPointer(ref this), StartSlot, NumBuffers, ppConstantBuffers);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public void PSGetShaderResources([NativeTypeName("UINT")] uint StartSlot, [NativeTypeName("UINT")] uint NumViews, [NativeTypeName("ID3D11ShaderResourceView **")] ID3D11ShaderResourceView** ppShaderResourceViews)
+        public void PSGetShaderResources([NativeTypeName("UINT")] uint StartSlot, [NativeTypeName("UINT")] uint NumViews, ID3D11ShaderResourceView** ppShaderResourceViews)
         {
             ((delegate* unmanaged<ID3D11DeviceContext1*, uint, uint, ID3D11ShaderResourceView**, void>)(lpVtbl[73]))((ID3D11DeviceContext1*)Unsafe.AsPointer(ref this), StartSlot, NumViews, ppShaderResourceViews);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public void PSGetShader([NativeTypeName("ID3D11PixelShader **")] ID3D11PixelShader** ppPixelShader, [NativeTypeName("ID3D11ClassInstance **")] ID3D11ClassInstance** ppClassInstances, [NativeTypeName("UINT *")] uint* pNumClassInstances)
+        public void PSGetShader(ID3D11PixelShader** ppPixelShader, ID3D11ClassInstance** ppClassInstances, [NativeTypeName("UINT *")] uint* pNumClassInstances)
         {
             ((delegate* unmanaged<ID3D11DeviceContext1*, ID3D11PixelShader**, ID3D11ClassInstance**, uint*, void>)(lpVtbl[74]))((ID3D11DeviceContext1*)Unsafe.AsPointer(ref this), ppPixelShader, ppClassInstances, pNumClassInstances);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public void PSGetSamplers([NativeTypeName("UINT")] uint StartSlot, [NativeTypeName("UINT")] uint NumSamplers, [NativeTypeName("ID3D11SamplerState **")] ID3D11SamplerState** ppSamplers)
+        public void PSGetSamplers([NativeTypeName("UINT")] uint StartSlot, [NativeTypeName("UINT")] uint NumSamplers, ID3D11SamplerState** ppSamplers)
         {
             ((delegate* unmanaged<ID3D11DeviceContext1*, uint, uint, ID3D11SamplerState**, void>)(lpVtbl[75]))((ID3D11DeviceContext1*)Unsafe.AsPointer(ref this), StartSlot, NumSamplers, ppSamplers);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public void VSGetShader([NativeTypeName("ID3D11VertexShader **")] ID3D11VertexShader** ppVertexShader, [NativeTypeName("ID3D11ClassInstance **")] ID3D11ClassInstance** ppClassInstances, [NativeTypeName("UINT *")] uint* pNumClassInstances)
+        public void VSGetShader(ID3D11VertexShader** ppVertexShader, ID3D11ClassInstance** ppClassInstances, [NativeTypeName("UINT *")] uint* pNumClassInstances)
         {
             ((delegate* unmanaged<ID3D11DeviceContext1*, ID3D11VertexShader**, ID3D11ClassInstance**, uint*, void>)(lpVtbl[76]))((ID3D11DeviceContext1*)Unsafe.AsPointer(ref this), ppVertexShader, ppClassInstances, pNumClassInstances);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public void PSGetConstantBuffers([NativeTypeName("UINT")] uint StartSlot, [NativeTypeName("UINT")] uint NumBuffers, [NativeTypeName("ID3D11Buffer **")] ID3D11Buffer** ppConstantBuffers)
+        public void PSGetConstantBuffers([NativeTypeName("UINT")] uint StartSlot, [NativeTypeName("UINT")] uint NumBuffers, ID3D11Buffer** ppConstantBuffers)
         {
             ((delegate* unmanaged<ID3D11DeviceContext1*, uint, uint, ID3D11Buffer**, void>)(lpVtbl[77]))((ID3D11DeviceContext1*)Unsafe.AsPointer(ref this), StartSlot, NumBuffers, ppConstantBuffers);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public void IAGetInputLayout([NativeTypeName("ID3D11InputLayout **")] ID3D11InputLayout** ppInputLayout)
+        public void IAGetInputLayout(ID3D11InputLayout** ppInputLayout)
         {
             ((delegate* unmanaged<ID3D11DeviceContext1*, ID3D11InputLayout**, void>)(lpVtbl[78]))((ID3D11DeviceContext1*)Unsafe.AsPointer(ref this), ppInputLayout);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public void IAGetVertexBuffers([NativeTypeName("UINT")] uint StartSlot, [NativeTypeName("UINT")] uint NumBuffers, [NativeTypeName("ID3D11Buffer **")] ID3D11Buffer** ppVertexBuffers, [NativeTypeName("UINT *")] uint* pStrides, [NativeTypeName("UINT *")] uint* pOffsets)
+        public void IAGetVertexBuffers([NativeTypeName("UINT")] uint StartSlot, [NativeTypeName("UINT")] uint NumBuffers, ID3D11Buffer** ppVertexBuffers, [NativeTypeName("UINT *")] uint* pStrides, [NativeTypeName("UINT *")] uint* pOffsets)
         {
             ((delegate* unmanaged<ID3D11DeviceContext1*, uint, uint, ID3D11Buffer**, uint*, uint*, void>)(lpVtbl[79]))((ID3D11DeviceContext1*)Unsafe.AsPointer(ref this), StartSlot, NumBuffers, ppVertexBuffers, pStrides, pOffsets);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public void IAGetIndexBuffer([NativeTypeName("ID3D11Buffer **")] ID3D11Buffer** pIndexBuffer, [NativeTypeName("DXGI_FORMAT *")] DXGI_FORMAT* Format, [NativeTypeName("UINT *")] uint* Offset)
+        public void IAGetIndexBuffer(ID3D11Buffer** pIndexBuffer, DXGI_FORMAT* Format, [NativeTypeName("UINT *")] uint* Offset)
         {
             ((delegate* unmanaged<ID3D11DeviceContext1*, ID3D11Buffer**, DXGI_FORMAT*, uint*, void>)(lpVtbl[80]))((ID3D11DeviceContext1*)Unsafe.AsPointer(ref this), pIndexBuffer, Format, Offset);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public void GSGetConstantBuffers([NativeTypeName("UINT")] uint StartSlot, [NativeTypeName("UINT")] uint NumBuffers, [NativeTypeName("ID3D11Buffer **")] ID3D11Buffer** ppConstantBuffers)
+        public void GSGetConstantBuffers([NativeTypeName("UINT")] uint StartSlot, [NativeTypeName("UINT")] uint NumBuffers, ID3D11Buffer** ppConstantBuffers)
         {
             ((delegate* unmanaged<ID3D11DeviceContext1*, uint, uint, ID3D11Buffer**, void>)(lpVtbl[81]))((ID3D11DeviceContext1*)Unsafe.AsPointer(ref this), StartSlot, NumBuffers, ppConstantBuffers);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public void GSGetShader([NativeTypeName("ID3D11GeometryShader **")] ID3D11GeometryShader** ppGeometryShader, [NativeTypeName("ID3D11ClassInstance **")] ID3D11ClassInstance** ppClassInstances, [NativeTypeName("UINT *")] uint* pNumClassInstances)
+        public void GSGetShader(ID3D11GeometryShader** ppGeometryShader, ID3D11ClassInstance** ppClassInstances, [NativeTypeName("UINT *")] uint* pNumClassInstances)
         {
             ((delegate* unmanaged<ID3D11DeviceContext1*, ID3D11GeometryShader**, ID3D11ClassInstance**, uint*, void>)(lpVtbl[82]))((ID3D11DeviceContext1*)Unsafe.AsPointer(ref this), ppGeometryShader, ppClassInstances, pNumClassInstances);
         }
@@ -529,73 +529,73 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public void VSGetShaderResources([NativeTypeName("UINT")] uint StartSlot, [NativeTypeName("UINT")] uint NumViews, [NativeTypeName("ID3D11ShaderResourceView **")] ID3D11ShaderResourceView** ppShaderResourceViews)
+        public void VSGetShaderResources([NativeTypeName("UINT")] uint StartSlot, [NativeTypeName("UINT")] uint NumViews, ID3D11ShaderResourceView** ppShaderResourceViews)
         {
             ((delegate* unmanaged<ID3D11DeviceContext1*, uint, uint, ID3D11ShaderResourceView**, void>)(lpVtbl[84]))((ID3D11DeviceContext1*)Unsafe.AsPointer(ref this), StartSlot, NumViews, ppShaderResourceViews);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public void VSGetSamplers([NativeTypeName("UINT")] uint StartSlot, [NativeTypeName("UINT")] uint NumSamplers, [NativeTypeName("ID3D11SamplerState **")] ID3D11SamplerState** ppSamplers)
+        public void VSGetSamplers([NativeTypeName("UINT")] uint StartSlot, [NativeTypeName("UINT")] uint NumSamplers, ID3D11SamplerState** ppSamplers)
         {
             ((delegate* unmanaged<ID3D11DeviceContext1*, uint, uint, ID3D11SamplerState**, void>)(lpVtbl[85]))((ID3D11DeviceContext1*)Unsafe.AsPointer(ref this), StartSlot, NumSamplers, ppSamplers);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public void GetPredication([NativeTypeName("ID3D11Predicate **")] ID3D11Predicate** ppPredicate, [NativeTypeName("BOOL *")] int* pPredicateValue)
+        public void GetPredication(ID3D11Predicate** ppPredicate, [NativeTypeName("BOOL *")] int* pPredicateValue)
         {
             ((delegate* unmanaged<ID3D11DeviceContext1*, ID3D11Predicate**, int*, void>)(lpVtbl[86]))((ID3D11DeviceContext1*)Unsafe.AsPointer(ref this), ppPredicate, pPredicateValue);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public void GSGetShaderResources([NativeTypeName("UINT")] uint StartSlot, [NativeTypeName("UINT")] uint NumViews, [NativeTypeName("ID3D11ShaderResourceView **")] ID3D11ShaderResourceView** ppShaderResourceViews)
+        public void GSGetShaderResources([NativeTypeName("UINT")] uint StartSlot, [NativeTypeName("UINT")] uint NumViews, ID3D11ShaderResourceView** ppShaderResourceViews)
         {
             ((delegate* unmanaged<ID3D11DeviceContext1*, uint, uint, ID3D11ShaderResourceView**, void>)(lpVtbl[87]))((ID3D11DeviceContext1*)Unsafe.AsPointer(ref this), StartSlot, NumViews, ppShaderResourceViews);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public void GSGetSamplers([NativeTypeName("UINT")] uint StartSlot, [NativeTypeName("UINT")] uint NumSamplers, [NativeTypeName("ID3D11SamplerState **")] ID3D11SamplerState** ppSamplers)
+        public void GSGetSamplers([NativeTypeName("UINT")] uint StartSlot, [NativeTypeName("UINT")] uint NumSamplers, ID3D11SamplerState** ppSamplers)
         {
             ((delegate* unmanaged<ID3D11DeviceContext1*, uint, uint, ID3D11SamplerState**, void>)(lpVtbl[88]))((ID3D11DeviceContext1*)Unsafe.AsPointer(ref this), StartSlot, NumSamplers, ppSamplers);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public void OMGetRenderTargets([NativeTypeName("UINT")] uint NumViews, [NativeTypeName("ID3D11RenderTargetView **")] ID3D11RenderTargetView** ppRenderTargetViews, [NativeTypeName("ID3D11DepthStencilView **")] ID3D11DepthStencilView** ppDepthStencilView)
+        public void OMGetRenderTargets([NativeTypeName("UINT")] uint NumViews, ID3D11RenderTargetView** ppRenderTargetViews, ID3D11DepthStencilView** ppDepthStencilView)
         {
             ((delegate* unmanaged<ID3D11DeviceContext1*, uint, ID3D11RenderTargetView**, ID3D11DepthStencilView**, void>)(lpVtbl[89]))((ID3D11DeviceContext1*)Unsafe.AsPointer(ref this), NumViews, ppRenderTargetViews, ppDepthStencilView);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public void OMGetRenderTargetsAndUnorderedAccessViews([NativeTypeName("UINT")] uint NumRTVs, [NativeTypeName("ID3D11RenderTargetView **")] ID3D11RenderTargetView** ppRenderTargetViews, [NativeTypeName("ID3D11DepthStencilView **")] ID3D11DepthStencilView** ppDepthStencilView, [NativeTypeName("UINT")] uint UAVStartSlot, [NativeTypeName("UINT")] uint NumUAVs, [NativeTypeName("ID3D11UnorderedAccessView **")] ID3D11UnorderedAccessView** ppUnorderedAccessViews)
+        public void OMGetRenderTargetsAndUnorderedAccessViews([NativeTypeName("UINT")] uint NumRTVs, ID3D11RenderTargetView** ppRenderTargetViews, ID3D11DepthStencilView** ppDepthStencilView, [NativeTypeName("UINT")] uint UAVStartSlot, [NativeTypeName("UINT")] uint NumUAVs, ID3D11UnorderedAccessView** ppUnorderedAccessViews)
         {
             ((delegate* unmanaged<ID3D11DeviceContext1*, uint, ID3D11RenderTargetView**, ID3D11DepthStencilView**, uint, uint, ID3D11UnorderedAccessView**, void>)(lpVtbl[90]))((ID3D11DeviceContext1*)Unsafe.AsPointer(ref this), NumRTVs, ppRenderTargetViews, ppDepthStencilView, UAVStartSlot, NumUAVs, ppUnorderedAccessViews);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public void OMGetBlendState([NativeTypeName("ID3D11BlendState **")] ID3D11BlendState** ppBlendState, [NativeTypeName("FLOAT [4]")] float* BlendFactor, [NativeTypeName("UINT *")] uint* pSampleMask)
+        public void OMGetBlendState(ID3D11BlendState** ppBlendState, [NativeTypeName("FLOAT [4]")] float* BlendFactor, [NativeTypeName("UINT *")] uint* pSampleMask)
         {
             ((delegate* unmanaged<ID3D11DeviceContext1*, ID3D11BlendState**, float*, uint*, void>)(lpVtbl[91]))((ID3D11DeviceContext1*)Unsafe.AsPointer(ref this), ppBlendState, BlendFactor, pSampleMask);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public void OMGetDepthStencilState([NativeTypeName("ID3D11DepthStencilState **")] ID3D11DepthStencilState** ppDepthStencilState, [NativeTypeName("UINT *")] uint* pStencilRef)
+        public void OMGetDepthStencilState(ID3D11DepthStencilState** ppDepthStencilState, [NativeTypeName("UINT *")] uint* pStencilRef)
         {
             ((delegate* unmanaged<ID3D11DeviceContext1*, ID3D11DepthStencilState**, uint*, void>)(lpVtbl[92]))((ID3D11DeviceContext1*)Unsafe.AsPointer(ref this), ppDepthStencilState, pStencilRef);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public void SOGetTargets([NativeTypeName("UINT")] uint NumBuffers, [NativeTypeName("ID3D11Buffer **")] ID3D11Buffer** ppSOTargets)
+        public void SOGetTargets([NativeTypeName("UINT")] uint NumBuffers, ID3D11Buffer** ppSOTargets)
         {
             ((delegate* unmanaged<ID3D11DeviceContext1*, uint, ID3D11Buffer**, void>)(lpVtbl[93]))((ID3D11DeviceContext1*)Unsafe.AsPointer(ref this), NumBuffers, ppSOTargets);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public void RSGetState([NativeTypeName("ID3D11RasterizerState **")] ID3D11RasterizerState** ppRasterizerState)
+        public void RSGetState(ID3D11RasterizerState** ppRasterizerState)
         {
             ((delegate* unmanaged<ID3D11DeviceContext1*, ID3D11RasterizerState**, void>)(lpVtbl[94]))((ID3D11DeviceContext1*)Unsafe.AsPointer(ref this), ppRasterizerState);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public void RSGetViewports([NativeTypeName("UINT *")] uint* pNumViewports, [NativeTypeName("D3D11_VIEWPORT *")] D3D11_VIEWPORT* pViewports)
+        public void RSGetViewports([NativeTypeName("UINT *")] uint* pNumViewports, D3D11_VIEWPORT* pViewports)
         {
             ((delegate* unmanaged<ID3D11DeviceContext1*, uint*, D3D11_VIEWPORT*, void>)(lpVtbl[95]))((ID3D11DeviceContext1*)Unsafe.AsPointer(ref this), pNumViewports, pViewports);
         }
@@ -607,79 +607,79 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public void HSGetShaderResources([NativeTypeName("UINT")] uint StartSlot, [NativeTypeName("UINT")] uint NumViews, [NativeTypeName("ID3D11ShaderResourceView **")] ID3D11ShaderResourceView** ppShaderResourceViews)
+        public void HSGetShaderResources([NativeTypeName("UINT")] uint StartSlot, [NativeTypeName("UINT")] uint NumViews, ID3D11ShaderResourceView** ppShaderResourceViews)
         {
             ((delegate* unmanaged<ID3D11DeviceContext1*, uint, uint, ID3D11ShaderResourceView**, void>)(lpVtbl[97]))((ID3D11DeviceContext1*)Unsafe.AsPointer(ref this), StartSlot, NumViews, ppShaderResourceViews);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public void HSGetShader([NativeTypeName("ID3D11HullShader **")] ID3D11HullShader** ppHullShader, [NativeTypeName("ID3D11ClassInstance **")] ID3D11ClassInstance** ppClassInstances, [NativeTypeName("UINT *")] uint* pNumClassInstances)
+        public void HSGetShader(ID3D11HullShader** ppHullShader, ID3D11ClassInstance** ppClassInstances, [NativeTypeName("UINT *")] uint* pNumClassInstances)
         {
             ((delegate* unmanaged<ID3D11DeviceContext1*, ID3D11HullShader**, ID3D11ClassInstance**, uint*, void>)(lpVtbl[98]))((ID3D11DeviceContext1*)Unsafe.AsPointer(ref this), ppHullShader, ppClassInstances, pNumClassInstances);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public void HSGetSamplers([NativeTypeName("UINT")] uint StartSlot, [NativeTypeName("UINT")] uint NumSamplers, [NativeTypeName("ID3D11SamplerState **")] ID3D11SamplerState** ppSamplers)
+        public void HSGetSamplers([NativeTypeName("UINT")] uint StartSlot, [NativeTypeName("UINT")] uint NumSamplers, ID3D11SamplerState** ppSamplers)
         {
             ((delegate* unmanaged<ID3D11DeviceContext1*, uint, uint, ID3D11SamplerState**, void>)(lpVtbl[99]))((ID3D11DeviceContext1*)Unsafe.AsPointer(ref this), StartSlot, NumSamplers, ppSamplers);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public void HSGetConstantBuffers([NativeTypeName("UINT")] uint StartSlot, [NativeTypeName("UINT")] uint NumBuffers, [NativeTypeName("ID3D11Buffer **")] ID3D11Buffer** ppConstantBuffers)
+        public void HSGetConstantBuffers([NativeTypeName("UINT")] uint StartSlot, [NativeTypeName("UINT")] uint NumBuffers, ID3D11Buffer** ppConstantBuffers)
         {
             ((delegate* unmanaged<ID3D11DeviceContext1*, uint, uint, ID3D11Buffer**, void>)(lpVtbl[100]))((ID3D11DeviceContext1*)Unsafe.AsPointer(ref this), StartSlot, NumBuffers, ppConstantBuffers);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public void DSGetShaderResources([NativeTypeName("UINT")] uint StartSlot, [NativeTypeName("UINT")] uint NumViews, [NativeTypeName("ID3D11ShaderResourceView **")] ID3D11ShaderResourceView** ppShaderResourceViews)
+        public void DSGetShaderResources([NativeTypeName("UINT")] uint StartSlot, [NativeTypeName("UINT")] uint NumViews, ID3D11ShaderResourceView** ppShaderResourceViews)
         {
             ((delegate* unmanaged<ID3D11DeviceContext1*, uint, uint, ID3D11ShaderResourceView**, void>)(lpVtbl[101]))((ID3D11DeviceContext1*)Unsafe.AsPointer(ref this), StartSlot, NumViews, ppShaderResourceViews);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public void DSGetShader([NativeTypeName("ID3D11DomainShader **")] ID3D11DomainShader** ppDomainShader, [NativeTypeName("ID3D11ClassInstance **")] ID3D11ClassInstance** ppClassInstances, [NativeTypeName("UINT *")] uint* pNumClassInstances)
+        public void DSGetShader(ID3D11DomainShader** ppDomainShader, ID3D11ClassInstance** ppClassInstances, [NativeTypeName("UINT *")] uint* pNumClassInstances)
         {
             ((delegate* unmanaged<ID3D11DeviceContext1*, ID3D11DomainShader**, ID3D11ClassInstance**, uint*, void>)(lpVtbl[102]))((ID3D11DeviceContext1*)Unsafe.AsPointer(ref this), ppDomainShader, ppClassInstances, pNumClassInstances);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public void DSGetSamplers([NativeTypeName("UINT")] uint StartSlot, [NativeTypeName("UINT")] uint NumSamplers, [NativeTypeName("ID3D11SamplerState **")] ID3D11SamplerState** ppSamplers)
+        public void DSGetSamplers([NativeTypeName("UINT")] uint StartSlot, [NativeTypeName("UINT")] uint NumSamplers, ID3D11SamplerState** ppSamplers)
         {
             ((delegate* unmanaged<ID3D11DeviceContext1*, uint, uint, ID3D11SamplerState**, void>)(lpVtbl[103]))((ID3D11DeviceContext1*)Unsafe.AsPointer(ref this), StartSlot, NumSamplers, ppSamplers);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public void DSGetConstantBuffers([NativeTypeName("UINT")] uint StartSlot, [NativeTypeName("UINT")] uint NumBuffers, [NativeTypeName("ID3D11Buffer **")] ID3D11Buffer** ppConstantBuffers)
+        public void DSGetConstantBuffers([NativeTypeName("UINT")] uint StartSlot, [NativeTypeName("UINT")] uint NumBuffers, ID3D11Buffer** ppConstantBuffers)
         {
             ((delegate* unmanaged<ID3D11DeviceContext1*, uint, uint, ID3D11Buffer**, void>)(lpVtbl[104]))((ID3D11DeviceContext1*)Unsafe.AsPointer(ref this), StartSlot, NumBuffers, ppConstantBuffers);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public void CSGetShaderResources([NativeTypeName("UINT")] uint StartSlot, [NativeTypeName("UINT")] uint NumViews, [NativeTypeName("ID3D11ShaderResourceView **")] ID3D11ShaderResourceView** ppShaderResourceViews)
+        public void CSGetShaderResources([NativeTypeName("UINT")] uint StartSlot, [NativeTypeName("UINT")] uint NumViews, ID3D11ShaderResourceView** ppShaderResourceViews)
         {
             ((delegate* unmanaged<ID3D11DeviceContext1*, uint, uint, ID3D11ShaderResourceView**, void>)(lpVtbl[105]))((ID3D11DeviceContext1*)Unsafe.AsPointer(ref this), StartSlot, NumViews, ppShaderResourceViews);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public void CSGetUnorderedAccessViews([NativeTypeName("UINT")] uint StartSlot, [NativeTypeName("UINT")] uint NumUAVs, [NativeTypeName("ID3D11UnorderedAccessView **")] ID3D11UnorderedAccessView** ppUnorderedAccessViews)
+        public void CSGetUnorderedAccessViews([NativeTypeName("UINT")] uint StartSlot, [NativeTypeName("UINT")] uint NumUAVs, ID3D11UnorderedAccessView** ppUnorderedAccessViews)
         {
             ((delegate* unmanaged<ID3D11DeviceContext1*, uint, uint, ID3D11UnorderedAccessView**, void>)(lpVtbl[106]))((ID3D11DeviceContext1*)Unsafe.AsPointer(ref this), StartSlot, NumUAVs, ppUnorderedAccessViews);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public void CSGetShader([NativeTypeName("ID3D11ComputeShader **")] ID3D11ComputeShader** ppComputeShader, [NativeTypeName("ID3D11ClassInstance **")] ID3D11ClassInstance** ppClassInstances, [NativeTypeName("UINT *")] uint* pNumClassInstances)
+        public void CSGetShader(ID3D11ComputeShader** ppComputeShader, ID3D11ClassInstance** ppClassInstances, [NativeTypeName("UINT *")] uint* pNumClassInstances)
         {
             ((delegate* unmanaged<ID3D11DeviceContext1*, ID3D11ComputeShader**, ID3D11ClassInstance**, uint*, void>)(lpVtbl[107]))((ID3D11DeviceContext1*)Unsafe.AsPointer(ref this), ppComputeShader, ppClassInstances, pNumClassInstances);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public void CSGetSamplers([NativeTypeName("UINT")] uint StartSlot, [NativeTypeName("UINT")] uint NumSamplers, [NativeTypeName("ID3D11SamplerState **")] ID3D11SamplerState** ppSamplers)
+        public void CSGetSamplers([NativeTypeName("UINT")] uint StartSlot, [NativeTypeName("UINT")] uint NumSamplers, ID3D11SamplerState** ppSamplers)
         {
             ((delegate* unmanaged<ID3D11DeviceContext1*, uint, uint, ID3D11SamplerState**, void>)(lpVtbl[108]))((ID3D11DeviceContext1*)Unsafe.AsPointer(ref this), StartSlot, NumSamplers, ppSamplers);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public void CSGetConstantBuffers([NativeTypeName("UINT")] uint StartSlot, [NativeTypeName("UINT")] uint NumBuffers, [NativeTypeName("ID3D11Buffer **")] ID3D11Buffer** ppConstantBuffers)
+        public void CSGetConstantBuffers([NativeTypeName("UINT")] uint StartSlot, [NativeTypeName("UINT")] uint NumBuffers, ID3D11Buffer** ppConstantBuffers)
         {
             ((delegate* unmanaged<ID3D11DeviceContext1*, uint, uint, ID3D11Buffer**, void>)(lpVtbl[109]))((ID3D11DeviceContext1*)Unsafe.AsPointer(ref this), StartSlot, NumBuffers, ppConstantBuffers);
         }
@@ -711,31 +711,31 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int FinishCommandList([NativeTypeName("BOOL")] int RestoreDeferredContextState, [NativeTypeName("ID3D11CommandList **")] ID3D11CommandList** ppCommandList)
+        public int FinishCommandList([NativeTypeName("BOOL")] int RestoreDeferredContextState, ID3D11CommandList** ppCommandList)
         {
             return ((delegate* unmanaged<ID3D11DeviceContext1*, int, ID3D11CommandList**, int>)(lpVtbl[114]))((ID3D11DeviceContext1*)Unsafe.AsPointer(ref this), RestoreDeferredContextState, ppCommandList);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public void CopySubresourceRegion1([NativeTypeName("ID3D11Resource *")] ID3D11Resource* pDstResource, [NativeTypeName("UINT")] uint DstSubresource, [NativeTypeName("UINT")] uint DstX, [NativeTypeName("UINT")] uint DstY, [NativeTypeName("UINT")] uint DstZ, [NativeTypeName("ID3D11Resource *")] ID3D11Resource* pSrcResource, [NativeTypeName("UINT")] uint SrcSubresource, [NativeTypeName("const D3D11_BOX *")] D3D11_BOX* pSrcBox, [NativeTypeName("UINT")] uint CopyFlags)
+        public void CopySubresourceRegion1(ID3D11Resource* pDstResource, [NativeTypeName("UINT")] uint DstSubresource, [NativeTypeName("UINT")] uint DstX, [NativeTypeName("UINT")] uint DstY, [NativeTypeName("UINT")] uint DstZ, ID3D11Resource* pSrcResource, [NativeTypeName("UINT")] uint SrcSubresource, [NativeTypeName("const D3D11_BOX *")] D3D11_BOX* pSrcBox, [NativeTypeName("UINT")] uint CopyFlags)
         {
             ((delegate* unmanaged<ID3D11DeviceContext1*, ID3D11Resource*, uint, uint, uint, uint, ID3D11Resource*, uint, D3D11_BOX*, uint, void>)(lpVtbl[115]))((ID3D11DeviceContext1*)Unsafe.AsPointer(ref this), pDstResource, DstSubresource, DstX, DstY, DstZ, pSrcResource, SrcSubresource, pSrcBox, CopyFlags);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public void UpdateSubresource1([NativeTypeName("ID3D11Resource *")] ID3D11Resource* pDstResource, [NativeTypeName("UINT")] uint DstSubresource, [NativeTypeName("const D3D11_BOX *")] D3D11_BOX* pDstBox, [NativeTypeName("const void *")] void* pSrcData, [NativeTypeName("UINT")] uint SrcRowPitch, [NativeTypeName("UINT")] uint SrcDepthPitch, [NativeTypeName("UINT")] uint CopyFlags)
+        public void UpdateSubresource1(ID3D11Resource* pDstResource, [NativeTypeName("UINT")] uint DstSubresource, [NativeTypeName("const D3D11_BOX *")] D3D11_BOX* pDstBox, [NativeTypeName("const void *")] void* pSrcData, [NativeTypeName("UINT")] uint SrcRowPitch, [NativeTypeName("UINT")] uint SrcDepthPitch, [NativeTypeName("UINT")] uint CopyFlags)
         {
             ((delegate* unmanaged<ID3D11DeviceContext1*, ID3D11Resource*, uint, D3D11_BOX*, void*, uint, uint, uint, void>)(lpVtbl[116]))((ID3D11DeviceContext1*)Unsafe.AsPointer(ref this), pDstResource, DstSubresource, pDstBox, pSrcData, SrcRowPitch, SrcDepthPitch, CopyFlags);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public void DiscardResource([NativeTypeName("ID3D11Resource *")] ID3D11Resource* pResource)
+        public void DiscardResource(ID3D11Resource* pResource)
         {
             ((delegate* unmanaged<ID3D11DeviceContext1*, ID3D11Resource*, void>)(lpVtbl[117]))((ID3D11DeviceContext1*)Unsafe.AsPointer(ref this), pResource);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public void DiscardView([NativeTypeName("ID3D11View *")] ID3D11View* pResourceView)
+        public void DiscardView(ID3D11View* pResourceView)
         {
             ((delegate* unmanaged<ID3D11DeviceContext1*, ID3D11View*, void>)(lpVtbl[118]))((ID3D11DeviceContext1*)Unsafe.AsPointer(ref this), pResourceView);
         }
@@ -777,55 +777,55 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public void VSGetConstantBuffers1([NativeTypeName("UINT")] uint StartSlot, [NativeTypeName("UINT")] uint NumBuffers, [NativeTypeName("ID3D11Buffer **")] ID3D11Buffer** ppConstantBuffers, [NativeTypeName("UINT *")] uint* pFirstConstant, [NativeTypeName("UINT *")] uint* pNumConstants)
+        public void VSGetConstantBuffers1([NativeTypeName("UINT")] uint StartSlot, [NativeTypeName("UINT")] uint NumBuffers, ID3D11Buffer** ppConstantBuffers, [NativeTypeName("UINT *")] uint* pFirstConstant, [NativeTypeName("UINT *")] uint* pNumConstants)
         {
             ((delegate* unmanaged<ID3D11DeviceContext1*, uint, uint, ID3D11Buffer**, uint*, uint*, void>)(lpVtbl[125]))((ID3D11DeviceContext1*)Unsafe.AsPointer(ref this), StartSlot, NumBuffers, ppConstantBuffers, pFirstConstant, pNumConstants);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public void HSGetConstantBuffers1([NativeTypeName("UINT")] uint StartSlot, [NativeTypeName("UINT")] uint NumBuffers, [NativeTypeName("ID3D11Buffer **")] ID3D11Buffer** ppConstantBuffers, [NativeTypeName("UINT *")] uint* pFirstConstant, [NativeTypeName("UINT *")] uint* pNumConstants)
+        public void HSGetConstantBuffers1([NativeTypeName("UINT")] uint StartSlot, [NativeTypeName("UINT")] uint NumBuffers, ID3D11Buffer** ppConstantBuffers, [NativeTypeName("UINT *")] uint* pFirstConstant, [NativeTypeName("UINT *")] uint* pNumConstants)
         {
             ((delegate* unmanaged<ID3D11DeviceContext1*, uint, uint, ID3D11Buffer**, uint*, uint*, void>)(lpVtbl[126]))((ID3D11DeviceContext1*)Unsafe.AsPointer(ref this), StartSlot, NumBuffers, ppConstantBuffers, pFirstConstant, pNumConstants);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public void DSGetConstantBuffers1([NativeTypeName("UINT")] uint StartSlot, [NativeTypeName("UINT")] uint NumBuffers, [NativeTypeName("ID3D11Buffer **")] ID3D11Buffer** ppConstantBuffers, [NativeTypeName("UINT *")] uint* pFirstConstant, [NativeTypeName("UINT *")] uint* pNumConstants)
+        public void DSGetConstantBuffers1([NativeTypeName("UINT")] uint StartSlot, [NativeTypeName("UINT")] uint NumBuffers, ID3D11Buffer** ppConstantBuffers, [NativeTypeName("UINT *")] uint* pFirstConstant, [NativeTypeName("UINT *")] uint* pNumConstants)
         {
             ((delegate* unmanaged<ID3D11DeviceContext1*, uint, uint, ID3D11Buffer**, uint*, uint*, void>)(lpVtbl[127]))((ID3D11DeviceContext1*)Unsafe.AsPointer(ref this), StartSlot, NumBuffers, ppConstantBuffers, pFirstConstant, pNumConstants);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public void GSGetConstantBuffers1([NativeTypeName("UINT")] uint StartSlot, [NativeTypeName("UINT")] uint NumBuffers, [NativeTypeName("ID3D11Buffer **")] ID3D11Buffer** ppConstantBuffers, [NativeTypeName("UINT *")] uint* pFirstConstant, [NativeTypeName("UINT *")] uint* pNumConstants)
+        public void GSGetConstantBuffers1([NativeTypeName("UINT")] uint StartSlot, [NativeTypeName("UINT")] uint NumBuffers, ID3D11Buffer** ppConstantBuffers, [NativeTypeName("UINT *")] uint* pFirstConstant, [NativeTypeName("UINT *")] uint* pNumConstants)
         {
             ((delegate* unmanaged<ID3D11DeviceContext1*, uint, uint, ID3D11Buffer**, uint*, uint*, void>)(lpVtbl[128]))((ID3D11DeviceContext1*)Unsafe.AsPointer(ref this), StartSlot, NumBuffers, ppConstantBuffers, pFirstConstant, pNumConstants);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public void PSGetConstantBuffers1([NativeTypeName("UINT")] uint StartSlot, [NativeTypeName("UINT")] uint NumBuffers, [NativeTypeName("ID3D11Buffer **")] ID3D11Buffer** ppConstantBuffers, [NativeTypeName("UINT *")] uint* pFirstConstant, [NativeTypeName("UINT *")] uint* pNumConstants)
+        public void PSGetConstantBuffers1([NativeTypeName("UINT")] uint StartSlot, [NativeTypeName("UINT")] uint NumBuffers, ID3D11Buffer** ppConstantBuffers, [NativeTypeName("UINT *")] uint* pFirstConstant, [NativeTypeName("UINT *")] uint* pNumConstants)
         {
             ((delegate* unmanaged<ID3D11DeviceContext1*, uint, uint, ID3D11Buffer**, uint*, uint*, void>)(lpVtbl[129]))((ID3D11DeviceContext1*)Unsafe.AsPointer(ref this), StartSlot, NumBuffers, ppConstantBuffers, pFirstConstant, pNumConstants);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public void CSGetConstantBuffers1([NativeTypeName("UINT")] uint StartSlot, [NativeTypeName("UINT")] uint NumBuffers, [NativeTypeName("ID3D11Buffer **")] ID3D11Buffer** ppConstantBuffers, [NativeTypeName("UINT *")] uint* pFirstConstant, [NativeTypeName("UINT *")] uint* pNumConstants)
+        public void CSGetConstantBuffers1([NativeTypeName("UINT")] uint StartSlot, [NativeTypeName("UINT")] uint NumBuffers, ID3D11Buffer** ppConstantBuffers, [NativeTypeName("UINT *")] uint* pFirstConstant, [NativeTypeName("UINT *")] uint* pNumConstants)
         {
             ((delegate* unmanaged<ID3D11DeviceContext1*, uint, uint, ID3D11Buffer**, uint*, uint*, void>)(lpVtbl[130]))((ID3D11DeviceContext1*)Unsafe.AsPointer(ref this), StartSlot, NumBuffers, ppConstantBuffers, pFirstConstant, pNumConstants);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public void SwapDeviceContextState([NativeTypeName("ID3DDeviceContextState *")] ID3DDeviceContextState* pState, [NativeTypeName("ID3DDeviceContextState **")] ID3DDeviceContextState** ppPreviousState)
+        public void SwapDeviceContextState(ID3DDeviceContextState* pState, ID3DDeviceContextState** ppPreviousState)
         {
             ((delegate* unmanaged<ID3D11DeviceContext1*, ID3DDeviceContextState*, ID3DDeviceContextState**, void>)(lpVtbl[131]))((ID3D11DeviceContext1*)Unsafe.AsPointer(ref this), pState, ppPreviousState);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public void ClearView([NativeTypeName("ID3D11View *")] ID3D11View* pView, [NativeTypeName("const FLOAT [4]")] float* Color, [NativeTypeName("const D3D11_RECT *")] RECT* pRect, [NativeTypeName("UINT")] uint NumRects)
+        public void ClearView(ID3D11View* pView, [NativeTypeName("const FLOAT [4]")] float* Color, [NativeTypeName("const D3D11_RECT *")] RECT* pRect, [NativeTypeName("UINT")] uint NumRects)
         {
             ((delegate* unmanaged<ID3D11DeviceContext1*, ID3D11View*, float*, RECT*, uint, void>)(lpVtbl[132]))((ID3D11DeviceContext1*)Unsafe.AsPointer(ref this), pView, Color, pRect, NumRects);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public void DiscardView1([NativeTypeName("ID3D11View *")] ID3D11View* pResourceView, [NativeTypeName("const D3D11_RECT *")] RECT* pRects, [NativeTypeName("UINT")] uint NumRects)
+        public void DiscardView1(ID3D11View* pResourceView, [NativeTypeName("const D3D11_RECT *")] RECT* pRects, [NativeTypeName("UINT")] uint NumRects)
         {
             ((delegate* unmanaged<ID3D11DeviceContext1*, ID3D11View*, RECT*, uint, void>)(lpVtbl[133]))((ID3D11DeviceContext1*)Unsafe.AsPointer(ref this), pResourceView, pRects, NumRects);
         }

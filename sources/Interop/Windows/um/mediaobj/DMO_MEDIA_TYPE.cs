@@ -27,7 +27,6 @@ namespace TerraFX.Interop
         [NativeTypeName("GUID")]
         public Guid formattype;
 
-        [NativeTypeName("IUnknown *")]
         public IUnknown* pUnk;
 
         [NativeTypeName("ULONG")]

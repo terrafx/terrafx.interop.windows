@@ -17,7 +17,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
+        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IOverlay*, Guid*, void**, int>)(lpVtbl[0]))((IOverlay*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -38,35 +38,35 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int GetPalette([NativeTypeName("DWORD *")] uint* pdwColors, [NativeTypeName("PALETTEENTRY **")] PALETTEENTRY** ppPalette)
+        public int GetPalette([NativeTypeName("DWORD *")] uint* pdwColors, PALETTEENTRY** ppPalette)
         {
             return ((delegate* unmanaged<IOverlay*, uint*, PALETTEENTRY**, int>)(lpVtbl[3]))((IOverlay*)Unsafe.AsPointer(ref this), pdwColors, ppPalette);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int SetPalette([NativeTypeName("DWORD")] uint dwColors, [NativeTypeName("PALETTEENTRY *")] PALETTEENTRY* pPalette)
+        public int SetPalette([NativeTypeName("DWORD")] uint dwColors, PALETTEENTRY* pPalette)
         {
             return ((delegate* unmanaged<IOverlay*, uint, PALETTEENTRY*, int>)(lpVtbl[4]))((IOverlay*)Unsafe.AsPointer(ref this), dwColors, pPalette);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int GetDefaultColorKey([NativeTypeName("COLORKEY *")] COLORKEY* pColorKey)
+        public int GetDefaultColorKey(COLORKEY* pColorKey)
         {
             return ((delegate* unmanaged<IOverlay*, COLORKEY*, int>)(lpVtbl[5]))((IOverlay*)Unsafe.AsPointer(ref this), pColorKey);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int GetColorKey([NativeTypeName("COLORKEY *")] COLORKEY* pColorKey)
+        public int GetColorKey(COLORKEY* pColorKey)
         {
             return ((delegate* unmanaged<IOverlay*, COLORKEY*, int>)(lpVtbl[6]))((IOverlay*)Unsafe.AsPointer(ref this), pColorKey);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int SetColorKey([NativeTypeName("COLORKEY *")] COLORKEY* pColorKey)
+        public int SetColorKey(COLORKEY* pColorKey)
         {
             return ((delegate* unmanaged<IOverlay*, COLORKEY*, int>)(lpVtbl[7]))((IOverlay*)Unsafe.AsPointer(ref this), pColorKey);
         }
@@ -80,21 +80,21 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int GetClipList([NativeTypeName("RECT *")] RECT* pSourceRect, [NativeTypeName("RECT *")] RECT* pDestinationRect, [NativeTypeName("RGNDATA **")] RGNDATA** ppRgnData)
+        public int GetClipList(RECT* pSourceRect, RECT* pDestinationRect, RGNDATA** ppRgnData)
         {
             return ((delegate* unmanaged<IOverlay*, RECT*, RECT*, RGNDATA**, int>)(lpVtbl[9]))((IOverlay*)Unsafe.AsPointer(ref this), pSourceRect, pDestinationRect, ppRgnData);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int GetVideoPosition([NativeTypeName("RECT *")] RECT* pSourceRect, [NativeTypeName("RECT *")] RECT* pDestinationRect)
+        public int GetVideoPosition(RECT* pSourceRect, RECT* pDestinationRect)
         {
             return ((delegate* unmanaged<IOverlay*, RECT*, RECT*, int>)(lpVtbl[10]))((IOverlay*)Unsafe.AsPointer(ref this), pSourceRect, pDestinationRect);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int Advise([NativeTypeName("IOverlayNotify *")] IOverlayNotify* pOverlayNotify, [NativeTypeName("DWORD")] uint dwInterests)
+        public int Advise(IOverlayNotify* pOverlayNotify, [NativeTypeName("DWORD")] uint dwInterests)
         {
             return ((delegate* unmanaged<IOverlay*, IOverlayNotify*, uint, int>)(lpVtbl[11]))((IOverlay*)Unsafe.AsPointer(ref this), pOverlayNotify, dwInterests);
         }

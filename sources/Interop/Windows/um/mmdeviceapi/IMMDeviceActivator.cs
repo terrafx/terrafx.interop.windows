@@ -17,7 +17,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
+        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IMMDeviceActivator*, Guid*, void**, int>)(lpVtbl[0]))((IMMDeviceActivator*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -38,7 +38,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int Activate([NativeTypeName("const IID &")] Guid* iid, [NativeTypeName("IMMDevice *")] IMMDevice* pDevice, [NativeTypeName("PROPVARIANT *")] PROPVARIANT* pActivationParams, [NativeTypeName("void **")] void** ppInterface)
+        public int Activate([NativeTypeName("const IID &")] Guid* iid, IMMDevice* pDevice, PROPVARIANT* pActivationParams, void** ppInterface)
         {
             return ((delegate* unmanaged<IMMDeviceActivator*, Guid*, IMMDevice*, PROPVARIANT*, void**, int>)(lpVtbl[3]))((IMMDeviceActivator*)Unsafe.AsPointer(ref this), iid, pDevice, pActivationParams, ppInterface);
         }

@@ -21,7 +21,6 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint dwSignerType;
 
-        [NativeTypeName("CMSG_SIGNER_INFO *")]
         public CMSG_SIGNER_INFO* psSigner;
 
         [NativeTypeName("DWORD")]

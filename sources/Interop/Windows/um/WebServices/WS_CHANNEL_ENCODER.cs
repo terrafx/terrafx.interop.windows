@@ -9,7 +9,6 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct WS_CHANNEL_ENCODER
     {
-        [NativeTypeName("void *")]
         public void* createContext;
 
         [NativeTypeName("WS_CREATE_ENCODER_CALLBACK")]

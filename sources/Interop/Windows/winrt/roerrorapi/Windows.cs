@@ -20,15 +20,15 @@ namespace TerraFX.Interop
 
         [DllImport("combase", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int RoResolveRestrictedErrorInfoReference([NativeTypeName("PCWSTR")] ushort* reference, [NativeTypeName("IRestrictedErrorInfo **")] IRestrictedErrorInfo** ppRestrictedErrorInfo);
+        public static extern int RoResolveRestrictedErrorInfoReference([NativeTypeName("PCWSTR")] ushort* reference, IRestrictedErrorInfo** ppRestrictedErrorInfo);
 
         [DllImport("combase", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int SetRestrictedErrorInfo([NativeTypeName("IRestrictedErrorInfo *")] IRestrictedErrorInfo* pRestrictedErrorInfo);
+        public static extern int SetRestrictedErrorInfo(IRestrictedErrorInfo* pRestrictedErrorInfo);
 
         [DllImport("combase", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int GetRestrictedErrorInfo([NativeTypeName("IRestrictedErrorInfo **")] IRestrictedErrorInfo** ppRestrictedErrorInfo);
+        public static extern int GetRestrictedErrorInfo(IRestrictedErrorInfo** ppRestrictedErrorInfo);
 
         [DllImport("combase", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
@@ -111,14 +111,14 @@ namespace TerraFX.Interop
 
         [DllImport("combase", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int RoOriginateLanguageException([NativeTypeName("HRESULT")] int error, [NativeTypeName("HSTRING")] IntPtr message, [NativeTypeName("IUnknown *")] IUnknown* languageException);
+        public static extern int RoOriginateLanguageException([NativeTypeName("HRESULT")] int error, [NativeTypeName("HSTRING")] IntPtr message, IUnknown* languageException);
 
         [DllImport("combase", ExactSpelling = true)]
         public static extern void RoClearError();
 
         [DllImport("combase", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int RoReportUnhandledError([NativeTypeName("IRestrictedErrorInfo *")] IRestrictedErrorInfo* pRestrictedErrorInfo);
+        public static extern int RoReportUnhandledError(IRestrictedErrorInfo* pRestrictedErrorInfo);
 
         [DllImport("combase", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
@@ -130,11 +130,11 @@ namespace TerraFX.Interop
 
         [DllImport("combase", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int RoGetMatchingRestrictedErrorInfo([NativeTypeName("HRESULT")] int hrIn, [NativeTypeName("IRestrictedErrorInfo **")] IRestrictedErrorInfo** ppRestrictedErrorInfo);
+        public static extern int RoGetMatchingRestrictedErrorInfo([NativeTypeName("HRESULT")] int hrIn, IRestrictedErrorInfo** ppRestrictedErrorInfo);
 
         [DllImport("combase", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int RoReportFailedDelegate([NativeTypeName("IUnknown *")] IUnknown* punkDelegate, [NativeTypeName("IRestrictedErrorInfo *")] IRestrictedErrorInfo* pRestrictedErrorInfo);
+        public static extern int RoReportFailedDelegate(IUnknown* punkDelegate, IRestrictedErrorInfo* pRestrictedErrorInfo);
 
         [DllImport("combase", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]

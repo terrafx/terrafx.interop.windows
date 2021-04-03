@@ -13,7 +13,6 @@ namespace TerraFX.Interop
         [NativeTypeName("PFN_CMSG_STREAM_OUTPUT")]
         public delegate* unmanaged<void*, byte*, uint, int, int> pfnStreamOutput;
 
-        [NativeTypeName("void *")]
         public void* pvArg;
     }
 }

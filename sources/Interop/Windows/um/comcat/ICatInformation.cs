@@ -17,7 +17,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
+        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<ICatInformation*, Guid*, void**, int>)(lpVtbl[0]))((ICatInformation*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -38,7 +38,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int EnumCategories([NativeTypeName("LCID")] uint lcid, [NativeTypeName("IEnumCATEGORYINFO **")] IEnumCATEGORYINFO** ppenumCategoryInfo)
+        public int EnumCategories([NativeTypeName("LCID")] uint lcid, IEnumCATEGORYINFO** ppenumCategoryInfo)
         {
             return ((delegate* unmanaged<ICatInformation*, uint, IEnumCATEGORYINFO**, int>)(lpVtbl[3]))((ICatInformation*)Unsafe.AsPointer(ref this), lcid, ppenumCategoryInfo);
         }
@@ -52,7 +52,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int EnumClassesOfCategories([NativeTypeName("ULONG")] uint cImplemented, [NativeTypeName("const CATID []")] Guid* rgcatidImpl, [NativeTypeName("ULONG")] uint cRequired, [NativeTypeName("const CATID []")] Guid* rgcatidReq, [NativeTypeName("IEnumGUID **")] IEnumGUID** ppenumClsid)
+        public int EnumClassesOfCategories([NativeTypeName("ULONG")] uint cImplemented, [NativeTypeName("const CATID []")] Guid* rgcatidImpl, [NativeTypeName("ULONG")] uint cRequired, [NativeTypeName("const CATID []")] Guid* rgcatidReq, IEnumGUID** ppenumClsid)
         {
             return ((delegate* unmanaged<ICatInformation*, uint, Guid*, uint, Guid*, IEnumGUID**, int>)(lpVtbl[5]))((ICatInformation*)Unsafe.AsPointer(ref this), cImplemented, rgcatidImpl, cRequired, rgcatidReq, ppenumClsid);
         }
@@ -66,14 +66,14 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int EnumImplCategoriesOfClass([NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("IEnumGUID **")] IEnumGUID** ppenumCatid)
+        public int EnumImplCategoriesOfClass([NativeTypeName("const IID &")] Guid* rclsid, IEnumGUID** ppenumCatid)
         {
             return ((delegate* unmanaged<ICatInformation*, Guid*, IEnumGUID**, int>)(lpVtbl[7]))((ICatInformation*)Unsafe.AsPointer(ref this), rclsid, ppenumCatid);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int EnumReqCategoriesOfClass([NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("IEnumGUID **")] IEnumGUID** ppenumCatid)
+        public int EnumReqCategoriesOfClass([NativeTypeName("const IID &")] Guid* rclsid, IEnumGUID** ppenumCatid)
         {
             return ((delegate* unmanaged<ICatInformation*, Guid*, IEnumGUID**, int>)(lpVtbl[8]))((ICatInformation*)Unsafe.AsPointer(ref this), rclsid, ppenumCatid);
         }

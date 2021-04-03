@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct DWRITE_GLYPH_RUN
     {
-        [NativeTypeName("IDWriteFontFace *")]
         public IDWriteFontFace* fontFace;
 
         [NativeTypeName("FLOAT")]

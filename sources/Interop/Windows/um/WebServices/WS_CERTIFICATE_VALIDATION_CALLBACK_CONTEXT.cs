@@ -10,7 +10,6 @@ namespace TerraFX.Interop
         [NativeTypeName("WS_CERTIFICATE_VALIDATION_CALLBACK")]
         public delegate* unmanaged<CERT_CONTEXT*, void*, int> callback;
 
-        [NativeTypeName("void *")]
         public void* state;
     }
 }

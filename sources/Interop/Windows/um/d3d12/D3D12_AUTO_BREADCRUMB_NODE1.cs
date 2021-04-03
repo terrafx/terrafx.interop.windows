@@ -19,10 +19,8 @@ namespace TerraFX.Interop
         [NativeTypeName("const wchar_t *")]
         public ushort* pCommandQueueDebugNameW;
 
-        [NativeTypeName("ID3D12GraphicsCommandList *")]
         public ID3D12GraphicsCommandList* pCommandList;
 
-        [NativeTypeName("ID3D12CommandQueue *")]
         public ID3D12CommandQueue* pCommandQueue;
 
         [NativeTypeName("UINT")]
@@ -40,7 +38,6 @@ namespace TerraFX.Interop
         [NativeTypeName("UINT")]
         public uint BreadcrumbContextsCount;
 
-        [NativeTypeName("D3D12_DRED_BREADCRUMB_CONTEXT *")]
         public D3D12_DRED_BREADCRUMB_CONTEXT* pBreadcrumbContexts;
     }
 }

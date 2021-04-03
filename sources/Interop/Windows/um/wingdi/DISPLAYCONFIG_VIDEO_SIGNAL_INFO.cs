@@ -24,6 +24,8 @@ namespace TerraFX.Interop
         [NativeTypeName("DISPLAYCONFIG_VIDEO_SIGNAL_INFO::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/wingdi.h:2850:5)")]
         public _Anonymous_e__Union Anonymous;
 
+        public DISPLAYCONFIG_SCANLINE_ORDERING scanLineOrdering;
+
         public ref _Anonymous_e__Union._AdditionalSignalInfo_e__Struct AdditionalSignalInfo
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -41,8 +43,6 @@ namespace TerraFX.Interop
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.videoStandard, 1));
             }
         }
-
-        public DISPLAYCONFIG_SCANLINE_ORDERING scanLineOrdering;
 
         [StructLayout(LayoutKind.Explicit)]
         public partial struct _Anonymous_e__Union

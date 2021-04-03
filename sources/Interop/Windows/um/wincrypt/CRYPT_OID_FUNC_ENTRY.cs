@@ -10,7 +10,6 @@ namespace TerraFX.Interop
         [NativeTypeName("LPCSTR")]
         public sbyte* pszOID;
 
-        [NativeTypeName("void *")]
         public void* pvFuncAddr;
     }
 }

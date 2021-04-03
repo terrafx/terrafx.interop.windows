@@ -9,7 +9,6 @@ namespace TerraFX.Interop
     {
         public DWRITE_GLYPH_RUN glyphRun;
 
-        [NativeTypeName("DWRITE_GLYPH_RUN_DESCRIPTION *")]
         public DWRITE_GLYPH_RUN_DESCRIPTION* glyphRunDescription;
 
         [NativeTypeName("FLOAT")]

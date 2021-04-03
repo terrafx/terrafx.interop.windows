@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct D3D12_RESOLVE_VIDEO_MOTION_VECTOR_HEAP_INPUT
     {
-        [NativeTypeName("ID3D12VideoMotionVectorHeap *")]
         public ID3D12VideoMotionVectorHeap* pMotionVectorHeap;
 
         [NativeTypeName("UINT")]

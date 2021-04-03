@@ -9,7 +9,6 @@ namespace TerraFX.Interop
     {
         public MFP_EVENT_HEADER header;
 
-        [NativeTypeName("IMFPMediaItem *")]
         public IMFPMediaItem* pMediaItem;
 
         public float flRate;

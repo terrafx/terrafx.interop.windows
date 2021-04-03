@@ -17,7 +17,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
+        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<ITfComposition*, Guid*, void**, int>)(lpVtbl[0]))((ITfComposition*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -38,21 +38,21 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int GetRange([NativeTypeName("ITfRange **")] ITfRange** ppRange)
+        public int GetRange(ITfRange** ppRange)
         {
             return ((delegate* unmanaged<ITfComposition*, ITfRange**, int>)(lpVtbl[3]))((ITfComposition*)Unsafe.AsPointer(ref this), ppRange);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int ShiftStart([NativeTypeName("TfEditCookie")] uint ecWrite, [NativeTypeName("ITfRange *")] ITfRange* pNewStart)
+        public int ShiftStart([NativeTypeName("TfEditCookie")] uint ecWrite, ITfRange* pNewStart)
         {
             return ((delegate* unmanaged<ITfComposition*, uint, ITfRange*, int>)(lpVtbl[4]))((ITfComposition*)Unsafe.AsPointer(ref this), ecWrite, pNewStart);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int ShiftEnd([NativeTypeName("TfEditCookie")] uint ecWrite, [NativeTypeName("ITfRange *")] ITfRange* pNewEnd)
+        public int ShiftEnd([NativeTypeName("TfEditCookie")] uint ecWrite, ITfRange* pNewEnd)
         {
             return ((delegate* unmanaged<ITfComposition*, uint, ITfRange*, int>)(lpVtbl[5]))((ITfComposition*)Unsafe.AsPointer(ref this), ecWrite, pNewEnd);
         }

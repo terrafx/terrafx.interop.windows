@@ -9,10 +9,8 @@ namespace TerraFX.Interop
     {
         public WS_XML_READER_ENCODING encoding;
 
-        [NativeTypeName("WS_XML_DICTIONARY *")]
         public WS_XML_DICTIONARY* staticDictionary;
 
-        [NativeTypeName("WS_XML_DICTIONARY *")]
         public WS_XML_DICTIONARY* dynamicDictionary;
     }
 }

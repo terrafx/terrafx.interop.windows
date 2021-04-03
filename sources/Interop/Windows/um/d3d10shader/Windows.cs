@@ -32,19 +32,19 @@ namespace TerraFX.Interop
 
         [DllImport("d3d10", ExactSpelling = true)]
         [return: NativeTypeName("LPCSTR")]
-        public static extern sbyte* D3D10GetPixelShaderProfile([NativeTypeName("ID3D10Device *")] ID3D10Device* pDevice);
+        public static extern sbyte* D3D10GetPixelShaderProfile(ID3D10Device* pDevice);
 
         [DllImport("d3d10", ExactSpelling = true)]
         [return: NativeTypeName("LPCSTR")]
-        public static extern sbyte* D3D10GetVertexShaderProfile([NativeTypeName("ID3D10Device *")] ID3D10Device* pDevice);
+        public static extern sbyte* D3D10GetVertexShaderProfile(ID3D10Device* pDevice);
 
         [DllImport("d3d10", ExactSpelling = true)]
         [return: NativeTypeName("LPCSTR")]
-        public static extern sbyte* D3D10GetGeometryShaderProfile([NativeTypeName("ID3D10Device *")] ID3D10Device* pDevice);
+        public static extern sbyte* D3D10GetGeometryShaderProfile(ID3D10Device* pDevice);
 
         [DllImport("d3d10", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int D3D10ReflectShader([NativeTypeName("const void *")] void* pShaderBytecode, [NativeTypeName("SIZE_T")] nuint BytecodeLength, [NativeTypeName("ID3D10ShaderReflection **")] ID3D10ShaderReflection** ppReflector);
+        public static extern int D3D10ReflectShader([NativeTypeName("const void *")] void* pShaderBytecode, [NativeTypeName("SIZE_T")] nuint BytecodeLength, ID3D10ShaderReflection** ppReflector);
 
         [DllImport("d3d10", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]

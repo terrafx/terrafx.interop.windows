@@ -12,11 +12,11 @@ namespace TerraFX.Interop
     {
         [DllImport("Windows.UI.dll", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int CreateControlInput([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppv);
+        public static extern int CreateControlInput([NativeTypeName("const IID &")] Guid* riid, void** ppv);
 
         [DllImport("Windows.UI.dll", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int CreateControlInputEx([NativeTypeName("IUnknown *")] IUnknown* pCoreWindow, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppv);
+        public static extern int CreateControlInputEx(IUnknown* pCoreWindow, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
 
         public static readonly Guid IID_ICoreWindowInterop = new Guid(0x45D64A29, 0xA63E, 0x4CB6, 0xB4, 0x98, 0x57, 0x81, 0xD2, 0x98, 0xCB, 0x4F);
 

@@ -15,7 +15,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
+        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<ID3D10EffectPool*, Guid*, void**, int>)(lpVtbl[0]))((ID3D10EffectPool*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -35,7 +35,6 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [return: NativeTypeName("ID3D10Effect *")]
         public ID3D10Effect* AsEffect()
         {
             return ((delegate* unmanaged<ID3D10EffectPool*, ID3D10Effect*>)(lpVtbl[3]))((ID3D10EffectPool*)Unsafe.AsPointer(ref this));

@@ -15,7 +15,6 @@ namespace TerraFX.Interop
         [NativeTypeName("UINT")]
         public uint FormatCount;
 
-        [NativeTypeName("DXGI_FORMAT *")]
         public DXGI_FORMAT* pOutputFormats;
     }
 }

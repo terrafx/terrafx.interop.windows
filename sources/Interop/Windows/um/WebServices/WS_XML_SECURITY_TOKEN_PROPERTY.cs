@@ -9,7 +9,6 @@ namespace TerraFX.Interop
     {
         public WS_XML_SECURITY_TOKEN_PROPERTY_ID id;
 
-        [NativeTypeName("void *")]
         public void* value;
 
         [NativeTypeName("ULONG")]

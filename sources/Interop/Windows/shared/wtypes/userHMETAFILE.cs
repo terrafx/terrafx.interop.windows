@@ -23,7 +23,6 @@ namespace TerraFX.Interop
             public int hInproc;
 
             [FieldOffset(0)]
-            [NativeTypeName("BYTE_BLOB *")]
             public BYTE_BLOB* hRemote;
 
             [FieldOffset(0)]

@@ -13,6 +13,9 @@ namespace TerraFX.Interop
         [NativeTypeName("_IMAGE_RESOURCE_DIRECTORY_ENTRY::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:18399:5)")]
         public _Anonymous1_e__Union Anonymous1;
 
+        [NativeTypeName("_IMAGE_RESOURCE_DIRECTORY_ENTRY::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:18407:5)")]
+        public _Anonymous2_e__Union Anonymous2;
+
         public uint NameOffset
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -60,9 +63,6 @@ namespace TerraFX.Interop
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous1.Id, 1));
             }
         }
-
-        [NativeTypeName("_IMAGE_RESOURCE_DIRECTORY_ENTRY::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:18407:5)")]
-        public _Anonymous2_e__Union Anonymous2;
 
         public ref uint OffsetToData
         {

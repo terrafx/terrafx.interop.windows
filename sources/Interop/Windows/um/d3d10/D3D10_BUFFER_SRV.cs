@@ -13,6 +13,9 @@ namespace TerraFX.Interop
         [NativeTypeName("D3D10_BUFFER_SRV::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/d3d10.h:2727:5)")]
         public _Anonymous1_e__Union Anonymous1;
 
+        [NativeTypeName("D3D10_BUFFER_SRV::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/d3d10.h:2732:5)")]
+        public _Anonymous2_e__Union Anonymous2;
+
         public ref uint FirstElement
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -30,9 +33,6 @@ namespace TerraFX.Interop
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous1.ElementOffset, 1));
             }
         }
-
-        [NativeTypeName("D3D10_BUFFER_SRV::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/d3d10.h:2732:5)")]
-        public _Anonymous2_e__Union Anonymous2;
 
         public ref uint NumElements
         {

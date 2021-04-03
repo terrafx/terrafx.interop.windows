@@ -23,7 +23,6 @@ namespace TerraFX.Interop
         [NativeTypeName("WS_VALIDATE_SAML_CALLBACK")]
         public delegate* unmanaged<void*, IntPtr, IntPtr, int> samlValidator;
 
-        [NativeTypeName("void *")]
         public void* samlValidatorCallbackState;
     }
 }

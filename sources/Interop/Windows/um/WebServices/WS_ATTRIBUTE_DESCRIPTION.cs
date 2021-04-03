@@ -7,15 +7,12 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct WS_ATTRIBUTE_DESCRIPTION
     {
-        [NativeTypeName("WS_XML_STRING *")]
         public WS_XML_STRING* attributeLocalName;
 
-        [NativeTypeName("WS_XML_STRING *")]
         public WS_XML_STRING* attributeNs;
 
         public WS_TYPE type;
 
-        [NativeTypeName("void *")]
         public void* typeDescription;
     }
 }

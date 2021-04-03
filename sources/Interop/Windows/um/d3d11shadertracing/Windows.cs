@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     {
         [DllImport("d3d11sdklayers", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int D3DDisassemble11Trace([NativeTypeName("LPCVOID")] void* pSrcData, [NativeTypeName("SIZE_T")] nuint SrcDataSize, [NativeTypeName("ID3D11ShaderTrace *")] ID3D11ShaderTrace* pTrace, [NativeTypeName("UINT")] uint StartStep, [NativeTypeName("UINT")] uint NumSteps, [NativeTypeName("UINT")] uint Flags, [NativeTypeName("struct ID3D10Blob **")] ID3DBlob** ppDisassembly);
+        public static extern int D3DDisassemble11Trace([NativeTypeName("LPCVOID")] void* pSrcData, [NativeTypeName("SIZE_T")] nuint SrcDataSize, ID3D11ShaderTrace* pTrace, [NativeTypeName("UINT")] uint StartStep, [NativeTypeName("UINT")] uint NumSteps, [NativeTypeName("UINT")] uint Flags, [NativeTypeName("struct ID3D10Blob **")] ID3DBlob** ppDisassembly);
 
         [NativeTypeName("#define D3D11_TRACE_COMPONENT_X 0x1")]
         public const int D3D11_TRACE_COMPONENT_X = 0x1;

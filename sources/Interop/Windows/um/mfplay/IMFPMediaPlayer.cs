@@ -17,7 +17,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
+        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IMFPMediaPlayer*, Guid*, void**, int>)(lpVtbl[0]))((IMFPMediaPlayer*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -73,14 +73,14 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int GetPosition([NativeTypeName("const GUID &")] Guid* guidPositionType, [NativeTypeName("PROPVARIANT *")] PROPVARIANT* pvPositionValue)
+        public int GetPosition([NativeTypeName("const GUID &")] Guid* guidPositionType, PROPVARIANT* pvPositionValue)
         {
             return ((delegate* unmanaged<IMFPMediaPlayer*, Guid*, PROPVARIANT*, int>)(lpVtbl[8]))((IMFPMediaPlayer*)Unsafe.AsPointer(ref this), guidPositionType, pvPositionValue);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int GetDuration([NativeTypeName("const GUID &")] Guid* guidPositionType, [NativeTypeName("PROPVARIANT *")] PROPVARIANT* pvDurationValue)
+        public int GetDuration([NativeTypeName("const GUID &")] Guid* guidPositionType, PROPVARIANT* pvDurationValue)
         {
             return ((delegate* unmanaged<IMFPMediaPlayer*, Guid*, PROPVARIANT*, int>)(lpVtbl[9]))((IMFPMediaPlayer*)Unsafe.AsPointer(ref this), guidPositionType, pvDurationValue);
         }
@@ -94,42 +94,42 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int GetRate([NativeTypeName("float *")] float* pflRate)
+        public int GetRate(float* pflRate)
         {
             return ((delegate* unmanaged<IMFPMediaPlayer*, float*, int>)(lpVtbl[11]))((IMFPMediaPlayer*)Unsafe.AsPointer(ref this), pflRate);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int GetSupportedRates([NativeTypeName("BOOL")] int fForwardDirection, [NativeTypeName("float *")] float* pflSlowestRate, [NativeTypeName("float *")] float* pflFastestRate)
+        public int GetSupportedRates([NativeTypeName("BOOL")] int fForwardDirection, float* pflSlowestRate, float* pflFastestRate)
         {
             return ((delegate* unmanaged<IMFPMediaPlayer*, int, float*, float*, int>)(lpVtbl[12]))((IMFPMediaPlayer*)Unsafe.AsPointer(ref this), fForwardDirection, pflSlowestRate, pflFastestRate);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int GetState([NativeTypeName("MFP_MEDIAPLAYER_STATE *")] MFP_MEDIAPLAYER_STATE* peState)
+        public int GetState(MFP_MEDIAPLAYER_STATE* peState)
         {
             return ((delegate* unmanaged<IMFPMediaPlayer*, MFP_MEDIAPLAYER_STATE*, int>)(lpVtbl[13]))((IMFPMediaPlayer*)Unsafe.AsPointer(ref this), peState);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int CreateMediaItemFromURL([NativeTypeName("LPCWSTR")] ushort* pwszURL, [NativeTypeName("BOOL")] int fSync, [NativeTypeName("DWORD_PTR")] nuint dwUserData, [NativeTypeName("IMFPMediaItem **")] IMFPMediaItem** ppMediaItem)
+        public int CreateMediaItemFromURL([NativeTypeName("LPCWSTR")] ushort* pwszURL, [NativeTypeName("BOOL")] int fSync, [NativeTypeName("DWORD_PTR")] nuint dwUserData, IMFPMediaItem** ppMediaItem)
         {
             return ((delegate* unmanaged<IMFPMediaPlayer*, ushort*, int, nuint, IMFPMediaItem**, int>)(lpVtbl[14]))((IMFPMediaPlayer*)Unsafe.AsPointer(ref this), pwszURL, fSync, dwUserData, ppMediaItem);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int CreateMediaItemFromObject([NativeTypeName("IUnknown *")] IUnknown* pIUnknownObj, [NativeTypeName("BOOL")] int fSync, [NativeTypeName("DWORD_PTR")] nuint dwUserData, [NativeTypeName("IMFPMediaItem **")] IMFPMediaItem** ppMediaItem)
+        public int CreateMediaItemFromObject(IUnknown* pIUnknownObj, [NativeTypeName("BOOL")] int fSync, [NativeTypeName("DWORD_PTR")] nuint dwUserData, IMFPMediaItem** ppMediaItem)
         {
             return ((delegate* unmanaged<IMFPMediaPlayer*, IUnknown*, int, nuint, IMFPMediaItem**, int>)(lpVtbl[15]))((IMFPMediaPlayer*)Unsafe.AsPointer(ref this), pIUnknownObj, fSync, dwUserData, ppMediaItem);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int SetMediaItem([NativeTypeName("IMFPMediaItem *")] IMFPMediaItem* pIMFPMediaItem)
+        public int SetMediaItem(IMFPMediaItem* pIMFPMediaItem)
         {
             return ((delegate* unmanaged<IMFPMediaPlayer*, IMFPMediaItem*, int>)(lpVtbl[16]))((IMFPMediaPlayer*)Unsafe.AsPointer(ref this), pIMFPMediaItem);
         }
@@ -143,14 +143,14 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int GetMediaItem([NativeTypeName("IMFPMediaItem **")] IMFPMediaItem** ppIMFPMediaItem)
+        public int GetMediaItem(IMFPMediaItem** ppIMFPMediaItem)
         {
             return ((delegate* unmanaged<IMFPMediaPlayer*, IMFPMediaItem**, int>)(lpVtbl[18]))((IMFPMediaPlayer*)Unsafe.AsPointer(ref this), ppIMFPMediaItem);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int GetVolume([NativeTypeName("float *")] float* pflVolume)
+        public int GetVolume(float* pflVolume)
         {
             return ((delegate* unmanaged<IMFPMediaPlayer*, float*, int>)(lpVtbl[19]))((IMFPMediaPlayer*)Unsafe.AsPointer(ref this), pflVolume);
         }
@@ -164,7 +164,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int GetBalance([NativeTypeName("float *")] float* pflBalance)
+        public int GetBalance(float* pflBalance)
         {
             return ((delegate* unmanaged<IMFPMediaPlayer*, float*, int>)(lpVtbl[21]))((IMFPMediaPlayer*)Unsafe.AsPointer(ref this), pflBalance);
         }
@@ -192,14 +192,14 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int GetNativeVideoSize([NativeTypeName("SIZE *")] SIZE* pszVideo, [NativeTypeName("SIZE *")] SIZE* pszARVideo)
+        public int GetNativeVideoSize(SIZE* pszVideo, SIZE* pszARVideo)
         {
             return ((delegate* unmanaged<IMFPMediaPlayer*, SIZE*, SIZE*, int>)(lpVtbl[25]))((IMFPMediaPlayer*)Unsafe.AsPointer(ref this), pszVideo, pszARVideo);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int GetIdealVideoSize([NativeTypeName("SIZE *")] SIZE* pszMin, [NativeTypeName("SIZE *")] SIZE* pszMax)
+        public int GetIdealVideoSize(SIZE* pszMin, SIZE* pszMax)
         {
             return ((delegate* unmanaged<IMFPMediaPlayer*, SIZE*, SIZE*, int>)(lpVtbl[26]))((IMFPMediaPlayer*)Unsafe.AsPointer(ref this), pszMin, pszMax);
         }
@@ -213,7 +213,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int GetVideoSourceRect([NativeTypeName("MFVideoNormalizedRect *")] MFVideoNormalizedRect* pnrcSource)
+        public int GetVideoSourceRect(MFVideoNormalizedRect* pnrcSource)
         {
             return ((delegate* unmanaged<IMFPMediaPlayer*, MFVideoNormalizedRect*, int>)(lpVtbl[28]))((IMFPMediaPlayer*)Unsafe.AsPointer(ref this), pnrcSource);
         }
@@ -262,14 +262,14 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int InsertEffect([NativeTypeName("IUnknown *")] IUnknown* pEffect, [NativeTypeName("BOOL")] int fOptional)
+        public int InsertEffect(IUnknown* pEffect, [NativeTypeName("BOOL")] int fOptional)
         {
             return ((delegate* unmanaged<IMFPMediaPlayer*, IUnknown*, int, int>)(lpVtbl[35]))((IMFPMediaPlayer*)Unsafe.AsPointer(ref this), pEffect, fOptional);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int RemoveEffect([NativeTypeName("IUnknown *")] IUnknown* pEffect)
+        public int RemoveEffect(IUnknown* pEffect)
         {
             return ((delegate* unmanaged<IMFPMediaPlayer*, IUnknown*, int>)(lpVtbl[36]))((IMFPMediaPlayer*)Unsafe.AsPointer(ref this), pEffect);
         }

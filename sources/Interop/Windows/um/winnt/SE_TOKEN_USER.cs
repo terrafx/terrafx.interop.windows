@@ -14,6 +14,9 @@ namespace TerraFX.Interop
         [NativeTypeName("_SE_TOKEN_USER::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:10851:5)")]
         public _Anonymous1_e__Union Anonymous1;
 
+        [NativeTypeName("_SE_TOKEN_USER::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:10856:5)")]
+        public _Anonymous2_e__Union Anonymous2;
+
         public ref TOKEN_USER TokenUser
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -31,9 +34,6 @@ namespace TerraFX.Interop
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous1.User, 1));
             }
         }
-
-        [NativeTypeName("_SE_TOKEN_USER::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:10856:5)")]
-        public _Anonymous2_e__Union Anonymous2;
 
         public ref SID Sid
         {

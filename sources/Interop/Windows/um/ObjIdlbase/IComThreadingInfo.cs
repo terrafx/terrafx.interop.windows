@@ -17,7 +17,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
+        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IComThreadingInfo*, Guid*, void**, int>)(lpVtbl[0]))((IComThreadingInfo*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -38,14 +38,14 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int GetCurrentApartmentType([NativeTypeName("APTTYPE *")] APTTYPE* pAptType)
+        public int GetCurrentApartmentType(APTTYPE* pAptType)
         {
             return ((delegate* unmanaged<IComThreadingInfo*, APTTYPE*, int>)(lpVtbl[3]))((IComThreadingInfo*)Unsafe.AsPointer(ref this), pAptType);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int GetCurrentThreadType([NativeTypeName("THDTYPE *")] THDTYPE* pThreadType)
+        public int GetCurrentThreadType(THDTYPE* pThreadType)
         {
             return ((delegate* unmanaged<IComThreadingInfo*, THDTYPE*, int>)(lpVtbl[4]))((IComThreadingInfo*)Unsafe.AsPointer(ref this), pThreadType);
         }

@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct D2D1_EFFECT_INPUT_DESCRIPTION
     {
-        [NativeTypeName("ID2D1Effect *")]
         public ID2D1Effect* effect;
 
         [NativeTypeName("UINT32")]

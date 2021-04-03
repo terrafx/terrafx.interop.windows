@@ -13,13 +13,11 @@ namespace TerraFX.Interop
         [NativeTypeName("ULONG")]
         public uint responseMappingOptions;
 
-        [NativeTypeName("WS_HTTP_HEADER_MAPPING **")]
         public WS_HTTP_HEADER_MAPPING** requestHeaderMappings;
 
         [NativeTypeName("ULONG")]
         public uint requestHeaderMappingCount;
 
-        [NativeTypeName("WS_HTTP_HEADER_MAPPING **")]
         public WS_HTTP_HEADER_MAPPING** responseHeaderMappings;
 
         [NativeTypeName("ULONG")]

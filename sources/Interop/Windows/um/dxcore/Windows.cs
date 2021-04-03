@@ -12,6 +12,6 @@ namespace TerraFX.Interop
     {
         [DllImport("DXCore", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int DXCoreCreateAdapterFactory([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvFactory);
+        public static extern int DXCoreCreateAdapterFactory([NativeTypeName("const IID &")] Guid* riid, void** ppvFactory);
     }
 }

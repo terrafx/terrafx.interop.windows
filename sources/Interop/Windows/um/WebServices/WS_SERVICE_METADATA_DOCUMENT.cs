@@ -7,10 +7,8 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct WS_SERVICE_METADATA_DOCUMENT
     {
-        [NativeTypeName("WS_XML_STRING *")]
         public WS_XML_STRING* content;
 
-        [NativeTypeName("WS_STRING *")]
         public WS_STRING* name;
     }
 }

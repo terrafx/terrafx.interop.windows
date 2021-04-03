@@ -17,7 +17,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
+        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<ILanguageExceptionErrorInfo*, Guid*, void**, int>)(lpVtbl[0]))((ILanguageExceptionErrorInfo*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -38,7 +38,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int GetLanguageException([NativeTypeName("IUnknown **")] IUnknown** languageException)
+        public int GetLanguageException(IUnknown** languageException)
         {
             return ((delegate* unmanaged<ILanguageExceptionErrorInfo*, IUnknown**, int>)(lpVtbl[3]))((ILanguageExceptionErrorInfo*)Unsafe.AsPointer(ref this), languageException);
         }

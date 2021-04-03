@@ -9,7 +9,6 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct userSTGMEDIUM
     {
-        [NativeTypeName("IUnknown *")]
         public IUnknown* pUnkForRelease;
 
         public partial struct _STGMEDIUM_UNION
@@ -32,7 +31,6 @@ namespace TerraFX.Interop
                 public userHENHMETAFILE* hHEnhMetaFile;
 
                 [FieldOffset(0)]
-                [NativeTypeName("GDI_OBJECT *")]
                 public GDI_OBJECT* hGdiHandle;
 
                 [FieldOffset(0)]
@@ -44,11 +42,9 @@ namespace TerraFX.Interop
                 public ushort* lpszFileName;
 
                 [FieldOffset(0)]
-                [NativeTypeName("BYTE_BLOB *")]
                 public BYTE_BLOB* pstm;
 
                 [FieldOffset(0)]
-                [NativeTypeName("BYTE_BLOB *")]
                 public BYTE_BLOB* pstg;
             }
         }

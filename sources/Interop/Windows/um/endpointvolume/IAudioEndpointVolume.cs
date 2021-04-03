@@ -17,7 +17,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
+        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IAudioEndpointVolume*, Guid*, void**, int>)(lpVtbl[0]))((IAudioEndpointVolume*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -38,14 +38,14 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int RegisterControlChangeNotify([NativeTypeName("IAudioEndpointVolumeCallback *")] IAudioEndpointVolumeCallback* pNotify)
+        public int RegisterControlChangeNotify(IAudioEndpointVolumeCallback* pNotify)
         {
             return ((delegate* unmanaged<IAudioEndpointVolume*, IAudioEndpointVolumeCallback*, int>)(lpVtbl[3]))((IAudioEndpointVolume*)Unsafe.AsPointer(ref this), pNotify);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int UnregisterControlChangeNotify([NativeTypeName("IAudioEndpointVolumeCallback *")] IAudioEndpointVolumeCallback* pNotify)
+        public int UnregisterControlChangeNotify(IAudioEndpointVolumeCallback* pNotify)
         {
             return ((delegate* unmanaged<IAudioEndpointVolume*, IAudioEndpointVolumeCallback*, int>)(lpVtbl[4]))((IAudioEndpointVolume*)Unsafe.AsPointer(ref this), pNotify);
         }
@@ -73,14 +73,14 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int GetMasterVolumeLevel([NativeTypeName("float *")] float* pfLevelDB)
+        public int GetMasterVolumeLevel(float* pfLevelDB)
         {
             return ((delegate* unmanaged<IAudioEndpointVolume*, float*, int>)(lpVtbl[8]))((IAudioEndpointVolume*)Unsafe.AsPointer(ref this), pfLevelDB);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int GetMasterVolumeLevelScalar([NativeTypeName("float *")] float* pfLevel)
+        public int GetMasterVolumeLevelScalar(float* pfLevel)
         {
             return ((delegate* unmanaged<IAudioEndpointVolume*, float*, int>)(lpVtbl[9]))((IAudioEndpointVolume*)Unsafe.AsPointer(ref this), pfLevel);
         }
@@ -101,14 +101,14 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int GetChannelVolumeLevel([NativeTypeName("UINT")] uint nChannel, [NativeTypeName("float *")] float* pfLevelDB)
+        public int GetChannelVolumeLevel([NativeTypeName("UINT")] uint nChannel, float* pfLevelDB)
         {
             return ((delegate* unmanaged<IAudioEndpointVolume*, uint, float*, int>)(lpVtbl[12]))((IAudioEndpointVolume*)Unsafe.AsPointer(ref this), nChannel, pfLevelDB);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int GetChannelVolumeLevelScalar([NativeTypeName("UINT")] uint nChannel, [NativeTypeName("float *")] float* pfLevel)
+        public int GetChannelVolumeLevelScalar([NativeTypeName("UINT")] uint nChannel, float* pfLevel)
         {
             return ((delegate* unmanaged<IAudioEndpointVolume*, uint, float*, int>)(lpVtbl[13]))((IAudioEndpointVolume*)Unsafe.AsPointer(ref this), nChannel, pfLevel);
         }
@@ -157,7 +157,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int GetVolumeRange([NativeTypeName("float *")] float* pflVolumeMindB, [NativeTypeName("float *")] float* pflVolumeMaxdB, [NativeTypeName("float *")] float* pflVolumeIncrementdB)
+        public int GetVolumeRange(float* pflVolumeMindB, float* pflVolumeMaxdB, float* pflVolumeIncrementdB)
         {
             return ((delegate* unmanaged<IAudioEndpointVolume*, float*, float*, float*, int>)(lpVtbl[20]))((IAudioEndpointVolume*)Unsafe.AsPointer(ref this), pflVolumeMindB, pflVolumeMaxdB, pflVolumeIncrementdB);
         }

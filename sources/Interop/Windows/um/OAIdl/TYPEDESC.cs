@@ -13,6 +13,9 @@ namespace TerraFX.Interop
         [NativeTypeName("tagTYPEDESC::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/OAIdl.h:645:36)")]
         public _Anonymous_e__Union Anonymous;
 
+        [NativeTypeName("VARTYPE")]
+        public ushort vt;
+
         public ref TYPEDESC* lptdesc
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -45,9 +48,6 @@ namespace TerraFX.Interop
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.hreftype, 1));
             }
         }
-
-        [NativeTypeName("VARTYPE")]
-        public ushort vt;
 
         [StructLayout(LayoutKind.Explicit)]
         public unsafe partial struct _Anonymous_e__Union

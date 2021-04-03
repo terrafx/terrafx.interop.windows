@@ -28,7 +28,6 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint dwStreamId;
 
-        [NativeTypeName("AM_MEDIA_TYPE *")]
         public AM_MEDIA_TYPE* pMediaType;
 
         [NativeTypeName("BYTE *")]

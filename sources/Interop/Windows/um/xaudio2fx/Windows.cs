@@ -12,11 +12,11 @@ namespace TerraFX.Interop
     {
         [DllImport("Windows.Media.Audio.dll", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int CreateAudioVolumeMeter([NativeTypeName("IUnknown **")] IUnknown** ppApo);
+        public static extern int CreateAudioVolumeMeter(IUnknown** ppApo);
 
         [DllImport("Windows.Media.Audio.dll", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int CreateAudioReverb([NativeTypeName("IUnknown **")] IUnknown** ppApo);
+        public static extern int CreateAudioReverb(IUnknown** ppApo);
 
         [NativeTypeName("#define XAUDIO2FX_REVERB_MIN_FRAMERATE 20000")]
         public const int XAUDIO2FX_REVERB_MIN_FRAMERATE = 20000;

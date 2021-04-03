@@ -23,7 +23,6 @@ namespace TerraFX.Interop
             public int hInproc;
 
             [FieldOffset(0)]
-            [NativeTypeName("DWORD_BLOB *")]
             public DWORD_BLOB* hRemote;
         }
     }

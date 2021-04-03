@@ -19,6 +19,20 @@ namespace TerraFX.Interop
         [NativeTypeName("_OCSP_BASIC_RESPONSE_INFO::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/wincrypt.h:5706:5)")]
         public _Anonymous_e__Union Anonymous;
 
+        public FILETIME ProducedAt;
+
+        [NativeTypeName("DWORD")]
+        public uint cResponseEntry;
+
+        [NativeTypeName("POCSP_BASIC_RESPONSE_ENTRY")]
+        public OCSP_BASIC_RESPONSE_ENTRY* rgResponseEntry;
+
+        [NativeTypeName("DWORD")]
+        public uint cExtension;
+
+        [NativeTypeName("PCERT_EXTENSION")]
+        public CERT_EXTENSION* rgExtension;
+
         public ref CRYPTOAPI_BLOB ByNameResponderId
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -36,20 +50,6 @@ namespace TerraFX.Interop
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.ByKeyResponderId, 1));
             }
         }
-
-        public FILETIME ProducedAt;
-
-        [NativeTypeName("DWORD")]
-        public uint cResponseEntry;
-
-        [NativeTypeName("POCSP_BASIC_RESPONSE_ENTRY")]
-        public OCSP_BASIC_RESPONSE_ENTRY* rgResponseEntry;
-
-        [NativeTypeName("DWORD")]
-        public uint cExtension;
-
-        [NativeTypeName("PCERT_EXTENSION")]
-        public CERT_EXTENSION* rgExtension;
 
         [StructLayout(LayoutKind.Explicit)]
         public partial struct _Anonymous_e__Union

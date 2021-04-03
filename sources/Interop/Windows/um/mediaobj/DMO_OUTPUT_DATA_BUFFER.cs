@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct DMO_OUTPUT_DATA_BUFFER
     {
-        [NativeTypeName("IMediaBuffer *")]
         public IMediaBuffer* pBuffer;
 
         [NativeTypeName("DWORD")]

@@ -14,6 +14,17 @@ namespace TerraFX.Interop
         [NativeTypeName("_QUERY_FILE_LAYOUT_INPUT::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winioctl.h:14347:5)")]
         public _Anonymous_e__Union Anonymous;
 
+        [NativeTypeName("DWORD")]
+        public uint Flags;
+
+        public QUERY_FILE_LAYOUT_FILTER_TYPE FilterType;
+
+        [NativeTypeName("DWORD")]
+        public uint Reserved;
+
+        [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winioctl.h:14374:5)")]
+        public _Filter_e__Union Filter;
+
         public ref uint FilterEntryCount
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -31,17 +42,6 @@ namespace TerraFX.Interop
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.NumberOfPairs, 1));
             }
         }
-
-        [NativeTypeName("DWORD")]
-        public uint Flags;
-
-        public QUERY_FILE_LAYOUT_FILTER_TYPE FilterType;
-
-        [NativeTypeName("DWORD")]
-        public uint Reserved;
-
-        [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winioctl.h:14374:5)")]
-        public _Filter_e__Union Filter;
 
         [StructLayout(LayoutKind.Explicit)]
         public partial struct _Anonymous_e__Union

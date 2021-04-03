@@ -7,10 +7,8 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct D3D12_RESOURCE_ALIASING_BARRIER
     {
-        [NativeTypeName("ID3D12Resource *")]
         public ID3D12Resource* pResourceBefore;
 
-        [NativeTypeName("ID3D12Resource *")]
         public ID3D12Resource* pResourceAfter;
     }
 }

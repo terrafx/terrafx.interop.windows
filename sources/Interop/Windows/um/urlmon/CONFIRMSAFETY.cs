@@ -12,7 +12,6 @@ namespace TerraFX.Interop
         [NativeTypeName("CLSID")]
         public Guid clsid;
 
-        [NativeTypeName("IUnknown *")]
         public IUnknown* pUnk;
 
         [NativeTypeName("DWORD")]

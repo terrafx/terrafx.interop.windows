@@ -7,13 +7,11 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct WS_SECURITY_CONSTRAINTS
     {
-        [NativeTypeName("WS_SECURITY_PROPERTY_CONSTRAINT *")]
         public WS_SECURITY_PROPERTY_CONSTRAINT* securityPropertyConstraints;
 
         [NativeTypeName("ULONG")]
         public uint securityPropertyConstraintCount;
 
-        [NativeTypeName("WS_SECURITY_BINDING_CONSTRAINT **")]
         public WS_SECURITY_BINDING_CONSTRAINT** securityBindingConstraints;
 
         [NativeTypeName("ULONG")]

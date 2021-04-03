@@ -9,7 +9,6 @@ namespace TerraFX.Interop
     {
         public WS_SECURITY_BINDING_PROPERTIES securityBindingProperties;
 
-        [NativeTypeName("WS_CERT_CREDENTIAL *")]
         public WS_CERT_CREDENTIAL* localCertCredential;
     }
 }

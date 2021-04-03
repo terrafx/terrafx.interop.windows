@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct WS_MESSAGE_PROPERTIES
     {
-        [NativeTypeName("WS_MESSAGE_PROPERTY *")]
         public WS_MESSAGE_PROPERTY* properties;
 
         [NativeTypeName("ULONG")]

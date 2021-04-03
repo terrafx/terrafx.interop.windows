@@ -17,7 +17,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
+        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IAudioClient3*, Guid*, void**, int>)(lpVtbl[0]))((IAudioClient3*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -66,14 +66,14 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int IsFormatSupported(AUDCLNT_SHAREMODE ShareMode, [NativeTypeName("const WAVEFORMATEX *")] WAVEFORMATEX* pFormat, [NativeTypeName("WAVEFORMATEX **")] WAVEFORMATEX** ppClosestMatch)
+        public int IsFormatSupported(AUDCLNT_SHAREMODE ShareMode, [NativeTypeName("const WAVEFORMATEX *")] WAVEFORMATEX* pFormat, WAVEFORMATEX** ppClosestMatch)
         {
             return ((delegate* unmanaged<IAudioClient3*, AUDCLNT_SHAREMODE, WAVEFORMATEX*, WAVEFORMATEX**, int>)(lpVtbl[7]))((IAudioClient3*)Unsafe.AsPointer(ref this), ShareMode, pFormat, ppClosestMatch);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int GetMixFormat([NativeTypeName("WAVEFORMATEX **")] WAVEFORMATEX** ppDeviceFormat)
+        public int GetMixFormat(WAVEFORMATEX** ppDeviceFormat)
         {
             return ((delegate* unmanaged<IAudioClient3*, WAVEFORMATEX**, int>)(lpVtbl[8]))((IAudioClient3*)Unsafe.AsPointer(ref this), ppDeviceFormat);
         }
@@ -115,7 +115,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int GetService([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppv)
+        public int GetService([NativeTypeName("const IID &")] Guid* riid, void** ppv)
         {
             return ((delegate* unmanaged<IAudioClient3*, Guid*, void**, int>)(lpVtbl[14]))((IAudioClient3*)Unsafe.AsPointer(ref this), riid, ppv);
         }
@@ -150,7 +150,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int GetCurrentSharedModeEnginePeriod([NativeTypeName("WAVEFORMATEX **")] WAVEFORMATEX** ppFormat, [NativeTypeName("UINT32 *")] uint* pCurrentPeriodInFrames)
+        public int GetCurrentSharedModeEnginePeriod(WAVEFORMATEX** ppFormat, [NativeTypeName("UINT32 *")] uint* pCurrentPeriodInFrames)
         {
             return ((delegate* unmanaged<IAudioClient3*, WAVEFORMATEX**, uint*, int>)(lpVtbl[19]))((IAudioClient3*)Unsafe.AsPointer(ref this), ppFormat, pCurrentPeriodInFrames);
         }

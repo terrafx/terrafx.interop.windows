@@ -59,7 +59,6 @@ namespace TerraFX.Interop
         public unsafe partial struct _Anonymous_e__Union
         {
             [FieldOffset(0)]
-            [NativeTypeName("void *")]
             public void* pvInfo;
 
             [FieldOffset(0)]

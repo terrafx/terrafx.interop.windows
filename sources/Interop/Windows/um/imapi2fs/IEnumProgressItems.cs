@@ -17,7 +17,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
+        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IEnumProgressItems*, Guid*, void**, int>)(lpVtbl[0]))((IEnumProgressItems*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -38,7 +38,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int Next([NativeTypeName("ULONG")] uint celt, [NativeTypeName("IProgressItem **")] IProgressItem** rgelt, [NativeTypeName("ULONG *")] uint* pceltFetched)
+        public int Next([NativeTypeName("ULONG")] uint celt, IProgressItem** rgelt, [NativeTypeName("ULONG *")] uint* pceltFetched)
         {
             return ((delegate* unmanaged<IEnumProgressItems*, uint, IProgressItem**, uint*, int>)(lpVtbl[3]))((IEnumProgressItems*)Unsafe.AsPointer(ref this), celt, rgelt, pceltFetched);
         }
@@ -59,7 +59,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int Clone([NativeTypeName("IEnumProgressItems **")] IEnumProgressItems** ppEnum)
+        public int Clone(IEnumProgressItems** ppEnum)
         {
             return ((delegate* unmanaged<IEnumProgressItems*, IEnumProgressItems**, int>)(lpVtbl[6]))((IEnumProgressItems*)Unsafe.AsPointer(ref this), ppEnum);
         }

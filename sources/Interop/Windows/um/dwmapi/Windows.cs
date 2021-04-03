@@ -45,7 +45,7 @@ namespace TerraFX.Interop
 
         [DllImport("dwmapi", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int DwmGetCompositionTimingInfo([NativeTypeName("HWND")] IntPtr hwnd, [NativeTypeName("DWM_TIMING_INFO *")] DWM_TIMING_INFO* pTimingInfo);
+        public static extern int DwmGetCompositionTimingInfo([NativeTypeName("HWND")] IntPtr hwnd, DWM_TIMING_INFO* pTimingInfo);
 
         [DllImport("dwmapi", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
@@ -73,7 +73,7 @@ namespace TerraFX.Interop
 
         [DllImport("dwmapi", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int DwmSetPresentParameters([NativeTypeName("HWND")] IntPtr hwnd, [NativeTypeName("DWM_PRESENT_PARAMETERS *")] DWM_PRESENT_PARAMETERS* pPresentParams);
+        public static extern int DwmSetPresentParameters([NativeTypeName("HWND")] IntPtr hwnd, DWM_PRESENT_PARAMETERS* pPresentParams);
 
         [DllImport("dwmapi", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
@@ -93,7 +93,7 @@ namespace TerraFX.Interop
 
         [DllImport("dwmapi", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int DwmSetIconicLivePreviewBitmap([NativeTypeName("HWND")] IntPtr hwnd, [NativeTypeName("HBITMAP")] IntPtr hbmp, [NativeTypeName("POINT *")] POINT* pptClient, [NativeTypeName("DWORD")] uint dwSITFlags);
+        public static extern int DwmSetIconicLivePreviewBitmap([NativeTypeName("HWND")] IntPtr hwnd, [NativeTypeName("HBITMAP")] IntPtr hbmp, POINT* pptClient, [NativeTypeName("DWORD")] uint dwSITFlags);
 
         [DllImport("dwmapi", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
@@ -113,7 +113,7 @@ namespace TerraFX.Interop
 
         [DllImport("dwmapi", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int DwmGetGraphicsStreamTransformHint([NativeTypeName("UINT")] uint uIndex, [NativeTypeName("MilMatrix3x2D *")] MilMatrix3x2D* pTransform);
+        public static extern int DwmGetGraphicsStreamTransformHint([NativeTypeName("UINT")] uint uIndex, MilMatrix3x2D* pTransform);
 
         [DllImport("dwmapi", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]

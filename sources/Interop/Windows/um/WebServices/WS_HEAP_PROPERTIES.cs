@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct WS_HEAP_PROPERTIES
     {
-        [NativeTypeName("WS_HEAP_PROPERTY *")]
         public WS_HEAP_PROPERTY* properties;
 
         [NativeTypeName("ULONG")]

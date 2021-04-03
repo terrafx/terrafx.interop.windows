@@ -9,19 +9,15 @@ namespace TerraFX.Interop
     {
         public WS_XML_NODE node;
 
-        [NativeTypeName("WS_XML_STRING *")]
         public WS_XML_STRING* prefix;
 
-        [NativeTypeName("WS_XML_STRING *")]
         public WS_XML_STRING* localName;
 
-        [NativeTypeName("WS_XML_STRING *")]
         public WS_XML_STRING* ns;
 
         [NativeTypeName("ULONG")]
         public uint attributeCount;
 
-        [NativeTypeName("WS_XML_ATTRIBUTE **")]
         public WS_XML_ATTRIBUTE** attributes;
 
         [NativeTypeName("BOOL")]

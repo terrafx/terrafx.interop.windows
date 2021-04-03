@@ -10,10 +10,8 @@ namespace TerraFX.Interop
         [NativeTypeName("UINT")]
         public uint HWProtectionFunctionID;
 
-        [NativeTypeName("D3D11_KEY_EXCHANGE_HW_PROTECTION_INPUT_DATA *")]
         public D3D11_KEY_EXCHANGE_HW_PROTECTION_INPUT_DATA* pInputData;
 
-        [NativeTypeName("D3D11_KEY_EXCHANGE_HW_PROTECTION_OUTPUT_DATA *")]
         public D3D11_KEY_EXCHANGE_HW_PROTECTION_OUTPUT_DATA* pOutputData;
 
         [NativeTypeName("HRESULT")]

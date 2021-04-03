@@ -13,7 +13,6 @@ namespace TerraFX.Interop
         [NativeTypeName("LPWSTR")]
         public ushort* pSML;
 
-        [NativeTypeName("SPSEMANTICERRORINFO *")]
         public SPSEMANTICERRORINFO* pSemanticErrorInfo;
     }
 }

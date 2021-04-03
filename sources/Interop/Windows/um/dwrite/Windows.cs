@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     {
         [DllImport("DWrite", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int DWriteCreateFactory(DWRITE_FACTORY_TYPE factoryType, [NativeTypeName("const IID &")] Guid* iid, [NativeTypeName("IUnknown **")] IUnknown** factory);
+        public static extern int DWriteCreateFactory(DWRITE_FACTORY_TYPE factoryType, [NativeTypeName("const IID &")] Guid* iid, IUnknown** factory);
 
         [NativeTypeName("#define DWRITE_ALPHA_MAX 255")]
         public const int DWRITE_ALPHA_MAX = 255;

@@ -144,7 +144,7 @@ namespace TerraFX.Interop
 
         [DllImport("kernel32", ExactSpelling = true)]
         [return: NativeTypeName("LONG")]
-        public static extern int GetStagedPackageOrigin([NativeTypeName("PCWSTR")] ushort* packageFullName, [NativeTypeName("PackageOrigin *")] PackageOrigin* origin);
+        public static extern int GetStagedPackageOrigin([NativeTypeName("PCWSTR")] ushort* packageFullName, PackageOrigin* origin);
 
         [DllImport("kernel32", ExactSpelling = true)]
         [return: NativeTypeName("LONG")]
@@ -172,35 +172,35 @@ namespace TerraFX.Interop
 
         [DllImport("kernel32", ExactSpelling = true)]
         [return: NativeTypeName("LONG")]
-        public static extern int AppPolicyGetLifecycleManagement([NativeTypeName("HANDLE")] IntPtr processToken, [NativeTypeName("AppPolicyLifecycleManagement *")] AppPolicyLifecycleManagement* policy);
+        public static extern int AppPolicyGetLifecycleManagement([NativeTypeName("HANDLE")] IntPtr processToken, AppPolicyLifecycleManagement* policy);
 
         [DllImport("kernel32", ExactSpelling = true)]
         [return: NativeTypeName("LONG")]
-        public static extern int AppPolicyGetWindowingModel([NativeTypeName("HANDLE")] IntPtr processToken, [NativeTypeName("AppPolicyWindowingModel *")] AppPolicyWindowingModel* policy);
+        public static extern int AppPolicyGetWindowingModel([NativeTypeName("HANDLE")] IntPtr processToken, AppPolicyWindowingModel* policy);
 
         [DllImport("kernel32", ExactSpelling = true)]
         [return: NativeTypeName("LONG")]
-        public static extern int AppPolicyGetMediaFoundationCodecLoading([NativeTypeName("HANDLE")] IntPtr processToken, [NativeTypeName("AppPolicyMediaFoundationCodecLoading *")] AppPolicyMediaFoundationCodecLoading* policy);
+        public static extern int AppPolicyGetMediaFoundationCodecLoading([NativeTypeName("HANDLE")] IntPtr processToken, AppPolicyMediaFoundationCodecLoading* policy);
 
         [DllImport("kernel32", ExactSpelling = true)]
         [return: NativeTypeName("LONG")]
-        public static extern int AppPolicyGetClrCompat([NativeTypeName("HANDLE")] IntPtr processToken, [NativeTypeName("AppPolicyClrCompat *")] AppPolicyClrCompat* policy);
+        public static extern int AppPolicyGetClrCompat([NativeTypeName("HANDLE")] IntPtr processToken, AppPolicyClrCompat* policy);
 
         [DllImport("kernel32", ExactSpelling = true)]
         [return: NativeTypeName("LONG")]
-        public static extern int AppPolicyGetThreadInitializationType([NativeTypeName("HANDLE")] IntPtr processToken, [NativeTypeName("AppPolicyThreadInitializationType *")] AppPolicyThreadInitializationType* policy);
+        public static extern int AppPolicyGetThreadInitializationType([NativeTypeName("HANDLE")] IntPtr processToken, AppPolicyThreadInitializationType* policy);
 
         [DllImport("kernel32", ExactSpelling = true)]
         [return: NativeTypeName("LONG")]
-        public static extern int AppPolicyGetShowDeveloperDiagnostic([NativeTypeName("HANDLE")] IntPtr processToken, [NativeTypeName("AppPolicyShowDeveloperDiagnostic *")] AppPolicyShowDeveloperDiagnostic* policy);
+        public static extern int AppPolicyGetShowDeveloperDiagnostic([NativeTypeName("HANDLE")] IntPtr processToken, AppPolicyShowDeveloperDiagnostic* policy);
 
         [DllImport("kernel32", ExactSpelling = true)]
         [return: NativeTypeName("LONG")]
-        public static extern int AppPolicyGetProcessTerminationMethod([NativeTypeName("HANDLE")] IntPtr processToken, [NativeTypeName("AppPolicyProcessTerminationMethod *")] AppPolicyProcessTerminationMethod* policy);
+        public static extern int AppPolicyGetProcessTerminationMethod([NativeTypeName("HANDLE")] IntPtr processToken, AppPolicyProcessTerminationMethod* policy);
 
         [DllImport("kernel32", ExactSpelling = true)]
         [return: NativeTypeName("LONG")]
-        public static extern int AppPolicyGetCreateFileAccess([NativeTypeName("HANDLE")] IntPtr processToken, [NativeTypeName("AppPolicyCreateFileAccess *")] AppPolicyCreateFileAccess* policy);
+        public static extern int AppPolicyGetCreateFileAccess([NativeTypeName("HANDLE")] IntPtr processToken, AppPolicyCreateFileAccess* policy);
 
         [DllImport("kernel32", ExactSpelling = true)]
         [return: NativeTypeName("LONG")]

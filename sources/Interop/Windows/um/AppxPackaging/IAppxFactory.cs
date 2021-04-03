@@ -17,7 +17,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
+        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IAppxFactory*, Guid*, void**, int>)(lpVtbl[0]))((IAppxFactory*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -38,35 +38,35 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int CreatePackageWriter([NativeTypeName("IStream *")] IStream* outputStream, [NativeTypeName("APPX_PACKAGE_SETTINGS *")] APPX_PACKAGE_SETTINGS* settings, [NativeTypeName("IAppxPackageWriter **")] IAppxPackageWriter** packageWriter)
+        public int CreatePackageWriter(IStream* outputStream, APPX_PACKAGE_SETTINGS* settings, IAppxPackageWriter** packageWriter)
         {
             return ((delegate* unmanaged<IAppxFactory*, IStream*, APPX_PACKAGE_SETTINGS*, IAppxPackageWriter**, int>)(lpVtbl[3]))((IAppxFactory*)Unsafe.AsPointer(ref this), outputStream, settings, packageWriter);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int CreatePackageReader([NativeTypeName("IStream *")] IStream* inputStream, [NativeTypeName("IAppxPackageReader **")] IAppxPackageReader** packageReader)
+        public int CreatePackageReader(IStream* inputStream, IAppxPackageReader** packageReader)
         {
             return ((delegate* unmanaged<IAppxFactory*, IStream*, IAppxPackageReader**, int>)(lpVtbl[4]))((IAppxFactory*)Unsafe.AsPointer(ref this), inputStream, packageReader);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int CreateManifestReader([NativeTypeName("IStream *")] IStream* inputStream, [NativeTypeName("IAppxManifestReader **")] IAppxManifestReader** manifestReader)
+        public int CreateManifestReader(IStream* inputStream, IAppxManifestReader** manifestReader)
         {
             return ((delegate* unmanaged<IAppxFactory*, IStream*, IAppxManifestReader**, int>)(lpVtbl[5]))((IAppxFactory*)Unsafe.AsPointer(ref this), inputStream, manifestReader);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int CreateBlockMapReader([NativeTypeName("IStream *")] IStream* inputStream, [NativeTypeName("IAppxBlockMapReader **")] IAppxBlockMapReader** blockMapReader)
+        public int CreateBlockMapReader(IStream* inputStream, IAppxBlockMapReader** blockMapReader)
         {
             return ((delegate* unmanaged<IAppxFactory*, IStream*, IAppxBlockMapReader**, int>)(lpVtbl[6]))((IAppxFactory*)Unsafe.AsPointer(ref this), inputStream, blockMapReader);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int CreateValidatedBlockMapReader([NativeTypeName("IStream *")] IStream* blockMapStream, [NativeTypeName("LPCWSTR")] ushort* signatureFileName, [NativeTypeName("IAppxBlockMapReader **")] IAppxBlockMapReader** blockMapReader)
+        public int CreateValidatedBlockMapReader(IStream* blockMapStream, [NativeTypeName("LPCWSTR")] ushort* signatureFileName, IAppxBlockMapReader** blockMapReader)
         {
             return ((delegate* unmanaged<IAppxFactory*, IStream*, ushort*, IAppxBlockMapReader**, int>)(lpVtbl[7]))((IAppxFactory*)Unsafe.AsPointer(ref this), blockMapStream, signatureFileName, blockMapReader);
         }

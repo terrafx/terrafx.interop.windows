@@ -17,7 +17,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
+        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IStreamInterleave*, Guid*, void**, int>)(lpVtbl[0]))((IStreamInterleave*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -38,7 +38,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int Read([NativeTypeName("void *")] void* pv, [NativeTypeName("ULONG")] uint cb, [NativeTypeName("ULONG *")] uint* pcbRead)
+        public int Read(void* pv, [NativeTypeName("ULONG")] uint cb, [NativeTypeName("ULONG *")] uint* pcbRead)
         {
             return ((delegate* unmanaged<IStreamInterleave*, void*, uint, uint*, int>)(lpVtbl[3]))((IStreamInterleave*)Unsafe.AsPointer(ref this), pv, cb, pcbRead);
         }
@@ -52,7 +52,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int Seek(LARGE_INTEGER dlibMove, [NativeTypeName("DWORD")] uint dwOrigin, [NativeTypeName("ULARGE_INTEGER *")] ULARGE_INTEGER* plibNewPosition)
+        public int Seek(LARGE_INTEGER dlibMove, [NativeTypeName("DWORD")] uint dwOrigin, ULARGE_INTEGER* plibNewPosition)
         {
             return ((delegate* unmanaged<IStreamInterleave*, LARGE_INTEGER, uint, ULARGE_INTEGER*, int>)(lpVtbl[5]))((IStreamInterleave*)Unsafe.AsPointer(ref this), dlibMove, dwOrigin, plibNewPosition);
         }
@@ -66,7 +66,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int CopyTo([NativeTypeName("IStream *")] IStream* pstm, ULARGE_INTEGER cb, [NativeTypeName("ULARGE_INTEGER *")] ULARGE_INTEGER* pcbRead, [NativeTypeName("ULARGE_INTEGER *")] ULARGE_INTEGER* pcbWritten)
+        public int CopyTo(IStream* pstm, ULARGE_INTEGER cb, ULARGE_INTEGER* pcbRead, ULARGE_INTEGER* pcbWritten)
         {
             return ((delegate* unmanaged<IStreamInterleave*, IStream*, ULARGE_INTEGER, ULARGE_INTEGER*, ULARGE_INTEGER*, int>)(lpVtbl[7]))((IStreamInterleave*)Unsafe.AsPointer(ref this), pstm, cb, pcbRead, pcbWritten);
         }
@@ -101,21 +101,21 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int Stat([NativeTypeName("STATSTG *")] STATSTG* pstatstg, [NativeTypeName("DWORD")] uint grfStatFlag)
+        public int Stat(STATSTG* pstatstg, [NativeTypeName("DWORD")] uint grfStatFlag)
         {
             return ((delegate* unmanaged<IStreamInterleave*, STATSTG*, uint, int>)(lpVtbl[12]))((IStreamInterleave*)Unsafe.AsPointer(ref this), pstatstg, grfStatFlag);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int Clone([NativeTypeName("IStream **")] IStream** ppstm)
+        public int Clone(IStream** ppstm)
         {
             return ((delegate* unmanaged<IStreamInterleave*, IStream**, int>)(lpVtbl[13]))((IStreamInterleave*)Unsafe.AsPointer(ref this), ppstm);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int Initialize([NativeTypeName("IStream **")] IStream** streams, [NativeTypeName("ULONG *")] uint* interleaveSizes, [NativeTypeName("ULONG")] uint streamCount)
+        public int Initialize(IStream** streams, [NativeTypeName("ULONG *")] uint* interleaveSizes, [NativeTypeName("ULONG")] uint streamCount)
         {
             return ((delegate* unmanaged<IStreamInterleave*, IStream**, uint*, uint, int>)(lpVtbl[14]))((IStreamInterleave*)Unsafe.AsPointer(ref this), streams, interleaveSizes, streamCount);
         }

@@ -9,13 +9,11 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct D3D11_VIDEO_DECODER_BEGIN_FRAME_CRYPTO_SESSION
     {
-        [NativeTypeName("ID3D11CryptoSession *")]
         public ID3D11CryptoSession* pCryptoSession;
 
         [NativeTypeName("UINT")]
         public uint BlobSize;
 
-        [NativeTypeName("void *")]
         public void* pBlob;
 
         [NativeTypeName("GUID *")]
@@ -24,7 +22,6 @@ namespace TerraFX.Interop
         [NativeTypeName("UINT")]
         public uint PrivateDataSize;
 
-        [NativeTypeName("void *")]
         public void* pPrivateData;
     }
 }

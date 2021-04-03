@@ -10,13 +10,10 @@ namespace TerraFX.Interop
         [NativeTypeName("ULONG")]
         public uint documentCount;
 
-        [NativeTypeName("WS_SERVICE_METADATA_DOCUMENT **")]
         public WS_SERVICE_METADATA_DOCUMENT** documents;
 
-        [NativeTypeName("WS_XML_STRING *")]
         public WS_XML_STRING* serviceName;
 
-        [NativeTypeName("WS_XML_STRING *")]
         public WS_XML_STRING* serviceNs;
     }
 }

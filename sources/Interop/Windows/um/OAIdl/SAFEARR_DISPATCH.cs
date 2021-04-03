@@ -10,7 +10,6 @@ namespace TerraFX.Interop
         [NativeTypeName("ULONG")]
         public uint Size;
 
-        [NativeTypeName("IDispatch **")]
         public IDispatch** apDispatch;
     }
 }

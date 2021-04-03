@@ -14,13 +14,11 @@ namespace TerraFX.Interop
         [NativeTypeName("WS_GET_CERT_CALLBACK")]
         public delegate* unmanaged<void*, WS_ENDPOINT_ADDRESS*, WS_STRING*, CERT_CONTEXT**, IntPtr, int> getCertCallback;
 
-        [NativeTypeName("void *")]
         public void* getCertCallbackState;
 
         [NativeTypeName("WS_CERT_ISSUER_LIST_NOTIFICATION_CALLBACK")]
         public delegate* unmanaged<void*, SecPkgContext_IssuerListInfoEx*, IntPtr, int> certIssuerListNotificationCallback;
 
-        [NativeTypeName("void *")]
         public void* certIssuerListNotificationCallbackState;
     }
 }

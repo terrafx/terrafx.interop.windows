@@ -17,7 +17,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
+        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IFsiDirectoryItem2*, Guid*, void**, int>)(lpVtbl[0]))((IFsiDirectoryItem2*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -45,7 +45,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int GetTypeInfo([NativeTypeName("UINT")] uint iTInfo, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("ITypeInfo **")] ITypeInfo** ppTInfo)
+        public int GetTypeInfo([NativeTypeName("UINT")] uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
         {
             return ((delegate* unmanaged<IFsiDirectoryItem2*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IFsiDirectoryItem2*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
         }
@@ -59,7 +59,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, [NativeTypeName("DISPPARAMS *")] DISPPARAMS* pDispParams, [NativeTypeName("VARIANT *")] VARIANT* pVarResult, [NativeTypeName("EXCEPINFO *")] EXCEPINFO* pExcepInfo, [NativeTypeName("UINT *")] uint* puArgErr)
+        public int Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, [NativeTypeName("UINT *")] uint* puArgErr)
         {
             return ((delegate* unmanaged<IFsiDirectoryItem2*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IFsiDirectoryItem2*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
         }
@@ -150,14 +150,14 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int get__NewEnum([NativeTypeName("IEnumVARIANT **")] IEnumVARIANT** NewEnum)
+        public int get__NewEnum(IEnumVARIANT** NewEnum)
         {
             return ((delegate* unmanaged<IFsiDirectoryItem2*, IEnumVARIANT**, int>)(lpVtbl[19]))((IFsiDirectoryItem2*)Unsafe.AsPointer(ref this), NewEnum);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int get_Item([NativeTypeName("BSTR")] ushort* path, [NativeTypeName("IFsiItem **")] IFsiItem** item)
+        public int get_Item([NativeTypeName("BSTR")] ushort* path, IFsiItem** item)
         {
             return ((delegate* unmanaged<IFsiDirectoryItem2*, ushort*, IFsiItem**, int>)(lpVtbl[20]))((IFsiDirectoryItem2*)Unsafe.AsPointer(ref this), path, item);
         }
@@ -171,7 +171,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int get_EnumFsiItems([NativeTypeName("IEnumFsiItems **")] IEnumFsiItems** NewEnum)
+        public int get_EnumFsiItems(IEnumFsiItems** NewEnum)
         {
             return ((delegate* unmanaged<IFsiDirectoryItem2*, IEnumFsiItems**, int>)(lpVtbl[22]))((IFsiDirectoryItem2*)Unsafe.AsPointer(ref this), NewEnum);
         }
@@ -185,7 +185,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int AddFile([NativeTypeName("BSTR")] ushort* path, [NativeTypeName("IStream *")] IStream* fileData)
+        public int AddFile([NativeTypeName("BSTR")] ushort* path, IStream* fileData)
         {
             return ((delegate* unmanaged<IFsiDirectoryItem2*, ushort*, IStream*, int>)(lpVtbl[24]))((IFsiDirectoryItem2*)Unsafe.AsPointer(ref this), path, fileData);
         }
@@ -199,7 +199,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int Add([NativeTypeName("IFsiItem *")] IFsiItem* item)
+        public int Add(IFsiItem* item)
         {
             return ((delegate* unmanaged<IFsiDirectoryItem2*, IFsiItem*, int>)(lpVtbl[26]))((IFsiDirectoryItem2*)Unsafe.AsPointer(ref this), item);
         }

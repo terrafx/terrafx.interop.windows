@@ -16,6 +16,12 @@ namespace TerraFX.Interop
         [NativeTypeName("tagDEC::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/shared/wtypes.h:697:5)")]
         public _Anonymous1_e__Union Anonymous1;
 
+        [NativeTypeName("ULONG")]
+        public uint Hi32;
+
+        [NativeTypeName("tagDEC::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/shared/wtypes.h:705:5)")]
+        public _Anonymous2_e__Union Anonymous2;
+
         public ref byte scale
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -42,12 +48,6 @@ namespace TerraFX.Interop
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous1.signscale, 1));
             }
         }
-
-        [NativeTypeName("ULONG")]
-        public uint Hi32;
-
-        [NativeTypeName("tagDEC::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/shared/wtypes.h:705:5)")]
-        public _Anonymous2_e__Union Anonymous2;
 
         public ref uint Lo32
         {

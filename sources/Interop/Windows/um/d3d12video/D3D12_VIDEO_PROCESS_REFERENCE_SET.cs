@@ -10,7 +10,6 @@ namespace TerraFX.Interop
         [NativeTypeName("UINT")]
         public uint NumPastFrames;
 
-        [NativeTypeName("ID3D12Resource **")]
         public ID3D12Resource** ppPastFrames;
 
         [NativeTypeName("UINT *")]
@@ -19,7 +18,6 @@ namespace TerraFX.Interop
         [NativeTypeName("UINT")]
         public uint NumFutureFrames;
 
-        [NativeTypeName("ID3D12Resource **")]
         public ID3D12Resource** ppFutureFrames;
 
         [NativeTypeName("UINT *")]

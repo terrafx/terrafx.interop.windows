@@ -17,7 +17,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
+        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IDVEnc*, Guid*, void**, int>)(lpVtbl[0]))((IDVEnc*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -38,14 +38,14 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int get_IFormatResolution([NativeTypeName("int *")] int* VideoFormat, [NativeTypeName("int *")] int* DVFormat, [NativeTypeName("int *")] int* Resolution, [NativeTypeName("BYTE")] byte fDVInfo, [NativeTypeName("DVINFO *")] DVINFO* sDVInfo)
+        public int get_IFormatResolution(int* VideoFormat, int* DVFormat, int* Resolution, [NativeTypeName("BYTE")] byte fDVInfo, DVINFO* sDVInfo)
         {
             return ((delegate* unmanaged<IDVEnc*, int*, int*, int*, byte, DVINFO*, int>)(lpVtbl[3]))((IDVEnc*)Unsafe.AsPointer(ref this), VideoFormat, DVFormat, Resolution, fDVInfo, sDVInfo);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int put_IFormatResolution(int VideoFormat, int DVFormat, int Resolution, [NativeTypeName("BYTE")] byte fDVInfo, [NativeTypeName("DVINFO *")] DVINFO* sDVInfo)
+        public int put_IFormatResolution(int VideoFormat, int DVFormat, int Resolution, [NativeTypeName("BYTE")] byte fDVInfo, DVINFO* sDVInfo)
         {
             return ((delegate* unmanaged<IDVEnc*, int, int, int, byte, DVINFO*, int>)(lpVtbl[4]))((IDVEnc*)Unsafe.AsPointer(ref this), VideoFormat, DVFormat, Resolution, fDVInfo, sDVInfo);
         }

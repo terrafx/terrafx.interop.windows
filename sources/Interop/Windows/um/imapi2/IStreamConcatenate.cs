@@ -17,7 +17,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
+        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IStreamConcatenate*, Guid*, void**, int>)(lpVtbl[0]))((IStreamConcatenate*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -38,7 +38,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int Read([NativeTypeName("void *")] void* pv, [NativeTypeName("ULONG")] uint cb, [NativeTypeName("ULONG *")] uint* pcbRead)
+        public int Read(void* pv, [NativeTypeName("ULONG")] uint cb, [NativeTypeName("ULONG *")] uint* pcbRead)
         {
             return ((delegate* unmanaged<IStreamConcatenate*, void*, uint, uint*, int>)(lpVtbl[3]))((IStreamConcatenate*)Unsafe.AsPointer(ref this), pv, cb, pcbRead);
         }
@@ -52,7 +52,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int Seek(LARGE_INTEGER dlibMove, [NativeTypeName("DWORD")] uint dwOrigin, [NativeTypeName("ULARGE_INTEGER *")] ULARGE_INTEGER* plibNewPosition)
+        public int Seek(LARGE_INTEGER dlibMove, [NativeTypeName("DWORD")] uint dwOrigin, ULARGE_INTEGER* plibNewPosition)
         {
             return ((delegate* unmanaged<IStreamConcatenate*, LARGE_INTEGER, uint, ULARGE_INTEGER*, int>)(lpVtbl[5]))((IStreamConcatenate*)Unsafe.AsPointer(ref this), dlibMove, dwOrigin, plibNewPosition);
         }
@@ -66,7 +66,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int CopyTo([NativeTypeName("IStream *")] IStream* pstm, ULARGE_INTEGER cb, [NativeTypeName("ULARGE_INTEGER *")] ULARGE_INTEGER* pcbRead, [NativeTypeName("ULARGE_INTEGER *")] ULARGE_INTEGER* pcbWritten)
+        public int CopyTo(IStream* pstm, ULARGE_INTEGER cb, ULARGE_INTEGER* pcbRead, ULARGE_INTEGER* pcbWritten)
         {
             return ((delegate* unmanaged<IStreamConcatenate*, IStream*, ULARGE_INTEGER, ULARGE_INTEGER*, ULARGE_INTEGER*, int>)(lpVtbl[7]))((IStreamConcatenate*)Unsafe.AsPointer(ref this), pstm, cb, pcbRead, pcbWritten);
         }
@@ -101,42 +101,42 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int Stat([NativeTypeName("STATSTG *")] STATSTG* pstatstg, [NativeTypeName("DWORD")] uint grfStatFlag)
+        public int Stat(STATSTG* pstatstg, [NativeTypeName("DWORD")] uint grfStatFlag)
         {
             return ((delegate* unmanaged<IStreamConcatenate*, STATSTG*, uint, int>)(lpVtbl[12]))((IStreamConcatenate*)Unsafe.AsPointer(ref this), pstatstg, grfStatFlag);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int Clone([NativeTypeName("IStream **")] IStream** ppstm)
+        public int Clone(IStream** ppstm)
         {
             return ((delegate* unmanaged<IStreamConcatenate*, IStream**, int>)(lpVtbl[13]))((IStreamConcatenate*)Unsafe.AsPointer(ref this), ppstm);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int Initialize([NativeTypeName("IStream *")] IStream* stream1, [NativeTypeName("IStream *")] IStream* stream2)
+        public int Initialize(IStream* stream1, IStream* stream2)
         {
             return ((delegate* unmanaged<IStreamConcatenate*, IStream*, IStream*, int>)(lpVtbl[14]))((IStreamConcatenate*)Unsafe.AsPointer(ref this), stream1, stream2);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int Initialize2([NativeTypeName("IStream **")] IStream** streams, [NativeTypeName("ULONG")] uint streamCount)
+        public int Initialize2(IStream** streams, [NativeTypeName("ULONG")] uint streamCount)
         {
             return ((delegate* unmanaged<IStreamConcatenate*, IStream**, uint, int>)(lpVtbl[15]))((IStreamConcatenate*)Unsafe.AsPointer(ref this), streams, streamCount);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int Append([NativeTypeName("IStream *")] IStream* stream)
+        public int Append(IStream* stream)
         {
             return ((delegate* unmanaged<IStreamConcatenate*, IStream*, int>)(lpVtbl[16]))((IStreamConcatenate*)Unsafe.AsPointer(ref this), stream);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int Append2([NativeTypeName("IStream **")] IStream** streams, [NativeTypeName("ULONG")] uint streamCount)
+        public int Append2(IStream** streams, [NativeTypeName("ULONG")] uint streamCount)
         {
             return ((delegate* unmanaged<IStreamConcatenate*, IStream**, uint, int>)(lpVtbl[17]))((IStreamConcatenate*)Unsafe.AsPointer(ref this), streams, streamCount);
         }

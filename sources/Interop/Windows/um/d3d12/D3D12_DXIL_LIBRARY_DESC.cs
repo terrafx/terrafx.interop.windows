@@ -12,7 +12,6 @@ namespace TerraFX.Interop
         [NativeTypeName("UINT")]
         public uint NumExports;
 
-        [NativeTypeName("D3D12_EXPORT_DESC *")]
         public D3D12_EXPORT_DESC* pExports;
     }
 }

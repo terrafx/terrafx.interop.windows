@@ -17,7 +17,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
+        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IAppxEncryptedBundleWriter3*, Guid*, void**, int>)(lpVtbl[0]))((IAppxEncryptedBundleWriter3*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -38,14 +38,14 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int AddPayloadPackageEncrypted([NativeTypeName("LPCWSTR")] ushort* fileName, [NativeTypeName("IStream *")] IStream* packageStream, [NativeTypeName("BOOL")] int isDefaultApplicablePackage)
+        public int AddPayloadPackageEncrypted([NativeTypeName("LPCWSTR")] ushort* fileName, IStream* packageStream, [NativeTypeName("BOOL")] int isDefaultApplicablePackage)
         {
             return ((delegate* unmanaged<IAppxEncryptedBundleWriter3*, ushort*, IStream*, int, int>)(lpVtbl[3]))((IAppxEncryptedBundleWriter3*)Unsafe.AsPointer(ref this), fileName, packageStream, isDefaultApplicablePackage);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int AddExternalPackageReference([NativeTypeName("LPCWSTR")] ushort* fileName, [NativeTypeName("IStream *")] IStream* inputStream, [NativeTypeName("BOOL")] int isDefaultApplicablePackage)
+        public int AddExternalPackageReference([NativeTypeName("LPCWSTR")] ushort* fileName, IStream* inputStream, [NativeTypeName("BOOL")] int isDefaultApplicablePackage)
         {
             return ((delegate* unmanaged<IAppxEncryptedBundleWriter3*, ushort*, IStream*, int, int>)(lpVtbl[4]))((IAppxEncryptedBundleWriter3*)Unsafe.AsPointer(ref this), fileName, inputStream, isDefaultApplicablePackage);
         }

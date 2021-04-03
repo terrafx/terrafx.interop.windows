@@ -17,7 +17,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
+        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IAppxPackageReader*, Guid*, void**, int>)(lpVtbl[0]))((IAppxPackageReader*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -38,35 +38,35 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int GetBlockMap([NativeTypeName("IAppxBlockMapReader **")] IAppxBlockMapReader** blockMapReader)
+        public int GetBlockMap(IAppxBlockMapReader** blockMapReader)
         {
             return ((delegate* unmanaged<IAppxPackageReader*, IAppxBlockMapReader**, int>)(lpVtbl[3]))((IAppxPackageReader*)Unsafe.AsPointer(ref this), blockMapReader);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int GetFootprintFile(APPX_FOOTPRINT_FILE_TYPE type, [NativeTypeName("IAppxFile **")] IAppxFile** file)
+        public int GetFootprintFile(APPX_FOOTPRINT_FILE_TYPE type, IAppxFile** file)
         {
             return ((delegate* unmanaged<IAppxPackageReader*, APPX_FOOTPRINT_FILE_TYPE, IAppxFile**, int>)(lpVtbl[4]))((IAppxPackageReader*)Unsafe.AsPointer(ref this), type, file);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int GetPayloadFile([NativeTypeName("LPCWSTR")] ushort* fileName, [NativeTypeName("IAppxFile **")] IAppxFile** file)
+        public int GetPayloadFile([NativeTypeName("LPCWSTR")] ushort* fileName, IAppxFile** file)
         {
             return ((delegate* unmanaged<IAppxPackageReader*, ushort*, IAppxFile**, int>)(lpVtbl[5]))((IAppxPackageReader*)Unsafe.AsPointer(ref this), fileName, file);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int GetPayloadFiles([NativeTypeName("IAppxFilesEnumerator **")] IAppxFilesEnumerator** filesEnumerator)
+        public int GetPayloadFiles(IAppxFilesEnumerator** filesEnumerator)
         {
             return ((delegate* unmanaged<IAppxPackageReader*, IAppxFilesEnumerator**, int>)(lpVtbl[6]))((IAppxPackageReader*)Unsafe.AsPointer(ref this), filesEnumerator);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int GetManifest([NativeTypeName("IAppxManifestReader **")] IAppxManifestReader** manifestReader)
+        public int GetManifest(IAppxManifestReader** manifestReader)
         {
             return ((delegate* unmanaged<IAppxPackageReader*, IAppxManifestReader**, int>)(lpVtbl[7]))((IAppxPackageReader*)Unsafe.AsPointer(ref this), manifestReader);
         }

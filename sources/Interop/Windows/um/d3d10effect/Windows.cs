@@ -15,39 +15,39 @@ namespace TerraFX.Interop
 
         [DllImport("d3d10", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int D3D10StateBlockMaskUnion([NativeTypeName("D3D10_STATE_BLOCK_MASK *")] D3D10_STATE_BLOCK_MASK* pA, [NativeTypeName("D3D10_STATE_BLOCK_MASK *")] D3D10_STATE_BLOCK_MASK* pB, [NativeTypeName("D3D10_STATE_BLOCK_MASK *")] D3D10_STATE_BLOCK_MASK* pResult);
+        public static extern int D3D10StateBlockMaskUnion(D3D10_STATE_BLOCK_MASK* pA, D3D10_STATE_BLOCK_MASK* pB, D3D10_STATE_BLOCK_MASK* pResult);
 
         [DllImport("d3d10", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int D3D10StateBlockMaskIntersect([NativeTypeName("D3D10_STATE_BLOCK_MASK *")] D3D10_STATE_BLOCK_MASK* pA, [NativeTypeName("D3D10_STATE_BLOCK_MASK *")] D3D10_STATE_BLOCK_MASK* pB, [NativeTypeName("D3D10_STATE_BLOCK_MASK *")] D3D10_STATE_BLOCK_MASK* pResult);
+        public static extern int D3D10StateBlockMaskIntersect(D3D10_STATE_BLOCK_MASK* pA, D3D10_STATE_BLOCK_MASK* pB, D3D10_STATE_BLOCK_MASK* pResult);
 
         [DllImport("d3d10", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int D3D10StateBlockMaskDifference([NativeTypeName("D3D10_STATE_BLOCK_MASK *")] D3D10_STATE_BLOCK_MASK* pA, [NativeTypeName("D3D10_STATE_BLOCK_MASK *")] D3D10_STATE_BLOCK_MASK* pB, [NativeTypeName("D3D10_STATE_BLOCK_MASK *")] D3D10_STATE_BLOCK_MASK* pResult);
+        public static extern int D3D10StateBlockMaskDifference(D3D10_STATE_BLOCK_MASK* pA, D3D10_STATE_BLOCK_MASK* pB, D3D10_STATE_BLOCK_MASK* pResult);
 
         [DllImport("d3d10", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int D3D10StateBlockMaskEnableCapture([NativeTypeName("D3D10_STATE_BLOCK_MASK *")] D3D10_STATE_BLOCK_MASK* pMask, D3D10_DEVICE_STATE_TYPES StateType, [NativeTypeName("UINT")] uint RangeStart, [NativeTypeName("UINT")] uint RangeLength);
+        public static extern int D3D10StateBlockMaskEnableCapture(D3D10_STATE_BLOCK_MASK* pMask, D3D10_DEVICE_STATE_TYPES StateType, [NativeTypeName("UINT")] uint RangeStart, [NativeTypeName("UINT")] uint RangeLength);
 
         [DllImport("d3d10", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int D3D10StateBlockMaskDisableCapture([NativeTypeName("D3D10_STATE_BLOCK_MASK *")] D3D10_STATE_BLOCK_MASK* pMask, D3D10_DEVICE_STATE_TYPES StateType, [NativeTypeName("UINT")] uint RangeStart, [NativeTypeName("UINT")] uint RangeLength);
+        public static extern int D3D10StateBlockMaskDisableCapture(D3D10_STATE_BLOCK_MASK* pMask, D3D10_DEVICE_STATE_TYPES StateType, [NativeTypeName("UINT")] uint RangeStart, [NativeTypeName("UINT")] uint RangeLength);
 
         [DllImport("d3d10", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int D3D10StateBlockMaskEnableAll([NativeTypeName("D3D10_STATE_BLOCK_MASK *")] D3D10_STATE_BLOCK_MASK* pMask);
+        public static extern int D3D10StateBlockMaskEnableAll(D3D10_STATE_BLOCK_MASK* pMask);
 
         [DllImport("d3d10", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int D3D10StateBlockMaskDisableAll([NativeTypeName("D3D10_STATE_BLOCK_MASK *")] D3D10_STATE_BLOCK_MASK* pMask);
+        public static extern int D3D10StateBlockMaskDisableAll(D3D10_STATE_BLOCK_MASK* pMask);
 
         [DllImport("d3d10", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int D3D10StateBlockMaskGetSetting([NativeTypeName("D3D10_STATE_BLOCK_MASK *")] D3D10_STATE_BLOCK_MASK* pMask, D3D10_DEVICE_STATE_TYPES StateType, [NativeTypeName("UINT")] uint Entry);
+        public static extern int D3D10StateBlockMaskGetSetting(D3D10_STATE_BLOCK_MASK* pMask, D3D10_DEVICE_STATE_TYPES StateType, [NativeTypeName("UINT")] uint Entry);
 
         [DllImport("d3d10", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int D3D10CreateStateBlock([NativeTypeName("ID3D10Device *")] ID3D10Device* pDevice, [NativeTypeName("D3D10_STATE_BLOCK_MASK *")] D3D10_STATE_BLOCK_MASK* pStateBlockMask, [NativeTypeName("ID3D10StateBlock **")] ID3D10StateBlock** ppStateBlock);
+        public static extern int D3D10CreateStateBlock(ID3D10Device* pDevice, D3D10_STATE_BLOCK_MASK* pStateBlockMask, ID3D10StateBlock** ppStateBlock);
 
         [NativeTypeName("const GUID")]
         public static readonly Guid IID_ID3D10EffectType = new Guid(0x4e9e1ddc, 0xcd9d, 0x4772, 0xa8, 0x37, 0x0, 0x18, 0xb, 0x9b, 0x88, 0xfd);
@@ -108,19 +108,19 @@ namespace TerraFX.Interop
 
         [DllImport("d3d10", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int D3D10CompileEffectFromMemory([NativeTypeName("void *")] void* pData, [NativeTypeName("SIZE_T")] nuint DataLength, [NativeTypeName("LPCSTR")] sbyte* pSrcFileName, [NativeTypeName("const D3D10_SHADER_MACRO *")] D3D_SHADER_MACRO* pDefines, [NativeTypeName("ID3D10Include *")] ID3DInclude* pInclude, [NativeTypeName("UINT")] uint HLSLFlags, [NativeTypeName("UINT")] uint FXFlags, [NativeTypeName("ID3D10Blob **")] ID3DBlob** ppCompiledEffect, [NativeTypeName("ID3D10Blob **")] ID3DBlob** ppErrors);
+        public static extern int D3D10CompileEffectFromMemory(void* pData, [NativeTypeName("SIZE_T")] nuint DataLength, [NativeTypeName("LPCSTR")] sbyte* pSrcFileName, [NativeTypeName("const D3D10_SHADER_MACRO *")] D3D_SHADER_MACRO* pDefines, [NativeTypeName("ID3D10Include *")] ID3DInclude* pInclude, [NativeTypeName("UINT")] uint HLSLFlags, [NativeTypeName("UINT")] uint FXFlags, [NativeTypeName("ID3D10Blob **")] ID3DBlob** ppCompiledEffect, [NativeTypeName("ID3D10Blob **")] ID3DBlob** ppErrors);
 
         [DllImport("d3d10", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int D3D10CreateEffectFromMemory([NativeTypeName("void *")] void* pData, [NativeTypeName("SIZE_T")] nuint DataLength, [NativeTypeName("UINT")] uint FXFlags, [NativeTypeName("ID3D10Device *")] ID3D10Device* pDevice, [NativeTypeName("ID3D10EffectPool *")] ID3D10EffectPool* pEffectPool, [NativeTypeName("ID3D10Effect **")] ID3D10Effect** ppEffect);
+        public static extern int D3D10CreateEffectFromMemory(void* pData, [NativeTypeName("SIZE_T")] nuint DataLength, [NativeTypeName("UINT")] uint FXFlags, ID3D10Device* pDevice, ID3D10EffectPool* pEffectPool, ID3D10Effect** ppEffect);
 
         [DllImport("d3d10", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int D3D10CreateEffectPoolFromMemory([NativeTypeName("void *")] void* pData, [NativeTypeName("SIZE_T")] nuint DataLength, [NativeTypeName("UINT")] uint FXFlags, [NativeTypeName("ID3D10Device *")] ID3D10Device* pDevice, [NativeTypeName("ID3D10EffectPool **")] ID3D10EffectPool** ppEffectPool);
+        public static extern int D3D10CreateEffectPoolFromMemory(void* pData, [NativeTypeName("SIZE_T")] nuint DataLength, [NativeTypeName("UINT")] uint FXFlags, ID3D10Device* pDevice, ID3D10EffectPool** ppEffectPool);
 
         [DllImport("d3d10", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int D3D10DisassembleEffect([NativeTypeName("ID3D10Effect *")] ID3D10Effect* pEffect, [NativeTypeName("BOOL")] int EnableColorCode, [NativeTypeName("ID3D10Blob **")] ID3DBlob** ppDisassembly);
+        public static extern int D3D10DisassembleEffect(ID3D10Effect* pEffect, [NativeTypeName("BOOL")] int EnableColorCode, [NativeTypeName("ID3D10Blob **")] ID3DBlob** ppDisassembly);
 
         [NativeTypeName("#define D3D10_EFFECT_COMPILE_CHILD_EFFECT (1 << 0)")]
         public const int D3D10_EFFECT_COMPILE_CHILD_EFFECT = (1 << 0);

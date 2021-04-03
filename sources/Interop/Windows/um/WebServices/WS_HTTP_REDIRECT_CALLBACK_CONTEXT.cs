@@ -10,7 +10,6 @@ namespace TerraFX.Interop
         [NativeTypeName("WS_HTTP_REDIRECT_CALLBACK")]
         public delegate* unmanaged<void*, WS_STRING*, WS_STRING*, int> callback;
 
-        [NativeTypeName("void *")]
         public void* state;
     }
 }

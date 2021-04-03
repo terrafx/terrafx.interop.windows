@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct WS_CHANNEL_PROPERTIES
     {
-        [NativeTypeName("WS_CHANNEL_PROPERTY *")]
         public WS_CHANNEL_PROPERTY* properties;
 
         [NativeTypeName("ULONG")]

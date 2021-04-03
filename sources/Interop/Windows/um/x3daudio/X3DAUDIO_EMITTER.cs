@@ -11,7 +11,6 @@ namespace TerraFX.Interop
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe partial struct X3DAUDIO_EMITTER
     {
-        [NativeTypeName("X3DAUDIO_CONE *")]
         public X3DAUDIO_CONE* pCone;
 
         [NativeTypeName("X3DAUDIO_VECTOR")]
@@ -41,19 +40,14 @@ namespace TerraFX.Interop
         [NativeTypeName("FLOAT32 *")]
         public float* pChannelAzimuths;
 
-        [NativeTypeName("X3DAUDIO_DISTANCE_CURVE *")]
         public X3DAUDIO_DISTANCE_CURVE* pVolumeCurve;
 
-        [NativeTypeName("X3DAUDIO_DISTANCE_CURVE *")]
         public X3DAUDIO_DISTANCE_CURVE* pLFECurve;
 
-        [NativeTypeName("X3DAUDIO_DISTANCE_CURVE *")]
         public X3DAUDIO_DISTANCE_CURVE* pLPFDirectCurve;
 
-        [NativeTypeName("X3DAUDIO_DISTANCE_CURVE *")]
         public X3DAUDIO_DISTANCE_CURVE* pLPFReverbCurve;
 
-        [NativeTypeName("X3DAUDIO_DISTANCE_CURVE *")]
         public X3DAUDIO_DISTANCE_CURVE* pReverbCurve;
 
         [NativeTypeName("FLOAT32")]

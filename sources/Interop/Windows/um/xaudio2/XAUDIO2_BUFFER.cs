@@ -34,7 +34,6 @@ namespace TerraFX.Interop
         [NativeTypeName("UINT32")]
         public uint LoopCount;
 
-        [NativeTypeName("void *")]
         public void* pContext;
     }
 }

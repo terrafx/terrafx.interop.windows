@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct CERT_LDAP_STORE_OPENED_PARA
     {
-        [NativeTypeName("void *")]
         public void* pvLdapSessionHandle;
 
         [NativeTypeName("LPCWSTR")]

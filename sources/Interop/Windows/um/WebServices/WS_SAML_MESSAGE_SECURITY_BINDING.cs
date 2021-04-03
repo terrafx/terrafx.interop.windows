@@ -11,7 +11,6 @@ namespace TerraFX.Interop
 
         public WS_MESSAGE_SECURITY_USAGE bindingUsage;
 
-        [NativeTypeName("WS_SAML_AUTHENTICATOR *")]
         public WS_SAML_AUTHENTICATOR* authenticator;
     }
 }

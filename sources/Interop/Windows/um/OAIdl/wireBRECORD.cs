@@ -13,10 +13,8 @@ namespace TerraFX.Interop
         [NativeTypeName("ULONG")]
         public uint clSize;
 
-        [NativeTypeName("IRecordInfo *")]
         public IRecordInfo* pRecInfo;
 
-        [NativeTypeName("byte *")]
         public byte* pRecord;
     }
 }

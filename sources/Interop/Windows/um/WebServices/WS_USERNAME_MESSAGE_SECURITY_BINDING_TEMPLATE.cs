@@ -11,13 +11,11 @@ namespace TerraFX.Interop
     {
         public WS_SECURITY_BINDING_PROPERTIES securityBindingProperties;
 
-        [NativeTypeName("WS_USERNAME_CREDENTIAL *")]
         public WS_USERNAME_CREDENTIAL* clientCredential;
 
         [NativeTypeName("WS_VALIDATE_PASSWORD_CALLBACK")]
         public delegate* unmanaged<void*, WS_STRING*, WS_STRING*, WS_ASYNC_CONTEXT*, IntPtr, int> passwordValidator;
 
-        [NativeTypeName("void *")]
         public void* passwordValidatorCallbackState;
     }
 }

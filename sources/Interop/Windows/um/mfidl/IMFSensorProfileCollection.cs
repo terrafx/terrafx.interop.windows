@@ -17,7 +17,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
+        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IMFSensorProfileCollection*, Guid*, void**, int>)(lpVtbl[0]))((IMFSensorProfileCollection*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -45,21 +45,21 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int GetProfile([NativeTypeName("DWORD")] uint Index, [NativeTypeName("IMFSensorProfile **")] IMFSensorProfile** ppProfile)
+        public int GetProfile([NativeTypeName("DWORD")] uint Index, IMFSensorProfile** ppProfile)
         {
             return ((delegate* unmanaged<IMFSensorProfileCollection*, uint, IMFSensorProfile**, int>)(lpVtbl[4]))((IMFSensorProfileCollection*)Unsafe.AsPointer(ref this), Index, ppProfile);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int AddProfile([NativeTypeName("IMFSensorProfile *")] IMFSensorProfile* pProfile)
+        public int AddProfile(IMFSensorProfile* pProfile)
         {
             return ((delegate* unmanaged<IMFSensorProfileCollection*, IMFSensorProfile*, int>)(lpVtbl[5]))((IMFSensorProfileCollection*)Unsafe.AsPointer(ref this), pProfile);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int FindProfile([NativeTypeName("SENSORPROFILEID *")] SENSORPROFILEID* ProfileId, [NativeTypeName("IMFSensorProfile **")] IMFSensorProfile** ppProfile)
+        public int FindProfile(SENSORPROFILEID* ProfileId, IMFSensorProfile** ppProfile)
         {
             return ((delegate* unmanaged<IMFSensorProfileCollection*, SENSORPROFILEID*, IMFSensorProfile**, int>)(lpVtbl[6]))((IMFSensorProfileCollection*)Unsafe.AsPointer(ref this), ProfileId, ppProfile);
         }
@@ -71,7 +71,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public void RemoveProfile([NativeTypeName("SENSORPROFILEID *")] SENSORPROFILEID* ProfileId)
+        public void RemoveProfile(SENSORPROFILEID* ProfileId)
         {
             ((delegate* unmanaged<IMFSensorProfileCollection*, SENSORPROFILEID*, void>)(lpVtbl[8]))((IMFSensorProfileCollection*)Unsafe.AsPointer(ref this), ProfileId);
         }

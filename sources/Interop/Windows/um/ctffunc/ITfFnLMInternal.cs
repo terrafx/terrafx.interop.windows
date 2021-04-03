@@ -17,7 +17,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
+        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<ITfFnLMInternal*, Guid*, void**, int>)(lpVtbl[0]))((ITfFnLMInternal*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -45,7 +45,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int QueryRange([NativeTypeName("ITfRange *")] ITfRange* pRange, [NativeTypeName("ITfRange **")] ITfRange** ppNewRange, [NativeTypeName("BOOL *")] int* pfAccepted)
+        public int QueryRange(ITfRange* pRange, ITfRange** ppNewRange, [NativeTypeName("BOOL *")] int* pfAccepted)
         {
             return ((delegate* unmanaged<ITfFnLMInternal*, ITfRange*, ITfRange**, int*, int>)(lpVtbl[4]))((ITfFnLMInternal*)Unsafe.AsPointer(ref this), pRange, ppNewRange, pfAccepted);
         }
@@ -59,14 +59,14 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int GetReconversion([NativeTypeName("ITfRange *")] ITfRange* pRange, [NativeTypeName("ITfCandidateList **")] ITfCandidateList** ppCandList)
+        public int GetReconversion(ITfRange* pRange, ITfCandidateList** ppCandList)
         {
             return ((delegate* unmanaged<ITfFnLMInternal*, ITfRange*, ITfCandidateList**, int>)(lpVtbl[6]))((ITfFnLMInternal*)Unsafe.AsPointer(ref this), pRange, ppCandList);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int Reconvert([NativeTypeName("ITfRange *")] ITfRange* pRange)
+        public int Reconvert(ITfRange* pRange)
         {
             return ((delegate* unmanaged<ITfFnLMInternal*, ITfRange*, int>)(lpVtbl[7]))((ITfFnLMInternal*)Unsafe.AsPointer(ref this), pRange);
         }
@@ -87,14 +87,14 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int InvokeFunc([NativeTypeName("ITfContext *")] ITfContext* pic, [NativeTypeName("const GUID &")] Guid* refguidFunc)
+        public int InvokeFunc(ITfContext* pic, [NativeTypeName("const GUID &")] Guid* refguidFunc)
         {
             return ((delegate* unmanaged<ITfFnLMInternal*, ITfContext*, Guid*, int>)(lpVtbl[10]))((ITfFnLMInternal*)Unsafe.AsPointer(ref this), pic, refguidFunc);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int ProcessLattice([NativeTypeName("ITfRange *")] ITfRange* pRange)
+        public int ProcessLattice(ITfRange* pRange)
         {
             return ((delegate* unmanaged<ITfFnLMInternal*, ITfRange*, int>)(lpVtbl[11]))((ITfFnLMInternal*)Unsafe.AsPointer(ref this), pRange);
         }

@@ -13,16 +13,12 @@ namespace TerraFX.Interop
         [NativeTypeName("BYTE")]
         public byte isXmlNs;
 
-        [NativeTypeName("WS_XML_STRING *")]
         public WS_XML_STRING* prefix;
 
-        [NativeTypeName("WS_XML_STRING *")]
         public WS_XML_STRING* localName;
 
-        [NativeTypeName("WS_XML_STRING *")]
         public WS_XML_STRING* ns;
 
-        [NativeTypeName("WS_XML_TEXT *")]
         public WS_XML_TEXT* value;
     }
 }

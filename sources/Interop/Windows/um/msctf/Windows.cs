@@ -12,31 +12,31 @@ namespace TerraFX.Interop
     {
         [DllImport("msctf", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int TF_CreateThreadMgr([NativeTypeName("ITfThreadMgr **")] ITfThreadMgr** pptim);
+        public static extern int TF_CreateThreadMgr(ITfThreadMgr** pptim);
 
         [DllImport("msctf", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int TF_GetThreadMgr([NativeTypeName("ITfThreadMgr **")] ITfThreadMgr** pptim);
+        public static extern int TF_GetThreadMgr(ITfThreadMgr** pptim);
 
         [DllImport("msctf", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int TF_CreateInputProcessorProfiles([NativeTypeName("ITfInputProcessorProfiles **")] ITfInputProcessorProfiles** ppipr);
+        public static extern int TF_CreateInputProcessorProfiles(ITfInputProcessorProfiles** ppipr);
 
         [DllImport("msctf", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int TF_CreateDisplayAttributeMgr([NativeTypeName("ITfDisplayAttributeMgr **")] ITfDisplayAttributeMgr** ppdam);
+        public static extern int TF_CreateDisplayAttributeMgr(ITfDisplayAttributeMgr** ppdam);
 
         [DllImport("msctf", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int TF_CreateLangBarMgr([NativeTypeName("ITfLangBarMgr **")] ITfLangBarMgr** pppbm);
+        public static extern int TF_CreateLangBarMgr(ITfLangBarMgr** pppbm);
 
         [DllImport("msctf", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int TF_CreateLangBarItemMgr([NativeTypeName("ITfLangBarItemMgr **")] ITfLangBarItemMgr** pplbim);
+        public static extern int TF_CreateLangBarItemMgr(ITfLangBarItemMgr** pplbim);
 
         [DllImport("msctf", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int TF_CreateCategoryMgr([NativeTypeName("ITfCategoryMgr **")] ITfCategoryMgr** ppcat);
+        public static extern int TF_CreateCategoryMgr(ITfCategoryMgr** ppcat);
 
         [NativeTypeName("const GUID")]
         public static readonly Guid TF_PROFILE_NEWPHONETIC = new Guid(0xB2F9C502, 0x1742, 0x11D4, 0x97, 0x90, 0x00, 0x80, 0xC8, 0x82, 0x68, 0x7E);

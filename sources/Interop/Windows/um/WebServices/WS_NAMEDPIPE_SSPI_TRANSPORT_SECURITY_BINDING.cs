@@ -9,7 +9,6 @@ namespace TerraFX.Interop
     {
         public WS_SECURITY_BINDING binding;
 
-        [NativeTypeName("WS_WINDOWS_INTEGRATED_AUTH_CREDENTIAL *")]
         public WS_WINDOWS_INTEGRATED_AUTH_CREDENTIAL* clientCredential;
     }
 }

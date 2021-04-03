@@ -23,6 +23,24 @@ namespace TerraFX.Interop
         [NativeTypeName("_XSTATE_CONFIGURATION::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:12868:5)")]
         public _Anonymous_e__Union Anonymous;
 
+        [NativeTypeName("XSTATE_FEATURE [64]")]
+        public _Features_e__FixedBuffer Features;
+
+        [NativeTypeName("DWORD64")]
+        public ulong EnabledSupervisorFeatures;
+
+        [NativeTypeName("DWORD64")]
+        public ulong AlignedFeatures;
+
+        [NativeTypeName("DWORD")]
+        public uint AllFeatureSize;
+
+        [NativeTypeName("DWORD [64]")]
+        public fixed uint AllFeatures[64];
+
+        [NativeTypeName("DWORD64")]
+        public ulong EnabledUserVisibleSupervisorFeatures;
+
         public ref uint ControlFlags
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -61,24 +79,6 @@ namespace TerraFX.Interop
                 Anonymous.Anonymous.CompactionEnabled = value;
             }
         }
-
-        [NativeTypeName("XSTATE_FEATURE [64]")]
-        public _Features_e__FixedBuffer Features;
-
-        [NativeTypeName("DWORD64")]
-        public ulong EnabledSupervisorFeatures;
-
-        [NativeTypeName("DWORD64")]
-        public ulong AlignedFeatures;
-
-        [NativeTypeName("DWORD")]
-        public uint AllFeatureSize;
-
-        [NativeTypeName("DWORD [64]")]
-        public fixed uint AllFeatures[64];
-
-        [NativeTypeName("DWORD64")]
-        public ulong EnabledUserVisibleSupervisorFeatures;
 
         [StructLayout(LayoutKind.Explicit)]
         public partial struct _Anonymous_e__Union

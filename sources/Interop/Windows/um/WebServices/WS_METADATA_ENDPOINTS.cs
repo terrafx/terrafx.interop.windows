@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct WS_METADATA_ENDPOINTS
     {
-        [NativeTypeName("WS_METADATA_ENDPOINT *")]
         public WS_METADATA_ENDPOINT* endpoints;
 
         [NativeTypeName("ULONG")]

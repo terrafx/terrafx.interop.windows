@@ -10,13 +10,10 @@ namespace TerraFX.Interop
         [NativeTypeName("LPARAM")]
         public nint AddPageParam;
 
-        [NativeTypeName("IMMDevice *")]
         public IMMDevice* pEndpoint;
 
-        [NativeTypeName("IMMDevice *")]
         public IMMDevice* pPnpInterface;
 
-        [NativeTypeName("IMMDevice *")]
         public IMMDevice* pPnpDevnode;
     }
 }

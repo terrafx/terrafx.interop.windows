@@ -9,13 +9,10 @@ namespace TerraFX.Interop
     {
         public WS_XML_TEXT text;
 
-        [NativeTypeName("WS_XML_STRING *")]
         public WS_XML_STRING* prefix;
 
-        [NativeTypeName("WS_XML_STRING *")]
         public WS_XML_STRING* localName;
 
-        [NativeTypeName("WS_XML_STRING *")]
         public WS_XML_STRING* ns;
     }
 }

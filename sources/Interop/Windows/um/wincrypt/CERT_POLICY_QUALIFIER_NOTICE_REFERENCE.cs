@@ -13,7 +13,6 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint cNoticeNumbers;
 
-        [NativeTypeName("int *")]
         public int* rgNoticeNumbers;
     }
 }

@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct CONNECTDATA
     {
-        [NativeTypeName("IUnknown *")]
         public IUnknown* pUnk;
 
         [NativeTypeName("DWORD")]

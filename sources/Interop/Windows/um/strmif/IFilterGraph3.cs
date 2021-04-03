@@ -17,7 +17,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
+        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IFilterGraph3*, Guid*, void**, int>)(lpVtbl[0]))((IFilterGraph3*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -38,49 +38,49 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int AddFilter([NativeTypeName("IBaseFilter *")] IBaseFilter* pFilter, [NativeTypeName("LPCWSTR")] ushort* pName)
+        public int AddFilter(IBaseFilter* pFilter, [NativeTypeName("LPCWSTR")] ushort* pName)
         {
             return ((delegate* unmanaged<IFilterGraph3*, IBaseFilter*, ushort*, int>)(lpVtbl[3]))((IFilterGraph3*)Unsafe.AsPointer(ref this), pFilter, pName);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int RemoveFilter([NativeTypeName("IBaseFilter *")] IBaseFilter* pFilter)
+        public int RemoveFilter(IBaseFilter* pFilter)
         {
             return ((delegate* unmanaged<IFilterGraph3*, IBaseFilter*, int>)(lpVtbl[4]))((IFilterGraph3*)Unsafe.AsPointer(ref this), pFilter);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int EnumFilters([NativeTypeName("IEnumFilters **")] IEnumFilters** ppEnum)
+        public int EnumFilters(IEnumFilters** ppEnum)
         {
             return ((delegate* unmanaged<IFilterGraph3*, IEnumFilters**, int>)(lpVtbl[5]))((IFilterGraph3*)Unsafe.AsPointer(ref this), ppEnum);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int FindFilterByName([NativeTypeName("LPCWSTR")] ushort* pName, [NativeTypeName("IBaseFilter **")] IBaseFilter** ppFilter)
+        public int FindFilterByName([NativeTypeName("LPCWSTR")] ushort* pName, IBaseFilter** ppFilter)
         {
             return ((delegate* unmanaged<IFilterGraph3*, ushort*, IBaseFilter**, int>)(lpVtbl[6]))((IFilterGraph3*)Unsafe.AsPointer(ref this), pName, ppFilter);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int ConnectDirect([NativeTypeName("IPin *")] IPin* ppinOut, [NativeTypeName("IPin *")] IPin* ppinIn, [NativeTypeName("const AM_MEDIA_TYPE *")] AM_MEDIA_TYPE* pmt)
+        public int ConnectDirect(IPin* ppinOut, IPin* ppinIn, [NativeTypeName("const AM_MEDIA_TYPE *")] AM_MEDIA_TYPE* pmt)
         {
             return ((delegate* unmanaged<IFilterGraph3*, IPin*, IPin*, AM_MEDIA_TYPE*, int>)(lpVtbl[7]))((IFilterGraph3*)Unsafe.AsPointer(ref this), ppinOut, ppinIn, pmt);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int Reconnect([NativeTypeName("IPin *")] IPin* ppin)
+        public int Reconnect(IPin* ppin)
         {
             return ((delegate* unmanaged<IFilterGraph3*, IPin*, int>)(lpVtbl[8]))((IFilterGraph3*)Unsafe.AsPointer(ref this), ppin);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int Disconnect([NativeTypeName("IPin *")] IPin* ppin)
+        public int Disconnect(IPin* ppin)
         {
             return ((delegate* unmanaged<IFilterGraph3*, IPin*, int>)(lpVtbl[9]))((IFilterGraph3*)Unsafe.AsPointer(ref this), ppin);
         }
@@ -94,14 +94,14 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int Connect([NativeTypeName("IPin *")] IPin* ppinOut, [NativeTypeName("IPin *")] IPin* ppinIn)
+        public int Connect(IPin* ppinOut, IPin* ppinIn)
         {
             return ((delegate* unmanaged<IFilterGraph3*, IPin*, IPin*, int>)(lpVtbl[11]))((IFilterGraph3*)Unsafe.AsPointer(ref this), ppinOut, ppinIn);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int Render([NativeTypeName("IPin *")] IPin* ppinOut)
+        public int Render(IPin* ppinOut)
         {
             return ((delegate* unmanaged<IFilterGraph3*, IPin*, int>)(lpVtbl[12]))((IFilterGraph3*)Unsafe.AsPointer(ref this), ppinOut);
         }
@@ -115,7 +115,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int AddSourceFilter([NativeTypeName("LPCWSTR")] ushort* lpcwstrFileName, [NativeTypeName("LPCWSTR")] ushort* lpcwstrFilterName, [NativeTypeName("IBaseFilter **")] IBaseFilter** ppFilter)
+        public int AddSourceFilter([NativeTypeName("LPCWSTR")] ushort* lpcwstrFileName, [NativeTypeName("LPCWSTR")] ushort* lpcwstrFilterName, IBaseFilter** ppFilter)
         {
             return ((delegate* unmanaged<IFilterGraph3*, ushort*, ushort*, IBaseFilter**, int>)(lpVtbl[14]))((IFilterGraph3*)Unsafe.AsPointer(ref this), lpcwstrFileName, lpcwstrFilterName, ppFilter);
         }
@@ -143,28 +143,28 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int AddSourceFilterForMoniker([NativeTypeName("IMoniker *")] IMoniker* pMoniker, [NativeTypeName("IBindCtx *")] IBindCtx* pCtx, [NativeTypeName("LPCWSTR")] ushort* lpcwstrFilterName, [NativeTypeName("IBaseFilter **")] IBaseFilter** ppFilter)
+        public int AddSourceFilterForMoniker(IMoniker* pMoniker, IBindCtx* pCtx, [NativeTypeName("LPCWSTR")] ushort* lpcwstrFilterName, IBaseFilter** ppFilter)
         {
             return ((delegate* unmanaged<IFilterGraph3*, IMoniker*, IBindCtx*, ushort*, IBaseFilter**, int>)(lpVtbl[18]))((IFilterGraph3*)Unsafe.AsPointer(ref this), pMoniker, pCtx, lpcwstrFilterName, ppFilter);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int ReconnectEx([NativeTypeName("IPin *")] IPin* ppin, [NativeTypeName("const AM_MEDIA_TYPE *")] AM_MEDIA_TYPE* pmt)
+        public int ReconnectEx(IPin* ppin, [NativeTypeName("const AM_MEDIA_TYPE *")] AM_MEDIA_TYPE* pmt)
         {
             return ((delegate* unmanaged<IFilterGraph3*, IPin*, AM_MEDIA_TYPE*, int>)(lpVtbl[19]))((IFilterGraph3*)Unsafe.AsPointer(ref this), ppin, pmt);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int RenderEx([NativeTypeName("IPin *")] IPin* pPinOut, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("DWORD *")] uint* pvContext)
+        public int RenderEx(IPin* pPinOut, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("DWORD *")] uint* pvContext)
         {
             return ((delegate* unmanaged<IFilterGraph3*, IPin*, uint, uint*, int>)(lpVtbl[20]))((IFilterGraph3*)Unsafe.AsPointer(ref this), pPinOut, dwFlags, pvContext);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int SetSyncSourceEx([NativeTypeName("IReferenceClock *")] IReferenceClock* pClockForMostOfFilterGraph, [NativeTypeName("IReferenceClock *")] IReferenceClock* pClockForFilter, [NativeTypeName("IBaseFilter *")] IBaseFilter* pFilter)
+        public int SetSyncSourceEx(IReferenceClock* pClockForMostOfFilterGraph, IReferenceClock* pClockForFilter, IBaseFilter* pFilter)
         {
             return ((delegate* unmanaged<IFilterGraph3*, IReferenceClock*, IReferenceClock*, IBaseFilter*, int>)(lpVtbl[21]))((IFilterGraph3*)Unsafe.AsPointer(ref this), pClockForMostOfFilterGraph, pClockForFilter, pFilter);
         }

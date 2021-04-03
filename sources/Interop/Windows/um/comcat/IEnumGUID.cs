@@ -17,7 +17,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
+        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IEnumGUID*, Guid*, void**, int>)(lpVtbl[0]))((IEnumGUID*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -59,7 +59,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int Clone([NativeTypeName("IEnumGUID **")] IEnumGUID** ppenum)
+        public int Clone(IEnumGUID** ppenum)
         {
             return ((delegate* unmanaged<IEnumGUID*, IEnumGUID**, int>)(lpVtbl[6]))((IEnumGUID*)Unsafe.AsPointer(ref this), ppenum);
         }

@@ -17,7 +17,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
+        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IXmlWriterLite*, Guid*, void**, int>)(lpVtbl[0]))((IXmlWriterLite*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -38,7 +38,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int SetOutput([NativeTypeName("IUnknown *")] IUnknown* pOutput)
+        public int SetOutput(IUnknown* pOutput)
         {
             return ((delegate* unmanaged<IXmlWriterLite*, IUnknown*, int>)(lpVtbl[3]))((IXmlWriterLite*)Unsafe.AsPointer(ref this), pOutput);
         }
@@ -59,7 +59,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int WriteAttributes([NativeTypeName("IXmlReader *")] IXmlReader* pReader, [NativeTypeName("BOOL")] int fWriteDefaultAttributes)
+        public int WriteAttributes(IXmlReader* pReader, [NativeTypeName("BOOL")] int fWriteDefaultAttributes)
         {
             return ((delegate* unmanaged<IXmlWriterLite*, IXmlReader*, int, int>)(lpVtbl[6]))((IXmlWriterLite*)Unsafe.AsPointer(ref this), pReader, fWriteDefaultAttributes);
         }
@@ -157,14 +157,14 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int WriteNode([NativeTypeName("IXmlReader *")] IXmlReader* pReader, [NativeTypeName("BOOL")] int fWriteDefaultAttributes)
+        public int WriteNode(IXmlReader* pReader, [NativeTypeName("BOOL")] int fWriteDefaultAttributes)
         {
             return ((delegate* unmanaged<IXmlWriterLite*, IXmlReader*, int, int>)(lpVtbl[20]))((IXmlWriterLite*)Unsafe.AsPointer(ref this), pReader, fWriteDefaultAttributes);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int WriteNodeShallow([NativeTypeName("IXmlReader *")] IXmlReader* pReader, [NativeTypeName("BOOL")] int fWriteDefaultAttributes)
+        public int WriteNodeShallow(IXmlReader* pReader, [NativeTypeName("BOOL")] int fWriteDefaultAttributes)
         {
             return ((delegate* unmanaged<IXmlWriterLite*, IXmlReader*, int, int>)(lpVtbl[21]))((IXmlWriterLite*)Unsafe.AsPointer(ref this), pReader, fWriteDefaultAttributes);
         }

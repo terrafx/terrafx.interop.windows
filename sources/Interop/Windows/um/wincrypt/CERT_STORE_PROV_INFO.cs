@@ -13,7 +13,6 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint cStoreProvFunc;
 
-        [NativeTypeName("void **")]
         public void** rgpvStoreProvFunc;
 
         [NativeTypeName("HCERTSTOREPROV")]

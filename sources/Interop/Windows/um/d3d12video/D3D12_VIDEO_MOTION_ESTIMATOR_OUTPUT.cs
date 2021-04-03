@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct D3D12_VIDEO_MOTION_ESTIMATOR_OUTPUT
     {
-        [NativeTypeName("ID3D12VideoMotionVectorHeap *")]
         public ID3D12VideoMotionVectorHeap* pMotionVectorHeap;
     }
 }

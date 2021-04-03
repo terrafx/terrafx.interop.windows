@@ -17,7 +17,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
+        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<ITfInputProcessorProfilesEx*, Guid*, void**, int>)(lpVtbl[0]))((ITfInputProcessorProfilesEx*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -66,7 +66,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int EnumInputProcessorInfo([NativeTypeName("IEnumGUID **")] IEnumGUID** ppEnum)
+        public int EnumInputProcessorInfo(IEnumGUID** ppEnum)
         {
             return ((delegate* unmanaged<ITfInputProcessorProfilesEx*, IEnumGUID**, int>)(lpVtbl[7]))((ITfInputProcessorProfilesEx*)Unsafe.AsPointer(ref this), ppEnum);
         }
@@ -129,7 +129,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int EnumLanguageProfiles([NativeTypeName("LANGID")] ushort langid, [NativeTypeName("IEnumTfLanguageProfiles **")] IEnumTfLanguageProfiles** ppEnum)
+        public int EnumLanguageProfiles([NativeTypeName("LANGID")] ushort langid, IEnumTfLanguageProfiles** ppEnum)
         {
             return ((delegate* unmanaged<ITfInputProcessorProfilesEx*, ushort, IEnumTfLanguageProfiles**, int>)(lpVtbl[16]))((ITfInputProcessorProfilesEx*)Unsafe.AsPointer(ref this), langid, ppEnum);
         }

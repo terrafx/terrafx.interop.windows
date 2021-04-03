@@ -17,7 +17,6 @@ namespace TerraFX.Interop
 
         public D2D1_BITMAP_OPTIONS bitmapOptions;
 
-        [NativeTypeName("ID2D1ColorContext *")]
         public ID2D1ColorContext* colorContext;
     }
 }

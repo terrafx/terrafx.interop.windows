@@ -21,7 +21,6 @@ namespace TerraFX.Interop
         [NativeTypeName("LPWSTR")]
         public ushort* pszWord;
 
-        [NativeTypeName("SPWORDPRONUNCIATION *")]
         public SPWORDPRONUNCIATION* pFirstWordPronunciation;
     }
 }

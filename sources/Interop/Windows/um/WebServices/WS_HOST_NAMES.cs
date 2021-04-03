@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct WS_HOST_NAMES
     {
-        [NativeTypeName("WS_STRING *")]
         public WS_STRING* hostNames;
 
         [NativeTypeName("ULONG")]

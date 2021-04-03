@@ -9,7 +9,6 @@ namespace TerraFX.Interop
     {
         public WS_SECURITY_BINDING_CONSTRAINT_TYPE type;
 
-        [NativeTypeName("WS_SECURITY_BINDING_PROPERTY_CONSTRAINT *")]
         public WS_SECURITY_BINDING_PROPERTY_CONSTRAINT* propertyConstraints;
 
         [NativeTypeName("ULONG")]

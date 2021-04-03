@@ -18,6 +18,9 @@ namespace TerraFX.Interop
         [NativeTypeName("DISPLAYCONFIG_PATH_SOURCE_INFO::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/wingdi.h:2950:5)")]
         public _Anonymous_e__Union Anonymous;
 
+        [NativeTypeName("UINT32")]
+        public uint statusFlags;
+
         public ref uint modeInfoIdx
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -56,9 +59,6 @@ namespace TerraFX.Interop
                 Anonymous.Anonymous.sourceModeInfoIdx = value;
             }
         }
-
-        [NativeTypeName("UINT32")]
-        public uint statusFlags;
 
         [StructLayout(LayoutKind.Explicit)]
         public partial struct _Anonymous_e__Union

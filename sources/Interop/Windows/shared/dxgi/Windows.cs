@@ -12,11 +12,11 @@ namespace TerraFX.Interop
     {
         [DllImport("dxgi", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int CreateDXGIFactory([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppFactory);
+        public static extern int CreateDXGIFactory([NativeTypeName("const IID &")] Guid* riid, void** ppFactory);
 
         [DllImport("dxgi", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int CreateDXGIFactory1([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppFactory);
+        public static extern int CreateDXGIFactory1([NativeTypeName("const IID &")] Guid* riid, void** ppFactory);
 
         [NativeTypeName("const GUID")]
         public static readonly Guid IID_IDXGIObject = new Guid(0xaec22fb8, 0x76f3, 0x4639, 0x9b, 0xe0, 0x28, 0xeb, 0x43, 0xa6, 0x7a, 0x2e);

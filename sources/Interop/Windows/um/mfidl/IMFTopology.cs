@@ -17,7 +17,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
+        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IMFTopology*, Guid*, void**, int>)(lpVtbl[0]))((IMFTopology*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -38,14 +38,14 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int GetItem([NativeTypeName("const GUID &")] Guid* guidKey, [NativeTypeName("PROPVARIANT *")] PROPVARIANT* pValue)
+        public int GetItem([NativeTypeName("const GUID &")] Guid* guidKey, PROPVARIANT* pValue)
         {
             return ((delegate* unmanaged<IMFTopology*, Guid*, PROPVARIANT*, int>)(lpVtbl[3]))((IMFTopology*)Unsafe.AsPointer(ref this), guidKey, pValue);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int GetItemType([NativeTypeName("const GUID &")] Guid* guidKey, [NativeTypeName("MF_ATTRIBUTE_TYPE *")] MF_ATTRIBUTE_TYPE* pType)
+        public int GetItemType([NativeTypeName("const GUID &")] Guid* guidKey, MF_ATTRIBUTE_TYPE* pType)
         {
             return ((delegate* unmanaged<IMFTopology*, Guid*, MF_ATTRIBUTE_TYPE*, int>)(lpVtbl[4]))((IMFTopology*)Unsafe.AsPointer(ref this), guidKey, pType);
         }
@@ -59,7 +59,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int Compare([NativeTypeName("IMFAttributes *")] IMFAttributes* pTheirs, MF_ATTRIBUTES_MATCH_TYPE MatchType, [NativeTypeName("BOOL *")] int* pbResult)
+        public int Compare(IMFAttributes* pTheirs, MF_ATTRIBUTES_MATCH_TYPE MatchType, [NativeTypeName("BOOL *")] int* pbResult)
         {
             return ((delegate* unmanaged<IMFTopology*, IMFAttributes*, MF_ATTRIBUTES_MATCH_TYPE, int*, int>)(lpVtbl[6]))((IMFTopology*)Unsafe.AsPointer(ref this), pTheirs, MatchType, pbResult);
         }
@@ -80,7 +80,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int GetDouble([NativeTypeName("const GUID &")] Guid* guidKey, [NativeTypeName("double *")] double* pfValue)
+        public int GetDouble([NativeTypeName("const GUID &")] Guid* guidKey, double* pfValue)
         {
             return ((delegate* unmanaged<IMFTopology*, Guid*, double*, int>)(lpVtbl[9]))((IMFTopology*)Unsafe.AsPointer(ref this), guidKey, pfValue);
         }
@@ -206,7 +206,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int SetUnknown([NativeTypeName("const GUID &")] Guid* guidKey, [NativeTypeName("IUnknown *")] IUnknown* pUnknown)
+        public int SetUnknown([NativeTypeName("const GUID &")] Guid* guidKey, IUnknown* pUnknown)
         {
             return ((delegate* unmanaged<IMFTopology*, Guid*, IUnknown*, int>)(lpVtbl[27]))((IMFTopology*)Unsafe.AsPointer(ref this), guidKey, pUnknown);
         }
@@ -234,14 +234,14 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int GetItemByIndex([NativeTypeName("UINT32")] uint unIndex, [NativeTypeName("GUID *")] Guid* pguidKey, [NativeTypeName("PROPVARIANT *")] PROPVARIANT* pValue)
+        public int GetItemByIndex([NativeTypeName("UINT32")] uint unIndex, [NativeTypeName("GUID *")] Guid* pguidKey, PROPVARIANT* pValue)
         {
             return ((delegate* unmanaged<IMFTopology*, uint, Guid*, PROPVARIANT*, int>)(lpVtbl[31]))((IMFTopology*)Unsafe.AsPointer(ref this), unIndex, pguidKey, pValue);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int CopyAllItems([NativeTypeName("IMFAttributes *")] IMFAttributes* pDest)
+        public int CopyAllItems(IMFAttributes* pDest)
         {
             return ((delegate* unmanaged<IMFTopology*, IMFAttributes*, int>)(lpVtbl[32]))((IMFTopology*)Unsafe.AsPointer(ref this), pDest);
         }
@@ -255,14 +255,14 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int AddNode([NativeTypeName("IMFTopologyNode *")] IMFTopologyNode* pNode)
+        public int AddNode(IMFTopologyNode* pNode)
         {
             return ((delegate* unmanaged<IMFTopology*, IMFTopologyNode*, int>)(lpVtbl[34]))((IMFTopology*)Unsafe.AsPointer(ref this), pNode);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int RemoveNode([NativeTypeName("IMFTopologyNode *")] IMFTopologyNode* pNode)
+        public int RemoveNode(IMFTopologyNode* pNode)
         {
             return ((delegate* unmanaged<IMFTopology*, IMFTopologyNode*, int>)(lpVtbl[35]))((IMFTopology*)Unsafe.AsPointer(ref this), pNode);
         }
@@ -276,7 +276,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int GetNode([NativeTypeName("WORD")] ushort wIndex, [NativeTypeName("IMFTopologyNode **")] IMFTopologyNode** ppNode)
+        public int GetNode([NativeTypeName("WORD")] ushort wIndex, IMFTopologyNode** ppNode)
         {
             return ((delegate* unmanaged<IMFTopology*, ushort, IMFTopologyNode**, int>)(lpVtbl[37]))((IMFTopology*)Unsafe.AsPointer(ref this), wIndex, ppNode);
         }
@@ -290,28 +290,28 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int CloneFrom([NativeTypeName("IMFTopology *")] IMFTopology* pTopology)
+        public int CloneFrom(IMFTopology* pTopology)
         {
             return ((delegate* unmanaged<IMFTopology*, IMFTopology*, int>)(lpVtbl[39]))((IMFTopology*)Unsafe.AsPointer(ref this), pTopology);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int GetNodeByID([NativeTypeName("TOPOID")] ulong qwTopoNodeID, [NativeTypeName("IMFTopologyNode **")] IMFTopologyNode** ppNode)
+        public int GetNodeByID([NativeTypeName("TOPOID")] ulong qwTopoNodeID, IMFTopologyNode** ppNode)
         {
             return ((delegate* unmanaged<IMFTopology*, ulong, IMFTopologyNode**, int>)(lpVtbl[40]))((IMFTopology*)Unsafe.AsPointer(ref this), qwTopoNodeID, ppNode);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int GetSourceNodeCollection([NativeTypeName("IMFCollection **")] IMFCollection** ppCollection)
+        public int GetSourceNodeCollection(IMFCollection** ppCollection)
         {
             return ((delegate* unmanaged<IMFTopology*, IMFCollection**, int>)(lpVtbl[41]))((IMFTopology*)Unsafe.AsPointer(ref this), ppCollection);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int GetOutputNodeCollection([NativeTypeName("IMFCollection **")] IMFCollection** ppCollection)
+        public int GetOutputNodeCollection(IMFCollection** ppCollection)
         {
             return ((delegate* unmanaged<IMFTopology*, IMFCollection**, int>)(lpVtbl[42]))((IMFTopology*)Unsafe.AsPointer(ref this), ppCollection);
         }

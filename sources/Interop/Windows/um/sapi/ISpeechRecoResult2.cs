@@ -17,7 +17,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
+        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<ISpeechRecoResult2*, Guid*, void**, int>)(lpVtbl[0]))((ISpeechRecoResult2*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -45,7 +45,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int GetTypeInfo([NativeTypeName("UINT")] uint iTInfo, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("ITypeInfo **")] ITypeInfo** ppTInfo)
+        public int GetTypeInfo([NativeTypeName("UINT")] uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
         {
             return ((delegate* unmanaged<ISpeechRecoResult2*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((ISpeechRecoResult2*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
         }
@@ -59,56 +59,56 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, [NativeTypeName("DISPPARAMS *")] DISPPARAMS* pDispParams, [NativeTypeName("VARIANT *")] VARIANT* pVarResult, [NativeTypeName("EXCEPINFO *")] EXCEPINFO* pExcepInfo, [NativeTypeName("UINT *")] uint* puArgErr)
+        public int Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, [NativeTypeName("UINT *")] uint* puArgErr)
         {
             return ((delegate* unmanaged<ISpeechRecoResult2*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((ISpeechRecoResult2*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int get_RecoContext([NativeTypeName("ISpeechRecoContext **")] ISpeechRecoContext** RecoContext)
+        public int get_RecoContext(ISpeechRecoContext** RecoContext)
         {
             return ((delegate* unmanaged<ISpeechRecoResult2*, ISpeechRecoContext**, int>)(lpVtbl[7]))((ISpeechRecoResult2*)Unsafe.AsPointer(ref this), RecoContext);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int get_Times([NativeTypeName("ISpeechRecoResultTimes **")] ISpeechRecoResultTimes** Times)
+        public int get_Times(ISpeechRecoResultTimes** Times)
         {
             return ((delegate* unmanaged<ISpeechRecoResult2*, ISpeechRecoResultTimes**, int>)(lpVtbl[8]))((ISpeechRecoResult2*)Unsafe.AsPointer(ref this), Times);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int putref_AudioFormat([NativeTypeName("ISpeechAudioFormat *")] ISpeechAudioFormat* Format)
+        public int putref_AudioFormat(ISpeechAudioFormat* Format)
         {
             return ((delegate* unmanaged<ISpeechRecoResult2*, ISpeechAudioFormat*, int>)(lpVtbl[9]))((ISpeechRecoResult2*)Unsafe.AsPointer(ref this), Format);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int get_AudioFormat([NativeTypeName("ISpeechAudioFormat **")] ISpeechAudioFormat** Format)
+        public int get_AudioFormat(ISpeechAudioFormat** Format)
         {
             return ((delegate* unmanaged<ISpeechRecoResult2*, ISpeechAudioFormat**, int>)(lpVtbl[10]))((ISpeechRecoResult2*)Unsafe.AsPointer(ref this), Format);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int get_PhraseInfo([NativeTypeName("ISpeechPhraseInfo **")] ISpeechPhraseInfo** PhraseInfo)
+        public int get_PhraseInfo(ISpeechPhraseInfo** PhraseInfo)
         {
             return ((delegate* unmanaged<ISpeechRecoResult2*, ISpeechPhraseInfo**, int>)(lpVtbl[11]))((ISpeechRecoResult2*)Unsafe.AsPointer(ref this), PhraseInfo);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int Alternates([NativeTypeName("long")] int RequestCount, [NativeTypeName("long")] int StartElement, [NativeTypeName("long")] int Elements, [NativeTypeName("ISpeechPhraseAlternates **")] ISpeechPhraseAlternates** Alternates)
+        public int Alternates([NativeTypeName("long")] int RequestCount, [NativeTypeName("long")] int StartElement, [NativeTypeName("long")] int Elements, ISpeechPhraseAlternates** Alternates)
         {
             return ((delegate* unmanaged<ISpeechRecoResult2*, int, int, int, ISpeechPhraseAlternates**, int>)(lpVtbl[12]))((ISpeechRecoResult2*)Unsafe.AsPointer(ref this), RequestCount, StartElement, Elements, Alternates);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int Audio([NativeTypeName("long")] int StartElement, [NativeTypeName("long")] int Elements, [NativeTypeName("ISpeechMemoryStream **")] ISpeechMemoryStream** Stream)
+        public int Audio([NativeTypeName("long")] int StartElement, [NativeTypeName("long")] int Elements, ISpeechMemoryStream** Stream)
         {
             return ((delegate* unmanaged<ISpeechRecoResult2*, int, int, ISpeechMemoryStream**, int>)(lpVtbl[13]))((ISpeechRecoResult2*)Unsafe.AsPointer(ref this), StartElement, Elements, Stream);
         }
@@ -122,7 +122,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int SaveToMemory([NativeTypeName("VARIANT *")] VARIANT* ResultBlock)
+        public int SaveToMemory(VARIANT* ResultBlock)
         {
             return ((delegate* unmanaged<ISpeechRecoResult2*, VARIANT*, int>)(lpVtbl[15]))((ISpeechRecoResult2*)Unsafe.AsPointer(ref this), ResultBlock);
         }

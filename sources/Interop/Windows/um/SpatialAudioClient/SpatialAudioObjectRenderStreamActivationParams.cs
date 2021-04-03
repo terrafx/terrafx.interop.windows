@@ -27,7 +27,6 @@ namespace TerraFX.Interop
         [NativeTypeName("HANDLE")]
         public IntPtr EventHandle;
 
-        [NativeTypeName("ISpatialAudioObjectRenderStreamNotify *")]
         public ISpatialAudioObjectRenderStreamNotify* NotifyObject;
     }
 }

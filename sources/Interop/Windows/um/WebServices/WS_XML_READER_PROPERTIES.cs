@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct WS_XML_READER_PROPERTIES
     {
-        [NativeTypeName("WS_XML_READER_PROPERTY *")]
         public WS_XML_READER_PROPERTY* properties;
 
         [NativeTypeName("ULONG")]

@@ -9,7 +9,6 @@ namespace TerraFX.Interop
     {
         public WS_MESSAGE_PROPERTY_ID id;
 
-        [NativeTypeName("void *")]
         public void* value;
 
         [NativeTypeName("ULONG")]

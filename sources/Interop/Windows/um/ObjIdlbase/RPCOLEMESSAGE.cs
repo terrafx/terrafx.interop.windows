@@ -9,13 +9,11 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct RPCOLEMESSAGE
     {
-        [NativeTypeName("void *")]
         public void* reserved1;
 
         [NativeTypeName("RPCOLEDATAREP")]
         public uint dataRepresentation;
 
-        [NativeTypeName("void *")]
         public void* Buffer;
 
         [NativeTypeName("ULONG")]

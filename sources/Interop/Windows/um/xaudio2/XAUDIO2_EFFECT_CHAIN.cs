@@ -13,7 +13,6 @@ namespace TerraFX.Interop
         [NativeTypeName("UINT32")]
         public uint EffectCount;
 
-        [NativeTypeName("XAUDIO2_EFFECT_DESCRIPTOR *")]
         public XAUDIO2_EFFECT_DESCRIPTOR* pEffectDescriptors;
     }
 }

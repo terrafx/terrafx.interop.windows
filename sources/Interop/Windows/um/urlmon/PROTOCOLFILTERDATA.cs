@@ -10,13 +10,10 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint cbSize;
 
-        [NativeTypeName("IInternetProtocolSink *")]
         public IInternetProtocolSink* pProtocolSink;
 
-        [NativeTypeName("IInternetProtocol *")]
         public IInternetProtocol* pProtocol;
 
-        [NativeTypeName("IUnknown *")]
         public IUnknown* pUnk;
 
         [NativeTypeName("DWORD")]

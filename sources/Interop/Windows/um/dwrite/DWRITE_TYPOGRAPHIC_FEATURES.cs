@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct DWRITE_TYPOGRAPHIC_FEATURES
     {
-        [NativeTypeName("DWRITE_FONT_FEATURE *")]
         public DWRITE_FONT_FEATURE* features;
 
         [NativeTypeName("UINT32")]

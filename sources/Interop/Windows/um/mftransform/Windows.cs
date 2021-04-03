@@ -178,7 +178,7 @@ namespace TerraFX.Interop
 
         [DllImport("mfplat", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int MFCreateTransformActivate([NativeTypeName("IMFActivate **")] IMFActivate** ppActivate);
+        public static extern int MFCreateTransformActivate(IMFActivate** ppActivate);
 
         [NativeTypeName("const IID")]
         public static readonly Guid MFT_AUDIO_DECODER_DEGRADATION_INFO_ATTRIBUTE = new Guid(0x6c3386ad, 0xec20, 0x430d, 0xb2, 0xa5, 0x50, 0x5c, 0x71, 0x78, 0xd9, 0xc4);

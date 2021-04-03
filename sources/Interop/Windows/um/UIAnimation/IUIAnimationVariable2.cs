@@ -17,7 +17,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
+        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IUIAnimationVariable2*, Guid*, void**, int>)(lpVtbl[0]))((IUIAnimationVariable2*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -59,14 +59,14 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int GetCurve([NativeTypeName("IDCompositionAnimation *")] IDCompositionAnimation* animation)
+        public int GetCurve(IDCompositionAnimation* animation)
         {
             return ((delegate* unmanaged<IUIAnimationVariable2*, IDCompositionAnimation*, int>)(lpVtbl[6]))((IUIAnimationVariable2*)Unsafe.AsPointer(ref this), animation);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int GetVectorCurve([NativeTypeName("IDCompositionAnimation **")] IDCompositionAnimation** animation, [NativeTypeName("UINT")] uint cDimension)
+        public int GetVectorCurve(IDCompositionAnimation** animation, [NativeTypeName("UINT")] uint cDimension)
         {
             return ((delegate* unmanaged<IUIAnimationVariable2*, IDCompositionAnimation**, uint, int>)(lpVtbl[7]))((IUIAnimationVariable2*)Unsafe.AsPointer(ref this), animation, cDimension);
         }
@@ -143,7 +143,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int GetCurrentStoryboard([NativeTypeName("IUIAnimationStoryboard2 **")] IUIAnimationStoryboard2** storyboard)
+        public int GetCurrentStoryboard(IUIAnimationStoryboard2** storyboard)
         {
             return ((delegate* unmanaged<IUIAnimationVariable2*, IUIAnimationStoryboard2**, int>)(lpVtbl[18]))((IUIAnimationVariable2*)Unsafe.AsPointer(ref this), storyboard);
         }
@@ -185,35 +185,35 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int SetTag([NativeTypeName("IUnknown *")] IUnknown* @object, [NativeTypeName("UINT32")] uint id)
+        public int SetTag(IUnknown* @object, [NativeTypeName("UINT32")] uint id)
         {
             return ((delegate* unmanaged<IUIAnimationVariable2*, IUnknown*, uint, int>)(lpVtbl[24]))((IUIAnimationVariable2*)Unsafe.AsPointer(ref this), @object, id);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int GetTag([NativeTypeName("IUnknown **")] IUnknown** @object, [NativeTypeName("UINT32 *")] uint* id)
+        public int GetTag(IUnknown** @object, [NativeTypeName("UINT32 *")] uint* id)
         {
             return ((delegate* unmanaged<IUIAnimationVariable2*, IUnknown**, uint*, int>)(lpVtbl[25]))((IUIAnimationVariable2*)Unsafe.AsPointer(ref this), @object, id);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int SetVariableChangeHandler([NativeTypeName("IUIAnimationVariableChangeHandler2 *")] IUIAnimationVariableChangeHandler2* handler, [NativeTypeName("BOOL")] int fRegisterForNextAnimationEvent = 0)
+        public int SetVariableChangeHandler(IUIAnimationVariableChangeHandler2* handler, [NativeTypeName("BOOL")] int fRegisterForNextAnimationEvent = 0)
         {
             return ((delegate* unmanaged<IUIAnimationVariable2*, IUIAnimationVariableChangeHandler2*, int, int>)(lpVtbl[26]))((IUIAnimationVariable2*)Unsafe.AsPointer(ref this), handler, fRegisterForNextAnimationEvent);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int SetVariableIntegerChangeHandler([NativeTypeName("IUIAnimationVariableIntegerChangeHandler2 *")] IUIAnimationVariableIntegerChangeHandler2* handler, [NativeTypeName("BOOL")] int fRegisterForNextAnimationEvent = 0)
+        public int SetVariableIntegerChangeHandler(IUIAnimationVariableIntegerChangeHandler2* handler, [NativeTypeName("BOOL")] int fRegisterForNextAnimationEvent = 0)
         {
             return ((delegate* unmanaged<IUIAnimationVariable2*, IUIAnimationVariableIntegerChangeHandler2*, int, int>)(lpVtbl[27]))((IUIAnimationVariable2*)Unsafe.AsPointer(ref this), handler, fRegisterForNextAnimationEvent);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int SetVariableCurveChangeHandler([NativeTypeName("IUIAnimationVariableCurveChangeHandler2 *")] IUIAnimationVariableCurveChangeHandler2* handler)
+        public int SetVariableCurveChangeHandler(IUIAnimationVariableCurveChangeHandler2* handler)
         {
             return ((delegate* unmanaged<IUIAnimationVariable2*, IUIAnimationVariableCurveChangeHandler2*, int>)(lpVtbl[28]))((IUIAnimationVariable2*)Unsafe.AsPointer(ref this), handler);
         }

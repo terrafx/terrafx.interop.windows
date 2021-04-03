@@ -12,15 +12,15 @@ namespace TerraFX.Interop
     {
         [DllImport("xinput1_4", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
-        public static extern uint XInputGetState([NativeTypeName("DWORD")] uint dwUserIndex, [NativeTypeName("XINPUT_STATE *")] XINPUT_STATE* pState);
+        public static extern uint XInputGetState([NativeTypeName("DWORD")] uint dwUserIndex, XINPUT_STATE* pState);
 
         [DllImport("xinput1_4", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
-        public static extern uint XInputSetState([NativeTypeName("DWORD")] uint dwUserIndex, [NativeTypeName("XINPUT_VIBRATION *")] XINPUT_VIBRATION* pVibration);
+        public static extern uint XInputSetState([NativeTypeName("DWORD")] uint dwUserIndex, XINPUT_VIBRATION* pVibration);
 
         [DllImport("xinput1_4", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
-        public static extern uint XInputGetCapabilities([NativeTypeName("DWORD")] uint dwUserIndex, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("XINPUT_CAPABILITIES *")] XINPUT_CAPABILITIES* pCapabilities);
+        public static extern uint XInputGetCapabilities([NativeTypeName("DWORD")] uint dwUserIndex, [NativeTypeName("DWORD")] uint dwFlags, XINPUT_CAPABILITIES* pCapabilities);
 
         [DllImport("xinput1_4", ExactSpelling = true)]
         public static extern void XInputEnable([NativeTypeName("BOOL")] int enable);
@@ -31,7 +31,7 @@ namespace TerraFX.Interop
 
         [DllImport("xinput1_4", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
-        public static extern uint XInputGetBatteryInformation([NativeTypeName("DWORD")] uint dwUserIndex, [NativeTypeName("BYTE")] byte devType, [NativeTypeName("XINPUT_BATTERY_INFORMATION *")] XINPUT_BATTERY_INFORMATION* pBatteryInformation);
+        public static extern uint XInputGetBatteryInformation([NativeTypeName("DWORD")] uint dwUserIndex, [NativeTypeName("BYTE")] byte devType, XINPUT_BATTERY_INFORMATION* pBatteryInformation);
 
         [DllImport("xinput1_4", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]

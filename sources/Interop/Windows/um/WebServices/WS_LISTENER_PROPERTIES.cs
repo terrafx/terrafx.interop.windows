@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct WS_LISTENER_PROPERTIES
     {
-        [NativeTypeName("WS_LISTENER_PROPERTY *")]
         public WS_LISTENER_PROPERTY* properties;
 
         [NativeTypeName("ULONG")]

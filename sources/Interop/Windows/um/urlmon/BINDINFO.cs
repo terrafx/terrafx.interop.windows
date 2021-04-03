@@ -43,7 +43,6 @@ namespace TerraFX.Interop
         [NativeTypeName("IID")]
         public Guid iid;
 
-        [NativeTypeName("IUnknown *")]
         public IUnknown* pUnk;
 
         [NativeTypeName("DWORD")]

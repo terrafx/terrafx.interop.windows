@@ -16,6 +16,8 @@ namespace TerraFX.Interop
         [NativeTypeName("_CERT_BIOMETRIC_DATA::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/wincrypt.h:5553:5)")]
         public _Anonymous_e__Union Anonymous;
 
+        public CERT_HASHED_URL HashedUrl;
+
         public ref uint dwPredefined
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -36,8 +38,6 @@ namespace TerraFX.Interop
                 }
             }
         }
-
-        public CERT_HASHED_URL HashedUrl;
 
         [StructLayout(LayoutKind.Explicit)]
         public unsafe partial struct _Anonymous_e__Union

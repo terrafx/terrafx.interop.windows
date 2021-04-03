@@ -22,7 +22,6 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint dwImpersonationLevel;
 
-        [NativeTypeName("COAUTHIDENTITY *")]
         public COAUTHIDENTITY* pAuthIdentityData;
 
         [NativeTypeName("DWORD")]

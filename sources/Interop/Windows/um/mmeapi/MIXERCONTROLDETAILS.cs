@@ -24,6 +24,12 @@ namespace TerraFX.Interop
         [NativeTypeName("tMIXERCONTROLDETAILS::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/mmeapi.h:2341:5)")]
         public _Anonymous_e__Union Anonymous;
 
+        [NativeTypeName("DWORD")]
+        public uint cbDetails;
+
+        [NativeTypeName("LPVOID")]
+        public void* paDetails;
+
         public ref IntPtr hwndOwner
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -41,12 +47,6 @@ namespace TerraFX.Interop
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.cMultipleItems, 1));
             }
         }
-
-        [NativeTypeName("DWORD")]
-        public uint cbDetails;
-
-        [NativeTypeName("LPVOID")]
-        public void* paDetails;
 
         [StructLayout(LayoutKind.Explicit, Pack = 1)]
         public partial struct _Anonymous_e__Union

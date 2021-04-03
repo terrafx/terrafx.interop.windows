@@ -15,6 +15,11 @@ namespace TerraFX.Interop
         [NativeTypeName("_DISPLAYCONFIG_GET_ADVANCED_COLOR_INFO::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/wingdi.h:3159:5)")]
         public _Anonymous_e__Union Anonymous;
 
+        public DISPLAYCONFIG_COLOR_ENCODING colorEncoding;
+
+        [NativeTypeName("UINT32")]
+        public uint bitsPerColorChannel;
+
         public uint advancedColorSupported
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -98,11 +103,6 @@ namespace TerraFX.Interop
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.value, 1));
             }
         }
-
-        public DISPLAYCONFIG_COLOR_ENCODING colorEncoding;
-
-        [NativeTypeName("UINT32")]
-        public uint bitsPerColorChannel;
 
         [StructLayout(LayoutKind.Explicit)]
         public partial struct _Anonymous_e__Union

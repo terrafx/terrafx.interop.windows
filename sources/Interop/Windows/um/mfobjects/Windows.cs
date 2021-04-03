@@ -13,11 +13,11 @@ namespace TerraFX.Interop
     {
         [DllImport("mfplat", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int MFSerializeAttributesToStream([NativeTypeName("IMFAttributes *")] IMFAttributes* pAttr, [NativeTypeName("DWORD")] uint dwOptions, [NativeTypeName("IStream *")] IStream* pStm);
+        public static extern int MFSerializeAttributesToStream(IMFAttributes* pAttr, [NativeTypeName("DWORD")] uint dwOptions, IStream* pStm);
 
         [DllImport("mfplat", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int MFDeserializeAttributesFromStream([NativeTypeName("IMFAttributes *")] IMFAttributes* pAttr, [NativeTypeName("DWORD")] uint dwOptions, [NativeTypeName("IStream *")] IStream* pStm);
+        public static extern int MFDeserializeAttributesFromStream(IMFAttributes* pAttr, [NativeTypeName("DWORD")] uint dwOptions, IStream* pStm);
 
         [NativeTypeName("const IID")]
         public static readonly Guid MF_BYTESTREAM_ORIGIN_NAME = new Guid(0xfc358288, 0x3cb6, 0x460c, 0xa4, 0x24, 0xb6, 0x68, 0x12, 0x60, 0x37, 0x5a);

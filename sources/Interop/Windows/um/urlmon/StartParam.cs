@@ -12,10 +12,8 @@ namespace TerraFX.Interop
         [NativeTypeName("IID")]
         public Guid iid;
 
-        [NativeTypeName("IBindCtx *")]
         public IBindCtx* pIBindCtx;
 
-        [NativeTypeName("IUnknown *")]
         public IUnknown* pItf;
     }
 }

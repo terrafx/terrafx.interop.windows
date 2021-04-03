@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct PACKAGE_INFO_REFERENCE
     {
-        [NativeTypeName("void *")]
         public void* reserved;
     }
 }

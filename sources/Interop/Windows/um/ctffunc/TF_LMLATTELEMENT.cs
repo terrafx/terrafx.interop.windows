@@ -22,6 +22,9 @@ namespace TerraFX.Interop
         [NativeTypeName("TF_LMLATTELEMENT::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/ctffunc.h:2273:36)")]
         public _Anonymous_e__Union Anonymous;
 
+        [NativeTypeName("BSTR")]
+        public ushort* bstrText;
+
         public ref int iCost
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -30,9 +33,6 @@ namespace TerraFX.Interop
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.iCost, 1));
             }
         }
-
-        [NativeTypeName("BSTR")]
-        public ushort* bstrText;
 
         [StructLayout(LayoutKind.Explicit)]
         public partial struct _Anonymous_e__Union

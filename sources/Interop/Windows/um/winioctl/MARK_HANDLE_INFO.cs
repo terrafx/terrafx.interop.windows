@@ -14,6 +14,12 @@ namespace TerraFX.Interop
         [NativeTypeName("MARK_HANDLE_INFO::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winioctl.h:11047:5)")]
         public _Anonymous_e__Union Anonymous;
 
+        [NativeTypeName("HANDLE")]
+        public IntPtr VolumeHandle;
+
+        [NativeTypeName("DWORD")]
+        public uint HandleInfo;
+
         public ref uint UsnSourceInfo
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -31,12 +37,6 @@ namespace TerraFX.Interop
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.CopyNumber, 1));
             }
         }
-
-        [NativeTypeName("HANDLE")]
-        public IntPtr VolumeHandle;
-
-        [NativeTypeName("DWORD")]
-        public uint HandleInfo;
 
         [StructLayout(LayoutKind.Explicit)]
         public partial struct _Anonymous_e__Union

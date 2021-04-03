@@ -10,13 +10,11 @@ namespace TerraFX.Interop
         [NativeTypeName("UINT")]
         public uint NumCategories;
 
-        [NativeTypeName("DXGI_INFO_QUEUE_MESSAGE_CATEGORY *")]
         public DXGI_INFO_QUEUE_MESSAGE_CATEGORY* pCategoryList;
 
         [NativeTypeName("UINT")]
         public uint NumSeverities;
 
-        [NativeTypeName("DXGI_INFO_QUEUE_MESSAGE_SEVERITY *")]
         public DXGI_INFO_QUEUE_MESSAGE_SEVERITY* pSeverityList;
 
         [NativeTypeName("UINT")]

@@ -2,7 +2,7 @@
 @../../remap.rsp
 --exclude
 Ro.detail._Locator<Fn>
-Ro.Locator<Fn>(const Fn &):Ro::detail::_Locator<Fn>
+Ro.Locator<Fn>(const Fn &):Ro.detail._Locator<Fn>
 --file
 winrt-roparameterizediid.h
 --output

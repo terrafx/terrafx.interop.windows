@@ -19,6 +19,15 @@ namespace TerraFX.Interop
         [NativeTypeName("_CRYPT_KEY_SIGN_MESSAGE_PARA::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/wincrypt.h:16157:5)")]
         public _Anonymous_e__Union Anonymous;
 
+        [NativeTypeName("DWORD")]
+        public uint dwKeySpec;
+
+        public CRYPT_ALGORITHM_IDENTIFIER HashAlgorithm;
+
+        public void* pvHashAuxInfo;
+
+        public CRYPT_ALGORITHM_IDENTIFIER PubKeyAlgorithm;
+
         public ref nuint hCryptProv
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -36,16 +45,6 @@ namespace TerraFX.Interop
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.hNCryptKey, 1));
             }
         }
-
-        [NativeTypeName("DWORD")]
-        public uint dwKeySpec;
-
-        public CRYPT_ALGORITHM_IDENTIFIER HashAlgorithm;
-
-        [NativeTypeName("void *")]
-        public void* pvHashAuxInfo;
-
-        public CRYPT_ALGORITHM_IDENTIFIER PubKeyAlgorithm;
 
         [StructLayout(LayoutKind.Explicit)]
         public partial struct _Anonymous_e__Union

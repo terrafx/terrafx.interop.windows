@@ -9,10 +9,8 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct WS_FAULT
     {
-        [NativeTypeName("WS_FAULT_CODE *")]
         public WS_FAULT_CODE* code;
 
-        [NativeTypeName("WS_FAULT_REASON *")]
         public WS_FAULT_REASON* reasons;
 
         [NativeTypeName("ULONG")]

@@ -17,7 +17,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
+        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IUserActivityRequestManagerInterop*, Guid*, void**, int>)(lpVtbl[0]))((IUserActivityRequestManagerInterop*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -52,14 +52,14 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int GetTrustLevel([NativeTypeName("TrustLevel *")] TrustLevel* trustLevel)
+        public int GetTrustLevel(TrustLevel* trustLevel)
         {
             return ((delegate* unmanaged<IUserActivityRequestManagerInterop*, TrustLevel*, int>)(lpVtbl[5]))((IUserActivityRequestManagerInterop*)Unsafe.AsPointer(ref this), trustLevel);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int GetForWindow([NativeTypeName("HWND")] IntPtr window, [NativeTypeName("const IID &")] Guid* iid, [NativeTypeName("void **")] void** value)
+        public int GetForWindow([NativeTypeName("HWND")] IntPtr window, [NativeTypeName("const IID &")] Guid* iid, void** value)
         {
             return ((delegate* unmanaged<IUserActivityRequestManagerInterop*, IntPtr, Guid*, void**, int>)(lpVtbl[6]))((IUserActivityRequestManagerInterop*)Unsafe.AsPointer(ref this), window, iid, value);
         }

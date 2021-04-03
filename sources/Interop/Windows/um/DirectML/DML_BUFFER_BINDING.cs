@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct DML_BUFFER_BINDING
     {
-        [NativeTypeName("ID3D12Resource *")]
         public ID3D12Resource* Buffer;
 
         [NativeTypeName("UINT64")]

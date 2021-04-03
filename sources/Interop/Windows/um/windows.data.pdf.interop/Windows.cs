@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     {
         [DllImport("Windows.Data.Pdf.dll", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int PdfCreateRenderer([NativeTypeName("IDXGIDevice *")] IDXGIDevice* pDevice, [NativeTypeName("IPdfRendererNative **")] IPdfRendererNative** ppRenderer);
+        public static extern int PdfCreateRenderer(IDXGIDevice* pDevice, IPdfRendererNative** ppRenderer);
 
         [NativeTypeName("const D2D_RECT_F")]
         public static readonly D2D_RECT_F sc_PdfRenderParamsDefaultSrcRect = new D2D_RECT_F

@@ -10,7 +10,6 @@ namespace TerraFX.Interop
         [NativeTypeName("ULONG")]
         public uint subStringCount;
 
-        [NativeTypeName("WS_STRING **")]
         public WS_STRING** subStrings;
     }
 }

@@ -12,7 +12,6 @@ namespace TerraFX.Interop
         [NativeTypeName("UINT")]
         public uint Size;
 
-        [NativeTypeName("void *")]
         public void* pData;
     }
 }

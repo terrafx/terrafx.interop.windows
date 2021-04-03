@@ -24,7 +24,7 @@ namespace TerraFX.Interop
 
         [DllImport("msctf", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int SetInputScopes2([NativeTypeName("HWND")] IntPtr hwnd, [NativeTypeName("const InputScope *")] InputScope* pInputScopes, [NativeTypeName("UINT")] uint cInputScopes, [NativeTypeName("IEnumString *")] IEnumString* pEnumString, [NativeTypeName("PWSTR")] ushort* pszRegExp, [NativeTypeName("PWSTR")] ushort* pszSRGS);
+        public static extern int SetInputScopes2([NativeTypeName("HWND")] IntPtr hwnd, [NativeTypeName("const InputScope *")] InputScope* pInputScopes, [NativeTypeName("UINT")] uint cInputScopes, IEnumString* pEnumString, [NativeTypeName("PWSTR")] ushort* pszRegExp, [NativeTypeName("PWSTR")] ushort* pszSRGS);
 
         [NativeTypeName("const GUID")]
         public static readonly Guid IID_ITfInputScope = new Guid(0xfde1eaee, 0x6924, 0x4cdf, 0x91, 0xe7, 0xda, 0x38, 0xcf, 0xf5, 0x55, 0x9d);

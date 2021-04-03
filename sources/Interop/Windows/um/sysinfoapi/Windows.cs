@@ -174,7 +174,7 @@ namespace TerraFX.Interop
 
         [DllImport("KernelBase", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int GetIntegratedDisplaySize([NativeTypeName("double *")] double* sizeInInches);
+        public static extern int GetIntegratedDisplaySize(double* sizeInInches);
 
         [DllImport("kernel32", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]

@@ -10,7 +10,6 @@ namespace TerraFX.Interop
         [NativeTypeName("PSIGNER_SIGN_EX2_PARAMS")]
         public SIGNER_SIGN_EX2_PARAMS* pSignerParams;
 
-        [NativeTypeName("IUnknown *")]
         public IUnknown* pAppxSipState;
     }
 }

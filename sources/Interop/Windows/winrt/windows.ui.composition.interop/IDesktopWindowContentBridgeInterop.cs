@@ -17,7 +17,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
+        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IDesktopWindowContentBridgeInterop*, Guid*, void**, int>)(lpVtbl[0]))((IDesktopWindowContentBridgeInterop*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -52,7 +52,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int get_AppliedScaleFactor([NativeTypeName("float *")] float* value)
+        public int get_AppliedScaleFactor(float* value)
         {
             return ((delegate* unmanaged<IDesktopWindowContentBridgeInterop*, float*, int>)(lpVtbl[5]))((IDesktopWindowContentBridgeInterop*)Unsafe.AsPointer(ref this), value);
         }

@@ -9,15 +9,12 @@ namespace TerraFX.Interop
     {
         public WS_FIELD_MAPPING mapping;
 
-        [NativeTypeName("WS_XML_STRING *")]
         public WS_XML_STRING* localName;
 
-        [NativeTypeName("WS_XML_STRING *")]
         public WS_XML_STRING* ns;
 
         public WS_TYPE type;
 
-        [NativeTypeName("void *")]
         public void* typeDescription;
 
         [NativeTypeName("ULONG")]
@@ -26,19 +23,15 @@ namespace TerraFX.Interop
         [NativeTypeName("ULONG")]
         public uint options;
 
-        [NativeTypeName("WS_DEFAULT_VALUE *")]
         public WS_DEFAULT_VALUE* defaultValue;
 
         [NativeTypeName("ULONG")]
         public uint countOffset;
 
-        [NativeTypeName("WS_XML_STRING *")]
         public WS_XML_STRING* itemLocalName;
 
-        [NativeTypeName("WS_XML_STRING *")]
         public WS_XML_STRING* itemNs;
 
-        [NativeTypeName("WS_ITEM_RANGE *")]
         public WS_ITEM_RANGE* itemRange;
     }
 }

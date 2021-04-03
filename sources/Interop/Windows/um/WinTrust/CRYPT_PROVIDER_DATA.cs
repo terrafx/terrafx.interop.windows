@@ -14,7 +14,6 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint cbStruct;
 
-        [NativeTypeName("WINTRUST_DATA *")]
         public WINTRUST_DATA* pWintrustData;
 
         [NativeTypeName("BOOL")]
@@ -77,18 +76,6 @@ namespace TerraFX.Interop
         [NativeTypeName("_CRYPT_PROVIDER_DATA::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/WinTrust.h:688:5)")]
         public _Anonymous_e__Union Anonymous;
 
-        public ref PROVDATA_SIP* pPDSip
-        {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                fixed (_Anonymous_e__Union* pField = &Anonymous)
-                {
-                    return ref pField->pPDSip;
-                }
-            }
-        }
-
         [NativeTypeName("char *")]
         public sbyte* pszUsageOID;
 
@@ -120,6 +107,18 @@ namespace TerraFX.Interop
 
         [NativeTypeName("struct WINTRUST_SIGNATURE_SETTINGS_ *")]
         public WINTRUST_SIGNATURE_SETTINGS* pSigSettings;
+
+        public ref PROVDATA_SIP* pPDSip
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                fixed (_Anonymous_e__Union* pField = &Anonymous)
+                {
+                    return ref pField->pPDSip;
+                }
+            }
+        }
 
         [StructLayout(LayoutKind.Explicit)]
         public unsafe partial struct _Anonymous_e__Union

@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct CERT_POLICY_QUALIFIER_USER_NOTICE
     {
-        [NativeTypeName("CERT_POLICY_QUALIFIER_NOTICE_REFERENCE *")]
         public CERT_POLICY_QUALIFIER_NOTICE_REFERENCE* pNoticeReference;
 
         [NativeTypeName("LPWSTR")]

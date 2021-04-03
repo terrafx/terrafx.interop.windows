@@ -10,7 +10,6 @@ namespace TerraFX.Interop
         [NativeTypeName("WS_ASYNC_CALLBACK")]
         public delegate* unmanaged<int, WS_CALLBACK_MODEL, void*, void> callback;
 
-        [NativeTypeName("void *")]
         public void* callbackState;
     }
 }

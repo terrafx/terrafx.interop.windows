@@ -13,7 +13,6 @@ namespace TerraFX.Interop
         [NativeTypeName("UINT")]
         public uint CommandCount;
 
-        [NativeTypeName("D3D12_VIDEO_EXTENSION_COMMAND_INFO *")]
         public D3D12_VIDEO_EXTENSION_COMMAND_INFO* pCommandInfos;
     }
 }

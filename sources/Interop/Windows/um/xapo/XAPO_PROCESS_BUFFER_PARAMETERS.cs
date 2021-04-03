@@ -10,7 +10,6 @@ namespace TerraFX.Interop
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe partial struct XAPO_PROCESS_BUFFER_PARAMETERS
     {
-        [NativeTypeName("void *")]
         public void* pBuffer;
 
         public XAPO_BUFFER_FLAGS BufferFlags;

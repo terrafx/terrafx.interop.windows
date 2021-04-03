@@ -11,13 +11,11 @@ namespace TerraFX.Interop
     {
         public WS_XML_WRITER_ENCODING encoding;
 
-        [NativeTypeName("WS_XML_DICTIONARY *")]
         public WS_XML_DICTIONARY* staticDictionary;
 
         [NativeTypeName("WS_DYNAMIC_STRING_CALLBACK")]
         public delegate* unmanaged<void*, WS_XML_STRING*, int*, uint*, IntPtr, int> dynamicStringCallback;
 
-        [NativeTypeName("void *")]
         public void* dynamicStringCallbackState;
     }
 }

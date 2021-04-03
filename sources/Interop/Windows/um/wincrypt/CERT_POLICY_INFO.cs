@@ -13,7 +13,6 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint cPolicyQualifier;
 
-        [NativeTypeName("CERT_POLICY_QUALIFIER_INFO *")]
         public CERT_POLICY_QUALIFIER_INFO* rgPolicyQualifier;
     }
 }

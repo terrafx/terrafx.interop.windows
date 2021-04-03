@@ -42,7 +42,7 @@ namespace TerraFX.Interop
         public static extern int X3DAudioInitialize([NativeTypeName("UINT32")] uint SpeakerChannelMask, [NativeTypeName("FLOAT32")] float SpeedOfSound, [NativeTypeName("X3DAUDIO_HANDLE")] byte* Instance);
 
         [DllImport("X3DAudio1_7", ExactSpelling = true)]
-        public static extern void X3DAudioCalculate([NativeTypeName("const X3DAUDIO_HANDLE")] byte* Instance, [NativeTypeName("const X3DAUDIO_LISTENER *")] X3DAUDIO_LISTENER* pListener, [NativeTypeName("const X3DAUDIO_EMITTER *")] X3DAUDIO_EMITTER* pEmitter, [NativeTypeName("UINT32")] uint Flags, [NativeTypeName("X3DAUDIO_DSP_SETTINGS *")] X3DAUDIO_DSP_SETTINGS* pDSPSettings);
+        public static extern void X3DAudioCalculate([NativeTypeName("const X3DAUDIO_HANDLE")] byte* Instance, [NativeTypeName("const X3DAUDIO_LISTENER *")] X3DAUDIO_LISTENER* pListener, [NativeTypeName("const X3DAUDIO_EMITTER *")] X3DAUDIO_EMITTER* pEmitter, [NativeTypeName("UINT32")] uint Flags, X3DAUDIO_DSP_SETTINGS* pDSPSettings);
 
         [NativeTypeName("#define SPEAKER_MONO SPEAKER_FRONT_CENTER")]
         public const int SPEAKER_MONO = 0x00000004;

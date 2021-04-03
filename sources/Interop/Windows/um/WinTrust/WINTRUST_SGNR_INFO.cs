@@ -13,7 +13,6 @@ namespace TerraFX.Interop
         [NativeTypeName("LPCWSTR")]
         public ushort* pcwszDisplayName;
 
-        [NativeTypeName("CMSG_SIGNER_INFO *")]
         public CMSG_SIGNER_INFO* psSignerInfo;
 
         [NativeTypeName("DWORD")]

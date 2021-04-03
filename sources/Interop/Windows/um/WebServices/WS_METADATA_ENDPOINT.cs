@@ -14,25 +14,18 @@ namespace TerraFX.Interop
         [NativeTypeName("WS_POLICY *")]
         public IntPtr endpointPolicy;
 
-        [NativeTypeName("WS_XML_STRING *")]
         public WS_XML_STRING* portName;
 
-        [NativeTypeName("WS_XML_STRING *")]
         public WS_XML_STRING* serviceName;
 
-        [NativeTypeName("WS_XML_STRING *")]
         public WS_XML_STRING* serviceNs;
 
-        [NativeTypeName("WS_XML_STRING *")]
         public WS_XML_STRING* bindingName;
 
-        [NativeTypeName("WS_XML_STRING *")]
         public WS_XML_STRING* bindingNs;
 
-        [NativeTypeName("WS_XML_STRING *")]
         public WS_XML_STRING* portTypeName;
 
-        [NativeTypeName("WS_XML_STRING *")]
         public WS_XML_STRING* portTypeNs;
     }
 }

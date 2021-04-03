@@ -17,7 +17,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
+        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IMFStreamDescriptor*, Guid*, void**, int>)(lpVtbl[0]))((IMFStreamDescriptor*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -38,14 +38,14 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int GetItem([NativeTypeName("const GUID &")] Guid* guidKey, [NativeTypeName("PROPVARIANT *")] PROPVARIANT* pValue)
+        public int GetItem([NativeTypeName("const GUID &")] Guid* guidKey, PROPVARIANT* pValue)
         {
             return ((delegate* unmanaged<IMFStreamDescriptor*, Guid*, PROPVARIANT*, int>)(lpVtbl[3]))((IMFStreamDescriptor*)Unsafe.AsPointer(ref this), guidKey, pValue);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int GetItemType([NativeTypeName("const GUID &")] Guid* guidKey, [NativeTypeName("MF_ATTRIBUTE_TYPE *")] MF_ATTRIBUTE_TYPE* pType)
+        public int GetItemType([NativeTypeName("const GUID &")] Guid* guidKey, MF_ATTRIBUTE_TYPE* pType)
         {
             return ((delegate* unmanaged<IMFStreamDescriptor*, Guid*, MF_ATTRIBUTE_TYPE*, int>)(lpVtbl[4]))((IMFStreamDescriptor*)Unsafe.AsPointer(ref this), guidKey, pType);
         }
@@ -59,7 +59,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int Compare([NativeTypeName("IMFAttributes *")] IMFAttributes* pTheirs, MF_ATTRIBUTES_MATCH_TYPE MatchType, [NativeTypeName("BOOL *")] int* pbResult)
+        public int Compare(IMFAttributes* pTheirs, MF_ATTRIBUTES_MATCH_TYPE MatchType, [NativeTypeName("BOOL *")] int* pbResult)
         {
             return ((delegate* unmanaged<IMFStreamDescriptor*, IMFAttributes*, MF_ATTRIBUTES_MATCH_TYPE, int*, int>)(lpVtbl[6]))((IMFStreamDescriptor*)Unsafe.AsPointer(ref this), pTheirs, MatchType, pbResult);
         }
@@ -80,7 +80,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int GetDouble([NativeTypeName("const GUID &")] Guid* guidKey, [NativeTypeName("double *")] double* pfValue)
+        public int GetDouble([NativeTypeName("const GUID &")] Guid* guidKey, double* pfValue)
         {
             return ((delegate* unmanaged<IMFStreamDescriptor*, Guid*, double*, int>)(lpVtbl[9]))((IMFStreamDescriptor*)Unsafe.AsPointer(ref this), guidKey, pfValue);
         }
@@ -206,7 +206,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int SetUnknown([NativeTypeName("const GUID &")] Guid* guidKey, [NativeTypeName("IUnknown *")] IUnknown* pUnknown)
+        public int SetUnknown([NativeTypeName("const GUID &")] Guid* guidKey, IUnknown* pUnknown)
         {
             return ((delegate* unmanaged<IMFStreamDescriptor*, Guid*, IUnknown*, int>)(lpVtbl[27]))((IMFStreamDescriptor*)Unsafe.AsPointer(ref this), guidKey, pUnknown);
         }
@@ -234,14 +234,14 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int GetItemByIndex([NativeTypeName("UINT32")] uint unIndex, [NativeTypeName("GUID *")] Guid* pguidKey, [NativeTypeName("PROPVARIANT *")] PROPVARIANT* pValue)
+        public int GetItemByIndex([NativeTypeName("UINT32")] uint unIndex, [NativeTypeName("GUID *")] Guid* pguidKey, PROPVARIANT* pValue)
         {
             return ((delegate* unmanaged<IMFStreamDescriptor*, uint, Guid*, PROPVARIANT*, int>)(lpVtbl[31]))((IMFStreamDescriptor*)Unsafe.AsPointer(ref this), unIndex, pguidKey, pValue);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int CopyAllItems([NativeTypeName("IMFAttributes *")] IMFAttributes* pDest)
+        public int CopyAllItems(IMFAttributes* pDest)
         {
             return ((delegate* unmanaged<IMFStreamDescriptor*, IMFAttributes*, int>)(lpVtbl[32]))((IMFStreamDescriptor*)Unsafe.AsPointer(ref this), pDest);
         }
@@ -255,7 +255,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int GetMediaTypeHandler([NativeTypeName("IMFMediaTypeHandler **")] IMFMediaTypeHandler** ppMediaTypeHandler)
+        public int GetMediaTypeHandler(IMFMediaTypeHandler** ppMediaTypeHandler)
         {
             return ((delegate* unmanaged<IMFStreamDescriptor*, IMFMediaTypeHandler**, int>)(lpVtbl[34]))((IMFStreamDescriptor*)Unsafe.AsPointer(ref this), ppMediaTypeHandler);
         }

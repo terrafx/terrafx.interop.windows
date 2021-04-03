@@ -16,7 +16,6 @@ namespace TerraFX.Interop
         [NativeTypeName("BOOL")]
         public int bAllowWHQLChecks;
 
-        [NativeTypeName("void *")]
         public void* pReserved;
     }
 }

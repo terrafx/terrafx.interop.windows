@@ -12,7 +12,6 @@ namespace TerraFX.Interop
         [NativeTypeName("WS_PROXY_MESSAGE_CALLBACK")]
         public delegate* unmanaged<IntPtr, IntPtr, void*, IntPtr, int> callback;
 
-        [NativeTypeName("void *")]
         public void* state;
     }
 }

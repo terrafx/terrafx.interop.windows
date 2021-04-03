@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct TF_SELECTION
     {
-        [NativeTypeName("ITfRange *")]
         public ITfRange* range;
 
         public TF_SELECTIONSTYLE style;

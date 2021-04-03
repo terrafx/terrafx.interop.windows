@@ -32,6 +32,24 @@ namespace TerraFX.Interop
         [NativeTypeName("_WINTRUST_DATA::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/WinTrust.h:116:5)")]
         public _Anonymous_e__Union Anonymous;
 
+        [NativeTypeName("DWORD")]
+        public uint dwStateAction;
+
+        [NativeTypeName("HANDLE")]
+        public IntPtr hWVTStateData;
+
+        [NativeTypeName("WCHAR *")]
+        public ushort* pwszURLReference;
+
+        [NativeTypeName("DWORD")]
+        public uint dwProvFlags;
+
+        [NativeTypeName("DWORD")]
+        public uint dwUIContext;
+
+        [NativeTypeName("struct WINTRUST_SIGNATURE_SETTINGS_ *")]
+        public WINTRUST_SIGNATURE_SETTINGS* pSignatureSettings;
+
         public ref WINTRUST_FILE_INFO* pFile
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -91,24 +109,6 @@ namespace TerraFX.Interop
                 }
             }
         }
-
-        [NativeTypeName("DWORD")]
-        public uint dwStateAction;
-
-        [NativeTypeName("HANDLE")]
-        public IntPtr hWVTStateData;
-
-        [NativeTypeName("WCHAR *")]
-        public ushort* pwszURLReference;
-
-        [NativeTypeName("DWORD")]
-        public uint dwProvFlags;
-
-        [NativeTypeName("DWORD")]
-        public uint dwUIContext;
-
-        [NativeTypeName("struct WINTRUST_SIGNATURE_SETTINGS_ *")]
-        public WINTRUST_SIGNATURE_SETTINGS* pSignatureSettings;
 
         [StructLayout(LayoutKind.Explicit)]
         public unsafe partial struct _Anonymous_e__Union

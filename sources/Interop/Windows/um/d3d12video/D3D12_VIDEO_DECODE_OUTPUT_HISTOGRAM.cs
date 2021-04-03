@@ -10,7 +10,6 @@ namespace TerraFX.Interop
         [NativeTypeName("UINT64")]
         public ulong Offset;
 
-        [NativeTypeName("ID3D12Resource *")]
         public ID3D12Resource* pBuffer;
     }
 }

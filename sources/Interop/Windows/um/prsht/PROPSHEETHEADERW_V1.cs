@@ -26,6 +26,21 @@ namespace TerraFX.Interop
         [NativeTypeName("_PROPSHEETHEADERW_V1::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/prsht.h:520:5)")]
         public _Anonymous1_e__Union Anonymous1;
 
+        [NativeTypeName("LPCWSTR")]
+        public ushort* pszCaption;
+
+        [NativeTypeName("UINT")]
+        public uint nPages;
+
+        [NativeTypeName("_PROPSHEETHEADERW_V1::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/prsht.h:520:5)")]
+        public _Anonymous2_e__Union Anonymous2;
+
+        [NativeTypeName("_PROPSHEETHEADERW_V1::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/prsht.h:520:5)")]
+        public _Anonymous3_e__Union Anonymous3;
+
+        [NativeTypeName("PFNPROPSHEETCALLBACK")]
+        public delegate* unmanaged<IntPtr, uint, nint, int> pfnCallback;
+
         public ref IntPtr hIcon
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -47,15 +62,6 @@ namespace TerraFX.Interop
             }
         }
 
-        [NativeTypeName("LPCWSTR")]
-        public ushort* pszCaption;
-
-        [NativeTypeName("UINT")]
-        public uint nPages;
-
-        [NativeTypeName("_PROPSHEETHEADERW_V1::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/prsht.h:520:5)")]
-        public _Anonymous2_e__Union Anonymous2;
-
         public ref uint nStartPage
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -76,9 +82,6 @@ namespace TerraFX.Interop
                 }
             }
         }
-
-        [NativeTypeName("_PROPSHEETHEADERW_V1::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/prsht.h:520:5)")]
-        public _Anonymous3_e__Union Anonymous3;
 
         public ref PROPSHEETPAGEW* ppsp
         {
@@ -103,9 +106,6 @@ namespace TerraFX.Interop
                 }
             }
         }
-
-        [NativeTypeName("PFNPROPSHEETCALLBACK")]
-        public delegate* unmanaged<IntPtr, uint, nint, int> pfnCallback;
 
         [StructLayout(LayoutKind.Explicit)]
         public unsafe partial struct _Anonymous1_e__Union

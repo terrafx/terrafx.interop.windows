@@ -50,11 +50,9 @@ namespace TerraFX.Interop
         public unsafe partial struct _Anonymous_e__Union
         {
             [FieldOffset(0)]
-            [NativeTypeName("SIGNER_FILE_INFO *")]
             public SIGNER_FILE_INFO* pSignerFileInfo;
 
             [FieldOffset(0)]
-            [NativeTypeName("SIGNER_BLOB_INFO *")]
             public SIGNER_BLOB_INFO* pSignerBlobInfo;
         }
     }

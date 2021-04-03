@@ -36,7 +36,6 @@ namespace TerraFX.Interop
         [NativeTypeName("MFP_CREDENTIAL_FLAGS")]
         public uint flags;
 
-        [NativeTypeName("IMFNetCredential *")]
         public IMFNetCredential* pCredential;
     }
 }

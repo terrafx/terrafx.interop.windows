@@ -13,7 +13,6 @@ namespace TerraFX.Interop
         [NativeTypeName("QWORD")]
         public ulong cbPlayableDataSize;
 
-        [NativeTypeName("MF_LEAKY_BUCKET_PAIR *")]
         public MF_LEAKY_BUCKET_PAIR* prgBuckets;
 
         [NativeTypeName("DWORD")]

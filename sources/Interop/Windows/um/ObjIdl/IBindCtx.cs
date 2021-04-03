@@ -17,7 +17,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
+        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IBindCtx*, Guid*, void**, int>)(lpVtbl[0]))((IBindCtx*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -38,14 +38,14 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int RegisterObjectBound([NativeTypeName("IUnknown *")] IUnknown* punk)
+        public int RegisterObjectBound(IUnknown* punk)
         {
             return ((delegate* unmanaged<IBindCtx*, IUnknown*, int>)(lpVtbl[3]))((IBindCtx*)Unsafe.AsPointer(ref this), punk);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int RevokeObjectBound([NativeTypeName("IUnknown *")] IUnknown* punk)
+        public int RevokeObjectBound(IUnknown* punk)
         {
             return ((delegate* unmanaged<IBindCtx*, IUnknown*, int>)(lpVtbl[4]))((IBindCtx*)Unsafe.AsPointer(ref this), punk);
         }
@@ -59,42 +59,42 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int SetBindOptions([NativeTypeName("BIND_OPTS *")] BIND_OPTS* pbindopts)
+        public int SetBindOptions(BIND_OPTS* pbindopts)
         {
             return ((delegate* unmanaged<IBindCtx*, BIND_OPTS*, int>)(lpVtbl[6]))((IBindCtx*)Unsafe.AsPointer(ref this), pbindopts);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int GetBindOptions([NativeTypeName("BIND_OPTS *")] BIND_OPTS* pbindopts)
+        public int GetBindOptions(BIND_OPTS* pbindopts)
         {
             return ((delegate* unmanaged<IBindCtx*, BIND_OPTS*, int>)(lpVtbl[7]))((IBindCtx*)Unsafe.AsPointer(ref this), pbindopts);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int GetRunningObjectTable([NativeTypeName("IRunningObjectTable **")] IRunningObjectTable** pprot)
+        public int GetRunningObjectTable(IRunningObjectTable** pprot)
         {
             return ((delegate* unmanaged<IBindCtx*, IRunningObjectTable**, int>)(lpVtbl[8]))((IBindCtx*)Unsafe.AsPointer(ref this), pprot);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int RegisterObjectParam([NativeTypeName("LPOLESTR")] ushort* pszKey, [NativeTypeName("IUnknown *")] IUnknown* punk)
+        public int RegisterObjectParam([NativeTypeName("LPOLESTR")] ushort* pszKey, IUnknown* punk)
         {
             return ((delegate* unmanaged<IBindCtx*, ushort*, IUnknown*, int>)(lpVtbl[9]))((IBindCtx*)Unsafe.AsPointer(ref this), pszKey, punk);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int GetObjectParam([NativeTypeName("LPOLESTR")] ushort* pszKey, [NativeTypeName("IUnknown **")] IUnknown** ppunk)
+        public int GetObjectParam([NativeTypeName("LPOLESTR")] ushort* pszKey, IUnknown** ppunk)
         {
             return ((delegate* unmanaged<IBindCtx*, ushort*, IUnknown**, int>)(lpVtbl[10]))((IBindCtx*)Unsafe.AsPointer(ref this), pszKey, ppunk);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int EnumObjectParam([NativeTypeName("IEnumString **")] IEnumString** ppenum)
+        public int EnumObjectParam(IEnumString** ppenum)
         {
             return ((delegate* unmanaged<IBindCtx*, IEnumString**, int>)(lpVtbl[11]))((IBindCtx*)Unsafe.AsPointer(ref this), ppenum);
         }

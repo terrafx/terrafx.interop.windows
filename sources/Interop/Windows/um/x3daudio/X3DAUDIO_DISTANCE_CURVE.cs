@@ -10,7 +10,6 @@ namespace TerraFX.Interop
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe partial struct X3DAUDIO_DISTANCE_CURVE
     {
-        [NativeTypeName("X3DAUDIO_DISTANCE_CURVE_POINT *")]
         public X3DAUDIO_DISTANCE_CURVE_POINT* pPoints;
 
         [NativeTypeName("UINT32")]

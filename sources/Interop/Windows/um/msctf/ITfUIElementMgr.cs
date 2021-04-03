@@ -17,7 +17,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
+        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<ITfUIElementMgr*, Guid*, void**, int>)(lpVtbl[0]))((ITfUIElementMgr*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -38,7 +38,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int BeginUIElement([NativeTypeName("ITfUIElement *")] ITfUIElement* pElement, [NativeTypeName("BOOL *")] int* pbShow, [NativeTypeName("DWORD *")] uint* pdwUIElementId)
+        public int BeginUIElement(ITfUIElement* pElement, [NativeTypeName("BOOL *")] int* pbShow, [NativeTypeName("DWORD *")] uint* pdwUIElementId)
         {
             return ((delegate* unmanaged<ITfUIElementMgr*, ITfUIElement*, int*, uint*, int>)(lpVtbl[3]))((ITfUIElementMgr*)Unsafe.AsPointer(ref this), pElement, pbShow, pdwUIElementId);
         }
@@ -59,14 +59,14 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int GetUIElement([NativeTypeName("DWORD")] uint dwUIELementId, [NativeTypeName("ITfUIElement **")] ITfUIElement** ppElement)
+        public int GetUIElement([NativeTypeName("DWORD")] uint dwUIELementId, ITfUIElement** ppElement)
         {
             return ((delegate* unmanaged<ITfUIElementMgr*, uint, ITfUIElement**, int>)(lpVtbl[6]))((ITfUIElementMgr*)Unsafe.AsPointer(ref this), dwUIELementId, ppElement);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int EnumUIElements([NativeTypeName("IEnumTfUIElements **")] IEnumTfUIElements** ppEnum)
+        public int EnumUIElements(IEnumTfUIElements** ppEnum)
         {
             return ((delegate* unmanaged<ITfUIElementMgr*, IEnumTfUIElements**, int>)(lpVtbl[7]))((ITfUIElementMgr*)Unsafe.AsPointer(ref this), ppEnum);
         }

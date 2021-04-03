@@ -17,7 +17,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
+        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IDeviceTopology*, Guid*, void**, int>)(lpVtbl[0]))((IDeviceTopology*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -45,7 +45,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int GetConnector([NativeTypeName("UINT")] uint nIndex, [NativeTypeName("IConnector **")] IConnector** ppConnector)
+        public int GetConnector([NativeTypeName("UINT")] uint nIndex, IConnector** ppConnector)
         {
             return ((delegate* unmanaged<IDeviceTopology*, uint, IConnector**, int>)(lpVtbl[4]))((IDeviceTopology*)Unsafe.AsPointer(ref this), nIndex, ppConnector);
         }
@@ -59,14 +59,14 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int GetSubunit([NativeTypeName("UINT")] uint nIndex, [NativeTypeName("ISubunit **")] ISubunit** ppSubunit)
+        public int GetSubunit([NativeTypeName("UINT")] uint nIndex, ISubunit** ppSubunit)
         {
             return ((delegate* unmanaged<IDeviceTopology*, uint, ISubunit**, int>)(lpVtbl[6]))((IDeviceTopology*)Unsafe.AsPointer(ref this), nIndex, ppSubunit);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int GetPartById([NativeTypeName("UINT")] uint nId, [NativeTypeName("IPart **")] IPart** ppPart)
+        public int GetPartById([NativeTypeName("UINT")] uint nId, IPart** ppPart)
         {
             return ((delegate* unmanaged<IDeviceTopology*, uint, IPart**, int>)(lpVtbl[7]))((IDeviceTopology*)Unsafe.AsPointer(ref this), nId, ppPart);
         }
@@ -80,7 +80,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int GetSignalPath([NativeTypeName("IPart *")] IPart* pIPartFrom, [NativeTypeName("IPart *")] IPart* pIPartTo, [NativeTypeName("BOOL")] int bRejectMixedPaths, [NativeTypeName("IPartsList **")] IPartsList** ppParts)
+        public int GetSignalPath(IPart* pIPartFrom, IPart* pIPartTo, [NativeTypeName("BOOL")] int bRejectMixedPaths, IPartsList** ppParts)
         {
             return ((delegate* unmanaged<IDeviceTopology*, IPart*, IPart*, int, IPartsList**, int>)(lpVtbl[9]))((IDeviceTopology*)Unsafe.AsPointer(ref this), pIPartFrom, pIPartTo, bRejectMixedPaths, ppParts);
         }

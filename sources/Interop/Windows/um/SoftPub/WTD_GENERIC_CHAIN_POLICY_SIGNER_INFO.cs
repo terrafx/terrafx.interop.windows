@@ -13,24 +13,6 @@ namespace TerraFX.Interop
         [NativeTypeName("_WTD_GENERIC_CHAIN_POLICY_SIGNER_INFO::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/SoftPub.h:133:5)")]
         public _Anonymous_e__Union Anonymous;
 
-        public ref uint cbStruct
-        {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.cbStruct, 1));
-            }
-        }
-
-        public ref uint cbSize
-        {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.cbSize, 1));
-            }
-        }
-
         [NativeTypeName("PCCERT_CHAIN_CONTEXT")]
         public CERT_CHAIN_CONTEXT* pChainContext;
 
@@ -48,6 +30,24 @@ namespace TerraFX.Interop
 
         [NativeTypeName("PWTD_GENERIC_CHAIN_POLICY_SIGNER_INFO *")]
         public WTD_GENERIC_CHAIN_POLICY_SIGNER_INFO** rgpCounterSigner;
+
+        public ref uint cbStruct
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.cbStruct, 1));
+            }
+        }
+
+        public ref uint cbSize
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.cbSize, 1));
+            }
+        }
 
         [StructLayout(LayoutKind.Explicit)]
         public partial struct _Anonymous_e__Union

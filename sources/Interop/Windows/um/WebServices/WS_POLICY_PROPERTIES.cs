@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct WS_POLICY_PROPERTIES
     {
-        [NativeTypeName("WS_POLICY_PROPERTY *")]
         public WS_POLICY_PROPERTY* properties;
 
         [NativeTypeName("ULONG")]

@@ -11,7 +11,7 @@ namespace TerraFX.Interop
     {
         [DllImport("mssign32", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int SignerSignEx2([NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("SIGNER_SUBJECT_INFO *")] SIGNER_SUBJECT_INFO* pSubjectInfo, [NativeTypeName("SIGNER_CERT *")] SIGNER_CERT* pSignerCert, [NativeTypeName("SIGNER_SIGNATURE_INFO *")] SIGNER_SIGNATURE_INFO* pSignatureInfo, [NativeTypeName("SIGNER_PROVIDER_INFO *")] SIGNER_PROVIDER_INFO* pProviderInfo, [NativeTypeName("DWORD")] uint dwTimestampFlags, [NativeTypeName("PCSTR")] sbyte* pszTimestampAlgorithmOid, [NativeTypeName("PCWSTR")] ushort* pwszHttpTimeStamp, [NativeTypeName("PCRYPT_ATTRIBUTES")] CRYPT_ATTRIBUTES* psRequest, [NativeTypeName("PVOID")] void* pSipData, [NativeTypeName("SIGNER_CONTEXT **")] SIGNER_CONTEXT** ppSignerContext, [NativeTypeName("PCERT_STRONG_SIGN_PARA")] CERT_STRONG_SIGN_PARA* pCryptoPolicy, [NativeTypeName("PVOID")] void* pReserved);
+        public static extern int SignerSignEx2([NativeTypeName("DWORD")] uint dwFlags, SIGNER_SUBJECT_INFO* pSubjectInfo, SIGNER_CERT* pSignerCert, SIGNER_SIGNATURE_INFO* pSignatureInfo, SIGNER_PROVIDER_INFO* pProviderInfo, [NativeTypeName("DWORD")] uint dwTimestampFlags, [NativeTypeName("PCSTR")] sbyte* pszTimestampAlgorithmOid, [NativeTypeName("PCWSTR")] ushort* pwszHttpTimeStamp, [NativeTypeName("PCRYPT_ATTRIBUTES")] CRYPT_ATTRIBUTES* psRequest, [NativeTypeName("PVOID")] void* pSipData, SIGNER_CONTEXT** ppSignerContext, [NativeTypeName("PCERT_STRONG_SIGN_PARA")] CERT_STRONG_SIGN_PARA* pCryptoPolicy, [NativeTypeName("PVOID")] void* pReserved);
 
         [NativeTypeName("#define SIGNER_SUBJECT_FILE 0x01")]
         public const int SIGNER_SUBJECT_FILE = 0x01;

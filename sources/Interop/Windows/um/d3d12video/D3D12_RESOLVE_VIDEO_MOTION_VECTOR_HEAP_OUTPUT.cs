@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct D3D12_RESOLVE_VIDEO_MOTION_VECTOR_HEAP_OUTPUT
     {
-        [NativeTypeName("ID3D12Resource *")]
         public ID3D12Resource* pMotionVectorTexture2D;
 
         public D3D12_RESOURCE_COORDINATE MotionVectorCoordinate;

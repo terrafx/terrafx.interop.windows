@@ -13,22 +13,17 @@ namespace TerraFX.Interop
         [NativeTypeName("ULONG")]
         public uint alignment;
 
-        [NativeTypeName("WS_FIELD_DESCRIPTION **")]
         public WS_FIELD_DESCRIPTION** fields;
 
         [NativeTypeName("ULONG")]
         public uint fieldCount;
 
-        [NativeTypeName("WS_XML_STRING *")]
         public WS_XML_STRING* typeLocalName;
 
-        [NativeTypeName("WS_XML_STRING *")]
         public WS_XML_STRING* typeNs;
 
-        [NativeTypeName("WS_STRUCT_DESCRIPTION *")]
         public WS_STRUCT_DESCRIPTION* parentType;
 
-        [NativeTypeName("WS_STRUCT_DESCRIPTION **")]
         public WS_STRUCT_DESCRIPTION** subTypes;
 
         [NativeTypeName("ULONG")]

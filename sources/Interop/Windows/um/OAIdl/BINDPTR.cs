@@ -11,15 +11,12 @@ namespace TerraFX.Interop
     public unsafe partial struct BINDPTR
     {
         [FieldOffset(0)]
-        [NativeTypeName("FUNCDESC *")]
         public FUNCDESC* lpfuncdesc;
 
         [FieldOffset(0)]
-        [NativeTypeName("VARDESC *")]
         public VARDESC* lpvardesc;
 
         [FieldOffset(0)]
-        [NativeTypeName("ITypeComp *")]
         public ITypeComp* lptcomp;
     }
 }

@@ -13,6 +13,17 @@ namespace TerraFX.Interop
         [NativeTypeName("_WTD_GENERIC_CHAIN_POLICY_DATA::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/SoftPub.h:172:5)")]
         public _Anonymous_e__Union Anonymous;
 
+        [NativeTypeName("PWTD_GENERIC_CHAIN_POLICY_CREATE_INFO")]
+        public WTD_GENERIC_CHAIN_POLICY_CREATE_INFO* pSignerChainInfo;
+
+        [NativeTypeName("PWTD_GENERIC_CHAIN_POLICY_CREATE_INFO")]
+        public WTD_GENERIC_CHAIN_POLICY_CREATE_INFO* pCounterSignerChainInfo;
+
+        [NativeTypeName("PFN_WTD_GENERIC_CHAIN_POLICY_CALLBACK")]
+        public delegate* unmanaged<CRYPT_PROVIDER_DATA*, uint, uint, uint, WTD_GENERIC_CHAIN_POLICY_SIGNER_INFO**, void*, int> pfnPolicyCallback;
+
+        public void* pvPolicyArg;
+
         public ref uint cbStruct
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -30,18 +41,6 @@ namespace TerraFX.Interop
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.cbSize, 1));
             }
         }
-
-        [NativeTypeName("PWTD_GENERIC_CHAIN_POLICY_CREATE_INFO")]
-        public WTD_GENERIC_CHAIN_POLICY_CREATE_INFO* pSignerChainInfo;
-
-        [NativeTypeName("PWTD_GENERIC_CHAIN_POLICY_CREATE_INFO")]
-        public WTD_GENERIC_CHAIN_POLICY_CREATE_INFO* pCounterSignerChainInfo;
-
-        [NativeTypeName("PFN_WTD_GENERIC_CHAIN_POLICY_CALLBACK")]
-        public delegate* unmanaged<CRYPT_PROVIDER_DATA*, uint, uint, uint, WTD_GENERIC_CHAIN_POLICY_SIGNER_INFO**, void*, int> pfnPolicyCallback;
-
-        [NativeTypeName("void *")]
-        public void* pvPolicyArg;
 
         [StructLayout(LayoutKind.Explicit)]
         public partial struct _Anonymous_e__Union

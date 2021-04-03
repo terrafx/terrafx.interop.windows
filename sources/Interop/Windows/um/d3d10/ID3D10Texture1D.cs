@@ -17,7 +17,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
+        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<ID3D10Texture1D*, Guid*, void**, int>)(lpVtbl[0]))((ID3D10Texture1D*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -37,14 +37,14 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public void GetDevice([NativeTypeName("ID3D10Device **")] ID3D10Device** ppDevice)
+        public void GetDevice(ID3D10Device** ppDevice)
         {
             ((delegate* unmanaged<ID3D10Texture1D*, ID3D10Device**, void>)(lpVtbl[3]))((ID3D10Texture1D*)Unsafe.AsPointer(ref this), ppDevice);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int GetPrivateData([NativeTypeName("const GUID &")] Guid* guid, [NativeTypeName("UINT *")] uint* pDataSize, [NativeTypeName("void *")] void* pData)
+        public int GetPrivateData([NativeTypeName("const GUID &")] Guid* guid, [NativeTypeName("UINT *")] uint* pDataSize, void* pData)
         {
             return ((delegate* unmanaged<ID3D10Texture1D*, Guid*, uint*, void*, int>)(lpVtbl[4]))((ID3D10Texture1D*)Unsafe.AsPointer(ref this), guid, pDataSize, pData);
         }
@@ -64,7 +64,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public void GetType([NativeTypeName("D3D10_RESOURCE_DIMENSION *")] D3D10_RESOURCE_DIMENSION* rType)
+        public void GetType(D3D10_RESOURCE_DIMENSION* rType)
         {
             ((delegate* unmanaged<ID3D10Texture1D*, D3D10_RESOURCE_DIMENSION*, void>)(lpVtbl[7]))((ID3D10Texture1D*)Unsafe.AsPointer(ref this), rType);
         }
@@ -84,7 +84,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int Map([NativeTypeName("UINT")] uint Subresource, D3D10_MAP MapType, [NativeTypeName("UINT")] uint MapFlags, [NativeTypeName("void **")] void** ppData)
+        public int Map([NativeTypeName("UINT")] uint Subresource, D3D10_MAP MapType, [NativeTypeName("UINT")] uint MapFlags, void** ppData)
         {
             return ((delegate* unmanaged<ID3D10Texture1D*, uint, D3D10_MAP, uint, void**, int>)(lpVtbl[10]))((ID3D10Texture1D*)Unsafe.AsPointer(ref this), Subresource, MapType, MapFlags, ppData);
         }
@@ -96,7 +96,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public void GetDesc([NativeTypeName("D3D10_TEXTURE1D_DESC *")] D3D10_TEXTURE1D_DESC* pDesc)
+        public void GetDesc(D3D10_TEXTURE1D_DESC* pDesc)
         {
             ((delegate* unmanaged<ID3D10Texture1D*, D3D10_TEXTURE1D_DESC*, void>)(lpVtbl[12]))((ID3D10Texture1D*)Unsafe.AsPointer(ref this), pDesc);
         }

@@ -12,7 +12,6 @@ namespace TerraFX.Interop
         [NativeTypeName("const IID *")]
         public Guid* pIID;
 
-        [NativeTypeName("IUnknown *")]
         public IUnknown* pItf;
 
         [NativeTypeName("HRESULT")]

@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct D3D12_VIDEO_PROCESS_OUTPUT_STREAM
     {
-        [NativeTypeName("ID3D12Resource *")]
         public ID3D12Resource* pTexture2D;
 
         [NativeTypeName("UINT")]

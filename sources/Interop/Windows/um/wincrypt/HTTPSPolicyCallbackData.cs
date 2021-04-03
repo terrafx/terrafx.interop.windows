@@ -13,6 +13,15 @@ namespace TerraFX.Interop
         [NativeTypeName("_HTTPSPolicyCallbackData::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/wincrypt.h:20164:5)")]
         public _Anonymous_e__Union Anonymous;
 
+        [NativeTypeName("DWORD")]
+        public uint dwAuthType;
+
+        [NativeTypeName("DWORD")]
+        public uint fdwChecks;
+
+        [NativeTypeName("WCHAR *")]
+        public ushort* pwszServerName;
+
         public ref uint cbStruct
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -30,15 +39,6 @@ namespace TerraFX.Interop
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.cbSize, 1));
             }
         }
-
-        [NativeTypeName("DWORD")]
-        public uint dwAuthType;
-
-        [NativeTypeName("DWORD")]
-        public uint fdwChecks;
-
-        [NativeTypeName("WCHAR *")]
-        public ushort* pwszServerName;
 
         [StructLayout(LayoutKind.Explicit)]
         public partial struct _Anonymous_e__Union

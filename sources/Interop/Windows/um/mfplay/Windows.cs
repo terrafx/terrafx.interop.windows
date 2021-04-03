@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     {
         [DllImport("mfplat", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int MFPCreateMediaPlayer([NativeTypeName("LPCWSTR")] ushort* pwszURL, [NativeTypeName("BOOL")] int fStartPlayback, [NativeTypeName("MFP_CREATION_OPTIONS")] uint creationOptions, [NativeTypeName("IMFPMediaPlayerCallback *")] IMFPMediaPlayerCallback* pCallback, [NativeTypeName("HWND")] IntPtr hWnd, [NativeTypeName("IMFPMediaPlayer **")] IMFPMediaPlayer** ppMediaPlayer);
+        public static extern int MFPCreateMediaPlayer([NativeTypeName("LPCWSTR")] ushort* pwszURL, [NativeTypeName("BOOL")] int fStartPlayback, [NativeTypeName("MFP_CREATION_OPTIONS")] uint creationOptions, IMFPMediaPlayerCallback* pCallback, [NativeTypeName("HWND")] IntPtr hWnd, IMFPMediaPlayer** ppMediaPlayer);
 
         [NativeTypeName("const IID")]
         public static readonly Guid MFP_POSITIONTYPE_100NS = new Guid(0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0);

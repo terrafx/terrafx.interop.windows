@@ -10,13 +10,11 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint dwStreamID;
 
-        [NativeTypeName("IMFSample *")]
         public IMFSample* pSample;
 
         [NativeTypeName("DWORD")]
         public uint dwStatus;
 
-        [NativeTypeName("IMFCollection *")]
         public IMFCollection* pEvents;
     }
 }

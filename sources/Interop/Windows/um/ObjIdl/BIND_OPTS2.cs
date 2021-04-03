@@ -19,7 +19,6 @@ namespace TerraFX.Interop
         [NativeTypeName("LCID")]
         public uint locale;
 
-        [NativeTypeName("COSERVERINFO *")]
         public COSERVERINFO* pServerInfo;
     }
 }

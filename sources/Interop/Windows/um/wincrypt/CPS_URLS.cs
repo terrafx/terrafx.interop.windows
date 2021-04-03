@@ -10,7 +10,6 @@ namespace TerraFX.Interop
         [NativeTypeName("LPWSTR")]
         public ushort* pszURL;
 
-        [NativeTypeName("CRYPT_ALGORITHM_IDENTIFIER *")]
         public CRYPT_ALGORITHM_IDENTIFIER* pAlgorithm;
 
         [NativeTypeName("CRYPT_DATA_BLOB *")]

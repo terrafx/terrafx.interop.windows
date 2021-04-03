@@ -10,7 +10,6 @@ namespace TerraFX.Interop
         [NativeTypeName("BOOL")]
         public int forceZip32;
 
-        [NativeTypeName("IUri *")]
         public IUri* hashMethod;
     }
 }

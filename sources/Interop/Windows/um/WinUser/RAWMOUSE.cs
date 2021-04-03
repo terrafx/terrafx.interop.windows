@@ -16,6 +16,18 @@ namespace TerraFX.Interop
         [NativeTypeName("tagRAWMOUSE::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/WinUser.h:14914:5)")]
         public _Anonymous_e__Union Anonymous;
 
+        [NativeTypeName("ULONG")]
+        public uint ulRawButtons;
+
+        [NativeTypeName("LONG")]
+        public int lLastX;
+
+        [NativeTypeName("LONG")]
+        public int lLastY;
+
+        [NativeTypeName("ULONG")]
+        public uint ulExtraInformation;
+
         public ref uint ulButtons
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -42,18 +54,6 @@ namespace TerraFX.Interop
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.usButtonData, 1));
             }
         }
-
-        [NativeTypeName("ULONG")]
-        public uint ulRawButtons;
-
-        [NativeTypeName("LONG")]
-        public int lLastX;
-
-        [NativeTypeName("LONG")]
-        public int lLastY;
-
-        [NativeTypeName("ULONG")]
-        public uint ulExtraInformation;
 
         [StructLayout(LayoutKind.Explicit)]
         public partial struct _Anonymous_e__Union

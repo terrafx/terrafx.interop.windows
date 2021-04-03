@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct TF_HALTCOND
     {
-        [NativeTypeName("ITfRange *")]
         public ITfRange* pHaltRange;
 
         public TfAnchor aHaltPos;

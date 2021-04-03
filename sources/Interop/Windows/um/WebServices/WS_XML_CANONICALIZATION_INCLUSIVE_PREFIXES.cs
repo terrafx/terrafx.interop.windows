@@ -10,7 +10,6 @@ namespace TerraFX.Interop
         [NativeTypeName("ULONG")]
         public uint prefixCount;
 
-        [NativeTypeName("WS_XML_STRING *")]
         public WS_XML_STRING* prefixes;
     }
 }

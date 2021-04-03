@@ -29,6 +29,12 @@ namespace TerraFX.Interop
         [NativeTypeName("_SP_ALTPLATFORM_INFO_V2::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/SetupAPI.h:221:5)")]
         public _Anonymous_e__Union Anonymous;
 
+        [NativeTypeName("DWORD")]
+        public uint FirstValidatedMajorVersion;
+
+        [NativeTypeName("DWORD")]
+        public uint FirstValidatedMinorVersion;
+
         public ref ushort Reserved
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -46,12 +52,6 @@ namespace TerraFX.Interop
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Flags, 1));
             }
         }
-
-        [NativeTypeName("DWORD")]
-        public uint FirstValidatedMajorVersion;
-
-        [NativeTypeName("DWORD")]
-        public uint FirstValidatedMinorVersion;
 
         [StructLayout(LayoutKind.Explicit, Pack = 1)]
         public partial struct _Anonymous_e__Union

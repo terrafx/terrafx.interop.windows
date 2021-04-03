@@ -16,6 +16,12 @@ namespace TerraFX.Interop
         [NativeTypeName("D3D11_TRACE_REGISTER::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/d3d11shadertracing.h:226:5)")]
         public _Anonymous_e__Union Anonymous;
 
+        [NativeTypeName("UINT8")]
+        public byte OperandIndex;
+
+        [NativeTypeName("UINT8")]
+        public byte Flags;
+
         public ref ushort Index1D
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -33,12 +39,6 @@ namespace TerraFX.Interop
                 return MemoryMarshal.CreateSpan(ref Anonymous.Index2D[0], 2);
             }
         }
-
-        [NativeTypeName("UINT8")]
-        public byte OperandIndex;
-
-        [NativeTypeName("UINT8")]
-        public byte Flags;
 
         [StructLayout(LayoutKind.Explicit)]
         public unsafe partial struct _Anonymous_e__Union

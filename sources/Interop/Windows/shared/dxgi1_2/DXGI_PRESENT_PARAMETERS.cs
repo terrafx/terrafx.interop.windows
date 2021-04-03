@@ -10,13 +10,10 @@ namespace TerraFX.Interop
         [NativeTypeName("UINT")]
         public uint DirtyRectsCount;
 
-        [NativeTypeName("RECT *")]
         public RECT* pDirtyRects;
 
-        [NativeTypeName("RECT *")]
         public RECT* pScrollRect;
 
-        [NativeTypeName("POINT *")]
         public POINT* pScrollOffset;
     }
 }

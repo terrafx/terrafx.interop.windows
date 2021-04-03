@@ -17,7 +17,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
+        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<ISpRecoGrammar2*, Guid*, void**, int>)(lpVtbl[0]))((ISpRecoGrammar2*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -38,7 +38,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int GetRules([NativeTypeName("SPRULE **")] SPRULE** ppCoMemRules, [NativeTypeName("UINT *")] uint* puNumRules)
+        public int GetRules(SPRULE** ppCoMemRules, [NativeTypeName("UINT *")] uint* puNumRules)
         {
             return ((delegate* unmanaged<ISpRecoGrammar2*, SPRULE**, uint*, int>)(lpVtbl[3]))((ISpRecoGrammar2*)Unsafe.AsPointer(ref this), ppCoMemRules, puNumRules);
         }
@@ -80,14 +80,14 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int SetGrammarLoader([NativeTypeName("ISpeechResourceLoader *")] ISpeechResourceLoader* pLoader)
+        public int SetGrammarLoader(ISpeechResourceLoader* pLoader)
         {
             return ((delegate* unmanaged<ISpRecoGrammar2*, ISpeechResourceLoader*, int>)(lpVtbl[9]))((ISpRecoGrammar2*)Unsafe.AsPointer(ref this), pLoader);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int SetSMLSecurityManager([NativeTypeName("IInternetSecurityManager *")] IInternetSecurityManager* pSMLSecurityManager)
+        public int SetSMLSecurityManager(IInternetSecurityManager* pSMLSecurityManager)
         {
             return ((delegate* unmanaged<ISpRecoGrammar2*, IInternetSecurityManager*, int>)(lpVtbl[10]))((ISpRecoGrammar2*)Unsafe.AsPointer(ref this), pSMLSecurityManager);
         }

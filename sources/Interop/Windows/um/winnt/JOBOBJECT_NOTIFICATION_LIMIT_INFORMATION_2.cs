@@ -21,6 +21,26 @@ namespace TerraFX.Interop
         [NativeTypeName("JOBOBJECT_NOTIFICATION_LIMIT_INFORMATION_2::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:12067:5)")]
         public _Anonymous1_e__Union Anonymous1;
 
+        [NativeTypeName("JOBOBJECT_NOTIFICATION_LIMIT_INFORMATION_2::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:12072:5)")]
+        public _Anonymous2_e__Union Anonymous2;
+
+        [NativeTypeName("JOBOBJECT_NOTIFICATION_LIMIT_INFORMATION_2::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:12077:5)")]
+        public _Anonymous3_e__Union Anonymous3;
+
+        [NativeTypeName("DWORD")]
+        public uint LimitFlags;
+
+        public JOBOBJECT_RATE_CONTROL_TOLERANCE IoRateControlTolerance;
+
+        [NativeTypeName("DWORD64")]
+        public ulong JobLowMemoryLimit;
+
+        public JOBOBJECT_RATE_CONTROL_TOLERANCE_INTERVAL IoRateControlToleranceInterval;
+
+        public JOBOBJECT_RATE_CONTROL_TOLERANCE NetRateControlTolerance;
+
+        public JOBOBJECT_RATE_CONTROL_TOLERANCE_INTERVAL NetRateControlToleranceInterval;
+
         public ref ulong JobHighMemoryLimit
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -38,9 +58,6 @@ namespace TerraFX.Interop
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous1.JobMemoryLimit, 1));
             }
         }
-
-        [NativeTypeName("JOBOBJECT_NOTIFICATION_LIMIT_INFORMATION_2::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:12072:5)")]
-        public _Anonymous2_e__Union Anonymous2;
 
         public ref JOBOBJECT_RATE_CONTROL_TOLERANCE RateControlTolerance
         {
@@ -60,9 +77,6 @@ namespace TerraFX.Interop
             }
         }
 
-        [NativeTypeName("JOBOBJECT_NOTIFICATION_LIMIT_INFORMATION_2::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:12077:5)")]
-        public _Anonymous3_e__Union Anonymous3;
-
         public ref JOBOBJECT_RATE_CONTROL_TOLERANCE_INTERVAL RateControlToleranceInterval
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -80,20 +94,6 @@ namespace TerraFX.Interop
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous3.CpuRateControlToleranceInterval, 1));
             }
         }
-
-        [NativeTypeName("DWORD")]
-        public uint LimitFlags;
-
-        public JOBOBJECT_RATE_CONTROL_TOLERANCE IoRateControlTolerance;
-
-        [NativeTypeName("DWORD64")]
-        public ulong JobLowMemoryLimit;
-
-        public JOBOBJECT_RATE_CONTROL_TOLERANCE_INTERVAL IoRateControlToleranceInterval;
-
-        public JOBOBJECT_RATE_CONTROL_TOLERANCE NetRateControlTolerance;
-
-        public JOBOBJECT_RATE_CONTROL_TOLERANCE_INTERVAL NetRateControlToleranceInterval;
 
         [StructLayout(LayoutKind.Explicit)]
         public partial struct _Anonymous1_e__Union

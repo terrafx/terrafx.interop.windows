@@ -17,7 +17,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
+        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IMFTimedTextRegion*, Guid*, void**, int>)(lpVtbl[0]))((IMFTimedTextRegion*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -45,42 +45,42 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int GetPosition([NativeTypeName("double *")] double* pX, [NativeTypeName("double *")] double* pY, [NativeTypeName("MF_TIMED_TEXT_UNIT_TYPE *")] MF_TIMED_TEXT_UNIT_TYPE* unitType)
+        public int GetPosition(double* pX, double* pY, MF_TIMED_TEXT_UNIT_TYPE* unitType)
         {
             return ((delegate* unmanaged<IMFTimedTextRegion*, double*, double*, MF_TIMED_TEXT_UNIT_TYPE*, int>)(lpVtbl[4]))((IMFTimedTextRegion*)Unsafe.AsPointer(ref this), pX, pY, unitType);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int GetExtent([NativeTypeName("double *")] double* pWidth, [NativeTypeName("double *")] double* pHeight, [NativeTypeName("MF_TIMED_TEXT_UNIT_TYPE *")] MF_TIMED_TEXT_UNIT_TYPE* unitType)
+        public int GetExtent(double* pWidth, double* pHeight, MF_TIMED_TEXT_UNIT_TYPE* unitType)
         {
             return ((delegate* unmanaged<IMFTimedTextRegion*, double*, double*, MF_TIMED_TEXT_UNIT_TYPE*, int>)(lpVtbl[5]))((IMFTimedTextRegion*)Unsafe.AsPointer(ref this), pWidth, pHeight, unitType);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int GetBackgroundColor([NativeTypeName("MFARGB *")] MFARGB* bgColor)
+        public int GetBackgroundColor(MFARGB* bgColor)
         {
             return ((delegate* unmanaged<IMFTimedTextRegion*, MFARGB*, int>)(lpVtbl[6]))((IMFTimedTextRegion*)Unsafe.AsPointer(ref this), bgColor);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int GetWritingMode([NativeTypeName("MF_TIMED_TEXT_WRITING_MODE *")] MF_TIMED_TEXT_WRITING_MODE* writingMode)
+        public int GetWritingMode(MF_TIMED_TEXT_WRITING_MODE* writingMode)
         {
             return ((delegate* unmanaged<IMFTimedTextRegion*, MF_TIMED_TEXT_WRITING_MODE*, int>)(lpVtbl[7]))((IMFTimedTextRegion*)Unsafe.AsPointer(ref this), writingMode);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int GetDisplayAlignment([NativeTypeName("MF_TIMED_TEXT_DISPLAY_ALIGNMENT *")] MF_TIMED_TEXT_DISPLAY_ALIGNMENT* displayAlign)
+        public int GetDisplayAlignment(MF_TIMED_TEXT_DISPLAY_ALIGNMENT* displayAlign)
         {
             return ((delegate* unmanaged<IMFTimedTextRegion*, MF_TIMED_TEXT_DISPLAY_ALIGNMENT*, int>)(lpVtbl[8]))((IMFTimedTextRegion*)Unsafe.AsPointer(ref this), displayAlign);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int GetLineHeight([NativeTypeName("double *")] double* pLineHeight, [NativeTypeName("MF_TIMED_TEXT_UNIT_TYPE *")] MF_TIMED_TEXT_UNIT_TYPE* unitType)
+        public int GetLineHeight(double* pLineHeight, MF_TIMED_TEXT_UNIT_TYPE* unitType)
         {
             return ((delegate* unmanaged<IMFTimedTextRegion*, double*, MF_TIMED_TEXT_UNIT_TYPE*, int>)(lpVtbl[9]))((IMFTimedTextRegion*)Unsafe.AsPointer(ref this), pLineHeight, unitType);
         }
@@ -94,7 +94,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int GetPadding([NativeTypeName("double *")] double* before, [NativeTypeName("double *")] double* start, [NativeTypeName("double *")] double* after, [NativeTypeName("double *")] double* end, [NativeTypeName("MF_TIMED_TEXT_UNIT_TYPE *")] MF_TIMED_TEXT_UNIT_TYPE* unitType)
+        public int GetPadding(double* before, double* start, double* after, double* end, MF_TIMED_TEXT_UNIT_TYPE* unitType)
         {
             return ((delegate* unmanaged<IMFTimedTextRegion*, double*, double*, double*, double*, MF_TIMED_TEXT_UNIT_TYPE*, int>)(lpVtbl[11]))((IMFTimedTextRegion*)Unsafe.AsPointer(ref this), before, start, after, end, unitType);
         }
@@ -115,7 +115,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int GetScrollMode([NativeTypeName("MF_TIMED_TEXT_SCROLL_MODE *")] MF_TIMED_TEXT_SCROLL_MODE* scrollMode)
+        public int GetScrollMode(MF_TIMED_TEXT_SCROLL_MODE* scrollMode)
         {
             return ((delegate* unmanaged<IMFTimedTextRegion*, MF_TIMED_TEXT_SCROLL_MODE*, int>)(lpVtbl[14]))((IMFTimedTextRegion*)Unsafe.AsPointer(ref this), scrollMode);
         }

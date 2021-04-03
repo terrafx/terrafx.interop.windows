@@ -24,11 +24,11 @@ namespace TerraFX.Interop
 
         [DllImport("DirectML", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int DMLCreateDevice([NativeTypeName("ID3D12Device *")] ID3D12Device* d3d12Device, DML_CREATE_DEVICE_FLAGS flags, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppv);
+        public static extern int DMLCreateDevice(ID3D12Device* d3d12Device, DML_CREATE_DEVICE_FLAGS flags, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
 
         [DllImport("DirectML", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int DMLCreateDevice1([NativeTypeName("ID3D12Device *")] ID3D12Device* d3d12Device, DML_CREATE_DEVICE_FLAGS flags, DML_FEATURE_LEVEL minimumFeatureLevel, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppv);
+        public static extern int DMLCreateDevice1(ID3D12Device* d3d12Device, DML_CREATE_DEVICE_FLAGS flags, DML_FEATURE_LEVEL minimumFeatureLevel, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
 
         public static readonly Guid IID_IDMLObject = new Guid(0xC8263AAC, 0x9E0C, 0x4A2D, 0x9B, 0x8E, 0x00, 0x75, 0x21, 0xA3, 0x31, 0x7C);
 

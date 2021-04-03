@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct WS_SECURITY_BINDING_PROPERTIES
     {
-        [NativeTypeName("WS_SECURITY_BINDING_PROPERTY *")]
         public WS_SECURITY_BINDING_PROPERTY* properties;
 
         [NativeTypeName("ULONG")]

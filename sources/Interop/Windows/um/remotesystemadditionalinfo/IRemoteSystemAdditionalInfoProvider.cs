@@ -17,7 +17,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
+        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IRemoteSystemAdditionalInfoProvider*, Guid*, void**, int>)(lpVtbl[0]))((IRemoteSystemAdditionalInfoProvider*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -38,7 +38,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int GetAdditionalInfo([NativeTypeName("HSTRING *")] IntPtr* deduplicationId, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** mapView)
+        public int GetAdditionalInfo([NativeTypeName("HSTRING *")] IntPtr* deduplicationId, [NativeTypeName("const IID &")] Guid* riid, void** mapView)
         {
             return ((delegate* unmanaged<IRemoteSystemAdditionalInfoProvider*, IntPtr*, Guid*, void**, int>)(lpVtbl[3]))((IRemoteSystemAdditionalInfoProvider*)Unsafe.AsPointer(ref this), deduplicationId, riid, mapView);
         }

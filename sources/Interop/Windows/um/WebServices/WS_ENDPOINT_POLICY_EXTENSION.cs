@@ -11,10 +11,8 @@ namespace TerraFX.Interop
     {
         public WS_POLICY_EXTENSION policyExtension;
 
-        [NativeTypeName("WS_XML_STRING *")]
         public WS_XML_STRING* assertionName;
 
-        [NativeTypeName("WS_XML_STRING *")]
         public WS_XML_STRING* assertionNs;
 
         [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/WebServices.h:6349:5)")]

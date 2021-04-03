@@ -36,7 +36,6 @@ namespace TerraFX.Interop
         [NativeTypeName("const PROPVARIANT *")]
         public PROPVARIANT* MetadataActivationParams;
 
-        [NativeTypeName("ISpatialAudioObjectRenderStreamNotify *")]
         public ISpatialAudioObjectRenderStreamNotify* NotifyObject;
     }
 }

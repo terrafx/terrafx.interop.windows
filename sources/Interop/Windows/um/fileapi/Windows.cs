@@ -128,11 +128,11 @@ namespace TerraFX.Interop
 
         [DllImport("kernel32", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int GetDiskSpaceInformationA([NativeTypeName("LPCSTR")] sbyte* rootPath, [NativeTypeName("DISK_SPACE_INFORMATION *")] DISK_SPACE_INFORMATION* diskSpaceInfo);
+        public static extern int GetDiskSpaceInformationA([NativeTypeName("LPCSTR")] sbyte* rootPath, DISK_SPACE_INFORMATION* diskSpaceInfo);
 
         [DllImport("kernel32", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int GetDiskSpaceInformationW([NativeTypeName("LPCWSTR")] ushort* rootPath, [NativeTypeName("DISK_SPACE_INFORMATION *")] DISK_SPACE_INFORMATION* diskSpaceInfo);
+        public static extern int GetDiskSpaceInformationW([NativeTypeName("LPCWSTR")] ushort* rootPath, DISK_SPACE_INFORMATION* diskSpaceInfo);
 
         [DllImport("kernel32", ExactSpelling = true)]
         [return: NativeTypeName("UINT")]

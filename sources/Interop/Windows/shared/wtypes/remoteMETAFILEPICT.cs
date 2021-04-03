@@ -16,7 +16,6 @@ namespace TerraFX.Interop
         [NativeTypeName("LONG")]
         public int yExt;
 
-        [NativeTypeName("userHMETAFILE *")]
         public userHMETAFILE* hMF;
     }
 }

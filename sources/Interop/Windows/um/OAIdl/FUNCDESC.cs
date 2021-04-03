@@ -13,7 +13,6 @@ namespace TerraFX.Interop
         [NativeTypeName("SCODE *")]
         public int* lprgscode;
 
-        [NativeTypeName("ELEMDESC *")]
         public ELEMDESC* lprgelemdescParam;
 
         public FUNCKIND funckind;

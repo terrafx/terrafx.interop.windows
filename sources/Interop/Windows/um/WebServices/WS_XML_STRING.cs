@@ -13,7 +13,6 @@ namespace TerraFX.Interop
         [NativeTypeName("BYTE *")]
         public byte* bytes;
 
-        [NativeTypeName("WS_XML_DICTIONARY *")]
         public WS_XML_DICTIONARY* dictionary;
 
         [NativeTypeName("ULONG")]

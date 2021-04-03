@@ -10,7 +10,6 @@ namespace TerraFX.Interop
         [NativeTypeName("D2D1_RECT_F")]
         public D2D_RECT_F contentBounds;
 
-        [NativeTypeName("ID2D1Geometry *")]
         public ID2D1Geometry* geometricMask;
 
         public D2D1_ANTIALIAS_MODE maskAntialiasMode;
@@ -21,7 +20,6 @@ namespace TerraFX.Interop
         [NativeTypeName("FLOAT")]
         public float opacity;
 
-        [NativeTypeName("ID2D1Brush *")]
         public ID2D1Brush* opacityBrush;
 
         public D2D1_LAYER_OPTIONS layerOptions;

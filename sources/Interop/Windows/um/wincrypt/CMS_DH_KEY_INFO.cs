@@ -19,7 +19,6 @@ namespace TerraFX.Interop
         [NativeTypeName("CRYPT_DATA_BLOB")]
         public CRYPTOAPI_BLOB PubInfo;
 
-        [NativeTypeName("void *")]
         public void* pReserved;
     }
 }

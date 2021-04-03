@@ -19,10 +19,8 @@ namespace TerraFX.Interop
         [NativeTypeName("const wchar_t *")]
         public ushort* pCommandQueueDebugNameW;
 
-        [NativeTypeName("ID3D12GraphicsCommandList *")]
         public ID3D12GraphicsCommandList* pCommandList;
 
-        [NativeTypeName("ID3D12CommandQueue *")]
         public ID3D12CommandQueue* pCommandQueue;
 
         [NativeTypeName("UINT32")]

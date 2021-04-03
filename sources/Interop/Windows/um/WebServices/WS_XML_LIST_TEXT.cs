@@ -12,7 +12,6 @@ namespace TerraFX.Interop
         [NativeTypeName("ULONG")]
         public uint itemCount;
 
-        [NativeTypeName("WS_XML_TEXT **")]
         public WS_XML_TEXT** items;
     }
 }

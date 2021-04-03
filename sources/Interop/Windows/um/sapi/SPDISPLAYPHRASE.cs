@@ -10,7 +10,6 @@ namespace TerraFX.Interop
         [NativeTypeName("ULONG")]
         public uint ulNumTokens;
 
-        [NativeTypeName("SPDISPLAYTOKEN *")]
         public SPDISPLAYTOKEN* pTokens;
     }
 }

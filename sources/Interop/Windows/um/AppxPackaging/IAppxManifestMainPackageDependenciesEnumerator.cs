@@ -17,7 +17,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
+        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IAppxManifestMainPackageDependenciesEnumerator*, Guid*, void**, int>)(lpVtbl[0]))((IAppxManifestMainPackageDependenciesEnumerator*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -38,7 +38,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int GetCurrent([NativeTypeName("IAppxManifestMainPackageDependency **")] IAppxManifestMainPackageDependency** mainPackageDependency)
+        public int GetCurrent(IAppxManifestMainPackageDependency** mainPackageDependency)
         {
             return ((delegate* unmanaged<IAppxManifestMainPackageDependenciesEnumerator*, IAppxManifestMainPackageDependency**, int>)(lpVtbl[3]))((IAppxManifestMainPackageDependenciesEnumerator*)Unsafe.AsPointer(ref this), mainPackageDependency);
         }

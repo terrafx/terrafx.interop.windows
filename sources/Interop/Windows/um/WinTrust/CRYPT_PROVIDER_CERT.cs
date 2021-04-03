@@ -34,7 +34,6 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint dwError;
 
-        [NativeTypeName("CTL_CONTEXT *")]
         public CTL_CONTEXT* pTrustListContext;
 
         [NativeTypeName("BOOL")]

@@ -27,6 +27,18 @@ namespace TerraFX.Interop
         [NativeTypeName("IMAGE_COR20_HEADER::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:19265:5)")]
         public _Anonymous_e__Union Anonymous;
 
+        public IMAGE_DATA_DIRECTORY Resources;
+
+        public IMAGE_DATA_DIRECTORY StrongNameSignature;
+
+        public IMAGE_DATA_DIRECTORY CodeManagerTable;
+
+        public IMAGE_DATA_DIRECTORY VTableFixups;
+
+        public IMAGE_DATA_DIRECTORY ExportAddressTableJumps;
+
+        public IMAGE_DATA_DIRECTORY ManagedNativeHeader;
+
         public ref uint EntryPointToken
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -44,18 +56,6 @@ namespace TerraFX.Interop
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.EntryPointRVA, 1));
             }
         }
-
-        public IMAGE_DATA_DIRECTORY Resources;
-
-        public IMAGE_DATA_DIRECTORY StrongNameSignature;
-
-        public IMAGE_DATA_DIRECTORY CodeManagerTable;
-
-        public IMAGE_DATA_DIRECTORY VTableFixups;
-
-        public IMAGE_DATA_DIRECTORY ExportAddressTableJumps;
-
-        public IMAGE_DATA_DIRECTORY ManagedNativeHeader;
 
         [StructLayout(LayoutKind.Explicit)]
         public partial struct _Anonymous_e__Union

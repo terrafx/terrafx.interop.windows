@@ -7,13 +7,10 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct WS_SERVICE_ENDPOINT_METADATA
     {
-        [NativeTypeName("WS_XML_STRING *")]
         public WS_XML_STRING* portName;
 
-        [NativeTypeName("WS_XML_STRING *")]
         public WS_XML_STRING* bindingName;
 
-        [NativeTypeName("WS_XML_STRING *")]
         public WS_XML_STRING* bindingNs;
     }
 }

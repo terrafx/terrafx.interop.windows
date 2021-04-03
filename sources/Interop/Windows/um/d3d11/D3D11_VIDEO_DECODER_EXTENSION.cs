@@ -10,13 +10,11 @@ namespace TerraFX.Interop
         [NativeTypeName("UINT")]
         public uint Function;
 
-        [NativeTypeName("void *")]
         public void* pPrivateInputData;
 
         [NativeTypeName("UINT")]
         public uint PrivateInputDataSize;
 
-        [NativeTypeName("void *")]
         public void* pPrivateOutputData;
 
         [NativeTypeName("UINT")]
@@ -25,7 +23,6 @@ namespace TerraFX.Interop
         [NativeTypeName("UINT")]
         public uint ResourceCount;
 
-        [NativeTypeName("ID3D11Resource **")]
         public ID3D11Resource** ppResourceList;
     }
 }

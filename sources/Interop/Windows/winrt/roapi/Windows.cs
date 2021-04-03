@@ -20,7 +20,7 @@ namespace TerraFX.Interop
 
         [DllImport("combase", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int RoActivateInstance([NativeTypeName("HSTRING")] IntPtr activatableClassId, [NativeTypeName("IInspectable **")] IInspectable** instance);
+        public static extern int RoActivateInstance([NativeTypeName("HSTRING")] IntPtr activatableClassId, IInspectable** instance);
 
         [DllImport("combase", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
@@ -31,11 +31,11 @@ namespace TerraFX.Interop
 
         [DllImport("combase", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int RoGetActivationFactory([NativeTypeName("HSTRING")] IntPtr activatableClassId, [NativeTypeName("const IID &")] Guid* iid, [NativeTypeName("void **")] void** factory);
+        public static extern int RoGetActivationFactory([NativeTypeName("HSTRING")] IntPtr activatableClassId, [NativeTypeName("const IID &")] Guid* iid, void** factory);
 
         [DllImport("combase", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int RoRegisterForApartmentShutdown([NativeTypeName("IApartmentShutdown *")] IApartmentShutdown* callbackObject, [NativeTypeName("UINT64 *")] ulong* apartmentIdentifier, [NativeTypeName("APARTMENT_SHUTDOWN_REGISTRATION_COOKIE *")] IntPtr* regCookie);
+        public static extern int RoRegisterForApartmentShutdown(IApartmentShutdown* callbackObject, [NativeTypeName("UINT64 *")] ulong* apartmentIdentifier, [NativeTypeName("APARTMENT_SHUTDOWN_REGISTRATION_COOKIE *")] IntPtr* regCookie);
 
         [DllImport("combase", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]

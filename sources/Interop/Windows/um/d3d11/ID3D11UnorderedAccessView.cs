@@ -17,7 +17,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
+        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<ID3D11UnorderedAccessView*, Guid*, void**, int>)(lpVtbl[0]))((ID3D11UnorderedAccessView*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -37,14 +37,14 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public void GetDevice([NativeTypeName("ID3D11Device **")] ID3D11Device** ppDevice)
+        public void GetDevice(ID3D11Device** ppDevice)
         {
             ((delegate* unmanaged<ID3D11UnorderedAccessView*, ID3D11Device**, void>)(lpVtbl[3]))((ID3D11UnorderedAccessView*)Unsafe.AsPointer(ref this), ppDevice);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int GetPrivateData([NativeTypeName("const GUID &")] Guid* guid, [NativeTypeName("UINT *")] uint* pDataSize, [NativeTypeName("void *")] void* pData)
+        public int GetPrivateData([NativeTypeName("const GUID &")] Guid* guid, [NativeTypeName("UINT *")] uint* pDataSize, void* pData)
         {
             return ((delegate* unmanaged<ID3D11UnorderedAccessView*, Guid*, uint*, void*, int>)(lpVtbl[4]))((ID3D11UnorderedAccessView*)Unsafe.AsPointer(ref this), guid, pDataSize, pData);
         }
@@ -64,13 +64,13 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public void GetResource([NativeTypeName("ID3D11Resource **")] ID3D11Resource** ppResource)
+        public void GetResource(ID3D11Resource** ppResource)
         {
             ((delegate* unmanaged<ID3D11UnorderedAccessView*, ID3D11Resource**, void>)(lpVtbl[7]))((ID3D11UnorderedAccessView*)Unsafe.AsPointer(ref this), ppResource);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public void GetDesc([NativeTypeName("D3D11_UNORDERED_ACCESS_VIEW_DESC *")] D3D11_UNORDERED_ACCESS_VIEW_DESC* pDesc)
+        public void GetDesc(D3D11_UNORDERED_ACCESS_VIEW_DESC* pDesc)
         {
             ((delegate* unmanaged<ID3D11UnorderedAccessView*, D3D11_UNORDERED_ACCESS_VIEW_DESC*, void>)(lpVtbl[8]))((ID3D11UnorderedAccessView*)Unsafe.AsPointer(ref this), pDesc);
         }

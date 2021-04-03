@@ -13,7 +13,6 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint cPara;
 
-        [NativeTypeName("void **")]
         public void** ppPara;
     }
 }

@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct WS_DEFAULT_VALUE
     {
-        [NativeTypeName("void *")]
         public void* value;
 
         [NativeTypeName("ULONG")]

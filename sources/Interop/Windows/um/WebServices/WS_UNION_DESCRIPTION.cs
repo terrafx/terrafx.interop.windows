@@ -13,7 +13,6 @@ namespace TerraFX.Interop
         [NativeTypeName("ULONG")]
         public uint alignment;
 
-        [NativeTypeName("WS_UNION_FIELD_DESCRIPTION **")]
         public WS_UNION_FIELD_DESCRIPTION** fields;
 
         [NativeTypeName("ULONG")]

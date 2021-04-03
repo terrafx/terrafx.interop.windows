@@ -11,10 +11,10 @@ namespace TerraFX.Interop
     {
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int QueryPerformanceCounter([NativeTypeName("LARGE_INTEGER *")] LARGE_INTEGER* lpPerformanceCount);
+        public static extern int QueryPerformanceCounter(LARGE_INTEGER* lpPerformanceCount);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int QueryPerformanceFrequency([NativeTypeName("LARGE_INTEGER *")] LARGE_INTEGER* lpFrequency);
+        public static extern int QueryPerformanceFrequency(LARGE_INTEGER* lpFrequency);
     }
 }
