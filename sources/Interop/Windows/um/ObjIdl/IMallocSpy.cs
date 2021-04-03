@@ -17,7 +17,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
+        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IMallocSpy*, Guid*, void**, int>)(lpVtbl[0]))((IMallocSpy*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -44,15 +44,13 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [return: NativeTypeName("void *")]
-        public void* PostAlloc([NativeTypeName("void *")] void* pActual)
+        public void* PostAlloc(void* pActual)
         {
             return ((delegate* unmanaged<IMallocSpy*, void*, void*>)(lpVtbl[4]))((IMallocSpy*)Unsafe.AsPointer(ref this), pActual);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [return: NativeTypeName("void *")]
-        public void* PreFree([NativeTypeName("void *")] void* pRequest, [NativeTypeName("BOOL")] int fSpyed)
+        public void* PreFree(void* pRequest, [NativeTypeName("BOOL")] int fSpyed)
         {
             return ((delegate* unmanaged<IMallocSpy*, void*, int, void*>)(lpVtbl[5]))((IMallocSpy*)Unsafe.AsPointer(ref this), pRequest, fSpyed);
         }
@@ -65,21 +63,19 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("SIZE_T")]
-        public nuint PreRealloc([NativeTypeName("void *")] void* pRequest, [NativeTypeName("SIZE_T")] nuint cbRequest, [NativeTypeName("void **")] void** ppNewRequest, [NativeTypeName("BOOL")] int fSpyed)
+        public nuint PreRealloc(void* pRequest, [NativeTypeName("SIZE_T")] nuint cbRequest, void** ppNewRequest, [NativeTypeName("BOOL")] int fSpyed)
         {
             return ((delegate* unmanaged<IMallocSpy*, void*, nuint, void**, int, nuint>)(lpVtbl[7]))((IMallocSpy*)Unsafe.AsPointer(ref this), pRequest, cbRequest, ppNewRequest, fSpyed);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [return: NativeTypeName("void *")]
-        public void* PostRealloc([NativeTypeName("void *")] void* pActual, [NativeTypeName("BOOL")] int fSpyed)
+        public void* PostRealloc(void* pActual, [NativeTypeName("BOOL")] int fSpyed)
         {
             return ((delegate* unmanaged<IMallocSpy*, void*, int, void*>)(lpVtbl[8]))((IMallocSpy*)Unsafe.AsPointer(ref this), pActual, fSpyed);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [return: NativeTypeName("void *")]
-        public void* PreGetSize([NativeTypeName("void *")] void* pRequest, [NativeTypeName("BOOL")] int fSpyed)
+        public void* PreGetSize(void* pRequest, [NativeTypeName("BOOL")] int fSpyed)
         {
             return ((delegate* unmanaged<IMallocSpy*, void*, int, void*>)(lpVtbl[9]))((IMallocSpy*)Unsafe.AsPointer(ref this), pRequest, fSpyed);
         }
@@ -92,14 +88,13 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [return: NativeTypeName("void *")]
-        public void* PreDidAlloc([NativeTypeName("void *")] void* pRequest, [NativeTypeName("BOOL")] int fSpyed)
+        public void* PreDidAlloc(void* pRequest, [NativeTypeName("BOOL")] int fSpyed)
         {
             return ((delegate* unmanaged<IMallocSpy*, void*, int, void*>)(lpVtbl[11]))((IMallocSpy*)Unsafe.AsPointer(ref this), pRequest, fSpyed);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public int PostDidAlloc([NativeTypeName("void *")] void* pRequest, [NativeTypeName("BOOL")] int fSpyed, int fActual)
+        public int PostDidAlloc(void* pRequest, [NativeTypeName("BOOL")] int fSpyed, int fActual)
         {
             return ((delegate* unmanaged<IMallocSpy*, void*, int, int, int>)(lpVtbl[12]))((IMallocSpy*)Unsafe.AsPointer(ref this), pRequest, fSpyed, fActual);
         }

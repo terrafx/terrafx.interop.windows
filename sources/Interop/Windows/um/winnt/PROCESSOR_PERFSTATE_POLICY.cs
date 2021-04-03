@@ -25,6 +25,21 @@ namespace TerraFX.Interop
         [NativeTypeName("PROCESSOR_PERFSTATE_POLICY::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:16711:5)")]
         public _Anonymous_e__Union Anonymous;
 
+        [NativeTypeName("DWORD")]
+        public uint TimeCheck;
+
+        [NativeTypeName("DWORD")]
+        public uint IncreaseTime;
+
+        [NativeTypeName("DWORD")]
+        public uint DecreaseTime;
+
+        [NativeTypeName("DWORD")]
+        public uint IncreasePercent;
+
+        [NativeTypeName("DWORD")]
+        public uint DecreasePercent;
+
         public ref byte Spare
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -42,21 +57,6 @@ namespace TerraFX.Interop
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Flags, 1));
             }
         }
-
-        [NativeTypeName("DWORD")]
-        public uint TimeCheck;
-
-        [NativeTypeName("DWORD")]
-        public uint IncreaseTime;
-
-        [NativeTypeName("DWORD")]
-        public uint DecreaseTime;
-
-        [NativeTypeName("DWORD")]
-        public uint IncreasePercent;
-
-        [NativeTypeName("DWORD")]
-        public uint DecreasePercent;
 
         [StructLayout(LayoutKind.Explicit)]
         public partial struct _Anonymous_e__Union

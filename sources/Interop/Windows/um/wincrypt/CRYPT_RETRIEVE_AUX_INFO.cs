@@ -10,7 +10,6 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint cbSize;
 
-        [NativeTypeName("FILETIME *")]
         public FILETIME* pLastSyncTime;
 
         [NativeTypeName("DWORD")]

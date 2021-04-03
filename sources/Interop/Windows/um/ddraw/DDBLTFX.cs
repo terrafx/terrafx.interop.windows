@@ -43,6 +43,40 @@ namespace TerraFX.Interop
         [NativeTypeName("_DDBLTFX::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/ddraw.h:287:5)")]
         public _Anonymous1_e__Union Anonymous1;
 
+        [NativeTypeName("DWORD")]
+        public uint dwZSrcConstBitDepth;
+
+        [NativeTypeName("_DDBLTFX::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/ddraw.h:293:5)")]
+        public _Anonymous2_e__Union Anonymous2;
+
+        [NativeTypeName("DWORD")]
+        public uint dwAlphaEdgeBlendBitDepth;
+
+        [NativeTypeName("DWORD")]
+        public uint dwAlphaEdgeBlend;
+
+        [NativeTypeName("DWORD")]
+        public uint dwReserved;
+
+        [NativeTypeName("DWORD")]
+        public uint dwAlphaDestConstBitDepth;
+
+        [NativeTypeName("_DDBLTFX::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/ddraw.h:302:5)")]
+        public _Anonymous3_e__Union Anonymous3;
+
+        [NativeTypeName("DWORD")]
+        public uint dwAlphaSrcConstBitDepth;
+
+        [NativeTypeName("_DDBLTFX::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/ddraw.h:308:5)")]
+        public _Anonymous4_e__Union Anonymous4;
+
+        [NativeTypeName("_DDBLTFX::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/ddraw.h:313:5)")]
+        public _Anonymous5_e__Union Anonymous5;
+
+        public DDCOLORKEY ddckDestColorkey;
+
+        public DDCOLORKEY ddckSrcColorkey;
+
         public ref uint dwZDestConst
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -63,12 +97,6 @@ namespace TerraFX.Interop
                 }
             }
         }
-
-        [NativeTypeName("DWORD")]
-        public uint dwZSrcConstBitDepth;
-
-        [NativeTypeName("_DDBLTFX::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/ddraw.h:293:5)")]
-        public _Anonymous2_e__Union Anonymous2;
 
         public ref uint dwZSrcConst
         {
@@ -91,21 +119,6 @@ namespace TerraFX.Interop
             }
         }
 
-        [NativeTypeName("DWORD")]
-        public uint dwAlphaEdgeBlendBitDepth;
-
-        [NativeTypeName("DWORD")]
-        public uint dwAlphaEdgeBlend;
-
-        [NativeTypeName("DWORD")]
-        public uint dwReserved;
-
-        [NativeTypeName("DWORD")]
-        public uint dwAlphaDestConstBitDepth;
-
-        [NativeTypeName("_DDBLTFX::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/ddraw.h:302:5)")]
-        public _Anonymous3_e__Union Anonymous3;
-
         public ref uint dwAlphaDestConst
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -127,12 +140,6 @@ namespace TerraFX.Interop
             }
         }
 
-        [NativeTypeName("DWORD")]
-        public uint dwAlphaSrcConstBitDepth;
-
-        [NativeTypeName("_DDBLTFX::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/ddraw.h:308:5)")]
-        public _Anonymous4_e__Union Anonymous4;
-
         public ref uint dwAlphaSrcConst
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -153,9 +160,6 @@ namespace TerraFX.Interop
                 }
             }
         }
-
-        [NativeTypeName("_DDBLTFX::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/ddraw.h:313:5)")]
-        public _Anonymous5_e__Union Anonymous5;
 
         public ref uint dwFillColor
         {
@@ -195,10 +199,6 @@ namespace TerraFX.Interop
                 }
             }
         }
-
-        public DDCOLORKEY ddckDestColorkey;
-
-        public DDCOLORKEY ddckSrcColorkey;
 
         [StructLayout(LayoutKind.Explicit)]
         public unsafe partial struct _Anonymous1_e__Union

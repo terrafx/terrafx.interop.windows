@@ -24,7 +24,6 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint iMethod;
 
-        [NativeTypeName("void *")]
         public void* pObject;
     }
 }

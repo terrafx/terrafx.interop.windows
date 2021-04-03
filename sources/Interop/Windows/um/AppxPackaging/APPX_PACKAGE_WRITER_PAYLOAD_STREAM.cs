@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct APPX_PACKAGE_WRITER_PAYLOAD_STREAM
     {
-        [NativeTypeName("IStream *")]
         public IStream* inputStream;
 
         [NativeTypeName("LPCWSTR")]

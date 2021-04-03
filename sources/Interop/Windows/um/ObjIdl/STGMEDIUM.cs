@@ -17,6 +17,8 @@ namespace TerraFX.Interop
         [NativeTypeName("tagSTGMEDIUM::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/ObjIdl.h:11272:36)")]
         public _Anonymous_e__Union Anonymous;
 
+        public IUnknown* pUnkForRelease;
+
         public ref IntPtr hBitmap
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -92,9 +94,6 @@ namespace TerraFX.Interop
             }
         }
 
-        [NativeTypeName("IUnknown *")]
-        public IUnknown* pUnkForRelease;
-
         [StructLayout(LayoutKind.Explicit)]
         public unsafe partial struct _Anonymous_e__Union
         {
@@ -119,11 +118,9 @@ namespace TerraFX.Interop
             public ushort* lpszFileName;
 
             [FieldOffset(0)]
-            [NativeTypeName("IStream *")]
             public IStream* pstm;
 
             [FieldOffset(0)]
-            [NativeTypeName("IStorage *")]
             public IStorage* pstg;
         }
     }

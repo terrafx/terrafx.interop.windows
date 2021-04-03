@@ -18,6 +18,16 @@ namespace TerraFX.Interop
         [NativeTypeName("_OCSP_BASIC_RESPONSE_ENTRY::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/wincrypt.h:5682:5)")]
         public _Anonymous_e__Union Anonymous;
 
+        public FILETIME ThisUpdate;
+
+        public FILETIME NextUpdate;
+
+        [NativeTypeName("DWORD")]
+        public uint cExtension;
+
+        [NativeTypeName("PCERT_EXTENSION")]
+        public CERT_EXTENSION* rgExtension;
+
         public ref OCSP_BASIC_REVOKED_INFO* pRevokedInfo
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -29,16 +39,6 @@ namespace TerraFX.Interop
                 }
             }
         }
-
-        public FILETIME ThisUpdate;
-
-        public FILETIME NextUpdate;
-
-        [NativeTypeName("DWORD")]
-        public uint cExtension;
-
-        [NativeTypeName("PCERT_EXTENSION")]
-        public CERT_EXTENSION* rgExtension;
 
         [StructLayout(LayoutKind.Explicit)]
         public unsafe partial struct _Anonymous_e__Union

@@ -28,6 +28,9 @@ namespace TerraFX.Interop
         [NativeTypeName("_CERT_LOGOTYPE_IMAGE_INFO::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/wincrypt.h:5456:5)")]
         public _Anonymous_e__Union Anonymous;
 
+        [NativeTypeName("LPWSTR")]
+        public ushort* pwszLanguage;
+
         public ref uint dwNumBits
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -45,9 +48,6 @@ namespace TerraFX.Interop
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.dwTableSize, 1));
             }
         }
-
-        [NativeTypeName("LPWSTR")]
-        public ushort* pwszLanguage;
 
         [StructLayout(LayoutKind.Explicit)]
         public partial struct _Anonymous_e__Union

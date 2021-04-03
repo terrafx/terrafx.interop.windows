@@ -21,7 +21,6 @@ namespace TerraFX.Interop
 
         public D3D12_VIDEO_DECODE_COMPRESSED_BITSTREAM CompressedBitstream;
 
-        [NativeTypeName("ID3D12VideoDecoderHeap *")]
         public ID3D12VideoDecoderHeap* pHeap;
 
         public partial struct _FrameArguments_e__FixedBuffer

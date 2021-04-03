@@ -20,6 +20,9 @@ namespace TerraFX.Interop
         [NativeTypeName("_SIGNER_CERT::(anonymous union at ./mssign32.h:109:5)")]
         public _Anonymous_e__Union Anonymous;
 
+        [NativeTypeName("HWND")]
+        public IntPtr hwnd;
+
         public ref ushort* pwszSpcFile
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -56,9 +59,6 @@ namespace TerraFX.Interop
             }
         }
 
-        [NativeTypeName("HWND")]
-        public IntPtr hwnd;
-
         [StructLayout(LayoutKind.Explicit)]
         public unsafe partial struct _Anonymous_e__Union
         {
@@ -67,11 +67,9 @@ namespace TerraFX.Interop
             public ushort* pwszSpcFile;
 
             [FieldOffset(0)]
-            [NativeTypeName("SIGNER_CERT_STORE_INFO *")]
             public SIGNER_CERT_STORE_INFO* pCertStoreInfo;
 
             [FieldOffset(0)]
-            [NativeTypeName("SIGNER_SPC_CHAIN_INFO *")]
             public SIGNER_SPC_CHAIN_INFO* pSpcChainInfo;
         }
     }

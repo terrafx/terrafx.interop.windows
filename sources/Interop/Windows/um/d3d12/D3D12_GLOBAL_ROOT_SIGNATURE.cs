@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct D3D12_GLOBAL_ROOT_SIGNATURE
     {
-        [NativeTypeName("ID3D12RootSignature *")]
         public ID3D12RootSignature* pGlobalRootSignature;
     }
 }

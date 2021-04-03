@@ -9,7 +9,6 @@ namespace TerraFX.Interop
     {
         public WS_WINDOWS_INTEGRATED_AUTH_CREDENTIAL credential;
 
-        [NativeTypeName("void *")]
         public void* opaqueAuthIdentity;
     }
 }

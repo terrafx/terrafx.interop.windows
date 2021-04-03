@@ -137,7 +137,7 @@ namespace TerraFX.Interop
 
         [DllImport("mmdevapi", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int ActivateAudioInterfaceAsync([NativeTypeName("LPCWSTR")] ushort* deviceInterfacePath, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("PROPVARIANT *")] PROPVARIANT* activationParams, [NativeTypeName("IActivateAudioInterfaceCompletionHandler *")] IActivateAudioInterfaceCompletionHandler* completionHandler, [NativeTypeName("IActivateAudioInterfaceAsyncOperation **")] IActivateAudioInterfaceAsyncOperation** activationOperation);
+        public static extern int ActivateAudioInterfaceAsync([NativeTypeName("LPCWSTR")] ushort* deviceInterfacePath, [NativeTypeName("const IID &")] Guid* riid, PROPVARIANT* activationParams, IActivateAudioInterfaceCompletionHandler* completionHandler, IActivateAudioInterfaceAsyncOperation** activationOperation);
 
         [NativeTypeName("#define E_NOTFOUND HRESULT_FROM_WIN32(ERROR_NOT_FOUND)")]
         public static readonly int E_NOTFOUND = HRESULT_FROM_WIN32(1168);

@@ -15,7 +15,6 @@ namespace TerraFX.Interop
 
         public CRYPT_ALGORITHM_IDENTIFIER KeyEncryptionAlgorithm;
 
-        [NativeTypeName("void *")]
         public void* pvKeyEncryptionAuxInfo;
 
         [NativeTypeName("HCRYPTPROV")]
@@ -26,6 +25,14 @@ namespace TerraFX.Interop
 
         [NativeTypeName("_CMSG_MAIL_LIST_RECIPIENT_ENCODE_INFO::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/wincrypt.h:6991:5)")]
         public _Anonymous_e__Union Anonymous;
+
+        [NativeTypeName("CRYPT_DATA_BLOB")]
+        public CRYPTOAPI_BLOB KeyId;
+
+        public FILETIME Date;
+
+        [NativeTypeName("PCRYPT_ATTRIBUTE_TYPE_VALUE")]
+        public CRYPT_ATTRIBUTE_TYPE_VALUE* pOtherAttr;
 
         public ref nuint hKeyEncryptionKey
         {
@@ -48,14 +55,6 @@ namespace TerraFX.Interop
             }
         }
 
-        [NativeTypeName("CRYPT_DATA_BLOB")]
-        public CRYPTOAPI_BLOB KeyId;
-
-        public FILETIME Date;
-
-        [NativeTypeName("PCRYPT_ATTRIBUTE_TYPE_VALUE")]
-        public CRYPT_ATTRIBUTE_TYPE_VALUE* pOtherAttr;
-
         [StructLayout(LayoutKind.Explicit)]
         public unsafe partial struct _Anonymous_e__Union
         {
@@ -64,7 +63,6 @@ namespace TerraFX.Interop
             public nuint hKeyEncryptionKey;
 
             [FieldOffset(0)]
-            [NativeTypeName("void *")]
             public void* pvKeyEncryptionKey;
         }
     }

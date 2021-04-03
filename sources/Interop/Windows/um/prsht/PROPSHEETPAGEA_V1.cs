@@ -23,6 +23,24 @@ namespace TerraFX.Interop
         [NativeTypeName("_PROPSHEETPAGEA_V1::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/prsht.h:198:5)")]
         public _Anonymous1_e__Union Anonymous1;
 
+        [NativeTypeName("_PROPSHEETPAGEA_V1::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/prsht.h:198:5)")]
+        public _Anonymous2_e__Union Anonymous2;
+
+        [NativeTypeName("LPCSTR")]
+        public sbyte* pszTitle;
+
+        [NativeTypeName("DLGPROC")]
+        public delegate* unmanaged<IntPtr, uint, nuint, nint, nint> pfnDlgProc;
+
+        [NativeTypeName("LPARAM")]
+        public nint lParam;
+
+        [NativeTypeName("LPFNPSPCALLBACKA")]
+        public delegate* unmanaged<IntPtr, uint, PROPSHEETPAGEA*, uint> pfnCallback;
+
+        [NativeTypeName("UINT *")]
+        public uint* pcRefParent;
+
         public ref sbyte* pszTemplate
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -47,9 +65,6 @@ namespace TerraFX.Interop
             }
         }
 
-        [NativeTypeName("_PROPSHEETPAGEA_V1::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/prsht.h:198:5)")]
-        public _Anonymous2_e__Union Anonymous2;
-
         public ref IntPtr hIcon
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -70,21 +85,6 @@ namespace TerraFX.Interop
                 }
             }
         }
-
-        [NativeTypeName("LPCSTR")]
-        public sbyte* pszTitle;
-
-        [NativeTypeName("DLGPROC")]
-        public delegate* unmanaged<IntPtr, uint, nuint, nint, nint> pfnDlgProc;
-
-        [NativeTypeName("LPARAM")]
-        public nint lParam;
-
-        [NativeTypeName("LPFNPSPCALLBACKA")]
-        public delegate* unmanaged<IntPtr, uint, PROPSHEETPAGEA*, uint> pfnCallback;
-
-        [NativeTypeName("UINT *")]
-        public uint* pcRefParent;
 
         [StructLayout(LayoutKind.Explicit)]
         public unsafe partial struct _Anonymous1_e__Union

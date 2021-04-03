@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct WS_ENUM_DESCRIPTION
     {
-        [NativeTypeName("WS_ENUM_VALUE *")]
         public WS_ENUM_VALUE* values;
 
         [NativeTypeName("ULONG")]

@@ -17,7 +17,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
+        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IAppxManifestDriverConstraintsEnumerator*, Guid*, void**, int>)(lpVtbl[0]))((IAppxManifestDriverConstraintsEnumerator*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -38,7 +38,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int GetCurrent([NativeTypeName("IAppxManifestDriverConstraint **")] IAppxManifestDriverConstraint** driverConstraint)
+        public int GetCurrent(IAppxManifestDriverConstraint** driverConstraint)
         {
             return ((delegate* unmanaged<IAppxManifestDriverConstraintsEnumerator*, IAppxManifestDriverConstraint**, int>)(lpVtbl[3]))((IAppxManifestDriverConstraintsEnumerator*)Unsafe.AsPointer(ref this), driverConstraint);
         }

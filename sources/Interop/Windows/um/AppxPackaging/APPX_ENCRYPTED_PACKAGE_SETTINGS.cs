@@ -16,7 +16,6 @@ namespace TerraFX.Interop
         [NativeTypeName("BOOL")]
         public int useDiffusion;
 
-        [NativeTypeName("IUri *")]
         public IUri* blockMapHashAlgorithm;
     }
 }

@@ -12,27 +12,27 @@ namespace TerraFX.Interop
     {
         [DllImport("dcomp", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int DCompositionCreateDevice([NativeTypeName("IDXGIDevice *")] IDXGIDevice* dxgiDevice, [NativeTypeName("const IID &")] Guid* iid, [NativeTypeName("void **")] void** dcompositionDevice);
+        public static extern int DCompositionCreateDevice(IDXGIDevice* dxgiDevice, [NativeTypeName("const IID &")] Guid* iid, void** dcompositionDevice);
 
         [DllImport("dcomp", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int DCompositionCreateDevice2([NativeTypeName("IUnknown *")] IUnknown* renderingDevice, [NativeTypeName("const IID &")] Guid* iid, [NativeTypeName("void **")] void** dcompositionDevice);
+        public static extern int DCompositionCreateDevice2(IUnknown* renderingDevice, [NativeTypeName("const IID &")] Guid* iid, void** dcompositionDevice);
 
         [DllImport("dcomp", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int DCompositionCreateDevice3([NativeTypeName("IUnknown *")] IUnknown* renderingDevice, [NativeTypeName("const IID &")] Guid* iid, [NativeTypeName("void **")] void** dcompositionDevice);
+        public static extern int DCompositionCreateDevice3(IUnknown* renderingDevice, [NativeTypeName("const IID &")] Guid* iid, void** dcompositionDevice);
 
         [DllImport("dcomp", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int DCompositionCreateSurfaceHandle([NativeTypeName("DWORD")] uint desiredAccess, [NativeTypeName("SECURITY_ATTRIBUTES *")] SECURITY_ATTRIBUTES* securityAttributes, [NativeTypeName("HANDLE *")] IntPtr* surfaceHandle);
+        public static extern int DCompositionCreateSurfaceHandle([NativeTypeName("DWORD")] uint desiredAccess, SECURITY_ATTRIBUTES* securityAttributes, [NativeTypeName("HANDLE *")] IntPtr* surfaceHandle);
 
         [DllImport("dcomp", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int DCompositionAttachMouseWheelToHwnd([NativeTypeName("IDCompositionVisual *")] IDCompositionVisual* visual, [NativeTypeName("HWND")] IntPtr hwnd, [NativeTypeName("BOOL")] int enable);
+        public static extern int DCompositionAttachMouseWheelToHwnd(IDCompositionVisual* visual, [NativeTypeName("HWND")] IntPtr hwnd, [NativeTypeName("BOOL")] int enable);
 
         [DllImport("dcomp", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int DCompositionAttachMouseDragToHwnd([NativeTypeName("IDCompositionVisual *")] IDCompositionVisual* visual, [NativeTypeName("HWND")] IntPtr hwnd, [NativeTypeName("BOOL")] int enable);
+        public static extern int DCompositionAttachMouseDragToHwnd(IDCompositionVisual* visual, [NativeTypeName("HWND")] IntPtr hwnd, [NativeTypeName("BOOL")] int enable);
 
         public static readonly Guid IID_IDCompositionDevice = new Guid(0xC37EA93A, 0xE7AA, 0x450D, 0xB1, 0x6F, 0x97, 0x46, 0xCB, 0x04, 0x07, 0xF3);
 

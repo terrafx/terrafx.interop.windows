@@ -17,7 +17,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
+        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IDiscFormat2RawCD*, Guid*, void**, int>)(lpVtbl[0]))((IDiscFormat2RawCD*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -45,7 +45,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int GetTypeInfo([NativeTypeName("UINT")] uint iTInfo, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("ITypeInfo **")] ITypeInfo** ppTInfo)
+        public int GetTypeInfo([NativeTypeName("UINT")] uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
         {
             return ((delegate* unmanaged<IDiscFormat2RawCD*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IDiscFormat2RawCD*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
         }
@@ -59,21 +59,21 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, [NativeTypeName("DISPPARAMS *")] DISPPARAMS* pDispParams, [NativeTypeName("VARIANT *")] VARIANT* pVarResult, [NativeTypeName("EXCEPINFO *")] EXCEPINFO* pExcepInfo, [NativeTypeName("UINT *")] uint* puArgErr)
+        public int Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, [NativeTypeName("UINT *")] uint* puArgErr)
         {
             return ((delegate* unmanaged<IDiscFormat2RawCD*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IDiscFormat2RawCD*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int IsRecorderSupported([NativeTypeName("IDiscRecorder2 *")] IDiscRecorder2* recorder, [NativeTypeName("VARIANT_BOOL *")] short* value)
+        public int IsRecorderSupported(IDiscRecorder2* recorder, [NativeTypeName("VARIANT_BOOL *")] short* value)
         {
             return ((delegate* unmanaged<IDiscFormat2RawCD*, IDiscRecorder2*, short*, int>)(lpVtbl[7]))((IDiscFormat2RawCD*)Unsafe.AsPointer(ref this), recorder, value);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int IsCurrentMediaSupported([NativeTypeName("IDiscRecorder2 *")] IDiscRecorder2* recorder, [NativeTypeName("VARIANT_BOOL *")] short* value)
+        public int IsCurrentMediaSupported(IDiscRecorder2* recorder, [NativeTypeName("VARIANT_BOOL *")] short* value)
         {
             return ((delegate* unmanaged<IDiscFormat2RawCD*, IDiscRecorder2*, short*, int>)(lpVtbl[8]))((IDiscFormat2RawCD*)Unsafe.AsPointer(ref this), recorder, value);
         }
@@ -94,7 +94,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int get_SupportedMediaTypes([NativeTypeName("SAFEARRAY **")] SAFEARRAY** value)
+        public int get_SupportedMediaTypes(SAFEARRAY** value)
         {
             return ((delegate* unmanaged<IDiscFormat2RawCD*, SAFEARRAY**, int>)(lpVtbl[11]))((IDiscFormat2RawCD*)Unsafe.AsPointer(ref this), value);
         }
@@ -108,14 +108,14 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int WriteMedia([NativeTypeName("IStream *")] IStream* data)
+        public int WriteMedia(IStream* data)
         {
             return ((delegate* unmanaged<IDiscFormat2RawCD*, IStream*, int>)(lpVtbl[13]))((IDiscFormat2RawCD*)Unsafe.AsPointer(ref this), data);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int WriteMedia2([NativeTypeName("IStream *")] IStream* data, [NativeTypeName("LONG")] int streamLeadInSectors)
+        public int WriteMedia2(IStream* data, [NativeTypeName("LONG")] int streamLeadInSectors)
         {
             return ((delegate* unmanaged<IDiscFormat2RawCD*, IStream*, int, int>)(lpVtbl[14]))((IDiscFormat2RawCD*)Unsafe.AsPointer(ref this), data, streamLeadInSectors);
         }
@@ -143,14 +143,14 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int put_Recorder([NativeTypeName("IDiscRecorder2 *")] IDiscRecorder2* value)
+        public int put_Recorder(IDiscRecorder2* value)
         {
             return ((delegate* unmanaged<IDiscFormat2RawCD*, IDiscRecorder2*, int>)(lpVtbl[18]))((IDiscFormat2RawCD*)Unsafe.AsPointer(ref this), value);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int get_Recorder([NativeTypeName("IDiscRecorder2 **")] IDiscRecorder2** value)
+        public int get_Recorder(IDiscRecorder2** value)
         {
             return ((delegate* unmanaged<IDiscFormat2RawCD*, IDiscRecorder2**, int>)(lpVtbl[19]))((IDiscFormat2RawCD*)Unsafe.AsPointer(ref this), value);
         }
@@ -185,14 +185,14 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int get_CurrentPhysicalMediaType([NativeTypeName("IMAPI_MEDIA_PHYSICAL_TYPE *")] IMAPI_MEDIA_PHYSICAL_TYPE* value)
+        public int get_CurrentPhysicalMediaType(IMAPI_MEDIA_PHYSICAL_TYPE* value)
         {
             return ((delegate* unmanaged<IDiscFormat2RawCD*, IMAPI_MEDIA_PHYSICAL_TYPE*, int>)(lpVtbl[24]))((IDiscFormat2RawCD*)Unsafe.AsPointer(ref this), value);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int get_SupportedSectorTypes([NativeTypeName("SAFEARRAY **")] SAFEARRAY** value)
+        public int get_SupportedSectorTypes(SAFEARRAY** value)
         {
             return ((delegate* unmanaged<IDiscFormat2RawCD*, SAFEARRAY**, int>)(lpVtbl[25]))((IDiscFormat2RawCD*)Unsafe.AsPointer(ref this), value);
         }
@@ -206,7 +206,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int get_RequestedSectorType([NativeTypeName("IMAPI_FORMAT2_RAW_CD_DATA_SECTOR_TYPE *")] IMAPI_FORMAT2_RAW_CD_DATA_SECTOR_TYPE* value)
+        public int get_RequestedSectorType(IMAPI_FORMAT2_RAW_CD_DATA_SECTOR_TYPE* value)
         {
             return ((delegate* unmanaged<IDiscFormat2RawCD*, IMAPI_FORMAT2_RAW_CD_DATA_SECTOR_TYPE*, int>)(lpVtbl[27]))((IDiscFormat2RawCD*)Unsafe.AsPointer(ref this), value);
         }
@@ -255,14 +255,14 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int get_SupportedWriteSpeeds([NativeTypeName("SAFEARRAY **")] SAFEARRAY** supportedSpeeds)
+        public int get_SupportedWriteSpeeds(SAFEARRAY** supportedSpeeds)
         {
             return ((delegate* unmanaged<IDiscFormat2RawCD*, SAFEARRAY**, int>)(lpVtbl[34]))((IDiscFormat2RawCD*)Unsafe.AsPointer(ref this), supportedSpeeds);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int get_SupportedWriteSpeedDescriptors([NativeTypeName("SAFEARRAY **")] SAFEARRAY** supportedSpeedDescriptors)
+        public int get_SupportedWriteSpeedDescriptors(SAFEARRAY** supportedSpeedDescriptors)
         {
             return ((delegate* unmanaged<IDiscFormat2RawCD*, SAFEARRAY**, int>)(lpVtbl[35]))((IDiscFormat2RawCD*)Unsafe.AsPointer(ref this), supportedSpeedDescriptors);
         }

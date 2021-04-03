@@ -19,6 +19,13 @@ namespace TerraFX.Interop
         [NativeTypeName("tagVARDESC::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/OAIdl.h:872:36)")]
         public _Anonymous_e__Union Anonymous;
 
+        public ELEMDESC elemdescVar;
+
+        [NativeTypeName("WORD")]
+        public ushort wVarFlags;
+
+        public VARKIND varkind;
+
         public ref uint oInst
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -40,13 +47,6 @@ namespace TerraFX.Interop
             }
         }
 
-        public ELEMDESC elemdescVar;
-
-        [NativeTypeName("WORD")]
-        public ushort wVarFlags;
-
-        public VARKIND varkind;
-
         [StructLayout(LayoutKind.Explicit)]
         public unsafe partial struct _Anonymous_e__Union
         {
@@ -55,7 +55,6 @@ namespace TerraFX.Interop
             public uint oInst;
 
             [FieldOffset(0)]
-            [NativeTypeName("VARIANT *")]
             public VARIANT* lpvarValue;
         }
     }

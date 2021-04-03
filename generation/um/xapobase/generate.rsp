@@ -5,6 +5,7 @@ CXAPOBase
 CXAPOParametersBase
 XAPOASSERT
 XAPOASSERT_NO_OUTPUT
+__assume
 --file
 um-xapobase.h
 --output

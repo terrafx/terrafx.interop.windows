@@ -12,7 +12,6 @@ namespace TerraFX.Interop
         [NativeTypeName("GUID")]
         public Guid guid;
 
-        [NativeTypeName("WS_XML_STRING *")]
         public WS_XML_STRING* strings;
 
         [NativeTypeName("ULONG")]

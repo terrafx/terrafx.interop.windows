@@ -17,7 +17,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
+        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IRawCDImageCreator*, Guid*, void**, int>)(lpVtbl[0]))((IRawCDImageCreator*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -45,7 +45,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int GetTypeInfo([NativeTypeName("UINT")] uint iTInfo, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("ITypeInfo **")] ITypeInfo** ppTInfo)
+        public int GetTypeInfo([NativeTypeName("UINT")] uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
         {
             return ((delegate* unmanaged<IRawCDImageCreator*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IRawCDImageCreator*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
         }
@@ -59,35 +59,35 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, [NativeTypeName("DISPPARAMS *")] DISPPARAMS* pDispParams, [NativeTypeName("VARIANT *")] VARIANT* pVarResult, [NativeTypeName("EXCEPINFO *")] EXCEPINFO* pExcepInfo, [NativeTypeName("UINT *")] uint* puArgErr)
+        public int Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, [NativeTypeName("UINT *")] uint* puArgErr)
         {
             return ((delegate* unmanaged<IRawCDImageCreator*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IRawCDImageCreator*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int CreateResultImage([NativeTypeName("IStream **")] IStream** resultStream)
+        public int CreateResultImage(IStream** resultStream)
         {
             return ((delegate* unmanaged<IRawCDImageCreator*, IStream**, int>)(lpVtbl[7]))((IRawCDImageCreator*)Unsafe.AsPointer(ref this), resultStream);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int AddTrack(IMAPI_CD_SECTOR_TYPE dataType, [NativeTypeName("IStream *")] IStream* data, [NativeTypeName("LONG *")] int* trackIndex)
+        public int AddTrack(IMAPI_CD_SECTOR_TYPE dataType, IStream* data, [NativeTypeName("LONG *")] int* trackIndex)
         {
             return ((delegate* unmanaged<IRawCDImageCreator*, IMAPI_CD_SECTOR_TYPE, IStream*, int*, int>)(lpVtbl[8]))((IRawCDImageCreator*)Unsafe.AsPointer(ref this), dataType, data, trackIndex);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int AddSpecialPregap([NativeTypeName("IStream *")] IStream* data)
+        public int AddSpecialPregap(IStream* data)
         {
             return ((delegate* unmanaged<IRawCDImageCreator*, IStream*, int>)(lpVtbl[9]))((IRawCDImageCreator*)Unsafe.AsPointer(ref this), data);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int AddSubcodeRWGenerator([NativeTypeName("IStream *")] IStream* subcode)
+        public int AddSubcodeRWGenerator(IStream* subcode)
         {
             return ((delegate* unmanaged<IRawCDImageCreator*, IStream*, int>)(lpVtbl[10]))((IRawCDImageCreator*)Unsafe.AsPointer(ref this), subcode);
         }
@@ -101,7 +101,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int get_ResultingImageType([NativeTypeName("IMAPI_FORMAT2_RAW_CD_DATA_SECTOR_TYPE *")] IMAPI_FORMAT2_RAW_CD_DATA_SECTOR_TYPE* value)
+        public int get_ResultingImageType(IMAPI_FORMAT2_RAW_CD_DATA_SECTOR_TYPE* value)
         {
             return ((delegate* unmanaged<IRawCDImageCreator*, IMAPI_FORMAT2_RAW_CD_DATA_SECTOR_TYPE*, int>)(lpVtbl[12]))((IRawCDImageCreator*)Unsafe.AsPointer(ref this), value);
         }
@@ -171,7 +171,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int get_TrackInfo([NativeTypeName("LONG")] int trackIndex, [NativeTypeName("IRawCDImageTrackInfo **")] IRawCDImageTrackInfo** value)
+        public int get_TrackInfo([NativeTypeName("LONG")] int trackIndex, IRawCDImageTrackInfo** value)
         {
             return ((delegate* unmanaged<IRawCDImageCreator*, int, IRawCDImageTrackInfo**, int>)(lpVtbl[22]))((IRawCDImageCreator*)Unsafe.AsPointer(ref this), trackIndex, value);
         }
@@ -192,7 +192,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int get_ExpectedTableOfContents([NativeTypeName("SAFEARRAY **")] SAFEARRAY** value)
+        public int get_ExpectedTableOfContents(SAFEARRAY** value)
         {
             return ((delegate* unmanaged<IRawCDImageCreator*, SAFEARRAY**, int>)(lpVtbl[25]))((IRawCDImageCreator*)Unsafe.AsPointer(ref this), value);
         }

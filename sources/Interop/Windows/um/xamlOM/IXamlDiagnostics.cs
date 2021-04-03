@@ -17,7 +17,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
+        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IXamlDiagnostics*, Guid*, void**, int>)(lpVtbl[0]))((IXamlDiagnostics*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -38,35 +38,35 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int GetDispatcher([NativeTypeName("IInspectable **")] IInspectable** ppDispatcher)
+        public int GetDispatcher(IInspectable** ppDispatcher)
         {
             return ((delegate* unmanaged<IXamlDiagnostics*, IInspectable**, int>)(lpVtbl[3]))((IXamlDiagnostics*)Unsafe.AsPointer(ref this), ppDispatcher);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int GetUiLayer([NativeTypeName("IInspectable **")] IInspectable** ppLayer)
+        public int GetUiLayer(IInspectable** ppLayer)
         {
             return ((delegate* unmanaged<IXamlDiagnostics*, IInspectable**, int>)(lpVtbl[4]))((IXamlDiagnostics*)Unsafe.AsPointer(ref this), ppLayer);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int GetApplication([NativeTypeName("IInspectable **")] IInspectable** ppApplication)
+        public int GetApplication(IInspectable** ppApplication)
         {
             return ((delegate* unmanaged<IXamlDiagnostics*, IInspectable**, int>)(lpVtbl[5]))((IXamlDiagnostics*)Unsafe.AsPointer(ref this), ppApplication);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int GetIInspectableFromHandle([NativeTypeName("InstanceHandle")] ulong instanceHandle, [NativeTypeName("IInspectable **")] IInspectable** ppInstance)
+        public int GetIInspectableFromHandle([NativeTypeName("InstanceHandle")] ulong instanceHandle, IInspectable** ppInstance)
         {
             return ((delegate* unmanaged<IXamlDiagnostics*, ulong, IInspectable**, int>)(lpVtbl[6]))((IXamlDiagnostics*)Unsafe.AsPointer(ref this), instanceHandle, ppInstance);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int GetHandleFromIInspectable([NativeTypeName("IInspectable *")] IInspectable* pInstance, [NativeTypeName("InstanceHandle *")] ulong* pHandle)
+        public int GetHandleFromIInspectable(IInspectable* pInstance, [NativeTypeName("InstanceHandle *")] ulong* pHandle)
         {
             return ((delegate* unmanaged<IXamlDiagnostics*, IInspectable*, ulong*, int>)(lpVtbl[7]))((IXamlDiagnostics*)Unsafe.AsPointer(ref this), pInstance, pHandle);
         }
@@ -80,7 +80,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int RegisterInstance([NativeTypeName("IInspectable *")] IInspectable* pInstance, [NativeTypeName("InstanceHandle *")] ulong* pInstanceHandle)
+        public int RegisterInstance(IInspectable* pInstance, [NativeTypeName("InstanceHandle *")] ulong* pInstanceHandle)
         {
             return ((delegate* unmanaged<IXamlDiagnostics*, IInspectable*, ulong*, int>)(lpVtbl[9]))((IXamlDiagnostics*)Unsafe.AsPointer(ref this), pInstance, pInstanceHandle);
         }

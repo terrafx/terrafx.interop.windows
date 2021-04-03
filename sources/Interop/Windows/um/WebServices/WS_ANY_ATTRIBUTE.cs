@@ -11,7 +11,6 @@ namespace TerraFX.Interop
 
         public WS_XML_STRING ns;
 
-        [NativeTypeName("WS_XML_TEXT *")]
         public WS_XML_TEXT* value;
     }
 }

@@ -15,7 +15,6 @@ namespace TerraFX.Interop
         [NativeTypeName("UINT32")]
         public uint ConcurrentThreadCount;
 
-        [NativeTypeName("PRJ_NOTIFICATION_MAPPING *")]
         public PRJ_NOTIFICATION_MAPPING* NotificationMappings;
 
         [NativeTypeName("UINT32")]

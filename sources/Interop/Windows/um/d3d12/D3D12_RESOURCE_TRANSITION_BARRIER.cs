@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct D3D12_RESOURCE_TRANSITION_BARRIER
     {
-        [NativeTypeName("ID3D12Resource *")]
         public ID3D12Resource* pResource;
 
         [NativeTypeName("UINT")]

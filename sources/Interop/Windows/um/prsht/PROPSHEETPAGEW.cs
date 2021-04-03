@@ -23,53 +23,8 @@ namespace TerraFX.Interop
         [NativeTypeName("_PROPSHEETPAGEW::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/prsht.h:271:5)")]
         public _Anonymous1_e__Union Anonymous1;
 
-        public ref ushort* pszTemplate
-        {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                fixed (_Anonymous1_e__Union* pField = &Anonymous1)
-                {
-                    return ref pField->pszTemplate;
-                }
-            }
-        }
-
-        public ref DLGTEMPLATE* pResource
-        {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                fixed (_Anonymous1_e__Union* pField = &Anonymous1)
-                {
-                    return ref pField->pResource;
-                }
-            }
-        }
-
         [NativeTypeName("_PROPSHEETPAGEW::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/prsht.h:271:5)")]
         public _Anonymous2_e__Union Anonymous2;
-
-        public ref IntPtr hIcon
-        {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous2.hIcon, 1));
-            }
-        }
-
-        public ref ushort* pszIcon
-        {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                fixed (_Anonymous2_e__Union* pField = &Anonymous2)
-                {
-                    return ref pField->pszIcon;
-                }
-            }
-        }
 
         [NativeTypeName("LPCWSTR")]
         public ushort* pszTitle;
@@ -97,6 +52,51 @@ namespace TerraFX.Interop
 
         [NativeTypeName("_PROPSHEETPAGEW::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/prsht.h:278:5)")]
         public _Anonymous3_e__Union Anonymous3;
+
+        public ref ushort* pszTemplate
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                fixed (_Anonymous1_e__Union* pField = &Anonymous1)
+                {
+                    return ref pField->pszTemplate;
+                }
+            }
+        }
+
+        public ref DLGTEMPLATE* pResource
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                fixed (_Anonymous1_e__Union* pField = &Anonymous1)
+                {
+                    return ref pField->pResource;
+                }
+            }
+        }
+
+        public ref IntPtr hIcon
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous2.hIcon, 1));
+            }
+        }
+
+        public ref ushort* pszIcon
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                fixed (_Anonymous2_e__Union* pField = &Anonymous2)
+                {
+                    return ref pField->pszIcon;
+                }
+            }
+        }
 
         public ref IntPtr hbmHeader
         {

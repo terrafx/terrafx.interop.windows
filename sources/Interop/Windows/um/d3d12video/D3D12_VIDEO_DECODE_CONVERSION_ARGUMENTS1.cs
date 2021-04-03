@@ -10,7 +10,6 @@ namespace TerraFX.Interop
         [NativeTypeName("BOOL")]
         public int Enable;
 
-        [NativeTypeName("ID3D12Resource *")]
         public ID3D12Resource* pReferenceTexture2D;
 
         [NativeTypeName("UINT")]

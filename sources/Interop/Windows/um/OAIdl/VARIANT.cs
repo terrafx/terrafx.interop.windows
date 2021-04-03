@@ -649,15 +649,12 @@ namespace TerraFX.Interop
                     public ushort* bstrVal;
 
                     [FieldOffset(0)]
-                    [NativeTypeName("IUnknown *")]
                     public IUnknown* punkVal;
 
                     [FieldOffset(0)]
-                    [NativeTypeName("IDispatch *")]
                     public IDispatch* pdispVal;
 
                     [FieldOffset(0)]
-                    [NativeTypeName("SAFEARRAY *")]
                     public SAFEARRAY* parray;
 
                     [FieldOffset(0)]
@@ -697,7 +694,6 @@ namespace TerraFX.Interop
                     public int* pscode;
 
                     [FieldOffset(0)]
-                    [NativeTypeName("CY *")]
                     public CY* pcyVal;
 
                     [FieldOffset(0)]
@@ -709,19 +705,15 @@ namespace TerraFX.Interop
                     public ushort** pbstrVal;
 
                     [FieldOffset(0)]
-                    [NativeTypeName("IUnknown **")]
                     public IUnknown** ppunkVal;
 
                     [FieldOffset(0)]
-                    [NativeTypeName("IDispatch **")]
                     public IDispatch** ppdispVal;
 
                     [FieldOffset(0)]
-                    [NativeTypeName("SAFEARRAY **")]
                     public SAFEARRAY** pparray;
 
                     [FieldOffset(0)]
-                    [NativeTypeName("VARIANT *")]
                     public VARIANT* pvarVal;
 
                     [FieldOffset(0)]
@@ -753,7 +745,6 @@ namespace TerraFX.Interop
                     public uint uintVal;
 
                     [FieldOffset(0)]
-                    [NativeTypeName("DECIMAL *")]
                     public DECIMAL* pdecVal;
 
                     [FieldOffset(0)]
@@ -789,7 +780,6 @@ namespace TerraFX.Interop
                         [NativeTypeName("PVOID")]
                         public void* pvRecord;
 
-                        [NativeTypeName("IRecordInfo *")]
                         public IRecordInfo* pRecInfo;
                     }
                 }

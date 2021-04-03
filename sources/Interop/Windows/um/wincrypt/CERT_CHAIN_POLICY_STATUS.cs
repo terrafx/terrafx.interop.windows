@@ -19,7 +19,6 @@ namespace TerraFX.Interop
         [NativeTypeName("LONG")]
         public int lElementIndex;
 
-        [NativeTypeName("void *")]
         public void* pvExtraPolicyStatus;
     }
 }

@@ -13,7 +13,6 @@ namespace TerraFX.Interop
         [NativeTypeName("UINT32")]
         public uint SendCount;
 
-        [NativeTypeName("XAUDIO2_SEND_DESCRIPTOR *")]
         public XAUDIO2_SEND_DESCRIPTOR* pSends;
     }
 }

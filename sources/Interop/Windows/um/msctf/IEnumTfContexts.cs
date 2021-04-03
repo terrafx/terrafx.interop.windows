@@ -17,7 +17,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
+        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IEnumTfContexts*, Guid*, void**, int>)(lpVtbl[0]))((IEnumTfContexts*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -38,14 +38,14 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int Clone([NativeTypeName("IEnumTfContexts **")] IEnumTfContexts** ppEnum)
+        public int Clone(IEnumTfContexts** ppEnum)
         {
             return ((delegate* unmanaged<IEnumTfContexts*, IEnumTfContexts**, int>)(lpVtbl[3]))((IEnumTfContexts*)Unsafe.AsPointer(ref this), ppEnum);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int Next([NativeTypeName("ULONG")] uint ulCount, [NativeTypeName("ITfContext **")] ITfContext** rgContext, [NativeTypeName("ULONG *")] uint* pcFetched)
+        public int Next([NativeTypeName("ULONG")] uint ulCount, ITfContext** rgContext, [NativeTypeName("ULONG *")] uint* pcFetched)
         {
             return ((delegate* unmanaged<IEnumTfContexts*, uint, ITfContext**, uint*, int>)(lpVtbl[4]))((IEnumTfContexts*)Unsafe.AsPointer(ref this), ulCount, rgContext, pcFetched);
         }

@@ -10,10 +10,8 @@ namespace TerraFX.Interop
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe partial struct XAUDIO2FX_VOLUMEMETER_LEVELS
     {
-        [NativeTypeName("float *")]
         public float* pPeakLevels;
 
-        [NativeTypeName("float *")]
         public float* pRMSLevels;
 
         [NativeTypeName("UINT32")]

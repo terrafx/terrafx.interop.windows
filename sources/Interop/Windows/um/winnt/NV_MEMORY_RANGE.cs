@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct NV_MEMORY_RANGE
     {
-        [NativeTypeName("void *")]
         public void* BaseAddress;
 
         [NativeTypeName("SIZE_T")]

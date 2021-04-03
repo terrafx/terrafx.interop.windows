@@ -13,7 +13,6 @@ namespace TerraFX.Interop
         [NativeTypeName("BYTE *")]
         public byte* pvBuffer;
 
-        [NativeTypeName("SPSHORTCUTPAIR *")]
         public SPSHORTCUTPAIR* pFirstShortcutPair;
     }
 }

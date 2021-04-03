@@ -12,7 +12,6 @@ namespace TerraFX.Interop
         [NativeTypeName("GUID")]
         public Guid guidVersion;
 
-        [NativeTypeName("IStream *")]
         public IStream* pStream;
     }
 }

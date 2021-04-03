@@ -25,6 +25,9 @@ namespace TerraFX.Interop
         [NativeTypeName("_CRYPT_OID_INFO::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/wincrypt.h:6206:5)")]
         public _Anonymous_e__Union Anonymous;
 
+        [NativeTypeName("CRYPT_DATA_BLOB")]
+        public CRYPTOAPI_BLOB ExtraInfo;
+
         public ref uint dwValue
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -51,9 +54,6 @@ namespace TerraFX.Interop
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.dwLength, 1));
             }
         }
-
-        [NativeTypeName("CRYPT_DATA_BLOB")]
-        public CRYPTOAPI_BLOB ExtraInfo;
 
         [StructLayout(LayoutKind.Explicit)]
         public partial struct _Anonymous_e__Union

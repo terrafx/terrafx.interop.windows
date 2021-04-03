@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct D3D12_VIDEO_DECODE_COMPRESSED_BITSTREAM
     {
-        [NativeTypeName("ID3D12Resource *")]
         public ID3D12Resource* pBuffer;
 
         [NativeTypeName("UINT64")]

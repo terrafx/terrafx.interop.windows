@@ -14,6 +14,17 @@ namespace TerraFX.Interop
         [NativeTypeName("_WTD_GENERIC_CHAIN_POLICY_CREATE_INFO::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/SoftPub.h:160:5)")]
         public _Anonymous_e__Union Anonymous;
 
+        [NativeTypeName("HCERTCHAINENGINE")]
+        public IntPtr hChainEngine;
+
+        [NativeTypeName("PCERT_CHAIN_PARA")]
+        public CERT_CHAIN_PARA* pChainPara;
+
+        [NativeTypeName("DWORD")]
+        public uint dwFlags;
+
+        public void* pvReserved;
+
         public ref uint cbStruct
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -31,18 +42,6 @@ namespace TerraFX.Interop
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.cbSize, 1));
             }
         }
-
-        [NativeTypeName("HCERTCHAINENGINE")]
-        public IntPtr hChainEngine;
-
-        [NativeTypeName("PCERT_CHAIN_PARA")]
-        public CERT_CHAIN_PARA* pChainPara;
-
-        [NativeTypeName("DWORD")]
-        public uint dwFlags;
-
-        [NativeTypeName("void *")]
-        public void* pvReserved;
 
         [StructLayout(LayoutKind.Explicit)]
         public partial struct _Anonymous_e__Union

@@ -17,7 +17,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
+        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IAppxFilesEnumerator*, Guid*, void**, int>)(lpVtbl[0]))((IAppxFilesEnumerator*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -38,7 +38,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int GetCurrent([NativeTypeName("IAppxFile **")] IAppxFile** file)
+        public int GetCurrent(IAppxFile** file)
         {
             return ((delegate* unmanaged<IAppxFilesEnumerator*, IAppxFile**, int>)(lpVtbl[3]))((IAppxFilesEnumerator*)Unsafe.AsPointer(ref this), file);
         }

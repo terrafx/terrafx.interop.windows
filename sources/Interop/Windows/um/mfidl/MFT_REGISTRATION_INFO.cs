@@ -24,13 +24,11 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint cInTypes;
 
-        [NativeTypeName("MFT_REGISTER_TYPE_INFO *")]
         public MFT_REGISTER_TYPE_INFO* pInTypes;
 
         [NativeTypeName("DWORD")]
         public uint cOutTypes;
 
-        [NativeTypeName("MFT_REGISTER_TYPE_INFO *")]
         public MFT_REGISTER_TYPE_INFO* pOutTypes;
     }
 }

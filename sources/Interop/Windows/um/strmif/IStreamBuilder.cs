@@ -17,7 +17,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
+        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IStreamBuilder*, Guid*, void**, int>)(lpVtbl[0]))((IStreamBuilder*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -38,14 +38,14 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int Render([NativeTypeName("IPin *")] IPin* ppinOut, [NativeTypeName("IGraphBuilder *")] IGraphBuilder* pGraph)
+        public int Render(IPin* ppinOut, IGraphBuilder* pGraph)
         {
             return ((delegate* unmanaged<IStreamBuilder*, IPin*, IGraphBuilder*, int>)(lpVtbl[3]))((IStreamBuilder*)Unsafe.AsPointer(ref this), ppinOut, pGraph);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int Backout([NativeTypeName("IPin *")] IPin* ppinOut, [NativeTypeName("IGraphBuilder *")] IGraphBuilder* pGraph)
+        public int Backout(IPin* ppinOut, IGraphBuilder* pGraph)
         {
             return ((delegate* unmanaged<IStreamBuilder*, IPin*, IGraphBuilder*, int>)(lpVtbl[4]))((IStreamBuilder*)Unsafe.AsPointer(ref this), ppinOut, pGraph);
         }

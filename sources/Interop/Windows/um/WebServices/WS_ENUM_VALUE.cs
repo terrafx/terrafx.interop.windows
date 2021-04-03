@@ -9,7 +9,6 @@ namespace TerraFX.Interop
     {
         public int value;
 
-        [NativeTypeName("WS_XML_STRING *")]
         public WS_XML_STRING* name;
     }
 }

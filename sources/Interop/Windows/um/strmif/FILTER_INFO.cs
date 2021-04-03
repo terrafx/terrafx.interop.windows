@@ -10,7 +10,6 @@ namespace TerraFX.Interop
         [NativeTypeName("WCHAR [128]")]
         public fixed ushort achName[128];
 
-        [NativeTypeName("IFilterGraph *")]
         public IFilterGraph* pGraph;
     }
 }

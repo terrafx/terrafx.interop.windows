@@ -12,7 +12,6 @@ namespace TerraFX.Interop
         [NativeTypeName("WS_XML_BUFFER *")]
         public IntPtr buffer;
 
-        [NativeTypeName("void *")]
         public void* node;
     }
 }

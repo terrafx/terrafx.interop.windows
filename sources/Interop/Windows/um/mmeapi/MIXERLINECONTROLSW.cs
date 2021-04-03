@@ -20,6 +20,15 @@ namespace TerraFX.Interop
         [NativeTypeName("tagMIXERLINECONTROLSW::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/mmeapi.h:2266:5)")]
         public _Anonymous_e__Union Anonymous;
 
+        [NativeTypeName("DWORD")]
+        public uint cControls;
+
+        [NativeTypeName("DWORD")]
+        public uint cbmxctrl;
+
+        [NativeTypeName("LPMIXERCONTROLW")]
+        public MIXERCONTROLW* pamxctrl;
+
         public ref uint dwControlID
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -37,15 +46,6 @@ namespace TerraFX.Interop
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.dwControlType, 1));
             }
         }
-
-        [NativeTypeName("DWORD")]
-        public uint cControls;
-
-        [NativeTypeName("DWORD")]
-        public uint cbmxctrl;
-
-        [NativeTypeName("LPMIXERCONTROLW")]
-        public MIXERCONTROLW* pamxctrl;
 
         [StructLayout(LayoutKind.Explicit, Pack = 1)]
         public partial struct _Anonymous_e__Union

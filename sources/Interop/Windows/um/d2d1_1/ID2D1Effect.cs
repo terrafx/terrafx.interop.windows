@@ -40,7 +40,7 @@ namespace TerraFX.Interop
             return GetValue(index, D2D1_PROPERTY_TYPE_UNKNOWN, data, dataSize);
         }
 
-        public void SetInputEffect([NativeTypeName("UINT32")] uint index, [NativeTypeName("ID2D1Effect *")] ID2D1Effect* inputEffect, [NativeTypeName("BOOL")] int invalidate = 1)
+        public void SetInputEffect([NativeTypeName("UINT32")] uint index, ID2D1Effect* inputEffect, [NativeTypeName("BOOL")] int invalidate = 1)
         {
             ID2D1Image* output = null;
 
@@ -58,7 +58,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
+        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<ID2D1Effect*, Guid*, void**, int>)(lpVtbl[0]))((ID2D1Effect*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -148,13 +148,13 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int GetSubProperties([NativeTypeName("UINT32")] uint index, [NativeTypeName("ID2D1Properties **")] ID2D1Properties** subProperties)
+        public int GetSubProperties([NativeTypeName("UINT32")] uint index, ID2D1Properties** subProperties)
         {
             return ((delegate* unmanaged<ID2D1Effect*, uint, ID2D1Properties**, int>)(lpVtbl[13]))((ID2D1Effect*)Unsafe.AsPointer(ref this), index, subProperties);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public void SetInput([NativeTypeName("UINT32")] uint index, [NativeTypeName("ID2D1Image *")] ID2D1Image* input, [NativeTypeName("BOOL")] int invalidate = 1)
+        public void SetInput([NativeTypeName("UINT32")] uint index, ID2D1Image* input, [NativeTypeName("BOOL")] int invalidate = 1)
         {
             ((delegate* unmanaged<ID2D1Effect*, uint, ID2D1Image*, int, void>)(lpVtbl[14]))((ID2D1Effect*)Unsafe.AsPointer(ref this), index, input, invalidate);
         }
@@ -167,7 +167,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public void GetInput([NativeTypeName("UINT32")] uint index, [NativeTypeName("ID2D1Image **")] ID2D1Image** input)
+        public void GetInput([NativeTypeName("UINT32")] uint index, ID2D1Image** input)
         {
             ((delegate* unmanaged<ID2D1Effect*, uint, ID2D1Image**, void>)(lpVtbl[16]))((ID2D1Effect*)Unsafe.AsPointer(ref this), index, input);
         }
@@ -180,7 +180,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public void GetOutput([NativeTypeName("ID2D1Image **")] ID2D1Image** outputImage)
+        public void GetOutput(ID2D1Image** outputImage)
         {
             ((delegate* unmanaged<ID2D1Effect*, ID2D1Image**, void>)(lpVtbl[18]))((ID2D1Effect*)Unsafe.AsPointer(ref this), outputImage);
         }

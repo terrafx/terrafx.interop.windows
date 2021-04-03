@@ -12,10 +12,8 @@ namespace TerraFX.Interop
         [NativeTypeName("ULONG")]
         public uint versionInfo;
 
-        [NativeTypeName("WS_MESSAGE_DESCRIPTION *")]
         public WS_MESSAGE_DESCRIPTION* inputMessageDescription;
 
-        [NativeTypeName("WS_MESSAGE_DESCRIPTION *")]
         public WS_MESSAGE_DESCRIPTION* outputMessageDescription;
 
         [NativeTypeName("ULONG")]
@@ -27,7 +25,6 @@ namespace TerraFX.Interop
         [NativeTypeName("USHORT")]
         public ushort parameterCount;
 
-        [NativeTypeName("WS_PARAMETER_DESCRIPTION *")]
         public WS_PARAMETER_DESCRIPTION* parameterDescription;
 
         [NativeTypeName("WS_SERVICE_STUB_CALLBACK")]

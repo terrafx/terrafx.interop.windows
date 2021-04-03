@@ -14,7 +14,6 @@ namespace TerraFX.Interop
         [NativeTypeName("WS_WRITE_CALLBACK")]
         public delegate* unmanaged<void*, WS_BYTES*, uint, WS_ASYNC_CONTEXT*, IntPtr, int> writeCallback;
 
-        [NativeTypeName("void *")]
         public void* writeCallbackState;
     }
 }

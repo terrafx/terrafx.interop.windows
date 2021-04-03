@@ -555,11 +555,9 @@ namespace TerraFX.Interop
             public FLAGGED_WORD_BLOB* bstrVal;
 
             [FieldOffset(0)]
-            [NativeTypeName("IUnknown *")]
             public IUnknown* punkVal;
 
             [FieldOffset(0)]
-            [NativeTypeName("IDispatch *")]
             public IDispatch* pdispVal;
 
             [FieldOffset(0)]
@@ -603,7 +601,6 @@ namespace TerraFX.Interop
             public int* pscode;
 
             [FieldOffset(0)]
-            [NativeTypeName("CY *")]
             public CY* pcyVal;
 
             [FieldOffset(0)]
@@ -615,11 +612,9 @@ namespace TerraFX.Interop
             public FLAGGED_WORD_BLOB** pbstrVal;
 
             [FieldOffset(0)]
-            [NativeTypeName("IUnknown **")]
             public IUnknown** ppunkVal;
 
             [FieldOffset(0)]
-            [NativeTypeName("IDispatch **")]
             public IDispatch** ppdispVal;
 
             [FieldOffset(0)]
@@ -658,7 +653,6 @@ namespace TerraFX.Interop
             public DECIMAL decVal;
 
             [FieldOffset(0)]
-            [NativeTypeName("DECIMAL *")]
             public DECIMAL* pdecVal;
 
             [FieldOffset(0)]

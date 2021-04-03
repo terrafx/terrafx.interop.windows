@@ -17,7 +17,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
+        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IEnumTfContextViews*, Guid*, void**, int>)(lpVtbl[0]))((IEnumTfContextViews*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -38,14 +38,14 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int Clone([NativeTypeName("IEnumTfContextViews **")] IEnumTfContextViews** ppEnum)
+        public int Clone(IEnumTfContextViews** ppEnum)
         {
             return ((delegate* unmanaged<IEnumTfContextViews*, IEnumTfContextViews**, int>)(lpVtbl[3]))((IEnumTfContextViews*)Unsafe.AsPointer(ref this), ppEnum);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int Next([NativeTypeName("ULONG")] uint ulCount, [NativeTypeName("ITfContextView **")] ITfContextView** rgViews, [NativeTypeName("ULONG *")] uint* pcFetched)
+        public int Next([NativeTypeName("ULONG")] uint ulCount, ITfContextView** rgViews, [NativeTypeName("ULONG *")] uint* pcFetched)
         {
             return ((delegate* unmanaged<IEnumTfContextViews*, uint, ITfContextView**, uint*, int>)(lpVtbl[4]))((IEnumTfContextViews*)Unsafe.AsPointer(ref this), ulCount, rgViews, pcFetched);
         }

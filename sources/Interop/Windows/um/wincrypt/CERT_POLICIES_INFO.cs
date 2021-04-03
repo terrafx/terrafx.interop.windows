@@ -10,7 +10,6 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint cPolicyInfo;
 
-        [NativeTypeName("CERT_POLICY_INFO *")]
         public CERT_POLICY_INFO* rgPolicyInfo;
     }
 }

@@ -7,19 +7,16 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct D3D12_VIDEO_MOTION_ESTIMATOR_INPUT
     {
-        [NativeTypeName("ID3D12Resource *")]
         public ID3D12Resource* pInputTexture2D;
 
         [NativeTypeName("UINT")]
         public uint InputSubresourceIndex;
 
-        [NativeTypeName("ID3D12Resource *")]
         public ID3D12Resource* pReferenceTexture2D;
 
         [NativeTypeName("UINT")]
         public uint ReferenceSubresourceIndex;
 
-        [NativeTypeName("ID3D12VideoMotionVectorHeap *")]
         public ID3D12VideoMotionVectorHeap* pHintMotionVectorHeap;
     }
 }

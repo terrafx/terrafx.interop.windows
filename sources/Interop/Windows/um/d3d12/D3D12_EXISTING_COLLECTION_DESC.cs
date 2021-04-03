@@ -7,13 +7,11 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct D3D12_EXISTING_COLLECTION_DESC
     {
-        [NativeTypeName("ID3D12StateObject *")]
         public ID3D12StateObject* pExistingCollection;
 
         [NativeTypeName("UINT")]
         public uint NumExports;
 
-        [NativeTypeName("D3D12_EXPORT_DESC *")]
         public D3D12_EXPORT_DESC* pExports;
     }
 }

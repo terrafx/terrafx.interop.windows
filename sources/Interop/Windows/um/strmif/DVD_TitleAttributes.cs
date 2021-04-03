@@ -14,6 +14,23 @@ namespace TerraFX.Interop
         [NativeTypeName("tagDVD_TitleMainAttributes::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/strmif.h:21262:5)")]
         public _Anonymous_e__Union Anonymous;
 
+        public DVD_VideoAttributes VideoAttributes;
+
+        [NativeTypeName("ULONG")]
+        public uint ulNumberOfAudioStreams;
+
+        [NativeTypeName("DVD_AudioAttributes [8]")]
+        public _AudioAttributes_e__FixedBuffer AudioAttributes;
+
+        [NativeTypeName("DVD_MultichannelAudioAttributes [8]")]
+        public _MultichannelAudioAttributes_e__FixedBuffer MultichannelAudioAttributes;
+
+        [NativeTypeName("ULONG")]
+        public uint ulNumberOfSubpictureStreams;
+
+        [NativeTypeName("DVD_SubpictureAttributes [32]")]
+        public _SubpictureAttributes_e__FixedBuffer SubpictureAttributes;
+
         public ref DVD_TITLE_APPMODE AppMode
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -31,23 +48,6 @@ namespace TerraFX.Interop
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.TitleLength, 1));
             }
         }
-
-        public DVD_VideoAttributes VideoAttributes;
-
-        [NativeTypeName("ULONG")]
-        public uint ulNumberOfAudioStreams;
-
-        [NativeTypeName("DVD_AudioAttributes [8]")]
-        public _AudioAttributes_e__FixedBuffer AudioAttributes;
-
-        [NativeTypeName("DVD_MultichannelAudioAttributes [8]")]
-        public _MultichannelAudioAttributes_e__FixedBuffer MultichannelAudioAttributes;
-
-        [NativeTypeName("ULONG")]
-        public uint ulNumberOfSubpictureStreams;
-
-        [NativeTypeName("DVD_SubpictureAttributes [32]")]
-        public _SubpictureAttributes_e__FixedBuffer SubpictureAttributes;
 
         [StructLayout(LayoutKind.Explicit)]
         public partial struct _Anonymous_e__Union

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     {
         [DllImport("d3d11", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int D3D11On12CreateDevice([NativeTypeName("IUnknown *")] IUnknown* pDevice, [NativeTypeName("UINT")] uint Flags, [NativeTypeName("const D3D_FEATURE_LEVEL *")] D3D_FEATURE_LEVEL* pFeatureLevels, [NativeTypeName("UINT")] uint FeatureLevels, [NativeTypeName("IUnknown *const *")] IUnknown** ppCommandQueues, [NativeTypeName("UINT")] uint NumQueues, [NativeTypeName("UINT")] uint NodeMask, [NativeTypeName("ID3D11Device **")] ID3D11Device** ppDevice, [NativeTypeName("ID3D11DeviceContext **")] ID3D11DeviceContext** ppImmediateContext, [NativeTypeName("D3D_FEATURE_LEVEL *")] D3D_FEATURE_LEVEL* pChosenFeatureLevel);
+        public static extern int D3D11On12CreateDevice(IUnknown* pDevice, [NativeTypeName("UINT")] uint Flags, [NativeTypeName("const D3D_FEATURE_LEVEL *")] D3D_FEATURE_LEVEL* pFeatureLevels, [NativeTypeName("UINT")] uint FeatureLevels, [NativeTypeName("IUnknown *const *")] IUnknown** ppCommandQueues, [NativeTypeName("UINT")] uint NumQueues, [NativeTypeName("UINT")] uint NodeMask, ID3D11Device** ppDevice, ID3D11DeviceContext** ppImmediateContext, D3D_FEATURE_LEVEL* pChosenFeatureLevel);
 
         [NativeTypeName("const GUID")]
         public static readonly Guid IID_ID3D11On12Device = new Guid(0x85611e73, 0x70a9, 0x490e, 0x96, 0x14, 0xa9, 0xe3, 0x02, 0x77, 0x79, 0x04);

@@ -17,7 +17,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
+        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<ISpPhrase2*, Guid*, void**, int>)(lpVtbl[0]))((ISpPhrase2*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -38,14 +38,14 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int GetPhrase([NativeTypeName("SPPHRASE **")] SPPHRASE** ppCoMemPhrase)
+        public int GetPhrase(SPPHRASE** ppCoMemPhrase)
         {
             return ((delegate* unmanaged<ISpPhrase2*, SPPHRASE**, int>)(lpVtbl[3]))((ISpPhrase2*)Unsafe.AsPointer(ref this), ppCoMemPhrase);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int GetSerializedPhrase([NativeTypeName("SPSERIALIZEDPHRASE **")] SPSERIALIZEDPHRASE** ppCoMemPhrase)
+        public int GetSerializedPhrase(SPSERIALIZEDPHRASE** ppCoMemPhrase)
         {
             return ((delegate* unmanaged<ISpPhrase2*, SPSERIALIZEDPHRASE**, int>)(lpVtbl[4]))((ISpPhrase2*)Unsafe.AsPointer(ref this), ppCoMemPhrase);
         }
@@ -73,14 +73,14 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int GetXMLErrorInfo([NativeTypeName("SPSEMANTICERRORINFO *")] SPSEMANTICERRORINFO* pSemanticErrorInfo)
+        public int GetXMLErrorInfo(SPSEMANTICERRORINFO* pSemanticErrorInfo)
         {
             return ((delegate* unmanaged<ISpPhrase2*, SPSEMANTICERRORINFO*, int>)(lpVtbl[8]))((ISpPhrase2*)Unsafe.AsPointer(ref this), pSemanticErrorInfo);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int GetAudio([NativeTypeName("ULONG")] uint ulStartElement, [NativeTypeName("ULONG")] uint cElements, [NativeTypeName("ISpStreamFormat **")] ISpStreamFormat** ppStream)
+        public int GetAudio([NativeTypeName("ULONG")] uint ulStartElement, [NativeTypeName("ULONG")] uint cElements, ISpStreamFormat** ppStream)
         {
             return ((delegate* unmanaged<ISpPhrase2*, uint, uint, ISpStreamFormat**, int>)(lpVtbl[9]))((ISpPhrase2*)Unsafe.AsPointer(ref this), ulStartElement, cElements, ppStream);
         }

@@ -13,7 +13,6 @@ namespace TerraFX.Interop
         [NativeTypeName("LPWSTR")]
         public ushort* pwszName;
 
-        [NativeTypeName("COAUTHINFO *")]
         public COAUTHINFO* pAuthInfo;
 
         [NativeTypeName("DWORD")]

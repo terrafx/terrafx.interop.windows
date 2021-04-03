@@ -914,7 +914,7 @@ namespace TerraFX.Interop
 
         [DllImport("gdi32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("UINT")]
-        public static extern uint GetEnhMetaFilePixelFormat([NativeTypeName("HENHMETAFILE")] IntPtr hemf, [NativeTypeName("UINT")] uint cbBuffer, [NativeTypeName("PIXELFORMATDESCRIPTOR *")] PIXELFORMATDESCRIPTOR* ppfd);
+        public static extern uint GetEnhMetaFilePixelFormat([NativeTypeName("HENHMETAFILE")] IntPtr hemf, [NativeTypeName("UINT")] uint cbBuffer, PIXELFORMATDESCRIPTOR* ppfd);
 
         [DllImport("gdi32", ExactSpelling = true)]
         [return: NativeTypeName("UINT")]
@@ -974,11 +974,11 @@ namespace TerraFX.Interop
 
         [DllImport("gdi32", ExactSpelling = true)]
         [return: NativeTypeName("HBITMAP")]
-        public static extern IntPtr CreateDIBSection([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("const BITMAPINFO *")] BITMAPINFO* pbmi, [NativeTypeName("UINT")] uint usage, [NativeTypeName("void **")] void** ppvBits, [NativeTypeName("HANDLE")] IntPtr hSection, [NativeTypeName("DWORD")] uint offset);
+        public static extern IntPtr CreateDIBSection([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("const BITMAPINFO *")] BITMAPINFO* pbmi, [NativeTypeName("UINT")] uint usage, void** ppvBits, [NativeTypeName("HANDLE")] IntPtr hSection, [NativeTypeName("DWORD")] uint offset);
 
         [DllImport("gdi32", ExactSpelling = true)]
         [return: NativeTypeName("UINT")]
-        public static extern uint GetDIBColorTable([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("UINT")] uint iStart, [NativeTypeName("UINT")] uint cEntries, [NativeTypeName("RGBQUAD *")] RGBQUAD* prgbq);
+        public static extern uint GetDIBColorTable([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("UINT")] uint iStart, [NativeTypeName("UINT")] uint cEntries, RGBQUAD* prgbq);
 
         [DllImport("gdi32", ExactSpelling = true)]
         [return: NativeTypeName("UINT")]

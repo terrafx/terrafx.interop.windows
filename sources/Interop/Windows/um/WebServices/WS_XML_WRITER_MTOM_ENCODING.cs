@@ -9,7 +9,6 @@ namespace TerraFX.Interop
     {
         public WS_XML_WRITER_ENCODING encoding;
 
-        [NativeTypeName("WS_XML_WRITER_ENCODING *")]
         public WS_XML_WRITER_ENCODING* textEncoding;
 
         [NativeTypeName("BOOL")]

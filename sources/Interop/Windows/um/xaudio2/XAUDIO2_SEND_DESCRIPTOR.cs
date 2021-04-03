@@ -13,7 +13,6 @@ namespace TerraFX.Interop
         [NativeTypeName("UINT32")]
         public uint Flags;
 
-        [NativeTypeName("IXAudio2Voice *")]
         public IXAudio2Voice* pOutputVoice;
     }
 }

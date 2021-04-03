@@ -11,7 +11,6 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct D3D12_GRAPHICS_PIPELINE_STATE_DESC
     {
-        [NativeTypeName("ID3D12RootSignature *")]
         public ID3D12RootSignature* pRootSignature;
 
         public D3D12_SHADER_BYTECODE VS;

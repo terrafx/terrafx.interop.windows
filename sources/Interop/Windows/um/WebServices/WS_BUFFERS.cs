@@ -10,7 +10,6 @@ namespace TerraFX.Interop
         [NativeTypeName("ULONG")]
         public uint bufferCount;
 
-        [NativeTypeName("WS_BYTES *")]
         public WS_BYTES* buffers;
     }
 }

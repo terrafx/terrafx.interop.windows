@@ -19,7 +19,6 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint dwSignerType;
 
-        [NativeTypeName("void *")]
         public void* pvSigner;
     }
 }

@@ -15,6 +15,10 @@ namespace TerraFX.Interop
         [NativeTypeName("tagCY::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/shared/wtypes.h:671:5)")]
         public _Anonymous_e__Struct Anonymous;
 
+        [FieldOffset(0)]
+        [NativeTypeName("LONGLONG")]
+        public long int64;
+
         public ref uint Lo
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -32,10 +36,6 @@ namespace TerraFX.Interop
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Hi, 1));
             }
         }
-
-        [FieldOffset(0)]
-        [NativeTypeName("LONGLONG")]
-        public long int64;
 
         public partial struct _Anonymous_e__Struct
         {

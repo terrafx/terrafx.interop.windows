@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct D3D10_MAPPED_TEXTURE3D
     {
-        [NativeTypeName("void *")]
         public void* pData;
 
         [NativeTypeName("UINT")]

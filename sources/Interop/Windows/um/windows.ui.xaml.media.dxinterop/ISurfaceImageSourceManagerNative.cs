@@ -17,7 +17,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
+        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<ISurfaceImageSourceManagerNative*, Guid*, void**, int>)(lpVtbl[0]))((ISurfaceImageSourceManagerNative*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -38,7 +38,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int FlushAllSurfacesWithDevice([NativeTypeName("IUnknown *")] IUnknown* device)
+        public int FlushAllSurfacesWithDevice(IUnknown* device)
         {
             return ((delegate* unmanaged<ISurfaceImageSourceManagerNative*, IUnknown*, int>)(lpVtbl[3]))((ISurfaceImageSourceManagerNative*)Unsafe.AsPointer(ref this), device);
         }

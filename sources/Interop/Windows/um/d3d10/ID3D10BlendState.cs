@@ -17,7 +17,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
+        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<ID3D10BlendState*, Guid*, void**, int>)(lpVtbl[0]))((ID3D10BlendState*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -37,14 +37,14 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public void GetDevice([NativeTypeName("ID3D10Device **")] ID3D10Device** ppDevice)
+        public void GetDevice(ID3D10Device** ppDevice)
         {
             ((delegate* unmanaged<ID3D10BlendState*, ID3D10Device**, void>)(lpVtbl[3]))((ID3D10BlendState*)Unsafe.AsPointer(ref this), ppDevice);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int GetPrivateData([NativeTypeName("const GUID &")] Guid* guid, [NativeTypeName("UINT *")] uint* pDataSize, [NativeTypeName("void *")] void* pData)
+        public int GetPrivateData([NativeTypeName("const GUID &")] Guid* guid, [NativeTypeName("UINT *")] uint* pDataSize, void* pData)
         {
             return ((delegate* unmanaged<ID3D10BlendState*, Guid*, uint*, void*, int>)(lpVtbl[4]))((ID3D10BlendState*)Unsafe.AsPointer(ref this), guid, pDataSize, pData);
         }
@@ -64,7 +64,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public void GetDesc([NativeTypeName("D3D10_BLEND_DESC *")] D3D10_BLEND_DESC* pDesc)
+        public void GetDesc(D3D10_BLEND_DESC* pDesc)
         {
             ((delegate* unmanaged<ID3D10BlendState*, D3D10_BLEND_DESC*, void>)(lpVtbl[7]))((ID3D10BlendState*)Unsafe.AsPointer(ref this), pDesc);
         }

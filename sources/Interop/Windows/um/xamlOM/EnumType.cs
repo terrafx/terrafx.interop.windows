@@ -10,10 +10,8 @@ namespace TerraFX.Interop
         [NativeTypeName("BSTR")]
         public ushort* Name;
 
-        [NativeTypeName("SAFEARRAY *")]
         public SAFEARRAY* ValueInts;
 
-        [NativeTypeName("SAFEARRAY *")]
         public SAFEARRAY* ValueStrings;
     }
 }

@@ -17,7 +17,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
+        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IUIAnimationStoryboard*, Guid*, void**, int>)(lpVtbl[0]))((IUIAnimationStoryboard*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -38,7 +38,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int AddTransition([NativeTypeName("IUIAnimationVariable *")] IUIAnimationVariable* variable, [NativeTypeName("IUIAnimationTransition *")] IUIAnimationTransition* transition)
+        public int AddTransition(IUIAnimationVariable* variable, IUIAnimationTransition* transition)
         {
             return ((delegate* unmanaged<IUIAnimationStoryboard*, IUIAnimationVariable*, IUIAnimationTransition*, int>)(lpVtbl[3]))((IUIAnimationStoryboard*)Unsafe.AsPointer(ref this), variable, transition);
         }
@@ -52,21 +52,21 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int AddKeyframeAfterTransition([NativeTypeName("IUIAnimationTransition *")] IUIAnimationTransition* transition, [NativeTypeName("UI_ANIMATION_KEYFRAME *")] UI_ANIMATION_KEYFRAME** keyframe)
+        public int AddKeyframeAfterTransition(IUIAnimationTransition* transition, [NativeTypeName("UI_ANIMATION_KEYFRAME *")] UI_ANIMATION_KEYFRAME** keyframe)
         {
             return ((delegate* unmanaged<IUIAnimationStoryboard*, IUIAnimationTransition*, UI_ANIMATION_KEYFRAME**, int>)(lpVtbl[5]))((IUIAnimationStoryboard*)Unsafe.AsPointer(ref this), transition, keyframe);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int AddTransitionAtKeyframe([NativeTypeName("IUIAnimationVariable *")] IUIAnimationVariable* variable, [NativeTypeName("IUIAnimationTransition *")] IUIAnimationTransition* transition, [NativeTypeName("UI_ANIMATION_KEYFRAME")] UI_ANIMATION_KEYFRAME* startKeyframe)
+        public int AddTransitionAtKeyframe(IUIAnimationVariable* variable, IUIAnimationTransition* transition, [NativeTypeName("UI_ANIMATION_KEYFRAME")] UI_ANIMATION_KEYFRAME* startKeyframe)
         {
             return ((delegate* unmanaged<IUIAnimationStoryboard*, IUIAnimationVariable*, IUIAnimationTransition*, UI_ANIMATION_KEYFRAME*, int>)(lpVtbl[6]))((IUIAnimationStoryboard*)Unsafe.AsPointer(ref this), variable, transition, startKeyframe);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int AddTransitionBetweenKeyframes([NativeTypeName("IUIAnimationVariable *")] IUIAnimationVariable* variable, [NativeTypeName("IUIAnimationTransition *")] IUIAnimationTransition* transition, [NativeTypeName("UI_ANIMATION_KEYFRAME")] UI_ANIMATION_KEYFRAME* startKeyframe, [NativeTypeName("UI_ANIMATION_KEYFRAME")] UI_ANIMATION_KEYFRAME* endKeyframe)
+        public int AddTransitionBetweenKeyframes(IUIAnimationVariable* variable, IUIAnimationTransition* transition, [NativeTypeName("UI_ANIMATION_KEYFRAME")] UI_ANIMATION_KEYFRAME* startKeyframe, [NativeTypeName("UI_ANIMATION_KEYFRAME")] UI_ANIMATION_KEYFRAME* endKeyframe)
         {
             return ((delegate* unmanaged<IUIAnimationStoryboard*, IUIAnimationVariable*, IUIAnimationTransition*, UI_ANIMATION_KEYFRAME*, UI_ANIMATION_KEYFRAME*, int>)(lpVtbl[7]))((IUIAnimationStoryboard*)Unsafe.AsPointer(ref this), variable, transition, startKeyframe, endKeyframe);
         }
@@ -80,7 +80,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int HoldVariable([NativeTypeName("IUIAnimationVariable *")] IUIAnimationVariable* variable)
+        public int HoldVariable(IUIAnimationVariable* variable)
         {
             return ((delegate* unmanaged<IUIAnimationStoryboard*, IUIAnimationVariable*, int>)(lpVtbl[9]))((IUIAnimationStoryboard*)Unsafe.AsPointer(ref this), variable);
         }
@@ -94,7 +94,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int Schedule([NativeTypeName("UI_ANIMATION_SECONDS")] double timeNow, [NativeTypeName("UI_ANIMATION_SCHEDULING_RESULT *")] UI_ANIMATION_SCHEDULING_RESULT* schedulingResult = null)
+        public int Schedule([NativeTypeName("UI_ANIMATION_SECONDS")] double timeNow, UI_ANIMATION_SCHEDULING_RESULT* schedulingResult = null)
         {
             return ((delegate* unmanaged<IUIAnimationStoryboard*, double, UI_ANIMATION_SCHEDULING_RESULT*, int>)(lpVtbl[11]))((IUIAnimationStoryboard*)Unsafe.AsPointer(ref this), timeNow, schedulingResult);
         }
@@ -122,21 +122,21 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int SetTag([NativeTypeName("IUnknown *")] IUnknown* @object, [NativeTypeName("UINT32")] uint id)
+        public int SetTag(IUnknown* @object, [NativeTypeName("UINT32")] uint id)
         {
             return ((delegate* unmanaged<IUIAnimationStoryboard*, IUnknown*, uint, int>)(lpVtbl[15]))((IUIAnimationStoryboard*)Unsafe.AsPointer(ref this), @object, id);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int GetTag([NativeTypeName("IUnknown **")] IUnknown** @object, [NativeTypeName("UINT32 *")] uint* id)
+        public int GetTag(IUnknown** @object, [NativeTypeName("UINT32 *")] uint* id)
         {
             return ((delegate* unmanaged<IUIAnimationStoryboard*, IUnknown**, uint*, int>)(lpVtbl[16]))((IUIAnimationStoryboard*)Unsafe.AsPointer(ref this), @object, id);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int GetStatus([NativeTypeName("UI_ANIMATION_STORYBOARD_STATUS *")] UI_ANIMATION_STORYBOARD_STATUS* status)
+        public int GetStatus(UI_ANIMATION_STORYBOARD_STATUS* status)
         {
             return ((delegate* unmanaged<IUIAnimationStoryboard*, UI_ANIMATION_STORYBOARD_STATUS*, int>)(lpVtbl[17]))((IUIAnimationStoryboard*)Unsafe.AsPointer(ref this), status);
         }
@@ -150,7 +150,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int SetStoryboardEventHandler([NativeTypeName("IUIAnimationStoryboardEventHandler *")] IUIAnimationStoryboardEventHandler* handler)
+        public int SetStoryboardEventHandler(IUIAnimationStoryboardEventHandler* handler)
         {
             return ((delegate* unmanaged<IUIAnimationStoryboard*, IUIAnimationStoryboardEventHandler*, int>)(lpVtbl[19]))((IUIAnimationStoryboard*)Unsafe.AsPointer(ref this), handler);
         }

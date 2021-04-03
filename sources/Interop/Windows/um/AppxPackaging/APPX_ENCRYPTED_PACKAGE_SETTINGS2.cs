@@ -13,7 +13,6 @@ namespace TerraFX.Interop
         [NativeTypeName("LPCWSTR")]
         public ushort* encryptionAlgorithm;
 
-        [NativeTypeName("IUri *")]
         public IUri* blockMapHashAlgorithm;
 
         [NativeTypeName("DWORD")]

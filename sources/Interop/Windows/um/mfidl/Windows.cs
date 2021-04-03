@@ -66,27 +66,27 @@ namespace TerraFX.Interop
 
         [DllImport("mf", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int MFCreateMediaSession([NativeTypeName("IMFAttributes *")] IMFAttributes* pConfiguration, [NativeTypeName("IMFMediaSession **")] IMFMediaSession** ppMediaSession);
+        public static extern int MFCreateMediaSession(IMFAttributes* pConfiguration, IMFMediaSession** ppMediaSession);
 
         [DllImport("mf", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int MFCreatePMPMediaSession([NativeTypeName("DWORD")] uint dwCreationFlags, [NativeTypeName("IMFAttributes *")] IMFAttributes* pConfiguration, [NativeTypeName("IMFMediaSession **")] IMFMediaSession** ppMediaSession, [NativeTypeName("IMFActivate **")] IMFActivate** ppEnablerActivate);
+        public static extern int MFCreatePMPMediaSession([NativeTypeName("DWORD")] uint dwCreationFlags, IMFAttributes* pConfiguration, IMFMediaSession** ppMediaSession, IMFActivate** ppEnablerActivate);
 
         [DllImport("mfplat", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int MFCreateSourceResolver([NativeTypeName("IMFSourceResolver **")] IMFSourceResolver** ppISourceResolver);
+        public static extern int MFCreateSourceResolver(IMFSourceResolver** ppISourceResolver);
 
         [DllImport("mfplat", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int CreatePropertyStore([NativeTypeName("IPropertyStore **")] IPropertyStore** ppStore);
+        public static extern int CreatePropertyStore(IPropertyStore** ppStore);
 
         [DllImport("mf", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int MFGetSupportedSchemes([NativeTypeName("PROPVARIANT *")] PROPVARIANT* pPropVarSchemeArray);
+        public static extern int MFGetSupportedSchemes(PROPVARIANT* pPropVarSchemeArray);
 
         [DllImport("mf", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int MFGetSupportedMimeTypes([NativeTypeName("PROPVARIANT *")] PROPVARIANT* pPropVarMimeTypeArray);
+        public static extern int MFGetSupportedMimeTypes(PROPVARIANT* pPropVarMimeTypeArray);
 
         [NativeTypeName("const PROPERTYKEY")]
         public static readonly PROPERTYKEY MFPKEY_SourceOpenMonitor = new PROPERTYKEY
@@ -334,7 +334,7 @@ namespace TerraFX.Interop
 
         [DllImport("mf", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int MFCreateTopology([NativeTypeName("IMFTopology **")] IMFTopology** ppTopo);
+        public static extern int MFCreateTopology(IMFTopology** ppTopo);
 
         [NativeTypeName("const IID")]
         public static readonly Guid MF_TOPONODE_FLUSH = new Guid(0x494bbce8, 0xb031, 0x4e38, 0x97, 0xc4, 0xd5, 0x42, 0x2d, 0xd6, 0x18, 0xdc);
@@ -431,15 +431,15 @@ namespace TerraFX.Interop
 
         [DllImport("mf", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int MFCreateTopologyNode(MF_TOPOLOGY_TYPE NodeType, [NativeTypeName("IMFTopologyNode **")] IMFTopologyNode** ppNode);
+        public static extern int MFCreateTopologyNode(MF_TOPOLOGY_TYPE NodeType, IMFTopologyNode** ppNode);
 
         [DllImport("mf", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int MFGetTopoNodeCurrentType([NativeTypeName("IMFTopologyNode *")] IMFTopologyNode* pNode, [NativeTypeName("DWORD")] uint dwStreamIndex, [NativeTypeName("BOOL")] int fOutput, [NativeTypeName("IMFMediaType **")] IMFMediaType** ppType);
+        public static extern int MFGetTopoNodeCurrentType(IMFTopologyNode* pNode, [NativeTypeName("DWORD")] uint dwStreamIndex, [NativeTypeName("BOOL")] int fOutput, IMFMediaType** ppType);
 
         [DllImport("mf", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int MFGetService([NativeTypeName("IUnknown *")] IUnknown* punkObject, [NativeTypeName("const GUID &")] Guid* guidService, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPVOID *")] void** ppvObject);
+        public static extern int MFGetService(IUnknown* punkObject, [NativeTypeName("const GUID &")] Guid* guidService, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPVOID *")] void** ppvObject);
 
         [DllImport("mfplat", ExactSpelling = true)]
         [return: NativeTypeName("MFTIME")]
@@ -447,11 +447,11 @@ namespace TerraFX.Interop
 
         [DllImport("mf", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int MFCreatePresentationClock([NativeTypeName("IMFPresentationClock **")] IMFPresentationClock** ppPresentationClock);
+        public static extern int MFCreatePresentationClock(IMFPresentationClock** ppPresentationClock);
 
         [DllImport("mfplat", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int MFCreateSystemTimeSource([NativeTypeName("IMFPresentationTimeSource **")] IMFPresentationTimeSource** ppSystemTimeSource);
+        public static extern int MFCreateSystemTimeSource(IMFPresentationTimeSource** ppSystemTimeSource);
 
         [NativeTypeName("const IID")]
         public static readonly Guid MF_PD_PMPHOST_CONTEXT = new Guid(0x6c990d31, 0xbb8e, 0x477a, 0x85, 0x98, 0xd, 0x5d, 0x96, 0xfc, 0xd8, 0x8a);
@@ -494,19 +494,19 @@ namespace TerraFX.Interop
 
         [DllImport("mfplat", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int MFCreatePresentationDescriptor([NativeTypeName("DWORD")] uint cStreamDescriptors, [NativeTypeName("IMFStreamDescriptor **")] IMFStreamDescriptor** apStreamDescriptors, [NativeTypeName("IMFPresentationDescriptor **")] IMFPresentationDescriptor** ppPresentationDescriptor);
+        public static extern int MFCreatePresentationDescriptor([NativeTypeName("DWORD")] uint cStreamDescriptors, IMFStreamDescriptor** apStreamDescriptors, IMFPresentationDescriptor** ppPresentationDescriptor);
 
         [DllImport("mf", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int MFRequireProtectedEnvironment([NativeTypeName("IMFPresentationDescriptor *")] IMFPresentationDescriptor* pPresentationDescriptor);
+        public static extern int MFRequireProtectedEnvironment(IMFPresentationDescriptor* pPresentationDescriptor);
 
         [DllImport("mfplat", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int MFSerializePresentationDescriptor([NativeTypeName("IMFPresentationDescriptor *")] IMFPresentationDescriptor* pPD, [NativeTypeName("DWORD *")] uint* pcbData, [NativeTypeName("BYTE **")] byte** ppbData);
+        public static extern int MFSerializePresentationDescriptor(IMFPresentationDescriptor* pPD, [NativeTypeName("DWORD *")] uint* pcbData, [NativeTypeName("BYTE **")] byte** ppbData);
 
         [DllImport("mfplat", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int MFDeserializePresentationDescriptor([NativeTypeName("DWORD")] uint cbData, [NativeTypeName("BYTE *")] byte* pbData, [NativeTypeName("IMFPresentationDescriptor **")] IMFPresentationDescriptor** ppPD);
+        public static extern int MFDeserializePresentationDescriptor([NativeTypeName("DWORD")] uint cbData, [NativeTypeName("BYTE *")] byte* pbData, IMFPresentationDescriptor** ppPD);
 
         [NativeTypeName("const IID")]
         public static readonly Guid MF_SD_LANGUAGE = new Guid(0xaf2180, 0xbdc2, 0x423c, 0xab, 0xca, 0xf5, 0x3, 0x59, 0x3b, 0xc1, 0x21);
@@ -522,11 +522,11 @@ namespace TerraFX.Interop
 
         [DllImport("mfplat", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int MFCreateStreamDescriptor([NativeTypeName("DWORD")] uint dwStreamIdentifier, [NativeTypeName("DWORD")] uint cMediaTypes, [NativeTypeName("IMFMediaType **")] IMFMediaType** apMediaTypes, [NativeTypeName("IMFStreamDescriptor **")] IMFStreamDescriptor** ppDescriptor);
+        public static extern int MFCreateStreamDescriptor([NativeTypeName("DWORD")] uint dwStreamIdentifier, [NativeTypeName("DWORD")] uint cMediaTypes, IMFMediaType** apMediaTypes, IMFStreamDescriptor** ppDescriptor);
 
         [DllImport("mf", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int MFCreateSimpleTypeHandler([NativeTypeName("IMFMediaTypeHandler **")] IMFMediaTypeHandler** ppHandler);
+        public static extern int MFCreateSimpleTypeHandler(IMFMediaTypeHandler** ppHandler);
 
         [NativeTypeName("const IID")]
         public static readonly Guid MF_ACTIVATE_CUSTOM_VIDEO_MIXER_CLSID = new Guid(0xba491360, 0xbe50, 0x451e, 0x95, 0xab, 0x6d, 0x4a, 0xcc, 0xc7, 0xda, 0xd8);
@@ -554,15 +554,15 @@ namespace TerraFX.Interop
 
         [DllImport("mf", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int MFShutdownObject([NativeTypeName("IUnknown *")] IUnknown* pUnk);
+        public static extern int MFShutdownObject(IUnknown* pUnk);
 
         [DllImport("mf", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int MFCreateAudioRenderer([NativeTypeName("IMFAttributes *")] IMFAttributes* pAudioAttributes, [NativeTypeName("IMFMediaSink **")] IMFMediaSink** ppSink);
+        public static extern int MFCreateAudioRenderer(IMFAttributes* pAudioAttributes, IMFMediaSink** ppSink);
 
         [DllImport("mf", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int MFCreateAudioRendererActivate([NativeTypeName("IMFActivate **")] IMFActivate** ppActivate);
+        public static extern int MFCreateAudioRendererActivate(IMFActivate** ppActivate);
 
         [NativeTypeName("const IID")]
         public static readonly Guid MF_AUDIO_RENDERER_ATTRIBUTE_FLAGS = new Guid(0xede4b5e0, 0xf805, 0x4d6c, 0x99, 0xb3, 0xdb, 0x01, 0xbf, 0x95, 0xdf, 0xab);
@@ -581,47 +581,47 @@ namespace TerraFX.Interop
 
         [DllImport("mf", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int MFCreateVideoRendererActivate([NativeTypeName("HWND")] IntPtr hwndVideo, [NativeTypeName("IMFActivate **")] IMFActivate** ppActivate);
+        public static extern int MFCreateVideoRendererActivate([NativeTypeName("HWND")] IntPtr hwndVideo, IMFActivate** ppActivate);
 
         [DllImport("mf", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int MFCreateMPEG4MediaSink([NativeTypeName("IMFByteStream *")] IMFByteStream* pIByteStream, [NativeTypeName("IMFMediaType *")] IMFMediaType* pVideoMediaType, [NativeTypeName("IMFMediaType *")] IMFMediaType* pAudioMediaType, [NativeTypeName("IMFMediaSink **")] IMFMediaSink** ppIMediaSink);
+        public static extern int MFCreateMPEG4MediaSink(IMFByteStream* pIByteStream, IMFMediaType* pVideoMediaType, IMFMediaType* pAudioMediaType, IMFMediaSink** ppIMediaSink);
 
         [DllImport("mf", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int MFCreate3GPMediaSink([NativeTypeName("IMFByteStream *")] IMFByteStream* pIByteStream, [NativeTypeName("IMFMediaType *")] IMFMediaType* pVideoMediaType, [NativeTypeName("IMFMediaType *")] IMFMediaType* pAudioMediaType, [NativeTypeName("IMFMediaSink **")] IMFMediaSink** ppIMediaSink);
+        public static extern int MFCreate3GPMediaSink(IMFByteStream* pIByteStream, IMFMediaType* pVideoMediaType, IMFMediaType* pAudioMediaType, IMFMediaSink** ppIMediaSink);
 
         [DllImport("mf", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int MFCreateMP3MediaSink([NativeTypeName("IMFByteStream *")] IMFByteStream* pTargetByteStream, [NativeTypeName("IMFMediaSink **")] IMFMediaSink** ppMediaSink);
+        public static extern int MFCreateMP3MediaSink(IMFByteStream* pTargetByteStream, IMFMediaSink** ppMediaSink);
 
         [DllImport("mf", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int MFCreateAC3MediaSink([NativeTypeName("IMFByteStream *")] IMFByteStream* pTargetByteStream, [NativeTypeName("IMFMediaType *")] IMFMediaType* pAudioMediaType, [NativeTypeName("IMFMediaSink **")] IMFMediaSink** ppMediaSink);
+        public static extern int MFCreateAC3MediaSink(IMFByteStream* pTargetByteStream, IMFMediaType* pAudioMediaType, IMFMediaSink** ppMediaSink);
 
         [DllImport("mf", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int MFCreateADTSMediaSink([NativeTypeName("IMFByteStream *")] IMFByteStream* pTargetByteStream, [NativeTypeName("IMFMediaType *")] IMFMediaType* pAudioMediaType, [NativeTypeName("IMFMediaSink **")] IMFMediaSink** ppMediaSink);
+        public static extern int MFCreateADTSMediaSink(IMFByteStream* pTargetByteStream, IMFMediaType* pAudioMediaType, IMFMediaSink** ppMediaSink);
 
         [DllImport("mf", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int MFCreateMuxSink([NativeTypeName("GUID")] Guid guidOutputSubType, [NativeTypeName("IMFAttributes *")] IMFAttributes* pOutputAttributes, [NativeTypeName("IMFByteStream *")] IMFByteStream* pOutputByteStream, [NativeTypeName("IMFMediaSink **")] IMFMediaSink** ppMuxSink);
+        public static extern int MFCreateMuxSink([NativeTypeName("GUID")] Guid guidOutputSubType, IMFAttributes* pOutputAttributes, IMFByteStream* pOutputByteStream, IMFMediaSink** ppMuxSink);
 
         [DllImport("mf", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int MFCreateFMPEG4MediaSink([NativeTypeName("IMFByteStream *")] IMFByteStream* pIByteStream, [NativeTypeName("IMFMediaType *")] IMFMediaType* pVideoMediaType, [NativeTypeName("IMFMediaType *")] IMFMediaType* pAudioMediaType, [NativeTypeName("IMFMediaSink **")] IMFMediaSink** ppIMediaSink);
+        public static extern int MFCreateFMPEG4MediaSink(IMFByteStream* pIByteStream, IMFMediaType* pVideoMediaType, IMFMediaType* pAudioMediaType, IMFMediaSink** ppIMediaSink);
 
         [DllImport("mf", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int MFCreateAVIMediaSink([NativeTypeName("IMFByteStream *")] IMFByteStream* pIByteStream, [NativeTypeName("IMFMediaType *")] IMFMediaType* pVideoMediaType, [NativeTypeName("IMFMediaType *")] IMFMediaType* pAudioMediaType, [NativeTypeName("IMFMediaSink **")] IMFMediaSink** ppIMediaSink);
+        public static extern int MFCreateAVIMediaSink(IMFByteStream* pIByteStream, IMFMediaType* pVideoMediaType, IMFMediaType* pAudioMediaType, IMFMediaSink** ppIMediaSink);
 
         [DllImport("mf", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int MFCreateWAVEMediaSink([NativeTypeName("IMFByteStream *")] IMFByteStream* pTargetByteStream, [NativeTypeName("IMFMediaType *")] IMFMediaType* pAudioMediaType, [NativeTypeName("IMFMediaSink **")] IMFMediaSink** ppMediaSink);
+        public static extern int MFCreateWAVEMediaSink(IMFByteStream* pTargetByteStream, IMFMediaType* pAudioMediaType, IMFMediaSink** ppMediaSink);
 
         [DllImport("mf", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int MFCreateTopoLoader([NativeTypeName("IMFTopoLoader **")] IMFTopoLoader** ppObj);
+        public static extern int MFCreateTopoLoader(IMFTopoLoader** ppObj);
 
         [NativeTypeName("const IID")]
         public static readonly Guid MFENABLETYPE_WMDRMV1_LicenseAcquisition = new Guid(0x4ff6eeaf, 0xb43, 0x4797, 0x9b, 0x85, 0xab, 0xf3, 0x18, 0x15, 0xe7, 0xb0);
@@ -667,7 +667,7 @@ namespace TerraFX.Interop
 
         [DllImport("mf", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int MFCreateSampleGrabberSinkActivate([NativeTypeName("IMFMediaType *")] IMFMediaType* pIMFMediaType, [NativeTypeName("IMFSampleGrabberSinkCallback *")] IMFSampleGrabberSinkCallback* pIMFSampleGrabberSinkCallback, [NativeTypeName("IMFActivate **")] IMFActivate** ppIActivate);
+        public static extern int MFCreateSampleGrabberSinkActivate(IMFMediaType* pIMFMediaType, IMFSampleGrabberSinkCallback* pIMFSampleGrabberSinkCallback, IMFActivate** ppIActivate);
 
         [NativeTypeName("const IID")]
         public static readonly Guid MF_SAMPLEGRABBERSINK_SAMPLE_TIME_OFFSET = new Guid(0x62e3d776, 0x8100, 0x4e03, 0xa6, 0xe8, 0xbd, 0x38, 0x57, 0xac, 0x9c, 0x47);
@@ -683,7 +683,7 @@ namespace TerraFX.Interop
 
         [DllImport("mf", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int MFCreateStandardQualityManager([NativeTypeName("IMFQualityManager **")] IMFQualityManager** ppQualityManager);
+        public static extern int MFCreateStandardQualityManager(IMFQualityManager** ppQualityManager);
 
         [NativeTypeName("const IID")]
         public static readonly Guid MF_QUALITY_NOTIFY_PROCESSING_LATENCY = new Guid(0xf6b44af8, 0x604d, 0x46fe, 0xa9, 0x5d, 0x45, 0x47, 0x9b, 0x10, 0xc9, 0xbc);
@@ -696,15 +696,15 @@ namespace TerraFX.Interop
 
         [DllImport("mf", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int MFCreateSequencerSource([NativeTypeName("IUnknown *")] IUnknown* pReserved, [NativeTypeName("IMFSequencerSource **")] IMFSequencerSource** ppSequencerSource);
+        public static extern int MFCreateSequencerSource(IUnknown* pReserved, IMFSequencerSource** ppSequencerSource);
 
         [DllImport("mf", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int MFCreateSequencerSegmentOffset([NativeTypeName("MFSequencerElementId")] uint dwId, [NativeTypeName("MFTIME")] long hnsOffset, [NativeTypeName("PROPVARIANT *")] PROPVARIANT* pvarSegmentOffset);
+        public static extern int MFCreateSequencerSegmentOffset([NativeTypeName("MFSequencerElementId")] uint dwId, [NativeTypeName("MFTIME")] long hnsOffset, PROPVARIANT* pvarSegmentOffset);
 
         [DllImport("mf", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int MFCreateAggregateSource([NativeTypeName("IMFCollection *")] IMFCollection* pSourceCollection, [NativeTypeName("IMFMediaSource **")] IMFMediaSource** ppAggSource);
+        public static extern int MFCreateAggregateSource(IMFCollection* pSourceCollection, IMFMediaSource** ppAggSource);
 
         [NativeTypeName("const IID")]
         public static readonly Guid MF_SOURCE_PRESENTATION_PROVIDER_SERVICE = new Guid(0xe002aadc, 0xf4af, 0x4ee5, 0x98, 0x47, 0x05, 0x3e, 0xdf, 0x84, 0x04, 0x26);
@@ -714,7 +714,7 @@ namespace TerraFX.Interop
 
         [DllImport("mf", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int MFCreateCredentialCache([NativeTypeName("IMFNetCredentialCache **")] IMFNetCredentialCache** ppCache);
+        public static extern int MFCreateCredentialCache(IMFNetCredentialCache** ppCache);
 
         [NativeTypeName("const IID")]
         public static readonly Guid MFNETSOURCE_SSLCERTIFICATE_MANAGER = new Guid(0x55e6cb27, 0xe69b, 0x4267, 0x94, 0x0c, 0x2d, 0x7e, 0xc5, 0xbb, 0x8a, 0x0f);
@@ -724,7 +724,7 @@ namespace TerraFX.Interop
 
         [DllImport("mf", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int MFCreateProxyLocator([NativeTypeName("LPCWSTR")] ushort* pszProtocol, [NativeTypeName("IPropertyStore *")] IPropertyStore* pProxyConfig, [NativeTypeName("IMFNetProxyLocator **")] IMFNetProxyLocator** ppProxyLocator);
+        public static extern int MFCreateProxyLocator([NativeTypeName("LPCWSTR")] ushort* pszProtocol, IPropertyStore* pProxyConfig, IMFNetProxyLocator** ppProxyLocator);
 
         [NativeTypeName("const IID")]
         public static readonly Guid MFNET_SAVEJOB_SERVICE = new Guid(0xb85a587f, 0x3d02, 0x4e52, 0x95, 0x65, 0x55, 0xd3, 0xec, 0x1e, 0x7f, 0xf7);
@@ -1026,15 +1026,15 @@ namespace TerraFX.Interop
 
         [DllImport("mf", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int MFCreatePMPServer([NativeTypeName("DWORD")] uint dwCreationFlags, [NativeTypeName("IMFPMPServer **")] IMFPMPServer** ppPMPServer);
+        public static extern int MFCreatePMPServer([NativeTypeName("DWORD")] uint dwCreationFlags, IMFPMPServer** ppPMPServer);
 
         [DllImport("mf", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int MFCreateRemoteDesktopPlugin([NativeTypeName("IMFRemoteDesktopPlugin **")] IMFRemoteDesktopPlugin** ppPlugin);
+        public static extern int MFCreateRemoteDesktopPlugin(IMFRemoteDesktopPlugin** ppPlugin);
 
         [DllImport("mf", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int CreateNamedPropertyStore([NativeTypeName("INamedPropertyStore **")] INamedPropertyStore** ppStore);
+        public static extern int CreateNamedPropertyStore(INamedPropertyStore** ppStore);
 
         [NativeTypeName("const IID")]
         public static readonly Guid MF_SAMI_SERVICE = new Guid(0x49a89ae7, 0xb4d9, 0x4ef2, 0xaa, 0x5c, 0xf6, 0x5a, 0x3e, 0x5, 0xae, 0x4e);
@@ -1047,7 +1047,7 @@ namespace TerraFX.Interop
 
         [DllImport("mf", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int MFCreateSampleCopierMFT([NativeTypeName("IMFTransform **")] IMFTransform** ppCopierMFT);
+        public static extern int MFCreateSampleCopierMFT(IMFTransform** ppCopierMFT);
 
         [NativeTypeName("const IID")]
         public static readonly Guid MF_TRANSCODE_CONTAINERTYPE = new Guid(0x150ff23f, 0x4abc, 0x478b, 0xac, 0x4f, 0xe1, 0x91, 0x6f, 0xba, 0x1c, 0xca);
@@ -1117,54 +1117,54 @@ namespace TerraFX.Interop
 
         [DllImport("mf", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int MFCreateTranscodeProfile([NativeTypeName("IMFTranscodeProfile **")] IMFTranscodeProfile** ppTranscodeProfile);
+        public static extern int MFCreateTranscodeProfile(IMFTranscodeProfile** ppTranscodeProfile);
 
         [DllImport("mf", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int MFCreateTranscodeTopology([NativeTypeName("IMFMediaSource *")] IMFMediaSource* pSrc, [NativeTypeName("LPCWSTR")] ushort* pwszOutputFilePath, [NativeTypeName("IMFTranscodeProfile *")] IMFTranscodeProfile* pProfile, [NativeTypeName("IMFTopology **")] IMFTopology** ppTranscodeTopo);
+        public static extern int MFCreateTranscodeTopology(IMFMediaSource* pSrc, [NativeTypeName("LPCWSTR")] ushort* pwszOutputFilePath, IMFTranscodeProfile* pProfile, IMFTopology** ppTranscodeTopo);
 
         [DllImport("mf", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int MFCreateTranscodeTopologyFromByteStream([NativeTypeName("IMFMediaSource *")] IMFMediaSource* pSrc, [NativeTypeName("IMFByteStream *")] IMFByteStream* pOutputStream, [NativeTypeName("IMFTranscodeProfile *")] IMFTranscodeProfile* pProfile, [NativeTypeName("IMFTopology **")] IMFTopology** ppTranscodeTopo);
+        public static extern int MFCreateTranscodeTopologyFromByteStream(IMFMediaSource* pSrc, IMFByteStream* pOutputStream, IMFTranscodeProfile* pProfile, IMFTopology** ppTranscodeTopo);
 
         [DllImport("mf", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int MFTranscodeGetAudioOutputAvailableTypes([NativeTypeName("const GUID &")] Guid* guidSubType, [NativeTypeName("DWORD")] uint dwMFTFlags, [NativeTypeName("IMFAttributes *")] IMFAttributes* pCodecConfig, [NativeTypeName("IMFCollection **")] IMFCollection** ppAvailableTypes);
+        public static extern int MFTranscodeGetAudioOutputAvailableTypes([NativeTypeName("const GUID &")] Guid* guidSubType, [NativeTypeName("DWORD")] uint dwMFTFlags, IMFAttributes* pCodecConfig, IMFCollection** ppAvailableTypes);
 
         [DllImport("mf", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int MFCreateTranscodeSinkActivate([NativeTypeName("IMFActivate **")] IMFActivate** ppActivate);
+        public static extern int MFCreateTranscodeSinkActivate(IMFActivate** ppActivate);
 
         [NativeTypeName("const IID")]
         public static readonly Guid MF_LOCAL_MFT_REGISTRATION_SERVICE = new Guid(0xddf5cf9c, 0x4506, 0x45aa, 0xab, 0xf0, 0x6d, 0x5d, 0x94, 0xdd, 0x1b, 0x4a);
 
         [DllImport("mfplat", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int MFCreateTrackedSample([NativeTypeName("IMFTrackedSample **")] IMFTrackedSample** ppMFSample);
+        public static extern int MFCreateTrackedSample(IMFTrackedSample** ppMFSample);
 
         [DllImport("mfplat", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int MFCreateMFByteStreamOnStream([NativeTypeName("IStream *")] IStream* pStream, [NativeTypeName("IMFByteStream **")] IMFByteStream** ppByteStream);
+        public static extern int MFCreateMFByteStreamOnStream(IStream* pStream, IMFByteStream** ppByteStream);
 
         [DllImport("mfplat", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int MFCreateStreamOnMFByteStream([NativeTypeName("IMFByteStream *")] IMFByteStream* pByteStream, [NativeTypeName("IStream **")] IStream** ppStream);
+        public static extern int MFCreateStreamOnMFByteStream(IMFByteStream* pByteStream, IStream** ppStream);
 
         [DllImport("mfplat", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int MFCreateMFByteStreamOnStreamEx([NativeTypeName("IUnknown *")] IUnknown* punkStream, [NativeTypeName("IMFByteStream **")] IMFByteStream** ppByteStream);
+        public static extern int MFCreateMFByteStreamOnStreamEx(IUnknown* punkStream, IMFByteStream** ppByteStream);
 
         [DllImport("mfplat", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int MFCreateStreamOnMFByteStreamEx([NativeTypeName("IMFByteStream *")] IMFByteStream* pByteStream, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppv);
+        public static extern int MFCreateStreamOnMFByteStreamEx(IMFByteStream* pByteStream, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
 
         [DllImport("mfplat", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int MFCreateMediaTypeFromProperties([NativeTypeName("IUnknown *")] IUnknown* punkStream, [NativeTypeName("IMFMediaType **")] IMFMediaType** ppMediaType);
+        public static extern int MFCreateMediaTypeFromProperties(IUnknown* punkStream, IMFMediaType** ppMediaType);
 
         [DllImport("mfplat", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int MFCreatePropertiesFromMediaType([NativeTypeName("IMFMediaType *")] IMFMediaType* pMediaType, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppv);
+        public static extern int MFCreatePropertiesFromMediaType(IMFMediaType* pMediaType, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
 
         [NativeTypeName("const GUID")]
         public static readonly Guid MF_WRAPPED_BUFFER_SERVICE = new Guid(0xab544072, 0xc269, 0x4ebc, 0xa5, 0x52, 0x1c, 0x3b, 0x32, 0xbe, 0xd5, 0xca);
@@ -1186,15 +1186,15 @@ namespace TerraFX.Interop
 
         [DllImport("mf", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int MFEnumDeviceSources([NativeTypeName("IMFAttributes *")] IMFAttributes* pAttributes, [NativeTypeName("IMFActivate ***")] IMFActivate*** pppSourceActivate, [NativeTypeName("UINT32 *")] uint* pcSourceActivate);
+        public static extern int MFEnumDeviceSources(IMFAttributes* pAttributes, IMFActivate*** pppSourceActivate, [NativeTypeName("UINT32 *")] uint* pcSourceActivate);
 
         [DllImport("mf", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int MFCreateDeviceSource([NativeTypeName("IMFAttributes *")] IMFAttributes* pAttributes, [NativeTypeName("IMFMediaSource **")] IMFMediaSource** ppSource);
+        public static extern int MFCreateDeviceSource(IMFAttributes* pAttributes, IMFMediaSource** ppSource);
 
         [DllImport("mf", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int MFCreateDeviceSourceActivate([NativeTypeName("IMFAttributes *")] IMFAttributes* pAttributes, [NativeTypeName("IMFActivate **")] IMFActivate** ppActivate);
+        public static extern int MFCreateDeviceSourceActivate(IMFAttributes* pAttributes, IMFActivate** ppActivate);
 
         [NativeTypeName("const IID")]
         public static readonly Guid MF_DEVSOURCE_ATTRIBUTE_SOURCE_TYPE = new Guid(0xc60ac5fe, 0x252a, 0x478f, 0xa0, 0xef, 0xbc, 0x8f, 0xa5, 0xf7, 0xca, 0xd3);
@@ -1306,15 +1306,15 @@ namespace TerraFX.Interop
 
         [DllImport("mf", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int MFCreateProtectedEnvironmentAccess([NativeTypeName("IMFProtectedEnvironmentAccess **")] IMFProtectedEnvironmentAccess** ppAccess);
+        public static extern int MFCreateProtectedEnvironmentAccess(IMFProtectedEnvironmentAccess** ppAccess);
 
         [DllImport("mf", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int MFLoadSignedLibrary([NativeTypeName("LPCWSTR")] ushort* pszName, [NativeTypeName("IMFSignedLibrary **")] IMFSignedLibrary** ppLib);
+        public static extern int MFLoadSignedLibrary([NativeTypeName("LPCWSTR")] ushort* pszName, IMFSignedLibrary** ppLib);
 
         [DllImport("mf", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int MFGetSystemId([NativeTypeName("IMFSystemId **")] IMFSystemId** ppId);
+        public static extern int MFGetSystemId(IMFSystemId** ppId);
 
         [DllImport("mf", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
@@ -1331,7 +1331,7 @@ namespace TerraFX.Interop
 
         [DllImport("mfplat", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int MFCreateContentProtectionDevice([NativeTypeName("const GUID &")] Guid* ProtectionSystemId, [NativeTypeName("IMFContentProtectionDevice **")] IMFContentProtectionDevice** ContentProtectionDevice);
+        public static extern int MFCreateContentProtectionDevice([NativeTypeName("const GUID &")] Guid* ProtectionSystemId, IMFContentProtectionDevice** ContentProtectionDevice);
 
         [DllImport("mfplat", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
@@ -1345,7 +1345,7 @@ namespace TerraFX.Interop
 
         [DllImport("mfplat", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int MFCreateContentDecryptorContext([NativeTypeName("const GUID &")] Guid* guidMediaProtectionSystemId, [NativeTypeName("IMFDXGIDeviceManager *")] IMFDXGIDeviceManager* pD3DManager, [NativeTypeName("IMFContentProtectionDevice *")] IMFContentProtectionDevice* pContentProtectionDevice, [NativeTypeName("IMFContentDecryptorContext **")] IMFContentDecryptorContext** ppContentDecryptorContext);
+        public static extern int MFCreateContentDecryptorContext([NativeTypeName("const GUID &")] Guid* guidMediaProtectionSystemId, IMFDXGIDeviceManager* pD3DManager, IMFContentProtectionDevice* pContentProtectionDevice, IMFContentDecryptorContext** ppContentDecryptorContext);
 
         [NativeTypeName("const IID")]
         public static readonly Guid MF_SD_AUDIO_ENCODER_DELAY = new Guid(0x8e85422c, 0x73de, 0x403f, 0x9a, 0x35, 0x55, 0x0a, 0xd6, 0xe8, 0xb9, 0x51);
@@ -1451,23 +1451,23 @@ namespace TerraFX.Interop
 
         [DllImport("mf", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int MFCreateSensorGroup([NativeTypeName("LPCWSTR")] ushort* SensorGroupSymbolicLink, [NativeTypeName("IMFSensorGroup **")] IMFSensorGroup** ppSensorGroup);
+        public static extern int MFCreateSensorGroup([NativeTypeName("LPCWSTR")] ushort* SensorGroupSymbolicLink, IMFSensorGroup** ppSensorGroup);
 
         [DllImport("mf", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int MFCreateSensorStream([NativeTypeName("DWORD")] uint StreamId, [NativeTypeName("IMFAttributes *")] IMFAttributes* pAttributes, [NativeTypeName("IMFCollection *")] IMFCollection* pMediaTypeCollection, [NativeTypeName("IMFSensorStream **")] IMFSensorStream** ppStream);
+        public static extern int MFCreateSensorStream([NativeTypeName("DWORD")] uint StreamId, IMFAttributes* pAttributes, IMFCollection* pMediaTypeCollection, IMFSensorStream** ppStream);
 
         [DllImport("mfsensorgroup", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int MFCreateSensorProfile([NativeTypeName("const GUID &")] Guid* ProfileType, [NativeTypeName("UINT32")] uint ProfileIndex, [NativeTypeName("LPCWSTR")] ushort* Constraints, [NativeTypeName("IMFSensorProfile **")] IMFSensorProfile** ppProfile);
+        public static extern int MFCreateSensorProfile([NativeTypeName("const GUID &")] Guid* ProfileType, [NativeTypeName("UINT32")] uint ProfileIndex, [NativeTypeName("LPCWSTR")] ushort* Constraints, IMFSensorProfile** ppProfile);
 
         [DllImport("mfsensorgroup", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int MFCreateSensorProfileCollection([NativeTypeName("IMFSensorProfileCollection **")] IMFSensorProfileCollection** ppSensorProfile);
+        public static extern int MFCreateSensorProfileCollection(IMFSensorProfileCollection** ppSensorProfile);
 
         [DllImport("mfsensorgroup", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int MFCreateSensorActivityMonitor([NativeTypeName("IMFSensorActivitiesReportCallback *")] IMFSensorActivitiesReportCallback* pCallback, [NativeTypeName("IMFSensorActivityMonitor **")] IMFSensorActivityMonitor** ppActivityMonitor);
+        public static extern int MFCreateSensorActivityMonitor(IMFSensorActivitiesReportCallback* pCallback, IMFSensorActivityMonitor** ppActivityMonitor);
 
         [NativeTypeName("const GUID")]
         public static readonly Guid MFStreamExtension_ExtendedCameraIntrinsics = new Guid(0xaa74b3df, 0x9a2c, 0x48d6, 0x83, 0x93, 0x5b, 0xd1, 0xc1, 0xa8, 0x1e, 0x6e);
@@ -1477,15 +1477,15 @@ namespace TerraFX.Interop
 
         [DllImport("mf", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int MFCreateExtendedCameraIntrinsics([NativeTypeName("IMFExtendedCameraIntrinsics **")] IMFExtendedCameraIntrinsics** ppExtendedCameraIntrinsics);
+        public static extern int MFCreateExtendedCameraIntrinsics(IMFExtendedCameraIntrinsics** ppExtendedCameraIntrinsics);
 
         [DllImport("mf", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int MFCreateExtendedCameraIntrinsicModel([NativeTypeName("const MFCameraIntrinsic_DistortionModelType")] MFCameraIntrinsic_DistortionModelType distortionModelType, [NativeTypeName("IMFExtendedCameraIntrinsicModel **")] IMFExtendedCameraIntrinsicModel** ppExtendedCameraIntrinsicModel);
+        public static extern int MFCreateExtendedCameraIntrinsicModel([NativeTypeName("const MFCameraIntrinsic_DistortionModelType")] MFCameraIntrinsic_DistortionModelType distortionModelType, IMFExtendedCameraIntrinsicModel** ppExtendedCameraIntrinsicModel);
 
         [DllImport("mf", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int MFCreateRelativePanelWatcher([NativeTypeName("PCWSTR")] ushort* videoDeviceId, [NativeTypeName("PCWSTR")] ushort* displayMonitorDeviceId, [NativeTypeName("IMFRelativePanelWatcher **")] IMFRelativePanelWatcher** ppRelativePanelWatcher);
+        public static extern int MFCreateRelativePanelWatcher([NativeTypeName("PCWSTR")] ushort* videoDeviceId, [NativeTypeName("PCWSTR")] ushort* displayMonitorDeviceId, IMFRelativePanelWatcher** ppRelativePanelWatcher);
 
         [NativeTypeName("#define MEDIASINK_FIXED_STREAMS 0x00000001")]
         public const int MEDIASINK_FIXED_STREAMS = 0x00000001;

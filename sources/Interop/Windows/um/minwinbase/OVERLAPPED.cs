@@ -20,6 +20,9 @@ namespace TerraFX.Interop
         [NativeTypeName("_OVERLAPPED::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/minwinbase.h:55:5)")]
         public _Anonymous_e__Union Anonymous;
 
+        [NativeTypeName("HANDLE")]
+        public IntPtr hEvent;
+
         public ref uint Offset
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -49,9 +52,6 @@ namespace TerraFX.Interop
                 }
             }
         }
-
-        [NativeTypeName("HANDLE")]
-        public IntPtr hEvent;
 
         [StructLayout(LayoutKind.Explicit)]
         public unsafe partial struct _Anonymous_e__Union

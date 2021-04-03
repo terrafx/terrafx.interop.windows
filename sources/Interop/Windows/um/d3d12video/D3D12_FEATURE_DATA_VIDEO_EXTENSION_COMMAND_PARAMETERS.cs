@@ -17,7 +17,6 @@ namespace TerraFX.Interop
         [NativeTypeName("UINT")]
         public uint ParameterCount;
 
-        [NativeTypeName("D3D12_VIDEO_EXTENSION_COMMAND_PARAMETER_INFO *")]
         public D3D12_VIDEO_EXTENSION_COMMAND_PARAMETER_INFO* pParameterInfos;
     }
 }

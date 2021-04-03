@@ -18,7 +18,6 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint cbProvData;
 
-        [NativeTypeName("void *")]
         public void* pvProvData;
     }
 }

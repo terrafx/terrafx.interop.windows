@@ -17,7 +17,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
+        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<ITfMenu*, Guid*, void**, int>)(lpVtbl[0]))((ITfMenu*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -38,7 +38,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int AddMenuItem([NativeTypeName("UINT")] uint uId, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("HBITMAP")] IntPtr hbmp, [NativeTypeName("HBITMAP")] IntPtr hbmpMask, [NativeTypeName("const WCHAR *")] ushort* pch, [NativeTypeName("ULONG")] uint cch, [NativeTypeName("ITfMenu **")] ITfMenu** ppMenu)
+        public int AddMenuItem([NativeTypeName("UINT")] uint uId, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("HBITMAP")] IntPtr hbmp, [NativeTypeName("HBITMAP")] IntPtr hbmpMask, [NativeTypeName("const WCHAR *")] ushort* pch, [NativeTypeName("ULONG")] uint cch, ITfMenu** ppMenu)
         {
             return ((delegate* unmanaged<ITfMenu*, uint, uint, IntPtr, IntPtr, ushort*, uint, ITfMenu**, int>)(lpVtbl[3]))((ITfMenu*)Unsafe.AsPointer(ref this), uId, dwFlags, hbmp, hbmpMask, pch, cch, ppMenu);
         }

@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct D3D12_MEMCPY_DEST
     {
-        [NativeTypeName("void *")]
         public void* pData;
 
         [NativeTypeName("SIZE_T")]

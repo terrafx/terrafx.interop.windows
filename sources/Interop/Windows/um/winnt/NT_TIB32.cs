@@ -25,6 +25,12 @@ namespace TerraFX.Interop
         [NativeTypeName("_NT_TIB32::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:11512:5)")]
         public _Anonymous_e__Union Anonymous;
 
+        [NativeTypeName("DWORD")]
+        public uint ArbitraryUserPointer;
+
+        [NativeTypeName("DWORD")]
+        public uint Self;
+
         public ref uint FiberData
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -42,12 +48,6 @@ namespace TerraFX.Interop
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Version, 1));
             }
         }
-
-        [NativeTypeName("DWORD")]
-        public uint ArbitraryUserPointer;
-
-        [NativeTypeName("DWORD")]
-        public uint Self;
 
         [StructLayout(LayoutKind.Explicit)]
         public partial struct _Anonymous_e__Union

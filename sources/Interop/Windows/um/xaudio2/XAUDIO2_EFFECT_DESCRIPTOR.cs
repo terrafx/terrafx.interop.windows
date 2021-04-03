@@ -10,7 +10,6 @@ namespace TerraFX.Interop
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe partial struct XAUDIO2_EFFECT_DESCRIPTOR
     {
-        [NativeTypeName("IUnknown *")]
         public IUnknown* pEffect;
 
         [NativeTypeName("BOOL")]

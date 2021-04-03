@@ -17,7 +17,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
+        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IVisualTreeService3*, Guid*, void**, int>)(lpVtbl[0]))((IVisualTreeService3*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -38,21 +38,21 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int AdviseVisualTreeChange([NativeTypeName("IVisualTreeServiceCallback *")] IVisualTreeServiceCallback* pCallback)
+        public int AdviseVisualTreeChange(IVisualTreeServiceCallback* pCallback)
         {
             return ((delegate* unmanaged<IVisualTreeService3*, IVisualTreeServiceCallback*, int>)(lpVtbl[3]))((IVisualTreeService3*)Unsafe.AsPointer(ref this), pCallback);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int UnadviseVisualTreeChange([NativeTypeName("IVisualTreeServiceCallback *")] IVisualTreeServiceCallback* pCallback)
+        public int UnadviseVisualTreeChange(IVisualTreeServiceCallback* pCallback)
         {
             return ((delegate* unmanaged<IVisualTreeService3*, IVisualTreeServiceCallback*, int>)(lpVtbl[4]))((IVisualTreeService3*)Unsafe.AsPointer(ref this), pCallback);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int GetEnums([NativeTypeName("unsigned int *")] uint* pCount, [NativeTypeName("EnumType **")] EnumType** ppEnums)
+        public int GetEnums([NativeTypeName("unsigned int *")] uint* pCount, EnumType** ppEnums)
         {
             return ((delegate* unmanaged<IVisualTreeService3*, uint*, EnumType**, int>)(lpVtbl[5]))((IVisualTreeService3*)Unsafe.AsPointer(ref this), pCount, ppEnums);
         }
@@ -66,7 +66,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int GetPropertyValuesChain([NativeTypeName("InstanceHandle")] ulong instanceHandle, [NativeTypeName("unsigned int *")] uint* pSourceCount, [NativeTypeName("PropertyChainSource **")] PropertyChainSource** ppPropertySources, [NativeTypeName("unsigned int *")] uint* pPropertyCount, [NativeTypeName("PropertyChainValue **")] PropertyChainValue** ppPropertyValues)
+        public int GetPropertyValuesChain([NativeTypeName("InstanceHandle")] ulong instanceHandle, [NativeTypeName("unsigned int *")] uint* pSourceCount, PropertyChainSource** ppPropertySources, [NativeTypeName("unsigned int *")] uint* pPropertyCount, PropertyChainValue** ppPropertyValues)
         {
             return ((delegate* unmanaged<IVisualTreeService3*, ulong, uint*, PropertyChainSource**, uint*, PropertyChainValue**, int>)(lpVtbl[7]))((IVisualTreeService3*)Unsafe.AsPointer(ref this), instanceHandle, pSourceCount, ppPropertySources, pPropertyCount, ppPropertyValues);
         }
@@ -94,7 +94,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int GetCollectionElements([NativeTypeName("InstanceHandle")] ulong instanceHandle, [NativeTypeName("unsigned int")] uint startIndex, [NativeTypeName("unsigned int *")] uint* pElementCount, [NativeTypeName("CollectionElementValue **")] CollectionElementValue** ppElementValues)
+        public int GetCollectionElements([NativeTypeName("InstanceHandle")] ulong instanceHandle, [NativeTypeName("unsigned int")] uint startIndex, [NativeTypeName("unsigned int *")] uint* pElementCount, CollectionElementValue** ppElementValues)
         {
             return ((delegate* unmanaged<IVisualTreeService3*, ulong, uint, uint*, CollectionElementValue**, int>)(lpVtbl[11]))((IVisualTreeService3*)Unsafe.AsPointer(ref this), instanceHandle, startIndex, pElementCount, ppElementValues);
         }
@@ -143,7 +143,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int RenderTargetBitmap([NativeTypeName("InstanceHandle")] ulong handle, RenderTargetBitmapOptions options, [NativeTypeName("unsigned int")] uint maxPixelWidth, [NativeTypeName("unsigned int")] uint maxPixelHeight, [NativeTypeName("IBitmapData **")] IBitmapData** ppBitmapData)
+        public int RenderTargetBitmap([NativeTypeName("InstanceHandle")] ulong handle, RenderTargetBitmapOptions options, [NativeTypeName("unsigned int")] uint maxPixelWidth, [NativeTypeName("unsigned int")] uint maxPixelHeight, IBitmapData** ppBitmapData)
         {
             return ((delegate* unmanaged<IVisualTreeService3*, ulong, RenderTargetBitmapOptions, uint, uint, IBitmapData**, int>)(lpVtbl[18]))((IVisualTreeService3*)Unsafe.AsPointer(ref this), handle, options, maxPixelWidth, maxPixelHeight, ppBitmapData);
         }

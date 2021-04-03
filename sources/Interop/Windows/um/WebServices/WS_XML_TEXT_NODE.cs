@@ -9,7 +9,6 @@ namespace TerraFX.Interop
     {
         public WS_XML_NODE node;
 
-        [NativeTypeName("WS_XML_TEXT *")]
         public WS_XML_TEXT* text;
     }
 }

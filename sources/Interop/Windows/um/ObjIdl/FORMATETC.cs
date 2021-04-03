@@ -10,7 +10,6 @@ namespace TerraFX.Interop
         [NativeTypeName("CLIPFORMAT")]
         public ushort cfFormat;
 
-        [NativeTypeName("DVTARGETDEVICE *")]
         public DVTARGETDEVICE* ptd;
 
         [NativeTypeName("DWORD")]

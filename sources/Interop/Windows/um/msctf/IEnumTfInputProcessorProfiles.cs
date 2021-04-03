@@ -17,7 +17,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
+        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IEnumTfInputProcessorProfiles*, Guid*, void**, int>)(lpVtbl[0]))((IEnumTfInputProcessorProfiles*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -38,14 +38,14 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int Clone([NativeTypeName("IEnumTfInputProcessorProfiles **")] IEnumTfInputProcessorProfiles** ppEnum)
+        public int Clone(IEnumTfInputProcessorProfiles** ppEnum)
         {
             return ((delegate* unmanaged<IEnumTfInputProcessorProfiles*, IEnumTfInputProcessorProfiles**, int>)(lpVtbl[3]))((IEnumTfInputProcessorProfiles*)Unsafe.AsPointer(ref this), ppEnum);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int Next([NativeTypeName("ULONG")] uint ulCount, [NativeTypeName("TF_INPUTPROCESSORPROFILE *")] TF_INPUTPROCESSORPROFILE* pProfile, [NativeTypeName("ULONG *")] uint* pcFetch)
+        public int Next([NativeTypeName("ULONG")] uint ulCount, TF_INPUTPROCESSORPROFILE* pProfile, [NativeTypeName("ULONG *")] uint* pcFetch)
         {
             return ((delegate* unmanaged<IEnumTfInputProcessorProfiles*, uint, TF_INPUTPROCESSORPROFILE*, uint*, int>)(lpVtbl[4]))((IEnumTfInputProcessorProfiles*)Unsafe.AsPointer(ref this), ulCount, pProfile, pcFetch);
         }

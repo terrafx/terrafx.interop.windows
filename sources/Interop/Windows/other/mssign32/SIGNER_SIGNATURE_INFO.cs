@@ -22,6 +22,12 @@ namespace TerraFX.Interop
         [NativeTypeName("_SIGNER_SIGNATURE_INFO::(anonymous union at ./mssign32.h:53:5)")]
         public _Anonymous_e__Union Anonymous;
 
+        [NativeTypeName("PCRYPT_ATTRIBUTES")]
+        public CRYPT_ATTRIBUTES* psAuthenticated;
+
+        [NativeTypeName("PCRYPT_ATTRIBUTES")]
+        public CRYPT_ATTRIBUTES* psUnauthenticated;
+
         public ref SIGNER_ATTR_AUTHCODE* pAttrAuthcode
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -34,17 +40,10 @@ namespace TerraFX.Interop
             }
         }
 
-        [NativeTypeName("PCRYPT_ATTRIBUTES")]
-        public CRYPT_ATTRIBUTES* psAuthenticated;
-
-        [NativeTypeName("PCRYPT_ATTRIBUTES")]
-        public CRYPT_ATTRIBUTES* psUnauthenticated;
-
         [StructLayout(LayoutKind.Explicit)]
         public unsafe partial struct _Anonymous_e__Union
         {
             [FieldOffset(0)]
-            [NativeTypeName("SIGNER_ATTR_AUTHCODE *")]
             public SIGNER_ATTR_AUTHCODE* pAttrAuthcode;
         }
     }

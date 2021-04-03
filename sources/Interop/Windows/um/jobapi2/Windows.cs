@@ -15,7 +15,7 @@ namespace TerraFX.Interop
         public static extern IntPtr CreateJobObjectW([NativeTypeName("LPSECURITY_ATTRIBUTES")] SECURITY_ATTRIBUTES* lpJobAttributes, [NativeTypeName("LPCWSTR")] ushort* lpName);
 
         [DllImport("Kernel32", ExactSpelling = true)]
-        public static extern void FreeMemoryJobObject([NativeTypeName("void *")] void* Buffer);
+        public static extern void FreeMemoryJobObject(void* Buffer);
 
         [DllImport("Kernel32", ExactSpelling = true)]
         [return: NativeTypeName("HANDLE")]
@@ -35,7 +35,7 @@ namespace TerraFX.Interop
 
         [DllImport("Kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("DWORD")]
-        public static extern uint SetIoRateControlInformationJobObject([NativeTypeName("HANDLE")] IntPtr hJob, [NativeTypeName("JOBOBJECT_IO_RATE_CONTROL_INFORMATION *")] JOBOBJECT_IO_RATE_CONTROL_INFORMATION* IoRateControlInfo);
+        public static extern uint SetIoRateControlInformationJobObject([NativeTypeName("HANDLE")] IntPtr hJob, JOBOBJECT_IO_RATE_CONTROL_INFORMATION* IoRateControlInfo);
 
         [DllImport("Kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
@@ -43,6 +43,6 @@ namespace TerraFX.Interop
 
         [DllImport("Kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("DWORD")]
-        public static extern uint QueryIoRateControlInformationJobObject([NativeTypeName("HANDLE")] IntPtr hJob, [NativeTypeName("PCWSTR")] ushort* VolumeName, [NativeTypeName("JOBOBJECT_IO_RATE_CONTROL_INFORMATION **")] JOBOBJECT_IO_RATE_CONTROL_INFORMATION** InfoBlocks, [NativeTypeName("ULONG *")] uint* InfoBlockCount);
+        public static extern uint QueryIoRateControlInformationJobObject([NativeTypeName("HANDLE")] IntPtr hJob, [NativeTypeName("PCWSTR")] ushort* VolumeName, JOBOBJECT_IO_RATE_CONTROL_INFORMATION** InfoBlocks, [NativeTypeName("ULONG *")] uint* InfoBlockCount);
     }
 }

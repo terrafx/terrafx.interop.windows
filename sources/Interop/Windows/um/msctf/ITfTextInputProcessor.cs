@@ -17,7 +17,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
+        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<ITfTextInputProcessor*, Guid*, void**, int>)(lpVtbl[0]))((ITfTextInputProcessor*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -38,7 +38,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int Activate([NativeTypeName("ITfThreadMgr *")] ITfThreadMgr* ptim, [NativeTypeName("TfClientId")] uint tid)
+        public int Activate(ITfThreadMgr* ptim, [NativeTypeName("TfClientId")] uint tid)
         {
             return ((delegate* unmanaged<ITfTextInputProcessor*, ITfThreadMgr*, uint, int>)(lpVtbl[3]))((ITfTextInputProcessor*)Unsafe.AsPointer(ref this), ptim, tid);
         }

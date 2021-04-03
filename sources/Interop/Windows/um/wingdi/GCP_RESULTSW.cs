@@ -16,10 +16,8 @@ namespace TerraFX.Interop
         [NativeTypeName("UINT *")]
         public uint* lpOrder;
 
-        [NativeTypeName("int *")]
         public int* lpDx;
 
-        [NativeTypeName("int *")]
         public int* lpCaretPos;
 
         [NativeTypeName("LPSTR")]

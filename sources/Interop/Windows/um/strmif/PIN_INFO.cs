@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct PIN_INFO
     {
-        [NativeTypeName("IBaseFilter *")]
         public IBaseFilter* pFilter;
 
         public PIN_DIRECTION dir;

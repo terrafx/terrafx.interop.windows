@@ -17,7 +17,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
+        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IFileSystemImage2*, Guid*, void**, int>)(lpVtbl[0]))((IFileSystemImage2*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -45,7 +45,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int GetTypeInfo([NativeTypeName("UINT")] uint iTInfo, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("ITypeInfo **")] ITypeInfo** ppTInfo)
+        public int GetTypeInfo([NativeTypeName("UINT")] uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
         {
             return ((delegate* unmanaged<IFileSystemImage2*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IFileSystemImage2*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
         }
@@ -59,14 +59,14 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, [NativeTypeName("DISPPARAMS *")] DISPPARAMS* pDispParams, [NativeTypeName("VARIANT *")] VARIANT* pVarResult, [NativeTypeName("EXCEPINFO *")] EXCEPINFO* pExcepInfo, [NativeTypeName("UINT *")] uint* puArgErr)
+        public int Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, [NativeTypeName("UINT *")] uint* puArgErr)
         {
             return ((delegate* unmanaged<IFileSystemImage2*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IFileSystemImage2*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int get_Root([NativeTypeName("IFsiDirectoryItem **")] IFsiDirectoryItem** pVal)
+        public int get_Root(IFsiDirectoryItem** pVal)
         {
             return ((delegate* unmanaged<IFileSystemImage2*, IFsiDirectoryItem**, int>)(lpVtbl[7]))((IFileSystemImage2*)Unsafe.AsPointer(ref this), pVal);
         }
@@ -101,7 +101,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int SetMaxMediaBlocksFromDevice([NativeTypeName("IDiscRecorder2 *")] IDiscRecorder2* discRecorder)
+        public int SetMaxMediaBlocksFromDevice(IDiscRecorder2* discRecorder)
         {
             return ((delegate* unmanaged<IFileSystemImage2*, IDiscRecorder2*, int>)(lpVtbl[12]))((IFileSystemImage2*)Unsafe.AsPointer(ref this), discRecorder);
         }
@@ -136,14 +136,14 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int get_BootImageOptions([NativeTypeName("IBootOptions **")] IBootOptions** pVal)
+        public int get_BootImageOptions(IBootOptions** pVal)
         {
             return ((delegate* unmanaged<IFileSystemImage2*, IBootOptions**, int>)(lpVtbl[17]))((IFileSystemImage2*)Unsafe.AsPointer(ref this), pVal);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int put_BootImageOptions([NativeTypeName("IBootOptions *")] IBootOptions* newVal)
+        public int put_BootImageOptions(IBootOptions* newVal)
         {
             return ((delegate* unmanaged<IFileSystemImage2*, IBootOptions*, int>)(lpVtbl[18]))((IFileSystemImage2*)Unsafe.AsPointer(ref this), newVal);
         }
@@ -213,7 +213,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int get_FileSystemsToCreate([NativeTypeName("FsiFileSystems *")] FsiFileSystems* pVal)
+        public int get_FileSystemsToCreate(FsiFileSystems* pVal)
         {
             return ((delegate* unmanaged<IFileSystemImage2*, FsiFileSystems*, int>)(lpVtbl[28]))((IFileSystemImage2*)Unsafe.AsPointer(ref this), pVal);
         }
@@ -227,7 +227,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int get_FileSystemsSupported([NativeTypeName("FsiFileSystems *")] FsiFileSystems* pVal)
+        public int get_FileSystemsSupported(FsiFileSystems* pVal)
         {
             return ((delegate* unmanaged<IFileSystemImage2*, FsiFileSystems*, int>)(lpVtbl[30]))((IFileSystemImage2*)Unsafe.AsPointer(ref this), pVal);
         }
@@ -248,14 +248,14 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int get_UDFRevisionsSupported([NativeTypeName("SAFEARRAY **")] SAFEARRAY** pVal)
+        public int get_UDFRevisionsSupported(SAFEARRAY** pVal)
         {
             return ((delegate* unmanaged<IFileSystemImage2*, SAFEARRAY**, int>)(lpVtbl[33]))((IFileSystemImage2*)Unsafe.AsPointer(ref this), pVal);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int ChooseImageDefaults([NativeTypeName("IDiscRecorder2 *")] IDiscRecorder2* discRecorder)
+        public int ChooseImageDefaults(IDiscRecorder2* discRecorder)
         {
             return ((delegate* unmanaged<IFileSystemImage2*, IDiscRecorder2*, int>)(lpVtbl[34]))((IFileSystemImage2*)Unsafe.AsPointer(ref this), discRecorder);
         }
@@ -283,21 +283,21 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int get_ISO9660InterchangeLevelsSupported([NativeTypeName("SAFEARRAY **")] SAFEARRAY** pVal)
+        public int get_ISO9660InterchangeLevelsSupported(SAFEARRAY** pVal)
         {
             return ((delegate* unmanaged<IFileSystemImage2*, SAFEARRAY**, int>)(lpVtbl[38]))((IFileSystemImage2*)Unsafe.AsPointer(ref this), pVal);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int CreateResultImage([NativeTypeName("IFileSystemImageResult **")] IFileSystemImageResult** resultStream)
+        public int CreateResultImage(IFileSystemImageResult** resultStream)
         {
             return ((delegate* unmanaged<IFileSystemImage2*, IFileSystemImageResult**, int>)(lpVtbl[39]))((IFileSystemImage2*)Unsafe.AsPointer(ref this), resultStream);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int Exists([NativeTypeName("BSTR")] ushort* fullPath, [NativeTypeName("FsiItemType *")] FsiItemType* itemType)
+        public int Exists([NativeTypeName("BSTR")] ushort* fullPath, FsiItemType* itemType)
         {
             return ((delegate* unmanaged<IFileSystemImage2*, ushort*, FsiItemType*, int>)(lpVtbl[40]))((IFileSystemImage2*)Unsafe.AsPointer(ref this), fullPath, itemType);
         }
@@ -311,21 +311,21 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int IdentifyFileSystemsOnDisc([NativeTypeName("IDiscRecorder2 *")] IDiscRecorder2* discRecorder, [NativeTypeName("FsiFileSystems *")] FsiFileSystems* fileSystems)
+        public int IdentifyFileSystemsOnDisc(IDiscRecorder2* discRecorder, FsiFileSystems* fileSystems)
         {
             return ((delegate* unmanaged<IFileSystemImage2*, IDiscRecorder2*, FsiFileSystems*, int>)(lpVtbl[42]))((IFileSystemImage2*)Unsafe.AsPointer(ref this), discRecorder, fileSystems);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int GetDefaultFileSystemForImport(FsiFileSystems fileSystems, [NativeTypeName("FsiFileSystems *")] FsiFileSystems* importDefault)
+        public int GetDefaultFileSystemForImport(FsiFileSystems fileSystems, FsiFileSystems* importDefault)
         {
             return ((delegate* unmanaged<IFileSystemImage2*, FsiFileSystems, FsiFileSystems*, int>)(lpVtbl[43]))((IFileSystemImage2*)Unsafe.AsPointer(ref this), fileSystems, importDefault);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int ImportFileSystem([NativeTypeName("FsiFileSystems *")] FsiFileSystems* importedFileSystem)
+        public int ImportFileSystem(FsiFileSystems* importedFileSystem)
         {
             return ((delegate* unmanaged<IFileSystemImage2*, FsiFileSystems*, int>)(lpVtbl[44]))((IFileSystemImage2*)Unsafe.AsPointer(ref this), importedFileSystem);
         }
@@ -353,14 +353,14 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int CreateDirectoryItem([NativeTypeName("BSTR")] ushort* name, [NativeTypeName("IFsiDirectoryItem **")] IFsiDirectoryItem** newItem)
+        public int CreateDirectoryItem([NativeTypeName("BSTR")] ushort* name, IFsiDirectoryItem** newItem)
         {
             return ((delegate* unmanaged<IFileSystemImage2*, ushort*, IFsiDirectoryItem**, int>)(lpVtbl[48]))((IFileSystemImage2*)Unsafe.AsPointer(ref this), name, newItem);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int CreateFileItem([NativeTypeName("BSTR")] ushort* name, [NativeTypeName("IFsiFileItem **")] IFsiFileItem** newItem)
+        public int CreateFileItem([NativeTypeName("BSTR")] ushort* name, IFsiFileItem** newItem)
         {
             return ((delegate* unmanaged<IFileSystemImage2*, ushort*, IFsiFileItem**, int>)(lpVtbl[49]))((IFileSystemImage2*)Unsafe.AsPointer(ref this), name, newItem);
         }
@@ -402,28 +402,28 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int get_MultisessionInterfaces([NativeTypeName("SAFEARRAY **")] SAFEARRAY** pVal)
+        public int get_MultisessionInterfaces(SAFEARRAY** pVal)
         {
             return ((delegate* unmanaged<IFileSystemImage2*, SAFEARRAY**, int>)(lpVtbl[55]))((IFileSystemImage2*)Unsafe.AsPointer(ref this), pVal);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int put_MultisessionInterfaces([NativeTypeName("SAFEARRAY *")] SAFEARRAY* newVal)
+        public int put_MultisessionInterfaces(SAFEARRAY* newVal)
         {
             return ((delegate* unmanaged<IFileSystemImage2*, SAFEARRAY*, int>)(lpVtbl[56]))((IFileSystemImage2*)Unsafe.AsPointer(ref this), newVal);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int get_BootImageOptionsArray([NativeTypeName("SAFEARRAY **")] SAFEARRAY** pVal)
+        public int get_BootImageOptionsArray(SAFEARRAY** pVal)
         {
             return ((delegate* unmanaged<IFileSystemImage2*, SAFEARRAY**, int>)(lpVtbl[57]))((IFileSystemImage2*)Unsafe.AsPointer(ref this), pVal);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int put_BootImageOptionsArray([NativeTypeName("SAFEARRAY *")] SAFEARRAY* newVal)
+        public int put_BootImageOptionsArray(SAFEARRAY* newVal)
         {
             return ((delegate* unmanaged<IFileSystemImage2*, SAFEARRAY*, int>)(lpVtbl[58]))((IFileSystemImage2*)Unsafe.AsPointer(ref this), newVal);
         }

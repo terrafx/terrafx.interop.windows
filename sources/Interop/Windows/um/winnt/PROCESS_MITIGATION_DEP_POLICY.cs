@@ -13,6 +13,9 @@ namespace TerraFX.Interop
         [NativeTypeName("_PROCESS_MITIGATION_DEP_POLICY::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:11743:5)")]
         public _Anonymous_e__Union Anonymous;
 
+        [NativeTypeName("BOOLEAN")]
+        public byte Permanent;
+
         public ref uint Flags
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -66,9 +69,6 @@ namespace TerraFX.Interop
                 Anonymous.Anonymous.ReservedFlags = value;
             }
         }
-
-        [NativeTypeName("BOOLEAN")]
-        public byte Permanent;
 
         [StructLayout(LayoutKind.Explicit)]
         public partial struct _Anonymous_e__Union

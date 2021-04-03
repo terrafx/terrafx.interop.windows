@@ -23,7 +23,6 @@ namespace TerraFX.Interop
             public int hInproc;
 
             [FieldOffset(0)]
-            [NativeTypeName("LOGPALETTE *")]
             public LOGPALETTE* hRemote;
 
             [FieldOffset(0)]

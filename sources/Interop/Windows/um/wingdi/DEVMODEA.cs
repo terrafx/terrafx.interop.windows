@@ -31,6 +31,61 @@ namespace TerraFX.Interop
         [NativeTypeName("_devicemodeA::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/wingdi.h:2202:5)")]
         public _Anonymous1_e__Union Anonymous1;
 
+        public short dmColor;
+
+        public short dmDuplex;
+
+        public short dmYResolution;
+
+        public short dmTTOption;
+
+        public short dmCollate;
+
+        [NativeTypeName("BYTE [32]")]
+        public fixed byte dmFormName[32];
+
+        [NativeTypeName("WORD")]
+        public ushort dmLogPixels;
+
+        [NativeTypeName("DWORD")]
+        public uint dmBitsPerPel;
+
+        [NativeTypeName("DWORD")]
+        public uint dmPelsWidth;
+
+        [NativeTypeName("DWORD")]
+        public uint dmPelsHeight;
+
+        [NativeTypeName("_devicemodeA::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/wingdi.h:2231:5)")]
+        public _Anonymous2_e__Union Anonymous2;
+
+        [NativeTypeName("DWORD")]
+        public uint dmDisplayFrequency;
+
+        [NativeTypeName("DWORD")]
+        public uint dmICMMethod;
+
+        [NativeTypeName("DWORD")]
+        public uint dmICMIntent;
+
+        [NativeTypeName("DWORD")]
+        public uint dmMediaType;
+
+        [NativeTypeName("DWORD")]
+        public uint dmDitherType;
+
+        [NativeTypeName("DWORD")]
+        public uint dmReserved1;
+
+        [NativeTypeName("DWORD")]
+        public uint dmReserved2;
+
+        [NativeTypeName("DWORD")]
+        public uint dmPanningWidth;
+
+        [NativeTypeName("DWORD")]
+        public uint dmPanningHeight;
+
         public ref short dmOrientation
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -130,34 +185,6 @@ namespace TerraFX.Interop
             }
         }
 
-        public short dmColor;
-
-        public short dmDuplex;
-
-        public short dmYResolution;
-
-        public short dmTTOption;
-
-        public short dmCollate;
-
-        [NativeTypeName("BYTE [32]")]
-        public fixed byte dmFormName[32];
-
-        [NativeTypeName("WORD")]
-        public ushort dmLogPixels;
-
-        [NativeTypeName("DWORD")]
-        public uint dmBitsPerPel;
-
-        [NativeTypeName("DWORD")]
-        public uint dmPelsWidth;
-
-        [NativeTypeName("DWORD")]
-        public uint dmPelsHeight;
-
-        [NativeTypeName("_devicemodeA::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/wingdi.h:2231:5)")]
-        public _Anonymous2_e__Union Anonymous2;
-
         public ref uint dmDisplayFlags
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -175,33 +202,6 @@ namespace TerraFX.Interop
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous2.dmNup, 1));
             }
         }
-
-        [NativeTypeName("DWORD")]
-        public uint dmDisplayFrequency;
-
-        [NativeTypeName("DWORD")]
-        public uint dmICMMethod;
-
-        [NativeTypeName("DWORD")]
-        public uint dmICMIntent;
-
-        [NativeTypeName("DWORD")]
-        public uint dmMediaType;
-
-        [NativeTypeName("DWORD")]
-        public uint dmDitherType;
-
-        [NativeTypeName("DWORD")]
-        public uint dmReserved1;
-
-        [NativeTypeName("DWORD")]
-        public uint dmReserved2;
-
-        [NativeTypeName("DWORD")]
-        public uint dmPanningWidth;
-
-        [NativeTypeName("DWORD")]
-        public uint dmPanningHeight;
 
         [StructLayout(LayoutKind.Explicit)]
         public partial struct _Anonymous1_e__Union

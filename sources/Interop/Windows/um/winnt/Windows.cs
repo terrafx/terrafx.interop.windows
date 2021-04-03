@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.InteropServices;
 using static TerraFX.Interop.POWER_PLATFORM_ROLE;
 using static TerraFX.Interop.SECURITY_IMPERSONATION_LEVEL;
 
@@ -646,6 +647,118 @@ namespace TerraFX.Interop
         {
             return ((uint)((TagBase) + ((Tag) << 18)));
         }
+
+        [DllImport("kernel32", ExactSpelling = true)]
+        [return: NativeTypeName("unsigned char")]
+        public static extern byte _bittest([NativeTypeName("const long *")] int* param0, [NativeTypeName("long")] int param1);
+
+        [DllImport("kernel32", ExactSpelling = true)]
+        [return: NativeTypeName("unsigned char")]
+        public static extern byte _bittestandcomplement([NativeTypeName("long *")] int* param0, [NativeTypeName("long")] int param1);
+
+        [DllImport("kernel32", ExactSpelling = true)]
+        [return: NativeTypeName("unsigned char")]
+        public static extern byte _bittestandset([NativeTypeName("long *")] int* param0, [NativeTypeName("long")] int param1);
+
+        [DllImport("kernel32", ExactSpelling = true)]
+        [return: NativeTypeName("unsigned char")]
+        public static extern byte _bittestandreset([NativeTypeName("long *")] int* param0, [NativeTypeName("long")] int param1);
+
+        [DllImport("kernel32", ExactSpelling = true)]
+        [return: NativeTypeName("unsigned char")]
+        public static extern byte _interlockedbittestandset([NativeTypeName("volatile long *")] int* param0, [NativeTypeName("long")] int param1);
+
+        [DllImport("kernel32", ExactSpelling = true)]
+        [return: NativeTypeName("unsigned char")]
+        public static extern byte _interlockedbittestandreset([NativeTypeName("volatile long *")] int* param0, [NativeTypeName("long")] int param1);
+
+        [DllImport("kernel32", ExactSpelling = true)]
+        [return: NativeTypeName("unsigned char")]
+        public static extern byte _BitScanForward([NativeTypeName("unsigned long *")] uint* param0, [NativeTypeName("unsigned long")] uint param1);
+
+        [DllImport("kernel32", ExactSpelling = true)]
+        [return: NativeTypeName("unsigned char")]
+        public static extern byte _BitScanReverse([NativeTypeName("unsigned long *")] uint* param0, [NativeTypeName("unsigned long")] uint param1);
+
+        [DllImport("kernel32", ExactSpelling = true)]
+        public static extern short _InterlockedIncrement16([NativeTypeName("volatile short *")] short* param0);
+
+        [DllImport("kernel32", ExactSpelling = true)]
+        public static extern short _InterlockedDecrement16([NativeTypeName("volatile short *")] short* param0);
+
+        [DllImport("kernel32", ExactSpelling = true)]
+        public static extern short _InterlockedCompareExchange16([NativeTypeName("volatile short *")] short* param0, short param1, short param2);
+
+        [DllImport("kernel32", ExactSpelling = true)]
+        [return: NativeTypeName("long long")]
+        public static extern long _InterlockedCompareExchange64([NativeTypeName("volatile long long *")] long* param0, [NativeTypeName("long long")] long param1, [NativeTypeName("long long")] long param2);
+
+        [DllImport("kernel32", ExactSpelling = true)]
+        [return: NativeTypeName("long")]
+        public static extern int _InterlockedAnd([NativeTypeName("volatile long *")] int* param0, [NativeTypeName("long")] int param1);
+
+        [DllImport("kernel32", ExactSpelling = true)]
+        [return: NativeTypeName("long")]
+        public static extern int _InterlockedOr([NativeTypeName("volatile long *")] int* param0, [NativeTypeName("long")] int param1);
+
+        [DllImport("kernel32", ExactSpelling = true)]
+        [return: NativeTypeName("long")]
+        public static extern int _InterlockedXor([NativeTypeName("volatile long *")] int* param0, [NativeTypeName("long")] int param1);
+
+        [DllImport("kernel32", ExactSpelling = true)]
+        [return: NativeTypeName("long")]
+        public static extern int _InterlockedIncrement([NativeTypeName("volatile long *")] int* param0);
+
+        [DllImport("kernel32", ExactSpelling = true)]
+        [return: NativeTypeName("long")]
+        public static extern int _InterlockedDecrement([NativeTypeName("volatile long *")] int* param0);
+
+        [DllImport("kernel32", ExactSpelling = true)]
+        [return: NativeTypeName("long")]
+        public static extern int _InterlockedExchange([NativeTypeName("volatile long *")] int* param0, [NativeTypeName("long")] int param1);
+
+        [DllImport("kernel32", ExactSpelling = true)]
+        [return: NativeTypeName("long")]
+        public static extern int _InterlockedExchangeAdd([NativeTypeName("volatile long *")] int* param0, [NativeTypeName("long")] int param1);
+
+        [DllImport("kernel32", ExactSpelling = true)]
+        [return: NativeTypeName("long")]
+        public static extern int _InterlockedCompareExchange([NativeTypeName("volatile long *")] int* param0, [NativeTypeName("long")] int param1, [NativeTypeName("long")] int param2);
+
+        [DllImport("kernel32", ExactSpelling = true)]
+        [return: NativeTypeName("char")]
+        public static extern sbyte _InterlockedExchange8([NativeTypeName("volatile char *")] sbyte* param0, [NativeTypeName("char")] sbyte param1);
+
+        [DllImport("kernel32", ExactSpelling = true)]
+        public static extern short _InterlockedExchange16([NativeTypeName("volatile short *")] short* param0, short param1);
+
+        [DllImport("kernel32", ExactSpelling = true)]
+        public static extern short _InterlockedAnd16([NativeTypeName("volatile short *")] short* param0, short param1);
+
+        [DllImport("kernel32", ExactSpelling = true)]
+        public static extern short _InterlockedXor16([NativeTypeName("volatile short *")] short* param0, short param1);
+
+        [DllImport("kernel32", ExactSpelling = true)]
+        public static extern short _InterlockedOr16([NativeTypeName("volatile short *")] short* param0, short param1);
+
+        [DllImport("kernel32", ExactSpelling = true)]
+        [return: NativeTypeName("unsigned char")]
+        public static extern byte __readfsbyte([NativeTypeName("unsigned long")] uint param0);
+
+        [DllImport("kernel32", ExactSpelling = true)]
+        [return: NativeTypeName("unsigned short")]
+        public static extern ushort __readfsword([NativeTypeName("unsigned long")] uint param0);
+
+        [DllImport("kernel32", ExactSpelling = true)]
+        [return: NativeTypeName("unsigned long")]
+        public static extern uint __readfsdword([NativeTypeName("unsigned long")] uint param0);
+
+        [DllImport("kernel32", ExactSpelling = true)]
+        public static extern void _mm_prefetch([NativeTypeName("const char *")] sbyte* param0, int param1);
+
+        [DllImport("kernel32", ExactSpelling = true)]
+        [return: NativeTypeName("unsigned long long")]
+        public static extern ulong __rdtsc();
 
         [NativeTypeName("#define ANYSIZE_ARRAY 1")]
         public const int ANYSIZE_ARRAY = 1;

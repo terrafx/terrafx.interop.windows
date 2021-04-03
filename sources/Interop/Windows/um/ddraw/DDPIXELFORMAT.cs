@@ -22,6 +22,18 @@ namespace TerraFX.Interop
         [NativeTypeName("_DDPIXELFORMAT::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/ddraw.h:712:5)")]
         public _Anonymous1_e__Union Anonymous1;
 
+        [NativeTypeName("_DDPIXELFORMAT::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/ddraw.h:723:5)")]
+        public _Anonymous2_e__Union Anonymous2;
+
+        [NativeTypeName("_DDPIXELFORMAT::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/ddraw.h:732:5)")]
+        public _Anonymous3_e__Union Anonymous3;
+
+        [NativeTypeName("_DDPIXELFORMAT::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/ddraw.h:745:5)")]
+        public _Anonymous4_e__Union Anonymous4;
+
+        [NativeTypeName("_DDPIXELFORMAT::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/ddraw.h:752:5)")]
+        public _Anonymous5_e__Union Anonymous5;
+
         public ref uint dwRGBBitCount
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -85,9 +97,6 @@ namespace TerraFX.Interop
             }
         }
 
-        [NativeTypeName("_DDPIXELFORMAT::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/ddraw.h:723:5)")]
-        public _Anonymous2_e__Union Anonymous2;
-
         public ref uint dwRBitMask
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -142,9 +151,6 @@ namespace TerraFX.Interop
             }
         }
 
-        [NativeTypeName("_DDPIXELFORMAT::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/ddraw.h:732:5)")]
-        public _Anonymous3_e__Union Anonymous3;
-
         public ref uint dwGBitMask
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -190,9 +196,6 @@ namespace TerraFX.Interop
             }
         }
 
-        [NativeTypeName("_DDPIXELFORMAT::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/ddraw.h:745:5)")]
-        public _Anonymous4_e__Union Anonymous4;
-
         public ref uint dwBBitMask
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -228,9 +231,6 @@ namespace TerraFX.Interop
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous4.dwBumpLuminanceBitMask, 1));
             }
         }
-
-        [NativeTypeName("_DDPIXELFORMAT::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/ddraw.h:752:5)")]
-        public _Anonymous5_e__Union Anonymous5;
 
         public ref uint dwRGBAlphaBitMask
         {

@@ -60,6 +60,12 @@ namespace TerraFX.Interop
                 [NativeTypeName("_SYSTEM_CPU_SET_INFORMATION::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:12637:13)")]
                 public _Anonymous1_e__Union Anonymous1;
 
+                [NativeTypeName("_SYSTEM_CPU_SET_INFORMATION::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:12654:13)")]
+                public _Anonymous2_e__Union Anonymous2;
+
+                [NativeTypeName("DWORD64")]
+                public ulong AllocationTag;
+
                 public ref byte AllFlags
                 {
                     [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -144,9 +150,6 @@ namespace TerraFX.Interop
                     }
                 }
 
-                [NativeTypeName("_SYSTEM_CPU_SET_INFORMATION::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:12654:13)")]
-                public _Anonymous2_e__Union Anonymous2;
-
                 public ref uint Reserved
                 {
                     [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -164,9 +167,6 @@ namespace TerraFX.Interop
                         return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous2.SchedulingClass, 1));
                     }
                 }
-
-                [NativeTypeName("DWORD64")]
-                public ulong AllocationTag;
 
                 [StructLayout(LayoutKind.Explicit)]
                 public partial struct _Anonymous1_e__Union

@@ -10,7 +10,6 @@ namespace TerraFX.Interop
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe partial struct XAUDIO2_VOICE_STATE
     {
-        [NativeTypeName("void *")]
         public void* pCurrentBufferContext;
 
         [NativeTypeName("UINT32")]

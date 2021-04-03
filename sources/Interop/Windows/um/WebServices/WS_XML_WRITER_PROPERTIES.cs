@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct WS_XML_WRITER_PROPERTIES
     {
-        [NativeTypeName("WS_XML_WRITER_PROPERTY *")]
         public WS_XML_WRITER_PROPERTY* properties;
 
         [NativeTypeName("ULONG")]

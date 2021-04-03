@@ -19,7 +19,6 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint cCPSURLs;
 
-        [NativeTypeName("CPS_URLS *")]
         public CPS_URLS* rgCPSURLs;
     }
 }

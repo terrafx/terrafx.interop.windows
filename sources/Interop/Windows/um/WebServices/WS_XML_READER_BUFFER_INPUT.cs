@@ -9,7 +9,6 @@ namespace TerraFX.Interop
     {
         public WS_XML_READER_INPUT input;
 
-        [NativeTypeName("void *")]
         public void* encodedData;
 
         [NativeTypeName("ULONG")]

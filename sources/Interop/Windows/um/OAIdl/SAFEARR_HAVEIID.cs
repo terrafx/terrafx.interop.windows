@@ -12,7 +12,6 @@ namespace TerraFX.Interop
         [NativeTypeName("ULONG")]
         public uint Size;
 
-        [NativeTypeName("IUnknown **")]
         public IUnknown** apUnknown;
 
         [NativeTypeName("IID")]

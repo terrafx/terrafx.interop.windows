@@ -16,7 +16,7 @@ namespace TerraFX.Interop
 
         [DllImport("dxcompiler", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int DxcCreateInstance2([NativeTypeName("IMalloc *")] IMalloc* pMalloc, [NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPVOID *")] void** ppv);
+        public static extern int DxcCreateInstance2(IMalloc* pMalloc, [NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPVOID *")] void** ppv);
 
         [NativeTypeName("const UINT32")]
         public const uint DxcValidatorFlags_Default = 0;

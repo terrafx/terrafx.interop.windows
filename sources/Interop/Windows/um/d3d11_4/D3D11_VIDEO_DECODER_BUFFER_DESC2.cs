@@ -15,13 +15,11 @@ namespace TerraFX.Interop
         [NativeTypeName("UINT")]
         public uint DataSize;
 
-        [NativeTypeName("void *")]
         public void* pIV;
 
         [NativeTypeName("UINT")]
         public uint IVSize;
 
-        [NativeTypeName("D3D11_VIDEO_DECODER_SUB_SAMPLE_MAPPING_BLOCK *")]
         public D3D11_VIDEO_DECODER_SUB_SAMPLE_MAPPING_BLOCK* pSubSampleMappingBlock;
 
         [NativeTypeName("UINT")]

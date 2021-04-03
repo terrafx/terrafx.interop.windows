@@ -26,7 +26,6 @@ namespace TerraFX.Interop
         [NativeTypeName("PSTR")]
         public sbyte* pszSubject;
 
-        [NativeTypeName("PctPublicKey *")]
         public PctPublicKey* pPublicKey;
     }
 }

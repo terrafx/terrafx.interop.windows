@@ -9,16 +9,13 @@ namespace TerraFX.Interop
     {
         public WS_CHANNEL_BINDING channelBinding;
 
-        [NativeTypeName("WS_CHANNEL_PROPERTY_CONSTRAINT *")]
         public WS_CHANNEL_PROPERTY_CONSTRAINT* channelPropertyConstraints;
 
         [NativeTypeName("ULONG")]
         public uint channelPropertyConstraintCount;
 
-        [NativeTypeName("WS_SECURITY_CONSTRAINTS *")]
         public WS_SECURITY_CONSTRAINTS* securityConstraints;
 
-        [NativeTypeName("WS_POLICY_EXTENSION **")]
         public WS_POLICY_EXTENSION** policyExtensions;
 
         [NativeTypeName("ULONG")]

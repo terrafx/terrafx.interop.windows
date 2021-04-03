@@ -10,13 +10,11 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint dwVideoStreamID;
 
-        [NativeTypeName("IMFMediaType *")]
         public IMFMediaType* pVideoMediaType;
 
         [NativeTypeName("DWORD")]
         public uint dwAudioStreamID;
 
-        [NativeTypeName("IMFMediaType *")]
         public IMFMediaType* pAudioMediaType;
     }
 }

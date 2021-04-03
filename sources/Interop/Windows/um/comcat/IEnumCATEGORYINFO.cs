@@ -17,7 +17,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
+        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IEnumCATEGORYINFO*, Guid*, void**, int>)(lpVtbl[0]))((IEnumCATEGORYINFO*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -38,7 +38,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int Next([NativeTypeName("ULONG")] uint celt, [NativeTypeName("CATEGORYINFO *")] CATEGORYINFO* rgelt, [NativeTypeName("ULONG *")] uint* pceltFetched)
+        public int Next([NativeTypeName("ULONG")] uint celt, CATEGORYINFO* rgelt, [NativeTypeName("ULONG *")] uint* pceltFetched)
         {
             return ((delegate* unmanaged<IEnumCATEGORYINFO*, uint, CATEGORYINFO*, uint*, int>)(lpVtbl[3]))((IEnumCATEGORYINFO*)Unsafe.AsPointer(ref this), celt, rgelt, pceltFetched);
         }
@@ -59,7 +59,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int Clone([NativeTypeName("IEnumCATEGORYINFO **")] IEnumCATEGORYINFO** ppenum)
+        public int Clone(IEnumCATEGORYINFO** ppenum)
         {
             return ((delegate* unmanaged<IEnumCATEGORYINFO*, IEnumCATEGORYINFO**, int>)(lpVtbl[6]))((IEnumCATEGORYINFO*)Unsafe.AsPointer(ref this), ppenum);
         }

@@ -12,14 +12,14 @@ namespace TerraFX.Interop
     {
         [DllImport("shcore", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int CreateRandomAccessStreamOnFile([NativeTypeName("PCWSTR")] ushort* filePath, [NativeTypeName("DWORD")] uint accessMode, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppv);
+        public static extern int CreateRandomAccessStreamOnFile([NativeTypeName("PCWSTR")] ushort* filePath, [NativeTypeName("DWORD")] uint accessMode, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
 
         [DllImport("shcore", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int CreateRandomAccessStreamOverStream([NativeTypeName("IStream *")] IStream* stream, BSOS_OPTIONS options, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppv);
+        public static extern int CreateRandomAccessStreamOverStream(IStream* stream, BSOS_OPTIONS options, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
 
         [DllImport("shcore", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int CreateStreamOverRandomAccessStream([NativeTypeName("IUnknown *")] IUnknown* randomAccessStream, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppv);
+        public static extern int CreateStreamOverRandomAccessStream(IUnknown* randomAccessStream, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
     }
 }

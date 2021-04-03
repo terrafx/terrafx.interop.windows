@@ -76,15 +76,15 @@ namespace TerraFX.Interop
 
         [DllImport("ddraw", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int DirectDrawCreate([NativeTypeName("GUID *")] Guid* lpGUID, [NativeTypeName("LPDIRECTDRAW *")] IDirectDraw** lplpDD, [NativeTypeName("IUnknown *")] IUnknown* pUnkOuter);
+        public static extern int DirectDrawCreate([NativeTypeName("GUID *")] Guid* lpGUID, [NativeTypeName("LPDIRECTDRAW *")] IDirectDraw** lplpDD, IUnknown* pUnkOuter);
 
         [DllImport("ddraw", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int DirectDrawCreateEx([NativeTypeName("GUID *")] Guid* lpGuid, [NativeTypeName("LPVOID *")] void** lplpDD, [NativeTypeName("const IID &")] Guid* iid, [NativeTypeName("IUnknown *")] IUnknown* pUnkOuter);
+        public static extern int DirectDrawCreateEx([NativeTypeName("GUID *")] Guid* lpGuid, [NativeTypeName("LPVOID *")] void** lplpDD, [NativeTypeName("const IID &")] Guid* iid, IUnknown* pUnkOuter);
 
         [DllImport("ddraw", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int DirectDrawCreateClipper([NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LPDIRECTDRAWCLIPPER *")] IDirectDrawClipper** lplpDDClipper, [NativeTypeName("IUnknown *")] IUnknown* pUnkOuter);
+        public static extern int DirectDrawCreateClipper([NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LPDIRECTDRAWCLIPPER *")] IDirectDrawClipper** lplpDDClipper, IUnknown* pUnkOuter);
 
         [NativeTypeName("#define DIRECTDRAW_VERSION 0x0700")]
         public const int DIRECTDRAW_VERSION = 0x0700;

@@ -15,6 +15,8 @@ namespace TerraFX.Interop
         [NativeTypeName("D3D12_ROOT_PARAMETER1::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/d3d12.h:3559:5)")]
         public _Anonymous_e__Union Anonymous;
 
+        public D3D12_SHADER_VISIBILITY ShaderVisibility;
+
         public ref D3D12_ROOT_DESCRIPTOR_TABLE1 DescriptorTable
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -41,8 +43,6 @@ namespace TerraFX.Interop
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Descriptor, 1));
             }
         }
-
-        public D3D12_SHADER_VISIBILITY ShaderVisibility;
 
         [StructLayout(LayoutKind.Explicit)]
         public partial struct _Anonymous_e__Union

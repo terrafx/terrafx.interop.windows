@@ -18,7 +18,6 @@ namespace TerraFX.Interop
 
         public CRYPT_ALGORITHM_IDENTIFIER ContentEncryptionAlgorithm;
 
-        [NativeTypeName("void *")]
         public void* pvEncryptionAuxInfo;
 
         [NativeTypeName("DWORD")]
@@ -38,6 +37,21 @@ namespace TerraFX.Interop
 
         [NativeTypeName("_CMSG_CONTENT_ENCRYPT_INFO::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/wincrypt.h:8442:5)")]
         public _Anonymous_e__Union Anonymous;
+
+        [NativeTypeName("DWORD")]
+        public uint dwFlags;
+
+        [NativeTypeName("BOOL")]
+        public int fCNG;
+
+        [NativeTypeName("BYTE *")]
+        public byte* pbCNGContentEncryptKeyObject;
+
+        [NativeTypeName("BYTE *")]
+        public byte* pbContentEncryptKey;
+
+        [NativeTypeName("DWORD")]
+        public uint cbContentEncryptKey;
 
         public ref nuint hContentEncryptKey
         {
@@ -59,21 +73,6 @@ namespace TerraFX.Interop
                 }
             }
         }
-
-        [NativeTypeName("DWORD")]
-        public uint dwFlags;
-
-        [NativeTypeName("BOOL")]
-        public int fCNG;
-
-        [NativeTypeName("BYTE *")]
-        public byte* pbCNGContentEncryptKeyObject;
-
-        [NativeTypeName("BYTE *")]
-        public byte* pbContentEncryptKey;
-
-        [NativeTypeName("DWORD")]
-        public uint cbContentEncryptKey;
 
         [StructLayout(LayoutKind.Explicit)]
         public unsafe partial struct _Anonymous_e__Union

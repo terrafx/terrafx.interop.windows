@@ -17,7 +17,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
+        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<ITfContextOwnerCompositionServices*, Guid*, void**, int>)(lpVtbl[0]))((ITfContextOwnerCompositionServices*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -38,35 +38,35 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int StartComposition([NativeTypeName("TfEditCookie")] uint ecWrite, [NativeTypeName("ITfRange *")] ITfRange* pCompositionRange, [NativeTypeName("ITfCompositionSink *")] ITfCompositionSink* pSink, [NativeTypeName("ITfComposition **")] ITfComposition** ppComposition)
+        public int StartComposition([NativeTypeName("TfEditCookie")] uint ecWrite, ITfRange* pCompositionRange, ITfCompositionSink* pSink, ITfComposition** ppComposition)
         {
             return ((delegate* unmanaged<ITfContextOwnerCompositionServices*, uint, ITfRange*, ITfCompositionSink*, ITfComposition**, int>)(lpVtbl[3]))((ITfContextOwnerCompositionServices*)Unsafe.AsPointer(ref this), ecWrite, pCompositionRange, pSink, ppComposition);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int EnumCompositions([NativeTypeName("IEnumITfCompositionView **")] IEnumITfCompositionView** ppEnum)
+        public int EnumCompositions(IEnumITfCompositionView** ppEnum)
         {
             return ((delegate* unmanaged<ITfContextOwnerCompositionServices*, IEnumITfCompositionView**, int>)(lpVtbl[4]))((ITfContextOwnerCompositionServices*)Unsafe.AsPointer(ref this), ppEnum);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int FindComposition([NativeTypeName("TfEditCookie")] uint ecRead, [NativeTypeName("ITfRange *")] ITfRange* pTestRange, [NativeTypeName("IEnumITfCompositionView **")] IEnumITfCompositionView** ppEnum)
+        public int FindComposition([NativeTypeName("TfEditCookie")] uint ecRead, ITfRange* pTestRange, IEnumITfCompositionView** ppEnum)
         {
             return ((delegate* unmanaged<ITfContextOwnerCompositionServices*, uint, ITfRange*, IEnumITfCompositionView**, int>)(lpVtbl[5]))((ITfContextOwnerCompositionServices*)Unsafe.AsPointer(ref this), ecRead, pTestRange, ppEnum);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int TakeOwnership([NativeTypeName("TfEditCookie")] uint ecWrite, [NativeTypeName("ITfCompositionView *")] ITfCompositionView* pComposition, [NativeTypeName("ITfCompositionSink *")] ITfCompositionSink* pSink, [NativeTypeName("ITfComposition **")] ITfComposition** ppComposition)
+        public int TakeOwnership([NativeTypeName("TfEditCookie")] uint ecWrite, ITfCompositionView* pComposition, ITfCompositionSink* pSink, ITfComposition** ppComposition)
         {
             return ((delegate* unmanaged<ITfContextOwnerCompositionServices*, uint, ITfCompositionView*, ITfCompositionSink*, ITfComposition**, int>)(lpVtbl[6]))((ITfContextOwnerCompositionServices*)Unsafe.AsPointer(ref this), ecWrite, pComposition, pSink, ppComposition);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int TerminateComposition([NativeTypeName("ITfCompositionView *")] ITfCompositionView* pComposition)
+        public int TerminateComposition(ITfCompositionView* pComposition)
         {
             return ((delegate* unmanaged<ITfContextOwnerCompositionServices*, ITfCompositionView*, int>)(lpVtbl[7]))((ITfContextOwnerCompositionServices*)Unsafe.AsPointer(ref this), pComposition);
         }

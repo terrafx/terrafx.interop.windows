@@ -13,13 +13,11 @@ namespace TerraFX.Interop
         [NativeTypeName("PFN_CRYPT_FREE")]
         public delegate* unmanaged<void*, void> pfnFree;
 
-        [NativeTypeName("void *")]
         public void* pvFree;
 
         [NativeTypeName("PFN_CERT_CREATE_CONTEXT_SORT_FUNC")]
         public delegate* unmanaged<uint, uint, uint, void*, int> pfnSort;
 
-        [NativeTypeName("void *")]
         public void* pvSort;
     }
 }

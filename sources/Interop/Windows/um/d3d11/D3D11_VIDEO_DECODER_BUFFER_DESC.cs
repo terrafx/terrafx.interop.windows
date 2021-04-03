@@ -36,7 +36,6 @@ namespace TerraFX.Interop
         [NativeTypeName("UINT")]
         public uint ReservedBits;
 
-        [NativeTypeName("void *")]
         public void* pIV;
 
         [NativeTypeName("UINT")]

@@ -10,7 +10,6 @@ namespace TerraFX.Interop
         [NativeTypeName("SIZE_T")]
         public nuint SizeInBytes;
 
-        [NativeTypeName("void *")]
         public void* pPipelineStateSubobjectStream;
     }
 }

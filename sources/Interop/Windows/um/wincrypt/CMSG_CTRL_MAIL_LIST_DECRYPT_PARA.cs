@@ -57,7 +57,6 @@ namespace TerraFX.Interop
             public nuint hKeyEncryptionKey;
 
             [FieldOffset(0)]
-            [NativeTypeName("void *")]
             public void* pvKeyEncryptionKey;
         }
     }

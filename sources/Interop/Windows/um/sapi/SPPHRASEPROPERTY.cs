@@ -16,6 +16,28 @@ namespace TerraFX.Interop
         [NativeTypeName("SPPHRASEPROPERTY::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/sapi.h:5475:5)")]
         public _Anonymous_e__Union Anonymous;
 
+        [NativeTypeName("LPCWSTR")]
+        public ushort* pszValue;
+
+        public VARIANT vValue;
+
+        [NativeTypeName("ULONG")]
+        public uint ulFirstElement;
+
+        [NativeTypeName("ULONG")]
+        public uint ulCountOfElements;
+
+        [NativeTypeName("const SPPHRASEPROPERTY *")]
+        public SPPHRASEPROPERTY* pNextSibling;
+
+        [NativeTypeName("const SPPHRASEPROPERTY *")]
+        public SPPHRASEPROPERTY* pFirstChild;
+
+        public float SREngineConfidence;
+
+        [NativeTypeName("signed char")]
+        public sbyte Confidence;
+
         public ref uint ulId
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -51,28 +73,6 @@ namespace TerraFX.Interop
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.usArrayIndex, 1));
             }
         }
-
-        [NativeTypeName("LPCWSTR")]
-        public ushort* pszValue;
-
-        public VARIANT vValue;
-
-        [NativeTypeName("ULONG")]
-        public uint ulFirstElement;
-
-        [NativeTypeName("ULONG")]
-        public uint ulCountOfElements;
-
-        [NativeTypeName("const SPPHRASEPROPERTY *")]
-        public SPPHRASEPROPERTY* pNextSibling;
-
-        [NativeTypeName("const SPPHRASEPROPERTY *")]
-        public SPPHRASEPROPERTY* pFirstChild;
-
-        public float SREngineConfidence;
-
-        [NativeTypeName("signed char")]
-        public sbyte Confidence;
 
         [StructLayout(LayoutKind.Explicit)]
         public partial struct _Anonymous_e__Union

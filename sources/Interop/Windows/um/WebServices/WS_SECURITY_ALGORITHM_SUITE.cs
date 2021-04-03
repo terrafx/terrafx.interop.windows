@@ -35,7 +35,6 @@ namespace TerraFX.Interop
         [NativeTypeName("ULONG")]
         public uint maxAsymmetricKeyLength;
 
-        [NativeTypeName("WS_SECURITY_ALGORITHM_PROPERTY *")]
         public WS_SECURITY_ALGORITHM_PROPERTY* properties;
 
         [NativeTypeName("ULONG")]

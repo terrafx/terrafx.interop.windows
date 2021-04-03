@@ -17,7 +17,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
+        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<ICoCreateLocally*, Guid*, void**, int>)(lpVtbl[0]))((ICoCreateLocally*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -38,7 +38,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int CoCreateLocally([NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("DWORD")] uint dwClsContext, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("IUnknown **")] IUnknown** punk, [NativeTypeName("const IID &")] Guid* riidParam, [NativeTypeName("IUnknown *")] IUnknown* punkParam, VARIANT varParam)
+        public int CoCreateLocally([NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("DWORD")] uint dwClsContext, [NativeTypeName("const IID &")] Guid* riid, IUnknown** punk, [NativeTypeName("const IID &")] Guid* riidParam, IUnknown* punkParam, VARIANT varParam)
         {
             return ((delegate* unmanaged<ICoCreateLocally*, Guid*, uint, Guid*, IUnknown**, Guid*, IUnknown*, VARIANT, int>)(lpVtbl[3]))((ICoCreateLocally*)Unsafe.AsPointer(ref this), rclsid, dwClsContext, riid, punk, riidParam, punkParam, varParam);
         }

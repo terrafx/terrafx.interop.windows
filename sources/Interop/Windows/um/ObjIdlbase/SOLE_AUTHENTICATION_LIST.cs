@@ -10,7 +10,6 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint cAuthInfo;
 
-        [NativeTypeName("SOLE_AUTHENTICATION_INFO *")]
         public SOLE_AUTHENTICATION_INFO* aAuthInfo;
     }
 }

@@ -15,6 +15,10 @@ namespace TerraFX.Interop
         [NativeTypeName("_timecode::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/strmif.h:13483:4)")]
         public _Anonymous_e__Struct Anonymous;
 
+        [FieldOffset(0)]
+        [NativeTypeName("DWORDLONG")]
+        public ulong qw;
+
         public ref ushort wFrameRate
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -41,10 +45,6 @@ namespace TerraFX.Interop
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.dwFrames, 1));
             }
         }
-
-        [FieldOffset(0)]
-        [NativeTypeName("DWORDLONG")]
-        public ulong qw;
 
         public partial struct _Anonymous_e__Struct
         {

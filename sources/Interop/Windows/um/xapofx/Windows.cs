@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     {
         [DllImport("Windows.Media.Audio.dll", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int CreateFX([NativeTypeName("const IID &")] Guid* clsid, [NativeTypeName("IUnknown **")] IUnknown** pEffect, [NativeTypeName("const void *")] void* pInitDat = null, [NativeTypeName("UINT32")] uint InitDataByteSize = 0);
+        public static extern int CreateFX([NativeTypeName("const IID &")] Guid* clsid, IUnknown** pEffect, [NativeTypeName("const void *")] void* pInitDat = null, [NativeTypeName("UINT32")] uint InitDataByteSize = 0);
 
         [NativeTypeName("#define FXEQ_MIN_FRAMERATE 22000")]
         public const int FXEQ_MIN_FRAMERATE = 22000;

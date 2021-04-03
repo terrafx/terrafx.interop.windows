@@ -27,6 +27,15 @@ namespace TerraFX.Interop
         [NativeTypeName("_CMSG_KEY_AGREE_ENCRYPT_INFO::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/wincrypt.h:8615:5)")]
         public _Anonymous_e__Union Anonymous;
 
+        [NativeTypeName("DWORD")]
+        public uint cKeyAgreeKeyEncryptInfo;
+
+        [NativeTypeName("PCMSG_KEY_AGREE_KEY_ENCRYPT_INFO *")]
+        public CMSG_KEY_AGREE_KEY_ENCRYPT_INFO** rgpKeyAgreeKeyEncryptInfo;
+
+        [NativeTypeName("DWORD")]
+        public uint dwFlags;
+
         public ref CERT_ID OriginatorCertId
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -44,15 +53,6 @@ namespace TerraFX.Interop
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.OriginatorPublicKeyInfo, 1));
             }
         }
-
-        [NativeTypeName("DWORD")]
-        public uint cKeyAgreeKeyEncryptInfo;
-
-        [NativeTypeName("PCMSG_KEY_AGREE_KEY_ENCRYPT_INFO *")]
-        public CMSG_KEY_AGREE_KEY_ENCRYPT_INFO** rgpKeyAgreeKeyEncryptInfo;
-
-        [NativeTypeName("DWORD")]
-        public uint dwFlags;
 
         [StructLayout(LayoutKind.Explicit)]
         public partial struct _Anonymous_e__Union

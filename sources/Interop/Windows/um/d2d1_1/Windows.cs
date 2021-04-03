@@ -12,11 +12,11 @@ namespace TerraFX.Interop
     {
         [DllImport("d2d1", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int D2D1CreateDevice([NativeTypeName("IDXGIDevice *")] IDXGIDevice* dxgiDevice, [NativeTypeName("const D2D1_CREATION_PROPERTIES *")] D2D1_CREATION_PROPERTIES* creationProperties, [NativeTypeName("ID2D1Device **")] ID2D1Device** d2dDevice);
+        public static extern int D2D1CreateDevice(IDXGIDevice* dxgiDevice, [NativeTypeName("const D2D1_CREATION_PROPERTIES *")] D2D1_CREATION_PROPERTIES* creationProperties, ID2D1Device** d2dDevice);
 
         [DllImport("d2d1", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int D2D1CreateDeviceContext([NativeTypeName("IDXGISurface *")] IDXGISurface* dxgiSurface, [NativeTypeName("const D2D1_CREATION_PROPERTIES *")] D2D1_CREATION_PROPERTIES* creationProperties, [NativeTypeName("ID2D1DeviceContext **")] ID2D1DeviceContext** d2dDeviceContext);
+        public static extern int D2D1CreateDeviceContext(IDXGISurface* dxgiSurface, [NativeTypeName("const D2D1_CREATION_PROPERTIES *")] D2D1_CREATION_PROPERTIES* creationProperties, ID2D1DeviceContext** d2dDeviceContext);
 
         [DllImport("d2d1", ExactSpelling = true)]
         [return: NativeTypeName("D2D1_COLOR_F")]

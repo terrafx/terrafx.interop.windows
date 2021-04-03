@@ -15,12 +15,10 @@ namespace TerraFX.Interop
 
         public CRYPT_ALGORITHM_IDENTIFIER KeyEncryptionAlgorithm;
 
-        [NativeTypeName("void *")]
         public void* pvKeyEncryptionAuxInfo;
 
         public CRYPT_ALGORITHM_IDENTIFIER KeyWrapAlgorithm;
 
-        [NativeTypeName("void *")]
         public void* pvKeyWrapAuxInfo;
 
         [NativeTypeName("HCRYPTPROV_LEGACY")]
@@ -34,6 +32,15 @@ namespace TerraFX.Interop
 
         [NativeTypeName("_CMSG_KEY_AGREE_RECIPIENT_ENCODE_INFO::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/wincrypt.h:6946:5)")]
         public _Anonymous_e__Union Anonymous;
+
+        [NativeTypeName("CRYPT_DATA_BLOB")]
+        public CRYPTOAPI_BLOB UserKeyingMaterial;
+
+        [NativeTypeName("DWORD")]
+        public uint cRecipientEncryptedKeys;
+
+        [NativeTypeName("PCMSG_RECIPIENT_ENCRYPTED_KEY_ENCODE_INFO *")]
+        public CMSG_RECIPIENT_ENCRYPTED_KEY_ENCODE_INFO** rgpRecipientEncryptedKeys;
 
         public ref CRYPT_ALGORITHM_IDENTIFIER* pEphemeralAlgorithm
         {
@@ -58,15 +65,6 @@ namespace TerraFX.Interop
                 }
             }
         }
-
-        [NativeTypeName("CRYPT_DATA_BLOB")]
-        public CRYPTOAPI_BLOB UserKeyingMaterial;
-
-        [NativeTypeName("DWORD")]
-        public uint cRecipientEncryptedKeys;
-
-        [NativeTypeName("PCMSG_RECIPIENT_ENCRYPTED_KEY_ENCODE_INFO *")]
-        public CMSG_RECIPIENT_ENCRYPTED_KEY_ENCODE_INFO** rgpRecipientEncryptedKeys;
 
         [StructLayout(LayoutKind.Explicit)]
         public unsafe partial struct _Anonymous_e__Union

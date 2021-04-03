@@ -12,7 +12,6 @@ namespace TerraFX.Interop
 
         public CRYPT_ALGORITHM_IDENTIFIER ContentEncryptionAlgorithm;
 
-        [NativeTypeName("void *")]
         public void* pvEncryptionAuxInfo;
     }
 }

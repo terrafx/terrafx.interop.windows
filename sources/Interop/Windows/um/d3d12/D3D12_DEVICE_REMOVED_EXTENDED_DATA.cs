@@ -9,7 +9,6 @@ namespace TerraFX.Interop
     {
         public D3D12_DRED_FLAGS Flags;
 
-        [NativeTypeName("D3D12_AUTO_BREADCRUMB_NODE *")]
         public D3D12_AUTO_BREADCRUMB_NODE* pHeadAutoBreadcrumbNode;
     }
 }

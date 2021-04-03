@@ -7,19 +7,14 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct WS_ASYNC_STATE
     {
-        [NativeTypeName("void *")]
         public void* internal0;
 
-        [NativeTypeName("void *")]
         public void* internal1;
 
-        [NativeTypeName("void *")]
         public void* internal2;
 
-        [NativeTypeName("void *")]
         public void* internal3;
 
-        [NativeTypeName("void *")]
         public void* internal4;
     }
 }

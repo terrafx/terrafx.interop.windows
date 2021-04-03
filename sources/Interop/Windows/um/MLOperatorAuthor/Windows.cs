@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     {
         [DllImport("Windows.AI.MachineLearning.dll", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int MLCreateOperatorRegistry([NativeTypeName("IMLOperatorRegistry **")] IMLOperatorRegistry** registry);
+        public static extern int MLCreateOperatorRegistry(IMLOperatorRegistry** registry);
 
         public static readonly Guid IID_IMLOperatorAttributes = new Guid(0x4B1B1759, 0xEC40, 0x466C, 0xAA, 0xB4, 0xBE, 0xB5, 0x34, 0x7F, 0xD2, 0x4C);
 

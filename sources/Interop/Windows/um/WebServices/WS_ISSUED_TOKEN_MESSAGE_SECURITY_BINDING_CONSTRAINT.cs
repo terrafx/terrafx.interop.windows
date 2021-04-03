@@ -13,13 +13,11 @@ namespace TerraFX.Interop
 
         public WS_MESSAGE_SECURITY_USAGE bindingUsage;
 
-        [NativeTypeName("WS_XML_STRING *")]
         public WS_XML_STRING* claimConstraints;
 
         [NativeTypeName("ULONG")]
         public uint claimConstraintCount;
 
-        [NativeTypeName("WS_REQUEST_SECURITY_TOKEN_PROPERTY_CONSTRAINT *")]
         public WS_REQUEST_SECURITY_TOKEN_PROPERTY_CONSTRAINT* requestSecurityTokenPropertyConstraints;
 
         [NativeTypeName("ULONG")]
@@ -30,7 +28,6 @@ namespace TerraFX.Interop
 
         public unsafe partial struct _out_e__Struct
         {
-            [NativeTypeName("WS_ENDPOINT_ADDRESS *")]
             public WS_ENDPOINT_ADDRESS* issuerAddress;
 
             [NativeTypeName("WS_XML_BUFFER *")]

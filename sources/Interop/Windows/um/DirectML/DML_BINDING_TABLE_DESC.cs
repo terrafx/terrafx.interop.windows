@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct DML_BINDING_TABLE_DESC
     {
-        [NativeTypeName("IDMLDispatchable *")]
         public IDMLDispatchable* Dispatchable;
 
         public D3D12_CPU_DESCRIPTOR_HANDLE CPUDescriptorHandle;

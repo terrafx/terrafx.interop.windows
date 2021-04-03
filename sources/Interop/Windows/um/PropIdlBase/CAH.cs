@@ -10,7 +10,6 @@ namespace TerraFX.Interop
         [NativeTypeName("ULONG")]
         public uint cElems;
 
-        [NativeTypeName("LARGE_INTEGER *")]
         public LARGE_INTEGER* pElems;
     }
 }

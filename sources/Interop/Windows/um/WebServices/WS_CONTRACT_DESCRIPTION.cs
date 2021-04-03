@@ -10,7 +10,6 @@ namespace TerraFX.Interop
         [NativeTypeName("ULONG")]
         public uint operationCount;
 
-        [NativeTypeName("WS_OPERATION_DESCRIPTION **")]
         public WS_OPERATION_DESCRIPTION** operations;
     }
 }

@@ -13,7 +13,6 @@ namespace TerraFX.Interop
         [NativeTypeName("LPCWSTR")]
         public ushort* pcwszDisplayName;
 
-        [NativeTypeName("CERT_CONTEXT *")]
         public CERT_CONTEXT* psCertContext;
 
         [NativeTypeName("DWORD")]
@@ -25,7 +24,6 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint dwFlags;
 
-        [NativeTypeName("FILETIME *")]
         public FILETIME* psftVerifyAsOf;
     }
 }

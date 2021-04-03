@@ -12,10 +12,8 @@ namespace TerraFX.Interop
         [NativeTypeName("MediaEventType")]
         public uint MFEventType;
 
-        [NativeTypeName("IMFMediaEvent *")]
         public IMFMediaEvent* pMFMediaEvent;
 
-        [NativeTypeName("IMFPMediaItem *")]
         public IMFPMediaItem* pMediaItem;
     }
 }

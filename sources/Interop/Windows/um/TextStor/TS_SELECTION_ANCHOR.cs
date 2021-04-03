@@ -7,10 +7,8 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct TS_SELECTION_ANCHOR
     {
-        [NativeTypeName("IAnchor *")]
         public IAnchor* paStart;
 
-        [NativeTypeName("IAnchor *")]
         public IAnchor* paEnd;
 
         public TS_SELECTIONSTYLE style;

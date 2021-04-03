@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct D3D10_PASS_SHADER_DESC
     {
-        [NativeTypeName("ID3D10EffectShaderVariable *")]
         public ID3D10EffectShaderVariable* pShaderVariable;
 
         [NativeTypeName("UINT")]

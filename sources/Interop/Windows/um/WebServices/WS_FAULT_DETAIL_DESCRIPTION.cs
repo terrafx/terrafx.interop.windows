@@ -7,10 +7,8 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct WS_FAULT_DETAIL_DESCRIPTION
     {
-        [NativeTypeName("WS_XML_STRING *")]
         public WS_XML_STRING* action;
 
-        [NativeTypeName("WS_ELEMENT_DESCRIPTION *")]
         public WS_ELEMENT_DESCRIPTION* detailElementDescription;
     }
 }

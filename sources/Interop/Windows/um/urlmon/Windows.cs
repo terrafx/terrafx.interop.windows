@@ -28,27 +28,27 @@ namespace TerraFX.Interop
 
         [DllImport("urlmon", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int CreateAsyncBindCtx([NativeTypeName("DWORD")] uint reserved, [NativeTypeName("IBindStatusCallback *")] IBindStatusCallback* pBSCb, [NativeTypeName("IEnumFORMATETC *")] IEnumFORMATETC* pEFetc, [NativeTypeName("IBindCtx **")] IBindCtx** ppBC);
+        public static extern int CreateAsyncBindCtx([NativeTypeName("DWORD")] uint reserved, IBindStatusCallback* pBSCb, IEnumFORMATETC* pEFetc, IBindCtx** ppBC);
 
         [DllImport("urlmon", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int CreateURLMonikerEx2([NativeTypeName("LPMONIKER")] IMoniker* pMkCtx, [NativeTypeName("IUri *")] IUri* pUri, [NativeTypeName("LPMONIKER *")] IMoniker** ppmk, [NativeTypeName("DWORD")] uint dwFlags);
+        public static extern int CreateURLMonikerEx2([NativeTypeName("LPMONIKER")] IMoniker* pMkCtx, IUri* pUri, [NativeTypeName("LPMONIKER *")] IMoniker** ppmk, [NativeTypeName("DWORD")] uint dwFlags);
 
         [DllImport("urlmon", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int CreateAsyncBindCtxEx([NativeTypeName("IBindCtx *")] IBindCtx* pbc, [NativeTypeName("DWORD")] uint dwOptions, [NativeTypeName("IBindStatusCallback *")] IBindStatusCallback* pBSCb, [NativeTypeName("IEnumFORMATETC *")] IEnumFORMATETC* pEnum, [NativeTypeName("IBindCtx **")] IBindCtx** ppBC, [NativeTypeName("DWORD")] uint reserved);
+        public static extern int CreateAsyncBindCtxEx(IBindCtx* pbc, [NativeTypeName("DWORD")] uint dwOptions, IBindStatusCallback* pBSCb, IEnumFORMATETC* pEnum, IBindCtx** ppBC, [NativeTypeName("DWORD")] uint reserved);
 
         [DllImport("urlmon", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int MkParseDisplayNameEx([NativeTypeName("IBindCtx *")] IBindCtx* pbc, [NativeTypeName("LPCWSTR")] ushort* szDisplayName, [NativeTypeName("ULONG *")] uint* pchEaten, [NativeTypeName("LPMONIKER *")] IMoniker** ppmk);
+        public static extern int MkParseDisplayNameEx(IBindCtx* pbc, [NativeTypeName("LPCWSTR")] ushort* szDisplayName, [NativeTypeName("ULONG *")] uint* pchEaten, [NativeTypeName("LPMONIKER *")] IMoniker** ppmk);
 
         [DllImport("urlmon", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int RegisterBindStatusCallback([NativeTypeName("LPBC")] IBindCtx* pBC, [NativeTypeName("IBindStatusCallback *")] IBindStatusCallback* pBSCb, [NativeTypeName("IBindStatusCallback **")] IBindStatusCallback** ppBSCBPrev, [NativeTypeName("DWORD")] uint dwReserved);
+        public static extern int RegisterBindStatusCallback([NativeTypeName("LPBC")] IBindCtx* pBC, IBindStatusCallback* pBSCb, IBindStatusCallback** ppBSCBPrev, [NativeTypeName("DWORD")] uint dwReserved);
 
         [DllImport("urlmon", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int RevokeBindStatusCallback([NativeTypeName("LPBC")] IBindCtx* pBC, [NativeTypeName("IBindStatusCallback *")] IBindStatusCallback* pBSCb);
+        public static extern int RevokeBindStatusCallback([NativeTypeName("LPBC")] IBindCtx* pBC, IBindStatusCallback* pBSCb);
 
         [DllImport("urlmon", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
@@ -68,19 +68,19 @@ namespace TerraFX.Interop
 
         [DllImport("urlmon", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int FaultInIEFeature([NativeTypeName("HWND")] IntPtr hWnd, [NativeTypeName("uCLSSPEC *")] uCLSSPEC* pClassSpec, [NativeTypeName("QUERYCONTEXT *")] QUERYCONTEXT* pQuery, [NativeTypeName("DWORD")] uint dwFlags);
+        public static extern int FaultInIEFeature([NativeTypeName("HWND")] IntPtr hWnd, uCLSSPEC* pClassSpec, QUERYCONTEXT* pQuery, [NativeTypeName("DWORD")] uint dwFlags);
 
         [DllImport("urlmon", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int GetComponentIDFromCLSSPEC([NativeTypeName("uCLSSPEC *")] uCLSSPEC* pClassspec, [NativeTypeName("LPSTR *")] sbyte** ppszComponentID);
+        public static extern int GetComponentIDFromCLSSPEC(uCLSSPEC* pClassspec, [NativeTypeName("LPSTR *")] sbyte** ppszComponentID);
 
         [DllImport("urlmon", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int IsAsyncMoniker([NativeTypeName("IMoniker *")] IMoniker* pmk);
+        public static extern int IsAsyncMoniker(IMoniker* pmk);
 
         [DllImport("urlmon", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int CreateURLBinding([NativeTypeName("LPCWSTR")] ushort* lpszUrl, [NativeTypeName("IBindCtx *")] IBindCtx* pbc, [NativeTypeName("IBinding **")] IBinding** ppBdg);
+        public static extern int CreateURLBinding([NativeTypeName("LPCWSTR")] ushort* lpszUrl, IBindCtx* pbc, IBinding** ppBdg);
 
         [DllImport("urlmon", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
@@ -92,15 +92,15 @@ namespace TerraFX.Interop
 
         [DllImport("urlmon", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int CreateFormatEnumerator([NativeTypeName("UINT")] uint cfmtetc, [NativeTypeName("FORMATETC *")] FORMATETC* rgfmtetc, [NativeTypeName("IEnumFORMATETC **")] IEnumFORMATETC** ppenumfmtetc);
+        public static extern int CreateFormatEnumerator([NativeTypeName("UINT")] uint cfmtetc, FORMATETC* rgfmtetc, IEnumFORMATETC** ppenumfmtetc);
 
         [DllImport("urlmon", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int RegisterFormatEnumerator([NativeTypeName("LPBC")] IBindCtx* pBC, [NativeTypeName("IEnumFORMATETC *")] IEnumFORMATETC* pEFetc, [NativeTypeName("DWORD")] uint reserved);
+        public static extern int RegisterFormatEnumerator([NativeTypeName("LPBC")] IBindCtx* pBC, IEnumFORMATETC* pEFetc, [NativeTypeName("DWORD")] uint reserved);
 
         [DllImport("urlmon", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int RevokeFormatEnumerator([NativeTypeName("LPBC")] IBindCtx* pBC, [NativeTypeName("IEnumFORMATETC *")] IEnumFORMATETC* pEFetc);
+        public static extern int RevokeFormatEnumerator([NativeTypeName("LPBC")] IBindCtx* pBC, IEnumFORMATETC* pEFetc);
 
         [DllImport("urlmon", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
@@ -140,27 +140,27 @@ namespace TerraFX.Interop
 
         [DllImport("urlmon", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int CreateUri([NativeTypeName("LPCWSTR")] ushort* pwzURI, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("DWORD_PTR")] nuint dwReserved, [NativeTypeName("IUri **")] IUri** ppURI);
+        public static extern int CreateUri([NativeTypeName("LPCWSTR")] ushort* pwzURI, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("DWORD_PTR")] nuint dwReserved, IUri** ppURI);
 
         [DllImport("urlmon", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int CreateUriWithFragment([NativeTypeName("LPCWSTR")] ushort* pwzURI, [NativeTypeName("LPCWSTR")] ushort* pwzFragment, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("DWORD_PTR")] nuint dwReserved, [NativeTypeName("IUri **")] IUri** ppURI);
+        public static extern int CreateUriWithFragment([NativeTypeName("LPCWSTR")] ushort* pwzURI, [NativeTypeName("LPCWSTR")] ushort* pwzFragment, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("DWORD_PTR")] nuint dwReserved, IUri** ppURI);
 
         [DllImport("urlmon", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int CreateUriFromMultiByteString([NativeTypeName("LPCSTR")] sbyte* pszANSIInputUri, [NativeTypeName("DWORD")] uint dwEncodingFlags, [NativeTypeName("DWORD")] uint dwCodePage, [NativeTypeName("DWORD")] uint dwCreateFlags, [NativeTypeName("DWORD_PTR")] nuint dwReserved, [NativeTypeName("IUri **")] IUri** ppUri);
+        public static extern int CreateUriFromMultiByteString([NativeTypeName("LPCSTR")] sbyte* pszANSIInputUri, [NativeTypeName("DWORD")] uint dwEncodingFlags, [NativeTypeName("DWORD")] uint dwCodePage, [NativeTypeName("DWORD")] uint dwCreateFlags, [NativeTypeName("DWORD_PTR")] nuint dwReserved, IUri** ppUri);
 
         [DllImport("urlmon", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int CreateIUriBuilder([NativeTypeName("IUri *")] IUri* pIUri, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("DWORD_PTR")] nuint dwReserved, [NativeTypeName("IUriBuilder **")] IUriBuilder** ppIUriBuilder);
+        public static extern int CreateIUriBuilder(IUri* pIUri, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("DWORD_PTR")] nuint dwReserved, IUriBuilder** ppIUriBuilder);
 
         [DllImport("urlmon", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int HlinkSimpleNavigateToString([NativeTypeName("LPCWSTR")] ushort* szTarget, [NativeTypeName("LPCWSTR")] ushort* szLocation, [NativeTypeName("LPCWSTR")] ushort* szTargetFrameName, [NativeTypeName("IUnknown *")] IUnknown* pUnk, [NativeTypeName("IBindCtx *")] IBindCtx* pbc, [NativeTypeName("IBindStatusCallback *")] IBindStatusCallback* param5, [NativeTypeName("DWORD")] uint grfHLNF, [NativeTypeName("DWORD")] uint dwReserved);
+        public static extern int HlinkSimpleNavigateToString([NativeTypeName("LPCWSTR")] ushort* szTarget, [NativeTypeName("LPCWSTR")] ushort* szLocation, [NativeTypeName("LPCWSTR")] ushort* szTargetFrameName, IUnknown* pUnk, IBindCtx* pbc, IBindStatusCallback* param5, [NativeTypeName("DWORD")] uint grfHLNF, [NativeTypeName("DWORD")] uint dwReserved);
 
         [DllImport("urlmon", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int HlinkSimpleNavigateToMoniker([NativeTypeName("IMoniker *")] IMoniker* pmkTarget, [NativeTypeName("LPCWSTR")] ushort* szLocation, [NativeTypeName("LPCWSTR")] ushort* szTargetFrameName, [NativeTypeName("IUnknown *")] IUnknown* pUnk, [NativeTypeName("IBindCtx *")] IBindCtx* pbc, [NativeTypeName("IBindStatusCallback *")] IBindStatusCallback* param5, [NativeTypeName("DWORD")] uint grfHLNF, [NativeTypeName("DWORD")] uint dwReserved);
+        public static extern int HlinkSimpleNavigateToMoniker(IMoniker* pmkTarget, [NativeTypeName("LPCWSTR")] ushort* szLocation, [NativeTypeName("LPCWSTR")] ushort* szTargetFrameName, IUnknown* pUnk, IBindCtx* pbc, IBindStatusCallback* param5, [NativeTypeName("DWORD")] uint grfHLNF, [NativeTypeName("DWORD")] uint dwReserved);
 
         [DllImport("urlmon", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
@@ -204,19 +204,19 @@ namespace TerraFX.Interop
 
         [DllImport("urlmon", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int HlinkGoBack([NativeTypeName("IUnknown *")] IUnknown* pUnk);
+        public static extern int HlinkGoBack(IUnknown* pUnk);
 
         [DllImport("urlmon", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int HlinkGoForward([NativeTypeName("IUnknown *")] IUnknown* pUnk);
+        public static extern int HlinkGoForward(IUnknown* pUnk);
 
         [DllImport("urlmon", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int HlinkNavigateString([NativeTypeName("IUnknown *")] IUnknown* pUnk, [NativeTypeName("LPCWSTR")] ushort* szTarget);
+        public static extern int HlinkNavigateString(IUnknown* pUnk, [NativeTypeName("LPCWSTR")] ushort* szTarget);
 
         [DllImport("urlmon", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int HlinkNavigateMoniker([NativeTypeName("IUnknown *")] IUnknown* pUnk, [NativeTypeName("IMoniker *")] IMoniker* pmkTarget);
+        public static extern int HlinkNavigateMoniker(IUnknown* pUnk, IMoniker* pmkTarget);
 
         [DllImport("urlmon", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
@@ -224,7 +224,7 @@ namespace TerraFX.Interop
 
         [DllImport("urlmon", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int CoInternetParseIUri([NativeTypeName("IUri *")] IUri* pIUri, PARSEACTION ParseAction, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LPWSTR")] ushort* pwzResult, [NativeTypeName("DWORD")] uint cchResult, [NativeTypeName("DWORD *")] uint* pcchResult, [NativeTypeName("DWORD_PTR")] nuint dwReserved);
+        public static extern int CoInternetParseIUri(IUri* pIUri, PARSEACTION ParseAction, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LPWSTR")] ushort* pwzResult, [NativeTypeName("DWORD")] uint cchResult, [NativeTypeName("DWORD *")] uint* pcchResult, [NativeTypeName("DWORD_PTR")] nuint dwReserved);
 
         [DllImport("urlmon", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
@@ -232,11 +232,11 @@ namespace TerraFX.Interop
 
         [DllImport("urlmon", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int CoInternetCombineUrlEx([NativeTypeName("IUri *")] IUri* pBaseUri, [NativeTypeName("LPCWSTR")] ushort* pwzRelativeUrl, [NativeTypeName("DWORD")] uint dwCombineFlags, [NativeTypeName("IUri **")] IUri** ppCombinedUri, [NativeTypeName("DWORD_PTR")] nuint dwReserved);
+        public static extern int CoInternetCombineUrlEx(IUri* pBaseUri, [NativeTypeName("LPCWSTR")] ushort* pwzRelativeUrl, [NativeTypeName("DWORD")] uint dwCombineFlags, IUri** ppCombinedUri, [NativeTypeName("DWORD_PTR")] nuint dwReserved);
 
         [DllImport("urlmon", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int CoInternetCombineIUri([NativeTypeName("IUri *")] IUri* pBaseUri, [NativeTypeName("IUri *")] IUri* pRelativeUri, [NativeTypeName("DWORD")] uint dwCombineFlags, [NativeTypeName("IUri **")] IUri** ppCombinedUri, [NativeTypeName("DWORD_PTR")] nuint dwReserved);
+        public static extern int CoInternetCombineIUri(IUri* pBaseUri, IUri* pRelativeUri, [NativeTypeName("DWORD")] uint dwCombineFlags, IUri** ppCombinedUri, [NativeTypeName("DWORD_PTR")] nuint dwReserved);
 
         [DllImport("urlmon", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
@@ -252,7 +252,7 @@ namespace TerraFX.Interop
 
         [DllImport("urlmon", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int CoInternetGetSession([NativeTypeName("DWORD")] uint dwSessionMode, [NativeTypeName("IInternetSession **")] IInternetSession** ppIInternetSession, [NativeTypeName("DWORD")] uint dwReserved);
+        public static extern int CoInternetGetSession([NativeTypeName("DWORD")] uint dwSessionMode, IInternetSession** ppIInternetSession, [NativeTypeName("DWORD")] uint dwReserved);
 
         [DllImport("urlmon", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
@@ -260,11 +260,11 @@ namespace TerraFX.Interop
 
         [DllImport("urlmon", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int AsyncInstallDistributionUnit([NativeTypeName("LPCWSTR")] ushort* szDistUnit, [NativeTypeName("LPCWSTR")] ushort* szTYPE, [NativeTypeName("LPCWSTR")] ushort* szExt, [NativeTypeName("DWORD")] uint dwFileVersionMS, [NativeTypeName("DWORD")] uint dwFileVersionLS, [NativeTypeName("LPCWSTR")] ushort* szURL, [NativeTypeName("IBindCtx *")] IBindCtx* pbc, [NativeTypeName("LPVOID")] void* pvReserved, [NativeTypeName("DWORD")] uint flags);
+        public static extern int AsyncInstallDistributionUnit([NativeTypeName("LPCWSTR")] ushort* szDistUnit, [NativeTypeName("LPCWSTR")] ushort* szTYPE, [NativeTypeName("LPCWSTR")] ushort* szExt, [NativeTypeName("DWORD")] uint dwFileVersionMS, [NativeTypeName("DWORD")] uint dwFileVersionLS, [NativeTypeName("LPCWSTR")] ushort* szURL, IBindCtx* pbc, [NativeTypeName("LPVOID")] void* pvReserved, [NativeTypeName("DWORD")] uint flags);
 
         [DllImport("urlmon", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int CoInternetGetSecurityUrlEx([NativeTypeName("IUri *")] IUri* pUri, [NativeTypeName("IUri **")] IUri** ppSecUri, PSUACTION psuAction, [NativeTypeName("DWORD_PTR")] nuint dwReserved);
+        public static extern int CoInternetGetSecurityUrlEx(IUri* pUri, IUri** ppSecUri, PSUACTION psuAction, [NativeTypeName("DWORD_PTR")] nuint dwReserved);
 
         [DllImport("urlmon", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
@@ -276,26 +276,26 @@ namespace TerraFX.Interop
 
         [DllImport("urlmon", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int CoInternetIsFeatureEnabledForUrl(INTERNETFEATURELIST FeatureEntry, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LPCWSTR")] ushort* szURL, [NativeTypeName("IInternetSecurityManager *")] IInternetSecurityManager* pSecMgr);
+        public static extern int CoInternetIsFeatureEnabledForUrl(INTERNETFEATURELIST FeatureEntry, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LPCWSTR")] ushort* szURL, IInternetSecurityManager* pSecMgr);
 
         [DllImport("urlmon", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int CoInternetIsFeatureEnabledForIUri(INTERNETFEATURELIST FeatureEntry, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("IUri *")] IUri* pIUri, [NativeTypeName("IInternetSecurityManagerEx2 *")] IInternetSecurityManagerEx2* pSecMgr);
+        public static extern int CoInternetIsFeatureEnabledForIUri(INTERNETFEATURELIST FeatureEntry, [NativeTypeName("DWORD")] uint dwFlags, IUri* pIUri, IInternetSecurityManagerEx2* pSecMgr);
 
         [DllImport("urlmon", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int CoInternetIsFeatureZoneElevationEnabled([NativeTypeName("LPCWSTR")] ushort* szFromURL, [NativeTypeName("LPCWSTR")] ushort* szToURL, [NativeTypeName("IInternetSecurityManager *")] IInternetSecurityManager* pSecMgr, [NativeTypeName("DWORD")] uint dwFlags);
+        public static extern int CoInternetIsFeatureZoneElevationEnabled([NativeTypeName("LPCWSTR")] ushort* szFromURL, [NativeTypeName("LPCWSTR")] ushort* szToURL, IInternetSecurityManager* pSecMgr, [NativeTypeName("DWORD")] uint dwFlags);
 
         [DllImport("urlmon", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int CopyStgMedium([NativeTypeName("const STGMEDIUM *")] STGMEDIUM* pcstgmedSrc, [NativeTypeName("STGMEDIUM *")] STGMEDIUM* pstgmedDest);
+        public static extern int CopyStgMedium([NativeTypeName("const STGMEDIUM *")] STGMEDIUM* pcstgmedSrc, STGMEDIUM* pstgmedDest);
 
         [DllImport("urlmon", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int CopyBindInfo([NativeTypeName("const BINDINFO *")] BINDINFO* pcbiSrc, [NativeTypeName("BINDINFO *")] BINDINFO* pbiDest);
+        public static extern int CopyBindInfo([NativeTypeName("const BINDINFO *")] BINDINFO* pcbiSrc, BINDINFO* pbiDest);
 
         [DllImport("urlmon", ExactSpelling = true)]
-        public static extern void ReleaseBindInfo([NativeTypeName("BINDINFO *")] BINDINFO* pbindinfo);
+        public static extern void ReleaseBindInfo(BINDINFO* pbindinfo);
 
         [DllImport("urlmon", ExactSpelling = true)]
         [return: NativeTypeName("PWSTR")]
@@ -303,11 +303,11 @@ namespace TerraFX.Interop
 
         [DllImport("urlmon", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int CoInternetCreateSecurityManager([NativeTypeName("IServiceProvider *")] IServiceProvider* pSP, [NativeTypeName("IInternetSecurityManager **")] IInternetSecurityManager** ppSM, [NativeTypeName("DWORD")] uint dwReserved);
+        public static extern int CoInternetCreateSecurityManager(IServiceProvider* pSP, IInternetSecurityManager** ppSM, [NativeTypeName("DWORD")] uint dwReserved);
 
         [DllImport("urlmon", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int CoInternetCreateZoneManager([NativeTypeName("IServiceProvider *")] IServiceProvider* pSP, [NativeTypeName("IInternetZoneManager **")] IInternetZoneManager** ppZM, [NativeTypeName("DWORD")] uint dwReserved);
+        public static extern int CoInternetCreateZoneManager(IServiceProvider* pSP, IInternetZoneManager** ppZM, [NativeTypeName("DWORD")] uint dwReserved);
 
         [DllImport("urlmon", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]

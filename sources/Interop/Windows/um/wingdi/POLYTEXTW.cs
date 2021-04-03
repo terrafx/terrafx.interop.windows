@@ -22,7 +22,6 @@ namespace TerraFX.Interop
 
         public RECT rcl;
 
-        [NativeTypeName("int *")]
         public int* pdx;
     }
 }

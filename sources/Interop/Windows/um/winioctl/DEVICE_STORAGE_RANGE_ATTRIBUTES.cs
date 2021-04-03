@@ -16,6 +16,9 @@ namespace TerraFX.Interop
         [NativeTypeName("_DEVICE_STORAGE_RANGE_ATTRIBUTES::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winioctl.h:4326:5)")]
         public _Anonymous_e__Union Anonymous;
 
+        [NativeTypeName("DWORD")]
+        public uint Reserved;
+
         public ref uint AllFlags
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -39,9 +42,6 @@ namespace TerraFX.Interop
                 Anonymous.Anonymous.IsRangeBad = value;
             }
         }
-
-        [NativeTypeName("DWORD")]
-        public uint Reserved;
 
         [StructLayout(LayoutKind.Explicit)]
         public partial struct _Anonymous_e__Union

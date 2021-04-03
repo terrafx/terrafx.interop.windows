@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct WS_ANY_ATTRIBUTES
     {
-        [NativeTypeName("WS_ANY_ATTRIBUTE *")]
         public WS_ANY_ATTRIBUTE* attributes;
 
         [NativeTypeName("ULONG")]

@@ -29,7 +29,6 @@ namespace TerraFX.Interop
         [NativeTypeName("PCWSTR")]
         public ushort* FilePathName;
 
-        [NativeTypeName("PRJ_PLACEHOLDER_VERSION_INFO *")]
         public PRJ_PLACEHOLDER_VERSION_INFO* VersionInfo;
 
         [NativeTypeName("UINT32")]
@@ -38,7 +37,6 @@ namespace TerraFX.Interop
         [NativeTypeName("PCWSTR")]
         public ushort* TriggeringProcessImageFileName;
 
-        [NativeTypeName("void *")]
         public void* InstanceContext;
     }
 }

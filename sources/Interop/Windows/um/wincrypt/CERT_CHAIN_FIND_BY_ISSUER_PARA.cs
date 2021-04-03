@@ -28,7 +28,6 @@ namespace TerraFX.Interop
         [NativeTypeName("PFN_CERT_CHAIN_FIND_BY_ISSUER_CALLBACK")]
         public delegate* unmanaged<CERT_CONTEXT*, void*, int> pfnFindCallback;
 
-        [NativeTypeName("void *")]
         public void* pvFindArg;
     }
 }

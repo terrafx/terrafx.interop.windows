@@ -20,11 +20,11 @@ namespace TerraFX.Interop
 
         [DllImport("ninput", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int RegisterOutputCallbackInteractionContext([NativeTypeName("HINTERACTIONCONTEXT")] IntPtr interactionContext, [NativeTypeName("INTERACTION_CONTEXT_OUTPUT_CALLBACK")] delegate* unmanaged<void*, INTERACTION_CONTEXT_OUTPUT*, void> outputCallback, [NativeTypeName("void *")] void* clientData);
+        public static extern int RegisterOutputCallbackInteractionContext([NativeTypeName("HINTERACTIONCONTEXT")] IntPtr interactionContext, [NativeTypeName("INTERACTION_CONTEXT_OUTPUT_CALLBACK")] delegate* unmanaged<void*, INTERACTION_CONTEXT_OUTPUT*, void> outputCallback, void* clientData);
 
         [DllImport("ninput", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int RegisterOutputCallbackInteractionContext2([NativeTypeName("HINTERACTIONCONTEXT")] IntPtr interactionContext, [NativeTypeName("INTERACTION_CONTEXT_OUTPUT_CALLBACK2")] delegate* unmanaged<void*, INTERACTION_CONTEXT_OUTPUT2*, void> outputCallback, [NativeTypeName("void *")] void* clientData);
+        public static extern int RegisterOutputCallbackInteractionContext2([NativeTypeName("HINTERACTIONCONTEXT")] IntPtr interactionContext, [NativeTypeName("INTERACTION_CONTEXT_OUTPUT_CALLBACK2")] delegate* unmanaged<void*, INTERACTION_CONTEXT_OUTPUT2*, void> outputCallback, void* clientData);
 
         [DllImport("ninput", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
@@ -32,7 +32,7 @@ namespace TerraFX.Interop
 
         [DllImport("ninput", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int GetInteractionConfigurationInteractionContext([NativeTypeName("HINTERACTIONCONTEXT")] IntPtr interactionContext, [NativeTypeName("UINT32")] uint configurationCount, [NativeTypeName("INTERACTION_CONTEXT_CONFIGURATION *")] INTERACTION_CONTEXT_CONFIGURATION* configuration);
+        public static extern int GetInteractionConfigurationInteractionContext([NativeTypeName("HINTERACTIONCONTEXT")] IntPtr interactionContext, [NativeTypeName("UINT32")] uint configurationCount, INTERACTION_CONTEXT_CONFIGURATION* configuration);
 
         [DllImport("ninput", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
@@ -48,15 +48,15 @@ namespace TerraFX.Interop
 
         [DllImport("ninput", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int GetInertiaParameterInteractionContext([NativeTypeName("HINTERACTIONCONTEXT")] IntPtr interactionContext, INERTIA_PARAMETER inertiaParameter, [NativeTypeName("float *")] float* value);
+        public static extern int GetInertiaParameterInteractionContext([NativeTypeName("HINTERACTIONCONTEXT")] IntPtr interactionContext, INERTIA_PARAMETER inertiaParameter, float* value);
 
         [DllImport("ninput", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int SetCrossSlideParametersInteractionContext([NativeTypeName("HINTERACTIONCONTEXT")] IntPtr interactionContext, [NativeTypeName("UINT32")] uint parameterCount, [NativeTypeName("CROSS_SLIDE_PARAMETER *")] CROSS_SLIDE_PARAMETER* crossSlideParameters);
+        public static extern int SetCrossSlideParametersInteractionContext([NativeTypeName("HINTERACTIONCONTEXT")] IntPtr interactionContext, [NativeTypeName("UINT32")] uint parameterCount, CROSS_SLIDE_PARAMETER* crossSlideParameters);
 
         [DllImport("ninput", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int GetCrossSlideParameterInteractionContext([NativeTypeName("HINTERACTIONCONTEXT")] IntPtr interactionContext, CROSS_SLIDE_THRESHOLD threshold, [NativeTypeName("float *")] float* distance);
+        public static extern int GetCrossSlideParameterInteractionContext([NativeTypeName("HINTERACTIONCONTEXT")] IntPtr interactionContext, CROSS_SLIDE_THRESHOLD threshold, float* distance);
 
         [DllImport("ninput", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
@@ -64,7 +64,7 @@ namespace TerraFX.Interop
 
         [DllImport("ninput", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int GetTapParameterInteractionContext([NativeTypeName("HINTERACTIONCONTEXT")] IntPtr interactionContext, TAP_PARAMETER parameter, [NativeTypeName("float *")] float* value);
+        public static extern int GetTapParameterInteractionContext([NativeTypeName("HINTERACTIONCONTEXT")] IntPtr interactionContext, TAP_PARAMETER parameter, float* value);
 
         [DllImport("ninput", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
@@ -72,7 +72,7 @@ namespace TerraFX.Interop
 
         [DllImport("ninput", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int GetHoldParameterInteractionContext([NativeTypeName("HINTERACTIONCONTEXT")] IntPtr interactionContext, HOLD_PARAMETER parameter, [NativeTypeName("float *")] float* value);
+        public static extern int GetHoldParameterInteractionContext([NativeTypeName("HINTERACTIONCONTEXT")] IntPtr interactionContext, HOLD_PARAMETER parameter, float* value);
 
         [DllImport("ninput", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
@@ -80,7 +80,7 @@ namespace TerraFX.Interop
 
         [DllImport("ninput", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int GetTranslationParameterInteractionContext([NativeTypeName("HINTERACTIONCONTEXT")] IntPtr interactionContext, TRANSLATION_PARAMETER parameter, [NativeTypeName("float *")] float* value);
+        public static extern int GetTranslationParameterInteractionContext([NativeTypeName("HINTERACTIONCONTEXT")] IntPtr interactionContext, TRANSLATION_PARAMETER parameter, float* value);
 
         [DllImport("ninput", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
@@ -88,7 +88,7 @@ namespace TerraFX.Interop
 
         [DllImport("ninput", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int GetMouseWheelParameterInteractionContext([NativeTypeName("HINTERACTIONCONTEXT")] IntPtr interactionContext, MOUSE_WHEEL_PARAMETER parameter, [NativeTypeName("float *")] float* value);
+        public static extern int GetMouseWheelParameterInteractionContext([NativeTypeName("HINTERACTIONCONTEXT")] IntPtr interactionContext, MOUSE_WHEEL_PARAMETER parameter, float* value);
 
         [DllImport("ninput", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
@@ -96,7 +96,7 @@ namespace TerraFX.Interop
 
         [DllImport("ninput", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int GetStateInteractionContext([NativeTypeName("HINTERACTIONCONTEXT")] IntPtr interactionContext, [NativeTypeName("const POINTER_INFO *")] POINTER_INFO* pointerInfo, [NativeTypeName("INTERACTION_STATE *")] INTERACTION_STATE* state);
+        public static extern int GetStateInteractionContext([NativeTypeName("HINTERACTIONCONTEXT")] IntPtr interactionContext, [NativeTypeName("const POINTER_INFO *")] POINTER_INFO* pointerInfo, INTERACTION_STATE* state);
 
         [DllImport("ninput", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]

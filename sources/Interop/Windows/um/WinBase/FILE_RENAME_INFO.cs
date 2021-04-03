@@ -14,6 +14,15 @@ namespace TerraFX.Interop
         [NativeTypeName("_FILE_RENAME_INFO::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/WinBase.h:8853:5)")]
         public _Anonymous_e__Union Anonymous;
 
+        [NativeTypeName("HANDLE")]
+        public IntPtr RootDirectory;
+
+        [NativeTypeName("DWORD")]
+        public uint FileNameLength;
+
+        [NativeTypeName("WCHAR [1]")]
+        public fixed ushort FileName[1];
+
         public ref byte ReplaceIfExists
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -31,15 +40,6 @@ namespace TerraFX.Interop
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Flags, 1));
             }
         }
-
-        [NativeTypeName("HANDLE")]
-        public IntPtr RootDirectory;
-
-        [NativeTypeName("DWORD")]
-        public uint FileNameLength;
-
-        [NativeTypeName("WCHAR [1]")]
-        public fixed ushort FileName[1];
 
         [StructLayout(LayoutKind.Explicit)]
         public partial struct _Anonymous_e__Union

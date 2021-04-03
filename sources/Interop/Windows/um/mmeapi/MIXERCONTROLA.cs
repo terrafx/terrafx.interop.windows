@@ -45,6 +45,14 @@ namespace TerraFX.Interop
             [NativeTypeName("tagMIXERCONTROLA::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/mmeapi.h:2089:9)")]
             public _Anonymous1_e__Struct Anonymous1;
 
+            [FieldOffset(0)]
+            [NativeTypeName("tagMIXERCONTROLA::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/mmeapi.h:2093:9)")]
+            public _Anonymous2_e__Struct Anonymous2;
+
+            [FieldOffset(0)]
+            [NativeTypeName("DWORD [6]")]
+            public fixed uint dwReserved[6];
+
             public ref int lMinimum
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -63,10 +71,6 @@ namespace TerraFX.Interop
                 }
             }
 
-            [FieldOffset(0)]
-            [NativeTypeName("tagMIXERCONTROLA::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/mmeapi.h:2093:9)")]
-            public _Anonymous2_e__Struct Anonymous2;
-
             public ref uint dwMinimum
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -84,10 +88,6 @@ namespace TerraFX.Interop
                     return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous2.dwMaximum, 1));
                 }
             }
-
-            [FieldOffset(0)]
-            [NativeTypeName("DWORD [6]")]
-            public fixed uint dwReserved[6];
 
             [StructLayout(LayoutKind.Sequential, Pack = 1)]
             public partial struct _Anonymous1_e__Struct

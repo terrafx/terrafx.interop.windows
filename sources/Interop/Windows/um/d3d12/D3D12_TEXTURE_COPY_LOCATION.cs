@@ -10,7 +10,6 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct D3D12_TEXTURE_COPY_LOCATION
     {
-        [NativeTypeName("ID3D12Resource *")]
         public ID3D12Resource* pResource;
 
         public D3D12_TEXTURE_COPY_TYPE Type;

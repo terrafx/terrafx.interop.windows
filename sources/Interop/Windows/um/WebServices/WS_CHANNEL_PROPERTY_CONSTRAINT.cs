@@ -9,7 +9,6 @@ namespace TerraFX.Interop
     {
         public WS_CHANNEL_PROPERTY_ID id;
 
-        [NativeTypeName("void *")]
         public void* allowedValues;
 
         [NativeTypeName("ULONG")]

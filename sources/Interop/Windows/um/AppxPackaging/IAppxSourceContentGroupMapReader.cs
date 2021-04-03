@@ -17,7 +17,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
+        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IAppxSourceContentGroupMapReader*, Guid*, void**, int>)(lpVtbl[0]))((IAppxSourceContentGroupMapReader*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -38,14 +38,14 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int GetRequiredGroup([NativeTypeName("IAppxContentGroup **")] IAppxContentGroup** requiredGroup)
+        public int GetRequiredGroup(IAppxContentGroup** requiredGroup)
         {
             return ((delegate* unmanaged<IAppxSourceContentGroupMapReader*, IAppxContentGroup**, int>)(lpVtbl[3]))((IAppxSourceContentGroupMapReader*)Unsafe.AsPointer(ref this), requiredGroup);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int GetAutomaticGroups([NativeTypeName("IAppxContentGroupsEnumerator **")] IAppxContentGroupsEnumerator** automaticGroupsEnumerator)
+        public int GetAutomaticGroups(IAppxContentGroupsEnumerator** automaticGroupsEnumerator)
         {
             return ((delegate* unmanaged<IAppxSourceContentGroupMapReader*, IAppxContentGroupsEnumerator**, int>)(lpVtbl[4]))((IAppxSourceContentGroupMapReader*)Unsafe.AsPointer(ref this), automaticGroupsEnumerator);
         }

@@ -12,12 +12,10 @@ namespace TerraFX.Interop
         [NativeTypeName("HRESULT")]
         public int hrEvent;
 
-        [NativeTypeName("IMFPMediaPlayer *")]
         public IMFPMediaPlayer* pMediaPlayer;
 
         public MFP_MEDIAPLAYER_STATE eState;
 
-        [NativeTypeName("IPropertyStore *")]
         public IPropertyStore* pPropertyStore;
     }
 }

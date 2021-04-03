@@ -10,13 +10,11 @@ namespace TerraFX.Interop
         [NativeTypeName("UINT")]
         public uint NumTexture2Ds;
 
-        [NativeTypeName("ID3D12Resource **")]
         public ID3D12Resource** ppTexture2Ds;
 
         [NativeTypeName("UINT *")]
         public uint* pSubresources;
 
-        [NativeTypeName("ID3D12VideoDecoderHeap **")]
         public ID3D12VideoDecoderHeap** ppHeaps;
     }
 }

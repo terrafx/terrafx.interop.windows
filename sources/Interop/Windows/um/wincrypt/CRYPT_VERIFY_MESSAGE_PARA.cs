@@ -19,7 +19,6 @@ namespace TerraFX.Interop
         [NativeTypeName("PFN_CRYPT_GET_SIGNER_CERTIFICATE")]
         public delegate* unmanaged<void*, uint, CERT_INFO*, void*, CERT_CONTEXT*> pfnGetSignerCertificate;
 
-        [NativeTypeName("void *")]
         public void* pvGetArg;
     }
 }

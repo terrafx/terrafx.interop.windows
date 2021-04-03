@@ -10,19 +10,16 @@ namespace TerraFX.Interop
         [NativeTypeName("UINT")]
         public uint NumCategories;
 
-        [NativeTypeName("D3D10_MESSAGE_CATEGORY *")]
         public D3D10_MESSAGE_CATEGORY* pCategoryList;
 
         [NativeTypeName("UINT")]
         public uint NumSeverities;
 
-        [NativeTypeName("D3D10_MESSAGE_SEVERITY *")]
         public D3D10_MESSAGE_SEVERITY* pSeverityList;
 
         [NativeTypeName("UINT")]
         public uint NumIDs;
 
-        [NativeTypeName("D3D10_MESSAGE_ID *")]
         public D3D10_MESSAGE_ID* pIDList;
     }
 }

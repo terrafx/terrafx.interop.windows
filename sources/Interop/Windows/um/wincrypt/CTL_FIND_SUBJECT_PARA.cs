@@ -16,7 +16,6 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint dwSubjectType;
 
-        [NativeTypeName("void *")]
         public void* pvSubject;
     }
 }

@@ -18,7 +18,6 @@ namespace TerraFX.Interop
 
         public CRYPT_ALGORITHM_IDENTIFIER HashAlgorithm;
 
-        [NativeTypeName("void *")]
         public void* pvHashAuxInfo;
     }
 }

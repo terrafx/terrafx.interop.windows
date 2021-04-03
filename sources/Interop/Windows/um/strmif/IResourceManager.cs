@@ -17,7 +17,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
+        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IResourceManager*, Guid*, void**, int>)(lpVtbl[0]))((IResourceManager*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -52,42 +52,42 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int RequestResource([NativeTypeName("LONG")] int idResource, [NativeTypeName("IUnknown *")] IUnknown* pFocusObject, [NativeTypeName("IResourceConsumer *")] IResourceConsumer* pConsumer)
+        public int RequestResource([NativeTypeName("LONG")] int idResource, IUnknown* pFocusObject, IResourceConsumer* pConsumer)
         {
             return ((delegate* unmanaged<IResourceManager*, int, IUnknown*, IResourceConsumer*, int>)(lpVtbl[5]))((IResourceManager*)Unsafe.AsPointer(ref this), idResource, pFocusObject, pConsumer);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int NotifyAcquire([NativeTypeName("LONG")] int idResource, [NativeTypeName("IResourceConsumer *")] IResourceConsumer* pConsumer, [NativeTypeName("HRESULT")] int hr)
+        public int NotifyAcquire([NativeTypeName("LONG")] int idResource, IResourceConsumer* pConsumer, [NativeTypeName("HRESULT")] int hr)
         {
             return ((delegate* unmanaged<IResourceManager*, int, IResourceConsumer*, int, int>)(lpVtbl[6]))((IResourceManager*)Unsafe.AsPointer(ref this), idResource, pConsumer, hr);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int NotifyRelease([NativeTypeName("LONG")] int idResource, [NativeTypeName("IResourceConsumer *")] IResourceConsumer* pConsumer, [NativeTypeName("BOOL")] int bStillWant)
+        public int NotifyRelease([NativeTypeName("LONG")] int idResource, IResourceConsumer* pConsumer, [NativeTypeName("BOOL")] int bStillWant)
         {
             return ((delegate* unmanaged<IResourceManager*, int, IResourceConsumer*, int, int>)(lpVtbl[7]))((IResourceManager*)Unsafe.AsPointer(ref this), idResource, pConsumer, bStillWant);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int CancelRequest([NativeTypeName("LONG")] int idResource, [NativeTypeName("IResourceConsumer *")] IResourceConsumer* pConsumer)
+        public int CancelRequest([NativeTypeName("LONG")] int idResource, IResourceConsumer* pConsumer)
         {
             return ((delegate* unmanaged<IResourceManager*, int, IResourceConsumer*, int>)(lpVtbl[8]))((IResourceManager*)Unsafe.AsPointer(ref this), idResource, pConsumer);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int SetFocus([NativeTypeName("IUnknown *")] IUnknown* pFocusObject)
+        public int SetFocus(IUnknown* pFocusObject)
         {
             return ((delegate* unmanaged<IResourceManager*, IUnknown*, int>)(lpVtbl[9]))((IResourceManager*)Unsafe.AsPointer(ref this), pFocusObject);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int ReleaseFocus([NativeTypeName("IUnknown *")] IUnknown* pFocusObject)
+        public int ReleaseFocus(IUnknown* pFocusObject)
         {
             return ((delegate* unmanaged<IResourceManager*, IUnknown*, int>)(lpVtbl[10]))((IResourceManager*)Unsafe.AsPointer(ref this), pFocusObject);
         }

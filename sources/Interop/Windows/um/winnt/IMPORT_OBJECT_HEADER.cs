@@ -31,24 +31,6 @@ namespace TerraFX.Interop
         [NativeTypeName("IMPORT_OBJECT_HEADER::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:19177:5)")]
         public _Anonymous_e__Union Anonymous;
 
-        public ref ushort Ordinal
-        {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Ordinal, 1));
-            }
-        }
-
-        public ref ushort Hint
-        {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Hint, 1));
-            }
-        }
-
         public ushort _bitfield;
 
         [NativeTypeName("WORD : 2")]
@@ -96,6 +78,24 @@ namespace TerraFX.Interop
             set
             {
                 _bitfield = (ushort)((_bitfield & ~(0x7FFu << 5)) | ((value & 0x7FFu) << 5));
+            }
+        }
+
+        public ref ushort Ordinal
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Ordinal, 1));
+            }
+        }
+
+        public ref ushort Hint
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Hint, 1));
             }
         }
 

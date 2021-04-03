@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct CLEANLOCALSTORAGE
     {
-        [NativeTypeName("IUnknown *")]
         public IUnknown* pInterface;
 
         [NativeTypeName("PVOID")]

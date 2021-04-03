@@ -17,7 +17,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
+        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<ICompositionGraphicsDeviceInterop*, Guid*, void**, int>)(lpVtbl[0]))((ICompositionGraphicsDeviceInterop*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -38,14 +38,14 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int GetRenderingDevice([NativeTypeName("IUnknown **")] IUnknown** value)
+        public int GetRenderingDevice(IUnknown** value)
         {
             return ((delegate* unmanaged<ICompositionGraphicsDeviceInterop*, IUnknown**, int>)(lpVtbl[3]))((ICompositionGraphicsDeviceInterop*)Unsafe.AsPointer(ref this), value);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int SetRenderingDevice([NativeTypeName("IUnknown *")] IUnknown* value)
+        public int SetRenderingDevice(IUnknown* value)
         {
             return ((delegate* unmanaged<ICompositionGraphicsDeviceInterop*, IUnknown*, int>)(lpVtbl[4]))((ICompositionGraphicsDeviceInterop*)Unsafe.AsPointer(ref this), value);
         }
