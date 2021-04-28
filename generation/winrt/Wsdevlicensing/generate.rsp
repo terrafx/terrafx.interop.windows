@@ -1,0 +1,12 @@
+@../../settings.rsp
+@../../remap.rsp
+--file
+winrt-Wsdevlicensing.h
+--output
+../../../sources/Interop/Windows/winrt/Wsdevlicensing
+--test-output
+../../../tests/Interop/Windows/winrt/Wsdevlicensing
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/winrt/Wsdevlicensing.h
+--with-librarypath
+*=wsclient

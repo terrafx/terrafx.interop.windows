@@ -1,0 +1,12 @@
+@../../settings.rsp
+@../../remap.rsp
+--file
+um-MDMRegistration.h
+--output
+../../../sources/Interop/Windows/um/MDMRegistration
+--test-output
+../../../tests/Interop/Windows/um/MDMRegistration
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/MDMRegistration.h
+--with-librarypath
+*=MDMRegistration
