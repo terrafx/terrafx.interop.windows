@@ -243,7 +243,7 @@ namespace TerraFX.Interop
         public const ushort CRED_UNIVERSAL_WILDCARD_W = '*';
 
         [NativeTypeName("#define CRED_UNIVERSAL_WILDCARD_A '*'")]
-        public const sbyte CRED_UNIVERSAL_WILDCARD_A = (byte)('*');
+        public const sbyte CRED_UNIVERSAL_WILDCARD_A = (sbyte)('*');
 
         [NativeTypeName("#define CRED_SESSION_WILDCARD_NAME_LENGTH (sizeof(CRED_SESSION_WILDCARD_NAME_A)-1)")]
         public const uint CRED_SESSION_WILDCARD_NAME_LENGTH = unchecked(9 - 1);
@@ -270,19 +270,19 @@ namespace TerraFX.Interop
         public const ushort CRED_TARGETNAME_NAMESPACE_SEPERATOR_W = ':';
 
         [NativeTypeName("#define CRED_TARGETNAME_NAMESPACE_SEPERATOR_A ':'")]
-        public const sbyte CRED_TARGETNAME_NAMESPACE_SEPERATOR_A = (byte)(':');
+        public const sbyte CRED_TARGETNAME_NAMESPACE_SEPERATOR_A = (sbyte)(':');
 
         [NativeTypeName("#define CRED_TARGETNAME_ATTRIBUTE_SEPERATOR_W L'='")]
         public const ushort CRED_TARGETNAME_ATTRIBUTE_SEPERATOR_W = '=';
 
         [NativeTypeName("#define CRED_TARGETNAME_ATTRIBUTE_SEPERATOR_A '='")]
-        public const sbyte CRED_TARGETNAME_ATTRIBUTE_SEPERATOR_A = (byte)('=');
+        public const sbyte CRED_TARGETNAME_ATTRIBUTE_SEPERATOR_A = (sbyte)('=');
 
         [NativeTypeName("#define CRED_TARGETNAME_DOMAIN_EXTENDED_USERNAME_SEPARATOR_W L'|'")]
         public const ushort CRED_TARGETNAME_DOMAIN_EXTENDED_USERNAME_SEPARATOR_W = '|';
 
         [NativeTypeName("#define CRED_TARGETNAME_DOMAIN_EXTENDED_USERNAME_SEPARATOR_A '|'")]
-        public const sbyte CRED_TARGETNAME_DOMAIN_EXTENDED_USERNAME_SEPARATOR_A = (byte)('|');
+        public const sbyte CRED_TARGETNAME_DOMAIN_EXTENDED_USERNAME_SEPARATOR_A = (sbyte)('|');
 
         [NativeTypeName("#define CRED_TARGETNAME_ATTRIBUTE_TARGET_W L\"target\"")]
         public const string CRED_TARGETNAME_ATTRIBUTE_TARGET_W = "target";
