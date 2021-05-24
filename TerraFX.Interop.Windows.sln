@@ -1818,13 +1818,27 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "imapi2fs", "imapi2fs", "{56
 		generation\um\imapi2fs\generate.rsp = generation\um\imapi2fs\generate.rsp
 		generation\um\imapi2fs\header.txt = generation\um\imapi2fs\header.txt
 		generation\um\imapi2fs\um-imapi2fs.h = generation\um\imapi2fs\um-imapi2fs.h
-  EndProjectSection
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "xamlOM", "xamlOM", "{9337A17E-7551-48F3-B73D-AF8086062660}"
 	ProjectSection(SolutionItems) = preProject
 		generation\um\xamlOM\generate.rsp = generation\um\xamlOM\generate.rsp
 		generation\um\xamlOM\header.txt = generation\um\xamlOM\header.txt
 		generation\um\xamlOM\um-xamlOM.h = generation\um\xamlOM\um-xamlOM.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "wincred", "wincred", "{3B2ED67D-9E95-4351-9A11-272C1104414F}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\wincred\generate.rsp = generation\um\wincred\generate.rsp
+		generation\um\wincred\header.txt = generation\um\wincred\header.txt
+		generation\um\wincred\um-wincred.h = generation\um\wincred\um-wincred.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "lmerr", "lmerr", "{E76B7894-62A5-41ED-9BF2-454BC2DE7565}"
+	ProjectSection(SolutionItems) = preProject
+		generation\shared\lmerr\generate.rsp = generation\shared\lmerr\generate.rsp
+		generation\shared\lmerr\header.txt = generation\shared\lmerr\header.txt
+		generation\shared\lmerr\shared-lmerr.h = generation\shared\lmerr\shared-lmerr.h
 	EndProjectSection
 EndProject
 Global
@@ -2116,6 +2130,8 @@ Global
 		{565AEC0D-94C9-46CB-8947-71E02C3C128D} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{56D9CA05-6CF6-458A-AB1D-C85FBC239634} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{9337A17E-7551-48F3-B73D-AF8086062660} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{3B2ED67D-9E95-4351-9A11-272C1104414F} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{E76B7894-62A5-41ED-9BF2-454BC2DE7565} = {F9716DD9-2967-4295-AC71-F1FD5A9EEFEF}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2FE36DF8-2D9C-4F20-8787-45DC74B57461}
