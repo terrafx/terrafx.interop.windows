@@ -71,5 +71,15 @@ namespace TerraFX.Interop
         {
             return __HRESULT_FROM_WIN32(x);
         }
+
+        public static int __HRESULT_FROM_NT(int x)
+        {
+            return ((HRESULT)((x) | FACILITY_NT_BIT));
+        }
+
+        public static int HRESULT_FROM_NT(int x)
+        {
+            return __HRESULT_FROM_NT(x);
+        }
     }
 }
