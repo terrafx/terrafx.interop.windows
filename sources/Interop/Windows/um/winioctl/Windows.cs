@@ -171,7 +171,7 @@ namespace TerraFX.Interop
                 }
             }
 
-            if (Input->Flags & 0x00000001 == 0)
+            if ((Input->Flags & 0x00000001) == 0)
             {
                 Min = (uint)(sizeof(DEVICE_MANAGE_DATA_SET_ATTRIBUTES));
                 Max = InputLength;

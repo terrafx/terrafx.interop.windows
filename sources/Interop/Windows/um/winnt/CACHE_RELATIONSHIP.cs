@@ -43,15 +43,6 @@ namespace TerraFX.Interop
             }
         }
 
-        public Span<GROUP_AFFINITY> GroupMasks
-        {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return Anonymous.GroupMasks.AsSpan();
-            }
-        }
-
         [StructLayout(LayoutKind.Explicit)]
         public partial struct _Anonymous_e__Union
         {

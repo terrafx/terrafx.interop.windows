@@ -541,6 +541,7 @@ LONG_PTR=nint
 LPARAM=nint
 LPPROC_THREAD_ATTRIBUTE_LIST=IntPtr
 LRESULT=nint
+MachineGlobalObjectTableRegistrationToken=IntPtr
 mediaspace_adpcmwaveformat_tag=MEDIASPACEADPCMWAVEFORMAT
 midievent_tag=MIDIEVENT
 midihdr_tag=MIDIHDR

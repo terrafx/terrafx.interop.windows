@@ -35,7 +35,7 @@ namespace TerraFX.Interop
             MxCSR.Anonymous.UM = ~Fpcr2.Anonymous.UFE;
             MxCSR.Anonymous.PM = ~Fpcr2.Anonymous.IXE;
             MxCSR.Anonymous.DAZ = Fpcr2.Anonymous.FZ16;
-            MxCSR.Anonymous.RC = (((Fpcr2.Anonymous.RMode & 2) >> 1) != 0 || ((Fpcr2.Anonymous.RMode & 1) << 1) != 0) ? 1 : 0;
+            MxCSR.Anonymous.RC = (((Fpcr2.Anonymous.RMode & 2) >> 1) != 0 || ((Fpcr2.Anonymous.RMode & 1) << 1) != 0) ? 1u : 0;
             MxCSR.Anonymous.FZ = Fpcr2.Anonymous.FZ;
             return MxCSR.Value;
         }
@@ -62,7 +62,7 @@ namespace TerraFX.Interop
             Fpcr2.Anonymous.UFE = ~MxCsr2.Anonymous.UM;
             Fpcr2.Anonymous.IXE = ~MxCsr2.Anonymous.PM;
             Fpcr2.Anonymous.FZ16 = MxCsr2.Anonymous.DAZ;
-            Fpcr2.Anonymous.RMode = (((MxCsr2.Anonymous.RC & 2) >> 1) != 0 || ((MxCsr2.Anonymous.RC & 1) << 1) != 0) ? 1 : 0;
+            Fpcr2.Anonymous.RMode = (((MxCsr2.Anonymous.RC & 2) >> 1) != 0 || ((MxCsr2.Anonymous.RC & 1) << 1) != 0) ? 1u : 0;
             Fpcr2.Anonymous.FZ = MxCsr2.Anonymous.FZ;
             *Fpcr = Fpcr2.Value;
             *Fpsr = Fpsr2.Value;
@@ -9044,7 +9044,7 @@ namespace TerraFX.Interop
         public const int FLUSH_NV_MEMORY_IN_FLAG_NO_DRAIN = (0x00000001);
 
         [NativeTypeName("#define FLUSH_NV_MEMORY_DEFAULT_TOKEN (ULONG_PTR)(-1)")]
-        public const nuint FLUSH_NV_MEMORY_DEFAULT_TOKEN = unchecked((nuint)(-1));
+        public static readonly nuint FLUSH_NV_MEMORY_DEFAULT_TOKEN = unchecked((nuint)(-1));
 
         [NativeTypeName("#define WRITE_NV_MEMORY_FLAG_FLUSH (0x00000001)")]
         public const int WRITE_NV_MEMORY_FLAG_FLUSH = (0x00000001);
@@ -9122,7 +9122,7 @@ namespace TerraFX.Interop
         public const uint RTL_CRITICAL_SECTION_ALL_FLAG_BITS = 0xFF000000;
 
         [NativeTypeName("#define RTL_CRITICAL_SECTION_FLAG_RESERVED (RTL_CRITICAL_SECTION_ALL_FLAG_BITS & (~(RTL_CRITICAL_SECTION_FLAG_NO_DEBUG_INFO | RTL_CRITICAL_SECTION_FLAG_DYNAMIC_SPIN | RTL_CRITICAL_SECTION_FLAG_STATIC_INIT | RTL_CRITICAL_SECTION_FLAG_RESOURCE_TYPE | RTL_CRITICAL_SECTION_FLAG_FORCE_DEBUG_INFO)))")]
-        public const uint RTL_CRITICAL_SECTION_FLAG_RESERVED = (0xFF000000 & (~(0x01000000 | 0x02000000 | 0x04000000 | 0x08000000 | 0x10000000)));
+        public const uint RTL_CRITICAL_SECTION_FLAG_RESERVED = (0xFF000000 & (~(0x01000000u | 0x02000000 | 0x04000000 | 0x08000000 | 0x10000000)));
 
         [NativeTypeName("#define RTL_CRITICAL_SECTION_DEBUG_FLAG_STATIC_INIT 0x00000001")]
         public const int RTL_CRITICAL_SECTION_DEBUG_FLAG_STATIC_INIT = 0x00000001;
