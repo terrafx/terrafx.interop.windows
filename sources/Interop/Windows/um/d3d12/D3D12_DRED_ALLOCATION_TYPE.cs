@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/d3d12.h in the Windows SDK for Windows 10.0.19041.0
+// Ported from um/d3d12.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 namespace TerraFX.Interop
@@ -33,6 +33,8 @@ namespace TerraFX.Interop
         D3D12_DRED_ALLOCATION_TYPE_VIDEO_MOTION_ESTIMATOR = 45,
         D3D12_DRED_ALLOCATION_TYPE_VIDEO_MOTION_VECTOR_HEAP = 46,
         D3D12_DRED_ALLOCATION_TYPE_VIDEO_EXTENSION_COMMAND = 47,
+        D3D12_DRED_ALLOCATION_TYPE_VIDEO_ENCODER = 48,
+        D3D12_DRED_ALLOCATION_TYPE_VIDEO_ENCODER_HEAP = 49,
         D3D12_DRED_ALLOCATION_TYPE_INVALID = unchecked((int)(0xffffffff)),
     }
 }

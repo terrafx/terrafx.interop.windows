@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/AppxPackaging.h in the Windows SDK for Windows 10.0.19041.0
+// Ported from um/AppxPackaging.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
@@ -64,6 +64,8 @@ namespace TerraFX.Interop
         public static readonly Guid IID_IAppxManifestHostRuntimeDependenciesEnumerator = new Guid(0x6427A646, 0x7F49, 0x433E, 0xB1, 0xA6, 0x0D, 0xA3, 0x09, 0xF6, 0x88, 0x5A);
 
         public static readonly Guid IID_IAppxManifestHostRuntimeDependency = new Guid(0x3455D234, 0x8414, 0x410D, 0x95, 0xC7, 0x7B, 0x35, 0x25, 0x5B, 0x83, 0x91);
+
+        public static readonly Guid IID_IAppxManifestHostRuntimeDependency2 = new Guid(0xC26F23A8, 0xEE10, 0x4AD6, 0xB8, 0x98, 0x2B, 0x4D, 0x7A, 0xEB, 0xFE, 0x6A);
 
         public static readonly Guid IID_IAppxManifestOptionalPackageInfo = new Guid(0x2634847D, 0x5B5D, 0x4FE5, 0xA2, 0x43, 0x00, 0x2F, 0xF9, 0x5E, 0xDC, 0x7E);
 

@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/d3d12.h in the Windows SDK for Windows 10.0.19041.0
+// Ported from um/d3d12.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
@@ -49,6 +49,22 @@ namespace TerraFX.Interop
 
         [NativeTypeName("const UUID")]
         public static readonly Guid D3D12MetaCommand = new Guid(0xc734c97e, 0x8077, 0x48c8, 0x9f, 0xdc, 0xd9, 0xd1, 0xdd, 0x31, 0xdd, 0x77);
+
+        [NativeTypeName("const GUID")]
+        public static readonly Guid CLSID_D3D12Debug = new Guid(0xf2352aeb, 0xdd84, 0x49fe, 0xb9, 0x7b, 0xa9, 0xdc, 0xfd, 0xcc, 0x1b, 0x4f);
+
+        [NativeTypeName("const GUID")]
+        public static readonly Guid CLSID_D3D12Tools = new Guid(0xe38216b1, 0x3c8c, 0x4833, 0xaa, 0x09, 0x0a, 0x06, 0xb6, 0x5d, 0x96, 0xc8);
+
+        [NativeTypeName("const GUID")]
+        public static readonly Guid CLSID_D3D12DeviceRemovedExtendedData = new Guid(0x4a75bbc4, 0x9ff4, 0x4ad8, 0x9f, 0x18, 0xab, 0xae, 0x84, 0xdc, 0x5f, 0xf2);
+
+        [NativeTypeName("const GUID")]
+        public static readonly Guid CLSID_D3D12SDKConfiguration = new Guid(0x7cda6aca, 0xa03e, 0x49c8, 0x94, 0x58, 0x03, 0x34, 0xd2, 0x0e, 0x07, 0xce);
+
+        [DllImport("D3D12", ExactSpelling = true)]
+        [return: NativeTypeName("HRESULT")]
+        public static extern int D3D12GetInterface([NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("const IID &")] Guid* riid, void** ppvDebug);
 
         [NativeTypeName("const GUID")]
         public static readonly Guid IID_ID3D12Object = new Guid(0xc4fec28f, 0x7966, 0x4e95, 0x9f, 0x94, 0xf4, 0x31, 0xcb, 0x56, 0xc3, 0xb8);
@@ -168,6 +184,9 @@ namespace TerraFX.Interop
         public static readonly Guid IID_ID3D12DeviceRemovedExtendedData1 = new Guid(0x9727A022, 0xCF1D, 0x4DDA, 0x9E, 0xBA, 0xEF, 0xFA, 0x65, 0x3F, 0xC5, 0x06);
 
         [NativeTypeName("const GUID")]
+        public static readonly Guid IID_ID3D12DeviceRemovedExtendedData2 = new Guid(0x67FC5816, 0xE4CA, 0x4915, 0xBF, 0x18, 0x42, 0x54, 0x12, 0x72, 0xDA, 0x54);
+
+        [NativeTypeName("const GUID")]
         public static readonly Guid IID_ID3D12Device6 = new Guid(0xc70b221b, 0x40e4, 0x4a17, 0x89, 0xaf, 0x02, 0x5a, 0x07, 0x27, 0xa6, 0xdc);
 
         [NativeTypeName("const GUID")]
@@ -198,7 +217,16 @@ namespace TerraFX.Interop
         public static readonly Guid IID_ID3D12GraphicsCommandList4 = new Guid(0x8754318e, 0xd3a9, 0x4541, 0x98, 0xcf, 0x64, 0x5b, 0x50, 0xdc, 0x48, 0x74);
 
         [NativeTypeName("const GUID")]
+        public static readonly Guid IID_ID3D12ShaderCacheSession = new Guid(0x28e2495d, 0x0f64, 0x4ae4, 0xa6, 0xec, 0x12, 0x92, 0x55, 0xdc, 0x49, 0xa8);
+
+        [NativeTypeName("const GUID")]
+        public static readonly Guid IID_ID3D12Device9 = new Guid(0x4c80e962, 0xf032, 0x4f60, 0xbc, 0x9e, 0xeb, 0xc2, 0xcf, 0xa1, 0xd8, 0x3c);
+
+        [NativeTypeName("const GUID")]
         public static readonly Guid IID_ID3D12Tools = new Guid(0x7071e1f0, 0xe84b, 0x4b33, 0x97, 0x4f, 0x12, 0xfa, 0x49, 0xde, 0x65, 0xc5);
+
+        [NativeTypeName("const GUID")]
+        public static readonly Guid IID_ID3D12SDKConfiguration = new Guid(0xe9eb5314, 0x33aa, 0x42b2, 0xa7, 0x18, 0xd7, 0x7f, 0x58, 0xb1, 0xf1, 0xc7);
 
         [NativeTypeName("const GUID")]
         public static readonly Guid IID_ID3D12GraphicsCommandList5 = new Guid(0x55050859, 0x4024, 0x474c, 0x87, 0xf5, 0x64, 0x72, 0xea, 0xee, 0x44, 0xea);
@@ -1225,6 +1253,9 @@ namespace TerraFX.Interop
 
         [NativeTypeName("#define D3D12_RS_SET_SHADING_RATE_COMBINER_COUNT ( 2 )")]
         public const int D3D12_RS_SET_SHADING_RATE_COMBINER_COUNT = (2);
+
+        [NativeTypeName("#define D3D12_SDK_VERSION ( 3 )")]
+        public const int D3D12_SDK_VERSION = (3);
 
         [NativeTypeName("#define D3D12_SHADER_IDENTIFIER_SIZE_IN_BYTES ( 32 )")]
         public const int D3D12_SHADER_IDENTIFIER_SIZE_IN_BYTES = (32);

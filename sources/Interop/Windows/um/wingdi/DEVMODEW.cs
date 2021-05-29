@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/wingdi.h in the Windows SDK for Windows 10.0.19041.0
+// Ported from um/wingdi.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System.Runtime.CompilerServices;
@@ -28,7 +28,7 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint dmFields;
 
-        [NativeTypeName("_devicemodeW::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/wingdi.h:2256:5)")]
+        [NativeTypeName("_devicemodeW::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/wingdi.h:2256:5)")]
         public _Anonymous1_e__Union Anonymous1;
 
         public short dmColor;
@@ -56,7 +56,7 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint dmPelsHeight;
 
-        [NativeTypeName("_devicemodeW::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/wingdi.h:2285:5)")]
+        [NativeTypeName("_devicemodeW::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/wingdi.h:2285:5)")]
         public _Anonymous2_e__Union Anonymous2;
 
         [NativeTypeName("DWORD")]
@@ -207,11 +207,11 @@ namespace TerraFX.Interop
         public partial struct _Anonymous1_e__Union
         {
             [FieldOffset(0)]
-            [NativeTypeName("_devicemodeW::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/wingdi.h:2258:7)")]
+            [NativeTypeName("_devicemodeW::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/wingdi.h:2258:7)")]
             public _Anonymous1_e__Struct Anonymous1;
 
             [FieldOffset(0)]
-            [NativeTypeName("_devicemodeW::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/wingdi.h:2269:7)")]
+            [NativeTypeName("_devicemodeW::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/wingdi.h:2269:7)")]
             public _Anonymous2_e__Struct Anonymous2;
 
             public partial struct _Anonymous1_e__Struct

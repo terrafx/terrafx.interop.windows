@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/ddraw.h in the Windows SDK for Windows 10.0.19041.0
+// Ported from um/ddraw.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System.Runtime.CompilerServices;
@@ -40,13 +40,13 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint dwZDestConstBitDepth;
 
-        [NativeTypeName("_DDBLTFX::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/ddraw.h:287:5)")]
+        [NativeTypeName("_DDBLTFX::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/ddraw.h:287:5)")]
         public _Anonymous1_e__Union Anonymous1;
 
         [NativeTypeName("DWORD")]
         public uint dwZSrcConstBitDepth;
 
-        [NativeTypeName("_DDBLTFX::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/ddraw.h:293:5)")]
+        [NativeTypeName("_DDBLTFX::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/ddraw.h:293:5)")]
         public _Anonymous2_e__Union Anonymous2;
 
         [NativeTypeName("DWORD")]
@@ -61,16 +61,16 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint dwAlphaDestConstBitDepth;
 
-        [NativeTypeName("_DDBLTFX::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/ddraw.h:302:5)")]
+        [NativeTypeName("_DDBLTFX::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/ddraw.h:302:5)")]
         public _Anonymous3_e__Union Anonymous3;
 
         [NativeTypeName("DWORD")]
         public uint dwAlphaSrcConstBitDepth;
 
-        [NativeTypeName("_DDBLTFX::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/ddraw.h:308:5)")]
+        [NativeTypeName("_DDBLTFX::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/ddraw.h:308:5)")]
         public _Anonymous4_e__Union Anonymous4;
 
-        [NativeTypeName("_DDBLTFX::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/ddraw.h:313:5)")]
+        [NativeTypeName("_DDBLTFX::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/ddraw.h:313:5)")]
         public _Anonymous5_e__Union Anonymous5;
 
         public DDCOLORKEY ddckDestColorkey;

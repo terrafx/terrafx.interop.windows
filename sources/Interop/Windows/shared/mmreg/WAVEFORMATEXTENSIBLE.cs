@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from shared/mmreg.h in the Windows SDK for Windows 10.0.19041.0
+// Ported from shared/mmreg.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
@@ -13,7 +13,7 @@ namespace TerraFX.Interop
     {
         public WAVEFORMATEX Format;
 
-        [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/shared/mmreg.h:2524:5)")]
+        [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/shared/mmreg.h:2525:5)")]
         public _Samples_e__Union Samples;
 
         [NativeTypeName("DWORD")]

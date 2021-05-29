@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/mmeapi.h in the Windows SDK for Windows 10.0.19041.0
+// Ported from um/mmeapi.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System.Runtime.CompilerServices;
@@ -17,7 +17,7 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint dwLineID;
 
-        [NativeTypeName("tagMIXERLINECONTROLSW::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/mmeapi.h:2266:5)")]
+        [NativeTypeName("tagMIXERLINECONTROLSW::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/mmeapi.h:2234:5)")]
         public _Anonymous_e__Union Anonymous;
 
         [NativeTypeName("DWORD")]

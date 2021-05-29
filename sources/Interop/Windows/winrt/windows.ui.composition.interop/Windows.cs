@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from winrt/windows.ui.composition.interop.h in the Windows SDK for Windows 10.0.19041.0
+// Ported from winrt/windows.ui.composition.interop.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
@@ -26,7 +26,5 @@ namespace TerraFX.Interop
         public static readonly Guid IID_ICompositorDesktopInterop = new Guid(0x29E691FA, 0x4567, 0x4DCA, 0xB3, 0x19, 0xD0, 0xF2, 0x07, 0xEB, 0x68, 0x07);
 
         public static readonly Guid IID_IDesktopWindowTargetInterop = new Guid(0x35DBF59E, 0xE3F9, 0x45B0, 0x81, 0xE7, 0xFE, 0x75, 0xF4, 0x14, 0x5D, 0xC9);
-
-        public static readonly Guid IID_IDesktopWindowContentBridgeInterop = new Guid(0x37642806, 0xF421, 0x4FD0, 0x9F, 0x82, 0x23, 0xAE, 0x7C, 0x77, 0x61, 0x82);
     }
 }

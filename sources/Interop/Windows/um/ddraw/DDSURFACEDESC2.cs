@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/ddraw.h in the Windows SDK for Windows 10.0.19041.0
+// Ported from um/ddraw.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System.Runtime.CompilerServices;
@@ -22,13 +22,13 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint dwWidth;
 
-        [NativeTypeName("_DDSURFACEDESC2::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/ddraw.h:2268:5)")]
+        [NativeTypeName("_DDSURFACEDESC2::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/ddraw.h:2268:5)")]
         public _Anonymous1_e__Union Anonymous1;
 
-        [NativeTypeName("_DDSURFACEDESC2::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/ddraw.h:2273:5)")]
+        [NativeTypeName("_DDSURFACEDESC2::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/ddraw.h:2273:5)")]
         public _Anonymous2_e__Union Anonymous2;
 
-        [NativeTypeName("_DDSURFACEDESC2::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/ddraw.h:2278:5)")]
+        [NativeTypeName("_DDSURFACEDESC2::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/ddraw.h:2278:5)")]
         public _Anonymous3_e__Union Anonymous3;
 
         [NativeTypeName("DWORD")]
@@ -40,7 +40,7 @@ namespace TerraFX.Interop
         [NativeTypeName("LPVOID")]
         public void* lpSurface;
 
-        [NativeTypeName("_DDSURFACEDESC2::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/ddraw.h:2288:5)")]
+        [NativeTypeName("_DDSURFACEDESC2::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/ddraw.h:2288:5)")]
         public _Anonymous4_e__Union Anonymous4;
 
         public DDCOLORKEY ddckCKDestBlt;
@@ -49,7 +49,7 @@ namespace TerraFX.Interop
 
         public DDCOLORKEY ddckCKSrcBlt;
 
-        [NativeTypeName("_DDSURFACEDESC2::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/ddraw.h:2296:5)")]
+        [NativeTypeName("_DDSURFACEDESC2::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/ddraw.h:2296:5)")]
         public _Anonymous5_e__Union Anonymous5;
 
         public DDSCAPS2 ddsCaps;

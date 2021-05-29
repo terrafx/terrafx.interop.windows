@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/OAIdl.h in the Windows SDK for Windows 10.0.19041.0
+// Ported from um/OAIdl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System.Runtime.CompilerServices;
@@ -10,7 +10,7 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct TYPEDESC
     {
-        [NativeTypeName("tagTYPEDESC::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/OAIdl.h:645:36)")]
+        [NativeTypeName("tagTYPEDESC::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/OAIdl.h:653:36)")]
         public _Anonymous_e__Union Anonymous;
 
         [NativeTypeName("VARTYPE")]

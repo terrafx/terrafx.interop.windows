@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/WinUser.h in the Windows SDK for Windows 10.0.19041.0
+// Ported from um/WinUser.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
@@ -6008,6 +6008,9 @@ namespace TerraFX.Interop
 
         [NativeTypeName("#define EWX_ARSO 0x04000000")]
         public const int EWX_ARSO = 0x04000000;
+
+        [NativeTypeName("#define EWX_CHECK_SAFE_FOR_SERVER 0x08000000")]
+        public const int EWX_CHECK_SAFE_FOR_SERVER = 0x08000000;
 
         [NativeTypeName("#define SendMessage SendMessageW")]
         public static readonly delegate*<IntPtr, uint, nuint, nint, nint> SendMessage = &SendMessageW;

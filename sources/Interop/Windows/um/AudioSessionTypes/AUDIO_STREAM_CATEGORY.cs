@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/AudioSessionTypes.h in the Windows SDK for Windows 10.0.19041.0
+// Ported from um/AudioSessionTypes.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 namespace TerraFX.Interop
@@ -18,5 +18,8 @@ namespace TerraFX.Interop
         AudioCategory_Speech = 9,
         AudioCategory_Movie = 10,
         AudioCategory_Media = 11,
+        AudioCategory_FarFieldSpeech = 12,
+        AudioCategory_UniformSpeech = 13,
+        AudioCategory_VoiceTyping = 14,
     }
 }

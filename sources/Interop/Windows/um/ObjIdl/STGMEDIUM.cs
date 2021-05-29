@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/ObjIdl.h in the Windows SDK for Windows 10.0.19041.0
+// Ported from um/ObjIdl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
@@ -14,7 +14,7 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint tymed;
 
-        [NativeTypeName("tagSTGMEDIUM::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/ObjIdl.h:11272:36)")]
+        [NativeTypeName("tagSTGMEDIUM::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/ObjIdl.h:11954:36)")]
         public _Anonymous_e__Union Anonymous;
 
         public IUnknown* pUnkForRelease;

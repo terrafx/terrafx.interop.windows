@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/mfcaptureengine.h in the Windows SDK for Windows 10.0.19041.0
+// Ported from um/mfcaptureengine.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 namespace TerraFX.Interop
@@ -13,5 +13,6 @@ namespace TerraFX.Interop
         MF_CAPTURE_ENGINE_STREAM_CATEGORY_PHOTO_DEPENDENT = 0x3,
         MF_CAPTURE_ENGINE_STREAM_CATEGORY_AUDIO = 0x4,
         MF_CAPTURE_ENGINE_STREAM_CATEGORY_UNSUPPORTED = 0x5,
+        MF_CAPTURE_ENGINE_STREAM_CATEGORY_METADATA = 0x6,
     }
 }

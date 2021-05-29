@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/msctf.h in the Windows SDK for Windows 10.0.19041.0
+// Ported from um/msctf.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System.Runtime.CompilerServices;
@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     {
         public TF_DA_COLORTYPE type;
 
-        [NativeTypeName("TF_DA_COLOR::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/msctf.h:10248:36)")]
+        [NativeTypeName("TF_DA_COLOR::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/msctf.h:10802:36)")]
         public _Anonymous_e__Union Anonymous;
 
         public ref int nIndex

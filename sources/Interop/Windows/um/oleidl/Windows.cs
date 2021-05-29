@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/oleidl.h in the Windows SDK for Windows 10.0.19041.0
+// Ported from um/oleidl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
@@ -34,7 +34,7 @@ namespace TerraFX.Interop
         public const uint UPDFCACHE_ALL = ((uint)(~(0x80000000)));
 
         [NativeTypeName("#define UPDFCACHE_ALLBUTNODATACACHE ( ( UPDFCACHE_ALL & ( DWORD  )~UPDFCACHE_NODATACACHE )  )")]
-        public const uint UPDFCACHE_ALLBUTNODATACACHE = ((((uint)(~(0x80000000))) & (uint)(~(0x1u))));
+        public const uint UPDFCACHE_ALLBUTNODATACACHE = ((((uint)(~(0x80000000))) & (uint)(~(0x1))));
 
         [NativeTypeName("#define MK_ALT ( 0x20 )")]
         public const int MK_ALT = (0x20);

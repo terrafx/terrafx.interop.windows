@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/mfmediaengine.h in the Windows SDK for Windows 10.0.19041.0
+// Ported from um/mfmediaengine.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
@@ -284,6 +284,12 @@ namespace TerraFX.Interop
         public static readonly Guid IID_IMFTimedTextBinary = new Guid(0x4AE3A412, 0x0545, 0x43C4, 0xBF, 0x6F, 0x6B, 0x97, 0xA5, 0xC6, 0xC4, 0x32);
 
         public static readonly Guid IID_IMFTimedTextCueList = new Guid(0xAD128745, 0x211B, 0x40A0, 0x99, 0x81, 0xFE, 0x65, 0xF1, 0x66, 0xD0, 0xFD);
+
+        public static readonly Guid IID_IMFTimedTextRuby = new Guid(0x76C6A6F5, 0x4955, 0x4DE5, 0xB2, 0x7B, 0x14, 0xB7, 0x34, 0xCC, 0x14, 0xB4);
+
+        public static readonly Guid IID_IMFTimedTextBouten = new Guid(0x3C5F3E8A, 0x90C0, 0x464E, 0x81, 0x36, 0x89, 0x8D, 0x29, 0x75, 0xF8, 0x47);
+
+        public static readonly Guid IID_IMFTimedTextStyle2 = new Guid(0xDB639199, 0xC809, 0x4C89, 0xBF, 0xCA, 0xD0, 0xBB, 0xB9, 0x72, 0x9D, 0x6E);
 
         public static readonly Guid IID_IMFMediaEngineEMENotify = new Guid(0x9E184D15, 0xCDB7, 0x4F86, 0xB4, 0x9E, 0x56, 0x66, 0x89, 0xF4, 0xA6, 0x01);
 

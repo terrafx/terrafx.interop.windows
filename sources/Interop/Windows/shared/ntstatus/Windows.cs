@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from shared/ntstatus.h in the Windows SDK for Windows 10.0.19041.0
+// Ported from shared/ntstatus.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 namespace TerraFX.Interop
@@ -654,6 +654,9 @@ namespace TerraFX.Interop
 
         [NativeTypeName("#define STATUS_RETURN_ADDRESS_HIJACK_ATTEMPT ((NTSTATUS)0x80000033L)")]
         public const int STATUS_RETURN_ADDRESS_HIJACK_ATTEMPT = unchecked((int)(0x80000033));
+
+        [NativeTypeName("#define STATUS_RECOVERABLE_BUGCHECK ((NTSTATUS)0x80000034L)")]
+        public const int STATUS_RECOVERABLE_BUGCHECK = unchecked((int)(0x80000034));
 
         [NativeTypeName("#define STATUS_CLUSTER_NODE_ALREADY_UP ((NTSTATUS)0x80130001L)")]
         public const int STATUS_CLUSTER_NODE_ALREADY_UP = unchecked((int)(0x80130001));
@@ -1893,6 +1896,15 @@ namespace TerraFX.Interop
 
         [NativeTypeName("#define STATUS_IO_UNALIGNED_WRITE ((NTSTATUS)0xC00001B1L)")]
         public const int STATUS_IO_UNALIGNED_WRITE = unchecked((int)(0xC00001B1));
+
+        [NativeTypeName("#define STATUS_WEAK_WHFBKEY_BLOCKED ((NTSTATUS)0xC00001B3L)")]
+        public const int STATUS_WEAK_WHFBKEY_BLOCKED = unchecked((int)(0xC00001B3));
+
+        [NativeTypeName("#define STATUS_SERVER_TRANSPORT_CONFLICT ((NTSTATUS)0xC00001B4L)")]
+        public const int STATUS_SERVER_TRANSPORT_CONFLICT = unchecked((int)(0xC00001B4));
+
+        [NativeTypeName("#define STATUS_CERTIFICATE_VALIDATION_PREFERENCE_CONFLICT ((NTSTATUS)0xC00001B5L)")]
+        public const int STATUS_CERTIFICATE_VALIDATION_PREFERENCE_CONFLICT = unchecked((int)(0xC00001B5));
 
         [NativeTypeName("#define STATUS_NETWORK_OPEN_RESTRICTION ((NTSTATUS)0xC0000201L)")]
         public const int STATUS_NETWORK_OPEN_RESTRICTION = unchecked((int)(0xC0000201));
@@ -3169,9 +3181,6 @@ namespace TerraFX.Interop
         [NativeTypeName("#define STATUS_STORAGE_LOST_DATA_PERSISTENCE ((NTSTATUS)0xC000049EL)")]
         public const int STATUS_STORAGE_LOST_DATA_PERSISTENCE = unchecked((int)(0xC000049E));
 
-        [NativeTypeName("#define STATUS_VRF_CFG_AND_IO_ENABLED ((NTSTATUS)0xC000049FL)")]
-        public const int STATUS_VRF_CFG_AND_IO_ENABLED = unchecked((int)(0xC000049F));
-
         [NativeTypeName("#define STATUS_PARTITION_TERMINATING ((NTSTATUS)0xC00004A0L)")]
         public const int STATUS_PARTITION_TERMINATING = unchecked((int)(0xC00004A0));
 
@@ -3250,8 +3259,32 @@ namespace TerraFX.Interop
         [NativeTypeName("#define STATUS_CASE_SENSITIVE_PATH ((NTSTATUS)0xC00004BAL)")]
         public const int STATUS_CASE_SENSITIVE_PATH = unchecked((int)(0xC00004BA));
 
+        [NativeTypeName("#define STATUS_UNSUPPORTED_PAGING_MODE ((NTSTATUS)0xC00004BBL)")]
+        public const int STATUS_UNSUPPORTED_PAGING_MODE = unchecked((int)(0xC00004BB));
+
+        [NativeTypeName("#define STATUS_UNTRUSTED_MOUNT_POINT ((NTSTATUS)0xC00004BCL)")]
+        public const int STATUS_UNTRUSTED_MOUNT_POINT = unchecked((int)(0xC00004BC));
+
         [NativeTypeName("#define STATUS_HAS_SYSTEM_CRITICAL_FILES ((NTSTATUS)0xC00004BDL)")]
         public const int STATUS_HAS_SYSTEM_CRITICAL_FILES = unchecked((int)(0xC00004BD));
+
+        [NativeTypeName("#define STATUS_OBJECT_IS_IMMUTABLE ((NTSTATUS)0xC00004BEL)")]
+        public const int STATUS_OBJECT_IS_IMMUTABLE = unchecked((int)(0xC00004BE));
+
+        [NativeTypeName("#define STATUS_FT_READ_FROM_COPY_FAILURE ((NTSTATUS)0xC00004BFL)")]
+        public const int STATUS_FT_READ_FROM_COPY_FAILURE = unchecked((int)(0xC00004BF));
+
+        [NativeTypeName("#define STATUS_IMAGE_LOADED_AS_PATCH_IMAGE ((NTSTATUS)0xC00004C0L)")]
+        public const int STATUS_IMAGE_LOADED_AS_PATCH_IMAGE = unchecked((int)(0xC00004C0));
+
+        [NativeTypeName("#define STATUS_STORAGE_STACK_ACCESS_DENIED ((NTSTATUS)0xC00004C1L)")]
+        public const int STATUS_STORAGE_STACK_ACCESS_DENIED = unchecked((int)(0xC00004C1));
+
+        [NativeTypeName("#define STATUS_INSUFFICIENT_VIRTUAL_ADDR_RESOURCES ((NTSTATUS)0xC00004C2L)")]
+        public const int STATUS_INSUFFICIENT_VIRTUAL_ADDR_RESOURCES = unchecked((int)(0xC00004C2));
+
+        [NativeTypeName("#define STATUS_PATCH_NOT_REGISTERED ((NTSTATUS)0xC00004D4L)")]
+        public const int STATUS_PATCH_NOT_REGISTERED = unchecked((int)(0xC00004D4));
 
         [NativeTypeName("#define STATUS_INVALID_TASK_NAME ((NTSTATUS)0xC0000500L)")]
         public const int STATUS_INVALID_TASK_NAME = unchecked((int)(0xC0000500));
@@ -3315,6 +3348,9 @@ namespace TerraFX.Interop
 
         [NativeTypeName("#define STATUS_SMR_GARBAGE_COLLECTION_REQUIRED ((NTSTATUS)0xC0000514L)")]
         public const int STATUS_SMR_GARBAGE_COLLECTION_REQUIRED = unchecked((int)(0xC0000514));
+
+        [NativeTypeName("#define STATUS_SESSION_KEY_TOO_SHORT ((NTSTATUS)0xC0000517L)")]
+        public const int STATUS_SESSION_KEY_TOO_SHORT = unchecked((int)(0xC0000517));
 
         [NativeTypeName("#define STATUS_FAIL_FAST_EXCEPTION ((NTSTATUS)0xC0000602L)")]
         public const int STATUS_FAIL_FAST_EXCEPTION = unchecked((int)(0xC0000602));
@@ -3544,6 +3580,60 @@ namespace TerraFX.Interop
         [NativeTypeName("#define STATUS_FILE_HANDLE_REVOKED ((NTSTATUS)0xC0000910L)")]
         public const int STATUS_FILE_HANDLE_REVOKED = unchecked((int)(0xC0000910));
 
+        [NativeTypeName("#define STATUS_SECTION_DIRECT_MAP_ONLY ((NTSTATUS)0xC0000911L)")]
+        public const int STATUS_SECTION_DIRECT_MAP_ONLY = unchecked((int)(0xC0000911));
+
+        [NativeTypeName("#define STATUS_VRF_VOLATILE_CFG_AND_IO_ENABLED ((NTSTATUS)0xC0000C08L)")]
+        public const int STATUS_VRF_VOLATILE_CFG_AND_IO_ENABLED = unchecked((int)(0xC0000C08));
+
+        [NativeTypeName("#define STATUS_VRF_VOLATILE_NOT_STOPPABLE ((NTSTATUS)0xC0000C09L)")]
+        public const int STATUS_VRF_VOLATILE_NOT_STOPPABLE = unchecked((int)(0xC0000C09));
+
+        [NativeTypeName("#define STATUS_VRF_VOLATILE_SAFE_MODE ((NTSTATUS)0xC0000C0AL)")]
+        public const int STATUS_VRF_VOLATILE_SAFE_MODE = unchecked((int)(0xC0000C0A));
+
+        [NativeTypeName("#define STATUS_VRF_VOLATILE_NOT_RUNNABLE_SYSTEM ((NTSTATUS)0xC0000C0BL)")]
+        public const int STATUS_VRF_VOLATILE_NOT_RUNNABLE_SYSTEM = unchecked((int)(0xC0000C0B));
+
+        [NativeTypeName("#define STATUS_VRF_VOLATILE_NOT_SUPPORTED_RULECLASS ((NTSTATUS)0xC0000C0CL)")]
+        public const int STATUS_VRF_VOLATILE_NOT_SUPPORTED_RULECLASS = unchecked((int)(0xC0000C0C));
+
+        [NativeTypeName("#define STATUS_VRF_VOLATILE_PROTECTED_DRIVER ((NTSTATUS)0xC0000C0DL)")]
+        public const int STATUS_VRF_VOLATILE_PROTECTED_DRIVER = unchecked((int)(0xC0000C0D));
+
+        [NativeTypeName("#define STATUS_VRF_VOLATILE_NMI_REGISTERED ((NTSTATUS)0xC0000C0EL)")]
+        public const int STATUS_VRF_VOLATILE_NMI_REGISTERED = unchecked((int)(0xC0000C0E));
+
+        [NativeTypeName("#define STATUS_VRF_VOLATILE_SETTINGS_CONFLICT ((NTSTATUS)0xC0000C0FL)")]
+        public const int STATUS_VRF_VOLATILE_SETTINGS_CONFLICT = unchecked((int)(0xC0000C0F));
+
+        [NativeTypeName("#define STATUS_DIF_LIVEDUMP_LIMIT_EXCEEDED ((NTSTATUS)0xC0000C77L)")]
+        public const int STATUS_DIF_LIVEDUMP_LIMIT_EXCEEDED = unchecked((int)(0xC0000C77));
+
+        [NativeTypeName("#define STATUS_DIF_VOLATILE_SECTION_NOT_LOCKED ((NTSTATUS)0xC0000C78L)")]
+        public const int STATUS_DIF_VOLATILE_SECTION_NOT_LOCKED = unchecked((int)(0xC0000C78));
+
+        [NativeTypeName("#define STATUS_DIF_VOLATILE_DRIVER_HOTPATCHED ((NTSTATUS)0xC0000C79L)")]
+        public const int STATUS_DIF_VOLATILE_DRIVER_HOTPATCHED = unchecked((int)(0xC0000C79));
+
+        [NativeTypeName("#define STATUS_DIF_VOLATILE_INVALID_INFO ((NTSTATUS)0xC0000C7AL)")]
+        public const int STATUS_DIF_VOLATILE_INVALID_INFO = unchecked((int)(0xC0000C7A));
+
+        [NativeTypeName("#define STATUS_DIF_VOLATILE_DRIVER_IS_NOT_RUNNING ((NTSTATUS)0xC0000C7BL)")]
+        public const int STATUS_DIF_VOLATILE_DRIVER_IS_NOT_RUNNING = unchecked((int)(0xC0000C7B));
+
+        [NativeTypeName("#define STATUS_DIF_VOLATILE_PLUGIN_IS_NOT_RUNNING ((NTSTATUS)0xC0000C7CL)")]
+        public const int STATUS_DIF_VOLATILE_PLUGIN_IS_NOT_RUNNING = unchecked((int)(0xC0000C7C));
+
+        [NativeTypeName("#define STATUS_DIF_VOLATILE_PLUGIN_CHANGE_NOT_ALLOWED ((NTSTATUS)0xC0000C7DL)")]
+        public const int STATUS_DIF_VOLATILE_PLUGIN_CHANGE_NOT_ALLOWED = unchecked((int)(0xC0000C7D));
+
+        [NativeTypeName("#define STATUS_DIF_VOLATILE_NOT_ALLOWED ((NTSTATUS)0xC0000C7EL)")]
+        public const int STATUS_DIF_VOLATILE_NOT_ALLOWED = unchecked((int)(0xC0000C7E));
+
+        [NativeTypeName("#define STATUS_DIF_BINDING_API_NOT_FOUND ((NTSTATUS)0xC0000C7FL)")]
+        public const int STATUS_DIF_BINDING_API_NOT_FOUND = unchecked((int)(0xC0000C7F));
+
         [NativeTypeName("#define STATUS_WOW_ASSERTION ((NTSTATUS)0xC0009898L)")]
         public const int STATUS_WOW_ASSERTION = unchecked((int)(0xC0009898));
 
@@ -3717,6 +3807,9 @@ namespace TerraFX.Interop
 
         [NativeTypeName("#define STATUS_CIMFS_IMAGE_CORRUPT ((NTSTATUS)0xC000C001L)")]
         public const int STATUS_CIMFS_IMAGE_CORRUPT = unchecked((int)(0xC000C001));
+
+        [NativeTypeName("#define STATUS_CIMFS_IMAGE_VERSION_NOT_SUPPORTED ((NTSTATUS)0xC000C002L)")]
+        public const int STATUS_CIMFS_IMAGE_VERSION_NOT_SUPPORTED = unchecked((int)(0xC000C002));
 
         [NativeTypeName("#define STATUS_FILE_SYSTEM_VIRTUALIZATION_UNAVAILABLE ((NTSTATUS)0xC000CE01L)")]
         public const int STATUS_FILE_SYSTEM_VIRTUALIZATION_UNAVAILABLE = unchecked((int)(0xC000CE01));
@@ -4521,6 +4614,9 @@ namespace TerraFX.Interop
 
         [NativeTypeName("#define STATUS_FLT_REGISTRATION_BUSY ((NTSTATUS)0xC01C0023L)")]
         public const int STATUS_FLT_REGISTRATION_BUSY = unchecked((int)(0xC01C0023));
+
+        [NativeTypeName("#define STATUS_FLT_WCOS_NOT_SUPPORTED ((NTSTATUS)0xC01C0024L)")]
+        public const int STATUS_FLT_WCOS_NOT_SUPPORTED = unchecked((int)(0xC01C0024));
 
         [NativeTypeName("#define STATUS_SXS_SECTION_NOT_FOUND ((NTSTATUS)0xC0150001L)")]
         public const int STATUS_SXS_SECTION_NOT_FOUND = unchecked((int)(0xC0150001));
@@ -5929,6 +6025,9 @@ namespace TerraFX.Interop
         [NativeTypeName("#define STATUS_FVE_OSV_KSR_NOT_ALLOWED ((NTSTATUS)0xC0210040L)")]
         public const int STATUS_FVE_OSV_KSR_NOT_ALLOWED = unchecked((int)(0xC0210040));
 
+        [NativeTypeName("#define STATUS_FVE_EDRIVE_BAND_ENUMERATION_FAILED ((NTSTATUS)0xC0210041L)")]
+        public const int STATUS_FVE_EDRIVE_BAND_ENUMERATION_FAILED = unchecked((int)(0xC0210041));
+
         [NativeTypeName("#define STATUS_FWP_CALLOUT_NOT_FOUND ((NTSTATUS)0xC0220001L)")]
         public const int STATUS_FWP_CALLOUT_NOT_FOUND = unchecked((int)(0xC0220001));
 
@@ -7114,6 +7213,18 @@ namespace TerraFX.Interop
         [NativeTypeName("#define STATUS_HV_INSUFFICIENT_CONTIGUOUS_MEMORY ((NTSTATUS)0xC0350075L)")]
         public const int STATUS_HV_INSUFFICIENT_CONTIGUOUS_MEMORY = unchecked((int)(0xC0350075));
 
+        [NativeTypeName("#define STATUS_HV_DEVICE_NOT_IN_DOMAIN ((NTSTATUS)0xC0350076L)")]
+        public const int STATUS_HV_DEVICE_NOT_IN_DOMAIN = unchecked((int)(0xC0350076));
+
+        [NativeTypeName("#define STATUS_HV_NESTED_VM_EXIT ((NTSTATUS)0xC0350077L)")]
+        public const int STATUS_HV_NESTED_VM_EXIT = unchecked((int)(0xC0350077));
+
+        [NativeTypeName("#define STATUS_HV_CALL_PENDING ((NTSTATUS)0xC0350079L)")]
+        public const int STATUS_HV_CALL_PENDING = unchecked((int)(0xC0350079));
+
+        [NativeTypeName("#define STATUS_HV_MSR_ACCESS_FAILED ((NTSTATUS)0xC0350080L)")]
+        public const int STATUS_HV_MSR_ACCESS_FAILED = unchecked((int)(0xC0350080));
+
         [NativeTypeName("#define STATUS_HV_NOT_PRESENT ((NTSTATUS)0xC0351000L)")]
         public const int STATUS_HV_NOT_PRESENT = unchecked((int)(0xC0351000));
 
@@ -7891,6 +8002,18 @@ namespace TerraFX.Interop
         [NativeTypeName("#define STATUS_SYSTEM_INTEGRITY_SUPPLEMENTAL_POLICY_NOT_AUTHORIZED ((NTSTATUS)0xC0E90006L)")]
         public const int STATUS_SYSTEM_INTEGRITY_SUPPLEMENTAL_POLICY_NOT_AUTHORIZED = unchecked((int)(0xC0E90006));
 
+        [NativeTypeName("#define STATUS_SYSTEM_INTEGRITY_REPUTATION_MALICIOUS ((NTSTATUS)0xC0E90007L)")]
+        public const int STATUS_SYSTEM_INTEGRITY_REPUTATION_MALICIOUS = unchecked((int)(0xC0E90007));
+
+        [NativeTypeName("#define STATUS_SYSTEM_INTEGRITY_REPUTATION_PUA ((NTSTATUS)0xC0E90008L)")]
+        public const int STATUS_SYSTEM_INTEGRITY_REPUTATION_PUA = unchecked((int)(0xC0E90008));
+
+        [NativeTypeName("#define STATUS_SYSTEM_INTEGRITY_REPUTATION_DANGEROUS_EXT ((NTSTATUS)0xC0E90009L)")]
+        public const int STATUS_SYSTEM_INTEGRITY_REPUTATION_DANGEROUS_EXT = unchecked((int)(0xC0E90009));
+
+        [NativeTypeName("#define STATUS_SYSTEM_INTEGRITY_REPUTATION_OFFLINE ((NTSTATUS)0xC0E9000AL)")]
+        public const int STATUS_SYSTEM_INTEGRITY_REPUTATION_OFFLINE = unchecked((int)(0xC0E9000A));
+
         [NativeTypeName("#define STATUS_NO_APPLICABLE_APP_LICENSES_FOUND ((NTSTATUS)0xC0EA0001L)")]
         public const int STATUS_NO_APPLICABLE_APP_LICENSES_FOUND = unchecked((int)(0xC0EA0001));
 
@@ -8035,6 +8158,24 @@ namespace TerraFX.Interop
         [NativeTypeName("#define STATUS_SPACES_MARK_DIRTY ((NTSTATUS)0xC0E70020L)")]
         public const int STATUS_SPACES_MARK_DIRTY = unchecked((int)(0xC0E70020));
 
+        [NativeTypeName("#define STATUS_SPACES_PD_NOT_FOUND ((NTSTATUS)0xC0E70021L)")]
+        public const int STATUS_SPACES_PD_NOT_FOUND = unchecked((int)(0xC0E70021));
+
+        [NativeTypeName("#define STATUS_SPACES_PD_LENGTH_MISMATCH ((NTSTATUS)0xC0E70022L)")]
+        public const int STATUS_SPACES_PD_LENGTH_MISMATCH = unchecked((int)(0xC0E70022));
+
+        [NativeTypeName("#define STATUS_SPACES_PD_UNSUPPORTED_VERSION ((NTSTATUS)0xC0E70023L)")]
+        public const int STATUS_SPACES_PD_UNSUPPORTED_VERSION = unchecked((int)(0xC0E70023));
+
+        [NativeTypeName("#define STATUS_SPACES_PD_INVALID_DATA ((NTSTATUS)0xC0E70024L)")]
+        public const int STATUS_SPACES_PD_INVALID_DATA = unchecked((int)(0xC0E70024));
+
+        [NativeTypeName("#define STATUS_SPACES_FLUSH_METADATA ((NTSTATUS)0xC0E70025L)")]
+        public const int STATUS_SPACES_FLUSH_METADATA = unchecked((int)(0xC0E70025));
+
+        [NativeTypeName("#define STATUS_SPACES_CACHE_FULL ((NTSTATUS)0xC0E70026L)")]
+        public const int STATUS_SPACES_CACHE_FULL = unchecked((int)(0xC0E70026));
+
         [NativeTypeName("#define STATUS_VOLSNAP_BOOTFILE_NOT_VALID ((NTSTATUS)0xC0500003L)")]
         public const int STATUS_VOLSNAP_BOOTFILE_NOT_VALID = unchecked((int)(0xC0500003));
 
@@ -8095,6 +8236,9 @@ namespace TerraFX.Interop
         [NativeTypeName("#define STATUS_SMB_GUEST_LOGON_BLOCKED ((NTSTATUS)0xC05D0002L)")]
         public const int STATUS_SMB_GUEST_LOGON_BLOCKED = unchecked((int)(0xC05D0002));
 
+        [NativeTypeName("#define STATUS_SMB_NO_SIGNING_ALGORITHM_OVERLAP ((NTSTATUS)0xC05D0003L)")]
+        public const int STATUS_SMB_NO_SIGNING_ALGORITHM_OVERLAP = unchecked((int)(0xC05D0003));
+
         [NativeTypeName("#define STATUS_SECCORE_INVALID_COMMAND ((NTSTATUS)0xC0E80000L)")]
         public const int STATUS_SECCORE_INVALID_COMMAND = unchecked((int)(0xC0E80000));
 
@@ -8128,10 +8272,43 @@ namespace TerraFX.Interop
         [NativeTypeName("#define STATUS_APPEXEC_UNKNOWN_USER ((NTSTATUS)0xC0EC0007L)")]
         public const int STATUS_APPEXEC_UNKNOWN_USER = unchecked((int)(0xC0EC0007));
 
+        [NativeTypeName("#define STATUS_APPEXEC_APP_COMPAT_BLOCK ((NTSTATUS)0xC0EC0008L)")]
+        public const int STATUS_APPEXEC_APP_COMPAT_BLOCK = unchecked((int)(0xC0EC0008));
+
+        [NativeTypeName("#define STATUS_APPEXEC_CALLER_WAIT_TIMEOUT ((NTSTATUS)0xC0EC0009L)")]
+        public const int STATUS_APPEXEC_CALLER_WAIT_TIMEOUT = unchecked((int)(0xC0EC0009));
+
+        [NativeTypeName("#define STATUS_APPEXEC_CALLER_WAIT_TIMEOUT_TERMINATION ((NTSTATUS)0xC0EC000AL)")]
+        public const int STATUS_APPEXEC_CALLER_WAIT_TIMEOUT_TERMINATION = unchecked((int)(0xC0EC000A));
+
+        [NativeTypeName("#define STATUS_APPEXEC_CALLER_WAIT_TIMEOUT_LICENSING ((NTSTATUS)0xC0EC000BL)")]
+        public const int STATUS_APPEXEC_CALLER_WAIT_TIMEOUT_LICENSING = unchecked((int)(0xC0EC000B));
+
+        [NativeTypeName("#define STATUS_APPEXEC_CALLER_WAIT_TIMEOUT_RESOURCES ((NTSTATUS)0xC0EC000CL)")]
+        public const int STATUS_APPEXEC_CALLER_WAIT_TIMEOUT_RESOURCES = unchecked((int)(0xC0EC000C));
+
         [NativeTypeName("#define STATUS_QUIC_HANDSHAKE_FAILURE ((NTSTATUS)0xC0240000L)")]
         public const int STATUS_QUIC_HANDSHAKE_FAILURE = unchecked((int)(0xC0240000));
 
         [NativeTypeName("#define STATUS_QUIC_VER_NEG_FAILURE ((NTSTATUS)0xC0240001L)")]
         public const int STATUS_QUIC_VER_NEG_FAILURE = unchecked((int)(0xC0240001));
+
+        [NativeTypeName("#define STATUS_QUIC_USER_CANCELED ((NTSTATUS)0xC0240002L)")]
+        public const int STATUS_QUIC_USER_CANCELED = unchecked((int)(0xC0240002));
+
+        [NativeTypeName("#define STATUS_QUIC_INTERNAL_ERROR ((NTSTATUS)0xC0240003L)")]
+        public const int STATUS_QUIC_INTERNAL_ERROR = unchecked((int)(0xC0240003));
+
+        [NativeTypeName("#define STATUS_QUIC_PROTOCOL_VIOLATION ((NTSTATUS)0xC0240004L)")]
+        public const int STATUS_QUIC_PROTOCOL_VIOLATION = unchecked((int)(0xC0240004));
+
+        [NativeTypeName("#define STATUS_QUIC_CONNECTION_IDLE ((NTSTATUS)0xC0240005L)")]
+        public const int STATUS_QUIC_CONNECTION_IDLE = unchecked((int)(0xC0240005));
+
+        [NativeTypeName("#define STATUS_QUIC_CONNECTION_TIMEOUT ((NTSTATUS)0xC0240006L)")]
+        public const int STATUS_QUIC_CONNECTION_TIMEOUT = unchecked((int)(0xC0240006));
+
+        [NativeTypeName("#define STATUS_QUIC_ALPN_NEG_FAILURE ((NTSTATUS)0xC0240007L)")]
+        public const int STATUS_QUIC_ALPN_NEG_FAILURE = unchecked((int)(0xC0240007));
     }
 }

@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/schannel.h in the Windows SDK for Windows 10.0.19041.0
+// Ported from um/schannel.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
@@ -266,6 +266,9 @@ namespace TerraFX.Interop
 
         [NativeTypeName("#define SCH_ALLOW_NULL_ENCRYPTION 0x02000000")]
         public const int SCH_ALLOW_NULL_ENCRYPTION = 0x02000000;
+
+        [NativeTypeName("#define SCH_CRED_DEFERRED_CRED_VALIDATION 0x04000000")]
+        public const int SCH_CRED_DEFERRED_CRED_VALIDATION = 0x04000000;
 
         [NativeTypeName("#define SCHANNEL_RENEGOTIATE 0")]
         public const int SCHANNEL_RENEGOTIATE = 0;

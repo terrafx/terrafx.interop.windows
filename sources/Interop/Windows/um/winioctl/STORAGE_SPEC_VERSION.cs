@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/winioctl.h in the Windows SDK for Windows 10.0.19041.0
+// Ported from um/winioctl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System.Runtime.CompilerServices;
@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     public partial struct STORAGE_SPEC_VERSION
     {
         [FieldOffset(0)]
-        [NativeTypeName("_STORAGE_SPEC_VERSION::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winioctl.h:2461:5)")]
+        [NativeTypeName("_STORAGE_SPEC_VERSION::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winioctl.h:2503:5)")]
         public _Anonymous_e__Struct Anonymous;
 
         [FieldOffset(0)]
@@ -39,7 +39,7 @@ namespace TerraFX.Interop
 
         public partial struct _Anonymous_e__Struct
         {
-            [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winioctl.h:2462:9)")]
+            [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winioctl.h:2504:9)")]
             public _MinorVersion_e__Union MinorVersion;
 
             [NativeTypeName("WORD")]
@@ -49,7 +49,7 @@ namespace TerraFX.Interop
             public partial struct _MinorVersion_e__Union
             {
                 [FieldOffset(0)]
-                [NativeTypeName("_STORAGE_SPEC_VERSION::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winioctl.h:2463:13)")]
+                [NativeTypeName("_STORAGE_SPEC_VERSION::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winioctl.h:2505:13)")]
                 public _Anonymous_e__Struct Anonymous;
 
                 [FieldOffset(0)]

@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/winnt.h in the Windows SDK for Windows 10.0.19041.0
+// Ported from um/winnt.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 namespace TerraFX.Interop
@@ -52,7 +52,31 @@ namespace TerraFX.Interop
         [NativeTypeName("ULONGLONG")]
         public ulong TotalNumberOfDataBytesInUse;
 
-        [NativeTypeName("BYTE [816]")]
-        public fixed byte ResumeContext[816];
+        [NativeTypeName("ULONGLONG")]
+        public ulong DataBytesSkippedDueToNoAllocation;
+
+        [NativeTypeName("ULONGLONG")]
+        public ulong DataBytesSkippedDueToInvalidRun;
+
+        [NativeTypeName("ULONGLONG")]
+        public ulong DataBytesSkippedDueToIntegrityStream;
+
+        [NativeTypeName("ULONGLONG")]
+        public ulong DataBytesSkippedDueToRegionBeingClean;
+
+        [NativeTypeName("ULONGLONG")]
+        public ulong DataBytesSkippedDueToLockConflict;
+
+        [NativeTypeName("ULONGLONG")]
+        public ulong DataBytesSkippedDueToNoScrubDataFlag;
+
+        [NativeTypeName("ULONGLONG")]
+        public ulong DataBytesSkippedDueToNoScrubNonIntegrityStreamFlag;
+
+        [NativeTypeName("ULONGLONG")]
+        public ulong DataBytesScrubbed;
+
+        [NativeTypeName("BYTE [1040]")]
+        public fixed byte ResumeContext[1040];
     }
 }

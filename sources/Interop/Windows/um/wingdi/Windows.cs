@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/wingdi.h in the Windows SDK for Windows 10.0.19041.0
+// Ported from um/wingdi.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
@@ -1499,7 +1499,7 @@ namespace TerraFX.Interop
         public const uint GDI_ERROR = (0xFFFFFFFF);
 
         [NativeTypeName("#define HGDI_ERROR (LongToHandle(0xFFFFFFFFL))")]
-        public static readonly IntPtr HGDI_ERROR = unchecked(((IntPtr)((nint)(0xFFFFFFFF))));
+        public static readonly IntPtr HGDI_ERROR = (((IntPtr)((nint)(0xFFFFFFFF))));
 
         [NativeTypeName("#define ERROR 0")]
         public const int ERROR = 0;

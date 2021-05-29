@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/ObjIdlbase.h in the Windows SDK for Windows 10.0.19041.0
+// Ported from um/ObjIdlbase.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
@@ -122,5 +122,7 @@ namespace TerraFX.Interop
         public static readonly Guid IID_IMarshalingStream = new Guid(0xD8F2F5E6, 0x6102, 0x4863, 0x9F, 0x26, 0x38, 0x9A, 0x46, 0x76, 0xEF, 0xDE);
 
         public static readonly Guid IID_IAgileReference = new Guid(0xC03F6A43, 0x65A4, 0x9818, 0x98, 0x7E, 0xE0, 0xB8, 0x10, 0xD2, 0xA6, 0xF2);
+
+        public static readonly Guid IID_IMachineGlobalObjectTable = new Guid(0x26D709AC, 0xF70B, 0x4421, 0xA9, 0x6F, 0xD2, 0x87, 0x8F, 0xAF, 0xB0, 0x0D);
     }
 }

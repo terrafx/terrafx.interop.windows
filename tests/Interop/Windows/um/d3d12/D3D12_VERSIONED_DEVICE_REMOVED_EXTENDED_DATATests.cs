@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/d3d12.h in the Windows SDK for Windows 10.0.19041.0
+// Ported from um/d3d12.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using NUnit.Framework;
@@ -32,11 +32,11 @@ namespace TerraFX.Interop.UnitTests
         {
             if (Environment.Is64BitProcess)
             {
-                Assert.That(sizeof(D3D12_VERSIONED_DEVICE_REMOVED_EXTENDED_DATA), Is.EqualTo(48));
+                Assert.That(sizeof(D3D12_VERSIONED_DEVICE_REMOVED_EXTENDED_DATA), Is.EqualTo(64));
             }
             else
             {
-                Assert.That(sizeof(D3D12_VERSIONED_DEVICE_REMOVED_EXTENDED_DATA), Is.EqualTo(32));
+                Assert.That(sizeof(D3D12_VERSIONED_DEVICE_REMOVED_EXTENDED_DATA), Is.EqualTo(48));
             }
         }
     }

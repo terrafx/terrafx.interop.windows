@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/winioctl.h in the Windows SDK for Windows 10.0.19041.0
+// Ported from um/winioctl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
@@ -171,7 +171,7 @@ namespace TerraFX.Interop
                 }
             }
 
-            if ((Input->Flags & 0x00000001) == 0)
+            if (Input->Flags & 0x00000001 == 0)
             {
                 Min = (uint)(sizeof(DEVICE_MANAGE_DATA_SET_ATTRIBUTES));
                 Max = InputLength;
@@ -631,6 +631,12 @@ namespace TerraFX.Interop
         [NativeTypeName("#define FILE_DEVICE_UCMUCSI 0x0000005d")]
         public const int FILE_DEVICE_UCMUCSI = 0x0000005d;
 
+        [NativeTypeName("#define FILE_DEVICE_PRM 0x0000005e")]
+        public const int FILE_DEVICE_PRM = 0x0000005e;
+
+        [NativeTypeName("#define FILE_DEVICE_EVENT_COLLECTOR 0x0000005f")]
+        public const int FILE_DEVICE_EVENT_COLLECTOR = 0x0000005f;
+
         [NativeTypeName("#define METHOD_BUFFERED 0")]
         public const int METHOD_BUFFERED = 0;
 
@@ -763,6 +769,9 @@ namespace TerraFX.Interop
         [NativeTypeName("#define IOCTL_STORAGE_PROTOCOL_COMMAND CTL_CODE(IOCTL_STORAGE_BASE, 0x04F0, METHOD_BUFFERED, FILE_READ_ACCESS | FILE_WRITE_ACCESS)")]
         public const int IOCTL_STORAGE_PROTOCOL_COMMAND = (((0x0000002d) << 16) | (((0x0001) | (0x0002)) << 14) | ((0x04F0) << 2) | (0));
 
+        [NativeTypeName("#define IOCTL_STORAGE_SET_PROPERTY CTL_CODE(IOCTL_STORAGE_BASE, 0x04FF, METHOD_BUFFERED, FILE_WRITE_ACCESS)")]
+        public const int IOCTL_STORAGE_SET_PROPERTY = (((0x0000002d) << 16) | (((0x0002)) << 14) | ((0x04FF) << 2) | (0));
+
         [NativeTypeName("#define IOCTL_STORAGE_QUERY_PROPERTY CTL_CODE(IOCTL_STORAGE_BASE, 0x0500, METHOD_BUFFERED, FILE_ANY_ACCESS)")]
         public const int IOCTL_STORAGE_QUERY_PROPERTY = (((0x0000002d) << 16) | ((0) << 14) | ((0x0500) << 2) | (0));
 
@@ -771,9 +780,6 @@ namespace TerraFX.Interop
 
         [NativeTypeName("#define IOCTL_STORAGE_GET_LB_PROVISIONING_MAP_RESOURCES CTL_CODE(IOCTL_STORAGE_BASE, 0x0502, METHOD_BUFFERED, FILE_READ_ACCESS)")]
         public const int IOCTL_STORAGE_GET_LB_PROVISIONING_MAP_RESOURCES = (((0x0000002d) << 16) | (((0x0001)) << 14) | ((0x0502) << 2) | (0));
-
-        [NativeTypeName("#define IOCTL_STORAGE_SET_PROPERTY CTL_CODE(IOCTL_STORAGE_BASE, 0x0503, METHOD_BUFFERED, FILE_WRITE_ACCESS)")]
-        public const int IOCTL_STORAGE_SET_PROPERTY = (((0x0000002d) << 16) | (((0x0002)) << 14) | ((0x0503) << 2) | (0));
 
         [NativeTypeName("#define IOCTL_STORAGE_REINITIALIZE_MEDIA CTL_CODE(IOCTL_STORAGE_BASE, 0x0590, METHOD_BUFFERED, FILE_WRITE_ACCESS)")]
         public const int IOCTL_STORAGE_REINITIALIZE_MEDIA = (((0x0000002d) << 16) | (((0x0002)) << 14) | ((0x0590) << 2) | (0));
@@ -1183,6 +1189,9 @@ namespace TerraFX.Interop
         [NativeTypeName("#define STORAGE_PRIORITY_HINT_SUPPORTED 0x0001")]
         public const int STORAGE_PRIORITY_HINT_SUPPORTED = 0x0001;
 
+        [NativeTypeName("#define STORAGE_DIAGNOSTIC_FLAG_ADAPTER_REQUEST 0x00000001")]
+        public const int STORAGE_DIAGNOSTIC_FLAG_ADAPTER_REQUEST = 0x00000001;
+
         [NativeTypeName("#define ERROR_HISTORY_DIRECTORY_ENTRY_DEFAULT_COUNT 8")]
         public const int ERROR_HISTORY_DIRECTORY_ENTRY_DEFAULT_COUNT = 8;
 
@@ -1360,6 +1369,15 @@ namespace TerraFX.Interop
         [NativeTypeName("#define IOCTL_SCM_BUS_GET_REGIONS CTL_CODE(IOCTL_SCMBUS_BASE, SCMBUS_FUNCTION(0x02), METHOD_BUFFERED, FILE_ANY_ACCESS)")]
         public const int IOCTL_SCM_BUS_GET_REGIONS = (((0x00000059) << 16) | ((0) << 14) | (((0x0 + 0x02)) << 2) | (0));
 
+        [NativeTypeName("#define IOCTL_SCM_BUS_QUERY_PROPERTY CTL_CODE(IOCTL_SCMBUS_BASE, SCMBUS_FUNCTION(0x03), METHOD_BUFFERED, FILE_ANY_ACCESS)")]
+        public const int IOCTL_SCM_BUS_QUERY_PROPERTY = (((0x00000059) << 16) | ((0) << 14) | (((0x0 + 0x03)) << 2) | (0));
+
+        [NativeTypeName("#define IOCTL_SCM_BUS_SET_PROPERTY CTL_CODE(IOCTL_SCMBUS_BASE, SCMBUS_FUNCTION(0x05), METHOD_BUFFERED, FILE_WRITE_ACCESS)")]
+        public const int IOCTL_SCM_BUS_SET_PROPERTY = (((0x00000059) << 16) | (((0x0002)) << 14) | (((0x0 + 0x05)) << 2) | (0));
+
+        [NativeTypeName("#define IOCTL_SCM_BUS_RUNTIME_FW_ACTIVATE CTL_CODE(IOCTL_SCMBUS_BASE, SCMBUS_FUNCTION(0x04), METHOD_BUFFERED, FILE_WRITE_ACCESS)")]
+        public const int IOCTL_SCM_BUS_RUNTIME_FW_ACTIVATE = (((0x00000059) << 16) | (((0x0002)) << 14) | (((0x0 + 0x04)) << 2) | (0));
+
         [NativeTypeName("#define IOCTL_SCM_LD_GET_INTERLEAVE_SET CTL_CODE(IOCTL_SCMBUS_BASE, SCM_LOGICAL_DEVICE_FUNCTION(0x00), METHOD_BUFFERED, FILE_ANY_ACCESS)")]
         public const int IOCTL_SCM_LD_GET_INTERLEAVE_SET = (((0x00000059) << 16) | ((0) << 14) | (((0x300 + 0x00)) << 2) | (0));
 
@@ -1380,6 +1398,9 @@ namespace TerraFX.Interop
 
         [NativeTypeName("#define IOCTL_SCM_PD_REINITIALIZE_MEDIA CTL_CODE(IOCTL_SCMBUS_BASE, SCM_PHYSICAL_DEVICE_FUNCTION(0x05), METHOD_BUFFERED, FILE_WRITE_ACCESS)")]
         public const int IOCTL_SCM_PD_REINITIALIZE_MEDIA = (((0x00000059) << 16) | (((0x0002)) << 14) | (((0x600 + 0x05)) << 2) | (0));
+
+        [NativeTypeName("#define IOCTL_SCM_PD_SET_PROPERTY CTL_CODE(IOCTL_SCMBUS_BASE, SCM_PHYSICAL_DEVICE_FUNCTION(0x06), METHOD_BUFFERED, FILE_WRITE_ACCESS)")]
+        public const int IOCTL_SCM_PD_SET_PROPERTY = (((0x00000059) << 16) | (((0x0002)) << 14) | (((0x600 + 0x06)) << 2) | (0));
 
         [NativeTypeName("#define SCM_MAX_SYMLINK_LEN_IN_CHARS 256")]
         public const int SCM_MAX_SYMLINK_LEN_IN_CHARS = 256;
@@ -2803,6 +2824,15 @@ namespace TerraFX.Interop
         [NativeTypeName("#define FSCTL_GET_RETRIEVAL_POINTER_COUNT CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 266, METHOD_NEITHER,  FILE_ANY_ACCESS)")]
         public const int FSCTL_GET_RETRIEVAL_POINTER_COUNT = (((0x00000009) << 16) | ((0) << 14) | ((266) << 2) | (3));
 
+        [NativeTypeName("#define FSCTL_QUERY_ASYNC_DUPLICATE_EXTENTS_STATUS CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 268, METHOD_BUFFERED, FILE_ANY_ACCESS)")]
+        public const int FSCTL_QUERY_ASYNC_DUPLICATE_EXTENTS_STATUS = (((0x00000009) << 16) | ((0) << 14) | ((268) << 2) | (0));
+
+        [NativeTypeName("#define FSCTL_SMB_SHARE_FLUSH_AND_PURGE CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 271, METHOD_BUFFERED, FILE_ANY_ACCESS)")]
+        public const int FSCTL_SMB_SHARE_FLUSH_AND_PURGE = (((0x00000009) << 16) | ((0) << 14) | ((271) << 2) | (0));
+
+        [NativeTypeName("#define FSCTL_REFS_STREAM_SNAPSHOT_MANAGEMENT CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 272, METHOD_BUFFERED, FILE_ANY_ACCESS)")]
+        public const int FSCTL_REFS_STREAM_SNAPSHOT_MANAGEMENT = (((0x00000009) << 16) | ((0) << 14) | ((272) << 2) | (0));
+
         [NativeTypeName("#define GET_VOLUME_BITMAP_FLAG_MASK_METADATA 0x00000001")]
         public const int GET_VOLUME_BITMAP_FLAG_MASK_METADATA = 0x00000001;
 
@@ -2923,9 +2953,6 @@ namespace TerraFX.Interop
         [NativeTypeName("#define MARK_HANDLE_NOT_REALTIME (0x00000040)")]
         public const int MARK_HANDLE_NOT_REALTIME = (0x00000040);
 
-        [NativeTypeName("#define MARK_HANDLE_FILTER_METADATA (0x00000200)")]
-        public const int MARK_HANDLE_FILTER_METADATA = (0x00000200);
-
         [NativeTypeName("#define MARK_HANDLE_CLOUD_SYNC (0x00000800)")]
         public const int MARK_HANDLE_CLOUD_SYNC = (0x00000800);
 
@@ -2934,6 +2961,9 @@ namespace TerraFX.Interop
 
         [NativeTypeName("#define MARK_HANDLE_NOT_READ_COPY (0x00000100)")]
         public const int MARK_HANDLE_NOT_READ_COPY = (0x00000100);
+
+        [NativeTypeName("#define MARK_HANDLE_FILTER_METADATA (0x00000200)")]
+        public const int MARK_HANDLE_FILTER_METADATA = (0x00000200);
 
         [NativeTypeName("#define MARK_HANDLE_RETURN_PURGE_FAILURE (0x00000400)")]
         public const int MARK_HANDLE_RETURN_PURGE_FAILURE = (0x00000400);
@@ -3631,6 +3661,12 @@ namespace TerraFX.Interop
         [NativeTypeName("#define DUPLICATE_EXTENTS_DATA_EX_ASYNC 0x00000002")]
         public const int DUPLICATE_EXTENTS_DATA_EX_ASYNC = 0x00000002;
 
+        [NativeTypeName("#define ASYNC_DUPLICATE_EXTENTS_STATUS_V1 sizeof(ASYNC_DUPLICATE_EXTENTS_STATUS)")]
+        public const uint ASYNC_DUPLICATE_EXTENTS_STATUS_V1 = unchecked(40);
+
+        [NativeTypeName("#define REFS_SMR_VOLUME_INFO_OUTPUT_VERSION_V0 0")]
+        public const int REFS_SMR_VOLUME_INFO_OUTPUT_VERSION_V0 = 0;
+
         [NativeTypeName("#define REFS_SMR_VOLUME_INFO_OUTPUT_VERSION_V1 1")]
         public const int REFS_SMR_VOLUME_INFO_OUTPUT_VERSION_V1 = 1;
 
@@ -3739,8 +3775,11 @@ namespace TerraFX.Interop
         [NativeTypeName("#define CONTAINER_ROOT_INFO_FLAG_BIND_DO_NOT_MAP_NAME (0x00000100)")]
         public const int CONTAINER_ROOT_INFO_FLAG_BIND_DO_NOT_MAP_NAME = (0x00000100);
 
-        [NativeTypeName("#define CONTAINER_ROOT_INFO_VALID_FLAGS (0x000001ff)")]
-        public const int CONTAINER_ROOT_INFO_VALID_FLAGS = (0x000001ff);
+        [NativeTypeName("#define CONTAINER_ROOT_INFO_FLAG_UNION_LAYER_ROOT (0x00000200)")]
+        public const int CONTAINER_ROOT_INFO_FLAG_UNION_LAYER_ROOT = (0x00000200);
+
+        [NativeTypeName("#define CONTAINER_ROOT_INFO_VALID_FLAGS (0x000003ff)")]
+        public const int CONTAINER_ROOT_INFO_VALID_FLAGS = (0x000003ff);
 
         [NativeTypeName("#define PROJFS_PROTOCOL_VERSION 3")]
         public const int PROJFS_PROTOCOL_VERSION = 3;

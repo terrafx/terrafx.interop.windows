@@ -1,0 +1,19 @@
+// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+
+// Ported from um/winnt.h in the Windows SDK for Windows 10.0.20348.0
+// Original source is Copyright © Microsoft. All rights reserved.
+
+namespace TerraFX.Interop
+{
+    public partial struct _MEMORY_PARTITION_DEDICATED_MEMORY_ATTRIBUTE
+    {
+        [NativeTypeName("MEM_DEDICATED_ATTRIBUTE_TYPE")]
+        public _MEM_DEDICATED_ATTRIBUTE_TYPE Type;
+
+        [NativeTypeName("DWORD")]
+        public uint Reserved;
+
+        [NativeTypeName("DWORD64")]
+        public ulong Value;
+    }
+}

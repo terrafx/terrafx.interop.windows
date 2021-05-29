@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/projectedfslib.h in the Windows SDK for Windows 10.0.19041.0
+// Ported from um/projectedfslib.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
@@ -13,7 +13,7 @@ namespace TerraFX.Interop
     {
         public PRJ_COMPLETE_COMMAND_TYPE CommandType;
 
-        [NativeTypeName("PRJ_COMPLETE_COMMAND_EXTENDED_PARAMETERS::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/projectedfslib.h:460:5)")]
+        [NativeTypeName("PRJ_COMPLETE_COMMAND_EXTENDED_PARAMETERS::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/projectedfslib.h:460:5)")]
         public _Anonymous_e__Union Anonymous;
 
         public ref _Anonymous_e__Union._Notification_e__Struct Notification
@@ -38,11 +38,11 @@ namespace TerraFX.Interop
         public partial struct _Anonymous_e__Union
         {
             [FieldOffset(0)]
-            [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/projectedfslib.h:461:9)")]
+            [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/projectedfslib.h:461:9)")]
             public _Notification_e__Struct Notification;
 
             [FieldOffset(0)]
-            [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/projectedfslib.h:465:9)")]
+            [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/projectedfslib.h:465:9)")]
             public _Enumeration_e__Struct Enumeration;
 
             public partial struct _Notification_e__Struct

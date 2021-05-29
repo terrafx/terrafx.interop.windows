@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/wincrypt.h in the Windows SDK for Windows 10.0.19041.0
+// Ported from um/wincrypt.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
@@ -7656,6 +7656,9 @@ namespace TerraFX.Interop
         [NativeTypeName("#define CERT_CHAIN_ENABLE_WEAK_SETTINGS_FLAG 0x80000000")]
         public const uint CERT_CHAIN_ENABLE_WEAK_SETTINGS_FLAG = 0x80000000;
 
+        [NativeTypeName("#define CERT_CHAIN_DISABLE_ECC_PARA_FLAG 0x00000010")]
+        public const int CERT_CHAIN_DISABLE_ECC_PARA_FLAG = 0x00000010;
+
         [NativeTypeName("#define CERT_CHAIN_DISABLE_ALL_EKU_WEAK_FLAG 0x00010000")]
         public const int CERT_CHAIN_DISABLE_ALL_EKU_WEAK_FLAG = 0x00010000;
 
@@ -7710,8 +7713,8 @@ namespace TerraFX.Interop
         [NativeTypeName("#define CERT_CHAIN_DISABLE_MOTW_TIMESTAMP_HASH_WEAK_FLAG 0x00008000")]
         public const int CERT_CHAIN_DISABLE_MOTW_TIMESTAMP_HASH_WEAK_FLAG = 0x00008000;
 
-        [NativeTypeName("#define CERT_CHAIN_DISABLE_WEAK_FLAGS (                 \\\r\n    CERT_CHAIN_DISABLE_ALL_EKU_WEAK_FLAG |              \\\r\n    CERT_CHAIN_DISABLE_SERVER_AUTH_WEAK_FLAG |          \\\r\n    CERT_CHAIN_DISABLE_OPT_IN_SERVER_AUTH_WEAK_FLAG |   \\\r\n    CERT_CHAIN_DISABLE_CODE_SIGNING_WEAK_FLAG |         \\\r\n    CERT_CHAIN_DISABLE_MOTW_CODE_SIGNING_WEAK_FLAG |    \\\r\n    CERT_CHAIN_DISABLE_TIMESTAMP_WEAK_FLAG |            \\\r\n    CERT_CHAIN_DISABLE_MOTW_TIMESTAMP_WEAK_FLAG )")]
-        public const int CERT_CHAIN_DISABLE_WEAK_FLAGS = (0x00010000 | 0x00100000 | 0x00040000 | 0x00400000 | 0x00800000 | 0x04000000 | 0x08000000);
+        [NativeTypeName("#define CERT_CHAIN_DISABLE_WEAK_FLAGS (                 \\\r\n    CERT_CHAIN_DISABLE_ECC_PARA_FLAG |                  \\\r\n    CERT_CHAIN_DISABLE_ALL_EKU_WEAK_FLAG |              \\\r\n    CERT_CHAIN_DISABLE_SERVER_AUTH_WEAK_FLAG |          \\\r\n    CERT_CHAIN_DISABLE_OPT_IN_SERVER_AUTH_WEAK_FLAG |   \\\r\n    CERT_CHAIN_DISABLE_CODE_SIGNING_WEAK_FLAG |         \\\r\n    CERT_CHAIN_DISABLE_MOTW_CODE_SIGNING_WEAK_FLAG |    \\\r\n    CERT_CHAIN_DISABLE_TIMESTAMP_WEAK_FLAG |            \\\r\n    CERT_CHAIN_DISABLE_MOTW_TIMESTAMP_WEAK_FLAG )")]
+        public const int CERT_CHAIN_DISABLE_WEAK_FLAGS = (0x00000010 | 0x00010000 | 0x00100000 | 0x00040000 | 0x00400000 | 0x00800000 | 0x04000000 | 0x08000000);
 
         [NativeTypeName("#define CERT_CHAIN_DISABLE_FILE_HASH_WEAK_FLAGS (       \\\r\n    CERT_CHAIN_DISABLE_FILE_HASH_WEAK_FLAG |            \\\r\n    CERT_CHAIN_DISABLE_MOTW_FILE_HASH_WEAK_FLAG )")]
         public const int CERT_CHAIN_DISABLE_FILE_HASH_WEAK_FLAGS = (0x00001000 | 0x00002000);

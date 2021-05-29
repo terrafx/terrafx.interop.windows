@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/d3d11.h in the Windows SDK for Windows 10.0.19041.0
+// Ported from um/d3d11.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
@@ -114,6 +114,21 @@ namespace TerraFX.Interop
 
         [NativeTypeName("const GUID")]
         public static readonly Guid D3D11_DECODER_PROFILE_VP8_VLD = new Guid(0x90b899ea, 0x3a62, 0x4705, 0x88, 0xb3, 0x8d, 0xf0, 0x4b, 0x27, 0x44, 0xe7);
+
+        [NativeTypeName("const GUID")]
+        public static readonly Guid D3D11_DECODER_PROFILE_AV1_VLD_PROFILE0 = new Guid(0xb8be4ccb, 0xcf53, 0x46ba, 0x8d, 0x59, 0xd6, 0xb8, 0xa6, 0xda, 0x5d, 0x2a);
+
+        [NativeTypeName("const GUID")]
+        public static readonly Guid D3D11_DECODER_PROFILE_AV1_VLD_PROFILE1 = new Guid(0x6936ff0f, 0x45b1, 0x4163, 0x9c, 0xc1, 0x64, 0x6e, 0xf6, 0x94, 0x61, 0x08);
+
+        [NativeTypeName("const GUID")]
+        public static readonly Guid D3D11_DECODER_PROFILE_AV1_VLD_PROFILE2 = new Guid(0x0c5f2aa1, 0xe541, 0x4089, 0xbb, 0x7b, 0x98, 0x11, 0x0a, 0x19, 0xd7, 0xc8);
+
+        [NativeTypeName("const GUID")]
+        public static readonly Guid D3D11_DECODER_PROFILE_AV1_VLD_12BIT_PROFILE2 = new Guid(0x17127009, 0xa00f, 0x4ce1, 0x99, 0x4e, 0xbf, 0x40, 0x81, 0xf6, 0xf3, 0xf0);
+
+        [NativeTypeName("const GUID")]
+        public static readonly Guid D3D11_DECODER_PROFILE_AV1_VLD_12BIT_PROFILE2_420 = new Guid(0x2d80bed6, 0x9cac, 0x4835, 0x9e, 0x91, 0x32, 0x7b, 0xbc, 0x4f, 0x9e, 0xe8);
 
         [NativeTypeName("const GUID")]
         public static readonly Guid D3D11_CRYPTO_TYPE_AES128_CTR = new Guid(0x9b6bd711, 0x4f74, 0x41c9, 0x9e, 0x7b, 0xb, 0xe2, 0xd7, 0xd9, 0x3b, 0x4f);

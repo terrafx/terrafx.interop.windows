@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from shared/wtypes.h in the Windows SDK for Windows 10.0.19041.0
+// Ported from shared/wtypes.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System.Runtime.CompilerServices;
@@ -13,13 +13,13 @@ namespace TerraFX.Interop
         [NativeTypeName("USHORT")]
         public ushort wReserved;
 
-        [NativeTypeName("tagDEC::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/shared/wtypes.h:697:5)")]
+        [NativeTypeName("tagDEC::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/shared/wtypes.h:705:5)")]
         public _Anonymous1_e__Union Anonymous1;
 
         [NativeTypeName("ULONG")]
         public uint Hi32;
 
-        [NativeTypeName("tagDEC::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/shared/wtypes.h:705:5)")]
+        [NativeTypeName("tagDEC::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/shared/wtypes.h:713:5)")]
         public _Anonymous2_e__Union Anonymous2;
 
         public ref byte scale
@@ -80,7 +80,7 @@ namespace TerraFX.Interop
         public partial struct _Anonymous1_e__Union
         {
             [FieldOffset(0)]
-            [NativeTypeName("tagDEC::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/shared/wtypes.h:698:9)")]
+            [NativeTypeName("tagDEC::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/shared/wtypes.h:706:9)")]
             public _Anonymous_e__Struct Anonymous;
 
             [FieldOffset(0)]
@@ -101,7 +101,7 @@ namespace TerraFX.Interop
         public partial struct _Anonymous2_e__Union
         {
             [FieldOffset(0)]
-            [NativeTypeName("tagDEC::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/shared/wtypes.h:706:9)")]
+            [NativeTypeName("tagDEC::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/shared/wtypes.h:714:9)")]
             public _Anonymous_e__Struct Anonymous;
 
             [FieldOffset(0)]

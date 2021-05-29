@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/dcomp.h in the Windows SDK for Windows 10.0.19041.0
+// Ported from um/dcomp.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
@@ -117,5 +117,9 @@ namespace TerraFX.Interop
         public static readonly Guid IID_IDCompositionArithmeticCompositeEffect = new Guid(0x3B67DFA8, 0xE3DD, 0x4E61, 0xB6, 0x40, 0x46, 0xC2, 0xF3, 0xD7, 0x39, 0xDC);
 
         public static readonly Guid IID_IDCompositionAffineTransform2DEffect = new Guid(0x0B74B9E8, 0xCDD6, 0x492F, 0xBB, 0xBC, 0x5E, 0xD3, 0x21, 0x57, 0x02, 0x6D);
+
+        public static readonly Guid IID_IDCompositionDelegatedInkTrail = new Guid(0xC2448E9B, 0x547D, 0x4057, 0x8C, 0xF5, 0x81, 0x44, 0xED, 0xE1, 0xC2, 0xDA);
+
+        public static readonly Guid IID_IDCompositionInkTrailDevice = new Guid(0xDF0C7CEC, 0xCDEB, 0x4D4A, 0xB9, 0x1C, 0x72, 0x1B, 0xF2, 0x2F, 0x4E, 0x6C);
     }
 }

@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/winnt.h in the Windows SDK for Windows 10.0.19041.0
+// Ported from um/winnt.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
@@ -12,6 +12,88 @@ namespace TerraFX.Interop
 {
     public static unsafe partial class Windows
     {
+        [return: NativeTypeName("DWORD")]
+        public static uint _convert_fpcr_fpsr_to_mxcsr([NativeTypeName("DWORD")] uint Fpcr, [NativeTypeName("DWORD")] uint Fpsr)
+        {
+            _AMD64_MXCSR_REG MxCSR = new _AMD64_MXCSR_REG();
+            _ARM64_FPCR_REG Fpcr2 = new _ARM64_FPCR_REG();
+            _ARM64_FPSR_REG Fpsr2 = new _ARM64_FPSR_REG();
+
+            MxCSR.Value = 0;
+            Fpcr2.Value = Fpcr;
+            Fpsr2.Value = Fpsr;
+            MxCSR.Anonymous.IE = Fpsr2.Anonymous.IOC;
+            MxCSR.Anonymous.DE = Fpsr2.Anonymous.IDC;
+            MxCSR.Anonymous.ZE = Fpsr2.Anonymous.DZC;
+            MxCSR.Anonymous.OE = Fpsr2.Anonymous.OFC;
+            MxCSR.Anonymous.UE = Fpsr2.Anonymous.UFC;
+            MxCSR.Anonymous.PE = Fpsr2.Anonymous.IXC;
+            MxCSR.Anonymous.IM = ~Fpcr2.Anonymous.IOE;
+            MxCSR.Anonymous.DM = ~Fpcr2.Anonymous.IDE;
+            MxCSR.Anonymous.ZM = ~Fpcr2.Anonymous.DZE;
+            MxCSR.Anonymous.OM = ~Fpcr2.Anonymous.OFE;
+            MxCSR.Anonymous.UM = ~Fpcr2.Anonymous.UFE;
+            MxCSR.Anonymous.PM = ~Fpcr2.Anonymous.IXE;
+            MxCSR.Anonymous.DAZ = Fpcr2.Anonymous.FZ16;
+            MxCSR.Anonymous.RC = (((Fpcr2.Anonymous.RMode & 2) >> 1) != 0 || ((Fpcr2.Anonymous.RMode & 1) << 1) != 0) ? 1 : 0;
+            MxCSR.Anonymous.FZ = Fpcr2.Anonymous.FZ;
+            return MxCSR.Value;
+        }
+
+        public static void _convert_mxcsr_to_fpcr_fpsr([NativeTypeName("DWORD")] uint MxCsr, [NativeTypeName("DWORD *")] uint* Fpcr, [NativeTypeName("DWORD *")] uint* Fpsr)
+        {
+            _AMD64_MXCSR_REG MxCsr2 = new _AMD64_MXCSR_REG();
+            _ARM64_FPCR_REG Fpcr2 = new _ARM64_FPCR_REG();
+            _ARM64_FPSR_REG Fpsr2 = new _ARM64_FPSR_REG();
+
+            MxCsr2.Value = MxCsr;
+            Fpcr2.Value = 0;
+            Fpsr2.Value = 0;
+            Fpsr2.Anonymous.IOC = MxCsr2.Anonymous.IE;
+            Fpsr2.Anonymous.IDC = MxCsr2.Anonymous.DE;
+            Fpsr2.Anonymous.DZC = MxCsr2.Anonymous.ZE;
+            Fpsr2.Anonymous.OFC = MxCsr2.Anonymous.OE;
+            Fpsr2.Anonymous.UFC = MxCsr2.Anonymous.UE;
+            Fpsr2.Anonymous.IXC = MxCsr2.Anonymous.PE;
+            Fpcr2.Anonymous.IOE = ~MxCsr2.Anonymous.IM;
+            Fpcr2.Anonymous.IDE = ~MxCsr2.Anonymous.DM;
+            Fpcr2.Anonymous.DZE = ~MxCsr2.Anonymous.ZM;
+            Fpcr2.Anonymous.OFE = ~MxCsr2.Anonymous.OM;
+            Fpcr2.Anonymous.UFE = ~MxCsr2.Anonymous.UM;
+            Fpcr2.Anonymous.IXE = ~MxCsr2.Anonymous.PM;
+            Fpcr2.Anonymous.FZ16 = MxCsr2.Anonymous.DAZ;
+            Fpcr2.Anonymous.RMode = (((MxCsr2.Anonymous.RC & 2) >> 1) != 0 || ((MxCsr2.Anonymous.RC & 1) << 1) != 0) ? 1 : 0;
+            Fpcr2.Anonymous.FZ = MxCsr2.Anonymous.FZ;
+            *Fpcr = Fpcr2.Value;
+            *Fpsr = Fpsr2.Value;
+        }
+
+        [return: NativeTypeName("DWORD")]
+        public static uint _convert_cpsr_to_eflags([NativeTypeName("DWORD")] uint Cpsr)
+        {
+            uint Result = 0x0202;
+
+            Result |= ((Cpsr >> 31) & 1) << 7;
+            Result |= ((Cpsr >> 30) & 1) << 6;
+            Result |= ((Cpsr >> 29) & 1) << 0;
+            Result |= ((Cpsr >> 28) & 1) << 11;
+            Result |= ((Cpsr >> 21) & 1) << 8;
+            return Result;
+        }
+
+        [return: NativeTypeName("DWORD")]
+        public static uint _convert_eflags_to_cpsr([NativeTypeName("DWORD")] uint Eflags)
+        {
+            uint Result = 0;
+
+            Result |= ((Eflags >> 7) & 1) << 31;
+            Result |= ((Eflags >> 6) & 1) << 30;
+            Result |= ((Eflags >> 0) & 1) << 29;
+            Result |= ((Eflags >> 11) & 1) << 28;
+            Result |= ((Eflags >> 8) & 1) << 21;
+            return Result;
+        }
+
         [NativeTypeName("const GUID")]
         public static readonly Guid GUID_MAX_POWER_SAVINGS = new Guid(0xA1841308, 0x3541, 0x4FAB, 0xBC, 0x81, 0xF7, 0x15, 0x56, 0xF2, 0x0B, 0x4A);
 
@@ -642,11 +724,22 @@ namespace TerraFX.Interop
         [NativeTypeName("const GUID")]
         public static readonly Guid PPM_THERMAL_POLICY_CHANGE_GUID = new Guid(0x48f377b8, 0x6880, 0x4c7b, 0x8b, 0xdc, 0x38, 0x1, 0x76, 0xc6, 0x65, 0x4d);
 
+        [DllImport("kernel32", ExactSpelling = true)]
+        public static extern void RtlRestoreContext([NativeTypeName("PCONTEXT")] CONTEXT* ContextRecord, [NativeTypeName("struct _EXCEPTION_RECORD *")] EXCEPTION_RECORD* ExceptionRecord);
+
         [return: NativeTypeName("DWORD")]
         public static uint HEAP_MAKE_TAG_FLAGS([NativeTypeName("DWORD")] uint TagBase, [NativeTypeName("DWORD")] uint Tag)
         {
             return ((uint)((TagBase) + ((Tag) << 18)));
         }
+
+        [DllImport("kernel32", ExactSpelling = true)]
+        [return: NativeTypeName("DWORD")]
+        public static extern uint RtlGetSystemGlobalData([NativeTypeName("RTL_SYSTEM_GLOBAL_DATA_ID")] _RTL_SYSTEM_GLOBAL_DATA_ID DataId, [NativeTypeName("PVOID")] void* Buffer, [NativeTypeName("DWORD")] uint Size);
+
+        [DllImport("kernel32", ExactSpelling = true)]
+        [return: NativeTypeName("DWORD")]
+        public static extern uint RtlSetSystemGlobalData([NativeTypeName("RTL_SYSTEM_GLOBAL_DATA_ID")] _RTL_SYSTEM_GLOBAL_DATA_ID DataId, [NativeTypeName("PVOID")] void* Buffer, [NativeTypeName("DWORD")] uint Size);
 
         [DllImport("kernel32", ExactSpelling = true)]
         [return: NativeTypeName("unsigned char")]
@@ -1360,9 +1453,6 @@ namespace TerraFX.Interop
         [NativeTypeName("#define PRODUCT_CLOUDE 0x000000B7")]
         public const int PRODUCT_CLOUDE = 0x000000B7;
 
-        [NativeTypeName("#define PRODUCT_ANDROMEDA 0x000000B8")]
-        public const int PRODUCT_ANDROMEDA = 0x000000B8;
-
         [NativeTypeName("#define PRODUCT_IOTOS 0x000000B9")]
         public const int PRODUCT_IOTOS = 0x000000B9;
 
@@ -1398,6 +1488,15 @@ namespace TerraFX.Interop
 
         [NativeTypeName("#define PRODUCT_XBOX_SCARLETTHOSTOS 0x000000C5")]
         public const int PRODUCT_XBOX_SCARLETTHOSTOS = 0x000000C5;
+
+        [NativeTypeName("#define PRODUCT_AZURESTACKHCI_SERVER_CORE 0x00000196")]
+        public const int PRODUCT_AZURESTACKHCI_SERVER_CORE = 0x00000196;
+
+        [NativeTypeName("#define PRODUCT_DATACENTER_SERVER_AZURE_EDITION 0x00000197")]
+        public const int PRODUCT_DATACENTER_SERVER_AZURE_EDITION = 0x00000197;
+
+        [NativeTypeName("#define PRODUCT_DATACENTER_SERVER_CORE_AZURE_EDITION 0x00000198")]
+        public const int PRODUCT_DATACENTER_SERVER_CORE_AZURE_EDITION = 0x00000198;
 
         [NativeTypeName("#define PRODUCT_UNLICENSED 0xABCDABCD")]
         public const uint PRODUCT_UNLICENSED = 0xABCDABCD;
@@ -2854,6 +2953,69 @@ namespace TerraFX.Interop
         [NativeTypeName("#define MAXIMUM_SUSPEND_COUNT MAXCHAR")]
         public const int MAXIMUM_SUSPEND_COUNT = 0x7f;
 
+        [NativeTypeName("#define CONTEXT_ARM64 0x00400000L")]
+        public const int CONTEXT_ARM64 = 0x00400000;
+
+        [NativeTypeName("#define CONTEXT_ARM64_CONTROL (CONTEXT_ARM64 | 0x1L)")]
+        public const int CONTEXT_ARM64_CONTROL = (0x00400000 | 0x1);
+
+        [NativeTypeName("#define CONTEXT_ARM64_INTEGER (CONTEXT_ARM64 | 0x2L)")]
+        public const int CONTEXT_ARM64_INTEGER = (0x00400000 | 0x2);
+
+        [NativeTypeName("#define CONTEXT_ARM64_FLOATING_POINT (CONTEXT_ARM64 | 0x4L)")]
+        public const int CONTEXT_ARM64_FLOATING_POINT = (0x00400000 | 0x4);
+
+        [NativeTypeName("#define CONTEXT_ARM64_DEBUG_REGISTERS (CONTEXT_ARM64 | 0x8L)")]
+        public const int CONTEXT_ARM64_DEBUG_REGISTERS = (0x00400000 | 0x8);
+
+        [NativeTypeName("#define CONTEXT_ARM64_X18 (CONTEXT_ARM64 | 0x10L)")]
+        public const int CONTEXT_ARM64_X18 = (0x00400000 | 0x10);
+
+        [NativeTypeName("#define CONTEXT_ARM64_FULL (CONTEXT_ARM64_CONTROL | CONTEXT_ARM64_INTEGER | CONTEXT_ARM64_FLOATING_POINT)")]
+        public const int CONTEXT_ARM64_FULL = ((0x00400000 | 0x1) | (0x00400000 | 0x2) | (0x00400000 | 0x4));
+
+        [NativeTypeName("#define CONTEXT_ARM64_ALL (CONTEXT_ARM64_CONTROL | CONTEXT_ARM64_INTEGER | CONTEXT_ARM64_FLOATING_POINT | CONTEXT_ARM64_DEBUG_REGISTERS | CONTEXT_ARM64_X18)")]
+        public const int CONTEXT_ARM64_ALL = ((0x00400000 | 0x1) | (0x00400000 | 0x2) | (0x00400000 | 0x4) | (0x00400000 | 0x8) | (0x00400000 | 0x10));
+
+        [NativeTypeName("#define CONTEXT_ARM64_UNWOUND_TO_CALL 0x20000000")]
+        public const int CONTEXT_ARM64_UNWOUND_TO_CALL = 0x20000000;
+
+        [NativeTypeName("#define CONTEXT_ARM64_RET_TO_GUEST 0x04000000")]
+        public const int CONTEXT_ARM64_RET_TO_GUEST = 0x04000000;
+
+        [NativeTypeName("#define CONTEXT_UNWOUND_TO_CALL CONTEXT_ARM64_UNWOUND_TO_CALL")]
+        public const int CONTEXT_UNWOUND_TO_CALL = 0x20000000;
+
+        [NativeTypeName("#define CONTEXT_RET_TO_GUEST CONTEXT_ARM64_RET_TO_GUEST")]
+        public const int CONTEXT_RET_TO_GUEST = 0x04000000;
+
+        [NativeTypeName("#define ARM64_MAX_BREAKPOINTS 8")]
+        public const int ARM64_MAX_BREAKPOINTS = 8;
+
+        [NativeTypeName("#define ARM64_MAX_WATCHPOINTS 2")]
+        public const int ARM64_MAX_WATCHPOINTS = 2;
+
+        [NativeTypeName("#define UNW_FLAG_NHANDLER 0x0")]
+        public const int UNW_FLAG_NHANDLER = 0x0;
+
+        [NativeTypeName("#define UNW_FLAG_EHANDLER 0x1")]
+        public const int UNW_FLAG_EHANDLER = 0x1;
+
+        [NativeTypeName("#define UNW_FLAG_UHANDLER 0x2")]
+        public const int UNW_FLAG_UHANDLER = 0x2;
+
+        [NativeTypeName("#define NONVOL_INT_NUMREG_ARM64 (11)")]
+        public const int NONVOL_INT_NUMREG_ARM64 = (11);
+
+        [NativeTypeName("#define NONVOL_FP_NUMREG_ARM64 (8)")]
+        public const int NONVOL_FP_NUMREG_ARM64 = (8);
+
+        [NativeTypeName("#define NONVOL_INT_SIZE_ARM64 (NONVOL_INT_NUMREG_ARM64 * sizeof(DWORD64))")]
+        public const uint NONVOL_INT_SIZE_ARM64 = unchecked((11) * 8);
+
+        [NativeTypeName("#define NONVOL_FP_SIZE_ARM64 (NONVOL_FP_NUMREG_ARM64 * sizeof(double))")]
+        public const uint NONVOL_FP_SIZE_ARM64 = unchecked((8) * 8);
+
         [NativeTypeName("#define _MM_HINT_T0 1")]
         public const int _MM_HINT_T0 = 1;
 
@@ -3009,6 +3171,9 @@ namespace TerraFX.Interop
 
         [NativeTypeName("#define EXCEPTION_COLLIDED_UNWIND 0x40")]
         public const int EXCEPTION_COLLIDED_UNWIND = 0x40;
+
+        [NativeTypeName("#define EXCEPTION_SOFTWARE_ORIGINATE 0x80")]
+        public const int EXCEPTION_SOFTWARE_ORIGINATE = 0x80;
 
         [NativeTypeName("#define EXCEPTION_UNWIND (EXCEPTION_UNWINDING | EXCEPTION_EXIT_UNWIND | \\\r\n                          EXCEPTION_TARGET_UNWIND | EXCEPTION_COLLIDED_UNWIND)")]
         public const int EXCEPTION_UNWIND = (0x2 | 0x4 | 0x20 | 0x40);
@@ -4120,6 +4285,9 @@ namespace TerraFX.Interop
         [NativeTypeName("#define SE_DEVELOPMENT_MODE_NETWORK_CAPABILITY L\"developmentModeNetwork\"")]
         public const string SE_DEVELOPMENT_MODE_NETWORK_CAPABILITY = "developmentModeNetwork";
 
+        [NativeTypeName("#define SE_PERMISSIVE_LEARNING_MODE_CAPABILITY L\"permissiveLearningMode\"")]
+        public const string SE_PERMISSIVE_LEARNING_MODE_CAPABILITY = "permissiveLearningMode";
+
         [NativeTypeName("#define SECURITY_MAX_IMPERSONATION_LEVEL SecurityDelegation")]
         public const SECURITY_IMPERSONATION_LEVEL SECURITY_MAX_IMPERSONATION_LEVEL = SecurityDelegation;
 
@@ -4507,6 +4675,12 @@ namespace TerraFX.Interop
         [NativeTypeName("#define THREAD_BASE_PRIORITY_IDLE (-15)")]
         public const int THREAD_BASE_PRIORITY_IDLE = (-15);
 
+        [NativeTypeName("#define COMPONENT_KTM 0x01")]
+        public const int COMPONENT_KTM = 0x01;
+
+        [NativeTypeName("#define COMPONENT_VALID_FLAGS (COMPONENT_KTM)")]
+        public const int COMPONENT_VALID_FLAGS = (0x01);
+
         [NativeTypeName("#define MEMORY_PRIORITY_LOWEST 0")]
         public const int MEMORY_PRIORITY_LOWEST = 0;
 
@@ -4758,6 +4932,15 @@ namespace TerraFX.Interop
 
         [NativeTypeName("#define JOB_OBJECT_CPU_RATE_CONTROL_VALID_FLAGS 0x1f")]
         public const int JOB_OBJECT_CPU_RATE_CONTROL_VALID_FLAGS = 0x1f;
+
+        [NativeTypeName("#define MEMORY_PARTITION_QUERY_ACCESS 0x0001")]
+        public const int MEMORY_PARTITION_QUERY_ACCESS = 0x0001;
+
+        [NativeTypeName("#define MEMORY_PARTITION_MODIFY_ACCESS 0x0002")]
+        public const int MEMORY_PARTITION_MODIFY_ACCESS = 0x0002;
+
+        [NativeTypeName("#define MEMORY_PARTITION_ALL_ACCESS (STANDARD_RIGHTS_REQUIRED |      \\\r\n                                     SYNCHRONIZE |                   \\\r\n                                     MEMORY_PARTITION_QUERY_ACCESS | \\\r\n                                     MEMORY_PARTITION_MODIFY_ACCESS)")]
+        public const int MEMORY_PARTITION_ALL_ACCESS = ((0x000F0000) | (0x00100000) | 0x0001 | 0x0002);
 
         [NativeTypeName("#define EVENT_MODIFY_STATE 0x0002")]
         public const int EVENT_MODIFY_STATE = 0x0002;
@@ -5056,6 +5239,15 @@ namespace TerraFX.Interop
         [NativeTypeName("#define PF_AVX512F_INSTRUCTIONS_AVAILABLE 41")]
         public const int PF_AVX512F_INSTRUCTIONS_AVAILABLE = 41;
 
+        [NativeTypeName("#define PF_ERMS_AVAILABLE 42")]
+        public const int PF_ERMS_AVAILABLE = 42;
+
+        [NativeTypeName("#define PF_ARM_V82_DP_INSTRUCTIONS_AVAILABLE 43")]
+        public const int PF_ARM_V82_DP_INSTRUCTIONS_AVAILABLE = 43;
+
+        [NativeTypeName("#define PF_ARM_V83_JSCVT_INSTRUCTIONS_AVAILABLE 44")]
+        public const int PF_ARM_V83_JSCVT_INSTRUCTIONS_AVAILABLE = 44;
+
         [NativeTypeName("#define XSTATE_LEGACY_FLOATING_POINT (0)")]
         public const int XSTATE_LEGACY_FLOATING_POINT = (0);
 
@@ -5088,6 +5280,15 @@ namespace TerraFX.Interop
 
         [NativeTypeName("#define XSTATE_CET_U (11)")]
         public const int XSTATE_CET_U = (11);
+
+        [NativeTypeName("#define XSTATE_CET_S (12)")]
+        public const int XSTATE_CET_S = (12);
+
+        [NativeTypeName("#define XSTATE_AMX_TILE_CONFIG (17)")]
+        public const int XSTATE_AMX_TILE_CONFIG = (17);
+
+        [NativeTypeName("#define XSTATE_AMX_TILE_DATA (18)")]
+        public const int XSTATE_AMX_TILE_DATA = (18);
 
         [NativeTypeName("#define XSTATE_LWP (62)")]
         public const int XSTATE_LWP = (62);
@@ -5122,6 +5323,15 @@ namespace TerraFX.Interop
         [NativeTypeName("#define XSTATE_MASK_CET_U (1ui64 << (XSTATE_CET_U))")]
         public const ulong XSTATE_MASK_CET_U = (1UL << ((11)));
 
+        [NativeTypeName("#define XSTATE_MASK_CET_S (1ui64 << (XSTATE_CET_S))")]
+        public const ulong XSTATE_MASK_CET_S = (1UL << ((12)));
+
+        [NativeTypeName("#define XSTATE_MASK_AMX_TILE_CONFIG (1ui64 << (XSTATE_AMX_TILE_CONFIG))")]
+        public const ulong XSTATE_MASK_AMX_TILE_CONFIG = (1UL << ((17)));
+
+        [NativeTypeName("#define XSTATE_MASK_AMX_TILE_DATA (1ui64 << (XSTATE_AMX_TILE_DATA))")]
+        public const ulong XSTATE_MASK_AMX_TILE_DATA = (1UL << ((18)));
+
         [NativeTypeName("#define XSTATE_MASK_LWP (1ui64 << (XSTATE_LWP))")]
         public const ulong XSTATE_MASK_LWP = (1UL << ((62)));
 
@@ -5133,6 +5343,9 @@ namespace TerraFX.Interop
 
         [NativeTypeName("#define XSTATE_MASK_USER_VISIBLE_SUPERVISOR (XSTATE_MASK_CET_U)")]
         public const ulong XSTATE_MASK_USER_VISIBLE_SUPERVISOR = ((1UL << ((11))));
+
+        [NativeTypeName("#define XSTATE_MASK_LARGE_FEATURES (XSTATE_MASK_AMX_TILE_DATA)")]
+        public const ulong XSTATE_MASK_LARGE_FEATURES = ((1UL << ((18))));
 
         [NativeTypeName("#define XSTATE_COMPACTION_ENABLE (63)")]
         public const int XSTATE_COMPACTION_ENABLE = (63);
@@ -5146,14 +5359,23 @@ namespace TerraFX.Interop
         [NativeTypeName("#define XSTATE_ALIGN_MASK (1ui64 << (XSTATE_ALIGN_BIT))")]
         public const ulong XSTATE_ALIGN_MASK = (1UL << ((1)));
 
+        [NativeTypeName("#define XSTATE_XFD_BIT (2)")]
+        public const int XSTATE_XFD_BIT = (2);
+
+        [NativeTypeName("#define XSTATE_XFD_MASK (1ui64 << (XSTATE_XFD_BIT))")]
+        public const ulong XSTATE_XFD_MASK = (1UL << ((2)));
+
         [NativeTypeName("#define XSTATE_CONTROLFLAG_XSAVEOPT_MASK (1)")]
         public const int XSTATE_CONTROLFLAG_XSAVEOPT_MASK = (1);
 
         [NativeTypeName("#define XSTATE_CONTROLFLAG_XSAVEC_MASK (2)")]
         public const int XSTATE_CONTROLFLAG_XSAVEC_MASK = (2);
 
-        [NativeTypeName("#define XSTATE_CONTROLFLAG_VALID_MASK (XSTATE_CONTROLFLAG_XSAVEOPT_MASK | \\\r\n                                             XSTATE_CONTROLFLAG_XSAVEC_MASK)")]
-        public const int XSTATE_CONTROLFLAG_VALID_MASK = ((1) | (2));
+        [NativeTypeName("#define XSTATE_CONTROLFLAG_XFD_MASK (4)")]
+        public const int XSTATE_CONTROLFLAG_XFD_MASK = (4);
+
+        [NativeTypeName("#define XSTATE_CONTROLFLAG_VALID_MASK (XSTATE_CONTROLFLAG_XSAVEOPT_MASK | \\\r\n                                             XSTATE_CONTROLFLAG_XSAVEC_MASK | \\\r\n                                             XSTATE_CONTROLFLAG_XFD_MASK)")]
+        public const int XSTATE_CONTROLFLAG_VALID_MASK = ((1) | (2) | (4));
 
         [NativeTypeName("#define CFG_CALL_TARGET_VALID (0x00000001)")]
         public const int CFG_CALL_TARGET_VALID = (0x00000001);
@@ -5163,6 +5385,12 @@ namespace TerraFX.Interop
 
         [NativeTypeName("#define CFG_CALL_TARGET_CONVERT_EXPORT_SUPPRESSED_TO_VALID (0x00000004)")]
         public const int CFG_CALL_TARGET_CONVERT_EXPORT_SUPPRESSED_TO_VALID = (0x00000004);
+
+        [NativeTypeName("#define CFG_CALL_TARGET_VALID_XFG (0x00000008)")]
+        public const int CFG_CALL_TARGET_VALID_XFG = (0x00000008);
+
+        [NativeTypeName("#define CFG_CALL_TARGET_CONVERT_XFG_TO_CFG (0x00000010)")]
+        public const int CFG_CALL_TARGET_CONVERT_XFG_TO_CFG = (0x00000010);
 
         [NativeTypeName("#define SECTION_QUERY 0x0001")]
         public const int SECTION_QUERY = 0x0001;
@@ -5356,11 +5584,26 @@ namespace TerraFX.Interop
         [NativeTypeName("#define MEM_EXTENDED_PARAMETER_SOFT_FAULT_PAGES 0x00000020")]
         public const int MEM_EXTENDED_PARAMETER_SOFT_FAULT_PAGES = 0x00000020;
 
+        [NativeTypeName("#define MEM_EXTENDED_PARAMETER_EC_CODE 0x00000040")]
+        public const int MEM_EXTENDED_PARAMETER_EC_CODE = 0x00000040;
+
         [NativeTypeName("#define MEM_EXTENDED_PARAMETER_NUMA_NODE_MANDATORY MINLONG64")]
         public const long MEM_EXTENDED_PARAMETER_NUMA_NODE_MANDATORY = unchecked((long)(~((long)(((ulong)(~((ulong)(0)))) >> 1))));
 
         [NativeTypeName("#define MEM_EXTENDED_PARAMETER_TYPE_BITS 8")]
         public const int MEM_EXTENDED_PARAMETER_TYPE_BITS = 8;
+
+        [NativeTypeName("#define MEMORY_CURRENT_PARTITION_HANDLE ((HANDLE) (LONG_PTR) -1)")]
+        public static readonly IntPtr MEMORY_CURRENT_PARTITION_HANDLE = ((IntPtr)((nint)(-1)));
+
+        [NativeTypeName("#define MEMORY_SYSTEM_PARTITION_HANDLE ((HANDLE) (LONG_PTR) -2)")]
+        public static readonly IntPtr MEMORY_SYSTEM_PARTITION_HANDLE = ((IntPtr)((nint)(-2)));
+
+        [NativeTypeName("#define MEMORY_EXISTING_VAD_PARTITION_HANDLE ((HANDLE) (LONG_PTR) -3)")]
+        public static readonly IntPtr MEMORY_EXISTING_VAD_PARTITION_HANDLE = ((IntPtr)((nint)(-3)));
+
+        [NativeTypeName("#define MEM_DEDICATED_ATTRIBUTE_NOT_SPECIFIED ((DWORD64) -1)")]
+        public const ulong MEM_DEDICATED_ATTRIBUTE_NOT_SPECIFIED = unchecked((ulong)(-1));
 
         [NativeTypeName("#define SEC_PARTITION_OWNER_HANDLE 0x00040000")]
         public const int SEC_PARTITION_OWNER_HANDLE = 0x00040000;
@@ -5436,6 +5679,9 @@ namespace TerraFX.Interop
 
         [NativeTypeName("#define VBS_BASIC_PAGE_SYSTEM_CALL 0x00000005")]
         public const int VBS_BASIC_PAGE_SYSTEM_CALL = 0x00000005;
+
+        [NativeTypeName("#define DEDICATED_MEMORY_CACHE_ELIGIBLE 0x1")]
+        public const int DEDICATED_MEMORY_CACHE_ELIGIBLE = 0x1;
 
         [NativeTypeName("#define FILE_READ_DATA ( 0x0001 )")]
         public const int FILE_READ_DATA = (0x0001);
@@ -5865,6 +6111,9 @@ namespace TerraFX.Interop
 
         [NativeTypeName("#define IO_REPARSE_TAG_WCI_LINK_1 (0xA0001027L)")]
         public const uint IO_REPARSE_TAG_WCI_LINK_1 = (0xA0001027);
+
+        [NativeTypeName("#define IO_REPARSE_TAG_DATALESS_CIM (0xA0000028L)")]
+        public const uint IO_REPARSE_TAG_DATALESS_CIM = (0xA0000028);
 
         [NativeTypeName("#define SCRUB_DATA_INPUT_FLAG_RESUME 0x00000001")]
         public const int SCRUB_DATA_INPUT_FLAG_RESUME = 0x00000001;
@@ -8155,6 +8404,9 @@ namespace TerraFX.Interop
         [NativeTypeName("#define IMAGE_GUARD_EH_CONTINUATION_TABLE_PRESENT 0x00400000")]
         public const int IMAGE_GUARD_EH_CONTINUATION_TABLE_PRESENT = 0x00400000;
 
+        [NativeTypeName("#define IMAGE_GUARD_XFG_ENABLED 0x00800000")]
+        public const int IMAGE_GUARD_XFG_ENABLED = 0x00800000;
+
         [NativeTypeName("#define IMAGE_GUARD_CF_FUNCTION_TABLE_SIZE_MASK 0xF0000000")]
         public const uint IMAGE_GUARD_CF_FUNCTION_TABLE_SIZE_MASK = 0xF0000000;
 
@@ -8166,6 +8418,12 @@ namespace TerraFX.Interop
 
         [NativeTypeName("#define IMAGE_GUARD_FLAG_EXPORT_SUPPRESSED 0x02")]
         public const int IMAGE_GUARD_FLAG_EXPORT_SUPPRESSED = 0x02;
+
+        [NativeTypeName("#define IMAGE_GUARD_FLAG_FID_LANGEXCPTHANDLER 0x04")]
+        public const int IMAGE_GUARD_FLAG_FID_LANGEXCPTHANDLER = 0x04;
+
+        [NativeTypeName("#define IMAGE_GUARD_FLAG_FID_XFG 0x08")]
+        public const int IMAGE_GUARD_FLAG_FID_XFG = 0x08;
 
         [NativeTypeName("#define IMAGE_ENCLAVE_LONG_ID_LENGTH ENCLAVE_LONG_ID_LENGTH")]
         public const int IMAGE_ENCLAVE_LONG_ID_LENGTH = 32;
@@ -8494,6 +8752,24 @@ namespace TerraFX.Interop
         [NativeTypeName("#define FAST_FAIL_INVALID_PFN 63")]
         public const int FAST_FAIL_INVALID_PFN = 63;
 
+        [NativeTypeName("#define FAST_FAIL_GUARD_ICALL_CHECK_FAILURE_XFG 64")]
+        public const int FAST_FAIL_GUARD_ICALL_CHECK_FAILURE_XFG = 64;
+
+        [NativeTypeName("#define FAST_FAIL_CAST_GUARD 65")]
+        public const int FAST_FAIL_CAST_GUARD = 65;
+
+        [NativeTypeName("#define FAST_FAIL_HOST_VISIBILITY_CHANGE 66")]
+        public const int FAST_FAIL_HOST_VISIBILITY_CHANGE = 66;
+
+        [NativeTypeName("#define FAST_FAIL_KERNEL_CET_SHADOW_STACK_ASSIST 67")]
+        public const int FAST_FAIL_KERNEL_CET_SHADOW_STACK_ASSIST = 67;
+
+        [NativeTypeName("#define FAST_FAIL_PATCH_CALLBACK_FAILED 68")]
+        public const int FAST_FAIL_PATCH_CALLBACK_FAILED = 68;
+
+        [NativeTypeName("#define FAST_FAIL_NTDLL_PATCH_FAILED 69")]
+        public const int FAST_FAIL_NTDLL_PATCH_FAILED = 69;
+
         [NativeTypeName("#define FAST_FAIL_INVALID_FAST_FAIL_CODE 0xFFFFFFFF")]
         public const uint FAST_FAIL_INVALID_FAST_FAIL_CODE = 0xFFFFFFFF;
 
@@ -8578,6 +8854,9 @@ namespace TerraFX.Interop
         [NativeTypeName("#define IS_TEXT_UNICODE_DBCS_LEADBYTE 0x0400")]
         public const int IS_TEXT_UNICODE_DBCS_LEADBYTE = 0x0400;
 
+        [NativeTypeName("#define IS_TEXT_UNICODE_UTF8 0x0800")]
+        public const int IS_TEXT_UNICODE_UTF8 = 0x0800;
+
         [NativeTypeName("#define IS_TEXT_UNICODE_NULL_BYTES 0x1000")]
         public const int IS_TEXT_UNICODE_NULL_BYTES = 0x1000;
 
@@ -8607,6 +8886,9 @@ namespace TerraFX.Interop
 
         [NativeTypeName("#define COMPRESSION_FORMAT_XPRESS_HUFF (0x0004)")]
         public const int COMPRESSION_FORMAT_XPRESS_HUFF = (0x0004);
+
+        [NativeTypeName("#define COMPRESSION_FORMAT_XP10 (0x0005)")]
+        public const int COMPRESSION_FORMAT_XP10 = (0x0005);
 
         [NativeTypeName("#define COMPRESSION_ENGINE_STANDARD (0x0000)")]
         public const int COMPRESSION_ENGINE_STANDARD = (0x0000);
@@ -8762,7 +9044,7 @@ namespace TerraFX.Interop
         public const int FLUSH_NV_MEMORY_IN_FLAG_NO_DRAIN = (0x00000001);
 
         [NativeTypeName("#define FLUSH_NV_MEMORY_DEFAULT_TOKEN (ULONG_PTR)(-1)")]
-        public static readonly nuint FLUSH_NV_MEMORY_DEFAULT_TOKEN = unchecked((nuint)(-1));
+        public const nuint FLUSH_NV_MEMORY_DEFAULT_TOKEN = unchecked((nuint)(-1));
 
         [NativeTypeName("#define WRITE_NV_MEMORY_FLAG_FLUSH (0x00000001)")]
         public const int WRITE_NV_MEMORY_FLAG_FLUSH = (0x00000001);
@@ -8818,6 +9100,9 @@ namespace TerraFX.Interop
         [NativeTypeName("#define IMAGE_POLICY_SECTION_NAME \".tPolicy\"")]
         public static ReadOnlySpan<byte> IMAGE_POLICY_SECTION_NAME => new byte[] { 0x2E, 0x74, 0x50, 0x6F, 0x6C, 0x69, 0x63, 0x79, 0x00 };
 
+        [NativeTypeName("#define RTL_VIRTUAL_UNWIND2_VALIDATE_PAC 0x00000001UL")]
+        public const uint RTL_VIRTUAL_UNWIND2_VALIDATE_PAC = 0x00000001U;
+
         [NativeTypeName("#define RTL_CRITICAL_SECTION_FLAG_NO_DEBUG_INFO 0x01000000")]
         public const int RTL_CRITICAL_SECTION_FLAG_NO_DEBUG_INFO = 0x01000000;
 
@@ -8837,7 +9122,7 @@ namespace TerraFX.Interop
         public const uint RTL_CRITICAL_SECTION_ALL_FLAG_BITS = 0xFF000000;
 
         [NativeTypeName("#define RTL_CRITICAL_SECTION_FLAG_RESERVED (RTL_CRITICAL_SECTION_ALL_FLAG_BITS & (~(RTL_CRITICAL_SECTION_FLAG_NO_DEBUG_INFO | RTL_CRITICAL_SECTION_FLAG_DYNAMIC_SPIN | RTL_CRITICAL_SECTION_FLAG_STATIC_INIT | RTL_CRITICAL_SECTION_FLAG_RESOURCE_TYPE | RTL_CRITICAL_SECTION_FLAG_FORCE_DEBUG_INFO)))")]
-        public const uint RTL_CRITICAL_SECTION_FLAG_RESERVED = (0xFF000000 & (~(0x01000000u | 0x02000000 | 0x04000000 | 0x08000000 | 0x10000000)));
+        public const uint RTL_CRITICAL_SECTION_FLAG_RESERVED = (0xFF000000 & (~(0x01000000 | 0x02000000 | 0x04000000 | 0x08000000 | 0x10000000)));
 
         [NativeTypeName("#define RTL_CRITICAL_SECTION_DEBUG_FLAG_STATIC_INIT 0x00000001")]
         public const int RTL_CRITICAL_SECTION_DEBUG_FLAG_STATIC_INIT = 0x00000001;
@@ -9082,8 +9367,44 @@ namespace TerraFX.Interop
         [NativeTypeName("#define DEVICEFAMILYDEVICEFORM_XBOX_ONE_X_DEVKIT 0x00000021")]
         public const int DEVICEFAMILYDEVICEFORM_XBOX_ONE_X_DEVKIT = 0x00000021;
 
-        [NativeTypeName("#define DEVICEFAMILYDEVICEFORM_MAX 0x00000021")]
-        public const int DEVICEFAMILYDEVICEFORM_MAX = 0x00000021;
+        [NativeTypeName("#define DEVICEFAMILYDEVICEFORM_XBOX_SERIES_X 0x00000022")]
+        public const int DEVICEFAMILYDEVICEFORM_XBOX_SERIES_X = 0x00000022;
+
+        [NativeTypeName("#define DEVICEFAMILYDEVICEFORM_XBOX_SERIES_X_DEVKIT 0x00000023")]
+        public const int DEVICEFAMILYDEVICEFORM_XBOX_SERIES_X_DEVKIT = 0x00000023;
+
+        [NativeTypeName("#define DEVICEFAMILYDEVICEFORM_XBOX_RESERVED_00 0x00000024")]
+        public const int DEVICEFAMILYDEVICEFORM_XBOX_RESERVED_00 = 0x00000024;
+
+        [NativeTypeName("#define DEVICEFAMILYDEVICEFORM_XBOX_RESERVED_01 0x00000025")]
+        public const int DEVICEFAMILYDEVICEFORM_XBOX_RESERVED_01 = 0x00000025;
+
+        [NativeTypeName("#define DEVICEFAMILYDEVICEFORM_XBOX_RESERVED_02 0x00000026")]
+        public const int DEVICEFAMILYDEVICEFORM_XBOX_RESERVED_02 = 0x00000026;
+
+        [NativeTypeName("#define DEVICEFAMILYDEVICEFORM_XBOX_RESERVED_03 0x00000027")]
+        public const int DEVICEFAMILYDEVICEFORM_XBOX_RESERVED_03 = 0x00000027;
+
+        [NativeTypeName("#define DEVICEFAMILYDEVICEFORM_XBOX_RESERVED_04 0x00000028")]
+        public const int DEVICEFAMILYDEVICEFORM_XBOX_RESERVED_04 = 0x00000028;
+
+        [NativeTypeName("#define DEVICEFAMILYDEVICEFORM_XBOX_RESERVED_05 0x00000029")]
+        public const int DEVICEFAMILYDEVICEFORM_XBOX_RESERVED_05 = 0x00000029;
+
+        [NativeTypeName("#define DEVICEFAMILYDEVICEFORM_XBOX_RESERVED_06 0x0000002A")]
+        public const int DEVICEFAMILYDEVICEFORM_XBOX_RESERVED_06 = 0x0000002A;
+
+        [NativeTypeName("#define DEVICEFAMILYDEVICEFORM_XBOX_RESERVED_07 0x0000002B")]
+        public const int DEVICEFAMILYDEVICEFORM_XBOX_RESERVED_07 = 0x0000002B;
+
+        [NativeTypeName("#define DEVICEFAMILYDEVICEFORM_XBOX_RESERVED_08 0x0000002C")]
+        public const int DEVICEFAMILYDEVICEFORM_XBOX_RESERVED_08 = 0x0000002C;
+
+        [NativeTypeName("#define DEVICEFAMILYDEVICEFORM_XBOX_RESERVED_09 0x0000002D")]
+        public const int DEVICEFAMILYDEVICEFORM_XBOX_RESERVED_09 = 0x0000002D;
+
+        [NativeTypeName("#define DEVICEFAMILYDEVICEFORM_MAX 0x0000002D")]
+        public const int DEVICEFAMILYDEVICEFORM_MAX = 0x0000002D;
 
         [NativeTypeName("#define DLL_PROCESS_ATTACH 1")]
         public const int DLL_PROCESS_ATTACH = 1;

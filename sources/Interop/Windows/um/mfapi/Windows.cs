@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/mfapi.h in the Windows SDK for Windows 10.0.19041.0
+// Ported from um/mfapi.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
@@ -547,6 +547,9 @@ namespace TerraFX.Interop
         [NativeTypeName("const GUID")]
         public static readonly Guid MF_CAPTURE_METADATA_SCANLINE_DIRECTION = new Guid(0x6496a3ba, 0x1907, 0x49e6, 0xb0, 0xc3, 0x12, 0x37, 0x95, 0xf3, 0x80, 0xa9);
 
+        [NativeTypeName("const GUID")]
+        public static readonly Guid MF_CAPTURE_METADATA_DIGITALWINDOW = new Guid(0x276f72a2, 0x59c8, 0x4f69, 0x97, 0xb4, 0x6, 0x8b, 0x8c, 0xe, 0xc0, 0x44);
+
         [DllImport("mfplat", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int MFCreateAttributes(IMFAttributes** ppMFAttributes, [NativeTypeName("UINT32")] uint cInitialSize);
@@ -874,6 +877,9 @@ namespace TerraFX.Interop
         public static readonly Guid MFVideoFormat_AV1 = new Guid(((((uint)(0x41563031) & 0xFF) << 24) | (((uint)(0x41563031) & 0xFF00) << 8) | (((uint)(0x41563031) & 0xFF0000) >> 8) | (((uint)(0x41563031) & 0xFF000000) >> 24)), 0x0000, 0x0010, 0x80, 0x00, 0x00, 0xaa, 0x00, 0x38, 0x9b, 0x71);
 
         [NativeTypeName("const GUID")]
+        public static readonly Guid MFVideoFormat_Theora = new Guid(((((uint)(0x7468656F) & 0xFF) << 24) | (((uint)(0x7468656F) & 0xFF00) << 8) | (((uint)(0x7468656F) & 0xFF0000) >> 8) | (((uint)(0x7468656F) & 0xFF000000) >> 24)), 0x0000, 0x0010, 0x80, 0x00, 0x00, 0xaa, 0x00, 0x38, 0x9b, 0x71);
+
+        [NativeTypeName("const GUID")]
         public static readonly Guid MFVideoFormat_H264_ES = new Guid(0x3f40f4f0, 0x5622, 0x4ff8, 0xb6, 0xd8, 0xa1, 0x7a, 0x58, 0x4b, 0xee, 0x5e);
 
         [NativeTypeName("const GUID")]
@@ -943,10 +949,25 @@ namespace TerraFX.Interop
         public static readonly Guid MFAudioFormat_Opus = new Guid(0x704F, 0x0000, 0x0010, 0x80, 0x00, 0x00, 0xaa, 0x00, 0x38, 0x9b, 0x71);
 
         [NativeTypeName("const GUID")]
+        public static readonly Guid MFAudioFormat_Dolby_AC4 = new Guid(0xAC40, 0x0000, 0x0010, 0x80, 0x00, 0x00, 0xaa, 0x00, 0x38, 0x9b, 0x71);
+
+        [NativeTypeName("const GUID")]
         public static readonly Guid MFAudioFormat_Dolby_AC3 = new Guid(0xe06d802c, 0xdb46, 0x11cf, 0xb4, 0xd1, 0x00, 0x80, 0x05f, 0x6c, 0xbb, 0xea);
 
         [NativeTypeName("const GUID")]
         public static readonly Guid MFAudioFormat_Dolby_DDPlus = new Guid(0xa7fb87af, 0x2d02, 0x42fb, 0xa4, 0xd4, 0x5, 0xcd, 0x93, 0x84, 0x3b, 0xdd);
+
+        [NativeTypeName("const GUID")]
+        public static readonly Guid MFAudioFormat_Dolby_AC4_V1 = new Guid(0x36b7927c, 0x3d87, 0x4a2a, 0x91, 0x96, 0xa2, 0x1a, 0xd9, 0xe9, 0x35, 0xe6);
+
+        [NativeTypeName("const GUID")]
+        public static readonly Guid MFAudioFormat_Dolby_AC4_V2 = new Guid(0x7998b2a0, 0x17dd, 0x49b6, 0x8d, 0xfa, 0x9b, 0x27, 0x85, 0x52, 0xa2, 0xac);
+
+        [NativeTypeName("const GUID")]
+        public static readonly Guid MFAudioFormat_Dolby_AC4_V1_ES = new Guid(0x9d8dccc6, 0xd156, 0x4fb8, 0x97, 0x9c, 0xa8, 0x5b, 0xe7, 0xd2, 0x1d, 0xfa);
+
+        [NativeTypeName("const GUID")]
+        public static readonly Guid MFAudioFormat_Dolby_AC4_V2_ES = new Guid(0x7e58c9f9, 0xb070, 0x45f4, 0x8c, 0xcd, 0xa9, 0x9a, 0x04, 0x17, 0xc1, 0xac);
 
         [NativeTypeName("const GUID")]
         public static readonly Guid MFAudioFormat_Vorbis = new Guid(0x8D2FD10B, 0x5841, 0x4a6b, 0x89, 0x05, 0x58, 0x8F, 0xEC, 0x1A, 0xDE, 0xD9);
@@ -1532,6 +1553,9 @@ namespace TerraFX.Interop
 
         [NativeTypeName("const GUID")]
         public static readonly Guid FORMAT_MFVideoFormat = new Guid(0xaed4ab2d, 0x7326, 0x43cb, 0x94, 0x64, 0xc8, 0x79, 0xca, 0xb9, 0xc4, 0x3d);
+
+        [NativeTypeName("const GUID")]
+        public static readonly Guid MFMediaType_Metadata = new Guid(0x2c8fa20c, 0x82bb, 0x4782, 0x90, 0xa0, 0x98, 0xa2, 0xa5, 0xbd, 0x8e, 0xf8);
 
         [DllImport("mfplat", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]

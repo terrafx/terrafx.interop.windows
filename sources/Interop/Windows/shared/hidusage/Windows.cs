@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from shared/hidusage.h in the Windows SDK for Windows 10.0.19041.0
+// Ported from shared/hidusage.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 namespace TerraFX.Interop
@@ -1357,6 +1357,9 @@ namespace TerraFX.Interop
         [NativeTypeName("#define HID_USAGE_DIGITIZER_FREE_SPACE_WAND ((USAGE) 0x0D)")]
         public const ushort HID_USAGE_DIGITIZER_FREE_SPACE_WAND = ((ushort)(0x0D));
 
+        [NativeTypeName("#define HID_USAGE_DIGITIZER_HEAT_MAP ((USAGE) 0x0F)")]
+        public const ushort HID_USAGE_DIGITIZER_HEAT_MAP = ((ushort)(0x0F));
+
         [NativeTypeName("#define HID_USAGE_DIGITIZER_STYLUS ((USAGE) 0x20)")]
         public const ushort HID_USAGE_DIGITIZER_STYLUS = ((ushort)(0x20));
 
@@ -1437,6 +1440,15 @@ namespace TerraFX.Interop
 
         [NativeTypeName("#define HID_USAGE_DIGITIZER_TRANSDUCER_SERIAL ((USAGE) 0x5B)")]
         public const ushort HID_USAGE_DIGITIZER_TRANSDUCER_SERIAL = ((ushort)(0x5B));
+
+        [NativeTypeName("#define HID_USAGE_DIGITIZER_HEAT_MAP_PROTOCOL_VENDOR_ID ((USAGE) 0x6A)")]
+        public const ushort HID_USAGE_DIGITIZER_HEAT_MAP_PROTOCOL_VENDOR_ID = ((ushort)(0x6A));
+
+        [NativeTypeName("#define HID_USAGE_DIGITIZER_HEAT_MAP_PROTOCOL_VERSION ((USAGE) 0x6B)")]
+        public const ushort HID_USAGE_DIGITIZER_HEAT_MAP_PROTOCOL_VERSION = ((ushort)(0x6B));
+
+        [NativeTypeName("#define HID_USAGE_DIGITIZER_HEAT_MAP_FRAME_DATA ((USAGE) 0x6C)")]
+        public const ushort HID_USAGE_DIGITIZER_HEAT_MAP_FRAME_DATA = ((ushort)(0x6C));
 
         [NativeTypeName("#define HID_USAGE_DIGITIZER_TRANSDUCER_VENDOR ((USAGE) 0x92)")]
         public const ushort HID_USAGE_DIGITIZER_TRANSDUCER_VENDOR = ((ushort)(0x92));

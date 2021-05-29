@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/appmodel.h in the Windows SDK for Windows 10.0.19041.0
+// Ported from um/appmodel.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
@@ -172,6 +172,14 @@ namespace TerraFX.Interop
 
         [DllImport("kernel32", ExactSpelling = true)]
         [return: NativeTypeName("LONG")]
+        public static extern int GetPackageInfo2([NativeTypeName("PACKAGE_INFO_REFERENCE")] PACKAGE_INFO_REFERENCE* packageInfoReference, [NativeTypeName("const UINT32")] uint flags, PackagePathType packagePathType, [NativeTypeName("UINT32 *")] uint* bufferLength, [NativeTypeName("BYTE *")] byte* buffer, [NativeTypeName("UINT32 *")] uint* count);
+
+        [DllImport("kernel32", ExactSpelling = true)]
+        [return: NativeTypeName("HRESULT")]
+        public static extern int CheckIsMSIXPackage([NativeTypeName("PCWSTR")] ushort* packageFullName, [NativeTypeName("BOOL *")] int* isMSIXPackage);
+
+        [DllImport("kernel32", ExactSpelling = true)]
+        [return: NativeTypeName("LONG")]
         public static extern int AppPolicyGetLifecycleManagement([NativeTypeName("HANDLE")] IntPtr processToken, AppPolicyLifecycleManagement* policy);
 
         [DllImport("kernel32", ExactSpelling = true)]
@@ -201,10 +209,6 @@ namespace TerraFX.Interop
         [DllImport("kernel32", ExactSpelling = true)]
         [return: NativeTypeName("LONG")]
         public static extern int AppPolicyGetCreateFileAccess([NativeTypeName("HANDLE")] IntPtr processToken, AppPolicyCreateFileAccess* policy);
-
-        [DllImport("kernel32", ExactSpelling = true)]
-        [return: NativeTypeName("LONG")]
-        public static extern int GetPackageInfo2([NativeTypeName("PACKAGE_INFO_REFERENCE")] PACKAGE_INFO_REFERENCE* packageInfoReference, [NativeTypeName("const UINT32")] uint flags, PackagePathType packagePathType, [NativeTypeName("UINT32 *")] uint* bufferLength, [NativeTypeName("BYTE *")] byte* buffer, [NativeTypeName("UINT32 *")] uint* count);
 
         [NativeTypeName("#define PACKAGE_PROPERTY_FRAMEWORK 0x00000001")]
         public const int PACKAGE_PROPERTY_FRAMEWORK = 0x00000001;
@@ -259,6 +263,12 @@ namespace TerraFX.Interop
 
         [NativeTypeName("#define PACKAGE_FILTER_DYNAMIC PACKAGE_PROPERTY_DYNAMIC")]
         public const int PACKAGE_FILTER_DYNAMIC = 0x00100000;
+
+        [NativeTypeName("#define PACKAGE_PROPERTY_HOSTRUNTIME 0x00200000")]
+        public const int PACKAGE_PROPERTY_HOSTRUNTIME = 0x00200000;
+
+        [NativeTypeName("#define PACKAGE_FILTER_HOSTRUNTIME PACKAGE_PROPERTY_HOSTRUNTIME")]
+        public const int PACKAGE_FILTER_HOSTRUNTIME = 0x00200000;
 
         [NativeTypeName("#define PACKAGE_FILTER_ALL_LOADED 0")]
         public const int PACKAGE_FILTER_ALL_LOADED = 0;

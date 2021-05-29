@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/OAIdl.h in the Windows SDK for Windows 10.0.19041.0
+// Ported from um/OAIdl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System.Runtime.CompilerServices;
@@ -10,7 +10,7 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct VARIANT
     {
-        [NativeTypeName("tagVARIANT::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/OAIdl.h:470:5)")]
+        [NativeTypeName("tagVARIANT::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/OAIdl.h:478:5)")]
         public _Anonymous_e__Union Anonymous;
 
         public ref ushort vt
@@ -575,7 +575,7 @@ namespace TerraFX.Interop
         public unsafe partial struct _Anonymous_e__Union
         {
             [FieldOffset(0)]
-            [NativeTypeName("tagVARIANT::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/OAIdl.h:472:9)")]
+            [NativeTypeName("tagVARIANT::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/OAIdl.h:480:9)")]
             public _Anonymous_e__Struct Anonymous;
 
             [FieldOffset(0)]
@@ -595,7 +595,7 @@ namespace TerraFX.Interop
                 [NativeTypeName("WORD")]
                 public ushort wReserved3;
 
-                [NativeTypeName("tagVARIANT::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/OAIdl.h:478:13)")]
+                [NativeTypeName("tagVARIANT::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/OAIdl.h:486:13)")]
                 public _Anonymous_e__Union Anonymous;
 
                 [StructLayout(LayoutKind.Explicit)]
@@ -772,7 +772,7 @@ namespace TerraFX.Interop
                     public uint* puintVal;
 
                     [FieldOffset(0)]
-                    [NativeTypeName("tagVARIANT::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/OAIdl.h:525:17)")]
+                    [NativeTypeName("tagVARIANT::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/OAIdl.h:533:17)")]
                     public _Anonymous_e__Struct Anonymous;
 
                     public unsafe partial struct _Anonymous_e__Struct

@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/libloaderapi.h in the Windows SDK for Windows 10.0.19041.0
+// Ported from um/libloaderapi.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
@@ -137,6 +137,10 @@ namespace TerraFX.Interop
         [DllImport("kernel32", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int EnumResourceNamesW([NativeTypeName("HMODULE")] IntPtr hModule, [NativeTypeName("LPCWSTR")] ushort* lpType, [NativeTypeName("ENUMRESNAMEPROCW")] delegate* unmanaged<IntPtr, ushort*, ushort*, nint, int> lpEnumFunc, [NativeTypeName("LONG_PTR")] nint lParam);
+
+        [DllImport("kernel32", ExactSpelling = true)]
+        [return: NativeTypeName("BOOL")]
+        public static extern int EnumResourceNamesA([NativeTypeName("HMODULE")] IntPtr hModule, [NativeTypeName("LPCSTR")] sbyte* lpType, [NativeTypeName("ENUMRESNAMEPROCA")] delegate* unmanaged<IntPtr, sbyte*, sbyte*, nint, int> lpEnumFunc, [NativeTypeName("LONG_PTR")] nint lParam);
 
         [NativeTypeName("#define FIND_RESOURCE_DIRECTORY_TYPES (0x0100)")]
         public const int FIND_RESOURCE_DIRECTORY_TYPES = (0x0100);
