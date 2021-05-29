@@ -3,8 +3,11 @@
 // Ported from um/d3d12.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System;
+
 namespace TerraFX.Interop
 {
+    [Flags]
     public enum D3D12_DRED_PAGE_FAULT_FLAGS
     {
         D3D12_DRED_PAGE_FAULT_FLAGS_NONE = 0,
