@@ -16,7 +16,7 @@ namespace TerraFX.Interop
 
         [DllImport("kernel32", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int QueueUserAPC2([NativeTypeName("PAPCFUNC")] delegate* unmanaged<nuint, void> ApcRoutine, [NativeTypeName("HANDLE")] IntPtr Thread, [NativeTypeName("ULONG_PTR")] nuint Data, [NativeTypeName("QUEUE_USER_APC_FLAGS")] _QUEUE_USER_APC_FLAGS Flags);
+        public static extern int QueueUserAPC2([NativeTypeName("PAPCFUNC")] delegate* unmanaged<nuint, void> ApcRoutine, [NativeTypeName("HANDLE")] IntPtr Thread, [NativeTypeName("ULONG_PTR")] nuint Data, QUEUE_USER_APC_FLAGS Flags);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]

@@ -15,9 +15,9 @@ namespace TerraFX.Interop
         [return: NativeTypeName("DWORD")]
         public static uint _convert_fpcr_fpsr_to_mxcsr([NativeTypeName("DWORD")] uint Fpcr, [NativeTypeName("DWORD")] uint Fpsr)
         {
-            _AMD64_MXCSR_REG MxCSR = new _AMD64_MXCSR_REG();
-            _ARM64_FPCR_REG Fpcr2 = new _ARM64_FPCR_REG();
-            _ARM64_FPSR_REG Fpsr2 = new _ARM64_FPSR_REG();
+            AMD64_MXCSR_REG MxCSR = new AMD64_MXCSR_REG();
+            ARM64_FPCR_REG Fpcr2 = new ARM64_FPCR_REG();
+            ARM64_FPSR_REG Fpsr2 = new ARM64_FPSR_REG();
 
             MxCSR.Value = 0;
             Fpcr2.Value = Fpcr;
@@ -42,9 +42,9 @@ namespace TerraFX.Interop
 
         public static void _convert_mxcsr_to_fpcr_fpsr([NativeTypeName("DWORD")] uint MxCsr, [NativeTypeName("DWORD *")] uint* Fpcr, [NativeTypeName("DWORD *")] uint* Fpsr)
         {
-            _AMD64_MXCSR_REG MxCsr2 = new _AMD64_MXCSR_REG();
-            _ARM64_FPCR_REG Fpcr2 = new _ARM64_FPCR_REG();
-            _ARM64_FPSR_REG Fpsr2 = new _ARM64_FPSR_REG();
+            AMD64_MXCSR_REG MxCsr2 = new AMD64_MXCSR_REG();
+            ARM64_FPCR_REG Fpcr2 = new ARM64_FPCR_REG();
+            ARM64_FPSR_REG Fpsr2 = new ARM64_FPSR_REG();
 
             MxCsr2.Value = MxCsr;
             Fpcr2.Value = 0;
@@ -735,11 +735,11 @@ namespace TerraFX.Interop
 
         [DllImport("kernel32", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
-        public static extern uint RtlGetSystemGlobalData([NativeTypeName("RTL_SYSTEM_GLOBAL_DATA_ID")] _RTL_SYSTEM_GLOBAL_DATA_ID DataId, [NativeTypeName("PVOID")] void* Buffer, [NativeTypeName("DWORD")] uint Size);
+        public static extern uint RtlGetSystemGlobalData(RTL_SYSTEM_GLOBAL_DATA_ID DataId, [NativeTypeName("PVOID")] void* Buffer, [NativeTypeName("DWORD")] uint Size);
 
         [DllImport("kernel32", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
-        public static extern uint RtlSetSystemGlobalData([NativeTypeName("RTL_SYSTEM_GLOBAL_DATA_ID")] _RTL_SYSTEM_GLOBAL_DATA_ID DataId, [NativeTypeName("PVOID")] void* Buffer, [NativeTypeName("DWORD")] uint Size);
+        public static extern uint RtlSetSystemGlobalData(RTL_SYSTEM_GLOBAL_DATA_ID DataId, [NativeTypeName("PVOID")] void* Buffer, [NativeTypeName("DWORD")] uint Size);
 
         [DllImport("kernel32", ExactSpelling = true)]
         [return: NativeTypeName("unsigned char")]
