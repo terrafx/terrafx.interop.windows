@@ -7,7 +7,7 @@ um-processenv.h
 --test-output
 ../../../tests/Interop/Windows/um/processenv
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/processenv.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/processenv.h
 --with-librarypath
 *=kernel32
 --with-setlasterror

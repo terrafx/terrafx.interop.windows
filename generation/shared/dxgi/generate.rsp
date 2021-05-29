@@ -13,7 +13,7 @@ shared-dxgi.h
 --test-output
 ../../../tests/Interop/Windows/shared/dxgi
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/shared/dxgi.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/shared/dxgi.h
 --with-attribute
 DXGI_ADAPTER_FLAG=Flags
 DXGI_SWAP_CHAIN_FLAG=Flags

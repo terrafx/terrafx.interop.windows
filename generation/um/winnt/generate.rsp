@@ -369,7 +369,7 @@ um-winnt.h
 --test-output
 ../../../tests/Interop/Windows/um/winnt
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winnt.h
 --with-attribute
 ACCESS_REASON_TYPE=Flags
 CM_SERVICE_NODE_TYPE=Flags

@@ -10,7 +10,7 @@ um-xamlOM.h
 --test-output
 ../../../tests/Interop/Windows/um/xamlOM
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/xamlOM.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/xamlOM.h
 --with-attribute
 MetadataBit=Flags
 --with-librarypath

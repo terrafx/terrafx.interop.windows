@@ -12,6 +12,6 @@ um-xaudio2.h
 --test-output
 ../../../tests/Interop/Windows/um/xaudio2
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/xaudio2.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/xaudio2.h
 --with-librarypath
 *=XAudio2_9

@@ -14,6 +14,6 @@ um-xaudio2fx.h
 --test-output
 ../../../tests/Interop/Windows/um/xaudio2fx
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/xaudio2fx.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/xaudio2fx.h
 --with-librarypath
 *=Windows.Media.Audio.dll

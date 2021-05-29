@@ -7,4 +7,4 @@ um-remotesystemadditionalinfo.h
 --test-output
 ../../../tests/Interop/Windows/um/remotesystemadditionalinfo
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/remotesystemadditionalinfo.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/remotesystemadditionalinfo.h

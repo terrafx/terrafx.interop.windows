@@ -13,7 +13,7 @@ um-WebServices.h
 --test-output
 ../../../tests/Interop/Windows/um/WebServices
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/WebServices.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/WebServices.h
 --with-attribute
 WS_CHANNEL_TYPE=Flags
 WS_SECURE_PROTOCOL=Flags

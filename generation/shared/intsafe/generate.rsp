@@ -776,4 +776,4 @@ shared-intsafe.h
 --test-output
 ../../../tests/Interop/Windows/shared/intsafe
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/shared/intsafe.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/shared/intsafe.h

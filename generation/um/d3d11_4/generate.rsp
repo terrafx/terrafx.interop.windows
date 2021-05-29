@@ -7,7 +7,7 @@ um-d3d11_4.h
 --test-output
 ../../../tests/Interop/Windows/um/d3d11_4
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/d3d11_4.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/d3d11_4.h
 --with-attribute
 D3D11_CRYPTO_SESSION_KEY_EXCHANGE_FLAGS=Flags
 D3D11_VIDEO_DECODER_HISTOGRAM_COMPONENT_FLAGS=Flags

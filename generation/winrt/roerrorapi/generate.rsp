@@ -15,7 +15,7 @@ winrt-roerrorapi.h
 --test-output
 ../../../tests/Interop/Windows/winrt/roerrorapi
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/winrt/roerrorapi.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/winrt/roerrorapi.h
 --with-attribute
 RO_ERROR_REPORTING_FLAGS=Flags
 RoErrorReportingFlags=Flags

@@ -10,4 +10,4 @@ shared-dxgitype.h
 --test-output
 ../../../tests/Interop/Windows/shared/dxgitype
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/shared/dxgitype.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/shared/dxgitype.h
