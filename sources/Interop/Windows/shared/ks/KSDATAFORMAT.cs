@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from shared/ks.h in the Windows SDK for Windows 10.0.19041.0
+// Ported from shared/ks.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     public partial struct KSDATAFORMAT
     {
         [FieldOffset(0)]
-        [NativeTypeName("KSDATAFORMAT::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/shared/ks.h:1096:5)")]
+        [NativeTypeName("KSDATAFORMAT::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/shared/ks.h:1096:5)")]
         internal _Anonymous_e__Struct Anonymous;
 
         public ref uint FormatSize => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.FormatSize, 1));
