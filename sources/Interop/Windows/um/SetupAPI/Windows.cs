@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/SetupAPI.h in the Windows SDK for Windows 10.0.19041.0
+// Ported from um/SetupAPI.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
@@ -3310,6 +3310,9 @@ namespace TerraFX.Interop
 
         [NativeTypeName("#define SPSVCINST_NOCLOBBER_DELAYEDAUTOSTART (0x00008000)")]
         public const int SPSVCINST_NOCLOBBER_DELAYEDAUTOSTART = (0x00008000);
+
+        [NativeTypeName("#define SPSVCINST_UNIQUE_NAME (0x00010000)")]
+        public const int SPSVCINST_UNIQUE_NAME = (0x00010000);
 
         [NativeTypeName("#define SetupInstallServicesFromInfSection SetupInstallServicesFromInfSectionW")]
         public static readonly delegate*<void*, ushort*, uint, int> SetupInstallServicesFromInfSection = &SetupInstallServicesFromInfSectionW;

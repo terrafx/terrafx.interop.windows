@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/d3d12.h in the Windows SDK for Windows 10.0.19041.0
+// Ported from um/d3d12.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
@@ -28,6 +28,7 @@ namespace TerraFX.Interop
         D3D12_RESOURCE_STATE_RAYTRACING_ACCELERATION_STRUCTURE = 0x400000,
         D3D12_RESOURCE_STATE_SHADING_RATE_SOURCE = 0x1000000,
         D3D12_RESOURCE_STATE_GENERIC_READ = (((((0x1 | 0x2) | 0x40) | 0x80) | 0x200) | 0x800),
+        D3D12_RESOURCE_STATE_ALL_SHADER_RESOURCE = (0x40 | 0x80),
         D3D12_RESOURCE_STATE_PRESENT = 0,
         D3D12_RESOURCE_STATE_PREDICATION = 0x200,
         D3D12_RESOURCE_STATE_VIDEO_DECODE_READ = 0x10000,

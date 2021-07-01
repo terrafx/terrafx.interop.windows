@@ -7,7 +7,7 @@ um-projectedfslib.h
 --test-output
 ../../../tests/Interop/Windows/um/projectedfslib
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/projectedfslib.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/projectedfslib.h
 --with-attribute
 PRJ_CALLBACK_DATA_FLAGS=Flags
 PRJ_NOTIFY_TYPES=Flags

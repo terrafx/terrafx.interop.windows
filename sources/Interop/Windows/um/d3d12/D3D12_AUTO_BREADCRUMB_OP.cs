@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/d3d12.h in the Windows SDK for Windows 10.0.19041.0
+// Ported from um/d3d12.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 namespace TerraFX.Interop
@@ -50,5 +50,7 @@ namespace TerraFX.Interop
         D3D12_AUTO_BREADCRUMB_OP_INITIALIZEEXTENSIONCOMMAND = 40,
         D3D12_AUTO_BREADCRUMB_OP_EXECUTEEXTENSIONCOMMAND = 41,
         D3D12_AUTO_BREADCRUMB_OP_DISPATCHMESH = 42,
+        D3D12_AUTO_BREADCRUMB_OP_ENCODEFRAME = 43,
+        D3D12_AUTO_BREADCRUMB_OP_RESOLVEENCODEROUTPUTMETADATA = 44,
     }
 }

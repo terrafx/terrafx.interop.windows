@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/appmodel.h in the Windows SDK for Windows 10.0.19041.0
+// Ported from um/appmodel.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System.Runtime.CompilerServices;
@@ -10,7 +10,7 @@ namespace TerraFX.Interop
 {
     public partial struct PACKAGE_VERSION
     {
-        [NativeTypeName("PACKAGE_VERSION::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/appmodel.h:55:5)")]
+        [NativeTypeName("PACKAGE_VERSION::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/appmodel.h:57:5)")]
         public _Anonymous_e__Union Anonymous;
 
         public ref ulong Version
@@ -66,7 +66,7 @@ namespace TerraFX.Interop
             public ulong Version;
 
             [FieldOffset(0)]
-            [NativeTypeName("PACKAGE_VERSION::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/appmodel.h:57:9)")]
+            [NativeTypeName("PACKAGE_VERSION::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/appmodel.h:59:9)")]
             public _Anonymous_e__Struct Anonymous;
 
             public partial struct _Anonymous_e__Struct

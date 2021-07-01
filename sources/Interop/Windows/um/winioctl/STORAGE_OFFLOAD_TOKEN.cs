@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/winioctl.h in the Windows SDK for Windows 10.0.19041.0
+// Ported from um/winioctl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
@@ -20,7 +20,7 @@ namespace TerraFX.Interop
         [NativeTypeName("BYTE [2]")]
         public fixed byte TokenIdLength[2];
 
-        [NativeTypeName("_STORAGE_OFFLOAD_TOKEN::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winioctl.h:3330:5)")]
+        [NativeTypeName("_STORAGE_OFFLOAD_TOKEN::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winioctl.h:3426:5)")]
         public _Anonymous_e__Union Anonymous;
 
         public ref _Anonymous_e__Union._StorageOffloadZeroDataToken_e__Struct StorageOffloadZeroDataToken
@@ -45,7 +45,7 @@ namespace TerraFX.Interop
         public unsafe partial struct _Anonymous_e__Union
         {
             [FieldOffset(0)]
-            [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winioctl.h:3331:9)")]
+            [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winioctl.h:3427:9)")]
             public _StorageOffloadZeroDataToken_e__Struct StorageOffloadZeroDataToken;
 
             [FieldOffset(0)]

@@ -1,6 +1,7 @@
 @../../settings.rsp
 @../../remap.rsp
 --exclude
+ARM64EC_NT_CONTEXT
 ARRAYSIZE
 BitScanForward64
 BitScanReverse64
@@ -22,6 +23,7 @@ DECLSPEC_ALIGN
 DECLSPEC_UUID
 DECREF
 DEFINE_ENUM_FLAG_OPERATORS
+DISPATCHER_CONTEXT_ARM64
 EXCEPTION_ROUTINE
 EXT_IMM64
 FIELD_OFFSET
@@ -369,7 +371,7 @@ um-winnt.h
 --test-output
 ../../../tests/Interop/Windows/um/winnt
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winnt.h
 --with-attribute
 ACCESS_REASON_TYPE=Flags
 CM_SERVICE_NODE_TYPE=Flags

@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/strmif.h in the Windows SDK for Windows 10.0.19041.0
+// Ported from um/strmif.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System.Runtime.CompilerServices;
@@ -16,7 +16,7 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint dwMerit;
 
-        [NativeTypeName("REGFILTER2::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/strmif.h:5070:36)")]
+        [NativeTypeName("REGFILTER2::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/strmif.h:5314:36)")]
         public _Anonymous_e__Union Anonymous;
 
         public ref uint cPins
@@ -65,11 +65,11 @@ namespace TerraFX.Interop
         public unsafe partial struct _Anonymous_e__Union
         {
             [FieldOffset(0)]
-            [NativeTypeName("REGFILTER2::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/strmif.h:5072:24)")]
+            [NativeTypeName("REGFILTER2::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/strmif.h:5316:24)")]
             public _Anonymous1_e__Struct Anonymous1;
 
             [FieldOffset(0)]
-            [NativeTypeName("REGFILTER2::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/strmif.h:5077:24)")]
+            [NativeTypeName("REGFILTER2::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/strmif.h:5321:24)")]
             public _Anonymous2_e__Struct Anonymous2;
 
             public unsafe partial struct _Anonymous1_e__Struct

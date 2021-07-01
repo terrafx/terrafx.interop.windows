@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/processthreadsapi.h in the Windows SDK for Windows 10.0.19041.0
+// Ported from um/processthreadsapi.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
@@ -13,6 +13,10 @@ namespace TerraFX.Interop
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("DWORD")]
         public static extern uint QueueUserAPC([NativeTypeName("PAPCFUNC")] delegate* unmanaged<nuint, void> pfnAPC, [NativeTypeName("HANDLE")] IntPtr hThread, [NativeTypeName("ULONG_PTR")] nuint dwData);
+
+        [DllImport("kernel32", ExactSpelling = true)]
+        [return: NativeTypeName("BOOL")]
+        public static extern int QueueUserAPC2([NativeTypeName("PAPCFUNC")] delegate* unmanaged<nuint, void> ApcRoutine, [NativeTypeName("HANDLE")] IntPtr Thread, [NativeTypeName("ULONG_PTR")] nuint Data, QUEUE_USER_APC_FLAGS Flags);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
@@ -337,6 +341,22 @@ namespace TerraFX.Interop
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int GetProcessShutdownParameters([NativeTypeName("LPDWORD")] uint* lpdwLevel, [NativeTypeName("LPDWORD")] uint* lpdwFlags);
+
+        [DllImport("kernel32", ExactSpelling = true)]
+        [return: NativeTypeName("BOOL")]
+        public static extern int GetProcessDefaultCpuSetMasks([NativeTypeName("HANDLE")] IntPtr Process, [NativeTypeName("PGROUP_AFFINITY")] GROUP_AFFINITY* CpuSetMasks, [NativeTypeName("USHORT")] ushort CpuSetMaskCount, [NativeTypeName("PUSHORT")] ushort* RequiredMaskCount);
+
+        [DllImport("kernel32", ExactSpelling = true)]
+        [return: NativeTypeName("BOOL")]
+        public static extern int SetProcessDefaultCpuSetMasks([NativeTypeName("HANDLE")] IntPtr Process, [NativeTypeName("PGROUP_AFFINITY")] GROUP_AFFINITY* CpuSetMasks, [NativeTypeName("USHORT")] ushort CpuSetMaskCount);
+
+        [DllImport("kernel32", ExactSpelling = true)]
+        [return: NativeTypeName("BOOL")]
+        public static extern int GetThreadSelectedCpuSetMasks([NativeTypeName("HANDLE")] IntPtr Thread, [NativeTypeName("PGROUP_AFFINITY")] GROUP_AFFINITY* CpuSetMasks, [NativeTypeName("USHORT")] ushort CpuSetMaskCount, [NativeTypeName("PUSHORT")] ushort* RequiredMaskCount);
+
+        [DllImport("kernel32", ExactSpelling = true)]
+        [return: NativeTypeName("BOOL")]
+        public static extern int SetThreadSelectedCpuSetMasks([NativeTypeName("HANDLE")] IntPtr Thread, [NativeTypeName("PGROUP_AFFINITY")] GROUP_AFFINITY* CpuSetMasks, [NativeTypeName("USHORT")] ushort CpuSetMaskCount);
 
         [DllImport("kernel32", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]

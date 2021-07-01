@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from shared/winerror.h in the Windows SDK for Windows 10.0.19041.0
+// Ported from shared/winerror.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 namespace TerraFX.Interop
@@ -300,6 +300,9 @@ namespace TerraFX.Interop
 
         [NativeTypeName("#define FACILITY_SOS 160")]
         public const int FACILITY_SOS = 160;
+
+        [NativeTypeName("#define FACILITY_OCP_UPDATE_AGENT 173")]
+        public const int FACILITY_OCP_UPDATE_AGENT = 173;
 
         [NativeTypeName("#define FACILITY_DEBUGGERS 176")]
         public const int FACILITY_DEBUGGERS = 176;
@@ -1492,6 +1495,12 @@ namespace TerraFX.Interop
         [NativeTypeName("#define ERROR_DLP_POLICY_DENIES_OPERATION 446L")]
         public const int ERROR_DLP_POLICY_DENIES_OPERATION = 446;
 
+        [NativeTypeName("#define ERROR_SECURITY_DENIES_OPERATION 447L")]
+        public const int ERROR_SECURITY_DENIES_OPERATION = 447;
+
+        [NativeTypeName("#define ERROR_UNTRUSTED_MOUNT_POINT 448L")]
+        public const int ERROR_UNTRUSTED_MOUNT_POINT = 448;
+
         [NativeTypeName("#define ERROR_DLP_POLICY_SILENTLY_FAIL 449L")]
         public const int ERROR_DLP_POLICY_SILENTLY_FAIL = 449;
 
@@ -1531,6 +1540,15 @@ namespace TerraFX.Interop
         [NativeTypeName("#define ERROR_CIMFS_IMAGE_CORRUPT 470L")]
         public const int ERROR_CIMFS_IMAGE_CORRUPT = 470;
 
+        [NativeTypeName("#define ERROR_CIMFS_IMAGE_VERSION_NOT_SUPPORTED 471L")]
+        public const int ERROR_CIMFS_IMAGE_VERSION_NOT_SUPPORTED = 471;
+
+        [NativeTypeName("#define ERROR_STORAGE_STACK_ACCESS_DENIED 472L")]
+        public const int ERROR_STORAGE_STACK_ACCESS_DENIED = 472;
+
+        [NativeTypeName("#define ERROR_INSUFFICIENT_VIRTUAL_ADDR_RESOURCES 473L")]
+        public const int ERROR_INSUFFICIENT_VIRTUAL_ADDR_RESOURCES = 473;
+
         [NativeTypeName("#define ERROR_PNP_QUERY_REMOVE_DEVICE_TIMEOUT 480L")]
         public const int ERROR_PNP_QUERY_REMOVE_DEVICE_TIMEOUT = 480;
 
@@ -1549,14 +1567,14 @@ namespace TerraFX.Interop
         [NativeTypeName("#define ERROR_HAS_SYSTEM_CRITICAL_FILES 488L")]
         public const int ERROR_HAS_SYSTEM_CRITICAL_FILES = 488;
 
-        [NativeTypeName("#define ERROR_VRF_CFG_AND_IO_ENABLED 1183L")]
-        public const int ERROR_VRF_CFG_AND_IO_ENABLED = 1183;
-
         [NativeTypeName("#define ERROR_PARTITION_TERMINATING 1184L")]
         public const int ERROR_PARTITION_TERMINATING = 1184;
 
         [NativeTypeName("#define ERROR_USER_PROFILE_LOAD 500L")]
         public const int ERROR_USER_PROFILE_LOAD = 500;
+
+        [NativeTypeName("#define ERROR_SESSION_KEY_TOO_SHORT 501L")]
+        public const int ERROR_SESSION_KEY_TOO_SHORT = 501;
 
         [NativeTypeName("#define ERROR_ARITHMETIC_OVERFLOW 534L")]
         public const int ERROR_ARITHMETIC_OVERFLOW = 534;
@@ -2371,6 +2389,18 @@ namespace TerraFX.Interop
         [NativeTypeName("#define ERROR_ENCLAVE_VIOLATION 815L")]
         public const int ERROR_ENCLAVE_VIOLATION = 815;
 
+        [NativeTypeName("#define ERROR_SERVER_TRANSPORT_CONFLICT 816L")]
+        public const int ERROR_SERVER_TRANSPORT_CONFLICT = 816;
+
+        [NativeTypeName("#define ERROR_CERTIFICATE_VALIDATION_PREFERENCE_CONFLICT 817L")]
+        public const int ERROR_CERTIFICATE_VALIDATION_PREFERENCE_CONFLICT = 817;
+
+        [NativeTypeName("#define ERROR_FT_READ_FROM_COPY_FAILURE 818L")]
+        public const int ERROR_FT_READ_FROM_COPY_FAILURE = 818;
+
+        [NativeTypeName("#define ERROR_SECTION_DIRECT_MAP_ONLY 819L")]
+        public const int ERROR_SECTION_DIRECT_MAP_ONLY = 819;
+
         [NativeTypeName("#define ERROR_EA_ACCESS_DENIED 994L")]
         public const int ERROR_EA_ACCESS_DENIED = 994;
 
@@ -2763,6 +2793,9 @@ namespace TerraFX.Interop
 
         [NativeTypeName("#define ERROR_SHUTDOWN_USERS_LOGGED_ON 1191L")]
         public const int ERROR_SHUTDOWN_USERS_LOGGED_ON = 1191;
+
+        [NativeTypeName("#define ERROR_SHUTDOWN_DISKS_NOT_IN_MAINTENANCE_MODE 1192L")]
+        public const int ERROR_SHUTDOWN_DISKS_NOT_IN_MAINTENANCE_MODE = 1192;
 
         [NativeTypeName("#define ERROR_BAD_DEVICE 1200L")]
         public const int ERROR_BAD_DEVICE = 1200;
@@ -4474,6 +4507,72 @@ namespace TerraFX.Interop
         [NativeTypeName("#define ERROR_APPEXEC_UNKNOWN_USER 3067L")]
         public const int ERROR_APPEXEC_UNKNOWN_USER = 3067;
 
+        [NativeTypeName("#define ERROR_APPEXEC_APP_COMPAT_BLOCK 3068L")]
+        public const int ERROR_APPEXEC_APP_COMPAT_BLOCK = 3068;
+
+        [NativeTypeName("#define ERROR_APPEXEC_CALLER_WAIT_TIMEOUT 3069L")]
+        public const int ERROR_APPEXEC_CALLER_WAIT_TIMEOUT = 3069;
+
+        [NativeTypeName("#define ERROR_APPEXEC_CALLER_WAIT_TIMEOUT_TERMINATION 3070L")]
+        public const int ERROR_APPEXEC_CALLER_WAIT_TIMEOUT_TERMINATION = 3070;
+
+        [NativeTypeName("#define ERROR_APPEXEC_CALLER_WAIT_TIMEOUT_LICENSING 3071L")]
+        public const int ERROR_APPEXEC_CALLER_WAIT_TIMEOUT_LICENSING = 3071;
+
+        [NativeTypeName("#define ERROR_APPEXEC_CALLER_WAIT_TIMEOUT_RESOURCES 3072L")]
+        public const int ERROR_APPEXEC_CALLER_WAIT_TIMEOUT_RESOURCES = 3072;
+
+        [NativeTypeName("#define ERROR_VRF_VOLATILE_CFG_AND_IO_ENABLED 3080L")]
+        public const int ERROR_VRF_VOLATILE_CFG_AND_IO_ENABLED = 3080;
+
+        [NativeTypeName("#define ERROR_VRF_VOLATILE_NOT_STOPPABLE 3081L")]
+        public const int ERROR_VRF_VOLATILE_NOT_STOPPABLE = 3081;
+
+        [NativeTypeName("#define ERROR_VRF_VOLATILE_SAFE_MODE 3082L")]
+        public const int ERROR_VRF_VOLATILE_SAFE_MODE = 3082;
+
+        [NativeTypeName("#define ERROR_VRF_VOLATILE_NOT_RUNNABLE_SYSTEM 3083L")]
+        public const int ERROR_VRF_VOLATILE_NOT_RUNNABLE_SYSTEM = 3083;
+
+        [NativeTypeName("#define ERROR_VRF_VOLATILE_NOT_SUPPORTED_RULECLASS 3084L")]
+        public const int ERROR_VRF_VOLATILE_NOT_SUPPORTED_RULECLASS = 3084;
+
+        [NativeTypeName("#define ERROR_VRF_VOLATILE_PROTECTED_DRIVER 3085L")]
+        public const int ERROR_VRF_VOLATILE_PROTECTED_DRIVER = 3085;
+
+        [NativeTypeName("#define ERROR_VRF_VOLATILE_NMI_REGISTERED 3086L")]
+        public const int ERROR_VRF_VOLATILE_NMI_REGISTERED = 3086;
+
+        [NativeTypeName("#define ERROR_VRF_VOLATILE_SETTINGS_CONFLICT 3087L")]
+        public const int ERROR_VRF_VOLATILE_SETTINGS_CONFLICT = 3087;
+
+        [NativeTypeName("#define ERROR_DIF_LIVEDUMP_LIMIT_EXCEEDED 3191L")]
+        public const int ERROR_DIF_LIVEDUMP_LIMIT_EXCEEDED = 3191;
+
+        [NativeTypeName("#define ERROR_DIF_VOLATILE_SECTION_NOT_LOCKED 3192L")]
+        public const int ERROR_DIF_VOLATILE_SECTION_NOT_LOCKED = 3192;
+
+        [NativeTypeName("#define ERROR_DIF_VOLATILE_DRIVER_HOTPATCHED 3193L")]
+        public const int ERROR_DIF_VOLATILE_DRIVER_HOTPATCHED = 3193;
+
+        [NativeTypeName("#define ERROR_DIF_VOLATILE_INVALID_INFO 3194L")]
+        public const int ERROR_DIF_VOLATILE_INVALID_INFO = 3194;
+
+        [NativeTypeName("#define ERROR_DIF_VOLATILE_DRIVER_IS_NOT_RUNNING 3195L")]
+        public const int ERROR_DIF_VOLATILE_DRIVER_IS_NOT_RUNNING = 3195;
+
+        [NativeTypeName("#define ERROR_DIF_VOLATILE_PLUGIN_IS_NOT_RUNNING 3196L")]
+        public const int ERROR_DIF_VOLATILE_PLUGIN_IS_NOT_RUNNING = 3196;
+
+        [NativeTypeName("#define ERROR_DIF_VOLATILE_PLUGIN_CHANGE_NOT_ALLOWED 3197L")]
+        public const int ERROR_DIF_VOLATILE_PLUGIN_CHANGE_NOT_ALLOWED = 3197;
+
+        [NativeTypeName("#define ERROR_DIF_VOLATILE_NOT_ALLOWED 3198L")]
+        public const int ERROR_DIF_VOLATILE_NOT_ALLOWED = 3198;
+
+        [NativeTypeName("#define ERROR_DIF_BINDING_API_NOT_FOUND 3199L")]
+        public const int ERROR_DIF_BINDING_API_NOT_FOUND = 3199;
+
         [NativeTypeName("#define ERROR_IO_REISSUE_AS_CACHED 3950L")]
         public const int ERROR_IO_REISSUE_AS_CACHED = 3950;
 
@@ -4852,6 +4951,9 @@ namespace TerraFX.Interop
         [NativeTypeName("#define ERROR_WOF_FILE_RESOURCE_TABLE_CORRUPT 4448L")]
         public const int ERROR_WOF_FILE_RESOURCE_TABLE_CORRUPT = 4448;
 
+        [NativeTypeName("#define ERROR_OBJECT_IS_IMMUTABLE 4449L")]
+        public const int ERROR_OBJECT_IS_IMMUTABLE = 4449;
+
         [NativeTypeName("#define ERROR_VOLUME_NOT_SIS_ENABLED 4500L")]
         public const int ERROR_VOLUME_NOT_SIS_ENABLED = 4500;
 
@@ -4872,6 +4974,18 @@ namespace TerraFX.Interop
 
         [NativeTypeName("#define ERROR_SYSTEM_INTEGRITY_SUPPLEMENTAL_POLICY_NOT_AUTHORIZED 4555L")]
         public const int ERROR_SYSTEM_INTEGRITY_SUPPLEMENTAL_POLICY_NOT_AUTHORIZED = 4555;
+
+        [NativeTypeName("#define ERROR_SYSTEM_INTEGRITY_REPUTATION_MALICIOUS 4556L")]
+        public const int ERROR_SYSTEM_INTEGRITY_REPUTATION_MALICIOUS = 4556;
+
+        [NativeTypeName("#define ERROR_SYSTEM_INTEGRITY_REPUTATION_PUA 4557L")]
+        public const int ERROR_SYSTEM_INTEGRITY_REPUTATION_PUA = 4557;
+
+        [NativeTypeName("#define ERROR_SYSTEM_INTEGRITY_REPUTATION_DANGEROUS_EXT 4558L")]
+        public const int ERROR_SYSTEM_INTEGRITY_REPUTATION_DANGEROUS_EXT = 4558;
+
+        [NativeTypeName("#define ERROR_SYSTEM_INTEGRITY_REPUTATION_OFFLINE 4559L")]
+        public const int ERROR_SYSTEM_INTEGRITY_REPUTATION_OFFLINE = 4559;
 
         [NativeTypeName("#define ERROR_VSM_NOT_INITIALIZED 4560L")]
         public const int ERROR_VSM_NOT_INITIALIZED = 4560;
@@ -7426,6 +7540,9 @@ namespace TerraFX.Interop
         [NativeTypeName("#define ERROR_DS_VALUE_KEY_NOT_UNIQUE 8650L")]
         public const int ERROR_DS_VALUE_KEY_NOT_UNIQUE = 8650;
 
+        [NativeTypeName("#define ERROR_WEAK_WHFBKEY_BLOCKED 8651L")]
+        public const int ERROR_WEAK_WHFBKEY_BLOCKED = 8651;
+
         [NativeTypeName("#define DNS_ERROR_RESPONSE_CODES_BASE 9000")]
         public const int DNS_ERROR_RESPONSE_CODES_BASE = 9000;
 
@@ -9655,6 +9772,24 @@ namespace TerraFX.Interop
         [NativeTypeName("#define ERROR_INSTALL_FULLTRUST_HOSTRUNTIME_REQUIRES_MAIN_PACKAGE_FULLTRUST_CAPABILITY 15663L")]
         public const int ERROR_INSTALL_FULLTRUST_HOSTRUNTIME_REQUIRES_MAIN_PACKAGE_FULLTRUST_CAPABILITY = 15663;
 
+        [NativeTypeName("#define ERROR_PACKAGE_LACKS_CAPABILITY_FOR_MANDATORY_STARTUPTASKS 15664L")]
+        public const int ERROR_PACKAGE_LACKS_CAPABILITY_FOR_MANDATORY_STARTUPTASKS = 15664;
+
+        [NativeTypeName("#define ERROR_INSTALL_RESOLVE_HOSTRUNTIME_DEPENDENCY_FAILED 15665L")]
+        public const int ERROR_INSTALL_RESOLVE_HOSTRUNTIME_DEPENDENCY_FAILED = 15665;
+
+        [NativeTypeName("#define ERROR_MACHINE_SCOPE_NOT_ALLOWED 15666L")]
+        public const int ERROR_MACHINE_SCOPE_NOT_ALLOWED = 15666;
+
+        [NativeTypeName("#define ERROR_CLASSIC_COMPAT_MODE_NOT_ALLOWED 15667L")]
+        public const int ERROR_CLASSIC_COMPAT_MODE_NOT_ALLOWED = 15667;
+
+        [NativeTypeName("#define ERROR_STAGEFROMUPDATEAGENT_PACKAGE_NOT_APPLICABLE 15668L")]
+        public const int ERROR_STAGEFROMUPDATEAGENT_PACKAGE_NOT_APPLICABLE = 15668;
+
+        [NativeTypeName("#define ERROR_PACKAGE_NOT_REGISTERED_FOR_USER 15669L")]
+        public const int ERROR_PACKAGE_NOT_REGISTERED_FOR_USER = 15669;
+
         [NativeTypeName("#define APPMODEL_ERROR_NO_PACKAGE 15700L")]
         public const int APPMODEL_ERROR_NO_PACKAGE = 15700;
 
@@ -11241,6 +11376,9 @@ namespace TerraFX.Interop
 
         [NativeTypeName("#define APPX_E_INVALID_ENCRYPTION_EXCLUSION_FILE_LIST _HRESULT_TYPEDEF_(0x80080216L)")]
         public const int APPX_E_INVALID_ENCRYPTION_EXCLUSION_FILE_LIST = unchecked((int)(0x80080216));
+
+        [NativeTypeName("#define APPX_E_INVALID_PACKAGE_FOLDER_ACLS _HRESULT_TYPEDEF_(0x80080217L)")]
+        public const int APPX_E_INVALID_PACKAGE_FOLDER_ACLS = unchecked((int)(0x80080217));
 
         [NativeTypeName("#define BT_E_SPURIOUS_ACTIVATION _HRESULT_TYPEDEF_(0x80080300L)")]
         public const int BT_E_SPURIOUS_ACTIVATION = unchecked((int)(0x80080300));
@@ -13798,6 +13936,129 @@ namespace TerraFX.Interop
         [NativeTypeName("#define COMADMIN_E_PARTITIONS_DISABLED _HRESULT_TYPEDEF_(0x80110824L)")]
         public const int COMADMIN_E_PARTITIONS_DISABLED = unchecked((int)(0x80110824));
 
+        [NativeTypeName("#define MENROLL_E_DEVICE_MESSAGE_FORMAT_ERROR _HRESULT_TYPEDEF_(0x80180001L)")]
+        public const int MENROLL_E_DEVICE_MESSAGE_FORMAT_ERROR = unchecked((int)(0x80180001));
+
+        [NativeTypeName("#define MENROLL_E_DEVICE_AUTHENTICATION_ERROR _HRESULT_TYPEDEF_(0x80180002L)")]
+        public const int MENROLL_E_DEVICE_AUTHENTICATION_ERROR = unchecked((int)(0x80180002));
+
+        [NativeTypeName("#define MENROLL_E_DEVICE_AUTHORIZATION_ERROR _HRESULT_TYPEDEF_(0x80180003L)")]
+        public const int MENROLL_E_DEVICE_AUTHORIZATION_ERROR = unchecked((int)(0x80180003));
+
+        [NativeTypeName("#define MENROLL_E_DEVICE_CERTIFICATEREQUEST_ERROR _HRESULT_TYPEDEF_(0x80180004L)")]
+        public const int MENROLL_E_DEVICE_CERTIFICATEREQUEST_ERROR = unchecked((int)(0x80180004));
+
+        [NativeTypeName("#define MENROLL_E_DEVICE_CONFIGMGRSERVER_ERROR _HRESULT_TYPEDEF_(0x80180005L)")]
+        public const int MENROLL_E_DEVICE_CONFIGMGRSERVER_ERROR = unchecked((int)(0x80180005));
+
+        [NativeTypeName("#define MENROLL_E_DEVICE_INTERNALSERVICE_ERROR _HRESULT_TYPEDEF_(0x80180006L)")]
+        public const int MENROLL_E_DEVICE_INTERNALSERVICE_ERROR = unchecked((int)(0x80180006));
+
+        [NativeTypeName("#define MENROLL_E_DEVICE_INVALIDSECURITY_ERROR _HRESULT_TYPEDEF_(0x80180007L)")]
+        public const int MENROLL_E_DEVICE_INVALIDSECURITY_ERROR = unchecked((int)(0x80180007));
+
+        [NativeTypeName("#define MENROLL_E_DEVICE_UNKNOWN_ERROR _HRESULT_TYPEDEF_(0x80180008L)")]
+        public const int MENROLL_E_DEVICE_UNKNOWN_ERROR = unchecked((int)(0x80180008));
+
+        [NativeTypeName("#define MENROLL_E_ENROLLMENT_IN_PROGRESS _HRESULT_TYPEDEF_(0x80180009L)")]
+        public const int MENROLL_E_ENROLLMENT_IN_PROGRESS = unchecked((int)(0x80180009));
+
+        [NativeTypeName("#define MENROLL_E_DEVICE_ALREADY_ENROLLED _HRESULT_TYPEDEF_(0x8018000AL)")]
+        public const int MENROLL_E_DEVICE_ALREADY_ENROLLED = unchecked((int)(0x8018000A));
+
+        [NativeTypeName("#define MENROLL_E_DISCOVERY_SEC_CERT_DATE_INVALID _HRESULT_TYPEDEF_(0x8018000DL)")]
+        public const int MENROLL_E_DISCOVERY_SEC_CERT_DATE_INVALID = unchecked((int)(0x8018000D));
+
+        [NativeTypeName("#define MENROLL_E_PASSWORD_NEEDED _HRESULT_TYPEDEF_(0x8018000EL)")]
+        public const int MENROLL_E_PASSWORD_NEEDED = unchecked((int)(0x8018000E));
+
+        [NativeTypeName("#define MENROLL_E_WAB_ERROR _HRESULT_TYPEDEF_(0x8018000FL)")]
+        public const int MENROLL_E_WAB_ERROR = unchecked((int)(0x8018000F));
+
+        [NativeTypeName("#define MENROLL_E_CONNECTIVITY _HRESULT_TYPEDEF_(0x80180010L)")]
+        public const int MENROLL_E_CONNECTIVITY = unchecked((int)(0x80180010));
+
+        [NativeTypeName("#define MENROLL_S_ENROLLMENT_SUSPENDED _HRESULT_TYPEDEF_(0x00180011L)")]
+        public const int MENROLL_S_ENROLLMENT_SUSPENDED = ((int)(0x00180011));
+
+        [NativeTypeName("#define MENROLL_E_INVALIDSSLCERT _HRESULT_TYPEDEF_(0x80180012L)")]
+        public const int MENROLL_E_INVALIDSSLCERT = unchecked((int)(0x80180012));
+
+        [NativeTypeName("#define MENROLL_E_DEVICEAPREACHED _HRESULT_TYPEDEF_(0x80180013L)")]
+        public const int MENROLL_E_DEVICEAPREACHED = unchecked((int)(0x80180013));
+
+        [NativeTypeName("#define MENROLL_E_DEVICENOTSUPPORTED _HRESULT_TYPEDEF_(0x80180014L)")]
+        public const int MENROLL_E_DEVICENOTSUPPORTED = unchecked((int)(0x80180014));
+
+        [NativeTypeName("#define MENROLL_E_NOT_SUPPORTED _HRESULT_TYPEDEF_(0x80180015L)")]
+        public const int MENROLL_E_NOT_SUPPORTED = unchecked((int)(0x80180015));
+
+        [NativeTypeName("#define MENROLL_E_NOTELIGIBLETORENEW _HRESULT_TYPEDEF_(0x80180016L)")]
+        public const int MENROLL_E_NOTELIGIBLETORENEW = unchecked((int)(0x80180016));
+
+        [NativeTypeName("#define MENROLL_E_INMAINTENANCE _HRESULT_TYPEDEF_(0x80180017L)")]
+        public const int MENROLL_E_INMAINTENANCE = unchecked((int)(0x80180017));
+
+        [NativeTypeName("#define MENROLL_E_USER_LICENSE _HRESULT_TYPEDEF_(0x80180018L)")]
+        public const int MENROLL_E_USER_LICENSE = unchecked((int)(0x80180018));
+
+        [NativeTypeName("#define MENROLL_E_ENROLLMENTDATAINVALID _HRESULT_TYPEDEF_(0x80180019L)")]
+        public const int MENROLL_E_ENROLLMENTDATAINVALID = unchecked((int)(0x80180019));
+
+        [NativeTypeName("#define MENROLL_E_INSECUREREDIRECT _HRESULT_TYPEDEF_(0x8018001AL)")]
+        public const int MENROLL_E_INSECUREREDIRECT = unchecked((int)(0x8018001A));
+
+        [NativeTypeName("#define MENROLL_E_PLATFORM_WRONG_STATE _HRESULT_TYPEDEF_(0x8018001BL)")]
+        public const int MENROLL_E_PLATFORM_WRONG_STATE = unchecked((int)(0x8018001B));
+
+        [NativeTypeName("#define MENROLL_E_PLATFORM_LICENSE_ERROR _HRESULT_TYPEDEF_(0x8018001CL)")]
+        public const int MENROLL_E_PLATFORM_LICENSE_ERROR = unchecked((int)(0x8018001C));
+
+        [NativeTypeName("#define MENROLL_E_PLATFORM_UNKNOWN_ERROR _HRESULT_TYPEDEF_(0x8018001DL)")]
+        public const int MENROLL_E_PLATFORM_UNKNOWN_ERROR = unchecked((int)(0x8018001D));
+
+        [NativeTypeName("#define MENROLL_E_PROV_CSP_CERTSTORE _HRESULT_TYPEDEF_(0x8018001EL)")]
+        public const int MENROLL_E_PROV_CSP_CERTSTORE = unchecked((int)(0x8018001E));
+
+        [NativeTypeName("#define MENROLL_E_PROV_CSP_W7 _HRESULT_TYPEDEF_(0x8018001FL)")]
+        public const int MENROLL_E_PROV_CSP_W7 = unchecked((int)(0x8018001F));
+
+        [NativeTypeName("#define MENROLL_E_PROV_CSP_DMCLIENT _HRESULT_TYPEDEF_(0x80180020L)")]
+        public const int MENROLL_E_PROV_CSP_DMCLIENT = unchecked((int)(0x80180020));
+
+        [NativeTypeName("#define MENROLL_E_PROV_CSP_PFW _HRESULT_TYPEDEF_(0x80180021L)")]
+        public const int MENROLL_E_PROV_CSP_PFW = unchecked((int)(0x80180021));
+
+        [NativeTypeName("#define MENROLL_E_PROV_CSP_MISC _HRESULT_TYPEDEF_(0x80180022L)")]
+        public const int MENROLL_E_PROV_CSP_MISC = unchecked((int)(0x80180022));
+
+        [NativeTypeName("#define MENROLL_E_PROV_UNKNOWN _HRESULT_TYPEDEF_(0x80180023L)")]
+        public const int MENROLL_E_PROV_UNKNOWN = unchecked((int)(0x80180023));
+
+        [NativeTypeName("#define MENROLL_E_PROV_SSLCERTNOTFOUND _HRESULT_TYPEDEF_(0x80180024L)")]
+        public const int MENROLL_E_PROV_SSLCERTNOTFOUND = unchecked((int)(0x80180024));
+
+        [NativeTypeName("#define MENROLL_E_PROV_CSP_APPMGMT _HRESULT_TYPEDEF_(0x80180025L)")]
+        public const int MENROLL_E_PROV_CSP_APPMGMT = unchecked((int)(0x80180025));
+
+        [NativeTypeName("#define MENROLL_E_DEVICE_MANAGEMENT_BLOCKED _HRESULT_TYPEDEF_(0x80180026L)")]
+        public const int MENROLL_E_DEVICE_MANAGEMENT_BLOCKED = unchecked((int)(0x80180026));
+
+        [NativeTypeName("#define MENROLL_E_CERTPOLICY_PRIVATEKEYCREATION_FAILED _HRESULT_TYPEDEF_(0x80180027L)")]
+        public const int MENROLL_E_CERTPOLICY_PRIVATEKEYCREATION_FAILED = unchecked((int)(0x80180027));
+
+        [NativeTypeName("#define MENROLL_E_CERTAUTH_FAILED_TO_FIND_CERT _HRESULT_TYPEDEF_(0x80180028L)")]
+        public const int MENROLL_E_CERTAUTH_FAILED_TO_FIND_CERT = unchecked((int)(0x80180028));
+
+        [NativeTypeName("#define MENROLL_E_EMPTY_MESSAGE _HRESULT_TYPEDEF_(0x80180029L)")]
+        public const int MENROLL_E_EMPTY_MESSAGE = unchecked((int)(0x80180029));
+
+        [NativeTypeName("#define MENROLL_E_USER_CANCELLED _HRESULT_TYPEDEF_(0x80180030L)")]
+        public const int MENROLL_E_USER_CANCELLED = unchecked((int)(0x80180030));
+
+        [NativeTypeName("#define MENROLL_E_MDM_NOT_CONFIGURED _HRESULT_TYPEDEF_(0x80180031L)")]
+        public const int MENROLL_E_MDM_NOT_CONFIGURED = unchecked((int)(0x80180031));
+
         [NativeTypeName("#define WER_S_REPORT_DEBUG _HRESULT_TYPEDEF_(0x001B0000L)")]
         public const int WER_S_REPORT_DEBUG = ((int)(0x001B0000));
 
@@ -13954,6 +14215,9 @@ namespace TerraFX.Interop
         [NativeTypeName("#define ERROR_FLT_REGISTRATION_BUSY _HRESULT_TYPEDEF_(0x801F0023L)")]
         public const int ERROR_FLT_REGISTRATION_BUSY = unchecked((int)(0x801F0023));
 
+        [NativeTypeName("#define ERROR_FLT_WCOS_NOT_SUPPORTED _HRESULT_TYPEDEF_(0x801F0024L)")]
+        public const int ERROR_FLT_WCOS_NOT_SUPPORTED = unchecked((int)(0x801F0024));
+
         [NativeTypeName("#define ERROR_HUNG_DISPLAY_DRIVER_THREAD _HRESULT_TYPEDEF_(0x80260001L)")]
         public const int ERROR_HUNG_DISPLAY_DRIVER_THREAD = unchecked((int)(0x80260001));
 
@@ -14076,6 +14340,9 @@ namespace TerraFX.Interop
 
         [NativeTypeName("#define ERROR_GRAPHICS_VAIL_FAILED_TO_SEND_DESTROY_SUPERWETINK_MESSAGE _HRESULT_TYPEDEF_(0xC0262015L)")]
         public const int ERROR_GRAPHICS_VAIL_FAILED_TO_SEND_DESTROY_SUPERWETINK_MESSAGE = unchecked((int)(0xC0262015));
+
+        [NativeTypeName("#define ERROR_GRAPHICS_VAIL_FAILED_TO_SEND_COMPOSITION_WINDOW_DPI_MESSAGE _HRESULT_TYPEDEF_(0xC0262016L)")]
+        public const int ERROR_GRAPHICS_VAIL_FAILED_TO_SEND_COMPOSITION_WINDOW_DPI_MESSAGE = unchecked((int)(0xC0262016));
 
         [NativeTypeName("#define ERROR_GRAPHICS_NO_VIDEO_MEMORY _HRESULT_TYPEDEF_(0xC0262100L)")]
         public const int ERROR_GRAPHICS_NO_VIDEO_MEMORY = unchecked((int)(0xC0262100));
@@ -16393,6 +16660,12 @@ namespace TerraFX.Interop
         [NativeTypeName("#define FVE_E_AAD_ENDPOINT_BUSY _HRESULT_TYPEDEF_(0x803100E1L)")]
         public const int FVE_E_AAD_ENDPOINT_BUSY = unchecked((int)(0x803100E1));
 
+        [NativeTypeName("#define FVE_E_INVALID_NBP_CERT _HRESULT_TYPEDEF_(0x803100E2L)")]
+        public const int FVE_E_INVALID_NBP_CERT = unchecked((int)(0x803100E2));
+
+        [NativeTypeName("#define FVE_E_EDRIVE_BAND_ENUMERATION_FAILED _HRESULT_TYPEDEF_(0x803100E3L)")]
+        public const int FVE_E_EDRIVE_BAND_ENUMERATION_FAILED = unchecked((int)(0x803100E3));
+
         [NativeTypeName("#define FWP_E_CALLOUT_NOT_FOUND _HRESULT_TYPEDEF_(0x80320001L)")]
         public const int FWP_E_CALLOUT_NOT_FOUND = unchecked((int)(0x80320001));
 
@@ -17005,6 +17278,15 @@ namespace TerraFX.Interop
         [NativeTypeName("#define ERROR_HV_INSUFFICIENT_CONTIGUOUS_MEMORY _NDIS_ERROR_TYPEDEF_(0xC0350075L)")]
         public const uint ERROR_HV_INSUFFICIENT_CONTIGUOUS_MEMORY = (uint)(0xC0350075);
 
+        [NativeTypeName("#define ERROR_HV_DEVICE_NOT_IN_DOMAIN _NDIS_ERROR_TYPEDEF_(0xC0350076L)")]
+        public const uint ERROR_HV_DEVICE_NOT_IN_DOMAIN = (uint)(0xC0350076);
+
+        [NativeTypeName("#define ERROR_HV_NESTED_VM_EXIT _NDIS_ERROR_TYPEDEF_(0xC0350077L)")]
+        public const uint ERROR_HV_NESTED_VM_EXIT = (uint)(0xC0350077);
+
+        [NativeTypeName("#define ERROR_HV_MSR_ACCESS_FAILED _NDIS_ERROR_TYPEDEF_(0xC0350080L)")]
+        public const uint ERROR_HV_MSR_ACCESS_FAILED = (uint)(0xC0350080);
+
         [NativeTypeName("#define ERROR_HV_NOT_PRESENT _NDIS_ERROR_TYPEDEF_(0xC0351000L)")]
         public const uint ERROR_HV_NOT_PRESENT = (uint)(0xC0351000);
 
@@ -17284,6 +17566,9 @@ namespace TerraFX.Interop
         [NativeTypeName("#define HCS_E_PROCESS_ALREADY_STOPPED _HRESULT_TYPEDEF_(0x8037011FL)")]
         public const int HCS_E_PROCESS_ALREADY_STOPPED = unchecked((int)(0x8037011F));
 
+        [NativeTypeName("#define HCS_E_SYSTEM_NOT_CONFIGURED_FOR_OPERATION _HRESULT_TYPEDEF_(0x80370120L)")]
+        public const int HCS_E_SYSTEM_NOT_CONFIGURED_FOR_OPERATION = unchecked((int)(0x80370120));
+
         [NativeTypeName("#define ERROR_VNET_VIRTUAL_SWITCH_NAME_NOT_FOUND _NDIS_ERROR_TYPEDEF_(0xC0370200L)")]
         public const uint ERROR_VNET_VIRTUAL_SWITCH_NAME_NOT_FOUND = (uint)(0xC0370200);
 
@@ -17355,6 +17640,9 @@ namespace TerraFX.Interop
 
         [NativeTypeName("#define VM_SAVED_STATE_DUMP_E_PTE_NOT_PRESENT _HRESULT_TYPEDEF_(0xC0370508L)")]
         public const int VM_SAVED_STATE_DUMP_E_PTE_NOT_PRESENT = unchecked((int)(0xC0370508));
+
+        [NativeTypeName("#define VM_SAVED_STATE_DUMP_E_VP_VTL_NOT_ENABLED _HRESULT_TYPEDEF_(0xC0370509L)")]
+        public const int VM_SAVED_STATE_DUMP_E_VP_VTL_NOT_ENABLED = unchecked((int)(0xC0370509));
 
         [NativeTypeName("#define ERROR_VOLMGR_INCOMPLETE_REGENERATION _NDIS_ERROR_TYPEDEF_(0x80380001L)")]
         public const uint ERROR_VOLMGR_INCOMPLETE_REGENERATION = (uint)(0x80380001);
@@ -17940,6 +18228,9 @@ namespace TerraFX.Interop
 
         [NativeTypeName("#define HCN_INTERFACEPARAMETERS_ALREADY_APPLIED _HRESULT_TYPEDEF_(0x803B0036L)")]
         public const int HCN_INTERFACEPARAMETERS_ALREADY_APPLIED = unchecked((int)(0x803B0036));
+
+        [NativeTypeName("#define HCN_E_VFP_NOT_ALLOWED _HRESULT_TYPEDEF_(0x803B0037L)")]
+        public const int HCN_E_VFP_NOT_ALLOWED = unchecked((int)(0x803B0037));
 
         [NativeTypeName("#define SDIAG_E_CANCELLED _NDIS_ERROR_TYPEDEF_(0x803C0100L)")]
         public const uint SDIAG_E_CANCELLED = (uint)(0x803C0100);
@@ -18634,8 +18925,14 @@ namespace TerraFX.Interop
         [NativeTypeName("#define STATEREPOSITORY_TRANSACTION_CALLER_ID_CHANGED _HRESULT_TYPEDEF_(0x00670013L)")]
         public const int STATEREPOSITORY_TRANSACTION_CALLER_ID_CHANGED = ((int)(0x00670013));
 
-        [NativeTypeName("#define STATEREPOSITORY_TRANSACTION_IN_PROGRESS _HRESULT_TYPEDEF_(0x00670014L)")]
-        public const int STATEREPOSITORY_TRANSACTION_IN_PROGRESS = ((int)(0x00670014));
+        [NativeTypeName("#define STATEREPOSITORY_TRANSACTION_IN_PROGRESS _HRESULT_TYPEDEF_(0x80670014L)")]
+        public const int STATEREPOSITORY_TRANSACTION_IN_PROGRESS = unchecked((int)(0x80670014));
+
+        [NativeTypeName("#define STATEREPOSITORY_E_CACHE_NOT_INIITALIZED _HRESULT_TYPEDEF_(0x80670015L)")]
+        public const int STATEREPOSITORY_E_CACHE_NOT_INIITALIZED = unchecked((int)(0x80670015));
+
+        [NativeTypeName("#define STATEREPOSITORY_E_DEPENDENCY_NOT_RESOLVED _HRESULT_TYPEDEF_(0x80670016L)")]
+        public const int STATEREPOSITORY_E_DEPENDENCY_NOT_RESOLVED = unchecked((int)(0x80670016));
 
         [NativeTypeName("#define ERROR_SPACES_POOL_WAS_DELETED _HRESULT_TYPEDEF_(0x00E70001L)")]
         public const int ERROR_SPACES_POOL_WAS_DELETED = ((int)(0x00E70001));
@@ -18696,6 +18993,48 @@ namespace TerraFX.Interop
 
         [NativeTypeName("#define ERROR_SPACES_ENTRY_INVALID _HRESULT_TYPEDEF_(0x80E70014L)")]
         public const int ERROR_SPACES_ENTRY_INVALID = unchecked((int)(0x80E70014));
+
+        [NativeTypeName("#define ERROR_SPACES_UPDATE_COLUMN_STATE _HRESULT_TYPEDEF_(0x80E70015L)")]
+        public const int ERROR_SPACES_UPDATE_COLUMN_STATE = unchecked((int)(0x80E70015));
+
+        [NativeTypeName("#define ERROR_SPACES_MAP_REQUIRED _HRESULT_TYPEDEF_(0x80E70016L)")]
+        public const int ERROR_SPACES_MAP_REQUIRED = unchecked((int)(0x80E70016));
+
+        [NativeTypeName("#define ERROR_SPACES_UNSUPPORTED_VERSION _HRESULT_TYPEDEF_(0x80E70017L)")]
+        public const int ERROR_SPACES_UNSUPPORTED_VERSION = unchecked((int)(0x80E70017));
+
+        [NativeTypeName("#define ERROR_SPACES_CORRUPT_METADATA _HRESULT_TYPEDEF_(0x80E70018L)")]
+        public const int ERROR_SPACES_CORRUPT_METADATA = unchecked((int)(0x80E70018));
+
+        [NativeTypeName("#define ERROR_SPACES_DRT_FULL _HRESULT_TYPEDEF_(0x80E70019L)")]
+        public const int ERROR_SPACES_DRT_FULL = unchecked((int)(0x80E70019));
+
+        [NativeTypeName("#define ERROR_SPACES_INCONSISTENCY _HRESULT_TYPEDEF_(0x80E7001AL)")]
+        public const int ERROR_SPACES_INCONSISTENCY = unchecked((int)(0x80E7001A));
+
+        [NativeTypeName("#define ERROR_SPACES_LOG_NOT_READY _HRESULT_TYPEDEF_(0x80E7001BL)")]
+        public const int ERROR_SPACES_LOG_NOT_READY = unchecked((int)(0x80E7001B));
+
+        [NativeTypeName("#define ERROR_SPACES_NO_REDUNDANCY _HRESULT_TYPEDEF_(0x80E7001CL)")]
+        public const int ERROR_SPACES_NO_REDUNDANCY = unchecked((int)(0x80E7001C));
+
+        [NativeTypeName("#define ERROR_SPACES_DRIVE_NOT_READY _HRESULT_TYPEDEF_(0x80E7001DL)")]
+        public const int ERROR_SPACES_DRIVE_NOT_READY = unchecked((int)(0x80E7001D));
+
+        [NativeTypeName("#define ERROR_SPACES_DRIVE_SPLIT _HRESULT_TYPEDEF_(0x80E7001EL)")]
+        public const int ERROR_SPACES_DRIVE_SPLIT = unchecked((int)(0x80E7001E));
+
+        [NativeTypeName("#define ERROR_SPACES_DRIVE_LOST_DATA _HRESULT_TYPEDEF_(0x80E7001FL)")]
+        public const int ERROR_SPACES_DRIVE_LOST_DATA = unchecked((int)(0x80E7001F));
+
+        [NativeTypeName("#define ERROR_SPACES_MARK_DIRTY _HRESULT_TYPEDEF_(0x80E70020L)")]
+        public const int ERROR_SPACES_MARK_DIRTY = unchecked((int)(0x80E70020));
+
+        [NativeTypeName("#define ERROR_SPACES_FLUSH_METADATA _HRESULT_TYPEDEF_(0x80E70025L)")]
+        public const int ERROR_SPACES_FLUSH_METADATA = unchecked((int)(0x80E70025));
+
+        [NativeTypeName("#define ERROR_SPACES_CACHE_FULL _HRESULT_TYPEDEF_(0x80E70026L)")]
+        public const int ERROR_SPACES_CACHE_FULL = unchecked((int)(0x80E70026));
 
         [NativeTypeName("#define ERROR_VOLSNAP_BOOTFILE_NOT_VALID _HRESULT_TYPEDEF_(0x80820001L)")]
         public const int ERROR_VOLSNAP_BOOTFILE_NOT_VALID = unchecked((int)(0x80820001));
@@ -18927,6 +19266,9 @@ namespace TerraFX.Interop
 
         [NativeTypeName("#define D3D12_ERROR_DRIVER_VERSION_MISMATCH _HRESULT_TYPEDEF_(0x887E0002L)")]
         public const int D3D12_ERROR_DRIVER_VERSION_MISMATCH = unchecked((int)(0x887E0002));
+
+        [NativeTypeName("#define D3D12_ERROR_INVALID_REDIST _HRESULT_TYPEDEF_(0x887E0003L)")]
+        public const int D3D12_ERROR_INVALID_REDIST = unchecked((int)(0x887E0003));
 
         [NativeTypeName("#define D2DERR_WRONG_STATE _HRESULT_TYPEDEF_(0x88990001L)")]
         public const int D2DERR_WRONG_STATE = unchecked((int)(0x88990001));
@@ -20044,6 +20386,9 @@ namespace TerraFX.Interop
         [NativeTypeName("#define ERROR_SMB_BAD_CLUSTER_DIALECT _HRESULT_TYPEDEF_(0xC05D0001L)")]
         public const int ERROR_SMB_BAD_CLUSTER_DIALECT = unchecked((int)(0xC05D0001));
 
+        [NativeTypeName("#define ERROR_SMB_NO_SIGNING_ALGORITHM_OVERLAP _HRESULT_TYPEDEF_(0xC05D0002L)")]
+        public const int ERROR_SMB_NO_SIGNING_ALGORITHM_OVERLAP = unchecked((int)(0xC05D0002));
+
         [NativeTypeName("#define WININET_E_OUT_OF_HANDLES _HRESULT_TYPEDEF_(0x80072EE1L)")]
         public const int WININET_E_OUT_OF_HANDLES = unchecked((int)(0x80072EE1));
 
@@ -20785,6 +21130,9 @@ namespace TerraFX.Interop
         [NativeTypeName("#define UTC_E_SETREGKEYACTION_TYPE_NOT_APPROVED _HRESULT_TYPEDEF_(0x87C5105CL)")]
         public const int UTC_E_SETREGKEYACTION_TYPE_NOT_APPROVED = unchecked((int)(0x87C5105C));
 
+        [NativeTypeName("#define UTC_E_TRACE_THROTTLED _HRESULT_TYPEDEF_(0x87C5105DL)")]
+        public const int UTC_E_TRACE_THROTTLED = unchecked((int)(0x87C5105D));
+
         [NativeTypeName("#define WINML_ERR_INVALID_DEVICE _HRESULT_TYPEDEF_(0x88900001L)")]
         public const int WINML_ERR_INVALID_DEVICE = unchecked((int)(0x88900001));
 
@@ -20802,5 +21150,23 @@ namespace TerraFX.Interop
 
         [NativeTypeName("#define ERROR_QUIC_VER_NEG_FAILURE _HRESULT_TYPEDEF_(0x80410001L)")]
         public const int ERROR_QUIC_VER_NEG_FAILURE = unchecked((int)(0x80410001));
+
+        [NativeTypeName("#define ERROR_QUIC_USER_CANCELED _HRESULT_TYPEDEF_(0x80410002L)")]
+        public const int ERROR_QUIC_USER_CANCELED = unchecked((int)(0x80410002));
+
+        [NativeTypeName("#define ERROR_QUIC_INTERNAL_ERROR _HRESULT_TYPEDEF_(0x80410003L)")]
+        public const int ERROR_QUIC_INTERNAL_ERROR = unchecked((int)(0x80410003));
+
+        [NativeTypeName("#define ERROR_QUIC_PROTOCOL_VIOLATION _HRESULT_TYPEDEF_(0x80410004L)")]
+        public const int ERROR_QUIC_PROTOCOL_VIOLATION = unchecked((int)(0x80410004));
+
+        [NativeTypeName("#define ERROR_QUIC_CONNECTION_IDLE _HRESULT_TYPEDEF_(0x80410005L)")]
+        public const int ERROR_QUIC_CONNECTION_IDLE = unchecked((int)(0x80410005));
+
+        [NativeTypeName("#define ERROR_QUIC_CONNECTION_TIMEOUT _HRESULT_TYPEDEF_(0x80410006L)")]
+        public const int ERROR_QUIC_CONNECTION_TIMEOUT = unchecked((int)(0x80410006));
+
+        [NativeTypeName("#define ERROR_QUIC_ALPN_NEG_FAILURE _HRESULT_TYPEDEF_(0x80410007L)")]
+        public const int ERROR_QUIC_ALPN_NEG_FAILURE = unchecked((int)(0x80410007));
     }
 }

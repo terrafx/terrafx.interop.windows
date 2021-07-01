@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/DirectML.h in the Windows SDK for Windows 10.0.19041.0
+// Ported from um/DirectML.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
@@ -12,6 +12,9 @@ namespace TerraFX.Interop
     {
         [NativeTypeName("const UINT")]
         public const uint DML_TENSOR_DIMENSION_COUNT_MAX = 5;
+
+        [NativeTypeName("const UINT")]
+        public const uint DML_TENSOR_DIMENSION_COUNT_MAX1 = 8;
 
         [NativeTypeName("const UINT")]
         public const uint DML_TEMPORARY_BUFFER_ALIGNMENT = 256;
@@ -29,6 +32,9 @@ namespace TerraFX.Interop
         [DllImport("DirectML", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int DMLCreateDevice1(ID3D12Device* d3d12Device, DML_CREATE_DEVICE_FLAGS flags, DML_FEATURE_LEVEL minimumFeatureLevel, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
+
+        [NativeTypeName("#define DML_TARGET_VERSION 0x3000")]
+        public const int DML_TARGET_VERSION = 0x3000;
 
         public static readonly Guid IID_IDMLObject = new Guid(0xC8263AAC, 0x9E0C, 0x4A2D, 0x9B, 0x8E, 0x00, 0x75, 0x21, 0xA3, 0x31, 0x7C);
 
@@ -51,5 +57,7 @@ namespace TerraFX.Interop
         public static readonly Guid IID_IDMLCommandRecorder = new Guid(0xE6857A76, 0x2E3E, 0x4FDD, 0xBF, 0xF4, 0x5D, 0x2B, 0xA1, 0x0F, 0xB4, 0x53);
 
         public static readonly Guid IID_IDMLDebugDevice = new Guid(0x7D6F3AC9, 0x394A, 0x4AC3, 0x92, 0xA7, 0x39, 0x0C, 0xC5, 0x7A, 0x82, 0x17);
+
+        public static readonly Guid IID_IDMLDevice1 = new Guid(0xA0884F9A, 0xD2BE, 0x4355, 0xAA, 0x5D, 0x59, 0x01, 0x28, 0x1A, 0xD1, 0xD2);
     }
 }

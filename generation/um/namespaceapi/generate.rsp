@@ -7,7 +7,7 @@ um-namespaceapi.h
 --test-output
 ../../../tests/Interop/Windows/um/namespaceapi
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/namespaceapi.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/namespaceapi.h
 --with-librarypath
 *=Kernel32
 --with-setlasterror

@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/Audioclient.h in the Windows SDK for Windows 10.0.19041.0
+// Ported from um/Audioclient.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
@@ -149,6 +149,8 @@ namespace TerraFX.Interop
         public static readonly Guid IID_IAudioClockAdjustment = new Guid(0xF6E4C0A0, 0x46D9, 0x4FB8, 0xBE, 0x21, 0x57, 0xA3, 0xEF, 0x2B, 0x62, 0x6C);
 
         public static readonly Guid IID_ISimpleAudioVolume = new Guid(0x87CE5498, 0x68D6, 0x44E5, 0x92, 0x15, 0x6D, 0xA4, 0x7E, 0xF8, 0x83, 0xD8);
+
+        public static readonly Guid IID_IAudioClientDuckingControl = new Guid(0xC789D381, 0xA28C, 0x4168, 0xB2, 0x8F, 0xD3, 0xA8, 0x37, 0x92, 0x4D, 0xC3);
 
         public static readonly Guid IID_IAudioStreamVolume = new Guid(0x93014887, 0x242D, 0x4068, 0x8A, 0x15, 0xCF, 0x5E, 0x93, 0xB9, 0x0F, 0xE3);
 

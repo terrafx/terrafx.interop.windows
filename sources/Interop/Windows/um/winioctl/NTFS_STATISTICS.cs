@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/winioctl.h in the Windows SDK for Windows 10.0.19041.0
+// Ported from um/winioctl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 namespace TerraFX.Interop
@@ -25,7 +25,7 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint MftWriteBytes;
 
-        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winioctl.h:11359:5)")]
+        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winioctl.h:12013:5)")]
         public _MftWritesUserLevel_e__Struct MftWritesUserLevel;
 
         [NativeTypeName("WORD")]
@@ -43,7 +43,7 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint Mft2WriteBytes;
 
-        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winioctl.h:11372:5)")]
+        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winioctl.h:12026:5)")]
         public _Mft2WritesUserLevel_e__Struct Mft2WritesUserLevel;
 
         [NativeTypeName("WORD")]
@@ -88,7 +88,7 @@ namespace TerraFX.Interop
         [NativeTypeName("WORD")]
         public ushort BitmapWritesUserRequest;
 
-        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winioctl.h:11397:5)")]
+        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winioctl.h:12051:5)")]
         public _BitmapWritesUserLevel_e__Struct BitmapWritesUserLevel;
 
         [NativeTypeName("DWORD")]
@@ -112,7 +112,7 @@ namespace TerraFX.Interop
         [NativeTypeName("WORD")]
         public ushort MftBitmapWritesUserRequest;
 
-        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winioctl.h:11412:5)")]
+        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winioctl.h:12066:5)")]
         public _MftBitmapWritesUserLevel_e__Struct MftBitmapWritesUserLevel;
 
         [NativeTypeName("DWORD")]
@@ -139,7 +139,7 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint LogFileWriteBytes;
 
-        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winioctl.h:11433:5)")]
+        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winioctl.h:12087:5)")]
         public _Allocate_e__Struct Allocate;
 
         [NativeTypeName("DWORD")]

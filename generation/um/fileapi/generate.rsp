@@ -7,7 +7,7 @@ um-fileapi.h
 --test-output
 ../../../tests/Interop/Windows/um/fileapi
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/fileapi.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/fileapi.h
 --with-librarypath
 *=kernel32
 --with-setlasterror

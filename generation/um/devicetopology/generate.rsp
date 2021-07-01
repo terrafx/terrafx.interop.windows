@@ -10,4 +10,4 @@ um-devicetopology.h
 --test-output
 ../../../tests/Interop/Windows/um/devicetopology
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/devicetopology.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/devicetopology.h

@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/d3d12sdklayers.h in the Windows SDK for Windows 10.0.19041.0
+// Ported from um/d3d12sdklayers.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
@@ -9,6 +9,9 @@ namespace TerraFX.Interop
 {
     public static partial class Windows
     {
+        [NativeTypeName("const GUID")]
+        public static readonly Guid WKPDID_D3DAutoDebugObjectNameW = new Guid(0xd4902e36, 0x757a, 0x4942, 0x95, 0x94, 0xb6, 0x76, 0x9a, 0xfa, 0x43, 0xcd);
+
         [NativeTypeName("const GUID")]
         public static readonly Guid DXGI_DEBUG_D3D12 = new Guid(0xcf59a98c, 0xa950, 0x4326, 0x91, 0xef, 0x9b, 0xba, 0xa1, 0x7b, 0xfd, 0x95);
 
@@ -23,6 +26,12 @@ namespace TerraFX.Interop
 
         [NativeTypeName("const GUID")]
         public static readonly Guid IID_ID3D12Debug3 = new Guid(0x5cf4e58f, 0xf671, 0x4ff1, 0xa5, 0x42, 0x36, 0x86, 0xe3, 0xd1, 0x53, 0xd1);
+
+        [NativeTypeName("const GUID")]
+        public static readonly Guid IID_ID3D12Debug4 = new Guid(0x014b816e, 0x9ec5, 0x4a2f, 0xa8, 0x45, 0xff, 0xbe, 0x44, 0x1c, 0xe1, 0x3a);
+
+        [NativeTypeName("const GUID")]
+        public static readonly Guid IID_ID3D12Debug5 = new Guid(0x548d6b12, 0x09fa, 0x40e0, 0x90, 0x69, 0x5d, 0xcd, 0x58, 0x9a, 0x52, 0xc9);
 
         [NativeTypeName("const GUID")]
         public static readonly Guid IID_ID3D12DebugDevice1 = new Guid(0xa9b71770, 0xd099, 0x4a65, 0xa6, 0x98, 0x3d, 0xee, 0x10, 0x02, 0x0f, 0x88);
@@ -50,6 +59,9 @@ namespace TerraFX.Interop
 
         [NativeTypeName("const GUID")]
         public static readonly Guid IID_ID3D12InfoQueue = new Guid(0x0742a90b, 0xc387, 0x483f, 0xb9, 0x46, 0x30, 0xa7, 0xe4, 0xe6, 0x14, 0x58);
+
+        [NativeTypeName("const GUID")]
+        public static readonly Guid IID_ID3D12InfoQueue1 = new Guid(0x2852dd88, 0xb484, 0x4c0c, 0xb6, 0xb1, 0x67, 0x16, 0x85, 0x00, 0xe6, 0x00);
 
         [NativeTypeName("#define D3D12_INFO_QUEUE_DEFAULT_MESSAGE_COUNT_LIMIT 1024")]
         public const int D3D12_INFO_QUEUE_DEFAULT_MESSAGE_COUNT_LIMIT = 1024;

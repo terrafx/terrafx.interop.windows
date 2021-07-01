@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/ddraw.h in the Windows SDK for Windows 10.0.19041.0
+// Ported from um/ddraw.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System.Runtime.CompilerServices;
@@ -25,13 +25,13 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint dwAlphaDestConstBitDepth;
 
-        [NativeTypeName("_DDOVERLAYFX::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/ddraw.h:775:5)")]
+        [NativeTypeName("_DDOVERLAYFX::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/ddraw.h:775:5)")]
         public _Anonymous1_e__Union Anonymous1;
 
         [NativeTypeName("DWORD")]
         public uint dwAlphaSrcConstBitDepth;
 
-        [NativeTypeName("_DDOVERLAYFX::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/ddraw.h:781:5)")]
+        [NativeTypeName("_DDOVERLAYFX::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/ddraw.h:781:5)")]
         public _Anonymous2_e__Union Anonymous2;
 
         public DDCOLORKEY dckDestColorkey;

@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from winrt/CoreWindow.h in the Windows SDK for Windows 10.0.19041.0
+// Ported from winrt/CoreWindow.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
@@ -59,44 +59,51 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int get_ApplicationViewClientAdapter(IUnknown** value)
+        public int get_AppActivationClientAdapter(IUnknown** value)
         {
             return ((delegate* unmanaged<ICoreWindowAdapterInterop*, IUnknown**, int>)(lpVtbl[6]))((ICoreWindowAdapterInterop*)Unsafe.AsPointer(ref this), value);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int get_CoreApplicationViewClientAdapter(IUnknown** value)
+        public int get_ApplicationViewClientAdapter(IUnknown** value)
         {
             return ((delegate* unmanaged<ICoreWindowAdapterInterop*, IUnknown**, int>)(lpVtbl[7]))((ICoreWindowAdapterInterop*)Unsafe.AsPointer(ref this), value);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int get_HoloViewClientAdapter(IUnknown** value)
+        public int get_CoreApplicationViewClientAdapter(IUnknown** value)
         {
             return ((delegate* unmanaged<ICoreWindowAdapterInterop*, IUnknown**, int>)(lpVtbl[8]))((ICoreWindowAdapterInterop*)Unsafe.AsPointer(ref this), value);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int get_SystemNavigationClientAdapter(IUnknown** value)
+        public int get_HoloViewClientAdapter(IUnknown** value)
         {
             return ((delegate* unmanaged<ICoreWindowAdapterInterop*, IUnknown**, int>)(lpVtbl[9]))((ICoreWindowAdapterInterop*)Unsafe.AsPointer(ref this), value);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int get_TitleBarClientAdapter(IUnknown** value)
+        public int get_SystemNavigationClientAdapter(IUnknown** value)
         {
             return ((delegate* unmanaged<ICoreWindowAdapterInterop*, IUnknown**, int>)(lpVtbl[10]))((ICoreWindowAdapterInterop*)Unsafe.AsPointer(ref this), value);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
+        public int get_TitleBarClientAdapter(IUnknown** value)
+        {
+            return ((delegate* unmanaged<ICoreWindowAdapterInterop*, IUnknown**, int>)(lpVtbl[11]))((ICoreWindowAdapterInterop*)Unsafe.AsPointer(ref this), value);
+        }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [return: NativeTypeName("HRESULT")]
         public int SetWindowClientAdapter(IUnknown* value)
         {
-            return ((delegate* unmanaged<ICoreWindowAdapterInterop*, IUnknown*, int>)(lpVtbl[11]))((ICoreWindowAdapterInterop*)Unsafe.AsPointer(ref this), value);
+            return ((delegate* unmanaged<ICoreWindowAdapterInterop*, IUnknown*, int>)(lpVtbl[12]))((ICoreWindowAdapterInterop*)Unsafe.AsPointer(ref this), value);
         }
     }
 }

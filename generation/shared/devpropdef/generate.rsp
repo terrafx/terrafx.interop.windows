@@ -16,4 +16,4 @@ shared-devpropdef.h
 --test-output
 ../../../tests/Interop/Windows/shared/devpropdef
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/shared/devpropdef.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/shared/devpropdef.h

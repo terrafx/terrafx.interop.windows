@@ -12,4 +12,4 @@ shared-wtypes.h
 --test-output
 ../../../tests/Interop/Windows/shared/wtypes
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/shared/wtypes.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/shared/wtypes.h

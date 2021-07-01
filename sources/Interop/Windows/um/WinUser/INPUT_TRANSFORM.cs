@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/WinUser.h in the Windows SDK for Windows 10.0.19041.0
+// Ported from um/WinUser.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
@@ -11,7 +11,7 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct INPUT_TRANSFORM
     {
-        [NativeTypeName("tagINPUT_TRANSFORM::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/WinUser.h:6795:5)")]
+        [NativeTypeName("tagINPUT_TRANSFORM::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/WinUser.h:6796:5)")]
         public _Anonymous_e__Union Anonymous;
 
         public ref float _11
@@ -171,7 +171,7 @@ namespace TerraFX.Interop
         public unsafe partial struct _Anonymous_e__Union
         {
             [FieldOffset(0)]
-            [NativeTypeName("tagINPUT_TRANSFORM::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/WinUser.h:6796:9)")]
+            [NativeTypeName("tagINPUT_TRANSFORM::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/WinUser.h:6797:9)")]
             public _Anonymous_e__Struct Anonymous;
 
             [FieldOffset(0)]

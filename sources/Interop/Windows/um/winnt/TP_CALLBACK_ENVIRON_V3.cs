@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/winnt.h in the Windows SDK for Windows 10.0.19041.0
+// Ported from um/winnt.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
@@ -32,7 +32,7 @@ namespace TerraFX.Interop
         [NativeTypeName("PTP_SIMPLE_CALLBACK")]
         public delegate* unmanaged<IntPtr, void*, void> FinalizationCallback;
 
-        [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:22686:5)")]
+        [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winnt.h:24065:5)")]
         public _u_e__Union u;
 
         public TP_CALLBACK_PRIORITY CallbackPriority;
@@ -48,7 +48,7 @@ namespace TerraFX.Interop
             public uint Flags;
 
             [FieldOffset(0)]
-            [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:22688:9)")]
+            [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winnt.h:24067:9)")]
             public _s_e__Struct s;
 
             public partial struct _s_e__Struct

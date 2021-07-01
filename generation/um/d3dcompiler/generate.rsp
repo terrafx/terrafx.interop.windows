@@ -9,8 +9,8 @@ um-d3dcompiler.h
 --test-output
 ../../../tests/Interop/Windows/um/d3dcompiler
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/d3dcompiler.h
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um\d3dcompiler.inl
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/d3dcompiler.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um\d3dcompiler.inl
 --with-attribute
 D3DCOMPILER_STRIP_FLAGS=Flags
 --with-librarypath

@@ -7,6 +7,6 @@ um-Xinput.h
 --test-output
 ../../../tests/Interop/Windows/um/Xinput
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/Xinput.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/Xinput.h
 --with-librarypath
 *=xinput1_4

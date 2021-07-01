@@ -7,4 +7,4 @@ winrt-EventToken.h
 --test-output
 ../../../tests/Interop/Windows/winrt/EventToken
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/winrt/EventToken.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/winrt/EventToken.h

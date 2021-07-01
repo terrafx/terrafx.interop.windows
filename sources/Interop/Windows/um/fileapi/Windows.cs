@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/fileapi.h in the Windows SDK for Windows 10.0.19041.0
+// Ported from um/fileapi.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
@@ -211,6 +211,10 @@ namespace TerraFX.Interop
         public static extern uint GetLongPathNameW([NativeTypeName("LPCWSTR")] ushort* lpszShortPath, [NativeTypeName("LPWSTR")] ushort* lpszLongPath, [NativeTypeName("DWORD")] uint cchBuffer);
 
         [DllImport("kernel32", ExactSpelling = true)]
+        [return: NativeTypeName("BOOL")]
+        public static extern int AreShortNamesEnabled([NativeTypeName("HANDLE")] IntPtr Handle, [NativeTypeName("BOOL *")] int* Enabled);
+
+        [DllImport("kernel32", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
         public static extern uint GetShortPathNameW([NativeTypeName("LPCWSTR")] ushort* lpszLongPath, [NativeTypeName("LPWSTR")] ushort* lpszShortPath, [NativeTypeName("DWORD")] uint cchBuffer);
 
@@ -384,6 +388,14 @@ namespace TerraFX.Interop
         [DllImport("kernel32", ExactSpelling = true)]
         public static extern void SetFileApisToANSI();
 
+        [DllImport("kernel32", ExactSpelling = true)]
+        [return: NativeTypeName("DWORD")]
+        public static extern uint GetTempPath2W([NativeTypeName("DWORD")] uint BufferLength, [NativeTypeName("LPWSTR")] ushort* Buffer);
+
+        [DllImport("kernel32", ExactSpelling = true)]
+        [return: NativeTypeName("DWORD")]
+        public static extern uint GetTempPath2A([NativeTypeName("DWORD")] uint BufferLength, [NativeTypeName("LPSTR")] sbyte* Buffer);
+
         [NativeTypeName("#define CREATE_NEW 1")]
         public const int CREATE_NEW = 1;
 
@@ -503,5 +515,8 @@ namespace TerraFX.Interop
 
         [NativeTypeName("#define GetCompressedFileSize GetCompressedFileSizeW")]
         public static readonly delegate*<ushort*, uint*, uint> GetCompressedFileSize = &GetCompressedFileSizeW;
+
+        [NativeTypeName("#define GetTempPath2 GetTempPath2W")]
+        public static readonly delegate*<uint, ushort*, uint> GetTempPath2 = &GetTempPath2W;
     }
 }

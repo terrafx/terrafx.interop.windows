@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/d3d10.h in the Windows SDK for Windows 10.0.19041.0
+// Ported from um/d3d10.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System.Runtime.CompilerServices;
@@ -10,10 +10,10 @@ namespace TerraFX.Interop
 {
     public partial struct D3D10_BUFFER_SRV
     {
-        [NativeTypeName("D3D10_BUFFER_SRV::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/d3d10.h:2727:5)")]
+        [NativeTypeName("D3D10_BUFFER_SRV::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/d3d10.h:2836:5)")]
         public _Anonymous1_e__Union Anonymous1;
 
-        [NativeTypeName("D3D10_BUFFER_SRV::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/d3d10.h:2732:5)")]
+        [NativeTypeName("D3D10_BUFFER_SRV::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/d3d10.h:2841:5)")]
         public _Anonymous2_e__Union Anonymous2;
 
         public ref uint FirstElement

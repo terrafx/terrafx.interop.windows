@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/windows.ai.machinelearning.native.h in the Windows SDK for Windows 10.0.19041.0
+// Ported from um/windows.ai.machinelearning.native.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
@@ -16,5 +16,7 @@ namespace TerraFX.Interop
         public static readonly Guid IID_ITensorStaticsNative = new Guid(0x39D055A4, 0x66F6, 0x4EBC, 0x95, 0xD9, 0x7A, 0x29, 0xEB, 0xE7, 0x69, 0x0A);
 
         public static readonly Guid IID_ILearningModelDeviceFactoryNative = new Guid(0x1E9B31A1, 0x662E, 0x4AE0, 0xAF, 0x67, 0xF6, 0x3B, 0xB3, 0x37, 0xE6, 0x34);
+
+        public static readonly Guid IID_ILearningModelSessionOptionsNative = new Guid(0xC71E953F, 0x37B4, 0x4564, 0x86, 0x58, 0xD8, 0x39, 0x68, 0x66, 0xDB, 0x0D);
     }
 }

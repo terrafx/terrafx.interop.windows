@@ -7,7 +7,7 @@ um-profileapi.h
 --test-output
 ../../../tests/Interop/Windows/um/profileapi
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/profileapi.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/profileapi.h
 --with-librarypath
 *=kernel32
 --with-setlasterror

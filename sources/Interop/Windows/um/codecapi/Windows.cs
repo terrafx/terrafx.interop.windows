@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/codecapi.h in the Windows SDK for Windows 10.0.19041.0
+// Ported from um/codecapi.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
@@ -10,6 +10,12 @@ namespace TerraFX.Interop
 {
     public static partial class Windows
     {
+        [NativeTypeName("#define STATIC_CODECAPI_AVEncProgressiveUpdateTime 0x649faf66")]
+        public const int STATIC_CODECAPI_AVEncProgressiveUpdateTime = 0x649faf66;
+
+        [NativeTypeName("#define STATIC_CODECAPI_AVEncChromaUpdateTime 0x4b4fd998")]
+        public const int STATIC_CODECAPI_AVEncChromaUpdateTime = 0x4b4fd998;
+
         [NativeTypeName("#define eAVEncH264VProfile_ConstrainedHigh eAVEncH264VProfile_UCConstrainedHigh")]
         public const eAVEncH264VProfile eAVEncH264VProfile_ConstrainedHigh = eAVEncH264VProfile_UCConstrainedHigh;
 
@@ -641,5 +647,9 @@ namespace TerraFX.Interop
         public static readonly Guid STATIC_CODECAPI_AVEncNoInputCopy = new Guid(0xD2B46A2A, 0xE8EE, 0x4EC5, 0x86, 0x9E, 0x44, 0x9B, 0x6C, 0x62, 0xC8, 0x1A);
 
         public static readonly Guid STATIC_CODECAPI_AVEncChromaEncodeMode = new Guid(0x8A47AB5A, 0x4798, 0x4C93, 0xB5, 0xA5, 0x55, 0x4F, 0x9A, 0x3B, 0x9F, 0x50);
+
+        public static readonly Guid IID_CODECAPI_AVEncProgressiveUpdateTime = new Guid(0x649FAF66, 0xAFC6, 0x4828, 0x8F, 0xDC, 0x07, 0x71, 0xCD, 0x9A, 0xB1, 0x7D);
+
+        public static readonly Guid IID_CODECAPI_AVEncChromaUpdateTime = new Guid(0x4B4FD998, 0x4274, 0x40BB, 0x8E, 0xE4, 0x07, 0x55, 0x3E, 0x7E, 0x2D, 0x3A);
     }
 }

@@ -7,4 +7,4 @@ um-InkPresenterDesktop.h
 --test-output
 ../../../tests/Interop/Windows/um/InkPresenterDesktop
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/InkPresenterDesktop.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/InkPresenterDesktop.h

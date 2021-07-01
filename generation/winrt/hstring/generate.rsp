@@ -9,5 +9,5 @@ winrt-hstring.h
 --test-output
 ../../../tests/Interop/Windows/winrt/hstring
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/winrt/hstring.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/winrt/hstring.h
 

@@ -11,7 +11,9 @@ um-processthreadsapi.h
 --test-output
 ../../../tests/Interop/Windows/um/processthreadsapi
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/processthreadsapi.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/processthreadsapi.h
+--with-attribute
+QUEUE_USER_APC_FLAGS=Flags
 --with-librarypath
 *=kernel32
 CreateProcessAsUser=advapi32

@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/winnt.h in the Windows SDK for Windows 10.0.19041.0
+// Ported from um/winnt.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using NUnit.Framework;
@@ -29,7 +29,7 @@ namespace TerraFX.Interop.UnitTests
         [Test]
         public static void SizeOfTest()
         {
-            Assert.That(sizeof(IMAGE_LOAD_CONFIG_DIRECTORY64), Is.EqualTo(280));
+            Assert.That(sizeof(IMAGE_LOAD_CONFIG_DIRECTORY64), Is.EqualTo(312));
         }
     }
 }

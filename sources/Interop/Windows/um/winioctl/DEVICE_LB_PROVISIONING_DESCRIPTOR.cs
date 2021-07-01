@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/winioctl.h in the Windows SDK for Windows 10.0.19041.0
+// Ported from um/winioctl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System.Runtime.CompilerServices;
@@ -81,19 +81,35 @@ namespace TerraFX.Interop
             }
         }
 
-        [NativeTypeName("BYTE : 2")]
-        public byte Reserved0
+        [NativeTypeName("BYTE : 1")]
+        public byte GetFreeSpaceSupported
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
-                return (byte)((_bitfield >> 6) & 0x3u);
+                return (byte)((_bitfield >> 6) & 0x1u);
             }
 
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             set
             {
-                _bitfield = (byte)((_bitfield & ~(0x3u << 6)) | ((value & 0x3u) << 6));
+                _bitfield = (byte)((_bitfield & ~(0x1u << 6)) | ((value & 0x1u) << 6));
+            }
+        }
+
+        [NativeTypeName("BYTE : 1")]
+        public byte MapSupported
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                return (byte)((_bitfield >> 7) & 0x1u);
+            }
+
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            set
+            {
+                _bitfield = (byte)((_bitfield & ~(0x1u << 7)) | ((value & 0x1u) << 7));
             }
         }
 

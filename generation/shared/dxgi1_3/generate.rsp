@@ -7,7 +7,7 @@ shared-dxgi1_3.h
 --test-output
 ../../../tests/Interop/Windows/shared/dxgi1_3
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/shared/dxgi1_3.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/shared/dxgi1_3.h
 --with-attribute
 DXGI_MULTIPLANE_OVERLAY_YCbCr_FLAGS=Flags
 DXGI_OVERLAY_SUPPORT_FLAG=Flags

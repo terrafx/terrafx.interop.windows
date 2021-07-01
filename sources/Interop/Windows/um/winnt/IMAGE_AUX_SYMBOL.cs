@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/winnt.h in the Windows SDK for Windows 10.0.19041.0
+// Ported from um/winnt.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System.Runtime.InteropServices;
@@ -11,22 +11,22 @@ namespace TerraFX.Interop
     public partial struct IMAGE_AUX_SYMBOL
     {
         [FieldOffset(0)]
-        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:17574:5)")]
+        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winnt.h:18837:5)")]
         public _Sym_e__Struct Sym;
 
         [FieldOffset(0)]
-        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:17594:5)")]
+        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winnt.h:18857:5)")]
         public _File_e__Struct File;
 
         [FieldOffset(0)]
-        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:17597:5)")]
+        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winnt.h:18860:5)")]
         public _Section_e__Struct Section;
 
         [FieldOffset(0)]
         public IMAGE_AUX_SYMBOL_TOKEN_DEF TokenDef;
 
         [FieldOffset(0)]
-        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:17608:5)")]
+        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winnt.h:18871:5)")]
         public _CRC_e__Struct CRC;
 
         [StructLayout(LayoutKind.Sequential, Pack = 2)]
@@ -35,10 +35,10 @@ namespace TerraFX.Interop
             [NativeTypeName("DWORD")]
             public uint TagIndex;
 
-            [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:17576:9)")]
+            [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winnt.h:18839:9)")]
             public _Misc_e__Union Misc;
 
-            [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:17583:9)")]
+            [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winnt.h:18846:9)")]
             public _FcnAry_e__Union FcnAry;
 
             [NativeTypeName("WORD")]
@@ -48,7 +48,7 @@ namespace TerraFX.Interop
             public partial struct _Misc_e__Union
             {
                 [FieldOffset(0)]
-                [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:17577:13)")]
+                [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winnt.h:18840:13)")]
                 public _LnSz_e__Struct LnSz;
 
                 [FieldOffset(0)]
@@ -69,11 +69,11 @@ namespace TerraFX.Interop
             public partial struct _FcnAry_e__Union
             {
                 [FieldOffset(0)]
-                [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:17584:13)")]
+                [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winnt.h:18847:13)")]
                 public _Function_e__Struct Function;
 
                 [FieldOffset(0)]
-                [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:17588:13)")]
+                [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winnt.h:18851:13)")]
                 public _Array_e__Struct Array;
 
                 [StructLayout(LayoutKind.Sequential, Pack = 2)]

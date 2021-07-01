@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/winnt.h in the Windows SDK for Windows 10.0.19041.0
+// Ported from um/winnt.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
@@ -20,7 +20,7 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint Size;
 
-        [NativeTypeName("_XSTATE_CONFIGURATION::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:12868:5)")]
+        [NativeTypeName("_XSTATE_CONFIGURATION::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winnt.h:13952:5)")]
         public _Anonymous_e__Union Anonymous;
 
         [NativeTypeName("XSTATE_FEATURE [64]")]
@@ -40,6 +40,15 @@ namespace TerraFX.Interop
 
         [NativeTypeName("DWORD64")]
         public ulong EnabledUserVisibleSupervisorFeatures;
+
+        [NativeTypeName("DWORD64")]
+        public ulong ExtendedFeatureDisableFeatures;
+
+        [NativeTypeName("DWORD")]
+        public uint AllNonLargeFeatureSize;
+
+        [NativeTypeName("DWORD")]
+        public uint Spare;
 
         public ref uint ControlFlags
         {
@@ -80,6 +89,21 @@ namespace TerraFX.Interop
             }
         }
 
+        public uint ExtendedFeatureDisable
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                return Anonymous.Anonymous.ExtendedFeatureDisable;
+            }
+
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            set
+            {
+                Anonymous.Anonymous.ExtendedFeatureDisable = value;
+            }
+        }
+
         [StructLayout(LayoutKind.Explicit)]
         public partial struct _Anonymous_e__Union
         {
@@ -88,7 +112,7 @@ namespace TerraFX.Interop
             public uint ControlFlags;
 
             [FieldOffset(0)]
-            [NativeTypeName("_XSTATE_CONFIGURATION::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:12870:9)")]
+            [NativeTypeName("_XSTATE_CONFIGURATION::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winnt.h:13954:9)")]
             public _Anonymous_e__Struct Anonymous;
 
             public partial struct _Anonymous_e__Struct
@@ -124,6 +148,22 @@ namespace TerraFX.Interop
                     set
                     {
                         _bitfield = (_bitfield & ~(0x1u << 1)) | ((value & 0x1u) << 1);
+                    }
+                }
+
+                [NativeTypeName("DWORD : 1")]
+                public uint ExtendedFeatureDisable
+                {
+                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                    get
+                    {
+                        return (_bitfield >> 2) & 0x1u;
+                    }
+
+                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                    set
+                    {
+                        _bitfield = (_bitfield & ~(0x1u << 2)) | ((value & 0x1u) << 2);
                     }
                 }
             }

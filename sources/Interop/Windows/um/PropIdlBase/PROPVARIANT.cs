@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/PropIdlBase.h in the Windows SDK for Windows 10.0.19041.0
+// Ported from um/PropIdlBase.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
@@ -11,7 +11,7 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct PROPVARIANT
     {
-        [NativeTypeName("tagPROPVARIANT::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/PropIdlBase.h:295:3)")]
+        [NativeTypeName("tagPROPVARIANT::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/PropIdlBase.h:303:3)")]
         public _Anonymous_e__Union Anonymous;
 
         public ref ushort vt
@@ -813,7 +813,7 @@ namespace TerraFX.Interop
         public unsafe partial struct _Anonymous_e__Union
         {
             [FieldOffset(0)]
-            [NativeTypeName("tagPROPVARIANT::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/PropIdlBase.h:297:1)")]
+            [NativeTypeName("tagPROPVARIANT::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/PropIdlBase.h:305:1)")]
             public _Anonymous_e__Struct Anonymous;
 
             [FieldOffset(0)]
@@ -833,7 +833,7 @@ namespace TerraFX.Interop
                 [NativeTypeName("PROPVAR_PAD3")]
                 public ushort wReserved3;
 
-                [NativeTypeName("tagPROPVARIANT::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/PropIdlBase.h:303:43)")]
+                [NativeTypeName("tagPROPVARIANT::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/PropIdlBase.h:311:43)")]
                 public _Anonymous_e__Union Anonymous;
 
                 [StructLayout(LayoutKind.Explicit)]

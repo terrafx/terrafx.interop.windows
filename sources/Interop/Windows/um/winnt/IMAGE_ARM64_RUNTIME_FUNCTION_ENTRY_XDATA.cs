@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/winnt.h in the Windows SDK for Windows 10.0.19041.0
+// Ported from um/winnt.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System.Runtime.CompilerServices;
@@ -16,7 +16,7 @@ namespace TerraFX.Interop
         public uint HeaderData;
 
         [FieldOffset(0)]
-        [NativeTypeName("IMAGE_ARM64_RUNTIME_FUNCTION_ENTRY_XDATA::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:18830:5)")]
+        [NativeTypeName("IMAGE_ARM64_RUNTIME_FUNCTION_ENTRY_XDATA::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winnt.h:20105:5)")]
         public _Anonymous_e__Struct Anonymous;
 
         public uint FunctionLength

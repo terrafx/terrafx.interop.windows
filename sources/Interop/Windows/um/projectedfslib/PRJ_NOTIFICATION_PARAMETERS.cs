@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/projectedfslib.h in the Windows SDK for Windows 10.0.19041.0
+// Ported from um/projectedfslib.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System.Runtime.InteropServices;
@@ -11,15 +11,15 @@ namespace TerraFX.Interop
     public partial struct PRJ_NOTIFICATION_PARAMETERS
     {
         [FieldOffset(0)]
-        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/projectedfslib.h:407:5)")]
+        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/projectedfslib.h:407:5)")]
         public _PostCreate_e__Struct PostCreate;
 
         [FieldOffset(0)]
-        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/projectedfslib.h:411:5)")]
+        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/projectedfslib.h:411:5)")]
         public _FileRenamed_e__Struct FileRenamed;
 
         [FieldOffset(0)]
-        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/projectedfslib.h:415:5)")]
+        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/projectedfslib.h:415:5)")]
         public _FileDeletedOnHandleClose_e__Struct FileDeletedOnHandleClose;
 
         public partial struct _PostCreate_e__Struct

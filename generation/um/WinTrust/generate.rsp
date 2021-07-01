@@ -11,7 +11,7 @@ um-WinTrust.h
 --test-output
 ../../../tests/Interop/Windows/um/wintrust
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/WinTrust.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/WinTrust.h
 --with-librarypath
 *=wintrust
 --with-setlasterror

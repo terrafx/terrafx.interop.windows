@@ -7,6 +7,6 @@ shared-dxgicommon.h
 --test-output
 ../../../tests/Interop/Windows/shared/dxgicommon
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/shared/dxgicommon.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/shared/dxgicommon.h
 --with-type
 DXGI_COLOR_SPACE_TYPE=uint

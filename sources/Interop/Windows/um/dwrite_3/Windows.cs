@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/dwrite_3.h in the Windows SDK for Windows 10.0.19041.0
+// Ported from um/dwrite_3.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
@@ -90,5 +90,7 @@ namespace TerraFX.Interop
         public static readonly Guid IID_IDWriteFactory7 = new Guid(0x35D0E0B3, 0x9076, 0x4D2E, 0xA0, 0x16, 0xA9, 0x1B, 0x56, 0x8A, 0x06, 0xB4);
 
         public static readonly Guid IID_IDWriteFontSet3 = new Guid(0x7C073EF2, 0xA7F4, 0x4045, 0x8C, 0x32, 0x8A, 0xB8, 0xAE, 0x64, 0x0F, 0x90);
+
+        public static readonly Guid IID_IDWriteFontFace6 = new Guid(0xC4B1FE1B, 0x6E84, 0x47D5, 0xB5, 0x4C, 0xA5, 0x97, 0x98, 0x1B, 0x06, 0xAD);
     }
 }

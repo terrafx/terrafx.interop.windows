@@ -7,4 +7,4 @@ um-WebAuthenticationCoreManagerInterop.h
 --test-output
 ../../../tests/Interop/Windows/um/WebAuthenticationCoreManagerInterop
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/WebAuthenticationCoreManagerInterop.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/WebAuthenticationCoreManagerInterop.h
