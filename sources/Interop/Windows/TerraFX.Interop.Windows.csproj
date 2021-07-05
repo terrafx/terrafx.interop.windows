@@ -5,7 +5,7 @@
   <PropertyGroup>
     <NoWarn>1573;1591;$(NoWarn)</NoWarn>
     <RootNamespace>TerraFX.Interop</RootNamespace>
-    <TargetFramework>net5.0</TargetFramework>
+    <TargetFrameworks>net5.0;net6.0</TargetFrameworks>
   </PropertyGroup>
 
   <ItemGroup>
