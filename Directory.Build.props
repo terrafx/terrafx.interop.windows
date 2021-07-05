@@ -72,4 +72,10 @@
     <UseSharedCompilation>true</UseSharedCompilation>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(OutputType)' == 'Exe'">
+    <PublishTrimmed>true</PublishTrimmed>
+    <SuppressTrimAnalysisWarnings>false</SuppressTrimAnalysisWarnings>
+    <TrimMode>link</TrimMode>
+  </PropertyGroup>
+
 </Project>
