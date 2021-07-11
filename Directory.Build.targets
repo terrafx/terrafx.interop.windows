@@ -21,6 +21,17 @@
     <PackageVersion Condition="'$(EXCLUDE_RUN_ID_FROM_PACKAGE)' == ''">$(Version)-$(GITHUB_RUN_ID)</PackageVersion>
   </PropertyGroup>
 
+  <!-- Settings that are only set for executables -->
+  <PropertyGroup Condition="'$(OutputType)' != 'Library'">
+    <PublishTrimmed>true</PublishTrimmed>
+  </PropertyGroup>
+
+  <!-- Settings that are only set for libraries -->
+  <PropertyGroup Condition="'$(OutputType)' == 'Library'">
+    <EnableTrimAnalyzer>true</EnableTrimAnalyzer>
+    <IsTrimmable>true</IsTrimmable>
+  </PropertyGroup>
+
   <!-- Package versions for package references across all projects -->
   <ItemGroup>
     <PackageReference Update="Microsoft.NET.Test.Sdk" Version="16.9.4" />
