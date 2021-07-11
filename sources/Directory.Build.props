@@ -12,11 +12,19 @@
 
   <PropertyGroup>
     <EmbedUntrackedSources>true</EmbedUntrackedSources>
+    <EnableTrimAnalyzer>true</EnableTrimAnalyzer>
     <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileDirectory)..\Directory.Build.props</MSBuildAllProjects>
     <TerraFXProjectCategory>sources</TerraFXProjectCategory>
   </PropertyGroup>
 
   <Import Project="$(MSBuildThisFileDirectory)..\Directory.Build.props" />
+
+  <ItemGroup>
+    <AssemblyAttribute Include="System.Reflection.AssemblyMetadataAttribute">
+      <_Parameter1>IsTrimmable</_Parameter1>
+      <_Parameter2>True</_Parameter2>
+    </AssemblyAttribute>
+  </ItemGroup>
 
   <ItemGroup>
     <InternalsVisibleTo Include="$(MSBuildProjectName).UnitTests" Key="$(AssemblyOriginatorPublicKey)" />
