@@ -288,7 +288,7 @@ namespace TerraFX.Samples.DirectX.D3D12
 
             const int RootParametersCount = 1;
             var rootParameters = stackalloc D3D12_ROOT_PARAMETER1[RootParametersCount];
-            rootParameters[0].InitAsDescriptorTable(1, ranges, D3D12_SHADER_VISIBILITY_PIXEL);
+            rootParameters[0].InitAsDescriptorTable(RangesCount, ranges, D3D12_SHADER_VISIBILITY_PIXEL);
 
             var sampler = new D3D12_STATIC_SAMPLER_DESC {
                 Filter = D3D12_FILTER.D3D12_FILTER_MIN_MAG_MIP_POINT,
@@ -309,8 +309,7 @@ namespace TerraFX.Samples.DirectX.D3D12
             var rootSignatureDesc = new D3D12_VERSIONED_ROOT_SIGNATURE_DESC();
             rootSignatureDesc.Init_1_1(RootParametersCount, rootParameters, 1, &sampler, D3D12_ROOT_SIGNATURE_FLAG_ALLOW_INPUT_ASSEMBLER_INPUT_LAYOUT);
 
-            ThrowIfFailed(nameof(D3D12SerializeVersionedRootSignature), D3D12SerializeVersionedRootSignature(
-                &rootSignatureDesc, featureData.HighestVersion, signature.GetAddressOf(), error.GetAddressOf()));
+            ThrowIfFailed(nameof(D3D12SerializeVersionedRootSignature), D3D12SerializeVersionedRootSignature(&rootSignatureDesc, featureData.HighestVersion, signature.GetAddressOf(), error.GetAddressOf()));
 
             ID3D12RootSignature* rootSignature;
 
