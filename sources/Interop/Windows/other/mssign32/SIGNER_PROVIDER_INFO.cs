@@ -25,7 +25,7 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint dwPvkChoice;
 
-        [NativeTypeName("_SIGNER_PROVIDER_INFO::(anonymous union at ./mssign32.h:72:5)")]
+        [NativeTypeName("_SIGNER_PROVIDER_INFO::(anonymous union at ./mssign32.h:74:9)")]
         public _Anonymous_e__Union Anonymous;
 
         public ref ushort* pwszPvkFileName
