@@ -1,0 +1,13 @@
+@../../settings.rsp
+@../../remap.rsp
+--exclude
+__MIDL___MIDL_itf_dimm_0000_0000_0012
+__MIDL___MIDL_itf_dimm_0000_0000_0014
+--file
+um-Dimm.h
+--output
+../../../sources/Interop/Windows/um/Dimm
+--test-output
+../../../tests/Interop/Windows/um/Dimm
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/Dimm.h

@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
 <Project Sdk="Microsoft.NET.Sdk">
 
@@ -7,9 +7,5 @@
     <RootNamespace>TerraFX.Interop</RootNamespace>
     <TargetFrameworks>net5.0;net6.0</TargetFrameworks>
   </PropertyGroup>
-
-  <ItemGroup>
-    <Folder Include="um\Mferror\" />
-  </ItemGroup>
 
 </Project>

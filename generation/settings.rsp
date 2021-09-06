@@ -15,6 +15,7 @@ exclude-enum-operators
 generate-aggressive-inlining
 generate-macro-bindings
 generate-tests-nunit
+log-potential-typedef-remappings
 multi-file
 --define-macro
 INITGUID

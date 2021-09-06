@@ -3,6 +3,7 @@
 --exclude
 DECLARE_CROSS_PLATFORM_UUIDOF
 DEFINE_CROSS_PLATFORM_UUIDOF
+DXC_FOURCC
 --file
 um-dxcapi.h
 --output

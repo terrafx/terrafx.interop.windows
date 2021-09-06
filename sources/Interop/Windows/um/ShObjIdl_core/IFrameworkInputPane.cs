@@ -1,0 +1,67 @@
+// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+
+// Ported from um/ShObjIdl_core.h in the Windows SDK for Windows 10.0.20348.0
+// Original source is Copyright © Microsoft. All rights reserved.
+
+using System;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
+
+namespace TerraFX.Interop
+{
+    [Guid("5752238B-24F0-495A-82F1-2FD593056796")]
+    [NativeTypeName("struct IFrameworkInputPane : IUnknown")]
+    public unsafe partial struct IFrameworkInputPane
+    {
+        public void** lpVtbl;
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [return: NativeTypeName("HRESULT")]
+        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        {
+            return ((delegate* unmanaged<IFrameworkInputPane*, Guid*, void**, int>)(lpVtbl[0]))((IFrameworkInputPane*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [return: NativeTypeName("ULONG")]
+        public uint AddRef()
+        {
+            return ((delegate* unmanaged<IFrameworkInputPane*, uint>)(lpVtbl[1]))((IFrameworkInputPane*)Unsafe.AsPointer(ref this));
+        }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [return: NativeTypeName("ULONG")]
+        public uint Release()
+        {
+            return ((delegate* unmanaged<IFrameworkInputPane*, uint>)(lpVtbl[2]))((IFrameworkInputPane*)Unsafe.AsPointer(ref this));
+        }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [return: NativeTypeName("HRESULT")]
+        public int Advise(IUnknown* pWindow, IFrameworkInputPaneHandler* pHandler, [NativeTypeName("DWORD *")] uint* pdwCookie)
+        {
+            return ((delegate* unmanaged<IFrameworkInputPane*, IUnknown*, IFrameworkInputPaneHandler*, uint*, int>)(lpVtbl[3]))((IFrameworkInputPane*)Unsafe.AsPointer(ref this), pWindow, pHandler, pdwCookie);
+        }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [return: NativeTypeName("HRESULT")]
+        public int AdviseWithHWND([NativeTypeName("HWND")] IntPtr hwnd, IFrameworkInputPaneHandler* pHandler, [NativeTypeName("DWORD *")] uint* pdwCookie)
+        {
+            return ((delegate* unmanaged<IFrameworkInputPane*, IntPtr, IFrameworkInputPaneHandler*, uint*, int>)(lpVtbl[4]))((IFrameworkInputPane*)Unsafe.AsPointer(ref this), hwnd, pHandler, pdwCookie);
+        }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [return: NativeTypeName("HRESULT")]
+        public int Unadvise([NativeTypeName("DWORD")] uint dwCookie)
+        {
+            return ((delegate* unmanaged<IFrameworkInputPane*, uint, int>)(lpVtbl[5]))((IFrameworkInputPane*)Unsafe.AsPointer(ref this), dwCookie);
+        }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [return: NativeTypeName("HRESULT")]
+        public int Location(RECT* prcInputPaneScreenLocation)
+        {
+            return ((delegate* unmanaged<IFrameworkInputPane*, RECT*, int>)(lpVtbl[6]))((IFrameworkInputPane*)Unsafe.AsPointer(ref this), prcInputPaneScreenLocation);
+        }
+    }
+}
