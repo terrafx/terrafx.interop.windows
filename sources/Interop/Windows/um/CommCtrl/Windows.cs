@@ -740,9 +740,6 @@ namespace TerraFX.Interop
         [NativeTypeName("#define CLR_DEFAULT 0xFF000000L")]
         public const uint CLR_DEFAULT = 0xFF000000;
 
-        [NativeTypeName("#define IMAGELISTDRAWPARAMS_V3_SIZE CCSIZEOF_STRUCT(IMAGELISTDRAWPARAMS, dwRop)")]
-        public static readonly uint IMAGELISTDRAWPARAMS_V3_SIZE = unchecked((uint)((int)((byte*)(&((IMAGELISTDRAWPARAMS*)(0))->dwRop) - ((byte*)((IMAGELISTDRAWPARAMS*)(0))))) + 4);
-
         [NativeTypeName("#define ILC_MASK 0x00000001")]
         public const int ILC_MASK = 0x00000001;
 
@@ -922,15 +919,6 @@ namespace TerraFX.Interop
 
         [NativeTypeName("#define HDFT_HASNOVALUE 0x8000")]
         public const int HDFT_HASNOVALUE = 0x8000;
-
-        [NativeTypeName("#define HDITEMA_V1_SIZE CCSIZEOF_STRUCT(HDITEMA, lParam)")]
-        public static readonly uint HDITEMA_V1_SIZE = unchecked((uint)((int)((byte*)(&((HD_ITEMA*)(0))->lParam) - ((byte*)((HD_ITEMA*)(0))))) + (uint)(sizeof(nint)));
-
-        [NativeTypeName("#define HDITEMW_V1_SIZE CCSIZEOF_STRUCT(HDITEMW, lParam)")]
-        public static readonly uint HDITEMW_V1_SIZE = unchecked((uint)((int)((byte*)(&((HD_ITEMW*)(0))->lParam) - ((byte*)((HD_ITEMW*)(0))))) + (uint)(sizeof(nint)));
-
-        [NativeTypeName("#define HDITEM_V1_SIZE HDITEMW_V1_SIZE")]
-        public static readonly uint HDITEM_V1_SIZE = unchecked((uint)((int)((byte*)(&((HD_ITEMW*)(0))->lParam) - ((byte*)((HD_ITEMW*)(0))))) + (uint)(sizeof(nint)));
 
         [NativeTypeName("#define HDI_WIDTH 0x0001")]
         public const int HDI_WIDTH = 0x0001;
@@ -2192,24 +2180,6 @@ namespace TerraFX.Interop
         [NativeTypeName("#define RBBIM_CHEVRONSTATE 0x00002000")]
         public const int RBBIM_CHEVRONSTATE = 0x00002000;
 
-        [NativeTypeName("#define REBARBANDINFOA_V3_SIZE CCSIZEOF_STRUCT(REBARBANDINFOA, wID)")]
-        public static readonly uint REBARBANDINFOA_V3_SIZE = unchecked((uint)((int)((byte*)(&((REBARBANDINFOA*)(0))->wID) - ((byte*)((REBARBANDINFOA*)(0))))) + 4);
-
-        [NativeTypeName("#define REBARBANDINFOW_V3_SIZE CCSIZEOF_STRUCT(REBARBANDINFOW, wID)")]
-        public static readonly uint REBARBANDINFOW_V3_SIZE = unchecked((uint)((int)((byte*)(&((REBARBANDINFOW*)(0))->wID) - ((byte*)((REBARBANDINFOW*)(0))))) + 4);
-
-        [NativeTypeName("#define REBARBANDINFOA_V6_SIZE CCSIZEOF_STRUCT(REBARBANDINFOA, cxHeader)")]
-        public static readonly uint REBARBANDINFOA_V6_SIZE = unchecked((uint)((int)((byte*)(&((REBARBANDINFOA*)(0))->cxHeader) - ((byte*)((REBARBANDINFOA*)(0))))) + 4);
-
-        [NativeTypeName("#define REBARBANDINFOW_V6_SIZE CCSIZEOF_STRUCT(REBARBANDINFOW, cxHeader)")]
-        public static readonly uint REBARBANDINFOW_V6_SIZE = unchecked((uint)((int)((byte*)(&((REBARBANDINFOW*)(0))->cxHeader) - ((byte*)((REBARBANDINFOW*)(0))))) + 4);
-
-        [NativeTypeName("#define REBARBANDINFO_V3_SIZE REBARBANDINFOW_V3_SIZE")]
-        public static readonly uint REBARBANDINFO_V3_SIZE = unchecked((uint)((int)((byte*)(&((REBARBANDINFOW*)(0))->wID) - ((byte*)((REBARBANDINFOW*)(0))))) + 4);
-
-        [NativeTypeName("#define REBARBANDINFO_V6_SIZE REBARBANDINFOW_V6_SIZE")]
-        public static readonly uint REBARBANDINFO_V6_SIZE = unchecked((uint)((int)((byte*)(&((REBARBANDINFOW*)(0))->cxHeader) - ((byte*)((REBARBANDINFOW*)(0))))) + 4);
-
         [NativeTypeName("#define RB_INSERTBANDA (WM_USER +  1)")]
         public const int RB_INSERTBANDA = (0x0400 + 1);
 
@@ -2437,27 +2407,6 @@ namespace TerraFX.Interop
 
         [NativeTypeName("#define TOOLTIPS_CLASS TOOLTIPS_CLASSW")]
         public const string TOOLTIPS_CLASS = "tooltips_class32";
-
-        [NativeTypeName("#define TTTOOLINFOA_V1_SIZE CCSIZEOF_STRUCT(TTTOOLINFOA, lpszText)")]
-        public static readonly uint TTTOOLINFOA_V1_SIZE = unchecked((uint)((int)((byte*)(&((TOOLINFOA*)(0))->lpszText) - ((byte*)((TOOLINFOA*)(0))))) + (uint)(sizeof(sbyte*)));
-
-        [NativeTypeName("#define TTTOOLINFOW_V1_SIZE CCSIZEOF_STRUCT(TTTOOLINFOW, lpszText)")]
-        public static readonly uint TTTOOLINFOW_V1_SIZE = unchecked((uint)((int)((byte*)(&((TOOLINFOW*)(0))->lpszText) - ((byte*)((TOOLINFOW*)(0))))) + (uint)(sizeof(ushort*)));
-
-        [NativeTypeName("#define TTTOOLINFOA_V2_SIZE CCSIZEOF_STRUCT(TTTOOLINFOA, lParam)")]
-        public static readonly uint TTTOOLINFOA_V2_SIZE = unchecked((uint)((int)((byte*)(&((TOOLINFOA*)(0))->lParam) - ((byte*)((TOOLINFOA*)(0))))) + (uint)(sizeof(nint)));
-
-        [NativeTypeName("#define TTTOOLINFOW_V2_SIZE CCSIZEOF_STRUCT(TTTOOLINFOW, lParam)")]
-        public static readonly uint TTTOOLINFOW_V2_SIZE = unchecked((uint)((int)((byte*)(&((TOOLINFOW*)(0))->lParam) - ((byte*)((TOOLINFOW*)(0))))) + (uint)(sizeof(nint)));
-
-        [NativeTypeName("#define TTTOOLINFOA_V3_SIZE CCSIZEOF_STRUCT(TTTOOLINFOA, lpReserved)")]
-        public static readonly uint TTTOOLINFOA_V3_SIZE = unchecked((uint)((int)((byte*)(&((TOOLINFOA*)(0))->lpReserved) - ((byte*)((TOOLINFOA*)(0))))) + (uint)(sizeof(void*)));
-
-        [NativeTypeName("#define TTTOOLINFOW_V3_SIZE CCSIZEOF_STRUCT(TTTOOLINFOW, lpReserved)")]
-        public static readonly uint TTTOOLINFOW_V3_SIZE = unchecked((uint)((int)((byte*)(&((TOOLINFOW*)(0))->lpReserved) - ((byte*)((TOOLINFOW*)(0))))) + (uint)(sizeof(void*)));
-
-        [NativeTypeName("#define TTTOOLINFO_V1_SIZE TTTOOLINFOW_V1_SIZE")]
-        public static readonly uint TTTOOLINFO_V1_SIZE = unchecked((uint)((int)((byte*)(&((TOOLINFOW*)(0))->lpszText) - ((byte*)((TOOLINFOW*)(0))))) + (uint)(sizeof(ushort*)));
 
         [NativeTypeName("#define TTS_ALWAYSTIP 0x01")]
         public const int TTS_ALWAYSTIP = 0x01;
@@ -2734,15 +2683,6 @@ namespace TerraFX.Interop
 
         [NativeTypeName("#define TTN_NEEDTEXTW TTN_GETDISPINFOW")]
         public const uint TTN_NEEDTEXTW = unchecked((0U - 520U) - 10);
-
-        [NativeTypeName("#define NMTTDISPINFOA_V1_SIZE CCSIZEOF_STRUCT(NMTTDISPINFOA, uFlags)")]
-        public static readonly uint NMTTDISPINFOA_V1_SIZE = unchecked((uint)((int)((byte*)(&((NMTTDISPINFOA*)(0))->uFlags) - ((byte*)((NMTTDISPINFOA*)(0))))) + 4);
-
-        [NativeTypeName("#define NMTTDISPINFOW_V1_SIZE CCSIZEOF_STRUCT(NMTTDISPINFOW, uFlags)")]
-        public static readonly uint NMTTDISPINFOW_V1_SIZE = unchecked((uint)((int)((byte*)(&((NMTTDISPINFOW*)(0))->uFlags) - ((byte*)((NMTTDISPINFOW*)(0))))) + 4);
-
-        [NativeTypeName("#define NMTTDISPINFO_V1_SIZE NMTTDISPINFOW_V1_SIZE")]
-        public static readonly uint NMTTDISPINFO_V1_SIZE = unchecked((uint)((int)((byte*)(&((NMTTDISPINFOW*)(0))->uFlags) - ((byte*)((NMTTDISPINFOW*)(0))))) + 4);
 
         [NativeTypeName("#define SBARS_SIZEGRIP 0x0100")]
         public const int SBARS_SIZEGRIP = 0x0100;
@@ -3617,24 +3557,6 @@ namespace TerraFX.Interop
         [NativeTypeName("#define I_GROUPIDNONE (-2)")]
         public const int I_GROUPIDNONE = (-2);
 
-        [NativeTypeName("#define LVITEMA_V1_SIZE CCSIZEOF_STRUCT(LVITEMA, lParam)")]
-        public static readonly uint LVITEMA_V1_SIZE = unchecked((uint)((int)((byte*)(&((LVITEMA*)(0))->lParam) - ((byte*)((LVITEMA*)(0))))) + (uint)(sizeof(nint)));
-
-        [NativeTypeName("#define LVITEMW_V1_SIZE CCSIZEOF_STRUCT(LVITEMW, lParam)")]
-        public static readonly uint LVITEMW_V1_SIZE = unchecked((uint)((int)((byte*)(&((LVITEMW*)(0))->lParam) - ((byte*)((LVITEMW*)(0))))) + (uint)(sizeof(nint)));
-
-        [NativeTypeName("#define LVITEMA_V5_SIZE CCSIZEOF_STRUCT(LVITEMA, puColumns)")]
-        public static readonly uint LVITEMA_V5_SIZE = unchecked((uint)((int)((byte*)(&((LVITEMA*)(0))->puColumns) - ((byte*)((LVITEMA*)(0))))) + (uint)(sizeof(uint*)));
-
-        [NativeTypeName("#define LVITEMW_V5_SIZE CCSIZEOF_STRUCT(LVITEMW, puColumns)")]
-        public static readonly uint LVITEMW_V5_SIZE = unchecked((uint)((int)((byte*)(&((LVITEMW*)(0))->puColumns) - ((byte*)((LVITEMW*)(0))))) + (uint)(sizeof(uint*)));
-
-        [NativeTypeName("#define LVITEM_V5_SIZE LVITEMW_V5_SIZE")]
-        public static readonly uint LVITEM_V5_SIZE = unchecked((uint)((int)((byte*)(&((LVITEMW*)(0))->puColumns) - ((byte*)((LVITEMW*)(0))))) + (uint)(sizeof(uint*)));
-
-        [NativeTypeName("#define LVITEM_V1_SIZE LVITEMW_V1_SIZE")]
-        public static readonly uint LVITEM_V1_SIZE = unchecked((uint)((int)((byte*)(&((LVITEMW*)(0))->lParam) - ((byte*)((LVITEMW*)(0))))) + (uint)(sizeof(nint)));
-
         [NativeTypeName("#define LPSTR_TEXTCALLBACKW ((LPWSTR)-1L)")]
         public static readonly ushort* LPSTR_TEXTCALLBACKW = unchecked((ushort*)(-1));
 
@@ -3851,9 +3773,6 @@ namespace TerraFX.Interop
         [NativeTypeName("#define LVHT_EX_FOOTER 0x08000000")]
         public const int LVHT_EX_FOOTER = 0x08000000;
 
-        [NativeTypeName("#define LVHITTESTINFO_V1_SIZE CCSIZEOF_STRUCT(LVHITTESTINFO, iItem)")]
-        public static readonly uint LVHITTESTINFO_V1_SIZE = unchecked((uint)((int)((byte*)(&((LVHITTESTINFO*)(0))->iItem) - ((byte*)((LVHITTESTINFO*)(0))))) + 4);
-
         [NativeTypeName("#define LVM_HITTEST (LVM_FIRST + 18)")]
         public const int LVM_HITTEST = (0x1000 + 18);
 
@@ -3892,15 +3811,6 @@ namespace TerraFX.Interop
 
         [NativeTypeName("#define LVM_GETEDITCONTROL (LVM_FIRST + 24)")]
         public const int LVM_GETEDITCONTROL = (0x1000 + 24);
-
-        [NativeTypeName("#define LVCOLUMNA_V1_SIZE CCSIZEOF_STRUCT(LVCOLUMNA, iSubItem)")]
-        public static readonly uint LVCOLUMNA_V1_SIZE = unchecked((uint)((int)((byte*)(&((LVCOLUMNA*)(0))->iSubItem) - ((byte*)((LVCOLUMNA*)(0))))) + 4);
-
-        [NativeTypeName("#define LVCOLUMNW_V1_SIZE CCSIZEOF_STRUCT(LVCOLUMNW, iSubItem)")]
-        public static readonly uint LVCOLUMNW_V1_SIZE = unchecked((uint)((int)((byte*)(&((LVCOLUMNW*)(0))->iSubItem) - ((byte*)((LVCOLUMNW*)(0))))) + 4);
-
-        [NativeTypeName("#define LVCOLUMN_V1_SIZE LVCOLUMNW_V1_SIZE")]
-        public static readonly uint LVCOLUMN_V1_SIZE = unchecked((uint)((int)((byte*)(&((LVCOLUMNW*)(0))->iSubItem) - ((byte*)((LVCOLUMNW*)(0))))) + 4);
 
         [NativeTypeName("#define LVCF_FMT 0x0001")]
         public const int LVCF_FMT = 0x0001;
@@ -4424,9 +4334,6 @@ namespace TerraFX.Interop
         [NativeTypeName("#define LVGA_FOOTER_RIGHT 0x00000020")]
         public const int LVGA_FOOTER_RIGHT = 0x00000020;
 
-        [NativeTypeName("#define LVGROUP_V5_SIZE CCSIZEOF_STRUCT(LVGROUP, uAlign)")]
-        public static readonly uint LVGROUP_V5_SIZE = unchecked((uint)((int)((byte*)(&((LVGROUP*)(0))->uAlign) - ((byte*)((LVGROUP*)(0))))) + 4);
-
         [NativeTypeName("#define LVM_INSERTGROUP (LVM_FIRST + 145)")]
         public const int LVM_INSERTGROUP = (0x1000 + 145);
 
@@ -4528,9 +4435,6 @@ namespace TerraFX.Interop
 
         [NativeTypeName("#define LVTVIM_LABELMARGIN 0x00000004")]
         public const int LVTVIM_LABELMARGIN = 0x00000004;
-
-        [NativeTypeName("#define LVTILEINFO_V5_SIZE CCSIZEOF_STRUCT(LVTILEINFO, puColumns)")]
-        public static readonly uint LVTILEINFO_V5_SIZE = unchecked((uint)((int)((byte*)(&((LVTILEINFO*)(0))->puColumns) - ((byte*)((LVTILEINFO*)(0))))) + (uint)(sizeof(uint*)));
 
         [NativeTypeName("#define LVM_SETTILEVIEWINFO (LVM_FIRST + 162)")]
         public const int LVM_SETTILEVIEWINFO = (0x1000 + 162);
@@ -4642,9 +4546,6 @@ namespace TerraFX.Interop
 
         [NativeTypeName("#define LVKF_SHIFT 0x0004")]
         public const int LVKF_SHIFT = 0x0004;
-
-        [NativeTypeName("#define NMLVCUSTOMDRAW_V3_SIZE CCSIZEOF_STRUCT(NMLVCUSTOMDRAW, clrTextBk)")]
-        public static readonly uint NMLVCUSTOMDRAW_V3_SIZE = unchecked((uint)((int)((byte*)(&((NMLVCUSTOMDRAW*)(0))->clrTextBk) - ((byte*)((NMLVCUSTOMDRAW*)(0))))) + 4);
 
         [NativeTypeName("#define LVCDI_ITEM 0x00000000")]
         public const int LVCDI_ITEM = 0x00000000;
@@ -4978,15 +4879,6 @@ namespace TerraFX.Interop
 
         [NativeTypeName("#define TVI_SORT ((HTREEITEM)(ULONG_PTR)-0x0FFFD)")]
         public static readonly IntPtr TVI_SORT = unchecked((nint)((nuint)(-0x0FFFD)));
-
-        [NativeTypeName("#define TVINSERTSTRUCTA_V1_SIZE CCSIZEOF_STRUCT(TVINSERTSTRUCTA, item)")]
-        public static readonly uint TVINSERTSTRUCTA_V1_SIZE = unchecked((uint)((int)((byte*)(&((TVINSERTSTRUCTA*)(0))->Anonymous.item) - ((byte*)((TVINSERTSTRUCTA*)(0))))) + (uint)(sizeof(TVITEMA)));
-
-        [NativeTypeName("#define TVINSERTSTRUCTW_V1_SIZE CCSIZEOF_STRUCT(TVINSERTSTRUCTW, item)")]
-        public static readonly uint TVINSERTSTRUCTW_V1_SIZE = unchecked((uint)((int)((byte*)(&((TVINSERTSTRUCTW*)(0))->Anonymous.item) - ((byte*)((TVINSERTSTRUCTW*)(0))))) + (uint)(sizeof(TVITEMW)));
-
-        [NativeTypeName("#define TVINSERTSTRUCT_V1_SIZE TVINSERTSTRUCTW_V1_SIZE")]
-        public static readonly uint TVINSERTSTRUCT_V1_SIZE = unchecked((uint)((int)((byte*)(&((TVINSERTSTRUCTW*)(0))->Anonymous.item) - ((byte*)((TVINSERTSTRUCTW*)(0))))) + (uint)(sizeof(TVITEMW)));
 
         [NativeTypeName("#define TVM_INSERTITEMA (TV_FIRST + 0)")]
         public const int TVM_INSERTITEMA = (0x1100 + 0);
@@ -5419,9 +5311,6 @@ namespace TerraFX.Interop
 
         [NativeTypeName("#define TVN_ENDLABELEDIT TVN_ENDLABELEDITW")]
         public const uint TVN_ENDLABELEDIT = unchecked((0U - 400U) - 60);
-
-        [NativeTypeName("#define NMTVCUSTOMDRAW_V3_SIZE CCSIZEOF_STRUCT(NMTVCUSTOMDRAW, clrTextBk)")]
-        public static readonly uint NMTVCUSTOMDRAW_V3_SIZE = unchecked((uint)((int)((byte*)(&((NMTVCUSTOMDRAW*)(0))->clrTextBk) - ((byte*)((NMTVCUSTOMDRAW*)(0))))) + 4);
 
         [NativeTypeName("#define TVN_GETINFOTIP TVN_GETINFOTIPW")]
         public const uint TVN_GETINFOTIP = unchecked((0U - 400U) - 14);
@@ -5944,9 +5833,6 @@ namespace TerraFX.Interop
 
         [NativeTypeName("#define MCM_HITTEST (MCM_FIRST + 14)")]
         public const int MCM_HITTEST = (0x1000 + 14);
-
-        [NativeTypeName("#define MCHITTESTINFO_V1_SIZE CCSIZEOF_STRUCT(MCHITTESTINFO, st)")]
-        public static readonly uint MCHITTESTINFO_V1_SIZE = unchecked((uint)((int)((byte*)(&((MCHITTESTINFO*)(0))->st) - ((byte*)((MCHITTESTINFO*)(0))))) + 16);
 
         [NativeTypeName("#define MCHT_TITLE 0x00010000")]
         public const int MCHT_TITLE = 0x00010000;
