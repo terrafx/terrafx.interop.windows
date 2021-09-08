@@ -5594,13 +5594,13 @@ namespace TerraFX.Interop
         public const int MEM_EXTENDED_PARAMETER_TYPE_BITS = 8;
 
         [NativeTypeName("#define MEMORY_CURRENT_PARTITION_HANDLE ((HANDLE) (LONG_PTR) -1)")]
-        public static readonly IntPtr MEMORY_CURRENT_PARTITION_HANDLE = ((IntPtr)((nint)(-1)));
+        public static readonly IntPtr MEMORY_CURRENT_PARTITION_HANDLE = ((nint)((nint)(-1)));
 
         [NativeTypeName("#define MEMORY_SYSTEM_PARTITION_HANDLE ((HANDLE) (LONG_PTR) -2)")]
-        public static readonly IntPtr MEMORY_SYSTEM_PARTITION_HANDLE = ((IntPtr)((nint)(-2)));
+        public static readonly IntPtr MEMORY_SYSTEM_PARTITION_HANDLE = ((nint)((nint)(-2)));
 
         [NativeTypeName("#define MEMORY_EXISTING_VAD_PARTITION_HANDLE ((HANDLE) (LONG_PTR) -3)")]
-        public static readonly IntPtr MEMORY_EXISTING_VAD_PARTITION_HANDLE = ((IntPtr)((nint)(-3)));
+        public static readonly IntPtr MEMORY_EXISTING_VAD_PARTITION_HANDLE = ((nint)((nint)(-3)));
 
         [NativeTypeName("#define MEM_DEDICATED_ATTRIBUTE_NOT_SPECIFIED ((DWORD64) -1)")]
         public const ulong MEM_DEDICATED_ATTRIBUTE_NOT_SPECIFIED = unchecked((ulong)(-1));
@@ -9122,7 +9122,7 @@ namespace TerraFX.Interop
         public const uint RTL_CRITICAL_SECTION_ALL_FLAG_BITS = 0xFF000000;
 
         [NativeTypeName("#define RTL_CRITICAL_SECTION_FLAG_RESERVED (RTL_CRITICAL_SECTION_ALL_FLAG_BITS & (~(RTL_CRITICAL_SECTION_FLAG_NO_DEBUG_INFO | RTL_CRITICAL_SECTION_FLAG_DYNAMIC_SPIN | RTL_CRITICAL_SECTION_FLAG_STATIC_INIT | RTL_CRITICAL_SECTION_FLAG_RESOURCE_TYPE | RTL_CRITICAL_SECTION_FLAG_FORCE_DEBUG_INFO)))")]
-        public const uint RTL_CRITICAL_SECTION_FLAG_RESERVED = (0xFF000000 & (~(0x01000000u | 0x02000000 | 0x04000000 | 0x08000000 | 0x10000000)));
+        public const uint RTL_CRITICAL_SECTION_FLAG_RESERVED = unchecked(0xFF000000 & (~(0x01000000u | 0x02000000 | 0x04000000 | 0x08000000 | 0x10000000)));
 
         [NativeTypeName("#define RTL_CRITICAL_SECTION_DEBUG_FLAG_STATIC_INIT 0x00000001")]
         public const int RTL_CRITICAL_SECTION_DEBUG_FLAG_STATIC_INIT = 0x00000001;

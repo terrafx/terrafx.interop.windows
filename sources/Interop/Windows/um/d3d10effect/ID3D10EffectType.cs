@@ -12,6 +12,7 @@ namespace TerraFX.Interop
         public void** lpVtbl;
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(0)]
         [return: NativeTypeName("BOOL")]
         public int IsValid()
         {
@@ -19,6 +20,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(1)]
         [return: NativeTypeName("HRESULT")]
         public int GetDesc(D3D10_EFFECT_TYPE_DESC* pDesc)
         {
@@ -26,24 +28,28 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(2)]
         public ID3D10EffectType* GetMemberTypeByIndex([NativeTypeName("UINT")] uint Index)
         {
             return ((delegate* unmanaged<ID3D10EffectType*, uint, ID3D10EffectType*>)(lpVtbl[2]))((ID3D10EffectType*)Unsafe.AsPointer(ref this), Index);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(3)]
         public ID3D10EffectType* GetMemberTypeByName([NativeTypeName("LPCSTR")] sbyte* Name)
         {
             return ((delegate* unmanaged<ID3D10EffectType*, sbyte*, ID3D10EffectType*>)(lpVtbl[3]))((ID3D10EffectType*)Unsafe.AsPointer(ref this), Name);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(4)]
         public ID3D10EffectType* GetMemberTypeBySemantic([NativeTypeName("LPCSTR")] sbyte* Semantic)
         {
             return ((delegate* unmanaged<ID3D10EffectType*, sbyte*, ID3D10EffectType*>)(lpVtbl[4]))((ID3D10EffectType*)Unsafe.AsPointer(ref this), Semantic);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(5)]
         [return: NativeTypeName("LPCSTR")]
         public sbyte* GetMemberName([NativeTypeName("UINT")] uint Index)
         {
@@ -51,6 +57,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(6)]
         [return: NativeTypeName("LPCSTR")]
         public sbyte* GetMemberSemantic([NativeTypeName("UINT")] uint Index)
         {

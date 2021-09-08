@@ -11,11 +11,13 @@ namespace TerraFX.Interop
 {
     [Guid("BAD9EB88-AE77-4397-B948-5FA2DB0A19EA")]
     [NativeTypeName("struct IVisualTreeServiceCallback2 : IVisualTreeServiceCallback")]
+    [NativeInheritance("IVisualTreeServiceCallback")]
     public unsafe partial struct IVisualTreeServiceCallback2
     {
         public void** lpVtbl;
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(0)]
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
@@ -23,6 +25,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(1)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
@@ -30,6 +33,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(2)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
@@ -37,6 +41,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(3)]
         [return: NativeTypeName("HRESULT")]
         public int OnVisualTreeChange(ParentChildRelation relation, VisualElement element, VisualMutationType mutationType)
         {
@@ -44,6 +49,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(4)]
         [return: NativeTypeName("HRESULT")]
         public int OnElementStateChanged([NativeTypeName("InstanceHandle")] ulong element, VisualElementState elementState, [NativeTypeName("LPCWSTR")] ushort* context)
         {

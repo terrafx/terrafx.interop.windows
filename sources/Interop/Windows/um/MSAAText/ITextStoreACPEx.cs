@@ -11,11 +11,13 @@ namespace TerraFX.Interop
 {
     [Guid("A2DE3BC2-3D8E-11D3-81A9-F753FBE61A00")]
     [NativeTypeName("struct ITextStoreACPEx : IUnknown")]
+    [NativeInheritance("IUnknown")]
     public unsafe partial struct ITextStoreACPEx
     {
         public void** lpVtbl;
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(0)]
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
@@ -23,6 +25,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(1)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
@@ -30,6 +33,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(2)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
@@ -37,6 +41,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(3)]
         [return: NativeTypeName("HRESULT")]
         public int ScrollToRect([NativeTypeName("LONG")] int acpStart, [NativeTypeName("LONG")] int acpEnd, RECT rc, [NativeTypeName("DWORD")] uint dwPosition)
         {

@@ -11,11 +11,13 @@ namespace TerraFX.Interop
 {
     [Guid("9556DC99-828C-11CF-A37E-00AA003240C7")]
     [NativeTypeName("struct IWbemServices : IUnknown")]
+    [NativeInheritance("IUnknown")]
     public unsafe partial struct IWbemServices
     {
         public void** lpVtbl;
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(0)]
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
@@ -23,6 +25,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(1)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
@@ -30,6 +33,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(2)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
@@ -37,6 +41,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(3)]
         [return: NativeTypeName("HRESULT")]
         public int OpenNamespace([NativeTypeName("const BSTR")] ushort* strNamespace, [NativeTypeName("long")] int lFlags, IWbemContext* pCtx, IWbemServices** ppWorkingNamespace, IWbemCallResult** ppResult)
         {
@@ -44,6 +49,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(4)]
         [return: NativeTypeName("HRESULT")]
         public int CancelAsyncCall(IWbemObjectSink* pSink)
         {
@@ -51,6 +57,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(5)]
         [return: NativeTypeName("HRESULT")]
         public int QueryObjectSink([NativeTypeName("long")] int lFlags, IWbemObjectSink** ppResponseHandler)
         {
@@ -58,6 +65,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(6)]
         [return: NativeTypeName("HRESULT")]
         public int GetObjectW([NativeTypeName("const BSTR")] ushort* strObjectPath, [NativeTypeName("long")] int lFlags, IWbemContext* pCtx, IWbemClassObject** ppObject, IWbemCallResult** ppCallResult)
         {
@@ -65,6 +73,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(7)]
         [return: NativeTypeName("HRESULT")]
         public int GetObjectAsync([NativeTypeName("const BSTR")] ushort* strObjectPath, [NativeTypeName("long")] int lFlags, IWbemContext* pCtx, IWbemObjectSink* pResponseHandler)
         {
@@ -72,6 +81,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(8)]
         [return: NativeTypeName("HRESULT")]
         public int PutClass(IWbemClassObject* pObject, [NativeTypeName("long")] int lFlags, IWbemContext* pCtx, IWbemCallResult** ppCallResult)
         {
@@ -79,6 +89,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(9)]
         [return: NativeTypeName("HRESULT")]
         public int PutClassAsync(IWbemClassObject* pObject, [NativeTypeName("long")] int lFlags, IWbemContext* pCtx, IWbemObjectSink* pResponseHandler)
         {
@@ -86,6 +97,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(10)]
         [return: NativeTypeName("HRESULT")]
         public int DeleteClass([NativeTypeName("const BSTR")] ushort* strClass, [NativeTypeName("long")] int lFlags, IWbemContext* pCtx, IWbemCallResult** ppCallResult)
         {
@@ -93,6 +105,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(11)]
         [return: NativeTypeName("HRESULT")]
         public int DeleteClassAsync([NativeTypeName("const BSTR")] ushort* strClass, [NativeTypeName("long")] int lFlags, IWbemContext* pCtx, IWbemObjectSink* pResponseHandler)
         {
@@ -100,6 +113,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(12)]
         [return: NativeTypeName("HRESULT")]
         public int CreateClassEnum([NativeTypeName("const BSTR")] ushort* strSuperclass, [NativeTypeName("long")] int lFlags, IWbemContext* pCtx, IEnumWbemClassObject** ppEnum)
         {
@@ -107,6 +121,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(13)]
         [return: NativeTypeName("HRESULT")]
         public int CreateClassEnumAsync([NativeTypeName("const BSTR")] ushort* strSuperclass, [NativeTypeName("long")] int lFlags, IWbemContext* pCtx, IWbemObjectSink* pResponseHandler)
         {
@@ -114,6 +129,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(14)]
         [return: NativeTypeName("HRESULT")]
         public int PutInstance(IWbemClassObject* pInst, [NativeTypeName("long")] int lFlags, IWbemContext* pCtx, IWbemCallResult** ppCallResult)
         {
@@ -121,6 +137,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(15)]
         [return: NativeTypeName("HRESULT")]
         public int PutInstanceAsync(IWbemClassObject* pInst, [NativeTypeName("long")] int lFlags, IWbemContext* pCtx, IWbemObjectSink* pResponseHandler)
         {
@@ -128,6 +145,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(16)]
         [return: NativeTypeName("HRESULT")]
         public int DeleteInstance([NativeTypeName("const BSTR")] ushort* strObjectPath, [NativeTypeName("long")] int lFlags, IWbemContext* pCtx, IWbemCallResult** ppCallResult)
         {
@@ -135,6 +153,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(17)]
         [return: NativeTypeName("HRESULT")]
         public int DeleteInstanceAsync([NativeTypeName("const BSTR")] ushort* strObjectPath, [NativeTypeName("long")] int lFlags, IWbemContext* pCtx, IWbemObjectSink* pResponseHandler)
         {
@@ -142,6 +161,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(18)]
         [return: NativeTypeName("HRESULT")]
         public int CreateInstanceEnum([NativeTypeName("const BSTR")] ushort* strFilter, [NativeTypeName("long")] int lFlags, IWbemContext* pCtx, IEnumWbemClassObject** ppEnum)
         {
@@ -149,6 +169,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(19)]
         [return: NativeTypeName("HRESULT")]
         public int CreateInstanceEnumAsync([NativeTypeName("const BSTR")] ushort* strFilter, [NativeTypeName("long")] int lFlags, IWbemContext* pCtx, IWbemObjectSink* pResponseHandler)
         {
@@ -156,6 +177,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(20)]
         [return: NativeTypeName("HRESULT")]
         public int ExecQuery([NativeTypeName("const BSTR")] ushort* strQueryLanguage, [NativeTypeName("const BSTR")] ushort* strQuery, [NativeTypeName("long")] int lFlags, IWbemContext* pCtx, IEnumWbemClassObject** ppEnum)
         {
@@ -163,6 +185,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(21)]
         [return: NativeTypeName("HRESULT")]
         public int ExecQueryAsync([NativeTypeName("const BSTR")] ushort* strQueryLanguage, [NativeTypeName("const BSTR")] ushort* strQuery, [NativeTypeName("long")] int lFlags, IWbemContext* pCtx, IWbemObjectSink* pResponseHandler)
         {
@@ -170,6 +193,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(22)]
         [return: NativeTypeName("HRESULT")]
         public int ExecNotificationQuery([NativeTypeName("const BSTR")] ushort* strQueryLanguage, [NativeTypeName("const BSTR")] ushort* strQuery, [NativeTypeName("long")] int lFlags, IWbemContext* pCtx, IEnumWbemClassObject** ppEnum)
         {
@@ -177,6 +201,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(23)]
         [return: NativeTypeName("HRESULT")]
         public int ExecNotificationQueryAsync([NativeTypeName("const BSTR")] ushort* strQueryLanguage, [NativeTypeName("const BSTR")] ushort* strQuery, [NativeTypeName("long")] int lFlags, IWbemContext* pCtx, IWbemObjectSink* pResponseHandler)
         {
@@ -184,6 +209,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(24)]
         [return: NativeTypeName("HRESULT")]
         public int ExecMethod([NativeTypeName("const BSTR")] ushort* strObjectPath, [NativeTypeName("const BSTR")] ushort* strMethodName, [NativeTypeName("long")] int lFlags, IWbemContext* pCtx, IWbemClassObject* pInParams, IWbemClassObject** ppOutParams, IWbemCallResult** ppCallResult)
         {
@@ -191,6 +217,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(25)]
         [return: NativeTypeName("HRESULT")]
         public int ExecMethodAsync([NativeTypeName("const BSTR")] ushort* strObjectPath, [NativeTypeName("const BSTR")] ushort* strMethodName, [NativeTypeName("long")] int lFlags, IWbemContext* pCtx, IWbemClassObject* pInParams, IWbemObjectSink* pResponseHandler)
         {

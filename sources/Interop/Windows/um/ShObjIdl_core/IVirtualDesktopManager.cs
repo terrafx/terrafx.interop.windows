@@ -11,11 +11,13 @@ namespace TerraFX.Interop
 {
     [Guid("A5CD92FF-29BE-454C-8D04-D82879FB3F1B")]
     [NativeTypeName("struct IVirtualDesktopManager : IUnknown")]
+    [NativeInheritance("IUnknown")]
     public unsafe partial struct IVirtualDesktopManager
     {
         public void** lpVtbl;
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(0)]
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
@@ -23,6 +25,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(1)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
@@ -30,6 +33,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(2)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
@@ -37,6 +41,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(3)]
         [return: NativeTypeName("HRESULT")]
         public int IsWindowOnCurrentVirtualDesktop([NativeTypeName("HWND")] IntPtr topLevelWindow, [NativeTypeName("BOOL *")] int* onCurrentDesktop)
         {
@@ -44,6 +49,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(4)]
         [return: NativeTypeName("HRESULT")]
         public int GetWindowDesktopId([NativeTypeName("HWND")] IntPtr topLevelWindow, [NativeTypeName("GUID *")] Guid* desktopId)
         {
@@ -51,6 +57,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(5)]
         [return: NativeTypeName("HRESULT")]
         public int MoveWindowToDesktop([NativeTypeName("HWND")] IntPtr topLevelWindow, [NativeTypeName("const GUID &")] Guid* desktopId)
         {

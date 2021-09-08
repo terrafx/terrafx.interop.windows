@@ -11,11 +11,13 @@ namespace TerraFX.Interop
 {
     [Guid("7BFEF914-2D75-4BAD-BE87-E18DDB077B6D")]
     [NativeTypeName("struct ID2D1Device6 : ID2D1Device5")]
+    [NativeInheritance("ID2D1Device5")]
     public unsafe partial struct ID2D1Device6
     {
         public void** lpVtbl;
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(0)]
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
@@ -23,6 +25,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(1)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
@@ -30,6 +33,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(2)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
@@ -37,12 +41,14 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(3)]
         public void GetFactory(ID2D1Factory** factory)
         {
             ((delegate* unmanaged<ID2D1Device6*, ID2D1Factory**, void>)(lpVtbl[3]))((ID2D1Device6*)Unsafe.AsPointer(ref this), factory);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(4)]
         [return: NativeTypeName("HRESULT")]
         public int CreateDeviceContext(D2D1_DEVICE_CONTEXT_OPTIONS options, ID2D1DeviceContext** deviceContext)
         {
@@ -50,6 +56,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(5)]
         [return: NativeTypeName("HRESULT")]
         public int CreatePrintControl(IWICImagingFactory* wicFactory, IPrintDocumentPackageTarget* documentTarget, [NativeTypeName("const D2D1_PRINT_CONTROL_PROPERTIES *")] D2D1_PRINT_CONTROL_PROPERTIES* printControlProperties, ID2D1PrintControl** printControl)
         {
@@ -57,12 +64,14 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(6)]
         public void SetMaximumTextureMemory([NativeTypeName("UINT64")] ulong maximumInBytes)
         {
             ((delegate* unmanaged<ID2D1Device6*, ulong, void>)(lpVtbl[6]))((ID2D1Device6*)Unsafe.AsPointer(ref this), maximumInBytes);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(7)]
         [return: NativeTypeName("UINT64")]
         public ulong GetMaximumTextureMemory()
         {
@@ -70,24 +79,28 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(8)]
         public void ClearResources([NativeTypeName("UINT32")] uint millisecondsSinceUse = 0)
         {
             ((delegate* unmanaged<ID2D1Device6*, uint, void>)(lpVtbl[8]))((ID2D1Device6*)Unsafe.AsPointer(ref this), millisecondsSinceUse);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(9)]
         public D2D1_RENDERING_PRIORITY GetRenderingPriority()
         {
             return ((delegate* unmanaged<ID2D1Device6*, D2D1_RENDERING_PRIORITY>)(lpVtbl[9]))((ID2D1Device6*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(10)]
         public void SetRenderingPriority(D2D1_RENDERING_PRIORITY renderingPriority)
         {
             ((delegate* unmanaged<ID2D1Device6*, D2D1_RENDERING_PRIORITY, void>)(lpVtbl[10]))((ID2D1Device6*)Unsafe.AsPointer(ref this), renderingPriority);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(11)]
         [return: NativeTypeName("HRESULT")]
         public int CreateDeviceContext(D2D1_DEVICE_CONTEXT_OPTIONS options, ID2D1DeviceContext1** deviceContext1)
         {
@@ -95,6 +108,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(12)]
         [return: NativeTypeName("HRESULT")]
         public int CreateDeviceContext(D2D1_DEVICE_CONTEXT_OPTIONS options, ID2D1DeviceContext2** deviceContext2)
         {
@@ -102,12 +116,14 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(13)]
         public void FlushDeviceContexts(ID2D1Bitmap* bitmap)
         {
             ((delegate* unmanaged<ID2D1Device6*, ID2D1Bitmap*, void>)(lpVtbl[13]))((ID2D1Device6*)Unsafe.AsPointer(ref this), bitmap);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(14)]
         [return: NativeTypeName("HRESULT")]
         public int GetDxgiDevice(IDXGIDevice** dxgiDevice)
         {
@@ -115,6 +131,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(15)]
         [return: NativeTypeName("HRESULT")]
         public int CreateDeviceContext(D2D1_DEVICE_CONTEXT_OPTIONS options, ID2D1DeviceContext3** deviceContext3)
         {
@@ -122,6 +139,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(16)]
         [return: NativeTypeName("HRESULT")]
         public int CreateDeviceContext(D2D1_DEVICE_CONTEXT_OPTIONS options, ID2D1DeviceContext4** deviceContext4)
         {
@@ -129,12 +147,14 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(17)]
         public void SetMaximumColorGlyphCacheMemory([NativeTypeName("UINT64")] ulong maximumInBytes)
         {
             ((delegate* unmanaged<ID2D1Device6*, ulong, void>)(lpVtbl[17]))((ID2D1Device6*)Unsafe.AsPointer(ref this), maximumInBytes);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(18)]
         [return: NativeTypeName("UINT64")]
         public ulong GetMaximumColorGlyphCacheMemory()
         {
@@ -142,6 +162,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(19)]
         [return: NativeTypeName("HRESULT")]
         public int CreateDeviceContext(D2D1_DEVICE_CONTEXT_OPTIONS options, ID2D1DeviceContext5** deviceContext5)
         {
@@ -149,6 +170,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(20)]
         [return: NativeTypeName("HRESULT")]
         public int CreateDeviceContext(D2D1_DEVICE_CONTEXT_OPTIONS options, ID2D1DeviceContext6** deviceContext6)
         {

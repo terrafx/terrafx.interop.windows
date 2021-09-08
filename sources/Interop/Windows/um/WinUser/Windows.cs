@@ -6103,10 +6103,10 @@ namespace TerraFX.Interop
         public static readonly delegate*<uint, uint, nuint, nint, int> PostThreadMessage = &PostThreadMessageW;
 
         [NativeTypeName("#define HWND_BROADCAST ((HWND)0xffff)")]
-        public static readonly IntPtr HWND_BROADCAST = ((IntPtr)(0xffff));
+        public static readonly IntPtr HWND_BROADCAST = ((nint)(0xffff));
 
         [NativeTypeName("#define HWND_MESSAGE ((HWND)-3)")]
-        public static readonly IntPtr HWND_MESSAGE = ((IntPtr)(-3));
+        public static readonly IntPtr HWND_MESSAGE = ((nint)(-3));
 
         [NativeTypeName("#define DefWindowProc DefWindowProcW")]
         public static readonly delegate*<IntPtr, uint, nuint, nint, nint> DefWindowProc = &DefWindowProcW;
@@ -6148,7 +6148,7 @@ namespace TerraFX.Interop
         public const int CW_USEDEFAULT = unchecked((int)(0x80000000));
 
         [NativeTypeName("#define HWND_DESKTOP ((HWND)0)")]
-        public static readonly IntPtr HWND_DESKTOP = ((IntPtr)(0));
+        public static readonly IntPtr HWND_DESKTOP = ((nint)(0));
 
         [NativeTypeName("#define CreateWindowEx CreateWindowExW")]
         public static readonly delegate*<uint, ushort*, ushort*, uint, int, int, int, int, IntPtr, IntPtr, IntPtr, void*, IntPtr> CreateWindowEx = &CreateWindowExW;
@@ -6250,16 +6250,16 @@ namespace TerraFX.Interop
         public const int SWP_ASYNCWINDOWPOS = 0x4000;
 
         [NativeTypeName("#define HWND_TOP ((HWND)0)")]
-        public static readonly IntPtr HWND_TOP = ((IntPtr)(0));
+        public static readonly IntPtr HWND_TOP = ((nint)(0));
 
         [NativeTypeName("#define HWND_BOTTOM ((HWND)1)")]
-        public static readonly IntPtr HWND_BOTTOM = ((IntPtr)(1));
+        public static readonly IntPtr HWND_BOTTOM = ((nint)(1));
 
         [NativeTypeName("#define HWND_TOPMOST ((HWND)-1)")]
-        public static readonly IntPtr HWND_TOPMOST = ((IntPtr)(-1));
+        public static readonly IntPtr HWND_TOPMOST = ((nint)(-1));
 
         [NativeTypeName("#define HWND_NOTOPMOST ((HWND)-2)")]
-        public static readonly IntPtr HWND_NOTOPMOST = ((IntPtr)(-2));
+        public static readonly IntPtr HWND_NOTOPMOST = ((nint)(-2));
 
         [NativeTypeName("#define CreateDialogParam CreateDialogParamW")]
         public static readonly delegate*<IntPtr, ushort*, IntPtr, delegate* unmanaged<IntPtr, uint, nuint, nint, nint>, nint, IntPtr> CreateDialogParam = &CreateDialogParamW;
@@ -7183,37 +7183,37 @@ namespace TerraFX.Interop
         public const int MIIM_FTYPE = 0x00000100;
 
         [NativeTypeName("#define HBMMENU_CALLBACK ((HBITMAP) -1)")]
-        public static readonly IntPtr HBMMENU_CALLBACK = ((IntPtr)(-1));
+        public static readonly IntPtr HBMMENU_CALLBACK = ((nint)(-1));
 
         [NativeTypeName("#define HBMMENU_SYSTEM ((HBITMAP)  1)")]
-        public static readonly IntPtr HBMMENU_SYSTEM = ((IntPtr)(1));
+        public static readonly IntPtr HBMMENU_SYSTEM = ((nint)(1));
 
         [NativeTypeName("#define HBMMENU_MBAR_RESTORE ((HBITMAP)  2)")]
-        public static readonly IntPtr HBMMENU_MBAR_RESTORE = ((IntPtr)(2));
+        public static readonly IntPtr HBMMENU_MBAR_RESTORE = ((nint)(2));
 
         [NativeTypeName("#define HBMMENU_MBAR_MINIMIZE ((HBITMAP)  3)")]
-        public static readonly IntPtr HBMMENU_MBAR_MINIMIZE = ((IntPtr)(3));
+        public static readonly IntPtr HBMMENU_MBAR_MINIMIZE = ((nint)(3));
 
         [NativeTypeName("#define HBMMENU_MBAR_CLOSE ((HBITMAP)  5)")]
-        public static readonly IntPtr HBMMENU_MBAR_CLOSE = ((IntPtr)(5));
+        public static readonly IntPtr HBMMENU_MBAR_CLOSE = ((nint)(5));
 
         [NativeTypeName("#define HBMMENU_MBAR_CLOSE_D ((HBITMAP)  6)")]
-        public static readonly IntPtr HBMMENU_MBAR_CLOSE_D = ((IntPtr)(6));
+        public static readonly IntPtr HBMMENU_MBAR_CLOSE_D = ((nint)(6));
 
         [NativeTypeName("#define HBMMENU_MBAR_MINIMIZE_D ((HBITMAP)  7)")]
-        public static readonly IntPtr HBMMENU_MBAR_MINIMIZE_D = ((IntPtr)(7));
+        public static readonly IntPtr HBMMENU_MBAR_MINIMIZE_D = ((nint)(7));
 
         [NativeTypeName("#define HBMMENU_POPUP_CLOSE ((HBITMAP)  8)")]
-        public static readonly IntPtr HBMMENU_POPUP_CLOSE = ((IntPtr)(8));
+        public static readonly IntPtr HBMMENU_POPUP_CLOSE = ((nint)(8));
 
         [NativeTypeName("#define HBMMENU_POPUP_RESTORE ((HBITMAP)  9)")]
-        public static readonly IntPtr HBMMENU_POPUP_RESTORE = ((IntPtr)(9));
+        public static readonly IntPtr HBMMENU_POPUP_RESTORE = ((nint)(9));
 
         [NativeTypeName("#define HBMMENU_POPUP_MAXIMIZE ((HBITMAP) 10)")]
-        public static readonly IntPtr HBMMENU_POPUP_MAXIMIZE = ((IntPtr)(10));
+        public static readonly IntPtr HBMMENU_POPUP_MAXIMIZE = ((nint)(10));
 
         [NativeTypeName("#define HBMMENU_POPUP_MINIMIZE ((HBITMAP) 11)")]
-        public static readonly IntPtr HBMMENU_POPUP_MINIMIZE = ((IntPtr)(11));
+        public static readonly IntPtr HBMMENU_POPUP_MINIMIZE = ((nint)(11));
 
         [NativeTypeName("#define InsertMenuItem InsertMenuItemW")]
         public static readonly delegate*<IntPtr, uint, int, MENUITEMINFOW*, int> InsertMenuItem = &InsertMenuItemW;
@@ -9580,7 +9580,7 @@ namespace TerraFX.Interop
         public const int GR_USEROBJECTS_PEAK = 4;
 
         [NativeTypeName("#define GR_GLOBAL ((HANDLE)-2)")]
-        public static readonly IntPtr GR_GLOBAL = ((IntPtr)(-2));
+        public static readonly IntPtr GR_GLOBAL = ((nint)(-2));
 
         [NativeTypeName("#define FKF_FILTERKEYSON 0x00000001")]
         public const int FKF_FILTERKEYSON = 0x00000001;

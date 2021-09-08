@@ -11,11 +11,13 @@ namespace TerraFX.Interop
 {
     [Guid("2D3BA758-33EE-42D5-BB7B-5F3431D86C78")]
     [NativeTypeName("struct INameSpaceTreeControlCustomDraw : IUnknown")]
+    [NativeInheritance("IUnknown")]
     public unsafe partial struct INameSpaceTreeControlCustomDraw
     {
         public void** lpVtbl;
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(0)]
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
@@ -23,6 +25,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(1)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
@@ -30,6 +33,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(2)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
@@ -37,6 +41,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(3)]
         [return: NativeTypeName("HRESULT")]
         public int PrePaint([NativeTypeName("HDC")] IntPtr hdc, RECT* prc, [NativeTypeName("LRESULT *")] nint* plres)
         {
@@ -44,6 +49,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(4)]
         [return: NativeTypeName("HRESULT")]
         public int PostPaint([NativeTypeName("HDC")] IntPtr hdc, RECT* prc)
         {
@@ -51,6 +57,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(5)]
         [return: NativeTypeName("HRESULT")]
         public int ItemPrePaint([NativeTypeName("HDC")] IntPtr hdc, RECT* prc, NSTCCUSTOMDRAW* pnstccdItem, [NativeTypeName("COLORREF *")] uint* pclrText, [NativeTypeName("COLORREF *")] uint* pclrTextBk, [NativeTypeName("LRESULT *")] nint* plres)
         {
@@ -58,6 +65,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(6)]
         [return: NativeTypeName("HRESULT")]
         public int ItemPostPaint([NativeTypeName("HDC")] IntPtr hdc, RECT* prc, NSTCCUSTOMDRAW* pnstccdItem)
         {

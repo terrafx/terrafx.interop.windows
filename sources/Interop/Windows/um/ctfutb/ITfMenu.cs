@@ -11,11 +11,13 @@ namespace TerraFX.Interop
 {
     [Guid("6F8A98E4-AAA0-4F15-8C5B-07E0DF0A3DD8")]
     [NativeTypeName("struct ITfMenu : IUnknown")]
+    [NativeInheritance("IUnknown")]
     public unsafe partial struct ITfMenu
     {
         public void** lpVtbl;
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(0)]
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
@@ -23,6 +25,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(1)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
@@ -30,6 +33,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(2)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
@@ -37,6 +41,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(3)]
         [return: NativeTypeName("HRESULT")]
         public int AddMenuItem([NativeTypeName("UINT")] uint uId, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("HBITMAP")] IntPtr hbmp, [NativeTypeName("HBITMAP")] IntPtr hbmpMask, [NativeTypeName("const WCHAR *")] ushort* pch, [NativeTypeName("ULONG")] uint cch, ITfMenu** ppMenu)
         {

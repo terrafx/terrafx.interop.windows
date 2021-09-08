@@ -11,11 +11,13 @@ namespace TerraFX.Interop
 {
     [Guid("76E54780-AD74-48E3-A695-3BA9A0AFF10D")]
     [NativeTypeName("struct IPreviousVersionsInfo : IUnknown")]
+    [NativeInheritance("IUnknown")]
     public unsafe partial struct IPreviousVersionsInfo
     {
         public void** lpVtbl;
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(0)]
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
@@ -23,6 +25,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(1)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
@@ -30,6 +33,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(2)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
@@ -37,6 +41,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(3)]
         [return: NativeTypeName("HRESULT")]
         public int AreSnapshotsAvailable([NativeTypeName("LPCWSTR")] ushort* pszPath, [NativeTypeName("BOOL")] int fOkToBeSlow, [NativeTypeName("BOOL *")] int* pfAvailable)
         {

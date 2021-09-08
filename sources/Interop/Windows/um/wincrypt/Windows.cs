@@ -8044,13 +8044,13 @@ namespace TerraFX.Interop
         public const int CERT_CHAIN_CRL_VALIDITY_EXT_PERIOD_HOURS_DEFAULT = 12;
 
         [NativeTypeName("#define HCCE_CURRENT_USER ((HCERTCHAINENGINE)NULL)")]
-        public static readonly IntPtr HCCE_CURRENT_USER = ((IntPtr)(0));
+        public static readonly IntPtr HCCE_CURRENT_USER = ((nint)(0));
 
         [NativeTypeName("#define HCCE_LOCAL_MACHINE ((HCERTCHAINENGINE)0x1)")]
-        public static readonly IntPtr HCCE_LOCAL_MACHINE = ((IntPtr)(0x1));
+        public static readonly IntPtr HCCE_LOCAL_MACHINE = ((nint)(0x1));
 
         [NativeTypeName("#define HCCE_SERIAL_LOCAL_MACHINE ((HCERTCHAINENGINE)0x2)")]
-        public static readonly IntPtr HCCE_SERIAL_LOCAL_MACHINE = ((IntPtr)(0x2));
+        public static readonly IntPtr HCCE_SERIAL_LOCAL_MACHINE = ((nint)(0x2));
 
         [NativeTypeName("#define CERT_CHAIN_CACHE_END_CERT 0x00000001")]
         public const int CERT_CHAIN_CACHE_END_CERT = 0x00000001;

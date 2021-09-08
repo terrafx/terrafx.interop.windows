@@ -8,6 +8,7 @@ using System;
 namespace TerraFX.Interop
 {
     [NativeTypeName("struct tagBIND_OPTS3 : tagBIND_OPTS2")]
+    [NativeInheritance("tagBIND_OPTS2")]
     public partial struct BIND_OPTS3
     {
         public BIND_OPTS2 __AnonymousBase_objidl_L9008_C36;

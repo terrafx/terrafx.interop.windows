@@ -11,11 +11,13 @@ namespace TerraFX.Interop
 {
     [Guid("3B0D0EA4-D0A9-4B0E-935B-09516746FAC0")]
     [NativeTypeName("struct IMMDeviceActivator : IUnknown")]
+    [NativeInheritance("IUnknown")]
     public unsafe partial struct IMMDeviceActivator
     {
         public void** lpVtbl;
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(0)]
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
@@ -23,6 +25,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(1)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
@@ -30,6 +33,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(2)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
@@ -37,6 +41,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(3)]
         [return: NativeTypeName("HRESULT")]
         public int Activate([NativeTypeName("const IID &")] Guid* iid, IMMDevice* pDevice, PROPVARIANT* pActivationParams, void** ppInterface)
         {

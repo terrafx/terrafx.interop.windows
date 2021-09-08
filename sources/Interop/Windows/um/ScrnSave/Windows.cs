@@ -3,11 +3,9 @@
 // Ported from um/ScrnSave.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
-
 namespace TerraFX.Interop
 {
-    public static unsafe partial class Windows
+    public static partial class Windows
     {
         [NativeTypeName("#define IDS_DESCRIPTION 1")]
         public const int IDS_DESCRIPTION = 1;

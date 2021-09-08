@@ -11,11 +11,13 @@ namespace TerraFX.Interop
 {
     [Guid("8849DC22-CEDF-4C95-998D-051419DD3F76")]
     [NativeTypeName("struct IAccessibilityDockingService : IUnknown")]
+    [NativeInheritance("IUnknown")]
     public unsafe partial struct IAccessibilityDockingService
     {
         public void** lpVtbl;
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(0)]
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
@@ -23,6 +25,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(1)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
@@ -30,6 +33,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(2)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
@@ -37,6 +41,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(3)]
         [return: NativeTypeName("HRESULT")]
         public int GetAvailableSize([NativeTypeName("HMONITOR")] IntPtr hMonitor, [NativeTypeName("UINT *")] uint* pcxFixed, [NativeTypeName("UINT *")] uint* pcyMax)
         {
@@ -44,6 +49,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(4)]
         [return: NativeTypeName("HRESULT")]
         public int DockWindow([NativeTypeName("HWND")] IntPtr hwnd, [NativeTypeName("HMONITOR")] IntPtr hMonitor, [NativeTypeName("UINT")] uint cyRequested, IAccessibilityDockingServiceCallback* pCallback)
         {
@@ -51,6 +57,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(5)]
         [return: NativeTypeName("HRESULT")]
         public int UndockWindow([NativeTypeName("HWND")] IntPtr hwnd)
         {

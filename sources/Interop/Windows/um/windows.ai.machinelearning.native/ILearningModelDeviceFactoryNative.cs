@@ -11,11 +11,13 @@ namespace TerraFX.Interop
 {
     [Guid("1E9B31A1-662E-4AE0-AF67-F63BB337E634")]
     [NativeTypeName("struct ILearningModelDeviceFactoryNative : IUnknown")]
+    [NativeInheritance("IUnknown")]
     public unsafe partial struct ILearningModelDeviceFactoryNative
     {
         public void** lpVtbl;
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(0)]
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
@@ -23,6 +25,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(1)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
@@ -30,6 +33,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(2)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
@@ -37,6 +41,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(3)]
         [return: NativeTypeName("HRESULT")]
         public int CreateFromD3D12CommandQueue(ID3D12CommandQueue* value, IUnknown** result)
         {

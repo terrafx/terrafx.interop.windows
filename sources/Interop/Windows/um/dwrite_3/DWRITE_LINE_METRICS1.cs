@@ -6,6 +6,7 @@
 namespace TerraFX.Interop
 {
     [NativeTypeName("struct DWRITE_LINE_METRICS1 : DWRITE_LINE_METRICS")]
+    [NativeInheritance("DWRITE_LINE_METRICS")]
     public partial struct DWRITE_LINE_METRICS1
     {
         public DWRITE_LINE_METRICS Base;
