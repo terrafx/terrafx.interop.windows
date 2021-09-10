@@ -11,11 +11,13 @@ namespace TerraFX.Interop
 {
     [Guid("C4B1FE1B-6E84-47D5-B54C-A597981B06AD")]
     [NativeTypeName("struct IDWriteFontFace6 : IDWriteFontFace5")]
+    [NativeInheritance("IDWriteFontFace5")]
     public unsafe partial struct IDWriteFontFace6
     {
         public void** lpVtbl;
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(0)]
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
@@ -23,6 +25,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(1)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
@@ -30,6 +33,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(2)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
@@ -37,12 +41,14 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(3)]
         public new DWRITE_FONT_FACE_TYPE GetType()
         {
             return ((delegate* unmanaged<IDWriteFontFace6*, DWRITE_FONT_FACE_TYPE>)(lpVtbl[3]))((IDWriteFontFace6*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(4)]
         [return: NativeTypeName("HRESULT")]
         public int GetFiles([NativeTypeName("UINT32 *")] uint* numberOfFiles, IDWriteFontFile** fontFiles)
         {
@@ -50,6 +56,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(5)]
         [return: NativeTypeName("UINT32")]
         public uint GetIndex()
         {
@@ -57,12 +64,14 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(6)]
         public DWRITE_FONT_SIMULATIONS GetSimulations()
         {
             return ((delegate* unmanaged<IDWriteFontFace6*, DWRITE_FONT_SIMULATIONS>)(lpVtbl[6]))((IDWriteFontFace6*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(7)]
         [return: NativeTypeName("BOOL")]
         public int IsSymbolFont()
         {
@@ -70,12 +79,14 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(8)]
         public void GetMetrics(DWRITE_FONT_METRICS* fontFaceMetrics)
         {
             ((delegate* unmanaged<IDWriteFontFace6*, DWRITE_FONT_METRICS*, void>)(lpVtbl[8]))((IDWriteFontFace6*)Unsafe.AsPointer(ref this), fontFaceMetrics);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(9)]
         [return: NativeTypeName("UINT16")]
         public ushort GetGlyphCount()
         {
@@ -83,6 +94,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(10)]
         [return: NativeTypeName("HRESULT")]
         public int GetDesignGlyphMetrics([NativeTypeName("const UINT16 *")] ushort* glyphIndices, [NativeTypeName("UINT32")] uint glyphCount, DWRITE_GLYPH_METRICS* glyphMetrics, [NativeTypeName("BOOL")] int isSideways = 0)
         {
@@ -90,6 +102,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(11)]
         [return: NativeTypeName("HRESULT")]
         public int GetGlyphIndices([NativeTypeName("const UINT32 *")] uint* codePoints, [NativeTypeName("UINT32")] uint codePointCount, [NativeTypeName("UINT16 *")] ushort* glyphIndices)
         {
@@ -97,6 +110,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(12)]
         [return: NativeTypeName("HRESULT")]
         public int TryGetFontTable([NativeTypeName("UINT32")] uint openTypeTableTag, [NativeTypeName("const void **")] void** tableData, [NativeTypeName("UINT32 *")] uint* tableSize, void** tableContext, [NativeTypeName("BOOL *")] int* exists)
         {
@@ -104,12 +118,14 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(13)]
         public void ReleaseFontTable(void* tableContext)
         {
             ((delegate* unmanaged<IDWriteFontFace6*, void*, void>)(lpVtbl[13]))((IDWriteFontFace6*)Unsafe.AsPointer(ref this), tableContext);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(14)]
         [return: NativeTypeName("HRESULT")]
         public int GetGlyphRunOutline([NativeTypeName("FLOAT")] float emSize, [NativeTypeName("const UINT16 *")] ushort* glyphIndices, [NativeTypeName("const FLOAT *")] float* glyphAdvances, [NativeTypeName("const DWRITE_GLYPH_OFFSET *")] DWRITE_GLYPH_OFFSET* glyphOffsets, [NativeTypeName("UINT32")] uint glyphCount, [NativeTypeName("BOOL")] int isSideways, [NativeTypeName("BOOL")] int isRightToLeft, [NativeTypeName("IDWriteGeometrySink *")] ID2D1SimplifiedGeometrySink* geometrySink)
         {
@@ -117,6 +133,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(15)]
         [return: NativeTypeName("HRESULT")]
         public int GetRecommendedRenderingMode([NativeTypeName("FLOAT")] float emSize, [NativeTypeName("FLOAT")] float pixelsPerDip, DWRITE_MEASURING_MODE measuringMode, IDWriteRenderingParams* renderingParams, DWRITE_RENDERING_MODE* renderingMode)
         {
@@ -124,6 +141,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(16)]
         [return: NativeTypeName("HRESULT")]
         public int GetGdiCompatibleMetrics([NativeTypeName("FLOAT")] float emSize, [NativeTypeName("FLOAT")] float pixelsPerDip, [NativeTypeName("const DWRITE_MATRIX *")] DWRITE_MATRIX* transform, DWRITE_FONT_METRICS* fontFaceMetrics)
         {
@@ -131,6 +149,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(17)]
         [return: NativeTypeName("HRESULT")]
         public int GetGdiCompatibleGlyphMetrics([NativeTypeName("FLOAT")] float emSize, [NativeTypeName("FLOAT")] float pixelsPerDip, [NativeTypeName("const DWRITE_MATRIX *")] DWRITE_MATRIX* transform, [NativeTypeName("BOOL")] int useGdiNatural, [NativeTypeName("const UINT16 *")] ushort* glyphIndices, [NativeTypeName("UINT32")] uint glyphCount, DWRITE_GLYPH_METRICS* glyphMetrics, [NativeTypeName("BOOL")] int isSideways = 0)
         {
@@ -138,12 +157,14 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(18)]
         public void GetMetrics(DWRITE_FONT_METRICS1* fontMetrics)
         {
             ((delegate* unmanaged<IDWriteFontFace6*, DWRITE_FONT_METRICS1*, void>)(lpVtbl[18]))((IDWriteFontFace6*)Unsafe.AsPointer(ref this), fontMetrics);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(19)]
         [return: NativeTypeName("HRESULT")]
         public int GetGdiCompatibleMetrics([NativeTypeName("FLOAT")] float emSize, [NativeTypeName("FLOAT")] float pixelsPerDip, [NativeTypeName("const DWRITE_MATRIX *")] DWRITE_MATRIX* transform, DWRITE_FONT_METRICS1* fontMetrics)
         {
@@ -151,12 +172,14 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(20)]
         public void GetCaretMetrics(DWRITE_CARET_METRICS* caretMetrics)
         {
             ((delegate* unmanaged<IDWriteFontFace6*, DWRITE_CARET_METRICS*, void>)(lpVtbl[20]))((IDWriteFontFace6*)Unsafe.AsPointer(ref this), caretMetrics);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(21)]
         [return: NativeTypeName("HRESULT")]
         public int GetUnicodeRanges([NativeTypeName("UINT32")] uint maxRangeCount, DWRITE_UNICODE_RANGE* unicodeRanges, [NativeTypeName("UINT32 *")] uint* actualRangeCount)
         {
@@ -164,6 +187,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(22)]
         [return: NativeTypeName("BOOL")]
         public int IsMonospacedFont()
         {
@@ -171,6 +195,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(23)]
         [return: NativeTypeName("HRESULT")]
         public int GetDesignGlyphAdvances([NativeTypeName("UINT32")] uint glyphCount, [NativeTypeName("const UINT16 *")] ushort* glyphIndices, [NativeTypeName("INT32 *")] int* glyphAdvances, [NativeTypeName("BOOL")] int isSideways = 0)
         {
@@ -178,6 +203,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(24)]
         [return: NativeTypeName("HRESULT")]
         public int GetGdiCompatibleGlyphAdvances([NativeTypeName("FLOAT")] float emSize, [NativeTypeName("FLOAT")] float pixelsPerDip, [NativeTypeName("const DWRITE_MATRIX *")] DWRITE_MATRIX* transform, [NativeTypeName("BOOL")] int useGdiNatural, [NativeTypeName("BOOL")] int isSideways, [NativeTypeName("UINT32")] uint glyphCount, [NativeTypeName("const UINT16 *")] ushort* glyphIndices, [NativeTypeName("INT32 *")] int* glyphAdvances)
         {
@@ -185,6 +211,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(25)]
         [return: NativeTypeName("HRESULT")]
         public int GetKerningPairAdjustments([NativeTypeName("UINT32")] uint glyphCount, [NativeTypeName("const UINT16 *")] ushort* glyphIndices, [NativeTypeName("INT32 *")] int* glyphAdvanceAdjustments)
         {
@@ -192,6 +219,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(26)]
         [return: NativeTypeName("BOOL")]
         public int HasKerningPairs()
         {
@@ -199,6 +227,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(27)]
         [return: NativeTypeName("HRESULT")]
         public int GetRecommendedRenderingMode([NativeTypeName("FLOAT")] float fontEmSize, [NativeTypeName("FLOAT")] float dpiX, [NativeTypeName("FLOAT")] float dpiY, [NativeTypeName("const DWRITE_MATRIX *")] DWRITE_MATRIX* transform, [NativeTypeName("BOOL")] int isSideways, DWRITE_OUTLINE_THRESHOLD outlineThreshold, DWRITE_MEASURING_MODE measuringMode, DWRITE_RENDERING_MODE* renderingMode)
         {
@@ -206,6 +235,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(28)]
         [return: NativeTypeName("HRESULT")]
         public int GetVerticalGlyphVariants([NativeTypeName("UINT32")] uint glyphCount, [NativeTypeName("const UINT16 *")] ushort* nominalGlyphIndices, [NativeTypeName("UINT16 *")] ushort* verticalGlyphIndices)
         {
@@ -213,6 +243,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(29)]
         [return: NativeTypeName("BOOL")]
         public int HasVerticalGlyphVariants()
         {
@@ -220,6 +251,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(30)]
         [return: NativeTypeName("BOOL")]
         public int IsColorFont()
         {
@@ -227,6 +259,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(31)]
         [return: NativeTypeName("UINT32")]
         public uint GetColorPaletteCount()
         {
@@ -234,6 +267,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(32)]
         [return: NativeTypeName("UINT32")]
         public uint GetPaletteEntryCount()
         {
@@ -241,6 +275,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(33)]
         [return: NativeTypeName("HRESULT")]
         public int GetPaletteEntries([NativeTypeName("UINT32")] uint colorPaletteIndex, [NativeTypeName("UINT32")] uint firstEntryIndex, [NativeTypeName("UINT32")] uint entryCount, [NativeTypeName("DWRITE_COLOR_F *")] DXGI_RGBA* paletteEntries)
         {
@@ -248,6 +283,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(34)]
         [return: NativeTypeName("HRESULT")]
         public int GetRecommendedRenderingMode([NativeTypeName("FLOAT")] float fontEmSize, [NativeTypeName("FLOAT")] float dpiX, [NativeTypeName("FLOAT")] float dpiY, [NativeTypeName("const DWRITE_MATRIX *")] DWRITE_MATRIX* transform, [NativeTypeName("BOOL")] int isSideways, DWRITE_OUTLINE_THRESHOLD outlineThreshold, DWRITE_MEASURING_MODE measuringMode, IDWriteRenderingParams* renderingParams, DWRITE_RENDERING_MODE* renderingMode, DWRITE_GRID_FIT_MODE* gridFitMode)
         {
@@ -255,6 +291,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(35)]
         [return: NativeTypeName("HRESULT")]
         public int GetFontFaceReference(IDWriteFontFaceReference** fontFaceReference)
         {
@@ -262,30 +299,35 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(36)]
         public void GetPanose(DWRITE_PANOSE* panose)
         {
             ((delegate* unmanaged<IDWriteFontFace6*, DWRITE_PANOSE*, void>)(lpVtbl[36]))((IDWriteFontFace6*)Unsafe.AsPointer(ref this), panose);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(37)]
         public DWRITE_FONT_WEIGHT GetWeight()
         {
             return ((delegate* unmanaged<IDWriteFontFace6*, DWRITE_FONT_WEIGHT>)(lpVtbl[37]))((IDWriteFontFace6*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(38)]
         public DWRITE_FONT_STRETCH GetStretch()
         {
             return ((delegate* unmanaged<IDWriteFontFace6*, DWRITE_FONT_STRETCH>)(lpVtbl[38]))((IDWriteFontFace6*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(39)]
         public DWRITE_FONT_STYLE GetStyle()
         {
             return ((delegate* unmanaged<IDWriteFontFace6*, DWRITE_FONT_STYLE>)(lpVtbl[39]))((IDWriteFontFace6*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(40)]
         [return: NativeTypeName("HRESULT")]
         public int GetFamilyNames(IDWriteLocalizedStrings** names)
         {
@@ -293,6 +335,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(41)]
         [return: NativeTypeName("HRESULT")]
         public int GetFaceNames(IDWriteLocalizedStrings** names)
         {
@@ -300,6 +343,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(42)]
         [return: NativeTypeName("HRESULT")]
         public int GetInformationalStrings(DWRITE_INFORMATIONAL_STRING_ID informationalStringID, IDWriteLocalizedStrings** informationalStrings, [NativeTypeName("BOOL *")] int* exists)
         {
@@ -307,6 +351,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(43)]
         [return: NativeTypeName("BOOL")]
         public int HasCharacter([NativeTypeName("UINT32")] uint unicodeValue)
         {
@@ -314,6 +359,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(44)]
         [return: NativeTypeName("HRESULT")]
         public int GetRecommendedRenderingMode([NativeTypeName("FLOAT")] float fontEmSize, [NativeTypeName("FLOAT")] float dpiX, [NativeTypeName("FLOAT")] float dpiY, [NativeTypeName("const DWRITE_MATRIX *")] DWRITE_MATRIX* transform, [NativeTypeName("BOOL")] int isSideways, DWRITE_OUTLINE_THRESHOLD outlineThreshold, DWRITE_MEASURING_MODE measuringMode, IDWriteRenderingParams* renderingParams, DWRITE_RENDERING_MODE1* renderingMode, DWRITE_GRID_FIT_MODE* gridFitMode)
         {
@@ -321,6 +367,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(45)]
         [return: NativeTypeName("BOOL")]
         public int IsCharacterLocal([NativeTypeName("UINT32")] uint unicodeValue)
         {
@@ -328,6 +375,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(46)]
         [return: NativeTypeName("BOOL")]
         public int IsGlyphLocal([NativeTypeName("UINT16")] ushort glyphId)
         {
@@ -335,6 +383,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(47)]
         [return: NativeTypeName("HRESULT")]
         public int AreCharactersLocal([NativeTypeName("const WCHAR *")] ushort* characters, [NativeTypeName("UINT32")] uint characterCount, [NativeTypeName("BOOL")] int enqueueIfNotLocal, [NativeTypeName("BOOL *")] int* isLocal)
         {
@@ -342,6 +391,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(48)]
         [return: NativeTypeName("HRESULT")]
         public int AreGlyphsLocal([NativeTypeName("const UINT16 *")] ushort* glyphIndices, [NativeTypeName("UINT32")] uint glyphCount, [NativeTypeName("BOOL")] int enqueueIfNotLocal, [NativeTypeName("BOOL *")] int* isLocal)
         {
@@ -349,12 +399,14 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(50)]
         public DWRITE_GLYPH_IMAGE_FORMATS GetGlyphImageFormats()
         {
             return ((delegate* unmanaged<IDWriteFontFace6*, DWRITE_GLYPH_IMAGE_FORMATS>)(lpVtbl[50]))((IDWriteFontFace6*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(49)]
         [return: NativeTypeName("HRESULT")]
         public int GetGlyphImageFormats([NativeTypeName("UINT16")] ushort glyphId, [NativeTypeName("UINT32")] uint pixelsPerEmFirst, [NativeTypeName("UINT32")] uint pixelsPerEmLast, DWRITE_GLYPH_IMAGE_FORMATS* glyphImageFormats)
         {
@@ -362,6 +414,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(51)]
         [return: NativeTypeName("HRESULT")]
         public int GetGlyphImageData([NativeTypeName("UINT16")] ushort glyphId, [NativeTypeName("UINT32")] uint pixelsPerEm, DWRITE_GLYPH_IMAGE_FORMATS glyphImageFormat, DWRITE_GLYPH_IMAGE_DATA* glyphData, void** glyphDataContext)
         {
@@ -369,12 +422,14 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(52)]
         public void ReleaseGlyphImageData(void* glyphDataContext)
         {
             ((delegate* unmanaged<IDWriteFontFace6*, void*, void>)(lpVtbl[52]))((IDWriteFontFace6*)Unsafe.AsPointer(ref this), glyphDataContext);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(53)]
         [return: NativeTypeName("UINT32")]
         public uint GetFontAxisValueCount()
         {
@@ -382,6 +437,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(54)]
         [return: NativeTypeName("HRESULT")]
         public int GetFontAxisValues(DWRITE_FONT_AXIS_VALUE* fontAxisValues, [NativeTypeName("UINT32")] uint fontAxisValueCount)
         {
@@ -389,6 +445,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(55)]
         [return: NativeTypeName("BOOL")]
         public int HasVariations()
         {
@@ -396,6 +453,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(56)]
         [return: NativeTypeName("HRESULT")]
         public int GetFontResource(IDWriteFontResource** fontResource)
         {
@@ -403,6 +461,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(57)]
         [return: NativeTypeName("BOOL")]
         public int Equals(IDWriteFontFace* fontFace)
         {
@@ -410,6 +469,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(58)]
         [return: NativeTypeName("HRESULT")]
         public int GetFamilyNames(DWRITE_FONT_FAMILY_MODEL fontFamilyModel, IDWriteLocalizedStrings** names)
         {
@@ -417,6 +477,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(59)]
         [return: NativeTypeName("HRESULT")]
         public int GetFaceNames(DWRITE_FONT_FAMILY_MODEL fontFamilyModel, IDWriteLocalizedStrings** names)
         {

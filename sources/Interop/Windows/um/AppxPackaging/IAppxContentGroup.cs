@@ -11,11 +11,13 @@ namespace TerraFX.Interop
 {
     [Guid("328F6468-C04F-4E3C-B6FA-6B8D27F3003A")]
     [NativeTypeName("struct IAppxContentGroup : IUnknown")]
+    [NativeInheritance("IUnknown")]
     public unsafe partial struct IAppxContentGroup
     {
         public void** lpVtbl;
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(0)]
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
@@ -23,6 +25,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(1)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
@@ -30,6 +33,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(2)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
@@ -37,6 +41,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(3)]
         [return: NativeTypeName("HRESULT")]
         public int GetName([NativeTypeName("LPWSTR *")] ushort** groupName)
         {
@@ -44,6 +49,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(4)]
         [return: NativeTypeName("HRESULT")]
         public int GetFiles(IAppxContentGroupFilesEnumerator** enumerator)
         {

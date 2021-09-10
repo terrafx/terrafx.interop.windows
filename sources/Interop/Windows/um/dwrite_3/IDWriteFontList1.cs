@@ -11,11 +11,13 @@ namespace TerraFX.Interop
 {
     [Guid("DA20D8EF-812A-4C43-9802-62EC4ABD7ADE")]
     [NativeTypeName("struct IDWriteFontList1 : IDWriteFontList")]
+    [NativeInheritance("IDWriteFontList")]
     public unsafe partial struct IDWriteFontList1
     {
         public void** lpVtbl;
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(0)]
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
@@ -23,6 +25,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(1)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
@@ -30,6 +33,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(2)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
@@ -37,6 +41,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(3)]
         [return: NativeTypeName("HRESULT")]
         public int GetFontCollection(IDWriteFontCollection** fontCollection)
         {
@@ -44,6 +49,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(4)]
         [return: NativeTypeName("UINT32")]
         public uint GetFontCount()
         {
@@ -51,6 +57,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(5)]
         [return: NativeTypeName("HRESULT")]
         public int GetFont([NativeTypeName("UINT32")] uint index, IDWriteFont** font)
         {
@@ -58,12 +65,14 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(6)]
         public DWRITE_LOCALITY GetFontLocality([NativeTypeName("UINT32")] uint listIndex)
         {
             return ((delegate* unmanaged<IDWriteFontList1*, uint, DWRITE_LOCALITY>)(lpVtbl[6]))((IDWriteFontList1*)Unsafe.AsPointer(ref this), listIndex);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(7)]
         [return: NativeTypeName("HRESULT")]
         public int GetFont([NativeTypeName("UINT32")] uint listIndex, IDWriteFont3** font)
         {
@@ -71,6 +80,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(8)]
         [return: NativeTypeName("HRESULT")]
         public int GetFontFaceReference([NativeTypeName("UINT32")] uint listIndex, IDWriteFontFaceReference** fontFaceReference)
         {

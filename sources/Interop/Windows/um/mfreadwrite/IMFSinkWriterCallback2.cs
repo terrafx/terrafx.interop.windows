@@ -11,11 +11,13 @@ namespace TerraFX.Interop
 {
     [Guid("2456BD58-C067-4513-84FE-8D0C88FFDC61")]
     [NativeTypeName("struct IMFSinkWriterCallback2 : IMFSinkWriterCallback")]
+    [NativeInheritance("IMFSinkWriterCallback")]
     public unsafe partial struct IMFSinkWriterCallback2
     {
         public void** lpVtbl;
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(0)]
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
@@ -23,6 +25,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(1)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
@@ -30,6 +33,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(2)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
@@ -37,6 +41,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(3)]
         [return: NativeTypeName("HRESULT")]
         public int OnFinalize([NativeTypeName("HRESULT")] int hrStatus)
         {
@@ -44,6 +49,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(4)]
         [return: NativeTypeName("HRESULT")]
         public int OnMarker([NativeTypeName("DWORD")] uint dwStreamIndex, [NativeTypeName("LPVOID")] void* pvContext)
         {
@@ -51,6 +57,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(5)]
         [return: NativeTypeName("HRESULT")]
         public int OnTransformChange()
         {
@@ -58,6 +65,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(6)]
         [return: NativeTypeName("HRESULT")]
         public int OnStreamError([NativeTypeName("DWORD")] uint dwStreamIndex, [NativeTypeName("HRESULT")] int hrStatus)
         {

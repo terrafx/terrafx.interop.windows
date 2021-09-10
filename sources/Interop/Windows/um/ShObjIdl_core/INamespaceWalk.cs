@@ -11,11 +11,13 @@ namespace TerraFX.Interop
 {
     [Guid("57CED8A7-3F4A-432C-9350-30F24483F74F")]
     [NativeTypeName("struct INamespaceWalk : IUnknown")]
+    [NativeInheritance("IUnknown")]
     public unsafe partial struct INamespaceWalk
     {
         public void** lpVtbl;
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(0)]
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
@@ -23,6 +25,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(1)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
@@ -30,6 +33,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(2)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
@@ -37,6 +41,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(3)]
         [return: NativeTypeName("HRESULT")]
         public int Walk(IUnknown* punkToWalk, [NativeTypeName("DWORD")] uint dwFlags, int cDepth, INamespaceWalkCB* pnswcb)
         {
@@ -44,6 +49,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(4)]
         [return: NativeTypeName("HRESULT")]
         public int GetIDArrayResult([NativeTypeName("UINT *")] uint* pcItems, [NativeTypeName("LPITEMIDLIST **")] ITEMIDLIST*** prgpidl)
         {

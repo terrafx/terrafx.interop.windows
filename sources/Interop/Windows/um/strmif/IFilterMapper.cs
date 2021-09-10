@@ -11,11 +11,13 @@ namespace TerraFX.Interop
 {
     [Guid("56A868A3-0AD4-11CE-B03A-0020AF0BA770")]
     [NativeTypeName("struct IFilterMapper : IUnknown")]
+    [NativeInheritance("IUnknown")]
     public unsafe partial struct IFilterMapper
     {
         public void** lpVtbl;
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(0)]
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
@@ -23,6 +25,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(1)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
@@ -30,6 +33,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(2)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
@@ -37,6 +41,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(3)]
         [return: NativeTypeName("HRESULT")]
         public int RegisterFilter([NativeTypeName("CLSID")] Guid clsid, [NativeTypeName("LPCWSTR")] ushort* Name, [NativeTypeName("DWORD")] uint dwMerit)
         {
@@ -44,6 +49,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(4)]
         [return: NativeTypeName("HRESULT")]
         public int RegisterFilterInstance([NativeTypeName("CLSID")] Guid clsid, [NativeTypeName("LPCWSTR")] ushort* Name, [NativeTypeName("CLSID *")] Guid* MRId)
         {
@@ -51,6 +57,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(5)]
         [return: NativeTypeName("HRESULT")]
         public int RegisterPin([NativeTypeName("CLSID")] Guid Filter, [NativeTypeName("LPCWSTR")] ushort* Name, [NativeTypeName("BOOL")] int bRendered, [NativeTypeName("BOOL")] int bOutput, [NativeTypeName("BOOL")] int bZero, [NativeTypeName("BOOL")] int bMany, [NativeTypeName("CLSID")] Guid ConnectsToFilter, [NativeTypeName("LPCWSTR")] ushort* ConnectsToPin)
         {
@@ -58,6 +65,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(6)]
         [return: NativeTypeName("HRESULT")]
         public int RegisterPinType([NativeTypeName("CLSID")] Guid clsFilter, [NativeTypeName("LPCWSTR")] ushort* strName, [NativeTypeName("CLSID")] Guid clsMajorType, [NativeTypeName("CLSID")] Guid clsSubType)
         {
@@ -65,6 +73,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(7)]
         [return: NativeTypeName("HRESULT")]
         public int UnregisterFilter([NativeTypeName("CLSID")] Guid Filter)
         {
@@ -72,6 +81,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(8)]
         [return: NativeTypeName("HRESULT")]
         public int UnregisterFilterInstance([NativeTypeName("CLSID")] Guid MRId)
         {
@@ -79,6 +89,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(9)]
         [return: NativeTypeName("HRESULT")]
         public int UnregisterPin([NativeTypeName("CLSID")] Guid Filter, [NativeTypeName("LPCWSTR")] ushort* Name)
         {
@@ -86,6 +97,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(10)]
         [return: NativeTypeName("HRESULT")]
         public int EnumMatchingFilters(IEnumRegFilters** ppEnum, [NativeTypeName("DWORD")] uint dwMerit, [NativeTypeName("BOOL")] int bInputNeeded, [NativeTypeName("CLSID")] Guid clsInMaj, [NativeTypeName("CLSID")] Guid clsInSub, [NativeTypeName("BOOL")] int bRender, [NativeTypeName("BOOL")] int bOututNeeded, [NativeTypeName("CLSID")] Guid clsOutMaj, [NativeTypeName("CLSID")] Guid clsOutSub)
         {

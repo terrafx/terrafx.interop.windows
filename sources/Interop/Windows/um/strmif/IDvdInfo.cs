@@ -11,11 +11,13 @@ namespace TerraFX.Interop
 {
     [Guid("A70EFE60-E2A3-11D0-A9BE-00AA0061BE93")]
     [NativeTypeName("struct IDvdInfo : IUnknown")]
+    [NativeInheritance("IUnknown")]
     public unsafe partial struct IDvdInfo
     {
         public void** lpVtbl;
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(0)]
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
@@ -23,6 +25,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(1)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
@@ -30,6 +33,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(2)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
@@ -37,6 +41,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(3)]
         [return: NativeTypeName("HRESULT")]
         public int GetCurrentDomain(DVD_DOMAIN* pDomain)
         {
@@ -44,6 +49,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(4)]
         [return: NativeTypeName("HRESULT")]
         public int GetCurrentLocation(DVD_PLAYBACK_LOCATION* pLocation)
         {
@@ -51,6 +57,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(5)]
         [return: NativeTypeName("HRESULT")]
         public int GetTotalTitleTime([NativeTypeName("ULONG *")] uint* pulTotalTime)
         {
@@ -58,6 +65,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(6)]
         [return: NativeTypeName("HRESULT")]
         public int GetCurrentButton([NativeTypeName("ULONG *")] uint* pulButtonsAvailable, [NativeTypeName("ULONG *")] uint* pulCurrentButton)
         {
@@ -65,6 +73,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(7)]
         [return: NativeTypeName("HRESULT")]
         public int GetCurrentAngle([NativeTypeName("ULONG *")] uint* pulAnglesAvailable, [NativeTypeName("ULONG *")] uint* pulCurrentAngle)
         {
@@ -72,6 +81,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(8)]
         [return: NativeTypeName("HRESULT")]
         public int GetCurrentAudio([NativeTypeName("ULONG *")] uint* pulStreamsAvailable, [NativeTypeName("ULONG *")] uint* pulCurrentStream)
         {
@@ -79,6 +89,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(9)]
         [return: NativeTypeName("HRESULT")]
         public int GetCurrentSubpicture([NativeTypeName("ULONG *")] uint* pulStreamsAvailable, [NativeTypeName("ULONG *")] uint* pulCurrentStream, [NativeTypeName("BOOL *")] int* pIsDisabled)
         {
@@ -86,6 +97,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(10)]
         [return: NativeTypeName("HRESULT")]
         public int GetCurrentUOPS([NativeTypeName("VALID_UOP_SOMTHING_OR_OTHER *")] uint* pUOP)
         {
@@ -93,6 +105,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(11)]
         [return: NativeTypeName("HRESULT")]
         public int GetAllSPRMs([NativeTypeName("SPRMARRAY *")] ushort** pRegisterArray)
         {
@@ -100,6 +113,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(12)]
         [return: NativeTypeName("HRESULT")]
         public int GetAllGPRMs([NativeTypeName("GPRMARRAY *")] ushort** pRegisterArray)
         {
@@ -107,6 +121,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(13)]
         [return: NativeTypeName("HRESULT")]
         public int GetAudioLanguage([NativeTypeName("ULONG")] uint ulStream, [NativeTypeName("LCID *")] uint* pLanguage)
         {
@@ -114,6 +129,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(14)]
         [return: NativeTypeName("HRESULT")]
         public int GetSubpictureLanguage([NativeTypeName("ULONG")] uint ulStream, [NativeTypeName("LCID *")] uint* pLanguage)
         {
@@ -121,6 +137,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(15)]
         [return: NativeTypeName("HRESULT")]
         public int GetTitleAttributes([NativeTypeName("ULONG")] uint ulTitle, DVD_ATR* pATR)
         {
@@ -128,6 +145,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(16)]
         [return: NativeTypeName("HRESULT")]
         public int GetVMGAttributes(DVD_ATR* pATR)
         {
@@ -135,6 +153,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(17)]
         [return: NativeTypeName("HRESULT")]
         public int GetCurrentVideoAttributes([NativeTypeName("DVD_VideoATR *")] byte** pATR)
         {
@@ -142,6 +161,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(18)]
         [return: NativeTypeName("HRESULT")]
         public int GetCurrentAudioAttributes([NativeTypeName("DVD_AudioATR *")] byte** pATR)
         {
@@ -149,6 +169,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(19)]
         [return: NativeTypeName("HRESULT")]
         public int GetCurrentSubpictureAttributes([NativeTypeName("DVD_SubpictureATR *")] byte** pATR)
         {
@@ -156,6 +177,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(20)]
         [return: NativeTypeName("HRESULT")]
         public int GetCurrentVolumeInfo([NativeTypeName("ULONG *")] uint* pulNumOfVol, [NativeTypeName("ULONG *")] uint* pulThisVolNum, DVD_DISC_SIDE* pSide, [NativeTypeName("ULONG *")] uint* pulNumOfTitles)
         {
@@ -163,6 +185,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(21)]
         [return: NativeTypeName("HRESULT")]
         public int GetDVDTextInfo([NativeTypeName("BYTE *")] byte* pTextManager, [NativeTypeName("ULONG")] uint ulBufSize, [NativeTypeName("ULONG *")] uint* pulActualSize)
         {
@@ -170,6 +193,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(22)]
         [return: NativeTypeName("HRESULT")]
         public int GetPlayerParentalLevel([NativeTypeName("ULONG *")] uint* pulParentalLevel, [NativeTypeName("ULONG *")] uint* pulCountryCode)
         {
@@ -177,6 +201,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(23)]
         [return: NativeTypeName("HRESULT")]
         public int GetNumberOfChapters([NativeTypeName("ULONG")] uint ulTitle, [NativeTypeName("ULONG *")] uint* pulNumberOfChapters)
         {
@@ -184,6 +209,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(24)]
         [return: NativeTypeName("HRESULT")]
         public int GetTitleParentalLevels([NativeTypeName("ULONG")] uint ulTitle, [NativeTypeName("ULONG *")] uint* pulParentalLevels)
         {
@@ -191,6 +217,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(25)]
         [return: NativeTypeName("HRESULT")]
         public int GetRoot([NativeTypeName("LPSTR")] sbyte* pRoot, [NativeTypeName("ULONG")] uint ulBufSize, [NativeTypeName("ULONG *")] uint* pulActualSize)
         {

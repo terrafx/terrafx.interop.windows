@@ -14,6 +14,7 @@ namespace TerraFX.Interop
         public void** lpVtbl;
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(0)]
         [return: NativeTypeName("HRESULT")]
         public int GetDesc(D3D10_SHADER_VARIABLE_DESC* pDesc)
         {
@@ -21,6 +22,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(1)]
         public new ID3D10ShaderReflectionType* GetType()
         {
             return ((delegate* unmanaged<ID3D10ShaderReflectionVariable*, ID3D10ShaderReflectionType*>)(lpVtbl[1]))((ID3D10ShaderReflectionVariable*)Unsafe.AsPointer(ref this));

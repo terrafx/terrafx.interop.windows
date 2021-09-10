@@ -11,11 +11,13 @@ namespace TerraFX.Interop
 {
     [Guid("8E36395F-C7B9-43C4-A54D-512B4AF63C95")]
     [NativeTypeName("struct IMFSampleProtection : IUnknown")]
+    [NativeInheritance("IUnknown")]
     public unsafe partial struct IMFSampleProtection
     {
         public void** lpVtbl;
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(0)]
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
@@ -23,6 +25,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(1)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
@@ -30,6 +33,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(2)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
@@ -37,6 +41,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(3)]
         [return: NativeTypeName("HRESULT")]
         public int GetInputProtectionVersion([NativeTypeName("DWORD *")] uint* pdwVersion)
         {
@@ -44,6 +49,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(4)]
         [return: NativeTypeName("HRESULT")]
         public int GetOutputProtectionVersion([NativeTypeName("DWORD *")] uint* pdwVersion)
         {
@@ -51,6 +57,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(5)]
         [return: NativeTypeName("HRESULT")]
         public int GetProtectionCertificate([NativeTypeName("DWORD")] uint dwVersion, [NativeTypeName("BYTE **")] byte** ppCert, [NativeTypeName("DWORD *")] uint* pcbCert)
         {
@@ -58,6 +65,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(6)]
         [return: NativeTypeName("HRESULT")]
         public int InitOutputProtection([NativeTypeName("DWORD")] uint dwVersion, [NativeTypeName("DWORD")] uint dwOutputId, [NativeTypeName("BYTE *")] byte* pbCert, [NativeTypeName("DWORD")] uint cbCert, [NativeTypeName("BYTE **")] byte** ppbSeed, [NativeTypeName("DWORD *")] uint* pcbSeed)
         {
@@ -65,6 +73,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(7)]
         [return: NativeTypeName("HRESULT")]
         public int InitInputProtection([NativeTypeName("DWORD")] uint dwVersion, [NativeTypeName("DWORD")] uint dwInputId, [NativeTypeName("BYTE *")] byte* pbSeed, [NativeTypeName("DWORD")] uint cbSeed)
         {

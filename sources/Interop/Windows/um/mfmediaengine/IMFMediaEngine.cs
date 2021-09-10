@@ -11,11 +11,13 @@ namespace TerraFX.Interop
 {
     [Guid("98A1B0BB-03EB-4935-AE7C-93C1FA0E1C93")]
     [NativeTypeName("struct IMFMediaEngine : IUnknown")]
+    [NativeInheritance("IUnknown")]
     public unsafe partial struct IMFMediaEngine
     {
         public void** lpVtbl;
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(0)]
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
@@ -23,6 +25,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(1)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
@@ -30,6 +33,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(2)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
@@ -37,6 +41,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(3)]
         [return: NativeTypeName("HRESULT")]
         public int GetError(IMFMediaError** ppError)
         {
@@ -44,6 +49,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(4)]
         [return: NativeTypeName("HRESULT")]
         public int SetErrorCode(MF_MEDIA_ENGINE_ERR error)
         {
@@ -51,6 +57,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(5)]
         [return: NativeTypeName("HRESULT")]
         public int SetSourceElements(IMFMediaEngineSrcElements* pSrcElements)
         {
@@ -58,6 +65,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(6)]
         [return: NativeTypeName("HRESULT")]
         public int SetSource([NativeTypeName("BSTR")] ushort* pUrl)
         {
@@ -65,6 +73,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(7)]
         [return: NativeTypeName("HRESULT")]
         public int GetCurrentSource([NativeTypeName("BSTR *")] ushort** ppUrl)
         {
@@ -72,6 +81,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(8)]
         [return: NativeTypeName("USHORT")]
         public ushort GetNetworkState()
         {
@@ -79,12 +89,14 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(9)]
         public MF_MEDIA_ENGINE_PRELOAD GetPreload()
         {
             return ((delegate* unmanaged<IMFMediaEngine*, MF_MEDIA_ENGINE_PRELOAD>)(lpVtbl[9]))((IMFMediaEngine*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(10)]
         [return: NativeTypeName("HRESULT")]
         public int SetPreload(MF_MEDIA_ENGINE_PRELOAD Preload)
         {
@@ -92,6 +104,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(11)]
         [return: NativeTypeName("HRESULT")]
         public int GetBuffered(IMFMediaTimeRange** ppBuffered)
         {
@@ -99,6 +112,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(12)]
         [return: NativeTypeName("HRESULT")]
         public int Load()
         {
@@ -106,6 +120,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(13)]
         [return: NativeTypeName("HRESULT")]
         public int CanPlayType([NativeTypeName("BSTR")] ushort* type, MF_MEDIA_ENGINE_CANPLAY* pAnswer)
         {
@@ -113,6 +128,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(14)]
         [return: NativeTypeName("USHORT")]
         public ushort GetReadyState()
         {
@@ -120,6 +136,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(15)]
         [return: NativeTypeName("BOOL")]
         public int IsSeeking()
         {
@@ -127,12 +144,14 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(16)]
         public double GetCurrentTime()
         {
             return ((delegate* unmanaged<IMFMediaEngine*, double>)(lpVtbl[16]))((IMFMediaEngine*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(17)]
         [return: NativeTypeName("HRESULT")]
         public int SetCurrentTime(double seekTime)
         {
@@ -140,18 +159,21 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(18)]
         public double GetStartTime()
         {
             return ((delegate* unmanaged<IMFMediaEngine*, double>)(lpVtbl[18]))((IMFMediaEngine*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(19)]
         public double GetDuration()
         {
             return ((delegate* unmanaged<IMFMediaEngine*, double>)(lpVtbl[19]))((IMFMediaEngine*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(20)]
         [return: NativeTypeName("BOOL")]
         public int IsPaused()
         {
@@ -159,12 +181,14 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(21)]
         public double GetDefaultPlaybackRate()
         {
             return ((delegate* unmanaged<IMFMediaEngine*, double>)(lpVtbl[21]))((IMFMediaEngine*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(22)]
         [return: NativeTypeName("HRESULT")]
         public int SetDefaultPlaybackRate(double Rate)
         {
@@ -172,12 +196,14 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(23)]
         public double GetPlaybackRate()
         {
             return ((delegate* unmanaged<IMFMediaEngine*, double>)(lpVtbl[23]))((IMFMediaEngine*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(24)]
         [return: NativeTypeName("HRESULT")]
         public int SetPlaybackRate(double Rate)
         {
@@ -185,6 +211,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(25)]
         [return: NativeTypeName("HRESULT")]
         public int GetPlayed(IMFMediaTimeRange** ppPlayed)
         {
@@ -192,6 +219,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(26)]
         [return: NativeTypeName("HRESULT")]
         public int GetSeekable(IMFMediaTimeRange** ppSeekable)
         {
@@ -199,6 +227,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(27)]
         [return: NativeTypeName("BOOL")]
         public int IsEnded()
         {
@@ -206,6 +235,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(28)]
         [return: NativeTypeName("BOOL")]
         public int GetAutoPlay()
         {
@@ -213,6 +243,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(29)]
         [return: NativeTypeName("HRESULT")]
         public int SetAutoPlay([NativeTypeName("BOOL")] int AutoPlay)
         {
@@ -220,6 +251,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(30)]
         [return: NativeTypeName("BOOL")]
         public int GetLoop()
         {
@@ -227,6 +259,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(31)]
         [return: NativeTypeName("HRESULT")]
         public int SetLoop([NativeTypeName("BOOL")] int Loop)
         {
@@ -234,6 +267,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(32)]
         [return: NativeTypeName("HRESULT")]
         public int Play()
         {
@@ -241,6 +275,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(33)]
         [return: NativeTypeName("HRESULT")]
         public int Pause()
         {
@@ -248,6 +283,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(34)]
         [return: NativeTypeName("BOOL")]
         public int GetMuted()
         {
@@ -255,6 +291,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(35)]
         [return: NativeTypeName("HRESULT")]
         public int SetMuted([NativeTypeName("BOOL")] int Muted)
         {
@@ -262,12 +299,14 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(36)]
         public double GetVolume()
         {
             return ((delegate* unmanaged<IMFMediaEngine*, double>)(lpVtbl[36]))((IMFMediaEngine*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(37)]
         [return: NativeTypeName("HRESULT")]
         public int SetVolume(double Volume)
         {
@@ -275,6 +314,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(38)]
         [return: NativeTypeName("BOOL")]
         public int HasVideo()
         {
@@ -282,6 +322,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(39)]
         [return: NativeTypeName("BOOL")]
         public int HasAudio()
         {
@@ -289,6 +330,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(40)]
         [return: NativeTypeName("HRESULT")]
         public int GetNativeVideoSize([NativeTypeName("DWORD *")] uint* cx, [NativeTypeName("DWORD *")] uint* cy)
         {
@@ -296,6 +338,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(41)]
         [return: NativeTypeName("HRESULT")]
         public int GetVideoAspectRatio([NativeTypeName("DWORD *")] uint* cx, [NativeTypeName("DWORD *")] uint* cy)
         {
@@ -303,6 +346,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(42)]
         [return: NativeTypeName("HRESULT")]
         public int Shutdown()
         {
@@ -310,6 +354,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(43)]
         [return: NativeTypeName("HRESULT")]
         public int TransferVideoFrame(IUnknown* pDstSurf, [NativeTypeName("const MFVideoNormalizedRect *")] MFVideoNormalizedRect* pSrc, [NativeTypeName("const RECT *")] RECT* pDst, [NativeTypeName("const MFARGB *")] MFARGB* pBorderClr)
         {
@@ -317,6 +362,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(44)]
         [return: NativeTypeName("HRESULT")]
         public int OnVideoStreamTick([NativeTypeName("LONGLONG *")] long* pPts)
         {

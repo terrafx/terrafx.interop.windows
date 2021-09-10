@@ -11,11 +11,13 @@ namespace TerraFX.Interop
 {
     [Guid("C26F23A8-EE10-4AD6-B898-2B4D7AEBFE6A")]
     [NativeTypeName("struct IAppxManifestHostRuntimeDependency2 : IUnknown")]
+    [NativeInheritance("IUnknown")]
     public unsafe partial struct IAppxManifestHostRuntimeDependency2
     {
         public void** lpVtbl;
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(0)]
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
@@ -23,6 +25,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(1)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
@@ -30,6 +33,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(2)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
@@ -37,6 +41,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(3)]
         [return: NativeTypeName("HRESULT")]
         public int GetPackageFamilyName([NativeTypeName("LPWSTR *")] ushort** packageFamilyName)
         {

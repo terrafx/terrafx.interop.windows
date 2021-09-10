@@ -11,11 +11,13 @@ namespace TerraFX.Interop
 {
     [Guid("27D7CE21-762D-48F3-86F3-40E2FD3749C4")]
     [NativeTypeName("struct IBrowserService3 : IBrowserService2")]
+    [NativeInheritance("IBrowserService2")]
     public unsafe partial struct IBrowserService3
     {
         public void** lpVtbl;
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(0)]
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
@@ -23,6 +25,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(1)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
@@ -30,6 +33,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(2)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
@@ -37,6 +41,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(3)]
         [return: NativeTypeName("HRESULT")]
         public int GetParentSite(IOleInPlaceSite** ppipsite)
         {
@@ -44,6 +49,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(4)]
         [return: NativeTypeName("HRESULT")]
         public int SetTitle(IShellView* psv, [NativeTypeName("LPCWSTR")] ushort* pszName)
         {
@@ -51,6 +57,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(5)]
         [return: NativeTypeName("HRESULT")]
         public int GetTitle(IShellView* psv, [NativeTypeName("LPWSTR")] ushort* pszName, [NativeTypeName("DWORD")] uint cchName)
         {
@@ -58,6 +65,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(6)]
         [return: NativeTypeName("HRESULT")]
         public int GetOleObject(IOleObject** ppobjv)
         {
@@ -65,6 +73,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(7)]
         [return: NativeTypeName("HRESULT")]
         public int GetTravelLog(ITravelLog** pptl)
         {
@@ -72,6 +81,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(8)]
         [return: NativeTypeName("HRESULT")]
         public int ShowControlWindow([NativeTypeName("UINT")] uint id, [NativeTypeName("BOOL")] int fShow)
         {
@@ -79,6 +89,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(9)]
         [return: NativeTypeName("HRESULT")]
         public int IsControlWindowShown([NativeTypeName("UINT")] uint id, [NativeTypeName("BOOL *")] int* pfShown)
         {
@@ -86,6 +97,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(10)]
         [return: NativeTypeName("HRESULT")]
         public int IEGetDisplayName([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl, [NativeTypeName("LPWSTR")] ushort* pwszName, [NativeTypeName("UINT")] uint uFlags)
         {
@@ -93,6 +105,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(11)]
         [return: NativeTypeName("HRESULT")]
         public int IEParseDisplayName([NativeTypeName("UINT")] uint uiCP, [NativeTypeName("LPCWSTR")] ushort* pwszPath, [NativeTypeName("LPITEMIDLIST *")] ITEMIDLIST** ppidlOut)
         {
@@ -100,6 +113,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(12)]
         [return: NativeTypeName("HRESULT")]
         public int DisplayParseError([NativeTypeName("HRESULT")] int hres, [NativeTypeName("LPCWSTR")] ushort* pwszPath)
         {
@@ -107,6 +121,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(13)]
         [return: NativeTypeName("HRESULT")]
         public int NavigateToPidl([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl, [NativeTypeName("DWORD")] uint grfHLNF)
         {
@@ -114,6 +129,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(14)]
         [return: NativeTypeName("HRESULT")]
         public int SetNavigateState(BNSTATE bnstate)
         {
@@ -121,6 +137,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(15)]
         [return: NativeTypeName("HRESULT")]
         public int GetNavigateState(BNSTATE* pbnstate)
         {
@@ -128,6 +145,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(16)]
         [return: NativeTypeName("HRESULT")]
         public int NotifyRedirect(IShellView* psv, [NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl, [NativeTypeName("BOOL *")] int* pfDidBrowse)
         {
@@ -135,6 +153,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(17)]
         [return: NativeTypeName("HRESULT")]
         public int UpdateWindowList()
         {
@@ -142,6 +161,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(18)]
         [return: NativeTypeName("HRESULT")]
         public int UpdateBackForwardState()
         {
@@ -149,6 +169,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(19)]
         [return: NativeTypeName("HRESULT")]
         public int SetFlags([NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("DWORD")] uint dwFlagMask)
         {
@@ -156,6 +177,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(20)]
         [return: NativeTypeName("HRESULT")]
         public int GetFlags([NativeTypeName("DWORD *")] uint* pdwFlags)
         {
@@ -163,6 +185,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(21)]
         [return: NativeTypeName("HRESULT")]
         public int CanNavigateNow()
         {
@@ -170,6 +193,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(22)]
         [return: NativeTypeName("HRESULT")]
         public int GetPidl([NativeTypeName("LPITEMIDLIST *")] ITEMIDLIST** ppidl)
         {
@@ -177,6 +201,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(23)]
         [return: NativeTypeName("HRESULT")]
         public int SetReferrer([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl)
         {
@@ -184,6 +209,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(24)]
         [return: NativeTypeName("DWORD")]
         public uint GetBrowserIndex()
         {
@@ -191,6 +217,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(25)]
         [return: NativeTypeName("HRESULT")]
         public int GetBrowserByIndex([NativeTypeName("DWORD")] uint dwID, IUnknown** ppunk)
         {
@@ -198,6 +225,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(26)]
         [return: NativeTypeName("HRESULT")]
         public int GetHistoryObject(IOleObject** ppole, IStream** pstm, IBindCtx** ppbc)
         {
@@ -205,6 +233,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(27)]
         [return: NativeTypeName("HRESULT")]
         public int SetHistoryObject(IOleObject* pole, [NativeTypeName("BOOL")] int fIsLocalAnchor)
         {
@@ -212,6 +241,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(28)]
         [return: NativeTypeName("HRESULT")]
         public int CacheOLEServer(IOleObject* pole)
         {
@@ -219,6 +249,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(29)]
         [return: NativeTypeName("HRESULT")]
         public int GetSetCodePage(VARIANT* pvarIn, VARIANT* pvarOut)
         {
@@ -226,6 +257,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(30)]
         [return: NativeTypeName("HRESULT")]
         public int OnHttpEquiv(IShellView* psv, [NativeTypeName("BOOL")] int fDone, VARIANT* pvarargIn, VARIANT* pvarargOut)
         {
@@ -233,6 +265,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(31)]
         [return: NativeTypeName("HRESULT")]
         public int GetPalette([NativeTypeName("HPALETTE *")] IntPtr* hpal)
         {
@@ -240,6 +273,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(32)]
         [return: NativeTypeName("HRESULT")]
         public int RegisterWindow([NativeTypeName("BOOL")] int fForceRegister, int swc)
         {
@@ -247,6 +281,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(33)]
         [return: NativeTypeName("LRESULT")]
         public nint WndProcBS([NativeTypeName("HWND")] IntPtr hwnd, [NativeTypeName("UINT")] uint uMsg, [NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam)
         {
@@ -254,6 +289,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(34)]
         [return: NativeTypeName("HRESULT")]
         public int SetAsDefFolderSettings()
         {
@@ -261,6 +297,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(35)]
         [return: NativeTypeName("HRESULT")]
         public int GetViewRect(RECT* prc)
         {
@@ -268,6 +305,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(36)]
         [return: NativeTypeName("HRESULT")]
         public int OnSize([NativeTypeName("WPARAM")] nuint wParam)
         {
@@ -275,6 +313,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(37)]
         [return: NativeTypeName("HRESULT")]
         public int OnCreate([NativeTypeName("struct tagCREATESTRUCTW *")] CREATESTRUCTW* pcs)
         {
@@ -282,6 +321,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(38)]
         [return: NativeTypeName("LRESULT")]
         public nint OnCommand([NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam)
         {
@@ -289,6 +329,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(39)]
         [return: NativeTypeName("HRESULT")]
         public int OnDestroy()
         {
@@ -296,6 +337,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(40)]
         [return: NativeTypeName("LRESULT")]
         public nint OnNotify([NativeTypeName("struct tagNMHDR *")] NMHDR* pnm)
         {
@@ -303,6 +345,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(41)]
         [return: NativeTypeName("HRESULT")]
         public int OnSetFocus()
         {
@@ -310,6 +353,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(42)]
         [return: NativeTypeName("HRESULT")]
         public int OnFrameWindowActivateBS([NativeTypeName("BOOL")] int fActive)
         {
@@ -317,6 +361,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(43)]
         [return: NativeTypeName("HRESULT")]
         public int ReleaseShellView()
         {
@@ -324,6 +369,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(44)]
         [return: NativeTypeName("HRESULT")]
         public int ActivatePendingView()
         {
@@ -331,6 +377,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(45)]
         [return: NativeTypeName("HRESULT")]
         public int CreateViewWindow(IShellView* psvNew, IShellView* psvOld, [NativeTypeName("LPRECT")] RECT* prcView, [NativeTypeName("HWND *")] IntPtr* phwnd)
         {
@@ -338,6 +385,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(46)]
         [return: NativeTypeName("HRESULT")]
         public int CreateBrowserPropSheetExt([NativeTypeName("const IID &")] Guid* riid, void** ppv)
         {
@@ -345,6 +393,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(47)]
         [return: NativeTypeName("HRESULT")]
         public int GetViewWindow([NativeTypeName("HWND *")] IntPtr* phwndView)
         {
@@ -352,6 +401,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(48)]
         [return: NativeTypeName("HRESULT")]
         public int GetBaseBrowserData([NativeTypeName("LPCBASEBROWSERDATA *")] BASEBROWSERDATALH** pbbd)
         {
@@ -359,6 +409,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(49)]
         [return: NativeTypeName("LPBASEBROWSERDATA")]
         public BASEBROWSERDATALH* PutBaseBrowserData()
         {
@@ -366,6 +417,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(50)]
         [return: NativeTypeName("HRESULT")]
         public int InitializeTravelLog(ITravelLog* ptl, [NativeTypeName("DWORD")] uint dw)
         {
@@ -373,6 +425,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(51)]
         [return: NativeTypeName("HRESULT")]
         public int SetTopBrowser()
         {
@@ -380,6 +433,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(52)]
         [return: NativeTypeName("HRESULT")]
         public int Offline(int iCmd)
         {
@@ -387,6 +441,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(53)]
         [return: NativeTypeName("HRESULT")]
         public int AllowViewResize([NativeTypeName("BOOL")] int f)
         {
@@ -394,6 +449,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(54)]
         [return: NativeTypeName("HRESULT")]
         public int SetActivateState([NativeTypeName("UINT")] uint u)
         {
@@ -401,6 +457,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(55)]
         [return: NativeTypeName("HRESULT")]
         public int UpdateSecureLockIcon(int eSecureLock)
         {
@@ -408,6 +465,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(56)]
         [return: NativeTypeName("HRESULT")]
         public int InitializeDownloadManager()
         {
@@ -415,6 +473,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(57)]
         [return: NativeTypeName("HRESULT")]
         public int InitializeTransitionSite()
         {
@@ -422,6 +481,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(58)]
         [return: NativeTypeName("HRESULT")]
         public int _Initialize([NativeTypeName("HWND")] IntPtr hwnd, IUnknown* pauto)
         {
@@ -429,6 +489,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(59)]
         [return: NativeTypeName("HRESULT")]
         public int _CancelPendingNavigationAsync()
         {
@@ -436,6 +497,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(60)]
         [return: NativeTypeName("HRESULT")]
         public int _CancelPendingView()
         {
@@ -443,6 +505,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(61)]
         [return: NativeTypeName("HRESULT")]
         public int _MaySaveChanges()
         {
@@ -450,6 +513,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(62)]
         [return: NativeTypeName("HRESULT")]
         public int _PauseOrResumeView([NativeTypeName("BOOL")] int fPaused)
         {
@@ -457,6 +521,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(63)]
         [return: NativeTypeName("HRESULT")]
         public int _DisableModeless()
         {
@@ -464,6 +529,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(64)]
         [return: NativeTypeName("HRESULT")]
         public int _NavigateToPidl([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl, [NativeTypeName("DWORD")] uint grfHLNF, [NativeTypeName("DWORD")] uint dwFlags)
         {
@@ -471,6 +537,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(65)]
         [return: NativeTypeName("HRESULT")]
         public int _TryShell2Rename(IShellView* psv, [NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidlNew)
         {
@@ -478,6 +545,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(66)]
         [return: NativeTypeName("HRESULT")]
         public int _SwitchActivationNow()
         {
@@ -485,6 +553,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(67)]
         [return: NativeTypeName("HRESULT")]
         public int _ExecChildren(IUnknown* punkBar, [NativeTypeName("BOOL")] int fBroadcast, [NativeTypeName("const GUID *")] Guid* pguidCmdGroup, [NativeTypeName("DWORD")] uint nCmdID, [NativeTypeName("DWORD")] uint nCmdexecopt, [NativeTypeName("VARIANTARG *")] VARIANT* pvarargIn, [NativeTypeName("VARIANTARG *")] VARIANT* pvarargOut)
         {
@@ -492,6 +561,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(68)]
         [return: NativeTypeName("HRESULT")]
         public int _SendChildren([NativeTypeName("HWND")] IntPtr hwndBar, [NativeTypeName("BOOL")] int fBroadcast, [NativeTypeName("UINT")] uint uMsg, [NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam)
         {
@@ -499,6 +569,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(69)]
         [return: NativeTypeName("HRESULT")]
         public int GetFolderSetData([NativeTypeName("struct tagFolderSetData *")] tagFolderSetData* pfsd)
         {
@@ -506,6 +577,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(70)]
         [return: NativeTypeName("HRESULT")]
         public int _OnFocusChange([NativeTypeName("UINT")] uint itb)
         {
@@ -513,6 +585,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(71)]
         [return: NativeTypeName("HRESULT")]
         public int v_ShowHideChildWindows([NativeTypeName("BOOL")] int fChildOnly)
         {
@@ -520,6 +593,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(72)]
         [return: NativeTypeName("UINT")]
         public uint _get_itbLastFocus()
         {
@@ -527,6 +601,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(73)]
         [return: NativeTypeName("HRESULT")]
         public int _put_itbLastFocus([NativeTypeName("UINT")] uint itbLastFocus)
         {
@@ -534,6 +609,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(74)]
         [return: NativeTypeName("HRESULT")]
         public int _UIActivateView([NativeTypeName("UINT")] uint uState)
         {
@@ -541,6 +617,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(75)]
         [return: NativeTypeName("HRESULT")]
         public int _GetViewBorderRect(RECT* prc)
         {
@@ -548,6 +625,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(76)]
         [return: NativeTypeName("HRESULT")]
         public int _UpdateViewRectSize()
         {
@@ -555,6 +633,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(77)]
         [return: NativeTypeName("HRESULT")]
         public int _ResizeNextBorder([NativeTypeName("UINT")] uint itb)
         {
@@ -562,6 +641,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(78)]
         [return: NativeTypeName("HRESULT")]
         public int _ResizeView()
         {
@@ -569,6 +649,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(79)]
         [return: NativeTypeName("HRESULT")]
         public int _GetEffectiveClientArea([NativeTypeName("LPRECT")] RECT* lprectBorder, [NativeTypeName("HMONITOR")] IntPtr hmon)
         {
@@ -576,12 +657,14 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(80)]
         public IStream* v_GetViewStream([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl, [NativeTypeName("DWORD")] uint grfMode, [NativeTypeName("LPCWSTR")] ushort* pwszName)
         {
             return ((delegate* unmanaged<IBrowserService3*, ITEMIDLIST*, uint, ushort*, IStream*>)(lpVtbl[80]))((IBrowserService3*)Unsafe.AsPointer(ref this), pidl, grfMode, pwszName);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(81)]
         [return: NativeTypeName("LRESULT")]
         public nint ForwardViewMsg([NativeTypeName("UINT")] uint uMsg, [NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam)
         {
@@ -589,6 +672,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(82)]
         [return: NativeTypeName("HRESULT")]
         public int SetAcceleratorMenu([NativeTypeName("HACCEL")] IntPtr hacc)
         {
@@ -596,12 +680,14 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(83)]
         public int _GetToolbarCount()
         {
             return ((delegate* unmanaged<IBrowserService3*, int>)(lpVtbl[83]))((IBrowserService3*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(84)]
         [return: NativeTypeName("LPTOOLBARITEM")]
         public SToolbarItem* _GetToolbarItem(int itb)
         {
@@ -609,6 +695,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(85)]
         [return: NativeTypeName("HRESULT")]
         public int _SaveToolbars(IStream* pstm)
         {
@@ -616,6 +703,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(86)]
         [return: NativeTypeName("HRESULT")]
         public int _LoadToolbars(IStream* pstm)
         {
@@ -623,6 +711,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(87)]
         [return: NativeTypeName("HRESULT")]
         public int _CloseAndReleaseToolbars([NativeTypeName("BOOL")] int fClose)
         {
@@ -630,6 +719,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(88)]
         [return: NativeTypeName("HRESULT")]
         public int v_MayGetNextToolbarFocus([NativeTypeName("LPMSG")] MSG* lpMsg, [NativeTypeName("UINT")] uint itbNext, int citb, [NativeTypeName("LPTOOLBARITEM *")] SToolbarItem** pptbi, [NativeTypeName("HWND *")] IntPtr* phwnd)
         {
@@ -637,6 +727,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(89)]
         [return: NativeTypeName("HRESULT")]
         public int _ResizeNextBorderHelper([NativeTypeName("UINT")] uint itb, [NativeTypeName("BOOL")] int bUseHmonitor)
         {
@@ -644,6 +735,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(90)]
         [return: NativeTypeName("UINT")]
         public uint _FindTBar(IUnknown* punkSrc)
         {
@@ -651,6 +743,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(91)]
         [return: NativeTypeName("HRESULT")]
         public int _SetFocus([NativeTypeName("LPTOOLBARITEM")] SToolbarItem* ptbi, [NativeTypeName("HWND")] IntPtr hwnd, [NativeTypeName("LPMSG")] MSG* lpMsg)
         {
@@ -658,6 +751,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(92)]
         [return: NativeTypeName("HRESULT")]
         public int v_MayTranslateAccelerator(MSG* pmsg)
         {
@@ -665,6 +759,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(93)]
         [return: NativeTypeName("HRESULT")]
         public int _GetBorderDWHelper(IUnknown* punkSrc, [NativeTypeName("LPRECT")] RECT* lprectBorder, [NativeTypeName("BOOL")] int bUseHmonitor)
         {
@@ -672,6 +767,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(94)]
         [return: NativeTypeName("HRESULT")]
         public int v_CheckZoneCrossing([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl)
         {
@@ -679,6 +775,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(95)]
         [return: NativeTypeName("HRESULT")]
         public int _PositionViewWindow([NativeTypeName("HWND")] IntPtr hwnd, [NativeTypeName("LPRECT")] RECT* prc)
         {
@@ -686,6 +783,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(96)]
         [return: NativeTypeName("HRESULT")]
         public int IEParseDisplayNameEx([NativeTypeName("UINT")] uint uiCP, [NativeTypeName("LPCWSTR")] ushort* pwszPath, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LPITEMIDLIST *")] ITEMIDLIST** ppidlOut)
         {

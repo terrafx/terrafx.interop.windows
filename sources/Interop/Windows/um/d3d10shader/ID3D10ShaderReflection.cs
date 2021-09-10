@@ -11,11 +11,13 @@ namespace TerraFX.Interop
 {
     [Guid("D40E20B6-F8F7-42AD-AB20-4BAF8F15DFAA")]
     [NativeTypeName("struct ID3D10ShaderReflection : IUnknown")]
+    [NativeInheritance("IUnknown")]
     public unsafe partial struct ID3D10ShaderReflection
     {
         public void** lpVtbl;
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(0)]
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
@@ -23,6 +25,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(1)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
@@ -30,6 +33,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(2)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
@@ -37,6 +41,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(3)]
         [return: NativeTypeName("HRESULT")]
         public int GetDesc(D3D10_SHADER_DESC* pDesc)
         {
@@ -44,18 +49,21 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(4)]
         public ID3D10ShaderReflectionConstantBuffer* GetConstantBufferByIndex([NativeTypeName("UINT")] uint Index)
         {
             return ((delegate* unmanaged<ID3D10ShaderReflection*, uint, ID3D10ShaderReflectionConstantBuffer*>)(lpVtbl[4]))((ID3D10ShaderReflection*)Unsafe.AsPointer(ref this), Index);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(5)]
         public ID3D10ShaderReflectionConstantBuffer* GetConstantBufferByName([NativeTypeName("LPCSTR")] sbyte* Name)
         {
             return ((delegate* unmanaged<ID3D10ShaderReflection*, sbyte*, ID3D10ShaderReflectionConstantBuffer*>)(lpVtbl[5]))((ID3D10ShaderReflection*)Unsafe.AsPointer(ref this), Name);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(6)]
         [return: NativeTypeName("HRESULT")]
         public int GetResourceBindingDesc([NativeTypeName("UINT")] uint ResourceIndex, D3D10_SHADER_INPUT_BIND_DESC* pDesc)
         {
@@ -63,6 +71,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(7)]
         [return: NativeTypeName("HRESULT")]
         public int GetInputParameterDesc([NativeTypeName("UINT")] uint ParameterIndex, D3D10_SIGNATURE_PARAMETER_DESC* pDesc)
         {
@@ -70,6 +79,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(8)]
         [return: NativeTypeName("HRESULT")]
         public int GetOutputParameterDesc([NativeTypeName("UINT")] uint ParameterIndex, D3D10_SIGNATURE_PARAMETER_DESC* pDesc)
         {

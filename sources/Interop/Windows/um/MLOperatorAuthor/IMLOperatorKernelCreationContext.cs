@@ -11,11 +11,13 @@ namespace TerraFX.Interop
 {
     [Guid("5459B53D-A0FC-4665-ADDD-70171EF7E631")]
     [NativeTypeName("struct IMLOperatorKernelCreationContext : IMLOperatorAttributes")]
+    [NativeInheritance("IMLOperatorAttributes")]
     public unsafe partial struct IMLOperatorKernelCreationContext
     {
         public void** lpVtbl;
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(0)]
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
@@ -23,6 +25,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(1)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
@@ -30,6 +33,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(2)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
@@ -37,6 +41,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(3)]
         [return: NativeTypeName("HRESULT")]
         public int GetAttributeElementCount([NativeTypeName("const char *")] sbyte* name, MLOperatorAttributeType type, [NativeTypeName("uint32_t *")] uint* elementCount)
         {
@@ -44,6 +49,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(4)]
         [return: NativeTypeName("HRESULT")]
         public int GetAttribute([NativeTypeName("const char *")] sbyte* name, MLOperatorAttributeType type, [NativeTypeName("uint32_t")] uint elementCount, [NativeTypeName("size_t")] nuint elementByteSize, void* value)
         {
@@ -51,6 +57,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(5)]
         [return: NativeTypeName("HRESULT")]
         public int GetStringAttributeElementLength([NativeTypeName("const char *")] sbyte* name, [NativeTypeName("uint32_t")] uint elementIndex, [NativeTypeName("uint32_t *")] uint* attributeElementByteSize)
         {
@@ -58,6 +65,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(6)]
         [return: NativeTypeName("HRESULT")]
         public int GetStringAttributeElement([NativeTypeName("const char *")] sbyte* name, [NativeTypeName("uint32_t")] uint elementIndex, [NativeTypeName("uint32_t")] uint attributeElementByteSize, [NativeTypeName("char *")] sbyte* attributeElement)
         {
@@ -65,6 +73,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(7)]
         [return: NativeTypeName("uint32_t")]
         public uint GetInputCount()
         {
@@ -72,6 +81,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(8)]
         [return: NativeTypeName("uint32_t")]
         public uint GetOutputCount()
         {
@@ -79,18 +89,21 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(9)]
         public bool IsInputValid([NativeTypeName("uint32_t")] uint inputIndex)
         {
             return ((delegate* unmanaged<IMLOperatorKernelCreationContext*, uint, byte>)(lpVtbl[9]))((IMLOperatorKernelCreationContext*)Unsafe.AsPointer(ref this), inputIndex) != 0;
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(10)]
         public bool IsOutputValid([NativeTypeName("uint32_t")] uint outputIndex)
         {
             return ((delegate* unmanaged<IMLOperatorKernelCreationContext*, uint, byte>)(lpVtbl[10]))((IMLOperatorKernelCreationContext*)Unsafe.AsPointer(ref this), outputIndex) != 0;
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(11)]
         [return: NativeTypeName("HRESULT")]
         public int GetInputEdgeDescription([NativeTypeName("uint32_t")] uint inputIndex, MLOperatorEdgeDescription* edgeDescription)
         {
@@ -98,6 +111,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(12)]
         [return: NativeTypeName("HRESULT")]
         public int GetOutputEdgeDescription([NativeTypeName("uint32_t")] uint outputIndex, MLOperatorEdgeDescription* edgeDescription)
         {
@@ -105,12 +119,14 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(13)]
         public bool HasTensorShapeDescription()
         {
             return ((delegate* unmanaged<IMLOperatorKernelCreationContext*, byte>)(lpVtbl[13]))((IMLOperatorKernelCreationContext*)Unsafe.AsPointer(ref this)) != 0;
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(14)]
         [return: NativeTypeName("HRESULT")]
         public int GetTensorShapeDescription(IMLOperatorTensorShapeDescription** shapeDescription)
         {
@@ -118,6 +134,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(15)]
         public void GetExecutionInterface(IUnknown** executionObject)
         {
             ((delegate* unmanaged<IMLOperatorKernelCreationContext*, IUnknown**, void>)(lpVtbl[15]))((IMLOperatorKernelCreationContext*)Unsafe.AsPointer(ref this), executionObject);

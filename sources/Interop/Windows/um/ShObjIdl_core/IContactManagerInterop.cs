@@ -11,11 +11,13 @@ namespace TerraFX.Interop
 {
     [Guid("99EACBA7-E073-43B6-A896-55AFE48A0833")]
     [NativeTypeName("struct IContactManagerInterop : IUnknown")]
+    [NativeInheritance("IUnknown")]
     public unsafe partial struct IContactManagerInterop
     {
         public void** lpVtbl;
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(0)]
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
@@ -23,6 +25,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(1)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
@@ -30,6 +33,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(2)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
@@ -37,6 +41,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(3)]
         [return: NativeTypeName("HRESULT")]
         public int ShowContactCardForWindow([NativeTypeName("HWND")] IntPtr appWindow, IUnknown* contact, [NativeTypeName("const RECT *")] RECT* selection, FLYOUT_PLACEMENT preferredPlacement)
         {

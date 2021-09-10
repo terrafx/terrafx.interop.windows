@@ -11,11 +11,13 @@ namespace TerraFX.Interop
 {
     [Guid("71185722-246B-41F2-AAD1-0443F7F4BFC2")]
     [NativeTypeName("struct IDCompositionTransform3D : IDCompositionEffect")]
+    [NativeInheritance("IDCompositionEffect")]
     public unsafe partial struct IDCompositionTransform3D
     {
         public void** lpVtbl;
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(0)]
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
@@ -23,6 +25,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(1)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
@@ -30,6 +33,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(2)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {

@@ -11,11 +11,13 @@ namespace TerraFX.Interop
 {
     [Guid("7C857801-7381-11CF-884D-00AA004B2E24")]
     [NativeTypeName("struct IWbemObjectSink : IUnknown")]
+    [NativeInheritance("IUnknown")]
     public unsafe partial struct IWbemObjectSink
     {
         public void** lpVtbl;
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(0)]
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
@@ -23,6 +25,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(1)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
@@ -30,6 +33,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(2)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
@@ -37,6 +41,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(3)]
         [return: NativeTypeName("HRESULT")]
         public int Indicate([NativeTypeName("long")] int lObjectCount, IWbemClassObject** apObjArray)
         {
@@ -44,6 +49,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(4)]
         [return: NativeTypeName("HRESULT")]
         public int SetStatus([NativeTypeName("long")] int lFlags, [NativeTypeName("HRESULT")] int hResult, [NativeTypeName("BSTR")] ushort* strParam, IWbemClassObject* pObjParam)
         {

@@ -11,11 +11,13 @@ namespace TerraFX.Interop
 {
     [Guid("F5B0BF81-8CB5-4B1B-9449-1A159E0C733C")]
     [NativeTypeName("struct IIOCancelInformation : IUnknown")]
+    [NativeInheritance("IUnknown")]
     public unsafe partial struct IIOCancelInformation
     {
         public void** lpVtbl;
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(0)]
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
@@ -23,6 +25,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(1)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
@@ -30,6 +33,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(2)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
@@ -37,6 +41,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(3)]
         [return: NativeTypeName("HRESULT")]
         public int SetCancelInformation([NativeTypeName("DWORD")] uint dwThreadID, [NativeTypeName("UINT")] uint uMsgCancel)
         {
@@ -44,6 +49,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(4)]
         [return: NativeTypeName("HRESULT")]
         public int GetCancelInformation([NativeTypeName("DWORD *")] uint* pdwThreadID, [NativeTypeName("UINT *")] uint* puMsgCancel)
         {

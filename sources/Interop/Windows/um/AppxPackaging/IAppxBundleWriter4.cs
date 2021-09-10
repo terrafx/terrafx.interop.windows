@@ -11,11 +11,13 @@ namespace TerraFX.Interop
 {
     [Guid("9CD9D523-5009-4C01-9882-DC029FBD47A3")]
     [NativeTypeName("struct IAppxBundleWriter4 : IUnknown")]
+    [NativeInheritance("IUnknown")]
     public unsafe partial struct IAppxBundleWriter4
     {
         public void** lpVtbl;
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(0)]
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
@@ -23,6 +25,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(1)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
@@ -30,6 +33,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(2)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
@@ -37,6 +41,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(3)]
         [return: NativeTypeName("HRESULT")]
         public int AddPayloadPackage([NativeTypeName("LPCWSTR")] ushort* fileName, IStream* packageStream, [NativeTypeName("BOOL")] int isDefaultApplicablePackage)
         {
@@ -44,6 +49,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(4)]
         [return: NativeTypeName("HRESULT")]
         public int AddPackageReference([NativeTypeName("LPCWSTR")] ushort* fileName, IStream* inputStream, [NativeTypeName("BOOL")] int isDefaultApplicablePackage)
         {
@@ -51,6 +57,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(5)]
         [return: NativeTypeName("HRESULT")]
         public int AddExternalPackageReference([NativeTypeName("LPCWSTR")] ushort* fileName, IStream* inputStream, [NativeTypeName("BOOL")] int isDefaultApplicablePackage)
         {

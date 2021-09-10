@@ -22,6 +22,7 @@ namespace TerraFX.Interop
 {
     [Guid("235A7496-8351-414C-BCD4-6672AB2D8E00")]
     [NativeTypeName("struct ID2D1DeviceContext3 : ID2D1DeviceContext2")]
+    [NativeInheritance("ID2D1DeviceContext2")]
     public unsafe partial struct ID2D1DeviceContext3
     {
         public void** lpVtbl;
@@ -202,6 +203,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(0)]
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
@@ -209,6 +211,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(1)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
@@ -216,6 +219,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(2)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
@@ -223,12 +227,14 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(3)]
         public void GetFactory(ID2D1Factory** factory)
         {
             ((delegate* unmanaged<ID2D1DeviceContext3*, ID2D1Factory**, void>)(lpVtbl[3]))((ID2D1DeviceContext3*)Unsafe.AsPointer(ref this), factory);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(4)]
         [return: NativeTypeName("HRESULT")]
         public int CreateBitmap([NativeTypeName("D2D1_SIZE_U")] D2D_SIZE_U size, [NativeTypeName("const void *")] void* srcData, [NativeTypeName("UINT32")] uint pitch, [NativeTypeName("const D2D1_BITMAP_PROPERTIES *")] D2D1_BITMAP_PROPERTIES* bitmapProperties, ID2D1Bitmap** bitmap)
         {
@@ -236,6 +242,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(5)]
         [return: NativeTypeName("HRESULT")]
         public int CreateBitmapFromWicBitmap(IWICBitmapSource* wicBitmapSource, [NativeTypeName("const D2D1_BITMAP_PROPERTIES *")] D2D1_BITMAP_PROPERTIES* bitmapProperties, ID2D1Bitmap** bitmap)
         {
@@ -243,6 +250,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(6)]
         [return: NativeTypeName("HRESULT")]
         public int CreateSharedBitmap([NativeTypeName("const IID &")] Guid* riid, void* data, [NativeTypeName("const D2D1_BITMAP_PROPERTIES *")] D2D1_BITMAP_PROPERTIES* bitmapProperties, ID2D1Bitmap** bitmap)
         {
@@ -250,6 +258,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(7)]
         [return: NativeTypeName("HRESULT")]
         public int CreateBitmapBrush(ID2D1Bitmap* bitmap, [NativeTypeName("const D2D1_BITMAP_BRUSH_PROPERTIES *")] D2D1_BITMAP_BRUSH_PROPERTIES* bitmapBrushProperties, [NativeTypeName("const D2D1_BRUSH_PROPERTIES *")] D2D1_BRUSH_PROPERTIES* brushProperties, ID2D1BitmapBrush** bitmapBrush)
         {
@@ -257,6 +266,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(8)]
         [return: NativeTypeName("HRESULT")]
         public int CreateSolidColorBrush([NativeTypeName("const D2D1_COLOR_F *")] DXGI_RGBA* color, [NativeTypeName("const D2D1_BRUSH_PROPERTIES *")] D2D1_BRUSH_PROPERTIES* brushProperties, ID2D1SolidColorBrush** solidColorBrush)
         {
@@ -264,6 +274,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(9)]
         [return: NativeTypeName("HRESULT")]
         public int CreateGradientStopCollection([NativeTypeName("const D2D1_GRADIENT_STOP *")] D2D1_GRADIENT_STOP* gradientStops, [NativeTypeName("UINT32")] uint gradientStopsCount, D2D1_GAMMA colorInterpolationGamma, D2D1_EXTEND_MODE extendMode, ID2D1GradientStopCollection** gradientStopCollection)
         {
@@ -271,6 +282,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(10)]
         [return: NativeTypeName("HRESULT")]
         public int CreateLinearGradientBrush([NativeTypeName("const D2D1_LINEAR_GRADIENT_BRUSH_PROPERTIES *")] D2D1_LINEAR_GRADIENT_BRUSH_PROPERTIES* linearGradientBrushProperties, [NativeTypeName("const D2D1_BRUSH_PROPERTIES *")] D2D1_BRUSH_PROPERTIES* brushProperties, ID2D1GradientStopCollection* gradientStopCollection, ID2D1LinearGradientBrush** linearGradientBrush)
         {
@@ -278,6 +290,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(11)]
         [return: NativeTypeName("HRESULT")]
         public int CreateRadialGradientBrush([NativeTypeName("const D2D1_RADIAL_GRADIENT_BRUSH_PROPERTIES *")] D2D1_RADIAL_GRADIENT_BRUSH_PROPERTIES* radialGradientBrushProperties, [NativeTypeName("const D2D1_BRUSH_PROPERTIES *")] D2D1_BRUSH_PROPERTIES* brushProperties, ID2D1GradientStopCollection* gradientStopCollection, ID2D1RadialGradientBrush** radialGradientBrush)
         {
@@ -285,6 +298,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(12)]
         [return: NativeTypeName("HRESULT")]
         public int CreateCompatibleRenderTarget([NativeTypeName("const D2D1_SIZE_F *")] D2D_SIZE_F* desiredSize, [NativeTypeName("const D2D1_SIZE_U *")] D2D_SIZE_U* desiredPixelSize, [NativeTypeName("const D2D1_PIXEL_FORMAT *")] D2D1_PIXEL_FORMAT* desiredFormat, D2D1_COMPATIBLE_RENDER_TARGET_OPTIONS options, ID2D1BitmapRenderTarget** bitmapRenderTarget)
         {
@@ -292,6 +306,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(13)]
         [return: NativeTypeName("HRESULT")]
         public int CreateLayer([NativeTypeName("const D2D1_SIZE_F *")] D2D_SIZE_F* size, ID2D1Layer** layer)
         {
@@ -299,6 +314,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(14)]
         [return: NativeTypeName("HRESULT")]
         public int CreateMesh(ID2D1Mesh** mesh)
         {
@@ -306,168 +322,196 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(15)]
         public void DrawLine([NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F point0, [NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F point1, ID2D1Brush* brush, [NativeTypeName("FLOAT")] float strokeWidth = 1.0f, ID2D1StrokeStyle* strokeStyle = null)
         {
             ((delegate* unmanaged<ID2D1DeviceContext3*, D2D_POINT_2F, D2D_POINT_2F, ID2D1Brush*, float, ID2D1StrokeStyle*, void>)(lpVtbl[15]))((ID2D1DeviceContext3*)Unsafe.AsPointer(ref this), point0, point1, brush, strokeWidth, strokeStyle);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(16)]
         public void DrawRectangle([NativeTypeName("const D2D1_RECT_F *")] D2D_RECT_F* rect, ID2D1Brush* brush, [NativeTypeName("FLOAT")] float strokeWidth = 1.0f, ID2D1StrokeStyle* strokeStyle = null)
         {
             ((delegate* unmanaged<ID2D1DeviceContext3*, D2D_RECT_F*, ID2D1Brush*, float, ID2D1StrokeStyle*, void>)(lpVtbl[16]))((ID2D1DeviceContext3*)Unsafe.AsPointer(ref this), rect, brush, strokeWidth, strokeStyle);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(17)]
         public void FillRectangle([NativeTypeName("const D2D1_RECT_F *")] D2D_RECT_F* rect, ID2D1Brush* brush)
         {
             ((delegate* unmanaged<ID2D1DeviceContext3*, D2D_RECT_F*, ID2D1Brush*, void>)(lpVtbl[17]))((ID2D1DeviceContext3*)Unsafe.AsPointer(ref this), rect, brush);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(18)]
         public void DrawRoundedRectangle([NativeTypeName("const D2D1_ROUNDED_RECT *")] D2D1_ROUNDED_RECT* roundedRect, ID2D1Brush* brush, [NativeTypeName("FLOAT")] float strokeWidth = 1.0f, ID2D1StrokeStyle* strokeStyle = null)
         {
             ((delegate* unmanaged<ID2D1DeviceContext3*, D2D1_ROUNDED_RECT*, ID2D1Brush*, float, ID2D1StrokeStyle*, void>)(lpVtbl[18]))((ID2D1DeviceContext3*)Unsafe.AsPointer(ref this), roundedRect, brush, strokeWidth, strokeStyle);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(19)]
         public void FillRoundedRectangle([NativeTypeName("const D2D1_ROUNDED_RECT *")] D2D1_ROUNDED_RECT* roundedRect, ID2D1Brush* brush)
         {
             ((delegate* unmanaged<ID2D1DeviceContext3*, D2D1_ROUNDED_RECT*, ID2D1Brush*, void>)(lpVtbl[19]))((ID2D1DeviceContext3*)Unsafe.AsPointer(ref this), roundedRect, brush);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(20)]
         public void DrawEllipse([NativeTypeName("const D2D1_ELLIPSE *")] D2D1_ELLIPSE* ellipse, ID2D1Brush* brush, [NativeTypeName("FLOAT")] float strokeWidth = 1.0f, ID2D1StrokeStyle* strokeStyle = null)
         {
             ((delegate* unmanaged<ID2D1DeviceContext3*, D2D1_ELLIPSE*, ID2D1Brush*, float, ID2D1StrokeStyle*, void>)(lpVtbl[20]))((ID2D1DeviceContext3*)Unsafe.AsPointer(ref this), ellipse, brush, strokeWidth, strokeStyle);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(21)]
         public void FillEllipse([NativeTypeName("const D2D1_ELLIPSE *")] D2D1_ELLIPSE* ellipse, ID2D1Brush* brush)
         {
             ((delegate* unmanaged<ID2D1DeviceContext3*, D2D1_ELLIPSE*, ID2D1Brush*, void>)(lpVtbl[21]))((ID2D1DeviceContext3*)Unsafe.AsPointer(ref this), ellipse, brush);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(22)]
         public void DrawGeometry(ID2D1Geometry* geometry, ID2D1Brush* brush, [NativeTypeName("FLOAT")] float strokeWidth = 1.0f, ID2D1StrokeStyle* strokeStyle = null)
         {
             ((delegate* unmanaged<ID2D1DeviceContext3*, ID2D1Geometry*, ID2D1Brush*, float, ID2D1StrokeStyle*, void>)(lpVtbl[22]))((ID2D1DeviceContext3*)Unsafe.AsPointer(ref this), geometry, brush, strokeWidth, strokeStyle);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(23)]
         public void FillGeometry(ID2D1Geometry* geometry, ID2D1Brush* brush, ID2D1Brush* opacityBrush = null)
         {
             ((delegate* unmanaged<ID2D1DeviceContext3*, ID2D1Geometry*, ID2D1Brush*, ID2D1Brush*, void>)(lpVtbl[23]))((ID2D1DeviceContext3*)Unsafe.AsPointer(ref this), geometry, brush, opacityBrush);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(24)]
         public void FillMesh(ID2D1Mesh* mesh, ID2D1Brush* brush)
         {
             ((delegate* unmanaged<ID2D1DeviceContext3*, ID2D1Mesh*, ID2D1Brush*, void>)(lpVtbl[24]))((ID2D1DeviceContext3*)Unsafe.AsPointer(ref this), mesh, brush);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(25)]
         public void FillOpacityMask(ID2D1Bitmap* opacityMask, ID2D1Brush* brush, D2D1_OPACITY_MASK_CONTENT content, [NativeTypeName("const D2D1_RECT_F *")] D2D_RECT_F* destinationRectangle = null, [NativeTypeName("const D2D1_RECT_F *")] D2D_RECT_F* sourceRectangle = null)
         {
             ((delegate* unmanaged<ID2D1DeviceContext3*, ID2D1Bitmap*, ID2D1Brush*, D2D1_OPACITY_MASK_CONTENT, D2D_RECT_F*, D2D_RECT_F*, void>)(lpVtbl[25]))((ID2D1DeviceContext3*)Unsafe.AsPointer(ref this), opacityMask, brush, content, destinationRectangle, sourceRectangle);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(26)]
         public void DrawBitmap(ID2D1Bitmap* bitmap, [NativeTypeName("const D2D1_RECT_F *")] D2D_RECT_F* destinationRectangle = null, [NativeTypeName("FLOAT")] float opacity = 1.0f, D2D1_BITMAP_INTERPOLATION_MODE interpolationMode = D2D1_BITMAP_INTERPOLATION_MODE_LINEAR, [NativeTypeName("const D2D1_RECT_F *")] D2D_RECT_F* sourceRectangle = null)
         {
             ((delegate* unmanaged<ID2D1DeviceContext3*, ID2D1Bitmap*, D2D_RECT_F*, float, D2D1_BITMAP_INTERPOLATION_MODE, D2D_RECT_F*, void>)(lpVtbl[26]))((ID2D1DeviceContext3*)Unsafe.AsPointer(ref this), bitmap, destinationRectangle, opacity, interpolationMode, sourceRectangle);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(27)]
         public void DrawText([NativeTypeName("const WCHAR *")] ushort* @string, [NativeTypeName("UINT32")] uint stringLength, IDWriteTextFormat* textFormat, [NativeTypeName("const D2D1_RECT_F *")] D2D_RECT_F* layoutRect, ID2D1Brush* defaultFillBrush, D2D1_DRAW_TEXT_OPTIONS options = D2D1_DRAW_TEXT_OPTIONS_NONE, DWRITE_MEASURING_MODE measuringMode = DWRITE_MEASURING_MODE_NATURAL)
         {
             ((delegate* unmanaged<ID2D1DeviceContext3*, ushort*, uint, IDWriteTextFormat*, D2D_RECT_F*, ID2D1Brush*, D2D1_DRAW_TEXT_OPTIONS, DWRITE_MEASURING_MODE, void>)(lpVtbl[27]))((ID2D1DeviceContext3*)Unsafe.AsPointer(ref this), @string, stringLength, textFormat, layoutRect, defaultFillBrush, options, measuringMode);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(28)]
         public void DrawTextLayout([NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F origin, IDWriteTextLayout* textLayout, ID2D1Brush* defaultFillBrush, D2D1_DRAW_TEXT_OPTIONS options = D2D1_DRAW_TEXT_OPTIONS_NONE)
         {
             ((delegate* unmanaged<ID2D1DeviceContext3*, D2D_POINT_2F, IDWriteTextLayout*, ID2D1Brush*, D2D1_DRAW_TEXT_OPTIONS, void>)(lpVtbl[28]))((ID2D1DeviceContext3*)Unsafe.AsPointer(ref this), origin, textLayout, defaultFillBrush, options);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(29)]
         public void DrawGlyphRun([NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F baselineOrigin, [NativeTypeName("const DWRITE_GLYPH_RUN *")] DWRITE_GLYPH_RUN* glyphRun, ID2D1Brush* foregroundBrush, DWRITE_MEASURING_MODE measuringMode = DWRITE_MEASURING_MODE_NATURAL)
         {
             ((delegate* unmanaged<ID2D1DeviceContext3*, D2D_POINT_2F, DWRITE_GLYPH_RUN*, ID2D1Brush*, DWRITE_MEASURING_MODE, void>)(lpVtbl[29]))((ID2D1DeviceContext3*)Unsafe.AsPointer(ref this), baselineOrigin, glyphRun, foregroundBrush, measuringMode);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(30)]
         public void SetTransform([NativeTypeName("const D2D1_MATRIX_3X2_F *")] D2D_MATRIX_3X2_F* transform)
         {
             ((delegate* unmanaged<ID2D1DeviceContext3*, D2D_MATRIX_3X2_F*, void>)(lpVtbl[30]))((ID2D1DeviceContext3*)Unsafe.AsPointer(ref this), transform);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(31)]
         public void GetTransform([NativeTypeName("D2D1_MATRIX_3X2_F *")] D2D_MATRIX_3X2_F* transform)
         {
             ((delegate* unmanaged<ID2D1DeviceContext3*, D2D_MATRIX_3X2_F*, void>)(lpVtbl[31]))((ID2D1DeviceContext3*)Unsafe.AsPointer(ref this), transform);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(32)]
         public void SetAntialiasMode(D2D1_ANTIALIAS_MODE antialiasMode)
         {
             ((delegate* unmanaged<ID2D1DeviceContext3*, D2D1_ANTIALIAS_MODE, void>)(lpVtbl[32]))((ID2D1DeviceContext3*)Unsafe.AsPointer(ref this), antialiasMode);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(33)]
         public D2D1_ANTIALIAS_MODE GetAntialiasMode()
         {
             return ((delegate* unmanaged<ID2D1DeviceContext3*, D2D1_ANTIALIAS_MODE>)(lpVtbl[33]))((ID2D1DeviceContext3*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(34)]
         public void SetTextAntialiasMode(D2D1_TEXT_ANTIALIAS_MODE textAntialiasMode)
         {
             ((delegate* unmanaged<ID2D1DeviceContext3*, D2D1_TEXT_ANTIALIAS_MODE, void>)(lpVtbl[34]))((ID2D1DeviceContext3*)Unsafe.AsPointer(ref this), textAntialiasMode);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(35)]
         public D2D1_TEXT_ANTIALIAS_MODE GetTextAntialiasMode()
         {
             return ((delegate* unmanaged<ID2D1DeviceContext3*, D2D1_TEXT_ANTIALIAS_MODE>)(lpVtbl[35]))((ID2D1DeviceContext3*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(36)]
         public void SetTextRenderingParams(IDWriteRenderingParams* textRenderingParams = null)
         {
             ((delegate* unmanaged<ID2D1DeviceContext3*, IDWriteRenderingParams*, void>)(lpVtbl[36]))((ID2D1DeviceContext3*)Unsafe.AsPointer(ref this), textRenderingParams);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(37)]
         public void GetTextRenderingParams(IDWriteRenderingParams** textRenderingParams)
         {
             ((delegate* unmanaged<ID2D1DeviceContext3*, IDWriteRenderingParams**, void>)(lpVtbl[37]))((ID2D1DeviceContext3*)Unsafe.AsPointer(ref this), textRenderingParams);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(38)]
         public void SetTags([NativeTypeName("D2D1_TAG")] ulong tag1, [NativeTypeName("D2D1_TAG")] ulong tag2)
         {
             ((delegate* unmanaged<ID2D1DeviceContext3*, ulong, ulong, void>)(lpVtbl[38]))((ID2D1DeviceContext3*)Unsafe.AsPointer(ref this), tag1, tag2);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(39)]
         public void GetTags([NativeTypeName("D2D1_TAG *")] ulong* tag1 = null, [NativeTypeName("D2D1_TAG *")] ulong* tag2 = null)
         {
             ((delegate* unmanaged<ID2D1DeviceContext3*, ulong*, ulong*, void>)(lpVtbl[39]))((ID2D1DeviceContext3*)Unsafe.AsPointer(ref this), tag1, tag2);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(40)]
         public void PushLayer([NativeTypeName("const D2D1_LAYER_PARAMETERS *")] D2D1_LAYER_PARAMETERS* layerParameters, ID2D1Layer* layer)
         {
             ((delegate* unmanaged<ID2D1DeviceContext3*, D2D1_LAYER_PARAMETERS*, ID2D1Layer*, void>)(lpVtbl[40]))((ID2D1DeviceContext3*)Unsafe.AsPointer(ref this), layerParameters, layer);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(41)]
         public void PopLayer()
         {
             ((delegate* unmanaged<ID2D1DeviceContext3*, void>)(lpVtbl[41]))((ID2D1DeviceContext3*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(42)]
         [return: NativeTypeName("HRESULT")]
         public int Flush([NativeTypeName("D2D1_TAG *")] ulong* tag1 = null, [NativeTypeName("D2D1_TAG *")] ulong* tag2 = null)
         {
@@ -475,42 +519,49 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(43)]
         public void SaveDrawingState(ID2D1DrawingStateBlock* drawingStateBlock)
         {
             ((delegate* unmanaged<ID2D1DeviceContext3*, ID2D1DrawingStateBlock*, void>)(lpVtbl[43]))((ID2D1DeviceContext3*)Unsafe.AsPointer(ref this), drawingStateBlock);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(44)]
         public void RestoreDrawingState(ID2D1DrawingStateBlock* drawingStateBlock)
         {
             ((delegate* unmanaged<ID2D1DeviceContext3*, ID2D1DrawingStateBlock*, void>)(lpVtbl[44]))((ID2D1DeviceContext3*)Unsafe.AsPointer(ref this), drawingStateBlock);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(45)]
         public void PushAxisAlignedClip([NativeTypeName("const D2D1_RECT_F *")] D2D_RECT_F* clipRect, D2D1_ANTIALIAS_MODE antialiasMode)
         {
             ((delegate* unmanaged<ID2D1DeviceContext3*, D2D_RECT_F*, D2D1_ANTIALIAS_MODE, void>)(lpVtbl[45]))((ID2D1DeviceContext3*)Unsafe.AsPointer(ref this), clipRect, antialiasMode);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(46)]
         public void PopAxisAlignedClip()
         {
             ((delegate* unmanaged<ID2D1DeviceContext3*, void>)(lpVtbl[46]))((ID2D1DeviceContext3*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(47)]
         public void Clear([NativeTypeName("const D2D1_COLOR_F *")] DXGI_RGBA* clearColor = null)
         {
             ((delegate* unmanaged<ID2D1DeviceContext3*, DXGI_RGBA*, void>)(lpVtbl[47]))((ID2D1DeviceContext3*)Unsafe.AsPointer(ref this), clearColor);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(48)]
         public void BeginDraw()
         {
             ((delegate* unmanaged<ID2D1DeviceContext3*, void>)(lpVtbl[48]))((ID2D1DeviceContext3*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(49)]
         [return: NativeTypeName("HRESULT")]
         public int EndDraw([NativeTypeName("D2D1_TAG *")] ulong* tag1 = null, [NativeTypeName("D2D1_TAG *")] ulong* tag2 = null)
         {
@@ -518,6 +569,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(50)]
         public D2D1_PIXEL_FORMAT GetPixelFormat()
         {
             D2D1_PIXEL_FORMAT result;
@@ -525,18 +577,21 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(51)]
         public void SetDpi([NativeTypeName("FLOAT")] float dpiX, [NativeTypeName("FLOAT")] float dpiY)
         {
             ((delegate* unmanaged<ID2D1DeviceContext3*, float, float, void>)(lpVtbl[51]))((ID2D1DeviceContext3*)Unsafe.AsPointer(ref this), dpiX, dpiY);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(52)]
         public void GetDpi([NativeTypeName("FLOAT *")] float* dpiX, [NativeTypeName("FLOAT *")] float* dpiY)
         {
             ((delegate* unmanaged<ID2D1DeviceContext3*, float*, float*, void>)(lpVtbl[52]))((ID2D1DeviceContext3*)Unsafe.AsPointer(ref this), dpiX, dpiY);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(53)]
         [return: NativeTypeName("D2D1_SIZE_F")]
         public D2D_SIZE_F GetSize()
         {
@@ -545,6 +600,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(54)]
         [return: NativeTypeName("D2D1_SIZE_U")]
         public D2D_SIZE_U GetPixelSize()
         {
@@ -553,6 +609,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(55)]
         [return: NativeTypeName("UINT32")]
         public uint GetMaximumBitmapSize()
         {
@@ -560,6 +617,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(56)]
         [return: NativeTypeName("BOOL")]
         public int IsSupported([NativeTypeName("const D2D1_RENDER_TARGET_PROPERTIES *")] D2D1_RENDER_TARGET_PROPERTIES* renderTargetProperties)
         {
@@ -567,6 +625,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(57)]
         [return: NativeTypeName("HRESULT")]
         public int CreateBitmap([NativeTypeName("D2D1_SIZE_U")] D2D_SIZE_U size, [NativeTypeName("const void *")] void* sourceData, [NativeTypeName("UINT32")] uint pitch, [NativeTypeName("const D2D1_BITMAP_PROPERTIES1 *")] D2D1_BITMAP_PROPERTIES1* bitmapProperties, ID2D1Bitmap1** bitmap)
         {
@@ -574,6 +633,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(58)]
         [return: NativeTypeName("HRESULT")]
         public int CreateBitmapFromWicBitmap(IWICBitmapSource* wicBitmapSource, [NativeTypeName("const D2D1_BITMAP_PROPERTIES1 *")] D2D1_BITMAP_PROPERTIES1* bitmapProperties, ID2D1Bitmap1** bitmap)
         {
@@ -581,6 +641,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(59)]
         [return: NativeTypeName("HRESULT")]
         public int CreateColorContext(D2D1_COLOR_SPACE space, [NativeTypeName("const BYTE *")] byte* profile, [NativeTypeName("UINT32")] uint profileSize, ID2D1ColorContext** colorContext)
         {
@@ -588,6 +649,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(60)]
         [return: NativeTypeName("HRESULT")]
         public int CreateColorContextFromFilename([NativeTypeName("PCWSTR")] ushort* filename, ID2D1ColorContext** colorContext)
         {
@@ -595,6 +657,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(61)]
         [return: NativeTypeName("HRESULT")]
         public int CreateColorContextFromWicColorContext(IWICColorContext* wicColorContext, ID2D1ColorContext** colorContext)
         {
@@ -602,6 +665,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(62)]
         [return: NativeTypeName("HRESULT")]
         public int CreateBitmapFromDxgiSurface(IDXGISurface* surface, [NativeTypeName("const D2D1_BITMAP_PROPERTIES1 *")] D2D1_BITMAP_PROPERTIES1* bitmapProperties, ID2D1Bitmap1** bitmap)
         {
@@ -609,6 +673,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(63)]
         [return: NativeTypeName("HRESULT")]
         public int CreateEffect([NativeTypeName("const IID &")] Guid* effectId, ID2D1Effect** effect)
         {
@@ -616,6 +681,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(64)]
         [return: NativeTypeName("HRESULT")]
         public int CreateGradientStopCollection([NativeTypeName("const D2D1_GRADIENT_STOP *")] D2D1_GRADIENT_STOP* straightAlphaGradientStops, [NativeTypeName("UINT32")] uint straightAlphaGradientStopsCount, D2D1_COLOR_SPACE preInterpolationSpace, D2D1_COLOR_SPACE postInterpolationSpace, D2D1_BUFFER_PRECISION bufferPrecision, D2D1_EXTEND_MODE extendMode, D2D1_COLOR_INTERPOLATION_MODE colorInterpolationMode, ID2D1GradientStopCollection1** gradientStopCollection1)
         {
@@ -623,6 +689,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(65)]
         [return: NativeTypeName("HRESULT")]
         public int CreateImageBrush(ID2D1Image* image, [NativeTypeName("const D2D1_IMAGE_BRUSH_PROPERTIES *")] D2D1_IMAGE_BRUSH_PROPERTIES* imageBrushProperties, [NativeTypeName("const D2D1_BRUSH_PROPERTIES *")] D2D1_BRUSH_PROPERTIES* brushProperties, ID2D1ImageBrush** imageBrush)
         {
@@ -630,6 +697,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(66)]
         [return: NativeTypeName("HRESULT")]
         public int CreateBitmapBrush(ID2D1Bitmap* bitmap, [NativeTypeName("const D2D1_BITMAP_BRUSH_PROPERTIES1 *")] D2D1_BITMAP_BRUSH_PROPERTIES1* bitmapBrushProperties, [NativeTypeName("const D2D1_BRUSH_PROPERTIES *")] D2D1_BRUSH_PROPERTIES* brushProperties, ID2D1BitmapBrush1** bitmapBrush)
         {
@@ -637,6 +705,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(67)]
         [return: NativeTypeName("HRESULT")]
         public int CreateCommandList(ID2D1CommandList** commandList)
         {
@@ -644,6 +713,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(68)]
         [return: NativeTypeName("BOOL")]
         public int IsDxgiFormatSupported(DXGI_FORMAT format)
         {
@@ -651,6 +721,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(69)]
         [return: NativeTypeName("BOOL")]
         public int IsBufferPrecisionSupported(D2D1_BUFFER_PRECISION bufferPrecision)
         {
@@ -658,6 +729,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(70)]
         [return: NativeTypeName("HRESULT")]
         public int GetImageLocalBounds(ID2D1Image* image, [NativeTypeName("D2D1_RECT_F *")] D2D_RECT_F* localBounds)
         {
@@ -665,6 +737,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(71)]
         [return: NativeTypeName("HRESULT")]
         public int GetImageWorldBounds(ID2D1Image* image, [NativeTypeName("D2D1_RECT_F *")] D2D_RECT_F* worldBounds)
         {
@@ -672,6 +745,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(72)]
         [return: NativeTypeName("HRESULT")]
         public int GetGlyphRunWorldBounds([NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F baselineOrigin, [NativeTypeName("const DWRITE_GLYPH_RUN *")] DWRITE_GLYPH_RUN* glyphRun, DWRITE_MEASURING_MODE measuringMode, [NativeTypeName("D2D1_RECT_F *")] D2D_RECT_F* bounds)
         {
@@ -679,90 +753,105 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(73)]
         public void GetDevice(ID2D1Device** device)
         {
             ((delegate* unmanaged<ID2D1DeviceContext3*, ID2D1Device**, void>)(lpVtbl[73]))((ID2D1DeviceContext3*)Unsafe.AsPointer(ref this), device);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(74)]
         public void SetTarget(ID2D1Image* image)
         {
             ((delegate* unmanaged<ID2D1DeviceContext3*, ID2D1Image*, void>)(lpVtbl[74]))((ID2D1DeviceContext3*)Unsafe.AsPointer(ref this), image);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(75)]
         public void GetTarget(ID2D1Image** image)
         {
             ((delegate* unmanaged<ID2D1DeviceContext3*, ID2D1Image**, void>)(lpVtbl[75]))((ID2D1DeviceContext3*)Unsafe.AsPointer(ref this), image);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(76)]
         public void SetRenderingControls([NativeTypeName("const D2D1_RENDERING_CONTROLS *")] D2D1_RENDERING_CONTROLS* renderingControls)
         {
             ((delegate* unmanaged<ID2D1DeviceContext3*, D2D1_RENDERING_CONTROLS*, void>)(lpVtbl[76]))((ID2D1DeviceContext3*)Unsafe.AsPointer(ref this), renderingControls);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(77)]
         public void GetRenderingControls(D2D1_RENDERING_CONTROLS* renderingControls)
         {
             ((delegate* unmanaged<ID2D1DeviceContext3*, D2D1_RENDERING_CONTROLS*, void>)(lpVtbl[77]))((ID2D1DeviceContext3*)Unsafe.AsPointer(ref this), renderingControls);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(78)]
         public void SetPrimitiveBlend(D2D1_PRIMITIVE_BLEND primitiveBlend)
         {
             ((delegate* unmanaged<ID2D1DeviceContext3*, D2D1_PRIMITIVE_BLEND, void>)(lpVtbl[78]))((ID2D1DeviceContext3*)Unsafe.AsPointer(ref this), primitiveBlend);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(79)]
         public D2D1_PRIMITIVE_BLEND GetPrimitiveBlend()
         {
             return ((delegate* unmanaged<ID2D1DeviceContext3*, D2D1_PRIMITIVE_BLEND>)(lpVtbl[79]))((ID2D1DeviceContext3*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(80)]
         public void SetUnitMode(D2D1_UNIT_MODE unitMode)
         {
             ((delegate* unmanaged<ID2D1DeviceContext3*, D2D1_UNIT_MODE, void>)(lpVtbl[80]))((ID2D1DeviceContext3*)Unsafe.AsPointer(ref this), unitMode);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(81)]
         public D2D1_UNIT_MODE GetUnitMode()
         {
             return ((delegate* unmanaged<ID2D1DeviceContext3*, D2D1_UNIT_MODE>)(lpVtbl[81]))((ID2D1DeviceContext3*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(82)]
         public void DrawGlyphRun([NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F baselineOrigin, [NativeTypeName("const DWRITE_GLYPH_RUN *")] DWRITE_GLYPH_RUN* glyphRun, [NativeTypeName("const DWRITE_GLYPH_RUN_DESCRIPTION *")] DWRITE_GLYPH_RUN_DESCRIPTION* glyphRunDescription, ID2D1Brush* foregroundBrush, DWRITE_MEASURING_MODE measuringMode = DWRITE_MEASURING_MODE_NATURAL)
         {
             ((delegate* unmanaged<ID2D1DeviceContext3*, D2D_POINT_2F, DWRITE_GLYPH_RUN*, DWRITE_GLYPH_RUN_DESCRIPTION*, ID2D1Brush*, DWRITE_MEASURING_MODE, void>)(lpVtbl[82]))((ID2D1DeviceContext3*)Unsafe.AsPointer(ref this), baselineOrigin, glyphRun, glyphRunDescription, foregroundBrush, measuringMode);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(83)]
         public void DrawImage(ID2D1Image* image, [NativeTypeName("const D2D1_POINT_2F *")] D2D_POINT_2F* targetOffset = null, [NativeTypeName("const D2D1_RECT_F *")] D2D_RECT_F* imageRectangle = null, D2D1_INTERPOLATION_MODE interpolationMode = D2D1_INTERPOLATION_MODE_LINEAR, D2D1_COMPOSITE_MODE compositeMode = D2D1_COMPOSITE_MODE_SOURCE_OVER)
         {
             ((delegate* unmanaged<ID2D1DeviceContext3*, ID2D1Image*, D2D_POINT_2F*, D2D_RECT_F*, D2D1_INTERPOLATION_MODE, D2D1_COMPOSITE_MODE, void>)(lpVtbl[83]))((ID2D1DeviceContext3*)Unsafe.AsPointer(ref this), image, targetOffset, imageRectangle, interpolationMode, compositeMode);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(84)]
         public void DrawGdiMetafile(ID2D1GdiMetafile* gdiMetafile, [NativeTypeName("const D2D1_POINT_2F *")] D2D_POINT_2F* targetOffset = null)
         {
             ((delegate* unmanaged<ID2D1DeviceContext3*, ID2D1GdiMetafile*, D2D_POINT_2F*, void>)(lpVtbl[84]))((ID2D1DeviceContext3*)Unsafe.AsPointer(ref this), gdiMetafile, targetOffset);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(85)]
         public void DrawBitmap(ID2D1Bitmap* bitmap, [NativeTypeName("const D2D1_RECT_F *")] D2D_RECT_F* destinationRectangle, [NativeTypeName("FLOAT")] float opacity, D2D1_INTERPOLATION_MODE interpolationMode, [NativeTypeName("const D2D1_RECT_F *")] D2D_RECT_F* sourceRectangle = null, [NativeTypeName("const D2D1_MATRIX_4X4_F *")] D2D_MATRIX_4X4_F* perspectiveTransform = null)
         {
             ((delegate* unmanaged<ID2D1DeviceContext3*, ID2D1Bitmap*, D2D_RECT_F*, float, D2D1_INTERPOLATION_MODE, D2D_RECT_F*, D2D_MATRIX_4X4_F*, void>)(lpVtbl[85]))((ID2D1DeviceContext3*)Unsafe.AsPointer(ref this), bitmap, destinationRectangle, opacity, interpolationMode, sourceRectangle, perspectiveTransform);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(86)]
         public void PushLayer([NativeTypeName("const D2D1_LAYER_PARAMETERS1 *")] D2D1_LAYER_PARAMETERS1* layerParameters, ID2D1Layer* layer)
         {
             ((delegate* unmanaged<ID2D1DeviceContext3*, D2D1_LAYER_PARAMETERS1*, ID2D1Layer*, void>)(lpVtbl[86]))((ID2D1DeviceContext3*)Unsafe.AsPointer(ref this), layerParameters, layer);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(87)]
         [return: NativeTypeName("HRESULT")]
         public int InvalidateEffectInputRectangle(ID2D1Effect* effect, [NativeTypeName("UINT32")] uint input, [NativeTypeName("const D2D1_RECT_F *")] D2D_RECT_F* inputRectangle)
         {
@@ -770,6 +859,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(88)]
         [return: NativeTypeName("HRESULT")]
         public int GetEffectInvalidRectangleCount(ID2D1Effect* effect, [NativeTypeName("UINT32 *")] uint* rectangleCount)
         {
@@ -777,6 +867,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(89)]
         [return: NativeTypeName("HRESULT")]
         public int GetEffectInvalidRectangles(ID2D1Effect* effect, [NativeTypeName("D2D1_RECT_F *")] D2D_RECT_F* rectangles, [NativeTypeName("UINT32")] uint rectanglesCount)
         {
@@ -784,6 +875,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(90)]
         [return: NativeTypeName("HRESULT")]
         public int GetEffectRequiredInputRectangles(ID2D1Effect* renderEffect, [NativeTypeName("const D2D1_RECT_F *")] D2D_RECT_F* renderImageRectangle, [NativeTypeName("const D2D1_EFFECT_INPUT_DESCRIPTION *")] D2D1_EFFECT_INPUT_DESCRIPTION* inputDescriptions, [NativeTypeName("D2D1_RECT_F *")] D2D_RECT_F* requiredInputRects, [NativeTypeName("UINT32")] uint inputCount)
         {
@@ -791,12 +883,14 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(91)]
         public void FillOpacityMask(ID2D1Bitmap* opacityMask, ID2D1Brush* brush, [NativeTypeName("const D2D1_RECT_F *")] D2D_RECT_F* destinationRectangle = null, [NativeTypeName("const D2D1_RECT_F *")] D2D_RECT_F* sourceRectangle = null)
         {
             ((delegate* unmanaged<ID2D1DeviceContext3*, ID2D1Bitmap*, ID2D1Brush*, D2D_RECT_F*, D2D_RECT_F*, void>)(lpVtbl[91]))((ID2D1DeviceContext3*)Unsafe.AsPointer(ref this), opacityMask, brush, destinationRectangle, sourceRectangle);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(92)]
         [return: NativeTypeName("HRESULT")]
         public int CreateFilledGeometryRealization(ID2D1Geometry* geometry, [NativeTypeName("FLOAT")] float flatteningTolerance, ID2D1GeometryRealization** geometryRealization)
         {
@@ -804,6 +898,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(93)]
         [return: NativeTypeName("HRESULT")]
         public int CreateStrokedGeometryRealization(ID2D1Geometry* geometry, [NativeTypeName("FLOAT")] float flatteningTolerance, [NativeTypeName("FLOAT")] float strokeWidth, ID2D1StrokeStyle* strokeStyle, ID2D1GeometryRealization** geometryRealization)
         {
@@ -811,12 +906,14 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(94)]
         public void DrawGeometryRealization(ID2D1GeometryRealization* geometryRealization, ID2D1Brush* brush)
         {
             ((delegate* unmanaged<ID2D1DeviceContext3*, ID2D1GeometryRealization*, ID2D1Brush*, void>)(lpVtbl[94]))((ID2D1DeviceContext3*)Unsafe.AsPointer(ref this), geometryRealization, brush);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(95)]
         [return: NativeTypeName("HRESULT")]
         public int CreateInk([NativeTypeName("const D2D1_INK_POINT *")] D2D1_INK_POINT* startPoint, ID2D1Ink** ink)
         {
@@ -824,6 +921,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(96)]
         [return: NativeTypeName("HRESULT")]
         public int CreateInkStyle([NativeTypeName("const D2D1_INK_STYLE_PROPERTIES *")] D2D1_INK_STYLE_PROPERTIES* inkStyleProperties, ID2D1InkStyle** inkStyle)
         {
@@ -831,6 +929,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(97)]
         [return: NativeTypeName("HRESULT")]
         public int CreateGradientMesh([NativeTypeName("const D2D1_GRADIENT_MESH_PATCH *")] D2D1_GRADIENT_MESH_PATCH* patches, [NativeTypeName("UINT32")] uint patchesCount, ID2D1GradientMesh** gradientMesh)
         {
@@ -838,6 +937,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(98)]
         [return: NativeTypeName("HRESULT")]
         public int CreateImageSourceFromWic(IWICBitmapSource* wicBitmapSource, D2D1_IMAGE_SOURCE_LOADING_OPTIONS loadingOptions, D2D1_ALPHA_MODE alphaMode, ID2D1ImageSourceFromWic** imageSource)
         {
@@ -845,6 +945,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(99)]
         [return: NativeTypeName("HRESULT")]
         public int CreateLookupTable3D(D2D1_BUFFER_PRECISION precision, [NativeTypeName("const UINT32 *")] uint* extents, [NativeTypeName("const BYTE *")] byte* data, [NativeTypeName("UINT32")] uint dataCount, [NativeTypeName("const UINT32 *")] uint* strides, ID2D1LookupTable3D** lookupTable)
         {
@@ -852,6 +953,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(100)]
         [return: NativeTypeName("HRESULT")]
         public int CreateImageSourceFromDxgi(IDXGISurface** surfaces, [NativeTypeName("UINT32")] uint surfaceCount, DXGI_COLOR_SPACE_TYPE colorSpace, D2D1_IMAGE_SOURCE_FROM_DXGI_OPTIONS options, ID2D1ImageSource** imageSource)
         {
@@ -859,6 +961,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(101)]
         [return: NativeTypeName("HRESULT")]
         public int GetGradientMeshWorldBounds(ID2D1GradientMesh* gradientMesh, [NativeTypeName("D2D1_RECT_F *")] D2D_RECT_F* pBounds)
         {
@@ -866,24 +969,28 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(102)]
         public void DrawInk(ID2D1Ink* ink, ID2D1Brush* brush, ID2D1InkStyle* inkStyle)
         {
             ((delegate* unmanaged<ID2D1DeviceContext3*, ID2D1Ink*, ID2D1Brush*, ID2D1InkStyle*, void>)(lpVtbl[102]))((ID2D1DeviceContext3*)Unsafe.AsPointer(ref this), ink, brush, inkStyle);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(103)]
         public void DrawGradientMesh(ID2D1GradientMesh* gradientMesh)
         {
             ((delegate* unmanaged<ID2D1DeviceContext3*, ID2D1GradientMesh*, void>)(lpVtbl[103]))((ID2D1DeviceContext3*)Unsafe.AsPointer(ref this), gradientMesh);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(104)]
         public void DrawGdiMetafile(ID2D1GdiMetafile* gdiMetafile, [NativeTypeName("const D2D1_RECT_F *")] D2D_RECT_F* destinationRectangle, [NativeTypeName("const D2D1_RECT_F *")] D2D_RECT_F* sourceRectangle = null)
         {
             ((delegate* unmanaged<ID2D1DeviceContext3*, ID2D1GdiMetafile*, D2D_RECT_F*, D2D_RECT_F*, void>)(lpVtbl[104]))((ID2D1DeviceContext3*)Unsafe.AsPointer(ref this), gdiMetafile, destinationRectangle, sourceRectangle);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(105)]
         [return: NativeTypeName("HRESULT")]
         public int CreateTransformedImageSource(ID2D1ImageSource* imageSource, [NativeTypeName("const D2D1_TRANSFORMED_IMAGE_SOURCE_PROPERTIES *")] D2D1_TRANSFORMED_IMAGE_SOURCE_PROPERTIES* properties, ID2D1TransformedImageSource** transformedImageSource)
         {
@@ -891,6 +998,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(106)]
         [return: NativeTypeName("HRESULT")]
         public int CreateSpriteBatch(ID2D1SpriteBatch** spriteBatch)
         {
@@ -898,6 +1006,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(107)]
         public void DrawSpriteBatch(ID2D1SpriteBatch* spriteBatch, [NativeTypeName("UINT32")] uint startIndex, [NativeTypeName("UINT32")] uint spriteCount, ID2D1Bitmap* bitmap, D2D1_BITMAP_INTERPOLATION_MODE interpolationMode = D2D1_BITMAP_INTERPOLATION_MODE_LINEAR, D2D1_SPRITE_OPTIONS spriteOptions = D2D1_SPRITE_OPTIONS_NONE)
         {
             ((delegate* unmanaged<ID2D1DeviceContext3*, ID2D1SpriteBatch*, uint, uint, ID2D1Bitmap*, D2D1_BITMAP_INTERPOLATION_MODE, D2D1_SPRITE_OPTIONS, void>)(lpVtbl[107]))((ID2D1DeviceContext3*)Unsafe.AsPointer(ref this), spriteBatch, startIndex, spriteCount, bitmap, interpolationMode, spriteOptions);

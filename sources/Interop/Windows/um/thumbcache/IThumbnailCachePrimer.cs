@@ -11,11 +11,13 @@ namespace TerraFX.Interop
 {
     [Guid("0F03F8FE-2B26-46F0-965A-212AA8D66B76")]
     [NativeTypeName("struct IThumbnailCachePrimer : IUnknown")]
+    [NativeInheritance("IUnknown")]
     public unsafe partial struct IThumbnailCachePrimer
     {
         public void** lpVtbl;
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(0)]
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
@@ -23,6 +25,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(1)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
@@ -30,6 +33,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(2)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
@@ -37,6 +41,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(3)]
         [return: NativeTypeName("HRESULT")]
         public int PageInThumbnail(IShellItem* psi, WTS_FLAGS wtsFlags, [NativeTypeName("UINT")] uint cxyRequestedThumbSize)
         {

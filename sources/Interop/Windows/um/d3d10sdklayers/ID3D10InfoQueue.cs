@@ -11,11 +11,13 @@ namespace TerraFX.Interop
 {
     [Guid("1B940B17-2642-4D1F-AB1F-B99BAD0C395F")]
     [NativeTypeName("struct ID3D10InfoQueue : IUnknown")]
+    [NativeInheritance("IUnknown")]
     public unsafe partial struct ID3D10InfoQueue
     {
         public void** lpVtbl;
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(0)]
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
@@ -23,6 +25,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(1)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
@@ -30,6 +33,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(2)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
@@ -37,6 +41,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(3)]
         [return: NativeTypeName("HRESULT")]
         public int SetMessageCountLimit([NativeTypeName("UINT64")] ulong MessageCountLimit)
         {
@@ -44,12 +49,14 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(4)]
         public void ClearStoredMessages()
         {
             ((delegate* unmanaged<ID3D10InfoQueue*, void>)(lpVtbl[4]))((ID3D10InfoQueue*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(5)]
         [return: NativeTypeName("HRESULT")]
         public int GetMessageW([NativeTypeName("UINT64")] ulong MessageIndex, D3D10_MESSAGE* pMessage, [NativeTypeName("SIZE_T *")] nuint* pMessageByteLength)
         {
@@ -57,6 +64,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(6)]
         [return: NativeTypeName("UINT64")]
         public ulong GetNumMessagesAllowedByStorageFilter()
         {
@@ -64,6 +72,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(7)]
         [return: NativeTypeName("UINT64")]
         public ulong GetNumMessagesDeniedByStorageFilter()
         {
@@ -71,6 +80,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(8)]
         [return: NativeTypeName("UINT64")]
         public ulong GetNumStoredMessages()
         {
@@ -78,6 +88,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(9)]
         [return: NativeTypeName("UINT64")]
         public ulong GetNumStoredMessagesAllowedByRetrievalFilter()
         {
@@ -85,6 +96,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(10)]
         [return: NativeTypeName("UINT64")]
         public ulong GetNumMessagesDiscardedByMessageCountLimit()
         {
@@ -92,6 +104,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(11)]
         [return: NativeTypeName("UINT64")]
         public ulong GetMessageCountLimit()
         {
@@ -99,6 +112,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(12)]
         [return: NativeTypeName("HRESULT")]
         public int AddStorageFilterEntries(D3D10_INFO_QUEUE_FILTER* pFilter)
         {
@@ -106,6 +120,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(13)]
         [return: NativeTypeName("HRESULT")]
         public int GetStorageFilter(D3D10_INFO_QUEUE_FILTER* pFilter, [NativeTypeName("SIZE_T *")] nuint* pFilterByteLength)
         {
@@ -113,12 +128,14 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(14)]
         public void ClearStorageFilter()
         {
             ((delegate* unmanaged<ID3D10InfoQueue*, void>)(lpVtbl[14]))((ID3D10InfoQueue*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(15)]
         [return: NativeTypeName("HRESULT")]
         public int PushEmptyStorageFilter()
         {
@@ -126,6 +143,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(16)]
         [return: NativeTypeName("HRESULT")]
         public int PushCopyOfStorageFilter()
         {
@@ -133,6 +151,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(17)]
         [return: NativeTypeName("HRESULT")]
         public int PushStorageFilter(D3D10_INFO_QUEUE_FILTER* pFilter)
         {
@@ -140,12 +159,14 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(18)]
         public void PopStorageFilter()
         {
             ((delegate* unmanaged<ID3D10InfoQueue*, void>)(lpVtbl[18]))((ID3D10InfoQueue*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(19)]
         [return: NativeTypeName("UINT")]
         public uint GetStorageFilterStackSize()
         {
@@ -153,6 +174,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(20)]
         [return: NativeTypeName("HRESULT")]
         public int AddRetrievalFilterEntries(D3D10_INFO_QUEUE_FILTER* pFilter)
         {
@@ -160,6 +182,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(21)]
         [return: NativeTypeName("HRESULT")]
         public int GetRetrievalFilter(D3D10_INFO_QUEUE_FILTER* pFilter, [NativeTypeName("SIZE_T *")] nuint* pFilterByteLength)
         {
@@ -167,12 +190,14 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(22)]
         public void ClearRetrievalFilter()
         {
             ((delegate* unmanaged<ID3D10InfoQueue*, void>)(lpVtbl[22]))((ID3D10InfoQueue*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(23)]
         [return: NativeTypeName("HRESULT")]
         public int PushEmptyRetrievalFilter()
         {
@@ -180,6 +205,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(24)]
         [return: NativeTypeName("HRESULT")]
         public int PushCopyOfRetrievalFilter()
         {
@@ -187,6 +213,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(25)]
         [return: NativeTypeName("HRESULT")]
         public int PushRetrievalFilter(D3D10_INFO_QUEUE_FILTER* pFilter)
         {
@@ -194,12 +221,14 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(26)]
         public void PopRetrievalFilter()
         {
             ((delegate* unmanaged<ID3D10InfoQueue*, void>)(lpVtbl[26]))((ID3D10InfoQueue*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(27)]
         [return: NativeTypeName("UINT")]
         public uint GetRetrievalFilterStackSize()
         {
@@ -207,6 +236,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(28)]
         [return: NativeTypeName("HRESULT")]
         public int AddMessage(D3D10_MESSAGE_CATEGORY Category, D3D10_MESSAGE_SEVERITY Severity, D3D10_MESSAGE_ID ID, [NativeTypeName("LPCSTR")] sbyte* pDescription)
         {
@@ -214,6 +244,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(29)]
         [return: NativeTypeName("HRESULT")]
         public int AddApplicationMessage(D3D10_MESSAGE_SEVERITY Severity, [NativeTypeName("LPCSTR")] sbyte* pDescription)
         {
@@ -221,6 +252,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(30)]
         [return: NativeTypeName("HRESULT")]
         public int SetBreakOnCategory(D3D10_MESSAGE_CATEGORY Category, [NativeTypeName("BOOL")] int bEnable)
         {
@@ -228,6 +260,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(31)]
         [return: NativeTypeName("HRESULT")]
         public int SetBreakOnSeverity(D3D10_MESSAGE_SEVERITY Severity, [NativeTypeName("BOOL")] int bEnable)
         {
@@ -235,6 +268,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(32)]
         [return: NativeTypeName("HRESULT")]
         public int SetBreakOnID(D3D10_MESSAGE_ID ID, [NativeTypeName("BOOL")] int bEnable)
         {
@@ -242,6 +276,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(33)]
         [return: NativeTypeName("BOOL")]
         public int GetBreakOnCategory(D3D10_MESSAGE_CATEGORY Category)
         {
@@ -249,6 +284,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(34)]
         [return: NativeTypeName("BOOL")]
         public int GetBreakOnSeverity(D3D10_MESSAGE_SEVERITY Severity)
         {
@@ -256,6 +292,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(35)]
         [return: NativeTypeName("BOOL")]
         public int GetBreakOnID(D3D10_MESSAGE_ID ID)
         {
@@ -263,12 +300,14 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(36)]
         public void SetMuteDebugOutput([NativeTypeName("BOOL")] int bMute)
         {
             ((delegate* unmanaged<ID3D10InfoQueue*, int, void>)(lpVtbl[36]))((ID3D10InfoQueue*)Unsafe.AsPointer(ref this), bMute);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(37)]
         [return: NativeTypeName("BOOL")]
         public int GetMuteDebugOutput()
         {

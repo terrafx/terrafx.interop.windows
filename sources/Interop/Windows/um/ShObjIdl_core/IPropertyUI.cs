@@ -11,11 +11,13 @@ namespace TerraFX.Interop
 {
     [Guid("757A7D9F-919A-4118-99D7-DBB208C8CC66")]
     [NativeTypeName("struct IPropertyUI : IUnknown")]
+    [NativeInheritance("IUnknown")]
     public unsafe partial struct IPropertyUI
     {
         public void** lpVtbl;
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(0)]
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
@@ -23,6 +25,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(1)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
@@ -30,6 +33,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(2)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
@@ -37,6 +41,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(3)]
         [return: NativeTypeName("HRESULT")]
         public int ParsePropertyName([NativeTypeName("LPCWSTR")] ushort* pszName, [NativeTypeName("FMTID *")] Guid* pfmtid, [NativeTypeName("PROPID *")] uint* ppid, [NativeTypeName("ULONG *")] uint* pchEaten)
         {
@@ -44,6 +49,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(4)]
         [return: NativeTypeName("HRESULT")]
         public int GetCannonicalName([NativeTypeName("const IID &")] Guid* fmtid, [NativeTypeName("PROPID")] uint pid, [NativeTypeName("LPWSTR")] ushort* pwszText, [NativeTypeName("DWORD")] uint cchText)
         {
@@ -51,6 +57,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(5)]
         [return: NativeTypeName("HRESULT")]
         public int GetDisplayName([NativeTypeName("const IID &")] Guid* fmtid, [NativeTypeName("PROPID")] uint pid, [NativeTypeName("PROPERTYUI_NAME_FLAGS")] uint flags, [NativeTypeName("LPWSTR")] ushort* pwszText, [NativeTypeName("DWORD")] uint cchText)
         {
@@ -58,6 +65,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(6)]
         [return: NativeTypeName("HRESULT")]
         public int GetPropertyDescription([NativeTypeName("const IID &")] Guid* fmtid, [NativeTypeName("PROPID")] uint pid, [NativeTypeName("LPWSTR")] ushort* pwszText, [NativeTypeName("DWORD")] uint cchText)
         {
@@ -65,6 +73,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(7)]
         [return: NativeTypeName("HRESULT")]
         public int GetDefaultWidth([NativeTypeName("const IID &")] Guid* fmtid, [NativeTypeName("PROPID")] uint pid, [NativeTypeName("ULONG *")] uint* pcxChars)
         {
@@ -72,6 +81,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(8)]
         [return: NativeTypeName("HRESULT")]
         public int GetFlags([NativeTypeName("const IID &")] Guid* fmtid, [NativeTypeName("PROPID")] uint pid, [NativeTypeName("PROPERTYUI_FLAGS *")] uint* pflags)
         {
@@ -79,6 +89,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(9)]
         [return: NativeTypeName("HRESULT")]
         public int FormatForDisplay([NativeTypeName("const IID &")] Guid* fmtid, [NativeTypeName("PROPID")] uint pid, [NativeTypeName("const PROPVARIANT *")] PROPVARIANT* ppropvar, [NativeTypeName("PROPERTYUI_FORMAT_FLAGS")] uint puiff, [NativeTypeName("LPWSTR")] ushort* pwszText, [NativeTypeName("DWORD")] uint cchText)
         {
@@ -86,6 +97,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(10)]
         [return: NativeTypeName("HRESULT")]
         public int GetHelpInfo([NativeTypeName("const IID &")] Guid* fmtid, [NativeTypeName("PROPID")] uint pid, [NativeTypeName("LPWSTR")] ushort* pwszHelpFile, [NativeTypeName("DWORD")] uint cch, [NativeTypeName("UINT *")] uint* puHelpID)
         {

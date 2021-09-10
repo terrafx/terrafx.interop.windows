@@ -11,11 +11,13 @@ namespace TerraFX.Interop
 {
     [Guid("766C8FFB-5FDB-4FEA-A28D-B912996F51BD")]
     [NativeTypeName("struct IMFPMediaPlayerCallback : IUnknown")]
+    [NativeInheritance("IUnknown")]
     public unsafe partial struct IMFPMediaPlayerCallback
     {
         public void** lpVtbl;
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(0)]
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
@@ -23,6 +25,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(1)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
@@ -30,6 +33,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(2)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
@@ -37,6 +41,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(3)]
         public void OnMediaPlayerEvent(MFP_EVENT_HEADER* pEventHeader)
         {
             ((delegate* unmanaged<IMFPMediaPlayerCallback*, MFP_EVENT_HEADER*, void>)(lpVtbl[3]))((IMFPMediaPlayerCallback*)Unsafe.AsPointer(ref this), pEventHeader);

@@ -11,11 +11,13 @@ namespace TerraFX.Interop
 {
     [Guid("014B816E-9EC5-4A2F-A845-FFBE441CE13A")]
     [NativeTypeName("struct ID3D12Debug4 : ID3D12Debug3")]
+    [NativeInheritance("ID3D12Debug3")]
     public unsafe partial struct ID3D12Debug4
     {
         public void** lpVtbl;
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(0)]
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
@@ -23,6 +25,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(1)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
@@ -30,6 +33,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(2)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
@@ -37,30 +41,35 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(3)]
         public void EnableDebugLayer()
         {
             ((delegate* unmanaged<ID3D12Debug4*, void>)(lpVtbl[3]))((ID3D12Debug4*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(4)]
         public void SetEnableGPUBasedValidation([NativeTypeName("BOOL")] int Enable)
         {
             ((delegate* unmanaged<ID3D12Debug4*, int, void>)(lpVtbl[4]))((ID3D12Debug4*)Unsafe.AsPointer(ref this), Enable);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(5)]
         public void SetEnableSynchronizedCommandQueueValidation([NativeTypeName("BOOL")] int Enable)
         {
             ((delegate* unmanaged<ID3D12Debug4*, int, void>)(lpVtbl[5]))((ID3D12Debug4*)Unsafe.AsPointer(ref this), Enable);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(6)]
         public void SetGPUBasedValidationFlags(D3D12_GPU_BASED_VALIDATION_FLAGS Flags)
         {
             ((delegate* unmanaged<ID3D12Debug4*, D3D12_GPU_BASED_VALIDATION_FLAGS, void>)(lpVtbl[6]))((ID3D12Debug4*)Unsafe.AsPointer(ref this), Flags);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(7)]
         public void DisableDebugLayer()
         {
             ((delegate* unmanaged<ID3D12Debug4*, void>)(lpVtbl[7]))((ID3D12Debug4*)Unsafe.AsPointer(ref this));

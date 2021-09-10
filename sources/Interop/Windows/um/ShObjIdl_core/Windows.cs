@@ -144,49 +144,53 @@ namespace TerraFX.Interop
         [return: NativeTypeName("HRESULT")]
         public static int SHLoadLibraryFromItem(IShellItem* psiLibrary, [NativeTypeName("DWORD")] uint grfMode, [NativeTypeName("const IID &")] Guid* riid, void** ppv)
         {
+            *ppv = null;
+            IShellLibrary* plib;
+            int hr;
+
             fixed (Guid* rclsid = &CLSID_ShellLibrary)
             {
-                *ppv = null;
-                IShellLibrary* plib;
-                int hr = CoCreateInstance(rclsid, null, (uint)(CLSCTX_INPROC_SERVER), __uuidof<IShellItem>(), (void**)(&plib));
+                hr = CoCreateInstance(rclsid, null, (uint)(CLSCTX_INPROC_SERVER), __uuidof<IShellLibrary>(), (void**)(&plib));
+            }
 
+            if ((((int)(hr)) >= 0))
+            {
+                hr = plib->LoadLibraryFromItem(psiLibrary, grfMode);
                 if ((((int)(hr)) >= 0))
                 {
-                    hr = plib->LoadLibraryFromItem(psiLibrary, grfMode);
-                    if ((((int)(hr)) >= 0))
-                    {
-                        hr = plib->QueryInterface(riid, ppv);
-                    }
-
-                    plib->Release();
+                    hr = plib->QueryInterface(riid, ppv);
                 }
 
-                return hr;
+                plib->Release();
             }
+
+            return hr;
         }
 
         [return: NativeTypeName("HRESULT")]
         public static int SHLoadLibraryFromKnownFolder([NativeTypeName("const KNOWNFOLDERID &")] Guid* kfidLibrary, [NativeTypeName("DWORD")] uint grfMode, [NativeTypeName("const IID &")] Guid* riid, void** ppv)
         {
+            *ppv = null;
+            IShellLibrary* plib;
+            int hr;
+
             fixed (Guid* rclsid = &CLSID_ShellLibrary)
             {
-                *ppv = null;
-                IShellLibrary* plib;
-                int hr = CoCreateInstance(rclsid, null, (uint)(CLSCTX_INPROC_SERVER), __uuidof<IShellItem>(), (void**)(&plib));
+                hr = CoCreateInstance(rclsid, null, (uint)(CLSCTX_INPROC_SERVER), __uuidof<IShellLibrary>(), (void**)(&plib));
+            }
 
+            if ((((int)(hr)) >= 0))
+            {
+                hr = plib->LoadLibraryFromKnownFolder(kfidLibrary, grfMode);
                 if ((((int)(hr)) >= 0))
                 {
-                    hr = plib->LoadLibraryFromKnownFolder(kfidLibrary, grfMode);
-                    if ((((int)(hr)) >= 0))
-                    {
-                        hr = plib->QueryInterface(riid, ppv);
-                    }
-
-                    plib->Release();
+                    hr = plib->QueryInterface(riid, ppv);
                 }
 
-                return hr;
+                plib->Release();
             }
+
+            return hr;
         }
 
         [return: NativeTypeName("HRESULT")]
@@ -287,14 +291,13 @@ namespace TerraFX.Interop
         {
             fixed (char* lpString = "ContractDelegate")
             {
-                if (hwndDelegate != IntPtr.Zero)
+                if (hwndDelegate != (nint)0)
                 {
-                    SetPropW(hwndSource, (ushort*)lpString, (IntPtr)(hwndDelegate));
+                    SetPropW(hwndSource, (ushort*)(lpString), (nint)(hwndDelegate));
                 }
                 else
                 {
-
-                    RemovePropW(hwndSource, (ushort*)lpString);
+                    RemovePropW(hwndSource, (ushort*)(lpString));
                 }
             }
         }

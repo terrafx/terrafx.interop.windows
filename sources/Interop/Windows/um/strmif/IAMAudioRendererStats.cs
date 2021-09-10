@@ -11,11 +11,13 @@ namespace TerraFX.Interop
 {
     [Guid("22320CB2-D41A-11D2-BF7C-D7CB9DF0BF93")]
     [NativeTypeName("struct IAMAudioRendererStats : IUnknown")]
+    [NativeInheritance("IUnknown")]
     public unsafe partial struct IAMAudioRendererStats
     {
         public void** lpVtbl;
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(0)]
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
@@ -23,6 +25,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(1)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
@@ -30,6 +33,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(2)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
@@ -37,6 +41,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(3)]
         [return: NativeTypeName("HRESULT")]
         public int GetStatParam([NativeTypeName("DWORD")] uint dwParam, [NativeTypeName("DWORD *")] uint* pdwParam1, [NativeTypeName("DWORD *")] uint* pdwParam2)
         {

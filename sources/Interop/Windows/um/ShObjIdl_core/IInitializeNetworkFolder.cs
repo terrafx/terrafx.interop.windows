@@ -11,11 +11,13 @@ namespace TerraFX.Interop
 {
     [Guid("6E0F9881-42A8-4F2A-97F8-8AF4E026D92D")]
     [NativeTypeName("struct IInitializeNetworkFolder : IUnknown")]
+    [NativeInheritance("IUnknown")]
     public unsafe partial struct IInitializeNetworkFolder
     {
         public void** lpVtbl;
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(0)]
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
@@ -23,6 +25,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(1)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
@@ -30,6 +33,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(2)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
@@ -37,6 +41,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(3)]
         [return: NativeTypeName("HRESULT")]
         public int Initialize([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl, [NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidlTarget, [NativeTypeName("UINT")] uint uDisplayType, [NativeTypeName("LPCWSTR")] ushort* pszResName, [NativeTypeName("LPCWSTR")] ushort* pszProvider)
         {

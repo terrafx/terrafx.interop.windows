@@ -11,11 +11,13 @@ namespace TerraFX.Interop
 {
     [Guid("2CD906AC-12E2-11DC-9FED-001143A055F9")]
     [NativeTypeName("struct ID2D1RadialGradientBrush : ID2D1Brush")]
+    [NativeInheritance("ID2D1Brush")]
     public unsafe partial struct ID2D1RadialGradientBrush
     {
         public void** lpVtbl;
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(0)]
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
@@ -23,6 +25,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(1)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
@@ -30,6 +33,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(2)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
@@ -37,24 +41,28 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(3)]
         public void GetFactory(ID2D1Factory** factory)
         {
             ((delegate* unmanaged<ID2D1RadialGradientBrush*, ID2D1Factory**, void>)(lpVtbl[3]))((ID2D1RadialGradientBrush*)Unsafe.AsPointer(ref this), factory);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(4)]
         public void SetOpacity([NativeTypeName("FLOAT")] float opacity)
         {
             ((delegate* unmanaged<ID2D1RadialGradientBrush*, float, void>)(lpVtbl[4]))((ID2D1RadialGradientBrush*)Unsafe.AsPointer(ref this), opacity);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(5)]
         public void SetTransform([NativeTypeName("const D2D1_MATRIX_3X2_F *")] D2D_MATRIX_3X2_F* transform)
         {
             ((delegate* unmanaged<ID2D1RadialGradientBrush*, D2D_MATRIX_3X2_F*, void>)(lpVtbl[5]))((ID2D1RadialGradientBrush*)Unsafe.AsPointer(ref this), transform);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(6)]
         [return: NativeTypeName("FLOAT")]
         public float GetOpacity()
         {
@@ -62,36 +70,42 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(7)]
         public void GetTransform([NativeTypeName("D2D1_MATRIX_3X2_F *")] D2D_MATRIX_3X2_F* transform)
         {
             ((delegate* unmanaged<ID2D1RadialGradientBrush*, D2D_MATRIX_3X2_F*, void>)(lpVtbl[7]))((ID2D1RadialGradientBrush*)Unsafe.AsPointer(ref this), transform);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(8)]
         public void SetCenter([NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F center)
         {
             ((delegate* unmanaged<ID2D1RadialGradientBrush*, D2D_POINT_2F, void>)(lpVtbl[8]))((ID2D1RadialGradientBrush*)Unsafe.AsPointer(ref this), center);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(9)]
         public void SetGradientOriginOffset([NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F gradientOriginOffset)
         {
             ((delegate* unmanaged<ID2D1RadialGradientBrush*, D2D_POINT_2F, void>)(lpVtbl[9]))((ID2D1RadialGradientBrush*)Unsafe.AsPointer(ref this), gradientOriginOffset);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(10)]
         public void SetRadiusX([NativeTypeName("FLOAT")] float radiusX)
         {
             ((delegate* unmanaged<ID2D1RadialGradientBrush*, float, void>)(lpVtbl[10]))((ID2D1RadialGradientBrush*)Unsafe.AsPointer(ref this), radiusX);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(11)]
         public void SetRadiusY([NativeTypeName("FLOAT")] float radiusY)
         {
             ((delegate* unmanaged<ID2D1RadialGradientBrush*, float, void>)(lpVtbl[11]))((ID2D1RadialGradientBrush*)Unsafe.AsPointer(ref this), radiusY);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(12)]
         [return: NativeTypeName("D2D1_POINT_2F")]
         public D2D_POINT_2F GetCenter()
         {
@@ -100,6 +114,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(13)]
         [return: NativeTypeName("D2D1_POINT_2F")]
         public D2D_POINT_2F GetGradientOriginOffset()
         {
@@ -108,6 +123,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(14)]
         [return: NativeTypeName("FLOAT")]
         public float GetRadiusX()
         {
@@ -115,6 +131,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(15)]
         [return: NativeTypeName("FLOAT")]
         public float GetRadiusY()
         {
@@ -122,6 +139,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(16)]
         public void GetGradientStopCollection(ID2D1GradientStopCollection** gradientStopCollection)
         {
             ((delegate* unmanaged<ID2D1RadialGradientBrush*, ID2D1GradientStopCollection**, void>)(lpVtbl[16]))((ID2D1RadialGradientBrush*)Unsafe.AsPointer(ref this), gradientStopCollection);

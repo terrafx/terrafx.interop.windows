@@ -1499,7 +1499,7 @@ namespace TerraFX.Interop
         public const uint GDI_ERROR = (0xFFFFFFFF);
 
         [NativeTypeName("#define HGDI_ERROR (LongToHandle(0xFFFFFFFFL))")]
-        public static readonly IntPtr HGDI_ERROR = unchecked(((IntPtr)((nint)(0xFFFFFFFF))));
+        public static readonly IntPtr HGDI_ERROR = unchecked(((nint)((nint)(0xFFFFFFFF))));
 
         [NativeTypeName("#define ERROR 0")]
         public const int ERROR = 0;
@@ -5108,16 +5108,16 @@ namespace TerraFX.Interop
         public static readonly delegate*<IntPtr, ushort*, int, ushort*, uint, uint> GetGlyphIndices = &GetGlyphIndicesW;
 
         [NativeTypeName("#define STAMP_DESIGNVECTOR (0x8000000 + 'd' + ('v' << 8))")]
-        public const int STAMP_DESIGNVECTOR = (0x8000000 + (byte)('d') + ((byte)('v') << 8));
+        public const int STAMP_DESIGNVECTOR = (0x8000000 + (sbyte)('d') + ((sbyte)('v') << 8));
 
         [NativeTypeName("#define STAMP_AXESLIST (0x8000000 + 'a' + ('l' << 8))")]
-        public const int STAMP_AXESLIST = (0x8000000 + (byte)('a') + ((byte)('l') << 8));
+        public const int STAMP_AXESLIST = (0x8000000 + (sbyte)('a') + ((sbyte)('l') << 8));
 
         [NativeTypeName("#define STAMP_TRUETYPE_VARIATION (0x8000000 + 't' + ('v' << 8))")]
-        public const int STAMP_TRUETYPE_VARIATION = (0x8000000 + (byte)('t') + ((byte)('v') << 8));
+        public const int STAMP_TRUETYPE_VARIATION = (0x8000000 + (sbyte)('t') + ((sbyte)('v') << 8));
 
         [NativeTypeName("#define STAMP_CFF2 (0x8000000 + 'c' + ('v' << 8))")]
-        public const int STAMP_CFF2 = (0x8000000 + (byte)('c') + ((byte)('v') << 8));
+        public const int STAMP_CFF2 = (0x8000000 + (sbyte)('c') + ((sbyte)('v') << 8));
 
         [NativeTypeName("#define MM_MAX_NUMAXES 16")]
         public const int MM_MAX_NUMAXES = 16;

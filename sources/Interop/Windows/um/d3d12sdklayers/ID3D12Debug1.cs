@@ -11,11 +11,13 @@ namespace TerraFX.Interop
 {
     [Guid("AFFAA4CA-63FE-4D8E-B8AD-159000AF4304")]
     [NativeTypeName("struct ID3D12Debug1 : IUnknown")]
+    [NativeInheritance("IUnknown")]
     public unsafe partial struct ID3D12Debug1
     {
         public void** lpVtbl;
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(0)]
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
@@ -23,6 +25,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(1)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
@@ -30,6 +33,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(2)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
@@ -37,18 +41,21 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(3)]
         public void EnableDebugLayer()
         {
             ((delegate* unmanaged<ID3D12Debug1*, void>)(lpVtbl[3]))((ID3D12Debug1*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(4)]
         public void SetEnableGPUBasedValidation([NativeTypeName("BOOL")] int Enable)
         {
             ((delegate* unmanaged<ID3D12Debug1*, int, void>)(lpVtbl[4]))((ID3D12Debug1*)Unsafe.AsPointer(ref this), Enable);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(5)]
         public void SetEnableSynchronizedCommandQueueValidation([NativeTypeName("BOOL")] int Enable)
         {
             ((delegate* unmanaged<ID3D12Debug1*, int, void>)(lpVtbl[5]))((ID3D12Debug1*)Unsafe.AsPointer(ref this), Enable);

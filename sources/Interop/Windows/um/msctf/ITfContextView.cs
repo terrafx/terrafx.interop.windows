@@ -11,11 +11,13 @@ namespace TerraFX.Interop
 {
     [Guid("2433BF8E-0F9B-435C-BA2C-180611978C30")]
     [NativeTypeName("struct ITfContextView : IUnknown")]
+    [NativeInheritance("IUnknown")]
     public unsafe partial struct ITfContextView
     {
         public void** lpVtbl;
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(0)]
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
@@ -23,6 +25,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(1)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
@@ -30,6 +33,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(2)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
@@ -37,6 +41,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(3)]
         [return: NativeTypeName("HRESULT")]
         public int GetRangeFromPoint([NativeTypeName("TfEditCookie")] uint ec, [NativeTypeName("const POINT *")] POINT* ppt, [NativeTypeName("DWORD")] uint dwFlags, ITfRange** ppRange)
         {
@@ -44,6 +49,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(4)]
         [return: NativeTypeName("HRESULT")]
         public int GetTextExt([NativeTypeName("TfEditCookie")] uint ec, ITfRange* pRange, RECT* prc, [NativeTypeName("BOOL *")] int* pfClipped)
         {
@@ -51,6 +57,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(5)]
         [return: NativeTypeName("HRESULT")]
         public int GetScreenExt(RECT* prc)
         {
@@ -58,6 +65,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(6)]
         [return: NativeTypeName("HRESULT")]
         public int GetWnd([NativeTypeName("HWND *")] IntPtr* phwnd)
         {

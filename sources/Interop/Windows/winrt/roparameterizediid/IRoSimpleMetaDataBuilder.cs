@@ -13,6 +13,7 @@ namespace TerraFX.Interop
         public void** lpVtbl;
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(0)]
         [return: NativeTypeName("HRESULT")]
         public int SetWinRtInterface([NativeTypeName("GUID")] Guid iid)
         {
@@ -20,6 +21,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(1)]
         [return: NativeTypeName("HRESULT")]
         public int SetDelegate([NativeTypeName("GUID")] Guid iid)
         {
@@ -27,6 +29,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(2)]
         [return: NativeTypeName("HRESULT")]
         public int SetInterfaceGroupSimpleDefault([NativeTypeName("PCWSTR")] ushort* name, [NativeTypeName("PCWSTR")] ushort* defaultInterfaceName, [NativeTypeName("const GUID *")] Guid* defaultInterfaceIID)
         {
@@ -34,6 +37,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(3)]
         [return: NativeTypeName("HRESULT")]
         public int SetInterfaceGroupParameterizedDefault([NativeTypeName("PCWSTR")] ushort* name, [NativeTypeName("UINT32")] uint elementCount, [NativeTypeName("PCWSTR *")] ushort** defaultInterfaceNameElements)
         {
@@ -41,6 +45,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(4)]
         [return: NativeTypeName("HRESULT")]
         public int SetRuntimeClassSimpleDefault([NativeTypeName("PCWSTR")] ushort* name, [NativeTypeName("PCWSTR")] ushort* defaultInterfaceName, [NativeTypeName("const GUID *")] Guid* defaultInterfaceIID)
         {
@@ -48,6 +53,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(5)]
         [return: NativeTypeName("HRESULT")]
         public int SetRuntimeClassParameterizedDefault([NativeTypeName("PCWSTR")] ushort* name, [NativeTypeName("UINT32")] uint elementCount, [NativeTypeName("const PCWSTR *")] ushort** defaultInterfaceNameElements)
         {
@@ -55,6 +61,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(6)]
         [return: NativeTypeName("HRESULT")]
         public int SetStruct([NativeTypeName("PCWSTR")] ushort* name, [NativeTypeName("UINT32")] uint numFields, [NativeTypeName("const PCWSTR *")] ushort** fieldTypeNames)
         {
@@ -62,6 +69,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(7)]
         [return: NativeTypeName("HRESULT")]
         public int SetEnum([NativeTypeName("PCWSTR")] ushort* name, [NativeTypeName("PCWSTR")] ushort* baseType)
         {
@@ -69,6 +77,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(8)]
         [return: NativeTypeName("HRESULT")]
         public int SetParameterizedInterface([NativeTypeName("GUID")] Guid piid, [NativeTypeName("UINT32")] uint numArgs)
         {
@@ -76,6 +85,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(9)]
         [return: NativeTypeName("HRESULT")]
         public int SetParameterizedDelegate([NativeTypeName("GUID")] Guid piid, [NativeTypeName("UINT32")] uint numArgs)
         {

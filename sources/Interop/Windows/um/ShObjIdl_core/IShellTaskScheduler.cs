@@ -11,11 +11,13 @@ namespace TerraFX.Interop
 {
     [Guid("6CCB7BE0-6807-11D0-B810-00C04FD706EC")]
     [NativeTypeName("struct IShellTaskScheduler : IUnknown")]
+    [NativeInheritance("IUnknown")]
     public unsafe partial struct IShellTaskScheduler
     {
         public void** lpVtbl;
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(0)]
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
@@ -23,6 +25,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(1)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
@@ -30,6 +33,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(2)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
@@ -37,6 +41,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(3)]
         [return: NativeTypeName("HRESULT")]
         public int AddTask(IRunnableTask* prt, [NativeTypeName("const TASKOWNERID &")] Guid* rtoid, [NativeTypeName("DWORD_PTR")] nuint lParam, [NativeTypeName("DWORD")] uint dwPriority)
         {
@@ -44,6 +49,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(4)]
         [return: NativeTypeName("HRESULT")]
         public int RemoveTasks([NativeTypeName("const TASKOWNERID &")] Guid* rtoid, [NativeTypeName("DWORD_PTR")] nuint lParam, [NativeTypeName("BOOL")] int bWaitIfRunning)
         {
@@ -51,6 +57,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(5)]
         [return: NativeTypeName("UINT")]
         public uint CountTasks([NativeTypeName("const TASKOWNERID &")] Guid* rtoid)
         {
@@ -58,6 +65,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(6)]
         [return: NativeTypeName("HRESULT")]
         public int Status([NativeTypeName("DWORD")] uint dwReleaseStatus, [NativeTypeName("DWORD")] uint dwThreadTimeout)
         {

@@ -11,11 +11,13 @@ namespace TerraFX.Interop
 {
     [Guid("B91EBFEE-CA03-4AF4-8A82-A31752F4A0FC")]
     [NativeTypeName("struct IMFExtendedCameraController : IUnknown")]
+    [NativeInheritance("IUnknown")]
     public unsafe partial struct IMFExtendedCameraController
     {
         public void** lpVtbl;
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(0)]
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
@@ -23,6 +25,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(1)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
@@ -30,6 +33,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(2)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
@@ -37,6 +41,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(3)]
         [return: NativeTypeName("HRESULT")]
         public int GetExtendedCameraControl([NativeTypeName("DWORD")] uint dwStreamIndex, [NativeTypeName("ULONG")] uint ulPropertyId, IMFExtendedCameraControl** ppControl)
         {

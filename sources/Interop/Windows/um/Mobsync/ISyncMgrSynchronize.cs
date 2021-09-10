@@ -11,11 +11,13 @@ namespace TerraFX.Interop
 {
     [Guid("6295DF40-35EE-11D1-8707-00C04FD93327")]
     [NativeTypeName("struct ISyncMgrSynchronize : IUnknown")]
+    [NativeInheritance("IUnknown")]
     public unsafe partial struct ISyncMgrSynchronize
     {
         public void** lpVtbl;
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(0)]
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
@@ -23,6 +25,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(1)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
@@ -30,6 +33,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(2)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
@@ -37,6 +41,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(3)]
         [return: NativeTypeName("HRESULT")]
         public int Initialize([NativeTypeName("DWORD")] uint dwReserved, [NativeTypeName("DWORD")] uint dwSyncMgrFlags, [NativeTypeName("DWORD")] uint cbCookie, [NativeTypeName("const BYTE *")] byte* lpCookie)
         {
@@ -44,6 +49,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(4)]
         [return: NativeTypeName("HRESULT")]
         public int GetHandlerInfo(SYNCMGRHANDLERINFO** ppSyncMgrHandlerInfo)
         {
@@ -51,6 +57,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(5)]
         [return: NativeTypeName("HRESULT")]
         public int EnumSyncMgrItems(ISyncMgrEnumItems** ppSyncMgrEnumItems)
         {
@@ -58,6 +65,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(6)]
         [return: NativeTypeName("HRESULT")]
         public int GetItemObject([NativeTypeName("const GUID &")] Guid* ItemID, [NativeTypeName("const IID &")] Guid* riid, void** ppv)
         {
@@ -65,6 +73,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(7)]
         [return: NativeTypeName("HRESULT")]
         public int ShowProperties([NativeTypeName("HWND")] IntPtr hWndParent, [NativeTypeName("const GUID &")] Guid* ItemID)
         {
@@ -72,6 +81,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(8)]
         [return: NativeTypeName("HRESULT")]
         public int SetProgressCallback(ISyncMgrSynchronizeCallback* lpCallBack)
         {
@@ -79,6 +89,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(9)]
         [return: NativeTypeName("HRESULT")]
         public int PrepareForSync([NativeTypeName("ULONG")] uint cbNumItems, [NativeTypeName("GUID *")] Guid* pItemIDs, [NativeTypeName("HWND")] IntPtr hWndParent, [NativeTypeName("DWORD")] uint dwReserved)
         {
@@ -86,6 +97,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(10)]
         [return: NativeTypeName("HRESULT")]
         public int Synchronize([NativeTypeName("HWND")] IntPtr hWndParent)
         {
@@ -93,6 +105,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(11)]
         [return: NativeTypeName("HRESULT")]
         public int SetItemStatus([NativeTypeName("const GUID &")] Guid* pItemID, [NativeTypeName("DWORD")] uint dwSyncMgrStatus)
         {
@@ -100,6 +113,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(12)]
         [return: NativeTypeName("HRESULT")]
         public int ShowError([NativeTypeName("HWND")] IntPtr hWndParent, [NativeTypeName("const GUID &")] Guid* ErrorID)
         {

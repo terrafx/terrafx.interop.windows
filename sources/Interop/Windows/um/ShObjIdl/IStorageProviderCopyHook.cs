@@ -11,11 +11,13 @@ namespace TerraFX.Interop
 {
     [Guid("7BF992A9-AF7A-4DBA-B2E5-4D080B1ECBC6")]
     [NativeTypeName("struct IStorageProviderCopyHook : IUnknown")]
+    [NativeInheritance("IUnknown")]
     public unsafe partial struct IStorageProviderCopyHook
     {
         public void** lpVtbl;
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(0)]
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
@@ -23,6 +25,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(1)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
@@ -30,6 +33,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(2)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
@@ -37,6 +41,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(3)]
         [return: NativeTypeName("HRESULT")]
         public int CopyCallback([NativeTypeName("HWND")] IntPtr hwnd, [NativeTypeName("UINT")] uint operation, [NativeTypeName("UINT")] uint flags, [NativeTypeName("LPCWSTR")] ushort* srcFile, [NativeTypeName("DWORD")] uint srcAttribs, [NativeTypeName("LPCWSTR")] ushort* destFile, [NativeTypeName("DWORD")] uint destAttribs, [NativeTypeName("UINT *")] uint* result)
         {

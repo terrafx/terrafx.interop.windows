@@ -31,6 +31,6 @@ namespace TerraFX.Interop
         public static extern int SetHandleInformation([NativeTypeName("HANDLE")] IntPtr hObject, [NativeTypeName("DWORD")] uint dwMask, [NativeTypeName("DWORD")] uint dwFlags);
 
         [NativeTypeName("#define INVALID_HANDLE_VALUE ((HANDLE)(LONG_PTR)-1)")]
-        public static readonly IntPtr INVALID_HANDLE_VALUE = ((IntPtr)((nint)(-1)));
+        public static readonly IntPtr INVALID_HANDLE_VALUE = ((nint)((nint)(-1)));
     }
 }

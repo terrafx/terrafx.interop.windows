@@ -11,11 +11,13 @@ namespace TerraFX.Interop
 {
     [Guid("42D4D099-7C1A-4A89-B836-6C6F22160DF0")]
     [NativeTypeName("struct ITfEditRecord : IUnknown")]
+    [NativeInheritance("IUnknown")]
     public unsafe partial struct ITfEditRecord
     {
         public void** lpVtbl;
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(0)]
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
@@ -23,6 +25,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(1)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
@@ -30,6 +33,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(2)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
@@ -37,6 +41,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(3)]
         [return: NativeTypeName("HRESULT")]
         public int GetSelectionStatus([NativeTypeName("BOOL *")] int* pfChanged)
         {
@@ -44,6 +49,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(4)]
         [return: NativeTypeName("HRESULT")]
         public int GetTextAndPropertyUpdates([NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("const GUID **")] Guid** prgProperties, [NativeTypeName("ULONG")] uint cProperties, IEnumTfRanges** ppEnum)
         {

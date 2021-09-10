@@ -11,11 +11,13 @@ namespace TerraFX.Interop
 {
     [Guid("3FE6ADEA-7643-4F53-BD14-A0CE63F24042")]
     [NativeTypeName("struct ID2D1OffsetTransform : ID2D1TransformNode")]
+    [NativeInheritance("ID2D1TransformNode")]
     public unsafe partial struct ID2D1OffsetTransform
     {
         public void** lpVtbl;
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(0)]
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
@@ -23,6 +25,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(1)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
@@ -30,6 +33,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(2)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
@@ -37,6 +41,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(3)]
         [return: NativeTypeName("UINT32")]
         public uint GetInputCount()
         {
@@ -44,12 +49,14 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(4)]
         public void SetOffset([NativeTypeName("D2D1_POINT_2L")] POINT offset)
         {
             ((delegate* unmanaged<ID2D1OffsetTransform*, POINT, void>)(lpVtbl[4]))((ID2D1OffsetTransform*)Unsafe.AsPointer(ref this), offset);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(5)]
         [return: NativeTypeName("D2D1_POINT_2L")]
         public POINT GetOffset()
         {

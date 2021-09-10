@@ -11,11 +11,13 @@ namespace TerraFX.Interop
 {
     [Guid("AA80E7FD-2021-11D2-93E0-0060B067B86E")]
     [NativeTypeName("struct ITfContext : IUnknown")]
+    [NativeInheritance("IUnknown")]
     public unsafe partial struct ITfContext
     {
         public void** lpVtbl;
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(0)]
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
@@ -23,6 +25,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(1)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
@@ -30,6 +33,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(2)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
@@ -37,6 +41,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(3)]
         [return: NativeTypeName("HRESULT")]
         public int RequestEditSession([NativeTypeName("TfClientId")] uint tid, ITfEditSession* pes, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("HRESULT *")] int* phrSession)
         {
@@ -44,6 +49,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(4)]
         [return: NativeTypeName("HRESULT")]
         public int InWriteSession([NativeTypeName("TfClientId")] uint tid, [NativeTypeName("BOOL *")] int* pfWriteSession)
         {
@@ -51,6 +57,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(5)]
         [return: NativeTypeName("HRESULT")]
         public int GetSelection([NativeTypeName("TfEditCookie")] uint ec, [NativeTypeName("ULONG")] uint ulIndex, [NativeTypeName("ULONG")] uint ulCount, TF_SELECTION* pSelection, [NativeTypeName("ULONG *")] uint* pcFetched)
         {
@@ -58,6 +65,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(6)]
         [return: NativeTypeName("HRESULT")]
         public int SetSelection([NativeTypeName("TfEditCookie")] uint ec, [NativeTypeName("ULONG")] uint ulCount, [NativeTypeName("const TF_SELECTION *")] TF_SELECTION* pSelection)
         {
@@ -65,6 +73,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(7)]
         [return: NativeTypeName("HRESULT")]
         public int GetStart([NativeTypeName("TfEditCookie")] uint ec, ITfRange** ppStart)
         {
@@ -72,6 +81,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(8)]
         [return: NativeTypeName("HRESULT")]
         public int GetEnd([NativeTypeName("TfEditCookie")] uint ec, ITfRange** ppEnd)
         {
@@ -79,6 +89,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(9)]
         [return: NativeTypeName("HRESULT")]
         public int GetActiveView(ITfContextView** ppView)
         {
@@ -86,6 +97,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(10)]
         [return: NativeTypeName("HRESULT")]
         public int EnumViews(IEnumTfContextViews** ppEnum)
         {
@@ -93,6 +105,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(11)]
         [return: NativeTypeName("HRESULT")]
         public int GetStatus([NativeTypeName("TF_STATUS *")] TS_STATUS* pdcs)
         {
@@ -100,6 +113,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(12)]
         [return: NativeTypeName("HRESULT")]
         public int GetProperty([NativeTypeName("const GUID &")] Guid* guidProp, ITfProperty** ppProp)
         {
@@ -107,6 +121,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(13)]
         [return: NativeTypeName("HRESULT")]
         public int GetAppProperty([NativeTypeName("const GUID &")] Guid* guidProp, ITfReadOnlyProperty** ppProp)
         {
@@ -114,6 +129,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(14)]
         [return: NativeTypeName("HRESULT")]
         public int TrackProperties([NativeTypeName("const GUID **")] Guid** prgProp, [NativeTypeName("ULONG")] uint cProp, [NativeTypeName("const GUID **")] Guid** prgAppProp, [NativeTypeName("ULONG")] uint cAppProp, ITfReadOnlyProperty** ppProperty)
         {
@@ -121,6 +137,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(15)]
         [return: NativeTypeName("HRESULT")]
         public int EnumProperties(IEnumTfProperties** ppEnum)
         {
@@ -128,6 +145,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(16)]
         [return: NativeTypeName("HRESULT")]
         public int GetDocumentMgr(ITfDocumentMgr** ppDm)
         {
@@ -135,6 +153,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(17)]
         [return: NativeTypeName("HRESULT")]
         public int CreateRangeBackup([NativeTypeName("TfEditCookie")] uint ec, ITfRange* pRange, ITfRangeBackup** ppBackup)
         {

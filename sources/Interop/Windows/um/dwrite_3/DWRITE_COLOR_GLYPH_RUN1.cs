@@ -6,6 +6,7 @@
 namespace TerraFX.Interop
 {
     [NativeTypeName("struct DWRITE_COLOR_GLYPH_RUN1 : DWRITE_COLOR_GLYPH_RUN")]
+    [NativeInheritance("DWRITE_COLOR_GLYPH_RUN")]
     public partial struct DWRITE_COLOR_GLYPH_RUN1
     {
         public DWRITE_COLOR_GLYPH_RUN Base;

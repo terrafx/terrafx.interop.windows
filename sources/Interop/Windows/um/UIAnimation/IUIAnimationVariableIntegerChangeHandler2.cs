@@ -11,11 +11,13 @@ namespace TerraFX.Interop
 {
     [Guid("829B6CF1-4F3A-4412-AE09-B243EB4C6B58")]
     [NativeTypeName("struct IUIAnimationVariableIntegerChangeHandler2 : IUnknown")]
+    [NativeInheritance("IUnknown")]
     public unsafe partial struct IUIAnimationVariableIntegerChangeHandler2
     {
         public void** lpVtbl;
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(0)]
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
@@ -23,6 +25,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(1)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
@@ -30,6 +33,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(2)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
@@ -37,6 +41,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(3)]
         [return: NativeTypeName("HRESULT")]
         public int OnIntegerValueChanged(IUIAnimationStoryboard2* storyboard, IUIAnimationVariable2* variable, [NativeTypeName("INT32 *")] int* newValue, [NativeTypeName("INT32 *")] int* previousValue, [NativeTypeName("UINT")] uint cDimension)
         {

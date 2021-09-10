@@ -11,11 +11,13 @@ namespace TerraFX.Interop
 {
     [Guid("E357FCCD-A995-4576-B01F-234630154E96")]
     [NativeTypeName("struct IThumbnailProvider : IUnknown")]
+    [NativeInheritance("IUnknown")]
     public unsafe partial struct IThumbnailProvider
     {
         public void** lpVtbl;
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(0)]
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
@@ -23,6 +25,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(1)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
@@ -30,6 +33,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(2)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
@@ -37,6 +41,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(3)]
         [return: NativeTypeName("HRESULT")]
         public int GetThumbnail([NativeTypeName("UINT")] uint cx, [NativeTypeName("HBITMAP *")] IntPtr* phbmp, WTS_ALPHATYPE* pdwAlpha)
         {

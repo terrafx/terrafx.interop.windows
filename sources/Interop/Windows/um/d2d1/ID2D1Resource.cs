@@ -11,11 +11,13 @@ namespace TerraFX.Interop
 {
     [Guid("2CD90691-12E2-11DC-9FED-001143A055F9")]
     [NativeTypeName("struct ID2D1Resource : IUnknown")]
+    [NativeInheritance("IUnknown")]
     public unsafe partial struct ID2D1Resource
     {
         public void** lpVtbl;
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(0)]
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
@@ -23,6 +25,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(1)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
@@ -30,6 +33,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(2)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
@@ -37,6 +41,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(3)]
         public void GetFactory(ID2D1Factory** factory)
         {
             ((delegate* unmanaged<ID2D1Resource*, ID2D1Factory**, void>)(lpVtbl[3]))((ID2D1Resource*)Unsafe.AsPointer(ref this), factory);

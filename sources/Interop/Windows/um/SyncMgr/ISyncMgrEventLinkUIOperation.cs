@@ -11,11 +11,13 @@ namespace TerraFX.Interop
 {
     [Guid("64522E52-848B-4015-89CE-5A36F00B94FF")]
     [NativeTypeName("struct ISyncMgrEventLinkUIOperation : ISyncMgrUIOperation")]
+    [NativeInheritance("ISyncMgrUIOperation")]
     public unsafe partial struct ISyncMgrEventLinkUIOperation
     {
         public void** lpVtbl;
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(0)]
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
@@ -23,6 +25,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(1)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
@@ -30,6 +33,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(2)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
@@ -37,6 +41,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(3)]
         [return: NativeTypeName("HRESULT")]
         public int Run([NativeTypeName("HWND")] IntPtr hwndOwner)
         {
@@ -44,6 +49,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(4)]
         [return: NativeTypeName("HRESULT")]
         public int Init([NativeTypeName("const GUID &")] Guid* rguidEventID, ISyncMgrEvent* pEvent)
         {

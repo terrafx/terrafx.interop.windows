@@ -11,11 +11,13 @@ namespace TerraFX.Interop
 {
     [Guid("ACD16696-8C14-4F5D-877E-FE3FC1D32737")]
     [NativeTypeName("struct IDWriteFont : IUnknown")]
+    [NativeInheritance("IUnknown")]
     public unsafe partial struct IDWriteFont
     {
         public void** lpVtbl;
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(0)]
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
@@ -23,6 +25,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(1)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
@@ -30,6 +33,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(2)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
@@ -37,6 +41,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(3)]
         [return: NativeTypeName("HRESULT")]
         public int GetFontFamily(IDWriteFontFamily** fontFamily)
         {
@@ -44,24 +49,28 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(4)]
         public DWRITE_FONT_WEIGHT GetWeight()
         {
             return ((delegate* unmanaged<IDWriteFont*, DWRITE_FONT_WEIGHT>)(lpVtbl[4]))((IDWriteFont*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(5)]
         public DWRITE_FONT_STRETCH GetStretch()
         {
             return ((delegate* unmanaged<IDWriteFont*, DWRITE_FONT_STRETCH>)(lpVtbl[5]))((IDWriteFont*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(6)]
         public DWRITE_FONT_STYLE GetStyle()
         {
             return ((delegate* unmanaged<IDWriteFont*, DWRITE_FONT_STYLE>)(lpVtbl[6]))((IDWriteFont*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(7)]
         [return: NativeTypeName("BOOL")]
         public int IsSymbolFont()
         {
@@ -69,6 +78,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(8)]
         [return: NativeTypeName("HRESULT")]
         public int GetFaceNames(IDWriteLocalizedStrings** names)
         {
@@ -76,6 +86,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(9)]
         [return: NativeTypeName("HRESULT")]
         public int GetInformationalStrings(DWRITE_INFORMATIONAL_STRING_ID informationalStringID, IDWriteLocalizedStrings** informationalStrings, [NativeTypeName("BOOL *")] int* exists)
         {
@@ -83,18 +94,21 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(10)]
         public DWRITE_FONT_SIMULATIONS GetSimulations()
         {
             return ((delegate* unmanaged<IDWriteFont*, DWRITE_FONT_SIMULATIONS>)(lpVtbl[10]))((IDWriteFont*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(11)]
         public void GetMetrics(DWRITE_FONT_METRICS* fontMetrics)
         {
             ((delegate* unmanaged<IDWriteFont*, DWRITE_FONT_METRICS*, void>)(lpVtbl[11]))((IDWriteFont*)Unsafe.AsPointer(ref this), fontMetrics);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(12)]
         [return: NativeTypeName("HRESULT")]
         public int HasCharacter([NativeTypeName("UINT32")] uint unicodeValue, [NativeTypeName("BOOL *")] int* exists)
         {
@@ -102,6 +116,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(13)]
         [return: NativeTypeName("HRESULT")]
         public int CreateFontFace(IDWriteFontFace** fontFace)
         {

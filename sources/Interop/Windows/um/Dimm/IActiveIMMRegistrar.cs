@@ -11,11 +11,13 @@ namespace TerraFX.Interop
 {
     [Guid("B3458082-BD00-11D1-939B-0060B067B86E")]
     [NativeTypeName("struct IActiveIMMRegistrar : IUnknown")]
+    [NativeInheritance("IUnknown")]
     public unsafe partial struct IActiveIMMRegistrar
     {
         public void** lpVtbl;
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(0)]
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
@@ -23,6 +25,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(1)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
@@ -30,6 +33,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(2)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
@@ -37,6 +41,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(3)]
         [return: NativeTypeName("HRESULT")]
         public int RegisterIME([NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("LANGID")] ushort lgid, [NativeTypeName("LPCWSTR")] ushort* pszIconFile, [NativeTypeName("LPCWSTR")] ushort* pszDesc)
         {
@@ -44,6 +49,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(4)]
         [return: NativeTypeName("HRESULT")]
         public int UnregisterIME([NativeTypeName("const IID &")] Guid* rclsid)
         {

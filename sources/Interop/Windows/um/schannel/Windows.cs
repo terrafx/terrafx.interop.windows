@@ -10,33 +10,33 @@ namespace TerraFX.Interop
 {
     public static unsafe partial class Windows
     {
-        [DllImport("schannel", ExactSpelling = true)]
+        [DllImport("schannel", EntryPoint = "?SslEmptyCacheA@@YGHPADK@Z", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int SslEmptyCacheA([NativeTypeName("LPSTR")] sbyte* pszTargetName, [NativeTypeName("DWORD")] uint dwFlags);
 
-        [DllImport("schannel", ExactSpelling = true)]
+        [DllImport("schannel", EntryPoint = "?SslEmptyCacheW@@YGHPA_WK@Z", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int SslEmptyCacheW([NativeTypeName("LPWSTR")] ushort* pszTargetName, [NativeTypeName("DWORD")] uint dwFlags);
 
-        [DllImport("schannel", ExactSpelling = true)]
+        [DllImport("schannel", EntryPoint = "?SslGenerateKeyPair@@YGHPAU_SSL_CREDENTIAL_CERTIFICATE@@PAD1K@Z", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int SslGenerateKeyPair([NativeTypeName("PSSL_CREDENTIAL_CERTIFICATE")] SSL_CREDENTIAL_CERTIFICATE* pCerts, [NativeTypeName("PSTR")] sbyte* pszDN, [NativeTypeName("PSTR")] sbyte* pszPassword, [NativeTypeName("DWORD")] uint Bits);
 
-        [DllImport("schannel", ExactSpelling = true)]
+        [DllImport("schannel", EntryPoint = "?SslGenerateRandomBits@@YGXPAEJ@Z", ExactSpelling = true)]
         public static extern void SslGenerateRandomBits([NativeTypeName("PUCHAR")] byte* pRandomData, [NativeTypeName("LONG")] int cRandomData);
 
-        [DllImport("schannel", ExactSpelling = true)]
+        [DllImport("schannel", EntryPoint = "?SslCrackCertificate@@YGHPAEKKPAPAU_X509Certificate@@@Z", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int SslCrackCertificate([NativeTypeName("PUCHAR")] byte* pbCertificate, [NativeTypeName("DWORD")] uint cbCertificate, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("PX509Certificate *")] X509Certificate** ppCertificate);
 
-        [DllImport("schannel", ExactSpelling = true)]
+        [DllImport("schannel", EntryPoint = "?SslFreeCertificate@@YGXPAU_X509Certificate@@@Z", ExactSpelling = true)]
         public static extern void SslFreeCertificate([NativeTypeName("PX509Certificate")] X509Certificate* pCertificate);
 
-        [DllImport("schannel", ExactSpelling = true)]
+        [DllImport("schannel", EntryPoint = "?SslGetMaximumKeySize@@YGKK@Z", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
         public static extern uint SslGetMaximumKeySize([NativeTypeName("DWORD")] uint Reserved);
 
-        [DllImport("schannel", ExactSpelling = true)]
+        [DllImport("schannel", EntryPoint = "?SslGetDefaultIssuers@@YGHPAEPAK@Z", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int SslGetDefaultIssuers([NativeTypeName("PBYTE")] byte* pbIssuers, [NativeTypeName("DWORD *")] uint* pcbIssuers);
 

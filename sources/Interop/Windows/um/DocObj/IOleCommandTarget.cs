@@ -11,11 +11,13 @@ namespace TerraFX.Interop
 {
     [Guid("B722BCCB-4E68-101B-A2BC-00AA00404770")]
     [NativeTypeName("struct IOleCommandTarget : IUnknown")]
+    [NativeInheritance("IUnknown")]
     public unsafe partial struct IOleCommandTarget
     {
         public void** lpVtbl;
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(0)]
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
@@ -23,6 +25,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(1)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
@@ -30,6 +33,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(2)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
@@ -37,6 +41,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(3)]
         [return: NativeTypeName("HRESULT")]
         public int QueryStatus([NativeTypeName("const GUID *")] Guid* pguidCmdGroup, [NativeTypeName("ULONG")] uint cCmds, [NativeTypeName("OLECMD []")] OLECMD* prgCmds, OLECMDTEXT* pCmdText)
         {
@@ -44,6 +49,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(4)]
         [return: NativeTypeName("HRESULT")]
         public int Exec([NativeTypeName("const GUID *")] Guid* pguidCmdGroup, [NativeTypeName("DWORD")] uint nCmdID, [NativeTypeName("DWORD")] uint nCmdexecopt, VARIANT* pvaIn, VARIANT* pvaOut)
         {

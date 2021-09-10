@@ -163,7 +163,7 @@ namespace TerraFX.Interop
         [return: NativeTypeName("HIMAGELIST")]
         public static IntPtr IImageListToHIMAGELIST([NativeTypeName("struct IImageList *")] IImageList* himl)
         {
-            return (IntPtr)(himl);
+            return (nint)(himl);
         }
 
         [DllImport("Comctl32", ExactSpelling = true)]
@@ -849,7 +849,7 @@ namespace TerraFX.Interop
         public const int ILGT_ASYNC = 0x00000001;
 
         [NativeTypeName("#define HBITMAP_CALLBACK ((HBITMAP)-1)")]
-        public static readonly IntPtr HBITMAP_CALLBACK = ((IntPtr)(-1));
+        public static readonly IntPtr HBITMAP_CALLBACK = ((nint)(-1));
 
         [NativeTypeName("#define ImageList_LoadImage ImageList_LoadImageW")]
         public static readonly delegate*<IntPtr, ushort*, int, int, uint, uint, uint, IntPtr> ImageList_LoadImage = &ImageList_LoadImageW;
@@ -1458,7 +1458,7 @@ namespace TerraFX.Interop
         public const int TB_ADDBITMAP = (0x0400 + 19);
 
         [NativeTypeName("#define HINST_COMMCTRL ((HINSTANCE)-1)")]
-        public static readonly IntPtr HINST_COMMCTRL = ((IntPtr)(-1));
+        public static readonly IntPtr HINST_COMMCTRL = ((nint)(-1));
 
         [NativeTypeName("#define IDB_STD_SMALL_COLOR 0")]
         public const int IDB_STD_SMALL_COLOR = 0;
@@ -6471,7 +6471,7 @@ namespace TerraFX.Interop
         public const int BCM_SETSHIELD = (0x1600 + 0x000C);
 
         [NativeTypeName("#define BCCL_NOGLYPH (HIMAGELIST)(-1)")]
-        public static readonly IntPtr BCCL_NOGLYPH = (IntPtr)(-1);
+        public static readonly IntPtr BCCL_NOGLYPH = (nint)(-1);
 
         [NativeTypeName("#define BCN_DROPDOWN (BCN_FIRST + 0x0002)")]
         public const uint BCN_DROPDOWN = unchecked((0U - 1250U) + 0x0002);

@@ -11,11 +11,13 @@ namespace TerraFX.Interop
 {
     [Guid("9B7E4C03-342C-4106-A19F-4F2704F689F0")]
     [NativeTypeName("struct ID3D10Texture1D : ID3D10Resource")]
+    [NativeInheritance("ID3D10Resource")]
     public unsafe partial struct ID3D10Texture1D
     {
         public void** lpVtbl;
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(0)]
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
@@ -23,6 +25,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(1)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
@@ -30,6 +33,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(2)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
@@ -37,12 +41,14 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(3)]
         public void GetDevice(ID3D10Device** ppDevice)
         {
             ((delegate* unmanaged<ID3D10Texture1D*, ID3D10Device**, void>)(lpVtbl[3]))((ID3D10Texture1D*)Unsafe.AsPointer(ref this), ppDevice);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(4)]
         [return: NativeTypeName("HRESULT")]
         public int GetPrivateData([NativeTypeName("const GUID &")] Guid* guid, [NativeTypeName("UINT *")] uint* pDataSize, void* pData)
         {
@@ -50,6 +56,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(5)]
         [return: NativeTypeName("HRESULT")]
         public int SetPrivateData([NativeTypeName("const GUID &")] Guid* guid, [NativeTypeName("UINT")] uint DataSize, [NativeTypeName("const void *")] void* pData)
         {
@@ -57,6 +64,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(6)]
         [return: NativeTypeName("HRESULT")]
         public int SetPrivateDataInterface([NativeTypeName("const GUID &")] Guid* guid, [NativeTypeName("const IUnknown *")] IUnknown* pData)
         {
@@ -64,18 +72,21 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(7)]
         public void GetType(D3D10_RESOURCE_DIMENSION* rType)
         {
             ((delegate* unmanaged<ID3D10Texture1D*, D3D10_RESOURCE_DIMENSION*, void>)(lpVtbl[7]))((ID3D10Texture1D*)Unsafe.AsPointer(ref this), rType);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(8)]
         public void SetEvictionPriority([NativeTypeName("UINT")] uint EvictionPriority)
         {
             ((delegate* unmanaged<ID3D10Texture1D*, uint, void>)(lpVtbl[8]))((ID3D10Texture1D*)Unsafe.AsPointer(ref this), EvictionPriority);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(9)]
         [return: NativeTypeName("UINT")]
         public uint GetEvictionPriority()
         {
@@ -83,6 +94,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(10)]
         [return: NativeTypeName("HRESULT")]
         public int Map([NativeTypeName("UINT")] uint Subresource, D3D10_MAP MapType, [NativeTypeName("UINT")] uint MapFlags, void** ppData)
         {
@@ -90,12 +102,14 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(11)]
         public void Unmap([NativeTypeName("UINT")] uint Subresource)
         {
             ((delegate* unmanaged<ID3D10Texture1D*, uint, void>)(lpVtbl[11]))((ID3D10Texture1D*)Unsafe.AsPointer(ref this), Subresource);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(12)]
         public void GetDesc(D3D10_TEXTURE1D_DESC* pDesc)
         {
             ((delegate* unmanaged<ID3D10Texture1D*, D3D10_TEXTURE1D_DESC*, void>)(lpVtbl[12]))((ID3D10Texture1D*)Unsafe.AsPointer(ref this), pDesc);

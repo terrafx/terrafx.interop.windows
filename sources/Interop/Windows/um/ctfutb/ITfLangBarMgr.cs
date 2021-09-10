@@ -11,11 +11,13 @@ namespace TerraFX.Interop
 {
     [Guid("87955690-E627-11D2-8DDB-00105A2799B5")]
     [NativeTypeName("struct ITfLangBarMgr : IUnknown")]
+    [NativeInheritance("IUnknown")]
     public unsafe partial struct ITfLangBarMgr
     {
         public void** lpVtbl;
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(0)]
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
@@ -23,6 +25,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(1)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
@@ -30,6 +33,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(2)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
@@ -37,6 +41,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(3)]
         [return: NativeTypeName("HRESULT")]
         public int AdviseEventSink(ITfLangBarEventSink* pSink, [NativeTypeName("HWND")] IntPtr hwnd, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("DWORD *")] uint* pdwCookie)
         {
@@ -44,6 +49,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(4)]
         [return: NativeTypeName("HRESULT")]
         public int UnadviseEventSink([NativeTypeName("DWORD")] uint dwCookie)
         {
@@ -51,6 +57,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(5)]
         [return: NativeTypeName("HRESULT")]
         public int GetThreadMarshalInterface([NativeTypeName("DWORD")] uint dwThreadId, [NativeTypeName("DWORD")] uint dwType, [NativeTypeName("const IID &")] Guid* riid, IUnknown** ppunk)
         {
@@ -58,6 +65,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(6)]
         [return: NativeTypeName("HRESULT")]
         public int GetThreadLangBarItemMgr([NativeTypeName("DWORD")] uint dwThreadId, ITfLangBarItemMgr** pplbi, [NativeTypeName("DWORD *")] uint* pdwThreadid)
         {
@@ -65,6 +73,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(7)]
         [return: NativeTypeName("HRESULT")]
         public int GetInputProcessorProfiles([NativeTypeName("DWORD")] uint dwThreadId, ITfInputProcessorProfiles** ppaip, [NativeTypeName("DWORD *")] uint* pdwThreadid)
         {
@@ -72,6 +81,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(8)]
         [return: NativeTypeName("HRESULT")]
         public int RestoreLastFocus([NativeTypeName("DWORD *")] uint* pdwThreadId, [NativeTypeName("BOOL")] int fPrev)
         {
@@ -79,6 +89,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(9)]
         [return: NativeTypeName("HRESULT")]
         public int SetModalInput(ITfLangBarEventSink* pSink, [NativeTypeName("DWORD")] uint dwThreadId, [NativeTypeName("DWORD")] uint dwFlags)
         {
@@ -86,6 +97,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(10)]
         [return: NativeTypeName("HRESULT")]
         public int ShowFloating([NativeTypeName("DWORD")] uint dwFlags)
         {
@@ -93,6 +105,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(11)]
         [return: NativeTypeName("HRESULT")]
         public int GetShowFloatingStatus([NativeTypeName("DWORD *")] uint* pdwFlags)
         {

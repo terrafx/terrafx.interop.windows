@@ -11,11 +11,13 @@ namespace TerraFX.Interop
 {
     [Guid("90F732E2-5092-4606-A819-8651970BACCD")]
     [NativeTypeName("struct ID2D1BoundsAdjustmentTransform : ID2D1TransformNode")]
+    [NativeInheritance("ID2D1TransformNode")]
     public unsafe partial struct ID2D1BoundsAdjustmentTransform
     {
         public void** lpVtbl;
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(0)]
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
@@ -23,6 +25,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(1)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
@@ -30,6 +33,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(2)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
@@ -37,6 +41,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(3)]
         [return: NativeTypeName("UINT32")]
         public uint GetInputCount()
         {
@@ -44,12 +49,14 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(4)]
         public void SetOutputBounds([NativeTypeName("const D2D1_RECT_L *")] RECT* outputBounds)
         {
             ((delegate* unmanaged<ID2D1BoundsAdjustmentTransform*, RECT*, void>)(lpVtbl[4]))((ID2D1BoundsAdjustmentTransform*)Unsafe.AsPointer(ref this), outputBounds);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(5)]
         public void GetOutputBounds([NativeTypeName("D2D1_RECT_L *")] RECT* outputBounds)
         {
             ((delegate* unmanaged<ID2D1BoundsAdjustmentTransform*, RECT*, void>)(lpVtbl[5]))((ID2D1BoundsAdjustmentTransform*)Unsafe.AsPointer(ref this), outputBounds);

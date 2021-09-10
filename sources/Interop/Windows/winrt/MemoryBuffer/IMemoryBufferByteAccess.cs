@@ -11,11 +11,13 @@ namespace TerraFX.Interop
 {
     [Guid("5B0D3235-4DBA-4D44-865E-8F1D0E4FD04D")]
     [NativeTypeName("struct IMemoryBufferByteAccess : IUnknown")]
+    [NativeInheritance("IUnknown")]
     public unsafe partial struct IMemoryBufferByteAccess
     {
         public void** lpVtbl;
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(0)]
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
@@ -23,6 +25,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(1)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
@@ -30,6 +33,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(2)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
@@ -37,6 +41,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(3)]
         [return: NativeTypeName("HRESULT")]
         public int GetBuffer([NativeTypeName("BYTE **")] byte** value, [NativeTypeName("UINT32 *")] uint* capacity)
         {

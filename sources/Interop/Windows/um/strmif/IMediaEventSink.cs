@@ -11,11 +11,13 @@ namespace TerraFX.Interop
 {
     [Guid("56A868A2-0AD4-11CE-B03A-0020AF0BA770")]
     [NativeTypeName("struct IMediaEventSink : IUnknown")]
+    [NativeInheritance("IUnknown")]
     public unsafe partial struct IMediaEventSink
     {
         public void** lpVtbl;
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(0)]
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
@@ -23,6 +25,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(1)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
@@ -30,6 +33,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(2)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
@@ -37,6 +41,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(3)]
         [return: NativeTypeName("HRESULT")]
         public int Notify([NativeTypeName("long")] int EventCode, [NativeTypeName("LONG_PTR")] nint EventParam1, [NativeTypeName("LONG_PTR")] nint EventParam2)
         {

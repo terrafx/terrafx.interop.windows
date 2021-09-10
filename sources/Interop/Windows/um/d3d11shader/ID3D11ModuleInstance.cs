@@ -11,11 +11,13 @@ namespace TerraFX.Interop
 {
     [Guid("469E07F7-045A-48D5-AA12-68A478CDF75D")]
     [NativeTypeName("struct ID3D11ModuleInstance : IUnknown")]
+    [NativeInheritance("IUnknown")]
     public unsafe partial struct ID3D11ModuleInstance
     {
         public void** lpVtbl;
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(0)]
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
@@ -23,6 +25,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(1)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
@@ -30,6 +33,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(2)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
@@ -37,6 +41,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(3)]
         [return: NativeTypeName("HRESULT")]
         public int BindConstantBuffer([NativeTypeName("UINT")] uint uSrcSlot, [NativeTypeName("UINT")] uint uDstSlot, [NativeTypeName("UINT")] uint cbDstOffset)
         {
@@ -44,6 +49,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(4)]
         [return: NativeTypeName("HRESULT")]
         public int BindConstantBufferByName([NativeTypeName("LPCSTR")] sbyte* pName, [NativeTypeName("UINT")] uint uDstSlot, [NativeTypeName("UINT")] uint cbDstOffset)
         {
@@ -51,6 +57,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(5)]
         [return: NativeTypeName("HRESULT")]
         public int BindResource([NativeTypeName("UINT")] uint uSrcSlot, [NativeTypeName("UINT")] uint uDstSlot, [NativeTypeName("UINT")] uint uCount)
         {
@@ -58,6 +65,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(6)]
         [return: NativeTypeName("HRESULT")]
         public int BindResourceByName([NativeTypeName("LPCSTR")] sbyte* pName, [NativeTypeName("UINT")] uint uDstSlot, [NativeTypeName("UINT")] uint uCount)
         {
@@ -65,6 +73,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(7)]
         [return: NativeTypeName("HRESULT")]
         public int BindSampler([NativeTypeName("UINT")] uint uSrcSlot, [NativeTypeName("UINT")] uint uDstSlot, [NativeTypeName("UINT")] uint uCount)
         {
@@ -72,6 +81,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(8)]
         [return: NativeTypeName("HRESULT")]
         public int BindSamplerByName([NativeTypeName("LPCSTR")] sbyte* pName, [NativeTypeName("UINT")] uint uDstSlot, [NativeTypeName("UINT")] uint uCount)
         {
@@ -79,6 +89,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(9)]
         [return: NativeTypeName("HRESULT")]
         public int BindUnorderedAccessView([NativeTypeName("UINT")] uint uSrcSlot, [NativeTypeName("UINT")] uint uDstSlot, [NativeTypeName("UINT")] uint uCount)
         {
@@ -86,6 +97,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(10)]
         [return: NativeTypeName("HRESULT")]
         public int BindUnorderedAccessViewByName([NativeTypeName("LPCSTR")] sbyte* pName, [NativeTypeName("UINT")] uint uDstSlot, [NativeTypeName("UINT")] uint uCount)
         {
@@ -93,6 +105,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(11)]
         [return: NativeTypeName("HRESULT")]
         public int BindResourceAsUnorderedAccessView([NativeTypeName("UINT")] uint uSrcSrvSlot, [NativeTypeName("UINT")] uint uDstUavSlot, [NativeTypeName("UINT")] uint uCount)
         {
@@ -100,6 +113,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(12)]
         [return: NativeTypeName("HRESULT")]
         public int BindResourceAsUnorderedAccessViewByName([NativeTypeName("LPCSTR")] sbyte* pSrvName, [NativeTypeName("UINT")] uint uDstUavSlot, [NativeTypeName("UINT")] uint uCount)
         {
