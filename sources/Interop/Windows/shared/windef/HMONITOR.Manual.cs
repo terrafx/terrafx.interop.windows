@@ -9,7 +9,7 @@ namespace TerraFX.Interop
 {
     public unsafe struct HMONITOR : IEquatable<HMONITOR>
     {
-        public static readonly HMONITOR NULL = default;
+        public static HMONITOR NULL => default;
 
         private void* _value;
 

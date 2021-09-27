@@ -9,7 +9,7 @@ namespace TerraFX.Interop
 {
     public unsafe struct HGESTUREINFO : IEquatable<HGESTUREINFO>
     {
-        public static readonly HGESTUREINFO NULL = default;
+        public static HGESTUREINFO NULL => default;
 
         private void* _value;
 

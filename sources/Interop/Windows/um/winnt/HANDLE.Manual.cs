@@ -9,7 +9,7 @@ namespace TerraFX.Interop
 {
     public unsafe struct HANDLE : IEquatable<HANDLE>
     {
-        public static readonly HANDLE NULL = default;
+        public static HANDLE NULL => default;
 
         private void* _value;
 

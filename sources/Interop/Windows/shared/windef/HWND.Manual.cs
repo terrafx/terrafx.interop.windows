@@ -9,7 +9,7 @@ namespace TerraFX.Interop
 {
     public unsafe struct HWND : IEquatable<HWND>
     {
-        public static readonly HWND NULL = default;
+        public static HWND NULL => default;
 
         private void* _value;
 

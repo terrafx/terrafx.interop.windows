@@ -1499,7 +1499,7 @@ namespace TerraFX.Interop
         public const uint GDI_ERROR = (0xFFFFFFFF);
 
         [NativeTypeName("#define HGDI_ERROR (LongToHandle(0xFFFFFFFFL))")]
-        public static readonly IntPtr HGDI_ERROR = unchecked(((nint)((nint)(0xFFFFFFFF))));
+        public static IntPtr HGDI_ERROR => unchecked(((nint)((nint)(0xFFFFFFFF))));
 
         [NativeTypeName("#define ERROR 0")]
         public const int ERROR = 0;
@@ -4850,28 +4850,28 @@ namespace TerraFX.Interop
         public const uint PFD_STEREO_DONTCARE = 0x80000000;
 
         [NativeTypeName("#define AddFontResource AddFontResourceW")]
-        public static readonly delegate*<ushort*, int> AddFontResource = &AddFontResourceW;
+        public static delegate*<ushort*, int> AddFontResource => &AddFontResourceW;
 
         [NativeTypeName("#define CopyMetaFile CopyMetaFileW")]
-        public static readonly delegate*<IntPtr, ushort*, IntPtr> CopyMetaFile = &CopyMetaFileW;
+        public static delegate*<IntPtr, ushort*, IntPtr> CopyMetaFile => &CopyMetaFileW;
 
         [NativeTypeName("#define CreateDC CreateDCW")]
-        public static readonly delegate*<ushort*, ushort*, ushort*, DEVMODEW*, IntPtr> CreateDC = &CreateDCW;
+        public static delegate*<ushort*, ushort*, ushort*, DEVMODEW*, IntPtr> CreateDC => &CreateDCW;
 
         [NativeTypeName("#define CreateFontIndirect CreateFontIndirectW")]
-        public static readonly delegate*<LOGFONTW*, IntPtr> CreateFontIndirect = &CreateFontIndirectW;
+        public static delegate*<LOGFONTW*, IntPtr> CreateFontIndirect => &CreateFontIndirectW;
 
         [NativeTypeName("#define CreateFont CreateFontW")]
-        public static readonly delegate*<int, int, int, int, int, uint, uint, uint, uint, uint, uint, uint, uint, ushort*, IntPtr> CreateFont = &CreateFontW;
+        public static delegate*<int, int, int, int, int, uint, uint, uint, uint, uint, uint, uint, uint, ushort*, IntPtr> CreateFont => &CreateFontW;
 
         [NativeTypeName("#define CreateIC CreateICW")]
-        public static readonly delegate*<ushort*, ushort*, ushort*, DEVMODEW*, IntPtr> CreateIC = &CreateICW;
+        public static delegate*<ushort*, ushort*, ushort*, DEVMODEW*, IntPtr> CreateIC => &CreateICW;
 
         [NativeTypeName("#define CreateMetaFile CreateMetaFileW")]
-        public static readonly delegate*<ushort*, IntPtr> CreateMetaFile = &CreateMetaFileW;
+        public static delegate*<ushort*, IntPtr> CreateMetaFile => &CreateMetaFileW;
 
         [NativeTypeName("#define CreateScalableFontResource CreateScalableFontResourceW")]
-        public static readonly delegate*<uint, ushort*, ushort*, ushort*, int> CreateScalableFontResource = &CreateScalableFontResourceW;
+        public static delegate*<uint, ushort*, ushort*, ushort*, int> CreateScalableFontResource => &CreateScalableFontResourceW;
 
         [NativeTypeName("#define DM_UPDATE 1")]
         public const int DM_UPDATE = 1;
@@ -5051,52 +5051,52 @@ namespace TerraFX.Interop
         public const int DCBA_FACEDOWNRIGHT = 0x0103;
 
         [NativeTypeName("#define DeviceCapabilities DeviceCapabilitiesW")]
-        public static readonly delegate*<ushort*, ushort*, ushort, ushort*, DEVMODEW*, int> DeviceCapabilities = &DeviceCapabilitiesW;
+        public static delegate*<ushort*, ushort*, ushort, ushort*, DEVMODEW*, int> DeviceCapabilities => &DeviceCapabilitiesW;
 
         [NativeTypeName("#define EnumFontFamiliesEx EnumFontFamiliesExW")]
-        public static readonly delegate*<IntPtr, LOGFONTW*, delegate* unmanaged<LOGFONTW*, TEXTMETRICW*, uint, nint, int>, nint, uint, int> EnumFontFamiliesEx = &EnumFontFamiliesExW;
+        public static delegate*<IntPtr, LOGFONTW*, delegate* unmanaged<LOGFONTW*, TEXTMETRICW*, uint, nint, int>, nint, uint, int> EnumFontFamiliesEx => &EnumFontFamiliesExW;
 
         [NativeTypeName("#define EnumFontFamilies EnumFontFamiliesW")]
-        public static readonly delegate*<IntPtr, ushort*, delegate* unmanaged<LOGFONTW*, TEXTMETRICW*, uint, nint, int>, nint, int> EnumFontFamilies = &EnumFontFamiliesW;
+        public static delegate*<IntPtr, ushort*, delegate* unmanaged<LOGFONTW*, TEXTMETRICW*, uint, nint, int>, nint, int> EnumFontFamilies => &EnumFontFamiliesW;
 
         [NativeTypeName("#define EnumFonts EnumFontsW")]
-        public static readonly delegate*<IntPtr, ushort*, delegate* unmanaged<LOGFONTW*, TEXTMETRICW*, uint, nint, int>, nint, int> EnumFonts = &EnumFontsW;
+        public static delegate*<IntPtr, ushort*, delegate* unmanaged<LOGFONTW*, TEXTMETRICW*, uint, nint, int>, nint, int> EnumFonts => &EnumFontsW;
 
         [NativeTypeName("#define GetCharWidth GetCharWidthW")]
-        public static readonly delegate*<IntPtr, uint, uint, int*, int> GetCharWidth = &GetCharWidthW;
+        public static delegate*<IntPtr, uint, uint, int*, int> GetCharWidth => &GetCharWidthW;
 
         [NativeTypeName("#define GetCharWidth32 GetCharWidth32W")]
-        public static readonly delegate*<IntPtr, uint, uint, int*, int> GetCharWidth32 = &GetCharWidth32W;
+        public static delegate*<IntPtr, uint, uint, int*, int> GetCharWidth32 => &GetCharWidth32W;
 
         [NativeTypeName("#define GetCharWidthFloat GetCharWidthFloatW")]
-        public static readonly delegate*<IntPtr, uint, uint, float*, int> GetCharWidthFloat = &GetCharWidthFloatW;
+        public static delegate*<IntPtr, uint, uint, float*, int> GetCharWidthFloat => &GetCharWidthFloatW;
 
         [NativeTypeName("#define GetCharABCWidths GetCharABCWidthsW")]
-        public static readonly delegate*<IntPtr, uint, uint, ABC*, int> GetCharABCWidths = &GetCharABCWidthsW;
+        public static delegate*<IntPtr, uint, uint, ABC*, int> GetCharABCWidths => &GetCharABCWidthsW;
 
         [NativeTypeName("#define GetCharABCWidthsFloat GetCharABCWidthsFloatW")]
-        public static readonly delegate*<IntPtr, uint, uint, ABCFLOAT*, int> GetCharABCWidthsFloat = &GetCharABCWidthsFloatW;
+        public static delegate*<IntPtr, uint, uint, ABCFLOAT*, int> GetCharABCWidthsFloat => &GetCharABCWidthsFloatW;
 
         [NativeTypeName("#define GetGlyphOutline GetGlyphOutlineW")]
-        public static readonly delegate*<IntPtr, uint, uint, GLYPHMETRICS*, uint, void*, MAT2*, uint> GetGlyphOutline = &GetGlyphOutlineW;
+        public static delegate*<IntPtr, uint, uint, GLYPHMETRICS*, uint, void*, MAT2*, uint> GetGlyphOutline => &GetGlyphOutlineW;
 
         [NativeTypeName("#define GetMetaFile GetMetaFileW")]
-        public static readonly delegate*<ushort*, IntPtr> GetMetaFile = &GetMetaFileW;
+        public static delegate*<ushort*, IntPtr> GetMetaFile => &GetMetaFileW;
 
         [NativeTypeName("#define GetOutlineTextMetrics GetOutlineTextMetricsW")]
-        public static readonly delegate*<IntPtr, uint, OUTLINETEXTMETRICW*, uint> GetOutlineTextMetrics = &GetOutlineTextMetricsW;
+        public static delegate*<IntPtr, uint, OUTLINETEXTMETRICW*, uint> GetOutlineTextMetrics => &GetOutlineTextMetricsW;
 
         [NativeTypeName("#define GetTextExtentPoint GetTextExtentPointW")]
-        public static readonly delegate*<IntPtr, ushort*, int, SIZE*, int> GetTextExtentPoint = &GetTextExtentPointW;
+        public static delegate*<IntPtr, ushort*, int, SIZE*, int> GetTextExtentPoint => &GetTextExtentPointW;
 
         [NativeTypeName("#define GetTextExtentPoint32 GetTextExtentPoint32W")]
-        public static readonly delegate*<IntPtr, ushort*, int, SIZE*, int> GetTextExtentPoint32 = &GetTextExtentPoint32W;
+        public static delegate*<IntPtr, ushort*, int, SIZE*, int> GetTextExtentPoint32 => &GetTextExtentPoint32W;
 
         [NativeTypeName("#define GetTextExtentExPoint GetTextExtentExPointW")]
-        public static readonly delegate*<IntPtr, ushort*, int, int, int*, int*, SIZE*, int> GetTextExtentExPoint = &GetTextExtentExPointW;
+        public static delegate*<IntPtr, ushort*, int, int, int*, int*, SIZE*, int> GetTextExtentExPoint => &GetTextExtentExPointW;
 
         [NativeTypeName("#define GetCharacterPlacement GetCharacterPlacementW")]
-        public static readonly delegate*<IntPtr, ushort*, int, int, GCP_RESULTSW*, uint, uint> GetCharacterPlacement = &GetCharacterPlacementW;
+        public static delegate*<IntPtr, ushort*, int, int, GCP_RESULTSW*, uint, uint> GetCharacterPlacement => &GetCharacterPlacementW;
 
         [NativeTypeName("#define GS_8BIT_INDICES 0x00000001")]
         public const int GS_8BIT_INDICES = 0x00000001;
@@ -5105,28 +5105,28 @@ namespace TerraFX.Interop
         public const int GGI_MARK_NONEXISTING_GLYPHS = 0X0001;
 
         [NativeTypeName("#define GetGlyphIndices GetGlyphIndicesW")]
-        public static readonly delegate*<IntPtr, ushort*, int, ushort*, uint, uint> GetGlyphIndices = &GetGlyphIndicesW;
+        public static delegate*<IntPtr, ushort*, int, ushort*, uint, uint> GetGlyphIndices => &GetGlyphIndicesW;
 
         [NativeTypeName("#define STAMP_DESIGNVECTOR (0x8000000 + 'd' + ('v' << 8))")]
-        public const int STAMP_DESIGNVECTOR = (0x8000000 + (sbyte)('d') + ((sbyte)('v') << 8));
+        public const int STAMP_DESIGNVECTOR = (0x8000000 + 'd' + ('v' << 8));
 
         [NativeTypeName("#define STAMP_AXESLIST (0x8000000 + 'a' + ('l' << 8))")]
-        public const int STAMP_AXESLIST = (0x8000000 + (sbyte)('a') + ((sbyte)('l') << 8));
+        public const int STAMP_AXESLIST = (0x8000000 + 'a' + ('l' << 8));
 
         [NativeTypeName("#define STAMP_TRUETYPE_VARIATION (0x8000000 + 't' + ('v' << 8))")]
-        public const int STAMP_TRUETYPE_VARIATION = (0x8000000 + (sbyte)('t') + ((sbyte)('v') << 8));
+        public const int STAMP_TRUETYPE_VARIATION = (0x8000000 + 't' + ('v' << 8));
 
         [NativeTypeName("#define STAMP_CFF2 (0x8000000 + 'c' + ('v' << 8))")]
-        public const int STAMP_CFF2 = (0x8000000 + (sbyte)('c') + ((sbyte)('v') << 8));
+        public const int STAMP_CFF2 = (0x8000000 + 'c' + ('v' << 8));
 
         [NativeTypeName("#define MM_MAX_NUMAXES 16")]
         public const int MM_MAX_NUMAXES = 16;
 
         [NativeTypeName("#define AddFontResourceEx AddFontResourceExW")]
-        public static readonly delegate*<ushort*, uint, void*, int> AddFontResourceEx = &AddFontResourceExW;
+        public static delegate*<ushort*, uint, void*, int> AddFontResourceEx => &AddFontResourceExW;
 
         [NativeTypeName("#define RemoveFontResourceEx RemoveFontResourceExW")]
-        public static readonly delegate*<ushort*, uint, void*, int> RemoveFontResourceEx = &RemoveFontResourceExW;
+        public static delegate*<ushort*, uint, void*, int> RemoveFontResourceEx => &RemoveFontResourceExW;
 
         [NativeTypeName("#define FR_PRIVATE 0x10")]
         public const int FR_PRIVATE = 0x10;
@@ -5138,13 +5138,13 @@ namespace TerraFX.Interop
         public const int MM_MAX_AXES_NAMELEN = 16;
 
         [NativeTypeName("#define CreateFontIndirectEx CreateFontIndirectExW")]
-        public static readonly delegate*<ENUMLOGFONTEXDVW*, IntPtr> CreateFontIndirectEx = &CreateFontIndirectExW;
+        public static delegate*<ENUMLOGFONTEXDVW*, IntPtr> CreateFontIndirectEx => &CreateFontIndirectExW;
 
         [NativeTypeName("#define ResetDC ResetDCW")]
-        public static readonly delegate*<IntPtr, DEVMODEW*, IntPtr> ResetDC = &ResetDCW;
+        public static delegate*<IntPtr, DEVMODEW*, IntPtr> ResetDC => &ResetDCW;
 
         [NativeTypeName("#define RemoveFontResource RemoveFontResourceW")]
-        public static readonly delegate*<ushort*, int> RemoveFontResource = &RemoveFontResourceW;
+        public static delegate*<ushort*, int> RemoveFontResource => &RemoveFontResourceW;
 
         [NativeTypeName("#define AC_SRC_OVER 0x00")]
         public const int AC_SRC_OVER = 0x00;
@@ -5165,19 +5165,19 @@ namespace TerraFX.Interop
         public const int GRADIENT_FILL_OP_FLAG = 0x000000ff;
 
         [NativeTypeName("#define CopyEnhMetaFile CopyEnhMetaFileW")]
-        public static readonly delegate*<IntPtr, ushort*, IntPtr> CopyEnhMetaFile = &CopyEnhMetaFileW;
+        public static delegate*<IntPtr, ushort*, IntPtr> CopyEnhMetaFile => &CopyEnhMetaFileW;
 
         [NativeTypeName("#define CreateEnhMetaFile CreateEnhMetaFileW")]
-        public static readonly delegate*<IntPtr, ushort*, RECT*, ushort*, IntPtr> CreateEnhMetaFile = &CreateEnhMetaFileW;
+        public static delegate*<IntPtr, ushort*, RECT*, ushort*, IntPtr> CreateEnhMetaFile => &CreateEnhMetaFileW;
 
         [NativeTypeName("#define GetEnhMetaFile GetEnhMetaFileW")]
-        public static readonly delegate*<ushort*, IntPtr> GetEnhMetaFile = &GetEnhMetaFileW;
+        public static delegate*<ushort*, IntPtr> GetEnhMetaFile => &GetEnhMetaFileW;
 
         [NativeTypeName("#define GetEnhMetaFileDescription GetEnhMetaFileDescriptionW")]
-        public static readonly delegate*<IntPtr, uint, ushort*, uint> GetEnhMetaFileDescription = &GetEnhMetaFileDescriptionW;
+        public static delegate*<IntPtr, uint, ushort*, uint> GetEnhMetaFileDescription => &GetEnhMetaFileDescriptionW;
 
         [NativeTypeName("#define GetTextMetrics GetTextMetricsW")]
-        public static readonly delegate*<IntPtr, TEXTMETRICW*, int> GetTextMetrics = &GetTextMetricsW;
+        public static delegate*<IntPtr, TEXTMETRICW*, int> GetTextMetrics => &GetTextMetricsW;
 
         [NativeTypeName("#define CA_NEGATIVE 0x0001")]
         public const int CA_NEGATIVE = 0x0001;
@@ -5258,28 +5258,28 @@ namespace TerraFX.Interop
         public const int DI_ROPS_READ_DESTINATION = 0x00000002;
 
         [NativeTypeName("#define StartDoc StartDocW")]
-        public static readonly delegate*<IntPtr, DOCINFOW*, int> StartDoc = &StartDocW;
+        public static delegate*<IntPtr, DOCINFOW*, int> StartDoc => &StartDocW;
 
         [NativeTypeName("#define GetObject GetObjectW")]
-        public static readonly delegate*<IntPtr, int, void*, int> GetObject = &GetObjectW;
+        public static delegate*<IntPtr, int, void*, int> GetObject => &GetObjectW;
 
         [NativeTypeName("#define TextOut TextOutW")]
-        public static readonly delegate*<IntPtr, int, int, ushort*, int, int> TextOut = &TextOutW;
+        public static delegate*<IntPtr, int, int, ushort*, int, int> TextOut => &TextOutW;
 
         [NativeTypeName("#define ExtTextOut ExtTextOutW")]
-        public static readonly delegate*<IntPtr, int, int, uint, RECT*, ushort*, uint, int*, int> ExtTextOut = &ExtTextOutW;
+        public static delegate*<IntPtr, int, int, uint, RECT*, ushort*, uint, int*, int> ExtTextOut => &ExtTextOutW;
 
         [NativeTypeName("#define PolyTextOut PolyTextOutW")]
-        public static readonly delegate*<IntPtr, POLYTEXTW*, int, int> PolyTextOut = &PolyTextOutW;
+        public static delegate*<IntPtr, POLYTEXTW*, int, int> PolyTextOut => &PolyTextOutW;
 
         [NativeTypeName("#define GetTextFace GetTextFaceW")]
-        public static readonly delegate*<IntPtr, int, ushort*, int> GetTextFace = &GetTextFaceW;
+        public static delegate*<IntPtr, int, ushort*, int> GetTextFace => &GetTextFaceW;
 
         [NativeTypeName("#define FONTMAPPER_MAX 10")]
         public const int FONTMAPPER_MAX = 10;
 
         [NativeTypeName("#define GetKerningPairs GetKerningPairsW")]
-        public static readonly delegate*<IntPtr, uint, KERNINGPAIR*, uint> GetKerningPairs = &GetKerningPairsW;
+        public static delegate*<IntPtr, uint, KERNINGPAIR*, uint> GetKerningPairs => &GetKerningPairsW;
 
         [NativeTypeName("#define ICM_OFF 1")]
         public const int ICM_OFF = 1;
@@ -5294,22 +5294,22 @@ namespace TerraFX.Interop
         public const int ICM_DONE_OUTSIDEDC = 4;
 
         [NativeTypeName("#define GetLogColorSpace GetLogColorSpaceW")]
-        public static readonly delegate*<IntPtr, LOGCOLORSPACEW*, uint, int> GetLogColorSpace = &GetLogColorSpaceW;
+        public static delegate*<IntPtr, LOGCOLORSPACEW*, uint, int> GetLogColorSpace => &GetLogColorSpaceW;
 
         [NativeTypeName("#define CreateColorSpace CreateColorSpaceW")]
-        public static readonly delegate*<LOGCOLORSPACEW*, IntPtr> CreateColorSpace = &CreateColorSpaceW;
+        public static delegate*<LOGCOLORSPACEW*, IntPtr> CreateColorSpace => &CreateColorSpaceW;
 
         [NativeTypeName("#define GetICMProfile GetICMProfileW")]
-        public static readonly delegate*<IntPtr, uint*, ushort*, int> GetICMProfile = &GetICMProfileW;
+        public static delegate*<IntPtr, uint*, ushort*, int> GetICMProfile => &GetICMProfileW;
 
         [NativeTypeName("#define SetICMProfile SetICMProfileW")]
-        public static readonly delegate*<IntPtr, ushort*, int> SetICMProfile = &SetICMProfileW;
+        public static delegate*<IntPtr, ushort*, int> SetICMProfile => &SetICMProfileW;
 
         [NativeTypeName("#define EnumICMProfiles EnumICMProfilesW")]
-        public static readonly delegate*<IntPtr, delegate* unmanaged<ushort*, nint, int>, nint, int> EnumICMProfiles = &EnumICMProfilesW;
+        public static delegate*<IntPtr, delegate* unmanaged<ushort*, nint, int>, nint, int> EnumICMProfiles => &EnumICMProfilesW;
 
         [NativeTypeName("#define UpdateICMRegKey UpdateICMRegKeyW")]
-        public static readonly delegate*<uint, ushort*, ushort*, uint, int> UpdateICMRegKey = &UpdateICMRegKeyW;
+        public static delegate*<uint, ushort*, ushort*, uint, int> UpdateICMRegKey => &UpdateICMRegKeyW;
 
         [NativeTypeName("#define ENHMETA_SIGNATURE 0x464D4520")]
         public const int ENHMETA_SIGNATURE = 0x464D4520;
@@ -5720,7 +5720,7 @@ namespace TerraFX.Interop
         public const int GDICOMMENT_UNICODE_END = 0x00000080;
 
         [NativeTypeName("#define wglUseFontBitmaps wglUseFontBitmapsW")]
-        public static readonly delegate*<IntPtr, uint, uint, uint, int> wglUseFontBitmaps = &wglUseFontBitmapsW;
+        public static delegate*<IntPtr, uint, uint, uint, int> wglUseFontBitmaps => &wglUseFontBitmapsW;
 
         [NativeTypeName("#define WGL_FONT_LINES 0")]
         public const int WGL_FONT_LINES = 0;
@@ -5729,7 +5729,7 @@ namespace TerraFX.Interop
         public const int WGL_FONT_POLYGONS = 1;
 
         [NativeTypeName("#define wglUseFontOutlines wglUseFontOutlinesW")]
-        public static readonly delegate*<IntPtr, uint, uint, uint, float, float, int, GLYPHMETRICSFLOAT*, int> wglUseFontOutlines = &wglUseFontOutlinesW;
+        public static delegate*<IntPtr, uint, uint, uint, float, float, int, GLYPHMETRICSFLOAT*, int> wglUseFontOutlines => &wglUseFontOutlinesW;
 
         [NativeTypeName("#define LPD_DOUBLEBUFFER 0x00000001")]
         public const int LPD_DOUBLEBUFFER = 0x00000001;

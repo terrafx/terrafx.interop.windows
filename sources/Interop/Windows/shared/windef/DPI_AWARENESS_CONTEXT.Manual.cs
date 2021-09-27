@@ -9,7 +9,7 @@ namespace TerraFX.Interop
 {
     public unsafe struct DPI_AWARENESS_CONTEXT : IEquatable<DPI_AWARENESS_CONTEXT>
     {
-        public static readonly DPI_AWARENESS_CONTEXT NULL = default;
+        public static DPI_AWARENESS_CONTEXT NULL => default;
 
         private void* _value;
 

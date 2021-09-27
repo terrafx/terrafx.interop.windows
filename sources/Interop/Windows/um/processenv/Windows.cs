@@ -107,36 +107,36 @@ namespace TerraFX.Interop
         public static extern int NeedCurrentDirectoryForExePathW([NativeTypeName("LPCWSTR")] ushort* ExeName);
 
         [NativeTypeName("#define SetEnvironmentStrings SetEnvironmentStringsW")]
-        public static readonly delegate*<ushort*, int> SetEnvironmentStrings = &SetEnvironmentStringsW;
+        public static delegate*<ushort*, int> SetEnvironmentStrings => &SetEnvironmentStringsW;
 
         [NativeTypeName("#define GetCommandLine GetCommandLineW")]
-        public static readonly delegate*<ushort*> GetCommandLine = &GetCommandLineW;
+        public static delegate*<ushort*> GetCommandLine => &GetCommandLineW;
 
         [NativeTypeName("#define GetEnvironmentStrings GetEnvironmentStringsW")]
-        public static readonly delegate*<ushort*> GetEnvironmentStrings = &GetEnvironmentStringsW;
+        public static delegate*<ushort*> GetEnvironmentStrings => &GetEnvironmentStringsW;
 
         [NativeTypeName("#define FreeEnvironmentStrings FreeEnvironmentStringsW")]
-        public static readonly delegate*<ushort*, int> FreeEnvironmentStrings = &FreeEnvironmentStringsW;
+        public static delegate*<ushort*, int> FreeEnvironmentStrings => &FreeEnvironmentStringsW;
 
         [NativeTypeName("#define GetEnvironmentVariable GetEnvironmentVariableW")]
-        public static readonly delegate*<ushort*, ushort*, uint, uint> GetEnvironmentVariable = &GetEnvironmentVariableW;
+        public static delegate*<ushort*, ushort*, uint, uint> GetEnvironmentVariable => &GetEnvironmentVariableW;
 
         [NativeTypeName("#define SetEnvironmentVariable SetEnvironmentVariableW")]
-        public static readonly delegate*<ushort*, ushort*, int> SetEnvironmentVariable = &SetEnvironmentVariableW;
+        public static delegate*<ushort*, ushort*, int> SetEnvironmentVariable => &SetEnvironmentVariableW;
 
         [NativeTypeName("#define ExpandEnvironmentStrings ExpandEnvironmentStringsW")]
-        public static readonly delegate*<ushort*, ushort*, uint, uint> ExpandEnvironmentStrings = &ExpandEnvironmentStringsW;
+        public static delegate*<ushort*, ushort*, uint, uint> ExpandEnvironmentStrings => &ExpandEnvironmentStringsW;
 
         [NativeTypeName("#define SetCurrentDirectory SetCurrentDirectoryW")]
-        public static readonly delegate*<ushort*, int> SetCurrentDirectory = &SetCurrentDirectoryW;
+        public static delegate*<ushort*, int> SetCurrentDirectory => &SetCurrentDirectoryW;
 
         [NativeTypeName("#define GetCurrentDirectory GetCurrentDirectoryW")]
-        public static readonly delegate*<uint, ushort*, uint> GetCurrentDirectory = &GetCurrentDirectoryW;
+        public static delegate*<uint, ushort*, uint> GetCurrentDirectory => &GetCurrentDirectoryW;
 
         [NativeTypeName("#define SearchPath SearchPathW")]
-        public static readonly delegate*<ushort*, ushort*, ushort*, uint, ushort*, ushort**, uint> SearchPath = &SearchPathW;
+        public static delegate*<ushort*, ushort*, ushort*, uint, ushort*, ushort**, uint> SearchPath => &SearchPathW;
 
         [NativeTypeName("#define NeedCurrentDirectoryForExePath NeedCurrentDirectoryForExePathW")]
-        public static readonly delegate*<ushort*, int> NeedCurrentDirectoryForExePath = &NeedCurrentDirectoryForExePathW;
+        public static delegate*<ushort*, int> NeedCurrentDirectoryForExePath => &NeedCurrentDirectoryForExePathW;
     }
 }

@@ -4,6 +4,8 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
 {
@@ -48,18 +50,158 @@ namespace TerraFX.Interop
         [NativeTypeName("#define SPTLAUDCLNT_E_INTERNAL AUDCLNT_ERR(0x010d)")]
         public const int SPTLAUDCLNT_E_INTERNAL = unchecked((int)(((uint)(1) << 31) | ((uint)(2185) << 16) | ((uint)(0x010d))));
 
-        public static readonly Guid IID_IAudioFormatEnumerator = new Guid(0xDCDAA858, 0x895A, 0x4A22, 0xA5, 0xEB, 0x67, 0xBD, 0xA5, 0x06, 0x09, 0x6D);
+        public static ref readonly Guid IID_IAudioFormatEnumerator
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x58, 0xA8, 0xDA, 0xDC,
+                    0x5A, 0x89,
+                    0x22, 0x4A,
+                    0xA5,
+                    0xEB,
+                    0x67,
+                    0xBD,
+                    0xA5,
+                    0x06,
+                    0x09,
+                    0x6D
+                };
 
-        public static readonly Guid IID_ISpatialAudioObjectBase = new Guid(0xCCE0B8F2, 0x8D4D, 0x4EFB, 0xA8, 0xCF, 0x3D, 0x6E, 0xCF, 0x1C, 0x30, 0xE0);
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
-        public static readonly Guid IID_ISpatialAudioObject = new Guid(0xDDE28967, 0x521B, 0x46E5, 0x8F, 0x00, 0xBD, 0x6F, 0x2B, 0xC8, 0xAB, 0x1D);
+        public static ref readonly Guid IID_ISpatialAudioObjectBase
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xF2, 0xB8, 0xE0, 0xCC,
+                    0x4D, 0x8D,
+                    0xFB, 0x4E,
+                    0xA8,
+                    0xCF,
+                    0x3D,
+                    0x6E,
+                    0xCF,
+                    0x1C,
+                    0x30,
+                    0xE0
+                };
 
-        public static readonly Guid IID_ISpatialAudioObjectRenderStreamBase = new Guid(0xFEAAF403, 0xC1D8, 0x450D, 0xAA, 0x05, 0xE0, 0xCC, 0xEE, 0x75, 0x02, 0xA8);
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
-        public static readonly Guid IID_ISpatialAudioObjectRenderStream = new Guid(0xBAB5F473, 0xB423, 0x477B, 0x85, 0xF5, 0xB5, 0xA3, 0x32, 0xA0, 0x41, 0x53);
+        public static ref readonly Guid IID_ISpatialAudioObject
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x67, 0x89, 0xE2, 0xDD,
+                    0x1B, 0x52,
+                    0xE5, 0x46,
+                    0x8F,
+                    0x00,
+                    0xBD,
+                    0x6F,
+                    0x2B,
+                    0xC8,
+                    0xAB,
+                    0x1D
+                };
 
-        public static readonly Guid IID_ISpatialAudioObjectRenderStreamNotify = new Guid(0xDDDF83E6, 0x68D7, 0x4C70, 0x88, 0x3F, 0xA1, 0x83, 0x6A, 0xFB, 0x4A, 0x50);
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
-        public static readonly Guid IID_ISpatialAudioClient = new Guid(0xBBF8E066, 0xAAAA, 0x49BE, 0x9A, 0x4D, 0xFD, 0x2A, 0x85, 0x8E, 0xA2, 0x7F);
+        public static ref readonly Guid IID_ISpatialAudioObjectRenderStreamBase
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x03, 0xF4, 0xAA, 0xFE,
+                    0xD8, 0xC1,
+                    0x0D, 0x45,
+                    0xAA,
+                    0x05,
+                    0xE0,
+                    0xCC,
+                    0xEE,
+                    0x75,
+                    0x02,
+                    0xA8
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid IID_ISpatialAudioObjectRenderStream
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x73, 0xF4, 0xB5, 0xBA,
+                    0x23, 0xB4,
+                    0x7B, 0x47,
+                    0x85,
+                    0xF5,
+                    0xB5,
+                    0xA3,
+                    0x32,
+                    0xA0,
+                    0x41,
+                    0x53
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid IID_ISpatialAudioObjectRenderStreamNotify
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xE6, 0x83, 0xDF, 0xDD,
+                    0xD7, 0x68,
+                    0x70, 0x4C,
+                    0x88,
+                    0x3F,
+                    0xA1,
+                    0x83,
+                    0x6A,
+                    0xFB,
+                    0x4A,
+                    0x50
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid IID_ISpatialAudioClient
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x66, 0xE0, 0xF8, 0xBB,
+                    0xAA, 0xAA,
+                    0xBE, 0x49,
+                    0x9A,
+                    0x4D,
+                    0xFD,
+                    0x2A,
+                    0x85,
+                    0x8E,
+                    0xA2,
+                    0x7F
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
     }
 }

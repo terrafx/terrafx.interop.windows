@@ -553,7 +553,7 @@ namespace TerraFX.Interop
         public const int SP_PROT_X_SERVERS = ((0x00000001 | 0x00000004 | 0x00000010 | 0x40000000 | 0x00000040) | (0x00000040 | 0x00000100 | 0x00000400 | 0x00001000) | (0x00010000 | 0x00040000));
 
         [NativeTypeName("#define SslEmptyCache SslEmptyCacheW")]
-        public static readonly delegate*<ushort*, uint, int> SslEmptyCache = &SslEmptyCacheW;
+        public static delegate*<ushort*, uint, int> SslEmptyCache => &SslEmptyCacheW;
 
         [NativeTypeName("#define SCHANNEL_SECRET_TYPE_CAPI 0x00000001")]
         public const int SCHANNEL_SECRET_TYPE_CAPI = 0x00000001;

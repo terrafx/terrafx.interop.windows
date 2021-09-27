@@ -4,6 +4,8 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
 {
@@ -12,20 +14,180 @@ namespace TerraFX.Interop
         [NativeTypeName("#define E_SURFACE_CONTENTS_LOST 0x802b0020")]
         public const uint E_SURFACE_CONTENTS_LOST = 0x802b0020;
 
-        public static readonly Guid IID_ISurfaceImageSourceNative = new Guid(0xF2E9EDC1, 0xD307, 0x4525, 0x98, 0x86, 0x0F, 0xAF, 0xAA, 0x44, 0x16, 0x3C);
+        public static ref readonly Guid IID_ISurfaceImageSourceNative
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xC1, 0xED, 0xE9, 0xF2,
+                    0x07, 0xD3,
+                    0x25, 0x45,
+                    0x98,
+                    0x86,
+                    0x0F,
+                    0xAF,
+                    0xAA,
+                    0x44,
+                    0x16,
+                    0x3C
+                };
 
-        public static readonly Guid IID_IVirtualSurfaceUpdatesCallbackNative = new Guid(0xDBF2E947, 0x8E6C, 0x4254, 0x9E, 0xEE, 0x77, 0x38, 0xF7, 0x13, 0x86, 0xC9);
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
-        public static readonly Guid IID_IVirtualSurfaceImageSourceNative = new Guid(0xE9550983, 0x360B, 0x4F53, 0xB3, 0x91, 0xAF, 0xD6, 0x95, 0x07, 0x86, 0x91);
+        public static ref readonly Guid IID_IVirtualSurfaceUpdatesCallbackNative
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x47, 0xE9, 0xF2, 0xDB,
+                    0x6C, 0x8E,
+                    0x54, 0x42,
+                    0x9E,
+                    0xEE,
+                    0x77,
+                    0x38,
+                    0xF7,
+                    0x13,
+                    0x86,
+                    0xC9
+                };
 
-        public static readonly Guid IID_ISwapChainBackgroundPanelNative = new Guid(0x43BEBD4E, 0xADD5, 0x4035, 0x8F, 0x85, 0x56, 0x08, 0xD0, 0x8E, 0x9D, 0xC9);
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
-        public static readonly Guid IID_ISurfaceImageSourceManagerNative = new Guid(0x4C8798B7, 0x1D88, 0x4A0F, 0xB5, 0x9B, 0xB9, 0x3F, 0x60, 0x0D, 0xE8, 0xC8);
+        public static ref readonly Guid IID_IVirtualSurfaceImageSourceNative
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x83, 0x09, 0x55, 0xE9,
+                    0x0B, 0x36,
+                    0x53, 0x4F,
+                    0xB3,
+                    0x91,
+                    0xAF,
+                    0xD6,
+                    0x95,
+                    0x07,
+                    0x86,
+                    0x91
+                };
 
-        public static readonly Guid IID_ISurfaceImageSourceNativeWithD2D = new Guid(0x54298223, 0x41E1, 0x4A41, 0x9C, 0x08, 0x02, 0xE8, 0x25, 0x68, 0x64, 0xA1);
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
-        public static readonly Guid IID_ISwapChainPanelNative = new Guid(0xF92F19D2, 0x3ADE, 0x45A6, 0xA2, 0x0C, 0xF6, 0xF1, 0xEA, 0x90, 0x55, 0x4B);
+        public static ref readonly Guid IID_ISwapChainBackgroundPanelNative
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x4E, 0xBD, 0xBE, 0x43,
+                    0xD5, 0xAD,
+                    0x35, 0x40,
+                    0x8F,
+                    0x85,
+                    0x56,
+                    0x08,
+                    0xD0,
+                    0x8E,
+                    0x9D,
+                    0xC9
+                };
 
-        public static readonly Guid IID_ISwapChainPanelNative2 = new Guid(0xD5A2F60C, 0x37B2, 0x44A2, 0x93, 0x7B, 0x8D, 0x8E, 0xB9, 0x72, 0x68, 0x21);
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid IID_ISurfaceImageSourceManagerNative
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xB7, 0x98, 0x87, 0x4C,
+                    0x88, 0x1D,
+                    0x0F, 0x4A,
+                    0xB5,
+                    0x9B,
+                    0xB9,
+                    0x3F,
+                    0x60,
+                    0x0D,
+                    0xE8,
+                    0xC8
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid IID_ISurfaceImageSourceNativeWithD2D
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x23, 0x82, 0x29, 0x54,
+                    0xE1, 0x41,
+                    0x41, 0x4A,
+                    0x9C,
+                    0x08,
+                    0x02,
+                    0xE8,
+                    0x25,
+                    0x68,
+                    0x64,
+                    0xA1
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid IID_ISwapChainPanelNative
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xD2, 0x19, 0x2F, 0xF9,
+                    0xDE, 0x3A,
+                    0xA6, 0x45,
+                    0xA2,
+                    0x0C,
+                    0xF6,
+                    0xF1,
+                    0xEA,
+                    0x90,
+                    0x55,
+                    0x4B
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid IID_ISwapChainPanelNative2
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x0C, 0xF6, 0xA2, 0xD5,
+                    0xB2, 0x37,
+                    0xA2, 0x44,
+                    0x93,
+                    0x7B,
+                    0x8D,
+                    0x8E,
+                    0xB9,
+                    0x72,
+                    0x68,
+                    0x21
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
     }
 }

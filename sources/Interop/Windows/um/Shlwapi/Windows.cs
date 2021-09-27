@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
@@ -1454,115 +1455,115 @@ namespace TerraFX.Interop
         public const int STIF_SUPPORT_HEX = 0x00000001;
 
         [NativeTypeName("#define StrRetToStr StrRetToStrW")]
-        public static readonly delegate*<STRRET*, ITEMIDLIST*, ushort**, int> StrRetToStr = &StrRetToStrW;
+        public static delegate*<STRRET*, ITEMIDLIST*, ushort**, int> StrRetToStr => &StrRetToStrW;
 
         [NativeTypeName("#define StrRetToBuf StrRetToBufW")]
-        public static readonly delegate*<STRRET*, ITEMIDLIST*, ushort*, uint, int> StrRetToBuf = &StrRetToBufW;
+        public static delegate*<STRRET*, ITEMIDLIST*, ushort*, uint, int> StrRetToBuf => &StrRetToBufW;
 
         [NativeTypeName("#define SHStrDup SHStrDupW")]
-        public static readonly delegate*<ushort*, ushort**, int> SHStrDup = &SHStrDupW;
+        public static delegate*<ushort*, ushort**, int> SHStrDup => &SHStrDupW;
 
         [NativeTypeName("#define SHLocalStrDup SHLocalStrDupW")]
-        public static readonly delegate*<ushort*, ushort**, int> SHLocalStrDup = &SHLocalStrDupW;
+        public static delegate*<ushort*, ushort**, int> SHLocalStrDup => &SHLocalStrDupW;
 
         [NativeTypeName("#define IsCharSpace IsCharSpaceW")]
-        public static readonly delegate*<ushort, int> IsCharSpace = &IsCharSpaceW;
+        public static delegate*<ushort, int> IsCharSpace => &IsCharSpaceW;
 
         [NativeTypeName("#define StrCmpC StrCmpCW")]
-        public static readonly delegate*<ushort*, ushort*, int> StrCmpC = &StrCmpCW;
+        public static delegate*<ushort*, ushort*, int> StrCmpC => &StrCmpCW;
 
         [NativeTypeName("#define StrCmpIC StrCmpICW")]
-        public static readonly delegate*<ushort*, ushort*, int> StrCmpIC = &StrCmpICW;
+        public static delegate*<ushort*, ushort*, int> StrCmpIC => &StrCmpICW;
 
         [NativeTypeName("#define StrChr StrChrW")]
-        public static readonly delegate*<ushort*, ushort, ushort*> StrChr = &StrChrW;
+        public static delegate*<ushort*, ushort, ushort*> StrChr => &StrChrW;
 
         [NativeTypeName("#define StrRChr StrRChrW")]
-        public static readonly delegate*<ushort*, ushort*, ushort, ushort*> StrRChr = &StrRChrW;
+        public static delegate*<ushort*, ushort*, ushort, ushort*> StrRChr => &StrRChrW;
 
         [NativeTypeName("#define StrChrI StrChrIW")]
-        public static readonly delegate*<ushort*, ushort, ushort*> StrChrI = &StrChrIW;
+        public static delegate*<ushort*, ushort, ushort*> StrChrI => &StrChrIW;
 
         [NativeTypeName("#define StrRChrI StrRChrIW")]
-        public static readonly delegate*<ushort*, ushort*, ushort, ushort*> StrRChrI = &StrRChrIW;
+        public static delegate*<ushort*, ushort*, ushort, ushort*> StrRChrI => &StrRChrIW;
 
         [NativeTypeName("#define StrCmpN StrCmpNW")]
-        public static readonly delegate*<ushort*, ushort*, int, int> StrCmpN = &StrCmpNW;
+        public static delegate*<ushort*, ushort*, int, int> StrCmpN => &StrCmpNW;
 
         [NativeTypeName("#define StrCmpNI StrCmpNIW")]
-        public static readonly delegate*<ushort*, ushort*, int, int> StrCmpNI = &StrCmpNIW;
+        public static delegate*<ushort*, ushort*, int, int> StrCmpNI => &StrCmpNIW;
 
         [NativeTypeName("#define StrStr StrStrW")]
-        public static readonly delegate*<ushort*, ushort*, ushort*> StrStr = &StrStrW;
+        public static delegate*<ushort*, ushort*, ushort*> StrStr => &StrStrW;
 
         [NativeTypeName("#define StrStrI StrStrIW")]
-        public static readonly delegate*<ushort*, ushort*, ushort*> StrStrI = &StrStrIW;
+        public static delegate*<ushort*, ushort*, ushort*> StrStrI => &StrStrIW;
 
         [NativeTypeName("#define StrDup StrDupW")]
-        public static readonly delegate*<ushort*, ushort*> StrDup = &StrDupW;
+        public static delegate*<ushort*, ushort*> StrDup => &StrDupW;
 
         [NativeTypeName("#define StrRStrI StrRStrIW")]
-        public static readonly delegate*<ushort*, ushort*, ushort*, ushort*> StrRStrI = &StrRStrIW;
+        public static delegate*<ushort*, ushort*, ushort*, ushort*> StrRStrI => &StrRStrIW;
 
         [NativeTypeName("#define StrCSpn StrCSpnW")]
-        public static readonly delegate*<ushort*, ushort*, int> StrCSpn = &StrCSpnW;
+        public static delegate*<ushort*, ushort*, int> StrCSpn => &StrCSpnW;
 
         [NativeTypeName("#define StrCSpnI StrCSpnIW")]
-        public static readonly delegate*<ushort*, ushort*, int> StrCSpnI = &StrCSpnIW;
+        public static delegate*<ushort*, ushort*, int> StrCSpnI => &StrCSpnIW;
 
         [NativeTypeName("#define StrSpn StrSpnW")]
-        public static readonly delegate*<ushort*, ushort*, int> StrSpn = &StrSpnW;
+        public static delegate*<ushort*, ushort*, int> StrSpn => &StrSpnW;
 
         [NativeTypeName("#define StrToInt StrToIntW")]
-        public static readonly delegate*<ushort*, int> StrToInt = &StrToIntW;
+        public static delegate*<ushort*, int> StrToInt => &StrToIntW;
 
         [NativeTypeName("#define StrPBrk StrPBrkW")]
-        public static readonly delegate*<ushort*, ushort*, ushort*> StrPBrk = &StrPBrkW;
+        public static delegate*<ushort*, ushort*, ushort*> StrPBrk => &StrPBrkW;
 
         [NativeTypeName("#define StrToIntEx StrToIntExW")]
-        public static readonly delegate*<ushort*, int, int*, int> StrToIntEx = &StrToIntExW;
+        public static delegate*<ushort*, int, int*, int> StrToIntEx => &StrToIntExW;
 
         [NativeTypeName("#define StrToInt64Ex StrToInt64ExW")]
-        public static readonly delegate*<ushort*, int, long*, int> StrToInt64Ex = &StrToInt64ExW;
+        public static delegate*<ushort*, int, long*, int> StrToInt64Ex => &StrToInt64ExW;
 
         [NativeTypeName("#define StrFromTimeInterval StrFromTimeIntervalW")]
-        public static readonly delegate*<ushort*, uint, uint, int, int> StrFromTimeInterval = &StrFromTimeIntervalW;
+        public static delegate*<ushort*, uint, uint, int, int> StrFromTimeInterval => &StrFromTimeIntervalW;
 
         [NativeTypeName("#define StrFormatByteSize StrFormatByteSizeW")]
-        public static readonly delegate*<long, ushort*, uint, ushort*> StrFormatByteSize = &StrFormatByteSizeW;
+        public static delegate*<long, ushort*, uint, ushort*> StrFormatByteSize => &StrFormatByteSizeW;
 
         [NativeTypeName("#define StrFormatByteSize64 StrFormatByteSizeW")]
-        public static readonly delegate*<long, ushort*, uint, ushort*> StrFormatByteSize64 = &StrFormatByteSizeW;
+        public static delegate*<long, ushort*, uint, ushort*> StrFormatByteSize64 => &StrFormatByteSizeW;
 
         [NativeTypeName("#define StrFormatKBSize StrFormatKBSizeW")]
-        public static readonly delegate*<long, ushort*, uint, ushort*> StrFormatKBSize = &StrFormatKBSizeW;
+        public static delegate*<long, ushort*, uint, ushort*> StrFormatKBSize => &StrFormatKBSizeW;
 
         [NativeTypeName("#define StrNCat StrNCatW")]
-        public static readonly delegate*<ushort*, ushort*, int, ushort*> StrNCat = &StrNCatW;
+        public static delegate*<ushort*, ushort*, int, ushort*> StrNCat => &StrNCatW;
 
         [NativeTypeName("#define StrTrim StrTrimW")]
-        public static readonly delegate*<ushort*, ushort*, int> StrTrim = &StrTrimW;
+        public static delegate*<ushort*, ushort*, int> StrTrim => &StrTrimW;
 
         [NativeTypeName("#define StrCatBuff StrCatBuffW")]
-        public static readonly delegate*<ushort*, ushort*, int, ushort*> StrCatBuff = &StrCatBuffW;
+        public static delegate*<ushort*, ushort*, int, ushort*> StrCatBuff => &StrCatBuffW;
 
         [NativeTypeName("#define ChrCmpI ChrCmpIW")]
-        public static readonly delegate*<ushort, ushort, int> ChrCmpI = &ChrCmpIW;
+        public static delegate*<ushort, ushort, int> ChrCmpI => &ChrCmpIW;
 
         [NativeTypeName("#define wvnsprintf wvnsprintfW")]
-        public static readonly delegate*<ushort*, int, ushort*, sbyte*, int> wvnsprintf = &wvnsprintfW;
+        public static delegate*<ushort*, int, ushort*, sbyte*, int> wvnsprintf => &wvnsprintfW;
 
         [NativeTypeName("#define wnsprintf wnsprintfW")]
-        public static readonly delegate*<ushort*, int, ushort*, int> wnsprintf = &wnsprintfW;
+        public static delegate*<ushort*, int, ushort*, int> wnsprintf => &wnsprintfW;
 
         [NativeTypeName("#define StrIsIntlEqual StrIsIntlEqualW")]
-        public static readonly delegate*<int, ushort*, ushort*, int, int> StrIsIntlEqual = &StrIsIntlEqualW;
+        public static delegate*<int, ushort*, ushort*, int, int> StrIsIntlEqual => &StrIsIntlEqualW;
 
         [NativeTypeName("#define StrCmpNC StrCmpNCW")]
-        public static readonly delegate*<ushort*, ushort*, int, int> StrCmpNC = &StrCmpNCW;
+        public static delegate*<ushort*, ushort*, int, int> StrCmpNC => &StrCmpNCW;
 
         [NativeTypeName("#define StrCmpNIC StrCmpNICW")]
-        public static readonly delegate*<ushort*, ushort*, int, int> StrCmpNIC = &StrCmpNICW;
+        public static delegate*<ushort*, ushort*, int, int> StrCmpNIC => &StrCmpNICW;
 
         [NativeTypeName("#define SZ_CONTENTTYPE_HTMLA \"text/html\"")]
         public static ReadOnlySpan<byte> SZ_CONTENTTYPE_HTMLA => new byte[] { 0x74, 0x65, 0x78, 0x74, 0x2F, 0x68, 0x74, 0x6D, 0x6C, 0x00 };
@@ -1583,82 +1584,82 @@ namespace TerraFX.Interop
         public const string SZ_CONTENTTYPE_CDF = "application/x-cdf";
 
         [NativeTypeName("#define StrCatA lstrcatA")]
-        public static readonly delegate*<sbyte*, sbyte*, sbyte*> StrCatA = &lstrcatA;
+        public static delegate*<sbyte*, sbyte*, sbyte*> StrCatA => &lstrcatA;
 
         [NativeTypeName("#define StrCmpA lstrcmpA")]
-        public static readonly delegate*<sbyte*, sbyte*, int> StrCmpA = &lstrcmpA;
+        public static delegate*<sbyte*, sbyte*, int> StrCmpA => &lstrcmpA;
 
         [NativeTypeName("#define StrCmpIA lstrcmpiA")]
-        public static readonly delegate*<sbyte*, sbyte*, int> StrCmpIA = &lstrcmpiA;
+        public static delegate*<sbyte*, sbyte*, int> StrCmpIA => &lstrcmpiA;
 
         [NativeTypeName("#define StrCpyA lstrcpyA")]
-        public static readonly delegate*<sbyte*, sbyte*, sbyte*> StrCpyA = &lstrcpyA;
+        public static delegate*<sbyte*, sbyte*, sbyte*> StrCpyA => &lstrcpyA;
 
         [NativeTypeName("#define StrCpyNA lstrcpynA")]
-        public static readonly delegate*<sbyte*, sbyte*, int, sbyte*> StrCpyNA = &lstrcpynA;
+        public static delegate*<sbyte*, sbyte*, int, sbyte*> StrCpyNA => &lstrcpynA;
 
         [NativeTypeName("#define StrToLong StrToInt")]
-        public static readonly delegate*<ushort*, int> StrToLong = &StrToIntW;
+        public static delegate*<ushort*, int> StrToLong => &StrToIntW;
 
         [NativeTypeName("#define StrNCmp StrCmpN")]
-        public static readonly delegate*<ushort*, ushort*, int, int> StrNCmp = &StrCmpNW;
+        public static delegate*<ushort*, ushort*, int, int> StrNCmp => &StrCmpNW;
 
         [NativeTypeName("#define StrNCmpI StrCmpNI")]
-        public static readonly delegate*<ushort*, ushort*, int, int> StrNCmpI = &StrCmpNIW;
+        public static delegate*<ushort*, ushort*, int, int> StrNCmpI => &StrCmpNIW;
 
         [NativeTypeName("#define StrNCpy StrCpyN")]
-        public static readonly delegate*<ushort*, ushort*, int, ushort*> StrNCpy = &StrCpyNW;
+        public static delegate*<ushort*, ushort*, int, ushort*> StrNCpy => &StrCpyNW;
 
         [NativeTypeName("#define StrCatN StrNCat")]
-        public static readonly delegate*<ushort*, ushort*, int, ushort*> StrCatN = &StrNCatW;
+        public static delegate*<ushort*, ushort*, int, ushort*> StrCatN => &StrNCatW;
 
         [NativeTypeName("#define StrCat StrCatW")]
-        public static readonly delegate*<ushort*, ushort*, ushort*> StrCat = &StrCatW;
+        public static delegate*<ushort*, ushort*, ushort*> StrCat => &StrCatW;
 
         [NativeTypeName("#define StrCmp StrCmpW")]
-        public static readonly delegate*<ushort*, ushort*, int> StrCmp = &StrCmpW;
+        public static delegate*<ushort*, ushort*, int> StrCmp => &StrCmpW;
 
         [NativeTypeName("#define StrCmpI StrCmpIW")]
-        public static readonly delegate*<ushort*, ushort*, int> StrCmpI = &StrCmpIW;
+        public static delegate*<ushort*, ushort*, int> StrCmpI => &StrCmpIW;
 
         [NativeTypeName("#define StrCpy StrCpyW")]
-        public static readonly delegate*<ushort*, ushort*, ushort*> StrCpy = &StrCpyW;
+        public static delegate*<ushort*, ushort*, ushort*> StrCpy => &StrCpyW;
 
         [NativeTypeName("#define StrCpyN StrCpyNW")]
-        public static readonly delegate*<ushort*, ushort*, int, ushort*> StrCpyN = &StrCpyNW;
+        public static delegate*<ushort*, ushort*, int, ushort*> StrCpyN => &StrCpyNW;
 
         [NativeTypeName("#define PathAddBackslash PathAddBackslashW")]
-        public static readonly delegate*<ushort*, ushort*> PathAddBackslash = &PathAddBackslashW;
+        public static delegate*<ushort*, ushort*> PathAddBackslash => &PathAddBackslashW;
 
         [NativeTypeName("#define PathAddExtension PathAddExtensionW")]
-        public static readonly delegate*<ushort*, ushort*, int> PathAddExtension = &PathAddExtensionW;
+        public static delegate*<ushort*, ushort*, int> PathAddExtension => &PathAddExtensionW;
 
         [NativeTypeName("#define PathBuildRoot PathBuildRootW")]
-        public static readonly delegate*<ushort*, int, ushort*> PathBuildRoot = &PathBuildRootW;
+        public static delegate*<ushort*, int, ushort*> PathBuildRoot => &PathBuildRootW;
 
         [NativeTypeName("#define PathCombine PathCombineW")]
-        public static readonly delegate*<ushort*, ushort*, ushort*, ushort*> PathCombine = &PathCombineW;
+        public static delegate*<ushort*, ushort*, ushort*, ushort*> PathCombine => &PathCombineW;
 
         [NativeTypeName("#define PathFileExists PathFileExistsW")]
-        public static readonly delegate*<ushort*, int> PathFileExists = &PathFileExistsW;
+        public static delegate*<ushort*, int> PathFileExists => &PathFileExistsW;
 
         [NativeTypeName("#define PathFindExtension PathFindExtensionW")]
-        public static readonly delegate*<ushort*, ushort*> PathFindExtension = &PathFindExtensionW;
+        public static delegate*<ushort*, ushort*> PathFindExtension => &PathFindExtensionW;
 
         [NativeTypeName("#define PathFindFileName PathFindFileNameW")]
-        public static readonly delegate*<ushort*, ushort*> PathFindFileName = &PathFindFileNameW;
+        public static delegate*<ushort*, ushort*> PathFindFileName => &PathFindFileNameW;
 
         [NativeTypeName("#define PathFindNextComponent PathFindNextComponentW")]
-        public static readonly delegate*<ushort*, ushort*> PathFindNextComponent = &PathFindNextComponentW;
+        public static delegate*<ushort*, ushort*> PathFindNextComponent => &PathFindNextComponentW;
 
         [NativeTypeName("#define PathFindSuffixArray PathFindSuffixArrayW")]
-        public static readonly delegate*<ushort*, ushort**, int, ushort*> PathFindSuffixArray = &PathFindSuffixArrayW;
+        public static delegate*<ushort*, ushort**, int, ushort*> PathFindSuffixArray => &PathFindSuffixArrayW;
 
         [NativeTypeName("#define PathGetArgs PathGetArgsW")]
-        public static readonly delegate*<ushort*, ushort*> PathGetArgs = &PathGetArgsW;
+        public static delegate*<ushort*, ushort*> PathGetArgs => &PathGetArgsW;
 
         [NativeTypeName("#define PathIsLFNFileSpec PathIsLFNFileSpecW")]
-        public static readonly delegate*<ushort*, int> PathIsLFNFileSpec = &PathIsLFNFileSpecW;
+        public static delegate*<ushort*, int> PathIsLFNFileSpec => &PathIsLFNFileSpecW;
 
         [NativeTypeName("#define GCT_INVALID 0x0000")]
         public const int GCT_INVALID = 0x0000;
@@ -1676,43 +1677,43 @@ namespace TerraFX.Interop
         public const int GCT_SEPARATOR = 0x0008;
 
         [NativeTypeName("#define PathGetDriveNumber PathGetDriveNumberW")]
-        public static readonly delegate*<ushort*, int> PathGetDriveNumber = &PathGetDriveNumberW;
+        public static delegate*<ushort*, int> PathGetDriveNumber => &PathGetDriveNumberW;
 
         [NativeTypeName("#define PathIsDirectory PathIsDirectoryW")]
-        public static readonly delegate*<ushort*, int> PathIsDirectory = &PathIsDirectoryW;
+        public static delegate*<ushort*, int> PathIsDirectory => &PathIsDirectoryW;
 
         [NativeTypeName("#define PathIsDirectoryEmpty PathIsDirectoryEmptyW")]
-        public static readonly delegate*<ushort*, int> PathIsDirectoryEmpty = &PathIsDirectoryEmptyW;
+        public static delegate*<ushort*, int> PathIsDirectoryEmpty => &PathIsDirectoryEmptyW;
 
         [NativeTypeName("#define PathIsFileSpec PathIsFileSpecW")]
-        public static readonly delegate*<ushort*, int> PathIsFileSpec = &PathIsFileSpecW;
+        public static delegate*<ushort*, int> PathIsFileSpec => &PathIsFileSpecW;
 
         [NativeTypeName("#define PathIsPrefix PathIsPrefixW")]
-        public static readonly delegate*<ushort*, ushort*, int> PathIsPrefix = &PathIsPrefixW;
+        public static delegate*<ushort*, ushort*, int> PathIsPrefix => &PathIsPrefixW;
 
         [NativeTypeName("#define PathIsRelative PathIsRelativeW")]
-        public static readonly delegate*<ushort*, int> PathIsRelative = &PathIsRelativeW;
+        public static delegate*<ushort*, int> PathIsRelative => &PathIsRelativeW;
 
         [NativeTypeName("#define PathIsRoot PathIsRootW")]
-        public static readonly delegate*<ushort*, int> PathIsRoot = &PathIsRootW;
+        public static delegate*<ushort*, int> PathIsRoot => &PathIsRootW;
 
         [NativeTypeName("#define PathIsSameRoot PathIsSameRootW")]
-        public static readonly delegate*<ushort*, ushort*, int> PathIsSameRoot = &PathIsSameRootW;
+        public static delegate*<ushort*, ushort*, int> PathIsSameRoot => &PathIsSameRootW;
 
         [NativeTypeName("#define PathIsUNC PathIsUNCW")]
-        public static readonly delegate*<ushort*, int> PathIsUNC = &PathIsUNCW;
+        public static delegate*<ushort*, int> PathIsUNC => &PathIsUNCW;
 
         [NativeTypeName("#define PathIsNetworkPath PathIsNetworkPathW")]
-        public static readonly delegate*<ushort*, int> PathIsNetworkPath = &PathIsNetworkPathW;
+        public static delegate*<ushort*, int> PathIsNetworkPath => &PathIsNetworkPathW;
 
         [NativeTypeName("#define PathIsUNCServer PathIsUNCServerW")]
-        public static readonly delegate*<ushort*, int> PathIsUNCServer = &PathIsUNCServerW;
+        public static delegate*<ushort*, int> PathIsUNCServer => &PathIsUNCServerW;
 
         [NativeTypeName("#define PathIsUNCServerShare PathIsUNCServerShareW")]
-        public static readonly delegate*<ushort*, int> PathIsUNCServerShare = &PathIsUNCServerShareW;
+        public static delegate*<ushort*, int> PathIsUNCServerShare => &PathIsUNCServerShareW;
 
         [NativeTypeName("#define PathIsURL PathIsURLW")]
-        public static readonly delegate*<ushort*, int> PathIsURL = &PathIsURLW;
+        public static delegate*<ushort*, int> PathIsURL => &PathIsURLW;
 
         [NativeTypeName("#define PMSF_NORMAL 0x00000000")]
         public const int PMSF_NORMAL = 0x00000000;
@@ -1724,97 +1725,97 @@ namespace TerraFX.Interop
         public const int PMSF_DONT_STRIP_SPACES = 0x00010000;
 
         [NativeTypeName("#define PathRemoveBackslash PathRemoveBackslashW")]
-        public static readonly delegate*<ushort*, ushort*> PathRemoveBackslash = &PathRemoveBackslashW;
+        public static delegate*<ushort*, ushort*> PathRemoveBackslash => &PathRemoveBackslashW;
 
         [NativeTypeName("#define PathSkipRoot PathSkipRootW")]
-        public static readonly delegate*<ushort*, ushort*> PathSkipRoot = &PathSkipRootW;
+        public static delegate*<ushort*, ushort*> PathSkipRoot => &PathSkipRootW;
 
         [NativeTypeName("#define PathStripPath PathStripPathW")]
-        public static readonly delegate*<ushort*, void> PathStripPath = &PathStripPathW;
+        public static delegate*<ushort*, void> PathStripPath => &PathStripPathW;
 
         [NativeTypeName("#define PathStripToRoot PathStripToRootW")]
-        public static readonly delegate*<ushort*, int> PathStripToRoot = &PathStripToRootW;
+        public static delegate*<ushort*, int> PathStripToRoot => &PathStripToRootW;
 
         [NativeTypeName("#define PathMakeSystemFolder PathMakeSystemFolderW")]
-        public static readonly delegate*<ushort*, int> PathMakeSystemFolder = &PathMakeSystemFolderW;
+        public static delegate*<ushort*, int> PathMakeSystemFolder => &PathMakeSystemFolderW;
 
         [NativeTypeName("#define PathUnmakeSystemFolder PathUnmakeSystemFolderW")]
-        public static readonly delegate*<ushort*, int> PathUnmakeSystemFolder = &PathUnmakeSystemFolderW;
+        public static delegate*<ushort*, int> PathUnmakeSystemFolder => &PathUnmakeSystemFolderW;
 
         [NativeTypeName("#define PathIsSystemFolder PathIsSystemFolderW")]
-        public static readonly delegate*<ushort*, uint, int> PathIsSystemFolder = &PathIsSystemFolderW;
+        public static delegate*<ushort*, uint, int> PathIsSystemFolder => &PathIsSystemFolderW;
 
         [NativeTypeName("#define PathUndecorate PathUndecorateW")]
-        public static readonly delegate*<ushort*, void> PathUndecorate = &PathUndecorateW;
+        public static delegate*<ushort*, void> PathUndecorate => &PathUndecorateW;
 
         [NativeTypeName("#define PathUnExpandEnvStrings PathUnExpandEnvStringsW")]
-        public static readonly delegate*<ushort*, ushort*, uint, int> PathUnExpandEnvStrings = &PathUnExpandEnvStringsW;
+        public static delegate*<ushort*, ushort*, uint, int> PathUnExpandEnvStrings => &PathUnExpandEnvStringsW;
 
         [NativeTypeName("#define PathAppend PathAppendW")]
-        public static readonly delegate*<ushort*, ushort*, int> PathAppend = &PathAppendW;
+        public static delegate*<ushort*, ushort*, int> PathAppend => &PathAppendW;
 
         [NativeTypeName("#define PathCanonicalize PathCanonicalizeW")]
-        public static readonly delegate*<ushort*, ushort*, int> PathCanonicalize = &PathCanonicalizeW;
+        public static delegate*<ushort*, ushort*, int> PathCanonicalize => &PathCanonicalizeW;
 
         [NativeTypeName("#define PathCompactPath PathCompactPathW")]
-        public static readonly delegate*<IntPtr, ushort*, uint, int> PathCompactPath = &PathCompactPathW;
+        public static delegate*<IntPtr, ushort*, uint, int> PathCompactPath => &PathCompactPathW;
 
         [NativeTypeName("#define PathCompactPathEx PathCompactPathExW")]
-        public static readonly delegate*<ushort*, ushort*, uint, uint, int> PathCompactPathEx = &PathCompactPathExW;
+        public static delegate*<ushort*, ushort*, uint, uint, int> PathCompactPathEx => &PathCompactPathExW;
 
         [NativeTypeName("#define PathCommonPrefix PathCommonPrefixW")]
-        public static readonly delegate*<ushort*, ushort*, ushort*, int> PathCommonPrefix = &PathCommonPrefixW;
+        public static delegate*<ushort*, ushort*, ushort*, int> PathCommonPrefix => &PathCommonPrefixW;
 
         [NativeTypeName("#define PathFindOnPath PathFindOnPathW")]
-        public static readonly delegate*<ushort*, ushort**, int> PathFindOnPath = &PathFindOnPathW;
+        public static delegate*<ushort*, ushort**, int> PathFindOnPath => &PathFindOnPathW;
 
         [NativeTypeName("#define PathGetCharType PathGetCharTypeW")]
-        public static readonly delegate*<ushort, uint> PathGetCharType = &PathGetCharTypeW;
+        public static delegate*<ushort, uint> PathGetCharType => &PathGetCharTypeW;
 
         [NativeTypeName("#define PathIsContentType PathIsContentTypeW")]
-        public static readonly delegate*<ushort*, ushort*, int> PathIsContentType = &PathIsContentTypeW;
+        public static delegate*<ushort*, ushort*, int> PathIsContentType => &PathIsContentTypeW;
 
         [NativeTypeName("#define PathMakePretty PathMakePrettyW")]
-        public static readonly delegate*<ushort*, int> PathMakePretty = &PathMakePrettyW;
+        public static delegate*<ushort*, int> PathMakePretty => &PathMakePrettyW;
 
         [NativeTypeName("#define PathMatchSpec PathMatchSpecW")]
-        public static readonly delegate*<ushort*, ushort*, int> PathMatchSpec = &PathMatchSpecW;
+        public static delegate*<ushort*, ushort*, int> PathMatchSpec => &PathMatchSpecW;
 
         [NativeTypeName("#define PathMatchSpecEx PathMatchSpecExW")]
-        public static readonly delegate*<ushort*, ushort*, uint, int> PathMatchSpecEx = &PathMatchSpecExW;
+        public static delegate*<ushort*, ushort*, uint, int> PathMatchSpecEx => &PathMatchSpecExW;
 
         [NativeTypeName("#define PathParseIconLocation PathParseIconLocationW")]
-        public static readonly delegate*<ushort*, int> PathParseIconLocation = &PathParseIconLocationW;
+        public static delegate*<ushort*, int> PathParseIconLocation => &PathParseIconLocationW;
 
         [NativeTypeName("#define PathQuoteSpaces PathQuoteSpacesW")]
-        public static readonly delegate*<ushort*, int> PathQuoteSpaces = &PathQuoteSpacesW;
+        public static delegate*<ushort*, int> PathQuoteSpaces => &PathQuoteSpacesW;
 
         [NativeTypeName("#define PathRelativePathTo PathRelativePathToW")]
-        public static readonly delegate*<ushort*, ushort*, uint, ushort*, uint, int> PathRelativePathTo = &PathRelativePathToW;
+        public static delegate*<ushort*, ushort*, uint, ushort*, uint, int> PathRelativePathTo => &PathRelativePathToW;
 
         [NativeTypeName("#define PathRemoveArgs PathRemoveArgsW")]
-        public static readonly delegate*<ushort*, void> PathRemoveArgs = &PathRemoveArgsW;
+        public static delegate*<ushort*, void> PathRemoveArgs => &PathRemoveArgsW;
 
         [NativeTypeName("#define PathRemoveBlanks PathRemoveBlanksW")]
-        public static readonly delegate*<ushort*, void> PathRemoveBlanks = &PathRemoveBlanksW;
+        public static delegate*<ushort*, void> PathRemoveBlanks => &PathRemoveBlanksW;
 
         [NativeTypeName("#define PathRemoveExtension PathRemoveExtensionW")]
-        public static readonly delegate*<ushort*, void> PathRemoveExtension = &PathRemoveExtensionW;
+        public static delegate*<ushort*, void> PathRemoveExtension => &PathRemoveExtensionW;
 
         [NativeTypeName("#define PathRemoveFileSpec PathRemoveFileSpecW")]
-        public static readonly delegate*<ushort*, int> PathRemoveFileSpec = &PathRemoveFileSpecW;
+        public static delegate*<ushort*, int> PathRemoveFileSpec => &PathRemoveFileSpecW;
 
         [NativeTypeName("#define PathRenameExtension PathRenameExtensionW")]
-        public static readonly delegate*<ushort*, ushort*, int> PathRenameExtension = &PathRenameExtensionW;
+        public static delegate*<ushort*, ushort*, int> PathRenameExtension => &PathRenameExtensionW;
 
         [NativeTypeName("#define PathSearchAndQualify PathSearchAndQualifyW")]
-        public static readonly delegate*<ushort*, ushort*, uint, int> PathSearchAndQualify = &PathSearchAndQualifyW;
+        public static delegate*<ushort*, ushort*, uint, int> PathSearchAndQualify => &PathSearchAndQualifyW;
 
         [NativeTypeName("#define PathSetDlgItemPath PathSetDlgItemPathW")]
-        public static readonly delegate*<IntPtr, int, ushort*, void> PathSetDlgItemPath = &PathSetDlgItemPathW;
+        public static delegate*<IntPtr, int, ushort*, void> PathSetDlgItemPath => &PathSetDlgItemPathW;
 
         [NativeTypeName("#define PathUnquoteSpaces PathUnquoteSpacesW")]
-        public static readonly delegate*<ushort*, int> PathUnquoteSpaces = &PathUnquoteSpacesW;
+        public static delegate*<ushort*, int> PathUnquoteSpaces => &PathUnquoteSpacesW;
 
         [NativeTypeName("#define URL_UNESCAPE 0x10000000")]
         public const int URL_UNESCAPE = 0x10000000;
@@ -1901,64 +1902,64 @@ namespace TerraFX.Interop
         public const int URL_APPLY_FORCEAPPLY = 0x00000008;
 
         [NativeTypeName("#define UrlCompare UrlCompareW")]
-        public static readonly delegate*<ushort*, ushort*, int, int> UrlCompare = &UrlCompareW;
+        public static delegate*<ushort*, ushort*, int, int> UrlCompare => &UrlCompareW;
 
         [NativeTypeName("#define UrlCombine UrlCombineW")]
-        public static readonly delegate*<ushort*, ushort*, ushort*, uint*, uint, int> UrlCombine = &UrlCombineW;
+        public static delegate*<ushort*, ushort*, ushort*, uint*, uint, int> UrlCombine => &UrlCombineW;
 
         [NativeTypeName("#define UrlCanonicalize UrlCanonicalizeW")]
-        public static readonly delegate*<ushort*, ushort*, uint*, uint, int> UrlCanonicalize = &UrlCanonicalizeW;
+        public static delegate*<ushort*, ushort*, uint*, uint, int> UrlCanonicalize => &UrlCanonicalizeW;
 
         [NativeTypeName("#define UrlIsOpaque UrlIsOpaqueW")]
-        public static readonly delegate*<ushort*, int> UrlIsOpaque = &UrlIsOpaqueW;
+        public static delegate*<ushort*, int> UrlIsOpaque => &UrlIsOpaqueW;
 
         [NativeTypeName("#define UrlGetLocation UrlGetLocationW")]
-        public static readonly delegate*<ushort*, ushort*> UrlGetLocation = &UrlGetLocationW;
+        public static delegate*<ushort*, ushort*> UrlGetLocation => &UrlGetLocationW;
 
         [NativeTypeName("#define UrlUnescape UrlUnescapeW")]
-        public static readonly delegate*<ushort*, ushort*, uint*, uint, int> UrlUnescape = &UrlUnescapeW;
+        public static delegate*<ushort*, ushort*, uint*, uint, int> UrlUnescape => &UrlUnescapeW;
 
         [NativeTypeName("#define UrlEscape UrlEscapeW")]
-        public static readonly delegate*<ushort*, ushort*, uint*, uint, int> UrlEscape = &UrlEscapeW;
+        public static delegate*<ushort*, ushort*, uint*, uint, int> UrlEscape => &UrlEscapeW;
 
         [NativeTypeName("#define UrlCreateFromPath UrlCreateFromPathW")]
-        public static readonly delegate*<ushort*, ushort*, uint*, uint, int> UrlCreateFromPath = &UrlCreateFromPathW;
+        public static delegate*<ushort*, ushort*, uint*, uint, int> UrlCreateFromPath => &UrlCreateFromPathW;
 
         [NativeTypeName("#define PathCreateFromUrl PathCreateFromUrlW")]
-        public static readonly delegate*<ushort*, ushort*, uint*, uint, int> PathCreateFromUrl = &PathCreateFromUrlW;
+        public static delegate*<ushort*, ushort*, uint*, uint, int> PathCreateFromUrl => &PathCreateFromUrlW;
 
         [NativeTypeName("#define UrlHash UrlHashW")]
-        public static readonly delegate*<ushort*, byte*, uint, int> UrlHash = &UrlHashW;
+        public static delegate*<ushort*, byte*, uint, int> UrlHash => &UrlHashW;
 
         [NativeTypeName("#define UrlGetPart UrlGetPartW")]
-        public static readonly delegate*<ushort*, ushort*, uint*, uint, uint, int> UrlGetPart = &UrlGetPartW;
+        public static delegate*<ushort*, ushort*, uint*, uint, uint, int> UrlGetPart => &UrlGetPartW;
 
         [NativeTypeName("#define UrlApplyScheme UrlApplySchemeW")]
-        public static readonly delegate*<ushort*, ushort*, uint*, uint, int> UrlApplyScheme = &UrlApplySchemeW;
+        public static delegate*<ushort*, ushort*, uint*, uint, int> UrlApplyScheme => &UrlApplySchemeW;
 
         [NativeTypeName("#define UrlIs UrlIsW")]
-        public static readonly delegate*<ushort*, URLIS, int> UrlIs = &UrlIsW;
+        public static delegate*<ushort*, URLIS, int> UrlIs => &UrlIsW;
 
         [NativeTypeName("#define UrlFixup UrlFixupW")]
-        public static readonly delegate*<ushort*, ushort*, uint, int> UrlFixup = &UrlFixupW;
+        public static delegate*<ushort*, ushort*, uint, int> UrlFixup => &UrlFixupW;
 
         [NativeTypeName("#define ParseURL ParseURLW")]
-        public static readonly delegate*<ushort*, PARSEDURLW*, int> ParseURL = &ParseURLW;
+        public static delegate*<ushort*, PARSEDURLW*, int> ParseURL => &ParseURLW;
 
         [NativeTypeName("#define SHDeleteEmptyKey SHDeleteEmptyKeyW")]
-        public static readonly delegate*<IntPtr, ushort*, int> SHDeleteEmptyKey = &SHDeleteEmptyKeyW;
+        public static delegate*<IntPtr, ushort*, int> SHDeleteEmptyKey => &SHDeleteEmptyKeyW;
 
         [NativeTypeName("#define SHDeleteKey SHDeleteKeyW")]
-        public static readonly delegate*<IntPtr, ushort*, int> SHDeleteKey = &SHDeleteKeyW;
+        public static delegate*<IntPtr, ushort*, int> SHDeleteKey => &SHDeleteKeyW;
 
         [NativeTypeName("#define SHDeleteValue SHDeleteValueW")]
-        public static readonly delegate*<IntPtr, ushort*, ushort*, int> SHDeleteValue = &SHDeleteValueW;
+        public static delegate*<IntPtr, ushort*, ushort*, int> SHDeleteValue => &SHDeleteValueW;
 
         [NativeTypeName("#define SHGetValue SHGetValueW")]
-        public static readonly delegate*<IntPtr, ushort*, ushort*, uint*, void*, uint*, int> SHGetValue = &SHGetValueW;
+        public static delegate*<IntPtr, ushort*, ushort*, uint*, void*, uint*, int> SHGetValue => &SHGetValueW;
 
         [NativeTypeName("#define SHSetValue SHSetValueW")]
-        public static readonly delegate*<IntPtr, ushort*, ushort*, uint, void*, uint, int> SHSetValue = &SHSetValueW;
+        public static delegate*<IntPtr, ushort*, ushort*, uint, void*, uint, int> SHSetValue => &SHSetValueW;
 
         [NativeTypeName("#define SRRF_RT_REG_NONE 0x00000001")]
         public const int SRRF_RT_REG_NONE = 0x00000001;
@@ -2012,28 +2013,28 @@ namespace TerraFX.Interop
         public const int SRRF_NOVIRT = 0x40000000;
 
         [NativeTypeName("#define SHRegGetValue SHRegGetValueW")]
-        public static readonly delegate*<IntPtr, ushort*, ushort*, int, uint*, void*, uint*, int> SHRegGetValue = &SHRegGetValueW;
+        public static delegate*<IntPtr, ushort*, ushort*, int, uint*, void*, uint*, int> SHRegGetValue => &SHRegGetValueW;
 
         [NativeTypeName("#define SHQueryValueEx SHQueryValueExW")]
-        public static readonly delegate*<IntPtr, ushort*, uint*, uint*, void*, uint*, int> SHQueryValueEx = &SHQueryValueExW;
+        public static delegate*<IntPtr, ushort*, uint*, uint*, void*, uint*, int> SHQueryValueEx => &SHQueryValueExW;
 
         [NativeTypeName("#define SHEnumKeyEx SHEnumKeyExW")]
-        public static readonly delegate*<IntPtr, uint, ushort*, uint*, int> SHEnumKeyEx = &SHEnumKeyExW;
+        public static delegate*<IntPtr, uint, ushort*, uint*, int> SHEnumKeyEx => &SHEnumKeyExW;
 
         [NativeTypeName("#define SHEnumValue SHEnumValueW")]
-        public static readonly delegate*<IntPtr, uint, ushort*, uint*, uint*, void*, uint*, int> SHEnumValue = &SHEnumValueW;
+        public static delegate*<IntPtr, uint, ushort*, uint*, uint*, void*, uint*, int> SHEnumValue => &SHEnumValueW;
 
         [NativeTypeName("#define SHQueryInfoKey SHQueryInfoKeyW")]
-        public static readonly delegate*<IntPtr, uint*, uint*, uint*, uint*, int> SHQueryInfoKey = &SHQueryInfoKeyW;
+        public static delegate*<IntPtr, uint*, uint*, uint*, uint*, int> SHQueryInfoKey => &SHQueryInfoKeyW;
 
         [NativeTypeName("#define SHCopyKey SHCopyKeyW")]
-        public static readonly delegate*<IntPtr, ushort*, IntPtr, uint, int> SHCopyKey = &SHCopyKeyW;
+        public static delegate*<IntPtr, ushort*, IntPtr, uint, int> SHCopyKey => &SHCopyKeyW;
 
         [NativeTypeName("#define SHRegGetPath SHRegGetPathW")]
-        public static readonly delegate*<IntPtr, ushort*, ushort*, ushort*, uint, int> SHRegGetPath = &SHRegGetPathW;
+        public static delegate*<IntPtr, ushort*, ushort*, ushort*, uint, int> SHRegGetPath => &SHRegGetPathW;
 
         [NativeTypeName("#define SHRegSetPath SHRegSetPathW")]
-        public static readonly delegate*<IntPtr, ushort*, ushort*, ushort*, uint, int> SHRegSetPath = &SHRegSetPathW;
+        public static delegate*<IntPtr, ushort*, ushort*, ushort*, uint, int> SHRegSetPath => &SHRegSetPathW;
 
         [NativeTypeName("#define SHREGSET_HKCU 0x00000001")]
         public const int SHREGSET_HKCU = 0x00000001;
@@ -2051,64 +2052,64 @@ namespace TerraFX.Interop
         public const int SHREGSET_DEFAULT = (0x00000002 | 0x00000004);
 
         [NativeTypeName("#define SHRegCreateUSKey SHRegCreateUSKeyW")]
-        public static readonly delegate*<ushort*, uint, IntPtr, IntPtr*, uint, int> SHRegCreateUSKey = &SHRegCreateUSKeyW;
+        public static delegate*<ushort*, uint, IntPtr, IntPtr*, uint, int> SHRegCreateUSKey => &SHRegCreateUSKeyW;
 
         [NativeTypeName("#define SHRegOpenUSKey SHRegOpenUSKeyW")]
-        public static readonly delegate*<ushort*, uint, IntPtr, IntPtr*, int, int> SHRegOpenUSKey = &SHRegOpenUSKeyW;
+        public static delegate*<ushort*, uint, IntPtr, IntPtr*, int, int> SHRegOpenUSKey => &SHRegOpenUSKeyW;
 
         [NativeTypeName("#define SHRegQueryUSValue SHRegQueryUSValueW")]
-        public static readonly delegate*<IntPtr, ushort*, uint*, void*, uint*, int, void*, uint, int> SHRegQueryUSValue = &SHRegQueryUSValueW;
+        public static delegate*<IntPtr, ushort*, uint*, void*, uint*, int, void*, uint, int> SHRegQueryUSValue => &SHRegQueryUSValueW;
 
         [NativeTypeName("#define SHRegWriteUSValue SHRegWriteUSValueW")]
-        public static readonly delegate*<IntPtr, ushort*, uint, void*, uint, uint, int> SHRegWriteUSValue = &SHRegWriteUSValueW;
+        public static delegate*<IntPtr, ushort*, uint, void*, uint, uint, int> SHRegWriteUSValue => &SHRegWriteUSValueW;
 
         [NativeTypeName("#define SHRegDeleteUSValue SHRegDeleteUSValueW")]
-        public static readonly delegate*<IntPtr, ushort*, SHREGDEL_FLAGS, int> SHRegDeleteUSValue = &SHRegDeleteUSValueW;
+        public static delegate*<IntPtr, ushort*, SHREGDEL_FLAGS, int> SHRegDeleteUSValue => &SHRegDeleteUSValueW;
 
         [NativeTypeName("#define SHRegDeleteEmptyUSKey SHRegDeleteEmptyUSKeyW")]
-        public static readonly delegate*<IntPtr, ushort*, SHREGDEL_FLAGS, int> SHRegDeleteEmptyUSKey = &SHRegDeleteEmptyUSKeyW;
+        public static delegate*<IntPtr, ushort*, SHREGDEL_FLAGS, int> SHRegDeleteEmptyUSKey => &SHRegDeleteEmptyUSKeyW;
 
         [NativeTypeName("#define SHRegEnumUSKey SHRegEnumUSKeyW")]
-        public static readonly delegate*<IntPtr, uint, ushort*, uint*, SHREGENUM_FLAGS, int> SHRegEnumUSKey = &SHRegEnumUSKeyW;
+        public static delegate*<IntPtr, uint, ushort*, uint*, SHREGENUM_FLAGS, int> SHRegEnumUSKey => &SHRegEnumUSKeyW;
 
         [NativeTypeName("#define SHRegEnumUSValue SHRegEnumUSValueW")]
-        public static readonly delegate*<IntPtr, uint, ushort*, uint*, uint*, void*, uint*, SHREGENUM_FLAGS, int> SHRegEnumUSValue = &SHRegEnumUSValueW;
+        public static delegate*<IntPtr, uint, ushort*, uint*, uint*, void*, uint*, SHREGENUM_FLAGS, int> SHRegEnumUSValue => &SHRegEnumUSValueW;
 
         [NativeTypeName("#define SHRegQueryInfoUSKey SHRegQueryInfoUSKeyW")]
-        public static readonly delegate*<IntPtr, uint*, uint*, uint*, uint*, SHREGENUM_FLAGS, int> SHRegQueryInfoUSKey = &SHRegQueryInfoUSKeyW;
+        public static delegate*<IntPtr, uint*, uint*, uint*, uint*, SHREGENUM_FLAGS, int> SHRegQueryInfoUSKey => &SHRegQueryInfoUSKeyW;
 
         [NativeTypeName("#define SHRegGetUSValue SHRegGetUSValueW")]
-        public static readonly delegate*<ushort*, ushort*, uint*, void*, uint*, int, void*, uint, int> SHRegGetUSValue = &SHRegGetUSValueW;
+        public static delegate*<ushort*, ushort*, uint*, void*, uint*, int, void*, uint, int> SHRegGetUSValue => &SHRegGetUSValueW;
 
         [NativeTypeName("#define SHRegSetUSValue SHRegSetUSValueW")]
-        public static readonly delegate*<ushort*, ushort*, uint, void*, uint, uint, int> SHRegSetUSValue = &SHRegSetUSValueW;
+        public static delegate*<ushort*, ushort*, uint, void*, uint, uint, int> SHRegSetUSValue => &SHRegSetUSValueW;
 
         [NativeTypeName("#define SHRegGetInt SHRegGetIntW")]
-        public static readonly delegate*<IntPtr, ushort*, int, int> SHRegGetInt = &SHRegGetIntW;
+        public static delegate*<IntPtr, ushort*, int, int> SHRegGetInt => &SHRegGetIntW;
 
         [NativeTypeName("#define SHRegGetBoolUSValue SHRegGetBoolUSValueW")]
-        public static readonly delegate*<ushort*, ushort*, int, int, int> SHRegGetBoolUSValue = &SHRegGetBoolUSValueW;
+        public static delegate*<ushort*, ushort*, int, int, int> SHRegGetBoolUSValue => &SHRegGetBoolUSValueW;
 
         [NativeTypeName("#define AssocQueryString AssocQueryStringW")]
-        public static readonly delegate*<uint, ASSOCSTR, ushort*, ushort*, ushort*, uint*, int> AssocQueryString = &AssocQueryStringW;
+        public static delegate*<uint, ASSOCSTR, ushort*, ushort*, ushort*, uint*, int> AssocQueryString => &AssocQueryStringW;
 
         [NativeTypeName("#define AssocQueryStringByKey AssocQueryStringByKeyW")]
-        public static readonly delegate*<uint, ASSOCSTR, IntPtr, ushort*, ushort*, uint*, int> AssocQueryStringByKey = &AssocQueryStringByKeyW;
+        public static delegate*<uint, ASSOCSTR, IntPtr, ushort*, ushort*, uint*, int> AssocQueryStringByKey => &AssocQueryStringByKeyW;
 
         [NativeTypeName("#define AssocQueryKey AssocQueryKeyW")]
-        public static readonly delegate*<uint, ASSOCKEY, ushort*, ushort*, IntPtr*, int> AssocQueryKey = &AssocQueryKeyW;
+        public static delegate*<uint, ASSOCKEY, ushort*, ushort*, IntPtr*, int> AssocQueryKey => &AssocQueryKeyW;
 
         [NativeTypeName("#define SHOpenRegStream SHOpenRegStreamW")]
-        public static readonly delegate*<IntPtr, ushort*, ushort*, uint, IStream*> SHOpenRegStream = &SHOpenRegStreamW;
+        public static delegate*<IntPtr, ushort*, ushort*, uint, IStream*> SHOpenRegStream => &SHOpenRegStreamW;
 
         [NativeTypeName("#define SHOpenRegStream2 SHOpenRegStream2W")]
-        public static readonly delegate*<IntPtr, ushort*, ushort*, uint, IStream*> SHOpenRegStream2 = &SHOpenRegStream2W;
+        public static delegate*<IntPtr, ushort*, ushort*, uint, IStream*> SHOpenRegStream2 => &SHOpenRegStream2W;
 
         [NativeTypeName("#define SHCreateStreamOnFile SHCreateStreamOnFileW")]
-        public static readonly delegate*<ushort*, uint, IStream**, int> SHCreateStreamOnFile = &SHCreateStreamOnFileW;
+        public static delegate*<ushort*, uint, IStream**, int> SHCreateStreamOnFile => &SHCreateStreamOnFileW;
 
         [NativeTypeName("#define GetAcceptLanguages GetAcceptLanguagesW")]
-        public static readonly delegate*<ushort*, uint*, int> GetAcceptLanguages = &GetAcceptLanguagesW;
+        public static delegate*<ushort*, uint*, int> GetAcceptLanguages => &GetAcceptLanguagesW;
 
         [NativeTypeName("#define SHGVSPB_PERUSER 0x00000001")]
         public const int SHGVSPB_PERUSER = 0x00000001;
@@ -2171,16 +2172,16 @@ namespace TerraFX.Interop
         public const int FDTF_NOAUTOREADINGORDER = 0x00000400;
 
         [NativeTypeName("#define SHFormatDateTime SHFormatDateTimeW")]
-        public static readonly delegate*<FILETIME*, uint*, ushort*, uint, int> SHFormatDateTime = &SHFormatDateTimeW;
+        public static delegate*<FILETIME*, uint*, ushort*, uint, int> SHFormatDateTime => &SHFormatDateTimeW;
 
         [NativeTypeName("#define SHMessageBoxCheck SHMessageBoxCheckW")]
-        public static readonly delegate*<IntPtr, ushort*, ushort*, uint, int, ushort*, int> SHMessageBoxCheck = &SHMessageBoxCheckW;
+        public static delegate*<IntPtr, ushort*, ushort*, uint, int, ushort*, int> SHMessageBoxCheck => &SHMessageBoxCheckW;
 
         [NativeTypeName("#define SHSendMessageBroadcast SHSendMessageBroadcastW")]
-        public static readonly delegate*<uint, nuint, nint, nint> SHSendMessageBroadcast = &SHSendMessageBroadcastW;
+        public static delegate*<uint, nuint, nint, nint> SHSendMessageBroadcast => &SHSendMessageBroadcastW;
 
         [NativeTypeName("#define SHStripMneumonic SHStripMneumonicW")]
-        public static readonly delegate*<ushort*, ushort> SHStripMneumonic = &SHStripMneumonicW;
+        public static delegate*<ushort*, ushort> SHStripMneumonic => &SHStripMneumonicW;
 
         [NativeTypeName("#define OS_WINDOWS 0")]
         public const int OS_WINDOWS = 0;
@@ -2362,6 +2363,26 @@ namespace TerraFX.Interop
         [NativeTypeName("#define DLLVER_QFE_MASK 0x000000000000FFFF")]
         public const int DLLVER_QFE_MASK = 0x000000000000FFFF;
 
-        public static readonly Guid IID_IQueryAssociations = new Guid(0xC46CA590, 0x3C3F, 0x11D2, 0xBE, 0xE6, 0x00, 0x00, 0xF8, 0x05, 0xCA, 0x57);
+        public static ref readonly Guid IID_IQueryAssociations
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x90, 0xA5, 0x6C, 0xC4,
+                    0x3F, 0x3C,
+                    0xD2, 0x11,
+                    0xBE,
+                    0xE6,
+                    0x00,
+                    0x00,
+                    0xF8,
+                    0x05,
+                    0xCA,
+                    0x57
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
     }
 }

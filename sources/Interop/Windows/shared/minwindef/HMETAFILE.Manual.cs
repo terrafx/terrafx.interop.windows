@@ -9,7 +9,7 @@ namespace TerraFX.Interop
 {
     public unsafe struct HMETAFILE : IEquatable<HMETAFILE>
     {
-        public static readonly HMETAFILE NULL = default;
+        public static HMETAFILE NULL => default;
 
         private void* _value;
 

@@ -4,6 +4,8 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
 {
@@ -63,16 +65,136 @@ namespace TerraFX.Interop
         [NativeTypeName("#define SYNCMGRREGISTERFLAGS_MASK 0x07")]
         public const int SYNCMGRREGISTERFLAGS_MASK = 0x07;
 
-        public static readonly Guid IID_ISyncMgrSynchronizeCallback = new Guid(0x6295DF41, 0x35EE, 0x11D1, 0x87, 0x07, 0x00, 0xC0, 0x4F, 0xD9, 0x33, 0x27);
+        public static ref readonly Guid IID_ISyncMgrSynchronizeCallback
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x41, 0xDF, 0x95, 0x62,
+                    0xEE, 0x35,
+                    0xD1, 0x11,
+                    0x87,
+                    0x07,
+                    0x00,
+                    0xC0,
+                    0x4F,
+                    0xD9,
+                    0x33,
+                    0x27
+                };
 
-        public static readonly Guid IID_ISyncMgrEnumItems = new Guid(0x6295DF2A, 0x35EE, 0x11D1, 0x87, 0x07, 0x00, 0xC0, 0x4F, 0xD9, 0x33, 0x27);
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
-        public static readonly Guid IID_ISyncMgrSynchronize = new Guid(0x6295DF40, 0x35EE, 0x11D1, 0x87, 0x07, 0x00, 0xC0, 0x4F, 0xD9, 0x33, 0x27);
+        public static ref readonly Guid IID_ISyncMgrEnumItems
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x2A, 0xDF, 0x95, 0x62,
+                    0xEE, 0x35,
+                    0xD1, 0x11,
+                    0x87,
+                    0x07,
+                    0x00,
+                    0xC0,
+                    0x4F,
+                    0xD9,
+                    0x33,
+                    0x27
+                };
 
-        public static readonly Guid IID_ISyncMgrSynchronizeInvoke = new Guid(0x6295DF2C, 0x35EE, 0x11D1, 0x87, 0x07, 0x00, 0xC0, 0x4F, 0xD9, 0x33, 0x27);
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
-        public static readonly Guid IID_ISyncMgrRegister = new Guid(0x6295DF42, 0x35EE, 0x11D1, 0x87, 0x07, 0x00, 0xC0, 0x4F, 0xD9, 0x33, 0x27);
+        public static ref readonly Guid IID_ISyncMgrSynchronize
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x40, 0xDF, 0x95, 0x62,
+                    0xEE, 0x35,
+                    0xD1, 0x11,
+                    0x87,
+                    0x07,
+                    0x00,
+                    0xC0,
+                    0x4F,
+                    0xD9,
+                    0x33,
+                    0x27
+                };
 
-        public static readonly Guid IID_SyncMgr = new Guid(0x6295DF27, 0x35EE, 0x11D1, 0x87, 0x07, 0x00, 0xC0, 0x4F, 0xD9, 0x33, 0x27);
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid IID_ISyncMgrSynchronizeInvoke
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x2C, 0xDF, 0x95, 0x62,
+                    0xEE, 0x35,
+                    0xD1, 0x11,
+                    0x87,
+                    0x07,
+                    0x00,
+                    0xC0,
+                    0x4F,
+                    0xD9,
+                    0x33,
+                    0x27
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid IID_ISyncMgrRegister
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x42, 0xDF, 0x95, 0x62,
+                    0xEE, 0x35,
+                    0xD1, 0x11,
+                    0x87,
+                    0x07,
+                    0x00,
+                    0xC0,
+                    0x4F,
+                    0xD9,
+                    0x33,
+                    0x27
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid IID_SyncMgr
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x27, 0xDF, 0x95, 0x62,
+                    0xEE, 0x35,
+                    0xD1, 0x11,
+                    0x87,
+                    0x07,
+                    0x00,
+                    0xC0,
+                    0x4F,
+                    0xD9,
+                    0x33,
+                    0x27
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
     }
 }

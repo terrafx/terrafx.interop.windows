@@ -849,10 +849,10 @@ namespace TerraFX.Interop
         public const int ILGT_ASYNC = 0x00000001;
 
         [NativeTypeName("#define HBITMAP_CALLBACK ((HBITMAP)-1)")]
-        public static readonly IntPtr HBITMAP_CALLBACK = ((nint)(-1));
+        public static IntPtr HBITMAP_CALLBACK => ((nint)(-1));
 
         [NativeTypeName("#define ImageList_LoadImage ImageList_LoadImageW")]
-        public static readonly delegate*<IntPtr, ushort*, int, int, uint, uint, uint, IntPtr> ImageList_LoadImage = &ImageList_LoadImageW;
+        public static delegate*<IntPtr, ushort*, int, int, uint, uint, uint, IntPtr> ImageList_LoadImage => &ImageList_LoadImageW;
 
         [NativeTypeName("#define ILCF_MOVE (0x00000000)")]
         public const int ILCF_MOVE = (0x00000000);
@@ -1458,7 +1458,7 @@ namespace TerraFX.Interop
         public const int TB_ADDBITMAP = (0x0400 + 19);
 
         [NativeTypeName("#define HINST_COMMCTRL ((HINSTANCE)-1)")]
-        public static readonly IntPtr HINST_COMMCTRL = ((nint)(-1));
+        public static IntPtr HINST_COMMCTRL => ((nint)(-1));
 
         [NativeTypeName("#define IDB_STD_SMALL_COLOR 0")]
         public const int IDB_STD_SMALL_COLOR = 0;
@@ -2694,10 +2694,10 @@ namespace TerraFX.Interop
         public const int SBT_TOOLTIPS = 0x0800;
 
         [NativeTypeName("#define CreateStatusWindow CreateStatusWindowW")]
-        public static readonly delegate*<int, ushort*, IntPtr, uint, IntPtr> CreateStatusWindow = &CreateStatusWindowW;
+        public static delegate*<int, ushort*, IntPtr, uint, IntPtr> CreateStatusWindow => &CreateStatusWindowW;
 
         [NativeTypeName("#define DrawStatusText DrawStatusTextW")]
-        public static readonly delegate*<IntPtr, RECT*, ushort*, uint, void> DrawStatusText = &DrawStatusTextW;
+        public static delegate*<IntPtr, RECT*, ushort*, uint, void> DrawStatusText => &DrawStatusTextW;
 
         [NativeTypeName("#define STATUSCLASSNAMEW L\"msctls_statusbar32\"")]
         public const string STATUSCLASSNAMEW = "msctls_statusbar32";
@@ -3324,7 +3324,7 @@ namespace TerraFX.Interop
         public const int MAX_LINKID_TEXT = 48;
 
         [NativeTypeName("#define L_MAX_URL_LENGTH (2048 + 32 + sizeof(\"://\"))")]
-        public const uint L_MAX_URL_LENGTH = unchecked(2048 + 32 + 4);
+        public const uint L_MAX_URL_LENGTH = (2048 + 32 + 4);
 
         [NativeTypeName("#define WC_LINK L\"SysLink\"")]
         public const string WC_LINK = "SysLink";
@@ -3558,13 +3558,13 @@ namespace TerraFX.Interop
         public const int I_GROUPIDNONE = (-2);
 
         [NativeTypeName("#define LPSTR_TEXTCALLBACKW ((LPWSTR)-1L)")]
-        public static readonly ushort* LPSTR_TEXTCALLBACKW = unchecked((ushort*)(-1));
+        public static ushort* LPSTR_TEXTCALLBACKW => unchecked((ushort*)(-1));
 
         [NativeTypeName("#define LPSTR_TEXTCALLBACKA ((LPSTR)-1L)")]
-        public static readonly sbyte* LPSTR_TEXTCALLBACKA = unchecked((sbyte*)(-1));
+        public static sbyte* LPSTR_TEXTCALLBACKA => unchecked((sbyte*)(-1));
 
         [NativeTypeName("#define LPSTR_TEXTCALLBACK LPSTR_TEXTCALLBACKW")]
-        public static readonly ushort* LPSTR_TEXTCALLBACK = unchecked((ushort*)(-1));
+        public static ushort* LPSTR_TEXTCALLBACK => unchecked((ushort*)(-1));
 
         [NativeTypeName("#define I_IMAGECALLBACK (-1)")]
         public const int I_IMAGECALLBACK = (-1);
@@ -4869,16 +4869,16 @@ namespace TerraFX.Interop
         public const int I_CHILDRENAUTO = (-2);
 
         [NativeTypeName("#define TVI_ROOT ((HTREEITEM)(ULONG_PTR)-0x10000)")]
-        public static readonly IntPtr TVI_ROOT = unchecked((nint)((nuint)(-0x10000)));
+        public static IntPtr TVI_ROOT => unchecked((nint)((nuint)(-0x10000)));
 
         [NativeTypeName("#define TVI_FIRST ((HTREEITEM)(ULONG_PTR)-0x0FFFF)")]
-        public static readonly IntPtr TVI_FIRST = unchecked((nint)((nuint)(-0x0FFFF)));
+        public static IntPtr TVI_FIRST => unchecked((nint)((nuint)(-0x0FFFF)));
 
         [NativeTypeName("#define TVI_LAST ((HTREEITEM)(ULONG_PTR)-0x0FFFE)")]
-        public static readonly IntPtr TVI_LAST = unchecked((nint)((nuint)(-0x0FFFE)));
+        public static IntPtr TVI_LAST => unchecked((nint)((nuint)(-0x0FFFE)));
 
         [NativeTypeName("#define TVI_SORT ((HTREEITEM)(ULONG_PTR)-0x0FFFD)")]
-        public static readonly IntPtr TVI_SORT = unchecked((nint)((nuint)(-0x0FFFD)));
+        public static IntPtr TVI_SORT => unchecked((nint)((nuint)(-0x0FFFD)));
 
         [NativeTypeName("#define TVM_INSERTITEMA (TV_FIRST + 0)")]
         public const int TVM_INSERTITEMA = (0x1100 + 0);
@@ -6471,7 +6471,7 @@ namespace TerraFX.Interop
         public const int BCM_SETSHIELD = (0x1600 + 0x000C);
 
         [NativeTypeName("#define BCCL_NOGLYPH (HIMAGELIST)(-1)")]
-        public static readonly IntPtr BCCL_NOGLYPH = (nint)(-1);
+        public static IntPtr BCCL_NOGLYPH => (nint)(-1);
 
         [NativeTypeName("#define BCN_DROPDOWN (BCN_FIRST + 0x0002)")]
         public const uint BCN_DROPDOWN = unchecked((0U - 1250U) + 0x0002);
@@ -6621,16 +6621,16 @@ namespace TerraFX.Interop
         public const string WC_SCROLLBAR = "ScrollBar";
 
         [NativeTypeName("#define TD_WARNING_ICON MAKEINTRESOURCEW(-1)")]
-        public static readonly ushort* TD_WARNING_ICON = unchecked((ushort*)((nuint)((ushort)(-1))));
+        public static ushort* TD_WARNING_ICON => unchecked((ushort*)((nuint)((ushort)(-1))));
 
         [NativeTypeName("#define TD_ERROR_ICON MAKEINTRESOURCEW(-2)")]
-        public static readonly ushort* TD_ERROR_ICON = unchecked((ushort*)((nuint)((ushort)(-2))));
+        public static ushort* TD_ERROR_ICON => unchecked((ushort*)((nuint)((ushort)(-2))));
 
         [NativeTypeName("#define TD_INFORMATION_ICON MAKEINTRESOURCEW(-3)")]
-        public static readonly ushort* TD_INFORMATION_ICON = unchecked((ushort*)((nuint)((ushort)(-3))));
+        public static ushort* TD_INFORMATION_ICON => unchecked((ushort*)((nuint)((ushort)(-3))));
 
         [NativeTypeName("#define TD_SHIELD_ICON MAKEINTRESOURCEW(-4)")]
-        public static readonly ushort* TD_SHIELD_ICON = unchecked((ushort*)((nuint)((ushort)(-4))));
+        public static ushort* TD_SHIELD_ICON => unchecked((ushort*)((nuint)((ushort)(-4))));
 
         [NativeTypeName("#define WSB_PROP_CYVSCROLL 0x00000001L")]
         public const int WSB_PROP_CYVSCROLL = 0x00000001;
@@ -6681,9 +6681,9 @@ namespace TerraFX.Interop
         public const int FSB_REGULAR_MODE = 0;
 
         [NativeTypeName("#define FlatSB_GetScrollPropPtr FlatSB_GetScrollProp")]
-        public static readonly delegate*<IntPtr, int, int*, int> FlatSB_GetScrollPropPtr = &FlatSB_GetScrollProp;
+        public static delegate*<IntPtr, int, int*, int> FlatSB_GetScrollPropPtr => &FlatSB_GetScrollProp;
 
         [NativeTypeName("#define FlatSB_SetScrollPropPtr FlatSB_SetScrollProp")]
-        public static readonly delegate*<IntPtr, uint, nint, int, int> FlatSB_SetScrollPropPtr = &FlatSB_SetScrollProp;
+        public static delegate*<IntPtr, uint, nint, int, int> FlatSB_SetScrollPropPtr => &FlatSB_SetScrollProp;
     }
 }

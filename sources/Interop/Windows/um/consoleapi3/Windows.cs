@@ -166,33 +166,33 @@ namespace TerraFX.Interop
         public const int CONSOLE_WINDOWED_MODE = 2;
 
         [NativeTypeName("#define AddConsoleAlias AddConsoleAliasW")]
-        public static readonly delegate*<ushort*, ushort*, ushort*, int> AddConsoleAlias = &AddConsoleAliasW;
+        public static delegate*<ushort*, ushort*, ushort*, int> AddConsoleAlias => &AddConsoleAliasW;
 
         [NativeTypeName("#define GetConsoleAlias GetConsoleAliasW")]
-        public static readonly delegate*<ushort*, ushort*, uint, ushort*, uint> GetConsoleAlias = &GetConsoleAliasW;
+        public static delegate*<ushort*, ushort*, uint, ushort*, uint> GetConsoleAlias => &GetConsoleAliasW;
 
         [NativeTypeName("#define GetConsoleAliasesLength GetConsoleAliasesLengthW")]
-        public static readonly delegate*<ushort*, uint> GetConsoleAliasesLength = &GetConsoleAliasesLengthW;
+        public static delegate*<ushort*, uint> GetConsoleAliasesLength => &GetConsoleAliasesLengthW;
 
         [NativeTypeName("#define GetConsoleAliasExesLength GetConsoleAliasExesLengthW")]
-        public static readonly delegate*<uint> GetConsoleAliasExesLength = &GetConsoleAliasExesLengthW;
+        public static delegate*<uint> GetConsoleAliasExesLength => &GetConsoleAliasExesLengthW;
 
         [NativeTypeName("#define GetConsoleAliases GetConsoleAliasesW")]
-        public static readonly delegate*<ushort*, uint, ushort*, uint> GetConsoleAliases = &GetConsoleAliasesW;
+        public static delegate*<ushort*, uint, ushort*, uint> GetConsoleAliases => &GetConsoleAliasesW;
 
         [NativeTypeName("#define GetConsoleAliasExes GetConsoleAliasExesW")]
-        public static readonly delegate*<ushort*, uint, uint> GetConsoleAliasExes = &GetConsoleAliasExesW;
+        public static delegate*<ushort*, uint, uint> GetConsoleAliasExes => &GetConsoleAliasExesW;
 
         [NativeTypeName("#define ExpungeConsoleCommandHistory ExpungeConsoleCommandHistoryW")]
-        public static readonly delegate*<ushort*, void> ExpungeConsoleCommandHistory = &ExpungeConsoleCommandHistoryW;
+        public static delegate*<ushort*, void> ExpungeConsoleCommandHistory => &ExpungeConsoleCommandHistoryW;
 
         [NativeTypeName("#define SetConsoleNumberOfCommands SetConsoleNumberOfCommandsW")]
-        public static readonly delegate*<uint, ushort*, int> SetConsoleNumberOfCommands = &SetConsoleNumberOfCommandsW;
+        public static delegate*<uint, ushort*, int> SetConsoleNumberOfCommands => &SetConsoleNumberOfCommandsW;
 
         [NativeTypeName("#define GetConsoleCommandHistoryLength GetConsoleCommandHistoryLengthW")]
-        public static readonly delegate*<ushort*, uint> GetConsoleCommandHistoryLength = &GetConsoleCommandHistoryLengthW;
+        public static delegate*<ushort*, uint> GetConsoleCommandHistoryLength => &GetConsoleCommandHistoryLengthW;
 
         [NativeTypeName("#define GetConsoleCommandHistory GetConsoleCommandHistoryW")]
-        public static readonly delegate*<ushort*, uint, ushort*, uint> GetConsoleCommandHistory = &GetConsoleCommandHistoryW;
+        public static delegate*<ushort*, uint, ushort*, uint> GetConsoleCommandHistory => &GetConsoleCommandHistoryW;
     }
 }

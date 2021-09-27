@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
@@ -35,14 +36,94 @@ namespace TerraFX.Interop
         public static extern int CreateXmlWriterOutputWithEncodingName(IUnknown* pOutputStream, IMalloc* pMalloc, [NativeTypeName("LPCWSTR")] ushort* pwszEncodingName, [NativeTypeName("IXmlWriterOutput **")] IUnknown** ppOutput);
 
         [NativeTypeName("const IID")]
-        public static readonly Guid IID_IXmlReader = new Guid(0x7279FC81, 0x709D, 0x4095, 0xB6, 0x3D, 0x69, 0xFE, 0x4B, 0x0D, 0x90, 0x30);
+        public static ref readonly Guid IID_IXmlReader
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x81, 0xFC, 0x79, 0x72,
+                    0x9D, 0x70,
+                    0x95, 0x40,
+                    0xB6,
+                    0x3D,
+                    0x69,
+                    0xFE,
+                    0x4B,
+                    0x0D,
+                    0x90,
+                    0x30
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const IID")]
-        public static readonly Guid IID_IXmlWriter = new Guid(0x7279FC88, 0x709D, 0x4095, 0xB6, 0x3D, 0x69, 0xFE, 0x4B, 0x0D, 0x90, 0x30);
+        public static ref readonly Guid IID_IXmlWriter
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x88, 0xFC, 0x79, 0x72,
+                    0x9D, 0x70,
+                    0x95, 0x40,
+                    0xB6,
+                    0x3D,
+                    0x69,
+                    0xFE,
+                    0x4B,
+                    0x0D,
+                    0x90,
+                    0x30
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const IID")]
-        public static readonly Guid IID_IXmlResolver = new Guid(0x7279FC82, 0x709D, 0x4095, 0xB6, 0x3D, 0x69, 0xFE, 0x4B, 0x0D, 0x90, 0x30);
+        public static ref readonly Guid IID_IXmlResolver
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x82, 0xFC, 0x79, 0x72,
+                    0x9D, 0x70,
+                    0x95, 0x40,
+                    0xB6,
+                    0x3D,
+                    0x69,
+                    0xFE,
+                    0x4B,
+                    0x0D,
+                    0x90,
+                    0x30
+                };
 
-        public static readonly Guid IID_IXmlWriterLite = new Guid(0x862494C6, 0x1310, 0x4AAD, 0xB3, 0xCD, 0x2D, 0xBE, 0xEB, 0xF6, 0x70, 0xD3);
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid IID_IXmlWriterLite
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xC6, 0x94, 0x24, 0x86,
+                    0x10, 0x13,
+                    0xAD, 0x4A,
+                    0xB3,
+                    0xCD,
+                    0x2D,
+                    0xBE,
+                    0xEB,
+                    0xF6,
+                    0x70,
+                    0xD3
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
     }
 }

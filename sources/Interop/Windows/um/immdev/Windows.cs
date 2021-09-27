@@ -143,19 +143,19 @@ namespace TerraFX.Interop
         public static extern int ImeSetCompositionString([NativeTypeName("HIMC")] IntPtr param0, [NativeTypeName("DWORD")] uint dwIndex, [NativeTypeName("LPVOID")] void* lpComp, [NativeTypeName("DWORD")] uint dwCompLen, [NativeTypeName("LPVOID")] void* lpRead, [NativeTypeName("DWORD")] uint dwReadLen);
 
         [NativeTypeName("#define ImmRequestMessage ImmRequestMessageW")]
-        public static readonly delegate*<IntPtr, nuint, nint, nint> ImmRequestMessage = &ImmRequestMessageW;
+        public static delegate*<IntPtr, nuint, nint, nint> ImmRequestMessage => &ImmRequestMessageW;
 
         [NativeTypeName("#define IMMGWL_IMC 0")]
         public const int IMMGWL_IMC = 0;
 
         [NativeTypeName("#define IMMGWL_PRIVATE (sizeof(LONG))")]
-        public const uint IMMGWL_PRIVATE = unchecked(4);
+        public const uint IMMGWL_PRIVATE = (4);
 
         [NativeTypeName("#define IMMGWLP_IMC 0")]
         public const int IMMGWLP_IMC = 0;
 
         [NativeTypeName("#define IMMGWLP_PRIVATE (sizeof(LONG_PTR))")]
-        public static readonly uint IMMGWLP_PRIVATE = unchecked((uint)(sizeof(nint)));
+        public static uint IMMGWLP_PRIVATE => unchecked((uint)(sizeof(nint)));
 
         [NativeTypeName("#define IMC_SETCONVERSIONMODE 0x0002")]
         public const int IMC_SETCONVERSIONMODE = 0x0002;

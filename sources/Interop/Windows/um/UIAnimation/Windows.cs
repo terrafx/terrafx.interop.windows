@@ -4,6 +4,8 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
 {
@@ -13,7 +15,7 @@ namespace TerraFX.Interop
         public const int UI_ANIMATION_SECONDS_EVENTUALLY = (-1);
 
         [NativeTypeName("#define UI_ANIMATION_KEYFRAME_STORYBOARD_START ( ( UI_ANIMATION_KEYFRAME  )-1 )")]
-        public static readonly UI_ANIMATION_KEYFRAME* UI_ANIMATION_KEYFRAME_STORYBOARD_START = unchecked((UI_ANIMATION_KEYFRAME*)(-1));
+        public static UI_ANIMATION_KEYFRAME* UI_ANIMATION_KEYFRAME_STORYBOARD_START => unchecked((UI_ANIMATION_KEYFRAME*)(-1));
 
         [NativeTypeName("#define UI_ANIMATION_REPEAT_INDEFINITELY ( -1 )")]
         public const int UI_ANIMATION_REPEAT_INDEFINITELY = (-1);
@@ -33,80 +35,840 @@ namespace TerraFX.Interop
         [NativeTypeName("#define UI_ANIMATION_ITERATION_NONE ( ( UINT32  )-1 )")]
         public const uint UI_ANIMATION_ITERATION_NONE = unchecked((uint)(-1));
 
-        public static readonly Guid IID_IUIAnimationManager = new Guid(0x9169896C, 0xAC8D, 0x4E7D, 0x94, 0xE5, 0x67, 0xFA, 0x4D, 0xC2, 0xF2, 0xE8);
+        public static ref readonly Guid IID_IUIAnimationManager
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x6C, 0x89, 0x69, 0x91,
+                    0x8D, 0xAC,
+                    0x7D, 0x4E,
+                    0x94,
+                    0xE5,
+                    0x67,
+                    0xFA,
+                    0x4D,
+                    0xC2,
+                    0xF2,
+                    0xE8
+                };
 
-        public static readonly Guid IID_IUIAnimationVariable = new Guid(0x8CEEB155, 0x2849, 0x4CE5, 0x94, 0x48, 0x91, 0xFF, 0x70, 0xE1, 0xE4, 0xD9);
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
-        public static readonly Guid IID_IUIAnimationStoryboard = new Guid(0xA8FF128F, 0x9BF9, 0x4AF1, 0x9E, 0x67, 0xE5, 0xE4, 0x10, 0xDE, 0xFB, 0x84);
+        public static ref readonly Guid IID_IUIAnimationVariable
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x55, 0xB1, 0xEE, 0x8C,
+                    0x49, 0x28,
+                    0xE5, 0x4C,
+                    0x94,
+                    0x48,
+                    0x91,
+                    0xFF,
+                    0x70,
+                    0xE1,
+                    0xE4,
+                    0xD9
+                };
 
-        public static readonly Guid IID_IUIAnimationTransition = new Guid(0xDC6CE252, 0xF731, 0x41CF, 0xB6, 0x10, 0x61, 0x4B, 0x6C, 0xA0, 0x49, 0xAD);
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
-        public static readonly Guid IID_IUIAnimationManagerEventHandler = new Guid(0x783321ED, 0x78A3, 0x4366, 0xB5, 0x74, 0x6A, 0xF6, 0x07, 0xA6, 0x47, 0x88);
+        public static ref readonly Guid IID_IUIAnimationStoryboard
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x8F, 0x12, 0xFF, 0xA8,
+                    0xF9, 0x9B,
+                    0xF1, 0x4A,
+                    0x9E,
+                    0x67,
+                    0xE5,
+                    0xE4,
+                    0x10,
+                    0xDE,
+                    0xFB,
+                    0x84
+                };
 
-        public static readonly Guid IID_IUIAnimationVariableChangeHandler = new Guid(0x6358B7BA, 0x87D2, 0x42D5, 0xBF, 0x71, 0x82, 0xE9, 0x19, 0xDD, 0x58, 0x62);
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
-        public static readonly Guid IID_IUIAnimationVariableIntegerChangeHandler = new Guid(0xBB3E1550, 0x356E, 0x44B0, 0x99, 0xDA, 0x85, 0xAC, 0x60, 0x17, 0x86, 0x5E);
+        public static ref readonly Guid IID_IUIAnimationTransition
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x52, 0xE2, 0x6C, 0xDC,
+                    0x31, 0xF7,
+                    0xCF, 0x41,
+                    0xB6,
+                    0x10,
+                    0x61,
+                    0x4B,
+                    0x6C,
+                    0xA0,
+                    0x49,
+                    0xAD
+                };
 
-        public static readonly Guid IID_IUIAnimationStoryboardEventHandler = new Guid(0x3D5C9008, 0xEC7C, 0x4364, 0x9F, 0x8A, 0x9A, 0xF3, 0xC5, 0x8C, 0xBA, 0xE6);
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
-        public static readonly Guid IID_IUIAnimationPriorityComparison = new Guid(0x83FA9B74, 0x5F86, 0x4618, 0xBC, 0x6A, 0xA2, 0xFA, 0xC1, 0x9B, 0x3F, 0x44);
+        public static ref readonly Guid IID_IUIAnimationManagerEventHandler
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xED, 0x21, 0x33, 0x78,
+                    0xA3, 0x78,
+                    0x66, 0x43,
+                    0xB5,
+                    0x74,
+                    0x6A,
+                    0xF6,
+                    0x07,
+                    0xA6,
+                    0x47,
+                    0x88
+                };
 
-        public static readonly Guid IID_IUIAnimationTransitionLibrary = new Guid(0xCA5A14B1, 0xD24F, 0x48B8, 0x8F, 0xE4, 0xC7, 0x81, 0x69, 0xBA, 0x95, 0x4E);
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
-        public static readonly Guid IID_IUIAnimationInterpolator = new Guid(0x7815CBBA, 0xDDF7, 0x478C, 0xA4, 0x6C, 0x7B, 0x6C, 0x73, 0x8B, 0x79, 0x78);
+        public static ref readonly Guid IID_IUIAnimationVariableChangeHandler
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xBA, 0xB7, 0x58, 0x63,
+                    0xD2, 0x87,
+                    0xD5, 0x42,
+                    0xBF,
+                    0x71,
+                    0x82,
+                    0xE9,
+                    0x19,
+                    0xDD,
+                    0x58,
+                    0x62
+                };
 
-        public static readonly Guid IID_IUIAnimationTransitionFactory = new Guid(0xFCD91E03, 0x3E3B, 0x45AD, 0xBB, 0xB1, 0x6D, 0xFC, 0x81, 0x53, 0x74, 0x3D);
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
-        public static readonly Guid IID_IUIAnimationTimer = new Guid(0x6B0EFAD1, 0xA053, 0x41D6, 0x90, 0x85, 0x33, 0xA6, 0x89, 0x14, 0x46, 0x65);
+        public static ref readonly Guid IID_IUIAnimationVariableIntegerChangeHandler
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x50, 0x15, 0x3E, 0xBB,
+                    0x6E, 0x35,
+                    0xB0, 0x44,
+                    0x99,
+                    0xDA,
+                    0x85,
+                    0xAC,
+                    0x60,
+                    0x17,
+                    0x86,
+                    0x5E
+                };
 
-        public static readonly Guid IID_IUIAnimationTimerUpdateHandler = new Guid(0x195509B7, 0x5D5E, 0x4E3E, 0xB2, 0x78, 0xEE, 0x37, 0x59, 0xB3, 0x67, 0xAD);
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
-        public static readonly Guid IID_IUIAnimationTimerClientEventHandler = new Guid(0xBEDB4DB6, 0x94FA, 0x4BFB, 0xA4, 0x7F, 0xEF, 0x2D, 0x9E, 0x40, 0x8C, 0x25);
+        public static ref readonly Guid IID_IUIAnimationStoryboardEventHandler
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x08, 0x90, 0x5C, 0x3D,
+                    0x7C, 0xEC,
+                    0x64, 0x43,
+                    0x9F,
+                    0x8A,
+                    0x9A,
+                    0xF3,
+                    0xC5,
+                    0x8C,
+                    0xBA,
+                    0xE6
+                };
 
-        public static readonly Guid IID_IUIAnimationTimerEventHandler = new Guid(0x274A7DEA, 0xD771, 0x4095, 0xAB, 0xBD, 0x8D, 0xF7, 0xAB, 0xD2, 0x3C, 0xE3);
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
-        public static readonly Guid IID_IUIAnimationManager2 = new Guid(0xD8B6F7D4, 0x4109, 0x4D3F, 0xAC, 0xEE, 0x87, 0x99, 0x26, 0x96, 0x8C, 0xB1);
+        public static ref readonly Guid IID_IUIAnimationPriorityComparison
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x74, 0x9B, 0xFA, 0x83,
+                    0x86, 0x5F,
+                    0x18, 0x46,
+                    0xBC,
+                    0x6A,
+                    0xA2,
+                    0xFA,
+                    0xC1,
+                    0x9B,
+                    0x3F,
+                    0x44
+                };
 
-        public static readonly Guid IID_IUIAnimationVariable2 = new Guid(0x4914B304, 0x96AB, 0x44D9, 0x9E, 0x77, 0xD5, 0x10, 0x9B, 0x7E, 0x74, 0x66);
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
-        public static readonly Guid IID_IUIAnimationTransition2 = new Guid(0x62FF9123, 0xA85A, 0x4E9B, 0xA2, 0x18, 0x43, 0x5A, 0x93, 0xE2, 0x68, 0xFD);
+        public static ref readonly Guid IID_IUIAnimationTransitionLibrary
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xB1, 0x14, 0x5A, 0xCA,
+                    0x4F, 0xD2,
+                    0xB8, 0x48,
+                    0x8F,
+                    0xE4,
+                    0xC7,
+                    0x81,
+                    0x69,
+                    0xBA,
+                    0x95,
+                    0x4E
+                };
 
-        public static readonly Guid IID_IUIAnimationManagerEventHandler2 = new Guid(0xF6E022BA, 0xBFF3, 0x42EC, 0x90, 0x33, 0xE0, 0x73, 0xF3, 0x3E, 0x83, 0xC3);
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
-        public static readonly Guid IID_IUIAnimationVariableChangeHandler2 = new Guid(0x63ACC8D2, 0x6EAE, 0x4BB0, 0xB8, 0x79, 0x58, 0x6D, 0xD8, 0xCF, 0xBE, 0x42);
+        public static ref readonly Guid IID_IUIAnimationInterpolator
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xBA, 0xCB, 0x15, 0x78,
+                    0xF7, 0xDD,
+                    0x8C, 0x47,
+                    0xA4,
+                    0x6C,
+                    0x7B,
+                    0x6C,
+                    0x73,
+                    0x8B,
+                    0x79,
+                    0x78
+                };
 
-        public static readonly Guid IID_IUIAnimationVariableIntegerChangeHandler2 = new Guid(0x829B6CF1, 0x4F3A, 0x4412, 0xAE, 0x09, 0xB2, 0x43, 0xEB, 0x4C, 0x6B, 0x58);
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
-        public static readonly Guid IID_IUIAnimationVariableCurveChangeHandler2 = new Guid(0x72895E91, 0x0145, 0x4C21, 0x91, 0x92, 0x5A, 0xAB, 0x40, 0xED, 0xDF, 0x80);
+        public static ref readonly Guid IID_IUIAnimationTransitionFactory
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x03, 0x1E, 0xD9, 0xFC,
+                    0x3B, 0x3E,
+                    0xAD, 0x45,
+                    0xBB,
+                    0xB1,
+                    0x6D,
+                    0xFC,
+                    0x81,
+                    0x53,
+                    0x74,
+                    0x3D
+                };
 
-        public static readonly Guid IID_IUIAnimationStoryboardEventHandler2 = new Guid(0xBAC5F55A, 0xBA7C, 0x414C, 0xB5, 0x99, 0xFB, 0xF8, 0x50, 0xF5, 0x53, 0xC6);
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
-        public static readonly Guid IID_IUIAnimationLoopIterationChangeHandler2 = new Guid(0x2D3B15A4, 0x4762, 0x47AB, 0xA0, 0x30, 0xB2, 0x32, 0x21, 0xDF, 0x3A, 0xE0);
+        public static ref readonly Guid IID_IUIAnimationTimer
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xD1, 0xFA, 0x0E, 0x6B,
+                    0x53, 0xA0,
+                    0xD6, 0x41,
+                    0x90,
+                    0x85,
+                    0x33,
+                    0xA6,
+                    0x89,
+                    0x14,
+                    0x46,
+                    0x65
+                };
 
-        public static readonly Guid IID_IUIAnimationPriorityComparison2 = new Guid(0x5B6D7A37, 0x4621, 0x467C, 0x8B, 0x05, 0x70, 0x13, 0x1D, 0xE6, 0x2D, 0xDB);
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
-        public static readonly Guid IID_IUIAnimationTransitionLibrary2 = new Guid(0x03CFAE53, 0x9580, 0x4EE3, 0xB3, 0x63, 0x2E, 0xCE, 0x51, 0xB4, 0xAF, 0x6A);
+        public static ref readonly Guid IID_IUIAnimationTimerUpdateHandler
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xB7, 0x09, 0x55, 0x19,
+                    0x5E, 0x5D,
+                    0x3E, 0x4E,
+                    0xB2,
+                    0x78,
+                    0xEE,
+                    0x37,
+                    0x59,
+                    0xB3,
+                    0x67,
+                    0xAD
+                };
 
-        public static readonly Guid IID_IUIAnimationPrimitiveInterpolation = new Guid(0xBAB20D63, 0x4361, 0x45DA, 0xA2, 0x4F, 0xAB, 0x85, 0x08, 0x84, 0x6B, 0x5B);
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
-        public static readonly Guid IID_IUIAnimationInterpolator2 = new Guid(0xEA76AFF8, 0xEA22, 0x4A23, 0xA0, 0xEF, 0xA6, 0xA9, 0x66, 0x70, 0x35, 0x18);
+        public static ref readonly Guid IID_IUIAnimationTimerClientEventHandler
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xB6, 0x4D, 0xDB, 0xBE,
+                    0xFA, 0x94,
+                    0xFB, 0x4B,
+                    0xA4,
+                    0x7F,
+                    0xEF,
+                    0x2D,
+                    0x9E,
+                    0x40,
+                    0x8C,
+                    0x25
+                };
 
-        public static readonly Guid IID_IUIAnimationTransitionFactory2 = new Guid(0x937D4916, 0xC1A6, 0x42D5, 0x88, 0xD8, 0x30, 0x34, 0x4D, 0x6E, 0xFE, 0x31);
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
-        public static readonly Guid IID_IUIAnimationStoryboard2 = new Guid(0xAE289CD2, 0x12D4, 0x4945, 0x94, 0x19, 0x9E, 0x41, 0xBE, 0x03, 0x4D, 0xF2);
+        public static ref readonly Guid IID_IUIAnimationTimerEventHandler
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xEA, 0x7D, 0x4A, 0x27,
+                    0x71, 0xD7,
+                    0x95, 0x40,
+                    0xAB,
+                    0xBD,
+                    0x8D,
+                    0xF7,
+                    0xAB,
+                    0xD2,
+                    0x3C,
+                    0xE3
+                };
 
-        public static readonly Guid CLSID_UIAnimationManager = new Guid(0x4C1FC63A, 0x695C, 0x47E8, 0xA3, 0x39, 0x1A, 0x19, 0x4B, 0xE3, 0xD0, 0xB8);
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
-        public static readonly Guid CLSID_UIAnimationManager2 = new Guid(0xD25D8842, 0x8884, 0x4A4A, 0xB3, 0x21, 0x09, 0x13, 0x14, 0x37, 0x9B, 0xDD);
+        public static ref readonly Guid IID_IUIAnimationManager2
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xD4, 0xF7, 0xB6, 0xD8,
+                    0x09, 0x41,
+                    0x3F, 0x4D,
+                    0xAC,
+                    0xEE,
+                    0x87,
+                    0x99,
+                    0x26,
+                    0x96,
+                    0x8C,
+                    0xB1
+                };
 
-        public static readonly Guid CLSID_UIAnimationTransitionLibrary = new Guid(0x1D6322AD, 0xAA85, 0x4EF5, 0xA8, 0x28, 0x86, 0xD7, 0x10, 0x67, 0xD1, 0x45);
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
-        public static readonly Guid CLSID_UIAnimationTransitionLibrary2 = new Guid(0x812F944A, 0xC5C8, 0x4CD9, 0xB0, 0xA6, 0xB3, 0xDA, 0x80, 0x2F, 0x22, 0x8D);
+        public static ref readonly Guid IID_IUIAnimationVariable2
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x04, 0xB3, 0x14, 0x49,
+                    0xAB, 0x96,
+                    0xD9, 0x44,
+                    0x9E,
+                    0x77,
+                    0xD5,
+                    0x10,
+                    0x9B,
+                    0x7E,
+                    0x74,
+                    0x66
+                };
 
-        public static readonly Guid CLSID_UIAnimationTransitionFactory = new Guid(0x8A9B1CDD, 0xFCD7, 0x419C, 0x8B, 0x44, 0x42, 0xFD, 0x17, 0xDB, 0x18, 0x87);
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
-        public static readonly Guid CLSID_UIAnimationTransitionFactory2 = new Guid(0x84302F97, 0x7F7B, 0x4040, 0xB1, 0x90, 0x72, 0xAC, 0x9D, 0x18, 0xE4, 0x20);
+        public static ref readonly Guid IID_IUIAnimationTransition2
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x23, 0x91, 0xFF, 0x62,
+                    0x5A, 0xA8,
+                    0x9B, 0x4E,
+                    0xA2,
+                    0x18,
+                    0x43,
+                    0x5A,
+                    0x93,
+                    0xE2,
+                    0x68,
+                    0xFD
+                };
 
-        public static readonly Guid CLSID_UIAnimationTimer = new Guid(0xBFCD4A0C, 0x06B6, 0x4384, 0xB7, 0x68, 0x0D, 0xAA, 0x79, 0x2C, 0x38, 0x0E);
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid IID_IUIAnimationManagerEventHandler2
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xBA, 0x22, 0xE0, 0xF6,
+                    0xF3, 0xBF,
+                    0xEC, 0x42,
+                    0x90,
+                    0x33,
+                    0xE0,
+                    0x73,
+                    0xF3,
+                    0x3E,
+                    0x83,
+                    0xC3
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid IID_IUIAnimationVariableChangeHandler2
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xD2, 0xC8, 0xAC, 0x63,
+                    0xAE, 0x6E,
+                    0xB0, 0x4B,
+                    0xB8,
+                    0x79,
+                    0x58,
+                    0x6D,
+                    0xD8,
+                    0xCF,
+                    0xBE,
+                    0x42
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid IID_IUIAnimationVariableIntegerChangeHandler2
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xF1, 0x6C, 0x9B, 0x82,
+                    0x3A, 0x4F,
+                    0x12, 0x44,
+                    0xAE,
+                    0x09,
+                    0xB2,
+                    0x43,
+                    0xEB,
+                    0x4C,
+                    0x6B,
+                    0x58
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid IID_IUIAnimationVariableCurveChangeHandler2
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x91, 0x5E, 0x89, 0x72,
+                    0x45, 0x01,
+                    0x21, 0x4C,
+                    0x91,
+                    0x92,
+                    0x5A,
+                    0xAB,
+                    0x40,
+                    0xED,
+                    0xDF,
+                    0x80
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid IID_IUIAnimationStoryboardEventHandler2
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x5A, 0xF5, 0xC5, 0xBA,
+                    0x7C, 0xBA,
+                    0x4C, 0x41,
+                    0xB5,
+                    0x99,
+                    0xFB,
+                    0xF8,
+                    0x50,
+                    0xF5,
+                    0x53,
+                    0xC6
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid IID_IUIAnimationLoopIterationChangeHandler2
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xA4, 0x15, 0x3B, 0x2D,
+                    0x62, 0x47,
+                    0xAB, 0x47,
+                    0xA0,
+                    0x30,
+                    0xB2,
+                    0x32,
+                    0x21,
+                    0xDF,
+                    0x3A,
+                    0xE0
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid IID_IUIAnimationPriorityComparison2
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x37, 0x7A, 0x6D, 0x5B,
+                    0x21, 0x46,
+                    0x7C, 0x46,
+                    0x8B,
+                    0x05,
+                    0x70,
+                    0x13,
+                    0x1D,
+                    0xE6,
+                    0x2D,
+                    0xDB
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid IID_IUIAnimationTransitionLibrary2
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x53, 0xAE, 0xCF, 0x03,
+                    0x80, 0x95,
+                    0xE3, 0x4E,
+                    0xB3,
+                    0x63,
+                    0x2E,
+                    0xCE,
+                    0x51,
+                    0xB4,
+                    0xAF,
+                    0x6A
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid IID_IUIAnimationPrimitiveInterpolation
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x63, 0x0D, 0xB2, 0xBA,
+                    0x61, 0x43,
+                    0xDA, 0x45,
+                    0xA2,
+                    0x4F,
+                    0xAB,
+                    0x85,
+                    0x08,
+                    0x84,
+                    0x6B,
+                    0x5B
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid IID_IUIAnimationInterpolator2
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xF8, 0xAF, 0x76, 0xEA,
+                    0x22, 0xEA,
+                    0x23, 0x4A,
+                    0xA0,
+                    0xEF,
+                    0xA6,
+                    0xA9,
+                    0x66,
+                    0x70,
+                    0x35,
+                    0x18
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid IID_IUIAnimationTransitionFactory2
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x16, 0x49, 0x7D, 0x93,
+                    0xA6, 0xC1,
+                    0xD5, 0x42,
+                    0x88,
+                    0xD8,
+                    0x30,
+                    0x34,
+                    0x4D,
+                    0x6E,
+                    0xFE,
+                    0x31
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid IID_IUIAnimationStoryboard2
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xD2, 0x9C, 0x28, 0xAE,
+                    0xD4, 0x12,
+                    0x45, 0x49,
+                    0x94,
+                    0x19,
+                    0x9E,
+                    0x41,
+                    0xBE,
+                    0x03,
+                    0x4D,
+                    0xF2
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid CLSID_UIAnimationManager
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x3A, 0xC6, 0x1F, 0x4C,
+                    0x5C, 0x69,
+                    0xE8, 0x47,
+                    0xA3,
+                    0x39,
+                    0x1A,
+                    0x19,
+                    0x4B,
+                    0xE3,
+                    0xD0,
+                    0xB8
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid CLSID_UIAnimationManager2
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x42, 0x88, 0x5D, 0xD2,
+                    0x84, 0x88,
+                    0x4A, 0x4A,
+                    0xB3,
+                    0x21,
+                    0x09,
+                    0x13,
+                    0x14,
+                    0x37,
+                    0x9B,
+                    0xDD
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid CLSID_UIAnimationTransitionLibrary
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xAD, 0x22, 0x63, 0x1D,
+                    0x85, 0xAA,
+                    0xF5, 0x4E,
+                    0xA8,
+                    0x28,
+                    0x86,
+                    0xD7,
+                    0x10,
+                    0x67,
+                    0xD1,
+                    0x45
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid CLSID_UIAnimationTransitionLibrary2
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x4A, 0x94, 0x2F, 0x81,
+                    0xC8, 0xC5,
+                    0xD9, 0x4C,
+                    0xB0,
+                    0xA6,
+                    0xB3,
+                    0xDA,
+                    0x80,
+                    0x2F,
+                    0x22,
+                    0x8D
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid CLSID_UIAnimationTransitionFactory
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xDD, 0x1C, 0x9B, 0x8A,
+                    0xD7, 0xFC,
+                    0x9C, 0x41,
+                    0x8B,
+                    0x44,
+                    0x42,
+                    0xFD,
+                    0x17,
+                    0xDB,
+                    0x18,
+                    0x87
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid CLSID_UIAnimationTransitionFactory2
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x97, 0x2F, 0x30, 0x84,
+                    0x7B, 0x7F,
+                    0x40, 0x40,
+                    0xB1,
+                    0x90,
+                    0x72,
+                    0xAC,
+                    0x9D,
+                    0x18,
+                    0xE4,
+                    0x20
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid CLSID_UIAnimationTimer
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x0C, 0x4A, 0xCD, 0xBF,
+                    0xB6, 0x06,
+                    0x84, 0x43,
+                    0xB7,
+                    0x68,
+                    0x0D,
+                    0xAA,
+                    0x79,
+                    0x2C,
+                    0x38,
+                    0x0E
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
     }
 }

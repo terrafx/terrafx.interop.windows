@@ -11,6 +11,6 @@ namespace TerraFX.Interop
     public static partial class Windows
     {
         [NativeTypeName("#define CODECAPI_AVEncStatBandwidthProcessorUtilitization DEFINE_CODECAPI_GUIDNAMED( AVEncStatHardwareBandwidthUtilitization )")]
-        public static readonly Guid CODECAPI_AVEncStatBandwidthProcessorUtilitization = STATIC_CODECAPI_AVEncStatHardwareBandwidthUtilitization;
+        public static ref readonly Guid CODECAPI_AVEncStatBandwidthProcessorUtilitization => ref STATIC_CODECAPI_AVEncStatHardwareBandwidthUtilitization;
     }
 }

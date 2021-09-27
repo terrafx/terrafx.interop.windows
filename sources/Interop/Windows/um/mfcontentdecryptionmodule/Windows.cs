@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
@@ -11,41 +12,212 @@ namespace TerraFX.Interop
     public static unsafe partial class Windows
     {
         [NativeTypeName("const PROPERTYKEY")]
-        public static readonly PROPERTYKEY MF_CONTENTDECRYPTIONMODULE_INPRIVATESTOREPATH = new PROPERTYKEY
+        public static ref readonly PROPERTYKEY MF_CONTENTDECRYPTIONMODULE_INPRIVATESTOREPATH
         {
-            fmtid = new Guid(0x730cb3ac, 0x51dc, 0x49da, 0xa5, 0x78, 0xb9, 0x53, 0x86, 0xb6, 0x2a, 0xfe),
-            pid = 0x01,
-        };
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xAC, 0xB3, 0x0C, 0x73,
+                    0xDC, 0x51,
+                    0xDA, 0x49,
+                    0xA5,
+                    0x78,
+                    0xB9,
+                    0x53,
+                    0x86,
+                    0xB6,
+                    0x2A,
+                    0xFE,
+                    0x01, 0x00, 0x00, 0x00
+                };
+
+                return ref Unsafe.As<byte, PROPERTYKEY>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const PROPERTYKEY")]
-        public static readonly PROPERTYKEY MF_CONTENTDECRYPTIONMODULE_STOREPATH = new PROPERTYKEY
+        public static ref readonly PROPERTYKEY MF_CONTENTDECRYPTIONMODULE_STOREPATH
         {
-            fmtid = new Guid(0x77d993b9, 0xba61, 0x4bb7, 0x92, 0xc6, 0x18, 0xc8, 0x6a, 0x18, 0x9c, 0x06),
-            pid = 0x02,
-        };
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xB9, 0x93, 0xD9, 0x77,
+                    0x61, 0xBA,
+                    0xB7, 0x4B,
+                    0x92,
+                    0xC6,
+                    0x18,
+                    0xC8,
+                    0x6A,
+                    0x18,
+                    0x9C,
+                    0x06,
+                    0x02, 0x00, 0x00, 0x00
+                };
+
+                return ref Unsafe.As<byte, PROPERTYKEY>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const PROPERTYKEY")]
-        public static readonly PROPERTYKEY MF_CONTENTDECRYPTIONMODULE_PMPSTORECONTEXT = new PROPERTYKEY
+        public static ref readonly PROPERTYKEY MF_CONTENTDECRYPTIONMODULE_PMPSTORECONTEXT
         {
-            fmtid = new Guid(0x6d2a2835, 0xc3a9, 0x4681, 0x97, 0xf2, 0x0a, 0xf5, 0x6b, 0xe9, 0x34, 0x46),
-            pid = 0x03,
-        };
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x35, 0x28, 0x2A, 0x6D,
+                    0xA9, 0xC3,
+                    0x81, 0x46,
+                    0x97,
+                    0xF2,
+                    0x0A,
+                    0xF5,
+                    0x6B,
+                    0xE9,
+                    0x34,
+                    0x46,
+                    0x03, 0x00, 0x00, 0x00
+                };
+
+                return ref Unsafe.As<byte, PROPERTYKEY>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const IID")]
-        public static readonly Guid MF_CONTENTDECRYPTIONMODULE_SERVICE = new Guid(0x15320c45, 0xff80, 0x484a, 0x9d, 0xcb, 0xd, 0xf8, 0x94, 0xe6, 0x9a, 0x1);
+        public static ref readonly Guid MF_CONTENTDECRYPTIONMODULE_SERVICE
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x45, 0x0C, 0x32, 0x15,
+                    0x80, 0xFF,
+                    0x4A, 0x48,
+                    0x9D,
+                    0xCB,
+                    0x0D,
+                    0xF8,
+                    0x94,
+                    0xE6,
+                    0x9A,
+                    0x01
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [DllImport("mf", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int MFCreateEncryptedMediaExtensionsStoreActivate(IMFPMPHostApp* pmpHost, IStream* objectStream, [NativeTypeName("LPCWSTR")] ushort* classId, IMFActivate** activate);
 
-        public static readonly Guid IID_IMFContentDecryptionModuleSession = new Guid(0x4E233EFD, 0x1DD2, 0x49E8, 0xB5, 0x77, 0xD6, 0x3E, 0xEE, 0x4C, 0x0D, 0x33);
+        public static ref readonly Guid IID_IMFContentDecryptionModuleSession
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xFD, 0x3E, 0x23, 0x4E,
+                    0xD2, 0x1D,
+                    0xE8, 0x49,
+                    0xB5,
+                    0x77,
+                    0xD6,
+                    0x3E,
+                    0xEE,
+                    0x4C,
+                    0x0D,
+                    0x33
+                };
 
-        public static readonly Guid IID_IMFContentDecryptionModuleSessionCallbacks = new Guid(0x3F96EE40, 0xAD81, 0x4096, 0x84, 0x70, 0x59, 0xA4, 0xB7, 0x70, 0xF8, 0x9A);
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
-        public static readonly Guid IID_IMFContentDecryptionModule = new Guid(0x87BE986C, 0x10BE, 0x4943, 0xBF, 0x48, 0x4B, 0x54, 0xCE, 0x19, 0x83, 0xA2);
+        public static ref readonly Guid IID_IMFContentDecryptionModuleSessionCallbacks
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x40, 0xEE, 0x96, 0x3F,
+                    0x81, 0xAD,
+                    0x96, 0x40,
+                    0x84,
+                    0x70,
+                    0x59,
+                    0xA4,
+                    0xB7,
+                    0x70,
+                    0xF8,
+                    0x9A
+                };
 
-        public static readonly Guid IID_IMFContentDecryptionModuleAccess = new Guid(0xA853D1F4, 0xE2A0, 0x4303, 0x9E, 0xDC, 0xF1, 0xA6, 0x8E, 0xE4, 0x31, 0x36);
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
-        public static readonly Guid IID_IMFContentDecryptionModuleFactory = new Guid(0x7D5ABF16, 0x4CBB, 0x4E08, 0xB9, 0x77, 0x9B, 0xA5, 0x90, 0x49, 0x94, 0x3E);
+        public static ref readonly Guid IID_IMFContentDecryptionModule
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x6C, 0x98, 0xBE, 0x87,
+                    0xBE, 0x10,
+                    0x43, 0x49,
+                    0xBF,
+                    0x48,
+                    0x4B,
+                    0x54,
+                    0xCE,
+                    0x19,
+                    0x83,
+                    0xA2
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid IID_IMFContentDecryptionModuleAccess
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xF4, 0xD1, 0x53, 0xA8,
+                    0xA0, 0xE2,
+                    0x03, 0x43,
+                    0x9E,
+                    0xDC,
+                    0xF1,
+                    0xA6,
+                    0x8E,
+                    0xE4,
+                    0x31,
+                    0x36
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid IID_IMFContentDecryptionModuleFactory
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x16, 0xBF, 0x5A, 0x7D,
+                    0xBB, 0x4C,
+                    0x08, 0x4E,
+                    0xB9,
+                    0x77,
+                    0x9B,
+                    0xA5,
+                    0x90,
+                    0x49,
+                    0x94,
+                    0x3E
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
     }
 }

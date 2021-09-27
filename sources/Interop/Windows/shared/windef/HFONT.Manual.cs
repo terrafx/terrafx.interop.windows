@@ -9,7 +9,7 @@ namespace TerraFX.Interop
 {
     public unsafe struct HFONT : IEquatable<HFONT>
     {
-        public static readonly HFONT NULL = default;
+        public static HFONT NULL => default;
 
         private void* _value;
 

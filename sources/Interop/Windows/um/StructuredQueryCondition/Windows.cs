@@ -4,15 +4,77 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
 {
     public static partial class Windows
     {
-        public static readonly Guid IID_IRichChunk = new Guid(0x4FDEF69C, 0xDBC9, 0x454E, 0x99, 0x10, 0xB3, 0x4F, 0x3C, 0x64, 0xB5, 0x10);
+        public static ref readonly Guid IID_IRichChunk
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x9C, 0xF6, 0xDE, 0x4F,
+                    0xC9, 0xDB,
+                    0x4E, 0x45,
+                    0x99,
+                    0x10,
+                    0xB3,
+                    0x4F,
+                    0x3C,
+                    0x64,
+                    0xB5,
+                    0x10
+                };
 
-        public static readonly Guid IID_ICondition = new Guid(0x0FC988D4, 0xC935, 0x4B97, 0xA9, 0x73, 0x46, 0x28, 0x2E, 0xA1, 0x75, 0xC8);
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
-        public static readonly Guid IID_ICondition2 = new Guid(0x0DB8851D, 0x2E5B, 0x47EB, 0x92, 0x08, 0xD2, 0x8C, 0x32, 0x5A, 0x01, 0xD7);
+        public static ref readonly Guid IID_ICondition
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xD4, 0x88, 0xC9, 0x0F,
+                    0x35, 0xC9,
+                    0x97, 0x4B,
+                    0xA9,
+                    0x73,
+                    0x46,
+                    0x28,
+                    0x2E,
+                    0xA1,
+                    0x75,
+                    0xC8
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid IID_ICondition2
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x1D, 0x85, 0xB8, 0x0D,
+                    0x5B, 0x2E,
+                    0xEB, 0x47,
+                    0x92,
+                    0x08,
+                    0xD2,
+                    0x8C,
+                    0x32,
+                    0x5A,
+                    0x01,
+                    0xD7
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
     }
 }

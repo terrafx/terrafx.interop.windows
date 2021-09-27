@@ -14,9 +14,9 @@ namespace TerraFX.Interop
         public const int D2DERR_UNSUPPORTED_PIXEL_FORMAT = unchecked((int)(0x88982F80));
 
         [NativeTypeName("#define D2DERR_INSUFFICIENT_BUFFER HRESULT_FROM_WIN32(ERROR_INSUFFICIENT_BUFFER)")]
-        public static readonly int D2DERR_INSUFFICIENT_BUFFER = HRESULT_FROM_WIN32(122);
+        public static int D2DERR_INSUFFICIENT_BUFFER => HRESULT_FROM_WIN32(122);
 
         [NativeTypeName("#define D2DERR_FILE_NOT_FOUND HRESULT_FROM_WIN32(ERROR_FILE_NOT_FOUND)")]
-        public static readonly int D2DERR_FILE_NOT_FOUND = HRESULT_FROM_WIN32(2);
+        public static int D2DERR_FILE_NOT_FOUND => HRESULT_FROM_WIN32(2);
     }
 }

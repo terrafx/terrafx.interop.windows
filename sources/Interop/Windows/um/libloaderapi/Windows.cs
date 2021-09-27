@@ -170,13 +170,13 @@ namespace TerraFX.Interop
         public const int SUPPORT_LANG_NUMBER = 32;
 
         [NativeTypeName("#define FindResourceEx FindResourceExW")]
-        public static readonly delegate*<IntPtr, ushort*, ushort*, ushort, IntPtr> FindResourceEx = &FindResourceExW;
+        public static delegate*<IntPtr, ushort*, ushort*, ushort, IntPtr> FindResourceEx => &FindResourceExW;
 
         [NativeTypeName("#define GetModuleFileName GetModuleFileNameW")]
-        public static readonly delegate*<IntPtr, ushort*, uint, uint> GetModuleFileName = &GetModuleFileNameW;
+        public static delegate*<IntPtr, ushort*, uint, uint> GetModuleFileName => &GetModuleFileNameW;
 
         [NativeTypeName("#define GetModuleHandle GetModuleHandleW")]
-        public static readonly delegate*<ushort*, IntPtr> GetModuleHandle = &GetModuleHandleW;
+        public static delegate*<ushort*, IntPtr> GetModuleHandle => &GetModuleHandleW;
 
         [NativeTypeName("#define GET_MODULE_HANDLE_EX_FLAG_PIN (0x00000001)")]
         public const int GET_MODULE_HANDLE_EX_FLAG_PIN = (0x00000001);
@@ -188,13 +188,13 @@ namespace TerraFX.Interop
         public const int GET_MODULE_HANDLE_EX_FLAG_FROM_ADDRESS = (0x00000004);
 
         [NativeTypeName("#define GetModuleHandleEx GetModuleHandleExW")]
-        public static readonly delegate*<uint, ushort*, IntPtr*, int> GetModuleHandleEx = &GetModuleHandleExW;
+        public static delegate*<uint, ushort*, IntPtr*, int> GetModuleHandleEx => &GetModuleHandleExW;
 
         [NativeTypeName("#define CURRENT_IMPORT_REDIRECTION_VERSION 1")]
         public const int CURRENT_IMPORT_REDIRECTION_VERSION = 1;
 
         [NativeTypeName("#define LoadLibraryEx LoadLibraryExW")]
-        public static readonly delegate*<ushort*, IntPtr, uint, IntPtr> LoadLibraryEx = &LoadLibraryExW;
+        public static delegate*<ushort*, IntPtr, uint, IntPtr> LoadLibraryEx => &LoadLibraryExW;
 
         [NativeTypeName("#define DONT_RESOLVE_DLL_REFERENCES 0x00000001")]
         public const int DONT_RESOLVE_DLL_REFERENCES = 0x00000001;
@@ -242,24 +242,24 @@ namespace TerraFX.Interop
         public const int LOAD_LIBRARY_OS_INTEGRITY_CONTINUITY = 0x00008000;
 
         [NativeTypeName("#define LoadString LoadStringW")]
-        public static readonly delegate*<IntPtr, uint, ushort*, int, int> LoadString = &LoadStringW;
+        public static delegate*<IntPtr, uint, ushort*, int, int> LoadString => &LoadStringW;
 
         [NativeTypeName("#define EnumResourceLanguagesEx EnumResourceLanguagesExW")]
-        public static readonly delegate*<IntPtr, ushort*, ushort*, delegate* unmanaged<IntPtr, ushort*, ushort*, ushort, nint, int>, nint, uint, ushort, int> EnumResourceLanguagesEx = &EnumResourceLanguagesExW;
+        public static delegate*<IntPtr, ushort*, ushort*, delegate* unmanaged<IntPtr, ushort*, ushort*, ushort, nint, int>, nint, uint, ushort, int> EnumResourceLanguagesEx => &EnumResourceLanguagesExW;
 
         [NativeTypeName("#define EnumResourceNamesEx EnumResourceNamesExW")]
-        public static readonly delegate*<IntPtr, ushort*, delegate* unmanaged<IntPtr, ushort*, ushort*, nint, int>, nint, uint, ushort, int> EnumResourceNamesEx = &EnumResourceNamesExW;
+        public static delegate*<IntPtr, ushort*, delegate* unmanaged<IntPtr, ushort*, ushort*, nint, int>, nint, uint, ushort, int> EnumResourceNamesEx => &EnumResourceNamesExW;
 
         [NativeTypeName("#define EnumResourceTypesEx EnumResourceTypesExW")]
-        public static readonly delegate*<IntPtr, delegate* unmanaged<IntPtr, ushort*, nint, int>, nint, uint, ushort, int> EnumResourceTypesEx = &EnumResourceTypesExW;
+        public static delegate*<IntPtr, delegate* unmanaged<IntPtr, ushort*, nint, int>, nint, uint, ushort, int> EnumResourceTypesEx => &EnumResourceTypesExW;
 
         [NativeTypeName("#define FindResource FindResourceW")]
-        public static readonly delegate*<IntPtr, ushort*, ushort*, IntPtr> FindResource = &FindResourceW;
+        public static delegate*<IntPtr, ushort*, ushort*, IntPtr> FindResource => &FindResourceW;
 
         [NativeTypeName("#define LoadLibrary LoadLibraryW")]
-        public static readonly delegate*<ushort*, IntPtr> LoadLibrary = &LoadLibraryW;
+        public static delegate*<ushort*, IntPtr> LoadLibrary => &LoadLibraryW;
 
         [NativeTypeName("#define EnumResourceNames EnumResourceNamesW")]
-        public static readonly delegate*<IntPtr, ushort*, delegate* unmanaged<IntPtr, ushort*, ushort*, nint, int>, nint, int> EnumResourceNames = &EnumResourceNamesW;
+        public static delegate*<IntPtr, ushort*, delegate* unmanaged<IntPtr, ushort*, ushort*, nint, int>, nint, int> EnumResourceNames => &EnumResourceNamesW;
     }
 }

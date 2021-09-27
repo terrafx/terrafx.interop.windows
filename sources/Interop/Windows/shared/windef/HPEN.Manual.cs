@@ -9,7 +9,7 @@ namespace TerraFX.Interop
 {
     public unsafe struct HPEN : IEquatable<HPEN>
     {
-        public static readonly HPEN NULL = default;
+        public static HPEN NULL => default;
 
         private void* _value;
 

@@ -370,13 +370,13 @@ namespace TerraFX.Interop
         public const uint TLS_OUT_OF_INDEXES = ((uint)(0xFFFFFFFF));
 
         [NativeTypeName("#define CreateProcess CreateProcessW")]
-        public static readonly delegate*<ushort*, ushort*, SECURITY_ATTRIBUTES*, SECURITY_ATTRIBUTES*, int, uint, void*, ushort*, STARTUPINFOW*, PROCESS_INFORMATION*, int> CreateProcess = &CreateProcessW;
+        public static delegate*<ushort*, ushort*, SECURITY_ATTRIBUTES*, SECURITY_ATTRIBUTES*, int, uint, void*, ushort*, STARTUPINFOW*, PROCESS_INFORMATION*, int> CreateProcess => &CreateProcessW;
 
         [NativeTypeName("#define GetStartupInfo GetStartupInfoW")]
-        public static readonly delegate*<STARTUPINFOW*, void> GetStartupInfo = &GetStartupInfoW;
+        public static delegate*<STARTUPINFOW*, void> GetStartupInfo => &GetStartupInfoW;
 
         [NativeTypeName("#define CreateProcessAsUser CreateProcessAsUserW")]
-        public static readonly delegate*<IntPtr, ushort*, ushort*, SECURITY_ATTRIBUTES*, SECURITY_ATTRIBUTES*, int, uint, void*, ushort*, STARTUPINFOW*, PROCESS_INFORMATION*, int> CreateProcessAsUser = &CreateProcessAsUserW;
+        public static delegate*<IntPtr, ushort*, ushort*, SECURITY_ATTRIBUTES*, SECURITY_ATTRIBUTES*, int, uint, void*, ushort*, STARTUPINFOW*, PROCESS_INFORMATION*, int> CreateProcessAsUser => &CreateProcessAsUserW;
 
         [NativeTypeName("#define PROC_THREAD_ATTRIBUTE_REPLACE_VALUE 0x00000001")]
         public const int PROC_THREAD_ATTRIBUTE_REPLACE_VALUE = 0x00000001;

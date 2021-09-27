@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
@@ -27,7 +28,27 @@ namespace TerraFX.Interop
         public static extern int D3D12CreateVersionedRootSignatureDeserializer([NativeTypeName("LPCVOID")] void* pSrcData, [NativeTypeName("SIZE_T")] nuint SrcDataSizeInBytes, [NativeTypeName("const IID &")] Guid* pRootSignatureDeserializerInterface, void** ppRootSignatureDeserializer);
 
         [NativeTypeName("const GUID")]
-        public static readonly Guid D3D12_PROTECTED_RESOURCES_SESSION_HARDWARE_PROTECTED = new Guid(0x62B0084E, 0xC70E, 0x4DAA, 0xA1, 0x09, 0x30, 0xFF, 0x8D, 0x5A, 0x04, 0x82);
+        public static ref readonly Guid D3D12_PROTECTED_RESOURCES_SESSION_HARDWARE_PROTECTED
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x4E, 0x08, 0xB0, 0x62,
+                    0x0E, 0xC7,
+                    0xAA, 0x4D,
+                    0xA1,
+                    0x09,
+                    0x30,
+                    0xFF,
+                    0x8D,
+                    0x5A,
+                    0x04,
+                    0x82
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [DllImport("D3D12", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
@@ -42,197 +63,1457 @@ namespace TerraFX.Interop
         public static extern int D3D12EnableExperimentalFeatures([NativeTypeName("UINT")] uint NumFeatures, [NativeTypeName("const IID *")] Guid* pIIDs, void* pConfigurationStructs, [NativeTypeName("UINT *")] uint* pConfigurationStructSizes);
 
         [NativeTypeName("const UUID")]
-        public static readonly Guid D3D12ExperimentalShaderModels = new Guid(0x76f5573e, 0xf13a, 0x40f5, 0xb2, 0x97, 0x81, 0xce, 0x9e, 0x18, 0x93, 0x3f);
+        public static ref readonly Guid D3D12ExperimentalShaderModels
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x3E, 0x57, 0xF5, 0x76,
+                    0x3A, 0xF1,
+                    0xF5, 0x40,
+                    0xB2,
+                    0x97,
+                    0x81,
+                    0xCE,
+                    0x9E,
+                    0x18,
+                    0x93,
+                    0x3F
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const UUID")]
-        public static readonly Guid D3D12TiledResourceTier4 = new Guid(0xc9c4725f, 0xa81a, 0x4f56, 0x8c, 0x5b, 0xc5, 0x10, 0x39, 0xd6, 0x94, 0xfb);
+        public static ref readonly Guid D3D12TiledResourceTier4
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x5F, 0x72, 0xC4, 0xC9,
+                    0x1A, 0xA8,
+                    0x56, 0x4F,
+                    0x8C,
+                    0x5B,
+                    0xC5,
+                    0x10,
+                    0x39,
+                    0xD6,
+                    0x94,
+                    0xFB
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const UUID")]
-        public static readonly Guid D3D12MetaCommand = new Guid(0xc734c97e, 0x8077, 0x48c8, 0x9f, 0xdc, 0xd9, 0xd1, 0xdd, 0x31, 0xdd, 0x77);
+        public static ref readonly Guid D3D12MetaCommand
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x7E, 0xC9, 0x34, 0xC7,
+                    0x77, 0x80,
+                    0xC8, 0x48,
+                    0x9F,
+                    0xDC,
+                    0xD9,
+                    0xD1,
+                    0xDD,
+                    0x31,
+                    0xDD,
+                    0x77
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const GUID")]
-        public static readonly Guid CLSID_D3D12Debug = new Guid(0xf2352aeb, 0xdd84, 0x49fe, 0xb9, 0x7b, 0xa9, 0xdc, 0xfd, 0xcc, 0x1b, 0x4f);
+        public static ref readonly Guid CLSID_D3D12Debug
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xEB, 0x2A, 0x35, 0xF2,
+                    0x84, 0xDD,
+                    0xFE, 0x49,
+                    0xB9,
+                    0x7B,
+                    0xA9,
+                    0xDC,
+                    0xFD,
+                    0xCC,
+                    0x1B,
+                    0x4F
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const GUID")]
-        public static readonly Guid CLSID_D3D12Tools = new Guid(0xe38216b1, 0x3c8c, 0x4833, 0xaa, 0x09, 0x0a, 0x06, 0xb6, 0x5d, 0x96, 0xc8);
+        public static ref readonly Guid CLSID_D3D12Tools
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xB1, 0x16, 0x82, 0xE3,
+                    0x8C, 0x3C,
+                    0x33, 0x48,
+                    0xAA,
+                    0x09,
+                    0x0A,
+                    0x06,
+                    0xB6,
+                    0x5D,
+                    0x96,
+                    0xC8
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const GUID")]
-        public static readonly Guid CLSID_D3D12DeviceRemovedExtendedData = new Guid(0x4a75bbc4, 0x9ff4, 0x4ad8, 0x9f, 0x18, 0xab, 0xae, 0x84, 0xdc, 0x5f, 0xf2);
+        public static ref readonly Guid CLSID_D3D12DeviceRemovedExtendedData
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xC4, 0xBB, 0x75, 0x4A,
+                    0xF4, 0x9F,
+                    0xD8, 0x4A,
+                    0x9F,
+                    0x18,
+                    0xAB,
+                    0xAE,
+                    0x84,
+                    0xDC,
+                    0x5F,
+                    0xF2
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const GUID")]
-        public static readonly Guid CLSID_D3D12SDKConfiguration = new Guid(0x7cda6aca, 0xa03e, 0x49c8, 0x94, 0x58, 0x03, 0x34, 0xd2, 0x0e, 0x07, 0xce);
+        public static ref readonly Guid CLSID_D3D12SDKConfiguration
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xCA, 0x6A, 0xDA, 0x7C,
+                    0x3E, 0xA0,
+                    0xC8, 0x49,
+                    0x94,
+                    0x58,
+                    0x03,
+                    0x34,
+                    0xD2,
+                    0x0E,
+                    0x07,
+                    0xCE
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [DllImport("D3D12", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int D3D12GetInterface([NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("const IID &")] Guid* riid, void** ppvDebug);
 
         [NativeTypeName("const GUID")]
-        public static readonly Guid IID_ID3D12Object = new Guid(0xc4fec28f, 0x7966, 0x4e95, 0x9f, 0x94, 0xf4, 0x31, 0xcb, 0x56, 0xc3, 0xb8);
+        public static ref readonly Guid IID_ID3D12Object
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x8F, 0xC2, 0xFE, 0xC4,
+                    0x66, 0x79,
+                    0x95, 0x4E,
+                    0x9F,
+                    0x94,
+                    0xF4,
+                    0x31,
+                    0xCB,
+                    0x56,
+                    0xC3,
+                    0xB8
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const GUID")]
-        public static readonly Guid IID_ID3D12DeviceChild = new Guid(0x905db94b, 0xa00c, 0x4140, 0x9d, 0xf5, 0x2b, 0x64, 0xca, 0x9e, 0xa3, 0x57);
+        public static ref readonly Guid IID_ID3D12DeviceChild
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x4B, 0xB9, 0x5D, 0x90,
+                    0x0C, 0xA0,
+                    0x40, 0x41,
+                    0x9D,
+                    0xF5,
+                    0x2B,
+                    0x64,
+                    0xCA,
+                    0x9E,
+                    0xA3,
+                    0x57
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const GUID")]
-        public static readonly Guid IID_ID3D12RootSignature = new Guid(0xc54a6b66, 0x72df, 0x4ee8, 0x8b, 0xe5, 0xa9, 0x46, 0xa1, 0x42, 0x92, 0x14);
+        public static ref readonly Guid IID_ID3D12RootSignature
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x66, 0x6B, 0x4A, 0xC5,
+                    0xDF, 0x72,
+                    0xE8, 0x4E,
+                    0x8B,
+                    0xE5,
+                    0xA9,
+                    0x46,
+                    0xA1,
+                    0x42,
+                    0x92,
+                    0x14
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const GUID")]
-        public static readonly Guid IID_ID3D12RootSignatureDeserializer = new Guid(0x34AB647B, 0x3CC8, 0x46AC, 0x84, 0x1B, 0xC0, 0x96, 0x56, 0x45, 0xC0, 0x46);
+        public static ref readonly Guid IID_ID3D12RootSignatureDeserializer
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x7B, 0x64, 0xAB, 0x34,
+                    0xC8, 0x3C,
+                    0xAC, 0x46,
+                    0x84,
+                    0x1B,
+                    0xC0,
+                    0x96,
+                    0x56,
+                    0x45,
+                    0xC0,
+                    0x46
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const GUID")]
-        public static readonly Guid IID_ID3D12VersionedRootSignatureDeserializer = new Guid(0x7F91CE67, 0x090C, 0x4BB7, 0xB7, 0x8E, 0xED, 0x8F, 0xF2, 0xE3, 0x1D, 0xA0);
+        public static ref readonly Guid IID_ID3D12VersionedRootSignatureDeserializer
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x67, 0xCE, 0x91, 0x7F,
+                    0x0C, 0x09,
+                    0xB7, 0x4B,
+                    0xB7,
+                    0x8E,
+                    0xED,
+                    0x8F,
+                    0xF2,
+                    0xE3,
+                    0x1D,
+                    0xA0
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const GUID")]
-        public static readonly Guid IID_ID3D12Pageable = new Guid(0x63ee58fb, 0x1268, 0x4835, 0x86, 0xda, 0xf0, 0x08, 0xce, 0x62, 0xf0, 0xd6);
+        public static ref readonly Guid IID_ID3D12Pageable
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xFB, 0x58, 0xEE, 0x63,
+                    0x68, 0x12,
+                    0x35, 0x48,
+                    0x86,
+                    0xDA,
+                    0xF0,
+                    0x08,
+                    0xCE,
+                    0x62,
+                    0xF0,
+                    0xD6
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const GUID")]
-        public static readonly Guid IID_ID3D12Heap = new Guid(0x6b3b2502, 0x6e51, 0x45b3, 0x90, 0xee, 0x98, 0x84, 0x26, 0x5e, 0x8d, 0xf3);
+        public static ref readonly Guid IID_ID3D12Heap
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x02, 0x25, 0x3B, 0x6B,
+                    0x51, 0x6E,
+                    0xB3, 0x45,
+                    0x90,
+                    0xEE,
+                    0x98,
+                    0x84,
+                    0x26,
+                    0x5E,
+                    0x8D,
+                    0xF3
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const GUID")]
-        public static readonly Guid IID_ID3D12Resource = new Guid(0x696442be, 0xa72e, 0x4059, 0xbc, 0x79, 0x5b, 0x5c, 0x98, 0x04, 0x0f, 0xad);
+        public static ref readonly Guid IID_ID3D12Resource
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xBE, 0x42, 0x64, 0x69,
+                    0x2E, 0xA7,
+                    0x59, 0x40,
+                    0xBC,
+                    0x79,
+                    0x5B,
+                    0x5C,
+                    0x98,
+                    0x04,
+                    0x0F,
+                    0xAD
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const GUID")]
-        public static readonly Guid IID_ID3D12CommandAllocator = new Guid(0x6102dee4, 0xaf59, 0x4b09, 0xb9, 0x99, 0xb4, 0x4d, 0x73, 0xf0, 0x9b, 0x24);
+        public static ref readonly Guid IID_ID3D12CommandAllocator
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xE4, 0xDE, 0x02, 0x61,
+                    0x59, 0xAF,
+                    0x09, 0x4B,
+                    0xB9,
+                    0x99,
+                    0xB4,
+                    0x4D,
+                    0x73,
+                    0xF0,
+                    0x9B,
+                    0x24
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const GUID")]
-        public static readonly Guid IID_ID3D12Fence = new Guid(0x0a753dcf, 0xc4d8, 0x4b91, 0xad, 0xf6, 0xbe, 0x5a, 0x60, 0xd9, 0x5a, 0x76);
+        public static ref readonly Guid IID_ID3D12Fence
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xCF, 0x3D, 0x75, 0x0A,
+                    0xD8, 0xC4,
+                    0x91, 0x4B,
+                    0xAD,
+                    0xF6,
+                    0xBE,
+                    0x5A,
+                    0x60,
+                    0xD9,
+                    0x5A,
+                    0x76
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const GUID")]
-        public static readonly Guid IID_ID3D12Fence1 = new Guid(0x433685fe, 0xe22b, 0x4ca0, 0xa8, 0xdb, 0xb5, 0xb4, 0xf4, 0xdd, 0x0e, 0x4a);
+        public static ref readonly Guid IID_ID3D12Fence1
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xFE, 0x85, 0x36, 0x43,
+                    0x2B, 0xE2,
+                    0xA0, 0x4C,
+                    0xA8,
+                    0xDB,
+                    0xB5,
+                    0xB4,
+                    0xF4,
+                    0xDD,
+                    0x0E,
+                    0x4A
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const GUID")]
-        public static readonly Guid IID_ID3D12PipelineState = new Guid(0x765a30f3, 0xf624, 0x4c6f, 0xa8, 0x28, 0xac, 0xe9, 0x48, 0x62, 0x24, 0x45);
+        public static ref readonly Guid IID_ID3D12PipelineState
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xF3, 0x30, 0x5A, 0x76,
+                    0x24, 0xF6,
+                    0x6F, 0x4C,
+                    0xA8,
+                    0x28,
+                    0xAC,
+                    0xE9,
+                    0x48,
+                    0x62,
+                    0x24,
+                    0x45
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const GUID")]
-        public static readonly Guid IID_ID3D12DescriptorHeap = new Guid(0x8efb471d, 0x616c, 0x4f49, 0x90, 0xf7, 0x12, 0x7b, 0xb7, 0x63, 0xfa, 0x51);
+        public static ref readonly Guid IID_ID3D12DescriptorHeap
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x1D, 0x47, 0xFB, 0x8E,
+                    0x6C, 0x61,
+                    0x49, 0x4F,
+                    0x90,
+                    0xF7,
+                    0x12,
+                    0x7B,
+                    0xB7,
+                    0x63,
+                    0xFA,
+                    0x51
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const GUID")]
-        public static readonly Guid IID_ID3D12QueryHeap = new Guid(0x0d9658ae, 0xed45, 0x469e, 0xa6, 0x1d, 0x97, 0x0e, 0xc5, 0x83, 0xca, 0xb4);
+        public static ref readonly Guid IID_ID3D12QueryHeap
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xAE, 0x58, 0x96, 0x0D,
+                    0x45, 0xED,
+                    0x9E, 0x46,
+                    0xA6,
+                    0x1D,
+                    0x97,
+                    0x0E,
+                    0xC5,
+                    0x83,
+                    0xCA,
+                    0xB4
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const GUID")]
-        public static readonly Guid IID_ID3D12CommandSignature = new Guid(0xc36a797c, 0xec80, 0x4f0a, 0x89, 0x85, 0xa7, 0xb2, 0x47, 0x50, 0x82, 0xd1);
+        public static ref readonly Guid IID_ID3D12CommandSignature
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x7C, 0x79, 0x6A, 0xC3,
+                    0x80, 0xEC,
+                    0x0A, 0x4F,
+                    0x89,
+                    0x85,
+                    0xA7,
+                    0xB2,
+                    0x47,
+                    0x50,
+                    0x82,
+                    0xD1
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const GUID")]
-        public static readonly Guid IID_ID3D12CommandList = new Guid(0x7116d91c, 0xe7e4, 0x47ce, 0xb8, 0xc6, 0xec, 0x81, 0x68, 0xf4, 0x37, 0xe5);
+        public static ref readonly Guid IID_ID3D12CommandList
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x1C, 0xD9, 0x16, 0x71,
+                    0xE4, 0xE7,
+                    0xCE, 0x47,
+                    0xB8,
+                    0xC6,
+                    0xEC,
+                    0x81,
+                    0x68,
+                    0xF4,
+                    0x37,
+                    0xE5
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const GUID")]
-        public static readonly Guid IID_ID3D12GraphicsCommandList = new Guid(0x5b160d0f, 0xac1b, 0x4185, 0x8b, 0xa8, 0xb3, 0xae, 0x42, 0xa5, 0xa4, 0x55);
+        public static ref readonly Guid IID_ID3D12GraphicsCommandList
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x0F, 0x0D, 0x16, 0x5B,
+                    0x1B, 0xAC,
+                    0x85, 0x41,
+                    0x8B,
+                    0xA8,
+                    0xB3,
+                    0xAE,
+                    0x42,
+                    0xA5,
+                    0xA4,
+                    0x55
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const GUID")]
-        public static readonly Guid IID_ID3D12GraphicsCommandList1 = new Guid(0x553103fb, 0x1fe7, 0x4557, 0xbb, 0x38, 0x94, 0x6d, 0x7d, 0x0e, 0x7c, 0xa7);
+        public static ref readonly Guid IID_ID3D12GraphicsCommandList1
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xFB, 0x03, 0x31, 0x55,
+                    0xE7, 0x1F,
+                    0x57, 0x45,
+                    0xBB,
+                    0x38,
+                    0x94,
+                    0x6D,
+                    0x7D,
+                    0x0E,
+                    0x7C,
+                    0xA7
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const GUID")]
-        public static readonly Guid IID_ID3D12GraphicsCommandList2 = new Guid(0x38C3E585, 0xFF17, 0x412C, 0x91, 0x50, 0x4F, 0xC6, 0xF9, 0xD7, 0x2A, 0x28);
+        public static ref readonly Guid IID_ID3D12GraphicsCommandList2
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x85, 0xE5, 0xC3, 0x38,
+                    0x17, 0xFF,
+                    0x2C, 0x41,
+                    0x91,
+                    0x50,
+                    0x4F,
+                    0xC6,
+                    0xF9,
+                    0xD7,
+                    0x2A,
+                    0x28
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const GUID")]
-        public static readonly Guid IID_ID3D12CommandQueue = new Guid(0x0ec870a6, 0x5d7e, 0x4c22, 0x8c, 0xfc, 0x5b, 0xaa, 0xe0, 0x76, 0x16, 0xed);
+        public static ref readonly Guid IID_ID3D12CommandQueue
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xA6, 0x70, 0xC8, 0x0E,
+                    0x7E, 0x5D,
+                    0x22, 0x4C,
+                    0x8C,
+                    0xFC,
+                    0x5B,
+                    0xAA,
+                    0xE0,
+                    0x76,
+                    0x16,
+                    0xED
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const GUID")]
-        public static readonly Guid IID_ID3D12Device = new Guid(0x189819f1, 0x1db6, 0x4b57, 0xbe, 0x54, 0x18, 0x21, 0x33, 0x9b, 0x85, 0xf7);
+        public static ref readonly Guid IID_ID3D12Device
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xF1, 0x19, 0x98, 0x18,
+                    0xB6, 0x1D,
+                    0x57, 0x4B,
+                    0xBE,
+                    0x54,
+                    0x18,
+                    0x21,
+                    0x33,
+                    0x9B,
+                    0x85,
+                    0xF7
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const GUID")]
-        public static readonly Guid IID_ID3D12PipelineLibrary = new Guid(0xc64226a8, 0x9201, 0x46af, 0xb4, 0xcc, 0x53, 0xfb, 0x9f, 0xf7, 0x41, 0x4f);
+        public static ref readonly Guid IID_ID3D12PipelineLibrary
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xA8, 0x26, 0x42, 0xC6,
+                    0x01, 0x92,
+                    0xAF, 0x46,
+                    0xB4,
+                    0xCC,
+                    0x53,
+                    0xFB,
+                    0x9F,
+                    0xF7,
+                    0x41,
+                    0x4F
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const GUID")]
-        public static readonly Guid IID_ID3D12PipelineLibrary1 = new Guid(0x80eabf42, 0x2568, 0x4e5e, 0xbd, 0x82, 0xc3, 0x7f, 0x86, 0x96, 0x1d, 0xc3);
+        public static ref readonly Guid IID_ID3D12PipelineLibrary1
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x42, 0xBF, 0xEA, 0x80,
+                    0x68, 0x25,
+                    0x5E, 0x4E,
+                    0xBD,
+                    0x82,
+                    0xC3,
+                    0x7F,
+                    0x86,
+                    0x96,
+                    0x1D,
+                    0xC3
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const GUID")]
-        public static readonly Guid IID_ID3D12Device1 = new Guid(0x77acce80, 0x638e, 0x4e65, 0x88, 0x95, 0xc1, 0xf2, 0x33, 0x86, 0x86, 0x3e);
+        public static ref readonly Guid IID_ID3D12Device1
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x80, 0xCE, 0xAC, 0x77,
+                    0x8E, 0x63,
+                    0x65, 0x4E,
+                    0x88,
+                    0x95,
+                    0xC1,
+                    0xF2,
+                    0x33,
+                    0x86,
+                    0x86,
+                    0x3E
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const GUID")]
-        public static readonly Guid IID_ID3D12Device2 = new Guid(0x30baa41e, 0xb15b, 0x475c, 0xa0, 0xbb, 0x1a, 0xf5, 0xc5, 0xb6, 0x43, 0x28);
+        public static ref readonly Guid IID_ID3D12Device2
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x1E, 0xA4, 0xBA, 0x30,
+                    0x5B, 0xB1,
+                    0x5C, 0x47,
+                    0xA0,
+                    0xBB,
+                    0x1A,
+                    0xF5,
+                    0xC5,
+                    0xB6,
+                    0x43,
+                    0x28
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const GUID")]
-        public static readonly Guid IID_ID3D12Device3 = new Guid(0x81dadc15, 0x2bad, 0x4392, 0x93, 0xc5, 0x10, 0x13, 0x45, 0xc4, 0xaa, 0x98);
+        public static ref readonly Guid IID_ID3D12Device3
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x15, 0xDC, 0xDA, 0x81,
+                    0xAD, 0x2B,
+                    0x92, 0x43,
+                    0x93,
+                    0xC5,
+                    0x10,
+                    0x13,
+                    0x45,
+                    0xC4,
+                    0xAA,
+                    0x98
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const GUID")]
-        public static readonly Guid IID_ID3D12ProtectedSession = new Guid(0xA1533D18, 0x0AC1, 0x4084, 0x85, 0xB9, 0x89, 0xA9, 0x61, 0x16, 0x80, 0x6B);
+        public static ref readonly Guid IID_ID3D12ProtectedSession
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x18, 0x3D, 0x53, 0xA1,
+                    0xC1, 0x0A,
+                    0x84, 0x40,
+                    0x85,
+                    0xB9,
+                    0x89,
+                    0xA9,
+                    0x61,
+                    0x16,
+                    0x80,
+                    0x6B
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const GUID")]
-        public static readonly Guid IID_ID3D12ProtectedResourceSession = new Guid(0x6CD696F4, 0xF289, 0x40CC, 0x80, 0x91, 0x5A, 0x6C, 0x0A, 0x09, 0x9C, 0x3D);
+        public static ref readonly Guid IID_ID3D12ProtectedResourceSession
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xF4, 0x96, 0xD6, 0x6C,
+                    0x89, 0xF2,
+                    0xCC, 0x40,
+                    0x80,
+                    0x91,
+                    0x5A,
+                    0x6C,
+                    0x0A,
+                    0x09,
+                    0x9C,
+                    0x3D
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const GUID")]
-        public static readonly Guid IID_ID3D12Device4 = new Guid(0xe865df17, 0xa9ee, 0x46f9, 0xa4, 0x63, 0x30, 0x98, 0x31, 0x5a, 0xa2, 0xe5);
+        public static ref readonly Guid IID_ID3D12Device4
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x17, 0xDF, 0x65, 0xE8,
+                    0xEE, 0xA9,
+                    0xF9, 0x46,
+                    0xA4,
+                    0x63,
+                    0x30,
+                    0x98,
+                    0x31,
+                    0x5A,
+                    0xA2,
+                    0xE5
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const GUID")]
-        public static readonly Guid IID_ID3D12LifetimeOwner = new Guid(0xe667af9f, 0xcd56, 0x4f46, 0x83, 0xce, 0x03, 0x2e, 0x59, 0x5d, 0x70, 0xa8);
+        public static ref readonly Guid IID_ID3D12LifetimeOwner
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x9F, 0xAF, 0x67, 0xE6,
+                    0x56, 0xCD,
+                    0x46, 0x4F,
+                    0x83,
+                    0xCE,
+                    0x03,
+                    0x2E,
+                    0x59,
+                    0x5D,
+                    0x70,
+                    0xA8
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const GUID")]
-        public static readonly Guid IID_ID3D12SwapChainAssistant = new Guid(0xf1df64b6, 0x57fd, 0x49cd, 0x88, 0x07, 0xc0, 0xeb, 0x88, 0xb4, 0x5c, 0x8f);
+        public static ref readonly Guid IID_ID3D12SwapChainAssistant
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xB6, 0x64, 0xDF, 0xF1,
+                    0xFD, 0x57,
+                    0xCD, 0x49,
+                    0x88,
+                    0x07,
+                    0xC0,
+                    0xEB,
+                    0x88,
+                    0xB4,
+                    0x5C,
+                    0x8F
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const GUID")]
-        public static readonly Guid IID_ID3D12LifetimeTracker = new Guid(0x3fd03d36, 0x4eb1, 0x424a, 0xa5, 0x82, 0x49, 0x4e, 0xcb, 0x8b, 0xa8, 0x13);
+        public static ref readonly Guid IID_ID3D12LifetimeTracker
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x36, 0x3D, 0xD0, 0x3F,
+                    0xB1, 0x4E,
+                    0x4A, 0x42,
+                    0xA5,
+                    0x82,
+                    0x49,
+                    0x4E,
+                    0xCB,
+                    0x8B,
+                    0xA8,
+                    0x13
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const GUID")]
-        public static readonly Guid IID_ID3D12StateObject = new Guid(0x47016943, 0xfca8, 0x4594, 0x93, 0xea, 0xaf, 0x25, 0x8b, 0x55, 0x34, 0x6d);
+        public static ref readonly Guid IID_ID3D12StateObject
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x43, 0x69, 0x01, 0x47,
+                    0xA8, 0xFC,
+                    0x94, 0x45,
+                    0x93,
+                    0xEA,
+                    0xAF,
+                    0x25,
+                    0x8B,
+                    0x55,
+                    0x34,
+                    0x6D
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const GUID")]
-        public static readonly Guid IID_ID3D12StateObjectProperties = new Guid(0xde5fa827, 0x9bf9, 0x4f26, 0x89, 0xff, 0xd7, 0xf5, 0x6f, 0xde, 0x38, 0x60);
+        public static ref readonly Guid IID_ID3D12StateObjectProperties
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x27, 0xA8, 0x5F, 0xDE,
+                    0xF9, 0x9B,
+                    0x26, 0x4F,
+                    0x89,
+                    0xFF,
+                    0xD7,
+                    0xF5,
+                    0x6F,
+                    0xDE,
+                    0x38,
+                    0x60
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const GUID")]
-        public static readonly Guid IID_ID3D12Device5 = new Guid(0x8b4f173b, 0x2fea, 0x4b80, 0x8f, 0x58, 0x43, 0x07, 0x19, 0x1a, 0xb9, 0x5d);
+        public static ref readonly Guid IID_ID3D12Device5
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x3B, 0x17, 0x4F, 0x8B,
+                    0xEA, 0x2F,
+                    0x80, 0x4B,
+                    0x8F,
+                    0x58,
+                    0x43,
+                    0x07,
+                    0x19,
+                    0x1A,
+                    0xB9,
+                    0x5D
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const GUID")]
-        public static readonly Guid IID_ID3D12DeviceRemovedExtendedDataSettings = new Guid(0x82BC481C, 0x6B9B, 0x4030, 0xAE, 0xDB, 0x7E, 0xE3, 0xD1, 0xDF, 0x1E, 0x63);
+        public static ref readonly Guid IID_ID3D12DeviceRemovedExtendedDataSettings
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x1C, 0x48, 0xBC, 0x82,
+                    0x9B, 0x6B,
+                    0x30, 0x40,
+                    0xAE,
+                    0xDB,
+                    0x7E,
+                    0xE3,
+                    0xD1,
+                    0xDF,
+                    0x1E,
+                    0x63
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const GUID")]
-        public static readonly Guid IID_ID3D12DeviceRemovedExtendedDataSettings1 = new Guid(0xDBD5AE51, 0x3317, 0x4F0A, 0xAD, 0xF9, 0x1D, 0x7C, 0xED, 0xCA, 0xAE, 0x0B);
+        public static ref readonly Guid IID_ID3D12DeviceRemovedExtendedDataSettings1
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x51, 0xAE, 0xD5, 0xDB,
+                    0x17, 0x33,
+                    0x0A, 0x4F,
+                    0xAD,
+                    0xF9,
+                    0x1D,
+                    0x7C,
+                    0xED,
+                    0xCA,
+                    0xAE,
+                    0x0B
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const GUID")]
-        public static readonly Guid IID_ID3D12DeviceRemovedExtendedData = new Guid(0x98931D33, 0x5AE8, 0x4791, 0xAA, 0x3C, 0x1A, 0x73, 0xA2, 0x93, 0x4E, 0x71);
+        public static ref readonly Guid IID_ID3D12DeviceRemovedExtendedData
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x33, 0x1D, 0x93, 0x98,
+                    0xE8, 0x5A,
+                    0x91, 0x47,
+                    0xAA,
+                    0x3C,
+                    0x1A,
+                    0x73,
+                    0xA2,
+                    0x93,
+                    0x4E,
+                    0x71
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const GUID")]
-        public static readonly Guid IID_ID3D12DeviceRemovedExtendedData1 = new Guid(0x9727A022, 0xCF1D, 0x4DDA, 0x9E, 0xBA, 0xEF, 0xFA, 0x65, 0x3F, 0xC5, 0x06);
+        public static ref readonly Guid IID_ID3D12DeviceRemovedExtendedData1
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x22, 0xA0, 0x27, 0x97,
+                    0x1D, 0xCF,
+                    0xDA, 0x4D,
+                    0x9E,
+                    0xBA,
+                    0xEF,
+                    0xFA,
+                    0x65,
+                    0x3F,
+                    0xC5,
+                    0x06
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const GUID")]
-        public static readonly Guid IID_ID3D12DeviceRemovedExtendedData2 = new Guid(0x67FC5816, 0xE4CA, 0x4915, 0xBF, 0x18, 0x42, 0x54, 0x12, 0x72, 0xDA, 0x54);
+        public static ref readonly Guid IID_ID3D12DeviceRemovedExtendedData2
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x16, 0x58, 0xFC, 0x67,
+                    0xCA, 0xE4,
+                    0x15, 0x49,
+                    0xBF,
+                    0x18,
+                    0x42,
+                    0x54,
+                    0x12,
+                    0x72,
+                    0xDA,
+                    0x54
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const GUID")]
-        public static readonly Guid IID_ID3D12Device6 = new Guid(0xc70b221b, 0x40e4, 0x4a17, 0x89, 0xaf, 0x02, 0x5a, 0x07, 0x27, 0xa6, 0xdc);
+        public static ref readonly Guid IID_ID3D12Device6
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x1B, 0x22, 0x0B, 0xC7,
+                    0xE4, 0x40,
+                    0x17, 0x4A,
+                    0x89,
+                    0xAF,
+                    0x02,
+                    0x5A,
+                    0x07,
+                    0x27,
+                    0xA6,
+                    0xDC
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const GUID")]
-        public static readonly Guid IID_ID3D12ProtectedResourceSession1 = new Guid(0xD6F12DD6, 0x76FB, 0x406E, 0x89, 0x61, 0x42, 0x96, 0xEE, 0xFC, 0x04, 0x09);
+        public static ref readonly Guid IID_ID3D12ProtectedResourceSession1
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xD6, 0x2D, 0xF1, 0xD6,
+                    0xFB, 0x76,
+                    0x6E, 0x40,
+                    0x89,
+                    0x61,
+                    0x42,
+                    0x96,
+                    0xEE,
+                    0xFC,
+                    0x04,
+                    0x09
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const GUID")]
-        public static readonly Guid IID_ID3D12Device7 = new Guid(0x5c014b53, 0x68a1, 0x4b9b, 0x8b, 0xd1, 0xdd, 0x60, 0x46, 0xb9, 0x35, 0x8b);
+        public static ref readonly Guid IID_ID3D12Device7
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x53, 0x4B, 0x01, 0x5C,
+                    0xA1, 0x68,
+                    0x9B, 0x4B,
+                    0x8B,
+                    0xD1,
+                    0xDD,
+                    0x60,
+                    0x46,
+                    0xB9,
+                    0x35,
+                    0x8B
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const GUID")]
-        public static readonly Guid IID_ID3D12Device8 = new Guid(0x9218E6BB, 0xF944, 0x4F7E, 0xA7, 0x5C, 0xB1, 0xB2, 0xC7, 0xB7, 0x01, 0xF3);
+        public static ref readonly Guid IID_ID3D12Device8
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xBB, 0xE6, 0x18, 0x92,
+                    0x44, 0xF9,
+                    0x7E, 0x4F,
+                    0xA7,
+                    0x5C,
+                    0xB1,
+                    0xB2,
+                    0xC7,
+                    0xB7,
+                    0x01,
+                    0xF3
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const GUID")]
-        public static readonly Guid IID_ID3D12Resource1 = new Guid(0x9D5E227A, 0x4430, 0x4161, 0x88, 0xB3, 0x3E, 0xCA, 0x6B, 0xB1, 0x6E, 0x19);
+        public static ref readonly Guid IID_ID3D12Resource1
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x7A, 0x22, 0x5E, 0x9D,
+                    0x30, 0x44,
+                    0x61, 0x41,
+                    0x88,
+                    0xB3,
+                    0x3E,
+                    0xCA,
+                    0x6B,
+                    0xB1,
+                    0x6E,
+                    0x19
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const GUID")]
-        public static readonly Guid IID_ID3D12Resource2 = new Guid(0xBE36EC3B, 0xEA85, 0x4AEB, 0xA4, 0x5A, 0xE9, 0xD7, 0x64, 0x04, 0xA4, 0x95);
+        public static ref readonly Guid IID_ID3D12Resource2
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x3B, 0xEC, 0x36, 0xBE,
+                    0x85, 0xEA,
+                    0xEB, 0x4A,
+                    0xA4,
+                    0x5A,
+                    0xE9,
+                    0xD7,
+                    0x64,
+                    0x04,
+                    0xA4,
+                    0x95
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const GUID")]
-        public static readonly Guid IID_ID3D12Heap1 = new Guid(0x572F7389, 0x2168, 0x49E3, 0x96, 0x93, 0xD6, 0xDF, 0x58, 0x71, 0xBF, 0x6D);
+        public static ref readonly Guid IID_ID3D12Heap1
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x89, 0x73, 0x2F, 0x57,
+                    0x68, 0x21,
+                    0xE3, 0x49,
+                    0x96,
+                    0x93,
+                    0xD6,
+                    0xDF,
+                    0x58,
+                    0x71,
+                    0xBF,
+                    0x6D
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const GUID")]
-        public static readonly Guid IID_ID3D12GraphicsCommandList3 = new Guid(0x6FDA83A7, 0xB84C, 0x4E38, 0x9A, 0xC8, 0xC7, 0xBD, 0x22, 0x01, 0x6B, 0x3D);
+        public static ref readonly Guid IID_ID3D12GraphicsCommandList3
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xA7, 0x83, 0xDA, 0x6F,
+                    0x4C, 0xB8,
+                    0x38, 0x4E,
+                    0x9A,
+                    0xC8,
+                    0xC7,
+                    0xBD,
+                    0x22,
+                    0x01,
+                    0x6B,
+                    0x3D
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const GUID")]
-        public static readonly Guid IID_ID3D12MetaCommand = new Guid(0xDBB84C27, 0x36CE, 0x4FC9, 0xB8, 0x01, 0xF0, 0x48, 0xC4, 0x6A, 0xC5, 0x70);
+        public static ref readonly Guid IID_ID3D12MetaCommand
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x27, 0x4C, 0xB8, 0xDB,
+                    0xCE, 0x36,
+                    0xC9, 0x4F,
+                    0xB8,
+                    0x01,
+                    0xF0,
+                    0x48,
+                    0xC4,
+                    0x6A,
+                    0xC5,
+                    0x70
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const GUID")]
-        public static readonly Guid IID_ID3D12GraphicsCommandList4 = new Guid(0x8754318e, 0xd3a9, 0x4541, 0x98, 0xcf, 0x64, 0x5b, 0x50, 0xdc, 0x48, 0x74);
+        public static ref readonly Guid IID_ID3D12GraphicsCommandList4
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x8E, 0x31, 0x54, 0x87,
+                    0xA9, 0xD3,
+                    0x41, 0x45,
+                    0x98,
+                    0xCF,
+                    0x64,
+                    0x5B,
+                    0x50,
+                    0xDC,
+                    0x48,
+                    0x74
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const GUID")]
-        public static readonly Guid IID_ID3D12ShaderCacheSession = new Guid(0x28e2495d, 0x0f64, 0x4ae4, 0xa6, 0xec, 0x12, 0x92, 0x55, 0xdc, 0x49, 0xa8);
+        public static ref readonly Guid IID_ID3D12ShaderCacheSession
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x5D, 0x49, 0xE2, 0x28,
+                    0x64, 0x0F,
+                    0xE4, 0x4A,
+                    0xA6,
+                    0xEC,
+                    0x12,
+                    0x92,
+                    0x55,
+                    0xDC,
+                    0x49,
+                    0xA8
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const GUID")]
-        public static readonly Guid IID_ID3D12Device9 = new Guid(0x4c80e962, 0xf032, 0x4f60, 0xbc, 0x9e, 0xeb, 0xc2, 0xcf, 0xa1, 0xd8, 0x3c);
+        public static ref readonly Guid IID_ID3D12Device9
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x62, 0xE9, 0x80, 0x4C,
+                    0x32, 0xF0,
+                    0x60, 0x4F,
+                    0xBC,
+                    0x9E,
+                    0xEB,
+                    0xC2,
+                    0xCF,
+                    0xA1,
+                    0xD8,
+                    0x3C
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const GUID")]
-        public static readonly Guid IID_ID3D12Tools = new Guid(0x7071e1f0, 0xe84b, 0x4b33, 0x97, 0x4f, 0x12, 0xfa, 0x49, 0xde, 0x65, 0xc5);
+        public static ref readonly Guid IID_ID3D12Tools
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xF0, 0xE1, 0x71, 0x70,
+                    0x4B, 0xE8,
+                    0x33, 0x4B,
+                    0x97,
+                    0x4F,
+                    0x12,
+                    0xFA,
+                    0x49,
+                    0xDE,
+                    0x65,
+                    0xC5
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const GUID")]
-        public static readonly Guid IID_ID3D12SDKConfiguration = new Guid(0xe9eb5314, 0x33aa, 0x42b2, 0xa7, 0x18, 0xd7, 0x7f, 0x58, 0xb1, 0xf1, 0xc7);
+        public static ref readonly Guid IID_ID3D12SDKConfiguration
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x14, 0x53, 0xEB, 0xE9,
+                    0xAA, 0x33,
+                    0xB2, 0x42,
+                    0xA7,
+                    0x18,
+                    0xD7,
+                    0x7F,
+                    0x58,
+                    0xB1,
+                    0xF1,
+                    0xC7
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const GUID")]
-        public static readonly Guid IID_ID3D12GraphicsCommandList5 = new Guid(0x55050859, 0x4024, 0x474c, 0x87, 0xf5, 0x64, 0x72, 0xea, 0xee, 0x44, 0xea);
+        public static ref readonly Guid IID_ID3D12GraphicsCommandList5
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x59, 0x08, 0x05, 0x55,
+                    0x24, 0x40,
+                    0x4C, 0x47,
+                    0x87,
+                    0xF5,
+                    0x64,
+                    0x72,
+                    0xEA,
+                    0xEE,
+                    0x44,
+                    0xEA
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const GUID")]
-        public static readonly Guid IID_ID3D12GraphicsCommandList6 = new Guid(0xc3827890, 0xe548, 0x4cfa, 0x96, 0xcf, 0x56, 0x89, 0xa9, 0x37, 0x0f, 0x80);
+        public static ref readonly Guid IID_ID3D12GraphicsCommandList6
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x90, 0x78, 0x82, 0xC3,
+                    0x48, 0xE5,
+                    0xFA, 0x4C,
+                    0x96,
+                    0xCF,
+                    0x56,
+                    0x89,
+                    0xA9,
+                    0x37,
+                    0x0F,
+                    0x80
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("#define D3D12_16BIT_INDEX_STRIP_CUT_VALUE ( 0xffff )")]
         public const int D3D12_16BIT_INDEX_STRIP_CUT_VALUE = (0xffff);

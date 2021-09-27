@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.MFVideoInterlaceMode;
 
@@ -20,31 +21,211 @@ namespace TerraFX.Interop
         public static extern int MFDeserializeAttributesFromStream(IMFAttributes* pAttr, [NativeTypeName("DWORD")] uint dwOptions, IStream* pStm);
 
         [NativeTypeName("const IID")]
-        public static readonly Guid MF_BYTESTREAM_ORIGIN_NAME = new Guid(0xfc358288, 0x3cb6, 0x460c, 0xa4, 0x24, 0xb6, 0x68, 0x12, 0x60, 0x37, 0x5a);
+        public static ref readonly Guid MF_BYTESTREAM_ORIGIN_NAME
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x88, 0x82, 0x35, 0xFC,
+                    0xB6, 0x3C,
+                    0x0C, 0x46,
+                    0xA4,
+                    0x24,
+                    0xB6,
+                    0x68,
+                    0x12,
+                    0x60,
+                    0x37,
+                    0x5A
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const IID")]
-        public static readonly Guid MF_BYTESTREAM_CONTENT_TYPE = new Guid(0xfc358289, 0x3cb6, 0x460c, 0xa4, 0x24, 0xb6, 0x68, 0x12, 0x60, 0x37, 0x5a);
+        public static ref readonly Guid MF_BYTESTREAM_CONTENT_TYPE
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x89, 0x82, 0x35, 0xFC,
+                    0xB6, 0x3C,
+                    0x0C, 0x46,
+                    0xA4,
+                    0x24,
+                    0xB6,
+                    0x68,
+                    0x12,
+                    0x60,
+                    0x37,
+                    0x5A
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const IID")]
-        public static readonly Guid MF_BYTESTREAM_DURATION = new Guid(0xfc35828a, 0x3cb6, 0x460c, 0xa4, 0x24, 0xb6, 0x68, 0x12, 0x60, 0x37, 0x5a);
+        public static ref readonly Guid MF_BYTESTREAM_DURATION
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x8A, 0x82, 0x35, 0xFC,
+                    0xB6, 0x3C,
+                    0x0C, 0x46,
+                    0xA4,
+                    0x24,
+                    0xB6,
+                    0x68,
+                    0x12,
+                    0x60,
+                    0x37,
+                    0x5A
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const IID")]
-        public static readonly Guid MF_BYTESTREAM_LAST_MODIFIED_TIME = new Guid(0xfc35828b, 0x3cb6, 0x460c, 0xa4, 0x24, 0xb6, 0x68, 0x12, 0x60, 0x37, 0x5a);
+        public static ref readonly Guid MF_BYTESTREAM_LAST_MODIFIED_TIME
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x8B, 0x82, 0x35, 0xFC,
+                    0xB6, 0x3C,
+                    0x0C, 0x46,
+                    0xA4,
+                    0x24,
+                    0xB6,
+                    0x68,
+                    0x12,
+                    0x60,
+                    0x37,
+                    0x5A
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const IID")]
-        public static readonly Guid MF_BYTESTREAM_IFO_FILE_URI = new Guid(0xfc35828c, 0x3cb6, 0x460c, 0xa4, 0x24, 0xb6, 0x68, 0x12, 0x60, 0x37, 0x5a);
+        public static ref readonly Guid MF_BYTESTREAM_IFO_FILE_URI
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x8C, 0x82, 0x35, 0xFC,
+                    0xB6, 0x3C,
+                    0x0C, 0x46,
+                    0xA4,
+                    0x24,
+                    0xB6,
+                    0x68,
+                    0x12,
+                    0x60,
+                    0x37,
+                    0x5A
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const IID")]
-        public static readonly Guid MF_BYTESTREAM_DLNA_PROFILE_ID = new Guid(0xfc35828d, 0x3cb6, 0x460c, 0xa4, 0x24, 0xb6, 0x68, 0x12, 0x60, 0x37, 0x5a);
+        public static ref readonly Guid MF_BYTESTREAM_DLNA_PROFILE_ID
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x8D, 0x82, 0x35, 0xFC,
+                    0xB6, 0x3C,
+                    0x0C, 0x46,
+                    0xA4,
+                    0x24,
+                    0xB6,
+                    0x68,
+                    0x12,
+                    0x60,
+                    0x37,
+                    0x5A
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const IID")]
-        public static readonly Guid MF_BYTESTREAM_EFFECTIVE_URL = new Guid(0x9afa0209, 0x89d1, 0x42af, 0x84, 0x56, 0x1d, 0xe6, 0xb5, 0x62, 0xd6, 0x91);
+        public static ref readonly Guid MF_BYTESTREAM_EFFECTIVE_URL
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x09, 0x02, 0xFA, 0x9A,
+                    0xD1, 0x89,
+                    0xAF, 0x42,
+                    0x84,
+                    0x56,
+                    0x1D,
+                    0xE6,
+                    0xB5,
+                    0x62,
+                    0xD6,
+                    0x91
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const IID")]
-        public static readonly Guid MF_BYTESTREAM_TRANSCODED = new Guid(0xb6c5c282, 0x4dc9, 0x4db9, 0xab, 0x48, 0xcf, 0x3b, 0x6d, 0x8b, 0xc5, 0xe0);
+        public static ref readonly Guid MF_BYTESTREAM_TRANSCODED
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x82, 0xC2, 0xC5, 0xB6,
+                    0xC9, 0x4D,
+                    0xB9, 0x4D,
+                    0xAB,
+                    0x48,
+                    0xCF,
+                    0x3B,
+                    0x6D,
+                    0x8B,
+                    0xC5,
+                    0xE0
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const IID")]
-        public static readonly Guid CLSID_MFByteStreamProxyClassFactory = new Guid(0x770e8e77, 0x4916, 0x441c, 0xa9, 0xa7, 0xb3, 0x42, 0xd0, 0xee, 0xbc, 0x71);
+        public static ref readonly Guid CLSID_MFByteStreamProxyClassFactory
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x77, 0x8E, 0x0E, 0x77,
+                    0x16, 0x49,
+                    0x1C, 0x44,
+                    0xA9,
+                    0xA7,
+                    0xB3,
+                    0x42,
+                    0xD0,
+                    0xEE,
+                    0xBC,
+                    0x71
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("#define MF_MEDIATYPE_EQUAL_MAJOR_TYPES 0x00000001")]
         public const int MF_MEDIATYPE_EQUAL_MAJOR_TYPES = 0x00000001;
@@ -139,60 +320,620 @@ namespace TerraFX.Interop
         [NativeTypeName("#define MFBYTESTREAM_SEEK_FLAG_CANCEL_PENDING_IO 0x00000001")]
         public const int MFBYTESTREAM_SEEK_FLAG_CANCEL_PENDING_IO = 0x00000001;
 
-        public static readonly Guid IID_IMFAttributes = new Guid(0x2CD2D921, 0xC447, 0x44A7, 0xA1, 0x3C, 0x4A, 0xDA, 0xBF, 0xC2, 0x47, 0xE3);
+        public static ref readonly Guid IID_IMFAttributes
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x21, 0xD9, 0xD2, 0x2C,
+                    0x47, 0xC4,
+                    0xA7, 0x44,
+                    0xA1,
+                    0x3C,
+                    0x4A,
+                    0xDA,
+                    0xBF,
+                    0xC2,
+                    0x47,
+                    0xE3
+                };
 
-        public static readonly Guid IID_IMFMediaBuffer = new Guid(0x045FA593, 0x8799, 0x42B8, 0xBC, 0x8D, 0x89, 0x68, 0xC6, 0x45, 0x35, 0x07);
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
-        public static readonly Guid IID_IMFSample = new Guid(0xC40A00F2, 0xB93A, 0x4D80, 0xAE, 0x8C, 0x5A, 0x1C, 0x63, 0x4F, 0x58, 0xE4);
+        public static ref readonly Guid IID_IMFMediaBuffer
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x93, 0xA5, 0x5F, 0x04,
+                    0x99, 0x87,
+                    0xB8, 0x42,
+                    0xBC,
+                    0x8D,
+                    0x89,
+                    0x68,
+                    0xC6,
+                    0x45,
+                    0x35,
+                    0x07
+                };
 
-        public static readonly Guid IID_IMF2DBuffer = new Guid(0x7DC9D5F9, 0x9ED9, 0x44EC, 0x9B, 0xBF, 0x06, 0x00, 0xBB, 0x58, 0x9F, 0xBB);
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
-        public static readonly Guid IID_IMF2DBuffer2 = new Guid(0x33AE5EA6, 0x4316, 0x436F, 0x8D, 0xDD, 0xD7, 0x3D, 0x22, 0xF8, 0x29, 0xEC);
+        public static ref readonly Guid IID_IMFSample
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xF2, 0x00, 0x0A, 0xC4,
+                    0x3A, 0xB9,
+                    0x80, 0x4D,
+                    0xAE,
+                    0x8C,
+                    0x5A,
+                    0x1C,
+                    0x63,
+                    0x4F,
+                    0x58,
+                    0xE4
+                };
 
-        public static readonly Guid IID_IMFDXGIBuffer = new Guid(0xE7174CFA, 0x1C9E, 0x48B1, 0x88, 0x66, 0x62, 0x62, 0x26, 0xBF, 0xC2, 0x58);
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
-        public static readonly Guid IID_IMFMediaType = new Guid(0x44AE0FA8, 0xEA31, 0x4109, 0x8D, 0x2E, 0x4C, 0xAE, 0x49, 0x97, 0xC5, 0x55);
+        public static ref readonly Guid IID_IMF2DBuffer
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xF9, 0xD5, 0xC9, 0x7D,
+                    0xD9, 0x9E,
+                    0xEC, 0x44,
+                    0x9B,
+                    0xBF,
+                    0x06,
+                    0x00,
+                    0xBB,
+                    0x58,
+                    0x9F,
+                    0xBB
+                };
 
-        public static readonly Guid IID_IMFAudioMediaType = new Guid(0x26A0ADC3, 0xCE26, 0x4672, 0x93, 0x04, 0x69, 0x55, 0x2E, 0xDD, 0x3F, 0xAF);
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
-        public static readonly Guid IID_IMFVideoMediaType = new Guid(0xB99F381F, 0xA8F9, 0x47A2, 0xA5, 0xAF, 0xCA, 0x3A, 0x22, 0x5A, 0x38, 0x90);
+        public static ref readonly Guid IID_IMF2DBuffer2
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xA6, 0x5E, 0xAE, 0x33,
+                    0x16, 0x43,
+                    0x6F, 0x43,
+                    0x8D,
+                    0xDD,
+                    0xD7,
+                    0x3D,
+                    0x22,
+                    0xF8,
+                    0x29,
+                    0xEC
+                };
 
-        public static readonly Guid IID_IMFAsyncResult = new Guid(0xAC6B7889, 0x0740, 0x4D51, 0x86, 0x19, 0x90, 0x59, 0x94, 0xA5, 0x5C, 0xC6);
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
-        public static readonly Guid IID_IMFAsyncCallback = new Guid(0xA27003CF, 0x2354, 0x4F2A, 0x8D, 0x6A, 0xAB, 0x7C, 0xFF, 0x15, 0x43, 0x7E);
+        public static ref readonly Guid IID_IMFDXGIBuffer
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xFA, 0x4C, 0x17, 0xE7,
+                    0x9E, 0x1C,
+                    0xB1, 0x48,
+                    0x88,
+                    0x66,
+                    0x62,
+                    0x62,
+                    0x26,
+                    0xBF,
+                    0xC2,
+                    0x58
+                };
 
-        public static readonly Guid IID_IMFAsyncCallbackLogging = new Guid(0xC7A4DCA1, 0xF5F0, 0x47B6, 0xB9, 0x2B, 0xBF, 0x01, 0x06, 0xD2, 0x57, 0x91);
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
-        public static readonly Guid IID_IMFMediaEvent = new Guid(0xDF598932, 0xF10C, 0x4E39, 0xBB, 0xA2, 0xC3, 0x08, 0xF1, 0x01, 0xDA, 0xA3);
+        public static ref readonly Guid IID_IMFMediaType
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xA8, 0x0F, 0xAE, 0x44,
+                    0x31, 0xEA,
+                    0x09, 0x41,
+                    0x8D,
+                    0x2E,
+                    0x4C,
+                    0xAE,
+                    0x49,
+                    0x97,
+                    0xC5,
+                    0x55
+                };
 
-        public static readonly Guid IID_IMFMediaEventGenerator = new Guid(0x2CD0BD52, 0xBCD5, 0x4B89, 0xB6, 0x2C, 0xEA, 0xDC, 0x0C, 0x03, 0x1E, 0x7D);
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
-        public static readonly Guid IID_IMFRemoteAsyncCallback = new Guid(0xA27003D0, 0x2354, 0x4F2A, 0x8D, 0x6A, 0xAB, 0x7C, 0xFF, 0x15, 0x43, 0x7E);
+        public static ref readonly Guid IID_IMFAudioMediaType
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xC3, 0xAD, 0xA0, 0x26,
+                    0x26, 0xCE,
+                    0x72, 0x46,
+                    0x93,
+                    0x04,
+                    0x69,
+                    0x55,
+                    0x2E,
+                    0xDD,
+                    0x3F,
+                    0xAF
+                };
 
-        public static readonly Guid IID_IMFByteStream = new Guid(0xAD4C1B00, 0x4BF7, 0x422F, 0x91, 0x75, 0x75, 0x66, 0x93, 0xD9, 0x13, 0x0D);
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
-        public static readonly Guid IID_IMFByteStreamProxyClassFactory = new Guid(0xA6B43F84, 0x5C0A, 0x42E8, 0xA4, 0x4D, 0xB1, 0x85, 0x7A, 0x76, 0x99, 0x2F);
+        public static ref readonly Guid IID_IMFVideoMediaType
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x1F, 0x38, 0x9F, 0xB9,
+                    0xF9, 0xA8,
+                    0xA2, 0x47,
+                    0xA5,
+                    0xAF,
+                    0xCA,
+                    0x3A,
+                    0x22,
+                    0x5A,
+                    0x38,
+                    0x90
+                };
 
-        public static readonly Guid IID_IMFSampleOutputStream = new Guid(0x8FEED468, 0x6F7E, 0x440D, 0x86, 0x9A, 0x49, 0xBD, 0xD2, 0x83, 0xAD, 0x0D);
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
-        public static readonly Guid IID_IMFCollection = new Guid(0x5BC8A76B, 0x869A, 0x46A3, 0x9B, 0x03, 0xFA, 0x21, 0x8A, 0x66, 0xAE, 0xBE);
+        public static ref readonly Guid IID_IMFAsyncResult
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x89, 0x78, 0x6B, 0xAC,
+                    0x40, 0x07,
+                    0x51, 0x4D,
+                    0x86,
+                    0x19,
+                    0x90,
+                    0x59,
+                    0x94,
+                    0xA5,
+                    0x5C,
+                    0xC6
+                };
 
-        public static readonly Guid IID_IMFMediaEventQueue = new Guid(0x36F846FC, 0x2256, 0x48B6, 0xB5, 0x8E, 0xE2, 0xB6, 0x38, 0x31, 0x65, 0x81);
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
-        public static readonly Guid IID_IMFActivate = new Guid(0x7FEE9E9A, 0x4A89, 0x47A6, 0x89, 0x9C, 0xB6, 0xA5, 0x3A, 0x70, 0xFB, 0x67);
+        public static ref readonly Guid IID_IMFAsyncCallback
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xCF, 0x03, 0x70, 0xA2,
+                    0x54, 0x23,
+                    0x2A, 0x4F,
+                    0x8D,
+                    0x6A,
+                    0xAB,
+                    0x7C,
+                    0xFF,
+                    0x15,
+                    0x43,
+                    0x7E
+                };
 
-        public static readonly Guid IID_IMFPluginControl = new Guid(0x5C6C44BF, 0x1DB6, 0x435B, 0x92, 0x49, 0xE8, 0xCD, 0x10, 0xFD, 0xEC, 0x96);
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
-        public static readonly Guid IID_IMFPluginControl2 = new Guid(0xC6982083, 0x3DDC, 0x45CB, 0xAF, 0x5E, 0x0F, 0x7A, 0x8C, 0xE4, 0xDE, 0x77);
+        public static ref readonly Guid IID_IMFAsyncCallbackLogging
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xA1, 0xDC, 0xA4, 0xC7,
+                    0xF0, 0xF5,
+                    0xB6, 0x47,
+                    0xB9,
+                    0x2B,
+                    0xBF,
+                    0x01,
+                    0x06,
+                    0xD2,
+                    0x57,
+                    0x91
+                };
 
-        public static readonly Guid IID_IMFDXGIDeviceManager = new Guid(0xEB533D5D, 0x2DB6, 0x40F8, 0x97, 0xA9, 0x49, 0x46, 0x92, 0x01, 0x4F, 0x07);
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
-        public static readonly Guid IID_IMFMuxStreamAttributesManager = new Guid(0xCE8BD576, 0xE440, 0x43B3, 0xBE, 0x34, 0x1E, 0x53, 0xF5, 0x65, 0xF7, 0xE8);
+        public static ref readonly Guid IID_IMFMediaEvent
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x32, 0x89, 0x59, 0xDF,
+                    0x0C, 0xF1,
+                    0x39, 0x4E,
+                    0xBB,
+                    0xA2,
+                    0xC3,
+                    0x08,
+                    0xF1,
+                    0x01,
+                    0xDA,
+                    0xA3
+                };
 
-        public static readonly Guid IID_IMFMuxStreamMediaTypeManager = new Guid(0x505A2C72, 0x42F7, 0x4690, 0xAE, 0xAB, 0x8F, 0x51, 0x3D, 0x0F, 0xFD, 0xB8);
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
-        public static readonly Guid IID_IMFMuxStreamSampleManager = new Guid(0x74ABBC19, 0xB1CC, 0x4E41, 0xBB, 0x8B, 0x9D, 0x9B, 0x86, 0xA8, 0xF6, 0xCA);
+        public static ref readonly Guid IID_IMFMediaEventGenerator
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x52, 0xBD, 0xD0, 0x2C,
+                    0xD5, 0xBC,
+                    0x89, 0x4B,
+                    0xB6,
+                    0x2C,
+                    0xEA,
+                    0xDC,
+                    0x0C,
+                    0x03,
+                    0x1E,
+                    0x7D
+                };
 
-        public static readonly Guid IID_IMFSecureBuffer = new Guid(0xC1209904, 0xE584, 0x4752, 0xA2, 0xD6, 0x7F, 0x21, 0x69, 0x3F, 0x8B, 0x21);
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid IID_IMFRemoteAsyncCallback
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xD0, 0x03, 0x70, 0xA2,
+                    0x54, 0x23,
+                    0x2A, 0x4F,
+                    0x8D,
+                    0x6A,
+                    0xAB,
+                    0x7C,
+                    0xFF,
+                    0x15,
+                    0x43,
+                    0x7E
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid IID_IMFByteStream
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x00, 0x1B, 0x4C, 0xAD,
+                    0xF7, 0x4B,
+                    0x2F, 0x42,
+                    0x91,
+                    0x75,
+                    0x75,
+                    0x66,
+                    0x93,
+                    0xD9,
+                    0x13,
+                    0x0D
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid IID_IMFByteStreamProxyClassFactory
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x84, 0x3F, 0xB4, 0xA6,
+                    0x0A, 0x5C,
+                    0xE8, 0x42,
+                    0xA4,
+                    0x4D,
+                    0xB1,
+                    0x85,
+                    0x7A,
+                    0x76,
+                    0x99,
+                    0x2F
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid IID_IMFSampleOutputStream
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x68, 0xD4, 0xEE, 0x8F,
+                    0x7E, 0x6F,
+                    0x0D, 0x44,
+                    0x86,
+                    0x9A,
+                    0x49,
+                    0xBD,
+                    0xD2,
+                    0x83,
+                    0xAD,
+                    0x0D
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid IID_IMFCollection
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x6B, 0xA7, 0xC8, 0x5B,
+                    0x9A, 0x86,
+                    0xA3, 0x46,
+                    0x9B,
+                    0x03,
+                    0xFA,
+                    0x21,
+                    0x8A,
+                    0x66,
+                    0xAE,
+                    0xBE
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid IID_IMFMediaEventQueue
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xFC, 0x46, 0xF8, 0x36,
+                    0x56, 0x22,
+                    0xB6, 0x48,
+                    0xB5,
+                    0x8E,
+                    0xE2,
+                    0xB6,
+                    0x38,
+                    0x31,
+                    0x65,
+                    0x81
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid IID_IMFActivate
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x9A, 0x9E, 0xEE, 0x7F,
+                    0x89, 0x4A,
+                    0xA6, 0x47,
+                    0x89,
+                    0x9C,
+                    0xB6,
+                    0xA5,
+                    0x3A,
+                    0x70,
+                    0xFB,
+                    0x67
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid IID_IMFPluginControl
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xBF, 0x44, 0x6C, 0x5C,
+                    0xB6, 0x1D,
+                    0x5B, 0x43,
+                    0x92,
+                    0x49,
+                    0xE8,
+                    0xCD,
+                    0x10,
+                    0xFD,
+                    0xEC,
+                    0x96
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid IID_IMFPluginControl2
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x83, 0x20, 0x98, 0xC6,
+                    0xDC, 0x3D,
+                    0xCB, 0x45,
+                    0xAF,
+                    0x5E,
+                    0x0F,
+                    0x7A,
+                    0x8C,
+                    0xE4,
+                    0xDE,
+                    0x77
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid IID_IMFDXGIDeviceManager
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x5D, 0x3D, 0x53, 0xEB,
+                    0xB6, 0x2D,
+                    0xF8, 0x40,
+                    0x97,
+                    0xA9,
+                    0x49,
+                    0x46,
+                    0x92,
+                    0x01,
+                    0x4F,
+                    0x07
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid IID_IMFMuxStreamAttributesManager
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x76, 0xD5, 0x8B, 0xCE,
+                    0x40, 0xE4,
+                    0xB3, 0x43,
+                    0xBE,
+                    0x34,
+                    0x1E,
+                    0x53,
+                    0xF5,
+                    0x65,
+                    0xF7,
+                    0xE8
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid IID_IMFMuxStreamMediaTypeManager
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x72, 0x2C, 0x5A, 0x50,
+                    0xF7, 0x42,
+                    0x90, 0x46,
+                    0xAE,
+                    0xAB,
+                    0x8F,
+                    0x51,
+                    0x3D,
+                    0x0F,
+                    0xFD,
+                    0xB8
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid IID_IMFMuxStreamSampleManager
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x19, 0xBC, 0xAB, 0x74,
+                    0xCC, 0xB1,
+                    0x41, 0x4E,
+                    0xBB,
+                    0x8B,
+                    0x9D,
+                    0x9B,
+                    0x86,
+                    0xA8,
+                    0xF6,
+                    0xCA
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid IID_IMFSecureBuffer
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x04, 0x99, 0x20, 0xC1,
+                    0x84, 0xE5,
+                    0x52, 0x47,
+                    0xA2,
+                    0xD6,
+                    0x7F,
+                    0x21,
+                    0x69,
+                    0x3F,
+                    0x8B,
+                    0x21
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
     }
 }

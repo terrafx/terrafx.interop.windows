@@ -273,61 +273,61 @@ namespace TerraFX.Interop
         public const int IMEMENUITEM_STRING_SIZE = 80;
 
         [NativeTypeName("#define ImmInstallIME ImmInstallIMEW")]
-        public static readonly delegate*<ushort*, ushort*, IntPtr> ImmInstallIME = &ImmInstallIMEW;
+        public static delegate*<ushort*, ushort*, IntPtr> ImmInstallIME => &ImmInstallIMEW;
 
         [NativeTypeName("#define ImmGetDescription ImmGetDescriptionW")]
-        public static readonly delegate*<IntPtr, ushort*, uint, uint> ImmGetDescription = &ImmGetDescriptionW;
+        public static delegate*<IntPtr, ushort*, uint, uint> ImmGetDescription => &ImmGetDescriptionW;
 
         [NativeTypeName("#define ImmGetIMEFileName ImmGetIMEFileNameW")]
-        public static readonly delegate*<IntPtr, ushort*, uint, uint> ImmGetIMEFileName = &ImmGetIMEFileNameW;
+        public static delegate*<IntPtr, ushort*, uint, uint> ImmGetIMEFileName => &ImmGetIMEFileNameW;
 
         [NativeTypeName("#define ImmGetCompositionString ImmGetCompositionStringW")]
-        public static readonly delegate*<IntPtr, uint, void*, uint, int> ImmGetCompositionString = &ImmGetCompositionStringW;
+        public static delegate*<IntPtr, uint, void*, uint, int> ImmGetCompositionString => &ImmGetCompositionStringW;
 
         [NativeTypeName("#define ImmSetCompositionString ImmSetCompositionStringW")]
-        public static readonly delegate*<IntPtr, uint, void*, uint, void*, uint, int> ImmSetCompositionString = &ImmSetCompositionStringW;
+        public static delegate*<IntPtr, uint, void*, uint, void*, uint, int> ImmSetCompositionString => &ImmSetCompositionStringW;
 
         [NativeTypeName("#define ImmGetCandidateListCount ImmGetCandidateListCountW")]
-        public static readonly delegate*<IntPtr, uint*, uint> ImmGetCandidateListCount = &ImmGetCandidateListCountW;
+        public static delegate*<IntPtr, uint*, uint> ImmGetCandidateListCount => &ImmGetCandidateListCountW;
 
         [NativeTypeName("#define ImmGetCandidateList ImmGetCandidateListW")]
-        public static readonly delegate*<IntPtr, uint, CANDIDATELIST*, uint, uint> ImmGetCandidateList = &ImmGetCandidateListW;
+        public static delegate*<IntPtr, uint, CANDIDATELIST*, uint, uint> ImmGetCandidateList => &ImmGetCandidateListW;
 
         [NativeTypeName("#define ImmGetGuideLine ImmGetGuideLineW")]
-        public static readonly delegate*<IntPtr, uint, ushort*, uint, uint> ImmGetGuideLine = &ImmGetGuideLineW;
+        public static delegate*<IntPtr, uint, ushort*, uint, uint> ImmGetGuideLine => &ImmGetGuideLineW;
 
         [NativeTypeName("#define ImmGetCompositionFont ImmGetCompositionFontW")]
-        public static readonly delegate*<IntPtr, LOGFONTW*, int> ImmGetCompositionFont = &ImmGetCompositionFontW;
+        public static delegate*<IntPtr, LOGFONTW*, int> ImmGetCompositionFont => &ImmGetCompositionFontW;
 
         [NativeTypeName("#define ImmSetCompositionFont ImmSetCompositionFontW")]
-        public static readonly delegate*<IntPtr, LOGFONTW*, int> ImmSetCompositionFont = &ImmSetCompositionFontW;
+        public static delegate*<IntPtr, LOGFONTW*, int> ImmSetCompositionFont => &ImmSetCompositionFontW;
 
         [NativeTypeName("#define ImmConfigureIME ImmConfigureIMEW")]
-        public static readonly delegate*<IntPtr, IntPtr, uint, void*, int> ImmConfigureIME = &ImmConfigureIMEW;
+        public static delegate*<IntPtr, IntPtr, uint, void*, int> ImmConfigureIME => &ImmConfigureIMEW;
 
         [NativeTypeName("#define ImmEscape ImmEscapeW")]
-        public static readonly delegate*<IntPtr, IntPtr, uint, void*, nint> ImmEscape = &ImmEscapeW;
+        public static delegate*<IntPtr, IntPtr, uint, void*, nint> ImmEscape => &ImmEscapeW;
 
         [NativeTypeName("#define ImmGetConversionList ImmGetConversionListW")]
-        public static readonly delegate*<IntPtr, IntPtr, ushort*, CANDIDATELIST*, uint, uint, uint> ImmGetConversionList = &ImmGetConversionListW;
+        public static delegate*<IntPtr, IntPtr, ushort*, CANDIDATELIST*, uint, uint, uint> ImmGetConversionList => &ImmGetConversionListW;
 
         [NativeTypeName("#define ImmIsUIMessage ImmIsUIMessageW")]
-        public static readonly delegate*<IntPtr, uint, nuint, nint, int> ImmIsUIMessage = &ImmIsUIMessageW;
+        public static delegate*<IntPtr, uint, nuint, nint, int> ImmIsUIMessage => &ImmIsUIMessageW;
 
         [NativeTypeName("#define ImmRegisterWord ImmRegisterWordW")]
-        public static readonly delegate*<IntPtr, ushort*, uint, ushort*, int> ImmRegisterWord = &ImmRegisterWordW;
+        public static delegate*<IntPtr, ushort*, uint, ushort*, int> ImmRegisterWord => &ImmRegisterWordW;
 
         [NativeTypeName("#define ImmUnregisterWord ImmUnregisterWordW")]
-        public static readonly delegate*<IntPtr, ushort*, uint, ushort*, int> ImmUnregisterWord = &ImmUnregisterWordW;
+        public static delegate*<IntPtr, ushort*, uint, ushort*, int> ImmUnregisterWord => &ImmUnregisterWordW;
 
         [NativeTypeName("#define ImmGetRegisterWordStyle ImmGetRegisterWordStyleW")]
-        public static readonly delegate*<IntPtr, uint, STYLEBUFW*, uint> ImmGetRegisterWordStyle = &ImmGetRegisterWordStyleW;
+        public static delegate*<IntPtr, uint, STYLEBUFW*, uint> ImmGetRegisterWordStyle => &ImmGetRegisterWordStyleW;
 
         [NativeTypeName("#define ImmEnumRegisterWord ImmEnumRegisterWordW")]
-        public static readonly delegate*<IntPtr, delegate* unmanaged<ushort*, uint, ushort*, void*, int>, ushort*, uint, ushort*, void*, uint> ImmEnumRegisterWord = &ImmEnumRegisterWordW;
+        public static delegate*<IntPtr, delegate* unmanaged<ushort*, uint, ushort*, void*, int>, ushort*, uint, ushort*, void*, uint> ImmEnumRegisterWord => &ImmEnumRegisterWordW;
 
         [NativeTypeName("#define ImmGetImeMenuItems ImmGetImeMenuItemsW")]
-        public static readonly delegate*<IntPtr, uint, uint, IMEMENUITEMINFOW*, IMEMENUITEMINFOW*, uint, uint> ImmGetImeMenuItems = &ImmGetImeMenuItemsW;
+        public static delegate*<IntPtr, uint, uint, IMEMENUITEMINFOW*, IMEMENUITEMINFOW*, uint, uint> ImmGetImeMenuItems => &ImmGetImeMenuItemsW;
 
         [NativeTypeName("#define IMC_GETCANDIDATEPOS 0x0007")]
         public const int IMC_GETCANDIDATEPOS = 0x0007;

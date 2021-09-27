@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.EndpointFormFactor;
 
@@ -12,138 +13,490 @@ namespace TerraFX.Interop
     public static unsafe partial class Windows
     {
         [NativeTypeName("const PROPERTYKEY")]
-        public static readonly PROPERTYKEY PKEY_AudioEndpoint_FormFactor = new PROPERTYKEY
+        public static ref readonly PROPERTYKEY PKEY_AudioEndpoint_FormFactor
         {
-            fmtid = new Guid(0x1da5d803, 0xd492, 0x4edd, 0x8c, 0x23, 0xe0, 0xc0, 0xff, 0xee, 0x7f, 0x0e),
-            pid = 0,
-        };
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x03, 0xD8, 0xA5, 0x1D,
+                    0x92, 0xD4,
+                    0xDD, 0x4E,
+                    0x8C,
+                    0x23,
+                    0xE0,
+                    0xC0,
+                    0xFF,
+                    0xEE,
+                    0x7F,
+                    0x0E,
+                    0x00, 0x00, 0x00, 0x00
+                };
+
+                return ref Unsafe.As<byte, PROPERTYKEY>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const PROPERTYKEY")]
-        public static readonly PROPERTYKEY PKEY_AudioEndpoint_ControlPanelPageProvider = new PROPERTYKEY
+        public static ref readonly PROPERTYKEY PKEY_AudioEndpoint_ControlPanelPageProvider
         {
-            fmtid = new Guid(0x1da5d803, 0xd492, 0x4edd, 0x8c, 0x23, 0xe0, 0xc0, 0xff, 0xee, 0x7f, 0x0e),
-            pid = 1,
-        };
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x03, 0xD8, 0xA5, 0x1D,
+                    0x92, 0xD4,
+                    0xDD, 0x4E,
+                    0x8C,
+                    0x23,
+                    0xE0,
+                    0xC0,
+                    0xFF,
+                    0xEE,
+                    0x7F,
+                    0x0E,
+                    0x01, 0x00, 0x00, 0x00
+                };
+
+                return ref Unsafe.As<byte, PROPERTYKEY>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const PROPERTYKEY")]
-        public static readonly PROPERTYKEY PKEY_AudioEndpoint_Association = new PROPERTYKEY
+        public static ref readonly PROPERTYKEY PKEY_AudioEndpoint_Association
         {
-            fmtid = new Guid(0x1da5d803, 0xd492, 0x4edd, 0x8c, 0x23, 0xe0, 0xc0, 0xff, 0xee, 0x7f, 0x0e),
-            pid = 2,
-        };
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x03, 0xD8, 0xA5, 0x1D,
+                    0x92, 0xD4,
+                    0xDD, 0x4E,
+                    0x8C,
+                    0x23,
+                    0xE0,
+                    0xC0,
+                    0xFF,
+                    0xEE,
+                    0x7F,
+                    0x0E,
+                    0x02, 0x00, 0x00, 0x00
+                };
+
+                return ref Unsafe.As<byte, PROPERTYKEY>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const PROPERTYKEY")]
-        public static readonly PROPERTYKEY PKEY_AudioEndpoint_PhysicalSpeakers = new PROPERTYKEY
+        public static ref readonly PROPERTYKEY PKEY_AudioEndpoint_PhysicalSpeakers
         {
-            fmtid = new Guid(0x1da5d803, 0xd492, 0x4edd, 0x8c, 0x23, 0xe0, 0xc0, 0xff, 0xee, 0x7f, 0x0e),
-            pid = 3,
-        };
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x03, 0xD8, 0xA5, 0x1D,
+                    0x92, 0xD4,
+                    0xDD, 0x4E,
+                    0x8C,
+                    0x23,
+                    0xE0,
+                    0xC0,
+                    0xFF,
+                    0xEE,
+                    0x7F,
+                    0x0E,
+                    0x03, 0x00, 0x00, 0x00
+                };
+
+                return ref Unsafe.As<byte, PROPERTYKEY>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const PROPERTYKEY")]
-        public static readonly PROPERTYKEY PKEY_AudioEndpoint_GUID = new PROPERTYKEY
+        public static ref readonly PROPERTYKEY PKEY_AudioEndpoint_GUID
         {
-            fmtid = new Guid(0x1da5d803, 0xd492, 0x4edd, 0x8c, 0x23, 0xe0, 0xc0, 0xff, 0xee, 0x7f, 0x0e),
-            pid = 4,
-        };
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x03, 0xD8, 0xA5, 0x1D,
+                    0x92, 0xD4,
+                    0xDD, 0x4E,
+                    0x8C,
+                    0x23,
+                    0xE0,
+                    0xC0,
+                    0xFF,
+                    0xEE,
+                    0x7F,
+                    0x0E,
+                    0x04, 0x00, 0x00, 0x00
+                };
+
+                return ref Unsafe.As<byte, PROPERTYKEY>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const PROPERTYKEY")]
-        public static readonly PROPERTYKEY PKEY_AudioEndpoint_Disable_SysFx = new PROPERTYKEY
+        public static ref readonly PROPERTYKEY PKEY_AudioEndpoint_Disable_SysFx
         {
-            fmtid = new Guid(0x1da5d803, 0xd492, 0x4edd, 0x8c, 0x23, 0xe0, 0xc0, 0xff, 0xee, 0x7f, 0x0e),
-            pid = 5,
-        };
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x03, 0xD8, 0xA5, 0x1D,
+                    0x92, 0xD4,
+                    0xDD, 0x4E,
+                    0x8C,
+                    0x23,
+                    0xE0,
+                    0xC0,
+                    0xFF,
+                    0xEE,
+                    0x7F,
+                    0x0E,
+                    0x05, 0x00, 0x00, 0x00
+                };
+
+                return ref Unsafe.As<byte, PROPERTYKEY>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const PROPERTYKEY")]
-        public static readonly PROPERTYKEY PKEY_AudioEndpoint_FullRangeSpeakers = new PROPERTYKEY
+        public static ref readonly PROPERTYKEY PKEY_AudioEndpoint_FullRangeSpeakers
         {
-            fmtid = new Guid(0x1da5d803, 0xd492, 0x4edd, 0x8c, 0x23, 0xe0, 0xc0, 0xff, 0xee, 0x7f, 0x0e),
-            pid = 6,
-        };
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x03, 0xD8, 0xA5, 0x1D,
+                    0x92, 0xD4,
+                    0xDD, 0x4E,
+                    0x8C,
+                    0x23,
+                    0xE0,
+                    0xC0,
+                    0xFF,
+                    0xEE,
+                    0x7F,
+                    0x0E,
+                    0x06, 0x00, 0x00, 0x00
+                };
+
+                return ref Unsafe.As<byte, PROPERTYKEY>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const PROPERTYKEY")]
-        public static readonly PROPERTYKEY PKEY_AudioEndpoint_Supports_EventDriven_Mode = new PROPERTYKEY
+        public static ref readonly PROPERTYKEY PKEY_AudioEndpoint_Supports_EventDriven_Mode
         {
-            fmtid = new Guid(0x1da5d803, 0xd492, 0x4edd, 0x8c, 0x23, 0xe0, 0xc0, 0xff, 0xee, 0x7f, 0x0e),
-            pid = 7,
-        };
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x03, 0xD8, 0xA5, 0x1D,
+                    0x92, 0xD4,
+                    0xDD, 0x4E,
+                    0x8C,
+                    0x23,
+                    0xE0,
+                    0xC0,
+                    0xFF,
+                    0xEE,
+                    0x7F,
+                    0x0E,
+                    0x07, 0x00, 0x00, 0x00
+                };
+
+                return ref Unsafe.As<byte, PROPERTYKEY>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const PROPERTYKEY")]
-        public static readonly PROPERTYKEY PKEY_AudioEndpoint_JackSubType = new PROPERTYKEY
+        public static ref readonly PROPERTYKEY PKEY_AudioEndpoint_JackSubType
         {
-            fmtid = new Guid(0x1da5d803, 0xd492, 0x4edd, 0x8c, 0x23, 0xe0, 0xc0, 0xff, 0xee, 0x7f, 0x0e),
-            pid = 8,
-        };
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x03, 0xD8, 0xA5, 0x1D,
+                    0x92, 0xD4,
+                    0xDD, 0x4E,
+                    0x8C,
+                    0x23,
+                    0xE0,
+                    0xC0,
+                    0xFF,
+                    0xEE,
+                    0x7F,
+                    0x0E,
+                    0x08, 0x00, 0x00, 0x00
+                };
+
+                return ref Unsafe.As<byte, PROPERTYKEY>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const PROPERTYKEY")]
-        public static readonly PROPERTYKEY PKEY_AudioEndpoint_Default_VolumeInDb = new PROPERTYKEY
+        public static ref readonly PROPERTYKEY PKEY_AudioEndpoint_Default_VolumeInDb
         {
-            fmtid = new Guid(0x1da5d803, 0xd492, 0x4edd, 0x8c, 0x23, 0xe0, 0xc0, 0xff, 0xee, 0x7f, 0x0e),
-            pid = 9,
-        };
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x03, 0xD8, 0xA5, 0x1D,
+                    0x92, 0xD4,
+                    0xDD, 0x4E,
+                    0x8C,
+                    0x23,
+                    0xE0,
+                    0xC0,
+                    0xFF,
+                    0xEE,
+                    0x7F,
+                    0x0E,
+                    0x09, 0x00, 0x00, 0x00
+                };
+
+                return ref Unsafe.As<byte, PROPERTYKEY>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const PROPERTYKEY")]
-        public static readonly PROPERTYKEY PKEY_AudioEngine_DeviceFormat = new PROPERTYKEY
+        public static ref readonly PROPERTYKEY PKEY_AudioEngine_DeviceFormat
         {
-            fmtid = new Guid(0xf19f064d, 0x82c, 0x4e27, 0xbc, 0x73, 0x68, 0x82, 0xa1, 0xbb, 0x8e, 0x4c),
-            pid = 0,
-        };
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x4D, 0x06, 0x9F, 0xF1,
+                    0x2C, 0x08,
+                    0x27, 0x4E,
+                    0xBC,
+                    0x73,
+                    0x68,
+                    0x82,
+                    0xA1,
+                    0xBB,
+                    0x8E,
+                    0x4C,
+                    0x00, 0x00, 0x00, 0x00
+                };
+
+                return ref Unsafe.As<byte, PROPERTYKEY>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const PROPERTYKEY")]
-        public static readonly PROPERTYKEY PKEY_AudioEngine_OEMFormat = new PROPERTYKEY
+        public static ref readonly PROPERTYKEY PKEY_AudioEngine_OEMFormat
         {
-            fmtid = new Guid(0xe4870e26, 0x3cc5, 0x4cd2, 0xba, 0x46, 0xca, 0xa, 0x9a, 0x70, 0xed, 0x4),
-            pid = 3,
-        };
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x26, 0x0E, 0x87, 0xE4,
+                    0xC5, 0x3C,
+                    0xD2, 0x4C,
+                    0xBA,
+                    0x46,
+                    0xCA,
+                    0x0A,
+                    0x9A,
+                    0x70,
+                    0xED,
+                    0x04,
+                    0x03, 0x00, 0x00, 0x00
+                };
+
+                return ref Unsafe.As<byte, PROPERTYKEY>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const PROPERTYKEY")]
-        public static readonly PROPERTYKEY PKEY_AudioEndpointLogo_IconEffects = new PROPERTYKEY
+        public static ref readonly PROPERTYKEY PKEY_AudioEndpointLogo_IconEffects
         {
-            fmtid = new Guid(0xf1ab780d, 0x2010, 0x4ed3, 0xa3, 0xa6, 0x8b, 0x87, 0xf0, 0xf0, 0xc4, 0x76),
-            pid = 0,
-        };
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x0D, 0x78, 0xAB, 0xF1,
+                    0x10, 0x20,
+                    0xD3, 0x4E,
+                    0xA3,
+                    0xA6,
+                    0x8B,
+                    0x87,
+                    0xF0,
+                    0xF0,
+                    0xC4,
+                    0x76,
+                    0x00, 0x00, 0x00, 0x00
+                };
+
+                return ref Unsafe.As<byte, PROPERTYKEY>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const PROPERTYKEY")]
-        public static readonly PROPERTYKEY PKEY_AudioEndpointLogo_IconPath = new PROPERTYKEY
+        public static ref readonly PROPERTYKEY PKEY_AudioEndpointLogo_IconPath
         {
-            fmtid = new Guid(0xf1ab780d, 0x2010, 0x4ed3, 0xa3, 0xa6, 0x8b, 0x87, 0xf0, 0xf0, 0xc4, 0x76),
-            pid = 1,
-        };
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x0D, 0x78, 0xAB, 0xF1,
+                    0x10, 0x20,
+                    0xD3, 0x4E,
+                    0xA3,
+                    0xA6,
+                    0x8B,
+                    0x87,
+                    0xF0,
+                    0xF0,
+                    0xC4,
+                    0x76,
+                    0x01, 0x00, 0x00, 0x00
+                };
+
+                return ref Unsafe.As<byte, PROPERTYKEY>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const PROPERTYKEY")]
-        public static readonly PROPERTYKEY PKEY_AudioEndpointSettings_MenuText = new PROPERTYKEY
+        public static ref readonly PROPERTYKEY PKEY_AudioEndpointSettings_MenuText
         {
-            fmtid = new Guid(0x14242002, 0x0320, 0x4de4, 0x95, 0x55, 0xa7, 0xd8, 0x2b, 0x73, 0xc2, 0x86),
-            pid = 0,
-        };
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x02, 0x20, 0x24, 0x14,
+                    0x20, 0x03,
+                    0xE4, 0x4D,
+                    0x95,
+                    0x55,
+                    0xA7,
+                    0xD8,
+                    0x2B,
+                    0x73,
+                    0xC2,
+                    0x86,
+                    0x00, 0x00, 0x00, 0x00
+                };
+
+                return ref Unsafe.As<byte, PROPERTYKEY>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const PROPERTYKEY")]
-        public static readonly PROPERTYKEY PKEY_AudioEndpointSettings_LaunchContract = new PROPERTYKEY
+        public static ref readonly PROPERTYKEY PKEY_AudioEndpointSettings_LaunchContract
         {
-            fmtid = new Guid(0x14242002, 0x0320, 0x4de4, 0x95, 0x55, 0xa7, 0xd8, 0x2b, 0x73, 0xc2, 0x86),
-            pid = 1,
-        };
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x02, 0x20, 0x24, 0x14,
+                    0x20, 0x03,
+                    0xE4, 0x4D,
+                    0x95,
+                    0x55,
+                    0xA7,
+                    0xD8,
+                    0x2B,
+                    0x73,
+                    0xC2,
+                    0x86,
+                    0x01, 0x00, 0x00, 0x00
+                };
+
+                return ref Unsafe.As<byte, PROPERTYKEY>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const GUID")]
-        public static readonly Guid DEVINTERFACE_AUDIO_RENDER = new Guid(0xe6327cad, 0xdcec, 0x4949, 0xae, 0x8a, 0x99, 0x1e, 0x97, 0x6a, 0x79, 0xd2);
+        public static ref readonly Guid DEVINTERFACE_AUDIO_RENDER
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xAD, 0x7C, 0x32, 0xE6,
+                    0xEC, 0xDC,
+                    0x49, 0x49,
+                    0xAE,
+                    0x8A,
+                    0x99,
+                    0x1E,
+                    0x97,
+                    0x6A,
+                    0x79,
+                    0xD2
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const GUID")]
-        public static readonly Guid DEVINTERFACE_AUDIO_CAPTURE = new Guid(0x2eef81be, 0x33fa, 0x4800, 0x96, 0x70, 0x1c, 0xd4, 0x74, 0x97, 0x2c, 0x3f);
+        public static ref readonly Guid DEVINTERFACE_AUDIO_CAPTURE
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xBE, 0x81, 0xEF, 0x2E,
+                    0xFA, 0x33,
+                    0x00, 0x48,
+                    0x96,
+                    0x70,
+                    0x1C,
+                    0xD4,
+                    0x74,
+                    0x97,
+                    0x2C,
+                    0x3F
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const GUID")]
-        public static readonly Guid DEVINTERFACE_MIDI_OUTPUT = new Guid(0x6dc23320, 0xab33, 0x4ce4, 0x80, 0xd4, 0xbb, 0xb3, 0xeb, 0xbf, 0x28, 0x14);
+        public static ref readonly Guid DEVINTERFACE_MIDI_OUTPUT
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x20, 0x33, 0xC2, 0x6D,
+                    0x33, 0xAB,
+                    0xE4, 0x4C,
+                    0x80,
+                    0xD4,
+                    0xBB,
+                    0xB3,
+                    0xEB,
+                    0xBF,
+                    0x28,
+                    0x14
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const GUID")]
-        public static readonly Guid DEVINTERFACE_MIDI_INPUT = new Guid(0x504be32c, 0xccf6, 0x4d2c, 0xb7, 0x3f, 0x6f, 0x8b, 0x37, 0x47, 0xe2, 0x2b);
+        public static ref readonly Guid DEVINTERFACE_MIDI_INPUT
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x2C, 0xE3, 0x4B, 0x50,
+                    0xF6, 0xCC,
+                    0x2C, 0x4D,
+                    0xB7,
+                    0x3F,
+                    0x6F,
+                    0x8B,
+                    0x37,
+                    0x47,
+                    0xE2,
+                    0x2B
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [DllImport("mmdevapi", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int ActivateAudioInterfaceAsync([NativeTypeName("LPCWSTR")] ushort* deviceInterfacePath, [NativeTypeName("const IID &")] Guid* riid, PROPVARIANT* activationParams, IActivateAudioInterfaceCompletionHandler* completionHandler, IActivateAudioInterfaceAsyncOperation** activationOperation);
 
         [NativeTypeName("#define E_NOTFOUND HRESULT_FROM_WIN32(ERROR_NOT_FOUND)")]
-        public static readonly int E_NOTFOUND = HRESULT_FROM_WIN32(1168);
+        public static int E_NOTFOUND => HRESULT_FROM_WIN32(1168);
 
         [NativeTypeName("#define E_UNSUPPORTED_TYPE HRESULT_FROM_WIN32(ERROR_UNSUPPORTED_TYPE)")]
-        public static readonly int E_UNSUPPORTED_TYPE = HRESULT_FROM_WIN32(1630);
+        public static int E_UNSUPPORTED_TYPE => HRESULT_FROM_WIN32(1630);
 
         [NativeTypeName("#define DEVICE_STATE_ACTIVE 0x00000001")]
         public const int DEVICE_STATE_ACTIVE = 0x00000001;
@@ -169,20 +522,180 @@ namespace TerraFX.Interop
         [NativeTypeName("#define HDMI DigitalAudioDisplayDevice")]
         public const EndpointFormFactor HDMI = DigitalAudioDisplayDevice;
 
-        public static readonly Guid IID_IMMNotificationClient = new Guid(0x7991EEC9, 0x7E89, 0x4D85, 0x83, 0x90, 0x6C, 0x70, 0x3C, 0xEC, 0x60, 0xC0);
+        public static ref readonly Guid IID_IMMNotificationClient
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xC9, 0xEE, 0x91, 0x79,
+                    0x89, 0x7E,
+                    0x85, 0x4D,
+                    0x83,
+                    0x90,
+                    0x6C,
+                    0x70,
+                    0x3C,
+                    0xEC,
+                    0x60,
+                    0xC0
+                };
 
-        public static readonly Guid IID_IMMDevice = new Guid(0xD666063F, 0x1587, 0x4E43, 0x81, 0xF1, 0xB9, 0x48, 0xE8, 0x07, 0x36, 0x3F);
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
-        public static readonly Guid IID_IMMDeviceCollection = new Guid(0x0BD7A1BE, 0x7A1A, 0x44DB, 0x83, 0x97, 0xCC, 0x53, 0x92, 0x38, 0x7B, 0x5E);
+        public static ref readonly Guid IID_IMMDevice
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x3F, 0x06, 0x66, 0xD6,
+                    0x87, 0x15,
+                    0x43, 0x4E,
+                    0x81,
+                    0xF1,
+                    0xB9,
+                    0x48,
+                    0xE8,
+                    0x07,
+                    0x36,
+                    0x3F
+                };
 
-        public static readonly Guid IID_IMMEndpoint = new Guid(0x1BE09788, 0x6894, 0x4089, 0x85, 0x86, 0x9A, 0x2A, 0x6C, 0x26, 0x5A, 0xC5);
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
-        public static readonly Guid IID_IMMDeviceEnumerator = new Guid(0xA95664D2, 0x9614, 0x4F35, 0xA7, 0x46, 0xDE, 0x8D, 0xB6, 0x36, 0x17, 0xE6);
+        public static ref readonly Guid IID_IMMDeviceCollection
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xBE, 0xA1, 0xD7, 0x0B,
+                    0x1A, 0x7A,
+                    0xDB, 0x44,
+                    0x83,
+                    0x97,
+                    0xCC,
+                    0x53,
+                    0x92,
+                    0x38,
+                    0x7B,
+                    0x5E
+                };
 
-        public static readonly Guid IID_IMMDeviceActivator = new Guid(0x3B0D0EA4, 0xD0A9, 0x4B0E, 0x93, 0x5B, 0x09, 0x51, 0x67, 0x46, 0xFA, 0xC0);
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
-        public static readonly Guid IID_IActivateAudioInterfaceCompletionHandler = new Guid(0x41D949AB, 0x9862, 0x444A, 0x80, 0xF6, 0xC2, 0x61, 0x33, 0x4D, 0xA5, 0xEB);
+        public static ref readonly Guid IID_IMMEndpoint
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x88, 0x97, 0xE0, 0x1B,
+                    0x94, 0x68,
+                    0x89, 0x40,
+                    0x85,
+                    0x86,
+                    0x9A,
+                    0x2A,
+                    0x6C,
+                    0x26,
+                    0x5A,
+                    0xC5
+                };
 
-        public static readonly Guid IID_IActivateAudioInterfaceAsyncOperation = new Guid(0x72A22D78, 0xCDE4, 0x431D, 0xB8, 0xCC, 0x84, 0x3A, 0x71, 0x19, 0x9B, 0x6D);
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid IID_IMMDeviceEnumerator
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xD2, 0x64, 0x56, 0xA9,
+                    0x14, 0x96,
+                    0x35, 0x4F,
+                    0xA7,
+                    0x46,
+                    0xDE,
+                    0x8D,
+                    0xB6,
+                    0x36,
+                    0x17,
+                    0xE6
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid IID_IMMDeviceActivator
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xA4, 0x0E, 0x0D, 0x3B,
+                    0xA9, 0xD0,
+                    0x0E, 0x4B,
+                    0x93,
+                    0x5B,
+                    0x09,
+                    0x51,
+                    0x67,
+                    0x46,
+                    0xFA,
+                    0xC0
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid IID_IActivateAudioInterfaceCompletionHandler
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xAB, 0x49, 0xD9, 0x41,
+                    0x62, 0x98,
+                    0x4A, 0x44,
+                    0x80,
+                    0xF6,
+                    0xC2,
+                    0x61,
+                    0x33,
+                    0x4D,
+                    0xA5,
+                    0xEB
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid IID_IActivateAudioInterfaceAsyncOperation
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x78, 0x2D, 0xA2, 0x72,
+                    0xE4, 0xCD,
+                    0x1D, 0x43,
+                    0xB8,
+                    0xCC,
+                    0x84,
+                    0x3A,
+                    0x71,
+                    0x19,
+                    0x9B,
+                    0x6D
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
     }
 }

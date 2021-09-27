@@ -2992,10 +2992,10 @@ namespace TerraFX.Interop
         public const int SCS_THIS_PLATFORM_BINARY = 0;
 
         [NativeTypeName("#define GetBinaryType GetBinaryTypeW")]
-        public static readonly delegate*<ushort*, uint*, int> GetBinaryType = &GetBinaryTypeW;
+        public static delegate*<ushort*, uint*, int> GetBinaryType => &GetBinaryTypeW;
 
         [NativeTypeName("#define GetLongPathNameTransacted GetLongPathNameTransactedW")]
-        public static readonly delegate*<ushort*, ushort*, uint, IntPtr, uint> GetLongPathNameTransacted = &GetLongPathNameTransactedW;
+        public static delegate*<ushort*, ushort*, uint, IntPtr, uint> GetLongPathNameTransacted => &GetLongPathNameTransactedW;
 
         [NativeTypeName("#define FIBER_FLAG_FLOAT_SWITCH 0x1")]
         public const int FIBER_FLAG_FLOAT_SWITCH = 0x1;
@@ -3031,7 +3031,7 @@ namespace TerraFX.Interop
         public const int CRITICAL_SECTION_NO_DEBUG_INFO = 0x01000000;
 
         [NativeTypeName("#define SetFileShortName SetFileShortNameW")]
-        public static readonly delegate*<IntPtr, ushort*, int> SetFileShortName = &SetFileShortNameW;
+        public static delegate*<IntPtr, ushort*, int> SetFileShortName => &SetFileShortNameW;
 
         [NativeTypeName("#define HANDLE_FLAG_INHERIT 0x00000001")]
         public const int HANDLE_FLAG_INHERIT = 0x00000001;
@@ -3058,7 +3058,7 @@ namespace TerraFX.Interop
         public const int FORMAT_MESSAGE_ALLOCATE_BUFFER = 0x00000100;
 
         [NativeTypeName("#define FormatMessage FormatMessageW")]
-        public static readonly delegate*<uint, void*, uint, uint, ushort*, uint, sbyte**, uint> FormatMessage = &FormatMessageW;
+        public static delegate*<uint, void*, uint, uint, ushort*, uint, sbyte**, uint> FormatMessage => &FormatMessageW;
 
         [NativeTypeName("#define FORMAT_MESSAGE_IGNORE_INSERTS 0x00000200")]
         public const int FORMAT_MESSAGE_IGNORE_INSERTS = 0x00000200;
@@ -3079,13 +3079,13 @@ namespace TerraFX.Interop
         public const int FORMAT_MESSAGE_MAX_WIDTH_MASK = 0x000000FF;
 
         [NativeTypeName("#define CreateMailslot CreateMailslotW")]
-        public static readonly delegate*<ushort*, uint, uint, SECURITY_ATTRIBUTES*, IntPtr> CreateMailslot = &CreateMailslotW;
+        public static delegate*<ushort*, uint, uint, SECURITY_ATTRIBUTES*, IntPtr> CreateMailslot => &CreateMailslotW;
 
         [NativeTypeName("#define EncryptFile EncryptFileW")]
-        public static readonly delegate*<ushort*, int> EncryptFile = &EncryptFileW;
+        public static delegate*<ushort*, int> EncryptFile => &EncryptFileW;
 
         [NativeTypeName("#define DecryptFile DecryptFileW")]
-        public static readonly delegate*<ushort*, uint, int> DecryptFile = &DecryptFileW;
+        public static delegate*<ushort*, uint, int> DecryptFile => &DecryptFileW;
 
         [NativeTypeName("#define FILE_ENCRYPTABLE 0")]
         public const int FILE_ENCRYPTABLE = 0;
@@ -3118,7 +3118,7 @@ namespace TerraFX.Interop
         public const int FILE_DIR_DISALLOWED = 9;
 
         [NativeTypeName("#define FileEncryptionStatus FileEncryptionStatusW")]
-        public static readonly delegate*<ushort*, uint*, int> FileEncryptionStatus = &FileEncryptionStatusW;
+        public static delegate*<ushort*, uint*, int> FileEncryptionStatus => &FileEncryptionStatusW;
 
         [NativeTypeName("#define EFS_USE_RECOVERY_KEYS (0x1)")]
         public const int EFS_USE_RECOVERY_KEYS = (0x1);
@@ -3139,25 +3139,25 @@ namespace TerraFX.Interop
         public const int EFS_DROP_ALTERNATE_STREAMS = (0x10);
 
         [NativeTypeName("#define OpenEncryptedFileRaw OpenEncryptedFileRawW")]
-        public static readonly delegate*<ushort*, uint, void**, uint> OpenEncryptedFileRaw = &OpenEncryptedFileRawW;
+        public static delegate*<ushort*, uint, void**, uint> OpenEncryptedFileRaw => &OpenEncryptedFileRawW;
 
         [NativeTypeName("#define lstrcmp lstrcmpW")]
-        public static readonly delegate*<ushort*, ushort*, int> lstrcmp = &lstrcmpW;
+        public static delegate*<ushort*, ushort*, int> lstrcmp => &lstrcmpW;
 
         [NativeTypeName("#define lstrcmpi lstrcmpiW")]
-        public static readonly delegate*<ushort*, ushort*, int> lstrcmpi = &lstrcmpiW;
+        public static delegate*<ushort*, ushort*, int> lstrcmpi => &lstrcmpiW;
 
         [NativeTypeName("#define lstrcpyn lstrcpynW")]
-        public static readonly delegate*<ushort*, ushort*, int, ushort*> lstrcpyn = &lstrcpynW;
+        public static delegate*<ushort*, ushort*, int, ushort*> lstrcpyn => &lstrcpynW;
 
         [NativeTypeName("#define lstrcpy lstrcpyW")]
-        public static readonly delegate*<ushort*, ushort*, ushort*> lstrcpy = &lstrcpyW;
+        public static delegate*<ushort*, ushort*, ushort*> lstrcpy => &lstrcpyW;
 
         [NativeTypeName("#define lstrcat lstrcatW")]
-        public static readonly delegate*<ushort*, ushort*, ushort*> lstrcat = &lstrcatW;
+        public static delegate*<ushort*, ushort*, ushort*> lstrcat => &lstrcatW;
 
         [NativeTypeName("#define lstrlen lstrlenW")]
-        public static readonly delegate*<ushort*, int> lstrlen = &lstrlenW;
+        public static delegate*<ushort*, int> lstrlen => &lstrlenW;
 
         [NativeTypeName("#define BACKUP_INVALID 0x00000000")]
         public const int BACKUP_INVALID = 0x00000000;
@@ -3298,7 +3298,7 @@ namespace TerraFX.Interop
         public const int PROCESS_NAME_NATIVE = 0x00000001;
 
         [NativeTypeName("#define QueryFullProcessImageName QueryFullProcessImageNameW")]
-        public static readonly delegate*<IntPtr, uint, ushort*, uint*, int> QueryFullProcessImageName = &QueryFullProcessImageNameW;
+        public static delegate*<IntPtr, uint, ushort*, uint*, int> QueryFullProcessImageName => &QueryFullProcessImageNameW;
 
         [NativeTypeName("#define PROC_THREAD_ATTRIBUTE_NUMBER 0x0000FFFF")]
         public const int PROC_THREAD_ATTRIBUTE_NUMBER = 0x0000FFFF;
@@ -3835,94 +3835,94 @@ namespace TerraFX.Interop
         public const ulong PROCESS_CREATION_MITIGATION_AUDIT_POLICY2_XTENDED_CONTROL_FLOW_GUARD_RESERVED = (0x00000003UL << 40);
 
         [NativeTypeName("#define GetFirmwareEnvironmentVariable GetFirmwareEnvironmentVariableW")]
-        public static readonly delegate*<ushort*, ushort*, void*, uint, uint> GetFirmwareEnvironmentVariable = &GetFirmwareEnvironmentVariableW;
+        public static delegate*<ushort*, ushort*, void*, uint, uint> GetFirmwareEnvironmentVariable => &GetFirmwareEnvironmentVariableW;
 
         [NativeTypeName("#define GetFirmwareEnvironmentVariableEx GetFirmwareEnvironmentVariableExW")]
-        public static readonly delegate*<ushort*, ushort*, void*, uint, uint*, uint> GetFirmwareEnvironmentVariableEx = &GetFirmwareEnvironmentVariableExW;
+        public static delegate*<ushort*, ushort*, void*, uint, uint*, uint> GetFirmwareEnvironmentVariableEx => &GetFirmwareEnvironmentVariableExW;
 
         [NativeTypeName("#define SetFirmwareEnvironmentVariable SetFirmwareEnvironmentVariableW")]
-        public static readonly delegate*<ushort*, ushort*, void*, uint, int> SetFirmwareEnvironmentVariable = &SetFirmwareEnvironmentVariableW;
+        public static delegate*<ushort*, ushort*, void*, uint, int> SetFirmwareEnvironmentVariable => &SetFirmwareEnvironmentVariableW;
 
         [NativeTypeName("#define SetFirmwareEnvironmentVariableEx SetFirmwareEnvironmentVariableExW")]
-        public static readonly delegate*<ushort*, ushort*, void*, uint, uint, int> SetFirmwareEnvironmentVariableEx = &SetFirmwareEnvironmentVariableExW;
+        public static delegate*<ushort*, ushort*, void*, uint, uint, int> SetFirmwareEnvironmentVariableEx => &SetFirmwareEnvironmentVariableExW;
 
         [NativeTypeName("#define EnumResourceTypes EnumResourceTypesW")]
-        public static readonly delegate*<IntPtr, delegate* unmanaged<IntPtr, ushort*, nint, int>, nint, int> EnumResourceTypes = &EnumResourceTypesW;
+        public static delegate*<IntPtr, delegate* unmanaged<IntPtr, ushort*, nint, int>, nint, int> EnumResourceTypes => &EnumResourceTypesW;
 
         [NativeTypeName("#define EnumResourceLanguages EnumResourceLanguagesW")]
-        public static readonly delegate*<IntPtr, ushort*, ushort*, delegate* unmanaged<IntPtr, ushort*, ushort*, ushort, nint, int>, nint, int> EnumResourceLanguages = &EnumResourceLanguagesW;
+        public static delegate*<IntPtr, ushort*, ushort*, delegate* unmanaged<IntPtr, ushort*, ushort*, ushort, nint, int>, nint, int> EnumResourceLanguages => &EnumResourceLanguagesW;
 
         [NativeTypeName("#define BeginUpdateResource BeginUpdateResourceW")]
-        public static readonly delegate*<ushort*, int, IntPtr> BeginUpdateResource = &BeginUpdateResourceW;
+        public static delegate*<ushort*, int, IntPtr> BeginUpdateResource => &BeginUpdateResourceW;
 
         [NativeTypeName("#define UpdateResource UpdateResourceW")]
-        public static readonly delegate*<IntPtr, ushort*, ushort*, ushort, void*, uint, int> UpdateResource = &UpdateResourceW;
+        public static delegate*<IntPtr, ushort*, ushort*, ushort, void*, uint, int> UpdateResource => &UpdateResourceW;
 
         [NativeTypeName("#define EndUpdateResource EndUpdateResourceW")]
-        public static readonly delegate*<IntPtr, int, int> EndUpdateResource = &EndUpdateResourceW;
+        public static delegate*<IntPtr, int, int> EndUpdateResource => &EndUpdateResourceW;
 
         [NativeTypeName("#define ATOM_FLAG_GLOBAL 0x2")]
         public const int ATOM_FLAG_GLOBAL = 0x2;
 
         [NativeTypeName("#define GlobalAddAtom GlobalAddAtomW")]
-        public static readonly delegate*<ushort*, ushort> GlobalAddAtom = &GlobalAddAtomW;
+        public static delegate*<ushort*, ushort> GlobalAddAtom => &GlobalAddAtomW;
 
         [NativeTypeName("#define GlobalAddAtomEx GlobalAddAtomExW")]
-        public static readonly delegate*<ushort*, uint, ushort> GlobalAddAtomEx = &GlobalAddAtomExW;
+        public static delegate*<ushort*, uint, ushort> GlobalAddAtomEx => &GlobalAddAtomExW;
 
         [NativeTypeName("#define GlobalFindAtom GlobalFindAtomW")]
-        public static readonly delegate*<ushort*, ushort> GlobalFindAtom = &GlobalFindAtomW;
+        public static delegate*<ushort*, ushort> GlobalFindAtom => &GlobalFindAtomW;
 
         [NativeTypeName("#define GlobalGetAtomName GlobalGetAtomNameW")]
-        public static readonly delegate*<ushort, ushort*, int, uint> GlobalGetAtomName = &GlobalGetAtomNameW;
+        public static delegate*<ushort, ushort*, int, uint> GlobalGetAtomName => &GlobalGetAtomNameW;
 
         [NativeTypeName("#define AddAtom AddAtomW")]
-        public static readonly delegate*<ushort*, ushort> AddAtom = &AddAtomW;
+        public static delegate*<ushort*, ushort> AddAtom => &AddAtomW;
 
         [NativeTypeName("#define FindAtom FindAtomW")]
-        public static readonly delegate*<ushort*, ushort> FindAtom = &FindAtomW;
+        public static delegate*<ushort*, ushort> FindAtom => &FindAtomW;
 
         [NativeTypeName("#define GetAtomName GetAtomNameW")]
-        public static readonly delegate*<ushort, ushort*, int, uint> GetAtomName = &GetAtomNameW;
+        public static delegate*<ushort, ushort*, int, uint> GetAtomName => &GetAtomNameW;
 
         [NativeTypeName("#define GetProfileInt GetProfileIntW")]
-        public static readonly delegate*<ushort*, ushort*, int, uint> GetProfileInt = &GetProfileIntW;
+        public static delegate*<ushort*, ushort*, int, uint> GetProfileInt => &GetProfileIntW;
 
         [NativeTypeName("#define GetProfileString GetProfileStringW")]
-        public static readonly delegate*<ushort*, ushort*, ushort*, ushort*, uint, uint> GetProfileString = &GetProfileStringW;
+        public static delegate*<ushort*, ushort*, ushort*, ushort*, uint, uint> GetProfileString => &GetProfileStringW;
 
         [NativeTypeName("#define WriteProfileString WriteProfileStringW")]
-        public static readonly delegate*<ushort*, ushort*, ushort*, int> WriteProfileString = &WriteProfileStringW;
+        public static delegate*<ushort*, ushort*, ushort*, int> WriteProfileString => &WriteProfileStringW;
 
         [NativeTypeName("#define GetProfileSection GetProfileSectionW")]
-        public static readonly delegate*<ushort*, ushort*, uint, uint> GetProfileSection = &GetProfileSectionW;
+        public static delegate*<ushort*, ushort*, uint, uint> GetProfileSection => &GetProfileSectionW;
 
         [NativeTypeName("#define WriteProfileSection WriteProfileSectionW")]
-        public static readonly delegate*<ushort*, ushort*, int> WriteProfileSection = &WriteProfileSectionW;
+        public static delegate*<ushort*, ushort*, int> WriteProfileSection => &WriteProfileSectionW;
 
         [NativeTypeName("#define GetPrivateProfileInt GetPrivateProfileIntW")]
-        public static readonly delegate*<ushort*, ushort*, int, ushort*, uint> GetPrivateProfileInt = &GetPrivateProfileIntW;
+        public static delegate*<ushort*, ushort*, int, ushort*, uint> GetPrivateProfileInt => &GetPrivateProfileIntW;
 
         [NativeTypeName("#define GetPrivateProfileString GetPrivateProfileStringW")]
-        public static readonly delegate*<ushort*, ushort*, ushort*, ushort*, uint, ushort*, uint> GetPrivateProfileString = &GetPrivateProfileStringW;
+        public static delegate*<ushort*, ushort*, ushort*, ushort*, uint, ushort*, uint> GetPrivateProfileString => &GetPrivateProfileStringW;
 
         [NativeTypeName("#define WritePrivateProfileString WritePrivateProfileStringW")]
-        public static readonly delegate*<ushort*, ushort*, ushort*, ushort*, int> WritePrivateProfileString = &WritePrivateProfileStringW;
+        public static delegate*<ushort*, ushort*, ushort*, ushort*, int> WritePrivateProfileString => &WritePrivateProfileStringW;
 
         [NativeTypeName("#define GetPrivateProfileSection GetPrivateProfileSectionW")]
-        public static readonly delegate*<ushort*, ushort*, uint, ushort*, uint> GetPrivateProfileSection = &GetPrivateProfileSectionW;
+        public static delegate*<ushort*, ushort*, uint, ushort*, uint> GetPrivateProfileSection => &GetPrivateProfileSectionW;
 
         [NativeTypeName("#define WritePrivateProfileSection WritePrivateProfileSectionW")]
-        public static readonly delegate*<ushort*, ushort*, ushort*, int> WritePrivateProfileSection = &WritePrivateProfileSectionW;
+        public static delegate*<ushort*, ushort*, ushort*, int> WritePrivateProfileSection => &WritePrivateProfileSectionW;
 
         [NativeTypeName("#define GetPrivateProfileSectionNames GetPrivateProfileSectionNamesW")]
-        public static readonly delegate*<ushort*, uint, ushort*, uint> GetPrivateProfileSectionNames = &GetPrivateProfileSectionNamesW;
+        public static delegate*<ushort*, uint, ushort*, uint> GetPrivateProfileSectionNames => &GetPrivateProfileSectionNamesW;
 
         [NativeTypeName("#define GetPrivateProfileStruct GetPrivateProfileStructW")]
-        public static readonly delegate*<ushort*, ushort*, void*, uint, ushort*, int> GetPrivateProfileStruct = &GetPrivateProfileStructW;
+        public static delegate*<ushort*, ushort*, void*, uint, ushort*, int> GetPrivateProfileStruct => &GetPrivateProfileStructW;
 
         [NativeTypeName("#define WritePrivateProfileStruct WritePrivateProfileStructW")]
-        public static readonly delegate*<ushort*, ushort*, void*, uint, ushort*, int> WritePrivateProfileStruct = &WritePrivateProfileStructW;
+        public static delegate*<ushort*, ushort*, void*, uint, ushort*, int> WritePrivateProfileStruct => &WritePrivateProfileStructW;
 
         [NativeTypeName("#define GET_SYSTEM_WOW64_DIRECTORY_NAME_A_A \"GetSystemWow64DirectoryA\"")]
         public static ReadOnlySpan<byte> GET_SYSTEM_WOW64_DIRECTORY_NAME_A_A => new byte[] { 0x47, 0x65, 0x74, 0x53, 0x79, 0x73, 0x74, 0x65, 0x6D, 0x57, 0x6F, 0x77, 0x36, 0x34, 0x44, 0x69, 0x72, 0x65, 0x63, 0x74, 0x6F, 0x72, 0x79, 0x41, 0x00 };
@@ -3952,10 +3952,10 @@ namespace TerraFX.Interop
         public const string GET_SYSTEM_WOW64_DIRECTORY_NAME_T_T = "GetSystemWow64DirectoryW";
 
         [NativeTypeName("#define SetDllDirectory SetDllDirectoryW")]
-        public static readonly delegate*<ushort*, int> SetDllDirectory = &SetDllDirectoryW;
+        public static delegate*<ushort*, int> SetDllDirectory => &SetDllDirectoryW;
 
         [NativeTypeName("#define GetDllDirectory GetDllDirectoryW")]
-        public static readonly delegate*<uint, ushort*, uint> GetDllDirectory = &GetDllDirectoryW;
+        public static delegate*<uint, ushort*, uint> GetDllDirectory => &GetDllDirectoryW;
 
         [NativeTypeName("#define BASE_SEARCH_PATH_ENABLE_SAFE_SEARCHMODE 0x1")]
         public const int BASE_SEARCH_PATH_ENABLE_SAFE_SEARCHMODE = 0x1;
@@ -3970,16 +3970,16 @@ namespace TerraFX.Interop
         public const int BASE_SEARCH_PATH_INVALID_FLAGS = ~0x18001;
 
         [NativeTypeName("#define CreateDirectoryEx CreateDirectoryExW")]
-        public static readonly delegate*<ushort*, ushort*, SECURITY_ATTRIBUTES*, int> CreateDirectoryEx = &CreateDirectoryExW;
+        public static delegate*<ushort*, ushort*, SECURITY_ATTRIBUTES*, int> CreateDirectoryEx => &CreateDirectoryExW;
 
         [NativeTypeName("#define CreateDirectoryTransacted CreateDirectoryTransactedW")]
-        public static readonly delegate*<ushort*, ushort*, SECURITY_ATTRIBUTES*, IntPtr, int> CreateDirectoryTransacted = &CreateDirectoryTransactedW;
+        public static delegate*<ushort*, ushort*, SECURITY_ATTRIBUTES*, IntPtr, int> CreateDirectoryTransacted => &CreateDirectoryTransactedW;
 
         [NativeTypeName("#define RemoveDirectoryTransacted RemoveDirectoryTransactedW")]
-        public static readonly delegate*<ushort*, IntPtr, int> RemoveDirectoryTransacted = &RemoveDirectoryTransactedW;
+        public static delegate*<ushort*, IntPtr, int> RemoveDirectoryTransacted => &RemoveDirectoryTransactedW;
 
         [NativeTypeName("#define GetFullPathNameTransacted GetFullPathNameTransactedW")]
-        public static readonly delegate*<ushort*, uint, ushort*, ushort**, IntPtr, uint> GetFullPathNameTransacted = &GetFullPathNameTransactedW;
+        public static delegate*<ushort*, uint, ushort*, ushort**, IntPtr, uint> GetFullPathNameTransacted => &GetFullPathNameTransactedW;
 
         [NativeTypeName("#define DDD_RAW_TARGET_PATH 0x00000001")]
         public const int DDD_RAW_TARGET_PATH = 0x00000001;
@@ -3997,34 +3997,34 @@ namespace TerraFX.Interop
         public const int DDD_LUID_BROADCAST_DRIVE = 0x00000010;
 
         [NativeTypeName("#define CreateFileTransacted CreateFileTransactedW")]
-        public static readonly delegate*<ushort*, uint, uint, SECURITY_ATTRIBUTES*, uint, uint, IntPtr, IntPtr, ushort*, void*, IntPtr> CreateFileTransacted = &CreateFileTransactedW;
+        public static delegate*<ushort*, uint, uint, SECURITY_ATTRIBUTES*, uint, uint, IntPtr, IntPtr, ushort*, void*, IntPtr> CreateFileTransacted => &CreateFileTransactedW;
 
         [NativeTypeName("#define SetFileAttributesTransacted SetFileAttributesTransactedW")]
-        public static readonly delegate*<ushort*, uint, IntPtr, int> SetFileAttributesTransacted = &SetFileAttributesTransactedW;
+        public static delegate*<ushort*, uint, IntPtr, int> SetFileAttributesTransacted => &SetFileAttributesTransactedW;
 
         [NativeTypeName("#define GetFileAttributesTransacted GetFileAttributesTransactedW")]
-        public static readonly delegate*<ushort*, GET_FILEEX_INFO_LEVELS, void*, IntPtr, int> GetFileAttributesTransacted = &GetFileAttributesTransactedW;
+        public static delegate*<ushort*, GET_FILEEX_INFO_LEVELS, void*, IntPtr, int> GetFileAttributesTransacted => &GetFileAttributesTransactedW;
 
         [NativeTypeName("#define GetCompressedFileSizeTransacted GetCompressedFileSizeTransactedW")]
-        public static readonly delegate*<ushort*, uint*, IntPtr, uint> GetCompressedFileSizeTransacted = &GetCompressedFileSizeTransactedW;
+        public static delegate*<ushort*, uint*, IntPtr, uint> GetCompressedFileSizeTransacted => &GetCompressedFileSizeTransactedW;
 
         [NativeTypeName("#define DeleteFileTransacted DeleteFileTransactedW")]
-        public static readonly delegate*<ushort*, IntPtr, int> DeleteFileTransacted = &DeleteFileTransactedW;
+        public static delegate*<ushort*, IntPtr, int> DeleteFileTransacted => &DeleteFileTransactedW;
 
         [NativeTypeName("#define CheckNameLegalDOS8Dot3 CheckNameLegalDOS8Dot3W")]
-        public static readonly delegate*<ushort*, sbyte*, uint, int*, int*, int> CheckNameLegalDOS8Dot3 = &CheckNameLegalDOS8Dot3W;
+        public static delegate*<ushort*, sbyte*, uint, int*, int*, int> CheckNameLegalDOS8Dot3 => &CheckNameLegalDOS8Dot3W;
 
         [NativeTypeName("#define FindFirstFileTransacted FindFirstFileTransactedW")]
-        public static readonly delegate*<ushort*, FINDEX_INFO_LEVELS, void*, FINDEX_SEARCH_OPS, void*, uint, IntPtr, IntPtr> FindFirstFileTransacted = &FindFirstFileTransactedW;
+        public static delegate*<ushort*, FINDEX_INFO_LEVELS, void*, FINDEX_SEARCH_OPS, void*, uint, IntPtr, IntPtr> FindFirstFileTransacted => &FindFirstFileTransactedW;
 
         [NativeTypeName("#define CopyFile CopyFileW")]
-        public static readonly delegate*<ushort*, ushort*, int, int> CopyFile = &CopyFileW;
+        public static delegate*<ushort*, ushort*, int, int> CopyFile => &CopyFileW;
 
         [NativeTypeName("#define CopyFileEx CopyFileExW")]
-        public static readonly delegate*<ushort*, ushort*, delegate* unmanaged<LARGE_INTEGER, LARGE_INTEGER, LARGE_INTEGER, LARGE_INTEGER, uint, uint, IntPtr, IntPtr, void*, uint>, void*, int*, uint, int> CopyFileEx = &CopyFileExW;
+        public static delegate*<ushort*, ushort*, delegate* unmanaged<LARGE_INTEGER, LARGE_INTEGER, LARGE_INTEGER, LARGE_INTEGER, uint, uint, IntPtr, IntPtr, void*, uint>, void*, int*, uint, int> CopyFileEx => &CopyFileExW;
 
         [NativeTypeName("#define CopyFileTransacted CopyFileTransactedW")]
-        public static readonly delegate*<ushort*, ushort*, delegate* unmanaged<LARGE_INTEGER, LARGE_INTEGER, LARGE_INTEGER, LARGE_INTEGER, uint, uint, IntPtr, IntPtr, void*, uint>, void*, int*, uint, IntPtr, int> CopyFileTransacted = &CopyFileTransactedW;
+        public static delegate*<ushort*, ushort*, delegate* unmanaged<LARGE_INTEGER, LARGE_INTEGER, LARGE_INTEGER, LARGE_INTEGER, uint, uint, IntPtr, IntPtr, void*, uint>, void*, int*, uint, IntPtr, int> CopyFileTransacted => &CopyFileTransactedW;
 
         [NativeTypeName("#define COPYFILE2_MESSAGE_COPY_OFFLOAD (0x00000001L)")]
         public const int COPYFILE2_MESSAGE_COPY_OFFLOAD = (0x00000001);
@@ -4039,16 +4039,16 @@ namespace TerraFX.Interop
         public const int COPYFILE2_IO_RATE_MIN = 512;
 
         [NativeTypeName("#define MoveFile MoveFileW")]
-        public static readonly delegate*<ushort*, ushort*, int> MoveFile = &MoveFileW;
+        public static delegate*<ushort*, ushort*, int> MoveFile => &MoveFileW;
 
         [NativeTypeName("#define MoveFileEx MoveFileExW")]
-        public static readonly delegate*<ushort*, ushort*, uint, int> MoveFileEx = &MoveFileExW;
+        public static delegate*<ushort*, ushort*, uint, int> MoveFileEx => &MoveFileExW;
 
         [NativeTypeName("#define MoveFileWithProgress MoveFileWithProgressW")]
-        public static readonly delegate*<ushort*, ushort*, delegate* unmanaged<LARGE_INTEGER, LARGE_INTEGER, LARGE_INTEGER, LARGE_INTEGER, uint, uint, IntPtr, IntPtr, void*, uint>, void*, uint, int> MoveFileWithProgress = &MoveFileWithProgressW;
+        public static delegate*<ushort*, ushort*, delegate* unmanaged<LARGE_INTEGER, LARGE_INTEGER, LARGE_INTEGER, LARGE_INTEGER, uint, uint, IntPtr, IntPtr, void*, uint>, void*, uint, int> MoveFileWithProgress => &MoveFileWithProgressW;
 
         [NativeTypeName("#define MoveFileTransacted MoveFileTransactedW")]
-        public static readonly delegate*<ushort*, ushort*, delegate* unmanaged<LARGE_INTEGER, LARGE_INTEGER, LARGE_INTEGER, LARGE_INTEGER, uint, uint, IntPtr, IntPtr, void*, uint>, void*, uint, IntPtr, int> MoveFileTransacted = &MoveFileTransactedW;
+        public static delegate*<ushort*, ushort*, delegate* unmanaged<LARGE_INTEGER, LARGE_INTEGER, LARGE_INTEGER, LARGE_INTEGER, uint, uint, IntPtr, IntPtr, void*, uint>, void*, uint, IntPtr, int> MoveFileTransacted => &MoveFileTransactedW;
 
         [NativeTypeName("#define MOVEFILE_REPLACE_EXISTING 0x00000001")]
         public const int MOVEFILE_REPLACE_EXISTING = 0x00000001;
@@ -4069,37 +4069,37 @@ namespace TerraFX.Interop
         public const int MOVEFILE_FAIL_IF_NOT_TRACKABLE = 0x00000020;
 
         [NativeTypeName("#define ReplaceFile ReplaceFileW")]
-        public static readonly delegate*<ushort*, ushort*, ushort*, uint, void*, void*, int> ReplaceFile = &ReplaceFileW;
+        public static delegate*<ushort*, ushort*, ushort*, uint, void*, void*, int> ReplaceFile => &ReplaceFileW;
 
         [NativeTypeName("#define CreateHardLink CreateHardLinkW")]
-        public static readonly delegate*<ushort*, ushort*, SECURITY_ATTRIBUTES*, int> CreateHardLink = &CreateHardLinkW;
+        public static delegate*<ushort*, ushort*, SECURITY_ATTRIBUTES*, int> CreateHardLink => &CreateHardLinkW;
 
         [NativeTypeName("#define CreateHardLinkTransacted CreateHardLinkTransactedW")]
-        public static readonly delegate*<ushort*, ushort*, SECURITY_ATTRIBUTES*, IntPtr, int> CreateHardLinkTransacted = &CreateHardLinkTransactedW;
+        public static delegate*<ushort*, ushort*, SECURITY_ATTRIBUTES*, IntPtr, int> CreateHardLinkTransacted => &CreateHardLinkTransactedW;
 
         [NativeTypeName("#define SetVolumeLabel SetVolumeLabelW")]
-        public static readonly delegate*<ushort*, ushort*, int> SetVolumeLabel = &SetVolumeLabelW;
+        public static delegate*<ushort*, ushort*, int> SetVolumeLabel => &SetVolumeLabelW;
 
         [NativeTypeName("#define ClearEventLog ClearEventLogW")]
-        public static readonly delegate*<IntPtr, ushort*, int> ClearEventLog = &ClearEventLogW;
+        public static delegate*<IntPtr, ushort*, int> ClearEventLog => &ClearEventLogW;
 
         [NativeTypeName("#define BackupEventLog BackupEventLogW")]
-        public static readonly delegate*<IntPtr, ushort*, int> BackupEventLog = &BackupEventLogW;
+        public static delegate*<IntPtr, ushort*, int> BackupEventLog => &BackupEventLogW;
 
         [NativeTypeName("#define OpenEventLog OpenEventLogW")]
-        public static readonly delegate*<ushort*, ushort*, IntPtr> OpenEventLog = &OpenEventLogW;
+        public static delegate*<ushort*, ushort*, IntPtr> OpenEventLog => &OpenEventLogW;
 
         [NativeTypeName("#define RegisterEventSource RegisterEventSourceW")]
-        public static readonly delegate*<ushort*, ushort*, IntPtr> RegisterEventSource = &RegisterEventSourceW;
+        public static delegate*<ushort*, ushort*, IntPtr> RegisterEventSource => &RegisterEventSourceW;
 
         [NativeTypeName("#define OpenBackupEventLog OpenBackupEventLogW")]
-        public static readonly delegate*<ushort*, ushort*, IntPtr> OpenBackupEventLog = &OpenBackupEventLogW;
+        public static delegate*<ushort*, ushort*, IntPtr> OpenBackupEventLog => &OpenBackupEventLogW;
 
         [NativeTypeName("#define ReadEventLog ReadEventLogW")]
-        public static readonly delegate*<IntPtr, uint, uint, void*, uint, uint*, uint*, int> ReadEventLog = &ReadEventLogW;
+        public static delegate*<IntPtr, uint, uint, void*, uint, uint*, uint*, int> ReadEventLog => &ReadEventLogW;
 
         [NativeTypeName("#define ReportEvent ReportEventW")]
-        public static readonly delegate*<IntPtr, ushort, ushort, uint, void*, ushort, uint, ushort**, void*, int> ReportEvent = &ReportEventW;
+        public static delegate*<IntPtr, ushort, ushort, uint, void*, ushort, uint, ushort**, void*, int> ReportEvent => &ReportEventW;
 
         [NativeTypeName("#define EVENTLOG_FULL_INFO 0")]
         public const int EVENTLOG_FULL_INFO = 0;
@@ -4114,55 +4114,55 @@ namespace TerraFX.Interop
         public const int OPERATION_END_DISCARD = 0x1;
 
         [NativeTypeName("#define IsBadStringPtr IsBadStringPtrW")]
-        public static readonly delegate*<ushort*, nuint, int> IsBadStringPtr = &IsBadStringPtrW;
+        public static delegate*<ushort*, nuint, int> IsBadStringPtr => &IsBadStringPtrW;
 
         [NativeTypeName("#define LookupAccountSid LookupAccountSidW")]
-        public static readonly delegate*<ushort*, void*, ushort*, uint*, ushort*, uint*, SID_NAME_USE*, int> LookupAccountSid = &LookupAccountSidW;
+        public static delegate*<ushort*, void*, ushort*, uint*, ushort*, uint*, SID_NAME_USE*, int> LookupAccountSid => &LookupAccountSidW;
 
         [NativeTypeName("#define LookupAccountName LookupAccountNameW")]
-        public static readonly delegate*<ushort*, ushort*, void*, uint*, ushort*, uint*, SID_NAME_USE*, int> LookupAccountName = &LookupAccountNameW;
+        public static delegate*<ushort*, ushort*, void*, uint*, ushort*, uint*, SID_NAME_USE*, int> LookupAccountName => &LookupAccountNameW;
 
         [NativeTypeName("#define LookupAccountNameLocal LookupAccountNameLocalW")]
-        public static readonly delegate*<ushort*, void*, uint*, ushort*, uint*, SID_NAME_USE*, int> LookupAccountNameLocal = &LookupAccountNameLocalW;
+        public static delegate*<ushort*, void*, uint*, ushort*, uint*, SID_NAME_USE*, int> LookupAccountNameLocal => &LookupAccountNameLocalW;
 
         [NativeTypeName("#define LookupAccountSidLocal LookupAccountSidLocalW")]
-        public static readonly delegate*<void*, ushort*, uint*, ushort*, uint*, SID_NAME_USE*, int> LookupAccountSidLocal = &LookupAccountSidLocalW;
+        public static delegate*<void*, ushort*, uint*, ushort*, uint*, SID_NAME_USE*, int> LookupAccountSidLocal => &LookupAccountSidLocalW;
 
         [NativeTypeName("#define LookupPrivilegeValue LookupPrivilegeValueW")]
-        public static readonly delegate*<ushort*, ushort*, LUID*, int> LookupPrivilegeValue = &LookupPrivilegeValueW;
+        public static delegate*<ushort*, ushort*, LUID*, int> LookupPrivilegeValue => &LookupPrivilegeValueW;
 
         [NativeTypeName("#define LookupPrivilegeName LookupPrivilegeNameW")]
-        public static readonly delegate*<ushort*, LUID*, ushort*, uint*, int> LookupPrivilegeName = &LookupPrivilegeNameW;
+        public static delegate*<ushort*, LUID*, ushort*, uint*, int> LookupPrivilegeName => &LookupPrivilegeNameW;
 
         [NativeTypeName("#define LookupPrivilegeDisplayName LookupPrivilegeDisplayNameW")]
-        public static readonly delegate*<ushort*, ushort*, ushort*, uint*, uint*, int> LookupPrivilegeDisplayName = &LookupPrivilegeDisplayNameW;
+        public static delegate*<ushort*, ushort*, ushort*, uint*, uint*, int> LookupPrivilegeDisplayName => &LookupPrivilegeDisplayNameW;
 
         [NativeTypeName("#define BuildCommDCB BuildCommDCBW")]
-        public static readonly delegate*<ushort*, DCB*, int> BuildCommDCB = &BuildCommDCBW;
+        public static delegate*<ushort*, DCB*, int> BuildCommDCB => &BuildCommDCBW;
 
         [NativeTypeName("#define BuildCommDCBAndTimeouts BuildCommDCBAndTimeoutsW")]
-        public static readonly delegate*<ushort*, DCB*, COMMTIMEOUTS*, int> BuildCommDCBAndTimeouts = &BuildCommDCBAndTimeoutsW;
+        public static delegate*<ushort*, DCB*, COMMTIMEOUTS*, int> BuildCommDCBAndTimeouts => &BuildCommDCBAndTimeoutsW;
 
         [NativeTypeName("#define CommConfigDialog CommConfigDialogW")]
-        public static readonly delegate*<ushort*, IntPtr, COMMCONFIG*, int> CommConfigDialog = &CommConfigDialogW;
+        public static delegate*<ushort*, IntPtr, COMMCONFIG*, int> CommConfigDialog => &CommConfigDialogW;
 
         [NativeTypeName("#define GetDefaultCommConfig GetDefaultCommConfigW")]
-        public static readonly delegate*<ushort*, COMMCONFIG*, uint*, int> GetDefaultCommConfig = &GetDefaultCommConfigW;
+        public static delegate*<ushort*, COMMCONFIG*, uint*, int> GetDefaultCommConfig => &GetDefaultCommConfigW;
 
         [NativeTypeName("#define SetDefaultCommConfig SetDefaultCommConfigW")]
-        public static readonly delegate*<ushort*, COMMCONFIG*, uint, int> SetDefaultCommConfig = &SetDefaultCommConfigW;
+        public static delegate*<ushort*, COMMCONFIG*, uint, int> SetDefaultCommConfig => &SetDefaultCommConfigW;
 
         [NativeTypeName("#define MAX_COMPUTERNAME_LENGTH 15")]
         public const int MAX_COMPUTERNAME_LENGTH = 15;
 
         [NativeTypeName("#define GetComputerName GetComputerNameW")]
-        public static readonly delegate*<ushort*, uint*, int> GetComputerName = &GetComputerNameW;
+        public static delegate*<ushort*, uint*, int> GetComputerName => &GetComputerNameW;
 
         [NativeTypeName("#define DnsHostnameToComputerName DnsHostnameToComputerNameW")]
-        public static readonly delegate*<ushort*, ushort*, uint*, int> DnsHostnameToComputerName = &DnsHostnameToComputerNameW;
+        public static delegate*<ushort*, ushort*, uint*, int> DnsHostnameToComputerName => &DnsHostnameToComputerNameW;
 
         [NativeTypeName("#define GetUserName GetUserNameW")]
-        public static readonly delegate*<ushort*, uint*, int> GetUserName = &GetUserNameW;
+        public static delegate*<ushort*, uint*, int> GetUserName => &GetUserNameW;
 
         [NativeTypeName("#define LOGON32_LOGON_INTERACTIVE 2")]
         public const int LOGON32_LOGON_INTERACTIVE = 2;
@@ -4201,10 +4201,10 @@ namespace TerraFX.Interop
         public const int LOGON32_PROVIDER_VIRTUAL = 4;
 
         [NativeTypeName("#define LogonUser LogonUserW")]
-        public static readonly delegate*<ushort*, ushort*, ushort*, uint, uint, IntPtr*, int> LogonUser = &LogonUserW;
+        public static delegate*<ushort*, ushort*, ushort*, uint, uint, IntPtr*, int> LogonUser => &LogonUserW;
 
         [NativeTypeName("#define LogonUserEx LogonUserExW")]
-        public static readonly delegate*<ushort*, ushort*, ushort*, uint, uint, IntPtr*, void**, void**, uint*, QUOTA_LIMITS*, int> LogonUserEx = &LogonUserExW;
+        public static delegate*<ushort*, ushort*, ushort*, uint, uint, IntPtr*, void**, void**, uint*, QUOTA_LIMITS*, int> LogonUserEx => &LogonUserExW;
 
         [NativeTypeName("#define LOGON_WITH_PROFILE 0x00000001")]
         public const int LOGON_WITH_PROFILE = 0x00000001;
@@ -4216,13 +4216,13 @@ namespace TerraFX.Interop
         public const uint LOGON_ZERO_PASSWORD_BUFFER = 0x80000000;
 
         [NativeTypeName("#define CreatePrivateNamespace CreatePrivateNamespaceW")]
-        public static readonly delegate*<SECURITY_ATTRIBUTES*, void*, ushort*, IntPtr> CreatePrivateNamespace = &CreatePrivateNamespaceW;
+        public static delegate*<SECURITY_ATTRIBUTES*, void*, ushort*, IntPtr> CreatePrivateNamespace => &CreatePrivateNamespaceW;
 
         [NativeTypeName("#define OpenPrivateNamespace OpenPrivateNamespaceW")]
-        public static readonly delegate*<void*, ushort*, IntPtr> OpenPrivateNamespace = &OpenPrivateNamespaceW;
+        public static delegate*<void*, ushort*, IntPtr> OpenPrivateNamespace => &OpenPrivateNamespaceW;
 
         [NativeTypeName("#define CreateBoundaryDescriptor CreateBoundaryDescriptorW")]
-        public static readonly delegate*<ushort*, uint, IntPtr> CreateBoundaryDescriptor = &CreateBoundaryDescriptorW;
+        public static delegate*<ushort*, uint, IntPtr> CreateBoundaryDescriptor => &CreateBoundaryDescriptorW;
 
         [NativeTypeName("#define HW_PROFILE_GUIDLEN 39")]
         public const int HW_PROFILE_GUIDLEN = 39;
@@ -4246,10 +4246,10 @@ namespace TerraFX.Interop
         public const int DOCKINFO_USER_DOCKED = ((0x4) | (0x2));
 
         [NativeTypeName("#define GetCurrentHwProfile GetCurrentHwProfileW")]
-        public static readonly delegate*<HW_PROFILE_INFOW*, int> GetCurrentHwProfile = &GetCurrentHwProfileW;
+        public static delegate*<HW_PROFILE_INFOW*, int> GetCurrentHwProfile => &GetCurrentHwProfileW;
 
         [NativeTypeName("#define VerifyVersionInfo VerifyVersionInfoW")]
-        public static readonly delegate*<OSVERSIONINFOEXW*, uint, ulong, int> VerifyVersionInfo = &VerifyVersionInfoW;
+        public static delegate*<OSVERSIONINFOEXW*, uint, ulong, int> VerifyVersionInfo => &VerifyVersionInfoW;
 
         [NativeTypeName("#define TC_NORMAL 0")]
         public const int TC_NORMAL = 0;
@@ -4303,19 +4303,19 @@ namespace TerraFX.Interop
         public const uint BATTERY_LIFE_UNKNOWN = 0xFFFFFFFF;
 
         [NativeTypeName("#define CreateJobObject CreateJobObjectW")]
-        public static readonly delegate*<SECURITY_ATTRIBUTES*, ushort*, IntPtr> CreateJobObject = &CreateJobObjectW;
+        public static delegate*<SECURITY_ATTRIBUTES*, ushort*, IntPtr> CreateJobObject => &CreateJobObjectW;
 
         [NativeTypeName("#define OpenJobObject OpenJobObjectW")]
-        public static readonly delegate*<uint, int, ushort*, IntPtr> OpenJobObject = &OpenJobObjectW;
+        public static delegate*<uint, int, ushort*, IntPtr> OpenJobObject => &OpenJobObjectW;
 
         [NativeTypeName("#define FindFirstVolumeMountPoint FindFirstVolumeMountPointW")]
-        public static readonly delegate*<ushort*, ushort*, uint, IntPtr> FindFirstVolumeMountPoint = &FindFirstVolumeMountPointW;
+        public static delegate*<ushort*, ushort*, uint, IntPtr> FindFirstVolumeMountPoint => &FindFirstVolumeMountPointW;
 
         [NativeTypeName("#define FindNextVolumeMountPoint FindNextVolumeMountPointW")]
-        public static readonly delegate*<IntPtr, ushort*, uint, int> FindNextVolumeMountPoint = &FindNextVolumeMountPointW;
+        public static delegate*<IntPtr, ushort*, uint, int> FindNextVolumeMountPoint => &FindNextVolumeMountPointW;
 
         [NativeTypeName("#define SetVolumeMountPoint SetVolumeMountPointW")]
-        public static readonly delegate*<ushort*, ushort*, int> SetVolumeMountPoint = &SetVolumeMountPointW;
+        public static delegate*<ushort*, ushort*, int> SetVolumeMountPoint => &SetVolumeMountPointW;
 
         [NativeTypeName("#define ACTCTX_FLAG_PROCESSOR_ARCHITECTURE_VALID (0x00000001)")]
         public const int ACTCTX_FLAG_PROCESSOR_ARCHITECTURE_VALID = (0x00000001);
@@ -4342,7 +4342,7 @@ namespace TerraFX.Interop
         public const int ACTCTX_FLAG_HMODULE_VALID = (0x00000080);
 
         [NativeTypeName("#define CreateActCtx CreateActCtxW")]
-        public static readonly delegate*<ACTCTXW*, IntPtr> CreateActCtx = &CreateActCtxW;
+        public static delegate*<ACTCTXW*, IntPtr> CreateActCtx => &CreateActCtxW;
 
         [NativeTypeName("#define DEACTIVATE_ACTCTX_FLAG_FORCE_EARLY_DEACTIVATION (0x00000001)")]
         public const int DEACTIVATE_ACTCTX_FLAG_FORCE_EARLY_DEACTIVATION = (0x00000001);
@@ -4357,7 +4357,7 @@ namespace TerraFX.Interop
         public const int FIND_ACTCTX_SECTION_KEY_RETURN_ASSEMBLY_METADATA = (0x00000004);
 
         [NativeTypeName("#define FindActCtxSectionString FindActCtxSectionStringW")]
-        public static readonly delegate*<uint, Guid*, uint, ushort*, ACTCTX_SECTION_KEYED_DATA*, int> FindActCtxSectionString = &FindActCtxSectionStringW;
+        public static delegate*<uint, Guid*, uint, ushort*, ACTCTX_SECTION_KEYED_DATA*, int> FindActCtxSectionString => &FindActCtxSectionStringW;
 
         [NativeTypeName("#define ACTIVATION_CONTEXT_BASIC_INFORMATION_DEFINED 1")]
         public const int ACTIVATION_CONTEXT_BASIC_INFORMATION_DEFINED = 1;
@@ -4480,10 +4480,10 @@ namespace TerraFX.Interop
         public const int SYMBOLIC_LINK_FLAG_ALLOW_UNPRIVILEGED_CREATE = (0x2);
 
         [NativeTypeName("#define CreateSymbolicLink CreateSymbolicLinkW")]
-        public static readonly delegate*<ushort*, ushort*, uint, byte> CreateSymbolicLink = &CreateSymbolicLinkW;
+        public static delegate*<ushort*, ushort*, uint, byte> CreateSymbolicLink => &CreateSymbolicLinkW;
 
         [NativeTypeName("#define CreateSymbolicLinkTransacted CreateSymbolicLinkTransactedW")]
-        public static readonly delegate*<ushort*, ushort*, uint, IntPtr, byte> CreateSymbolicLinkTransacted = &CreateSymbolicLinkTransactedW;
+        public static delegate*<ushort*, ushort*, uint, IntPtr, byte> CreateSymbolicLinkTransacted => &CreateSymbolicLinkTransactedW;
 
         [NativeTypeName("#define MICROSOFT_WINBASE_H_DEFINE_INTERLOCKED_CPLUSPLUS_OVERLOADS 0")]
         public const int MICROSOFT_WINBASE_H_DEFINE_INTERLOCKED_CPLUSPLUS_OVERLOADS = 0;

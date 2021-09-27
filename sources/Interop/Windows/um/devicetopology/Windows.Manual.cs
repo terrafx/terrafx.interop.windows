@@ -4,14 +4,55 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
 {
     public static unsafe partial class Windows
     {
-        public static readonly Guid CLSID_DeviceTopology = new Guid(0X1DF639D0, 0X5EC1, 0X47AA, 0X93, 0X79, 0X82, 0X8D, 0XC1, 0XAA, 0X8C, 0X59);
+        public static ref Guid CLSID_DeviceTopology
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xD0, 0x39, 0xF6, 0x1D,
+                    0xC1, 0x5E,
+                    0xAA, 0x47,
+                    0x93,
+                    0x79,
+                    0x82,
+                    0x8D,
+                    0xC1,
+                    0xAA,
+                    0x8C,
+                    0x59
+                };
 
-        public static readonly Guid LIBID_DevTopologyLib = new Guid(0X51B9A01D, 0X8181, 0X4363, 0XB5, 0X9C, 0XE6, 0X78, 0XF4, 0X76, 0XDD, 0X0E);
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref Guid LIBID_DevTopologyLib
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x1D, 0xA0, 0xB9, 0x51,
+                    0x81, 0x81,
+                    0x63, 0x43,
+                    0xB5,
+                    0x9C,
+                    0xE6,
+                    0x78,
+                    0xF4,
+                    0x76,
+                    0xDD,
+                    0x0E
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
     }
 }
