@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -31,6 +32,7 @@ namespace TerraFX.Interop
                     0x40
                 };
 
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
                 return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
             }
         }
@@ -56,6 +58,7 @@ namespace TerraFX.Interop
                     0x01, 0x00, 0x00, 0x00
                 };
 
+                Debug.Assert(data.Length == Unsafe.SizeOf<PROPERTYKEY>());
                 return ref Unsafe.As<byte, PROPERTYKEY>(ref MemoryMarshal.GetReference(data));
             }
         }
@@ -81,6 +84,7 @@ namespace TerraFX.Interop
                     0x02, 0x00, 0x00, 0x00
                 };
 
+                Debug.Assert(data.Length == Unsafe.SizeOf<PROPERTYKEY>());
                 return ref Unsafe.As<byte, PROPERTYKEY>(ref MemoryMarshal.GetReference(data));
             }
         }
@@ -106,6 +110,7 @@ namespace TerraFX.Interop
                     0x01, 0x00, 0x00, 0x00
                 };
 
+                Debug.Assert(data.Length == Unsafe.SizeOf<PROPERTYKEY>());
                 return ref Unsafe.As<byte, PROPERTYKEY>(ref MemoryMarshal.GetReference(data));
             }
         }
@@ -131,6 +136,7 @@ namespace TerraFX.Interop
                     0x01, 0x00, 0x00, 0x00
                 };
 
+                Debug.Assert(data.Length == Unsafe.SizeOf<PROPERTYKEY>());
                 return ref Unsafe.As<byte, PROPERTYKEY>(ref MemoryMarshal.GetReference(data));
             }
         }
@@ -155,6 +161,7 @@ namespace TerraFX.Interop
                     0x3B
                 };
 
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
                 return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
             }
         }
@@ -179,6 +186,7 @@ namespace TerraFX.Interop
                     0xFF
                 };
 
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
                 return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
             }
         }
@@ -203,6 +211,7 @@ namespace TerraFX.Interop
                     0x29
                 };
 
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
                 return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
             }
         }
@@ -227,6 +236,7 @@ namespace TerraFX.Interop
                     0xF8
                 };
 
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
                 return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
             }
         }
@@ -251,6 +261,7 @@ namespace TerraFX.Interop
                     0xBD
                 };
 
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
                 return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
             }
         }
@@ -275,6 +286,7 @@ namespace TerraFX.Interop
                     0xF7
                 };
 
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
                 return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
             }
         }
@@ -299,6 +311,7 @@ namespace TerraFX.Interop
                     0x04
                 };
 
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
                 return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
             }
         }
@@ -323,6 +336,7 @@ namespace TerraFX.Interop
                     0xC2
                 };
 
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
                 return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
             }
         }
@@ -347,6 +361,7 @@ namespace TerraFX.Interop
                     0x18
                 };
 
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
                 return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
             }
         }
@@ -371,6 +386,7 @@ namespace TerraFX.Interop
                     0x4A
                 };
 
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
                 return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
             }
         }
@@ -395,6 +411,7 @@ namespace TerraFX.Interop
                     0xD3
                 };
 
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
                 return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
             }
         }
@@ -419,6 +436,7 @@ namespace TerraFX.Interop
                     0x93
                 };
 
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
                 return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
             }
         }
@@ -443,6 +461,7 @@ namespace TerraFX.Interop
                     0xE2
                 };
 
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
                 return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
             }
         }
@@ -467,6 +486,7 @@ namespace TerraFX.Interop
                     0x80
                 };
 
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
                 return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
             }
         }
@@ -491,6 +511,7 @@ namespace TerraFX.Interop
                     0xA0
                 };
 
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
                 return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
             }
         }
@@ -515,6 +536,7 @@ namespace TerraFX.Interop
                     0xF3
                 };
 
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
                 return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
             }
         }
@@ -539,6 +561,7 @@ namespace TerraFX.Interop
                     0x15
                 };
 
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
                 return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
             }
         }
@@ -563,6 +586,7 @@ namespace TerraFX.Interop
                     0x75
                 };
 
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
                 return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
             }
         }
@@ -587,6 +611,7 @@ namespace TerraFX.Interop
                     0xCE
                 };
 
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
                 return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
             }
         }
@@ -611,6 +636,7 @@ namespace TerraFX.Interop
                     0x83
                 };
 
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
                 return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
             }
         }
@@ -635,6 +661,7 @@ namespace TerraFX.Interop
                     0x0C
                 };
 
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
                 return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
             }
         }
@@ -659,6 +686,7 @@ namespace TerraFX.Interop
                     0x2E
                 };
 
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
                 return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
             }
         }
@@ -683,6 +711,7 @@ namespace TerraFX.Interop
                     0x10
                 };
 
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
                 return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
             }
         }
@@ -707,6 +736,7 @@ namespace TerraFX.Interop
                     0xE8
                 };
 
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
                 return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
             }
         }
@@ -731,6 +761,7 @@ namespace TerraFX.Interop
                     0x53
                 };
 
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
                 return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
             }
         }
@@ -755,6 +786,7 @@ namespace TerraFX.Interop
                     0xDE
                 };
 
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
                 return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
             }
         }
@@ -779,6 +811,7 @@ namespace TerraFX.Interop
                     0xAF
                 };
 
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
                 return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
             }
         }
@@ -803,6 +836,7 @@ namespace TerraFX.Interop
                     0x7A
                 };
 
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
                 return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
             }
         }
@@ -827,6 +861,7 @@ namespace TerraFX.Interop
                     0x07
                 };
 
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
                 return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
             }
         }
@@ -851,6 +886,7 @@ namespace TerraFX.Interop
                     0x86
                 };
 
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
                 return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
             }
         }
@@ -875,6 +911,7 @@ namespace TerraFX.Interop
                     0x4E
                 };
 
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
                 return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
             }
         }
@@ -899,6 +936,7 @@ namespace TerraFX.Interop
                     0x0C
                 };
 
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
                 return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
             }
         }
@@ -923,6 +961,7 @@ namespace TerraFX.Interop
                     0x96
                 };
 
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
                 return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
             }
         }
@@ -947,6 +986,7 @@ namespace TerraFX.Interop
                     0x18
                 };
 
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
                 return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
             }
         }
@@ -971,6 +1011,7 @@ namespace TerraFX.Interop
                     0x74
                 };
 
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
                 return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
             }
         }
@@ -995,6 +1036,7 @@ namespace TerraFX.Interop
                     0xE3
                 };
 
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
                 return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
             }
         }
@@ -1019,6 +1061,7 @@ namespace TerraFX.Interop
                     0xA4
                 };
 
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
                 return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
             }
         }
@@ -1043,6 +1086,7 @@ namespace TerraFX.Interop
                     0x12
                 };
 
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
                 return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
             }
         }
@@ -1067,6 +1111,7 @@ namespace TerraFX.Interop
                     0x9D
                 };
 
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
                 return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
             }
         }
@@ -1091,6 +1136,7 @@ namespace TerraFX.Interop
                     0x79
                 };
 
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
                 return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
             }
         }
@@ -1115,6 +1161,7 @@ namespace TerraFX.Interop
                     0x5F
                 };
 
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
                 return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
             }
         }
@@ -1139,6 +1186,7 @@ namespace TerraFX.Interop
                     0xE4
                 };
 
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
                 return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
             }
         }
@@ -1163,6 +1211,7 @@ namespace TerraFX.Interop
                     0x8E
                 };
 
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
                 return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
             }
         }
@@ -1187,6 +1236,7 @@ namespace TerraFX.Interop
                     0xD3
                 };
 
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
                 return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
             }
         }
@@ -1211,6 +1261,7 @@ namespace TerraFX.Interop
                     0x8B
                 };
 
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
                 return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
             }
         }
@@ -1239,6 +1290,7 @@ namespace TerraFX.Interop
                     0xC4
                 };
 
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
                 return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
             }
         }
@@ -1263,6 +1315,7 @@ namespace TerraFX.Interop
                     0x18
                 };
 
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
                 return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
             }
         }
@@ -1287,6 +1340,7 @@ namespace TerraFX.Interop
                     0x6C
                 };
 
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
                 return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
             }
         }
@@ -1318,6 +1372,7 @@ namespace TerraFX.Interop
                     0x4D
                 };
 
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
                 return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
             }
         }
@@ -1340,6 +1395,7 @@ namespace TerraFX.Interop
                     0x32
                 };
 
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
                 return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
             }
         }
@@ -1362,6 +1418,7 @@ namespace TerraFX.Interop
                     0x11
                 };
 
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
                 return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
             }
         }

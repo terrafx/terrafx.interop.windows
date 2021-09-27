@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -24,6 +25,7 @@ namespace TerraFX.Interop
                     0x00, 0x00, 0x00, 0x00
                 };
 
+                Debug.Assert(data.Length == (Unsafe.SizeOf<X3DAUDIO_DISTANCE_CURVE_POINT>() * 2));
                 return MemoryMarshal.CreateReadOnlySpan<X3DAUDIO_DISTANCE_CURVE_POINT>(ref Unsafe.As<byte, X3DAUDIO_DISTANCE_CURVE_POINT>(ref MemoryMarshal.GetReference(data)), 2);
             }
         }
@@ -45,6 +47,7 @@ namespace TerraFX.Interop
                     0x00, 0x00, 0x80, 0x3F
                 };
 
+                Debug.Assert(data.Length == Unsafe.SizeOf<X3DAUDIO_CONE>());
                 return ref Unsafe.As<byte, X3DAUDIO_CONE>(ref MemoryMarshal.GetReference(data));
             }
         }

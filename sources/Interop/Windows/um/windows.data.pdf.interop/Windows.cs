@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -28,6 +29,7 @@ namespace TerraFX.Interop
                     0x00, 0x00, 0x00, 0x00
                 };
 
+                Debug.Assert(data.Length == Unsafe.SizeOf<D2D_RECT_F>());
                 return ref Unsafe.As<byte, D2D_RECT_F>(ref MemoryMarshal.GetReference(data));
             }
         }
@@ -45,6 +47,7 @@ namespace TerraFX.Interop
                     0x00, 0x00, 0x80, 0x3F
                 };
 
+                Debug.Assert(data.Length == Unsafe.SizeOf<DXGI_RGBA>());
                 return ref Unsafe.As<byte, DXGI_RGBA>(ref MemoryMarshal.GetReference(data));
             }
         }
@@ -67,6 +70,7 @@ namespace TerraFX.Interop
                     0x4A
                 };
 
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
                 return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
             }
         }
