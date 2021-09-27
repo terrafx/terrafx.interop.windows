@@ -14,6 +14,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const GUID")]
         public static ref readonly Guid GUID_MetadataFormatUnknown
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -37,6 +38,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const GUID")]
         public static ref readonly Guid GUID_MetadataFormatIfd
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -60,6 +62,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const GUID")]
         public static ref readonly Guid GUID_MetadataFormatSubIfd
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -83,6 +86,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const GUID")]
         public static ref readonly Guid GUID_MetadataFormatExif
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -106,6 +110,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const GUID")]
         public static ref readonly Guid GUID_MetadataFormatGps
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -129,6 +134,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const GUID")]
         public static ref readonly Guid GUID_MetadataFormatInterop
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -152,6 +158,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const GUID")]
         public static ref readonly Guid GUID_MetadataFormatApp0
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -175,6 +182,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const GUID")]
         public static ref readonly Guid GUID_MetadataFormatApp1
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -198,6 +206,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const GUID")]
         public static ref readonly Guid GUID_MetadataFormatApp13
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -221,6 +230,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const GUID")]
         public static ref readonly Guid GUID_MetadataFormatIPTC
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -244,6 +254,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const GUID")]
         public static ref readonly Guid GUID_MetadataFormatIRB
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -267,6 +278,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const GUID")]
         public static ref readonly Guid GUID_MetadataFormat8BIMIPTC
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -290,6 +302,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const GUID")]
         public static ref readonly Guid GUID_MetadataFormat8BIMResolutionInfo
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -313,6 +326,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const GUID")]
         public static ref readonly Guid GUID_MetadataFormat8BIMIPTCDigest
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -336,6 +350,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const GUID")]
         public static ref readonly Guid GUID_MetadataFormatXMP
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -359,6 +374,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const GUID")]
         public static ref readonly Guid GUID_MetadataFormatThumbnail
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -382,6 +398,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const GUID")]
         public static ref readonly Guid GUID_MetadataFormatChunktEXt
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -405,6 +422,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const GUID")]
         public static ref readonly Guid GUID_MetadataFormatXMPStruct
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -428,6 +446,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const GUID")]
         public static ref readonly Guid GUID_MetadataFormatXMPBag
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -451,6 +470,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const GUID")]
         public static ref readonly Guid GUID_MetadataFormatXMPSeq
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -474,6 +494,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const GUID")]
         public static ref readonly Guid GUID_MetadataFormatXMPAlt
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -497,6 +518,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const GUID")]
         public static ref readonly Guid GUID_MetadataFormatLSD
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -520,6 +542,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const GUID")]
         public static ref readonly Guid GUID_MetadataFormatIMD
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -543,6 +566,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const GUID")]
         public static ref readonly Guid GUID_MetadataFormatGCE
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -566,6 +590,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const GUID")]
         public static ref readonly Guid GUID_MetadataFormatAPE
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -589,6 +614,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const GUID")]
         public static ref readonly Guid GUID_MetadataFormatJpegChrominance
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -612,6 +638,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const GUID")]
         public static ref readonly Guid GUID_MetadataFormatJpegLuminance
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -635,6 +662,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const GUID")]
         public static ref readonly Guid GUID_MetadataFormatJpegComment
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -658,6 +686,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const GUID")]
         public static ref readonly Guid GUID_MetadataFormatGifComment
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -681,6 +710,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const GUID")]
         public static ref readonly Guid GUID_MetadataFormatChunkgAMA
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -704,6 +734,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const GUID")]
         public static ref readonly Guid GUID_MetadataFormatChunkbKGD
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -727,6 +758,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const GUID")]
         public static ref readonly Guid GUID_MetadataFormatChunkiTXt
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -750,6 +782,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const GUID")]
         public static ref readonly Guid GUID_MetadataFormatChunkcHRM
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -773,6 +806,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const GUID")]
         public static ref readonly Guid GUID_MetadataFormatChunkhIST
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -796,6 +830,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const GUID")]
         public static ref readonly Guid GUID_MetadataFormatChunkiCCP
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -819,6 +854,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const GUID")]
         public static ref readonly Guid GUID_MetadataFormatChunksRGB
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -842,6 +878,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const GUID")]
         public static ref readonly Guid GUID_MetadataFormatChunktIME
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -865,6 +902,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const GUID")]
         public static ref readonly Guid GUID_MetadataFormatDds
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -888,6 +926,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const GUID")]
         public static ref readonly Guid GUID_MetadataFormatHeif
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -911,6 +950,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const GUID")]
         public static ref readonly Guid GUID_MetadataFormatHeifHDR
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -934,6 +974,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const GUID")]
         public static ref readonly Guid GUID_MetadataFormatWebpANIM
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -957,6 +998,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const GUID")]
         public static ref readonly Guid GUID_MetadataFormatWebpANMF
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -980,6 +1022,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const GUID")]
         public static ref readonly Guid CLSID_WICUnknownMetadataReader
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -1003,6 +1046,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const GUID")]
         public static ref readonly Guid CLSID_WICUnknownMetadataWriter
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -1026,6 +1070,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const GUID")]
         public static ref readonly Guid CLSID_WICApp0MetadataWriter
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -1049,6 +1094,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const GUID")]
         public static ref readonly Guid CLSID_WICApp0MetadataReader
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -1072,6 +1118,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const GUID")]
         public static ref readonly Guid CLSID_WICApp1MetadataWriter
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -1095,6 +1142,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const GUID")]
         public static ref readonly Guid CLSID_WICApp1MetadataReader
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -1118,6 +1166,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const GUID")]
         public static ref readonly Guid CLSID_WICApp13MetadataWriter
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -1141,6 +1190,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const GUID")]
         public static ref readonly Guid CLSID_WICApp13MetadataReader
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -1164,6 +1214,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const GUID")]
         public static ref readonly Guid CLSID_WICIfdMetadataReader
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -1187,6 +1238,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const GUID")]
         public static ref readonly Guid CLSID_WICIfdMetadataWriter
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -1210,6 +1262,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const GUID")]
         public static ref readonly Guid CLSID_WICSubIfdMetadataReader
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -1233,6 +1286,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const GUID")]
         public static ref readonly Guid CLSID_WICSubIfdMetadataWriter
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -1256,6 +1310,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const GUID")]
         public static ref readonly Guid CLSID_WICExifMetadataReader
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -1279,6 +1334,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const GUID")]
         public static ref readonly Guid CLSID_WICExifMetadataWriter
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -1302,6 +1358,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const GUID")]
         public static ref readonly Guid CLSID_WICGpsMetadataReader
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -1325,6 +1382,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const GUID")]
         public static ref readonly Guid CLSID_WICGpsMetadataWriter
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -1348,6 +1406,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const GUID")]
         public static ref readonly Guid CLSID_WICInteropMetadataReader
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -1371,6 +1430,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const GUID")]
         public static ref readonly Guid CLSID_WICInteropMetadataWriter
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -1394,6 +1454,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const GUID")]
         public static ref readonly Guid CLSID_WICThumbnailMetadataReader
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -1417,6 +1478,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const GUID")]
         public static ref readonly Guid CLSID_WICThumbnailMetadataWriter
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -1440,6 +1502,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const GUID")]
         public static ref readonly Guid CLSID_WICIPTCMetadataReader
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -1463,6 +1526,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const GUID")]
         public static ref readonly Guid CLSID_WICIPTCMetadataWriter
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -1486,6 +1550,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const GUID")]
         public static ref readonly Guid CLSID_WICIRBMetadataReader
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -1509,6 +1574,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const GUID")]
         public static ref readonly Guid CLSID_WICIRBMetadataWriter
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -1532,6 +1598,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const GUID")]
         public static ref readonly Guid CLSID_WIC8BIMIPTCMetadataReader
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -1555,6 +1622,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const GUID")]
         public static ref readonly Guid CLSID_WIC8BIMIPTCMetadataWriter
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -1578,6 +1646,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const GUID")]
         public static ref readonly Guid CLSID_WIC8BIMResolutionInfoMetadataReader
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -1601,6 +1670,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const GUID")]
         public static ref readonly Guid CLSID_WIC8BIMResolutionInfoMetadataWriter
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -1624,6 +1694,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const GUID")]
         public static ref readonly Guid CLSID_WIC8BIMIPTCDigestMetadataReader
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -1647,6 +1718,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const GUID")]
         public static ref readonly Guid CLSID_WIC8BIMIPTCDigestMetadataWriter
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -1670,6 +1742,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const GUID")]
         public static ref readonly Guid CLSID_WICPngTextMetadataReader
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -1693,6 +1766,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const GUID")]
         public static ref readonly Guid CLSID_WICPngTextMetadataWriter
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -1716,6 +1790,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const GUID")]
         public static ref readonly Guid CLSID_WICXMPMetadataReader
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -1739,6 +1814,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const GUID")]
         public static ref readonly Guid CLSID_WICXMPMetadataWriter
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -1762,6 +1838,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const GUID")]
         public static ref readonly Guid CLSID_WICXMPStructMetadataReader
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -1785,6 +1862,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const GUID")]
         public static ref readonly Guid CLSID_WICXMPStructMetadataWriter
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -1808,6 +1886,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const GUID")]
         public static ref readonly Guid CLSID_WICXMPBagMetadataReader
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -1831,6 +1910,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const GUID")]
         public static ref readonly Guid CLSID_WICXMPBagMetadataWriter
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -1854,6 +1934,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const GUID")]
         public static ref readonly Guid CLSID_WICXMPSeqMetadataReader
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -1877,6 +1958,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const GUID")]
         public static ref readonly Guid CLSID_WICXMPSeqMetadataWriter
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -1900,6 +1982,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const GUID")]
         public static ref readonly Guid CLSID_WICXMPAltMetadataReader
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -1923,6 +2006,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const GUID")]
         public static ref readonly Guid CLSID_WICXMPAltMetadataWriter
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -1946,6 +2030,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const GUID")]
         public static ref readonly Guid CLSID_WICLSDMetadataReader
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -1969,6 +2054,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const GUID")]
         public static ref readonly Guid CLSID_WICLSDMetadataWriter
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -1992,6 +2078,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const GUID")]
         public static ref readonly Guid CLSID_WICGCEMetadataReader
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -2015,6 +2102,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const GUID")]
         public static ref readonly Guid CLSID_WICGCEMetadataWriter
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -2038,6 +2126,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const GUID")]
         public static ref readonly Guid CLSID_WICIMDMetadataReader
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -2061,6 +2150,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const GUID")]
         public static ref readonly Guid CLSID_WICIMDMetadataWriter
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -2084,6 +2174,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const GUID")]
         public static ref readonly Guid CLSID_WICAPEMetadataReader
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -2107,6 +2198,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const GUID")]
         public static ref readonly Guid CLSID_WICAPEMetadataWriter
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -2130,6 +2222,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const GUID")]
         public static ref readonly Guid CLSID_WICJpegChrominanceMetadataReader
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -2153,6 +2246,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const GUID")]
         public static ref readonly Guid CLSID_WICJpegChrominanceMetadataWriter
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -2176,6 +2270,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const GUID")]
         public static ref readonly Guid CLSID_WICJpegLuminanceMetadataReader
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -2199,6 +2294,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const GUID")]
         public static ref readonly Guid CLSID_WICJpegLuminanceMetadataWriter
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -2222,6 +2318,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const GUID")]
         public static ref readonly Guid CLSID_WICJpegCommentMetadataReader
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -2245,6 +2342,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const GUID")]
         public static ref readonly Guid CLSID_WICJpegCommentMetadataWriter
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -2268,6 +2366,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const GUID")]
         public static ref readonly Guid CLSID_WICGifCommentMetadataReader
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -2291,6 +2390,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const GUID")]
         public static ref readonly Guid CLSID_WICGifCommentMetadataWriter
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -2314,6 +2414,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const GUID")]
         public static ref readonly Guid CLSID_WICPngGamaMetadataReader
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -2337,6 +2438,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const GUID")]
         public static ref readonly Guid CLSID_WICPngGamaMetadataWriter
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -2360,6 +2462,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const GUID")]
         public static ref readonly Guid CLSID_WICPngBkgdMetadataReader
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -2383,6 +2486,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const GUID")]
         public static ref readonly Guid CLSID_WICPngBkgdMetadataWriter
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -2406,6 +2510,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const GUID")]
         public static ref readonly Guid CLSID_WICPngItxtMetadataReader
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -2429,6 +2534,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const GUID")]
         public static ref readonly Guid CLSID_WICPngItxtMetadataWriter
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -2452,6 +2558,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const GUID")]
         public static ref readonly Guid CLSID_WICPngChrmMetadataReader
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -2475,6 +2582,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const GUID")]
         public static ref readonly Guid CLSID_WICPngChrmMetadataWriter
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -2498,6 +2606,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const GUID")]
         public static ref readonly Guid CLSID_WICPngHistMetadataReader
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -2521,6 +2630,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const GUID")]
         public static ref readonly Guid CLSID_WICPngHistMetadataWriter
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -2544,6 +2654,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const GUID")]
         public static ref readonly Guid CLSID_WICPngIccpMetadataReader
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -2567,6 +2678,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const GUID")]
         public static ref readonly Guid CLSID_WICPngIccpMetadataWriter
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -2590,6 +2702,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const GUID")]
         public static ref readonly Guid CLSID_WICPngSrgbMetadataReader
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -2613,6 +2726,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const GUID")]
         public static ref readonly Guid CLSID_WICPngSrgbMetadataWriter
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -2636,6 +2750,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const GUID")]
         public static ref readonly Guid CLSID_WICPngTimeMetadataReader
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -2659,6 +2774,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const GUID")]
         public static ref readonly Guid CLSID_WICPngTimeMetadataWriter
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -2682,6 +2798,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const GUID")]
         public static ref readonly Guid CLSID_WICDdsMetadataReader
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -2705,6 +2822,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const GUID")]
         public static ref readonly Guid CLSID_WICDdsMetadataWriter
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -2728,6 +2846,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const GUID")]
         public static ref readonly Guid CLSID_WICHeifMetadataReader
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -2751,6 +2870,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const GUID")]
         public static ref readonly Guid CLSID_WICHeifMetadataWriter
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -2774,6 +2894,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const GUID")]
         public static ref readonly Guid CLSID_WICHeifHDRMetadataReader
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -2797,6 +2918,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const GUID")]
         public static ref readonly Guid CLSID_WICWebpAnimMetadataReader
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -2820,6 +2942,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const GUID")]
         public static ref readonly Guid CLSID_WICWebpAnmfMetadataReader
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {

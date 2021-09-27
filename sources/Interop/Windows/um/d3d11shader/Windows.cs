@@ -14,6 +14,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const GUID")]
         public static ref readonly Guid IID_ID3D11ShaderReflectionType
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -37,6 +38,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const GUID")]
         public static ref readonly Guid IID_ID3D11ShaderReflectionVariable
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -60,6 +62,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const GUID")]
         public static ref readonly Guid IID_ID3D11ShaderReflectionConstantBuffer
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -83,6 +86,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const GUID")]
         public static ref readonly Guid IID_ID3D11ShaderReflection
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -106,6 +110,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const GUID")]
         public static ref readonly Guid IID_ID3D11LibraryReflection
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -129,6 +134,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const GUID")]
         public static ref readonly Guid IID_ID3D11FunctionReflection
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -152,6 +158,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const GUID")]
         public static ref readonly Guid IID_ID3D11FunctionParameterReflection
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -175,6 +182,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const GUID")]
         public static ref readonly Guid IID_ID3D11Module
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -198,6 +206,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const GUID")]
         public static ref readonly Guid IID_ID3D11ModuleInstance
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -221,6 +230,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const GUID")]
         public static ref readonly Guid IID_ID3D11Linker
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -244,6 +254,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const GUID")]
         public static ref readonly Guid IID_ID3D11LinkingNode
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -267,6 +278,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const GUID")]
         public static ref readonly Guid IID_ID3D11FunctionLinkingGraph
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {

@@ -14,6 +14,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const GUID")]
         public static ref readonly Guid GUID_DEVINTERFACE_HID
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -37,6 +38,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const GUID")]
         public static ref readonly Guid GUID_HID_INTERFACE_NOTIFY
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -60,6 +62,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const GUID")]
         public static ref readonly Guid GUID_HID_INTERFACE_HIDPARSE
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {

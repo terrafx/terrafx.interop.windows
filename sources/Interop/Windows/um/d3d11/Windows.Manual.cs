@@ -15,8 +15,9 @@ namespace TerraFX.Interop
     {
         public const int D3D11_OMAC_SIZE = 16;
 
-        public static ref Guid D3D11_DECODER_PROFILE_MPEG2AND1_VLD
+        public static ref readonly Guid D3D11_DECODER_PROFILE_MPEG2AND1_VLD
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {

@@ -14,6 +14,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const GUID")]
         public static ref readonly Guid IID_ID3D11DeviceContext2
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -37,6 +38,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const GUID")]
         public static ref readonly Guid IID_ID3D11Device2
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {

@@ -15,6 +15,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const PROPERTYKEY")]
         public static ref readonly PROPERTYKEY PKEY_AudioEndpoint_FormFactor
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -39,6 +40,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const PROPERTYKEY")]
         public static ref readonly PROPERTYKEY PKEY_AudioEndpoint_ControlPanelPageProvider
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -63,6 +65,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const PROPERTYKEY")]
         public static ref readonly PROPERTYKEY PKEY_AudioEndpoint_Association
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -87,6 +90,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const PROPERTYKEY")]
         public static ref readonly PROPERTYKEY PKEY_AudioEndpoint_PhysicalSpeakers
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -111,6 +115,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const PROPERTYKEY")]
         public static ref readonly PROPERTYKEY PKEY_AudioEndpoint_GUID
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -135,6 +140,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const PROPERTYKEY")]
         public static ref readonly PROPERTYKEY PKEY_AudioEndpoint_Disable_SysFx
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -159,6 +165,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const PROPERTYKEY")]
         public static ref readonly PROPERTYKEY PKEY_AudioEndpoint_FullRangeSpeakers
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -183,6 +190,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const PROPERTYKEY")]
         public static ref readonly PROPERTYKEY PKEY_AudioEndpoint_Supports_EventDriven_Mode
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -207,6 +215,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const PROPERTYKEY")]
         public static ref readonly PROPERTYKEY PKEY_AudioEndpoint_JackSubType
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -231,6 +240,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const PROPERTYKEY")]
         public static ref readonly PROPERTYKEY PKEY_AudioEndpoint_Default_VolumeInDb
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -255,6 +265,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const PROPERTYKEY")]
         public static ref readonly PROPERTYKEY PKEY_AudioEngine_DeviceFormat
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -279,6 +290,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const PROPERTYKEY")]
         public static ref readonly PROPERTYKEY PKEY_AudioEngine_OEMFormat
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -303,6 +315,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const PROPERTYKEY")]
         public static ref readonly PROPERTYKEY PKEY_AudioEndpointLogo_IconEffects
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -327,6 +340,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const PROPERTYKEY")]
         public static ref readonly PROPERTYKEY PKEY_AudioEndpointLogo_IconPath
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -351,6 +365,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const PROPERTYKEY")]
         public static ref readonly PROPERTYKEY PKEY_AudioEndpointSettings_MenuText
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -375,6 +390,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const PROPERTYKEY")]
         public static ref readonly PROPERTYKEY PKEY_AudioEndpointSettings_LaunchContract
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -399,6 +415,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const GUID")]
         public static ref readonly Guid DEVINTERFACE_AUDIO_RENDER
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -422,6 +439,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const GUID")]
         public static ref readonly Guid DEVINTERFACE_AUDIO_CAPTURE
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -445,6 +463,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const GUID")]
         public static ref readonly Guid DEVINTERFACE_MIDI_OUTPUT
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -468,6 +487,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const GUID")]
         public static ref readonly Guid DEVINTERFACE_MIDI_INPUT
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {

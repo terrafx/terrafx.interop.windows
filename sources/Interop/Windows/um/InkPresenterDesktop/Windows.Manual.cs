@@ -11,8 +11,9 @@ namespace TerraFX.Interop
 {
     public static partial class Windows
     {
-        public static ref Guid LIBID_InkDesktopHostLib
+        public static ref readonly Guid LIBID_InkDesktopHostLib
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {

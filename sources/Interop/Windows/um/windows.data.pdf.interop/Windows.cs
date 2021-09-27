@@ -18,6 +18,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const D2D_RECT_F")]
         public static ref readonly D2D_RECT_F sc_PdfRenderParamsDefaultSrcRect
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -34,6 +35,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const D2D_COLOR_F")]
         public static ref readonly DXGI_RGBA sc_PdfRenderParamsDefaultBkColor
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {

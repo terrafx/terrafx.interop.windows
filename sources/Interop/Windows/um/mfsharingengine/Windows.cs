@@ -14,6 +14,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const IID")]
         public static ref readonly Guid MF_MEDIA_SHARING_ENGINE_DEVICE_NAME
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -37,6 +38,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const IID")]
         public static ref readonly Guid MF_MEDIA_SHARING_ENGINE_DEVICE
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -60,6 +62,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const GUID")]
         public static ref readonly Guid MF_MEDIA_SHARING_ENGINE_INITIAL_SEEK_TIME
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -83,6 +86,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const GUID")]
         public static ref readonly Guid MF_SHUTDOWN_RENDERER_ON_ENGINE_SHUTDOWN
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -106,6 +110,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const GUID")]
         public static ref readonly Guid MF_PREFERRED_SOURCE_URI
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -129,6 +134,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const GUID")]
         public static ref readonly Guid MF_SHARING_ENGINE_SHAREDRENDERER
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -152,6 +158,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const GUID")]
         public static ref readonly Guid MF_SHARING_ENGINE_CALLBACK
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -175,6 +182,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const IID")]
         public static ref readonly Guid CLSID_MFMediaSharingEngineClassFactory
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -198,6 +206,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const IID")]
         public static ref readonly Guid CLSID_MFImageSharingEngineClassFactory
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -221,6 +230,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const IID")]
         public static ref readonly Guid CLSID_PlayToSourceClassFactory
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -244,6 +254,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const IID")]
         public static ref readonly Guid GUID_PlayToService
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -267,6 +278,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const IID")]
         public static ref readonly Guid GUID_NativeDeviceService
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {

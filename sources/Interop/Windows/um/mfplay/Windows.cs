@@ -18,6 +18,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const IID")]
         public static ref readonly Guid MFP_POSITIONTYPE_100NS
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -41,6 +42,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const PROPERTYKEY")]
         public static ref readonly PROPERTYKEY MFP_PKEY_StreamIndex
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -65,6 +67,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const PROPERTYKEY")]
         public static ref readonly PROPERTYKEY MFP_PKEY_StreamRenderingResults
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {

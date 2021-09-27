@@ -13,8 +13,9 @@ namespace TerraFX.Interop
 {
     public static unsafe partial class Windows
     {
-        public static ref Guid D3D12ComputeOnlyDevices
+        public static ref readonly Guid D3D12ComputeOnlyDevices
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {

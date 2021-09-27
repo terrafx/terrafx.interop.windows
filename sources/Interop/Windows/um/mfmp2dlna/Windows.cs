@@ -14,6 +14,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const IID")]
         public static ref readonly Guid CLSID_MPEG2DLNASink
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -37,6 +38,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const IID")]
         public static ref readonly Guid MF_MP2DLNA_USE_MMCSS
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -60,6 +62,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const IID")]
         public static ref readonly Guid MF_MP2DLNA_VIDEO_BIT_RATE
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -83,6 +86,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const IID")]
         public static ref readonly Guid MF_MP2DLNA_AUDIO_BIT_RATE
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -106,6 +110,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const IID")]
         public static ref readonly Guid MF_MP2DLNA_ENCODE_QUALITY
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -129,6 +134,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const IID")]
         public static ref readonly Guid MF_MP2DLNA_STATISTICS
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {

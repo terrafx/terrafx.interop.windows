@@ -14,6 +14,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const PROPERTYKEY")]
         public static ref readonly PROPERTYKEY MF_CONTENTDECRYPTIONMODULE_INPRIVATESTOREPATH
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -38,6 +39,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const PROPERTYKEY")]
         public static ref readonly PROPERTYKEY MF_CONTENTDECRYPTIONMODULE_STOREPATH
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -62,6 +64,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const PROPERTYKEY")]
         public static ref readonly PROPERTYKEY MF_CONTENTDECRYPTIONMODULE_PMPSTORECONTEXT
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -86,6 +89,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const IID")]
         public static ref readonly Guid MF_CONTENTDECRYPTIONMODULE_SERVICE
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {

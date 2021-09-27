@@ -14,6 +14,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const X3DAUDIO_DISTANCE_CURVE_POINT [2]")]
         public static ReadOnlySpan<X3DAUDIO_DISTANCE_CURVE_POINT> X3DAudioDefault_LinearCurvePoints
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -30,6 +31,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const X3DAUDIO_CONE")]
         public static ref readonly X3DAUDIO_CONE X3DAudioDefault_DirectionalCone
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {

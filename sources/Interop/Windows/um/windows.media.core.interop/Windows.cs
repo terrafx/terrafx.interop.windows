@@ -14,6 +14,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const CLSID")]
         public static ref readonly Guid CLSID_AudioFrameNativeFactory
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -37,6 +38,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const CLSID")]
         public static ref readonly Guid CLSID_VideoFrameNativeFactory
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {

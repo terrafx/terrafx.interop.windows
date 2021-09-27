@@ -19,8 +19,9 @@ namespace TerraFX.Interop
     {
         public const uint DefaultSampleMask = uint.MaxValue;
 
-        public static ref DXGI_SAMPLE_DESC DefaultSampleDesc
+        public static ref readonly DXGI_SAMPLE_DESC DefaultSampleDesc
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {

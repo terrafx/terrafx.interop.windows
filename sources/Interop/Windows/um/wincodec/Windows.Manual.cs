@@ -11,8 +11,9 @@ namespace TerraFX.Interop
 {
     public static unsafe partial class Windows
     {
-        public static ref Guid CLSID_WICImagingFactory
+        public static ref readonly Guid CLSID_WICImagingFactory
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -33,8 +34,9 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref Guid CLSID_WICPngDecoder
+        public static ref readonly Guid CLSID_WICPngDecoder
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
