@@ -4,70 +4,732 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
 {
     public static unsafe partial class Windows
     {
-        public static readonly XAUDIO2FX_REVERB_I3DL2_PARAMETERS XAUDIO2FX_I3DL2_PRESET_DEFAULT = new XAUDIO2FX_REVERB_I3DL2_PARAMETERS { WetDryMix = 100, Room = -10000, RoomHF = 0, RoomRolloffFactor = 0.0f, DecayTime = 1.00f, DecayHFRatio = 0.50f, Reflections = -10000, ReflectionsDelay = 0.020f, Reverb = -10000, ReverbDelay = 0.040f, Diffusion = 100.0f, Density = 100.0f, HFReference = 5000.0f };
+        public static ref XAUDIO2FX_REVERB_I3DL2_PARAMETERS XAUDIO2FX_I3DL2_PRESET_DEFAULT
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x00, 0x00, 0xC8, 0x42,
+                    0xF0, 0xD8, 0xFF, 0xFF,
+                    0x00, 0x00, 0x00, 0x00,
+                    0x00, 0x00, 0x00, 0x00,
+                    0x00, 0x00, 0x80, 0x3F,
+                    0x00, 0x00, 0x00, 0x3F,
+                    0xF0, 0xD8, 0xFF, 0xFF,
+                    0x0A, 0xD7, 0xA3, 0x3C,
+                    0xF0, 0xD8, 0xFF, 0xFF,
+                    0x0A, 0xD7, 0x23, 0x3D,
+                    0x00, 0x00, 0xC8, 0x42,
+                    0x00, 0x00, 0xC8, 0x42,
+                    0x00, 0x40, 0x9C, 0x45
+                };
 
-        public static readonly XAUDIO2FX_REVERB_I3DL2_PARAMETERS XAUDIO2FX_I3DL2_PRESET_GENERIC = new XAUDIO2FX_REVERB_I3DL2_PARAMETERS { WetDryMix = 100, Room = -1000, RoomHF = -100, RoomRolloffFactor = 0.0f, DecayTime = 1.49f, DecayHFRatio = 0.83f, Reflections = -2602, ReflectionsDelay = 0.007f, Reverb = 200, ReverbDelay = 0.011f, Diffusion = 100.0f, Density = 100.0f, HFReference = 5000.0f };
+                return ref Unsafe.As<byte, XAUDIO2FX_REVERB_I3DL2_PARAMETERS>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
-        public static readonly XAUDIO2FX_REVERB_I3DL2_PARAMETERS XAUDIO2FX_I3DL2_PRESET_PADDEDCELL = new XAUDIO2FX_REVERB_I3DL2_PARAMETERS { WetDryMix = 100, Room = -1000, RoomHF = -6000, RoomRolloffFactor = 0.0f, DecayTime = 0.17f, DecayHFRatio = 0.10f, Reflections = -1204, ReflectionsDelay = 0.001f, Reverb = 207, ReverbDelay = 0.002f, Diffusion = 100.0f, Density = 100.0f, HFReference = 5000.0f };
+        public static ref XAUDIO2FX_REVERB_I3DL2_PARAMETERS XAUDIO2FX_I3DL2_PRESET_GENERIC
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x00, 0x00, 0xC8, 0x42,
+                    0x18, 0xFC, 0xFF, 0xFF,
+                    0x9C, 0xFF, 0xFF, 0xFF,
+                    0x00, 0x00, 0x00, 0x00,
+                    0x52, 0xB8, 0xBE, 0x3F,
+                    0xE1, 0x7A, 0x54, 0x3F,
+                    0xD6, 0xF5, 0xFF, 0xFF,
+                    0x42, 0x60, 0xE5, 0x3B,
+                    0xC8, 0x00, 0x00, 0x00,
+                    0x58, 0x39, 0x34, 0x3C,
+                    0x00, 0x00, 0xC8, 0x42,
+                    0x00, 0x00, 0xC8, 0x42,
+                    0x00, 0x40, 0x9C, 0x45
+                };
 
-        public static readonly XAUDIO2FX_REVERB_I3DL2_PARAMETERS XAUDIO2FX_I3DL2_PRESET_ROOM = new XAUDIO2FX_REVERB_I3DL2_PARAMETERS { WetDryMix = 100, Room = -1000, RoomHF = -454, RoomRolloffFactor = 0.0f, DecayTime = 0.40f, DecayHFRatio = 0.83f, Reflections = -1646, ReflectionsDelay = 0.002f, Reverb = 53, ReverbDelay = 0.003f, Diffusion = 100.0f, Density = 100.0f, HFReference = 5000.0f };
+                return ref Unsafe.As<byte, XAUDIO2FX_REVERB_I3DL2_PARAMETERS>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
-        public static readonly XAUDIO2FX_REVERB_I3DL2_PARAMETERS XAUDIO2FX_I3DL2_PRESET_BATHROOM = new XAUDIO2FX_REVERB_I3DL2_PARAMETERS { WetDryMix = 100, Room = -1000, RoomHF = -1200, RoomRolloffFactor = 0.0f, DecayTime = 1.49f, DecayHFRatio = 0.54f, Reflections = -370, ReflectionsDelay = 0.007f, Reverb = 1030, ReverbDelay = 0.011f, Diffusion = 100.0f, Density = 60.0f, HFReference = 5000.0f };
+        public static ref XAUDIO2FX_REVERB_I3DL2_PARAMETERS XAUDIO2FX_I3DL2_PRESET_PADDEDCELL
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x00, 0x00, 0xC8, 0x42,
+                    0x18, 0xFC, 0xFF, 0xFF,
+                    0x90, 0xE8, 0xFF, 0xFF,
+                    0x00, 0x00, 0x00, 0x00,
+                    0x7B, 0x14, 0x2E, 0x3E,
+                    0xCD, 0xCC, 0xCC, 0x3D,
+                    0x4C, 0xFB, 0xFF, 0xFF,
+                    0x6F, 0x12, 0x83, 0x3A,
+                    0xCF, 0x00, 0x00, 0x00,
+                    0x6F, 0x12, 0x03, 0x3B,
+                    0x00, 0x00, 0xC8, 0x42,
+                    0x00, 0x00, 0xC8, 0x42,
+                    0x00, 0x40, 0x9C, 0x45
+                };
 
-        public static readonly XAUDIO2FX_REVERB_I3DL2_PARAMETERS XAUDIO2FX_I3DL2_PRESET_LIVINGROOM = new XAUDIO2FX_REVERB_I3DL2_PARAMETERS { WetDryMix = 100, Room = -1000, RoomHF = -6000, RoomRolloffFactor = 0.0f, DecayTime = 0.50f, DecayHFRatio = 0.10f, Reflections = -1376, ReflectionsDelay = 0.003f, Reverb = -1104, ReverbDelay = 0.004f, Diffusion = 100.0f, Density = 100.0f, HFReference = 5000.0f };
+                return ref Unsafe.As<byte, XAUDIO2FX_REVERB_I3DL2_PARAMETERS>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
-        public static readonly XAUDIO2FX_REVERB_I3DL2_PARAMETERS XAUDIO2FX_I3DL2_PRESET_STONEROOM = new XAUDIO2FX_REVERB_I3DL2_PARAMETERS { WetDryMix = 100, Room = -1000, RoomHF = -300, RoomRolloffFactor = 0.0f, DecayTime = 2.31f, DecayHFRatio = 0.64f, Reflections = -711, ReflectionsDelay = 0.012f, Reverb = 83, ReverbDelay = 0.017f, Diffusion = 100.0f, Density = 100.0f, HFReference = 5000.0f };
+        public static ref XAUDIO2FX_REVERB_I3DL2_PARAMETERS XAUDIO2FX_I3DL2_PRESET_ROOM
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x00, 0x00, 0xC8, 0x42,
+                    0x18, 0xFC, 0xFF, 0xFF,
+                    0x3A, 0xFE, 0xFF, 0xFF,
+                    0x00, 0x00, 0x00, 0x00,
+                    0xCD, 0xCC, 0xCC, 0x3E,
+                    0xE1, 0x7A, 0x54, 0x3F,
+                    0x92, 0xF9, 0xFF, 0xFF,
+                    0x6F, 0x12, 0x03, 0x3B,
+                    0x35, 0x00, 0x00, 0x00,
+                    0xA6, 0x9B, 0x44, 0x3B,
+                    0x00, 0x00, 0xC8, 0x42,
+                    0x00, 0x00, 0xC8, 0x42,
+                    0x00, 0x40, 0x9C, 0x45
+                };
 
-        public static readonly XAUDIO2FX_REVERB_I3DL2_PARAMETERS XAUDIO2FX_I3DL2_PRESET_AUDITORIUM = new XAUDIO2FX_REVERB_I3DL2_PARAMETERS { WetDryMix = 100, Room = -1000, RoomHF = -476, RoomRolloffFactor = 0.0f, DecayTime = 4.32f, DecayHFRatio = 0.59f, Reflections = -789, ReflectionsDelay = 0.020f, Reverb = -289, ReverbDelay = 0.030f, Diffusion = 100.0f, Density = 100.0f, HFReference = 5000.0f };
+                return ref Unsafe.As<byte, XAUDIO2FX_REVERB_I3DL2_PARAMETERS>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
-        public static readonly XAUDIO2FX_REVERB_I3DL2_PARAMETERS XAUDIO2FX_I3DL2_PRESET_CONCERTHALL = new XAUDIO2FX_REVERB_I3DL2_PARAMETERS { WetDryMix = 100, Room = -1000, RoomHF = -500, RoomRolloffFactor = 0.0f, DecayTime = 3.92f, DecayHFRatio = 0.70f, Reflections = -1230, ReflectionsDelay = 0.020f, Reverb = -2, ReverbDelay = 0.029f, Diffusion = 100.0f, Density = 100.0f, HFReference = 5000.0f };
+        public static ref XAUDIO2FX_REVERB_I3DL2_PARAMETERS XAUDIO2FX_I3DL2_PRESET_BATHROOM
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x00, 0x00, 0xC8, 0x42,
+                    0x18, 0xFC, 0xFF, 0xFF,
+                    0x50, 0xFB, 0xFF, 0xFF,
+                    0x00, 0x00, 0x00, 0x00,
+                    0x52, 0xB8, 0xBE, 0x3F,
+                    0x71, 0x3D, 0x0A, 0x3F,
+                    0x8E, 0xFE, 0xFF, 0xFF,
+                    0x42, 0x60, 0xE5, 0x3B,
+                    0x06, 0x04, 0x00, 0x00,
+                    0x58, 0x39, 0x34, 0x3C,
+                    0x00, 0x00, 0xC8, 0x42,
+                    0x00, 0x00, 0x70, 0x42,
+                    0x00, 0x40, 0x9C, 0x45
+                };
 
-        public static readonly XAUDIO2FX_REVERB_I3DL2_PARAMETERS XAUDIO2FX_I3DL2_PRESET_CAVE = new XAUDIO2FX_REVERB_I3DL2_PARAMETERS { WetDryMix = 100, Room = -1000, RoomHF = 0, RoomRolloffFactor = 0.0f, DecayTime = 2.91f, DecayHFRatio = 1.30f, Reflections = -602, ReflectionsDelay = 0.015f, Reverb = -302, ReverbDelay = 0.022f, Diffusion = 100.0f, Density = 100.0f, HFReference = 5000.0f };
+                return ref Unsafe.As<byte, XAUDIO2FX_REVERB_I3DL2_PARAMETERS>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
-        public static readonly XAUDIO2FX_REVERB_I3DL2_PARAMETERS XAUDIO2FX_I3DL2_PRESET_ARENA = new XAUDIO2FX_REVERB_I3DL2_PARAMETERS { WetDryMix = 100, Room = -1000, RoomHF = -698, RoomRolloffFactor = 0.0f, DecayTime = 7.24f, DecayHFRatio = 0.33f, Reflections = -1166, ReflectionsDelay = 0.020f, Reverb = 16, ReverbDelay = 0.030f, Diffusion = 100.0f, Density = 100.0f, HFReference = 5000.0f };
+        public static ref XAUDIO2FX_REVERB_I3DL2_PARAMETERS XAUDIO2FX_I3DL2_PRESET_LIVINGROOM
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x00, 0x00, 0xC8, 0x42,
+                    0x18, 0xFC, 0xFF, 0xFF,
+                    0x90, 0xE8, 0xFF, 0xFF,
+                    0x00, 0x00, 0x00, 0x00,
+                    0x00, 0x00, 0x00, 0x3F,
+                    0xCD, 0xCC, 0xCC, 0x3D,
+                    0xA0, 0xFA, 0xFF, 0xFF,
+                    0xA6, 0x9B, 0x44, 0x3B,
+                    0xB0, 0xFB, 0xFF, 0xFF,
+                    0x6F, 0x12, 0x83, 0x3B,
+                    0x00, 0x00, 0xC8, 0x42,
+                    0x00, 0x00, 0xC8, 0x42,
+                    0x00, 0x40, 0x9C, 0x45
+                };
 
-        public static readonly XAUDIO2FX_REVERB_I3DL2_PARAMETERS XAUDIO2FX_I3DL2_PRESET_HANGAR = new XAUDIO2FX_REVERB_I3DL2_PARAMETERS { WetDryMix = 100, Room = -1000, RoomHF = -1000, RoomRolloffFactor = 0.0f, DecayTime = 10.05f, DecayHFRatio = 0.23f, Reflections = -602, ReflectionsDelay = 0.020f, Reverb = 198, ReverbDelay = 0.030f, Diffusion = 100.0f, Density = 100.0f, HFReference = 5000.0f };
+                return ref Unsafe.As<byte, XAUDIO2FX_REVERB_I3DL2_PARAMETERS>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
-        public static readonly XAUDIO2FX_REVERB_I3DL2_PARAMETERS XAUDIO2FX_I3DL2_PRESET_CARPETEDHALLWAY = new XAUDIO2FX_REVERB_I3DL2_PARAMETERS { WetDryMix = 100, Room = -1000, RoomHF = -4000, RoomRolloffFactor = 0.0f, DecayTime = 0.30f, DecayHFRatio = 0.10f, Reflections = -1831, ReflectionsDelay = 0.002f, Reverb = -1630, ReverbDelay = 0.030f, Diffusion = 100.0f, Density = 100.0f, HFReference = 5000.0f };
+        public static ref XAUDIO2FX_REVERB_I3DL2_PARAMETERS XAUDIO2FX_I3DL2_PRESET_STONEROOM
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x00, 0x00, 0xC8, 0x42,
+                    0x18, 0xFC, 0xFF, 0xFF,
+                    0xD4, 0xFE, 0xFF, 0xFF,
+                    0x00, 0x00, 0x00, 0x00,
+                    0x0A, 0xD7, 0x13, 0x40,
+                    0x0A, 0xD7, 0x23, 0x3F,
+                    0x39, 0xFD, 0xFF, 0xFF,
+                    0xA6, 0x9B, 0x44, 0x3C,
+                    0x53, 0x00, 0x00, 0x00,
+                    0x96, 0x43, 0x8B, 0x3C,
+                    0x00, 0x00, 0xC8, 0x42,
+                    0x00, 0x00, 0xC8, 0x42,
+                    0x00, 0x40, 0x9C, 0x45
+                };
 
-        public static readonly XAUDIO2FX_REVERB_I3DL2_PARAMETERS XAUDIO2FX_I3DL2_PRESET_HALLWAY = new XAUDIO2FX_REVERB_I3DL2_PARAMETERS { WetDryMix = 100, Room = -1000, RoomHF = -300, RoomRolloffFactor = 0.0f, DecayTime = 1.49f, DecayHFRatio = 0.59f, Reflections = -1219, ReflectionsDelay = 0.007f, Reverb = 441, ReverbDelay = 0.011f, Diffusion = 100.0f, Density = 100.0f, HFReference = 5000.0f };
+                return ref Unsafe.As<byte, XAUDIO2FX_REVERB_I3DL2_PARAMETERS>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
-        public static readonly XAUDIO2FX_REVERB_I3DL2_PARAMETERS XAUDIO2FX_I3DL2_PRESET_STONECORRIDOR = new XAUDIO2FX_REVERB_I3DL2_PARAMETERS { WetDryMix = 100, Room = -1000, RoomHF = -237, RoomRolloffFactor = 0.0f, DecayTime = 2.70f, DecayHFRatio = 0.79f, Reflections = -1214, ReflectionsDelay = 0.013f, Reverb = 395, ReverbDelay = 0.020f, Diffusion = 100.0f, Density = 100.0f, HFReference = 5000.0f };
+        public static ref XAUDIO2FX_REVERB_I3DL2_PARAMETERS XAUDIO2FX_I3DL2_PRESET_AUDITORIUM
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x00, 0x00, 0xC8, 0x42,
+                    0x18, 0xFC, 0xFF, 0xFF,
+                    0x24, 0xFE, 0xFF, 0xFF,
+                    0x00, 0x00, 0x00, 0x00,
+                    0x71, 0x3D, 0x8A, 0x40,
+                    0x3D, 0x0A, 0x17, 0x3F,
+                    0xEB, 0xFC, 0xFF, 0xFF,
+                    0x0A, 0xD7, 0xA3, 0x3C,
+                    0xDF, 0xFE, 0xFF, 0xFF,
+                    0x8F, 0xC2, 0xF5, 0x3C,
+                    0x00, 0x00, 0xC8, 0x42,
+                    0x00, 0x00, 0xC8, 0x42,
+                    0x00, 0x40, 0x9C, 0x45
+                };
 
-        public static readonly XAUDIO2FX_REVERB_I3DL2_PARAMETERS XAUDIO2FX_I3DL2_PRESET_ALLEY = new XAUDIO2FX_REVERB_I3DL2_PARAMETERS { WetDryMix = 100, Room = -1000, RoomHF = -270, RoomRolloffFactor = 0.0f, DecayTime = 1.49f, DecayHFRatio = 0.86f, Reflections = -1204, ReflectionsDelay = 0.007f, Reverb = -4, ReverbDelay = 0.011f, Diffusion = 100.0f, Density = 100.0f, HFReference = 5000.0f };
+                return ref Unsafe.As<byte, XAUDIO2FX_REVERB_I3DL2_PARAMETERS>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
-        public static readonly XAUDIO2FX_REVERB_I3DL2_PARAMETERS XAUDIO2FX_I3DL2_PRESET_FOREST = new XAUDIO2FX_REVERB_I3DL2_PARAMETERS { WetDryMix = 100, Room = -1000, RoomHF = -3300, RoomRolloffFactor = 0.0f, DecayTime = 1.49f, DecayHFRatio = 0.54f, Reflections = -2560, ReflectionsDelay = 0.162f, Reverb = -613, ReverbDelay = 0.088f, Diffusion = 79.0f, Density = 100.0f, HFReference = 5000.0f };
+        public static ref XAUDIO2FX_REVERB_I3DL2_PARAMETERS XAUDIO2FX_I3DL2_PRESET_CONCERTHALL
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x00, 0x00, 0xC8, 0x42,
+                    0x18, 0xFC, 0xFF, 0xFF,
+                    0x0C, 0xFE, 0xFF, 0xFF,
+                    0x00, 0x00, 0x00, 0x00,
+                    0x48, 0xE1, 0x7A, 0x40,
+                    0x33, 0x33, 0x33, 0x3F,
+                    0x32, 0xFB, 0xFF, 0xFF,
+                    0x0A, 0xD7, 0xA3, 0x3C,
+                    0xFE, 0xFF, 0xFF, 0xFF,
+                    0x68, 0x91, 0xED, 0x3C,
+                    0x00, 0x00, 0xC8, 0x42,
+                    0x00, 0x00, 0xC8, 0x42,
+                    0x00, 0x40, 0x9C, 0x45
+                };
 
-        public static readonly XAUDIO2FX_REVERB_I3DL2_PARAMETERS XAUDIO2FX_I3DL2_PRESET_CITY = new XAUDIO2FX_REVERB_I3DL2_PARAMETERS { WetDryMix = 100, Room = -1000, RoomHF = -800, RoomRolloffFactor = 0.0f, DecayTime = 1.49f, DecayHFRatio = 0.67f, Reflections = -2273, ReflectionsDelay = 0.007f, Reverb = -2217, ReverbDelay = 0.011f, Diffusion = 50.0f, Density = 100.0f, HFReference = 5000.0f };
+                return ref Unsafe.As<byte, XAUDIO2FX_REVERB_I3DL2_PARAMETERS>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
-        public static readonly XAUDIO2FX_REVERB_I3DL2_PARAMETERS XAUDIO2FX_I3DL2_PRESET_MOUNTAINS = new XAUDIO2FX_REVERB_I3DL2_PARAMETERS { WetDryMix = 100, Room = -1000, RoomHF = -2500, RoomRolloffFactor = 0.0f, DecayTime = 1.49f, DecayHFRatio = 0.21f, Reflections = -2780, ReflectionsDelay = 0.300f, Reverb = -2014, ReverbDelay = 0.100f, Diffusion = 27.0f, Density = 100.0f, HFReference = 5000.0f };
+        public static ref XAUDIO2FX_REVERB_I3DL2_PARAMETERS XAUDIO2FX_I3DL2_PRESET_CAVE
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x00, 0x00, 0xC8, 0x42,
+                    0x18, 0xFC, 0xFF, 0xFF,
+                    0x00, 0x00, 0x00, 0x00,
+                    0x00, 0x00, 0x00, 0x00,
+                    0x71, 0x3D, 0x3A, 0x40,
+                    0x66, 0x66, 0xA6, 0x3F,
+                    0xA6, 0xFD, 0xFF, 0xFF,
+                    0x8F, 0xC2, 0x75, 0x3C,
+                    0xD2, 0xFE, 0xFF, 0xFF,
+                    0x58, 0x39, 0xB4, 0x3C,
+                    0x00, 0x00, 0xC8, 0x42,
+                    0x00, 0x00, 0xC8, 0x42,
+                    0x00, 0x40, 0x9C, 0x45
+                };
 
-        public static readonly XAUDIO2FX_REVERB_I3DL2_PARAMETERS XAUDIO2FX_I3DL2_PRESET_QUARRY = new XAUDIO2FX_REVERB_I3DL2_PARAMETERS { WetDryMix = 100, Room = -1000, RoomHF = -1000, RoomRolloffFactor = 0.0f, DecayTime = 1.49f, DecayHFRatio = 0.83f, Reflections = -10000, ReflectionsDelay = 0.061f, Reverb = 500, ReverbDelay = 0.025f, Diffusion = 100.0f, Density = 100.0f, HFReference = 5000.0f };
+                return ref Unsafe.As<byte, XAUDIO2FX_REVERB_I3DL2_PARAMETERS>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
-        public static readonly XAUDIO2FX_REVERB_I3DL2_PARAMETERS XAUDIO2FX_I3DL2_PRESET_PLAIN = new XAUDIO2FX_REVERB_I3DL2_PARAMETERS { WetDryMix = 100, Room = -1000, RoomHF = -2000, RoomRolloffFactor = 0.0f, DecayTime = 1.49f, DecayHFRatio = 0.50f, Reflections = -2466, ReflectionsDelay = 0.179f, Reverb = -2514, ReverbDelay = 0.100f, Diffusion = 21.0f, Density = 100.0f, HFReference = 5000.0f };
+        public static ref XAUDIO2FX_REVERB_I3DL2_PARAMETERS XAUDIO2FX_I3DL2_PRESET_ARENA
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x00, 0x00, 0xC8, 0x42,
+                    0x18, 0xFC, 0xFF, 0xFF,
+                    0x46, 0xFD, 0xFF, 0xFF,
+                    0x00, 0x00, 0x00, 0x00,
+                    0x14, 0xAE, 0xE7, 0x40,
+                    0xC3, 0xF5, 0xA8, 0x3E,
+                    0x72, 0xFB, 0xFF, 0xFF,
+                    0x0A, 0xD7, 0xA3, 0x3C,
+                    0x10, 0x00, 0x00, 0x00,
+                    0x8F, 0xC2, 0xF5, 0x3C,
+                    0x00, 0x00, 0xC8, 0x42,
+                    0x00, 0x00, 0xC8, 0x42,
+                    0x00, 0x40, 0x9C, 0x45
+                };
 
-        public static readonly XAUDIO2FX_REVERB_I3DL2_PARAMETERS XAUDIO2FX_I3DL2_PRESET_PARKINGLOT = new XAUDIO2FX_REVERB_I3DL2_PARAMETERS { WetDryMix = 100, Room = -1000, RoomHF = 0, RoomRolloffFactor = 0.0f, DecayTime = 1.65f, DecayHFRatio = 1.50f, Reflections = -1363, ReflectionsDelay = 0.008f, Reverb = -1153, ReverbDelay = 0.012f, Diffusion = 100.0f, Density = 100.0f, HFReference = 5000.0f };
+                return ref Unsafe.As<byte, XAUDIO2FX_REVERB_I3DL2_PARAMETERS>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
-        public static readonly XAUDIO2FX_REVERB_I3DL2_PARAMETERS XAUDIO2FX_I3DL2_PRESET_SEWERPIPE = new XAUDIO2FX_REVERB_I3DL2_PARAMETERS { WetDryMix = 100, Room = -1000, RoomHF = -1000, RoomRolloffFactor = 0.0f, DecayTime = 2.81f, DecayHFRatio = 0.14f, Reflections = 429, ReflectionsDelay = 0.014f, Reverb = 648, ReverbDelay = 0.021f, Diffusion = 80.0f, Density = 60.0f, HFReference = 5000.0f };
+        public static ref XAUDIO2FX_REVERB_I3DL2_PARAMETERS XAUDIO2FX_I3DL2_PRESET_HANGAR
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x00, 0x00, 0xC8, 0x42,
+                    0x18, 0xFC, 0xFF, 0xFF,
+                    0x18, 0xFC, 0xFF, 0xFF,
+                    0x00, 0x00, 0x00, 0x00,
+                    0xCD, 0xCC, 0x20, 0x41,
+                    0x1F, 0x85, 0x6B, 0x3E,
+                    0xA6, 0xFD, 0xFF, 0xFF,
+                    0x0A, 0xD7, 0xA3, 0x3C,
+                    0xC6, 0x00, 0x00, 0x00,
+                    0x8F, 0xC2, 0xF5, 0x3C,
+                    0x00, 0x00, 0xC8, 0x42,
+                    0x00, 0x00, 0xC8, 0x42,
+                    0x00, 0x40, 0x9C, 0x45
+                };
 
-        public static readonly XAUDIO2FX_REVERB_I3DL2_PARAMETERS XAUDIO2FX_I3DL2_PRESET_UNDERWATER = new XAUDIO2FX_REVERB_I3DL2_PARAMETERS { WetDryMix = 100, Room = -1000, RoomHF = -4000, RoomRolloffFactor = 0.0f, DecayTime = 1.49f, DecayHFRatio = 0.10f, Reflections = -449, ReflectionsDelay = 0.007f, Reverb = 1700, ReverbDelay = 0.011f, Diffusion = 100.0f, Density = 100.0f, HFReference = 5000.0f };
+                return ref Unsafe.As<byte, XAUDIO2FX_REVERB_I3DL2_PARAMETERS>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
-        public static readonly XAUDIO2FX_REVERB_I3DL2_PARAMETERS XAUDIO2FX_I3DL2_PRESET_SMALLROOM = new XAUDIO2FX_REVERB_I3DL2_PARAMETERS { WetDryMix = 100, Room = -1000, RoomHF = -600, RoomRolloffFactor = 0.0f, DecayTime = 1.10f, DecayHFRatio = 0.83f, Reflections = -400, ReflectionsDelay = 0.005f, Reverb = 500, ReverbDelay = 0.010f, Diffusion = 100.0f, Density = 100.0f, HFReference = 5000.0f };
+        public static ref XAUDIO2FX_REVERB_I3DL2_PARAMETERS XAUDIO2FX_I3DL2_PRESET_CARPETEDHALLWAY
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x00, 0x00, 0xC8, 0x42,
+                    0x18, 0xFC, 0xFF, 0xFF,
+                    0x60, 0xF0, 0xFF, 0xFF,
+                    0x00, 0x00, 0x00, 0x00,
+                    0x9A, 0x99, 0x99, 0x3E,
+                    0xCD, 0xCC, 0xCC, 0x3D,
+                    0xD9, 0xF8, 0xFF, 0xFF,
+                    0x6F, 0x12, 0x03, 0x3B,
+                    0xA2, 0xF9, 0xFF, 0xFF,
+                    0x8F, 0xC2, 0xF5, 0x3C,
+                    0x00, 0x00, 0xC8, 0x42,
+                    0x00, 0x00, 0xC8, 0x42,
+                    0x00, 0x40, 0x9C, 0x45
+                };
 
-        public static readonly XAUDIO2FX_REVERB_I3DL2_PARAMETERS XAUDIO2FX_I3DL2_PRESET_MEDIUMROOM = new XAUDIO2FX_REVERB_I3DL2_PARAMETERS { WetDryMix = 100, Room = -1000, RoomHF = -600, RoomRolloffFactor = 0.0f, DecayTime = 1.30f, DecayHFRatio = 0.83f, Reflections = -1000, ReflectionsDelay = 0.010f, Reverb = -200, ReverbDelay = 0.020f, Diffusion = 100.0f, Density = 100.0f, HFReference = 5000.0f };
+                return ref Unsafe.As<byte, XAUDIO2FX_REVERB_I3DL2_PARAMETERS>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
-        public static readonly XAUDIO2FX_REVERB_I3DL2_PARAMETERS XAUDIO2FX_I3DL2_PRESET_LARGEROOM = new XAUDIO2FX_REVERB_I3DL2_PARAMETERS { WetDryMix = 100, Room = -1000, RoomHF = -600, RoomRolloffFactor = 0.0f, DecayTime = 1.50f, DecayHFRatio = 0.83f, Reflections = -1600, ReflectionsDelay = 0.020f, Reverb = -1000, ReverbDelay = 0.040f, Diffusion = 100.0f, Density = 100.0f, HFReference = 5000.0f };
+        public static ref XAUDIO2FX_REVERB_I3DL2_PARAMETERS XAUDIO2FX_I3DL2_PRESET_HALLWAY
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x00, 0x00, 0xC8, 0x42,
+                    0x18, 0xFC, 0xFF, 0xFF,
+                    0xD4, 0xFE, 0xFF, 0xFF,
+                    0x00, 0x00, 0x00, 0x00,
+                    0x52, 0xB8, 0xBE, 0x3F,
+                    0x3D, 0x0A, 0x17, 0x3F,
+                    0x3D, 0xFB, 0xFF, 0xFF,
+                    0x42, 0x60, 0xE5, 0x3B,
+                    0xB9, 0x01, 0x00, 0x00,
+                    0x58, 0x39, 0x34, 0x3C,
+                    0x00, 0x00, 0xC8, 0x42,
+                    0x00, 0x00, 0xC8, 0x42,
+                    0x00, 0x40, 0x9C, 0x45
+                };
 
-        public static readonly XAUDIO2FX_REVERB_I3DL2_PARAMETERS XAUDIO2FX_I3DL2_PRESET_MEDIUMHALL = new XAUDIO2FX_REVERB_I3DL2_PARAMETERS { WetDryMix = 100, Room = -1000, RoomHF = -600, RoomRolloffFactor = 0.0f, DecayTime = 1.80f, DecayHFRatio = 0.70f, Reflections = -1300, ReflectionsDelay = 0.015f, Reverb = -800, ReverbDelay = 0.030f, Diffusion = 100.0f, Density = 100.0f, HFReference = 5000.0f };
+                return ref Unsafe.As<byte, XAUDIO2FX_REVERB_I3DL2_PARAMETERS>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
-        public static readonly XAUDIO2FX_REVERB_I3DL2_PARAMETERS XAUDIO2FX_I3DL2_PRESET_LARGEHALL = new XAUDIO2FX_REVERB_I3DL2_PARAMETERS { WetDryMix = 100, Room = -1000, RoomHF = -600, RoomRolloffFactor = 0.0f, DecayTime = 1.80f, DecayHFRatio = 0.70f, Reflections = -2000, ReflectionsDelay = 0.030f, Reverb = -1400, ReverbDelay = 0.060f, Diffusion = 100.0f, Density = 100.0f, HFReference = 5000.0f };
+        public static ref XAUDIO2FX_REVERB_I3DL2_PARAMETERS XAUDIO2FX_I3DL2_PRESET_STONECORRIDOR
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x00, 0x00, 0xC8, 0x42,
+                    0x18, 0xFC, 0xFF, 0xFF,
+                    0x13, 0xFF, 0xFF, 0xFF,
+                    0x00, 0x00, 0x00, 0x00,
+                    0xCD, 0xCC, 0x2C, 0x40,
+                    0x71, 0x3D, 0x4A, 0x3F,
+                    0x42, 0xFB, 0xFF, 0xFF,
+                    0xF4, 0xFD, 0x54, 0x3C,
+                    0x8B, 0x01, 0x00, 0x00,
+                    0x0A, 0xD7, 0xA3, 0x3C,
+                    0x00, 0x00, 0xC8, 0x42,
+                    0x00, 0x00, 0xC8, 0x42,
+                    0x00, 0x40, 0x9C, 0x45
+                };
 
-        public static readonly XAUDIO2FX_REVERB_I3DL2_PARAMETERS XAUDIO2FX_I3DL2_PRESET_PLATE = new XAUDIO2FX_REVERB_I3DL2_PARAMETERS { WetDryMix = 100, Room = -1000, RoomHF = -200, RoomRolloffFactor = 0.0f, DecayTime = 1.30f, DecayHFRatio = 0.90f, Reflections = 0, ReflectionsDelay = 0.002f, Reverb = 0, ReverbDelay = 0.010f, Diffusion = 100.0f, Density = 75.0f, HFReference = 5000.0f };
+                return ref Unsafe.As<byte, XAUDIO2FX_REVERB_I3DL2_PARAMETERS>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref XAUDIO2FX_REVERB_I3DL2_PARAMETERS XAUDIO2FX_I3DL2_PRESET_ALLEY
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x00, 0x00, 0xC8, 0x42,
+                    0x18, 0xFC, 0xFF, 0xFF,
+                    0xF2, 0xFE, 0xFF, 0xFF,
+                    0x00, 0x00, 0x00, 0x00,
+                    0x52, 0xB8, 0xBE, 0x3F,
+                    0xF6, 0x28, 0x5C, 0x3F,
+                    0x4C, 0xFB, 0xFF, 0xFF,
+                    0x42, 0x60, 0xE5, 0x3B,
+                    0xFC, 0xFF, 0xFF, 0xFF,
+                    0x58, 0x39, 0x34, 0x3C,
+                    0x00, 0x00, 0xC8, 0x42,
+                    0x00, 0x00, 0xC8, 0x42,
+                    0x00, 0x40, 0x9C, 0x45
+                };
+
+                return ref Unsafe.As<byte, XAUDIO2FX_REVERB_I3DL2_PARAMETERS>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref XAUDIO2FX_REVERB_I3DL2_PARAMETERS XAUDIO2FX_I3DL2_PRESET_FOREST
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x00, 0x00, 0xC8, 0x42,
+                    0x18, 0xFC, 0xFF, 0xFF,
+                    0x1C, 0xF3, 0xFF, 0xFF,
+                    0x00, 0x00, 0x00, 0x00,
+                    0x52, 0xB8, 0xBE, 0x3F,
+                    0x71, 0x3D, 0x0A, 0x3F,
+                    0x00, 0xF6, 0xFF, 0xFF,
+                    0x54, 0xE3, 0x25, 0x3E,
+                    0x9B, 0xFD, 0xFF, 0xFF,
+                    0x58, 0x39, 0xB4, 0x3D,
+                    0x00, 0x00, 0x9E, 0x42,
+                    0x00, 0x00, 0xC8, 0x42,
+                    0x00, 0x40, 0x9C, 0x45
+                };
+
+                return ref Unsafe.As<byte, XAUDIO2FX_REVERB_I3DL2_PARAMETERS>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref XAUDIO2FX_REVERB_I3DL2_PARAMETERS XAUDIO2FX_I3DL2_PRESET_CITY
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x00, 0x00, 0xC8, 0x42,
+                    0x18, 0xFC, 0xFF, 0xFF,
+                    0xE0, 0xFC, 0xFF, 0xFF,
+                    0x00, 0x00, 0x00, 0x00,
+                    0x52, 0xB8, 0xBE, 0x3F,
+                    0x1F, 0x85, 0x2B, 0x3F,
+                    0x1F, 0xF7, 0xFF, 0xFF,
+                    0x42, 0x60, 0xE5, 0x3B,
+                    0x57, 0xF7, 0xFF, 0xFF,
+                    0x58, 0x39, 0x34, 0x3C,
+                    0x00, 0x00, 0x48, 0x42,
+                    0x00, 0x00, 0xC8, 0x42,
+                    0x00, 0x40, 0x9C, 0x45
+                };
+
+                return ref Unsafe.As<byte, XAUDIO2FX_REVERB_I3DL2_PARAMETERS>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref XAUDIO2FX_REVERB_I3DL2_PARAMETERS XAUDIO2FX_I3DL2_PRESET_MOUNTAINS
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x00, 0x00, 0xC8, 0x42,
+                    0x18, 0xFC, 0xFF, 0xFF,
+                    0x3C, 0xF6, 0xFF, 0xFF,
+                    0x00, 0x00, 0x00, 0x00,
+                    0x52, 0xB8, 0xBE, 0x3F,
+                    0x3D, 0x0A, 0x57, 0x3E,
+                    0x24, 0xF5, 0xFF, 0xFF,
+                    0x9A, 0x99, 0x99, 0x3E,
+                    0x22, 0xF8, 0xFF, 0xFF,
+                    0xCD, 0xCC, 0xCC, 0x3D,
+                    0x00, 0x00, 0xD8, 0x41,
+                    0x00, 0x00, 0xC8, 0x42,
+                    0x00, 0x40, 0x9C, 0x45
+                };
+
+                return ref Unsafe.As<byte, XAUDIO2FX_REVERB_I3DL2_PARAMETERS>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref XAUDIO2FX_REVERB_I3DL2_PARAMETERS XAUDIO2FX_I3DL2_PRESET_QUARRY
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x00, 0x00, 0xC8, 0x42,
+                    0x18, 0xFC, 0xFF, 0xFF,
+                    0x18, 0xFC, 0xFF, 0xFF,
+                    0x00, 0x00, 0x00, 0x00,
+                    0x52, 0xB8, 0xBE, 0x3F,
+                    0xE1, 0x7A, 0x54, 0x3F,
+                    0xF0, 0xD8, 0xFF, 0xFF,
+                    0x23, 0xDB, 0x79, 0x3D,
+                    0xF4, 0x01, 0x00, 0x00,
+                    0xCD, 0xCC, 0xCC, 0x3C,
+                    0x00, 0x00, 0xC8, 0x42,
+                    0x00, 0x00, 0xC8, 0x42,
+                    0x00, 0x40, 0x9C, 0x45
+                };
+
+                return ref Unsafe.As<byte, XAUDIO2FX_REVERB_I3DL2_PARAMETERS>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref XAUDIO2FX_REVERB_I3DL2_PARAMETERS XAUDIO2FX_I3DL2_PRESET_PLAIN
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x00, 0x00, 0xC8, 0x42,
+                    0x18, 0xFC, 0xFF, 0xFF,
+                    0x30, 0xF8, 0xFF, 0xFF,
+                    0x00, 0x00, 0x00, 0x00,
+                    0x52, 0xB8, 0xBE, 0x3F,
+                    0x00, 0x00, 0x00, 0x3F,
+                    0x5E, 0xF6, 0xFF, 0xFF,
+                    0xC7, 0x4B, 0x37, 0x3E,
+                    0x2E, 0xF6, 0xFF, 0xFF,
+                    0xCD, 0xCC, 0xCC, 0x3D,
+                    0x00, 0x00, 0xA8, 0x41,
+                    0x00, 0x00, 0xC8, 0x42,
+                    0x00, 0x40, 0x9C, 0x45
+                };
+
+                return ref Unsafe.As<byte, XAUDIO2FX_REVERB_I3DL2_PARAMETERS>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref XAUDIO2FX_REVERB_I3DL2_PARAMETERS XAUDIO2FX_I3DL2_PRESET_PARKINGLOT
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x00, 0x00, 0xC8, 0x42,
+                    0x18, 0xFC, 0xFF, 0xFF,
+                    0x00, 0x00, 0x00, 0x00,
+                    0x00, 0x00, 0x00, 0x00,
+                    0x33, 0x33, 0xD3, 0x3F,
+                    0x00, 0x00, 0xC0, 0x3F,
+                    0xAD, 0xFA, 0xFF, 0xFF,
+                    0x6F, 0x12, 0x03, 0x3C,
+                    0x7F, 0xFB, 0xFF, 0xFF,
+                    0xA6, 0x9B, 0x44, 0x3C,
+                    0x00, 0x00, 0xC8, 0x42,
+                    0x00, 0x00, 0xC8, 0x42,
+                    0x00, 0x40, 0x9C, 0x45
+                };
+
+                return ref Unsafe.As<byte, XAUDIO2FX_REVERB_I3DL2_PARAMETERS>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref XAUDIO2FX_REVERB_I3DL2_PARAMETERS XAUDIO2FX_I3DL2_PRESET_SEWERPIPE
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x00, 0x00, 0xC8, 0x42,
+                    0x18, 0xFC, 0xFF, 0xFF,
+                    0x18, 0xFC, 0xFF, 0xFF,
+                    0x00, 0x00, 0x00, 0x00,
+                    0x0A, 0xD7, 0x33, 0x40,
+                    0x29, 0x5C, 0x0F, 0x3E,
+                    0xAD, 0x01, 0x00, 0x00,
+                    0x42, 0x60, 0x65, 0x3C,
+                    0x88, 0x02, 0x00, 0x00,
+                    0x31, 0x08, 0xAC, 0x3C,
+                    0x00, 0x00, 0xA0, 0x42,
+                    0x00, 0x00, 0x70, 0x42,
+                    0x00, 0x40, 0x9C, 0x45
+                };
+
+                return ref Unsafe.As<byte, XAUDIO2FX_REVERB_I3DL2_PARAMETERS>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref XAUDIO2FX_REVERB_I3DL2_PARAMETERS XAUDIO2FX_I3DL2_PRESET_UNDERWATER
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x00, 0x00, 0xC8, 0x42,
+                    0x18, 0xFC, 0xFF, 0xFF,
+                    0x60, 0xF0, 0xFF, 0xFF,
+                    0x00, 0x00, 0x00, 0x00,
+                    0x52, 0xB8, 0xBE, 0x3F,
+                    0xCD, 0xCC, 0xCC, 0x3D,
+                    0x3F, 0xFE, 0xFF, 0xFF,
+                    0x42, 0x60, 0xE5, 0x3B,
+                    0xA4, 0x06, 0x00, 0x00,
+                    0x58, 0x39, 0x34, 0x3C,
+                    0x00, 0x00, 0xC8, 0x42,
+                    0x00, 0x00, 0xC8, 0x42,
+                    0x00, 0x40, 0x9C, 0x45
+                };
+
+                return ref Unsafe.As<byte, XAUDIO2FX_REVERB_I3DL2_PARAMETERS>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref XAUDIO2FX_REVERB_I3DL2_PARAMETERS XAUDIO2FX_I3DL2_PRESET_SMALLROOM
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x00, 0x00, 0xC8, 0x42,
+                    0x18, 0xFC, 0xFF, 0xFF,
+                    0xA8, 0xFD, 0xFF, 0xFF,
+                    0x00, 0x00, 0x00, 0x00,
+                    0xCD, 0xCC, 0x8C, 0x3F,
+                    0xE1, 0x7A, 0x54, 0x3F,
+                    0x70, 0xFE, 0xFF, 0xFF,
+                    0x0A, 0xD7, 0xA3, 0x3B,
+                    0xF4, 0x01, 0x00, 0x00,
+                    0x0A, 0xD7, 0x23, 0x3C,
+                    0x00, 0x00, 0xC8, 0x42,
+                    0x00, 0x00, 0xC8, 0x42,
+                    0x00, 0x40, 0x9C, 0x45
+                };
+
+                return ref Unsafe.As<byte, XAUDIO2FX_REVERB_I3DL2_PARAMETERS>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref XAUDIO2FX_REVERB_I3DL2_PARAMETERS XAUDIO2FX_I3DL2_PRESET_MEDIUMROOM
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x00, 0x00, 0xC8, 0x42,
+                    0x18, 0xFC, 0xFF, 0xFF,
+                    0xA8, 0xFD, 0xFF, 0xFF,
+                    0x00, 0x00, 0x00, 0x00,
+                    0x66, 0x66, 0xA6, 0x3F,
+                    0xE1, 0x7A, 0x54, 0x3F,
+                    0x18, 0xFC, 0xFF, 0xFF,
+                    0x0A, 0xD7, 0x23, 0x3C,
+                    0x38, 0xFF, 0xFF, 0xFF,
+                    0x0A, 0xD7, 0xA3, 0x3C,
+                    0x00, 0x00, 0xC8, 0x42,
+                    0x00, 0x00, 0xC8, 0x42,
+                    0x00, 0x40, 0x9C, 0x45
+                };
+
+                return ref Unsafe.As<byte, XAUDIO2FX_REVERB_I3DL2_PARAMETERS>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref XAUDIO2FX_REVERB_I3DL2_PARAMETERS XAUDIO2FX_I3DL2_PRESET_LARGEROOM
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x00, 0x00, 0xC8, 0x42,
+                    0x18, 0xFC, 0xFF, 0xFF,
+                    0xA8, 0xFD, 0xFF, 0xFF,
+                    0x00, 0x00, 0x00, 0x00,
+                    0x00, 0x00, 0xC0, 0x3F,
+                    0xE1, 0x7A, 0x54, 0x3F,
+                    0xC0, 0xF9, 0xFF, 0xFF,
+                    0x0A, 0xD7, 0xA3, 0x3C,
+                    0x18, 0xFC, 0xFF, 0xFF,
+                    0x0A, 0xD7, 0x23, 0x3D,
+                    0x00, 0x00, 0xC8, 0x42,
+                    0x00, 0x00, 0xC8, 0x42,
+                    0x00, 0x40, 0x9C, 0x45
+                };
+
+                return ref Unsafe.As<byte, XAUDIO2FX_REVERB_I3DL2_PARAMETERS>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref XAUDIO2FX_REVERB_I3DL2_PARAMETERS XAUDIO2FX_I3DL2_PRESET_MEDIUMHALL
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x00, 0x00, 0xC8, 0x42,
+                    0x18, 0xFC, 0xFF, 0xFF,
+                    0xA8, 0xFD, 0xFF, 0xFF,
+                    0x00, 0x00, 0x00, 0x00,
+                    0x66, 0x66, 0xE6, 0x3F,
+                    0x33, 0x33, 0x33, 0x3F,
+                    0xEC, 0xFA, 0xFF, 0xFF,
+                    0x8F, 0xC2, 0x75, 0x3C,
+                    0xE0, 0xFC, 0xFF, 0xFF,
+                    0x8F, 0xC2, 0xF5, 0x3C,
+                    0x00, 0x00, 0xC8, 0x42,
+                    0x00, 0x00, 0xC8, 0x42,
+                    0x00, 0x40, 0x9C, 0x45
+                };
+
+                return ref Unsafe.As<byte, XAUDIO2FX_REVERB_I3DL2_PARAMETERS>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref XAUDIO2FX_REVERB_I3DL2_PARAMETERS XAUDIO2FX_I3DL2_PRESET_LARGEHALL
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x00, 0x00, 0xC8, 0x42,
+                    0x18, 0xFC, 0xFF, 0xFF,
+                    0xA8, 0xFD, 0xFF, 0xFF,
+                    0x00, 0x00, 0x00, 0x00,
+                    0x66, 0x66, 0xE6, 0x3F,
+                    0x33, 0x33, 0x33, 0x3F,
+                    0x30, 0xF8, 0xFF, 0xFF,
+                    0x8F, 0xC2, 0xF5, 0x3C,
+                    0x88, 0xFA, 0xFF, 0xFF,
+                    0x8F, 0xC2, 0x75, 0x3D,
+                    0x00, 0x00, 0xC8, 0x42,
+                    0x00, 0x00, 0xC8, 0x42,
+                    0x00, 0x40, 0x9C, 0x45
+                };
+
+                return ref Unsafe.As<byte, XAUDIO2FX_REVERB_I3DL2_PARAMETERS>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref XAUDIO2FX_REVERB_I3DL2_PARAMETERS XAUDIO2FX_I3DL2_PRESET_PLATE
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x00, 0x00, 0xC8, 0x42,
+                    0x18, 0xFC, 0xFF, 0xFF,
+                    0x38, 0xFF, 0xFF, 0xFF,
+                    0x00, 0x00, 0x00, 0x00,
+                    0x66, 0x66, 0xA6, 0x3F,
+                    0x66, 0x66, 0x66, 0x3F,
+                    0x00, 0x00, 0x00, 0x00,
+                    0x6F, 0x12, 0x03, 0x3B,
+                    0x00, 0x00, 0x00, 0x00,
+                    0x0A, 0xD7, 0x23, 0x3C,
+                    0x00, 0x00, 0xC8, 0x42,
+                    0x00, 0x00, 0x96, 0x42,
+                    0x00, 0x40, 0x9C, 0x45
+                };
+
+                return ref Unsafe.As<byte, XAUDIO2FX_REVERB_I3DL2_PARAMETERS>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [return: NativeTypeName("HRESULT")]
         public static int XAudio2CreateVolumeMeter([NativeTypeName("IUnknown **")] IUnknown** ppApo, [NativeTypeName("UINT32")] uint Flags = 0)

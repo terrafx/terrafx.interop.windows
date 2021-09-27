@@ -214,33 +214,33 @@ namespace TerraFX.Interop
         public const int COMMON_LVB_SBCSDBCS = 0x0300;
 
         [NativeTypeName("#define FillConsoleOutputCharacter FillConsoleOutputCharacterW")]
-        public static readonly delegate*<IntPtr, ushort, uint, COORD, uint*, int> FillConsoleOutputCharacter = &FillConsoleOutputCharacterW;
+        public static delegate*<IntPtr, ushort, uint, COORD, uint*, int> FillConsoleOutputCharacter => &FillConsoleOutputCharacterW;
 
         [NativeTypeName("#define WriteConsoleOutputCharacter WriteConsoleOutputCharacterW")]
-        public static readonly delegate*<IntPtr, ushort*, uint, COORD, uint*, int> WriteConsoleOutputCharacter = &WriteConsoleOutputCharacterW;
+        public static delegate*<IntPtr, ushort*, uint, COORD, uint*, int> WriteConsoleOutputCharacter => &WriteConsoleOutputCharacterW;
 
         [NativeTypeName("#define ReadConsoleOutputCharacter ReadConsoleOutputCharacterW")]
-        public static readonly delegate*<IntPtr, ushort*, uint, COORD, uint*, int> ReadConsoleOutputCharacter = &ReadConsoleOutputCharacterW;
+        public static delegate*<IntPtr, ushort*, uint, COORD, uint*, int> ReadConsoleOutputCharacter => &ReadConsoleOutputCharacterW;
 
         [NativeTypeName("#define WriteConsoleInput WriteConsoleInputW")]
-        public static readonly delegate*<IntPtr, INPUT_RECORD*, uint, uint*, int> WriteConsoleInput = &WriteConsoleInputW;
+        public static delegate*<IntPtr, INPUT_RECORD*, uint, uint*, int> WriteConsoleInput => &WriteConsoleInputW;
 
         [NativeTypeName("#define ScrollConsoleScreenBuffer ScrollConsoleScreenBufferW")]
-        public static readonly delegate*<IntPtr, SMALL_RECT*, SMALL_RECT*, COORD, CHAR_INFO*, int> ScrollConsoleScreenBuffer = &ScrollConsoleScreenBufferW;
+        public static delegate*<IntPtr, SMALL_RECT*, SMALL_RECT*, COORD, CHAR_INFO*, int> ScrollConsoleScreenBuffer => &ScrollConsoleScreenBufferW;
 
         [NativeTypeName("#define WriteConsoleOutput WriteConsoleOutputW")]
-        public static readonly delegate*<IntPtr, CHAR_INFO*, COORD, COORD, SMALL_RECT*, int> WriteConsoleOutput = &WriteConsoleOutputW;
+        public static delegate*<IntPtr, CHAR_INFO*, COORD, COORD, SMALL_RECT*, int> WriteConsoleOutput => &WriteConsoleOutputW;
 
         [NativeTypeName("#define ReadConsoleOutput ReadConsoleOutputW")]
-        public static readonly delegate*<IntPtr, CHAR_INFO*, COORD, COORD, SMALL_RECT*, int> ReadConsoleOutput = &ReadConsoleOutputW;
+        public static delegate*<IntPtr, CHAR_INFO*, COORD, COORD, SMALL_RECT*, int> ReadConsoleOutput => &ReadConsoleOutputW;
 
         [NativeTypeName("#define GetConsoleTitle GetConsoleTitleW")]
-        public static readonly delegate*<ushort*, uint, uint> GetConsoleTitle = &GetConsoleTitleW;
+        public static delegate*<ushort*, uint, uint> GetConsoleTitle => &GetConsoleTitleW;
 
         [NativeTypeName("#define GetConsoleOriginalTitle GetConsoleOriginalTitleW")]
-        public static readonly delegate*<ushort*, uint, uint> GetConsoleOriginalTitle = &GetConsoleOriginalTitleW;
+        public static delegate*<ushort*, uint, uint> GetConsoleOriginalTitle => &GetConsoleOriginalTitleW;
 
         [NativeTypeName("#define SetConsoleTitle SetConsoleTitleW")]
-        public static readonly delegate*<ushort*, int> SetConsoleTitle = &SetConsoleTitleW;
+        public static delegate*<ushort*, int> SetConsoleTitle => &SetConsoleTitleW;
     }
 }

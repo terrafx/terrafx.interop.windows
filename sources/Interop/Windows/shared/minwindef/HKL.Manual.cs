@@ -9,7 +9,7 @@ namespace TerraFX.Interop
 {
     public unsafe struct HKL : IEquatable<HKL>
     {
-        public static readonly HKL NULL = default;
+        public static HKL NULL => default;
 
         private void* _value;
 

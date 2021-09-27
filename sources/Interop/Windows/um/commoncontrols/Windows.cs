@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
@@ -77,10 +78,70 @@ namespace TerraFX.Interop
         [NativeTypeName("#define ILDI_QUERYACCESS 0x00000008")]
         public const int ILDI_QUERYACCESS = 0x00000008;
 
-        public static readonly Guid IID_IImageList = new Guid(0x46EB5926, 0x582E, 0x4017, 0x9F, 0xDF, 0xE8, 0x99, 0x8D, 0xAA, 0x09, 0x50);
+        public static ref readonly Guid IID_IImageList
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x26, 0x59, 0xEB, 0x46,
+                    0x2E, 0x58,
+                    0x17, 0x40,
+                    0x9F,
+                    0xDF,
+                    0xE8,
+                    0x99,
+                    0x8D,
+                    0xAA,
+                    0x09,
+                    0x50
+                };
 
-        public static readonly Guid IID_IImageList2 = new Guid(0x192B9D83, 0x50FC, 0x457B, 0x90, 0xA0, 0x2B, 0x82, 0xA8, 0xB5, 0xDA, 0xE1);
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
-        public static readonly Guid IID_ImageList = new Guid(0x7C476BA2, 0x02B1, 0x48F4, 0x80, 0x48, 0xB2, 0x46, 0x19, 0xDD, 0xC0, 0x58);
+        public static ref readonly Guid IID_IImageList2
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x83, 0x9D, 0x2B, 0x19,
+                    0xFC, 0x50,
+                    0x7B, 0x45,
+                    0x90,
+                    0xA0,
+                    0x2B,
+                    0x82,
+                    0xA8,
+                    0xB5,
+                    0xDA,
+                    0xE1
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid IID_ImageList
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xA2, 0x6B, 0x47, 0x7C,
+                    0xB1, 0x02,
+                    0xF4, 0x48,
+                    0x80,
+                    0x48,
+                    0xB2,
+                    0x46,
+                    0x19,
+                    0xDD,
+                    0xC0,
+                    0x58
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
     }
 }

@@ -4,13 +4,55 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
 {
     public static partial class Windows
     {
-        public static readonly Guid IID_ID2D1EffectContext1 = new Guid(0x84AB595A, 0xFC81, 0x4546, 0xBA, 0xCD, 0xE8, 0xEF, 0x4D, 0x8A, 0xBE, 0x7A);
+        public static ref readonly Guid IID_ID2D1EffectContext1
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x5A, 0x59, 0xAB, 0x84,
+                    0x81, 0xFC,
+                    0x46, 0x45,
+                    0xBA,
+                    0xCD,
+                    0xE8,
+                    0xEF,
+                    0x4D,
+                    0x8A,
+                    0xBE,
+                    0x7A
+                };
 
-        public static readonly Guid IID_ID2D1EffectContext2 = new Guid(0x577AD2A0, 0x9FC7, 0x4DDA, 0x8B, 0x18, 0xDA, 0xB8, 0x10, 0x14, 0x00, 0x52);
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid IID_ID2D1EffectContext2
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xA0, 0xD2, 0x7A, 0x57,
+                    0xC7, 0x9F,
+                    0xDA, 0x4D,
+                    0x8B,
+                    0x18,
+                    0xDA,
+                    0xB8,
+                    0x10,
+                    0x14,
+                    0x00,
+                    0x52
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
     }
 }

@@ -4,12 +4,33 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
 {
     public static unsafe partial class Windows
     {
-        public static readonly Guid LIBID_PropSysObjects = new Guid(0x2CDA3294, 0x6C4F, 0x4020, 0xB1, 0x61, 0x27, 0xC5, 0x30, 0xC8, 0x1F, 0xA6);
+        public static ref Guid LIBID_PropSysObjects
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x94, 0x32, 0xDA, 0x2C,
+                    0x4F, 0x6C,
+                    0x20, 0x40,
+                    0xB1,
+                    0x61,
+                    0x27,
+                    0xC5,
+                    0x30,
+                    0xC8,
+                    0x1F,
+                    0xA6
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
     }
 }

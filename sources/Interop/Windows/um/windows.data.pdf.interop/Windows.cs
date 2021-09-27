@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
@@ -15,23 +16,57 @@ namespace TerraFX.Interop
         public static extern int PdfCreateRenderer(IDXGIDevice* pDevice, IPdfRendererNative** ppRenderer);
 
         [NativeTypeName("const D2D_RECT_F")]
-        public static readonly D2D_RECT_F sc_PdfRenderParamsDefaultSrcRect = new D2D_RECT_F
+        public static ref readonly D2D_RECT_F sc_PdfRenderParamsDefaultSrcRect
         {
-            left = 0.0f,
-            top = 0.0f,
-            right = 0.0f,
-            bottom = 0.0f,
-        };
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x00, 0x00, 0x00, 0x00,
+                    0x00, 0x00, 0x00, 0x00,
+                    0x00, 0x00, 0x00, 0x00,
+                    0x00, 0x00, 0x00, 0x00
+                };
+
+                return ref Unsafe.As<byte, D2D_RECT_F>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const D2D_COLOR_F")]
-        public static readonly DXGI_RGBA sc_PdfRenderParamsDefaultBkColor = new DXGI_RGBA
+        public static ref readonly DXGI_RGBA sc_PdfRenderParamsDefaultBkColor
         {
-            r = 1.0f,
-            g = 1.0f,
-            b = 1.0f,
-            a = 1.0f,
-        };
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x00, 0x00, 0x80, 0x3F,
+                    0x00, 0x00, 0x80, 0x3F,
+                    0x00, 0x00, 0x80, 0x3F,
+                    0x00, 0x00, 0x80, 0x3F
+                };
 
-        public static readonly Guid IID_IPdfRendererNative = new Guid(0x7D9DCD91, 0xD277, 0x4947, 0x85, 0x27, 0x07, 0xA0, 0xDA, 0xED, 0xA9, 0x4A);
+                return ref Unsafe.As<byte, DXGI_RGBA>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid IID_IPdfRendererNative
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x91, 0xCD, 0x9D, 0x7D,
+                    0x77, 0xD2,
+                    0x47, 0x49,
+                    0x85,
+                    0x27,
+                    0x07,
+                    0xA0,
+                    0xDA,
+                    0xED,
+                    0xA9,
+                    0x4A
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
     }
 }

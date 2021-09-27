@@ -9,7 +9,7 @@ namespace TerraFX.Interop
 {
     public unsafe struct HRGN : IEquatable<HRGN>
     {
-        public static readonly HRGN NULL = default;
+        public static HRGN NULL => default;
 
         private void* _value;
 

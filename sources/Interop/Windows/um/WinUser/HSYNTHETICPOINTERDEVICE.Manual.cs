@@ -9,7 +9,7 @@ namespace TerraFX.Interop
 {
     public unsafe struct HSYNTHETICPOINTERDEVICE : IEquatable<HSYNTHETICPOINTERDEVICE>
     {
-        public static readonly HSYNTHETICPOINTERDEVICE NULL = default;
+        public static HSYNTHETICPOINTERDEVICE NULL => default;
 
         private void* _value;
 

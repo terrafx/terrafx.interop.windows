@@ -193,10 +193,10 @@ namespace TerraFX.Interop
         public const int PI_APPLYPOLICY = 0x00000002;
 
         [NativeTypeName("#define LoadUserProfile LoadUserProfileW")]
-        public static readonly delegate*<IntPtr, PROFILEINFOW*, int> LoadUserProfile = &LoadUserProfileW;
+        public static delegate*<IntPtr, PROFILEINFOW*, int> LoadUserProfile => &LoadUserProfileW;
 
         [NativeTypeName("#define GetProfilesDirectory GetProfilesDirectoryW")]
-        public static readonly delegate*<ushort*, uint*, int> GetProfilesDirectory = &GetProfilesDirectoryW;
+        public static delegate*<ushort*, uint*, int> GetProfilesDirectory => &GetProfilesDirectoryW;
 
         [NativeTypeName("#define PT_TEMPORARY 0x00000001")]
         public const int PT_TEMPORARY = 0x00000001;
@@ -211,19 +211,19 @@ namespace TerraFX.Interop
         public const int PT_ROAMING_PREEXISTING = 0x00000008;
 
         [NativeTypeName("#define DeleteProfile DeleteProfileW")]
-        public static readonly delegate*<ushort*, ushort*, ushort*, int> DeleteProfile = &DeleteProfileW;
+        public static delegate*<ushort*, ushort*, ushort*, int> DeleteProfile => &DeleteProfileW;
 
         [NativeTypeName("#define GetDefaultUserProfileDirectory GetDefaultUserProfileDirectoryW")]
-        public static readonly delegate*<ushort*, uint*, int> GetDefaultUserProfileDirectory = &GetDefaultUserProfileDirectoryW;
+        public static delegate*<ushort*, uint*, int> GetDefaultUserProfileDirectory => &GetDefaultUserProfileDirectoryW;
 
         [NativeTypeName("#define GetAllUsersProfileDirectory GetAllUsersProfileDirectoryW")]
-        public static readonly delegate*<ushort*, uint*, int> GetAllUsersProfileDirectory = &GetAllUsersProfileDirectoryW;
+        public static delegate*<ushort*, uint*, int> GetAllUsersProfileDirectory => &GetAllUsersProfileDirectoryW;
 
         [NativeTypeName("#define GetUserProfileDirectory GetUserProfileDirectoryW")]
-        public static readonly delegate*<IntPtr, ushort*, uint*, int> GetUserProfileDirectory = &GetUserProfileDirectoryW;
+        public static delegate*<IntPtr, ushort*, uint*, int> GetUserProfileDirectory => &GetUserProfileDirectoryW;
 
         [NativeTypeName("#define ExpandEnvironmentStringsForUser ExpandEnvironmentStringsForUserW")]
-        public static readonly delegate*<IntPtr, ushort*, ushort*, uint, int> ExpandEnvironmentStringsForUser = &ExpandEnvironmentStringsForUserW;
+        public static delegate*<IntPtr, ushort*, ushort*, uint, int> ExpandEnvironmentStringsForUser => &ExpandEnvironmentStringsForUserW;
 
         [NativeTypeName("#define RP_FORCE 1")]
         public const int RP_FORCE = 1;
@@ -253,13 +253,13 @@ namespace TerraFX.Interop
         public const int GPO_LIST_FLAG_NO_SECURITYFILTERS = 0x00000008;
 
         [NativeTypeName("#define GetGPOList GetGPOListW")]
-        public static readonly delegate*<IntPtr, ushort*, ushort*, ushort*, uint, GROUP_POLICY_OBJECTW**, int> GetGPOList = &GetGPOListW;
+        public static delegate*<IntPtr, ushort*, ushort*, ushort*, uint, GROUP_POLICY_OBJECTW**, int> GetGPOList => &GetGPOListW;
 
         [NativeTypeName("#define FreeGPOList FreeGPOListW")]
-        public static readonly delegate*<GROUP_POLICY_OBJECTW*, int> FreeGPOList = &FreeGPOListW;
+        public static delegate*<GROUP_POLICY_OBJECTW*, int> FreeGPOList => &FreeGPOListW;
 
         [NativeTypeName("#define GetAppliedGPOList GetAppliedGPOListW")]
-        public static readonly delegate*<uint, ushort*, void*, Guid*, GROUP_POLICY_OBJECTW**, uint> GetAppliedGPOList = &GetAppliedGPOListW;
+        public static delegate*<uint, ushort*, void*, Guid*, GROUP_POLICY_OBJECTW**, uint> GetAppliedGPOList => &GetAppliedGPOListW;
 
         [NativeTypeName("#define GP_DLLNAME TEXT(\"DllName\")")]
         public const string GP_DLLNAME = "DllName";

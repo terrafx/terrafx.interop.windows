@@ -4,19 +4,121 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
 {
     public static partial class Windows
     {
-        public static readonly Guid IID_IShellApp = new Guid(0xA3E14960, 0x935F, 0x11D1, 0xB8, 0xB8, 0x00, 0x60, 0x08, 0x05, 0x93, 0x82);
+        public static ref readonly Guid IID_IShellApp
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x60, 0x49, 0xE1, 0xA3,
+                    0x5F, 0x93,
+                    0xD1, 0x11,
+                    0xB8,
+                    0xB8,
+                    0x00,
+                    0x60,
+                    0x08,
+                    0x05,
+                    0x93,
+                    0x82
+                };
 
-        public static readonly Guid IID_IPublishedApp = new Guid(0x1BC752E0, 0x9046, 0x11D1, 0xB8, 0xB3, 0x00, 0x60, 0x08, 0x05, 0x93, 0x82);
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
-        public static readonly Guid IID_IPublishedApp2 = new Guid(0x12B81347, 0x1B3A, 0x4A04, 0xAA, 0x61, 0x3F, 0x76, 0x8B, 0x67, 0xFD, 0x7E);
+        public static ref readonly Guid IID_IPublishedApp
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xE0, 0x52, 0xC7, 0x1B,
+                    0x46, 0x90,
+                    0xD1, 0x11,
+                    0xB8,
+                    0xB3,
+                    0x00,
+                    0x60,
+                    0x08,
+                    0x05,
+                    0x93,
+                    0x82
+                };
 
-        public static readonly Guid IID_IEnumPublishedApps = new Guid(0x0B124F8C, 0x91F0, 0x11D1, 0xB8, 0xB5, 0x00, 0x60, 0x08, 0x05, 0x93, 0x82);
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
-        public static readonly Guid IID_IAppPublisher = new Guid(0x07250A10, 0x9CF9, 0x11D1, 0x90, 0x76, 0x00, 0x60, 0x08, 0x05, 0x93, 0x82);
+        public static ref readonly Guid IID_IPublishedApp2
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x47, 0x13, 0xB8, 0x12,
+                    0x3A, 0x1B,
+                    0x04, 0x4A,
+                    0xAA,
+                    0x61,
+                    0x3F,
+                    0x76,
+                    0x8B,
+                    0x67,
+                    0xFD,
+                    0x7E
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid IID_IEnumPublishedApps
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x8C, 0x4F, 0x12, 0x0B,
+                    0xF0, 0x91,
+                    0xD1, 0x11,
+                    0xB8,
+                    0xB5,
+                    0x00,
+                    0x60,
+                    0x08,
+                    0x05,
+                    0x93,
+                    0x82
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid IID_IAppPublisher
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x10, 0x0A, 0x25, 0x07,
+                    0xF9, 0x9C,
+                    0xD1, 0x11,
+                    0x90,
+                    0x76,
+                    0x00,
+                    0x60,
+                    0x08,
+                    0x05,
+                    0x93,
+                    0x82
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
     }
 }

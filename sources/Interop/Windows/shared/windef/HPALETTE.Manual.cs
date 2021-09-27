@@ -9,7 +9,7 @@ namespace TerraFX.Interop
 {
     public unsafe struct HPALETTE : IEquatable<HPALETTE>
     {
-        public static readonly HPALETTE NULL = default;
+        public static HPALETTE NULL => default;
 
         private void* _value;
 

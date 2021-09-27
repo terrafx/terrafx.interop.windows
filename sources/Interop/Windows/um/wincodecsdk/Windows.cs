@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
@@ -11,373 +12,2833 @@ namespace TerraFX.Interop
     public static unsafe partial class Windows
     {
         [NativeTypeName("const GUID")]
-        public static readonly Guid GUID_MetadataFormatUnknown = new Guid(0xA45E592F, 0x9078, 0x4A7C, 0xAD, 0xB5, 0x4E, 0xDC, 0x4F, 0xD6, 0x1B, 0x1F);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid GUID_MetadataFormatIfd = new Guid(0x537396C6, 0x2D8A, 0x4BB6, 0x9B, 0xF8, 0x2F, 0x0A, 0x8E, 0x2A, 0x3A, 0xDF);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid GUID_MetadataFormatSubIfd = new Guid(0x58A2E128, 0x2DB9, 0x4E57, 0xBB, 0x14, 0x51, 0x77, 0x89, 0x1E, 0xD3, 0x31);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid GUID_MetadataFormatExif = new Guid(0x1C3C4F9D, 0xB84A, 0x467D, 0x94, 0x93, 0x36, 0xCF, 0xBD, 0x59, 0xEA, 0x57);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid GUID_MetadataFormatGps = new Guid(0x7134AB8A, 0x9351, 0x44AD, 0xAF, 0x62, 0x44, 0x8D, 0xB6, 0xB5, 0x02, 0xEC);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid GUID_MetadataFormatInterop = new Guid(0xED686F8E, 0x681F, 0x4C8B, 0xBD, 0x41, 0xA8, 0xAD, 0xDB, 0xF6, 0xB3, 0xFC);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid GUID_MetadataFormatApp0 = new Guid(0x79007028, 0x268D, 0x45d6, 0xA3, 0xC2, 0x35, 0x4E, 0x6A, 0x50, 0x4B, 0xC9);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid GUID_MetadataFormatApp1 = new Guid(0x8FD3DFC3, 0xF951, 0x492B, 0x81, 0x7F, 0x69, 0xC2, 0xE6, 0xD9, 0xA5, 0xB0);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid GUID_MetadataFormatApp13 = new Guid(0x326556A2, 0xF502, 0x4354, 0x9C, 0xC0, 0x8E, 0x3F, 0x48, 0xEA, 0xF6, 0xB5);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid GUID_MetadataFormatIPTC = new Guid(0x4FAB0914, 0xE129, 0x4087, 0xA1, 0xD1, 0xBC, 0x81, 0x2D, 0x45, 0xA7, 0xB5);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid GUID_MetadataFormatIRB = new Guid(0x16100D66, 0x8570, 0x4BB9, 0xB9, 0x2D, 0xFD, 0xA4, 0xB2, 0x3E, 0xCE, 0x67);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid GUID_MetadataFormat8BIMIPTC = new Guid(0x0010568c, 0x0852, 0x4e6a, 0xb1, 0x91, 0x5c, 0x33, 0xac, 0x5b, 0x04, 0x30);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid GUID_MetadataFormat8BIMResolutionInfo = new Guid(0x739F305D, 0x81DB, 0x43CB, 0xAC, 0x5E, 0x55, 0x01, 0x3E, 0xF9, 0xF0, 0x03);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid GUID_MetadataFormat8BIMIPTCDigest = new Guid(0x1CA32285, 0x9CCD, 0x4786, 0x8B, 0xD8, 0x79, 0x53, 0x9D, 0xB6, 0xA0, 0x06);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid GUID_MetadataFormatXMP = new Guid(0xBB5ACC38, 0xF216, 0x4CEC, 0xA6, 0xC5, 0x5F, 0x6E, 0x73, 0x97, 0x63, 0xA9);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid GUID_MetadataFormatThumbnail = new Guid(0x243dcee9, 0x8703, 0x40ee, 0x8e, 0xf0, 0x22, 0xa6, 0x0, 0xb8, 0x5, 0x8c);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid GUID_MetadataFormatChunktEXt = new Guid(0x568d8936, 0xc0a9, 0x4923, 0x90, 0x5d, 0xdf, 0x2b, 0x38, 0x23, 0x8f, 0xbc);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid GUID_MetadataFormatXMPStruct = new Guid(0x22383CF1, 0xED17, 0x4E2E, 0xAF, 0x17, 0xD8, 0x5B, 0x8F, 0x6B, 0x30, 0xD0);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid GUID_MetadataFormatXMPBag = new Guid(0x833CCA5F, 0xDCB7, 0x4516, 0x80, 0x6F, 0x65, 0x96, 0xAB, 0x26, 0xDC, 0xE4);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid GUID_MetadataFormatXMPSeq = new Guid(0x63E8DF02, 0xEB6C, 0x456C, 0xA2, 0x24, 0xB2, 0x5E, 0x79, 0x4F, 0xD6, 0x48);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid GUID_MetadataFormatXMPAlt = new Guid(0x7B08A675, 0x91AA, 0x481B, 0xA7, 0x98, 0x4D, 0xA9, 0x49, 0x08, 0x61, 0x3B);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid GUID_MetadataFormatLSD = new Guid(0xE256031E, 0x6299, 0x4929, 0xB9, 0x8D, 0x5A, 0xC8, 0x84, 0xAF, 0xBA, 0x92);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid GUID_MetadataFormatIMD = new Guid(0xBD2BB086, 0x4D52, 0x48DD, 0x96, 0x77, 0xDB, 0x48, 0x3E, 0x85, 0xAE, 0x8F);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid GUID_MetadataFormatGCE = new Guid(0x2A25CAD8, 0xDEEB, 0x4C69, 0xA7, 0x88, 0xE, 0xC2, 0x26, 0x6D, 0xCA, 0xFD);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid GUID_MetadataFormatAPE = new Guid(0x2E043DC2, 0xC967, 0x4E05, 0x87, 0x5E, 0x61, 0x8B, 0xF6, 0x7E, 0x85, 0xC3);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid GUID_MetadataFormatJpegChrominance = new Guid(0xF73D0DCF, 0xCEC6, 0x4F85, 0x9B, 0x0E, 0x1C, 0x39, 0x56, 0xB1, 0xBE, 0xF7);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid GUID_MetadataFormatJpegLuminance = new Guid(0x86908007, 0xEDFC, 0x4860, 0x8D, 0x4B, 0x4E, 0xE6, 0xE8, 0x3E, 0x60, 0x58);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid GUID_MetadataFormatJpegComment = new Guid(0x220E5F33, 0xAFD3, 0x474E, 0x9D, 0x31, 0x7D, 0x4F, 0xE7, 0x30, 0xF5, 0x57);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid GUID_MetadataFormatGifComment = new Guid(0xC4B6E0E0, 0xCFB4, 0x4AD3, 0xAB, 0x33, 0x9A, 0xAD, 0x23, 0x55, 0xA3, 0x4A);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid GUID_MetadataFormatChunkgAMA = new Guid(0xF00935A5, 0x1D5D, 0x4CD1, 0x81, 0xB2, 0x93, 0x24, 0xD7, 0xEC, 0xA7, 0x81);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid GUID_MetadataFormatChunkbKGD = new Guid(0xE14D3571, 0x6B47, 0x4DEA, 0xB6, 0xA, 0x87, 0xCE, 0xA, 0x78, 0xDF, 0xB7);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid GUID_MetadataFormatChunkiTXt = new Guid(0xC2BEC729, 0xB68, 0x4B77, 0xAA, 0xE, 0x62, 0x95, 0xA6, 0xAC, 0x18, 0x14);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid GUID_MetadataFormatChunkcHRM = new Guid(0x9DB3655B, 0x2842, 0x44B3, 0x80, 0x67, 0x12, 0xE9, 0xB3, 0x75, 0x55, 0x6A);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid GUID_MetadataFormatChunkhIST = new Guid(0xC59A82DA, 0xDB74, 0x48A4, 0xBD, 0x6A, 0xB6, 0x9C, 0x49, 0x31, 0xEF, 0x95);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid GUID_MetadataFormatChunkiCCP = new Guid(0xEB4349AB, 0xB685, 0x450F, 0x91, 0xB5, 0xE8, 0x2, 0xE8, 0x92, 0x53, 0x6C);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid GUID_MetadataFormatChunksRGB = new Guid(0xC115FD36, 0xCC6F, 0x4E3F, 0x83, 0x63, 0x52, 0x4B, 0x87, 0xC6, 0xB0, 0xD9);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid GUID_MetadataFormatChunktIME = new Guid(0x6B00AE2D, 0xE24B, 0x460A, 0x98, 0xB6, 0x87, 0x8B, 0xD0, 0x30, 0x72, 0xFD);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid GUID_MetadataFormatDds = new Guid(0x4a064603, 0x8c33, 0x4e60, 0x9c, 0x29, 0x13, 0x62, 0x31, 0x70, 0x2d, 0x08);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid GUID_MetadataFormatHeif = new Guid(0x817EF3E1, 0x1288, 0x45F4, 0xA8, 0x52, 0x26, 0x0D, 0x9E, 0x7C, 0xCE, 0x83);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid GUID_MetadataFormatHeifHDR = new Guid(0x568b8d8a, 0x1e65, 0x438c, 0x89, 0x68, 0xd6, 0xe, 0x10, 0x12, 0xbe, 0xb9);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid GUID_MetadataFormatWebpANIM = new Guid(0x6dc4fda6, 0x78e6, 0x4102, 0xae, 0x35, 0xbc, 0xfa, 0x1e, 0xdc, 0xc7, 0x8b);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid GUID_MetadataFormatWebpANMF = new Guid(0x43c105ee, 0xb93b, 0x4abb, 0xb0, 0x3, 0xa0, 0x8c, 0xd, 0x87, 0x4, 0x71);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid CLSID_WICUnknownMetadataReader = new Guid(0x699745c2, 0x5066, 0x4b82, 0xa8, 0xe3, 0xd4, 0x4, 0x78, 0xdb, 0xec, 0x8c);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid CLSID_WICUnknownMetadataWriter = new Guid(0xa09cca86, 0x27ba, 0x4f39, 0x90, 0x53, 0x12, 0x1f, 0xa4, 0xdc, 0x8, 0xfc);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid CLSID_WICApp0MetadataWriter = new Guid(0xF3C633A2, 0x46C8, 0x498e, 0x8F, 0xBB, 0xCC, 0x6F, 0x72, 0x1B, 0xBC, 0xDE);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid CLSID_WICApp0MetadataReader = new Guid(0x43324B33, 0xA78F, 0x480f, 0x91, 0x11, 0x96, 0x38, 0xAA, 0xCC, 0xC8, 0x32);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid CLSID_WICApp1MetadataWriter = new Guid(0xee366069, 0x1832, 0x420f, 0xb3, 0x81, 0x04, 0x79, 0xad, 0x06, 0x6f, 0x19);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid CLSID_WICApp1MetadataReader = new Guid(0xdde33513, 0x774e, 0x4bcd, 0xae, 0x79, 0x02, 0xf4, 0xad, 0xfe, 0x62, 0xfc);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid CLSID_WICApp13MetadataWriter = new Guid(0x7B19A919, 0xA9D6, 0x49E5, 0xBD, 0x45, 0x02, 0xC3, 0x4E, 0x4E, 0x4C, 0xD5);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid CLSID_WICApp13MetadataReader = new Guid(0xAA7E3C50, 0x864C, 0x4604, 0xBC, 0x04, 0x8B, 0x0B, 0x76, 0xE6, 0x37, 0xF6);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid CLSID_WICIfdMetadataReader = new Guid(0x8f914656, 0x9d0a, 0x4eb2, 0x90, 0x19, 0xb, 0xf9, 0x6d, 0x8a, 0x9e, 0xe6);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid CLSID_WICIfdMetadataWriter = new Guid(0xb1ebfc28, 0xc9bd, 0x47a2, 0x8d, 0x33, 0xb9, 0x48, 0x76, 0x97, 0x77, 0xa7);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid CLSID_WICSubIfdMetadataReader = new Guid(0x50D42F09, 0xECD1, 0x4B41, 0xB6, 0x5D, 0xDA, 0x1F, 0xDA, 0xA7, 0x56, 0x63);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid CLSID_WICSubIfdMetadataWriter = new Guid(0x8ADE5386, 0x8E9B, 0x4F4C, 0xAC, 0xF2, 0xF0, 0x00, 0x87, 0x06, 0xB2, 0x38);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid CLSID_WICExifMetadataReader = new Guid(0xd9403860, 0x297f, 0x4a49, 0xbf, 0x9b, 0x77, 0x89, 0x81, 0x50, 0xa4, 0x42);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid CLSID_WICExifMetadataWriter = new Guid(0xc9a14cda, 0xc339, 0x460b, 0x90, 0x78, 0xd4, 0xde, 0xbc, 0xfa, 0xbe, 0x91);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid CLSID_WICGpsMetadataReader = new Guid(0x3697790B, 0x223B, 0x484E, 0x99, 0x25, 0xC4, 0x86, 0x92, 0x18, 0xF1, 0x7A);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid CLSID_WICGpsMetadataWriter = new Guid(0xCB8C13E4, 0x62B5, 0x4C96, 0xA4, 0x8B, 0x6B, 0xA6, 0xAC, 0xE3, 0x9C, 0x76);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid CLSID_WICInteropMetadataReader = new Guid(0xB5C8B898, 0x0074, 0x459F, 0xB7, 0x00, 0x86, 0x0D, 0x46, 0x51, 0xEA, 0x14);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid CLSID_WICInteropMetadataWriter = new Guid(0x122EC645, 0xCD7E, 0x44D8, 0xB1, 0x86, 0x2C, 0x8C, 0x20, 0xC3, 0xB5, 0x0F);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid CLSID_WICThumbnailMetadataReader = new Guid(0xfb012959, 0xf4f6, 0x44d7, 0x9d, 0x9, 0xda, 0xa0, 0x87, 0xa9, 0xdb, 0x57);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid CLSID_WICThumbnailMetadataWriter = new Guid(0xd049b20c, 0x5dd0, 0x44fe, 0xb0, 0xb3, 0x8f, 0x92, 0xc8, 0xe6, 0xd0, 0x80);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid CLSID_WICIPTCMetadataReader = new Guid(0x03012959, 0xf4f6, 0x44d7, 0x9d, 0x9, 0xda, 0xa0, 0x87, 0xa9, 0xdb, 0x57);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid CLSID_WICIPTCMetadataWriter = new Guid(0x1249b20c, 0x5dd0, 0x44fe, 0xb0, 0xb3, 0x8f, 0x92, 0xc8, 0xe6, 0xd0, 0x80);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid CLSID_WICIRBMetadataReader = new Guid(0xD4DCD3D7, 0xB4C2, 0x47D9, 0xA6, 0xBF, 0xB8, 0x9B, 0xA3, 0x96, 0xA4, 0xA3);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid CLSID_WICIRBMetadataWriter = new Guid(0x5C5C1935, 0x0235, 0x4434, 0x80, 0xBC, 0x25, 0x1B, 0xC1, 0xEC, 0x39, 0xC6);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid CLSID_WIC8BIMIPTCMetadataReader = new Guid(0x0010668c, 0x0801, 0x4da6, 0xa4, 0xa4, 0x82, 0x65, 0x22, 0xb6, 0xd2, 0x8f);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid CLSID_WIC8BIMIPTCMetadataWriter = new Guid(0x00108226, 0xee41, 0x44a2, 0x9e, 0x9c, 0x4b, 0xe4, 0xd5, 0xb1, 0xd2, 0xcd);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid CLSID_WIC8BIMResolutionInfoMetadataReader = new Guid(0x5805137A, 0xE348, 0x4F7C, 0xB3, 0xCC, 0x6D, 0xB9, 0x96, 0x5A, 0x05, 0x99);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid CLSID_WIC8BIMResolutionInfoMetadataWriter = new Guid(0x4ff2fe0e, 0xe74a, 0x4b71, 0x98, 0xc4, 0xab, 0x7d, 0xc1, 0x67, 0x7, 0xba);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid CLSID_WIC8BIMIPTCDigestMetadataReader = new Guid(0x02805F1E, 0xD5AA, 0x415b, 0x82, 0xC5, 0x61, 0xC0, 0x33, 0xA9, 0x88, 0xA6);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid CLSID_WIC8BIMIPTCDigestMetadataWriter = new Guid(0x2DB5E62B, 0x0D67, 0x495f, 0x8F, 0x9D, 0xC2, 0xF0, 0x18, 0x86, 0x47, 0xAC);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid CLSID_WICPngTextMetadataReader = new Guid(0x4b59afcc, 0xb8c3, 0x408a, 0xb6, 0x70, 0x89, 0xe5, 0xfa, 0xb6, 0xfd, 0xa7);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid CLSID_WICPngTextMetadataWriter = new Guid(0xb5ebafb9, 0x253e, 0x4a72, 0xa7, 0x44, 0x7, 0x62, 0xd2, 0x68, 0x56, 0x83);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid CLSID_WICXMPMetadataReader = new Guid(0x72B624DF, 0xAE11, 0x4948, 0xA6, 0x5C, 0x35, 0x1E, 0xB0, 0x82, 0x94, 0x19);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid CLSID_WICXMPMetadataWriter = new Guid(0x1765E14E, 0x1BD4, 0x462E, 0xB6, 0xB1, 0x59, 0x0B, 0xF1, 0x26, 0x2A, 0xC6);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid CLSID_WICXMPStructMetadataReader = new Guid(0x01B90D9A, 0x8209, 0x47F7, 0x9C, 0x52, 0xE1, 0x24, 0x4B, 0xF5, 0x0C, 0xED);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid CLSID_WICXMPStructMetadataWriter = new Guid(0x22C21F93, 0x7DDB, 0x411C, 0x9B, 0x17, 0xC5, 0xB7, 0xBD, 0x06, 0x4A, 0xBC);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid CLSID_WICXMPBagMetadataReader = new Guid(0xE7E79A30, 0x4F2C, 0x4FAB, 0x8D, 0x00, 0x39, 0x4F, 0x2D, 0x6B, 0xBE, 0xBE);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid CLSID_WICXMPBagMetadataWriter = new Guid(0xED822C8C, 0xD6BE, 0x4301, 0xA6, 0x31, 0x0E, 0x14, 0x16, 0xBA, 0xD2, 0x8F);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid CLSID_WICXMPSeqMetadataReader = new Guid(0x7F12E753, 0xFC71, 0x43D7, 0xA5, 0x1D, 0x92, 0xF3, 0x59, 0x77, 0xAB, 0xB5);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid CLSID_WICXMPSeqMetadataWriter = new Guid(0x6D68D1DE, 0xD432, 0x4B0F, 0x92, 0x3A, 0x09, 0x11, 0x83, 0xA9, 0xBD, 0xA7);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid CLSID_WICXMPAltMetadataReader = new Guid(0xAA94DCC2, 0xB8B0, 0x4898, 0xB8, 0x35, 0x00, 0x0A, 0xAB, 0xD7, 0x43, 0x93);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid CLSID_WICXMPAltMetadataWriter = new Guid(0x076C2A6C, 0xF78F, 0x4C46, 0xA7, 0x23, 0x35, 0x83, 0xE7, 0x08, 0x76, 0xEA);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid CLSID_WICLSDMetadataReader = new Guid(0x41070793, 0x59E4, 0x479A, 0xA1, 0xF7, 0x95, 0x4A, 0xDC, 0x2E, 0xF5, 0xFC);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid CLSID_WICLSDMetadataWriter = new Guid(0x73C037E7, 0xE5D9, 0x4954, 0x87, 0x6A, 0x6D, 0xA8, 0x1D, 0x6E, 0x57, 0x68);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid CLSID_WICGCEMetadataReader = new Guid(0xB92E345D, 0xF52D, 0x41F3, 0xB5, 0x62, 0x8, 0x1B, 0xC7, 0x72, 0xE3, 0xB9);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid CLSID_WICGCEMetadataWriter = new Guid(0xAF95DC76, 0x16B2, 0x47F4, 0xB3, 0xEA, 0x3C, 0x31, 0x79, 0x66, 0x93, 0xE7);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid CLSID_WICIMDMetadataReader = new Guid(0x7447A267, 0x15, 0x42C8, 0xA8, 0xF1, 0xFB, 0x3B, 0x94, 0xC6, 0x83, 0x61);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid CLSID_WICIMDMetadataWriter = new Guid(0x8C89071F, 0x452E, 0x4E95, 0x96, 0x82, 0x9D, 0x10, 0x24, 0x62, 0x71, 0x72);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid CLSID_WICAPEMetadataReader = new Guid(0x1767B93A, 0xB021, 0x44EA, 0x92, 0xF, 0x86, 0x3C, 0x11, 0xF4, 0xF7, 0x68);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid CLSID_WICAPEMetadataWriter = new Guid(0xBD6EDFCA, 0x2890, 0x482F, 0xB2, 0x33, 0x8D, 0x73, 0x39, 0xA1, 0xCF, 0x8D);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid CLSID_WICJpegChrominanceMetadataReader = new Guid(0x50B1904B, 0xF28F, 0x4574, 0x93, 0xF4, 0x0B, 0xAD, 0xE8, 0x2C, 0x69, 0xE9);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid CLSID_WICJpegChrominanceMetadataWriter = new Guid(0x3FF566F0, 0x6E6B, 0x49D4, 0x96, 0xE6, 0xB7, 0x88, 0x86, 0x69, 0x2C, 0x62);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid CLSID_WICJpegLuminanceMetadataReader = new Guid(0x356F2F88, 0x5A6, 0x4728, 0xB9, 0xA4, 0x1B, 0xFB, 0xCE, 0x04, 0xD8, 0x38);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid CLSID_WICJpegLuminanceMetadataWriter = new Guid(0x1D583ABC, 0x8A0E, 0x4657, 0x99, 0x82, 0xA3, 0x80, 0xCA, 0x58, 0xFB, 0x4B);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid CLSID_WICJpegCommentMetadataReader = new Guid(0x9f66347C, 0x60C4, 0x4C4D, 0xAB, 0x58, 0xD2, 0x35, 0x86, 0x85, 0xf6, 0x07);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid CLSID_WICJpegCommentMetadataWriter = new Guid(0xE573236F, 0x55B1, 0x4EDA, 0x81, 0xEA, 0x9F, 0x65, 0xDB, 0x02, 0x90, 0xD3);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid CLSID_WICGifCommentMetadataReader = new Guid(0x32557D3B, 0x69DC, 0x4F95, 0x83, 0x6E, 0xF5, 0x97, 0x2B, 0x2F, 0x61, 0x59);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid CLSID_WICGifCommentMetadataWriter = new Guid(0xA02797fC, 0xC4AE, 0x418C, 0xAF, 0x95, 0xE6, 0x37, 0xC7, 0xEA, 0xD2, 0xA1);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid CLSID_WICPngGamaMetadataReader = new Guid(0x3692CA39, 0xE082, 0x4350, 0x9E, 0x1F, 0x37, 0x4, 0xCB, 0x8, 0x3C, 0xD5);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid CLSID_WICPngGamaMetadataWriter = new Guid(0xFF036D13, 0x5D4B, 0x46DD, 0xB1, 0xF, 0x10, 0x66, 0x93, 0xD9, 0xFE, 0x4F);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid CLSID_WICPngBkgdMetadataReader = new Guid(0xCE7A4A6, 0x3E8, 0x4A60, 0x9D, 0x15, 0x28, 0x2E, 0xF3, 0x2E, 0xE7, 0xDA);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid CLSID_WICPngBkgdMetadataWriter = new Guid(0x68E3F2FD, 0x31AE, 0x4441, 0xBB, 0x6A, 0xFD, 0x70, 0x47, 0x52, 0x5F, 0x90);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid CLSID_WICPngItxtMetadataReader = new Guid(0xAABFB2FA, 0x3E1E, 0x4A8F, 0x89, 0x77, 0x55, 0x56, 0xFB, 0x94, 0xEA, 0x23);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid CLSID_WICPngItxtMetadataWriter = new Guid(0x31879719, 0xE751, 0x4DF8, 0x98, 0x1D, 0x68, 0xDF, 0xF6, 0x77, 0x4, 0xED);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid CLSID_WICPngChrmMetadataReader = new Guid(0xF90B5F36, 0x367B, 0x402A, 0x9D, 0xD1, 0xBC, 0xF, 0xD5, 0x9D, 0x8F, 0x62);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid CLSID_WICPngChrmMetadataWriter = new Guid(0xE23CE3EB, 0x5608, 0x4E83, 0xBC, 0xEF, 0x27, 0xB1, 0x98, 0x7E, 0x51, 0xD7);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid CLSID_WICPngHistMetadataReader = new Guid(0x877A0BB7, 0xA313, 0x4491, 0x87, 0xB5, 0x2E, 0x6D, 0x5, 0x94, 0xF5, 0x20);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid CLSID_WICPngHistMetadataWriter = new Guid(0x8A03E749, 0x672E, 0x446E, 0xBF, 0x1F, 0x2C, 0x11, 0xD2, 0x33, 0xB6, 0xFF);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid CLSID_WICPngIccpMetadataReader = new Guid(0xF5D3E63B, 0xCB0F, 0x4628, 0xA4, 0x78, 0x6D, 0x82, 0x44, 0xBE, 0x36, 0xB1);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid CLSID_WICPngIccpMetadataWriter = new Guid(0x16671E5F, 0xCE6, 0x4CC4, 0x97, 0x68, 0xE8, 0x9F, 0xE5, 0x1, 0x8A, 0xDE);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid CLSID_WICPngSrgbMetadataReader = new Guid(0xFB40360C, 0x547E, 0x4956, 0xA3, 0xB9, 0xD4, 0x41, 0x88, 0x59, 0xBA, 0x66);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid CLSID_WICPngSrgbMetadataWriter = new Guid(0xA6EE35C6, 0x87EC, 0x47DF, 0x9F, 0x22, 0x1D, 0x5A, 0xAD, 0x84, 0xC, 0x82);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid CLSID_WICPngTimeMetadataReader = new Guid(0xD94EDF02, 0xEFE5, 0x4F0D, 0x85, 0xC8, 0xF5, 0xA6, 0x8B, 0x30, 0x0, 0xB1);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid CLSID_WICPngTimeMetadataWriter = new Guid(0x1AB78400, 0xB5A3, 0x4D91, 0x8A, 0xCE, 0x33, 0xFC, 0xD1, 0x49, 0x9B, 0xE6);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid CLSID_WICDdsMetadataReader = new Guid(0x276c88ca, 0x7533, 0x4a86, 0xb6, 0x76, 0x66, 0xb3, 0x60, 0x80, 0xd4, 0x84);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid CLSID_WICDdsMetadataWriter = new Guid(0xfd688bbd, 0x31ed, 0x4db7, 0xa7, 0x23, 0x93, 0x49, 0x27, 0xd3, 0x83, 0x67);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid CLSID_WICHeifMetadataReader = new Guid(0xACDDFC3F, 0x85EC, 0x41BC, 0xBD, 0xEF, 0x1B, 0xC2, 0x62, 0xE4, 0xDB, 0x05);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid CLSID_WICHeifMetadataWriter = new Guid(0x3AE45E79, 0x40BC, 0x4401, 0xAC, 0xE5, 0xDD, 0x3C, 0xB1, 0x6E, 0x6A, 0xFE);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid CLSID_WICHeifHDRMetadataReader = new Guid(0x2438de3d, 0x94d9, 0x4be8, 0x84, 0xa8, 0x4d, 0xe9, 0x5a, 0x57, 0x5e, 0x75);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid CLSID_WICWebpAnimMetadataReader = new Guid(0x76f9911, 0xa348, 0x465c, 0xa8, 0x7, 0xa2, 0x52, 0xf3, 0xf2, 0xd3, 0xde);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid CLSID_WICWebpAnmfMetadataReader = new Guid(0x85a10b03, 0xc9f6, 0x439f, 0xbe, 0x5e, 0xc0, 0xfb, 0xef, 0x67, 0x80, 0x7c);
+        public static ref readonly Guid GUID_MetadataFormatUnknown
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x2F, 0x59, 0x5E, 0xA4,
+                    0x78, 0x90,
+                    0x7C, 0x4A,
+                    0xAD,
+                    0xB5,
+                    0x4E,
+                    0xDC,
+                    0x4F,
+                    0xD6,
+                    0x1B,
+                    0x1F
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid GUID_MetadataFormatIfd
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xC6, 0x96, 0x73, 0x53,
+                    0x8A, 0x2D,
+                    0xB6, 0x4B,
+                    0x9B,
+                    0xF8,
+                    0x2F,
+                    0x0A,
+                    0x8E,
+                    0x2A,
+                    0x3A,
+                    0xDF
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid GUID_MetadataFormatSubIfd
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x28, 0xE1, 0xA2, 0x58,
+                    0xB9, 0x2D,
+                    0x57, 0x4E,
+                    0xBB,
+                    0x14,
+                    0x51,
+                    0x77,
+                    0x89,
+                    0x1E,
+                    0xD3,
+                    0x31
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid GUID_MetadataFormatExif
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x9D, 0x4F, 0x3C, 0x1C,
+                    0x4A, 0xB8,
+                    0x7D, 0x46,
+                    0x94,
+                    0x93,
+                    0x36,
+                    0xCF,
+                    0xBD,
+                    0x59,
+                    0xEA,
+                    0x57
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid GUID_MetadataFormatGps
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x8A, 0xAB, 0x34, 0x71,
+                    0x51, 0x93,
+                    0xAD, 0x44,
+                    0xAF,
+                    0x62,
+                    0x44,
+                    0x8D,
+                    0xB6,
+                    0xB5,
+                    0x02,
+                    0xEC
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid GUID_MetadataFormatInterop
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x8E, 0x6F, 0x68, 0xED,
+                    0x1F, 0x68,
+                    0x8B, 0x4C,
+                    0xBD,
+                    0x41,
+                    0xA8,
+                    0xAD,
+                    0xDB,
+                    0xF6,
+                    0xB3,
+                    0xFC
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid GUID_MetadataFormatApp0
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x28, 0x70, 0x00, 0x79,
+                    0x8D, 0x26,
+                    0xD6, 0x45,
+                    0xA3,
+                    0xC2,
+                    0x35,
+                    0x4E,
+                    0x6A,
+                    0x50,
+                    0x4B,
+                    0xC9
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid GUID_MetadataFormatApp1
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xC3, 0xDF, 0xD3, 0x8F,
+                    0x51, 0xF9,
+                    0x2B, 0x49,
+                    0x81,
+                    0x7F,
+                    0x69,
+                    0xC2,
+                    0xE6,
+                    0xD9,
+                    0xA5,
+                    0xB0
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid GUID_MetadataFormatApp13
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xA2, 0x56, 0x65, 0x32,
+                    0x02, 0xF5,
+                    0x54, 0x43,
+                    0x9C,
+                    0xC0,
+                    0x8E,
+                    0x3F,
+                    0x48,
+                    0xEA,
+                    0xF6,
+                    0xB5
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid GUID_MetadataFormatIPTC
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x14, 0x09, 0xAB, 0x4F,
+                    0x29, 0xE1,
+                    0x87, 0x40,
+                    0xA1,
+                    0xD1,
+                    0xBC,
+                    0x81,
+                    0x2D,
+                    0x45,
+                    0xA7,
+                    0xB5
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid GUID_MetadataFormatIRB
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x66, 0x0D, 0x10, 0x16,
+                    0x70, 0x85,
+                    0xB9, 0x4B,
+                    0xB9,
+                    0x2D,
+                    0xFD,
+                    0xA4,
+                    0xB2,
+                    0x3E,
+                    0xCE,
+                    0x67
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid GUID_MetadataFormat8BIMIPTC
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x8C, 0x56, 0x10, 0x00,
+                    0x52, 0x08,
+                    0x6A, 0x4E,
+                    0xB1,
+                    0x91,
+                    0x5C,
+                    0x33,
+                    0xAC,
+                    0x5B,
+                    0x04,
+                    0x30
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid GUID_MetadataFormat8BIMResolutionInfo
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x5D, 0x30, 0x9F, 0x73,
+                    0xDB, 0x81,
+                    0xCB, 0x43,
+                    0xAC,
+                    0x5E,
+                    0x55,
+                    0x01,
+                    0x3E,
+                    0xF9,
+                    0xF0,
+                    0x03
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid GUID_MetadataFormat8BIMIPTCDigest
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x85, 0x22, 0xA3, 0x1C,
+                    0xCD, 0x9C,
+                    0x86, 0x47,
+                    0x8B,
+                    0xD8,
+                    0x79,
+                    0x53,
+                    0x9D,
+                    0xB6,
+                    0xA0,
+                    0x06
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid GUID_MetadataFormatXMP
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x38, 0xCC, 0x5A, 0xBB,
+                    0x16, 0xF2,
+                    0xEC, 0x4C,
+                    0xA6,
+                    0xC5,
+                    0x5F,
+                    0x6E,
+                    0x73,
+                    0x97,
+                    0x63,
+                    0xA9
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid GUID_MetadataFormatThumbnail
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xE9, 0xCE, 0x3D, 0x24,
+                    0x03, 0x87,
+                    0xEE, 0x40,
+                    0x8E,
+                    0xF0,
+                    0x22,
+                    0xA6,
+                    0x00,
+                    0xB8,
+                    0x05,
+                    0x8C
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid GUID_MetadataFormatChunktEXt
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x36, 0x89, 0x8D, 0x56,
+                    0xA9, 0xC0,
+                    0x23, 0x49,
+                    0x90,
+                    0x5D,
+                    0xDF,
+                    0x2B,
+                    0x38,
+                    0x23,
+                    0x8F,
+                    0xBC
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid GUID_MetadataFormatXMPStruct
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xF1, 0x3C, 0x38, 0x22,
+                    0x17, 0xED,
+                    0x2E, 0x4E,
+                    0xAF,
+                    0x17,
+                    0xD8,
+                    0x5B,
+                    0x8F,
+                    0x6B,
+                    0x30,
+                    0xD0
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid GUID_MetadataFormatXMPBag
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x5F, 0xCA, 0x3C, 0x83,
+                    0xB7, 0xDC,
+                    0x16, 0x45,
+                    0x80,
+                    0x6F,
+                    0x65,
+                    0x96,
+                    0xAB,
+                    0x26,
+                    0xDC,
+                    0xE4
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid GUID_MetadataFormatXMPSeq
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x02, 0xDF, 0xE8, 0x63,
+                    0x6C, 0xEB,
+                    0x6C, 0x45,
+                    0xA2,
+                    0x24,
+                    0xB2,
+                    0x5E,
+                    0x79,
+                    0x4F,
+                    0xD6,
+                    0x48
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid GUID_MetadataFormatXMPAlt
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x75, 0xA6, 0x08, 0x7B,
+                    0xAA, 0x91,
+                    0x1B, 0x48,
+                    0xA7,
+                    0x98,
+                    0x4D,
+                    0xA9,
+                    0x49,
+                    0x08,
+                    0x61,
+                    0x3B
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid GUID_MetadataFormatLSD
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x1E, 0x03, 0x56, 0xE2,
+                    0x99, 0x62,
+                    0x29, 0x49,
+                    0xB9,
+                    0x8D,
+                    0x5A,
+                    0xC8,
+                    0x84,
+                    0xAF,
+                    0xBA,
+                    0x92
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid GUID_MetadataFormatIMD
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x86, 0xB0, 0x2B, 0xBD,
+                    0x52, 0x4D,
+                    0xDD, 0x48,
+                    0x96,
+                    0x77,
+                    0xDB,
+                    0x48,
+                    0x3E,
+                    0x85,
+                    0xAE,
+                    0x8F
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid GUID_MetadataFormatGCE
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xD8, 0xCA, 0x25, 0x2A,
+                    0xEB, 0xDE,
+                    0x69, 0x4C,
+                    0xA7,
+                    0x88,
+                    0x0E,
+                    0xC2,
+                    0x26,
+                    0x6D,
+                    0xCA,
+                    0xFD
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid GUID_MetadataFormatAPE
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xC2, 0x3D, 0x04, 0x2E,
+                    0x67, 0xC9,
+                    0x05, 0x4E,
+                    0x87,
+                    0x5E,
+                    0x61,
+                    0x8B,
+                    0xF6,
+                    0x7E,
+                    0x85,
+                    0xC3
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid GUID_MetadataFormatJpegChrominance
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xCF, 0x0D, 0x3D, 0xF7,
+                    0xC6, 0xCE,
+                    0x85, 0x4F,
+                    0x9B,
+                    0x0E,
+                    0x1C,
+                    0x39,
+                    0x56,
+                    0xB1,
+                    0xBE,
+                    0xF7
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid GUID_MetadataFormatJpegLuminance
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x07, 0x80, 0x90, 0x86,
+                    0xFC, 0xED,
+                    0x60, 0x48,
+                    0x8D,
+                    0x4B,
+                    0x4E,
+                    0xE6,
+                    0xE8,
+                    0x3E,
+                    0x60,
+                    0x58
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid GUID_MetadataFormatJpegComment
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x33, 0x5F, 0x0E, 0x22,
+                    0xD3, 0xAF,
+                    0x4E, 0x47,
+                    0x9D,
+                    0x31,
+                    0x7D,
+                    0x4F,
+                    0xE7,
+                    0x30,
+                    0xF5,
+                    0x57
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid GUID_MetadataFormatGifComment
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xE0, 0xE0, 0xB6, 0xC4,
+                    0xB4, 0xCF,
+                    0xD3, 0x4A,
+                    0xAB,
+                    0x33,
+                    0x9A,
+                    0xAD,
+                    0x23,
+                    0x55,
+                    0xA3,
+                    0x4A
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid GUID_MetadataFormatChunkgAMA
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xA5, 0x35, 0x09, 0xF0,
+                    0x5D, 0x1D,
+                    0xD1, 0x4C,
+                    0x81,
+                    0xB2,
+                    0x93,
+                    0x24,
+                    0xD7,
+                    0xEC,
+                    0xA7,
+                    0x81
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid GUID_MetadataFormatChunkbKGD
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x71, 0x35, 0x4D, 0xE1,
+                    0x47, 0x6B,
+                    0xEA, 0x4D,
+                    0xB6,
+                    0x0A,
+                    0x87,
+                    0xCE,
+                    0x0A,
+                    0x78,
+                    0xDF,
+                    0xB7
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid GUID_MetadataFormatChunkiTXt
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x29, 0xC7, 0xBE, 0xC2,
+                    0x68, 0x0B,
+                    0x77, 0x4B,
+                    0xAA,
+                    0x0E,
+                    0x62,
+                    0x95,
+                    0xA6,
+                    0xAC,
+                    0x18,
+                    0x14
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid GUID_MetadataFormatChunkcHRM
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x5B, 0x65, 0xB3, 0x9D,
+                    0x42, 0x28,
+                    0xB3, 0x44,
+                    0x80,
+                    0x67,
+                    0x12,
+                    0xE9,
+                    0xB3,
+                    0x75,
+                    0x55,
+                    0x6A
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid GUID_MetadataFormatChunkhIST
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xDA, 0x82, 0x9A, 0xC5,
+                    0x74, 0xDB,
+                    0xA4, 0x48,
+                    0xBD,
+                    0x6A,
+                    0xB6,
+                    0x9C,
+                    0x49,
+                    0x31,
+                    0xEF,
+                    0x95
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid GUID_MetadataFormatChunkiCCP
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xAB, 0x49, 0x43, 0xEB,
+                    0x85, 0xB6,
+                    0x0F, 0x45,
+                    0x91,
+                    0xB5,
+                    0xE8,
+                    0x02,
+                    0xE8,
+                    0x92,
+                    0x53,
+                    0x6C
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid GUID_MetadataFormatChunksRGB
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x36, 0xFD, 0x15, 0xC1,
+                    0x6F, 0xCC,
+                    0x3F, 0x4E,
+                    0x83,
+                    0x63,
+                    0x52,
+                    0x4B,
+                    0x87,
+                    0xC6,
+                    0xB0,
+                    0xD9
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid GUID_MetadataFormatChunktIME
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x2D, 0xAE, 0x00, 0x6B,
+                    0x4B, 0xE2,
+                    0x0A, 0x46,
+                    0x98,
+                    0xB6,
+                    0x87,
+                    0x8B,
+                    0xD0,
+                    0x30,
+                    0x72,
+                    0xFD
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid GUID_MetadataFormatDds
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x03, 0x46, 0x06, 0x4A,
+                    0x33, 0x8C,
+                    0x60, 0x4E,
+                    0x9C,
+                    0x29,
+                    0x13,
+                    0x62,
+                    0x31,
+                    0x70,
+                    0x2D,
+                    0x08
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid GUID_MetadataFormatHeif
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xE1, 0xF3, 0x7E, 0x81,
+                    0x88, 0x12,
+                    0xF4, 0x45,
+                    0xA8,
+                    0x52,
+                    0x26,
+                    0x0D,
+                    0x9E,
+                    0x7C,
+                    0xCE,
+                    0x83
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid GUID_MetadataFormatHeifHDR
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x8A, 0x8D, 0x8B, 0x56,
+                    0x65, 0x1E,
+                    0x8C, 0x43,
+                    0x89,
+                    0x68,
+                    0xD6,
+                    0x0E,
+                    0x10,
+                    0x12,
+                    0xBE,
+                    0xB9
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid GUID_MetadataFormatWebpANIM
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xA6, 0xFD, 0xC4, 0x6D,
+                    0xE6, 0x78,
+                    0x02, 0x41,
+                    0xAE,
+                    0x35,
+                    0xBC,
+                    0xFA,
+                    0x1E,
+                    0xDC,
+                    0xC7,
+                    0x8B
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid GUID_MetadataFormatWebpANMF
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xEE, 0x05, 0xC1, 0x43,
+                    0x3B, 0xB9,
+                    0xBB, 0x4A,
+                    0xB0,
+                    0x03,
+                    0xA0,
+                    0x8C,
+                    0x0D,
+                    0x87,
+                    0x04,
+                    0x71
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid CLSID_WICUnknownMetadataReader
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xC2, 0x45, 0x97, 0x69,
+                    0x66, 0x50,
+                    0x82, 0x4B,
+                    0xA8,
+                    0xE3,
+                    0xD4,
+                    0x04,
+                    0x78,
+                    0xDB,
+                    0xEC,
+                    0x8C
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid CLSID_WICUnknownMetadataWriter
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x86, 0xCA, 0x9C, 0xA0,
+                    0xBA, 0x27,
+                    0x39, 0x4F,
+                    0x90,
+                    0x53,
+                    0x12,
+                    0x1F,
+                    0xA4,
+                    0xDC,
+                    0x08,
+                    0xFC
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid CLSID_WICApp0MetadataWriter
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xA2, 0x33, 0xC6, 0xF3,
+                    0xC8, 0x46,
+                    0x8E, 0x49,
+                    0x8F,
+                    0xBB,
+                    0xCC,
+                    0x6F,
+                    0x72,
+                    0x1B,
+                    0xBC,
+                    0xDE
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid CLSID_WICApp0MetadataReader
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x33, 0x4B, 0x32, 0x43,
+                    0x8F, 0xA7,
+                    0x0F, 0x48,
+                    0x91,
+                    0x11,
+                    0x96,
+                    0x38,
+                    0xAA,
+                    0xCC,
+                    0xC8,
+                    0x32
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid CLSID_WICApp1MetadataWriter
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x69, 0x60, 0x36, 0xEE,
+                    0x32, 0x18,
+                    0x0F, 0x42,
+                    0xB3,
+                    0x81,
+                    0x04,
+                    0x79,
+                    0xAD,
+                    0x06,
+                    0x6F,
+                    0x19
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid CLSID_WICApp1MetadataReader
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x13, 0x35, 0xE3, 0xDD,
+                    0x4E, 0x77,
+                    0xCD, 0x4B,
+                    0xAE,
+                    0x79,
+                    0x02,
+                    0xF4,
+                    0xAD,
+                    0xFE,
+                    0x62,
+                    0xFC
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid CLSID_WICApp13MetadataWriter
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x19, 0xA9, 0x19, 0x7B,
+                    0xD6, 0xA9,
+                    0xE5, 0x49,
+                    0xBD,
+                    0x45,
+                    0x02,
+                    0xC3,
+                    0x4E,
+                    0x4E,
+                    0x4C,
+                    0xD5
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid CLSID_WICApp13MetadataReader
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x50, 0x3C, 0x7E, 0xAA,
+                    0x4C, 0x86,
+                    0x04, 0x46,
+                    0xBC,
+                    0x04,
+                    0x8B,
+                    0x0B,
+                    0x76,
+                    0xE6,
+                    0x37,
+                    0xF6
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid CLSID_WICIfdMetadataReader
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x56, 0x46, 0x91, 0x8F,
+                    0x0A, 0x9D,
+                    0xB2, 0x4E,
+                    0x90,
+                    0x19,
+                    0x0B,
+                    0xF9,
+                    0x6D,
+                    0x8A,
+                    0x9E,
+                    0xE6
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid CLSID_WICIfdMetadataWriter
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x28, 0xFC, 0xEB, 0xB1,
+                    0xBD, 0xC9,
+                    0xA2, 0x47,
+                    0x8D,
+                    0x33,
+                    0xB9,
+                    0x48,
+                    0x76,
+                    0x97,
+                    0x77,
+                    0xA7
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid CLSID_WICSubIfdMetadataReader
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x09, 0x2F, 0xD4, 0x50,
+                    0xD1, 0xEC,
+                    0x41, 0x4B,
+                    0xB6,
+                    0x5D,
+                    0xDA,
+                    0x1F,
+                    0xDA,
+                    0xA7,
+                    0x56,
+                    0x63
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid CLSID_WICSubIfdMetadataWriter
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x86, 0x53, 0xDE, 0x8A,
+                    0x9B, 0x8E,
+                    0x4C, 0x4F,
+                    0xAC,
+                    0xF2,
+                    0xF0,
+                    0x00,
+                    0x87,
+                    0x06,
+                    0xB2,
+                    0x38
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid CLSID_WICExifMetadataReader
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x60, 0x38, 0x40, 0xD9,
+                    0x7F, 0x29,
+                    0x49, 0x4A,
+                    0xBF,
+                    0x9B,
+                    0x77,
+                    0x89,
+                    0x81,
+                    0x50,
+                    0xA4,
+                    0x42
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid CLSID_WICExifMetadataWriter
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xDA, 0x4C, 0xA1, 0xC9,
+                    0x39, 0xC3,
+                    0x0B, 0x46,
+                    0x90,
+                    0x78,
+                    0xD4,
+                    0xDE,
+                    0xBC,
+                    0xFA,
+                    0xBE,
+                    0x91
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid CLSID_WICGpsMetadataReader
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x0B, 0x79, 0x97, 0x36,
+                    0x3B, 0x22,
+                    0x4E, 0x48,
+                    0x99,
+                    0x25,
+                    0xC4,
+                    0x86,
+                    0x92,
+                    0x18,
+                    0xF1,
+                    0x7A
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid CLSID_WICGpsMetadataWriter
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xE4, 0x13, 0x8C, 0xCB,
+                    0xB5, 0x62,
+                    0x96, 0x4C,
+                    0xA4,
+                    0x8B,
+                    0x6B,
+                    0xA6,
+                    0xAC,
+                    0xE3,
+                    0x9C,
+                    0x76
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid CLSID_WICInteropMetadataReader
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x98, 0xB8, 0xC8, 0xB5,
+                    0x74, 0x00,
+                    0x9F, 0x45,
+                    0xB7,
+                    0x00,
+                    0x86,
+                    0x0D,
+                    0x46,
+                    0x51,
+                    0xEA,
+                    0x14
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid CLSID_WICInteropMetadataWriter
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x45, 0xC6, 0x2E, 0x12,
+                    0x7E, 0xCD,
+                    0xD8, 0x44,
+                    0xB1,
+                    0x86,
+                    0x2C,
+                    0x8C,
+                    0x20,
+                    0xC3,
+                    0xB5,
+                    0x0F
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid CLSID_WICThumbnailMetadataReader
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x59, 0x29, 0x01, 0xFB,
+                    0xF6, 0xF4,
+                    0xD7, 0x44,
+                    0x9D,
+                    0x09,
+                    0xDA,
+                    0xA0,
+                    0x87,
+                    0xA9,
+                    0xDB,
+                    0x57
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid CLSID_WICThumbnailMetadataWriter
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x0C, 0xB2, 0x49, 0xD0,
+                    0xD0, 0x5D,
+                    0xFE, 0x44,
+                    0xB0,
+                    0xB3,
+                    0x8F,
+                    0x92,
+                    0xC8,
+                    0xE6,
+                    0xD0,
+                    0x80
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid CLSID_WICIPTCMetadataReader
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x59, 0x29, 0x01, 0x03,
+                    0xF6, 0xF4,
+                    0xD7, 0x44,
+                    0x9D,
+                    0x09,
+                    0xDA,
+                    0xA0,
+                    0x87,
+                    0xA9,
+                    0xDB,
+                    0x57
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid CLSID_WICIPTCMetadataWriter
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x0C, 0xB2, 0x49, 0x12,
+                    0xD0, 0x5D,
+                    0xFE, 0x44,
+                    0xB0,
+                    0xB3,
+                    0x8F,
+                    0x92,
+                    0xC8,
+                    0xE6,
+                    0xD0,
+                    0x80
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid CLSID_WICIRBMetadataReader
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xD7, 0xD3, 0xDC, 0xD4,
+                    0xC2, 0xB4,
+                    0xD9, 0x47,
+                    0xA6,
+                    0xBF,
+                    0xB8,
+                    0x9B,
+                    0xA3,
+                    0x96,
+                    0xA4,
+                    0xA3
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid CLSID_WICIRBMetadataWriter
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x35, 0x19, 0x5C, 0x5C,
+                    0x35, 0x02,
+                    0x34, 0x44,
+                    0x80,
+                    0xBC,
+                    0x25,
+                    0x1B,
+                    0xC1,
+                    0xEC,
+                    0x39,
+                    0xC6
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid CLSID_WIC8BIMIPTCMetadataReader
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x8C, 0x66, 0x10, 0x00,
+                    0x01, 0x08,
+                    0xA6, 0x4D,
+                    0xA4,
+                    0xA4,
+                    0x82,
+                    0x65,
+                    0x22,
+                    0xB6,
+                    0xD2,
+                    0x8F
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid CLSID_WIC8BIMIPTCMetadataWriter
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x26, 0x82, 0x10, 0x00,
+                    0x41, 0xEE,
+                    0xA2, 0x44,
+                    0x9E,
+                    0x9C,
+                    0x4B,
+                    0xE4,
+                    0xD5,
+                    0xB1,
+                    0xD2,
+                    0xCD
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid CLSID_WIC8BIMResolutionInfoMetadataReader
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x7A, 0x13, 0x05, 0x58,
+                    0x48, 0xE3,
+                    0x7C, 0x4F,
+                    0xB3,
+                    0xCC,
+                    0x6D,
+                    0xB9,
+                    0x96,
+                    0x5A,
+                    0x05,
+                    0x99
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid CLSID_WIC8BIMResolutionInfoMetadataWriter
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x0E, 0xFE, 0xF2, 0x4F,
+                    0x4A, 0xE7,
+                    0x71, 0x4B,
+                    0x98,
+                    0xC4,
+                    0xAB,
+                    0x7D,
+                    0xC1,
+                    0x67,
+                    0x07,
+                    0xBA
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid CLSID_WIC8BIMIPTCDigestMetadataReader
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x1E, 0x5F, 0x80, 0x02,
+                    0xAA, 0xD5,
+                    0x5B, 0x41,
+                    0x82,
+                    0xC5,
+                    0x61,
+                    0xC0,
+                    0x33,
+                    0xA9,
+                    0x88,
+                    0xA6
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid CLSID_WIC8BIMIPTCDigestMetadataWriter
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x2B, 0xE6, 0xB5, 0x2D,
+                    0x67, 0x0D,
+                    0x5F, 0x49,
+                    0x8F,
+                    0x9D,
+                    0xC2,
+                    0xF0,
+                    0x18,
+                    0x86,
+                    0x47,
+                    0xAC
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid CLSID_WICPngTextMetadataReader
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xCC, 0xAF, 0x59, 0x4B,
+                    0xC3, 0xB8,
+                    0x8A, 0x40,
+                    0xB6,
+                    0x70,
+                    0x89,
+                    0xE5,
+                    0xFA,
+                    0xB6,
+                    0xFD,
+                    0xA7
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid CLSID_WICPngTextMetadataWriter
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xB9, 0xAF, 0xEB, 0xB5,
+                    0x3E, 0x25,
+                    0x72, 0x4A,
+                    0xA7,
+                    0x44,
+                    0x07,
+                    0x62,
+                    0xD2,
+                    0x68,
+                    0x56,
+                    0x83
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid CLSID_WICXMPMetadataReader
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xDF, 0x24, 0xB6, 0x72,
+                    0x11, 0xAE,
+                    0x48, 0x49,
+                    0xA6,
+                    0x5C,
+                    0x35,
+                    0x1E,
+                    0xB0,
+                    0x82,
+                    0x94,
+                    0x19
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid CLSID_WICXMPMetadataWriter
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x4E, 0xE1, 0x65, 0x17,
+                    0xD4, 0x1B,
+                    0x2E, 0x46,
+                    0xB6,
+                    0xB1,
+                    0x59,
+                    0x0B,
+                    0xF1,
+                    0x26,
+                    0x2A,
+                    0xC6
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid CLSID_WICXMPStructMetadataReader
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x9A, 0x0D, 0xB9, 0x01,
+                    0x09, 0x82,
+                    0xF7, 0x47,
+                    0x9C,
+                    0x52,
+                    0xE1,
+                    0x24,
+                    0x4B,
+                    0xF5,
+                    0x0C,
+                    0xED
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid CLSID_WICXMPStructMetadataWriter
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x93, 0x1F, 0xC2, 0x22,
+                    0xDB, 0x7D,
+                    0x1C, 0x41,
+                    0x9B,
+                    0x17,
+                    0xC5,
+                    0xB7,
+                    0xBD,
+                    0x06,
+                    0x4A,
+                    0xBC
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid CLSID_WICXMPBagMetadataReader
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x30, 0x9A, 0xE7, 0xE7,
+                    0x2C, 0x4F,
+                    0xAB, 0x4F,
+                    0x8D,
+                    0x00,
+                    0x39,
+                    0x4F,
+                    0x2D,
+                    0x6B,
+                    0xBE,
+                    0xBE
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid CLSID_WICXMPBagMetadataWriter
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x8C, 0x2C, 0x82, 0xED,
+                    0xBE, 0xD6,
+                    0x01, 0x43,
+                    0xA6,
+                    0x31,
+                    0x0E,
+                    0x14,
+                    0x16,
+                    0xBA,
+                    0xD2,
+                    0x8F
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid CLSID_WICXMPSeqMetadataReader
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x53, 0xE7, 0x12, 0x7F,
+                    0x71, 0xFC,
+                    0xD7, 0x43,
+                    0xA5,
+                    0x1D,
+                    0x92,
+                    0xF3,
+                    0x59,
+                    0x77,
+                    0xAB,
+                    0xB5
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid CLSID_WICXMPSeqMetadataWriter
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xDE, 0xD1, 0x68, 0x6D,
+                    0x32, 0xD4,
+                    0x0F, 0x4B,
+                    0x92,
+                    0x3A,
+                    0x09,
+                    0x11,
+                    0x83,
+                    0xA9,
+                    0xBD,
+                    0xA7
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid CLSID_WICXMPAltMetadataReader
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xC2, 0xDC, 0x94, 0xAA,
+                    0xB0, 0xB8,
+                    0x98, 0x48,
+                    0xB8,
+                    0x35,
+                    0x00,
+                    0x0A,
+                    0xAB,
+                    0xD7,
+                    0x43,
+                    0x93
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid CLSID_WICXMPAltMetadataWriter
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x6C, 0x2A, 0x6C, 0x07,
+                    0x8F, 0xF7,
+                    0x46, 0x4C,
+                    0xA7,
+                    0x23,
+                    0x35,
+                    0x83,
+                    0xE7,
+                    0x08,
+                    0x76,
+                    0xEA
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid CLSID_WICLSDMetadataReader
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x93, 0x07, 0x07, 0x41,
+                    0xE4, 0x59,
+                    0x9A, 0x47,
+                    0xA1,
+                    0xF7,
+                    0x95,
+                    0x4A,
+                    0xDC,
+                    0x2E,
+                    0xF5,
+                    0xFC
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid CLSID_WICLSDMetadataWriter
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xE7, 0x37, 0xC0, 0x73,
+                    0xD9, 0xE5,
+                    0x54, 0x49,
+                    0x87,
+                    0x6A,
+                    0x6D,
+                    0xA8,
+                    0x1D,
+                    0x6E,
+                    0x57,
+                    0x68
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid CLSID_WICGCEMetadataReader
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x5D, 0x34, 0x2E, 0xB9,
+                    0x2D, 0xF5,
+                    0xF3, 0x41,
+                    0xB5,
+                    0x62,
+                    0x08,
+                    0x1B,
+                    0xC7,
+                    0x72,
+                    0xE3,
+                    0xB9
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid CLSID_WICGCEMetadataWriter
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x76, 0xDC, 0x95, 0xAF,
+                    0xB2, 0x16,
+                    0xF4, 0x47,
+                    0xB3,
+                    0xEA,
+                    0x3C,
+                    0x31,
+                    0x79,
+                    0x66,
+                    0x93,
+                    0xE7
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid CLSID_WICIMDMetadataReader
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x67, 0xA2, 0x47, 0x74,
+                    0x15, 0x00,
+                    0xC8, 0x42,
+                    0xA8,
+                    0xF1,
+                    0xFB,
+                    0x3B,
+                    0x94,
+                    0xC6,
+                    0x83,
+                    0x61
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid CLSID_WICIMDMetadataWriter
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x1F, 0x07, 0x89, 0x8C,
+                    0x2E, 0x45,
+                    0x95, 0x4E,
+                    0x96,
+                    0x82,
+                    0x9D,
+                    0x10,
+                    0x24,
+                    0x62,
+                    0x71,
+                    0x72
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid CLSID_WICAPEMetadataReader
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x3A, 0xB9, 0x67, 0x17,
+                    0x21, 0xB0,
+                    0xEA, 0x44,
+                    0x92,
+                    0x0F,
+                    0x86,
+                    0x3C,
+                    0x11,
+                    0xF4,
+                    0xF7,
+                    0x68
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid CLSID_WICAPEMetadataWriter
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xCA, 0xDF, 0x6E, 0xBD,
+                    0x90, 0x28,
+                    0x2F, 0x48,
+                    0xB2,
+                    0x33,
+                    0x8D,
+                    0x73,
+                    0x39,
+                    0xA1,
+                    0xCF,
+                    0x8D
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid CLSID_WICJpegChrominanceMetadataReader
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x4B, 0x90, 0xB1, 0x50,
+                    0x8F, 0xF2,
+                    0x74, 0x45,
+                    0x93,
+                    0xF4,
+                    0x0B,
+                    0xAD,
+                    0xE8,
+                    0x2C,
+                    0x69,
+                    0xE9
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid CLSID_WICJpegChrominanceMetadataWriter
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xF0, 0x66, 0xF5, 0x3F,
+                    0x6B, 0x6E,
+                    0xD4, 0x49,
+                    0x96,
+                    0xE6,
+                    0xB7,
+                    0x88,
+                    0x86,
+                    0x69,
+                    0x2C,
+                    0x62
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid CLSID_WICJpegLuminanceMetadataReader
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x88, 0x2F, 0x6F, 0x35,
+                    0xA6, 0x05,
+                    0x28, 0x47,
+                    0xB9,
+                    0xA4,
+                    0x1B,
+                    0xFB,
+                    0xCE,
+                    0x04,
+                    0xD8,
+                    0x38
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid CLSID_WICJpegLuminanceMetadataWriter
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xBC, 0x3A, 0x58, 0x1D,
+                    0x0E, 0x8A,
+                    0x57, 0x46,
+                    0x99,
+                    0x82,
+                    0xA3,
+                    0x80,
+                    0xCA,
+                    0x58,
+                    0xFB,
+                    0x4B
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid CLSID_WICJpegCommentMetadataReader
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x7C, 0x34, 0x66, 0x9F,
+                    0xC4, 0x60,
+                    0x4D, 0x4C,
+                    0xAB,
+                    0x58,
+                    0xD2,
+                    0x35,
+                    0x86,
+                    0x85,
+                    0xF6,
+                    0x07
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid CLSID_WICJpegCommentMetadataWriter
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x6F, 0x23, 0x73, 0xE5,
+                    0xB1, 0x55,
+                    0xDA, 0x4E,
+                    0x81,
+                    0xEA,
+                    0x9F,
+                    0x65,
+                    0xDB,
+                    0x02,
+                    0x90,
+                    0xD3
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid CLSID_WICGifCommentMetadataReader
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x3B, 0x7D, 0x55, 0x32,
+                    0xDC, 0x69,
+                    0x95, 0x4F,
+                    0x83,
+                    0x6E,
+                    0xF5,
+                    0x97,
+                    0x2B,
+                    0x2F,
+                    0x61,
+                    0x59
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid CLSID_WICGifCommentMetadataWriter
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xFC, 0x97, 0x27, 0xA0,
+                    0xAE, 0xC4,
+                    0x8C, 0x41,
+                    0xAF,
+                    0x95,
+                    0xE6,
+                    0x37,
+                    0xC7,
+                    0xEA,
+                    0xD2,
+                    0xA1
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid CLSID_WICPngGamaMetadataReader
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x39, 0xCA, 0x92, 0x36,
+                    0x82, 0xE0,
+                    0x50, 0x43,
+                    0x9E,
+                    0x1F,
+                    0x37,
+                    0x04,
+                    0xCB,
+                    0x08,
+                    0x3C,
+                    0xD5
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid CLSID_WICPngGamaMetadataWriter
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x13, 0x6D, 0x03, 0xFF,
+                    0x4B, 0x5D,
+                    0xDD, 0x46,
+                    0xB1,
+                    0x0F,
+                    0x10,
+                    0x66,
+                    0x93,
+                    0xD9,
+                    0xFE,
+                    0x4F
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid CLSID_WICPngBkgdMetadataReader
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xA6, 0xA4, 0xE7, 0x0C,
+                    0xE8, 0x03,
+                    0x60, 0x4A,
+                    0x9D,
+                    0x15,
+                    0x28,
+                    0x2E,
+                    0xF3,
+                    0x2E,
+                    0xE7,
+                    0xDA
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid CLSID_WICPngBkgdMetadataWriter
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xFD, 0xF2, 0xE3, 0x68,
+                    0xAE, 0x31,
+                    0x41, 0x44,
+                    0xBB,
+                    0x6A,
+                    0xFD,
+                    0x70,
+                    0x47,
+                    0x52,
+                    0x5F,
+                    0x90
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid CLSID_WICPngItxtMetadataReader
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xFA, 0xB2, 0xBF, 0xAA,
+                    0x1E, 0x3E,
+                    0x8F, 0x4A,
+                    0x89,
+                    0x77,
+                    0x55,
+                    0x56,
+                    0xFB,
+                    0x94,
+                    0xEA,
+                    0x23
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid CLSID_WICPngItxtMetadataWriter
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x19, 0x97, 0x87, 0x31,
+                    0x51, 0xE7,
+                    0xF8, 0x4D,
+                    0x98,
+                    0x1D,
+                    0x68,
+                    0xDF,
+                    0xF6,
+                    0x77,
+                    0x04,
+                    0xED
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid CLSID_WICPngChrmMetadataReader
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x36, 0x5F, 0x0B, 0xF9,
+                    0x7B, 0x36,
+                    0x2A, 0x40,
+                    0x9D,
+                    0xD1,
+                    0xBC,
+                    0x0F,
+                    0xD5,
+                    0x9D,
+                    0x8F,
+                    0x62
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid CLSID_WICPngChrmMetadataWriter
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xEB, 0xE3, 0x3C, 0xE2,
+                    0x08, 0x56,
+                    0x83, 0x4E,
+                    0xBC,
+                    0xEF,
+                    0x27,
+                    0xB1,
+                    0x98,
+                    0x7E,
+                    0x51,
+                    0xD7
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid CLSID_WICPngHistMetadataReader
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xB7, 0x0B, 0x7A, 0x87,
+                    0x13, 0xA3,
+                    0x91, 0x44,
+                    0x87,
+                    0xB5,
+                    0x2E,
+                    0x6D,
+                    0x05,
+                    0x94,
+                    0xF5,
+                    0x20
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid CLSID_WICPngHistMetadataWriter
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x49, 0xE7, 0x03, 0x8A,
+                    0x2E, 0x67,
+                    0x6E, 0x44,
+                    0xBF,
+                    0x1F,
+                    0x2C,
+                    0x11,
+                    0xD2,
+                    0x33,
+                    0xB6,
+                    0xFF
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid CLSID_WICPngIccpMetadataReader
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x3B, 0xE6, 0xD3, 0xF5,
+                    0x0F, 0xCB,
+                    0x28, 0x46,
+                    0xA4,
+                    0x78,
+                    0x6D,
+                    0x82,
+                    0x44,
+                    0xBE,
+                    0x36,
+                    0xB1
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid CLSID_WICPngIccpMetadataWriter
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x5F, 0x1E, 0x67, 0x16,
+                    0xE6, 0x0C,
+                    0xC4, 0x4C,
+                    0x97,
+                    0x68,
+                    0xE8,
+                    0x9F,
+                    0xE5,
+                    0x01,
+                    0x8A,
+                    0xDE
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid CLSID_WICPngSrgbMetadataReader
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x0C, 0x36, 0x40, 0xFB,
+                    0x7E, 0x54,
+                    0x56, 0x49,
+                    0xA3,
+                    0xB9,
+                    0xD4,
+                    0x41,
+                    0x88,
+                    0x59,
+                    0xBA,
+                    0x66
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid CLSID_WICPngSrgbMetadataWriter
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xC6, 0x35, 0xEE, 0xA6,
+                    0xEC, 0x87,
+                    0xDF, 0x47,
+                    0x9F,
+                    0x22,
+                    0x1D,
+                    0x5A,
+                    0xAD,
+                    0x84,
+                    0x0C,
+                    0x82
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid CLSID_WICPngTimeMetadataReader
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x02, 0xDF, 0x4E, 0xD9,
+                    0xE5, 0xEF,
+                    0x0D, 0x4F,
+                    0x85,
+                    0xC8,
+                    0xF5,
+                    0xA6,
+                    0x8B,
+                    0x30,
+                    0x00,
+                    0xB1
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid CLSID_WICPngTimeMetadataWriter
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x00, 0x84, 0xB7, 0x1A,
+                    0xA3, 0xB5,
+                    0x91, 0x4D,
+                    0x8A,
+                    0xCE,
+                    0x33,
+                    0xFC,
+                    0xD1,
+                    0x49,
+                    0x9B,
+                    0xE6
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid CLSID_WICDdsMetadataReader
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xCA, 0x88, 0x6C, 0x27,
+                    0x33, 0x75,
+                    0x86, 0x4A,
+                    0xB6,
+                    0x76,
+                    0x66,
+                    0xB3,
+                    0x60,
+                    0x80,
+                    0xD4,
+                    0x84
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid CLSID_WICDdsMetadataWriter
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xBD, 0x8B, 0x68, 0xFD,
+                    0xED, 0x31,
+                    0xB7, 0x4D,
+                    0xA7,
+                    0x23,
+                    0x93,
+                    0x49,
+                    0x27,
+                    0xD3,
+                    0x83,
+                    0x67
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid CLSID_WICHeifMetadataReader
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x3F, 0xFC, 0xDD, 0xAC,
+                    0xEC, 0x85,
+                    0xBC, 0x41,
+                    0xBD,
+                    0xEF,
+                    0x1B,
+                    0xC2,
+                    0x62,
+                    0xE4,
+                    0xDB,
+                    0x05
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid CLSID_WICHeifMetadataWriter
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x79, 0x5E, 0xE4, 0x3A,
+                    0xBC, 0x40,
+                    0x01, 0x44,
+                    0xAC,
+                    0xE5,
+                    0xDD,
+                    0x3C,
+                    0xB1,
+                    0x6E,
+                    0x6A,
+                    0xFE
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid CLSID_WICHeifHDRMetadataReader
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x3D, 0xDE, 0x38, 0x24,
+                    0xD9, 0x94,
+                    0xE8, 0x4B,
+                    0x84,
+                    0xA8,
+                    0x4D,
+                    0xE9,
+                    0x5A,
+                    0x57,
+                    0x5E,
+                    0x75
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid CLSID_WICWebpAnimMetadataReader
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x11, 0x99, 0x6F, 0x07,
+                    0x48, 0xA3,
+                    0x5C, 0x46,
+                    0xA8,
+                    0x07,
+                    0xA2,
+                    0x52,
+                    0xF3,
+                    0xF2,
+                    0xD3,
+                    0xDE
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid CLSID_WICWebpAnmfMetadataReader
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x03, 0x0B, 0xA1, 0x85,
+                    0xF6, 0xC9,
+                    0x9F, 0x43,
+                    0xBE,
+                    0x5E,
+                    0xC0,
+                    0xFB,
+                    0xEF,
+                    0x67,
+                    0x80,
+                    0x7C
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [DllImport("WindowsCodecs", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
@@ -391,24 +2852,224 @@ namespace TerraFX.Interop
         [return: NativeTypeName("HRESULT")]
         public static extern int WICGetMetadataContentSize([NativeTypeName("const GUID &")] Guid* guidContainerFormat, IWICMetadataWriter* pIWriter, ULARGE_INTEGER* pcbSize);
 
-        public static readonly Guid IID_IWICMetadataBlockReader = new Guid(0xFEAA2A8D, 0xB3F3, 0x43E4, 0xB2, 0x5C, 0xD1, 0xDE, 0x99, 0x0A, 0x1A, 0xE1);
+        public static ref readonly Guid IID_IWICMetadataBlockReader
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x8D, 0x2A, 0xAA, 0xFE,
+                    0xF3, 0xB3,
+                    0xE4, 0x43,
+                    0xB2,
+                    0x5C,
+                    0xD1,
+                    0xDE,
+                    0x99,
+                    0x0A,
+                    0x1A,
+                    0xE1
+                };
 
-        public static readonly Guid IID_IWICMetadataBlockWriter = new Guid(0x08FB9676, 0xB444, 0x41E8, 0x8D, 0xBE, 0x6A, 0x53, 0xA5, 0x42, 0xBF, 0xF1);
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
-        public static readonly Guid IID_IWICMetadataReader = new Guid(0x9204FE99, 0xD8FC, 0x4FD5, 0xA0, 0x01, 0x95, 0x36, 0xB0, 0x67, 0xA8, 0x99);
+        public static ref readonly Guid IID_IWICMetadataBlockWriter
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x76, 0x96, 0xFB, 0x08,
+                    0x44, 0xB4,
+                    0xE8, 0x41,
+                    0x8D,
+                    0xBE,
+                    0x6A,
+                    0x53,
+                    0xA5,
+                    0x42,
+                    0xBF,
+                    0xF1
+                };
 
-        public static readonly Guid IID_IWICMetadataWriter = new Guid(0xF7836E16, 0x3BE0, 0x470B, 0x86, 0xBB, 0x16, 0x0D, 0x0A, 0xEC, 0xD7, 0xDE);
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
-        public static readonly Guid IID_IWICStreamProvider = new Guid(0x449494BC, 0xB468, 0x4927, 0x96, 0xD7, 0xBA, 0x90, 0xD3, 0x1A, 0xB5, 0x05);
+        public static ref readonly Guid IID_IWICMetadataReader
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x99, 0xFE, 0x04, 0x92,
+                    0xFC, 0xD8,
+                    0xD5, 0x4F,
+                    0xA0,
+                    0x01,
+                    0x95,
+                    0x36,
+                    0xB0,
+                    0x67,
+                    0xA8,
+                    0x99
+                };
 
-        public static readonly Guid IID_IWICPersistStream = new Guid(0x00675040, 0x6908, 0x45F8, 0x86, 0xA3, 0x49, 0xC7, 0xDF, 0xD6, 0xD9, 0xAD);
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
-        public static readonly Guid IID_IWICMetadataHandlerInfo = new Guid(0xABA958BF, 0xC672, 0x44D1, 0x8D, 0x61, 0xCE, 0x6D, 0xF2, 0xE6, 0x82, 0xC2);
+        public static ref readonly Guid IID_IWICMetadataWriter
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x16, 0x6E, 0x83, 0xF7,
+                    0xE0, 0x3B,
+                    0x0B, 0x47,
+                    0x86,
+                    0xBB,
+                    0x16,
+                    0x0D,
+                    0x0A,
+                    0xEC,
+                    0xD7,
+                    0xDE
+                };
 
-        public static readonly Guid IID_IWICMetadataReaderInfo = new Guid(0xEEBF1F5B, 0x07C1, 0x4447, 0xA3, 0xAB, 0x22, 0xAC, 0xAF, 0x78, 0xA8, 0x04);
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
-        public static readonly Guid IID_IWICMetadataWriterInfo = new Guid(0xB22E3FBA, 0x3925, 0x4323, 0xB5, 0xC1, 0x9E, 0xBF, 0xC4, 0x30, 0xF2, 0x36);
+        public static ref readonly Guid IID_IWICStreamProvider
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xBC, 0x94, 0x94, 0x44,
+                    0x68, 0xB4,
+                    0x27, 0x49,
+                    0x96,
+                    0xD7,
+                    0xBA,
+                    0x90,
+                    0xD3,
+                    0x1A,
+                    0xB5,
+                    0x05
+                };
 
-        public static readonly Guid IID_IWICComponentFactory = new Guid(0x412D0C3A, 0x9650, 0x44FA, 0xAF, 0x5B, 0xDD, 0x2A, 0x06, 0xC8, 0xE8, 0xFB);
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid IID_IWICPersistStream
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x40, 0x50, 0x67, 0x00,
+                    0x08, 0x69,
+                    0xF8, 0x45,
+                    0x86,
+                    0xA3,
+                    0x49,
+                    0xC7,
+                    0xDF,
+                    0xD6,
+                    0xD9,
+                    0xAD
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid IID_IWICMetadataHandlerInfo
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xBF, 0x58, 0xA9, 0xAB,
+                    0x72, 0xC6,
+                    0xD1, 0x44,
+                    0x8D,
+                    0x61,
+                    0xCE,
+                    0x6D,
+                    0xF2,
+                    0xE6,
+                    0x82,
+                    0xC2
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid IID_IWICMetadataReaderInfo
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x5B, 0x1F, 0xBF, 0xEE,
+                    0xC1, 0x07,
+                    0x47, 0x44,
+                    0xA3,
+                    0xAB,
+                    0x22,
+                    0xAC,
+                    0xAF,
+                    0x78,
+                    0xA8,
+                    0x04
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid IID_IWICMetadataWriterInfo
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xBA, 0x3F, 0x2E, 0xB2,
+                    0x25, 0x39,
+                    0x23, 0x43,
+                    0xB5,
+                    0xC1,
+                    0x9E,
+                    0xBF,
+                    0xC4,
+                    0x30,
+                    0xF2,
+                    0x36
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid IID_IWICComponentFactory
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x3A, 0x0C, 0x2D, 0x41,
+                    0x50, 0x96,
+                    0xFA, 0x44,
+                    0xAF,
+                    0x5B,
+                    0xDD,
+                    0x2A,
+                    0x06,
+                    0xC8,
+                    0xE8,
+                    0xFB
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
     }
 }

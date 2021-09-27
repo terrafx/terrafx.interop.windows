@@ -4,12 +4,34 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
 {
     public static partial class Windows
     {
         [NativeTypeName("const GUID")]
-        public static readonly Guid IID_ID3D10ShaderReflection1 = new Guid(0xc3457783, 0xa846, 0x47ce, 0x95, 0x20, 0xce, 0xa6, 0xf6, 0x6e, 0x74, 0x47);
+        public static ref readonly Guid IID_ID3D10ShaderReflection1
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x83, 0x77, 0x45, 0xC3,
+                    0x46, 0xA8,
+                    0xCE, 0x47,
+                    0x95,
+                    0x20,
+                    0xCE,
+                    0xA6,
+                    0xF6,
+                    0x6E,
+                    0x74,
+                    0x47
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
     }
 }

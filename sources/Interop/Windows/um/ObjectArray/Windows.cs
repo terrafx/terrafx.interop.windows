@@ -4,13 +4,55 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
 {
     public static partial class Windows
     {
-        public static readonly Guid IID_IObjectArray = new Guid(0x92CA9DCD, 0x5622, 0x4BBA, 0xA8, 0x05, 0x5E, 0x9F, 0x54, 0x1B, 0xD8, 0xC9);
+        public static ref readonly Guid IID_IObjectArray
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xCD, 0x9D, 0xCA, 0x92,
+                    0x22, 0x56,
+                    0xBA, 0x4B,
+                    0xA8,
+                    0x05,
+                    0x5E,
+                    0x9F,
+                    0x54,
+                    0x1B,
+                    0xD8,
+                    0xC9
+                };
 
-        public static readonly Guid IID_IObjectCollection = new Guid(0x5632B1A4, 0xE38A, 0x400A, 0x92, 0x8A, 0xD4, 0xCD, 0x63, 0x23, 0x02, 0x95);
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid IID_IObjectCollection
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xA4, 0xB1, 0x32, 0x56,
+                    0x8A, 0xE3,
+                    0x0A, 0x40,
+                    0x92,
+                    0x8A,
+                    0xD4,
+                    0xCD,
+                    0x63,
+                    0x23,
+                    0x02,
+                    0x95
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
     }
 }

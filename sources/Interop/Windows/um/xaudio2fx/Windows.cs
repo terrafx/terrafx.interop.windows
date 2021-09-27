@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
@@ -210,8 +211,48 @@ namespace TerraFX.Interop
         [NativeTypeName("#define XAUDIO2FX_REVERB_DEFAULT_DISABLE_LATE_FIELD FALSE")]
         public const int XAUDIO2FX_REVERB_DEFAULT_DISABLE_LATE_FIELD = 0;
 
-        public static readonly Guid CLSID_AudioVolumeMeter = new Guid(0x4FC3B166, 0x972A, 0x40CF, 0xBC, 0x37, 0x7D, 0xB0, 0x3D, 0xB2, 0xFB, 0xA3);
+        public static ref readonly Guid CLSID_AudioVolumeMeter
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x66, 0xB1, 0xC3, 0x4F,
+                    0x2A, 0x97,
+                    0xCF, 0x40,
+                    0xBC,
+                    0x37,
+                    0x7D,
+                    0xB0,
+                    0x3D,
+                    0xB2,
+                    0xFB,
+                    0xA3
+                };
 
-        public static readonly Guid CLSID_AudioReverb = new Guid(0xC2633B16, 0x471B, 0x4498, 0xB8, 0xC5, 0x4F, 0x09, 0x59, 0xE2, 0xEC, 0x09);
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid CLSID_AudioReverb
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x16, 0x3B, 0x63, 0xC2,
+                    0x1B, 0x47,
+                    0x98, 0x44,
+                    0xB8,
+                    0xC5,
+                    0x4F,
+                    0x09,
+                    0x59,
+                    0xE2,
+                    0xEC,
+                    0x09
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
     }
 }

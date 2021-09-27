@@ -4,11 +4,33 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
 {
     public static partial class Windows
     {
-        public static readonly Guid IID_IInputPaneInterop = new Guid(0x75CF2C57, 0x9195, 0x4931, 0x83, 0x32, 0xF0, 0xB4, 0x09, 0xE9, 0x16, 0xAF);
+        public static ref readonly Guid IID_IInputPaneInterop
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x57, 0x2C, 0xCF, 0x75,
+                    0x95, 0x91,
+                    0x31, 0x49,
+                    0x83,
+                    0x32,
+                    0xF0,
+                    0xB4,
+                    0x09,
+                    0xE9,
+                    0x16,
+                    0xAF
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
     }
 }

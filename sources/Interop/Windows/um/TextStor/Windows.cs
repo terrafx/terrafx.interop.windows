@@ -4,19 +4,81 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
 {
     public static partial class Windows
     {
         [NativeTypeName("const GUID")]
-        public static readonly Guid GUID_TS_SERVICE_DATAOBJECT = new Guid(0x6086fbb5, 0xe225, 0x46ce, 0xa7, 0x70, 0xc1, 0xbb, 0xd3, 0xe0, 0x5d, 0x7b);
+        public static ref readonly Guid GUID_TS_SERVICE_DATAOBJECT
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xB5, 0xFB, 0x86, 0x60,
+                    0x25, 0xE2,
+                    0xCE, 0x46,
+                    0xA7,
+                    0x70,
+                    0xC1,
+                    0xBB,
+                    0xD3,
+                    0xE0,
+                    0x5D,
+                    0x7B
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const GUID")]
-        public static readonly Guid GUID_TS_SERVICE_ACCESSIBLE = new Guid(0xf9786200, 0xa5bf, 0x4a0f, 0x8c, 0x24, 0xfb, 0x16, 0xf5, 0xd1, 0xaa, 0xbb);
+        public static ref readonly Guid GUID_TS_SERVICE_ACCESSIBLE
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x00, 0x62, 0x78, 0xF9,
+                    0xBF, 0xA5,
+                    0x0F, 0x4A,
+                    0x8C,
+                    0x24,
+                    0xFB,
+                    0x16,
+                    0xF5,
+                    0xD1,
+                    0xAA,
+                    0xBB
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const GUID")]
-        public static readonly Guid GUID_TS_SERVICE_ACTIVEX = new Guid(0xea937a50, 0xc9a6, 0x4b7d, 0x89, 0x4a, 0x49, 0xd9, 0x9b, 0x78, 0x48, 0x34);
+        public static ref readonly Guid GUID_TS_SERVICE_ACTIVEX
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x50, 0x7A, 0x93, 0xEA,
+                    0xA6, 0xC9,
+                    0x7D, 0x4B,
+                    0x89,
+                    0x4A,
+                    0x49,
+                    0xD9,
+                    0x9B,
+                    0x78,
+                    0x48,
+                    0x34
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("#define TS_E_INVALIDPOS MAKE_HRESULT(SEVERITY_ERROR, FACILITY_ITF, 0x0200)")]
         public const int TS_E_INVALIDPOS = unchecked((int)(((uint)(1) << 31) | ((uint)(4) << 16) | ((uint)(0x0200))));
@@ -213,16 +275,136 @@ namespace TerraFX.Interop
         [NativeTypeName("#define TS_GEA_HIDDEN ( 0x1 )")]
         public const int TS_GEA_HIDDEN = (0x1);
 
-        public static readonly Guid IID_ITextStoreACP = new Guid(0x28888FE3, 0xC2A0, 0x483A, 0xA3, 0xEA, 0x8C, 0xB1, 0xCE, 0x51, 0xFF, 0x3D);
+        public static ref readonly Guid IID_ITextStoreACP
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xE3, 0x8F, 0x88, 0x28,
+                    0xA0, 0xC2,
+                    0x3A, 0x48,
+                    0xA3,
+                    0xEA,
+                    0x8C,
+                    0xB1,
+                    0xCE,
+                    0x51,
+                    0xFF,
+                    0x3D
+                };
 
-        public static readonly Guid IID_ITextStoreACP2 = new Guid(0xF86AD89F, 0x5FE4, 0x4B8D, 0xBB, 0x9F, 0xEF, 0x37, 0x97, 0xA8, 0x4F, 0x1F);
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
-        public static readonly Guid IID_ITextStoreACPSink = new Guid(0x22D44C94, 0xA419, 0x4542, 0xA2, 0x72, 0xAE, 0x26, 0x09, 0x3E, 0xCE, 0xCF);
+        public static ref readonly Guid IID_ITextStoreACP2
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x9F, 0xD8, 0x6A, 0xF8,
+                    0xE4, 0x5F,
+                    0x8D, 0x4B,
+                    0xBB,
+                    0x9F,
+                    0xEF,
+                    0x37,
+                    0x97,
+                    0xA8,
+                    0x4F,
+                    0x1F
+                };
 
-        public static readonly Guid IID_IAnchor = new Guid(0x0FEB7E34, 0x5A60, 0x4356, 0x8E, 0xF7, 0xAB, 0xDE, 0xC2, 0xFF, 0x7C, 0xF8);
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
-        public static readonly Guid IID_ITextStoreAnchor = new Guid(0x9B2077B0, 0x5F18, 0x4DEC, 0xBE, 0xE9, 0x3C, 0xC7, 0x22, 0xF5, 0xDF, 0xE0);
+        public static ref readonly Guid IID_ITextStoreACPSink
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x94, 0x4C, 0xD4, 0x22,
+                    0x19, 0xA4,
+                    0x42, 0x45,
+                    0xA2,
+                    0x72,
+                    0xAE,
+                    0x26,
+                    0x09,
+                    0x3E,
+                    0xCE,
+                    0xCF
+                };
 
-        public static readonly Guid IID_ITextStoreAnchorSink = new Guid(0xAA80E905, 0x2021, 0x11D2, 0x93, 0xE0, 0x00, 0x60, 0xB0, 0x67, 0xB8, 0x6E);
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid IID_IAnchor
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x34, 0x7E, 0xEB, 0x0F,
+                    0x60, 0x5A,
+                    0x56, 0x43,
+                    0x8E,
+                    0xF7,
+                    0xAB,
+                    0xDE,
+                    0xC2,
+                    0xFF,
+                    0x7C,
+                    0xF8
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid IID_ITextStoreAnchor
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xB0, 0x77, 0x20, 0x9B,
+                    0x18, 0x5F,
+                    0xEC, 0x4D,
+                    0xBE,
+                    0xE9,
+                    0x3C,
+                    0xC7,
+                    0x22,
+                    0xF5,
+                    0xDF,
+                    0xE0
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid IID_ITextStoreAnchorSink
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x05, 0xE9, 0x80, 0xAA,
+                    0x21, 0x20,
+                    0xD2, 0x11,
+                    0x93,
+                    0xE0,
+                    0x00,
+                    0x60,
+                    0xB0,
+                    0x67,
+                    0xB8,
+                    0x6E
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
     }
 }

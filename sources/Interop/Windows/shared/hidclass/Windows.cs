@@ -4,22 +4,84 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
 {
     public static partial class Windows
     {
         [NativeTypeName("const GUID")]
-        public static readonly Guid GUID_DEVINTERFACE_HID = new Guid(0x4D1E55B2, 0xF16F, 0x11CF, 0x88, 0xCB, 0x00, 0x11, 0x11, 0x00, 0x00, 0x30);
+        public static ref readonly Guid GUID_DEVINTERFACE_HID
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xB2, 0x55, 0x1E, 0x4D,
+                    0x6F, 0xF1,
+                    0xCF, 0x11,
+                    0x88,
+                    0xCB,
+                    0x00,
+                    0x11,
+                    0x11,
+                    0x00,
+                    0x00,
+                    0x30
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const GUID")]
-        public static readonly Guid GUID_HID_INTERFACE_NOTIFY = new Guid(0x2c4e2e88, 0x25e6, 0x4c33, 0x88, 0x2f, 0x3d, 0x82, 0xe6, 0x07, 0x36, 0x81);
+        public static ref readonly Guid GUID_HID_INTERFACE_NOTIFY
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x88, 0x2E, 0x4E, 0x2C,
+                    0xE6, 0x25,
+                    0x33, 0x4C,
+                    0x88,
+                    0x2F,
+                    0x3D,
+                    0x82,
+                    0xE6,
+                    0x07,
+                    0x36,
+                    0x81
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const GUID")]
-        public static readonly Guid GUID_HID_INTERFACE_HIDPARSE = new Guid(0xf5c315a5, 0x69ac, 0x4bc2, 0x92, 0x79, 0xd0, 0xb6, 0x45, 0x76, 0xf4, 0x4b);
+        public static ref readonly Guid GUID_HID_INTERFACE_HIDPARSE
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xA5, 0x15, 0xC3, 0xF5,
+                    0xAC, 0x69,
+                    0xC2, 0x4B,
+                    0x92,
+                    0x79,
+                    0xD0,
+                    0xB6,
+                    0x45,
+                    0x76,
+                    0xF4,
+                    0x4B
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("#define GUID_CLASS_INPUT GUID_DEVINTERFACE_HID")]
-        public static readonly Guid GUID_CLASS_INPUT = GUID_DEVINTERFACE_HID;
+        public static ref readonly Guid GUID_CLASS_INPUT => ref GUID_DEVINTERFACE_HID;
 
         [NativeTypeName("#define HID_REVISION 0x00000001")]
         public const int HID_REVISION = 0x00000001;

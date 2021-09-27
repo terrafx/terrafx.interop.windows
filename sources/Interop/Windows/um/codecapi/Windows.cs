@@ -4,6 +4,8 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
 using static TerraFX.Interop.eAVEncH264VProfile;
 
 namespace TerraFX.Interop
@@ -28,628 +30,6868 @@ namespace TerraFX.Interop
         [NativeTypeName("#define AVENC_H264V_MAX_MBBITS 3200")]
         public const int AVENC_H264V_MAX_MBBITS = 3200;
 
-        public static readonly Guid STATIC_CODECAPI_AVEncCommonFormatConstraint = new Guid(0x57CBB9B8, 0x116F, 0x4951, 0xB4, 0x0C, 0xC2, 0xA0, 0x35, 0xED, 0x8F, 0x17);
-
-        public static readonly Guid STATIC_CODECAPI_GUID_AVEncCommonFormatUnSpecified = new Guid(0xAF46A35A, 0x6024, 0x4525, 0xA4, 0x8A, 0x09, 0x4B, 0x97, 0xF5, 0xB3, 0xC2);
-
-        public static readonly Guid STATIC_CODECAPI_GUID_AVEncCommonFormatDVD_V = new Guid(0xCC9598C4, 0xE7FE, 0x451D, 0xB1, 0xCA, 0x76, 0x1B, 0xC8, 0x40, 0xB7, 0xF3);
-
-        public static readonly Guid STATIC_CODECAPI_GUID_AVEncCommonFormatDVD_DashVR = new Guid(0xE55199D6, 0x044C, 0x4DAE, 0xA4, 0x88, 0x53, 0x1E, 0xD3, 0x06, 0x23, 0x5B);
-
-        public static readonly Guid STATIC_CODECAPI_GUID_AVEncCommonFormatDVD_PlusVR = new Guid(0xE74C6F2E, 0xEC37, 0x478D, 0x9A, 0xF4, 0xA5, 0xE1, 0x35, 0xB6, 0x27, 0x1C);
-
-        public static readonly Guid STATIC_CODECAPI_GUID_AVEncCommonFormatVCD = new Guid(0x95035BF7, 0x9D90, 0x40FF, 0xAD, 0x5C, 0x5C, 0xF8, 0xCF, 0x71, 0xCA, 0x1D);
-
-        public static readonly Guid STATIC_CODECAPI_GUID_AVEncCommonFormatSVCD = new Guid(0x51D85818, 0x8220, 0x448C, 0x80, 0x66, 0xD6, 0x9B, 0xED, 0x16, 0xC9, 0xAD);
-
-        public static readonly Guid STATIC_CODECAPI_GUID_AVEncCommonFormatATSC = new Guid(0x8D7B897C, 0xA019, 0x4670, 0xAA, 0x76, 0x2E, 0xDC, 0xAC, 0x7A, 0xC2, 0x96);
-
-        public static readonly Guid STATIC_CODECAPI_GUID_AVEncCommonFormatDVB = new Guid(0x71830D8F, 0x6C33, 0x430D, 0x84, 0x4B, 0xC2, 0x70, 0x5B, 0xAA, 0xE6, 0xDB);
-
-        public static readonly Guid STATIC_CODECAPI_GUID_AVEncCommonFormatMP3 = new Guid(0x349733CD, 0xEB08, 0x4DC2, 0x81, 0x97, 0xE4, 0x98, 0x35, 0xEF, 0x82, 0x8B);
-
-        public static readonly Guid STATIC_CODECAPI_GUID_AVEncCommonFormatHighMAT = new Guid(0x1EABE760, 0xFB2B, 0x4928, 0x90, 0xD1, 0x78, 0xDB, 0x88, 0xEE, 0xE8, 0x89);
-
-        public static readonly Guid STATIC_CODECAPI_GUID_AVEncCommonFormatHighMPV = new Guid(0xA2D25DB8, 0xB8F9, 0x42C2, 0x8B, 0xC7, 0x0B, 0x93, 0xCF, 0x60, 0x47, 0x88);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncCodecType = new Guid(0x08AF4AC1, 0xF3F2, 0x4C74, 0x9D, 0xCF, 0x37, 0xF2, 0xEC, 0x79, 0xF8, 0x26);
-
-        public static readonly Guid STATIC_CODECAPI_GUID_AVEncMPEG1Video = new Guid(0xC8DAFEFE, 0xDA1E, 0x4774, 0xB2, 0x7D, 0x11, 0x83, 0x0C, 0x16, 0xB1, 0xFE);
-
-        public static readonly Guid STATIC_CODECAPI_GUID_AVEncMPEG2Video = new Guid(0x046DC19A, 0x6677, 0x4AAA, 0xA3, 0x1D, 0xC1, 0xAB, 0x71, 0x6F, 0x45, 0x60);
-
-        public static readonly Guid STATIC_CODECAPI_GUID_AVEncMPEG1Audio = new Guid(0xD4DD1362, 0xCD4A, 0x4CD6, 0x81, 0x38, 0xB9, 0x4D, 0xB4, 0x54, 0x2B, 0x04);
-
-        public static readonly Guid STATIC_CODECAPI_GUID_AVEncMPEG2Audio = new Guid(0xEE4CBB1F, 0x9C3F, 0x4770, 0x92, 0xB5, 0xFC, 0xB7, 0xC2, 0xA8, 0xD3, 0x81);
-
-        public static readonly Guid STATIC_CODECAPI_GUID_AVEncWMV = new Guid(0x4E0FEF9B, 0x1D43, 0x41BD, 0xB8, 0xBD, 0x4D, 0x7B, 0xF7, 0x45, 0x7A, 0x2A);
-
-        public static readonly Guid STATIC_CODECAPI_GUID_AVEndMPEG4Video = new Guid(0xDD37B12A, 0x9503, 0x4F8B, 0xB8, 0xD0, 0x32, 0x4A, 0x00, 0xC0, 0xA1, 0xCF);
-
-        public static readonly Guid STATIC_CODECAPI_GUID_AVEncH264Video = new Guid(0x95044EAB, 0x31B3, 0x47DE, 0x8E, 0x75, 0x38, 0xA4, 0x2B, 0xB0, 0x3E, 0x28);
-
-        public static readonly Guid STATIC_CODECAPI_GUID_AVEncDV = new Guid(0x09B769C7, 0x3329, 0x44FB, 0x89, 0x54, 0xFA, 0x30, 0x93, 0x7D, 0x3D, 0x5A);
-
-        public static readonly Guid STATIC_CODECAPI_GUID_AVEncWMAPro = new Guid(0x1955F90C, 0x33F7, 0x4A68, 0xAB, 0x81, 0x53, 0xF5, 0x65, 0x71, 0x25, 0xC4);
-
-        public static readonly Guid STATIC_CODECAPI_GUID_AVEncWMALossless = new Guid(0x55CA7265, 0x23D8, 0x4761, 0x90, 0x31, 0xB7, 0x4F, 0xBE, 0x12, 0xF4, 0xC1);
-
-        public static readonly Guid STATIC_CODECAPI_GUID_AVEncWMAVoice = new Guid(0x13ED18CB, 0x50E8, 0x4276, 0xA2, 0x88, 0xA6, 0xAA, 0x22, 0x83, 0x82, 0xD9);
-
-        public static readonly Guid STATIC_CODECAPI_GUID_AVEncDolbyDigitalPro = new Guid(0xF5BE76CC, 0x0FF8, 0x40EB, 0x9C, 0xB1, 0xBB, 0xA9, 0x40, 0x04, 0xD4, 0x4F);
-
-        public static readonly Guid STATIC_CODECAPI_GUID_AVEncDolbyDigitalConsumer = new Guid(0xC1A7BF6C, 0x0059, 0x4BFA, 0x94, 0xEF, 0xEF, 0x74, 0x7A, 0x76, 0x8D, 0x52);
-
-        public static readonly Guid STATIC_CODECAPI_GUID_AVEncDolbyDigitalPlus = new Guid(0x698D1B80, 0xF7DD, 0x415C, 0x97, 0x1C, 0x42, 0x49, 0x2A, 0x20, 0x56, 0xC6);
-
-        public static readonly Guid STATIC_CODECAPI_GUID_AVEncDTSHD = new Guid(0x2052E630, 0x469D, 0x4BFB, 0x80, 0xCA, 0x1D, 0x65, 0x6E, 0x7E, 0x91, 0x8F);
-
-        public static readonly Guid STATIC_CODECAPI_GUID_AVEncDTS = new Guid(0x45FBCAA2, 0x5E6E, 0x4AB0, 0x88, 0x93, 0x59, 0x03, 0xBE, 0xE9, 0x3A, 0xCF);
-
-        public static readonly Guid STATIC_CODECAPI_GUID_AVEncMLP = new Guid(0x05F73E29, 0xF0D1, 0x431E, 0xA4, 0x1C, 0xA4, 0x74, 0x32, 0xEC, 0x5A, 0x66);
-
-        public static readonly Guid STATIC_CODECAPI_GUID_AVEncPCM = new Guid(0x844BE7F4, 0x26CF, 0x4779, 0xB3, 0x86, 0xCC, 0x05, 0xD1, 0x87, 0x99, 0x0C);
-
-        public static readonly Guid STATIC_CODECAPI_GUID_AVEncSDDS = new Guid(0x1DC1B82F, 0x11C8, 0x4C71, 0xB7, 0xB6, 0xEE, 0x3E, 0xB9, 0xBC, 0x2B, 0x94);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncCommonRateControlMode = new Guid(0x1C0608E9, 0x370C, 0x4710, 0x8A, 0x58, 0xCB, 0x61, 0x81, 0xC4, 0x24, 0x23);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncCommonLowLatency = new Guid(0x9D3ECD55, 0x89E8, 0x490A, 0x97, 0x0A, 0x0C, 0x95, 0x48, 0xD5, 0xA5, 0x6E);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncCommonMultipassMode = new Guid(0x22533D4C, 0x47E1, 0x41B5, 0x93, 0x52, 0xA2, 0xB7, 0x78, 0x0E, 0x7A, 0xC4);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncCommonPassStart = new Guid(0x6A67739F, 0x4EB5, 0x4385, 0x99, 0x28, 0xF2, 0x76, 0xA9, 0x39, 0xEF, 0x95);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncCommonPassEnd = new Guid(0x0E3D01BC, 0xC85C, 0x467D, 0x8B, 0x60, 0xC4, 0x10, 0x12, 0xEE, 0x3B, 0xF6);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncCommonRealTime = new Guid(0x143A0FF6, 0xA131, 0x43DA, 0xB8, 0x1E, 0x98, 0xFB, 0xB8, 0xEC, 0x37, 0x8E);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncCommonQuality = new Guid(0xFCBF57A3, 0x7EA5, 0x4B0C, 0x96, 0x44, 0x69, 0xB4, 0x0C, 0x39, 0xC3, 0x91);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncCommonQualityVsSpeed = new Guid(0x98332DF8, 0x03CD, 0x476B, 0x89, 0xFA, 0x3F, 0x9E, 0x44, 0x2D, 0xEC, 0x9F);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncCommonTranscodeEncodingProfile = new Guid(0x6947787C, 0xF508, 0x4EA9, 0xB1, 0xE9, 0xA1, 0xFE, 0x3A, 0x49, 0xFB, 0xC9);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncCommonMeanBitRate = new Guid(0xF7222374, 0x2144, 0x4815, 0xB5, 0x50, 0xA3, 0x7F, 0x8E, 0x12, 0xEE, 0x52);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncCommonMeanBitRateInterval = new Guid(0xBFAA2F0C, 0xCB82, 0x4BC0, 0x84, 0x74, 0xF0, 0x6A, 0x8A, 0x0D, 0x02, 0x58);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncCommonMaxBitRate = new Guid(0x9651EAE4, 0x39B9, 0x4EBF, 0x85, 0xEF, 0xD7, 0xF4, 0x44, 0xEC, 0x74, 0x65);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncCommonMinBitRate = new Guid(0x101405B2, 0x2083, 0x4034, 0xA8, 0x06, 0xEF, 0xBE, 0xDD, 0xD7, 0xC9, 0xFF);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncCommonBufferSize = new Guid(0x0DB96574, 0xB6A4, 0x4C8B, 0x81, 0x06, 0x37, 0x73, 0xDE, 0x03, 0x10, 0xCD);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncCommonBufferInLevel = new Guid(0xD9C5C8DB, 0xFC74, 0x4064, 0x94, 0xE9, 0xCD, 0x19, 0xF9, 0x47, 0xED, 0x45);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncCommonBufferOutLevel = new Guid(0xCCAE7F49, 0xD0BC, 0x4E3D, 0xA5, 0x7E, 0xFB, 0x57, 0x40, 0x14, 0x00, 0x69);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncCommonStreamEndHandling = new Guid(0x6AAD30AF, 0x6BA8, 0x4CCC, 0x8F, 0xCA, 0x18, 0xD1, 0x9B, 0xEA, 0xEB, 0x1C);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncStatCommonCompletedPasses = new Guid(0x3E5DE533, 0x9DF7, 0x438C, 0x85, 0x4F, 0x9F, 0x7D, 0xD3, 0x68, 0x3D, 0x34);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncVideoOutputFrameRate = new Guid(0xEA85E7C3, 0x9567, 0x4D99, 0x87, 0xC4, 0x02, 0xC1, 0xC2, 0x78, 0xCA, 0x7C);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncVideoOutputFrameRateConversion = new Guid(0x8C068BF4, 0x369A, 0x4BA3, 0x82, 0xFD, 0xB2, 0x51, 0x8F, 0xB3, 0x39, 0x6E);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncVideoPixelAspectRatio = new Guid(0x3CDC718F, 0xB3E9, 0x4EB6, 0xA5, 0x7F, 0xCF, 0x1F, 0x1B, 0x32, 0x1B, 0x87);
-
-        public static readonly Guid STATIC_CODECAPI_AVDecVideoAcceleration_MPEG2 = new Guid(0xF7DB8A2E, 0x4F48, 0x4EE8, 0xAE, 0x31, 0x8B, 0x6E, 0xBE, 0x55, 0x8A, 0xE2);
-
-        public static readonly Guid STATIC_CODECAPI_AVDecVideoAcceleration_H264 = new Guid(0xF7DB8A2F, 0x4F48, 0x4EE8, 0xAE, 0x31, 0x8B, 0x6E, 0xBE, 0x55, 0x8A, 0xE2);
-
-        public static readonly Guid STATIC_CODECAPI_AVDecVideoAcceleration_VC1 = new Guid(0xF7DB8A30, 0x4F48, 0x4EE8, 0xAE, 0x31, 0x8B, 0x6E, 0xBE, 0x55, 0x8A, 0xE2);
-
-        public static readonly Guid STATIC_CODECAPI_AVDecVideoProcDeinterlaceCSC = new Guid(0xF7DB8A31, 0x4F48, 0x4EE8, 0xAE, 0x31, 0x8B, 0x6E, 0xBE, 0x55, 0x8A, 0xE2);
-
-        public static readonly Guid STATIC_CODECAPI_AVDecVideoThumbnailGenerationMode = new Guid(0x2EFD8EEE, 0x1150, 0x4328, 0x9C, 0xF5, 0x66, 0xDC, 0xE9, 0x33, 0xFC, 0xF4);
-
-        public static readonly Guid STATIC_CODECAPI_AVDecVideoMaxCodedWidth = new Guid(0x5AE557B8, 0x77AF, 0x41F5, 0x9F, 0xA6, 0x4D, 0xB2, 0xFE, 0x1D, 0x4B, 0xCA);
-
-        public static readonly Guid STATIC_CODECAPI_AVDecVideoMaxCodedHeight = new Guid(0x7262A16A, 0xD2DC, 0x4E75, 0x9B, 0xA8, 0x65, 0xC0, 0xC6, 0xD3, 0x2B, 0x13);
-
-        public static readonly Guid STATIC_CODECAPI_AVDecNumWorkerThreads = new Guid(0x9561C3E8, 0xEA9E, 0x4435, 0x9B, 0x1E, 0xA9, 0x3E, 0x69, 0x18, 0x94, 0xD8);
-
-        public static readonly Guid STATIC_CODECAPI_AVDecSoftwareDynamicFormatChange = new Guid(0x862E2F0A, 0x507B, 0x47FF, 0xAF, 0x47, 0x01, 0xE2, 0x62, 0x42, 0x98, 0xB7);
-
-        public static readonly Guid STATIC_CODECAPI_AVDecDisableVideoPostProcessing = new Guid(0xF8749193, 0x667A, 0x4F2C, 0xA9, 0xE8, 0x5D, 0x4A, 0xF9, 0x24, 0xF0, 0x8F);
-
-        public static readonly Guid STATIC_CODECAPI_AVDecVideoDropPicWithMissingRef = new Guid(0xF8226383, 0x14C2, 0x4567, 0x97, 0x34, 0x50, 0x04, 0xE9, 0x6F, 0xF8, 0x87);
-
-        public static readonly Guid STATIC_CODECAPI_AVDecVideoSoftwareDeinterlaceMode = new Guid(0x0C08D1CE, 0x9CED, 0x4540, 0xBA, 0xE3, 0xCE, 0xB3, 0x80, 0x14, 0x11, 0x09);
-
-        public static readonly Guid STATIC_CODECAPI_AVDecVideoFastDecodeMode = new Guid(0x6B529F7D, 0xD3B1, 0x49C6, 0xA9, 0x99, 0x9E, 0xC6, 0x91, 0x1B, 0xED, 0xBF);
-
-        public static readonly Guid STATIC_CODECAPI_AVLowLatencyMode = new Guid(0x9C27891A, 0xED7A, 0x40E1, 0x88, 0xE8, 0xB2, 0x27, 0x27, 0xA0, 0x24, 0xEE);
-
-        public static readonly Guid STATIC_CODECAPI_AVDecVideoH264ErrorConcealment = new Guid(0xECECACE8, 0x3436, 0x462C, 0x92, 0x94, 0xCD, 0x7B, 0xAC, 0xD7, 0x58, 0xA9);
-
-        public static readonly Guid STATIC_CODECAPI_AVDecVideoMPEG2ErrorConcealment = new Guid(0x9D2BFE18, 0x728D, 0x48D2, 0xB3, 0x58, 0xBC, 0x7E, 0x43, 0x6C, 0x66, 0x74);
-
-        public static readonly Guid STATIC_CODECAPI_AVDecVideoCodecType = new Guid(0x434528E5, 0x21F0, 0x46B6, 0xB6, 0x2C, 0x9B, 0x1B, 0x6B, 0x65, 0x8C, 0xD1);
-
-        public static readonly Guid STATIC_CODECAPI_AVDecVideoDXVAMode = new Guid(0xF758F09E, 0x7337, 0x4AE7, 0x83, 0x87, 0x73, 0xDC, 0x2D, 0x54, 0xE6, 0x7D);
-
-        public static readonly Guid STATIC_CODECAPI_AVDecVideoDXVABusEncryption = new Guid(0x42153C8B, 0xFD0B, 0x4765, 0xA4, 0x62, 0xDD, 0xD9, 0xE8, 0xBC, 0xC3, 0x88);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncVideoForceSourceScanType = new Guid(0x1EF2065F, 0x058A, 0x4765, 0xA4, 0xFC, 0x8A, 0x86, 0x4C, 0x10, 0x30, 0x12);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncVideoNoOfFieldsToEncode = new Guid(0x61E4BBE2, 0x4EE0, 0x40E7, 0x80, 0xAB, 0x51, 0xDD, 0xEE, 0xBE, 0x62, 0x91);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncVideoNoOfFieldsToSkip = new Guid(0xA97E1240, 0x1427, 0x4C16, 0xA7, 0xF7, 0x3D, 0xCF, 0xD8, 0xBA, 0x4C, 0xC5);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncVideoEncodeDimension = new Guid(0x1074DF28, 0x7E0F, 0x47A4, 0xA4, 0x53, 0xCD, 0xD7, 0x38, 0x70, 0xF5, 0xCE);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncVideoEncodeOffsetOrigin = new Guid(0x6BC098FE, 0xA71A, 0x4454, 0x85, 0x2E, 0x4D, 0x2D, 0xDE, 0xB2, 0xCD, 0x24);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncVideoDisplayDimension = new Guid(0xDE053668, 0xF4EC, 0x47A9, 0x86, 0xD0, 0x83, 0x67, 0x70, 0xF0, 0xC1, 0xD5);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncVideoOutputScanType = new Guid(0x460B5576, 0x842E, 0x49AB, 0xA6, 0x2D, 0xB3, 0x6F, 0x73, 0x12, 0xC9, 0xDB);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncVideoInverseTelecineEnable = new Guid(0x2EA9098B, 0xE76D, 0x4CCD, 0xA0, 0x30, 0xD3, 0xB8, 0x89, 0xC1, 0xB6, 0x4C);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncVideoInverseTelecineThreshold = new Guid(0x40247D84, 0xE895, 0x497F, 0xB4, 0x4C, 0xB7, 0x45, 0x60, 0xAC, 0xFE, 0x27);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncVideoSourceFilmContent = new Guid(0x1791C64B, 0xCCFC, 0x4827, 0xA0, 0xED, 0x25, 0x57, 0x79, 0x3B, 0x2B, 0x1C);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncVideoSourceIsBW = new Guid(0x42FFC49B, 0x1812, 0x4FDC, 0x8D, 0x24, 0x70, 0x54, 0xC5, 0x21, 0xE6, 0xEB);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncVideoFieldSwap = new Guid(0xFEFD7569, 0x4E0A, 0x49F2, 0x9F, 0x2B, 0x36, 0x0E, 0xA4, 0x8C, 0x19, 0xA2);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncVideoInputChromaResolution = new Guid(0xBB0CEC33, 0x16F1, 0x47B0, 0x8A, 0x88, 0x37, 0x81, 0x5B, 0xEE, 0x17, 0x39);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncVideoOutputChromaResolution = new Guid(0x6097B4C9, 0x7C1D, 0x4E64, 0xBF, 0xCC, 0x9E, 0x97, 0x65, 0x31, 0x8A, 0xE7);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncVideoInputChromaSubsampling = new Guid(0xA8E73A39, 0x4435, 0x4EC3, 0xA6, 0xEA, 0x98, 0x30, 0x0F, 0x4B, 0x36, 0xF7);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncVideoOutputChromaSubsampling = new Guid(0xFA561C6C, 0x7D17, 0x44F0, 0x83, 0xC9, 0x32, 0xED, 0x12, 0xE9, 0x63, 0x43);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncVideoInputColorPrimaries = new Guid(0xC24D783F, 0x7CE6, 0x4278, 0x90, 0xAB, 0x28, 0xA4, 0xF1, 0xE5, 0xF8, 0x6C);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncVideoOutputColorPrimaries = new Guid(0xBE95907C, 0x9D04, 0x4921, 0x89, 0x85, 0xA6, 0xD6, 0xD8, 0x7D, 0x1A, 0x6C);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncVideoInputColorTransferFunction = new Guid(0x8C056111, 0xA9C3, 0x4B08, 0xA0, 0xA0, 0xCE, 0x13, 0xF8, 0xA2, 0x7C, 0x75);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncVideoOutputColorTransferFunction = new Guid(0x4A7F884A, 0xEA11, 0x460D, 0xBF, 0x57, 0xB8, 0x8B, 0xC7, 0x59, 0x00, 0xDE);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncVideoInputColorTransferMatrix = new Guid(0x52ED68B9, 0x72D5, 0x4089, 0x95, 0x8D, 0xF5, 0x40, 0x5D, 0x55, 0x08, 0x1C);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncVideoOutputColorTransferMatrix = new Guid(0xA9B90444, 0xAF40, 0x4310, 0x8F, 0xBE, 0xED, 0x6D, 0x93, 0x3F, 0x89, 0x2B);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncVideoInputColorLighting = new Guid(0x46A99549, 0x0015, 0x4A45, 0x9C, 0x30, 0x1D, 0x5C, 0xFA, 0x25, 0x83, 0x16);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncVideoOutputColorLighting = new Guid(0x0E5AAAC6, 0xACE6, 0x4C5C, 0x99, 0x8E, 0x1A, 0x8C, 0x9C, 0x6C, 0x0F, 0x89);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncVideoInputColorNominalRange = new Guid(0x16CF25C6, 0xA2A6, 0x48E9, 0xAE, 0x80, 0x21, 0xAE, 0xC4, 0x1D, 0x42, 0x7E);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncVideoOutputColorNominalRange = new Guid(0x972835ED, 0x87B5, 0x4E95, 0x95, 0x00, 0xC7, 0x39, 0x58, 0x56, 0x6E, 0x54);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncInputVideoSystem = new Guid(0xBEDE146D, 0xB616, 0x4DC7, 0x92, 0xB2, 0xF5, 0xD9, 0xFA, 0x92, 0x98, 0xF7);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncVideoHeaderDropFrame = new Guid(0x6ED9E124, 0x7925, 0x43FE, 0x97, 0x1B, 0xE0, 0x19, 0xF6, 0x22, 0x22, 0xB4);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncVideoHeaderHours = new Guid(0x2ACC7702, 0xE2DA, 0x4158, 0xBF, 0x9B, 0x88, 0x88, 0x01, 0x29, 0xD7, 0x40);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncVideoHeaderMinutes = new Guid(0xDC1A99CE, 0x0307, 0x408B, 0x88, 0x0B, 0xB8, 0x34, 0x8E, 0xE8, 0xCA, 0x7F);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncVideoHeaderSeconds = new Guid(0x4A2E1A05, 0xA780, 0x4F58, 0x81, 0x20, 0x9A, 0x44, 0x9D, 0x69, 0x65, 0x6B);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncVideoHeaderFrames = new Guid(0xAFD5F567, 0x5C1B, 0x4ADC, 0xBD, 0xAF, 0x73, 0x56, 0x10, 0x38, 0x14, 0x36);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncVideoDefaultUpperFieldDominant = new Guid(0x810167C4, 0x0BC1, 0x47CA, 0x8F, 0xC2, 0x57, 0x05, 0x5A, 0x14, 0x74, 0xA5);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncVideoCBRMotionTradeoff = new Guid(0x0D49451E, 0x18D5, 0x4367, 0xA4, 0xEF, 0x32, 0x40, 0xDF, 0x16, 0x93, 0xC4);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncVideoCodedVideoAccessUnitSize = new Guid(0xB4B10C15, 0x14A7, 0x4CE8, 0xB1, 0x73, 0xDC, 0x90, 0xA0, 0xB4, 0xFC, 0xDB);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncVideoMaxKeyframeDistance = new Guid(0x2987123A, 0xBA93, 0x4704, 0xB4, 0x89, 0xEC, 0x1E, 0x5F, 0x25, 0x29, 0x2C);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncH264CABACEnable = new Guid(0xEE6CAD62, 0xD305, 0x4248, 0xA5, 0x0E, 0xE1, 0xB2, 0x55, 0xF7, 0xCA, 0xF8);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncVideoContentType = new Guid(0x66117ACA, 0xEB77, 0x459D, 0x93, 0x0C, 0xA4, 0x8D, 0x9D, 0x06, 0x83, 0xFC);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncNumWorkerThreads = new Guid(0xB0C8BF60, 0x16F7, 0x4951, 0xA3, 0x0B, 0x1D, 0xB1, 0x60, 0x92, 0x93, 0xD6);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncVideoEncodeQP = new Guid(0x2CB5696B, 0x23FB, 0x4CE1, 0xA0, 0xF9, 0xEF, 0x5B, 0x90, 0xFD, 0x55, 0xCA);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncVideoMinQP = new Guid(0x0EE22C6A, 0xA37C, 0x4568, 0xB5, 0xF1, 0x9D, 0x4C, 0x2B, 0x3A, 0xB8, 0x86);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncVideoForceKeyFrame = new Guid(0x398C1B98, 0x8353, 0x475A, 0x9E, 0xF2, 0x8F, 0x26, 0x5D, 0x26, 0x03, 0x45);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncH264SPSID = new Guid(0x50F38F51, 0x2B79, 0x40E3, 0xB3, 0x9C, 0x7E, 0x9F, 0xA0, 0x77, 0x05, 0x01);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncH264PPSID = new Guid(0xBFE29EC2, 0x056C, 0x4D68, 0xA3, 0x8D, 0xAE, 0x59, 0x44, 0xC8, 0x58, 0x2E);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncAdaptiveMode = new Guid(0x4419B185, 0xDA1F, 0x4F53, 0xBC, 0x76, 0x09, 0x7D, 0x0C, 0x1E, 0xFB, 0x1E);
-
-        public static readonly Guid STATIC_CODECAPI_AVScenarioInfo = new Guid(0xB28A6E64, 0x3FF9, 0x446A, 0x8A, 0x4B, 0x0D, 0x7A, 0x53, 0x41, 0x32, 0x36);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncMPVGOPSizeMin = new Guid(0x7155CF20, 0xD440, 0x4852, 0xAD, 0x0F, 0x9C, 0x4A, 0xBF, 0xE3, 0x7A, 0x6A);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncMPVGOPSizeMax = new Guid(0xFE7DE4C4, 0x1936, 0x4FE2, 0xBD, 0xF7, 0x1F, 0x18, 0xCA, 0x1D, 0x00, 0x1F);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncVideoMaxCTBSize = new Guid(0x822363FF, 0xCEC8, 0x43E5, 0x92, 0xFD, 0xE0, 0x97, 0x48, 0x84, 0x85, 0xE9);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncVideoCTBSize = new Guid(0xD47DB8B2, 0xE73B, 0x4CB9, 0x8C, 0x3E, 0xBD, 0x87, 0x7D, 0x06, 0xD7, 0x7B);
-
-        public static readonly Guid STATIC_CODECAPI_VideoEncoderDisplayContentType = new Guid(0x79B90B27, 0xF4B1, 0x42DC, 0x9D, 0xD7, 0xCD, 0xAF, 0x81, 0x35, 0xC4, 0x00);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncEnableVideoProcessing = new Guid(0x006F4BF6, 0x0EA3, 0x4D42, 0x87, 0x02, 0xB5, 0xD8, 0xBE, 0x0F, 0x7A, 0x92);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncVideoGradualIntraRefresh = new Guid(0x8F347DEE, 0xCB0D, 0x49BA, 0xB4, 0x62, 0xDB, 0x69, 0x27, 0xEE, 0x21, 0x01);
-
-        public static readonly Guid STATIC_CODECAPI_GetOPMContext = new Guid(0x2F036C05, 0x4C14, 0x4689, 0x88, 0x39, 0x29, 0x4C, 0x6D, 0x73, 0xE0, 0x53);
-
-        public static readonly Guid STATIC_CODECAPI_SetHDCPManagerContext = new Guid(0x6D2D1FC8, 0x3DC9, 0x47EB, 0xA1, 0xA2, 0x47, 0x1C, 0x80, 0xCD, 0x60, 0xD0);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncVideoMaxTemporalLayers = new Guid(0x9C668CFE, 0x08E1, 0x424A, 0x93, 0x4E, 0xB7, 0x64, 0xB0, 0x64, 0x80, 0x2A);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncVideoNumGOPsPerIDR = new Guid(0x83BC5BDB, 0x5B89, 0x4521, 0x8F, 0x66, 0x33, 0x15, 0x1C, 0x37, 0x31, 0x76);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncCommonAllowFrameDrops = new Guid(0xD8477DCB, 0x9598, 0x48E3, 0x8D, 0x0C, 0x75, 0x2B, 0xF2, 0x06, 0x09, 0x3E);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncVideoIntraLayerPrediction = new Guid(0xD3AF46B8, 0xBF47, 0x44BB, 0xA2, 0x83, 0x69, 0xF0, 0xB0, 0x22, 0x8F, 0xF9);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncVideoInstantTemporalUpSwitching = new Guid(0xA3308307, 0x0D96, 0x4BA4, 0xB1, 0xF0, 0xB9, 0x1A, 0x5E, 0x49, 0xDF, 0x10);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncLowPowerEncoder = new Guid(0xB668D582, 0x8BAD, 0x4F6A, 0x91, 0x41, 0x37, 0x5A, 0x95, 0x35, 0x8B, 0x6D);
-
-        public static readonly Guid STATIC_CODECAPI_AVEnableInLoopDeblockFilter = new Guid(0xD2E8E399, 0x0623, 0x4BF3, 0x92, 0xA8, 0x4D, 0x18, 0x18, 0x52, 0x9D, 0xED);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncVideoSelectLayer = new Guid(0xEB1084F5, 0x6AAA, 0x4914, 0xBB, 0x2F, 0x61, 0x47, 0x22, 0x7F, 0x12, 0xE7);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncVideoTemporalLayerCount = new Guid(0x19CAEBFF, 0xB74D, 0x4CFD, 0x8C, 0x27, 0xC2, 0xF9, 0xD9, 0x7D, 0x5F, 0x52);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncVideoUsage = new Guid(0x1F636849, 0x5DC1, 0x49F1, 0xB1, 0xD8, 0xCE, 0x3C, 0xF6, 0x2E, 0xA3, 0x85);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncVideoRateControlParams = new Guid(0x87D43767, 0x7645, 0x44EC, 0xB4, 0x38, 0xD3, 0x32, 0x2F, 0xBC, 0xA2, 0x9F);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncVideoSupportedControls = new Guid(0xD3F40FDD, 0x77B9, 0x473D, 0x81, 0x96, 0x06, 0x12, 0x59, 0xE6, 0x9C, 0xFF);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncVideoEncodeFrameTypeQP = new Guid(0xAA70B610, 0xE03F, 0x450C, 0xAD, 0x07, 0x07, 0x31, 0x4E, 0x63, 0x9C, 0xE7);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncSliceControlMode = new Guid(0xE9E782EF, 0x5F18, 0x44C9, 0xA9, 0x0B, 0xE9, 0xC3, 0xC2, 0xC1, 0x7B, 0x0B);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncSliceControlSize = new Guid(0x92F51DF3, 0x07A5, 0x4172, 0xAE, 0xFE, 0xC6, 0x9C, 0xA3, 0xB6, 0x0E, 0x35);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncSliceGenerationMode = new Guid(0x8A6BC67F, 0x9497, 0x4286, 0xB4, 0x6B, 0x02, 0xDB, 0x8D, 0x60, 0xED, 0xBC);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncVideoMaxNumRefFrame = new Guid(0x964829ED, 0x94F9, 0x43B4, 0xB7, 0x4D, 0xEF, 0x40, 0x94, 0x4B, 0x69, 0xA0);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncVideoMeanAbsoluteDifference = new Guid(0xE5C0C10F, 0x81A4, 0x422D, 0x8C, 0x3F, 0xB4, 0x74, 0xA4, 0x58, 0x13, 0x36);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncVideoMaxQP = new Guid(0x3DAF6F66, 0xA6A7, 0x45E0, 0xA8, 0xE5, 0xF2, 0x74, 0x3F, 0x46, 0xA3, 0xA2);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncVideoLTRBufferControl = new Guid(0xA4A0E93D, 0x4CBC, 0x444C, 0x89, 0xF4, 0x82, 0x6D, 0x31, 0x0E, 0x92, 0xA7);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncVideoMarkLTRFrame = new Guid(0xE42F4748, 0xA06D, 0x4EF9, 0x8C, 0xEA, 0x3D, 0x05, 0xFD, 0xE3, 0xBD, 0x3B);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncVideoUseLTRFrame = new Guid(0x00752DB8, 0x55F7, 0x4F80, 0x89, 0x5B, 0x27, 0x63, 0x91, 0x95, 0xF2, 0xAD);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncVideoROIEnabled = new Guid(0xD74F7F18, 0x44DD, 0x4B85, 0xAB, 0xA3, 0x05, 0xD9, 0xF4, 0x2A, 0x82, 0x80);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncVideoDirtyRectEnabled = new Guid(0x8ACB8FDD, 0x5E0C, 0x4C66, 0x87, 0x29, 0xB8, 0xF6, 0x29, 0xAB, 0x04, 0xFB);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncMaxFrameRate = new Guid(0xB98E1B31, 0x19FA, 0x4D4F, 0x99, 0x31, 0xD6, 0xA5, 0xB8, 0xAA, 0xB9, 0x3C);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncMuxOutputStreamType = new Guid(0xCEDD9E8F, 0x34D3, 0x44DB, 0xA1, 0xD8, 0xF8, 0x15, 0x20, 0x25, 0x4F, 0x3E);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncStatVideoOutputFrameRate = new Guid(0xBE747849, 0x9AB4, 0x4A63, 0x98, 0xFE, 0xF1, 0x43, 0xF0, 0x4F, 0x8E, 0xE9);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncStatVideoCodedFrames = new Guid(0xD47F8D61, 0x6F5A, 0x4A26, 0xBB, 0x9F, 0xCD, 0x95, 0x18, 0x46, 0x2B, 0xCD);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncStatVideoTotalFrames = new Guid(0xFDAA9916, 0x119A, 0x4222, 0x9A, 0xD6, 0x3F, 0x7C, 0xAB, 0x99, 0xCC, 0x8B);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncAudioIntervalToEncode = new Guid(0x866E4B4D, 0x725A, 0x467C, 0xBB, 0x01, 0xB4, 0x96, 0xB2, 0x3B, 0x25, 0xF9);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncAudioIntervalToSkip = new Guid(0x88C15F94, 0xC38C, 0x4796, 0xA9, 0xE8, 0x96, 0xE9, 0x67, 0x98, 0x3F, 0x26);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncAudioDualMono = new Guid(0x3648126B, 0xA3E8, 0x4329, 0x9B, 0x3A, 0x5C, 0xE5, 0x66, 0xA4, 0x3B, 0xD3);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncAudioMeanBitRate = new Guid(0x921295BB, 0x4FCA, 0x4679, 0xAA, 0xB8, 0x9E, 0x2A, 0x1D, 0x75, 0x33, 0x84);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncAudioMapDestChannel0 = new Guid(0xBC5D0B60, 0xDF6A, 0x4E16, 0x98, 0x03, 0xB8, 0x20, 0x07, 0xA3, 0x0C, 0x8D);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncAudioMapDestChannel1 = new Guid(0xBC5D0B61, 0xDF6A, 0x4E16, 0x98, 0x03, 0xB8, 0x20, 0x07, 0xA3, 0x0C, 0x8D);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncAudioMapDestChannel2 = new Guid(0xBC5D0B62, 0xDF6A, 0x4E16, 0x98, 0x03, 0xB8, 0x20, 0x07, 0xA3, 0x0C, 0x8D);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncAudioMapDestChannel3 = new Guid(0xBC5D0B63, 0xDF6A, 0x4E16, 0x98, 0x03, 0xB8, 0x20, 0x07, 0xA3, 0x0C, 0x8D);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncAudioMapDestChannel4 = new Guid(0xBC5D0B64, 0xDF6A, 0x4E16, 0x98, 0x03, 0xB8, 0x20, 0x07, 0xA3, 0x0C, 0x8D);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncAudioMapDestChannel5 = new Guid(0xBC5D0B65, 0xDF6A, 0x4E16, 0x98, 0x03, 0xB8, 0x20, 0x07, 0xA3, 0x0C, 0x8D);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncAudioMapDestChannel6 = new Guid(0xBC5D0B66, 0xDF6A, 0x4E16, 0x98, 0x03, 0xB8, 0x20, 0x07, 0xA3, 0x0C, 0x8D);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncAudioMapDestChannel7 = new Guid(0xBC5D0B67, 0xDF6A, 0x4E16, 0x98, 0x03, 0xB8, 0x20, 0x07, 0xA3, 0x0C, 0x8D);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncAudioMapDestChannel8 = new Guid(0xBC5D0B68, 0xDF6A, 0x4E16, 0x98, 0x03, 0xB8, 0x20, 0x07, 0xA3, 0x0C, 0x8D);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncAudioMapDestChannel9 = new Guid(0xBC5D0B69, 0xDF6A, 0x4E16, 0x98, 0x03, 0xB8, 0x20, 0x07, 0xA3, 0x0C, 0x8D);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncAudioMapDestChannel10 = new Guid(0xBC5D0B6A, 0xDF6A, 0x4E16, 0x98, 0x03, 0xB8, 0x20, 0x07, 0xA3, 0x0C, 0x8D);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncAudioMapDestChannel11 = new Guid(0xBC5D0B6B, 0xDF6A, 0x4E16, 0x98, 0x03, 0xB8, 0x20, 0x07, 0xA3, 0x0C, 0x8D);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncAudioMapDestChannel12 = new Guid(0xBC5D0B6C, 0xDF6A, 0x4E16, 0x98, 0x03, 0xB8, 0x20, 0x07, 0xA3, 0x0C, 0x8D);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncAudioMapDestChannel13 = new Guid(0xBC5D0B6D, 0xDF6A, 0x4E16, 0x98, 0x03, 0xB8, 0x20, 0x07, 0xA3, 0x0C, 0x8D);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncAudioMapDestChannel14 = new Guid(0xBC5D0B6E, 0xDF6A, 0x4E16, 0x98, 0x03, 0xB8, 0x20, 0x07, 0xA3, 0x0C, 0x8D);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncAudioMapDestChannel15 = new Guid(0xBC5D0B6F, 0xDF6A, 0x4E16, 0x98, 0x03, 0xB8, 0x20, 0x07, 0xA3, 0x0C, 0x8D);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncAudioInputContent = new Guid(0x3E226C2B, 0x60B9, 0x4A39, 0xB0, 0x0B, 0xA7, 0xB4, 0x0F, 0x70, 0xD5, 0x66);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncStatAudioPeakPCMValue = new Guid(0xDCE7FD34, 0xDC00, 0x4C16, 0x82, 0x1B, 0x35, 0xD9, 0xEB, 0x00, 0xFB, 0x1A);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncStatAudioAveragePCMValue = new Guid(0x979272F8, 0xD17F, 0x4E32, 0xBB, 0x73, 0x4E, 0x73, 0x1C, 0x68, 0xBA, 0x2D);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncStatAudioAverageBPS = new Guid(0xCA6724DB, 0x7059, 0x4351, 0x8B, 0x43, 0xF8, 0x21, 0x98, 0x82, 0x6A, 0x14);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncStatAverageBPS = new Guid(0xCA6724DB, 0x7059, 0x4351, 0x8B, 0x43, 0xF8, 0x21, 0x98, 0x82, 0x6A, 0x14);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncStatHardwareProcessorUtilitization = new Guid(0x995DC027, 0xCB95, 0x49E6, 0xB9, 0x1B, 0x59, 0x67, 0x75, 0x3C, 0xDC, 0xB8);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncStatHardwareBandwidthUtilitization = new Guid(0x0124BA9B, 0xDC41, 0x4826, 0xB4, 0x5F, 0x18, 0xAC, 0x01, 0xB3, 0xD5, 0xA8);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncMPVGOPSize = new Guid(0x95F31B26, 0x95A4, 0x41AA, 0x93, 0x03, 0x24, 0x6A, 0x7F, 0xC6, 0xEE, 0xF1);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncMPVGOPOpen = new Guid(0xB1D5D4A6, 0x3300, 0x49B1, 0xAE, 0x61, 0xA0, 0x99, 0x37, 0xAB, 0x0E, 0x49);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncMPVDefaultBPictureCount = new Guid(0x8D390AAC, 0xDC5C, 0x4200, 0xB5, 0x7F, 0x81, 0x4D, 0x04, 0xBA, 0xBA, 0xB2);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncMPVProfile = new Guid(0xDABB534A, 0x1D99, 0x4284, 0x97, 0x5A, 0xD9, 0x0E, 0x22, 0x39, 0xBA, 0xA1);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncMPVLevel = new Guid(0x6EE40C40, 0xA60C, 0x41EF, 0x8F, 0x50, 0x37, 0xC2, 0x24, 0x9E, 0x2C, 0xB3);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncMPVFrameFieldMode = new Guid(0xACB5DE96, 0x7B93, 0x4C2F, 0x88, 0x25, 0xB0, 0x29, 0x5F, 0xA9, 0x3B, 0xF4);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncMPVAddSeqEndCode = new Guid(0xA823178F, 0x57DF, 0x4C7A, 0xB8, 0xFD, 0xE5, 0xEC, 0x88, 0x87, 0x70, 0x8D);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncMPVGOPSInSeq = new Guid(0x993410D4, 0x2691, 0x4192, 0x99, 0x78, 0x98, 0xDC, 0x26, 0x03, 0x66, 0x9F);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncMPVUseConcealmentMotionVectors = new Guid(0xEC770CF3, 0x6908, 0x4B4B, 0xAA, 0x30, 0x7F, 0xB9, 0x86, 0x21, 0x4F, 0xEA);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncMPVSceneDetection = new Guid(0x552799F1, 0xDB4C, 0x405B, 0x8A, 0x3A, 0xC9, 0x3F, 0x2D, 0x06, 0x74, 0xDC);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncMPVGenerateHeaderSeqExt = new Guid(0xD5E78611, 0x082D, 0x4E6B, 0x98, 0xAF, 0x0F, 0x51, 0xAB, 0x13, 0x92, 0x22);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncMPVGenerateHeaderSeqDispExt = new Guid(0x6437AA6F, 0x5A3C, 0x4DE9, 0x8A, 0x16, 0x53, 0xD9, 0xC4, 0xAD, 0x32, 0x6F);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncMPVGenerateHeaderPicExt = new Guid(0x1B8464AB, 0x944F, 0x45F0, 0xB7, 0x4E, 0x3A, 0x58, 0xDA, 0xD1, 0x1F, 0x37);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncMPVGenerateHeaderPicDispExt = new Guid(0xC6412F84, 0xC03F, 0x4F40, 0xA0, 0x0C, 0x42, 0x93, 0xDF, 0x83, 0x95, 0xBB);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncMPVGenerateHeaderSeqScaleExt = new Guid(0x0722D62F, 0xDD59, 0x4A86, 0x9C, 0xD5, 0x64, 0x4F, 0x8E, 0x26, 0x53, 0xD8);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncMPVScanPattern = new Guid(0x7F8A478E, 0x7BBB, 0x4AE2, 0xB2, 0xFC, 0x96, 0xD1, 0x7F, 0xC4, 0xA2, 0xD6);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncMPVIntraDCPrecision = new Guid(0xA0116151, 0xCBC8, 0x4AF3, 0x97, 0xDC, 0xD0, 0x0C, 0xCE, 0xB8, 0x2D, 0x79);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncMPVQScaleType = new Guid(0x2B79EBB7, 0xF484, 0x4AF7, 0xBB, 0x58, 0xA2, 0xA1, 0x88, 0xC5, 0xCB, 0xBE);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncMPVIntraVLCTable = new Guid(0xA2B83FF5, 0x1A99, 0x405A, 0xAF, 0x95, 0xC5, 0x99, 0x7D, 0x55, 0x8D, 0x3A);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncMPVQuantMatrixIntra = new Guid(0x9BEA04F3, 0x6621, 0x442C, 0x8B, 0xA1, 0x3A, 0xC3, 0x78, 0x97, 0x96, 0x98);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncMPVQuantMatrixNonIntra = new Guid(0x87F441D8, 0x0997, 0x4BEB, 0xA0, 0x8E, 0x85, 0x73, 0xD4, 0x09, 0xCF, 0x75);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncMPVQuantMatrixChromaIntra = new Guid(0x9EB9ECD4, 0x018D, 0x4FFD, 0x8F, 0x2D, 0x39, 0xE4, 0x9F, 0x07, 0xB1, 0x7A);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncMPVQuantMatrixChromaNonIntra = new Guid(0x1415B6B1, 0x362A, 0x4338, 0xBA, 0x9A, 0x1E, 0xF5, 0x87, 0x03, 0xC0, 0x5B);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncMPALayer = new Guid(0x9D377230, 0xF91B, 0x453D, 0x9C, 0xE0, 0x78, 0x44, 0x54, 0x14, 0xC2, 0x2D);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncMPACodingMode = new Guid(0xB16ADE03, 0x4B93, 0x43D7, 0xA5, 0x50, 0x90, 0xB4, 0xFE, 0x22, 0x45, 0x37);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncMPACopyright = new Guid(0xA6AE762A, 0xD0A9, 0x4454, 0xB8, 0xEF, 0xF2, 0xDB, 0xEE, 0xFD, 0xD3, 0xBD);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncMPAOriginalBitstream = new Guid(0x3CFB7855, 0x9CC9, 0x47FF, 0xB8, 0x29, 0xB3, 0x67, 0x86, 0xC9, 0x23, 0x46);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncMPAEnableRedundancyProtection = new Guid(0x5E54B09E, 0xB2E7, 0x4973, 0xA8, 0x9B, 0x0B, 0x36, 0x50, 0xA3, 0xBE, 0xDA);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncMPAPrivateUserBit = new Guid(0xAFA505CE, 0xC1E3, 0x4E3D, 0x85, 0x1B, 0x61, 0xB7, 0x00, 0xE5, 0xE6, 0xCC);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncMPAEmphasisType = new Guid(0x2D59FCDA, 0xBF4E, 0x4ED6, 0xB5, 0xDF, 0x5B, 0x03, 0xB3, 0x6B, 0x0A, 0x1F);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncDDService = new Guid(0xD2E1BEC7, 0x5172, 0x4D2A, 0xA5, 0x0E, 0x2F, 0x3B, 0x82, 0xB1, 0xDD, 0xF8);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncDDDialogNormalization = new Guid(0xD7055ACF, 0xF125, 0x437D, 0xA7, 0x04, 0x79, 0xC7, 0x9F, 0x04, 0x04, 0xA8);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncDDCentreDownMixLevel = new Guid(0xE285072C, 0xC958, 0x4A81, 0xAF, 0xD2, 0xE5, 0xE0, 0xDA, 0xF1, 0xB1, 0x48);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncDDSurroundDownMixLevel = new Guid(0x7B20D6E5, 0x0BCF, 0x4273, 0xA4, 0x87, 0x50, 0x6B, 0x04, 0x79, 0x97, 0xE9);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncDDProductionInfoExists = new Guid(0xB0B7FE5F, 0xB6AB, 0x4F40, 0x96, 0x4D, 0x8D, 0x91, 0xF1, 0x7C, 0x19, 0xE8);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncDDProductionRoomType = new Guid(0xDAD7AD60, 0x23D8, 0x4AB7, 0xA2, 0x84, 0x55, 0x69, 0x86, 0xD8, 0xA6, 0xFE);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncDDProductionMixLevel = new Guid(0x301D103A, 0xCBF9, 0x4776, 0x88, 0x99, 0x7C, 0x15, 0xB4, 0x61, 0xAB, 0x26);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncDDCopyright = new Guid(0x8694F076, 0xCD75, 0x481D, 0xA5, 0xC6, 0xA9, 0x04, 0xDC, 0xC8, 0x28, 0xF0);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncDDOriginalBitstream = new Guid(0x966AE800, 0x5BD3, 0x4FF9, 0x95, 0xB9, 0xD3, 0x05, 0x66, 0x27, 0x38, 0x56);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncDDDigitalDeemphasis = new Guid(0xE024A2C2, 0x947C, 0x45AC, 0x87, 0xD8, 0xF1, 0x03, 0x0C, 0x5C, 0x00, 0x82);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncDDDCHighPassFilter = new Guid(0x9565239F, 0x861C, 0x4AC8, 0xBF, 0xDA, 0xE0, 0x0C, 0xB4, 0xDB, 0x85, 0x48);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncDDChannelBWLowPassFilter = new Guid(0xE197821D, 0xD2E7, 0x43E2, 0xAD, 0x2C, 0x00, 0x58, 0x2F, 0x51, 0x85, 0x45);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncDDLFELowPassFilter = new Guid(0xD3B80F6F, 0x9D15, 0x45E5, 0x91, 0xBE, 0x01, 0x9C, 0x3F, 0xAB, 0x1F, 0x01);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncDDSurround90DegreeePhaseShift = new Guid(0x25ECEC9D, 0x3553, 0x42C0, 0xBB, 0x56, 0xD2, 0x57, 0x92, 0x10, 0x4F, 0x80);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncDDSurround3dBAttenuation = new Guid(0x4D43B99D, 0x31E2, 0x48B9, 0xBF, 0x2E, 0x5C, 0xBF, 0x1A, 0x57, 0x27, 0x84);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncDDDynamicRangeCompressionControl = new Guid(0xCFC2FF6D, 0x79B8, 0x4B8D, 0xA8, 0xAA, 0xA0, 0xC9, 0xBD, 0x1C, 0x29, 0x40);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncDDRFPreEmphasisFilter = new Guid(0x21AF44C0, 0x244E, 0x4F3D, 0xA2, 0xCC, 0x3D, 0x30, 0x68, 0xB2, 0xE7, 0x3F);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncDDSurroundExMode = new Guid(0x91607CEE, 0xDBDD, 0x4EB6, 0xBC, 0xA2, 0xAA, 0xDF, 0xAF, 0xA3, 0xDD, 0x68);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncDDPreferredStereoDownMixMode = new Guid(0x7F4E6B31, 0x9185, 0x403D, 0xB0, 0xA2, 0x76, 0x37, 0x43, 0xE6, 0xF0, 0x63);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncDDLtRtCenterMixLvl_x10 = new Guid(0xDCA128A2, 0x491F, 0x4600, 0xB2, 0xDA, 0x76, 0xE3, 0x34, 0x4B, 0x41, 0x97);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncDDLtRtSurroundMixLvl_x10 = new Guid(0x212246C7, 0x3D2C, 0x4DFA, 0xBC, 0x21, 0x65, 0x2A, 0x90, 0x98, 0x69, 0x0D);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncDDLoRoCenterMixLvl_x10 = new Guid(0x1CFBA222, 0x25B3, 0x4BF4, 0x9B, 0xFD, 0xE7, 0x11, 0x12, 0x67, 0x85, 0x8C);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncDDLoRoSurroundMixLvl_x10 = new Guid(0xE725CFF6, 0xEB56, 0x40C7, 0x84, 0x50, 0x2B, 0x93, 0x67, 0xE9, 0x15, 0x55);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncDDAtoDConverterType = new Guid(0x719F9612, 0x81A1, 0x47E0, 0x9A, 0x05, 0xD9, 0x4A, 0xD5, 0xFC, 0xA9, 0x48);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncDDHeadphoneMode = new Guid(0x4052DBEC, 0x52F5, 0x42F5, 0x9B, 0x00, 0xD1, 0x34, 0xB1, 0x34, 0x1B, 0x9D);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncWMVKeyFrameDistance = new Guid(0x5569055E, 0xE268, 0x4771, 0xB8, 0x3E, 0x95, 0x55, 0xEA, 0x28, 0xAE, 0xD3);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncWMVInterlacedEncoding = new Guid(0xE3D00F8A, 0xC6F5, 0x4E14, 0xA5, 0x88, 0x0E, 0xC8, 0x7A, 0x72, 0x6F, 0x9B);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncWMVDecoderComplexity = new Guid(0xF32C0DAB, 0xF3CB, 0x4217, 0xB7, 0x9F, 0x87, 0x62, 0x76, 0x8B, 0x5F, 0x67);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncWMVKeyFrameBufferLevelMarker = new Guid(0x51FF1115, 0x33AC, 0x426C, 0xA1, 0xB1, 0x09, 0x32, 0x1B, 0xDF, 0x96, 0xB4);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncWMVProduceDummyFrames = new Guid(0xD669D001, 0x183C, 0x42E3, 0xA3, 0xCA, 0x2F, 0x45, 0x86, 0xD2, 0x39, 0x6C);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncStatWMVCBAvg = new Guid(0x6AA6229F, 0xD602, 0x4B9D, 0xB6, 0x8C, 0xC1, 0xAD, 0x78, 0x88, 0x4B, 0xEF);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncStatWMVCBMax = new Guid(0xE976BEF8, 0x00FE, 0x44B4, 0xB6, 0x25, 0x8F, 0x23, 0x8B, 0xC0, 0x34, 0x99);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncStatWMVDecoderComplexityProfile = new Guid(0x89E69FC3, 0x0F9B, 0x436C, 0x97, 0x4A, 0xDF, 0x82, 0x12, 0x27, 0xC9, 0x0D);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncStatMPVSkippedEmptyFrames = new Guid(0x32195FD3, 0x590D, 0x4812, 0xA7, 0xED, 0x6D, 0x63, 0x9A, 0x1F, 0x97, 0x11);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncMP12PktzSTDBuffer = new Guid(0x0B751BD0, 0x819E, 0x478C, 0x94, 0x35, 0x75, 0x20, 0x89, 0x26, 0xB3, 0x77);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncMP12PktzStreamID = new Guid(0xC834D038, 0xF5E8, 0x4408, 0x9B, 0x60, 0x88, 0xF3, 0x64, 0x93, 0xFE, 0xDF);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncMP12PktzInitialPTS = new Guid(0x2A4F2065, 0x9A63, 0x4D20, 0xAE, 0x22, 0x0A, 0x1B, 0xC8, 0x96, 0xA3, 0x15);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncMP12PktzPacketSize = new Guid(0xAB71347A, 0x1332, 0x4DDE, 0xA0, 0xE5, 0xCC, 0xF7, 0xDA, 0x8A, 0x0F, 0x22);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncMP12PktzCopyright = new Guid(0xC8F4B0C1, 0x094C, 0x43C7, 0x8E, 0x68, 0xA5, 0x95, 0x40, 0x5A, 0x6E, 0xF8);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncMP12PktzOriginal = new Guid(0x6B178416, 0x31B9, 0x4964, 0x94, 0xCB, 0x6B, 0xFF, 0x86, 0x6C, 0xDF, 0x83);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncMP12MuxPacketOverhead = new Guid(0xE40BD720, 0x3955, 0x4453, 0xAC, 0xF9, 0xB7, 0x91, 0x32, 0xA3, 0x8F, 0xA0);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncMP12MuxNumStreams = new Guid(0xF7164A41, 0xDCED, 0x4659, 0xA8, 0xF2, 0xFB, 0x69, 0x3F, 0x2A, 0x4C, 0xD0);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncMP12MuxEarliestPTS = new Guid(0x157232B6, 0xF809, 0x474E, 0x94, 0x64, 0xA7, 0xF9, 0x30, 0x14, 0xA8, 0x17);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncMP12MuxLargestPacketSize = new Guid(0x35CEB711, 0xF461, 0x4B92, 0xA4, 0xEF, 0x17, 0xB6, 0x84, 0x1E, 0xD2, 0x54);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncMP12MuxInitialSCR = new Guid(0x3433AD21, 0x1B91, 0x4A0B, 0xB1, 0x90, 0x2B, 0x77, 0x06, 0x3B, 0x63, 0xA4);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncMP12MuxMuxRate = new Guid(0xEE047C72, 0x4BDB, 0x4A9D, 0x8E, 0x21, 0x41, 0x92, 0x6C, 0x82, 0x3D, 0xA7);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncMP12MuxPackSize = new Guid(0xF916053A, 0x1CE8, 0x4FAF, 0xAA, 0x0B, 0xBA, 0x31, 0xC8, 0x00, 0x34, 0xB8);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncMP12MuxSysSTDBufferBound = new Guid(0x35746903, 0xB545, 0x43E7, 0xBB, 0x35, 0xC5, 0xE0, 0xA7, 0xD5, 0x09, 0x3C);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncMP12MuxSysRateBound = new Guid(0x05F0428A, 0xEE30, 0x489D, 0xAE, 0x28, 0x20, 0x5C, 0x72, 0x44, 0x67, 0x10);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncMP12MuxTargetPacketizer = new Guid(0xD862212A, 0x2015, 0x45DD, 0x9A, 0x32, 0x1B, 0x3A, 0xA8, 0x82, 0x05, 0xA0);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncMP12MuxSysFixed = new Guid(0xCEFB987E, 0x894F, 0x452E, 0x8F, 0x89, 0xA4, 0xEF, 0x8C, 0xEC, 0x06, 0x3A);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncMP12MuxSysCSPS = new Guid(0x7952FF45, 0x9C0D, 0x4822, 0xBC, 0x82, 0x8A, 0xD7, 0x72, 0xE0, 0x29, 0x93);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncMP12MuxSysVideoLock = new Guid(0xB8296408, 0x2430, 0x4D37, 0xA2, 0xA1, 0x95, 0xB3, 0xE4, 0x35, 0xA9, 0x1D);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncMP12MuxSysAudioLock = new Guid(0x0FBB5752, 0x1D43, 0x47BF, 0xBD, 0x79, 0xF2, 0x29, 0x3D, 0x8C, 0xE3, 0x37);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncMP12MuxDVDNavPacks = new Guid(0xC7607CED, 0x8CF1, 0x4A99, 0x83, 0xA1, 0xEE, 0x54, 0x61, 0xBE, 0x35, 0x74);
-
-        public static readonly Guid STATIC_CODECAPI_AVDecCommonInputFormat = new Guid(0xE5005239, 0xBD89, 0x4BE3, 0x9C, 0x0F, 0x5D, 0xDE, 0x31, 0x79, 0x88, 0xCC);
-
-        public static readonly Guid STATIC_CODECAPI_AVDecCommonOutputFormat = new Guid(0x3C790028, 0xC0CE, 0x4256, 0xB1, 0xA2, 0x1B, 0x0F, 0xC8, 0xB1, 0xDC, 0xDC);
-
-        public static readonly Guid STATIC_CODECAPI_AVDecCommonMeanBitRate = new Guid(0x59488217, 0x007A, 0x4F7A, 0x8E, 0x41, 0x5C, 0x48, 0xB1, 0xEA, 0xC5, 0xC6);
-
-        public static readonly Guid STATIC_CODECAPI_AVDecCommonMeanBitRateInterval = new Guid(0x0EE437C6, 0x38A7, 0x4C5C, 0x94, 0x4C, 0x68, 0xAB, 0x42, 0x11, 0x6B, 0x85);
-
-        public static readonly Guid STATIC_CODECAPI_GUID_AVDecAudioOutputFormat_PCM_Stereo_MatrixEncoded = new Guid(0x696E1D30, 0x548F, 0x4036, 0x82, 0x5F, 0x70, 0x26, 0xC6, 0x00, 0x11, 0xBD);
-
-        public static readonly Guid STATIC_CODECAPI_GUID_AVDecAudioOutputFormat_PCM = new Guid(0x696E1D31, 0x548F, 0x4036, 0x82, 0x5F, 0x70, 0x26, 0xC6, 0x00, 0x11, 0xBD);
-
-        public static readonly Guid STATIC_CODECAPI_GUID_AVDecAudioOutputFormat_SPDIF_PCM = new Guid(0x696E1D32, 0x548F, 0x4036, 0x82, 0x5F, 0x70, 0x26, 0xC6, 0x00, 0x11, 0xBD);
-
-        public static readonly Guid STATIC_CODECAPI_GUID_AVDecAudioOutputFormat_SPDIF_Bitstream = new Guid(0x696E1D33, 0x548F, 0x4036, 0x82, 0x5F, 0x70, 0x26, 0xC6, 0x00, 0x11, 0xBD);
-
-        public static readonly Guid STATIC_CODECAPI_GUID_AVDecAudioOutputFormat_PCM_Headphones = new Guid(0x696E1D34, 0x548F, 0x4036, 0x82, 0x5F, 0x70, 0x26, 0xC6, 0x00, 0x11, 0xBD);
-
-        public static readonly Guid STATIC_CODECAPI_GUID_AVDecAudioOutputFormat_PCM_Stereo_Auto = new Guid(0x696E1D35, 0x548F, 0x4036, 0x82, 0x5F, 0x70, 0x26, 0xC6, 0x00, 0x11, 0xBD);
-
-        public static readonly Guid STATIC_CODECAPI_AVDecVideoImageSize = new Guid(0x5EE5747C, 0x6801, 0x4CAB, 0xAA, 0xF1, 0x62, 0x48, 0xFA, 0x84, 0x1B, 0xA4);
-
-        public static readonly Guid STATIC_CODECAPI_AVDecVideoPixelAspectRatio = new Guid(0xB0CF8245, 0xF32D, 0x41DF, 0xB0, 0x2C, 0x87, 0xBD, 0x30, 0x4D, 0x12, 0xAB);
-
-        public static readonly Guid STATIC_CODECAPI_AVDecVideoInputScanType = new Guid(0x38477E1F, 0x0EA7, 0x42CD, 0x8C, 0xD1, 0x13, 0x0C, 0xED, 0x57, 0xC5, 0x80);
-
-        public static readonly Guid STATIC_CODECAPI_AVDecVideoSWPowerLevel = new Guid(0xFB5D2347, 0x4DD8, 0x4509, 0xAE, 0xD0, 0xDB, 0x5F, 0xA9, 0xAA, 0x93, 0xF4);
-
-        public static readonly Guid STATIC_CODECAPI_GUID_AVDecAudioInputWMA = new Guid(0xC95E8DCF, 0x4058, 0x4204, 0x8C, 0x42, 0xCB, 0x24, 0xD9, 0x1E, 0x4B, 0x9B);
-
-        public static readonly Guid STATIC_CODECAPI_GUID_AVDecAudioInputWMAPro = new Guid(0x0128B7C7, 0xDA72, 0x4FE3, 0xBE, 0xF8, 0x5C, 0x52, 0xE3, 0x55, 0x77, 0x04);
-
-        public static readonly Guid STATIC_CODECAPI_GUID_AVDecAudioInputDolby = new Guid(0x8E4228A0, 0xF000, 0x4E0B, 0x8F, 0x54, 0xAB, 0x8D, 0x24, 0xAD, 0x61, 0xA2);
-
-        public static readonly Guid STATIC_CODECAPI_GUID_AVDecAudioInputDTS = new Guid(0x600BC0CA, 0x6A1F, 0x4E91, 0xB2, 0x41, 0x1B, 0xBE, 0xB1, 0xCB, 0x19, 0xE0);
-
-        public static readonly Guid STATIC_CODECAPI_GUID_AVDecAudioInputPCM = new Guid(0xF2421DA5, 0xBBB4, 0x4CD5, 0xA9, 0x96, 0x93, 0x3C, 0x6B, 0x5D, 0x13, 0x47);
-
-        public static readonly Guid STATIC_CODECAPI_GUID_AVDecAudioInputMPEG = new Guid(0x91106F36, 0x02C5, 0x4F75, 0x97, 0x19, 0x3B, 0x7A, 0xBF, 0x75, 0xE1, 0xF6);
-
-        public static readonly Guid STATIC_CODECAPI_GUID_AVDecAudioInputAAC = new Guid(0x97DF7828, 0xB94A, 0x47E2, 0xA4, 0xBC, 0x51, 0x19, 0x4D, 0xB2, 0x2A, 0x4D);
-
-        public static readonly Guid STATIC_CODECAPI_GUID_AVDecAudioInputHEAAC = new Guid(0x16EFB4AA, 0x330E, 0x4F5C, 0x98, 0xA8, 0xCF, 0x6A, 0xC5, 0x5C, 0xBE, 0x60);
-
-        public static readonly Guid STATIC_CODECAPI_GUID_AVDecAudioInputDolbyDigitalPlus = new Guid(0x0803E185, 0x8F5D, 0x47F5, 0x99, 0x08, 0x19, 0xA5, 0xBB, 0xC9, 0xFE, 0x34);
-
-        public static readonly Guid STATIC_CODECAPI_AVDecAACDownmixMode = new Guid(0x01274475, 0xF6BB, 0x4017, 0xB0, 0x84, 0x81, 0xA7, 0x63, 0xC9, 0x42, 0xD4);
-
-        public static readonly Guid STATIC_CODECAPI_AVDecHEAACDynamicRangeControl = new Guid(0x287C8ABE, 0x69A4, 0x4D39, 0x80, 0x80, 0xD3, 0xD9, 0x71, 0x21, 0x78, 0xA0);
-
-        public static readonly Guid STATIC_CODECAPI_AVDecAudioDualMono = new Guid(0x4A52CDA8, 0x30F8, 0x4216, 0xBE, 0x0F, 0xBA, 0x0B, 0x20, 0x25, 0x92, 0x1D);
-
-        public static readonly Guid STATIC_CODECAPI_AVDecAudioDualMonoReproMode = new Guid(0xA5106186, 0xCC94, 0x4BC9, 0x8C, 0xD9, 0xAA, 0x2F, 0x61, 0xF6, 0x80, 0x7E);
-
-        public static readonly Guid STATIC_CODECAPI_AVAudioChannelCount = new Guid(0x1D3583C4, 0x1583, 0x474E, 0xB7, 0x1A, 0x5E, 0xE4, 0x63, 0xC1, 0x98, 0xE4);
-
-        public static readonly Guid STATIC_CODECAPI_AVAudioChannelConfig = new Guid(0x17F89CB3, 0xC38D, 0x4368, 0x9E, 0xDE, 0x63, 0xB9, 0x4D, 0x17, 0x7F, 0x9F);
-
-        public static readonly Guid STATIC_CODECAPI_AVAudioSampleRate = new Guid(0x971D2723, 0x1ACB, 0x42E7, 0x85, 0x5C, 0x52, 0x0A, 0x4B, 0x70, 0xA5, 0xF2);
-
-        public static readonly Guid STATIC_CODECAPI_AVDDSurroundMode = new Guid(0x99F2F386, 0x98D1, 0x4452, 0xA1, 0x63, 0xAB, 0xC7, 0x8A, 0x6E, 0xB7, 0x70);
-
-        public static readonly Guid STATIC_CODECAPI_AVDecDDOperationalMode = new Guid(0xD6D6C6D1, 0x064E, 0x4FDD, 0xA4, 0x0E, 0x3E, 0xCB, 0xFC, 0xB7, 0xEB, 0xD0);
-
-        public static readonly Guid STATIC_CODECAPI_AVDecDDMatrixDecodingMode = new Guid(0xDDC811A5, 0x04ED, 0x4BF3, 0xA0, 0xCA, 0xD0, 0x04, 0x49, 0xF9, 0x35, 0x5F);
-
-        public static readonly Guid STATIC_CODECAPI_AVDecDDDynamicRangeScaleHigh = new Guid(0x50196C21, 0x1F33, 0x4AF5, 0xB2, 0x96, 0x11, 0x42, 0x6D, 0x6C, 0x87, 0x89);
-
-        public static readonly Guid STATIC_CODECAPI_AVDecDDDynamicRangeScaleLow = new Guid(0x044E62E4, 0x11A5, 0x42D5, 0xA3, 0xB2, 0x3B, 0xB2, 0xC7, 0xC2, 0xD7, 0xCF);
-
-        public static readonly Guid STATIC_CODECAPI_AVDecDDStereoDownMixMode = new Guid(0x6CE4122C, 0x3EE9, 0x4182, 0xB4, 0xAE, 0xC1, 0x0F, 0xC0, 0x88, 0x64, 0x9D);
-
-        public static readonly Guid STATIC_CODECAPI_AVDSPLoudnessEqualization = new Guid(0x8AFD1A15, 0x1812, 0x4CBF, 0x93, 0x19, 0x43, 0x3A, 0x5B, 0x2A, 0x3B, 0x27);
-
-        public static readonly Guid STATIC_CODECAPI_AVDSPSpeakerFill = new Guid(0x5612BCA1, 0x56DA, 0x4582, 0x8D, 0xA1, 0xCA, 0x80, 0x90, 0xF9, 0x27, 0x68);
-
-        public static readonly Guid STATIC_CODECAPI_AVPriorityControl = new Guid(0x54BA3DC8, 0xBDDE, 0x4329, 0xB1, 0x87, 0x20, 0x18, 0xBC, 0x5C, 0x2B, 0xA1);
-
-        public static readonly Guid STATIC_CODECAPI_AVRealtimeControl = new Guid(0x6F440632, 0xC4AD, 0x4BF7, 0x9E, 0x52, 0x45, 0x69, 0x42, 0xB4, 0x54, 0xB0);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncNoInputCopy = new Guid(0xD2B46A2A, 0xE8EE, 0x4EC5, 0x86, 0x9E, 0x44, 0x9B, 0x6C, 0x62, 0xC8, 0x1A);
-
-        public static readonly Guid STATIC_CODECAPI_AVEncChromaEncodeMode = new Guid(0x8A47AB5A, 0x4798, 0x4C93, 0xB5, 0xA5, 0x55, 0x4F, 0x9A, 0x3B, 0x9F, 0x50);
-
-        public static readonly Guid IID_CODECAPI_AVEncProgressiveUpdateTime = new Guid(0x649FAF66, 0xAFC6, 0x4828, 0x8F, 0xDC, 0x07, 0x71, 0xCD, 0x9A, 0xB1, 0x7D);
-
-        public static readonly Guid IID_CODECAPI_AVEncChromaUpdateTime = new Guid(0x4B4FD998, 0x4274, 0x40BB, 0x8E, 0xE4, 0x07, 0x55, 0x3E, 0x7E, 0x2D, 0x3A);
+        public static ref readonly Guid STATIC_CODECAPI_AVEncCommonFormatConstraint
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xB8, 0xB9, 0xCB, 0x57,
+                    0x6F, 0x11,
+                    0x51, 0x49,
+                    0xB4,
+                    0x0C,
+                    0xC2,
+                    0xA0,
+                    0x35,
+                    0xED,
+                    0x8F,
+                    0x17
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_GUID_AVEncCommonFormatUnSpecified
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x5A, 0xA3, 0x46, 0xAF,
+                    0x24, 0x60,
+                    0x25, 0x45,
+                    0xA4,
+                    0x8A,
+                    0x09,
+                    0x4B,
+                    0x97,
+                    0xF5,
+                    0xB3,
+                    0xC2
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_GUID_AVEncCommonFormatDVD_V
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xC4, 0x98, 0x95, 0xCC,
+                    0xFE, 0xE7,
+                    0x1D, 0x45,
+                    0xB1,
+                    0xCA,
+                    0x76,
+                    0x1B,
+                    0xC8,
+                    0x40,
+                    0xB7,
+                    0xF3
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_GUID_AVEncCommonFormatDVD_DashVR
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xD6, 0x99, 0x51, 0xE5,
+                    0x4C, 0x04,
+                    0xAE, 0x4D,
+                    0xA4,
+                    0x88,
+                    0x53,
+                    0x1E,
+                    0xD3,
+                    0x06,
+                    0x23,
+                    0x5B
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_GUID_AVEncCommonFormatDVD_PlusVR
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x2E, 0x6F, 0x4C, 0xE7,
+                    0x37, 0xEC,
+                    0x8D, 0x47,
+                    0x9A,
+                    0xF4,
+                    0xA5,
+                    0xE1,
+                    0x35,
+                    0xB6,
+                    0x27,
+                    0x1C
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_GUID_AVEncCommonFormatVCD
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xF7, 0x5B, 0x03, 0x95,
+                    0x90, 0x9D,
+                    0xFF, 0x40,
+                    0xAD,
+                    0x5C,
+                    0x5C,
+                    0xF8,
+                    0xCF,
+                    0x71,
+                    0xCA,
+                    0x1D
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_GUID_AVEncCommonFormatSVCD
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x18, 0x58, 0xD8, 0x51,
+                    0x20, 0x82,
+                    0x8C, 0x44,
+                    0x80,
+                    0x66,
+                    0xD6,
+                    0x9B,
+                    0xED,
+                    0x16,
+                    0xC9,
+                    0xAD
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_GUID_AVEncCommonFormatATSC
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x7C, 0x89, 0x7B, 0x8D,
+                    0x19, 0xA0,
+                    0x70, 0x46,
+                    0xAA,
+                    0x76,
+                    0x2E,
+                    0xDC,
+                    0xAC,
+                    0x7A,
+                    0xC2,
+                    0x96
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_GUID_AVEncCommonFormatDVB
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x8F, 0x0D, 0x83, 0x71,
+                    0x33, 0x6C,
+                    0x0D, 0x43,
+                    0x84,
+                    0x4B,
+                    0xC2,
+                    0x70,
+                    0x5B,
+                    0xAA,
+                    0xE6,
+                    0xDB
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_GUID_AVEncCommonFormatMP3
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xCD, 0x33, 0x97, 0x34,
+                    0x08, 0xEB,
+                    0xC2, 0x4D,
+                    0x81,
+                    0x97,
+                    0xE4,
+                    0x98,
+                    0x35,
+                    0xEF,
+                    0x82,
+                    0x8B
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_GUID_AVEncCommonFormatHighMAT
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x60, 0xE7, 0xAB, 0x1E,
+                    0x2B, 0xFB,
+                    0x28, 0x49,
+                    0x90,
+                    0xD1,
+                    0x78,
+                    0xDB,
+                    0x88,
+                    0xEE,
+                    0xE8,
+                    0x89
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_GUID_AVEncCommonFormatHighMPV
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xB8, 0x5D, 0xD2, 0xA2,
+                    0xF9, 0xB8,
+                    0xC2, 0x42,
+                    0x8B,
+                    0xC7,
+                    0x0B,
+                    0x93,
+                    0xCF,
+                    0x60,
+                    0x47,
+                    0x88
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncCodecType
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xC1, 0x4A, 0xAF, 0x08,
+                    0xF2, 0xF3,
+                    0x74, 0x4C,
+                    0x9D,
+                    0xCF,
+                    0x37,
+                    0xF2,
+                    0xEC,
+                    0x79,
+                    0xF8,
+                    0x26
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_GUID_AVEncMPEG1Video
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xFE, 0xFE, 0xDA, 0xC8,
+                    0x1E, 0xDA,
+                    0x74, 0x47,
+                    0xB2,
+                    0x7D,
+                    0x11,
+                    0x83,
+                    0x0C,
+                    0x16,
+                    0xB1,
+                    0xFE
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_GUID_AVEncMPEG2Video
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x9A, 0xC1, 0x6D, 0x04,
+                    0x77, 0x66,
+                    0xAA, 0x4A,
+                    0xA3,
+                    0x1D,
+                    0xC1,
+                    0xAB,
+                    0x71,
+                    0x6F,
+                    0x45,
+                    0x60
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_GUID_AVEncMPEG1Audio
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x62, 0x13, 0xDD, 0xD4,
+                    0x4A, 0xCD,
+                    0xD6, 0x4C,
+                    0x81,
+                    0x38,
+                    0xB9,
+                    0x4D,
+                    0xB4,
+                    0x54,
+                    0x2B,
+                    0x04
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_GUID_AVEncMPEG2Audio
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x1F, 0xBB, 0x4C, 0xEE,
+                    0x3F, 0x9C,
+                    0x70, 0x47,
+                    0x92,
+                    0xB5,
+                    0xFC,
+                    0xB7,
+                    0xC2,
+                    0xA8,
+                    0xD3,
+                    0x81
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_GUID_AVEncWMV
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x9B, 0xEF, 0x0F, 0x4E,
+                    0x43, 0x1D,
+                    0xBD, 0x41,
+                    0xB8,
+                    0xBD,
+                    0x4D,
+                    0x7B,
+                    0xF7,
+                    0x45,
+                    0x7A,
+                    0x2A
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_GUID_AVEndMPEG4Video
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x2A, 0xB1, 0x37, 0xDD,
+                    0x03, 0x95,
+                    0x8B, 0x4F,
+                    0xB8,
+                    0xD0,
+                    0x32,
+                    0x4A,
+                    0x00,
+                    0xC0,
+                    0xA1,
+                    0xCF
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_GUID_AVEncH264Video
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xAB, 0x4E, 0x04, 0x95,
+                    0xB3, 0x31,
+                    0xDE, 0x47,
+                    0x8E,
+                    0x75,
+                    0x38,
+                    0xA4,
+                    0x2B,
+                    0xB0,
+                    0x3E,
+                    0x28
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_GUID_AVEncDV
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xC7, 0x69, 0xB7, 0x09,
+                    0x29, 0x33,
+                    0xFB, 0x44,
+                    0x89,
+                    0x54,
+                    0xFA,
+                    0x30,
+                    0x93,
+                    0x7D,
+                    0x3D,
+                    0x5A
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_GUID_AVEncWMAPro
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x0C, 0xF9, 0x55, 0x19,
+                    0xF7, 0x33,
+                    0x68, 0x4A,
+                    0xAB,
+                    0x81,
+                    0x53,
+                    0xF5,
+                    0x65,
+                    0x71,
+                    0x25,
+                    0xC4
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_GUID_AVEncWMALossless
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x65, 0x72, 0xCA, 0x55,
+                    0xD8, 0x23,
+                    0x61, 0x47,
+                    0x90,
+                    0x31,
+                    0xB7,
+                    0x4F,
+                    0xBE,
+                    0x12,
+                    0xF4,
+                    0xC1
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_GUID_AVEncWMAVoice
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xCB, 0x18, 0xED, 0x13,
+                    0xE8, 0x50,
+                    0x76, 0x42,
+                    0xA2,
+                    0x88,
+                    0xA6,
+                    0xAA,
+                    0x22,
+                    0x83,
+                    0x82,
+                    0xD9
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_GUID_AVEncDolbyDigitalPro
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xCC, 0x76, 0xBE, 0xF5,
+                    0xF8, 0x0F,
+                    0xEB, 0x40,
+                    0x9C,
+                    0xB1,
+                    0xBB,
+                    0xA9,
+                    0x40,
+                    0x04,
+                    0xD4,
+                    0x4F
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_GUID_AVEncDolbyDigitalConsumer
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x6C, 0xBF, 0xA7, 0xC1,
+                    0x59, 0x00,
+                    0xFA, 0x4B,
+                    0x94,
+                    0xEF,
+                    0xEF,
+                    0x74,
+                    0x7A,
+                    0x76,
+                    0x8D,
+                    0x52
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_GUID_AVEncDolbyDigitalPlus
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x80, 0x1B, 0x8D, 0x69,
+                    0xDD, 0xF7,
+                    0x5C, 0x41,
+                    0x97,
+                    0x1C,
+                    0x42,
+                    0x49,
+                    0x2A,
+                    0x20,
+                    0x56,
+                    0xC6
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_GUID_AVEncDTSHD
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x30, 0xE6, 0x52, 0x20,
+                    0x9D, 0x46,
+                    0xFB, 0x4B,
+                    0x80,
+                    0xCA,
+                    0x1D,
+                    0x65,
+                    0x6E,
+                    0x7E,
+                    0x91,
+                    0x8F
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_GUID_AVEncDTS
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xA2, 0xCA, 0xFB, 0x45,
+                    0x6E, 0x5E,
+                    0xB0, 0x4A,
+                    0x88,
+                    0x93,
+                    0x59,
+                    0x03,
+                    0xBE,
+                    0xE9,
+                    0x3A,
+                    0xCF
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_GUID_AVEncMLP
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x29, 0x3E, 0xF7, 0x05,
+                    0xD1, 0xF0,
+                    0x1E, 0x43,
+                    0xA4,
+                    0x1C,
+                    0xA4,
+                    0x74,
+                    0x32,
+                    0xEC,
+                    0x5A,
+                    0x66
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_GUID_AVEncPCM
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xF4, 0xE7, 0x4B, 0x84,
+                    0xCF, 0x26,
+                    0x79, 0x47,
+                    0xB3,
+                    0x86,
+                    0xCC,
+                    0x05,
+                    0xD1,
+                    0x87,
+                    0x99,
+                    0x0C
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_GUID_AVEncSDDS
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x2F, 0xB8, 0xC1, 0x1D,
+                    0xC8, 0x11,
+                    0x71, 0x4C,
+                    0xB7,
+                    0xB6,
+                    0xEE,
+                    0x3E,
+                    0xB9,
+                    0xBC,
+                    0x2B,
+                    0x94
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncCommonRateControlMode
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xE9, 0x08, 0x06, 0x1C,
+                    0x0C, 0x37,
+                    0x10, 0x47,
+                    0x8A,
+                    0x58,
+                    0xCB,
+                    0x61,
+                    0x81,
+                    0xC4,
+                    0x24,
+                    0x23
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncCommonLowLatency
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x55, 0xCD, 0x3E, 0x9D,
+                    0xE8, 0x89,
+                    0x0A, 0x49,
+                    0x97,
+                    0x0A,
+                    0x0C,
+                    0x95,
+                    0x48,
+                    0xD5,
+                    0xA5,
+                    0x6E
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncCommonMultipassMode
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x4C, 0x3D, 0x53, 0x22,
+                    0xE1, 0x47,
+                    0xB5, 0x41,
+                    0x93,
+                    0x52,
+                    0xA2,
+                    0xB7,
+                    0x78,
+                    0x0E,
+                    0x7A,
+                    0xC4
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncCommonPassStart
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x9F, 0x73, 0x67, 0x6A,
+                    0xB5, 0x4E,
+                    0x85, 0x43,
+                    0x99,
+                    0x28,
+                    0xF2,
+                    0x76,
+                    0xA9,
+                    0x39,
+                    0xEF,
+                    0x95
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncCommonPassEnd
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xBC, 0x01, 0x3D, 0x0E,
+                    0x5C, 0xC8,
+                    0x7D, 0x46,
+                    0x8B,
+                    0x60,
+                    0xC4,
+                    0x10,
+                    0x12,
+                    0xEE,
+                    0x3B,
+                    0xF6
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncCommonRealTime
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xF6, 0x0F, 0x3A, 0x14,
+                    0x31, 0xA1,
+                    0xDA, 0x43,
+                    0xB8,
+                    0x1E,
+                    0x98,
+                    0xFB,
+                    0xB8,
+                    0xEC,
+                    0x37,
+                    0x8E
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncCommonQuality
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xA3, 0x57, 0xBF, 0xFC,
+                    0xA5, 0x7E,
+                    0x0C, 0x4B,
+                    0x96,
+                    0x44,
+                    0x69,
+                    0xB4,
+                    0x0C,
+                    0x39,
+                    0xC3,
+                    0x91
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncCommonQualityVsSpeed
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xF8, 0x2D, 0x33, 0x98,
+                    0xCD, 0x03,
+                    0x6B, 0x47,
+                    0x89,
+                    0xFA,
+                    0x3F,
+                    0x9E,
+                    0x44,
+                    0x2D,
+                    0xEC,
+                    0x9F
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncCommonTranscodeEncodingProfile
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x7C, 0x78, 0x47, 0x69,
+                    0x08, 0xF5,
+                    0xA9, 0x4E,
+                    0xB1,
+                    0xE9,
+                    0xA1,
+                    0xFE,
+                    0x3A,
+                    0x49,
+                    0xFB,
+                    0xC9
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncCommonMeanBitRate
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x74, 0x23, 0x22, 0xF7,
+                    0x44, 0x21,
+                    0x15, 0x48,
+                    0xB5,
+                    0x50,
+                    0xA3,
+                    0x7F,
+                    0x8E,
+                    0x12,
+                    0xEE,
+                    0x52
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncCommonMeanBitRateInterval
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x0C, 0x2F, 0xAA, 0xBF,
+                    0x82, 0xCB,
+                    0xC0, 0x4B,
+                    0x84,
+                    0x74,
+                    0xF0,
+                    0x6A,
+                    0x8A,
+                    0x0D,
+                    0x02,
+                    0x58
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncCommonMaxBitRate
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xE4, 0xEA, 0x51, 0x96,
+                    0xB9, 0x39,
+                    0xBF, 0x4E,
+                    0x85,
+                    0xEF,
+                    0xD7,
+                    0xF4,
+                    0x44,
+                    0xEC,
+                    0x74,
+                    0x65
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncCommonMinBitRate
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xB2, 0x05, 0x14, 0x10,
+                    0x83, 0x20,
+                    0x34, 0x40,
+                    0xA8,
+                    0x06,
+                    0xEF,
+                    0xBE,
+                    0xDD,
+                    0xD7,
+                    0xC9,
+                    0xFF
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncCommonBufferSize
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x74, 0x65, 0xB9, 0x0D,
+                    0xA4, 0xB6,
+                    0x8B, 0x4C,
+                    0x81,
+                    0x06,
+                    0x37,
+                    0x73,
+                    0xDE,
+                    0x03,
+                    0x10,
+                    0xCD
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncCommonBufferInLevel
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xDB, 0xC8, 0xC5, 0xD9,
+                    0x74, 0xFC,
+                    0x64, 0x40,
+                    0x94,
+                    0xE9,
+                    0xCD,
+                    0x19,
+                    0xF9,
+                    0x47,
+                    0xED,
+                    0x45
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncCommonBufferOutLevel
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x49, 0x7F, 0xAE, 0xCC,
+                    0xBC, 0xD0,
+                    0x3D, 0x4E,
+                    0xA5,
+                    0x7E,
+                    0xFB,
+                    0x57,
+                    0x40,
+                    0x14,
+                    0x00,
+                    0x69
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncCommonStreamEndHandling
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xAF, 0x30, 0xAD, 0x6A,
+                    0xA8, 0x6B,
+                    0xCC, 0x4C,
+                    0x8F,
+                    0xCA,
+                    0x18,
+                    0xD1,
+                    0x9B,
+                    0xEA,
+                    0xEB,
+                    0x1C
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncStatCommonCompletedPasses
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x33, 0xE5, 0x5D, 0x3E,
+                    0xF7, 0x9D,
+                    0x8C, 0x43,
+                    0x85,
+                    0x4F,
+                    0x9F,
+                    0x7D,
+                    0xD3,
+                    0x68,
+                    0x3D,
+                    0x34
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncVideoOutputFrameRate
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xC3, 0xE7, 0x85, 0xEA,
+                    0x67, 0x95,
+                    0x99, 0x4D,
+                    0x87,
+                    0xC4,
+                    0x02,
+                    0xC1,
+                    0xC2,
+                    0x78,
+                    0xCA,
+                    0x7C
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncVideoOutputFrameRateConversion
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xF4, 0x8B, 0x06, 0x8C,
+                    0x9A, 0x36,
+                    0xA3, 0x4B,
+                    0x82,
+                    0xFD,
+                    0xB2,
+                    0x51,
+                    0x8F,
+                    0xB3,
+                    0x39,
+                    0x6E
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncVideoPixelAspectRatio
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x8F, 0x71, 0xDC, 0x3C,
+                    0xE9, 0xB3,
+                    0xB6, 0x4E,
+                    0xA5,
+                    0x7F,
+                    0xCF,
+                    0x1F,
+                    0x1B,
+                    0x32,
+                    0x1B,
+                    0x87
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVDecVideoAcceleration_MPEG2
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x2E, 0x8A, 0xDB, 0xF7,
+                    0x48, 0x4F,
+                    0xE8, 0x4E,
+                    0xAE,
+                    0x31,
+                    0x8B,
+                    0x6E,
+                    0xBE,
+                    0x55,
+                    0x8A,
+                    0xE2
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVDecVideoAcceleration_H264
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x2F, 0x8A, 0xDB, 0xF7,
+                    0x48, 0x4F,
+                    0xE8, 0x4E,
+                    0xAE,
+                    0x31,
+                    0x8B,
+                    0x6E,
+                    0xBE,
+                    0x55,
+                    0x8A,
+                    0xE2
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVDecVideoAcceleration_VC1
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x30, 0x8A, 0xDB, 0xF7,
+                    0x48, 0x4F,
+                    0xE8, 0x4E,
+                    0xAE,
+                    0x31,
+                    0x8B,
+                    0x6E,
+                    0xBE,
+                    0x55,
+                    0x8A,
+                    0xE2
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVDecVideoProcDeinterlaceCSC
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x31, 0x8A, 0xDB, 0xF7,
+                    0x48, 0x4F,
+                    0xE8, 0x4E,
+                    0xAE,
+                    0x31,
+                    0x8B,
+                    0x6E,
+                    0xBE,
+                    0x55,
+                    0x8A,
+                    0xE2
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVDecVideoThumbnailGenerationMode
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xEE, 0x8E, 0xFD, 0x2E,
+                    0x50, 0x11,
+                    0x28, 0x43,
+                    0x9C,
+                    0xF5,
+                    0x66,
+                    0xDC,
+                    0xE9,
+                    0x33,
+                    0xFC,
+                    0xF4
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVDecVideoMaxCodedWidth
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xB8, 0x57, 0xE5, 0x5A,
+                    0xAF, 0x77,
+                    0xF5, 0x41,
+                    0x9F,
+                    0xA6,
+                    0x4D,
+                    0xB2,
+                    0xFE,
+                    0x1D,
+                    0x4B,
+                    0xCA
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVDecVideoMaxCodedHeight
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x6A, 0xA1, 0x62, 0x72,
+                    0xDC, 0xD2,
+                    0x75, 0x4E,
+                    0x9B,
+                    0xA8,
+                    0x65,
+                    0xC0,
+                    0xC6,
+                    0xD3,
+                    0x2B,
+                    0x13
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVDecNumWorkerThreads
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xE8, 0xC3, 0x61, 0x95,
+                    0x9E, 0xEA,
+                    0x35, 0x44,
+                    0x9B,
+                    0x1E,
+                    0xA9,
+                    0x3E,
+                    0x69,
+                    0x18,
+                    0x94,
+                    0xD8
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVDecSoftwareDynamicFormatChange
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x0A, 0x2F, 0x2E, 0x86,
+                    0x7B, 0x50,
+                    0xFF, 0x47,
+                    0xAF,
+                    0x47,
+                    0x01,
+                    0xE2,
+                    0x62,
+                    0x42,
+                    0x98,
+                    0xB7
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVDecDisableVideoPostProcessing
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x93, 0x91, 0x74, 0xF8,
+                    0x7A, 0x66,
+                    0x2C, 0x4F,
+                    0xA9,
+                    0xE8,
+                    0x5D,
+                    0x4A,
+                    0xF9,
+                    0x24,
+                    0xF0,
+                    0x8F
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVDecVideoDropPicWithMissingRef
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x83, 0x63, 0x22, 0xF8,
+                    0xC2, 0x14,
+                    0x67, 0x45,
+                    0x97,
+                    0x34,
+                    0x50,
+                    0x04,
+                    0xE9,
+                    0x6F,
+                    0xF8,
+                    0x87
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVDecVideoSoftwareDeinterlaceMode
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xCE, 0xD1, 0x08, 0x0C,
+                    0xED, 0x9C,
+                    0x40, 0x45,
+                    0xBA,
+                    0xE3,
+                    0xCE,
+                    0xB3,
+                    0x80,
+                    0x14,
+                    0x11,
+                    0x09
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVDecVideoFastDecodeMode
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x7D, 0x9F, 0x52, 0x6B,
+                    0xB1, 0xD3,
+                    0xC6, 0x49,
+                    0xA9,
+                    0x99,
+                    0x9E,
+                    0xC6,
+                    0x91,
+                    0x1B,
+                    0xED,
+                    0xBF
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVLowLatencyMode
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x1A, 0x89, 0x27, 0x9C,
+                    0x7A, 0xED,
+                    0xE1, 0x40,
+                    0x88,
+                    0xE8,
+                    0xB2,
+                    0x27,
+                    0x27,
+                    0xA0,
+                    0x24,
+                    0xEE
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVDecVideoH264ErrorConcealment
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xE8, 0xAC, 0xEC, 0xEC,
+                    0x36, 0x34,
+                    0x2C, 0x46,
+                    0x92,
+                    0x94,
+                    0xCD,
+                    0x7B,
+                    0xAC,
+                    0xD7,
+                    0x58,
+                    0xA9
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVDecVideoMPEG2ErrorConcealment
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x18, 0xFE, 0x2B, 0x9D,
+                    0x8D, 0x72,
+                    0xD2, 0x48,
+                    0xB3,
+                    0x58,
+                    0xBC,
+                    0x7E,
+                    0x43,
+                    0x6C,
+                    0x66,
+                    0x74
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVDecVideoCodecType
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xE5, 0x28, 0x45, 0x43,
+                    0xF0, 0x21,
+                    0xB6, 0x46,
+                    0xB6,
+                    0x2C,
+                    0x9B,
+                    0x1B,
+                    0x6B,
+                    0x65,
+                    0x8C,
+                    0xD1
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVDecVideoDXVAMode
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x9E, 0xF0, 0x58, 0xF7,
+                    0x37, 0x73,
+                    0xE7, 0x4A,
+                    0x83,
+                    0x87,
+                    0x73,
+                    0xDC,
+                    0x2D,
+                    0x54,
+                    0xE6,
+                    0x7D
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVDecVideoDXVABusEncryption
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x8B, 0x3C, 0x15, 0x42,
+                    0x0B, 0xFD,
+                    0x65, 0x47,
+                    0xA4,
+                    0x62,
+                    0xDD,
+                    0xD9,
+                    0xE8,
+                    0xBC,
+                    0xC3,
+                    0x88
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncVideoForceSourceScanType
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x5F, 0x06, 0xF2, 0x1E,
+                    0x8A, 0x05,
+                    0x65, 0x47,
+                    0xA4,
+                    0xFC,
+                    0x8A,
+                    0x86,
+                    0x4C,
+                    0x10,
+                    0x30,
+                    0x12
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncVideoNoOfFieldsToEncode
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xE2, 0xBB, 0xE4, 0x61,
+                    0xE0, 0x4E,
+                    0xE7, 0x40,
+                    0x80,
+                    0xAB,
+                    0x51,
+                    0xDD,
+                    0xEE,
+                    0xBE,
+                    0x62,
+                    0x91
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncVideoNoOfFieldsToSkip
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x40, 0x12, 0x7E, 0xA9,
+                    0x27, 0x14,
+                    0x16, 0x4C,
+                    0xA7,
+                    0xF7,
+                    0x3D,
+                    0xCF,
+                    0xD8,
+                    0xBA,
+                    0x4C,
+                    0xC5
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncVideoEncodeDimension
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x28, 0xDF, 0x74, 0x10,
+                    0x0F, 0x7E,
+                    0xA4, 0x47,
+                    0xA4,
+                    0x53,
+                    0xCD,
+                    0xD7,
+                    0x38,
+                    0x70,
+                    0xF5,
+                    0xCE
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncVideoEncodeOffsetOrigin
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xFE, 0x98, 0xC0, 0x6B,
+                    0x1A, 0xA7,
+                    0x54, 0x44,
+                    0x85,
+                    0x2E,
+                    0x4D,
+                    0x2D,
+                    0xDE,
+                    0xB2,
+                    0xCD,
+                    0x24
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncVideoDisplayDimension
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x68, 0x36, 0x05, 0xDE,
+                    0xEC, 0xF4,
+                    0xA9, 0x47,
+                    0x86,
+                    0xD0,
+                    0x83,
+                    0x67,
+                    0x70,
+                    0xF0,
+                    0xC1,
+                    0xD5
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncVideoOutputScanType
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x76, 0x55, 0x0B, 0x46,
+                    0x2E, 0x84,
+                    0xAB, 0x49,
+                    0xA6,
+                    0x2D,
+                    0xB3,
+                    0x6F,
+                    0x73,
+                    0x12,
+                    0xC9,
+                    0xDB
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncVideoInverseTelecineEnable
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x8B, 0x09, 0xA9, 0x2E,
+                    0x6D, 0xE7,
+                    0xCD, 0x4C,
+                    0xA0,
+                    0x30,
+                    0xD3,
+                    0xB8,
+                    0x89,
+                    0xC1,
+                    0xB6,
+                    0x4C
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncVideoInverseTelecineThreshold
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x84, 0x7D, 0x24, 0x40,
+                    0x95, 0xE8,
+                    0x7F, 0x49,
+                    0xB4,
+                    0x4C,
+                    0xB7,
+                    0x45,
+                    0x60,
+                    0xAC,
+                    0xFE,
+                    0x27
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncVideoSourceFilmContent
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x4B, 0xC6, 0x91, 0x17,
+                    0xFC, 0xCC,
+                    0x27, 0x48,
+                    0xA0,
+                    0xED,
+                    0x25,
+                    0x57,
+                    0x79,
+                    0x3B,
+                    0x2B,
+                    0x1C
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncVideoSourceIsBW
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x9B, 0xC4, 0xFF, 0x42,
+                    0x12, 0x18,
+                    0xDC, 0x4F,
+                    0x8D,
+                    0x24,
+                    0x70,
+                    0x54,
+                    0xC5,
+                    0x21,
+                    0xE6,
+                    0xEB
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncVideoFieldSwap
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x69, 0x75, 0xFD, 0xFE,
+                    0x0A, 0x4E,
+                    0xF2, 0x49,
+                    0x9F,
+                    0x2B,
+                    0x36,
+                    0x0E,
+                    0xA4,
+                    0x8C,
+                    0x19,
+                    0xA2
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncVideoInputChromaResolution
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x33, 0xEC, 0x0C, 0xBB,
+                    0xF1, 0x16,
+                    0xB0, 0x47,
+                    0x8A,
+                    0x88,
+                    0x37,
+                    0x81,
+                    0x5B,
+                    0xEE,
+                    0x17,
+                    0x39
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncVideoOutputChromaResolution
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xC9, 0xB4, 0x97, 0x60,
+                    0x1D, 0x7C,
+                    0x64, 0x4E,
+                    0xBF,
+                    0xCC,
+                    0x9E,
+                    0x97,
+                    0x65,
+                    0x31,
+                    0x8A,
+                    0xE7
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncVideoInputChromaSubsampling
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x39, 0x3A, 0xE7, 0xA8,
+                    0x35, 0x44,
+                    0xC3, 0x4E,
+                    0xA6,
+                    0xEA,
+                    0x98,
+                    0x30,
+                    0x0F,
+                    0x4B,
+                    0x36,
+                    0xF7
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncVideoOutputChromaSubsampling
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x6C, 0x1C, 0x56, 0xFA,
+                    0x17, 0x7D,
+                    0xF0, 0x44,
+                    0x83,
+                    0xC9,
+                    0x32,
+                    0xED,
+                    0x12,
+                    0xE9,
+                    0x63,
+                    0x43
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncVideoInputColorPrimaries
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x3F, 0x78, 0x4D, 0xC2,
+                    0xE6, 0x7C,
+                    0x78, 0x42,
+                    0x90,
+                    0xAB,
+                    0x28,
+                    0xA4,
+                    0xF1,
+                    0xE5,
+                    0xF8,
+                    0x6C
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncVideoOutputColorPrimaries
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x7C, 0x90, 0x95, 0xBE,
+                    0x04, 0x9D,
+                    0x21, 0x49,
+                    0x89,
+                    0x85,
+                    0xA6,
+                    0xD6,
+                    0xD8,
+                    0x7D,
+                    0x1A,
+                    0x6C
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncVideoInputColorTransferFunction
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x11, 0x61, 0x05, 0x8C,
+                    0xC3, 0xA9,
+                    0x08, 0x4B,
+                    0xA0,
+                    0xA0,
+                    0xCE,
+                    0x13,
+                    0xF8,
+                    0xA2,
+                    0x7C,
+                    0x75
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncVideoOutputColorTransferFunction
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x4A, 0x88, 0x7F, 0x4A,
+                    0x11, 0xEA,
+                    0x0D, 0x46,
+                    0xBF,
+                    0x57,
+                    0xB8,
+                    0x8B,
+                    0xC7,
+                    0x59,
+                    0x00,
+                    0xDE
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncVideoInputColorTransferMatrix
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xB9, 0x68, 0xED, 0x52,
+                    0xD5, 0x72,
+                    0x89, 0x40,
+                    0x95,
+                    0x8D,
+                    0xF5,
+                    0x40,
+                    0x5D,
+                    0x55,
+                    0x08,
+                    0x1C
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncVideoOutputColorTransferMatrix
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x44, 0x04, 0xB9, 0xA9,
+                    0x40, 0xAF,
+                    0x10, 0x43,
+                    0x8F,
+                    0xBE,
+                    0xED,
+                    0x6D,
+                    0x93,
+                    0x3F,
+                    0x89,
+                    0x2B
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncVideoInputColorLighting
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x49, 0x95, 0xA9, 0x46,
+                    0x15, 0x00,
+                    0x45, 0x4A,
+                    0x9C,
+                    0x30,
+                    0x1D,
+                    0x5C,
+                    0xFA,
+                    0x25,
+                    0x83,
+                    0x16
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncVideoOutputColorLighting
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xC6, 0xAA, 0x5A, 0x0E,
+                    0xE6, 0xAC,
+                    0x5C, 0x4C,
+                    0x99,
+                    0x8E,
+                    0x1A,
+                    0x8C,
+                    0x9C,
+                    0x6C,
+                    0x0F,
+                    0x89
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncVideoInputColorNominalRange
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xC6, 0x25, 0xCF, 0x16,
+                    0xA6, 0xA2,
+                    0xE9, 0x48,
+                    0xAE,
+                    0x80,
+                    0x21,
+                    0xAE,
+                    0xC4,
+                    0x1D,
+                    0x42,
+                    0x7E
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncVideoOutputColorNominalRange
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xED, 0x35, 0x28, 0x97,
+                    0xB5, 0x87,
+                    0x95, 0x4E,
+                    0x95,
+                    0x00,
+                    0xC7,
+                    0x39,
+                    0x58,
+                    0x56,
+                    0x6E,
+                    0x54
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncInputVideoSystem
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x6D, 0x14, 0xDE, 0xBE,
+                    0x16, 0xB6,
+                    0xC7, 0x4D,
+                    0x92,
+                    0xB2,
+                    0xF5,
+                    0xD9,
+                    0xFA,
+                    0x92,
+                    0x98,
+                    0xF7
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncVideoHeaderDropFrame
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x24, 0xE1, 0xD9, 0x6E,
+                    0x25, 0x79,
+                    0xFE, 0x43,
+                    0x97,
+                    0x1B,
+                    0xE0,
+                    0x19,
+                    0xF6,
+                    0x22,
+                    0x22,
+                    0xB4
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncVideoHeaderHours
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x02, 0x77, 0xCC, 0x2A,
+                    0xDA, 0xE2,
+                    0x58, 0x41,
+                    0xBF,
+                    0x9B,
+                    0x88,
+                    0x88,
+                    0x01,
+                    0x29,
+                    0xD7,
+                    0x40
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncVideoHeaderMinutes
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xCE, 0x99, 0x1A, 0xDC,
+                    0x07, 0x03,
+                    0x8B, 0x40,
+                    0x88,
+                    0x0B,
+                    0xB8,
+                    0x34,
+                    0x8E,
+                    0xE8,
+                    0xCA,
+                    0x7F
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncVideoHeaderSeconds
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x05, 0x1A, 0x2E, 0x4A,
+                    0x80, 0xA7,
+                    0x58, 0x4F,
+                    0x81,
+                    0x20,
+                    0x9A,
+                    0x44,
+                    0x9D,
+                    0x69,
+                    0x65,
+                    0x6B
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncVideoHeaderFrames
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x67, 0xF5, 0xD5, 0xAF,
+                    0x1B, 0x5C,
+                    0xDC, 0x4A,
+                    0xBD,
+                    0xAF,
+                    0x73,
+                    0x56,
+                    0x10,
+                    0x38,
+                    0x14,
+                    0x36
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncVideoDefaultUpperFieldDominant
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xC4, 0x67, 0x01, 0x81,
+                    0xC1, 0x0B,
+                    0xCA, 0x47,
+                    0x8F,
+                    0xC2,
+                    0x57,
+                    0x05,
+                    0x5A,
+                    0x14,
+                    0x74,
+                    0xA5
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncVideoCBRMotionTradeoff
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x1E, 0x45, 0x49, 0x0D,
+                    0xD5, 0x18,
+                    0x67, 0x43,
+                    0xA4,
+                    0xEF,
+                    0x32,
+                    0x40,
+                    0xDF,
+                    0x16,
+                    0x93,
+                    0xC4
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncVideoCodedVideoAccessUnitSize
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x15, 0x0C, 0xB1, 0xB4,
+                    0xA7, 0x14,
+                    0xE8, 0x4C,
+                    0xB1,
+                    0x73,
+                    0xDC,
+                    0x90,
+                    0xA0,
+                    0xB4,
+                    0xFC,
+                    0xDB
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncVideoMaxKeyframeDistance
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x3A, 0x12, 0x87, 0x29,
+                    0x93, 0xBA,
+                    0x04, 0x47,
+                    0xB4,
+                    0x89,
+                    0xEC,
+                    0x1E,
+                    0x5F,
+                    0x25,
+                    0x29,
+                    0x2C
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncH264CABACEnable
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x62, 0xAD, 0x6C, 0xEE,
+                    0x05, 0xD3,
+                    0x48, 0x42,
+                    0xA5,
+                    0x0E,
+                    0xE1,
+                    0xB2,
+                    0x55,
+                    0xF7,
+                    0xCA,
+                    0xF8
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncVideoContentType
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xCA, 0x7A, 0x11, 0x66,
+                    0x77, 0xEB,
+                    0x9D, 0x45,
+                    0x93,
+                    0x0C,
+                    0xA4,
+                    0x8D,
+                    0x9D,
+                    0x06,
+                    0x83,
+                    0xFC
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncNumWorkerThreads
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x60, 0xBF, 0xC8, 0xB0,
+                    0xF7, 0x16,
+                    0x51, 0x49,
+                    0xA3,
+                    0x0B,
+                    0x1D,
+                    0xB1,
+                    0x60,
+                    0x92,
+                    0x93,
+                    0xD6
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncVideoEncodeQP
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x6B, 0x69, 0xB5, 0x2C,
+                    0xFB, 0x23,
+                    0xE1, 0x4C,
+                    0xA0,
+                    0xF9,
+                    0xEF,
+                    0x5B,
+                    0x90,
+                    0xFD,
+                    0x55,
+                    0xCA
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncVideoMinQP
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x6A, 0x2C, 0xE2, 0x0E,
+                    0x7C, 0xA3,
+                    0x68, 0x45,
+                    0xB5,
+                    0xF1,
+                    0x9D,
+                    0x4C,
+                    0x2B,
+                    0x3A,
+                    0xB8,
+                    0x86
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncVideoForceKeyFrame
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x98, 0x1B, 0x8C, 0x39,
+                    0x53, 0x83,
+                    0x5A, 0x47,
+                    0x9E,
+                    0xF2,
+                    0x8F,
+                    0x26,
+                    0x5D,
+                    0x26,
+                    0x03,
+                    0x45
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncH264SPSID
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x51, 0x8F, 0xF3, 0x50,
+                    0x79, 0x2B,
+                    0xE3, 0x40,
+                    0xB3,
+                    0x9C,
+                    0x7E,
+                    0x9F,
+                    0xA0,
+                    0x77,
+                    0x05,
+                    0x01
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncH264PPSID
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xC2, 0x9E, 0xE2, 0xBF,
+                    0x6C, 0x05,
+                    0x68, 0x4D,
+                    0xA3,
+                    0x8D,
+                    0xAE,
+                    0x59,
+                    0x44,
+                    0xC8,
+                    0x58,
+                    0x2E
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncAdaptiveMode
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x85, 0xB1, 0x19, 0x44,
+                    0x1F, 0xDA,
+                    0x53, 0x4F,
+                    0xBC,
+                    0x76,
+                    0x09,
+                    0x7D,
+                    0x0C,
+                    0x1E,
+                    0xFB,
+                    0x1E
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVScenarioInfo
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x64, 0x6E, 0x8A, 0xB2,
+                    0xF9, 0x3F,
+                    0x6A, 0x44,
+                    0x8A,
+                    0x4B,
+                    0x0D,
+                    0x7A,
+                    0x53,
+                    0x41,
+                    0x32,
+                    0x36
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncMPVGOPSizeMin
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x20, 0xCF, 0x55, 0x71,
+                    0x40, 0xD4,
+                    0x52, 0x48,
+                    0xAD,
+                    0x0F,
+                    0x9C,
+                    0x4A,
+                    0xBF,
+                    0xE3,
+                    0x7A,
+                    0x6A
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncMPVGOPSizeMax
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xC4, 0xE4, 0x7D, 0xFE,
+                    0x36, 0x19,
+                    0xE2, 0x4F,
+                    0xBD,
+                    0xF7,
+                    0x1F,
+                    0x18,
+                    0xCA,
+                    0x1D,
+                    0x00,
+                    0x1F
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncVideoMaxCTBSize
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xFF, 0x63, 0x23, 0x82,
+                    0xC8, 0xCE,
+                    0xE5, 0x43,
+                    0x92,
+                    0xFD,
+                    0xE0,
+                    0x97,
+                    0x48,
+                    0x84,
+                    0x85,
+                    0xE9
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncVideoCTBSize
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xB2, 0xB8, 0x7D, 0xD4,
+                    0x3B, 0xE7,
+                    0xB9, 0x4C,
+                    0x8C,
+                    0x3E,
+                    0xBD,
+                    0x87,
+                    0x7D,
+                    0x06,
+                    0xD7,
+                    0x7B
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_VideoEncoderDisplayContentType
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x27, 0x0B, 0xB9, 0x79,
+                    0xB1, 0xF4,
+                    0xDC, 0x42,
+                    0x9D,
+                    0xD7,
+                    0xCD,
+                    0xAF,
+                    0x81,
+                    0x35,
+                    0xC4,
+                    0x00
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncEnableVideoProcessing
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xF6, 0x4B, 0x6F, 0x00,
+                    0xA3, 0x0E,
+                    0x42, 0x4D,
+                    0x87,
+                    0x02,
+                    0xB5,
+                    0xD8,
+                    0xBE,
+                    0x0F,
+                    0x7A,
+                    0x92
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncVideoGradualIntraRefresh
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xEE, 0x7D, 0x34, 0x8F,
+                    0x0D, 0xCB,
+                    0xBA, 0x49,
+                    0xB4,
+                    0x62,
+                    0xDB,
+                    0x69,
+                    0x27,
+                    0xEE,
+                    0x21,
+                    0x01
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_GetOPMContext
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x05, 0x6C, 0x03, 0x2F,
+                    0x14, 0x4C,
+                    0x89, 0x46,
+                    0x88,
+                    0x39,
+                    0x29,
+                    0x4C,
+                    0x6D,
+                    0x73,
+                    0xE0,
+                    0x53
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_SetHDCPManagerContext
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xC8, 0x1F, 0x2D, 0x6D,
+                    0xC9, 0x3D,
+                    0xEB, 0x47,
+                    0xA1,
+                    0xA2,
+                    0x47,
+                    0x1C,
+                    0x80,
+                    0xCD,
+                    0x60,
+                    0xD0
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncVideoMaxTemporalLayers
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xFE, 0x8C, 0x66, 0x9C,
+                    0xE1, 0x08,
+                    0x4A, 0x42,
+                    0x93,
+                    0x4E,
+                    0xB7,
+                    0x64,
+                    0xB0,
+                    0x64,
+                    0x80,
+                    0x2A
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncVideoNumGOPsPerIDR
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xDB, 0x5B, 0xBC, 0x83,
+                    0x89, 0x5B,
+                    0x21, 0x45,
+                    0x8F,
+                    0x66,
+                    0x33,
+                    0x15,
+                    0x1C,
+                    0x37,
+                    0x31,
+                    0x76
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncCommonAllowFrameDrops
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xCB, 0x7D, 0x47, 0xD8,
+                    0x98, 0x95,
+                    0xE3, 0x48,
+                    0x8D,
+                    0x0C,
+                    0x75,
+                    0x2B,
+                    0xF2,
+                    0x06,
+                    0x09,
+                    0x3E
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncVideoIntraLayerPrediction
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xB8, 0x46, 0xAF, 0xD3,
+                    0x47, 0xBF,
+                    0xBB, 0x44,
+                    0xA2,
+                    0x83,
+                    0x69,
+                    0xF0,
+                    0xB0,
+                    0x22,
+                    0x8F,
+                    0xF9
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncVideoInstantTemporalUpSwitching
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x07, 0x83, 0x30, 0xA3,
+                    0x96, 0x0D,
+                    0xA4, 0x4B,
+                    0xB1,
+                    0xF0,
+                    0xB9,
+                    0x1A,
+                    0x5E,
+                    0x49,
+                    0xDF,
+                    0x10
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncLowPowerEncoder
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x82, 0xD5, 0x68, 0xB6,
+                    0xAD, 0x8B,
+                    0x6A, 0x4F,
+                    0x91,
+                    0x41,
+                    0x37,
+                    0x5A,
+                    0x95,
+                    0x35,
+                    0x8B,
+                    0x6D
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEnableInLoopDeblockFilter
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x99, 0xE3, 0xE8, 0xD2,
+                    0x23, 0x06,
+                    0xF3, 0x4B,
+                    0x92,
+                    0xA8,
+                    0x4D,
+                    0x18,
+                    0x18,
+                    0x52,
+                    0x9D,
+                    0xED
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncVideoSelectLayer
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xF5, 0x84, 0x10, 0xEB,
+                    0xAA, 0x6A,
+                    0x14, 0x49,
+                    0xBB,
+                    0x2F,
+                    0x61,
+                    0x47,
+                    0x22,
+                    0x7F,
+                    0x12,
+                    0xE7
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncVideoTemporalLayerCount
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xFF, 0xEB, 0xCA, 0x19,
+                    0x4D, 0xB7,
+                    0xFD, 0x4C,
+                    0x8C,
+                    0x27,
+                    0xC2,
+                    0xF9,
+                    0xD9,
+                    0x7D,
+                    0x5F,
+                    0x52
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncVideoUsage
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x49, 0x68, 0x63, 0x1F,
+                    0xC1, 0x5D,
+                    0xF1, 0x49,
+                    0xB1,
+                    0xD8,
+                    0xCE,
+                    0x3C,
+                    0xF6,
+                    0x2E,
+                    0xA3,
+                    0x85
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncVideoRateControlParams
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x67, 0x37, 0xD4, 0x87,
+                    0x45, 0x76,
+                    0xEC, 0x44,
+                    0xB4,
+                    0x38,
+                    0xD3,
+                    0x32,
+                    0x2F,
+                    0xBC,
+                    0xA2,
+                    0x9F
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncVideoSupportedControls
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xDD, 0x0F, 0xF4, 0xD3,
+                    0xB9, 0x77,
+                    0x3D, 0x47,
+                    0x81,
+                    0x96,
+                    0x06,
+                    0x12,
+                    0x59,
+                    0xE6,
+                    0x9C,
+                    0xFF
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncVideoEncodeFrameTypeQP
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x10, 0xB6, 0x70, 0xAA,
+                    0x3F, 0xE0,
+                    0x0C, 0x45,
+                    0xAD,
+                    0x07,
+                    0x07,
+                    0x31,
+                    0x4E,
+                    0x63,
+                    0x9C,
+                    0xE7
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncSliceControlMode
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xEF, 0x82, 0xE7, 0xE9,
+                    0x18, 0x5F,
+                    0xC9, 0x44,
+                    0xA9,
+                    0x0B,
+                    0xE9,
+                    0xC3,
+                    0xC2,
+                    0xC1,
+                    0x7B,
+                    0x0B
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncSliceControlSize
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xF3, 0x1D, 0xF5, 0x92,
+                    0xA5, 0x07,
+                    0x72, 0x41,
+                    0xAE,
+                    0xFE,
+                    0xC6,
+                    0x9C,
+                    0xA3,
+                    0xB6,
+                    0x0E,
+                    0x35
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncSliceGenerationMode
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x7F, 0xC6, 0x6B, 0x8A,
+                    0x97, 0x94,
+                    0x86, 0x42,
+                    0xB4,
+                    0x6B,
+                    0x02,
+                    0xDB,
+                    0x8D,
+                    0x60,
+                    0xED,
+                    0xBC
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncVideoMaxNumRefFrame
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xED, 0x29, 0x48, 0x96,
+                    0xF9, 0x94,
+                    0xB4, 0x43,
+                    0xB7,
+                    0x4D,
+                    0xEF,
+                    0x40,
+                    0x94,
+                    0x4B,
+                    0x69,
+                    0xA0
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncVideoMeanAbsoluteDifference
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x0F, 0xC1, 0xC0, 0xE5,
+                    0xA4, 0x81,
+                    0x2D, 0x42,
+                    0x8C,
+                    0x3F,
+                    0xB4,
+                    0x74,
+                    0xA4,
+                    0x58,
+                    0x13,
+                    0x36
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncVideoMaxQP
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x66, 0x6F, 0xAF, 0x3D,
+                    0xA7, 0xA6,
+                    0xE0, 0x45,
+                    0xA8,
+                    0xE5,
+                    0xF2,
+                    0x74,
+                    0x3F,
+                    0x46,
+                    0xA3,
+                    0xA2
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncVideoLTRBufferControl
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x3D, 0xE9, 0xA0, 0xA4,
+                    0xBC, 0x4C,
+                    0x4C, 0x44,
+                    0x89,
+                    0xF4,
+                    0x82,
+                    0x6D,
+                    0x31,
+                    0x0E,
+                    0x92,
+                    0xA7
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncVideoMarkLTRFrame
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x48, 0x47, 0x2F, 0xE4,
+                    0x6D, 0xA0,
+                    0xF9, 0x4E,
+                    0x8C,
+                    0xEA,
+                    0x3D,
+                    0x05,
+                    0xFD,
+                    0xE3,
+                    0xBD,
+                    0x3B
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncVideoUseLTRFrame
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xB8, 0x2D, 0x75, 0x00,
+                    0xF7, 0x55,
+                    0x80, 0x4F,
+                    0x89,
+                    0x5B,
+                    0x27,
+                    0x63,
+                    0x91,
+                    0x95,
+                    0xF2,
+                    0xAD
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncVideoROIEnabled
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x18, 0x7F, 0x4F, 0xD7,
+                    0xDD, 0x44,
+                    0x85, 0x4B,
+                    0xAB,
+                    0xA3,
+                    0x05,
+                    0xD9,
+                    0xF4,
+                    0x2A,
+                    0x82,
+                    0x80
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncVideoDirtyRectEnabled
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xDD, 0x8F, 0xCB, 0x8A,
+                    0x0C, 0x5E,
+                    0x66, 0x4C,
+                    0x87,
+                    0x29,
+                    0xB8,
+                    0xF6,
+                    0x29,
+                    0xAB,
+                    0x04,
+                    0xFB
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncMaxFrameRate
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x31, 0x1B, 0x8E, 0xB9,
+                    0xFA, 0x19,
+                    0x4F, 0x4D,
+                    0x99,
+                    0x31,
+                    0xD6,
+                    0xA5,
+                    0xB8,
+                    0xAA,
+                    0xB9,
+                    0x3C
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncMuxOutputStreamType
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x8F, 0x9E, 0xDD, 0xCE,
+                    0xD3, 0x34,
+                    0xDB, 0x44,
+                    0xA1,
+                    0xD8,
+                    0xF8,
+                    0x15,
+                    0x20,
+                    0x25,
+                    0x4F,
+                    0x3E
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncStatVideoOutputFrameRate
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x49, 0x78, 0x74, 0xBE,
+                    0xB4, 0x9A,
+                    0x63, 0x4A,
+                    0x98,
+                    0xFE,
+                    0xF1,
+                    0x43,
+                    0xF0,
+                    0x4F,
+                    0x8E,
+                    0xE9
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncStatVideoCodedFrames
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x61, 0x8D, 0x7F, 0xD4,
+                    0x5A, 0x6F,
+                    0x26, 0x4A,
+                    0xBB,
+                    0x9F,
+                    0xCD,
+                    0x95,
+                    0x18,
+                    0x46,
+                    0x2B,
+                    0xCD
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncStatVideoTotalFrames
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x16, 0x99, 0xAA, 0xFD,
+                    0x9A, 0x11,
+                    0x22, 0x42,
+                    0x9A,
+                    0xD6,
+                    0x3F,
+                    0x7C,
+                    0xAB,
+                    0x99,
+                    0xCC,
+                    0x8B
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncAudioIntervalToEncode
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x4D, 0x4B, 0x6E, 0x86,
+                    0x5A, 0x72,
+                    0x7C, 0x46,
+                    0xBB,
+                    0x01,
+                    0xB4,
+                    0x96,
+                    0xB2,
+                    0x3B,
+                    0x25,
+                    0xF9
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncAudioIntervalToSkip
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x94, 0x5F, 0xC1, 0x88,
+                    0x8C, 0xC3,
+                    0x96, 0x47,
+                    0xA9,
+                    0xE8,
+                    0x96,
+                    0xE9,
+                    0x67,
+                    0x98,
+                    0x3F,
+                    0x26
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncAudioDualMono
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x6B, 0x12, 0x48, 0x36,
+                    0xE8, 0xA3,
+                    0x29, 0x43,
+                    0x9B,
+                    0x3A,
+                    0x5C,
+                    0xE5,
+                    0x66,
+                    0xA4,
+                    0x3B,
+                    0xD3
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncAudioMeanBitRate
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xBB, 0x95, 0x12, 0x92,
+                    0xCA, 0x4F,
+                    0x79, 0x46,
+                    0xAA,
+                    0xB8,
+                    0x9E,
+                    0x2A,
+                    0x1D,
+                    0x75,
+                    0x33,
+                    0x84
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncAudioMapDestChannel0
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x60, 0x0B, 0x5D, 0xBC,
+                    0x6A, 0xDF,
+                    0x16, 0x4E,
+                    0x98,
+                    0x03,
+                    0xB8,
+                    0x20,
+                    0x07,
+                    0xA3,
+                    0x0C,
+                    0x8D
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncAudioMapDestChannel1
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x61, 0x0B, 0x5D, 0xBC,
+                    0x6A, 0xDF,
+                    0x16, 0x4E,
+                    0x98,
+                    0x03,
+                    0xB8,
+                    0x20,
+                    0x07,
+                    0xA3,
+                    0x0C,
+                    0x8D
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncAudioMapDestChannel2
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x62, 0x0B, 0x5D, 0xBC,
+                    0x6A, 0xDF,
+                    0x16, 0x4E,
+                    0x98,
+                    0x03,
+                    0xB8,
+                    0x20,
+                    0x07,
+                    0xA3,
+                    0x0C,
+                    0x8D
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncAudioMapDestChannel3
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x63, 0x0B, 0x5D, 0xBC,
+                    0x6A, 0xDF,
+                    0x16, 0x4E,
+                    0x98,
+                    0x03,
+                    0xB8,
+                    0x20,
+                    0x07,
+                    0xA3,
+                    0x0C,
+                    0x8D
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncAudioMapDestChannel4
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x64, 0x0B, 0x5D, 0xBC,
+                    0x6A, 0xDF,
+                    0x16, 0x4E,
+                    0x98,
+                    0x03,
+                    0xB8,
+                    0x20,
+                    0x07,
+                    0xA3,
+                    0x0C,
+                    0x8D
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncAudioMapDestChannel5
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x65, 0x0B, 0x5D, 0xBC,
+                    0x6A, 0xDF,
+                    0x16, 0x4E,
+                    0x98,
+                    0x03,
+                    0xB8,
+                    0x20,
+                    0x07,
+                    0xA3,
+                    0x0C,
+                    0x8D
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncAudioMapDestChannel6
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x66, 0x0B, 0x5D, 0xBC,
+                    0x6A, 0xDF,
+                    0x16, 0x4E,
+                    0x98,
+                    0x03,
+                    0xB8,
+                    0x20,
+                    0x07,
+                    0xA3,
+                    0x0C,
+                    0x8D
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncAudioMapDestChannel7
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x67, 0x0B, 0x5D, 0xBC,
+                    0x6A, 0xDF,
+                    0x16, 0x4E,
+                    0x98,
+                    0x03,
+                    0xB8,
+                    0x20,
+                    0x07,
+                    0xA3,
+                    0x0C,
+                    0x8D
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncAudioMapDestChannel8
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x68, 0x0B, 0x5D, 0xBC,
+                    0x6A, 0xDF,
+                    0x16, 0x4E,
+                    0x98,
+                    0x03,
+                    0xB8,
+                    0x20,
+                    0x07,
+                    0xA3,
+                    0x0C,
+                    0x8D
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncAudioMapDestChannel9
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x69, 0x0B, 0x5D, 0xBC,
+                    0x6A, 0xDF,
+                    0x16, 0x4E,
+                    0x98,
+                    0x03,
+                    0xB8,
+                    0x20,
+                    0x07,
+                    0xA3,
+                    0x0C,
+                    0x8D
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncAudioMapDestChannel10
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x6A, 0x0B, 0x5D, 0xBC,
+                    0x6A, 0xDF,
+                    0x16, 0x4E,
+                    0x98,
+                    0x03,
+                    0xB8,
+                    0x20,
+                    0x07,
+                    0xA3,
+                    0x0C,
+                    0x8D
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncAudioMapDestChannel11
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x6B, 0x0B, 0x5D, 0xBC,
+                    0x6A, 0xDF,
+                    0x16, 0x4E,
+                    0x98,
+                    0x03,
+                    0xB8,
+                    0x20,
+                    0x07,
+                    0xA3,
+                    0x0C,
+                    0x8D
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncAudioMapDestChannel12
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x6C, 0x0B, 0x5D, 0xBC,
+                    0x6A, 0xDF,
+                    0x16, 0x4E,
+                    0x98,
+                    0x03,
+                    0xB8,
+                    0x20,
+                    0x07,
+                    0xA3,
+                    0x0C,
+                    0x8D
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncAudioMapDestChannel13
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x6D, 0x0B, 0x5D, 0xBC,
+                    0x6A, 0xDF,
+                    0x16, 0x4E,
+                    0x98,
+                    0x03,
+                    0xB8,
+                    0x20,
+                    0x07,
+                    0xA3,
+                    0x0C,
+                    0x8D
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncAudioMapDestChannel14
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x6E, 0x0B, 0x5D, 0xBC,
+                    0x6A, 0xDF,
+                    0x16, 0x4E,
+                    0x98,
+                    0x03,
+                    0xB8,
+                    0x20,
+                    0x07,
+                    0xA3,
+                    0x0C,
+                    0x8D
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncAudioMapDestChannel15
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x6F, 0x0B, 0x5D, 0xBC,
+                    0x6A, 0xDF,
+                    0x16, 0x4E,
+                    0x98,
+                    0x03,
+                    0xB8,
+                    0x20,
+                    0x07,
+                    0xA3,
+                    0x0C,
+                    0x8D
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncAudioInputContent
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x2B, 0x6C, 0x22, 0x3E,
+                    0xB9, 0x60,
+                    0x39, 0x4A,
+                    0xB0,
+                    0x0B,
+                    0xA7,
+                    0xB4,
+                    0x0F,
+                    0x70,
+                    0xD5,
+                    0x66
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncStatAudioPeakPCMValue
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x34, 0xFD, 0xE7, 0xDC,
+                    0x00, 0xDC,
+                    0x16, 0x4C,
+                    0x82,
+                    0x1B,
+                    0x35,
+                    0xD9,
+                    0xEB,
+                    0x00,
+                    0xFB,
+                    0x1A
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncStatAudioAveragePCMValue
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xF8, 0x72, 0x92, 0x97,
+                    0x7F, 0xD1,
+                    0x32, 0x4E,
+                    0xBB,
+                    0x73,
+                    0x4E,
+                    0x73,
+                    0x1C,
+                    0x68,
+                    0xBA,
+                    0x2D
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncStatAudioAverageBPS
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xDB, 0x24, 0x67, 0xCA,
+                    0x59, 0x70,
+                    0x51, 0x43,
+                    0x8B,
+                    0x43,
+                    0xF8,
+                    0x21,
+                    0x98,
+                    0x82,
+                    0x6A,
+                    0x14
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncStatAverageBPS
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xDB, 0x24, 0x67, 0xCA,
+                    0x59, 0x70,
+                    0x51, 0x43,
+                    0x8B,
+                    0x43,
+                    0xF8,
+                    0x21,
+                    0x98,
+                    0x82,
+                    0x6A,
+                    0x14
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncStatHardwareProcessorUtilitization
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x27, 0xC0, 0x5D, 0x99,
+                    0x95, 0xCB,
+                    0xE6, 0x49,
+                    0xB9,
+                    0x1B,
+                    0x59,
+                    0x67,
+                    0x75,
+                    0x3C,
+                    0xDC,
+                    0xB8
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncStatHardwareBandwidthUtilitization
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x9B, 0xBA, 0x24, 0x01,
+                    0x41, 0xDC,
+                    0x26, 0x48,
+                    0xB4,
+                    0x5F,
+                    0x18,
+                    0xAC,
+                    0x01,
+                    0xB3,
+                    0xD5,
+                    0xA8
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncMPVGOPSize
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x26, 0x1B, 0xF3, 0x95,
+                    0xA4, 0x95,
+                    0xAA, 0x41,
+                    0x93,
+                    0x03,
+                    0x24,
+                    0x6A,
+                    0x7F,
+                    0xC6,
+                    0xEE,
+                    0xF1
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncMPVGOPOpen
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xA6, 0xD4, 0xD5, 0xB1,
+                    0x00, 0x33,
+                    0xB1, 0x49,
+                    0xAE,
+                    0x61,
+                    0xA0,
+                    0x99,
+                    0x37,
+                    0xAB,
+                    0x0E,
+                    0x49
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncMPVDefaultBPictureCount
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xAC, 0x0A, 0x39, 0x8D,
+                    0x5C, 0xDC,
+                    0x00, 0x42,
+                    0xB5,
+                    0x7F,
+                    0x81,
+                    0x4D,
+                    0x04,
+                    0xBA,
+                    0xBA,
+                    0xB2
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncMPVProfile
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x4A, 0x53, 0xBB, 0xDA,
+                    0x99, 0x1D,
+                    0x84, 0x42,
+                    0x97,
+                    0x5A,
+                    0xD9,
+                    0x0E,
+                    0x22,
+                    0x39,
+                    0xBA,
+                    0xA1
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncMPVLevel
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x40, 0x0C, 0xE4, 0x6E,
+                    0x0C, 0xA6,
+                    0xEF, 0x41,
+                    0x8F,
+                    0x50,
+                    0x37,
+                    0xC2,
+                    0x24,
+                    0x9E,
+                    0x2C,
+                    0xB3
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncMPVFrameFieldMode
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x96, 0xDE, 0xB5, 0xAC,
+                    0x93, 0x7B,
+                    0x2F, 0x4C,
+                    0x88,
+                    0x25,
+                    0xB0,
+                    0x29,
+                    0x5F,
+                    0xA9,
+                    0x3B,
+                    0xF4
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncMPVAddSeqEndCode
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x8F, 0x17, 0x23, 0xA8,
+                    0xDF, 0x57,
+                    0x7A, 0x4C,
+                    0xB8,
+                    0xFD,
+                    0xE5,
+                    0xEC,
+                    0x88,
+                    0x87,
+                    0x70,
+                    0x8D
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncMPVGOPSInSeq
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xD4, 0x10, 0x34, 0x99,
+                    0x91, 0x26,
+                    0x92, 0x41,
+                    0x99,
+                    0x78,
+                    0x98,
+                    0xDC,
+                    0x26,
+                    0x03,
+                    0x66,
+                    0x9F
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncMPVUseConcealmentMotionVectors
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xF3, 0x0C, 0x77, 0xEC,
+                    0x08, 0x69,
+                    0x4B, 0x4B,
+                    0xAA,
+                    0x30,
+                    0x7F,
+                    0xB9,
+                    0x86,
+                    0x21,
+                    0x4F,
+                    0xEA
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncMPVSceneDetection
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xF1, 0x99, 0x27, 0x55,
+                    0x4C, 0xDB,
+                    0x5B, 0x40,
+                    0x8A,
+                    0x3A,
+                    0xC9,
+                    0x3F,
+                    0x2D,
+                    0x06,
+                    0x74,
+                    0xDC
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncMPVGenerateHeaderSeqExt
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x11, 0x86, 0xE7, 0xD5,
+                    0x2D, 0x08,
+                    0x6B, 0x4E,
+                    0x98,
+                    0xAF,
+                    0x0F,
+                    0x51,
+                    0xAB,
+                    0x13,
+                    0x92,
+                    0x22
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncMPVGenerateHeaderSeqDispExt
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x6F, 0xAA, 0x37, 0x64,
+                    0x3C, 0x5A,
+                    0xE9, 0x4D,
+                    0x8A,
+                    0x16,
+                    0x53,
+                    0xD9,
+                    0xC4,
+                    0xAD,
+                    0x32,
+                    0x6F
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncMPVGenerateHeaderPicExt
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xAB, 0x64, 0x84, 0x1B,
+                    0x4F, 0x94,
+                    0xF0, 0x45,
+                    0xB7,
+                    0x4E,
+                    0x3A,
+                    0x58,
+                    0xDA,
+                    0xD1,
+                    0x1F,
+                    0x37
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncMPVGenerateHeaderPicDispExt
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x84, 0x2F, 0x41, 0xC6,
+                    0x3F, 0xC0,
+                    0x40, 0x4F,
+                    0xA0,
+                    0x0C,
+                    0x42,
+                    0x93,
+                    0xDF,
+                    0x83,
+                    0x95,
+                    0xBB
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncMPVGenerateHeaderSeqScaleExt
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x2F, 0xD6, 0x22, 0x07,
+                    0x59, 0xDD,
+                    0x86, 0x4A,
+                    0x9C,
+                    0xD5,
+                    0x64,
+                    0x4F,
+                    0x8E,
+                    0x26,
+                    0x53,
+                    0xD8
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncMPVScanPattern
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x8E, 0x47, 0x8A, 0x7F,
+                    0xBB, 0x7B,
+                    0xE2, 0x4A,
+                    0xB2,
+                    0xFC,
+                    0x96,
+                    0xD1,
+                    0x7F,
+                    0xC4,
+                    0xA2,
+                    0xD6
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncMPVIntraDCPrecision
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x51, 0x61, 0x11, 0xA0,
+                    0xC8, 0xCB,
+                    0xF3, 0x4A,
+                    0x97,
+                    0xDC,
+                    0xD0,
+                    0x0C,
+                    0xCE,
+                    0xB8,
+                    0x2D,
+                    0x79
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncMPVQScaleType
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xB7, 0xEB, 0x79, 0x2B,
+                    0x84, 0xF4,
+                    0xF7, 0x4A,
+                    0xBB,
+                    0x58,
+                    0xA2,
+                    0xA1,
+                    0x88,
+                    0xC5,
+                    0xCB,
+                    0xBE
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncMPVIntraVLCTable
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xF5, 0x3F, 0xB8, 0xA2,
+                    0x99, 0x1A,
+                    0x5A, 0x40,
+                    0xAF,
+                    0x95,
+                    0xC5,
+                    0x99,
+                    0x7D,
+                    0x55,
+                    0x8D,
+                    0x3A
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncMPVQuantMatrixIntra
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xF3, 0x04, 0xEA, 0x9B,
+                    0x21, 0x66,
+                    0x2C, 0x44,
+                    0x8B,
+                    0xA1,
+                    0x3A,
+                    0xC3,
+                    0x78,
+                    0x97,
+                    0x96,
+                    0x98
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncMPVQuantMatrixNonIntra
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xD8, 0x41, 0xF4, 0x87,
+                    0x97, 0x09,
+                    0xEB, 0x4B,
+                    0xA0,
+                    0x8E,
+                    0x85,
+                    0x73,
+                    0xD4,
+                    0x09,
+                    0xCF,
+                    0x75
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncMPVQuantMatrixChromaIntra
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xD4, 0xEC, 0xB9, 0x9E,
+                    0x8D, 0x01,
+                    0xFD, 0x4F,
+                    0x8F,
+                    0x2D,
+                    0x39,
+                    0xE4,
+                    0x9F,
+                    0x07,
+                    0xB1,
+                    0x7A
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncMPVQuantMatrixChromaNonIntra
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xB1, 0xB6, 0x15, 0x14,
+                    0x2A, 0x36,
+                    0x38, 0x43,
+                    0xBA,
+                    0x9A,
+                    0x1E,
+                    0xF5,
+                    0x87,
+                    0x03,
+                    0xC0,
+                    0x5B
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncMPALayer
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x30, 0x72, 0x37, 0x9D,
+                    0x1B, 0xF9,
+                    0x3D, 0x45,
+                    0x9C,
+                    0xE0,
+                    0x78,
+                    0x44,
+                    0x54,
+                    0x14,
+                    0xC2,
+                    0x2D
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncMPACodingMode
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x03, 0xDE, 0x6A, 0xB1,
+                    0x93, 0x4B,
+                    0xD7, 0x43,
+                    0xA5,
+                    0x50,
+                    0x90,
+                    0xB4,
+                    0xFE,
+                    0x22,
+                    0x45,
+                    0x37
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncMPACopyright
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x2A, 0x76, 0xAE, 0xA6,
+                    0xA9, 0xD0,
+                    0x54, 0x44,
+                    0xB8,
+                    0xEF,
+                    0xF2,
+                    0xDB,
+                    0xEE,
+                    0xFD,
+                    0xD3,
+                    0xBD
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncMPAOriginalBitstream
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x55, 0x78, 0xFB, 0x3C,
+                    0xC9, 0x9C,
+                    0xFF, 0x47,
+                    0xB8,
+                    0x29,
+                    0xB3,
+                    0x67,
+                    0x86,
+                    0xC9,
+                    0x23,
+                    0x46
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncMPAEnableRedundancyProtection
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x9E, 0xB0, 0x54, 0x5E,
+                    0xE7, 0xB2,
+                    0x73, 0x49,
+                    0xA8,
+                    0x9B,
+                    0x0B,
+                    0x36,
+                    0x50,
+                    0xA3,
+                    0xBE,
+                    0xDA
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncMPAPrivateUserBit
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xCE, 0x05, 0xA5, 0xAF,
+                    0xE3, 0xC1,
+                    0x3D, 0x4E,
+                    0x85,
+                    0x1B,
+                    0x61,
+                    0xB7,
+                    0x00,
+                    0xE5,
+                    0xE6,
+                    0xCC
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncMPAEmphasisType
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xDA, 0xFC, 0x59, 0x2D,
+                    0x4E, 0xBF,
+                    0xD6, 0x4E,
+                    0xB5,
+                    0xDF,
+                    0x5B,
+                    0x03,
+                    0xB3,
+                    0x6B,
+                    0x0A,
+                    0x1F
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncDDService
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xC7, 0xBE, 0xE1, 0xD2,
+                    0x72, 0x51,
+                    0x2A, 0x4D,
+                    0xA5,
+                    0x0E,
+                    0x2F,
+                    0x3B,
+                    0x82,
+                    0xB1,
+                    0xDD,
+                    0xF8
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncDDDialogNormalization
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xCF, 0x5A, 0x05, 0xD7,
+                    0x25, 0xF1,
+                    0x7D, 0x43,
+                    0xA7,
+                    0x04,
+                    0x79,
+                    0xC7,
+                    0x9F,
+                    0x04,
+                    0x04,
+                    0xA8
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncDDCentreDownMixLevel
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x2C, 0x07, 0x85, 0xE2,
+                    0x58, 0xC9,
+                    0x81, 0x4A,
+                    0xAF,
+                    0xD2,
+                    0xE5,
+                    0xE0,
+                    0xDA,
+                    0xF1,
+                    0xB1,
+                    0x48
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncDDSurroundDownMixLevel
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xE5, 0xD6, 0x20, 0x7B,
+                    0xCF, 0x0B,
+                    0x73, 0x42,
+                    0xA4,
+                    0x87,
+                    0x50,
+                    0x6B,
+                    0x04,
+                    0x79,
+                    0x97,
+                    0xE9
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncDDProductionInfoExists
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x5F, 0xFE, 0xB7, 0xB0,
+                    0xAB, 0xB6,
+                    0x40, 0x4F,
+                    0x96,
+                    0x4D,
+                    0x8D,
+                    0x91,
+                    0xF1,
+                    0x7C,
+                    0x19,
+                    0xE8
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncDDProductionRoomType
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x60, 0xAD, 0xD7, 0xDA,
+                    0xD8, 0x23,
+                    0xB7, 0x4A,
+                    0xA2,
+                    0x84,
+                    0x55,
+                    0x69,
+                    0x86,
+                    0xD8,
+                    0xA6,
+                    0xFE
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncDDProductionMixLevel
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x3A, 0x10, 0x1D, 0x30,
+                    0xF9, 0xCB,
+                    0x76, 0x47,
+                    0x88,
+                    0x99,
+                    0x7C,
+                    0x15,
+                    0xB4,
+                    0x61,
+                    0xAB,
+                    0x26
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncDDCopyright
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x76, 0xF0, 0x94, 0x86,
+                    0x75, 0xCD,
+                    0x1D, 0x48,
+                    0xA5,
+                    0xC6,
+                    0xA9,
+                    0x04,
+                    0xDC,
+                    0xC8,
+                    0x28,
+                    0xF0
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncDDOriginalBitstream
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x00, 0xE8, 0x6A, 0x96,
+                    0xD3, 0x5B,
+                    0xF9, 0x4F,
+                    0x95,
+                    0xB9,
+                    0xD3,
+                    0x05,
+                    0x66,
+                    0x27,
+                    0x38,
+                    0x56
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncDDDigitalDeemphasis
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xC2, 0xA2, 0x24, 0xE0,
+                    0x7C, 0x94,
+                    0xAC, 0x45,
+                    0x87,
+                    0xD8,
+                    0xF1,
+                    0x03,
+                    0x0C,
+                    0x5C,
+                    0x00,
+                    0x82
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncDDDCHighPassFilter
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x9F, 0x23, 0x65, 0x95,
+                    0x1C, 0x86,
+                    0xC8, 0x4A,
+                    0xBF,
+                    0xDA,
+                    0xE0,
+                    0x0C,
+                    0xB4,
+                    0xDB,
+                    0x85,
+                    0x48
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncDDChannelBWLowPassFilter
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x1D, 0x82, 0x97, 0xE1,
+                    0xE7, 0xD2,
+                    0xE2, 0x43,
+                    0xAD,
+                    0x2C,
+                    0x00,
+                    0x58,
+                    0x2F,
+                    0x51,
+                    0x85,
+                    0x45
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncDDLFELowPassFilter
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x6F, 0x0F, 0xB8, 0xD3,
+                    0x15, 0x9D,
+                    0xE5, 0x45,
+                    0x91,
+                    0xBE,
+                    0x01,
+                    0x9C,
+                    0x3F,
+                    0xAB,
+                    0x1F,
+                    0x01
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncDDSurround90DegreeePhaseShift
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x9D, 0xEC, 0xEC, 0x25,
+                    0x53, 0x35,
+                    0xC0, 0x42,
+                    0xBB,
+                    0x56,
+                    0xD2,
+                    0x57,
+                    0x92,
+                    0x10,
+                    0x4F,
+                    0x80
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncDDSurround3dBAttenuation
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x9D, 0xB9, 0x43, 0x4D,
+                    0xE2, 0x31,
+                    0xB9, 0x48,
+                    0xBF,
+                    0x2E,
+                    0x5C,
+                    0xBF,
+                    0x1A,
+                    0x57,
+                    0x27,
+                    0x84
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncDDDynamicRangeCompressionControl
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x6D, 0xFF, 0xC2, 0xCF,
+                    0xB8, 0x79,
+                    0x8D, 0x4B,
+                    0xA8,
+                    0xAA,
+                    0xA0,
+                    0xC9,
+                    0xBD,
+                    0x1C,
+                    0x29,
+                    0x40
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncDDRFPreEmphasisFilter
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xC0, 0x44, 0xAF, 0x21,
+                    0x4E, 0x24,
+                    0x3D, 0x4F,
+                    0xA2,
+                    0xCC,
+                    0x3D,
+                    0x30,
+                    0x68,
+                    0xB2,
+                    0xE7,
+                    0x3F
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncDDSurroundExMode
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xEE, 0x7C, 0x60, 0x91,
+                    0xDD, 0xDB,
+                    0xB6, 0x4E,
+                    0xBC,
+                    0xA2,
+                    0xAA,
+                    0xDF,
+                    0xAF,
+                    0xA3,
+                    0xDD,
+                    0x68
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncDDPreferredStereoDownMixMode
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x31, 0x6B, 0x4E, 0x7F,
+                    0x85, 0x91,
+                    0x3D, 0x40,
+                    0xB0,
+                    0xA2,
+                    0x76,
+                    0x37,
+                    0x43,
+                    0xE6,
+                    0xF0,
+                    0x63
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncDDLtRtCenterMixLvl_x10
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xA2, 0x28, 0xA1, 0xDC,
+                    0x1F, 0x49,
+                    0x00, 0x46,
+                    0xB2,
+                    0xDA,
+                    0x76,
+                    0xE3,
+                    0x34,
+                    0x4B,
+                    0x41,
+                    0x97
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncDDLtRtSurroundMixLvl_x10
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xC7, 0x46, 0x22, 0x21,
+                    0x2C, 0x3D,
+                    0xFA, 0x4D,
+                    0xBC,
+                    0x21,
+                    0x65,
+                    0x2A,
+                    0x90,
+                    0x98,
+                    0x69,
+                    0x0D
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncDDLoRoCenterMixLvl_x10
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x22, 0xA2, 0xFB, 0x1C,
+                    0xB3, 0x25,
+                    0xF4, 0x4B,
+                    0x9B,
+                    0xFD,
+                    0xE7,
+                    0x11,
+                    0x12,
+                    0x67,
+                    0x85,
+                    0x8C
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncDDLoRoSurroundMixLvl_x10
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xF6, 0xCF, 0x25, 0xE7,
+                    0x56, 0xEB,
+                    0xC7, 0x40,
+                    0x84,
+                    0x50,
+                    0x2B,
+                    0x93,
+                    0x67,
+                    0xE9,
+                    0x15,
+                    0x55
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncDDAtoDConverterType
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x12, 0x96, 0x9F, 0x71,
+                    0xA1, 0x81,
+                    0xE0, 0x47,
+                    0x9A,
+                    0x05,
+                    0xD9,
+                    0x4A,
+                    0xD5,
+                    0xFC,
+                    0xA9,
+                    0x48
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncDDHeadphoneMode
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xEC, 0xDB, 0x52, 0x40,
+                    0xF5, 0x52,
+                    0xF5, 0x42,
+                    0x9B,
+                    0x00,
+                    0xD1,
+                    0x34,
+                    0xB1,
+                    0x34,
+                    0x1B,
+                    0x9D
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncWMVKeyFrameDistance
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x5E, 0x05, 0x69, 0x55,
+                    0x68, 0xE2,
+                    0x71, 0x47,
+                    0xB8,
+                    0x3E,
+                    0x95,
+                    0x55,
+                    0xEA,
+                    0x28,
+                    0xAE,
+                    0xD3
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncWMVInterlacedEncoding
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x8A, 0x0F, 0xD0, 0xE3,
+                    0xF5, 0xC6,
+                    0x14, 0x4E,
+                    0xA5,
+                    0x88,
+                    0x0E,
+                    0xC8,
+                    0x7A,
+                    0x72,
+                    0x6F,
+                    0x9B
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncWMVDecoderComplexity
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xAB, 0x0D, 0x2C, 0xF3,
+                    0xCB, 0xF3,
+                    0x17, 0x42,
+                    0xB7,
+                    0x9F,
+                    0x87,
+                    0x62,
+                    0x76,
+                    0x8B,
+                    0x5F,
+                    0x67
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncWMVKeyFrameBufferLevelMarker
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x15, 0x11, 0xFF, 0x51,
+                    0xAC, 0x33,
+                    0x6C, 0x42,
+                    0xA1,
+                    0xB1,
+                    0x09,
+                    0x32,
+                    0x1B,
+                    0xDF,
+                    0x96,
+                    0xB4
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncWMVProduceDummyFrames
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x01, 0xD0, 0x69, 0xD6,
+                    0x3C, 0x18,
+                    0xE3, 0x42,
+                    0xA3,
+                    0xCA,
+                    0x2F,
+                    0x45,
+                    0x86,
+                    0xD2,
+                    0x39,
+                    0x6C
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncStatWMVCBAvg
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x9F, 0x22, 0xA6, 0x6A,
+                    0x02, 0xD6,
+                    0x9D, 0x4B,
+                    0xB6,
+                    0x8C,
+                    0xC1,
+                    0xAD,
+                    0x78,
+                    0x88,
+                    0x4B,
+                    0xEF
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncStatWMVCBMax
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xF8, 0xBE, 0x76, 0xE9,
+                    0xFE, 0x00,
+                    0xB4, 0x44,
+                    0xB6,
+                    0x25,
+                    0x8F,
+                    0x23,
+                    0x8B,
+                    0xC0,
+                    0x34,
+                    0x99
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncStatWMVDecoderComplexityProfile
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xC3, 0x9F, 0xE6, 0x89,
+                    0x9B, 0x0F,
+                    0x6C, 0x43,
+                    0x97,
+                    0x4A,
+                    0xDF,
+                    0x82,
+                    0x12,
+                    0x27,
+                    0xC9,
+                    0x0D
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncStatMPVSkippedEmptyFrames
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xD3, 0x5F, 0x19, 0x32,
+                    0x0D, 0x59,
+                    0x12, 0x48,
+                    0xA7,
+                    0xED,
+                    0x6D,
+                    0x63,
+                    0x9A,
+                    0x1F,
+                    0x97,
+                    0x11
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncMP12PktzSTDBuffer
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xD0, 0x1B, 0x75, 0x0B,
+                    0x9E, 0x81,
+                    0x8C, 0x47,
+                    0x94,
+                    0x35,
+                    0x75,
+                    0x20,
+                    0x89,
+                    0x26,
+                    0xB3,
+                    0x77
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncMP12PktzStreamID
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x38, 0xD0, 0x34, 0xC8,
+                    0xE8, 0xF5,
+                    0x08, 0x44,
+                    0x9B,
+                    0x60,
+                    0x88,
+                    0xF3,
+                    0x64,
+                    0x93,
+                    0xFE,
+                    0xDF
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncMP12PktzInitialPTS
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x65, 0x20, 0x4F, 0x2A,
+                    0x63, 0x9A,
+                    0x20, 0x4D,
+                    0xAE,
+                    0x22,
+                    0x0A,
+                    0x1B,
+                    0xC8,
+                    0x96,
+                    0xA3,
+                    0x15
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncMP12PktzPacketSize
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x7A, 0x34, 0x71, 0xAB,
+                    0x32, 0x13,
+                    0xDE, 0x4D,
+                    0xA0,
+                    0xE5,
+                    0xCC,
+                    0xF7,
+                    0xDA,
+                    0x8A,
+                    0x0F,
+                    0x22
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncMP12PktzCopyright
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xC1, 0xB0, 0xF4, 0xC8,
+                    0x4C, 0x09,
+                    0xC7, 0x43,
+                    0x8E,
+                    0x68,
+                    0xA5,
+                    0x95,
+                    0x40,
+                    0x5A,
+                    0x6E,
+                    0xF8
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncMP12PktzOriginal
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x16, 0x84, 0x17, 0x6B,
+                    0xB9, 0x31,
+                    0x64, 0x49,
+                    0x94,
+                    0xCB,
+                    0x6B,
+                    0xFF,
+                    0x86,
+                    0x6C,
+                    0xDF,
+                    0x83
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncMP12MuxPacketOverhead
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x20, 0xD7, 0x0B, 0xE4,
+                    0x55, 0x39,
+                    0x53, 0x44,
+                    0xAC,
+                    0xF9,
+                    0xB7,
+                    0x91,
+                    0x32,
+                    0xA3,
+                    0x8F,
+                    0xA0
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncMP12MuxNumStreams
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x41, 0x4A, 0x16, 0xF7,
+                    0xED, 0xDC,
+                    0x59, 0x46,
+                    0xA8,
+                    0xF2,
+                    0xFB,
+                    0x69,
+                    0x3F,
+                    0x2A,
+                    0x4C,
+                    0xD0
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncMP12MuxEarliestPTS
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xB6, 0x32, 0x72, 0x15,
+                    0x09, 0xF8,
+                    0x4E, 0x47,
+                    0x94,
+                    0x64,
+                    0xA7,
+                    0xF9,
+                    0x30,
+                    0x14,
+                    0xA8,
+                    0x17
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncMP12MuxLargestPacketSize
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x11, 0xB7, 0xCE, 0x35,
+                    0x61, 0xF4,
+                    0x92, 0x4B,
+                    0xA4,
+                    0xEF,
+                    0x17,
+                    0xB6,
+                    0x84,
+                    0x1E,
+                    0xD2,
+                    0x54
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncMP12MuxInitialSCR
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x21, 0xAD, 0x33, 0x34,
+                    0x91, 0x1B,
+                    0x0B, 0x4A,
+                    0xB1,
+                    0x90,
+                    0x2B,
+                    0x77,
+                    0x06,
+                    0x3B,
+                    0x63,
+                    0xA4
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncMP12MuxMuxRate
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x72, 0x7C, 0x04, 0xEE,
+                    0xDB, 0x4B,
+                    0x9D, 0x4A,
+                    0x8E,
+                    0x21,
+                    0x41,
+                    0x92,
+                    0x6C,
+                    0x82,
+                    0x3D,
+                    0xA7
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncMP12MuxPackSize
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x3A, 0x05, 0x16, 0xF9,
+                    0xE8, 0x1C,
+                    0xAF, 0x4F,
+                    0xAA,
+                    0x0B,
+                    0xBA,
+                    0x31,
+                    0xC8,
+                    0x00,
+                    0x34,
+                    0xB8
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncMP12MuxSysSTDBufferBound
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x03, 0x69, 0x74, 0x35,
+                    0x45, 0xB5,
+                    0xE7, 0x43,
+                    0xBB,
+                    0x35,
+                    0xC5,
+                    0xE0,
+                    0xA7,
+                    0xD5,
+                    0x09,
+                    0x3C
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncMP12MuxSysRateBound
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x8A, 0x42, 0xF0, 0x05,
+                    0x30, 0xEE,
+                    0x9D, 0x48,
+                    0xAE,
+                    0x28,
+                    0x20,
+                    0x5C,
+                    0x72,
+                    0x44,
+                    0x67,
+                    0x10
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncMP12MuxTargetPacketizer
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x2A, 0x21, 0x62, 0xD8,
+                    0x15, 0x20,
+                    0xDD, 0x45,
+                    0x9A,
+                    0x32,
+                    0x1B,
+                    0x3A,
+                    0xA8,
+                    0x82,
+                    0x05,
+                    0xA0
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncMP12MuxSysFixed
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x7E, 0x98, 0xFB, 0xCE,
+                    0x4F, 0x89,
+                    0x2E, 0x45,
+                    0x8F,
+                    0x89,
+                    0xA4,
+                    0xEF,
+                    0x8C,
+                    0xEC,
+                    0x06,
+                    0x3A
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncMP12MuxSysCSPS
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x45, 0xFF, 0x52, 0x79,
+                    0x0D, 0x9C,
+                    0x22, 0x48,
+                    0xBC,
+                    0x82,
+                    0x8A,
+                    0xD7,
+                    0x72,
+                    0xE0,
+                    0x29,
+                    0x93
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncMP12MuxSysVideoLock
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x08, 0x64, 0x29, 0xB8,
+                    0x30, 0x24,
+                    0x37, 0x4D,
+                    0xA2,
+                    0xA1,
+                    0x95,
+                    0xB3,
+                    0xE4,
+                    0x35,
+                    0xA9,
+                    0x1D
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncMP12MuxSysAudioLock
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x52, 0x57, 0xBB, 0x0F,
+                    0x43, 0x1D,
+                    0xBF, 0x47,
+                    0xBD,
+                    0x79,
+                    0xF2,
+                    0x29,
+                    0x3D,
+                    0x8C,
+                    0xE3,
+                    0x37
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncMP12MuxDVDNavPacks
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xED, 0x7C, 0x60, 0xC7,
+                    0xF1, 0x8C,
+                    0x99, 0x4A,
+                    0x83,
+                    0xA1,
+                    0xEE,
+                    0x54,
+                    0x61,
+                    0xBE,
+                    0x35,
+                    0x74
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVDecCommonInputFormat
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x39, 0x52, 0x00, 0xE5,
+                    0x89, 0xBD,
+                    0xE3, 0x4B,
+                    0x9C,
+                    0x0F,
+                    0x5D,
+                    0xDE,
+                    0x31,
+                    0x79,
+                    0x88,
+                    0xCC
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVDecCommonOutputFormat
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x28, 0x00, 0x79, 0x3C,
+                    0xCE, 0xC0,
+                    0x56, 0x42,
+                    0xB1,
+                    0xA2,
+                    0x1B,
+                    0x0F,
+                    0xC8,
+                    0xB1,
+                    0xDC,
+                    0xDC
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVDecCommonMeanBitRate
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x17, 0x82, 0x48, 0x59,
+                    0x7A, 0x00,
+                    0x7A, 0x4F,
+                    0x8E,
+                    0x41,
+                    0x5C,
+                    0x48,
+                    0xB1,
+                    0xEA,
+                    0xC5,
+                    0xC6
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVDecCommonMeanBitRateInterval
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xC6, 0x37, 0xE4, 0x0E,
+                    0xA7, 0x38,
+                    0x5C, 0x4C,
+                    0x94,
+                    0x4C,
+                    0x68,
+                    0xAB,
+                    0x42,
+                    0x11,
+                    0x6B,
+                    0x85
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_GUID_AVDecAudioOutputFormat_PCM_Stereo_MatrixEncoded
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x30, 0x1D, 0x6E, 0x69,
+                    0x8F, 0x54,
+                    0x36, 0x40,
+                    0x82,
+                    0x5F,
+                    0x70,
+                    0x26,
+                    0xC6,
+                    0x00,
+                    0x11,
+                    0xBD
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_GUID_AVDecAudioOutputFormat_PCM
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x31, 0x1D, 0x6E, 0x69,
+                    0x8F, 0x54,
+                    0x36, 0x40,
+                    0x82,
+                    0x5F,
+                    0x70,
+                    0x26,
+                    0xC6,
+                    0x00,
+                    0x11,
+                    0xBD
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_GUID_AVDecAudioOutputFormat_SPDIF_PCM
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x32, 0x1D, 0x6E, 0x69,
+                    0x8F, 0x54,
+                    0x36, 0x40,
+                    0x82,
+                    0x5F,
+                    0x70,
+                    0x26,
+                    0xC6,
+                    0x00,
+                    0x11,
+                    0xBD
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_GUID_AVDecAudioOutputFormat_SPDIF_Bitstream
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x33, 0x1D, 0x6E, 0x69,
+                    0x8F, 0x54,
+                    0x36, 0x40,
+                    0x82,
+                    0x5F,
+                    0x70,
+                    0x26,
+                    0xC6,
+                    0x00,
+                    0x11,
+                    0xBD
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_GUID_AVDecAudioOutputFormat_PCM_Headphones
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x34, 0x1D, 0x6E, 0x69,
+                    0x8F, 0x54,
+                    0x36, 0x40,
+                    0x82,
+                    0x5F,
+                    0x70,
+                    0x26,
+                    0xC6,
+                    0x00,
+                    0x11,
+                    0xBD
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_GUID_AVDecAudioOutputFormat_PCM_Stereo_Auto
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x35, 0x1D, 0x6E, 0x69,
+                    0x8F, 0x54,
+                    0x36, 0x40,
+                    0x82,
+                    0x5F,
+                    0x70,
+                    0x26,
+                    0xC6,
+                    0x00,
+                    0x11,
+                    0xBD
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVDecVideoImageSize
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x7C, 0x74, 0xE5, 0x5E,
+                    0x01, 0x68,
+                    0xAB, 0x4C,
+                    0xAA,
+                    0xF1,
+                    0x62,
+                    0x48,
+                    0xFA,
+                    0x84,
+                    0x1B,
+                    0xA4
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVDecVideoPixelAspectRatio
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x45, 0x82, 0xCF, 0xB0,
+                    0x2D, 0xF3,
+                    0xDF, 0x41,
+                    0xB0,
+                    0x2C,
+                    0x87,
+                    0xBD,
+                    0x30,
+                    0x4D,
+                    0x12,
+                    0xAB
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVDecVideoInputScanType
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x1F, 0x7E, 0x47, 0x38,
+                    0xA7, 0x0E,
+                    0xCD, 0x42,
+                    0x8C,
+                    0xD1,
+                    0x13,
+                    0x0C,
+                    0xED,
+                    0x57,
+                    0xC5,
+                    0x80
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVDecVideoSWPowerLevel
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x47, 0x23, 0x5D, 0xFB,
+                    0xD8, 0x4D,
+                    0x09, 0x45,
+                    0xAE,
+                    0xD0,
+                    0xDB,
+                    0x5F,
+                    0xA9,
+                    0xAA,
+                    0x93,
+                    0xF4
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_GUID_AVDecAudioInputWMA
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xCF, 0x8D, 0x5E, 0xC9,
+                    0x58, 0x40,
+                    0x04, 0x42,
+                    0x8C,
+                    0x42,
+                    0xCB,
+                    0x24,
+                    0xD9,
+                    0x1E,
+                    0x4B,
+                    0x9B
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_GUID_AVDecAudioInputWMAPro
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xC7, 0xB7, 0x28, 0x01,
+                    0x72, 0xDA,
+                    0xE3, 0x4F,
+                    0xBE,
+                    0xF8,
+                    0x5C,
+                    0x52,
+                    0xE3,
+                    0x55,
+                    0x77,
+                    0x04
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_GUID_AVDecAudioInputDolby
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xA0, 0x28, 0x42, 0x8E,
+                    0x00, 0xF0,
+                    0x0B, 0x4E,
+                    0x8F,
+                    0x54,
+                    0xAB,
+                    0x8D,
+                    0x24,
+                    0xAD,
+                    0x61,
+                    0xA2
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_GUID_AVDecAudioInputDTS
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xCA, 0xC0, 0x0B, 0x60,
+                    0x1F, 0x6A,
+                    0x91, 0x4E,
+                    0xB2,
+                    0x41,
+                    0x1B,
+                    0xBE,
+                    0xB1,
+                    0xCB,
+                    0x19,
+                    0xE0
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_GUID_AVDecAudioInputPCM
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xA5, 0x1D, 0x42, 0xF2,
+                    0xB4, 0xBB,
+                    0xD5, 0x4C,
+                    0xA9,
+                    0x96,
+                    0x93,
+                    0x3C,
+                    0x6B,
+                    0x5D,
+                    0x13,
+                    0x47
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_GUID_AVDecAudioInputMPEG
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x36, 0x6F, 0x10, 0x91,
+                    0xC5, 0x02,
+                    0x75, 0x4F,
+                    0x97,
+                    0x19,
+                    0x3B,
+                    0x7A,
+                    0xBF,
+                    0x75,
+                    0xE1,
+                    0xF6
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_GUID_AVDecAudioInputAAC
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x28, 0x78, 0xDF, 0x97,
+                    0x4A, 0xB9,
+                    0xE2, 0x47,
+                    0xA4,
+                    0xBC,
+                    0x51,
+                    0x19,
+                    0x4D,
+                    0xB2,
+                    0x2A,
+                    0x4D
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_GUID_AVDecAudioInputHEAAC
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xAA, 0xB4, 0xEF, 0x16,
+                    0x0E, 0x33,
+                    0x5C, 0x4F,
+                    0x98,
+                    0xA8,
+                    0xCF,
+                    0x6A,
+                    0xC5,
+                    0x5C,
+                    0xBE,
+                    0x60
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_GUID_AVDecAudioInputDolbyDigitalPlus
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x85, 0xE1, 0x03, 0x08,
+                    0x5D, 0x8F,
+                    0xF5, 0x47,
+                    0x99,
+                    0x08,
+                    0x19,
+                    0xA5,
+                    0xBB,
+                    0xC9,
+                    0xFE,
+                    0x34
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVDecAACDownmixMode
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x75, 0x44, 0x27, 0x01,
+                    0xBB, 0xF6,
+                    0x17, 0x40,
+                    0xB0,
+                    0x84,
+                    0x81,
+                    0xA7,
+                    0x63,
+                    0xC9,
+                    0x42,
+                    0xD4
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVDecHEAACDynamicRangeControl
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xBE, 0x8A, 0x7C, 0x28,
+                    0xA4, 0x69,
+                    0x39, 0x4D,
+                    0x80,
+                    0x80,
+                    0xD3,
+                    0xD9,
+                    0x71,
+                    0x21,
+                    0x78,
+                    0xA0
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVDecAudioDualMono
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xA8, 0xCD, 0x52, 0x4A,
+                    0xF8, 0x30,
+                    0x16, 0x42,
+                    0xBE,
+                    0x0F,
+                    0xBA,
+                    0x0B,
+                    0x20,
+                    0x25,
+                    0x92,
+                    0x1D
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVDecAudioDualMonoReproMode
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x86, 0x61, 0x10, 0xA5,
+                    0x94, 0xCC,
+                    0xC9, 0x4B,
+                    0x8C,
+                    0xD9,
+                    0xAA,
+                    0x2F,
+                    0x61,
+                    0xF6,
+                    0x80,
+                    0x7E
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVAudioChannelCount
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xC4, 0x83, 0x35, 0x1D,
+                    0x83, 0x15,
+                    0x4E, 0x47,
+                    0xB7,
+                    0x1A,
+                    0x5E,
+                    0xE4,
+                    0x63,
+                    0xC1,
+                    0x98,
+                    0xE4
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVAudioChannelConfig
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xB3, 0x9C, 0xF8, 0x17,
+                    0x8D, 0xC3,
+                    0x68, 0x43,
+                    0x9E,
+                    0xDE,
+                    0x63,
+                    0xB9,
+                    0x4D,
+                    0x17,
+                    0x7F,
+                    0x9F
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVAudioSampleRate
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x23, 0x27, 0x1D, 0x97,
+                    0xCB, 0x1A,
+                    0xE7, 0x42,
+                    0x85,
+                    0x5C,
+                    0x52,
+                    0x0A,
+                    0x4B,
+                    0x70,
+                    0xA5,
+                    0xF2
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVDDSurroundMode
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x86, 0xF3, 0xF2, 0x99,
+                    0xD1, 0x98,
+                    0x52, 0x44,
+                    0xA1,
+                    0x63,
+                    0xAB,
+                    0xC7,
+                    0x8A,
+                    0x6E,
+                    0xB7,
+                    0x70
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVDecDDOperationalMode
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xD1, 0xC6, 0xD6, 0xD6,
+                    0x4E, 0x06,
+                    0xDD, 0x4F,
+                    0xA4,
+                    0x0E,
+                    0x3E,
+                    0xCB,
+                    0xFC,
+                    0xB7,
+                    0xEB,
+                    0xD0
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVDecDDMatrixDecodingMode
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xA5, 0x11, 0xC8, 0xDD,
+                    0xED, 0x04,
+                    0xF3, 0x4B,
+                    0xA0,
+                    0xCA,
+                    0xD0,
+                    0x04,
+                    0x49,
+                    0xF9,
+                    0x35,
+                    0x5F
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVDecDDDynamicRangeScaleHigh
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x21, 0x6C, 0x19, 0x50,
+                    0x33, 0x1F,
+                    0xF5, 0x4A,
+                    0xB2,
+                    0x96,
+                    0x11,
+                    0x42,
+                    0x6D,
+                    0x6C,
+                    0x87,
+                    0x89
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVDecDDDynamicRangeScaleLow
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xE4, 0x62, 0x4E, 0x04,
+                    0xA5, 0x11,
+                    0xD5, 0x42,
+                    0xA3,
+                    0xB2,
+                    0x3B,
+                    0xB2,
+                    0xC7,
+                    0xC2,
+                    0xD7,
+                    0xCF
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVDecDDStereoDownMixMode
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x2C, 0x12, 0xE4, 0x6C,
+                    0xE9, 0x3E,
+                    0x82, 0x41,
+                    0xB4,
+                    0xAE,
+                    0xC1,
+                    0x0F,
+                    0xC0,
+                    0x88,
+                    0x64,
+                    0x9D
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVDSPLoudnessEqualization
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x15, 0x1A, 0xFD, 0x8A,
+                    0x12, 0x18,
+                    0xBF, 0x4C,
+                    0x93,
+                    0x19,
+                    0x43,
+                    0x3A,
+                    0x5B,
+                    0x2A,
+                    0x3B,
+                    0x27
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVDSPSpeakerFill
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xA1, 0xBC, 0x12, 0x56,
+                    0xDA, 0x56,
+                    0x82, 0x45,
+                    0x8D,
+                    0xA1,
+                    0xCA,
+                    0x80,
+                    0x90,
+                    0xF9,
+                    0x27,
+                    0x68
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVPriorityControl
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xC8, 0x3D, 0xBA, 0x54,
+                    0xDE, 0xBD,
+                    0x29, 0x43,
+                    0xB1,
+                    0x87,
+                    0x20,
+                    0x18,
+                    0xBC,
+                    0x5C,
+                    0x2B,
+                    0xA1
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVRealtimeControl
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x32, 0x06, 0x44, 0x6F,
+                    0xAD, 0xC4,
+                    0xF7, 0x4B,
+                    0x9E,
+                    0x52,
+                    0x45,
+                    0x69,
+                    0x42,
+                    0xB4,
+                    0x54,
+                    0xB0
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncNoInputCopy
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x2A, 0x6A, 0xB4, 0xD2,
+                    0xEE, 0xE8,
+                    0xC5, 0x4E,
+                    0x86,
+                    0x9E,
+                    0x44,
+                    0x9B,
+                    0x6C,
+                    0x62,
+                    0xC8,
+                    0x1A
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid STATIC_CODECAPI_AVEncChromaEncodeMode
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x5A, 0xAB, 0x47, 0x8A,
+                    0x98, 0x47,
+                    0x93, 0x4C,
+                    0xB5,
+                    0xA5,
+                    0x55,
+                    0x4F,
+                    0x9A,
+                    0x3B,
+                    0x9F,
+                    0x50
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid IID_CODECAPI_AVEncProgressiveUpdateTime
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x66, 0xAF, 0x9F, 0x64,
+                    0xC6, 0xAF,
+                    0x28, 0x48,
+                    0x8F,
+                    0xDC,
+                    0x07,
+                    0x71,
+                    0xCD,
+                    0x9A,
+                    0xB1,
+                    0x7D
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid IID_CODECAPI_AVEncChromaUpdateTime
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x98, 0xD9, 0x4F, 0x4B,
+                    0x74, 0x42,
+                    0xBB, 0x40,
+                    0x8E,
+                    0xE4,
+                    0x07,
+                    0x55,
+                    0x3E,
+                    0x7E,
+                    0x2D,
+                    0x3A
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
     }
 }

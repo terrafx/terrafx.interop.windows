@@ -9,7 +9,7 @@ namespace TerraFX.Interop
 {
     public unsafe struct HENHMETAFILE : IEquatable<HENHMETAFILE>
     {
-        public static readonly HENHMETAFILE NULL = default;
+        public static HENHMETAFILE NULL => default;
 
         private void* _value;
 

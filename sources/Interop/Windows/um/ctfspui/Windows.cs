@@ -4,12 +4,34 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
 {
     public static partial class Windows
     {
         [NativeTypeName("const GUID")]
-        public static readonly Guid IID_ITfSpeechUIServer = new Guid(0x90e9a944, 0x9244, 0x489f, 0xa7, 0x8f, 0xde, 0x67, 0xaf, 0xc0, 0x13, 0xa7);
+        public static ref readonly Guid IID_ITfSpeechUIServer
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x44, 0xA9, 0xE9, 0x90,
+                    0x44, 0x92,
+                    0x9F, 0x48,
+                    0xA7,
+                    0x8F,
+                    0xDE,
+                    0x67,
+                    0xAF,
+                    0xC0,
+                    0x13,
+                    0xA7
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
     }
 }

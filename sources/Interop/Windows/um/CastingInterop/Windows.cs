@@ -4,6 +4,8 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
 {
@@ -18,10 +20,70 @@ namespace TerraFX.Interop
         [NativeTypeName("const WCHAR [15]")]
         public const string CastingSourceInfo_Property_ProtectedMedia = "ProtectedMedia";
 
-        public static readonly Guid IID_ICastingEventHandler = new Guid(0xC79A6CB7, 0xBEBD, 0x47A6, 0xA2, 0xAD, 0x4D, 0x45, 0xAD, 0x79, 0xC7, 0xBC);
+        public static ref readonly Guid IID_ICastingEventHandler
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xB7, 0x6C, 0x9A, 0xC7,
+                    0xBD, 0xBE,
+                    0xA6, 0x47,
+                    0xA2,
+                    0xAD,
+                    0x4D,
+                    0x45,
+                    0xAD,
+                    0x79,
+                    0xC7,
+                    0xBC
+                };
 
-        public static readonly Guid IID_ICastingController = new Guid(0xF0A56423, 0xA664, 0x4FBD, 0x8B, 0x43, 0x40, 0x9A, 0x45, 0xE8, 0xD9, 0xA1);
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
-        public static readonly Guid IID_ICastingSourceInfo = new Guid(0x45101AB7, 0x7C3A, 0x4BCE, 0x95, 0x00, 0x12, 0xC0, 0x90, 0x24, 0xB2, 0x98);
+        public static ref readonly Guid IID_ICastingController
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x23, 0x64, 0xA5, 0xF0,
+                    0x64, 0xA6,
+                    0xBD, 0x4F,
+                    0x8B,
+                    0x43,
+                    0x40,
+                    0x9A,
+                    0x45,
+                    0xE8,
+                    0xD9,
+                    0xA1
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid IID_ICastingSourceInfo
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xB7, 0x1A, 0x10, 0x45,
+                    0x3A, 0x7C,
+                    0xCE, 0x4B,
+                    0x95,
+                    0x00,
+                    0x12,
+                    0xC0,
+                    0x90,
+                    0x24,
+                    0xB2,
+                    0x98
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
     }
 }

@@ -962,7 +962,7 @@ namespace TerraFX.Interop
         public static bool IS_POINTER_CANCELED_WPARAM([NativeTypeName("WPARAM")] nuint wParam) => IS_POINTER_FLAG_SET_WPARAM(wParam, POINTER_MESSAGE_FLAG_CANCELED);
 
         [NativeTypeName("#define GetWindowLongPtr GetWindowLongPtrW")]
-        public static readonly delegate*<IntPtr, int, nint> GetWindowLongPtr = &GetWindowLongPtrW;
+        public static delegate*<IntPtr, int, nint> GetWindowLongPtr => &GetWindowLongPtrW;
 
         [return: NativeTypeName("LONG_PTR")]
         public static nint GetWindowLongPtrA([NativeTypeName("HWND")] IntPtr hWnd, int nIndex)
@@ -999,7 +999,7 @@ namespace TerraFX.Interop
         }
 
         [NativeTypeName("#define SetWindowLongPtr SetWindowLongPtrW")]
-        public static readonly delegate*<IntPtr, int, nint, nint> SetWindowLongPtr = &SetWindowLongPtrW;
+        public static delegate*<IntPtr, int, nint, nint> SetWindowLongPtr => &SetWindowLongPtrW;
 
         [return: NativeTypeName("LONG_PTR")]
         public static nint SetWindowLongPtrA([NativeTypeName("HWND")] IntPtr hWnd, int nIndex, [NativeTypeName("LONG_PTR")] nint dwNewLong)
@@ -1036,7 +1036,7 @@ namespace TerraFX.Interop
         }
 
         [NativeTypeName("#define GetClassLongPtr GetClassLongPtrW")]
-        public static readonly delegate*<IntPtr, int, nuint> GetClassLongPtr = &GetClassLongPtrW;
+        public static delegate*<IntPtr, int, nuint> GetClassLongPtr => &GetClassLongPtrW;
 
         [return: NativeTypeName("ULONG_PTR")]
         public static nuint GetClassLongPtrA([NativeTypeName("HWND")] IntPtr hWnd, int nIndex)
@@ -1073,7 +1073,7 @@ namespace TerraFX.Interop
         }
 
         [NativeTypeName("#define SetClassLongPtr SetClassLongPtrW")]
-        public static readonly delegate*<IntPtr, int, nint, nuint> SetClassLongPtr = &SetClassLongPtrW;
+        public static delegate*<IntPtr, int, nint, nuint> SetClassLongPtr => &SetClassLongPtrW;
 
         [return: NativeTypeName("ULONG_PTR")]
         public static nuint SetClassLongPtrA([NativeTypeName("HWND")] IntPtr hWnd, int nIndex, [NativeTypeName("LONG_PTR")] nint dwNewLong)

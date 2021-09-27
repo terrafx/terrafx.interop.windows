@@ -4,13 +4,55 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
 {
     public static partial class Windows
     {
-        public static readonly Guid IID_IMFSpatialAudioObjectBuffer = new Guid(0xD396EC8C, 0x605E, 0x4249, 0x97, 0x8D, 0x72, 0xAD, 0x1C, 0x31, 0x28, 0x72);
+        public static ref readonly Guid IID_IMFSpatialAudioObjectBuffer
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x8C, 0xEC, 0x96, 0xD3,
+                    0x5E, 0x60,
+                    0x49, 0x42,
+                    0x97,
+                    0x8D,
+                    0x72,
+                    0xAD,
+                    0x1C,
+                    0x31,
+                    0x28,
+                    0x72
+                };
 
-        public static readonly Guid IID_IMFSpatialAudioSample = new Guid(0xABF28A9B, 0x3393, 0x4290, 0xBA, 0x79, 0x5F, 0xFC, 0x46, 0xD9, 0x86, 0xB2);
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid IID_IMFSpatialAudioSample
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x9B, 0x8A, 0xF2, 0xAB,
+                    0x93, 0x33,
+                    0x90, 0x42,
+                    0xBA,
+                    0x79,
+                    0x5F,
+                    0xFC,
+                    0x46,
+                    0xD9,
+                    0x86,
+                    0xB2
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
     }
 }

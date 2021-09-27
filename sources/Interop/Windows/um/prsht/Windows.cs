@@ -31,10 +31,10 @@ namespace TerraFX.Interop
         public static extern nint PropertySheetW([NativeTypeName("LPCPROPSHEETHEADERW")] PROPSHEETHEADERW_V2* param0);
 
         [NativeTypeName("#define SNDMSG ::SendMessage")]
-        public static readonly delegate*<IntPtr, uint, nuint, nint, nint> SNDMSG = &SendMessageW;
+        public static delegate*<IntPtr, uint, nuint, nint, nint> SNDMSG => &SendMessageW;
 
         [NativeTypeName("#define PSTMSG ::PostMessage")]
-        public static readonly delegate*<IntPtr, uint, nuint, nint, int> PSTMSG = &PostMessageW;
+        public static delegate*<IntPtr, uint, nuint, nint, int> PSTMSG => &PostMessageW;
 
         [NativeTypeName("#define MAXPROPPAGES 100")]
         public const int MAXPROPPAGES = 100;
@@ -91,34 +91,34 @@ namespace TerraFX.Interop
         public const int PSPCB_CREATE = 2;
 
         [NativeTypeName("#define PROPSHEETPAGEA_V1_SIZE sizeof(PROPSHEETPAGEA_V1)")]
-        public static readonly uint PROPSHEETPAGEA_V1_SIZE = unchecked((uint)(sizeof(PROPSHEETPAGEA_V1)));
+        public static uint PROPSHEETPAGEA_V1_SIZE => unchecked((uint)((uint)(sizeof(PROPSHEETPAGEA_V1))));
 
         [NativeTypeName("#define PROPSHEETPAGEW_V1_SIZE sizeof(PROPSHEETPAGEW_V1)")]
-        public static readonly uint PROPSHEETPAGEW_V1_SIZE = unchecked((uint)(sizeof(PROPSHEETPAGEW_V1)));
+        public static uint PROPSHEETPAGEW_V1_SIZE => unchecked((uint)((uint)(sizeof(PROPSHEETPAGEW_V1))));
 
         [NativeTypeName("#define PROPSHEETPAGEA_V2_SIZE sizeof(PROPSHEETPAGEA_V2)")]
-        public static readonly uint PROPSHEETPAGEA_V2_SIZE = unchecked((uint)(sizeof(PROPSHEETPAGEA_V2)));
+        public static uint PROPSHEETPAGEA_V2_SIZE => unchecked((uint)((uint)(sizeof(PROPSHEETPAGEA_V2))));
 
         [NativeTypeName("#define PROPSHEETPAGEW_V2_SIZE sizeof(PROPSHEETPAGEW_V2)")]
-        public static readonly uint PROPSHEETPAGEW_V2_SIZE = unchecked((uint)(sizeof(PROPSHEETPAGEW_V2)));
+        public static uint PROPSHEETPAGEW_V2_SIZE => unchecked((uint)((uint)(sizeof(PROPSHEETPAGEW_V2))));
 
         [NativeTypeName("#define PROPSHEETPAGEA_V3_SIZE sizeof(PROPSHEETPAGEA_V3)")]
-        public static readonly uint PROPSHEETPAGEA_V3_SIZE = unchecked((uint)(sizeof(PROPSHEETPAGEA_V3)));
+        public static uint PROPSHEETPAGEA_V3_SIZE => unchecked((uint)((uint)(sizeof(PROPSHEETPAGEA_V3))));
 
         [NativeTypeName("#define PROPSHEETPAGEW_V3_SIZE sizeof(PROPSHEETPAGEW_V3)")]
-        public static readonly uint PROPSHEETPAGEW_V3_SIZE = unchecked((uint)(sizeof(PROPSHEETPAGEW_V3)));
+        public static uint PROPSHEETPAGEW_V3_SIZE => unchecked((uint)((uint)(sizeof(PROPSHEETPAGEW_V3))));
 
         [NativeTypeName("#define PROPSHEETPAGEA_V4_SIZE sizeof(PROPSHEETPAGEA_V4)")]
-        public static readonly uint PROPSHEETPAGEA_V4_SIZE = unchecked((uint)(sizeof(PROPSHEETPAGEA)));
+        public static uint PROPSHEETPAGEA_V4_SIZE => unchecked((uint)((uint)(sizeof(PROPSHEETPAGEA))));
 
         [NativeTypeName("#define PROPSHEETPAGEW_V4_SIZE sizeof(PROPSHEETPAGEW_V4)")]
-        public static readonly uint PROPSHEETPAGEW_V4_SIZE = unchecked((uint)(sizeof(PROPSHEETPAGEW)));
+        public static uint PROPSHEETPAGEW_V4_SIZE => unchecked((uint)((uint)(sizeof(PROPSHEETPAGEW))));
 
         [NativeTypeName("#define PROPSHEETPAGE_V1_SIZE PROPSHEETPAGEW_V1_SIZE")]
-        public static readonly uint PROPSHEETPAGE_V1_SIZE = unchecked((uint)(sizeof(PROPSHEETPAGEW_V1)));
+        public static uint PROPSHEETPAGE_V1_SIZE => unchecked((uint)((uint)(sizeof(PROPSHEETPAGEW_V1))));
 
         [NativeTypeName("#define PROPSHEETPAGE_V2_SIZE PROPSHEETPAGEW_V2_SIZE")]
-        public static readonly uint PROPSHEETPAGE_V2_SIZE = unchecked((uint)(sizeof(PROPSHEETPAGEW_V2)));
+        public static uint PROPSHEETPAGE_V2_SIZE => unchecked((uint)((uint)(sizeof(PROPSHEETPAGEW_V2))));
 
         [NativeTypeName("#define PSH_DEFAULT 0x00000000")]
         public const int PSH_DEFAULT = 0x00000000;
@@ -205,22 +205,22 @@ namespace TerraFX.Interop
         public const int PSH_NOMARGIN = 0x10000000;
 
         [NativeTypeName("#define PROPSHEETHEADERA_V1_SIZE sizeof(PROPSHEETHEADERA_V1)")]
-        public static readonly uint PROPSHEETHEADERA_V1_SIZE = unchecked((uint)(sizeof(PROPSHEETHEADERA_V1)));
+        public static uint PROPSHEETHEADERA_V1_SIZE => unchecked((uint)((uint)(sizeof(PROPSHEETHEADERA_V1))));
 
         [NativeTypeName("#define PROPSHEETHEADERW_V1_SIZE sizeof(PROPSHEETHEADERW_V1)")]
-        public static readonly uint PROPSHEETHEADERW_V1_SIZE = unchecked((uint)(sizeof(PROPSHEETHEADERW_V1)));
+        public static uint PROPSHEETHEADERW_V1_SIZE => unchecked((uint)((uint)(sizeof(PROPSHEETHEADERW_V1))));
 
         [NativeTypeName("#define PROPSHEETHEADERA_V2_SIZE sizeof(PROPSHEETHEADERA_V2)")]
-        public static readonly uint PROPSHEETHEADERA_V2_SIZE = unchecked((uint)(sizeof(PROPSHEETHEADERA_V2)));
+        public static uint PROPSHEETHEADERA_V2_SIZE => unchecked((uint)((uint)(sizeof(PROPSHEETHEADERA_V2))));
 
         [NativeTypeName("#define PROPSHEETHEADERW_V2_SIZE sizeof(PROPSHEETHEADERW_V2)")]
-        public static readonly uint PROPSHEETHEADERW_V2_SIZE = unchecked((uint)(sizeof(PROPSHEETHEADERW_V2)));
+        public static uint PROPSHEETHEADERW_V2_SIZE => unchecked((uint)((uint)(sizeof(PROPSHEETHEADERW_V2))));
 
         [NativeTypeName("#define PROPSHEETHEADER_V1_SIZE PROPSHEETHEADERW_V1_SIZE")]
-        public static readonly uint PROPSHEETHEADER_V1_SIZE = unchecked((uint)(sizeof(PROPSHEETHEADERW_V1)));
+        public static uint PROPSHEETHEADER_V1_SIZE => unchecked((uint)((uint)(sizeof(PROPSHEETHEADERW_V1))));
 
         [NativeTypeName("#define PROPSHEETHEADER_V2_SIZE PROPSHEETHEADERW_V2_SIZE")]
-        public static readonly uint PROPSHEETHEADER_V2_SIZE = unchecked((uint)(sizeof(PROPSHEETHEADERW_V2)));
+        public static uint PROPSHEETHEADER_V2_SIZE => unchecked((uint)((uint)(sizeof(PROPSHEETHEADERW_V2))));
 
         [NativeTypeName("#define PSCB_INITIALIZED 1")]
         public const int PSCB_INITIALIZED = 1;
@@ -232,10 +232,10 @@ namespace TerraFX.Interop
         public const int PSCB_BUTTONPRESSED = 3;
 
         [NativeTypeName("#define CreatePropertySheetPage CreatePropertySheetPageW")]
-        public static readonly delegate*<PROPSHEETPAGEW*, IntPtr> CreatePropertySheetPage = &CreatePropertySheetPageW;
+        public static delegate*<PROPSHEETPAGEW*, IntPtr> CreatePropertySheetPage => &CreatePropertySheetPageW;
 
         [NativeTypeName("#define PropertySheet PropertySheetW")]
-        public static readonly delegate*<PROPSHEETHEADERW_V2*, nint> PropertySheet = &PropertySheetW;
+        public static delegate*<PROPSHEETHEADERW_V2*, nint> PropertySheet => &PropertySheetW;
 
         [NativeTypeName("#define PSN_FIRST (0U-200U)")]
         public const uint PSN_FIRST = unchecked(0U - 200U);

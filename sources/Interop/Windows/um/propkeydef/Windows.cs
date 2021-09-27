@@ -9,7 +9,7 @@ namespace TerraFX.Interop
     {
         public static int Equals([NativeTypeName("const PROPERTYKEY &")] PROPERTYKEY* pkeyOne, [NativeTypeName("const PROPERTYKEY &")] PROPERTYKEY* pkeyOther)
         {
-            return (((pkeyOne)->pid == (pkeyOther)->pid) && (pkeyOne)->fmtid.Equals((pkeyOther)->fmtid)) ? 1 : 0;
+            return (((pkeyOne)->pid == (pkeyOther)->pid) && ((pkeyOne)->fmtid == (pkeyOther)->fmtid)) ? 1 : 0;
         }
 
         public static int NotEquals([NativeTypeName("const PROPERTYKEY &")] PROPERTYKEY* pkeyOne, [NativeTypeName("const PROPERTYKEY &")] PROPERTYKEY* pkeyOther)

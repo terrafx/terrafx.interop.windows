@@ -4,6 +4,8 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
 {
@@ -18,12 +20,92 @@ namespace TerraFX.Interop
         [NativeTypeName("#define ENDPOINT_HARDWARE_SUPPORT_METER 0x00000004")]
         public const int ENDPOINT_HARDWARE_SUPPORT_METER = 0x00000004;
 
-        public static readonly Guid IID_IAudioEndpointVolumeCallback = new Guid(0x657804FA, 0xD6AD, 0x4496, 0x8A, 0x60, 0x35, 0x27, 0x52, 0xAF, 0x4F, 0x89);
+        public static ref readonly Guid IID_IAudioEndpointVolumeCallback
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xFA, 0x04, 0x78, 0x65,
+                    0xAD, 0xD6,
+                    0x96, 0x44,
+                    0x8A,
+                    0x60,
+                    0x35,
+                    0x27,
+                    0x52,
+                    0xAF,
+                    0x4F,
+                    0x89
+                };
 
-        public static readonly Guid IID_IAudioEndpointVolume = new Guid(0x5CDF2C82, 0x841E, 0x4546, 0x97, 0x22, 0x0C, 0xF7, 0x40, 0x78, 0x22, 0x9A);
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
-        public static readonly Guid IID_IAudioEndpointVolumeEx = new Guid(0x66E11784, 0xF695, 0x4F28, 0xA5, 0x05, 0xA7, 0x08, 0x00, 0x81, 0xA7, 0x8F);
+        public static ref readonly Guid IID_IAudioEndpointVolume
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x82, 0x2C, 0xDF, 0x5C,
+                    0x1E, 0x84,
+                    0x46, 0x45,
+                    0x97,
+                    0x22,
+                    0x0C,
+                    0xF7,
+                    0x40,
+                    0x78,
+                    0x22,
+                    0x9A
+                };
 
-        public static readonly Guid IID_IAudioMeterInformation = new Guid(0xC02216F6, 0x8C67, 0x4B5B, 0x9D, 0x00, 0xD0, 0x08, 0xE7, 0x3E, 0x00, 0x64);
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid IID_IAudioEndpointVolumeEx
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x84, 0x17, 0xE1, 0x66,
+                    0x95, 0xF6,
+                    0x28, 0x4F,
+                    0xA5,
+                    0x05,
+                    0xA7,
+                    0x08,
+                    0x00,
+                    0x81,
+                    0xA7,
+                    0x8F
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid IID_IAudioMeterInformation
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xF6, 0x16, 0x22, 0xC0,
+                    0x67, 0x8C,
+                    0x5B, 0x4B,
+                    0x9D,
+                    0x00,
+                    0xD0,
+                    0x08,
+                    0xE7,
+                    0x3E,
+                    0x00,
+                    0x64
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
     }
 }

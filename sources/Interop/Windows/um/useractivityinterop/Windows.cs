@@ -4,15 +4,77 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
 {
     public static partial class Windows
     {
-        public static readonly Guid IID_IUserActivityInterop = new Guid(0x1ADE314D, 0x0E0A, 0x40D9, 0x82, 0x4C, 0x9A, 0x08, 0x8A, 0x50, 0x05, 0x9F);
+        public static ref readonly Guid IID_IUserActivityInterop
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x4D, 0x31, 0xDE, 0x1A,
+                    0x0A, 0x0E,
+                    0xD9, 0x40,
+                    0x82,
+                    0x4C,
+                    0x9A,
+                    0x08,
+                    0x8A,
+                    0x50,
+                    0x05,
+                    0x9F
+                };
 
-        public static readonly Guid IID_IUserActivitySourceHostInterop = new Guid(0xC15DF8BC, 0x8844, 0x487A, 0xB8, 0x5B, 0x75, 0x78, 0xE0, 0xF6, 0x14, 0x19);
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
-        public static readonly Guid IID_IUserActivityRequestManagerInterop = new Guid(0xDD69F876, 0x9699, 0x4715, 0x90, 0x95, 0xE3, 0x7E, 0xA3, 0x0D, 0xFA, 0x1B);
+        public static ref readonly Guid IID_IUserActivitySourceHostInterop
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xBC, 0xF8, 0x5D, 0xC1,
+                    0x44, 0x88,
+                    0x7A, 0x48,
+                    0xB8,
+                    0x5B,
+                    0x75,
+                    0x78,
+                    0xE0,
+                    0xF6,
+                    0x14,
+                    0x19
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid IID_IUserActivityRequestManagerInterop
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x76, 0xF8, 0x69, 0xDD,
+                    0x99, 0x96,
+                    0x15, 0x47,
+                    0x90,
+                    0x95,
+                    0xE3,
+                    0x7E,
+                    0xA3,
+                    0x0D,
+                    0xFA,
+                    0x1B
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
     }
 }

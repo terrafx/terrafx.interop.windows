@@ -424,36 +424,36 @@ namespace TerraFX.Interop
         public static extern int DeriveCapabilitySidsFromName([NativeTypeName("LPCWSTR")] ushort* CapName, [NativeTypeName("PSID **")] void*** CapabilityGroupSids, [NativeTypeName("DWORD *")] uint* CapabilityGroupSidCount, [NativeTypeName("PSID **")] void*** CapabilitySids, [NativeTypeName("DWORD *")] uint* CapabilitySidCount);
 
         [NativeTypeName("#define AccessCheckAndAuditAlarm AccessCheckAndAuditAlarmW")]
-        public static readonly delegate*<ushort*, void*, ushort*, ushort*, void*, uint, GENERIC_MAPPING*, int, uint*, int*, int*, int> AccessCheckAndAuditAlarm = &AccessCheckAndAuditAlarmW;
+        public static delegate*<ushort*, void*, ushort*, ushort*, void*, uint, GENERIC_MAPPING*, int, uint*, int*, int*, int> AccessCheckAndAuditAlarm => &AccessCheckAndAuditAlarmW;
 
         [NativeTypeName("#define AccessCheckByTypeAndAuditAlarm AccessCheckByTypeAndAuditAlarmW")]
-        public static readonly delegate*<ushort*, void*, ushort*, ushort*, void*, void*, uint, AUDIT_EVENT_TYPE, uint, OBJECT_TYPE_LIST*, uint, GENERIC_MAPPING*, int, uint*, int*, int*, int> AccessCheckByTypeAndAuditAlarm = &AccessCheckByTypeAndAuditAlarmW;
+        public static delegate*<ushort*, void*, ushort*, ushort*, void*, void*, uint, AUDIT_EVENT_TYPE, uint, OBJECT_TYPE_LIST*, uint, GENERIC_MAPPING*, int, uint*, int*, int*, int> AccessCheckByTypeAndAuditAlarm => &AccessCheckByTypeAndAuditAlarmW;
 
         [NativeTypeName("#define AccessCheckByTypeResultListAndAuditAlarm AccessCheckByTypeResultListAndAuditAlarmW")]
-        public static readonly delegate*<ushort*, void*, ushort*, ushort*, void*, void*, uint, AUDIT_EVENT_TYPE, uint, OBJECT_TYPE_LIST*, uint, GENERIC_MAPPING*, int, uint*, uint*, int*, int> AccessCheckByTypeResultListAndAuditAlarm = &AccessCheckByTypeResultListAndAuditAlarmW;
+        public static delegate*<ushort*, void*, ushort*, ushort*, void*, void*, uint, AUDIT_EVENT_TYPE, uint, OBJECT_TYPE_LIST*, uint, GENERIC_MAPPING*, int, uint*, uint*, int*, int> AccessCheckByTypeResultListAndAuditAlarm => &AccessCheckByTypeResultListAndAuditAlarmW;
 
         [NativeTypeName("#define AccessCheckByTypeResultListAndAuditAlarmByHandle AccessCheckByTypeResultListAndAuditAlarmByHandleW")]
-        public static readonly delegate*<ushort*, void*, IntPtr, ushort*, ushort*, void*, void*, uint, AUDIT_EVENT_TYPE, uint, OBJECT_TYPE_LIST*, uint, GENERIC_MAPPING*, int, uint*, uint*, int*, int> AccessCheckByTypeResultListAndAuditAlarmByHandle = &AccessCheckByTypeResultListAndAuditAlarmByHandleW;
+        public static delegate*<ushort*, void*, IntPtr, ushort*, ushort*, void*, void*, uint, AUDIT_EVENT_TYPE, uint, OBJECT_TYPE_LIST*, uint, GENERIC_MAPPING*, int, uint*, uint*, int*, int> AccessCheckByTypeResultListAndAuditAlarmByHandle => &AccessCheckByTypeResultListAndAuditAlarmByHandleW;
 
         [NativeTypeName("#define GetFileSecurity GetFileSecurityW")]
-        public static readonly delegate*<ushort*, uint, void*, uint, uint*, int> GetFileSecurity = &GetFileSecurityW;
+        public static delegate*<ushort*, uint, void*, uint, uint*, int> GetFileSecurity => &GetFileSecurityW;
 
         [NativeTypeName("#define ObjectCloseAuditAlarm ObjectCloseAuditAlarmW")]
-        public static readonly delegate*<ushort*, void*, int, int> ObjectCloseAuditAlarm = &ObjectCloseAuditAlarmW;
+        public static delegate*<ushort*, void*, int, int> ObjectCloseAuditAlarm => &ObjectCloseAuditAlarmW;
 
         [NativeTypeName("#define ObjectDeleteAuditAlarm ObjectDeleteAuditAlarmW")]
-        public static readonly delegate*<ushort*, void*, int, int> ObjectDeleteAuditAlarm = &ObjectDeleteAuditAlarmW;
+        public static delegate*<ushort*, void*, int, int> ObjectDeleteAuditAlarm => &ObjectDeleteAuditAlarmW;
 
         [NativeTypeName("#define ObjectOpenAuditAlarm ObjectOpenAuditAlarmW")]
-        public static readonly delegate*<ushort*, void*, ushort*, ushort*, void*, IntPtr, uint, uint, PRIVILEGE_SET*, int, int, int*, int> ObjectOpenAuditAlarm = &ObjectOpenAuditAlarmW;
+        public static delegate*<ushort*, void*, ushort*, ushort*, void*, IntPtr, uint, uint, PRIVILEGE_SET*, int, int, int*, int> ObjectOpenAuditAlarm => &ObjectOpenAuditAlarmW;
 
         [NativeTypeName("#define ObjectPrivilegeAuditAlarm ObjectPrivilegeAuditAlarmW")]
-        public static readonly delegate*<ushort*, void*, IntPtr, uint, PRIVILEGE_SET*, int, int> ObjectPrivilegeAuditAlarm = &ObjectPrivilegeAuditAlarmW;
+        public static delegate*<ushort*, void*, IntPtr, uint, PRIVILEGE_SET*, int, int> ObjectPrivilegeAuditAlarm => &ObjectPrivilegeAuditAlarmW;
 
         [NativeTypeName("#define PrivilegedServiceAuditAlarm PrivilegedServiceAuditAlarmW")]
-        public static readonly delegate*<ushort*, ushort*, IntPtr, PRIVILEGE_SET*, int, int> PrivilegedServiceAuditAlarm = &PrivilegedServiceAuditAlarmW;
+        public static delegate*<ushort*, ushort*, IntPtr, PRIVILEGE_SET*, int, int> PrivilegedServiceAuditAlarm => &PrivilegedServiceAuditAlarmW;
 
         [NativeTypeName("#define SetFileSecurity SetFileSecurityW")]
-        public static readonly delegate*<ushort*, uint, void*, int> SetFileSecurity = &SetFileSecurityW;
+        public static delegate*<ushort*, uint, void*, int> SetFileSecurity => &SetFileSecurityW;
     }
 }

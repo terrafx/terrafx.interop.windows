@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
@@ -15,15 +16,95 @@ namespace TerraFX.Interop
         public static extern int DXGIDeclareAdapterRemovalSupport();
 
         [NativeTypeName("const GUID")]
-        public static readonly Guid IID_IDXGIAdapter4 = new Guid(0x3c8d99d1, 0x4fbf, 0x4181, 0xa8, 0x2c, 0xaf, 0x66, 0xbf, 0x7b, 0xd2, 0x4e);
+        public static ref readonly Guid IID_IDXGIAdapter4
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xD1, 0x99, 0x8D, 0x3C,
+                    0xBF, 0x4F,
+                    0x81, 0x41,
+                    0xA8,
+                    0x2C,
+                    0xAF,
+                    0x66,
+                    0xBF,
+                    0x7B,
+                    0xD2,
+                    0x4E
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const GUID")]
-        public static readonly Guid IID_IDXGIOutput6 = new Guid(0x068346e8, 0xaaec, 0x4b84, 0xad, 0xd7, 0x13, 0x7f, 0x51, 0x3f, 0x77, 0xa1);
+        public static ref readonly Guid IID_IDXGIOutput6
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xE8, 0x46, 0x83, 0x06,
+                    0xEC, 0xAA,
+                    0x84, 0x4B,
+                    0xAD,
+                    0xD7,
+                    0x13,
+                    0x7F,
+                    0x51,
+                    0x3F,
+                    0x77,
+                    0xA1
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const GUID")]
-        public static readonly Guid IID_IDXGIFactory6 = new Guid(0xc1b6694f, 0xff09, 0x44a9, 0xb0, 0x3c, 0x77, 0x90, 0x0a, 0x0a, 0x1d, 0x17);
+        public static ref readonly Guid IID_IDXGIFactory6
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x4F, 0x69, 0xB6, 0xC1,
+                    0x09, 0xFF,
+                    0xA9, 0x44,
+                    0xB0,
+                    0x3C,
+                    0x77,
+                    0x90,
+                    0x0A,
+                    0x0A,
+                    0x1D,
+                    0x17
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const GUID")]
-        public static readonly Guid IID_IDXGIFactory7 = new Guid(0xa4966eed, 0x76db, 0x44da, 0x84, 0xc1, 0xee, 0x9a, 0x7a, 0xfb, 0x20, 0xa8);
+        public static ref readonly Guid IID_IDXGIFactory7
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xED, 0x6E, 0x96, 0xA4,
+                    0xDB, 0x76,
+                    0xDA, 0x44,
+                    0x84,
+                    0xC1,
+                    0xEE,
+                    0x9A,
+                    0x7A,
+                    0xFB,
+                    0x20,
+                    0xA8
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
     }
 }

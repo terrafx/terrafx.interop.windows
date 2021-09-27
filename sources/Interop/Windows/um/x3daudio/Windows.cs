@@ -3,6 +3,8 @@
 // Ported from um/x3daudio.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
@@ -10,32 +12,40 @@ namespace TerraFX.Interop
     public static unsafe partial class Windows
     {
         [NativeTypeName("const X3DAUDIO_DISTANCE_CURVE_POINT [2]")]
-        public static X3DAUDIO_DISTANCE_CURVE_POINT[] X3DAudioDefault_LinearCurvePoints = new X3DAUDIO_DISTANCE_CURVE_POINT[2]
+        public static ReadOnlySpan<X3DAUDIO_DISTANCE_CURVE_POINT> X3DAudioDefault_LinearCurvePoints
         {
-            new X3DAUDIO_DISTANCE_CURVE_POINT
+            get
             {
-                Distance = 0.0f,
-                DSPSetting = 1.0f,
-            },
-            new X3DAUDIO_DISTANCE_CURVE_POINT
-            {
-                Distance = 1.0f,
-                DSPSetting = 0.0f,
-            },
-        };
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x00, 0x00, 0x00, 0x00,
+                    0x00, 0x00, 0x80, 0x3F,
+                    0x00, 0x00, 0x80, 0x3F,
+                    0x00, 0x00, 0x00, 0x00
+                };
+
+                return MemoryMarshal.CreateReadOnlySpan<X3DAUDIO_DISTANCE_CURVE_POINT>(ref Unsafe.As<byte, X3DAUDIO_DISTANCE_CURVE_POINT>(ref MemoryMarshal.GetReference(data)), 2);
+            }
+        }
 
         [NativeTypeName("const X3DAUDIO_CONE")]
-        public static readonly X3DAUDIO_CONE X3DAudioDefault_DirectionalCone = new X3DAUDIO_CONE
+        public static ref readonly X3DAUDIO_CONE X3DAudioDefault_DirectionalCone
         {
-            InnerAngle = 3.141592654f / 2,
-            OuterAngle = 3.141592654f,
-            InnerVolume = 1.0f,
-            OuterVolume = 0.708f,
-            InnerLPF = 0.0f,
-            OuterLPF = 0.25f,
-            InnerReverb = 0.708f,
-            OuterReverb = 1.0f,
-        };
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xDB, 0x0F, 0xC9, 0x3F,
+                    0xDB, 0x0F, 0x49, 0x40,
+                    0x00, 0x00, 0x80, 0x3F,
+                    0x7D, 0x3F, 0x35, 0x3F,
+                    0x00, 0x00, 0x00, 0x00,
+                    0x00, 0x00, 0x80, 0x3E,
+                    0x7D, 0x3F, 0x35, 0x3F,
+                    0x00, 0x00, 0x80, 0x3F
+                };
+
+                return ref Unsafe.As<byte, X3DAUDIO_CONE>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [DllImport("X3DAudio1_7", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]

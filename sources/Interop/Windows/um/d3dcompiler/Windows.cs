@@ -212,7 +212,7 @@ namespace TerraFX.Interop
         public const int D3DCOMPILE_FLAGS2_FORCE_ROOT_SIGNATURE_1_1 = (1 << 5);
 
         [NativeTypeName("#define D3D_COMPILE_STANDARD_FILE_INCLUDE ((ID3DInclude*)(UINT_PTR)1)")]
-        public static readonly ID3DInclude* D3D_COMPILE_STANDARD_FILE_INCLUDE = ((ID3DInclude*)((nuint)(1)));
+        public static ID3DInclude* D3D_COMPILE_STANDARD_FILE_INCLUDE => ((ID3DInclude*)((nuint)(1)));
 
         [NativeTypeName("#define D3DCOMPILE_SECDATA_MERGE_UAV_SLOTS 0x00000001")]
         public const int D3DCOMPILE_SECDATA_MERGE_UAV_SLOTS = 0x00000001;

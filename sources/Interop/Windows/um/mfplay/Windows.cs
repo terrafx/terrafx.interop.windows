@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
@@ -15,26 +16,140 @@ namespace TerraFX.Interop
         public static extern int MFPCreateMediaPlayer([NativeTypeName("LPCWSTR")] ushort* pwszURL, [NativeTypeName("BOOL")] int fStartPlayback, [NativeTypeName("MFP_CREATION_OPTIONS")] uint creationOptions, IMFPMediaPlayerCallback* pCallback, [NativeTypeName("HWND")] IntPtr hWnd, IMFPMediaPlayer** ppMediaPlayer);
 
         [NativeTypeName("const IID")]
-        public static readonly Guid MFP_POSITIONTYPE_100NS = new Guid(0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0);
+        public static ref readonly Guid MFP_POSITIONTYPE_100NS
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x00, 0x00, 0x00, 0x00,
+                    0x00, 0x00,
+                    0x00, 0x00,
+                    0x00,
+                    0x00,
+                    0x00,
+                    0x00,
+                    0x00,
+                    0x00,
+                    0x00,
+                    0x00
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const PROPERTYKEY")]
-        public static readonly PROPERTYKEY MFP_PKEY_StreamIndex = new PROPERTYKEY
+        public static ref readonly PROPERTYKEY MFP_PKEY_StreamIndex
         {
-            fmtid = new Guid(0xa7cf9740, 0xe8d9, 0x4a87, 0xbd, 0x8e, 0x29, 0x67, 0x0, 0x1f, 0xd3, 0xad),
-            pid = 0x00,
-        };
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x40, 0x97, 0xCF, 0xA7,
+                    0xD9, 0xE8,
+                    0x87, 0x4A,
+                    0xBD,
+                    0x8E,
+                    0x29,
+                    0x67,
+                    0x00,
+                    0x1F,
+                    0xD3,
+                    0xAD,
+                    0x00, 0x00, 0x00, 0x00
+                };
+
+                return ref Unsafe.As<byte, PROPERTYKEY>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const PROPERTYKEY")]
-        public static readonly PROPERTYKEY MFP_PKEY_StreamRenderingResults = new PROPERTYKEY
+        public static ref readonly PROPERTYKEY MFP_PKEY_StreamRenderingResults
         {
-            fmtid = new Guid(0xa7cf9740, 0xe8d9, 0x4a87, 0xbd, 0x8e, 0x29, 0x67, 0x0, 0x1f, 0xd3, 0xad),
-            pid = 0x01,
-        };
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x40, 0x97, 0xCF, 0xA7,
+                    0xD9, 0xE8,
+                    0x87, 0x4A,
+                    0xBD,
+                    0x8E,
+                    0x29,
+                    0x67,
+                    0x00,
+                    0x1F,
+                    0xD3,
+                    0xAD,
+                    0x01, 0x00, 0x00, 0x00
+                };
 
-        public static readonly Guid IID_IMFPMediaPlayer = new Guid(0xA714590A, 0x58AF, 0x430A, 0x85, 0xBF, 0x44, 0xF5, 0xEC, 0x83, 0x8D, 0x85);
+                return ref Unsafe.As<byte, PROPERTYKEY>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
-        public static readonly Guid IID_IMFPMediaItem = new Guid(0x90EB3E6B, 0xECBF, 0x45CC, 0xB1, 0xDA, 0xC6, 0xFE, 0x3E, 0xA7, 0x0D, 0x57);
+        public static ref readonly Guid IID_IMFPMediaPlayer
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x0A, 0x59, 0x14, 0xA7,
+                    0xAF, 0x58,
+                    0x0A, 0x43,
+                    0x85,
+                    0xBF,
+                    0x44,
+                    0xF5,
+                    0xEC,
+                    0x83,
+                    0x8D,
+                    0x85
+                };
 
-        public static readonly Guid IID_IMFPMediaPlayerCallback = new Guid(0x766C8FFB, 0x5FDB, 0x4FEA, 0xA2, 0x8D, 0xB9, 0x12, 0x99, 0x6F, 0x51, 0xBD);
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid IID_IMFPMediaItem
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x6B, 0x3E, 0xEB, 0x90,
+                    0xBF, 0xEC,
+                    0xCC, 0x45,
+                    0xB1,
+                    0xDA,
+                    0xC6,
+                    0xFE,
+                    0x3E,
+                    0xA7,
+                    0x0D,
+                    0x57
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid IID_IMFPMediaPlayerCallback
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xFB, 0x8F, 0x6C, 0x76,
+                    0xDB, 0x5F,
+                    0xEA, 0x4F,
+                    0xA2,
+                    0x8D,
+                    0xB9,
+                    0x12,
+                    0x99,
+                    0x6F,
+                    0x51,
+                    0xBD
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
     }
 }

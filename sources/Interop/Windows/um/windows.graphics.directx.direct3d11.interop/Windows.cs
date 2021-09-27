@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
@@ -18,6 +19,26 @@ namespace TerraFX.Interop
         [return: NativeTypeName("HRESULT")]
         public static extern int CreateDirect3D11SurfaceFromDXGISurface(IDXGISurface* dgxiSurface, IInspectable** graphicsSurface);
 
-        public static readonly Guid IID_IDirect3DDxgiInterfaceAccess = new Guid(0xA9B3D012, 0x3DF2, 0x4EE3, 0xB8, 0xD1, 0x86, 0x95, 0xF4, 0x57, 0xD3, 0xC1);
+        public static ref readonly Guid IID_IDirect3DDxgiInterfaceAccess
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x12, 0xD0, 0xB3, 0xA9,
+                    0xF2, 0x3D,
+                    0xE3, 0x4E,
+                    0xB8,
+                    0xD1,
+                    0x86,
+                    0x95,
+                    0xF4,
+                    0x57,
+                    0xD3,
+                    0xC1
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
     }
 }

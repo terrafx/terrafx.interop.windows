@@ -2251,28 +2251,28 @@ namespace TerraFX.Interop
         public const int INTERNATIONAL_USAGE = 0x00000001;
 
         [NativeTypeName("#define CryptAcquireContext CryptAcquireContextW")]
-        public static readonly delegate*<nuint*, ushort*, ushort*, uint, uint, int> CryptAcquireContext = &CryptAcquireContextW;
+        public static delegate*<nuint*, ushort*, ushort*, uint, uint, int> CryptAcquireContext => &CryptAcquireContextW;
 
         [NativeTypeName("#define CryptSignHash CryptSignHashW")]
-        public static readonly delegate*<nuint, uint, ushort*, uint, byte*, uint*, int> CryptSignHash = &CryptSignHashW;
+        public static delegate*<nuint, uint, ushort*, uint, byte*, uint*, int> CryptSignHash => &CryptSignHashW;
 
         [NativeTypeName("#define CryptVerifySignature CryptVerifySignatureW")]
-        public static readonly delegate*<nuint, byte*, uint, nuint, ushort*, uint, int> CryptVerifySignature = &CryptVerifySignatureW;
+        public static delegate*<nuint, byte*, uint, nuint, ushort*, uint, int> CryptVerifySignature => &CryptVerifySignatureW;
 
         [NativeTypeName("#define CryptSetProvider CryptSetProviderW")]
-        public static readonly delegate*<ushort*, uint, int> CryptSetProvider = &CryptSetProviderW;
+        public static delegate*<ushort*, uint, int> CryptSetProvider => &CryptSetProviderW;
 
         [NativeTypeName("#define CryptSetProviderEx CryptSetProviderExW")]
-        public static readonly delegate*<ushort*, uint, uint*, uint, int> CryptSetProviderEx = &CryptSetProviderExW;
+        public static delegate*<ushort*, uint, uint*, uint, int> CryptSetProviderEx => &CryptSetProviderExW;
 
         [NativeTypeName("#define CryptGetDefaultProvider CryptGetDefaultProviderW")]
-        public static readonly delegate*<uint, uint*, uint, ushort*, uint*, int> CryptGetDefaultProvider = &CryptGetDefaultProviderW;
+        public static delegate*<uint, uint*, uint, ushort*, uint*, int> CryptGetDefaultProvider => &CryptGetDefaultProviderW;
 
         [NativeTypeName("#define CryptEnumProviderTypes CryptEnumProviderTypesW")]
-        public static readonly delegate*<uint, uint*, uint, uint*, ushort*, uint*, int> CryptEnumProviderTypes = &CryptEnumProviderTypesW;
+        public static delegate*<uint, uint*, uint, uint*, ushort*, uint*, int> CryptEnumProviderTypes => &CryptEnumProviderTypesW;
 
         [NativeTypeName("#define CryptEnumProviders CryptEnumProvidersW")]
-        public static readonly delegate*<uint, uint*, uint, uint*, ushort*, uint*, int> CryptEnumProviders = &CryptEnumProvidersW;
+        public static delegate*<uint, uint*, uint, uint*, ushort*, uint*, int> CryptEnumProviders => &CryptEnumProvidersW;
 
         [NativeTypeName("#define szOID_RSA \"1.2.840.113549\"")]
         public static ReadOnlySpan<byte> szOID_RSA => new byte[] { 0x31, 0x2E, 0x32, 0x2E, 0x38, 0x34, 0x30, 0x2E, 0x31, 0x31, 0x33, 0x35, 0x34, 0x39, 0x00 };
@@ -3280,289 +3280,289 @@ namespace TerraFX.Interop
         public const int CRYPT_ENCODE_DECODE_NONE = 0;
 
         [NativeTypeName("#define X509_CERT ((LPCSTR) 1)")]
-        public static readonly sbyte* X509_CERT = ((sbyte*)(1));
+        public static sbyte* X509_CERT => ((sbyte*)(1));
 
         [NativeTypeName("#define X509_CERT_TO_BE_SIGNED ((LPCSTR) 2)")]
-        public static readonly sbyte* X509_CERT_TO_BE_SIGNED = ((sbyte*)(2));
+        public static sbyte* X509_CERT_TO_BE_SIGNED => ((sbyte*)(2));
 
         [NativeTypeName("#define X509_CERT_CRL_TO_BE_SIGNED ((LPCSTR) 3)")]
-        public static readonly sbyte* X509_CERT_CRL_TO_BE_SIGNED = ((sbyte*)(3));
+        public static sbyte* X509_CERT_CRL_TO_BE_SIGNED => ((sbyte*)(3));
 
         [NativeTypeName("#define X509_CERT_REQUEST_TO_BE_SIGNED ((LPCSTR) 4)")]
-        public static readonly sbyte* X509_CERT_REQUEST_TO_BE_SIGNED = ((sbyte*)(4));
+        public static sbyte* X509_CERT_REQUEST_TO_BE_SIGNED => ((sbyte*)(4));
 
         [NativeTypeName("#define X509_EXTENSIONS ((LPCSTR) 5)")]
-        public static readonly sbyte* X509_EXTENSIONS = ((sbyte*)(5));
+        public static sbyte* X509_EXTENSIONS => ((sbyte*)(5));
 
         [NativeTypeName("#define X509_NAME_VALUE ((LPCSTR) 6)")]
-        public static readonly sbyte* X509_NAME_VALUE = ((sbyte*)(6));
+        public static sbyte* X509_NAME_VALUE => ((sbyte*)(6));
 
         [NativeTypeName("#define X509_NAME ((LPCSTR) 7)")]
-        public static readonly sbyte* X509_NAME = ((sbyte*)(7));
+        public static sbyte* X509_NAME => ((sbyte*)(7));
 
         [NativeTypeName("#define X509_PUBLIC_KEY_INFO ((LPCSTR) 8)")]
-        public static readonly sbyte* X509_PUBLIC_KEY_INFO = ((sbyte*)(8));
+        public static sbyte* X509_PUBLIC_KEY_INFO => ((sbyte*)(8));
 
         [NativeTypeName("#define X509_AUTHORITY_KEY_ID ((LPCSTR) 9)")]
-        public static readonly sbyte* X509_AUTHORITY_KEY_ID = ((sbyte*)(9));
+        public static sbyte* X509_AUTHORITY_KEY_ID => ((sbyte*)(9));
 
         [NativeTypeName("#define X509_KEY_ATTRIBUTES ((LPCSTR) 10)")]
-        public static readonly sbyte* X509_KEY_ATTRIBUTES = ((sbyte*)(10));
+        public static sbyte* X509_KEY_ATTRIBUTES => ((sbyte*)(10));
 
         [NativeTypeName("#define X509_KEY_USAGE_RESTRICTION ((LPCSTR) 11)")]
-        public static readonly sbyte* X509_KEY_USAGE_RESTRICTION = ((sbyte*)(11));
+        public static sbyte* X509_KEY_USAGE_RESTRICTION => ((sbyte*)(11));
 
         [NativeTypeName("#define X509_ALTERNATE_NAME ((LPCSTR) 12)")]
-        public static readonly sbyte* X509_ALTERNATE_NAME = ((sbyte*)(12));
+        public static sbyte* X509_ALTERNATE_NAME => ((sbyte*)(12));
 
         [NativeTypeName("#define X509_BASIC_CONSTRAINTS ((LPCSTR) 13)")]
-        public static readonly sbyte* X509_BASIC_CONSTRAINTS = ((sbyte*)(13));
+        public static sbyte* X509_BASIC_CONSTRAINTS => ((sbyte*)(13));
 
         [NativeTypeName("#define X509_KEY_USAGE ((LPCSTR) 14)")]
-        public static readonly sbyte* X509_KEY_USAGE = ((sbyte*)(14));
+        public static sbyte* X509_KEY_USAGE => ((sbyte*)(14));
 
         [NativeTypeName("#define X509_BASIC_CONSTRAINTS2 ((LPCSTR) 15)")]
-        public static readonly sbyte* X509_BASIC_CONSTRAINTS2 = ((sbyte*)(15));
+        public static sbyte* X509_BASIC_CONSTRAINTS2 => ((sbyte*)(15));
 
         [NativeTypeName("#define X509_CERT_POLICIES ((LPCSTR) 16)")]
-        public static readonly sbyte* X509_CERT_POLICIES = ((sbyte*)(16));
+        public static sbyte* X509_CERT_POLICIES => ((sbyte*)(16));
 
         [NativeTypeName("#define PKCS_UTC_TIME ((LPCSTR) 17)")]
-        public static readonly sbyte* PKCS_UTC_TIME = ((sbyte*)(17));
+        public static sbyte* PKCS_UTC_TIME => ((sbyte*)(17));
 
         [NativeTypeName("#define PKCS_TIME_REQUEST ((LPCSTR) 18)")]
-        public static readonly sbyte* PKCS_TIME_REQUEST = ((sbyte*)(18));
+        public static sbyte* PKCS_TIME_REQUEST => ((sbyte*)(18));
 
         [NativeTypeName("#define RSA_CSP_PUBLICKEYBLOB ((LPCSTR) 19)")]
-        public static readonly sbyte* RSA_CSP_PUBLICKEYBLOB = ((sbyte*)(19));
+        public static sbyte* RSA_CSP_PUBLICKEYBLOB => ((sbyte*)(19));
 
         [NativeTypeName("#define X509_UNICODE_NAME ((LPCSTR) 20)")]
-        public static readonly sbyte* X509_UNICODE_NAME = ((sbyte*)(20));
+        public static sbyte* X509_UNICODE_NAME => ((sbyte*)(20));
 
         [NativeTypeName("#define X509_KEYGEN_REQUEST_TO_BE_SIGNED ((LPCSTR) 21)")]
-        public static readonly sbyte* X509_KEYGEN_REQUEST_TO_BE_SIGNED = ((sbyte*)(21));
+        public static sbyte* X509_KEYGEN_REQUEST_TO_BE_SIGNED => ((sbyte*)(21));
 
         [NativeTypeName("#define PKCS_ATTRIBUTE ((LPCSTR) 22)")]
-        public static readonly sbyte* PKCS_ATTRIBUTE = ((sbyte*)(22));
+        public static sbyte* PKCS_ATTRIBUTE => ((sbyte*)(22));
 
         [NativeTypeName("#define PKCS_CONTENT_INFO_SEQUENCE_OF_ANY ((LPCSTR) 23)")]
-        public static readonly sbyte* PKCS_CONTENT_INFO_SEQUENCE_OF_ANY = ((sbyte*)(23));
+        public static sbyte* PKCS_CONTENT_INFO_SEQUENCE_OF_ANY => ((sbyte*)(23));
 
         [NativeTypeName("#define X509_UNICODE_NAME_VALUE ((LPCSTR) 24)")]
-        public static readonly sbyte* X509_UNICODE_NAME_VALUE = ((sbyte*)(24));
+        public static sbyte* X509_UNICODE_NAME_VALUE => ((sbyte*)(24));
 
         [NativeTypeName("#define X509_ANY_STRING X509_NAME_VALUE")]
-        public static readonly sbyte* X509_ANY_STRING = ((sbyte*)(6));
+        public static sbyte* X509_ANY_STRING => ((sbyte*)(6));
 
         [NativeTypeName("#define X509_UNICODE_ANY_STRING X509_UNICODE_NAME_VALUE")]
-        public static readonly sbyte* X509_UNICODE_ANY_STRING = ((sbyte*)(24));
+        public static sbyte* X509_UNICODE_ANY_STRING => ((sbyte*)(24));
 
         [NativeTypeName("#define X509_OCTET_STRING ((LPCSTR) 25)")]
-        public static readonly sbyte* X509_OCTET_STRING = ((sbyte*)(25));
+        public static sbyte* X509_OCTET_STRING => ((sbyte*)(25));
 
         [NativeTypeName("#define X509_BITS ((LPCSTR) 26)")]
-        public static readonly sbyte* X509_BITS = ((sbyte*)(26));
+        public static sbyte* X509_BITS => ((sbyte*)(26));
 
         [NativeTypeName("#define X509_INTEGER ((LPCSTR) 27)")]
-        public static readonly sbyte* X509_INTEGER = ((sbyte*)(27));
+        public static sbyte* X509_INTEGER => ((sbyte*)(27));
 
         [NativeTypeName("#define X509_MULTI_BYTE_INTEGER ((LPCSTR) 28)")]
-        public static readonly sbyte* X509_MULTI_BYTE_INTEGER = ((sbyte*)(28));
+        public static sbyte* X509_MULTI_BYTE_INTEGER => ((sbyte*)(28));
 
         [NativeTypeName("#define X509_ENUMERATED ((LPCSTR) 29)")]
-        public static readonly sbyte* X509_ENUMERATED = ((sbyte*)(29));
+        public static sbyte* X509_ENUMERATED => ((sbyte*)(29));
 
         [NativeTypeName("#define X509_CHOICE_OF_TIME ((LPCSTR) 30)")]
-        public static readonly sbyte* X509_CHOICE_OF_TIME = ((sbyte*)(30));
+        public static sbyte* X509_CHOICE_OF_TIME => ((sbyte*)(30));
 
         [NativeTypeName("#define X509_AUTHORITY_KEY_ID2 ((LPCSTR) 31)")]
-        public static readonly sbyte* X509_AUTHORITY_KEY_ID2 = ((sbyte*)(31));
+        public static sbyte* X509_AUTHORITY_KEY_ID2 => ((sbyte*)(31));
 
         [NativeTypeName("#define X509_AUTHORITY_INFO_ACCESS ((LPCSTR) 32)")]
-        public static readonly sbyte* X509_AUTHORITY_INFO_ACCESS = ((sbyte*)(32));
+        public static sbyte* X509_AUTHORITY_INFO_ACCESS => ((sbyte*)(32));
 
         [NativeTypeName("#define X509_SUBJECT_INFO_ACCESS X509_AUTHORITY_INFO_ACCESS")]
-        public static readonly sbyte* X509_SUBJECT_INFO_ACCESS = ((sbyte*)(32));
+        public static sbyte* X509_SUBJECT_INFO_ACCESS => ((sbyte*)(32));
 
         [NativeTypeName("#define X509_CRL_REASON_CODE X509_ENUMERATED")]
-        public static readonly sbyte* X509_CRL_REASON_CODE = ((sbyte*)(29));
+        public static sbyte* X509_CRL_REASON_CODE => ((sbyte*)(29));
 
         [NativeTypeName("#define PKCS_CONTENT_INFO ((LPCSTR) 33)")]
-        public static readonly sbyte* PKCS_CONTENT_INFO = ((sbyte*)(33));
+        public static sbyte* PKCS_CONTENT_INFO => ((sbyte*)(33));
 
         [NativeTypeName("#define X509_SEQUENCE_OF_ANY ((LPCSTR) 34)")]
-        public static readonly sbyte* X509_SEQUENCE_OF_ANY = ((sbyte*)(34));
+        public static sbyte* X509_SEQUENCE_OF_ANY => ((sbyte*)(34));
 
         [NativeTypeName("#define X509_CRL_DIST_POINTS ((LPCSTR) 35)")]
-        public static readonly sbyte* X509_CRL_DIST_POINTS = ((sbyte*)(35));
+        public static sbyte* X509_CRL_DIST_POINTS => ((sbyte*)(35));
 
         [NativeTypeName("#define X509_ENHANCED_KEY_USAGE ((LPCSTR) 36)")]
-        public static readonly sbyte* X509_ENHANCED_KEY_USAGE = ((sbyte*)(36));
+        public static sbyte* X509_ENHANCED_KEY_USAGE => ((sbyte*)(36));
 
         [NativeTypeName("#define PKCS_CTL ((LPCSTR) 37)")]
-        public static readonly sbyte* PKCS_CTL = ((sbyte*)(37));
+        public static sbyte* PKCS_CTL => ((sbyte*)(37));
 
         [NativeTypeName("#define X509_MULTI_BYTE_UINT ((LPCSTR) 38)")]
-        public static readonly sbyte* X509_MULTI_BYTE_UINT = ((sbyte*)(38));
+        public static sbyte* X509_MULTI_BYTE_UINT => ((sbyte*)(38));
 
         [NativeTypeName("#define X509_DSS_PUBLICKEY X509_MULTI_BYTE_UINT")]
-        public static readonly sbyte* X509_DSS_PUBLICKEY = ((sbyte*)(38));
+        public static sbyte* X509_DSS_PUBLICKEY => ((sbyte*)(38));
 
         [NativeTypeName("#define X509_DSS_PARAMETERS ((LPCSTR) 39)")]
-        public static readonly sbyte* X509_DSS_PARAMETERS = ((sbyte*)(39));
+        public static sbyte* X509_DSS_PARAMETERS => ((sbyte*)(39));
 
         [NativeTypeName("#define X509_DSS_SIGNATURE ((LPCSTR) 40)")]
-        public static readonly sbyte* X509_DSS_SIGNATURE = ((sbyte*)(40));
+        public static sbyte* X509_DSS_SIGNATURE => ((sbyte*)(40));
 
         [NativeTypeName("#define PKCS_RC2_CBC_PARAMETERS ((LPCSTR) 41)")]
-        public static readonly sbyte* PKCS_RC2_CBC_PARAMETERS = ((sbyte*)(41));
+        public static sbyte* PKCS_RC2_CBC_PARAMETERS => ((sbyte*)(41));
 
         [NativeTypeName("#define PKCS_SMIME_CAPABILITIES ((LPCSTR) 42)")]
-        public static readonly sbyte* PKCS_SMIME_CAPABILITIES = ((sbyte*)(42));
+        public static sbyte* PKCS_SMIME_CAPABILITIES => ((sbyte*)(42));
 
         [NativeTypeName("#define X509_QC_STATEMENTS_EXT ((LPCSTR) 42)")]
-        public static readonly sbyte* X509_QC_STATEMENTS_EXT = ((sbyte*)(42));
+        public static sbyte* X509_QC_STATEMENTS_EXT => ((sbyte*)(42));
 
         [NativeTypeName("#define PKCS_RSA_PRIVATE_KEY ((LPCSTR) 43)")]
-        public static readonly sbyte* PKCS_RSA_PRIVATE_KEY = ((sbyte*)(43));
+        public static sbyte* PKCS_RSA_PRIVATE_KEY => ((sbyte*)(43));
 
         [NativeTypeName("#define PKCS_PRIVATE_KEY_INFO ((LPCSTR) 44)")]
-        public static readonly sbyte* PKCS_PRIVATE_KEY_INFO = ((sbyte*)(44));
+        public static sbyte* PKCS_PRIVATE_KEY_INFO => ((sbyte*)(44));
 
         [NativeTypeName("#define PKCS_ENCRYPTED_PRIVATE_KEY_INFO ((LPCSTR) 45)")]
-        public static readonly sbyte* PKCS_ENCRYPTED_PRIVATE_KEY_INFO = ((sbyte*)(45));
+        public static sbyte* PKCS_ENCRYPTED_PRIVATE_KEY_INFO => ((sbyte*)(45));
 
         [NativeTypeName("#define X509_PKIX_POLICY_QUALIFIER_USERNOTICE ((LPCSTR) 46)")]
-        public static readonly sbyte* X509_PKIX_POLICY_QUALIFIER_USERNOTICE = ((sbyte*)(46));
+        public static sbyte* X509_PKIX_POLICY_QUALIFIER_USERNOTICE => ((sbyte*)(46));
 
         [NativeTypeName("#define X509_DH_PUBLICKEY X509_MULTI_BYTE_UINT")]
-        public static readonly sbyte* X509_DH_PUBLICKEY = ((sbyte*)(38));
+        public static sbyte* X509_DH_PUBLICKEY => ((sbyte*)(38));
 
         [NativeTypeName("#define X509_DH_PARAMETERS ((LPCSTR) 47)")]
-        public static readonly sbyte* X509_DH_PARAMETERS = ((sbyte*)(47));
+        public static sbyte* X509_DH_PARAMETERS => ((sbyte*)(47));
 
         [NativeTypeName("#define PKCS_ATTRIBUTES ((LPCSTR) 48)")]
-        public static readonly sbyte* PKCS_ATTRIBUTES = ((sbyte*)(48));
+        public static sbyte* PKCS_ATTRIBUTES => ((sbyte*)(48));
 
         [NativeTypeName("#define PKCS_SORTED_CTL ((LPCSTR) 49)")]
-        public static readonly sbyte* PKCS_SORTED_CTL = ((sbyte*)(49));
+        public static sbyte* PKCS_SORTED_CTL => ((sbyte*)(49));
 
         [NativeTypeName("#define X509_ECC_SIGNATURE ((LPCSTR) 47)")]
-        public static readonly sbyte* X509_ECC_SIGNATURE = ((sbyte*)(47));
+        public static sbyte* X509_ECC_SIGNATURE => ((sbyte*)(47));
 
         [NativeTypeName("#define X942_DH_PARAMETERS ((LPCSTR) 50)")]
-        public static readonly sbyte* X942_DH_PARAMETERS = ((sbyte*)(50));
+        public static sbyte* X942_DH_PARAMETERS => ((sbyte*)(50));
 
         [NativeTypeName("#define X509_BITS_WITHOUT_TRAILING_ZEROES ((LPCSTR) 51)")]
-        public static readonly sbyte* X509_BITS_WITHOUT_TRAILING_ZEROES = ((sbyte*)(51));
+        public static sbyte* X509_BITS_WITHOUT_TRAILING_ZEROES => ((sbyte*)(51));
 
         [NativeTypeName("#define X942_OTHER_INFO ((LPCSTR) 52)")]
-        public static readonly sbyte* X942_OTHER_INFO = ((sbyte*)(52));
+        public static sbyte* X942_OTHER_INFO => ((sbyte*)(52));
 
         [NativeTypeName("#define X509_CERT_PAIR ((LPCSTR) 53)")]
-        public static readonly sbyte* X509_CERT_PAIR = ((sbyte*)(53));
+        public static sbyte* X509_CERT_PAIR => ((sbyte*)(53));
 
         [NativeTypeName("#define X509_ISSUING_DIST_POINT ((LPCSTR) 54)")]
-        public static readonly sbyte* X509_ISSUING_DIST_POINT = ((sbyte*)(54));
+        public static sbyte* X509_ISSUING_DIST_POINT => ((sbyte*)(54));
 
         [NativeTypeName("#define X509_NAME_CONSTRAINTS ((LPCSTR) 55)")]
-        public static readonly sbyte* X509_NAME_CONSTRAINTS = ((sbyte*)(55));
+        public static sbyte* X509_NAME_CONSTRAINTS => ((sbyte*)(55));
 
         [NativeTypeName("#define X509_POLICY_MAPPINGS ((LPCSTR) 56)")]
-        public static readonly sbyte* X509_POLICY_MAPPINGS = ((sbyte*)(56));
+        public static sbyte* X509_POLICY_MAPPINGS => ((sbyte*)(56));
 
         [NativeTypeName("#define X509_POLICY_CONSTRAINTS ((LPCSTR) 57)")]
-        public static readonly sbyte* X509_POLICY_CONSTRAINTS = ((sbyte*)(57));
+        public static sbyte* X509_POLICY_CONSTRAINTS => ((sbyte*)(57));
 
         [NativeTypeName("#define X509_CROSS_CERT_DIST_POINTS ((LPCSTR) 58)")]
-        public static readonly sbyte* X509_CROSS_CERT_DIST_POINTS = ((sbyte*)(58));
+        public static sbyte* X509_CROSS_CERT_DIST_POINTS => ((sbyte*)(58));
 
         [NativeTypeName("#define CMC_DATA ((LPCSTR) 59)")]
-        public static readonly sbyte* CMC_DATA = ((sbyte*)(59));
+        public static sbyte* CMC_DATA => ((sbyte*)(59));
 
         [NativeTypeName("#define CMC_RESPONSE ((LPCSTR) 60)")]
-        public static readonly sbyte* CMC_RESPONSE = ((sbyte*)(60));
+        public static sbyte* CMC_RESPONSE => ((sbyte*)(60));
 
         [NativeTypeName("#define CMC_STATUS ((LPCSTR) 61)")]
-        public static readonly sbyte* CMC_STATUS = ((sbyte*)(61));
+        public static sbyte* CMC_STATUS => ((sbyte*)(61));
 
         [NativeTypeName("#define CMC_ADD_EXTENSIONS ((LPCSTR) 62)")]
-        public static readonly sbyte* CMC_ADD_EXTENSIONS = ((sbyte*)(62));
+        public static sbyte* CMC_ADD_EXTENSIONS => ((sbyte*)(62));
 
         [NativeTypeName("#define CMC_ADD_ATTRIBUTES ((LPCSTR) 63)")]
-        public static readonly sbyte* CMC_ADD_ATTRIBUTES = ((sbyte*)(63));
+        public static sbyte* CMC_ADD_ATTRIBUTES => ((sbyte*)(63));
 
         [NativeTypeName("#define X509_CERTIFICATE_TEMPLATE ((LPCSTR) 64)")]
-        public static readonly sbyte* X509_CERTIFICATE_TEMPLATE = ((sbyte*)(64));
+        public static sbyte* X509_CERTIFICATE_TEMPLATE => ((sbyte*)(64));
 
         [NativeTypeName("#define OCSP_SIGNED_REQUEST ((LPCSTR) 65)")]
-        public static readonly sbyte* OCSP_SIGNED_REQUEST = ((sbyte*)(65));
+        public static sbyte* OCSP_SIGNED_REQUEST => ((sbyte*)(65));
 
         [NativeTypeName("#define OCSP_REQUEST ((LPCSTR) 66)")]
-        public static readonly sbyte* OCSP_REQUEST = ((sbyte*)(66));
+        public static sbyte* OCSP_REQUEST => ((sbyte*)(66));
 
         [NativeTypeName("#define OCSP_RESPONSE ((LPCSTR) 67)")]
-        public static readonly sbyte* OCSP_RESPONSE = ((sbyte*)(67));
+        public static sbyte* OCSP_RESPONSE => ((sbyte*)(67));
 
         [NativeTypeName("#define OCSP_BASIC_SIGNED_RESPONSE ((LPCSTR) 68)")]
-        public static readonly sbyte* OCSP_BASIC_SIGNED_RESPONSE = ((sbyte*)(68));
+        public static sbyte* OCSP_BASIC_SIGNED_RESPONSE => ((sbyte*)(68));
 
         [NativeTypeName("#define OCSP_BASIC_RESPONSE ((LPCSTR) 69)")]
-        public static readonly sbyte* OCSP_BASIC_RESPONSE = ((sbyte*)(69));
+        public static sbyte* OCSP_BASIC_RESPONSE => ((sbyte*)(69));
 
         [NativeTypeName("#define X509_LOGOTYPE_EXT ((LPCSTR) 70)")]
-        public static readonly sbyte* X509_LOGOTYPE_EXT = ((sbyte*)(70));
+        public static sbyte* X509_LOGOTYPE_EXT => ((sbyte*)(70));
 
         [NativeTypeName("#define X509_BIOMETRIC_EXT ((LPCSTR) 71)")]
-        public static readonly sbyte* X509_BIOMETRIC_EXT = ((sbyte*)(71));
+        public static sbyte* X509_BIOMETRIC_EXT => ((sbyte*)(71));
 
         [NativeTypeName("#define CNG_RSA_PUBLIC_KEY_BLOB ((LPCSTR) 72)")]
-        public static readonly sbyte* CNG_RSA_PUBLIC_KEY_BLOB = ((sbyte*)(72));
+        public static sbyte* CNG_RSA_PUBLIC_KEY_BLOB => ((sbyte*)(72));
 
         [NativeTypeName("#define X509_OBJECT_IDENTIFIER ((LPCSTR) 73)")]
-        public static readonly sbyte* X509_OBJECT_IDENTIFIER = ((sbyte*)(73));
+        public static sbyte* X509_OBJECT_IDENTIFIER => ((sbyte*)(73));
 
         [NativeTypeName("#define X509_ALGORITHM_IDENTIFIER ((LPCSTR) 74)")]
-        public static readonly sbyte* X509_ALGORITHM_IDENTIFIER = ((sbyte*)(74));
+        public static sbyte* X509_ALGORITHM_IDENTIFIER => ((sbyte*)(74));
 
         [NativeTypeName("#define PKCS_RSA_SSA_PSS_PARAMETERS ((LPCSTR) 75)")]
-        public static readonly sbyte* PKCS_RSA_SSA_PSS_PARAMETERS = ((sbyte*)(75));
+        public static sbyte* PKCS_RSA_SSA_PSS_PARAMETERS => ((sbyte*)(75));
 
         [NativeTypeName("#define PKCS_RSAES_OAEP_PARAMETERS ((LPCSTR) 76)")]
-        public static readonly sbyte* PKCS_RSAES_OAEP_PARAMETERS = ((sbyte*)(76));
+        public static sbyte* PKCS_RSAES_OAEP_PARAMETERS => ((sbyte*)(76));
 
         [NativeTypeName("#define ECC_CMS_SHARED_INFO ((LPCSTR) 77)")]
-        public static readonly sbyte* ECC_CMS_SHARED_INFO = ((sbyte*)(77));
+        public static sbyte* ECC_CMS_SHARED_INFO => ((sbyte*)(77));
 
         [NativeTypeName("#define TIMESTAMP_REQUEST ((LPCSTR) 78)")]
-        public static readonly sbyte* TIMESTAMP_REQUEST = ((sbyte*)(78));
+        public static sbyte* TIMESTAMP_REQUEST => ((sbyte*)(78));
 
         [NativeTypeName("#define TIMESTAMP_RESPONSE ((LPCSTR) 79)")]
-        public static readonly sbyte* TIMESTAMP_RESPONSE = ((sbyte*)(79));
+        public static sbyte* TIMESTAMP_RESPONSE => ((sbyte*)(79));
 
         [NativeTypeName("#define TIMESTAMP_INFO ((LPCSTR) 80)")]
-        public static readonly sbyte* TIMESTAMP_INFO = ((sbyte*)(80));
+        public static sbyte* TIMESTAMP_INFO => ((sbyte*)(80));
 
         [NativeTypeName("#define X509_CERT_BUNDLE ((LPCSTR) 81)")]
-        public static readonly sbyte* X509_CERT_BUNDLE = ((sbyte*)(81));
+        public static sbyte* X509_CERT_BUNDLE => ((sbyte*)(81));
 
         [NativeTypeName("#define X509_ECC_PRIVATE_KEY ((LPCSTR) 82)")]
-        public static readonly sbyte* X509_ECC_PRIVATE_KEY = ((sbyte*)(82));
+        public static sbyte* X509_ECC_PRIVATE_KEY => ((sbyte*)(82));
 
         [NativeTypeName("#define CNG_RSA_PRIVATE_KEY_BLOB ((LPCSTR) 83)")]
-        public static readonly sbyte* CNG_RSA_PRIVATE_KEY_BLOB = ((sbyte*)(83));
+        public static sbyte* CNG_RSA_PRIVATE_KEY_BLOB => ((sbyte*)(83));
 
         [NativeTypeName("#define X509_SUBJECT_DIR_ATTRS ((LPCSTR) 84)")]
-        public static readonly sbyte* X509_SUBJECT_DIR_ATTRS = ((sbyte*)(84));
+        public static sbyte* X509_SUBJECT_DIR_ATTRS => ((sbyte*)(84));
 
         [NativeTypeName("#define X509_ECC_PARAMETERS ((LPCSTR) 85)")]
-        public static readonly sbyte* X509_ECC_PARAMETERS = ((sbyte*)(85));
+        public static sbyte* X509_ECC_PARAMETERS => ((sbyte*)(85));
 
         [NativeTypeName("#define PKCS7_SIGNER_INFO ((LPCSTR) 500)")]
-        public static readonly sbyte* PKCS7_SIGNER_INFO = ((sbyte*)(500));
+        public static sbyte* PKCS7_SIGNER_INFO => ((sbyte*)(500));
 
         [NativeTypeName("#define CMS_SIGNER_INFO ((LPCSTR) 501)")]
-        public static readonly sbyte* CMS_SIGNER_INFO = ((sbyte*)(501));
+        public static sbyte* CMS_SIGNER_INFO => ((sbyte*)(501));
 
         [NativeTypeName("#define szOID_AUTHORITY_KEY_IDENTIFIER \"2.5.29.1\"")]
         public static ReadOnlySpan<byte> szOID_AUTHORITY_KEY_IDENTIFIER => new byte[] { 0x32, 0x2E, 0x35, 0x2E, 0x32, 0x39, 0x2E, 0x31, 0x00 };
@@ -5332,7 +5332,7 @@ namespace TerraFX.Interop
         public static ReadOnlySpan<byte> CMSG_OID_IMPORT_ENCRYPT_KEY_FUNC => new byte[] { 0x43, 0x72, 0x79, 0x70, 0x74, 0x4D, 0x73, 0x67, 0x44, 0x6C, 0x6C, 0x49, 0x6D, 0x70, 0x6F, 0x72, 0x74, 0x45, 0x6E, 0x63, 0x72, 0x79, 0x70, 0x74, 0x4B, 0x65, 0x79, 0x00 };
 
         [NativeTypeName("#define CMSG_DEFAULT_INSTALLABLE_FUNC_OID ((LPCSTR) 1)")]
-        public static readonly sbyte* CMSG_DEFAULT_INSTALLABLE_FUNC_OID = ((sbyte*)(1));
+        public static sbyte* CMSG_DEFAULT_INSTALLABLE_FUNC_OID => ((sbyte*)(1));
 
         [NativeTypeName("#define CMSG_CONTENT_ENCRYPT_PAD_ENCODED_LEN_FLAG 0x00000001")]
         public const int CMSG_CONTENT_ENCRYPT_PAD_ENCODED_LEN_FLAG = 0x00000001;
@@ -5791,73 +5791,73 @@ namespace TerraFX.Interop
         public const uint CERT_NCRYPT_KEY_SPEC = 0xFFFFFFFF;
 
         [NativeTypeName("#define CERT_STORE_PROV_MSG ((LPCSTR) 1)")]
-        public static readonly sbyte* CERT_STORE_PROV_MSG = ((sbyte*)(1));
+        public static sbyte* CERT_STORE_PROV_MSG => ((sbyte*)(1));
 
         [NativeTypeName("#define CERT_STORE_PROV_MEMORY ((LPCSTR) 2)")]
-        public static readonly sbyte* CERT_STORE_PROV_MEMORY = ((sbyte*)(2));
+        public static sbyte* CERT_STORE_PROV_MEMORY => ((sbyte*)(2));
 
         [NativeTypeName("#define CERT_STORE_PROV_FILE ((LPCSTR) 3)")]
-        public static readonly sbyte* CERT_STORE_PROV_FILE = ((sbyte*)(3));
+        public static sbyte* CERT_STORE_PROV_FILE => ((sbyte*)(3));
 
         [NativeTypeName("#define CERT_STORE_PROV_REG ((LPCSTR) 4)")]
-        public static readonly sbyte* CERT_STORE_PROV_REG = ((sbyte*)(4));
+        public static sbyte* CERT_STORE_PROV_REG => ((sbyte*)(4));
 
         [NativeTypeName("#define CERT_STORE_PROV_PKCS7 ((LPCSTR) 5)")]
-        public static readonly sbyte* CERT_STORE_PROV_PKCS7 = ((sbyte*)(5));
+        public static sbyte* CERT_STORE_PROV_PKCS7 => ((sbyte*)(5));
 
         [NativeTypeName("#define CERT_STORE_PROV_SERIALIZED ((LPCSTR) 6)")]
-        public static readonly sbyte* CERT_STORE_PROV_SERIALIZED = ((sbyte*)(6));
+        public static sbyte* CERT_STORE_PROV_SERIALIZED => ((sbyte*)(6));
 
         [NativeTypeName("#define CERT_STORE_PROV_FILENAME_A ((LPCSTR) 7)")]
-        public static readonly sbyte* CERT_STORE_PROV_FILENAME_A = ((sbyte*)(7));
+        public static sbyte* CERT_STORE_PROV_FILENAME_A => ((sbyte*)(7));
 
         [NativeTypeName("#define CERT_STORE_PROV_FILENAME_W ((LPCSTR) 8)")]
-        public static readonly sbyte* CERT_STORE_PROV_FILENAME_W = ((sbyte*)(8));
+        public static sbyte* CERT_STORE_PROV_FILENAME_W => ((sbyte*)(8));
 
         [NativeTypeName("#define CERT_STORE_PROV_FILENAME CERT_STORE_PROV_FILENAME_W")]
-        public static readonly sbyte* CERT_STORE_PROV_FILENAME = ((sbyte*)(8));
+        public static sbyte* CERT_STORE_PROV_FILENAME => ((sbyte*)(8));
 
         [NativeTypeName("#define CERT_STORE_PROV_SYSTEM_A ((LPCSTR) 9)")]
-        public static readonly sbyte* CERT_STORE_PROV_SYSTEM_A = ((sbyte*)(9));
+        public static sbyte* CERT_STORE_PROV_SYSTEM_A => ((sbyte*)(9));
 
         [NativeTypeName("#define CERT_STORE_PROV_SYSTEM_W ((LPCSTR) 10)")]
-        public static readonly sbyte* CERT_STORE_PROV_SYSTEM_W = ((sbyte*)(10));
+        public static sbyte* CERT_STORE_PROV_SYSTEM_W => ((sbyte*)(10));
 
         [NativeTypeName("#define CERT_STORE_PROV_SYSTEM CERT_STORE_PROV_SYSTEM_W")]
-        public static readonly sbyte* CERT_STORE_PROV_SYSTEM = ((sbyte*)(10));
+        public static sbyte* CERT_STORE_PROV_SYSTEM => ((sbyte*)(10));
 
         [NativeTypeName("#define CERT_STORE_PROV_COLLECTION ((LPCSTR) 11)")]
-        public static readonly sbyte* CERT_STORE_PROV_COLLECTION = ((sbyte*)(11));
+        public static sbyte* CERT_STORE_PROV_COLLECTION => ((sbyte*)(11));
 
         [NativeTypeName("#define CERT_STORE_PROV_SYSTEM_REGISTRY_A ((LPCSTR) 12)")]
-        public static readonly sbyte* CERT_STORE_PROV_SYSTEM_REGISTRY_A = ((sbyte*)(12));
+        public static sbyte* CERT_STORE_PROV_SYSTEM_REGISTRY_A => ((sbyte*)(12));
 
         [NativeTypeName("#define CERT_STORE_PROV_SYSTEM_REGISTRY_W ((LPCSTR) 13)")]
-        public static readonly sbyte* CERT_STORE_PROV_SYSTEM_REGISTRY_W = ((sbyte*)(13));
+        public static sbyte* CERT_STORE_PROV_SYSTEM_REGISTRY_W => ((sbyte*)(13));
 
         [NativeTypeName("#define CERT_STORE_PROV_SYSTEM_REGISTRY CERT_STORE_PROV_SYSTEM_REGISTRY_W")]
-        public static readonly sbyte* CERT_STORE_PROV_SYSTEM_REGISTRY = ((sbyte*)(13));
+        public static sbyte* CERT_STORE_PROV_SYSTEM_REGISTRY => ((sbyte*)(13));
 
         [NativeTypeName("#define CERT_STORE_PROV_PHYSICAL_W ((LPCSTR) 14)")]
-        public static readonly sbyte* CERT_STORE_PROV_PHYSICAL_W = ((sbyte*)(14));
+        public static sbyte* CERT_STORE_PROV_PHYSICAL_W => ((sbyte*)(14));
 
         [NativeTypeName("#define CERT_STORE_PROV_PHYSICAL CERT_STORE_PROV_PHYSICAL_W")]
-        public static readonly sbyte* CERT_STORE_PROV_PHYSICAL = ((sbyte*)(14));
+        public static sbyte* CERT_STORE_PROV_PHYSICAL => ((sbyte*)(14));
 
         [NativeTypeName("#define CERT_STORE_PROV_SMART_CARD_W ((LPCSTR) 15)")]
-        public static readonly sbyte* CERT_STORE_PROV_SMART_CARD_W = ((sbyte*)(15));
+        public static sbyte* CERT_STORE_PROV_SMART_CARD_W => ((sbyte*)(15));
 
         [NativeTypeName("#define CERT_STORE_PROV_SMART_CARD CERT_STORE_PROV_SMART_CARD_W")]
-        public static readonly sbyte* CERT_STORE_PROV_SMART_CARD = ((sbyte*)(15));
+        public static sbyte* CERT_STORE_PROV_SMART_CARD => ((sbyte*)(15));
 
         [NativeTypeName("#define CERT_STORE_PROV_LDAP_W ((LPCSTR) 16)")]
-        public static readonly sbyte* CERT_STORE_PROV_LDAP_W = ((sbyte*)(16));
+        public static sbyte* CERT_STORE_PROV_LDAP_W => ((sbyte*)(16));
 
         [NativeTypeName("#define CERT_STORE_PROV_LDAP CERT_STORE_PROV_LDAP_W")]
-        public static readonly sbyte* CERT_STORE_PROV_LDAP = ((sbyte*)(16));
+        public static sbyte* CERT_STORE_PROV_LDAP => ((sbyte*)(16));
 
         [NativeTypeName("#define CERT_STORE_PROV_PKCS12 ((LPCSTR) 17)")]
-        public static readonly sbyte* CERT_STORE_PROV_PKCS12 = ((sbyte*)(17));
+        public static sbyte* CERT_STORE_PROV_PKCS12 => ((sbyte*)(17));
 
         [NativeTypeName("#define sz_CERT_STORE_PROV_MEMORY \"Memory\"")]
         public static ReadOnlySpan<byte> sz_CERT_STORE_PROV_MEMORY => new byte[] { 0x4D, 0x65, 0x6D, 0x6F, 0x72, 0x79, 0x00 };
@@ -6712,7 +6712,7 @@ namespace TerraFX.Interop
         public const uint CTL_FIND_NO_LIST_ID_CBDATA = 0xFFFFFFFF;
 
         [NativeTypeName("#define CTL_FIND_NO_SIGNER_PTR ((PCERT_INFO) -1)")]
-        public static readonly CERT_INFO* CTL_FIND_NO_SIGNER_PTR = unchecked((CERT_INFO*)(-1));
+        public static CERT_INFO* CTL_FIND_NO_SIGNER_PTR => unchecked((CERT_INFO*)(-1));
 
         [NativeTypeName("#define CTL_FIND_SAME_USAGE_FLAG 0x1")]
         public const int CTL_FIND_SAME_USAGE_FLAG = 0x1;
@@ -7000,10 +7000,10 @@ namespace TerraFX.Interop
         public const int CRYPT_DELETE_KEYSET = 0x00000010;
 
         [NativeTypeName("#define CertRDNValueToStr CertRDNValueToStrW")]
-        public static readonly delegate*<uint, CRYPTOAPI_BLOB*, ushort*, uint, uint> CertRDNValueToStr = &CertRDNValueToStrW;
+        public static delegate*<uint, CRYPTOAPI_BLOB*, ushort*, uint, uint> CertRDNValueToStr => &CertRDNValueToStrW;
 
         [NativeTypeName("#define CertNameToStr CertNameToStrW")]
-        public static readonly delegate*<uint, CRYPTOAPI_BLOB*, uint, ushort*, uint, uint> CertNameToStr = &CertNameToStrW;
+        public static delegate*<uint, CRYPTOAPI_BLOB*, uint, ushort*, uint, uint> CertNameToStr => &CertNameToStrW;
 
         [NativeTypeName("#define CERT_SIMPLE_NAME_STR 1")]
         public const int CERT_SIMPLE_NAME_STR = 1;
@@ -7057,10 +7057,10 @@ namespace TerraFX.Interop
         public const int CERT_NAME_STR_ENABLE_PUNYCODE_FLAG = 0x00200000;
 
         [NativeTypeName("#define CertStrToName CertStrToNameW")]
-        public static readonly delegate*<uint, ushort*, uint, void*, byte*, uint*, ushort**, int> CertStrToName = &CertStrToNameW;
+        public static delegate*<uint, ushort*, uint, void*, byte*, uint*, ushort**, int> CertStrToName => &CertStrToNameW;
 
         [NativeTypeName("#define CertGetNameString CertGetNameStringW")]
-        public static readonly delegate*<CERT_CONTEXT*, uint, uint, void*, ushort*, uint, uint> CertGetNameString = &CertGetNameStringW;
+        public static delegate*<CERT_CONTEXT*, uint, uint, void*, ushort*, uint, uint> CertGetNameString => &CertGetNameStringW;
 
         [NativeTypeName("#define CERT_NAME_EMAIL_TYPE 1")]
         public const int CERT_NAME_EMAIL_TYPE = 1;
@@ -7111,10 +7111,10 @@ namespace TerraFX.Interop
         public const int CRYPT_MESSAGE_KEYID_RECIPIENT_FLAG = 0x4;
 
         [NativeTypeName("#define CertOpenSystemStore CertOpenSystemStoreW")]
-        public static readonly delegate*<nuint, ushort*, void*> CertOpenSystemStore = &CertOpenSystemStoreW;
+        public static delegate*<nuint, ushort*, void*> CertOpenSystemStore => &CertOpenSystemStoreW;
 
         [NativeTypeName("#define CertAddEncodedCertificateToSystemStore CertAddEncodedCertificateToSystemStoreW")]
-        public static readonly delegate*<ushort*, byte*, uint, int> CertAddEncodedCertificateToSystemStore = &CertAddEncodedCertificateToSystemStoreW;
+        public static delegate*<ushort*, byte*, uint, int> CertAddEncodedCertificateToSystemStore => &CertAddEncodedCertificateToSystemStoreW;
 
         [NativeTypeName("#define CERT_QUERY_OBJECT_FILE 0x00000001")]
         public const int CERT_QUERY_OBJECT_FILE = 0x00000001;
@@ -7234,13 +7234,13 @@ namespace TerraFX.Interop
         public const int CERT_QUERY_FORMAT_FLAG_ALL = ((1 << 1) | (1 << 2) | (1 << 3));
 
         [NativeTypeName("#define CREDENTIAL_OID_PASSWORD_CREDENTIALS_A ((LPCSTR)1)")]
-        public static readonly sbyte* CREDENTIAL_OID_PASSWORD_CREDENTIALS_A = ((sbyte*)(1));
+        public static sbyte* CREDENTIAL_OID_PASSWORD_CREDENTIALS_A => ((sbyte*)(1));
 
         [NativeTypeName("#define CREDENTIAL_OID_PASSWORD_CREDENTIALS_W ((LPCSTR)2)")]
-        public static readonly sbyte* CREDENTIAL_OID_PASSWORD_CREDENTIALS_W = ((sbyte*)(2));
+        public static sbyte* CREDENTIAL_OID_PASSWORD_CREDENTIALS_W => ((sbyte*)(2));
 
         [NativeTypeName("#define CREDENTIAL_OID_PASSWORD_CREDENTIALS CREDENTIAL_OID_PASSWORD_CREDENTIALS_W")]
-        public static readonly sbyte* CREDENTIAL_OID_PASSWORD_CREDENTIALS = ((sbyte*)(2));
+        public static sbyte* CREDENTIAL_OID_PASSWORD_CREDENTIALS => ((sbyte*)(2));
 
         [NativeTypeName("#define SCHEME_OID_RETRIEVE_ENCODED_OBJECT_FUNC \"SchemeDllRetrieveEncodedObject\"")]
         public static ReadOnlySpan<byte> SCHEME_OID_RETRIEVE_ENCODED_OBJECT_FUNC => new byte[] { 0x53, 0x63, 0x68, 0x65, 0x6D, 0x65, 0x44, 0x6C, 0x6C, 0x52, 0x65, 0x74, 0x72, 0x69, 0x65, 0x76, 0x65, 0x45, 0x6E, 0x63, 0x6F, 0x64, 0x65, 0x64, 0x4F, 0x62, 0x6A, 0x65, 0x63, 0x74, 0x00 };
@@ -7252,22 +7252,22 @@ namespace TerraFX.Interop
         public static ReadOnlySpan<byte> CONTEXT_OID_CREATE_OBJECT_CONTEXT_FUNC => new byte[] { 0x43, 0x6F, 0x6E, 0x74, 0x65, 0x78, 0x74, 0x44, 0x6C, 0x6C, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x4F, 0x62, 0x6A, 0x65, 0x63, 0x74, 0x43, 0x6F, 0x6E, 0x74, 0x65, 0x78, 0x74, 0x00 };
 
         [NativeTypeName("#define CONTEXT_OID_CERTIFICATE ((LPCSTR)1)")]
-        public static readonly sbyte* CONTEXT_OID_CERTIFICATE = ((sbyte*)(1));
+        public static sbyte* CONTEXT_OID_CERTIFICATE => ((sbyte*)(1));
 
         [NativeTypeName("#define CONTEXT_OID_CRL ((LPCSTR)2)")]
-        public static readonly sbyte* CONTEXT_OID_CRL = ((sbyte*)(2));
+        public static sbyte* CONTEXT_OID_CRL => ((sbyte*)(2));
 
         [NativeTypeName("#define CONTEXT_OID_CTL ((LPCSTR)3)")]
-        public static readonly sbyte* CONTEXT_OID_CTL = ((sbyte*)(3));
+        public static sbyte* CONTEXT_OID_CTL => ((sbyte*)(3));
 
         [NativeTypeName("#define CONTEXT_OID_PKCS7 ((LPCSTR)4)")]
-        public static readonly sbyte* CONTEXT_OID_PKCS7 = ((sbyte*)(4));
+        public static sbyte* CONTEXT_OID_PKCS7 => ((sbyte*)(4));
 
         [NativeTypeName("#define CONTEXT_OID_CAPI2_ANY ((LPCSTR)5)")]
-        public static readonly sbyte* CONTEXT_OID_CAPI2_ANY = ((sbyte*)(5));
+        public static sbyte* CONTEXT_OID_CAPI2_ANY => ((sbyte*)(5));
 
         [NativeTypeName("#define CONTEXT_OID_OCSP_RESP ((LPCSTR)6)")]
-        public static readonly sbyte* CONTEXT_OID_OCSP_RESP = ((sbyte*)(6));
+        public static sbyte* CONTEXT_OID_OCSP_RESP => ((sbyte*)(6));
 
         [NativeTypeName("#define CRYPT_RETRIEVE_MULTIPLE_OBJECTS 0x00000001")]
         public const int CRYPT_RETRIEVE_MULTIPLE_OBJECTS = 0x00000001;
@@ -7396,13 +7396,13 @@ namespace TerraFX.Interop
         public const int CRYPT_RETRIEVE_MAX_ERROR_CONTENT_LENGTH = 0x1000;
 
         [NativeTypeName("#define CryptRetrieveObjectByUrl CryptRetrieveObjectByUrlW")]
-        public static readonly delegate*<ushort*, sbyte*, uint, uint, void**, IntPtr, CRYPT_CREDENTIALS*, void*, CRYPT_RETRIEVE_AUX_INFO*, int> CryptRetrieveObjectByUrl = &CryptRetrieveObjectByUrlW;
+        public static delegate*<ushort*, sbyte*, uint, uint, void**, IntPtr, CRYPT_CREDENTIALS*, void*, CRYPT_RETRIEVE_AUX_INFO*, int> CryptRetrieveObjectByUrl => &CryptRetrieveObjectByUrlW;
 
         [NativeTypeName("#define CRYPT_PARAM_ASYNC_RETRIEVAL_COMPLETION ((LPCSTR)1)")]
-        public static readonly sbyte* CRYPT_PARAM_ASYNC_RETRIEVAL_COMPLETION = ((sbyte*)(1));
+        public static sbyte* CRYPT_PARAM_ASYNC_RETRIEVAL_COMPLETION => ((sbyte*)(1));
 
         [NativeTypeName("#define CRYPT_PARAM_CANCEL_ASYNC_RETRIEVAL ((LPCSTR)2)")]
-        public static readonly sbyte* CRYPT_PARAM_CANCEL_ASYNC_RETRIEVAL = ((sbyte*)(2));
+        public static sbyte* CRYPT_PARAM_CANCEL_ASYNC_RETRIEVAL => ((sbyte*)(2));
 
         [NativeTypeName("#define CRYPT_GET_URL_FROM_PROPERTY 0x00000001")]
         public const int CRYPT_GET_URL_FROM_PROPERTY = 0x00000001;
@@ -7420,79 +7420,79 @@ namespace TerraFX.Interop
         public static ReadOnlySpan<byte> URL_OID_GET_OBJECT_URL_FUNC => new byte[] { 0x55, 0x72, 0x6C, 0x44, 0x6C, 0x6C, 0x47, 0x65, 0x74, 0x4F, 0x62, 0x6A, 0x65, 0x63, 0x74, 0x55, 0x72, 0x6C, 0x00 };
 
         [NativeTypeName("#define URL_OID_CERTIFICATE_ISSUER ((LPCSTR)1)")]
-        public static readonly sbyte* URL_OID_CERTIFICATE_ISSUER = ((sbyte*)(1));
+        public static sbyte* URL_OID_CERTIFICATE_ISSUER => ((sbyte*)(1));
 
         [NativeTypeName("#define URL_OID_CERTIFICATE_CRL_DIST_POINT ((LPCSTR)2)")]
-        public static readonly sbyte* URL_OID_CERTIFICATE_CRL_DIST_POINT = ((sbyte*)(2));
+        public static sbyte* URL_OID_CERTIFICATE_CRL_DIST_POINT => ((sbyte*)(2));
 
         [NativeTypeName("#define URL_OID_CTL_ISSUER ((LPCSTR)3)")]
-        public static readonly sbyte* URL_OID_CTL_ISSUER = ((sbyte*)(3));
+        public static sbyte* URL_OID_CTL_ISSUER => ((sbyte*)(3));
 
         [NativeTypeName("#define URL_OID_CTL_NEXT_UPDATE ((LPCSTR)4)")]
-        public static readonly sbyte* URL_OID_CTL_NEXT_UPDATE = ((sbyte*)(4));
+        public static sbyte* URL_OID_CTL_NEXT_UPDATE => ((sbyte*)(4));
 
         [NativeTypeName("#define URL_OID_CRL_ISSUER ((LPCSTR)5)")]
-        public static readonly sbyte* URL_OID_CRL_ISSUER = ((sbyte*)(5));
+        public static sbyte* URL_OID_CRL_ISSUER => ((sbyte*)(5));
 
         [NativeTypeName("#define URL_OID_CERTIFICATE_FRESHEST_CRL ((LPCSTR)6)")]
-        public static readonly sbyte* URL_OID_CERTIFICATE_FRESHEST_CRL = ((sbyte*)(6));
+        public static sbyte* URL_OID_CERTIFICATE_FRESHEST_CRL => ((sbyte*)(6));
 
         [NativeTypeName("#define URL_OID_CRL_FRESHEST_CRL ((LPCSTR)7)")]
-        public static readonly sbyte* URL_OID_CRL_FRESHEST_CRL = ((sbyte*)(7));
+        public static sbyte* URL_OID_CRL_FRESHEST_CRL => ((sbyte*)(7));
 
         [NativeTypeName("#define URL_OID_CROSS_CERT_DIST_POINT ((LPCSTR)8)")]
-        public static readonly sbyte* URL_OID_CROSS_CERT_DIST_POINT = ((sbyte*)(8));
+        public static sbyte* URL_OID_CROSS_CERT_DIST_POINT => ((sbyte*)(8));
 
         [NativeTypeName("#define URL_OID_CERTIFICATE_OCSP ((LPCSTR)9)")]
-        public static readonly sbyte* URL_OID_CERTIFICATE_OCSP = ((sbyte*)(9));
+        public static sbyte* URL_OID_CERTIFICATE_OCSP => ((sbyte*)(9));
 
         [NativeTypeName("#define URL_OID_CERTIFICATE_OCSP_AND_CRL_DIST_POINT ((LPCSTR)10)")]
-        public static readonly sbyte* URL_OID_CERTIFICATE_OCSP_AND_CRL_DIST_POINT = ((sbyte*)(10));
+        public static sbyte* URL_OID_CERTIFICATE_OCSP_AND_CRL_DIST_POINT => ((sbyte*)(10));
 
         [NativeTypeName("#define URL_OID_CERTIFICATE_CRL_DIST_POINT_AND_OCSP ((LPCSTR)11)")]
-        public static readonly sbyte* URL_OID_CERTIFICATE_CRL_DIST_POINT_AND_OCSP = ((sbyte*)(11));
+        public static sbyte* URL_OID_CERTIFICATE_CRL_DIST_POINT_AND_OCSP => ((sbyte*)(11));
 
         [NativeTypeName("#define URL_OID_CROSS_CERT_SUBJECT_INFO_ACCESS ((LPCSTR)12)")]
-        public static readonly sbyte* URL_OID_CROSS_CERT_SUBJECT_INFO_ACCESS = ((sbyte*)(12));
+        public static sbyte* URL_OID_CROSS_CERT_SUBJECT_INFO_ACCESS => ((sbyte*)(12));
 
         [NativeTypeName("#define URL_OID_CERTIFICATE_ONLY_OCSP ((LPCSTR)13)")]
-        public static readonly sbyte* URL_OID_CERTIFICATE_ONLY_OCSP = ((sbyte*)(13));
+        public static sbyte* URL_OID_CERTIFICATE_ONLY_OCSP => ((sbyte*)(13));
 
         [NativeTypeName("#define TIME_VALID_OID_GET_OBJECT_FUNC \"TimeValidDllGetObject\"")]
         public static ReadOnlySpan<byte> TIME_VALID_OID_GET_OBJECT_FUNC => new byte[] { 0x54, 0x69, 0x6D, 0x65, 0x56, 0x61, 0x6C, 0x69, 0x64, 0x44, 0x6C, 0x6C, 0x47, 0x65, 0x74, 0x4F, 0x62, 0x6A, 0x65, 0x63, 0x74, 0x00 };
 
         [NativeTypeName("#define TIME_VALID_OID_GET_CTL ((LPCSTR)1)")]
-        public static readonly sbyte* TIME_VALID_OID_GET_CTL = ((sbyte*)(1));
+        public static sbyte* TIME_VALID_OID_GET_CTL => ((sbyte*)(1));
 
         [NativeTypeName("#define TIME_VALID_OID_GET_CRL ((LPCSTR)2)")]
-        public static readonly sbyte* TIME_VALID_OID_GET_CRL = ((sbyte*)(2));
+        public static sbyte* TIME_VALID_OID_GET_CRL => ((sbyte*)(2));
 
         [NativeTypeName("#define TIME_VALID_OID_GET_CRL_FROM_CERT ((LPCSTR)3)")]
-        public static readonly sbyte* TIME_VALID_OID_GET_CRL_FROM_CERT = ((sbyte*)(3));
+        public static sbyte* TIME_VALID_OID_GET_CRL_FROM_CERT => ((sbyte*)(3));
 
         [NativeTypeName("#define TIME_VALID_OID_GET_FRESHEST_CRL_FROM_CERT ((LPCSTR)4)")]
-        public static readonly sbyte* TIME_VALID_OID_GET_FRESHEST_CRL_FROM_CERT = ((sbyte*)(4));
+        public static sbyte* TIME_VALID_OID_GET_FRESHEST_CRL_FROM_CERT => ((sbyte*)(4));
 
         [NativeTypeName("#define TIME_VALID_OID_GET_FRESHEST_CRL_FROM_CRL ((LPCSTR)5)")]
-        public static readonly sbyte* TIME_VALID_OID_GET_FRESHEST_CRL_FROM_CRL = ((sbyte*)(5));
+        public static sbyte* TIME_VALID_OID_GET_FRESHEST_CRL_FROM_CRL => ((sbyte*)(5));
 
         [NativeTypeName("#define TIME_VALID_OID_FLUSH_OBJECT_FUNC \"TimeValidDllFlushObject\"")]
         public static ReadOnlySpan<byte> TIME_VALID_OID_FLUSH_OBJECT_FUNC => new byte[] { 0x54, 0x69, 0x6D, 0x65, 0x56, 0x61, 0x6C, 0x69, 0x64, 0x44, 0x6C, 0x6C, 0x46, 0x6C, 0x75, 0x73, 0x68, 0x4F, 0x62, 0x6A, 0x65, 0x63, 0x74, 0x00 };
 
         [NativeTypeName("#define TIME_VALID_OID_FLUSH_CTL ((LPCSTR)1)")]
-        public static readonly sbyte* TIME_VALID_OID_FLUSH_CTL = ((sbyte*)(1));
+        public static sbyte* TIME_VALID_OID_FLUSH_CTL => ((sbyte*)(1));
 
         [NativeTypeName("#define TIME_VALID_OID_FLUSH_CRL ((LPCSTR)2)")]
-        public static readonly sbyte* TIME_VALID_OID_FLUSH_CRL = ((sbyte*)(2));
+        public static sbyte* TIME_VALID_OID_FLUSH_CRL => ((sbyte*)(2));
 
         [NativeTypeName("#define TIME_VALID_OID_FLUSH_CRL_FROM_CERT ((LPCSTR)3)")]
-        public static readonly sbyte* TIME_VALID_OID_FLUSH_CRL_FROM_CERT = ((sbyte*)(3));
+        public static sbyte* TIME_VALID_OID_FLUSH_CRL_FROM_CERT => ((sbyte*)(3));
 
         [NativeTypeName("#define TIME_VALID_OID_FLUSH_FRESHEST_CRL_FROM_CERT ((LPCSTR)4)")]
-        public static readonly sbyte* TIME_VALID_OID_FLUSH_FRESHEST_CRL_FROM_CERT = ((sbyte*)(4));
+        public static sbyte* TIME_VALID_OID_FLUSH_FRESHEST_CRL_FROM_CERT => ((sbyte*)(4));
 
         [NativeTypeName("#define TIME_VALID_OID_FLUSH_FRESHEST_CRL_FROM_CRL ((LPCSTR)5)")]
-        public static readonly sbyte* TIME_VALID_OID_FLUSH_FRESHEST_CRL_FROM_CRL = ((sbyte*)(5));
+        public static sbyte* TIME_VALID_OID_FLUSH_FRESHEST_CRL_FROM_CRL => ((sbyte*)(5));
 
         [NativeTypeName("#define CERT_CREATE_SELFSIGN_NO_SIGN 1")]
         public const int CERT_CREATE_SELFSIGN_NO_SIGN = 1;
@@ -8044,13 +8044,13 @@ namespace TerraFX.Interop
         public const int CERT_CHAIN_CRL_VALIDITY_EXT_PERIOD_HOURS_DEFAULT = 12;
 
         [NativeTypeName("#define HCCE_CURRENT_USER ((HCERTCHAINENGINE)NULL)")]
-        public static readonly IntPtr HCCE_CURRENT_USER = ((nint)(0));
+        public static IntPtr HCCE_CURRENT_USER => ((nint)(0));
 
         [NativeTypeName("#define HCCE_LOCAL_MACHINE ((HCERTCHAINENGINE)0x1)")]
-        public static readonly IntPtr HCCE_LOCAL_MACHINE = ((nint)(0x1));
+        public static IntPtr HCCE_LOCAL_MACHINE => ((nint)(0x1));
 
         [NativeTypeName("#define HCCE_SERIAL_LOCAL_MACHINE ((HCERTCHAINENGINE)0x2)")]
-        public static readonly IntPtr HCCE_SERIAL_LOCAL_MACHINE = ((nint)(0x2));
+        public static IntPtr HCCE_SERIAL_LOCAL_MACHINE => ((nint)(0x2));
 
         [NativeTypeName("#define CERT_CHAIN_CACHE_END_CERT 0x00000001")]
         public const int CERT_CHAIN_CACHE_END_CERT = 0x00000001;
@@ -8284,7 +8284,7 @@ namespace TerraFX.Interop
         public const int CERT_CHAIN_OPT_IN_WEAK_SIGNATURE = 0x00010000;
 
         [NativeTypeName("#define REVOCATION_OID_CRL_REVOCATION ((LPCSTR)1)")]
-        public static readonly sbyte* REVOCATION_OID_CRL_REVOCATION = ((sbyte*)(1));
+        public static sbyte* REVOCATION_OID_CRL_REVOCATION => ((sbyte*)(1));
 
         [NativeTypeName("#define CERT_CHAIN_FIND_BY_ISSUER 1")]
         public const int CERT_CHAIN_FIND_BY_ISSUER = 1;
@@ -8368,40 +8368,40 @@ namespace TerraFX.Interop
         public static ReadOnlySpan<byte> CRYPT_OID_VERIFY_CERTIFICATE_CHAIN_POLICY_FUNC => new byte[] { 0x43, 0x65, 0x72, 0x74, 0x44, 0x6C, 0x6C, 0x56, 0x65, 0x72, 0x69, 0x66, 0x79, 0x43, 0x65, 0x72, 0x74, 0x69, 0x66, 0x69, 0x63, 0x61, 0x74, 0x65, 0x43, 0x68, 0x61, 0x69, 0x6E, 0x50, 0x6F, 0x6C, 0x69, 0x63, 0x79, 0x00 };
 
         [NativeTypeName("#define CERT_CHAIN_POLICY_BASE ((LPCSTR) 1)")]
-        public static readonly sbyte* CERT_CHAIN_POLICY_BASE = ((sbyte*)(1));
+        public static sbyte* CERT_CHAIN_POLICY_BASE => ((sbyte*)(1));
 
         [NativeTypeName("#define CERT_CHAIN_POLICY_AUTHENTICODE ((LPCSTR) 2)")]
-        public static readonly sbyte* CERT_CHAIN_POLICY_AUTHENTICODE = ((sbyte*)(2));
+        public static sbyte* CERT_CHAIN_POLICY_AUTHENTICODE => ((sbyte*)(2));
 
         [NativeTypeName("#define CERT_CHAIN_POLICY_AUTHENTICODE_TS ((LPCSTR) 3)")]
-        public static readonly sbyte* CERT_CHAIN_POLICY_AUTHENTICODE_TS = ((sbyte*)(3));
+        public static sbyte* CERT_CHAIN_POLICY_AUTHENTICODE_TS => ((sbyte*)(3));
 
         [NativeTypeName("#define CERT_CHAIN_POLICY_SSL ((LPCSTR) 4)")]
-        public static readonly sbyte* CERT_CHAIN_POLICY_SSL = ((sbyte*)(4));
+        public static sbyte* CERT_CHAIN_POLICY_SSL => ((sbyte*)(4));
 
         [NativeTypeName("#define CERT_CHAIN_POLICY_BASIC_CONSTRAINTS ((LPCSTR) 5)")]
-        public static readonly sbyte* CERT_CHAIN_POLICY_BASIC_CONSTRAINTS = ((sbyte*)(5));
+        public static sbyte* CERT_CHAIN_POLICY_BASIC_CONSTRAINTS => ((sbyte*)(5));
 
         [NativeTypeName("#define CERT_CHAIN_POLICY_NT_AUTH ((LPCSTR) 6)")]
-        public static readonly sbyte* CERT_CHAIN_POLICY_NT_AUTH = ((sbyte*)(6));
+        public static sbyte* CERT_CHAIN_POLICY_NT_AUTH => ((sbyte*)(6));
 
         [NativeTypeName("#define CERT_CHAIN_POLICY_MICROSOFT_ROOT ((LPCSTR) 7)")]
-        public static readonly sbyte* CERT_CHAIN_POLICY_MICROSOFT_ROOT = ((sbyte*)(7));
+        public static sbyte* CERT_CHAIN_POLICY_MICROSOFT_ROOT => ((sbyte*)(7));
 
         [NativeTypeName("#define CERT_CHAIN_POLICY_EV ((LPCSTR) 8)")]
-        public static readonly sbyte* CERT_CHAIN_POLICY_EV = ((sbyte*)(8));
+        public static sbyte* CERT_CHAIN_POLICY_EV => ((sbyte*)(8));
 
         [NativeTypeName("#define CERT_CHAIN_POLICY_SSL_F12 ((LPCSTR) 9)")]
-        public static readonly sbyte* CERT_CHAIN_POLICY_SSL_F12 = ((sbyte*)(9));
+        public static sbyte* CERT_CHAIN_POLICY_SSL_F12 => ((sbyte*)(9));
 
         [NativeTypeName("#define CERT_CHAIN_POLICY_SSL_HPKP_HEADER ((LPCSTR) 10)")]
-        public static readonly sbyte* CERT_CHAIN_POLICY_SSL_HPKP_HEADER = ((sbyte*)(10));
+        public static sbyte* CERT_CHAIN_POLICY_SSL_HPKP_HEADER => ((sbyte*)(10));
 
         [NativeTypeName("#define CERT_CHAIN_POLICY_THIRD_PARTY_ROOT ((LPCSTR) 11)")]
-        public static readonly sbyte* CERT_CHAIN_POLICY_THIRD_PARTY_ROOT = ((sbyte*)(11));
+        public static sbyte* CERT_CHAIN_POLICY_THIRD_PARTY_ROOT => ((sbyte*)(11));
 
         [NativeTypeName("#define CERT_CHAIN_POLICY_SSL_KEY_PIN ((LPCSTR) 12)")]
-        public static readonly sbyte* CERT_CHAIN_POLICY_SSL_KEY_PIN = ((sbyte*)(12));
+        public static sbyte* CERT_CHAIN_POLICY_SSL_KEY_PIN => ((sbyte*)(12));
 
         [NativeTypeName("#define AUTHTYPE_CLIENT 1")]
         public const int AUTHTYPE_CLIENT = 1;
@@ -8473,10 +8473,10 @@ namespace TerraFX.Interop
         public const int CERT_CHAIN_POLICY_SSL_KEY_PIN_MISMATCH_WARNING = 2;
 
         [NativeTypeName("#define CryptStringToBinary CryptStringToBinaryW")]
-        public static readonly delegate*<ushort*, uint, uint, byte*, uint*, uint*, uint*, int> CryptStringToBinary = &CryptStringToBinaryW;
+        public static delegate*<ushort*, uint, uint, byte*, uint*, uint*, uint*, int> CryptStringToBinary => &CryptStringToBinaryW;
 
         [NativeTypeName("#define CryptBinaryToString CryptBinaryToStringW")]
-        public static readonly delegate*<byte*, uint, uint, ushort*, uint*, int> CryptBinaryToString = &CryptBinaryToStringW;
+        public static delegate*<byte*, uint, uint, ushort*, uint*, int> CryptBinaryToString => &CryptBinaryToStringW;
 
         [NativeTypeName("#define CRYPT_STRING_BASE64HEADER 0x00000000")]
         public const int CRYPT_STRING_BASE64HEADER = 0x00000000;
@@ -8680,22 +8680,22 @@ namespace TerraFX.Interop
         public const int CERT_SERVER_OCSP_RESPONSE_ASYNC_FLAG = 0x00000001;
 
         [NativeTypeName("#define CERT_RETRIEVE_ISSUER_LOGO ((LPCSTR) 1)")]
-        public static readonly sbyte* CERT_RETRIEVE_ISSUER_LOGO = ((sbyte*)(1));
+        public static sbyte* CERT_RETRIEVE_ISSUER_LOGO => ((sbyte*)(1));
 
         [NativeTypeName("#define CERT_RETRIEVE_SUBJECT_LOGO ((LPCSTR) 2)")]
-        public static readonly sbyte* CERT_RETRIEVE_SUBJECT_LOGO = ((sbyte*)(2));
+        public static sbyte* CERT_RETRIEVE_SUBJECT_LOGO => ((sbyte*)(2));
 
         [NativeTypeName("#define CERT_RETRIEVE_COMMUNITY_LOGO ((LPCSTR) 3)")]
-        public static readonly sbyte* CERT_RETRIEVE_COMMUNITY_LOGO = ((sbyte*)(3));
+        public static sbyte* CERT_RETRIEVE_COMMUNITY_LOGO => ((sbyte*)(3));
 
         [NativeTypeName("#define CERT_RETRIEVE_BIOMETRIC_PREDEFINED_BASE_TYPE ((LPCSTR) 1000)")]
-        public static readonly sbyte* CERT_RETRIEVE_BIOMETRIC_PREDEFINED_BASE_TYPE = ((sbyte*)(1000));
+        public static sbyte* CERT_RETRIEVE_BIOMETRIC_PREDEFINED_BASE_TYPE => ((sbyte*)(1000));
 
         [NativeTypeName("#define CERT_RETRIEVE_BIOMETRIC_PICTURE_TYPE (CERT_RETRIEVE_BIOMETRIC_PREDEFINED_BASE_TYPE + CERT_BIOMETRIC_PICTURE_TYPE)")]
-        public static readonly sbyte* CERT_RETRIEVE_BIOMETRIC_PICTURE_TYPE = (((sbyte*)(1000)) + 0);
+        public static sbyte* CERT_RETRIEVE_BIOMETRIC_PICTURE_TYPE => (((sbyte*)(1000)) + 0);
 
         [NativeTypeName("#define CERT_RETRIEVE_BIOMETRIC_SIGNATURE_TYPE (CERT_RETRIEVE_BIOMETRIC_PREDEFINED_BASE_TYPE + CERT_BIOMETRIC_SIGNATURE_TYPE)")]
-        public static readonly sbyte* CERT_RETRIEVE_BIOMETRIC_SIGNATURE_TYPE = (((sbyte*)(1000)) + 1);
+        public static sbyte* CERT_RETRIEVE_BIOMETRIC_SIGNATURE_TYPE => (((sbyte*)(1000)) + 1);
 
         [NativeTypeName("#define CERT_SELECT_MAX_PARA 500")]
         public const int CERT_SELECT_MAX_PARA = 500;

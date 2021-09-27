@@ -101,7 +101,7 @@ namespace TerraFX.Interop
         public const string VOLUME_PREFIX = "\\\\?\\Volume";
 
         [NativeTypeName("#define VOLUME_PREFIX_LEN (ARRAYSIZE(VOLUME_PREFIX) - 1)")]
-        public const uint VOLUME_PREFIX_LEN = unchecked((11) - 1);
+        public const uint VOLUME_PREFIX_LEN = ((11) - 1);
 
         [NativeTypeName("#define PATHCCH_MAX_CCH 0x8000")]
         public const int PATHCCH_MAX_CCH = 0x8000;

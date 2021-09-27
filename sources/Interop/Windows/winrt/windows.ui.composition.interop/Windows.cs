@@ -4,27 +4,209 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
 {
     public static partial class Windows
     {
-        public static readonly Guid IID_ICompositionDrawingSurfaceInterop = new Guid(0xFD04E6E3, 0xFE0C, 0x4C3C, 0xAB, 0x19, 0xA0, 0x76, 0x01, 0xA5, 0x76, 0xEE);
+        public static ref readonly Guid IID_ICompositionDrawingSurfaceInterop
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xE3, 0xE6, 0x04, 0xFD,
+                    0x0C, 0xFE,
+                    0x3C, 0x4C,
+                    0xAB,
+                    0x19,
+                    0xA0,
+                    0x76,
+                    0x01,
+                    0xA5,
+                    0x76,
+                    0xEE
+                };
 
-        public static readonly Guid IID_ICompositionDrawingSurfaceInterop2 = new Guid(0x41E64AAE, 0x98C0, 0x4239, 0x8E, 0x95, 0xA3, 0x30, 0xDD, 0x6A, 0xA1, 0x8B);
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
-        public static readonly Guid IID_ICompositionGraphicsDeviceInterop = new Guid(0xA116FF71, 0xF8BF, 0x4C8A, 0x9C, 0x98, 0x70, 0x77, 0x9A, 0x32, 0xA9, 0xC8);
+        public static ref readonly Guid IID_ICompositionDrawingSurfaceInterop2
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xAE, 0x4A, 0xE6, 0x41,
+                    0xC0, 0x98,
+                    0x39, 0x42,
+                    0x8E,
+                    0x95,
+                    0xA3,
+                    0x30,
+                    0xDD,
+                    0x6A,
+                    0xA1,
+                    0x8B
+                };
 
-        public static readonly Guid IID_ICompositorInterop = new Guid(0x25297D5C, 0x3AD4, 0x4C9C, 0xB5, 0xCF, 0xE3, 0x6A, 0x38, 0x51, 0x23, 0x30);
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
-        public static readonly Guid IID_ISwapChainInterop = new Guid(0x26F496A0, 0x7F38, 0x45FB, 0x88, 0xF7, 0xFA, 0xAA, 0xBE, 0x67, 0xDD, 0x59);
+        public static ref readonly Guid IID_ICompositionGraphicsDeviceInterop
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x71, 0xFF, 0x16, 0xA1,
+                    0xBF, 0xF8,
+                    0x8A, 0x4C,
+                    0x9C,
+                    0x98,
+                    0x70,
+                    0x77,
+                    0x9A,
+                    0x32,
+                    0xA9,
+                    0xC8
+                };
 
-        public static readonly Guid IID_IVisualInteractionSourceInterop = new Guid(0x11F62CD1, 0x2F9D, 0x42D3, 0xB0, 0x5F, 0xD6, 0x79, 0x0D, 0x9E, 0x9F, 0x8E);
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
-        public static readonly Guid IID_ICompositionCapabilitiesInteropFactory = new Guid(0x2C9DB356, 0xE70D, 0x4642, 0x82, 0x98, 0xBC, 0x4A, 0xA5, 0xB4, 0x86, 0x5C);
+        public static ref readonly Guid IID_ICompositorInterop
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x5C, 0x7D, 0x29, 0x25,
+                    0xD4, 0x3A,
+                    0x9C, 0x4C,
+                    0xB5,
+                    0xCF,
+                    0xE3,
+                    0x6A,
+                    0x38,
+                    0x51,
+                    0x23,
+                    0x30
+                };
 
-        public static readonly Guid IID_ICompositorDesktopInterop = new Guid(0x29E691FA, 0x4567, 0x4DCA, 0xB3, 0x19, 0xD0, 0xF2, 0x07, 0xEB, 0x68, 0x07);
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
-        public static readonly Guid IID_IDesktopWindowTargetInterop = new Guid(0x35DBF59E, 0xE3F9, 0x45B0, 0x81, 0xE7, 0xFE, 0x75, 0xF4, 0x14, 0x5D, 0xC9);
+        public static ref readonly Guid IID_ISwapChainInterop
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xA0, 0x96, 0xF4, 0x26,
+                    0x38, 0x7F,
+                    0xFB, 0x45,
+                    0x88,
+                    0xF7,
+                    0xFA,
+                    0xAA,
+                    0xBE,
+                    0x67,
+                    0xDD,
+                    0x59
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid IID_IVisualInteractionSourceInterop
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xD1, 0x2C, 0xF6, 0x11,
+                    0x9D, 0x2F,
+                    0xD3, 0x42,
+                    0xB0,
+                    0x5F,
+                    0xD6,
+                    0x79,
+                    0x0D,
+                    0x9E,
+                    0x9F,
+                    0x8E
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid IID_ICompositionCapabilitiesInteropFactory
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x56, 0xB3, 0x9D, 0x2C,
+                    0x0D, 0xE7,
+                    0x42, 0x46,
+                    0x82,
+                    0x98,
+                    0xBC,
+                    0x4A,
+                    0xA5,
+                    0xB4,
+                    0x86,
+                    0x5C
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid IID_ICompositorDesktopInterop
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xFA, 0x91, 0xE6, 0x29,
+                    0x67, 0x45,
+                    0xCA, 0x4D,
+                    0xB3,
+                    0x19,
+                    0xD0,
+                    0xF2,
+                    0x07,
+                    0xEB,
+                    0x68,
+                    0x07
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid IID_IDesktopWindowTargetInterop
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x9E, 0xF5, 0xDB, 0x35,
+                    0xF9, 0xE3,
+                    0xB0, 0x45,
+                    0x81,
+                    0xE7,
+                    0xFE,
+                    0x75,
+                    0xF4,
+                    0x14,
+                    0x5D,
+                    0xC9
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
     }
 }

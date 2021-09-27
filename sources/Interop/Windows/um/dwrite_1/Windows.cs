@@ -4,27 +4,209 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
 {
     public static partial class Windows
     {
-        public static readonly Guid IID_IDWriteFactory1 = new Guid(0x30572F99, 0xDAC6, 0x41DB, 0xA1, 0x6E, 0x04, 0x86, 0x30, 0x7E, 0x60, 0x6A);
+        public static ref readonly Guid IID_IDWriteFactory1
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x99, 0x2F, 0x57, 0x30,
+                    0xC6, 0xDA,
+                    0xDB, 0x41,
+                    0xA1,
+                    0x6E,
+                    0x04,
+                    0x86,
+                    0x30,
+                    0x7E,
+                    0x60,
+                    0x6A
+                };
 
-        public static readonly Guid IID_IDWriteFontFace1 = new Guid(0xA71EFDB4, 0x9FDB, 0x4838, 0xAD, 0x90, 0xCF, 0xC3, 0xBE, 0x8C, 0x3D, 0xAF);
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
-        public static readonly Guid IID_IDWriteFont1 = new Guid(0xACD16696, 0x8C14, 0x4F5D, 0x87, 0x7E, 0xFE, 0x3F, 0xC1, 0xD3, 0x27, 0x38);
+        public static ref readonly Guid IID_IDWriteFontFace1
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xB4, 0xFD, 0x1E, 0xA7,
+                    0xDB, 0x9F,
+                    0x38, 0x48,
+                    0xAD,
+                    0x90,
+                    0xCF,
+                    0xC3,
+                    0xBE,
+                    0x8C,
+                    0x3D,
+                    0xAF
+                };
 
-        public static readonly Guid IID_IDWriteRenderingParams1 = new Guid(0x94413CF4, 0xA6FC, 0x4248, 0x8B, 0x50, 0x66, 0x74, 0x34, 0x8F, 0xCA, 0xD3);
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
-        public static readonly Guid IID_IDWriteTextAnalyzer1 = new Guid(0x80DAD800, 0xE21F, 0x4E83, 0x96, 0xCE, 0xBF, 0xCC, 0xE5, 0x00, 0xDB, 0x7C);
+        public static ref readonly Guid IID_IDWriteFont1
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x96, 0x66, 0xD1, 0xAC,
+                    0x14, 0x8C,
+                    0x5D, 0x4F,
+                    0x87,
+                    0x7E,
+                    0xFE,
+                    0x3F,
+                    0xC1,
+                    0xD3,
+                    0x27,
+                    0x38
+                };
 
-        public static readonly Guid IID_IDWriteTextAnalysisSource1 = new Guid(0x639CFAD8, 0x0FB4, 0x4B21, 0xA5, 0x8A, 0x06, 0x79, 0x20, 0x12, 0x00, 0x09);
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
-        public static readonly Guid IID_IDWriteTextAnalysisSink1 = new Guid(0xB0D941A0, 0x85E7, 0x4D8B, 0x9F, 0xD3, 0x5C, 0xED, 0x99, 0x34, 0x48, 0x2A);
+        public static ref readonly Guid IID_IDWriteRenderingParams1
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xF4, 0x3C, 0x41, 0x94,
+                    0xFC, 0xA6,
+                    0x48, 0x42,
+                    0x8B,
+                    0x50,
+                    0x66,
+                    0x74,
+                    0x34,
+                    0x8F,
+                    0xCA,
+                    0xD3
+                };
 
-        public static readonly Guid IID_IDWriteTextLayout1 = new Guid(0x9064D822, 0x80A7, 0x465C, 0xA9, 0x86, 0xDF, 0x65, 0xF7, 0x8B, 0x8F, 0xEB);
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
-        public static readonly Guid IID_IDWriteBitmapRenderTarget1 = new Guid(0x791E8298, 0x3EF3, 0x4230, 0x98, 0x80, 0xC9, 0xBD, 0xEC, 0xC4, 0x20, 0x64);
+        public static ref readonly Guid IID_IDWriteTextAnalyzer1
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x00, 0xD8, 0xDA, 0x80,
+                    0x1F, 0xE2,
+                    0x83, 0x4E,
+                    0x96,
+                    0xCE,
+                    0xBF,
+                    0xCC,
+                    0xE5,
+                    0x00,
+                    0xDB,
+                    0x7C
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid IID_IDWriteTextAnalysisSource1
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xD8, 0xFA, 0x9C, 0x63,
+                    0xB4, 0x0F,
+                    0x21, 0x4B,
+                    0xA5,
+                    0x8A,
+                    0x06,
+                    0x79,
+                    0x20,
+                    0x12,
+                    0x00,
+                    0x09
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid IID_IDWriteTextAnalysisSink1
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xA0, 0x41, 0xD9, 0xB0,
+                    0xE7, 0x85,
+                    0x8B, 0x4D,
+                    0x9F,
+                    0xD3,
+                    0x5C,
+                    0xED,
+                    0x99,
+                    0x34,
+                    0x48,
+                    0x2A
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid IID_IDWriteTextLayout1
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x22, 0xD8, 0x64, 0x90,
+                    0xA7, 0x80,
+                    0x5C, 0x46,
+                    0xA9,
+                    0x86,
+                    0xDF,
+                    0x65,
+                    0xF7,
+                    0x8B,
+                    0x8F,
+                    0xEB
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid IID_IDWriteBitmapRenderTarget1
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x98, 0x82, 0x1E, 0x79,
+                    0xF3, 0x3E,
+                    0x30, 0x42,
+                    0x98,
+                    0x80,
+                    0xC9,
+                    0xBD,
+                    0xEC,
+                    0xC4,
+                    0x20,
+                    0x64
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
     }
 }

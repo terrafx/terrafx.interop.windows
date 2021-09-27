@@ -4,15 +4,77 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
 {
     public static partial class Windows
     {
-        public static readonly Guid IID_IInkD2DRenderer = new Guid(0x407FB1DE, 0xF85A, 0x4150, 0x97, 0xCF, 0xB7, 0xFB, 0x27, 0x4F, 0xB4, 0xF8);
+        public static ref readonly Guid IID_IInkD2DRenderer
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xDE, 0xB1, 0x7F, 0x40,
+                    0x5A, 0xF8,
+                    0x50, 0x41,
+                    0x97,
+                    0xCF,
+                    0xB7,
+                    0xFB,
+                    0x27,
+                    0x4F,
+                    0xB4,
+                    0xF8
+                };
 
-        public static readonly Guid IID_IInkD2DRenderer2 = new Guid(0x0A95DCD9, 0x4578, 0x4B71, 0xB2, 0x0B, 0xBF, 0x66, 0x4D, 0x4B, 0xFE, 0xEE);
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
-        public static readonly Guid CLSID_InkD2DRenderer = new Guid(0x4044E60C, 0x7B01, 0x4671, 0xA9, 0x7C, 0x04, 0xE0, 0x21, 0x0A, 0x07, 0xA5);
+        public static ref readonly Guid IID_IInkD2DRenderer2
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xD9, 0xDC, 0x95, 0x0A,
+                    0x78, 0x45,
+                    0x71, 0x4B,
+                    0xB2,
+                    0x0B,
+                    0xBF,
+                    0x66,
+                    0x4D,
+                    0x4B,
+                    0xFE,
+                    0xEE
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid CLSID_InkD2DRenderer
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x0C, 0xE6, 0x44, 0x40,
+                    0x01, 0x7B,
+                    0x71, 0x46,
+                    0xA9,
+                    0x7C,
+                    0x04,
+                    0xE0,
+                    0x21,
+                    0x0A,
+                    0x07,
+                    0xA5
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
     }
 }

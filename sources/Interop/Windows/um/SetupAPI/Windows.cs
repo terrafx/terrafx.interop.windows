@@ -2577,58 +2577,58 @@ namespace TerraFX.Interop
         public const int INFINFO_INF_PATH_LIST_SEARCH = 5;
 
         [NativeTypeName("#define SetupGetInfInformation SetupGetInfInformationW")]
-        public static readonly delegate*<void*, uint, SP_INF_INFORMATION*, uint, uint*, int> SetupGetInfInformation = &SetupGetInfInformationW;
+        public static delegate*<void*, uint, SP_INF_INFORMATION*, uint, uint*, int> SetupGetInfInformation => &SetupGetInfInformationW;
 
         [NativeTypeName("#define SetupQueryInfFileInformation SetupQueryInfFileInformationW")]
-        public static readonly delegate*<SP_INF_INFORMATION*, uint, ushort*, uint, uint*, int> SetupQueryInfFileInformation = &SetupQueryInfFileInformationW;
+        public static delegate*<SP_INF_INFORMATION*, uint, ushort*, uint, uint*, int> SetupQueryInfFileInformation => &SetupQueryInfFileInformationW;
 
         [NativeTypeName("#define SetupQueryInfOriginalFileInformation SetupQueryInfOriginalFileInformationW")]
-        public static readonly delegate*<SP_INF_INFORMATION*, uint, SP_ALTPLATFORM_INFO_V2*, SP_ORIGINAL_FILE_INFO_W*, int> SetupQueryInfOriginalFileInformation = &SetupQueryInfOriginalFileInformationW;
+        public static delegate*<SP_INF_INFORMATION*, uint, SP_ALTPLATFORM_INFO_V2*, SP_ORIGINAL_FILE_INFO_W*, int> SetupQueryInfOriginalFileInformation => &SetupQueryInfOriginalFileInformationW;
 
         [NativeTypeName("#define SetupQueryInfVersionInformation SetupQueryInfVersionInformationW")]
-        public static readonly delegate*<SP_INF_INFORMATION*, uint, ushort*, ushort*, uint, uint*, int> SetupQueryInfVersionInformation = &SetupQueryInfVersionInformationW;
+        public static delegate*<SP_INF_INFORMATION*, uint, ushort*, ushort*, uint, uint*, int> SetupQueryInfVersionInformation => &SetupQueryInfVersionInformationW;
 
         [NativeTypeName("#define SetupGetInfDriverStoreLocation SetupGetInfDriverStoreLocationW")]
-        public static readonly delegate*<ushort*, SP_ALTPLATFORM_INFO_V2*, ushort*, ushort*, uint, uint*, int> SetupGetInfDriverStoreLocation = &SetupGetInfDriverStoreLocationW;
+        public static delegate*<ushort*, SP_ALTPLATFORM_INFO_V2*, ushort*, ushort*, uint, uint*, int> SetupGetInfDriverStoreLocation => &SetupGetInfDriverStoreLocationW;
 
         [NativeTypeName("#define SetupGetInfPublishedName SetupGetInfPublishedNameW")]
-        public static readonly delegate*<ushort*, ushort*, uint, uint*, int> SetupGetInfPublishedName = &SetupGetInfPublishedNameW;
+        public static delegate*<ushort*, ushort*, uint, uint*, int> SetupGetInfPublishedName => &SetupGetInfPublishedNameW;
 
         [NativeTypeName("#define SetupGetInfFileList SetupGetInfFileListW")]
-        public static readonly delegate*<ushort*, uint, ushort*, uint, uint*, int> SetupGetInfFileList = &SetupGetInfFileListW;
+        public static delegate*<ushort*, uint, ushort*, uint, uint*, int> SetupGetInfFileList => &SetupGetInfFileListW;
 
         [NativeTypeName("#define SetupOpenInfFile SetupOpenInfFileW")]
-        public static readonly delegate*<ushort*, ushort*, uint, uint*, void*> SetupOpenInfFile = &SetupOpenInfFileW;
+        public static delegate*<ushort*, ushort*, uint, uint*, void*> SetupOpenInfFile => &SetupOpenInfFileW;
 
         [NativeTypeName("#define SetupOpenAppendInfFile SetupOpenAppendInfFileW")]
-        public static readonly delegate*<ushort*, void*, uint*, int> SetupOpenAppendInfFile = &SetupOpenAppendInfFileW;
+        public static delegate*<ushort*, void*, uint*, int> SetupOpenAppendInfFile => &SetupOpenAppendInfFileW;
 
         [NativeTypeName("#define SetupFindFirstLine SetupFindFirstLineW")]
-        public static readonly delegate*<void*, ushort*, ushort*, INFCONTEXT*, int> SetupFindFirstLine = &SetupFindFirstLineW;
+        public static delegate*<void*, ushort*, ushort*, INFCONTEXT*, int> SetupFindFirstLine => &SetupFindFirstLineW;
 
         [NativeTypeName("#define SetupFindNextMatchLine SetupFindNextMatchLineW")]
-        public static readonly delegate*<INFCONTEXT*, ushort*, INFCONTEXT*, int> SetupFindNextMatchLine = &SetupFindNextMatchLineW;
+        public static delegate*<INFCONTEXT*, ushort*, INFCONTEXT*, int> SetupFindNextMatchLine => &SetupFindNextMatchLineW;
 
         [NativeTypeName("#define SetupGetLineByIndex SetupGetLineByIndexW")]
-        public static readonly delegate*<void*, ushort*, uint, INFCONTEXT*, int> SetupGetLineByIndex = &SetupGetLineByIndexW;
+        public static delegate*<void*, ushort*, uint, INFCONTEXT*, int> SetupGetLineByIndex => &SetupGetLineByIndexW;
 
         [NativeTypeName("#define SetupGetLineCount SetupGetLineCountW")]
-        public static readonly delegate*<void*, ushort*, int> SetupGetLineCount = &SetupGetLineCountW;
+        public static delegate*<void*, ushort*, int> SetupGetLineCount => &SetupGetLineCountW;
 
         [NativeTypeName("#define SetupGetLineText SetupGetLineTextW")]
-        public static readonly delegate*<INFCONTEXT*, void*, ushort*, ushort*, ushort*, uint, uint*, int> SetupGetLineText = &SetupGetLineTextW;
+        public static delegate*<INFCONTEXT*, void*, ushort*, ushort*, ushort*, uint, uint*, int> SetupGetLineText => &SetupGetLineTextW;
 
         [NativeTypeName("#define SetupGetStringField SetupGetStringFieldW")]
-        public static readonly delegate*<INFCONTEXT*, uint, ushort*, uint, uint*, int> SetupGetStringField = &SetupGetStringFieldW;
+        public static delegate*<INFCONTEXT*, uint, ushort*, uint, uint*, int> SetupGetStringField => &SetupGetStringFieldW;
 
         [NativeTypeName("#define SetupGetMultiSzField SetupGetMultiSzFieldW")]
-        public static readonly delegate*<INFCONTEXT*, uint, ushort*, uint, uint*, int> SetupGetMultiSzField = &SetupGetMultiSzFieldW;
+        public static delegate*<INFCONTEXT*, uint, ushort*, uint, uint*, int> SetupGetMultiSzField => &SetupGetMultiSzFieldW;
 
         [NativeTypeName("#define SetupGetFileCompressionInfo SetupGetFileCompressionInfoW")]
-        public static readonly delegate*<ushort*, ushort**, uint*, uint*, uint*, uint> SetupGetFileCompressionInfo = &SetupGetFileCompressionInfoW;
+        public static delegate*<ushort*, ushort**, uint*, uint*, uint*, uint> SetupGetFileCompressionInfo => &SetupGetFileCompressionInfoW;
 
         [NativeTypeName("#define SetupGetFileCompressionInfoEx SetupGetFileCompressionInfoExW")]
-        public static readonly delegate*<ushort*, ushort*, uint, uint*, uint*, uint*, uint*, int> SetupGetFileCompressionInfoEx = &SetupGetFileCompressionInfoExW;
+        public static delegate*<ushort*, ushort*, uint, uint*, uint*, uint*, uint*, int> SetupGetFileCompressionInfoEx => &SetupGetFileCompressionInfoExW;
 
         [NativeTypeName("#define FILE_COMPRESSION_NONE 0")]
         public const int FILE_COMPRESSION_NONE = 0;
@@ -2643,16 +2643,16 @@ namespace TerraFX.Interop
         public const int FILE_COMPRESSION_NTCAB = 3;
 
         [NativeTypeName("#define SetupDecompressOrCopyFile SetupDecompressOrCopyFileW")]
-        public static readonly delegate*<ushort*, ushort*, uint*, uint> SetupDecompressOrCopyFile = &SetupDecompressOrCopyFileW;
+        public static delegate*<ushort*, ushort*, uint*, uint> SetupDecompressOrCopyFile => &SetupDecompressOrCopyFileW;
 
         [NativeTypeName("#define SetupGetSourceFileLocation SetupGetSourceFileLocationW")]
-        public static readonly delegate*<void*, INFCONTEXT*, ushort*, uint*, ushort*, uint, uint*, int> SetupGetSourceFileLocation = &SetupGetSourceFileLocationW;
+        public static delegate*<void*, INFCONTEXT*, ushort*, uint*, ushort*, uint, uint*, int> SetupGetSourceFileLocation => &SetupGetSourceFileLocationW;
 
         [NativeTypeName("#define SetupGetSourceFileSize SetupGetSourceFileSizeW")]
-        public static readonly delegate*<void*, INFCONTEXT*, ushort*, ushort*, uint*, uint, int> SetupGetSourceFileSize = &SetupGetSourceFileSizeW;
+        public static delegate*<void*, INFCONTEXT*, ushort*, ushort*, uint*, uint, int> SetupGetSourceFileSize => &SetupGetSourceFileSizeW;
 
         [NativeTypeName("#define SetupGetTargetPath SetupGetTargetPathW")]
-        public static readonly delegate*<void*, INFCONTEXT*, ushort*, ushort*, uint, uint*, int> SetupGetTargetPath = &SetupGetTargetPathW;
+        public static delegate*<void*, INFCONTEXT*, ushort*, ushort*, uint, uint*, int> SetupGetTargetPath => &SetupGetTargetPathW;
 
         [NativeTypeName("#define SRCLIST_TEMPORARY 0x00000001")]
         public const int SRCLIST_TEMPORARY = 0x00000001;
@@ -2679,34 +2679,34 @@ namespace TerraFX.Interop
         public const int SRCLIST_NOSTRIPPLATFORM = 0x00000400;
 
         [NativeTypeName("#define SetupSetSourceList SetupSetSourceListW")]
-        public static readonly delegate*<uint, ushort**, uint, int> SetupSetSourceList = &SetupSetSourceListW;
+        public static delegate*<uint, ushort**, uint, int> SetupSetSourceList => &SetupSetSourceListW;
 
         [NativeTypeName("#define SetupAddToSourceList SetupAddToSourceListW")]
-        public static readonly delegate*<uint, ushort*, int> SetupAddToSourceList = &SetupAddToSourceListW;
+        public static delegate*<uint, ushort*, int> SetupAddToSourceList => &SetupAddToSourceListW;
 
         [NativeTypeName("#define SetupRemoveFromSourceList SetupRemoveFromSourceListW")]
-        public static readonly delegate*<uint, ushort*, int> SetupRemoveFromSourceList = &SetupRemoveFromSourceListW;
+        public static delegate*<uint, ushort*, int> SetupRemoveFromSourceList => &SetupRemoveFromSourceListW;
 
         [NativeTypeName("#define SetupQuerySourceList SetupQuerySourceListW")]
-        public static readonly delegate*<uint, ushort***, uint*, int> SetupQuerySourceList = &SetupQuerySourceListW;
+        public static delegate*<uint, ushort***, uint*, int> SetupQuerySourceList => &SetupQuerySourceListW;
 
         [NativeTypeName("#define SetupFreeSourceList SetupFreeSourceListW")]
-        public static readonly delegate*<ushort***, uint, int> SetupFreeSourceList = &SetupFreeSourceListW;
+        public static delegate*<ushort***, uint, int> SetupFreeSourceList => &SetupFreeSourceListW;
 
         [NativeTypeName("#define SetupPromptForDisk SetupPromptForDiskW")]
-        public static readonly delegate*<IntPtr, ushort*, ushort*, ushort*, ushort*, ushort*, uint, ushort*, uint, uint*, uint> SetupPromptForDisk = &SetupPromptForDiskW;
+        public static delegate*<IntPtr, ushort*, ushort*, ushort*, ushort*, ushort*, uint, ushort*, uint, uint*, uint> SetupPromptForDisk => &SetupPromptForDiskW;
 
         [NativeTypeName("#define SetupCopyError SetupCopyErrorW")]
-        public static readonly delegate*<IntPtr, ushort*, ushort*, ushort*, ushort*, ushort*, uint, uint, ushort*, uint, uint*, uint> SetupCopyError = &SetupCopyErrorW;
+        public static delegate*<IntPtr, ushort*, ushort*, ushort*, ushort*, ushort*, uint, uint, ushort*, uint, uint*, uint> SetupCopyError => &SetupCopyErrorW;
 
         [NativeTypeName("#define SetupRenameError SetupRenameErrorW")]
-        public static readonly delegate*<IntPtr, ushort*, ushort*, ushort*, uint, uint, uint> SetupRenameError = &SetupRenameErrorW;
+        public static delegate*<IntPtr, ushort*, ushort*, ushort*, uint, uint, uint> SetupRenameError => &SetupRenameErrorW;
 
         [NativeTypeName("#define SetupDeleteError SetupDeleteErrorW")]
-        public static readonly delegate*<IntPtr, ushort*, ushort*, uint, uint, uint> SetupDeleteError = &SetupDeleteErrorW;
+        public static delegate*<IntPtr, ushort*, ushort*, uint, uint, uint> SetupDeleteError => &SetupDeleteErrorW;
 
         [NativeTypeName("#define SetupBackupError SetupBackupErrorW")]
-        public static readonly delegate*<IntPtr, ushort*, ushort*, ushort*, uint, uint, uint> SetupBackupError = &SetupBackupErrorW;
+        public static delegate*<IntPtr, ushort*, ushort*, ushort*, uint, uint, uint> SetupBackupError => &SetupBackupErrorW;
 
         [NativeTypeName("#define IDF_NOBROWSE 0x00000001")]
         public const int IDF_NOBROWSE = 0x00000001;
@@ -2757,16 +2757,16 @@ namespace TerraFX.Interop
         public const int DPROMPT_OUTOFMEMORY = 4;
 
         [NativeTypeName("#define SetupSetDirectoryId SetupSetDirectoryIdW")]
-        public static readonly delegate*<void*, uint, ushort*, int> SetupSetDirectoryId = &SetupSetDirectoryIdW;
+        public static delegate*<void*, uint, ushort*, int> SetupSetDirectoryId => &SetupSetDirectoryIdW;
 
         [NativeTypeName("#define SetupSetDirectoryIdEx SetupSetDirectoryIdExW")]
-        public static readonly delegate*<void*, uint, ushort*, uint, uint, void*, int> SetupSetDirectoryIdEx = &SetupSetDirectoryIdExW;
+        public static delegate*<void*, uint, ushort*, uint, uint, void*, int> SetupSetDirectoryIdEx => &SetupSetDirectoryIdExW;
 
         [NativeTypeName("#define SETDIRID_NOT_FULL_PATH 0x00000001")]
         public const int SETDIRID_NOT_FULL_PATH = 0x00000001;
 
         [NativeTypeName("#define SetupGetSourceInfo SetupGetSourceInfoW")]
-        public static readonly delegate*<void*, uint, uint, ushort*, uint, uint*, int> SetupGetSourceInfo = &SetupGetSourceInfoW;
+        public static delegate*<void*, uint, uint, ushort*, uint, uint*, int> SetupGetSourceInfo => &SetupGetSourceInfoW;
 
         [NativeTypeName("#define SRCINFO_PATH 1")]
         public const int SRCINFO_PATH = 1;
@@ -2787,10 +2787,10 @@ namespace TerraFX.Interop
         public const int SRC_FLAGS_CABFILE = (0x0010);
 
         [NativeTypeName("#define SetupInstallFile SetupInstallFileW")]
-        public static readonly delegate*<void*, INFCONTEXT*, ushort*, ushort*, ushort*, uint, delegate* unmanaged<void*, uint, nuint, nuint, uint>, void*, int> SetupInstallFile = &SetupInstallFileW;
+        public static delegate*<void*, INFCONTEXT*, ushort*, ushort*, ushort*, uint, delegate* unmanaged<void*, uint, nuint, nuint, uint>, void*, int> SetupInstallFile => &SetupInstallFileW;
 
         [NativeTypeName("#define SetupInstallFileEx SetupInstallFileExW")]
-        public static readonly delegate*<void*, INFCONTEXT*, ushort*, ushort*, ushort*, uint, delegate* unmanaged<void*, uint, nuint, nuint, uint>, void*, int*, int> SetupInstallFileEx = &SetupInstallFileExW;
+        public static delegate*<void*, INFCONTEXT*, ushort*, ushort*, ushort*, uint, delegate* unmanaged<void*, uint, nuint, nuint, uint>, void*, int*, int> SetupInstallFileEx => &SetupInstallFileExW;
 
         [NativeTypeName("#define SP_COPY_DELETESOURCE 0x0000001")]
         public const int SP_COPY_DELETESOURCE = 0x0000001;
@@ -2892,40 +2892,40 @@ namespace TerraFX.Interop
         public const int SP_BACKUP_BOOTFILE = 0x00000008;
 
         [NativeTypeName("#define SetupSetFileQueueAlternatePlatform SetupSetFileQueueAlternatePlatformW")]
-        public static readonly delegate*<void*, SP_ALTPLATFORM_INFO_V2*, ushort*, int> SetupSetFileQueueAlternatePlatform = &SetupSetFileQueueAlternatePlatformW;
+        public static delegate*<void*, SP_ALTPLATFORM_INFO_V2*, ushort*, int> SetupSetFileQueueAlternatePlatform => &SetupSetFileQueueAlternatePlatformW;
 
         [NativeTypeName("#define SetupSetPlatformPathOverride SetupSetPlatformPathOverrideW")]
-        public static readonly delegate*<ushort*, int> SetupSetPlatformPathOverride = &SetupSetPlatformPathOverrideW;
+        public static delegate*<ushort*, int> SetupSetPlatformPathOverride => &SetupSetPlatformPathOverrideW;
 
         [NativeTypeName("#define SetupQueueCopy SetupQueueCopyW")]
-        public static readonly delegate*<void*, ushort*, ushort*, ushort*, ushort*, ushort*, ushort*, ushort*, uint, int> SetupQueueCopy = &SetupQueueCopyW;
+        public static delegate*<void*, ushort*, ushort*, ushort*, ushort*, ushort*, ushort*, ushort*, uint, int> SetupQueueCopy => &SetupQueueCopyW;
 
         [NativeTypeName("#define SetupQueueCopyIndirect SetupQueueCopyIndirectW")]
-        public static readonly delegate*<SP_FILE_COPY_PARAMS_W*, int> SetupQueueCopyIndirect = &SetupQueueCopyIndirectW;
+        public static delegate*<SP_FILE_COPY_PARAMS_W*, int> SetupQueueCopyIndirect => &SetupQueueCopyIndirectW;
 
         [NativeTypeName("#define SetupQueueDefaultCopy SetupQueueDefaultCopyW")]
-        public static readonly delegate*<void*, void*, ushort*, ushort*, ushort*, uint, int> SetupQueueDefaultCopy = &SetupQueueDefaultCopyW;
+        public static delegate*<void*, void*, ushort*, ushort*, ushort*, uint, int> SetupQueueDefaultCopy => &SetupQueueDefaultCopyW;
 
         [NativeTypeName("#define SetupQueueCopySection SetupQueueCopySectionW")]
-        public static readonly delegate*<void*, ushort*, void*, void*, ushort*, uint, int> SetupQueueCopySection = &SetupQueueCopySectionW;
+        public static delegate*<void*, ushort*, void*, void*, ushort*, uint, int> SetupQueueCopySection => &SetupQueueCopySectionW;
 
         [NativeTypeName("#define SetupQueueDelete SetupQueueDeleteW")]
-        public static readonly delegate*<void*, ushort*, ushort*, int> SetupQueueDelete = &SetupQueueDeleteW;
+        public static delegate*<void*, ushort*, ushort*, int> SetupQueueDelete => &SetupQueueDeleteW;
 
         [NativeTypeName("#define SetupQueueDeleteSection SetupQueueDeleteSectionW")]
-        public static readonly delegate*<void*, void*, void*, ushort*, int> SetupQueueDeleteSection = &SetupQueueDeleteSectionW;
+        public static delegate*<void*, void*, void*, ushort*, int> SetupQueueDeleteSection => &SetupQueueDeleteSectionW;
 
         [NativeTypeName("#define SetupQueueRename SetupQueueRenameW")]
-        public static readonly delegate*<void*, ushort*, ushort*, ushort*, ushort*, int> SetupQueueRename = &SetupQueueRenameW;
+        public static delegate*<void*, ushort*, ushort*, ushort*, ushort*, int> SetupQueueRename => &SetupQueueRenameW;
 
         [NativeTypeName("#define SetupQueueRenameSection SetupQueueRenameSectionW")]
-        public static readonly delegate*<void*, void*, void*, ushort*, int> SetupQueueRenameSection = &SetupQueueRenameSectionW;
+        public static delegate*<void*, void*, void*, ushort*, int> SetupQueueRenameSection => &SetupQueueRenameSectionW;
 
         [NativeTypeName("#define SetupCommitFileQueue SetupCommitFileQueueW")]
-        public static readonly delegate*<IntPtr, void*, delegate* unmanaged<void*, uint, nuint, nuint, uint>, void*, int> SetupCommitFileQueue = &SetupCommitFileQueueW;
+        public static delegate*<IntPtr, void*, delegate* unmanaged<void*, uint, nuint, nuint, uint>, void*, int> SetupCommitFileQueue => &SetupCommitFileQueueW;
 
         [NativeTypeName("#define SetupScanFileQueue SetupScanFileQueueW")]
-        public static readonly delegate*<void*, uint, IntPtr, delegate* unmanaged<void*, uint, nuint, nuint, uint>, void*, uint*, int> SetupScanFileQueue = &SetupScanFileQueueW;
+        public static delegate*<void*, uint, IntPtr, delegate* unmanaged<void*, uint, nuint, nuint, uint>, void*, uint*, int> SetupScanFileQueue => &SetupScanFileQueueW;
 
         [NativeTypeName("#define SPQ_SCAN_FILE_PRESENCE 0x00000001")]
         public const int SPQ_SCAN_FILE_PRESENCE = 0x00000001;
@@ -2991,7 +2991,7 @@ namespace TerraFX.Interop
         public const int SPOST_MAX = 3;
 
         [NativeTypeName("#define SetupCopyOEMInf SetupCopyOEMInfW")]
-        public static readonly delegate*<ushort*, ushort*, uint, uint, ushort*, uint, uint*, ushort**, int> SetupCopyOEMInf = &SetupCopyOEMInfW;
+        public static delegate*<ushort*, ushort*, uint, uint, ushort*, uint, uint*, ushort**, int> SetupCopyOEMInf => &SetupCopyOEMInfW;
 
         [NativeTypeName("#define SUOI_FORCEDELETE 0x00000001")]
         public const int SUOI_FORCEDELETE = 0x00000001;
@@ -3000,10 +3000,10 @@ namespace TerraFX.Interop
         public const int SUOI_INTERNAL1 = 0x00000002;
 
         [NativeTypeName("#define SetupUninstallOEMInf SetupUninstallOEMInfW")]
-        public static readonly delegate*<ushort*, uint, void*, int> SetupUninstallOEMInf = &SetupUninstallOEMInfW;
+        public static delegate*<ushort*, uint, void*, int> SetupUninstallOEMInf => &SetupUninstallOEMInfW;
 
         [NativeTypeName("#define SetupCreateDiskSpaceList SetupCreateDiskSpaceListW")]
-        public static readonly delegate*<void*, uint, uint, void*> SetupCreateDiskSpaceList = &SetupCreateDiskSpaceListW;
+        public static delegate*<void*, uint, uint, void*> SetupCreateDiskSpaceList => &SetupCreateDiskSpaceListW;
 
         [NativeTypeName("#define SPDSL_IGNORE_DISK 0x00000001")]
         public const int SPDSL_IGNORE_DISK = 0x00000001;
@@ -3012,37 +3012,37 @@ namespace TerraFX.Interop
         public const int SPDSL_DISALLOW_NEGATIVE_ADJUST = 0x00000002;
 
         [NativeTypeName("#define SetupDuplicateDiskSpaceList SetupDuplicateDiskSpaceListW")]
-        public static readonly delegate*<void*, void*, uint, uint, void*> SetupDuplicateDiskSpaceList = &SetupDuplicateDiskSpaceListW;
+        public static delegate*<void*, void*, uint, uint, void*> SetupDuplicateDiskSpaceList => &SetupDuplicateDiskSpaceListW;
 
         [NativeTypeName("#define SetupQueryDrivesInDiskSpaceList SetupQueryDrivesInDiskSpaceListW")]
-        public static readonly delegate*<void*, ushort*, uint, uint*, int> SetupQueryDrivesInDiskSpaceList = &SetupQueryDrivesInDiskSpaceListW;
+        public static delegate*<void*, ushort*, uint, uint*, int> SetupQueryDrivesInDiskSpaceList => &SetupQueryDrivesInDiskSpaceListW;
 
         [NativeTypeName("#define SetupQuerySpaceRequiredOnDrive SetupQuerySpaceRequiredOnDriveW")]
-        public static readonly delegate*<void*, ushort*, long*, void*, uint, int> SetupQuerySpaceRequiredOnDrive = &SetupQuerySpaceRequiredOnDriveW;
+        public static delegate*<void*, ushort*, long*, void*, uint, int> SetupQuerySpaceRequiredOnDrive => &SetupQuerySpaceRequiredOnDriveW;
 
         [NativeTypeName("#define SetupAdjustDiskSpaceList SetupAdjustDiskSpaceListW")]
-        public static readonly delegate*<void*, ushort*, long, void*, uint, int> SetupAdjustDiskSpaceList = &SetupAdjustDiskSpaceListW;
+        public static delegate*<void*, ushort*, long, void*, uint, int> SetupAdjustDiskSpaceList => &SetupAdjustDiskSpaceListW;
 
         [NativeTypeName("#define SetupAddToDiskSpaceList SetupAddToDiskSpaceListW")]
-        public static readonly delegate*<void*, ushort*, long, uint, void*, uint, int> SetupAddToDiskSpaceList = &SetupAddToDiskSpaceListW;
+        public static delegate*<void*, ushort*, long, uint, void*, uint, int> SetupAddToDiskSpaceList => &SetupAddToDiskSpaceListW;
 
         [NativeTypeName("#define SetupAddSectionToDiskSpaceList SetupAddSectionToDiskSpaceListW")]
-        public static readonly delegate*<void*, void*, void*, ushort*, uint, void*, uint, int> SetupAddSectionToDiskSpaceList = &SetupAddSectionToDiskSpaceListW;
+        public static delegate*<void*, void*, void*, ushort*, uint, void*, uint, int> SetupAddSectionToDiskSpaceList => &SetupAddSectionToDiskSpaceListW;
 
         [NativeTypeName("#define SetupAddInstallSectionToDiskSpaceList SetupAddInstallSectionToDiskSpaceListW")]
-        public static readonly delegate*<void*, void*, void*, ushort*, void*, uint, int> SetupAddInstallSectionToDiskSpaceList = &SetupAddInstallSectionToDiskSpaceListW;
+        public static delegate*<void*, void*, void*, ushort*, void*, uint, int> SetupAddInstallSectionToDiskSpaceList => &SetupAddInstallSectionToDiskSpaceListW;
 
         [NativeTypeName("#define SetupRemoveFromDiskSpaceList SetupRemoveFromDiskSpaceListW")]
-        public static readonly delegate*<void*, ushort*, uint, void*, uint, int> SetupRemoveFromDiskSpaceList = &SetupRemoveFromDiskSpaceListW;
+        public static delegate*<void*, ushort*, uint, void*, uint, int> SetupRemoveFromDiskSpaceList => &SetupRemoveFromDiskSpaceListW;
 
         [NativeTypeName("#define SetupRemoveSectionFromDiskSpaceList SetupRemoveSectionFromDiskSpaceListW")]
-        public static readonly delegate*<void*, void*, void*, ushort*, uint, void*, uint, int> SetupRemoveSectionFromDiskSpaceList = &SetupRemoveSectionFromDiskSpaceListW;
+        public static delegate*<void*, void*, void*, ushort*, uint, void*, uint, int> SetupRemoveSectionFromDiskSpaceList => &SetupRemoveSectionFromDiskSpaceListW;
 
         [NativeTypeName("#define SetupRemoveInstallSectionFromDiskSpaceList SetupRemoveInstallSectionFromDiskSpaceListW")]
-        public static readonly delegate*<void*, void*, void*, ushort*, void*, uint, int> SetupRemoveInstallSectionFromDiskSpaceList = &SetupRemoveInstallSectionFromDiskSpaceListW;
+        public static delegate*<void*, void*, void*, ushort*, void*, uint, int> SetupRemoveInstallSectionFromDiskSpaceList => &SetupRemoveInstallSectionFromDiskSpaceListW;
 
         [NativeTypeName("#define SetupIterateCabinet SetupIterateCabinetW")]
-        public static readonly delegate*<ushort*, uint, delegate* unmanaged<void*, uint, nuint, nuint, uint>, void*, int> SetupIterateCabinet = &SetupIterateCabinetW;
+        public static delegate*<ushort*, uint, delegate* unmanaged<void*, uint, nuint, nuint, uint>, void*, int> SetupIterateCabinet => &SetupIterateCabinetW;
 
         [NativeTypeName("#define SPFILEQ_FILE_IN_USE 0x00000001")]
         public const int SPFILEQ_FILE_IN_USE = 0x00000001;
@@ -3054,7 +3054,7 @@ namespace TerraFX.Interop
         public const int SPFILEQ_REBOOT_IN_PROGRESS = 0x00000004;
 
         [NativeTypeName("#define SetupDefaultQueueCallback SetupDefaultQueueCallbackW")]
-        public static readonly delegate*<void*, uint, nuint, nuint, uint> SetupDefaultQueueCallback = &SetupDefaultQueueCallbackW;
+        public static delegate*<void*, uint, nuint, nuint, uint> SetupDefaultQueueCallback => &SetupDefaultQueueCallbackW;
 
         [NativeTypeName("#define FLG_ADDREG_DELREG_BIT ( 0x00008000 )")]
         public const int FLG_ADDREG_DELREG_BIT = (0x00008000);
@@ -3207,7 +3207,7 @@ namespace TerraFX.Interop
         public const int FLG_DELPROPERTY_MULTI_SZ_DELSTRING = (0x00000001);
 
         [NativeTypeName("#define SetupInstallFromInfSection SetupInstallFromInfSectionW")]
-        public static readonly delegate*<IntPtr, void*, ushort*, uint, IntPtr, ushort*, uint, delegate* unmanaged<void*, uint, nuint, nuint, uint>, void*, void*, SP_DEVINFO_DATA*, int> SetupInstallFromInfSection = &SetupInstallFromInfSectionW;
+        public static delegate*<IntPtr, void*, ushort*, uint, IntPtr, ushort*, uint, delegate* unmanaged<void*, uint, nuint, nuint, uint>, void*, void*, SP_DEVINFO_DATA*, int> SetupInstallFromInfSection => &SetupInstallFromInfSectionW;
 
         [NativeTypeName("#define SPINST_LOGCONFIG 0x00000001")]
         public const int SPINST_LOGCONFIG = 0x00000001;
@@ -3261,7 +3261,7 @@ namespace TerraFX.Interop
         public const int SPINST_DEVICEINSTALL = 0x00100000;
 
         [NativeTypeName("#define SetupInstallFilesFromInfSection SetupInstallFilesFromInfSectionW")]
-        public static readonly delegate*<void*, void*, void*, ushort*, ushort*, uint, int> SetupInstallFilesFromInfSection = &SetupInstallFilesFromInfSectionW;
+        public static delegate*<void*, void*, void*, ushort*, ushort*, uint, int> SetupInstallFilesFromInfSection => &SetupInstallFilesFromInfSectionW;
 
         [NativeTypeName("#define SPSVCINST_TAGTOFRONT (0x00000001)")]
         public const int SPSVCINST_TAGTOFRONT = (0x00000001);
@@ -3315,16 +3315,16 @@ namespace TerraFX.Interop
         public const int SPSVCINST_UNIQUE_NAME = (0x00010000);
 
         [NativeTypeName("#define SetupInstallServicesFromInfSection SetupInstallServicesFromInfSectionW")]
-        public static readonly delegate*<void*, ushort*, uint, int> SetupInstallServicesFromInfSection = &SetupInstallServicesFromInfSectionW;
+        public static delegate*<void*, ushort*, uint, int> SetupInstallServicesFromInfSection => &SetupInstallServicesFromInfSectionW;
 
         [NativeTypeName("#define SetupInstallServicesFromInfSectionEx SetupInstallServicesFromInfSectionExW")]
-        public static readonly delegate*<void*, ushort*, uint, void*, SP_DEVINFO_DATA*, void*, void*, int> SetupInstallServicesFromInfSectionEx = &SetupInstallServicesFromInfSectionExW;
+        public static delegate*<void*, ushort*, uint, void*, SP_DEVINFO_DATA*, void*, void*, int> SetupInstallServicesFromInfSectionEx => &SetupInstallServicesFromInfSectionExW;
 
         [NativeTypeName("#define InstallHinfSection InstallHinfSectionW")]
-        public static readonly delegate*<IntPtr, IntPtr, ushort*, int, void> InstallHinfSection = &InstallHinfSectionW;
+        public static delegate*<IntPtr, IntPtr, ushort*, int, void> InstallHinfSection => &InstallHinfSectionW;
 
         [NativeTypeName("#define SetupInitializeFileLog SetupInitializeFileLogW")]
-        public static readonly delegate*<ushort*, uint, void*> SetupInitializeFileLog = &SetupInitializeFileLogW;
+        public static delegate*<ushort*, uint, void*> SetupInitializeFileLog => &SetupInitializeFileLogW;
 
         [NativeTypeName("#define SPFILELOG_SYSTEMLOG 0x00000001")]
         public const int SPFILELOG_SYSTEMLOG = 0x00000001;
@@ -3336,16 +3336,16 @@ namespace TerraFX.Interop
         public const int SPFILELOG_QUERYONLY = 0x00000004;
 
         [NativeTypeName("#define SetupLogFile SetupLogFileW")]
-        public static readonly delegate*<void*, ushort*, ushort*, ushort*, uint, ushort*, ushort*, ushort*, uint, int> SetupLogFile = &SetupLogFileW;
+        public static delegate*<void*, ushort*, ushort*, ushort*, uint, ushort*, ushort*, ushort*, uint, int> SetupLogFile => &SetupLogFileW;
 
         [NativeTypeName("#define SPFILELOG_OEMFILE 0x00000001")]
         public const int SPFILELOG_OEMFILE = 0x00000001;
 
         [NativeTypeName("#define SetupRemoveFileLogEntry SetupRemoveFileLogEntryW")]
-        public static readonly delegate*<void*, ushort*, ushort*, int> SetupRemoveFileLogEntry = &SetupRemoveFileLogEntryW;
+        public static delegate*<void*, ushort*, ushort*, int> SetupRemoveFileLogEntry => &SetupRemoveFileLogEntryW;
 
         [NativeTypeName("#define SetupQueryFileLog SetupQueryFileLogW")]
-        public static readonly delegate*<void*, ushort*, ushort*, SetupFileLogInfo, ushort*, uint, uint*, int> SetupQueryFileLog = &SetupQueryFileLogW;
+        public static delegate*<void*, ushort*, ushort*, SetupFileLogInfo, ushort*, uint, uint*, int> SetupQueryFileLog => &SetupQueryFileLogW;
 
         [NativeTypeName("#define LogSevInformation 0x00000000")]
         public const int LogSevInformation = 0x00000000;
@@ -3363,19 +3363,19 @@ namespace TerraFX.Interop
         public const int LogSevMaximum = 0x00000004;
 
         [NativeTypeName("#define SetupLogError SetupLogErrorW")]
-        public static readonly delegate*<ushort*, uint, int> SetupLogError = &SetupLogErrorW;
+        public static delegate*<ushort*, uint, int> SetupLogError => &SetupLogErrorW;
 
         [NativeTypeName("#define SetupGetBackupInformation SetupGetBackupInformationW")]
-        public static readonly delegate*<void*, SP_BACKUP_QUEUE_PARAMS_V2_W*, int> SetupGetBackupInformation = &SetupGetBackupInformationW;
+        public static delegate*<void*, SP_BACKUP_QUEUE_PARAMS_V2_W*, int> SetupGetBackupInformation => &SetupGetBackupInformationW;
 
         [NativeTypeName("#define SetupPrepareQueueForRestore SetupPrepareQueueForRestoreW")]
-        public static readonly delegate*<void*, ushort*, uint, int> SetupPrepareQueueForRestore = &SetupPrepareQueueForRestoreW;
+        public static delegate*<void*, ushort*, uint, int> SetupPrepareQueueForRestore => &SetupPrepareQueueForRestoreW;
 
         [NativeTypeName("#define SetupDiCreateDeviceInfoListEx SetupDiCreateDeviceInfoListExW")]
-        public static readonly delegate*<Guid*, IntPtr, ushort*, void*, void*> SetupDiCreateDeviceInfoListEx = &SetupDiCreateDeviceInfoListExW;
+        public static delegate*<Guid*, IntPtr, ushort*, void*, void*> SetupDiCreateDeviceInfoListEx => &SetupDiCreateDeviceInfoListExW;
 
         [NativeTypeName("#define SetupDiGetDeviceInfoListDetail SetupDiGetDeviceInfoListDetailW")]
-        public static readonly delegate*<void*, SP_DEVINFO_LIST_DETAIL_DATA_W*, int> SetupDiGetDeviceInfoListDetail = &SetupDiGetDeviceInfoListDetailW;
+        public static delegate*<void*, SP_DEVINFO_LIST_DETAIL_DATA_W*, int> SetupDiGetDeviceInfoListDetail => &SetupDiGetDeviceInfoListDetailW;
 
         [NativeTypeName("#define DICD_GENERATE_ID 0x00000001")]
         public const int DICD_GENERATE_ID = 0x00000001;
@@ -3384,7 +3384,7 @@ namespace TerraFX.Interop
         public const int DICD_INHERIT_CLASSDRVS = 0x00000002;
 
         [NativeTypeName("#define SetupDiCreateDeviceInfo SetupDiCreateDeviceInfoW")]
-        public static readonly delegate*<void*, ushort*, Guid*, ushort*, IntPtr, uint, SP_DEVINFO_DATA*, int> SetupDiCreateDeviceInfo = &SetupDiCreateDeviceInfoW;
+        public static delegate*<void*, ushort*, Guid*, ushort*, IntPtr, uint, SP_DEVINFO_DATA*, int> SetupDiCreateDeviceInfo => &SetupDiCreateDeviceInfoW;
 
         [NativeTypeName("#define DIOD_INHERIT_CLASSDRVS 0x00000002")]
         public const int DIOD_INHERIT_CLASSDRVS = 0x00000002;
@@ -3393,64 +3393,64 @@ namespace TerraFX.Interop
         public const int DIOD_CANCEL_REMOVE = 0x00000004;
 
         [NativeTypeName("#define SetupDiOpenDeviceInfo SetupDiOpenDeviceInfoW")]
-        public static readonly delegate*<void*, ushort*, IntPtr, uint, SP_DEVINFO_DATA*, int> SetupDiOpenDeviceInfo = &SetupDiOpenDeviceInfoW;
+        public static delegate*<void*, ushort*, IntPtr, uint, SP_DEVINFO_DATA*, int> SetupDiOpenDeviceInfo => &SetupDiOpenDeviceInfoW;
 
         [NativeTypeName("#define SetupDiGetDeviceInstanceId SetupDiGetDeviceInstanceIdW")]
-        public static readonly delegate*<void*, SP_DEVINFO_DATA*, ushort*, uint, uint*, int> SetupDiGetDeviceInstanceId = &SetupDiGetDeviceInstanceIdW;
+        public static delegate*<void*, SP_DEVINFO_DATA*, ushort*, uint, uint*, int> SetupDiGetDeviceInstanceId => &SetupDiGetDeviceInstanceIdW;
 
         [NativeTypeName("#define SetupDiEnumInterfaceDevice SetupDiEnumDeviceInterfaces")]
-        public static readonly delegate*<void*, SP_DEVINFO_DATA*, Guid*, uint, SP_DEVICE_INTERFACE_DATA*, int> SetupDiEnumInterfaceDevice = &SetupDiEnumDeviceInterfaces;
+        public static delegate*<void*, SP_DEVINFO_DATA*, Guid*, uint, SP_DEVICE_INTERFACE_DATA*, int> SetupDiEnumInterfaceDevice => &SetupDiEnumDeviceInterfaces;
 
         [NativeTypeName("#define SetupDiCreateDeviceInterface SetupDiCreateDeviceInterfaceW")]
-        public static readonly delegate*<void*, SP_DEVINFO_DATA*, Guid*, ushort*, uint, SP_DEVICE_INTERFACE_DATA*, int> SetupDiCreateDeviceInterface = &SetupDiCreateDeviceInterfaceW;
+        public static delegate*<void*, SP_DEVINFO_DATA*, Guid*, ushort*, uint, SP_DEVICE_INTERFACE_DATA*, int> SetupDiCreateDeviceInterface => &SetupDiCreateDeviceInterfaceW;
 
         [NativeTypeName("#define SetupDiCreateInterfaceDeviceW SetupDiCreateDeviceInterfaceW")]
-        public static readonly delegate*<void*, SP_DEVINFO_DATA*, Guid*, ushort*, uint, SP_DEVICE_INTERFACE_DATA*, int> SetupDiCreateInterfaceDeviceW = &SetupDiCreateDeviceInterfaceW;
+        public static delegate*<void*, SP_DEVINFO_DATA*, Guid*, ushort*, uint, SP_DEVICE_INTERFACE_DATA*, int> SetupDiCreateInterfaceDeviceW => &SetupDiCreateDeviceInterfaceW;
 
         [NativeTypeName("#define SetupDiCreateInterfaceDeviceA SetupDiCreateDeviceInterfaceA")]
-        public static readonly delegate*<void*, SP_DEVINFO_DATA*, Guid*, sbyte*, uint, SP_DEVICE_INTERFACE_DATA*, int> SetupDiCreateInterfaceDeviceA = &SetupDiCreateDeviceInterfaceA;
+        public static delegate*<void*, SP_DEVINFO_DATA*, Guid*, sbyte*, uint, SP_DEVICE_INTERFACE_DATA*, int> SetupDiCreateInterfaceDeviceA => &SetupDiCreateDeviceInterfaceA;
 
         [NativeTypeName("#define SetupDiCreateInterfaceDevice SetupDiCreateDeviceInterfaceW")]
-        public static readonly delegate*<void*, SP_DEVINFO_DATA*, Guid*, ushort*, uint, SP_DEVICE_INTERFACE_DATA*, int> SetupDiCreateInterfaceDevice = &SetupDiCreateDeviceInterfaceW;
+        public static delegate*<void*, SP_DEVINFO_DATA*, Guid*, ushort*, uint, SP_DEVICE_INTERFACE_DATA*, int> SetupDiCreateInterfaceDevice => &SetupDiCreateDeviceInterfaceW;
 
         [NativeTypeName("#define DIODI_NO_ADD 0x00000001")]
         public const int DIODI_NO_ADD = 0x00000001;
 
         [NativeTypeName("#define SetupDiOpenDeviceInterface SetupDiOpenDeviceInterfaceW")]
-        public static readonly delegate*<void*, ushort*, uint, SP_DEVICE_INTERFACE_DATA*, int> SetupDiOpenDeviceInterface = &SetupDiOpenDeviceInterfaceW;
+        public static delegate*<void*, ushort*, uint, SP_DEVICE_INTERFACE_DATA*, int> SetupDiOpenDeviceInterface => &SetupDiOpenDeviceInterfaceW;
 
         [NativeTypeName("#define SetupDiOpenInterfaceDeviceW SetupDiOpenDeviceInterfaceW")]
-        public static readonly delegate*<void*, ushort*, uint, SP_DEVICE_INTERFACE_DATA*, int> SetupDiOpenInterfaceDeviceW = &SetupDiOpenDeviceInterfaceW;
+        public static delegate*<void*, ushort*, uint, SP_DEVICE_INTERFACE_DATA*, int> SetupDiOpenInterfaceDeviceW => &SetupDiOpenDeviceInterfaceW;
 
         [NativeTypeName("#define SetupDiOpenInterfaceDeviceA SetupDiOpenDeviceInterfaceA")]
-        public static readonly delegate*<void*, sbyte*, uint, SP_DEVICE_INTERFACE_DATA*, int> SetupDiOpenInterfaceDeviceA = &SetupDiOpenDeviceInterfaceA;
+        public static delegate*<void*, sbyte*, uint, SP_DEVICE_INTERFACE_DATA*, int> SetupDiOpenInterfaceDeviceA => &SetupDiOpenDeviceInterfaceA;
 
         [NativeTypeName("#define SetupDiOpenInterfaceDevice SetupDiOpenDeviceInterfaceW")]
-        public static readonly delegate*<void*, ushort*, uint, SP_DEVICE_INTERFACE_DATA*, int> SetupDiOpenInterfaceDevice = &SetupDiOpenDeviceInterfaceW;
+        public static delegate*<void*, ushort*, uint, SP_DEVICE_INTERFACE_DATA*, int> SetupDiOpenInterfaceDevice => &SetupDiOpenDeviceInterfaceW;
 
         [NativeTypeName("#define SetupDiGetInterfaceDeviceAlias SetupDiGetDeviceInterfaceAlias")]
-        public static readonly delegate*<void*, SP_DEVICE_INTERFACE_DATA*, Guid*, SP_DEVICE_INTERFACE_DATA*, int> SetupDiGetInterfaceDeviceAlias = &SetupDiGetDeviceInterfaceAlias;
+        public static delegate*<void*, SP_DEVICE_INTERFACE_DATA*, Guid*, SP_DEVICE_INTERFACE_DATA*, int> SetupDiGetInterfaceDeviceAlias => &SetupDiGetDeviceInterfaceAlias;
 
         [NativeTypeName("#define SetupDiDeleteInterfaceDeviceData SetupDiDeleteDeviceInterfaceData")]
-        public static readonly delegate*<void*, SP_DEVICE_INTERFACE_DATA*, int> SetupDiDeleteInterfaceDeviceData = &SetupDiDeleteDeviceInterfaceData;
+        public static delegate*<void*, SP_DEVICE_INTERFACE_DATA*, int> SetupDiDeleteInterfaceDeviceData => &SetupDiDeleteDeviceInterfaceData;
 
         [NativeTypeName("#define SetupDiRemoveInterfaceDevice SetupDiRemoveDeviceInterface")]
-        public static readonly delegate*<void*, SP_DEVICE_INTERFACE_DATA*, int> SetupDiRemoveInterfaceDevice = &SetupDiRemoveDeviceInterface;
+        public static delegate*<void*, SP_DEVICE_INTERFACE_DATA*, int> SetupDiRemoveInterfaceDevice => &SetupDiRemoveDeviceInterface;
 
         [NativeTypeName("#define SetupDiGetDeviceInterfaceDetail SetupDiGetDeviceInterfaceDetailW")]
-        public static readonly delegate*<void*, SP_DEVICE_INTERFACE_DATA*, SP_DEVICE_INTERFACE_DETAIL_DATA_W*, uint, uint*, SP_DEVINFO_DATA*, int> SetupDiGetDeviceInterfaceDetail = &SetupDiGetDeviceInterfaceDetailW;
+        public static delegate*<void*, SP_DEVICE_INTERFACE_DATA*, SP_DEVICE_INTERFACE_DETAIL_DATA_W*, uint, uint*, SP_DEVINFO_DATA*, int> SetupDiGetDeviceInterfaceDetail => &SetupDiGetDeviceInterfaceDetailW;
 
         [NativeTypeName("#define SetupDiGetInterfaceDeviceDetailW SetupDiGetDeviceInterfaceDetailW")]
-        public static readonly delegate*<void*, SP_DEVICE_INTERFACE_DATA*, SP_DEVICE_INTERFACE_DETAIL_DATA_W*, uint, uint*, SP_DEVINFO_DATA*, int> SetupDiGetInterfaceDeviceDetailW = &SetupDiGetDeviceInterfaceDetailW;
+        public static delegate*<void*, SP_DEVICE_INTERFACE_DATA*, SP_DEVICE_INTERFACE_DETAIL_DATA_W*, uint, uint*, SP_DEVINFO_DATA*, int> SetupDiGetInterfaceDeviceDetailW => &SetupDiGetDeviceInterfaceDetailW;
 
         [NativeTypeName("#define SetupDiGetInterfaceDeviceDetailA SetupDiGetDeviceInterfaceDetailA")]
-        public static readonly delegate*<void*, SP_DEVICE_INTERFACE_DATA*, SP_DEVICE_INTERFACE_DETAIL_DATA_A*, uint, uint*, SP_DEVINFO_DATA*, int> SetupDiGetInterfaceDeviceDetailA = &SetupDiGetDeviceInterfaceDetailA;
+        public static delegate*<void*, SP_DEVICE_INTERFACE_DATA*, SP_DEVICE_INTERFACE_DETAIL_DATA_A*, uint, uint*, SP_DEVINFO_DATA*, int> SetupDiGetInterfaceDeviceDetailA => &SetupDiGetDeviceInterfaceDetailA;
 
         [NativeTypeName("#define SetupDiGetInterfaceDeviceDetail SetupDiGetDeviceInterfaceDetailW")]
-        public static readonly delegate*<void*, SP_DEVICE_INTERFACE_DATA*, SP_DEVICE_INTERFACE_DETAIL_DATA_W*, uint, uint*, SP_DEVINFO_DATA*, int> SetupDiGetInterfaceDeviceDetail = &SetupDiGetDeviceInterfaceDetailW;
+        public static delegate*<void*, SP_DEVICE_INTERFACE_DATA*, SP_DEVICE_INTERFACE_DETAIL_DATA_W*, uint, uint*, SP_DEVINFO_DATA*, int> SetupDiGetInterfaceDeviceDetail => &SetupDiGetDeviceInterfaceDetailW;
 
         [NativeTypeName("#define SetupDiInstallInterfaceDevices SetupDiInstallDeviceInterfaces")]
-        public static readonly delegate*<void*, SP_DEVINFO_DATA*, int> SetupDiInstallInterfaceDevices = &SetupDiInstallDeviceInterfaces;
+        public static delegate*<void*, SP_DEVINFO_DATA*, int> SetupDiInstallInterfaceDevices => &SetupDiInstallDeviceInterfaces;
 
         [NativeTypeName("#define SPRDI_FIND_DUPS 0x00000001")]
         public const int SPRDI_FIND_DUPS = 0x00000001;
@@ -3465,16 +3465,16 @@ namespace TerraFX.Interop
         public const int SPDIT_COMPATDRIVER = 0x00000002;
 
         [NativeTypeName("#define SetupDiEnumDriverInfo SetupDiEnumDriverInfoW")]
-        public static readonly delegate*<void*, SP_DEVINFO_DATA*, uint, uint, SP_DRVINFO_DATA_V2_W*, int> SetupDiEnumDriverInfo = &SetupDiEnumDriverInfoW;
+        public static delegate*<void*, SP_DEVINFO_DATA*, uint, uint, SP_DRVINFO_DATA_V2_W*, int> SetupDiEnumDriverInfo => &SetupDiEnumDriverInfoW;
 
         [NativeTypeName("#define SetupDiGetSelectedDriver SetupDiGetSelectedDriverW")]
-        public static readonly delegate*<void*, SP_DEVINFO_DATA*, SP_DRVINFO_DATA_V2_W*, int> SetupDiGetSelectedDriver = &SetupDiGetSelectedDriverW;
+        public static delegate*<void*, SP_DEVINFO_DATA*, SP_DRVINFO_DATA_V2_W*, int> SetupDiGetSelectedDriver => &SetupDiGetSelectedDriverW;
 
         [NativeTypeName("#define SetupDiSetSelectedDriver SetupDiSetSelectedDriverW")]
-        public static readonly delegate*<void*, SP_DEVINFO_DATA*, SP_DRVINFO_DATA_V2_W*, int> SetupDiSetSelectedDriver = &SetupDiSetSelectedDriverW;
+        public static delegate*<void*, SP_DEVINFO_DATA*, SP_DRVINFO_DATA_V2_W*, int> SetupDiSetSelectedDriver => &SetupDiSetSelectedDriverW;
 
         [NativeTypeName("#define SetupDiGetDriverInfoDetail SetupDiGetDriverInfoDetailW")]
-        public static readonly delegate*<void*, SP_DEVINFO_DATA*, SP_DRVINFO_DATA_V2_W*, SP_DRVINFO_DETAIL_DATA_W*, uint, uint*, int> SetupDiGetDriverInfoDetail = &SetupDiGetDriverInfoDetailW;
+        public static delegate*<void*, SP_DEVINFO_DATA*, SP_DRVINFO_DATA_V2_W*, SP_DRVINFO_DETAIL_DATA_W*, uint, uint*, int> SetupDiGetDriverInfoDetail => &SetupDiGetDriverInfoDetailW;
 
         [NativeTypeName("#define DIGCF_DEFAULT 0x00000001")]
         public const int DIGCF_DEFAULT = 0x00000001;
@@ -3495,13 +3495,13 @@ namespace TerraFX.Interop
         public const int DIGCF_INTERFACEDEVICE = 0x00000010;
 
         [NativeTypeName("#define SetupDiGetClassDevs SetupDiGetClassDevsW")]
-        public static readonly delegate*<Guid*, ushort*, IntPtr, uint, void*> SetupDiGetClassDevs = &SetupDiGetClassDevsW;
+        public static delegate*<Guid*, ushort*, IntPtr, uint, void*> SetupDiGetClassDevs => &SetupDiGetClassDevsW;
 
         [NativeTypeName("#define SetupDiGetClassDevsEx SetupDiGetClassDevsExW")]
-        public static readonly delegate*<Guid*, ushort*, IntPtr, uint, void*, ushort*, void*, void*> SetupDiGetClassDevsEx = &SetupDiGetClassDevsExW;
+        public static delegate*<Guid*, ushort*, IntPtr, uint, void*, ushort*, void*, void*> SetupDiGetClassDevsEx => &SetupDiGetClassDevsExW;
 
         [NativeTypeName("#define SetupDiGetINFClass SetupDiGetINFClassW")]
-        public static readonly delegate*<ushort*, Guid*, ushort*, uint, uint*, int> SetupDiGetINFClass = &SetupDiGetINFClassW;
+        public static delegate*<ushort*, Guid*, ushort*, uint, uint*, int> SetupDiGetINFClass => &SetupDiGetINFClassW;
 
         [NativeTypeName("#define DIBCI_NOINSTALLCLASS 0x00000001")]
         public const int DIBCI_NOINSTALLCLASS = 0x00000001;
@@ -3510,19 +3510,19 @@ namespace TerraFX.Interop
         public const int DIBCI_NODISPLAYCLASS = 0x00000002;
 
         [NativeTypeName("#define SetupDiBuildClassInfoListEx SetupDiBuildClassInfoListExW")]
-        public static readonly delegate*<uint, Guid*, uint, uint*, ushort*, void*, int> SetupDiBuildClassInfoListEx = &SetupDiBuildClassInfoListExW;
+        public static delegate*<uint, Guid*, uint, uint*, ushort*, void*, int> SetupDiBuildClassInfoListEx => &SetupDiBuildClassInfoListExW;
 
         [NativeTypeName("#define SetupDiGetClassDescription SetupDiGetClassDescriptionW")]
-        public static readonly delegate*<Guid*, ushort*, uint, uint*, int> SetupDiGetClassDescription = &SetupDiGetClassDescriptionW;
+        public static delegate*<Guid*, ushort*, uint, uint*, int> SetupDiGetClassDescription => &SetupDiGetClassDescriptionW;
 
         [NativeTypeName("#define SetupDiGetClassDescriptionEx SetupDiGetClassDescriptionExW")]
-        public static readonly delegate*<Guid*, ushort*, uint, uint*, ushort*, void*, int> SetupDiGetClassDescriptionEx = &SetupDiGetClassDescriptionExW;
+        public static delegate*<Guid*, ushort*, uint, uint*, ushort*, void*, int> SetupDiGetClassDescriptionEx => &SetupDiGetClassDescriptionExW;
 
         [NativeTypeName("#define SetupDiInstallClass SetupDiInstallClassW")]
-        public static readonly delegate*<IntPtr, ushort*, uint, void*, int> SetupDiInstallClass = &SetupDiInstallClassW;
+        public static delegate*<IntPtr, ushort*, uint, void*, int> SetupDiInstallClass => &SetupDiInstallClassW;
 
         [NativeTypeName("#define SetupDiInstallClassEx SetupDiInstallClassExW")]
-        public static readonly delegate*<IntPtr, ushort*, uint, void*, Guid*, void*, void*, int> SetupDiInstallClassEx = &SetupDiInstallClassExW;
+        public static delegate*<IntPtr, ushort*, uint, void*, Guid*, void*, void*, int> SetupDiInstallClassEx => &SetupDiInstallClassExW;
 
         [NativeTypeName("#define DIOCR_INSTALLER 0x00000001")]
         public const int DIOCR_INSTALLER = 0x00000001;
@@ -3531,25 +3531,25 @@ namespace TerraFX.Interop
         public const int DIOCR_INTERFACE = 0x00000002;
 
         [NativeTypeName("#define SetupDiOpenClassRegKeyEx SetupDiOpenClassRegKeyExW")]
-        public static readonly delegate*<Guid*, uint, uint, ushort*, void*, IntPtr> SetupDiOpenClassRegKeyEx = &SetupDiOpenClassRegKeyExW;
+        public static delegate*<Guid*, uint, uint, ushort*, void*, IntPtr> SetupDiOpenClassRegKeyEx => &SetupDiOpenClassRegKeyExW;
 
         [NativeTypeName("#define SetupDiCreateDeviceInterfaceRegKey SetupDiCreateDeviceInterfaceRegKeyW")]
-        public static readonly delegate*<void*, SP_DEVICE_INTERFACE_DATA*, uint, uint, void*, ushort*, IntPtr> SetupDiCreateDeviceInterfaceRegKey = &SetupDiCreateDeviceInterfaceRegKeyW;
+        public static delegate*<void*, SP_DEVICE_INTERFACE_DATA*, uint, uint, void*, ushort*, IntPtr> SetupDiCreateDeviceInterfaceRegKey => &SetupDiCreateDeviceInterfaceRegKeyW;
 
         [NativeTypeName("#define SetupDiCreateInterfaceDeviceRegKeyW SetupDiCreateDeviceInterfaceRegKeyW")]
-        public static readonly delegate*<void*, SP_DEVICE_INTERFACE_DATA*, uint, uint, void*, ushort*, IntPtr> SetupDiCreateInterfaceDeviceRegKeyW = &SetupDiCreateDeviceInterfaceRegKeyW;
+        public static delegate*<void*, SP_DEVICE_INTERFACE_DATA*, uint, uint, void*, ushort*, IntPtr> SetupDiCreateInterfaceDeviceRegKeyW => &SetupDiCreateDeviceInterfaceRegKeyW;
 
         [NativeTypeName("#define SetupDiCreateInterfaceDeviceRegKeyA SetupDiCreateDeviceInterfaceRegKeyA")]
-        public static readonly delegate*<void*, SP_DEVICE_INTERFACE_DATA*, uint, uint, void*, sbyte*, IntPtr> SetupDiCreateInterfaceDeviceRegKeyA = &SetupDiCreateDeviceInterfaceRegKeyA;
+        public static delegate*<void*, SP_DEVICE_INTERFACE_DATA*, uint, uint, void*, sbyte*, IntPtr> SetupDiCreateInterfaceDeviceRegKeyA => &SetupDiCreateDeviceInterfaceRegKeyA;
 
         [NativeTypeName("#define SetupDiCreateInterfaceDeviceRegKey SetupDiCreateDeviceInterfaceRegKeyW")]
-        public static readonly delegate*<void*, SP_DEVICE_INTERFACE_DATA*, uint, uint, void*, ushort*, IntPtr> SetupDiCreateInterfaceDeviceRegKey = &SetupDiCreateDeviceInterfaceRegKeyW;
+        public static delegate*<void*, SP_DEVICE_INTERFACE_DATA*, uint, uint, void*, ushort*, IntPtr> SetupDiCreateInterfaceDeviceRegKey => &SetupDiCreateDeviceInterfaceRegKeyW;
 
         [NativeTypeName("#define SetupDiOpenInterfaceDeviceRegKey SetupDiOpenDeviceInterfaceRegKey")]
-        public static readonly delegate*<void*, SP_DEVICE_INTERFACE_DATA*, uint, uint, IntPtr> SetupDiOpenInterfaceDeviceRegKey = &SetupDiOpenDeviceInterfaceRegKey;
+        public static delegate*<void*, SP_DEVICE_INTERFACE_DATA*, uint, uint, IntPtr> SetupDiOpenInterfaceDeviceRegKey => &SetupDiOpenDeviceInterfaceRegKey;
 
         [NativeTypeName("#define SetupDiDeleteInterfaceDeviceRegKey SetupDiDeleteDeviceInterfaceRegKey")]
-        public static readonly delegate*<void*, SP_DEVICE_INTERFACE_DATA*, uint, int> SetupDiDeleteInterfaceDeviceRegKey = &SetupDiDeleteDeviceInterfaceRegKey;
+        public static delegate*<void*, SP_DEVICE_INTERFACE_DATA*, uint, int> SetupDiDeleteInterfaceDeviceRegKey => &SetupDiDeleteDeviceInterfaceRegKey;
 
         [NativeTypeName("#define DIREG_DEV 0x00000001")]
         public const int DIREG_DEV = 0x00000001;
@@ -3561,22 +3561,22 @@ namespace TerraFX.Interop
         public const int DIREG_BOTH = 0x00000004;
 
         [NativeTypeName("#define SetupDiCreateDevRegKey SetupDiCreateDevRegKeyW")]
-        public static readonly delegate*<void*, SP_DEVINFO_DATA*, uint, uint, uint, void*, ushort*, IntPtr> SetupDiCreateDevRegKey = &SetupDiCreateDevRegKeyW;
+        public static delegate*<void*, SP_DEVINFO_DATA*, uint, uint, uint, void*, ushort*, IntPtr> SetupDiCreateDevRegKey => &SetupDiCreateDevRegKeyW;
 
         [NativeTypeName("#define SetupDiGetHwProfileListEx SetupDiGetHwProfileListExW")]
-        public static readonly delegate*<uint*, uint, uint*, uint*, ushort*, void*, int> SetupDiGetHwProfileListEx = &SetupDiGetHwProfileListExW;
+        public static delegate*<uint*, uint, uint*, uint*, ushort*, void*, int> SetupDiGetHwProfileListEx => &SetupDiGetHwProfileListExW;
 
         [NativeTypeName("#define SetupDiGetDeviceProperty SetupDiGetDevicePropertyW")]
-        public static readonly delegate*<void*, SP_DEVINFO_DATA*, DEVPROPKEY*, uint*, byte*, uint, uint*, uint, int> SetupDiGetDeviceProperty = &SetupDiGetDevicePropertyW;
+        public static delegate*<void*, SP_DEVINFO_DATA*, DEVPROPKEY*, uint*, byte*, uint, uint*, uint, int> SetupDiGetDeviceProperty => &SetupDiGetDevicePropertyW;
 
         [NativeTypeName("#define SetupDiSetDeviceProperty SetupDiSetDevicePropertyW")]
-        public static readonly delegate*<void*, SP_DEVINFO_DATA*, DEVPROPKEY*, uint, byte*, uint, uint, int> SetupDiSetDeviceProperty = &SetupDiSetDevicePropertyW;
+        public static delegate*<void*, SP_DEVINFO_DATA*, DEVPROPKEY*, uint, byte*, uint, uint, int> SetupDiSetDeviceProperty => &SetupDiSetDevicePropertyW;
 
         [NativeTypeName("#define SetupDiGetDeviceInterfaceProperty SetupDiGetDeviceInterfacePropertyW")]
-        public static readonly delegate*<void*, SP_DEVICE_INTERFACE_DATA*, DEVPROPKEY*, uint*, byte*, uint, uint*, uint, int> SetupDiGetDeviceInterfaceProperty = &SetupDiGetDeviceInterfacePropertyW;
+        public static delegate*<void*, SP_DEVICE_INTERFACE_DATA*, DEVPROPKEY*, uint*, byte*, uint, uint*, uint, int> SetupDiGetDeviceInterfaceProperty => &SetupDiGetDeviceInterfacePropertyW;
 
         [NativeTypeName("#define SetupDiSetDeviceInterfaceProperty SetupDiSetDeviceInterfacePropertyW")]
-        public static readonly delegate*<void*, SP_DEVICE_INTERFACE_DATA*, DEVPROPKEY*, uint, byte*, uint, uint, int> SetupDiSetDeviceInterfaceProperty = &SetupDiSetDeviceInterfacePropertyW;
+        public static delegate*<void*, SP_DEVICE_INTERFACE_DATA*, DEVPROPKEY*, uint, byte*, uint, uint, int> SetupDiSetDeviceInterfaceProperty => &SetupDiSetDeviceInterfacePropertyW;
 
         [NativeTypeName("#define DICLASSPROP_INSTALLER 0x00000001")]
         public const int DICLASSPROP_INSTALLER = 0x00000001;
@@ -3585,19 +3585,19 @@ namespace TerraFX.Interop
         public const int DICLASSPROP_INTERFACE = 0x00000002;
 
         [NativeTypeName("#define SetupDiGetClassPropertyKeysEx SetupDiGetClassPropertyKeysExW")]
-        public static readonly delegate*<Guid*, DEVPROPKEY*, uint, uint*, uint, ushort*, void*, int> SetupDiGetClassPropertyKeysEx = &SetupDiGetClassPropertyKeysExW;
+        public static delegate*<Guid*, DEVPROPKEY*, uint, uint*, uint, ushort*, void*, int> SetupDiGetClassPropertyKeysEx => &SetupDiGetClassPropertyKeysExW;
 
         [NativeTypeName("#define SetupDiGetClassProperty SetupDiGetClassPropertyW")]
-        public static readonly delegate*<Guid*, DEVPROPKEY*, uint*, byte*, uint, uint*, uint, int> SetupDiGetClassProperty = &SetupDiGetClassPropertyW;
+        public static delegate*<Guid*, DEVPROPKEY*, uint*, byte*, uint, uint*, uint, int> SetupDiGetClassProperty => &SetupDiGetClassPropertyW;
 
         [NativeTypeName("#define SetupDiGetClassPropertyEx SetupDiGetClassPropertyExW")]
-        public static readonly delegate*<Guid*, DEVPROPKEY*, uint*, byte*, uint, uint*, uint, ushort*, void*, int> SetupDiGetClassPropertyEx = &SetupDiGetClassPropertyExW;
+        public static delegate*<Guid*, DEVPROPKEY*, uint*, byte*, uint, uint*, uint, ushort*, void*, int> SetupDiGetClassPropertyEx => &SetupDiGetClassPropertyExW;
 
         [NativeTypeName("#define SetupDiSetClassProperty SetupDiSetClassPropertyW")]
-        public static readonly delegate*<Guid*, DEVPROPKEY*, uint, byte*, uint, uint, int> SetupDiSetClassProperty = &SetupDiSetClassPropertyW;
+        public static delegate*<Guid*, DEVPROPKEY*, uint, byte*, uint, uint, int> SetupDiSetClassProperty => &SetupDiSetClassPropertyW;
 
         [NativeTypeName("#define SetupDiSetClassPropertyEx SetupDiSetClassPropertyExW")]
-        public static readonly delegate*<Guid*, DEVPROPKEY*, uint, byte*, uint, uint, ushort*, void*, int> SetupDiSetClassPropertyEx = &SetupDiSetClassPropertyExW;
+        public static delegate*<Guid*, DEVPROPKEY*, uint, byte*, uint, uint, ushort*, void*, int> SetupDiSetClassPropertyEx => &SetupDiSetClassPropertyExW;
 
         [NativeTypeName("#define SPDRP_DEVICEDESC (0x00000000)")]
         public const int SPDRP_DEVICEDESC = (0x00000000);
@@ -3738,34 +3738,34 @@ namespace TerraFX.Interop
         public const int SPCRP_MAXIMUM_PROPERTY = (0x0000001C);
 
         [NativeTypeName("#define SetupDiGetDeviceRegistryProperty SetupDiGetDeviceRegistryPropertyW")]
-        public static readonly delegate*<void*, SP_DEVINFO_DATA*, uint, uint*, byte*, uint, uint*, int> SetupDiGetDeviceRegistryProperty = &SetupDiGetDeviceRegistryPropertyW;
+        public static delegate*<void*, SP_DEVINFO_DATA*, uint, uint*, byte*, uint, uint*, int> SetupDiGetDeviceRegistryProperty => &SetupDiGetDeviceRegistryPropertyW;
 
         [NativeTypeName("#define SetupDiGetClassRegistryProperty SetupDiGetClassRegistryPropertyW")]
-        public static readonly delegate*<Guid*, uint, uint*, byte*, uint, uint*, ushort*, void*, int> SetupDiGetClassRegistryProperty = &SetupDiGetClassRegistryPropertyW;
+        public static delegate*<Guid*, uint, uint*, byte*, uint, uint*, ushort*, void*, int> SetupDiGetClassRegistryProperty => &SetupDiGetClassRegistryPropertyW;
 
         [NativeTypeName("#define SetupDiSetDeviceRegistryProperty SetupDiSetDeviceRegistryPropertyW")]
-        public static readonly delegate*<void*, SP_DEVINFO_DATA*, uint, byte*, uint, int> SetupDiSetDeviceRegistryProperty = &SetupDiSetDeviceRegistryPropertyW;
+        public static delegate*<void*, SP_DEVINFO_DATA*, uint, byte*, uint, int> SetupDiSetDeviceRegistryProperty => &SetupDiSetDeviceRegistryPropertyW;
 
         [NativeTypeName("#define SetupDiSetClassRegistryProperty SetupDiSetClassRegistryPropertyW")]
-        public static readonly delegate*<Guid*, uint, byte*, uint, ushort*, void*, int> SetupDiSetClassRegistryProperty = &SetupDiSetClassRegistryPropertyW;
+        public static delegate*<Guid*, uint, byte*, uint, ushort*, void*, int> SetupDiSetClassRegistryProperty => &SetupDiSetClassRegistryPropertyW;
 
         [NativeTypeName("#define SetupDiGetDeviceInstallParams SetupDiGetDeviceInstallParamsW")]
-        public static readonly delegate*<void*, SP_DEVINFO_DATA*, SP_DEVINSTALL_PARAMS_W*, int> SetupDiGetDeviceInstallParams = &SetupDiGetDeviceInstallParamsW;
+        public static delegate*<void*, SP_DEVINFO_DATA*, SP_DEVINSTALL_PARAMS_W*, int> SetupDiGetDeviceInstallParams => &SetupDiGetDeviceInstallParamsW;
 
         [NativeTypeName("#define SetupDiGetClassInstallParams SetupDiGetClassInstallParamsW")]
-        public static readonly delegate*<void*, SP_DEVINFO_DATA*, SP_CLASSINSTALL_HEADER*, uint, uint*, int> SetupDiGetClassInstallParams = &SetupDiGetClassInstallParamsW;
+        public static delegate*<void*, SP_DEVINFO_DATA*, SP_CLASSINSTALL_HEADER*, uint, uint*, int> SetupDiGetClassInstallParams => &SetupDiGetClassInstallParamsW;
 
         [NativeTypeName("#define SetupDiSetDeviceInstallParams SetupDiSetDeviceInstallParamsW")]
-        public static readonly delegate*<void*, SP_DEVINFO_DATA*, SP_DEVINSTALL_PARAMS_W*, int> SetupDiSetDeviceInstallParams = &SetupDiSetDeviceInstallParamsW;
+        public static delegate*<void*, SP_DEVINFO_DATA*, SP_DEVINSTALL_PARAMS_W*, int> SetupDiSetDeviceInstallParams => &SetupDiSetDeviceInstallParamsW;
 
         [NativeTypeName("#define SetupDiSetClassInstallParams SetupDiSetClassInstallParamsW")]
-        public static readonly delegate*<void*, SP_DEVINFO_DATA*, SP_CLASSINSTALL_HEADER*, uint, int> SetupDiSetClassInstallParams = &SetupDiSetClassInstallParamsW;
+        public static delegate*<void*, SP_DEVINFO_DATA*, SP_CLASSINSTALL_HEADER*, uint, int> SetupDiSetClassInstallParams => &SetupDiSetClassInstallParamsW;
 
         [NativeTypeName("#define SetupDiGetDriverInstallParams SetupDiGetDriverInstallParamsW")]
-        public static readonly delegate*<void*, SP_DEVINFO_DATA*, SP_DRVINFO_DATA_V2_W*, SP_DRVINSTALL_PARAMS*, int> SetupDiGetDriverInstallParams = &SetupDiGetDriverInstallParamsW;
+        public static delegate*<void*, SP_DEVINFO_DATA*, SP_DRVINFO_DATA_V2_W*, SP_DRVINSTALL_PARAMS*, int> SetupDiGetDriverInstallParams => &SetupDiGetDriverInstallParamsW;
 
         [NativeTypeName("#define SetupDiSetDriverInstallParams SetupDiSetDriverInstallParamsW")]
-        public static readonly delegate*<void*, SP_DEVINFO_DATA*, SP_DRVINFO_DATA_V2_W*, SP_DRVINSTALL_PARAMS*, int> SetupDiSetDriverInstallParams = &SetupDiSetDriverInstallParamsW;
+        public static delegate*<void*, SP_DEVINFO_DATA*, SP_DRVINFO_DATA_V2_W*, SP_DRVINSTALL_PARAMS*, int> SetupDiSetDriverInstallParams => &SetupDiSetDriverInstallParamsW;
 
         [NativeTypeName("#define DMI_MASK 0x00000001")]
         public const int DMI_MASK = 0x00000001;
@@ -3777,7 +3777,7 @@ namespace TerraFX.Interop
         public const int DMI_USERECT = 0x00000004;
 
         [NativeTypeName("#define SetupDiGetClassImageListEx SetupDiGetClassImageListExW")]
-        public static readonly delegate*<SP_CLASSIMAGELIST_DATA*, ushort*, void*, int> SetupDiGetClassImageListEx = &SetupDiGetClassImageListExW;
+        public static delegate*<SP_CLASSIMAGELIST_DATA*, ushort*, void*, int> SetupDiGetClassImageListEx => &SetupDiGetClassImageListExW;
 
         [NativeTypeName("#define DIGCDP_FLAG_BASIC 0x00000001")]
         public const int DIGCDP_FLAG_BASIC = 0x00000001;
@@ -3792,7 +3792,7 @@ namespace TerraFX.Interop
         public const int DIGCDP_FLAG_REMOTE_ADVANCED = 0x00000004;
 
         [NativeTypeName("#define SetupDiGetClassDevPropertySheets SetupDiGetClassDevPropertySheetsW")]
-        public static readonly delegate*<void*, SP_DEVINFO_DATA*, PROPSHEETHEADERW_V2*, uint, uint*, uint, int> SetupDiGetClassDevPropertySheets = &SetupDiGetClassDevPropertySheetsW;
+        public static delegate*<void*, SP_DEVINFO_DATA*, PROPSHEETHEADERW_V2*, uint, uint*, uint, int> SetupDiGetClassDevPropertySheets => &SetupDiGetClassDevPropertySheetsW;
 
         [NativeTypeName("#define IDI_RESOURCEFIRST 159")]
         public const int IDI_RESOURCEFIRST = 159;
@@ -3828,22 +3828,22 @@ namespace TerraFX.Interop
         public const int IDI_FORCED_OVL = 502;
 
         [NativeTypeName("#define SetupDiClassNameFromGuid SetupDiClassNameFromGuidW")]
-        public static readonly delegate*<Guid*, ushort*, uint, uint*, int> SetupDiClassNameFromGuid = &SetupDiClassNameFromGuidW;
+        public static delegate*<Guid*, ushort*, uint, uint*, int> SetupDiClassNameFromGuid => &SetupDiClassNameFromGuidW;
 
         [NativeTypeName("#define SetupDiClassNameFromGuidEx SetupDiClassNameFromGuidExW")]
-        public static readonly delegate*<Guid*, ushort*, uint, uint*, ushort*, void*, int> SetupDiClassNameFromGuidEx = &SetupDiClassNameFromGuidExW;
+        public static delegate*<Guid*, ushort*, uint, uint*, ushort*, void*, int> SetupDiClassNameFromGuidEx => &SetupDiClassNameFromGuidExW;
 
         [NativeTypeName("#define SetupDiClassGuidsFromName SetupDiClassGuidsFromNameW")]
-        public static readonly delegate*<ushort*, Guid*, uint, uint*, int> SetupDiClassGuidsFromName = &SetupDiClassGuidsFromNameW;
+        public static delegate*<ushort*, Guid*, uint, uint*, int> SetupDiClassGuidsFromName => &SetupDiClassGuidsFromNameW;
 
         [NativeTypeName("#define SetupDiClassGuidsFromNameEx SetupDiClassGuidsFromNameExW")]
-        public static readonly delegate*<ushort*, Guid*, uint, uint*, ushort*, void*, int> SetupDiClassGuidsFromNameEx = &SetupDiClassGuidsFromNameExW;
+        public static delegate*<ushort*, Guid*, uint, uint*, ushort*, void*, int> SetupDiClassGuidsFromNameEx => &SetupDiClassGuidsFromNameExW;
 
         [NativeTypeName("#define SetupDiGetHwProfileFriendlyName SetupDiGetHwProfileFriendlyNameW")]
-        public static readonly delegate*<uint, ushort*, uint, uint*, int> SetupDiGetHwProfileFriendlyName = &SetupDiGetHwProfileFriendlyNameW;
+        public static delegate*<uint, ushort*, uint, uint*, int> SetupDiGetHwProfileFriendlyName => &SetupDiGetHwProfileFriendlyNameW;
 
         [NativeTypeName("#define SetupDiGetHwProfileFriendlyNameEx SetupDiGetHwProfileFriendlyNameExW")]
-        public static readonly delegate*<uint, ushort*, uint, uint*, ushort*, void*, int> SetupDiGetHwProfileFriendlyNameEx = &SetupDiGetHwProfileFriendlyNameExW;
+        public static delegate*<uint, ushort*, uint, uint*, ushort*, void*, int> SetupDiGetHwProfileFriendlyNameEx => &SetupDiGetHwProfileFriendlyNameExW;
 
         [NativeTypeName("#define SPWPT_SELECTDEVICE 0x00000001")]
         public const int SPWPT_SELECTDEVICE = 0x00000001;
@@ -3852,16 +3852,16 @@ namespace TerraFX.Interop
         public const int SPWP_USE_DEVINFO_DATA = 0x00000001;
 
         [NativeTypeName("#define SetupDiGetActualModelsSection SetupDiGetActualModelsSectionW")]
-        public static readonly delegate*<INFCONTEXT*, SP_ALTPLATFORM_INFO_V2*, ushort*, uint, uint*, void*, int> SetupDiGetActualModelsSection = &SetupDiGetActualModelsSectionW;
+        public static delegate*<INFCONTEXT*, SP_ALTPLATFORM_INFO_V2*, ushort*, uint, uint*, void*, int> SetupDiGetActualModelsSection => &SetupDiGetActualModelsSectionW;
 
         [NativeTypeName("#define SetupDiGetActualSectionToInstall SetupDiGetActualSectionToInstallW")]
-        public static readonly delegate*<void*, ushort*, ushort*, uint, uint*, ushort**, int> SetupDiGetActualSectionToInstall = &SetupDiGetActualSectionToInstallW;
+        public static delegate*<void*, ushort*, ushort*, uint, uint*, ushort**, int> SetupDiGetActualSectionToInstall => &SetupDiGetActualSectionToInstallW;
 
         [NativeTypeName("#define SetupDiGetActualSectionToInstallEx SetupDiGetActualSectionToInstallExW")]
-        public static readonly delegate*<void*, ushort*, SP_ALTPLATFORM_INFO_V2*, ushort*, uint, uint*, ushort**, void*, int> SetupDiGetActualSectionToInstallEx = &SetupDiGetActualSectionToInstallExW;
+        public static delegate*<void*, ushort*, SP_ALTPLATFORM_INFO_V2*, ushort*, uint, uint*, ushort**, void*, int> SetupDiGetActualSectionToInstallEx => &SetupDiGetActualSectionToInstallExW;
 
         [NativeTypeName("#define SetupEnumInfSections SetupEnumInfSectionsW")]
-        public static readonly delegate*<void*, uint, ushort*, uint, uint*, int> SetupEnumInfSections = &SetupEnumInfSectionsW;
+        public static delegate*<void*, uint, ushort*, uint, uint*, int> SetupEnumInfSections => &SetupEnumInfSectionsW;
 
         [NativeTypeName("#define SIGNERSCORE_UNKNOWN 0xFF000000")]
         public const uint SIGNERSCORE_UNKNOWN = 0xFF000000;
@@ -3897,18 +3897,18 @@ namespace TerraFX.Interop
         public const uint SIGNERSCORE_SIGNED_MASK = 0xF0000000;
 
         [NativeTypeName("#define SetupVerifyInfFile SetupVerifyInfFileW")]
-        public static readonly delegate*<ushort*, SP_ALTPLATFORM_INFO_V2*, SP_INF_SIGNER_INFO_V2_W*, int> SetupVerifyInfFile = &SetupVerifyInfFileW;
+        public static delegate*<ushort*, SP_ALTPLATFORM_INFO_V2*, SP_INF_SIGNER_INFO_V2_W*, int> SetupVerifyInfFile => &SetupVerifyInfFileW;
 
         [NativeTypeName("#define DICUSTOMDEVPROP_MERGE_MULTISZ 0x00000001")]
         public const int DICUSTOMDEVPROP_MERGE_MULTISZ = 0x00000001;
 
         [NativeTypeName("#define SetupDiGetCustomDeviceProperty SetupDiGetCustomDevicePropertyW")]
-        public static readonly delegate*<void*, SP_DEVINFO_DATA*, ushort*, uint, uint*, byte*, uint, uint*, int> SetupDiGetCustomDeviceProperty = &SetupDiGetCustomDevicePropertyW;
+        public static delegate*<void*, SP_DEVINFO_DATA*, ushort*, uint, uint*, byte*, uint, uint*, int> SetupDiGetCustomDeviceProperty => &SetupDiGetCustomDevicePropertyW;
 
         [NativeTypeName("#define SCWMI_CLOBBER_SECURITY 0x00000001")]
         public const int SCWMI_CLOBBER_SECURITY = 0x00000001;
 
         [NativeTypeName("#define SetupConfigureWmiFromInfSection SetupConfigureWmiFromInfSectionW")]
-        public static readonly delegate*<void*, ushort*, uint, int> SetupConfigureWmiFromInfSection = &SetupConfigureWmiFromInfSectionW;
+        public static delegate*<void*, ushort*, uint, int> SetupConfigureWmiFromInfSection => &SetupConfigureWmiFromInfSectionW;
     }
 }

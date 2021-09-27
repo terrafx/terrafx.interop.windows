@@ -26,24 +26,24 @@ namespace TerraFX.Interop
         [return: NativeTypeName("DWORD")]
         public static uint DeviceDsmNumberOfDataSetRanges([NativeTypeName("PDEVICE_DSM_INPUT")] DEVICE_MANAGE_DATA_SET_ATTRIBUTES* Input)
         {
-            return Input->DataSetRangesLength / (uint)(sizeof(DEVICE_DATA_SET_RANGE));
+            return Input->DataSetRangesLength / unchecked((uint)(sizeof(DEVICE_DATA_SET_RANGE)));
         }
 
         [return: NativeTypeName("DWORD")]
         public static uint DeviceDsmGetInputLength([NativeTypeName("PDEVICE_DSM_DEFINITION")] DEVICE_DSM_DEFINITION* Definition, [NativeTypeName("DWORD")] uint ParameterBlockLength, [NativeTypeName("DWORD")] uint NumberOfDataSetRanges)
         {
-            uint Bytes = unchecked(28);
+            uint Bytes = 28;
 
             if (ParameterBlockLength != 0)
             {
-                Bytes = (((Bytes) + ((Definition->ParameterBlockAlignment) - 1)) / (Definition->ParameterBlockAlignment) * (Definition->ParameterBlockAlignment));
-                Bytes += ParameterBlockLength;
+                unchecked(Bytes) = unchecked(((Bytes) + ((Definition->ParameterBlockAlignment) - 1)) / (Definition->ParameterBlockAlignment) * (Definition->ParameterBlockAlignment));
+                unchecked(Bytes) += ParameterBlockLength;
             }
 
             if (NumberOfDataSetRanges != 0)
             {
-                Bytes = (((Bytes) + ((8) - 1)) / (8) * (8));
-                Bytes += (uint)(sizeof(DEVICE_DATA_SET_RANGE)) * NumberOfDataSetRanges;
+                unchecked(Bytes) = unchecked(((Bytes) + ((8) - 1)) / (8) * (8));
+                unchecked(Bytes) += unchecked((uint)(sizeof(DEVICE_DATA_SET_RANGE)) * NumberOfDataSetRanges);
             }
 
             return Bytes;
@@ -52,25 +52,25 @@ namespace TerraFX.Interop
         [return: NativeTypeName("DWORD")]
         public static uint DeviceDsmGetNumberOfDataSetRanges([NativeTypeName("PDEVICE_DSM_DEFINITION")] DEVICE_DSM_DEFINITION* Definition, [NativeTypeName("DWORD")] uint InputLength, [NativeTypeName("DWORD")] uint ParameterBlockLength)
         {
-            uint Bytes = unchecked(28);
+            uint Bytes = 28;
 
             if (ParameterBlockLength != 0)
             {
-                Bytes = (((Bytes) + ((Definition->ParameterBlockAlignment) - 1)) / (Definition->ParameterBlockAlignment) * (Definition->ParameterBlockAlignment));
-                Bytes += ParameterBlockLength;
+                unchecked(Bytes) = unchecked(((Bytes) + ((Definition->ParameterBlockAlignment) - 1)) / (Definition->ParameterBlockAlignment) * (Definition->ParameterBlockAlignment));
+                unchecked(Bytes) += ParameterBlockLength;
             }
 
-            Bytes = (((Bytes) + ((8) - 1)) / (8) * (8));
-            Bytes = InputLength - Bytes;
-            return Bytes / (uint)(sizeof(DEVICE_DATA_SET_RANGE));
+            unchecked(Bytes) = unchecked(((Bytes) + ((8) - 1)) / (8) * (8));
+            unchecked(Bytes) = unchecked(InputLength - Bytes);
+            return unchecked(Bytes) / unchecked((uint)(sizeof(DEVICE_DATA_SET_RANGE)));
         }
 
         public static void DeviceDsmInitializeInput([NativeTypeName("PDEVICE_DSM_DEFINITION")] DEVICE_DSM_DEFINITION* Definition, [NativeTypeName("PDEVICE_DSM_INPUT")] DEVICE_MANAGE_DATA_SET_ATTRIBUTES* Input, [NativeTypeName("DWORD")] uint InputLength, [NativeTypeName("DWORD")] uint Flags, [NativeTypeName("PVOID")] void* Parameters, [NativeTypeName("DWORD")] uint ParameterBlockLength)
         {
-            uint Bytes = unchecked(28);
+            uint Bytes = 28;
 
             Unsafe.InitBlockUnaligned((Input), 0, (InputLength));
-            Input->Size = Bytes;
+            Input->Size = unchecked(Bytes);
             Input->Action = Definition->Action;
             Input->Flags = Flags;
             if (ParameterBlockLength == 0)
@@ -78,8 +78,8 @@ namespace TerraFX.Interop
                 goto Cleanup;
             }
 
-            Bytes = (((Bytes) + ((Definition->ParameterBlockAlignment) - 1)) / (Definition->ParameterBlockAlignment) * (Definition->ParameterBlockAlignment));
-            Input->ParameterBlockOffset = Bytes;
+            unchecked(Bytes) = unchecked(((Bytes) + ((Definition->ParameterBlockAlignment) - 1)) / (Definition->ParameterBlockAlignment) * (Definition->ParameterBlockAlignment));
+            Input->ParameterBlockOffset = unchecked(Bytes);
             Input->ParameterBlockLength = ParameterBlockLength;
             if (Parameters == null)
             {
@@ -108,7 +108,7 @@ namespace TerraFX.Interop
             {
                 if (Input->ParameterBlockLength == 0)
                 {
-                    Bytes = (uint)(sizeof(DEVICE_MANAGE_DATA_SET_ATTRIBUTES));
+                    Bytes = unchecked((uint)(sizeof(DEVICE_MANAGE_DATA_SET_ATTRIBUTES)));
                 }
                 else
                 {
@@ -136,7 +136,7 @@ namespace TerraFX.Interop
             Index = DeviceDsmNumberOfDataSetRanges(Input);
             Ranges[Index].StartingOffset = Offset;
             Ranges[Index].LengthInBytes = Length;
-            Input->DataSetRangesLength += (uint)(sizeof(DEVICE_DATA_SET_RANGE));
+            Input->DataSetRangesLength += unchecked((uint)(sizeof(DEVICE_DATA_SET_RANGE)));
             Return = 1;
             Cleanup:
             return Return;
@@ -156,7 +156,7 @@ namespace TerraFX.Interop
 
             if (Definition->ParameterBlockLength != 0)
             {
-                Min = (uint)(sizeof(DEVICE_MANAGE_DATA_SET_ATTRIBUTES));
+                Min = unchecked((uint)(sizeof(DEVICE_MANAGE_DATA_SET_ATTRIBUTES)));
                 Max = InputLength;
                 if (Input->ParameterBlockOffset < Min || Input->ParameterBlockOffset > Max || (Input->ParameterBlockOffset % Definition->ParameterBlockAlignment) != 0)
                 {
@@ -173,14 +173,14 @@ namespace TerraFX.Interop
 
             if ((Input->Flags & 0x00000001) == 0)
             {
-                Min = (uint)(sizeof(DEVICE_MANAGE_DATA_SET_ATTRIBUTES));
+                Min = unchecked((uint)(sizeof(DEVICE_MANAGE_DATA_SET_ATTRIBUTES)));
                 Max = InputLength;
                 if (Input->DataSetRangesOffset < Min || Input->DataSetRangesOffset > Max || (Input->DataSetRangesOffset % 8) != 0)
                 {
                     goto Cleanup;
                 }
 
-                Min = (uint)(sizeof(DEVICE_DATA_SET_RANGE));
+                Min = unchecked((uint)(sizeof(DEVICE_DATA_SET_RANGE)));
                 Max = InputLength - Input->DataSetRangesOffset;
                 if (Input->DataSetRangesLength < Min || Input->DataSetRangesLength > Max || (Input->DataSetRangesLength % Min) != 0)
                 {
@@ -231,7 +231,7 @@ namespace TerraFX.Interop
                 goto Cleanup;
             }
 
-            Bytes = (uint)(sizeof(DEVICE_MANAGE_DATA_SET_ATTRIBUTES_OUTPUT));
+            Bytes = unchecked((uint)(sizeof(DEVICE_MANAGE_DATA_SET_ATTRIBUTES_OUTPUT)));
             if (Definition->OutputBlockLength == 0)
             {
                 goto Cleanup;
@@ -266,7 +266,7 @@ namespace TerraFX.Interop
                 goto Cleanup;
             }
 
-            Bytes = (uint)(sizeof(DEVICE_MANAGE_DATA_SET_ATTRIBUTES_OUTPUT));
+            Bytes = unchecked((uint)(sizeof(DEVICE_MANAGE_DATA_SET_ATTRIBUTES_OUTPUT)));
             Bytes = (((Bytes) + ((Definition->OutputBlockAlignment) - 1)) / (Definition->OutputBlockAlignment) * (Definition->OutputBlockAlignment));
             Bytes = OutputLength - Bytes;
             Cleanup:
@@ -275,17 +275,17 @@ namespace TerraFX.Interop
 
         public static void DeviceDsmInitializeOutput([NativeTypeName("PDEVICE_DSM_DEFINITION")] DEVICE_DSM_DEFINITION* Definition, [NativeTypeName("PDEVICE_DSM_OUTPUT")] DEVICE_MANAGE_DATA_SET_ATTRIBUTES_OUTPUT* Output, [NativeTypeName("DWORD")] uint OutputLength, [NativeTypeName("DWORD")] uint Flags)
         {
-            uint Bytes = unchecked(36);
+            uint Bytes = 36;
 
             Unsafe.InitBlockUnaligned((Output), 0, (OutputLength));
-            Output->Size = Bytes;
+            Output->Size = unchecked(Bytes);
             Output->Action = Definition->Action;
             Output->Flags = Flags;
             if (Definition->OutputBlockLength != 0)
             {
-                Bytes = (((Bytes) + ((Definition->OutputBlockAlignment) - 1)) / (Definition->OutputBlockAlignment) * (Definition->OutputBlockAlignment));
-                Output->OutputBlockOffset = Bytes;
-                Output->OutputBlockLength = OutputLength - Bytes;
+                unchecked(Bytes) = unchecked(((Bytes) + ((Definition->OutputBlockAlignment) - 1)) / (Definition->OutputBlockAlignment) * (Definition->OutputBlockAlignment));
+                Output->OutputBlockOffset = unchecked(Bytes);
+                Output->OutputBlockLength = unchecked(OutputLength - Bytes);
             }
 
             return;
@@ -310,7 +310,7 @@ namespace TerraFX.Interop
 
             if (Definition->OutputBlockLength != 0)
             {
-                Min = (uint)(sizeof(DEVICE_MANAGE_DATA_SET_ATTRIBUTES_OUTPUT));
+                Min = unchecked((uint)(sizeof(DEVICE_MANAGE_DATA_SET_ATTRIBUTES_OUTPUT)));
                 Max = OutputLength;
                 if (Output->OutputBlockOffset < Min || Output->OutputBlockOffset > Max || (Output->OutputBlockOffset % Definition->OutputBlockAlignment) != 0)
                 {
@@ -338,43 +338,43 @@ namespace TerraFX.Interop
         }
 
         [NativeTypeName("#define DiskClassGuid GUID_DEVINTERFACE_DISK")]
-        public static readonly Guid DiskClassGuid = GUID_DEVINTERFACE_DISK;
+        public static ref readonly Guid DiskClassGuid => ref GUID_DEVINTERFACE_DISK;
 
         [NativeTypeName("#define CdRomClassGuid GUID_DEVINTERFACE_CDROM")]
-        public static readonly Guid CdRomClassGuid = GUID_DEVINTERFACE_CDROM;
+        public static ref readonly Guid CdRomClassGuid => ref GUID_DEVINTERFACE_CDROM;
 
         [NativeTypeName("#define PartitionClassGuid GUID_DEVINTERFACE_PARTITION")]
-        public static readonly Guid PartitionClassGuid = GUID_DEVINTERFACE_PARTITION;
+        public static ref readonly Guid PartitionClassGuid => ref GUID_DEVINTERFACE_PARTITION;
 
         [NativeTypeName("#define TapeClassGuid GUID_DEVINTERFACE_TAPE")]
-        public static readonly Guid TapeClassGuid = GUID_DEVINTERFACE_TAPE;
+        public static ref readonly Guid TapeClassGuid => ref GUID_DEVINTERFACE_TAPE;
 
         [NativeTypeName("#define WriteOnceDiskClassGuid GUID_DEVINTERFACE_WRITEONCEDISK")]
-        public static readonly Guid WriteOnceDiskClassGuid = GUID_DEVINTERFACE_WRITEONCEDISK;
+        public static ref readonly Guid WriteOnceDiskClassGuid => ref GUID_DEVINTERFACE_WRITEONCEDISK;
 
         [NativeTypeName("#define VolumeClassGuid GUID_DEVINTERFACE_VOLUME")]
-        public static readonly Guid VolumeClassGuid = GUID_DEVINTERFACE_VOLUME;
+        public static ref readonly Guid VolumeClassGuid => ref GUID_DEVINTERFACE_VOLUME;
 
         [NativeTypeName("#define MediumChangerClassGuid GUID_DEVINTERFACE_MEDIUMCHANGER")]
-        public static readonly Guid MediumChangerClassGuid = GUID_DEVINTERFACE_MEDIUMCHANGER;
+        public static ref readonly Guid MediumChangerClassGuid => ref GUID_DEVINTERFACE_MEDIUMCHANGER;
 
         [NativeTypeName("#define FloppyClassGuid GUID_DEVINTERFACE_FLOPPY")]
-        public static readonly Guid FloppyClassGuid = GUID_DEVINTERFACE_FLOPPY;
+        public static ref readonly Guid FloppyClassGuid => ref GUID_DEVINTERFACE_FLOPPY;
 
         [NativeTypeName("#define CdChangerClassGuid GUID_DEVINTERFACE_CDCHANGER")]
-        public static readonly Guid CdChangerClassGuid = GUID_DEVINTERFACE_CDCHANGER;
+        public static ref readonly Guid CdChangerClassGuid => ref GUID_DEVINTERFACE_CDCHANGER;
 
         [NativeTypeName("#define StoragePortClassGuid GUID_DEVINTERFACE_STORAGEPORT")]
-        public static readonly Guid StoragePortClassGuid = GUID_DEVINTERFACE_STORAGEPORT;
+        public static ref readonly Guid StoragePortClassGuid => ref GUID_DEVINTERFACE_STORAGEPORT;
 
         [NativeTypeName("#define HiddenVolumeClassGuid GUID_DEVINTERFACE_HIDDEN_VOLUME")]
-        public static readonly Guid HiddenVolumeClassGuid = GUID_DEVINTERFACE_HIDDEN_VOLUME;
+        public static ref readonly Guid HiddenVolumeClassGuid => ref GUID_DEVINTERFACE_HIDDEN_VOLUME;
 
         [NativeTypeName("#define GUID_CLASS_COMPORT GUID_DEVINTERFACE_COMPORT")]
-        public static readonly Guid GUID_CLASS_COMPORT = GUID_DEVINTERFACE_COMPORT;
+        public static ref readonly Guid GUID_CLASS_COMPORT => ref GUID_DEVINTERFACE_COMPORT;
 
         [NativeTypeName("#define GUID_SERENUM_BUS_ENUMERATOR GUID_DEVINTERFACE_SERENUM_BUS_ENUMERATOR")]
-        public static readonly Guid GUID_SERENUM_BUS_ENUMERATOR = GUID_DEVINTERFACE_SERENUM_BUS_ENUMERATOR;
+        public static ref readonly Guid GUID_SERENUM_BUS_ENUMERATOR => ref GUID_DEVINTERFACE_SERENUM_BUS_ENUMERATOR;
 
         [NativeTypeName("#define FILE_DEVICE_BEEP 0x00000001")]
         public const int FILE_DEVICE_BEEP = 0x00000001;
@@ -995,10 +995,10 @@ namespace TerraFX.Interop
         public const int STORAGE_ADAPTER_SERIAL_NUMBER_V1_MAX_LENGTH = (128);
 
         [NativeTypeName("#define STORAGE_ADAPTER_SERIAL_NUMBER_V1_VERSION (sizeof(STORAGE_ADAPTER_SERIAL_NUMBER))")]
-        public const uint STORAGE_ADAPTER_SERIAL_NUMBER_V1_VERSION = unchecked(264);
+        public const uint STORAGE_ADAPTER_SERIAL_NUMBER_V1_VERSION = (264);
 
         [NativeTypeName("#define STORAGE_ADAPTER_SERIAL_NUMBER_V1_SIZE (sizeof(STORAGE_ADAPTER_SERIAL_NUMBER))")]
-        public const uint STORAGE_ADAPTER_SERIAL_NUMBER_V1_SIZE = unchecked(264);
+        public const uint STORAGE_ADAPTER_SERIAL_NUMBER_V1_SIZE = (264);
 
         [NativeTypeName("#define STORAGE_DEVICE_NUMA_NODE_UNKNOWN MAXDWORD")]
         public const uint STORAGE_DEVICE_NUMA_NODE_UNKNOWN = 0xffffffff;
@@ -1139,16 +1139,16 @@ namespace TerraFX.Interop
         public const int DEVICE_DATA_SET_LBP_STATE_PARAMETERS_VERSION_V1 = 1;
 
         [NativeTypeName("#define DEVICE_DSM_ALLOCATION_OUTPUT_V1 (sizeof(DEVICE_DSM_ALLOCATION_OUTPUT))")]
-        public const uint DEVICE_DSM_ALLOCATION_OUTPUT_V1 = unchecked(32);
+        public const uint DEVICE_DSM_ALLOCATION_OUTPUT_V1 = (32);
 
         [NativeTypeName("#define DEVICE_DATA_SET_LB_PROVISIONING_STATE_VERSION_V1 DEVICE_DSM_ALLOCATION_OUTPUT_V1")]
-        public const uint DEVICE_DATA_SET_LB_PROVISIONING_STATE_VERSION_V1 = unchecked(32);
+        public const uint DEVICE_DATA_SET_LB_PROVISIONING_STATE_VERSION_V1 = (32);
 
         [NativeTypeName("#define DEVICE_DSM_ALLOCATION_OUTPUT_V2 (sizeof(DEVICE_DSM_ALLOCATION_OUTPUT2))")]
-        public const uint DEVICE_DSM_ALLOCATION_OUTPUT_V2 = unchecked(40);
+        public const uint DEVICE_DSM_ALLOCATION_OUTPUT_V2 = (40);
 
         [NativeTypeName("#define DEVICE_DATA_SET_LB_PROVISIONING_STATE_VERSION_V2 DEVICE_DSM_ALLOCATION_OUTPUT_V2")]
-        public const uint DEVICE_DATA_SET_LB_PROVISIONING_STATE_VERSION_V2 = unchecked(40);
+        public const uint DEVICE_DATA_SET_LB_PROVISIONING_STATE_VERSION_V2 = (40);
 
         [NativeTypeName("#define DEVICE_DSM_FLAG_REPAIR_INPUT_TOPOLOGY_ID_PRESENT 0x40000000")]
         public const int DEVICE_DSM_FLAG_REPAIR_INPUT_TOPOLOGY_ID_PRESENT = 0x40000000;
@@ -1277,7 +1277,7 @@ namespace TerraFX.Interop
         public const int READ_COPY_NUMBER_BYPASS_CACHE_FLAG = 0x00000100;
 
         [NativeTypeName("#define STORAGE_COUNTERS_VERSION_V1 sizeof(STORAGE_COUNTERS)")]
-        public const uint STORAGE_COUNTERS_VERSION_V1 = unchecked(32);
+        public const uint STORAGE_COUNTERS_VERSION_V1 = 32;
 
         [NativeTypeName("#define STORAGE_HW_FIRMWARE_REQUEST_FLAG_CONTROLLER 0x00000001")]
         public const int STORAGE_HW_FIRMWARE_REQUEST_FLAG_CONTROLLER = 0x00000001;
@@ -1700,10 +1700,10 @@ namespace TerraFX.Interop
         public const int HIST_NO_OF_BUCKETS = 24;
 
         [NativeTypeName("#define HISTOGRAM_BUCKET_SIZE sizeof(HISTOGRAM_BUCKET)")]
-        public const uint HISTOGRAM_BUCKET_SIZE = unchecked(8);
+        public const uint HISTOGRAM_BUCKET_SIZE = 8;
 
         [NativeTypeName("#define DISK_HISTOGRAM_SIZE sizeof(DISK_HISTOGRAM)")]
-        public const uint DISK_HISTOGRAM_SIZE = unchecked(72);
+        public const uint DISK_HISTOGRAM_SIZE = 72;
 
         [NativeTypeName("#define DISK_LOGGING_START 0")]
         public const int DISK_LOGGING_START = 0;
@@ -3467,7 +3467,7 @@ namespace TerraFX.Interop
         public const int CSV_MGMTLOCK_CHECK_VOLUME_REDIRECTED = 0x00000001;
 
         [NativeTypeName("#define CSV_NAMESPACE_INFO_V1 (sizeof(CSV_NAMESPACE_INFO))")]
-        public const uint CSV_NAMESPACE_INFO_V1 = unchecked(24);
+        public const uint CSV_NAMESPACE_INFO_V1 = (24);
 
         [NativeTypeName("#define CSV_INVALID_DEVICE_NUMBER 0xFFFFFFFF")]
         public const uint CSV_INVALID_DEVICE_NUMBER = 0xFFFFFFFF;
@@ -3641,7 +3641,7 @@ namespace TerraFX.Interop
         public const int QUERY_STORAGE_CLASSES_FLAGS_NO_DEFRAG_VOLUME = 0x20000000;
 
         [NativeTypeName("#define FSCTL_QUERY_STORAGE_CLASSES_OUTPUT_VERSION sizeof(FSCTL_QUERY_STORAGE_CLASSES_OUTPUT)")]
-        public const uint FSCTL_QUERY_STORAGE_CLASSES_OUTPUT_VERSION = unchecked(1088);
+        public const uint FSCTL_QUERY_STORAGE_CLASSES_OUTPUT_VERSION = 1088;
 
         [NativeTypeName("#define QUERY_FILE_LAYOUT_REPARSE_DATA_INVALID (0x0001)")]
         public const int QUERY_FILE_LAYOUT_REPARSE_DATA_INVALID = (0x0001);
@@ -3650,10 +3650,10 @@ namespace TerraFX.Interop
         public const int QUERY_FILE_LAYOUT_REPARSE_TAG_INVALID = (0x0002);
 
         [NativeTypeName("#define FSCTL_QUERY_REGION_INFO_INPUT_VERSION sizeof(FSCTL_QUERY_REGION_INFO_INPUT)")]
-        public const uint FSCTL_QUERY_REGION_INFO_INPUT_VERSION = unchecked(32);
+        public const uint FSCTL_QUERY_REGION_INFO_INPUT_VERSION = 32;
 
         [NativeTypeName("#define FSCTL_QUERY_REGION_INFO_OUTPUT_VERSION sizeof(FSCTL_QUERY_REGION_INFO_OUTPUT)")]
-        public const uint FSCTL_QUERY_REGION_INFO_OUTPUT_VERSION = unchecked(64);
+        public const uint FSCTL_QUERY_REGION_INFO_OUTPUT_VERSION = 64;
 
         [NativeTypeName("#define DUPLICATE_EXTENTS_DATA_EX_SOURCE_ATOMIC 0x00000001")]
         public const int DUPLICATE_EXTENTS_DATA_EX_SOURCE_ATOMIC = 0x00000001;
@@ -3662,7 +3662,7 @@ namespace TerraFX.Interop
         public const int DUPLICATE_EXTENTS_DATA_EX_ASYNC = 0x00000002;
 
         [NativeTypeName("#define ASYNC_DUPLICATE_EXTENTS_STATUS_V1 sizeof(ASYNC_DUPLICATE_EXTENTS_STATUS)")]
-        public const uint ASYNC_DUPLICATE_EXTENTS_STATUS_V1 = unchecked(40);
+        public const uint ASYNC_DUPLICATE_EXTENTS_STATUS_V1 = 40;
 
         [NativeTypeName("#define REFS_SMR_VOLUME_INFO_OUTPUT_VERSION_V0 0")]
         public const int REFS_SMR_VOLUME_INFO_OUTPUT_VERSION_V0 = 0;

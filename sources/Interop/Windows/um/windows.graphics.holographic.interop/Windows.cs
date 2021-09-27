@@ -4,17 +4,99 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
 {
     public static partial class Windows
     {
-        public static readonly Guid IID_IHolographicCameraInterop = new Guid(0x7CC1F9C5, 0x6D02, 0x41FA, 0x95, 0x00, 0xE1, 0x80, 0x9E, 0xB4, 0x8E, 0xEC);
+        public static ref readonly Guid IID_IHolographicCameraInterop
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xC5, 0xF9, 0xC1, 0x7C,
+                    0x02, 0x6D,
+                    0xFA, 0x41,
+                    0x95,
+                    0x00,
+                    0xE1,
+                    0x80,
+                    0x9E,
+                    0xB4,
+                    0x8E,
+                    0xEC
+                };
 
-        public static readonly Guid IID_IHolographicCameraRenderingParametersInterop = new Guid(0xF75B68D6, 0xD1FD, 0x4707, 0xAA, 0xFD, 0xFA, 0x6F, 0x4C, 0x0E, 0x3B, 0xF4);
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
-        public static readonly Guid IID_IHolographicQuadLayerInterop = new Guid(0xCFA688F0, 0x639E, 0x4A47, 0x83, 0xD7, 0x6B, 0x7F, 0x5E, 0xBF, 0x7F, 0xED);
+        public static ref readonly Guid IID_IHolographicCameraRenderingParametersInterop
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xD6, 0x68, 0x5B, 0xF7,
+                    0xFD, 0xD1,
+                    0x07, 0x47,
+                    0xAA,
+                    0xFD,
+                    0xFA,
+                    0x6F,
+                    0x4C,
+                    0x0E,
+                    0x3B,
+                    0xF4
+                };
 
-        public static readonly Guid IID_IHolographicQuadLayerUpdateParametersInterop = new Guid(0xE5F549CD, 0xC909, 0x444F, 0x88, 0x09, 0x7C, 0xC1, 0x8A, 0x9C, 0x89, 0x20);
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid IID_IHolographicQuadLayerInterop
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xF0, 0x88, 0xA6, 0xCF,
+                    0x9E, 0x63,
+                    0x47, 0x4A,
+                    0x83,
+                    0xD7,
+                    0x6B,
+                    0x7F,
+                    0x5E,
+                    0xBF,
+                    0x7F,
+                    0xED
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid IID_IHolographicQuadLayerUpdateParametersInterop
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xCD, 0x49, 0xF5, 0xE5,
+                    0x09, 0xC9,
+                    0x4F, 0x44,
+                    0x88,
+                    0x09,
+                    0x7C,
+                    0xC1,
+                    0x8A,
+                    0x9C,
+                    0x89,
+                    0x20
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
     }
 }

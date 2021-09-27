@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
@@ -51,16 +52,56 @@ namespace TerraFX.Interop
         public const int URL_E_UNREGISTERED_PROTOCOL = unchecked((int)(((uint)(1) << 31) | ((uint)(4) << 16) | ((uint)(0x1002))));
 
         [NativeTypeName("#define TranslateURL TranslateURLW")]
-        public static readonly delegate*<ushort*, uint, ushort**, int> TranslateURL = &TranslateURLW;
+        public static delegate*<ushort*, uint, ushort**, int> TranslateURL => &TranslateURLW;
 
         [NativeTypeName("#define URLAssociationDialog URLAssociationDialogW")]
-        public static readonly delegate*<IntPtr, uint, ushort*, ushort*, ushort*, uint, int> URLAssociationDialog = &URLAssociationDialogW;
+        public static delegate*<IntPtr, uint, ushort*, ushort*, ushort*, uint, int> URLAssociationDialog => &URLAssociationDialogW;
 
         [NativeTypeName("#define MIMEAssociationDialog MIMEAssociationDialogW")]
-        public static readonly delegate*<IntPtr, uint, ushort*, ushort*, ushort*, uint, int> MIMEAssociationDialog = &MIMEAssociationDialogW;
+        public static delegate*<IntPtr, uint, ushort*, ushort*, ushort*, uint, int> MIMEAssociationDialog => &MIMEAssociationDialogW;
 
-        public static readonly Guid IID_IUniformResourceLocatorA = new Guid(0xFBF23B80, 0xE3F0, 0x101B, 0x84, 0x88, 0x00, 0xAA, 0x00, 0x3E, 0x56, 0xF8);
+        public static ref readonly Guid IID_IUniformResourceLocatorA
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x80, 0x3B, 0xF2, 0xFB,
+                    0xF0, 0xE3,
+                    0x1B, 0x10,
+                    0x84,
+                    0x88,
+                    0x00,
+                    0xAA,
+                    0x00,
+                    0x3E,
+                    0x56,
+                    0xF8
+                };
 
-        public static readonly Guid IID_IUniformResourceLocatorW = new Guid(0xCABB0DA0, 0xDA57, 0x11CF, 0x99, 0x74, 0x00, 0x20, 0xAF, 0xD7, 0x97, 0x62);
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid IID_IUniformResourceLocatorW
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xA0, 0x0D, 0xBB, 0xCA,
+                    0x57, 0xDA,
+                    0xCF, 0x11,
+                    0x99,
+                    0x74,
+                    0x00,
+                    0x20,
+                    0xAF,
+                    0xD7,
+                    0x97,
+                    0x62
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
     }
 }

@@ -4,11 +4,33 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
 {
     public static partial class Windows
     {
-        public static readonly Guid LIBID_InkD2DRendererLib = new Guid(0x390D0AB0, 0x19E2, 0x46BB, 0x86, 0x2E, 0xB0, 0x9F, 0x3C, 0xDC, 0xF8, 0xB9);
+        public static ref Guid LIBID_InkD2DRendererLib
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xB0, 0x0A, 0x0D, 0x39,
+                    0xE2, 0x19,
+                    0xBB, 0x46,
+                    0x86,
+                    0x2E,
+                    0xB0,
+                    0x9F,
+                    0x3C,
+                    0xDC,
+                    0xF8,
+                    0xB9
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
     }
 }

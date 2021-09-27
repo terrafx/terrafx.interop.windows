@@ -4,77 +4,759 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
 {
     public static partial class Windows
     {
-        public static readonly Guid IID_IXMLDOMImplementation = new Guid(0x2933BF8F, 0x7B36, 0x11D2, 0xB2, 0x0E, 0x00, 0xC0, 0x4F, 0x98, 0x3E, 0x60);
+        public static ref readonly Guid IID_IXMLDOMImplementation
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x8F, 0xBF, 0x33, 0x29,
+                    0x36, 0x7B,
+                    0xD2, 0x11,
+                    0xB2,
+                    0x0E,
+                    0x00,
+                    0xC0,
+                    0x4F,
+                    0x98,
+                    0x3E,
+                    0x60
+                };
 
-        public static readonly Guid IID_IXMLDOMNode = new Guid(0x2933BF80, 0x7B36, 0x11D2, 0xB2, 0x0E, 0x00, 0xC0, 0x4F, 0x98, 0x3E, 0x60);
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
-        public static readonly Guid IID_IXMLDOMDocumentFragment = new Guid(0x3EFAA413, 0x272F, 0x11D2, 0x83, 0x6F, 0x00, 0x00, 0xF8, 0x7A, 0x77, 0x82);
+        public static ref readonly Guid IID_IXMLDOMNode
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x80, 0xBF, 0x33, 0x29,
+                    0x36, 0x7B,
+                    0xD2, 0x11,
+                    0xB2,
+                    0x0E,
+                    0x00,
+                    0xC0,
+                    0x4F,
+                    0x98,
+                    0x3E,
+                    0x60
+                };
 
-        public static readonly Guid IID_IXMLDOMDocument = new Guid(0x2933BF81, 0x7B36, 0x11D2, 0xB2, 0x0E, 0x00, 0xC0, 0x4F, 0x98, 0x3E, 0x60);
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
-        public static readonly Guid IID_IXMLDOMNodeList = new Guid(0x2933BF82, 0x7B36, 0x11D2, 0xB2, 0x0E, 0x00, 0xC0, 0x4F, 0x98, 0x3E, 0x60);
+        public static ref readonly Guid IID_IXMLDOMDocumentFragment
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x13, 0xA4, 0xFA, 0x3E,
+                    0x2F, 0x27,
+                    0xD2, 0x11,
+                    0x83,
+                    0x6F,
+                    0x00,
+                    0x00,
+                    0xF8,
+                    0x7A,
+                    0x77,
+                    0x82
+                };
 
-        public static readonly Guid IID_IXMLDOMNamedNodeMap = new Guid(0x2933BF83, 0x7B36, 0x11D2, 0xB2, 0x0E, 0x00, 0xC0, 0x4F, 0x98, 0x3E, 0x60);
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
-        public static readonly Guid IID_IXMLDOMCharacterData = new Guid(0x2933BF84, 0x7B36, 0x11D2, 0xB2, 0x0E, 0x00, 0xC0, 0x4F, 0x98, 0x3E, 0x60);
+        public static ref readonly Guid IID_IXMLDOMDocument
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x81, 0xBF, 0x33, 0x29,
+                    0x36, 0x7B,
+                    0xD2, 0x11,
+                    0xB2,
+                    0x0E,
+                    0x00,
+                    0xC0,
+                    0x4F,
+                    0x98,
+                    0x3E,
+                    0x60
+                };
 
-        public static readonly Guid IID_IXMLDOMAttribute = new Guid(0x2933BF85, 0x7B36, 0x11D2, 0xB2, 0x0E, 0x00, 0xC0, 0x4F, 0x98, 0x3E, 0x60);
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
-        public static readonly Guid IID_IXMLDOMElement = new Guid(0x2933BF86, 0x7B36, 0x11D2, 0xB2, 0x0E, 0x00, 0xC0, 0x4F, 0x98, 0x3E, 0x60);
+        public static ref readonly Guid IID_IXMLDOMNodeList
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x82, 0xBF, 0x33, 0x29,
+                    0x36, 0x7B,
+                    0xD2, 0x11,
+                    0xB2,
+                    0x0E,
+                    0x00,
+                    0xC0,
+                    0x4F,
+                    0x98,
+                    0x3E,
+                    0x60
+                };
 
-        public static readonly Guid IID_IXMLDOMText = new Guid(0x2933BF87, 0x7B36, 0x11D2, 0xB2, 0x0E, 0x00, 0xC0, 0x4F, 0x98, 0x3E, 0x60);
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
-        public static readonly Guid IID_IXMLDOMComment = new Guid(0x2933BF88, 0x7B36, 0x11D2, 0xB2, 0x0E, 0x00, 0xC0, 0x4F, 0x98, 0x3E, 0x60);
+        public static ref readonly Guid IID_IXMLDOMNamedNodeMap
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x83, 0xBF, 0x33, 0x29,
+                    0x36, 0x7B,
+                    0xD2, 0x11,
+                    0xB2,
+                    0x0E,
+                    0x00,
+                    0xC0,
+                    0x4F,
+                    0x98,
+                    0x3E,
+                    0x60
+                };
 
-        public static readonly Guid IID_IXMLDOMProcessingInstruction = new Guid(0x2933BF89, 0x7B36, 0x11D2, 0xB2, 0x0E, 0x00, 0xC0, 0x4F, 0x98, 0x3E, 0x60);
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
-        public static readonly Guid IID_IXMLDOMCDATASection = new Guid(0x2933BF8A, 0x7B36, 0x11D2, 0xB2, 0x0E, 0x00, 0xC0, 0x4F, 0x98, 0x3E, 0x60);
+        public static ref readonly Guid IID_IXMLDOMCharacterData
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x84, 0xBF, 0x33, 0x29,
+                    0x36, 0x7B,
+                    0xD2, 0x11,
+                    0xB2,
+                    0x0E,
+                    0x00,
+                    0xC0,
+                    0x4F,
+                    0x98,
+                    0x3E,
+                    0x60
+                };
 
-        public static readonly Guid IID_IXMLDOMDocumentType = new Guid(0x2933BF8B, 0x7B36, 0x11D2, 0xB2, 0x0E, 0x00, 0xC0, 0x4F, 0x98, 0x3E, 0x60);
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
-        public static readonly Guid IID_IXMLDOMNotation = new Guid(0x2933BF8C, 0x7B36, 0x11D2, 0xB2, 0x0E, 0x00, 0xC0, 0x4F, 0x98, 0x3E, 0x60);
+        public static ref readonly Guid IID_IXMLDOMAttribute
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x85, 0xBF, 0x33, 0x29,
+                    0x36, 0x7B,
+                    0xD2, 0x11,
+                    0xB2,
+                    0x0E,
+                    0x00,
+                    0xC0,
+                    0x4F,
+                    0x98,
+                    0x3E,
+                    0x60
+                };
 
-        public static readonly Guid IID_IXMLDOMEntity = new Guid(0x2933BF8D, 0x7B36, 0x11D2, 0xB2, 0x0E, 0x00, 0xC0, 0x4F, 0x98, 0x3E, 0x60);
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
-        public static readonly Guid IID_IXMLDOMEntityReference = new Guid(0x2933BF8E, 0x7B36, 0x11D2, 0xB2, 0x0E, 0x00, 0xC0, 0x4F, 0x98, 0x3E, 0x60);
+        public static ref readonly Guid IID_IXMLDOMElement
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x86, 0xBF, 0x33, 0x29,
+                    0x36, 0x7B,
+                    0xD2, 0x11,
+                    0xB2,
+                    0x0E,
+                    0x00,
+                    0xC0,
+                    0x4F,
+                    0x98,
+                    0x3E,
+                    0x60
+                };
 
-        public static readonly Guid IID_IXMLDOMParseError = new Guid(0x3EFAA426, 0x272F, 0x11D2, 0x83, 0x6F, 0x00, 0x00, 0xF8, 0x7A, 0x77, 0x82);
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
-        public static readonly Guid IID_IXTLRuntime = new Guid(0x3EFAA425, 0x272F, 0x11D2, 0x83, 0x6F, 0x00, 0x00, 0xF8, 0x7A, 0x77, 0x82);
+        public static ref readonly Guid IID_IXMLDOMText
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x87, 0xBF, 0x33, 0x29,
+                    0x36, 0x7B,
+                    0xD2, 0x11,
+                    0xB2,
+                    0x0E,
+                    0x00,
+                    0xC0,
+                    0x4F,
+                    0x98,
+                    0x3E,
+                    0x60
+                };
 
-        public static readonly Guid DIID_XMLDOMDocumentEvents = new Guid(0x3EFAA427, 0x272F, 0x11D2, 0x83, 0x6F, 0x00, 0x00, 0xF8, 0x7A, 0x77, 0x82);
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
-        public static readonly Guid CLSID_DOMDocument = new Guid(0x2933BF90, 0x7B36, 0x11D2, 0xB2, 0x0E, 0x00, 0xC0, 0x4F, 0x98, 0x3E, 0x60);
+        public static ref readonly Guid IID_IXMLDOMComment
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x88, 0xBF, 0x33, 0x29,
+                    0x36, 0x7B,
+                    0xD2, 0x11,
+                    0xB2,
+                    0x0E,
+                    0x00,
+                    0xC0,
+                    0x4F,
+                    0x98,
+                    0x3E,
+                    0x60
+                };
 
-        public static readonly Guid CLSID_DOMFreeThreadedDocument = new Guid(0x2933BF91, 0x7B36, 0x11D2, 0xB2, 0x0E, 0x00, 0xC0, 0x4F, 0x98, 0x3E, 0x60);
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
-        public static readonly Guid IID_IXMLHttpRequest = new Guid(0xED8C108D, 0x4349, 0x11D2, 0x91, 0xA4, 0x00, 0xC0, 0x4F, 0x79, 0x69, 0xE8);
+        public static ref readonly Guid IID_IXMLDOMProcessingInstruction
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x89, 0xBF, 0x33, 0x29,
+                    0x36, 0x7B,
+                    0xD2, 0x11,
+                    0xB2,
+                    0x0E,
+                    0x00,
+                    0xC0,
+                    0x4F,
+                    0x98,
+                    0x3E,
+                    0x60
+                };
 
-        public static readonly Guid CLSID_XMLHTTPRequest = new Guid(0xED8C108E, 0x4349, 0x11D2, 0x91, 0xA4, 0x00, 0xC0, 0x4F, 0x79, 0x69, 0xE8);
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
-        public static readonly Guid IID_IXMLDSOControl = new Guid(0x310AFA62, 0x0575, 0x11D2, 0x9C, 0xA9, 0x00, 0x60, 0xB0, 0xEC, 0x3D, 0x39);
+        public static ref readonly Guid IID_IXMLDOMCDATASection
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x8A, 0xBF, 0x33, 0x29,
+                    0x36, 0x7B,
+                    0xD2, 0x11,
+                    0xB2,
+                    0x0E,
+                    0x00,
+                    0xC0,
+                    0x4F,
+                    0x98,
+                    0x3E,
+                    0x60
+                };
 
-        public static readonly Guid CLSID_XMLDSOControl = new Guid(0x550DDA30, 0x0541, 0x11D2, 0x9C, 0xA9, 0x00, 0x60, 0xB0, 0xEC, 0x3D, 0x39);
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
-        public static readonly Guid IID_IXMLElementCollection = new Guid(0x65725580, 0x9B5D, 0x11D0, 0x9B, 0xFE, 0x00, 0xC0, 0x4F, 0xC9, 0x9C, 0x8E);
+        public static ref readonly Guid IID_IXMLDOMDocumentType
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x8B, 0xBF, 0x33, 0x29,
+                    0x36, 0x7B,
+                    0xD2, 0x11,
+                    0xB2,
+                    0x0E,
+                    0x00,
+                    0xC0,
+                    0x4F,
+                    0x98,
+                    0x3E,
+                    0x60
+                };
 
-        public static readonly Guid IID_IXMLDocument = new Guid(0xF52E2B61, 0x18A1, 0x11D1, 0xB1, 0x05, 0x00, 0x80, 0x5F, 0x49, 0x91, 0x6B);
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
-        public static readonly Guid IID_IXMLDocument2 = new Guid(0x2B8DE2FE, 0x8D2D, 0x11D1, 0xB2, 0xFC, 0x00, 0xC0, 0x4F, 0xD9, 0x15, 0xA9);
+        public static ref readonly Guid IID_IXMLDOMNotation
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x8C, 0xBF, 0x33, 0x29,
+                    0x36, 0x7B,
+                    0xD2, 0x11,
+                    0xB2,
+                    0x0E,
+                    0x00,
+                    0xC0,
+                    0x4F,
+                    0x98,
+                    0x3E,
+                    0x60
+                };
 
-        public static readonly Guid IID_IXMLElement = new Guid(0x3F7F31AC, 0xE15F, 0x11D0, 0x9C, 0x25, 0x00, 0xC0, 0x4F, 0xC9, 0x9C, 0x8E);
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
-        public static readonly Guid IID_IXMLElement2 = new Guid(0x2B8DE2FF, 0x8D2D, 0x11D1, 0xB2, 0xFC, 0x00, 0xC0, 0x4F, 0xD9, 0x15, 0xA9);
+        public static ref readonly Guid IID_IXMLDOMEntity
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x8D, 0xBF, 0x33, 0x29,
+                    0x36, 0x7B,
+                    0xD2, 0x11,
+                    0xB2,
+                    0x0E,
+                    0x00,
+                    0xC0,
+                    0x4F,
+                    0x98,
+                    0x3E,
+                    0x60
+                };
 
-        public static readonly Guid IID_IXMLAttribute = new Guid(0xD4D4A0FC, 0x3B73, 0x11D1, 0xB2, 0xB4, 0x00, 0xC0, 0x4F, 0xB9, 0x25, 0x96);
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
-        public static readonly Guid IID_IXMLError = new Guid(0x948C5AD3, 0xC58D, 0x11D0, 0x9C, 0x0B, 0x00, 0xC0, 0x4F, 0xC9, 0x9C, 0x8E);
+        public static ref readonly Guid IID_IXMLDOMEntityReference
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x8E, 0xBF, 0x33, 0x29,
+                    0x36, 0x7B,
+                    0xD2, 0x11,
+                    0xB2,
+                    0x0E,
+                    0x00,
+                    0xC0,
+                    0x4F,
+                    0x98,
+                    0x3E,
+                    0x60
+                };
 
-        public static readonly Guid CLSID_XMLDocument = new Guid(0xCFC399AF, 0xD876, 0x11D0, 0x9C, 0x10, 0x00, 0xC0, 0x4F, 0xC9, 0x9C, 0x8E);
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid IID_IXMLDOMParseError
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x26, 0xA4, 0xFA, 0x3E,
+                    0x2F, 0x27,
+                    0xD2, 0x11,
+                    0x83,
+                    0x6F,
+                    0x00,
+                    0x00,
+                    0xF8,
+                    0x7A,
+                    0x77,
+                    0x82
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid IID_IXTLRuntime
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x25, 0xA4, 0xFA, 0x3E,
+                    0x2F, 0x27,
+                    0xD2, 0x11,
+                    0x83,
+                    0x6F,
+                    0x00,
+                    0x00,
+                    0xF8,
+                    0x7A,
+                    0x77,
+                    0x82
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid DIID_XMLDOMDocumentEvents
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x27, 0xA4, 0xFA, 0x3E,
+                    0x2F, 0x27,
+                    0xD2, 0x11,
+                    0x83,
+                    0x6F,
+                    0x00,
+                    0x00,
+                    0xF8,
+                    0x7A,
+                    0x77,
+                    0x82
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid CLSID_DOMDocument
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x90, 0xBF, 0x33, 0x29,
+                    0x36, 0x7B,
+                    0xD2, 0x11,
+                    0xB2,
+                    0x0E,
+                    0x00,
+                    0xC0,
+                    0x4F,
+                    0x98,
+                    0x3E,
+                    0x60
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid CLSID_DOMFreeThreadedDocument
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x91, 0xBF, 0x33, 0x29,
+                    0x36, 0x7B,
+                    0xD2, 0x11,
+                    0xB2,
+                    0x0E,
+                    0x00,
+                    0xC0,
+                    0x4F,
+                    0x98,
+                    0x3E,
+                    0x60
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid IID_IXMLHttpRequest
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x8D, 0x10, 0x8C, 0xED,
+                    0x49, 0x43,
+                    0xD2, 0x11,
+                    0x91,
+                    0xA4,
+                    0x00,
+                    0xC0,
+                    0x4F,
+                    0x79,
+                    0x69,
+                    0xE8
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid CLSID_XMLHTTPRequest
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x8E, 0x10, 0x8C, 0xED,
+                    0x49, 0x43,
+                    0xD2, 0x11,
+                    0x91,
+                    0xA4,
+                    0x00,
+                    0xC0,
+                    0x4F,
+                    0x79,
+                    0x69,
+                    0xE8
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid IID_IXMLDSOControl
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x62, 0xFA, 0x0A, 0x31,
+                    0x75, 0x05,
+                    0xD2, 0x11,
+                    0x9C,
+                    0xA9,
+                    0x00,
+                    0x60,
+                    0xB0,
+                    0xEC,
+                    0x3D,
+                    0x39
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid CLSID_XMLDSOControl
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x30, 0xDA, 0x0D, 0x55,
+                    0x41, 0x05,
+                    0xD2, 0x11,
+                    0x9C,
+                    0xA9,
+                    0x00,
+                    0x60,
+                    0xB0,
+                    0xEC,
+                    0x3D,
+                    0x39
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid IID_IXMLElementCollection
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x80, 0x55, 0x72, 0x65,
+                    0x5D, 0x9B,
+                    0xD0, 0x11,
+                    0x9B,
+                    0xFE,
+                    0x00,
+                    0xC0,
+                    0x4F,
+                    0xC9,
+                    0x9C,
+                    0x8E
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid IID_IXMLDocument
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x61, 0x2B, 0x2E, 0xF5,
+                    0xA1, 0x18,
+                    0xD1, 0x11,
+                    0xB1,
+                    0x05,
+                    0x00,
+                    0x80,
+                    0x5F,
+                    0x49,
+                    0x91,
+                    0x6B
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid IID_IXMLDocument2
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xFE, 0xE2, 0x8D, 0x2B,
+                    0x2D, 0x8D,
+                    0xD1, 0x11,
+                    0xB2,
+                    0xFC,
+                    0x00,
+                    0xC0,
+                    0x4F,
+                    0xD9,
+                    0x15,
+                    0xA9
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid IID_IXMLElement
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xAC, 0x31, 0x7F, 0x3F,
+                    0x5F, 0xE1,
+                    0xD0, 0x11,
+                    0x9C,
+                    0x25,
+                    0x00,
+                    0xC0,
+                    0x4F,
+                    0xC9,
+                    0x9C,
+                    0x8E
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid IID_IXMLElement2
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xFF, 0xE2, 0x8D, 0x2B,
+                    0x2D, 0x8D,
+                    0xD1, 0x11,
+                    0xB2,
+                    0xFC,
+                    0x00,
+                    0xC0,
+                    0x4F,
+                    0xD9,
+                    0x15,
+                    0xA9
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid IID_IXMLAttribute
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xFC, 0xA0, 0xD4, 0xD4,
+                    0x73, 0x3B,
+                    0xD1, 0x11,
+                    0xB2,
+                    0xB4,
+                    0x00,
+                    0xC0,
+                    0x4F,
+                    0xB9,
+                    0x25,
+                    0x96
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid IID_IXMLError
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xD3, 0x5A, 0x8C, 0x94,
+                    0x8D, 0xC5,
+                    0xD0, 0x11,
+                    0x9C,
+                    0x0B,
+                    0x00,
+                    0xC0,
+                    0x4F,
+                    0xC9,
+                    0x9C,
+                    0x8E
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid CLSID_XMLDocument
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xAF, 0x99, 0xC3, 0xCF,
+                    0x76, 0xD8,
+                    0xD0, 0x11,
+                    0x9C,
+                    0x10,
+                    0x00,
+                    0xC0,
+                    0x4F,
+                    0xC9,
+                    0x9C,
+                    0x8E
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
     }
 }
