@@ -11,8 +11,9 @@ namespace TerraFX.Interop
 {
     public static unsafe partial class Windows
     {
-        public static ref Guid LIBID_PropSysObjects
+        public static ref readonly Guid LIBID_PropSysObjects
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {

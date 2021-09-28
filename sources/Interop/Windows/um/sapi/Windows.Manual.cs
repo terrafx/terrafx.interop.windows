@@ -13,8 +13,9 @@ namespace TerraFX.Interop
     {
         public static ulong SPFEI(int SPEI_ord) => ((1UL << SPEI_ord) | SPFEI_FLAGCHECK);
 
-        public static ref Guid LIBID_SpeechLib
+        public static ref readonly Guid LIBID_SpeechLib
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {

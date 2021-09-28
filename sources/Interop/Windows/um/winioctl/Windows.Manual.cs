@@ -11,8 +11,9 @@ namespace TerraFX.Interop
 {
     public static partial class Windows
     {
-        public static ref Guid GUID_DEVINTERFACE_DISK
+        public static ref readonly Guid GUID_DEVINTERFACE_DISK
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -33,8 +34,9 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref Guid GUID_DEVINTERFACE_CDROM
+        public static ref readonly Guid GUID_DEVINTERFACE_CDROM
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -55,8 +57,9 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref Guid GUID_DEVINTERFACE_PARTITION
+        public static ref readonly Guid GUID_DEVINTERFACE_PARTITION
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -77,8 +80,9 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref Guid GUID_DEVINTERFACE_TAPE
+        public static ref readonly Guid GUID_DEVINTERFACE_TAPE
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -99,8 +103,9 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref Guid GUID_DEVINTERFACE_WRITEONCEDISK
+        public static ref readonly Guid GUID_DEVINTERFACE_WRITEONCEDISK
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -121,8 +126,9 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref Guid GUID_DEVINTERFACE_VOLUME
+        public static ref readonly Guid GUID_DEVINTERFACE_VOLUME
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -143,8 +149,9 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref Guid GUID_DEVINTERFACE_MEDIUMCHANGER
+        public static ref readonly Guid GUID_DEVINTERFACE_MEDIUMCHANGER
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -165,8 +172,9 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref Guid GUID_DEVINTERFACE_FLOPPY
+        public static ref readonly Guid GUID_DEVINTERFACE_FLOPPY
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -187,8 +195,9 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref Guid GUID_DEVINTERFACE_CDCHANGER
+        public static ref readonly Guid GUID_DEVINTERFACE_CDCHANGER
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -209,8 +218,9 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref Guid GUID_DEVINTERFACE_STORAGEPORT
+        public static ref readonly Guid GUID_DEVINTERFACE_STORAGEPORT
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -231,8 +241,9 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref Guid GUID_DEVINTERFACE_VMLUN
+        public static ref readonly Guid GUID_DEVINTERFACE_VMLUN
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -253,8 +264,9 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref Guid GUID_DEVINTERFACE_SES
+        public static ref readonly Guid GUID_DEVINTERFACE_SES
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -275,8 +287,9 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref Guid GUID_DEVINTERFACE_SERVICE_VOLUME
+        public static ref readonly Guid GUID_DEVINTERFACE_SERVICE_VOLUME
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -297,8 +310,9 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref Guid GUID_DEVINTERFACE_HIDDEN_VOLUME
+        public static ref readonly Guid GUID_DEVINTERFACE_HIDDEN_VOLUME
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -319,8 +333,9 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref Guid GUID_DEVINTERFACE_UNIFIED_ACCESS_RPMB
+        public static ref readonly Guid GUID_DEVINTERFACE_UNIFIED_ACCESS_RPMB
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -341,8 +356,9 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref Guid GUID_DEVINTERFACE_SCM_PHYSICAL_DEVICE
+        public static ref readonly Guid GUID_DEVINTERFACE_SCM_PHYSICAL_DEVICE
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -363,8 +379,9 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref Guid GUID_SCM_PD_HEALTH_NOTIFICATION
+        public static ref readonly Guid GUID_SCM_PD_HEALTH_NOTIFICATION
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -385,8 +402,9 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref Guid GUID_SCM_PD_PASSTHROUGH_INVDIMM
+        public static ref readonly Guid GUID_SCM_PD_PASSTHROUGH_INVDIMM
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -407,8 +425,9 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref Guid GUID_DEVINTERFACE_COMPORT
+        public static ref readonly Guid GUID_DEVINTERFACE_COMPORT
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -429,8 +448,9 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref Guid GUID_DEVINTERFACE_SERENUM_BUS_ENUMERATOR
+        public static ref readonly Guid GUID_DEVINTERFACE_SERENUM_BUS_ENUMERATOR
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -451,8 +471,9 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref Guid FILE_TYPE_NOTIFICATION_GUID_PAGE_FILE
+        public static ref readonly Guid FILE_TYPE_NOTIFICATION_GUID_PAGE_FILE
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -473,8 +494,9 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref Guid FILE_TYPE_NOTIFICATION_GUID_HIBERNATION_FILE
+        public static ref readonly Guid FILE_TYPE_NOTIFICATION_GUID_HIBERNATION_FILE
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -495,8 +517,9 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref Guid FILE_TYPE_NOTIFICATION_GUID_CRASHDUMP_FILE
+        public static ref readonly Guid FILE_TYPE_NOTIFICATION_GUID_CRASHDUMP_FILE
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {

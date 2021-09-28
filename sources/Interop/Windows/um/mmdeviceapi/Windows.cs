@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.EndpointFormFactor;
@@ -15,6 +16,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const PROPERTYKEY")]
         public static ref readonly PROPERTYKEY PKEY_AudioEndpoint_FormFactor
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -32,6 +34,7 @@ namespace TerraFX.Interop
                     0x00, 0x00, 0x00, 0x00
                 };
 
+                Debug.Assert(data.Length == Unsafe.SizeOf<PROPERTYKEY>());
                 return ref Unsafe.As<byte, PROPERTYKEY>(ref MemoryMarshal.GetReference(data));
             }
         }
@@ -39,6 +42,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const PROPERTYKEY")]
         public static ref readonly PROPERTYKEY PKEY_AudioEndpoint_ControlPanelPageProvider
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -56,6 +60,7 @@ namespace TerraFX.Interop
                     0x01, 0x00, 0x00, 0x00
                 };
 
+                Debug.Assert(data.Length == Unsafe.SizeOf<PROPERTYKEY>());
                 return ref Unsafe.As<byte, PROPERTYKEY>(ref MemoryMarshal.GetReference(data));
             }
         }
@@ -63,6 +68,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const PROPERTYKEY")]
         public static ref readonly PROPERTYKEY PKEY_AudioEndpoint_Association
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -80,6 +86,7 @@ namespace TerraFX.Interop
                     0x02, 0x00, 0x00, 0x00
                 };
 
+                Debug.Assert(data.Length == Unsafe.SizeOf<PROPERTYKEY>());
                 return ref Unsafe.As<byte, PROPERTYKEY>(ref MemoryMarshal.GetReference(data));
             }
         }
@@ -87,6 +94,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const PROPERTYKEY")]
         public static ref readonly PROPERTYKEY PKEY_AudioEndpoint_PhysicalSpeakers
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -104,6 +112,7 @@ namespace TerraFX.Interop
                     0x03, 0x00, 0x00, 0x00
                 };
 
+                Debug.Assert(data.Length == Unsafe.SizeOf<PROPERTYKEY>());
                 return ref Unsafe.As<byte, PROPERTYKEY>(ref MemoryMarshal.GetReference(data));
             }
         }
@@ -111,6 +120,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const PROPERTYKEY")]
         public static ref readonly PROPERTYKEY PKEY_AudioEndpoint_GUID
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -128,6 +138,7 @@ namespace TerraFX.Interop
                     0x04, 0x00, 0x00, 0x00
                 };
 
+                Debug.Assert(data.Length == Unsafe.SizeOf<PROPERTYKEY>());
                 return ref Unsafe.As<byte, PROPERTYKEY>(ref MemoryMarshal.GetReference(data));
             }
         }
@@ -135,6 +146,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const PROPERTYKEY")]
         public static ref readonly PROPERTYKEY PKEY_AudioEndpoint_Disable_SysFx
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -152,6 +164,7 @@ namespace TerraFX.Interop
                     0x05, 0x00, 0x00, 0x00
                 };
 
+                Debug.Assert(data.Length == Unsafe.SizeOf<PROPERTYKEY>());
                 return ref Unsafe.As<byte, PROPERTYKEY>(ref MemoryMarshal.GetReference(data));
             }
         }
@@ -159,6 +172,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const PROPERTYKEY")]
         public static ref readonly PROPERTYKEY PKEY_AudioEndpoint_FullRangeSpeakers
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -176,6 +190,7 @@ namespace TerraFX.Interop
                     0x06, 0x00, 0x00, 0x00
                 };
 
+                Debug.Assert(data.Length == Unsafe.SizeOf<PROPERTYKEY>());
                 return ref Unsafe.As<byte, PROPERTYKEY>(ref MemoryMarshal.GetReference(data));
             }
         }
@@ -183,6 +198,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const PROPERTYKEY")]
         public static ref readonly PROPERTYKEY PKEY_AudioEndpoint_Supports_EventDriven_Mode
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -200,6 +216,7 @@ namespace TerraFX.Interop
                     0x07, 0x00, 0x00, 0x00
                 };
 
+                Debug.Assert(data.Length == Unsafe.SizeOf<PROPERTYKEY>());
                 return ref Unsafe.As<byte, PROPERTYKEY>(ref MemoryMarshal.GetReference(data));
             }
         }
@@ -207,6 +224,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const PROPERTYKEY")]
         public static ref readonly PROPERTYKEY PKEY_AudioEndpoint_JackSubType
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -224,6 +242,7 @@ namespace TerraFX.Interop
                     0x08, 0x00, 0x00, 0x00
                 };
 
+                Debug.Assert(data.Length == Unsafe.SizeOf<PROPERTYKEY>());
                 return ref Unsafe.As<byte, PROPERTYKEY>(ref MemoryMarshal.GetReference(data));
             }
         }
@@ -231,6 +250,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const PROPERTYKEY")]
         public static ref readonly PROPERTYKEY PKEY_AudioEndpoint_Default_VolumeInDb
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -248,6 +268,7 @@ namespace TerraFX.Interop
                     0x09, 0x00, 0x00, 0x00
                 };
 
+                Debug.Assert(data.Length == Unsafe.SizeOf<PROPERTYKEY>());
                 return ref Unsafe.As<byte, PROPERTYKEY>(ref MemoryMarshal.GetReference(data));
             }
         }
@@ -255,6 +276,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const PROPERTYKEY")]
         public static ref readonly PROPERTYKEY PKEY_AudioEngine_DeviceFormat
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -272,6 +294,7 @@ namespace TerraFX.Interop
                     0x00, 0x00, 0x00, 0x00
                 };
 
+                Debug.Assert(data.Length == Unsafe.SizeOf<PROPERTYKEY>());
                 return ref Unsafe.As<byte, PROPERTYKEY>(ref MemoryMarshal.GetReference(data));
             }
         }
@@ -279,6 +302,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const PROPERTYKEY")]
         public static ref readonly PROPERTYKEY PKEY_AudioEngine_OEMFormat
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -296,6 +320,7 @@ namespace TerraFX.Interop
                     0x03, 0x00, 0x00, 0x00
                 };
 
+                Debug.Assert(data.Length == Unsafe.SizeOf<PROPERTYKEY>());
                 return ref Unsafe.As<byte, PROPERTYKEY>(ref MemoryMarshal.GetReference(data));
             }
         }
@@ -303,6 +328,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const PROPERTYKEY")]
         public static ref readonly PROPERTYKEY PKEY_AudioEndpointLogo_IconEffects
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -320,6 +346,7 @@ namespace TerraFX.Interop
                     0x00, 0x00, 0x00, 0x00
                 };
 
+                Debug.Assert(data.Length == Unsafe.SizeOf<PROPERTYKEY>());
                 return ref Unsafe.As<byte, PROPERTYKEY>(ref MemoryMarshal.GetReference(data));
             }
         }
@@ -327,6 +354,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const PROPERTYKEY")]
         public static ref readonly PROPERTYKEY PKEY_AudioEndpointLogo_IconPath
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -344,6 +372,7 @@ namespace TerraFX.Interop
                     0x01, 0x00, 0x00, 0x00
                 };
 
+                Debug.Assert(data.Length == Unsafe.SizeOf<PROPERTYKEY>());
                 return ref Unsafe.As<byte, PROPERTYKEY>(ref MemoryMarshal.GetReference(data));
             }
         }
@@ -351,6 +380,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const PROPERTYKEY")]
         public static ref readonly PROPERTYKEY PKEY_AudioEndpointSettings_MenuText
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -368,6 +398,7 @@ namespace TerraFX.Interop
                     0x00, 0x00, 0x00, 0x00
                 };
 
+                Debug.Assert(data.Length == Unsafe.SizeOf<PROPERTYKEY>());
                 return ref Unsafe.As<byte, PROPERTYKEY>(ref MemoryMarshal.GetReference(data));
             }
         }
@@ -375,6 +406,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const PROPERTYKEY")]
         public static ref readonly PROPERTYKEY PKEY_AudioEndpointSettings_LaunchContract
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -392,6 +424,7 @@ namespace TerraFX.Interop
                     0x01, 0x00, 0x00, 0x00
                 };
 
+                Debug.Assert(data.Length == Unsafe.SizeOf<PROPERTYKEY>());
                 return ref Unsafe.As<byte, PROPERTYKEY>(ref MemoryMarshal.GetReference(data));
             }
         }
@@ -399,6 +432,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const GUID")]
         public static ref readonly Guid DEVINTERFACE_AUDIO_RENDER
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -415,6 +449,7 @@ namespace TerraFX.Interop
                     0xD2
                 };
 
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
                 return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
             }
         }
@@ -422,6 +457,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const GUID")]
         public static ref readonly Guid DEVINTERFACE_AUDIO_CAPTURE
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -438,6 +474,7 @@ namespace TerraFX.Interop
                     0x3F
                 };
 
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
                 return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
             }
         }
@@ -445,6 +482,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const GUID")]
         public static ref readonly Guid DEVINTERFACE_MIDI_OUTPUT
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -461,6 +499,7 @@ namespace TerraFX.Interop
                     0x14
                 };
 
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
                 return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
             }
         }
@@ -468,6 +507,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const GUID")]
         public static ref readonly Guid DEVINTERFACE_MIDI_INPUT
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -484,6 +524,7 @@ namespace TerraFX.Interop
                     0x2B
                 };
 
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
                 return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
             }
         }
@@ -540,6 +581,7 @@ namespace TerraFX.Interop
                     0xC0
                 };
 
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
                 return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
             }
         }
@@ -562,6 +604,7 @@ namespace TerraFX.Interop
                     0x3F
                 };
 
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
                 return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
             }
         }
@@ -584,6 +627,7 @@ namespace TerraFX.Interop
                     0x5E
                 };
 
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
                 return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
             }
         }
@@ -606,6 +650,7 @@ namespace TerraFX.Interop
                     0xC5
                 };
 
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
                 return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
             }
         }
@@ -628,6 +673,7 @@ namespace TerraFX.Interop
                     0xE6
                 };
 
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
                 return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
             }
         }
@@ -650,6 +696,7 @@ namespace TerraFX.Interop
                     0xC0
                 };
 
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
                 return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
             }
         }
@@ -672,6 +719,7 @@ namespace TerraFX.Interop
                     0xEB
                 };
 
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
                 return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
             }
         }
@@ -694,6 +742,7 @@ namespace TerraFX.Interop
                     0x6D
                 };
 
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
                 return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
             }
         }

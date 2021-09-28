@@ -11,8 +11,9 @@ namespace TerraFX.Interop
 {
     public static unsafe partial class Windows
     {
-        public static ref Guid CLSID_MMDeviceEnumerator
+        public static ref readonly Guid CLSID_MMDeviceEnumerator
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -33,8 +34,9 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref Guid LIBID_MMDeviceAPILib
+        public static ref readonly Guid LIBID_MMDeviceAPILib
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {

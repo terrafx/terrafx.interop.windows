@@ -13,6 +13,7 @@ namespace TerraFX.Interop
     {
         public static ref readonly Guid LIBID_APPXPACKAGING
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -35,6 +36,7 @@ namespace TerraFX.Interop
 
         public static ref readonly Guid CLSID_AppxFactory
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -57,6 +59,7 @@ namespace TerraFX.Interop
 
         public static ref readonly Guid CLSID_AppxBundleFactory
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -79,6 +82,7 @@ namespace TerraFX.Interop
 
         public static ref readonly Guid CLSID_AppxPackagingDiagnosticEventSinkManager
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -101,6 +105,7 @@ namespace TerraFX.Interop
 
         public static ref readonly Guid CLSID_AppxEncryptionFactory
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -123,6 +128,7 @@ namespace TerraFX.Interop
 
         public static ref readonly Guid CLSID_AppxPackageEditor
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {

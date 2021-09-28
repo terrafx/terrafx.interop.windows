@@ -11,8 +11,9 @@ namespace TerraFX.Interop
 {
     public static partial class Windows
     {
-        public static ref Guid WINTRUST_ACTION_GENERIC_VERIFY_V2
+        public static ref readonly Guid WINTRUST_ACTION_GENERIC_VERIFY_V2
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -33,8 +34,9 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref Guid WINTRUST_ACTION_TRUSTPROVIDER_TEST
+        public static ref readonly Guid WINTRUST_ACTION_TRUSTPROVIDER_TEST
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -55,8 +57,9 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref Guid WINTRUST_ACTION_GENERIC_CHAIN_VERIFY
+        public static ref readonly Guid WINTRUST_ACTION_GENERIC_CHAIN_VERIFY
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -77,8 +80,9 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref Guid HTTPSPROV_ACTION
+        public static ref readonly Guid HTTPSPROV_ACTION
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -99,8 +103,9 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref Guid OFFICESIGN_ACTION_VERIFY
+        public static ref readonly Guid OFFICESIGN_ACTION_VERIFY
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -121,8 +126,9 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref Guid DRIVER_ACTION_VERIFY
+        public static ref readonly Guid DRIVER_ACTION_VERIFY
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -143,8 +149,9 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref Guid CONFIG_CI_ACTION_VERIFY
+        public static ref readonly Guid CONFIG_CI_ACTION_VERIFY
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {

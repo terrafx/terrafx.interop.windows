@@ -11,8 +11,9 @@ namespace TerraFX.Interop
 {
     public static partial class Windows
     {
-        public static ref Guid LIBID_MSXML
+        public static ref readonly Guid LIBID_MSXML
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {

@@ -13,8 +13,9 @@ namespace TerraFX.Interop
     {
         public static ReadOnlySpan<byte> SpcSerializedObjectAttributesClassId => new byte[] { 0xA6, 0xB5, 0x86, 0xD5, 0xB4, 0xA1, 0x24, 0x66, 0xAE, 0x05, 0xA2, 0x17, 0xDA, 0x8E, 0x60, 0xD6 };
 
-        public static ref Guid WIN_TRUST_SUBJTYPE_RAW_FILE
+        public static ref readonly Guid WIN_TRUST_SUBJTYPE_RAW_FILE
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -35,8 +36,9 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref Guid WIN_TRUST_SUBJTYPE_PE_IMAGE
+        public static ref readonly Guid WIN_TRUST_SUBJTYPE_PE_IMAGE
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -57,8 +59,9 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref Guid WIN_TRUST_SUBJTYPE_JAVA_CLASS
+        public static ref readonly Guid WIN_TRUST_SUBJTYPE_JAVA_CLASS
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -79,8 +82,9 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref Guid WIN_TRUST_SUBJTYPE_CABINET
+        public static ref readonly Guid WIN_TRUST_SUBJTYPE_CABINET
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -101,8 +105,9 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref Guid WIN_TRUST_SUBJTYPE_RAW_FILEEX
+        public static ref readonly Guid WIN_TRUST_SUBJTYPE_RAW_FILEEX
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -123,8 +128,9 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref Guid WIN_TRUST_SUBJTYPE_PE_IMAGEEX
+        public static ref readonly Guid WIN_TRUST_SUBJTYPE_PE_IMAGEEX
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -145,8 +151,9 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref Guid WIN_TRUST_SUBJTYPE_JAVA_CLASSEX
+        public static ref readonly Guid WIN_TRUST_SUBJTYPE_JAVA_CLASSEX
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -167,8 +174,9 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref Guid WIN_TRUST_SUBJTYPE_CABINETEX
+        public static ref readonly Guid WIN_TRUST_SUBJTYPE_CABINETEX
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -189,8 +197,9 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref Guid WIN_TRUST_SUBJTYPE_OLE_STORAGE
+        public static ref readonly Guid WIN_TRUST_SUBJTYPE_OLE_STORAGE
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -211,8 +220,9 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref Guid WIN_SPUB_ACTION_TRUSTED_PUBLISHER
+        public static ref readonly Guid WIN_SPUB_ACTION_TRUSTED_PUBLISHER
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -233,8 +243,9 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref Guid WIN_SPUB_ACTION_NT_ACTIVATE_IMAGE
+        public static ref readonly Guid WIN_SPUB_ACTION_NT_ACTIVATE_IMAGE
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -255,8 +266,9 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref Guid WIN_SPUB_ACTION_PUBLISHED_SOFTWARE
+        public static ref readonly Guid WIN_SPUB_ACTION_PUBLISHED_SOFTWARE
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {

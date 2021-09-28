@@ -11,8 +11,9 @@ namespace TerraFX.Interop
 {
     public static unsafe partial class Windows
     {
-        public static ref Guid CLSID_DeviceTopology
+        public static ref readonly Guid CLSID_DeviceTopology
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -33,8 +34,9 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref Guid LIBID_DevTopologyLib
+        public static ref readonly Guid LIBID_DevTopologyLib
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {

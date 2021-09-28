@@ -11,8 +11,9 @@ namespace TerraFX.Interop
 {
     public static partial class Windows
     {
-        public static ref Guid CLSID_StdComponentCategoriesMgr
+        public static ref readonly Guid CLSID_StdComponentCategoriesMgr
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
