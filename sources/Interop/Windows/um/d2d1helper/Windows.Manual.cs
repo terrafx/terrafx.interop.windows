@@ -24,11 +24,8 @@ namespace TerraFX.Interop
 {
     public static unsafe partial class Windows
     {
-        [return: NativeTypeName("FLOAT")]
-        public static float FloatMax()
-        {
-            return float.MaxValue;
-        }
+        [NativeTypeName("FLOAT")]
+        public const float FloatMax = float.MaxValue;
 
         [return: NativeTypeName("D2D1_POINT_2F")]
         public static D2D_POINT_2F Point2F([NativeTypeName("FLOAT")] float x = 0.0f, [NativeTypeName("FLOAT")] float y = 0.0f)
@@ -100,20 +97,8 @@ namespace TerraFX.Interop
             return rect;
         }
 
-        public static D2D_RECT_F InfiniteRect
-        {
-            [return: NativeTypeName("D2D1_RECT_F")]
-            get
-            {
-                D2D_RECT_F rect = new D2D_RECT_F {
-                    left = -FloatMax(),
-                    top = -FloatMax(),
-                    right = FloatMax(),
-                    bottom = FloatMax(),
-                };
-                return rect;
-            }
-        }
+        [NativeTypeName("D2D1_RECT_F")]
+        public static ref readonly D2D_RECT_F InfiniteRect => ref D2D_RECT_F.Infinite;
 
         public static D2D1_ARC_SEGMENT ArcSegment([NativeTypeName("const D2D1_POINT_2F &")] in D2D_POINT_2F point, [NativeTypeName("const D2D1_SIZE_F &")] in D2D_SIZE_F size, [NativeTypeName("FLOAT")] float rotationAngle, D2D1_SWEEP_DIRECTION sweepDirection, D2D1_ARC_SIZE arcSize)
         {
@@ -279,8 +264,7 @@ namespace TerraFX.Interop
             return renderTargetProperties;
         }
 
-        public static D2D1_HWND_RENDER_TARGET_PROPERTIES
-        HwndRenderTargetProperties([NativeTypeName("HWND")] IntPtr hwnd, [NativeTypeName("D2D1_SIZE_U")] D2D_SIZE_U pixelSize = default, D2D1_PRESENT_OPTIONS presentOptions = D2D1_PRESENT_OPTIONS_NONE)
+        public static D2D1_HWND_RENDER_TARGET_PROPERTIES HwndRenderTargetProperties([NativeTypeName("HWND")] IntPtr hwnd, [NativeTypeName("D2D1_SIZE_U")] D2D_SIZE_U pixelSize = default, D2D1_PRESENT_OPTIONS presentOptions = D2D1_PRESENT_OPTIONS_NONE)
         {
             D2D1_HWND_RENDER_TARGET_PROPERTIES hwndRenderTargetProperties;
 
@@ -339,13 +323,7 @@ namespace TerraFX.Interop
             return drawingStateDescription;
         }
 
-        public static D2D_MATRIX_3X2_F IdentityMatrix
-        {
-            [return: NativeTypeName("D2D1_MATRIX_3X2_F")]
-            get
-            {
-                return D2D_MATRIX_3X2_F.Identity;
-            }
-        }
+        [NativeTypeName("D2D1_MATRIX_3X2_F")]
+        public static ref readonly D2D_MATRIX_3X2_F IdentityMatrix => ref D2D_MATRIX_3X2_F.Identity;
     }
 }

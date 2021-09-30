@@ -3,6 +3,9 @@
 // Ported from um/d2d1helper.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System;
+using System.Diagnostics;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows;
 
@@ -10,7 +13,25 @@ namespace TerraFX.Interop
 {
     public partial struct D2D1_BRUSH_PROPERTIES
     {
-        public static readonly D2D1_BRUSH_PROPERTIES DEFAULT = new D2D1_BRUSH_PROPERTIES(1.0f, D2D_MATRIX_3X2_F.Identity);
+        public static ref readonly D2D1_BRUSH_PROPERTIES DEFAULT
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x00, 0x00, 0x80, 0x3F,
+                    0x00, 0x00, 0x80, 0x3F,
+                    0x00, 0x00, 0x00, 0x00,
+                    0x00, 0x00, 0x00, 0x00,
+                    0x00, 0x00, 0x80, 0x3F,
+                    0x00, 0x00, 0x00, 0x00,
+                    0x00, 0x00, 0x00, 0x00,
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<D2D1_BRUSH_PROPERTIES>());
+                return ref Unsafe.As<byte, D2D1_BRUSH_PROPERTIES>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         public D2D1_BRUSH_PROPERTIES([NativeTypeName("FLOAT")] float opacity = 1.0f) : this(opacity, IdentityMatrix)
         {

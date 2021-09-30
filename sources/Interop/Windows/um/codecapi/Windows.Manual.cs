@@ -4,7 +4,6 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
-using static TerraFX.Interop.eAVEncH264VProfile;
 
 namespace TerraFX.Interop
 {

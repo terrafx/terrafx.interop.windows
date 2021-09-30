@@ -3,26 +3,40 @@
 // Ported from um/d3d11.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using static TerraFX.Interop.D3D11_COMPARISON_FUNC;
-using static TerraFX.Interop.D3D11_FILTER;
-using static TerraFX.Interop.D3D11_TEXTURE_ADDRESS_MODE;
+using System;
+using System.Diagnostics;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
 {
     public unsafe partial struct D3D11_SAMPLER_DESC
     {
-        public static readonly D3D11_SAMPLER_DESC DEFAULT = new D3D11_SAMPLER_DESC(
-            filter: D3D11_FILTER_MIN_MAG_MIP_LINEAR,
-            addressU: D3D11_TEXTURE_ADDRESS_CLAMP,
-            addressV: D3D11_TEXTURE_ADDRESS_CLAMP,
-            addressW: D3D11_TEXTURE_ADDRESS_CLAMP,
-            mipLODBias: 0,
-            maxAnisotropy: 1,
-            comparisonFunc: D3D11_COMPARISON_NEVER,
-            borderColor: null,
-            minLOD: float.MinValue,
-            maxLOD: float.MaxValue
-        );
+        public static ref readonly D3D11_SAMPLER_DESC DEFAULT
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x15, 0x00, 0x00, 0x00,
+                    0x03, 0x00, 0x00, 0x00,
+                    0x03, 0x00, 0x00, 0x00,
+                    0x03, 0x00, 0x00, 0x00,
+                    0x00, 0x00, 0x00, 0x00,
+                    0x01, 0x00, 0x00, 0x00,
+                    0x01, 0x00, 0x00, 0x00,
+                    0x00, 0x00, 0x80, 0x3F,
+                    0x00, 0x00, 0x80, 0x3F,
+                    0x00, 0x00, 0x80, 0x3F,
+                    0x00, 0x00, 0x80, 0x3F,
+                    0xFF, 0xFF, 0x7F, 0xFF,
+                    0xFF, 0xFF, 0x7F, 0x7F
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<D3D11_SAMPLER_DESC>());
+                return ref Unsafe.As<byte, D3D11_SAMPLER_DESC>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         public D3D11_SAMPLER_DESC(D3D11_FILTER filter, D3D11_TEXTURE_ADDRESS_MODE addressU, D3D11_TEXTURE_ADDRESS_MODE addressV, D3D11_TEXTURE_ADDRESS_MODE addressW, [NativeTypeName("FLOAT")] float mipLODBias, [NativeTypeName("UINT")] uint maxAnisotropy, D3D11_COMPARISON_FUNC comparisonFunc, [NativeTypeName("FLOAT [4]")] float* borderColor, [NativeTypeName("FLOAT")] float minLOD, [NativeTypeName("FLOAT")] float maxLOD)
         {

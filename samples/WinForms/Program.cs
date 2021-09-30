@@ -2,7 +2,6 @@
 
 using System;
 using System.Windows.Forms;
-using TerraFX.Samples.WinForms;
 
 namespace TerraFX.Samples.WinForms
 {

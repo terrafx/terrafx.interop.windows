@@ -5,6 +5,10 @@
 
 using NUnit.Framework;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.D3D11_CULL_MODE;
+using static TerraFX.Interop.D3D11_FILL_MODE;
+using static TerraFX.Interop.D3D11_RASTERIZER_DESC1;
+using static TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.UnitTests
 {
@@ -30,6 +34,23 @@ namespace TerraFX.Interop.UnitTests
         public static void SizeOfTest()
         {
             Assert.That(sizeof(D3D11_RASTERIZER_DESC1), Is.EqualTo(44));
+        }
+
+        /// <summary>Validates that the value of the <see cref="DEFAULT" /> property is correct.</summary>
+        [Test]
+        public static void DEFAULTTest()
+        {
+            Assert.That(DEFAULT.FillMode, Is.EqualTo(D3D11_FILL_SOLID));
+            Assert.That(DEFAULT.CullMode, Is.EqualTo(D3D11_CULL_BACK));
+            Assert.That(DEFAULT.FrontCounterClockwise, Is.EqualTo(FALSE));
+            Assert.That(DEFAULT.DepthBias, Is.EqualTo(D3D11_DEFAULT_DEPTH_BIAS));
+            Assert.That(DEFAULT.DepthBiasClamp, Is.EqualTo(D3D11_DEFAULT_DEPTH_BIAS_CLAMP));
+            Assert.That(DEFAULT.SlopeScaledDepthBias, Is.EqualTo(D3D11_DEFAULT_SLOPE_SCALED_DEPTH_BIAS));
+            Assert.That(DEFAULT.DepthClipEnable, Is.EqualTo(TRUE));
+            Assert.That(DEFAULT.ScissorEnable, Is.EqualTo(FALSE));
+            Assert.That(DEFAULT.MultisampleEnable, Is.EqualTo(FALSE));
+            Assert.That(DEFAULT.AntialiasedLineEnable, Is.EqualTo(FALSE));
+            Assert.That(DEFAULT.ForcedSampleCount, Is.EqualTo(0));
         }
     }
 }

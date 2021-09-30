@@ -5,6 +5,8 @@
 
 using NUnit.Framework;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.D3D11_BLEND_DESC1;
+using static TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.UnitTests
 {
@@ -30,6 +32,22 @@ namespace TerraFX.Interop.UnitTests
         public static void SizeOfTest()
         {
             Assert.That(sizeof(D3D11_BLEND_DESC1), Is.EqualTo(328));
+        }
+
+        /// <summary>Validates that the value of the <see cref="DEFAULT" /> property is correct.</summary>
+        [Test]
+        public static void DEFAULTTest()
+        {
+            Assert.That(DEFAULT.AlphaToCoverageEnable, Is.EqualTo(FALSE));
+            Assert.That(DEFAULT.IndependentBlendEnable, Is.EqualTo(FALSE));
+            Assert.That(DEFAULT.RenderTarget[0], Is.EqualTo(D3D11_RENDER_TARGET_BLEND_DESC1.DEFAULT));
+            Assert.That(DEFAULT.RenderTarget[1], Is.EqualTo(D3D11_RENDER_TARGET_BLEND_DESC1.DEFAULT));
+            Assert.That(DEFAULT.RenderTarget[2], Is.EqualTo(D3D11_RENDER_TARGET_BLEND_DESC1.DEFAULT));
+            Assert.That(DEFAULT.RenderTarget[3], Is.EqualTo(D3D11_RENDER_TARGET_BLEND_DESC1.DEFAULT));
+            Assert.That(DEFAULT.RenderTarget[4], Is.EqualTo(D3D11_RENDER_TARGET_BLEND_DESC1.DEFAULT));
+            Assert.That(DEFAULT.RenderTarget[5], Is.EqualTo(D3D11_RENDER_TARGET_BLEND_DESC1.DEFAULT));
+            Assert.That(DEFAULT.RenderTarget[6], Is.EqualTo(D3D11_RENDER_TARGET_BLEND_DESC1.DEFAULT));
+            Assert.That(DEFAULT.RenderTarget[7], Is.EqualTo(D3D11_RENDER_TARGET_BLEND_DESC1.DEFAULT));
         }
     }
 }

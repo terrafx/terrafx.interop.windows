@@ -4,12 +4,46 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Diagnostics;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
 {
     public partial struct D2D_MATRIX_5X4_F : IEquatable<D2D_MATRIX_5X4_F>
     {
-        public static readonly D2D_MATRIX_5X4_F DEFAULT = new D2D_MATRIX_5X4_F(1.0f, 0.0f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f, 0.0f);
+        public static ref readonly D2D_MATRIX_5X4_F Identity
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x00, 0x00, 0x80, 0x3F,
+                    0x00, 0x00, 0x00, 0x00,
+                    0x00, 0x00, 0x00, 0x00,
+                    0x00, 0x00, 0x00, 0x00,
+                    0x00, 0x00, 0x00, 0x00,
+                    0x00, 0x00, 0x80, 0x3F,
+                    0x00, 0x00, 0x00, 0x00,
+                    0x00, 0x00, 0x00, 0x00,
+                    0x00, 0x00, 0x00, 0x00,
+                    0x00, 0x00, 0x00, 0x00,
+                    0x00, 0x00, 0x80, 0x3F,
+                    0x00, 0x00, 0x00, 0x00,
+                    0x00, 0x00, 0x00, 0x00,
+                    0x00, 0x00, 0x00, 0x00,
+                    0x00, 0x00, 0x00, 0x00,
+                    0x00, 0x00, 0x80, 0x3F,
+                    0x00, 0x00, 0x00, 0x00,
+                    0x00, 0x00, 0x00, 0x00,
+                    0x00, 0x00, 0x00, 0x00,
+                    0x00, 0x00, 0x00, 0x00
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<D2D_MATRIX_5X4_F>());
+                return ref Unsafe.As<byte, D2D_MATRIX_5X4_F>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         public D2D_MATRIX_5X4_F([NativeTypeName("FLOAT")] float m11, [NativeTypeName("FLOAT")] float m12, [NativeTypeName("FLOAT")] float m13, [NativeTypeName("FLOAT")] float m14, [NativeTypeName("FLOAT")] float m21, [NativeTypeName("FLOAT")] float m22, [NativeTypeName("FLOAT")] float m23, [NativeTypeName("FLOAT")] float m24, [NativeTypeName("FLOAT")] float m31, [NativeTypeName("FLOAT")] float m32, [NativeTypeName("FLOAT")] float m33, [NativeTypeName("FLOAT")] float m34, [NativeTypeName("FLOAT")] float m41, [NativeTypeName("FLOAT")] float m42, [NativeTypeName("FLOAT")] float m43, [NativeTypeName("FLOAT")] float m44, [NativeTypeName("FLOAT")] float m51, [NativeTypeName("FLOAT")] float m52, [NativeTypeName("FLOAT")] float m53, [NativeTypeName("FLOAT")] float m54)
         {

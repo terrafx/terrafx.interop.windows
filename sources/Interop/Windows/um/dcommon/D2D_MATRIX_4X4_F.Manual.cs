@@ -4,6 +4,9 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Diagnostics;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop
@@ -32,7 +35,34 @@ namespace TerraFX.Interop
             Anonymous.Anonymous._44 = m44;
         }
 
-        public static readonly D2D_MATRIX_4X4_F DEFAULT = new D2D_MATRIX_4X4_F(1.0f, 0.0f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f, 0.0f, 1.0f);
+        public static ref readonly D2D_MATRIX_4X4_F Identity
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x00, 0x00, 0x80, 0x3F,
+                    0x00, 0x00, 0x00, 0x00,
+                    0x00, 0x00, 0x00, 0x00,
+                    0x00, 0x00, 0x00, 0x00,
+                    0x00, 0x00, 0x00, 0x00,
+                    0x00, 0x00, 0x80, 0x3F,
+                    0x00, 0x00, 0x00, 0x00,
+                    0x00, 0x00, 0x00, 0x00,
+                    0x00, 0x00, 0x00, 0x00,
+                    0x00, 0x00, 0x00, 0x00,
+                    0x00, 0x00, 0x80, 0x3F,
+                    0x00, 0x00, 0x00, 0x00,
+                    0x00, 0x00, 0x00, 0x00,
+                    0x00, 0x00, 0x00, 0x00,
+                    0x00, 0x00, 0x00, 0x00,
+                    0x00, 0x00, 0x80, 0x3F,
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<D2D_MATRIX_4X4_F>());
+                return ref Unsafe.As<byte, D2D_MATRIX_4X4_F>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         public static bool operator ==([NativeTypeName("const D2D1_MATRIX_4X4_F &")] in D2D_MATRIX_4X4_F l, [NativeTypeName("const D2D1_MATRIX_4X4_F &")] in D2D_MATRIX_4X4_F r)
         {

@@ -5,6 +5,11 @@
 
 using NUnit.Framework;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.D3D11_BLEND;
+using static TerraFX.Interop.D3D11_BLEND_OP;
+using static TerraFX.Interop.D3D11_COLOR_WRITE_ENABLE;
+using static TerraFX.Interop.D3D11_RENDER_TARGET_BLEND_DESC;
+using static TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.UnitTests
 {
@@ -30,6 +35,20 @@ namespace TerraFX.Interop.UnitTests
         public static void SizeOfTest()
         {
             Assert.That(sizeof(D3D11_RENDER_TARGET_BLEND_DESC), Is.EqualTo(32));
+        }
+
+        /// <summary>Validates that the value of the <see cref="DEFAULT" /> property is correct.</summary>
+        [Test]
+        public static void DEFAULTTest()
+        {
+            Assert.That(DEFAULT.BlendEnable, Is.EqualTo(FALSE));
+            Assert.That(DEFAULT.SrcBlend, Is.EqualTo(D3D11_BLEND_ONE));
+            Assert.That(DEFAULT.DestBlend, Is.EqualTo(D3D11_BLEND_ZERO));
+            Assert.That(DEFAULT.BlendOp, Is.EqualTo(D3D11_BLEND_OP_ADD));
+            Assert.That(DEFAULT.SrcBlendAlpha, Is.EqualTo(D3D11_BLEND_ONE));
+            Assert.That(DEFAULT.DestBlendAlpha, Is.EqualTo(D3D11_BLEND_ZERO));
+            Assert.That(DEFAULT.BlendOpAlpha, Is.EqualTo(D3D11_BLEND_OP_ADD));
+            Assert.That(DEFAULT.RenderTargetWriteMask, Is.EqualTo((byte)D3D11_COLOR_WRITE_ENABLE_ALL));
         }
     }
 }

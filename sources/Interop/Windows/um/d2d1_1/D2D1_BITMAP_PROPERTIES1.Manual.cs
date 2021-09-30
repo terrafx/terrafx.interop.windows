@@ -3,6 +3,10 @@
 // Ported from um/d2d1_1helper.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System;
+using System.Diagnostics;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows;
 using static TerraFX.Interop.D2D1_BITMAP_OPTIONS;
 
@@ -10,7 +14,41 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct D2D1_BITMAP_PROPERTIES1
     {
-        public static readonly D2D1_BITMAP_PROPERTIES1 DEFAULT = new D2D1_BITMAP_PROPERTIES1(D2D1_BITMAP_OPTIONS_NONE, default, 96.0f, 96.0f, null);
+        public static ref readonly D2D1_BITMAP_PROPERTIES1 DEFAULT
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data;
+
+                if (Environment.Is64BitProcess)
+                {
+                    data = new byte[] {
+                        0x00, 0x00, 0x00, 0x00,
+                        0x00, 0x00, 0x00, 0x00,
+                        0x00, 0x00, 0xC0, 0x42,
+                        0x00, 0x00, 0xC0, 0x42,
+                        0x00, 0x00, 0x00, 0x00,
+                        0x00, 0x00, 0x00, 0x00,
+                        0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+                    };
+                }
+                else
+                {
+                    data = new byte[] {
+                        0x00, 0x00, 0x00, 0x00,
+                        0x00, 0x00, 0x00, 0x00,
+                        0x00, 0x00, 0xC0, 0x42,
+                        0x00, 0x00, 0xC0, 0x42,
+                        0x00, 0x00, 0x00, 0x00,
+                        0x00, 0x00, 0x00, 0x00
+                    };
+                }
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<D2D1_BITMAP_PROPERTIES1>());
+                return ref Unsafe.As<byte, D2D1_BITMAP_PROPERTIES1>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         public D2D1_BITMAP_PROPERTIES1(D2D1_BITMAP_OPTIONS bitmapOptions = D2D1_BITMAP_OPTIONS_NONE, [NativeTypeName("const D2D1_PIXEL_FORMAT")] D2D1_PIXEL_FORMAT pixelFormat = default, [NativeTypeName("FLOAT")] float dpiX = 96.0f, [NativeTypeName("FLOAT")] float dpiY = 96.0f, ID2D1ColorContext* colorContext = null)
         {

@@ -3,16 +3,70 @@
 // Ported from um/d2d1helper.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System;
+using System.Diagnostics;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows;
-using static TerraFX.Interop.D2D1_ANTIALIAS_MODE;
 using static TerraFX.Interop.D2D1_LAYER_OPTIONS;
+using static TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop
 {
     public unsafe partial struct D2D1_LAYER_PARAMETERS
     {
-        public static readonly D2D1_LAYER_PARAMETERS DEFAULT = new D2D1_LAYER_PARAMETERS(InfiniteRect, null, D2D1_ANTIALIAS_MODE_PER_PRIMITIVE, IdentityMatrix, 1.0f, null, D2D1_LAYER_OPTIONS_NONE);
+        public static ref readonly D2D1_LAYER_PARAMETERS DEFAULT
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data;
+
+                if (Environment.Is64BitProcess)
+                {
+                    data = new byte[] {
+                        0xFF, 0xFF, 0x7F, 0xFF,
+                        0xFF, 0xFF, 0x7F, 0xFF,
+                        0xFF, 0xFF, 0x7F, 0x7F,
+                        0xFF, 0xFF, 0x7F, 0x7F,
+                        0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+                        0x00, 0x00, 0x00, 0x00,
+                        0x00, 0x00, 0x80, 0x3F,
+                        0x00, 0x00, 0x00, 0x00,
+                        0x00, 0x00, 0x00, 0x00,
+                        0x00, 0x00, 0x80, 0x3F,
+                        0x00, 0x00, 0x00, 0x00,
+                        0x00, 0x00, 0x00, 0x00,
+                        0x00, 0x00, 0x80, 0x3F,
+                        0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+                        0x00, 0x00, 0x00, 0x00,
+                        0x00, 0x00, 0x00, 0x00
+                    };
+                }
+                else
+                {
+                    data = new byte[] {
+                        0xFF, 0xFF, 0x7F, 0xFF,
+                        0xFF, 0xFF, 0x7F, 0xFF,
+                        0xFF, 0xFF, 0x7F, 0x7F,
+                        0xFF, 0xFF, 0x7F, 0x7F,
+                        0x00, 0x00, 0x00, 0x00,
+                        0x00, 0x00, 0x00, 0x00,
+                        0x00, 0x00, 0x80, 0x3F,
+                        0x00, 0x00, 0x00, 0x00,
+                        0x00, 0x00, 0x00, 0x00,
+                        0x00, 0x00, 0x80, 0x3F,
+                        0x00, 0x00, 0x00, 0x00,
+                        0x00, 0x00, 0x00, 0x00,
+                        0x00, 0x00, 0x80, 0x3F,
+                        0x00, 0x00, 0x00, 0x00,
+                        0x00, 0x00, 0x00, 0x00
+                    };
+                }
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<D2D1_LAYER_PARAMETERS>());
+                return ref Unsafe.As<byte, D2D1_LAYER_PARAMETERS>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         public D2D1_LAYER_PARAMETERS([NativeTypeName("ID2D1Geometry *"), Optional] ID2D1Geometry* geometricMask, [Optional] D2D1_ANTIALIAS_MODE maskAntialiasMode, [NativeTypeName("FLOAT")] float opacity = 1.0f, [NativeTypeName("ID2D1Brush *")] ID2D1Brush* opacityBrush = null, D2D1_LAYER_OPTIONS layerOptions = D2D1_LAYER_OPTIONS_NONE)
              : this(InfiniteRect, geometricMask, maskAntialiasMode, IdentityMatrix, opacity, opacityBrush, layerOptions)
