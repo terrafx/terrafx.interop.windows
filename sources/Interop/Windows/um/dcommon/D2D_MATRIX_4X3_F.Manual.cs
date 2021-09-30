@@ -4,6 +4,9 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Diagnostics;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
 {
@@ -27,7 +30,30 @@ namespace TerraFX.Interop
             Anonymous.Anonymous._43 = m43;
         }
 
-        public static readonly D2D_MATRIX_4X3_F DEFAULT = new D2D_MATRIX_4X3_F(1.0f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f);
+        public static ref readonly D2D_MATRIX_4X3_F Identity
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x00, 0x00, 0x80, 0x3F,
+                    0x00, 0x00, 0x00, 0x00,
+                    0x00, 0x00, 0x00, 0x00,
+                    0x00, 0x00, 0x00, 0x00,
+                    0x00, 0x00, 0x80, 0x3F,
+                    0x00, 0x00, 0x00, 0x00,
+                    0x00, 0x00, 0x00, 0x00,
+                    0x00, 0x00, 0x00, 0x00,
+                    0x00, 0x00, 0x80, 0x3F,
+                    0x00, 0x00, 0x00, 0x00,
+                    0x00, 0x00, 0x00, 0x00,
+                    0x00, 0x00, 0x00, 0x00,
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<D2D_MATRIX_4X3_F>());
+                return ref Unsafe.As<byte, D2D_MATRIX_4X3_F>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         public static bool operator ==([NativeTypeName("const D2D_MATRIX_4X3_F &")] in D2D_MATRIX_4X3_F l, [NativeTypeName("const D2D_MATRIX_4X3_F &")] in D2D_MATRIX_4X3_F r)
         {

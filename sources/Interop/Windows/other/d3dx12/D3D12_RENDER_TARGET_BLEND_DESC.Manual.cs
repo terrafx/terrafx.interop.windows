@@ -3,27 +3,36 @@
 // Ported from d3dx12.h in DirectX-Graphics-Samples commit a7a87f1853b5540f10920518021d91ae641033fb
 // Original source is Copyright © Microsoft. All rights reserved. Licensed under the MIT License (MIT).
 
-using static TerraFX.Interop.D3D12_BLEND;
-using static TerraFX.Interop.D3D12_BLEND_OP;
-using static TerraFX.Interop.D3D12_COLOR_WRITE_ENABLE;
-using static TerraFX.Interop.D3D12_LOGIC_OP;
-using static TerraFX.Interop.Windows;
+using System;
+using System.Diagnostics;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
 {
     public partial struct D3D12_RENDER_TARGET_BLEND_DESC
     {
-        public static readonly D3D12_RENDER_TARGET_BLEND_DESC DEFAULT = new D3D12_RENDER_TARGET_BLEND_DESC() {
-            BlendEnable = FALSE,
-            LogicOpEnable = FALSE,
-            SrcBlend = D3D12_BLEND_ONE,
-            DestBlend = D3D12_BLEND_ZERO,
-            BlendOp = D3D12_BLEND_OP_ADD,
-            SrcBlendAlpha = D3D12_BLEND_ONE,
-            DestBlendAlpha = D3D12_BLEND_ZERO,
-            BlendOpAlpha = D3D12_BLEND_OP_ADD,
-            LogicOp = D3D12_LOGIC_OP_NOOP,
-            RenderTargetWriteMask = (byte)D3D12_COLOR_WRITE_ENABLE_ALL
-        };
+        public static ref readonly D3D12_RENDER_TARGET_BLEND_DESC DEFAULT
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x00, 0x00, 0x00, 0x00,
+                    0x00, 0x00, 0x00, 0x00,
+                    0x02, 0x00, 0x00, 0x00,
+                    0x01, 0x00, 0x00, 0x00,
+                    0x01, 0x00, 0x00, 0x00,
+                    0x02, 0x00, 0x00, 0x00,
+                    0x01, 0x00, 0x00, 0x00,
+                    0x01, 0x00, 0x00, 0x00,
+                    0x04, 0x00, 0x00, 0x00,
+                    0x0F, 0x00, 0x00, 0x00
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<D3D12_RENDER_TARGET_BLEND_DESC>());
+                return ref Unsafe.As<byte, D3D12_RENDER_TARGET_BLEND_DESC>(ref MemoryMarshal.GetReference(data));
+            }
+        }
     }
 }

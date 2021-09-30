@@ -6,6 +6,10 @@
 using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.D2D1_ANTIALIAS_MODE;
+using static TerraFX.Interop.D2D1_LAYER_OPTIONS1;
+using static TerraFX.Interop.D2D1_LAYER_PARAMETERS1;
+using static TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.UnitTests
 {
@@ -38,6 +42,19 @@ namespace TerraFX.Interop.UnitTests
             {
                 Assert.That(sizeof(D2D1_LAYER_PARAMETERS1), Is.EqualTo(60));
             }
+        }
+
+        /// <summary>Validates that the value of the <see cref="DEFAULT" /> property is correct.</summary>
+        [Test]
+        public static void DEFAULTTest()
+        {
+            Assert.That(DEFAULT.contentBounds, Is.EqualTo(InfiniteRect));
+            Assert.That((nuint)DEFAULT.geometricMask, Is.EqualTo((nuint)0));
+            Assert.That(DEFAULT.maskAntialiasMode, Is.EqualTo(D2D1_ANTIALIAS_MODE_PER_PRIMITIVE));
+            Assert.That(DEFAULT.maskTransform, Is.EqualTo(IdentityMatrix));
+            Assert.That(DEFAULT.opacity, Is.EqualTo(1.0f));
+            Assert.That((nuint)DEFAULT.opacityBrush, Is.EqualTo((nuint)0));
+            Assert.That(DEFAULT.layerOptions, Is.EqualTo(D2D1_LAYER_OPTIONS1_NONE));
         }
     }
 }

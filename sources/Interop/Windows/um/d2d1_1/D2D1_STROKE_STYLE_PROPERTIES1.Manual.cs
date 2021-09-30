@@ -3,6 +3,10 @@
 // Ported from um/d2d1_1helper.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System;
+using System.Diagnostics;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows;
 using static TerraFX.Interop.D2D1_CAP_STYLE;
 using static TerraFX.Interop.D2D1_DASH_STYLE;
@@ -13,7 +17,26 @@ namespace TerraFX.Interop
 {
     public partial struct D2D1_STROKE_STYLE_PROPERTIES1
     {
-        public static readonly D2D1_STROKE_STYLE_PROPERTIES1 DEFAULT = new D2D1_STROKE_STYLE_PROPERTIES1(D2D1_CAP_STYLE_FLAT, D2D1_CAP_STYLE_FLAT, D2D1_CAP_STYLE_FLAT, D2D1_LINE_JOIN_MITER, 10.0f, D2D1_DASH_STYLE_SOLID, 0.0f, D2D1_STROKE_TRANSFORM_TYPE_NORMAL);
+        public static ref readonly D2D1_STROKE_STYLE_PROPERTIES1 DEFAULT
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x00, 0x00, 0x00, 0x00,
+                    0x00, 0x00, 0x00, 0x00,
+                    0x00, 0x00, 0x00, 0x00,
+                    0x00, 0x00, 0x00, 0x00,
+                    0x00, 0x00, 0x20, 0x41,
+                    0x00, 0x00, 0x00, 0x00,
+                    0x00, 0x00, 0x00, 0x00,
+                    0x00, 0x00, 0x00, 0x00
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<D2D1_STROKE_STYLE_PROPERTIES1>());
+                return ref Unsafe.As<byte, D2D1_STROKE_STYLE_PROPERTIES1>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         public D2D1_STROKE_STYLE_PROPERTIES1(D2D1_CAP_STYLE startCap = D2D1_CAP_STYLE_FLAT, D2D1_CAP_STYLE endCap = D2D1_CAP_STYLE_FLAT, D2D1_CAP_STYLE dashCap = D2D1_CAP_STYLE_FLAT, D2D1_LINE_JOIN lineJoin = D2D1_LINE_JOIN_MITER, [NativeTypeName("FLOAT")] float miterLimit = 10.0f, D2D1_DASH_STYLE dashStyle = D2D1_DASH_STYLE_SOLID, [NativeTypeName("FLOAT")] float dashOffset = 0.0f, D2D1_STROKE_TRANSFORM_TYPE transformType = D2D1_STROKE_TRANSFORM_TYPE_NORMAL)
         {

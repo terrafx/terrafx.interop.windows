@@ -9,9 +9,7 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct D3D12_GPU_DESCRIPTOR_HANDLE : IEquatable<D3D12_GPU_DESCRIPTOR_HANDLE>
     {
-        public static readonly D3D12_GPU_DESCRIPTOR_HANDLE DEFAULT = new D3D12_GPU_DESCRIPTOR_HANDLE {
-            ptr = 0
-        };
+        public static D3D12_GPU_DESCRIPTOR_HANDLE DEFAULT => default;
 
         public D3D12_GPU_DESCRIPTOR_HANDLE([NativeTypeName("const D3D12_GPU_DESCRIPTOR_HANDLE &")] in D3D12_GPU_DESCRIPTOR_HANDLE other, [NativeTypeName("INT")] int offsetScaledByIncrementSize)
         {

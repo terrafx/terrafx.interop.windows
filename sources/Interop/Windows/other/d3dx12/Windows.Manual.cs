@@ -8,10 +8,8 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.D3D_ROOT_SIGNATURE_VERSION;
-using static TerraFX.Interop.D3D12_FEATURE;
 using static TerraFX.Interop.D3D12_RESOURCE_DIMENSION;
 using static TerraFX.Interop.D3D12_ROOT_PARAMETER_TYPE;
-using static TerraFX.Interop.D3D12_TEXTURE_LAYOUT;
 
 namespace TerraFX.Interop
 {

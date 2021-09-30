@@ -5,6 +5,7 @@
 
 using NUnit.Framework;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.D2D_MATRIX_3X2_F;
 
 namespace TerraFX.Interop.UnitTests
 {
@@ -30,6 +31,18 @@ namespace TerraFX.Interop.UnitTests
         public static void SizeOfTest()
         {
             Assert.That(sizeof(D2D_MATRIX_3X2_F), Is.EqualTo(24));
+        }
+
+        /// <summary>Validates that the value of the <see cref="Identity" /> property is correct.</summary>
+        [Test]
+        public static void IdentityTest()
+        {
+            Assert.That(Identity._11, Is.EqualTo(1.0f));
+            Assert.That(Identity._12, Is.EqualTo(0.0f));
+            Assert.That(Identity._21, Is.EqualTo(0.0f));
+            Assert.That(Identity._22, Is.EqualTo(1.0f));
+            Assert.That(Identity._31, Is.EqualTo(0.0f));
+            Assert.That(Identity._32, Is.EqualTo(0.0f));
         }
     }
 }

@@ -3,6 +3,9 @@
 // Ported from um/d2d1helper.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System;
+using System.Diagnostics;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows;
 using static TerraFX.Interop.D2D1_ANTIALIAS_MODE;
@@ -12,7 +15,28 @@ namespace TerraFX.Interop
 {
     public partial struct D2D1_DRAWING_STATE_DESCRIPTION
     {
-        public static readonly D2D1_DRAWING_STATE_DESCRIPTION DEFAULT = new D2D1_DRAWING_STATE_DESCRIPTION(D2D1_ANTIALIAS_MODE_PER_PRIMITIVE, D2D1_TEXT_ANTIALIAS_MODE_DEFAULT, 0, 0, IdentityMatrix);
+        public static ref readonly D2D1_DRAWING_STATE_DESCRIPTION DEFAULT
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x00, 0x00, 0x00, 0x00,
+                    0x00, 0x00, 0x00, 0x00,
+                    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+                    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+                    0x00, 0x00, 0x80, 0x3F,
+                    0x00, 0x00, 0x00, 0x00,
+                    0x00, 0x00, 0x00, 0x00,
+                    0x00, 0x00, 0x80, 0x3F,
+                    0x00, 0x00, 0x00, 0x00,
+                    0x00, 0x00, 0x00, 0x00,
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<D2D1_DRAWING_STATE_DESCRIPTION>());
+                return ref Unsafe.As<byte, D2D1_DRAWING_STATE_DESCRIPTION>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         public D2D1_DRAWING_STATE_DESCRIPTION(D2D1_ANTIALIAS_MODE antialiasMode = D2D1_ANTIALIAS_MODE_PER_PRIMITIVE, D2D1_TEXT_ANTIALIAS_MODE textAntialiasMode = D2D1_TEXT_ANTIALIAS_MODE_DEFAULT, [NativeTypeName("D2D1_TAG")] ulong tag1 = 0, [NativeTypeName("D2D1_TAG")] ulong tag2 = 0)
             : this(antialiasMode, textAntialiasMode, tag1, tag2, IdentityMatrix)

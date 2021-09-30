@@ -3,8 +3,12 @@
 // Ported from d3dx12.h in DirectX-Graphics-Samples commit a7a87f1853b5540f10920518021d91ae641033fb
 // Original source is Copyright © Microsoft. All rights reserved. Licensed under the MIT License (MIT).
 
-using static TerraFX.Interop.D3D12_ROOT_SIGNATURE_FLAGS;
+using System;
+using System.Diagnostics;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
 using static TerraFX.Interop.D3D_ROOT_SIGNATURE_VERSION;
+using static TerraFX.Interop.D3D12_ROOT_SIGNATURE_FLAGS;
 
 namespace TerraFX.Interop
 {
@@ -36,7 +40,43 @@ namespace TerraFX.Interop
             Init_1_1(out this, numParameters, _pParameters, numStaticSamplers, _pStaticSamplers, flags);
         }
 
-        public static readonly D3D12_VERSIONED_ROOT_SIGNATURE_DESC DEFAULT = new D3D12_VERSIONED_ROOT_SIGNATURE_DESC(0, (D3D12_ROOT_PARAMETER1*)null, 0, null, D3D12_ROOT_SIGNATURE_FLAG_NONE);
+        public static ref readonly D3D12_VERSIONED_ROOT_SIGNATURE_DESC DEFAULT
+        {
+            get
+            {
+                ReadOnlySpan<byte> data;
+
+                if (Environment.Is64BitProcess)
+                {
+                    data = new byte[] {
+                        0x02, 0x00, 0x00, 0x00,
+                        0x00, 0x00, 0x00, 0x00,
+                        0x00, 0x00, 0x00, 0x00,
+                        0x00, 0x00, 0x00, 0x00,
+                        0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+                        0x00, 0x00, 0x00, 0x00,
+                        0x00, 0x00, 0x00, 0x00,
+                        0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+                        0x00, 0x00, 0x00, 0x00,
+                        0x00, 0x00, 0x00, 0x00
+                    };
+                }
+                else
+                {
+                    data = new byte[] {
+                        0x02, 0x00, 0x00, 0x00,
+                        0x00, 0x00, 0x00, 0x00,
+                        0x00, 0x00, 0x00, 0x00,
+                        0x00, 0x00, 0x00, 0x00,
+                        0x00, 0x00, 0x00, 0x00,
+                        0x00, 0x00, 0x00, 0x00
+                    };
+                }
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<D3D12_VERSIONED_ROOT_SIGNATURE_DESC>());
+                return ref Unsafe.As<byte, D3D12_VERSIONED_ROOT_SIGNATURE_DESC>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         public void Init_1_0([NativeTypeName("UINT")] uint numParameters, [NativeTypeName("const D3D12_ROOT_PARAMETER *")] D3D12_ROOT_PARAMETER* _pParameters, [NativeTypeName("UINT")] uint numStaticSamplers = 0, [NativeTypeName("const D3D12_STATIC_SAMPLER_DESC *")] D3D12_STATIC_SAMPLER_DESC* _pStaticSamplers = null, D3D12_ROOT_SIGNATURE_FLAGS flags = D3D12_ROOT_SIGNATURE_FLAG_NONE)
         {

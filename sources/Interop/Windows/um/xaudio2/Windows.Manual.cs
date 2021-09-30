@@ -5,7 +5,6 @@
 
 using System;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.XAUDIO2_FILTER_TYPE;
 
 namespace TerraFX.Interop
 {
