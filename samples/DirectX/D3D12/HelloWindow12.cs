@@ -3,6 +3,8 @@
 // Ported from D3D12HelloWindow.h in https://github.com/Microsoft/DirectX-Graphics-Samples
 // Original source is Copyright © Microsoft. All rights reserved. Licensed under the MIT License (MIT).
 
+using System;
+
 namespace TerraFX.Samples.DirectX.D3D12
 {
     public unsafe class HelloWindow12 : DX12Sample
@@ -15,7 +17,7 @@ namespace TerraFX.Samples.DirectX.D3D12
         {
         }
 
-        public override void OnUpdate()
+        public override void OnUpdate(TimeSpan delta)
         {
         }
     }

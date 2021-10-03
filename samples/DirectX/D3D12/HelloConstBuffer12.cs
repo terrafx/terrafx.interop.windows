@@ -3,6 +3,7 @@
 // Ported from D3D12HelloConstBuffor in https://github.com/Microsoft/DirectX-Graphics-Samples
 // Original source is Copyright © Microsoft. All rights reserved. Licensed under the MIT License (MIT).
 
+using System;
 using System.Numerics;
 using System.Runtime.CompilerServices;
 using TerraFX.Interop;
@@ -36,7 +37,7 @@ namespace TerraFX.Samples.DirectX.D3D12
         {
         }
 
-        public override void OnUpdate()
+        public override void OnUpdate(TimeSpan delta)
         {
             const float TranslationSpeed = 0.005f;
             const float OffsetBounds = 1.25f;
