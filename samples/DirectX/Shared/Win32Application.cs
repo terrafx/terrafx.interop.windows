@@ -6,6 +6,7 @@
 using System;
 using System.Drawing;
 using System.Numerics;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using TerraFX.Interop;
 using static TerraFX.Interop.DXGI_FORMAT;
@@ -19,7 +20,7 @@ namespace TerraFX.Samples.DirectX
 
         public static HWND Hwnd => s_hwnd;
 
-        public static int Run(DXSample pSample, HINSTANCE hInstance, int nCmdShow)
+        public static int Run(DXSample sample, HINSTANCE hInstance, int nCmdShow)
         {
             var useWarpDevice = false;
 
@@ -34,7 +35,7 @@ namespace TerraFX.Samples.DirectX
             }
 
             fixed (char* lpszClassName = "DXSampleClass")
-            fixed (char* lpWindowName = pSample.Name)
+            fixed (char* lpWindowName = sample.Name)
             {
                 // Initialize the window class.
                 var windowClass = new WNDCLASSEXW {
@@ -60,7 +61,7 @@ namespace TerraFX.Samples.DirectX
                     HWND.NULL,                              // We have no parent window.
                     HMENU.NULL,                             // We aren't using menus.
                     hInstance,
-                    ((IntPtr)GCHandle.Alloc(pSample)).ToPointer()
+                    ((IntPtr)GCHandle.Alloc(sample)).ToPointer()
                 );
             }
 
@@ -71,28 +72,56 @@ namespace TerraFX.Samples.DirectX
             var backgroundColor = new Vector4(0.0f, 0.2f, 0.4f, 1.0f);
 
             var size = new Size((windowRect.right - windowRect.left), (windowRect.bottom - windowRect.top));
-            pSample.OnInit(DXGI_FORMAT_UNKNOWN, backgroundColor, DXGI_FORMAT_UNKNOWN, 1.0f, 2, s_hwnd, true, size, useWarpDevice);
+            sample.OnInit(DXGI_FORMAT_UNKNOWN, backgroundColor, DXGI_FORMAT_UNKNOWN, 1.0f, 2, s_hwnd, true, size, useWarpDevice);
 
             _ = ShowWindow(s_hwnd, nCmdShow);
 
             // Main sample loop.
             MSG msg;
+            DispatchPending(&msg);
 
-            do
+            var lastFramesPerSecond = 0u;
+
+            while (msg.message != WM_QUIT)
             {
-                // Process any messages in the queue.
-                if (PeekMessageW(&msg, IntPtr.Zero, 0, 0, PM_REMOVE) != 0)
-                {
-                    _ = TranslateMessage(&msg);
-                    _ = DispatchMessageW(&msg);
-                }
-            }
-            while (msg.message != WM_QUIT);
+                var delta = sample.OnBeginFrame();
+                sample.OnUpdate(delta);
 
-            pSample.OnDestroy();
+                var framesPerSecond = sample.FramesPerSecond;
+
+                if (framesPerSecond != lastFramesPerSecond)
+                {
+                    fixed (char* lpWindowName = $"{sample.Name} ({framesPerSecond} fps)")
+                    {
+                        _ = SetWindowTextW(s_hwnd, (ushort*)lpWindowName);
+                    }
+                    lastFramesPerSecond = framesPerSecond;
+                }
+
+                if (sample.IsWindowVisible)
+                {
+                    sample.OnRender();
+                }
+
+                DispatchPending(&msg);
+            }
+
+            sample.OnDestroy();
 
             // Return this part of the WM_QUIT message to Windows.
             return (int)msg.wParam;
+
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            static void DispatchPending(MSG* lpMsg)
+            {
+                // Process any messages in the queue.
+
+                while (PeekMessageW(lpMsg, hWnd: IntPtr.Zero, wMsgFilterMin: WM_NULL, wMsgFilterMax: WM_NULL, PM_REMOVE) != FALSE)
+                {
+                    _ = TranslateMessage(lpMsg);
+                    _ = DispatchMessageW(lpMsg);
+                }
+            }
         }
 
         // Main message handler for the sample
@@ -124,16 +153,6 @@ namespace TerraFX.Samples.DirectX
                     {
                         var size = new Size(LOWORD(lParam), HIWORD(lParam));
                         pSample.OnWindowSizeChanged(size);
-                    }
-                    return IntPtr.Zero;
-                }
-
-                case WM_PAINT:
-                {
-                    if (pSample != null)
-                    {
-                        pSample.OnUpdate();
-                        pSample.OnRender();
                     }
                     return IntPtr.Zero;
                 }

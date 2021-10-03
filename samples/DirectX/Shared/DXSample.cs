@@ -4,9 +4,11 @@
 // Original source is Copyright © Microsoft. All rights reserved. Licensed under the MIT License (MIT).
 
 using System;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Numerics;
+using System.Runtime.CompilerServices;
 using TerraFX.Interop;
 using TerraFX.Samples.DirectX.D3D11;
 using TerraFX.Samples.DirectX.D3D12;
@@ -38,8 +40,13 @@ namespace TerraFX.Samples.DirectX
         private float _dpi;
         private uint _frameCount;
         private uint _frameIndex;
+        private uint _framesPerSecond;
+        private uint _framesThisSecond;
         private IntPtr _hwnd;
         private bool _isWindowVisible;
+        private uint _previousFrameCount;
+        private TimeSpan _previousTimestamp;
+        private TimeSpan _secondCounter;
         private Size _size;
         private bool _useWarpDevice;
 
@@ -47,6 +54,7 @@ namespace TerraFX.Samples.DirectX
         {
             _assetsPath = GetAssetsPath();
             _name = name;
+            _previousTimestamp = GetCurrentTimestamp();
         }
 
         ~DXSample()
@@ -79,6 +87,8 @@ namespace TerraFX.Samples.DirectX
 
         public uint FrameCount => _frameCount;
 
+        public uint FramesPerSecond => _framesPerSecond;
+
         public ref uint FrameIndex => ref _frameIndex;
 
         public IntPtr Hwnd => _hwnd;
@@ -91,10 +101,50 @@ namespace TerraFX.Samples.DirectX
 
         public bool UseWarpDevice => _useWarpDevice;
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        private static TimeSpan GetCurrentTimestamp()
+        {
+            var ticks = (long)(Stopwatch.GetTimestamp() * GetFrequency());
+            return new TimeSpan(ticks);
+        }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        private static double GetFrequency()
+        {
+            return (double)TimeSpan.TicksPerSecond / Stopwatch.Frequency;
+        }
+
         public void Dispose()
         {
             Dispose(isDisposing: true);
             GC.SuppressFinalize(this);
+        }
+
+        public TimeSpan OnBeginFrame()
+        {
+            var currentTimestamp = GetCurrentTimestamp();
+            var frameCount = _previousFrameCount + 1;
+
+            var delta = currentTimestamp - _previousTimestamp;
+
+            var secondCounter = _secondCounter + delta;
+            var framesThisSecond = _framesThisSecond + 1;
+
+            if (secondCounter.TotalSeconds >= 1.0)
+            {
+                _framesPerSecond = framesThisSecond;
+                framesThisSecond = 0;
+
+                var ticks = secondCounter.Ticks - TimeSpan.TicksPerSecond;
+                secondCounter = TimeSpan.FromTicks(ticks);
+            }
+
+            _framesThisSecond = framesThisSecond;
+            _secondCounter = secondCounter;
+            _previousFrameCount = frameCount;
+            _previousTimestamp = currentTimestamp;
+
+            return delta;
         }
 
         public virtual void OnDestroy()
@@ -146,7 +196,7 @@ namespace TerraFX.Samples.DirectX
             }
         }
 
-        public abstract void OnUpdate();
+        public abstract void OnUpdate(TimeSpan delta);
 
         public void OnVisibilityChanged(bool isVisible)
         {
