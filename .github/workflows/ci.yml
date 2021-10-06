@@ -87,7 +87,7 @@ jobs:
           ./artifacts/pkg/**/*
           ./artifacts/tst/**/*
         if-no-files-found: error
-  build-nuget:
+  build-nuget-preview:
     runs-on: windows-latest
     steps:
     - uses: actions/checkout@v2
@@ -95,9 +95,28 @@ jobs:
       shell: cmd
       env:
         EXCLUDE_RUN_ID_FROM_PACKAGE: true
+        EXCLUDE_SUFFIX_FROM_VERSION: false
     - uses: actions/upload-artifact@v2
       with:
-        name: nuget
+        name: nuget_preview
+        path: |
+          ./artifacts/bin/**/*
+          ./artifacts/log/**/*
+          ./artifacts/pkg/**/*
+          ./artifacts/tst/**/*
+        if-no-files-found: error
+  build-nuget-release:
+    runs-on: windows-latest
+    steps:
+    - uses: actions/checkout@v2
+    - run: ./scripts/cibuild.cmd -configuration release -architecture x64
+      shell: cmd
+      env:
+        EXCLUDE_RUN_ID_FROM_PACKAGE: true
+        EXCLUDE_SUFFIX_FROM_VERSION: true
+    - uses: actions/upload-artifact@v2
+      with:
+        name: nuget_release
         path: |
           ./artifacts/bin/**/*
           ./artifacts/log/**/*
@@ -107,7 +126,7 @@ jobs:
   publish-nightlies-azure:
     runs-on: ubuntu-latest
     if: ${{ github.event_name == 'push' }}
-    needs: [ windows-x64, windows-x86, linux-x64, macos-x64, build-nuget ]
+    needs: [ windows-x64, windows-x86, linux-x64, macos-x64, build-nuget-preview, build-nuget-release ]
     steps:
     - uses: actions/download-artifact@v2
       with:
@@ -119,11 +138,11 @@ jobs:
         source-url: https://pkgs.terrafx.dev/index.json
       env:
         NUGET_AUTH_TOKEN: ${{ secrets.AZURE_DEVOPS_PAT }}
-    - run: dotnet nuget push "./artifacts/pkg/Release/*.nupkg" --api-key AzureDevOps
+    - run: dotnet nuget push "./artifacts/pkg/Release/*.nupkg" --api-key AzureDevOps --skip-duplicate
   publish-nightlies-github:
     runs-on: ubuntu-latest
     if: ${{ github.event_name == 'push' }}
-    needs: [ windows-x64, windows-x86, linux-x64, macos-x64, build-nuget ]
+    needs: [ windows-x64, windows-x86, linux-x64, macos-x64, build-nuget-preview, build-nuget-release ]
     steps:
     - uses: actions/download-artifact@v2
       with:
@@ -132,4 +151,4 @@ jobs:
     - uses: actions/setup-dotnet@v1
       with:
         dotnet-version: '5.0.x'
-    - run: dotnet nuget push "./artifacts/pkg/Release/*.nupkg" --source https://nuget.pkg.github.com/terrafx/index.json --api-key ${{ secrets.GITHUB_TOKEN }}
+    - run: dotnet nuget push "./artifacts/pkg/Release/*.nupkg" --source https://nuget.pkg.github.com/terrafx/index.json --api-key ${{ secrets.GITHUB_TOKEN }} --skip-duplicate

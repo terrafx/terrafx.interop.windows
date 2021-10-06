@@ -42,8 +42,8 @@
     <ContinuousIntegrationBuild Condition="'$(GITHUB_RUN_ID)' != ''">true</ContinuousIntegrationBuild>
     <PackageOutputPath>$(BaseArtifactsPath)pkg/$(Configuration)/</PackageOutputPath>
     <Product>TerraFX.Interop.Windows</Product>
-    <VersionPrefix>10.0.20348</VersionPrefix>
-    <VersionSuffix>beta1</VersionSuffix>
+    <VersionPrefix>10.0.20348.0</VersionPrefix>
+    <VersionSuffix Condition="'$(EXCLUDE_SUFFIX_FROM_VERSION)' != 'true'">rc1</VersionSuffix>
     <VersionSuffix Condition="'$(GITHUB_EVENT_NAME)' == 'pull_request'">pr</VersionSuffix>
   </PropertyGroup>
 
