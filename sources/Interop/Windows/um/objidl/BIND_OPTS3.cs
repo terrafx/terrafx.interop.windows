@@ -11,7 +11,7 @@ namespace TerraFX.Interop
     [NativeInheritance("tagBIND_OPTS2")]
     public partial struct BIND_OPTS3
     {
-        public BIND_OPTS2 __AnonymousBase_objidl_L9008_C36;
+        public BIND_OPTS2 Base;
 
         [NativeTypeName("HWND")]
         public IntPtr hwnd;
