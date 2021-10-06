@@ -9,7 +9,7 @@ namespace TerraFX.Interop
     [NativeInheritance("SPPHRASE_50")]
     public unsafe partial struct SPPHRASE_53
     {
-        public SPPHRASE_50 __AnonymousBase_sapi_L5848_C37;
+        public SPPHRASE_50 Base;
 
         [NativeTypeName("LPWSTR")]
         public ushort* pSML;
