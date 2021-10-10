@@ -7,7 +7,7 @@ um-manipulations.h
 --test-output
 ../../../tests/Interop/Windows/um/manipulations
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/manipulations.h
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/manipulations_i.c
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/manipulations.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/manipulations_i.c
 --with-attribute
 MANIPULATION_PROCESSOR_MANIPULATIONS=Flags

@@ -7,7 +7,7 @@ um-ProcessSnapshot.h
 --test-output
 ../../../tests/Interop/Windows/um/ProcessSnapshot
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/ProcessSnapshot.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/ProcessSnapshot.h
 --with-attribute
 PSS_CAPTURE_FLAGS=Flags
 PSS_DUPLICATE_FLAGS=Flags

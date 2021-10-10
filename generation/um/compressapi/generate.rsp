@@ -7,6 +7,6 @@ um-compressapi.h
 --test-output
 ../../../tests/Interop/Windows/um/compressapi
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/compressapi.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/compressapi.h
 --with-librarypath
 *=cabinet
