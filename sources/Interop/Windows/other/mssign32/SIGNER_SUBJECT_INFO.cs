@@ -19,7 +19,7 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint dwSubjectChoice;
 
-        [NativeTypeName("_SIGNER_SUBJECT_INFO::(anonymous union at ./mssign32.h:28:5)")]
+        [NativeTypeName("_SIGNER_SUBJECT_INFO::(anonymous union at ./mssign32.h:30:9)")]
         public _Anonymous_e__Union Anonymous;
 
         public ref SIGNER_FILE_INFO* pSignerFileInfo

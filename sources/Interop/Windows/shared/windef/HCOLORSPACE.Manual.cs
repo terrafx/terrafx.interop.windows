@@ -9,7 +9,7 @@ namespace TerraFX.Interop
 {
     public unsafe struct HCOLORSPACE : IEquatable<HCOLORSPACE>
     {
-        public static readonly HCOLORSPACE NULL = default;
+        public static HCOLORSPACE NULL => default;
 
         private void* _value;
 

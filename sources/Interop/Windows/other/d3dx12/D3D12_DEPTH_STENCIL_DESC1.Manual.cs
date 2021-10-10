@@ -3,8 +3,10 @@
 // Ported from d3dx12.h in DirectX-Graphics-Samples commit a7a87f1853b5540f10920518021d91ae641033fb
 // Original source is Copyright © Microsoft. All rights reserved. Licensed under the MIT License (MIT).
 
-using static TerraFX.Interop.D3D12_COMPARISON_FUNC;
-using static TerraFX.Interop.D3D12_DEPTH_WRITE_MASK;
+using System;
+using System.Diagnostics;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop
@@ -30,17 +32,32 @@ namespace TerraFX.Interop
             DepthBoundsTestEnable = FALSE;
         }
 
-        public static readonly D3D12_DEPTH_STENCIL_DESC1 DEFAULT = new D3D12_DEPTH_STENCIL_DESC1 {
-            DepthEnable = TRUE,
-            DepthWriteMask = D3D12_DEPTH_WRITE_MASK_ALL,
-            DepthFunc = D3D12_COMPARISON_FUNC_LESS,
-            StencilEnable = FALSE,
-            StencilReadMask = (byte)D3D12_DEFAULT_STENCIL_READ_MASK,
-            StencilWriteMask = (byte)D3D12_DEFAULT_STENCIL_WRITE_MASK,
-            FrontFace = D3D12_DEPTH_STENCILOP_DESC.DEFAULT,
-            BackFace = D3D12_DEPTH_STENCILOP_DESC.DEFAULT,
-            DepthBoundsTestEnable = FALSE
-        };
+        public static ref readonly D3D12_DEPTH_STENCIL_DESC1 DEFAULT
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x01, 0x00, 0x00, 0x00,
+                    0x01, 0x00, 0x00, 0x00,
+                    0x02, 0x00, 0x00, 0x00,
+                    0x00, 0x00, 0x00, 0x00,
+                    0xFF, 0xFF, 0x00, 0x00,
+                    0x01, 0x00, 0x00, 0x00,
+                    0x01, 0x00, 0x00, 0x00,
+                    0x01, 0x00, 0x00, 0x00,
+                    0x08, 0x00, 0x00, 0x00,
+                    0x01, 0x00, 0x00, 0x00,
+                    0x01, 0x00, 0x00, 0x00,
+                    0x01, 0x00, 0x00, 0x00,
+                    0x08, 0x00, 0x00, 0x00,
+                    0x00, 0x00, 0x00, 0x00
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<D3D12_DEPTH_STENCIL_DESC1>());
+                return ref Unsafe.As<byte, D3D12_DEPTH_STENCIL_DESC1>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         public D3D12_DEPTH_STENCIL_DESC1([NativeTypeName("BOOL")] int depthEnable, D3D12_DEPTH_WRITE_MASK depthWriteMask, D3D12_COMPARISON_FUNC depthFunc, [NativeTypeName("BOOL")] int stencilEnable, [NativeTypeName("UINT8")] byte stencilReadMask, [NativeTypeName("UINT8")] byte stencilWriteMask, D3D12_STENCIL_OP frontStencilFailOp, D3D12_STENCIL_OP frontStencilDepthFailOp, D3D12_STENCIL_OP frontStencilPassOp, D3D12_COMPARISON_FUNC frontStencilFunc, D3D12_STENCIL_OP backStencilFailOp, D3D12_STENCIL_OP backStencilDepthFailOp, D3D12_STENCIL_OP backStencilPassOp, D3D12_COMPARISON_FUNC backStencilFunc, [NativeTypeName("BOOL")] int depthBoundsTestEnable)
         {

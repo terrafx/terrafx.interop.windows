@@ -11,11 +11,13 @@ namespace TerraFX.Interop
 {
     [Guid("84AC29BB-D619-44D2-B197-E4ACF7DF3ED6")]
     [NativeTypeName("struct IXAudio2Extension : IUnknown")]
+    [NativeInheritance("IUnknown")]
     public unsafe partial struct IXAudio2Extension
     {
         public void** lpVtbl;
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(0)]
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
@@ -23,6 +25,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(1)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
@@ -30,6 +33,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(2)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
@@ -37,12 +41,14 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(3)]
         public void GetProcessingQuantum([NativeTypeName("UINT32 *")] uint* quantumNumerator, [NativeTypeName("UINT32 *")] uint* quantumDenominator)
         {
             ((delegate* unmanaged<IXAudio2Extension*, uint*, uint*, void>)(lpVtbl[3]))((IXAudio2Extension*)Unsafe.AsPointer(ref this), quantumNumerator, quantumDenominator);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(4)]
         public void GetProcessor([NativeTypeName("XAUDIO2_PROCESSOR *")] uint* processor)
         {
             ((delegate* unmanaged<IXAudio2Extension*, uint*, void>)(lpVtbl[4]))((IXAudio2Extension*)Unsafe.AsPointer(ref this), processor);

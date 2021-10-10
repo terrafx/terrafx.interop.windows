@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/shtypes.h in the Windows SDK for Windows 10.0.19041.0
+// Ported from um/shtypes.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
@@ -14,7 +14,7 @@ namespace TerraFX.Interop
         [NativeTypeName("UINT")]
         public uint uType;
 
-        [NativeTypeName("_STRRET::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/shtypes.h:277:36)")]
+        [NativeTypeName("_STRRET::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/shtypes.h:285:36)")]
         public _Anonymous_e__Union Anonymous;
 
         public ref ushort* pOleStr

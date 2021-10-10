@@ -11,11 +11,13 @@ namespace TerraFX.Interop
 {
     [Guid("3BDD78E2-C16E-47FD-B883-CE6FACC1A208")]
     [NativeTypeName("struct ITfMouseTrackerACP : IUnknown")]
+    [NativeInheritance("IUnknown")]
     public unsafe partial struct ITfMouseTrackerACP
     {
         public void** lpVtbl;
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(0)]
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
@@ -23,6 +25,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(1)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
@@ -30,6 +33,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(2)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
@@ -37,6 +41,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(3)]
         [return: NativeTypeName("HRESULT")]
         public int AdviseMouseSink(ITfRangeACP* range, ITfMouseSink* pSink, [NativeTypeName("DWORD *")] uint* pdwCookie)
         {
@@ -44,6 +49,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(4)]
         [return: NativeTypeName("HRESULT")]
         public int UnadviseMouseSink([NativeTypeName("DWORD")] uint dwCookie)
         {

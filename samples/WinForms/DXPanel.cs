@@ -5,7 +5,6 @@ using System.Numerics;
 using System.Windows.Forms;
 using TerraFX.Samples.DirectX;
 using static TerraFX.Interop.DXGI_FORMAT;
-using static TerraFX.Interop.Windows;
 
 namespace TerraFX.Samples.WinForms
 {
@@ -91,19 +90,6 @@ namespace TerraFX.Samples.WinForms
         private void DXPanel_KeyDown(object sender, KeyEventArgs eventArgs)
         {
             _dxSample?.OnKeyDown(eventArgs.KeyValue);
-        }
-
-        protected override void WndProc(ref Message m)
-        {
-            if ((m.Msg == WM_PAINT) && (_dxSample is not null))
-            {
-                _dxSample.OnUpdate();
-                _dxSample.OnRender();
-            }
-            else
-            {
-                base.WndProc(ref m);
-            }
         }
     }
 }

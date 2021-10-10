@@ -4,15 +4,81 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Diagnostics;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
 {
     public static partial class Windows
     {
-        public static readonly Guid IID_IUnknown = new Guid(0x00000000, 0x0000, 0x0000, 0xC0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
+        public static ref readonly Guid IID_IUnknown
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x00, 0x00, 0x00, 0x00,
+                    0x00, 0x00,
+                    0x00, 0x00,
+                    0xC0,
+                    0x00,
+                    0x00,
+                    0x00,
+                    0x00,
+                    0x00,
+                    0x00,
+                    0x46
+                };
 
-        public static readonly Guid IID_AsyncIUnknown = new Guid(0x000E0000, 0x0000, 0x0000, 0xC0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
-        public static readonly Guid IID_IClassFactory = new Guid(0x00000001, 0x0000, 0x0000, 0xC0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
+        public static ref readonly Guid IID_AsyncIUnknown
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x00, 0x00, 0x0E, 0x00,
+                    0x00, 0x00,
+                    0x00, 0x00,
+                    0xC0,
+                    0x00,
+                    0x00,
+                    0x00,
+                    0x00,
+                    0x00,
+                    0x00,
+                    0x46
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid IID_IClassFactory
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x01, 0x00, 0x00, 0x00,
+                    0x00, 0x00,
+                    0x00, 0x00,
+                    0xC0,
+                    0x00,
+                    0x00,
+                    0x00,
+                    0x00,
+                    0x00,
+                    0x00,
+                    0x46
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
     }
 }

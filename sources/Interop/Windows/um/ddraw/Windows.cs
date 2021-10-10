@@ -4,6 +4,8 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Diagnostics;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
@@ -11,52 +13,404 @@ namespace TerraFX.Interop
     public static unsafe partial class Windows
     {
         [NativeTypeName("const GUID")]
-        public static readonly Guid CLSID_DirectDraw = new Guid(0xD7B70EE0, 0x4340, 0x11CF, 0xB0, 0x63, 0x00, 0x20, 0xAF, 0xC2, 0xCD, 0x35);
+        public static ref readonly Guid CLSID_DirectDraw
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xE0, 0x0E, 0xB7, 0xD7,
+                    0x40, 0x43,
+                    0xCF, 0x11,
+                    0xB0,
+                    0x63,
+                    0x00,
+                    0x20,
+                    0xAF,
+                    0xC2,
+                    0xCD,
+                    0x35
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const GUID")]
-        public static readonly Guid CLSID_DirectDraw7 = new Guid(0x3c305196, 0x50db, 0x11d3, 0x9c, 0xfe, 0x00, 0xc0, 0x4f, 0xd9, 0x30, 0xc5);
+        public static ref readonly Guid CLSID_DirectDraw7
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x96, 0x51, 0x30, 0x3C,
+                    0xDB, 0x50,
+                    0xD3, 0x11,
+                    0x9C,
+                    0xFE,
+                    0x00,
+                    0xC0,
+                    0x4F,
+                    0xD9,
+                    0x30,
+                    0xC5
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const GUID")]
-        public static readonly Guid CLSID_DirectDrawClipper = new Guid(0x593817A0, 0x7DB3, 0x11CF, 0xA2, 0xDE, 0x00, 0xAA, 0x00, 0xb9, 0x33, 0x56);
+        public static ref readonly Guid CLSID_DirectDrawClipper
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xA0, 0x17, 0x38, 0x59,
+                    0xB3, 0x7D,
+                    0xCF, 0x11,
+                    0xA2,
+                    0xDE,
+                    0x00,
+                    0xAA,
+                    0x00,
+                    0xB9,
+                    0x33,
+                    0x56
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const GUID")]
-        public static readonly Guid IID_IDirectDraw = new Guid(0x6C14DB80, 0xA733, 0x11CE, 0xA5, 0x21, 0x00, 0x20, 0xAF, 0x0B, 0xE5, 0x60);
+        public static ref readonly Guid IID_IDirectDraw
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x80, 0xDB, 0x14, 0x6C,
+                    0x33, 0xA7,
+                    0xCE, 0x11,
+                    0xA5,
+                    0x21,
+                    0x00,
+                    0x20,
+                    0xAF,
+                    0x0B,
+                    0xE5,
+                    0x60
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const GUID")]
-        public static readonly Guid IID_IDirectDraw2 = new Guid(0xB3A6F3E0, 0x2B43, 0x11CF, 0xA2, 0xDE, 0x00, 0xAA, 0x00, 0xB9, 0x33, 0x56);
+        public static ref readonly Guid IID_IDirectDraw2
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xE0, 0xF3, 0xA6, 0xB3,
+                    0x43, 0x2B,
+                    0xCF, 0x11,
+                    0xA2,
+                    0xDE,
+                    0x00,
+                    0xAA,
+                    0x00,
+                    0xB9,
+                    0x33,
+                    0x56
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const GUID")]
-        public static readonly Guid IID_IDirectDraw4 = new Guid(0x9c59509a, 0x39bd, 0x11d1, 0x8c, 0x4a, 0x00, 0xc0, 0x4f, 0xd9, 0x30, 0xc5);
+        public static ref readonly Guid IID_IDirectDraw4
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x9A, 0x50, 0x59, 0x9C,
+                    0xBD, 0x39,
+                    0xD1, 0x11,
+                    0x8C,
+                    0x4A,
+                    0x00,
+                    0xC0,
+                    0x4F,
+                    0xD9,
+                    0x30,
+                    0xC5
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const GUID")]
-        public static readonly Guid IID_IDirectDraw7 = new Guid(0x15e65ec0, 0x3b9c, 0x11d2, 0xb9, 0x2f, 0x00, 0x60, 0x97, 0x97, 0xea, 0x5b);
+        public static ref readonly Guid IID_IDirectDraw7
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xC0, 0x5E, 0xE6, 0x15,
+                    0x9C, 0x3B,
+                    0xD2, 0x11,
+                    0xB9,
+                    0x2F,
+                    0x00,
+                    0x60,
+                    0x97,
+                    0x97,
+                    0xEA,
+                    0x5B
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const GUID")]
-        public static readonly Guid IID_IDirectDrawSurface = new Guid(0x6C14DB81, 0xA733, 0x11CE, 0xA5, 0x21, 0x00, 0x20, 0xAF, 0x0B, 0xE5, 0x60);
+        public static ref readonly Guid IID_IDirectDrawSurface
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x81, 0xDB, 0x14, 0x6C,
+                    0x33, 0xA7,
+                    0xCE, 0x11,
+                    0xA5,
+                    0x21,
+                    0x00,
+                    0x20,
+                    0xAF,
+                    0x0B,
+                    0xE5,
+                    0x60
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const GUID")]
-        public static readonly Guid IID_IDirectDrawSurface2 = new Guid(0x57805885, 0x6eec, 0x11cf, 0x94, 0x41, 0xa8, 0x23, 0x03, 0xc1, 0x0e, 0x27);
+        public static ref readonly Guid IID_IDirectDrawSurface2
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x85, 0x58, 0x80, 0x57,
+                    0xEC, 0x6E,
+                    0xCF, 0x11,
+                    0x94,
+                    0x41,
+                    0xA8,
+                    0x23,
+                    0x03,
+                    0xC1,
+                    0x0E,
+                    0x27
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const GUID")]
-        public static readonly Guid IID_IDirectDrawSurface3 = new Guid(0xDA044E00, 0x69B2, 0x11D0, 0xA1, 0xD5, 0x00, 0xAA, 0x00, 0xB8, 0xDF, 0xBB);
+        public static ref readonly Guid IID_IDirectDrawSurface3
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x00, 0x4E, 0x04, 0xDA,
+                    0xB2, 0x69,
+                    0xD0, 0x11,
+                    0xA1,
+                    0xD5,
+                    0x00,
+                    0xAA,
+                    0x00,
+                    0xB8,
+                    0xDF,
+                    0xBB
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const GUID")]
-        public static readonly Guid IID_IDirectDrawSurface4 = new Guid(0x0B2B8630, 0xAD35, 0x11D0, 0x8E, 0xA6, 0x00, 0x60, 0x97, 0x97, 0xEA, 0x5B);
+        public static ref readonly Guid IID_IDirectDrawSurface4
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x30, 0x86, 0x2B, 0x0B,
+                    0x35, 0xAD,
+                    0xD0, 0x11,
+                    0x8E,
+                    0xA6,
+                    0x00,
+                    0x60,
+                    0x97,
+                    0x97,
+                    0xEA,
+                    0x5B
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const GUID")]
-        public static readonly Guid IID_IDirectDrawSurface7 = new Guid(0x06675a80, 0x3b9b, 0x11d2, 0xb9, 0x2f, 0x00, 0x60, 0x97, 0x97, 0xea, 0x5b);
+        public static ref readonly Guid IID_IDirectDrawSurface7
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x80, 0x5A, 0x67, 0x06,
+                    0x9B, 0x3B,
+                    0xD2, 0x11,
+                    0xB9,
+                    0x2F,
+                    0x00,
+                    0x60,
+                    0x97,
+                    0x97,
+                    0xEA,
+                    0x5B
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const GUID")]
-        public static readonly Guid IID_IDirectDrawPalette = new Guid(0x6C14DB84, 0xA733, 0x11CE, 0xA5, 0x21, 0x00, 0x20, 0xAF, 0x0B, 0xE5, 0x60);
+        public static ref readonly Guid IID_IDirectDrawPalette
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x84, 0xDB, 0x14, 0x6C,
+                    0x33, 0xA7,
+                    0xCE, 0x11,
+                    0xA5,
+                    0x21,
+                    0x00,
+                    0x20,
+                    0xAF,
+                    0x0B,
+                    0xE5,
+                    0x60
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const GUID")]
-        public static readonly Guid IID_IDirectDrawClipper = new Guid(0x6C14DB85, 0xA733, 0x11CE, 0xA5, 0x21, 0x00, 0x20, 0xAF, 0x0B, 0xE5, 0x60);
+        public static ref readonly Guid IID_IDirectDrawClipper
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x85, 0xDB, 0x14, 0x6C,
+                    0x33, 0xA7,
+                    0xCE, 0x11,
+                    0xA5,
+                    0x21,
+                    0x00,
+                    0x20,
+                    0xAF,
+                    0x0B,
+                    0xE5,
+                    0x60
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const GUID")]
-        public static readonly Guid IID_IDirectDrawColorControl = new Guid(0x4B9F0EE0, 0x0D7E, 0x11D0, 0x9B, 0x06, 0x00, 0xA0, 0xC9, 0x03, 0xA3, 0xB8);
+        public static ref readonly Guid IID_IDirectDrawColorControl
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xE0, 0x0E, 0x9F, 0x4B,
+                    0x7E, 0x0D,
+                    0xD0, 0x11,
+                    0x9B,
+                    0x06,
+                    0x00,
+                    0xA0,
+                    0xC9,
+                    0x03,
+                    0xA3,
+                    0xB8
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const GUID")]
-        public static readonly Guid IID_IDirectDrawGammaControl = new Guid(0x69C11C3E, 0xB46B, 0x11D1, 0xAD, 0x7A, 0x00, 0xC0, 0x4F, 0xC2, 0x9B, 0x4E);
+        public static ref readonly Guid IID_IDirectDrawGammaControl
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x3E, 0x1C, 0xC1, 0x69,
+                    0x6B, 0xB4,
+                    0xD1, 0x11,
+                    0xAD,
+                    0x7A,
+                    0x00,
+                    0xC0,
+                    0x4F,
+                    0xC2,
+                    0x9B,
+                    0x4E
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [DllImport("ddraw", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
@@ -108,10 +462,10 @@ namespace TerraFX.Interop
         public const uint FOURCC_DXT5 = (((uint)((byte)('D')) | ((uint)((byte)('X')) << 8) | ((uint)((byte)('T')) << 16) | ((uint)((byte)('5')) << 24)));
 
         [NativeTypeName("#define DirectDrawEnumerate DirectDrawEnumerateW")]
-        public static readonly delegate*<delegate* unmanaged<Guid*, ushort*, ushort*, void*, int>, void*, int> DirectDrawEnumerate = &DirectDrawEnumerateW;
+        public static delegate*<delegate* unmanaged<Guid*, ushort*, ushort*, void*, int>, void*, int> DirectDrawEnumerate => &DirectDrawEnumerateW;
 
         [NativeTypeName("#define DirectDrawEnumerateEx DirectDrawEnumerateExW")]
-        public static readonly delegate*<delegate* unmanaged<Guid*, ushort*, ushort*, void*, IntPtr, int>, void*, uint, int> DirectDrawEnumerateEx = &DirectDrawEnumerateExW;
+        public static delegate*<delegate* unmanaged<Guid*, ushort*, ushort*, void*, IntPtr, int>, void*, uint, int> DirectDrawEnumerateEx => &DirectDrawEnumerateExW;
 
         [NativeTypeName("#define DDENUM_ATTACHEDSECONDARYDEVICES 0x00000001L")]
         public const int DDENUM_ATTACHEDSECONDARYDEVICES = 0x00000001;

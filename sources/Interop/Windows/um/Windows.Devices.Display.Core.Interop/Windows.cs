@@ -4,6 +4,9 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Diagnostics;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
 {
@@ -31,8 +34,50 @@ namespace TerraFX.Interop
             return Luid;
         }
 
-        public static readonly Guid IID_IDisplayDeviceInterop = new Guid(0x64338358, 0x366A, 0x471B, 0xBD, 0x56, 0xDD, 0x8E, 0xF4, 0x8E, 0x43, 0x9B);
+        public static ref readonly Guid IID_IDisplayDeviceInterop
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x58, 0x83, 0x33, 0x64,
+                    0x6A, 0x36,
+                    0x1B, 0x47,
+                    0xBD,
+                    0x56,
+                    0xDD,
+                    0x8E,
+                    0xF4,
+                    0x8E,
+                    0x43,
+                    0x9B
+                };
 
-        public static readonly Guid IID_IDisplayPathInterop = new Guid(0xA6BA4205, 0xE59E, 0x4E71, 0xB2, 0x5B, 0x4E, 0x43, 0x6D, 0x21, 0xEE, 0x3D);
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid IID_IDisplayPathInterop
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x05, 0x42, 0xBA, 0xA6,
+                    0x9E, 0xE5,
+                    0x71, 0x4E,
+                    0xB2,
+                    0x5B,
+                    0x4E,
+                    0x43,
+                    0x6D,
+                    0x21,
+                    0xEE,
+                    0x3D
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
     }
 }

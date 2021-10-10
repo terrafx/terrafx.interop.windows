@@ -4,6 +4,8 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Diagnostics;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
@@ -19,46 +21,354 @@ namespace TerraFX.Interop
         public static extern int CreateDXGIFactory1([NativeTypeName("const IID &")] Guid* riid, void** ppFactory);
 
         [NativeTypeName("const GUID")]
-        public static readonly Guid IID_IDXGIObject = new Guid(0xaec22fb8, 0x76f3, 0x4639, 0x9b, 0xe0, 0x28, 0xeb, 0x43, 0xa6, 0x7a, 0x2e);
+        public static ref readonly Guid IID_IDXGIObject
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xB8, 0x2F, 0xC2, 0xAE,
+                    0xF3, 0x76,
+                    0x39, 0x46,
+                    0x9B,
+                    0xE0,
+                    0x28,
+                    0xEB,
+                    0x43,
+                    0xA6,
+                    0x7A,
+                    0x2E
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const GUID")]
-        public static readonly Guid IID_IDXGIDeviceSubObject = new Guid(0x3d3e0379, 0xf9de, 0x4d58, 0xbb, 0x6c, 0x18, 0xd6, 0x29, 0x92, 0xf1, 0xa6);
+        public static ref readonly Guid IID_IDXGIDeviceSubObject
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x79, 0x03, 0x3E, 0x3D,
+                    0xDE, 0xF9,
+                    0x58, 0x4D,
+                    0xBB,
+                    0x6C,
+                    0x18,
+                    0xD6,
+                    0x29,
+                    0x92,
+                    0xF1,
+                    0xA6
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const GUID")]
-        public static readonly Guid IID_IDXGIResource = new Guid(0x035f3ab4, 0x482e, 0x4e50, 0xb4, 0x1f, 0x8a, 0x7f, 0x8b, 0xd8, 0x96, 0x0b);
+        public static ref readonly Guid IID_IDXGIResource
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xB4, 0x3A, 0x5F, 0x03,
+                    0x2E, 0x48,
+                    0x50, 0x4E,
+                    0xB4,
+                    0x1F,
+                    0x8A,
+                    0x7F,
+                    0x8B,
+                    0xD8,
+                    0x96,
+                    0x0B
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const GUID")]
-        public static readonly Guid IID_IDXGIKeyedMutex = new Guid(0x9d8e1289, 0xd7b3, 0x465f, 0x81, 0x26, 0x25, 0x0e, 0x34, 0x9a, 0xf8, 0x5d);
+        public static ref readonly Guid IID_IDXGIKeyedMutex
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x89, 0x12, 0x8E, 0x9D,
+                    0xB3, 0xD7,
+                    0x5F, 0x46,
+                    0x81,
+                    0x26,
+                    0x25,
+                    0x0E,
+                    0x34,
+                    0x9A,
+                    0xF8,
+                    0x5D
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const GUID")]
-        public static readonly Guid IID_IDXGISurface = new Guid(0xcafcb56c, 0x6ac3, 0x4889, 0xbf, 0x47, 0x9e, 0x23, 0xbb, 0xd2, 0x60, 0xec);
+        public static ref readonly Guid IID_IDXGISurface
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x6C, 0xB5, 0xFC, 0xCA,
+                    0xC3, 0x6A,
+                    0x89, 0x48,
+                    0xBF,
+                    0x47,
+                    0x9E,
+                    0x23,
+                    0xBB,
+                    0xD2,
+                    0x60,
+                    0xEC
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const GUID")]
-        public static readonly Guid IID_IDXGISurface1 = new Guid(0x4AE63092, 0x6327, 0x4c1b, 0x80, 0xAE, 0xBF, 0xE1, 0x2E, 0xA3, 0x2B, 0x86);
+        public static ref readonly Guid IID_IDXGISurface1
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x92, 0x30, 0xE6, 0x4A,
+                    0x27, 0x63,
+                    0x1B, 0x4C,
+                    0x80,
+                    0xAE,
+                    0xBF,
+                    0xE1,
+                    0x2E,
+                    0xA3,
+                    0x2B,
+                    0x86
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const GUID")]
-        public static readonly Guid IID_IDXGIAdapter = new Guid(0x2411e7e1, 0x12ac, 0x4ccf, 0xbd, 0x14, 0x97, 0x98, 0xe8, 0x53, 0x4d, 0xc0);
+        public static ref readonly Guid IID_IDXGIAdapter
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xE1, 0xE7, 0x11, 0x24,
+                    0xAC, 0x12,
+                    0xCF, 0x4C,
+                    0xBD,
+                    0x14,
+                    0x97,
+                    0x98,
+                    0xE8,
+                    0x53,
+                    0x4D,
+                    0xC0
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const GUID")]
-        public static readonly Guid IID_IDXGIOutput = new Guid(0xae02eedb, 0xc735, 0x4690, 0x8d, 0x52, 0x5a, 0x8d, 0xc2, 0x02, 0x13, 0xaa);
+        public static ref readonly Guid IID_IDXGIOutput
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xDB, 0xEE, 0x02, 0xAE,
+                    0x35, 0xC7,
+                    0x90, 0x46,
+                    0x8D,
+                    0x52,
+                    0x5A,
+                    0x8D,
+                    0xC2,
+                    0x02,
+                    0x13,
+                    0xAA
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const GUID")]
-        public static readonly Guid IID_IDXGISwapChain = new Guid(0x310d36a0, 0xd2e7, 0x4c0a, 0xaa, 0x04, 0x6a, 0x9d, 0x23, 0xb8, 0x88, 0x6a);
+        public static ref readonly Guid IID_IDXGISwapChain
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xA0, 0x36, 0x0D, 0x31,
+                    0xE7, 0xD2,
+                    0x0A, 0x4C,
+                    0xAA,
+                    0x04,
+                    0x6A,
+                    0x9D,
+                    0x23,
+                    0xB8,
+                    0x88,
+                    0x6A
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const GUID")]
-        public static readonly Guid IID_IDXGIFactory = new Guid(0x7b7166ec, 0x21c7, 0x44ae, 0xb2, 0x1a, 0xc9, 0xae, 0x32, 0x1a, 0xe3, 0x69);
+        public static ref readonly Guid IID_IDXGIFactory
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xEC, 0x66, 0x71, 0x7B,
+                    0xC7, 0x21,
+                    0xAE, 0x44,
+                    0xB2,
+                    0x1A,
+                    0xC9,
+                    0xAE,
+                    0x32,
+                    0x1A,
+                    0xE3,
+                    0x69
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const GUID")]
-        public static readonly Guid IID_IDXGIDevice = new Guid(0x54ec77fa, 0x1377, 0x44e6, 0x8c, 0x32, 0x88, 0xfd, 0x5f, 0x44, 0xc8, 0x4c);
+        public static ref readonly Guid IID_IDXGIDevice
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xFA, 0x77, 0xEC, 0x54,
+                    0x77, 0x13,
+                    0xE6, 0x44,
+                    0x8C,
+                    0x32,
+                    0x88,
+                    0xFD,
+                    0x5F,
+                    0x44,
+                    0xC8,
+                    0x4C
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const GUID")]
-        public static readonly Guid IID_IDXGIFactory1 = new Guid(0x770aae78, 0xf26f, 0x4dba, 0xa8, 0x29, 0x25, 0x3c, 0x83, 0xd1, 0xb3, 0x87);
+        public static ref readonly Guid IID_IDXGIFactory1
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x78, 0xAE, 0x0A, 0x77,
+                    0x6F, 0xF2,
+                    0xBA, 0x4D,
+                    0xA8,
+                    0x29,
+                    0x25,
+                    0x3C,
+                    0x83,
+                    0xD1,
+                    0xB3,
+                    0x87
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const GUID")]
-        public static readonly Guid IID_IDXGIAdapter1 = new Guid(0x29038f61, 0x3839, 0x4626, 0x91, 0xfd, 0x08, 0x68, 0x79, 0x01, 0x1a, 0x05);
+        public static ref readonly Guid IID_IDXGIAdapter1
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x61, 0x8F, 0x03, 0x29,
+                    0x39, 0x38,
+                    0x26, 0x46,
+                    0x91,
+                    0xFD,
+                    0x08,
+                    0x68,
+                    0x79,
+                    0x01,
+                    0x1A,
+                    0x05
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const GUID")]
-        public static readonly Guid IID_IDXGIDevice1 = new Guid(0x77db970f, 0x6276, 0x48ba, 0xba, 0x28, 0x07, 0x01, 0x43, 0xb4, 0x39, 0x2c);
+        public static ref readonly Guid IID_IDXGIDevice1
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x0F, 0x97, 0xDB, 0x77,
+                    0x76, 0x62,
+                    0xBA, 0x48,
+                    0xBA,
+                    0x28,
+                    0x07,
+                    0x01,
+                    0x43,
+                    0xB4,
+                    0x39,
+                    0x2C
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("#define DXGI_USAGE_SHADER_INPUT 0x00000010UL")]
         public const uint DXGI_USAGE_SHADER_INPUT = 0x00000010U;

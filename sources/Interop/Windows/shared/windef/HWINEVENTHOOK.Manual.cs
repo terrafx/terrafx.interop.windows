@@ -9,7 +9,7 @@ namespace TerraFX.Interop
 {
     public unsafe struct HWINEVENTHOOK : IEquatable<HWINEVENTHOOK>
     {
-        public static readonly HWINEVENTHOOK NULL = default;
+        public static HWINEVENTHOOK NULL => default;
 
         private void* _value;
 

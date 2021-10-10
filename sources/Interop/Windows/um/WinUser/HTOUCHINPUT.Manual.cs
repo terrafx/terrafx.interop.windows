@@ -9,7 +9,7 @@ namespace TerraFX.Interop
 {
     public unsafe struct HTOUCHINPUT : IEquatable<HTOUCHINPUT>
     {
-        public static readonly HTOUCHINPUT NULL = default;
+        public static HTOUCHINPUT NULL => default;
 
         private void* _value;
 

@@ -4,31 +4,188 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Diagnostics;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
 {
     public static partial class Windows
     {
         [NativeTypeName("const GUID")]
-        public static readonly Guid IID_ID3D10Blob = new Guid(0x8ba5fb08, 0x5195, 0x40e2, 0xac, 0x58, 0xd, 0x98, 0x9c, 0x3a, 0x1, 0x2);
+        public static ref readonly Guid IID_ID3D10Blob
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x08, 0xFB, 0xA5, 0x8B,
+                    0x95, 0x51,
+                    0xE2, 0x40,
+                    0xAC,
+                    0x58,
+                    0x0D,
+                    0x98,
+                    0x9C,
+                    0x3A,
+                    0x01,
+                    0x02
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const GUID")]
-        public static readonly Guid WKPDID_D3DDebugObjectName = new Guid(0x429b8c22, 0x9188, 0x4b0c, 0x87, 0x42, 0xac, 0xb0, 0xbf, 0x85, 0xc2, 0x00);
+        public static ref readonly Guid WKPDID_D3DDebugObjectName
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x22, 0x8C, 0x9B, 0x42,
+                    0x88, 0x91,
+                    0x0C, 0x4B,
+                    0x87,
+                    0x42,
+                    0xAC,
+                    0xB0,
+                    0xBF,
+                    0x85,
+                    0xC2,
+                    0x00
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const GUID")]
-        public static readonly Guid WKPDID_D3DDebugObjectNameW = new Guid(0x4cca5fd8, 0x921f, 0x42c8, 0x85, 0x66, 0x70, 0xca, 0xf2, 0xa9, 0xb7, 0x41);
+        public static ref readonly Guid WKPDID_D3DDebugObjectNameW
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xD8, 0x5F, 0xCA, 0x4C,
+                    0x1F, 0x92,
+                    0xC8, 0x42,
+                    0x85,
+                    0x66,
+                    0x70,
+                    0xCA,
+                    0xF2,
+                    0xA9,
+                    0xB7,
+                    0x41
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const GUID")]
-        public static readonly Guid WKPDID_CommentStringW = new Guid(0xd0149dc0, 0x90e8, 0x4ec8, 0x81, 0x44, 0xe9, 0x00, 0xad, 0x26, 0x6b, 0xb2);
+        public static ref readonly Guid WKPDID_CommentStringW
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xC0, 0x9D, 0x14, 0xD0,
+                    0xE8, 0x90,
+                    0xC8, 0x4E,
+                    0x81,
+                    0x44,
+                    0xE9,
+                    0x00,
+                    0xAD,
+                    0x26,
+                    0x6B,
+                    0xB2
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const GUID")]
-        public static readonly Guid WKPDID_D3D12UniqueObjectId = new Guid(0x1b39de15, 0xec04, 0x4bae, 0xba, 0x4d, 0x8c, 0xef, 0x79, 0xfc, 0x04, 0xc1);
+        public static ref readonly Guid WKPDID_D3D12UniqueObjectId
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x15, 0xDE, 0x39, 0x1B,
+                    0x04, 0xEC,
+                    0xAE, 0x4B,
+                    0xBA,
+                    0x4D,
+                    0x8C,
+                    0xEF,
+                    0x79,
+                    0xFC,
+                    0x04,
+                    0xC1
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const GUID")]
-        public static readonly Guid D3D_TEXTURE_LAYOUT_ROW_MAJOR = new Guid(0xb5dc234f, 0x72bb, 0x4bec, 0x97, 0x05, 0x8c, 0xf2, 0x58, 0xdf, 0x6b, 0x6c);
+        public static ref readonly Guid D3D_TEXTURE_LAYOUT_ROW_MAJOR
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x4F, 0x23, 0xDC, 0xB5,
+                    0xBB, 0x72,
+                    0xEC, 0x4B,
+                    0x97,
+                    0x05,
+                    0x8C,
+                    0xF2,
+                    0x58,
+                    0xDF,
+                    0x6B,
+                    0x6C
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const GUID")]
-        public static readonly Guid D3D_TEXTURE_LAYOUT_64KB_STANDARD_SWIZZLE = new Guid(0x4c0f29e3, 0x3f5f, 0x4d35, 0x84, 0xc9, 0xbc, 0x09, 0x83, 0xb6, 0x2c, 0x28);
+        public static ref readonly Guid D3D_TEXTURE_LAYOUT_64KB_STANDARD_SWIZZLE
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xE3, 0x29, 0x0F, 0x4C,
+                    0x5F, 0x3F,
+                    0x35, 0x4D,
+                    0x84,
+                    0xC9,
+                    0xBC,
+                    0x09,
+                    0x83,
+                    0xB6,
+                    0x2C,
+                    0x28
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("#define D3D_FL9_1_REQ_TEXTURE1D_U_DIMENSION 2048")]
         public const int D3D_FL9_1_REQ_TEXTURE1D_U_DIMENSION = 2048;
@@ -142,7 +299,7 @@ namespace TerraFX.Interop
         public const int D3D_SHADER_FEATURE_SAMPLER_FEEDBACK = 0x200000;
 
         [NativeTypeName("#define IID_ID3DBlob IID_ID3D10Blob")]
-        public static readonly Guid IID_ID3DBlob = IID_ID3D10Blob;
+        public static ref readonly Guid IID_ID3DBlob => ref IID_ID3D10Blob;
 
         [NativeTypeName("#define D3D_COMPONENT_MASK_X 1")]
         public const int D3D_COMPONENT_MASK_X = 1;
@@ -156,6 +313,27 @@ namespace TerraFX.Interop
         [NativeTypeName("#define D3D_COMPONENT_MASK_W 8")]
         public const int D3D_COMPONENT_MASK_W = 8;
 
-        public static readonly Guid IID_ID3DDestructionNotifier = new Guid(0xA06EB39A, 0x50DA, 0x425B, 0x8C, 0x31, 0x4E, 0xEC, 0xD6, 0xC2, 0x70, 0xF3);
+        public static ref readonly Guid IID_ID3DDestructionNotifier
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x9A, 0xB3, 0x6E, 0xA0,
+                    0xDA, 0x50,
+                    0x5B, 0x42,
+                    0x8C,
+                    0x31,
+                    0x4E,
+                    0xEC,
+                    0xD6,
+                    0xC2,
+                    0x70,
+                    0xF3
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
     }
 }

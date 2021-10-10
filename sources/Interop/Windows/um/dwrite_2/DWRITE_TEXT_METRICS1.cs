@@ -6,6 +6,7 @@
 namespace TerraFX.Interop
 {
     [NativeTypeName("struct DWRITE_TEXT_METRICS1 : DWRITE_TEXT_METRICS")]
+    [NativeInheritance("DWRITE_TEXT_METRICS")]
     public partial struct DWRITE_TEXT_METRICS1
     {
         public DWRITE_TEXT_METRICS Base;

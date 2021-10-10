@@ -4,11 +4,35 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Diagnostics;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
 {
     public static partial class Windows
     {
-        public static readonly Guid IID_IDXGraphicsAnalysis = new Guid(0x9F251514, 0x9D4D, 0x4902, 0x9D, 0x60, 0x18, 0x98, 0x8A, 0xB7, 0xD4, 0xB5);
+        public static ref readonly Guid IID_IDXGraphicsAnalysis
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x14, 0x15, 0x25, 0x9F,
+                    0x4D, 0x9D,
+                    0x02, 0x49,
+                    0x9D,
+                    0x60,
+                    0x18,
+                    0x98,
+                    0x8A,
+                    0xB7,
+                    0xD4,
+                    0xB5
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
     }
 }

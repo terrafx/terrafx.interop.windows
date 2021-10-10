@@ -421,102 +421,102 @@ namespace TerraFX.Interop
         public const uint INVALID_FILE_ATTRIBUTES = unchecked((uint)(-1));
 
         [NativeTypeName("#define CreateDirectory CreateDirectoryW")]
-        public static readonly delegate*<ushort*, SECURITY_ATTRIBUTES*, int> CreateDirectory = &CreateDirectoryW;
+        public static delegate*<ushort*, SECURITY_ATTRIBUTES*, int> CreateDirectory => &CreateDirectoryW;
 
         [NativeTypeName("#define CreateFile CreateFileW")]
-        public static readonly delegate*<ushort*, uint, uint, SECURITY_ATTRIBUTES*, uint, uint, IntPtr, IntPtr> CreateFile = &CreateFileW;
+        public static delegate*<ushort*, uint, uint, SECURITY_ATTRIBUTES*, uint, uint, IntPtr, IntPtr> CreateFile => &CreateFileW;
 
         [NativeTypeName("#define DefineDosDevice DefineDosDeviceW")]
-        public static readonly delegate*<uint, ushort*, ushort*, int> DefineDosDevice = &DefineDosDeviceW;
+        public static delegate*<uint, ushort*, ushort*, int> DefineDosDevice => &DefineDosDeviceW;
 
         [NativeTypeName("#define DeleteFile DeleteFileW")]
-        public static readonly delegate*<ushort*, int> DeleteFile = &DeleteFileW;
+        public static delegate*<ushort*, int> DeleteFile => &DeleteFileW;
 
         [NativeTypeName("#define DeleteVolumeMountPoint DeleteVolumeMountPointW")]
-        public static readonly delegate*<ushort*, int> DeleteVolumeMountPoint = &DeleteVolumeMountPointW;
+        public static delegate*<ushort*, int> DeleteVolumeMountPoint => &DeleteVolumeMountPointW;
 
         [NativeTypeName("#define FindFirstChangeNotification FindFirstChangeNotificationW")]
-        public static readonly delegate*<ushort*, int, uint, IntPtr> FindFirstChangeNotification = &FindFirstChangeNotificationW;
+        public static delegate*<ushort*, int, uint, IntPtr> FindFirstChangeNotification => &FindFirstChangeNotificationW;
 
         [NativeTypeName("#define FindFirstFile FindFirstFileW")]
-        public static readonly delegate*<ushort*, WIN32_FIND_DATAW*, IntPtr> FindFirstFile = &FindFirstFileW;
+        public static delegate*<ushort*, WIN32_FIND_DATAW*, IntPtr> FindFirstFile => &FindFirstFileW;
 
         [NativeTypeName("#define FindFirstFileEx FindFirstFileExW")]
-        public static readonly delegate*<ushort*, FINDEX_INFO_LEVELS, void*, FINDEX_SEARCH_OPS, void*, uint, IntPtr> FindFirstFileEx = &FindFirstFileExW;
+        public static delegate*<ushort*, FINDEX_INFO_LEVELS, void*, FINDEX_SEARCH_OPS, void*, uint, IntPtr> FindFirstFileEx => &FindFirstFileExW;
 
         [NativeTypeName("#define FindFirstVolume FindFirstVolumeW")]
-        public static readonly delegate*<ushort*, uint, IntPtr> FindFirstVolume = &FindFirstVolumeW;
+        public static delegate*<ushort*, uint, IntPtr> FindFirstVolume => &FindFirstVolumeW;
 
         [NativeTypeName("#define FindNextFile FindNextFileW")]
-        public static readonly delegate*<IntPtr, WIN32_FIND_DATAW*, int> FindNextFile = &FindNextFileW;
+        public static delegate*<IntPtr, WIN32_FIND_DATAW*, int> FindNextFile => &FindNextFileW;
 
         [NativeTypeName("#define FindNextVolume FindNextVolumeW")]
-        public static readonly delegate*<IntPtr, ushort*, uint, int> FindNextVolume = &FindNextVolumeW;
+        public static delegate*<IntPtr, ushort*, uint, int> FindNextVolume => &FindNextVolumeW;
 
         [NativeTypeName("#define GetDiskFreeSpace GetDiskFreeSpaceW")]
-        public static readonly delegate*<ushort*, uint*, uint*, uint*, uint*, int> GetDiskFreeSpace = &GetDiskFreeSpaceW;
+        public static delegate*<ushort*, uint*, uint*, uint*, uint*, int> GetDiskFreeSpace => &GetDiskFreeSpaceW;
 
         [NativeTypeName("#define GetDiskFreeSpaceEx GetDiskFreeSpaceExW")]
-        public static readonly delegate*<ushort*, ULARGE_INTEGER*, ULARGE_INTEGER*, ULARGE_INTEGER*, int> GetDiskFreeSpaceEx = &GetDiskFreeSpaceExW;
+        public static delegate*<ushort*, ULARGE_INTEGER*, ULARGE_INTEGER*, ULARGE_INTEGER*, int> GetDiskFreeSpaceEx => &GetDiskFreeSpaceExW;
 
         [NativeTypeName("#define GetDiskSpaceInformation GetDiskSpaceInformationW")]
-        public static readonly delegate*<ushort*, DISK_SPACE_INFORMATION*, int> GetDiskSpaceInformation = &GetDiskSpaceInformationW;
+        public static delegate*<ushort*, DISK_SPACE_INFORMATION*, int> GetDiskSpaceInformation => &GetDiskSpaceInformationW;
 
         [NativeTypeName("#define GetDriveType GetDriveTypeW")]
-        public static readonly delegate*<ushort*, uint> GetDriveType = &GetDriveTypeW;
+        public static delegate*<ushort*, uint> GetDriveType => &GetDriveTypeW;
 
         [NativeTypeName("#define GetFileAttributes GetFileAttributesW")]
-        public static readonly delegate*<ushort*, uint> GetFileAttributes = &GetFileAttributesW;
+        public static delegate*<ushort*, uint> GetFileAttributes => &GetFileAttributesW;
 
         [NativeTypeName("#define GetFileAttributesEx GetFileAttributesExW")]
-        public static readonly delegate*<ushort*, GET_FILEEX_INFO_LEVELS, void*, int> GetFileAttributesEx = &GetFileAttributesExW;
+        public static delegate*<ushort*, GET_FILEEX_INFO_LEVELS, void*, int> GetFileAttributesEx => &GetFileAttributesExW;
 
         [NativeTypeName("#define GetFinalPathNameByHandle GetFinalPathNameByHandleW")]
-        public static readonly delegate*<IntPtr, ushort*, uint, uint, uint> GetFinalPathNameByHandle = &GetFinalPathNameByHandleW;
+        public static delegate*<IntPtr, ushort*, uint, uint, uint> GetFinalPathNameByHandle => &GetFinalPathNameByHandleW;
 
         [NativeTypeName("#define GetFullPathName GetFullPathNameW")]
-        public static readonly delegate*<ushort*, uint, ushort*, ushort**, uint> GetFullPathName = &GetFullPathNameW;
+        public static delegate*<ushort*, uint, ushort*, ushort**, uint> GetFullPathName => &GetFullPathNameW;
 
         [NativeTypeName("#define GetLogicalDriveStrings GetLogicalDriveStringsW")]
-        public static readonly delegate*<uint, ushort*, uint> GetLogicalDriveStrings = &GetLogicalDriveStringsW;
+        public static delegate*<uint, ushort*, uint> GetLogicalDriveStrings => &GetLogicalDriveStringsW;
 
         [NativeTypeName("#define GetLongPathName GetLongPathNameW")]
-        public static readonly delegate*<ushort*, ushort*, uint, uint> GetLongPathName = &GetLongPathNameW;
+        public static delegate*<ushort*, ushort*, uint, uint> GetLongPathName => &GetLongPathNameW;
 
         [NativeTypeName("#define GetShortPathName GetShortPathNameW")]
-        public static readonly delegate*<ushort*, ushort*, uint, uint> GetShortPathName = &GetShortPathNameW;
+        public static delegate*<ushort*, ushort*, uint, uint> GetShortPathName => &GetShortPathNameW;
 
         [NativeTypeName("#define GetTempFileName GetTempFileNameW")]
-        public static readonly delegate*<ushort*, ushort*, uint, ushort*, uint> GetTempFileName = &GetTempFileNameW;
+        public static delegate*<ushort*, ushort*, uint, ushort*, uint> GetTempFileName => &GetTempFileNameW;
 
         [NativeTypeName("#define GetVolumeInformation GetVolumeInformationW")]
-        public static readonly delegate*<ushort*, ushort*, uint, uint*, uint*, uint*, ushort*, uint, int> GetVolumeInformation = &GetVolumeInformationW;
+        public static delegate*<ushort*, ushort*, uint, uint*, uint*, uint*, ushort*, uint, int> GetVolumeInformation => &GetVolumeInformationW;
 
         [NativeTypeName("#define GetVolumePathName GetVolumePathNameW")]
-        public static readonly delegate*<ushort*, ushort*, uint, int> GetVolumePathName = &GetVolumePathNameW;
+        public static delegate*<ushort*, ushort*, uint, int> GetVolumePathName => &GetVolumePathNameW;
 
         [NativeTypeName("#define QueryDosDevice QueryDosDeviceW")]
-        public static readonly delegate*<ushort*, ushort*, uint, uint> QueryDosDevice = &QueryDosDeviceW;
+        public static delegate*<ushort*, ushort*, uint, uint> QueryDosDevice => &QueryDosDeviceW;
 
         [NativeTypeName("#define RemoveDirectory RemoveDirectoryW")]
-        public static readonly delegate*<ushort*, int> RemoveDirectory = &RemoveDirectoryW;
+        public static delegate*<ushort*, int> RemoveDirectory => &RemoveDirectoryW;
 
         [NativeTypeName("#define SetFileAttributes SetFileAttributesW")]
-        public static readonly delegate*<ushort*, uint, int> SetFileAttributes = &SetFileAttributesW;
+        public static delegate*<ushort*, uint, int> SetFileAttributes => &SetFileAttributesW;
 
         [NativeTypeName("#define GetTempPath GetTempPathW")]
-        public static readonly delegate*<uint, ushort*, uint> GetTempPath = &GetTempPathW;
+        public static delegate*<uint, ushort*, uint> GetTempPath => &GetTempPathW;
 
         [NativeTypeName("#define GetVolumeNameForVolumeMountPoint GetVolumeNameForVolumeMountPointW")]
-        public static readonly delegate*<ushort*, ushort*, uint, int> GetVolumeNameForVolumeMountPoint = &GetVolumeNameForVolumeMountPointW;
+        public static delegate*<ushort*, ushort*, uint, int> GetVolumeNameForVolumeMountPoint => &GetVolumeNameForVolumeMountPointW;
 
         [NativeTypeName("#define GetVolumePathNamesForVolumeName GetVolumePathNamesForVolumeNameW")]
-        public static readonly delegate*<ushort*, ushort*, uint, uint*, int> GetVolumePathNamesForVolumeName = &GetVolumePathNamesForVolumeNameW;
+        public static delegate*<ushort*, ushort*, uint, uint*, int> GetVolumePathNamesForVolumeName => &GetVolumePathNamesForVolumeNameW;
 
         [NativeTypeName("#define GetCompressedFileSize GetCompressedFileSizeW")]
-        public static readonly delegate*<ushort*, uint*, uint> GetCompressedFileSize = &GetCompressedFileSizeW;
+        public static delegate*<ushort*, uint*, uint> GetCompressedFileSize => &GetCompressedFileSizeW;
 
         [NativeTypeName("#define GetTempPath2 GetTempPath2W")]
-        public static readonly delegate*<uint, ushort*, uint> GetTempPath2 = &GetTempPath2W;
+        public static delegate*<uint, ushort*, uint> GetTempPath2 => &GetTempPath2W;
     }
 }

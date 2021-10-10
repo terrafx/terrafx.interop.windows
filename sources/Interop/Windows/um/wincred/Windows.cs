@@ -246,7 +246,7 @@ namespace TerraFX.Interop
         public const sbyte CRED_UNIVERSAL_WILDCARD_A = (sbyte)('*');
 
         [NativeTypeName("#define CRED_SESSION_WILDCARD_NAME_LENGTH (sizeof(CRED_SESSION_WILDCARD_NAME_A)-1)")]
-        public const uint CRED_SESSION_WILDCARD_NAME_LENGTH = unchecked(9 - 1);
+        public const uint CRED_SESSION_WILDCARD_NAME_LENGTH = (9 - 1);
 
         [NativeTypeName("#define CRED_TARGETNAME_DOMAIN_NAMESPACE_W L\"Domain\"")]
         public const string CRED_TARGETNAME_DOMAIN_NAMESPACE_W = "Domain";
@@ -255,7 +255,7 @@ namespace TerraFX.Interop
         public static ReadOnlySpan<byte> CRED_TARGETNAME_DOMAIN_NAMESPACE_A => new byte[] { 0x44, 0x6F, 0x6D, 0x61, 0x69, 0x6E, 0x00 };
 
         [NativeTypeName("#define CRED_TARGETNAME_DOMAIN_NAMESPACE_LENGTH (sizeof(CRED_TARGETNAME_DOMAIN_NAMESPACE_A)-1)")]
-        public const uint CRED_TARGETNAME_DOMAIN_NAMESPACE_LENGTH = unchecked(7 - 1);
+        public const uint CRED_TARGETNAME_DOMAIN_NAMESPACE_LENGTH = (7 - 1);
 
         [NativeTypeName("#define CRED_TARGETNAME_LEGACYGENERIC_NAMESPACE_W L\"LegacyGeneric\"")]
         public const string CRED_TARGETNAME_LEGACYGENERIC_NAMESPACE_W = "LegacyGeneric";
@@ -264,7 +264,7 @@ namespace TerraFX.Interop
         public static ReadOnlySpan<byte> CRED_TARGETNAME_LEGACYGENERIC_NAMESPACE_A => new byte[] { 0x4C, 0x65, 0x67, 0x61, 0x63, 0x79, 0x47, 0x65, 0x6E, 0x65, 0x72, 0x69, 0x63, 0x00 };
 
         [NativeTypeName("#define CRED_TARGETNAME_LEGACYGENERIC_NAMESPACE_LENGTH (sizeof(CRED_TARGETNAME_LEGACYGENERIC_NAMESPACE_A)-1)")]
-        public const uint CRED_TARGETNAME_LEGACYGENERIC_NAMESPACE_LENGTH = unchecked(14 - 1);
+        public const uint CRED_TARGETNAME_LEGACYGENERIC_NAMESPACE_LENGTH = (14 - 1);
 
         [NativeTypeName("#define CRED_TARGETNAME_NAMESPACE_SEPERATOR_W L':'")]
         public const ushort CRED_TARGETNAME_NAMESPACE_SEPERATOR_W = ':';
@@ -291,7 +291,7 @@ namespace TerraFX.Interop
         public static ReadOnlySpan<byte> CRED_TARGETNAME_ATTRIBUTE_TARGET_A => new byte[] { 0x74, 0x61, 0x72, 0x67, 0x65, 0x74, 0x00 };
 
         [NativeTypeName("#define CRED_TARGETNAME_ATTRIBUTE_TARGET_LENGTH (sizeof(CRED_TARGETNAME_ATTRIBUTE_TARGET_A)-1)")]
-        public const uint CRED_TARGETNAME_ATTRIBUTE_TARGET_LENGTH = unchecked(7 - 1);
+        public const uint CRED_TARGETNAME_ATTRIBUTE_TARGET_LENGTH = (7 - 1);
 
         [NativeTypeName("#define CRED_TARGETNAME_ATTRIBUTE_NAME_W L\"name\"")]
         public const string CRED_TARGETNAME_ATTRIBUTE_NAME_W = "name";
@@ -300,7 +300,7 @@ namespace TerraFX.Interop
         public static ReadOnlySpan<byte> CRED_TARGETNAME_ATTRIBUTE_NAME_A => new byte[] { 0x6E, 0x61, 0x6D, 0x65, 0x00 };
 
         [NativeTypeName("#define CRED_TARGETNAME_ATTRIBUTE_NAME_LENGTH (sizeof(CRED_TARGETNAME_ATTRIBUTE_NAME_A)-1)")]
-        public const uint CRED_TARGETNAME_ATTRIBUTE_NAME_LENGTH = unchecked(5 - 1);
+        public const uint CRED_TARGETNAME_ATTRIBUTE_NAME_LENGTH = (5 - 1);
 
         [NativeTypeName("#define CRED_TARGETNAME_ATTRIBUTE_BATCH_W L\"batch\"")]
         public const string CRED_TARGETNAME_ATTRIBUTE_BATCH_W = "batch";
@@ -309,7 +309,7 @@ namespace TerraFX.Interop
         public static ReadOnlySpan<byte> CRED_TARGETNAME_ATTRIBUTE_BATCH_A => new byte[] { 0x62, 0x61, 0x74, 0x63, 0x68, 0x00 };
 
         [NativeTypeName("#define CRED_TARGETNAME_ATTRIBUTE_BATCH_LENGTH (sizeof(CRED_TARGETNAME_ATTRIBUTE_BATCH_A)-1)")]
-        public const uint CRED_TARGETNAME_ATTRIBUTE_BATCH_LENGTH = unchecked(6 - 1);
+        public const uint CRED_TARGETNAME_ATTRIBUTE_BATCH_LENGTH = (6 - 1);
 
         [NativeTypeName("#define CRED_TARGETNAME_ATTRIBUTE_INTERACTIVE_W L\"interactive\"")]
         public const string CRED_TARGETNAME_ATTRIBUTE_INTERACTIVE_W = "interactive";
@@ -318,7 +318,7 @@ namespace TerraFX.Interop
         public static ReadOnlySpan<byte> CRED_TARGETNAME_ATTRIBUTE_INTERACTIVE_A => new byte[] { 0x69, 0x6E, 0x74, 0x65, 0x72, 0x61, 0x63, 0x74, 0x69, 0x76, 0x65, 0x00 };
 
         [NativeTypeName("#define CRED_TARGETNAME_ATTRIBUTE_INTERACTIVE_LENGTH (sizeof(CRED_TARGETNAME_ATTRIBUTE_INTERACTIVE_A)-1)")]
-        public const uint CRED_TARGETNAME_ATTRIBUTE_INTERACTIVE_LENGTH = unchecked(12 - 1);
+        public const uint CRED_TARGETNAME_ATTRIBUTE_INTERACTIVE_LENGTH = (12 - 1);
 
         [NativeTypeName("#define CRED_TARGETNAME_ATTRIBUTE_SERVICE_W L\"service\"")]
         public const string CRED_TARGETNAME_ATTRIBUTE_SERVICE_W = "service";
@@ -327,7 +327,7 @@ namespace TerraFX.Interop
         public static ReadOnlySpan<byte> CRED_TARGETNAME_ATTRIBUTE_SERVICE_A => new byte[] { 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x00 };
 
         [NativeTypeName("#define CRED_TARGETNAME_ATTRIBUTE_SERVICE_LENGTH (sizeof(CRED_TARGETNAME_ATTRIBUTE_SERVICE_A)-1)")]
-        public const uint CRED_TARGETNAME_ATTRIBUTE_SERVICE_LENGTH = unchecked(8 - 1);
+        public const uint CRED_TARGETNAME_ATTRIBUTE_SERVICE_LENGTH = (8 - 1);
 
         [NativeTypeName("#define CRED_TARGETNAME_ATTRIBUTE_NETWORK_W L\"network\"")]
         public const string CRED_TARGETNAME_ATTRIBUTE_NETWORK_W = "network";
@@ -336,7 +336,7 @@ namespace TerraFX.Interop
         public static ReadOnlySpan<byte> CRED_TARGETNAME_ATTRIBUTE_NETWORK_A => new byte[] { 0x6E, 0x65, 0x74, 0x77, 0x6F, 0x72, 0x6B, 0x00 };
 
         [NativeTypeName("#define CRED_TARGETNAME_ATTRIBUTE_NETWORK_LENGTH (sizeof(CRED_TARGETNAME_ATTRIBUTE_NETWORK_A)-1)")]
-        public const uint CRED_TARGETNAME_ATTRIBUTE_NETWORK_LENGTH = unchecked(8 - 1);
+        public const uint CRED_TARGETNAME_ATTRIBUTE_NETWORK_LENGTH = (8 - 1);
 
         [NativeTypeName("#define CRED_TARGETNAME_ATTRIBUTE_NETWORKCLEARTEXT_W L\"networkcleartext\"")]
         public const string CRED_TARGETNAME_ATTRIBUTE_NETWORKCLEARTEXT_W = "networkcleartext";
@@ -345,7 +345,7 @@ namespace TerraFX.Interop
         public static ReadOnlySpan<byte> CRED_TARGETNAME_ATTRIBUTE_NETWORKCLEARTEXT_A => new byte[] { 0x6E, 0x65, 0x74, 0x77, 0x6F, 0x72, 0x6B, 0x63, 0x6C, 0x65, 0x61, 0x72, 0x74, 0x65, 0x78, 0x74, 0x00 };
 
         [NativeTypeName("#define CRED_TARGETNAME_ATTRIBUTE_NETWORKCLEARTEXT_LENGTH (sizeof(CRED_TARGETNAME_ATTRIBUTE_NETWORKCLEARTEXT_A)-1)")]
-        public const uint CRED_TARGETNAME_ATTRIBUTE_NETWORKCLEARTEXT_LENGTH = unchecked(17 - 1);
+        public const uint CRED_TARGETNAME_ATTRIBUTE_NETWORKCLEARTEXT_LENGTH = (17 - 1);
 
         [NativeTypeName("#define CRED_TARGETNAME_ATTRIBUTE_REMOTEINTERACTIVE_W L\"remoteinteractive\"")]
         public const string CRED_TARGETNAME_ATTRIBUTE_REMOTEINTERACTIVE_W = "remoteinteractive";
@@ -354,7 +354,7 @@ namespace TerraFX.Interop
         public static ReadOnlySpan<byte> CRED_TARGETNAME_ATTRIBUTE_REMOTEINTERACTIVE_A => new byte[] { 0x72, 0x65, 0x6D, 0x6F, 0x74, 0x65, 0x69, 0x6E, 0x74, 0x65, 0x72, 0x61, 0x63, 0x74, 0x69, 0x76, 0x65, 0x00 };
 
         [NativeTypeName("#define CRED_TARGETNAME_ATTRIBUTE_REMOTEINTERACTIVE_LENGTH (sizeof(CRED_TARGETNAME_ATTRIBUTE_REMOTEINTERACTIVE_A)-1)")]
-        public const uint CRED_TARGETNAME_ATTRIBUTE_REMOTEINTERACTIVE_LENGTH = unchecked(18 - 1);
+        public const uint CRED_TARGETNAME_ATTRIBUTE_REMOTEINTERACTIVE_LENGTH = (18 - 1);
 
         [NativeTypeName("#define CRED_TARGETNAME_ATTRIBUTE_CACHEDINTERACTIVE_W L\"cachedinteractive\"")]
         public const string CRED_TARGETNAME_ATTRIBUTE_CACHEDINTERACTIVE_W = "cachedinteractive";
@@ -363,7 +363,7 @@ namespace TerraFX.Interop
         public static ReadOnlySpan<byte> CRED_TARGETNAME_ATTRIBUTE_CACHEDINTERACTIVE_A => new byte[] { 0x63, 0x61, 0x63, 0x68, 0x65, 0x64, 0x69, 0x6E, 0x74, 0x65, 0x72, 0x61, 0x63, 0x74, 0x69, 0x76, 0x65, 0x00 };
 
         [NativeTypeName("#define CRED_TARGETNAME_ATTRIBUTE_CACHEDINTERACTIVE_LENGTH (sizeof(CRED_TARGETNAME_ATTRIBUTE_CACHEDINTERACTIVE_A)-1)")]
-        public const uint CRED_TARGETNAME_ATTRIBUTE_CACHEDINTERACTIVE_LENGTH = unchecked(18 - 1);
+        public const uint CRED_TARGETNAME_ATTRIBUTE_CACHEDINTERACTIVE_LENGTH = (18 - 1);
 
         [NativeTypeName("#define CRED_SESSION_WILDCARD_NAME CRED_SESSION_WILDCARD_NAME_W")]
         public const string CRED_SESSION_WILDCARD_NAME = "*Session";
@@ -621,52 +621,52 @@ namespace TerraFX.Interop
         public const int CRED_PRESERVE_CREDENTIAL_BLOB = 0x1;
 
         [NativeTypeName("#define CredWrite CredWriteW")]
-        public static readonly delegate*<CREDENTIALW*, uint, int> CredWrite = &CredWriteW;
+        public static delegate*<CREDENTIALW*, uint, int> CredWrite => &CredWriteW;
 
         [NativeTypeName("#define CredRead CredReadW")]
-        public static readonly delegate*<ushort*, uint, uint, CREDENTIALW**, int> CredRead = &CredReadW;
+        public static delegate*<ushort*, uint, uint, CREDENTIALW**, int> CredRead => &CredReadW;
 
         [NativeTypeName("#define CRED_ENUMERATE_ALL_CREDENTIALS 0x1")]
         public const int CRED_ENUMERATE_ALL_CREDENTIALS = 0x1;
 
         [NativeTypeName("#define CredEnumerate CredEnumerateW")]
-        public static readonly delegate*<ushort*, uint, uint*, CREDENTIALW***, int> CredEnumerate = &CredEnumerateW;
+        public static delegate*<ushort*, uint, uint*, CREDENTIALW***, int> CredEnumerate => &CredEnumerateW;
 
         [NativeTypeName("#define CredWriteDomainCredentials CredWriteDomainCredentialsW")]
-        public static readonly delegate*<CREDENTIAL_TARGET_INFORMATIONW*, CREDENTIALW*, uint, int> CredWriteDomainCredentials = &CredWriteDomainCredentialsW;
+        public static delegate*<CREDENTIAL_TARGET_INFORMATIONW*, CREDENTIALW*, uint, int> CredWriteDomainCredentials => &CredWriteDomainCredentialsW;
 
         [NativeTypeName("#define CRED_CACHE_TARGET_INFORMATION 0x1")]
         public const int CRED_CACHE_TARGET_INFORMATION = 0x1;
 
         [NativeTypeName("#define CredReadDomainCredentials CredReadDomainCredentialsW")]
-        public static readonly delegate*<CREDENTIAL_TARGET_INFORMATIONW*, uint, uint*, CREDENTIALW***, int> CredReadDomainCredentials = &CredReadDomainCredentialsW;
+        public static delegate*<CREDENTIAL_TARGET_INFORMATIONW*, uint, uint*, CREDENTIALW***, int> CredReadDomainCredentials => &CredReadDomainCredentialsW;
 
         [NativeTypeName("#define CredDelete CredDeleteW")]
-        public static readonly delegate*<ushort*, uint, uint, int> CredDelete = &CredDeleteW;
+        public static delegate*<ushort*, uint, uint, int> CredDelete => &CredDeleteW;
 
         [NativeTypeName("#define CredRename CredRenameW")]
-        public static readonly delegate*<ushort*, ushort*, uint, uint, int> CredRename = &CredRenameW;
+        public static delegate*<ushort*, ushort*, uint, uint, int> CredRename => &CredRenameW;
 
         [NativeTypeName("#define CRED_ALLOW_NAME_RESOLUTION 0x1")]
         public const int CRED_ALLOW_NAME_RESOLUTION = 0x1;
 
         [NativeTypeName("#define CredGetTargetInfo CredGetTargetInfoW")]
-        public static readonly delegate*<ushort*, uint, CREDENTIAL_TARGET_INFORMATIONW**, int> CredGetTargetInfo = &CredGetTargetInfoW;
+        public static delegate*<ushort*, uint, CREDENTIAL_TARGET_INFORMATIONW**, int> CredGetTargetInfo => &CredGetTargetInfoW;
 
         [NativeTypeName("#define CredMarshalCredential CredMarshalCredentialW")]
-        public static readonly delegate*<CRED_MARSHAL_TYPE, void*, ushort**, int> CredMarshalCredential = &CredMarshalCredentialW;
+        public static delegate*<CRED_MARSHAL_TYPE, void*, ushort**, int> CredMarshalCredential => &CredMarshalCredentialW;
 
         [NativeTypeName("#define CredUnmarshalCredential CredUnmarshalCredentialW")]
-        public static readonly delegate*<ushort*, CRED_MARSHAL_TYPE*, void**, int> CredUnmarshalCredential = &CredUnmarshalCredentialW;
+        public static delegate*<ushort*, CRED_MARSHAL_TYPE*, void**, int> CredUnmarshalCredential => &CredUnmarshalCredentialW;
 
         [NativeTypeName("#define CredIsMarshaledCredential CredIsMarshaledCredentialW")]
-        public static readonly delegate*<ushort*, int> CredIsMarshaledCredential = &CredIsMarshaledCredentialW;
+        public static delegate*<ushort*, int> CredIsMarshaledCredential => &CredIsMarshaledCredentialW;
 
         [NativeTypeName("#define CredUnPackAuthenticationBuffer CredUnPackAuthenticationBufferW")]
-        public static readonly delegate*<uint, void*, uint, ushort*, uint*, ushort*, uint*, ushort*, uint*, int> CredUnPackAuthenticationBuffer = &CredUnPackAuthenticationBufferW;
+        public static delegate*<uint, void*, uint, ushort*, uint*, ushort*, uint*, ushort*, uint*, int> CredUnPackAuthenticationBuffer => &CredUnPackAuthenticationBufferW;
 
         [NativeTypeName("#define CredPackAuthenticationBuffer CredPackAuthenticationBufferW")]
-        public static readonly delegate*<uint, ushort*, ushort*, byte*, uint*, int> CredPackAuthenticationBuffer = &CredPackAuthenticationBufferW;
+        public static delegate*<uint, ushort*, ushort*, byte*, uint*, int> CredPackAuthenticationBuffer => &CredPackAuthenticationBufferW;
 
         [NativeTypeName("#define CRED_PROTECT_AS_SELF 0x1")]
         public const int CRED_PROTECT_AS_SELF = 0x1;
@@ -678,7 +678,7 @@ namespace TerraFX.Interop
         public const int CRED_PROTECT_VALID_FLAGS = (0x1 | 0x2);
 
         [NativeTypeName("#define CredProtect CredProtectW")]
-        public static readonly delegate*<int, ushort*, uint, ushort*, uint*, CRED_PROTECTION_TYPE*, int> CredProtect = &CredProtectW;
+        public static delegate*<int, ushort*, uint, ushort*, uint*, CRED_PROTECTION_TYPE*, int> CredProtect => &CredProtectW;
 
         [NativeTypeName("#define CRED_UNPROTECT_AS_SELF 0x1")]
         public const int CRED_UNPROTECT_AS_SELF = 0x1;
@@ -690,27 +690,27 @@ namespace TerraFX.Interop
         public const int CRED_UNPROTECT_VALID_FLAGS = (0x1 | 0x2);
 
         [NativeTypeName("#define CredUnprotect CredUnprotectW")]
-        public static readonly delegate*<int, ushort*, uint, ushort*, uint*, int> CredUnprotect = &CredUnprotectW;
+        public static delegate*<int, ushort*, uint, ushort*, uint*, int> CredUnprotect => &CredUnprotectW;
 
         [NativeTypeName("#define CredIsProtected CredIsProtectedW")]
-        public static readonly delegate*<ushort*, CRED_PROTECTION_TYPE*, int> CredIsProtected = &CredIsProtectedW;
+        public static delegate*<ushort*, CRED_PROTECTION_TYPE*, int> CredIsProtected => &CredIsProtectedW;
 
         [NativeTypeName("#define CredFindBestCredential CredFindBestCredentialW")]
-        public static readonly delegate*<ushort*, uint, uint, CREDENTIALW**, int> CredFindBestCredential = &CredFindBestCredentialW;
+        public static delegate*<ushort*, uint, uint, CREDENTIALW**, int> CredFindBestCredential => &CredFindBestCredentialW;
 
         [NativeTypeName("#define CredUIPromptForCredentials CredUIPromptForCredentialsW")]
-        public static readonly delegate*<CREDUI_INFOW*, ushort*, SecHandle*, uint, ushort*, uint, ushort*, uint, int*, uint, uint> CredUIPromptForCredentials = &CredUIPromptForCredentialsW;
+        public static delegate*<CREDUI_INFOW*, ushort*, SecHandle*, uint, ushort*, uint, ushort*, uint, int*, uint, uint> CredUIPromptForCredentials => &CredUIPromptForCredentialsW;
 
         [NativeTypeName("#define CredUIPromptForWindowsCredentials CredUIPromptForWindowsCredentialsW")]
-        public static readonly delegate*<CREDUI_INFOW*, uint, uint*, void*, uint, void**, uint*, int*, uint, uint> CredUIPromptForWindowsCredentials = &CredUIPromptForWindowsCredentialsW;
+        public static delegate*<CREDUI_INFOW*, uint, uint*, void*, uint, void**, uint*, int*, uint, uint> CredUIPromptForWindowsCredentials => &CredUIPromptForWindowsCredentialsW;
 
         [NativeTypeName("#define CredUIParseUserName CredUIParseUserNameW")]
-        public static readonly delegate*<ushort*, ushort*, uint, ushort*, uint, uint> CredUIParseUserName = &CredUIParseUserNameW;
+        public static delegate*<ushort*, ushort*, uint, ushort*, uint, uint> CredUIParseUserName => &CredUIParseUserNameW;
 
         [NativeTypeName("#define CredUICmdLinePromptForCredentials CredUICmdLinePromptForCredentialsW")]
-        public static readonly delegate*<ushort*, SecHandle*, uint, ushort*, uint, ushort*, uint, int*, uint, uint> CredUICmdLinePromptForCredentials = &CredUICmdLinePromptForCredentialsW;
+        public static delegate*<ushort*, SecHandle*, uint, ushort*, uint, ushort*, uint, int*, uint, uint> CredUICmdLinePromptForCredentials => &CredUICmdLinePromptForCredentialsW;
 
         [NativeTypeName("#define CredUIConfirmCredentials CredUIConfirmCredentialsW")]
-        public static readonly delegate*<ushort*, int, uint> CredUIConfirmCredentials = &CredUIConfirmCredentialsW;
+        public static delegate*<ushort*, int, uint> CredUIConfirmCredentials => &CredUIConfirmCredentialsW;
     }
 }

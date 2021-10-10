@@ -5,6 +5,7 @@
 
 using NUnit.Framework;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.D2D_MATRIX_5X4_F;
 
 namespace TerraFX.Interop.UnitTests
 {
@@ -30,6 +31,36 @@ namespace TerraFX.Interop.UnitTests
         public static void SizeOfTest()
         {
             Assert.That(sizeof(D2D_MATRIX_5X4_F), Is.EqualTo(80));
+        }
+
+        /// <summary>Validates that the value of the <see cref="Identity" /> property is correct.</summary>
+        [Test]
+        public static void IdentityTest()
+        {
+            Assert.That(Identity._11, Is.EqualTo(1.0f));
+            Assert.That(Identity._12, Is.EqualTo(0.0f));
+            Assert.That(Identity._13, Is.EqualTo(0.0f));
+            Assert.That(Identity._14, Is.EqualTo(0.0f));
+
+            Assert.That(Identity._21, Is.EqualTo(0.0f));
+            Assert.That(Identity._22, Is.EqualTo(1.0f));
+            Assert.That(Identity._23, Is.EqualTo(0.0f));
+            Assert.That(Identity._24, Is.EqualTo(0.0f));
+
+            Assert.That(Identity._31, Is.EqualTo(0.0f));
+            Assert.That(Identity._32, Is.EqualTo(0.0f));
+            Assert.That(Identity._33, Is.EqualTo(1.0f));
+            Assert.That(Identity._34, Is.EqualTo(0.0f));
+
+            Assert.That(Identity._41, Is.EqualTo(0.0f));
+            Assert.That(Identity._42, Is.EqualTo(0.0f));
+            Assert.That(Identity._43, Is.EqualTo(0.0f));
+            Assert.That(Identity._44, Is.EqualTo(1.0f));
+
+            Assert.That(Identity._51, Is.EqualTo(0.0f));
+            Assert.That(Identity._52, Is.EqualTo(0.0f));
+            Assert.That(Identity._53, Is.EqualTo(0.0f));
+            Assert.That(Identity._54, Is.EqualTo(0.0f));
         }
     }
 }

@@ -9,7 +9,7 @@ namespace TerraFX.Interop
 {
     public unsafe struct HGLOBAL : IEquatable<HGLOBAL>
     {
-        public static readonly HGLOBAL NULL = default;
+        public static HGLOBAL NULL => default;
 
         private void* _value;
 

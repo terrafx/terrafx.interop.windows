@@ -9,7 +9,7 @@ namespace TerraFX.Interop
 {
     public unsafe struct HGLRC : IEquatable<HGLRC>
     {
-        public static readonly HGLRC NULL = default;
+        public static HGLRC NULL => default;
 
         private void* _value;
 

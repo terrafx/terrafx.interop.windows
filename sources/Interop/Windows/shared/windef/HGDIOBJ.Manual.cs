@@ -9,7 +9,7 @@ namespace TerraFX.Interop
 {
     public unsafe struct HGDIOBJ : IEquatable<HGDIOBJ>
     {
-        public static readonly HGDIOBJ NULL = default;
+        public static HGDIOBJ NULL => default;
 
         private void* _value;
 

@@ -4,12 +4,28 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
 {
     public partial struct D2D_RECT_F : IEquatable<D2D_RECT_F>
     {
-        public static readonly D2D_RECT_F Infinite = new D2D_RECT_F(-float.MaxValue, -float.MaxValue, float.MaxValue, float.MaxValue);
+        public static ref readonly D2D_RECT_F Infinite
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xFF, 0xFF, 0x7F, 0xFF,
+                    0xFF, 0xFF, 0x7F, 0xFF,
+                    0xFF, 0xFF, 0x7F, 0x7F,
+                    0xFF, 0xFF, 0x7F, 0x7F,
+                };
+
+                return ref Unsafe.As<byte, D2D_RECT_F>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         public D2D_RECT_F([NativeTypeName("FLOAT")] float left = 0.0f, [NativeTypeName("FLOAT")] float top = 0.0f, [NativeTypeName("FLOAT")] float right = 0.0f, [NativeTypeName("FLOAT")] float bottom = 0.0f)
         {

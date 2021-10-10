@@ -9,7 +9,7 @@ namespace TerraFX.Interop
 {
     public unsafe struct HWINSTA : IEquatable<HWINSTA>
     {
-        public static readonly HWINSTA NULL = default;
+        public static HWINSTA NULL => default;
 
         private void* _value;
 

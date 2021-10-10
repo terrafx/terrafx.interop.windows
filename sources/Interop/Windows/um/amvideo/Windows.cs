@@ -77,13 +77,13 @@ namespace TerraFX.Interop
         public const int iMAXBITS = 8;
 
         [NativeTypeName("#define SIZE_EGA_PALETTE (iEGA_COLORS * sizeof(RGBQUAD))")]
-        public const uint SIZE_EGA_PALETTE = unchecked(16 * 4);
+        public const uint SIZE_EGA_PALETTE = (16 * 4);
 
         [NativeTypeName("#define SIZE_PALETTE (iPALETTE_COLORS * sizeof(RGBQUAD))")]
-        public const uint SIZE_PALETTE = unchecked(256 * 4);
+        public const uint SIZE_PALETTE = (256 * 4);
 
         [NativeTypeName("#define SIZE_MASKS (iMASK_COLORS * sizeof(DWORD))")]
-        public const uint SIZE_MASKS = unchecked(3 * 4);
+        public const uint SIZE_MASKS = (3 * 4);
 
         [NativeTypeName("#define MAX_SIZE_MPEG1_SEQUENCE_INFO 140")]
         public const int MAX_SIZE_MPEG1_SEQUENCE_INFO = 140;

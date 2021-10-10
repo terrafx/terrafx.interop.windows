@@ -13,8 +13,13 @@ exclude-com-proxies
 exclude-empty-records
 exclude-enum-operators
 generate-aggressive-inlining
+generate-cpp-attributes
 generate-macro-bindings
+generate-native-inheritance-attribute
 generate-tests-nunit
+generate-unmanaged-constants
+generate-vtbl-index-attribute
+log-potential-typedef-remappings
 multi-file
 --define-macro
 INITGUID

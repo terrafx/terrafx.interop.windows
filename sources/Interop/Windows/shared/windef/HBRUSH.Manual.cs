@@ -9,7 +9,7 @@ namespace TerraFX.Interop
 {
     public unsafe struct HBRUSH : IEquatable<HBRUSH>
     {
-        public static readonly HBRUSH NULL = default;
+        public static HBRUSH NULL => default;
 
         private void* _value;
 

@@ -4,6 +4,9 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Diagnostics;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop
@@ -22,7 +25,24 @@ namespace TerraFX.Interop
             Anonymous.Anonymous2._32 = m32;
         }
 
-        public static readonly D2D_MATRIX_3X2_F Identity = new D2D_MATRIX_3X2_F(1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f);
+        public static ref readonly D2D_MATRIX_3X2_F Identity
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x00, 0x00, 0x80, 0x3F,
+                    0x00, 0x00, 0x00, 0x00,
+                    0x00, 0x00, 0x00, 0x00,
+                    0x00, 0x00, 0x80, 0x3F,
+                    0x00, 0x00, 0x00, 0x00,
+                    0x00, 0x00, 0x00, 0x00,
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<D2D_MATRIX_3X2_F>());
+                return ref Unsafe.As<byte, D2D_MATRIX_3X2_F>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         public static D2D_MATRIX_3X2_F Translation([NativeTypeName("D2D1_SIZE_F")] D2D_SIZE_F size)
         {

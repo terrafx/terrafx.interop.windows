@@ -4,29 +4,185 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Diagnostics;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
 {
     public static partial class Windows
     {
         [NativeTypeName("const IID")]
-        public static readonly Guid CLSID_MPEG2DLNASink = new Guid(0xfa5fe7c5, 0x6a1d, 0x4b11, 0xb4, 0x1f, 0xf9, 0x59, 0xd6, 0xc7, 0x65, 0x00);
+        public static ref readonly Guid CLSID_MPEG2DLNASink
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xC5, 0xE7, 0x5F, 0xFA,
+                    0x1D, 0x6A,
+                    0x11, 0x4B,
+                    0xB4,
+                    0x1F,
+                    0xF9,
+                    0x59,
+                    0xD6,
+                    0xC7,
+                    0x65,
+                    0x00
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const IID")]
-        public static readonly Guid MF_MP2DLNA_USE_MMCSS = new Guid(0x54f3e2ee, 0xa2a2, 0x497d, 0x98, 0x34, 0x97, 0x3a, 0xfd, 0xe5, 0x21, 0xeb);
+        public static ref readonly Guid MF_MP2DLNA_USE_MMCSS
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xEE, 0xE2, 0xF3, 0x54,
+                    0xA2, 0xA2,
+                    0x7D, 0x49,
+                    0x98,
+                    0x34,
+                    0x97,
+                    0x3A,
+                    0xFD,
+                    0xE5,
+                    0x21,
+                    0xEB
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const IID")]
-        public static readonly Guid MF_MP2DLNA_VIDEO_BIT_RATE = new Guid(0xe88548de, 0x73b4, 0x42d7, 0x9c, 0x75, 0xad, 0xfa, 0xa, 0x2a, 0x6e, 0x4c);
+        public static ref readonly Guid MF_MP2DLNA_VIDEO_BIT_RATE
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xDE, 0x48, 0x85, 0xE8,
+                    0xB4, 0x73,
+                    0xD7, 0x42,
+                    0x9C,
+                    0x75,
+                    0xAD,
+                    0xFA,
+                    0x0A,
+                    0x2A,
+                    0x6E,
+                    0x4C
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const IID")]
-        public static readonly Guid MF_MP2DLNA_AUDIO_BIT_RATE = new Guid(0x2d1c070e, 0x2b5f, 0x4ab3, 0xa7, 0xe6, 0x8d, 0x94, 0x3b, 0xa8, 0xd0, 0x0a);
+        public static ref readonly Guid MF_MP2DLNA_AUDIO_BIT_RATE
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x0E, 0x07, 0x1C, 0x2D,
+                    0x5F, 0x2B,
+                    0xB3, 0x4A,
+                    0xA7,
+                    0xE6,
+                    0x8D,
+                    0x94,
+                    0x3B,
+                    0xA8,
+                    0xD0,
+                    0x0A
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const IID")]
-        public static readonly Guid MF_MP2DLNA_ENCODE_QUALITY = new Guid(0xb52379d7, 0x1d46, 0x4fb6, 0xa3, 0x17, 0xa4, 0xa5, 0xf6, 0x09, 0x59, 0xf8);
+        public static ref readonly Guid MF_MP2DLNA_ENCODE_QUALITY
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xD7, 0x79, 0x23, 0xB5,
+                    0x46, 0x1D,
+                    0xB6, 0x4F,
+                    0xA3,
+                    0x17,
+                    0xA4,
+                    0xA5,
+                    0xF6,
+                    0x09,
+                    0x59,
+                    0xF8
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const IID")]
-        public static readonly Guid MF_MP2DLNA_STATISTICS = new Guid(0x75e488a3, 0xd5ad, 0x4898, 0x85, 0xe0, 0xbc, 0xce, 0x24, 0xa7, 0x22, 0xd7);
+        public static ref readonly Guid MF_MP2DLNA_STATISTICS
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xA3, 0x88, 0xE4, 0x75,
+                    0xAD, 0xD5,
+                    0x98, 0x48,
+                    0x85,
+                    0xE0,
+                    0xBC,
+                    0xCE,
+                    0x24,
+                    0xA7,
+                    0x22,
+                    0xD7
+                };
 
-        public static readonly Guid IID_IMFDLNASinkInit = new Guid(0x0C012799, 0x1B61, 0x4C10, 0xBD, 0xA9, 0x04, 0x44, 0x5B, 0xE5, 0xF5, 0x61);
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid IID_IMFDLNASinkInit
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x99, 0x27, 0x01, 0x0C,
+                    0x61, 0x1B,
+                    0x10, 0x4C,
+                    0xBD,
+                    0xA9,
+                    0x04,
+                    0x44,
+                    0x5B,
+                    0xE5,
+                    0xF5,
+                    0x61
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
     }
 }

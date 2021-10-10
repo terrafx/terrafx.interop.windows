@@ -12,6 +12,7 @@ namespace TerraFX.Interop
         public void** lpVtbl;
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(0)]
         [return: NativeTypeName("BOOL")]
         public int IsValid()
         {
@@ -19,6 +20,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(1)]
         [return: NativeTypeName("HRESULT")]
         public int GetDesc(D3D10_PASS_DESC* pDesc)
         {
@@ -26,6 +28,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(2)]
         [return: NativeTypeName("HRESULT")]
         public int GetVertexShaderDesc(D3D10_PASS_SHADER_DESC* pDesc)
         {
@@ -33,6 +36,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(3)]
         [return: NativeTypeName("HRESULT")]
         public int GetGeometryShaderDesc(D3D10_PASS_SHADER_DESC* pDesc)
         {
@@ -40,6 +44,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(4)]
         [return: NativeTypeName("HRESULT")]
         public int GetPixelShaderDesc(D3D10_PASS_SHADER_DESC* pDesc)
         {
@@ -47,18 +52,21 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(5)]
         public ID3D10EffectVariable* GetAnnotationByIndex([NativeTypeName("UINT")] uint Index)
         {
             return ((delegate* unmanaged<ID3D10EffectPass*, uint, ID3D10EffectVariable*>)(lpVtbl[5]))((ID3D10EffectPass*)Unsafe.AsPointer(ref this), Index);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(6)]
         public ID3D10EffectVariable* GetAnnotationByName([NativeTypeName("LPCSTR")] sbyte* Name)
         {
             return ((delegate* unmanaged<ID3D10EffectPass*, sbyte*, ID3D10EffectVariable*>)(lpVtbl[6]))((ID3D10EffectPass*)Unsafe.AsPointer(ref this), Name);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(7)]
         [return: NativeTypeName("HRESULT")]
         public int Apply([NativeTypeName("UINT")] uint Flags)
         {
@@ -66,6 +74,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(8)]
         [return: NativeTypeName("HRESULT")]
         public int ComputeStateBlockMask(D3D10_STATE_BLOCK_MASK* pStateBlockMask)
         {

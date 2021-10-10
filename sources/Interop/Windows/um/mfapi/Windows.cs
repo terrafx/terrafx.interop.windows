@@ -4,6 +4,8 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Diagnostics;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.MFWaveFormatExConvertFlags;
 
@@ -223,332 +225,2708 @@ namespace TerraFX.Interop
         public static extern int MFCreateEventQueue(IMFMediaEventQueue** ppMediaEventQueue);
 
         [NativeTypeName("const GUID")]
-        public static readonly Guid MF_EVENT_SESSIONCAPS = new Guid(0x7e5ebcd0, 0x11b8, 0x4abe, 0xaf, 0xad, 0x10, 0xf6, 0x59, 0x9a, 0x7f, 0x42);
+        public static ref readonly Guid MF_EVENT_SESSIONCAPS
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xD0, 0xBC, 0x5E, 0x7E,
+                    0xB8, 0x11,
+                    0xBE, 0x4A,
+                    0xAF,
+                    0xAD,
+                    0x10,
+                    0xF6,
+                    0x59,
+                    0x9A,
+                    0x7F,
+                    0x42
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const GUID")]
-        public static readonly Guid MF_EVENT_SESSIONCAPS_DELTA = new Guid(0x7e5ebcd1, 0x11b8, 0x4abe, 0xaf, 0xad, 0x10, 0xf6, 0x59, 0x9a, 0x7f, 0x42);
+        public static ref readonly Guid MF_EVENT_SESSIONCAPS_DELTA
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xD1, 0xBC, 0x5E, 0x7E,
+                    0xB8, 0x11,
+                    0xBE, 0x4A,
+                    0xAF,
+                    0xAD,
+                    0x10,
+                    0xF6,
+                    0x59,
+                    0x9A,
+                    0x7F,
+                    0x42
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const GUID")]
-        public static readonly Guid MF_EVENT_TOPOLOGY_STATUS = new Guid(0x30c5018d, 0x9a53, 0x454b, 0xad, 0x9e, 0x6d, 0x5f, 0x8f, 0xa7, 0xc4, 0x3b);
+        public static ref readonly Guid MF_EVENT_TOPOLOGY_STATUS
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x8D, 0x01, 0xC5, 0x30,
+                    0x53, 0x9A,
+                    0x4B, 0x45,
+                    0xAD,
+                    0x9E,
+                    0x6D,
+                    0x5F,
+                    0x8F,
+                    0xA7,
+                    0xC4,
+                    0x3B
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const GUID")]
-        public static readonly Guid MF_EVENT_START_PRESENTATION_TIME = new Guid(0x5ad914d0, 0x9b45, 0x4a8d, 0xa2, 0xc0, 0x81, 0xd1, 0xe5, 0xb, 0xfb, 0x7);
+        public static ref readonly Guid MF_EVENT_START_PRESENTATION_TIME
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xD0, 0x14, 0xD9, 0x5A,
+                    0x45, 0x9B,
+                    0x8D, 0x4A,
+                    0xA2,
+                    0xC0,
+                    0x81,
+                    0xD1,
+                    0xE5,
+                    0x0B,
+                    0xFB,
+                    0x07
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const GUID")]
-        public static readonly Guid MF_EVENT_PRESENTATION_TIME_OFFSET = new Guid(0x5ad914d1, 0x9b45, 0x4a8d, 0xa2, 0xc0, 0x81, 0xd1, 0xe5, 0xb, 0xfb, 0x7);
+        public static ref readonly Guid MF_EVENT_PRESENTATION_TIME_OFFSET
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xD1, 0x14, 0xD9, 0x5A,
+                    0x45, 0x9B,
+                    0x8D, 0x4A,
+                    0xA2,
+                    0xC0,
+                    0x81,
+                    0xD1,
+                    0xE5,
+                    0x0B,
+                    0xFB,
+                    0x07
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const GUID")]
-        public static readonly Guid MF_EVENT_START_PRESENTATION_TIME_AT_OUTPUT = new Guid(0x5ad914d2, 0x9b45, 0x4a8d, 0xa2, 0xc0, 0x81, 0xd1, 0xe5, 0xb, 0xfb, 0x7);
+        public static ref readonly Guid MF_EVENT_START_PRESENTATION_TIME_AT_OUTPUT
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xD2, 0x14, 0xD9, 0x5A,
+                    0x45, 0x9B,
+                    0x8D, 0x4A,
+                    0xA2,
+                    0xC0,
+                    0x81,
+                    0xD1,
+                    0xE5,
+                    0x0B,
+                    0xFB,
+                    0x07
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const GUID")]
-        public static readonly Guid MF_EVENT_SOURCE_FAKE_START = new Guid(0xa8cc55a7, 0x6b31, 0x419f, 0x84, 0x5d, 0xff, 0xb3, 0x51, 0xa2, 0x43, 0x4b);
+        public static ref readonly Guid MF_EVENT_SOURCE_FAKE_START
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xA7, 0x55, 0xCC, 0xA8,
+                    0x31, 0x6B,
+                    0x9F, 0x41,
+                    0x84,
+                    0x5D,
+                    0xFF,
+                    0xB3,
+                    0x51,
+                    0xA2,
+                    0x43,
+                    0x4B
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const GUID")]
-        public static readonly Guid MF_EVENT_SOURCE_PROJECTSTART = new Guid(0xa8cc55a8, 0x6b31, 0x419f, 0x84, 0x5d, 0xff, 0xb3, 0x51, 0xa2, 0x43, 0x4b);
+        public static ref readonly Guid MF_EVENT_SOURCE_PROJECTSTART
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xA8, 0x55, 0xCC, 0xA8,
+                    0x31, 0x6B,
+                    0x9F, 0x41,
+                    0x84,
+                    0x5D,
+                    0xFF,
+                    0xB3,
+                    0x51,
+                    0xA2,
+                    0x43,
+                    0x4B
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const GUID")]
-        public static readonly Guid MF_EVENT_SOURCE_ACTUAL_START = new Guid(0xa8cc55a9, 0x6b31, 0x419f, 0x84, 0x5d, 0xff, 0xb3, 0x51, 0xa2, 0x43, 0x4b);
+        public static ref readonly Guid MF_EVENT_SOURCE_ACTUAL_START
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xA9, 0x55, 0xCC, 0xA8,
+                    0x31, 0x6B,
+                    0x9F, 0x41,
+                    0x84,
+                    0x5D,
+                    0xFF,
+                    0xB3,
+                    0x51,
+                    0xA2,
+                    0x43,
+                    0x4B
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const GUID")]
-        public static readonly Guid MF_EVENT_SOURCE_TOPOLOGY_CANCELED = new Guid(0xdb62f650, 0x9a5e, 0x4704, 0xac, 0xf3, 0x56, 0x3b, 0xc6, 0xa7, 0x33, 0x64);
+        public static ref readonly Guid MF_EVENT_SOURCE_TOPOLOGY_CANCELED
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x50, 0xF6, 0x62, 0xDB,
+                    0x5E, 0x9A,
+                    0x04, 0x47,
+                    0xAC,
+                    0xF3,
+                    0x56,
+                    0x3B,
+                    0xC6,
+                    0xA7,
+                    0x33,
+                    0x64
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const GUID")]
-        public static readonly Guid MF_EVENT_SOURCE_CHARACTERISTICS = new Guid(0x47db8490, 0x8b22, 0x4f52, 0xaf, 0xda, 0x9c, 0xe1, 0xb2, 0xd3, 0xcf, 0xa8);
+        public static ref readonly Guid MF_EVENT_SOURCE_CHARACTERISTICS
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x90, 0x84, 0xDB, 0x47,
+                    0x22, 0x8B,
+                    0x52, 0x4F,
+                    0xAF,
+                    0xDA,
+                    0x9C,
+                    0xE1,
+                    0xB2,
+                    0xD3,
+                    0xCF,
+                    0xA8
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const GUID")]
-        public static readonly Guid MF_EVENT_SOURCE_CHARACTERISTICS_OLD = new Guid(0x47db8491, 0x8b22, 0x4f52, 0xaf, 0xda, 0x9c, 0xe1, 0xb2, 0xd3, 0xcf, 0xa8);
+        public static ref readonly Guid MF_EVENT_SOURCE_CHARACTERISTICS_OLD
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x91, 0x84, 0xDB, 0x47,
+                    0x22, 0x8B,
+                    0x52, 0x4F,
+                    0xAF,
+                    0xDA,
+                    0x9C,
+                    0xE1,
+                    0xB2,
+                    0xD3,
+                    0xCF,
+                    0xA8
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const GUID")]
-        public static readonly Guid MF_EVENT_DO_THINNING = new Guid(0x321ea6fb, 0xdad9, 0x46e4, 0xb3, 0x1d, 0xd2, 0xea, 0xe7, 0x9, 0xe, 0x30);
+        public static ref readonly Guid MF_EVENT_DO_THINNING
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xFB, 0xA6, 0x1E, 0x32,
+                    0xD9, 0xDA,
+                    0xE4, 0x46,
+                    0xB3,
+                    0x1D,
+                    0xD2,
+                    0xEA,
+                    0xE7,
+                    0x09,
+                    0x0E,
+                    0x30
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const GUID")]
-        public static readonly Guid MF_EVENT_SCRUBSAMPLE_TIME = new Guid(0x9ac712b3, 0xdcb8, 0x44d5, 0x8d, 0xc, 0x37, 0x45, 0x5a, 0x27, 0x82, 0xe3);
+        public static ref readonly Guid MF_EVENT_SCRUBSAMPLE_TIME
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xB3, 0x12, 0xC7, 0x9A,
+                    0xB8, 0xDC,
+                    0xD5, 0x44,
+                    0x8D,
+                    0x0C,
+                    0x37,
+                    0x45,
+                    0x5A,
+                    0x27,
+                    0x82,
+                    0xE3
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const GUID")]
-        public static readonly Guid MF_EVENT_OUTPUT_NODE = new Guid(0x830f1a8b, 0xc060, 0x46dd, 0xa8, 0x01, 0x1c, 0x95, 0xde, 0xc9, 0xb1, 0x07);
+        public static ref readonly Guid MF_EVENT_OUTPUT_NODE
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x8B, 0x1A, 0x0F, 0x83,
+                    0x60, 0xC0,
+                    0xDD, 0x46,
+                    0xA8,
+                    0x01,
+                    0x1C,
+                    0x95,
+                    0xDE,
+                    0xC9,
+                    0xB1,
+                    0x07
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const GUID")]
-        public static readonly Guid MF_EVENT_MFT_INPUT_STREAM_ID = new Guid(0xf29c2cca, 0x7ae6, 0x42d2, 0xb2, 0x84, 0xbf, 0x83, 0x7c, 0xc8, 0x74, 0xe2);
+        public static ref readonly Guid MF_EVENT_MFT_INPUT_STREAM_ID
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xCA, 0x2C, 0x9C, 0xF2,
+                    0xE6, 0x7A,
+                    0xD2, 0x42,
+                    0xB2,
+                    0x84,
+                    0xBF,
+                    0x83,
+                    0x7C,
+                    0xC8,
+                    0x74,
+                    0xE2
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const GUID")]
-        public static readonly Guid MF_EVENT_MFT_CONTEXT = new Guid(0xb7cd31f1, 0x899e, 0x4b41, 0x80, 0xc9, 0x26, 0xa8, 0x96, 0xd3, 0x29, 0x77);
+        public static ref readonly Guid MF_EVENT_MFT_CONTEXT
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xF1, 0x31, 0xCD, 0xB7,
+                    0x9E, 0x89,
+                    0x41, 0x4B,
+                    0x80,
+                    0xC9,
+                    0x26,
+                    0xA8,
+                    0x96,
+                    0xD3,
+                    0x29,
+                    0x77
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const GUID")]
-        public static readonly Guid MF_EVENT_STREAM_METADATA_KEYDATA = new Guid(0xcd59a4a1, 0x4a3b, 0x4bbd, 0x86, 0x65, 0x72, 0xa4, 0xf, 0xbe, 0xa7, 0x76);
+        public static ref readonly Guid MF_EVENT_STREAM_METADATA_KEYDATA
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xA1, 0xA4, 0x59, 0xCD,
+                    0x3B, 0x4A,
+                    0xBD, 0x4B,
+                    0x86,
+                    0x65,
+                    0x72,
+                    0xA4,
+                    0x0F,
+                    0xBE,
+                    0xA7,
+                    0x76
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const GUID")]
-        public static readonly Guid MF_EVENT_STREAM_METADATA_CONTENT_KEYIDS = new Guid(0x5063449d, 0xcc29, 0x4fc6, 0xa7, 0x5a, 0xd2, 0x47, 0xb3, 0x5a, 0xf8, 0x5c);
+        public static ref readonly Guid MF_EVENT_STREAM_METADATA_CONTENT_KEYIDS
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x9D, 0x44, 0x63, 0x50,
+                    0x29, 0xCC,
+                    0xC6, 0x4F,
+                    0xA7,
+                    0x5A,
+                    0xD2,
+                    0x47,
+                    0xB3,
+                    0x5A,
+                    0xF8,
+                    0x5C
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const GUID")]
-        public static readonly Guid MF_EVENT_STREAM_METADATA_SYSTEMID = new Guid(0x1ea2ef64, 0xba16, 0x4a36, 0x87, 0x19, 0xfe, 0x75, 0x60, 0xba, 0x32, 0xad);
+        public static ref readonly Guid MF_EVENT_STREAM_METADATA_SYSTEMID
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x64, 0xEF, 0xA2, 0x1E,
+                    0x16, 0xBA,
+                    0x36, 0x4A,
+                    0x87,
+                    0x19,
+                    0xFE,
+                    0x75,
+                    0x60,
+                    0xBA,
+                    0x32,
+                    0xAD
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [DllImport("mfplat", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int MFCreateSample(IMFSample** ppIMFSample);
 
         [NativeTypeName("const GUID")]
-        public static readonly Guid MFSampleExtension_MaxDecodeFrameSize = new Guid(0xd3cc654f, 0xf9f3, 0x4a13, 0x88, 0x9f, 0xf0, 0x4e, 0xb2, 0xb5, 0xb9, 0x57);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFSampleExtension_AccumulatedNonRefPicPercent = new Guid(0x79ea74df, 0xa740, 0x445b, 0xbc, 0x98, 0xc9, 0xed, 0x1f, 0x26, 0xe, 0xee);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFSampleExtension_Encryption_ProtectionScheme = new Guid(0xd054d096, 0x28bb, 0x45da, 0x87, 0xec, 0x74, 0xf3, 0x51, 0x87, 0x14, 0x6);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFSampleExtension_Encryption_CryptByteBlock = new Guid(0x9d84289b, 0xc7f, 0x4713, 0xab, 0x95, 0x10, 0x8a, 0xb4, 0x2a, 0xd8, 0x1);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFSampleExtension_Encryption_SkipByteBlock = new Guid(0xd550548, 0x8317, 0x4ab1, 0x84, 0x5f, 0xd0, 0x63, 0x6, 0xe2, 0x93, 0xe3);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFSampleExtension_Encryption_SubSample_Mapping = new Guid(0x8444F27A, 0x69A1, 0x48DA, 0xBD, 0x08, 0x11, 0xCE, 0xF3, 0x68, 0x30, 0xD2);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFSampleExtension_Encryption_ClearSliceHeaderData = new Guid(0x5509a4f4, 0x320d, 0x4e6c, 0x8d, 0x1a, 0x94, 0xc6, 0x6d, 0xd2, 0xc, 0xb0);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFSampleExtension_Encryption_HardwareProtection_KeyInfoID = new Guid(0x8cbfcceb, 0x94a5, 0x4de1, 0x82, 0x31, 0xa8, 0x5e, 0x47, 0xcf, 0x81, 0xe7);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFSampleExtension_Encryption_HardwareProtection_KeyInfo = new Guid(0xb2372080, 0x455b, 0x4dd7, 0x99, 0x89, 0x1a, 0x95, 0x57, 0x84, 0xb7, 0x54);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFSampleExtension_Encryption_HardwareProtection_VideoDecryptorContext = new Guid(0x693470c8, 0xe837, 0x47a0, 0x88, 0xcb, 0x53, 0x5b, 0x90, 0x5e, 0x35, 0x82);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFSampleExtension_Encryption_Opaque_Data = new Guid(0x224d77e5, 0x1391, 0x4ffb, 0x9f, 0x41, 0xb4, 0x32, 0xf6, 0x8c, 0x61, 0x1d);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFSampleExtension_NALULengthInfo = new Guid(0x19124E7C, 0xAD4B, 0x465F, 0xBB, 0x18, 0x20, 0x18, 0x62, 0x87, 0xB6, 0xAF);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFSampleExtension_Encryption_ResumeVideoOutput = new Guid(0xa435aba5, 0xafde, 0x4cf5, 0xbc, 0x1c, 0xf6, 0xac, 0xaf, 0x13, 0x94, 0x9d);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFSampleExtension_Encryption_NALUTypes = new Guid(0xb0f067c7, 0x714c, 0x416c, 0x8d, 0x59, 0x5f, 0x4d, 0xdf, 0x89, 0x13, 0xb6);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFSampleExtension_Encryption_SPSPPSData = new Guid(0xaede0fa2, 0xe0c, 0x453c, 0xb7, 0xf3, 0xde, 0x86, 0x93, 0x36, 0x4d, 0x11);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFSampleExtension_Encryption_SEIData = new Guid(0x3cf0e972, 0x4542, 0x4687, 0x99, 0x99, 0x58, 0x5f, 0x56, 0x5f, 0xba, 0x7d);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFSampleExtension_Encryption_HardwareProtection = new Guid(0x9a2b2d2b, 0x8270, 0x43e3, 0x84, 0x48, 0x99, 0x4f, 0x42, 0x6e, 0x88, 0x86);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFSampleExtension_CleanPoint = new Guid(0x9cdf01d8, 0xa0f0, 0x43ba, 0xb0, 0x77, 0xea, 0xa0, 0x6c, 0xbd, 0x72, 0x8a);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFSampleExtension_Discontinuity = new Guid(0x9cdf01d9, 0xa0f0, 0x43ba, 0xb0, 0x77, 0xea, 0xa0, 0x6c, 0xbd, 0x72, 0x8a);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFSampleExtension_Token = new Guid(0x8294da66, 0xf328, 0x4805, 0xb5, 0x51, 0x00, 0xde, 0xb4, 0xc5, 0x7a, 0x61);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFSampleExtension_ClosedCaption_CEA708 = new Guid(0x26f09068, 0xe744, 0x47dc, 0xaa, 0x03, 0xdb, 0xf2, 0x04, 0x03, 0xbd, 0xe6);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFSampleExtension_DecodeTimestamp = new Guid(0x73a954d4, 0x9e2, 0x4861, 0xbe, 0xfc, 0x94, 0xbd, 0x97, 0xc0, 0x8e, 0x6e);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFSampleExtension_VideoEncodeQP = new Guid(0xb2efe478, 0xf979, 0x4c66, 0xb9, 0x5e, 0xee, 0x2b, 0x82, 0xc8, 0x2f, 0x36);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFSampleExtension_VideoEncodePictureType = new Guid(0x973704e6, 0xcd14, 0x483c, 0x8f, 0x20, 0xc9, 0xfc, 0x9, 0x28, 0xba, 0xd5);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFSampleExtension_FrameCorruption = new Guid(0xb4dd4a8c, 0xbeb, 0x44c4, 0x8b, 0x75, 0xb0, 0x2b, 0x91, 0x3b, 0x4, 0xf0);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFSampleExtension_DirtyRects = new Guid(0x9ba70225, 0xb342, 0x4e97, 0x91, 0x26, 0x0b, 0x56, 0x6a, 0xb7, 0xea, 0x7e);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFSampleExtension_MoveRegions = new Guid(0xe2a6c693, 0x3a8b, 0x4b8d, 0x95, 0xd0, 0xf6, 0x02, 0x81, 0xa1, 0x2f, 0xb7);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFSampleExtension_HDCP_OptionalHeader = new Guid(0x9a2e7390, 0x121f, 0x455f, 0x83, 0x76, 0xc9, 0x74, 0x28, 0xe0, 0xb5, 0x40);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFSampleExtension_HDCP_FrameCounter = new Guid(0x9d389c60, 0xf507, 0x4aa6, 0xa4, 0xa, 0x71, 0x2, 0x7a, 0x2, 0xf3, 0xde);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFSampleExtension_HDCP_StreamID = new Guid(0x177e5d74, 0xc370, 0x4a7a, 0x95, 0xa2, 0x36, 0x83, 0x3c, 0x01, 0xd0, 0xaf);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFSampleExtension_Timestamp = new Guid(0x1e436999, 0x69be, 0x4c7a, 0x93, 0x69, 0x70, 0x06, 0x8c, 0x02, 0x60, 0xcb);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFSampleExtension_RepeatFrame = new Guid(0x88be738f, 0x711, 0x4f42, 0xb4, 0x58, 0x34, 0x4a, 0xed, 0x42, 0xec, 0x2f);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFT_ENCODER_ERROR = new Guid(0xc8d1eda4, 0x98e4, 0x41d5, 0x92, 0x97, 0x44, 0xf5, 0x38, 0x52, 0xf9, 0x0e);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFT_GFX_DRIVER_VERSION_ID_Attribute = new Guid(0xf34b9093, 0x05e0, 0x4b16, 0x99, 0x3d, 0x3e, 0x2a, 0x2c, 0xde, 0x6a, 0xd3);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFSampleExtension_DescrambleData = new Guid(0x43483be6, 0x4903, 0x4314, 0xb0, 0x32, 0x29, 0x51, 0x36, 0x59, 0x36, 0xfc);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFSampleExtension_SampleKeyID = new Guid(0x9ed713c8, 0x9b87, 0x4b26, 0x82, 0x97, 0xa9, 0x3b, 0x0c, 0x5a, 0x8a, 0xcc);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFSampleExtension_GenKeyFunc = new Guid(0x441ca1ee, 0x6b1f, 0x4501, 0x90, 0x3a, 0xde, 0x87, 0xdf, 0x42, 0xf6, 0xed);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFSampleExtension_GenKeyCtx = new Guid(0x188120cb, 0xd7da, 0x4b59, 0x9b, 0x3e, 0x92, 0x52, 0xfd, 0x37, 0x30, 0x1c);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFSampleExtension_PacketCrossOffsets = new Guid(0x2789671d, 0x389f, 0x40bb, 0x90, 0xd9, 0xc2, 0x82, 0xf7, 0x7f, 0x9a, 0xbd);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFSampleExtension_Encryption_SampleID = new Guid(0x6698b84e, 0x0afa, 0x4330, 0xae, 0xb2, 0x1c, 0x0a, 0x98, 0xd7, 0xa4, 0x4d);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFSampleExtension_Encryption_KeyID = new Guid(0x76376591, 0x795f, 0x4da1, 0x86, 0xed, 0x9d, 0x46, 0xec, 0xa1, 0x09, 0xa9);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFSampleExtension_Content_KeyID = new Guid(0xc6c7f5b0, 0xacca, 0x415b, 0x87, 0xd9, 0x10, 0x44, 0x14, 0x69, 0xef, 0xc6);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFSampleExtension_Encryption_SubSampleMappingSplit = new Guid(0xfe0254b9, 0x2aa5, 0x4edc, 0x99, 0xf7, 0x17, 0xe8, 0x9d, 0xbf, 0x91, 0x74);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFSampleExtension_Interlaced = new Guid(0xb1d5830a, 0xdeb8, 0x40e3, 0x90, 0xfa, 0x38, 0x99, 0x43, 0x71, 0x64, 0x61);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFSampleExtension_BottomFieldFirst = new Guid(0x941ce0a3, 0x6ae3, 0x4dda, 0x9a, 0x08, 0xa6, 0x42, 0x98, 0x34, 0x06, 0x17);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFSampleExtension_RepeatFirstField = new Guid(0x304d257c, 0x7493, 0x4fbd, 0xb1, 0x49, 0x92, 0x28, 0xde, 0x8d, 0x9a, 0x99);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFSampleExtension_SingleField = new Guid(0x9d85f816, 0x658b, 0x455a, 0xbd, 0xe0, 0x9f, 0xa7, 0xe1, 0x5a, 0xb8, 0xf9);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFSampleExtension_DerivedFromTopField = new Guid(0x6852465a, 0xae1c, 0x4553, 0x8e, 0x9b, 0xc3, 0x42, 0x0f, 0xcb, 0x16, 0x37);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFSampleExtension_MeanAbsoluteDifference = new Guid(0x1cdbde11, 0x08b4, 0x4311, 0xa6, 0xdd, 0x0f, 0x9f, 0x37, 0x19, 0x07, 0xaa);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFSampleExtension_LongTermReferenceFrameInfo = new Guid(0x9154733f, 0xe1bd, 0x41bf, 0x81, 0xd3, 0xfc, 0xd9, 0x18, 0xf7, 0x13, 0x32);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFSampleExtension_ROIRectangle = new Guid(0x3414a438, 0x4998, 0x4d2c, 0xbe, 0x82, 0xbe, 0x3c, 0xa0, 0xb2, 0x4d, 0x43);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFSampleExtension_LastSlice = new Guid(0x2b5d5457, 0x5547, 0x4f07, 0xb8, 0xc8, 0xb4, 0xa3, 0xa9, 0xa1, 0xda, 0xac);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFSampleExtension_FeatureMap = new Guid(0xa032d165, 0x46fc, 0x400a, 0xb4, 0x49, 0x49, 0xde, 0x53, 0xe6, 0x2a, 0x6e);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFSampleExtension_ChromaOnly = new Guid(0x1eb9179c, 0xa01f, 0x4845, 0x8c, 0x04, 0x0e, 0x65, 0xa2, 0x6e, 0xb0, 0x4f);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFSampleExtension_PhotoThumbnail = new Guid(0x74BBC85C, 0xC8BB, 0x42DC, 0xB5, 0x86, 0xDA, 0x17, 0xFF, 0xD3, 0x5D, 0xCC);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFSampleExtension_PhotoThumbnailMediaType = new Guid(0x61AD5420, 0xEBF8, 0x4143, 0x89, 0xAF, 0x6B, 0xF2, 0x5F, 0x67, 0x2D, 0xEF);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFSampleExtension_CaptureMetadata = new Guid(0x2EBE23A8, 0xFAF5, 0x444A, 0xA6, 0xA2, 0xEB, 0x81, 0x08, 0x80, 0xAB, 0x5D);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFSampleExtension_MDLCacheCookie = new Guid(0x5F002AF9, 0xD8F9, 0x41A3, 0xB6, 0xC3, 0xA2, 0xAD, 0x43, 0xF6, 0x47, 0xAD);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MF_CAPTURE_METADATA_PHOTO_FRAME_FLASH = new Guid(0x0F9DD6C6, 0x6003, 0x45D8, 0xBD, 0x59, 0xF1, 0xF5, 0x3E, 0x3D, 0x04, 0xE8);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MF_CAPTURE_METADATA_FRAME_RAWSTREAM = new Guid(0x9252077B, 0x2680, 0x49B9, 0xAE, 0x02, 0xB1, 0x90, 0x75, 0x97, 0x3B, 0x70);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MF_CAPTURE_METADATA_FOCUSSTATE = new Guid(0xa87ee154, 0x997f, 0x465d, 0xb9, 0x1f, 0x29, 0xd5, 0x3b, 0x98, 0x2b, 0x88);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MF_CAPTURE_METADATA_REQUESTED_FRAME_SETTING_ID = new Guid(0xbb3716d9, 0x8a61, 0x47a4, 0x81, 0x97, 0x45, 0x9c, 0x7f, 0xf1, 0x74, 0xd5);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MF_CAPTURE_METADATA_EXPOSURE_TIME = new Guid(0x16b9ae99, 0xcd84, 0x4063, 0x87, 0x9d, 0xa2, 0x8c, 0x76, 0x33, 0x72, 0x9e);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MF_CAPTURE_METADATA_EXPOSURE_COMPENSATION = new Guid(0xd198aa75, 0x4b62, 0x4345, 0xab, 0xf3, 0x3c, 0x31, 0xfa, 0x12, 0xc2, 0x99);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MF_CAPTURE_METADATA_ISO_SPEED = new Guid(0xe528a68f, 0xb2e3, 0x44fe, 0x8b, 0x65, 0x7, 0xbf, 0x4b, 0x5a, 0x13, 0xff);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MF_CAPTURE_METADATA_LENS_POSITION = new Guid(0xb5fc8e86, 0x11d1, 0x4e70, 0x81, 0x9b, 0x72, 0x3a, 0x89, 0xfa, 0x45, 0x20);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MF_CAPTURE_METADATA_SCENE_MODE = new Guid(0x9cc3b54d, 0x5ed3, 0x4bae, 0xb3, 0x88, 0x76, 0x70, 0xae, 0xf5, 0x9e, 0x13);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MF_CAPTURE_METADATA_FLASH = new Guid(0x4a51520b, 0xfb36, 0x446c, 0x9d, 0xf2, 0x68, 0x17, 0x1b, 0x9a, 0x3, 0x89);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MF_CAPTURE_METADATA_FLASH_POWER = new Guid(0x9c0e0d49, 0x205, 0x491a, 0xbc, 0x9d, 0x2d, 0x6e, 0x1f, 0x4d, 0x56, 0x84);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MF_CAPTURE_METADATA_WHITEBALANCE = new Guid(0xc736fd77, 0xfb9, 0x4e2e, 0x97, 0xa2, 0xfc, 0xd4, 0x90, 0x73, 0x9e, 0xe9);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MF_CAPTURE_METADATA_ZOOMFACTOR = new Guid(0xe50b0b81, 0xe501, 0x42c2, 0xab, 0xf2, 0x85, 0x7e, 0xcb, 0x13, 0xfa, 0x5c);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MF_CAPTURE_METADATA_FACEROIS = new Guid(0x864f25a6, 0x349f, 0x46b1, 0xa3, 0xe, 0x54, 0xcc, 0x22, 0x92, 0x8a, 0x47);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MF_CAPTURE_METADATA_FACEROITIMESTAMPS = new Guid(0xe94d50cc, 0x3da0, 0x44d4, 0xbb, 0x34, 0x83, 0x19, 0x8a, 0x74, 0x18, 0x68);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MF_CAPTURE_METADATA_FACEROICHARACTERIZATIONS = new Guid(0xb927a1a8, 0x18ef, 0x46d3, 0xb3, 0xaf, 0x69, 0x37, 0x2f, 0x94, 0xd9, 0xb2);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MF_CAPTURE_METADATA_ISO_GAINS = new Guid(0x5802ac9, 0xe1d, 0x41c7, 0xa8, 0xc8, 0x7e, 0x73, 0x69, 0xf8, 0x4e, 0x1e);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MF_CAPTURE_METADATA_SENSORFRAMERATE = new Guid(0xdb51357e, 0x9d3d, 0x4962, 0xb0, 0x6d, 0x7, 0xce, 0x65, 0xd, 0x9a, 0xa);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MF_CAPTURE_METADATA_WHITEBALANCE_GAINS = new Guid(0xe7570c8f, 0x2dcb, 0x4c7c, 0xaa, 0xce, 0x22, 0xec, 0xe7, 0xcc, 0xe6, 0x47);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MF_CAPTURE_METADATA_HISTOGRAM = new Guid(0x85358432, 0x2ef6, 0x4ba9, 0xa3, 0xfb, 0x6, 0xd8, 0x29, 0x74, 0xb8, 0x95);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MF_CAPTURE_METADATA_EXIF = new Guid(0x2e9575b8, 0x8c31, 0x4a02, 0x85, 0x75, 0x42, 0xb1, 0x97, 0xb7, 0x15, 0x92);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MF_CAPTURE_METADATA_FRAME_ILLUMINATION = new Guid(0x6D688FFC, 0x63D3, 0x46FE, 0xBA, 0xDA, 0x5B, 0x94, 0x7D, 0xB0, 0xD0, 0x80);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MF_CAPTURE_METADATA_UVC_PAYLOADHEADER = new Guid(0xf9f88a87, 0xe1dd, 0x441e, 0x95, 0xcb, 0x42, 0xe2, 0x1a, 0x64, 0xf1, 0xd9);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFSampleExtension_Depth_MinReliableDepth = new Guid(0x5f8582b2, 0xe36b, 0x47c8, 0x9b, 0x87, 0xfe, 0xe1, 0xca, 0x72, 0xc5, 0xb0);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFSampleExtension_Depth_MaxReliableDepth = new Guid(0xe45545d1, 0x1f0f, 0x4a32, 0xa8, 0xa7, 0x61, 0x1, 0xa2, 0x4e, 0xa8, 0xbe);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MF_CAPTURE_METADATA_FIRST_SCANLINE_START_TIME_QPC = new Guid(0x6a2c49f1, 0xe052, 0x46b6, 0xb2, 0xd9, 0x73, 0xc1, 0x55, 0x87, 0x09, 0xaf);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MF_CAPTURE_METADATA_LAST_SCANLINE_END_TIME_QPC = new Guid(0xdccadecb, 0xc4d4, 0x400d, 0xb4, 0x18, 0x10, 0xe8, 0x85, 0x25, 0xe1, 0xf6);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MF_CAPTURE_METADATA_SCANLINE_TIME_QPC_ACCURACY = new Guid(0x4cd79c51, 0xf765, 0x4b09, 0xb1, 0xe1, 0x27, 0xd1, 0xf7, 0xeb, 0xea, 0x09);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MF_CAPTURE_METADATA_SCANLINE_DIRECTION = new Guid(0x6496a3ba, 0x1907, 0x49e6, 0xb0, 0xc3, 0x12, 0x37, 0x95, 0xf3, 0x80, 0xa9);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MF_CAPTURE_METADATA_DIGITALWINDOW = new Guid(0x276f72a2, 0x59c8, 0x4f69, 0x97, 0xb4, 0x6, 0x8b, 0x8c, 0xe, 0xc0, 0x44);
+        public static ref readonly Guid MFSampleExtension_MaxDecodeFrameSize
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x4F, 0x65, 0xCC, 0xD3,
+                    0xF3, 0xF9,
+                    0x13, 0x4A,
+                    0x88,
+                    0x9F,
+                    0xF0,
+                    0x4E,
+                    0xB2,
+                    0xB5,
+                    0xB9,
+                    0x57
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFSampleExtension_AccumulatedNonRefPicPercent
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xDF, 0x74, 0xEA, 0x79,
+                    0x40, 0xA7,
+                    0x5B, 0x44,
+                    0xBC,
+                    0x98,
+                    0xC9,
+                    0xED,
+                    0x1F,
+                    0x26,
+                    0x0E,
+                    0xEE
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFSampleExtension_Encryption_ProtectionScheme
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x96, 0xD0, 0x54, 0xD0,
+                    0xBB, 0x28,
+                    0xDA, 0x45,
+                    0x87,
+                    0xEC,
+                    0x74,
+                    0xF3,
+                    0x51,
+                    0x87,
+                    0x14,
+                    0x06
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFSampleExtension_Encryption_CryptByteBlock
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x9B, 0x28, 0x84, 0x9D,
+                    0x7F, 0x0C,
+                    0x13, 0x47,
+                    0xAB,
+                    0x95,
+                    0x10,
+                    0x8A,
+                    0xB4,
+                    0x2A,
+                    0xD8,
+                    0x01
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFSampleExtension_Encryption_SkipByteBlock
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x48, 0x05, 0x55, 0x0D,
+                    0x17, 0x83,
+                    0xB1, 0x4A,
+                    0x84,
+                    0x5F,
+                    0xD0,
+                    0x63,
+                    0x06,
+                    0xE2,
+                    0x93,
+                    0xE3
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFSampleExtension_Encryption_SubSample_Mapping
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x7A, 0xF2, 0x44, 0x84,
+                    0xA1, 0x69,
+                    0xDA, 0x48,
+                    0xBD,
+                    0x08,
+                    0x11,
+                    0xCE,
+                    0xF3,
+                    0x68,
+                    0x30,
+                    0xD2
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFSampleExtension_Encryption_ClearSliceHeaderData
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xF4, 0xA4, 0x09, 0x55,
+                    0x0D, 0x32,
+                    0x6C, 0x4E,
+                    0x8D,
+                    0x1A,
+                    0x94,
+                    0xC6,
+                    0x6D,
+                    0xD2,
+                    0x0C,
+                    0xB0
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFSampleExtension_Encryption_HardwareProtection_KeyInfoID
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xEB, 0xCC, 0xBF, 0x8C,
+                    0xA5, 0x94,
+                    0xE1, 0x4D,
+                    0x82,
+                    0x31,
+                    0xA8,
+                    0x5E,
+                    0x47,
+                    0xCF,
+                    0x81,
+                    0xE7
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFSampleExtension_Encryption_HardwareProtection_KeyInfo
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x80, 0x20, 0x37, 0xB2,
+                    0x5B, 0x45,
+                    0xD7, 0x4D,
+                    0x99,
+                    0x89,
+                    0x1A,
+                    0x95,
+                    0x57,
+                    0x84,
+                    0xB7,
+                    0x54
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFSampleExtension_Encryption_HardwareProtection_VideoDecryptorContext
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xC8, 0x70, 0x34, 0x69,
+                    0x37, 0xE8,
+                    0xA0, 0x47,
+                    0x88,
+                    0xCB,
+                    0x53,
+                    0x5B,
+                    0x90,
+                    0x5E,
+                    0x35,
+                    0x82
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFSampleExtension_Encryption_Opaque_Data
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xE5, 0x77, 0x4D, 0x22,
+                    0x91, 0x13,
+                    0xFB, 0x4F,
+                    0x9F,
+                    0x41,
+                    0xB4,
+                    0x32,
+                    0xF6,
+                    0x8C,
+                    0x61,
+                    0x1D
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFSampleExtension_NALULengthInfo
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x7C, 0x4E, 0x12, 0x19,
+                    0x4B, 0xAD,
+                    0x5F, 0x46,
+                    0xBB,
+                    0x18,
+                    0x20,
+                    0x18,
+                    0x62,
+                    0x87,
+                    0xB6,
+                    0xAF
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFSampleExtension_Encryption_ResumeVideoOutput
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xA5, 0xAB, 0x35, 0xA4,
+                    0xDE, 0xAF,
+                    0xF5, 0x4C,
+                    0xBC,
+                    0x1C,
+                    0xF6,
+                    0xAC,
+                    0xAF,
+                    0x13,
+                    0x94,
+                    0x9D
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFSampleExtension_Encryption_NALUTypes
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xC7, 0x67, 0xF0, 0xB0,
+                    0x4C, 0x71,
+                    0x6C, 0x41,
+                    0x8D,
+                    0x59,
+                    0x5F,
+                    0x4D,
+                    0xDF,
+                    0x89,
+                    0x13,
+                    0xB6
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFSampleExtension_Encryption_SPSPPSData
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xA2, 0x0F, 0xDE, 0xAE,
+                    0x0C, 0x0E,
+                    0x3C, 0x45,
+                    0xB7,
+                    0xF3,
+                    0xDE,
+                    0x86,
+                    0x93,
+                    0x36,
+                    0x4D,
+                    0x11
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFSampleExtension_Encryption_SEIData
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x72, 0xE9, 0xF0, 0x3C,
+                    0x42, 0x45,
+                    0x87, 0x46,
+                    0x99,
+                    0x99,
+                    0x58,
+                    0x5F,
+                    0x56,
+                    0x5F,
+                    0xBA,
+                    0x7D
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFSampleExtension_Encryption_HardwareProtection
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x2B, 0x2D, 0x2B, 0x9A,
+                    0x70, 0x82,
+                    0xE3, 0x43,
+                    0x84,
+                    0x48,
+                    0x99,
+                    0x4F,
+                    0x42,
+                    0x6E,
+                    0x88,
+                    0x86
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFSampleExtension_CleanPoint
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xD8, 0x01, 0xDF, 0x9C,
+                    0xF0, 0xA0,
+                    0xBA, 0x43,
+                    0xB0,
+                    0x77,
+                    0xEA,
+                    0xA0,
+                    0x6C,
+                    0xBD,
+                    0x72,
+                    0x8A
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFSampleExtension_Discontinuity
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xD9, 0x01, 0xDF, 0x9C,
+                    0xF0, 0xA0,
+                    0xBA, 0x43,
+                    0xB0,
+                    0x77,
+                    0xEA,
+                    0xA0,
+                    0x6C,
+                    0xBD,
+                    0x72,
+                    0x8A
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFSampleExtension_Token
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x66, 0xDA, 0x94, 0x82,
+                    0x28, 0xF3,
+                    0x05, 0x48,
+                    0xB5,
+                    0x51,
+                    0x00,
+                    0xDE,
+                    0xB4,
+                    0xC5,
+                    0x7A,
+                    0x61
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFSampleExtension_ClosedCaption_CEA708
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x68, 0x90, 0xF0, 0x26,
+                    0x44, 0xE7,
+                    0xDC, 0x47,
+                    0xAA,
+                    0x03,
+                    0xDB,
+                    0xF2,
+                    0x04,
+                    0x03,
+                    0xBD,
+                    0xE6
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFSampleExtension_DecodeTimestamp
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xD4, 0x54, 0xA9, 0x73,
+                    0xE2, 0x09,
+                    0x61, 0x48,
+                    0xBE,
+                    0xFC,
+                    0x94,
+                    0xBD,
+                    0x97,
+                    0xC0,
+                    0x8E,
+                    0x6E
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFSampleExtension_VideoEncodeQP
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x78, 0xE4, 0xEF, 0xB2,
+                    0x79, 0xF9,
+                    0x66, 0x4C,
+                    0xB9,
+                    0x5E,
+                    0xEE,
+                    0x2B,
+                    0x82,
+                    0xC8,
+                    0x2F,
+                    0x36
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFSampleExtension_VideoEncodePictureType
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xE6, 0x04, 0x37, 0x97,
+                    0x14, 0xCD,
+                    0x3C, 0x48,
+                    0x8F,
+                    0x20,
+                    0xC9,
+                    0xFC,
+                    0x09,
+                    0x28,
+                    0xBA,
+                    0xD5
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFSampleExtension_FrameCorruption
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x8C, 0x4A, 0xDD, 0xB4,
+                    0xEB, 0x0B,
+                    0xC4, 0x44,
+                    0x8B,
+                    0x75,
+                    0xB0,
+                    0x2B,
+                    0x91,
+                    0x3B,
+                    0x04,
+                    0xF0
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFSampleExtension_DirtyRects
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x25, 0x02, 0xA7, 0x9B,
+                    0x42, 0xB3,
+                    0x97, 0x4E,
+                    0x91,
+                    0x26,
+                    0x0B,
+                    0x56,
+                    0x6A,
+                    0xB7,
+                    0xEA,
+                    0x7E
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFSampleExtension_MoveRegions
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x93, 0xC6, 0xA6, 0xE2,
+                    0x8B, 0x3A,
+                    0x8D, 0x4B,
+                    0x95,
+                    0xD0,
+                    0xF6,
+                    0x02,
+                    0x81,
+                    0xA1,
+                    0x2F,
+                    0xB7
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFSampleExtension_HDCP_OptionalHeader
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x90, 0x73, 0x2E, 0x9A,
+                    0x1F, 0x12,
+                    0x5F, 0x45,
+                    0x83,
+                    0x76,
+                    0xC9,
+                    0x74,
+                    0x28,
+                    0xE0,
+                    0xB5,
+                    0x40
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFSampleExtension_HDCP_FrameCounter
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x60, 0x9C, 0x38, 0x9D,
+                    0x07, 0xF5,
+                    0xA6, 0x4A,
+                    0xA4,
+                    0x0A,
+                    0x71,
+                    0x02,
+                    0x7A,
+                    0x02,
+                    0xF3,
+                    0xDE
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFSampleExtension_HDCP_StreamID
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x74, 0x5D, 0x7E, 0x17,
+                    0x70, 0xC3,
+                    0x7A, 0x4A,
+                    0x95,
+                    0xA2,
+                    0x36,
+                    0x83,
+                    0x3C,
+                    0x01,
+                    0xD0,
+                    0xAF
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFSampleExtension_Timestamp
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x99, 0x69, 0x43, 0x1E,
+                    0xBE, 0x69,
+                    0x7A, 0x4C,
+                    0x93,
+                    0x69,
+                    0x70,
+                    0x06,
+                    0x8C,
+                    0x02,
+                    0x60,
+                    0xCB
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFSampleExtension_RepeatFrame
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x8F, 0x73, 0xBE, 0x88,
+                    0x11, 0x07,
+                    0x42, 0x4F,
+                    0xB4,
+                    0x58,
+                    0x34,
+                    0x4A,
+                    0xED,
+                    0x42,
+                    0xEC,
+                    0x2F
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFT_ENCODER_ERROR
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xA4, 0xED, 0xD1, 0xC8,
+                    0xE4, 0x98,
+                    0xD5, 0x41,
+                    0x92,
+                    0x97,
+                    0x44,
+                    0xF5,
+                    0x38,
+                    0x52,
+                    0xF9,
+                    0x0E
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFT_GFX_DRIVER_VERSION_ID_Attribute
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x93, 0x90, 0x4B, 0xF3,
+                    0xE0, 0x05,
+                    0x16, 0x4B,
+                    0x99,
+                    0x3D,
+                    0x3E,
+                    0x2A,
+                    0x2C,
+                    0xDE,
+                    0x6A,
+                    0xD3
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFSampleExtension_DescrambleData
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xE6, 0x3B, 0x48, 0x43,
+                    0x03, 0x49,
+                    0x14, 0x43,
+                    0xB0,
+                    0x32,
+                    0x29,
+                    0x51,
+                    0x36,
+                    0x59,
+                    0x36,
+                    0xFC
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFSampleExtension_SampleKeyID
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xC8, 0x13, 0xD7, 0x9E,
+                    0x87, 0x9B,
+                    0x26, 0x4B,
+                    0x82,
+                    0x97,
+                    0xA9,
+                    0x3B,
+                    0x0C,
+                    0x5A,
+                    0x8A,
+                    0xCC
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFSampleExtension_GenKeyFunc
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xEE, 0xA1, 0x1C, 0x44,
+                    0x1F, 0x6B,
+                    0x01, 0x45,
+                    0x90,
+                    0x3A,
+                    0xDE,
+                    0x87,
+                    0xDF,
+                    0x42,
+                    0xF6,
+                    0xED
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFSampleExtension_GenKeyCtx
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xCB, 0x20, 0x81, 0x18,
+                    0xDA, 0xD7,
+                    0x59, 0x4B,
+                    0x9B,
+                    0x3E,
+                    0x92,
+                    0x52,
+                    0xFD,
+                    0x37,
+                    0x30,
+                    0x1C
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFSampleExtension_PacketCrossOffsets
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x1D, 0x67, 0x89, 0x27,
+                    0x9F, 0x38,
+                    0xBB, 0x40,
+                    0x90,
+                    0xD9,
+                    0xC2,
+                    0x82,
+                    0xF7,
+                    0x7F,
+                    0x9A,
+                    0xBD
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFSampleExtension_Encryption_SampleID
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x4E, 0xB8, 0x98, 0x66,
+                    0xFA, 0x0A,
+                    0x30, 0x43,
+                    0xAE,
+                    0xB2,
+                    0x1C,
+                    0x0A,
+                    0x98,
+                    0xD7,
+                    0xA4,
+                    0x4D
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFSampleExtension_Encryption_KeyID
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x91, 0x65, 0x37, 0x76,
+                    0x5F, 0x79,
+                    0xA1, 0x4D,
+                    0x86,
+                    0xED,
+                    0x9D,
+                    0x46,
+                    0xEC,
+                    0xA1,
+                    0x09,
+                    0xA9
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFSampleExtension_Content_KeyID
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xB0, 0xF5, 0xC7, 0xC6,
+                    0xCA, 0xAC,
+                    0x5B, 0x41,
+                    0x87,
+                    0xD9,
+                    0x10,
+                    0x44,
+                    0x14,
+                    0x69,
+                    0xEF,
+                    0xC6
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFSampleExtension_Encryption_SubSampleMappingSplit
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xB9, 0x54, 0x02, 0xFE,
+                    0xA5, 0x2A,
+                    0xDC, 0x4E,
+                    0x99,
+                    0xF7,
+                    0x17,
+                    0xE8,
+                    0x9D,
+                    0xBF,
+                    0x91,
+                    0x74
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFSampleExtension_Interlaced
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x0A, 0x83, 0xD5, 0xB1,
+                    0xB8, 0xDE,
+                    0xE3, 0x40,
+                    0x90,
+                    0xFA,
+                    0x38,
+                    0x99,
+                    0x43,
+                    0x71,
+                    0x64,
+                    0x61
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFSampleExtension_BottomFieldFirst
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xA3, 0xE0, 0x1C, 0x94,
+                    0xE3, 0x6A,
+                    0xDA, 0x4D,
+                    0x9A,
+                    0x08,
+                    0xA6,
+                    0x42,
+                    0x98,
+                    0x34,
+                    0x06,
+                    0x17
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFSampleExtension_RepeatFirstField
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x7C, 0x25, 0x4D, 0x30,
+                    0x93, 0x74,
+                    0xBD, 0x4F,
+                    0xB1,
+                    0x49,
+                    0x92,
+                    0x28,
+                    0xDE,
+                    0x8D,
+                    0x9A,
+                    0x99
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFSampleExtension_SingleField
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x16, 0xF8, 0x85, 0x9D,
+                    0x8B, 0x65,
+                    0x5A, 0x45,
+                    0xBD,
+                    0xE0,
+                    0x9F,
+                    0xA7,
+                    0xE1,
+                    0x5A,
+                    0xB8,
+                    0xF9
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFSampleExtension_DerivedFromTopField
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x5A, 0x46, 0x52, 0x68,
+                    0x1C, 0xAE,
+                    0x53, 0x45,
+                    0x8E,
+                    0x9B,
+                    0xC3,
+                    0x42,
+                    0x0F,
+                    0xCB,
+                    0x16,
+                    0x37
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFSampleExtension_MeanAbsoluteDifference
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x11, 0xDE, 0xDB, 0x1C,
+                    0xB4, 0x08,
+                    0x11, 0x43,
+                    0xA6,
+                    0xDD,
+                    0x0F,
+                    0x9F,
+                    0x37,
+                    0x19,
+                    0x07,
+                    0xAA
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFSampleExtension_LongTermReferenceFrameInfo
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x3F, 0x73, 0x54, 0x91,
+                    0xBD, 0xE1,
+                    0xBF, 0x41,
+                    0x81,
+                    0xD3,
+                    0xFC,
+                    0xD9,
+                    0x18,
+                    0xF7,
+                    0x13,
+                    0x32
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFSampleExtension_ROIRectangle
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x38, 0xA4, 0x14, 0x34,
+                    0x98, 0x49,
+                    0x2C, 0x4D,
+                    0xBE,
+                    0x82,
+                    0xBE,
+                    0x3C,
+                    0xA0,
+                    0xB2,
+                    0x4D,
+                    0x43
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFSampleExtension_LastSlice
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x57, 0x54, 0x5D, 0x2B,
+                    0x47, 0x55,
+                    0x07, 0x4F,
+                    0xB8,
+                    0xC8,
+                    0xB4,
+                    0xA3,
+                    0xA9,
+                    0xA1,
+                    0xDA,
+                    0xAC
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFSampleExtension_FeatureMap
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x65, 0xD1, 0x32, 0xA0,
+                    0xFC, 0x46,
+                    0x0A, 0x40,
+                    0xB4,
+                    0x49,
+                    0x49,
+                    0xDE,
+                    0x53,
+                    0xE6,
+                    0x2A,
+                    0x6E
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFSampleExtension_ChromaOnly
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x9C, 0x17, 0xB9, 0x1E,
+                    0x1F, 0xA0,
+                    0x45, 0x48,
+                    0x8C,
+                    0x04,
+                    0x0E,
+                    0x65,
+                    0xA2,
+                    0x6E,
+                    0xB0,
+                    0x4F
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFSampleExtension_PhotoThumbnail
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x5C, 0xC8, 0xBB, 0x74,
+                    0xBB, 0xC8,
+                    0xDC, 0x42,
+                    0xB5,
+                    0x86,
+                    0xDA,
+                    0x17,
+                    0xFF,
+                    0xD3,
+                    0x5D,
+                    0xCC
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFSampleExtension_PhotoThumbnailMediaType
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x20, 0x54, 0xAD, 0x61,
+                    0xF8, 0xEB,
+                    0x43, 0x41,
+                    0x89,
+                    0xAF,
+                    0x6B,
+                    0xF2,
+                    0x5F,
+                    0x67,
+                    0x2D,
+                    0xEF
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFSampleExtension_CaptureMetadata
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xA8, 0x23, 0xBE, 0x2E,
+                    0xF5, 0xFA,
+                    0x4A, 0x44,
+                    0xA6,
+                    0xA2,
+                    0xEB,
+                    0x81,
+                    0x08,
+                    0x80,
+                    0xAB,
+                    0x5D
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFSampleExtension_MDLCacheCookie
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xF9, 0x2A, 0x00, 0x5F,
+                    0xF9, 0xD8,
+                    0xA3, 0x41,
+                    0xB6,
+                    0xC3,
+                    0xA2,
+                    0xAD,
+                    0x43,
+                    0xF6,
+                    0x47,
+                    0xAD
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MF_CAPTURE_METADATA_PHOTO_FRAME_FLASH
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xC6, 0xD6, 0x9D, 0x0F,
+                    0x03, 0x60,
+                    0xD8, 0x45,
+                    0xBD,
+                    0x59,
+                    0xF1,
+                    0xF5,
+                    0x3E,
+                    0x3D,
+                    0x04,
+                    0xE8
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MF_CAPTURE_METADATA_FRAME_RAWSTREAM
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x7B, 0x07, 0x52, 0x92,
+                    0x80, 0x26,
+                    0xB9, 0x49,
+                    0xAE,
+                    0x02,
+                    0xB1,
+                    0x90,
+                    0x75,
+                    0x97,
+                    0x3B,
+                    0x70
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MF_CAPTURE_METADATA_FOCUSSTATE
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x54, 0xE1, 0x7E, 0xA8,
+                    0x7F, 0x99,
+                    0x5D, 0x46,
+                    0xB9,
+                    0x1F,
+                    0x29,
+                    0xD5,
+                    0x3B,
+                    0x98,
+                    0x2B,
+                    0x88
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MF_CAPTURE_METADATA_REQUESTED_FRAME_SETTING_ID
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xD9, 0x16, 0x37, 0xBB,
+                    0x61, 0x8A,
+                    0xA4, 0x47,
+                    0x81,
+                    0x97,
+                    0x45,
+                    0x9C,
+                    0x7F,
+                    0xF1,
+                    0x74,
+                    0xD5
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MF_CAPTURE_METADATA_EXPOSURE_TIME
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x99, 0xAE, 0xB9, 0x16,
+                    0x84, 0xCD,
+                    0x63, 0x40,
+                    0x87,
+                    0x9D,
+                    0xA2,
+                    0x8C,
+                    0x76,
+                    0x33,
+                    0x72,
+                    0x9E
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MF_CAPTURE_METADATA_EXPOSURE_COMPENSATION
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x75, 0xAA, 0x98, 0xD1,
+                    0x62, 0x4B,
+                    0x45, 0x43,
+                    0xAB,
+                    0xF3,
+                    0x3C,
+                    0x31,
+                    0xFA,
+                    0x12,
+                    0xC2,
+                    0x99
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MF_CAPTURE_METADATA_ISO_SPEED
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x8F, 0xA6, 0x28, 0xE5,
+                    0xE3, 0xB2,
+                    0xFE, 0x44,
+                    0x8B,
+                    0x65,
+                    0x07,
+                    0xBF,
+                    0x4B,
+                    0x5A,
+                    0x13,
+                    0xFF
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MF_CAPTURE_METADATA_LENS_POSITION
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x86, 0x8E, 0xFC, 0xB5,
+                    0xD1, 0x11,
+                    0x70, 0x4E,
+                    0x81,
+                    0x9B,
+                    0x72,
+                    0x3A,
+                    0x89,
+                    0xFA,
+                    0x45,
+                    0x20
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MF_CAPTURE_METADATA_SCENE_MODE
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x4D, 0xB5, 0xC3, 0x9C,
+                    0xD3, 0x5E,
+                    0xAE, 0x4B,
+                    0xB3,
+                    0x88,
+                    0x76,
+                    0x70,
+                    0xAE,
+                    0xF5,
+                    0x9E,
+                    0x13
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MF_CAPTURE_METADATA_FLASH
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x0B, 0x52, 0x51, 0x4A,
+                    0x36, 0xFB,
+                    0x6C, 0x44,
+                    0x9D,
+                    0xF2,
+                    0x68,
+                    0x17,
+                    0x1B,
+                    0x9A,
+                    0x03,
+                    0x89
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MF_CAPTURE_METADATA_FLASH_POWER
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x49, 0x0D, 0x0E, 0x9C,
+                    0x05, 0x02,
+                    0x1A, 0x49,
+                    0xBC,
+                    0x9D,
+                    0x2D,
+                    0x6E,
+                    0x1F,
+                    0x4D,
+                    0x56,
+                    0x84
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MF_CAPTURE_METADATA_WHITEBALANCE
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x77, 0xFD, 0x36, 0xC7,
+                    0xB9, 0x0F,
+                    0x2E, 0x4E,
+                    0x97,
+                    0xA2,
+                    0xFC,
+                    0xD4,
+                    0x90,
+                    0x73,
+                    0x9E,
+                    0xE9
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MF_CAPTURE_METADATA_ZOOMFACTOR
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x81, 0x0B, 0x0B, 0xE5,
+                    0x01, 0xE5,
+                    0xC2, 0x42,
+                    0xAB,
+                    0xF2,
+                    0x85,
+                    0x7E,
+                    0xCB,
+                    0x13,
+                    0xFA,
+                    0x5C
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MF_CAPTURE_METADATA_FACEROIS
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xA6, 0x25, 0x4F, 0x86,
+                    0x9F, 0x34,
+                    0xB1, 0x46,
+                    0xA3,
+                    0x0E,
+                    0x54,
+                    0xCC,
+                    0x22,
+                    0x92,
+                    0x8A,
+                    0x47
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MF_CAPTURE_METADATA_FACEROITIMESTAMPS
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xCC, 0x50, 0x4D, 0xE9,
+                    0xA0, 0x3D,
+                    0xD4, 0x44,
+                    0xBB,
+                    0x34,
+                    0x83,
+                    0x19,
+                    0x8A,
+                    0x74,
+                    0x18,
+                    0x68
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MF_CAPTURE_METADATA_FACEROICHARACTERIZATIONS
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xA8, 0xA1, 0x27, 0xB9,
+                    0xEF, 0x18,
+                    0xD3, 0x46,
+                    0xB3,
+                    0xAF,
+                    0x69,
+                    0x37,
+                    0x2F,
+                    0x94,
+                    0xD9,
+                    0xB2
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MF_CAPTURE_METADATA_ISO_GAINS
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xC9, 0x2A, 0x80, 0x05,
+                    0x1D, 0x0E,
+                    0xC7, 0x41,
+                    0xA8,
+                    0xC8,
+                    0x7E,
+                    0x73,
+                    0x69,
+                    0xF8,
+                    0x4E,
+                    0x1E
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MF_CAPTURE_METADATA_SENSORFRAMERATE
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x7E, 0x35, 0x51, 0xDB,
+                    0x3D, 0x9D,
+                    0x62, 0x49,
+                    0xB0,
+                    0x6D,
+                    0x07,
+                    0xCE,
+                    0x65,
+                    0x0D,
+                    0x9A,
+                    0x0A
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MF_CAPTURE_METADATA_WHITEBALANCE_GAINS
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x8F, 0x0C, 0x57, 0xE7,
+                    0xCB, 0x2D,
+                    0x7C, 0x4C,
+                    0xAA,
+                    0xCE,
+                    0x22,
+                    0xEC,
+                    0xE7,
+                    0xCC,
+                    0xE6,
+                    0x47
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MF_CAPTURE_METADATA_HISTOGRAM
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x32, 0x84, 0x35, 0x85,
+                    0xF6, 0x2E,
+                    0xA9, 0x4B,
+                    0xA3,
+                    0xFB,
+                    0x06,
+                    0xD8,
+                    0x29,
+                    0x74,
+                    0xB8,
+                    0x95
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MF_CAPTURE_METADATA_EXIF
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xB8, 0x75, 0x95, 0x2E,
+                    0x31, 0x8C,
+                    0x02, 0x4A,
+                    0x85,
+                    0x75,
+                    0x42,
+                    0xB1,
+                    0x97,
+                    0xB7,
+                    0x15,
+                    0x92
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MF_CAPTURE_METADATA_FRAME_ILLUMINATION
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xFC, 0x8F, 0x68, 0x6D,
+                    0xD3, 0x63,
+                    0xFE, 0x46,
+                    0xBA,
+                    0xDA,
+                    0x5B,
+                    0x94,
+                    0x7D,
+                    0xB0,
+                    0xD0,
+                    0x80
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MF_CAPTURE_METADATA_UVC_PAYLOADHEADER
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x87, 0x8A, 0xF8, 0xF9,
+                    0xDD, 0xE1,
+                    0x1E, 0x44,
+                    0x95,
+                    0xCB,
+                    0x42,
+                    0xE2,
+                    0x1A,
+                    0x64,
+                    0xF1,
+                    0xD9
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFSampleExtension_Depth_MinReliableDepth
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xB2, 0x82, 0x85, 0x5F,
+                    0x6B, 0xE3,
+                    0xC8, 0x47,
+                    0x9B,
+                    0x87,
+                    0xFE,
+                    0xE1,
+                    0xCA,
+                    0x72,
+                    0xC5,
+                    0xB0
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFSampleExtension_Depth_MaxReliableDepth
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xD1, 0x45, 0x55, 0xE4,
+                    0x0F, 0x1F,
+                    0x32, 0x4A,
+                    0xA8,
+                    0xA7,
+                    0x61,
+                    0x01,
+                    0xA2,
+                    0x4E,
+                    0xA8,
+                    0xBE
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MF_CAPTURE_METADATA_FIRST_SCANLINE_START_TIME_QPC
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xF1, 0x49, 0x2C, 0x6A,
+                    0x52, 0xE0,
+                    0xB6, 0x46,
+                    0xB2,
+                    0xD9,
+                    0x73,
+                    0xC1,
+                    0x55,
+                    0x87,
+                    0x09,
+                    0xAF
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MF_CAPTURE_METADATA_LAST_SCANLINE_END_TIME_QPC
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xCB, 0xDE, 0xCA, 0xDC,
+                    0xD4, 0xC4,
+                    0x0D, 0x40,
+                    0xB4,
+                    0x18,
+                    0x10,
+                    0xE8,
+                    0x85,
+                    0x25,
+                    0xE1,
+                    0xF6
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MF_CAPTURE_METADATA_SCANLINE_TIME_QPC_ACCURACY
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x51, 0x9C, 0xD7, 0x4C,
+                    0x65, 0xF7,
+                    0x09, 0x4B,
+                    0xB1,
+                    0xE1,
+                    0x27,
+                    0xD1,
+                    0xF7,
+                    0xEB,
+                    0xEA,
+                    0x09
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MF_CAPTURE_METADATA_SCANLINE_DIRECTION
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xBA, 0xA3, 0x96, 0x64,
+                    0x07, 0x19,
+                    0xE6, 0x49,
+                    0xB0,
+                    0xC3,
+                    0x12,
+                    0x37,
+                    0x95,
+                    0xF3,
+                    0x80,
+                    0xA9
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MF_CAPTURE_METADATA_DIGITALWINDOW
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xA2, 0x72, 0x6F, 0x27,
+                    0xC8, 0x59,
+                    0x69, 0x4F,
+                    0x97,
+                    0xB4,
+                    0x06,
+                    0x8B,
+                    0x8C,
+                    0x0E,
+                    0xC0,
+                    0x44
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [DllImport("mfplat", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
@@ -567,40 +2945,304 @@ namespace TerraFX.Interop
         public static extern int MFGetAttributesAsBlob(IMFAttributes* pAttributes, [NativeTypeName("UINT8 *")] byte* pBuf, [NativeTypeName("UINT")] uint cbBufSize);
 
         [NativeTypeName("const GUID")]
-        public static readonly Guid MFT_CATEGORY_VIDEO_DECODER = new Guid(0xd6c02d4b, 0x6833, 0x45b4, 0x97, 0x1a, 0x05, 0xa4, 0xb0, 0x4b, 0xab, 0x91);
+        public static ref readonly Guid MFT_CATEGORY_VIDEO_DECODER
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x4B, 0x2D, 0xC0, 0xD6,
+                    0x33, 0x68,
+                    0xB4, 0x45,
+                    0x97,
+                    0x1A,
+                    0x05,
+                    0xA4,
+                    0xB0,
+                    0x4B,
+                    0xAB,
+                    0x91
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const GUID")]
-        public static readonly Guid MFT_CATEGORY_VIDEO_ENCODER = new Guid(0xf79eac7d, 0xe545, 0x4387, 0xbd, 0xee, 0xd6, 0x47, 0xd7, 0xbd, 0xe4, 0x2a);
+        public static ref readonly Guid MFT_CATEGORY_VIDEO_ENCODER
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x7D, 0xAC, 0x9E, 0xF7,
+                    0x45, 0xE5,
+                    0x87, 0x43,
+                    0xBD,
+                    0xEE,
+                    0xD6,
+                    0x47,
+                    0xD7,
+                    0xBD,
+                    0xE4,
+                    0x2A
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const GUID")]
-        public static readonly Guid MFT_CATEGORY_VIDEO_EFFECT = new Guid(0x12e17c21, 0x532c, 0x4a6e, 0x8a, 0x1c, 0x40, 0x82, 0x5a, 0x73, 0x63, 0x97);
+        public static ref readonly Guid MFT_CATEGORY_VIDEO_EFFECT
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x21, 0x7C, 0xE1, 0x12,
+                    0x2C, 0x53,
+                    0x6E, 0x4A,
+                    0x8A,
+                    0x1C,
+                    0x40,
+                    0x82,
+                    0x5A,
+                    0x73,
+                    0x63,
+                    0x97
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const GUID")]
-        public static readonly Guid MFT_CATEGORY_MULTIPLEXER = new Guid(0x059c561e, 0x05ae, 0x4b61, 0xb6, 0x9d, 0x55, 0xb6, 0x1e, 0xe5, 0x4a, 0x7b);
+        public static ref readonly Guid MFT_CATEGORY_MULTIPLEXER
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x1E, 0x56, 0x9C, 0x05,
+                    0xAE, 0x05,
+                    0x61, 0x4B,
+                    0xB6,
+                    0x9D,
+                    0x55,
+                    0xB6,
+                    0x1E,
+                    0xE5,
+                    0x4A,
+                    0x7B
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const GUID")]
-        public static readonly Guid MFT_CATEGORY_DEMULTIPLEXER = new Guid(0xa8700a7a, 0x939b, 0x44c5, 0x99, 0xd7, 0x76, 0x22, 0x6b, 0x23, 0xb3, 0xf1);
+        public static ref readonly Guid MFT_CATEGORY_DEMULTIPLEXER
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x7A, 0x0A, 0x70, 0xA8,
+                    0x9B, 0x93,
+                    0xC5, 0x44,
+                    0x99,
+                    0xD7,
+                    0x76,
+                    0x22,
+                    0x6B,
+                    0x23,
+                    0xB3,
+                    0xF1
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const GUID")]
-        public static readonly Guid MFT_CATEGORY_AUDIO_DECODER = new Guid(0x9ea73fb4, 0xef7a, 0x4559, 0x8d, 0x5d, 0x71, 0x9d, 0x8f, 0x04, 0x26, 0xc7);
+        public static ref readonly Guid MFT_CATEGORY_AUDIO_DECODER
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xB4, 0x3F, 0xA7, 0x9E,
+                    0x7A, 0xEF,
+                    0x59, 0x45,
+                    0x8D,
+                    0x5D,
+                    0x71,
+                    0x9D,
+                    0x8F,
+                    0x04,
+                    0x26,
+                    0xC7
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const GUID")]
-        public static readonly Guid MFT_CATEGORY_AUDIO_ENCODER = new Guid(0x91c64bd0, 0xf91e, 0x4d8c, 0x92, 0x76, 0xdb, 0x24, 0x82, 0x79, 0xd9, 0x75);
+        public static ref readonly Guid MFT_CATEGORY_AUDIO_ENCODER
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xD0, 0x4B, 0xC6, 0x91,
+                    0x1E, 0xF9,
+                    0x8C, 0x4D,
+                    0x92,
+                    0x76,
+                    0xDB,
+                    0x24,
+                    0x82,
+                    0x79,
+                    0xD9,
+                    0x75
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const GUID")]
-        public static readonly Guid MFT_CATEGORY_AUDIO_EFFECT = new Guid(0x11064c48, 0x3648, 0x4ed0, 0x93, 0x2e, 0x05, 0xce, 0x8a, 0xc8, 0x11, 0xb7);
+        public static ref readonly Guid MFT_CATEGORY_AUDIO_EFFECT
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x48, 0x4C, 0x06, 0x11,
+                    0x48, 0x36,
+                    0xD0, 0x4E,
+                    0x93,
+                    0x2E,
+                    0x05,
+                    0xCE,
+                    0x8A,
+                    0xC8,
+                    0x11,
+                    0xB7
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const GUID")]
-        public static readonly Guid MFT_CATEGORY_VIDEO_PROCESSOR = new Guid(0x302ea3fc, 0xaa5f, 0x47f9, 0x9f, 0x7a, 0xc2, 0x18, 0x8b, 0xb1, 0x63, 0x2);
+        public static ref readonly Guid MFT_CATEGORY_VIDEO_PROCESSOR
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xFC, 0xA3, 0x2E, 0x30,
+                    0x5F, 0xAA,
+                    0xF9, 0x47,
+                    0x9F,
+                    0x7A,
+                    0xC2,
+                    0x18,
+                    0x8B,
+                    0xB1,
+                    0x63,
+                    0x02
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const GUID")]
-        public static readonly Guid MFT_CATEGORY_OTHER = new Guid(0x90175d57, 0xb7ea, 0x4901, 0xae, 0xb3, 0x93, 0x3a, 0x87, 0x47, 0x75, 0x6f);
+        public static ref readonly Guid MFT_CATEGORY_OTHER
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x57, 0x5D, 0x17, 0x90,
+                    0xEA, 0xB7,
+                    0x01, 0x49,
+                    0xAE,
+                    0xB3,
+                    0x93,
+                    0x3A,
+                    0x87,
+                    0x47,
+                    0x75,
+                    0x6F
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const GUID")]
-        public static readonly Guid MFT_CATEGORY_ENCRYPTOR = new Guid(0xb0c687be, 0x01cd, 0x44b5, 0xb8, 0xb2, 0x7c, 0x1d, 0x7e, 0x05, 0x8b, 0x1f);
+        public static ref readonly Guid MFT_CATEGORY_ENCRYPTOR
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xBE, 0x87, 0xC6, 0xB0,
+                    0xCD, 0x01,
+                    0xB5, 0x44,
+                    0xB8,
+                    0xB2,
+                    0x7C,
+                    0x1D,
+                    0x7E,
+                    0x05,
+                    0x8B,
+                    0x1F
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const GUID")]
-        public static readonly Guid MFT_CATEGORY_VIDEO_RENDERER_EFFECT = new Guid(0x145cd8b4, 0x92f4, 0x4b23, 0x8a, 0xe7, 0xe0, 0xdf, 0x6, 0xc2, 0xda, 0x95);
+        public static ref readonly Guid MFT_CATEGORY_VIDEO_RENDERER_EFFECT
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xB4, 0xD8, 0x5C, 0x14,
+                    0xF4, 0x92,
+                    0x23, 0x4B,
+                    0x8A,
+                    0xE7,
+                    0xE0,
+                    0xDF,
+                    0x06,
+                    0xC2,
+                    0xDA,
+                    0x95
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [DllImport("mfplat", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
@@ -635,10 +3277,54 @@ namespace TerraFX.Interop
         public static extern int MFTEnumEx([NativeTypeName("GUID")] Guid guidCategory, [NativeTypeName("UINT32")] uint Flags, [NativeTypeName("const MFT_REGISTER_TYPE_INFO *")] MFT_REGISTER_TYPE_INFO* pInputType, [NativeTypeName("const MFT_REGISTER_TYPE_INFO *")] MFT_REGISTER_TYPE_INFO* pOutputType, IMFActivate*** pppMFTActivate, [NativeTypeName("UINT32 *")] uint* pnumMFTActivate);
 
         [NativeTypeName("const GUID")]
-        public static readonly Guid MFT_ENUM_VIDEO_RENDERER_EXTENSION_PROFILE = new Guid(0x62c56928, 0x9a4e, 0x443b, 0xb9, 0xdc, 0xca, 0xc8, 0x30, 0xc2, 0x41, 0x0);
+        public static ref readonly Guid MFT_ENUM_VIDEO_RENDERER_EXTENSION_PROFILE
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x28, 0x69, 0xC5, 0x62,
+                    0x4E, 0x9A,
+                    0x3B, 0x44,
+                    0xB9,
+                    0xDC,
+                    0xCA,
+                    0xC8,
+                    0x30,
+                    0xC2,
+                    0x41,
+                    0x00
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const GUID")]
-        public static readonly Guid MFT_ENUM_ADAPTER_LUID = new Guid(0x1d39518c, 0xe220, 0x4da8, 0xa0, 0x7f, 0xba, 0x17, 0x25, 0x52, 0xd6, 0xb1);
+        public static ref readonly Guid MFT_ENUM_ADAPTER_LUID
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x8C, 0x51, 0x39, 0x1D,
+                    0x20, 0xE2,
+                    0xA8, 0x4D,
+                    0xA0,
+                    0x7F,
+                    0xBA,
+                    0x17,
+                    0x25,
+                    0x52,
+                    0xD6,
+                    0xB1
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [DllImport("mfplat", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
@@ -673,442 +3359,3654 @@ namespace TerraFX.Interop
         public static extern int MFCreateMediaExtensionActivate([NativeTypeName("PCWSTR")] ushort* szActivatableClassId, IUnknown* pConfiguration, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPVOID *")] void** ppvObject);
 
         [NativeTypeName("const GUID")]
-        public static readonly Guid MFT_SUPPORT_DYNAMIC_FORMAT_CHANGE = new Guid(0x53476a11, 0x3f13, 0x49fb, 0xac, 0x42, 0xee, 0x27, 0x33, 0xc9, 0x67, 0x41);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFVideoFormat_Base = new Guid(0x00000000, 0x0000, 0x0010, 0x80, 0x00, 0x00, 0xaa, 0x00, 0x38, 0x9b, 0x71);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFVideoFormat_RGB32 = new Guid(22, 0x0000, 0x0010, 0x80, 0x00, 0x00, 0xaa, 0x00, 0x38, 0x9b, 0x71);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFVideoFormat_ARGB32 = new Guid(21, 0x0000, 0x0010, 0x80, 0x00, 0x00, 0xaa, 0x00, 0x38, 0x9b, 0x71);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFVideoFormat_RGB24 = new Guid(20, 0x0000, 0x0010, 0x80, 0x00, 0x00, 0xaa, 0x00, 0x38, 0x9b, 0x71);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFVideoFormat_RGB555 = new Guid(24, 0x0000, 0x0010, 0x80, 0x00, 0x00, 0xaa, 0x00, 0x38, 0x9b, 0x71);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFVideoFormat_RGB565 = new Guid(23, 0x0000, 0x0010, 0x80, 0x00, 0x00, 0xaa, 0x00, 0x38, 0x9b, 0x71);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFVideoFormat_RGB8 = new Guid(41, 0x0000, 0x0010, 0x80, 0x00, 0x00, 0xaa, 0x00, 0x38, 0x9b, 0x71);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFVideoFormat_L8 = new Guid(50, 0x0000, 0x0010, 0x80, 0x00, 0x00, 0xaa, 0x00, 0x38, 0x9b, 0x71);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFVideoFormat_L16 = new Guid(81, 0x0000, 0x0010, 0x80, 0x00, 0x00, 0xaa, 0x00, 0x38, 0x9b, 0x71);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFVideoFormat_D16 = new Guid(80, 0x0000, 0x0010, 0x80, 0x00, 0x00, 0xaa, 0x00, 0x38, 0x9b, 0x71);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFVideoFormat_AI44 = new Guid(((((uint)(0x41493434) & 0xFF) << 24) | (((uint)(0x41493434) & 0xFF00) << 8) | (((uint)(0x41493434) & 0xFF0000) >> 8) | (((uint)(0x41493434) & 0xFF000000) >> 24)), 0x0000, 0x0010, 0x80, 0x00, 0x00, 0xaa, 0x00, 0x38, 0x9b, 0x71);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFVideoFormat_AYUV = new Guid(((((uint)(0x41595556) & 0xFF) << 24) | (((uint)(0x41595556) & 0xFF00) << 8) | (((uint)(0x41595556) & 0xFF0000) >> 8) | (((uint)(0x41595556) & 0xFF000000) >> 24)), 0x0000, 0x0010, 0x80, 0x00, 0x00, 0xaa, 0x00, 0x38, 0x9b, 0x71);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFVideoFormat_YUY2 = new Guid(((((uint)(0x59555932) & 0xFF) << 24) | (((uint)(0x59555932) & 0xFF00) << 8) | (((uint)(0x59555932) & 0xFF0000) >> 8) | (((uint)(0x59555932) & 0xFF000000) >> 24)), 0x0000, 0x0010, 0x80, 0x00, 0x00, 0xaa, 0x00, 0x38, 0x9b, 0x71);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFVideoFormat_YVYU = new Guid(((((uint)(0x59565955) & 0xFF) << 24) | (((uint)(0x59565955) & 0xFF00) << 8) | (((uint)(0x59565955) & 0xFF0000) >> 8) | (((uint)(0x59565955) & 0xFF000000) >> 24)), 0x0000, 0x0010, 0x80, 0x00, 0x00, 0xaa, 0x00, 0x38, 0x9b, 0x71);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFVideoFormat_YVU9 = new Guid(((((uint)(0x59565539) & 0xFF) << 24) | (((uint)(0x59565539) & 0xFF00) << 8) | (((uint)(0x59565539) & 0xFF0000) >> 8) | (((uint)(0x59565539) & 0xFF000000) >> 24)), 0x0000, 0x0010, 0x80, 0x00, 0x00, 0xaa, 0x00, 0x38, 0x9b, 0x71);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFVideoFormat_UYVY = new Guid(((((uint)(0x55595659) & 0xFF) << 24) | (((uint)(0x55595659) & 0xFF00) << 8) | (((uint)(0x55595659) & 0xFF0000) >> 8) | (((uint)(0x55595659) & 0xFF000000) >> 24)), 0x0000, 0x0010, 0x80, 0x00, 0x00, 0xaa, 0x00, 0x38, 0x9b, 0x71);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFVideoFormat_NV11 = new Guid(((((uint)(0x4E563131) & 0xFF) << 24) | (((uint)(0x4E563131) & 0xFF00) << 8) | (((uint)(0x4E563131) & 0xFF0000) >> 8) | (((uint)(0x4E563131) & 0xFF000000) >> 24)), 0x0000, 0x0010, 0x80, 0x00, 0x00, 0xaa, 0x00, 0x38, 0x9b, 0x71);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFVideoFormat_NV12 = new Guid(((((uint)(0x4E563132) & 0xFF) << 24) | (((uint)(0x4E563132) & 0xFF00) << 8) | (((uint)(0x4E563132) & 0xFF0000) >> 8) | (((uint)(0x4E563132) & 0xFF000000) >> 24)), 0x0000, 0x0010, 0x80, 0x00, 0x00, 0xaa, 0x00, 0x38, 0x9b, 0x71);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFVideoFormat_YV12 = new Guid(((((uint)(0x59563132) & 0xFF) << 24) | (((uint)(0x59563132) & 0xFF00) << 8) | (((uint)(0x59563132) & 0xFF0000) >> 8) | (((uint)(0x59563132) & 0xFF000000) >> 24)), 0x0000, 0x0010, 0x80, 0x00, 0x00, 0xaa, 0x00, 0x38, 0x9b, 0x71);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFVideoFormat_I420 = new Guid(((((uint)(0x49343230) & 0xFF) << 24) | (((uint)(0x49343230) & 0xFF00) << 8) | (((uint)(0x49343230) & 0xFF0000) >> 8) | (((uint)(0x49343230) & 0xFF000000) >> 24)), 0x0000, 0x0010, 0x80, 0x00, 0x00, 0xaa, 0x00, 0x38, 0x9b, 0x71);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFVideoFormat_IYUV = new Guid(((((uint)(0x49595556) & 0xFF) << 24) | (((uint)(0x49595556) & 0xFF00) << 8) | (((uint)(0x49595556) & 0xFF0000) >> 8) | (((uint)(0x49595556) & 0xFF000000) >> 24)), 0x0000, 0x0010, 0x80, 0x00, 0x00, 0xaa, 0x00, 0x38, 0x9b, 0x71);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFVideoFormat_Y210 = new Guid(((((uint)(0x59323130) & 0xFF) << 24) | (((uint)(0x59323130) & 0xFF00) << 8) | (((uint)(0x59323130) & 0xFF0000) >> 8) | (((uint)(0x59323130) & 0xFF000000) >> 24)), 0x0000, 0x0010, 0x80, 0x00, 0x00, 0xaa, 0x00, 0x38, 0x9b, 0x71);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFVideoFormat_Y216 = new Guid(((((uint)(0x59323136) & 0xFF) << 24) | (((uint)(0x59323136) & 0xFF00) << 8) | (((uint)(0x59323136) & 0xFF0000) >> 8) | (((uint)(0x59323136) & 0xFF000000) >> 24)), 0x0000, 0x0010, 0x80, 0x00, 0x00, 0xaa, 0x00, 0x38, 0x9b, 0x71);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFVideoFormat_Y410 = new Guid(((((uint)(0x59343130) & 0xFF) << 24) | (((uint)(0x59343130) & 0xFF00) << 8) | (((uint)(0x59343130) & 0xFF0000) >> 8) | (((uint)(0x59343130) & 0xFF000000) >> 24)), 0x0000, 0x0010, 0x80, 0x00, 0x00, 0xaa, 0x00, 0x38, 0x9b, 0x71);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFVideoFormat_Y416 = new Guid(((((uint)(0x59343136) & 0xFF) << 24) | (((uint)(0x59343136) & 0xFF00) << 8) | (((uint)(0x59343136) & 0xFF0000) >> 8) | (((uint)(0x59343136) & 0xFF000000) >> 24)), 0x0000, 0x0010, 0x80, 0x00, 0x00, 0xaa, 0x00, 0x38, 0x9b, 0x71);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFVideoFormat_Y41P = new Guid(((((uint)(0x59343150) & 0xFF) << 24) | (((uint)(0x59343150) & 0xFF00) << 8) | (((uint)(0x59343150) & 0xFF0000) >> 8) | (((uint)(0x59343150) & 0xFF000000) >> 24)), 0x0000, 0x0010, 0x80, 0x00, 0x00, 0xaa, 0x00, 0x38, 0x9b, 0x71);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFVideoFormat_Y41T = new Guid(((((uint)(0x59343154) & 0xFF) << 24) | (((uint)(0x59343154) & 0xFF00) << 8) | (((uint)(0x59343154) & 0xFF0000) >> 8) | (((uint)(0x59343154) & 0xFF000000) >> 24)), 0x0000, 0x0010, 0x80, 0x00, 0x00, 0xaa, 0x00, 0x38, 0x9b, 0x71);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFVideoFormat_Y42T = new Guid(((((uint)(0x59343254) & 0xFF) << 24) | (((uint)(0x59343254) & 0xFF00) << 8) | (((uint)(0x59343254) & 0xFF0000) >> 8) | (((uint)(0x59343254) & 0xFF000000) >> 24)), 0x0000, 0x0010, 0x80, 0x00, 0x00, 0xaa, 0x00, 0x38, 0x9b, 0x71);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFVideoFormat_P210 = new Guid(((((uint)(0x50323130) & 0xFF) << 24) | (((uint)(0x50323130) & 0xFF00) << 8) | (((uint)(0x50323130) & 0xFF0000) >> 8) | (((uint)(0x50323130) & 0xFF000000) >> 24)), 0x0000, 0x0010, 0x80, 0x00, 0x00, 0xaa, 0x00, 0x38, 0x9b, 0x71);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFVideoFormat_P216 = new Guid(((((uint)(0x50323136) & 0xFF) << 24) | (((uint)(0x50323136) & 0xFF00) << 8) | (((uint)(0x50323136) & 0xFF0000) >> 8) | (((uint)(0x50323136) & 0xFF000000) >> 24)), 0x0000, 0x0010, 0x80, 0x00, 0x00, 0xaa, 0x00, 0x38, 0x9b, 0x71);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFVideoFormat_P010 = new Guid(((((uint)(0x50303130) & 0xFF) << 24) | (((uint)(0x50303130) & 0xFF00) << 8) | (((uint)(0x50303130) & 0xFF0000) >> 8) | (((uint)(0x50303130) & 0xFF000000) >> 24)), 0x0000, 0x0010, 0x80, 0x00, 0x00, 0xaa, 0x00, 0x38, 0x9b, 0x71);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFVideoFormat_P016 = new Guid(((((uint)(0x50303136) & 0xFF) << 24) | (((uint)(0x50303136) & 0xFF00) << 8) | (((uint)(0x50303136) & 0xFF0000) >> 8) | (((uint)(0x50303136) & 0xFF000000) >> 24)), 0x0000, 0x0010, 0x80, 0x00, 0x00, 0xaa, 0x00, 0x38, 0x9b, 0x71);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFVideoFormat_v210 = new Guid(((((uint)(0x76323130) & 0xFF) << 24) | (((uint)(0x76323130) & 0xFF00) << 8) | (((uint)(0x76323130) & 0xFF0000) >> 8) | (((uint)(0x76323130) & 0xFF000000) >> 24)), 0x0000, 0x0010, 0x80, 0x00, 0x00, 0xaa, 0x00, 0x38, 0x9b, 0x71);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFVideoFormat_v216 = new Guid(((((uint)(0x76323136) & 0xFF) << 24) | (((uint)(0x76323136) & 0xFF00) << 8) | (((uint)(0x76323136) & 0xFF0000) >> 8) | (((uint)(0x76323136) & 0xFF000000) >> 24)), 0x0000, 0x0010, 0x80, 0x00, 0x00, 0xaa, 0x00, 0x38, 0x9b, 0x71);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFVideoFormat_v410 = new Guid(((((uint)(0x76343130) & 0xFF) << 24) | (((uint)(0x76343130) & 0xFF00) << 8) | (((uint)(0x76343130) & 0xFF0000) >> 8) | (((uint)(0x76343130) & 0xFF000000) >> 24)), 0x0000, 0x0010, 0x80, 0x00, 0x00, 0xaa, 0x00, 0x38, 0x9b, 0x71);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFVideoFormat_MP43 = new Guid(((((uint)(0x4D503433) & 0xFF) << 24) | (((uint)(0x4D503433) & 0xFF00) << 8) | (((uint)(0x4D503433) & 0xFF0000) >> 8) | (((uint)(0x4D503433) & 0xFF000000) >> 24)), 0x0000, 0x0010, 0x80, 0x00, 0x00, 0xaa, 0x00, 0x38, 0x9b, 0x71);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFVideoFormat_MP4S = new Guid(((((uint)(0x4D503453) & 0xFF) << 24) | (((uint)(0x4D503453) & 0xFF00) << 8) | (((uint)(0x4D503453) & 0xFF0000) >> 8) | (((uint)(0x4D503453) & 0xFF000000) >> 24)), 0x0000, 0x0010, 0x80, 0x00, 0x00, 0xaa, 0x00, 0x38, 0x9b, 0x71);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFVideoFormat_M4S2 = new Guid(((((uint)(0x4D345332) & 0xFF) << 24) | (((uint)(0x4D345332) & 0xFF00) << 8) | (((uint)(0x4D345332) & 0xFF0000) >> 8) | (((uint)(0x4D345332) & 0xFF000000) >> 24)), 0x0000, 0x0010, 0x80, 0x00, 0x00, 0xaa, 0x00, 0x38, 0x9b, 0x71);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFVideoFormat_MP4V = new Guid(((((uint)(0x4D503456) & 0xFF) << 24) | (((uint)(0x4D503456) & 0xFF00) << 8) | (((uint)(0x4D503456) & 0xFF0000) >> 8) | (((uint)(0x4D503456) & 0xFF000000) >> 24)), 0x0000, 0x0010, 0x80, 0x00, 0x00, 0xaa, 0x00, 0x38, 0x9b, 0x71);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFVideoFormat_WMV1 = new Guid(((((uint)(0x574D5631) & 0xFF) << 24) | (((uint)(0x574D5631) & 0xFF00) << 8) | (((uint)(0x574D5631) & 0xFF0000) >> 8) | (((uint)(0x574D5631) & 0xFF000000) >> 24)), 0x0000, 0x0010, 0x80, 0x00, 0x00, 0xaa, 0x00, 0x38, 0x9b, 0x71);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFVideoFormat_WMV2 = new Guid(((((uint)(0x574D5632) & 0xFF) << 24) | (((uint)(0x574D5632) & 0xFF00) << 8) | (((uint)(0x574D5632) & 0xFF0000) >> 8) | (((uint)(0x574D5632) & 0xFF000000) >> 24)), 0x0000, 0x0010, 0x80, 0x00, 0x00, 0xaa, 0x00, 0x38, 0x9b, 0x71);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFVideoFormat_WMV3 = new Guid(((((uint)(0x574D5633) & 0xFF) << 24) | (((uint)(0x574D5633) & 0xFF00) << 8) | (((uint)(0x574D5633) & 0xFF0000) >> 8) | (((uint)(0x574D5633) & 0xFF000000) >> 24)), 0x0000, 0x0010, 0x80, 0x00, 0x00, 0xaa, 0x00, 0x38, 0x9b, 0x71);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFVideoFormat_WVC1 = new Guid(((((uint)(0x57564331) & 0xFF) << 24) | (((uint)(0x57564331) & 0xFF00) << 8) | (((uint)(0x57564331) & 0xFF0000) >> 8) | (((uint)(0x57564331) & 0xFF000000) >> 24)), 0x0000, 0x0010, 0x80, 0x00, 0x00, 0xaa, 0x00, 0x38, 0x9b, 0x71);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFVideoFormat_MSS1 = new Guid(((((uint)(0x4D535331) & 0xFF) << 24) | (((uint)(0x4D535331) & 0xFF00) << 8) | (((uint)(0x4D535331) & 0xFF0000) >> 8) | (((uint)(0x4D535331) & 0xFF000000) >> 24)), 0x0000, 0x0010, 0x80, 0x00, 0x00, 0xaa, 0x00, 0x38, 0x9b, 0x71);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFVideoFormat_MSS2 = new Guid(((((uint)(0x4D535332) & 0xFF) << 24) | (((uint)(0x4D535332) & 0xFF00) << 8) | (((uint)(0x4D535332) & 0xFF0000) >> 8) | (((uint)(0x4D535332) & 0xFF000000) >> 24)), 0x0000, 0x0010, 0x80, 0x00, 0x00, 0xaa, 0x00, 0x38, 0x9b, 0x71);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFVideoFormat_MPG1 = new Guid(((((uint)(0x4D504731) & 0xFF) << 24) | (((uint)(0x4D504731) & 0xFF00) << 8) | (((uint)(0x4D504731) & 0xFF0000) >> 8) | (((uint)(0x4D504731) & 0xFF000000) >> 24)), 0x0000, 0x0010, 0x80, 0x00, 0x00, 0xaa, 0x00, 0x38, 0x9b, 0x71);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFVideoFormat_DVSL = new Guid(((((uint)(0x6476736C) & 0xFF) << 24) | (((uint)(0x6476736C) & 0xFF00) << 8) | (((uint)(0x6476736C) & 0xFF0000) >> 8) | (((uint)(0x6476736C) & 0xFF000000) >> 24)), 0x0000, 0x0010, 0x80, 0x00, 0x00, 0xaa, 0x00, 0x38, 0x9b, 0x71);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFVideoFormat_DVSD = new Guid(((((uint)(0x64767364) & 0xFF) << 24) | (((uint)(0x64767364) & 0xFF00) << 8) | (((uint)(0x64767364) & 0xFF0000) >> 8) | (((uint)(0x64767364) & 0xFF000000) >> 24)), 0x0000, 0x0010, 0x80, 0x00, 0x00, 0xaa, 0x00, 0x38, 0x9b, 0x71);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFVideoFormat_DVHD = new Guid(((((uint)(0x64766864) & 0xFF) << 24) | (((uint)(0x64766864) & 0xFF00) << 8) | (((uint)(0x64766864) & 0xFF0000) >> 8) | (((uint)(0x64766864) & 0xFF000000) >> 24)), 0x0000, 0x0010, 0x80, 0x00, 0x00, 0xaa, 0x00, 0x38, 0x9b, 0x71);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFVideoFormat_DV25 = new Guid(((((uint)(0x64763235) & 0xFF) << 24) | (((uint)(0x64763235) & 0xFF00) << 8) | (((uint)(0x64763235) & 0xFF0000) >> 8) | (((uint)(0x64763235) & 0xFF000000) >> 24)), 0x0000, 0x0010, 0x80, 0x00, 0x00, 0xaa, 0x00, 0x38, 0x9b, 0x71);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFVideoFormat_DV50 = new Guid(((((uint)(0x64763530) & 0xFF) << 24) | (((uint)(0x64763530) & 0xFF00) << 8) | (((uint)(0x64763530) & 0xFF0000) >> 8) | (((uint)(0x64763530) & 0xFF000000) >> 24)), 0x0000, 0x0010, 0x80, 0x00, 0x00, 0xaa, 0x00, 0x38, 0x9b, 0x71);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFVideoFormat_DVH1 = new Guid(((((uint)(0x64766831) & 0xFF) << 24) | (((uint)(0x64766831) & 0xFF00) << 8) | (((uint)(0x64766831) & 0xFF0000) >> 8) | (((uint)(0x64766831) & 0xFF000000) >> 24)), 0x0000, 0x0010, 0x80, 0x00, 0x00, 0xaa, 0x00, 0x38, 0x9b, 0x71);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFVideoFormat_DVC = new Guid(((((uint)(0x64766320) & 0xFF) << 24) | (((uint)(0x64766320) & 0xFF00) << 8) | (((uint)(0x64766320) & 0xFF0000) >> 8) | (((uint)(0x64766320) & 0xFF000000) >> 24)), 0x0000, 0x0010, 0x80, 0x00, 0x00, 0xaa, 0x00, 0x38, 0x9b, 0x71);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFVideoFormat_H264 = new Guid(((((uint)(0x48323634) & 0xFF) << 24) | (((uint)(0x48323634) & 0xFF00) << 8) | (((uint)(0x48323634) & 0xFF0000) >> 8) | (((uint)(0x48323634) & 0xFF000000) >> 24)), 0x0000, 0x0010, 0x80, 0x00, 0x00, 0xaa, 0x00, 0x38, 0x9b, 0x71);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFVideoFormat_H265 = new Guid(((((uint)(0x48323635) & 0xFF) << 24) | (((uint)(0x48323635) & 0xFF00) << 8) | (((uint)(0x48323635) & 0xFF0000) >> 8) | (((uint)(0x48323635) & 0xFF000000) >> 24)), 0x0000, 0x0010, 0x80, 0x00, 0x00, 0xaa, 0x00, 0x38, 0x9b, 0x71);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFVideoFormat_MJPG = new Guid(((((uint)(0x4D4A5047) & 0xFF) << 24) | (((uint)(0x4D4A5047) & 0xFF00) << 8) | (((uint)(0x4D4A5047) & 0xFF0000) >> 8) | (((uint)(0x4D4A5047) & 0xFF000000) >> 24)), 0x0000, 0x0010, 0x80, 0x00, 0x00, 0xaa, 0x00, 0x38, 0x9b, 0x71);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFVideoFormat_420O = new Guid(((((uint)(0x3432304F) & 0xFF) << 24) | (((uint)(0x3432304F) & 0xFF00) << 8) | (((uint)(0x3432304F) & 0xFF0000) >> 8) | (((uint)(0x3432304F) & 0xFF000000) >> 24)), 0x0000, 0x0010, 0x80, 0x00, 0x00, 0xaa, 0x00, 0x38, 0x9b, 0x71);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFVideoFormat_HEVC = new Guid(((((uint)(0x48455643) & 0xFF) << 24) | (((uint)(0x48455643) & 0xFF00) << 8) | (((uint)(0x48455643) & 0xFF0000) >> 8) | (((uint)(0x48455643) & 0xFF000000) >> 24)), 0x0000, 0x0010, 0x80, 0x00, 0x00, 0xaa, 0x00, 0x38, 0x9b, 0x71);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFVideoFormat_HEVC_ES = new Guid(((((uint)(0x48455653) & 0xFF) << 24) | (((uint)(0x48455653) & 0xFF00) << 8) | (((uint)(0x48455653) & 0xFF0000) >> 8) | (((uint)(0x48455653) & 0xFF000000) >> 24)), 0x0000, 0x0010, 0x80, 0x00, 0x00, 0xaa, 0x00, 0x38, 0x9b, 0x71);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFVideoFormat_VP80 = new Guid(((((uint)(0x56503830) & 0xFF) << 24) | (((uint)(0x56503830) & 0xFF00) << 8) | (((uint)(0x56503830) & 0xFF0000) >> 8) | (((uint)(0x56503830) & 0xFF000000) >> 24)), 0x0000, 0x0010, 0x80, 0x00, 0x00, 0xaa, 0x00, 0x38, 0x9b, 0x71);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFVideoFormat_VP90 = new Guid(((((uint)(0x56503930) & 0xFF) << 24) | (((uint)(0x56503930) & 0xFF00) << 8) | (((uint)(0x56503930) & 0xFF0000) >> 8) | (((uint)(0x56503930) & 0xFF000000) >> 24)), 0x0000, 0x0010, 0x80, 0x00, 0x00, 0xaa, 0x00, 0x38, 0x9b, 0x71);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFVideoFormat_ORAW = new Guid(((((uint)(0x4F524157) & 0xFF) << 24) | (((uint)(0x4F524157) & 0xFF00) << 8) | (((uint)(0x4F524157) & 0xFF0000) >> 8) | (((uint)(0x4F524157) & 0xFF000000) >> 24)), 0x0000, 0x0010, 0x80, 0x00, 0x00, 0xaa, 0x00, 0x38, 0x9b, 0x71);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFVideoFormat_H263 = new Guid(((((uint)(0x48323633) & 0xFF) << 24) | (((uint)(0x48323633) & 0xFF00) << 8) | (((uint)(0x48323633) & 0xFF0000) >> 8) | (((uint)(0x48323633) & 0xFF000000) >> 24)), 0x0000, 0x0010, 0x80, 0x00, 0x00, 0xaa, 0x00, 0x38, 0x9b, 0x71);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFVideoFormat_A2R10G10B10 = new Guid(31, 0x0000, 0x0010, 0x80, 0x00, 0x00, 0xaa, 0x00, 0x38, 0x9b, 0x71);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFVideoFormat_A16B16G16R16F = new Guid(113, 0x0000, 0x0010, 0x80, 0x00, 0x00, 0xaa, 0x00, 0x38, 0x9b, 0x71);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFVideoFormat_VP10 = new Guid(((((uint)(0x56503130) & 0xFF) << 24) | (((uint)(0x56503130) & 0xFF00) << 8) | (((uint)(0x56503130) & 0xFF0000) >> 8) | (((uint)(0x56503130) & 0xFF000000) >> 24)), 0x0000, 0x0010, 0x80, 0x00, 0x00, 0xaa, 0x00, 0x38, 0x9b, 0x71);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFVideoFormat_AV1 = new Guid(((((uint)(0x41563031) & 0xFF) << 24) | (((uint)(0x41563031) & 0xFF00) << 8) | (((uint)(0x41563031) & 0xFF0000) >> 8) | (((uint)(0x41563031) & 0xFF000000) >> 24)), 0x0000, 0x0010, 0x80, 0x00, 0x00, 0xaa, 0x00, 0x38, 0x9b, 0x71);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFVideoFormat_Theora = new Guid(((((uint)(0x7468656F) & 0xFF) << 24) | (((uint)(0x7468656F) & 0xFF00) << 8) | (((uint)(0x7468656F) & 0xFF0000) >> 8) | (((uint)(0x7468656F) & 0xFF000000) >> 24)), 0x0000, 0x0010, 0x80, 0x00, 0x00, 0xaa, 0x00, 0x38, 0x9b, 0x71);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFVideoFormat_H264_ES = new Guid(0x3f40f4f0, 0x5622, 0x4ff8, 0xb6, 0xd8, 0xa1, 0x7a, 0x58, 0x4b, 0xee, 0x5e);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFVideoFormat_MPEG2 = new Guid(0xe06d8026, 0xdb46, 0x11cf, 0xb4, 0xd1, 0x00, 0x80, 0x5f, 0x6c, 0xbb, 0xea);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFAudioFormat_Base = new Guid(0x00000000, 0x0000, 0x0010, 0x80, 0x00, 0x00, 0xaa, 0x00, 0x38, 0x9b, 0x71);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFAudioFormat_PCM = new Guid(1, 0x0000, 0x0010, 0x80, 0x00, 0x00, 0xaa, 0x00, 0x38, 0x9b, 0x71);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFAudioFormat_Float = new Guid(0x0003, 0x0000, 0x0010, 0x80, 0x00, 0x00, 0xaa, 0x00, 0x38, 0x9b, 0x71);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFAudioFormat_DTS = new Guid(0x0008, 0x0000, 0x0010, 0x80, 0x00, 0x00, 0xaa, 0x00, 0x38, 0x9b, 0x71);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFAudioFormat_Dolby_AC3_SPDIF = new Guid(0x0092, 0x0000, 0x0010, 0x80, 0x00, 0x00, 0xaa, 0x00, 0x38, 0x9b, 0x71);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFAudioFormat_DRM = new Guid(0x0009, 0x0000, 0x0010, 0x80, 0x00, 0x00, 0xaa, 0x00, 0x38, 0x9b, 0x71);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFAudioFormat_WMAudioV8 = new Guid(0x0161, 0x0000, 0x0010, 0x80, 0x00, 0x00, 0xaa, 0x00, 0x38, 0x9b, 0x71);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFAudioFormat_WMAudioV9 = new Guid(0x0162, 0x0000, 0x0010, 0x80, 0x00, 0x00, 0xaa, 0x00, 0x38, 0x9b, 0x71);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFAudioFormat_WMAudio_Lossless = new Guid(0x0163, 0x0000, 0x0010, 0x80, 0x00, 0x00, 0xaa, 0x00, 0x38, 0x9b, 0x71);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFAudioFormat_WMASPDIF = new Guid(0x0164, 0x0000, 0x0010, 0x80, 0x00, 0x00, 0xaa, 0x00, 0x38, 0x9b, 0x71);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFAudioFormat_MSP1 = new Guid(0x000A, 0x0000, 0x0010, 0x80, 0x00, 0x00, 0xaa, 0x00, 0x38, 0x9b, 0x71);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFAudioFormat_MP3 = new Guid(0x0055, 0x0000, 0x0010, 0x80, 0x00, 0x00, 0xaa, 0x00, 0x38, 0x9b, 0x71);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFAudioFormat_MPEG = new Guid(0x0050, 0x0000, 0x0010, 0x80, 0x00, 0x00, 0xaa, 0x00, 0x38, 0x9b, 0x71);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFAudioFormat_AAC = new Guid(0x1610, 0x0000, 0x0010, 0x80, 0x00, 0x00, 0xaa, 0x00, 0x38, 0x9b, 0x71);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFAudioFormat_ADTS = new Guid(0x1600, 0x0000, 0x0010, 0x80, 0x00, 0x00, 0xaa, 0x00, 0x38, 0x9b, 0x71);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFAudioFormat_AMR_NB = new Guid(0x7361, 0x0000, 0x0010, 0x80, 0x00, 0x00, 0xaa, 0x00, 0x38, 0x9b, 0x71);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFAudioFormat_AMR_WB = new Guid(0x7362, 0x0000, 0x0010, 0x80, 0x00, 0x00, 0xaa, 0x00, 0x38, 0x9b, 0x71);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFAudioFormat_AMR_WP = new Guid(0x7363, 0x0000, 0x0010, 0x80, 0x00, 0x00, 0xaa, 0x00, 0x38, 0x9b, 0x71);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFAudioFormat_FLAC = new Guid(0xF1AC, 0x0000, 0x0010, 0x80, 0x00, 0x00, 0xaa, 0x00, 0x38, 0x9b, 0x71);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFAudioFormat_ALAC = new Guid(0x6C61, 0x0000, 0x0010, 0x80, 0x00, 0x00, 0xaa, 0x00, 0x38, 0x9b, 0x71);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFAudioFormat_Opus = new Guid(0x704F, 0x0000, 0x0010, 0x80, 0x00, 0x00, 0xaa, 0x00, 0x38, 0x9b, 0x71);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFAudioFormat_Dolby_AC4 = new Guid(0xAC40, 0x0000, 0x0010, 0x80, 0x00, 0x00, 0xaa, 0x00, 0x38, 0x9b, 0x71);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFAudioFormat_Dolby_AC3 = new Guid(0xe06d802c, 0xdb46, 0x11cf, 0xb4, 0xd1, 0x00, 0x80, 0x05f, 0x6c, 0xbb, 0xea);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFAudioFormat_Dolby_DDPlus = new Guid(0xa7fb87af, 0x2d02, 0x42fb, 0xa4, 0xd4, 0x5, 0xcd, 0x93, 0x84, 0x3b, 0xdd);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFAudioFormat_Dolby_AC4_V1 = new Guid(0x36b7927c, 0x3d87, 0x4a2a, 0x91, 0x96, 0xa2, 0x1a, 0xd9, 0xe9, 0x35, 0xe6);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFAudioFormat_Dolby_AC4_V2 = new Guid(0x7998b2a0, 0x17dd, 0x49b6, 0x8d, 0xfa, 0x9b, 0x27, 0x85, 0x52, 0xa2, 0xac);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFAudioFormat_Dolby_AC4_V1_ES = new Guid(0x9d8dccc6, 0xd156, 0x4fb8, 0x97, 0x9c, 0xa8, 0x5b, 0xe7, 0xd2, 0x1d, 0xfa);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFAudioFormat_Dolby_AC4_V2_ES = new Guid(0x7e58c9f9, 0xb070, 0x45f4, 0x8c, 0xcd, 0xa9, 0x9a, 0x04, 0x17, 0xc1, 0xac);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFAudioFormat_Vorbis = new Guid(0x8D2FD10B, 0x5841, 0x4a6b, 0x89, 0x05, 0x58, 0x8F, 0xEC, 0x1A, 0xDE, 0xD9);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFAudioFormat_DTS_RAW = new Guid(0xE06D8033, 0xDB46, 0x11CF, 0xB4, 0xD1, 0x00, 0x80, 0x5F, 0x6C, 0xBB, 0xEA);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFAudioFormat_DTS_HD = new Guid(0xA2E58EB7, 0x0FA9, 0x48BB, 0xA4, 0x0C, 0xFA, 0x0E, 0x15, 0x6D, 0x06, 0x45);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFAudioFormat_DTS_XLL = new Guid(0x45B37C1B, 0x8C70, 0x4E59, 0xA7, 0xBE, 0xA1, 0xE4, 0x2C, 0x81, 0xC8, 0x0D);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFAudioFormat_DTS_LBR = new Guid(0xC2FE6F0A, 0x4E3C, 0x4DF1, 0x9B, 0x60, 0x50, 0x86, 0x30, 0x91, 0xE4, 0xB9);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFAudioFormat_DTS_UHD = new Guid(0x87020117, 0xACE3, 0x42DE, 0xB7, 0x3E, 0xC6, 0x56, 0x70, 0x62, 0x63, 0xF8);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFAudioFormat_DTS_UHDY = new Guid(0x9B9CCA00, 0x91B9, 0x4CCC, 0x88, 0x3A, 0x8F, 0x78, 0x7A, 0xC3, 0xCC, 0x86);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFAudioFormat_Float_SpatialObjects = new Guid(0xfa39cd94, 0xbc64, 0x4ab1, 0x9b, 0x71, 0xdc, 0xd0, 0x9d, 0x5a, 0x7e, 0x7a);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFAudioFormat_LPCM = new Guid(0xe06d8032, 0xdb46, 0x11cf, 0xb4, 0xd1, 0x00, 0x80, 0x5f, 0x6c, 0xbb, 0xea);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFAudioFormat_PCM_HDCP = new Guid(0xa5e7ff01, 0x8411, 0x4acc, 0xa8, 0x65, 0x5f, 0x49, 0x41, 0x28, 0x8d, 0x80);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFAudioFormat_Dolby_AC3_HDCP = new Guid(0x97663a80, 0x8ffb, 0x4445, 0xa6, 0xba, 0x79, 0x2d, 0x90, 0x8f, 0x49, 0x7f);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFAudioFormat_AAC_HDCP = new Guid(0x419bce76, 0x8b72, 0x400f, 0xad, 0xeb, 0x84, 0xb5, 0x7d, 0x63, 0x48, 0x4d);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFAudioFormat_ADTS_HDCP = new Guid(0xda4963a3, 0x14d8, 0x4dcf, 0x92, 0xb7, 0x19, 0x3e, 0xb8, 0x43, 0x63, 0xdb);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFAudioFormat_Base_HDCP = new Guid(0x3884b5bc, 0xe277, 0x43fd, 0x98, 0x3d, 0x03, 0x8a, 0xa8, 0xd9, 0xb6, 0x05);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFVideoFormat_H264_HDCP = new Guid(0x5d0ce9dd, 0x9817, 0x49da, 0xbd, 0xfd, 0xf5, 0xf5, 0xb9, 0x8f, 0x18, 0xa6);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFVideoFormat_HEVC_HDCP = new Guid(0x3cfe0fe6, 0x05c4, 0x47dc, 0x9d, 0x70, 0x4b, 0xdb, 0x29, 0x59, 0x72, 0x0f);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFVideoFormat_Base_HDCP = new Guid(0xeac3b9d5, 0xbd14, 0x4237, 0x8f, 0x1f, 0xba, 0xb4, 0x28, 0xe4, 0x93, 0x12);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFMPEG4Format_Base = new Guid(0x00000000, 0x767a, 0x494d, 0xb4, 0x78, 0xf2, 0x9d, 0x25, 0xdc, 0x90, 0x37);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFSubtitleFormat_XML = new Guid(0x2006f94f, 0x29ca, 0x4195, 0xb8, 0xdb, 0x00, 0xde, 0xd8, 0xff, 0x0c, 0x97);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFSubtitleFormat_TTML = new Guid(0x73e73992, 0x9a10, 0x4356, 0x95, 0x57, 0x71, 0x94, 0xe9, 0x1e, 0x3e, 0x54);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFSubtitleFormat_ATSC = new Guid(0x7fa7faa3, 0xfeae, 0x4e16, 0xae, 0xdf, 0x36, 0xb9, 0xac, 0xfb, 0xb0, 0x99);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFSubtitleFormat_WebVTT = new Guid(0xc886d215, 0xf485, 0x40bb, 0x8d, 0xb6, 0xfa, 0xdb, 0xc6, 0x19, 0xa4, 0x5d);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFSubtitleFormat_SRT = new Guid(0x5e467f2e, 0x77ca, 0x4ca5, 0x83, 0x91, 0xd1, 0x42, 0xed, 0x4b, 0x76, 0xc8);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFSubtitleFormat_SSA = new Guid(0x57176a1b, 0x1a9e, 0x4eea, 0xab, 0xef, 0xc6, 0x17, 0x60, 0x19, 0x8a, 0xc4);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFSubtitleFormat_CustomUserData = new Guid(0x1bb3d849, 0x6614, 0x4d80, 0x88, 0x82, 0xed, 0x24, 0xaa, 0x82, 0xda, 0x92);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFSubtitleFormat_PGS = new Guid(0x71f40e4a, 0x1278, 0x4442, 0xb3, 0x0d, 0x39, 0xdd, 0x1d, 0x77, 0x22, 0xbc);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFSubtitleFormat_VobSub = new Guid(0x6b8e40f4, 0x8d2c, 0x4ced, 0xad, 0x91, 0x59, 0x60, 0xe4, 0x5b, 0x44, 0x33);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFBinaryFormat_Base = new Guid(0x00000000, 0xbf10, 0x48b4, 0xbc, 0x18, 0x59, 0x3d, 0xc1, 0xdb, 0x95, 0xf);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFBinaryFormat_GPMD = new Guid(0x67706D64, 0xbf10, 0x48b4, 0xbc, 0x18, 0x59, 0x3d, 0xc1, 0xdb, 0x95, 0xf);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MF_MT_MAJOR_TYPE = new Guid(0x48eba18e, 0xf8c9, 0x4687, 0xbf, 0x11, 0x0a, 0x74, 0xc9, 0xf9, 0x6a, 0x8f);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MF_MT_SUBTYPE = new Guid(0xf7e34c9a, 0x42e8, 0x4714, 0xb7, 0x4b, 0xcb, 0x29, 0xd7, 0x2c, 0x35, 0xe5);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MF_MT_ALL_SAMPLES_INDEPENDENT = new Guid(0xc9173739, 0x5e56, 0x461c, 0xb7, 0x13, 0x46, 0xfb, 0x99, 0x5c, 0xb9, 0x5f);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MF_MT_FIXED_SIZE_SAMPLES = new Guid(0xb8ebefaf, 0xb718, 0x4e04, 0xb0, 0xa9, 0x11, 0x67, 0x75, 0xe3, 0x32, 0x1b);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MF_MT_COMPRESSED = new Guid(0x3afd0cee, 0x18f2, 0x4ba5, 0xa1, 0x10, 0x8b, 0xea, 0x50, 0x2e, 0x1f, 0x92);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MF_MT_SAMPLE_SIZE = new Guid(0xdad3ab78, 0x1990, 0x408b, 0xbc, 0xe2, 0xeb, 0xa6, 0x73, 0xda, 0xcc, 0x10);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MF_MT_WRAPPED_TYPE = new Guid(0x4d3f7b23, 0xd02f, 0x4e6c, 0x9b, 0xee, 0xe4, 0xbf, 0x2c, 0x6c, 0x69, 0x5d);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MF_MT_VIDEO_3D = new Guid(0xcb5e88cf, 0x7b5b, 0x476b, 0x85, 0xaa, 0x1c, 0xa5, 0xae, 0x18, 0x75, 0x55);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MF_MT_VIDEO_3D_FORMAT = new Guid(0x5315d8a0, 0x87c5, 0x4697, 0xb7, 0x93, 0x66, 0x6, 0xc6, 0x7c, 0x4, 0x9b);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MF_MT_VIDEO_3D_NUM_VIEWS = new Guid(0xbb077e8a, 0xdcbf, 0x42eb, 0xaf, 0x60, 0x41, 0x8d, 0xf9, 0x8a, 0xa4, 0x95);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MF_MT_VIDEO_3D_LEFT_IS_BASE = new Guid(0x6d4b7bff, 0x5629, 0x4404, 0x94, 0x8c, 0xc6, 0x34, 0xf4, 0xce, 0x26, 0xd4);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MF_MT_VIDEO_3D_FIRST_IS_LEFT = new Guid(0xec298493, 0xada, 0x4ea1, 0xa4, 0xfe, 0xcb, 0xbd, 0x36, 0xce, 0x93, 0x31);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFSampleExtension_3DVideo = new Guid(0xf86f97a4, 0xdd54, 0x4e2e, 0x9a, 0x5e, 0x55, 0xfc, 0x2d, 0x74, 0xa0, 0x05);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFSampleExtension_3DVideo_SampleFormat = new Guid(0x8671772, 0xe36f, 0x4cff, 0x97, 0xb3, 0xd7, 0x2e, 0x20, 0x98, 0x7a, 0x48);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MF_MT_VIDEO_ROTATION = new Guid(0xc380465d, 0x2271, 0x428c, 0x9b, 0x83, 0xec, 0xea, 0x3b, 0x4a, 0x85, 0xc1);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MF_DEVICESTREAM_MULTIPLEXED_MANAGER = new Guid(0x6ea542b0, 0x281f, 0x4231, 0xa4, 0x64, 0xfe, 0x2f, 0x50, 0x22, 0x50, 0x1c);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MF_MEDIATYPE_MULTIPLEXED_MANAGER = new Guid(0x13c78fb5, 0xf275, 0x4ea0, 0xbb, 0x5f, 0x2, 0x49, 0x83, 0x2b, 0xd, 0x6e);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFSampleExtension_MULTIPLEXED_MANAGER = new Guid(0x8dcdee79, 0x6b5a, 0x4c45, 0x8d, 0xb9, 0x20, 0xb3, 0x95, 0xf0, 0x2f, 0xcf);
+        public static ref readonly Guid MFT_SUPPORT_DYNAMIC_FORMAT_CHANGE
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x11, 0x6A, 0x47, 0x53,
+                    0x13, 0x3F,
+                    0xFB, 0x49,
+                    0xAC,
+                    0x42,
+                    0xEE,
+                    0x27,
+                    0x33,
+                    0xC9,
+                    0x67,
+                    0x41
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFVideoFormat_Base
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x00, 0x00, 0x00, 0x00,
+                    0x00, 0x00,
+                    0x10, 0x00,
+                    0x80,
+                    0x00,
+                    0x00,
+                    0xAA,
+                    0x00,
+                    0x38,
+                    0x9B,
+                    0x71
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFVideoFormat_RGB32
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x16, 0x00, 0x00, 0x00,
+                    0x00, 0x00,
+                    0x10, 0x00,
+                    0x80,
+                    0x00,
+                    0x00,
+                    0xAA,
+                    0x00,
+                    0x38,
+                    0x9B,
+                    0x71
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFVideoFormat_ARGB32
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x15, 0x00, 0x00, 0x00,
+                    0x00, 0x00,
+                    0x10, 0x00,
+                    0x80,
+                    0x00,
+                    0x00,
+                    0xAA,
+                    0x00,
+                    0x38,
+                    0x9B,
+                    0x71
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFVideoFormat_RGB24
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x14, 0x00, 0x00, 0x00,
+                    0x00, 0x00,
+                    0x10, 0x00,
+                    0x80,
+                    0x00,
+                    0x00,
+                    0xAA,
+                    0x00,
+                    0x38,
+                    0x9B,
+                    0x71
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFVideoFormat_RGB555
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x18, 0x00, 0x00, 0x00,
+                    0x00, 0x00,
+                    0x10, 0x00,
+                    0x80,
+                    0x00,
+                    0x00,
+                    0xAA,
+                    0x00,
+                    0x38,
+                    0x9B,
+                    0x71
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFVideoFormat_RGB565
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x17, 0x00, 0x00, 0x00,
+                    0x00, 0x00,
+                    0x10, 0x00,
+                    0x80,
+                    0x00,
+                    0x00,
+                    0xAA,
+                    0x00,
+                    0x38,
+                    0x9B,
+                    0x71
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFVideoFormat_RGB8
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x29, 0x00, 0x00, 0x00,
+                    0x00, 0x00,
+                    0x10, 0x00,
+                    0x80,
+                    0x00,
+                    0x00,
+                    0xAA,
+                    0x00,
+                    0x38,
+                    0x9B,
+                    0x71
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFVideoFormat_L8
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x32, 0x00, 0x00, 0x00,
+                    0x00, 0x00,
+                    0x10, 0x00,
+                    0x80,
+                    0x00,
+                    0x00,
+                    0xAA,
+                    0x00,
+                    0x38,
+                    0x9B,
+                    0x71
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFVideoFormat_L16
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x51, 0x00, 0x00, 0x00,
+                    0x00, 0x00,
+                    0x10, 0x00,
+                    0x80,
+                    0x00,
+                    0x00,
+                    0xAA,
+                    0x00,
+                    0x38,
+                    0x9B,
+                    0x71
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFVideoFormat_D16
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x50, 0x00, 0x00, 0x00,
+                    0x00, 0x00,
+                    0x10, 0x00,
+                    0x80,
+                    0x00,
+                    0x00,
+                    0xAA,
+                    0x00,
+                    0x38,
+                    0x9B,
+                    0x71
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFVideoFormat_AI44
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x41, 0x49, 0x34, 0x34,
+                    0x00, 0x00,
+                    0x10, 0x00,
+                    0x80,
+                    0x00,
+                    0x00,
+                    0xAA,
+                    0x00,
+                    0x38,
+                    0x9B,
+                    0x71
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFVideoFormat_AYUV
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x41, 0x59, 0x55, 0x56,
+                    0x00, 0x00,
+                    0x10, 0x00,
+                    0x80,
+                    0x00,
+                    0x00,
+                    0xAA,
+                    0x00,
+                    0x38,
+                    0x9B,
+                    0x71
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFVideoFormat_YUY2
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x59, 0x55, 0x59, 0x32,
+                    0x00, 0x00,
+                    0x10, 0x00,
+                    0x80,
+                    0x00,
+                    0x00,
+                    0xAA,
+                    0x00,
+                    0x38,
+                    0x9B,
+                    0x71
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFVideoFormat_YVYU
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x59, 0x56, 0x59, 0x55,
+                    0x00, 0x00,
+                    0x10, 0x00,
+                    0x80,
+                    0x00,
+                    0x00,
+                    0xAA,
+                    0x00,
+                    0x38,
+                    0x9B,
+                    0x71
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFVideoFormat_YVU9
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x59, 0x56, 0x55, 0x39,
+                    0x00, 0x00,
+                    0x10, 0x00,
+                    0x80,
+                    0x00,
+                    0x00,
+                    0xAA,
+                    0x00,
+                    0x38,
+                    0x9B,
+                    0x71
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFVideoFormat_UYVY
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x55, 0x59, 0x56, 0x59,
+                    0x00, 0x00,
+                    0x10, 0x00,
+                    0x80,
+                    0x00,
+                    0x00,
+                    0xAA,
+                    0x00,
+                    0x38,
+                    0x9B,
+                    0x71
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFVideoFormat_NV11
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x4E, 0x56, 0x31, 0x31,
+                    0x00, 0x00,
+                    0x10, 0x00,
+                    0x80,
+                    0x00,
+                    0x00,
+                    0xAA,
+                    0x00,
+                    0x38,
+                    0x9B,
+                    0x71
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFVideoFormat_NV12
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x4E, 0x56, 0x31, 0x32,
+                    0x00, 0x00,
+                    0x10, 0x00,
+                    0x80,
+                    0x00,
+                    0x00,
+                    0xAA,
+                    0x00,
+                    0x38,
+                    0x9B,
+                    0x71
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFVideoFormat_YV12
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x59, 0x56, 0x31, 0x32,
+                    0x00, 0x00,
+                    0x10, 0x00,
+                    0x80,
+                    0x00,
+                    0x00,
+                    0xAA,
+                    0x00,
+                    0x38,
+                    0x9B,
+                    0x71
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFVideoFormat_I420
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x49, 0x34, 0x32, 0x30,
+                    0x00, 0x00,
+                    0x10, 0x00,
+                    0x80,
+                    0x00,
+                    0x00,
+                    0xAA,
+                    0x00,
+                    0x38,
+                    0x9B,
+                    0x71
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFVideoFormat_IYUV
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x49, 0x59, 0x55, 0x56,
+                    0x00, 0x00,
+                    0x10, 0x00,
+                    0x80,
+                    0x00,
+                    0x00,
+                    0xAA,
+                    0x00,
+                    0x38,
+                    0x9B,
+                    0x71
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFVideoFormat_Y210
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x59, 0x32, 0x31, 0x30,
+                    0x00, 0x00,
+                    0x10, 0x00,
+                    0x80,
+                    0x00,
+                    0x00,
+                    0xAA,
+                    0x00,
+                    0x38,
+                    0x9B,
+                    0x71
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFVideoFormat_Y216
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x59, 0x32, 0x31, 0x36,
+                    0x00, 0x00,
+                    0x10, 0x00,
+                    0x80,
+                    0x00,
+                    0x00,
+                    0xAA,
+                    0x00,
+                    0x38,
+                    0x9B,
+                    0x71
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFVideoFormat_Y410
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x59, 0x34, 0x31, 0x30,
+                    0x00, 0x00,
+                    0x10, 0x00,
+                    0x80,
+                    0x00,
+                    0x00,
+                    0xAA,
+                    0x00,
+                    0x38,
+                    0x9B,
+                    0x71
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFVideoFormat_Y416
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x59, 0x34, 0x31, 0x36,
+                    0x00, 0x00,
+                    0x10, 0x00,
+                    0x80,
+                    0x00,
+                    0x00,
+                    0xAA,
+                    0x00,
+                    0x38,
+                    0x9B,
+                    0x71
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFVideoFormat_Y41P
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x59, 0x34, 0x31, 0x50,
+                    0x00, 0x00,
+                    0x10, 0x00,
+                    0x80,
+                    0x00,
+                    0x00,
+                    0xAA,
+                    0x00,
+                    0x38,
+                    0x9B,
+                    0x71
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFVideoFormat_Y41T
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x59, 0x34, 0x31, 0x54,
+                    0x00, 0x00,
+                    0x10, 0x00,
+                    0x80,
+                    0x00,
+                    0x00,
+                    0xAA,
+                    0x00,
+                    0x38,
+                    0x9B,
+                    0x71
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFVideoFormat_Y42T
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x59, 0x34, 0x32, 0x54,
+                    0x00, 0x00,
+                    0x10, 0x00,
+                    0x80,
+                    0x00,
+                    0x00,
+                    0xAA,
+                    0x00,
+                    0x38,
+                    0x9B,
+                    0x71
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFVideoFormat_P210
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x50, 0x32, 0x31, 0x30,
+                    0x00, 0x00,
+                    0x10, 0x00,
+                    0x80,
+                    0x00,
+                    0x00,
+                    0xAA,
+                    0x00,
+                    0x38,
+                    0x9B,
+                    0x71
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFVideoFormat_P216
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x50, 0x32, 0x31, 0x36,
+                    0x00, 0x00,
+                    0x10, 0x00,
+                    0x80,
+                    0x00,
+                    0x00,
+                    0xAA,
+                    0x00,
+                    0x38,
+                    0x9B,
+                    0x71
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFVideoFormat_P010
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x50, 0x30, 0x31, 0x30,
+                    0x00, 0x00,
+                    0x10, 0x00,
+                    0x80,
+                    0x00,
+                    0x00,
+                    0xAA,
+                    0x00,
+                    0x38,
+                    0x9B,
+                    0x71
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFVideoFormat_P016
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x50, 0x30, 0x31, 0x36,
+                    0x00, 0x00,
+                    0x10, 0x00,
+                    0x80,
+                    0x00,
+                    0x00,
+                    0xAA,
+                    0x00,
+                    0x38,
+                    0x9B,
+                    0x71
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFVideoFormat_v210
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x76, 0x32, 0x31, 0x30,
+                    0x00, 0x00,
+                    0x10, 0x00,
+                    0x80,
+                    0x00,
+                    0x00,
+                    0xAA,
+                    0x00,
+                    0x38,
+                    0x9B,
+                    0x71
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFVideoFormat_v216
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x76, 0x32, 0x31, 0x36,
+                    0x00, 0x00,
+                    0x10, 0x00,
+                    0x80,
+                    0x00,
+                    0x00,
+                    0xAA,
+                    0x00,
+                    0x38,
+                    0x9B,
+                    0x71
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFVideoFormat_v410
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x76, 0x34, 0x31, 0x30,
+                    0x00, 0x00,
+                    0x10, 0x00,
+                    0x80,
+                    0x00,
+                    0x00,
+                    0xAA,
+                    0x00,
+                    0x38,
+                    0x9B,
+                    0x71
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFVideoFormat_MP43
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x4D, 0x50, 0x34, 0x33,
+                    0x00, 0x00,
+                    0x10, 0x00,
+                    0x80,
+                    0x00,
+                    0x00,
+                    0xAA,
+                    0x00,
+                    0x38,
+                    0x9B,
+                    0x71
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFVideoFormat_MP4S
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x4D, 0x50, 0x34, 0x53,
+                    0x00, 0x00,
+                    0x10, 0x00,
+                    0x80,
+                    0x00,
+                    0x00,
+                    0xAA,
+                    0x00,
+                    0x38,
+                    0x9B,
+                    0x71
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFVideoFormat_M4S2
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x4D, 0x34, 0x53, 0x32,
+                    0x00, 0x00,
+                    0x10, 0x00,
+                    0x80,
+                    0x00,
+                    0x00,
+                    0xAA,
+                    0x00,
+                    0x38,
+                    0x9B,
+                    0x71
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFVideoFormat_MP4V
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x4D, 0x50, 0x34, 0x56,
+                    0x00, 0x00,
+                    0x10, 0x00,
+                    0x80,
+                    0x00,
+                    0x00,
+                    0xAA,
+                    0x00,
+                    0x38,
+                    0x9B,
+                    0x71
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFVideoFormat_WMV1
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x57, 0x4D, 0x56, 0x31,
+                    0x00, 0x00,
+                    0x10, 0x00,
+                    0x80,
+                    0x00,
+                    0x00,
+                    0xAA,
+                    0x00,
+                    0x38,
+                    0x9B,
+                    0x71
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFVideoFormat_WMV2
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x57, 0x4D, 0x56, 0x32,
+                    0x00, 0x00,
+                    0x10, 0x00,
+                    0x80,
+                    0x00,
+                    0x00,
+                    0xAA,
+                    0x00,
+                    0x38,
+                    0x9B,
+                    0x71
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFVideoFormat_WMV3
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x57, 0x4D, 0x56, 0x33,
+                    0x00, 0x00,
+                    0x10, 0x00,
+                    0x80,
+                    0x00,
+                    0x00,
+                    0xAA,
+                    0x00,
+                    0x38,
+                    0x9B,
+                    0x71
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFVideoFormat_WVC1
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x57, 0x56, 0x43, 0x31,
+                    0x00, 0x00,
+                    0x10, 0x00,
+                    0x80,
+                    0x00,
+                    0x00,
+                    0xAA,
+                    0x00,
+                    0x38,
+                    0x9B,
+                    0x71
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFVideoFormat_MSS1
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x4D, 0x53, 0x53, 0x31,
+                    0x00, 0x00,
+                    0x10, 0x00,
+                    0x80,
+                    0x00,
+                    0x00,
+                    0xAA,
+                    0x00,
+                    0x38,
+                    0x9B,
+                    0x71
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFVideoFormat_MSS2
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x4D, 0x53, 0x53, 0x32,
+                    0x00, 0x00,
+                    0x10, 0x00,
+                    0x80,
+                    0x00,
+                    0x00,
+                    0xAA,
+                    0x00,
+                    0x38,
+                    0x9B,
+                    0x71
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFVideoFormat_MPG1
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x4D, 0x50, 0x47, 0x31,
+                    0x00, 0x00,
+                    0x10, 0x00,
+                    0x80,
+                    0x00,
+                    0x00,
+                    0xAA,
+                    0x00,
+                    0x38,
+                    0x9B,
+                    0x71
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFVideoFormat_DVSL
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x64, 0x76, 0x73, 0x6C,
+                    0x00, 0x00,
+                    0x10, 0x00,
+                    0x80,
+                    0x00,
+                    0x00,
+                    0xAA,
+                    0x00,
+                    0x38,
+                    0x9B,
+                    0x71
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFVideoFormat_DVSD
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x64, 0x76, 0x73, 0x64,
+                    0x00, 0x00,
+                    0x10, 0x00,
+                    0x80,
+                    0x00,
+                    0x00,
+                    0xAA,
+                    0x00,
+                    0x38,
+                    0x9B,
+                    0x71
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFVideoFormat_DVHD
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x64, 0x76, 0x68, 0x64,
+                    0x00, 0x00,
+                    0x10, 0x00,
+                    0x80,
+                    0x00,
+                    0x00,
+                    0xAA,
+                    0x00,
+                    0x38,
+                    0x9B,
+                    0x71
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFVideoFormat_DV25
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x64, 0x76, 0x32, 0x35,
+                    0x00, 0x00,
+                    0x10, 0x00,
+                    0x80,
+                    0x00,
+                    0x00,
+                    0xAA,
+                    0x00,
+                    0x38,
+                    0x9B,
+                    0x71
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFVideoFormat_DV50
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x64, 0x76, 0x35, 0x30,
+                    0x00, 0x00,
+                    0x10, 0x00,
+                    0x80,
+                    0x00,
+                    0x00,
+                    0xAA,
+                    0x00,
+                    0x38,
+                    0x9B,
+                    0x71
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFVideoFormat_DVH1
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x64, 0x76, 0x68, 0x31,
+                    0x00, 0x00,
+                    0x10, 0x00,
+                    0x80,
+                    0x00,
+                    0x00,
+                    0xAA,
+                    0x00,
+                    0x38,
+                    0x9B,
+                    0x71
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFVideoFormat_DVC
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x64, 0x76, 0x63, 0x20,
+                    0x00, 0x00,
+                    0x10, 0x00,
+                    0x80,
+                    0x00,
+                    0x00,
+                    0xAA,
+                    0x00,
+                    0x38,
+                    0x9B,
+                    0x71
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFVideoFormat_H264
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x48, 0x32, 0x36, 0x34,
+                    0x00, 0x00,
+                    0x10, 0x00,
+                    0x80,
+                    0x00,
+                    0x00,
+                    0xAA,
+                    0x00,
+                    0x38,
+                    0x9B,
+                    0x71
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFVideoFormat_H265
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x48, 0x32, 0x36, 0x35,
+                    0x00, 0x00,
+                    0x10, 0x00,
+                    0x80,
+                    0x00,
+                    0x00,
+                    0xAA,
+                    0x00,
+                    0x38,
+                    0x9B,
+                    0x71
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFVideoFormat_MJPG
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x4D, 0x4A, 0x50, 0x47,
+                    0x00, 0x00,
+                    0x10, 0x00,
+                    0x80,
+                    0x00,
+                    0x00,
+                    0xAA,
+                    0x00,
+                    0x38,
+                    0x9B,
+                    0x71
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFVideoFormat_420O
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x34, 0x32, 0x30, 0x4F,
+                    0x00, 0x00,
+                    0x10, 0x00,
+                    0x80,
+                    0x00,
+                    0x00,
+                    0xAA,
+                    0x00,
+                    0x38,
+                    0x9B,
+                    0x71
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFVideoFormat_HEVC
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x48, 0x45, 0x56, 0x43,
+                    0x00, 0x00,
+                    0x10, 0x00,
+                    0x80,
+                    0x00,
+                    0x00,
+                    0xAA,
+                    0x00,
+                    0x38,
+                    0x9B,
+                    0x71
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFVideoFormat_HEVC_ES
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x48, 0x45, 0x56, 0x53,
+                    0x00, 0x00,
+                    0x10, 0x00,
+                    0x80,
+                    0x00,
+                    0x00,
+                    0xAA,
+                    0x00,
+                    0x38,
+                    0x9B,
+                    0x71
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFVideoFormat_VP80
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x56, 0x50, 0x38, 0x30,
+                    0x00, 0x00,
+                    0x10, 0x00,
+                    0x80,
+                    0x00,
+                    0x00,
+                    0xAA,
+                    0x00,
+                    0x38,
+                    0x9B,
+                    0x71
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFVideoFormat_VP90
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x56, 0x50, 0x39, 0x30,
+                    0x00, 0x00,
+                    0x10, 0x00,
+                    0x80,
+                    0x00,
+                    0x00,
+                    0xAA,
+                    0x00,
+                    0x38,
+                    0x9B,
+                    0x71
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFVideoFormat_ORAW
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x4F, 0x52, 0x41, 0x57,
+                    0x00, 0x00,
+                    0x10, 0x00,
+                    0x80,
+                    0x00,
+                    0x00,
+                    0xAA,
+                    0x00,
+                    0x38,
+                    0x9B,
+                    0x71
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFVideoFormat_H263
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x48, 0x32, 0x36, 0x33,
+                    0x00, 0x00,
+                    0x10, 0x00,
+                    0x80,
+                    0x00,
+                    0x00,
+                    0xAA,
+                    0x00,
+                    0x38,
+                    0x9B,
+                    0x71
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFVideoFormat_A2R10G10B10
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x1F, 0x00, 0x00, 0x00,
+                    0x00, 0x00,
+                    0x10, 0x00,
+                    0x80,
+                    0x00,
+                    0x00,
+                    0xAA,
+                    0x00,
+                    0x38,
+                    0x9B,
+                    0x71
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFVideoFormat_A16B16G16R16F
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x71, 0x00, 0x00, 0x00,
+                    0x00, 0x00,
+                    0x10, 0x00,
+                    0x80,
+                    0x00,
+                    0x00,
+                    0xAA,
+                    0x00,
+                    0x38,
+                    0x9B,
+                    0x71
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFVideoFormat_VP10
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x56, 0x50, 0x31, 0x30,
+                    0x00, 0x00,
+                    0x10, 0x00,
+                    0x80,
+                    0x00,
+                    0x00,
+                    0xAA,
+                    0x00,
+                    0x38,
+                    0x9B,
+                    0x71
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFVideoFormat_AV1
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x41, 0x56, 0x30, 0x31,
+                    0x00, 0x00,
+                    0x10, 0x00,
+                    0x80,
+                    0x00,
+                    0x00,
+                    0xAA,
+                    0x00,
+                    0x38,
+                    0x9B,
+                    0x71
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFVideoFormat_Theora
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x74, 0x68, 0x65, 0x6F,
+                    0x00, 0x00,
+                    0x10, 0x00,
+                    0x80,
+                    0x00,
+                    0x00,
+                    0xAA,
+                    0x00,
+                    0x38,
+                    0x9B,
+                    0x71
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFVideoFormat_H264_ES
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xF0, 0xF4, 0x40, 0x3F,
+                    0x22, 0x56,
+                    0xF8, 0x4F,
+                    0xB6,
+                    0xD8,
+                    0xA1,
+                    0x7A,
+                    0x58,
+                    0x4B,
+                    0xEE,
+                    0x5E
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFVideoFormat_MPEG2
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x26, 0x80, 0x6D, 0xE0,
+                    0x46, 0xDB,
+                    0xCF, 0x11,
+                    0xB4,
+                    0xD1,
+                    0x00,
+                    0x80,
+                    0x5F,
+                    0x6C,
+                    0xBB,
+                    0xEA
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFAudioFormat_Base
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x00, 0x00, 0x00, 0x00,
+                    0x00, 0x00,
+                    0x10, 0x00,
+                    0x80,
+                    0x00,
+                    0x00,
+                    0xAA,
+                    0x00,
+                    0x38,
+                    0x9B,
+                    0x71
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFAudioFormat_PCM
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x01, 0x00, 0x00, 0x00,
+                    0x00, 0x00,
+                    0x10, 0x00,
+                    0x80,
+                    0x00,
+                    0x00,
+                    0xAA,
+                    0x00,
+                    0x38,
+                    0x9B,
+                    0x71
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFAudioFormat_Float
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x03, 0x00, 0x00, 0x00,
+                    0x00, 0x00,
+                    0x10, 0x00,
+                    0x80,
+                    0x00,
+                    0x00,
+                    0xAA,
+                    0x00,
+                    0x38,
+                    0x9B,
+                    0x71
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFAudioFormat_DTS
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x08, 0x00, 0x00, 0x00,
+                    0x00, 0x00,
+                    0x10, 0x00,
+                    0x80,
+                    0x00,
+                    0x00,
+                    0xAA,
+                    0x00,
+                    0x38,
+                    0x9B,
+                    0x71
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFAudioFormat_Dolby_AC3_SPDIF
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x92, 0x00, 0x00, 0x00,
+                    0x00, 0x00,
+                    0x10, 0x00,
+                    0x80,
+                    0x00,
+                    0x00,
+                    0xAA,
+                    0x00,
+                    0x38,
+                    0x9B,
+                    0x71
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFAudioFormat_DRM
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x09, 0x00, 0x00, 0x00,
+                    0x00, 0x00,
+                    0x10, 0x00,
+                    0x80,
+                    0x00,
+                    0x00,
+                    0xAA,
+                    0x00,
+                    0x38,
+                    0x9B,
+                    0x71
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFAudioFormat_WMAudioV8
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x61, 0x01, 0x00, 0x00,
+                    0x00, 0x00,
+                    0x10, 0x00,
+                    0x80,
+                    0x00,
+                    0x00,
+                    0xAA,
+                    0x00,
+                    0x38,
+                    0x9B,
+                    0x71
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFAudioFormat_WMAudioV9
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x62, 0x01, 0x00, 0x00,
+                    0x00, 0x00,
+                    0x10, 0x00,
+                    0x80,
+                    0x00,
+                    0x00,
+                    0xAA,
+                    0x00,
+                    0x38,
+                    0x9B,
+                    0x71
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFAudioFormat_WMAudio_Lossless
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x63, 0x01, 0x00, 0x00,
+                    0x00, 0x00,
+                    0x10, 0x00,
+                    0x80,
+                    0x00,
+                    0x00,
+                    0xAA,
+                    0x00,
+                    0x38,
+                    0x9B,
+                    0x71
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFAudioFormat_WMASPDIF
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x64, 0x01, 0x00, 0x00,
+                    0x00, 0x00,
+                    0x10, 0x00,
+                    0x80,
+                    0x00,
+                    0x00,
+                    0xAA,
+                    0x00,
+                    0x38,
+                    0x9B,
+                    0x71
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFAudioFormat_MSP1
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x0A, 0x00, 0x00, 0x00,
+                    0x00, 0x00,
+                    0x10, 0x00,
+                    0x80,
+                    0x00,
+                    0x00,
+                    0xAA,
+                    0x00,
+                    0x38,
+                    0x9B,
+                    0x71
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFAudioFormat_MP3
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x55, 0x00, 0x00, 0x00,
+                    0x00, 0x00,
+                    0x10, 0x00,
+                    0x80,
+                    0x00,
+                    0x00,
+                    0xAA,
+                    0x00,
+                    0x38,
+                    0x9B,
+                    0x71
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFAudioFormat_MPEG
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x50, 0x00, 0x00, 0x00,
+                    0x00, 0x00,
+                    0x10, 0x00,
+                    0x80,
+                    0x00,
+                    0x00,
+                    0xAA,
+                    0x00,
+                    0x38,
+                    0x9B,
+                    0x71
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFAudioFormat_AAC
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x10, 0x16, 0x00, 0x00,
+                    0x00, 0x00,
+                    0x10, 0x00,
+                    0x80,
+                    0x00,
+                    0x00,
+                    0xAA,
+                    0x00,
+                    0x38,
+                    0x9B,
+                    0x71
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFAudioFormat_ADTS
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x00, 0x16, 0x00, 0x00,
+                    0x00, 0x00,
+                    0x10, 0x00,
+                    0x80,
+                    0x00,
+                    0x00,
+                    0xAA,
+                    0x00,
+                    0x38,
+                    0x9B,
+                    0x71
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFAudioFormat_AMR_NB
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x61, 0x73, 0x00, 0x00,
+                    0x00, 0x00,
+                    0x10, 0x00,
+                    0x80,
+                    0x00,
+                    0x00,
+                    0xAA,
+                    0x00,
+                    0x38,
+                    0x9B,
+                    0x71
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFAudioFormat_AMR_WB
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x62, 0x73, 0x00, 0x00,
+                    0x00, 0x00,
+                    0x10, 0x00,
+                    0x80,
+                    0x00,
+                    0x00,
+                    0xAA,
+                    0x00,
+                    0x38,
+                    0x9B,
+                    0x71
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFAudioFormat_AMR_WP
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x63, 0x73, 0x00, 0x00,
+                    0x00, 0x00,
+                    0x10, 0x00,
+                    0x80,
+                    0x00,
+                    0x00,
+                    0xAA,
+                    0x00,
+                    0x38,
+                    0x9B,
+                    0x71
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFAudioFormat_FLAC
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xAC, 0xF1, 0x00, 0x00,
+                    0x00, 0x00,
+                    0x10, 0x00,
+                    0x80,
+                    0x00,
+                    0x00,
+                    0xAA,
+                    0x00,
+                    0x38,
+                    0x9B,
+                    0x71
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFAudioFormat_ALAC
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x61, 0x6C, 0x00, 0x00,
+                    0x00, 0x00,
+                    0x10, 0x00,
+                    0x80,
+                    0x00,
+                    0x00,
+                    0xAA,
+                    0x00,
+                    0x38,
+                    0x9B,
+                    0x71
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFAudioFormat_Opus
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x4F, 0x70, 0x00, 0x00,
+                    0x00, 0x00,
+                    0x10, 0x00,
+                    0x80,
+                    0x00,
+                    0x00,
+                    0xAA,
+                    0x00,
+                    0x38,
+                    0x9B,
+                    0x71
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFAudioFormat_Dolby_AC4
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x40, 0xAC, 0x00, 0x00,
+                    0x00, 0x00,
+                    0x10, 0x00,
+                    0x80,
+                    0x00,
+                    0x00,
+                    0xAA,
+                    0x00,
+                    0x38,
+                    0x9B,
+                    0x71
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFAudioFormat_Dolby_AC3
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x2C, 0x80, 0x6D, 0xE0,
+                    0x46, 0xDB,
+                    0xCF, 0x11,
+                    0xB4,
+                    0xD1,
+                    0x00,
+                    0x80,
+                    0x5F,
+                    0x6C,
+                    0xBB,
+                    0xEA
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFAudioFormat_Dolby_DDPlus
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xAF, 0x87, 0xFB, 0xA7,
+                    0x02, 0x2D,
+                    0xFB, 0x42,
+                    0xA4,
+                    0xD4,
+                    0x05,
+                    0xCD,
+                    0x93,
+                    0x84,
+                    0x3B,
+                    0xDD
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFAudioFormat_Dolby_AC4_V1
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x7C, 0x92, 0xB7, 0x36,
+                    0x87, 0x3D,
+                    0x2A, 0x4A,
+                    0x91,
+                    0x96,
+                    0xA2,
+                    0x1A,
+                    0xD9,
+                    0xE9,
+                    0x35,
+                    0xE6
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFAudioFormat_Dolby_AC4_V2
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xA0, 0xB2, 0x98, 0x79,
+                    0xDD, 0x17,
+                    0xB6, 0x49,
+                    0x8D,
+                    0xFA,
+                    0x9B,
+                    0x27,
+                    0x85,
+                    0x52,
+                    0xA2,
+                    0xAC
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFAudioFormat_Dolby_AC4_V1_ES
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xC6, 0xCC, 0x8D, 0x9D,
+                    0x56, 0xD1,
+                    0xB8, 0x4F,
+                    0x97,
+                    0x9C,
+                    0xA8,
+                    0x5B,
+                    0xE7,
+                    0xD2,
+                    0x1D,
+                    0xFA
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFAudioFormat_Dolby_AC4_V2_ES
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xF9, 0xC9, 0x58, 0x7E,
+                    0x70, 0xB0,
+                    0xF4, 0x45,
+                    0x8C,
+                    0xCD,
+                    0xA9,
+                    0x9A,
+                    0x04,
+                    0x17,
+                    0xC1,
+                    0xAC
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFAudioFormat_Vorbis
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x0B, 0xD1, 0x2F, 0x8D,
+                    0x41, 0x58,
+                    0x6B, 0x4A,
+                    0x89,
+                    0x05,
+                    0x58,
+                    0x8F,
+                    0xEC,
+                    0x1A,
+                    0xDE,
+                    0xD9
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFAudioFormat_DTS_RAW
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x33, 0x80, 0x6D, 0xE0,
+                    0x46, 0xDB,
+                    0xCF, 0x11,
+                    0xB4,
+                    0xD1,
+                    0x00,
+                    0x80,
+                    0x5F,
+                    0x6C,
+                    0xBB,
+                    0xEA
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFAudioFormat_DTS_HD
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xB7, 0x8E, 0xE5, 0xA2,
+                    0xA9, 0x0F,
+                    0xBB, 0x48,
+                    0xA4,
+                    0x0C,
+                    0xFA,
+                    0x0E,
+                    0x15,
+                    0x6D,
+                    0x06,
+                    0x45
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFAudioFormat_DTS_XLL
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x1B, 0x7C, 0xB3, 0x45,
+                    0x70, 0x8C,
+                    0x59, 0x4E,
+                    0xA7,
+                    0xBE,
+                    0xA1,
+                    0xE4,
+                    0x2C,
+                    0x81,
+                    0xC8,
+                    0x0D
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFAudioFormat_DTS_LBR
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x0A, 0x6F, 0xFE, 0xC2,
+                    0x3C, 0x4E,
+                    0xF1, 0x4D,
+                    0x9B,
+                    0x60,
+                    0x50,
+                    0x86,
+                    0x30,
+                    0x91,
+                    0xE4,
+                    0xB9
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFAudioFormat_DTS_UHD
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x17, 0x01, 0x02, 0x87,
+                    0xE3, 0xAC,
+                    0xDE, 0x42,
+                    0xB7,
+                    0x3E,
+                    0xC6,
+                    0x56,
+                    0x70,
+                    0x62,
+                    0x63,
+                    0xF8
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFAudioFormat_DTS_UHDY
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x00, 0xCA, 0x9C, 0x9B,
+                    0xB9, 0x91,
+                    0xCC, 0x4C,
+                    0x88,
+                    0x3A,
+                    0x8F,
+                    0x78,
+                    0x7A,
+                    0xC3,
+                    0xCC,
+                    0x86
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFAudioFormat_Float_SpatialObjects
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x94, 0xCD, 0x39, 0xFA,
+                    0x64, 0xBC,
+                    0xB1, 0x4A,
+                    0x9B,
+                    0x71,
+                    0xDC,
+                    0xD0,
+                    0x9D,
+                    0x5A,
+                    0x7E,
+                    0x7A
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFAudioFormat_LPCM
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x32, 0x80, 0x6D, 0xE0,
+                    0x46, 0xDB,
+                    0xCF, 0x11,
+                    0xB4,
+                    0xD1,
+                    0x00,
+                    0x80,
+                    0x5F,
+                    0x6C,
+                    0xBB,
+                    0xEA
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFAudioFormat_PCM_HDCP
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x01, 0xFF, 0xE7, 0xA5,
+                    0x11, 0x84,
+                    0xCC, 0x4A,
+                    0xA8,
+                    0x65,
+                    0x5F,
+                    0x49,
+                    0x41,
+                    0x28,
+                    0x8D,
+                    0x80
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFAudioFormat_Dolby_AC3_HDCP
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x80, 0x3A, 0x66, 0x97,
+                    0xFB, 0x8F,
+                    0x45, 0x44,
+                    0xA6,
+                    0xBA,
+                    0x79,
+                    0x2D,
+                    0x90,
+                    0x8F,
+                    0x49,
+                    0x7F
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFAudioFormat_AAC_HDCP
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x76, 0xCE, 0x9B, 0x41,
+                    0x72, 0x8B,
+                    0x0F, 0x40,
+                    0xAD,
+                    0xEB,
+                    0x84,
+                    0xB5,
+                    0x7D,
+                    0x63,
+                    0x48,
+                    0x4D
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFAudioFormat_ADTS_HDCP
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xA3, 0x63, 0x49, 0xDA,
+                    0xD8, 0x14,
+                    0xCF, 0x4D,
+                    0x92,
+                    0xB7,
+                    0x19,
+                    0x3E,
+                    0xB8,
+                    0x43,
+                    0x63,
+                    0xDB
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFAudioFormat_Base_HDCP
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xBC, 0xB5, 0x84, 0x38,
+                    0x77, 0xE2,
+                    0xFD, 0x43,
+                    0x98,
+                    0x3D,
+                    0x03,
+                    0x8A,
+                    0xA8,
+                    0xD9,
+                    0xB6,
+                    0x05
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFVideoFormat_H264_HDCP
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xDD, 0xE9, 0x0C, 0x5D,
+                    0x17, 0x98,
+                    0xDA, 0x49,
+                    0xBD,
+                    0xFD,
+                    0xF5,
+                    0xF5,
+                    0xB9,
+                    0x8F,
+                    0x18,
+                    0xA6
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFVideoFormat_HEVC_HDCP
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xE6, 0x0F, 0xFE, 0x3C,
+                    0xC4, 0x05,
+                    0xDC, 0x47,
+                    0x9D,
+                    0x70,
+                    0x4B,
+                    0xDB,
+                    0x29,
+                    0x59,
+                    0x72,
+                    0x0F
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFVideoFormat_Base_HDCP
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xD5, 0xB9, 0xC3, 0xEA,
+                    0x14, 0xBD,
+                    0x37, 0x42,
+                    0x8F,
+                    0x1F,
+                    0xBA,
+                    0xB4,
+                    0x28,
+                    0xE4,
+                    0x93,
+                    0x12
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFMPEG4Format_Base
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x00, 0x00, 0x00, 0x00,
+                    0x7A, 0x76,
+                    0x4D, 0x49,
+                    0xB4,
+                    0x78,
+                    0xF2,
+                    0x9D,
+                    0x25,
+                    0xDC,
+                    0x90,
+                    0x37
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFSubtitleFormat_XML
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x4F, 0xF9, 0x06, 0x20,
+                    0xCA, 0x29,
+                    0x95, 0x41,
+                    0xB8,
+                    0xDB,
+                    0x00,
+                    0xDE,
+                    0xD8,
+                    0xFF,
+                    0x0C,
+                    0x97
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFSubtitleFormat_TTML
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x92, 0x39, 0xE7, 0x73,
+                    0x10, 0x9A,
+                    0x56, 0x43,
+                    0x95,
+                    0x57,
+                    0x71,
+                    0x94,
+                    0xE9,
+                    0x1E,
+                    0x3E,
+                    0x54
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFSubtitleFormat_ATSC
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xA3, 0xFA, 0xA7, 0x7F,
+                    0xAE, 0xFE,
+                    0x16, 0x4E,
+                    0xAE,
+                    0xDF,
+                    0x36,
+                    0xB9,
+                    0xAC,
+                    0xFB,
+                    0xB0,
+                    0x99
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFSubtitleFormat_WebVTT
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x15, 0xD2, 0x86, 0xC8,
+                    0x85, 0xF4,
+                    0xBB, 0x40,
+                    0x8D,
+                    0xB6,
+                    0xFA,
+                    0xDB,
+                    0xC6,
+                    0x19,
+                    0xA4,
+                    0x5D
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFSubtitleFormat_SRT
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x2E, 0x7F, 0x46, 0x5E,
+                    0xCA, 0x77,
+                    0xA5, 0x4C,
+                    0x83,
+                    0x91,
+                    0xD1,
+                    0x42,
+                    0xED,
+                    0x4B,
+                    0x76,
+                    0xC8
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFSubtitleFormat_SSA
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x1B, 0x6A, 0x17, 0x57,
+                    0x9E, 0x1A,
+                    0xEA, 0x4E,
+                    0xAB,
+                    0xEF,
+                    0xC6,
+                    0x17,
+                    0x60,
+                    0x19,
+                    0x8A,
+                    0xC4
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFSubtitleFormat_CustomUserData
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x49, 0xD8, 0xB3, 0x1B,
+                    0x14, 0x66,
+                    0x80, 0x4D,
+                    0x88,
+                    0x82,
+                    0xED,
+                    0x24,
+                    0xAA,
+                    0x82,
+                    0xDA,
+                    0x92
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFSubtitleFormat_PGS
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x4A, 0x0E, 0xF4, 0x71,
+                    0x78, 0x12,
+                    0x42, 0x44,
+                    0xB3,
+                    0x0D,
+                    0x39,
+                    0xDD,
+                    0x1D,
+                    0x77,
+                    0x22,
+                    0xBC
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFSubtitleFormat_VobSub
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xF4, 0x40, 0x8E, 0x6B,
+                    0x2C, 0x8D,
+                    0xED, 0x4C,
+                    0xAD,
+                    0x91,
+                    0x59,
+                    0x60,
+                    0xE4,
+                    0x5B,
+                    0x44,
+                    0x33
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFBinaryFormat_Base
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x00, 0x00, 0x00, 0x00,
+                    0x10, 0xBF,
+                    0xB4, 0x48,
+                    0xBC,
+                    0x18,
+                    0x59,
+                    0x3D,
+                    0xC1,
+                    0xDB,
+                    0x95,
+                    0x0F
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFBinaryFormat_GPMD
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x64, 0x6D, 0x70, 0x67,
+                    0x10, 0xBF,
+                    0xB4, 0x48,
+                    0xBC,
+                    0x18,
+                    0x59,
+                    0x3D,
+                    0xC1,
+                    0xDB,
+                    0x95,
+                    0x0F
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MF_MT_MAJOR_TYPE
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x8E, 0xA1, 0xEB, 0x48,
+                    0xC9, 0xF8,
+                    0x87, 0x46,
+                    0xBF,
+                    0x11,
+                    0x0A,
+                    0x74,
+                    0xC9,
+                    0xF9,
+                    0x6A,
+                    0x8F
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MF_MT_SUBTYPE
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x9A, 0x4C, 0xE3, 0xF7,
+                    0xE8, 0x42,
+                    0x14, 0x47,
+                    0xB7,
+                    0x4B,
+                    0xCB,
+                    0x29,
+                    0xD7,
+                    0x2C,
+                    0x35,
+                    0xE5
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MF_MT_ALL_SAMPLES_INDEPENDENT
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x39, 0x37, 0x17, 0xC9,
+                    0x56, 0x5E,
+                    0x1C, 0x46,
+                    0xB7,
+                    0x13,
+                    0x46,
+                    0xFB,
+                    0x99,
+                    0x5C,
+                    0xB9,
+                    0x5F
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MF_MT_FIXED_SIZE_SAMPLES
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xAF, 0xEF, 0xEB, 0xB8,
+                    0x18, 0xB7,
+                    0x04, 0x4E,
+                    0xB0,
+                    0xA9,
+                    0x11,
+                    0x67,
+                    0x75,
+                    0xE3,
+                    0x32,
+                    0x1B
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MF_MT_COMPRESSED
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xEE, 0x0C, 0xFD, 0x3A,
+                    0xF2, 0x18,
+                    0xA5, 0x4B,
+                    0xA1,
+                    0x10,
+                    0x8B,
+                    0xEA,
+                    0x50,
+                    0x2E,
+                    0x1F,
+                    0x92
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MF_MT_SAMPLE_SIZE
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x78, 0xAB, 0xD3, 0xDA,
+                    0x90, 0x19,
+                    0x8B, 0x40,
+                    0xBC,
+                    0xE2,
+                    0xEB,
+                    0xA6,
+                    0x73,
+                    0xDA,
+                    0xCC,
+                    0x10
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MF_MT_WRAPPED_TYPE
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x23, 0x7B, 0x3F, 0x4D,
+                    0x2F, 0xD0,
+                    0x6C, 0x4E,
+                    0x9B,
+                    0xEE,
+                    0xE4,
+                    0xBF,
+                    0x2C,
+                    0x6C,
+                    0x69,
+                    0x5D
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MF_MT_VIDEO_3D
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xCF, 0x88, 0x5E, 0xCB,
+                    0x5B, 0x7B,
+                    0x6B, 0x47,
+                    0x85,
+                    0xAA,
+                    0x1C,
+                    0xA5,
+                    0xAE,
+                    0x18,
+                    0x75,
+                    0x55
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MF_MT_VIDEO_3D_FORMAT
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xA0, 0xD8, 0x15, 0x53,
+                    0xC5, 0x87,
+                    0x97, 0x46,
+                    0xB7,
+                    0x93,
+                    0x66,
+                    0x06,
+                    0xC6,
+                    0x7C,
+                    0x04,
+                    0x9B
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MF_MT_VIDEO_3D_NUM_VIEWS
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x8A, 0x7E, 0x07, 0xBB,
+                    0xBF, 0xDC,
+                    0xEB, 0x42,
+                    0xAF,
+                    0x60,
+                    0x41,
+                    0x8D,
+                    0xF9,
+                    0x8A,
+                    0xA4,
+                    0x95
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MF_MT_VIDEO_3D_LEFT_IS_BASE
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xFF, 0x7B, 0x4B, 0x6D,
+                    0x29, 0x56,
+                    0x04, 0x44,
+                    0x94,
+                    0x8C,
+                    0xC6,
+                    0x34,
+                    0xF4,
+                    0xCE,
+                    0x26,
+                    0xD4
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MF_MT_VIDEO_3D_FIRST_IS_LEFT
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x93, 0x84, 0x29, 0xEC,
+                    0xDA, 0x0A,
+                    0xA1, 0x4E,
+                    0xA4,
+                    0xFE,
+                    0xCB,
+                    0xBD,
+                    0x36,
+                    0xCE,
+                    0x93,
+                    0x31
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFSampleExtension_3DVideo
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xA4, 0x97, 0x6F, 0xF8,
+                    0x54, 0xDD,
+                    0x2E, 0x4E,
+                    0x9A,
+                    0x5E,
+                    0x55,
+                    0xFC,
+                    0x2D,
+                    0x74,
+                    0xA0,
+                    0x05
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFSampleExtension_3DVideo_SampleFormat
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x72, 0x17, 0x67, 0x08,
+                    0x6F, 0xE3,
+                    0xFF, 0x4C,
+                    0x97,
+                    0xB3,
+                    0xD7,
+                    0x2E,
+                    0x20,
+                    0x98,
+                    0x7A,
+                    0x48
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MF_MT_VIDEO_ROTATION
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x5D, 0x46, 0x80, 0xC3,
+                    0x71, 0x22,
+                    0x8C, 0x42,
+                    0x9B,
+                    0x83,
+                    0xEC,
+                    0xEA,
+                    0x3B,
+                    0x4A,
+                    0x85,
+                    0xC1
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MF_DEVICESTREAM_MULTIPLEXED_MANAGER
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xB0, 0x42, 0xA5, 0x6E,
+                    0x1F, 0x28,
+                    0x31, 0x42,
+                    0xA4,
+                    0x64,
+                    0xFE,
+                    0x2F,
+                    0x50,
+                    0x22,
+                    0x50,
+                    0x1C
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MF_MEDIATYPE_MULTIPLEXED_MANAGER
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xB5, 0x8F, 0xC7, 0x13,
+                    0x75, 0xF2,
+                    0xA0, 0x4E,
+                    0xBB,
+                    0x5F,
+                    0x02,
+                    0x49,
+                    0x83,
+                    0x2B,
+                    0x0D,
+                    0x6E
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFSampleExtension_MULTIPLEXED_MANAGER
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x79, 0xEE, 0xCD, 0x8D,
+                    0x5A, 0x6B,
+                    0x45, 0x4C,
+                    0x8D,
+                    0xB9,
+                    0x20,
+                    0xB3,
+                    0x95,
+                    0xF0,
+                    0x2F,
+                    0xCF
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [DllImport("mfplat", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
@@ -1123,439 +7021,3629 @@ namespace TerraFX.Interop
         public static extern int MFCreateMuxStreamSample(IMFCollection* pSamplesToMux, IMFSample** ppMuxSample);
 
         [NativeTypeName("const GUID")]
-        public static readonly Guid MF_MT_SECURE = new Guid(0xc5acc4fd, 0x0304, 0x4ecf, 0x80, 0x9f, 0x47, 0xbc, 0x97, 0xff, 0x63, 0xbd);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MF_DEVICESTREAM_ATTRIBUTE_FRAMESOURCE_TYPES = new Guid(0x17145fd1, 0x1b2b, 0x423c, 0x80, 0x1, 0x2b, 0x68, 0x33, 0xed, 0x35, 0x88);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MF_MT_ALPHA_MODE = new Guid(0x5D959B0D, 0x4CBF, 0x4D04, 0x91, 0x9F, 0x3F, 0x5F, 0x7F, 0x28, 0x42, 0x11);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MF_MT_DEPTH_MEASUREMENT = new Guid(0xfd5ac489, 0x917, 0x4bb6, 0x9d, 0x54, 0x31, 0x22, 0xbf, 0x70, 0x14, 0x4b);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MF_MT_DEPTH_VALUE_UNIT = new Guid(0x21a800f5, 0x3189, 0x4797, 0xbe, 0xba, 0xf1, 0x3c, 0xd9, 0xa3, 0x1a, 0x5e);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MF_MT_VIDEO_NO_FRAME_ORDERING = new Guid(0x3f5b106f, 0x6bc2, 0x4ee3, 0xb7, 0xed, 0x89, 0x2, 0xc1, 0x8f, 0x53, 0x51);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MF_MT_VIDEO_H264_NO_FMOASO = new Guid(0xed461cd6, 0xec9f, 0x416a, 0xa8, 0xa3, 0x26, 0xd7, 0xd3, 0x10, 0x18, 0xd7);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFSampleExtension_ForwardedDecodeUnits = new Guid(0x424c754c, 0x97c8, 0x48d6, 0x87, 0x77, 0xfc, 0x41, 0xf7, 0xb6, 0x8, 0x79);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFSampleExtension_TargetGlobalLuminance = new Guid(0x3f60ef36, 0x31ef, 0x4daf, 0x83, 0x60, 0x94, 0x3, 0x97, 0xe4, 0x1e, 0xf3);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFSampleExtension_ForwardedDecodeUnitType = new Guid(0x89e57c7, 0x47d3, 0x4a26, 0xbf, 0x9c, 0x4b, 0x64, 0xfa, 0xfb, 0x5d, 0x1e);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MF_MT_FORWARD_CUSTOM_NALU = new Guid(0xed336efd, 0x244f, 0x428d, 0x91, 0x53, 0x28, 0xf3, 0x99, 0x45, 0x88, 0x90);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MF_MT_FORWARD_CUSTOM_SEI = new Guid(0xe27362f1, 0xb136, 0x41d1, 0x95, 0x94, 0x3a, 0x7e, 0x4f, 0xeb, 0xf2, 0xd1);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MF_MT_VIDEO_RENDERER_EXTENSION_PROFILE = new Guid(0x8437d4b9, 0xd448, 0x4fcd, 0x9b, 0x6b, 0x83, 0x9b, 0xf9, 0x6c, 0x77, 0x98);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MF_DECODER_FWD_CUSTOM_SEI_DECODE_ORDER = new Guid(0xf13bbe3c, 0x36d4, 0x410a, 0xb9, 0x85, 0x7a, 0x95, 0x1a, 0x1e, 0x62, 0x94);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MF_VIDEO_RENDERER_EFFECT_APP_SERVICE_NAME = new Guid(0xc6052a80, 0x6d9c, 0x40a3, 0x9d, 0xb8, 0xf0, 0x27, 0xa2, 0x5c, 0x9a, 0xb9);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MF_MT_AUDIO_NUM_CHANNELS = new Guid(0x37e48bf5, 0x645e, 0x4c5b, 0x89, 0xde, 0xad, 0xa9, 0xe2, 0x9b, 0x69, 0x6a);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MF_MT_AUDIO_SAMPLES_PER_SECOND = new Guid(0x5faeeae7, 0x0290, 0x4c31, 0x9e, 0x8a, 0xc5, 0x34, 0xf6, 0x8d, 0x9d, 0xba);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MF_MT_AUDIO_FLOAT_SAMPLES_PER_SECOND = new Guid(0xfb3b724a, 0xcfb5, 0x4319, 0xae, 0xfe, 0x6e, 0x42, 0xb2, 0x40, 0x61, 0x32);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MF_MT_AUDIO_AVG_BYTES_PER_SECOND = new Guid(0x1aab75c8, 0xcfef, 0x451c, 0xab, 0x95, 0xac, 0x03, 0x4b, 0x8e, 0x17, 0x31);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MF_MT_AUDIO_BLOCK_ALIGNMENT = new Guid(0x322de230, 0x9eeb, 0x43bd, 0xab, 0x7a, 0xff, 0x41, 0x22, 0x51, 0x54, 0x1d);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MF_MT_AUDIO_BITS_PER_SAMPLE = new Guid(0xf2deb57f, 0x40fa, 0x4764, 0xaa, 0x33, 0xed, 0x4f, 0x2d, 0x1f, 0xf6, 0x69);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MF_MT_AUDIO_VALID_BITS_PER_SAMPLE = new Guid(0xd9bf8d6a, 0x9530, 0x4b7c, 0x9d, 0xdf, 0xff, 0x6f, 0xd5, 0x8b, 0xbd, 0x06);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MF_MT_AUDIO_SAMPLES_PER_BLOCK = new Guid(0xaab15aac, 0xe13a, 0x4995, 0x92, 0x22, 0x50, 0x1e, 0xa1, 0x5c, 0x68, 0x77);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MF_MT_AUDIO_CHANNEL_MASK = new Guid(0x55fb5765, 0x644a, 0x4caf, 0x84, 0x79, 0x93, 0x89, 0x83, 0xbb, 0x15, 0x88);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MF_MT_AUDIO_FOLDDOWN_MATRIX = new Guid(0x9d62927c, 0x36be, 0x4cf2, 0xb5, 0xc4, 0xa3, 0x92, 0x6e, 0x3e, 0x87, 0x11);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MF_MT_AUDIO_WMADRC_PEAKREF = new Guid(0x9d62927d, 0x36be, 0x4cf2, 0xb5, 0xc4, 0xa3, 0x92, 0x6e, 0x3e, 0x87, 0x11);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MF_MT_AUDIO_WMADRC_PEAKTARGET = new Guid(0x9d62927e, 0x36be, 0x4cf2, 0xb5, 0xc4, 0xa3, 0x92, 0x6e, 0x3e, 0x87, 0x11);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MF_MT_AUDIO_WMADRC_AVGREF = new Guid(0x9d62927f, 0x36be, 0x4cf2, 0xb5, 0xc4, 0xa3, 0x92, 0x6e, 0x3e, 0x87, 0x11);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MF_MT_AUDIO_WMADRC_AVGTARGET = new Guid(0x9d629280, 0x36be, 0x4cf2, 0xb5, 0xc4, 0xa3, 0x92, 0x6e, 0x3e, 0x87, 0x11);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MF_MT_AUDIO_PREFER_WAVEFORMATEX = new Guid(0xa901aaba, 0xe037, 0x458a, 0xbd, 0xf6, 0x54, 0x5b, 0xe2, 0x07, 0x40, 0x42);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MF_MT_AAC_PAYLOAD_TYPE = new Guid(0xbfbabe79, 0x7434, 0x4d1c, 0x94, 0xf0, 0x72, 0xa3, 0xb9, 0xe1, 0x71, 0x88);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MF_MT_AAC_AUDIO_PROFILE_LEVEL_INDICATION = new Guid(0x7632f0e6, 0x9538, 0x4d61, 0xac, 0xda, 0xea, 0x29, 0xc8, 0xc1, 0x44, 0x56);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MF_MT_AUDIO_FLAC_MAX_BLOCK_SIZE = new Guid(0x8b81adae, 0x4b5a, 0x4d40, 0x80, 0x22, 0xf3, 0x8d, 0x9, 0xca, 0x3c, 0x5c);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MF_MT_SPATIAL_AUDIO_MAX_DYNAMIC_OBJECTS = new Guid(0xdcfba24a, 0x2609, 0x4240, 0xa7, 0x21, 0x3f, 0xae, 0xa7, 0x6a, 0x4d, 0xf9);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MF_MT_SPATIAL_AUDIO_OBJECT_METADATA_FORMAT_ID = new Guid(0x2ab71bc0, 0x6223, 0x4ba7, 0xad, 0x64, 0x7b, 0x94, 0xb4, 0x7a, 0xe7, 0x92);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MF_MT_SPATIAL_AUDIO_OBJECT_METADATA_LENGTH = new Guid(0x94ba8be, 0xd723, 0x489f, 0x92, 0xfa, 0x76, 0x67, 0x77, 0xb3, 0x47, 0x26);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MF_MT_SPATIAL_AUDIO_MAX_METADATA_ITEMS = new Guid(0x11aa80b4, 0xe0da, 0x47c6, 0x80, 0x60, 0x96, 0xc1, 0x25, 0x9a, 0xe5, 0xd);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MF_MT_SPATIAL_AUDIO_MIN_METADATA_ITEM_OFFSET_SPACING = new Guid(0x83e96ec9, 0x1184, 0x417e, 0x82, 0x54, 0x9f, 0x26, 0x91, 0x58, 0xfc, 0x6);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MF_MT_SPATIAL_AUDIO_DATA_PRESENT = new Guid(0x6842f6e7, 0xd43e, 0x4ebb, 0x9c, 0x9c, 0xc9, 0x6f, 0x41, 0x78, 0x48, 0x63);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MF_MT_FRAME_SIZE = new Guid(0x1652c33d, 0xd6b2, 0x4012, 0xb8, 0x34, 0x72, 0x03, 0x08, 0x49, 0xa3, 0x7d);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MF_MT_FRAME_RATE = new Guid(0xc459a2e8, 0x3d2c, 0x4e44, 0xb1, 0x32, 0xfe, 0xe5, 0x15, 0x6c, 0x7b, 0xb0);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MF_MT_PIXEL_ASPECT_RATIO = new Guid(0xc6376a1e, 0x8d0a, 0x4027, 0xbe, 0x45, 0x6d, 0x9a, 0x0a, 0xd3, 0x9b, 0xb6);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MF_MT_DRM_FLAGS = new Guid(0x8772f323, 0x355a, 0x4cc7, 0xbb, 0x78, 0x6d, 0x61, 0xa0, 0x48, 0xae, 0x82);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MF_MT_TIMESTAMP_CAN_BE_DTS = new Guid(0x24974215, 0x1b7b, 0x41e4, 0x86, 0x25, 0xac, 0x46, 0x9f, 0x2d, 0xed, 0xaa);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MF_MT_PAD_CONTROL_FLAGS = new Guid(0x4d0e73e5, 0x80ea, 0x4354, 0xa9, 0xd0, 0x11, 0x76, 0xce, 0xb0, 0x28, 0xea);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MF_MT_SOURCE_CONTENT_HINT = new Guid(0x68aca3cc, 0x22d0, 0x44e6, 0x85, 0xf8, 0x28, 0x16, 0x71, 0x97, 0xfa, 0x38);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MF_MT_VIDEO_CHROMA_SITING = new Guid(0x65df2370, 0xc773, 0x4c33, 0xaa, 0x64, 0x84, 0x3e, 0x06, 0x8e, 0xfb, 0x0c);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MF_MT_INTERLACE_MODE = new Guid(0xe2724bb8, 0xe676, 0x4806, 0xb4, 0xb2, 0xa8, 0xd6, 0xef, 0xb4, 0x4c, 0xcd);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MF_MT_TRANSFER_FUNCTION = new Guid(0x5fb0fce9, 0xbe5c, 0x4935, 0xa8, 0x11, 0xec, 0x83, 0x8f, 0x8e, 0xed, 0x93);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MF_MT_VIDEO_PRIMARIES = new Guid(0xdbfbe4d7, 0x0740, 0x4ee0, 0x81, 0x92, 0x85, 0x0a, 0xb0, 0xe2, 0x19, 0x35);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MF_MT_MAX_LUMINANCE_LEVEL = new Guid(0x50253128, 0xc110, 0x4de4, 0x98, 0xae, 0x46, 0xa3, 0x24, 0xfa, 0xe6, 0xda);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MF_MT_MAX_FRAME_AVERAGE_LUMINANCE_LEVEL = new Guid(0x58d4bf57, 0x6f52, 0x4733, 0xa1, 0x95, 0xa9, 0xe2, 0x9e, 0xcf, 0x9e, 0x27);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MF_MT_MAX_MASTERING_LUMINANCE = new Guid(0xd6c6b997, 0x272f, 0x4ca1, 0x8d, 0x0, 0x80, 0x42, 0x11, 0x1a, 0xf, 0xf6);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MF_MT_MIN_MASTERING_LUMINANCE = new Guid(0x839a4460, 0x4e7e, 0x4b4f, 0xae, 0x79, 0xcc, 0x8, 0x90, 0x5c, 0x7b, 0x27);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MF_MT_DECODER_USE_MAX_RESOLUTION = new Guid(0x4c547c24, 0xaf9a, 0x4f38, 0x96, 0xad, 0x97, 0x87, 0x73, 0xcf, 0x53, 0xe7);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MF_MT_DECODER_MAX_DPB_COUNT = new Guid(0x67be144c, 0x88b7, 0x4ca9, 0x96, 0x28, 0xc8, 0x8, 0xd5, 0x26, 0x22, 0x17);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MF_MT_CUSTOM_VIDEO_PRIMARIES = new Guid(0x47537213, 0x8cfb, 0x4722, 0xaa, 0x34, 0xfb, 0xc9, 0xe2, 0x4d, 0x77, 0xb8);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MF_MT_YUV_MATRIX = new Guid(0x3e23d450, 0x2c75, 0x4d25, 0xa0, 0x0e, 0xb9, 0x16, 0x70, 0xd1, 0x23, 0x27);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MF_MT_VIDEO_LIGHTING = new Guid(0x53a0529c, 0x890b, 0x4216, 0x8b, 0xf9, 0x59, 0x93, 0x67, 0xad, 0x6d, 0x20);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MF_MT_VIDEO_NOMINAL_RANGE = new Guid(0xc21b8ee5, 0xb956, 0x4071, 0x8d, 0xaf, 0x32, 0x5e, 0xdf, 0x5c, 0xab, 0x11);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MF_MT_GEOMETRIC_APERTURE = new Guid(0x66758743, 0x7e5f, 0x400d, 0x98, 0x0a, 0xaa, 0x85, 0x96, 0xc8, 0x56, 0x96);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MF_MT_MINIMUM_DISPLAY_APERTURE = new Guid(0xd7388766, 0x18fe, 0x48c6, 0xa1, 0x77, 0xee, 0x89, 0x48, 0x67, 0xc8, 0xc4);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MF_MT_PAN_SCAN_APERTURE = new Guid(0x79614dde, 0x9187, 0x48fb, 0xb8, 0xc7, 0x4d, 0x52, 0x68, 0x9d, 0xe6, 0x49);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MF_MT_PAN_SCAN_ENABLED = new Guid(0x4b7f6bc3, 0x8b13, 0x40b2, 0xa9, 0x93, 0xab, 0xf6, 0x30, 0xb8, 0x20, 0x4e);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MF_MT_AVG_BITRATE = new Guid(0x20332624, 0xfb0d, 0x4d9e, 0xbd, 0x0d, 0xcb, 0xf6, 0x78, 0x6c, 0x10, 0x2e);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MF_MT_AVG_BIT_ERROR_RATE = new Guid(0x799cabd6, 0x3508, 0x4db4, 0xa3, 0xc7, 0x56, 0x9c, 0xd5, 0x33, 0xde, 0xb1);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MF_MT_MAX_KEYFRAME_SPACING = new Guid(0xc16eb52b, 0x73a1, 0x476f, 0x8d, 0x62, 0x83, 0x9d, 0x6a, 0x02, 0x06, 0x52);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MF_MT_USER_DATA = new Guid(0xb6bc765f, 0x4c3b, 0x40a4, 0xbd, 0x51, 0x25, 0x35, 0xb6, 0x6f, 0xe0, 0x9d);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MF_MT_OUTPUT_BUFFER_NUM = new Guid(0xa505d3ac, 0xf930, 0x436e, 0x8e, 0xde, 0x93, 0xa5, 0x09, 0xce, 0x23, 0xb2);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MF_MT_REALTIME_CONTENT = new Guid(0xbb12d222, 0x2bdb, 0x425e, 0x91, 0xec, 0x23, 0x08, 0xe1, 0x89, 0xa5, 0x8f);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MF_MT_DEFAULT_STRIDE = new Guid(0x644b4e48, 0x1e02, 0x4516, 0xb0, 0xeb, 0xc0, 0x1c, 0xa9, 0xd4, 0x9a, 0xc6);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MF_MT_PALETTE = new Guid(0x6d283f42, 0x9846, 0x4410, 0xaf, 0xd9, 0x65, 0x4d, 0x50, 0x3b, 0x1a, 0x54);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MF_MT_AM_FORMAT_TYPE = new Guid(0x73d1072d, 0x1870, 0x4174, 0xa0, 0x63, 0x29, 0xff, 0x4f, 0xf6, 0xc1, 0x1e);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MF_MT_VIDEO_PROFILE = new Guid(0xad76a80b, 0x2d5c, 0x4e0b, 0xb3, 0x75, 0x64, 0xe5, 0x20, 0x13, 0x70, 0x36);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MF_MT_VIDEO_LEVEL = new Guid(0x96f66574, 0x11c5, 0x4015, 0x86, 0x66, 0xbf, 0xf5, 0x16, 0x43, 0x6d, 0xa7);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MF_MT_MPEG_START_TIME_CODE = new Guid(0x91f67885, 0x4333, 0x4280, 0x97, 0xcd, 0xbd, 0x5a, 0x6c, 0x03, 0xa0, 0x6e);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MF_MT_MPEG2_PROFILE = new Guid(0xad76a80b, 0x2d5c, 0x4e0b, 0xb3, 0x75, 0x64, 0xe5, 0x20, 0x13, 0x70, 0x36);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MF_MT_MPEG2_LEVEL = new Guid(0x96f66574, 0x11c5, 0x4015, 0x86, 0x66, 0xbf, 0xf5, 0x16, 0x43, 0x6d, 0xa7);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MF_MT_MPEG2_FLAGS = new Guid(0x31e3991d, 0xf701, 0x4b2f, 0xb4, 0x26, 0x8a, 0xe3, 0xbd, 0xa9, 0xe0, 0x4b);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MF_MT_MPEG_SEQUENCE_HEADER = new Guid(0x3c036de7, 0x3ad0, 0x4c9e, 0x92, 0x16, 0xee, 0x6d, 0x6a, 0xc2, 0x1c, 0xb3);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MF_MT_MPEG2_STANDARD = new Guid(0xa20af9e8, 0x928a, 0x4b26, 0xaa, 0xa9, 0xf0, 0x5c, 0x74, 0xca, 0xc4, 0x7c);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MF_MT_MPEG2_TIMECODE = new Guid(0x5229ba10, 0xe29d, 0x4f80, 0xa5, 0x9c, 0xdf, 0x4f, 0x18, 0x2, 0x7, 0xd2);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MF_MT_MPEG2_CONTENT_PACKET = new Guid(0x825d55e4, 0x4f12, 0x4197, 0x9e, 0xb3, 0x59, 0xb6, 0xe4, 0x71, 0xf, 0x6);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MF_MT_MPEG2_ONE_FRAME_PER_PACKET = new Guid(0x91a49eb5, 0x1d20, 0x4b42, 0xac, 0xe8, 0x80, 0x42, 0x69, 0xbf, 0x95, 0xed);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MF_MT_MPEG2_HDCP = new Guid(0x168f1b4a, 0x3e91, 0x450f, 0xae, 0xa7, 0xe4, 0xba, 0xea, 0xda, 0xe5, 0xba);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MF_MT_H264_MAX_CODEC_CONFIG_DELAY = new Guid(0xf5929986, 0x4c45, 0x4fbb, 0xbb, 0x49, 0x6c, 0xc5, 0x34, 0xd0, 0x5b, 0x9b);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MF_MT_H264_SUPPORTED_SLICE_MODES = new Guid(0xc8be1937, 0x4d64, 0x4549, 0x83, 0x43, 0xa8, 0x8, 0x6c, 0xb, 0xfd, 0xa5);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MF_MT_H264_SUPPORTED_SYNC_FRAME_TYPES = new Guid(0x89a52c01, 0xf282, 0x48d2, 0xb5, 0x22, 0x22, 0xe6, 0xae, 0x63, 0x31, 0x99);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MF_MT_H264_RESOLUTION_SCALING = new Guid(0xe3854272, 0xf715, 0x4757, 0xba, 0x90, 0x1b, 0x69, 0x6c, 0x77, 0x34, 0x57);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MF_MT_H264_SIMULCAST_SUPPORT = new Guid(0x9ea2d63d, 0x53f0, 0x4a34, 0xb9, 0x4e, 0x9d, 0xe4, 0x9a, 0x7, 0x8c, 0xb3);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MF_MT_H264_SUPPORTED_RATE_CONTROL_MODES = new Guid(0x6a8ac47e, 0x519c, 0x4f18, 0x9b, 0xb3, 0x7e, 0xea, 0xae, 0xa5, 0x59, 0x4d);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MF_MT_H264_MAX_MB_PER_SEC = new Guid(0x45256d30, 0x7215, 0x4576, 0x93, 0x36, 0xb0, 0xf1, 0xbc, 0xd5, 0x9b, 0xb2);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MF_MT_H264_SUPPORTED_USAGES = new Guid(0x60b1a998, 0xdc01, 0x40ce, 0x97, 0x36, 0xab, 0xa8, 0x45, 0xa2, 0xdb, 0xdc);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MF_MT_H264_CAPABILITIES = new Guid(0xbb3bd508, 0x490a, 0x11e0, 0x99, 0xe4, 0x13, 0x16, 0xdf, 0xd7, 0x20, 0x85);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MF_MT_H264_SVC_CAPABILITIES = new Guid(0xf8993abe, 0xd937, 0x4a8f, 0xbb, 0xca, 0x69, 0x66, 0xfe, 0x9e, 0x11, 0x52);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MF_MT_H264_USAGE = new Guid(0x359ce3a5, 0xaf00, 0x49ca, 0xa2, 0xf4, 0x2a, 0xc9, 0x4c, 0xa8, 0x2b, 0x61);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MF_MT_H264_RATE_CONTROL_MODES = new Guid(0x705177d8, 0x45cb, 0x11e0, 0xac, 0x7d, 0xb9, 0x1c, 0xe0, 0xd7, 0x20, 0x85);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MF_MT_H264_LAYOUT_PER_STREAM = new Guid(0x85e299b2, 0x90e3, 0x4fe8, 0xb2, 0xf5, 0xc0, 0x67, 0xe0, 0xbf, 0xe5, 0x7a);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MF_MT_IN_BAND_PARAMETER_SET = new Guid(0x75da5090, 0x910b, 0x4a03, 0x89, 0x6c, 0x7b, 0x89, 0x8f, 0xee, 0xa5, 0xaf);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MF_MT_MPEG4_TRACK_TYPE = new Guid(0x54f486dd, 0x9327, 0x4f6d, 0x80, 0xab, 0x6f, 0x70, 0x9e, 0xbb, 0x4c, 0xce);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MF_MT_CONTAINER_RATE_SCALING = new Guid(0x83877f5e, 0x444, 0x4e28, 0x84, 0x79, 0x6d, 0xb0, 0x98, 0x9b, 0x8c, 0x9);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MF_MT_DV_AAUX_SRC_PACK_0 = new Guid(0x84bd5d88, 0x0fb8, 0x4ac8, 0xbe, 0x4b, 0xa8, 0x84, 0x8b, 0xef, 0x98, 0xf3);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MF_MT_DV_AAUX_CTRL_PACK_0 = new Guid(0xf731004e, 0x1dd1, 0x4515, 0xaa, 0xbe, 0xf0, 0xc0, 0x6a, 0xa5, 0x36, 0xac);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MF_MT_DV_AAUX_SRC_PACK_1 = new Guid(0x720e6544, 0x0225, 0x4003, 0xa6, 0x51, 0x01, 0x96, 0x56, 0x3a, 0x95, 0x8e);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MF_MT_DV_AAUX_CTRL_PACK_1 = new Guid(0xcd1f470d, 0x1f04, 0x4fe0, 0xbf, 0xb9, 0xd0, 0x7a, 0xe0, 0x38, 0x6a, 0xd8);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MF_MT_DV_VAUX_SRC_PACK = new Guid(0x41402d9d, 0x7b57, 0x43c6, 0xb1, 0x29, 0x2c, 0xb9, 0x97, 0xf1, 0x50, 0x09);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MF_MT_DV_VAUX_CTRL_PACK = new Guid(0x2f84e1c4, 0x0da1, 0x4788, 0x93, 0x8e, 0x0d, 0xfb, 0xfb, 0xb3, 0x4b, 0x48);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MF_MT_ARBITRARY_HEADER = new Guid(0x9e6bd6f5, 0x109, 0x4f95, 0x84, 0xac, 0x93, 0x9, 0x15, 0x3a, 0x19, 0xfc);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MF_MT_ARBITRARY_FORMAT = new Guid(0x5a75b249, 0xd7d, 0x49a1, 0xa1, 0xc3, 0xe0, 0xd8, 0x7f, 0xc, 0xad, 0xe5);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MF_MT_IMAGE_LOSS_TOLERANT = new Guid(0xed062cf4, 0xe34e, 0x4922, 0xbe, 0x99, 0x93, 0x40, 0x32, 0x13, 0x3d, 0x7c);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MF_MT_MPEG4_SAMPLE_DESCRIPTION = new Guid(0x261e9d83, 0x9529, 0x4b8f, 0xa1, 0x11, 0x8b, 0x9c, 0x95, 0x0a, 0x81, 0xa9);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MF_MT_MPEG4_CURRENT_SAMPLE_ENTRY = new Guid(0x9aa7e155, 0xb64a, 0x4c1d, 0xa5, 0x00, 0x45, 0x5d, 0x60, 0x0b, 0x65, 0x60);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MF_SD_AMBISONICS_SAMPLE3D_DESCRIPTION = new Guid(0xf715cf3e, 0xa964, 0x4c3f, 0x94, 0xae, 0x9d, 0x6b, 0xa7, 0x26, 0x46, 0x41);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MF_MT_ORIGINAL_4CC = new Guid(0xd7be3fe0, 0x2bc7, 0x492d, 0xb8, 0x43, 0x61, 0xa1, 0x91, 0x9b, 0x70, 0xc3);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MF_MT_ORIGINAL_WAVE_FORMAT_TAG = new Guid(0x8cbbc843, 0x9fd9, 0x49c2, 0x88, 0x2f, 0xa7, 0x25, 0x86, 0xc4, 0x08, 0xad);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MF_MT_FRAME_RATE_RANGE_MIN = new Guid(0xd2e7558c, 0xdc1f, 0x403f, 0x9a, 0x72, 0xd2, 0x8b, 0xb1, 0xeb, 0x3b, 0x5e);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MF_MT_FRAME_RATE_RANGE_MAX = new Guid(0xe3371d41, 0xb4cf, 0x4a05, 0xbd, 0x4e, 0x20, 0xb8, 0x8b, 0xb2, 0xc4, 0xd6);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MF_LOW_LATENCY = new Guid(0x9c27891a, 0xed7a, 0x40e1, 0x88, 0xe8, 0xb2, 0x27, 0x27, 0xa0, 0x24, 0xee);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MF_VIDEO_MAX_MB_PER_SEC = new Guid(0xe3f2e203, 0xd445, 0x4b8c, 0x92, 0x11, 0xae, 0x39, 0xd, 0x3b, 0xa0, 0x17);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MF_DISABLE_FRAME_CORRUPTION_INFO = new Guid(0x7086e16c, 0x49c5, 0x4201, 0x88, 0x2a, 0x85, 0x38, 0xf3, 0x8c, 0xf1, 0x3a);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFStreamExtension_CameraExtrinsics = new Guid(0x686196d0, 0x13e2, 0x41d9, 0x96, 0x38, 0xef, 0x3, 0x2c, 0x27, 0x2a, 0x52);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFSampleExtension_CameraExtrinsics = new Guid(0x6b761658, 0xb7ec, 0x4c3b, 0x82, 0x25, 0x86, 0x23, 0xca, 0xbe, 0xc3, 0x1d);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFStreamExtension_PinholeCameraIntrinsics = new Guid(0xdbac0455, 0xec8, 0x4aef, 0x9c, 0x32, 0x7a, 0x3e, 0xe3, 0x45, 0x6f, 0x53);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFSampleExtension_PinholeCameraIntrinsics = new Guid(0x4ee3b6c5, 0x6a15, 0x4e72, 0x97, 0x61, 0x70, 0xc1, 0xdb, 0x8b, 0x9f, 0xe3);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFMediaType_Default = new Guid(0x81A412E6, 0x8103, 0x4B06, 0x85, 0x7F, 0x18, 0x62, 0x78, 0x10, 0x24, 0xAC);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFMediaType_Audio = new Guid(0x73647561, 0x0000, 0x0010, 0x80, 0x00, 0x00, 0xAA, 0x00, 0x38, 0x9B, 0x71);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFMediaType_Video = new Guid(0x73646976, 0x0000, 0x0010, 0x80, 0x00, 0x00, 0xAA, 0x00, 0x38, 0x9B, 0x71);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFMediaType_Protected = new Guid(0x7b4b6fe6, 0x9d04, 0x4494, 0xbe, 0x14, 0x7e, 0x0b, 0xd0, 0x76, 0xc8, 0xe4);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFMediaType_SAMI = new Guid(0xe69669a0, 0x3dcd, 0x40cb, 0x9e, 0x2e, 0x37, 0x08, 0x38, 0x7c, 0x06, 0x16);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFMediaType_Script = new Guid(0x72178C22, 0xE45B, 0x11D5, 0xBC, 0x2A, 0x00, 0xB0, 0xD0, 0xF3, 0xF4, 0xAB);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFMediaType_Image = new Guid(0x72178C23, 0xE45B, 0x11D5, 0xBC, 0x2A, 0x00, 0xB0, 0xD0, 0xF3, 0xF4, 0xAB);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFMediaType_HTML = new Guid(0x72178C24, 0xE45B, 0x11D5, 0xBC, 0x2A, 0x00, 0xB0, 0xD0, 0xF3, 0xF4, 0xAB);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFMediaType_Binary = new Guid(0x72178C25, 0xE45B, 0x11D5, 0xBC, 0x2A, 0x00, 0xB0, 0xD0, 0xF3, 0xF4, 0xAB);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFMediaType_FileTransfer = new Guid(0x72178C26, 0xE45B, 0x11D5, 0xBC, 0x2A, 0x00, 0xB0, 0xD0, 0xF3, 0xF4, 0xAB);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFMediaType_Stream = new Guid(0xe436eb83, 0x524f, 0x11ce, 0x9f, 0x53, 0x00, 0x20, 0xaf, 0x0b, 0xa7, 0x70);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFMediaType_MultiplexedFrames = new Guid(0x6ea542b0, 0x281f, 0x4231, 0xa4, 0x64, 0xfe, 0x2f, 0x50, 0x22, 0x50, 0x1c);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFMediaType_Subtitle = new Guid(0xa6d13581, 0xed50, 0x4e65, 0xae, 0x08, 0x26, 0x06, 0x55, 0x76, 0xaa, 0xcc);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFMediaType_Perception = new Guid(0x597ff6f9, 0x6ea2, 0x4670, 0x85, 0xb4, 0xea, 0x84, 0x7, 0x3f, 0xe9, 0x40);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFImageFormat_JPEG = new Guid(0x19e4a5aa, 0x5662, 0x4fc5, 0xa0, 0xc0, 0x17, 0x58, 0x02, 0x8e, 0x10, 0x57);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFImageFormat_RGB32 = new Guid(0x00000016, 0x0000, 0x0010, 0x80, 0x00, 0x00, 0xaa, 0x00, 0x38, 0x9b, 0x71);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFStreamFormat_MPEG2Transport = new Guid(0xe06d8023, 0xdb46, 0x11cf, 0xb4, 0xd1, 0x00, 0x80, 0x5f, 0x6c, 0xbb, 0xea);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFStreamFormat_MPEG2Program = new Guid(0x263067d1, 0xd330, 0x45dc, 0xb6, 0x69, 0x34, 0xd9, 0x86, 0xe4, 0xe3, 0xe1);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid AM_MEDIA_TYPE_REPRESENTATION = new Guid(0xe2e42ad2, 0x132c, 0x491e, 0xa2, 0x68, 0x3c, 0x7c, 0x2d, 0xca, 0x18, 0x1f);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid FORMAT_MFVideoFormat = new Guid(0xaed4ab2d, 0x7326, 0x43cb, 0x94, 0x64, 0xc8, 0x79, 0xca, 0xb9, 0xc4, 0x3d);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid MFMediaType_Metadata = new Guid(0x2c8fa20c, 0x82bb, 0x4782, 0x90, 0xa0, 0x98, 0xa2, 0xa5, 0xbd, 0x8e, 0xf8);
+        public static ref readonly Guid MF_MT_SECURE
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xFD, 0xC4, 0xAC, 0xC5,
+                    0x04, 0x03,
+                    0xCF, 0x4E,
+                    0x80,
+                    0x9F,
+                    0x47,
+                    0xBC,
+                    0x97,
+                    0xFF,
+                    0x63,
+                    0xBD
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MF_DEVICESTREAM_ATTRIBUTE_FRAMESOURCE_TYPES
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xD1, 0x5F, 0x14, 0x17,
+                    0x2B, 0x1B,
+                    0x3C, 0x42,
+                    0x80,
+                    0x01,
+                    0x2B,
+                    0x68,
+                    0x33,
+                    0xED,
+                    0x35,
+                    0x88
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MF_MT_ALPHA_MODE
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x0D, 0x9B, 0x95, 0x5D,
+                    0xBF, 0x4C,
+                    0x04, 0x4D,
+                    0x91,
+                    0x9F,
+                    0x3F,
+                    0x5F,
+                    0x7F,
+                    0x28,
+                    0x42,
+                    0x11
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MF_MT_DEPTH_MEASUREMENT
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x89, 0xC4, 0x5A, 0xFD,
+                    0x17, 0x09,
+                    0xB6, 0x4B,
+                    0x9D,
+                    0x54,
+                    0x31,
+                    0x22,
+                    0xBF,
+                    0x70,
+                    0x14,
+                    0x4B
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MF_MT_DEPTH_VALUE_UNIT
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xF5, 0x00, 0xA8, 0x21,
+                    0x89, 0x31,
+                    0x97, 0x47,
+                    0xBE,
+                    0xBA,
+                    0xF1,
+                    0x3C,
+                    0xD9,
+                    0xA3,
+                    0x1A,
+                    0x5E
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MF_MT_VIDEO_NO_FRAME_ORDERING
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x6F, 0x10, 0x5B, 0x3F,
+                    0xC2, 0x6B,
+                    0xE3, 0x4E,
+                    0xB7,
+                    0xED,
+                    0x89,
+                    0x02,
+                    0xC1,
+                    0x8F,
+                    0x53,
+                    0x51
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MF_MT_VIDEO_H264_NO_FMOASO
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xD6, 0x1C, 0x46, 0xED,
+                    0x9F, 0xEC,
+                    0x6A, 0x41,
+                    0xA8,
+                    0xA3,
+                    0x26,
+                    0xD7,
+                    0xD3,
+                    0x10,
+                    0x18,
+                    0xD7
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFSampleExtension_ForwardedDecodeUnits
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x4C, 0x75, 0x4C, 0x42,
+                    0xC8, 0x97,
+                    0xD6, 0x48,
+                    0x87,
+                    0x77,
+                    0xFC,
+                    0x41,
+                    0xF7,
+                    0xB6,
+                    0x08,
+                    0x79
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFSampleExtension_TargetGlobalLuminance
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x36, 0xEF, 0x60, 0x3F,
+                    0xEF, 0x31,
+                    0xAF, 0x4D,
+                    0x83,
+                    0x60,
+                    0x94,
+                    0x03,
+                    0x97,
+                    0xE4,
+                    0x1E,
+                    0xF3
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFSampleExtension_ForwardedDecodeUnitType
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xC7, 0x57, 0x9E, 0x08,
+                    0xD3, 0x47,
+                    0x26, 0x4A,
+                    0xBF,
+                    0x9C,
+                    0x4B,
+                    0x64,
+                    0xFA,
+                    0xFB,
+                    0x5D,
+                    0x1E
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MF_MT_FORWARD_CUSTOM_NALU
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xFD, 0x6E, 0x33, 0xED,
+                    0x4F, 0x24,
+                    0x8D, 0x42,
+                    0x91,
+                    0x53,
+                    0x28,
+                    0xF3,
+                    0x99,
+                    0x45,
+                    0x88,
+                    0x90
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MF_MT_FORWARD_CUSTOM_SEI
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xF1, 0x62, 0x73, 0xE2,
+                    0x36, 0xB1,
+                    0xD1, 0x41,
+                    0x95,
+                    0x94,
+                    0x3A,
+                    0x7E,
+                    0x4F,
+                    0xEB,
+                    0xF2,
+                    0xD1
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MF_MT_VIDEO_RENDERER_EXTENSION_PROFILE
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xB9, 0xD4, 0x37, 0x84,
+                    0x48, 0xD4,
+                    0xCD, 0x4F,
+                    0x9B,
+                    0x6B,
+                    0x83,
+                    0x9B,
+                    0xF9,
+                    0x6C,
+                    0x77,
+                    0x98
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MF_DECODER_FWD_CUSTOM_SEI_DECODE_ORDER
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x3C, 0xBE, 0x3B, 0xF1,
+                    0xD4, 0x36,
+                    0x0A, 0x41,
+                    0xB9,
+                    0x85,
+                    0x7A,
+                    0x95,
+                    0x1A,
+                    0x1E,
+                    0x62,
+                    0x94
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MF_VIDEO_RENDERER_EFFECT_APP_SERVICE_NAME
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x80, 0x2A, 0x05, 0xC6,
+                    0x9C, 0x6D,
+                    0xA3, 0x40,
+                    0x9D,
+                    0xB8,
+                    0xF0,
+                    0x27,
+                    0xA2,
+                    0x5C,
+                    0x9A,
+                    0xB9
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MF_MT_AUDIO_NUM_CHANNELS
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xF5, 0x8B, 0xE4, 0x37,
+                    0x5E, 0x64,
+                    0x5B, 0x4C,
+                    0x89,
+                    0xDE,
+                    0xAD,
+                    0xA9,
+                    0xE2,
+                    0x9B,
+                    0x69,
+                    0x6A
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MF_MT_AUDIO_SAMPLES_PER_SECOND
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xE7, 0xEA, 0xAE, 0x5F,
+                    0x90, 0x02,
+                    0x31, 0x4C,
+                    0x9E,
+                    0x8A,
+                    0xC5,
+                    0x34,
+                    0xF6,
+                    0x8D,
+                    0x9D,
+                    0xBA
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MF_MT_AUDIO_FLOAT_SAMPLES_PER_SECOND
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x4A, 0x72, 0x3B, 0xFB,
+                    0xB5, 0xCF,
+                    0x19, 0x43,
+                    0xAE,
+                    0xFE,
+                    0x6E,
+                    0x42,
+                    0xB2,
+                    0x40,
+                    0x61,
+                    0x32
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MF_MT_AUDIO_AVG_BYTES_PER_SECOND
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xC8, 0x75, 0xAB, 0x1A,
+                    0xEF, 0xCF,
+                    0x1C, 0x45,
+                    0xAB,
+                    0x95,
+                    0xAC,
+                    0x03,
+                    0x4B,
+                    0x8E,
+                    0x17,
+                    0x31
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MF_MT_AUDIO_BLOCK_ALIGNMENT
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x30, 0xE2, 0x2D, 0x32,
+                    0xEB, 0x9E,
+                    0xBD, 0x43,
+                    0xAB,
+                    0x7A,
+                    0xFF,
+                    0x41,
+                    0x22,
+                    0x51,
+                    0x54,
+                    0x1D
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MF_MT_AUDIO_BITS_PER_SAMPLE
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x7F, 0xB5, 0xDE, 0xF2,
+                    0xFA, 0x40,
+                    0x64, 0x47,
+                    0xAA,
+                    0x33,
+                    0xED,
+                    0x4F,
+                    0x2D,
+                    0x1F,
+                    0xF6,
+                    0x69
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MF_MT_AUDIO_VALID_BITS_PER_SAMPLE
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x6A, 0x8D, 0xBF, 0xD9,
+                    0x30, 0x95,
+                    0x7C, 0x4B,
+                    0x9D,
+                    0xDF,
+                    0xFF,
+                    0x6F,
+                    0xD5,
+                    0x8B,
+                    0xBD,
+                    0x06
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MF_MT_AUDIO_SAMPLES_PER_BLOCK
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xAC, 0x5A, 0xB1, 0xAA,
+                    0x3A, 0xE1,
+                    0x95, 0x49,
+                    0x92,
+                    0x22,
+                    0x50,
+                    0x1E,
+                    0xA1,
+                    0x5C,
+                    0x68,
+                    0x77
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MF_MT_AUDIO_CHANNEL_MASK
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x65, 0x57, 0xFB, 0x55,
+                    0x4A, 0x64,
+                    0xAF, 0x4C,
+                    0x84,
+                    0x79,
+                    0x93,
+                    0x89,
+                    0x83,
+                    0xBB,
+                    0x15,
+                    0x88
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MF_MT_AUDIO_FOLDDOWN_MATRIX
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x7C, 0x92, 0x62, 0x9D,
+                    0xBE, 0x36,
+                    0xF2, 0x4C,
+                    0xB5,
+                    0xC4,
+                    0xA3,
+                    0x92,
+                    0x6E,
+                    0x3E,
+                    0x87,
+                    0x11
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MF_MT_AUDIO_WMADRC_PEAKREF
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x7D, 0x92, 0x62, 0x9D,
+                    0xBE, 0x36,
+                    0xF2, 0x4C,
+                    0xB5,
+                    0xC4,
+                    0xA3,
+                    0x92,
+                    0x6E,
+                    0x3E,
+                    0x87,
+                    0x11
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MF_MT_AUDIO_WMADRC_PEAKTARGET
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x7E, 0x92, 0x62, 0x9D,
+                    0xBE, 0x36,
+                    0xF2, 0x4C,
+                    0xB5,
+                    0xC4,
+                    0xA3,
+                    0x92,
+                    0x6E,
+                    0x3E,
+                    0x87,
+                    0x11
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MF_MT_AUDIO_WMADRC_AVGREF
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x7F, 0x92, 0x62, 0x9D,
+                    0xBE, 0x36,
+                    0xF2, 0x4C,
+                    0xB5,
+                    0xC4,
+                    0xA3,
+                    0x92,
+                    0x6E,
+                    0x3E,
+                    0x87,
+                    0x11
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MF_MT_AUDIO_WMADRC_AVGTARGET
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x80, 0x92, 0x62, 0x9D,
+                    0xBE, 0x36,
+                    0xF2, 0x4C,
+                    0xB5,
+                    0xC4,
+                    0xA3,
+                    0x92,
+                    0x6E,
+                    0x3E,
+                    0x87,
+                    0x11
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MF_MT_AUDIO_PREFER_WAVEFORMATEX
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xBA, 0xAA, 0x01, 0xA9,
+                    0x37, 0xE0,
+                    0x8A, 0x45,
+                    0xBD,
+                    0xF6,
+                    0x54,
+                    0x5B,
+                    0xE2,
+                    0x07,
+                    0x40,
+                    0x42
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MF_MT_AAC_PAYLOAD_TYPE
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x79, 0xBE, 0xBA, 0xBF,
+                    0x34, 0x74,
+                    0x1C, 0x4D,
+                    0x94,
+                    0xF0,
+                    0x72,
+                    0xA3,
+                    0xB9,
+                    0xE1,
+                    0x71,
+                    0x88
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MF_MT_AAC_AUDIO_PROFILE_LEVEL_INDICATION
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xE6, 0xF0, 0x32, 0x76,
+                    0x38, 0x95,
+                    0x61, 0x4D,
+                    0xAC,
+                    0xDA,
+                    0xEA,
+                    0x29,
+                    0xC8,
+                    0xC1,
+                    0x44,
+                    0x56
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MF_MT_AUDIO_FLAC_MAX_BLOCK_SIZE
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xAE, 0xAD, 0x81, 0x8B,
+                    0x5A, 0x4B,
+                    0x40, 0x4D,
+                    0x80,
+                    0x22,
+                    0xF3,
+                    0x8D,
+                    0x09,
+                    0xCA,
+                    0x3C,
+                    0x5C
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MF_MT_SPATIAL_AUDIO_MAX_DYNAMIC_OBJECTS
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x4A, 0xA2, 0xFB, 0xDC,
+                    0x09, 0x26,
+                    0x40, 0x42,
+                    0xA7,
+                    0x21,
+                    0x3F,
+                    0xAE,
+                    0xA7,
+                    0x6A,
+                    0x4D,
+                    0xF9
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MF_MT_SPATIAL_AUDIO_OBJECT_METADATA_FORMAT_ID
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xC0, 0x1B, 0xB7, 0x2A,
+                    0x23, 0x62,
+                    0xA7, 0x4B,
+                    0xAD,
+                    0x64,
+                    0x7B,
+                    0x94,
+                    0xB4,
+                    0x7A,
+                    0xE7,
+                    0x92
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MF_MT_SPATIAL_AUDIO_OBJECT_METADATA_LENGTH
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xBE, 0xA8, 0x4B, 0x09,
+                    0x23, 0xD7,
+                    0x9F, 0x48,
+                    0x92,
+                    0xFA,
+                    0x76,
+                    0x67,
+                    0x77,
+                    0xB3,
+                    0x47,
+                    0x26
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MF_MT_SPATIAL_AUDIO_MAX_METADATA_ITEMS
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xB4, 0x80, 0xAA, 0x11,
+                    0xDA, 0xE0,
+                    0xC6, 0x47,
+                    0x80,
+                    0x60,
+                    0x96,
+                    0xC1,
+                    0x25,
+                    0x9A,
+                    0xE5,
+                    0x0D
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MF_MT_SPATIAL_AUDIO_MIN_METADATA_ITEM_OFFSET_SPACING
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xC9, 0x6E, 0xE9, 0x83,
+                    0x84, 0x11,
+                    0x7E, 0x41,
+                    0x82,
+                    0x54,
+                    0x9F,
+                    0x26,
+                    0x91,
+                    0x58,
+                    0xFC,
+                    0x06
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MF_MT_SPATIAL_AUDIO_DATA_PRESENT
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xE7, 0xF6, 0x42, 0x68,
+                    0x3E, 0xD4,
+                    0xBB, 0x4E,
+                    0x9C,
+                    0x9C,
+                    0xC9,
+                    0x6F,
+                    0x41,
+                    0x78,
+                    0x48,
+                    0x63
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MF_MT_FRAME_SIZE
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x3D, 0xC3, 0x52, 0x16,
+                    0xB2, 0xD6,
+                    0x12, 0x40,
+                    0xB8,
+                    0x34,
+                    0x72,
+                    0x03,
+                    0x08,
+                    0x49,
+                    0xA3,
+                    0x7D
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MF_MT_FRAME_RATE
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xE8, 0xA2, 0x59, 0xC4,
+                    0x2C, 0x3D,
+                    0x44, 0x4E,
+                    0xB1,
+                    0x32,
+                    0xFE,
+                    0xE5,
+                    0x15,
+                    0x6C,
+                    0x7B,
+                    0xB0
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MF_MT_PIXEL_ASPECT_RATIO
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x1E, 0x6A, 0x37, 0xC6,
+                    0x0A, 0x8D,
+                    0x27, 0x40,
+                    0xBE,
+                    0x45,
+                    0x6D,
+                    0x9A,
+                    0x0A,
+                    0xD3,
+                    0x9B,
+                    0xB6
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MF_MT_DRM_FLAGS
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x23, 0xF3, 0x72, 0x87,
+                    0x5A, 0x35,
+                    0xC7, 0x4C,
+                    0xBB,
+                    0x78,
+                    0x6D,
+                    0x61,
+                    0xA0,
+                    0x48,
+                    0xAE,
+                    0x82
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MF_MT_TIMESTAMP_CAN_BE_DTS
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x15, 0x42, 0x97, 0x24,
+                    0x7B, 0x1B,
+                    0xE4, 0x41,
+                    0x86,
+                    0x25,
+                    0xAC,
+                    0x46,
+                    0x9F,
+                    0x2D,
+                    0xED,
+                    0xAA
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MF_MT_PAD_CONTROL_FLAGS
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xE5, 0x73, 0x0E, 0x4D,
+                    0xEA, 0x80,
+                    0x54, 0x43,
+                    0xA9,
+                    0xD0,
+                    0x11,
+                    0x76,
+                    0xCE,
+                    0xB0,
+                    0x28,
+                    0xEA
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MF_MT_SOURCE_CONTENT_HINT
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xCC, 0xA3, 0xAC, 0x68,
+                    0xD0, 0x22,
+                    0xE6, 0x44,
+                    0x85,
+                    0xF8,
+                    0x28,
+                    0x16,
+                    0x71,
+                    0x97,
+                    0xFA,
+                    0x38
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MF_MT_VIDEO_CHROMA_SITING
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x70, 0x23, 0xDF, 0x65,
+                    0x73, 0xC7,
+                    0x33, 0x4C,
+                    0xAA,
+                    0x64,
+                    0x84,
+                    0x3E,
+                    0x06,
+                    0x8E,
+                    0xFB,
+                    0x0C
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MF_MT_INTERLACE_MODE
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xB8, 0x4B, 0x72, 0xE2,
+                    0x76, 0xE6,
+                    0x06, 0x48,
+                    0xB4,
+                    0xB2,
+                    0xA8,
+                    0xD6,
+                    0xEF,
+                    0xB4,
+                    0x4C,
+                    0xCD
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MF_MT_TRANSFER_FUNCTION
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xE9, 0xFC, 0xB0, 0x5F,
+                    0x5C, 0xBE,
+                    0x35, 0x49,
+                    0xA8,
+                    0x11,
+                    0xEC,
+                    0x83,
+                    0x8F,
+                    0x8E,
+                    0xED,
+                    0x93
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MF_MT_VIDEO_PRIMARIES
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xD7, 0xE4, 0xFB, 0xDB,
+                    0x40, 0x07,
+                    0xE0, 0x4E,
+                    0x81,
+                    0x92,
+                    0x85,
+                    0x0A,
+                    0xB0,
+                    0xE2,
+                    0x19,
+                    0x35
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MF_MT_MAX_LUMINANCE_LEVEL
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x28, 0x31, 0x25, 0x50,
+                    0x10, 0xC1,
+                    0xE4, 0x4D,
+                    0x98,
+                    0xAE,
+                    0x46,
+                    0xA3,
+                    0x24,
+                    0xFA,
+                    0xE6,
+                    0xDA
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MF_MT_MAX_FRAME_AVERAGE_LUMINANCE_LEVEL
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x57, 0xBF, 0xD4, 0x58,
+                    0x52, 0x6F,
+                    0x33, 0x47,
+                    0xA1,
+                    0x95,
+                    0xA9,
+                    0xE2,
+                    0x9E,
+                    0xCF,
+                    0x9E,
+                    0x27
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MF_MT_MAX_MASTERING_LUMINANCE
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x97, 0xB9, 0xC6, 0xD6,
+                    0x2F, 0x27,
+                    0xA1, 0x4C,
+                    0x8D,
+                    0x00,
+                    0x80,
+                    0x42,
+                    0x11,
+                    0x1A,
+                    0x0F,
+                    0xF6
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MF_MT_MIN_MASTERING_LUMINANCE
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x60, 0x44, 0x9A, 0x83,
+                    0x7E, 0x4E,
+                    0x4F, 0x4B,
+                    0xAE,
+                    0x79,
+                    0xCC,
+                    0x08,
+                    0x90,
+                    0x5C,
+                    0x7B,
+                    0x27
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MF_MT_DECODER_USE_MAX_RESOLUTION
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x24, 0x7C, 0x54, 0x4C,
+                    0x9A, 0xAF,
+                    0x38, 0x4F,
+                    0x96,
+                    0xAD,
+                    0x97,
+                    0x87,
+                    0x73,
+                    0xCF,
+                    0x53,
+                    0xE7
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MF_MT_DECODER_MAX_DPB_COUNT
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x4C, 0x14, 0xBE, 0x67,
+                    0xB7, 0x88,
+                    0xA9, 0x4C,
+                    0x96,
+                    0x28,
+                    0xC8,
+                    0x08,
+                    0xD5,
+                    0x26,
+                    0x22,
+                    0x17
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MF_MT_CUSTOM_VIDEO_PRIMARIES
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x13, 0x72, 0x53, 0x47,
+                    0xFB, 0x8C,
+                    0x22, 0x47,
+                    0xAA,
+                    0x34,
+                    0xFB,
+                    0xC9,
+                    0xE2,
+                    0x4D,
+                    0x77,
+                    0xB8
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MF_MT_YUV_MATRIX
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x50, 0xD4, 0x23, 0x3E,
+                    0x75, 0x2C,
+                    0x25, 0x4D,
+                    0xA0,
+                    0x0E,
+                    0xB9,
+                    0x16,
+                    0x70,
+                    0xD1,
+                    0x23,
+                    0x27
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MF_MT_VIDEO_LIGHTING
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x9C, 0x52, 0xA0, 0x53,
+                    0x0B, 0x89,
+                    0x16, 0x42,
+                    0x8B,
+                    0xF9,
+                    0x59,
+                    0x93,
+                    0x67,
+                    0xAD,
+                    0x6D,
+                    0x20
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MF_MT_VIDEO_NOMINAL_RANGE
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xE5, 0x8E, 0x1B, 0xC2,
+                    0x56, 0xB9,
+                    0x71, 0x40,
+                    0x8D,
+                    0xAF,
+                    0x32,
+                    0x5E,
+                    0xDF,
+                    0x5C,
+                    0xAB,
+                    0x11
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MF_MT_GEOMETRIC_APERTURE
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x43, 0x87, 0x75, 0x66,
+                    0x5F, 0x7E,
+                    0x0D, 0x40,
+                    0x98,
+                    0x0A,
+                    0xAA,
+                    0x85,
+                    0x96,
+                    0xC8,
+                    0x56,
+                    0x96
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MF_MT_MINIMUM_DISPLAY_APERTURE
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x66, 0x87, 0x38, 0xD7,
+                    0xFE, 0x18,
+                    0xC6, 0x48,
+                    0xA1,
+                    0x77,
+                    0xEE,
+                    0x89,
+                    0x48,
+                    0x67,
+                    0xC8,
+                    0xC4
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MF_MT_PAN_SCAN_APERTURE
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xDE, 0x4D, 0x61, 0x79,
+                    0x87, 0x91,
+                    0xFB, 0x48,
+                    0xB8,
+                    0xC7,
+                    0x4D,
+                    0x52,
+                    0x68,
+                    0x9D,
+                    0xE6,
+                    0x49
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MF_MT_PAN_SCAN_ENABLED
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xC3, 0x6B, 0x7F, 0x4B,
+                    0x13, 0x8B,
+                    0xB2, 0x40,
+                    0xA9,
+                    0x93,
+                    0xAB,
+                    0xF6,
+                    0x30,
+                    0xB8,
+                    0x20,
+                    0x4E
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MF_MT_AVG_BITRATE
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x24, 0x26, 0x33, 0x20,
+                    0x0D, 0xFB,
+                    0x9E, 0x4D,
+                    0xBD,
+                    0x0D,
+                    0xCB,
+                    0xF6,
+                    0x78,
+                    0x6C,
+                    0x10,
+                    0x2E
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MF_MT_AVG_BIT_ERROR_RATE
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xD6, 0xAB, 0x9C, 0x79,
+                    0x08, 0x35,
+                    0xB4, 0x4D,
+                    0xA3,
+                    0xC7,
+                    0x56,
+                    0x9C,
+                    0xD5,
+                    0x33,
+                    0xDE,
+                    0xB1
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MF_MT_MAX_KEYFRAME_SPACING
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x2B, 0xB5, 0x6E, 0xC1,
+                    0xA1, 0x73,
+                    0x6F, 0x47,
+                    0x8D,
+                    0x62,
+                    0x83,
+                    0x9D,
+                    0x6A,
+                    0x02,
+                    0x06,
+                    0x52
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MF_MT_USER_DATA
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x5F, 0x76, 0xBC, 0xB6,
+                    0x3B, 0x4C,
+                    0xA4, 0x40,
+                    0xBD,
+                    0x51,
+                    0x25,
+                    0x35,
+                    0xB6,
+                    0x6F,
+                    0xE0,
+                    0x9D
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MF_MT_OUTPUT_BUFFER_NUM
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xAC, 0xD3, 0x05, 0xA5,
+                    0x30, 0xF9,
+                    0x6E, 0x43,
+                    0x8E,
+                    0xDE,
+                    0x93,
+                    0xA5,
+                    0x09,
+                    0xCE,
+                    0x23,
+                    0xB2
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MF_MT_REALTIME_CONTENT
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x22, 0xD2, 0x12, 0xBB,
+                    0xDB, 0x2B,
+                    0x5E, 0x42,
+                    0x91,
+                    0xEC,
+                    0x23,
+                    0x08,
+                    0xE1,
+                    0x89,
+                    0xA5,
+                    0x8F
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MF_MT_DEFAULT_STRIDE
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x48, 0x4E, 0x4B, 0x64,
+                    0x02, 0x1E,
+                    0x16, 0x45,
+                    0xB0,
+                    0xEB,
+                    0xC0,
+                    0x1C,
+                    0xA9,
+                    0xD4,
+                    0x9A,
+                    0xC6
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MF_MT_PALETTE
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x42, 0x3F, 0x28, 0x6D,
+                    0x46, 0x98,
+                    0x10, 0x44,
+                    0xAF,
+                    0xD9,
+                    0x65,
+                    0x4D,
+                    0x50,
+                    0x3B,
+                    0x1A,
+                    0x54
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MF_MT_AM_FORMAT_TYPE
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x2D, 0x07, 0xD1, 0x73,
+                    0x70, 0x18,
+                    0x74, 0x41,
+                    0xA0,
+                    0x63,
+                    0x29,
+                    0xFF,
+                    0x4F,
+                    0xF6,
+                    0xC1,
+                    0x1E
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MF_MT_VIDEO_PROFILE
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x0B, 0xA8, 0x76, 0xAD,
+                    0x5C, 0x2D,
+                    0x0B, 0x4E,
+                    0xB3,
+                    0x75,
+                    0x64,
+                    0xE5,
+                    0x20,
+                    0x13,
+                    0x70,
+                    0x36
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MF_MT_VIDEO_LEVEL
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x74, 0x65, 0xF6, 0x96,
+                    0xC5, 0x11,
+                    0x15, 0x40,
+                    0x86,
+                    0x66,
+                    0xBF,
+                    0xF5,
+                    0x16,
+                    0x43,
+                    0x6D,
+                    0xA7
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MF_MT_MPEG_START_TIME_CODE
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x85, 0x78, 0xF6, 0x91,
+                    0x33, 0x43,
+                    0x80, 0x42,
+                    0x97,
+                    0xCD,
+                    0xBD,
+                    0x5A,
+                    0x6C,
+                    0x03,
+                    0xA0,
+                    0x6E
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MF_MT_MPEG2_PROFILE
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x0B, 0xA8, 0x76, 0xAD,
+                    0x5C, 0x2D,
+                    0x0B, 0x4E,
+                    0xB3,
+                    0x75,
+                    0x64,
+                    0xE5,
+                    0x20,
+                    0x13,
+                    0x70,
+                    0x36
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MF_MT_MPEG2_LEVEL
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x74, 0x65, 0xF6, 0x96,
+                    0xC5, 0x11,
+                    0x15, 0x40,
+                    0x86,
+                    0x66,
+                    0xBF,
+                    0xF5,
+                    0x16,
+                    0x43,
+                    0x6D,
+                    0xA7
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MF_MT_MPEG2_FLAGS
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x1D, 0x99, 0xE3, 0x31,
+                    0x01, 0xF7,
+                    0x2F, 0x4B,
+                    0xB4,
+                    0x26,
+                    0x8A,
+                    0xE3,
+                    0xBD,
+                    0xA9,
+                    0xE0,
+                    0x4B
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MF_MT_MPEG_SEQUENCE_HEADER
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xE7, 0x6D, 0x03, 0x3C,
+                    0xD0, 0x3A,
+                    0x9E, 0x4C,
+                    0x92,
+                    0x16,
+                    0xEE,
+                    0x6D,
+                    0x6A,
+                    0xC2,
+                    0x1C,
+                    0xB3
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MF_MT_MPEG2_STANDARD
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xE8, 0xF9, 0x0A, 0xA2,
+                    0x8A, 0x92,
+                    0x26, 0x4B,
+                    0xAA,
+                    0xA9,
+                    0xF0,
+                    0x5C,
+                    0x74,
+                    0xCA,
+                    0xC4,
+                    0x7C
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MF_MT_MPEG2_TIMECODE
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x10, 0xBA, 0x29, 0x52,
+                    0x9D, 0xE2,
+                    0x80, 0x4F,
+                    0xA5,
+                    0x9C,
+                    0xDF,
+                    0x4F,
+                    0x18,
+                    0x02,
+                    0x07,
+                    0xD2
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MF_MT_MPEG2_CONTENT_PACKET
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xE4, 0x55, 0x5D, 0x82,
+                    0x12, 0x4F,
+                    0x97, 0x41,
+                    0x9E,
+                    0xB3,
+                    0x59,
+                    0xB6,
+                    0xE4,
+                    0x71,
+                    0x0F,
+                    0x06
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MF_MT_MPEG2_ONE_FRAME_PER_PACKET
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xB5, 0x9E, 0xA4, 0x91,
+                    0x20, 0x1D,
+                    0x42, 0x4B,
+                    0xAC,
+                    0xE8,
+                    0x80,
+                    0x42,
+                    0x69,
+                    0xBF,
+                    0x95,
+                    0xED
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MF_MT_MPEG2_HDCP
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x4A, 0x1B, 0x8F, 0x16,
+                    0x91, 0x3E,
+                    0x0F, 0x45,
+                    0xAE,
+                    0xA7,
+                    0xE4,
+                    0xBA,
+                    0xEA,
+                    0xDA,
+                    0xE5,
+                    0xBA
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MF_MT_H264_MAX_CODEC_CONFIG_DELAY
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x86, 0x99, 0x92, 0xF5,
+                    0x45, 0x4C,
+                    0xBB, 0x4F,
+                    0xBB,
+                    0x49,
+                    0x6C,
+                    0xC5,
+                    0x34,
+                    0xD0,
+                    0x5B,
+                    0x9B
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MF_MT_H264_SUPPORTED_SLICE_MODES
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x37, 0x19, 0xBE, 0xC8,
+                    0x64, 0x4D,
+                    0x49, 0x45,
+                    0x83,
+                    0x43,
+                    0xA8,
+                    0x08,
+                    0x6C,
+                    0x0B,
+                    0xFD,
+                    0xA5
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MF_MT_H264_SUPPORTED_SYNC_FRAME_TYPES
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x01, 0x2C, 0xA5, 0x89,
+                    0x82, 0xF2,
+                    0xD2, 0x48,
+                    0xB5,
+                    0x22,
+                    0x22,
+                    0xE6,
+                    0xAE,
+                    0x63,
+                    0x31,
+                    0x99
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MF_MT_H264_RESOLUTION_SCALING
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x72, 0x42, 0x85, 0xE3,
+                    0x15, 0xF7,
+                    0x57, 0x47,
+                    0xBA,
+                    0x90,
+                    0x1B,
+                    0x69,
+                    0x6C,
+                    0x77,
+                    0x34,
+                    0x57
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MF_MT_H264_SIMULCAST_SUPPORT
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x3D, 0xD6, 0xA2, 0x9E,
+                    0xF0, 0x53,
+                    0x34, 0x4A,
+                    0xB9,
+                    0x4E,
+                    0x9D,
+                    0xE4,
+                    0x9A,
+                    0x07,
+                    0x8C,
+                    0xB3
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MF_MT_H264_SUPPORTED_RATE_CONTROL_MODES
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x7E, 0xC4, 0x8A, 0x6A,
+                    0x9C, 0x51,
+                    0x18, 0x4F,
+                    0x9B,
+                    0xB3,
+                    0x7E,
+                    0xEA,
+                    0xAE,
+                    0xA5,
+                    0x59,
+                    0x4D
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MF_MT_H264_MAX_MB_PER_SEC
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x30, 0x6D, 0x25, 0x45,
+                    0x15, 0x72,
+                    0x76, 0x45,
+                    0x93,
+                    0x36,
+                    0xB0,
+                    0xF1,
+                    0xBC,
+                    0xD5,
+                    0x9B,
+                    0xB2
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MF_MT_H264_SUPPORTED_USAGES
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x98, 0xA9, 0xB1, 0x60,
+                    0x01, 0xDC,
+                    0xCE, 0x40,
+                    0x97,
+                    0x36,
+                    0xAB,
+                    0xA8,
+                    0x45,
+                    0xA2,
+                    0xDB,
+                    0xDC
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MF_MT_H264_CAPABILITIES
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x08, 0xD5, 0x3B, 0xBB,
+                    0x0A, 0x49,
+                    0xE0, 0x11,
+                    0x99,
+                    0xE4,
+                    0x13,
+                    0x16,
+                    0xDF,
+                    0xD7,
+                    0x20,
+                    0x85
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MF_MT_H264_SVC_CAPABILITIES
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xBE, 0x3A, 0x99, 0xF8,
+                    0x37, 0xD9,
+                    0x8F, 0x4A,
+                    0xBB,
+                    0xCA,
+                    0x69,
+                    0x66,
+                    0xFE,
+                    0x9E,
+                    0x11,
+                    0x52
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MF_MT_H264_USAGE
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xA5, 0xE3, 0x9C, 0x35,
+                    0x00, 0xAF,
+                    0xCA, 0x49,
+                    0xA2,
+                    0xF4,
+                    0x2A,
+                    0xC9,
+                    0x4C,
+                    0xA8,
+                    0x2B,
+                    0x61
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MF_MT_H264_RATE_CONTROL_MODES
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xD8, 0x77, 0x51, 0x70,
+                    0xCB, 0x45,
+                    0xE0, 0x11,
+                    0xAC,
+                    0x7D,
+                    0xB9,
+                    0x1C,
+                    0xE0,
+                    0xD7,
+                    0x20,
+                    0x85
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MF_MT_H264_LAYOUT_PER_STREAM
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xB2, 0x99, 0xE2, 0x85,
+                    0xE3, 0x90,
+                    0xE8, 0x4F,
+                    0xB2,
+                    0xF5,
+                    0xC0,
+                    0x67,
+                    0xE0,
+                    0xBF,
+                    0xE5,
+                    0x7A
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MF_MT_IN_BAND_PARAMETER_SET
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x90, 0x50, 0xDA, 0x75,
+                    0x0B, 0x91,
+                    0x03, 0x4A,
+                    0x89,
+                    0x6C,
+                    0x7B,
+                    0x89,
+                    0x8F,
+                    0xEE,
+                    0xA5,
+                    0xAF
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MF_MT_MPEG4_TRACK_TYPE
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xDD, 0x86, 0xF4, 0x54,
+                    0x27, 0x93,
+                    0x6D, 0x4F,
+                    0x80,
+                    0xAB,
+                    0x6F,
+                    0x70,
+                    0x9E,
+                    0xBB,
+                    0x4C,
+                    0xCE
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MF_MT_CONTAINER_RATE_SCALING
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x5E, 0x7F, 0x87, 0x83,
+                    0x44, 0x04,
+                    0x28, 0x4E,
+                    0x84,
+                    0x79,
+                    0x6D,
+                    0xB0,
+                    0x98,
+                    0x9B,
+                    0x8C,
+                    0x09
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MF_MT_DV_AAUX_SRC_PACK_0
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x88, 0x5D, 0xBD, 0x84,
+                    0xB8, 0x0F,
+                    0xC8, 0x4A,
+                    0xBE,
+                    0x4B,
+                    0xA8,
+                    0x84,
+                    0x8B,
+                    0xEF,
+                    0x98,
+                    0xF3
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MF_MT_DV_AAUX_CTRL_PACK_0
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x4E, 0x00, 0x31, 0xF7,
+                    0xD1, 0x1D,
+                    0x15, 0x45,
+                    0xAA,
+                    0xBE,
+                    0xF0,
+                    0xC0,
+                    0x6A,
+                    0xA5,
+                    0x36,
+                    0xAC
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MF_MT_DV_AAUX_SRC_PACK_1
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x44, 0x65, 0x0E, 0x72,
+                    0x25, 0x02,
+                    0x03, 0x40,
+                    0xA6,
+                    0x51,
+                    0x01,
+                    0x96,
+                    0x56,
+                    0x3A,
+                    0x95,
+                    0x8E
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MF_MT_DV_AAUX_CTRL_PACK_1
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x0D, 0x47, 0x1F, 0xCD,
+                    0x04, 0x1F,
+                    0xE0, 0x4F,
+                    0xBF,
+                    0xB9,
+                    0xD0,
+                    0x7A,
+                    0xE0,
+                    0x38,
+                    0x6A,
+                    0xD8
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MF_MT_DV_VAUX_SRC_PACK
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x9D, 0x2D, 0x40, 0x41,
+                    0x57, 0x7B,
+                    0xC6, 0x43,
+                    0xB1,
+                    0x29,
+                    0x2C,
+                    0xB9,
+                    0x97,
+                    0xF1,
+                    0x50,
+                    0x09
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MF_MT_DV_VAUX_CTRL_PACK
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xC4, 0xE1, 0x84, 0x2F,
+                    0xA1, 0x0D,
+                    0x88, 0x47,
+                    0x93,
+                    0x8E,
+                    0x0D,
+                    0xFB,
+                    0xFB,
+                    0xB3,
+                    0x4B,
+                    0x48
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MF_MT_ARBITRARY_HEADER
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xF5, 0xD6, 0x6B, 0x9E,
+                    0x09, 0x01,
+                    0x95, 0x4F,
+                    0x84,
+                    0xAC,
+                    0x93,
+                    0x09,
+                    0x15,
+                    0x3A,
+                    0x19,
+                    0xFC
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MF_MT_ARBITRARY_FORMAT
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x49, 0xB2, 0x75, 0x5A,
+                    0x7D, 0x0D,
+                    0xA1, 0x49,
+                    0xA1,
+                    0xC3,
+                    0xE0,
+                    0xD8,
+                    0x7F,
+                    0x0C,
+                    0xAD,
+                    0xE5
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MF_MT_IMAGE_LOSS_TOLERANT
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xF4, 0x2C, 0x06, 0xED,
+                    0x4E, 0xE3,
+                    0x22, 0x49,
+                    0xBE,
+                    0x99,
+                    0x93,
+                    0x40,
+                    0x32,
+                    0x13,
+                    0x3D,
+                    0x7C
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MF_MT_MPEG4_SAMPLE_DESCRIPTION
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x83, 0x9D, 0x1E, 0x26,
+                    0x29, 0x95,
+                    0x8F, 0x4B,
+                    0xA1,
+                    0x11,
+                    0x8B,
+                    0x9C,
+                    0x95,
+                    0x0A,
+                    0x81,
+                    0xA9
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MF_MT_MPEG4_CURRENT_SAMPLE_ENTRY
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x55, 0xE1, 0xA7, 0x9A,
+                    0x4A, 0xB6,
+                    0x1D, 0x4C,
+                    0xA5,
+                    0x00,
+                    0x45,
+                    0x5D,
+                    0x60,
+                    0x0B,
+                    0x65,
+                    0x60
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MF_SD_AMBISONICS_SAMPLE3D_DESCRIPTION
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x3E, 0xCF, 0x15, 0xF7,
+                    0x64, 0xA9,
+                    0x3F, 0x4C,
+                    0x94,
+                    0xAE,
+                    0x9D,
+                    0x6B,
+                    0xA7,
+                    0x26,
+                    0x46,
+                    0x41
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MF_MT_ORIGINAL_4CC
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xE0, 0x3F, 0xBE, 0xD7,
+                    0xC7, 0x2B,
+                    0x2D, 0x49,
+                    0xB8,
+                    0x43,
+                    0x61,
+                    0xA1,
+                    0x91,
+                    0x9B,
+                    0x70,
+                    0xC3
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MF_MT_ORIGINAL_WAVE_FORMAT_TAG
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x43, 0xC8, 0xBB, 0x8C,
+                    0xD9, 0x9F,
+                    0xC2, 0x49,
+                    0x88,
+                    0x2F,
+                    0xA7,
+                    0x25,
+                    0x86,
+                    0xC4,
+                    0x08,
+                    0xAD
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MF_MT_FRAME_RATE_RANGE_MIN
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x8C, 0x55, 0xE7, 0xD2,
+                    0x1F, 0xDC,
+                    0x3F, 0x40,
+                    0x9A,
+                    0x72,
+                    0xD2,
+                    0x8B,
+                    0xB1,
+                    0xEB,
+                    0x3B,
+                    0x5E
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MF_MT_FRAME_RATE_RANGE_MAX
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x41, 0x1D, 0x37, 0xE3,
+                    0xCF, 0xB4,
+                    0x05, 0x4A,
+                    0xBD,
+                    0x4E,
+                    0x20,
+                    0xB8,
+                    0x8B,
+                    0xB2,
+                    0xC4,
+                    0xD6
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MF_LOW_LATENCY
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x1A, 0x89, 0x27, 0x9C,
+                    0x7A, 0xED,
+                    0xE1, 0x40,
+                    0x88,
+                    0xE8,
+                    0xB2,
+                    0x27,
+                    0x27,
+                    0xA0,
+                    0x24,
+                    0xEE
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MF_VIDEO_MAX_MB_PER_SEC
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x03, 0xE2, 0xF2, 0xE3,
+                    0x45, 0xD4,
+                    0x8C, 0x4B,
+                    0x92,
+                    0x11,
+                    0xAE,
+                    0x39,
+                    0x0D,
+                    0x3B,
+                    0xA0,
+                    0x17
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MF_DISABLE_FRAME_CORRUPTION_INFO
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x6C, 0xE1, 0x86, 0x70,
+                    0xC5, 0x49,
+                    0x01, 0x42,
+                    0x88,
+                    0x2A,
+                    0x85,
+                    0x38,
+                    0xF3,
+                    0x8C,
+                    0xF1,
+                    0x3A
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFStreamExtension_CameraExtrinsics
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xD0, 0x96, 0x61, 0x68,
+                    0xE2, 0x13,
+                    0xD9, 0x41,
+                    0x96,
+                    0x38,
+                    0xEF,
+                    0x03,
+                    0x2C,
+                    0x27,
+                    0x2A,
+                    0x52
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFSampleExtension_CameraExtrinsics
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x58, 0x16, 0x76, 0x6B,
+                    0xEC, 0xB7,
+                    0x3B, 0x4C,
+                    0x82,
+                    0x25,
+                    0x86,
+                    0x23,
+                    0xCA,
+                    0xBE,
+                    0xC3,
+                    0x1D
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFStreamExtension_PinholeCameraIntrinsics
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x55, 0x04, 0xAC, 0xDB,
+                    0xC8, 0x0E,
+                    0xEF, 0x4A,
+                    0x9C,
+                    0x32,
+                    0x7A,
+                    0x3E,
+                    0xE3,
+                    0x45,
+                    0x6F,
+                    0x53
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFSampleExtension_PinholeCameraIntrinsics
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xC5, 0xB6, 0xE3, 0x4E,
+                    0x15, 0x6A,
+                    0x72, 0x4E,
+                    0x97,
+                    0x61,
+                    0x70,
+                    0xC1,
+                    0xDB,
+                    0x8B,
+                    0x9F,
+                    0xE3
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFMediaType_Default
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xE6, 0x12, 0xA4, 0x81,
+                    0x03, 0x81,
+                    0x06, 0x4B,
+                    0x85,
+                    0x7F,
+                    0x18,
+                    0x62,
+                    0x78,
+                    0x10,
+                    0x24,
+                    0xAC
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFMediaType_Audio
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x61, 0x75, 0x64, 0x73,
+                    0x00, 0x00,
+                    0x10, 0x00,
+                    0x80,
+                    0x00,
+                    0x00,
+                    0xAA,
+                    0x00,
+                    0x38,
+                    0x9B,
+                    0x71
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFMediaType_Video
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x76, 0x69, 0x64, 0x73,
+                    0x00, 0x00,
+                    0x10, 0x00,
+                    0x80,
+                    0x00,
+                    0x00,
+                    0xAA,
+                    0x00,
+                    0x38,
+                    0x9B,
+                    0x71
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFMediaType_Protected
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xE6, 0x6F, 0x4B, 0x7B,
+                    0x04, 0x9D,
+                    0x94, 0x44,
+                    0xBE,
+                    0x14,
+                    0x7E,
+                    0x0B,
+                    0xD0,
+                    0x76,
+                    0xC8,
+                    0xE4
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFMediaType_SAMI
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xA0, 0x69, 0x96, 0xE6,
+                    0xCD, 0x3D,
+                    0xCB, 0x40,
+                    0x9E,
+                    0x2E,
+                    0x37,
+                    0x08,
+                    0x38,
+                    0x7C,
+                    0x06,
+                    0x16
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFMediaType_Script
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x22, 0x8C, 0x17, 0x72,
+                    0x5B, 0xE4,
+                    0xD5, 0x11,
+                    0xBC,
+                    0x2A,
+                    0x00,
+                    0xB0,
+                    0xD0,
+                    0xF3,
+                    0xF4,
+                    0xAB
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFMediaType_Image
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x23, 0x8C, 0x17, 0x72,
+                    0x5B, 0xE4,
+                    0xD5, 0x11,
+                    0xBC,
+                    0x2A,
+                    0x00,
+                    0xB0,
+                    0xD0,
+                    0xF3,
+                    0xF4,
+                    0xAB
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFMediaType_HTML
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x24, 0x8C, 0x17, 0x72,
+                    0x5B, 0xE4,
+                    0xD5, 0x11,
+                    0xBC,
+                    0x2A,
+                    0x00,
+                    0xB0,
+                    0xD0,
+                    0xF3,
+                    0xF4,
+                    0xAB
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFMediaType_Binary
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x25, 0x8C, 0x17, 0x72,
+                    0x5B, 0xE4,
+                    0xD5, 0x11,
+                    0xBC,
+                    0x2A,
+                    0x00,
+                    0xB0,
+                    0xD0,
+                    0xF3,
+                    0xF4,
+                    0xAB
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFMediaType_FileTransfer
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x26, 0x8C, 0x17, 0x72,
+                    0x5B, 0xE4,
+                    0xD5, 0x11,
+                    0xBC,
+                    0x2A,
+                    0x00,
+                    0xB0,
+                    0xD0,
+                    0xF3,
+                    0xF4,
+                    0xAB
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFMediaType_Stream
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x83, 0xEB, 0x36, 0xE4,
+                    0x4F, 0x52,
+                    0xCE, 0x11,
+                    0x9F,
+                    0x53,
+                    0x00,
+                    0x20,
+                    0xAF,
+                    0x0B,
+                    0xA7,
+                    0x70
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFMediaType_MultiplexedFrames
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xB0, 0x42, 0xA5, 0x6E,
+                    0x1F, 0x28,
+                    0x31, 0x42,
+                    0xA4,
+                    0x64,
+                    0xFE,
+                    0x2F,
+                    0x50,
+                    0x22,
+                    0x50,
+                    0x1C
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFMediaType_Subtitle
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x81, 0x35, 0xD1, 0xA6,
+                    0x50, 0xED,
+                    0x65, 0x4E,
+                    0xAE,
+                    0x08,
+                    0x26,
+                    0x06,
+                    0x55,
+                    0x76,
+                    0xAA,
+                    0xCC
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFMediaType_Perception
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xF9, 0xF6, 0x7F, 0x59,
+                    0xA2, 0x6E,
+                    0x70, 0x46,
+                    0x85,
+                    0xB4,
+                    0xEA,
+                    0x84,
+                    0x07,
+                    0x3F,
+                    0xE9,
+                    0x40
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFImageFormat_JPEG
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xAA, 0xA5, 0xE4, 0x19,
+                    0x62, 0x56,
+                    0xC5, 0x4F,
+                    0xA0,
+                    0xC0,
+                    0x17,
+                    0x58,
+                    0x02,
+                    0x8E,
+                    0x10,
+                    0x57
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFImageFormat_RGB32
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x16, 0x00, 0x00, 0x00,
+                    0x00, 0x00,
+                    0x10, 0x00,
+                    0x80,
+                    0x00,
+                    0x00,
+                    0xAA,
+                    0x00,
+                    0x38,
+                    0x9B,
+                    0x71
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFStreamFormat_MPEG2Transport
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x23, 0x80, 0x6D, 0xE0,
+                    0x46, 0xDB,
+                    0xCF, 0x11,
+                    0xB4,
+                    0xD1,
+                    0x00,
+                    0x80,
+                    0x5F,
+                    0x6C,
+                    0xBB,
+                    0xEA
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFStreamFormat_MPEG2Program
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xD1, 0x67, 0x30, 0x26,
+                    0x30, 0xD3,
+                    0xDC, 0x45,
+                    0xB6,
+                    0x69,
+                    0x34,
+                    0xD9,
+                    0x86,
+                    0xE4,
+                    0xE3,
+                    0xE1
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid AM_MEDIA_TYPE_REPRESENTATION
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xD2, 0x2A, 0xE4, 0xE2,
+                    0x2C, 0x13,
+                    0x1E, 0x49,
+                    0xA2,
+                    0x68,
+                    0x3C,
+                    0x7C,
+                    0x2D,
+                    0xCA,
+                    0x18,
+                    0x1F
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid FORMAT_MFVideoFormat
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x2D, 0xAB, 0xD4, 0xAE,
+                    0x26, 0x73,
+                    0xCB, 0x43,
+                    0x94,
+                    0x64,
+                    0xC8,
+                    0x79,
+                    0xCA,
+                    0xB9,
+                    0xC4,
+                    0x3D
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const GUID")]
+        public static ref readonly Guid MFMediaType_Metadata
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x0C, 0xA2, 0x8F, 0x2C,
+                    0xBB, 0x82,
+                    0x82, 0x47,
+                    0x90,
+                    0xA0,
+                    0x98,
+                    0xA2,
+                    0xA5,
+                    0xBD,
+                    0x8E,
+                    0xF8
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [DllImport("mfplat", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
@@ -1756,7 +10844,7 @@ namespace TerraFX.Interop
 
         public static void UnpackRatio([NativeTypeName("UINT64")] ulong unPacked, [NativeTypeName("INT32 *")] int* pnNumerator, [NativeTypeName("UINT32 *")] uint* punDenominator)
         {
-            Unpack2UINT32AsUINT64(unPacked, (uint*)(pnNumerator), punDenominator);
+            Unpack2UINT32AsUINT64(unPacked, unchecked((uint*)(pnNumerator)), punDenominator);
         }
 
         [return: NativeTypeName("UINT32")]
@@ -1854,7 +10942,29 @@ namespace TerraFX.Interop
         public static extern void MFHeapFree(void* pv);
 
         [NativeTypeName("const GUID")]
-        public static readonly Guid CLSID_MFSourceResolver = new Guid(0x90eab60f, 0xe43a, 0x4188, 0xbc, 0xc4, 0xe4, 0x7f, 0xdf, 0x04, 0x86, 0x8c);
+        public static ref readonly Guid CLSID_MFSourceResolver
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x0F, 0xB6, 0xEA, 0x90,
+                    0x3A, 0xE4,
+                    0x88, 0x41,
+                    0xBC,
+                    0xC4,
+                    0xE4,
+                    0x7F,
+                    0xDF,
+                    0x04,
+                    0x86,
+                    0x8C
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [DllImport("mfplat", ExactSpelling = true)]
         [return: NativeTypeName("LONGLONG")]
@@ -1865,10 +10975,54 @@ namespace TerraFX.Interop
         public static extern int MFGetContentProtectionSystemCLSID([NativeTypeName("const GUID &")] Guid* guidProtectionSystemID, [NativeTypeName("CLSID *")] Guid* pclsid);
 
         [NativeTypeName("const GUID")]
-        public static readonly Guid MF_DEVICESTREAM_ATTRIBUTE_FACEAUTH_CAPABILITY = new Guid(0xCB6FD12A, 0x2248, 0x4E41, 0xAD, 0x46, 0xE7, 0x8B, 0xB9, 0x0A, 0xB9, 0xFC);
+        public static ref readonly Guid MF_DEVICESTREAM_ATTRIBUTE_FACEAUTH_CAPABILITY
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x2A, 0xD1, 0x6F, 0xCB,
+                    0x48, 0x22,
+                    0x41, 0x4E,
+                    0xAD,
+                    0x46,
+                    0xE7,
+                    0x8B,
+                    0xB9,
+                    0x0A,
+                    0xB9,
+                    0xFC
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const GUID")]
-        public static readonly Guid MF_DEVICESTREAM_ATTRIBUTE_SECURE_CAPABILITY = new Guid(0x940FD626, 0xEA6E, 0x4684, 0x98, 0x40, 0x36, 0xBD, 0x6E, 0xC9, 0xFB, 0xEF);
+        public static ref readonly Guid MF_DEVICESTREAM_ATTRIBUTE_SECURE_CAPABILITY
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x26, 0xD6, 0x0F, 0x94,
+                    0x6E, 0xEA,
+                    0x84, 0x46,
+                    0x98,
+                    0x40,
+                    0x36,
+                    0xBD,
+                    0x6E,
+                    0xC9,
+                    0xFB,
+                    0xEF
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [DllImport("mfplat", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
@@ -2059,6 +11213,6 @@ namespace TerraFX.Interop
         public const int LOCAL_D3DFMT_DEFINES = 1;
 
         [NativeTypeName("#define MFVideoFormat_MPG2 MFVideoFormat_MPEG2")]
-        public static readonly Guid MFVideoFormat_MPG2 = MFVideoFormat_MPEG2;
+        public static ref readonly Guid MFVideoFormat_MPG2 => ref MFVideoFormat_MPEG2;
     }
 }

@@ -9,7 +9,7 @@ namespace TerraFX.Interop
 {
     public unsafe struct HDC : IEquatable<HDC>
     {
-        public static readonly HDC NULL = default;
+        public static HDC NULL => default;
 
         private void* _value;
 

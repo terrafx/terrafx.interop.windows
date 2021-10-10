@@ -114,15 +114,15 @@ namespace TerraFX.Interop
         public const int LF32_MOVEABLE = 0x00000004;
 
         [NativeTypeName("#define Process32First Process32FirstW")]
-        public static readonly delegate*<IntPtr, PROCESSENTRY32W*, int> Process32First = &Process32FirstW;
+        public static delegate*<IntPtr, PROCESSENTRY32W*, int> Process32First => &Process32FirstW;
 
         [NativeTypeName("#define Process32Next Process32NextW")]
-        public static readonly delegate*<IntPtr, PROCESSENTRY32W*, int> Process32Next = &Process32NextW;
+        public static delegate*<IntPtr, PROCESSENTRY32W*, int> Process32Next => &Process32NextW;
 
         [NativeTypeName("#define Module32First Module32FirstW")]
-        public static readonly delegate*<IntPtr, MODULEENTRY32W*, int> Module32First = &Module32FirstW;
+        public static delegate*<IntPtr, MODULEENTRY32W*, int> Module32First => &Module32FirstW;
 
         [NativeTypeName("#define Module32Next Module32NextW")]
-        public static readonly delegate*<IntPtr, MODULEENTRY32W*, int> Module32Next = &Module32NextW;
+        public static delegate*<IntPtr, MODULEENTRY32W*, int> Module32Next => &Module32NextW;
     }
 }

@@ -3,7 +3,6 @@
 // Ported from DirectXHelpers.h in the microsoft/DirectXTK12 tag jan2021
 // Original source is Copyright © Microsoft. All rights reserved. Licensed under the University of Illinois Open Source License.
 
-using System;
 using static TerraFX.Interop.D3D_ROOT_SIGNATURE_VERSION;
 
 namespace TerraFX.Interop

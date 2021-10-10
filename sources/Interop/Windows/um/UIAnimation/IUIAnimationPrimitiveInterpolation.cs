@@ -11,11 +11,13 @@ namespace TerraFX.Interop
 {
     [Guid("BAB20D63-4361-45DA-A24F-AB8508846B5B")]
     [NativeTypeName("struct IUIAnimationPrimitiveInterpolation : IUnknown")]
+    [NativeInheritance("IUnknown")]
     public unsafe partial struct IUIAnimationPrimitiveInterpolation
     {
         public void** lpVtbl;
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(0)]
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
@@ -23,6 +25,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(1)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
@@ -30,6 +33,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(2)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
@@ -37,6 +41,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(3)]
         [return: NativeTypeName("HRESULT")]
         public int AddCubic([NativeTypeName("UINT")] uint dimension, [NativeTypeName("UI_ANIMATION_SECONDS")] double beginOffset, [NativeTypeName("FLOAT")] float constantCoefficient, [NativeTypeName("FLOAT")] float linearCoefficient, [NativeTypeName("FLOAT")] float quadraticCoefficient, [NativeTypeName("FLOAT")] float cubicCoefficient)
         {
@@ -44,6 +49,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(4)]
         [return: NativeTypeName("HRESULT")]
         public int AddSinusoidal([NativeTypeName("UINT")] uint dimension, [NativeTypeName("UI_ANIMATION_SECONDS")] double beginOffset, [NativeTypeName("FLOAT")] float bias, [NativeTypeName("FLOAT")] float amplitude, [NativeTypeName("FLOAT")] float frequency, [NativeTypeName("FLOAT")] float phase)
         {

@@ -10,33 +10,33 @@ namespace TerraFX.Interop
 {
     public static unsafe partial class Windows
     {
-        [DllImport("schannel", ExactSpelling = true)]
+        [DllImport("schannel", EntryPoint = "?SslEmptyCacheA@@YGHPADK@Z", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int SslEmptyCacheA([NativeTypeName("LPSTR")] sbyte* pszTargetName, [NativeTypeName("DWORD")] uint dwFlags);
 
-        [DllImport("schannel", ExactSpelling = true)]
+        [DllImport("schannel", EntryPoint = "?SslEmptyCacheW@@YGHPA_WK@Z", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int SslEmptyCacheW([NativeTypeName("LPWSTR")] ushort* pszTargetName, [NativeTypeName("DWORD")] uint dwFlags);
 
-        [DllImport("schannel", ExactSpelling = true)]
+        [DllImport("schannel", EntryPoint = "?SslGenerateKeyPair@@YGHPAU_SSL_CREDENTIAL_CERTIFICATE@@PAD1K@Z", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int SslGenerateKeyPair([NativeTypeName("PSSL_CREDENTIAL_CERTIFICATE")] SSL_CREDENTIAL_CERTIFICATE* pCerts, [NativeTypeName("PSTR")] sbyte* pszDN, [NativeTypeName("PSTR")] sbyte* pszPassword, [NativeTypeName("DWORD")] uint Bits);
 
-        [DllImport("schannel", ExactSpelling = true)]
+        [DllImport("schannel", EntryPoint = "?SslGenerateRandomBits@@YGXPAEJ@Z", ExactSpelling = true)]
         public static extern void SslGenerateRandomBits([NativeTypeName("PUCHAR")] byte* pRandomData, [NativeTypeName("LONG")] int cRandomData);
 
-        [DllImport("schannel", ExactSpelling = true)]
+        [DllImport("schannel", EntryPoint = "?SslCrackCertificate@@YGHPAEKKPAPAU_X509Certificate@@@Z", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int SslCrackCertificate([NativeTypeName("PUCHAR")] byte* pbCertificate, [NativeTypeName("DWORD")] uint cbCertificate, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("PX509Certificate *")] X509Certificate** ppCertificate);
 
-        [DllImport("schannel", ExactSpelling = true)]
+        [DllImport("schannel", EntryPoint = "?SslFreeCertificate@@YGXPAU_X509Certificate@@@Z", ExactSpelling = true)]
         public static extern void SslFreeCertificate([NativeTypeName("PX509Certificate")] X509Certificate* pCertificate);
 
-        [DllImport("schannel", ExactSpelling = true)]
+        [DllImport("schannel", EntryPoint = "?SslGetMaximumKeySize@@YGKK@Z", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
         public static extern uint SslGetMaximumKeySize([NativeTypeName("DWORD")] uint Reserved);
 
-        [DllImport("schannel", ExactSpelling = true)]
+        [DllImport("schannel", EntryPoint = "?SslGetDefaultIssuers@@YGHPAEPAK@Z", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int SslGetDefaultIssuers([NativeTypeName("PBYTE")] byte* pbIssuers, [NativeTypeName("DWORD *")] uint* pcbIssuers);
 
@@ -553,7 +553,7 @@ namespace TerraFX.Interop
         public const int SP_PROT_X_SERVERS = ((0x00000001 | 0x00000004 | 0x00000010 | 0x40000000 | 0x00000040) | (0x00000040 | 0x00000100 | 0x00000400 | 0x00001000) | (0x00010000 | 0x00040000));
 
         [NativeTypeName("#define SslEmptyCache SslEmptyCacheW")]
-        public static readonly delegate*<ushort*, uint, int> SslEmptyCache = &SslEmptyCacheW;
+        public static delegate*<ushort*, uint, int> SslEmptyCache => &SslEmptyCacheW;
 
         [NativeTypeName("#define SCHANNEL_SECRET_TYPE_CAPI 0x00000001")]
         public const int SCHANNEL_SECRET_TYPE_CAPI = 0x00000001;

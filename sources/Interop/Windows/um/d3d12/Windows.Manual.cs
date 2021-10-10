@@ -4,6 +4,8 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
 using static TerraFX.Interop.D3D12_FILTER_REDUCTION_TYPE;
 using static TerraFX.Interop.D3D12_FILTER_TYPE;
 
@@ -11,7 +13,28 @@ namespace TerraFX.Interop
 {
     public static unsafe partial class Windows
     {
-        public static readonly Guid D3D12ComputeOnlyDevices = new Guid(0x50F7AB08, 0x4B6D, 0x4E14, 0x89, 0xA5, 0x5D, 0x16, 0xCD, 0x27, 0x25, 0x94);
+        public static ref readonly Guid D3D12ComputeOnlyDevices
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x08, 0xAB, 0xF7, 0x50,
+                    0x6D, 0x4B,
+                    0x14, 0x4E,
+                    0x89,
+                    0xA5,
+                    0x5D,
+                    0x16,
+                    0xCD,
+                    0x27,
+                    0x25,
+                    0x94
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         public static uint D3D12_ENCODE_SHADER_4_COMPONENT_MAPPING(D3D12_SHADER_COMPONENT_MAPPING Src0, D3D12_SHADER_COMPONENT_MAPPING Src1, D3D12_SHADER_COMPONENT_MAPPING Src2, D3D12_SHADER_COMPONENT_MAPPING Src3)
         {

@@ -9,7 +9,7 @@ namespace TerraFX.Interop
 {
     public unsafe struct HICON : IEquatable<HICON>
     {
-        public static readonly HICON NULL = default;
+        public static HICON NULL => default;
 
         private void* _value;
 

@@ -9,7 +9,7 @@ namespace TerraFX.Interop
 {
     public unsafe struct HMENU : IEquatable<HMENU>
     {
-        public static readonly HMENU NULL = default;
+        public static HMENU NULL => default;
 
         private void* _value;
 

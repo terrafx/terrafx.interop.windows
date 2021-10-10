@@ -4,6 +4,8 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Diagnostics;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
@@ -11,7 +13,29 @@ namespace TerraFX.Interop
     public static unsafe partial class Windows
     {
         [NativeTypeName("const GUID")]
-        public static readonly Guid GUID_DeviceType = new Guid(0xd722fb4d, 0x7a68, 0x437a, 0xb2, 0x0c, 0x58, 0x04, 0xee, 0x24, 0x94, 0xa6);
+        public static ref readonly Guid GUID_DeviceType
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x4D, 0xFB, 0x22, 0xD7,
+                    0x68, 0x7A,
+                    0x7A, 0x43,
+                    0xB2,
+                    0x0C,
+                    0x58,
+                    0x04,
+                    0xEE,
+                    0x24,
+                    0x94,
+                    0xA6
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [DllImport("d3d10", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]

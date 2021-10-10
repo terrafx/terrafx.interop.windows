@@ -4,6 +4,8 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
 using static TerraFX.Interop.D3D11_FILTER_TYPE;
 using static TerraFX.Interop.D3D11_FILTER_REDUCTION_TYPE;
 
@@ -13,7 +15,28 @@ namespace TerraFX.Interop
     {
         public const int D3D11_OMAC_SIZE = 16;
 
-        public static readonly Guid D3D11_DECODER_PROFILE_MPEG2AND1_VLD = new Guid(0x86695F12, 0x340E, 0x4F04, 0x9F, 0xD3, 0x92, 0x53, 0xDD, 0x32, 0x74, 0x60);
+        public static ref readonly Guid D3D11_DECODER_PROFILE_MPEG2AND1_VLD
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x12, 0x5F, 0x69, 0x86,
+                    0x0E, 0x34,
+                    0x04, 0x4F,
+                    0x9F,
+                    0xD3,
+                    0x92,
+                    0x53,
+                    0xDD,
+                    0x32,
+                    0x74,
+                    0x60
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         public static int MAKE_D3D11_HRESULT(int code) => MAKE_HRESULT(1, unchecked((int)_FACD3D11), code);
 

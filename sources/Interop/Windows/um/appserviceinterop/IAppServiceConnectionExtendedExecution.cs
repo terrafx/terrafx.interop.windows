@@ -11,11 +11,13 @@ namespace TerraFX.Interop
 {
     [Guid("65219584-F9CB-4AE3-81F9-A28A6CA450D9")]
     [NativeTypeName("struct IAppServiceConnectionExtendedExecution : IUnknown")]
+    [NativeInheritance("IUnknown")]
     public unsafe partial struct IAppServiceConnectionExtendedExecution
     {
         public void** lpVtbl;
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(0)]
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
@@ -23,6 +25,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(1)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
@@ -30,6 +33,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(2)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
@@ -37,6 +41,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(3)]
         [return: NativeTypeName("HRESULT")]
         public int OpenForExtendedExecutionAsync([NativeTypeName("const IID &")] Guid* riid, void** operation)
         {

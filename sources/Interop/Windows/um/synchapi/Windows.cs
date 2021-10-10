@@ -260,28 +260,28 @@ namespace TerraFX.Interop
         public const int MUTEX_ALL_ACCESS = ((0x000F0000) | (0x00100000) | 0x0001);
 
         [NativeTypeName("#define CreateMutex CreateMutexW")]
-        public static readonly delegate*<SECURITY_ATTRIBUTES*, int, ushort*, IntPtr> CreateMutex = &CreateMutexW;
+        public static delegate*<SECURITY_ATTRIBUTES*, int, ushort*, IntPtr> CreateMutex => &CreateMutexW;
 
         [NativeTypeName("#define OpenMutex OpenMutexW")]
-        public static readonly delegate*<uint, int, ushort*, IntPtr> OpenMutex = &OpenMutexW;
+        public static delegate*<uint, int, ushort*, IntPtr> OpenMutex => &OpenMutexW;
 
         [NativeTypeName("#define CreateEvent CreateEventW")]
-        public static readonly delegate*<SECURITY_ATTRIBUTES*, int, int, ushort*, IntPtr> CreateEvent = &CreateEventW;
+        public static delegate*<SECURITY_ATTRIBUTES*, int, int, ushort*, IntPtr> CreateEvent => &CreateEventW;
 
         [NativeTypeName("#define OpenEvent OpenEventW")]
-        public static readonly delegate*<uint, int, ushort*, IntPtr> OpenEvent = &OpenEventW;
+        public static delegate*<uint, int, ushort*, IntPtr> OpenEvent => &OpenEventW;
 
         [NativeTypeName("#define OpenSemaphore OpenSemaphoreW")]
-        public static readonly delegate*<uint, int, ushort*, IntPtr> OpenSemaphore = &OpenSemaphoreW;
+        public static delegate*<uint, int, ushort*, IntPtr> OpenSemaphore => &OpenSemaphoreW;
 
         [NativeTypeName("#define OpenWaitableTimer OpenWaitableTimerW")]
-        public static readonly delegate*<uint, int, ushort*, IntPtr> OpenWaitableTimer = &OpenWaitableTimerW;
+        public static delegate*<uint, int, ushort*, IntPtr> OpenWaitableTimer => &OpenWaitableTimerW;
 
         [NativeTypeName("#define CREATE_MUTEX_INITIAL_OWNER 0x00000001")]
         public const int CREATE_MUTEX_INITIAL_OWNER = 0x00000001;
 
         [NativeTypeName("#define CreateMutexEx CreateMutexExW")]
-        public static readonly delegate*<SECURITY_ATTRIBUTES*, ushort*, uint, uint, IntPtr> CreateMutexEx = &CreateMutexExW;
+        public static delegate*<SECURITY_ATTRIBUTES*, ushort*, uint, uint, IntPtr> CreateMutexEx => &CreateMutexExW;
 
         [NativeTypeName("#define CREATE_EVENT_MANUAL_RESET 0x00000001")]
         public const int CREATE_EVENT_MANUAL_RESET = 0x00000001;
@@ -290,10 +290,10 @@ namespace TerraFX.Interop
         public const int CREATE_EVENT_INITIAL_SET = 0x00000002;
 
         [NativeTypeName("#define CreateEventEx CreateEventExW")]
-        public static readonly delegate*<SECURITY_ATTRIBUTES*, ushort*, uint, uint, IntPtr> CreateEventEx = &CreateEventExW;
+        public static delegate*<SECURITY_ATTRIBUTES*, ushort*, uint, uint, IntPtr> CreateEventEx => &CreateEventExW;
 
         [NativeTypeName("#define CreateSemaphoreEx CreateSemaphoreExW")]
-        public static readonly delegate*<SECURITY_ATTRIBUTES*, int, int, ushort*, uint, uint, IntPtr> CreateSemaphoreEx = &CreateSemaphoreExW;
+        public static delegate*<SECURITY_ATTRIBUTES*, int, int, ushort*, uint, uint, IntPtr> CreateSemaphoreEx => &CreateSemaphoreExW;
 
         [NativeTypeName("#define CREATE_WAITABLE_TIMER_MANUAL_RESET 0x00000001")]
         public const int CREATE_WAITABLE_TIMER_MANUAL_RESET = 0x00000001;
@@ -302,7 +302,7 @@ namespace TerraFX.Interop
         public const int CREATE_WAITABLE_TIMER_HIGH_RESOLUTION = 0x00000002;
 
         [NativeTypeName("#define CreateWaitableTimerEx CreateWaitableTimerExW")]
-        public static readonly delegate*<SECURITY_ATTRIBUTES*, ushort*, uint, uint, IntPtr> CreateWaitableTimerEx = &CreateWaitableTimerExW;
+        public static delegate*<SECURITY_ATTRIBUTES*, ushort*, uint, uint, IntPtr> CreateWaitableTimerEx => &CreateWaitableTimerExW;
 
         [NativeTypeName("#define SYNCHRONIZATION_BARRIER_FLAGS_SPIN_ONLY 0x01")]
         public const int SYNCHRONIZATION_BARRIER_FLAGS_SPIN_ONLY = 0x01;
@@ -314,9 +314,9 @@ namespace TerraFX.Interop
         public const int SYNCHRONIZATION_BARRIER_FLAGS_NO_DELETE = 0x04;
 
         [NativeTypeName("#define CreateSemaphore CreateSemaphoreW")]
-        public static readonly delegate*<SECURITY_ATTRIBUTES*, int, int, ushort*, IntPtr> CreateSemaphore = &CreateSemaphoreW;
+        public static delegate*<SECURITY_ATTRIBUTES*, int, int, ushort*, IntPtr> CreateSemaphore => &CreateSemaphoreW;
 
         [NativeTypeName("#define CreateWaitableTimer CreateWaitableTimerW")]
-        public static readonly delegate*<SECURITY_ATTRIBUTES*, int, ushort*, IntPtr> CreateWaitableTimer = &CreateWaitableTimerW;
+        public static delegate*<SECURITY_ATTRIBUTES*, int, ushort*, IntPtr> CreateWaitableTimer => &CreateWaitableTimerW;
     }
 }

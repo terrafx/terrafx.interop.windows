@@ -1,0 +1,12 @@
+@../../settings.rsp
+@../../remap.rsp
+--file
+other-d3d11on12on7.h
+--output
+../../../sources/Interop/Windows/other/D3D11On12On7
+--test-output
+../../../tests/Interop/Windows/other/D3D11On12On7
+--traverse
+./D3D11On12On7.h
+--with-librarypath
+*=d3d11on12

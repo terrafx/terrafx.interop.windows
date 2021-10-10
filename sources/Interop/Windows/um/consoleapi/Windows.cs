@@ -138,16 +138,16 @@ namespace TerraFX.Interop
         public const int ENABLE_LVB_GRID_WORLDWIDE = 0x0010;
 
         [NativeTypeName("#define ReadConsoleInput ReadConsoleInputW")]
-        public static readonly delegate*<IntPtr, INPUT_RECORD*, uint, uint*, int> ReadConsoleInput = &ReadConsoleInputW;
+        public static delegate*<IntPtr, INPUT_RECORD*, uint, uint*, int> ReadConsoleInput => &ReadConsoleInputW;
 
         [NativeTypeName("#define PeekConsoleInput PeekConsoleInputW")]
-        public static readonly delegate*<IntPtr, INPUT_RECORD*, uint, uint*, int> PeekConsoleInput = &PeekConsoleInputW;
+        public static delegate*<IntPtr, INPUT_RECORD*, uint, uint*, int> PeekConsoleInput => &PeekConsoleInputW;
 
         [NativeTypeName("#define ReadConsole ReadConsoleW")]
-        public static readonly delegate*<IntPtr, void*, uint, uint*, CONSOLE_READCONSOLE_CONTROL*, int> ReadConsole = &ReadConsoleW;
+        public static delegate*<IntPtr, void*, uint, uint*, CONSOLE_READCONSOLE_CONTROL*, int> ReadConsole => &ReadConsoleW;
 
         [NativeTypeName("#define WriteConsole WriteConsoleW")]
-        public static readonly delegate*<IntPtr, void*, uint, uint*, void*, int> WriteConsole = &WriteConsoleW;
+        public static delegate*<IntPtr, void*, uint, uint*, void*, int> WriteConsole => &WriteConsoleW;
 
         [NativeTypeName("#define CTRL_C_EVENT 0")]
         public const int CTRL_C_EVENT = 0;

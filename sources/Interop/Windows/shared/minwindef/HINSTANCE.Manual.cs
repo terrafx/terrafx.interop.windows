@@ -9,7 +9,7 @@ namespace TerraFX.Interop
 {
     public unsafe struct HINSTANCE : IEquatable<HINSTANCE>
     {
-        public static readonly HINSTANCE NULL = default;
+        public static HINSTANCE NULL => default;
 
         private void* _value;
 

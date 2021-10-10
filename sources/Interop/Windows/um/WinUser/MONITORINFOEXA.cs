@@ -6,9 +6,10 @@
 namespace TerraFX.Interop
 {
     [NativeTypeName("struct tagMONITORINFOEXA : tagMONITORINFO")]
+    [NativeInheritance("tagMONITORINFO")]
     public unsafe partial struct MONITORINFOEXA
     {
-        public MONITORINFO __AnonymousBase_WinUser_L13549_C43;
+        public MONITORINFO Base;
 
         [NativeTypeName("CHAR [32]")]
         public fixed sbyte szDevice[32];

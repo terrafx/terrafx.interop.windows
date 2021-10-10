@@ -4,23 +4,110 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Diagnostics;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
 {
     public static partial class Windows
     {
         [NativeTypeName("#define IID_IEnumCLSID IID_IEnumGUID")]
-        public static readonly Guid IID_IEnumCLSID = IID_IEnumGUID;
+        public static ref readonly Guid IID_IEnumCLSID => ref IID_IEnumGUID;
 
         [NativeTypeName("#define IID_IEnumCATID IID_IEnumGUID")]
-        public static readonly Guid IID_IEnumCATID = IID_IEnumGUID;
+        public static ref readonly Guid IID_IEnumCATID => ref IID_IEnumGUID;
 
-        public static readonly Guid IID_IEnumGUID = new Guid(0x0002E000, 0x0000, 0x0000, 0xC0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
+        public static ref readonly Guid IID_IEnumGUID
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x00, 0xE0, 0x02, 0x00,
+                    0x00, 0x00,
+                    0x00, 0x00,
+                    0xC0,
+                    0x00,
+                    0x00,
+                    0x00,
+                    0x00,
+                    0x00,
+                    0x00,
+                    0x46
+                };
 
-        public static readonly Guid IID_IEnumCATEGORYINFO = new Guid(0x0002E011, 0x0000, 0x0000, 0xC0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
-        public static readonly Guid IID_ICatRegister = new Guid(0x0002E012, 0x0000, 0x0000, 0xC0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
+        public static ref readonly Guid IID_IEnumCATEGORYINFO
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x11, 0xE0, 0x02, 0x00,
+                    0x00, 0x00,
+                    0x00, 0x00,
+                    0xC0,
+                    0x00,
+                    0x00,
+                    0x00,
+                    0x00,
+                    0x00,
+                    0x00,
+                    0x46
+                };
 
-        public static readonly Guid IID_ICatInformation = new Guid(0x0002E013, 0x0000, 0x0000, 0xC0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid IID_ICatRegister
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x12, 0xE0, 0x02, 0x00,
+                    0x00, 0x00,
+                    0x00, 0x00,
+                    0xC0,
+                    0x00,
+                    0x00,
+                    0x00,
+                    0x00,
+                    0x00,
+                    0x00,
+                    0x46
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid IID_ICatInformation
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x13, 0xE0, 0x02, 0x00,
+                    0x00, 0x00,
+                    0x00, 0x00,
+                    0xC0,
+                    0x00,
+                    0x00,
+                    0x00,
+                    0x00,
+                    0x00,
+                    0x00,
+                    0x46
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
     }
 }

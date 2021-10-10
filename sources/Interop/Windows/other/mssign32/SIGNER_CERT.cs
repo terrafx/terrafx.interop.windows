@@ -17,7 +17,7 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint dwCertChoice;
 
-        [NativeTypeName("_SIGNER_CERT::(anonymous union at ./mssign32.h:109:5)")]
+        [NativeTypeName("_SIGNER_CERT::(anonymous union at ./mssign32.h:111:9)")]
         public _Anonymous_e__Union Anonymous;
 
         [NativeTypeName("HWND")]

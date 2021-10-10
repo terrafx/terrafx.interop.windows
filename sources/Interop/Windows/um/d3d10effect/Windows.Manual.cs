@@ -3,9 +3,6 @@
 // Ported from um/d3d10effect.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
-using System.Runtime.InteropServices;
-
 namespace TerraFX.Interop
 {
     public static unsafe partial class Windows

@@ -4,6 +4,8 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Diagnostics;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.BINDF;
 using static TerraFX.Interop.PARSEACTION;
@@ -339,7 +341,7 @@ namespace TerraFX.Interop
         public const BINDF BINDF_NOCOPYDATA = BINDF_PULLDATA;
 
         [NativeTypeName("#define INVALID_P_ROOT_SECURITY_ID ((BYTE*)-1)")]
-        public static readonly byte* INVALID_P_ROOT_SECURITY_ID = unchecked((byte*)(-1));
+        public static byte* INVALID_P_ROOT_SECURITY_ID => unchecked((byte*)(-1));
 
         [NativeTypeName("#define PI_DOCFILECLSIDLOOKUP PI_CLSIDLOOKUP")]
         public const PI_FLAGS PI_DOCFILECLSIDLOOKUP = PI_CLSIDLOOKUP;
@@ -855,10 +857,10 @@ namespace TerraFX.Interop
         public const int WININETINFO_OPTION_LOCK_HANDLE = 65534;
 
         [NativeTypeName("#define SID_IBindHost IID_IBindHost")]
-        public static readonly Guid SID_IBindHost = IID_IBindHost;
+        public static ref readonly Guid SID_IBindHost => ref IID_IBindHost;
 
         [NativeTypeName("#define SID_SBindHost IID_IBindHost")]
-        public static readonly Guid SID_SBindHost = IID_IBindHost;
+        public static ref readonly Guid SID_SBindHost => ref IID_IBindHost;
 
         [NativeTypeName("#define URLOSTRM_USECACHEDCOPY_ONLY 0x1")]
         public const int URLOSTRM_USECACHEDCOPY_ONLY = 0x1;
@@ -870,19 +872,19 @@ namespace TerraFX.Interop
         public const int URLOSTRM_GETNEWESTVERSION = 0x3;
 
         [NativeTypeName("#define URLOpenStream URLOpenStreamW")]
-        public static readonly delegate*<IUnknown*, ushort*, uint, IBindStatusCallback*, int> URLOpenStream = &URLOpenStreamW;
+        public static delegate*<IUnknown*, ushort*, uint, IBindStatusCallback*, int> URLOpenStream => &URLOpenStreamW;
 
         [NativeTypeName("#define URLOpenPullStream URLOpenPullStreamW")]
-        public static readonly delegate*<IUnknown*, ushort*, uint, IBindStatusCallback*, int> URLOpenPullStream = &URLOpenPullStreamW;
+        public static delegate*<IUnknown*, ushort*, uint, IBindStatusCallback*, int> URLOpenPullStream => &URLOpenPullStreamW;
 
         [NativeTypeName("#define URLDownloadToFile URLDownloadToFileW")]
-        public static readonly delegate*<IUnknown*, ushort*, ushort*, uint, IBindStatusCallback*, int> URLDownloadToFile = &URLDownloadToFileW;
+        public static delegate*<IUnknown*, ushort*, ushort*, uint, IBindStatusCallback*, int> URLDownloadToFile => &URLDownloadToFileW;
 
         [NativeTypeName("#define URLDownloadToCacheFile URLDownloadToCacheFileW")]
-        public static readonly delegate*<IUnknown*, ushort*, ushort*, uint, uint, IBindStatusCallback*, int> URLDownloadToCacheFile = &URLDownloadToCacheFileW;
+        public static delegate*<IUnknown*, ushort*, ushort*, uint, uint, IBindStatusCallback*, int> URLDownloadToCacheFile => &URLDownloadToCacheFileW;
 
         [NativeTypeName("#define URLOpenBlockingStream URLOpenBlockingStreamW")]
-        public static readonly delegate*<IUnknown*, ushort*, IStream**, uint, IBindStatusCallback*, int> URLOpenBlockingStream = &URLOpenBlockingStreamW;
+        public static delegate*<IUnknown*, ushort*, IStream**, uint, IBindStatusCallback*, int> URLOpenBlockingStream => &URLOpenBlockingStreamW;
 
         [NativeTypeName("#define PARSE_ENCODE PARSE_ENCODE_IS_UNESCAPE")]
         public const PARSEACTION PARSE_ENCODE = PARSE_ENCODE_IS_UNESCAPE;
@@ -891,40 +893,40 @@ namespace TerraFX.Interop
         public const PARSEACTION PARSE_DECODE = PARSE_DECODE_IS_ESCAPE;
 
         [NativeTypeName("#define IID_IOInet IID_IInternet")]
-        public static readonly Guid IID_IOInet = IID_IInternet;
+        public static ref readonly Guid IID_IOInet => ref IID_IInternet;
 
         [NativeTypeName("#define IID_IOInetBindInfo IID_IInternetBindInfo")]
-        public static readonly Guid IID_IOInetBindInfo = IID_IInternetBindInfo;
+        public static ref readonly Guid IID_IOInetBindInfo => ref IID_IInternetBindInfo;
 
         [NativeTypeName("#define IID_IOInetBindInfoEx IID_IInternetBindInfoEx")]
-        public static readonly Guid IID_IOInetBindInfoEx = IID_IInternetBindInfoEx;
+        public static ref readonly Guid IID_IOInetBindInfoEx => ref IID_IInternetBindInfoEx;
 
         [NativeTypeName("#define IID_IOInetProtocolRoot IID_IInternetProtocolRoot")]
-        public static readonly Guid IID_IOInetProtocolRoot = IID_IInternetProtocolRoot;
+        public static ref readonly Guid IID_IOInetProtocolRoot => ref IID_IInternetProtocolRoot;
 
         [NativeTypeName("#define IID_IOInetProtocol IID_IInternetProtocol")]
-        public static readonly Guid IID_IOInetProtocol = IID_IInternetProtocol;
+        public static ref readonly Guid IID_IOInetProtocol => ref IID_IInternetProtocol;
 
         [NativeTypeName("#define IID_IOInetProtocolEx IID_IInternetProtocolEx")]
-        public static readonly Guid IID_IOInetProtocolEx = IID_IInternetProtocolEx;
+        public static ref readonly Guid IID_IOInetProtocolEx => ref IID_IInternetProtocolEx;
 
         [NativeTypeName("#define IID_IOInetProtocolSink IID_IInternetProtocolSink")]
-        public static readonly Guid IID_IOInetProtocolSink = IID_IInternetProtocolSink;
+        public static ref readonly Guid IID_IOInetProtocolSink => ref IID_IInternetProtocolSink;
 
         [NativeTypeName("#define IID_IOInetProtocolInfo IID_IInternetProtocolInfo")]
-        public static readonly Guid IID_IOInetProtocolInfo = IID_IInternetProtocolInfo;
+        public static ref readonly Guid IID_IOInetProtocolInfo => ref IID_IInternetProtocolInfo;
 
         [NativeTypeName("#define IID_IOInetSession IID_IInternetSession")]
-        public static readonly Guid IID_IOInetSession = IID_IInternetSession;
+        public static ref readonly Guid IID_IOInetSession => ref IID_IInternetSession;
 
         [NativeTypeName("#define IID_IOInetPriority IID_IInternetPriority")]
-        public static readonly Guid IID_IOInetPriority = IID_IInternetPriority;
+        public static ref readonly Guid IID_IOInetPriority => ref IID_IInternetPriority;
 
         [NativeTypeName("#define IID_IOInetThreadSwitch IID_IInternetThreadSwitch")]
-        public static readonly Guid IID_IOInetThreadSwitch = IID_IInternetThreadSwitch;
+        public static ref readonly Guid IID_IOInetThreadSwitch => ref IID_IInternetThreadSwitch;
 
         [NativeTypeName("#define IID_IOInetProtocolSinkStackable IID_IInternetProtocolSinkStackable")]
-        public static readonly Guid IID_IOInetProtocolSinkStackable = IID_IInternetProtocolSinkStackable;
+        public static ref readonly Guid IID_IOInetProtocolSinkStackable => ref IID_IInternetProtocolSinkStackable;
 
         [NativeTypeName("#define SET_FEATURE_ON_THREAD 0x00000001")]
         public const int SET_FEATURE_ON_THREAD = 0x00000001;
@@ -990,40 +992,40 @@ namespace TerraFX.Interop
         public const int INET_E_REDIRECTING = unchecked((int)(0x800C0014));
 
         [NativeTypeName("#define OInetParseUrl CoInternetParseUrl")]
-        public static readonly delegate*<ushort*, PARSEACTION, uint, ushort*, uint, uint*, uint, int> OInetParseUrl = &CoInternetParseUrl;
+        public static delegate*<ushort*, PARSEACTION, uint, ushort*, uint, uint*, uint, int> OInetParseUrl => &CoInternetParseUrl;
 
         [NativeTypeName("#define OInetCombineUrl CoInternetCombineUrl")]
-        public static readonly delegate*<ushort*, ushort*, uint, ushort*, uint, uint*, uint, int> OInetCombineUrl = &CoInternetCombineUrl;
+        public static delegate*<ushort*, ushort*, uint, ushort*, uint, uint*, uint, int> OInetCombineUrl => &CoInternetCombineUrl;
 
         [NativeTypeName("#define OInetCombineUrlEx CoInternetCombineUrlEx")]
-        public static readonly delegate*<IUri*, ushort*, uint, IUri**, nuint, int> OInetCombineUrlEx = &CoInternetCombineUrlEx;
+        public static delegate*<IUri*, ushort*, uint, IUri**, nuint, int> OInetCombineUrlEx => &CoInternetCombineUrlEx;
 
         [NativeTypeName("#define OInetCombineIUri CoInternetCombineIUri")]
-        public static readonly delegate*<IUri*, IUri*, uint, IUri**, nuint, int> OInetCombineIUri = &CoInternetCombineIUri;
+        public static delegate*<IUri*, IUri*, uint, IUri**, nuint, int> OInetCombineIUri => &CoInternetCombineIUri;
 
         [NativeTypeName("#define OInetCompareUrl CoInternetCompareUrl")]
-        public static readonly delegate*<ushort*, ushort*, uint, int> OInetCompareUrl = &CoInternetCompareUrl;
+        public static delegate*<ushort*, ushort*, uint, int> OInetCompareUrl => &CoInternetCompareUrl;
 
         [NativeTypeName("#define OInetQueryInfo CoInternetQueryInfo")]
-        public static readonly delegate*<ushort*, QUERYOPTION, uint, void*, uint, uint*, uint, int> OInetQueryInfo = &CoInternetQueryInfo;
+        public static delegate*<ushort*, QUERYOPTION, uint, void*, uint, uint*, uint, int> OInetQueryInfo => &CoInternetQueryInfo;
 
         [NativeTypeName("#define OInetGetSession CoInternetGetSession")]
-        public static readonly delegate*<uint, IInternetSession**, uint, int> OInetGetSession = &CoInternetGetSession;
+        public static delegate*<uint, IInternetSession**, uint, int> OInetGetSession => &CoInternetGetSession;
 
         [NativeTypeName("#define PROTOCOLFLAG_NO_PICS_CHECK 0x00000001")]
         public const int PROTOCOLFLAG_NO_PICS_CHECK = 0x00000001;
 
         [NativeTypeName("#define SID_SInternetSecurityManager IID_IInternetSecurityManager")]
-        public static readonly Guid SID_SInternetSecurityManager = IID_IInternetSecurityManager;
+        public static ref readonly Guid SID_SInternetSecurityManager => ref IID_IInternetSecurityManager;
 
         [NativeTypeName("#define SID_SInternetSecurityManagerEx IID_IInternetSecurityManagerEx")]
-        public static readonly Guid SID_SInternetSecurityManagerEx = IID_IInternetSecurityManagerEx;
+        public static ref readonly Guid SID_SInternetSecurityManagerEx => ref IID_IInternetSecurityManagerEx;
 
         [NativeTypeName("#define SID_SInternetSecurityManagerEx2 IID_IInternetSecurityManagerEx2")]
-        public static readonly Guid SID_SInternetSecurityManagerEx2 = IID_IInternetSecurityManagerEx2;
+        public static ref readonly Guid SID_SInternetSecurityManagerEx2 => ref IID_IInternetSecurityManagerEx2;
 
         [NativeTypeName("#define SID_SInternetHostSecurityManager IID_IInternetHostSecurityManager")]
-        public static readonly Guid SID_SInternetHostSecurityManager = IID_IInternetHostSecurityManager;
+        public static ref readonly Guid SID_SInternetHostSecurityManager => ref IID_IInternetHostSecurityManager;
 
         [NativeTypeName("#define MUTZ_NOSAVEDFILECHECK 0x00000001")]
         public const int MUTZ_NOSAVEDFILECHECK = 0x00000001;
@@ -1596,119 +1598,1274 @@ namespace TerraFX.Interop
         public const int SOFTDIST_ADSTATE_INSTALLED = 0x00000003;
 
         [NativeTypeName("#define IsLoggingEnabled IsLoggingEnabledW")]
-        public static readonly delegate*<ushort*, int> IsLoggingEnabled = &IsLoggingEnabledW;
+        public static delegate*<ushort*, int> IsLoggingEnabled => &IsLoggingEnabledW;
 
         [NativeTypeName("#define CONFIRMSAFETYACTION_LOADOBJECT 0x00000001")]
         public const int CONFIRMSAFETYACTION_LOADOBJECT = 0x00000001;
 
-        public static readonly Guid IID_IPersistMoniker = new Guid(0x79EAC9C9, 0xBAF9, 0x11CE, 0x8C, 0x82, 0x00, 0xAA, 0x00, 0x4B, 0xA9, 0x0B);
+        public static ref readonly Guid IID_IPersistMoniker
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xC9, 0xC9, 0xEA, 0x79,
+                    0xF9, 0xBA,
+                    0xCE, 0x11,
+                    0x8C,
+                    0x82,
+                    0x00,
+                    0xAA,
+                    0x00,
+                    0x4B,
+                    0xA9,
+                    0x0B
+                };
 
-        public static readonly Guid IID_IMonikerProp = new Guid(0xA5CA5F7F, 0x1847, 0x4D87, 0x9C, 0x5B, 0x91, 0x85, 0x09, 0xF7, 0x51, 0x1D);
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
-        public static readonly Guid IID_IBindProtocol = new Guid(0x79EAC9CD, 0xBAF9, 0x11CE, 0x8C, 0x82, 0x00, 0xAA, 0x00, 0x4B, 0xA9, 0x0B);
+        public static ref readonly Guid IID_IMonikerProp
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x7F, 0x5F, 0xCA, 0xA5,
+                    0x47, 0x18,
+                    0x87, 0x4D,
+                    0x9C,
+                    0x5B,
+                    0x91,
+                    0x85,
+                    0x09,
+                    0xF7,
+                    0x51,
+                    0x1D
+                };
 
-        public static readonly Guid IID_IBinding = new Guid(0x79EAC9C0, 0xBAF9, 0x11CE, 0x8C, 0x82, 0x00, 0xAA, 0x00, 0x4B, 0xA9, 0x0B);
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
-        public static readonly Guid IID_IBindStatusCallback = new Guid(0x79EAC9C1, 0xBAF9, 0x11CE, 0x8C, 0x82, 0x00, 0xAA, 0x00, 0x4B, 0xA9, 0x0B);
+        public static ref readonly Guid IID_IBindProtocol
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xCD, 0xC9, 0xEA, 0x79,
+                    0xF9, 0xBA,
+                    0xCE, 0x11,
+                    0x8C,
+                    0x82,
+                    0x00,
+                    0xAA,
+                    0x00,
+                    0x4B,
+                    0xA9,
+                    0x0B
+                };
 
-        public static readonly Guid IID_IBindStatusCallbackEx = new Guid(0xAAA74EF9, 0x8EE7, 0x4659, 0x88, 0xD9, 0xF8, 0xC5, 0x04, 0xDA, 0x73, 0xCC);
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
-        public static readonly Guid IID_IAuthenticate = new Guid(0x79EAC9D0, 0xBAF9, 0x11CE, 0x8C, 0x82, 0x00, 0xAA, 0x00, 0x4B, 0xA9, 0x0B);
+        public static ref readonly Guid IID_IBinding
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xC0, 0xC9, 0xEA, 0x79,
+                    0xF9, 0xBA,
+                    0xCE, 0x11,
+                    0x8C,
+                    0x82,
+                    0x00,
+                    0xAA,
+                    0x00,
+                    0x4B,
+                    0xA9,
+                    0x0B
+                };
 
-        public static readonly Guid IID_IAuthenticateEx = new Guid(0x2AD1EDAF, 0xD83D, 0x48B5, 0x9A, 0xDF, 0x03, 0xDB, 0xE1, 0x9F, 0x53, 0xBD);
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
-        public static readonly Guid IID_IHttpNegotiate = new Guid(0x79EAC9D2, 0xBAF9, 0x11CE, 0x8C, 0x82, 0x00, 0xAA, 0x00, 0x4B, 0xA9, 0x0B);
+        public static ref readonly Guid IID_IBindStatusCallback
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xC1, 0xC9, 0xEA, 0x79,
+                    0xF9, 0xBA,
+                    0xCE, 0x11,
+                    0x8C,
+                    0x82,
+                    0x00,
+                    0xAA,
+                    0x00,
+                    0x4B,
+                    0xA9,
+                    0x0B
+                };
 
-        public static readonly Guid IID_IHttpNegotiate2 = new Guid(0x4F9F9FCB, 0xE0F4, 0x48EB, 0xB7, 0xAB, 0xFA, 0x2E, 0xA9, 0x36, 0x5C, 0xB4);
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
-        public static readonly Guid IID_IHttpNegotiate3 = new Guid(0x57B6C80A, 0x34C2, 0x4602, 0xBC, 0x26, 0x66, 0xA0, 0x2F, 0xC5, 0x71, 0x53);
+        public static ref readonly Guid IID_IBindStatusCallbackEx
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xF9, 0x4E, 0xA7, 0xAA,
+                    0xE7, 0x8E,
+                    0x59, 0x46,
+                    0x88,
+                    0xD9,
+                    0xF8,
+                    0xC5,
+                    0x04,
+                    0xDA,
+                    0x73,
+                    0xCC
+                };
 
-        public static readonly Guid IID_IWinInetFileStream = new Guid(0xF134C4B7, 0xB1F8, 0x4E75, 0xB8, 0x86, 0x74, 0xB9, 0x09, 0x43, 0xBE, 0xCB);
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
-        public static readonly Guid IID_IWindowForBindingUI = new Guid(0x79EAC9D5, 0xBAFA, 0x11CE, 0x8C, 0x82, 0x00, 0xAA, 0x00, 0x4B, 0xA9, 0x0B);
+        public static ref readonly Guid IID_IAuthenticate
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xD0, 0xC9, 0xEA, 0x79,
+                    0xF9, 0xBA,
+                    0xCE, 0x11,
+                    0x8C,
+                    0x82,
+                    0x00,
+                    0xAA,
+                    0x00,
+                    0x4B,
+                    0xA9,
+                    0x0B
+                };
 
-        public static readonly Guid IID_ICodeInstall = new Guid(0x79EAC9D1, 0xBAF9, 0x11CE, 0x8C, 0x82, 0x00, 0xAA, 0x00, 0x4B, 0xA9, 0x0B);
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
-        public static readonly Guid IID_IUri = new Guid(0xA39EE748, 0x6A27, 0x4817, 0xA6, 0xF2, 0x13, 0x91, 0x4B, 0xEF, 0x58, 0x90);
+        public static ref readonly Guid IID_IAuthenticateEx
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xAF, 0xED, 0xD1, 0x2A,
+                    0x3D, 0xD8,
+                    0xB5, 0x48,
+                    0x9A,
+                    0xDF,
+                    0x03,
+                    0xDB,
+                    0xE1,
+                    0x9F,
+                    0x53,
+                    0xBD
+                };
 
-        public static readonly Guid IID_IUriContainer = new Guid(0xA158A630, 0xED6F, 0x45FB, 0xB9, 0x87, 0xF6, 0x86, 0x76, 0xF5, 0x77, 0x52);
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
-        public static readonly Guid IID_IUriBuilder = new Guid(0x4221B2E1, 0x8955, 0x46C0, 0xBD, 0x5B, 0xDE, 0x98, 0x97, 0x56, 0x5D, 0xE7);
+        public static ref readonly Guid IID_IHttpNegotiate
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xD2, 0xC9, 0xEA, 0x79,
+                    0xF9, 0xBA,
+                    0xCE, 0x11,
+                    0x8C,
+                    0x82,
+                    0x00,
+                    0xAA,
+                    0x00,
+                    0x4B,
+                    0xA9,
+                    0x0B
+                };
 
-        public static readonly Guid IID_IUriBuilderFactory = new Guid(0xE982CE48, 0x0B96, 0x440C, 0xBC, 0x37, 0x0C, 0x86, 0x9B, 0x27, 0xA2, 0x9E);
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
-        public static readonly Guid IID_IWinInetInfo = new Guid(0x79EAC9D6, 0xBAFA, 0x11CE, 0x8C, 0x82, 0x00, 0xAA, 0x00, 0x4B, 0xA9, 0x0B);
+        public static ref readonly Guid IID_IHttpNegotiate2
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xCB, 0x9F, 0x9F, 0x4F,
+                    0xF4, 0xE0,
+                    0xEB, 0x48,
+                    0xB7,
+                    0xAB,
+                    0xFA,
+                    0x2E,
+                    0xA9,
+                    0x36,
+                    0x5C,
+                    0xB4
+                };
 
-        public static readonly Guid IID_IHttpSecurity = new Guid(0x79EAC9D7, 0xBAFA, 0x11CE, 0x8C, 0x82, 0x00, 0xAA, 0x00, 0x4B, 0xA9, 0x0B);
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
-        public static readonly Guid IID_IWinInetHttpInfo = new Guid(0x79EAC9D8, 0xBAFA, 0x11CE, 0x8C, 0x82, 0x00, 0xAA, 0x00, 0x4B, 0xA9, 0x0B);
+        public static ref readonly Guid IID_IHttpNegotiate3
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x0A, 0xC8, 0xB6, 0x57,
+                    0xC2, 0x34,
+                    0x02, 0x46,
+                    0xBC,
+                    0x26,
+                    0x66,
+                    0xA0,
+                    0x2F,
+                    0xC5,
+                    0x71,
+                    0x53
+                };
 
-        public static readonly Guid IID_IWinInetHttpTimeouts = new Guid(0xF286FA56, 0xC1FD, 0x4270, 0x8E, 0x67, 0xB3, 0xEB, 0x79, 0x0A, 0x81, 0xE8);
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
-        public static readonly Guid IID_IWinInetCacheHints = new Guid(0xDD1EC3B3, 0x8391, 0x4FDB, 0xA9, 0xE6, 0x34, 0x7C, 0x3C, 0xAA, 0xA7, 0xDD);
+        public static ref readonly Guid IID_IWinInetFileStream
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xB7, 0xC4, 0x34, 0xF1,
+                    0xF8, 0xB1,
+                    0x75, 0x4E,
+                    0xB8,
+                    0x86,
+                    0x74,
+                    0xB9,
+                    0x09,
+                    0x43,
+                    0xBE,
+                    0xCB
+                };
 
-        public static readonly Guid IID_IWinInetCacheHints2 = new Guid(0x7857AEAC, 0xD31F, 0x49BF, 0x88, 0x4E, 0xDD, 0x46, 0xDF, 0x36, 0x78, 0x0A);
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
-        public static readonly Guid IID_IBindHost = new Guid(0xFC4801A1, 0x2BA9, 0x11CF, 0xA2, 0x29, 0x00, 0xAA, 0x00, 0x3D, 0x73, 0x52);
+        public static ref readonly Guid IID_IWindowForBindingUI
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xD5, 0xC9, 0xEA, 0x79,
+                    0xFA, 0xBA,
+                    0xCE, 0x11,
+                    0x8C,
+                    0x82,
+                    0x00,
+                    0xAA,
+                    0x00,
+                    0x4B,
+                    0xA9,
+                    0x0B
+                };
 
-        public static readonly Guid IID_IInternet = new Guid(0x79EAC9E0, 0xBAF9, 0x11CE, 0x8C, 0x82, 0x00, 0xAA, 0x00, 0x4B, 0xA9, 0x0B);
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
-        public static readonly Guid IID_IInternetBindInfo = new Guid(0x79EAC9E1, 0xBAF9, 0x11CE, 0x8C, 0x82, 0x00, 0xAA, 0x00, 0x4B, 0xA9, 0x0B);
+        public static ref readonly Guid IID_ICodeInstall
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xD1, 0xC9, 0xEA, 0x79,
+                    0xF9, 0xBA,
+                    0xCE, 0x11,
+                    0x8C,
+                    0x82,
+                    0x00,
+                    0xAA,
+                    0x00,
+                    0x4B,
+                    0xA9,
+                    0x0B
+                };
 
-        public static readonly Guid IID_IInternetBindInfoEx = new Guid(0xA3E015B7, 0xA82C, 0x4DCD, 0xA1, 0x50, 0x56, 0x9A, 0xEE, 0xED, 0x36, 0xAB);
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
-        public static readonly Guid IID_IInternetProtocolRoot = new Guid(0x79EAC9E3, 0xBAF9, 0x11CE, 0x8C, 0x82, 0x00, 0xAA, 0x00, 0x4B, 0xA9, 0x0B);
+        public static ref readonly Guid IID_IUri
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x48, 0xE7, 0x9E, 0xA3,
+                    0x27, 0x6A,
+                    0x17, 0x48,
+                    0xA6,
+                    0xF2,
+                    0x13,
+                    0x91,
+                    0x4B,
+                    0xEF,
+                    0x58,
+                    0x90
+                };
 
-        public static readonly Guid IID_IInternetProtocol = new Guid(0x79EAC9E4, 0xBAF9, 0x11CE, 0x8C, 0x82, 0x00, 0xAA, 0x00, 0x4B, 0xA9, 0x0B);
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
-        public static readonly Guid IID_IInternetProtocolEx = new Guid(0xC7A98E66, 0x1010, 0x492C, 0xA1, 0xC8, 0xC8, 0x09, 0xE1, 0xF7, 0x59, 0x05);
+        public static ref readonly Guid IID_IUriContainer
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x30, 0xA6, 0x58, 0xA1,
+                    0x6F, 0xED,
+                    0xFB, 0x45,
+                    0xB9,
+                    0x87,
+                    0xF6,
+                    0x86,
+                    0x76,
+                    0xF5,
+                    0x77,
+                    0x52
+                };
 
-        public static readonly Guid IID_IInternetProtocolSink = new Guid(0x79EAC9E5, 0xBAF9, 0x11CE, 0x8C, 0x82, 0x00, 0xAA, 0x00, 0x4B, 0xA9, 0x0B);
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
-        public static readonly Guid IID_IInternetProtocolSinkStackable = new Guid(0x79EAC9F0, 0xBAF9, 0x11CE, 0x8C, 0x82, 0x00, 0xAA, 0x00, 0x4B, 0xA9, 0x0B);
+        public static ref readonly Guid IID_IUriBuilder
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xE1, 0xB2, 0x21, 0x42,
+                    0x55, 0x89,
+                    0xC0, 0x46,
+                    0xBD,
+                    0x5B,
+                    0xDE,
+                    0x98,
+                    0x97,
+                    0x56,
+                    0x5D,
+                    0xE7
+                };
 
-        public static readonly Guid IID_IInternetSession = new Guid(0x79EAC9E7, 0xBAF9, 0x11CE, 0x8C, 0x82, 0x00, 0xAA, 0x00, 0x4B, 0xA9, 0x0B);
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
-        public static readonly Guid IID_IInternetThreadSwitch = new Guid(0x79EAC9E8, 0xBAF9, 0x11CE, 0x8C, 0x82, 0x00, 0xAA, 0x00, 0x4B, 0xA9, 0x0B);
+        public static ref readonly Guid IID_IUriBuilderFactory
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x48, 0xCE, 0x82, 0xE9,
+                    0x96, 0x0B,
+                    0x0C, 0x44,
+                    0xBC,
+                    0x37,
+                    0x0C,
+                    0x86,
+                    0x9B,
+                    0x27,
+                    0xA2,
+                    0x9E
+                };
 
-        public static readonly Guid IID_IInternetPriority = new Guid(0x79EAC9EB, 0xBAF9, 0x11CE, 0x8C, 0x82, 0x00, 0xAA, 0x00, 0x4B, 0xA9, 0x0B);
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
-        public static readonly Guid IID_IInternetProtocolInfo = new Guid(0x79EAC9EC, 0xBAF9, 0x11CE, 0x8C, 0x82, 0x00, 0xAA, 0x00, 0x4B, 0xA9, 0x0B);
+        public static ref readonly Guid IID_IWinInetInfo
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xD6, 0xC9, 0xEA, 0x79,
+                    0xFA, 0xBA,
+                    0xCE, 0x11,
+                    0x8C,
+                    0x82,
+                    0x00,
+                    0xAA,
+                    0x00,
+                    0x4B,
+                    0xA9,
+                    0x0B
+                };
 
-        public static readonly Guid IID_IInternetSecurityMgrSite = new Guid(0x79EAC9ED, 0xBAF9, 0x11CE, 0x8C, 0x82, 0x00, 0xAA, 0x00, 0x4B, 0xA9, 0x0B);
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
-        public static readonly Guid IID_IInternetSecurityManager = new Guid(0x79EAC9EE, 0xBAF9, 0x11CE, 0x8C, 0x82, 0x00, 0xAA, 0x00, 0x4B, 0xA9, 0x0B);
+        public static ref readonly Guid IID_IHttpSecurity
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xD7, 0xC9, 0xEA, 0x79,
+                    0xFA, 0xBA,
+                    0xCE, 0x11,
+                    0x8C,
+                    0x82,
+                    0x00,
+                    0xAA,
+                    0x00,
+                    0x4B,
+                    0xA9,
+                    0x0B
+                };
 
-        public static readonly Guid IID_IInternetSecurityManagerEx = new Guid(0xF164EDF1, 0xCC7C, 0x4F0D, 0x9A, 0x94, 0x34, 0x22, 0x26, 0x25, 0xC3, 0x93);
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
-        public static readonly Guid IID_IInternetSecurityManagerEx2 = new Guid(0xF1E50292, 0xA795, 0x4117, 0x8E, 0x09, 0x2B, 0x56, 0x0A, 0x72, 0xAC, 0x60);
+        public static ref readonly Guid IID_IWinInetHttpInfo
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xD8, 0xC9, 0xEA, 0x79,
+                    0xFA, 0xBA,
+                    0xCE, 0x11,
+                    0x8C,
+                    0x82,
+                    0x00,
+                    0xAA,
+                    0x00,
+                    0x4B,
+                    0xA9,
+                    0x0B
+                };
 
-        public static readonly Guid IID_IZoneIdentifier = new Guid(0xCD45F185, 0x1B21, 0x48E2, 0x96, 0x7B, 0xEA, 0xD7, 0x43, 0xA8, 0x91, 0x4E);
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
-        public static readonly Guid IID_IZoneIdentifier2 = new Guid(0xEB5E760C, 0x09EF, 0x45C0, 0xB5, 0x10, 0x70, 0x83, 0x0C, 0xE3, 0x1E, 0x6A);
+        public static ref readonly Guid IID_IWinInetHttpTimeouts
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x56, 0xFA, 0x86, 0xF2,
+                    0xFD, 0xC1,
+                    0x70, 0x42,
+                    0x8E,
+                    0x67,
+                    0xB3,
+                    0xEB,
+                    0x79,
+                    0x0A,
+                    0x81,
+                    0xE8
+                };
 
-        public static readonly Guid IID_IInternetHostSecurityManager = new Guid(0x3AF280B6, 0xCB3F, 0x11D0, 0x89, 0x1E, 0x00, 0xC0, 0x4F, 0xB6, 0xBF, 0xC4);
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
-        public static readonly Guid IID_IInternetZoneManager = new Guid(0x79EAC9EF, 0xBAF9, 0x11CE, 0x8C, 0x82, 0x00, 0xAA, 0x00, 0x4B, 0xA9, 0x0B);
+        public static ref readonly Guid IID_IWinInetCacheHints
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xB3, 0xC3, 0x1E, 0xDD,
+                    0x91, 0x83,
+                    0xDB, 0x4F,
+                    0xA9,
+                    0xE6,
+                    0x34,
+                    0x7C,
+                    0x3C,
+                    0xAA,
+                    0xA7,
+                    0xDD
+                };
 
-        public static readonly Guid IID_IInternetZoneManagerEx = new Guid(0xA4C23339, 0x8E06, 0x431E, 0x9B, 0xF4, 0x7E, 0x71, 0x1C, 0x08, 0x56, 0x48);
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
-        public static readonly Guid IID_IInternetZoneManagerEx2 = new Guid(0xEDC17559, 0xDD5D, 0x4846, 0x8E, 0xEF, 0x8B, 0xEC, 0xBA, 0x5A, 0x4A, 0xBF);
+        public static ref readonly Guid IID_IWinInetCacheHints2
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xAC, 0xAE, 0x57, 0x78,
+                    0x1F, 0xD3,
+                    0xBF, 0x49,
+                    0x88,
+                    0x4E,
+                    0xDD,
+                    0x46,
+                    0xDF,
+                    0x36,
+                    0x78,
+                    0x0A
+                };
 
-        public static readonly Guid IID_ISoftDistExt = new Guid(0xB15B8DC1, 0xC7E1, 0x11D0, 0x86, 0x80, 0x00, 0xAA, 0x00, 0xBD, 0xCB, 0x71);
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
-        public static readonly Guid IID_ICatalogFileInfo = new Guid(0x711C7600, 0x6B48, 0x11D1, 0xB4, 0x03, 0x00, 0xAA, 0x00, 0xB9, 0x2A, 0xF1);
+        public static ref readonly Guid IID_IBindHost
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xA1, 0x01, 0x48, 0xFC,
+                    0xA9, 0x2B,
+                    0xCF, 0x11,
+                    0xA2,
+                    0x29,
+                    0x00,
+                    0xAA,
+                    0x00,
+                    0x3D,
+                    0x73,
+                    0x52
+                };
 
-        public static readonly Guid IID_IDataFilter = new Guid(0x69D14C80, 0xC18E, 0x11D0, 0xA9, 0xCE, 0x00, 0x60, 0x97, 0x94, 0x23, 0x11);
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
-        public static readonly Guid IID_IEncodingFilterFactory = new Guid(0x70BDDE00, 0xC18E, 0x11D0, 0xA9, 0xCE, 0x00, 0x60, 0x97, 0x94, 0x23, 0x11);
+        public static ref readonly Guid IID_IInternet
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xE0, 0xC9, 0xEA, 0x79,
+                    0xF9, 0xBA,
+                    0xCE, 0x11,
+                    0x8C,
+                    0x82,
+                    0x00,
+                    0xAA,
+                    0x00,
+                    0x4B,
+                    0xA9,
+                    0x0B
+                };
 
-        public static readonly Guid IID_IWrappedProtocol = new Guid(0x53C84785, 0x8425, 0x4DC5, 0x97, 0x1B, 0xE5, 0x8D, 0x9C, 0x19, 0xF9, 0xB6);
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
-        public static readonly Guid IID_IGetBindHandle = new Guid(0xAF0FF408, 0x129D, 0x4B20, 0x91, 0xF0, 0x02, 0xBD, 0x23, 0xD8, 0x83, 0x52);
+        public static ref readonly Guid IID_IInternetBindInfo
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xE1, 0xC9, 0xEA, 0x79,
+                    0xF9, 0xBA,
+                    0xCE, 0x11,
+                    0x8C,
+                    0x82,
+                    0x00,
+                    0xAA,
+                    0x00,
+                    0x4B,
+                    0xA9,
+                    0x0B
+                };
 
-        public static readonly Guid IID_IBindCallbackRedirect = new Guid(0x11C81BC2, 0x121E, 0x4ED5, 0xB9, 0xC4, 0xB4, 0x30, 0xBD, 0x54, 0xF2, 0xC0);
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
-        public static readonly Guid IID_IBindHttpSecurity = new Guid(0xA9EDA967, 0xF50E, 0x4A33, 0xB3, 0x58, 0x20, 0x6F, 0x6E, 0xF3, 0x08, 0x6D);
+        public static ref readonly Guid IID_IInternetBindInfoEx
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xB7, 0x15, 0xE0, 0xA3,
+                    0x2C, 0xA8,
+                    0xCD, 0x4D,
+                    0xA1,
+                    0x50,
+                    0x56,
+                    0x9A,
+                    0xEE,
+                    0xED,
+                    0x36,
+                    0xAB
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid IID_IInternetProtocolRoot
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xE3, 0xC9, 0xEA, 0x79,
+                    0xF9, 0xBA,
+                    0xCE, 0x11,
+                    0x8C,
+                    0x82,
+                    0x00,
+                    0xAA,
+                    0x00,
+                    0x4B,
+                    0xA9,
+                    0x0B
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid IID_IInternetProtocol
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xE4, 0xC9, 0xEA, 0x79,
+                    0xF9, 0xBA,
+                    0xCE, 0x11,
+                    0x8C,
+                    0x82,
+                    0x00,
+                    0xAA,
+                    0x00,
+                    0x4B,
+                    0xA9,
+                    0x0B
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid IID_IInternetProtocolEx
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x66, 0x8E, 0xA9, 0xC7,
+                    0x10, 0x10,
+                    0x2C, 0x49,
+                    0xA1,
+                    0xC8,
+                    0xC8,
+                    0x09,
+                    0xE1,
+                    0xF7,
+                    0x59,
+                    0x05
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid IID_IInternetProtocolSink
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xE5, 0xC9, 0xEA, 0x79,
+                    0xF9, 0xBA,
+                    0xCE, 0x11,
+                    0x8C,
+                    0x82,
+                    0x00,
+                    0xAA,
+                    0x00,
+                    0x4B,
+                    0xA9,
+                    0x0B
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid IID_IInternetProtocolSinkStackable
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xF0, 0xC9, 0xEA, 0x79,
+                    0xF9, 0xBA,
+                    0xCE, 0x11,
+                    0x8C,
+                    0x82,
+                    0x00,
+                    0xAA,
+                    0x00,
+                    0x4B,
+                    0xA9,
+                    0x0B
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid IID_IInternetSession
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xE7, 0xC9, 0xEA, 0x79,
+                    0xF9, 0xBA,
+                    0xCE, 0x11,
+                    0x8C,
+                    0x82,
+                    0x00,
+                    0xAA,
+                    0x00,
+                    0x4B,
+                    0xA9,
+                    0x0B
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid IID_IInternetThreadSwitch
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xE8, 0xC9, 0xEA, 0x79,
+                    0xF9, 0xBA,
+                    0xCE, 0x11,
+                    0x8C,
+                    0x82,
+                    0x00,
+                    0xAA,
+                    0x00,
+                    0x4B,
+                    0xA9,
+                    0x0B
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid IID_IInternetPriority
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xEB, 0xC9, 0xEA, 0x79,
+                    0xF9, 0xBA,
+                    0xCE, 0x11,
+                    0x8C,
+                    0x82,
+                    0x00,
+                    0xAA,
+                    0x00,
+                    0x4B,
+                    0xA9,
+                    0x0B
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid IID_IInternetProtocolInfo
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xEC, 0xC9, 0xEA, 0x79,
+                    0xF9, 0xBA,
+                    0xCE, 0x11,
+                    0x8C,
+                    0x82,
+                    0x00,
+                    0xAA,
+                    0x00,
+                    0x4B,
+                    0xA9,
+                    0x0B
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid IID_IInternetSecurityMgrSite
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xED, 0xC9, 0xEA, 0x79,
+                    0xF9, 0xBA,
+                    0xCE, 0x11,
+                    0x8C,
+                    0x82,
+                    0x00,
+                    0xAA,
+                    0x00,
+                    0x4B,
+                    0xA9,
+                    0x0B
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid IID_IInternetSecurityManager
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xEE, 0xC9, 0xEA, 0x79,
+                    0xF9, 0xBA,
+                    0xCE, 0x11,
+                    0x8C,
+                    0x82,
+                    0x00,
+                    0xAA,
+                    0x00,
+                    0x4B,
+                    0xA9,
+                    0x0B
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid IID_IInternetSecurityManagerEx
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xF1, 0xED, 0x64, 0xF1,
+                    0x7C, 0xCC,
+                    0x0D, 0x4F,
+                    0x9A,
+                    0x94,
+                    0x34,
+                    0x22,
+                    0x26,
+                    0x25,
+                    0xC3,
+                    0x93
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid IID_IInternetSecurityManagerEx2
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x92, 0x02, 0xE5, 0xF1,
+                    0x95, 0xA7,
+                    0x17, 0x41,
+                    0x8E,
+                    0x09,
+                    0x2B,
+                    0x56,
+                    0x0A,
+                    0x72,
+                    0xAC,
+                    0x60
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid IID_IZoneIdentifier
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x85, 0xF1, 0x45, 0xCD,
+                    0x21, 0x1B,
+                    0xE2, 0x48,
+                    0x96,
+                    0x7B,
+                    0xEA,
+                    0xD7,
+                    0x43,
+                    0xA8,
+                    0x91,
+                    0x4E
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid IID_IZoneIdentifier2
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x0C, 0x76, 0x5E, 0xEB,
+                    0xEF, 0x09,
+                    0xC0, 0x45,
+                    0xB5,
+                    0x10,
+                    0x70,
+                    0x83,
+                    0x0C,
+                    0xE3,
+                    0x1E,
+                    0x6A
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid IID_IInternetHostSecurityManager
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xB6, 0x80, 0xF2, 0x3A,
+                    0x3F, 0xCB,
+                    0xD0, 0x11,
+                    0x89,
+                    0x1E,
+                    0x00,
+                    0xC0,
+                    0x4F,
+                    0xB6,
+                    0xBF,
+                    0xC4
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid IID_IInternetZoneManager
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xEF, 0xC9, 0xEA, 0x79,
+                    0xF9, 0xBA,
+                    0xCE, 0x11,
+                    0x8C,
+                    0x82,
+                    0x00,
+                    0xAA,
+                    0x00,
+                    0x4B,
+                    0xA9,
+                    0x0B
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid IID_IInternetZoneManagerEx
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x39, 0x33, 0xC2, 0xA4,
+                    0x06, 0x8E,
+                    0x1E, 0x43,
+                    0x9B,
+                    0xF4,
+                    0x7E,
+                    0x71,
+                    0x1C,
+                    0x08,
+                    0x56,
+                    0x48
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid IID_IInternetZoneManagerEx2
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x59, 0x75, 0xC1, 0xED,
+                    0x5D, 0xDD,
+                    0x46, 0x48,
+                    0x8E,
+                    0xEF,
+                    0x8B,
+                    0xEC,
+                    0xBA,
+                    0x5A,
+                    0x4A,
+                    0xBF
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid IID_ISoftDistExt
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xC1, 0x8D, 0x5B, 0xB1,
+                    0xE1, 0xC7,
+                    0xD0, 0x11,
+                    0x86,
+                    0x80,
+                    0x00,
+                    0xAA,
+                    0x00,
+                    0xBD,
+                    0xCB,
+                    0x71
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid IID_ICatalogFileInfo
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x00, 0x76, 0x1C, 0x71,
+                    0x48, 0x6B,
+                    0xD1, 0x11,
+                    0xB4,
+                    0x03,
+                    0x00,
+                    0xAA,
+                    0x00,
+                    0xB9,
+                    0x2A,
+                    0xF1
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid IID_IDataFilter
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x80, 0x4C, 0xD1, 0x69,
+                    0x8E, 0xC1,
+                    0xD0, 0x11,
+                    0xA9,
+                    0xCE,
+                    0x00,
+                    0x60,
+                    0x97,
+                    0x94,
+                    0x23,
+                    0x11
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid IID_IEncodingFilterFactory
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x00, 0xDE, 0xBD, 0x70,
+                    0x8E, 0xC1,
+                    0xD0, 0x11,
+                    0xA9,
+                    0xCE,
+                    0x00,
+                    0x60,
+                    0x97,
+                    0x94,
+                    0x23,
+                    0x11
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid IID_IWrappedProtocol
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x85, 0x47, 0xC8, 0x53,
+                    0x25, 0x84,
+                    0xC5, 0x4D,
+                    0x97,
+                    0x1B,
+                    0xE5,
+                    0x8D,
+                    0x9C,
+                    0x19,
+                    0xF9,
+                    0xB6
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid IID_IGetBindHandle
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x08, 0xF4, 0x0F, 0xAF,
+                    0x9D, 0x12,
+                    0x20, 0x4B,
+                    0x91,
+                    0xF0,
+                    0x02,
+                    0xBD,
+                    0x23,
+                    0xD8,
+                    0x83,
+                    0x52
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid IID_IBindCallbackRedirect
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xC2, 0x1B, 0xC8, 0x11,
+                    0x1E, 0x12,
+                    0xD5, 0x4E,
+                    0xB9,
+                    0xC4,
+                    0xB4,
+                    0x30,
+                    0xBD,
+                    0x54,
+                    0xF2,
+                    0xC0
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid IID_IBindHttpSecurity
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x67, 0xA9, 0xED, 0xA9,
+                    0x0E, 0xF5,
+                    0x33, 0x4A,
+                    0xB3,
+                    0x58,
+                    0x20,
+                    0x6F,
+                    0x6E,
+                    0xF3,
+                    0x08,
+                    0x6D
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
     }
 }

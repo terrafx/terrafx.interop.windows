@@ -584,16 +584,16 @@ namespace TerraFX.Interop
         public const int WAVE_FORMAT_PCM = 1;
 
         [NativeTypeName("#define waveOutGetDevCaps waveOutGetDevCapsW")]
-        public static readonly delegate*<nuint, WAVEOUTCAPSW*, uint, uint> waveOutGetDevCaps = &waveOutGetDevCapsW;
+        public static delegate*<nuint, WAVEOUTCAPSW*, uint, uint> waveOutGetDevCaps => &waveOutGetDevCapsW;
 
         [NativeTypeName("#define waveOutGetErrorText waveOutGetErrorTextW")]
-        public static readonly delegate*<uint, ushort*, uint, uint> waveOutGetErrorText = &waveOutGetErrorTextW;
+        public static delegate*<uint, ushort*, uint, uint> waveOutGetErrorText => &waveOutGetErrorTextW;
 
         [NativeTypeName("#define waveInGetDevCaps waveInGetDevCapsW")]
-        public static readonly delegate*<nuint, WAVEINCAPSW*, uint, uint> waveInGetDevCaps = &waveInGetDevCapsW;
+        public static delegate*<nuint, WAVEINCAPSW*, uint, uint> waveInGetDevCaps => &waveInGetDevCapsW;
 
         [NativeTypeName("#define waveInGetErrorText waveInGetErrorTextW")]
-        public static readonly delegate*<uint, ushort*, uint, uint> waveInGetErrorText = &waveInGetErrorTextW;
+        public static delegate*<uint, ushort*, uint, uint> waveInGetErrorText => &waveInGetErrorTextW;
 
         [NativeTypeName("#define MIDIERR_UNPREPARED (MIDIERR_BASE + 0)")]
         public const int MIDIERR_UNPREPARED = (64 + 0);
@@ -767,16 +767,16 @@ namespace TerraFX.Interop
         public const int MIDIPROP_TEMPO = 0x00000002;
 
         [NativeTypeName("#define midiOutGetDevCaps midiOutGetDevCapsW")]
-        public static readonly delegate*<nuint, MIDIOUTCAPSW*, uint, uint> midiOutGetDevCaps = &midiOutGetDevCapsW;
+        public static delegate*<nuint, MIDIOUTCAPSW*, uint, uint> midiOutGetDevCaps => &midiOutGetDevCapsW;
 
         [NativeTypeName("#define midiOutGetErrorText midiOutGetErrorTextW")]
-        public static readonly delegate*<uint, ushort*, uint, uint> midiOutGetErrorText = &midiOutGetErrorTextW;
+        public static delegate*<uint, ushort*, uint, uint> midiOutGetErrorText => &midiOutGetErrorTextW;
 
         [NativeTypeName("#define midiInGetDevCaps midiInGetDevCapsW")]
-        public static readonly delegate*<nuint, MIDIINCAPSW*, uint, uint> midiInGetDevCaps = &midiInGetDevCapsW;
+        public static delegate*<nuint, MIDIINCAPSW*, uint, uint> midiInGetDevCaps => &midiInGetDevCapsW;
 
         [NativeTypeName("#define midiInGetErrorText midiInGetErrorTextW")]
-        public static readonly delegate*<uint, ushort*, uint, uint> midiInGetErrorText = &midiInGetErrorTextW;
+        public static delegate*<uint, ushort*, uint, uint> midiInGetErrorText => &midiInGetErrorTextW;
 
         [NativeTypeName("#define AUX_MAPPER ((UINT)-1)")]
         public const uint AUX_MAPPER = unchecked((uint)(-1));
@@ -794,7 +794,7 @@ namespace TerraFX.Interop
         public const int AUXCAPS_LRVOLUME = 0x0002;
 
         [NativeTypeName("#define auxGetDevCaps auxGetDevCapsW")]
-        public static readonly delegate*<nuint, AUXCAPSW*, uint, uint> auxGetDevCaps = &auxGetDevCapsW;
+        public static delegate*<nuint, AUXCAPSW*, uint, uint> auxGetDevCaps => &auxGetDevCapsW;
 
         [NativeTypeName("#define MIXER_SHORT_NAME_CHARS 16")]
         public const int MIXER_SHORT_NAME_CHARS = 16;
@@ -851,7 +851,7 @@ namespace TerraFX.Interop
         public const int MIXER_OBJECTF_AUX = 0x50000000;
 
         [NativeTypeName("#define mixerGetDevCaps mixerGetDevCapsW")]
-        public static readonly delegate*<nuint, MIXERCAPSW*, uint, uint> mixerGetDevCaps = &mixerGetDevCapsW;
+        public static delegate*<nuint, MIXERCAPSW*, uint, uint> mixerGetDevCaps => &mixerGetDevCapsW;
 
         [NativeTypeName("#define MIXERLINE_LINEF_ACTIVE 0x00000001L")]
         public const int MIXERLINE_LINEF_ACTIVE = 0x00000001;
@@ -953,7 +953,7 @@ namespace TerraFX.Interop
         public const int MIXERLINE_TARGETTYPE_AUX = 5;
 
         [NativeTypeName("#define mixerGetLineInfo mixerGetLineInfoW")]
-        public static readonly delegate*<IntPtr, MIXERLINEW*, uint, uint> mixerGetLineInfo = &mixerGetLineInfoW;
+        public static delegate*<IntPtr, MIXERLINEW*, uint, uint> mixerGetLineInfo => &mixerGetLineInfoW;
 
         [NativeTypeName("#define MIXER_GETLINEINFOF_DESTINATION 0x00000000L")]
         public const int MIXER_GETLINEINFOF_DESTINATION = 0x00000000;
@@ -1148,7 +1148,7 @@ namespace TerraFX.Interop
         public const int MIXERCONTROL_CONTROLTYPE_MILLITIME = (0x60000000 | 0x01000000 | 0x00030000);
 
         [NativeTypeName("#define mixerGetLineControls mixerGetLineControlsW")]
-        public static readonly delegate*<IntPtr, MIXERLINECONTROLSW*, uint, uint> mixerGetLineControls = &mixerGetLineControlsW;
+        public static delegate*<IntPtr, MIXERLINECONTROLSW*, uint, uint> mixerGetLineControls => &mixerGetLineControlsW;
 
         [NativeTypeName("#define MIXER_GETLINECONTROLSF_ALL 0x00000000L")]
         public const int MIXER_GETLINECONTROLSF_ALL = 0x00000000;
@@ -1163,7 +1163,7 @@ namespace TerraFX.Interop
         public const int MIXER_GETLINECONTROLSF_QUERYMASK = 0x0000000F;
 
         [NativeTypeName("#define mixerGetControlDetails mixerGetControlDetailsW")]
-        public static readonly delegate*<IntPtr, MIXERCONTROLDETAILS*, uint, uint> mixerGetControlDetails = &mixerGetControlDetailsW;
+        public static delegate*<IntPtr, MIXERCONTROLDETAILS*, uint, uint> mixerGetControlDetails => &mixerGetControlDetailsW;
 
         [NativeTypeName("#define MIXER_GETCONTROLDETAILSF_VALUE 0x00000000L")]
         public const int MIXER_GETCONTROLDETAILSF_VALUE = 0x00000000;

@@ -4,6 +4,8 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Diagnostics;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
@@ -14,6 +16,27 @@ namespace TerraFX.Interop
         [return: NativeTypeName("HRESULT")]
         public static extern int RoGetBufferMarshaler(IMarshal** bufferMarshaler);
 
-        public static readonly Guid IID_IBufferByteAccess = new Guid(0x905A0FEF, 0xBC53, 0x11DF, 0x8C, 0x49, 0x00, 0x1E, 0x4F, 0xC6, 0x86, 0xDA);
+        public static ref readonly Guid IID_IBufferByteAccess
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xEF, 0x0F, 0x5A, 0x90,
+                    0x53, 0xBC,
+                    0xDF, 0x11,
+                    0x8C,
+                    0x49,
+                    0x00,
+                    0x1E,
+                    0x4F,
+                    0xC6,
+                    0x86,
+                    0xDA
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
     }
 }

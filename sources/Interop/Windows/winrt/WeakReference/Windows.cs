@@ -4,13 +4,58 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Diagnostics;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
 {
     public static partial class Windows
     {
-        public static readonly Guid IID_IWeakReference = new Guid(0x00000037, 0x0000, 0x0000, 0xC0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
+        public static ref readonly Guid IID_IWeakReference
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x37, 0x00, 0x00, 0x00,
+                    0x00, 0x00,
+                    0x00, 0x00,
+                    0xC0,
+                    0x00,
+                    0x00,
+                    0x00,
+                    0x00,
+                    0x00,
+                    0x00,
+                    0x46
+                };
 
-        public static readonly Guid IID_IWeakReferenceSource = new Guid(0x00000038, 0x0000, 0x0000, 0xC0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid IID_IWeakReferenceSource
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x38, 0x00, 0x00, 0x00,
+                    0x00, 0x00,
+                    0x00, 0x00,
+                    0xC0,
+                    0x00,
+                    0x00,
+                    0x00,
+                    0x00,
+                    0x00,
+                    0x00,
+                    0x46
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
     }
 }

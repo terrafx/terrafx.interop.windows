@@ -4,22 +4,113 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Diagnostics;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
 {
     public static partial class Windows
     {
         [NativeTypeName("const GUID")]
-        public static readonly Guid DXGI_DEBUG_D3D10 = new Guid(0x243b4c52, 0x3606, 0x4d3a, 0x99, 0xd7, 0xa7, 0xe7, 0xb3, 0x3e, 0xd7, 0x6);
+        public static ref readonly Guid DXGI_DEBUG_D3D10
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x52, 0x4C, 0x3B, 0x24,
+                    0x06, 0x36,
+                    0x3A, 0x4D,
+                    0x99,
+                    0xD7,
+                    0xA7,
+                    0xE7,
+                    0xB3,
+                    0x3E,
+                    0xD7,
+                    0x06
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const GUID")]
-        public static readonly Guid IID_ID3D10Debug = new Guid(0x9B7E4E01, 0x342C, 0x4106, 0xA1, 0x9F, 0x4F, 0x27, 0x04, 0xF6, 0x89, 0xF0);
+        public static ref readonly Guid IID_ID3D10Debug
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x01, 0x4E, 0x7E, 0x9B,
+                    0x2C, 0x34,
+                    0x06, 0x41,
+                    0xA1,
+                    0x9F,
+                    0x4F,
+                    0x27,
+                    0x04,
+                    0xF6,
+                    0x89,
+                    0xF0
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const GUID")]
-        public static readonly Guid IID_ID3D10SwitchToRef = new Guid(0x9B7E4E02, 0x342C, 0x4106, 0xA1, 0x9F, 0x4F, 0x27, 0x04, 0xF6, 0x89, 0xF0);
+        public static ref readonly Guid IID_ID3D10SwitchToRef
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x02, 0x4E, 0x7E, 0x9B,
+                    0x2C, 0x34,
+                    0x06, 0x41,
+                    0xA1,
+                    0x9F,
+                    0x4F,
+                    0x27,
+                    0x04,
+                    0xF6,
+                    0x89,
+                    0xF0
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const GUID")]
-        public static readonly Guid IID_ID3D10InfoQueue = new Guid(0x1b940b17, 0x2642, 0x4d1f, 0xab, 0x1f, 0xb9, 0x9b, 0xad, 0x0c, 0x39, 0x5f);
+        public static ref readonly Guid IID_ID3D10InfoQueue
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x17, 0x0B, 0x94, 0x1B,
+                    0x42, 0x26,
+                    0x1F, 0x4D,
+                    0xAB,
+                    0x1F,
+                    0xB9,
+                    0x9B,
+                    0xAD,
+                    0x0C,
+                    0x39,
+                    0x5F
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("#define D3D10_SDK_LAYERS_VERSION ( 11 )")]
         public const int D3D10_SDK_LAYERS_VERSION = (11);

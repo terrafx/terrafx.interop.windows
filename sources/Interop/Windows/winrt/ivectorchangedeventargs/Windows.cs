@@ -4,6 +4,9 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Diagnostics;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
 {
@@ -12,6 +15,27 @@ namespace TerraFX.Interop
         [NativeTypeName("const WCHAR [55]")]
         public const string InterfaceName_Windows_Foundation_Collections_IVectorChangedEventArgs = "Windows.Foundation.Collections.IVectorChangedEventArgs";
 
-        public static readonly Guid IID_IVectorChangedEventArgs = new Guid(0x575933DF, 0x34FE, 0x4480, 0xAF, 0x15, 0x07, 0x69, 0x1F, 0x3D, 0x5D, 0x9B);
+        public static ref readonly Guid IID_IVectorChangedEventArgs
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xDF, 0x33, 0x59, 0x57,
+                    0xFE, 0x34,
+                    0x80, 0x44,
+                    0xAF,
+                    0x15,
+                    0x07,
+                    0x69,
+                    0x1F,
+                    0x3D,
+                    0x5D,
+                    0x9B
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
     }
 }

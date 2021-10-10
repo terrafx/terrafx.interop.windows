@@ -4,13 +4,12 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
-using static TerraFX.Interop.eAVEncH264VProfile;
 
 namespace TerraFX.Interop
 {
     public static partial class Windows
     {
         [NativeTypeName("#define CODECAPI_AVEncStatBandwidthProcessorUtilitization DEFINE_CODECAPI_GUIDNAMED( AVEncStatHardwareBandwidthUtilitization )")]
-        public static readonly Guid CODECAPI_AVEncStatBandwidthProcessorUtilitization = STATIC_CODECAPI_AVEncStatHardwareBandwidthUtilitization;
+        public static ref readonly Guid CODECAPI_AVEncStatBandwidthProcessorUtilitization => ref STATIC_CODECAPI_AVEncStatHardwareBandwidthUtilitization;
     }
 }

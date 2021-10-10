@@ -4,28 +4,163 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Diagnostics;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
 {
     public static partial class Windows
     {
         [NativeTypeName("const GUID")]
-        public static readonly Guid CLSID_VerticalIndicatorContent = new Guid(0xa10b5f17, 0xafe0, 0x4aa2, 0x91, 0xe9, 0x3e, 0x70, 0x1, 0xd2, 0xe6, 0xb4);
+        public static ref readonly Guid CLSID_VerticalIndicatorContent
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x17, 0x5F, 0x0B, 0xA1,
+                    0xE0, 0xAF,
+                    0xA2, 0x4A,
+                    0x91,
+                    0xE9,
+                    0x3E,
+                    0x70,
+                    0x01,
+                    0xD2,
+                    0xE6,
+                    0xB4
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const GUID")]
-        public static readonly Guid CLSID_HorizontalIndicatorContent = new Guid(0xe7d18cf5, 0x3ec7, 0x44d5, 0xa7, 0x6b, 0x37, 0x70, 0xf3, 0xcf, 0x90, 0x3d);
+        public static ref readonly Guid CLSID_HorizontalIndicatorContent
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xF5, 0x8C, 0xD1, 0xE7,
+                    0xC7, 0x3E,
+                    0xD5, 0x44,
+                    0xA7,
+                    0x6B,
+                    0x37,
+                    0x70,
+                    0xF3,
+                    0xCF,
+                    0x90,
+                    0x3D
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const GUID")]
-        public static readonly Guid CLSID_VirtualViewportContent = new Guid(0x3206a19a, 0x86f0, 0x4cb4, 0xa7, 0xf3, 0x16, 0xe3, 0xb7, 0xe2, 0xd8, 0x52);
+        public static ref readonly Guid CLSID_VirtualViewportContent
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x9A, 0xA1, 0x06, 0x32,
+                    0xF0, 0x86,
+                    0xB4, 0x4C,
+                    0xA7,
+                    0xF3,
+                    0x16,
+                    0xE3,
+                    0xB7,
+                    0xE2,
+                    0xD8,
+                    0x52
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const GUID")]
-        public static readonly Guid CLSID_DragDropConfigurationBehavior = new Guid(0x09b01b3e, 0xba6c, 0x454d, 0x82, 0xe8, 0x95, 0xe3, 0x52, 0x32, 0x9f, 0x23);
+        public static ref readonly Guid CLSID_DragDropConfigurationBehavior
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x3E, 0x1B, 0xB0, 0x09,
+                    0x6C, 0xBA,
+                    0x4D, 0x45,
+                    0x82,
+                    0xE8,
+                    0x95,
+                    0xE3,
+                    0x52,
+                    0x32,
+                    0x9F,
+                    0x23
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const GUID")]
-        public static readonly Guid CLSID_AutoScrollBehavior = new Guid(0x26126a51, 0x3c70, 0x4c9a, 0xae, 0xc2, 0x94, 0x88, 0x49, 0xee, 0xb0, 0x93);
+        public static ref readonly Guid CLSID_AutoScrollBehavior
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x51, 0x6A, 0x12, 0x26,
+                    0x70, 0x3C,
+                    0x9A, 0x4C,
+                    0xAE,
+                    0xC2,
+                    0x94,
+                    0x88,
+                    0x49,
+                    0xEE,
+                    0xB0,
+                    0x93
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const GUID")]
-        public static readonly Guid CLSID_DeferContactService = new Guid(0xd7b67cf4, 0x84bb, 0x434e, 0x86, 0xae, 0x65, 0x92, 0xbb, 0xc9, 0xab, 0xd9);
+        public static ref readonly Guid CLSID_DeferContactService
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xF4, 0x7C, 0xB6, 0xD7,
+                    0xBB, 0x84,
+                    0x4E, 0x43,
+                    0x86,
+                    0xAE,
+                    0x65,
+                    0x92,
+                    0xBB,
+                    0xC9,
+                    0xAB,
+                    0xD9
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("#define DIRECTMANIPULATION_KEYBOARDFOCUS ( 0xfffffffe )")]
         public const uint DIRECTMANIPULATION_KEYBOARDFOCUS = (0xfffffffe);
@@ -36,52 +171,556 @@ namespace TerraFX.Interop
         [NativeTypeName("#define DIRECTMANIPULATION_MINIMUM_ZOOM ( ( float  )0.1 )")]
         public const float DIRECTMANIPULATION_MINIMUM_ZOOM = ((float)(0.1));
 
-        public static readonly Guid IID_IDirectManipulationManager = new Guid(0xFBF5D3B4, 0x70C7, 0x4163, 0x93, 0x22, 0x5A, 0x6F, 0x66, 0x0D, 0x6F, 0xBC);
+        public static ref readonly Guid IID_IDirectManipulationManager
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xB4, 0xD3, 0xF5, 0xFB,
+                    0xC7, 0x70,
+                    0x63, 0x41,
+                    0x93,
+                    0x22,
+                    0x5A,
+                    0x6F,
+                    0x66,
+                    0x0D,
+                    0x6F,
+                    0xBC
+                };
 
-        public static readonly Guid IID_IDirectManipulationManager2 = new Guid(0xFA1005E9, 0x3D16, 0x484C, 0xBF, 0xC9, 0x62, 0xB6, 0x1E, 0x56, 0xEC, 0x4E);
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
-        public static readonly Guid IID_IDirectManipulationManager3 = new Guid(0x2CB6B33D, 0xFFE8, 0x488C, 0xB7, 0x50, 0xFB, 0xDF, 0xE8, 0x8D, 0xCA, 0x8C);
+        public static ref readonly Guid IID_IDirectManipulationManager2
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xE9, 0x05, 0x10, 0xFA,
+                    0x16, 0x3D,
+                    0x4C, 0x48,
+                    0xBF,
+                    0xC9,
+                    0x62,
+                    0xB6,
+                    0x1E,
+                    0x56,
+                    0xEC,
+                    0x4E
+                };
 
-        public static readonly Guid IID_IDirectManipulationViewport = new Guid(0x28B85A3D, 0x60A0, 0x48BD, 0x9B, 0xA1, 0x5C, 0xE8, 0xD9, 0xEA, 0x3A, 0x6D);
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
-        public static readonly Guid IID_IDirectManipulationViewport2 = new Guid(0x923CCAAC, 0x61E1, 0x4385, 0xB7, 0x26, 0x01, 0x7A, 0xF1, 0x89, 0x88, 0x2A);
+        public static ref readonly Guid IID_IDirectManipulationManager3
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x3D, 0xB3, 0xB6, 0x2C,
+                    0xE8, 0xFF,
+                    0x8C, 0x48,
+                    0xB7,
+                    0x50,
+                    0xFB,
+                    0xDF,
+                    0xE8,
+                    0x8D,
+                    0xCA,
+                    0x8C
+                };
 
-        public static readonly Guid IID_IDirectManipulationViewportEventHandler = new Guid(0x952121DA, 0xD69F, 0x45F9, 0xB0, 0xF9, 0xF2, 0x39, 0x44, 0x32, 0x1A, 0x6D);
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
-        public static readonly Guid IID_IDirectManipulationContent = new Guid(0xB89962CB, 0x3D89, 0x442B, 0xBB, 0x58, 0x50, 0x98, 0xFA, 0x0F, 0x9F, 0x16);
+        public static ref readonly Guid IID_IDirectManipulationViewport
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x3D, 0x5A, 0xB8, 0x28,
+                    0xA0, 0x60,
+                    0xBD, 0x48,
+                    0x9B,
+                    0xA1,
+                    0x5C,
+                    0xE8,
+                    0xD9,
+                    0xEA,
+                    0x3A,
+                    0x6D
+                };
 
-        public static readonly Guid IID_IDirectManipulationPrimaryContent = new Guid(0xC12851E4, 0x1698, 0x4625, 0xB9, 0xB1, 0x7C, 0xA3, 0xEC, 0x18, 0x63, 0x0B);
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
-        public static readonly Guid IID_IDirectManipulationDragDropEventHandler = new Guid(0x1FA11B10, 0x701B, 0x41AE, 0xB5, 0xF2, 0x49, 0xE3, 0x6B, 0xD5, 0x95, 0xAA);
+        public static ref readonly Guid IID_IDirectManipulationViewport2
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xAC, 0xCA, 0x3C, 0x92,
+                    0xE1, 0x61,
+                    0x85, 0x43,
+                    0xB7,
+                    0x26,
+                    0x01,
+                    0x7A,
+                    0xF1,
+                    0x89,
+                    0x88,
+                    0x2A
+                };
 
-        public static readonly Guid IID_IDirectManipulationDragDropBehavior = new Guid(0x814B5AF5, 0xC2C8, 0x4270, 0xA9, 0xB7, 0xA1, 0x98, 0xCE, 0x8D, 0x02, 0xFA);
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
-        public static readonly Guid IID_IDirectManipulationInteractionEventHandler = new Guid(0xE43F45B8, 0x42B4, 0x403E, 0xB1, 0xF2, 0x27, 0x3B, 0x8F, 0x51, 0x08, 0x30);
+        public static ref readonly Guid IID_IDirectManipulationViewportEventHandler
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xDA, 0x21, 0x21, 0x95,
+                    0x9F, 0xD6,
+                    0xF9, 0x45,
+                    0xB0,
+                    0xF9,
+                    0xF2,
+                    0x39,
+                    0x44,
+                    0x32,
+                    0x1A,
+                    0x6D
+                };
 
-        public static readonly Guid IID_IDirectManipulationFrameInfoProvider = new Guid(0xFB759DBA, 0x6F4C, 0x4C01, 0x87, 0x4E, 0x19, 0xC8, 0xA0, 0x59, 0x07, 0xF9);
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
-        public static readonly Guid IID_IDirectManipulationCompositor = new Guid(0x537A0825, 0x0387, 0x4EFA, 0xB6, 0x2F, 0x71, 0xEB, 0x1F, 0x08, 0x5A, 0x7E);
+        public static ref readonly Guid IID_IDirectManipulationContent
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xCB, 0x62, 0x99, 0xB8,
+                    0x89, 0x3D,
+                    0x2B, 0x44,
+                    0xBB,
+                    0x58,
+                    0x50,
+                    0x98,
+                    0xFA,
+                    0x0F,
+                    0x9F,
+                    0x16
+                };
 
-        public static readonly Guid IID_IDirectManipulationCompositor2 = new Guid(0xD38C7822, 0xF1CB, 0x43CB, 0xB4, 0xB9, 0xAC, 0x0C, 0x76, 0x7A, 0x41, 0x2E);
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
-        public static readonly Guid IID_IDirectManipulationUpdateHandler = new Guid(0x790B6337, 0x64F8, 0x4FF5, 0xA2, 0x69, 0xB3, 0x2B, 0xC2, 0xAF, 0x27, 0xA7);
+        public static ref readonly Guid IID_IDirectManipulationPrimaryContent
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xE4, 0x51, 0x28, 0xC1,
+                    0x98, 0x16,
+                    0x25, 0x46,
+                    0xB9,
+                    0xB1,
+                    0x7C,
+                    0xA3,
+                    0xEC,
+                    0x18,
+                    0x63,
+                    0x0B
+                };
 
-        public static readonly Guid IID_IDirectManipulationUpdateManager = new Guid(0xB0AE62FD, 0xBE34, 0x46E7, 0x9C, 0xAA, 0xD3, 0x61, 0xFA, 0xCB, 0xB9, 0xCC);
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
-        public static readonly Guid IID_IDirectManipulationAutoScrollBehavior = new Guid(0x6D5954D4, 0x2003, 0x4356, 0x9B, 0x31, 0xD0, 0x51, 0xC9, 0xFF, 0x0A, 0xF7);
+        public static ref readonly Guid IID_IDirectManipulationDragDropEventHandler
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x10, 0x1B, 0xA1, 0x1F,
+                    0x1B, 0x70,
+                    0xAE, 0x41,
+                    0xB5,
+                    0xF2,
+                    0x49,
+                    0xE3,
+                    0x6B,
+                    0xD5,
+                    0x95,
+                    0xAA
+                };
 
-        public static readonly Guid IID_IDirectManipulationDeferContactService = new Guid(0x652D5C71, 0xFE60, 0x4A98, 0xBE, 0x70, 0xE5, 0xF2, 0x12, 0x91, 0xE7, 0xF1);
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
-        public static readonly Guid CLSID_DirectManipulationViewport = new Guid(0x34E211B6, 0x3650, 0x4F75, 0x83, 0x34, 0xFA, 0x35, 0x95, 0x98, 0xE1, 0xC5);
+        public static ref readonly Guid IID_IDirectManipulationDragDropBehavior
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xF5, 0x5A, 0x4B, 0x81,
+                    0xC8, 0xC2,
+                    0x70, 0x42,
+                    0xA9,
+                    0xB7,
+                    0xA1,
+                    0x98,
+                    0xCE,
+                    0x8D,
+                    0x02,
+                    0xFA
+                };
 
-        public static readonly Guid CLSID_DirectManipulationUpdateManager = new Guid(0x9FC1BFD5, 0x1835, 0x441A, 0xB3, 0xB1, 0xB6, 0xCC, 0x74, 0xB7, 0x27, 0xD0);
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
-        public static readonly Guid CLSID_DirectManipulationPrimaryContent = new Guid(0xCAA02661, 0xD59E, 0x41C7, 0x83, 0x93, 0x3B, 0xA3, 0xBA, 0xCB, 0x6B, 0x57);
+        public static ref readonly Guid IID_IDirectManipulationInteractionEventHandler
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xB8, 0x45, 0x3F, 0xE4,
+                    0xB4, 0x42,
+                    0x3E, 0x40,
+                    0xB1,
+                    0xF2,
+                    0x27,
+                    0x3B,
+                    0x8F,
+                    0x51,
+                    0x08,
+                    0x30
+                };
 
-        public static readonly Guid CLSID_DirectManipulationManager = new Guid(0x54E211B6, 0x3650, 0x4F75, 0x83, 0x34, 0xFA, 0x35, 0x95, 0x98, 0xE1, 0xC5);
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
-        public static readonly Guid CLSID_DirectManipulationSharedManager = new Guid(0x99793286, 0x77CC, 0x4B57, 0x96, 0xDB, 0x3B, 0x35, 0x4F, 0x6F, 0x9F, 0xB5);
+        public static ref readonly Guid IID_IDirectManipulationFrameInfoProvider
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xBA, 0x9D, 0x75, 0xFB,
+                    0x4C, 0x6F,
+                    0x01, 0x4C,
+                    0x87,
+                    0x4E,
+                    0x19,
+                    0xC8,
+                    0xA0,
+                    0x59,
+                    0x07,
+                    0xF9
+                };
 
-        public static readonly Guid CLSID_DCompManipulationCompositor = new Guid(0x79DEA627, 0xA08A, 0x43AC, 0x8E, 0xF5, 0x69, 0x00, 0xB9, 0x29, 0x91, 0x26);
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid IID_IDirectManipulationCompositor
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x25, 0x08, 0x7A, 0x53,
+                    0x87, 0x03,
+                    0xFA, 0x4E,
+                    0xB6,
+                    0x2F,
+                    0x71,
+                    0xEB,
+                    0x1F,
+                    0x08,
+                    0x5A,
+                    0x7E
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid IID_IDirectManipulationCompositor2
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x22, 0x78, 0x8C, 0xD3,
+                    0xCB, 0xF1,
+                    0xCB, 0x43,
+                    0xB4,
+                    0xB9,
+                    0xAC,
+                    0x0C,
+                    0x76,
+                    0x7A,
+                    0x41,
+                    0x2E
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid IID_IDirectManipulationUpdateHandler
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x37, 0x63, 0x0B, 0x79,
+                    0xF8, 0x64,
+                    0xF5, 0x4F,
+                    0xA2,
+                    0x69,
+                    0xB3,
+                    0x2B,
+                    0xC2,
+                    0xAF,
+                    0x27,
+                    0xA7
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid IID_IDirectManipulationUpdateManager
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xFD, 0x62, 0xAE, 0xB0,
+                    0x34, 0xBE,
+                    0xE7, 0x46,
+                    0x9C,
+                    0xAA,
+                    0xD3,
+                    0x61,
+                    0xFA,
+                    0xCB,
+                    0xB9,
+                    0xCC
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid IID_IDirectManipulationAutoScrollBehavior
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xD4, 0x54, 0x59, 0x6D,
+                    0x03, 0x20,
+                    0x56, 0x43,
+                    0x9B,
+                    0x31,
+                    0xD0,
+                    0x51,
+                    0xC9,
+                    0xFF,
+                    0x0A,
+                    0xF7
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid IID_IDirectManipulationDeferContactService
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x71, 0x5C, 0x2D, 0x65,
+                    0x60, 0xFE,
+                    0x98, 0x4A,
+                    0xBE,
+                    0x70,
+                    0xE5,
+                    0xF2,
+                    0x12,
+                    0x91,
+                    0xE7,
+                    0xF1
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid CLSID_DirectManipulationViewport
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xB6, 0x11, 0xE2, 0x34,
+                    0x50, 0x36,
+                    0x75, 0x4F,
+                    0x83,
+                    0x34,
+                    0xFA,
+                    0x35,
+                    0x95,
+                    0x98,
+                    0xE1,
+                    0xC5
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid CLSID_DirectManipulationUpdateManager
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xD5, 0xBF, 0xC1, 0x9F,
+                    0x35, 0x18,
+                    0x1A, 0x44,
+                    0xB3,
+                    0xB1,
+                    0xB6,
+                    0xCC,
+                    0x74,
+                    0xB7,
+                    0x27,
+                    0xD0
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid CLSID_DirectManipulationPrimaryContent
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x61, 0x26, 0xA0, 0xCA,
+                    0x9E, 0xD5,
+                    0xC7, 0x41,
+                    0x83,
+                    0x93,
+                    0x3B,
+                    0xA3,
+                    0xBA,
+                    0xCB,
+                    0x6B,
+                    0x57
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid CLSID_DirectManipulationManager
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xB6, 0x11, 0xE2, 0x54,
+                    0x50, 0x36,
+                    0x75, 0x4F,
+                    0x83,
+                    0x34,
+                    0xFA,
+                    0x35,
+                    0x95,
+                    0x98,
+                    0xE1,
+                    0xC5
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid CLSID_DirectManipulationSharedManager
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x86, 0x32, 0x79, 0x99,
+                    0xCC, 0x77,
+                    0x57, 0x4B,
+                    0x96,
+                    0xDB,
+                    0x3B,
+                    0x35,
+                    0x4F,
+                    0x6F,
+                    0x9F,
+                    0xB5
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid CLSID_DCompManipulationCompositor
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x27, 0xA6, 0xDE, 0x79,
+                    0x8A, 0xA0,
+                    0xAC, 0x43,
+                    0x8E,
+                    0xF5,
+                    0x69,
+                    0x00,
+                    0xB9,
+                    0x29,
+                    0x91,
+                    0x26
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
     }
 }

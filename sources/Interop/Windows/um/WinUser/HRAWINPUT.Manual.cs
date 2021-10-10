@@ -9,7 +9,7 @@ namespace TerraFX.Interop
 {
     public unsafe struct HRAWINPUT : IEquatable<HRAWINPUT>
     {
-        public static readonly HRAWINPUT NULL = default;
+        public static HRAWINPUT NULL => default;
 
         private void* _value;
 

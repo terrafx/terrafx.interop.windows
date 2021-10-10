@@ -4,61 +4,496 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Diagnostics;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
 {
     public static partial class Windows
     {
         [NativeTypeName("const IID")]
-        public static readonly Guid MF_MEDIA_SHARING_ENGINE_DEVICE_NAME = new Guid(0x771e05d1, 0x862f, 0x4299, 0x95, 0xac, 0xae, 0x81, 0xfd, 0x14, 0xf3, 0xe7);
+        public static ref readonly Guid MF_MEDIA_SHARING_ENGINE_DEVICE_NAME
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xD1, 0x05, 0x1E, 0x77,
+                    0x2F, 0x86,
+                    0x99, 0x42,
+                    0x95,
+                    0xAC,
+                    0xAE,
+                    0x81,
+                    0xFD,
+                    0x14,
+                    0xF3,
+                    0xE7
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const IID")]
-        public static readonly Guid MF_MEDIA_SHARING_ENGINE_DEVICE = new Guid(0xb461c58a, 0x7a08, 0x4b98, 0x99, 0xa8, 0x70, 0xfd, 0x5f, 0x3b, 0xad, 0xfd);
+        public static ref readonly Guid MF_MEDIA_SHARING_ENGINE_DEVICE
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x8A, 0xC5, 0x61, 0xB4,
+                    0x08, 0x7A,
+                    0x98, 0x4B,
+                    0x99,
+                    0xA8,
+                    0x70,
+                    0xFD,
+                    0x5F,
+                    0x3B,
+                    0xAD,
+                    0xFD
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const GUID")]
-        public static readonly Guid MF_MEDIA_SHARING_ENGINE_INITIAL_SEEK_TIME = new Guid(0x6f3497f5, 0xd528, 0x4a4f, 0x8d, 0xd7, 0xdb, 0x36, 0x65, 0x7e, 0xc4, 0xc9);
+        public static ref readonly Guid MF_MEDIA_SHARING_ENGINE_INITIAL_SEEK_TIME
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xF5, 0x97, 0x34, 0x6F,
+                    0x28, 0xD5,
+                    0x4F, 0x4A,
+                    0x8D,
+                    0xD7,
+                    0xDB,
+                    0x36,
+                    0x65,
+                    0x7E,
+                    0xC4,
+                    0xC9
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const GUID")]
-        public static readonly Guid MF_SHUTDOWN_RENDERER_ON_ENGINE_SHUTDOWN = new Guid(0xc112d94d, 0x6b9c, 0x48f8, 0xb6, 0xf9, 0x79, 0x50, 0xff, 0x9a, 0xb7, 0x1e);
+        public static ref readonly Guid MF_SHUTDOWN_RENDERER_ON_ENGINE_SHUTDOWN
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x4D, 0xD9, 0x12, 0xC1,
+                    0x9C, 0x6B,
+                    0xF8, 0x48,
+                    0xB6,
+                    0xF9,
+                    0x79,
+                    0x50,
+                    0xFF,
+                    0x9A,
+                    0xB7,
+                    0x1E
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const GUID")]
-        public static readonly Guid MF_PREFERRED_SOURCE_URI = new Guid(0x5fc85488, 0x436a, 0x4db8, 0x90, 0xaf, 0x4d, 0xb4, 0x2, 0xae, 0x5c, 0x57);
+        public static ref readonly Guid MF_PREFERRED_SOURCE_URI
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x88, 0x54, 0xC8, 0x5F,
+                    0x6A, 0x43,
+                    0xB8, 0x4D,
+                    0x90,
+                    0xAF,
+                    0x4D,
+                    0xB4,
+                    0x02,
+                    0xAE,
+                    0x5C,
+                    0x57
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const GUID")]
-        public static readonly Guid MF_SHARING_ENGINE_SHAREDRENDERER = new Guid(0xefa446a0, 0x73e7, 0x404e, 0x8a, 0xe2, 0xfe, 0xf6, 0x0a, 0xf5, 0xa3, 0x2b);
+        public static ref readonly Guid MF_SHARING_ENGINE_SHAREDRENDERER
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xA0, 0x46, 0xA4, 0xEF,
+                    0xE7, 0x73,
+                    0x4E, 0x40,
+                    0x8A,
+                    0xE2,
+                    0xFE,
+                    0xF6,
+                    0x0A,
+                    0xF5,
+                    0xA3,
+                    0x2B
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const GUID")]
-        public static readonly Guid MF_SHARING_ENGINE_CALLBACK = new Guid(0x57dc1e95, 0xd252, 0x43fa, 0x9b, 0xbc, 0x18, 0x0, 0x70, 0xee, 0xfe, 0x6d);
+        public static ref readonly Guid MF_SHARING_ENGINE_CALLBACK
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x95, 0x1E, 0xDC, 0x57,
+                    0x52, 0xD2,
+                    0xFA, 0x43,
+                    0x9B,
+                    0xBC,
+                    0x18,
+                    0x00,
+                    0x70,
+                    0xEE,
+                    0xFE,
+                    0x6D
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const IID")]
-        public static readonly Guid CLSID_MFMediaSharingEngineClassFactory = new Guid(0xf8e307fb, 0x6d45, 0x4ad3, 0x99, 0x93, 0x66, 0xcd, 0x5a, 0x52, 0x96, 0x59);
+        public static ref readonly Guid CLSID_MFMediaSharingEngineClassFactory
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xFB, 0x07, 0xE3, 0xF8,
+                    0x45, 0x6D,
+                    0xD3, 0x4A,
+                    0x99,
+                    0x93,
+                    0x66,
+                    0xCD,
+                    0x5A,
+                    0x52,
+                    0x96,
+                    0x59
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const IID")]
-        public static readonly Guid CLSID_MFImageSharingEngineClassFactory = new Guid(0xb22c3339, 0x87f3, 0x4059, 0xa0, 0xc5, 0x3, 0x7a, 0xa9, 0x70, 0x7e, 0xaf);
+        public static ref readonly Guid CLSID_MFImageSharingEngineClassFactory
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x39, 0x33, 0x2C, 0xB2,
+                    0xF3, 0x87,
+                    0x59, 0x40,
+                    0xA0,
+                    0xC5,
+                    0x03,
+                    0x7A,
+                    0xA9,
+                    0x70,
+                    0x7E,
+                    0xAF
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const IID")]
-        public static readonly Guid CLSID_PlayToSourceClassFactory = new Guid(0xDA17539A, 0x3DC3, 0x42C1, 0xA7, 0x49, 0xA1, 0x83, 0xB5, 0x1F, 0x08, 0x5E);
+        public static ref readonly Guid CLSID_PlayToSourceClassFactory
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x9A, 0x53, 0x17, 0xDA,
+                    0xC3, 0x3D,
+                    0xC1, 0x42,
+                    0xA7,
+                    0x49,
+                    0xA1,
+                    0x83,
+                    0xB5,
+                    0x1F,
+                    0x08,
+                    0x5E
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const IID")]
-        public static readonly Guid GUID_PlayToService = new Guid(0xf6a8ff9d, 0x9e14, 0x41c9, 0xbf, 0x0f, 0x12, 0x0a, 0x2b, 0x3c, 0xe1, 0x20);
+        public static ref readonly Guid GUID_PlayToService
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x9D, 0xFF, 0xA8, 0xF6,
+                    0x14, 0x9E,
+                    0xC9, 0x41,
+                    0xBF,
+                    0x0F,
+                    0x12,
+                    0x0A,
+                    0x2B,
+                    0x3C,
+                    0xE1,
+                    0x20
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const IID")]
-        public static readonly Guid GUID_NativeDeviceService = new Guid(0xef71e53c, 0x52f4, 0x43c5, 0xb8, 0x6a, 0xad, 0x6c, 0xb2, 0x16, 0xa6, 0x1e);
+        public static ref readonly Guid GUID_NativeDeviceService
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x3C, 0xE5, 0x71, 0xEF,
+                    0xF4, 0x52,
+                    0xC5, 0x43,
+                    0xB8,
+                    0x6A,
+                    0xAD,
+                    0x6C,
+                    0xB2,
+                    0x16,
+                    0xA6,
+                    0x1E
+                };
 
-        public static readonly Guid IID_IMFSharingEngineClassFactory = new Guid(0x2BA61F92, 0x8305, 0x413B, 0x97, 0x33, 0xFA, 0xF1, 0x5F, 0x25, 0x93, 0x84);
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
-        public static readonly Guid IID_IMFMediaSharingEngine = new Guid(0x8D3CE1BF, 0x2367, 0x40E0, 0x9E, 0xEE, 0x40, 0xD3, 0x77, 0xCC, 0x1B, 0x46);
+        public static ref readonly Guid IID_IMFSharingEngineClassFactory
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x92, 0x1F, 0xA6, 0x2B,
+                    0x05, 0x83,
+                    0x3B, 0x41,
+                    0x97,
+                    0x33,
+                    0xFA,
+                    0xF1,
+                    0x5F,
+                    0x25,
+                    0x93,
+                    0x84
+                };
 
-        public static readonly Guid IID_IMFMediaSharingEngineClassFactory = new Guid(0x524D2BC4, 0xB2B1, 0x4FE5, 0x8F, 0xAC, 0xFA, 0x4E, 0x45, 0x12, 0xB4, 0xE0);
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
-        public static readonly Guid IID_IMFImageSharingEngine = new Guid(0xCFA0AE8E, 0x7E1C, 0x44D2, 0xAE, 0x68, 0xFC, 0x4C, 0x14, 0x8A, 0x63, 0x54);
+        public static ref readonly Guid IID_IMFMediaSharingEngine
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xBF, 0xE1, 0x3C, 0x8D,
+                    0x67, 0x23,
+                    0xE0, 0x40,
+                    0x9E,
+                    0xEE,
+                    0x40,
+                    0xD3,
+                    0x77,
+                    0xCC,
+                    0x1B,
+                    0x46
+                };
 
-        public static readonly Guid IID_IMFImageSharingEngineClassFactory = new Guid(0x1FC55727, 0xA7FB, 0x4FC8, 0x83, 0xAE, 0x8A, 0xF0, 0x24, 0x99, 0x0A, 0xF1);
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
-        public static readonly Guid IID_IPlayToControl = new Guid(0x607574EB, 0xF4B6, 0x45C1, 0xB0, 0x8C, 0xCB, 0x71, 0x51, 0x22, 0x90, 0x1D);
+        public static ref readonly Guid IID_IMFMediaSharingEngineClassFactory
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xC4, 0x2B, 0x4D, 0x52,
+                    0xB1, 0xB2,
+                    0xE5, 0x4F,
+                    0x8F,
+                    0xAC,
+                    0xFA,
+                    0x4E,
+                    0x45,
+                    0x12,
+                    0xB4,
+                    0xE0
+                };
 
-        public static readonly Guid IID_IPlayToControlWithCapabilities = new Guid(0xAA9DD80F, 0xC50A, 0x4220, 0x91, 0xC1, 0x33, 0x22, 0x87, 0xF8, 0x2A, 0x34);
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
-        public static readonly Guid IID_IPlayToSourceClassFactory = new Guid(0x842B32A3, 0x9B9B, 0x4D1C, 0xB3, 0xF3, 0x49, 0x19, 0x32, 0x48, 0xA5, 0x54);
+        public static ref readonly Guid IID_IMFImageSharingEngine
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x8E, 0xAE, 0xA0, 0xCF,
+                    0x1C, 0x7E,
+                    0xD2, 0x44,
+                    0xAE,
+                    0x68,
+                    0xFC,
+                    0x4C,
+                    0x14,
+                    0x8A,
+                    0x63,
+                    0x54
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid IID_IMFImageSharingEngineClassFactory
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x27, 0x57, 0xC5, 0x1F,
+                    0xFB, 0xA7,
+                    0xC8, 0x4F,
+                    0x83,
+                    0xAE,
+                    0x8A,
+                    0xF0,
+                    0x24,
+                    0x99,
+                    0x0A,
+                    0xF1
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid IID_IPlayToControl
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xEB, 0x74, 0x75, 0x60,
+                    0xB6, 0xF4,
+                    0xC1, 0x45,
+                    0xB0,
+                    0x8C,
+                    0xCB,
+                    0x71,
+                    0x51,
+                    0x22,
+                    0x90,
+                    0x1D
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid IID_IPlayToControlWithCapabilities
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x0F, 0xD8, 0x9D, 0xAA,
+                    0x0A, 0xC5,
+                    0x20, 0x42,
+                    0x91,
+                    0xC1,
+                    0x33,
+                    0x22,
+                    0x87,
+                    0xF8,
+                    0x2A,
+                    0x34
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid IID_IPlayToSourceClassFactory
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xA3, 0x32, 0x2B, 0x84,
+                    0x9B, 0x9B,
+                    0x1C, 0x4D,
+                    0xB3,
+                    0xF3,
+                    0x49,
+                    0x19,
+                    0x32,
+                    0x48,
+                    0xA5,
+                    0x54
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
     }
 }

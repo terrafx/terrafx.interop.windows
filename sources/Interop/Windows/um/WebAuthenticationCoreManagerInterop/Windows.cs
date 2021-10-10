@@ -4,11 +4,35 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Diagnostics;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
 {
     public static partial class Windows
     {
-        public static readonly Guid IID_IWebAuthenticationCoreManagerInterop = new Guid(0xF4B8E804, 0x811E, 0x4436, 0xB6, 0x9C, 0x44, 0xCB, 0x67, 0xB7, 0x20, 0x84);
+        public static ref readonly Guid IID_IWebAuthenticationCoreManagerInterop
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x04, 0xE8, 0xB8, 0xF4,
+                    0x1E, 0x81,
+                    0x36, 0x44,
+                    0xB6,
+                    0x9C,
+                    0x44,
+                    0xCB,
+                    0x67,
+                    0xB7,
+                    0x20,
+                    0x84
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
     }
 }

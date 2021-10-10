@@ -5,11 +5,11 @@
 
 using System;
 using System.Diagnostics;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
 using static TerraFX.Interop.D3D_ROOT_SIGNATURE_VERSION;
-using static TerraFX.Interop.D3D12_FEATURE;
 using static TerraFX.Interop.D3D12_RESOURCE_DIMENSION;
 using static TerraFX.Interop.D3D12_ROOT_PARAMETER_TYPE;
-using static TerraFX.Interop.D3D12_TEXTURE_LAYOUT;
 
 namespace TerraFX.Interop
 {
@@ -17,15 +17,18 @@ namespace TerraFX.Interop
     {
         public const uint DefaultSampleMask = uint.MaxValue;
 
-        public static readonly DXGI_SAMPLE_DESC DefaultSampleDesc = new DXGI_SAMPLE_DESC {
-            Count = 1,
-            Quality = 0,
-        };
-
-        [return: NativeTypeName("UINT")]
-        public static uint D3D12CalcSubresource([NativeTypeName("UINT")] uint MipSlice, [NativeTypeName("UINT")] uint ArraySlice, [NativeTypeName("UINT")] uint PlaneSlice, [NativeTypeName("UINT")] uint MipLevels, [NativeTypeName("UINT")] uint ArraySize)
+        public static ref readonly DXGI_SAMPLE_DESC DefaultSampleDesc
         {
-            return MipSlice + ArraySlice * MipLevels + PlaneSlice * MipLevels * ArraySize;
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x01, 0x00, 0x00, 0x00,
+                    0x00, 0x00, 0x00, 0x00
+                };
+
+                return ref Unsafe.As<byte, DXGI_SAMPLE_DESC>(ref MemoryMarshal.GetReference(data));
+            }
         }
 
         public static void D3D12DecomposeSubresource([NativeTypeName("UINT")] uint Subresource, [NativeTypeName("UINT")] uint MipLevels, [NativeTypeName("UINT")] uint ArraySize, [NativeTypeName("UINT &")] out uint MipSlice, [NativeTypeName("UINT &")] out uint ArraySlice, [NativeTypeName("UINT &")] out uint PlaneSlice)
@@ -33,23 +36,6 @@ namespace TerraFX.Interop
             MipSlice = Subresource % MipLevels;
             ArraySlice = (Subresource / MipLevels) % ArraySize;
             PlaneSlice = Subresource / (MipLevels * ArraySize);
-        }
-
-        [return: NativeTypeName("UINT8")]
-        public static byte D3D12GetFormatPlaneCount([NativeTypeName("ID3D12Device *")] ID3D12Device* pDevice, DXGI_FORMAT Format)
-        {
-            D3D12_FEATURE_DATA_FORMAT_INFO formatInfo = new D3D12_FEATURE_DATA_FORMAT_INFO
-            {
-                Format = Format,
-                PlaneCount = 0,
-            };
-
-            if (FAILED(pDevice->CheckFeatureSupport(D3D12_FEATURE_FORMAT_INFO, &formatInfo, (uint)sizeof(D3D12_FEATURE_DATA_FORMAT_INFO))))
-            {
-                return 0;
-            }
-
-            return formatInfo.PlaneCount;
         }
 
         public static void MemcpySubresource([NativeTypeName("const D3D12_MEMCPY_DEST *")] D3D12_MEMCPY_DEST* pDest, [NativeTypeName("const D3D12_SUBRESOURCE_DATA *")] D3D12_SUBRESOURCE_DATA* pSrc, [NativeTypeName("SIZE_T")] nuint RowSizeInBytes, [NativeTypeName("UINT")] uint NumRows, [NativeTypeName("UINT")] uint NumSlices)
@@ -105,56 +91,6 @@ namespace TerraFX.Interop
             return RequiredSize;
         }
 
-        public static ulong UpdateSubresources([NativeTypeName("ID3D12GraphicsCommandList *")] ID3D12GraphicsCommandList* pCmdList, [NativeTypeName("ID3D12Resource *")] ID3D12Resource* pDestinationResource, [NativeTypeName("ID3D12Resource *")] ID3D12Resource* pIntermediate, [NativeTypeName("UINT")] uint FirstSubresource, [NativeTypeName("UINT")] uint NumSubresources, [NativeTypeName("UINT64")] ulong RequiredSize, [NativeTypeName("const D3D12_PLACED_SUBRESOURCE_FOOTPRINT *")] D3D12_PLACED_SUBRESOURCE_FOOTPRINT* pLayouts, [NativeTypeName("const UINT *")] uint* pNumRows, [NativeTypeName("const UINT64 *")] ulong* pRowSizesInBytes, [NativeTypeName("const D3D12_SUBRESOURCE_DATA *")] D3D12_SUBRESOURCE_DATA* pSrcData)
-        {
-            var IntermediateDesc = pIntermediate->GetDesc();
-            var DestinationDesc = pDestinationResource->GetDesc();
-
-            if (IntermediateDesc.Dimension != D3D12_RESOURCE_DIMENSION_BUFFER || IntermediateDesc.Width < RequiredSize + pLayouts[0].Offset || RequiredSize > unchecked((nuint)(-1)) || (DestinationDesc.Dimension == D3D12_RESOURCE_DIMENSION_BUFFER && (FirstSubresource != 0 || NumSubresources != 1)))
-            {
-                return 0;
-            }
-
-            byte* pData;
-            int hr = pIntermediate->Map(0, null, (void**)&pData);
-
-            if (FAILED(hr))
-            {
-                return 0;
-            }
-
-            for (var i = 0u; i < NumSubresources; ++i)
-            {
-                if (pRowSizesInBytes[i] > unchecked((nuint)(-1)))
-                    return 0;
-
-                D3D12_MEMCPY_DEST DestData = new D3D12_MEMCPY_DEST
-                {
-                    pData = pData + pLayouts[i].Offset,
-                    RowPitch = (nuint)pLayouts[i].Footprint.RowPitch,
-                    SlicePitch = (nuint)(pLayouts[i].Footprint.RowPitch * pNumRows[i])
-                };
-
-                MemcpySubresource(&DestData, &pSrcData[i], (nuint)pRowSizesInBytes[i], pNumRows[i], pLayouts[i].Footprint.Depth);
-            }
-            pIntermediate->Unmap(0, null);
-
-            if (DestinationDesc.Dimension == D3D12_RESOURCE_DIMENSION_BUFFER)
-            {
-                pCmdList->CopyBufferRegion(pDestinationResource, 0, pIntermediate, pLayouts[0].Offset, pLayouts[0].Footprint.Width);
-            }
-            else
-            {
-                for (var i = 0u; i < NumSubresources; ++i)
-                {
-                    D3D12_TEXTURE_COPY_LOCATION Dst = new D3D12_TEXTURE_COPY_LOCATION(pDestinationResource, i + FirstSubresource);
-                    D3D12_TEXTURE_COPY_LOCATION Src = new D3D12_TEXTURE_COPY_LOCATION(pIntermediate, pLayouts[i]);
-                    pCmdList->CopyTextureRegion(&Dst, 0, 0, 0, &Src, null);
-                }
-            }
-            return RequiredSize;
-        }
-
         public static ulong UpdateSubresources([NativeTypeName("ID3D12GraphicsCommandList *")] ID3D12GraphicsCommandList* pCmdList, [NativeTypeName("ID3D12Resource *")] ID3D12Resource* pDestinationResource, [NativeTypeName("ID3D12Resource *")] ID3D12Resource* pIntermediate, [NativeTypeName("UINT")] uint FirstSubresource, [NativeTypeName("UINT")] uint NumSubresources, [NativeTypeName("UINT64")] ulong RequiredSize, [NativeTypeName("const D3D12_PLACED_SUBRESOURCE_FOOTPRINT *")] D3D12_PLACED_SUBRESOURCE_FOOTPRINT* pLayouts, [NativeTypeName("const UINT *")] uint* pNumRows, [NativeTypeName("const UINT64 *")] ulong* pRowSizesInBytes, [NativeTypeName("const void *")] void* pResourceData, [NativeTypeName("const D3D12_SUBRESOURCE_INFO *")] D3D12_SUBRESOURCE_INFO* pSrcData)
         {
             var IntermediateDesc = pIntermediate->GetDesc();
@@ -204,7 +140,6 @@ namespace TerraFX.Interop
             }
             return RequiredSize;
         }
-
 
         public static ulong UpdateSubresources([NativeTypeName("ID3D12GraphicsCommandList *")] ID3D12GraphicsCommandList* pCmdList, [NativeTypeName("ID3D12Resource *")] ID3D12Resource* pDestinationResource, [NativeTypeName("ID3D12Resource *")] ID3D12Resource* pIntermediate, [NativeTypeName("UINT64")] ulong IntermediateOffset, [NativeTypeName("UINT")] uint FirstSubresource, [NativeTypeName("UINT")] uint NumSubresources, [NativeTypeName("D3D12_SUBRESOURCE_DATA *")] D3D12_SUBRESOURCE_DATA* pSrcData)
         {
@@ -312,12 +247,6 @@ namespace TerraFX.Interop
             pDevice->Release();
 
             return UpdateSubresources(pCmdList, pDestinationResource, pIntermediate, FirstSubresource, NumSubresources, RequiredSize, Layouts, NumRows, RowSizesInBytes, pResourceData, pSrcData);
-        }
-
-
-        public static bool D3D12IsLayoutOpaque(D3D12_TEXTURE_LAYOUT Layout)
-        {
-            return Layout == D3D12_TEXTURE_LAYOUT_UNKNOWN || Layout == D3D12_TEXTURE_LAYOUT_64KB_UNDEFINED_SWIZZLE;
         }
 
         [return: NativeTypeName("ID3D12CommandList * const *")]

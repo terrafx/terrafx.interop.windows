@@ -4,14 +4,57 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
 {
     public static unsafe partial class Windows
     {
-        public static readonly Guid CLSID_MMDeviceEnumerator = new Guid(0XBCDE0395, 0XE52F, 0X467C, 0X8E, 0X3D, 0XC4, 0X57, 0X92, 0X91, 0X69, 0X2E);
+        public static ref readonly Guid CLSID_MMDeviceEnumerator
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x95, 0x03, 0xDE, 0xBC,
+                    0x2F, 0xE5,
+                    0x7C, 0x46,
+                    0x8E,
+                    0x3D,
+                    0xC4,
+                    0x57,
+                    0x92,
+                    0x91,
+                    0x69,
+                    0x2E
+                };
 
-        public static readonly Guid LIBID_MMDeviceAPILib = new Guid(0X2FDAAFA3, 0X7523, 0X4F66, 0X99, 0X57, 0X9D, 0X5E, 0X7F, 0XE6, 0X98, 0XF6);
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid LIBID_MMDeviceAPILib
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xA3, 0xAF, 0xDA, 0x2F,
+                    0x23, 0x75,
+                    0x66, 0x4F,
+                    0x99,
+                    0x57,
+                    0x9D,
+                    0x5E,
+                    0x7F,
+                    0xE6,
+                    0x98,
+                    0xF6
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
     }
 }

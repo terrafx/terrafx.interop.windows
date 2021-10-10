@@ -11,11 +11,13 @@ namespace TerraFX.Interop
 {
     [Guid("1911C771-1587-413E-A7E0-FB26C3DE0268")]
     [NativeTypeName("struct ID3D11TracingDevice : IUnknown")]
+    [NativeInheritance("IUnknown")]
     public unsafe partial struct ID3D11TracingDevice
     {
         public void** lpVtbl;
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(0)]
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
@@ -23,6 +25,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(1)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
@@ -30,6 +33,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(2)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
@@ -37,6 +41,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(3)]
         [return: NativeTypeName("HRESULT")]
         public int SetShaderTrackingOptionsByType([NativeTypeName("UINT")] uint ResourceTypeFlags, [NativeTypeName("UINT")] uint Options)
         {
@@ -44,6 +49,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(4)]
         [return: NativeTypeName("HRESULT")]
         public int SetShaderTrackingOptions(IUnknown* pShader, [NativeTypeName("UINT")] uint Options)
         {

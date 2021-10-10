@@ -4,6 +4,9 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Diagnostics;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
 {
@@ -30,70 +33,763 @@ namespace TerraFX.Interop
         [NativeTypeName("#define IMAPI2FS_FullVersion_WSTR L\"1.0\"")]
         public const string IMAPI2FS_FullVersion_WSTR = "1.0";
 
-        public static readonly Guid IID_IBootOptions = new Guid(0x2C941FD4, 0x975B, 0x59BE, 0xA9, 0x60, 0x9A, 0x2A, 0x26, 0x28, 0x53, 0xA5);
+        public static ref readonly Guid IID_IBootOptions
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xD4, 0x1F, 0x94, 0x2C,
+                    0x5B, 0x97,
+                    0xBE, 0x59,
+                    0xA9,
+                    0x60,
+                    0x9A,
+                    0x2A,
+                    0x26,
+                    0x28,
+                    0x53,
+                    0xA5
+                };
 
-        public static readonly Guid IID_IProgressItem = new Guid(0x2C941FD5, 0x975B, 0x59BE, 0xA9, 0x60, 0x9A, 0x2A, 0x26, 0x28, 0x53, 0xA5);
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
-        public static readonly Guid IID_IEnumProgressItems = new Guid(0x2C941FD6, 0x975B, 0x59BE, 0xA9, 0x60, 0x9A, 0x2A, 0x26, 0x28, 0x53, 0xA5);
+        public static ref readonly Guid IID_IProgressItem
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xD5, 0x1F, 0x94, 0x2C,
+                    0x5B, 0x97,
+                    0xBE, 0x59,
+                    0xA9,
+                    0x60,
+                    0x9A,
+                    0x2A,
+                    0x26,
+                    0x28,
+                    0x53,
+                    0xA5
+                };
 
-        public static readonly Guid IID_IProgressItems = new Guid(0x2C941FD7, 0x975B, 0x59BE, 0xA9, 0x60, 0x9A, 0x2A, 0x26, 0x28, 0x53, 0xA5);
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
-        public static readonly Guid IID_IFileSystemImageResult = new Guid(0x2C941FD8, 0x975B, 0x59BE, 0xA9, 0x60, 0x9A, 0x2A, 0x26, 0x28, 0x53, 0xA5);
+        public static ref readonly Guid IID_IEnumProgressItems
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xD6, 0x1F, 0x94, 0x2C,
+                    0x5B, 0x97,
+                    0xBE, 0x59,
+                    0xA9,
+                    0x60,
+                    0x9A,
+                    0x2A,
+                    0x26,
+                    0x28,
+                    0x53,
+                    0xA5
+                };
 
-        public static readonly Guid IID_IFileSystemImageResult2 = new Guid(0xB507CA29, 0x2204, 0x11DD, 0x96, 0x6A, 0x00, 0x1A, 0xA0, 0x1B, 0xBC, 0x58);
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
-        public static readonly Guid IID_IFsiItem = new Guid(0x2C941FD9, 0x975B, 0x59BE, 0xA9, 0x60, 0x9A, 0x2A, 0x26, 0x28, 0x53, 0xA5);
+        public static ref readonly Guid IID_IProgressItems
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xD7, 0x1F, 0x94, 0x2C,
+                    0x5B, 0x97,
+                    0xBE, 0x59,
+                    0xA9,
+                    0x60,
+                    0x9A,
+                    0x2A,
+                    0x26,
+                    0x28,
+                    0x53,
+                    0xA5
+                };
 
-        public static readonly Guid IID_IEnumFsiItems = new Guid(0x2C941FDA, 0x975B, 0x59BE, 0xA9, 0x60, 0x9A, 0x2A, 0x26, 0x28, 0x53, 0xA5);
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
-        public static readonly Guid IID_IFsiFileItem = new Guid(0x2C941FDB, 0x975B, 0x59BE, 0xA9, 0x60, 0x9A, 0x2A, 0x26, 0x28, 0x53, 0xA5);
+        public static ref readonly Guid IID_IFileSystemImageResult
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xD8, 0x1F, 0x94, 0x2C,
+                    0x5B, 0x97,
+                    0xBE, 0x59,
+                    0xA9,
+                    0x60,
+                    0x9A,
+                    0x2A,
+                    0x26,
+                    0x28,
+                    0x53,
+                    0xA5
+                };
 
-        public static readonly Guid IID_IFsiFileItem2 = new Guid(0x199D0C19, 0x11E1, 0x40EB, 0x8E, 0xC2, 0xC8, 0xC8, 0x22, 0xA0, 0x77, 0x92);
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
-        public static readonly Guid IID_IFsiNamedStreams = new Guid(0xED79BA56, 0x5294, 0x4250, 0x8D, 0x46, 0xF9, 0xAE, 0xCE, 0xE2, 0x34, 0x59);
+        public static ref readonly Guid IID_IFileSystemImageResult2
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x29, 0xCA, 0x07, 0xB5,
+                    0x04, 0x22,
+                    0xDD, 0x11,
+                    0x96,
+                    0x6A,
+                    0x00,
+                    0x1A,
+                    0xA0,
+                    0x1B,
+                    0xBC,
+                    0x58
+                };
 
-        public static readonly Guid IID_IFsiDirectoryItem = new Guid(0x2C941FDC, 0x975B, 0x59BE, 0xA9, 0x60, 0x9A, 0x2A, 0x26, 0x28, 0x53, 0xA5);
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
-        public static readonly Guid IID_IFsiDirectoryItem2 = new Guid(0xF7FB4B9B, 0x6D96, 0x4D7B, 0x91, 0x15, 0x20, 0x1B, 0x14, 0x48, 0x11, 0xEF);
+        public static ref readonly Guid IID_IFsiItem
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xD9, 0x1F, 0x94, 0x2C,
+                    0x5B, 0x97,
+                    0xBE, 0x59,
+                    0xA9,
+                    0x60,
+                    0x9A,
+                    0x2A,
+                    0x26,
+                    0x28,
+                    0x53,
+                    0xA5
+                };
 
-        public static readonly Guid IID_IFileSystemImage = new Guid(0x2C941FE1, 0x975B, 0x59BE, 0xA9, 0x60, 0x9A, 0x2A, 0x26, 0x28, 0x53, 0xA5);
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
-        public static readonly Guid IID_IFileSystemImage2 = new Guid(0xD7644B2C, 0x1537, 0x4767, 0xB6, 0x2F, 0xF1, 0x38, 0x7B, 0x02, 0xDD, 0xFD);
+        public static ref readonly Guid IID_IEnumFsiItems
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xDA, 0x1F, 0x94, 0x2C,
+                    0x5B, 0x97,
+                    0xBE, 0x59,
+                    0xA9,
+                    0x60,
+                    0x9A,
+                    0x2A,
+                    0x26,
+                    0x28,
+                    0x53,
+                    0xA5
+                };
 
-        public static readonly Guid IID_IFileSystemImage3 = new Guid(0x7CFF842C, 0x7E97, 0x4807, 0x83, 0x04, 0x91, 0x0D, 0xD8, 0xF7, 0xC0, 0x51);
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
-        public static readonly Guid IID_DFileSystemImageEvents = new Guid(0x2C941FDF, 0x975B, 0x59BE, 0xA9, 0x60, 0x9A, 0x2A, 0x26, 0x28, 0x53, 0xA5);
+        public static ref readonly Guid IID_IFsiFileItem
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xDB, 0x1F, 0x94, 0x2C,
+                    0x5B, 0x97,
+                    0xBE, 0x59,
+                    0xA9,
+                    0x60,
+                    0x9A,
+                    0x2A,
+                    0x26,
+                    0x28,
+                    0x53,
+                    0xA5
+                };
 
-        public static readonly Guid IID_DFileSystemImageImportEvents = new Guid(0xD25C30F9, 0x4087, 0x4366, 0x9E, 0x24, 0xE5, 0x5B, 0xE2, 0x86, 0x42, 0x4B);
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
-        public static readonly Guid IID_IIsoImageManager = new Guid(0x6CA38BE5, 0xFBBB, 0x4800, 0x95, 0xA1, 0xA4, 0x38, 0x86, 0x5E, 0xB0, 0xD4);
+        public static ref readonly Guid IID_IFsiFileItem2
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x19, 0x0C, 0x9D, 0x19,
+                    0xE1, 0x11,
+                    0xEB, 0x40,
+                    0x8E,
+                    0xC2,
+                    0xC8,
+                    0xC8,
+                    0x22,
+                    0xA0,
+                    0x77,
+                    0x92
+                };
 
-        public static readonly Guid CLSID_BootOptions = new Guid(0x2C941FCE, 0x975B, 0x59BE, 0xA9, 0x60, 0x9A, 0x2A, 0x26, 0x28, 0x53, 0xA5);
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
-        public static readonly Guid CLSID_FsiStream = new Guid(0x2C941FCD, 0x975B, 0x59BE, 0xA9, 0x60, 0x9A, 0x2A, 0x26, 0x28, 0x53, 0xA5);
+        public static ref readonly Guid IID_IFsiNamedStreams
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x56, 0xBA, 0x79, 0xED,
+                    0x94, 0x52,
+                    0x50, 0x42,
+                    0x8D,
+                    0x46,
+                    0xF9,
+                    0xAE,
+                    0xCE,
+                    0xE2,
+                    0x34,
+                    0x59
+                };
 
-        public static readonly Guid CLSID_FileSystemImageResult = new Guid(0x2C941FCC, 0x975B, 0x59BE, 0xA9, 0x60, 0x9A, 0x2A, 0x26, 0x28, 0x53, 0xA5);
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
-        public static readonly Guid CLSID_ProgressItem = new Guid(0x2C941FCB, 0x975B, 0x59BE, 0xA9, 0x60, 0x9A, 0x2A, 0x26, 0x28, 0x53, 0xA5);
+        public static ref readonly Guid IID_IFsiDirectoryItem
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xDC, 0x1F, 0x94, 0x2C,
+                    0x5B, 0x97,
+                    0xBE, 0x59,
+                    0xA9,
+                    0x60,
+                    0x9A,
+                    0x2A,
+                    0x26,
+                    0x28,
+                    0x53,
+                    0xA5
+                };
 
-        public static readonly Guid CLSID_EnumProgressItems = new Guid(0x2C941FCA, 0x975B, 0x59BE, 0xA9, 0x60, 0x9A, 0x2A, 0x26, 0x28, 0x53, 0xA5);
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
-        public static readonly Guid CLSID_ProgressItems = new Guid(0x2C941FC9, 0x975B, 0x59BE, 0xA9, 0x60, 0x9A, 0x2A, 0x26, 0x28, 0x53, 0xA5);
+        public static ref readonly Guid IID_IFsiDirectoryItem2
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x9B, 0x4B, 0xFB, 0xF7,
+                    0x96, 0x6D,
+                    0x7B, 0x4D,
+                    0x91,
+                    0x15,
+                    0x20,
+                    0x1B,
+                    0x14,
+                    0x48,
+                    0x11,
+                    0xEF
+                };
 
-        public static readonly Guid CLSID_FsiDirectoryItem = new Guid(0x2C941FC8, 0x975B, 0x59BE, 0xA9, 0x60, 0x9A, 0x2A, 0x26, 0x28, 0x53, 0xA5);
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
-        public static readonly Guid CLSID_FsiFileItem = new Guid(0x2C941FC7, 0x975B, 0x59BE, 0xA9, 0x60, 0x9A, 0x2A, 0x26, 0x28, 0x53, 0xA5);
+        public static ref readonly Guid IID_IFileSystemImage
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xE1, 0x1F, 0x94, 0x2C,
+                    0x5B, 0x97,
+                    0xBE, 0x59,
+                    0xA9,
+                    0x60,
+                    0x9A,
+                    0x2A,
+                    0x26,
+                    0x28,
+                    0x53,
+                    0xA5
+                };
 
-        public static readonly Guid CLSID_EnumFsiItems = new Guid(0x2C941FC6, 0x975B, 0x59BE, 0xA9, 0x60, 0x9A, 0x2A, 0x26, 0x28, 0x53, 0xA5);
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
-        public static readonly Guid CLSID_FsiNamedStreams = new Guid(0xC6B6F8ED, 0x6D19, 0x44B4, 0xB5, 0x39, 0xB1, 0x59, 0xB7, 0x93, 0xA3, 0x2D);
+        public static ref readonly Guid IID_IFileSystemImage2
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x2C, 0x4B, 0x64, 0xD7,
+                    0x37, 0x15,
+                    0x67, 0x47,
+                    0xB6,
+                    0x2F,
+                    0xF1,
+                    0x38,
+                    0x7B,
+                    0x02,
+                    0xDD,
+                    0xFD
+                };
 
-        public static readonly Guid CLSID_MsftFileSystemImage = new Guid(0x2C941FC5, 0x975B, 0x59BE, 0xA9, 0x60, 0x9A, 0x2A, 0x26, 0x28, 0x53, 0xA5);
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
-        public static readonly Guid CLSID_MsftIsoImageManager = new Guid(0xCEEE3B62, 0x8F56, 0x4056, 0x86, 0x9B, 0xEF, 0x16, 0x91, 0x7E, 0x3E, 0xFC);
+        public static ref readonly Guid IID_IFileSystemImage3
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x2C, 0x84, 0xFF, 0x7C,
+                    0x97, 0x7E,
+                    0x07, 0x48,
+                    0x83,
+                    0x04,
+                    0x91,
+                    0x0D,
+                    0xD8,
+                    0xF7,
+                    0xC0,
+                    0x51
+                };
 
-        public static readonly Guid CLSID_BlockRange = new Guid(0xB507CA27, 0x2204, 0x11DD, 0x96, 0x6A, 0x00, 0x1A, 0xA0, 0x1B, 0xBC, 0x58);
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
-        public static readonly Guid CLSID_BlockRangeList = new Guid(0xB507CA28, 0x2204, 0x11DD, 0x96, 0x6A, 0x00, 0x1A, 0xA0, 0x1B, 0xBC, 0x58);
+        public static ref readonly Guid IID_DFileSystemImageEvents
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xDF, 0x1F, 0x94, 0x2C,
+                    0x5B, 0x97,
+                    0xBE, 0x59,
+                    0xA9,
+                    0x60,
+                    0x9A,
+                    0x2A,
+                    0x26,
+                    0x28,
+                    0x53,
+                    0xA5
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid IID_DFileSystemImageImportEvents
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xF9, 0x30, 0x5C, 0xD2,
+                    0x87, 0x40,
+                    0x66, 0x43,
+                    0x9E,
+                    0x24,
+                    0xE5,
+                    0x5B,
+                    0xE2,
+                    0x86,
+                    0x42,
+                    0x4B
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid IID_IIsoImageManager
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xE5, 0x8B, 0xA3, 0x6C,
+                    0xBB, 0xFB,
+                    0x00, 0x48,
+                    0x95,
+                    0xA1,
+                    0xA4,
+                    0x38,
+                    0x86,
+                    0x5E,
+                    0xB0,
+                    0xD4
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid CLSID_BootOptions
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xCE, 0x1F, 0x94, 0x2C,
+                    0x5B, 0x97,
+                    0xBE, 0x59,
+                    0xA9,
+                    0x60,
+                    0x9A,
+                    0x2A,
+                    0x26,
+                    0x28,
+                    0x53,
+                    0xA5
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid CLSID_FsiStream
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xCD, 0x1F, 0x94, 0x2C,
+                    0x5B, 0x97,
+                    0xBE, 0x59,
+                    0xA9,
+                    0x60,
+                    0x9A,
+                    0x2A,
+                    0x26,
+                    0x28,
+                    0x53,
+                    0xA5
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid CLSID_FileSystemImageResult
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xCC, 0x1F, 0x94, 0x2C,
+                    0x5B, 0x97,
+                    0xBE, 0x59,
+                    0xA9,
+                    0x60,
+                    0x9A,
+                    0x2A,
+                    0x26,
+                    0x28,
+                    0x53,
+                    0xA5
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid CLSID_ProgressItem
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xCB, 0x1F, 0x94, 0x2C,
+                    0x5B, 0x97,
+                    0xBE, 0x59,
+                    0xA9,
+                    0x60,
+                    0x9A,
+                    0x2A,
+                    0x26,
+                    0x28,
+                    0x53,
+                    0xA5
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid CLSID_EnumProgressItems
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xCA, 0x1F, 0x94, 0x2C,
+                    0x5B, 0x97,
+                    0xBE, 0x59,
+                    0xA9,
+                    0x60,
+                    0x9A,
+                    0x2A,
+                    0x26,
+                    0x28,
+                    0x53,
+                    0xA5
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid CLSID_ProgressItems
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xC9, 0x1F, 0x94, 0x2C,
+                    0x5B, 0x97,
+                    0xBE, 0x59,
+                    0xA9,
+                    0x60,
+                    0x9A,
+                    0x2A,
+                    0x26,
+                    0x28,
+                    0x53,
+                    0xA5
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid CLSID_FsiDirectoryItem
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xC8, 0x1F, 0x94, 0x2C,
+                    0x5B, 0x97,
+                    0xBE, 0x59,
+                    0xA9,
+                    0x60,
+                    0x9A,
+                    0x2A,
+                    0x26,
+                    0x28,
+                    0x53,
+                    0xA5
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid CLSID_FsiFileItem
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xC7, 0x1F, 0x94, 0x2C,
+                    0x5B, 0x97,
+                    0xBE, 0x59,
+                    0xA9,
+                    0x60,
+                    0x9A,
+                    0x2A,
+                    0x26,
+                    0x28,
+                    0x53,
+                    0xA5
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid CLSID_EnumFsiItems
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xC6, 0x1F, 0x94, 0x2C,
+                    0x5B, 0x97,
+                    0xBE, 0x59,
+                    0xA9,
+                    0x60,
+                    0x9A,
+                    0x2A,
+                    0x26,
+                    0x28,
+                    0x53,
+                    0xA5
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid CLSID_FsiNamedStreams
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xED, 0xF8, 0xB6, 0xC6,
+                    0x19, 0x6D,
+                    0xB4, 0x44,
+                    0xB5,
+                    0x39,
+                    0xB1,
+                    0x59,
+                    0xB7,
+                    0x93,
+                    0xA3,
+                    0x2D
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid CLSID_MsftFileSystemImage
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xC5, 0x1F, 0x94, 0x2C,
+                    0x5B, 0x97,
+                    0xBE, 0x59,
+                    0xA9,
+                    0x60,
+                    0x9A,
+                    0x2A,
+                    0x26,
+                    0x28,
+                    0x53,
+                    0xA5
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid CLSID_MsftIsoImageManager
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x62, 0x3B, 0xEE, 0xCE,
+                    0x56, 0x8F,
+                    0x56, 0x40,
+                    0x86,
+                    0x9B,
+                    0xEF,
+                    0x16,
+                    0x91,
+                    0x7E,
+                    0x3E,
+                    0xFC
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid CLSID_BlockRange
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x27, 0xCA, 0x07, 0xB5,
+                    0x04, 0x22,
+                    0xDD, 0x11,
+                    0x96,
+                    0x6A,
+                    0x00,
+                    0x1A,
+                    0xA0,
+                    0x1B,
+                    0xBC,
+                    0x58
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid CLSID_BlockRangeList
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x28, 0xCA, 0x07, 0xB5,
+                    0x04, 0x22,
+                    0xDD, 0x11,
+                    0x96,
+                    0x6A,
+                    0x00,
+                    0x1A,
+                    0xA0,
+                    0x1B,
+                    0xBC,
+                    0x58
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
     }
 }

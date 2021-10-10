@@ -7,7 +7,7 @@ namespace TerraFX.Interop
 {
     public static unsafe partial class Windows
     {
-        // public static readonly X3DAUDIO_DISTANCE_CURVE X3DAudioDefault_LinearCurve = new X3DAUDIO_DISTANCE_CURVE {
+        // public static ref readonly X3DAUDIO_DISTANCE_CURVE X3DAudioDefault_LinearCurve => new X3DAUDIO_DISTANCE_CURVE {
         //    pPoints = &X3DAudioDefault_LinearCurvePoints[0],
         //    PointsCount = 2,
         // };

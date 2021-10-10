@@ -6,9 +6,10 @@
 namespace TerraFX.Interop
 {
     [NativeTypeName("struct tagBIND_OPTS2 : tagBIND_OPTS")]
+    [NativeInheritance("tagBIND_OPTS")]
     public unsafe partial struct BIND_OPTS2
     {
-        public BIND_OPTS __AnonymousBase_objidl_L8984_C36;
+        public BIND_OPTS Base;
 
         [NativeTypeName("DWORD")]
         public uint dwTrackFlags;

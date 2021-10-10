@@ -4,21 +4,81 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Diagnostics;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
 {
     public static partial class Windows
     {
-        [NativeTypeName("const IID")]
-        public static readonly Guid IID_IInkD2DRenderer = new Guid(0x407fb1de, 0xf85a, 0x4150, 0x97, 0xcf, 0xb7, 0xfb, 0x27, 0x4f, 0xb4, 0xf8);
+        public static ref readonly Guid IID_IInkD2DRenderer
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xDE, 0xB1, 0x7F, 0x40,
+                    0x5A, 0xF8,
+                    0x50, 0x41,
+                    0x97,
+                    0xCF,
+                    0xB7,
+                    0xFB,
+                    0x27,
+                    0x4F,
+                    0xB4,
+                    0xF8
+                };
 
-        [NativeTypeName("const IID")]
-        public static readonly Guid IID_IInkD2DRenderer2 = new Guid(0x0a95dcd9, 0x4578, 0x4b71, 0xb2, 0x0b, 0xbf, 0x66, 0x4d, 0x4b, 0xfe, 0xee);
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
-        [NativeTypeName("const IID")]
-        public static readonly Guid LIBID_InkD2DRendererLib = new Guid(0x390d0ab0, 0x19e2, 0x46bb, 0x86, 0x2e, 0xb0, 0x9f, 0x3c, 0xdc, 0xf8, 0xb9);
+        public static ref readonly Guid IID_IInkD2DRenderer2
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xD9, 0xDC, 0x95, 0x0A,
+                    0x78, 0x45,
+                    0x71, 0x4B,
+                    0xB2,
+                    0x0B,
+                    0xBF,
+                    0x66,
+                    0x4D,
+                    0x4B,
+                    0xFE,
+                    0xEE
+                };
 
-        [NativeTypeName("const CLSID")]
-        public static readonly Guid CLSID_InkD2DRenderer = new Guid(0x4044e60c, 0x7b01, 0x4671, 0xa9, 0x7c, 0x04, 0xe0, 0x21, 0x0a, 0x07, 0xa5);
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid CLSID_InkD2DRenderer
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x0C, 0xE6, 0x44, 0x40,
+                    0x01, 0x7B,
+                    0x71, 0x46,
+                    0xA9,
+                    0x7C,
+                    0x04,
+                    0xE0,
+                    0x21,
+                    0x0A,
+                    0x07,
+                    0xA5
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
     }
 }

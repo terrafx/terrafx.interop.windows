@@ -9,7 +9,7 @@ namespace TerraFX.Interop
 {
     public unsafe struct HDESK : IEquatable<HDESK>
     {
-        public static readonly HDESK NULL = default;
+        public static HDESK NULL => default;
 
         private void* _value;
 

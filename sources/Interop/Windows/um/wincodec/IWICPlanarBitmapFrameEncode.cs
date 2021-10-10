@@ -11,11 +11,13 @@ namespace TerraFX.Interop
 {
     [Guid("F928B7B8-2221-40C1-B72E-7E82F1974D1A")]
     [NativeTypeName("struct IWICPlanarBitmapFrameEncode : IUnknown")]
+    [NativeInheritance("IUnknown")]
     public unsafe partial struct IWICPlanarBitmapFrameEncode
     {
         public void** lpVtbl;
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(0)]
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
@@ -23,6 +25,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(1)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
@@ -30,6 +33,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(2)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
@@ -37,6 +41,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(3)]
         [return: NativeTypeName("HRESULT")]
         public int WritePixels([NativeTypeName("UINT")] uint lineCount, WICBitmapPlane* pPlanes, [NativeTypeName("UINT")] uint cPlanes)
         {
@@ -44,6 +49,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(4)]
         [return: NativeTypeName("HRESULT")]
         public int WriteSource(IWICBitmapSource** ppPlanes, [NativeTypeName("UINT")] uint cPlanes, WICRect* prcSource)
         {

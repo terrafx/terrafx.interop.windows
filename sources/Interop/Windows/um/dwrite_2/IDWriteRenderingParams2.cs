@@ -11,11 +11,13 @@ namespace TerraFX.Interop
 {
     [Guid("F9D711C3-9777-40AE-87E8-3E5AF9BF0948")]
     [NativeTypeName("struct IDWriteRenderingParams2 : IDWriteRenderingParams1")]
+    [NativeInheritance("IDWriteRenderingParams1")]
     public unsafe partial struct IDWriteRenderingParams2
     {
         public void** lpVtbl;
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(0)]
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
@@ -23,6 +25,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(1)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
@@ -30,6 +33,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(2)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
@@ -37,6 +41,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(3)]
         [return: NativeTypeName("FLOAT")]
         public float GetGamma()
         {
@@ -44,6 +49,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(4)]
         [return: NativeTypeName("FLOAT")]
         public float GetEnhancedContrast()
         {
@@ -51,6 +57,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(5)]
         [return: NativeTypeName("FLOAT")]
         public float GetClearTypeLevel()
         {
@@ -58,18 +65,21 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(6)]
         public DWRITE_PIXEL_GEOMETRY GetPixelGeometry()
         {
             return ((delegate* unmanaged<IDWriteRenderingParams2*, DWRITE_PIXEL_GEOMETRY>)(lpVtbl[6]))((IDWriteRenderingParams2*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(7)]
         public DWRITE_RENDERING_MODE GetRenderingMode()
         {
             return ((delegate* unmanaged<IDWriteRenderingParams2*, DWRITE_RENDERING_MODE>)(lpVtbl[7]))((IDWriteRenderingParams2*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(8)]
         [return: NativeTypeName("FLOAT")]
         public float GetGrayscaleEnhancedContrast()
         {
@@ -77,6 +87,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(9)]
         public DWRITE_GRID_FIT_MODE GetGridFitMode()
         {
             return ((delegate* unmanaged<IDWriteRenderingParams2*, DWRITE_GRID_FIT_MODE>)(lpVtbl[9]))((IDWriteRenderingParams2*)Unsafe.AsPointer(ref this));

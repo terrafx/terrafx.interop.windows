@@ -9,7 +9,7 @@ namespace TerraFX.Interop
 {
     public unsafe struct HHOOK : IEquatable<HHOOK>
     {
-        public static readonly HHOOK NULL = default;
+        public static HHOOK NULL => default;
 
         private void* _value;
 

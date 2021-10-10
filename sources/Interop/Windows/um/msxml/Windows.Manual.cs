@@ -4,11 +4,34 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
 {
     public static partial class Windows
     {
-        public static readonly Guid LIBID_MSXML = new Guid(0xD63E0CE2, 0xA0A2, 0x11D0, 0x9C, 0x02, 0x00, 0xC0, 0x4F, 0xC9, 0x9C, 0x8E);
+        public static ref readonly Guid LIBID_MSXML
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xE2, 0x0C, 0x3E, 0xD6,
+                    0xA2, 0xA0,
+                    0xD0, 0x11,
+                    0x9C,
+                    0x02,
+                    0x00,
+                    0xC0,
+                    0x4F,
+                    0xC9,
+                    0x9C,
+                    0x8E
+                };
+
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
     }
 }

@@ -9,7 +9,7 @@ namespace TerraFX.Interop
 {
     public unsafe struct HACCEL : IEquatable<HACCEL>
     {
-        public static readonly HACCEL NULL = default;
+        public static HACCEL NULL => default;
 
         private void* _value;
 

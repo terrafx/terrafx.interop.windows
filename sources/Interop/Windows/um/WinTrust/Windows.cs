@@ -533,55 +533,55 @@ namespace TerraFX.Interop
         public static ReadOnlySpan<byte> SPC_NATURAL_AUTH_PLUGIN_OBJID => new byte[] { 0x31, 0x2E, 0x33, 0x2E, 0x36, 0x2E, 0x31, 0x2E, 0x34, 0x2E, 0x31, 0x2E, 0x33, 0x31, 0x31, 0x2E, 0x39, 0x36, 0x2E, 0x31, 0x2E, 0x31, 0x00 };
 
         [NativeTypeName("#define SPC_SP_AGENCY_INFO_STRUCT ((LPCSTR) 2000)")]
-        public static readonly sbyte* SPC_SP_AGENCY_INFO_STRUCT = ((sbyte*)(2000));
+        public static sbyte* SPC_SP_AGENCY_INFO_STRUCT => ((sbyte*)(2000));
 
         [NativeTypeName("#define SPC_MINIMAL_CRITERIA_STRUCT ((LPCSTR) 2001)")]
-        public static readonly sbyte* SPC_MINIMAL_CRITERIA_STRUCT = ((sbyte*)(2001));
+        public static sbyte* SPC_MINIMAL_CRITERIA_STRUCT => ((sbyte*)(2001));
 
         [NativeTypeName("#define SPC_FINANCIAL_CRITERIA_STRUCT ((LPCSTR) 2002)")]
-        public static readonly sbyte* SPC_FINANCIAL_CRITERIA_STRUCT = ((sbyte*)(2002));
+        public static sbyte* SPC_FINANCIAL_CRITERIA_STRUCT => ((sbyte*)(2002));
 
         [NativeTypeName("#define SPC_INDIRECT_DATA_CONTENT_STRUCT ((LPCSTR) 2003)")]
-        public static readonly sbyte* SPC_INDIRECT_DATA_CONTENT_STRUCT = ((sbyte*)(2003));
+        public static sbyte* SPC_INDIRECT_DATA_CONTENT_STRUCT => ((sbyte*)(2003));
 
         [NativeTypeName("#define SPC_PE_IMAGE_DATA_STRUCT ((LPCSTR) 2004)")]
-        public static readonly sbyte* SPC_PE_IMAGE_DATA_STRUCT = ((sbyte*)(2004));
+        public static sbyte* SPC_PE_IMAGE_DATA_STRUCT => ((sbyte*)(2004));
 
         [NativeTypeName("#define SPC_LINK_STRUCT ((LPCSTR) 2005)")]
-        public static readonly sbyte* SPC_LINK_STRUCT = ((sbyte*)(2005));
+        public static sbyte* SPC_LINK_STRUCT => ((sbyte*)(2005));
 
         [NativeTypeName("#define SPC_STATEMENT_TYPE_STRUCT ((LPCSTR) 2006)")]
-        public static readonly sbyte* SPC_STATEMENT_TYPE_STRUCT = ((sbyte*)(2006));
+        public static sbyte* SPC_STATEMENT_TYPE_STRUCT => ((sbyte*)(2006));
 
         [NativeTypeName("#define SPC_SP_OPUS_INFO_STRUCT ((LPCSTR) 2007)")]
-        public static readonly sbyte* SPC_SP_OPUS_INFO_STRUCT = ((sbyte*)(2007));
+        public static sbyte* SPC_SP_OPUS_INFO_STRUCT => ((sbyte*)(2007));
 
         [NativeTypeName("#define SPC_CAB_DATA_STRUCT ((LPCSTR) 2008)")]
-        public static readonly sbyte* SPC_CAB_DATA_STRUCT = ((sbyte*)(2008));
+        public static sbyte* SPC_CAB_DATA_STRUCT => ((sbyte*)(2008));
 
         [NativeTypeName("#define SPC_JAVA_CLASS_DATA_STRUCT ((LPCSTR) 2009)")]
-        public static readonly sbyte* SPC_JAVA_CLASS_DATA_STRUCT = ((sbyte*)(2009));
+        public static sbyte* SPC_JAVA_CLASS_DATA_STRUCT => ((sbyte*)(2009));
 
         [NativeTypeName("#define INTENT_TO_SEAL_ATTRIBUTE_STRUCT ((LPCSTR) 2010)")]
-        public static readonly sbyte* INTENT_TO_SEAL_ATTRIBUTE_STRUCT = ((sbyte*)(2010));
+        public static sbyte* INTENT_TO_SEAL_ATTRIBUTE_STRUCT => ((sbyte*)(2010));
 
         [NativeTypeName("#define SEALING_SIGNATURE_ATTRIBUTE_STRUCT ((LPCSTR) 2011)")]
-        public static readonly sbyte* SEALING_SIGNATURE_ATTRIBUTE_STRUCT = ((sbyte*)(2011));
+        public static sbyte* SEALING_SIGNATURE_ATTRIBUTE_STRUCT => ((sbyte*)(2011));
 
         [NativeTypeName("#define SEALING_TIMESTAMP_ATTRIBUTE_STRUCT ((LPCSTR) 2012)")]
-        public static readonly sbyte* SEALING_TIMESTAMP_ATTRIBUTE_STRUCT = ((sbyte*)(2012));
+        public static sbyte* SEALING_TIMESTAMP_ATTRIBUTE_STRUCT => ((sbyte*)(2012));
 
         [NativeTypeName("#define SPC_SIGINFO_STRUCT ((LPCSTR) 2130)")]
-        public static readonly sbyte* SPC_SIGINFO_STRUCT = ((sbyte*)(2130));
+        public static sbyte* SPC_SIGINFO_STRUCT => ((sbyte*)(2130));
 
         [NativeTypeName("#define CAT_NAMEVALUE_STRUCT ((LPCSTR) 2221)")]
-        public static readonly sbyte* CAT_NAMEVALUE_STRUCT = ((sbyte*)(2221));
+        public static sbyte* CAT_NAMEVALUE_STRUCT => ((sbyte*)(2221));
 
         [NativeTypeName("#define CAT_MEMBERINFO_STRUCT ((LPCSTR) 2222)")]
-        public static readonly sbyte* CAT_MEMBERINFO_STRUCT = ((sbyte*)(2222));
+        public static sbyte* CAT_MEMBERINFO_STRUCT => ((sbyte*)(2222));
 
         [NativeTypeName("#define CAT_MEMBERINFO2_STRUCT ((LPCSTR) 2223)")]
-        public static readonly sbyte* CAT_MEMBERINFO2_STRUCT = ((sbyte*)(2223));
+        public static sbyte* CAT_MEMBERINFO2_STRUCT => ((sbyte*)(2223));
 
         [NativeTypeName("#define SPC_UUID_LENGTH 16")]
         public const int SPC_UUID_LENGTH = 16;

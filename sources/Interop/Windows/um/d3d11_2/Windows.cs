@@ -4,16 +4,63 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Diagnostics;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
 {
     public static partial class Windows
     {
         [NativeTypeName("const GUID")]
-        public static readonly Guid IID_ID3D11DeviceContext2 = new Guid(0x420d5b32, 0xb90c, 0x4da4, 0xbe, 0xf0, 0x35, 0x9f, 0x6a, 0x24, 0xa8, 0x3a);
+        public static ref readonly Guid IID_ID3D11DeviceContext2
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x32, 0x5B, 0x0D, 0x42,
+                    0x0C, 0xB9,
+                    0xA4, 0x4D,
+                    0xBE,
+                    0xF0,
+                    0x35,
+                    0x9F,
+                    0x6A,
+                    0x24,
+                    0xA8,
+                    0x3A
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const GUID")]
-        public static readonly Guid IID_ID3D11Device2 = new Guid(0x9d06dffa, 0xd1e5, 0x4d07, 0x83, 0xa8, 0x1b, 0xb1, 0x23, 0xf2, 0xf8, 0x41);
+        public static ref readonly Guid IID_ID3D11Device2
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xFA, 0xDF, 0x06, 0x9D,
+                    0xE5, 0xD1,
+                    0x07, 0x4D,
+                    0x83,
+                    0xA8,
+                    0x1B,
+                    0xB1,
+                    0x23,
+                    0xF2,
+                    0xF8,
+                    0x41
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("#define D3D11_PACKED_TILE ( 0xffffffff )")]
         public const uint D3D11_PACKED_TILE = (0xffffffff);

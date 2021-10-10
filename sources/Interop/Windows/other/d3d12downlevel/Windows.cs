@@ -1,18 +1,65 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from d3d12downlevel in the https://www.nuget.org/packages/Microsoft.Direct3D.D3D12On7 nuget package, version 1.1.0
+// Ported from D3D12Downlevel in the https://www.nuget.org/packages/Microsoft.Direct3D.D3D12On7 nuget package, version 1.1.0
 // Original source is Copyright © Microsoft. All rights reserved. License details can be found here: https://www.nuget.org/packages/Microsoft.Direct3D.D3D12On7/1.1.0/License
 
 using System;
+using System.Diagnostics;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
 {
     public static partial class Windows
     {
         [NativeTypeName("const GUID")]
-        public static readonly Guid IID_ID3D12CommandQueueDownlevel = new Guid(0x38a8c5ef, 0x7ccb, 0x4e81, 0x91, 0x4f, 0xa6, 0xe9, 0xd0, 0x72, 0xc4, 0x94);
+        public static ref readonly Guid IID_ID3D12CommandQueueDownlevel
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xEF, 0xC5, 0xA8, 0x38,
+                    0xCB, 0x7C,
+                    0x81, 0x4E,
+                    0x91,
+                    0x4F,
+                    0xA6,
+                    0xE9,
+                    0xD0,
+                    0x72,
+                    0xC4,
+                    0x94
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
         [NativeTypeName("const GUID")]
-        public static readonly Guid IID_ID3D12DeviceDownlevel = new Guid(0x74eaee3f, 0x2f4b, 0x476d, 0x82, 0xba, 0x2b, 0x85, 0xcb, 0x49, 0xe3, 0x10);
+        public static ref readonly Guid IID_ID3D12DeviceDownlevel
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x3F, 0xEE, 0xEA, 0x74,
+                    0x4B, 0x2F,
+                    0x6D, 0x47,
+                    0x82,
+                    0xBA,
+                    0x2B,
+                    0x85,
+                    0xCB,
+                    0x49,
+                    0xE3,
+                    0x10
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
     }
 }
