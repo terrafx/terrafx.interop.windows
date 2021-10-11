@@ -5,12 +5,6 @@
 
 using NUnit.Framework;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.D2D1_ANTIALIAS_MODE;
-using static TerraFX.Interop.D2D1_DRAWING_STATE_DESCRIPTION1;
-using static TerraFX.Interop.D2D1_PRIMITIVE_BLEND;
-using static TerraFX.Interop.D2D1_TEXT_ANTIALIAS_MODE;
-using static TerraFX.Interop.D2D1_UNIT_MODE;
-using static TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.UnitTests
 {
@@ -36,19 +30,6 @@ namespace TerraFX.Interop.UnitTests
         public static void SizeOfTest()
         {
             Assert.That(sizeof(D2D1_DRAWING_STATE_DESCRIPTION1), Is.EqualTo(56));
-        }
-
-        /// <summary>Validates that the value of the <see cref="DEFAULT" /> property is correct.</summary>
-        [Test]
-        public static void DEFAULTTest()
-        {
-            Assert.That(DEFAULT.antialiasMode, Is.EqualTo(D2D1_ANTIALIAS_MODE_PER_PRIMITIVE));
-            Assert.That(DEFAULT.textAntialiasMode, Is.EqualTo(D2D1_TEXT_ANTIALIAS_MODE_DEFAULT));
-            Assert.That(DEFAULT.tag1, Is.EqualTo(0));
-            Assert.That(DEFAULT.tag2, Is.EqualTo(0));
-            Assert.That(DEFAULT.transform, Is.EqualTo(IdentityMatrix));
-            Assert.That(DEFAULT.primitiveBlend, Is.EqualTo(D2D1_PRIMITIVE_BLEND_SOURCE_OVER));
-            Assert.That(DEFAULT.unitMode, Is.EqualTo(D2D1_UNIT_MODE_DIPS));
         }
     }
 }

@@ -5,9 +5,6 @@
 
 using NUnit.Framework;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.D2D1_ALPHA_MODE;
-using static TerraFX.Interop.D2D1_PIXEL_FORMAT;
-using static TerraFX.Interop.DXGI_FORMAT;
 
 namespace TerraFX.Interop.UnitTests
 {
@@ -33,14 +30,6 @@ namespace TerraFX.Interop.UnitTests
         public static void SizeOfTest()
         {
             Assert.That(sizeof(D2D1_PIXEL_FORMAT), Is.EqualTo(8));
-        }
-
-        /// <summary>Validates that the value of the <see cref="DEFAULT" /> property is correct.</summary>
-        [Test]
-        public static void DEFAULTTest()
-        {
-            Assert.That(DEFAULT.format, Is.EqualTo(DXGI_FORMAT_UNKNOWN));
-            Assert.That(DEFAULT.alphaMode, Is.EqualTo(D2D1_ALPHA_MODE_UNKNOWN));
         }
     }
 }

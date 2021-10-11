@@ -163,7 +163,7 @@ namespace TerraFX.Interop
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
-                return MemoryMarshal.CreateSpan(ref Anonymous.m[0], 4 * 4);
+                return MemoryMarshal.CreateSpan(ref Anonymous.m[0], 4);
             }
         }
 

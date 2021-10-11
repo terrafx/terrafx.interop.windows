@@ -5,10 +5,6 @@
 
 using NUnit.Framework;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.D2D1_BITMAP_BRUSH_PROPERTIES1;
-using static TerraFX.Interop.D2D1_INTERPOLATION_MODE;
-using static TerraFX.Interop.D2D1_EXTEND_MODE;
-
 
 namespace TerraFX.Interop.UnitTests
 {
@@ -34,15 +30,6 @@ namespace TerraFX.Interop.UnitTests
         public static void SizeOfTest()
         {
             Assert.That(sizeof(D2D1_BITMAP_BRUSH_PROPERTIES1), Is.EqualTo(12));
-        }
-
-        /// <summary>Validates that the value of the <see cref="DEFAULT" /> property is correct.</summary>
-        [Test]
-        public static void DEFAULTTest()
-        {
-            Assert.That(DEFAULT.extendModeX, Is.EqualTo(D2D1_EXTEND_MODE_CLAMP));
-            Assert.That(DEFAULT.extendModeY, Is.EqualTo(D2D1_EXTEND_MODE_CLAMP));
-            Assert.That(DEFAULT.interpolationMode, Is.EqualTo(D2D1_INTERPOLATION_MODE_LINEAR));
         }
     }
 }
