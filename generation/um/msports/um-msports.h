@@ -1,3 +1,3 @@
-#include <Windows.h>
+#include "..\..\TerraFX.h"
 #include <setupapi.h>
 #include <msports.h>

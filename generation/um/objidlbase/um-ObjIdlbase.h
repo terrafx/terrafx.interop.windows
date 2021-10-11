@@ -1,2 +1,2 @@
-#include <Windows.h>
+#include "..\..\TerraFX.h"
 #include <objidlbase.h>

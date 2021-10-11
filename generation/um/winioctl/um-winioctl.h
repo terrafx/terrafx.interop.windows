@@ -1,3 +1,3 @@
 #undef INITGUID
-#include <Windows.h>
+#include "..\..\TerraFX.h"
 #include <winioctl.h>
