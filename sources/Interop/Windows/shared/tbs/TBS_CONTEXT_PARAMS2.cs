@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from shared/tbs.h in the Windows SDK for Windows 10.0.19041.0
+// Ported from shared/tbs.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System.Runtime.CompilerServices;
@@ -13,7 +13,7 @@ namespace TerraFX.Interop
         [NativeTypeName("UINT32")]
         public uint version;
 
-        [NativeTypeName("tdTBS_CONTEXT_PARAMS2::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/shared/tbs.h:154:5)")]
+        [NativeTypeName("tdTBS_CONTEXT_PARAMS2::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/shared/tbs.h:154:5)")]
         public _Anonymous_e__Union Anonymous;
 
         public uint requestRaw
@@ -74,7 +74,7 @@ namespace TerraFX.Interop
         public partial struct _Anonymous_e__Union
         {
             [FieldOffset(0)]
-            [NativeTypeName("tdTBS_CONTEXT_PARAMS2::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/shared/tbs.h:156:9)")]
+            [NativeTypeName("tdTBS_CONTEXT_PARAMS2::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/shared/tbs.h:156:9)")]
             public _Anonymous_e__Struct Anonymous;
 
             [FieldOffset(0)]

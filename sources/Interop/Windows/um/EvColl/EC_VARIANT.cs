@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/EvColl.h in the Windows SDK for Windows 10.0.19041.0
+// Ported from um/EvColl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
@@ -11,8 +11,14 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct EC_VARIANT
     {
-        [NativeTypeName("_EC_VARIANT::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/EvColl.h:121:5)")]
+        [NativeTypeName("_EC_VARIANT::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/EvColl.h:121:5)")]
         public _Anonymous_e__Union Anonymous;
+
+        [NativeTypeName("DWORD")]
+        public uint Count;
+
+        [NativeTypeName("DWORD")]
+        public uint Type;
 
         public ref int BooleanVal
         {
@@ -109,12 +115,6 @@ namespace TerraFX.Interop
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.PropertyHandleVal, 1));
             }
         }
-
-        [NativeTypeName("DWORD")]
-        public uint Count;
-
-        [NativeTypeName("DWORD")]
-        public uint Type;
 
         [StructLayout(LayoutKind.Explicit)]
         public unsafe partial struct _Anonymous_e__Union

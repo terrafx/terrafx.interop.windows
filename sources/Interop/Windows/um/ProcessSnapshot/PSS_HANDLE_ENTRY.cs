@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/ProcessSnapshot.h in the Windows SDK for Windows 10.0.19041.0
+// Ported from um/ProcessSnapshot.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
@@ -51,34 +51,34 @@ namespace TerraFX.Interop
         [NativeTypeName("const wchar_t *")]
         public ushort* ObjectName;
 
-        [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/ProcessSnapshot.h:258:5)")]
+        [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/ProcessSnapshot.h:258:5)")]
         public _TypeSpecificInformation_e__Union TypeSpecificInformation;
 
         [StructLayout(LayoutKind.Explicit)]
         public partial struct _TypeSpecificInformation_e__Union
         {
             [FieldOffset(0)]
-            [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/ProcessSnapshot.h:261:9)")]
+            [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/ProcessSnapshot.h:261:9)")]
             public _Process_e__Struct Process;
 
             [FieldOffset(0)]
-            [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/ProcessSnapshot.h:272:9)")]
+            [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/ProcessSnapshot.h:272:9)")]
             public _Thread_e__Struct Thread;
 
             [FieldOffset(0)]
-            [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/ProcessSnapshot.h:284:9)")]
+            [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/ProcessSnapshot.h:284:9)")]
             public _Mutant_e__Struct Mutant;
 
             [FieldOffset(0)]
-            [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/ProcessSnapshot.h:292:9)")]
+            [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/ProcessSnapshot.h:292:9)")]
             public _Event_e__Struct Event;
 
             [FieldOffset(0)]
-            [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/ProcessSnapshot.h:298:9)")]
+            [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/ProcessSnapshot.h:298:9)")]
             public _Section_e__Struct Section;
 
             [FieldOffset(0)]
-            [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/ProcessSnapshot.h:306:9)")]
+            [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/ProcessSnapshot.h:306:9)")]
             public _Semaphore_e__Struct Semaphore;
 
             public unsafe partial struct _Process_e__Struct
@@ -86,7 +86,6 @@ namespace TerraFX.Interop
                 [NativeTypeName("DWORD")]
                 public uint ExitStatus;
 
-                [NativeTypeName("void *")]
                 public void* PebBaseAddress;
 
                 [NativeTypeName("ULONG_PTR")]
@@ -110,7 +109,6 @@ namespace TerraFX.Interop
                 [NativeTypeName("DWORD")]
                 public uint ExitStatus;
 
-                [NativeTypeName("void *")]
                 public void* TebBaseAddress;
 
                 [NativeTypeName("DWORD")]
@@ -126,7 +124,6 @@ namespace TerraFX.Interop
 
                 public int BasePriority;
 
-                [NativeTypeName("void *")]
                 public void* Win32StartAddress;
             }
 
@@ -156,7 +153,6 @@ namespace TerraFX.Interop
 
             public unsafe partial struct _Section_e__Struct
             {
-                [NativeTypeName("void *")]
                 public void* BaseAddress;
 
                 [NativeTypeName("DWORD")]

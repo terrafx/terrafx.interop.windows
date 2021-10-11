@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/rendezvoussession.h and um/rendezvoussession_i.c in the Windows SDK for Windows 10.0.19041.0
+// Ported from um/rendezvoussession.h and um/rendezvoussession_i.c in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
@@ -11,18 +11,21 @@ namespace TerraFX.Interop
 {
     [Guid("4F4D070B-A275-49FB-B10D-8EC26387B50D")]
     [NativeTypeName("struct IRendezvousApplication : IUnknown")]
+    [NativeInheritance("IUnknown")]
     public unsafe partial struct IRendezvousApplication
     {
         public void** lpVtbl;
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(0)]
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
+        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IRendezvousApplication*, Guid*, void**, int>)(lpVtbl[0]))((IRendezvousApplication*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(1)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
@@ -30,6 +33,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(2)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
@@ -37,8 +41,9 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(3)]
         [return: NativeTypeName("HRESULT")]
-        public int SetRendezvousSession([NativeTypeName("IUnknown *")] IUnknown* pRendezvousSession)
+        public int SetRendezvousSession(IUnknown* pRendezvousSession)
         {
             return ((delegate* unmanaged<IRendezvousApplication*, IUnknown*, int>)(lpVtbl[3]))((IRendezvousApplication*)Unsafe.AsPointer(ref this), pRendezvousSession);
         }

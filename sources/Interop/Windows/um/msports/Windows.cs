@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/msports.h in the Windows SDK for Windows 10.0.19041.0
+// Ported from um/msports.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
@@ -43,7 +43,7 @@ namespace TerraFX.Interop
         public static extern int ComDBResizeDatabase([NativeTypeName("HCOMDB")] IntPtr HComDB, [NativeTypeName("DWORD")] uint NewSize);
 
         [NativeTypeName("#define HCOMDB_INVALID_HANDLE_VALUE ((HCOMDB) INVALID_HANDLE_VALUE)")]
-        public static readonly IntPtr HCOMDB_INVALID_HANDLE_VALUE = ((IntPtr)((IntPtr)((nint)(-1))));
+        public static IntPtr HCOMDB_INVALID_HANDLE_VALUE => ((nint)((nint)((nint)(-1))));
 
         [NativeTypeName("#define COMDB_MIN_PORTS_ARBITRATED 256")]
         public const int COMDB_MIN_PORTS_ARBITRATED = 256;

@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/ShellScalingApi.h in the Windows SDK for Windows 10.0.19041.0
+// Ported from um/ShellScalingApi.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
@@ -23,7 +23,7 @@ namespace TerraFX.Interop
 
         [DllImport("shcore", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int GetScaleFactorForMonitor([NativeTypeName("HMONITOR")] IntPtr hMon, [NativeTypeName("DEVICE_SCALE_FACTOR *")] DEVICE_SCALE_FACTOR* pScale);
+        public static extern int GetScaleFactorForMonitor([NativeTypeName("HMONITOR")] IntPtr hMon, DEVICE_SCALE_FACTOR* pScale);
 
         [DllImport("shcore", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
@@ -39,7 +39,7 @@ namespace TerraFX.Interop
 
         [DllImport("shcore", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int GetProcessDpiAwareness([NativeTypeName("HANDLE")] IntPtr hprocess, [NativeTypeName("PROCESS_DPI_AWARENESS *")] PROCESS_DPI_AWARENESS* value);
+        public static extern int GetProcessDpiAwareness([NativeTypeName("HANDLE")] IntPtr hprocess, PROCESS_DPI_AWARENESS* value);
 
         [DllImport("shcore", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]

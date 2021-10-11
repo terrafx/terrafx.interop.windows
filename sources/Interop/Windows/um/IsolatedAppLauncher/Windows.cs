@@ -1,9 +1,11 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/IsolatedAppLauncher.h in the Windows SDK for Windows 10.0.19041.0
+// Ported from um/IsolatedAppLauncher.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Diagnostics;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
@@ -18,8 +20,50 @@ namespace TerraFX.Interop
         [return: NativeTypeName("HRESULT")]
         public static extern int IsProcessInIsolatedContainer([NativeTypeName("BOOL *")] int* isProcessInIsolatedContainer);
 
-        public static readonly Guid IID_IIsolatedAppLauncher = new Guid(0xF686878F, 0x7B42, 0x4CC4, 0x96, 0xFB, 0xF4, 0xF3, 0xB6, 0xE3, 0xD2, 0x4D);
+        public static ref readonly Guid IID_IIsolatedAppLauncher
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x8F, 0x87, 0x86, 0xF6,
+                    0x42, 0x7B,
+                    0xC4, 0x4C,
+                    0x96,
+                    0xFB,
+                    0xF4,
+                    0xF3,
+                    0xB6,
+                    0xE3,
+                    0xD2,
+                    0x4D
+                };
 
-        public static readonly Guid CLSID_IsolatedAppLauncher = new Guid(0xBC812430, 0xE75E, 0x4FD1, 0x96, 0x41, 0x1F, 0x9F, 0x1E, 0x2D, 0x9A, 0x1F);
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid CLSID_IsolatedAppLauncher
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x30, 0x24, 0x81, 0xBC,
+                    0x5E, 0xE7,
+                    0xD1, 0x4F,
+                    0x96,
+                    0x41,
+                    0x1F,
+                    0x9F,
+                    0x1E,
+                    0x2D,
+                    0x9A,
+                    0x1F
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
     }
 }

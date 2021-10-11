@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/ProcessSnapshot.h in the Windows SDK for Windows 10.0.19041.0
+// Ported from um/ProcessSnapshot.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 namespace TerraFX.Interop
@@ -10,7 +10,6 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint ExitStatus;
 
-        [NativeTypeName("void *")]
         public void* TebBaseAddress;
 
         [NativeTypeName("DWORD")]
@@ -26,7 +25,6 @@ namespace TerraFX.Interop
 
         public int BasePriority;
 
-        [NativeTypeName("void *")]
         public void* LastSyscallFirstArgument;
 
         [NativeTypeName("WORD")]
@@ -40,7 +38,6 @@ namespace TerraFX.Interop
 
         public FILETIME UserTime;
 
-        [NativeTypeName("void *")]
         public void* Win32StartAddress;
 
         public FILETIME CaptureTime;

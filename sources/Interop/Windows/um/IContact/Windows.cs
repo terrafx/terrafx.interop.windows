@@ -1,9 +1,12 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/IContact.h in the Windows SDK for Windows 10.0.19041.0
+// Ported from um/IContact.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Diagnostics;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
 {
@@ -27,18 +30,165 @@ namespace TerraFX.Interop
         [NativeTypeName("#define CGD_ARRAY_NODE 0x00000008")]
         public const int CGD_ARRAY_NODE = 0x00000008;
 
-        public static readonly Guid IID_IContactManager = new Guid(0xAD553D98, 0xDEB1, 0x474A, 0x8E, 0x17, 0xFC, 0x0C, 0x20, 0x75, 0xB7, 0x38);
+        public static ref readonly Guid IID_IContactManager
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x98, 0x3D, 0x55, 0xAD,
+                    0xB1, 0xDE,
+                    0x4A, 0x47,
+                    0x8E,
+                    0x17,
+                    0xFC,
+                    0x0C,
+                    0x20,
+                    0x75,
+                    0xB7,
+                    0x38
+                };
 
-        public static readonly Guid IID_IContactCollection = new Guid(0xB6AFA338, 0xD779, 0x11D9, 0x8B, 0xDE, 0xF6, 0x6B, 0xAD, 0x1E, 0x3F, 0x3A);
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
-        public static readonly Guid IID_IContactProperties = new Guid(0x70DD27DD, 0x5CBD, 0x46E8, 0xBE, 0xF0, 0x23, 0xB6, 0xB3, 0x46, 0x28, 0x8F);
+        public static ref readonly Guid IID_IContactCollection
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x38, 0xA3, 0xAF, 0xB6,
+                    0x79, 0xD7,
+                    0xD9, 0x11,
+                    0x8B,
+                    0xDE,
+                    0xF6,
+                    0x6B,
+                    0xAD,
+                    0x1E,
+                    0x3F,
+                    0x3A
+                };
 
-        public static readonly Guid IID_IContact = new Guid(0xF941B671, 0xBDA7, 0x4F77, 0x88, 0x4A, 0xF4, 0x64, 0x62, 0xF2, 0x26, 0xA7);
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
-        public static readonly Guid IID_IContactPropertyCollection = new Guid(0xFFD3ADF8, 0xFA64, 0x4328, 0xB1, 0xB6, 0x2E, 0x0D, 0xB5, 0x09, 0xCB, 0x3C);
+        public static ref readonly Guid IID_IContactProperties
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xDD, 0x27, 0xDD, 0x70,
+                    0xBD, 0x5C,
+                    0xE8, 0x46,
+                    0xBE,
+                    0xF0,
+                    0x23,
+                    0xB6,
+                    0xB3,
+                    0x46,
+                    0x28,
+                    0x8F
+                };
 
-        public static readonly Guid CLSID_Contact = new Guid(0x61B68808, 0x8EEE, 0x4FD1, 0xAC, 0xB8, 0x3D, 0x80, 0x4C, 0x8D, 0xB0, 0x56);
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
 
-        public static readonly Guid CLSID_ContactManager = new Guid(0x7165C8AB, 0xAF88, 0x42BD, 0x86, 0xFD, 0x53, 0x10, 0xB4, 0x28, 0x5A, 0x02);
+        public static ref readonly Guid IID_IContact
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x71, 0xB6, 0x41, 0xF9,
+                    0xA7, 0xBD,
+                    0x77, 0x4F,
+                    0x88,
+                    0x4A,
+                    0xF4,
+                    0x64,
+                    0x62,
+                    0xF2,
+                    0x26,
+                    0xA7
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid IID_IContactPropertyCollection
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xF8, 0xAD, 0xD3, 0xFF,
+                    0x64, 0xFA,
+                    0x28, 0x43,
+                    0xB1,
+                    0xB6,
+                    0x2E,
+                    0x0D,
+                    0xB5,
+                    0x09,
+                    0xCB,
+                    0x3C
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid CLSID_Contact
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0x08, 0x88, 0xB6, 0x61,
+                    0xEE, 0x8E,
+                    0xD1, 0x4F,
+                    0xAC,
+                    0xB8,
+                    0x3D,
+                    0x80,
+                    0x4C,
+                    0x8D,
+                    0xB0,
+                    0x56
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        public static ref readonly Guid CLSID_ContactManager
+        {
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xAB, 0xC8, 0x65, 0x71,
+                    0x88, 0xAF,
+                    0xBD, 0x42,
+                    0x86,
+                    0xFD,
+                    0x53,
+                    0x10,
+                    0xB4,
+                    0x28,
+                    0x5A,
+                    0x02
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
     }
 }

@@ -6,8 +6,6 @@
 using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.D2D1_BITMAP_OPTIONS;
-using static TerraFX.Interop.D2D1_BITMAP_PROPERTIES1;
 
 namespace TerraFX.Interop.UnitTests
 {
@@ -40,17 +38,6 @@ namespace TerraFX.Interop.UnitTests
             {
                 Assert.That(sizeof(D2D1_BITMAP_PROPERTIES1), Is.EqualTo(24));
             }
-        }
-
-        /// <summary>Validates that the value of the <see cref="DEFAULT" /> property is correct.</summary>
-        [Test]
-        public static void DEFAULTTest()
-        {
-            Assert.That(DEFAULT.pixelFormat, Is.EqualTo(D2D1_PIXEL_FORMAT.DEFAULT));
-            Assert.That(DEFAULT.dpiX, Is.EqualTo(96.0f));
-            Assert.That(DEFAULT.dpiY, Is.EqualTo(96.0f));
-            Assert.That(DEFAULT.bitmapOptions, Is.EqualTo(D2D1_BITMAP_OPTIONS_NONE));
-            Assert.That((nuint)DEFAULT.colorContext, Is.EqualTo((nuint)0));
         }
     }
 }

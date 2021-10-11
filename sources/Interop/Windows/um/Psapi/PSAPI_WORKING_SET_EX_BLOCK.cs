@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/Psapi.h in the Windows SDK for Windows 10.0.19041.0
+// Ported from um/Psapi.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System.Runtime.CompilerServices;
@@ -16,7 +16,7 @@ namespace TerraFX.Interop
         public nuint Flags;
 
         [FieldOffset(0)]
-        [NativeTypeName("_PSAPI_WORKING_SET_EX_BLOCK::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/Psapi.h:296:5)")]
+        [NativeTypeName("_PSAPI_WORKING_SET_EX_BLOCK::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/Psapi.h:406:5)")]
         public _Anonymous_e__Union Anonymous;
 
         public nuint Valid
@@ -167,11 +167,11 @@ namespace TerraFX.Interop
         public partial struct _Anonymous_e__Union
         {
             [FieldOffset(0)]
-            [NativeTypeName("_PSAPI_WORKING_SET_EX_BLOCK::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/Psapi.h:297:9)")]
+            [NativeTypeName("_PSAPI_WORKING_SET_EX_BLOCK::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/Psapi.h:407:9)")]
             public _Anonymous_e__Struct Anonymous;
 
             [FieldOffset(0)]
-            [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/Psapi.h:312:9)")]
+            [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/Psapi.h:422:9)")]
             public _Invalid_e__Struct Invalid;
 
             public partial struct _Anonymous_e__Struct

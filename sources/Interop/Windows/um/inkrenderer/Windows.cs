@@ -12,8 +12,10 @@ namespace TerraFX.Interop
 {
     public static partial class Windows
     {
+        [NativeTypeName("const IID")]
         public static ref readonly Guid IID_IInkD2DRenderer
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -35,8 +37,10 @@ namespace TerraFX.Interop
             }
         }
 
+        [NativeTypeName("const IID")]
         public static ref readonly Guid IID_IInkD2DRenderer2
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {
@@ -58,8 +62,35 @@ namespace TerraFX.Interop
             }
         }
 
+        [NativeTypeName("const IID")]
+        public static ref readonly Guid LIBID_InkD2DRendererLib
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                ReadOnlySpan<byte> data = new byte[] {
+                    0xB0, 0x0A, 0x0D, 0x39,
+                    0xE2, 0x19,
+                    0xBB, 0x46,
+                    0x86,
+                    0x2E,
+                    0xB0,
+                    0x9F,
+                    0x3C,
+                    0xDC,
+                    0xF8,
+                    0xB9
+                };
+
+                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+            }
+        }
+
+        [NativeTypeName("const CLSID")]
         public static ref readonly Guid CLSID_InkD2DRenderer
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 ReadOnlySpan<byte> data = new byte[] {

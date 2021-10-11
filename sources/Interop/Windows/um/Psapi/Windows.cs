@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/Psapi.h in the Windows SDK for Windows 10.0.19041.0
+// Ported from um/Psapi.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
@@ -48,14 +48,6 @@ namespace TerraFX.Interop
 
         [DllImport("kernel32", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int K32QueryWorkingSet([NativeTypeName("HANDLE")] IntPtr hProcess, [NativeTypeName("PVOID")] void* pv, [NativeTypeName("DWORD")] uint cb);
-
-        [DllImport("kernel32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int K32QueryWorkingSetEx([NativeTypeName("HANDLE")] IntPtr hProcess, [NativeTypeName("PVOID")] void* pv, [NativeTypeName("DWORD")] uint cb);
-
-        [DllImport("kernel32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
         public static extern int K32InitializeProcessForWsWatch([NativeTypeName("HANDLE")] IntPtr hProcess);
 
         [DllImport("kernel32", ExactSpelling = true)]
@@ -93,6 +85,14 @@ namespace TerraFX.Interop
         [DllImport("kernel32", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
         public static extern uint K32GetDeviceDriverFileNameW([NativeTypeName("LPVOID")] void* ImageBase, [NativeTypeName("LPWSTR")] ushort* lpFilename, [NativeTypeName("DWORD")] uint nSize);
+
+        [DllImport("kernel32", ExactSpelling = true)]
+        [return: NativeTypeName("BOOL")]
+        public static extern int K32QueryWorkingSet([NativeTypeName("HANDLE")] IntPtr hProcess, [NativeTypeName("PVOID")] void* pv, [NativeTypeName("DWORD")] uint cb);
+
+        [DllImport("kernel32", ExactSpelling = true)]
+        [return: NativeTypeName("BOOL")]
+        public static extern int K32QueryWorkingSetEx([NativeTypeName("HANDLE")] IntPtr hProcess, [NativeTypeName("PVOID")] void* pv, [NativeTypeName("DWORD")] uint cb);
 
         [DllImport("kernel32", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
@@ -134,105 +134,105 @@ namespace TerraFX.Interop
         public const int PSAPI_VERSION = 2;
 
         [NativeTypeName("#define EnumProcessModules K32EnumProcessModules")]
-        public static readonly delegate*<IntPtr, IntPtr*, uint, uint*, int> EnumProcessModules = &K32EnumProcessModules;
+        public static delegate*<IntPtr, IntPtr*, uint, uint*, int> EnumProcessModules => &K32EnumProcessModules;
 
         [NativeTypeName("#define EnumProcessModulesEx K32EnumProcessModulesEx")]
-        public static readonly delegate*<IntPtr, IntPtr*, uint, uint*, uint, int> EnumProcessModulesEx = &K32EnumProcessModulesEx;
-
-        [NativeTypeName("#define QueryWorkingSet K32QueryWorkingSet")]
-        public static readonly delegate*<IntPtr, void*, uint, int> QueryWorkingSet = &K32QueryWorkingSet;
-
-        [NativeTypeName("#define QueryWorkingSetEx K32QueryWorkingSetEx")]
-        public static readonly delegate*<IntPtr, void*, uint, int> QueryWorkingSetEx = &K32QueryWorkingSetEx;
+        public static delegate*<IntPtr, IntPtr*, uint, uint*, uint, int> EnumProcessModulesEx => &K32EnumProcessModulesEx;
 
         [NativeTypeName("#define InitializeProcessForWsWatch K32InitializeProcessForWsWatch")]
-        public static readonly delegate*<IntPtr, int> InitializeProcessForWsWatch = &K32InitializeProcessForWsWatch;
+        public static delegate*<IntPtr, int> InitializeProcessForWsWatch => &K32InitializeProcessForWsWatch;
 
         [NativeTypeName("#define GetWsChanges K32GetWsChanges")]
-        public static readonly delegate*<IntPtr, PSAPI_WS_WATCH_INFORMATION*, uint, int> GetWsChanges = &K32GetWsChanges;
+        public static delegate*<IntPtr, PSAPI_WS_WATCH_INFORMATION*, uint, int> GetWsChanges => &K32GetWsChanges;
 
         [NativeTypeName("#define GetWsChangesEx K32GetWsChangesEx")]
-        public static readonly delegate*<IntPtr, PSAPI_WS_WATCH_INFORMATION_EX*, uint*, int> GetWsChangesEx = &K32GetWsChangesEx;
+        public static delegate*<IntPtr, PSAPI_WS_WATCH_INFORMATION_EX*, uint*, int> GetWsChangesEx => &K32GetWsChangesEx;
 
         [NativeTypeName("#define GetMappedFileNameW K32GetMappedFileNameW")]
-        public static readonly delegate*<IntPtr, void*, ushort*, uint, uint> GetMappedFileNameW = &K32GetMappedFileNameW;
+        public static delegate*<IntPtr, void*, ushort*, uint, uint> GetMappedFileNameW => &K32GetMappedFileNameW;
 
         [NativeTypeName("#define GetMappedFileNameA K32GetMappedFileNameA")]
-        public static readonly delegate*<IntPtr, void*, sbyte*, uint, uint> GetMappedFileNameA = &K32GetMappedFileNameA;
+        public static delegate*<IntPtr, void*, sbyte*, uint, uint> GetMappedFileNameA => &K32GetMappedFileNameA;
 
         [NativeTypeName("#define EnumDeviceDrivers K32EnumDeviceDrivers")]
-        public static readonly delegate*<void**, uint, uint*, int> EnumDeviceDrivers = &K32EnumDeviceDrivers;
+        public static delegate*<void**, uint, uint*, int> EnumDeviceDrivers => &K32EnumDeviceDrivers;
 
         [NativeTypeName("#define GetDeviceDriverBaseNameA K32GetDeviceDriverBaseNameA")]
-        public static readonly delegate*<void*, sbyte*, uint, uint> GetDeviceDriverBaseNameA = &K32GetDeviceDriverBaseNameA;
+        public static delegate*<void*, sbyte*, uint, uint> GetDeviceDriverBaseNameA => &K32GetDeviceDriverBaseNameA;
 
         [NativeTypeName("#define GetDeviceDriverBaseNameW K32GetDeviceDriverBaseNameW")]
-        public static readonly delegate*<void*, ushort*, uint, uint> GetDeviceDriverBaseNameW = &K32GetDeviceDriverBaseNameW;
+        public static delegate*<void*, ushort*, uint, uint> GetDeviceDriverBaseNameW => &K32GetDeviceDriverBaseNameW;
 
         [NativeTypeName("#define GetDeviceDriverFileNameA K32GetDeviceDriverFileNameA")]
-        public static readonly delegate*<void*, sbyte*, uint, uint> GetDeviceDriverFileNameA = &K32GetDeviceDriverFileNameA;
+        public static delegate*<void*, sbyte*, uint, uint> GetDeviceDriverFileNameA => &K32GetDeviceDriverFileNameA;
 
         [NativeTypeName("#define GetDeviceDriverFileNameW K32GetDeviceDriverFileNameW")]
-        public static readonly delegate*<void*, ushort*, uint, uint> GetDeviceDriverFileNameW = &K32GetDeviceDriverFileNameW;
+        public static delegate*<void*, ushort*, uint, uint> GetDeviceDriverFileNameW => &K32GetDeviceDriverFileNameW;
 
         [NativeTypeName("#define GetPerformanceInfo K32GetPerformanceInfo")]
-        public static readonly delegate*<PERFORMANCE_INFORMATION*, uint, int> GetPerformanceInfo = &K32GetPerformanceInfo;
+        public static delegate*<PERFORMANCE_INFORMATION*, uint, int> GetPerformanceInfo => &K32GetPerformanceInfo;
 
         [NativeTypeName("#define GetProcessImageFileNameA K32GetProcessImageFileNameA")]
-        public static readonly delegate*<IntPtr, sbyte*, uint, uint> GetProcessImageFileNameA = &K32GetProcessImageFileNameA;
+        public static delegate*<IntPtr, sbyte*, uint, uint> GetProcessImageFileNameA => &K32GetProcessImageFileNameA;
 
         [NativeTypeName("#define GetProcessImageFileNameW K32GetProcessImageFileNameW")]
-        public static readonly delegate*<IntPtr, ushort*, uint, uint> GetProcessImageFileNameW = &K32GetProcessImageFileNameW;
+        public static delegate*<IntPtr, ushort*, uint, uint> GetProcessImageFileNameW => &K32GetProcessImageFileNameW;
 
         [NativeTypeName("#define GetModuleBaseNameA K32GetModuleBaseNameA")]
-        public static readonly delegate*<IntPtr, IntPtr, sbyte*, uint, uint> GetModuleBaseNameA = &K32GetModuleBaseNameA;
+        public static delegate*<IntPtr, IntPtr, sbyte*, uint, uint> GetModuleBaseNameA => &K32GetModuleBaseNameA;
 
         [NativeTypeName("#define GetModuleBaseNameW K32GetModuleBaseNameW")]
-        public static readonly delegate*<IntPtr, IntPtr, ushort*, uint, uint> GetModuleBaseNameW = &K32GetModuleBaseNameW;
+        public static delegate*<IntPtr, IntPtr, ushort*, uint, uint> GetModuleBaseNameW => &K32GetModuleBaseNameW;
 
         [NativeTypeName("#define GetModuleFileNameExA K32GetModuleFileNameExA")]
-        public static readonly delegate*<IntPtr, IntPtr, sbyte*, uint, uint> GetModuleFileNameExA = &K32GetModuleFileNameExA;
+        public static delegate*<IntPtr, IntPtr, sbyte*, uint, uint> GetModuleFileNameExA => &K32GetModuleFileNameExA;
 
         [NativeTypeName("#define GetModuleFileNameExW K32GetModuleFileNameExW")]
-        public static readonly delegate*<IntPtr, IntPtr, ushort*, uint, uint> GetModuleFileNameExW = &K32GetModuleFileNameExW;
+        public static delegate*<IntPtr, IntPtr, ushort*, uint, uint> GetModuleFileNameExW => &K32GetModuleFileNameExW;
 
         [NativeTypeName("#define EmptyWorkingSet K32EmptyWorkingSet")]
-        public static readonly delegate*<IntPtr, int> EmptyWorkingSet = &K32EmptyWorkingSet;
+        public static delegate*<IntPtr, int> EmptyWorkingSet => &K32EmptyWorkingSet;
 
         [NativeTypeName("#define EnumPageFilesW K32EnumPageFilesW")]
-        public static readonly delegate*<delegate* unmanaged<void*, ENUM_PAGE_FILE_INFORMATION*, ushort*, int>, void*, int> EnumPageFilesW = &K32EnumPageFilesW;
+        public static delegate*<delegate* unmanaged<void*, ENUM_PAGE_FILE_INFORMATION*, ushort*, int>, void*, int> EnumPageFilesW => &K32EnumPageFilesW;
 
         [NativeTypeName("#define EnumPageFilesA K32EnumPageFilesA")]
-        public static readonly delegate*<delegate* unmanaged<void*, ENUM_PAGE_FILE_INFORMATION*, sbyte*, int>, void*, int> EnumPageFilesA = &K32EnumPageFilesA;
+        public static delegate*<delegate* unmanaged<void*, ENUM_PAGE_FILE_INFORMATION*, sbyte*, int>, void*, int> EnumPageFilesA => &K32EnumPageFilesA;
 
         [NativeTypeName("#define EnumProcesses K32EnumProcesses")]
-        public static readonly delegate*<uint*, uint, uint*, int> EnumProcesses = &K32EnumProcesses;
+        public static delegate*<uint*, uint, uint*, int> EnumProcesses => &K32EnumProcesses;
 
         [NativeTypeName("#define GetProcessMemoryInfo K32GetProcessMemoryInfo")]
-        public static readonly delegate*<IntPtr, PROCESS_MEMORY_COUNTERS*, uint, int> GetProcessMemoryInfo = &K32GetProcessMemoryInfo;
+        public static delegate*<IntPtr, PROCESS_MEMORY_COUNTERS*, uint, int> GetProcessMemoryInfo => &K32GetProcessMemoryInfo;
 
         [NativeTypeName("#define GetModuleInformation K32GetModuleInformation")]
-        public static readonly delegate*<IntPtr, IntPtr, MODULEINFO*, uint, int> GetModuleInformation = &K32GetModuleInformation;
+        public static delegate*<IntPtr, IntPtr, MODULEINFO*, uint, int> GetModuleInformation => &K32GetModuleInformation;
+
+        [NativeTypeName("#define QueryWorkingSet K32QueryWorkingSet")]
+        public static delegate*<IntPtr, void*, uint, int> QueryWorkingSet => &K32QueryWorkingSet;
+
+        [NativeTypeName("#define QueryWorkingSetEx K32QueryWorkingSetEx")]
+        public static delegate*<IntPtr, void*, uint, int> QueryWorkingSetEx => &K32QueryWorkingSetEx;
 
         [NativeTypeName("#define GetModuleBaseName GetModuleBaseNameW")]
-        public static readonly delegate*<IntPtr, IntPtr, ushort*, uint, uint> GetModuleBaseName = &K32GetModuleBaseNameW;
+        public static delegate*<IntPtr, IntPtr, ushort*, uint, uint> GetModuleBaseName => &K32GetModuleBaseNameW;
 
         [NativeTypeName("#define GetModuleFileNameEx GetModuleFileNameExW")]
-        public static readonly delegate*<IntPtr, IntPtr, ushort*, uint, uint> GetModuleFileNameEx = &K32GetModuleFileNameExW;
+        public static delegate*<IntPtr, IntPtr, ushort*, uint, uint> GetModuleFileNameEx => &K32GetModuleFileNameExW;
 
         [NativeTypeName("#define GetMappedFileName GetMappedFileNameW")]
-        public static readonly delegate*<IntPtr, void*, ushort*, uint, uint> GetMappedFileName = &K32GetMappedFileNameW;
+        public static delegate*<IntPtr, void*, ushort*, uint, uint> GetMappedFileName => &K32GetMappedFileNameW;
 
         [NativeTypeName("#define GetDeviceDriverBaseName GetDeviceDriverBaseNameW")]
-        public static readonly delegate*<void*, ushort*, uint, uint> GetDeviceDriverBaseName = &K32GetDeviceDriverBaseNameW;
+        public static delegate*<void*, ushort*, uint, uint> GetDeviceDriverBaseName => &K32GetDeviceDriverBaseNameW;
 
         [NativeTypeName("#define GetDeviceDriverFileName GetDeviceDriverFileNameW")]
-        public static readonly delegate*<void*, ushort*, uint, uint> GetDeviceDriverFileName = &K32GetDeviceDriverFileNameW;
+        public static delegate*<void*, ushort*, uint, uint> GetDeviceDriverFileName => &K32GetDeviceDriverFileNameW;
 
         [NativeTypeName("#define EnumPageFiles EnumPageFilesW")]
-        public static readonly delegate*<delegate* unmanaged<void*, ENUM_PAGE_FILE_INFORMATION*, ushort*, int>, void*, int> EnumPageFiles = &K32EnumPageFilesW;
+        public static delegate*<delegate* unmanaged<void*, ENUM_PAGE_FILE_INFORMATION*, ushort*, int>, void*, int> EnumPageFiles => &K32EnumPageFilesW;
 
         [NativeTypeName("#define GetProcessImageFileName GetProcessImageFileNameW")]
-        public static readonly delegate*<IntPtr, ushort*, uint, uint> GetProcessImageFileName = &K32GetProcessImageFileNameW;
+        public static delegate*<IntPtr, ushort*, uint, uint> GetProcessImageFileName => &K32GetProcessImageFileNameW;
     }
 }

@@ -137,10 +137,7 @@ namespace TerraFX.Interop
         [return: NativeTypeName("HRESULT")]
         public static int SHCreateLibrary([NativeTypeName("const IID &")] Guid* riid, void** ppv)
         {
-            fixed (Guid* rclsid = &CLSID_ShellLibrary)
-            {
-                return CoCreateInstance(rclsid, null, (uint)(CLSCTX_INPROC_SERVER), riid, ppv);
-            }
+            return CoCreateInstance(__uuidof<ShellLibrary>(), null, (uint)(CLSCTX_INPROC_SERVER), riid, ppv);
         }
 
         [return: NativeTypeName("HRESULT")]
@@ -148,12 +145,7 @@ namespace TerraFX.Interop
         {
             *ppv = null;
             IShellLibrary* plib;
-            int hr;
-
-            fixed (Guid* rclsid = &CLSID_ShellLibrary)
-            {
-                hr = CoCreateInstance(rclsid, null, (uint)(CLSCTX_INPROC_SERVER), __uuidof<IShellLibrary>(), (void**)(&plib));
-            }
+            int hr = CoCreateInstance(__uuidof<ShellLibrary>(), null, (uint)(CLSCTX_INPROC_SERVER), __uuidof<IShellLibrary>(), (void**)(&plib));
 
             if ((((int)(hr)) >= 0))
             {
@@ -174,12 +166,7 @@ namespace TerraFX.Interop
         {
             *ppv = null;
             IShellLibrary* plib;
-            int hr;
-
-            fixed (Guid* rclsid = &CLSID_ShellLibrary)
-            {
-                hr = CoCreateInstance(rclsid, null, (uint)(CLSCTX_INPROC_SERVER), __uuidof<IShellLibrary>(), (void**)(&plib));
-            }
+            int hr = CoCreateInstance(__uuidof<ShellLibrary>(), null, (uint)(CLSCTX_INPROC_SERVER), __uuidof<IShellLibrary>(), (void**)(&plib));
 
             if ((((int)(hr)) >= 0))
             {

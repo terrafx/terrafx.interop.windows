@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/ProcessSnapshot.h in the Windows SDK for Windows 10.0.19041.0
+// Ported from um/ProcessSnapshot.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
@@ -20,11 +20,11 @@ namespace TerraFX.Interop
 
         [DllImport("kernel32", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
-        public static extern uint PssQuerySnapshot([NativeTypeName("HPSS")] IntPtr SnapshotHandle, PSS_QUERY_INFORMATION_CLASS InformationClass, [NativeTypeName("void *")] void* Buffer, [NativeTypeName("DWORD")] uint BufferLength);
+        public static extern uint PssQuerySnapshot([NativeTypeName("HPSS")] IntPtr SnapshotHandle, PSS_QUERY_INFORMATION_CLASS InformationClass, void* Buffer, [NativeTypeName("DWORD")] uint BufferLength);
 
         [DllImport("kernel32", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
-        public static extern uint PssWalkSnapshot([NativeTypeName("HPSS")] IntPtr SnapshotHandle, PSS_WALK_INFORMATION_CLASS InformationClass, [NativeTypeName("HPSSWALK")] IntPtr WalkMarkerHandle, [NativeTypeName("void *")] void* Buffer, [NativeTypeName("DWORD")] uint BufferLength);
+        public static extern uint PssWalkSnapshot([NativeTypeName("HPSS")] IntPtr SnapshotHandle, PSS_WALK_INFORMATION_CLASS InformationClass, [NativeTypeName("HPSSWALK")] IntPtr WalkMarkerHandle, void* Buffer, [NativeTypeName("DWORD")] uint BufferLength);
 
         [DllImport("kernel32", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]

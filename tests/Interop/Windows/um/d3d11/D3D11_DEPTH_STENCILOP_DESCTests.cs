@@ -5,9 +5,6 @@
 
 using NUnit.Framework;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.D3D11_COMPARISON_FUNC;
-using static TerraFX.Interop.D3D11_DEPTH_STENCILOP_DESC;
-using static TerraFX.Interop.D3D11_STENCIL_OP;
 
 namespace TerraFX.Interop.UnitTests
 {
@@ -33,16 +30,6 @@ namespace TerraFX.Interop.UnitTests
         public static void SizeOfTest()
         {
             Assert.That(sizeof(D3D11_DEPTH_STENCILOP_DESC), Is.EqualTo(16));
-        }
-
-        /// <summary>Validates that the value of the <see cref="DEFAULT" /> property is correct.</summary>
-        [Test]
-        public static void DEFAULTTest()
-        {
-            Assert.That(DEFAULT.StencilFailOp, Is.EqualTo(D3D11_STENCIL_OP_KEEP));
-            Assert.That(DEFAULT.StencilDepthFailOp, Is.EqualTo(D3D11_STENCIL_OP_KEEP));
-            Assert.That(DEFAULT.StencilPassOp, Is.EqualTo(D3D11_STENCIL_OP_KEEP));
-            Assert.That(DEFAULT.StencilFunc, Is.EqualTo(D3D11_COMPARISON_ALWAYS));
         }
     }
 }
