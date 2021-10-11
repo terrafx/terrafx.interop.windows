@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="ICreateTypeLib2" /> struct.</summary>
-    public static unsafe class ICreateTypeLib2Tests
+    public static unsafe partial class ICreateTypeLib2Tests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ICreateTypeLib2" /> struct is correct.</summary>
         [Test]

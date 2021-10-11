@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="SecPkgContext_TokenBinding" /> struct.</summary>
-    public static unsafe class SecPkgContext_TokenBindingTests
+    public static unsafe partial class SecPkgContext_TokenBindingTests
     {
         /// <summary>Validates that the <see cref="SecPkgContext_TokenBinding" /> struct is blittable.</summary>
         [Test]

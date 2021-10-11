@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="MIDIHDR" /> struct.</summary>
-    public static unsafe class MIDIHDRTests
+    public static unsafe partial class MIDIHDRTests
     {
         /// <summary>Validates that the <see cref="MIDIHDR" /> struct is blittable.</summary>
         [Test]

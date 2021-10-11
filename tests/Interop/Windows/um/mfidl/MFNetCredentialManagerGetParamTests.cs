@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="MFNetCredentialManagerGetParam" /> struct.</summary>
-    public static unsafe class MFNetCredentialManagerGetParamTests
+    public static unsafe partial class MFNetCredentialManagerGetParamTests
     {
         /// <summary>Validates that the <see cref="MFNetCredentialManagerGetParam" /> struct is blittable.</summary>
         [Test]

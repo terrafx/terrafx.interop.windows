@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="WS_ASYNC_STATE" /> struct.</summary>
-    public static unsafe class WS_ASYNC_STATETests
+    public static unsafe partial class WS_ASYNC_STATETests
     {
         /// <summary>Validates that the <see cref="WS_ASYNC_STATE" /> struct is blittable.</summary>
         [Test]

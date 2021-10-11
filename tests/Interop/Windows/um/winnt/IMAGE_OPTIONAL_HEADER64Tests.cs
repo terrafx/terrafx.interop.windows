@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IMAGE_OPTIONAL_HEADER64" /> struct.</summary>
-    public static unsafe class IMAGE_OPTIONAL_HEADER64Tests
+    public static unsafe partial class IMAGE_OPTIONAL_HEADER64Tests
     {
         /// <summary>Validates that the <see cref="IMAGE_OPTIONAL_HEADER64" /> struct is blittable.</summary>
         [Test]

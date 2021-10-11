@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="MFFOLDDOWN_MATRIX" /> struct.</summary>
-    public static unsafe class MFFOLDDOWN_MATRIXTests
+    public static unsafe partial class MFFOLDDOWN_MATRIXTests
     {
         /// <summary>Validates that the <see cref="MFFOLDDOWN_MATRIX" /> struct is blittable.</summary>
         [Test]

@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IUniformResourceLocatorA" /> struct.</summary>
-    public static unsafe class IUniformResourceLocatorATests
+    public static unsafe partial class IUniformResourceLocatorATests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IUniformResourceLocatorA" /> struct is correct.</summary>
         [Test]

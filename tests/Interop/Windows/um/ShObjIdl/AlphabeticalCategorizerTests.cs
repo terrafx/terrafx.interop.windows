@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="AlphabeticalCategorizer" /> struct.</summary>
-    public static unsafe class AlphabeticalCategorizerTests
+    public static unsafe partial class AlphabeticalCategorizerTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="AlphabeticalCategorizer" /> struct is correct.</summary>
         [Test]

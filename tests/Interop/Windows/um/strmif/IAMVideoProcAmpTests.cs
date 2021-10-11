@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IAMVideoProcAmp" /> struct.</summary>
-    public static unsafe class IAMVideoProcAmpTests
+    public static unsafe partial class IAMVideoProcAmpTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IAMVideoProcAmp" /> struct is correct.</summary>
         [Test]

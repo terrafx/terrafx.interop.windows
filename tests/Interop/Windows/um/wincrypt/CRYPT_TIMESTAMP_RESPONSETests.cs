@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="CRYPT_TIMESTAMP_RESPONSE" /> struct.</summary>
-    public static unsafe class CRYPT_TIMESTAMP_RESPONSETests
+    public static unsafe partial class CRYPT_TIMESTAMP_RESPONSETests
     {
         /// <summary>Validates that the <see cref="CRYPT_TIMESTAMP_RESPONSE" /> struct is blittable.</summary>
         [Test]

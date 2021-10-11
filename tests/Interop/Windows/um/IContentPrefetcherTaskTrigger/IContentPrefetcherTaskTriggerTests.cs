@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IContentPrefetcherTaskTrigger" /> struct.</summary>
-    public static unsafe class IContentPrefetcherTaskTriggerTests
+    public static unsafe partial class IContentPrefetcherTaskTriggerTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IContentPrefetcherTaskTrigger" /> struct is correct.</summary>
         [Test]

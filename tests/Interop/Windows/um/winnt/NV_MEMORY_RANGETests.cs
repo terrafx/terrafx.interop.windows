@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="NV_MEMORY_RANGE" /> struct.</summary>
-    public static unsafe class NV_MEMORY_RANGETests
+    public static unsafe partial class NV_MEMORY_RANGETests
     {
         /// <summary>Validates that the <see cref="NV_MEMORY_RANGE" /> struct is blittable.</summary>
         [Test]

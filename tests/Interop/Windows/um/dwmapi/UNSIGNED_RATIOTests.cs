@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="UNSIGNED_RATIO" /> struct.</summary>
-    public static unsafe class UNSIGNED_RATIOTests
+    public static unsafe partial class UNSIGNED_RATIOTests
     {
         /// <summary>Validates that the <see cref="UNSIGNED_RATIO" /> struct is blittable.</summary>
         [Test]

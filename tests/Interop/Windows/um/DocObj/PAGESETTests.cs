@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="PAGESET" /> struct.</summary>
-    public static unsafe class PAGESETTests
+    public static unsafe partial class PAGESETTests
     {
         /// <summary>Validates that the <see cref="PAGESET" /> struct is blittable.</summary>
         [Test]

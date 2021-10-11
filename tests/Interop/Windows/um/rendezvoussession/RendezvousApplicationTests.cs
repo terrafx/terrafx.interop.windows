@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="RendezvousApplication" /> struct.</summary>
-    public static unsafe class RendezvousApplicationTests
+    public static unsafe partial class RendezvousApplicationTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="RendezvousApplication" /> struct is correct.</summary>
         [Test]

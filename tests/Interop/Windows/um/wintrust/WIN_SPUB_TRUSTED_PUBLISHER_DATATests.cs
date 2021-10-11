@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="WIN_SPUB_TRUSTED_PUBLISHER_DATA" /> struct.</summary>
-    public static unsafe class WIN_SPUB_TRUSTED_PUBLISHER_DATATests
+    public static unsafe partial class WIN_SPUB_TRUSTED_PUBLISHER_DATATests
     {
         /// <summary>Validates that the <see cref="WIN_SPUB_TRUSTED_PUBLISHER_DATA" /> struct is blittable.</summary>
         [Test]

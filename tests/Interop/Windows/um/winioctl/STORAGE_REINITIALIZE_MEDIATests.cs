@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="STORAGE_REINITIALIZE_MEDIA" /> struct.</summary>
-    public static unsafe class STORAGE_REINITIALIZE_MEDIATests
+    public static unsafe partial class STORAGE_REINITIALIZE_MEDIATests
     {
         /// <summary>Validates that the <see cref="STORAGE_REINITIALIZE_MEDIA" /> struct is blittable.</summary>
         [Test]

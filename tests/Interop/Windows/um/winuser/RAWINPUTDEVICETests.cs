@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="RAWINPUTDEVICE" /> struct.</summary>
-    public static unsafe class RAWINPUTDEVICETests
+    public static unsafe partial class RAWINPUTDEVICETests
     {
         /// <summary>Validates that the <see cref="RAWINPUTDEVICE" /> struct is blittable.</summary>
         [Test]

@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="ITfMouseSink" /> struct.</summary>
-    public static unsafe class ITfMouseSinkTests
+    public static unsafe partial class ITfMouseSinkTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ITfMouseSink" /> struct is correct.</summary>
         [Test]

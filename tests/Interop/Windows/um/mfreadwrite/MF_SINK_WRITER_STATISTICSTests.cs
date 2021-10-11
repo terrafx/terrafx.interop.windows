@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="MF_SINK_WRITER_STATISTICS" /> struct.</summary>
-    public static unsafe class MF_SINK_WRITER_STATISTICSTests
+    public static unsafe partial class MF_SINK_WRITER_STATISTICSTests
     {
         /// <summary>Validates that the <see cref="MF_SINK_WRITER_STATISTICS" /> struct is blittable.</summary>
         [Test]

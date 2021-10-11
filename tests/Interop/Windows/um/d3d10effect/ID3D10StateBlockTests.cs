@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="ID3D10StateBlock" /> struct.</summary>
-    public static unsafe class ID3D10StateBlockTests
+    public static unsafe partial class ID3D10StateBlockTests
     {
         /// <summary>Validates that the <see cref="ID3D10StateBlock" /> struct is blittable.</summary>
         [Test]

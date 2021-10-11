@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="G721_ADPCMWAVEFORMAT" /> struct.</summary>
-    public static unsafe class G721_ADPCMWAVEFORMATTests
+    public static unsafe partial class G721_ADPCMWAVEFORMATTests
     {
         /// <summary>Validates that the <see cref="G721_ADPCMWAVEFORMAT" /> struct is blittable.</summary>
         [Test]

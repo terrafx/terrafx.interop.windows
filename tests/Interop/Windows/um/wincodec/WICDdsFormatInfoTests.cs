@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="WICDdsFormatInfo" /> struct.</summary>
-    public static unsafe class WICDdsFormatInfoTests
+    public static unsafe partial class WICDdsFormatInfoTests
     {
         /// <summary>Validates that the <see cref="WICDdsFormatInfo" /> struct is blittable.</summary>
         [Test]

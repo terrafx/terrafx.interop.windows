@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="NTFS_STATISTICS" /> struct.</summary>
-    public static unsafe class NTFS_STATISTICSTests
+    public static unsafe partial class NTFS_STATISTICSTests
     {
         /// <summary>Validates that the <see cref="NTFS_STATISTICS" /> struct is blittable.</summary>
         [Test]

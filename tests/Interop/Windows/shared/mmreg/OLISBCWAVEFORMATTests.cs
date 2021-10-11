@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="OLISBCWAVEFORMAT" /> struct.</summary>
-    public static unsafe class OLISBCWAVEFORMATTests
+    public static unsafe partial class OLISBCWAVEFORMATTests
     {
         /// <summary>Validates that the <see cref="OLISBCWAVEFORMAT" /> struct is blittable.</summary>
         [Test]

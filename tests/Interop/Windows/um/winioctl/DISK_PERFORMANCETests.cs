@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="DISK_PERFORMANCE" /> struct.</summary>
-    public static unsafe class DISK_PERFORMANCETests
+    public static unsafe partial class DISK_PERFORMANCETests
     {
         /// <summary>Validates that the <see cref="DISK_PERFORMANCE" /> struct is blittable.</summary>
         [Test]

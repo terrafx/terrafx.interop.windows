@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="CREDENTIAL_PROVIDER_FIELD_DESCRIPTOR" /> struct.</summary>
-    public static unsafe class CREDENTIAL_PROVIDER_FIELD_DESCRIPTORTests
+    public static unsafe partial class CREDENTIAL_PROVIDER_FIELD_DESCRIPTORTests
     {
         /// <summary>Validates that the <see cref="CREDENTIAL_PROVIDER_FIELD_DESCRIPTOR" /> struct is blittable.</summary>
         [Test]

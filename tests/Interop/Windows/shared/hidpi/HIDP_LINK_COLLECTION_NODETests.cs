@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="HIDP_LINK_COLLECTION_NODE" /> struct.</summary>
-    public static unsafe class HIDP_LINK_COLLECTION_NODETests
+    public static unsafe partial class HIDP_LINK_COLLECTION_NODETests
     {
         /// <summary>Validates that the <see cref="HIDP_LINK_COLLECTION_NODE" /> struct is blittable.</summary>
         [Test]

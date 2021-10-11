@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="DVD_SubpictureAttributes" /> struct.</summary>
-    public static unsafe class DVD_SubpictureAttributesTests
+    public static unsafe partial class DVD_SubpictureAttributesTests
     {
         /// <summary>Validates that the <see cref="DVD_SubpictureAttributes" /> struct is blittable.</summary>
         [Test]

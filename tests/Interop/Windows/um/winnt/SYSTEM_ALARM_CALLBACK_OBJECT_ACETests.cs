@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="SYSTEM_ALARM_CALLBACK_OBJECT_ACE" /> struct.</summary>
-    public static unsafe class SYSTEM_ALARM_CALLBACK_OBJECT_ACETests
+    public static unsafe partial class SYSTEM_ALARM_CALLBACK_OBJECT_ACETests
     {
         /// <summary>Validates that the <see cref="SYSTEM_ALARM_CALLBACK_OBJECT_ACE" /> struct is blittable.</summary>
         [Test]

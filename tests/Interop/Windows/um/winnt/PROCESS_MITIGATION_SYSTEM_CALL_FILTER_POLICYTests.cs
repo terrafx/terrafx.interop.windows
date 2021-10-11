@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="PROCESS_MITIGATION_SYSTEM_CALL_FILTER_POLICY" /> struct.</summary>
-    public static unsafe class PROCESS_MITIGATION_SYSTEM_CALL_FILTER_POLICYTests
+    public static unsafe partial class PROCESS_MITIGATION_SYSTEM_CALL_FILTER_POLICYTests
     {
         /// <summary>Validates that the <see cref="PROCESS_MITIGATION_SYSTEM_CALL_FILTER_POLICY" /> struct is blittable.</summary>
         [Test]

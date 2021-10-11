@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="wireSAFEARRAY" /> struct.</summary>
-    public static unsafe class wireSAFEARRAYTests
+    public static unsafe partial class wireSAFEARRAYTests
     {
         /// <summary>Validates that the <see cref="wireSAFEARRAY" /> struct is blittable.</summary>
         [Test]

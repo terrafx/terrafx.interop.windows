@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="RTL_SRWLOCK" /> struct.</summary>
-    public static unsafe class RTL_SRWLOCKTests
+    public static unsafe partial class RTL_SRWLOCKTests
     {
         /// <summary>Validates that the <see cref="RTL_SRWLOCK" /> struct is blittable.</summary>
         [Test]

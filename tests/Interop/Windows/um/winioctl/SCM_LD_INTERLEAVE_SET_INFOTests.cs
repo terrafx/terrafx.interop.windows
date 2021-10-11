@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="SCM_LD_INTERLEAVE_SET_INFO" /> struct.</summary>
-    public static unsafe class SCM_LD_INTERLEAVE_SET_INFOTests
+    public static unsafe partial class SCM_LD_INTERLEAVE_SET_INFOTests
     {
         /// <summary>Validates that the <see cref="SCM_LD_INTERLEAVE_SET_INFO" /> struct is blittable.</summary>
         [Test]

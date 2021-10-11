@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IDWriteColorGlyphRunEnumerator" /> struct.</summary>
-    public static unsafe class IDWriteColorGlyphRunEnumeratorTests
+    public static unsafe partial class IDWriteColorGlyphRunEnumeratorTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IDWriteColorGlyphRunEnumerator" /> struct is correct.</summary>
         [Test]

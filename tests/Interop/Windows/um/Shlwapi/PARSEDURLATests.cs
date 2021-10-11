@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="PARSEDURLA" /> struct.</summary>
-    public static unsafe class PARSEDURLATests
+    public static unsafe partial class PARSEDURLATests
     {
         /// <summary>Validates that the <see cref="PARSEDURLA" /> struct is blittable.</summary>
         [Test]

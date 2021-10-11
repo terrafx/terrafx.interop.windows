@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IGlobalInterfaceTable" /> struct.</summary>
-    public static unsafe class IGlobalInterfaceTableTests
+    public static unsafe partial class IGlobalInterfaceTableTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IGlobalInterfaceTable" /> struct is correct.</summary>
         [Test]

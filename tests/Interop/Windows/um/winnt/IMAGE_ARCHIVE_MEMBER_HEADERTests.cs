@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IMAGE_ARCHIVE_MEMBER_HEADER" /> struct.</summary>
-    public static unsafe class IMAGE_ARCHIVE_MEMBER_HEADERTests
+    public static unsafe partial class IMAGE_ARCHIVE_MEMBER_HEADERTests
     {
         /// <summary>Validates that the <see cref="IMAGE_ARCHIVE_MEMBER_HEADER" /> struct is blittable.</summary>
         [Test]

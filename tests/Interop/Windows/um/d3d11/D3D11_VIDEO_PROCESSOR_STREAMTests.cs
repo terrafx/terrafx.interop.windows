@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="D3D11_VIDEO_PROCESSOR_STREAM" /> struct.</summary>
-    public static unsafe class D3D11_VIDEO_PROCESSOR_STREAMTests
+    public static unsafe partial class D3D11_VIDEO_PROCESSOR_STREAMTests
     {
         /// <summary>Validates that the <see cref="D3D11_VIDEO_PROCESSOR_STREAM" /> struct is blittable.</summary>
         [Test]

@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IMFVideoSampleAllocatorEx" /> struct.</summary>
-    public static unsafe class IMFVideoSampleAllocatorExTests
+    public static unsafe partial class IMFVideoSampleAllocatorExTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IMFVideoSampleAllocatorEx" /> struct is correct.</summary>
         [Test]

@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IXAudio2VoiceCallback" /> struct.</summary>
-    public static unsafe class IXAudio2VoiceCallbackTests
+    public static unsafe partial class IXAudio2VoiceCallbackTests
     {
         /// <summary>Validates that the <see cref="IXAudio2VoiceCallback" /> struct is blittable.</summary>
         [Test]

@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="GRADIENT_TRIANGLE" /> struct.</summary>
-    public static unsafe class GRADIENT_TRIANGLETests
+    public static unsafe partial class GRADIENT_TRIANGLETests
     {
         /// <summary>Validates that the <see cref="GRADIENT_TRIANGLE" /> struct is blittable.</summary>
         [Test]

@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="SP_ALTPLATFORM_INFO_V1" /> struct.</summary>
-    public static unsafe class SP_ALTPLATFORM_INFO_V1Tests
+    public static unsafe partial class SP_ALTPLATFORM_INFO_V1Tests
     {
         /// <summary>Validates that the <see cref="SP_ALTPLATFORM_INFO_V1" /> struct is blittable.</summary>
         [Test]

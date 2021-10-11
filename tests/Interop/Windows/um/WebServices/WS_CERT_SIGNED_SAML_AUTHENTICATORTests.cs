@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="WS_CERT_SIGNED_SAML_AUTHENTICATOR" /> struct.</summary>
-    public static unsafe class WS_CERT_SIGNED_SAML_AUTHENTICATORTests
+    public static unsafe partial class WS_CERT_SIGNED_SAML_AUTHENTICATORTests
     {
         /// <summary>Validates that the <see cref="WS_CERT_SIGNED_SAML_AUTHENTICATOR" /> struct is blittable.</summary>
         [Test]

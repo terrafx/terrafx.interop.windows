@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="ITfKeyTraceEventSink" /> struct.</summary>
-    public static unsafe class ITfKeyTraceEventSinkTests
+    public static unsafe partial class ITfKeyTraceEventSinkTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ITfKeyTraceEventSink" /> struct is correct.</summary>
         [Test]

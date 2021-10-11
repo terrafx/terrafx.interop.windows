@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="REASSIGN_BLOCKS_EX" /> struct.</summary>
-    public static unsafe class REASSIGN_BLOCKS_EXTests
+    public static unsafe partial class REASSIGN_BLOCKS_EXTests
     {
         /// <summary>Validates that the <see cref="REASSIGN_BLOCKS_EX" /> struct is blittable.</summary>
         [Test]

@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="DXCoreAdapterMemoryBudget" /> struct.</summary>
-    public static unsafe class DXCoreAdapterMemoryBudgetTests
+    public static unsafe partial class DXCoreAdapterMemoryBudgetTests
     {
         /// <summary>Validates that the <see cref="DXCoreAdapterMemoryBudget" /> struct is blittable.</summary>
         [Test]

@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="FOLDERSETTINGS" /> struct.</summary>
-    public static unsafe class FOLDERSETTINGSTests
+    public static unsafe partial class FOLDERSETTINGSTests
     {
         /// <summary>Validates that the <see cref="FOLDERSETTINGS" /> struct is blittable.</summary>
         [Test]

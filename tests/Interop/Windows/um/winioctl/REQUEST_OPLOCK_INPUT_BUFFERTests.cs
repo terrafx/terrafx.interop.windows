@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="REQUEST_OPLOCK_INPUT_BUFFER" /> struct.</summary>
-    public static unsafe class REQUEST_OPLOCK_INPUT_BUFFERTests
+    public static unsafe partial class REQUEST_OPLOCK_INPUT_BUFFERTests
     {
         /// <summary>Validates that the <see cref="REQUEST_OPLOCK_INPUT_BUFFER" /> struct is blittable.</summary>
         [Test]

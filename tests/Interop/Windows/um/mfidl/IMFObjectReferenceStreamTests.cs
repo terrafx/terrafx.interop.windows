@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IMFObjectReferenceStream" /> struct.</summary>
-    public static unsafe class IMFObjectReferenceStreamTests
+    public static unsafe partial class IMFObjectReferenceStreamTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IMFObjectReferenceStream" /> struct is correct.</summary>
         [Test]

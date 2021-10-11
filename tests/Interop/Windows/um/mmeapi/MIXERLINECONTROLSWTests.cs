@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="MIXERLINECONTROLSW" /> struct.</summary>
-    public static unsafe class MIXERLINECONTROLSWTests
+    public static unsafe partial class MIXERLINECONTROLSWTests
     {
         /// <summary>Validates that the <see cref="MIXERLINECONTROLSW" /> struct is blittable.</summary>
         [Test]

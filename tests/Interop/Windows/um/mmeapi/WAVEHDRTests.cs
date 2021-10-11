@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="WAVEHDR" /> struct.</summary>
-    public static unsafe class WAVEHDRTests
+    public static unsafe partial class WAVEHDRTests
     {
         /// <summary>Validates that the <see cref="WAVEHDR" /> struct is blittable.</summary>
         [Test]

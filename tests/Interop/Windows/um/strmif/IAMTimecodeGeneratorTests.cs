@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IAMTimecodeGenerator" /> struct.</summary>
-    public static unsafe class IAMTimecodeGeneratorTests
+    public static unsafe partial class IAMTimecodeGeneratorTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IAMTimecodeGenerator" /> struct is correct.</summary>
         [Test]

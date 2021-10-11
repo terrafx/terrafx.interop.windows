@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="CRYPT_PROVIDER_SGNR" /> struct.</summary>
-    public static unsafe class CRYPT_PROVIDER_SGNRTests
+    public static unsafe partial class CRYPT_PROVIDER_SGNRTests
     {
         /// <summary>Validates that the <see cref="CRYPT_PROVIDER_SGNR" /> struct is blittable.</summary>
         [Test]

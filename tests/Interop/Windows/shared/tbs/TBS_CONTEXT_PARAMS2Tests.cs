@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="TBS_CONTEXT_PARAMS2" /> struct.</summary>
-    public static unsafe class TBS_CONTEXT_PARAMS2Tests
+    public static unsafe partial class TBS_CONTEXT_PARAMS2Tests
     {
         /// <summary>Validates that the <see cref="TBS_CONTEXT_PARAMS2" /> struct is blittable.</summary>
         [Test]

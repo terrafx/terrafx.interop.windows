@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IDedupReadFileCallback" /> struct.</summary>
-    public static unsafe class IDedupReadFileCallbackTests
+    public static unsafe partial class IDedupReadFileCallbackTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IDedupReadFileCallback" /> struct is correct.</summary>
         [Test]

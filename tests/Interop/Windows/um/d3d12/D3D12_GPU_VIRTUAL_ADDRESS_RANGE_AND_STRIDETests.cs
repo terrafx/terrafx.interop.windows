@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="D3D12_GPU_VIRTUAL_ADDRESS_RANGE_AND_STRIDE" /> struct.</summary>
-    public static unsafe class D3D12_GPU_VIRTUAL_ADDRESS_RANGE_AND_STRIDETests
+    public static unsafe partial class D3D12_GPU_VIRTUAL_ADDRESS_RANGE_AND_STRIDETests
     {
         /// <summary>Validates that the <see cref="D3D12_GPU_VIRTUAL_ADDRESS_RANGE_AND_STRIDE" /> struct is blittable.</summary>
         [Test]

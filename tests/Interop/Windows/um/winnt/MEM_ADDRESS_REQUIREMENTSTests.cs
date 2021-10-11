@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="MEM_ADDRESS_REQUIREMENTS" /> struct.</summary>
-    public static unsafe class MEM_ADDRESS_REQUIREMENTSTests
+    public static unsafe partial class MEM_ADDRESS_REQUIREMENTSTests
     {
         /// <summary>Validates that the <see cref="MEM_ADDRESS_REQUIREMENTS" /> struct is blittable.</summary>
         [Test]

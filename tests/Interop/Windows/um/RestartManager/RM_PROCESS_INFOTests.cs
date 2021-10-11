@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="RM_PROCESS_INFO" /> struct.</summary>
-    public static unsafe class RM_PROCESS_INFOTests
+    public static unsafe partial class RM_PROCESS_INFOTests
     {
         /// <summary>Validates that the <see cref="RM_PROCESS_INFO" /> struct is blittable.</summary>
         [Test]

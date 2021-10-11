@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="CHANGER_SEND_VOLUME_TAG_INFORMATION" /> struct.</summary>
-    public static unsafe class CHANGER_SEND_VOLUME_TAG_INFORMATIONTests
+    public static unsafe partial class CHANGER_SEND_VOLUME_TAG_INFORMATIONTests
     {
         /// <summary>Validates that the <see cref="CHANGER_SEND_VOLUME_TAG_INFORMATION" /> struct is blittable.</summary>
         [Test]

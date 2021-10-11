@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="WOW64_FLOATING_SAVE_AREA" /> struct.</summary>
-    public static unsafe class WOW64_FLOATING_SAVE_AREATests
+    public static unsafe partial class WOW64_FLOATING_SAVE_AREATests
     {
         /// <summary>Validates that the <see cref="WOW64_FLOATING_SAVE_AREA" /> struct is blittable.</summary>
         [Test]

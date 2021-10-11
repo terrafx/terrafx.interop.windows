@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="WS_CUSTOM_HTTP_PROXY" /> struct.</summary>
-    public static unsafe class WS_CUSTOM_HTTP_PROXYTests
+    public static unsafe partial class WS_CUSTOM_HTTP_PROXYTests
     {
         /// <summary>Validates that the <see cref="WS_CUSTOM_HTTP_PROXY" /> struct is blittable.</summary>
         [Test]

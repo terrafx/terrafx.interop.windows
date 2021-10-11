@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="SAFEARR_UNKNOWN" /> struct.</summary>
-    public static unsafe class SAFEARR_UNKNOWNTests
+    public static unsafe partial class SAFEARR_UNKNOWNTests
     {
         /// <summary>Validates that the <see cref="SAFEARR_UNKNOWN" /> struct is blittable.</summary>
         [Test]

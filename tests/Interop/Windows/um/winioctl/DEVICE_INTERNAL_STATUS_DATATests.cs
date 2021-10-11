@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="DEVICE_INTERNAL_STATUS_DATA" /> struct.</summary>
-    public static unsafe class DEVICE_INTERNAL_STATUS_DATATests
+    public static unsafe partial class DEVICE_INTERNAL_STATUS_DATATests
     {
         /// <summary>Validates that the <see cref="DEVICE_INTERNAL_STATUS_DATA" /> struct is blittable.</summary>
         [Test]

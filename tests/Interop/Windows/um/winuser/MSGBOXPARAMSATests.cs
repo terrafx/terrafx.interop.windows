@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="MSGBOXPARAMSA" /> struct.</summary>
-    public static unsafe class MSGBOXPARAMSATests
+    public static unsafe partial class MSGBOXPARAMSATests
     {
         /// <summary>Validates that the <see cref="MSGBOXPARAMSA" /> struct is blittable.</summary>
         [Test]

@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IDWriteFontDownloadQueue" /> struct.</summary>
-    public static unsafe class IDWriteFontDownloadQueueTests
+    public static unsafe partial class IDWriteFontDownloadQueueTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IDWriteFontDownloadQueue" /> struct is correct.</summary>
         [Test]

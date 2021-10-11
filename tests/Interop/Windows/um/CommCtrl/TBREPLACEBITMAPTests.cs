@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="TBREPLACEBITMAP" /> struct.</summary>
-    public static unsafe class TBREPLACEBITMAPTests
+    public static unsafe partial class TBREPLACEBITMAPTests
     {
         /// <summary>Validates that the <see cref="TBREPLACEBITMAP" /> struct is blittable.</summary>
         [Test]

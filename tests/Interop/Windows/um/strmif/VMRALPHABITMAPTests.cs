@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="VMRALPHABITMAP" /> struct.</summary>
-    public static unsafe class VMRALPHABITMAPTests
+    public static unsafe partial class VMRALPHABITMAPTests
     {
         /// <summary>Validates that the <see cref="VMRALPHABITMAP" /> struct is blittable.</summary>
         [Test]

@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IMFOutputTrustAuthority" /> struct.</summary>
-    public static unsafe class IMFOutputTrustAuthorityTests
+    public static unsafe partial class IMFOutputTrustAuthorityTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IMFOutputTrustAuthority" /> struct is correct.</summary>
         [Test]

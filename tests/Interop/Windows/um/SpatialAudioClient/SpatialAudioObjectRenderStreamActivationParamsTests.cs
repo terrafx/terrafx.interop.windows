@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="SpatialAudioObjectRenderStreamActivationParams" /> struct.</summary>
-    public static unsafe class SpatialAudioObjectRenderStreamActivationParamsTests
+    public static unsafe partial class SpatialAudioObjectRenderStreamActivationParamsTests
     {
         /// <summary>Validates that the <see cref="SpatialAudioObjectRenderStreamActivationParams" /> struct is blittable.</summary>
         [Test]

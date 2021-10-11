@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="DISPLAYCONFIG_TARGET_PREFERRED_MODE" /> struct.</summary>
-    public static unsafe class DISPLAYCONFIG_TARGET_PREFERRED_MODETests
+    public static unsafe partial class DISPLAYCONFIG_TARGET_PREFERRED_MODETests
     {
         /// <summary>Validates that the <see cref="DISPLAYCONFIG_TARGET_PREFERRED_MODE" /> struct is blittable.</summary>
         [Test]

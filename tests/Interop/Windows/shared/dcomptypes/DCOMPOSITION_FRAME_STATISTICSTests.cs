@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="DCOMPOSITION_FRAME_STATISTICS" /> struct.</summary>
-    public static unsafe class DCOMPOSITION_FRAME_STATISTICSTests
+    public static unsafe partial class DCOMPOSITION_FRAME_STATISTICSTests
     {
         /// <summary>Validates that the <see cref="DCOMPOSITION_FRAME_STATISTICS" /> struct is blittable.</summary>
         [Test]

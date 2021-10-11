@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="NMTVSTATEIMAGECHANGING" /> struct.</summary>
-    public static unsafe class NMTVSTATEIMAGECHANGINGTests
+    public static unsafe partial class NMTVSTATEIMAGECHANGINGTests
     {
         /// <summary>Validates that the <see cref="NMTVSTATEIMAGECHANGING" /> struct is blittable.</summary>
         [Test]

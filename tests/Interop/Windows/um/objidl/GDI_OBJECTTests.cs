@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="GDI_OBJECT" /> struct.</summary>
-    public static unsafe class GDI_OBJECTTests
+    public static unsafe partial class GDI_OBJECTTests
     {
         /// <summary>Validates that the <see cref="GDI_OBJECT" /> struct is blittable.</summary>
         [Test]

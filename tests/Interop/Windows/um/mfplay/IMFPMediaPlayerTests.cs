@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IMFPMediaPlayer" /> struct.</summary>
-    public static unsafe class IMFPMediaPlayerTests
+    public static unsafe partial class IMFPMediaPlayerTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IMFPMediaPlayer" /> struct is correct.</summary>
         [Test]

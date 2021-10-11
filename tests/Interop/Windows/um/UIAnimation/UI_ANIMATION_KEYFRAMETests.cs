@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="UI_ANIMATION_KEYFRAME" /> struct.</summary>
-    public static unsafe class UI_ANIMATION_KEYFRAMETests
+    public static unsafe partial class UI_ANIMATION_KEYFRAMETests
     {
         /// <summary>Validates that the <see cref="UI_ANIMATION_KEYFRAME" /> struct is blittable.</summary>
         [Test]

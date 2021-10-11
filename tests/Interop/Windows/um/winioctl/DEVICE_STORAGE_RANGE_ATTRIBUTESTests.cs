@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="DEVICE_STORAGE_RANGE_ATTRIBUTES" /> struct.</summary>
-    public static unsafe class DEVICE_STORAGE_RANGE_ATTRIBUTESTests
+    public static unsafe partial class DEVICE_STORAGE_RANGE_ATTRIBUTESTests
     {
         /// <summary>Validates that the <see cref="DEVICE_STORAGE_RANGE_ATTRIBUTES" /> struct is blittable.</summary>
         [Test]

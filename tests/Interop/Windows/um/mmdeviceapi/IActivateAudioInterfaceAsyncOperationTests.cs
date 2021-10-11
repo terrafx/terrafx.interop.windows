@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IActivateAudioInterfaceAsyncOperation" /> struct.</summary>
-    public static unsafe class IActivateAudioInterfaceAsyncOperationTests
+    public static unsafe partial class IActivateAudioInterfaceAsyncOperationTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IActivateAudioInterfaceAsyncOperation" /> struct is correct.</summary>
         [Test]

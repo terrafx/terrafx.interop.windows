@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="ID3D10ShaderReflectionType" /> struct.</summary>
-    public static unsafe class ID3D10ShaderReflectionTypeTests
+    public static unsafe partial class ID3D10ShaderReflectionTypeTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ID3D10ShaderReflectionType" /> struct is correct.</summary>
         [Test]

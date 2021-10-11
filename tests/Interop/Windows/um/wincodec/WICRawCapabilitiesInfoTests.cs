@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="WICRawCapabilitiesInfo" /> struct.</summary>
-    public static unsafe class WICRawCapabilitiesInfoTests
+    public static unsafe partial class WICRawCapabilitiesInfoTests
     {
         /// <summary>Validates that the <see cref="WICRawCapabilitiesInfo" /> struct is blittable.</summary>
         [Test]

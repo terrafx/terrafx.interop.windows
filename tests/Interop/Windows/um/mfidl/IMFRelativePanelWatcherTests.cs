@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IMFRelativePanelWatcher" /> struct.</summary>
-    public static unsafe class IMFRelativePanelWatcherTests
+    public static unsafe partial class IMFRelativePanelWatcherTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IMFRelativePanelWatcher" /> struct is correct.</summary>
         [Test]

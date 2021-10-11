@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="ISyncMgrRegister" /> struct.</summary>
-    public static unsafe class ISyncMgrRegisterTests
+    public static unsafe partial class ISyncMgrRegisterTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ISyncMgrRegister" /> struct is correct.</summary>
         [Test]

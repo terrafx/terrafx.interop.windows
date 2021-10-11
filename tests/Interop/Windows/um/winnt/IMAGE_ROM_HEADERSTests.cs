@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IMAGE_ROM_HEADERS" /> struct.</summary>
-    public static unsafe class IMAGE_ROM_HEADERSTests
+    public static unsafe partial class IMAGE_ROM_HEADERSTests
     {
         /// <summary>Validates that the <see cref="IMAGE_ROM_HEADERS" /> struct is blittable.</summary>
         [Test]

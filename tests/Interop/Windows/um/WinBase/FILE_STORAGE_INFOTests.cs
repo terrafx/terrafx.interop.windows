@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="FILE_STORAGE_INFO" /> struct.</summary>
-    public static unsafe class FILE_STORAGE_INFOTests
+    public static unsafe partial class FILE_STORAGE_INFOTests
     {
         /// <summary>Validates that the <see cref="FILE_STORAGE_INFO" /> struct is blittable.</summary>
         [Test]

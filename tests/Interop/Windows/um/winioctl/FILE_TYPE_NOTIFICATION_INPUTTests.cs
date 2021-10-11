@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="FILE_TYPE_NOTIFICATION_INPUT" /> struct.</summary>
-    public static unsafe class FILE_TYPE_NOTIFICATION_INPUTTests
+    public static unsafe partial class FILE_TYPE_NOTIFICATION_INPUTTests
     {
         /// <summary>Validates that the <see cref="FILE_TYPE_NOTIFICATION_INPUT" /> struct is blittable.</summary>
         [Test]

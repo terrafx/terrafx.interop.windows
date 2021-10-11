@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="PRJ_CALLBACKS" /> struct.</summary>
-    public static unsafe class PRJ_CALLBACKSTests
+    public static unsafe partial class PRJ_CALLBACKSTests
     {
         /// <summary>Validates that the <see cref="PRJ_CALLBACKS" /> struct is blittable.</summary>
         [Test]

@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IWbemLocator" /> struct.</summary>
-    public static unsafe class IWbemLocatorTests
+    public static unsafe partial class IWbemLocatorTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IWbemLocator" /> struct is correct.</summary>
         [Test]

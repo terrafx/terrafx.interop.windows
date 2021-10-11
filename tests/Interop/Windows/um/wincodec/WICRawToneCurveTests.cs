@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="WICRawToneCurve" /> struct.</summary>
-    public static unsafe class WICRawToneCurveTests
+    public static unsafe partial class WICRawToneCurveTests
     {
         /// <summary>Validates that the <see cref="WICRawToneCurve" /> struct is blittable.</summary>
         [Test]

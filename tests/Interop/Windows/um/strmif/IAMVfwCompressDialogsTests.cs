@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IAMVfwCompressDialogs" /> struct.</summary>
-    public static unsafe class IAMVfwCompressDialogsTests
+    public static unsafe partial class IAMVfwCompressDialogsTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IAMVfwCompressDialogs" /> struct is correct.</summary>
         [Test]

@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IRpcProxyBuffer" /> struct.</summary>
-    public static unsafe class IRpcProxyBufferTests
+    public static unsafe partial class IRpcProxyBufferTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IRpcProxyBuffer" /> struct is correct.</summary>
         [Test]

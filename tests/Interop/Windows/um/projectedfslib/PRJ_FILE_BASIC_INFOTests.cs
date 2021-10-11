@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="PRJ_FILE_BASIC_INFO" /> struct.</summary>
-    public static unsafe class PRJ_FILE_BASIC_INFOTests
+    public static unsafe partial class PRJ_FILE_BASIC_INFOTests
     {
         /// <summary>Validates that the <see cref="PRJ_FILE_BASIC_INFO" /> struct is blittable.</summary>
         [Test]

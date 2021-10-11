@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="DXCoreHardwareIDParts" /> struct.</summary>
-    public static unsafe class DXCoreHardwareIDPartsTests
+    public static unsafe partial class DXCoreHardwareIDPartsTests
     {
         /// <summary>Validates that the <see cref="DXCoreHardwareIDParts" /> struct is blittable.</summary>
         [Test]

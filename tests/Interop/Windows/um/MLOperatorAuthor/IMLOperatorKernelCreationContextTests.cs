@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IMLOperatorKernelCreationContext" /> struct.</summary>
-    public static unsafe class IMLOperatorKernelCreationContextTests
+    public static unsafe partial class IMLOperatorKernelCreationContextTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IMLOperatorKernelCreationContext" /> struct is correct.</summary>
         [Test]

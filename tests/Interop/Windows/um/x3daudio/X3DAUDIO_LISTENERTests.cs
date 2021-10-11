@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="X3DAUDIO_LISTENER" /> struct.</summary>
-    public static unsafe class X3DAUDIO_LISTENERTests
+    public static unsafe partial class X3DAUDIO_LISTENERTests
     {
         /// <summary>Validates that the <see cref="X3DAUDIO_LISTENER" /> struct is blittable.</summary>
         [Test]

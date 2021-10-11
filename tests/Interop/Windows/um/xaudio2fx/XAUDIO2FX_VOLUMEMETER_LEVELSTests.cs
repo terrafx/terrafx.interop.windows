@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="XAUDIO2FX_VOLUMEMETER_LEVELS" /> struct.</summary>
-    public static unsafe class XAUDIO2FX_VOLUMEMETER_LEVELSTests
+    public static unsafe partial class XAUDIO2FX_VOLUMEMETER_LEVELSTests
     {
         /// <summary>Validates that the <see cref="XAUDIO2FX_VOLUMEMETER_LEVELS" /> struct is blittable.</summary>
         [Test]

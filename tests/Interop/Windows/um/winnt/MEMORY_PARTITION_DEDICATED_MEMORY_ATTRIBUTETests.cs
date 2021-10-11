@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="MEMORY_PARTITION_DEDICATED_MEMORY_ATTRIBUTE" /> struct.</summary>
-    public static unsafe class MEMORY_PARTITION_DEDICATED_MEMORY_ATTRIBUTETests
+    public static unsafe partial class MEMORY_PARTITION_DEDICATED_MEMORY_ATTRIBUTETests
     {
         /// <summary>Validates that the <see cref="MEMORY_PARTITION_DEDICATED_MEMORY_ATTRIBUTE" /> struct is blittable.</summary>
         [Test]

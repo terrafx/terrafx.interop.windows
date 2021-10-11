@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="userHBITMAP" /> struct.</summary>
-    public static unsafe class userHBITMAPTests
+    public static unsafe partial class userHBITMAPTests
     {
         /// <summary>Validates that the <see cref="userHBITMAP" /> struct is blittable.</summary>
         [Test]

@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="LVTILEVIEWINFO" /> struct.</summary>
-    public static unsafe class LVTILEVIEWINFOTests
+    public static unsafe partial class LVTILEVIEWINFOTests
     {
         /// <summary>Validates that the <see cref="LVTILEVIEWINFO" /> struct is blittable.</summary>
         [Test]

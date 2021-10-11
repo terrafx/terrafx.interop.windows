@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="PROCESS_DYNAMIC_EH_CONTINUATION_TARGET" /> struct.</summary>
-    public static unsafe class PROCESS_DYNAMIC_EH_CONTINUATION_TARGETTests
+    public static unsafe partial class PROCESS_DYNAMIC_EH_CONTINUATION_TARGETTests
     {
         /// <summary>Validates that the <see cref="PROCESS_DYNAMIC_EH_CONTINUATION_TARGET" /> struct is blittable.</summary>
         [Test]

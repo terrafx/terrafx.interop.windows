@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IUIAnimationInterpolator" /> struct.</summary>
-    public static unsafe class IUIAnimationInterpolatorTests
+    public static unsafe partial class IUIAnimationInterpolatorTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IUIAnimationInterpolator" /> struct is correct.</summary>
         [Test]

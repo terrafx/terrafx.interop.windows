@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="CHANGER_EXCHANGE_MEDIUM" /> struct.</summary>
-    public static unsafe class CHANGER_EXCHANGE_MEDIUMTests
+    public static unsafe partial class CHANGER_EXCHANGE_MEDIUMTests
     {
         /// <summary>Validates that the <see cref="CHANGER_EXCHANGE_MEDIUM" /> struct is blittable.</summary>
         [Test]

@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IPersistMemory" /> struct.</summary>
-    public static unsafe class IPersistMemoryTests
+    public static unsafe partial class IPersistMemoryTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IPersistMemory" /> struct is correct.</summary>
         [Test]

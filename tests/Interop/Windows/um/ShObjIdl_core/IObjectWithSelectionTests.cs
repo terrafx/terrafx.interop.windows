@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IObjectWithSelection" /> struct.</summary>
-    public static unsafe class IObjectWithSelectionTests
+    public static unsafe partial class IObjectWithSelectionTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IObjectWithSelection" /> struct is correct.</summary>
         [Test]

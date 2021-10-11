@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="SharedBitmap" /> struct.</summary>
-    public static unsafe class SharedBitmapTests
+    public static unsafe partial class SharedBitmapTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="SharedBitmap" /> struct is correct.</summary>
         [Test]

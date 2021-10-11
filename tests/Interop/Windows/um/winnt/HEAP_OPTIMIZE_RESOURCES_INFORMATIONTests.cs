@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="HEAP_OPTIMIZE_RESOURCES_INFORMATION" /> struct.</summary>
-    public static unsafe class HEAP_OPTIMIZE_RESOURCES_INFORMATIONTests
+    public static unsafe partial class HEAP_OPTIMIZE_RESOURCES_INFORMATIONTests
     {
         /// <summary>Validates that the <see cref="HEAP_OPTIMIZE_RESOURCES_INFORMATION" /> struct is blittable.</summary>
         [Test]

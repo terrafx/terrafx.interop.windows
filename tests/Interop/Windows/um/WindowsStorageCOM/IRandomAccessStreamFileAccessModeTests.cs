@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IRandomAccessStreamFileAccessMode" /> struct.</summary>
-    public static unsafe class IRandomAccessStreamFileAccessModeTests
+    public static unsafe partial class IRandomAccessStreamFileAccessModeTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IRandomAccessStreamFileAccessMode" /> struct is correct.</summary>
         [Test]

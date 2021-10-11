@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IHWEventHandler" /> struct.</summary>
-    public static unsafe class IHWEventHandlerTests
+    public static unsafe partial class IHWEventHandlerTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IHWEventHandler" /> struct is correct.</summary>
         [Test]

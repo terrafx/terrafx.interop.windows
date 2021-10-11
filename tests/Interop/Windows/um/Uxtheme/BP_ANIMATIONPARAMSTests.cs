@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="BP_ANIMATIONPARAMS" /> struct.</summary>
-    public static unsafe class BP_ANIMATIONPARAMSTests
+    public static unsafe partial class BP_ANIMATIONPARAMSTests
     {
         /// <summary>Validates that the <see cref="BP_ANIMATIONPARAMS" /> struct is blittable.</summary>
         [Test]

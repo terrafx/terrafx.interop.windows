@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="SE_ACCESS_REQUEST" /> struct.</summary>
-    public static unsafe class SE_ACCESS_REQUESTTests
+    public static unsafe partial class SE_ACCESS_REQUESTTests
     {
         /// <summary>Validates that the <see cref="SE_ACCESS_REQUEST" /> struct is blittable.</summary>
         [Test]

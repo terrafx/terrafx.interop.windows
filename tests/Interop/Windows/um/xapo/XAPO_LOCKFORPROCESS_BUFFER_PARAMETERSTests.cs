@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="XAPO_LOCKFORPROCESS_BUFFER_PARAMETERS" /> struct.</summary>
-    public static unsafe class XAPO_LOCKFORPROCESS_BUFFER_PARAMETERSTests
+    public static unsafe partial class XAPO_LOCKFORPROCESS_BUFFER_PARAMETERSTests
     {
         /// <summary>Validates that the <see cref="XAPO_LOCKFORPROCESS_BUFFER_PARAMETERS" /> struct is blittable.</summary>
         [Test]

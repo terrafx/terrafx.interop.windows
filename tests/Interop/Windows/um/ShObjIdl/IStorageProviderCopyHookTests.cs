@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IStorageProviderCopyHook" /> struct.</summary>
-    public static unsafe class IStorageProviderCopyHookTests
+    public static unsafe partial class IStorageProviderCopyHookTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IStorageProviderCopyHook" /> struct is correct.</summary>
         [Test]

@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="STREAM_INFORMATION_ENTRY" /> struct.</summary>
-    public static unsafe class STREAM_INFORMATION_ENTRYTests
+    public static unsafe partial class STREAM_INFORMATION_ENTRYTests
     {
         /// <summary>Validates that the <see cref="STREAM_INFORMATION_ENTRY" /> struct is blittable.</summary>
         [Test]

@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="SCM_PD_HEALTH_NOTIFICATION_DATA" /> struct.</summary>
-    public static unsafe class SCM_PD_HEALTH_NOTIFICATION_DATATests
+    public static unsafe partial class SCM_PD_HEALTH_NOTIFICATION_DATATests
     {
         /// <summary>Validates that the <see cref="SCM_PD_HEALTH_NOTIFICATION_DATA" /> struct is blittable.</summary>
         [Test]

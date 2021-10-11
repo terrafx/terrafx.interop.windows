@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="CODECAPI_AVEncVideoIntraLayerPrediction" /> struct.</summary>
-    public static unsafe class CODECAPI_AVEncVideoIntraLayerPredictionTests
+    public static unsafe partial class CODECAPI_AVEncVideoIntraLayerPredictionTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="CODECAPI_AVEncVideoIntraLayerPrediction" /> struct is correct.</summary>
         [Test]

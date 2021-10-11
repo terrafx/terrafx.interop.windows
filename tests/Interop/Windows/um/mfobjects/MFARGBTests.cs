@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="MFARGB" /> struct.</summary>
-    public static unsafe class MFARGBTests
+    public static unsafe partial class MFARGBTests
     {
         /// <summary>Validates that the <see cref="MFARGB" /> struct is blittable.</summary>
         [Test]

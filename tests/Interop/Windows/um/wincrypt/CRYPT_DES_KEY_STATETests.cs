@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="CRYPT_DES_KEY_STATE" /> struct.</summary>
-    public static unsafe class CRYPT_DES_KEY_STATETests
+    public static unsafe partial class CRYPT_DES_KEY_STATETests
     {
         /// <summary>Validates that the <see cref="CRYPT_DES_KEY_STATE" /> struct is blittable.</summary>
         [Test]

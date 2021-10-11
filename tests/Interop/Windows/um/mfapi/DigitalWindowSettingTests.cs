@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="DigitalWindowSetting" /> struct.</summary>
-    public static unsafe class DigitalWindowSettingTests
+    public static unsafe partial class DigitalWindowSettingTests
     {
         /// <summary>Validates that the <see cref="DigitalWindowSetting" /> struct is blittable.</summary>
         [Test]

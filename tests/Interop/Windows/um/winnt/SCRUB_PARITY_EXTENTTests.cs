@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="SCRUB_PARITY_EXTENT" /> struct.</summary>
-    public static unsafe class SCRUB_PARITY_EXTENTTests
+    public static unsafe partial class SCRUB_PARITY_EXTENTTests
     {
         /// <summary>Validates that the <see cref="SCRUB_PARITY_EXTENT" /> struct is blittable.</summary>
         [Test]

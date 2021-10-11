@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="LVBKIMAGEW" /> struct.</summary>
-    public static unsafe class LVBKIMAGEWTests
+    public static unsafe partial class LVBKIMAGEWTests
     {
         /// <summary>Validates that the <see cref="LVBKIMAGEW" /> struct is blittable.</summary>
         [Test]

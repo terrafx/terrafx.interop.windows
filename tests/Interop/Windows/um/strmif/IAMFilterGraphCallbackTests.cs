@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IAMFilterGraphCallback" /> struct.</summary>
-    public static unsafe class IAMFilterGraphCallbackTests
+    public static unsafe partial class IAMFilterGraphCallbackTests
     {
         /// <summary>Validates that the <see cref="IAMFilterGraphCallback" /> struct is blittable.</summary>
         [Test]

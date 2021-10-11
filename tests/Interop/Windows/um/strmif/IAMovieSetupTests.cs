@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IAMovieSetup" /> struct.</summary>
-    public static unsafe class IAMovieSetupTests
+    public static unsafe partial class IAMovieSetupTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IAMovieSetup" /> struct is correct.</summary>
         [Test]

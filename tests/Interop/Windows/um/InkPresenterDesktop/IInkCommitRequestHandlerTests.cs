@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IInkCommitRequestHandler" /> struct.</summary>
-    public static unsafe class IInkCommitRequestHandlerTests
+    public static unsafe partial class IInkCommitRequestHandlerTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IInkCommitRequestHandler" /> struct is correct.</summary>
         [Test]

@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="COMSTAT" /> struct.</summary>
-    public static unsafe class COMSTATTests
+    public static unsafe partial class COMSTATTests
     {
         /// <summary>Validates that the <see cref="COMSTAT" /> struct is blittable.</summary>
         [Test]

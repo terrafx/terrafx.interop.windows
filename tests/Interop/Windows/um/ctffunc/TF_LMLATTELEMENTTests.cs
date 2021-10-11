@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="TF_LMLATTELEMENT" /> struct.</summary>
-    public static unsafe class TF_LMLATTELEMENTTests
+    public static unsafe partial class TF_LMLATTELEMENTTests
     {
         /// <summary>Validates that the <see cref="TF_LMLATTELEMENT" /> struct is blittable.</summary>
         [Test]

@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="CODECAPI_AVEncCommonLowLatency" /> struct.</summary>
-    public static unsafe class CODECAPI_AVEncCommonLowLatencyTests
+    public static unsafe partial class CODECAPI_AVEncCommonLowLatencyTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="CODECAPI_AVEncCommonLowLatency" /> struct is correct.</summary>
         [Test]

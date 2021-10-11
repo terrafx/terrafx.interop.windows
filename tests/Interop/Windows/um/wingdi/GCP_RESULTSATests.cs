@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="GCP_RESULTSA" /> struct.</summary>
-    public static unsafe class GCP_RESULTSATests
+    public static unsafe partial class GCP_RESULTSATests
     {
         /// <summary>Validates that the <see cref="GCP_RESULTSA" /> struct is blittable.</summary>
         [Test]

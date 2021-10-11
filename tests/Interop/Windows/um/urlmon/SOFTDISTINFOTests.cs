@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="SOFTDISTINFO" /> struct.</summary>
-    public static unsafe class SOFTDISTINFOTests
+    public static unsafe partial class SOFTDISTINFOTests
     {
         /// <summary>Validates that the <see cref="SOFTDISTINFO" /> struct is blittable.</summary>
         [Test]

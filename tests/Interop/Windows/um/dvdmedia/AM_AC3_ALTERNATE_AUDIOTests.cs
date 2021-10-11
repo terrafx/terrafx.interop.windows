@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="AM_AC3_ALTERNATE_AUDIO" /> struct.</summary>
-    public static unsafe class AM_AC3_ALTERNATE_AUDIOTests
+    public static unsafe partial class AM_AC3_ALTERNATE_AUDIOTests
     {
         /// <summary>Validates that the <see cref="AM_AC3_ALTERNATE_AUDIO" /> struct is blittable.</summary>
         [Test]

@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="POWER_SESSION_WINLOGON" /> struct.</summary>
-    public static unsafe class POWER_SESSION_WINLOGONTests
+    public static unsafe partial class POWER_SESSION_WINLOGONTests
     {
         /// <summary>Validates that the <see cref="POWER_SESSION_WINLOGON" /> struct is blittable.</summary>
         [Test]

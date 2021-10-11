@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="DDP_FILE_EXTENT" /> struct.</summary>
-    public static unsafe class DDP_FILE_EXTENTTests
+    public static unsafe partial class DDP_FILE_EXTENTTests
     {
         /// <summary>Validates that the <see cref="DDP_FILE_EXTENT" /> struct is blittable.</summary>
         [Test]

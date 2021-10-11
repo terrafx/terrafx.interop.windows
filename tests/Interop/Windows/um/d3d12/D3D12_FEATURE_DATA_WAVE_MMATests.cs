@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="D3D12_FEATURE_DATA_WAVE_MMA" /> struct.</summary>
-    public static unsafe class D3D12_FEATURE_DATA_WAVE_MMATests
+    public static unsafe partial class D3D12_FEATURE_DATA_WAVE_MMATests
     {
         /// <summary>Validates that the <see cref="D3D12_FEATURE_DATA_WAVE_MMA" /> struct is blittable.</summary>
         [Test]

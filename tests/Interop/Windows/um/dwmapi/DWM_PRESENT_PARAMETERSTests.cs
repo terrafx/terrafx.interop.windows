@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="DWM_PRESENT_PARAMETERS" /> struct.</summary>
-    public static unsafe class DWM_PRESENT_PARAMETERSTests
+    public static unsafe partial class DWM_PRESENT_PARAMETERSTests
     {
         /// <summary>Validates that the <see cref="DWM_PRESENT_PARAMETERS" /> struct is blittable.</summary>
         [Test]

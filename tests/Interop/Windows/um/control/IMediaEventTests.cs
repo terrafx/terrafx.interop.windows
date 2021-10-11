@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IMediaEvent" /> struct.</summary>
-    public static unsafe class IMediaEventTests
+    public static unsafe partial class IMediaEventTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IMediaEvent" /> struct is correct.</summary>
         [Test]

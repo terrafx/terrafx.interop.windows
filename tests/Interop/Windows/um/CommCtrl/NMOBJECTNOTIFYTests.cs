@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="NMOBJECTNOTIFY" /> struct.</summary>
-    public static unsafe class NMOBJECTNOTIFYTests
+    public static unsafe partial class NMOBJECTNOTIFYTests
     {
         /// <summary>Validates that the <see cref="NMOBJECTNOTIFY" /> struct is blittable.</summary>
         [Test]

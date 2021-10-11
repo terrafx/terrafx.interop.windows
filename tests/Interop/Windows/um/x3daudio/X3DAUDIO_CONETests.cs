@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="X3DAUDIO_CONE" /> struct.</summary>
-    public static unsafe class X3DAUDIO_CONETests
+    public static unsafe partial class X3DAUDIO_CONETests
     {
         /// <summary>Validates that the <see cref="X3DAUDIO_CONE" /> struct is blittable.</summary>
         [Test]

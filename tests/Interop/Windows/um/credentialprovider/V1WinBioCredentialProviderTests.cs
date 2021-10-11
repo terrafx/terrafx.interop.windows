@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="V1WinBioCredentialProvider" /> struct.</summary>
-    public static unsafe class V1WinBioCredentialProviderTests
+    public static unsafe partial class V1WinBioCredentialProviderTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="V1WinBioCredentialProvider" /> struct is correct.</summary>
         [Test]

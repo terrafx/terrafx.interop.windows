@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="TimeCategorizer" /> struct.</summary>
-    public static unsafe class TimeCategorizerTests
+    public static unsafe partial class TimeCategorizerTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="TimeCategorizer" /> struct is correct.</summary>
         [Test]

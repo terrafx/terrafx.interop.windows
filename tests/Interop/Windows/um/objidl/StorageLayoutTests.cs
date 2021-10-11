@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="StorageLayout" /> struct.</summary>
-    public static unsafe class StorageLayoutTests
+    public static unsafe partial class StorageLayoutTests
     {
         /// <summary>Validates that the <see cref="StorageLayout" /> struct is blittable.</summary>
         [Test]

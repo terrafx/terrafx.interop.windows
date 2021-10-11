@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IDirectDrawSurface" /> struct.</summary>
-    public static unsafe class IDirectDrawSurfaceTests
+    public static unsafe partial class IDirectDrawSurfaceTests
     {
         /// <summary>Validates that the <see cref="IDirectDrawSurface" /> struct is blittable.</summary>
         [Test]

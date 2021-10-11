@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="WICJpegFrameHeader" /> struct.</summary>
-    public static unsafe class WICJpegFrameHeaderTests
+    public static unsafe partial class WICJpegFrameHeaderTests
     {
         /// <summary>Validates that the <see cref="WICJpegFrameHeader" /> struct is blittable.</summary>
         [Test]

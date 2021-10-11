@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IGraphicsCaptureItemInterop" /> struct.</summary>
-    public static unsafe class IGraphicsCaptureItemInteropTests
+    public static unsafe partial class IGraphicsCaptureItemInteropTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IGraphicsCaptureItemInterop" /> struct is correct.</summary>
         [Test]

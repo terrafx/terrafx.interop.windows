@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="CODECAPI_AVDecDDStereoDownMixMode" /> struct.</summary>
-    public static unsafe class CODECAPI_AVDecDDStereoDownMixModeTests
+    public static unsafe partial class CODECAPI_AVDecDDStereoDownMixModeTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="CODECAPI_AVDecDDStereoDownMixMode" /> struct is correct.</summary>
         [Test]

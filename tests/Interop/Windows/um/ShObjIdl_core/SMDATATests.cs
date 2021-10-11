@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="SMDATA" /> struct.</summary>
-    public static unsafe class SMDATATests
+    public static unsafe partial class SMDATATests
     {
         /// <summary>Validates that the <see cref="SMDATA" /> struct is blittable.</summary>
         [Test]

@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="QUERY_FILE_LAYOUT_OUTPUT" /> struct.</summary>
-    public static unsafe class QUERY_FILE_LAYOUT_OUTPUTTests
+    public static unsafe partial class QUERY_FILE_LAYOUT_OUTPUTTests
     {
         /// <summary>Validates that the <see cref="QUERY_FILE_LAYOUT_OUTPUT" /> struct is blittable.</summary>
         [Test]

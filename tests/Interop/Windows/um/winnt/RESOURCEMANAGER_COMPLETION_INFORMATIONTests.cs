@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="RESOURCEMANAGER_COMPLETION_INFORMATION" /> struct.</summary>
-    public static unsafe class RESOURCEMANAGER_COMPLETION_INFORMATIONTests
+    public static unsafe partial class RESOURCEMANAGER_COMPLETION_INFORMATIONTests
     {
         /// <summary>Validates that the <see cref="RESOURCEMANAGER_COMPLETION_INFORMATION" /> struct is blittable.</summary>
         [Test]

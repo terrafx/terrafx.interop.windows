@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="TAPE_CREATE_PARTITION" /> struct.</summary>
-    public static unsafe class TAPE_CREATE_PARTITIONTests
+    public static unsafe partial class TAPE_CREATE_PARTITIONTests
     {
         /// <summary>Validates that the <see cref="TAPE_CREATE_PARTITION" /> struct is blittable.</summary>
         [Test]

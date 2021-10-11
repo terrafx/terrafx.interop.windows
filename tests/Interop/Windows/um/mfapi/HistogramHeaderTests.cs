@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="HistogramHeader" /> struct.</summary>
-    public static unsafe class HistogramHeaderTests
+    public static unsafe partial class HistogramHeaderTests
     {
         /// <summary>Validates that the <see cref="HistogramHeader" /> struct is blittable.</summary>
         [Test]

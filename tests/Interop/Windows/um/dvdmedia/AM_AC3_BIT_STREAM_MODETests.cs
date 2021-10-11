@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="AM_AC3_BIT_STREAM_MODE" /> struct.</summary>
-    public static unsafe class AM_AC3_BIT_STREAM_MODETests
+    public static unsafe partial class AM_AC3_BIT_STREAM_MODETests
     {
         /// <summary>Validates that the <see cref="AM_AC3_BIT_STREAM_MODE" /> struct is blittable.</summary>
         [Test]

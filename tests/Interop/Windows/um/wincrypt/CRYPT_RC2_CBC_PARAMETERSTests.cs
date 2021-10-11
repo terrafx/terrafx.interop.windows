@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="CRYPT_RC2_CBC_PARAMETERS" /> struct.</summary>
-    public static unsafe class CRYPT_RC2_CBC_PARAMETERSTests
+    public static unsafe partial class CRYPT_RC2_CBC_PARAMETERSTests
     {
         /// <summary>Validates that the <see cref="CRYPT_RC2_CBC_PARAMETERS" /> struct is blittable.</summary>
         [Test]

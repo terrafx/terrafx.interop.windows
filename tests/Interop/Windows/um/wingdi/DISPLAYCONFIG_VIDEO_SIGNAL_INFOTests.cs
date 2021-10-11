@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="DISPLAYCONFIG_VIDEO_SIGNAL_INFO" /> struct.</summary>
-    public static unsafe class DISPLAYCONFIG_VIDEO_SIGNAL_INFOTests
+    public static unsafe partial class DISPLAYCONFIG_VIDEO_SIGNAL_INFOTests
     {
         /// <summary>Validates that the <see cref="DISPLAYCONFIG_VIDEO_SIGNAL_INFO" /> struct is blittable.</summary>
         [Test]

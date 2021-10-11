@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="RASProvider" /> struct.</summary>
-    public static unsafe class RASProviderTests
+    public static unsafe partial class RASProviderTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="RASProvider" /> struct is correct.</summary>
         [Test]

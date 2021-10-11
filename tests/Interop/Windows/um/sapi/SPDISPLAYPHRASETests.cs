@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="SPDISPLAYPHRASE" /> struct.</summary>
-    public static unsafe class SPDISPLAYPHRASETests
+    public static unsafe partial class SPDISPLAYPHRASETests
     {
         /// <summary>Validates that the <see cref="SPDISPLAYPHRASE" /> struct is blittable.</summary>
         [Test]

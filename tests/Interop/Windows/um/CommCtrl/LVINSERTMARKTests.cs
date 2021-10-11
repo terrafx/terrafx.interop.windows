@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="LVINSERTMARK" /> struct.</summary>
-    public static unsafe class LVINSERTMARKTests
+    public static unsafe partial class LVINSERTMARKTests
     {
         /// <summary>Validates that the <see cref="LVINSERTMARK" /> struct is blittable.</summary>
         [Test]

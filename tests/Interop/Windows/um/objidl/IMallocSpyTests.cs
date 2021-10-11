@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IMallocSpy" /> struct.</summary>
-    public static unsafe class IMallocSpyTests
+    public static unsafe partial class IMallocSpyTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IMallocSpy" /> struct is correct.</summary>
         [Test]

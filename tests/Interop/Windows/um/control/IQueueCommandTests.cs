@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IQueueCommand" /> struct.</summary>
-    public static unsafe class IQueueCommandTests
+    public static unsafe partial class IQueueCommandTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IQueueCommand" /> struct is correct.</summary>
         [Test]

@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="TF_HALTCOND" /> struct.</summary>
-    public static unsafe class TF_HALTCONDTests
+    public static unsafe partial class TF_HALTCONDTests
     {
         /// <summary>Validates that the <see cref="TF_HALTCOND" /> struct is blittable.</summary>
         [Test]

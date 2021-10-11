@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IMAGE_IMPORT_BY_NAME" /> struct.</summary>
-    public static unsafe class IMAGE_IMPORT_BY_NAMETests
+    public static unsafe partial class IMAGE_IMPORT_BY_NAMETests
     {
         /// <summary>Validates that the <see cref="IMAGE_IMPORT_BY_NAME" /> struct is blittable.</summary>
         [Test]

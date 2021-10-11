@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="MFT_ENUM_DATA_V0" /> struct.</summary>
-    public static unsafe class MFT_ENUM_DATA_V0Tests
+    public static unsafe partial class MFT_ENUM_DATA_V0Tests
     {
         /// <summary>Validates that the <see cref="MFT_ENUM_DATA_V0" /> struct is blittable.</summary>
         [Test]

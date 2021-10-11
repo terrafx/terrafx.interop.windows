@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="ACTIVATION_CONTEXT_QUERY_INDEX" /> struct.</summary>
-    public static unsafe class ACTIVATION_CONTEXT_QUERY_INDEXTests
+    public static unsafe partial class ACTIVATION_CONTEXT_QUERY_INDEXTests
     {
         /// <summary>Validates that the <see cref="ACTIVATION_CONTEXT_QUERY_INDEX" /> struct is blittable.</summary>
         [Test]

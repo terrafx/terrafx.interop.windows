@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="APPX_SIP_CLIENT_DATA" /> struct.</summary>
-    public static unsafe class APPX_SIP_CLIENT_DATATests
+    public static unsafe partial class APPX_SIP_CLIENT_DATATests
     {
         /// <summary>Validates that the <see cref="APPX_SIP_CLIENT_DATA" /> struct is blittable.</summary>
         [Test]

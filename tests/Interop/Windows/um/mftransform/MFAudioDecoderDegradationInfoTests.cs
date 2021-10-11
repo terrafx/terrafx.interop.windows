@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="MFAudioDecoderDegradationInfo" /> struct.</summary>
-    public static unsafe class MFAudioDecoderDegradationInfoTests
+    public static unsafe partial class MFAudioDecoderDegradationInfoTests
     {
         /// <summary>Validates that the <see cref="MFAudioDecoderDegradationInfo" /> struct is blittable.</summary>
         [Test]

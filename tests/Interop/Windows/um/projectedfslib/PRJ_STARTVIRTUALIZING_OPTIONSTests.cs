@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="PRJ_STARTVIRTUALIZING_OPTIONS" /> struct.</summary>
-    public static unsafe class PRJ_STARTVIRTUALIZING_OPTIONSTests
+    public static unsafe partial class PRJ_STARTVIRTUALIZING_OPTIONSTests
     {
         /// <summary>Validates that the <see cref="PRJ_STARTVIRTUALIZING_OPTIONS" /> struct is blittable.</summary>
         [Test]

@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="SpSharedRecognizer" /> struct.</summary>
-    public static unsafe class SpSharedRecognizerTests
+    public static unsafe partial class SpSharedRecognizerTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="SpSharedRecognizer" /> struct is correct.</summary>
         [Test]

@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="TOKEN_CONTROL" /> struct.</summary>
-    public static unsafe class TOKEN_CONTROLTests
+    public static unsafe partial class TOKEN_CONTROLTests
     {
         /// <summary>Validates that the <see cref="TOKEN_CONTROL" /> struct is blittable.</summary>
         [Test]

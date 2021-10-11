@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="SCM_PD_DESCRIPTOR_HEADER" /> struct.</summary>
-    public static unsafe class SCM_PD_DESCRIPTOR_HEADERTests
+    public static unsafe partial class SCM_PD_DESCRIPTOR_HEADERTests
     {
         /// <summary>Validates that the <see cref="SCM_PD_DESCRIPTOR_HEADER" /> struct is blittable.</summary>
         [Test]

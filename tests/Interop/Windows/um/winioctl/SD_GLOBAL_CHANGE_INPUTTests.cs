@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="SD_GLOBAL_CHANGE_INPUT" /> struct.</summary>
-    public static unsafe class SD_GLOBAL_CHANGE_INPUTTests
+    public static unsafe partial class SD_GLOBAL_CHANGE_INPUTTests
     {
         /// <summary>Validates that the <see cref="SD_GLOBAL_CHANGE_INPUT" /> struct is blittable.</summary>
         [Test]

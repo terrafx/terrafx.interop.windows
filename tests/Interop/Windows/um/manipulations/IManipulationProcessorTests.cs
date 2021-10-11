@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IManipulationProcessor" /> struct.</summary>
-    public static unsafe class IManipulationProcessorTests
+    public static unsafe partial class IManipulationProcessorTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IManipulationProcessor" /> struct is correct.</summary>
         [Test]

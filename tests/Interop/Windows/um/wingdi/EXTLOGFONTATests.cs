@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="EXTLOGFONTA" /> struct.</summary>
-    public static unsafe class EXTLOGFONTATests
+    public static unsafe partial class EXTLOGFONTATests
     {
         /// <summary>Validates that the <see cref="EXTLOGFONTA" /> struct is blittable.</summary>
         [Test]

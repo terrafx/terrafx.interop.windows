@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="ITfCompositionView" /> struct.</summary>
-    public static unsafe class ITfCompositionViewTests
+    public static unsafe partial class ITfCompositionViewTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ITfCompositionView" /> struct is correct.</summary>
         [Test]

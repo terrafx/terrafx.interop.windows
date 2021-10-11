@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="ITimeAndNoticeControl" /> struct.</summary>
-    public static unsafe class ITimeAndNoticeControlTests
+    public static unsafe partial class ITimeAndNoticeControlTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ITimeAndNoticeControl" /> struct is correct.</summary>
         [Test]

@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="CROSS_SLIDE_PARAMETER" /> struct.</summary>
-    public static unsafe class CROSS_SLIDE_PARAMETERTests
+    public static unsafe partial class CROSS_SLIDE_PARAMETERTests
     {
         /// <summary>Validates that the <see cref="CROSS_SLIDE_PARAMETER" /> struct is blittable.</summary>
         [Test]

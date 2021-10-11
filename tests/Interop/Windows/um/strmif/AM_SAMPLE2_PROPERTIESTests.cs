@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="AM_SAMPLE2_PROPERTIES" /> struct.</summary>
-    public static unsafe class AM_SAMPLE2_PROPERTIESTests
+    public static unsafe partial class AM_SAMPLE2_PROPERTIESTests
     {
         /// <summary>Validates that the <see cref="AM_SAMPLE2_PROPERTIES" /> struct is blittable.</summary>
         [Test]

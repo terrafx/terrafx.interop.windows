@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="TXFS_LIST_TRANSACTIONS_ENTRY" /> struct.</summary>
-    public static unsafe class TXFS_LIST_TRANSACTIONS_ENTRYTests
+    public static unsafe partial class TXFS_LIST_TRANSACTIONS_ENTRYTests
     {
         /// <summary>Validates that the <see cref="TXFS_LIST_TRANSACTIONS_ENTRY" /> struct is blittable.</summary>
         [Test]

@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IMFHttpDownloadSessionProvider" /> struct.</summary>
-    public static unsafe class IMFHttpDownloadSessionProviderTests
+    public static unsafe partial class IMFHttpDownloadSessionProviderTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IMFHttpDownloadSessionProvider" /> struct is correct.</summary>
         [Test]

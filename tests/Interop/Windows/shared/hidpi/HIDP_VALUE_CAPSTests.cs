@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="HIDP_VALUE_CAPS" /> struct.</summary>
-    public static unsafe class HIDP_VALUE_CAPSTests
+    public static unsafe partial class HIDP_VALUE_CAPSTests
     {
         /// <summary>Validates that the <see cref="HIDP_VALUE_CAPS" /> struct is blittable.</summary>
         [Test]

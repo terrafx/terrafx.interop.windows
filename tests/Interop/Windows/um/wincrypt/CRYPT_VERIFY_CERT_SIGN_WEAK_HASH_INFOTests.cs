@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="CRYPT_VERIFY_CERT_SIGN_WEAK_HASH_INFO" /> struct.</summary>
-    public static unsafe class CRYPT_VERIFY_CERT_SIGN_WEAK_HASH_INFOTests
+    public static unsafe partial class CRYPT_VERIFY_CERT_SIGN_WEAK_HASH_INFOTests
     {
         /// <summary>Validates that the <see cref="CRYPT_VERIFY_CERT_SIGN_WEAK_HASH_INFO" /> struct is blittable.</summary>
         [Test]

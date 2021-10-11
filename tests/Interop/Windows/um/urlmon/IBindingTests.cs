@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IBinding" /> struct.</summary>
-    public static unsafe class IBindingTests
+    public static unsafe partial class IBindingTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IBinding" /> struct is correct.</summary>
         [Test]

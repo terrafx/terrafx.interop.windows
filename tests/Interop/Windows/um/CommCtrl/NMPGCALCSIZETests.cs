@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="NMPGCALCSIZE" /> struct.</summary>
-    public static unsafe class NMPGCALCSIZETests
+    public static unsafe partial class NMPGCALCSIZETests
     {
         /// <summary>Validates that the <see cref="NMPGCALCSIZE" /> struct is blittable.</summary>
         [Test]

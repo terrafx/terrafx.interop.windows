@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IExplorerBrowser" /> struct.</summary>
-    public static unsafe class IExplorerBrowserTests
+    public static unsafe partial class IExplorerBrowserTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IExplorerBrowser" /> struct is correct.</summary>
         [Test]

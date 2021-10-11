@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="DEVICE_WRITE_AGGREGATION_DESCRIPTOR" /> struct.</summary>
-    public static unsafe class DEVICE_WRITE_AGGREGATION_DESCRIPTORTests
+    public static unsafe partial class DEVICE_WRITE_AGGREGATION_DESCRIPTORTests
     {
         /// <summary>Validates that the <see cref="DEVICE_WRITE_AGGREGATION_DESCRIPTOR" /> struct is blittable.</summary>
         [Test]

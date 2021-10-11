@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="StartMenuPin" /> struct.</summary>
-    public static unsafe class StartMenuPinTests
+    public static unsafe partial class StartMenuPinTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="StartMenuPin" /> struct is correct.</summary>
         [Test]

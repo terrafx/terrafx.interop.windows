@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="REQUEST_RAW_ENCRYPTED_DATA" /> struct.</summary>
-    public static unsafe class REQUEST_RAW_ENCRYPTED_DATATests
+    public static unsafe partial class REQUEST_RAW_ENCRYPTED_DATATests
     {
         /// <summary>Validates that the <see cref="REQUEST_RAW_ENCRYPTED_DATA" /> struct is blittable.</summary>
         [Test]

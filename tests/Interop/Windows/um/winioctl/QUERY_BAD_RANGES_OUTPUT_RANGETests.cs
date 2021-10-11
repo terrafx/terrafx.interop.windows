@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="QUERY_BAD_RANGES_OUTPUT_RANGE" /> struct.</summary>
-    public static unsafe class QUERY_BAD_RANGES_OUTPUT_RANGETests
+    public static unsafe partial class QUERY_BAD_RANGES_OUTPUT_RANGETests
     {
         /// <summary>Validates that the <see cref="QUERY_BAD_RANGES_OUTPUT_RANGE" /> struct is blittable.</summary>
         [Test]

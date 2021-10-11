@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IWICStreamProvider" /> struct.</summary>
-    public static unsafe class IWICStreamProviderTests
+    public static unsafe partial class IWICStreamProviderTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IWICStreamProvider" /> struct is correct.</summary>
         [Test]

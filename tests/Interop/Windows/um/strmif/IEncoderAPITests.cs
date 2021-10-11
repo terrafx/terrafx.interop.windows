@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IEncoderAPI" /> struct.</summary>
-    public static unsafe class IEncoderAPITests
+    public static unsafe partial class IEncoderAPITests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IEncoderAPI" /> struct is correct.</summary>
         [Test]

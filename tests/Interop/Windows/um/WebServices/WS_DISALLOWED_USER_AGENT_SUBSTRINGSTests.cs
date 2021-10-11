@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="WS_DISALLOWED_USER_AGENT_SUBSTRINGS" /> struct.</summary>
-    public static unsafe class WS_DISALLOWED_USER_AGENT_SUBSTRINGSTests
+    public static unsafe partial class WS_DISALLOWED_USER_AGENT_SUBSTRINGSTests
     {
         /// <summary>Validates that the <see cref="WS_DISALLOWED_USER_AGENT_SUBSTRINGS" /> struct is blittable.</summary>
         [Test]

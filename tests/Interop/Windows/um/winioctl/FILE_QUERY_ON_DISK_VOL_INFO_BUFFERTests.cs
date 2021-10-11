@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="FILE_QUERY_ON_DISK_VOL_INFO_BUFFER" /> struct.</summary>
-    public static unsafe class FILE_QUERY_ON_DISK_VOL_INFO_BUFFERTests
+    public static unsafe partial class FILE_QUERY_ON_DISK_VOL_INFO_BUFFERTests
     {
         /// <summary>Validates that the <see cref="FILE_QUERY_ON_DISK_VOL_INFO_BUFFER" /> struct is blittable.</summary>
         [Test]

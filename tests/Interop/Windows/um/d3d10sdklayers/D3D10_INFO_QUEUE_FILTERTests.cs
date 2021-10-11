@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="D3D10_INFO_QUEUE_FILTER" /> struct.</summary>
-    public static unsafe class D3D10_INFO_QUEUE_FILTERTests
+    public static unsafe partial class D3D10_INFO_QUEUE_FILTERTests
     {
         /// <summary>Validates that the <see cref="D3D10_INFO_QUEUE_FILTER" /> struct is blittable.</summary>
         [Test]

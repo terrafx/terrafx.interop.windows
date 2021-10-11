@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="RECONVERTSTRING" /> struct.</summary>
-    public static unsafe class RECONVERTSTRINGTests
+    public static unsafe partial class RECONVERTSTRINGTests
     {
         /// <summary>Validates that the <see cref="RECONVERTSTRING" /> struct is blittable.</summary>
         [Test]

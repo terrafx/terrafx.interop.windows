@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="MsftDiscFormat2Erase" /> struct.</summary>
-    public static unsafe class MsftDiscFormat2EraseTests
+    public static unsafe partial class MsftDiscFormat2EraseTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="MsftDiscFormat2Erase" /> struct is correct.</summary>
         [Test]

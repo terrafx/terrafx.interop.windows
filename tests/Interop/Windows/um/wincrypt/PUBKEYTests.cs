@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="PUBKEY" /> struct.</summary>
-    public static unsafe class PUBKEYTests
+    public static unsafe partial class PUBKEYTests
     {
         /// <summary>Validates that the <see cref="PUBKEY" /> struct is blittable.</summary>
         [Test]

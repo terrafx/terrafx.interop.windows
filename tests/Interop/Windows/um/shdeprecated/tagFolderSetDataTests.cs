@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="tagFolderSetData" /> struct.</summary>
-    public static unsafe class tagFolderSetDataTests
+    public static unsafe partial class tagFolderSetDataTests
     {
         /// <summary>Validates that the <see cref="tagFolderSetData" /> struct is blittable.</summary>
         [Test]

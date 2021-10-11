@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="WS_NCRYPT_ASYMMETRIC_SECURITY_KEY_HANDLE" /> struct.</summary>
-    public static unsafe class WS_NCRYPT_ASYMMETRIC_SECURITY_KEY_HANDLETests
+    public static unsafe partial class WS_NCRYPT_ASYMMETRIC_SECURITY_KEY_HANDLETests
     {
         /// <summary>Validates that the <see cref="WS_NCRYPT_ASYMMETRIC_SECURITY_KEY_HANDLE" /> struct is blittable.</summary>
         [Test]

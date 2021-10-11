@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="TF_LANGUAGEPROFILE" /> struct.</summary>
-    public static unsafe class TF_LANGUAGEPROFILETests
+    public static unsafe partial class TF_LANGUAGEPROFILETests
     {
         /// <summary>Validates that the <see cref="TF_LANGUAGEPROFILE" /> struct is blittable.</summary>
         [Test]

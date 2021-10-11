@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="CMSG_SIGNER_ENCODE_INFO" /> struct.</summary>
-    public static unsafe class CMSG_SIGNER_ENCODE_INFOTests
+    public static unsafe partial class CMSG_SIGNER_ENCODE_INFOTests
     {
         /// <summary>Validates that the <see cref="CMSG_SIGNER_ENCODE_INFO" /> struct is blittable.</summary>
         [Test]

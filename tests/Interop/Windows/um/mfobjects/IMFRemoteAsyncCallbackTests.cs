@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IMFRemoteAsyncCallback" /> struct.</summary>
-    public static unsafe class IMFRemoteAsyncCallbackTests
+    public static unsafe partial class IMFRemoteAsyncCallbackTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IMFRemoteAsyncCallback" /> struct is correct.</summary>
         [Test]

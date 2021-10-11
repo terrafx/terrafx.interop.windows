@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IAMBufferNegotiation" /> struct.</summary>
-    public static unsafe class IAMBufferNegotiationTests
+    public static unsafe partial class IAMBufferNegotiationTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IAMBufferNegotiation" /> struct is correct.</summary>
         [Test]

@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="CRL_FIND_ISSUED_FOR_PARA" /> struct.</summary>
-    public static unsafe class CRL_FIND_ISSUED_FOR_PARATests
+    public static unsafe partial class CRL_FIND_ISSUED_FOR_PARATests
     {
         /// <summary>Validates that the <see cref="CRL_FIND_ISSUED_FOR_PARA" /> struct is blittable.</summary>
         [Test]

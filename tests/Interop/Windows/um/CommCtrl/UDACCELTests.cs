@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="UDACCEL" /> struct.</summary>
-    public static unsafe class UDACCELTests
+    public static unsafe partial class UDACCELTests
     {
         /// <summary>Validates that the <see cref="UDACCEL" /> struct is blittable.</summary>
         [Test]

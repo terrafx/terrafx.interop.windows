@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="SCM_PD_RUNTIME_FW_ACTIVATION_ARM_STATE" /> struct.</summary>
-    public static unsafe class SCM_PD_RUNTIME_FW_ACTIVATION_ARM_STATETests
+    public static unsafe partial class SCM_PD_RUNTIME_FW_ACTIVATION_ARM_STATETests
     {
         /// <summary>Validates that the <see cref="SCM_PD_RUNTIME_FW_ACTIVATION_ARM_STATE" /> struct is blittable.</summary>
         [Test]

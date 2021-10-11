@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="ShellWindows" /> struct.</summary>
-    public static unsafe class ShellWindowsTests
+    public static unsafe partial class ShellWindowsTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ShellWindows" /> struct is correct.</summary>
         [Test]

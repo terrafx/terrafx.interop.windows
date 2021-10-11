@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IPrinting3DManagerInterop" /> struct.</summary>
-    public static unsafe class IPrinting3DManagerInteropTests
+    public static unsafe partial class IPrinting3DManagerInteropTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IPrinting3DManagerInterop" /> struct is correct.</summary>
         [Test]

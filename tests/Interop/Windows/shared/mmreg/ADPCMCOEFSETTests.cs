@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="ADPCMCOEFSET" /> struct.</summary>
-    public static unsafe class ADPCMCOEFSETTests
+    public static unsafe partial class ADPCMCOEFSETTests
     {
         /// <summary>Validates that the <see cref="ADPCMCOEFSET" /> struct is blittable.</summary>
         [Test]

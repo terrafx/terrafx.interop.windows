@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="STORAGE_OFFLOAD_WRITE_OUTPUT" /> struct.</summary>
-    public static unsafe class STORAGE_OFFLOAD_WRITE_OUTPUTTests
+    public static unsafe partial class STORAGE_OFFLOAD_WRITE_OUTPUTTests
     {
         /// <summary>Validates that the <see cref="STORAGE_OFFLOAD_WRITE_OUTPUT" /> struct is blittable.</summary>
         [Test]

@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="CAI" /> struct.</summary>
-    public static unsafe class CAITests
+    public static unsafe partial class CAITests
     {
         /// <summary>Validates that the <see cref="CAI" /> struct is blittable.</summary>
         [Test]

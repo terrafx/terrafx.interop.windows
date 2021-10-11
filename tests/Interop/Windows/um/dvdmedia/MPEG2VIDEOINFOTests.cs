@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="MPEG2VIDEOINFO" /> struct.</summary>
-    public static unsafe class MPEG2VIDEOINFOTests
+    public static unsafe partial class MPEG2VIDEOINFOTests
     {
         /// <summary>Validates that the <see cref="MPEG2VIDEOINFO" /> struct is blittable.</summary>
         [Test]

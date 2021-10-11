@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="METAFILEPICT" /> struct.</summary>
-    public static unsafe class METAFILEPICTTests
+    public static unsafe partial class METAFILEPICTTests
     {
         /// <summary>Validates that the <see cref="METAFILEPICT" /> struct is blittable.</summary>
         [Test]

@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="NMLVCUSTOMDRAW" /> struct.</summary>
-    public static unsafe class NMLVCUSTOMDRAWTests
+    public static unsafe partial class NMLVCUSTOMDRAWTests
     {
         /// <summary>Validates that the <see cref="NMLVCUSTOMDRAW" /> struct is blittable.</summary>
         [Test]

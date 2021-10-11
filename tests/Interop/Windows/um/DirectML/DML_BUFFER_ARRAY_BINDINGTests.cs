@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="DML_BUFFER_ARRAY_BINDING" /> struct.</summary>
-    public static unsafe class DML_BUFFER_ARRAY_BINDINGTests
+    public static unsafe partial class DML_BUFFER_ARRAY_BINDINGTests
     {
         /// <summary>Validates that the <see cref="DML_BUFFER_ARRAY_BINDING" /> struct is blittable.</summary>
         [Test]

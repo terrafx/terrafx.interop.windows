@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="WTS_THUMBNAILID" /> struct.</summary>
-    public static unsafe class WTS_THUMBNAILIDTests
+    public static unsafe partial class WTS_THUMBNAILIDTests
     {
         /// <summary>Validates that the <see cref="WTS_THUMBNAILID" /> struct is blittable.</summary>
         [Test]

@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="ITfThreadMgrEventSink" /> struct.</summary>
-    public static unsafe class ITfThreadMgrEventSinkTests
+    public static unsafe partial class ITfThreadMgrEventSinkTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ITfThreadMgrEventSink" /> struct is correct.</summary>
         [Test]

@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="DShellWindowsEvents" /> struct.</summary>
-    public static unsafe class DShellWindowsEventsTests
+    public static unsafe partial class DShellWindowsEventsTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="DShellWindowsEvents" /> struct is correct.</summary>
         [Test]

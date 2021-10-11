@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="COPYDATASTRUCT" /> struct.</summary>
-    public static unsafe class COPYDATASTRUCTTests
+    public static unsafe partial class COPYDATASTRUCTTests
     {
         /// <summary>Validates that the <see cref="COPYDATASTRUCT" /> struct is blittable.</summary>
         [Test]

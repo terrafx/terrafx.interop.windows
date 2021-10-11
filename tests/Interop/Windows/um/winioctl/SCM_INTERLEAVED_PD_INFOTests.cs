@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="SCM_INTERLEAVED_PD_INFO" /> struct.</summary>
-    public static unsafe class SCM_INTERLEAVED_PD_INFOTests
+    public static unsafe partial class SCM_INTERLEAVED_PD_INFOTests
     {
         /// <summary>Validates that the <see cref="SCM_INTERLEAVED_PD_INFO" /> struct is blittable.</summary>
         [Test]

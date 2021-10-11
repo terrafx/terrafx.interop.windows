@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="NMBCDROPDOWN" /> struct.</summary>
-    public static unsafe class NMBCDROPDOWNTests
+    public static unsafe partial class NMBCDROPDOWNTests
     {
         /// <summary>Validates that the <see cref="NMBCDROPDOWN" /> struct is blittable.</summary>
         [Test]

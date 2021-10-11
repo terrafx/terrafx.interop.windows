@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="UMS_CREATE_THREAD_ATTRIBUTES" /> struct.</summary>
-    public static unsafe class UMS_CREATE_THREAD_ATTRIBUTESTests
+    public static unsafe partial class UMS_CREATE_THREAD_ATTRIBUTESTests
     {
         /// <summary>Validates that the <see cref="UMS_CREATE_THREAD_ATTRIBUTES" /> struct is blittable.</summary>
         [Test]

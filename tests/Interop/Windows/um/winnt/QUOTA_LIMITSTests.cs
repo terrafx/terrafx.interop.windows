@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="QUOTA_LIMITS" /> struct.</summary>
-    public static unsafe class QUOTA_LIMITSTests
+    public static unsafe partial class QUOTA_LIMITSTests
     {
         /// <summary>Validates that the <see cref="QUOTA_LIMITS" /> struct is blittable.</summary>
         [Test]

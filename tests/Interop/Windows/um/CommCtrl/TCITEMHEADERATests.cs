@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="TCITEMHEADERA" /> struct.</summary>
-    public static unsafe class TCITEMHEADERATests
+    public static unsafe partial class TCITEMHEADERATests
     {
         /// <summary>Validates that the <see cref="TCITEMHEADERA" /> struct is blittable.</summary>
         [Test]

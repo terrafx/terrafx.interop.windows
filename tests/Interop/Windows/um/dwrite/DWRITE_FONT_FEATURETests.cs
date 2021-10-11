@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="DWRITE_FONT_FEATURE" /> struct.</summary>
-    public static unsafe class DWRITE_FONT_FEATURETests
+    public static unsafe partial class DWRITE_FONT_FEATURETests
     {
         /// <summary>Validates that the <see cref="DWRITE_FONT_FEATURE" /> struct is blittable.</summary>
         [Test]

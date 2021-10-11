@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="DDiscFormat2TrackAtOnceEvents" /> struct.</summary>
-    public static unsafe class DDiscFormat2TrackAtOnceEventsTests
+    public static unsafe partial class DDiscFormat2TrackAtOnceEventsTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="DDiscFormat2TrackAtOnceEvents" /> struct is correct.</summary>
         [Test]

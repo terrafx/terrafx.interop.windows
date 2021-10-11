@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="DDGAMMARAMP" /> struct.</summary>
-    public static unsafe class DDGAMMARAMPTests
+    public static unsafe partial class DDGAMMARAMPTests
     {
         /// <summary>Validates that the <see cref="DDGAMMARAMP" /> struct is blittable.</summary>
         [Test]

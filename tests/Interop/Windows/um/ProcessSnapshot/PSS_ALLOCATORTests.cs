@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="PSS_ALLOCATOR" /> struct.</summary>
-    public static unsafe class PSS_ALLOCATORTests
+    public static unsafe partial class PSS_ALLOCATORTests
     {
         /// <summary>Validates that the <see cref="PSS_ALLOCATOR" /> struct is blittable.</summary>
         [Test]

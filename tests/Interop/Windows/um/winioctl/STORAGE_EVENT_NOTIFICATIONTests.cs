@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="STORAGE_EVENT_NOTIFICATION" /> struct.</summary>
-    public static unsafe class STORAGE_EVENT_NOTIFICATIONTests
+    public static unsafe partial class STORAGE_EVENT_NOTIFICATIONTests
     {
         /// <summary>Validates that the <see cref="STORAGE_EVENT_NOTIFICATION" /> struct is blittable.</summary>
         [Test]

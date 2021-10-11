@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="DEVICEDUMP_SUBSECTION_POINTER" /> struct.</summary>
-    public static unsafe class DEVICEDUMP_SUBSECTION_POINTERTests
+    public static unsafe partial class DEVICEDUMP_SUBSECTION_POINTERTests
     {
         /// <summary>Validates that the <see cref="DEVICEDUMP_SUBSECTION_POINTER" /> struct is blittable.</summary>
         [Test]

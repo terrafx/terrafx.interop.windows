@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="MFMPEG2DLNASINKSTATS" /> struct.</summary>
-    public static unsafe class MFMPEG2DLNASINKSTATSTests
+    public static unsafe partial class MFMPEG2DLNASINKSTATSTests
     {
         /// <summary>Validates that the <see cref="MFMPEG2DLNASINKSTATS" /> struct is blittable.</summary>
         [Test]

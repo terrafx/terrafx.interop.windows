@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IWICPalette" /> struct.</summary>
-    public static unsafe class IWICPaletteTests
+    public static unsafe partial class IWICPaletteTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IWICPalette" /> struct is correct.</summary>
         [Test]

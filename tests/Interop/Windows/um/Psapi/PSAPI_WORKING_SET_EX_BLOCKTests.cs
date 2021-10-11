@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="PSAPI_WORKING_SET_EX_BLOCK" /> struct.</summary>
-    public static unsafe class PSAPI_WORKING_SET_EX_BLOCKTests
+    public static unsafe partial class PSAPI_WORKING_SET_EX_BLOCKTests
     {
         /// <summary>Validates that the <see cref="PSAPI_WORKING_SET_EX_BLOCK" /> struct is blittable.</summary>
         [Test]

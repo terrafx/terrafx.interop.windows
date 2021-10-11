@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="MLOperatorSetId" /> struct.</summary>
-    public static unsafe class MLOperatorSetIdTests
+    public static unsafe partial class MLOperatorSetIdTests
     {
         /// <summary>Validates that the <see cref="MLOperatorSetId" /> struct is blittable.</summary>
         [Test]

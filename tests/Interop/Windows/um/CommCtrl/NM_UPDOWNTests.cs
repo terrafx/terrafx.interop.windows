@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="NM_UPDOWN" /> struct.</summary>
-    public static unsafe class NM_UPDOWNTests
+    public static unsafe partial class NM_UPDOWNTests
     {
         /// <summary>Validates that the <see cref="NM_UPDOWN" /> struct is blittable.</summary>
         [Test]

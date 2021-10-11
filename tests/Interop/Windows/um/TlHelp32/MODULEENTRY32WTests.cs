@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="MODULEENTRY32W" /> struct.</summary>
-    public static unsafe class MODULEENTRY32WTests
+    public static unsafe partial class MODULEENTRY32WTests
     {
         /// <summary>Validates that the <see cref="MODULEENTRY32W" /> struct is blittable.</summary>
         [Test]

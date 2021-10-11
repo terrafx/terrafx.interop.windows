@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="PROCESS_MITIGATION_REDIRECTION_TRUST_POLICY" /> struct.</summary>
-    public static unsafe class PROCESS_MITIGATION_REDIRECTION_TRUST_POLICYTests
+    public static unsafe partial class PROCESS_MITIGATION_REDIRECTION_TRUST_POLICYTests
     {
         /// <summary>Validates that the <see cref="PROCESS_MITIGATION_REDIRECTION_TRUST_POLICY" /> struct is blittable.</summary>
         [Test]

@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="SCOPE_TABLE_ARM64" /> struct.</summary>
-    public static unsafe class SCOPE_TABLE_ARM64Tests
+    public static unsafe partial class SCOPE_TABLE_ARM64Tests
     {
         /// <summary>Validates that the <see cref="SCOPE_TABLE_ARM64" /> struct is blittable.</summary>
         [Test]

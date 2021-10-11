@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="DOMDocument" /> struct.</summary>
-    public static unsafe class DOMDocumentTests
+    public static unsafe partial class DOMDocumentTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="DOMDocument" /> struct is correct.</summary>
         [Test]

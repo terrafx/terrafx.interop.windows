@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="ITextStoreACPServices" /> struct.</summary>
-    public static unsafe class ITextStoreACPServicesTests
+    public static unsafe partial class ITextStoreACPServicesTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ITextStoreACPServices" /> struct is correct.</summary>
         [Test]

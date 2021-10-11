@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IDXGIKeyedMutex" /> struct.</summary>
-    public static unsafe class IDXGIKeyedMutexTests
+    public static unsafe partial class IDXGIKeyedMutexTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IDXGIKeyedMutex" /> struct is correct.</summary>
         [Test]

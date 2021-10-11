@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="ACCEL" /> struct.</summary>
-    public static unsafe class ACCELTests
+    public static unsafe partial class ACCELTests
     {
         /// <summary>Validates that the <see cref="ACCEL" /> struct is blittable.</summary>
         [Test]

@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="D3D11_QUERY_DATA_TIMESTAMP_DISJOINT" /> struct.</summary>
-    public static unsafe class D3D11_QUERY_DATA_TIMESTAMP_DISJOINTTests
+    public static unsafe partial class D3D11_QUERY_DATA_TIMESTAMP_DISJOINTTests
     {
         /// <summary>Validates that the <see cref="D3D11_QUERY_DATA_TIMESTAMP_DISJOINT" /> struct is blittable.</summary>
         [Test]

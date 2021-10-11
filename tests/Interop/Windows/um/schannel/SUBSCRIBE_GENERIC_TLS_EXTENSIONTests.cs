@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="SUBSCRIBE_GENERIC_TLS_EXTENSION" /> struct.</summary>
-    public static unsafe class SUBSCRIBE_GENERIC_TLS_EXTENSIONTests
+    public static unsafe partial class SUBSCRIBE_GENERIC_TLS_EXTENSIONTests
     {
         /// <summary>Validates that the <see cref="SUBSCRIBE_GENERIC_TLS_EXTENSION" /> struct is blittable.</summary>
         [Test]

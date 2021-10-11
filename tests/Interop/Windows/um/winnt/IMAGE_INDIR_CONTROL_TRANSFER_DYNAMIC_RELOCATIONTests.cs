@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IMAGE_INDIR_CONTROL_TRANSFER_DYNAMIC_RELOCATION" /> struct.</summary>
-    public static unsafe class IMAGE_INDIR_CONTROL_TRANSFER_DYNAMIC_RELOCATIONTests
+    public static unsafe partial class IMAGE_INDIR_CONTROL_TRANSFER_DYNAMIC_RELOCATIONTests
     {
         /// <summary>Validates that the <see cref="IMAGE_INDIR_CONTROL_TRANSFER_DYNAMIC_RELOCATION" /> struct is blittable.</summary>
         [Test]

@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="PROCESS_MEMORY_COUNTERS_EX" /> struct.</summary>
-    public static unsafe class PROCESS_MEMORY_COUNTERS_EXTests
+    public static unsafe partial class PROCESS_MEMORY_COUNTERS_EXTests
     {
         /// <summary>Validates that the <see cref="PROCESS_MEMORY_COUNTERS_EX" /> struct is blittable.</summary>
         [Test]

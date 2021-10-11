@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="ACCESS_DENIED_ACE" /> struct.</summary>
-    public static unsafe class ACCESS_DENIED_ACETests
+    public static unsafe partial class ACCESS_DENIED_ACETests
     {
         /// <summary>Validates that the <see cref="ACCESS_DENIED_ACE" /> struct is blittable.</summary>
         [Test]

@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="STORAGE_ADAPTER_SERIAL_NUMBER" /> struct.</summary>
-    public static unsafe class STORAGE_ADAPTER_SERIAL_NUMBERTests
+    public static unsafe partial class STORAGE_ADAPTER_SERIAL_NUMBERTests
     {
         /// <summary>Validates that the <see cref="STORAGE_ADAPTER_SERIAL_NUMBER" /> struct is blittable.</summary>
         [Test]

@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="DML_LP_NORMALIZATION_OPERATOR_DESC" /> struct.</summary>
-    public static unsafe class DML_LP_NORMALIZATION_OPERATOR_DESCTests
+    public static unsafe partial class DML_LP_NORMALIZATION_OPERATOR_DESCTests
     {
         /// <summary>Validates that the <see cref="DML_LP_NORMALIZATION_OPERATOR_DESC" /> struct is blittable.</summary>
         [Test]

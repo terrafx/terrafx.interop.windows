@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="AUDIOFILE_AF36WAVEFORMAT" /> struct.</summary>
-    public static unsafe class AUDIOFILE_AF36WAVEFORMATTests
+    public static unsafe partial class AUDIOFILE_AF36WAVEFORMATTests
     {
         /// <summary>Validates that the <see cref="AUDIOFILE_AF36WAVEFORMAT" /> struct is blittable.</summary>
         [Test]

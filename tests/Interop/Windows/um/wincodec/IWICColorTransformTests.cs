@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IWICColorTransform" /> struct.</summary>
-    public static unsafe class IWICColorTransformTests
+    public static unsafe partial class IWICColorTransformTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IWICColorTransform" /> struct is correct.</summary>
         [Test]

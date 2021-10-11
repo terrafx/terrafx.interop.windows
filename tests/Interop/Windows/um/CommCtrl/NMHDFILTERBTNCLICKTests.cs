@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="NMHDFILTERBTNCLICK" /> struct.</summary>
-    public static unsafe class NMHDFILTERBTNCLICKTests
+    public static unsafe partial class NMHDFILTERBTNCLICKTests
     {
         /// <summary>Validates that the <see cref="NMHDFILTERBTNCLICK" /> struct is blittable.</summary>
         [Test]

@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IDefaultExtractIconInit" /> struct.</summary>
-    public static unsafe class IDefaultExtractIconInitTests
+    public static unsafe partial class IDefaultExtractIconInitTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IDefaultExtractIconInit" /> struct is correct.</summary>
         [Test]

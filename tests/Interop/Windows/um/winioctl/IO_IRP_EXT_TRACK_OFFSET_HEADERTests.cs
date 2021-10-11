@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IO_IRP_EXT_TRACK_OFFSET_HEADER" /> struct.</summary>
-    public static unsafe class IO_IRP_EXT_TRACK_OFFSET_HEADERTests
+    public static unsafe partial class IO_IRP_EXT_TRACK_OFFSET_HEADERTests
     {
         /// <summary>Validates that the <see cref="IO_IRP_EXT_TRACK_OFFSET_HEADER" /> struct is blittable.</summary>
         [Test]

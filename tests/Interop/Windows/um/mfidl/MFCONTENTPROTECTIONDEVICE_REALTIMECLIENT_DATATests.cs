@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="MFCONTENTPROTECTIONDEVICE_REALTIMECLIENT_DATA" /> struct.</summary>
-    public static unsafe class MFCONTENTPROTECTIONDEVICE_REALTIMECLIENT_DATATests
+    public static unsafe partial class MFCONTENTPROTECTIONDEVICE_REALTIMECLIENT_DATATests
     {
         /// <summary>Validates that the <see cref="MFCONTENTPROTECTIONDEVICE_REALTIMECLIENT_DATA" /> struct is blittable.</summary>
         [Test]

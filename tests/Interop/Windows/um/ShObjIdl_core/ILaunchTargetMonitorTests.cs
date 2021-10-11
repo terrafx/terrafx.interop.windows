@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="ILaunchTargetMonitor" /> struct.</summary>
-    public static unsafe class ILaunchTargetMonitorTests
+    public static unsafe partial class ILaunchTargetMonitorTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ILaunchTargetMonitor" /> struct is correct.</summary>
         [Test]

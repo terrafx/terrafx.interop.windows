@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="LVINSERTGROUPSORTED" /> struct.</summary>
-    public static unsafe class LVINSERTGROUPSORTEDTests
+    public static unsafe partial class LVINSERTGROUPSORTEDTests
     {
         /// <summary>Validates that the <see cref="LVINSERTGROUPSORTED" /> struct is blittable.</summary>
         [Test]

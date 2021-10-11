@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IAccessibilityDockingServiceCallback" /> struct.</summary>
-    public static unsafe class IAccessibilityDockingServiceCallbackTests
+    public static unsafe partial class IAccessibilityDockingServiceCallbackTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IAccessibilityDockingServiceCallback" /> struct is correct.</summary>
         [Test]

@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IAppVisibilityEvents" /> struct.</summary>
-    public static unsafe class IAppVisibilityEventsTests
+    public static unsafe partial class IAppVisibilityEventsTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IAppVisibilityEvents" /> struct is correct.</summary>
         [Test]

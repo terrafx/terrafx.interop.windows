@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="CODECAPI_AVDecVideoMPEG2ErrorConcealment" /> struct.</summary>
-    public static unsafe class CODECAPI_AVDecVideoMPEG2ErrorConcealmentTests
+    public static unsafe partial class CODECAPI_AVDecVideoMPEG2ErrorConcealmentTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="CODECAPI_AVDecVideoMPEG2ErrorConcealment" /> struct is correct.</summary>
         [Test]

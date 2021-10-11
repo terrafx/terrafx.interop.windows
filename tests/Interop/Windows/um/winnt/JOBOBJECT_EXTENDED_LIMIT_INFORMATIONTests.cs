@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="JOBOBJECT_EXTENDED_LIMIT_INFORMATION" /> struct.</summary>
-    public static unsafe class JOBOBJECT_EXTENDED_LIMIT_INFORMATIONTests
+    public static unsafe partial class JOBOBJECT_EXTENDED_LIMIT_INFORMATIONTests
     {
         /// <summary>Validates that the <see cref="JOBOBJECT_EXTENDED_LIMIT_INFORMATION" /> struct is blittable.</summary>
         [Test]

@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="SCHANNEL_CERT_HASH" /> struct.</summary>
-    public static unsafe class SCHANNEL_CERT_HASHTests
+    public static unsafe partial class SCHANNEL_CERT_HASHTests
     {
         /// <summary>Validates that the <see cref="SCHANNEL_CERT_HASH" /> struct is blittable.</summary>
         [Test]

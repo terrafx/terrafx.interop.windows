@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="SecPkgContext_SessionAppData" /> struct.</summary>
-    public static unsafe class SecPkgContext_SessionAppDataTests
+    public static unsafe partial class SecPkgContext_SessionAppDataTests
     {
         /// <summary>Validates that the <see cref="SecPkgContext_SessionAppData" /> struct is blittable.</summary>
         [Test]

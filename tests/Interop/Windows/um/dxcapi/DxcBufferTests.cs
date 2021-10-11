@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="DxcBuffer" /> struct.</summary>
-    public static unsafe class DxcBufferTests
+    public static unsafe partial class DxcBufferTests
     {
         /// <summary>Validates that the <see cref="DxcBuffer" /> struct is blittable.</summary>
         [Test]

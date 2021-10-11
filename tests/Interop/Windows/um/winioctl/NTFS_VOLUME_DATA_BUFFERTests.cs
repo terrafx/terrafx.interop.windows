@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="NTFS_VOLUME_DATA_BUFFER" /> struct.</summary>
-    public static unsafe class NTFS_VOLUME_DATA_BUFFERTests
+    public static unsafe partial class NTFS_VOLUME_DATA_BUFFERTests
     {
         /// <summary>Validates that the <see cref="NTFS_VOLUME_DATA_BUFFER" /> struct is blittable.</summary>
         [Test]

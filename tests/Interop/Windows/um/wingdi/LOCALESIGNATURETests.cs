@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="LOCALESIGNATURE" /> struct.</summary>
-    public static unsafe class LOCALESIGNATURETests
+    public static unsafe partial class LOCALESIGNATURETests
     {
         /// <summary>Validates that the <see cref="LOCALESIGNATURE" /> struct is blittable.</summary>
         [Test]

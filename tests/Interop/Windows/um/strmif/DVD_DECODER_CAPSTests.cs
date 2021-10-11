@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="DVD_DECODER_CAPS" /> struct.</summary>
-    public static unsafe class DVD_DECODER_CAPSTests
+    public static unsafe partial class DVD_DECODER_CAPSTests
     {
         /// <summary>Validates that the <see cref="DVD_DECODER_CAPS" /> struct is blittable.</summary>
         [Test]

@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="SP_BACKUP_QUEUE_PARAMS_V1_W" /> struct.</summary>
-    public static unsafe class SP_BACKUP_QUEUE_PARAMS_V1_WTests
+    public static unsafe partial class SP_BACKUP_QUEUE_PARAMS_V1_WTests
     {
         /// <summary>Validates that the <see cref="SP_BACKUP_QUEUE_PARAMS_V1_W" /> struct is blittable.</summary>
         [Test]

@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="APP_MEMORY_INFORMATION" /> struct.</summary>
-    public static unsafe class APP_MEMORY_INFORMATIONTests
+    public static unsafe partial class APP_MEMORY_INFORMATIONTests
     {
         /// <summary>Validates that the <see cref="APP_MEMORY_INFORMATION" /> struct is blittable.</summary>
         [Test]

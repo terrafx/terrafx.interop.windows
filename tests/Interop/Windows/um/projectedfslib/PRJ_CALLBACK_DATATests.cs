@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="PRJ_CALLBACK_DATA" /> struct.</summary>
-    public static unsafe class PRJ_CALLBACK_DATATests
+    public static unsafe partial class PRJ_CALLBACK_DATATests
     {
         /// <summary>Validates that the <see cref="PRJ_CALLBACK_DATA" /> struct is blittable.</summary>
         [Test]

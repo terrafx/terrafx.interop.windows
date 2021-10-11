@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="PROCESSOR_RELATIONSHIP" /> struct.</summary>
-    public static unsafe class PROCESSOR_RELATIONSHIPTests
+    public static unsafe partial class PROCESSOR_RELATIONSHIPTests
     {
         /// <summary>Validates that the <see cref="PROCESSOR_RELATIONSHIP" /> struct is blittable.</summary>
         [Test]

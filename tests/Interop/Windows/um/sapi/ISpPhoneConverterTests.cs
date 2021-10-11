@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="ISpPhoneConverter" /> struct.</summary>
-    public static unsafe class ISpPhoneConverterTests
+    public static unsafe partial class ISpPhoneConverterTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ISpPhoneConverter" /> struct is correct.</summary>
         [Test]

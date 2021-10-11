@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="NMPGHOTITEM" /> struct.</summary>
-    public static unsafe class NMPGHOTITEMTests
+    public static unsafe partial class NMPGHOTITEMTests
     {
         /// <summary>Validates that the <see cref="NMPGHOTITEM" /> struct is blittable.</summary>
         [Test]

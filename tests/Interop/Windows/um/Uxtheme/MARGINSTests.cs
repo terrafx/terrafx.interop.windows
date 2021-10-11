@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="MARGINS" /> struct.</summary>
-    public static unsafe class MARGINSTests
+    public static unsafe partial class MARGINSTests
     {
         /// <summary>Validates that the <see cref="MARGINS" /> struct is blittable.</summary>
         [Test]

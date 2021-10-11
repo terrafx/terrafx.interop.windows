@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="WS_SERVICE_PROPERTY_ACCEPT_CALLBACK" /> struct.</summary>
-    public static unsafe class WS_SERVICE_PROPERTY_ACCEPT_CALLBACKTests
+    public static unsafe partial class WS_SERVICE_PROPERTY_ACCEPT_CALLBACKTests
     {
         /// <summary>Validates that the <see cref="WS_SERVICE_PROPERTY_ACCEPT_CALLBACK" /> struct is blittable.</summary>
         [Test]

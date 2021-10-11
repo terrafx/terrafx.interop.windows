@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IDXGISwapChain3" /> struct.</summary>
-    public static unsafe class IDXGISwapChain3Tests
+    public static unsafe partial class IDXGISwapChain3Tests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IDXGISwapChain3" /> struct is correct.</summary>
         [Test]

@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IMFSharingEngineClassFactory" /> struct.</summary>
-    public static unsafe class IMFSharingEngineClassFactoryTests
+    public static unsafe partial class IMFSharingEngineClassFactoryTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IMFSharingEngineClassFactory" /> struct is correct.</summary>
         [Test]

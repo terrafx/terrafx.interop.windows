@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="EventRegistrationToken" /> struct.</summary>
-    public static unsafe class EventRegistrationTokenTests
+    public static unsafe partial class EventRegistrationTokenTests
     {
         /// <summary>Validates that the <see cref="EventRegistrationToken" /> struct is blittable.</summary>
         [Test]

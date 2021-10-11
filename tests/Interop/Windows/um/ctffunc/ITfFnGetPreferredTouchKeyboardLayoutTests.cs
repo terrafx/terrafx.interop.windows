@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="ITfFnGetPreferredTouchKeyboardLayout" /> struct.</summary>
-    public static unsafe class ITfFnGetPreferredTouchKeyboardLayoutTests
+    public static unsafe partial class ITfFnGetPreferredTouchKeyboardLayoutTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ITfFnGetPreferredTouchKeyboardLayout" /> struct is correct.</summary>
         [Test]

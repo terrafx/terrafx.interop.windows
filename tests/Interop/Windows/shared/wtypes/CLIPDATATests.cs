@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="CLIPDATA" /> struct.</summary>
-    public static unsafe class CLIPDATATests
+    public static unsafe partial class CLIPDATATests
     {
         /// <summary>Validates that the <see cref="CLIPDATA" /> struct is blittable.</summary>
         [Test]

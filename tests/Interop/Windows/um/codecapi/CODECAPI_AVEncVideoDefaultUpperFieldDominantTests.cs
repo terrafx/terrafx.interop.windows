@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="CODECAPI_AVEncVideoDefaultUpperFieldDominant" /> struct.</summary>
-    public static unsafe class CODECAPI_AVEncVideoDefaultUpperFieldDominantTests
+    public static unsafe partial class CODECAPI_AVEncVideoDefaultUpperFieldDominantTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="CODECAPI_AVEncVideoDefaultUpperFieldDominant" /> struct is correct.</summary>
         [Test]

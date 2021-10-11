@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="ICompositionGraphicsDeviceInterop" /> struct.</summary>
-    public static unsafe class ICompositionGraphicsDeviceInteropTests
+    public static unsafe partial class ICompositionGraphicsDeviceInteropTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ICompositionGraphicsDeviceInterop" /> struct is correct.</summary>
         [Test]

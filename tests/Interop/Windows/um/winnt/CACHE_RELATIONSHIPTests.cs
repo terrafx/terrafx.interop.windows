@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="CACHE_RELATIONSHIP" /> struct.</summary>
-    public static unsafe class CACHE_RELATIONSHIPTests
+    public static unsafe partial class CACHE_RELATIONSHIPTests
     {
         /// <summary>Validates that the <see cref="CACHE_RELATIONSHIP" /> struct is blittable.</summary>
         [Test]

@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IRemoteSystemAdditionalInfoProvider" /> struct.</summary>
-    public static unsafe class IRemoteSystemAdditionalInfoProviderTests
+    public static unsafe partial class IRemoteSystemAdditionalInfoProviderTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IRemoteSystemAdditionalInfoProvider" /> struct is correct.</summary>
         [Test]

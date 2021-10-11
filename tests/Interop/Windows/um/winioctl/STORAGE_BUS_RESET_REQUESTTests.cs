@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="STORAGE_BUS_RESET_REQUEST" /> struct.</summary>
-    public static unsafe class STORAGE_BUS_RESET_REQUESTTests
+    public static unsafe partial class STORAGE_BUS_RESET_REQUESTTests
     {
         /// <summary>Validates that the <see cref="STORAGE_BUS_RESET_REQUEST" /> struct is blittable.</summary>
         [Test]

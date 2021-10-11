@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IStream" /> struct.</summary>
-    public static unsafe class IStreamTests
+    public static unsafe partial class IStreamTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IStream" /> struct is correct.</summary>
         [Test]

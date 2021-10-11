@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="D3D11_VIDEO_PROCESSOR_RATE_CONVERSION_CAPS" /> struct.</summary>
-    public static unsafe class D3D11_VIDEO_PROCESSOR_RATE_CONVERSION_CAPSTests
+    public static unsafe partial class D3D11_VIDEO_PROCESSOR_RATE_CONVERSION_CAPSTests
     {
         /// <summary>Validates that the <see cref="D3D11_VIDEO_PROCESSOR_RATE_CONVERSION_CAPS" /> struct is blittable.</summary>
         [Test]

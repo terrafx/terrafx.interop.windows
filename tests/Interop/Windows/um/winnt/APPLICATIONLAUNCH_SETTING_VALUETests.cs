@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="APPLICATIONLAUNCH_SETTING_VALUE" /> struct.</summary>
-    public static unsafe class APPLICATIONLAUNCH_SETTING_VALUETests
+    public static unsafe partial class APPLICATIONLAUNCH_SETTING_VALUETests
     {
         /// <summary>Validates that the <see cref="APPLICATIONLAUNCH_SETTING_VALUE" /> struct is blittable.</summary>
         [Test]

@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="DEBUGHOOKINFO" /> struct.</summary>
-    public static unsafe class DEBUGHOOKINFOTests
+    public static unsafe partial class DEBUGHOOKINFOTests
     {
         /// <summary>Validates that the <see cref="DEBUGHOOKINFO" /> struct is blittable.</summary>
         [Test]

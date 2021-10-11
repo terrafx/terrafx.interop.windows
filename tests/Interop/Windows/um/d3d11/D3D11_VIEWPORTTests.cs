@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="D3D11_VIEWPORT" /> struct.</summary>
-    public static unsafe class D3D11_VIEWPORTTests
+    public static unsafe partial class D3D11_VIEWPORTTests
     {
         /// <summary>Validates that the <see cref="D3D11_VIEWPORT" /> struct is blittable.</summary>
         [Test]

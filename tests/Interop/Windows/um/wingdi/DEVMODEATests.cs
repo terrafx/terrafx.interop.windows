@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="DEVMODEA" /> struct.</summary>
-    public static unsafe class DEVMODEATests
+    public static unsafe partial class DEVMODEATests
     {
         /// <summary>Validates that the <see cref="DEVMODEA" /> struct is blittable.</summary>
         [Test]

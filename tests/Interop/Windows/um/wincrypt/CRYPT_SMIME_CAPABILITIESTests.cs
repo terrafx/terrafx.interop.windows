@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="CRYPT_SMIME_CAPABILITIES" /> struct.</summary>
-    public static unsafe class CRYPT_SMIME_CAPABILITIESTests
+    public static unsafe partial class CRYPT_SMIME_CAPABILITIESTests
     {
         /// <summary>Validates that the <see cref="CRYPT_SMIME_CAPABILITIES" /> struct is blittable.</summary>
         [Test]

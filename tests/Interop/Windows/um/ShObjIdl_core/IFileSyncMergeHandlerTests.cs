@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IFileSyncMergeHandler" /> struct.</summary>
-    public static unsafe class IFileSyncMergeHandlerTests
+    public static unsafe partial class IFileSyncMergeHandlerTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IFileSyncMergeHandler" /> struct is correct.</summary>
         [Test]

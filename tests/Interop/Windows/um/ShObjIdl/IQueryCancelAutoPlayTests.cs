@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IQueryCancelAutoPlay" /> struct.</summary>
-    public static unsafe class IQueryCancelAutoPlayTests
+    public static unsafe partial class IQueryCancelAutoPlayTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IQueryCancelAutoPlay" /> struct is correct.</summary>
         [Test]

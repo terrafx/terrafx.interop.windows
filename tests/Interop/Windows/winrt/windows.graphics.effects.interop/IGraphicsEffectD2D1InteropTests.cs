@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IGraphicsEffectD2D1Interop" /> struct.</summary>
-    public static unsafe class IGraphicsEffectD2D1InteropTests
+    public static unsafe partial class IGraphicsEffectD2D1InteropTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IGraphicsEffectD2D1Interop" /> struct is correct.</summary>
         [Test]

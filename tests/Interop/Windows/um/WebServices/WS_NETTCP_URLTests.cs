@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="WS_NETTCP_URL" /> struct.</summary>
-    public static unsafe class WS_NETTCP_URLTests
+    public static unsafe partial class WS_NETTCP_URLTests
     {
         /// <summary>Validates that the <see cref="WS_NETTCP_URL" /> struct is blittable.</summary>
         [Test]

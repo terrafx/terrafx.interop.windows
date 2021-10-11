@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="THREAD_POWER_THROTTLING_STATE" /> struct.</summary>
-    public static unsafe class THREAD_POWER_THROTTLING_STATETests
+    public static unsafe partial class THREAD_POWER_THROTTLING_STATETests
     {
         /// <summary>Validates that the <see cref="THREAD_POWER_THROTTLING_STATE" /> struct is blittable.</summary>
         [Test]

@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="DDBLTFX" /> struct.</summary>
-    public static unsafe class DDBLTFXTests
+    public static unsafe partial class DDBLTFXTests
     {
         /// <summary>Validates that the <see cref="DDBLTFX" /> struct is blittable.</summary>
         [Test]

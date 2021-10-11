@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="SONARCWAVEFORMAT" /> struct.</summary>
-    public static unsafe class SONARCWAVEFORMATTests
+    public static unsafe partial class SONARCWAVEFORMATTests
     {
         /// <summary>Validates that the <see cref="SONARCWAVEFORMAT" /> struct is blittable.</summary>
         [Test]

@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IMMDeviceEnumerator" /> struct.</summary>
-    public static unsafe class IMMDeviceEnumeratorTests
+    public static unsafe partial class IMMDeviceEnumeratorTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IMMDeviceEnumerator" /> struct is correct.</summary>
         [Test]

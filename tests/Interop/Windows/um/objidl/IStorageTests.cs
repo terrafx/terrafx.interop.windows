@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IStorage" /> struct.</summary>
-    public static unsafe class IStorageTests
+    public static unsafe partial class IStorageTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IStorage" /> struct is correct.</summary>
         [Test]

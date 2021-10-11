@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="D3D11_AUTHENTICATED_QUERY_PROTECTION_OUTPUT" /> struct.</summary>
-    public static unsafe class D3D11_AUTHENTICATED_QUERY_PROTECTION_OUTPUTTests
+    public static unsafe partial class D3D11_AUTHENTICATED_QUERY_PROTECTION_OUTPUTTests
     {
         /// <summary>Validates that the <see cref="D3D11_AUTHENTICATED_QUERY_PROTECTION_OUTPUT" /> struct is blittable.</summary>
         [Test]

@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="MFINPUTTRUSTAUTHORITY_ACCESS_ACTION" /> struct.</summary>
-    public static unsafe class MFINPUTTRUSTAUTHORITY_ACCESS_ACTIONTests
+    public static unsafe partial class MFINPUTTRUSTAUTHORITY_ACCESS_ACTIONTests
     {
         /// <summary>Validates that the <see cref="MFINPUTTRUSTAUTHORITY_ACCESS_ACTION" /> struct is blittable.</summary>
         [Test]

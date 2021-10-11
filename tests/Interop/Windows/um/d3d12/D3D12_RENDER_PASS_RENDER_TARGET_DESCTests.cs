@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="D3D12_RENDER_PASS_RENDER_TARGET_DESC" /> struct.</summary>
-    public static unsafe class D3D12_RENDER_PASS_RENDER_TARGET_DESCTests
+    public static unsafe partial class D3D12_RENDER_PASS_RENDER_TARGET_DESCTests
     {
         /// <summary>Validates that the <see cref="D3D12_RENDER_PASS_RENDER_TARGET_DESC" /> struct is blittable.</summary>
         [Test]

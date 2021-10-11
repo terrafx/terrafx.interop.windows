@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IFullScreenVideo" /> struct.</summary>
-    public static unsafe class IFullScreenVideoTests
+    public static unsafe partial class IFullScreenVideoTests
     {
         /// <summary>Validates that the <see cref="IFullScreenVideo" /> struct is blittable.</summary>
         [Test]

@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="ILaunchTargetViewSizePreference" /> struct.</summary>
-    public static unsafe class ILaunchTargetViewSizePreferenceTests
+    public static unsafe partial class ILaunchTargetViewSizePreferenceTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ILaunchTargetViewSizePreference" /> struct is correct.</summary>
         [Test]

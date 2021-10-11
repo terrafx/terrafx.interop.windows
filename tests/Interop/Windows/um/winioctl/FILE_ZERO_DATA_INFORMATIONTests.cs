@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="FILE_ZERO_DATA_INFORMATION" /> struct.</summary>
-    public static unsafe class FILE_ZERO_DATA_INFORMATIONTests
+    public static unsafe partial class FILE_ZERO_DATA_INFORMATIONTests
     {
         /// <summary>Validates that the <see cref="FILE_ZERO_DATA_INFORMATION" /> struct is blittable.</summary>
         [Test]

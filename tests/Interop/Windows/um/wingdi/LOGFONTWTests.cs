@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="LOGFONTW" /> struct.</summary>
-    public static unsafe class LOGFONTWTests
+    public static unsafe partial class LOGFONTWTests
     {
         /// <summary>Validates that the <see cref="LOGFONTW" /> struct is blittable.</summary>
         [Test]

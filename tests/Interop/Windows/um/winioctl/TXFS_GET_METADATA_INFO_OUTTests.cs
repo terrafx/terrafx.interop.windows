@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="TXFS_GET_METADATA_INFO_OUT" /> struct.</summary>
-    public static unsafe class TXFS_GET_METADATA_INFO_OUTTests
+    public static unsafe partial class TXFS_GET_METADATA_INFO_OUTTests
     {
         /// <summary>Validates that the <see cref="TXFS_GET_METADATA_INFO_OUT" /> struct is blittable.</summary>
         [Test]

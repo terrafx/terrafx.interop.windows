@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="SYNCMGRITEM" /> struct.</summary>
-    public static unsafe class SYNCMGRITEMTests
+    public static unsafe partial class SYNCMGRITEMTests
     {
         /// <summary>Validates that the <see cref="SYNCMGRITEM" /> struct is blittable.</summary>
         [Test]

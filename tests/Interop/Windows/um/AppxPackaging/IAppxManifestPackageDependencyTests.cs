@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IAppxManifestPackageDependency" /> struct.</summary>
-    public static unsafe class IAppxManifestPackageDependencyTests
+    public static unsafe partial class IAppxManifestPackageDependencyTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IAppxManifestPackageDependency" /> struct is correct.</summary>
         [Test]

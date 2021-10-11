@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IBlockRangeList" /> struct.</summary>
-    public static unsafe class IBlockRangeListTests
+    public static unsafe partial class IBlockRangeListTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IBlockRangeList" /> struct is correct.</summary>
         [Test]

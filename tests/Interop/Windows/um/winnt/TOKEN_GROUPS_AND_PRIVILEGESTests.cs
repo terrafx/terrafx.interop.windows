@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="TOKEN_GROUPS_AND_PRIVILEGES" /> struct.</summary>
-    public static unsafe class TOKEN_GROUPS_AND_PRIVILEGESTests
+    public static unsafe partial class TOKEN_GROUPS_AND_PRIVILEGESTests
     {
         /// <summary>Validates that the <see cref="TOKEN_GROUPS_AND_PRIVILEGES" /> struct is blittable.</summary>
         [Test]

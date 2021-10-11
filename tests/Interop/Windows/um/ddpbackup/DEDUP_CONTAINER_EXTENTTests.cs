@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="DEDUP_CONTAINER_EXTENT" /> struct.</summary>
-    public static unsafe class DEDUP_CONTAINER_EXTENTTests
+    public static unsafe partial class DEDUP_CONTAINER_EXTENTTests
     {
         /// <summary>Validates that the <see cref="DEDUP_CONTAINER_EXTENT" /> struct is blittable.</summary>
         [Test]

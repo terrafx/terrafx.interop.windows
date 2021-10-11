@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="SCM_PD_PASSTHROUGH_INVDIMM_OUTPUT" /> struct.</summary>
-    public static unsafe class SCM_PD_PASSTHROUGH_INVDIMM_OUTPUTTests
+    public static unsafe partial class SCM_PD_PASSTHROUGH_INVDIMM_OUTPUTTests
     {
         /// <summary>Validates that the <see cref="SCM_PD_PASSTHROUGH_INVDIMM_OUTPUT" /> struct is blittable.</summary>
         [Test]

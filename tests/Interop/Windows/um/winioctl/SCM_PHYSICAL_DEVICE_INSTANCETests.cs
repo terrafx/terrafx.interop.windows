@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="SCM_PHYSICAL_DEVICE_INSTANCE" /> struct.</summary>
-    public static unsafe class SCM_PHYSICAL_DEVICE_INSTANCETests
+    public static unsafe partial class SCM_PHYSICAL_DEVICE_INSTANCETests
     {
         /// <summary>Validates that the <see cref="SCM_PHYSICAL_DEVICE_INSTANCE" /> struct is blittable.</summary>
         [Test]

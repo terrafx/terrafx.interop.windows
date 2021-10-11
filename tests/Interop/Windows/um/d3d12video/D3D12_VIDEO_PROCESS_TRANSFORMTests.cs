@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="D3D12_VIDEO_PROCESS_TRANSFORM" /> struct.</summary>
-    public static unsafe class D3D12_VIDEO_PROCESS_TRANSFORMTests
+    public static unsafe partial class D3D12_VIDEO_PROCESS_TRANSFORMTests
     {
         /// <summary>Validates that the <see cref="D3D12_VIDEO_PROCESS_TRANSFORM" /> struct is blittable.</summary>
         [Test]

@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="TAPE_WMI_OPERATIONS" /> struct.</summary>
-    public static unsafe class TAPE_WMI_OPERATIONSTests
+    public static unsafe partial class TAPE_WMI_OPERATIONSTests
     {
         /// <summary>Validates that the <see cref="TAPE_WMI_OPERATIONS" /> struct is blittable.</summary>
         [Test]

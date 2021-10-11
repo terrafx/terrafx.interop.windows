@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="AMBISONICS_PARAMS" /> struct.</summary>
-    public static unsafe class AMBISONICS_PARAMSTests
+    public static unsafe partial class AMBISONICS_PARAMSTests
     {
         /// <summary>Validates that the <see cref="AMBISONICS_PARAMS" /> struct is blittable.</summary>
         [Test]

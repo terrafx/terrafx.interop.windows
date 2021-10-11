@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="CABINET_INFO_W" /> struct.</summary>
-    public static unsafe class CABINET_INFO_WTests
+    public static unsafe partial class CABINET_INFO_WTests
     {
         /// <summary>Validates that the <see cref="CABINET_INFO_W" /> struct is blittable.</summary>
         [Test]

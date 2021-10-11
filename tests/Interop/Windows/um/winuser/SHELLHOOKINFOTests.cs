@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="SHELLHOOKINFO" /> struct.</summary>
-    public static unsafe class SHELLHOOKINFOTests
+    public static unsafe partial class SHELLHOOKINFOTests
     {
         /// <summary>Validates that the <see cref="SHELLHOOKINFO" /> struct is blittable.</summary>
         [Test]

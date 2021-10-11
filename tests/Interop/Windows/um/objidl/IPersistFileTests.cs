@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IPersistFile" /> struct.</summary>
-    public static unsafe class IPersistFileTests
+    public static unsafe partial class IPersistFileTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IPersistFile" /> struct is correct.</summary>
         [Test]

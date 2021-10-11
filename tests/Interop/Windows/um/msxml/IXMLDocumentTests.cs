@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IXMLDocument" /> struct.</summary>
-    public static unsafe class IXMLDocumentTests
+    public static unsafe partial class IXMLDocumentTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IXMLDocument" /> struct is correct.</summary>
         [Test]

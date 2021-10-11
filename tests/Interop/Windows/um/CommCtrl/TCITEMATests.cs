@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="TCITEMA" /> struct.</summary>
-    public static unsafe class TCITEMATests
+    public static unsafe partial class TCITEMATests
     {
         /// <summary>Validates that the <see cref="TCITEMA" /> struct is blittable.</summary>
         [Test]

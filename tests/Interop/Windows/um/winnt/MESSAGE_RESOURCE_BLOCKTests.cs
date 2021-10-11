@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="MESSAGE_RESOURCE_BLOCK" /> struct.</summary>
-    public static unsafe class MESSAGE_RESOURCE_BLOCKTests
+    public static unsafe partial class MESSAGE_RESOURCE_BLOCKTests
     {
         /// <summary>Validates that the <see cref="MESSAGE_RESOURCE_BLOCK" /> struct is blittable.</summary>
         [Test]

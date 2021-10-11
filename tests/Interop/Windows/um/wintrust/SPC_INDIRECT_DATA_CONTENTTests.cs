@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="SPC_INDIRECT_DATA_CONTENT" /> struct.</summary>
-    public static unsafe class SPC_INDIRECT_DATA_CONTENTTests
+    public static unsafe partial class SPC_INDIRECT_DATA_CONTENTTests
     {
         /// <summary>Validates that the <see cref="SPC_INDIRECT_DATA_CONTENT" /> struct is blittable.</summary>
         [Test]

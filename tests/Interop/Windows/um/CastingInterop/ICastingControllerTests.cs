@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="ICastingController" /> struct.</summary>
-    public static unsafe class ICastingControllerTests
+    public static unsafe partial class ICastingControllerTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ICastingController" /> struct is correct.</summary>
         [Test]

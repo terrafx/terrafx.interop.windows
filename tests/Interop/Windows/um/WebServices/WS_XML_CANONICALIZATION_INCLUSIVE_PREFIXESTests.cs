@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="WS_XML_CANONICALIZATION_INCLUSIVE_PREFIXES" /> struct.</summary>
-    public static unsafe class WS_XML_CANONICALIZATION_INCLUSIVE_PREFIXESTests
+    public static unsafe partial class WS_XML_CANONICALIZATION_INCLUSIVE_PREFIXESTests
     {
         /// <summary>Validates that the <see cref="WS_XML_CANONICALIZATION_INCLUSIVE_PREFIXES" /> struct is blittable.</summary>
         [Test]

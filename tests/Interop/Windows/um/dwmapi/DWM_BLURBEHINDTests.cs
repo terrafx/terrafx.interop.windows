@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="DWM_BLURBEHIND" /> struct.</summary>
-    public static unsafe class DWM_BLURBEHINDTests
+    public static unsafe partial class DWM_BLURBEHINDTests
     {
         /// <summary>Validates that the <see cref="DWM_BLURBEHIND" /> struct is blittable.</summary>
         [Test]

@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="DML_BINDING_PROPERTIES" /> struct.</summary>
-    public static unsafe class DML_BINDING_PROPERTIESTests
+    public static unsafe partial class DML_BINDING_PROPERTIESTests
     {
         /// <summary>Validates that the <see cref="DML_BINDING_PROPERTIES" /> struct is blittable.</summary>
         [Test]

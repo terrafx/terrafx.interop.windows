@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="SCM_BUS_DEDICATED_MEMORY_STATE" /> struct.</summary>
-    public static unsafe class SCM_BUS_DEDICATED_MEMORY_STATETests
+    public static unsafe partial class SCM_BUS_DEDICATED_MEMORY_STATETests
     {
         /// <summary>Validates that the <see cref="SCM_BUS_DEDICATED_MEMORY_STATE" /> struct is blittable.</summary>
         [Test]

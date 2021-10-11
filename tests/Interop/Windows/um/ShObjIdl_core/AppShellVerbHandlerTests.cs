@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="AppShellVerbHandler" /> struct.</summary>
-    public static unsafe class AppShellVerbHandlerTests
+    public static unsafe partial class AppShellVerbHandlerTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="AppShellVerbHandler" /> struct is correct.</summary>
         [Test]

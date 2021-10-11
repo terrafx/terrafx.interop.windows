@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="ACTCTX_SECTION_KEYED_DATA_2600" /> struct.</summary>
-    public static unsafe class ACTCTX_SECTION_KEYED_DATA_2600Tests
+    public static unsafe partial class ACTCTX_SECTION_KEYED_DATA_2600Tests
     {
         /// <summary>Validates that the <see cref="ACTCTX_SECTION_KEYED_DATA_2600" /> struct is blittable.</summary>
         [Test]

@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="ITfInputProcessorProfileSubstituteLayout" /> struct.</summary>
-    public static unsafe class ITfInputProcessorProfileSubstituteLayoutTests
+    public static unsafe partial class ITfInputProcessorProfileSubstituteLayoutTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ITfInputProcessorProfileSubstituteLayout" /> struct is correct.</summary>
         [Test]

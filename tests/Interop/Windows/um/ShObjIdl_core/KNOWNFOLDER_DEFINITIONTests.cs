@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="KNOWNFOLDER_DEFINITION" /> struct.</summary>
-    public static unsafe class KNOWNFOLDER_DEFINITIONTests
+    public static unsafe partial class KNOWNFOLDER_DEFINITIONTests
     {
         /// <summary>Validates that the <see cref="KNOWNFOLDER_DEFINITION" /> struct is blittable.</summary>
         [Test]

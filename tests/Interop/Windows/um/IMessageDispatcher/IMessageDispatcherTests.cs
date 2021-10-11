@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IMessageDispatcher" /> struct.</summary>
-    public static unsafe class IMessageDispatcherTests
+    public static unsafe partial class IMessageDispatcherTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IMessageDispatcher" /> struct is correct.</summary>
         [Test]

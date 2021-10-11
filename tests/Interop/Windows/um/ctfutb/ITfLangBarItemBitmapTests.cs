@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="ITfLangBarItemBitmap" /> struct.</summary>
-    public static unsafe class ITfLangBarItemBitmapTests
+    public static unsafe partial class ITfLangBarItemBitmapTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ITfLangBarItemBitmap" /> struct is correct.</summary>
         [Test]

@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IDisplayDeviceInterop" /> struct.</summary>
-    public static unsafe class IDisplayDeviceInteropTests
+    public static unsafe partial class IDisplayDeviceInteropTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IDisplayDeviceInterop" /> struct is correct.</summary>
         [Test]

@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="CRYPT_PKCS8_IMPORT_PARAMS" /> struct.</summary>
-    public static unsafe class CRYPT_PKCS8_IMPORT_PARAMSTests
+    public static unsafe partial class CRYPT_PKCS8_IMPORT_PARAMSTests
     {
         /// <summary>Validates that the <see cref="CRYPT_PKCS8_IMPORT_PARAMS" /> struct is blittable.</summary>
         [Test]

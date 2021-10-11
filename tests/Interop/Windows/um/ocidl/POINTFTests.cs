@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="POINTF" /> struct.</summary>
-    public static unsafe class POINTFTests
+    public static unsafe partial class POINTFTests
     {
         /// <summary>Validates that the <see cref="POINTF" /> struct is blittable.</summary>
         [Test]

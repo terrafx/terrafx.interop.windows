@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="TXFS_WRITE_BACKUP_INFORMATION" /> struct.</summary>
-    public static unsafe class TXFS_WRITE_BACKUP_INFORMATIONTests
+    public static unsafe partial class TXFS_WRITE_BACKUP_INFORMATIONTests
     {
         /// <summary>Validates that the <see cref="TXFS_WRITE_BACKUP_INFORMATION" /> struct is blittable.</summary>
         [Test]

@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="ICoreWindowAdapterInterop" /> struct.</summary>
-    public static unsafe class ICoreWindowAdapterInteropTests
+    public static unsafe partial class ICoreWindowAdapterInteropTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ICoreWindowAdapterInterop" /> struct is correct.</summary>
         [Test]

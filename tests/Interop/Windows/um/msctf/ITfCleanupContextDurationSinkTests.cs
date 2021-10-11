@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="ITfCleanupContextDurationSink" /> struct.</summary>
-    public static unsafe class ITfCleanupContextDurationSinkTests
+    public static unsafe partial class ITfCleanupContextDurationSinkTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ITfCleanupContextDurationSink" /> struct is correct.</summary>
         [Test]

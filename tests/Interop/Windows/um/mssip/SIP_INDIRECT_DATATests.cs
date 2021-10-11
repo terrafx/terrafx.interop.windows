@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="SIP_INDIRECT_DATA" /> struct.</summary>
-    public static unsafe class SIP_INDIRECT_DATATests
+    public static unsafe partial class SIP_INDIRECT_DATATests
     {
         /// <summary>Validates that the <see cref="SIP_INDIRECT_DATA" /> struct is blittable.</summary>
         [Test]

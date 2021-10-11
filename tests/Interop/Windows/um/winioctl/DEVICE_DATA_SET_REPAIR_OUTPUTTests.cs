@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="DEVICE_DATA_SET_REPAIR_OUTPUT" /> struct.</summary>
-    public static unsafe class DEVICE_DATA_SET_REPAIR_OUTPUTTests
+    public static unsafe partial class DEVICE_DATA_SET_REPAIR_OUTPUTTests
     {
         /// <summary>Validates that the <see cref="DEVICE_DATA_SET_REPAIR_OUTPUT" /> struct is blittable.</summary>
         [Test]

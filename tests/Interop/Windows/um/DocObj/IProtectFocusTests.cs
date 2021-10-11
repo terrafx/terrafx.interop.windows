@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IProtectFocus" /> struct.</summary>
-    public static unsafe class IProtectFocusTests
+    public static unsafe partial class IProtectFocusTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IProtectFocus" /> struct is correct.</summary>
         [Test]

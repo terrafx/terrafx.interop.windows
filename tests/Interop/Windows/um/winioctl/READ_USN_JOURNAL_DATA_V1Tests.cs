@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="READ_USN_JOURNAL_DATA_V1" /> struct.</summary>
-    public static unsafe class READ_USN_JOURNAL_DATA_V1Tests
+    public static unsafe partial class READ_USN_JOURNAL_DATA_V1Tests
     {
         /// <summary>Validates that the <see cref="READ_USN_JOURNAL_DATA_V1" /> struct is blittable.</summary>
         [Test]

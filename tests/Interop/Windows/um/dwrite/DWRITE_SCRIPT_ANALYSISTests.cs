@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="DWRITE_SCRIPT_ANALYSIS" /> struct.</summary>
-    public static unsafe class DWRITE_SCRIPT_ANALYSISTests
+    public static unsafe partial class DWRITE_SCRIPT_ANALYSISTests
     {
         /// <summary>Validates that the <see cref="DWRITE_SCRIPT_ANALYSIS" /> struct is blittable.</summary>
         [Test]

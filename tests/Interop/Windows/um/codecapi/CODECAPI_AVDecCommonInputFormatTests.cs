@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="CODECAPI_AVDecCommonInputFormat" /> struct.</summary>
-    public static unsafe class CODECAPI_AVDecCommonInputFormatTests
+    public static unsafe partial class CODECAPI_AVDecCommonInputFormatTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="CODECAPI_AVDecCommonInputFormat" /> struct is correct.</summary>
         [Test]

@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="WS_SERVICE_ENDPOINT_PROPERTY" /> struct.</summary>
-    public static unsafe class WS_SERVICE_ENDPOINT_PROPERTYTests
+    public static unsafe partial class WS_SERVICE_ENDPOINT_PROPERTYTests
     {
         /// <summary>Validates that the <see cref="WS_SERVICE_ENDPOINT_PROPERTY" /> struct is blittable.</summary>
         [Test]

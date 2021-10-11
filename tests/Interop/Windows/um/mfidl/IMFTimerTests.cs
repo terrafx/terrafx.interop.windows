@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IMFTimer" /> struct.</summary>
-    public static unsafe class IMFTimerTests
+    public static unsafe partial class IMFTimerTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IMFTimer" /> struct is correct.</summary>
         [Test]

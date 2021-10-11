@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IMAGE_BOUND_FORWARDER_REF" /> struct.</summary>
-    public static unsafe class IMAGE_BOUND_FORWARDER_REFTests
+    public static unsafe partial class IMAGE_BOUND_FORWARDER_REFTests
     {
         /// <summary>Validates that the <see cref="IMAGE_BOUND_FORWARDER_REF" /> struct is blittable.</summary>
         [Test]

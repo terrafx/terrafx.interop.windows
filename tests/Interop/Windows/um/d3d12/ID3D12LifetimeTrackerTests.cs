@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="ID3D12LifetimeTracker" /> struct.</summary>
-    public static unsafe class ID3D12LifetimeTrackerTests
+    public static unsafe partial class ID3D12LifetimeTrackerTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ID3D12LifetimeTracker" /> struct is correct.</summary>
         [Test]

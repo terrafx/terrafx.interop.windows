@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="ISharingConfigurationManager" /> struct.</summary>
-    public static unsafe class ISharingConfigurationManagerTests
+    public static unsafe partial class ISharingConfigurationManagerTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ISharingConfigurationManager" /> struct is correct.</summary>
         [Test]

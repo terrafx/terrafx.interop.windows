@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="TF_INPUTPROCESSORPROFILE" /> struct.</summary>
-    public static unsafe class TF_INPUTPROCESSORPROFILETests
+    public static unsafe partial class TF_INPUTPROCESSORPROFILETests
     {
         /// <summary>Validates that the <see cref="TF_INPUTPROCESSORPROFILE" /> struct is blittable.</summary>
         [Test]

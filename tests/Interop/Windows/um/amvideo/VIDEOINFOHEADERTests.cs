@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="VIDEOINFOHEADER" /> struct.</summary>
-    public static unsafe class VIDEOINFOHEADERTests
+    public static unsafe partial class VIDEOINFOHEADERTests
     {
         /// <summary>Validates that the <see cref="VIDEOINFOHEADER" /> struct is blittable.</summary>
         [Test]

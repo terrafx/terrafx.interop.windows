@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="FilgraphManager" /> struct.</summary>
-    public static unsafe class FilgraphManagerTests
+    public static unsafe partial class FilgraphManagerTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="FilgraphManager" /> struct is correct.</summary>
         [Test]

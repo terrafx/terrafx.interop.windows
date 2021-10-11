@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="JOBOBJECT_END_OF_JOB_TIME_INFORMATION" /> struct.</summary>
-    public static unsafe class JOBOBJECT_END_OF_JOB_TIME_INFORMATIONTests
+    public static unsafe partial class JOBOBJECT_END_OF_JOB_TIME_INFORMATIONTests
     {
         /// <summary>Validates that the <see cref="JOBOBJECT_END_OF_JOB_TIME_INFORMATION" /> struct is blittable.</summary>
         [Test]

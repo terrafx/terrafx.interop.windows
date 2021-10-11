@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="WAVEINCAPS2W" /> struct.</summary>
-    public static unsafe class WAVEINCAPS2WTests
+    public static unsafe partial class WAVEINCAPS2WTests
     {
         /// <summary>Validates that the <see cref="WAVEINCAPS2W" /> struct is blittable.</summary>
         [Test]

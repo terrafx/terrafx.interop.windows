@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="VirtualDesktopManager" /> struct.</summary>
-    public static unsafe class VirtualDesktopManagerTests
+    public static unsafe partial class VirtualDesktopManagerTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="VirtualDesktopManager" /> struct is correct.</summary>
         [Test]

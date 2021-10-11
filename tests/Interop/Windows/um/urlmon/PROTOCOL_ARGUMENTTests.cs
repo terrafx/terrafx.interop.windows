@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="PROTOCOL_ARGUMENT" /> struct.</summary>
-    public static unsafe class PROTOCOL_ARGUMENTTests
+    public static unsafe partial class PROTOCOL_ARGUMENTTests
     {
         /// <summary>Validates that the <see cref="PROTOCOL_ARGUMENT" /> struct is blittable.</summary>
         [Test]

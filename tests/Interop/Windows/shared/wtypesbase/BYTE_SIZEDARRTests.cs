@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="BYTE_SIZEDARR" /> struct.</summary>
-    public static unsafe class BYTE_SIZEDARRTests
+    public static unsafe partial class BYTE_SIZEDARRTests
     {
         /// <summary>Validates that the <see cref="BYTE_SIZEDARR" /> struct is blittable.</summary>
         [Test]

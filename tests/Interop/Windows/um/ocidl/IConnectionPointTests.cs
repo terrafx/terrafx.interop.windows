@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IConnectionPoint" /> struct.</summary>
-    public static unsafe class IConnectionPointTests
+    public static unsafe partial class IConnectionPointTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IConnectionPoint" /> struct is correct.</summary>
         [Test]

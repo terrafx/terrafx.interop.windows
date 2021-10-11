@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IMFNetCrossOriginSupport" /> struct.</summary>
-    public static unsafe class IMFNetCrossOriginSupportTests
+    public static unsafe partial class IMFNetCrossOriginSupportTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IMFNetCrossOriginSupport" /> struct is correct.</summary>
         [Test]

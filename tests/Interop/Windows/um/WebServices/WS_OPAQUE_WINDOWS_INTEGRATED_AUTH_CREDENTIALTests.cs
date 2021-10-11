@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="WS_OPAQUE_WINDOWS_INTEGRATED_AUTH_CREDENTIAL" /> struct.</summary>
-    public static unsafe class WS_OPAQUE_WINDOWS_INTEGRATED_AUTH_CREDENTIALTests
+    public static unsafe partial class WS_OPAQUE_WINDOWS_INTEGRATED_AUTH_CREDENTIALTests
     {
         /// <summary>Validates that the <see cref="WS_OPAQUE_WINDOWS_INTEGRATED_AUTH_CREDENTIAL" /> struct is blittable.</summary>
         [Test]

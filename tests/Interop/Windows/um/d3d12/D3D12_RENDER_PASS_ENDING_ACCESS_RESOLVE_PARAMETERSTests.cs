@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="D3D12_RENDER_PASS_ENDING_ACCESS_RESOLVE_PARAMETERS" /> struct.</summary>
-    public static unsafe class D3D12_RENDER_PASS_ENDING_ACCESS_RESOLVE_PARAMETERSTests
+    public static unsafe partial class D3D12_RENDER_PASS_ENDING_ACCESS_RESOLVE_PARAMETERSTests
     {
         /// <summary>Validates that the <see cref="D3D12_RENDER_PASS_ENDING_ACCESS_RESOLVE_PARAMETERS" /> struct is blittable.</summary>
         [Test]

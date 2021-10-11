@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="SP_DRVINSTALL_PARAMS" /> struct.</summary>
-    public static unsafe class SP_DRVINSTALL_PARAMSTests
+    public static unsafe partial class SP_DRVINSTALL_PARAMSTests
     {
         /// <summary>Validates that the <see cref="SP_DRVINSTALL_PARAMS" /> struct is blittable.</summary>
         [Test]

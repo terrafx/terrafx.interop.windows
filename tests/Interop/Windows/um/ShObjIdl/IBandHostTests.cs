@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IBandHost" /> struct.</summary>
-    public static unsafe class IBandHostTests
+    public static unsafe partial class IBandHostTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IBandHost" /> struct is correct.</summary>
         [Test]

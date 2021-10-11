@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="D3D12_FEATURE_DATA_CROSS_NODE" /> struct.</summary>
-    public static unsafe class D3D12_FEATURE_DATA_CROSS_NODETests
+    public static unsafe partial class D3D12_FEATURE_DATA_CROSS_NODETests
     {
         /// <summary>Validates that the <see cref="D3D12_FEATURE_DATA_CROSS_NODE" /> struct is blittable.</summary>
         [Test]

@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="DriveSizeCategorizer" /> struct.</summary>
-    public static unsafe class DriveSizeCategorizerTests
+    public static unsafe partial class DriveSizeCategorizerTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="DriveSizeCategorizer" /> struct is correct.</summary>
         [Test]

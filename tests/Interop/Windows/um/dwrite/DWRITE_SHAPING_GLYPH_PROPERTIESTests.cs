@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="DWRITE_SHAPING_GLYPH_PROPERTIES" /> struct.</summary>
-    public static unsafe class DWRITE_SHAPING_GLYPH_PROPERTIESTests
+    public static unsafe partial class DWRITE_SHAPING_GLYPH_PROPERTIESTests
     {
         /// <summary>Validates that the <see cref="DWRITE_SHAPING_GLYPH_PROPERTIES" /> struct is blittable.</summary>
         [Test]

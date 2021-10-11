@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="RPCOLEMESSAGE" /> struct.</summary>
-    public static unsafe class RPCOLEMESSAGETests
+    public static unsafe partial class RPCOLEMESSAGETests
     {
         /// <summary>Validates that the <see cref="RPCOLEMESSAGE" /> struct is blittable.</summary>
         [Test]

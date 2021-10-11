@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="GLYPHSET" /> struct.</summary>
-    public static unsafe class GLYPHSETTests
+    public static unsafe partial class GLYPHSETTests
     {
         /// <summary>Validates that the <see cref="GLYPHSET" /> struct is blittable.</summary>
         [Test]

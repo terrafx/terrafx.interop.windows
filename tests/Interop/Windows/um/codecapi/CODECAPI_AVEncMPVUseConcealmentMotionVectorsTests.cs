@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="CODECAPI_AVEncMPVUseConcealmentMotionVectors" /> struct.</summary>
-    public static unsafe class CODECAPI_AVEncMPVUseConcealmentMotionVectorsTests
+    public static unsafe partial class CODECAPI_AVEncMPVUseConcealmentMotionVectorsTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="CODECAPI_AVEncMPVUseConcealmentMotionVectors" /> struct is correct.</summary>
         [Test]

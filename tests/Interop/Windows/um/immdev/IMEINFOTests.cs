@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IMEINFO" /> struct.</summary>
-    public static unsafe class IMEINFOTests
+    public static unsafe partial class IMEINFOTests
     {
         /// <summary>Validates that the <see cref="IMEINFO" /> struct is blittable.</summary>
         [Test]

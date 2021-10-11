@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="D2D1_GRADIENT_STOP" /> struct.</summary>
-    public static unsafe class D2D1_GRADIENT_STOPTests
+    public static unsafe partial class D2D1_GRADIENT_STOPTests
     {
         /// <summary>Validates that the <see cref="D2D1_GRADIENT_STOP" /> struct is blittable.</summary>
         [Test]

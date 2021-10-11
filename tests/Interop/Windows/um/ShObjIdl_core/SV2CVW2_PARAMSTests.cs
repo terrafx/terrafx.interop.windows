@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="SV2CVW2_PARAMS" /> struct.</summary>
-    public static unsafe class SV2CVW2_PARAMSTests
+    public static unsafe partial class SV2CVW2_PARAMSTests
     {
         /// <summary>Validates that the <see cref="SV2CVW2_PARAMS" /> struct is blittable.</summary>
         [Test]

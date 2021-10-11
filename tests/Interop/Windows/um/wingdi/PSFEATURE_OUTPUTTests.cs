@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="PSFEATURE_OUTPUT" /> struct.</summary>
-    public static unsafe class PSFEATURE_OUTPUTTests
+    public static unsafe partial class PSFEATURE_OUTPUTTests
     {
         /// <summary>Validates that the <see cref="PSFEATURE_OUTPUT" /> struct is blittable.</summary>
         [Test]

@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="HMAC_Info" /> struct.</summary>
-    public static unsafe class HMAC_InfoTests
+    public static unsafe partial class HMAC_InfoTests
     {
         /// <summary>Validates that the <see cref="HMAC_Info" /> struct is blittable.</summary>
         [Test]

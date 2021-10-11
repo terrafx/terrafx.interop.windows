@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IAppxBlockMapFilesEnumerator" /> struct.</summary>
-    public static unsafe class IAppxBlockMapFilesEnumeratorTests
+    public static unsafe partial class IAppxBlockMapFilesEnumeratorTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IAppxBlockMapFilesEnumerator" /> struct is correct.</summary>
         [Test]

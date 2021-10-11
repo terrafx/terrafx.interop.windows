@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IMPEG2StreamIdMap" /> struct.</summary>
-    public static unsafe class IMPEG2StreamIdMapTests
+    public static unsafe partial class IMPEG2StreamIdMapTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IMPEG2StreamIdMap" /> struct is correct.</summary>
         [Test]

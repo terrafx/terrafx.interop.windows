@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="GP_LOG_PAGE_DESCRIPTOR" /> struct.</summary>
-    public static unsafe class GP_LOG_PAGE_DESCRIPTORTests
+    public static unsafe partial class GP_LOG_PAGE_DESCRIPTORTests
     {
         /// <summary>Validates that the <see cref="GP_LOG_PAGE_DESCRIPTOR" /> struct is blittable.</summary>
         [Test]

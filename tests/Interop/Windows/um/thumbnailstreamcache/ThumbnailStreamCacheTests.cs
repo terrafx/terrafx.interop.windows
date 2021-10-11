@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="ThumbnailStreamCache" /> struct.</summary>
-    public static unsafe class ThumbnailStreamCacheTests
+    public static unsafe partial class ThumbnailStreamCacheTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ThumbnailStreamCache" /> struct is correct.</summary>
         [Test]

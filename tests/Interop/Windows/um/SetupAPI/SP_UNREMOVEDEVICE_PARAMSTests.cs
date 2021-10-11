@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="SP_UNREMOVEDEVICE_PARAMS" /> struct.</summary>
-    public static unsafe class SP_UNREMOVEDEVICE_PARAMSTests
+    public static unsafe partial class SP_UNREMOVEDEVICE_PARAMSTests
     {
         /// <summary>Validates that the <see cref="SP_UNREMOVEDEVICE_PARAMS" /> struct is blittable.</summary>
         [Test]

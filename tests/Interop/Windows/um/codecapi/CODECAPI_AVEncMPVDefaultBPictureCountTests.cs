@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="CODECAPI_AVEncMPVDefaultBPictureCount" /> struct.</summary>
-    public static unsafe class CODECAPI_AVEncMPVDefaultBPictureCountTests
+    public static unsafe partial class CODECAPI_AVEncMPVDefaultBPictureCountTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="CODECAPI_AVEncMPVDefaultBPictureCount" /> struct is correct.</summary>
         [Test]

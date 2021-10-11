@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="ENCLAVE_CREATE_INFO_SGX" /> struct.</summary>
-    public static unsafe class ENCLAVE_CREATE_INFO_SGXTests
+    public static unsafe partial class ENCLAVE_CREATE_INFO_SGXTests
     {
         /// <summary>Validates that the <see cref="ENCLAVE_CREATE_INFO_SGX" /> struct is blittable.</summary>
         [Test]

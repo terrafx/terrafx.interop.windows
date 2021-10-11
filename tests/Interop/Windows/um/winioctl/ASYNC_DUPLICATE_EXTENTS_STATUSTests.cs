@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="ASYNC_DUPLICATE_EXTENTS_STATUS" /> struct.</summary>
-    public static unsafe class ASYNC_DUPLICATE_EXTENTS_STATUSTests
+    public static unsafe partial class ASYNC_DUPLICATE_EXTENTS_STATUSTests
     {
         /// <summary>Validates that the <see cref="ASYNC_DUPLICATE_EXTENTS_STATUS" /> struct is blittable.</summary>
         [Test]

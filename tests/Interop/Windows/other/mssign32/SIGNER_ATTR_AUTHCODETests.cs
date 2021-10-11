@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="SIGNER_ATTR_AUTHCODE" /> struct.</summary>
-    public static unsafe class SIGNER_ATTR_AUTHCODETests
+    public static unsafe partial class SIGNER_ATTR_AUTHCODETests
     {
         /// <summary>Validates that the <see cref="SIGNER_ATTR_AUTHCODE" /> struct is blittable.</summary>
         [Test]

@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="NT_TIB64" /> struct.</summary>
-    public static unsafe class NT_TIB64Tests
+    public static unsafe partial class NT_TIB64Tests
     {
         /// <summary>Validates that the <see cref="NT_TIB64" /> struct is blittable.</summary>
         [Test]

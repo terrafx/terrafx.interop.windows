@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IHolographicCameraInterop" /> struct.</summary>
-    public static unsafe class IHolographicCameraInteropTests
+    public static unsafe partial class IHolographicCameraInteropTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IHolographicCameraInterop" /> struct is correct.</summary>
         [Test]

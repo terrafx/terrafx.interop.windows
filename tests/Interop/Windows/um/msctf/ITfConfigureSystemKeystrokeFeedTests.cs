@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="ITfConfigureSystemKeystrokeFeed" /> struct.</summary>
-    public static unsafe class ITfConfigureSystemKeystrokeFeedTests
+    public static unsafe partial class ITfConfigureSystemKeystrokeFeedTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ITfConfigureSystemKeystrokeFeed" /> struct is correct.</summary>
         [Test]

@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="ENCRYPTED_LM_OWF_PASSWORD" /> struct.</summary>
-    public static unsafe class ENCRYPTED_LM_OWF_PASSWORDTests
+    public static unsafe partial class ENCRYPTED_LM_OWF_PASSWORDTests
     {
         /// <summary>Validates that the <see cref="ENCRYPTED_LM_OWF_PASSWORD" /> struct is blittable.</summary>
         [Test]

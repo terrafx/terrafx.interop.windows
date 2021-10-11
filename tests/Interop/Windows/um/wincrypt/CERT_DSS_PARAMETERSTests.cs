@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="CERT_DSS_PARAMETERS" /> struct.</summary>
-    public static unsafe class CERT_DSS_PARAMETERSTests
+    public static unsafe partial class CERT_DSS_PARAMETERSTests
     {
         /// <summary>Validates that the <see cref="CERT_DSS_PARAMETERS" /> struct is blittable.</summary>
         [Test]

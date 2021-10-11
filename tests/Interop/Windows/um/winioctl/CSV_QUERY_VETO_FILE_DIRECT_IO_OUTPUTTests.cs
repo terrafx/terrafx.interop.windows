@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="CSV_QUERY_VETO_FILE_DIRECT_IO_OUTPUT" /> struct.</summary>
-    public static unsafe class CSV_QUERY_VETO_FILE_DIRECT_IO_OUTPUTTests
+    public static unsafe partial class CSV_QUERY_VETO_FILE_DIRECT_IO_OUTPUTTests
     {
         /// <summary>Validates that the <see cref="CSV_QUERY_VETO_FILE_DIRECT_IO_OUTPUT" /> struct is blittable.</summary>
         [Test]

@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="SCHANNEL_CLIENT_SIGNATURE" /> struct.</summary>
-    public static unsafe class SCHANNEL_CLIENT_SIGNATURETests
+    public static unsafe partial class SCHANNEL_CLIENT_SIGNATURETests
     {
         /// <summary>Validates that the <see cref="SCHANNEL_CLIENT_SIGNATURE" /> struct is blittable.</summary>
         [Test]

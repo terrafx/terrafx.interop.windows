@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="ISimpleAudioVolume" /> struct.</summary>
-    public static unsafe class ISimpleAudioVolumeTests
+    public static unsafe partial class ISimpleAudioVolumeTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ISimpleAudioVolume" /> struct is correct.</summary>
         [Test]

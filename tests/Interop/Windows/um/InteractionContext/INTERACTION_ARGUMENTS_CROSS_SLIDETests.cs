@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="INTERACTION_ARGUMENTS_CROSS_SLIDE" /> struct.</summary>
-    public static unsafe class INTERACTION_ARGUMENTS_CROSS_SLIDETests
+    public static unsafe partial class INTERACTION_ARGUMENTS_CROSS_SLIDETests
     {
         /// <summary>Validates that the <see cref="INTERACTION_ARGUMENTS_CROSS_SLIDE" /> struct is blittable.</summary>
         [Test]

@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="AM_AC3_ROOM_TYPE" /> struct.</summary>
-    public static unsafe class AM_AC3_ROOM_TYPETests
+    public static unsafe partial class AM_AC3_ROOM_TYPETests
     {
         /// <summary>Validates that the <see cref="AM_AC3_ROOM_TYPE" /> struct is blittable.</summary>
         [Test]

@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="ISyncMgrScheduleWizardUIOperation" /> struct.</summary>
-    public static unsafe class ISyncMgrScheduleWizardUIOperationTests
+    public static unsafe partial class ISyncMgrScheduleWizardUIOperationTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ISyncMgrScheduleWizardUIOperation" /> struct is correct.</summary>
         [Test]

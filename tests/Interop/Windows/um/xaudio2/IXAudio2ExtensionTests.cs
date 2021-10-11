@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IXAudio2Extension" /> struct.</summary>
-    public static unsafe class IXAudio2ExtensionTests
+    public static unsafe partial class IXAudio2ExtensionTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IXAudio2Extension" /> struct is correct.</summary>
         [Test]

@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IDrawVideoImage" /> struct.</summary>
-    public static unsafe class IDrawVideoImageTests
+    public static unsafe partial class IDrawVideoImageTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IDrawVideoImage" /> struct is correct.</summary>
         [Test]

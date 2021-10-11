@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="MEMORYSTATUS" /> struct.</summary>
-    public static unsafe class MEMORYSTATUSTests
+    public static unsafe partial class MEMORYSTATUSTests
     {
         /// <summary>Validates that the <see cref="MEMORYSTATUS" /> struct is blittable.</summary>
         [Test]

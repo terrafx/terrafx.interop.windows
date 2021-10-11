@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="EMRSETMITERLIMIT" /> struct.</summary>
-    public static unsafe class EMRSETMITERLIMITTests
+    public static unsafe partial class EMRSETMITERLIMITTests
     {
         /// <summary>Validates that the <see cref="EMRSETMITERLIMIT" /> struct is blittable.</summary>
         [Test]

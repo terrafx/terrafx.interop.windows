@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="DXGI_OUTDUPL_POINTER_SHAPE_INFO" /> struct.</summary>
-    public static unsafe class DXGI_OUTDUPL_POINTER_SHAPE_INFOTests
+    public static unsafe partial class DXGI_OUTDUPL_POINTER_SHAPE_INFOTests
     {
         /// <summary>Validates that the <see cref="DXGI_OUTDUPL_POINTER_SHAPE_INFO" /> struct is blittable.</summary>
         [Test]

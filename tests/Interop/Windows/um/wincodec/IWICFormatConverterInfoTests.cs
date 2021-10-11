@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IWICFormatConverterInfo" /> struct.</summary>
-    public static unsafe class IWICFormatConverterInfoTests
+    public static unsafe partial class IWICFormatConverterInfoTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IWICFormatConverterInfo" /> struct is correct.</summary>
         [Test]

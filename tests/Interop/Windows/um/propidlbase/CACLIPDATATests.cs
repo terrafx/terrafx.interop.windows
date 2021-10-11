@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="CACLIPDATA" /> struct.</summary>
-    public static unsafe class CACLIPDATATests
+    public static unsafe partial class CACLIPDATATests
     {
         /// <summary>Validates that the <see cref="CACLIPDATA" /> struct is blittable.</summary>
         [Test]

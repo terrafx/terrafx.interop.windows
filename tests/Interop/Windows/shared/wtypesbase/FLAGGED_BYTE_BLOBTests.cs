@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="FLAGGED_BYTE_BLOB" /> struct.</summary>
-    public static unsafe class FLAGGED_BYTE_BLOBTests
+    public static unsafe partial class FLAGGED_BYTE_BLOBTests
     {
         /// <summary>Validates that the <see cref="FLAGGED_BYTE_BLOB" /> struct is blittable.</summary>
         [Test]

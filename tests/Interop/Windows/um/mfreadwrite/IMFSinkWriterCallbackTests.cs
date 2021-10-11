@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IMFSinkWriterCallback" /> struct.</summary>
-    public static unsafe class IMFSinkWriterCallbackTests
+    public static unsafe partial class IMFSinkWriterCallbackTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IMFSinkWriterCallback" /> struct is correct.</summary>
         [Test]

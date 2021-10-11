@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="CONTRESVQLPCWAVEFORMAT" /> struct.</summary>
-    public static unsafe class CONTRESVQLPCWAVEFORMATTests
+    public static unsafe partial class CONTRESVQLPCWAVEFORMATTests
     {
         /// <summary>Validates that the <see cref="CONTRESVQLPCWAVEFORMAT" /> struct is blittable.</summary>
         [Test]

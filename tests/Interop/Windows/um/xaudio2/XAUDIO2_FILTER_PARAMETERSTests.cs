@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="XAUDIO2_FILTER_PARAMETERS" /> struct.</summary>
-    public static unsafe class XAUDIO2_FILTER_PARAMETERSTests
+    public static unsafe partial class XAUDIO2_FILTER_PARAMETERSTests
     {
         /// <summary>Validates that the <see cref="XAUDIO2_FILTER_PARAMETERS" /> struct is blittable.</summary>
         [Test]

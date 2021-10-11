@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="TIMECODE" /> struct.</summary>
-    public static unsafe class TIMECODETests
+    public static unsafe partial class TIMECODETests
     {
         /// <summary>Validates that the <see cref="TIMECODE" /> struct is blittable.</summary>
         [Test]

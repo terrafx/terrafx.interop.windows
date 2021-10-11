@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="EMRFORMAT" /> struct.</summary>
-    public static unsafe class EMRFORMATTests
+    public static unsafe partial class EMRFORMATTests
     {
         /// <summary>Validates that the <see cref="EMRFORMAT" /> struct is blittable.</summary>
         [Test]

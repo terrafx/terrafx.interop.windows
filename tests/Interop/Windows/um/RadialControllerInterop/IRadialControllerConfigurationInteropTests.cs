@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IRadialControllerConfigurationInterop" /> struct.</summary>
-    public static unsafe class IRadialControllerConfigurationInteropTests
+    public static unsafe partial class IRadialControllerConfigurationInteropTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IRadialControllerConfigurationInterop" /> struct is correct.</summary>
         [Test]

@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="ISpatialAudioMetadataClient" /> struct.</summary>
-    public static unsafe class ISpatialAudioMetadataClientTests
+    public static unsafe partial class ISpatialAudioMetadataClientTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ISpatialAudioMetadataClient" /> struct is correct.</summary>
         [Test]

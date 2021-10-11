@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="FLASHWINFO" /> struct.</summary>
-    public static unsafe class FLASHWINFOTests
+    public static unsafe partial class FLASHWINFOTests
     {
         /// <summary>Validates that the <see cref="FLASHWINFO" /> struct is blittable.</summary>
         [Test]

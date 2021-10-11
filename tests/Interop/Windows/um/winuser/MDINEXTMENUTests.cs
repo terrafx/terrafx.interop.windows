@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="MDINEXTMENU" /> struct.</summary>
-    public static unsafe class MDINEXTMENUTests
+    public static unsafe partial class MDINEXTMENUTests
     {
         /// <summary>Validates that the <see cref="MDINEXTMENU" /> struct is blittable.</summary>
         [Test]

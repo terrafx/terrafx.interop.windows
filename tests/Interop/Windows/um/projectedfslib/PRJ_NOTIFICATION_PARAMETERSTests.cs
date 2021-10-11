@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="PRJ_NOTIFICATION_PARAMETERS" /> struct.</summary>
-    public static unsafe class PRJ_NOTIFICATION_PARAMETERSTests
+    public static unsafe partial class PRJ_NOTIFICATION_PARAMETERSTests
     {
         /// <summary>Validates that the <see cref="PRJ_NOTIFICATION_PARAMETERS" /> struct is blittable.</summary>
         [Test]

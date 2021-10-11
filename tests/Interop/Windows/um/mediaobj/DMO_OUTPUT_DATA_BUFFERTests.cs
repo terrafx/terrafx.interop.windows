@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="DMO_OUTPUT_DATA_BUFFER" /> struct.</summary>
-    public static unsafe class DMO_OUTPUT_DATA_BUFFERTests
+    public static unsafe partial class DMO_OUTPUT_DATA_BUFFERTests
     {
         /// <summary>Validates that the <see cref="DMO_OUTPUT_DATA_BUFFER" /> struct is blittable.</summary>
         [Test]

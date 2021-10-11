@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="APPX_PACKAGE_WRITER_PAYLOAD_STREAM" /> struct.</summary>
-    public static unsafe class APPX_PACKAGE_WRITER_PAYLOAD_STREAMTests
+    public static unsafe partial class APPX_PACKAGE_WRITER_PAYLOAD_STREAMTests
     {
         /// <summary>Validates that the <see cref="APPX_PACKAGE_WRITER_PAYLOAD_STREAM" /> struct is blittable.</summary>
         [Test]

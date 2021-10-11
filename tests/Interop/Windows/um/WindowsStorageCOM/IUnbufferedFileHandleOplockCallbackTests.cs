@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IUnbufferedFileHandleOplockCallback" /> struct.</summary>
-    public static unsafe class IUnbufferedFileHandleOplockCallbackTests
+    public static unsafe partial class IUnbufferedFileHandleOplockCallbackTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IUnbufferedFileHandleOplockCallback" /> struct is correct.</summary>
         [Test]

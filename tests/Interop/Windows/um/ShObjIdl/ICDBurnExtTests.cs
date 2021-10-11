@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="ICDBurnExt" /> struct.</summary>
-    public static unsafe class ICDBurnExtTests
+    public static unsafe partial class ICDBurnExtTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ICDBurnExt" /> struct is correct.</summary>
         [Test]

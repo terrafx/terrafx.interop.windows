@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IWICBitmapEncoder" /> struct.</summary>
-    public static unsafe class IWICBitmapEncoderTests
+    public static unsafe partial class IWICBitmapEncoderTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IWICBitmapEncoder" /> struct is correct.</summary>
         [Test]

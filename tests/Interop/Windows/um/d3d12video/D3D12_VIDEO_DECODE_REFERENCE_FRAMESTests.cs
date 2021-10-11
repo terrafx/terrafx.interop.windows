@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="D3D12_VIDEO_DECODE_REFERENCE_FRAMES" /> struct.</summary>
-    public static unsafe class D3D12_VIDEO_DECODE_REFERENCE_FRAMESTests
+    public static unsafe partial class D3D12_VIDEO_DECODE_REFERENCE_FRAMESTests
     {
         /// <summary>Validates that the <see cref="D3D12_VIDEO_DECODE_REFERENCE_FRAMES" /> struct is blittable.</summary>
         [Test]

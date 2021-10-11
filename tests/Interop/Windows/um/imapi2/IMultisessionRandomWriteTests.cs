@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IMultisessionRandomWrite" /> struct.</summary>
-    public static unsafe class IMultisessionRandomWriteTests
+    public static unsafe partial class IMultisessionRandomWriteTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IMultisessionRandomWrite" /> struct is correct.</summary>
         [Test]

@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IFileOperation" /> struct.</summary>
-    public static unsafe class IFileOperationTests
+    public static unsafe partial class IFileOperationTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IFileOperation" /> struct is correct.</summary>
         [Test]

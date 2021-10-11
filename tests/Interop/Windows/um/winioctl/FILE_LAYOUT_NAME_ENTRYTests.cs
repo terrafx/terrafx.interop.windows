@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="FILE_LAYOUT_NAME_ENTRY" /> struct.</summary>
-    public static unsafe class FILE_LAYOUT_NAME_ENTRYTests
+    public static unsafe partial class FILE_LAYOUT_NAME_ENTRYTests
     {
         /// <summary>Validates that the <see cref="FILE_LAYOUT_NAME_ENTRY" /> struct is blittable.</summary>
         [Test]

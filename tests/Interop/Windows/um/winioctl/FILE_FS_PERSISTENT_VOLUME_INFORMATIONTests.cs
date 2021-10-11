@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="FILE_FS_PERSISTENT_VOLUME_INFORMATION" /> struct.</summary>
-    public static unsafe class FILE_FS_PERSISTENT_VOLUME_INFORMATIONTests
+    public static unsafe partial class FILE_FS_PERSISTENT_VOLUME_INFORMATIONTests
     {
         /// <summary>Validates that the <see cref="FILE_FS_PERSISTENT_VOLUME_INFORMATION" /> struct is blittable.</summary>
         [Test]

@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="D3D12_FEATURE_DATA_COMMAND_QUEUE_PRIORITY" /> struct.</summary>
-    public static unsafe class D3D12_FEATURE_DATA_COMMAND_QUEUE_PRIORITYTests
+    public static unsafe partial class D3D12_FEATURE_DATA_COMMAND_QUEUE_PRIORITYTests
     {
         /// <summary>Validates that the <see cref="D3D12_FEATURE_DATA_COMMAND_QUEUE_PRIORITY" /> struct is blittable.</summary>
         [Test]

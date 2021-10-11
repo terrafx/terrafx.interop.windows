@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="FILE_QUERY_SPARING_BUFFER" /> struct.</summary>
-    public static unsafe class FILE_QUERY_SPARING_BUFFERTests
+    public static unsafe partial class FILE_QUERY_SPARING_BUFFERTests
     {
         /// <summary>Validates that the <see cref="FILE_QUERY_SPARING_BUFFER" /> struct is blittable.</summary>
         [Test]

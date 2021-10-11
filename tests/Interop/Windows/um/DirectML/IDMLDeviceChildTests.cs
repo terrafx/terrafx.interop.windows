@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IDMLDeviceChild" /> struct.</summary>
-    public static unsafe class IDMLDeviceChildTests
+    public static unsafe partial class IDMLDeviceChildTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IDMLDeviceChild" /> struct is correct.</summary>
         [Test]

@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IEnumTfInputProcessorProfiles" /> struct.</summary>
-    public static unsafe class IEnumTfInputProcessorProfilesTests
+    public static unsafe partial class IEnumTfInputProcessorProfilesTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IEnumTfInputProcessorProfiles" /> struct is correct.</summary>
         [Test]

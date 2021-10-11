@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="CREATE_DISK_GPT" /> struct.</summary>
-    public static unsafe class CREATE_DISK_GPTTests
+    public static unsafe partial class CREATE_DISK_GPTTests
     {
         /// <summary>Validates that the <see cref="CREATE_DISK_GPT" /> struct is blittable.</summary>
         [Test]

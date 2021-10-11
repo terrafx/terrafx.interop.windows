@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="D3D10_QUERY_DATA_PIPELINE_STATISTICS" /> struct.</summary>
-    public static unsafe class D3D10_QUERY_DATA_PIPELINE_STATISTICSTests
+    public static unsafe partial class D3D10_QUERY_DATA_PIPELINE_STATISTICSTests
     {
         /// <summary>Validates that the <see cref="D3D10_QUERY_DATA_PIPELINE_STATISTICS" /> struct is blittable.</summary>
         [Test]

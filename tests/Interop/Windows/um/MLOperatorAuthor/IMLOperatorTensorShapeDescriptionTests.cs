@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IMLOperatorTensorShapeDescription" /> struct.</summary>
-    public static unsafe class IMLOperatorTensorShapeDescriptionTests
+    public static unsafe partial class IMLOperatorTensorShapeDescriptionTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IMLOperatorTensorShapeDescription" /> struct is correct.</summary>
         [Test]

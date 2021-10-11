@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="DEVICE_DATA_SET_TOPOLOGY_ID_QUERY_OUTPUT" /> struct.</summary>
-    public static unsafe class DEVICE_DATA_SET_TOPOLOGY_ID_QUERY_OUTPUTTests
+    public static unsafe partial class DEVICE_DATA_SET_TOPOLOGY_ID_QUERY_OUTPUTTests
     {
         /// <summary>Validates that the <see cref="DEVICE_DATA_SET_TOPOLOGY_ID_QUERY_OUTPUT" /> struct is blittable.</summary>
         [Test]

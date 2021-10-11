@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="TRUESPEECHWAVEFORMAT" /> struct.</summary>
-    public static unsafe class TRUESPEECHWAVEFORMATTests
+    public static unsafe partial class TRUESPEECHWAVEFORMATTests
     {
         /// <summary>Validates that the <see cref="TRUESPEECHWAVEFORMAT" /> struct is blittable.</summary>
         [Test]

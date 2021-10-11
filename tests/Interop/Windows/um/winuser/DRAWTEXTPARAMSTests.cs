@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="DRAWTEXTPARAMS" /> struct.</summary>
-    public static unsafe class DRAWTEXTPARAMSTests
+    public static unsafe partial class DRAWTEXTPARAMSTests
     {
         /// <summary>Validates that the <see cref="DRAWTEXTPARAMS" /> struct is blittable.</summary>
         [Test]

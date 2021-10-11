@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IPdfRendererNative" /> struct.</summary>
-    public static unsafe class IPdfRendererNativeTests
+    public static unsafe partial class IPdfRendererNativeTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IPdfRendererNative" /> struct is correct.</summary>
         [Test]

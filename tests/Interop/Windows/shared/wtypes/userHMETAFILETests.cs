@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="userHMETAFILE" /> struct.</summary>
-    public static unsafe class userHMETAFILETests
+    public static unsafe partial class userHMETAFILETests
     {
         /// <summary>Validates that the <see cref="userHMETAFILE" /> struct is blittable.</summary>
         [Test]

@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="DISPLAYCONFIG_SDR_WHITE_LEVEL" /> struct.</summary>
-    public static unsafe class DISPLAYCONFIG_SDR_WHITE_LEVELTests
+    public static unsafe partial class DISPLAYCONFIG_SDR_WHITE_LEVELTests
     {
         /// <summary>Validates that the <see cref="DISPLAYCONFIG_SDR_WHITE_LEVEL" /> struct is blittable.</summary>
         [Test]

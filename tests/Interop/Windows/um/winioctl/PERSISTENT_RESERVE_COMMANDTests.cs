@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="PERSISTENT_RESERVE_COMMAND" /> struct.</summary>
-    public static unsafe class PERSISTENT_RESERVE_COMMANDTests
+    public static unsafe partial class PERSISTENT_RESERVE_COMMANDTests
     {
         /// <summary>Validates that the <see cref="PERSISTENT_RESERVE_COMMAND" /> struct is blittable.</summary>
         [Test]

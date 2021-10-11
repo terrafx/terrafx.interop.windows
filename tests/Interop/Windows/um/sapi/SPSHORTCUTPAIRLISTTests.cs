@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="SPSHORTCUTPAIRLIST" /> struct.</summary>
-    public static unsafe class SPSHORTCUTPAIRLISTTests
+    public static unsafe partial class SPSHORTCUTPAIRLISTTests
     {
         /// <summary>Validates that the <see cref="SPSHORTCUTPAIRLIST" /> struct is blittable.</summary>
         [Test]

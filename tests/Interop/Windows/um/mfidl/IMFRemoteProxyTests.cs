@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IMFRemoteProxy" /> struct.</summary>
-    public static unsafe class IMFRemoteProxyTests
+    public static unsafe partial class IMFRemoteProxyTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IMFRemoteProxy" /> struct is correct.</summary>
         [Test]

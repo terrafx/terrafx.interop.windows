@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="ARRAYDESC" /> struct.</summary>
-    public static unsafe class ARRAYDESCTests
+    public static unsafe partial class ARRAYDESCTests
     {
         /// <summary>Validates that the <see cref="ARRAYDESC" /> struct is blittable.</summary>
         [Test]

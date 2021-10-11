@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="RID_DEVICE_INFO_HID" /> struct.</summary>
-    public static unsafe class RID_DEVICE_INFO_HIDTests
+    public static unsafe partial class RID_DEVICE_INFO_HIDTests
     {
         /// <summary>Validates that the <see cref="RID_DEVICE_INFO_HID" /> struct is blittable.</summary>
         [Test]

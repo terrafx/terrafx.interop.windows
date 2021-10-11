@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="MF_LEAKY_BUCKET_PAIR" /> struct.</summary>
-    public static unsafe class MF_LEAKY_BUCKET_PAIRTests
+    public static unsafe partial class MF_LEAKY_BUCKET_PAIRTests
     {
         /// <summary>Validates that the <see cref="MF_LEAKY_BUCKET_PAIR" /> struct is blittable.</summary>
         [Test]

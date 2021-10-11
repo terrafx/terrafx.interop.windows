@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="CODECAPI_GUID_AVEncCommonFormatDVD_DashVR" /> struct.</summary>
-    public static unsafe class CODECAPI_GUID_AVEncCommonFormatDVD_DashVRTests
+    public static unsafe partial class CODECAPI_GUID_AVEncCommonFormatDVD_DashVRTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="CODECAPI_GUID_AVEncCommonFormatDVD_DashVR" /> struct is correct.</summary>
         [Test]

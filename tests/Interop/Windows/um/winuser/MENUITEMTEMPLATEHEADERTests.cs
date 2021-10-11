@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="MENUITEMTEMPLATEHEADER" /> struct.</summary>
-    public static unsafe class MENUITEMTEMPLATEHEADERTests
+    public static unsafe partial class MENUITEMTEMPLATEHEADERTests
     {
         /// <summary>Validates that the <see cref="MENUITEMTEMPLATEHEADER" /> struct is blittable.</summary>
         [Test]

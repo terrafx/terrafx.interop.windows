@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="CREATIVEFASTSPEECH10WAVEFORMAT" /> struct.</summary>
-    public static unsafe class CREATIVEFASTSPEECH10WAVEFORMATTests
+    public static unsafe partial class CREATIVEFASTSPEECH10WAVEFORMATTests
     {
         /// <summary>Validates that the <see cref="CREATIVEFASTSPEECH10WAVEFORMAT" /> struct is blittable.</summary>
         [Test]

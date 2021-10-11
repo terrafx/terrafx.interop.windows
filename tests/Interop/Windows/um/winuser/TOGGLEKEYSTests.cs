@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="TOGGLEKEYS" /> struct.</summary>
-    public static unsafe class TOGGLEKEYSTests
+    public static unsafe partial class TOGGLEKEYSTests
     {
         /// <summary>Validates that the <see cref="TOGGLEKEYS" /> struct is blittable.</summary>
         [Test]

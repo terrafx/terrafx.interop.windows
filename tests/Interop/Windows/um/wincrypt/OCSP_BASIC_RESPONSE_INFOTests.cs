@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="OCSP_BASIC_RESPONSE_INFO" /> struct.</summary>
-    public static unsafe class OCSP_BASIC_RESPONSE_INFOTests
+    public static unsafe partial class OCSP_BASIC_RESPONSE_INFOTests
     {
         /// <summary>Validates that the <see cref="OCSP_BASIC_RESPONSE_INFO" /> struct is blittable.</summary>
         [Test]

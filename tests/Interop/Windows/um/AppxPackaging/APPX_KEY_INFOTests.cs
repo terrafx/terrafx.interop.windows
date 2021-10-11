@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="APPX_KEY_INFO" /> struct.</summary>
-    public static unsafe class APPX_KEY_INFOTests
+    public static unsafe partial class APPX_KEY_INFOTests
     {
         /// <summary>Validates that the <see cref="APPX_KEY_INFO" /> struct is blittable.</summary>
         [Test]

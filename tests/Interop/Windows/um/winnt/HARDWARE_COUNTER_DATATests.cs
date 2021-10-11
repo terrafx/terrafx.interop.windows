@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="HARDWARE_COUNTER_DATA" /> struct.</summary>
-    public static unsafe class HARDWARE_COUNTER_DATATests
+    public static unsafe partial class HARDWARE_COUNTER_DATATests
     {
         /// <summary>Validates that the <see cref="HARDWARE_COUNTER_DATA" /> struct is blittable.</summary>
         [Test]

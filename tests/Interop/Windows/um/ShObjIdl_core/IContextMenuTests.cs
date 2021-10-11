@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IContextMenu" /> struct.</summary>
-    public static unsafe class IContextMenuTests
+    public static unsafe partial class IContextMenuTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IContextMenu" /> struct is correct.</summary>
         [Test]

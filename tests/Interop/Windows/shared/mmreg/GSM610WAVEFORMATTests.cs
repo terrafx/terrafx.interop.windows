@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="GSM610WAVEFORMAT" /> struct.</summary>
-    public static unsafe class GSM610WAVEFORMATTests
+    public static unsafe partial class GSM610WAVEFORMATTests
     {
         /// <summary>Validates that the <see cref="GSM610WAVEFORMAT" /> struct is blittable.</summary>
         [Test]

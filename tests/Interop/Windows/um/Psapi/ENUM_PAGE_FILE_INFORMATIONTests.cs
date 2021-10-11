@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="ENUM_PAGE_FILE_INFORMATION" /> struct.</summary>
-    public static unsafe class ENUM_PAGE_FILE_INFORMATIONTests
+    public static unsafe partial class ENUM_PAGE_FILE_INFORMATIONTests
     {
         /// <summary>Validates that the <see cref="ENUM_PAGE_FILE_INFORMATION" /> struct is blittable.</summary>
         [Test]

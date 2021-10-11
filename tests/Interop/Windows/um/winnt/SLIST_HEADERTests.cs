@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="SLIST_HEADER" /> struct.</summary>
-    public static unsafe class SLIST_HEADERTests
+    public static unsafe partial class SLIST_HEADERTests
     {
         /// <summary>Validates that the <see cref="SLIST_HEADER" /> struct is blittable.</summary>
         [Test]

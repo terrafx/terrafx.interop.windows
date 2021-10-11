@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="MULTIKEYHELPW" /> struct.</summary>
-    public static unsafe class MULTIKEYHELPWTests
+    public static unsafe partial class MULTIKEYHELPWTests
     {
         /// <summary>Validates that the <see cref="MULTIKEYHELPW" /> struct is blittable.</summary>
         [Test]

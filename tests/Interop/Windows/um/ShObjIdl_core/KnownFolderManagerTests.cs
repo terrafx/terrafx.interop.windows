@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="KnownFolderManager" /> struct.</summary>
-    public static unsafe class KnownFolderManagerTests
+    public static unsafe partial class KnownFolderManagerTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="KnownFolderManager" /> struct is correct.</summary>
         [Test]

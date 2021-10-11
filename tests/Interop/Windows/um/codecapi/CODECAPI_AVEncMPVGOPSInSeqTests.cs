@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="CODECAPI_AVEncMPVGOPSInSeq" /> struct.</summary>
-    public static unsafe class CODECAPI_AVEncMPVGOPSInSeqTests
+    public static unsafe partial class CODECAPI_AVEncMPVGOPSInSeqTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="CODECAPI_AVEncMPVGOPSInSeq" /> struct is correct.</summary>
         [Test]

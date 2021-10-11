@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="INamespaceWalk" /> struct.</summary>
-    public static unsafe class INamespaceWalkTests
+    public static unsafe partial class INamespaceWalkTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="INamespaceWalk" /> struct is correct.</summary>
         [Test]

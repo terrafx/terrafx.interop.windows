@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="CSV_QUERY_REDIRECT_STATE" /> struct.</summary>
-    public static unsafe class CSV_QUERY_REDIRECT_STATETests
+    public static unsafe partial class CSV_QUERY_REDIRECT_STATETests
     {
         /// <summary>Validates that the <see cref="CSV_QUERY_REDIRECT_STATE" /> struct is blittable.</summary>
         [Test]

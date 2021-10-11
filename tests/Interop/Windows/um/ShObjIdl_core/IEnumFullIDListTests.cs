@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IEnumFullIDList" /> struct.</summary>
-    public static unsafe class IEnumFullIDListTests
+    public static unsafe partial class IEnumFullIDListTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IEnumFullIDList" /> struct is correct.</summary>
         [Test]

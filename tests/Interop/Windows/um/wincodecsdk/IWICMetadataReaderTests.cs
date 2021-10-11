@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IWICMetadataReader" /> struct.</summary>
-    public static unsafe class IWICMetadataReaderTests
+    public static unsafe partial class IWICMetadataReaderTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IWICMetadataReader" /> struct is correct.</summary>
         [Test]

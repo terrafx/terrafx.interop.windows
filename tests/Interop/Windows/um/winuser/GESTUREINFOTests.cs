@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="GESTUREINFO" /> struct.</summary>
-    public static unsafe class GESTUREINFOTests
+    public static unsafe partial class GESTUREINFOTests
     {
         /// <summary>Validates that the <see cref="GESTUREINFO" /> struct is blittable.</summary>
         [Test]

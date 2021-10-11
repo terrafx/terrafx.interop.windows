@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="WINDOW_BUFFER_SIZE_RECORD" /> struct.</summary>
-    public static unsafe class WINDOW_BUFFER_SIZE_RECORDTests
+    public static unsafe partial class WINDOW_BUFFER_SIZE_RECORDTests
     {
         /// <summary>Validates that the <see cref="WINDOW_BUFFER_SIZE_RECORD" /> struct is blittable.</summary>
         [Test]

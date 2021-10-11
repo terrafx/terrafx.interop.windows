@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IPersistMoniker" /> struct.</summary>
-    public static unsafe class IPersistMonikerTests
+    public static unsafe partial class IPersistMonikerTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IPersistMoniker" /> struct is correct.</summary>
         [Test]

@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="WS_HTTP_MESSAGE_MAPPING" /> struct.</summary>
-    public static unsafe class WS_HTTP_MESSAGE_MAPPINGTests
+    public static unsafe partial class WS_HTTP_MESSAGE_MAPPINGTests
     {
         /// <summary>Validates that the <see cref="WS_HTTP_MESSAGE_MAPPING" /> struct is blittable.</summary>
         [Test]

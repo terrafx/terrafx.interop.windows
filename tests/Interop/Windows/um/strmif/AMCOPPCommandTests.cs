@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="AMCOPPCommand" /> struct.</summary>
-    public static unsafe class AMCOPPCommandTests
+    public static unsafe partial class AMCOPPCommandTests
     {
         /// <summary>Validates that the <see cref="AMCOPPCommand" /> struct is blittable.</summary>
         [Test]

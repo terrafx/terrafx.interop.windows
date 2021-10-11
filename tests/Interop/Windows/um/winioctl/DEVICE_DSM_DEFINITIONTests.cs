@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="DEVICE_DSM_DEFINITION" /> struct.</summary>
-    public static unsafe class DEVICE_DSM_DEFINITIONTests
+    public static unsafe partial class DEVICE_DSM_DEFINITIONTests
     {
         /// <summary>Validates that the <see cref="DEVICE_DSM_DEFINITION" /> struct is blittable.</summary>
         [Test]

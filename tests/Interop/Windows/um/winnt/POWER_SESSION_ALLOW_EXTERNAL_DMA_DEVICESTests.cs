@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="POWER_SESSION_ALLOW_EXTERNAL_DMA_DEVICES" /> struct.</summary>
-    public static unsafe class POWER_SESSION_ALLOW_EXTERNAL_DMA_DEVICESTests
+    public static unsafe partial class POWER_SESSION_ALLOW_EXTERNAL_DMA_DEVICESTests
     {
         /// <summary>Validates that the <see cref="POWER_SESSION_ALLOW_EXTERNAL_DMA_DEVICES" /> struct is blittable.</summary>
         [Test]

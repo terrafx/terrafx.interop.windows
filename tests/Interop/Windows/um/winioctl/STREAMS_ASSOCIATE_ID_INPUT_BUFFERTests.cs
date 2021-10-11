@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="STREAMS_ASSOCIATE_ID_INPUT_BUFFER" /> struct.</summary>
-    public static unsafe class STREAMS_ASSOCIATE_ID_INPUT_BUFFERTests
+    public static unsafe partial class STREAMS_ASSOCIATE_ID_INPUT_BUFFERTests
     {
         /// <summary>Validates that the <see cref="STREAMS_ASSOCIATE_ID_INPUT_BUFFER" /> struct is blittable.</summary>
         [Test]

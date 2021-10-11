@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="FIND_BY_SID_DATA" /> struct.</summary>
-    public static unsafe class FIND_BY_SID_DATATests
+    public static unsafe partial class FIND_BY_SID_DATATests
     {
         /// <summary>Validates that the <see cref="FIND_BY_SID_DATA" /> struct is blittable.</summary>
         [Test]

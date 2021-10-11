@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="TF_DISPLAYATTRIBUTE" /> struct.</summary>
-    public static unsafe class TF_DISPLAYATTRIBUTETests
+    public static unsafe partial class TF_DISPLAYATTRIBUTETests
     {
         /// <summary>Validates that the <see cref="TF_DISPLAYATTRIBUTE" /> struct is blittable.</summary>
         [Test]

@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="TS_SELECTION_ANCHOR" /> struct.</summary>
-    public static unsafe class TS_SELECTION_ANCHORTests
+    public static unsafe partial class TS_SELECTION_ANCHORTests
     {
         /// <summary>Validates that the <see cref="TS_SELECTION_ANCHOR" /> struct is blittable.</summary>
         [Test]
