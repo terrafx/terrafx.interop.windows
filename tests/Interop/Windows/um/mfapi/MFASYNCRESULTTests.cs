@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="MFASYNCRESULT" /> struct.</summary>
-    public static unsafe class MFASYNCRESULTTests
+    public static unsafe partial class MFASYNCRESULTTests
     {
         /// <summary>Validates that the <see cref="MFASYNCRESULT" /> struct is blittable.</summary>
         [Test]

@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IMFCapturePreviewSink" /> struct.</summary>
-    public static unsafe class IMFCapturePreviewSinkTests
+    public static unsafe partial class IMFCapturePreviewSinkTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IMFCapturePreviewSink" /> struct is correct.</summary>
         [Test]

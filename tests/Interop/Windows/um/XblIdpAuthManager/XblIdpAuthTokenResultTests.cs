@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="XblIdpAuthTokenResult" /> struct.</summary>
-    public static unsafe class XblIdpAuthTokenResultTests
+    public static unsafe partial class XblIdpAuthTokenResultTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="XblIdpAuthTokenResult" /> struct is correct.</summary>
         [Test]

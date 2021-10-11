@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="SCH_CRED" /> struct.</summary>
-    public static unsafe class SCH_CREDTests
+    public static unsafe partial class SCH_CREDTests
     {
         /// <summary>Validates that the <see cref="SCH_CRED" /> struct is blittable.</summary>
         [Test]

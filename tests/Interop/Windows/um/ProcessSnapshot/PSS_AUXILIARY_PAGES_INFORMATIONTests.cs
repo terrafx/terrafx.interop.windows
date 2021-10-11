@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="PSS_AUXILIARY_PAGES_INFORMATION" /> struct.</summary>
-    public static unsafe class PSS_AUXILIARY_PAGES_INFORMATIONTests
+    public static unsafe partial class PSS_AUXILIARY_PAGES_INFORMATIONTests
     {
         /// <summary>Validates that the <see cref="PSS_AUXILIARY_PAGES_INFORMATION" /> struct is blittable.</summary>
         [Test]

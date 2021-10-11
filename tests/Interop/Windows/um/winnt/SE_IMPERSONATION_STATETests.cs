@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="SE_IMPERSONATION_STATE" /> struct.</summary>
-    public static unsafe class SE_IMPERSONATION_STATETests
+    public static unsafe partial class SE_IMPERSONATION_STATETests
     {
         /// <summary>Validates that the <see cref="SE_IMPERSONATION_STATE" /> struct is blittable.</summary>
         [Test]

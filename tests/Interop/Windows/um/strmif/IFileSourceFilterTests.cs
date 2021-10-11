@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IFileSourceFilter" /> struct.</summary>
-    public static unsafe class IFileSourceFilterTests
+    public static unsafe partial class IFileSourceFilterTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IFileSourceFilter" /> struct is correct.</summary>
         [Test]

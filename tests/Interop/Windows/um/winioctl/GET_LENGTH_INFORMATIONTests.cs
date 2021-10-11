@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="GET_LENGTH_INFORMATION" /> struct.</summary>
-    public static unsafe class GET_LENGTH_INFORMATIONTests
+    public static unsafe partial class GET_LENGTH_INFORMATIONTests
     {
         /// <summary>Validates that the <see cref="GET_LENGTH_INFORMATION" /> struct is blittable.</summary>
         [Test]

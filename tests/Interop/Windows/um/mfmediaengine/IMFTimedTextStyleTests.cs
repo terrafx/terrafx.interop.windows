@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IMFTimedTextStyle" /> struct.</summary>
-    public static unsafe class IMFTimedTextStyleTests
+    public static unsafe partial class IMFTimedTextStyleTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IMFTimedTextStyle" /> struct is correct.</summary>
         [Test]

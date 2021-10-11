@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="ZONEATTRIBUTES" /> struct.</summary>
-    public static unsafe class ZONEATTRIBUTESTests
+    public static unsafe partial class ZONEATTRIBUTESTests
     {
         /// <summary>Validates that the <see cref="ZONEATTRIBUTES" /> struct is blittable.</summary>
         [Test]

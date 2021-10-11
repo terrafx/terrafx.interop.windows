@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IDirectWriterLock" /> struct.</summary>
-    public static unsafe class IDirectWriterLockTests
+    public static unsafe partial class IDirectWriterLockTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IDirectWriterLock" /> struct is correct.</summary>
         [Test]

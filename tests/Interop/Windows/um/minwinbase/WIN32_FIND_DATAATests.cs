@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="WIN32_FIND_DATAA" /> struct.</summary>
-    public static unsafe class WIN32_FIND_DATAATests
+    public static unsafe partial class WIN32_FIND_DATAATests
     {
         /// <summary>Validates that the <see cref="WIN32_FIND_DATAA" /> struct is blittable.</summary>
         [Test]

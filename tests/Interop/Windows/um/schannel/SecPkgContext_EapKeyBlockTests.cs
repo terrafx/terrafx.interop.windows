@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="SecPkgContext_EapKeyBlock" /> struct.</summary>
-    public static unsafe class SecPkgContext_EapKeyBlockTests
+    public static unsafe partial class SecPkgContext_EapKeyBlockTests
     {
         /// <summary>Validates that the <see cref="SecPkgContext_EapKeyBlock" /> struct is blittable.</summary>
         [Test]

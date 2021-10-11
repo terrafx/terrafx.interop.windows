@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="DVD_MUA_Coeff" /> struct.</summary>
-    public static unsafe class DVD_MUA_CoeffTests
+    public static unsafe partial class DVD_MUA_CoeffTests
     {
         /// <summary>Validates that the <see cref="DVD_MUA_Coeff" /> struct is blittable.</summary>
         [Test]

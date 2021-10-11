@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="TXFS_SAVEPOINT_INFORMATION" /> struct.</summary>
-    public static unsafe class TXFS_SAVEPOINT_INFORMATIONTests
+    public static unsafe partial class TXFS_SAVEPOINT_INFORMATIONTests
     {
         /// <summary>Validates that the <see cref="TXFS_SAVEPOINT_INFORMATION" /> struct is blittable.</summary>
         [Test]

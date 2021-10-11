@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="APTXWAVEFORMAT" /> struct.</summary>
-    public static unsafe class APTXWAVEFORMATTests
+    public static unsafe partial class APTXWAVEFORMATTests
     {
         /// <summary>Validates that the <see cref="APTXWAVEFORMAT" /> struct is blittable.</summary>
         [Test]

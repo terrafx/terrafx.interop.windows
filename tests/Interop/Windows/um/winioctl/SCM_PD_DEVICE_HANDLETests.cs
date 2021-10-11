@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="SCM_PD_DEVICE_HANDLE" /> struct.</summary>
-    public static unsafe class SCM_PD_DEVICE_HANDLETests
+    public static unsafe partial class SCM_PD_DEVICE_HANDLETests
     {
         /// <summary>Validates that the <see cref="SCM_PD_DEVICE_HANDLE" /> struct is blittable.</summary>
         [Test]

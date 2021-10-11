@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="DXGI_OUTDUPL_MOVE_RECT" /> struct.</summary>
-    public static unsafe class DXGI_OUTDUPL_MOVE_RECTTests
+    public static unsafe partial class DXGI_OUTDUPL_MOVE_RECTTests
     {
         /// <summary>Validates that the <see cref="DXGI_OUTDUPL_MOVE_RECT" /> struct is blittable.</summary>
         [Test]

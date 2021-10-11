@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="ISortColumnArray" /> struct.</summary>
-    public static unsafe class ISortColumnArrayTests
+    public static unsafe partial class ISortColumnArrayTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ISortColumnArray" /> struct is correct.</summary>
         [Test]

@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="WS_XML_WRITER_TEXT_ENCODING" /> struct.</summary>
-    public static unsafe class WS_XML_WRITER_TEXT_ENCODINGTests
+    public static unsafe partial class WS_XML_WRITER_TEXT_ENCODINGTests
     {
         /// <summary>Validates that the <see cref="WS_XML_WRITER_TEXT_ENCODING" /> struct is blittable.</summary>
         [Test]

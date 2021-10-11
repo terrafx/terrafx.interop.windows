@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IOpenControlPanel" /> struct.</summary>
-    public static unsafe class IOpenControlPanelTests
+    public static unsafe partial class IOpenControlPanelTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IOpenControlPanel" /> struct is correct.</summary>
         [Test]

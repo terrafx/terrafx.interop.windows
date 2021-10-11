@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="CAFILETIME" /> struct.</summary>
-    public static unsafe class CAFILETIMETests
+    public static unsafe partial class CAFILETIMETests
     {
         /// <summary>Validates that the <see cref="CAFILETIME" /> struct is blittable.</summary>
         [Test]

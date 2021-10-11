@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="CRYPT_PROVUI_FUNCS" /> struct.</summary>
-    public static unsafe class CRYPT_PROVUI_FUNCSTests
+    public static unsafe partial class CRYPT_PROVUI_FUNCSTests
     {
         /// <summary>Validates that the <see cref="CRYPT_PROVUI_FUNCS" /> struct is blittable.</summary>
         [Test]

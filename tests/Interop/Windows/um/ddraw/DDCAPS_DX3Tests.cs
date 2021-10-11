@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="DDCAPS_DX3" /> struct.</summary>
-    public static unsafe class DDCAPS_DX3Tests
+    public static unsafe partial class DDCAPS_DX3Tests
     {
         /// <summary>Validates that the <see cref="DDCAPS_DX3" /> struct is blittable.</summary>
         [Test]

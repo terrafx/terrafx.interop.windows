@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="COPYFILE2_EXTENDED_PARAMETERS_V2" /> struct.</summary>
-    public static unsafe class COPYFILE2_EXTENDED_PARAMETERS_V2Tests
+    public static unsafe partial class COPYFILE2_EXTENDED_PARAMETERS_V2Tests
     {
         /// <summary>Validates that the <see cref="COPYFILE2_EXTENDED_PARAMETERS_V2" /> struct is blittable.</summary>
         [Test]

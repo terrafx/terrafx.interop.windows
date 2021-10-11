@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IWICBitmapLock" /> struct.</summary>
-    public static unsafe class IWICBitmapLockTests
+    public static unsafe partial class IWICBitmapLockTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IWICBitmapLock" /> struct is correct.</summary>
         [Test]

@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="USN_TRACK_MODIFIED_RANGES" /> struct.</summary>
-    public static unsafe class USN_TRACK_MODIFIED_RANGESTests
+    public static unsafe partial class USN_TRACK_MODIFIED_RANGESTests
     {
         /// <summary>Validates that the <see cref="USN_TRACK_MODIFIED_RANGES" /> struct is blittable.</summary>
         [Test]

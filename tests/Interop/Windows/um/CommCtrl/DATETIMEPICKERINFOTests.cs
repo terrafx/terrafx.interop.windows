@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="DATETIMEPICKERINFO" /> struct.</summary>
-    public static unsafe class DATETIMEPICKERINFOTests
+    public static unsafe partial class DATETIMEPICKERINFOTests
     {
         /// <summary>Validates that the <see cref="DATETIMEPICKERINFO" /> struct is blittable.</summary>
         [Test]

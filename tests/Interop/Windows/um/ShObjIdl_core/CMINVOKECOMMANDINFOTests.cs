@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="CMINVOKECOMMANDINFO" /> struct.</summary>
-    public static unsafe class CMINVOKECOMMANDINFOTests
+    public static unsafe partial class CMINVOKECOMMANDINFOTests
     {
         /// <summary>Validates that the <see cref="CMINVOKECOMMANDINFO" /> struct is blittable.</summary>
         [Test]

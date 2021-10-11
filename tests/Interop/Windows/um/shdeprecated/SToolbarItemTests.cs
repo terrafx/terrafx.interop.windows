@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="SToolbarItem" /> struct.</summary>
-    public static unsafe class SToolbarItemTests
+    public static unsafe partial class SToolbarItemTests
     {
         /// <summary>Validates that the <see cref="SToolbarItem" /> struct is blittable.</summary>
         [Test]

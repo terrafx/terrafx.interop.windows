@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="ENCRYPTION_KEY_CTRL_INPUT" /> struct.</summary>
-    public static unsafe class ENCRYPTION_KEY_CTRL_INPUTTests
+    public static unsafe partial class ENCRYPTION_KEY_CTRL_INPUTTests
     {
         /// <summary>Validates that the <see cref="ENCRYPTION_KEY_CTRL_INPUT" /> struct is blittable.</summary>
         [Test]

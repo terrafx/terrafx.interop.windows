@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="D3D11_AUTHENTICATED_CONFIGURE_SHARED_RESOURCE_INPUT" /> struct.</summary>
-    public static unsafe class D3D11_AUTHENTICATED_CONFIGURE_SHARED_RESOURCE_INPUTTests
+    public static unsafe partial class D3D11_AUTHENTICATED_CONFIGURE_SHARED_RESOURCE_INPUTTests
     {
         /// <summary>Validates that the <see cref="D3D11_AUTHENTICATED_CONFIGURE_SHARED_RESOURCE_INPUT" /> struct is blittable.</summary>
         [Test]

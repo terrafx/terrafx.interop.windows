@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="ISpObjectWithToken" /> struct.</summary>
-    public static unsafe class ISpObjectWithTokenTests
+    public static unsafe partial class ISpObjectWithTokenTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ISpObjectWithToken" /> struct is correct.</summary>
         [Test]

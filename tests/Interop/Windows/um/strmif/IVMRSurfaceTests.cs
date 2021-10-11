@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IVMRSurface" /> struct.</summary>
-    public static unsafe class IVMRSurfaceTests
+    public static unsafe partial class IVMRSurfaceTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IVMRSurface" /> struct is correct.</summary>
         [Test]

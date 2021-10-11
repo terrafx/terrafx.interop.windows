@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="AMD64_MXCSR_REG" /> struct.</summary>
-    public static unsafe class AMD64_MXCSR_REGTests
+    public static unsafe partial class AMD64_MXCSR_REGTests
     {
         /// <summary>Validates that the <see cref="AMD64_MXCSR_REG" /> struct is blittable.</summary>
         [Test]

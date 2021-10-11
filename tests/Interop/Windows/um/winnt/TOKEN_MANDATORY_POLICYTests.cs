@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="TOKEN_MANDATORY_POLICY" /> struct.</summary>
-    public static unsafe class TOKEN_MANDATORY_POLICYTests
+    public static unsafe partial class TOKEN_MANDATORY_POLICYTests
     {
         /// <summary>Validates that the <see cref="TOKEN_MANDATORY_POLICY" /> struct is blittable.</summary>
         [Test]

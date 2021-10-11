@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IFrameworkInputPaneHandler" /> struct.</summary>
-    public static unsafe class IFrameworkInputPaneHandlerTests
+    public static unsafe partial class IFrameworkInputPaneHandlerTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IFrameworkInputPaneHandler" /> struct is correct.</summary>
         [Test]

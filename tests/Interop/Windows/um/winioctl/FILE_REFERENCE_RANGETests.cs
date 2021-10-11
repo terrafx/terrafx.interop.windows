@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="FILE_REFERENCE_RANGE" /> struct.</summary>
-    public static unsafe class FILE_REFERENCE_RANGETests
+    public static unsafe partial class FILE_REFERENCE_RANGETests
     {
         /// <summary>Validates that the <see cref="FILE_REFERENCE_RANGE" /> struct is blittable.</summary>
         [Test]

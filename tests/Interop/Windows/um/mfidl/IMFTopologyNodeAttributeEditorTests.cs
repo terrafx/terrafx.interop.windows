@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IMFTopologyNodeAttributeEditor" /> struct.</summary>
-    public static unsafe class IMFTopologyNodeAttributeEditorTests
+    public static unsafe partial class IMFTopologyNodeAttributeEditorTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IMFTopologyNodeAttributeEditor" /> struct is correct.</summary>
         [Test]

@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="ITfUIElementSink" /> struct.</summary>
-    public static unsafe class ITfUIElementSinkTests
+    public static unsafe partial class ITfUIElementSinkTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ITfUIElementSink" /> struct is correct.</summary>
         [Test]

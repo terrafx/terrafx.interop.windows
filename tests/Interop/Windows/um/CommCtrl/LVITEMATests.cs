@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="LVITEMA" /> struct.</summary>
-    public static unsafe class LVITEMATests
+    public static unsafe partial class LVITEMATests
     {
         /// <summary>Validates that the <see cref="LVITEMA" /> struct is blittable.</summary>
         [Test]

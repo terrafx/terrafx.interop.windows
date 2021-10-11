@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="ITfFnPlayBack" /> struct.</summary>
-    public static unsafe class ITfFnPlayBackTests
+    public static unsafe partial class ITfFnPlayBackTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ITfFnPlayBack" /> struct is correct.</summary>
         [Test]

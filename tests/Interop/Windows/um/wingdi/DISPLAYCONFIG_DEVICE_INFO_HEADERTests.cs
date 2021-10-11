@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="DISPLAYCONFIG_DEVICE_INFO_HEADER" /> struct.</summary>
-    public static unsafe class DISPLAYCONFIG_DEVICE_INFO_HEADERTests
+    public static unsafe partial class DISPLAYCONFIG_DEVICE_INFO_HEADERTests
     {
         /// <summary>Validates that the <see cref="DISPLAYCONFIG_DEVICE_INFO_HEADER" /> struct is blittable.</summary>
         [Test]

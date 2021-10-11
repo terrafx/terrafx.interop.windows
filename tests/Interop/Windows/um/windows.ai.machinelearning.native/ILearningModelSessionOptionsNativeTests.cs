@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="ILearningModelSessionOptionsNative" /> struct.</summary>
-    public static unsafe class ILearningModelSessionOptionsNativeTests
+    public static unsafe partial class ILearningModelSessionOptionsNativeTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ILearningModelSessionOptionsNative" /> struct is correct.</summary>
         [Test]

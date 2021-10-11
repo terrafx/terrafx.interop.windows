@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="ITfLangBarMgr" /> struct.</summary>
-    public static unsafe class ITfLangBarMgrTests
+    public static unsafe partial class ITfLangBarMgrTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ITfLangBarMgr" /> struct is correct.</summary>
         [Test]

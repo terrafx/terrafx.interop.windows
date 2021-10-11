@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="BINARY_BLOB_CREDENTIAL_INFO" /> struct.</summary>
-    public static unsafe class BINARY_BLOB_CREDENTIAL_INFOTests
+    public static unsafe partial class BINARY_BLOB_CREDENTIAL_INFOTests
     {
         /// <summary>Validates that the <see cref="BINARY_BLOB_CREDENTIAL_INFO" /> struct is blittable.</summary>
         [Test]

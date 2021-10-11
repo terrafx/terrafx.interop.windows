@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IReleaseMarshalBuffers" /> struct.</summary>
-    public static unsafe class IReleaseMarshalBuffersTests
+    public static unsafe partial class IReleaseMarshalBuffersTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IReleaseMarshalBuffers" /> struct is correct.</summary>
         [Test]

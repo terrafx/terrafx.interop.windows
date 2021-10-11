@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="SSL_HPKP_HEADER_EXTRA_CERT_CHAIN_POLICY_PARA" /> struct.</summary>
-    public static unsafe class SSL_HPKP_HEADER_EXTRA_CERT_CHAIN_POLICY_PARATests
+    public static unsafe partial class SSL_HPKP_HEADER_EXTRA_CERT_CHAIN_POLICY_PARATests
     {
         /// <summary>Validates that the <see cref="SSL_HPKP_HEADER_EXTRA_CERT_CHAIN_POLICY_PARA" /> struct is blittable.</summary>
         [Test]

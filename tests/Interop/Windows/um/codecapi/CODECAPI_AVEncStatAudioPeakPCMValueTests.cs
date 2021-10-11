@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="CODECAPI_AVEncStatAudioPeakPCMValue" /> struct.</summary>
-    public static unsafe class CODECAPI_AVEncStatAudioPeakPCMValueTests
+    public static unsafe partial class CODECAPI_AVEncStatAudioPeakPCMValueTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="CODECAPI_AVEncStatAudioPeakPCMValue" /> struct is correct.</summary>
         [Test]

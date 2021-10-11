@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="D3D10_MAPPED_TEXTURE3D" /> struct.</summary>
-    public static unsafe class D3D10_MAPPED_TEXTURE3DTests
+    public static unsafe partial class D3D10_MAPPED_TEXTURE3DTests
     {
         /// <summary>Validates that the <see cref="D3D10_MAPPED_TEXTURE3D" /> struct is blittable.</summary>
         [Test]

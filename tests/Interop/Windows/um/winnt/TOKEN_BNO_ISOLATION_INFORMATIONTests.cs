@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="TOKEN_BNO_ISOLATION_INFORMATION" /> struct.</summary>
-    public static unsafe class TOKEN_BNO_ISOLATION_INFORMATIONTests
+    public static unsafe partial class TOKEN_BNO_ISOLATION_INFORMATIONTests
     {
         /// <summary>Validates that the <see cref="TOKEN_BNO_ISOLATION_INFORMATION" /> struct is blittable.</summary>
         [Test]

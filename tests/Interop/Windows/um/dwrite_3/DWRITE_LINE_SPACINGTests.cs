@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="DWRITE_LINE_SPACING" /> struct.</summary>
-    public static unsafe class DWRITE_LINE_SPACINGTests
+    public static unsafe partial class DWRITE_LINE_SPACINGTests
     {
         /// <summary>Validates that the <see cref="DWRITE_LINE_SPACING" /> struct is blittable.</summary>
         [Test]

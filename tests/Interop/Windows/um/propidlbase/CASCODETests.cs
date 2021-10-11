@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="CASCODE" /> struct.</summary>
-    public static unsafe class CASCODETests
+    public static unsafe partial class CASCODETests
     {
         /// <summary>Validates that the <see cref="CASCODE" /> struct is blittable.</summary>
         [Test]

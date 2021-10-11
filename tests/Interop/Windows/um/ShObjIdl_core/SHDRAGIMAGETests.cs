@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="SHDRAGIMAGE" /> struct.</summary>
-    public static unsafe class SHDRAGIMAGETests
+    public static unsafe partial class SHDRAGIMAGETests
     {
         /// <summary>Validates that the <see cref="SHDRAGIMAGE" /> struct is blittable.</summary>
         [Test]

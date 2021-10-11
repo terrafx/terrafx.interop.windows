@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="NMLVCACHEHINT" /> struct.</summary>
-    public static unsafe class NMLVCACHEHINTTests
+    public static unsafe partial class NMLVCACHEHINTTests
     {
         /// <summary>Validates that the <see cref="NMLVCACHEHINT" /> struct is blittable.</summary>
         [Test]

@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="HID_XFER_PACKET" /> struct.</summary>
-    public static unsafe class HID_XFER_PACKETTests
+    public static unsafe partial class HID_XFER_PACKETTests
     {
         /// <summary>Validates that the <see cref="HID_XFER_PACKET" /> struct is blittable.</summary>
         [Test]

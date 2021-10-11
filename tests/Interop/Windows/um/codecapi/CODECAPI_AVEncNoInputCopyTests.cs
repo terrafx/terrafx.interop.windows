@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="CODECAPI_AVEncNoInputCopy" /> struct.</summary>
-    public static unsafe class CODECAPI_AVEncNoInputCopyTests
+    public static unsafe partial class CODECAPI_AVEncNoInputCopyTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="CODECAPI_AVEncNoInputCopy" /> struct is correct.</summary>
         [Test]

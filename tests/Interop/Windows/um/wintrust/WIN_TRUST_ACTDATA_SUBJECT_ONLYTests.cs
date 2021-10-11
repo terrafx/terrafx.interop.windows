@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="WIN_TRUST_ACTDATA_SUBJECT_ONLY" /> struct.</summary>
-    public static unsafe class WIN_TRUST_ACTDATA_SUBJECT_ONLYTests
+    public static unsafe partial class WIN_TRUST_ACTDATA_SUBJECT_ONLYTests
     {
         /// <summary>Validates that the <see cref="WIN_TRUST_ACTDATA_SUBJECT_ONLY" /> struct is blittable.</summary>
         [Test]

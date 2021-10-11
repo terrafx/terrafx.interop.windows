@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="DISPLAYCONFIG_DESKTOP_IMAGE_INFO" /> struct.</summary>
-    public static unsafe class DISPLAYCONFIG_DESKTOP_IMAGE_INFOTests
+    public static unsafe partial class DISPLAYCONFIG_DESKTOP_IMAGE_INFOTests
     {
         /// <summary>Validates that the <see cref="DISPLAYCONFIG_DESKTOP_IMAGE_INFO" /> struct is blittable.</summary>
         [Test]

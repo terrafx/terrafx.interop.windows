@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="DAV_CALLBACK_AUTH_BLOB" /> struct.</summary>
-    public static unsafe class DAV_CALLBACK_AUTH_BLOBTests
+    public static unsafe partial class DAV_CALLBACK_AUTH_BLOBTests
     {
         /// <summary>Validates that the <see cref="DAV_CALLBACK_AUTH_BLOB" /> struct is blittable.</summary>
         [Test]

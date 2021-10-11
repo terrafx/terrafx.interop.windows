@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="DELETEITEMSTRUCT" /> struct.</summary>
-    public static unsafe class DELETEITEMSTRUCTTests
+    public static unsafe partial class DELETEITEMSTRUCTTests
     {
         /// <summary>Validates that the <see cref="DELETEITEMSTRUCT" /> struct is blittable.</summary>
         [Test]

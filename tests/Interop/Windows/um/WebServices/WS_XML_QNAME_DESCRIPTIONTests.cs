@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="WS_XML_QNAME_DESCRIPTION" /> struct.</summary>
-    public static unsafe class WS_XML_QNAME_DESCRIPTIONTests
+    public static unsafe partial class WS_XML_QNAME_DESCRIPTIONTests
     {
         /// <summary>Validates that the <see cref="WS_XML_QNAME_DESCRIPTION" /> struct is blittable.</summary>
         [Test]

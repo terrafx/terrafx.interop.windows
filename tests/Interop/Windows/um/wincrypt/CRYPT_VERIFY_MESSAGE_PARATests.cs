@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="CRYPT_VERIFY_MESSAGE_PARA" /> struct.</summary>
-    public static unsafe class CRYPT_VERIFY_MESSAGE_PARATests
+    public static unsafe partial class CRYPT_VERIFY_MESSAGE_PARATests
     {
         /// <summary>Validates that the <see cref="CRYPT_VERIFY_MESSAGE_PARA" /> struct is blittable.</summary>
         [Test]

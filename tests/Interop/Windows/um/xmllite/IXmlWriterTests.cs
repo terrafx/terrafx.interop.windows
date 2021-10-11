@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IXmlWriter" /> struct.</summary>
-    public static unsafe class IXmlWriterTests
+    public static unsafe partial class IXmlWriterTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IXmlWriter" /> struct is correct.</summary>
         [Test]

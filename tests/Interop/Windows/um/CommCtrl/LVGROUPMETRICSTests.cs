@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="LVGROUPMETRICS" /> struct.</summary>
-    public static unsafe class LVGROUPMETRICSTests
+    public static unsafe partial class LVGROUPMETRICSTests
     {
         /// <summary>Validates that the <see cref="LVGROUPMETRICS" /> struct is blittable.</summary>
         [Test]

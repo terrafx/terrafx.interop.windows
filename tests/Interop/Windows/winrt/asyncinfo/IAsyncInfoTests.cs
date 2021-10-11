@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IAsyncInfo" /> struct.</summary>
-    public static unsafe class IAsyncInfoTests
+    public static unsafe partial class IAsyncInfoTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IAsyncInfo" /> struct is correct.</summary>
         [Test]

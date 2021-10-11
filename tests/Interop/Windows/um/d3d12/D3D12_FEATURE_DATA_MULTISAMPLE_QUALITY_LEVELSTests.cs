@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="D3D12_FEATURE_DATA_MULTISAMPLE_QUALITY_LEVELS" /> struct.</summary>
-    public static unsafe class D3D12_FEATURE_DATA_MULTISAMPLE_QUALITY_LEVELSTests
+    public static unsafe partial class D3D12_FEATURE_DATA_MULTISAMPLE_QUALITY_LEVELSTests
     {
         /// <summary>Validates that the <see cref="D3D12_FEATURE_DATA_MULTISAMPLE_QUALITY_LEVELS" /> struct is blittable.</summary>
         [Test]

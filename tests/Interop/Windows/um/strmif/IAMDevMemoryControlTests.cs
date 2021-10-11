@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IAMDevMemoryControl" /> struct.</summary>
-    public static unsafe class IAMDevMemoryControlTests
+    public static unsafe partial class IAMDevMemoryControlTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IAMDevMemoryControl" /> struct is correct.</summary>
         [Test]

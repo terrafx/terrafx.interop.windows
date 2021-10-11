@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="WS_ITEM_RANGE" /> struct.</summary>
-    public static unsafe class WS_ITEM_RANGETests
+    public static unsafe partial class WS_ITEM_RANGETests
     {
         /// <summary>Validates that the <see cref="WS_ITEM_RANGE" /> struct is blittable.</summary>
         [Test]

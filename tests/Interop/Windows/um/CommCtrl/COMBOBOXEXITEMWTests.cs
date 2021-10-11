@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="COMBOBOXEXITEMW" /> struct.</summary>
-    public static unsafe class COMBOBOXEXITEMWTests
+    public static unsafe partial class COMBOBOXEXITEMWTests
     {
         /// <summary>Validates that the <see cref="COMBOBOXEXITEMW" /> struct is blittable.</summary>
         [Test]

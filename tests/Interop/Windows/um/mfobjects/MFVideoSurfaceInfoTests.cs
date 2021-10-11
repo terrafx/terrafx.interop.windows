@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="MFVideoSurfaceInfo" /> struct.</summary>
-    public static unsafe class MFVideoSurfaceInfoTests
+    public static unsafe partial class MFVideoSurfaceInfoTests
     {
         /// <summary>Validates that the <see cref="MFVideoSurfaceInfo" /> struct is blittable.</summary>
         [Test]

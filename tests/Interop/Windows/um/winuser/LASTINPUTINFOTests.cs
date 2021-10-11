@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="LASTINPUTINFO" /> struct.</summary>
-    public static unsafe class LASTINPUTINFOTests
+    public static unsafe partial class LASTINPUTINFOTests
     {
         /// <summary>Validates that the <see cref="LASTINPUTINFO" /> struct is blittable.</summary>
         [Test]

@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="NMMOUSE" /> struct.</summary>
-    public static unsafe class NMMOUSETests
+    public static unsafe partial class NMMOUSETests
     {
         /// <summary>Validates that the <see cref="NMMOUSE" /> struct is blittable.</summary>
         [Test]

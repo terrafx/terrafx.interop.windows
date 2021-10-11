@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="METAHEADER" /> struct.</summary>
-    public static unsafe class METAHEADERTests
+    public static unsafe partial class METAHEADERTests
     {
         /// <summary>Validates that the <see cref="METAHEADER" /> struct is blittable.</summary>
         [Test]

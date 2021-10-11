@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="MSLLHOOKSTRUCT" /> struct.</summary>
-    public static unsafe class MSLLHOOKSTRUCTTests
+    public static unsafe partial class MSLLHOOKSTRUCTTests
     {
         /// <summary>Validates that the <see cref="MSLLHOOKSTRUCT" /> struct is blittable.</summary>
         [Test]

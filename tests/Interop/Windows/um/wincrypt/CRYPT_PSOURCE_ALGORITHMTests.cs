@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="CRYPT_PSOURCE_ALGORITHM" /> struct.</summary>
-    public static unsafe class CRYPT_PSOURCE_ALGORITHMTests
+    public static unsafe partial class CRYPT_PSOURCE_ALGORITHMTests
     {
         /// <summary>Validates that the <see cref="CRYPT_PSOURCE_ALGORITHM" /> struct is blittable.</summary>
         [Test]

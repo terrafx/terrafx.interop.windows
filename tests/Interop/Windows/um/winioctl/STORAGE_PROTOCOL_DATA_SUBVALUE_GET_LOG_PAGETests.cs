@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="STORAGE_PROTOCOL_DATA_SUBVALUE_GET_LOG_PAGE" /> struct.</summary>
-    public static unsafe class STORAGE_PROTOCOL_DATA_SUBVALUE_GET_LOG_PAGETests
+    public static unsafe partial class STORAGE_PROTOCOL_DATA_SUBVALUE_GET_LOG_PAGETests
     {
         /// <summary>Validates that the <see cref="STORAGE_PROTOCOL_DATA_SUBVALUE_GET_LOG_PAGE" /> struct is blittable.</summary>
         [Test]

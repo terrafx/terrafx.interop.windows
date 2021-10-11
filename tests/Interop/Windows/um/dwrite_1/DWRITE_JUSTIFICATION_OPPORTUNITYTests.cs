@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="DWRITE_JUSTIFICATION_OPPORTUNITY" /> struct.</summary>
-    public static unsafe class DWRITE_JUSTIFICATION_OPPORTUNITYTests
+    public static unsafe partial class DWRITE_JUSTIFICATION_OPPORTUNITYTests
     {
         /// <summary>Validates that the <see cref="DWRITE_JUSTIFICATION_OPPORTUNITY" /> struct is blittable.</summary>
         [Test]

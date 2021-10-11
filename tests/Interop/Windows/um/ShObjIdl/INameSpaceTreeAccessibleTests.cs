@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="INameSpaceTreeAccessible" /> struct.</summary>
-    public static unsafe class INameSpaceTreeAccessibleTests
+    public static unsafe partial class INameSpaceTreeAccessibleTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="INameSpaceTreeAccessible" /> struct is correct.</summary>
         [Test]

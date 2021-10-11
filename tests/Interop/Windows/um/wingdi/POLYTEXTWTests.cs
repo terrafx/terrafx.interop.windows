@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="POLYTEXTW" /> struct.</summary>
-    public static unsafe class POLYTEXTWTests
+    public static unsafe partial class POLYTEXTWTests
     {
         /// <summary>Validates that the <see cref="POLYTEXTW" /> struct is blittable.</summary>
         [Test]

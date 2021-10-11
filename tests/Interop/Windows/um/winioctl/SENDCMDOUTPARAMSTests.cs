@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="SENDCMDOUTPARAMS" /> struct.</summary>
-    public static unsafe class SENDCMDOUTPARAMSTests
+    public static unsafe partial class SENDCMDOUTPARAMSTests
     {
         /// <summary>Validates that the <see cref="SENDCMDOUTPARAMS" /> struct is blittable.</summary>
         [Test]

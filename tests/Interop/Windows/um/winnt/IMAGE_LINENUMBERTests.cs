@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IMAGE_LINENUMBER" /> struct.</summary>
-    public static unsafe class IMAGE_LINENUMBERTests
+    public static unsafe partial class IMAGE_LINENUMBERTests
     {
         /// <summary>Validates that the <see cref="IMAGE_LINENUMBER" /> struct is blittable.</summary>
         [Test]

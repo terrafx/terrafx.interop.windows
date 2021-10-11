@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="DOCINFOW" /> struct.</summary>
-    public static unsafe class DOCINFOWTests
+    public static unsafe partial class DOCINFOWTests
     {
         /// <summary>Validates that the <see cref="DOCINFOW" /> struct is blittable.</summary>
         [Test]

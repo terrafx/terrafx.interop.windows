@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="DISPATCHER_CONTEXT_NONVOLREG_ARM64" /> struct.</summary>
-    public static unsafe class DISPATCHER_CONTEXT_NONVOLREG_ARM64Tests
+    public static unsafe partial class DISPATCHER_CONTEXT_NONVOLREG_ARM64Tests
     {
         /// <summary>Validates that the <see cref="DISPATCHER_CONTEXT_NONVOLREG_ARM64" /> struct is blittable.</summary>
         [Test]

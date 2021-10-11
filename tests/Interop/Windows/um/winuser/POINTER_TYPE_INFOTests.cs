@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="POINTER_TYPE_INFO" /> struct.</summary>
-    public static unsafe class POINTER_TYPE_INFOTests
+    public static unsafe partial class POINTER_TYPE_INFOTests
     {
         /// <summary>Validates that the <see cref="POINTER_TYPE_INFO" /> struct is blittable.</summary>
         [Test]

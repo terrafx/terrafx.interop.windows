@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IIOCancelInformation" /> struct.</summary>
-    public static unsafe class IIOCancelInformationTests
+    public static unsafe partial class IIOCancelInformationTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IIOCancelInformation" /> struct is correct.</summary>
         [Test]

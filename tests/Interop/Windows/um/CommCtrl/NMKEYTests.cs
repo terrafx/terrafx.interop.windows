@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="NMKEY" /> struct.</summary>
-    public static unsafe class NMKEYTests
+    public static unsafe partial class NMKEYTests
     {
         /// <summary>Validates that the <see cref="NMKEY" /> struct is blittable.</summary>
         [Test]

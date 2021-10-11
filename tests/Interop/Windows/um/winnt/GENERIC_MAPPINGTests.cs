@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="GENERIC_MAPPING" /> struct.</summary>
-    public static unsafe class GENERIC_MAPPINGTests
+    public static unsafe partial class GENERIC_MAPPINGTests
     {
         /// <summary>Validates that the <see cref="GENERIC_MAPPING" /> struct is blittable.</summary>
         [Test]

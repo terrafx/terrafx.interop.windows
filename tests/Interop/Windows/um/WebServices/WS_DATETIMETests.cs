@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="WS_DATETIME" /> struct.</summary>
-    public static unsafe class WS_DATETIMETests
+    public static unsafe partial class WS_DATETIMETests
     {
         /// <summary>Validates that the <see cref="WS_DATETIME" /> struct is blittable.</summary>
         [Test]

@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IFileDialogCustomize" /> struct.</summary>
-    public static unsafe class IFileDialogCustomizeTests
+    public static unsafe partial class IFileDialogCustomizeTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IFileDialogCustomize" /> struct is correct.</summary>
         [Test]

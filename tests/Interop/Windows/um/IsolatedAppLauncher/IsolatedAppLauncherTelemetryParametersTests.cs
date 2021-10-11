@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IsolatedAppLauncherTelemetryParameters" /> struct.</summary>
-    public static unsafe class IsolatedAppLauncherTelemetryParametersTests
+    public static unsafe partial class IsolatedAppLauncherTelemetryParametersTests
     {
         /// <summary>Validates that the <see cref="IsolatedAppLauncherTelemetryParameters" /> struct is blittable.</summary>
         [Test]

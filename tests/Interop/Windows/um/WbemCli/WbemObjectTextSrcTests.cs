@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="WbemObjectTextSrc" /> struct.</summary>
-    public static unsafe class WbemObjectTextSrcTests
+    public static unsafe partial class WbemObjectTextSrcTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="WbemObjectTextSrc" /> struct is correct.</summary>
         [Test]

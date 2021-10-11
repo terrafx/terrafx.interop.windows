@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="D3D12_BUILD_RAYTRACING_ACCELERATION_STRUCTURE_DESC" /> struct.</summary>
-    public static unsafe class D3D12_BUILD_RAYTRACING_ACCELERATION_STRUCTURE_DESCTests
+    public static unsafe partial class D3D12_BUILD_RAYTRACING_ACCELERATION_STRUCTURE_DESCTests
     {
         /// <summary>Validates that the <see cref="D3D12_BUILD_RAYTRACING_ACCELERATION_STRUCTURE_DESC" /> struct is blittable.</summary>
         [Test]

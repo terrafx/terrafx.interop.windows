@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="FIXED" /> struct.</summary>
-    public static unsafe class FIXEDTests
+    public static unsafe partial class FIXEDTests
     {
         /// <summary>Validates that the <see cref="FIXED" /> struct is blittable.</summary>
         [Test]

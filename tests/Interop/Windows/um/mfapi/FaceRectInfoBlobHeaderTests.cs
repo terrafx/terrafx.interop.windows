@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="FaceRectInfoBlobHeader" /> struct.</summary>
-    public static unsafe class FaceRectInfoBlobHeaderTests
+    public static unsafe partial class FaceRectInfoBlobHeaderTests
     {
         /// <summary>Validates that the <see cref="FaceRectInfoBlobHeader" /> struct is blittable.</summary>
         [Test]

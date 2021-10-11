@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="VIRTUALIZATION_INSTANCE_INFO_OUTPUT" /> struct.</summary>
-    public static unsafe class VIRTUALIZATION_INSTANCE_INFO_OUTPUTTests
+    public static unsafe partial class VIRTUALIZATION_INSTANCE_INFO_OUTPUTTests
     {
         /// <summary>Validates that the <see cref="VIRTUALIZATION_INSTANCE_INFO_OUTPUT" /> struct is blittable.</summary>
         [Test]

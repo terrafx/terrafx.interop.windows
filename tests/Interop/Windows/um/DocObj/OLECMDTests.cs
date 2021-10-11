@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="OLECMD" /> struct.</summary>
-    public static unsafe class OLECMDTests
+    public static unsafe partial class OLECMDTests
     {
         /// <summary>Validates that the <see cref="OLECMD" /> struct is blittable.</summary>
         [Test]

@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="OCSP_REQUEST_ENTRY" /> struct.</summary>
-    public static unsafe class OCSP_REQUEST_ENTRYTests
+    public static unsafe partial class OCSP_REQUEST_ENTRYTests
     {
         /// <summary>Validates that the <see cref="OCSP_REQUEST_ENTRY" /> struct is blittable.</summary>
         [Test]

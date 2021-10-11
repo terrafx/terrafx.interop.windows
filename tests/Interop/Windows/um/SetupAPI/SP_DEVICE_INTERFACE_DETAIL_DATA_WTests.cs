@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="SP_DEVICE_INTERFACE_DETAIL_DATA_W" /> struct.</summary>
-    public static unsafe class SP_DEVICE_INTERFACE_DETAIL_DATA_WTests
+    public static unsafe partial class SP_DEVICE_INTERFACE_DETAIL_DATA_WTests
     {
         /// <summary>Validates that the <see cref="SP_DEVICE_INTERFACE_DETAIL_DATA_W" /> struct is blittable.</summary>
         [Test]

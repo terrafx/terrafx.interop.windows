@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="D2D1_INK_STYLE_PROPERTIES" /> struct.</summary>
-    public static unsafe class D2D1_INK_STYLE_PROPERTIESTests
+    public static unsafe partial class D2D1_INK_STYLE_PROPERTIESTests
     {
         /// <summary>Validates that the <see cref="D2D1_INK_STYLE_PROPERTIES" /> struct is blittable.</summary>
         [Test]

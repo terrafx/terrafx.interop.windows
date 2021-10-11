@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="SYSTEM_POOL_ZEROING_INFORMATION" /> struct.</summary>
-    public static unsafe class SYSTEM_POOL_ZEROING_INFORMATIONTests
+    public static unsafe partial class SYSTEM_POOL_ZEROING_INFORMATIONTests
     {
         /// <summary>Validates that the <see cref="SYSTEM_POOL_ZEROING_INFORMATION" /> struct is blittable.</summary>
         [Test]

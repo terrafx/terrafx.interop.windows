@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="JOBOBJECT_BASIC_UI_RESTRICTIONS" /> struct.</summary>
-    public static unsafe class JOBOBJECT_BASIC_UI_RESTRICTIONSTests
+    public static unsafe partial class JOBOBJECT_BASIC_UI_RESTRICTIONSTests
     {
         /// <summary>Validates that the <see cref="JOBOBJECT_BASIC_UI_RESTRICTIONS" /> struct is blittable.</summary>
         [Test]

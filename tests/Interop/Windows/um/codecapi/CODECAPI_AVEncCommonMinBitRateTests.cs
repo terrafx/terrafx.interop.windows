@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="CODECAPI_AVEncCommonMinBitRate" /> struct.</summary>
-    public static unsafe class CODECAPI_AVEncCommonMinBitRateTests
+    public static unsafe partial class CODECAPI_AVEncCommonMinBitRateTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="CODECAPI_AVEncCommonMinBitRate" /> struct is correct.</summary>
         [Test]

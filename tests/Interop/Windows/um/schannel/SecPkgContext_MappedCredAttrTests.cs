@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="SecPkgContext_MappedCredAttr" /> struct.</summary>
-    public static unsafe class SecPkgContext_MappedCredAttrTests
+    public static unsafe partial class SecPkgContext_MappedCredAttrTests
     {
         /// <summary>Validates that the <see cref="SecPkgContext_MappedCredAttr" /> struct is blittable.</summary>
         [Test]

@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="EXIT_THREAD_DEBUG_INFO" /> struct.</summary>
-    public static unsafe class EXIT_THREAD_DEBUG_INFOTests
+    public static unsafe partial class EXIT_THREAD_DEBUG_INFOTests
     {
         /// <summary>Validates that the <see cref="EXIT_THREAD_DEBUG_INFO" /> struct is blittable.</summary>
         [Test]

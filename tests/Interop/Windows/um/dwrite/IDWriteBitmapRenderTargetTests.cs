@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IDWriteBitmapRenderTarget" /> struct.</summary>
-    public static unsafe class IDWriteBitmapRenderTargetTests
+    public static unsafe partial class IDWriteBitmapRenderTargetTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IDWriteBitmapRenderTarget" /> struct is correct.</summary>
         [Test]

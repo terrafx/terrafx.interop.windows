@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IGraphConfigCallback" /> struct.</summary>
-    public static unsafe class IGraphConfigCallbackTests
+    public static unsafe partial class IGraphConfigCallbackTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IGraphConfigCallback" /> struct is correct.</summary>
         [Test]

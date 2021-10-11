@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="CODECAPI_AVEncDDRFPreEmphasisFilter" /> struct.</summary>
-    public static unsafe class CODECAPI_AVEncDDRFPreEmphasisFilterTests
+    public static unsafe partial class CODECAPI_AVEncDDRFPreEmphasisFilterTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="CODECAPI_AVEncDDRFPreEmphasisFilter" /> struct is correct.</summary>
         [Test]

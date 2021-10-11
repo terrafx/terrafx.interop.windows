@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="DLGITEMTEMPLATE" /> struct.</summary>
-    public static unsafe class DLGITEMTEMPLATETests
+    public static unsafe partial class DLGITEMTEMPLATETests
     {
         /// <summary>Validates that the <see cref="DLGITEMTEMPLATE" /> struct is blittable.</summary>
         [Test]

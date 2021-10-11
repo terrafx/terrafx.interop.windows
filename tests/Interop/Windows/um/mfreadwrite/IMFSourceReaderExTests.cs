@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IMFSourceReaderEx" /> struct.</summary>
-    public static unsafe class IMFSourceReaderExTests
+    public static unsafe partial class IMFSourceReaderExTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IMFSourceReaderEx" /> struct is correct.</summary>
         [Test]

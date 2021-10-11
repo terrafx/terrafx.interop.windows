@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="SecPkgContext_KeyingMaterial_Inproc" /> struct.</summary>
-    public static unsafe class SecPkgContext_KeyingMaterial_InprocTests
+    public static unsafe partial class SecPkgContext_KeyingMaterial_InprocTests
     {
         /// <summary>Validates that the <see cref="SecPkgContext_KeyingMaterial_Inproc" /> struct is blittable.</summary>
         [Test]

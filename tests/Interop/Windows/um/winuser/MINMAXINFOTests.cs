@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="MINMAXINFO" /> struct.</summary>
-    public static unsafe class MINMAXINFOTests
+    public static unsafe partial class MINMAXINFOTests
     {
         /// <summary>Validates that the <see cref="MINMAXINFO" /> struct is blittable.</summary>
         [Test]

@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="DWM_THUMBNAIL_PROPERTIES" /> struct.</summary>
-    public static unsafe class DWM_THUMBNAIL_PROPERTIESTests
+    public static unsafe partial class DWM_THUMBNAIL_PROPERTIESTests
     {
         /// <summary>Validates that the <see cref="DWM_THUMBNAIL_PROPERTIES" /> struct is blittable.</summary>
         [Test]

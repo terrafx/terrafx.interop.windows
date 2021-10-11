@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="EMRCREATEDIBPATTERNBRUSHPT" /> struct.</summary>
-    public static unsafe class EMRCREATEDIBPATTERNBRUSHPTTests
+    public static unsafe partial class EMRCREATEDIBPATTERNBRUSHPTTests
     {
         /// <summary>Validates that the <see cref="EMRCREATEDIBPATTERNBRUSHPT" /> struct is blittable.</summary>
         [Test]

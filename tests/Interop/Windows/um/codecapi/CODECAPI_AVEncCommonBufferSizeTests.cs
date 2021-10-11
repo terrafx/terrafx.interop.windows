@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="CODECAPI_AVEncCommonBufferSize" /> struct.</summary>
-    public static unsafe class CODECAPI_AVEncCommonBufferSizeTests
+    public static unsafe partial class CODECAPI_AVEncCommonBufferSizeTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="CODECAPI_AVEncCommonBufferSize" /> struct is correct.</summary>
         [Test]

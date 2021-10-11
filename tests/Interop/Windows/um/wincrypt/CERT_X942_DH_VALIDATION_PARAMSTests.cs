@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="CERT_X942_DH_VALIDATION_PARAMS" /> struct.</summary>
-    public static unsafe class CERT_X942_DH_VALIDATION_PARAMSTests
+    public static unsafe partial class CERT_X942_DH_VALIDATION_PARAMSTests
     {
         /// <summary>Validates that the <see cref="CERT_X942_DH_VALIDATION_PARAMS" /> struct is blittable.</summary>
         [Test]

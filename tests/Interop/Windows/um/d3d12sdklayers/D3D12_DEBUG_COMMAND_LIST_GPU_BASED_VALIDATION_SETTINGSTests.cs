@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="D3D12_DEBUG_COMMAND_LIST_GPU_BASED_VALIDATION_SETTINGS" /> struct.</summary>
-    public static unsafe class D3D12_DEBUG_COMMAND_LIST_GPU_BASED_VALIDATION_SETTINGSTests
+    public static unsafe partial class D3D12_DEBUG_COMMAND_LIST_GPU_BASED_VALIDATION_SETTINGSTests
     {
         /// <summary>Validates that the <see cref="D3D12_DEBUG_COMMAND_LIST_GPU_BASED_VALIDATION_SETTINGS" /> struct is blittable.</summary>
         [Test]

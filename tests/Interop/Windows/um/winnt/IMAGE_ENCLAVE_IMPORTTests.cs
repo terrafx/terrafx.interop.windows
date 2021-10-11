@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IMAGE_ENCLAVE_IMPORT" /> struct.</summary>
-    public static unsafe class IMAGE_ENCLAVE_IMPORTTests
+    public static unsafe partial class IMAGE_ENCLAVE_IMPORTTests
     {
         /// <summary>Validates that the <see cref="IMAGE_ENCLAVE_IMPORT" /> struct is blittable.</summary>
         [Test]

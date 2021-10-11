@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="CRYPT_REGISTER_ACTIONID" /> struct.</summary>
-    public static unsafe class CRYPT_REGISTER_ACTIONIDTests
+    public static unsafe partial class CRYPT_REGISTER_ACTIONIDTests
     {
         /// <summary>Validates that the <see cref="CRYPT_REGISTER_ACTIONID" /> struct is blittable.</summary>
         [Test]

@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="DECRYPTION_STATUS_BUFFER" /> struct.</summary>
-    public static unsafe class DECRYPTION_STATUS_BUFFERTests
+    public static unsafe partial class DECRYPTION_STATUS_BUFFERTests
     {
         /// <summary>Validates that the <see cref="DECRYPTION_STATUS_BUFFER" /> struct is blittable.</summary>
         [Test]

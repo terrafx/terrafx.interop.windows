@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="ACE_HEADER" /> struct.</summary>
-    public static unsafe class ACE_HEADERTests
+    public static unsafe partial class ACE_HEADERTests
     {
         /// <summary>Validates that the <see cref="ACE_HEADER" /> struct is blittable.</summary>
         [Test]

@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="FILE_SET_DEFECT_MGMT_BUFFER" /> struct.</summary>
-    public static unsafe class FILE_SET_DEFECT_MGMT_BUFFERTests
+    public static unsafe partial class FILE_SET_DEFECT_MGMT_BUFFERTests
     {
         /// <summary>Validates that the <see cref="FILE_SET_DEFECT_MGMT_BUFFER" /> struct is blittable.</summary>
         [Test]

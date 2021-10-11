@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="CACHE_DESCRIPTOR" /> struct.</summary>
-    public static unsafe class CACHE_DESCRIPTORTests
+    public static unsafe partial class CACHE_DESCRIPTORTests
     {
         /// <summary>Validates that the <see cref="CACHE_DESCRIPTOR" /> struct is blittable.</summary>
         [Test]

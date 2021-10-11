@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="CODECAPI_AVEncStatWMVCBMax" /> struct.</summary>
-    public static unsafe class CODECAPI_AVEncStatWMVCBMaxTests
+    public static unsafe partial class CODECAPI_AVEncStatWMVCBMaxTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="CODECAPI_AVEncStatWMVCBMax" /> struct is correct.</summary>
         [Test]

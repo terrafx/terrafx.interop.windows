@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="SAMPR_ENCRYPTED_USER_PASSWORD" /> struct.</summary>
-    public static unsafe class SAMPR_ENCRYPTED_USER_PASSWORDTests
+    public static unsafe partial class SAMPR_ENCRYPTED_USER_PASSWORDTests
     {
         /// <summary>Validates that the <see cref="SAMPR_ENCRYPTED_USER_PASSWORD" /> struct is blittable.</summary>
         [Test]

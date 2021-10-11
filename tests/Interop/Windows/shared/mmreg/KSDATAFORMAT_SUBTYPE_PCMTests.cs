@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="KSDATAFORMAT_SUBTYPE_PCM" /> struct.</summary>
-    public static unsafe class KSDATAFORMAT_SUBTYPE_PCMTests
+    public static unsafe partial class KSDATAFORMAT_SUBTYPE_PCMTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="KSDATAFORMAT_SUBTYPE_PCM" /> struct is correct.</summary>
         [Test]

@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="CODECAPI_AVEncInputVideoSystem" /> struct.</summary>
-    public static unsafe class CODECAPI_AVEncInputVideoSystemTests
+    public static unsafe partial class CODECAPI_AVEncInputVideoSystemTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="CODECAPI_AVEncInputVideoSystem" /> struct is correct.</summary>
         [Test]

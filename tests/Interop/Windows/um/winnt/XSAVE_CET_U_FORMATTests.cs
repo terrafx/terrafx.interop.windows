@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="XSAVE_CET_U_FORMAT" /> struct.</summary>
-    public static unsafe class XSAVE_CET_U_FORMATTests
+    public static unsafe partial class XSAVE_CET_U_FORMATTests
     {
         /// <summary>Validates that the <see cref="XSAVE_CET_U_FORMAT" /> struct is blittable.</summary>
         [Test]

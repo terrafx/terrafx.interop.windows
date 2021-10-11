@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="CODECAPI_AVAudioSampleRate" /> struct.</summary>
-    public static unsafe class CODECAPI_AVAudioSampleRateTests
+    public static unsafe partial class CODECAPI_AVAudioSampleRateTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="CODECAPI_AVAudioSampleRate" /> struct is correct.</summary>
         [Test]

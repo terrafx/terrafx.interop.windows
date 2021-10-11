@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="D2D_VECTOR_2F" /> struct.</summary>
-    public static unsafe class D2D_VECTOR_2FTests
+    public static unsafe partial class D2D_VECTOR_2FTests
     {
         /// <summary>Validates that the <see cref="D2D_VECTOR_2F" /> struct is blittable.</summary>
         [Test]

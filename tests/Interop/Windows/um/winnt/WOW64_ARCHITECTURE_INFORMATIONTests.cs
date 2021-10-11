@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="WOW64_ARCHITECTURE_INFORMATION" /> struct.</summary>
-    public static unsafe class WOW64_ARCHITECTURE_INFORMATIONTests
+    public static unsafe partial class WOW64_ARCHITECTURE_INFORMATIONTests
     {
         /// <summary>Validates that the <see cref="WOW64_ARCHITECTURE_INFORMATION" /> struct is blittable.</summary>
         [Test]

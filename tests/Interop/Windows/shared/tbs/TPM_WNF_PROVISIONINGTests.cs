@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="TPM_WNF_PROVISIONING" /> struct.</summary>
-    public static unsafe class TPM_WNF_PROVISIONINGTests
+    public static unsafe partial class TPM_WNF_PROVISIONINGTests
     {
         /// <summary>Validates that the <see cref="TPM_WNF_PROVISIONING" /> struct is blittable.</summary>
         [Test]

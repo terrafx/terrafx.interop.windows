@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="CollectionElementValue" /> struct.</summary>
-    public static unsafe class CollectionElementValueTests
+    public static unsafe partial class CollectionElementValueTests
     {
         /// <summary>Validates that the <see cref="CollectionElementValue" /> struct is blittable.</summary>
         [Test]

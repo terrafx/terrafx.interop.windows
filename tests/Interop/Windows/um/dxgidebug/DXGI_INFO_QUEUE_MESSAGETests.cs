@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="DXGI_INFO_QUEUE_MESSAGE" /> struct.</summary>
-    public static unsafe class DXGI_INFO_QUEUE_MESSAGETests
+    public static unsafe partial class DXGI_INFO_QUEUE_MESSAGETests
     {
         /// <summary>Validates that the <see cref="DXGI_INFO_QUEUE_MESSAGE" /> struct is blittable.</summary>
         [Test]

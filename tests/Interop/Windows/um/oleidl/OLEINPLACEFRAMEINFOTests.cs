@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="OLEINPLACEFRAMEINFO" /> struct.</summary>
-    public static unsafe class OLEINPLACEFRAMEINFOTests
+    public static unsafe partial class OLEINPLACEFRAMEINFOTests
     {
         /// <summary>Validates that the <see cref="OLEINPLACEFRAMEINFO" /> struct is blittable.</summary>
         [Test]

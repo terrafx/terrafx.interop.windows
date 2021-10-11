@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="LAYERPLANEDESCRIPTOR" /> struct.</summary>
-    public static unsafe class LAYERPLANEDESCRIPTORTests
+    public static unsafe partial class LAYERPLANEDESCRIPTORTests
     {
         /// <summary>Validates that the <see cref="LAYERPLANEDESCRIPTOR" /> struct is blittable.</summary>
         [Test]

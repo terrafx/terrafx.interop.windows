@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="TCKEYDOWN" /> struct.</summary>
-    public static unsafe class TCKEYDOWNTests
+    public static unsafe partial class TCKEYDOWNTests
     {
         /// <summary>Validates that the <see cref="TCKEYDOWN" /> struct is blittable.</summary>
         [Test]

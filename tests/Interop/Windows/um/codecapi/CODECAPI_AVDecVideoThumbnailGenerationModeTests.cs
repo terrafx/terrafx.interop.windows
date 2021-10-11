@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="CODECAPI_AVDecVideoThumbnailGenerationMode" /> struct.</summary>
-    public static unsafe class CODECAPI_AVDecVideoThumbnailGenerationModeTests
+    public static unsafe partial class CODECAPI_AVDecVideoThumbnailGenerationModeTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="CODECAPI_AVDecVideoThumbnailGenerationMode" /> struct is correct.</summary>
         [Test]

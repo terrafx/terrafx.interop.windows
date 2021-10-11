@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="MPEGLAYER3WAVEFORMAT" /> struct.</summary>
-    public static unsafe class MPEGLAYER3WAVEFORMATTests
+    public static unsafe partial class MPEGLAYER3WAVEFORMATTests
     {
         /// <summary>Validates that the <see cref="MPEGLAYER3WAVEFORMAT" /> struct is blittable.</summary>
         [Test]

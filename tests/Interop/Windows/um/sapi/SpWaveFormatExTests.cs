@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="SpWaveFormatEx" /> struct.</summary>
-    public static unsafe class SpWaveFormatExTests
+    public static unsafe partial class SpWaveFormatExTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="SpWaveFormatEx" /> struct is correct.</summary>
         [Test]

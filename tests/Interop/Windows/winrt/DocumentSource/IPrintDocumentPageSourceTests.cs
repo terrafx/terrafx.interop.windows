@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IPrintDocumentPageSource" /> struct.</summary>
-    public static unsafe class IPrintDocumentPageSourceTests
+    public static unsafe partial class IPrintDocumentPageSourceTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IPrintDocumentPageSource" /> struct is correct.</summary>
         [Test]

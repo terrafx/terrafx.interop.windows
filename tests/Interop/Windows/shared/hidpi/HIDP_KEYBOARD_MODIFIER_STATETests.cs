@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="HIDP_KEYBOARD_MODIFIER_STATE" /> struct.</summary>
-    public static unsafe class HIDP_KEYBOARD_MODIFIER_STATETests
+    public static unsafe partial class HIDP_KEYBOARD_MODIFIER_STATETests
     {
         /// <summary>Validates that the <see cref="HIDP_KEYBOARD_MODIFIER_STATE" /> struct is blittable.</summary>
         [Test]

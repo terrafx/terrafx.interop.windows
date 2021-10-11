@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IDragSourceHelper2" /> struct.</summary>
-    public static unsafe class IDragSourceHelper2Tests
+    public static unsafe partial class IDragSourceHelper2Tests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IDragSourceHelper2" /> struct is correct.</summary>
         [Test]

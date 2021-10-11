@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="PREVENT_MEDIA_REMOVAL" /> struct.</summary>
-    public static unsafe class PREVENT_MEDIA_REMOVALTests
+    public static unsafe partial class PREVENT_MEDIA_REMOVALTests
     {
         /// <summary>Validates that the <see cref="PREVENT_MEDIA_REMOVAL" /> struct is blittable.</summary>
         [Test]

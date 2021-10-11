@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="DOLBYAC2WAVEFORMAT" /> struct.</summary>
-    public static unsafe class DOLBYAC2WAVEFORMATTests
+    public static unsafe partial class DOLBYAC2WAVEFORMATTests
     {
         /// <summary>Validates that the <see cref="DOLBYAC2WAVEFORMAT" /> struct is blittable.</summary>
         [Test]

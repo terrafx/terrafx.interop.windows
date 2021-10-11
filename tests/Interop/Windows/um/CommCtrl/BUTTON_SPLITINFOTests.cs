@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="BUTTON_SPLITINFO" /> struct.</summary>
-    public static unsafe class BUTTON_SPLITINFOTests
+    public static unsafe partial class BUTTON_SPLITINFOTests
     {
         /// <summary>Validates that the <see cref="BUTTON_SPLITINFO" /> struct is blittable.</summary>
         [Test]

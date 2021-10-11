@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="CODECAPI_AVEnableInLoopDeblockFilter" /> struct.</summary>
-    public static unsafe class CODECAPI_AVEnableInLoopDeblockFilterTests
+    public static unsafe partial class CODECAPI_AVEnableInLoopDeblockFilterTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="CODECAPI_AVEnableInLoopDeblockFilter" /> struct is correct.</summary>
         [Test]

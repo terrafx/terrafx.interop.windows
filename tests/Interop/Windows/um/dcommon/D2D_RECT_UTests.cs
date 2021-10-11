@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="D2D_RECT_U" /> struct.</summary>
-    public static unsafe class D2D_RECT_UTests
+    public static unsafe partial class D2D_RECT_UTests
     {
         /// <summary>Validates that the <see cref="D2D_RECT_U" /> struct is blittable.</summary>
         [Test]

@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IWICPlanarBitmapSourceTransform" /> struct.</summary>
-    public static unsafe class IWICPlanarBitmapSourceTransformTests
+    public static unsafe partial class IWICPlanarBitmapSourceTransformTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IWICPlanarBitmapSourceTransform" /> struct is correct.</summary>
         [Test]

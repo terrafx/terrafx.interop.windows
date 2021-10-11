@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="SYNCMGR_CONFLICT_ID_INFO" /> struct.</summary>
-    public static unsafe class SYNCMGR_CONFLICT_ID_INFOTests
+    public static unsafe partial class SYNCMGR_CONFLICT_ID_INFOTests
     {
         /// <summary>Validates that the <see cref="SYNCMGR_CONFLICT_ID_INFO" /> struct is blittable.</summary>
         [Test]

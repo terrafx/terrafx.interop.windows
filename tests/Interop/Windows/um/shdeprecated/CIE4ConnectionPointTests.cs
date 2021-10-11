@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="CIE4ConnectionPoint" /> struct.</summary>
-    public static unsafe class CIE4ConnectionPointTests
+    public static unsafe partial class CIE4ConnectionPointTests
     {
         /// <summary>Validates that the <see cref="CIE4ConnectionPoint" /> struct is blittable.</summary>
         [Test]

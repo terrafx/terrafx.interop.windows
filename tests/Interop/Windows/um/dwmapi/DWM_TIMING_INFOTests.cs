@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="DWM_TIMING_INFO" /> struct.</summary>
-    public static unsafe class DWM_TIMING_INFOTests
+    public static unsafe partial class DWM_TIMING_INFOTests
     {
         /// <summary>Validates that the <see cref="DWM_TIMING_INFO" /> struct is blittable.</summary>
         [Test]

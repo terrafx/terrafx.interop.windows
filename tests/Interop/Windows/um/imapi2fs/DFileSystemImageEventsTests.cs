@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="DFileSystemImageEvents" /> struct.</summary>
-    public static unsafe class DFileSystemImageEventsTests
+    public static unsafe partial class DFileSystemImageEventsTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="DFileSystemImageEvents" /> struct is correct.</summary>
         [Test]

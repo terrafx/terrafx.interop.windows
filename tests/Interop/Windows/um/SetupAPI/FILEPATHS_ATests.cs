@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="FILEPATHS_A" /> struct.</summary>
-    public static unsafe class FILEPATHS_ATests
+    public static unsafe partial class FILEPATHS_ATests
     {
         /// <summary>Validates that the <see cref="FILEPATHS_A" /> struct is blittable.</summary>
         [Test]

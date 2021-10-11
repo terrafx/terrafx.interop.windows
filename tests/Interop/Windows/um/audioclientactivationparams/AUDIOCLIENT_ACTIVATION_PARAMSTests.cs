@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="AUDIOCLIENT_ACTIVATION_PARAMS" /> struct.</summary>
-    public static unsafe class AUDIOCLIENT_ACTIVATION_PARAMSTests
+    public static unsafe partial class AUDIOCLIENT_ACTIVATION_PARAMSTests
     {
         /// <summary>Validates that the <see cref="AUDIOCLIENT_ACTIVATION_PARAMS" /> struct is blittable.</summary>
         [Test]

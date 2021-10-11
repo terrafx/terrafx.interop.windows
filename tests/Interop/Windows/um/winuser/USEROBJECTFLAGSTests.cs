@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="USEROBJECTFLAGS" /> struct.</summary>
-    public static unsafe class USEROBJECTFLAGSTests
+    public static unsafe partial class USEROBJECTFLAGSTests
     {
         /// <summary>Validates that the <see cref="USEROBJECTFLAGS" /> struct is blittable.</summary>
         [Test]

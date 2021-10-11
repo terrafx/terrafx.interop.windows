@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IAMVideoCompression" /> struct.</summary>
-    public static unsafe class IAMVideoCompressionTests
+    public static unsafe partial class IAMVideoCompressionTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IAMVideoCompression" /> struct is correct.</summary>
         [Test]

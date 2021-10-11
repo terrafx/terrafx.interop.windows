@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="ID3DX12PipelineParserCallbacks" /> struct.</summary>
-    public static unsafe class ID3DX12PipelineParserCallbacksTests
+    public static unsafe partial class ID3DX12PipelineParserCallbacksTests
     {
         /// <summary>Validates that the <see cref="ID3DX12PipelineParserCallbacks" /> struct is blittable.</summary>
         [Test]

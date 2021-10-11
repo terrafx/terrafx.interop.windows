@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="AUDIOCLIENT_PROCESS_LOOPBACK_PARAMS" /> struct.</summary>
-    public static unsafe class AUDIOCLIENT_PROCESS_LOOPBACK_PARAMSTests
+    public static unsafe partial class AUDIOCLIENT_PROCESS_LOOPBACK_PARAMSTests
     {
         /// <summary>Validates that the <see cref="AUDIOCLIENT_PROCESS_LOOPBACK_PARAMS" /> struct is blittable.</summary>
         [Test]

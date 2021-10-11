@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="LOGBRUSH" /> struct.</summary>
-    public static unsafe class LOGBRUSHTests
+    public static unsafe partial class LOGBRUSHTests
     {
         /// <summary>Validates that the <see cref="LOGBRUSH" /> struct is blittable.</summary>
         [Test]

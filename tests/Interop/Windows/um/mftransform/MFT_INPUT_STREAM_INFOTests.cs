@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="MFT_INPUT_STREAM_INFO" /> struct.</summary>
-    public static unsafe class MFT_INPUT_STREAM_INFOTests
+    public static unsafe partial class MFT_INPUT_STREAM_INFOTests
     {
         /// <summary>Validates that the <see cref="MFT_INPUT_STREAM_INFO" /> struct is blittable.</summary>
         [Test]

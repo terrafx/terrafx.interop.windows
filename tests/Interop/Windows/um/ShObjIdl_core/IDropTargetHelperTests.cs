@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IDropTargetHelper" /> struct.</summary>
-    public static unsafe class IDropTargetHelperTests
+    public static unsafe partial class IDropTargetHelperTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IDropTargetHelper" /> struct is correct.</summary>
         [Test]

@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="MOUSEHOOKSTRUCTEX" /> struct.</summary>
-    public static unsafe class MOUSEHOOKSTRUCTEXTests
+    public static unsafe partial class MOUSEHOOKSTRUCTEXTests
     {
         /// <summary>Validates that the <see cref="MOUSEHOOKSTRUCTEX" /> struct is blittable.</summary>
         [Test]

@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="CLEANLOCALSTORAGE" /> struct.</summary>
-    public static unsafe class CLEANLOCALSTORAGETests
+    public static unsafe partial class CLEANLOCALSTORAGETests
     {
         /// <summary>Validates that the <see cref="CLEANLOCALSTORAGE" /> struct is blittable.</summary>
         [Test]

@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="NMSEARCHWEB" /> struct.</summary>
-    public static unsafe class NMSEARCHWEBTests
+    public static unsafe partial class NMSEARCHWEBTests
     {
         /// <summary>Validates that the <see cref="NMSEARCHWEB" /> struct is blittable.</summary>
         [Test]

@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="DShellNameSpaceEvents" /> struct.</summary>
-    public static unsafe class DShellNameSpaceEventsTests
+    public static unsafe partial class DShellNameSpaceEventsTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="DShellNameSpaceEvents" /> struct is correct.</summary>
         [Test]

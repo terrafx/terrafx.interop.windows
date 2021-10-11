@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="ISuspensionDependencyManager" /> struct.</summary>
-    public static unsafe class ISuspensionDependencyManagerTests
+    public static unsafe partial class ISuspensionDependencyManagerTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ISuspensionDependencyManager" /> struct is correct.</summary>
         [Test]

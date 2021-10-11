@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="ASF_FLAT_PICTURE" /> struct.</summary>
-    public static unsafe class ASF_FLAT_PICTURETests
+    public static unsafe partial class ASF_FLAT_PICTURETests
     {
         /// <summary>Validates that the <see cref="ASF_FLAT_PICTURE" /> struct is blittable.</summary>
         [Test]

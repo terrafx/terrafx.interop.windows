@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="WS_SECURITY_BINDING_PROPERTIES" /> struct.</summary>
-    public static unsafe class WS_SECURITY_BINDING_PROPERTIESTests
+    public static unsafe partial class WS_SECURITY_BINDING_PROPERTIESTests
     {
         /// <summary>Validates that the <see cref="WS_SECURITY_BINDING_PROPERTIES" /> struct is blittable.</summary>
         [Test]

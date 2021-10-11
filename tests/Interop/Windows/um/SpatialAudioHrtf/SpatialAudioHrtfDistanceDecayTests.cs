@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="SpatialAudioHrtfDistanceDecay" /> struct.</summary>
-    public static unsafe class SpatialAudioHrtfDistanceDecayTests
+    public static unsafe partial class SpatialAudioHrtfDistanceDecayTests
     {
         /// <summary>Validates that the <see cref="SpatialAudioHrtfDistanceDecay" /> struct is blittable.</summary>
         [Test]

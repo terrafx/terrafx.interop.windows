@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="ISpeechMemoryStream" /> struct.</summary>
-    public static unsafe class ISpeechMemoryStreamTests
+    public static unsafe partial class ISpeechMemoryStreamTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ISpeechMemoryStream" /> struct is correct.</summary>
         [Test]

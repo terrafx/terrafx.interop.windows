@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="DXGI_HDR_METADATA_HDR10" /> struct.</summary>
-    public static unsafe class DXGI_HDR_METADATA_HDR10Tests
+    public static unsafe partial class DXGI_HDR_METADATA_HDR10Tests
     {
         /// <summary>Validates that the <see cref="DXGI_HDR_METADATA_HDR10" /> struct is blittable.</summary>
         [Test]

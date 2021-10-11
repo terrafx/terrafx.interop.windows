@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="OLIOPRWAVEFORMAT" /> struct.</summary>
-    public static unsafe class OLIOPRWAVEFORMATTests
+    public static unsafe partial class OLIOPRWAVEFORMATTests
     {
         /// <summary>Validates that the <see cref="OLIOPRWAVEFORMAT" /> struct is blittable.</summary>
         [Test]

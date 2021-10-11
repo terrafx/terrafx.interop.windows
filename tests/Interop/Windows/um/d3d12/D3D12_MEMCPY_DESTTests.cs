@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="D3D12_MEMCPY_DEST" /> struct.</summary>
-    public static unsafe class D3D12_MEMCPY_DESTTests
+    public static unsafe partial class D3D12_MEMCPY_DESTTests
     {
         /// <summary>Validates that the <see cref="D3D12_MEMCPY_DEST" /> struct is blittable.</summary>
         [Test]

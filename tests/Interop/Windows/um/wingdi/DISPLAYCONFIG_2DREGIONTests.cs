@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="DISPLAYCONFIG_2DREGION" /> struct.</summary>
-    public static unsafe class DISPLAYCONFIG_2DREGIONTests
+    public static unsafe partial class DISPLAYCONFIG_2DREGIONTests
     {
         /// <summary>Validates that the <see cref="DISPLAYCONFIG_2DREGION" /> struct is blittable.</summary>
         [Test]

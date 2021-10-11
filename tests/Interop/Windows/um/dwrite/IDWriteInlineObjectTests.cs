@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IDWriteInlineObject" /> struct.</summary>
-    public static unsafe class IDWriteInlineObjectTests
+    public static unsafe partial class IDWriteInlineObjectTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IDWriteInlineObject" /> struct is correct.</summary>
         [Test]

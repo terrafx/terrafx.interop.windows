@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="DEBUG_EVENT" /> struct.</summary>
-    public static unsafe class DEBUG_EVENTTests
+    public static unsafe partial class DEBUG_EVENTTests
     {
         /// <summary>Validates that the <see cref="DEBUG_EVENT" /> struct is blittable.</summary>
         [Test]

@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="STORAGE_MEDIUM_PRODUCT_TYPE_DESCRIPTOR" /> struct.</summary>
-    public static unsafe class STORAGE_MEDIUM_PRODUCT_TYPE_DESCRIPTORTests
+    public static unsafe partial class STORAGE_MEDIUM_PRODUCT_TYPE_DESCRIPTORTests
     {
         /// <summary>Validates that the <see cref="STORAGE_MEDIUM_PRODUCT_TYPE_DESCRIPTOR" /> struct is blittable.</summary>
         [Test]

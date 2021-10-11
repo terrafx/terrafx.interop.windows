@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IObjectWithFolderEnumMode" /> struct.</summary>
-    public static unsafe class IObjectWithFolderEnumModeTests
+    public static unsafe partial class IObjectWithFolderEnumModeTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IObjectWithFolderEnumMode" /> struct is correct.</summary>
         [Test]

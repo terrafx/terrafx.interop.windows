@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="MIXERCONTROLDETAILS_SIGNED" /> struct.</summary>
-    public static unsafe class MIXERCONTROLDETAILS_SIGNEDTests
+    public static unsafe partial class MIXERCONTROLDETAILS_SIGNEDTests
     {
         /// <summary>Validates that the <see cref="MIXERCONTROLDETAILS_SIGNED" /> struct is blittable.</summary>
         [Test]

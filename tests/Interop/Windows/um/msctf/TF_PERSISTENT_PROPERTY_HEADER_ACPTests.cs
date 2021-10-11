@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="TF_PERSISTENT_PROPERTY_HEADER_ACP" /> struct.</summary>
-    public static unsafe class TF_PERSISTENT_PROPERTY_HEADER_ACPTests
+    public static unsafe partial class TF_PERSISTENT_PROPERTY_HEADER_ACPTests
     {
         /// <summary>Validates that the <see cref="TF_PERSISTENT_PROPERTY_HEADER_ACP" /> struct is blittable.</summary>
         [Test]

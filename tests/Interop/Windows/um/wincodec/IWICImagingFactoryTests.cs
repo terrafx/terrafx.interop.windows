@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IWICImagingFactory" /> struct.</summary>
-    public static unsafe class IWICImagingFactoryTests
+    public static unsafe partial class IWICImagingFactoryTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IWICImagingFactory" /> struct is correct.</summary>
         [Test]

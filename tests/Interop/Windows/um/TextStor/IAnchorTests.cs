@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IAnchor" /> struct.</summary>
-    public static unsafe class IAnchorTests
+    public static unsafe partial class IAnchorTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IAnchor" /> struct is correct.</summary>
         [Test]

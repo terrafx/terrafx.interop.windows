@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="ITfPersistentPropertyLoaderACP" /> struct.</summary>
-    public static unsafe class ITfPersistentPropertyLoaderACPTests
+    public static unsafe partial class ITfPersistentPropertyLoaderACPTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ITfPersistentPropertyLoaderACP" /> struct is correct.</summary>
         [Test]

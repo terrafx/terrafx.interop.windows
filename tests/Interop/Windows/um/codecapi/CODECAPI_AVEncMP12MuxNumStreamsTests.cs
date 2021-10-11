@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="CODECAPI_AVEncMP12MuxNumStreams" /> struct.</summary>
-    public static unsafe class CODECAPI_AVEncMP12MuxNumStreamsTests
+    public static unsafe partial class CODECAPI_AVEncMP12MuxNumStreamsTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="CODECAPI_AVEncMP12MuxNumStreams" /> struct is correct.</summary>
         [Test]

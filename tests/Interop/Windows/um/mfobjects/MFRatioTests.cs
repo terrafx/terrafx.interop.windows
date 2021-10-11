@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="MFRatio" /> struct.</summary>
-    public static unsafe class MFRatioTests
+    public static unsafe partial class MFRatioTests
     {
         /// <summary>Validates that the <see cref="MFRatio" /> struct is blittable.</summary>
         [Test]

@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IMAGE_DEBUG_DIRECTORY" /> struct.</summary>
-    public static unsafe class IMAGE_DEBUG_DIRECTORYTests
+    public static unsafe partial class IMAGE_DEBUG_DIRECTORYTests
     {
         /// <summary>Validates that the <see cref="IMAGE_DEBUG_DIRECTORY" /> struct is blittable.</summary>
         [Test]

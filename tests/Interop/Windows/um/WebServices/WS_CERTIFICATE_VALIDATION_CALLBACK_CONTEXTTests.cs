@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="WS_CERTIFICATE_VALIDATION_CALLBACK_CONTEXT" /> struct.</summary>
-    public static unsafe class WS_CERTIFICATE_VALIDATION_CALLBACK_CONTEXTTests
+    public static unsafe partial class WS_CERTIFICATE_VALIDATION_CALLBACK_CONTEXTTests
     {
         /// <summary>Validates that the <see cref="WS_CERTIFICATE_VALIDATION_CALLBACK_CONTEXT" /> struct is blittable.</summary>
         [Test]

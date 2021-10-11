@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="_tagSlowAppInfo" /> struct.</summary>
-    public static unsafe class _tagSlowAppInfoTests
+    public static unsafe partial class _tagSlowAppInfoTests
     {
         /// <summary>Validates that the <see cref="_tagSlowAppInfo" /> struct is blittable.</summary>
         [Test]

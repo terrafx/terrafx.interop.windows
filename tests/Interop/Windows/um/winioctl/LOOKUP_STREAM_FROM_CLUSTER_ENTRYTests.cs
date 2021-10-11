@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="LOOKUP_STREAM_FROM_CLUSTER_ENTRY" /> struct.</summary>
-    public static unsafe class LOOKUP_STREAM_FROM_CLUSTER_ENTRYTests
+    public static unsafe partial class LOOKUP_STREAM_FROM_CLUSTER_ENTRYTests
     {
         /// <summary>Validates that the <see cref="LOOKUP_STREAM_FROM_CLUSTER_ENTRY" /> struct is blittable.</summary>
         [Test]

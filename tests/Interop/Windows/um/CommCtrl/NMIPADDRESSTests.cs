@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="NMIPADDRESS" /> struct.</summary>
-    public static unsafe class NMIPADDRESSTests
+    public static unsafe partial class NMIPADDRESSTests
     {
         /// <summary>Validates that the <see cref="NMIPADDRESS" /> struct is blittable.</summary>
         [Test]

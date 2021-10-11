@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="D3D12_VIEW_INSTANCE_LOCATION" /> struct.</summary>
-    public static unsafe class D3D12_VIEW_INSTANCE_LOCATIONTests
+    public static unsafe partial class D3D12_VIEW_INSTANCE_LOCATIONTests
     {
         /// <summary>Validates that the <see cref="D3D12_VIEW_INSTANCE_LOCATION" /> struct is blittable.</summary>
         [Test]

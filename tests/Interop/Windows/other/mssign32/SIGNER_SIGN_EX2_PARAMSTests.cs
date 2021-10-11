@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="SIGNER_SIGN_EX2_PARAMS" /> struct.</summary>
-    public static unsafe class SIGNER_SIGN_EX2_PARAMSTests
+    public static unsafe partial class SIGNER_SIGN_EX2_PARAMSTests
     {
         /// <summary>Validates that the <see cref="SIGNER_SIGN_EX2_PARAMS" /> struct is blittable.</summary>
         [Test]

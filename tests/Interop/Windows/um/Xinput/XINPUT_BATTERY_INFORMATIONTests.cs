@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="XINPUT_BATTERY_INFORMATION" /> struct.</summary>
-    public static unsafe class XINPUT_BATTERY_INFORMATIONTests
+    public static unsafe partial class XINPUT_BATTERY_INFORMATIONTests
     {
         /// <summary>Validates that the <see cref="XINPUT_BATTERY_INFORMATION" /> struct is blittable.</summary>
         [Test]

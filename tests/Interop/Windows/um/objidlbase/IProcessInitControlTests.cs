@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IProcessInitControl" /> struct.</summary>
-    public static unsafe class IProcessInitControlTests
+    public static unsafe partial class IProcessInitControlTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IProcessInitControl" /> struct is correct.</summary>
         [Test]

@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="DWRITE_FILE_FRAGMENT" /> struct.</summary>
-    public static unsafe class DWRITE_FILE_FRAGMENTTests
+    public static unsafe partial class DWRITE_FILE_FRAGMENTTests
     {
         /// <summary>Validates that the <see cref="DWRITE_FILE_FRAGMENT" /> struct is blittable.</summary>
         [Test]

@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IWICMetadataHandlerInfo" /> struct.</summary>
-    public static unsafe class IWICMetadataHandlerInfoTests
+    public static unsafe partial class IWICMetadataHandlerInfoTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IWICMetadataHandlerInfo" /> struct is correct.</summary>
         [Test]

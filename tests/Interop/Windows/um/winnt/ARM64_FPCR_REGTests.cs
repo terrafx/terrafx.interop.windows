@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="ARM64_FPCR_REG" /> struct.</summary>
-    public static unsafe class ARM64_FPCR_REGTests
+    public static unsafe partial class ARM64_FPCR_REGTests
     {
         /// <summary>Validates that the <see cref="ARM64_FPCR_REG" /> struct is blittable.</summary>
         [Test]

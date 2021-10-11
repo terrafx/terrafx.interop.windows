@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="InMemoryPropertyStoreMarshalByValue" /> struct.</summary>
-    public static unsafe class InMemoryPropertyStoreMarshalByValueTests
+    public static unsafe partial class InMemoryPropertyStoreMarshalByValueTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="InMemoryPropertyStoreMarshalByValue" /> struct is correct.</summary>
         [Test]

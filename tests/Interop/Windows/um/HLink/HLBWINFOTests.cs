@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="HLBWINFO" /> struct.</summary>
-    public static unsafe class HLBWINFOTests
+    public static unsafe partial class HLBWINFOTests
     {
         /// <summary>Validates that the <see cref="HLBWINFO" /> struct is blittable.</summary>
         [Test]

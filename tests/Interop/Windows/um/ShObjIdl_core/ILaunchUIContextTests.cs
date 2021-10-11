@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="ILaunchUIContext" /> struct.</summary>
-    public static unsafe class ILaunchUIContextTests
+    public static unsafe partial class ILaunchUIContextTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ILaunchUIContext" /> struct is correct.</summary>
         [Test]

@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="SmartcardReaderSelectionProvider" /> struct.</summary>
-    public static unsafe class SmartcardReaderSelectionProviderTests
+    public static unsafe partial class SmartcardReaderSelectionProviderTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="SmartcardReaderSelectionProvider" /> struct is correct.</summary>
         [Test]

@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="DVD_PLAYBACK_LOCATION" /> struct.</summary>
-    public static unsafe class DVD_PLAYBACK_LOCATIONTests
+    public static unsafe partial class DVD_PLAYBACK_LOCATIONTests
     {
         /// <summary>Validates that the <see cref="DVD_PLAYBACK_LOCATION" /> struct is blittable.</summary>
         [Test]

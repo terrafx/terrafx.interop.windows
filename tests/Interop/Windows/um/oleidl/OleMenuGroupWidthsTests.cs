@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="OLEMENUGROUPWIDTHS" /> struct.</summary>
-    public static unsafe class OLEMENUGROUPWIDTHSTests
+    public static unsafe partial class OLEMENUGROUPWIDTHSTests
     {
         /// <summary>Validates that the <see cref="OLEMENUGROUPWIDTHS" /> struct is blittable.</summary>
         [Test]

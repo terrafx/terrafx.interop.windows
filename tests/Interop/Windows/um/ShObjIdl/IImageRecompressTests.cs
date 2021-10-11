@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IImageRecompress" /> struct.</summary>
-    public static unsafe class IImageRecompressTests
+    public static unsafe partial class IImageRecompressTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IImageRecompress" /> struct is correct.</summary>
         [Test]

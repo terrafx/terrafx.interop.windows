@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="HD_TEXTFILTERW" /> struct.</summary>
-    public static unsafe class HD_TEXTFILTERWTests
+    public static unsafe partial class HD_TEXTFILTERWTests
     {
         /// <summary>Validates that the <see cref="HD_TEXTFILTERW" /> struct is blittable.</summary>
         [Test]

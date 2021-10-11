@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="EXCEPTION_RECORD32" /> struct.</summary>
-    public static unsafe class EXCEPTION_RECORD32Tests
+    public static unsafe partial class EXCEPTION_RECORD32Tests
     {
         /// <summary>Validates that the <see cref="EXCEPTION_RECORD32" /> struct is blittable.</summary>
         [Test]

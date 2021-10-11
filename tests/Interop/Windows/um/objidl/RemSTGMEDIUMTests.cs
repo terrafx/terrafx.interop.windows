@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="RemSTGMEDIUM" /> struct.</summary>
-    public static unsafe class RemSTGMEDIUMTests
+    public static unsafe partial class RemSTGMEDIUMTests
     {
         /// <summary>Validates that the <see cref="RemSTGMEDIUM" /> struct is blittable.</summary>
         [Test]

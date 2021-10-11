@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="POINTFLOAT" /> struct.</summary>
-    public static unsafe class POINTFLOATTests
+    public static unsafe partial class POINTFLOATTests
     {
         /// <summary>Validates that the <see cref="POINTFLOAT" /> struct is blittable.</summary>
         [Test]

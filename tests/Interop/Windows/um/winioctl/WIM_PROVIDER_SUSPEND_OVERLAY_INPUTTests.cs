@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="WIM_PROVIDER_SUSPEND_OVERLAY_INPUT" /> struct.</summary>
-    public static unsafe class WIM_PROVIDER_SUSPEND_OVERLAY_INPUTTests
+    public static unsafe partial class WIM_PROVIDER_SUSPEND_OVERLAY_INPUTTests
     {
         /// <summary>Validates that the <see cref="WIM_PROVIDER_SUSPEND_OVERLAY_INPUT" /> struct is blittable.</summary>
         [Test]

@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="AM_PROPERTY_SPPAL" /> struct.</summary>
-    public static unsafe class AM_PROPERTY_SPPALTests
+    public static unsafe partial class AM_PROPERTY_SPPALTests
     {
         /// <summary>Validates that the <see cref="AM_PROPERTY_SPPAL" /> struct is blittable.</summary>
         [Test]

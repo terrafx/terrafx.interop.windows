@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="CODECAPI_AVEncDDCopyright" /> struct.</summary>
-    public static unsafe class CODECAPI_AVEncDDCopyrightTests
+    public static unsafe partial class CODECAPI_AVEncDDCopyrightTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="CODECAPI_AVEncDDCopyright" /> struct is correct.</summary>
         [Test]

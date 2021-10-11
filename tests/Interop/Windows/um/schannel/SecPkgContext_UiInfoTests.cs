@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="SecPkgContext_UiInfo" /> struct.</summary>
-    public static unsafe class SecPkgContext_UiInfoTests
+    public static unsafe partial class SecPkgContext_UiInfoTests
     {
         /// <summary>Validates that the <see cref="SecPkgContext_UiInfo" /> struct is blittable.</summary>
         [Test]

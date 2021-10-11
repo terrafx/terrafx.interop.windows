@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IDirectManipulationUpdateHandler" /> struct.</summary>
-    public static unsafe class IDirectManipulationUpdateHandlerTests
+    public static unsafe partial class IDirectManipulationUpdateHandlerTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IDirectManipulationUpdateHandler" /> struct is correct.</summary>
         [Test]

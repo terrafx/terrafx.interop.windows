@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IWICPlanarBitmapFrameEncode" /> struct.</summary>
-    public static unsafe class IWICPlanarBitmapFrameEncodeTests
+    public static unsafe partial class IWICPlanarBitmapFrameEncodeTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IWICPlanarBitmapFrameEncode" /> struct is correct.</summary>
         [Test]

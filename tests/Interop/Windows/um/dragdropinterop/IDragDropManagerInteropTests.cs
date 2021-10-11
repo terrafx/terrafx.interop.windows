@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IDragDropManagerInterop" /> struct.</summary>
-    public static unsafe class IDragDropManagerInteropTests
+    public static unsafe partial class IDragDropManagerInteropTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IDragDropManagerInterop" /> struct is correct.</summary>
         [Test]

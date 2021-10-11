@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="SYSTEM_POWER_CAPABILITIES" /> struct.</summary>
-    public static unsafe class SYSTEM_POWER_CAPABILITIESTests
+    public static unsafe partial class SYSTEM_POWER_CAPABILITIESTests
     {
         /// <summary>Validates that the <see cref="SYSTEM_POWER_CAPABILITIES" /> struct is blittable.</summary>
         [Test]

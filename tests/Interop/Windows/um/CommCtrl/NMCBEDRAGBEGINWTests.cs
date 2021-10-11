@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="NMCBEDRAGBEGINW" /> struct.</summary>
-    public static unsafe class NMCBEDRAGBEGINWTests
+    public static unsafe partial class NMCBEDRAGBEGINWTests
     {
         /// <summary>Validates that the <see cref="NMCBEDRAGBEGINW" /> struct is blittable.</summary>
         [Test]

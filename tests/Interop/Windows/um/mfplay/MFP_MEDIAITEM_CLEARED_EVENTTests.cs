@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="MFP_MEDIAITEM_CLEARED_EVENT" /> struct.</summary>
-    public static unsafe class MFP_MEDIAITEM_CLEARED_EVENTTests
+    public static unsafe partial class MFP_MEDIAITEM_CLEARED_EVENTTests
     {
         /// <summary>Validates that the <see cref="MFP_MEDIAITEM_CLEARED_EVENT" /> struct is blittable.</summary>
         [Test]

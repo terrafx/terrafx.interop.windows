@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="SPVCONTEXT" /> struct.</summary>
-    public static unsafe class SPVCONTEXTTests
+    public static unsafe partial class SPVCONTEXTTests
     {
         /// <summary>Validates that the <see cref="SPVCONTEXT" /> struct is blittable.</summary>
         [Test]

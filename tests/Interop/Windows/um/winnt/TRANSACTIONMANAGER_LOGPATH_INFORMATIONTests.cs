@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="TRANSACTIONMANAGER_LOGPATH_INFORMATION" /> struct.</summary>
-    public static unsafe class TRANSACTIONMANAGER_LOGPATH_INFORMATIONTests
+    public static unsafe partial class TRANSACTIONMANAGER_LOGPATH_INFORMATIONTests
     {
         /// <summary>Validates that the <see cref="TRANSACTIONMANAGER_LOGPATH_INFORMATION" /> struct is blittable.</summary>
         [Test]

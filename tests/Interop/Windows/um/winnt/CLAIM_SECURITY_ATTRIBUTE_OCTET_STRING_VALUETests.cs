@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="CLAIM_SECURITY_ATTRIBUTE_OCTET_STRING_VALUE" /> struct.</summary>
-    public static unsafe class CLAIM_SECURITY_ATTRIBUTE_OCTET_STRING_VALUETests
+    public static unsafe partial class CLAIM_SECURITY_ATTRIBUTE_OCTET_STRING_VALUETests
     {
         /// <summary>Validates that the <see cref="CLAIM_SECURITY_ATTRIBUTE_OCTET_STRING_VALUE" /> struct is blittable.</summary>
         [Test]

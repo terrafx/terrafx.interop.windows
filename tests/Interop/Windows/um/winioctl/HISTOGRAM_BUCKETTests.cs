@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="HISTOGRAM_BUCKET" /> struct.</summary>
-    public static unsafe class HISTOGRAM_BUCKETTests
+    public static unsafe partial class HISTOGRAM_BUCKETTests
     {
         /// <summary>Validates that the <see cref="HISTOGRAM_BUCKET" /> struct is blittable.</summary>
         [Test]

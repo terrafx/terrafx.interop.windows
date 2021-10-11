@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="COLORMAP" /> struct.</summary>
-    public static unsafe class COLORMAPTests
+    public static unsafe partial class COLORMAPTests
     {
         /// <summary>Validates that the <see cref="COLORMAP" /> struct is blittable.</summary>
         [Test]

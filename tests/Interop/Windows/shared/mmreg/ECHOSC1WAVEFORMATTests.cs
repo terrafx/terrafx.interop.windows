@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="ECHOSC1WAVEFORMAT" /> struct.</summary>
-    public static unsafe class ECHOSC1WAVEFORMATTests
+    public static unsafe partial class ECHOSC1WAVEFORMATTests
     {
         /// <summary>Validates that the <see cref="ECHOSC1WAVEFORMAT" /> struct is blittable.</summary>
         [Test]

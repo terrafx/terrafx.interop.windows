@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="DISPLAYCONFIG_SUPPORT_VIRTUAL_RESOLUTION" /> struct.</summary>
-    public static unsafe class DISPLAYCONFIG_SUPPORT_VIRTUAL_RESOLUTIONTests
+    public static unsafe partial class DISPLAYCONFIG_SUPPORT_VIRTUAL_RESOLUTIONTests
     {
         /// <summary>Validates that the <see cref="DISPLAYCONFIG_SUPPORT_VIRTUAL_RESOLUTION" /> struct is blittable.</summary>
         [Test]

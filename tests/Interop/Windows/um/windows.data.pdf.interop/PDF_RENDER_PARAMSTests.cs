@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="PDF_RENDER_PARAMS" /> struct.</summary>
-    public static unsafe class PDF_RENDER_PARAMSTests
+    public static unsafe partial class PDF_RENDER_PARAMSTests
     {
         /// <summary>Validates that the <see cref="PDF_RENDER_PARAMS" /> struct is blittable.</summary>
         [Test]

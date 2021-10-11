@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="RETRIEVAL_POINTER_BASE" /> struct.</summary>
-    public static unsafe class RETRIEVAL_POINTER_BASETests
+    public static unsafe partial class RETRIEVAL_POINTER_BASETests
     {
         /// <summary>Validates that the <see cref="RETRIEVAL_POINTER_BASE" /> struct is blittable.</summary>
         [Test]

@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="SHRINK_VOLUME_INFORMATION" /> struct.</summary>
-    public static unsafe class SHRINK_VOLUME_INFORMATIONTests
+    public static unsafe partial class SHRINK_VOLUME_INFORMATIONTests
     {
         /// <summary>Validates that the <see cref="SHRINK_VOLUME_INFORMATION" /> struct is blittable.</summary>
         [Test]

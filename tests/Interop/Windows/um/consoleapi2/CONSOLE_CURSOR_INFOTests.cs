@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="CONSOLE_CURSOR_INFO" /> struct.</summary>
-    public static unsafe class CONSOLE_CURSOR_INFOTests
+    public static unsafe partial class CONSOLE_CURSOR_INFOTests
     {
         /// <summary>Validates that the <see cref="CONSOLE_CURSOR_INFO" /> struct is blittable.</summary>
         [Test]

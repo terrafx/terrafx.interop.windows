@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IUIAnimationTimerEventHandler" /> struct.</summary>
-    public static unsafe class IUIAnimationTimerEventHandlerTests
+    public static unsafe partial class IUIAnimationTimerEventHandlerTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IUIAnimationTimerEventHandler" /> struct is correct.</summary>
         [Test]

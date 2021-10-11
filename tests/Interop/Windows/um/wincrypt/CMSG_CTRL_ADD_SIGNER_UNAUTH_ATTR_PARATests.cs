@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="CMSG_CTRL_ADD_SIGNER_UNAUTH_ATTR_PARA" /> struct.</summary>
-    public static unsafe class CMSG_CTRL_ADD_SIGNER_UNAUTH_ATTR_PARATests
+    public static unsafe partial class CMSG_CTRL_ADD_SIGNER_UNAUTH_ATTR_PARATests
     {
         /// <summary>Validates that the <see cref="CMSG_CTRL_ADD_SIGNER_UNAUTH_ATTR_PARA" /> struct is blittable.</summary>
         [Test]

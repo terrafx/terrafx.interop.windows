@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="NMREBAR" /> struct.</summary>
-    public static unsafe class NMREBARTests
+    public static unsafe partial class NMREBARTests
     {
         /// <summary>Validates that the <see cref="NMREBAR" /> struct is blittable.</summary>
         [Test]

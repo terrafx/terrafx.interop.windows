@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IInitializeWithBindCtx" /> struct.</summary>
-    public static unsafe class IInitializeWithBindCtxTests
+    public static unsafe partial class IInitializeWithBindCtxTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IInitializeWithBindCtx" /> struct is correct.</summary>
         [Test]

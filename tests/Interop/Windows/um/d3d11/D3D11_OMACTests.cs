@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="D3D11_OMAC" /> struct.</summary>
-    public static unsafe class D3D11_OMACTests
+    public static unsafe partial class D3D11_OMACTests
     {
         /// <summary>Validates that the <see cref="D3D11_OMAC" /> struct is blittable.</summary>
         [Test]

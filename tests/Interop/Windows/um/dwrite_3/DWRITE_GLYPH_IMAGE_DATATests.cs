@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="DWRITE_GLYPH_IMAGE_DATA" /> struct.</summary>
-    public static unsafe class DWRITE_GLYPH_IMAGE_DATATests
+    public static unsafe partial class DWRITE_GLYPH_IMAGE_DATATests
     {
         /// <summary>Validates that the <see cref="DWRITE_GLYPH_IMAGE_DATA" /> struct is blittable.</summary>
         [Test]

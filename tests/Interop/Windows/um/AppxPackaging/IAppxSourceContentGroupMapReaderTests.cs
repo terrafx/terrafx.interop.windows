@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IAppxSourceContentGroupMapReader" /> struct.</summary>
-    public static unsafe class IAppxSourceContentGroupMapReaderTests
+    public static unsafe partial class IAppxSourceContentGroupMapReaderTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IAppxSourceContentGroupMapReader" /> struct is correct.</summary>
         [Test]

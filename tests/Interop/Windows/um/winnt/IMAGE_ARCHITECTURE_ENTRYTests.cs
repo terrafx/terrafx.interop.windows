@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IMAGE_ARCHITECTURE_ENTRY" /> struct.</summary>
-    public static unsafe class IMAGE_ARCHITECTURE_ENTRYTests
+    public static unsafe partial class IMAGE_ARCHITECTURE_ENTRYTests
     {
         /// <summary>Validates that the <see cref="IMAGE_ARCHITECTURE_ENTRY" /> struct is blittable.</summary>
         [Test]

@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IBannerNotificationHandler" /> struct.</summary>
-    public static unsafe class IBannerNotificationHandlerTests
+    public static unsafe partial class IBannerNotificationHandlerTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IBannerNotificationHandler" /> struct is correct.</summary>
         [Test]

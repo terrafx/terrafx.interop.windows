@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="D3D12_VIDEO_PROCESS_FILTER_RANGE" /> struct.</summary>
-    public static unsafe class D3D12_VIDEO_PROCESS_FILTER_RANGETests
+    public static unsafe partial class D3D12_VIDEO_PROCESS_FILTER_RANGETests
     {
         /// <summary>Validates that the <see cref="D3D12_VIDEO_PROCESS_FILTER_RANGE" /> struct is blittable.</summary>
         [Test]

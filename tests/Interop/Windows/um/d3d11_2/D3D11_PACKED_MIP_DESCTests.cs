@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="D3D11_PACKED_MIP_DESC" /> struct.</summary>
-    public static unsafe class D3D11_PACKED_MIP_DESCTests
+    public static unsafe partial class D3D11_PACKED_MIP_DESCTests
     {
         /// <summary>Validates that the <see cref="D3D11_PACKED_MIP_DESC" /> struct is blittable.</summary>
         [Test]

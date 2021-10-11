@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="DWRITE_STRIKETHROUGH" /> struct.</summary>
-    public static unsafe class DWRITE_STRIKETHROUGHTests
+    public static unsafe partial class DWRITE_STRIKETHROUGHTests
     {
         /// <summary>Validates that the <see cref="DWRITE_STRIKETHROUGH" /> struct is blittable.</summary>
         [Test]

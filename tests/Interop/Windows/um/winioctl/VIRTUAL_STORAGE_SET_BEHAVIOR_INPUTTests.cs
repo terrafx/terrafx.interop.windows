@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="VIRTUAL_STORAGE_SET_BEHAVIOR_INPUT" /> struct.</summary>
-    public static unsafe class VIRTUAL_STORAGE_SET_BEHAVIOR_INPUTTests
+    public static unsafe partial class VIRTUAL_STORAGE_SET_BEHAVIOR_INPUTTests
     {
         /// <summary>Validates that the <see cref="VIRTUAL_STORAGE_SET_BEHAVIOR_INPUT" /> struct is blittable.</summary>
         [Test]

@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="NMDATETIMEFORMATA" /> struct.</summary>
-    public static unsafe class NMDATETIMEFORMATATests
+    public static unsafe partial class NMDATETIMEFORMATATests
     {
         /// <summary>Validates that the <see cref="NMDATETIMEFORMATA" /> struct is blittable.</summary>
         [Test]

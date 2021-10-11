@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="PLEX_READ_DATA_REQUEST" /> struct.</summary>
-    public static unsafe class PLEX_READ_DATA_REQUESTTests
+    public static unsafe partial class PLEX_READ_DATA_REQUESTTests
     {
         /// <summary>Validates that the <see cref="PLEX_READ_DATA_REQUEST" /> struct is blittable.</summary>
         [Test]

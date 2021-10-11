@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IParseAndCreateItem" /> struct.</summary>
-    public static unsafe class IParseAndCreateItemTests
+    public static unsafe partial class IParseAndCreateItemTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IParseAndCreateItem" /> struct is correct.</summary>
         [Test]

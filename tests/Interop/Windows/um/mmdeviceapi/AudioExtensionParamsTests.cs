@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="AudioExtensionParams" /> struct.</summary>
-    public static unsafe class AudioExtensionParamsTests
+    public static unsafe partial class AudioExtensionParamsTests
     {
         /// <summary>Validates that the <see cref="AudioExtensionParams" /> struct is blittable.</summary>
         [Test]

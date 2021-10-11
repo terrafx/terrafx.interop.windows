@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IMFDeviceTransform" /> struct.</summary>
-    public static unsafe class IMFDeviceTransformTests
+    public static unsafe partial class IMFDeviceTransformTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IMFDeviceTransform" /> struct is correct.</summary>
         [Test]

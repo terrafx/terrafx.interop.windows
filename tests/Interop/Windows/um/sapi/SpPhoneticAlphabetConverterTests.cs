@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="SpPhoneticAlphabetConverter" /> struct.</summary>
-    public static unsafe class SpPhoneticAlphabetConverterTests
+    public static unsafe partial class SpPhoneticAlphabetConverterTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="SpPhoneticAlphabetConverter" /> struct is correct.</summary>
         [Test]

@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="PARAMDESCEX" /> struct.</summary>
-    public static unsafe class PARAMDESCEXTests
+    public static unsafe partial class PARAMDESCEXTests
     {
         /// <summary>Validates that the <see cref="PARAMDESCEX" /> struct is blittable.</summary>
         [Test]

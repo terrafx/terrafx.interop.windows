@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="D3D12_RESOURCE_ALIASING_BARRIER" /> struct.</summary>
-    public static unsafe class D3D12_RESOURCE_ALIASING_BARRIERTests
+    public static unsafe partial class D3D12_RESOURCE_ALIASING_BARRIERTests
     {
         /// <summary>Validates that the <see cref="D3D12_RESOURCE_ALIASING_BARRIER" /> struct is blittable.</summary>
         [Test]

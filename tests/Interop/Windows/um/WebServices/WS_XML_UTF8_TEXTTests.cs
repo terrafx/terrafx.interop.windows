@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="WS_XML_UTF8_TEXT" /> struct.</summary>
-    public static unsafe class WS_XML_UTF8_TEXTTests
+    public static unsafe partial class WS_XML_UTF8_TEXTTests
     {
         /// <summary>Validates that the <see cref="WS_XML_UTF8_TEXT" /> struct is blittable.</summary>
         [Test]

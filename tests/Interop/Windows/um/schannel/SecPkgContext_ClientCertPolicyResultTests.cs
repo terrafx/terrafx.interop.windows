@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="SecPkgContext_ClientCertPolicyResult" /> struct.</summary>
-    public static unsafe class SecPkgContext_ClientCertPolicyResultTests
+    public static unsafe partial class SecPkgContext_ClientCertPolicyResultTests
     {
         /// <summary>Validates that the <see cref="SecPkgContext_ClientCertPolicyResult" /> struct is blittable.</summary>
         [Test]

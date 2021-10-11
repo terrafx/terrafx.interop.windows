@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IWebAuthenticationCoreManagerInterop" /> struct.</summary>
-    public static unsafe class IWebAuthenticationCoreManagerInteropTests
+    public static unsafe partial class IWebAuthenticationCoreManagerInteropTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IWebAuthenticationCoreManagerInterop" /> struct is correct.</summary>
         [Test]

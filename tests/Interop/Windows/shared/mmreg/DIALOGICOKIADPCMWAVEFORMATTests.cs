@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="DIALOGICOKIADPCMWAVEFORMAT" /> struct.</summary>
-    public static unsafe class DIALOGICOKIADPCMWAVEFORMATTests
+    public static unsafe partial class DIALOGICOKIADPCMWAVEFORMATTests
     {
         /// <summary>Validates that the <see cref="DIALOGICOKIADPCMWAVEFORMAT" /> struct is blittable.</summary>
         [Test]

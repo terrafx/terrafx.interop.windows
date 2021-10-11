@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="RemotableHandle" /> struct.</summary>
-    public static unsafe class RemotableHandleTests
+    public static unsafe partial class RemotableHandleTests
     {
         /// <summary>Validates that the <see cref="RemotableHandle" /> struct is blittable.</summary>
         [Test]

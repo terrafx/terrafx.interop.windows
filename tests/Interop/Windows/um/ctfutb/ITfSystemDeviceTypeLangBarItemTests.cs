@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="ITfSystemDeviceTypeLangBarItem" /> struct.</summary>
-    public static unsafe class ITfSystemDeviceTypeLangBarItemTests
+    public static unsafe partial class ITfSystemDeviceTypeLangBarItemTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ITfSystemDeviceTypeLangBarItem" /> struct is correct.</summary>
         [Test]

@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IOleCacheControl" /> struct.</summary>
-    public static unsafe class IOleCacheControlTests
+    public static unsafe partial class IOleCacheControlTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IOleCacheControl" /> struct is correct.</summary>
         [Test]

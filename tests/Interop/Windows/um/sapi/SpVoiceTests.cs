@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="SpVoice" /> struct.</summary>
-    public static unsafe class SpVoiceTests
+    public static unsafe partial class SpVoiceTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="SpVoice" /> struct is correct.</summary>
         [Test]

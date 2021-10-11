@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="STORAGE_ALLOCATE_BC_STREAM_OUTPUT" /> struct.</summary>
-    public static unsafe class STORAGE_ALLOCATE_BC_STREAM_OUTPUTTests
+    public static unsafe partial class STORAGE_ALLOCATE_BC_STREAM_OUTPUTTests
     {
         /// <summary>Validates that the <see cref="STORAGE_ALLOCATE_BC_STREAM_OUTPUT" /> struct is blittable.</summary>
         [Test]

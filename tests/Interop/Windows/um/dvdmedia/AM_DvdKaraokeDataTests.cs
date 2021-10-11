@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="AM_DvdKaraokeData" /> struct.</summary>
-    public static unsafe class AM_DvdKaraokeDataTests
+    public static unsafe partial class AM_DvdKaraokeDataTests
     {
         /// <summary>Validates that the <see cref="AM_DvdKaraokeData" /> struct is blittable.</summary>
         [Test]

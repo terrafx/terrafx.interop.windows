@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="TRACKMOUSEEVENT" /> struct.</summary>
-    public static unsafe class TRACKMOUSEEVENTTests
+    public static unsafe partial class TRACKMOUSEEVENTTests
     {
         /// <summary>Validates that the <see cref="TRACKMOUSEEVENT" /> struct is blittable.</summary>
         [Test]

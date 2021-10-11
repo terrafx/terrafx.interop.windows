@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="D3D10_TEXCUBE_SRV" /> struct.</summary>
-    public static unsafe class D3D10_TEXCUBE_SRVTests
+    public static unsafe partial class D3D10_TEXCUBE_SRVTests
     {
         /// <summary>Validates that the <see cref="D3D10_TEXCUBE_SRV" /> struct is blittable.</summary>
         [Test]

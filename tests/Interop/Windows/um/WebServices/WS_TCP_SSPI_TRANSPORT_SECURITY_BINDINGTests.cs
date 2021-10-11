@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="WS_TCP_SSPI_TRANSPORT_SECURITY_BINDING" /> struct.</summary>
-    public static unsafe class WS_TCP_SSPI_TRANSPORT_SECURITY_BINDINGTests
+    public static unsafe partial class WS_TCP_SSPI_TRANSPORT_SECURITY_BINDINGTests
     {
         /// <summary>Validates that the <see cref="WS_TCP_SSPI_TRANSPORT_SECURITY_BINDING" /> struct is blittable.</summary>
         [Test]

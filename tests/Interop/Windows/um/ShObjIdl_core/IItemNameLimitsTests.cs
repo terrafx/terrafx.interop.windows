@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IItemNameLimits" /> struct.</summary>
-    public static unsafe class IItemNameLimitsTests
+    public static unsafe partial class IItemNameLimitsTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IItemNameLimits" /> struct is correct.</summary>
         [Test]

@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="ECHOWAVEFILTER" /> struct.</summary>
-    public static unsafe class ECHOWAVEFILTERTests
+    public static unsafe partial class ECHOWAVEFILTERTests
     {
         /// <summary>Validates that the <see cref="ECHOWAVEFILTER" /> struct is blittable.</summary>
         [Test]

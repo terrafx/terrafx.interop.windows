@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="SPC_SERIALIZED_OBJECT" /> struct.</summary>
-    public static unsafe class SPC_SERIALIZED_OBJECTTests
+    public static unsafe partial class SPC_SERIALIZED_OBJECTTests
     {
         /// <summary>Validates that the <see cref="SPC_SERIALIZED_OBJECT" /> struct is blittable.</summary>
         [Test]

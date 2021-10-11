@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="READ_FILE_USN_DATA" /> struct.</summary>
-    public static unsafe class READ_FILE_USN_DATATests
+    public static unsafe partial class READ_FILE_USN_DATATests
     {
         /// <summary>Validates that the <see cref="READ_FILE_USN_DATA" /> struct is blittable.</summary>
         [Test]

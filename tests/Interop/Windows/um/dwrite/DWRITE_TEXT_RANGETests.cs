@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="DWRITE_TEXT_RANGE" /> struct.</summary>
-    public static unsafe class DWRITE_TEXT_RANGETests
+    public static unsafe partial class DWRITE_TEXT_RANGETests
     {
         /// <summary>Validates that the <see cref="DWRITE_TEXT_RANGE" /> struct is blittable.</summary>
         [Test]

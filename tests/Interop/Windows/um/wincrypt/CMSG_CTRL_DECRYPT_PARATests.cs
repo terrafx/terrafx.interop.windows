@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="CMSG_CTRL_DECRYPT_PARA" /> struct.</summary>
-    public static unsafe class CMSG_CTRL_DECRYPT_PARATests
+    public static unsafe partial class CMSG_CTRL_DECRYPT_PARATests
     {
         /// <summary>Validates that the <see cref="CMSG_CTRL_DECRYPT_PARA" /> struct is blittable.</summary>
         [Test]

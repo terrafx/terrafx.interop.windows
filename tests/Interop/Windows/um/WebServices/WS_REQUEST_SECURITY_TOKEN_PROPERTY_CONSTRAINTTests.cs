@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="WS_REQUEST_SECURITY_TOKEN_PROPERTY_CONSTRAINT" /> struct.</summary>
-    public static unsafe class WS_REQUEST_SECURITY_TOKEN_PROPERTY_CONSTRAINTTests
+    public static unsafe partial class WS_REQUEST_SECURITY_TOKEN_PROPERTY_CONSTRAINTTests
     {
         /// <summary>Validates that the <see cref="WS_REQUEST_SECURITY_TOKEN_PROPERTY_CONSTRAINT" /> struct is blittable.</summary>
         [Test]

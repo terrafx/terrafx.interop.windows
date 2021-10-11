@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="CRYPT_RETRIEVE_AUX_INFO" /> struct.</summary>
-    public static unsafe class CRYPT_RETRIEVE_AUX_INFOTests
+    public static unsafe partial class CRYPT_RETRIEVE_AUX_INFOTests
     {
         /// <summary>Validates that the <see cref="CRYPT_RETRIEVE_AUX_INFO" /> struct is blittable.</summary>
         [Test]

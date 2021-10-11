@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IMFMediaKeySystemAccess" /> struct.</summary>
-    public static unsafe class IMFMediaKeySystemAccessTests
+    public static unsafe partial class IMFMediaKeySystemAccessTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IMFMediaKeySystemAccess" /> struct is correct.</summary>
         [Test]

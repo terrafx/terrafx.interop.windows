@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="D2D1_DRAWING_STATE_DESCRIPTION" /> struct.</summary>
-    public static unsafe class D2D1_DRAWING_STATE_DESCRIPTIONTests
+    public static unsafe partial class D2D1_DRAWING_STATE_DESCRIPTIONTests
     {
         /// <summary>Validates that the <see cref="D2D1_DRAWING_STATE_DESCRIPTION" /> struct is blittable.</summary>
         [Test]

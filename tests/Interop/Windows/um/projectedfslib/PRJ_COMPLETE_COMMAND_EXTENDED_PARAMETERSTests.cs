@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="PRJ_COMPLETE_COMMAND_EXTENDED_PARAMETERS" /> struct.</summary>
-    public static unsafe class PRJ_COMPLETE_COMMAND_EXTENDED_PARAMETERSTests
+    public static unsafe partial class PRJ_COMPLETE_COMMAND_EXTENDED_PARAMETERSTests
     {
         /// <summary>Validates that the <see cref="PRJ_COMPLETE_COMMAND_EXTENDED_PARAMETERS" /> struct is blittable.</summary>
         [Test]

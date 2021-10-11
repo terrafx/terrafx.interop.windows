@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="CODECAPI_AVEncVideoInputColorNominalRange" /> struct.</summary>
-    public static unsafe class CODECAPI_AVEncVideoInputColorNominalRangeTests
+    public static unsafe partial class CODECAPI_AVEncVideoInputColorNominalRangeTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="CODECAPI_AVEncVideoInputColorNominalRange" /> struct is correct.</summary>
         [Test]

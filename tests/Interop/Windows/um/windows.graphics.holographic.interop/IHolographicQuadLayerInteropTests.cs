@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IHolographicQuadLayerInterop" /> struct.</summary>
-    public static unsafe class IHolographicQuadLayerInteropTests
+    public static unsafe partial class IHolographicQuadLayerInteropTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IHolographicQuadLayerInterop" /> struct is correct.</summary>
         [Test]

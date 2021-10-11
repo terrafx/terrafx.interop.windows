@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="PANOSE" /> struct.</summary>
-    public static unsafe class PANOSETests
+    public static unsafe partial class PANOSETests
     {
         /// <summary>Validates that the <see cref="PANOSE" /> struct is blittable.</summary>
         [Test]

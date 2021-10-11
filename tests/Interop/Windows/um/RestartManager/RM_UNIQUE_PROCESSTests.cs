@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="RM_UNIQUE_PROCESS" /> struct.</summary>
-    public static unsafe class RM_UNIQUE_PROCESSTests
+    public static unsafe partial class RM_UNIQUE_PROCESSTests
     {
         /// <summary>Validates that the <see cref="RM_UNIQUE_PROCESS" /> struct is blittable.</summary>
         [Test]

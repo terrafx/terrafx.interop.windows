@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IMFVideoMediaType" /> struct.</summary>
-    public static unsafe class IMFVideoMediaTypeTests
+    public static unsafe partial class IMFVideoMediaTypeTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IMFVideoMediaType" /> struct is correct.</summary>
         [Test]

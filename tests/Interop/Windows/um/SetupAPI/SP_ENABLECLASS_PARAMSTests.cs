@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="SP_ENABLECLASS_PARAMS" /> struct.</summary>
-    public static unsafe class SP_ENABLECLASS_PARAMSTests
+    public static unsafe partial class SP_ENABLECLASS_PARAMSTests
     {
         /// <summary>Validates that the <see cref="SP_ENABLECLASS_PARAMS" /> struct is blittable.</summary>
         [Test]

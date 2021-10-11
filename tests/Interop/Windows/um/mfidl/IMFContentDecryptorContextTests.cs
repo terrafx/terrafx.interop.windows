@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IMFContentDecryptorContext" /> struct.</summary>
-    public static unsafe class IMFContentDecryptorContextTests
+    public static unsafe partial class IMFContentDecryptorContextTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IMFContentDecryptorContext" /> struct is correct.</summary>
         [Test]

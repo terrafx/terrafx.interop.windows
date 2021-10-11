@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="RSOP_TARGET" /> struct.</summary>
-    public static unsafe class RSOP_TARGETTests
+    public static unsafe partial class RSOP_TARGETTests
     {
         /// <summary>Validates that the <see cref="RSOP_TARGET" /> struct is blittable.</summary>
         [Test]

@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="CFG_CALL_TARGET_INFO" /> struct.</summary>
-    public static unsafe class CFG_CALL_TARGET_INFOTests
+    public static unsafe partial class CFG_CALL_TARGET_INFOTests
     {
         /// <summary>Validates that the <see cref="CFG_CALL_TARGET_INFO" /> struct is blittable.</summary>
         [Test]

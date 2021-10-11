@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="DispatcherQueueOptions" /> struct.</summary>
-    public static unsafe class DispatcherQueueOptionsTests
+    public static unsafe partial class DispatcherQueueOptionsTests
     {
         /// <summary>Validates that the <see cref="DispatcherQueueOptions" /> struct is blittable.</summary>
         [Test]

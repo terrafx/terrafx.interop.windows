@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="D3D12_FEATURE_DATA_VIDEO_PROCESS_MAX_INPUT_STREAMS" /> struct.</summary>
-    public static unsafe class D3D12_FEATURE_DATA_VIDEO_PROCESS_MAX_INPUT_STREAMSTests
+    public static unsafe partial class D3D12_FEATURE_DATA_VIDEO_PROCESS_MAX_INPUT_STREAMSTests
     {
         /// <summary>Validates that the <see cref="D3D12_FEATURE_DATA_VIDEO_PROCESS_MAX_INPUT_STREAMS" /> struct is blittable.</summary>
         [Test]

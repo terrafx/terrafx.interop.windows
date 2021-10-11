@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IWICBitmapFlipRotator" /> struct.</summary>
-    public static unsafe class IWICBitmapFlipRotatorTests
+    public static unsafe partial class IWICBitmapFlipRotatorTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IWICBitmapFlipRotator" /> struct is correct.</summary>
         [Test]

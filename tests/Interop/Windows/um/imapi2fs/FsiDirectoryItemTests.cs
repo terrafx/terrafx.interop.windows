@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="FsiDirectoryItem" /> struct.</summary>
-    public static unsafe class FsiDirectoryItemTests
+    public static unsafe partial class FsiDirectoryItemTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="FsiDirectoryItem" /> struct is correct.</summary>
         [Test]

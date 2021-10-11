@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="COMPAREITEMSTRUCT" /> struct.</summary>
-    public static unsafe class COMPAREITEMSTRUCTTests
+    public static unsafe partial class COMPAREITEMSTRUCTTests
     {
         /// <summary>Validates that the <see cref="COMPAREITEMSTRUCT" /> struct is blittable.</summary>
         [Test]

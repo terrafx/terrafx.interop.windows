@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IRawCDImageTrackInfo" /> struct.</summary>
-    public static unsafe class IRawCDImageTrackInfoTests
+    public static unsafe partial class IRawCDImageTrackInfoTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IRawCDImageTrackInfo" /> struct is correct.</summary>
         [Test]

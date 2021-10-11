@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="SpTextSelectionInformation" /> struct.</summary>
-    public static unsafe class SpTextSelectionInformationTests
+    public static unsafe partial class SpTextSelectionInformationTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="SpTextSelectionInformation" /> struct is correct.</summary>
         [Test]

@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="_ISpeechRecoContextEvents" /> struct.</summary>
-    public static unsafe class _ISpeechRecoContextEventsTests
+    public static unsafe partial class _ISpeechRecoContextEventsTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="_ISpeechRecoContextEvents" /> struct is correct.</summary>
         [Test]

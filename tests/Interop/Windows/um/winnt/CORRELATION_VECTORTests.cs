@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="CORRELATION_VECTOR" /> struct.</summary>
-    public static unsafe class CORRELATION_VECTORTests
+    public static unsafe partial class CORRELATION_VECTORTests
     {
         /// <summary>Validates that the <see cref="CORRELATION_VECTOR" /> struct is blittable.</summary>
         [Test]

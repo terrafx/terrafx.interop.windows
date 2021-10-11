@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="CREDUI_INFOW" /> struct.</summary>
-    public static unsafe class CREDUI_INFOWTests
+    public static unsafe partial class CREDUI_INFOWTests
     {
         /// <summary>Validates that the <see cref="CREDUI_INFOW" /> struct is blittable.</summary>
         [Test]

@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="CONSOLE_READCONSOLE_CONTROL" /> struct.</summary>
-    public static unsafe class CONSOLE_READCONSOLE_CONTROLTests
+    public static unsafe partial class CONSOLE_READCONSOLE_CONTROLTests
     {
         /// <summary>Validates that the <see cref="CONSOLE_READCONSOLE_CONTROL" /> struct is blittable.</summary>
         [Test]

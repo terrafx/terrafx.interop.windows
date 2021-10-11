@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IActiveIMMMessagePumpOwner" /> struct.</summary>
-    public static unsafe class IActiveIMMMessagePumpOwnerTests
+    public static unsafe partial class IActiveIMMMessagePumpOwnerTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IActiveIMMMessagePumpOwner" /> struct is correct.</summary>
         [Test]

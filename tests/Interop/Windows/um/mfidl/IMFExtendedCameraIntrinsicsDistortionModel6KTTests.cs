@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IMFExtendedCameraIntrinsicsDistortionModel6KT" /> struct.</summary>
-    public static unsafe class IMFExtendedCameraIntrinsicsDistortionModel6KTTests
+    public static unsafe partial class IMFExtendedCameraIntrinsicsDistortionModel6KTTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IMFExtendedCameraIntrinsicsDistortionModel6KT" /> struct is correct.</summary>
         [Test]

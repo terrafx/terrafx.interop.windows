@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="WS_XML_READER_STREAM_INPUT" /> struct.</summary>
-    public static unsafe class WS_XML_READER_STREAM_INPUTTests
+    public static unsafe partial class WS_XML_READER_STREAM_INPUTTests
     {
         /// <summary>Validates that the <see cref="WS_XML_READER_STREAM_INPUT" /> struct is blittable.</summary>
         [Test]

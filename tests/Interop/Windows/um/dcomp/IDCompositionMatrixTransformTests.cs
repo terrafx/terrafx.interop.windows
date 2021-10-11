@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IDCompositionMatrixTransform" /> struct.</summary>
-    public static unsafe class IDCompositionMatrixTransformTests
+    public static unsafe partial class IDCompositionMatrixTransformTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IDCompositionMatrixTransform" /> struct is correct.</summary>
         [Test]

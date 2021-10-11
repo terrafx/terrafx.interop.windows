@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IMFByteStreamTimeSeek" /> struct.</summary>
-    public static unsafe class IMFByteStreamTimeSeekTests
+    public static unsafe partial class IMFByteStreamTimeSeekTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IMFByteStreamTimeSeek" /> struct is correct.</summary>
         [Test]

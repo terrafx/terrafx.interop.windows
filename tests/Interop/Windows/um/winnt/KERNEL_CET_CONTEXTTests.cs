@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="KERNEL_CET_CONTEXT" /> struct.</summary>
-    public static unsafe class KERNEL_CET_CONTEXTTests
+    public static unsafe partial class KERNEL_CET_CONTEXTTests
     {
         /// <summary>Validates that the <see cref="KERNEL_CET_CONTEXT" /> struct is blittable.</summary>
         [Test]

@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="SEALING_TIMESTAMP_ATTRIBUTE" /> struct.</summary>
-    public static unsafe class SEALING_TIMESTAMP_ATTRIBUTETests
+    public static unsafe partial class SEALING_TIMESTAMP_ATTRIBUTETests
     {
         /// <summary>Validates that the <see cref="SEALING_TIMESTAMP_ATTRIBUTE" /> struct is blittable.</summary>
         [Test]

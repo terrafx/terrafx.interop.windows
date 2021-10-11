@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="ITfReverseConversionMgr" /> struct.</summary>
-    public static unsafe class ITfReverseConversionMgrTests
+    public static unsafe partial class ITfReverseConversionMgrTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ITfReverseConversionMgr" /> struct is correct.</summary>
         [Test]

@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="GLYPHMETRICS" /> struct.</summary>
-    public static unsafe class GLYPHMETRICSTests
+    public static unsafe partial class GLYPHMETRICSTests
     {
         /// <summary>Validates that the <see cref="GLYPHMETRICS" /> struct is blittable.</summary>
         [Test]

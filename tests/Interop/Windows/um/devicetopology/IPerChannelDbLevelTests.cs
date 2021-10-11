@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IPerChannelDbLevel" /> struct.</summary>
-    public static unsafe class IPerChannelDbLevelTests
+    public static unsafe partial class IPerChannelDbLevelTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IPerChannelDbLevel" /> struct is correct.</summary>
         [Test]

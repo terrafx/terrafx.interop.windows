@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="TA_CUBIC_BEZIER" /> struct.</summary>
-    public static unsafe class TA_CUBIC_BEZIERTests
+    public static unsafe partial class TA_CUBIC_BEZIERTests
     {
         /// <summary>Validates that the <see cref="TA_CUBIC_BEZIER" /> struct is blittable.</summary>
         [Test]

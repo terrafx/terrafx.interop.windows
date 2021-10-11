@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="EDITBALLOONTIP" /> struct.</summary>
-    public static unsafe class EDITBALLOONTIPTests
+    public static unsafe partial class EDITBALLOONTIPTests
     {
         /// <summary>Validates that the <see cref="EDITBALLOONTIP" /> struct is blittable.</summary>
         [Test]

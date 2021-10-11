@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="SpatialAudioHrtfDirectivity" /> struct.</summary>
-    public static unsafe class SpatialAudioHrtfDirectivityTests
+    public static unsafe partial class SpatialAudioHrtfDirectivityTests
     {
         /// <summary>Validates that the <see cref="SpatialAudioHrtfDirectivity" /> struct is blittable.</summary>
         [Test]

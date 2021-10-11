@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IMFAttributes" /> struct.</summary>
-    public static unsafe class IMFAttributesTests
+    public static unsafe partial class IMFAttributesTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IMFAttributes" /> struct is correct.</summary>
         [Test]

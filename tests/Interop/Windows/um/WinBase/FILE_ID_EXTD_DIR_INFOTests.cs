@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="FILE_ID_EXTD_DIR_INFO" /> struct.</summary>
-    public static unsafe class FILE_ID_EXTD_DIR_INFOTests
+    public static unsafe partial class FILE_ID_EXTD_DIR_INFOTests
     {
         /// <summary>Validates that the <see cref="FILE_ID_EXTD_DIR_INFO" /> struct is blittable.</summary>
         [Test]

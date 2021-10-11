@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IBaseVideoMixer" /> struct.</summary>
-    public static unsafe class IBaseVideoMixerTests
+    public static unsafe partial class IBaseVideoMixerTests
     {
         /// <summary>Validates that the <see cref="IBaseVideoMixer" /> struct is blittable.</summary>
         [Test]

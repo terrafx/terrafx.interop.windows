@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IMLOperatorTypeInferrer" /> struct.</summary>
-    public static unsafe class IMLOperatorTypeInferrerTests
+    public static unsafe partial class IMLOperatorTypeInferrerTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IMLOperatorTypeInferrer" /> struct is correct.</summary>
         [Test]

@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="AXESLISTW" /> struct.</summary>
-    public static unsafe class AXESLISTWTests
+    public static unsafe partial class AXESLISTWTests
     {
         /// <summary>Validates that the <see cref="AXESLISTW" /> struct is blittable.</summary>
         [Test]

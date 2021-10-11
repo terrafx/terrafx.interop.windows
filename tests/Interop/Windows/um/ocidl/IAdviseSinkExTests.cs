@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IAdviseSinkEx" /> struct.</summary>
-    public static unsafe class IAdviseSinkExTests
+    public static unsafe partial class IAdviseSinkExTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IAdviseSinkEx" /> struct is correct.</summary>
         [Test]

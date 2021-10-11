@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="PrintDocumentPackageStatus" /> struct.</summary>
-    public static unsafe class PrintDocumentPackageStatusTests
+    public static unsafe partial class PrintDocumentPackageStatusTests
     {
         /// <summary>Validates that the <see cref="PrintDocumentPackageStatus" /> struct is blittable.</summary>
         [Test]

@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="TTGETTITLE" /> struct.</summary>
-    public static unsafe class TTGETTITLETests
+    public static unsafe partial class TTGETTITLETests
     {
         /// <summary>Validates that the <see cref="TTGETTITLE" /> struct is blittable.</summary>
         [Test]

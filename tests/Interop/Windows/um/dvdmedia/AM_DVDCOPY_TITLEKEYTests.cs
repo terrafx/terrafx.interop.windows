@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="AM_DVDCOPY_TITLEKEY" /> struct.</summary>
-    public static unsafe class AM_DVDCOPY_TITLEKEYTests
+    public static unsafe partial class AM_DVDCOPY_TITLEKEYTests
     {
         /// <summary>Validates that the <see cref="AM_DVDCOPY_TITLEKEY" /> struct is blittable.</summary>
         [Test]

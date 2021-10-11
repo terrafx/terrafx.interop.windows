@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="CSV_IS_OWNED_BY_CSVFS" /> struct.</summary>
-    public static unsafe class CSV_IS_OWNED_BY_CSVFSTests
+    public static unsafe partial class CSV_IS_OWNED_BY_CSVFSTests
     {
         /// <summary>Validates that the <see cref="CSV_IS_OWNED_BY_CSVFS" /> struct is blittable.</summary>
         [Test]

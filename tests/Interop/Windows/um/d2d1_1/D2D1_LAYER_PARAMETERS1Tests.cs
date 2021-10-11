@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="D2D1_LAYER_PARAMETERS1" /> struct.</summary>
-    public static unsafe class D2D1_LAYER_PARAMETERS1Tests
+    public static unsafe partial class D2D1_LAYER_PARAMETERS1Tests
     {
         /// <summary>Validates that the <see cref="D2D1_LAYER_PARAMETERS1" /> struct is blittable.</summary>
         [Test]

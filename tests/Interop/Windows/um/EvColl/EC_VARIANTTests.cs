@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="EC_VARIANT" /> struct.</summary>
-    public static unsafe class EC_VARIANTTests
+    public static unsafe partial class EC_VARIANTTests
     {
         /// <summary>Validates that the <see cref="EC_VARIANT" /> struct is blittable.</summary>
         [Test]

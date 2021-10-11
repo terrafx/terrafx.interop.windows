@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="LOCALMANAGEDAPPLICATION" /> struct.</summary>
-    public static unsafe class LOCALMANAGEDAPPLICATIONTests
+    public static unsafe partial class LOCALMANAGEDAPPLICATIONTests
     {
         /// <summary>Validates that the <see cref="LOCALMANAGEDAPPLICATION" /> struct is blittable.</summary>
         [Test]

@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IMAGE_RESOURCE_DATA_ENTRY" /> struct.</summary>
-    public static unsafe class IMAGE_RESOURCE_DATA_ENTRYTests
+    public static unsafe partial class IMAGE_RESOURCE_DATA_ENTRYTests
     {
         /// <summary>Validates that the <see cref="IMAGE_RESOURCE_DATA_ENTRY" /> struct is blittable.</summary>
         [Test]

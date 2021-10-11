@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="WGLSWAP" /> struct.</summary>
-    public static unsafe class WGLSWAPTests
+    public static unsafe partial class WGLSWAPTests
     {
         /// <summary>Validates that the <see cref="WGLSWAP" /> struct is blittable.</summary>
         [Test]

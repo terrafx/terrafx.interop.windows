@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="CODECAPI_AVEncDDSurround3dBAttenuation" /> struct.</summary>
-    public static unsafe class CODECAPI_AVEncDDSurround3dBAttenuationTests
+    public static unsafe partial class CODECAPI_AVEncDDSurround3dBAttenuationTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="CODECAPI_AVEncDDSurround3dBAttenuation" /> struct is correct.</summary>
         [Test]

@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="ID2D1SvgStrokeDashArray" /> struct.</summary>
-    public static unsafe class ID2D1SvgStrokeDashArrayTests
+    public static unsafe partial class ID2D1SvgStrokeDashArrayTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ID2D1SvgStrokeDashArray" /> struct is correct.</summary>
         [Test]

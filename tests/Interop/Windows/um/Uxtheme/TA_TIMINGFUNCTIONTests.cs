@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="TA_TIMINGFUNCTION" /> struct.</summary>
-    public static unsafe class TA_TIMINGFUNCTIONTests
+    public static unsafe partial class TA_TIMINGFUNCTIONTests
     {
         /// <summary>Validates that the <see cref="TA_TIMINGFUNCTION" /> struct is blittable.</summary>
         [Test]

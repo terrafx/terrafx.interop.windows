@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="WS_CHANNEL_ENCODER" /> struct.</summary>
-    public static unsafe class WS_CHANNEL_ENCODERTests
+    public static unsafe partial class WS_CHANNEL_ENCODERTests
     {
         /// <summary>Validates that the <see cref="WS_CHANNEL_ENCODER" /> struct is blittable.</summary>
         [Test]

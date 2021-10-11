@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="CODECAPI_AVRealtimeControl" /> struct.</summary>
-    public static unsafe class CODECAPI_AVRealtimeControlTests
+    public static unsafe partial class CODECAPI_AVRealtimeControlTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="CODECAPI_AVRealtimeControl" /> struct is correct.</summary>
         [Test]

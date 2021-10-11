@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="MOVE_FILE_RECORD_DATA" /> struct.</summary>
-    public static unsafe class MOVE_FILE_RECORD_DATATests
+    public static unsafe partial class MOVE_FILE_RECORD_DATATests
     {
         /// <summary>Validates that the <see cref="MOVE_FILE_RECORD_DATA" /> struct is blittable.</summary>
         [Test]

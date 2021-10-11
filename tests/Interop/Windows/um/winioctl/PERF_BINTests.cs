@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="PERF_BIN" /> struct.</summary>
-    public static unsafe class PERF_BINTests
+    public static unsafe partial class PERF_BINTests
     {
         /// <summary>Validates that the <see cref="PERF_BIN" /> struct is blittable.</summary>
         [Test]

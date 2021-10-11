@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="GROUP_AFFINITY" /> struct.</summary>
-    public static unsafe class GROUP_AFFINITYTests
+    public static unsafe partial class GROUP_AFFINITYTests
     {
         /// <summary>Validates that the <see cref="GROUP_AFFINITY" /> struct is blittable.</summary>
         [Test]

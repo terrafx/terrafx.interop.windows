@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="FILE_INITIATE_REPAIR_OUTPUT_BUFFER" /> struct.</summary>
-    public static unsafe class FILE_INITIATE_REPAIR_OUTPUT_BUFFERTests
+    public static unsafe partial class FILE_INITIATE_REPAIR_OUTPUT_BUFFERTests
     {
         /// <summary>Validates that the <see cref="FILE_INITIATE_REPAIR_OUTPUT_BUFFER" /> struct is blittable.</summary>
         [Test]

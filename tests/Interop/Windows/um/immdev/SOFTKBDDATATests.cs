@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="SOFTKBDDATA" /> struct.</summary>
-    public static unsafe class SOFTKBDDATATests
+    public static unsafe partial class SOFTKBDDATATests
     {
         /// <summary>Validates that the <see cref="SOFTKBDDATA" /> struct is blittable.</summary>
         [Test]

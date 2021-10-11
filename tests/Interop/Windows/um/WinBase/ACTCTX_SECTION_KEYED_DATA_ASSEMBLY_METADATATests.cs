@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="ACTCTX_SECTION_KEYED_DATA_ASSEMBLY_METADATA" /> struct.</summary>
-    public static unsafe class ACTCTX_SECTION_KEYED_DATA_ASSEMBLY_METADATATests
+    public static unsafe partial class ACTCTX_SECTION_KEYED_DATA_ASSEMBLY_METADATATests
     {
         /// <summary>Validates that the <see cref="ACTCTX_SECTION_KEYED_DATA_ASSEMBLY_METADATA" /> struct is blittable.</summary>
         [Test]

@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="HD_LAYOUT" /> struct.</summary>
-    public static unsafe class HD_LAYOUTTests
+    public static unsafe partial class HD_LAYOUTTests
     {
         /// <summary>Validates that the <see cref="HD_LAYOUT" /> struct is blittable.</summary>
         [Test]

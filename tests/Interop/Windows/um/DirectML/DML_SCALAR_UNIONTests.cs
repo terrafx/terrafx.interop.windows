@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="DML_SCALAR_UNION" /> struct.</summary>
-    public static unsafe class DML_SCALAR_UNIONTests
+    public static unsafe partial class DML_SCALAR_UNIONTests
     {
         /// <summary>Validates that the <see cref="DML_SCALAR_UNION" /> struct is blittable.</summary>
         [Test]

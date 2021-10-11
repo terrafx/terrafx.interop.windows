@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="SIERRAADPCMWAVEFORMAT" /> struct.</summary>
-    public static unsafe class SIERRAADPCMWAVEFORMATTests
+    public static unsafe partial class SIERRAADPCMWAVEFORMATTests
     {
         /// <summary>Validates that the <see cref="SIERRAADPCMWAVEFORMAT" /> struct is blittable.</summary>
         [Test]

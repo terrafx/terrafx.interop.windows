@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="OUTLINETEXTMETRICW" /> struct.</summary>
-    public static unsafe class OUTLINETEXTMETRICWTests
+    public static unsafe partial class OUTLINETEXTMETRICWTests
     {
         /// <summary>Validates that the <see cref="OUTLINETEXTMETRICW" /> struct is blittable.</summary>
         [Test]

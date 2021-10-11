@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="PPM_IDLESTATE_EVENT" /> struct.</summary>
-    public static unsafe class PPM_IDLESTATE_EVENTTests
+    public static unsafe partial class PPM_IDLESTATE_EVENTTests
     {
         /// <summary>Validates that the <see cref="PPM_IDLESTATE_EVENT" /> struct is blittable.</summary>
         [Test]

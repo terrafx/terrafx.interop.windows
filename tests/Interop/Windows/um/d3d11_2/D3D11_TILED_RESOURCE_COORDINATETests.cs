@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="D3D11_TILED_RESOURCE_COORDINATE" /> struct.</summary>
-    public static unsafe class D3D11_TILED_RESOURCE_COORDINATETests
+    public static unsafe partial class D3D11_TILED_RESOURCE_COORDINATETests
     {
         /// <summary>Validates that the <see cref="D3D11_TILED_RESOURCE_COORDINATE" /> struct is blittable.</summary>
         [Test]

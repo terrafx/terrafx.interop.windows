@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="ID3DUserDefinedAnnotation" /> struct.</summary>
-    public static unsafe class ID3DUserDefinedAnnotationTests
+    public static unsafe partial class ID3DUserDefinedAnnotationTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ID3DUserDefinedAnnotation" /> struct is correct.</summary>
         [Test]

@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IMFHDCPStatus" /> struct.</summary>
-    public static unsafe class IMFHDCPStatusTests
+    public static unsafe partial class IMFHDCPStatusTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IMFHDCPStatus" /> struct is correct.</summary>
         [Test]

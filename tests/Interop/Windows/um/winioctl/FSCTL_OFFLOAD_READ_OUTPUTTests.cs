@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="FSCTL_OFFLOAD_READ_OUTPUT" /> struct.</summary>
-    public static unsafe class FSCTL_OFFLOAD_READ_OUTPUTTests
+    public static unsafe partial class FSCTL_OFFLOAD_READ_OUTPUTTests
     {
         /// <summary>Validates that the <see cref="FSCTL_OFFLOAD_READ_OUTPUT" /> struct is blittable.</summary>
         [Test]

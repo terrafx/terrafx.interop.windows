@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="XSAVE_AREA_HEADER" /> struct.</summary>
-    public static unsafe class XSAVE_AREA_HEADERTests
+    public static unsafe partial class XSAVE_AREA_HEADERTests
     {
         /// <summary>Validates that the <see cref="XSAVE_AREA_HEADER" /> struct is blittable.</summary>
         [Test]

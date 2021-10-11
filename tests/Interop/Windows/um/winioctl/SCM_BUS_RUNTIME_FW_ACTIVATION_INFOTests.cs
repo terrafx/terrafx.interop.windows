@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="SCM_BUS_RUNTIME_FW_ACTIVATION_INFO" /> struct.</summary>
-    public static unsafe class SCM_BUS_RUNTIME_FW_ACTIVATION_INFOTests
+    public static unsafe partial class SCM_BUS_RUNTIME_FW_ACTIVATION_INFOTests
     {
         /// <summary>Validates that the <see cref="SCM_BUS_RUNTIME_FW_ACTIVATION_INFO" /> struct is blittable.</summary>
         [Test]

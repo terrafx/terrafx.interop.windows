@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="TXFS_MODIFY_RM" /> struct.</summary>
-    public static unsafe class TXFS_MODIFY_RMTests
+    public static unsafe partial class TXFS_MODIFY_RMTests
     {
         /// <summary>Validates that the <see cref="TXFS_MODIFY_RM" /> struct is blittable.</summary>
         [Test]

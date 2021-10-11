@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="OBJECT_TYPE_LIST" /> struct.</summary>
-    public static unsafe class OBJECT_TYPE_LISTTests
+    public static unsafe partial class OBJECT_TYPE_LISTTests
     {
         /// <summary>Validates that the <see cref="OBJECT_TYPE_LIST" /> struct is blittable.</summary>
         [Test]

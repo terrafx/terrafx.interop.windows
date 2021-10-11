@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="NMTOOLTIPSCREATED" /> struct.</summary>
-    public static unsafe class NMTOOLTIPSCREATEDTests
+    public static unsafe partial class NMTOOLTIPSCREATEDTests
     {
         /// <summary>Validates that the <see cref="NMTOOLTIPSCREATED" /> struct is blittable.</summary>
         [Test]

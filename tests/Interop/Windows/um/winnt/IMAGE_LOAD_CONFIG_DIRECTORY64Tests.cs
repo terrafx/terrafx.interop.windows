@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IMAGE_LOAD_CONFIG_DIRECTORY64" /> struct.</summary>
-    public static unsafe class IMAGE_LOAD_CONFIG_DIRECTORY64Tests
+    public static unsafe partial class IMAGE_LOAD_CONFIG_DIRECTORY64Tests
     {
         /// <summary>Validates that the <see cref="IMAGE_LOAD_CONFIG_DIRECTORY64" /> struct is blittable.</summary>
         [Test]

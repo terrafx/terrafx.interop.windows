@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IDockingWindow" /> struct.</summary>
-    public static unsafe class IDockingWindowTests
+    public static unsafe partial class IDockingWindowTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IDockingWindow" /> struct is correct.</summary>
         [Test]

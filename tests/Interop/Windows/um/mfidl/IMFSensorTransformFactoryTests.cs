@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IMFSensorTransformFactory" /> struct.</summary>
-    public static unsafe class IMFSensorTransformFactoryTests
+    public static unsafe partial class IMFSensorTransformFactoryTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IMFSensorTransformFactory" /> struct is correct.</summary>
         [Test]

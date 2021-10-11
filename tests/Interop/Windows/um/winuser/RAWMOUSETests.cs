@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="RAWMOUSE" /> struct.</summary>
-    public static unsafe class RAWMOUSETests
+    public static unsafe partial class RAWMOUSETests
     {
         /// <summary>Validates that the <see cref="RAWMOUSE" /> struct is blittable.</summary>
         [Test]

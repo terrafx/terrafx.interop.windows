@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="DRIVE_LAYOUT_INFORMATION_GPT" /> struct.</summary>
-    public static unsafe class DRIVE_LAYOUT_INFORMATION_GPTTests
+    public static unsafe partial class DRIVE_LAYOUT_INFORMATION_GPTTests
     {
         /// <summary>Validates that the <see cref="DRIVE_LAYOUT_INFORMATION_GPT" /> struct is blittable.</summary>
         [Test]

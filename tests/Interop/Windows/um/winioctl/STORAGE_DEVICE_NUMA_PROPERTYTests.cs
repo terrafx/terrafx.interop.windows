@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="STORAGE_DEVICE_NUMA_PROPERTY" /> struct.</summary>
-    public static unsafe class STORAGE_DEVICE_NUMA_PROPERTYTests
+    public static unsafe partial class STORAGE_DEVICE_NUMA_PROPERTYTests
     {
         /// <summary>Validates that the <see cref="STORAGE_DEVICE_NUMA_PROPERTY" /> struct is blittable.</summary>
         [Test]

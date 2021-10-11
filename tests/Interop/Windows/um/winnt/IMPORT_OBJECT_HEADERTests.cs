@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IMPORT_OBJECT_HEADER" /> struct.</summary>
-    public static unsafe class IMPORT_OBJECT_HEADERTests
+    public static unsafe partial class IMPORT_OBJECT_HEADERTests
     {
         /// <summary>Validates that the <see cref="IMPORT_OBJECT_HEADER" /> struct is blittable.</summary>
         [Test]

@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IInternetHostSecurityManager" /> struct.</summary>
-    public static unsafe class IInternetHostSecurityManagerTests
+    public static unsafe partial class IInternetHostSecurityManagerTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IInternetHostSecurityManager" /> struct is correct.</summary>
         [Test]

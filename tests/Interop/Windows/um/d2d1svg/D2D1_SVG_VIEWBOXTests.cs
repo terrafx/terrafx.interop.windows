@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="D2D1_SVG_VIEWBOX" /> struct.</summary>
-    public static unsafe class D2D1_SVG_VIEWBOXTests
+    public static unsafe partial class D2D1_SVG_VIEWBOXTests
     {
         /// <summary>Validates that the <see cref="D2D1_SVG_VIEWBOX" /> struct is blittable.</summary>
         [Test]

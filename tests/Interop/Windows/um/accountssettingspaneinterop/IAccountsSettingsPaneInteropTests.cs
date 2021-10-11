@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IAccountsSettingsPaneInterop" /> struct.</summary>
-    public static unsafe class IAccountsSettingsPaneInteropTests
+    public static unsafe partial class IAccountsSettingsPaneInteropTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IAccountsSettingsPaneInterop" /> struct is correct.</summary>
         [Test]

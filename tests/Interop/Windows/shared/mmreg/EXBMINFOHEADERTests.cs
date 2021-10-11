@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="EXBMINFOHEADER" /> struct.</summary>
-    public static unsafe class EXBMINFOHEADERTests
+    public static unsafe partial class EXBMINFOHEADERTests
     {
         /// <summary>Validates that the <see cref="EXBMINFOHEADER" /> struct is blittable.</summary>
         [Test]

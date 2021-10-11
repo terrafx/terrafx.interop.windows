@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="ID2D1LookupTable3D" /> struct.</summary>
-    public static unsafe class ID2D1LookupTable3DTests
+    public static unsafe partial class ID2D1LookupTable3DTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ID2D1LookupTable3D" /> struct is correct.</summary>
         [Test]

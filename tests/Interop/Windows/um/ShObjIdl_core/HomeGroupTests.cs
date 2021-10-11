@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="HomeGroup" /> struct.</summary>
-    public static unsafe class HomeGroupTests
+    public static unsafe partial class HomeGroupTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="HomeGroup" /> struct is correct.</summary>
         [Test]

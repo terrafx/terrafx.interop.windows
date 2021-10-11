@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IInkPresenterDesktop" /> struct.</summary>
-    public static unsafe class IInkPresenterDesktopTests
+    public static unsafe partial class IInkPresenterDesktopTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IInkPresenterDesktop" /> struct is correct.</summary>
         [Test]

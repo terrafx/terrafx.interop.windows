@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="SYNCMGRHANDLERINFO" /> struct.</summary>
-    public static unsafe class SYNCMGRHANDLERINFOTests
+    public static unsafe partial class SYNCMGRHANDLERINFOTests
     {
         /// <summary>Validates that the <see cref="SYNCMGRHANDLERINFO" /> struct is blittable.</summary>
         [Test]

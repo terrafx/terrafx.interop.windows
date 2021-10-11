@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="D3D12_FEATURE_DATA_VIDEO_EXTENSION_COMMAND_COUNT" /> struct.</summary>
-    public static unsafe class D3D12_FEATURE_DATA_VIDEO_EXTENSION_COMMAND_COUNTTests
+    public static unsafe partial class D3D12_FEATURE_DATA_VIDEO_EXTENSION_COMMAND_COUNTTests
     {
         /// <summary>Validates that the <see cref="D3D12_FEATURE_DATA_VIDEO_EXTENSION_COMMAND_COUNT" /> struct is blittable.</summary>
         [Test]

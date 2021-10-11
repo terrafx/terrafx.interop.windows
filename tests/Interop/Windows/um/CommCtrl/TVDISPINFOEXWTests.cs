@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="TVDISPINFOEXW" /> struct.</summary>
-    public static unsafe class TVDISPINFOEXWTests
+    public static unsafe partial class TVDISPINFOEXWTests
     {
         /// <summary>Validates that the <see cref="TVDISPINFOEXW" /> struct is blittable.</summary>
         [Test]

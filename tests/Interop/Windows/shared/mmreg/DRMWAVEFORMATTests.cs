@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="DRMWAVEFORMAT" /> struct.</summary>
-    public static unsafe class DRMWAVEFORMATTests
+    public static unsafe partial class DRMWAVEFORMATTests
     {
         /// <summary>Validates that the <see cref="DRMWAVEFORMAT" /> struct is blittable.</summary>
         [Test]

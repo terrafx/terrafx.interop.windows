@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="DML_GRAPH_DESC" /> struct.</summary>
-    public static unsafe class DML_GRAPH_DESCTests
+    public static unsafe partial class DML_GRAPH_DESCTests
     {
         /// <summary>Validates that the <see cref="DML_GRAPH_DESC" /> struct is blittable.</summary>
         [Test]

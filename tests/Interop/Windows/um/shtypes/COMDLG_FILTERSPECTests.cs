@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="COMDLG_FILTERSPEC" /> struct.</summary>
-    public static unsafe class COMDLG_FILTERSPECTests
+    public static unsafe partial class COMDLG_FILTERSPECTests
     {
         /// <summary>Validates that the <see cref="COMDLG_FILTERSPEC" /> struct is blittable.</summary>
         [Test]

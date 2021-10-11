@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IFileSystemImage" /> struct.</summary>
-    public static unsafe class IFileSystemImageTests
+    public static unsafe partial class IFileSystemImageTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IFileSystemImage" /> struct is correct.</summary>
         [Test]

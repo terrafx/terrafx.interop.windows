@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="PRIVILEGE_SET" /> struct.</summary>
-    public static unsafe class PRIVILEGE_SETTests
+    public static unsafe partial class PRIVILEGE_SETTests
     {
         /// <summary>Validates that the <see cref="PRIVILEGE_SET" /> struct is blittable.</summary>
         [Test]

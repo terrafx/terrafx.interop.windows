@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="STORAGE_HW_ENDURANCE_DATA_DESCRIPTOR" /> struct.</summary>
-    public static unsafe class STORAGE_HW_ENDURANCE_DATA_DESCRIPTORTests
+    public static unsafe partial class STORAGE_HW_ENDURANCE_DATA_DESCRIPTORTests
     {
         /// <summary>Validates that the <see cref="STORAGE_HW_ENDURANCE_DATA_DESCRIPTOR" /> struct is blittable.</summary>
         [Test]

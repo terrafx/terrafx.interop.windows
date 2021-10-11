@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="SORTCOLUMN" /> struct.</summary>
-    public static unsafe class SORTCOLUMNTests
+    public static unsafe partial class SORTCOLUMNTests
     {
         /// <summary>Validates that the <see cref="SORTCOLUMN" /> struct is blittable.</summary>
         [Test]

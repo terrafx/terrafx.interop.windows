@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="SP_NEWDEVICEWIZARD_DATA" /> struct.</summary>
-    public static unsafe class SP_NEWDEVICEWIZARD_DATATests
+    public static unsafe partial class SP_NEWDEVICEWIZARD_DATATests
     {
         /// <summary>Validates that the <see cref="SP_NEWDEVICEWIZARD_DATA" /> struct is blittable.</summary>
         [Test]

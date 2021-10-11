@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="PPM_IDLE_STATE_ACCOUNTING" /> struct.</summary>
-    public static unsafe class PPM_IDLE_STATE_ACCOUNTINGTests
+    public static unsafe partial class PPM_IDLE_STATE_ACCOUNTINGTests
     {
         /// <summary>Validates that the <see cref="PPM_IDLE_STATE_ACCOUNTING" /> struct is blittable.</summary>
         [Test]

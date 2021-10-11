@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="D3D10_SHADER_INPUT_BIND_DESC" /> struct.</summary>
-    public static unsafe class D3D10_SHADER_INPUT_BIND_DESCTests
+    public static unsafe partial class D3D10_SHADER_INPUT_BIND_DESCTests
     {
         /// <summary>Validates that the <see cref="D3D10_SHADER_INPUT_BIND_DESC" /> struct is blittable.</summary>
         [Test]

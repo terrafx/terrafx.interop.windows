@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="ICredentialProviderCredentialEvents" /> struct.</summary>
-    public static unsafe class ICredentialProviderCredentialEventsTests
+    public static unsafe partial class ICredentialProviderCredentialEventsTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ICredentialProviderCredentialEvents" /> struct is correct.</summary>
         [Test]

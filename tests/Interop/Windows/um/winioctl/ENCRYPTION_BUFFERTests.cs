@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="ENCRYPTION_BUFFER" /> struct.</summary>
-    public static unsafe class ENCRYPTION_BUFFERTests
+    public static unsafe partial class ENCRYPTION_BUFFERTests
     {
         /// <summary>Validates that the <see cref="ENCRYPTION_BUFFER" /> struct is blittable.</summary>
         [Test]

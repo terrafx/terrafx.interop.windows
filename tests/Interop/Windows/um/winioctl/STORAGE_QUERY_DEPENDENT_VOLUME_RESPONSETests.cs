@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="STORAGE_QUERY_DEPENDENT_VOLUME_RESPONSE" /> struct.</summary>
-    public static unsafe class STORAGE_QUERY_DEPENDENT_VOLUME_RESPONSETests
+    public static unsafe partial class STORAGE_QUERY_DEPENDENT_VOLUME_RESPONSETests
     {
         /// <summary>Validates that the <see cref="STORAGE_QUERY_DEPENDENT_VOLUME_RESPONSE" /> struct is blittable.</summary>
         [Test]

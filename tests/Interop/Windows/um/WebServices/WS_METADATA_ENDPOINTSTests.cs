@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="WS_METADATA_ENDPOINTS" /> struct.</summary>
-    public static unsafe class WS_METADATA_ENDPOINTSTests
+    public static unsafe partial class WS_METADATA_ENDPOINTSTests
     {
         /// <summary>Validates that the <see cref="WS_METADATA_ENDPOINTS" /> struct is blittable.</summary>
         [Test]

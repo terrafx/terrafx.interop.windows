@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="CERT_ACCESS_DESCRIPTION" /> struct.</summary>
-    public static unsafe class CERT_ACCESS_DESCRIPTIONTests
+    public static unsafe partial class CERT_ACCESS_DESCRIPTIONTests
     {
         /// <summary>Validates that the <see cref="CERT_ACCESS_DESCRIPTION" /> struct is blittable.</summary>
         [Test]

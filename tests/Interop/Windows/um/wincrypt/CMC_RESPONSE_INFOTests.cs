@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="CMC_RESPONSE_INFO" /> struct.</summary>
-    public static unsafe class CMC_RESPONSE_INFOTests
+    public static unsafe partial class CMC_RESPONSE_INFOTests
     {
         /// <summary>Validates that the <see cref="CMC_RESPONSE_INFO" /> struct is blittable.</summary>
         [Test]

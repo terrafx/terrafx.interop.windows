@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="NTFS_EXTENDED_VOLUME_DATA" /> struct.</summary>
-    public static unsafe class NTFS_EXTENDED_VOLUME_DATATests
+    public static unsafe partial class NTFS_EXTENDED_VOLUME_DATATests
     {
         /// <summary>Validates that the <see cref="NTFS_EXTENDED_VOLUME_DATA" /> struct is blittable.</summary>
         [Test]

@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="X3DAUDIO_DSP_SETTINGS" /> struct.</summary>
-    public static unsafe class X3DAUDIO_DSP_SETTINGSTests
+    public static unsafe partial class X3DAUDIO_DSP_SETTINGSTests
     {
         /// <summary>Validates that the <see cref="X3DAUDIO_DSP_SETTINGS" /> struct is blittable.</summary>
         [Test]

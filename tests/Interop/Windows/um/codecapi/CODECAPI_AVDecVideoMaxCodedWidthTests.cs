@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="CODECAPI_AVDecVideoMaxCodedWidth" /> struct.</summary>
-    public static unsafe class CODECAPI_AVDecVideoMaxCodedWidthTests
+    public static unsafe partial class CODECAPI_AVDecVideoMaxCodedWidthTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="CODECAPI_AVDecVideoMaxCodedWidth" /> struct is correct.</summary>
         [Test]

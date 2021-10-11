@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="WCM_CONNECTION_COST_DATA" /> struct.</summary>
-    public static unsafe class WCM_CONNECTION_COST_DATATests
+    public static unsafe partial class WCM_CONNECTION_COST_DATATests
     {
         /// <summary>Validates that the <see cref="WCM_CONNECTION_COST_DATA" /> struct is blittable.</summary>
         [Test]

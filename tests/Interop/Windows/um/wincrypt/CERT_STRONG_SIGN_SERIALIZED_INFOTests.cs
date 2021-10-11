@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="CERT_STRONG_SIGN_SERIALIZED_INFO" /> struct.</summary>
-    public static unsafe class CERT_STRONG_SIGN_SERIALIZED_INFOTests
+    public static unsafe partial class CERT_STRONG_SIGN_SERIALIZED_INFOTests
     {
         /// <summary>Validates that the <see cref="CERT_STRONG_SIGN_SERIALIZED_INFO" /> struct is blittable.</summary>
         [Test]

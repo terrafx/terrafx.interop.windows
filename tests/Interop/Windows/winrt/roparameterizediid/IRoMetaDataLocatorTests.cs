@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IRoMetaDataLocator" /> struct.</summary>
-    public static unsafe class IRoMetaDataLocatorTests
+    public static unsafe partial class IRoMetaDataLocatorTests
     {
         /// <summary>Validates that the <see cref="IRoMetaDataLocator" /> struct is blittable.</summary>
         [Test]

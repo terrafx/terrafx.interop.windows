@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="DCompositionInkTrailPoint" /> struct.</summary>
-    public static unsafe class DCompositionInkTrailPointTests
+    public static unsafe partial class DCompositionInkTrailPointTests
     {
         /// <summary>Validates that the <see cref="DCompositionInkTrailPoint" /> struct is blittable.</summary>
         [Test]

@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="DECIMAL" /> struct.</summary>
-    public static unsafe class DECIMALTests
+    public static unsafe partial class DECIMALTests
     {
         /// <summary>Validates that the <see cref="DECIMAL" /> struct is blittable.</summary>
         [Test]

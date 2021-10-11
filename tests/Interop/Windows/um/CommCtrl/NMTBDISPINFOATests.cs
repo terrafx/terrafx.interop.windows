@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="NMTBDISPINFOA" /> struct.</summary>
-    public static unsafe class NMTBDISPINFOATests
+    public static unsafe partial class NMTBDISPINFOATests
     {
         /// <summary>Validates that the <see cref="NMTBDISPINFOA" /> struct is blittable.</summary>
         [Test]

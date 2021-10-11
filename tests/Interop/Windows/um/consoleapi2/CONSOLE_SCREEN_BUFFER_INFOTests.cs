@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="CONSOLE_SCREEN_BUFFER_INFO" /> struct.</summary>
-    public static unsafe class CONSOLE_SCREEN_BUFFER_INFOTests
+    public static unsafe partial class CONSOLE_SCREEN_BUFFER_INFOTests
     {
         /// <summary>Validates that the <see cref="CONSOLE_SCREEN_BUFFER_INFO" /> struct is blittable.</summary>
         [Test]

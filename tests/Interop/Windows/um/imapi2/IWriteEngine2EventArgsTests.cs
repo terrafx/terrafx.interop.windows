@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IWriteEngine2EventArgs" /> struct.</summary>
-    public static unsafe class IWriteEngine2EventArgsTests
+    public static unsafe partial class IWriteEngine2EventArgsTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IWriteEngine2EventArgs" /> struct is correct.</summary>
         [Test]

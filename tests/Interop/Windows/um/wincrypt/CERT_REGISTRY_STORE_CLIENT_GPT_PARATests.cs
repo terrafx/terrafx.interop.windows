@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="CERT_REGISTRY_STORE_CLIENT_GPT_PARA" /> struct.</summary>
-    public static unsafe class CERT_REGISTRY_STORE_CLIENT_GPT_PARATests
+    public static unsafe partial class CERT_REGISTRY_STORE_CLIENT_GPT_PARATests
     {
         /// <summary>Validates that the <see cref="CERT_REGISTRY_STORE_CLIENT_GPT_PARA" /> struct is blittable.</summary>
         [Test]

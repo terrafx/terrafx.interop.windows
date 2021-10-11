@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IMFMediaEngineNeedKeyNotify" /> struct.</summary>
-    public static unsafe class IMFMediaEngineNeedKeyNotifyTests
+    public static unsafe partial class IMFMediaEngineNeedKeyNotifyTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IMFMediaEngineNeedKeyNotify" /> struct is correct.</summary>
         [Test]

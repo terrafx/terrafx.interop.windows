@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IInternetProtocolSink" /> struct.</summary>
-    public static unsafe class IInternetProtocolSinkTests
+    public static unsafe partial class IInternetProtocolSinkTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IInternetProtocolSink" /> struct is correct.</summary>
         [Test]

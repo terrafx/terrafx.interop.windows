@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IInertiaProcessor" /> struct.</summary>
-    public static unsafe class IInertiaProcessorTests
+    public static unsafe partial class IInertiaProcessorTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IInertiaProcessor" /> struct is correct.</summary>
         [Test]

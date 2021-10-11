@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="SearchFolderItemFactory" /> struct.</summary>
-    public static unsafe class SearchFolderItemFactoryTests
+    public static unsafe partial class SearchFolderItemFactoryTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="SearchFolderItemFactory" /> struct is correct.</summary>
         [Test]

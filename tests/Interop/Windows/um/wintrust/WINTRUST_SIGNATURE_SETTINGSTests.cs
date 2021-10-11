@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="WINTRUST_SIGNATURE_SETTINGS" /> struct.</summary>
-    public static unsafe class WINTRUST_SIGNATURE_SETTINGSTests
+    public static unsafe partial class WINTRUST_SIGNATURE_SETTINGSTests
     {
         /// <summary>Validates that the <see cref="WINTRUST_SIGNATURE_SETTINGS" /> struct is blittable.</summary>
         [Test]

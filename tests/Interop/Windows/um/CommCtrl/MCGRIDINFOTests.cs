@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="MCGRIDINFO" /> struct.</summary>
-    public static unsafe class MCGRIDINFOTests
+    public static unsafe partial class MCGRIDINFOTests
     {
         /// <summary>Validates that the <see cref="MCGRIDINFO" /> struct is blittable.</summary>
         [Test]

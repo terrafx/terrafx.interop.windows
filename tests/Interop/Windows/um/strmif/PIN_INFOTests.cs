@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="PIN_INFO" /> struct.</summary>
-    public static unsafe class PIN_INFOTests
+    public static unsafe partial class PIN_INFOTests
     {
         /// <summary>Validates that the <see cref="PIN_INFO" /> struct is blittable.</summary>
         [Test]

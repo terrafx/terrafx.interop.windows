@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="CADWORD" /> struct.</summary>
-    public static unsafe class CADWORDTests
+    public static unsafe partial class CADWORDTests
     {
         /// <summary>Validates that the <see cref="CADWORD" /> struct is blittable.</summary>
         [Test]

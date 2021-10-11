@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="CERT_CHAIN_ENGINE_CONFIG" /> struct.</summary>
-    public static unsafe class CERT_CHAIN_ENGINE_CONFIGTests
+    public static unsafe partial class CERT_CHAIN_ENGINE_CONFIGTests
     {
         /// <summary>Validates that the <see cref="CERT_CHAIN_ENGINE_CONFIG" /> struct is blittable.</summary>
         [Test]

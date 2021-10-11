@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="SCHANNEL_SESSION_TOKEN" /> struct.</summary>
-    public static unsafe class SCHANNEL_SESSION_TOKENTests
+    public static unsafe partial class SCHANNEL_SESSION_TOKENTests
     {
         /// <summary>Validates that the <see cref="SCHANNEL_SESSION_TOKEN" /> struct is blittable.</summary>
         [Test]

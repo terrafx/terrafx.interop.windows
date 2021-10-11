@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="NMVIEWCHANGE" /> struct.</summary>
-    public static unsafe class NMVIEWCHANGETests
+    public static unsafe partial class NMVIEWCHANGETests
     {
         /// <summary>Validates that the <see cref="NMVIEWCHANGE" /> struct is blittable.</summary>
         [Test]

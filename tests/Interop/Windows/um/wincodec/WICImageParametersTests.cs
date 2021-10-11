@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="WICImageParameters" /> struct.</summary>
-    public static unsafe class WICImageParametersTests
+    public static unsafe partial class WICImageParametersTests
     {
         /// <summary>Validates that the <see cref="WICImageParameters" /> struct is blittable.</summary>
         [Test]

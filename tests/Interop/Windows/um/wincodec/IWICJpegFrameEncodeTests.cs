@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IWICJpegFrameEncode" /> struct.</summary>
-    public static unsafe class IWICJpegFrameEncodeTests
+    public static unsafe partial class IWICJpegFrameEncodeTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IWICJpegFrameEncode" /> struct is correct.</summary>
         [Test]

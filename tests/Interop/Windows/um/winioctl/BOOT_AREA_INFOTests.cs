@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="BOOT_AREA_INFO" /> struct.</summary>
-    public static unsafe class BOOT_AREA_INFOTests
+    public static unsafe partial class BOOT_AREA_INFOTests
     {
         /// <summary>Validates that the <see cref="BOOT_AREA_INFO" /> struct is blittable.</summary>
         [Test]

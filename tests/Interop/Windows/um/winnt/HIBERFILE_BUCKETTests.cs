@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="HIBERFILE_BUCKET" /> struct.</summary>
-    public static unsafe class HIBERFILE_BUCKETTests
+    public static unsafe partial class HIBERFILE_BUCKETTests
     {
         /// <summary>Validates that the <see cref="HIBERFILE_BUCKET" /> struct is blittable.</summary>
         [Test]

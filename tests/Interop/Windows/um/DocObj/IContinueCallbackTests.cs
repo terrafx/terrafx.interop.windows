@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IContinueCallback" /> struct.</summary>
-    public static unsafe class IContinueCallbackTests
+    public static unsafe partial class IContinueCallbackTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IContinueCallback" /> struct is correct.</summary>
         [Test]

@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="DRAGLISTINFO" /> struct.</summary>
-    public static unsafe class DRAGLISTINFOTests
+    public static unsafe partial class DRAGLISTINFOTests
     {
         /// <summary>Validates that the <see cref="DRAGLISTINFO" /> struct is blittable.</summary>
         [Test]

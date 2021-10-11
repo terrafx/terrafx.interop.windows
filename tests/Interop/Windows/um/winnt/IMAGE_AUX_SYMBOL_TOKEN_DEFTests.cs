@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IMAGE_AUX_SYMBOL_TOKEN_DEF" /> struct.</summary>
-    public static unsafe class IMAGE_AUX_SYMBOL_TOKEN_DEFTests
+    public static unsafe partial class IMAGE_AUX_SYMBOL_TOKEN_DEFTests
     {
         /// <summary>Validates that the <see cref="IMAGE_AUX_SYMBOL_TOKEN_DEF" /> struct is blittable.</summary>
         [Test]

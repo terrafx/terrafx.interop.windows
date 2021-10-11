@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IWinInetCacheHints" /> struct.</summary>
-    public static unsafe class IWinInetCacheHintsTests
+    public static unsafe partial class IWinInetCacheHintsTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IWinInetCacheHints" /> struct is correct.</summary>
         [Test]

@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IAutoCompleteDropDown" /> struct.</summary>
-    public static unsafe class IAutoCompleteDropDownTests
+    public static unsafe partial class IAutoCompleteDropDownTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IAutoCompleteDropDown" /> struct is correct.</summary>
         [Test]

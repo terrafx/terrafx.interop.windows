@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="APPX_ENCRYPTED_EXEMPTIONS" /> struct.</summary>
-    public static unsafe class APPX_ENCRYPTED_EXEMPTIONSTests
+    public static unsafe partial class APPX_ENCRYPTED_EXEMPTIONSTests
     {
         /// <summary>Validates that the <see cref="APPX_ENCRYPTED_EXEMPTIONS" /> struct is blittable.</summary>
         [Test]

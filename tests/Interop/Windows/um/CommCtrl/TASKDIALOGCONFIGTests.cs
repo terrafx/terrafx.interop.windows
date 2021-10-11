@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="TASKDIALOGCONFIG" /> struct.</summary>
-    public static unsafe class TASKDIALOGCONFIGTests
+    public static unsafe partial class TASKDIALOGCONFIGTests
     {
         /// <summary>Validates that the <see cref="TASKDIALOGCONFIG" /> struct is blittable.</summary>
         [Test]

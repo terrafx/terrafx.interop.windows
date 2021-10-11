@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="CURSORINFO" /> struct.</summary>
-    public static unsafe class CURSORINFOTests
+    public static unsafe partial class CURSORINFOTests
     {
         /// <summary>Validates that the <see cref="CURSORINFO" /> struct is blittable.</summary>
         [Test]

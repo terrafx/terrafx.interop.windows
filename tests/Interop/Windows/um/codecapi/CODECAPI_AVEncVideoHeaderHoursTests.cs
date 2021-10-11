@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="CODECAPI_AVEncVideoHeaderHours" /> struct.</summary>
-    public static unsafe class CODECAPI_AVEncVideoHeaderHoursTests
+    public static unsafe partial class CODECAPI_AVEncVideoHeaderHoursTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="CODECAPI_AVEncVideoHeaderHours" /> struct is correct.</summary>
         [Test]

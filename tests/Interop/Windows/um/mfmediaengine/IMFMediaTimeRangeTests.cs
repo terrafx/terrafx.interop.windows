@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IMFMediaTimeRange" /> struct.</summary>
-    public static unsafe class IMFMediaTimeRangeTests
+    public static unsafe partial class IMFMediaTimeRangeTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IMFMediaTimeRange" /> struct is correct.</summary>
         [Test]

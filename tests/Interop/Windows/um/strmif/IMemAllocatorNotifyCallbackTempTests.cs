@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IMemAllocatorNotifyCallbackTemp" /> struct.</summary>
-    public static unsafe class IMemAllocatorNotifyCallbackTempTests
+    public static unsafe partial class IMemAllocatorNotifyCallbackTempTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IMemAllocatorNotifyCallbackTemp" /> struct is correct.</summary>
         [Test]

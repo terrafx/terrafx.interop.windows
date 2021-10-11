@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IDesktopWindowXamlSourceNative" /> struct.</summary>
-    public static unsafe class IDesktopWindowXamlSourceNativeTests
+    public static unsafe partial class IDesktopWindowXamlSourceNativeTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IDesktopWindowXamlSourceNative" /> struct is correct.</summary>
         [Test]

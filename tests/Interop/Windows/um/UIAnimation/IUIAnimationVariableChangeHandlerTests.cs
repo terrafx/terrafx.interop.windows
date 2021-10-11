@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IUIAnimationVariableChangeHandler" /> struct.</summary>
-    public static unsafe class IUIAnimationVariableChangeHandlerTests
+    public static unsafe partial class IUIAnimationVariableChangeHandlerTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IUIAnimationVariableChangeHandler" /> struct is correct.</summary>
         [Test]

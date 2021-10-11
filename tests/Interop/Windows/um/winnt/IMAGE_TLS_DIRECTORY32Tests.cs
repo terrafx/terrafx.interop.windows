@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IMAGE_TLS_DIRECTORY32" /> struct.</summary>
-    public static unsafe class IMAGE_TLS_DIRECTORY32Tests
+    public static unsafe partial class IMAGE_TLS_DIRECTORY32Tests
     {
         /// <summary>Validates that the <see cref="IMAGE_TLS_DIRECTORY32" /> struct is blittable.</summary>
         [Test]

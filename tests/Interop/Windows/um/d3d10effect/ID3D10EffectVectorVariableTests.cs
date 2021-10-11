@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="ID3D10EffectVectorVariable" /> struct.</summary>
-    public static unsafe class ID3D10EffectVectorVariableTests
+    public static unsafe partial class ID3D10EffectVectorVariableTests
     {
         /// <summary>Validates that the <see cref="ID3D10EffectVectorVariable" /> struct is blittable.</summary>
         [Test]

@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="WCM_BILLING_CYCLE_INFO" /> struct.</summary>
-    public static unsafe class WCM_BILLING_CYCLE_INFOTests
+    public static unsafe partial class WCM_BILLING_CYCLE_INFOTests
     {
         /// <summary>Validates that the <see cref="WCM_BILLING_CYCLE_INFO" /> struct is blittable.</summary>
         [Test]

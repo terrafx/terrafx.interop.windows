@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="WCM_PROFILE_INFO_LIST" /> struct.</summary>
-    public static unsafe class WCM_PROFILE_INFO_LISTTests
+    public static unsafe partial class WCM_PROFILE_INFO_LISTTests
     {
         /// <summary>Validates that the <see cref="WCM_PROFILE_INFO_LIST" /> struct is blittable.</summary>
         [Test]

@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IMAGELISTDRAWPARAMS" /> struct.</summary>
-    public static unsafe class IMAGELISTDRAWPARAMSTests
+    public static unsafe partial class IMAGELISTDRAWPARAMSTests
     {
         /// <summary>Validates that the <see cref="IMAGELISTDRAWPARAMS" /> struct is blittable.</summary>
         [Test]

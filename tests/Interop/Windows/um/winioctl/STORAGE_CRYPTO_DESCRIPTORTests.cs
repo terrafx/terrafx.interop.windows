@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="STORAGE_CRYPTO_DESCRIPTOR" /> struct.</summary>
-    public static unsafe class STORAGE_CRYPTO_DESCRIPTORTests
+    public static unsafe partial class STORAGE_CRYPTO_DESCRIPTORTests
     {
         /// <summary>Validates that the <see cref="STORAGE_CRYPTO_DESCRIPTOR" /> struct is blittable.</summary>
         [Test]

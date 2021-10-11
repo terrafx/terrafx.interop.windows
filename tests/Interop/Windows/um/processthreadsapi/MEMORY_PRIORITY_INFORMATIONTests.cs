@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="MEMORY_PRIORITY_INFORMATION" /> struct.</summary>
-    public static unsafe class MEMORY_PRIORITY_INFORMATIONTests
+    public static unsafe partial class MEMORY_PRIORITY_INFORMATIONTests
     {
         /// <summary>Validates that the <see cref="MEMORY_PRIORITY_INFORMATION" /> struct is blittable.</summary>
         [Test]

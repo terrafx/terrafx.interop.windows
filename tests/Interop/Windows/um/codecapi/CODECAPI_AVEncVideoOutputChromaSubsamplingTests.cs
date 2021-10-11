@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="CODECAPI_AVEncVideoOutputChromaSubsampling" /> struct.</summary>
-    public static unsafe class CODECAPI_AVEncVideoOutputChromaSubsamplingTests
+    public static unsafe partial class CODECAPI_AVEncVideoOutputChromaSubsamplingTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="CODECAPI_AVEncVideoOutputChromaSubsampling" /> struct is correct.</summary>
         [Test]

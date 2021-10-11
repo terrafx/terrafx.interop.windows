@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="D2D1_INPUT_ELEMENT_DESC" /> struct.</summary>
-    public static unsafe class D2D1_INPUT_ELEMENT_DESCTests
+    public static unsafe partial class D2D1_INPUT_ELEMENT_DESCTests
     {
         /// <summary>Validates that the <see cref="D2D1_INPUT_ELEMENT_DESC" /> struct is blittable.</summary>
         [Test]

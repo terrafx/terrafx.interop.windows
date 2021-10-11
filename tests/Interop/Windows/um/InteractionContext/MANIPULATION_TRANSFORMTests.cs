@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="MANIPULATION_TRANSFORM" /> struct.</summary>
-    public static unsafe class MANIPULATION_TRANSFORMTests
+    public static unsafe partial class MANIPULATION_TRANSFORMTests
     {
         /// <summary>Validates that the <see cref="MANIPULATION_TRANSFORM" /> struct is blittable.</summary>
         [Test]

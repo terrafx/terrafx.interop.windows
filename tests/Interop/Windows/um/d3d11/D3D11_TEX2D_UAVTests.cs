@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="D3D11_TEX2D_UAV" /> struct.</summary>
-    public static unsafe class D3D11_TEX2D_UAVTests
+    public static unsafe partial class D3D11_TEX2D_UAVTests
     {
         /// <summary>Validates that the <see cref="D3D11_TEX2D_UAV" /> struct is blittable.</summary>
         [Test]

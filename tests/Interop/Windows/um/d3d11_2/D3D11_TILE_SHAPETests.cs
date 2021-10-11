@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="D3D11_TILE_SHAPE" /> struct.</summary>
-    public static unsafe class D3D11_TILE_SHAPETests
+    public static unsafe partial class D3D11_TILE_SHAPETests
     {
         /// <summary>Validates that the <see cref="D3D11_TILE_SHAPE" /> struct is blittable.</summary>
         [Test]

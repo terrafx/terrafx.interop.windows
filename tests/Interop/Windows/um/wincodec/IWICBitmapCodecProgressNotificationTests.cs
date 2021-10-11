@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IWICBitmapCodecProgressNotification" /> struct.</summary>
-    public static unsafe class IWICBitmapCodecProgressNotificationTests
+    public static unsafe partial class IWICBitmapCodecProgressNotificationTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IWICBitmapCodecProgressNotification" /> struct is correct.</summary>
         [Test]

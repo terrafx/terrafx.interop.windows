@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IMFTimedTextRuby" /> struct.</summary>
-    public static unsafe class IMFTimedTextRubyTests
+    public static unsafe partial class IMFTimedTextRubyTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IMFTimedTextRuby" /> struct is correct.</summary>
         [Test]

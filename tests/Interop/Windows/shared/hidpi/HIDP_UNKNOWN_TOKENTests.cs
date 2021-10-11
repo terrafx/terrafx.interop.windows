@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="HIDP_UNKNOWN_TOKEN" /> struct.</summary>
-    public static unsafe class HIDP_UNKNOWN_TOKENTests
+    public static unsafe partial class HIDP_UNKNOWN_TOKENTests
     {
         /// <summary>Validates that the <see cref="HIDP_UNKNOWN_TOKEN" /> struct is blittable.</summary>
         [Test]

@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="CERT_HASHED_URL" /> struct.</summary>
-    public static unsafe class CERT_HASHED_URLTests
+    public static unsafe partial class CERT_HASHED_URLTests
     {
         /// <summary>Validates that the <see cref="CERT_HASHED_URL" /> struct is blittable.</summary>
         [Test]

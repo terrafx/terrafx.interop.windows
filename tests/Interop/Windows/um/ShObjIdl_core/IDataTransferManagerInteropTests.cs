@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IDataTransferManagerInterop" /> struct.</summary>
-    public static unsafe class IDataTransferManagerInteropTests
+    public static unsafe partial class IDataTransferManagerInteropTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IDataTransferManagerInterop" /> struct is correct.</summary>
         [Test]

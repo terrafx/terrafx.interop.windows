@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="MSDiscRecorderObj" /> struct.</summary>
-    public static unsafe class MSDiscRecorderObjTests
+    public static unsafe partial class MSDiscRecorderObjTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="MSDiscRecorderObj" /> struct is correct.</summary>
         [Test]

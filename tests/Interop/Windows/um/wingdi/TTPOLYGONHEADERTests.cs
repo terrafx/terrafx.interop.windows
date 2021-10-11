@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="TTPOLYGONHEADER" /> struct.</summary>
-    public static unsafe class TTPOLYGONHEADERTests
+    public static unsafe partial class TTPOLYGONHEADERTests
     {
         /// <summary>Validates that the <see cref="TTPOLYGONHEADER" /> struct is blittable.</summary>
         [Test]

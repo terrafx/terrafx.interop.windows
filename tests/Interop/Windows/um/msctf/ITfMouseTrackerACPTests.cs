@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="ITfMouseTrackerACP" /> struct.</summary>
-    public static unsafe class ITfMouseTrackerACPTests
+    public static unsafe partial class ITfMouseTrackerACPTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ITfMouseTrackerACP" /> struct is correct.</summary>
         [Test]

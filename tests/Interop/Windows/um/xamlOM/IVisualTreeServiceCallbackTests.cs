@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IVisualTreeServiceCallback" /> struct.</summary>
-    public static unsafe class IVisualTreeServiceCallbackTests
+    public static unsafe partial class IVisualTreeServiceCallbackTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IVisualTreeServiceCallback" /> struct is correct.</summary>
         [Test]

@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="ITensorStaticsNative" /> struct.</summary>
-    public static unsafe class ITensorStaticsNativeTests
+    public static unsafe partial class ITensorStaticsNativeTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ITensorStaticsNative" /> struct is correct.</summary>
         [Test]

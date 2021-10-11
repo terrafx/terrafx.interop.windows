@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IOplockStorage" /> struct.</summary>
-    public static unsafe class IOplockStorageTests
+    public static unsafe partial class IOplockStorageTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IOplockStorage" /> struct is correct.</summary>
         [Test]

@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IClonableWrapper" /> struct.</summary>
-    public static unsafe class IClonableWrapperTests
+    public static unsafe partial class IClonableWrapperTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IClonableWrapper" /> struct is correct.</summary>
         [Test]

@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="D2D1_GRADIENT_MESH_PATCH" /> struct.</summary>
-    public static unsafe class D2D1_GRADIENT_MESH_PATCHTests
+    public static unsafe partial class D2D1_GRADIENT_MESH_PATCHTests
     {
         /// <summary>Validates that the <see cref="D2D1_GRADIENT_MESH_PATCH" /> struct is blittable.</summary>
         [Test]

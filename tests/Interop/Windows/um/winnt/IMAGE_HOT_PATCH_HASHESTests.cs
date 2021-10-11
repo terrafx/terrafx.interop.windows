@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IMAGE_HOT_PATCH_HASHES" /> struct.</summary>
-    public static unsafe class IMAGE_HOT_PATCH_HASHESTests
+    public static unsafe partial class IMAGE_HOT_PATCH_HASHESTests
     {
         /// <summary>Validates that the <see cref="IMAGE_HOT_PATCH_HASHES" /> struct is blittable.</summary>
         [Test]

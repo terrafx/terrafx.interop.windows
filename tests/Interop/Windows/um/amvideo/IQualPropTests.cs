@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IQualProp" /> struct.</summary>
-    public static unsafe class IQualPropTests
+    public static unsafe partial class IQualPropTests
     {
         /// <summary>Validates that the <see cref="IQualProp" /> struct is blittable.</summary>
         [Test]

@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="CTL_USAGE" /> struct.</summary>
-    public static unsafe class CTL_USAGETests
+    public static unsafe partial class CTL_USAGETests
     {
         /// <summary>Validates that the <see cref="CTL_USAGE" /> struct is blittable.</summary>
         [Test]

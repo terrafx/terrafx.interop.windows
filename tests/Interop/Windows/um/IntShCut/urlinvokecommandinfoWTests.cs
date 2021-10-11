@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="urlinvokecommandinfoW" /> struct.</summary>
-    public static unsafe class urlinvokecommandinfoWTests
+    public static unsafe partial class urlinvokecommandinfoWTests
     {
         /// <summary>Validates that the <see cref="urlinvokecommandinfoW" /> struct is blittable.</summary>
         [Test]

@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="TAPE_SET_POSITION" /> struct.</summary>
-    public static unsafe class TAPE_SET_POSITIONTests
+    public static unsafe partial class TAPE_SET_POSITIONTests
     {
         /// <summary>Validates that the <see cref="TAPE_SET_POSITION" /> struct is blittable.</summary>
         [Test]

@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="FMTOWNS_SND_WAVEFORMAT" /> struct.</summary>
-    public static unsafe class FMTOWNS_SND_WAVEFORMATTests
+    public static unsafe partial class FMTOWNS_SND_WAVEFORMATTests
     {
         /// <summary>Validates that the <see cref="FMTOWNS_SND_WAVEFORMAT" /> struct is blittable.</summary>
         [Test]

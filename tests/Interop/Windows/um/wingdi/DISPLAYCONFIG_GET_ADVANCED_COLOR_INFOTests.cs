@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="DISPLAYCONFIG_GET_ADVANCED_COLOR_INFO" /> struct.</summary>
-    public static unsafe class DISPLAYCONFIG_GET_ADVANCED_COLOR_INFOTests
+    public static unsafe partial class DISPLAYCONFIG_GET_ADVANCED_COLOR_INFOTests
     {
         /// <summary>Validates that the <see cref="DISPLAYCONFIG_GET_ADVANCED_COLOR_INFO" /> struct is blittable.</summary>
         [Test]

@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IGraphVersion" /> struct.</summary>
-    public static unsafe class IGraphVersionTests
+    public static unsafe partial class IGraphVersionTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IGraphVersion" /> struct is correct.</summary>
         [Test]

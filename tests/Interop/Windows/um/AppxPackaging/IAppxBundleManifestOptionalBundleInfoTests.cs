@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IAppxBundleManifestOptionalBundleInfo" /> struct.</summary>
-    public static unsafe class IAppxBundleManifestOptionalBundleInfoTests
+    public static unsafe partial class IAppxBundleManifestOptionalBundleInfoTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IAppxBundleManifestOptionalBundleInfo" /> struct is correct.</summary>
         [Test]

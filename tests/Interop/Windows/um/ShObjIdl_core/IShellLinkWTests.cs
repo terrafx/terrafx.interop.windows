@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IShellLinkW" /> struct.</summary>
-    public static unsafe class IShellLinkWTests
+    public static unsafe partial class IShellLinkWTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IShellLinkW" /> struct is correct.</summary>
         [Test]

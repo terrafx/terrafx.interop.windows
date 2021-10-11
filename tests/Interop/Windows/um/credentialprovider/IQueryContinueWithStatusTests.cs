@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IQueryContinueWithStatus" /> struct.</summary>
-    public static unsafe class IQueryContinueWithStatusTests
+    public static unsafe partial class IQueryContinueWithStatusTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IQueryContinueWithStatus" /> struct is correct.</summary>
         [Test]

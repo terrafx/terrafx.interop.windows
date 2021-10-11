@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="CODECAPI_AVEncMPVQuantMatrixIntra" /> struct.</summary>
-    public static unsafe class CODECAPI_AVEncMPVQuantMatrixIntraTests
+    public static unsafe partial class CODECAPI_AVEncMPVQuantMatrixIntraTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="CODECAPI_AVEncMPVQuantMatrixIntra" /> struct is correct.</summary>
         [Test]

@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IChannelHook" /> struct.</summary>
-    public static unsafe class IChannelHookTests
+    public static unsafe partial class IChannelHookTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IChannelHook" /> struct is correct.</summary>
         [Test]

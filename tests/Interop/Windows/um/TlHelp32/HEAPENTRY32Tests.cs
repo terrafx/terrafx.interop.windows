@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="HEAPENTRY32" /> struct.</summary>
-    public static unsafe class HEAPENTRY32Tests
+    public static unsafe partial class HEAPENTRY32Tests
     {
         /// <summary>Validates that the <see cref="HEAPENTRY32" /> struct is blittable.</summary>
         [Test]

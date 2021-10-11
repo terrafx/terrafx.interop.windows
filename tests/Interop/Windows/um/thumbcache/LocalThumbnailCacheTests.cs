@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="LocalThumbnailCache" /> struct.</summary>
-    public static unsafe class LocalThumbnailCacheTests
+    public static unsafe partial class LocalThumbnailCacheTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="LocalThumbnailCache" /> struct is correct.</summary>
         [Test]

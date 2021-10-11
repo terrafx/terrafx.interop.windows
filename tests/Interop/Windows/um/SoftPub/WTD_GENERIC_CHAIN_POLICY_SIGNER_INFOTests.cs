@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="WTD_GENERIC_CHAIN_POLICY_SIGNER_INFO" /> struct.</summary>
-    public static unsafe class WTD_GENERIC_CHAIN_POLICY_SIGNER_INFOTests
+    public static unsafe partial class WTD_GENERIC_CHAIN_POLICY_SIGNER_INFOTests
     {
         /// <summary>Validates that the <see cref="WTD_GENERIC_CHAIN_POLICY_SIGNER_INFO" /> struct is blittable.</summary>
         [Test]

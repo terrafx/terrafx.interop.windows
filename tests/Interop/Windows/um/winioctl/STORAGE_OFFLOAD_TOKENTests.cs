@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="STORAGE_OFFLOAD_TOKEN" /> struct.</summary>
-    public static unsafe class STORAGE_OFFLOAD_TOKENTests
+    public static unsafe partial class STORAGE_OFFLOAD_TOKENTests
     {
         /// <summary>Validates that the <see cref="STORAGE_OFFLOAD_TOKEN" /> struct is blittable.</summary>
         [Test]

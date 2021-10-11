@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="SCRUB_DATA_INPUT" /> struct.</summary>
-    public static unsafe class SCRUB_DATA_INPUTTests
+    public static unsafe partial class SCRUB_DATA_INPUTTests
     {
         /// <summary>Validates that the <see cref="SCRUB_DATA_INPUT" /> struct is blittable.</summary>
         [Test]

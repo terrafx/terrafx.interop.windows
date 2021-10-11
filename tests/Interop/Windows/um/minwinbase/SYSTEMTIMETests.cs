@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="SYSTEMTIME" /> struct.</summary>
-    public static unsafe class SYSTEMTIMETests
+    public static unsafe partial class SYSTEMTIMETests
     {
         /// <summary>Validates that the <see cref="SYSTEMTIME" /> struct is blittable.</summary>
         [Test]

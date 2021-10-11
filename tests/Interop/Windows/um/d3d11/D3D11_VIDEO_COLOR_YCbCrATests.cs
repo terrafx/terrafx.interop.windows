@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="D3D11_VIDEO_COLOR_YCbCrA" /> struct.</summary>
-    public static unsafe class D3D11_VIDEO_COLOR_YCbCrATests
+    public static unsafe partial class D3D11_VIDEO_COLOR_YCbCrATests
     {
         /// <summary>Validates that the <see cref="D3D11_VIDEO_COLOR_YCbCrA" /> struct is blittable.</summary>
         [Test]

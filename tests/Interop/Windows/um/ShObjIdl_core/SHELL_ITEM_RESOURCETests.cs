@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="SHELL_ITEM_RESOURCE" /> struct.</summary>
-    public static unsafe class SHELL_ITEM_RESOURCETests
+    public static unsafe partial class SHELL_ITEM_RESOURCETests
     {
         /// <summary>Validates that the <see cref="SHELL_ITEM_RESOURCE" /> struct is blittable.</summary>
         [Test]

@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="CACY" /> struct.</summary>
-    public static unsafe class CACYTests
+    public static unsafe partial class CACYTests
     {
         /// <summary>Validates that the <see cref="CACY" /> struct is blittable.</summary>
         [Test]

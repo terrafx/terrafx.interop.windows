@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="SMB_SHARE_FLUSH_AND_PURGE_OUTPUT" /> struct.</summary>
-    public static unsafe class SMB_SHARE_FLUSH_AND_PURGE_OUTPUTTests
+    public static unsafe partial class SMB_SHARE_FLUSH_AND_PURGE_OUTPUTTests
     {
         /// <summary>Validates that the <see cref="SMB_SHARE_FLUSH_AND_PURGE_OUTPUT" /> struct is blittable.</summary>
         [Test]

@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="CODECAPI_AVEncAudioMeanBitRate" /> struct.</summary>
-    public static unsafe class CODECAPI_AVEncAudioMeanBitRateTests
+    public static unsafe partial class CODECAPI_AVEncAudioMeanBitRateTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="CODECAPI_AVEncAudioMeanBitRate" /> struct is correct.</summary>
         [Test]

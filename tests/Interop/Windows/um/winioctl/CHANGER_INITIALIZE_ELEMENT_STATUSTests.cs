@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="CHANGER_INITIALIZE_ELEMENT_STATUS" /> struct.</summary>
-    public static unsafe class CHANGER_INITIALIZE_ELEMENT_STATUSTests
+    public static unsafe partial class CHANGER_INITIALIZE_ELEMENT_STATUSTests
     {
         /// <summary>Validates that the <see cref="CHANGER_INITIALIZE_ELEMENT_STATUS" /> struct is blittable.</summary>
         [Test]

@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="CODECAPI_AVEncProgressiveUpdateTime" /> struct.</summary>
-    public static unsafe class CODECAPI_AVEncProgressiveUpdateTimeTests
+    public static unsafe partial class CODECAPI_AVEncProgressiveUpdateTimeTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="CODECAPI_AVEncProgressiveUpdateTime" /> struct is correct.</summary>
         [Test]

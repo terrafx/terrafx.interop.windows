@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="CMS_DH_KEY_INFO" /> struct.</summary>
-    public static unsafe class CMS_DH_KEY_INFOTests
+    public static unsafe partial class CMS_DH_KEY_INFOTests
     {
         /// <summary>Validates that the <see cref="CMS_DH_KEY_INFO" /> struct is blittable.</summary>
         [Test]

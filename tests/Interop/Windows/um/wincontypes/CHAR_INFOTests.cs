@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="CHAR_INFO" /> struct.</summary>
-    public static unsafe class CHAR_INFOTests
+    public static unsafe partial class CHAR_INFOTests
     {
         /// <summary>Validates that the <see cref="CHAR_INFO" /> struct is blittable.</summary>
         [Test]

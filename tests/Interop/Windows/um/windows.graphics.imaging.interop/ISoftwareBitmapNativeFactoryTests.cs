@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="ISoftwareBitmapNativeFactory" /> struct.</summary>
-    public static unsafe class ISoftwareBitmapNativeFactoryTests
+    public static unsafe partial class ISoftwareBitmapNativeFactoryTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ISoftwareBitmapNativeFactory" /> struct is correct.</summary>
         [Test]

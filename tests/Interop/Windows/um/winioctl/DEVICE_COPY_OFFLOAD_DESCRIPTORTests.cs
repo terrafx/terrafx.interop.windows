@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="DEVICE_COPY_OFFLOAD_DESCRIPTOR" /> struct.</summary>
-    public static unsafe class DEVICE_COPY_OFFLOAD_DESCRIPTORTests
+    public static unsafe partial class DEVICE_COPY_OFFLOAD_DESCRIPTORTests
     {
         /// <summary>Validates that the <see cref="DEVICE_COPY_OFFLOAD_DESCRIPTOR" /> struct is blittable.</summary>
         [Test]

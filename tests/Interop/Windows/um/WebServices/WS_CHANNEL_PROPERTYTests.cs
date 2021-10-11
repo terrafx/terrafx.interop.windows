@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="WS_CHANNEL_PROPERTY" /> struct.</summary>
-    public static unsafe class WS_CHANNEL_PROPERTYTests
+    public static unsafe partial class WS_CHANNEL_PROPERTYTests
     {
         /// <summary>Validates that the <see cref="WS_CHANNEL_PROPERTY" /> struct is blittable.</summary>
         [Test]

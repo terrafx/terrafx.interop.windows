@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IWriteSpeedDescriptor" /> struct.</summary>
-    public static unsafe class IWriteSpeedDescriptorTests
+    public static unsafe partial class IWriteSpeedDescriptorTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IWriteSpeedDescriptor" /> struct is correct.</summary>
         [Test]

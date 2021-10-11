@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="MENUITEMINFOA" /> struct.</summary>
-    public static unsafe class MENUITEMINFOATests
+    public static unsafe partial class MENUITEMINFOATests
     {
         /// <summary>Validates that the <see cref="MENUITEMINFOA" /> struct is blittable.</summary>
         [Test]

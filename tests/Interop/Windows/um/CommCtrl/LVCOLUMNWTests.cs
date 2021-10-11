@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="LVCOLUMNW" /> struct.</summary>
-    public static unsafe class LVCOLUMNWTests
+    public static unsafe partial class LVCOLUMNWTests
     {
         /// <summary>Validates that the <see cref="LVCOLUMNW" /> struct is blittable.</summary>
         [Test]

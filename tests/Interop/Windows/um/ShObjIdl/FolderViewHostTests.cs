@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="FolderViewHost" /> struct.</summary>
-    public static unsafe class FolderViewHostTests
+    public static unsafe partial class FolderViewHostTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="FolderViewHost" /> struct is correct.</summary>
         [Test]

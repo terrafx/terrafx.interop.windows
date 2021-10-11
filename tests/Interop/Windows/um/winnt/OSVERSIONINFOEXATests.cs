@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="OSVERSIONINFOEXA" /> struct.</summary>
-    public static unsafe class OSVERSIONINFOEXATests
+    public static unsafe partial class OSVERSIONINFOEXATests
     {
         /// <summary>Validates that the <see cref="OSVERSIONINFOEXA" /> struct is blittable.</summary>
         [Test]

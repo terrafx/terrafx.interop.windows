@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="WIN32_FILE_ATTRIBUTE_DATA" /> struct.</summary>
-    public static unsafe class WIN32_FILE_ATTRIBUTE_DATATests
+    public static unsafe partial class WIN32_FILE_ATTRIBUTE_DATATests
     {
         /// <summary>Validates that the <see cref="WIN32_FILE_ATTRIBUTE_DATA" /> struct is blittable.</summary>
         [Test]

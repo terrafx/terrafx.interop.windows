@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="SD_CHANGE_MACHINE_SID_OUTPUT" /> struct.</summary>
-    public static unsafe class SD_CHANGE_MACHINE_SID_OUTPUTTests
+    public static unsafe partial class SD_CHANGE_MACHINE_SID_OUTPUTTests
     {
         /// <summary>Validates that the <see cref="SD_CHANGE_MACHINE_SID_OUTPUT" /> struct is blittable.</summary>
         [Test]

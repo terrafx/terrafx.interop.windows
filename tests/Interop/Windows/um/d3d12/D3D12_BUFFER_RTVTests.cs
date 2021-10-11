@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="D3D12_BUFFER_RTV" /> struct.</summary>
-    public static unsafe class D3D12_BUFFER_RTVTests
+    public static unsafe partial class D3D12_BUFFER_RTVTests
     {
         /// <summary>Validates that the <see cref="D3D12_BUFFER_RTV" /> struct is blittable.</summary>
         [Test]

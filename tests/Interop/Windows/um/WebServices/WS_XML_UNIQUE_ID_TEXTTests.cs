@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="WS_XML_UNIQUE_ID_TEXT" /> struct.</summary>
-    public static unsafe class WS_XML_UNIQUE_ID_TEXTTests
+    public static unsafe partial class WS_XML_UNIQUE_ID_TEXTTests
     {
         /// <summary>Validates that the <see cref="WS_XML_UNIQUE_ID_TEXT" /> struct is blittable.</summary>
         [Test]

@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="REGFILTER" /> struct.</summary>
-    public static unsafe class REGFILTERTests
+    public static unsafe partial class REGFILTERTests
     {
         /// <summary>Validates that the <see cref="REGFILTER" /> struct is blittable.</summary>
         [Test]

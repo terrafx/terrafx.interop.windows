@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="ASF_FLAT_SYNCHRONISED_LYRICS" /> struct.</summary>
-    public static unsafe class ASF_FLAT_SYNCHRONISED_LYRICSTests
+    public static unsafe partial class ASF_FLAT_SYNCHRONISED_LYRICSTests
     {
         /// <summary>Validates that the <see cref="ASF_FLAT_SYNCHRONISED_LYRICS" /> struct is blittable.</summary>
         [Test]

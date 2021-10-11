@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="DXGI_SWAP_CHAIN_FULLSCREEN_DESC" /> struct.</summary>
-    public static unsafe class DXGI_SWAP_CHAIN_FULLSCREEN_DESCTests
+    public static unsafe partial class DXGI_SWAP_CHAIN_FULLSCREEN_DESCTests
     {
         /// <summary>Validates that the <see cref="DXGI_SWAP_CHAIN_FULLSCREEN_DESC" /> struct is blittable.</summary>
         [Test]

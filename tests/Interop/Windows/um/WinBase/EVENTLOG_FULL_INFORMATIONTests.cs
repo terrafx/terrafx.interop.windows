@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="EVENTLOG_FULL_INFORMATION" /> struct.</summary>
-    public static unsafe class EVENTLOG_FULL_INFORMATIONTests
+    public static unsafe partial class EVENTLOG_FULL_INFORMATIONTests
     {
         /// <summary>Validates that the <see cref="EVENTLOG_FULL_INFORMATION" /> struct is blittable.</summary>
         [Test]

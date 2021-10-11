@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="FILE_LEVEL_TRIM_OUTPUT" /> struct.</summary>
-    public static unsafe class FILE_LEVEL_TRIM_OUTPUTTests
+    public static unsafe partial class FILE_LEVEL_TRIM_OUTPUTTests
     {
         /// <summary>Validates that the <see cref="FILE_LEVEL_TRIM_OUTPUT" /> struct is blittable.</summary>
         [Test]

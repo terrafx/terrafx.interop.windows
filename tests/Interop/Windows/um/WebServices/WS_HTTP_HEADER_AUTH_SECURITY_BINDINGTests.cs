@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="WS_HTTP_HEADER_AUTH_SECURITY_BINDING" /> struct.</summary>
-    public static unsafe class WS_HTTP_HEADER_AUTH_SECURITY_BINDINGTests
+    public static unsafe partial class WS_HTTP_HEADER_AUTH_SECURITY_BINDINGTests
     {
         /// <summary>Validates that the <see cref="WS_HTTP_HEADER_AUTH_SECURITY_BINDING" /> struct is blittable.</summary>
         [Test]

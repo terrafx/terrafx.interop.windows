@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="INotificationActivationCallback" /> struct.</summary>
-    public static unsafe class INotificationActivationCallbackTests
+    public static unsafe partial class INotificationActivationCallbackTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="INotificationActivationCallback" /> struct is correct.</summary>
         [Test]

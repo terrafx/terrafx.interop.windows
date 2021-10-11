@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="SCM_BUS_PROPERTY_QUERY" /> struct.</summary>
-    public static unsafe class SCM_BUS_PROPERTY_QUERYTests
+    public static unsafe partial class SCM_BUS_PROPERTY_QUERYTests
     {
         /// <summary>Validates that the <see cref="SCM_BUS_PROPERTY_QUERY" /> struct is blittable.</summary>
         [Test]

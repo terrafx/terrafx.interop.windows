@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="APPX_ENCRYPTED_PACKAGE_SETTINGS" /> struct.</summary>
-    public static unsafe class APPX_ENCRYPTED_PACKAGE_SETTINGSTests
+    public static unsafe partial class APPX_ENCRYPTED_PACKAGE_SETTINGSTests
     {
         /// <summary>Validates that the <see cref="APPX_ENCRYPTED_PACKAGE_SETTINGS" /> struct is blittable.</summary>
         [Test]

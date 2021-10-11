@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="CMSG_SP3_COMPATIBLE_AUX_INFO" /> struct.</summary>
-    public static unsafe class CMSG_SP3_COMPATIBLE_AUX_INFOTests
+    public static unsafe partial class CMSG_SP3_COMPATIBLE_AUX_INFOTests
     {
         /// <summary>Validates that the <see cref="CMSG_SP3_COMPATIBLE_AUX_INFO" /> struct is blittable.</summary>
         [Test]

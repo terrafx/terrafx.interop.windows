@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IVMRImagePresenterConfig" /> struct.</summary>
-    public static unsafe class IVMRImagePresenterConfigTests
+    public static unsafe partial class IVMRImagePresenterConfigTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IVMRImagePresenterConfig" /> struct is correct.</summary>
         [Test]

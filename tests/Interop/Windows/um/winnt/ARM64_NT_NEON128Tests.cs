@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="ARM64_NT_NEON128" /> struct.</summary>
-    public static unsafe class ARM64_NT_NEON128Tests
+    public static unsafe partial class ARM64_NT_NEON128Tests
     {
         /// <summary>Validates that the <see cref="ARM64_NT_NEON128" /> struct is blittable.</summary>
         [Test]

@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="ISpNotifySource" /> struct.</summary>
-    public static unsafe class ISpNotifySourceTests
+    public static unsafe partial class ISpNotifySourceTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ISpNotifySource" /> struct is correct.</summary>
         [Test]

@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="MFP_FRAME_STEP_EVENT" /> struct.</summary>
-    public static unsafe class MFP_FRAME_STEP_EVENTTests
+    public static unsafe partial class MFP_FRAME_STEP_EVENTTests
     {
         /// <summary>Validates that the <see cref="MFP_FRAME_STEP_EVENT" /> struct is blittable.</summary>
         [Test]

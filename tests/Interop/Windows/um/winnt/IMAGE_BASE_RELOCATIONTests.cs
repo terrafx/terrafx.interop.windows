@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IMAGE_BASE_RELOCATION" /> struct.</summary>
-    public static unsafe class IMAGE_BASE_RELOCATIONTests
+    public static unsafe partial class IMAGE_BASE_RELOCATIONTests
     {
         /// <summary>Validates that the <see cref="IMAGE_BASE_RELOCATION" /> struct is blittable.</summary>
         [Test]

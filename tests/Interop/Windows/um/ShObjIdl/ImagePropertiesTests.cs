@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="ImageProperties" /> struct.</summary>
-    public static unsafe class ImagePropertiesTests
+    public static unsafe partial class ImagePropertiesTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ImageProperties" /> struct is correct.</summary>
         [Test]

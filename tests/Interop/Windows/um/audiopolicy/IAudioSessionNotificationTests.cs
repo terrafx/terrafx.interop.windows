@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IAudioSessionNotification" /> struct.</summary>
-    public static unsafe class IAudioSessionNotificationTests
+    public static unsafe partial class IAudioSessionNotificationTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IAudioSessionNotification" /> struct is correct.</summary>
         [Test]

@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="WS_HTTP_SSL_KERBEROS_APREQ_BINDING_TEMPLATE" /> struct.</summary>
-    public static unsafe class WS_HTTP_SSL_KERBEROS_APREQ_BINDING_TEMPLATETests
+    public static unsafe partial class WS_HTTP_SSL_KERBEROS_APREQ_BINDING_TEMPLATETests
     {
         /// <summary>Validates that the <see cref="WS_HTTP_SSL_KERBEROS_APREQ_BINDING_TEMPLATE" /> struct is blittable.</summary>
         [Test]

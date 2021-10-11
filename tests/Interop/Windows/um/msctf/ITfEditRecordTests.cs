@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="ITfEditRecord" /> struct.</summary>
-    public static unsafe class ITfEditRecordTests
+    public static unsafe partial class ITfEditRecordTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ITfEditRecord" /> struct is correct.</summary>
         [Test]

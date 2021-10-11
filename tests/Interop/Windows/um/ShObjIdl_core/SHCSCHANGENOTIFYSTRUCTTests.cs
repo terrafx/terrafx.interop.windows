@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="SHCSCHANGENOTIFYSTRUCT" /> struct.</summary>
-    public static unsafe class SHCSCHANGENOTIFYSTRUCTTests
+    public static unsafe partial class SHCSCHANGENOTIFYSTRUCTTests
     {
         /// <summary>Validates that the <see cref="SHCSCHANGENOTIFYSTRUCT" /> struct is blittable.</summary>
         [Test]

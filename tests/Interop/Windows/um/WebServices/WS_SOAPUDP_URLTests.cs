@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="WS_SOAPUDP_URL" /> struct.</summary>
-    public static unsafe class WS_SOAPUDP_URLTests
+    public static unsafe partial class WS_SOAPUDP_URLTests
     {
         /// <summary>Validates that the <see cref="WS_SOAPUDP_URL" /> struct is blittable.</summary>
         [Test]

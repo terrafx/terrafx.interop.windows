@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IDeferredCommand" /> struct.</summary>
-    public static unsafe class IDeferredCommandTests
+    public static unsafe partial class IDeferredCommandTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IDeferredCommand" /> struct is correct.</summary>
         [Test]

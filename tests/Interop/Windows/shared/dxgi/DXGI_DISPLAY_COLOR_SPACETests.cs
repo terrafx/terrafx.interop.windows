@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="DXGI_DISPLAY_COLOR_SPACE" /> struct.</summary>
-    public static unsafe class DXGI_DISPLAY_COLOR_SPACETests
+    public static unsafe partial class DXGI_DISPLAY_COLOR_SPACETests
     {
         /// <summary>Validates that the <see cref="DXGI_DISPLAY_COLOR_SPACE" /> struct is blittable.</summary>
         [Test]

@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="MLOperatorEdgeDescription" /> struct.</summary>
-    public static unsafe class MLOperatorEdgeDescriptionTests
+    public static unsafe partial class MLOperatorEdgeDescriptionTests
     {
         /// <summary>Validates that the <see cref="MLOperatorEdgeDescription" /> struct is blittable.</summary>
         [Test]
