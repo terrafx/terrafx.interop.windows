@@ -3,6 +3,8 @@
 // Ported from um/WinTrust.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System;
+
 namespace TerraFX.Interop
 {
     public unsafe partial struct CRYPT_PROVIDER_SIGSTATE
@@ -11,10 +13,10 @@ namespace TerraFX.Interop
         public uint cbStruct;
 
         [NativeTypeName("HCRYPTMSG *")]
-        public void** rhSecondarySigs;
+        public IntPtr* rhSecondarySigs;
 
         [NativeTypeName("HCRYPTMSG")]
-        public void* hPrimarySig;
+        public IntPtr hPrimarySig;
 
         [NativeTypeName("BOOL")]
         public int fFirstAttemptMade;

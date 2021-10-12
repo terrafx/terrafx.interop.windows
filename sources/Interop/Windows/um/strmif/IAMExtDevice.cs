@@ -83,9 +83,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
         [return: NativeTypeName("HRESULT")]
-        public int Calibrate([NativeTypeName("HEVENT")] nuint hEvent, [NativeTypeName("long")] int Mode, [NativeTypeName("long *")] int* pStatus)
+        public int Calibrate([NativeTypeName("HEVENT")] IntPtr hEvent, [NativeTypeName("long")] int Mode, [NativeTypeName("long *")] int* pStatus)
         {
-            return ((delegate* unmanaged<IAMExtDevice*, nuint, int, int*, int>)(lpVtbl[8]))((IAMExtDevice*)Unsafe.AsPointer(ref this), hEvent, Mode, pStatus);
+            return ((delegate* unmanaged<IAMExtDevice*, IntPtr, int, int*, int>)(lpVtbl[8]))((IAMExtDevice*)Unsafe.AsPointer(ref this), hEvent, Mode, pStatus);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

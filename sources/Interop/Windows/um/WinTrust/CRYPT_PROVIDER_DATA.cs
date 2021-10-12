@@ -26,7 +26,7 @@ namespace TerraFX.Interop
         public Guid* pgActionID;
 
         [NativeTypeName("HCRYPTPROV")]
-        public nuint hProv;
+        public IntPtr hProv;
 
         [NativeTypeName("DWORD")]
         public uint dwError;
@@ -50,13 +50,13 @@ namespace TerraFX.Interop
         public uint chStores;
 
         [NativeTypeName("HCERTSTORE *")]
-        public void** pahStores;
+        public IntPtr* pahStores;
 
         [NativeTypeName("DWORD")]
         public uint dwEncoding;
 
         [NativeTypeName("HCRYPTMSG")]
-        public void* hMsg;
+        public IntPtr hMsg;
 
         [NativeTypeName("DWORD")]
         public uint csSigners;

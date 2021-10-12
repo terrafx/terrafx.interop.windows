@@ -3,6 +3,8 @@
 // Ported from um/wincrypt.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System;
+
 namespace TerraFX.Interop
 {
     public unsafe partial struct CERT_CHAIN_ENGINE_CONFIG
@@ -11,19 +13,19 @@ namespace TerraFX.Interop
         public uint cbSize;
 
         [NativeTypeName("HCERTSTORE")]
-        public void* hRestrictedRoot;
+        public IntPtr hRestrictedRoot;
 
         [NativeTypeName("HCERTSTORE")]
-        public void* hRestrictedTrust;
+        public IntPtr hRestrictedTrust;
 
         [NativeTypeName("HCERTSTORE")]
-        public void* hRestrictedOther;
+        public IntPtr hRestrictedOther;
 
         [NativeTypeName("DWORD")]
         public uint cAdditionalStore;
 
         [NativeTypeName("HCERTSTORE *")]
-        public void** rghAdditionalStore;
+        public IntPtr* rghAdditionalStore;
 
         [NativeTypeName("DWORD")]
         public uint dwFlags;
@@ -38,10 +40,10 @@ namespace TerraFX.Interop
         public uint CycleDetectionModulus;
 
         [NativeTypeName("HCERTSTORE")]
-        public void* hExclusiveRoot;
+        public IntPtr hExclusiveRoot;
 
         [NativeTypeName("HCERTSTORE")]
-        public void* hExclusiveTrustedPeople;
+        public IntPtr hExclusiveTrustedPeople;
 
         [NativeTypeName("DWORD")]
         public uint dwExclusiveFlags;

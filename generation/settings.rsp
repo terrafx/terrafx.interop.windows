@@ -23,7 +23,6 @@ log-potential-typedef-remappings
 multi-file
 --define-macro
 INITGUID
-NOSYSPARAMSINFO
 UNICODE
 --headerFile
 header.txt

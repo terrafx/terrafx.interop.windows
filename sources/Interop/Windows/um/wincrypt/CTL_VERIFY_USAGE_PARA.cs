@@ -3,6 +3,8 @@
 // Ported from um/wincrypt.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System;
+
 namespace TerraFX.Interop
 {
     public unsafe partial struct CTL_VERIFY_USAGE_PARA
@@ -17,12 +19,12 @@ namespace TerraFX.Interop
         public uint cCtlStore;
 
         [NativeTypeName("HCERTSTORE *")]
-        public void** rghCtlStore;
+        public IntPtr* rghCtlStore;
 
         [NativeTypeName("DWORD")]
         public uint cSignerStore;
 
         [NativeTypeName("HCERTSTORE *")]
-        public void** rghSignerStore;
+        public IntPtr* rghSignerStore;
     }
 }

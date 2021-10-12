@@ -36,6 +36,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "generation", "generation", 
 	ProjectSection(SolutionItems) = preProject
 		generation\remap.rsp = generation\remap.rsp
 		generation\settings.rsp = generation\settings.rsp
+		generation\TerraFX.h = generation\TerraFX.h
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "shared", "shared", "{F9716DD9-2967-4295-AC71-F1FD5A9EEFEF}"

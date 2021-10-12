@@ -33,7 +33,7 @@ namespace TerraFX.Interop
         public uint dwIntVersion;
 
         [NativeTypeName("HCRYPTPROV")]
-        public nuint hProv;
+        public IntPtr hProv;
 
         public CRYPT_ALGORITHM_IDENTIFIER DigestAlgorithm;
 

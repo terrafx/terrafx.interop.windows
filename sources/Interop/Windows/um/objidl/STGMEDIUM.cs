@@ -28,15 +28,12 @@ namespace TerraFX.Interop
             }
         }
 
-        public ref void* hMetaFilePict
+        public ref IntPtr hMetaFilePict
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
-                fixed (_Anonymous_e__Union* pField = &Anonymous)
-                {
-                    return ref pField->hMetaFilePict;
-                }
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.hMetaFilePict, 1));
             }
         }
 
@@ -103,7 +100,7 @@ namespace TerraFX.Interop
 
             [FieldOffset(0)]
             [NativeTypeName("HMETAFILEPICT")]
-            public void* hMetaFilePict;
+            public IntPtr hMetaFilePict;
 
             [FieldOffset(0)]
             [NativeTypeName("HENHMETAFILE")]

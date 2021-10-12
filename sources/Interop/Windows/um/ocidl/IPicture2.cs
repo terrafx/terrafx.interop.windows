@@ -43,17 +43,17 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
         [return: NativeTypeName("HRESULT")]
-        public int get_Handle([NativeTypeName("HHANDLE *")] nuint* pHandle)
+        public int get_Handle([NativeTypeName("HHANDLE *")] IntPtr* pHandle)
         {
-            return ((delegate* unmanaged<IPicture2*, nuint*, int>)(lpVtbl[3]))((IPicture2*)Unsafe.AsPointer(ref this), pHandle);
+            return ((delegate* unmanaged<IPicture2*, IntPtr*, int>)(lpVtbl[3]))((IPicture2*)Unsafe.AsPointer(ref this), pHandle);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
         [return: NativeTypeName("HRESULT")]
-        public int get_hPal([NativeTypeName("HHANDLE *")] nuint* phPal)
+        public int get_hPal([NativeTypeName("HHANDLE *")] IntPtr* phPal)
         {
-            return ((delegate* unmanaged<IPicture2*, nuint*, int>)(lpVtbl[4]))((IPicture2*)Unsafe.AsPointer(ref this), phPal);
+            return ((delegate* unmanaged<IPicture2*, IntPtr*, int>)(lpVtbl[4]))((IPicture2*)Unsafe.AsPointer(ref this), phPal);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -91,9 +91,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
         [return: NativeTypeName("HRESULT")]
-        public int set_hPal([NativeTypeName("HHANDLE")] nuint hPal)
+        public int set_hPal([NativeTypeName("HHANDLE")] IntPtr hPal)
         {
-            return ((delegate* unmanaged<IPicture2*, nuint, int>)(lpVtbl[9]))((IPicture2*)Unsafe.AsPointer(ref this), hPal);
+            return ((delegate* unmanaged<IPicture2*, IntPtr, int>)(lpVtbl[9]))((IPicture2*)Unsafe.AsPointer(ref this), hPal);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -107,9 +107,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(11)]
         [return: NativeTypeName("HRESULT")]
-        public int SelectPicture([NativeTypeName("HDC")] IntPtr hDCIn, [NativeTypeName("HDC *")] IntPtr* phDCOut, [NativeTypeName("HHANDLE *")] nuint* phBmpOut)
+        public int SelectPicture([NativeTypeName("HDC")] IntPtr hDCIn, [NativeTypeName("HDC *")] IntPtr* phDCOut, [NativeTypeName("HHANDLE *")] IntPtr* phBmpOut)
         {
-            return ((delegate* unmanaged<IPicture2*, IntPtr, IntPtr*, nuint*, int>)(lpVtbl[11]))((IPicture2*)Unsafe.AsPointer(ref this), hDCIn, phDCOut, phBmpOut);
+            return ((delegate* unmanaged<IPicture2*, IntPtr, IntPtr*, IntPtr*, int>)(lpVtbl[11]))((IPicture2*)Unsafe.AsPointer(ref this), hDCIn, phDCOut, phBmpOut);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

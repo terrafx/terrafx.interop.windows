@@ -16,7 +16,7 @@ namespace TerraFX.Interop
         public IntPtr hChainEngine;
 
         [NativeTypeName("HCERTSTORE")]
-        public void* hAdditionalStore;
+        public IntPtr hAdditionalStore;
 
         [NativeTypeName("DWORD")]
         public uint dwChainFlags;

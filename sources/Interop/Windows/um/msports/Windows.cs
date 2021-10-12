@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     {
         [DllImport("msports", ExactSpelling = true)]
         [return: NativeTypeName("LONG")]
-        public static extern int SerialDisplayAdvancedSettings([NativeTypeName("HWND")] IntPtr ParentHwnd, [NativeTypeName("HDEVINFO")] void* DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] SP_DEVINFO_DATA* DeviceInfoData);
+        public static extern int SerialDisplayAdvancedSettings([NativeTypeName("HWND")] IntPtr ParentHwnd, [NativeTypeName("HDEVINFO")] IntPtr DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] SP_DEVINFO_DATA* DeviceInfoData);
 
         [DllImport("msports", ExactSpelling = true)]
         [return: NativeTypeName("LONG")]

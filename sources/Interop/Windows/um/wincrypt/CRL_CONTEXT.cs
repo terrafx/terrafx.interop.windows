@@ -3,6 +3,8 @@
 // Ported from um/wincrypt.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System;
+
 namespace TerraFX.Interop
 {
     public unsafe partial struct CRL_CONTEXT
@@ -20,6 +22,6 @@ namespace TerraFX.Interop
         public CRL_INFO* pCrlInfo;
 
         [NativeTypeName("HCERTSTORE")]
-        public void* hCertStore;
+        public IntPtr hCertStore;
     }
 }

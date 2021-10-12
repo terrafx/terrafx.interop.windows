@@ -3,6 +3,7 @@
 // Ported from um/SetupAPI.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
@@ -14,7 +15,7 @@ namespace TerraFX.Interop
         public uint cbSize;
 
         [NativeTypeName("HSPFILEQ")]
-        public void* QueueHandle;
+        public IntPtr QueueHandle;
 
         [NativeTypeName("PCSTR")]
         public sbyte* SourceRootPath;
@@ -41,7 +42,7 @@ namespace TerraFX.Interop
         public uint CopyStyle;
 
         [NativeTypeName("HINF")]
-        public void* LayoutInf;
+        public IntPtr LayoutInf;
 
         [NativeTypeName("PCSTR")]
         public sbyte* SecurityDescriptor;
