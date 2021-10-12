@@ -2309,6 +2309,20 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "audioclientactivationparams
 		generation\um\audioclientactivationparams\um-audioclientactivationparams.h = generation\um\audioclientactivationparams\um-audioclientactivationparams.h
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "reason", "reason", "{AEF32986-D77E-4FBC-93AB-C11B1226A427}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\reason\generate.rsp = generation\um\reason\generate.rsp
+		generation\um\reason\header.txt = generation\um\reason\header.txt
+		generation\um\reason\um-reason.h = generation\um\reason\um-reason.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tpcshrd", "tpcshrd", "{3663C9FD-E555-44F4-87BD-D912A3554FAE}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\tpcshrd\generate.rsp = generation\um\tpcshrd\generate.rsp
+		generation\um\tpcshrd\header.txt = generation\um\tpcshrd\header.txt
+		generation\um\tpcshrd\um-tpcshrd.h = generation\um\tpcshrd\um-tpcshrd.h
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -2667,6 +2681,8 @@ Global
 		{7FFDCE64-7E80-4123-92FC-F44B71568D6E} = {B09A774C-A2CD-4E0D-8DE8-AC48459E1699}
 		{22E814D7-5FDA-4484-BA70-78E6CDFEAFE7} = {B09A774C-A2CD-4E0D-8DE8-AC48459E1699}
 		{B3FD7D49-F8E3-4364-B84F-5706600E2825} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{AEF32986-D77E-4FBC-93AB-C11B1226A427} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{3663C9FD-E555-44F4-87BD-D912A3554FAE} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2FE36DF8-2D9C-4F20-8787-45DC74B57461}
