@@ -30,7 +30,7 @@ namespace TerraFX.Interop
         public void* InstallMsgHandlerContext;
 
         [NativeTypeName("HSPFILEQ")]
-        public void* FileQueue;
+        public IntPtr FileQueue;
 
         [NativeTypeName("ULONG_PTR")]
         public nuint ClassInstallReserved;

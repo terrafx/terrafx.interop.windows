@@ -16,7 +16,7 @@ namespace TerraFX.Interop
         public FILETIME* pTime;
 
         [NativeTypeName("HCERTSTORE")]
-        public void* hAdditionalStore;
+        public IntPtr hAdditionalStore;
 
         [NativeTypeName("PCERT_CHAIN_PARA")]
         public CERT_CHAIN_PARA* pChainPara;

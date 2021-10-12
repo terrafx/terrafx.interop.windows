@@ -3,6 +3,7 @@
 // Ported from um/wincrypt.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -22,7 +23,7 @@ namespace TerraFX.Interop
         public void* pvKeyWrapAuxInfo;
 
         [NativeTypeName("HCRYPTPROV_LEGACY")]
-        public nuint hCryptProv;
+        public IntPtr hCryptProv;
 
         [NativeTypeName("DWORD")]
         public uint dwKeySpec;

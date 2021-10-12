@@ -3,6 +3,8 @@
 // Ported from um/wincrypt.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System;
+
 namespace TerraFX.Interop
 {
     public unsafe partial struct CERT_REVOCATION_PARA
@@ -17,10 +19,10 @@ namespace TerraFX.Interop
         public uint cCertStore;
 
         [NativeTypeName("HCERTSTORE *")]
-        public void** rgCertStore;
+        public IntPtr* rgCertStore;
 
         [NativeTypeName("HCERTSTORE")]
-        public void* hCrlStore;
+        public IntPtr hCrlStore;
 
         [NativeTypeName("LPFILETIME")]
         public FILETIME* pftTimeToUse;

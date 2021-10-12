@@ -3,6 +3,8 @@
 // Ported from um/WinTrust.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System;
+
 namespace TerraFX.Interop
 {
     public unsafe partial struct CRYPT_PROVIDER_FUNCTIONS
@@ -17,7 +19,7 @@ namespace TerraFX.Interop
         public delegate* unmanaged<void*, void> pfnFree;
 
         [NativeTypeName("PFN_CPD_ADD_STORE")]
-        public delegate* unmanaged<CRYPT_PROVIDER_DATA*, void*, int> pfnAddStore2Chain;
+        public delegate* unmanaged<CRYPT_PROVIDER_DATA*, IntPtr, int> pfnAddStore2Chain;
 
         [NativeTypeName("PFN_CPD_ADD_SGNR")]
         public delegate* unmanaged<CRYPT_PROVIDER_DATA*, int, uint, CRYPT_PROVIDER_SGNR*, int> pfnAddSgnr2Chain;

@@ -80,14 +80,14 @@ namespace TerraFX.Interop
 
         [DllImport("kernel32", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int CreatePseudoConsole(COORD size, [NativeTypeName("HANDLE")] IntPtr hInput, [NativeTypeName("HANDLE")] IntPtr hOutput, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("HPCON *")] void** phPC);
+        public static extern int CreatePseudoConsole(COORD size, [NativeTypeName("HANDLE")] IntPtr hInput, [NativeTypeName("HANDLE")] IntPtr hOutput, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("HPCON *")] IntPtr* phPC);
 
         [DllImport("kernel32", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int ResizePseudoConsole([NativeTypeName("HPCON")] void* hPC, COORD size);
+        public static extern int ResizePseudoConsole([NativeTypeName("HPCON")] IntPtr hPC, COORD size);
 
         [DllImport("kernel32", ExactSpelling = true)]
-        public static extern void ClosePseudoConsole([NativeTypeName("HPCON")] void* hPC);
+        public static extern void ClosePseudoConsole([NativeTypeName("HPCON")] IntPtr hPC);
 
         [NativeTypeName("#define ATTACH_PARENT_PROCESS ((DWORD)-1)")]
         public const uint ATTACH_PARENT_PROCESS = unchecked((uint)(-1));

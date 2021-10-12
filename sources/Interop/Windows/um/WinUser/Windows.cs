@@ -332,31 +332,31 @@ namespace TerraFX.Interop
 
         [DllImport("user32", ExactSpelling = true)]
         [return: NativeTypeName("HDEVNOTIFY")]
-        public static extern void* RegisterDeviceNotificationA([NativeTypeName("HANDLE")] IntPtr hRecipient, [NativeTypeName("LPVOID")] void* NotificationFilter, [NativeTypeName("DWORD")] uint Flags);
+        public static extern IntPtr RegisterDeviceNotificationA([NativeTypeName("HANDLE")] IntPtr hRecipient, [NativeTypeName("LPVOID")] void* NotificationFilter, [NativeTypeName("DWORD")] uint Flags);
 
         [DllImport("user32", ExactSpelling = true)]
         [return: NativeTypeName("HDEVNOTIFY")]
-        public static extern void* RegisterDeviceNotificationW([NativeTypeName("HANDLE")] IntPtr hRecipient, [NativeTypeName("LPVOID")] void* NotificationFilter, [NativeTypeName("DWORD")] uint Flags);
+        public static extern IntPtr RegisterDeviceNotificationW([NativeTypeName("HANDLE")] IntPtr hRecipient, [NativeTypeName("LPVOID")] void* NotificationFilter, [NativeTypeName("DWORD")] uint Flags);
 
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int UnregisterDeviceNotification([NativeTypeName("HDEVNOTIFY")] void* Handle);
+        public static extern int UnregisterDeviceNotification([NativeTypeName("HDEVNOTIFY")] IntPtr Handle);
 
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("HPOWERNOTIFY")]
-        public static extern void* RegisterPowerSettingNotification([NativeTypeName("HANDLE")] IntPtr hRecipient, [NativeTypeName("LPCGUID")] Guid* PowerSettingGuid, [NativeTypeName("DWORD")] uint Flags);
+        public static extern IntPtr RegisterPowerSettingNotification([NativeTypeName("HANDLE")] IntPtr hRecipient, [NativeTypeName("LPCGUID")] Guid* PowerSettingGuid, [NativeTypeName("DWORD")] uint Flags);
 
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int UnregisterPowerSettingNotification([NativeTypeName("HPOWERNOTIFY")] void* Handle);
+        public static extern int UnregisterPowerSettingNotification([NativeTypeName("HPOWERNOTIFY")] IntPtr Handle);
 
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("HPOWERNOTIFY")]
-        public static extern void* RegisterSuspendResumeNotification([NativeTypeName("HANDLE")] IntPtr hRecipient, [NativeTypeName("DWORD")] uint Flags);
+        public static extern IntPtr RegisterSuspendResumeNotification([NativeTypeName("HANDLE")] IntPtr hRecipient, [NativeTypeName("DWORD")] uint Flags);
 
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int UnregisterSuspendResumeNotification([NativeTypeName("HPOWERNOTIFY")] void* Handle);
+        public static extern int UnregisterSuspendResumeNotification([NativeTypeName("HPOWERNOTIFY")] IntPtr Handle);
 
         [DllImport("user32", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
@@ -6166,7 +6166,7 @@ namespace TerraFX.Interop
         public const int DEVICE_NOTIFY_ALL_INTERFACE_CLASSES = 0x00000004;
 
         [NativeTypeName("#define RegisterDeviceNotification RegisterDeviceNotificationW")]
-        public static delegate*<IntPtr, void*, uint, void*> RegisterDeviceNotification => &RegisterDeviceNotificationW;
+        public static delegate*<IntPtr, void*, uint, IntPtr> RegisterDeviceNotification => &RegisterDeviceNotificationW;
 
         [NativeTypeName("#define PostMessage PostMessageW")]
         public static delegate*<IntPtr, uint, nuint, nint, int> PostMessage => &PostMessageW;

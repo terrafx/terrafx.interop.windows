@@ -3,6 +3,8 @@
 // Ported from um/wincrypt.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System;
+
 namespace TerraFX.Interop
 {
     public unsafe partial struct CERT_STORE_PROV_INFO
@@ -16,12 +18,12 @@ namespace TerraFX.Interop
         public void** rgpvStoreProvFunc;
 
         [NativeTypeName("HCERTSTOREPROV")]
-        public void* hStoreProv;
+        public IntPtr hStoreProv;
 
         [NativeTypeName("DWORD")]
         public uint dwStoreProvFlags;
 
         [NativeTypeName("HCRYPTOIDFUNCADDR")]
-        public void* hStoreProvFuncAddr2;
+        public IntPtr hStoreProvFuncAddr2;
     }
 }
