@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/gdiplusmetaheader.h in the Windows SDK for Windows 10.0.19041.0
+// Ported from um/gdiplusmetaheader.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System.Runtime.CompilerServices;
@@ -41,8 +41,17 @@ namespace TerraFX.Interop
         [NativeTypeName("INT")]
         public int Height;
 
-        [NativeTypeName("Gdiplus::MetafileHeader::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/GdiplusMetaHeader.h:129:5)")]
+        [NativeTypeName("Gdiplus::MetafileHeader::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/GdiplusMetaHeader.h:129:5)")]
         public _Anonymous_e__Union Anonymous;
+
+        [NativeTypeName("INT")]
+        public int EmfPlusHeaderSize;
+
+        [NativeTypeName("INT")]
+        public int LogicalDpiX;
+
+        [NativeTypeName("INT")]
+        public int LogicalDpiY;
 
         public ref METAHEADER WmfHeader
         {
@@ -61,15 +70,6 @@ namespace TerraFX.Interop
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.EmfHeader, 1));
             }
         }
-
-        [NativeTypeName("INT")]
-        public int EmfPlusHeaderSize;
-
-        [NativeTypeName("INT")]
-        public int LogicalDpiX;
-
-        [NativeTypeName("INT")]
-        public int LogicalDpiY;
 
         [return: NativeTypeName("Gdiplus::MetafileType")]
         public new MetafileType GetType()
@@ -161,28 +161,6 @@ namespace TerraFX.Interop
         public int IsDisplay()
         {
             return ((IsEmfPlus()) != 0 && ((EmfPlusFlags & 0x00000001) != 0)) ? 1 : 0;
-        }
-
-        [return: NativeTypeName("const METAHEADER *")]
-        public unsafe METAHEADER* GetWmfHeader()
-        {
-            if ((IsWmf()) != 0)
-            {
-                return (METAHEADER*)Unsafe.AsPointer(ref Anonymous.WmfHeader);
-            }
-
-            return null;
-        }
-
-        [return: NativeTypeName("const Gdiplus::ENHMETAHEADER3 *")]
-        public unsafe ENHMETAHEADER3* GetEmfHeader()
-        {
-            if ((IsEmfOrEmfPlus()) != 0)
-            {
-                return (ENHMETAHEADER3*)Unsafe.AsPointer(ref Anonymous.EmfHeader);
-            }
-
-            return null;
         }
 
         [StructLayout(LayoutKind.Explicit)]
