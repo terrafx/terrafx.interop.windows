@@ -1,0 +1,28 @@
+@../../settings.rsp
+@../../remap.rsp
+--define-macro
+GDIPVER=0x0110
+--exclude
+Gdiplus::Blur
+Gdiplus::BrightnessContrast
+Gdiplus::ColorBalance
+Gdiplus::ColorCurve
+Gdiplus::ColorLUT
+Gdiplus::ColorMatrixEffect
+Gdiplus::Effect
+Gdiplus::HueSaturationLightness
+Gdiplus::Levels
+Gdiplus::RedEyeCorrection
+Gdiplus::Sharpen
+Gdiplus::Tint
+--file
+um-gdipluseffects.h
+--output
+../../../sources/Interop/Windows/um/gdipluseffects
+--test-output
+../../../tests/Interop/Windows/um/gdipluseffects
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/gdiplus.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/gdipluseffects.h
+--with-librarypath
+*=GdiPlus
