@@ -17,7 +17,7 @@ namespace TerraFX.Interop.UnitTests
         [Test]
         public static void GuidOfTest()
         {
-            Assert.That(typeof(CODECAPI_GUID_AVDecAudioOutputFormat_PCM_Stereo_MatrixEncoded).GUID, Is.EqualTo(STATIC_CODECAPI_GUID_AVDecAudioOutputFormat_PCM_Stereo_MatrixEncoded));
+            Assert.That(typeof(CODECAPI_GUID_AVDecAudioOutputFormat_PCM_Stereo_MatrixEncoded).GUID, Is.EqualTo(IID_CODECAPI_GUID_AVDecAudioOutputFormat_PCM_Stereo_MatrixEncoded));
         }
 
         /// <summary>Validates that the <see cref="CODECAPI_GUID_AVDecAudioOutputFormat_PCM_Stereo_MatrixEncoded" /> struct is blittable.</summary>

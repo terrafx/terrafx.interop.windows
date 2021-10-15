@@ -17,7 +17,7 @@ namespace TerraFX.Interop.UnitTests
         [Test]
         public static void GuidOfTest()
         {
-            Assert.That(typeof(CODECAPI_AVEncStatVideoCodedFrames).GUID, Is.EqualTo(STATIC_CODECAPI_AVEncStatVideoCodedFrames));
+            Assert.That(typeof(CODECAPI_AVEncStatVideoCodedFrames).GUID, Is.EqualTo(IID_CODECAPI_AVEncStatVideoCodedFrames));
         }
 
         /// <summary>Validates that the <see cref="CODECAPI_AVEncStatVideoCodedFrames" /> struct is blittable.</summary>

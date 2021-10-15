@@ -17,7 +17,7 @@ namespace TerraFX.Interop.UnitTests
         [Test]
         public static void GuidOfTest()
         {
-            Assert.That(typeof(CODECAPI_AVEncMPAEnableRedundancyProtection).GUID, Is.EqualTo(STATIC_CODECAPI_AVEncMPAEnableRedundancyProtection));
+            Assert.That(typeof(CODECAPI_AVEncMPAEnableRedundancyProtection).GUID, Is.EqualTo(IID_CODECAPI_AVEncMPAEnableRedundancyProtection));
         }
 
         /// <summary>Validates that the <see cref="CODECAPI_AVEncMPAEnableRedundancyProtection" /> struct is blittable.</summary>

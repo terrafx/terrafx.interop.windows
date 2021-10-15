@@ -17,7 +17,7 @@ namespace TerraFX.Interop.UnitTests
         [Test]
         public static void GuidOfTest()
         {
-            Assert.That(typeof(CODECAPI_AVDecVideoMaxCodedHeight).GUID, Is.EqualTo(STATIC_CODECAPI_AVDecVideoMaxCodedHeight));
+            Assert.That(typeof(CODECAPI_AVDecVideoMaxCodedHeight).GUID, Is.EqualTo(IID_CODECAPI_AVDecVideoMaxCodedHeight));
         }
 
         /// <summary>Validates that the <see cref="CODECAPI_AVDecVideoMaxCodedHeight" /> struct is blittable.</summary>

@@ -8,9 +8,9 @@ namespace TerraFX.Interop
     public partial struct CERT_DH_PARAMETERS
     {
         [NativeTypeName("CRYPT_UINT_BLOB")]
-        public CRYPTOAPI_BLOB p;
+        public CRYPT_DATA_BLOB p;
 
         [NativeTypeName("CRYPT_UINT_BLOB")]
-        public CRYPTOAPI_BLOB g;
+        public CRYPT_DATA_BLOB g;
     }
 }

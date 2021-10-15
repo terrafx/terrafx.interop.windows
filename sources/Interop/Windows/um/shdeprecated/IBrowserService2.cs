@@ -403,17 +403,17 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(48)]
         [return: NativeTypeName("HRESULT")]
-        public int GetBaseBrowserData([NativeTypeName("LPCBASEBROWSERDATA *")] BASEBROWSERDATALH** pbbd)
+        public int GetBaseBrowserData([NativeTypeName("LPCBASEBROWSERDATA *")] BASEBROWSERDATA** pbbd)
         {
-            return ((delegate* unmanaged<IBrowserService2*, BASEBROWSERDATALH**, int>)(lpVtbl[48]))((IBrowserService2*)Unsafe.AsPointer(ref this), pbbd);
+            return ((delegate* unmanaged<IBrowserService2*, BASEBROWSERDATA**, int>)(lpVtbl[48]))((IBrowserService2*)Unsafe.AsPointer(ref this), pbbd);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(49)]
         [return: NativeTypeName("LPBASEBROWSERDATA")]
-        public BASEBROWSERDATALH* PutBaseBrowserData()
+        public BASEBROWSERDATA* PutBaseBrowserData()
         {
-            return ((delegate* unmanaged<IBrowserService2*, BASEBROWSERDATALH*>)(lpVtbl[49]))((IBrowserService2*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IBrowserService2*, BASEBROWSERDATA*>)(lpVtbl[49]))((IBrowserService2*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -571,9 +571,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(69)]
         [return: NativeTypeName("HRESULT")]
-        public int GetFolderSetData([NativeTypeName("struct tagFolderSetData *")] tagFolderSetData* pfsd)
+        public int GetFolderSetData([NativeTypeName("struct tagFolderSetData *")] FOLDERSETDATA* pfsd)
         {
-            return ((delegate* unmanaged<IBrowserService2*, tagFolderSetData*, int>)(lpVtbl[69]))((IBrowserService2*)Unsafe.AsPointer(ref this), pfsd);
+            return ((delegate* unmanaged<IBrowserService2*, FOLDERSETDATA*, int>)(lpVtbl[69]))((IBrowserService2*)Unsafe.AsPointer(ref this), pfsd);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -689,9 +689,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(84)]
         [return: NativeTypeName("LPTOOLBARITEM")]
-        public SToolbarItem* _GetToolbarItem(int itb)
+        public TOOLBARITEM* _GetToolbarItem(int itb)
         {
-            return ((delegate* unmanaged<IBrowserService2*, int, SToolbarItem*>)(lpVtbl[84]))((IBrowserService2*)Unsafe.AsPointer(ref this), itb);
+            return ((delegate* unmanaged<IBrowserService2*, int, TOOLBARITEM*>)(lpVtbl[84]))((IBrowserService2*)Unsafe.AsPointer(ref this), itb);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -721,9 +721,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(88)]
         [return: NativeTypeName("HRESULT")]
-        public int v_MayGetNextToolbarFocus([NativeTypeName("LPMSG")] MSG* lpMsg, [NativeTypeName("UINT")] uint itbNext, int citb, [NativeTypeName("LPTOOLBARITEM *")] SToolbarItem** pptbi, [NativeTypeName("HWND *")] IntPtr* phwnd)
+        public int v_MayGetNextToolbarFocus([NativeTypeName("LPMSG")] MSG* lpMsg, [NativeTypeName("UINT")] uint itbNext, int citb, [NativeTypeName("LPTOOLBARITEM *")] TOOLBARITEM** pptbi, [NativeTypeName("HWND *")] IntPtr* phwnd)
         {
-            return ((delegate* unmanaged<IBrowserService2*, MSG*, uint, int, SToolbarItem**, IntPtr*, int>)(lpVtbl[88]))((IBrowserService2*)Unsafe.AsPointer(ref this), lpMsg, itbNext, citb, pptbi, phwnd);
+            return ((delegate* unmanaged<IBrowserService2*, MSG*, uint, int, TOOLBARITEM**, IntPtr*, int>)(lpVtbl[88]))((IBrowserService2*)Unsafe.AsPointer(ref this), lpMsg, itbNext, citb, pptbi, phwnd);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -745,9 +745,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(91)]
         [return: NativeTypeName("HRESULT")]
-        public int _SetFocus([NativeTypeName("LPTOOLBARITEM")] SToolbarItem* ptbi, [NativeTypeName("HWND")] IntPtr hwnd, [NativeTypeName("LPMSG")] MSG* lpMsg)
+        public int _SetFocus([NativeTypeName("LPTOOLBARITEM")] TOOLBARITEM* ptbi, [NativeTypeName("HWND")] IntPtr hwnd, [NativeTypeName("LPMSG")] MSG* lpMsg)
         {
-            return ((delegate* unmanaged<IBrowserService2*, SToolbarItem*, IntPtr, MSG*, int>)(lpVtbl[91]))((IBrowserService2*)Unsafe.AsPointer(ref this), ptbi, hwnd, lpMsg);
+            return ((delegate* unmanaged<IBrowserService2*, TOOLBARITEM*, IntPtr, MSG*, int>)(lpVtbl[91]))((IBrowserService2*)Unsafe.AsPointer(ref this), ptbi, hwnd, lpMsg);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

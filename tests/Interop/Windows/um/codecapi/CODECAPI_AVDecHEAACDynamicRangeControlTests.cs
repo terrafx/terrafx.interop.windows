@@ -17,7 +17,7 @@ namespace TerraFX.Interop.UnitTests
         [Test]
         public static void GuidOfTest()
         {
-            Assert.That(typeof(CODECAPI_AVDecHEAACDynamicRangeControl).GUID, Is.EqualTo(STATIC_CODECAPI_AVDecHEAACDynamicRangeControl));
+            Assert.That(typeof(CODECAPI_AVDecHEAACDynamicRangeControl).GUID, Is.EqualTo(IID_CODECAPI_AVDecHEAACDynamicRangeControl));
         }
 
         /// <summary>Validates that the <see cref="CODECAPI_AVDecHEAACDynamicRangeControl" /> struct is blittable.</summary>

@@ -10,7 +10,6 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint cbSize;
 
-        [NativeTypeName("CRYPT_DATA_BLOB")]
-        public CRYPTOAPI_BLOB EncryptedKey;
+        public CRYPT_DATA_BLOB EncryptedKey;
     }
 }

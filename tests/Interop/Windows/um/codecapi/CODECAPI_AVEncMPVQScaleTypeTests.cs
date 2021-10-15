@@ -17,7 +17,7 @@ namespace TerraFX.Interop.UnitTests
         [Test]
         public static void GuidOfTest()
         {
-            Assert.That(typeof(CODECAPI_AVEncMPVQScaleType).GUID, Is.EqualTo(STATIC_CODECAPI_AVEncMPVQScaleType));
+            Assert.That(typeof(CODECAPI_AVEncMPVQScaleType).GUID, Is.EqualTo(IID_CODECAPI_AVEncMPVQScaleType));
         }
 
         /// <summary>Validates that the <see cref="CODECAPI_AVEncMPVQScaleType" /> struct is blittable.</summary>

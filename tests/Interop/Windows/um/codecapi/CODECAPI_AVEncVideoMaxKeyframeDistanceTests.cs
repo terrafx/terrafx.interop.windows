@@ -17,7 +17,7 @@ namespace TerraFX.Interop.UnitTests
         [Test]
         public static void GuidOfTest()
         {
-            Assert.That(typeof(CODECAPI_AVEncVideoMaxKeyframeDistance).GUID, Is.EqualTo(STATIC_CODECAPI_AVEncVideoMaxKeyframeDistance));
+            Assert.That(typeof(CODECAPI_AVEncVideoMaxKeyframeDistance).GUID, Is.EqualTo(IID_CODECAPI_AVEncVideoMaxKeyframeDistance));
         }
 
         /// <summary>Validates that the <see cref="CODECAPI_AVEncVideoMaxKeyframeDistance" /> struct is blittable.</summary>

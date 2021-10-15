@@ -14,6 +14,6 @@ namespace TerraFX.Interop
         public int fCritical;
 
         [NativeTypeName("CRYPT_OBJID_BLOB")]
-        public CRYPTOAPI_BLOB Value;
+        public CRYPT_DATA_BLOB Value;
     }
 }

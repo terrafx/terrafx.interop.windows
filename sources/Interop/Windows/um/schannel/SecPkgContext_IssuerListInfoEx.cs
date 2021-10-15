@@ -8,7 +8,7 @@ namespace TerraFX.Interop
     public unsafe partial struct SecPkgContext_IssuerListInfoEx
     {
         [NativeTypeName("PCERT_NAME_BLOB")]
-        public CRYPTOAPI_BLOB* aIssuers;
+        public CRYPT_DATA_BLOB* aIssuers;
 
         [NativeTypeName("DWORD")]
         public uint cIssuers;

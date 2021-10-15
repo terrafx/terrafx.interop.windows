@@ -17,7 +17,7 @@ namespace TerraFX.Interop.UnitTests
         [Test]
         public static void GuidOfTest()
         {
-            Assert.That(typeof(CODECAPI_AVEncDDProductionMixLevel).GUID, Is.EqualTo(STATIC_CODECAPI_AVEncDDProductionMixLevel));
+            Assert.That(typeof(CODECAPI_AVEncDDProductionMixLevel).GUID, Is.EqualTo(IID_CODECAPI_AVEncDDProductionMixLevel));
         }
 
         /// <summary>Validates that the <see cref="CODECAPI_AVEncDDProductionMixLevel" /> struct is blittable.</summary>

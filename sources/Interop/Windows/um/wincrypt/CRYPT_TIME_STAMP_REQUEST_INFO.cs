@@ -14,7 +14,7 @@ namespace TerraFX.Interop
         public sbyte* pszContentType;
 
         [NativeTypeName("CRYPT_OBJID_BLOB")]
-        public CRYPTOAPI_BLOB Content;
+        public CRYPT_DATA_BLOB Content;
 
         [NativeTypeName("DWORD")]
         public uint cAttribute;

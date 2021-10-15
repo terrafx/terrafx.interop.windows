@@ -11,7 +11,7 @@ namespace TerraFX.Interop
         public uint dwVersion;
 
         [NativeTypeName("CERT_NAME_BLOB")]
-        public CRYPTOAPI_BLOB Subject;
+        public CRYPT_DATA_BLOB Subject;
 
         public CERT_PUBLIC_KEY_INFO SubjectPublicKeyInfo;
 

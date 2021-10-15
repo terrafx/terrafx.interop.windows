@@ -19,6 +19,6 @@ namespace TerraFX.Interop
         public uint cSubtreesConstraint;
 
         [NativeTypeName("CERT_NAME_BLOB *")]
-        public CRYPTOAPI_BLOB* rgSubtreesConstraint;
+        public CRYPT_DATA_BLOB* rgSubtreesConstraint;
     }
 }

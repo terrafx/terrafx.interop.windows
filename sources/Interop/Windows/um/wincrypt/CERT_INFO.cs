@@ -11,19 +11,19 @@ namespace TerraFX.Interop
         public uint dwVersion;
 
         [NativeTypeName("CRYPT_INTEGER_BLOB")]
-        public CRYPTOAPI_BLOB SerialNumber;
+        public CRYPT_DATA_BLOB SerialNumber;
 
         public CRYPT_ALGORITHM_IDENTIFIER SignatureAlgorithm;
 
         [NativeTypeName("CERT_NAME_BLOB")]
-        public CRYPTOAPI_BLOB Issuer;
+        public CRYPT_DATA_BLOB Issuer;
 
         public FILETIME NotBefore;
 
         public FILETIME NotAfter;
 
         [NativeTypeName("CERT_NAME_BLOB")]
-        public CRYPTOAPI_BLOB Subject;
+        public CRYPT_DATA_BLOB Subject;
 
         public CERT_PUBLIC_KEY_INFO SubjectPublicKeyInfo;
 

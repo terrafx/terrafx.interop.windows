@@ -17,7 +17,7 @@ namespace TerraFX.Interop.UnitTests
         [Test]
         public static void GuidOfTest()
         {
-            Assert.That(typeof(CODECAPI_AVEncStatHardwareProcessorUtilitization).GUID, Is.EqualTo(STATIC_CODECAPI_AVEncStatHardwareProcessorUtilitization));
+            Assert.That(typeof(CODECAPI_AVEncStatHardwareProcessorUtilitization).GUID, Is.EqualTo(IID_CODECAPI_AVEncStatHardwareProcessorUtilitization));
         }
 
         /// <summary>Validates that the <see cref="CODECAPI_AVEncStatHardwareProcessorUtilitization" /> struct is blittable.</summary>

@@ -17,7 +17,7 @@ namespace TerraFX.Interop.UnitTests
         [Test]
         public static void GuidOfTest()
         {
-            Assert.That(typeof(CODECAPI_AVLowLatencyMode).GUID, Is.EqualTo(STATIC_CODECAPI_AVLowLatencyMode));
+            Assert.That(typeof(CODECAPI_AVLowLatencyMode).GUID, Is.EqualTo(IID_CODECAPI_AVLowLatencyMode));
         }
 
         /// <summary>Validates that the <see cref="CODECAPI_AVLowLatencyMode" /> struct is blittable.</summary>

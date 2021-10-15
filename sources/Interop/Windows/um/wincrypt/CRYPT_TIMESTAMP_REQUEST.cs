@@ -13,13 +13,13 @@ namespace TerraFX.Interop
         public CRYPT_ALGORITHM_IDENTIFIER HashAlgorithm;
 
         [NativeTypeName("CRYPT_DER_BLOB")]
-        public CRYPTOAPI_BLOB HashedMessage;
+        public CRYPT_DATA_BLOB HashedMessage;
 
         [NativeTypeName("LPSTR")]
         public sbyte* pszTSAPolicyId;
 
         [NativeTypeName("CRYPT_INTEGER_BLOB")]
-        public CRYPTOAPI_BLOB Nonce;
+        public CRYPT_DATA_BLOB Nonce;
 
         [NativeTypeName("BOOL")]
         public int fCertReq;

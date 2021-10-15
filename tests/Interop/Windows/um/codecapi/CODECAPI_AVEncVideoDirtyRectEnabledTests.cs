@@ -17,7 +17,7 @@ namespace TerraFX.Interop.UnitTests
         [Test]
         public static void GuidOfTest()
         {
-            Assert.That(typeof(CODECAPI_AVEncVideoDirtyRectEnabled).GUID, Is.EqualTo(STATIC_CODECAPI_AVEncVideoDirtyRectEnabled));
+            Assert.That(typeof(CODECAPI_AVEncVideoDirtyRectEnabled).GUID, Is.EqualTo(IID_CODECAPI_AVEncVideoDirtyRectEnabled));
         }
 
         /// <summary>Validates that the <see cref="CODECAPI_AVEncVideoDirtyRectEnabled" /> struct is blittable.</summary>

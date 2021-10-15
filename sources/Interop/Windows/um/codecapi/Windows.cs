@@ -31,7 +31,7 @@ namespace TerraFX.Interop
         [NativeTypeName("#define AVENC_H264V_MAX_MBBITS 3200")]
         public const int AVENC_H264V_MAX_MBBITS = 3200;
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncCommonFormatConstraint
+        public static ref readonly Guid IID_CODECAPI_AVEncCommonFormatConstraint
         {
             get
             {
@@ -54,7 +54,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_GUID_AVEncCommonFormatUnSpecified
+        public static ref readonly Guid IID_CODECAPI_GUID_AVEncCommonFormatUnSpecified
         {
             get
             {
@@ -77,7 +77,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_GUID_AVEncCommonFormatDVD_V
+        public static ref readonly Guid IID_CODECAPI_GUID_AVEncCommonFormatDVD_V
         {
             get
             {
@@ -100,7 +100,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_GUID_AVEncCommonFormatDVD_DashVR
+        public static ref readonly Guid IID_CODECAPI_GUID_AVEncCommonFormatDVD_DashVR
         {
             get
             {
@@ -123,7 +123,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_GUID_AVEncCommonFormatDVD_PlusVR
+        public static ref readonly Guid IID_CODECAPI_GUID_AVEncCommonFormatDVD_PlusVR
         {
             get
             {
@@ -146,7 +146,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_GUID_AVEncCommonFormatVCD
+        public static ref readonly Guid IID_CODECAPI_GUID_AVEncCommonFormatVCD
         {
             get
             {
@@ -169,7 +169,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_GUID_AVEncCommonFormatSVCD
+        public static ref readonly Guid IID_CODECAPI_GUID_AVEncCommonFormatSVCD
         {
             get
             {
@@ -192,7 +192,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_GUID_AVEncCommonFormatATSC
+        public static ref readonly Guid IID_CODECAPI_GUID_AVEncCommonFormatATSC
         {
             get
             {
@@ -215,7 +215,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_GUID_AVEncCommonFormatDVB
+        public static ref readonly Guid IID_CODECAPI_GUID_AVEncCommonFormatDVB
         {
             get
             {
@@ -238,7 +238,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_GUID_AVEncCommonFormatMP3
+        public static ref readonly Guid IID_CODECAPI_GUID_AVEncCommonFormatMP3
         {
             get
             {
@@ -261,7 +261,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_GUID_AVEncCommonFormatHighMAT
+        public static ref readonly Guid IID_CODECAPI_GUID_AVEncCommonFormatHighMAT
         {
             get
             {
@@ -284,7 +284,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_GUID_AVEncCommonFormatHighMPV
+        public static ref readonly Guid IID_CODECAPI_GUID_AVEncCommonFormatHighMPV
         {
             get
             {
@@ -307,7 +307,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncCodecType
+        public static ref readonly Guid IID_CODECAPI_AVEncCodecType
         {
             get
             {
@@ -330,7 +330,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_GUID_AVEncMPEG1Video
+        public static ref readonly Guid IID_CODECAPI_GUID_AVEncMPEG1Video
         {
             get
             {
@@ -353,7 +353,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_GUID_AVEncMPEG2Video
+        public static ref readonly Guid IID_CODECAPI_GUID_AVEncMPEG2Video
         {
             get
             {
@@ -376,7 +376,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_GUID_AVEncMPEG1Audio
+        public static ref readonly Guid IID_CODECAPI_GUID_AVEncMPEG1Audio
         {
             get
             {
@@ -399,7 +399,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_GUID_AVEncMPEG2Audio
+        public static ref readonly Guid IID_CODECAPI_GUID_AVEncMPEG2Audio
         {
             get
             {
@@ -422,7 +422,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_GUID_AVEncWMV
+        public static ref readonly Guid IID_CODECAPI_GUID_AVEncWMV
         {
             get
             {
@@ -445,7 +445,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_GUID_AVEndMPEG4Video
+        public static ref readonly Guid IID_CODECAPI_GUID_AVEndMPEG4Video
         {
             get
             {
@@ -468,7 +468,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_GUID_AVEncH264Video
+        public static ref readonly Guid IID_CODECAPI_GUID_AVEncH264Video
         {
             get
             {
@@ -491,7 +491,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_GUID_AVEncDV
+        public static ref readonly Guid IID_CODECAPI_GUID_AVEncDV
         {
             get
             {
@@ -514,7 +514,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_GUID_AVEncWMAPro
+        public static ref readonly Guid IID_CODECAPI_GUID_AVEncWMAPro
         {
             get
             {
@@ -537,7 +537,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_GUID_AVEncWMALossless
+        public static ref readonly Guid IID_CODECAPI_GUID_AVEncWMALossless
         {
             get
             {
@@ -560,7 +560,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_GUID_AVEncWMAVoice
+        public static ref readonly Guid IID_CODECAPI_GUID_AVEncWMAVoice
         {
             get
             {
@@ -583,7 +583,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_GUID_AVEncDolbyDigitalPro
+        public static ref readonly Guid IID_CODECAPI_GUID_AVEncDolbyDigitalPro
         {
             get
             {
@@ -606,7 +606,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_GUID_AVEncDolbyDigitalConsumer
+        public static ref readonly Guid IID_CODECAPI_GUID_AVEncDolbyDigitalConsumer
         {
             get
             {
@@ -629,7 +629,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_GUID_AVEncDolbyDigitalPlus
+        public static ref readonly Guid IID_CODECAPI_GUID_AVEncDolbyDigitalPlus
         {
             get
             {
@@ -652,7 +652,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_GUID_AVEncDTSHD
+        public static ref readonly Guid IID_CODECAPI_GUID_AVEncDTSHD
         {
             get
             {
@@ -675,7 +675,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_GUID_AVEncDTS
+        public static ref readonly Guid IID_CODECAPI_GUID_AVEncDTS
         {
             get
             {
@@ -698,7 +698,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_GUID_AVEncMLP
+        public static ref readonly Guid IID_CODECAPI_GUID_AVEncMLP
         {
             get
             {
@@ -721,7 +721,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_GUID_AVEncPCM
+        public static ref readonly Guid IID_CODECAPI_GUID_AVEncPCM
         {
             get
             {
@@ -744,7 +744,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_GUID_AVEncSDDS
+        public static ref readonly Guid IID_CODECAPI_GUID_AVEncSDDS
         {
             get
             {
@@ -767,7 +767,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncCommonRateControlMode
+        public static ref readonly Guid IID_CODECAPI_AVEncCommonRateControlMode
         {
             get
             {
@@ -790,7 +790,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncCommonLowLatency
+        public static ref readonly Guid IID_CODECAPI_AVEncCommonLowLatency
         {
             get
             {
@@ -813,7 +813,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncCommonMultipassMode
+        public static ref readonly Guid IID_CODECAPI_AVEncCommonMultipassMode
         {
             get
             {
@@ -836,7 +836,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncCommonPassStart
+        public static ref readonly Guid IID_CODECAPI_AVEncCommonPassStart
         {
             get
             {
@@ -859,7 +859,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncCommonPassEnd
+        public static ref readonly Guid IID_CODECAPI_AVEncCommonPassEnd
         {
             get
             {
@@ -882,7 +882,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncCommonRealTime
+        public static ref readonly Guid IID_CODECAPI_AVEncCommonRealTime
         {
             get
             {
@@ -905,7 +905,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncCommonQuality
+        public static ref readonly Guid IID_CODECAPI_AVEncCommonQuality
         {
             get
             {
@@ -928,7 +928,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncCommonQualityVsSpeed
+        public static ref readonly Guid IID_CODECAPI_AVEncCommonQualityVsSpeed
         {
             get
             {
@@ -951,7 +951,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncCommonTranscodeEncodingProfile
+        public static ref readonly Guid IID_CODECAPI_AVEncCommonTranscodeEncodingProfile
         {
             get
             {
@@ -974,7 +974,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncCommonMeanBitRate
+        public static ref readonly Guid IID_CODECAPI_AVEncCommonMeanBitRate
         {
             get
             {
@@ -997,7 +997,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncCommonMeanBitRateInterval
+        public static ref readonly Guid IID_CODECAPI_AVEncCommonMeanBitRateInterval
         {
             get
             {
@@ -1020,7 +1020,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncCommonMaxBitRate
+        public static ref readonly Guid IID_CODECAPI_AVEncCommonMaxBitRate
         {
             get
             {
@@ -1043,7 +1043,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncCommonMinBitRate
+        public static ref readonly Guid IID_CODECAPI_AVEncCommonMinBitRate
         {
             get
             {
@@ -1066,7 +1066,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncCommonBufferSize
+        public static ref readonly Guid IID_CODECAPI_AVEncCommonBufferSize
         {
             get
             {
@@ -1089,7 +1089,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncCommonBufferInLevel
+        public static ref readonly Guid IID_CODECAPI_AVEncCommonBufferInLevel
         {
             get
             {
@@ -1112,7 +1112,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncCommonBufferOutLevel
+        public static ref readonly Guid IID_CODECAPI_AVEncCommonBufferOutLevel
         {
             get
             {
@@ -1135,7 +1135,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncCommonStreamEndHandling
+        public static ref readonly Guid IID_CODECAPI_AVEncCommonStreamEndHandling
         {
             get
             {
@@ -1158,7 +1158,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncStatCommonCompletedPasses
+        public static ref readonly Guid IID_CODECAPI_AVEncStatCommonCompletedPasses
         {
             get
             {
@@ -1181,7 +1181,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncVideoOutputFrameRate
+        public static ref readonly Guid IID_CODECAPI_AVEncVideoOutputFrameRate
         {
             get
             {
@@ -1204,7 +1204,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncVideoOutputFrameRateConversion
+        public static ref readonly Guid IID_CODECAPI_AVEncVideoOutputFrameRateConversion
         {
             get
             {
@@ -1227,7 +1227,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncVideoPixelAspectRatio
+        public static ref readonly Guid IID_CODECAPI_AVEncVideoPixelAspectRatio
         {
             get
             {
@@ -1250,7 +1250,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVDecVideoAcceleration_MPEG2
+        public static ref readonly Guid IID_CODECAPI_AVDecVideoAcceleration_MPEG2
         {
             get
             {
@@ -1273,7 +1273,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVDecVideoAcceleration_H264
+        public static ref readonly Guid IID_CODECAPI_AVDecVideoAcceleration_H264
         {
             get
             {
@@ -1296,7 +1296,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVDecVideoAcceleration_VC1
+        public static ref readonly Guid IID_CODECAPI_AVDecVideoAcceleration_VC1
         {
             get
             {
@@ -1319,7 +1319,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVDecVideoProcDeinterlaceCSC
+        public static ref readonly Guid IID_CODECAPI_AVDecVideoProcDeinterlaceCSC
         {
             get
             {
@@ -1342,7 +1342,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVDecVideoThumbnailGenerationMode
+        public static ref readonly Guid IID_CODECAPI_AVDecVideoThumbnailGenerationMode
         {
             get
             {
@@ -1365,7 +1365,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVDecVideoMaxCodedWidth
+        public static ref readonly Guid IID_CODECAPI_AVDecVideoMaxCodedWidth
         {
             get
             {
@@ -1388,7 +1388,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVDecVideoMaxCodedHeight
+        public static ref readonly Guid IID_CODECAPI_AVDecVideoMaxCodedHeight
         {
             get
             {
@@ -1411,7 +1411,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVDecNumWorkerThreads
+        public static ref readonly Guid IID_CODECAPI_AVDecNumWorkerThreads
         {
             get
             {
@@ -1434,7 +1434,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVDecSoftwareDynamicFormatChange
+        public static ref readonly Guid IID_CODECAPI_AVDecSoftwareDynamicFormatChange
         {
             get
             {
@@ -1457,7 +1457,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVDecDisableVideoPostProcessing
+        public static ref readonly Guid IID_CODECAPI_AVDecDisableVideoPostProcessing
         {
             get
             {
@@ -1480,7 +1480,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVDecVideoDropPicWithMissingRef
+        public static ref readonly Guid IID_CODECAPI_AVDecVideoDropPicWithMissingRef
         {
             get
             {
@@ -1503,7 +1503,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVDecVideoSoftwareDeinterlaceMode
+        public static ref readonly Guid IID_CODECAPI_AVDecVideoSoftwareDeinterlaceMode
         {
             get
             {
@@ -1526,7 +1526,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVDecVideoFastDecodeMode
+        public static ref readonly Guid IID_CODECAPI_AVDecVideoFastDecodeMode
         {
             get
             {
@@ -1549,7 +1549,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVLowLatencyMode
+        public static ref readonly Guid IID_CODECAPI_AVLowLatencyMode
         {
             get
             {
@@ -1572,7 +1572,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVDecVideoH264ErrorConcealment
+        public static ref readonly Guid IID_CODECAPI_AVDecVideoH264ErrorConcealment
         {
             get
             {
@@ -1595,7 +1595,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVDecVideoMPEG2ErrorConcealment
+        public static ref readonly Guid IID_CODECAPI_AVDecVideoMPEG2ErrorConcealment
         {
             get
             {
@@ -1618,7 +1618,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVDecVideoCodecType
+        public static ref readonly Guid IID_CODECAPI_AVDecVideoCodecType
         {
             get
             {
@@ -1641,7 +1641,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVDecVideoDXVAMode
+        public static ref readonly Guid IID_CODECAPI_AVDecVideoDXVAMode
         {
             get
             {
@@ -1664,7 +1664,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVDecVideoDXVABusEncryption
+        public static ref readonly Guid IID_CODECAPI_AVDecVideoDXVABusEncryption
         {
             get
             {
@@ -1687,7 +1687,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncVideoForceSourceScanType
+        public static ref readonly Guid IID_CODECAPI_AVEncVideoForceSourceScanType
         {
             get
             {
@@ -1710,7 +1710,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncVideoNoOfFieldsToEncode
+        public static ref readonly Guid IID_CODECAPI_AVEncVideoNoOfFieldsToEncode
         {
             get
             {
@@ -1733,7 +1733,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncVideoNoOfFieldsToSkip
+        public static ref readonly Guid IID_CODECAPI_AVEncVideoNoOfFieldsToSkip
         {
             get
             {
@@ -1756,7 +1756,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncVideoEncodeDimension
+        public static ref readonly Guid IID_CODECAPI_AVEncVideoEncodeDimension
         {
             get
             {
@@ -1779,7 +1779,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncVideoEncodeOffsetOrigin
+        public static ref readonly Guid IID_CODECAPI_AVEncVideoEncodeOffsetOrigin
         {
             get
             {
@@ -1802,7 +1802,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncVideoDisplayDimension
+        public static ref readonly Guid IID_CODECAPI_AVEncVideoDisplayDimension
         {
             get
             {
@@ -1825,7 +1825,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncVideoOutputScanType
+        public static ref readonly Guid IID_CODECAPI_AVEncVideoOutputScanType
         {
             get
             {
@@ -1848,7 +1848,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncVideoInverseTelecineEnable
+        public static ref readonly Guid IID_CODECAPI_AVEncVideoInverseTelecineEnable
         {
             get
             {
@@ -1871,7 +1871,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncVideoInverseTelecineThreshold
+        public static ref readonly Guid IID_CODECAPI_AVEncVideoInverseTelecineThreshold
         {
             get
             {
@@ -1894,7 +1894,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncVideoSourceFilmContent
+        public static ref readonly Guid IID_CODECAPI_AVEncVideoSourceFilmContent
         {
             get
             {
@@ -1917,7 +1917,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncVideoSourceIsBW
+        public static ref readonly Guid IID_CODECAPI_AVEncVideoSourceIsBW
         {
             get
             {
@@ -1940,7 +1940,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncVideoFieldSwap
+        public static ref readonly Guid IID_CODECAPI_AVEncVideoFieldSwap
         {
             get
             {
@@ -1963,7 +1963,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncVideoInputChromaResolution
+        public static ref readonly Guid IID_CODECAPI_AVEncVideoInputChromaResolution
         {
             get
             {
@@ -1986,7 +1986,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncVideoOutputChromaResolution
+        public static ref readonly Guid IID_CODECAPI_AVEncVideoOutputChromaResolution
         {
             get
             {
@@ -2009,7 +2009,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncVideoInputChromaSubsampling
+        public static ref readonly Guid IID_CODECAPI_AVEncVideoInputChromaSubsampling
         {
             get
             {
@@ -2032,7 +2032,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncVideoOutputChromaSubsampling
+        public static ref readonly Guid IID_CODECAPI_AVEncVideoOutputChromaSubsampling
         {
             get
             {
@@ -2055,7 +2055,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncVideoInputColorPrimaries
+        public static ref readonly Guid IID_CODECAPI_AVEncVideoInputColorPrimaries
         {
             get
             {
@@ -2078,7 +2078,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncVideoOutputColorPrimaries
+        public static ref readonly Guid IID_CODECAPI_AVEncVideoOutputColorPrimaries
         {
             get
             {
@@ -2101,7 +2101,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncVideoInputColorTransferFunction
+        public static ref readonly Guid IID_CODECAPI_AVEncVideoInputColorTransferFunction
         {
             get
             {
@@ -2124,7 +2124,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncVideoOutputColorTransferFunction
+        public static ref readonly Guid IID_CODECAPI_AVEncVideoOutputColorTransferFunction
         {
             get
             {
@@ -2147,7 +2147,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncVideoInputColorTransferMatrix
+        public static ref readonly Guid IID_CODECAPI_AVEncVideoInputColorTransferMatrix
         {
             get
             {
@@ -2170,7 +2170,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncVideoOutputColorTransferMatrix
+        public static ref readonly Guid IID_CODECAPI_AVEncVideoOutputColorTransferMatrix
         {
             get
             {
@@ -2193,7 +2193,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncVideoInputColorLighting
+        public static ref readonly Guid IID_CODECAPI_AVEncVideoInputColorLighting
         {
             get
             {
@@ -2216,7 +2216,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncVideoOutputColorLighting
+        public static ref readonly Guid IID_CODECAPI_AVEncVideoOutputColorLighting
         {
             get
             {
@@ -2239,7 +2239,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncVideoInputColorNominalRange
+        public static ref readonly Guid IID_CODECAPI_AVEncVideoInputColorNominalRange
         {
             get
             {
@@ -2262,7 +2262,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncVideoOutputColorNominalRange
+        public static ref readonly Guid IID_CODECAPI_AVEncVideoOutputColorNominalRange
         {
             get
             {
@@ -2285,7 +2285,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncInputVideoSystem
+        public static ref readonly Guid IID_CODECAPI_AVEncInputVideoSystem
         {
             get
             {
@@ -2308,7 +2308,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncVideoHeaderDropFrame
+        public static ref readonly Guid IID_CODECAPI_AVEncVideoHeaderDropFrame
         {
             get
             {
@@ -2331,7 +2331,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncVideoHeaderHours
+        public static ref readonly Guid IID_CODECAPI_AVEncVideoHeaderHours
         {
             get
             {
@@ -2354,7 +2354,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncVideoHeaderMinutes
+        public static ref readonly Guid IID_CODECAPI_AVEncVideoHeaderMinutes
         {
             get
             {
@@ -2377,7 +2377,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncVideoHeaderSeconds
+        public static ref readonly Guid IID_CODECAPI_AVEncVideoHeaderSeconds
         {
             get
             {
@@ -2400,7 +2400,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncVideoHeaderFrames
+        public static ref readonly Guid IID_CODECAPI_AVEncVideoHeaderFrames
         {
             get
             {
@@ -2423,7 +2423,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncVideoDefaultUpperFieldDominant
+        public static ref readonly Guid IID_CODECAPI_AVEncVideoDefaultUpperFieldDominant
         {
             get
             {
@@ -2446,7 +2446,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncVideoCBRMotionTradeoff
+        public static ref readonly Guid IID_CODECAPI_AVEncVideoCBRMotionTradeoff
         {
             get
             {
@@ -2469,7 +2469,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncVideoCodedVideoAccessUnitSize
+        public static ref readonly Guid IID_CODECAPI_AVEncVideoCodedVideoAccessUnitSize
         {
             get
             {
@@ -2492,7 +2492,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncVideoMaxKeyframeDistance
+        public static ref readonly Guid IID_CODECAPI_AVEncVideoMaxKeyframeDistance
         {
             get
             {
@@ -2515,7 +2515,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncH264CABACEnable
+        public static ref readonly Guid IID_CODECAPI_AVEncH264CABACEnable
         {
             get
             {
@@ -2538,7 +2538,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncVideoContentType
+        public static ref readonly Guid IID_CODECAPI_AVEncVideoContentType
         {
             get
             {
@@ -2561,7 +2561,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncNumWorkerThreads
+        public static ref readonly Guid IID_CODECAPI_AVEncNumWorkerThreads
         {
             get
             {
@@ -2584,7 +2584,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncVideoEncodeQP
+        public static ref readonly Guid IID_CODECAPI_AVEncVideoEncodeQP
         {
             get
             {
@@ -2607,7 +2607,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncVideoMinQP
+        public static ref readonly Guid IID_CODECAPI_AVEncVideoMinQP
         {
             get
             {
@@ -2630,7 +2630,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncVideoForceKeyFrame
+        public static ref readonly Guid IID_CODECAPI_AVEncVideoForceKeyFrame
         {
             get
             {
@@ -2653,7 +2653,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncH264SPSID
+        public static ref readonly Guid IID_CODECAPI_AVEncH264SPSID
         {
             get
             {
@@ -2676,7 +2676,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncH264PPSID
+        public static ref readonly Guid IID_CODECAPI_AVEncH264PPSID
         {
             get
             {
@@ -2699,7 +2699,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncAdaptiveMode
+        public static ref readonly Guid IID_CODECAPI_AVEncAdaptiveMode
         {
             get
             {
@@ -2722,7 +2722,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVScenarioInfo
+        public static ref readonly Guid IID_CODECAPI_AVScenarioInfo
         {
             get
             {
@@ -2745,7 +2745,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncMPVGOPSizeMin
+        public static ref readonly Guid IID_CODECAPI_AVEncMPVGOPSizeMin
         {
             get
             {
@@ -2768,7 +2768,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncMPVGOPSizeMax
+        public static ref readonly Guid IID_CODECAPI_AVEncMPVGOPSizeMax
         {
             get
             {
@@ -2791,7 +2791,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncVideoMaxCTBSize
+        public static ref readonly Guid IID_CODECAPI_AVEncVideoMaxCTBSize
         {
             get
             {
@@ -2814,7 +2814,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncVideoCTBSize
+        public static ref readonly Guid IID_CODECAPI_AVEncVideoCTBSize
         {
             get
             {
@@ -2837,7 +2837,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_VideoEncoderDisplayContentType
+        public static ref readonly Guid IID_CODECAPI_VideoEncoderDisplayContentType
         {
             get
             {
@@ -2860,7 +2860,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncEnableVideoProcessing
+        public static ref readonly Guid IID_CODECAPI_AVEncEnableVideoProcessing
         {
             get
             {
@@ -2883,7 +2883,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncVideoGradualIntraRefresh
+        public static ref readonly Guid IID_CODECAPI_AVEncVideoGradualIntraRefresh
         {
             get
             {
@@ -2906,7 +2906,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_GetOPMContext
+        public static ref readonly Guid IID_CODECAPI_GetOPMContext
         {
             get
             {
@@ -2929,7 +2929,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_SetHDCPManagerContext
+        public static ref readonly Guid IID_CODECAPI_SetHDCPManagerContext
         {
             get
             {
@@ -2952,7 +2952,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncVideoMaxTemporalLayers
+        public static ref readonly Guid IID_CODECAPI_AVEncVideoMaxTemporalLayers
         {
             get
             {
@@ -2975,7 +2975,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncVideoNumGOPsPerIDR
+        public static ref readonly Guid IID_CODECAPI_AVEncVideoNumGOPsPerIDR
         {
             get
             {
@@ -2998,7 +2998,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncCommonAllowFrameDrops
+        public static ref readonly Guid IID_CODECAPI_AVEncCommonAllowFrameDrops
         {
             get
             {
@@ -3021,7 +3021,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncVideoIntraLayerPrediction
+        public static ref readonly Guid IID_CODECAPI_AVEncVideoIntraLayerPrediction
         {
             get
             {
@@ -3044,7 +3044,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncVideoInstantTemporalUpSwitching
+        public static ref readonly Guid IID_CODECAPI_AVEncVideoInstantTemporalUpSwitching
         {
             get
             {
@@ -3067,7 +3067,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncLowPowerEncoder
+        public static ref readonly Guid IID_CODECAPI_AVEncLowPowerEncoder
         {
             get
             {
@@ -3090,7 +3090,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEnableInLoopDeblockFilter
+        public static ref readonly Guid IID_CODECAPI_AVEnableInLoopDeblockFilter
         {
             get
             {
@@ -3113,7 +3113,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncVideoSelectLayer
+        public static ref readonly Guid IID_CODECAPI_AVEncVideoSelectLayer
         {
             get
             {
@@ -3136,7 +3136,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncVideoTemporalLayerCount
+        public static ref readonly Guid IID_CODECAPI_AVEncVideoTemporalLayerCount
         {
             get
             {
@@ -3159,7 +3159,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncVideoUsage
+        public static ref readonly Guid IID_CODECAPI_AVEncVideoUsage
         {
             get
             {
@@ -3182,7 +3182,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncVideoRateControlParams
+        public static ref readonly Guid IID_CODECAPI_AVEncVideoRateControlParams
         {
             get
             {
@@ -3205,7 +3205,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncVideoSupportedControls
+        public static ref readonly Guid IID_CODECAPI_AVEncVideoSupportedControls
         {
             get
             {
@@ -3228,7 +3228,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncVideoEncodeFrameTypeQP
+        public static ref readonly Guid IID_CODECAPI_AVEncVideoEncodeFrameTypeQP
         {
             get
             {
@@ -3251,7 +3251,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncSliceControlMode
+        public static ref readonly Guid IID_CODECAPI_AVEncSliceControlMode
         {
             get
             {
@@ -3274,7 +3274,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncSliceControlSize
+        public static ref readonly Guid IID_CODECAPI_AVEncSliceControlSize
         {
             get
             {
@@ -3297,7 +3297,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncSliceGenerationMode
+        public static ref readonly Guid IID_CODECAPI_AVEncSliceGenerationMode
         {
             get
             {
@@ -3320,7 +3320,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncVideoMaxNumRefFrame
+        public static ref readonly Guid IID_CODECAPI_AVEncVideoMaxNumRefFrame
         {
             get
             {
@@ -3343,7 +3343,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncVideoMeanAbsoluteDifference
+        public static ref readonly Guid IID_CODECAPI_AVEncVideoMeanAbsoluteDifference
         {
             get
             {
@@ -3366,7 +3366,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncVideoMaxQP
+        public static ref readonly Guid IID_CODECAPI_AVEncVideoMaxQP
         {
             get
             {
@@ -3389,7 +3389,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncVideoLTRBufferControl
+        public static ref readonly Guid IID_CODECAPI_AVEncVideoLTRBufferControl
         {
             get
             {
@@ -3412,7 +3412,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncVideoMarkLTRFrame
+        public static ref readonly Guid IID_CODECAPI_AVEncVideoMarkLTRFrame
         {
             get
             {
@@ -3435,7 +3435,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncVideoUseLTRFrame
+        public static ref readonly Guid IID_CODECAPI_AVEncVideoUseLTRFrame
         {
             get
             {
@@ -3458,7 +3458,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncVideoROIEnabled
+        public static ref readonly Guid IID_CODECAPI_AVEncVideoROIEnabled
         {
             get
             {
@@ -3481,7 +3481,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncVideoDirtyRectEnabled
+        public static ref readonly Guid IID_CODECAPI_AVEncVideoDirtyRectEnabled
         {
             get
             {
@@ -3504,7 +3504,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncMaxFrameRate
+        public static ref readonly Guid IID_CODECAPI_AVEncMaxFrameRate
         {
             get
             {
@@ -3527,7 +3527,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncMuxOutputStreamType
+        public static ref readonly Guid IID_CODECAPI_AVEncMuxOutputStreamType
         {
             get
             {
@@ -3550,7 +3550,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncStatVideoOutputFrameRate
+        public static ref readonly Guid IID_CODECAPI_AVEncStatVideoOutputFrameRate
         {
             get
             {
@@ -3573,7 +3573,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncStatVideoCodedFrames
+        public static ref readonly Guid IID_CODECAPI_AVEncStatVideoCodedFrames
         {
             get
             {
@@ -3596,7 +3596,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncStatVideoTotalFrames
+        public static ref readonly Guid IID_CODECAPI_AVEncStatVideoTotalFrames
         {
             get
             {
@@ -3619,7 +3619,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncAudioIntervalToEncode
+        public static ref readonly Guid IID_CODECAPI_AVEncAudioIntervalToEncode
         {
             get
             {
@@ -3642,7 +3642,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncAudioIntervalToSkip
+        public static ref readonly Guid IID_CODECAPI_AVEncAudioIntervalToSkip
         {
             get
             {
@@ -3665,7 +3665,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncAudioDualMono
+        public static ref readonly Guid IID_CODECAPI_AVEncAudioDualMono
         {
             get
             {
@@ -3688,7 +3688,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncAudioMeanBitRate
+        public static ref readonly Guid IID_CODECAPI_AVEncAudioMeanBitRate
         {
             get
             {
@@ -3711,7 +3711,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncAudioMapDestChannel0
+        public static ref readonly Guid IID_CODECAPI_AVEncAudioMapDestChannel0
         {
             get
             {
@@ -3734,7 +3734,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncAudioMapDestChannel1
+        public static ref readonly Guid IID_CODECAPI_AVEncAudioMapDestChannel1
         {
             get
             {
@@ -3757,7 +3757,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncAudioMapDestChannel2
+        public static ref readonly Guid IID_CODECAPI_AVEncAudioMapDestChannel2
         {
             get
             {
@@ -3780,7 +3780,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncAudioMapDestChannel3
+        public static ref readonly Guid IID_CODECAPI_AVEncAudioMapDestChannel3
         {
             get
             {
@@ -3803,7 +3803,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncAudioMapDestChannel4
+        public static ref readonly Guid IID_CODECAPI_AVEncAudioMapDestChannel4
         {
             get
             {
@@ -3826,7 +3826,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncAudioMapDestChannel5
+        public static ref readonly Guid IID_CODECAPI_AVEncAudioMapDestChannel5
         {
             get
             {
@@ -3849,7 +3849,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncAudioMapDestChannel6
+        public static ref readonly Guid IID_CODECAPI_AVEncAudioMapDestChannel6
         {
             get
             {
@@ -3872,7 +3872,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncAudioMapDestChannel7
+        public static ref readonly Guid IID_CODECAPI_AVEncAudioMapDestChannel7
         {
             get
             {
@@ -3895,7 +3895,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncAudioMapDestChannel8
+        public static ref readonly Guid IID_CODECAPI_AVEncAudioMapDestChannel8
         {
             get
             {
@@ -3918,7 +3918,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncAudioMapDestChannel9
+        public static ref readonly Guid IID_CODECAPI_AVEncAudioMapDestChannel9
         {
             get
             {
@@ -3941,7 +3941,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncAudioMapDestChannel10
+        public static ref readonly Guid IID_CODECAPI_AVEncAudioMapDestChannel10
         {
             get
             {
@@ -3964,7 +3964,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncAudioMapDestChannel11
+        public static ref readonly Guid IID_CODECAPI_AVEncAudioMapDestChannel11
         {
             get
             {
@@ -3987,7 +3987,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncAudioMapDestChannel12
+        public static ref readonly Guid IID_CODECAPI_AVEncAudioMapDestChannel12
         {
             get
             {
@@ -4010,7 +4010,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncAudioMapDestChannel13
+        public static ref readonly Guid IID_CODECAPI_AVEncAudioMapDestChannel13
         {
             get
             {
@@ -4033,7 +4033,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncAudioMapDestChannel14
+        public static ref readonly Guid IID_CODECAPI_AVEncAudioMapDestChannel14
         {
             get
             {
@@ -4056,7 +4056,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncAudioMapDestChannel15
+        public static ref readonly Guid IID_CODECAPI_AVEncAudioMapDestChannel15
         {
             get
             {
@@ -4079,7 +4079,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncAudioInputContent
+        public static ref readonly Guid IID_CODECAPI_AVEncAudioInputContent
         {
             get
             {
@@ -4102,7 +4102,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncStatAudioPeakPCMValue
+        public static ref readonly Guid IID_CODECAPI_AVEncStatAudioPeakPCMValue
         {
             get
             {
@@ -4125,7 +4125,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncStatAudioAveragePCMValue
+        public static ref readonly Guid IID_CODECAPI_AVEncStatAudioAveragePCMValue
         {
             get
             {
@@ -4148,7 +4148,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncStatAudioAverageBPS
+        public static ref readonly Guid IID_CODECAPI_AVEncStatAudioAverageBPS
         {
             get
             {
@@ -4171,7 +4171,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncStatAverageBPS
+        public static ref readonly Guid IID_CODECAPI_AVEncStatAverageBPS
         {
             get
             {
@@ -4194,7 +4194,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncStatHardwareProcessorUtilitization
+        public static ref readonly Guid IID_CODECAPI_AVEncStatHardwareProcessorUtilitization
         {
             get
             {
@@ -4217,7 +4217,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncStatHardwareBandwidthUtilitization
+        public static ref readonly Guid IID_CODECAPI_AVEncStatHardwareBandwidthUtilitization
         {
             get
             {
@@ -4240,7 +4240,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncMPVGOPSize
+        public static ref readonly Guid IID_CODECAPI_AVEncMPVGOPSize
         {
             get
             {
@@ -4263,7 +4263,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncMPVGOPOpen
+        public static ref readonly Guid IID_CODECAPI_AVEncMPVGOPOpen
         {
             get
             {
@@ -4286,7 +4286,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncMPVDefaultBPictureCount
+        public static ref readonly Guid IID_CODECAPI_AVEncMPVDefaultBPictureCount
         {
             get
             {
@@ -4309,7 +4309,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncMPVProfile
+        public static ref readonly Guid IID_CODECAPI_AVEncMPVProfile
         {
             get
             {
@@ -4332,7 +4332,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncMPVLevel
+        public static ref readonly Guid IID_CODECAPI_AVEncMPVLevel
         {
             get
             {
@@ -4355,7 +4355,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncMPVFrameFieldMode
+        public static ref readonly Guid IID_CODECAPI_AVEncMPVFrameFieldMode
         {
             get
             {
@@ -4378,7 +4378,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncMPVAddSeqEndCode
+        public static ref readonly Guid IID_CODECAPI_AVEncMPVAddSeqEndCode
         {
             get
             {
@@ -4401,7 +4401,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncMPVGOPSInSeq
+        public static ref readonly Guid IID_CODECAPI_AVEncMPVGOPSInSeq
         {
             get
             {
@@ -4424,7 +4424,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncMPVUseConcealmentMotionVectors
+        public static ref readonly Guid IID_CODECAPI_AVEncMPVUseConcealmentMotionVectors
         {
             get
             {
@@ -4447,7 +4447,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncMPVSceneDetection
+        public static ref readonly Guid IID_CODECAPI_AVEncMPVSceneDetection
         {
             get
             {
@@ -4470,7 +4470,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncMPVGenerateHeaderSeqExt
+        public static ref readonly Guid IID_CODECAPI_AVEncMPVGenerateHeaderSeqExt
         {
             get
             {
@@ -4493,7 +4493,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncMPVGenerateHeaderSeqDispExt
+        public static ref readonly Guid IID_CODECAPI_AVEncMPVGenerateHeaderSeqDispExt
         {
             get
             {
@@ -4516,7 +4516,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncMPVGenerateHeaderPicExt
+        public static ref readonly Guid IID_CODECAPI_AVEncMPVGenerateHeaderPicExt
         {
             get
             {
@@ -4539,7 +4539,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncMPVGenerateHeaderPicDispExt
+        public static ref readonly Guid IID_CODECAPI_AVEncMPVGenerateHeaderPicDispExt
         {
             get
             {
@@ -4562,7 +4562,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncMPVGenerateHeaderSeqScaleExt
+        public static ref readonly Guid IID_CODECAPI_AVEncMPVGenerateHeaderSeqScaleExt
         {
             get
             {
@@ -4585,7 +4585,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncMPVScanPattern
+        public static ref readonly Guid IID_CODECAPI_AVEncMPVScanPattern
         {
             get
             {
@@ -4608,7 +4608,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncMPVIntraDCPrecision
+        public static ref readonly Guid IID_CODECAPI_AVEncMPVIntraDCPrecision
         {
             get
             {
@@ -4631,7 +4631,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncMPVQScaleType
+        public static ref readonly Guid IID_CODECAPI_AVEncMPVQScaleType
         {
             get
             {
@@ -4654,7 +4654,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncMPVIntraVLCTable
+        public static ref readonly Guid IID_CODECAPI_AVEncMPVIntraVLCTable
         {
             get
             {
@@ -4677,7 +4677,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncMPVQuantMatrixIntra
+        public static ref readonly Guid IID_CODECAPI_AVEncMPVQuantMatrixIntra
         {
             get
             {
@@ -4700,7 +4700,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncMPVQuantMatrixNonIntra
+        public static ref readonly Guid IID_CODECAPI_AVEncMPVQuantMatrixNonIntra
         {
             get
             {
@@ -4723,7 +4723,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncMPVQuantMatrixChromaIntra
+        public static ref readonly Guid IID_CODECAPI_AVEncMPVQuantMatrixChromaIntra
         {
             get
             {
@@ -4746,7 +4746,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncMPVQuantMatrixChromaNonIntra
+        public static ref readonly Guid IID_CODECAPI_AVEncMPVQuantMatrixChromaNonIntra
         {
             get
             {
@@ -4769,7 +4769,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncMPALayer
+        public static ref readonly Guid IID_CODECAPI_AVEncMPALayer
         {
             get
             {
@@ -4792,7 +4792,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncMPACodingMode
+        public static ref readonly Guid IID_CODECAPI_AVEncMPACodingMode
         {
             get
             {
@@ -4815,7 +4815,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncMPACopyright
+        public static ref readonly Guid IID_CODECAPI_AVEncMPACopyright
         {
             get
             {
@@ -4838,7 +4838,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncMPAOriginalBitstream
+        public static ref readonly Guid IID_CODECAPI_AVEncMPAOriginalBitstream
         {
             get
             {
@@ -4861,7 +4861,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncMPAEnableRedundancyProtection
+        public static ref readonly Guid IID_CODECAPI_AVEncMPAEnableRedundancyProtection
         {
             get
             {
@@ -4884,7 +4884,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncMPAPrivateUserBit
+        public static ref readonly Guid IID_CODECAPI_AVEncMPAPrivateUserBit
         {
             get
             {
@@ -4907,7 +4907,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncMPAEmphasisType
+        public static ref readonly Guid IID_CODECAPI_AVEncMPAEmphasisType
         {
             get
             {
@@ -4930,7 +4930,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncDDService
+        public static ref readonly Guid IID_CODECAPI_AVEncDDService
         {
             get
             {
@@ -4953,7 +4953,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncDDDialogNormalization
+        public static ref readonly Guid IID_CODECAPI_AVEncDDDialogNormalization
         {
             get
             {
@@ -4976,7 +4976,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncDDCentreDownMixLevel
+        public static ref readonly Guid IID_CODECAPI_AVEncDDCentreDownMixLevel
         {
             get
             {
@@ -4999,7 +4999,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncDDSurroundDownMixLevel
+        public static ref readonly Guid IID_CODECAPI_AVEncDDSurroundDownMixLevel
         {
             get
             {
@@ -5022,7 +5022,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncDDProductionInfoExists
+        public static ref readonly Guid IID_CODECAPI_AVEncDDProductionInfoExists
         {
             get
             {
@@ -5045,7 +5045,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncDDProductionRoomType
+        public static ref readonly Guid IID_CODECAPI_AVEncDDProductionRoomType
         {
             get
             {
@@ -5068,7 +5068,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncDDProductionMixLevel
+        public static ref readonly Guid IID_CODECAPI_AVEncDDProductionMixLevel
         {
             get
             {
@@ -5091,7 +5091,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncDDCopyright
+        public static ref readonly Guid IID_CODECAPI_AVEncDDCopyright
         {
             get
             {
@@ -5114,7 +5114,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncDDOriginalBitstream
+        public static ref readonly Guid IID_CODECAPI_AVEncDDOriginalBitstream
         {
             get
             {
@@ -5137,7 +5137,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncDDDigitalDeemphasis
+        public static ref readonly Guid IID_CODECAPI_AVEncDDDigitalDeemphasis
         {
             get
             {
@@ -5160,7 +5160,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncDDDCHighPassFilter
+        public static ref readonly Guid IID_CODECAPI_AVEncDDDCHighPassFilter
         {
             get
             {
@@ -5183,7 +5183,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncDDChannelBWLowPassFilter
+        public static ref readonly Guid IID_CODECAPI_AVEncDDChannelBWLowPassFilter
         {
             get
             {
@@ -5206,7 +5206,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncDDLFELowPassFilter
+        public static ref readonly Guid IID_CODECAPI_AVEncDDLFELowPassFilter
         {
             get
             {
@@ -5229,7 +5229,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncDDSurround90DegreeePhaseShift
+        public static ref readonly Guid IID_CODECAPI_AVEncDDSurround90DegreeePhaseShift
         {
             get
             {
@@ -5252,7 +5252,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncDDSurround3dBAttenuation
+        public static ref readonly Guid IID_CODECAPI_AVEncDDSurround3dBAttenuation
         {
             get
             {
@@ -5275,7 +5275,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncDDDynamicRangeCompressionControl
+        public static ref readonly Guid IID_CODECAPI_AVEncDDDynamicRangeCompressionControl
         {
             get
             {
@@ -5298,7 +5298,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncDDRFPreEmphasisFilter
+        public static ref readonly Guid IID_CODECAPI_AVEncDDRFPreEmphasisFilter
         {
             get
             {
@@ -5321,7 +5321,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncDDSurroundExMode
+        public static ref readonly Guid IID_CODECAPI_AVEncDDSurroundExMode
         {
             get
             {
@@ -5344,7 +5344,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncDDPreferredStereoDownMixMode
+        public static ref readonly Guid IID_CODECAPI_AVEncDDPreferredStereoDownMixMode
         {
             get
             {
@@ -5367,7 +5367,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncDDLtRtCenterMixLvl_x10
+        public static ref readonly Guid IID_CODECAPI_AVEncDDLtRtCenterMixLvl_x10
         {
             get
             {
@@ -5390,7 +5390,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncDDLtRtSurroundMixLvl_x10
+        public static ref readonly Guid IID_CODECAPI_AVEncDDLtRtSurroundMixLvl_x10
         {
             get
             {
@@ -5413,7 +5413,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncDDLoRoCenterMixLvl_x10
+        public static ref readonly Guid IID_CODECAPI_AVEncDDLoRoCenterMixLvl_x10
         {
             get
             {
@@ -5436,7 +5436,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncDDLoRoSurroundMixLvl_x10
+        public static ref readonly Guid IID_CODECAPI_AVEncDDLoRoSurroundMixLvl_x10
         {
             get
             {
@@ -5459,7 +5459,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncDDAtoDConverterType
+        public static ref readonly Guid IID_CODECAPI_AVEncDDAtoDConverterType
         {
             get
             {
@@ -5482,7 +5482,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncDDHeadphoneMode
+        public static ref readonly Guid IID_CODECAPI_AVEncDDHeadphoneMode
         {
             get
             {
@@ -5505,7 +5505,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncWMVKeyFrameDistance
+        public static ref readonly Guid IID_CODECAPI_AVEncWMVKeyFrameDistance
         {
             get
             {
@@ -5528,7 +5528,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncWMVInterlacedEncoding
+        public static ref readonly Guid IID_CODECAPI_AVEncWMVInterlacedEncoding
         {
             get
             {
@@ -5551,7 +5551,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncWMVDecoderComplexity
+        public static ref readonly Guid IID_CODECAPI_AVEncWMVDecoderComplexity
         {
             get
             {
@@ -5574,7 +5574,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncWMVKeyFrameBufferLevelMarker
+        public static ref readonly Guid IID_CODECAPI_AVEncWMVKeyFrameBufferLevelMarker
         {
             get
             {
@@ -5597,7 +5597,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncWMVProduceDummyFrames
+        public static ref readonly Guid IID_CODECAPI_AVEncWMVProduceDummyFrames
         {
             get
             {
@@ -5620,7 +5620,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncStatWMVCBAvg
+        public static ref readonly Guid IID_CODECAPI_AVEncStatWMVCBAvg
         {
             get
             {
@@ -5643,7 +5643,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncStatWMVCBMax
+        public static ref readonly Guid IID_CODECAPI_AVEncStatWMVCBMax
         {
             get
             {
@@ -5666,7 +5666,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncStatWMVDecoderComplexityProfile
+        public static ref readonly Guid IID_CODECAPI_AVEncStatWMVDecoderComplexityProfile
         {
             get
             {
@@ -5689,7 +5689,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncStatMPVSkippedEmptyFrames
+        public static ref readonly Guid IID_CODECAPI_AVEncStatMPVSkippedEmptyFrames
         {
             get
             {
@@ -5712,7 +5712,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncMP12PktzSTDBuffer
+        public static ref readonly Guid IID_CODECAPI_AVEncMP12PktzSTDBuffer
         {
             get
             {
@@ -5735,7 +5735,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncMP12PktzStreamID
+        public static ref readonly Guid IID_CODECAPI_AVEncMP12PktzStreamID
         {
             get
             {
@@ -5758,7 +5758,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncMP12PktzInitialPTS
+        public static ref readonly Guid IID_CODECAPI_AVEncMP12PktzInitialPTS
         {
             get
             {
@@ -5781,7 +5781,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncMP12PktzPacketSize
+        public static ref readonly Guid IID_CODECAPI_AVEncMP12PktzPacketSize
         {
             get
             {
@@ -5804,7 +5804,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncMP12PktzCopyright
+        public static ref readonly Guid IID_CODECAPI_AVEncMP12PktzCopyright
         {
             get
             {
@@ -5827,7 +5827,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncMP12PktzOriginal
+        public static ref readonly Guid IID_CODECAPI_AVEncMP12PktzOriginal
         {
             get
             {
@@ -5850,7 +5850,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncMP12MuxPacketOverhead
+        public static ref readonly Guid IID_CODECAPI_AVEncMP12MuxPacketOverhead
         {
             get
             {
@@ -5873,7 +5873,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncMP12MuxNumStreams
+        public static ref readonly Guid IID_CODECAPI_AVEncMP12MuxNumStreams
         {
             get
             {
@@ -5896,7 +5896,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncMP12MuxEarliestPTS
+        public static ref readonly Guid IID_CODECAPI_AVEncMP12MuxEarliestPTS
         {
             get
             {
@@ -5919,7 +5919,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncMP12MuxLargestPacketSize
+        public static ref readonly Guid IID_CODECAPI_AVEncMP12MuxLargestPacketSize
         {
             get
             {
@@ -5942,7 +5942,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncMP12MuxInitialSCR
+        public static ref readonly Guid IID_CODECAPI_AVEncMP12MuxInitialSCR
         {
             get
             {
@@ -5965,7 +5965,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncMP12MuxMuxRate
+        public static ref readonly Guid IID_CODECAPI_AVEncMP12MuxMuxRate
         {
             get
             {
@@ -5988,7 +5988,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncMP12MuxPackSize
+        public static ref readonly Guid IID_CODECAPI_AVEncMP12MuxPackSize
         {
             get
             {
@@ -6011,7 +6011,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncMP12MuxSysSTDBufferBound
+        public static ref readonly Guid IID_CODECAPI_AVEncMP12MuxSysSTDBufferBound
         {
             get
             {
@@ -6034,7 +6034,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncMP12MuxSysRateBound
+        public static ref readonly Guid IID_CODECAPI_AVEncMP12MuxSysRateBound
         {
             get
             {
@@ -6057,7 +6057,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncMP12MuxTargetPacketizer
+        public static ref readonly Guid IID_CODECAPI_AVEncMP12MuxTargetPacketizer
         {
             get
             {
@@ -6080,7 +6080,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncMP12MuxSysFixed
+        public static ref readonly Guid IID_CODECAPI_AVEncMP12MuxSysFixed
         {
             get
             {
@@ -6103,7 +6103,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncMP12MuxSysCSPS
+        public static ref readonly Guid IID_CODECAPI_AVEncMP12MuxSysCSPS
         {
             get
             {
@@ -6126,7 +6126,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncMP12MuxSysVideoLock
+        public static ref readonly Guid IID_CODECAPI_AVEncMP12MuxSysVideoLock
         {
             get
             {
@@ -6149,7 +6149,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncMP12MuxSysAudioLock
+        public static ref readonly Guid IID_CODECAPI_AVEncMP12MuxSysAudioLock
         {
             get
             {
@@ -6172,7 +6172,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncMP12MuxDVDNavPacks
+        public static ref readonly Guid IID_CODECAPI_AVEncMP12MuxDVDNavPacks
         {
             get
             {
@@ -6195,7 +6195,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVDecCommonInputFormat
+        public static ref readonly Guid IID_CODECAPI_AVDecCommonInputFormat
         {
             get
             {
@@ -6218,7 +6218,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVDecCommonOutputFormat
+        public static ref readonly Guid IID_CODECAPI_AVDecCommonOutputFormat
         {
             get
             {
@@ -6241,7 +6241,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVDecCommonMeanBitRate
+        public static ref readonly Guid IID_CODECAPI_AVDecCommonMeanBitRate
         {
             get
             {
@@ -6264,7 +6264,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVDecCommonMeanBitRateInterval
+        public static ref readonly Guid IID_CODECAPI_AVDecCommonMeanBitRateInterval
         {
             get
             {
@@ -6287,7 +6287,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_GUID_AVDecAudioOutputFormat_PCM_Stereo_MatrixEncoded
+        public static ref readonly Guid IID_CODECAPI_GUID_AVDecAudioOutputFormat_PCM_Stereo_MatrixEncoded
         {
             get
             {
@@ -6310,7 +6310,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_GUID_AVDecAudioOutputFormat_PCM
+        public static ref readonly Guid IID_CODECAPI_GUID_AVDecAudioOutputFormat_PCM
         {
             get
             {
@@ -6333,7 +6333,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_GUID_AVDecAudioOutputFormat_SPDIF_PCM
+        public static ref readonly Guid IID_CODECAPI_GUID_AVDecAudioOutputFormat_SPDIF_PCM
         {
             get
             {
@@ -6356,7 +6356,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_GUID_AVDecAudioOutputFormat_SPDIF_Bitstream
+        public static ref readonly Guid IID_CODECAPI_GUID_AVDecAudioOutputFormat_SPDIF_Bitstream
         {
             get
             {
@@ -6379,7 +6379,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_GUID_AVDecAudioOutputFormat_PCM_Headphones
+        public static ref readonly Guid IID_CODECAPI_GUID_AVDecAudioOutputFormat_PCM_Headphones
         {
             get
             {
@@ -6402,7 +6402,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_GUID_AVDecAudioOutputFormat_PCM_Stereo_Auto
+        public static ref readonly Guid IID_CODECAPI_GUID_AVDecAudioOutputFormat_PCM_Stereo_Auto
         {
             get
             {
@@ -6425,7 +6425,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVDecVideoImageSize
+        public static ref readonly Guid IID_CODECAPI_AVDecVideoImageSize
         {
             get
             {
@@ -6448,7 +6448,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVDecVideoPixelAspectRatio
+        public static ref readonly Guid IID_CODECAPI_AVDecVideoPixelAspectRatio
         {
             get
             {
@@ -6471,7 +6471,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVDecVideoInputScanType
+        public static ref readonly Guid IID_CODECAPI_AVDecVideoInputScanType
         {
             get
             {
@@ -6494,7 +6494,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVDecVideoSWPowerLevel
+        public static ref readonly Guid IID_CODECAPI_AVDecVideoSWPowerLevel
         {
             get
             {
@@ -6517,7 +6517,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_GUID_AVDecAudioInputWMA
+        public static ref readonly Guid IID_CODECAPI_GUID_AVDecAudioInputWMA
         {
             get
             {
@@ -6540,7 +6540,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_GUID_AVDecAudioInputWMAPro
+        public static ref readonly Guid IID_CODECAPI_GUID_AVDecAudioInputWMAPro
         {
             get
             {
@@ -6563,7 +6563,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_GUID_AVDecAudioInputDolby
+        public static ref readonly Guid IID_CODECAPI_GUID_AVDecAudioInputDolby
         {
             get
             {
@@ -6586,7 +6586,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_GUID_AVDecAudioInputDTS
+        public static ref readonly Guid IID_CODECAPI_GUID_AVDecAudioInputDTS
         {
             get
             {
@@ -6609,7 +6609,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_GUID_AVDecAudioInputPCM
+        public static ref readonly Guid IID_CODECAPI_GUID_AVDecAudioInputPCM
         {
             get
             {
@@ -6632,7 +6632,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_GUID_AVDecAudioInputMPEG
+        public static ref readonly Guid IID_CODECAPI_GUID_AVDecAudioInputMPEG
         {
             get
             {
@@ -6655,7 +6655,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_GUID_AVDecAudioInputAAC
+        public static ref readonly Guid IID_CODECAPI_GUID_AVDecAudioInputAAC
         {
             get
             {
@@ -6678,7 +6678,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_GUID_AVDecAudioInputHEAAC
+        public static ref readonly Guid IID_CODECAPI_GUID_AVDecAudioInputHEAAC
         {
             get
             {
@@ -6701,7 +6701,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_GUID_AVDecAudioInputDolbyDigitalPlus
+        public static ref readonly Guid IID_CODECAPI_GUID_AVDecAudioInputDolbyDigitalPlus
         {
             get
             {
@@ -6724,7 +6724,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVDecAACDownmixMode
+        public static ref readonly Guid IID_CODECAPI_AVDecAACDownmixMode
         {
             get
             {
@@ -6747,7 +6747,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVDecHEAACDynamicRangeControl
+        public static ref readonly Guid IID_CODECAPI_AVDecHEAACDynamicRangeControl
         {
             get
             {
@@ -6770,7 +6770,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVDecAudioDualMono
+        public static ref readonly Guid IID_CODECAPI_AVDecAudioDualMono
         {
             get
             {
@@ -6793,7 +6793,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVDecAudioDualMonoReproMode
+        public static ref readonly Guid IID_CODECAPI_AVDecAudioDualMonoReproMode
         {
             get
             {
@@ -6816,7 +6816,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVAudioChannelCount
+        public static ref readonly Guid IID_CODECAPI_AVAudioChannelCount
         {
             get
             {
@@ -6839,7 +6839,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVAudioChannelConfig
+        public static ref readonly Guid IID_CODECAPI_AVAudioChannelConfig
         {
             get
             {
@@ -6862,7 +6862,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVAudioSampleRate
+        public static ref readonly Guid IID_CODECAPI_AVAudioSampleRate
         {
             get
             {
@@ -6885,7 +6885,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVDDSurroundMode
+        public static ref readonly Guid IID_CODECAPI_AVDDSurroundMode
         {
             get
             {
@@ -6908,7 +6908,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVDecDDOperationalMode
+        public static ref readonly Guid IID_CODECAPI_AVDecDDOperationalMode
         {
             get
             {
@@ -6931,7 +6931,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVDecDDMatrixDecodingMode
+        public static ref readonly Guid IID_CODECAPI_AVDecDDMatrixDecodingMode
         {
             get
             {
@@ -6954,7 +6954,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVDecDDDynamicRangeScaleHigh
+        public static ref readonly Guid IID_CODECAPI_AVDecDDDynamicRangeScaleHigh
         {
             get
             {
@@ -6977,7 +6977,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVDecDDDynamicRangeScaleLow
+        public static ref readonly Guid IID_CODECAPI_AVDecDDDynamicRangeScaleLow
         {
             get
             {
@@ -7000,7 +7000,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVDecDDStereoDownMixMode
+        public static ref readonly Guid IID_CODECAPI_AVDecDDStereoDownMixMode
         {
             get
             {
@@ -7023,7 +7023,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVDSPLoudnessEqualization
+        public static ref readonly Guid IID_CODECAPI_AVDSPLoudnessEqualization
         {
             get
             {
@@ -7046,7 +7046,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVDSPSpeakerFill
+        public static ref readonly Guid IID_CODECAPI_AVDSPSpeakerFill
         {
             get
             {
@@ -7069,7 +7069,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVPriorityControl
+        public static ref readonly Guid IID_CODECAPI_AVPriorityControl
         {
             get
             {
@@ -7092,7 +7092,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVRealtimeControl
+        public static ref readonly Guid IID_CODECAPI_AVRealtimeControl
         {
             get
             {
@@ -7115,7 +7115,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncNoInputCopy
+        public static ref readonly Guid IID_CODECAPI_AVEncNoInputCopy
         {
             get
             {
@@ -7138,7 +7138,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_CODECAPI_AVEncChromaEncodeMode
+        public static ref readonly Guid IID_CODECAPI_AVEncChromaEncodeMode
         {
             get
             {

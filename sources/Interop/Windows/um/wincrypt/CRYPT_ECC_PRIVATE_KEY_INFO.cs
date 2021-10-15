@@ -11,7 +11,7 @@ namespace TerraFX.Interop
         public uint dwVersion;
 
         [NativeTypeName("CRYPT_DER_BLOB")]
-        public CRYPTOAPI_BLOB PrivateKey;
+        public CRYPT_DATA_BLOB PrivateKey;
 
         [NativeTypeName("LPSTR")]
         public sbyte* szCurveOid;

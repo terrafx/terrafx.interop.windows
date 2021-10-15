@@ -17,7 +17,7 @@ namespace TerraFX.Interop.UnitTests
         [Test]
         public static void GuidOfTest()
         {
-            Assert.That(typeof(CODECAPI_SetHDCPManagerContext).GUID, Is.EqualTo(STATIC_CODECAPI_SetHDCPManagerContext));
+            Assert.That(typeof(CODECAPI_SetHDCPManagerContext).GUID, Is.EqualTo(IID_CODECAPI_SetHDCPManagerContext));
         }
 
         /// <summary>Validates that the <see cref="CODECAPI_SetHDCPManagerContext" /> struct is blittable.</summary>

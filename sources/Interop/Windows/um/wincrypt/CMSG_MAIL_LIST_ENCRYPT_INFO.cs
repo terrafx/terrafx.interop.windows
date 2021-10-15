@@ -15,8 +15,7 @@ namespace TerraFX.Interop
 
         public CRYPT_ALGORITHM_IDENTIFIER KeyEncryptionAlgorithm;
 
-        [NativeTypeName("CRYPT_DATA_BLOB")]
-        public CRYPTOAPI_BLOB EncryptedKey;
+        public CRYPT_DATA_BLOB EncryptedKey;
 
         [NativeTypeName("DWORD")]
         public uint dwFlags;

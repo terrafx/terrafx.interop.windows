@@ -17,7 +17,7 @@ namespace TerraFX.Interop.UnitTests
         [Test]
         public static void GuidOfTest()
         {
-            Assert.That(typeof(CODECAPI_GUID_AVEncCommonFormatDVD_DashVR).GUID, Is.EqualTo(STATIC_CODECAPI_GUID_AVEncCommonFormatDVD_DashVR));
+            Assert.That(typeof(CODECAPI_GUID_AVEncCommonFormatDVD_DashVR).GUID, Is.EqualTo(IID_CODECAPI_GUID_AVEncCommonFormatDVD_DashVR));
         }
 
         /// <summary>Validates that the <see cref="CODECAPI_GUID_AVEncCommonFormatDVD_DashVR" /> struct is blittable.</summary>

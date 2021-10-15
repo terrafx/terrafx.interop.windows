@@ -8,9 +8,9 @@ namespace TerraFX.Interop
     public partial struct CERT_ECC_SIGNATURE
     {
         [NativeTypeName("CRYPT_UINT_BLOB")]
-        public CRYPTOAPI_BLOB r;
+        public CRYPT_DATA_BLOB r;
 
         [NativeTypeName("CRYPT_UINT_BLOB")]
-        public CRYPTOAPI_BLOB s;
+        public CRYPT_DATA_BLOB s;
     }
 }

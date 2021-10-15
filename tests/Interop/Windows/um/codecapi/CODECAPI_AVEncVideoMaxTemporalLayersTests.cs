@@ -17,7 +17,7 @@ namespace TerraFX.Interop.UnitTests
         [Test]
         public static void GuidOfTest()
         {
-            Assert.That(typeof(CODECAPI_AVEncVideoMaxTemporalLayers).GUID, Is.EqualTo(STATIC_CODECAPI_AVEncVideoMaxTemporalLayers));
+            Assert.That(typeof(CODECAPI_AVEncVideoMaxTemporalLayers).GUID, Is.EqualTo(IID_CODECAPI_AVEncVideoMaxTemporalLayers));
         }
 
         /// <summary>Validates that the <see cref="CODECAPI_AVEncVideoMaxTemporalLayers" /> struct is blittable.</summary>

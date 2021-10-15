@@ -17,7 +17,7 @@ namespace TerraFX.Interop.UnitTests
         [Test]
         public static void GuidOfTest()
         {
-            Assert.That(typeof(CODECAPI_AVEncStatAudioPeakPCMValue).GUID, Is.EqualTo(STATIC_CODECAPI_AVEncStatAudioPeakPCMValue));
+            Assert.That(typeof(CODECAPI_AVEncStatAudioPeakPCMValue).GUID, Is.EqualTo(IID_CODECAPI_AVEncStatAudioPeakPCMValue));
         }
 
         /// <summary>Validates that the <see cref="CODECAPI_AVEncStatAudioPeakPCMValue" /> struct is blittable.</summary>

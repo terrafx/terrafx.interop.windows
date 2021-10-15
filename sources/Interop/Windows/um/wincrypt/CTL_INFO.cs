@@ -12,11 +12,10 @@ namespace TerraFX.Interop
 
         public CTL_USAGE SubjectUsage;
 
-        [NativeTypeName("CRYPT_DATA_BLOB")]
-        public CRYPTOAPI_BLOB ListIdentifier;
+        public CRYPT_DATA_BLOB ListIdentifier;
 
         [NativeTypeName("CRYPT_INTEGER_BLOB")]
-        public CRYPTOAPI_BLOB SequenceNumber;
+        public CRYPT_DATA_BLOB SequenceNumber;
 
         public FILETIME ThisUpdate;
 

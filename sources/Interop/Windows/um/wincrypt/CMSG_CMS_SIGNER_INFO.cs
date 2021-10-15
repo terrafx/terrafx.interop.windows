@@ -16,8 +16,7 @@ namespace TerraFX.Interop
 
         public CRYPT_ALGORITHM_IDENTIFIER HashEncryptionAlgorithm;
 
-        [NativeTypeName("CRYPT_DATA_BLOB")]
-        public CRYPTOAPI_BLOB EncryptedHash;
+        public CRYPT_DATA_BLOB EncryptedHash;
 
         public CRYPT_ATTRIBUTES AuthAttrs;
 

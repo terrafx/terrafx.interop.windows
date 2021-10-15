@@ -17,7 +17,7 @@ namespace TerraFX.Interop.UnitTests
         [Test]
         public static void GuidOfTest()
         {
-            Assert.That(typeof(CODECAPI_AVEncCommonBufferInLevel).GUID, Is.EqualTo(STATIC_CODECAPI_AVEncCommonBufferInLevel));
+            Assert.That(typeof(CODECAPI_AVEncCommonBufferInLevel).GUID, Is.EqualTo(IID_CODECAPI_AVEncCommonBufferInLevel));
         }
 
         /// <summary>Validates that the <see cref="CODECAPI_AVEncCommonBufferInLevel" /> struct is blittable.</summary>

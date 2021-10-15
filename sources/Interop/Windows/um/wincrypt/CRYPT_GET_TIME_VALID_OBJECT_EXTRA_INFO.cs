@@ -25,6 +25,6 @@ namespace TerraFX.Interop
         public CERT_REVOCATION_CHAIN_PARA* pChainPara;
 
         [NativeTypeName("PCRYPT_INTEGER_BLOB")]
-        public CRYPTOAPI_BLOB* pDeltaCrlIndicator;
+        public CRYPT_DATA_BLOB* pDeltaCrlIndicator;
     }
 }

@@ -17,7 +17,7 @@ namespace TerraFX.Interop.UnitTests
         [Test]
         public static void GuidOfTest()
         {
-            Assert.That(typeof(CODECAPI_AVDecCommonOutputFormat).GUID, Is.EqualTo(STATIC_CODECAPI_AVDecCommonOutputFormat));
+            Assert.That(typeof(CODECAPI_AVDecCommonOutputFormat).GUID, Is.EqualTo(IID_CODECAPI_AVDecCommonOutputFormat));
         }
 
         /// <summary>Validates that the <see cref="CODECAPI_AVDecCommonOutputFormat" /> struct is blittable.</summary>

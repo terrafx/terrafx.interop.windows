@@ -16,6 +16,6 @@ namespace TerraFX.Interop
         public CRYPT_ALGORITHM_IDENTIFIER signatureAlgorithm;
 
         [NativeTypeName("CRYPT_DIGEST_BLOB")]
-        public CRYPTOAPI_BLOB encryptedDigest;
+        public CRYPT_DATA_BLOB encryptedDigest;
     }
 }

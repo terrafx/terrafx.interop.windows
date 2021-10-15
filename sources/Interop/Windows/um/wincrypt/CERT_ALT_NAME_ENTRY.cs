@@ -52,7 +52,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public ref CRYPTOAPI_BLOB DirectoryName
+        public ref CRYPT_DATA_BLOB DirectoryName
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
@@ -73,7 +73,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public ref CRYPTOAPI_BLOB IPAddress
+        public ref CRYPT_DATA_BLOB IPAddress
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
@@ -111,15 +111,14 @@ namespace TerraFX.Interop
 
             [FieldOffset(0)]
             [NativeTypeName("CERT_NAME_BLOB")]
-            public CRYPTOAPI_BLOB DirectoryName;
+            public CRYPT_DATA_BLOB DirectoryName;
 
             [FieldOffset(0)]
             [NativeTypeName("LPWSTR")]
             public ushort* pwszURL;
 
             [FieldOffset(0)]
-            [NativeTypeName("CRYPT_DATA_BLOB")]
-            public CRYPTOAPI_BLOB IPAddress;
+            public CRYPT_DATA_BLOB IPAddress;
 
             [FieldOffset(0)]
             [NativeTypeName("LPSTR")]

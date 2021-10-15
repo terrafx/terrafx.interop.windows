@@ -17,7 +17,7 @@ namespace TerraFX.Interop.UnitTests
         [Test]
         public static void GuidOfTest()
         {
-            Assert.That(typeof(CODECAPI_AVEncDDDialogNormalization).GUID, Is.EqualTo(STATIC_CODECAPI_AVEncDDDialogNormalization));
+            Assert.That(typeof(CODECAPI_AVEncDDDialogNormalization).GUID, Is.EqualTo(IID_CODECAPI_AVEncDDDialogNormalization));
         }
 
         /// <summary>Validates that the <see cref="CODECAPI_AVEncDDDialogNormalization" /> struct is blittable.</summary>

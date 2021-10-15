@@ -171,9 +171,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(19)]
         [return: NativeTypeName("HRESULT")]
-        public int GetFormat([NativeTypeName("SPSTREAMFORMATTYPE")] SPWAVEFORMATTYPE WaveFormatType, [NativeTypeName("GUID *")] Guid* pFormatId, WAVEFORMATEX** ppCoMemWFEX)
+        public int GetFormat(SPSTREAMFORMATTYPE WaveFormatType, [NativeTypeName("GUID *")] Guid* pFormatId, WAVEFORMATEX** ppCoMemWFEX)
         {
-            return ((delegate* unmanaged<ISpRecognizer*, SPWAVEFORMATTYPE, Guid*, WAVEFORMATEX**, int>)(lpVtbl[19]))((ISpRecognizer*)Unsafe.AsPointer(ref this), WaveFormatType, pFormatId, ppCoMemWFEX);
+            return ((delegate* unmanaged<ISpRecognizer*, SPSTREAMFORMATTYPE, Guid*, WAVEFORMATEX**, int>)(lpVtbl[19]))((ISpRecognizer*)Unsafe.AsPointer(ref this), WaveFormatType, pFormatId, ppCoMemWFEX);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

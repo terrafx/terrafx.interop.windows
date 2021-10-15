@@ -17,7 +17,7 @@ namespace TerraFX.Interop.UnitTests
         [Test]
         public static void GuidOfTest()
         {
-            Assert.That(typeof(CODECAPI_AVEncCommonLowLatency).GUID, Is.EqualTo(STATIC_CODECAPI_AVEncCommonLowLatency));
+            Assert.That(typeof(CODECAPI_AVEncCommonLowLatency).GUID, Is.EqualTo(IID_CODECAPI_AVEncCommonLowLatency));
         }
 
         /// <summary>Validates that the <see cref="CODECAPI_AVEncCommonLowLatency" /> struct is blittable.</summary>

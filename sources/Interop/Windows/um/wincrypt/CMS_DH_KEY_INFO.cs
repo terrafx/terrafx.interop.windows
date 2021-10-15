@@ -16,8 +16,7 @@ namespace TerraFX.Interop
         [NativeTypeName("LPSTR")]
         public sbyte* pszContentEncObjId;
 
-        [NativeTypeName("CRYPT_DATA_BLOB")]
-        public CRYPTOAPI_BLOB PubInfo;
+        public CRYPT_DATA_BLOB PubInfo;
 
         public void* pReserved;
     }

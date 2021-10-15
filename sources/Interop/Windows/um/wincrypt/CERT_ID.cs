@@ -25,7 +25,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public ref CRYPTOAPI_BLOB KeyId
+        public ref CRYPT_DATA_BLOB KeyId
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
@@ -34,7 +34,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public ref CRYPTOAPI_BLOB HashId
+        public ref CRYPT_DATA_BLOB HashId
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
@@ -51,11 +51,11 @@ namespace TerraFX.Interop
 
             [FieldOffset(0)]
             [NativeTypeName("CRYPT_HASH_BLOB")]
-            public CRYPTOAPI_BLOB KeyId;
+            public CRYPT_DATA_BLOB KeyId;
 
             [FieldOffset(0)]
             [NativeTypeName("CRYPT_HASH_BLOB")]
-            public CRYPTOAPI_BLOB HashId;
+            public CRYPT_DATA_BLOB HashId;
         }
     }
 }

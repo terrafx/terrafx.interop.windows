@@ -11,6 +11,6 @@ namespace TerraFX.Interop
         public uint dwBodyPartID;
 
         [NativeTypeName("CRYPT_DER_BLOB")]
-        public CRYPTOAPI_BLOB EncodedContentInfo;
+        public CRYPT_DATA_BLOB EncodedContentInfo;
     }
 }

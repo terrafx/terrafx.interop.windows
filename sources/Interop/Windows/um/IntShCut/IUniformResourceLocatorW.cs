@@ -59,9 +59,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
         [return: NativeTypeName("HRESULT")]
-        public int InvokeCommand([NativeTypeName("PURLINVOKECOMMANDINFOW")] urlinvokecommandinfoW* purlici)
+        public int InvokeCommand([NativeTypeName("PURLINVOKECOMMANDINFOW")] URLINVOKECOMMANDINFOW* purlici)
         {
-            return ((delegate* unmanaged<IUniformResourceLocatorW*, urlinvokecommandinfoW*, int>)(lpVtbl[5]))((IUniformResourceLocatorW*)Unsafe.AsPointer(ref this), purlici);
+            return ((delegate* unmanaged<IUniformResourceLocatorW*, URLINVOKECOMMANDINFOW*, int>)(lpVtbl[5]))((IUniformResourceLocatorW*)Unsafe.AsPointer(ref this), purlici);
         }
     }
 }

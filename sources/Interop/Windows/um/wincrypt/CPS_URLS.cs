@@ -12,7 +12,6 @@ namespace TerraFX.Interop
 
         public CRYPT_ALGORITHM_IDENTIFIER* pAlgorithm;
 
-        [NativeTypeName("CRYPT_DATA_BLOB *")]
-        public CRYPTOAPI_BLOB* pDigest;
+        public CRYPT_DATA_BLOB* pDigest;
     }
 }

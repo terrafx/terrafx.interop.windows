@@ -11,17 +11,16 @@ namespace TerraFX.Interop
         public uint dwVersion;
 
         [NativeTypeName("CERT_NAME_BLOB")]
-        public CRYPTOAPI_BLOB Issuer;
+        public CRYPT_DATA_BLOB Issuer;
 
         [NativeTypeName("CRYPT_INTEGER_BLOB")]
-        public CRYPTOAPI_BLOB SerialNumber;
+        public CRYPT_DATA_BLOB SerialNumber;
 
         public CRYPT_ALGORITHM_IDENTIFIER HashAlgorithm;
 
         public CRYPT_ALGORITHM_IDENTIFIER HashEncryptionAlgorithm;
 
-        [NativeTypeName("CRYPT_DATA_BLOB")]
-        public CRYPTOAPI_BLOB EncryptedHash;
+        public CRYPT_DATA_BLOB EncryptedHash;
 
         public CRYPT_ATTRIBUTES AuthAttrs;
 

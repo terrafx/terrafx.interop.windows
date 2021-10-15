@@ -25,7 +25,7 @@ namespace TerraFX.Interop
         public uint cMappers;
 
         [NativeTypeName("struct _HMAPPER **")]
-        public void** aphMappers;
+        public IntPtr* aphMappers;
 
         [NativeTypeName("DWORD")]
         public uint cSupportedAlgs;

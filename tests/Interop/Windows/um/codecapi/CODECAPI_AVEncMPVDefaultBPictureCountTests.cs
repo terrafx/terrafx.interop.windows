@@ -17,7 +17,7 @@ namespace TerraFX.Interop.UnitTests
         [Test]
         public static void GuidOfTest()
         {
-            Assert.That(typeof(CODECAPI_AVEncMPVDefaultBPictureCount).GUID, Is.EqualTo(STATIC_CODECAPI_AVEncMPVDefaultBPictureCount));
+            Assert.That(typeof(CODECAPI_AVEncMPVDefaultBPictureCount).GUID, Is.EqualTo(IID_CODECAPI_AVEncMPVDefaultBPictureCount));
         }
 
         /// <summary>Validates that the <see cref="CODECAPI_AVEncMPVDefaultBPictureCount" /> struct is blittable.</summary>

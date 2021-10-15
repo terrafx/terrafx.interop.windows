@@ -5,7 +5,7 @@
 
 namespace TerraFX.Interop
 {
-    public enum mimeassociationdialog_in_flags
+    public enum MIMEASSOCIATIONDIALOG_IN_FLAGS
     {
         MIMEASSOCDLG_FL_REGISTER_ASSOC = 0x0001,
     }

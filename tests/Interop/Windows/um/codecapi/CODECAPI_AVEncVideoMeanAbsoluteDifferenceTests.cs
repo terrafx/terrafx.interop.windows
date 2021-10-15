@@ -17,7 +17,7 @@ namespace TerraFX.Interop.UnitTests
         [Test]
         public static void GuidOfTest()
         {
-            Assert.That(typeof(CODECAPI_AVEncVideoMeanAbsoluteDifference).GUID, Is.EqualTo(STATIC_CODECAPI_AVEncVideoMeanAbsoluteDifference));
+            Assert.That(typeof(CODECAPI_AVEncVideoMeanAbsoluteDifference).GUID, Is.EqualTo(IID_CODECAPI_AVEncVideoMeanAbsoluteDifference));
         }
 
         /// <summary>Validates that the <see cref="CODECAPI_AVEncVideoMeanAbsoluteDifference" /> struct is blittable.</summary>

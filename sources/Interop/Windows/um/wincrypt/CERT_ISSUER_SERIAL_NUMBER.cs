@@ -8,9 +8,9 @@ namespace TerraFX.Interop
     public partial struct CERT_ISSUER_SERIAL_NUMBER
     {
         [NativeTypeName("CERT_NAME_BLOB")]
-        public CRYPTOAPI_BLOB Issuer;
+        public CRYPT_DATA_BLOB Issuer;
 
         [NativeTypeName("CRYPT_INTEGER_BLOB")]
-        public CRYPTOAPI_BLOB SerialNumber;
+        public CRYPT_DATA_BLOB SerialNumber;
     }
 }

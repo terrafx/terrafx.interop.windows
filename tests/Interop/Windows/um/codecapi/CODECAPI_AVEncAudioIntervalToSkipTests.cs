@@ -17,7 +17,7 @@ namespace TerraFX.Interop.UnitTests
         [Test]
         public static void GuidOfTest()
         {
-            Assert.That(typeof(CODECAPI_AVEncAudioIntervalToSkip).GUID, Is.EqualTo(STATIC_CODECAPI_AVEncAudioIntervalToSkip));
+            Assert.That(typeof(CODECAPI_AVEncAudioIntervalToSkip).GUID, Is.EqualTo(IID_CODECAPI_AVEncAudioIntervalToSkip));
         }
 
         /// <summary>Validates that the <see cref="CODECAPI_AVEncAudioIntervalToSkip" /> struct is blittable.</summary>

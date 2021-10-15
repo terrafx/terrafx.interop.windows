@@ -17,7 +17,7 @@ namespace TerraFX.Interop.UnitTests
         [Test]
         public static void GuidOfTest()
         {
-            Assert.That(typeof(CODECAPI_AVEncMP12PktzStreamID).GUID, Is.EqualTo(STATIC_CODECAPI_AVEncMP12PktzStreamID));
+            Assert.That(typeof(CODECAPI_AVEncMP12PktzStreamID).GUID, Is.EqualTo(IID_CODECAPI_AVEncMP12PktzStreamID));
         }
 
         /// <summary>Validates that the <see cref="CODECAPI_AVEncMP12PktzStreamID" /> struct is blittable.</summary>

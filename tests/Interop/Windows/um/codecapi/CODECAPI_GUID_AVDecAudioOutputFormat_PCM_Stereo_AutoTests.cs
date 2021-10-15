@@ -17,7 +17,7 @@ namespace TerraFX.Interop.UnitTests
         [Test]
         public static void GuidOfTest()
         {
-            Assert.That(typeof(CODECAPI_GUID_AVDecAudioOutputFormat_PCM_Stereo_Auto).GUID, Is.EqualTo(STATIC_CODECAPI_GUID_AVDecAudioOutputFormat_PCM_Stereo_Auto));
+            Assert.That(typeof(CODECAPI_GUID_AVDecAudioOutputFormat_PCM_Stereo_Auto).GUID, Is.EqualTo(IID_CODECAPI_GUID_AVDecAudioOutputFormat_PCM_Stereo_Auto));
         }
 
         /// <summary>Validates that the <see cref="CODECAPI_GUID_AVDecAudioOutputFormat_PCM_Stereo_Auto" /> struct is blittable.</summary>

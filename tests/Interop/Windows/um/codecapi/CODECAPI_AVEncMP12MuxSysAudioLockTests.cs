@@ -17,7 +17,7 @@ namespace TerraFX.Interop.UnitTests
         [Test]
         public static void GuidOfTest()
         {
-            Assert.That(typeof(CODECAPI_AVEncMP12MuxSysAudioLock).GUID, Is.EqualTo(STATIC_CODECAPI_AVEncMP12MuxSysAudioLock));
+            Assert.That(typeof(CODECAPI_AVEncMP12MuxSysAudioLock).GUID, Is.EqualTo(IID_CODECAPI_AVEncMP12MuxSysAudioLock));
         }
 
         /// <summary>Validates that the <see cref="CODECAPI_AVEncMP12MuxSysAudioLock" /> struct is blittable.</summary>

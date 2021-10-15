@@ -17,7 +17,7 @@ namespace TerraFX.Interop.UnitTests
         [Test]
         public static void GuidOfTest()
         {
-            Assert.That(typeof(CODECAPI_AVEncCommonMultipassMode).GUID, Is.EqualTo(STATIC_CODECAPI_AVEncCommonMultipassMode));
+            Assert.That(typeof(CODECAPI_AVEncCommonMultipassMode).GUID, Is.EqualTo(IID_CODECAPI_AVEncCommonMultipassMode));
         }
 
         /// <summary>Validates that the <see cref="CODECAPI_AVEncCommonMultipassMode" /> struct is blittable.</summary>

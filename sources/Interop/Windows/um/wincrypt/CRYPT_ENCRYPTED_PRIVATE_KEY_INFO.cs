@@ -9,7 +9,6 @@ namespace TerraFX.Interop
     {
         public CRYPT_ALGORITHM_IDENTIFIER EncryptionAlgorithm;
 
-        [NativeTypeName("CRYPT_DATA_BLOB")]
-        public CRYPTOAPI_BLOB EncryptedPrivateKey;
+        public CRYPT_DATA_BLOB EncryptedPrivateKey;
     }
 }

@@ -17,7 +17,7 @@ namespace TerraFX.Interop.UnitTests
         [Test]
         public static void GuidOfTest()
         {
-            Assert.That(typeof(CODECAPI_AVEncNoInputCopy).GUID, Is.EqualTo(STATIC_CODECAPI_AVEncNoInputCopy));
+            Assert.That(typeof(CODECAPI_AVEncNoInputCopy).GUID, Is.EqualTo(IID_CODECAPI_AVEncNoInputCopy));
         }
 
         /// <summary>Validates that the <see cref="CODECAPI_AVEncNoInputCopy" /> struct is blittable.</summary>

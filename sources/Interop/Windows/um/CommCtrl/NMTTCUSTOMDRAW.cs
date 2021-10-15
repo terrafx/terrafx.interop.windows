@@ -7,8 +7,7 @@ namespace TerraFX.Interop
 {
     public partial struct NMTTCUSTOMDRAW
     {
-        [NativeTypeName("NMCUSTOMDRAW")]
-        public NMCUSTOMDRAWINFO nmcd;
+        public NMCUSTOMDRAW nmcd;
 
         [NativeTypeName("UINT")]
         public uint uDrawFlags;

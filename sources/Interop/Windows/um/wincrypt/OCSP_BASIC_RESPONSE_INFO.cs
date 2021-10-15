@@ -33,7 +33,7 @@ namespace TerraFX.Interop
         [NativeTypeName("PCERT_EXTENSION")]
         public CERT_EXTENSION* rgExtension;
 
-        public ref CRYPTOAPI_BLOB ByNameResponderId
+        public ref CRYPT_DATA_BLOB ByNameResponderId
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
@@ -42,7 +42,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public ref CRYPTOAPI_BLOB ByKeyResponderId
+        public ref CRYPT_DATA_BLOB ByKeyResponderId
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
@@ -56,11 +56,11 @@ namespace TerraFX.Interop
         {
             [FieldOffset(0)]
             [NativeTypeName("CERT_NAME_BLOB")]
-            public CRYPTOAPI_BLOB ByNameResponderId;
+            public CRYPT_DATA_BLOB ByNameResponderId;
 
             [FieldOffset(0)]
             [NativeTypeName("CRYPT_HASH_BLOB")]
-            public CRYPTOAPI_BLOB ByKeyResponderId;
+            public CRYPT_DATA_BLOB ByKeyResponderId;
         }
     }
 }

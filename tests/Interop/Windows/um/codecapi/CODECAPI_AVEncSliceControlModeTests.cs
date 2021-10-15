@@ -17,7 +17,7 @@ namespace TerraFX.Interop.UnitTests
         [Test]
         public static void GuidOfTest()
         {
-            Assert.That(typeof(CODECAPI_AVEncSliceControlMode).GUID, Is.EqualTo(STATIC_CODECAPI_AVEncSliceControlMode));
+            Assert.That(typeof(CODECAPI_AVEncSliceControlMode).GUID, Is.EqualTo(IID_CODECAPI_AVEncSliceControlMode));
         }
 
         /// <summary>Validates that the <see cref="CODECAPI_AVEncSliceControlMode" /> struct is blittable.</summary>

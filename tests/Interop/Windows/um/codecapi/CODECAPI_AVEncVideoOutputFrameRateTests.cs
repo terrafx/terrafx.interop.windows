@@ -17,7 +17,7 @@ namespace TerraFX.Interop.UnitTests
         [Test]
         public static void GuidOfTest()
         {
-            Assert.That(typeof(CODECAPI_AVEncVideoOutputFrameRate).GUID, Is.EqualTo(STATIC_CODECAPI_AVEncVideoOutputFrameRate));
+            Assert.That(typeof(CODECAPI_AVEncVideoOutputFrameRate).GUID, Is.EqualTo(IID_CODECAPI_AVEncVideoOutputFrameRate));
         }
 
         /// <summary>Validates that the <see cref="CODECAPI_AVEncVideoOutputFrameRate" /> struct is blittable.</summary>

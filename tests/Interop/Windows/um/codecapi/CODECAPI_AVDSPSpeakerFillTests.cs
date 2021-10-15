@@ -17,7 +17,7 @@ namespace TerraFX.Interop.UnitTests
         [Test]
         public static void GuidOfTest()
         {
-            Assert.That(typeof(CODECAPI_AVDSPSpeakerFill).GUID, Is.EqualTo(STATIC_CODECAPI_AVDSPSpeakerFill));
+            Assert.That(typeof(CODECAPI_AVDSPSpeakerFill).GUID, Is.EqualTo(IID_CODECAPI_AVDSPSpeakerFill));
         }
 
         /// <summary>Validates that the <see cref="CODECAPI_AVDSPSpeakerFill" /> struct is blittable.</summary>

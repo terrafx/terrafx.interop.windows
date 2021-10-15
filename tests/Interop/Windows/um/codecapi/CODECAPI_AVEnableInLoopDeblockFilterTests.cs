@@ -17,7 +17,7 @@ namespace TerraFX.Interop.UnitTests
         [Test]
         public static void GuidOfTest()
         {
-            Assert.That(typeof(CODECAPI_AVEnableInLoopDeblockFilter).GUID, Is.EqualTo(STATIC_CODECAPI_AVEnableInLoopDeblockFilter));
+            Assert.That(typeof(CODECAPI_AVEnableInLoopDeblockFilter).GUID, Is.EqualTo(IID_CODECAPI_AVEnableInLoopDeblockFilter));
         }
 
         /// <summary>Validates that the <see cref="CODECAPI_AVEnableInLoopDeblockFilter" /> struct is blittable.</summary>

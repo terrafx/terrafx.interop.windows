@@ -9,8 +9,7 @@ namespace TerraFX.Interop
     {
         public CERT_ID RecipientId;
 
-        [NativeTypeName("CRYPT_DATA_BLOB")]
-        public CRYPTOAPI_BLOB EncryptedKey;
+        public CRYPT_DATA_BLOB EncryptedKey;
 
         public FILETIME Date;
 

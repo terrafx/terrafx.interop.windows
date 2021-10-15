@@ -5,7 +5,7 @@
 
 namespace TerraFX.Interop
 {
-    public enum iurl_invokecommand_flags
+    public enum IURL_INVOKECOMMAND_FLAGS
     {
         IURL_INVOKECOMMAND_FL_ALLOW_UI = 0x0001,
         IURL_INVOKECOMMAND_FL_USE_DEFAULT_VERB = 0x0002,

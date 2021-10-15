@@ -17,7 +17,7 @@ namespace TerraFX.Interop.UnitTests
         [Test]
         public static void GuidOfTest()
         {
-            Assert.That(typeof(CODECAPI_AVDecSoftwareDynamicFormatChange).GUID, Is.EqualTo(STATIC_CODECAPI_AVDecSoftwareDynamicFormatChange));
+            Assert.That(typeof(CODECAPI_AVDecSoftwareDynamicFormatChange).GUID, Is.EqualTo(IID_CODECAPI_AVDecSoftwareDynamicFormatChange));
         }
 
         /// <summary>Validates that the <see cref="CODECAPI_AVDecSoftwareDynamicFormatChange" /> struct is blittable.</summary>

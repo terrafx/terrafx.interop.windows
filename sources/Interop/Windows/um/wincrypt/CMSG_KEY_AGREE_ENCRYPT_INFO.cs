@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         public CRYPT_ALGORITHM_IDENTIFIER KeyEncryptionAlgorithm;
 
-        [NativeTypeName("CRYPT_DATA_BLOB")]
-        public CRYPTOAPI_BLOB UserKeyingMaterial;
+        public CRYPT_DATA_BLOB UserKeyingMaterial;
 
         [NativeTypeName("DWORD")]
         public uint dwOriginatorChoice;

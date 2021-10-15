@@ -9,8 +9,7 @@ namespace TerraFX.Interop
     {
         public CRYPT_ALGORITHM_IDENTIFIER Algorithm;
 
-        [NativeTypeName("CRYPT_DATA_BLOB")]
-        public CRYPTOAPI_BLOB EntityUInfo;
+        public CRYPT_DATA_BLOB EntityUInfo;
 
         [NativeTypeName("BYTE [4]")]
         public fixed byte rgbSuppPubInfo[4];

@@ -17,7 +17,7 @@ namespace TerraFX.Interop.UnitTests
         [Test]
         public static void GuidOfTest()
         {
-            Assert.That(typeof(CODECAPI_AVEncDDOriginalBitstream).GUID, Is.EqualTo(STATIC_CODECAPI_AVEncDDOriginalBitstream));
+            Assert.That(typeof(CODECAPI_AVEncDDOriginalBitstream).GUID, Is.EqualTo(IID_CODECAPI_AVEncDDOriginalBitstream));
         }
 
         /// <summary>Validates that the <see cref="CODECAPI_AVEncDDOriginalBitstream" /> struct is blittable.</summary>

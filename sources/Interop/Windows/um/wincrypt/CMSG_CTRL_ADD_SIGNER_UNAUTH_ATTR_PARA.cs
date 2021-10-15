@@ -13,7 +13,6 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint dwSignerIndex;
 
-        [NativeTypeName("CRYPT_DATA_BLOB")]
-        public CRYPTOAPI_BLOB blob;
+        public CRYPT_DATA_BLOB blob;
     }
 }

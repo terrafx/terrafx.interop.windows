@@ -17,7 +17,7 @@ namespace TerraFX.Interop.UnitTests
         [Test]
         public static void GuidOfTest()
         {
-            Assert.That(typeof(CODECAPI_AVEncCommonAllowFrameDrops).GUID, Is.EqualTo(STATIC_CODECAPI_AVEncCommonAllowFrameDrops));
+            Assert.That(typeof(CODECAPI_AVEncCommonAllowFrameDrops).GUID, Is.EqualTo(IID_CODECAPI_AVEncCommonAllowFrameDrops));
         }
 
         /// <summary>Validates that the <see cref="CODECAPI_AVEncCommonAllowFrameDrops" /> struct is blittable.</summary>

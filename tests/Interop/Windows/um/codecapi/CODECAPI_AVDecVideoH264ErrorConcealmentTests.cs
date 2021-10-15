@@ -17,7 +17,7 @@ namespace TerraFX.Interop.UnitTests
         [Test]
         public static void GuidOfTest()
         {
-            Assert.That(typeof(CODECAPI_AVDecVideoH264ErrorConcealment).GUID, Is.EqualTo(STATIC_CODECAPI_AVDecVideoH264ErrorConcealment));
+            Assert.That(typeof(CODECAPI_AVDecVideoH264ErrorConcealment).GUID, Is.EqualTo(IID_CODECAPI_AVDecVideoH264ErrorConcealment));
         }
 
         /// <summary>Validates that the <see cref="CODECAPI_AVDecVideoH264ErrorConcealment" /> struct is blittable.</summary>

@@ -11,6 +11,6 @@ namespace TerraFX.Interop
         public sbyte* pszObjId;
 
         [NativeTypeName("CRYPT_OBJID_BLOB")]
-        public CRYPTOAPI_BLOB Parameters;
+        public CRYPT_DATA_BLOB Parameters;
     }
 }

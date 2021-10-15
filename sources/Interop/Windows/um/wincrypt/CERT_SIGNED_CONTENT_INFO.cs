@@ -8,7 +8,7 @@ namespace TerraFX.Interop
     public partial struct CERT_SIGNED_CONTENT_INFO
     {
         [NativeTypeName("CRYPT_DER_BLOB")]
-        public CRYPTOAPI_BLOB ToBeSigned;
+        public CRYPT_DATA_BLOB ToBeSigned;
 
         public CRYPT_ALGORITHM_IDENTIFIER SignatureAlgorithm;
 

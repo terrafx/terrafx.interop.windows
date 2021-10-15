@@ -17,7 +17,7 @@ namespace TerraFX.Interop.UnitTests
         [Test]
         public static void GuidOfTest()
         {
-            Assert.That(typeof(CODECAPI_AVEncCommonRateControlMode).GUID, Is.EqualTo(STATIC_CODECAPI_AVEncCommonRateControlMode));
+            Assert.That(typeof(CODECAPI_AVEncCommonRateControlMode).GUID, Is.EqualTo(IID_CODECAPI_AVEncCommonRateControlMode));
         }
 
         /// <summary>Validates that the <see cref="CODECAPI_AVEncCommonRateControlMode" /> struct is blittable.</summary>

@@ -17,7 +17,7 @@ namespace TerraFX.Interop.UnitTests
         [Test]
         public static void GuidOfTest()
         {
-            Assert.That(typeof(CODECAPI_AVEncVideoInputColorNominalRange).GUID, Is.EqualTo(STATIC_CODECAPI_AVEncVideoInputColorNominalRange));
+            Assert.That(typeof(CODECAPI_AVEncVideoInputColorNominalRange).GUID, Is.EqualTo(IID_CODECAPI_AVEncVideoInputColorNominalRange));
         }
 
         /// <summary>Validates that the <see cref="CODECAPI_AVEncVideoInputColorNominalRange" /> struct is blittable.</summary>

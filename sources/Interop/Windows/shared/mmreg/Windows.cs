@@ -5922,7 +5922,7 @@ namespace TerraFX.Interop
         [NativeTypeName("#define MIXERCONTROL_CONTROLTYPE_SRS_SYNTHSELECT (MIXERCONTROL_CONTROLTYPE_BOOLEAN + 8)")]
         public const int MIXERCONTROL_CONTROLTYPE_SRS_SYNTHSELECT = ((0x20000000 | 0x00000000 | 0x00010000) + 8);
 
-        public static ref readonly Guid STATIC_KSDATAFORMAT_SUBTYPE_PCM
+        public static ref readonly Guid IID_KSDATAFORMAT_SUBTYPE_PCM
         {
             get
             {
@@ -5945,7 +5945,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_KSDATAFORMAT_SUBTYPE_IEEE_FLOAT
+        public static ref readonly Guid IID_KSDATAFORMAT_SUBTYPE_IEEE_FLOAT
         {
             get
             {
@@ -5968,7 +5968,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid STATIC_KSDATAFORMAT_SUBTYPE_WAVEFORMATEX
+        public static ref readonly Guid IID_KSDATAFORMAT_SUBTYPE_WAVEFORMATEX
         {
             get
             {

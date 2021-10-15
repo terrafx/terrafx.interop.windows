@@ -16,7 +16,6 @@ namespace TerraFX.Interop
         [NativeTypeName("BYTE [4]")]
         public fixed byte rgbKeyLength[4];
 
-        [NativeTypeName("CRYPT_DATA_BLOB")]
-        public CRYPTOAPI_BLOB PubInfo;
+        public CRYPT_DATA_BLOB PubInfo;
     }
 }
