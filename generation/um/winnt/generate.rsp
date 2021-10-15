@@ -374,11 +374,11 @@ um-winnt.h
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winnt.h
 --with-attribute
 ACCESS_REASON_TYPE=Flags
-CM_SERVICE_NODE_TYPE=Flags
 JOB_OBJECT_IO_RATE_CONTROL_FLAGS=Flags
 JOB_OBJECT_NET_RATE_CONTROL_FLAGS=Flags
 JOBOBJECT_IO_ATTRIBUTION_CONTROL_FLAGS=Flags
 ReplacesCorHdrNumericDefines=Flags
+SERVICE_NODE_TYPE=Flags
 --with-librarypath
 *=kernel32
 RtlAddGrowableFunctionTable=ntdll
