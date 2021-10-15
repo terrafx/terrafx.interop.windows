@@ -1794,7 +1794,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TlHelp32", "TlHelp32", "{BB
 		generation\um\TlHelp32\um-TlHelp32.h = generation\um\TlHelp32\um-TlHelp32.h
 	EndProjectSection
 EndProject
-<<<<<<< HEAD
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "imapi", "imapi", "{BC069863-A717-4C9E-8D98-ACF9239E903A}"
 	ProjectSection(SolutionItems) = preProject
 		generation\um\imapi\generate.rsp = generation\um\imapi\generate.rsp
@@ -2322,7 +2321,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tpcshrd", "tpcshrd", "{3663
 		generation\um\tpcshrd\generate.rsp = generation\um\tpcshrd\generate.rsp
 		generation\um\tpcshrd\header.txt = generation\um\tpcshrd\header.txt
 		generation\um\tpcshrd\um-tpcshrd.h = generation\um\tpcshrd\um-tpcshrd.h
-		EndProjectSection
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "gdiplusmem", "gdiplusmem", "{0ECE69E8-BA2B-4A71-B2F5-62F9265C0CD8}"
 	ProjectSection(SolutionItems) = preProject
@@ -2385,6 +2384,20 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "gdipluscolormatrix", "gdipl
 		generation\um\gdipluscolormatrix\generate.rsp = generation\um\gdipluscolormatrix\generate.rsp
 		generation\um\gdipluscolormatrix\header.txt = generation\um\gdipluscolormatrix\header.txt
 		generation\um\gdipluscolormatrix\um-gdipluscolormatrix.h = generation\um\gdipluscolormatrix\um-gdipluscolormatrix.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "gdipluseffects", "gdipluseffects", "{46522B55-8038-49B9-88CF-0685B4A68FBD}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\gdipluseffects\generate.rsp = generation\um\gdipluseffects\generate.rsp
+		generation\um\gdipluseffects\header.txt = generation\um\gdipluseffects\header.txt
+		generation\um\gdipluseffects\um-gdipluseffects.h = generation\um\gdipluseffects\um-gdipluseffects.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "gdiplusflat", "gdiplusflat", "{FDBA220F-6688-4CA1-BE0B-D2FCB8D6C567}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\gdiplusflat\generate.rsp = generation\um\gdiplusflat\generate.rsp
+		generation\um\gdiplusflat\header.txt = generation\um\gdiplusflat\header.txt
+		generation\um\gdiplusflat\um-gdiplusflat.h = generation\um\gdiplusflat\um-gdiplusflat.h
 	EndProjectSection
 EndProject
 Global
@@ -2756,6 +2769,8 @@ Global
 		{BFF9BDD8-B0FB-4789-8FAA-F3FE2F41B464} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{B9F2A2AC-987E-4EDD-B89B-2ABDD9BE5C3C} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{6D5A82FA-5CFA-4F70-928D-85CBF5C1E33A} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{46522B55-8038-49B9-88CF-0685B4A68FBD} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{FDBA220F-6688-4CA1-BE0B-D2FCB8D6C567} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2FE36DF8-2D9C-4F20-8787-45DC74B57461}
