@@ -15,5 +15,7 @@ namespace TerraFX.Interop
         SmoothingModeHighQuality = QualityModeHigh,
         SmoothingModeNone,
         SmoothingModeAntiAlias,
+        SmoothingModeAntiAlias8x4 = SmoothingModeAntiAlias,
+        SmoothingModeAntiAlias8x8,
     }
 }

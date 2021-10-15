@@ -1,5 +1,7 @@
 @../../settings.rsp
 @../../remap.rsp
+--define-macro
+GDIPVER=0x0110
 --exclude
 GDIPVER
 GDIP_EMFPLUS_RECORD_TO_WMF

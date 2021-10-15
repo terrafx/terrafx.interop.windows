@@ -31,5 +31,7 @@ namespace TerraFX.Interop
         EncoderValueFrameDimensionTime,
         EncoderValueFrameDimensionResolution,
         EncoderValueFrameDimensionPage,
+        EncoderValueColorTypeGray,
+        EncoderValueColorTypeRGB,
     }
 }

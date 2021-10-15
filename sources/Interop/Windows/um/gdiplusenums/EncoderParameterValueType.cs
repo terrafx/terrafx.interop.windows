@@ -15,5 +15,6 @@ namespace TerraFX.Interop
         EncoderParameterValueTypeLongRange = 6,
         EncoderParameterValueTypeUndefined = 7,
         EncoderParameterValueTypeRationalRange = 8,
+        EncoderParameterValueTypePointer = 9,
     }
 }

@@ -17,7 +17,8 @@ namespace TerraFX.Interop
         ObjectTypeStringFormat,
         ObjectTypeImageAttributes,
         ObjectTypeCustomLineCap,
-        ObjectTypeMax = ObjectTypeCustomLineCap,
+        ObjectTypeGraphics,
+        ObjectTypeMax = ObjectTypeGraphics,
         ObjectTypeMin = ObjectTypeBrush,
     }
 }
