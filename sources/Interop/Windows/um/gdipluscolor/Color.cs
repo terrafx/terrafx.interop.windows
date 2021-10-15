@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/gdipluscolor.h in the Windows SDK for Windows 10.0.19041.0
+// Ported from um/gdipluscolor.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 namespace TerraFX.Interop
@@ -86,13 +86,13 @@ namespace TerraFX.Interop
 
         public void SetFromCOLORREF([NativeTypeName("COLORREF")] uint rgb)
         {
-            Argb = MakeARGB(255, (((byte)(((nuint)(rgb)) & 0xff))), (((byte)(((nuint)(((ushort)(rgb)) >> 8)) & 0xff))), (((byte)(((nuint)((rgb) >> 16)) & 0xff))));
+            Argb = MakeARGB(255, (((byte)(((nuint)(rgb)) & 0xff))), (((byte)(((nuint)(unchecked(((ushort)(rgb)) >> 8))) & 0xff))), (((byte)(((nuint)((rgb) >> 16)) & 0xff))));
         }
 
         [return: NativeTypeName("COLORREF")]
         public uint ToCOLORREF()
         {
-            return ((uint)((uint)((byte)(GetRed()) | ((ushort)((byte)(GetGreen())) << 8)) | (((uint)((byte)(GetBlue()))) << 16)));
+            return ((uint)((uint)(unchecked((byte)(GetRed())) | unchecked((ushort)((byte)(GetGreen())) << 8)) | (((uint)((byte)(GetBlue()))) << 16)));
         }
 
         [return: NativeTypeName("Gdiplus::ARGB")]

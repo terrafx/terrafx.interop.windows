@@ -3,7 +3,7 @@
 --define-macro
 GDIPVER=0x0110
 --exclude
-Gdiplus.Color.Color():void
+Gdiplus::Color::Color():void
 --file
 um-gdipluscolor.h
 --output
@@ -11,5 +11,5 @@ um-gdipluscolor.h
 --test-output
 ../../../tests/Interop/Windows/um/gdipluscolor
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/gdiplus.h
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/gdipluscolor.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/gdiplus.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/gdipluscolor.h
