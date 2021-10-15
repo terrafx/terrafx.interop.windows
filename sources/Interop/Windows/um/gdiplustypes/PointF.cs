@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/gdiplustypes.h in the Windows SDK for Windows 10.0.19041.0
+// Ported from um/gdiplustypes.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 namespace TerraFX.Interop
@@ -31,11 +31,13 @@ namespace TerraFX.Interop
             Y = y;
         }
 
+        [return: NativeTypeName("Gdiplus::PointF")]
         public unsafe PointF Add([NativeTypeName("const Gdiplus::PointF &")] PointF* point)
         {
             return new PointF(X + point->X, Y + point->Y);
         }
 
+        [return: NativeTypeName("Gdiplus::PointF")]
         public unsafe PointF Subtract([NativeTypeName("const Gdiplus::PointF &")] PointF* point)
         {
             return new PointF(X - point->X, Y - point->Y);

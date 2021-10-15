@@ -1,22 +1,24 @@
 @../../settings.rsp
 @../../remap.rsp
+--define-macro
+GDIPVER=0x0110
 --exclude
-Gdiplus.CharacterRange.CharacterRange():void
-Gdiplus.CharacterRange.operator=(const Gdiplus::CharacterRange &):Gdiplus::CharacterRange &
-Gdiplus.PathData.operator=(const Gdiplus::PathData &):Gdiplus::PathData &
-Gdiplus.PathData.PathData():void
-Gdiplus.PathData.PathData(const Gdiplus::PathData &):void
-Gdiplus.PathData.Finalize():void
-Gdiplus.Point.Point():void
-Gdiplus.PointF.PointF():void
-Gdiplus.Rect.Clone():Gdiplus::Rect *
-Gdiplus.Rect.Intersect(const Gdiplus::Rect &):BOOL
-Gdiplus.Rect.Rect():void
-Gdiplus.RectF.Clone():Gdiplus::RectF *
-Gdiplus.RectF.Intersect(const Gdiplus::RectF &):BOOL
-Gdiplus.RectF.RectF():void
-Gdiplus.Size.Size():void
-Gdiplus.SizeF.SizeF():void
+Gdiplus::CharacterRange::CharacterRange():void
+Gdiplus::CharacterRange::operator=(const Gdiplus::CharacterRange &):Gdiplus::CharacterRange &
+Gdiplus::PathData::operator=(const Gdiplus::PathData &):Gdiplus::PathData &
+Gdiplus::PathData::PathData():void
+Gdiplus::PathData::PathData(const Gdiplus::PathData &):void
+Gdiplus::PathData::Dispose():void
+Gdiplus::Point::Point():void
+Gdiplus::PointF::PointF():void
+Gdiplus::Rect::Clone():Gdiplus::Rect *
+Gdiplus::Rect::Intersect(const Gdiplus::Rect &):BOOL
+Gdiplus::Rect::Rect():void
+Gdiplus::RectF::Clone():Gdiplus::RectF *
+Gdiplus::RectF::Intersect(const Gdiplus::RectF &):BOOL
+Gdiplus::RectF::RectF():void
+Gdiplus::Size::Size():void
+Gdiplus::SizeF::SizeF():void
 GDIPVER
 --file
 um-gdiplustypes.h
@@ -25,5 +27,5 @@ um-gdiplustypes.h
 --test-output
 ../../../tests/Interop/Windows/um/gdiplustypes
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/gdiplus.h
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/gdiplustypes.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/gdiplus.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/gdiplustypes.h

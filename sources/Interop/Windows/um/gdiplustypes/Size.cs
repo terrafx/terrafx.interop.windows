@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/gdiplustypes.h in the Windows SDK for Windows 10.0.19041.0
+// Ported from um/gdiplustypes.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 namespace TerraFX.Interop
@@ -25,11 +25,13 @@ namespace TerraFX.Interop
             Height = height;
         }
 
+        [return: NativeTypeName("Gdiplus::Size")]
         public unsafe Size Add([NativeTypeName("const Gdiplus::Size &")] Size* sz)
         {
             return new Size(Width + sz->Width, Height + sz->Height);
         }
 
+        [return: NativeTypeName("Gdiplus::Size")]
         public unsafe Size Subtract([NativeTypeName("const Gdiplus::Size &")] Size* sz)
         {
             return new Size(Width - sz->Width, Height - sz->Height);
