@@ -11,7 +11,7 @@ namespace TerraFX.Interop
         public uint cCerts;
 
         [NativeTypeName("PCERT_BLOB")]
-        public CRYPTOAPI_BLOB* certs;
+        public CRYPT_DATA_BLOB* certs;
 
         public CRYPT_KEY_PROV_INFO keyLocatorInfo;
     }

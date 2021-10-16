@@ -17,7 +17,7 @@ namespace TerraFX.Interop.UnitTests
         [Test]
         public static void GuidOfTest()
         {
-            Assert.That(typeof(CODECAPI_AVDecVideoDropPicWithMissingRef).GUID, Is.EqualTo(STATIC_CODECAPI_AVDecVideoDropPicWithMissingRef));
+            Assert.That(typeof(CODECAPI_AVDecVideoDropPicWithMissingRef).GUID, Is.EqualTo(IID_CODECAPI_AVDecVideoDropPicWithMissingRef));
         }
 
         /// <summary>Validates that the <see cref="CODECAPI_AVDecVideoDropPicWithMissingRef" /> struct is blittable.</summary>

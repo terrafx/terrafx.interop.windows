@@ -40,6 +40,6 @@ namespace TerraFX.Interop
         public ushort** ppwszErrorResponseHeaders;
 
         [NativeTypeName("PCRYPT_DATA_BLOB *")]
-        public CRYPTOAPI_BLOB** ppErrorContentBlob;
+        public CRYPT_DATA_BLOB** ppErrorContentBlob;
     }
 }

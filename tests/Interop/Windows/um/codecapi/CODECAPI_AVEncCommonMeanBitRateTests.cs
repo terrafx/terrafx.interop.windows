@@ -17,7 +17,7 @@ namespace TerraFX.Interop.UnitTests
         [Test]
         public static void GuidOfTest()
         {
-            Assert.That(typeof(CODECAPI_AVEncCommonMeanBitRate).GUID, Is.EqualTo(STATIC_CODECAPI_AVEncCommonMeanBitRate));
+            Assert.That(typeof(CODECAPI_AVEncCommonMeanBitRate).GUID, Is.EqualTo(IID_CODECAPI_AVEncCommonMeanBitRate));
         }
 
         /// <summary>Validates that the <see cref="CODECAPI_AVEncCommonMeanBitRate" /> struct is blittable.</summary>

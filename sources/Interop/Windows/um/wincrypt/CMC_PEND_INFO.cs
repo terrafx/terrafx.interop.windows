@@ -7,8 +7,7 @@ namespace TerraFX.Interop
 {
     public partial struct CMC_PEND_INFO
     {
-        [NativeTypeName("CRYPT_DATA_BLOB")]
-        public CRYPTOAPI_BLOB PendToken;
+        public CRYPT_DATA_BLOB PendToken;
 
         public FILETIME PendTime;
     }

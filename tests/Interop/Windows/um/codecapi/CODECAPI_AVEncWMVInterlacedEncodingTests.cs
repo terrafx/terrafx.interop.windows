@@ -17,7 +17,7 @@ namespace TerraFX.Interop.UnitTests
         [Test]
         public static void GuidOfTest()
         {
-            Assert.That(typeof(CODECAPI_AVEncWMVInterlacedEncoding).GUID, Is.EqualTo(STATIC_CODECAPI_AVEncWMVInterlacedEncoding));
+            Assert.That(typeof(CODECAPI_AVEncWMVInterlacedEncoding).GUID, Is.EqualTo(IID_CODECAPI_AVEncWMVInterlacedEncoding));
         }
 
         /// <summary>Validates that the <see cref="CODECAPI_AVEncWMVInterlacedEncoding" /> struct is blittable.</summary>

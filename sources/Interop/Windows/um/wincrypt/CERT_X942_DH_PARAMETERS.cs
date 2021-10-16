@@ -8,16 +8,16 @@ namespace TerraFX.Interop
     public unsafe partial struct CERT_X942_DH_PARAMETERS
     {
         [NativeTypeName("CRYPT_UINT_BLOB")]
-        public CRYPTOAPI_BLOB p;
+        public CRYPT_DATA_BLOB p;
 
         [NativeTypeName("CRYPT_UINT_BLOB")]
-        public CRYPTOAPI_BLOB g;
+        public CRYPT_DATA_BLOB g;
 
         [NativeTypeName("CRYPT_UINT_BLOB")]
-        public CRYPTOAPI_BLOB q;
+        public CRYPT_DATA_BLOB q;
 
         [NativeTypeName("CRYPT_UINT_BLOB")]
-        public CRYPTOAPI_BLOB j;
+        public CRYPT_DATA_BLOB j;
 
         [NativeTypeName("PCERT_X942_DH_VALIDATION_PARAMS")]
         public CERT_X942_DH_VALIDATION_PARAMS* pValidationParams;

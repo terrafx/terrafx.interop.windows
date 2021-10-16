@@ -14,7 +14,8 @@ namespace TerraFX.Interop
         public USN_RECORD_COMMON_HEADER Header;
 
         [FieldOffset(0)]
-        public USN_RECORD_V2 V2;
+        [NativeTypeName("USN_RECORD_V2")]
+        public USN_RECORD V2;
 
         [FieldOffset(0)]
         public USN_RECORD_V3 V3;

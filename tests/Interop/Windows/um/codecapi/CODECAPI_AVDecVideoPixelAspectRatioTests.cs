@@ -17,7 +17,7 @@ namespace TerraFX.Interop.UnitTests
         [Test]
         public static void GuidOfTest()
         {
-            Assert.That(typeof(CODECAPI_AVDecVideoPixelAspectRatio).GUID, Is.EqualTo(STATIC_CODECAPI_AVDecVideoPixelAspectRatio));
+            Assert.That(typeof(CODECAPI_AVDecVideoPixelAspectRatio).GUID, Is.EqualTo(IID_CODECAPI_AVDecVideoPixelAspectRatio));
         }
 
         /// <summary>Validates that the <see cref="CODECAPI_AVDecVideoPixelAspectRatio" /> struct is blittable.</summary>

@@ -20,12 +20,12 @@ namespace TerraFX.Interop
         public uint cCertEncoded;
 
         [NativeTypeName("PCERT_BLOB")]
-        public CRYPTOAPI_BLOB* rgCertEncoded;
+        public CRYPT_DATA_BLOB* rgCertEncoded;
 
         [NativeTypeName("DWORD")]
         public uint cCrlEncoded;
 
         [NativeTypeName("PCRL_BLOB")]
-        public CRYPTOAPI_BLOB* rgCrlEncoded;
+        public CRYPT_DATA_BLOB* rgCrlEncoded;
     }
 }

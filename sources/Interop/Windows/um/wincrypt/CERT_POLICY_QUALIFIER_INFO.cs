@@ -11,6 +11,6 @@ namespace TerraFX.Interop
         public sbyte* pszPolicyQualifierId;
 
         [NativeTypeName("CRYPT_OBJID_BLOB")]
-        public CRYPTOAPI_BLOB Qualifier;
+        public CRYPT_DATA_BLOB Qualifier;
     }
 }

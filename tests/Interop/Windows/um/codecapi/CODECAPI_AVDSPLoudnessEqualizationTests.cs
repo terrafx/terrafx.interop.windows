@@ -17,7 +17,7 @@ namespace TerraFX.Interop.UnitTests
         [Test]
         public static void GuidOfTest()
         {
-            Assert.That(typeof(CODECAPI_AVDSPLoudnessEqualization).GUID, Is.EqualTo(STATIC_CODECAPI_AVDSPLoudnessEqualization));
+            Assert.That(typeof(CODECAPI_AVDSPLoudnessEqualization).GUID, Is.EqualTo(IID_CODECAPI_AVDSPLoudnessEqualization));
         }
 
         /// <summary>Validates that the <see cref="CODECAPI_AVDSPLoudnessEqualization" /> struct is blittable.</summary>

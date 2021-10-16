@@ -17,7 +17,7 @@ namespace TerraFX.Interop.UnitTests
         [Test]
         public static void GuidOfTest()
         {
-            Assert.That(typeof(CODECAPI_AVDecDisableVideoPostProcessing).GUID, Is.EqualTo(STATIC_CODECAPI_AVDecDisableVideoPostProcessing));
+            Assert.That(typeof(CODECAPI_AVDecDisableVideoPostProcessing).GUID, Is.EqualTo(IID_CODECAPI_AVDecDisableVideoPostProcessing));
         }
 
         /// <summary>Validates that the <see cref="CODECAPI_AVDecDisableVideoPostProcessing" /> struct is blittable.</summary>

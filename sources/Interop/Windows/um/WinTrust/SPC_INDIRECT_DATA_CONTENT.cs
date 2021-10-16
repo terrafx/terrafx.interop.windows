@@ -12,6 +12,6 @@ namespace TerraFX.Interop
         public CRYPT_ALGORITHM_IDENTIFIER DigestAlgorithm;
 
         [NativeTypeName("CRYPT_HASH_BLOB")]
-        public CRYPTOAPI_BLOB Digest;
+        public CRYPT_DATA_BLOB Digest;
     }
 }

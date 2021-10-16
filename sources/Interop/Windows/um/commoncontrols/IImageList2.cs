@@ -339,9 +339,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(40)]
         [return: NativeTypeName("HRESULT")]
-        public int GetStatistics([NativeTypeName("IMAGELISTSTATS *")] IMAGELISTSTAT* pils)
+        public int GetStatistics(IMAGELISTSTATS* pils)
         {
-            return ((delegate* unmanaged<IImageList2*, IMAGELISTSTAT*, int>)(lpVtbl[40]))((IImageList2*)Unsafe.AsPointer(ref this), pils);
+            return ((delegate* unmanaged<IImageList2*, IMAGELISTSTATS*, int>)(lpVtbl[40]))((IImageList2*)Unsafe.AsPointer(ref this), pils);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

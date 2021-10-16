@@ -3,6 +3,8 @@
 --exclude
 DEFINE_PROPERTYKEY
 IsEqualPropertyKey
+operator==(const PROPERTYKEY &, const PROPERTYKEY &):int
+operator!=(const PROPERTYKEY &, const PROPERTYKEY &):int
 --file
 um-propkeydef.h
 --output

@@ -17,7 +17,7 @@ namespace TerraFX.Interop.UnitTests
         [Test]
         public static void GuidOfTest()
         {
-            Assert.That(typeof(CODECAPI_AVEncStatMPVSkippedEmptyFrames).GUID, Is.EqualTo(STATIC_CODECAPI_AVEncStatMPVSkippedEmptyFrames));
+            Assert.That(typeof(CODECAPI_AVEncStatMPVSkippedEmptyFrames).GUID, Is.EqualTo(IID_CODECAPI_AVEncStatMPVSkippedEmptyFrames));
         }
 
         /// <summary>Validates that the <see cref="CODECAPI_AVEncStatMPVSkippedEmptyFrames" /> struct is blittable.</summary>

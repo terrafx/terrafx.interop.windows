@@ -7,10 +7,8 @@ namespace TerraFX.Interop
 {
     public partial struct CRYPT_VERIFY_CERT_SIGN_STRONG_PROPERTIES_INFO
     {
-        [NativeTypeName("CRYPT_DATA_BLOB")]
-        public CRYPTOAPI_BLOB CertSignHashCNGAlgPropData;
+        public CRYPT_DATA_BLOB CertSignHashCNGAlgPropData;
 
-        [NativeTypeName("CRYPT_DATA_BLOB")]
-        public CRYPTOAPI_BLOB CertIssuerPubKeyBitLengthPropData;
+        public CRYPT_DATA_BLOB CertIssuerPubKeyBitLengthPropData;
     }
 }

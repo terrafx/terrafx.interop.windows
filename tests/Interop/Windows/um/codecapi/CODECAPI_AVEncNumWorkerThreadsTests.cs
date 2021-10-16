@@ -17,7 +17,7 @@ namespace TerraFX.Interop.UnitTests
         [Test]
         public static void GuidOfTest()
         {
-            Assert.That(typeof(CODECAPI_AVEncNumWorkerThreads).GUID, Is.EqualTo(STATIC_CODECAPI_AVEncNumWorkerThreads));
+            Assert.That(typeof(CODECAPI_AVEncNumWorkerThreads).GUID, Is.EqualTo(IID_CODECAPI_AVEncNumWorkerThreads));
         }
 
         /// <summary>Validates that the <see cref="CODECAPI_AVEncNumWorkerThreads" /> struct is blittable.</summary>

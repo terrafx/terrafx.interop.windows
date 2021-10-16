@@ -17,7 +17,7 @@ namespace TerraFX.Interop.UnitTests
         [Test]
         public static void GuidOfTest()
         {
-            Assert.That(typeof(CODECAPI_AVEncVideoInstantTemporalUpSwitching).GUID, Is.EqualTo(STATIC_CODECAPI_AVEncVideoInstantTemporalUpSwitching));
+            Assert.That(typeof(CODECAPI_AVEncVideoInstantTemporalUpSwitching).GUID, Is.EqualTo(IID_CODECAPI_AVEncVideoInstantTemporalUpSwitching));
         }
 
         /// <summary>Validates that the <see cref="CODECAPI_AVEncVideoInstantTemporalUpSwitching" /> struct is blittable.</summary>

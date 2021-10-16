@@ -17,7 +17,7 @@ namespace TerraFX.Interop.UnitTests
         [Test]
         public static void GuidOfTest()
         {
-            Assert.That(typeof(CODECAPI_AVDecDDMatrixDecodingMode).GUID, Is.EqualTo(STATIC_CODECAPI_AVDecDDMatrixDecodingMode));
+            Assert.That(typeof(CODECAPI_AVDecDDMatrixDecodingMode).GUID, Is.EqualTo(IID_CODECAPI_AVDecDDMatrixDecodingMode));
         }
 
         /// <summary>Validates that the <see cref="CODECAPI_AVDecDDMatrixDecodingMode" /> struct is blittable.</summary>

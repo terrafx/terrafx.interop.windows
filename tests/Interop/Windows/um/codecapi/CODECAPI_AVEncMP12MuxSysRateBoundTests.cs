@@ -17,7 +17,7 @@ namespace TerraFX.Interop.UnitTests
         [Test]
         public static void GuidOfTest()
         {
-            Assert.That(typeof(CODECAPI_AVEncMP12MuxSysRateBound).GUID, Is.EqualTo(STATIC_CODECAPI_AVEncMP12MuxSysRateBound));
+            Assert.That(typeof(CODECAPI_AVEncMP12MuxSysRateBound).GUID, Is.EqualTo(IID_CODECAPI_AVEncMP12MuxSysRateBound));
         }
 
         /// <summary>Validates that the <see cref="CODECAPI_AVEncMP12MuxSysRateBound" /> struct is blittable.</summary>

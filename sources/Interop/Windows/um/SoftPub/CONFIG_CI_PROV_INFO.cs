@@ -13,8 +13,7 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint dwPolicies;
 
-        [NativeTypeName("CRYPT_DATA_BLOB *")]
-        public CRYPTOAPI_BLOB* pPolicies;
+        public CRYPT_DATA_BLOB* pPolicies;
 
         public CONFIG_CI_PROV_INFO_RESULT result;
 

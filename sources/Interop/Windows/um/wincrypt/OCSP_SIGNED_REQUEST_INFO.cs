@@ -8,7 +8,7 @@ namespace TerraFX.Interop
     public unsafe partial struct OCSP_SIGNED_REQUEST_INFO
     {
         [NativeTypeName("CRYPT_DER_BLOB")]
-        public CRYPTOAPI_BLOB ToBeSigned;
+        public CRYPT_DATA_BLOB ToBeSigned;
 
         [NativeTypeName("POCSP_SIGNATURE_INFO")]
         public OCSP_SIGNATURE_INFO* pOptionalSignatureInfo;

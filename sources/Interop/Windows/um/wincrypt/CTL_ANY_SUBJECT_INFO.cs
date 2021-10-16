@@ -9,7 +9,6 @@ namespace TerraFX.Interop
     {
         public CRYPT_ALGORITHM_IDENTIFIER SubjectAlgorithm;
 
-        [NativeTypeName("CRYPT_DATA_BLOB")]
-        public CRYPTOAPI_BLOB SubjectIdentifier;
+        public CRYPT_DATA_BLOB SubjectIdentifier;
     }
 }

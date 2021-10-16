@@ -9,8 +9,7 @@ namespace TerraFX.Interop
 {
     public partial struct NMTBCUSTOMDRAW
     {
-        [NativeTypeName("NMCUSTOMDRAW")]
-        public NMCUSTOMDRAWINFO nmcd;
+        public NMCUSTOMDRAW nmcd;
 
         [NativeTypeName("HBRUSH")]
         public IntPtr hbrMonoDither;

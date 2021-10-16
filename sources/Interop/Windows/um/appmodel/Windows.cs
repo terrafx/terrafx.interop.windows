@@ -152,27 +152,27 @@ namespace TerraFX.Interop
 
         [DllImport("kernel32", ExactSpelling = true)]
         [return: NativeTypeName("LONG")]
-        public static extern int OpenPackageInfoByFullName([NativeTypeName("PCWSTR")] ushort* packageFullName, [NativeTypeName("const UINT32")] uint reserved, [NativeTypeName("PACKAGE_INFO_REFERENCE *")] PACKAGE_INFO_REFERENCE** packageInfoReference);
+        public static extern int OpenPackageInfoByFullName([NativeTypeName("PCWSTR")] ushort* packageFullName, [NativeTypeName("const UINT32")] uint reserved, [NativeTypeName("PACKAGE_INFO_REFERENCE *")] _PACKAGE_INFO_REFERENCE** packageInfoReference);
 
         [DllImport("kernel32", ExactSpelling = true)]
         [return: NativeTypeName("LONG")]
-        public static extern int OpenPackageInfoByFullNameForUser([NativeTypeName("PSID")] void* userSid, [NativeTypeName("PCWSTR")] ushort* packageFullName, [NativeTypeName("const UINT32")] uint reserved, [NativeTypeName("PACKAGE_INFO_REFERENCE *")] PACKAGE_INFO_REFERENCE** packageInfoReference);
+        public static extern int OpenPackageInfoByFullNameForUser([NativeTypeName("PSID")] void* userSid, [NativeTypeName("PCWSTR")] ushort* packageFullName, [NativeTypeName("const UINT32")] uint reserved, [NativeTypeName("PACKAGE_INFO_REFERENCE *")] _PACKAGE_INFO_REFERENCE** packageInfoReference);
 
         [DllImport("kernel32", ExactSpelling = true)]
         [return: NativeTypeName("LONG")]
-        public static extern int ClosePackageInfo([NativeTypeName("PACKAGE_INFO_REFERENCE")] PACKAGE_INFO_REFERENCE* packageInfoReference);
+        public static extern int ClosePackageInfo([NativeTypeName("PACKAGE_INFO_REFERENCE")] _PACKAGE_INFO_REFERENCE* packageInfoReference);
 
         [DllImport("kernel32", ExactSpelling = true)]
         [return: NativeTypeName("LONG")]
-        public static extern int GetPackageInfo([NativeTypeName("PACKAGE_INFO_REFERENCE")] PACKAGE_INFO_REFERENCE* packageInfoReference, [NativeTypeName("const UINT32")] uint flags, [NativeTypeName("UINT32 *")] uint* bufferLength, [NativeTypeName("BYTE *")] byte* buffer, [NativeTypeName("UINT32 *")] uint* count);
+        public static extern int GetPackageInfo([NativeTypeName("PACKAGE_INFO_REFERENCE")] _PACKAGE_INFO_REFERENCE* packageInfoReference, [NativeTypeName("const UINT32")] uint flags, [NativeTypeName("UINT32 *")] uint* bufferLength, [NativeTypeName("BYTE *")] byte* buffer, [NativeTypeName("UINT32 *")] uint* count);
 
         [DllImport("kernel32", ExactSpelling = true)]
         [return: NativeTypeName("LONG")]
-        public static extern int GetPackageApplicationIds([NativeTypeName("PACKAGE_INFO_REFERENCE")] PACKAGE_INFO_REFERENCE* packageInfoReference, [NativeTypeName("UINT32 *")] uint* bufferLength, [NativeTypeName("BYTE *")] byte* buffer, [NativeTypeName("UINT32 *")] uint* count);
+        public static extern int GetPackageApplicationIds([NativeTypeName("PACKAGE_INFO_REFERENCE")] _PACKAGE_INFO_REFERENCE* packageInfoReference, [NativeTypeName("UINT32 *")] uint* bufferLength, [NativeTypeName("BYTE *")] byte* buffer, [NativeTypeName("UINT32 *")] uint* count);
 
         [DllImport("kernel32", ExactSpelling = true)]
         [return: NativeTypeName("LONG")]
-        public static extern int GetPackageInfo2([NativeTypeName("PACKAGE_INFO_REFERENCE")] PACKAGE_INFO_REFERENCE* packageInfoReference, [NativeTypeName("const UINT32")] uint flags, PackagePathType packagePathType, [NativeTypeName("UINT32 *")] uint* bufferLength, [NativeTypeName("BYTE *")] byte* buffer, [NativeTypeName("UINT32 *")] uint* count);
+        public static extern int GetPackageInfo2([NativeTypeName("PACKAGE_INFO_REFERENCE")] _PACKAGE_INFO_REFERENCE* packageInfoReference, [NativeTypeName("const UINT32")] uint flags, PackagePathType packagePathType, [NativeTypeName("UINT32 *")] uint* bufferLength, [NativeTypeName("BYTE *")] byte* buffer, [NativeTypeName("UINT32 *")] uint* count);
 
         [DllImport("kernel32", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]

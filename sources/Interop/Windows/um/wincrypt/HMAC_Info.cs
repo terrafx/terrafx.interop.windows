@@ -5,7 +5,7 @@
 
 namespace TerraFX.Interop
 {
-    public unsafe partial struct HMAC_Info
+    public unsafe partial struct HMAC_INFO
     {
         [NativeTypeName("ALG_ID")]
         public uint HashAlgid;

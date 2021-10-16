@@ -7,8 +7,7 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct CERT_KEY_ATTRIBUTES_INFO
     {
-        [NativeTypeName("CRYPT_DATA_BLOB")]
-        public CRYPTOAPI_BLOB KeyId;
+        public CRYPT_DATA_BLOB KeyId;
 
         public CRYPT_BIT_BLOB IntendedKeyUsage;
 

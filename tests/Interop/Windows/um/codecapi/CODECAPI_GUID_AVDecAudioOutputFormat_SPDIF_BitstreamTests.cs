@@ -17,7 +17,7 @@ namespace TerraFX.Interop.UnitTests
         [Test]
         public static void GuidOfTest()
         {
-            Assert.That(typeof(CODECAPI_GUID_AVDecAudioOutputFormat_SPDIF_Bitstream).GUID, Is.EqualTo(STATIC_CODECAPI_GUID_AVDecAudioOutputFormat_SPDIF_Bitstream));
+            Assert.That(typeof(CODECAPI_GUID_AVDecAudioOutputFormat_SPDIF_Bitstream).GUID, Is.EqualTo(IID_CODECAPI_GUID_AVDecAudioOutputFormat_SPDIF_Bitstream));
         }
 
         /// <summary>Validates that the <see cref="CODECAPI_GUID_AVDecAudioOutputFormat_SPDIF_Bitstream" /> struct is blittable.</summary>

@@ -17,7 +17,7 @@ namespace TerraFX.Interop.UnitTests
         [Test]
         public static void GuidOfTest()
         {
-            Assert.That(typeof(CODECAPI_AVEncWMVKeyFrameDistance).GUID, Is.EqualTo(STATIC_CODECAPI_AVEncWMVKeyFrameDistance));
+            Assert.That(typeof(CODECAPI_AVEncWMVKeyFrameDistance).GUID, Is.EqualTo(IID_CODECAPI_AVEncWMVKeyFrameDistance));
         }
 
         /// <summary>Validates that the <see cref="CODECAPI_AVEncWMVKeyFrameDistance" /> struct is blittable.</summary>

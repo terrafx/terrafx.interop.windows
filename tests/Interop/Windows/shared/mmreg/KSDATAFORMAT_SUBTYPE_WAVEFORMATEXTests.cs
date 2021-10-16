@@ -17,7 +17,7 @@ namespace TerraFX.Interop.UnitTests
         [Test]
         public static void GuidOfTest()
         {
-            Assert.That(typeof(KSDATAFORMAT_SUBTYPE_WAVEFORMATEX).GUID, Is.EqualTo(STATIC_KSDATAFORMAT_SUBTYPE_WAVEFORMATEX));
+            Assert.That(typeof(KSDATAFORMAT_SUBTYPE_WAVEFORMATEX).GUID, Is.EqualTo(IID_KSDATAFORMAT_SUBTYPE_WAVEFORMATEX));
         }
 
         /// <summary>Validates that the <see cref="KSDATAFORMAT_SUBTYPE_WAVEFORMATEX" /> struct is blittable.</summary>

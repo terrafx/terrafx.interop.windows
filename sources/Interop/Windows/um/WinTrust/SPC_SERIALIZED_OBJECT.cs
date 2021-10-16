@@ -10,7 +10,6 @@ namespace TerraFX.Interop
         [NativeTypeName("SPC_UUID")]
         public fixed byte ClassId[16];
 
-        [NativeTypeName("CRYPT_DATA_BLOB")]
-        public CRYPTOAPI_BLOB SerializedData;
+        public CRYPT_DATA_BLOB SerializedData;
     }
 }

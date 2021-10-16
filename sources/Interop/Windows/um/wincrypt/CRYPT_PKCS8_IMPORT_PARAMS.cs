@@ -10,7 +10,7 @@ namespace TerraFX.Interop
     public unsafe partial struct CRYPT_PKCS8_IMPORT_PARAMS
     {
         [NativeTypeName("CRYPT_DIGEST_BLOB")]
-        public CRYPTOAPI_BLOB PrivateKey;
+        public CRYPT_DATA_BLOB PrivateKey;
 
         [NativeTypeName("PCRYPT_RESOLVE_HCRYPTPROV_FUNC")]
         public delegate* unmanaged<CRYPT_PRIVATE_KEY_INFO*, IntPtr*, void*, int> pResolvehCryptProvFunc;
@@ -19,7 +19,7 @@ namespace TerraFX.Interop
         public void* pVoidResolveFunc;
 
         [NativeTypeName("PCRYPT_DECRYPT_PRIVATE_KEY_FUNC")]
-        public delegate* unmanaged<CRYPT_ALGORITHM_IDENTIFIER, CRYPTOAPI_BLOB, byte*, uint*, void*, int> pDecryptPrivateKeyFunc;
+        public delegate* unmanaged<CRYPT_ALGORITHM_IDENTIFIER, CRYPT_DATA_BLOB, byte*, uint*, void*, int> pDecryptPrivateKeyFunc;
 
         [NativeTypeName("LPVOID")]
         public void* pVoidDecryptFunc;

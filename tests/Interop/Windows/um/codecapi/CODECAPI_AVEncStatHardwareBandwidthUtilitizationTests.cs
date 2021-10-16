@@ -17,7 +17,7 @@ namespace TerraFX.Interop.UnitTests
         [Test]
         public static void GuidOfTest()
         {
-            Assert.That(typeof(CODECAPI_AVEncStatHardwareBandwidthUtilitization).GUID, Is.EqualTo(STATIC_CODECAPI_AVEncStatHardwareBandwidthUtilitization));
+            Assert.That(typeof(CODECAPI_AVEncStatHardwareBandwidthUtilitization).GUID, Is.EqualTo(IID_CODECAPI_AVEncStatHardwareBandwidthUtilitization));
         }
 
         /// <summary>Validates that the <see cref="CODECAPI_AVEncStatHardwareBandwidthUtilitization" /> struct is blittable.</summary>

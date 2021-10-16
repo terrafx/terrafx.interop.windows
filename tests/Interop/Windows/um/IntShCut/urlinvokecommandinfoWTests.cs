@@ -9,34 +9,34 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="urlinvokecommandinfoW" /> struct.</summary>
-    public static unsafe partial class urlinvokecommandinfoWTests
+    /// <summary>Provides validation of the <see cref="URLINVOKECOMMANDINFOW" /> struct.</summary>
+    public static unsafe partial class URLINVOKECOMMANDINFOWTests
     {
-        /// <summary>Validates that the <see cref="urlinvokecommandinfoW" /> struct is blittable.</summary>
+        /// <summary>Validates that the <see cref="URLINVOKECOMMANDINFOW" /> struct is blittable.</summary>
         [Test]
         public static void IsBlittableTest()
         {
-            Assert.That(Marshal.SizeOf<urlinvokecommandinfoW>(), Is.EqualTo(sizeof(urlinvokecommandinfoW)));
+            Assert.That(Marshal.SizeOf<URLINVOKECOMMANDINFOW>(), Is.EqualTo(sizeof(URLINVOKECOMMANDINFOW)));
         }
 
-        /// <summary>Validates that the <see cref="urlinvokecommandinfoW" /> struct has the right <see cref="LayoutKind" />.</summary>
+        /// <summary>Validates that the <see cref="URLINVOKECOMMANDINFOW" /> struct has the right <see cref="LayoutKind" />.</summary>
         [Test]
         public static void IsLayoutSequentialTest()
         {
-            Assert.That(typeof(urlinvokecommandinfoW).IsLayoutSequential, Is.True);
+            Assert.That(typeof(URLINVOKECOMMANDINFOW).IsLayoutSequential, Is.True);
         }
 
-        /// <summary>Validates that the <see cref="urlinvokecommandinfoW" /> struct has the correct size.</summary>
+        /// <summary>Validates that the <see cref="URLINVOKECOMMANDINFOW" /> struct has the correct size.</summary>
         [Test]
         public static void SizeOfTest()
         {
             if (Environment.Is64BitProcess)
             {
-                Assert.That(sizeof(urlinvokecommandinfoW), Is.EqualTo(24));
+                Assert.That(sizeof(URLINVOKECOMMANDINFOW), Is.EqualTo(24));
             }
             else
             {
-                Assert.That(sizeof(urlinvokecommandinfoW), Is.EqualTo(16));
+                Assert.That(sizeof(URLINVOKECOMMANDINFOW), Is.EqualTo(16));
             }
         }
     }

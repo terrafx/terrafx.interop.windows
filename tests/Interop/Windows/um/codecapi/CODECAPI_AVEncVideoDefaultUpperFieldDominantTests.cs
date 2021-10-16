@@ -17,7 +17,7 @@ namespace TerraFX.Interop.UnitTests
         [Test]
         public static void GuidOfTest()
         {
-            Assert.That(typeof(CODECAPI_AVEncVideoDefaultUpperFieldDominant).GUID, Is.EqualTo(STATIC_CODECAPI_AVEncVideoDefaultUpperFieldDominant));
+            Assert.That(typeof(CODECAPI_AVEncVideoDefaultUpperFieldDominant).GUID, Is.EqualTo(IID_CODECAPI_AVEncVideoDefaultUpperFieldDominant));
         }
 
         /// <summary>Validates that the <see cref="CODECAPI_AVEncVideoDefaultUpperFieldDominant" /> struct is blittable.</summary>

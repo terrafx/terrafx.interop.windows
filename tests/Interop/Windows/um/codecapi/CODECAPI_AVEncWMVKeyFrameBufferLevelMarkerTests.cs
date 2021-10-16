@@ -17,7 +17,7 @@ namespace TerraFX.Interop.UnitTests
         [Test]
         public static void GuidOfTest()
         {
-            Assert.That(typeof(CODECAPI_AVEncWMVKeyFrameBufferLevelMarker).GUID, Is.EqualTo(STATIC_CODECAPI_AVEncWMVKeyFrameBufferLevelMarker));
+            Assert.That(typeof(CODECAPI_AVEncWMVKeyFrameBufferLevelMarker).GUID, Is.EqualTo(IID_CODECAPI_AVEncWMVKeyFrameBufferLevelMarker));
         }
 
         /// <summary>Validates that the <see cref="CODECAPI_AVEncWMVKeyFrameBufferLevelMarker" /> struct is blittable.</summary>

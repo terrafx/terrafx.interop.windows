@@ -11,6 +11,6 @@ namespace TerraFX.Interop
         public uint Size;
 
         [NativeTypeName("wireBRECORD *")]
-        public wireBRECORD** aRecord;
+        public _wireBRECORD** aRecord;
     }
 }

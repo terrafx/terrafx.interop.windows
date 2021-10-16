@@ -43,9 +43,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
         [return: NativeTypeName("HRESULT")]
-        public int GetAppInfo([NativeTypeName("PAPPINFODATA")] _AppInfoData* pai)
+        public int GetAppInfo([NativeTypeName("PAPPINFODATA")] APPINFODATA* pai)
         {
-            return ((delegate* unmanaged<IShellApp*, _AppInfoData*, int>)(lpVtbl[3]))((IShellApp*)Unsafe.AsPointer(ref this), pai);
+            return ((delegate* unmanaged<IShellApp*, APPINFODATA*, int>)(lpVtbl[3]))((IShellApp*)Unsafe.AsPointer(ref this), pai);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -59,17 +59,17 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
         [return: NativeTypeName("HRESULT")]
-        public int GetSlowAppInfo([NativeTypeName("PSLOWAPPINFO")] _tagSlowAppInfo* psaid)
+        public int GetSlowAppInfo([NativeTypeName("PSLOWAPPINFO")] SLOWAPPINFO* psaid)
         {
-            return ((delegate* unmanaged<IShellApp*, _tagSlowAppInfo*, int>)(lpVtbl[5]))((IShellApp*)Unsafe.AsPointer(ref this), psaid);
+            return ((delegate* unmanaged<IShellApp*, SLOWAPPINFO*, int>)(lpVtbl[5]))((IShellApp*)Unsafe.AsPointer(ref this), psaid);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
         [return: NativeTypeName("HRESULT")]
-        public int GetCachedSlowAppInfo([NativeTypeName("PSLOWAPPINFO")] _tagSlowAppInfo* psaid)
+        public int GetCachedSlowAppInfo([NativeTypeName("PSLOWAPPINFO")] SLOWAPPINFO* psaid)
         {
-            return ((delegate* unmanaged<IShellApp*, _tagSlowAppInfo*, int>)(lpVtbl[6]))((IShellApp*)Unsafe.AsPointer(ref this), psaid);
+            return ((delegate* unmanaged<IShellApp*, SLOWAPPINFO*, int>)(lpVtbl[6]))((IShellApp*)Unsafe.AsPointer(ref this), psaid);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

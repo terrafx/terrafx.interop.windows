@@ -19,6 +19,6 @@ namespace TerraFX.Interop
         public CRYPT_BIT_BLOB FailureInfo;
 
         [NativeTypeName("CRYPT_DER_BLOB")]
-        public CRYPTOAPI_BLOB ContentInfo;
+        public CRYPT_DATA_BLOB ContentInfo;
     }
 }

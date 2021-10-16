@@ -17,7 +17,7 @@ namespace TerraFX.Interop.UnitTests
         [Test]
         public static void GuidOfTest()
         {
-            Assert.That(typeof(CODECAPI_AVEncLowPowerEncoder).GUID, Is.EqualTo(STATIC_CODECAPI_AVEncLowPowerEncoder));
+            Assert.That(typeof(CODECAPI_AVEncLowPowerEncoder).GUID, Is.EqualTo(IID_CODECAPI_AVEncLowPowerEncoder));
         }
 
         /// <summary>Validates that the <see cref="CODECAPI_AVEncLowPowerEncoder" /> struct is blittable.</summary>

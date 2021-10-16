@@ -17,7 +17,7 @@ namespace TerraFX.Interop.UnitTests
         [Test]
         public static void GuidOfTest()
         {
-            Assert.That(typeof(CODECAPI_AVEncVideoNoOfFieldsToSkip).GUID, Is.EqualTo(STATIC_CODECAPI_AVEncVideoNoOfFieldsToSkip));
+            Assert.That(typeof(CODECAPI_AVEncVideoNoOfFieldsToSkip).GUID, Is.EqualTo(IID_CODECAPI_AVEncVideoNoOfFieldsToSkip));
         }
 
         /// <summary>Validates that the <see cref="CODECAPI_AVEncVideoNoOfFieldsToSkip" /> struct is blittable.</summary>

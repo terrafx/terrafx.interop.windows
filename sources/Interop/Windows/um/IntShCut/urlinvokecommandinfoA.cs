@@ -7,7 +7,7 @@ using System;
 
 namespace TerraFX.Interop
 {
-    public unsafe partial struct urlinvokecommandinfoA
+    public unsafe partial struct URLINVOKECOMMANDINFOA
     {
         [NativeTypeName("DWORD")]
         public uint dwcbSize;

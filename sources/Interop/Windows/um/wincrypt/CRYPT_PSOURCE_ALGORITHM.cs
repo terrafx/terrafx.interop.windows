@@ -10,7 +10,6 @@ namespace TerraFX.Interop
         [NativeTypeName("LPSTR")]
         public sbyte* pszObjId;
 
-        [NativeTypeName("CRYPT_DATA_BLOB")]
-        public CRYPTOAPI_BLOB EncodingParameters;
+        public CRYPT_DATA_BLOB EncodingParameters;
     }
 }

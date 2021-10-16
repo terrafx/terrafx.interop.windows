@@ -14,6 +14,6 @@ namespace TerraFX.Interop
         public uint dwValueType;
 
         [NativeTypeName("CERT_RDN_VALUE_BLOB")]
-        public CRYPTOAPI_BLOB Value;
+        public CRYPT_DATA_BLOB Value;
     }
 }

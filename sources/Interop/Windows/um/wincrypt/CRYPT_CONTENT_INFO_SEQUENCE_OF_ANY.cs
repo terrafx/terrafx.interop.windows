@@ -14,6 +14,6 @@ namespace TerraFX.Interop
         public uint cValue;
 
         [NativeTypeName("PCRYPT_DER_BLOB")]
-        public CRYPTOAPI_BLOB* rgValue;
+        public CRYPT_DATA_BLOB* rgValue;
     }
 }

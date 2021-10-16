@@ -17,7 +17,7 @@ namespace TerraFX.Interop.UnitTests
         [Test]
         public static void GuidOfTest()
         {
-            Assert.That(typeof(CODECAPI_AVDecVideoSoftwareDeinterlaceMode).GUID, Is.EqualTo(STATIC_CODECAPI_AVDecVideoSoftwareDeinterlaceMode));
+            Assert.That(typeof(CODECAPI_AVDecVideoSoftwareDeinterlaceMode).GUID, Is.EqualTo(IID_CODECAPI_AVDecVideoSoftwareDeinterlaceMode));
         }
 
         /// <summary>Validates that the <see cref="CODECAPI_AVDecVideoSoftwareDeinterlaceMode" /> struct is blittable.</summary>

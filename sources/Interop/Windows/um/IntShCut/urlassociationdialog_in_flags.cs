@@ -5,7 +5,7 @@
 
 namespace TerraFX.Interop
 {
-    public enum urlassociationdialog_in_flags
+    public enum URLASSOCIATIONDIALOG_IN_FLAGS
     {
         URLASSOCDLG_FL_USE_DEFAULT_NAME = 0x0001,
         URLASSOCDLG_FL_REGISTER_ASSOC = 0x0002,

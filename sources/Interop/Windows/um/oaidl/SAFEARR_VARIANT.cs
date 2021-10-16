@@ -11,6 +11,6 @@ namespace TerraFX.Interop
         public uint Size;
 
         [NativeTypeName("wireVARIANT *")]
-        public wireVARIANT** aVariant;
+        public _wireVARIANT** aVariant;
     }
 }

@@ -24,7 +24,7 @@ namespace TerraFX.Interop
         {
             get
             {
-                Unsafe.SkipInit(out HD_ITEMA value);
+                Unsafe.SkipInit(out HDITEMA value);
                 return (uint)((byte*)(&value.lParam) - ((byte*)(&value))) + (uint)(sizeof(nint));
             }
         }
@@ -34,7 +34,7 @@ namespace TerraFX.Interop
         {
             get
             {
-                Unsafe.SkipInit(out HD_ITEMW value);
+                Unsafe.SkipInit(out HDITEMW value);
                 return (uint)((byte*)(&value.lParam) - ((byte*)(&value))) + (uint)(sizeof(nint));
             }
         }
@@ -93,7 +93,7 @@ namespace TerraFX.Interop
         {
             get
             {
-                Unsafe.SkipInit(out TOOLINFOA value);
+                Unsafe.SkipInit(out TTTOOLINFOA value);
                 return (uint)((byte*)(&value.lpszText) - ((byte*)(&value))) + (uint)(sizeof(ushort*));
             }
         }
@@ -103,7 +103,7 @@ namespace TerraFX.Interop
         {
             get
             {
-                Unsafe.SkipInit(out TOOLINFOW value);
+                Unsafe.SkipInit(out TTTOOLINFOW value);
                 return (uint)((byte*)(&value.lpszText) - ((byte*)(&value))) + (uint)(sizeof(ushort*));
             }
         }
@@ -113,7 +113,7 @@ namespace TerraFX.Interop
         {
             get
             {
-                Unsafe.SkipInit(out TOOLINFOA value);
+                Unsafe.SkipInit(out TTTOOLINFOA value);
                 return (uint)((byte*)(&value.lParam) - ((byte*)(&value))) + (uint)(sizeof(nint));
             }
         }
@@ -123,7 +123,7 @@ namespace TerraFX.Interop
         {
             get
             {
-                Unsafe.SkipInit(out TOOLINFOW value);
+                Unsafe.SkipInit(out TTTOOLINFOW value);
                 return (uint)((byte*)(&value.lParam) - ((byte*)(&value))) + (uint)(sizeof(nint));
             }
         }
@@ -133,7 +133,7 @@ namespace TerraFX.Interop
         {
             get
             {
-                Unsafe.SkipInit(out TOOLINFOA value);
+                Unsafe.SkipInit(out TTTOOLINFOA value);
                 return (uint)((byte*)(&value.lpReserved) - ((byte*)(&value))) + (uint)(sizeof(void*));
             }
         }
@@ -143,7 +143,7 @@ namespace TerraFX.Interop
         {
             get
             {
-                Unsafe.SkipInit(out TOOLINFOW value);
+                Unsafe.SkipInit(out TTTOOLINFOW value);
                 return (uint)((byte*)(&value.lpReserved) - ((byte*)(&value))) + (uint)(sizeof(void*));
             }
         }

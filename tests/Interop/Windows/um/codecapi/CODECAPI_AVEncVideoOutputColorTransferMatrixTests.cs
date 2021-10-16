@@ -17,7 +17,7 @@ namespace TerraFX.Interop.UnitTests
         [Test]
         public static void GuidOfTest()
         {
-            Assert.That(typeof(CODECAPI_AVEncVideoOutputColorTransferMatrix).GUID, Is.EqualTo(STATIC_CODECAPI_AVEncVideoOutputColorTransferMatrix));
+            Assert.That(typeof(CODECAPI_AVEncVideoOutputColorTransferMatrix).GUID, Is.EqualTo(IID_CODECAPI_AVEncVideoOutputColorTransferMatrix));
         }
 
         /// <summary>Validates that the <see cref="CODECAPI_AVEncVideoOutputColorTransferMatrix" /> struct is blittable.</summary>

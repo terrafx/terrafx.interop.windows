@@ -13,7 +13,6 @@ namespace TerraFX.Interop
         [NativeTypeName("ULONG")]
         public uint signerIndex;
 
-        [NativeTypeName("CRYPT_DATA_BLOB")]
-        public CRYPTOAPI_BLOB sealTimeStampToken;
+        public CRYPT_DATA_BLOB sealTimeStampToken;
     }
 }

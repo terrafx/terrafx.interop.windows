@@ -13,7 +13,7 @@ namespace TerraFX.Interop
         public CRYPT_ALGORITHM_IDENTIFIER SignatureAlgorithm;
 
         [NativeTypeName("CERT_NAME_BLOB")]
-        public CRYPTOAPI_BLOB Issuer;
+        public CRYPT_DATA_BLOB Issuer;
 
         public FILETIME ThisUpdate;
 

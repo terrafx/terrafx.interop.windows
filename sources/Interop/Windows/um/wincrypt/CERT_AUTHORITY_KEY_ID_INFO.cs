@@ -7,13 +7,12 @@ namespace TerraFX.Interop
 {
     public partial struct CERT_AUTHORITY_KEY_ID_INFO
     {
-        [NativeTypeName("CRYPT_DATA_BLOB")]
-        public CRYPTOAPI_BLOB KeyId;
+        public CRYPT_DATA_BLOB KeyId;
 
         [NativeTypeName("CERT_NAME_BLOB")]
-        public CRYPTOAPI_BLOB CertIssuer;
+        public CRYPT_DATA_BLOB CertIssuer;
 
         [NativeTypeName("CRYPT_INTEGER_BLOB")]
-        public CRYPTOAPI_BLOB CertSerialNumber;
+        public CRYPT_DATA_BLOB CertSerialNumber;
     }
 }

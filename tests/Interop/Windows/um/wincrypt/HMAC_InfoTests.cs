@@ -9,34 +9,34 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="HMAC_Info" /> struct.</summary>
-    public static unsafe partial class HMAC_InfoTests
+    /// <summary>Provides validation of the <see cref="HMAC_INFO" /> struct.</summary>
+    public static unsafe partial class HMAC_INFOTests
     {
-        /// <summary>Validates that the <see cref="HMAC_Info" /> struct is blittable.</summary>
+        /// <summary>Validates that the <see cref="HMAC_INFO" /> struct is blittable.</summary>
         [Test]
         public static void IsBlittableTest()
         {
-            Assert.That(Marshal.SizeOf<HMAC_Info>(), Is.EqualTo(sizeof(HMAC_Info)));
+            Assert.That(Marshal.SizeOf<HMAC_INFO>(), Is.EqualTo(sizeof(HMAC_INFO)));
         }
 
-        /// <summary>Validates that the <see cref="HMAC_Info" /> struct has the right <see cref="LayoutKind" />.</summary>
+        /// <summary>Validates that the <see cref="HMAC_INFO" /> struct has the right <see cref="LayoutKind" />.</summary>
         [Test]
         public static void IsLayoutSequentialTest()
         {
-            Assert.That(typeof(HMAC_Info).IsLayoutSequential, Is.True);
+            Assert.That(typeof(HMAC_INFO).IsLayoutSequential, Is.True);
         }
 
-        /// <summary>Validates that the <see cref="HMAC_Info" /> struct has the correct size.</summary>
+        /// <summary>Validates that the <see cref="HMAC_INFO" /> struct has the correct size.</summary>
         [Test]
         public static void SizeOfTest()
         {
             if (Environment.Is64BitProcess)
             {
-                Assert.That(sizeof(HMAC_Info), Is.EqualTo(40));
+                Assert.That(sizeof(HMAC_INFO), Is.EqualTo(40));
             }
             else
             {
-                Assert.That(sizeof(HMAC_Info), Is.EqualTo(20));
+                Assert.That(sizeof(HMAC_INFO), Is.EqualTo(20));
             }
         }
     }

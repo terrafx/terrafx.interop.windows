@@ -17,7 +17,7 @@ namespace TerraFX.Interop.UnitTests
         [Test]
         public static void GuidOfTest()
         {
-            Assert.That(typeof(CODECAPI_AVEncMPVUseConcealmentMotionVectors).GUID, Is.EqualTo(STATIC_CODECAPI_AVEncMPVUseConcealmentMotionVectors));
+            Assert.That(typeof(CODECAPI_AVEncMPVUseConcealmentMotionVectors).GUID, Is.EqualTo(IID_CODECAPI_AVEncMPVUseConcealmentMotionVectors));
         }
 
         /// <summary>Validates that the <see cref="CODECAPI_AVEncMPVUseConcealmentMotionVectors" /> struct is blittable.</summary>

@@ -8,9 +8,9 @@ namespace TerraFX.Interop
     public partial struct CERT_PAIR
     {
         [NativeTypeName("CERT_BLOB")]
-        public CRYPTOAPI_BLOB Forward;
+        public CRYPT_DATA_BLOB Forward;
 
         [NativeTypeName("CERT_BLOB")]
-        public CRYPTOAPI_BLOB Reverse;
+        public CRYPT_DATA_BLOB Reverse;
     }
 }

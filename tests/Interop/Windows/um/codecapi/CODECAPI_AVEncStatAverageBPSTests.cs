@@ -17,7 +17,7 @@ namespace TerraFX.Interop.UnitTests
         [Test]
         public static void GuidOfTest()
         {
-            Assert.That(typeof(CODECAPI_AVEncStatAverageBPS).GUID, Is.EqualTo(STATIC_CODECAPI_AVEncStatAverageBPS));
+            Assert.That(typeof(CODECAPI_AVEncStatAverageBPS).GUID, Is.EqualTo(IID_CODECAPI_AVEncStatAverageBPS));
         }
 
         /// <summary>Validates that the <see cref="CODECAPI_AVEncStatAverageBPS" /> struct is blittable.</summary>

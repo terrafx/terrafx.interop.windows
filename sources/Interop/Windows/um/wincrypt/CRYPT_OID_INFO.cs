@@ -25,8 +25,7 @@ namespace TerraFX.Interop
         [NativeTypeName("_CRYPT_OID_INFO::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/wincrypt.h:6206:5)")]
         public _Anonymous_e__Union Anonymous;
 
-        [NativeTypeName("CRYPT_DATA_BLOB")]
-        public CRYPTOAPI_BLOB ExtraInfo;
+        public CRYPT_DATA_BLOB ExtraInfo;
 
         public ref uint dwValue
         {

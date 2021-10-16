@@ -7,8 +7,7 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct CTL_ENTRY
     {
-        [NativeTypeName("CRYPT_DATA_BLOB")]
-        public CRYPTOAPI_BLOB SubjectIdentifier;
+        public CRYPT_DATA_BLOB SubjectIdentifier;
 
         [NativeTypeName("DWORD")]
         public uint cAttribute;

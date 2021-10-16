@@ -17,7 +17,7 @@ namespace TerraFX.Interop.UnitTests
         [Test]
         public static void GuidOfTest()
         {
-            Assert.That(typeof(CODECAPI_AVEncStatCommonCompletedPasses).GUID, Is.EqualTo(STATIC_CODECAPI_AVEncStatCommonCompletedPasses));
+            Assert.That(typeof(CODECAPI_AVEncStatCommonCompletedPasses).GUID, Is.EqualTo(IID_CODECAPI_AVEncStatCommonCompletedPasses));
         }
 
         /// <summary>Validates that the <see cref="CODECAPI_AVEncStatCommonCompletedPasses" /> struct is blittable.</summary>

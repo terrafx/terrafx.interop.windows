@@ -17,7 +17,7 @@ namespace TerraFX.Interop.UnitTests
         [Test]
         public static void GuidOfTest()
         {
-            Assert.That(typeof(CODECAPI_AVEncCommonTranscodeEncodingProfile).GUID, Is.EqualTo(STATIC_CODECAPI_AVEncCommonTranscodeEncodingProfile));
+            Assert.That(typeof(CODECAPI_AVEncCommonTranscodeEncodingProfile).GUID, Is.EqualTo(IID_CODECAPI_AVEncCommonTranscodeEncodingProfile));
         }
 
         /// <summary>Validates that the <see cref="CODECAPI_AVEncCommonTranscodeEncodingProfile" /> struct is blittable.</summary>

@@ -5,7 +5,7 @@
 
 namespace TerraFX.Interop
 {
-    public partial struct TouchPredictionParameters
+    public partial struct TOUCHPREDICTIONPARAMETERS
     {
         [NativeTypeName("UINT")]
         public uint cbSize;

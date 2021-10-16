@@ -5,7 +5,7 @@
 
 namespace TerraFX.Interop
 {
-    public enum translateurl_in_flags
+    public enum TRANSLATEURL_IN_FLAGS
     {
         TRANSLATEURL_FL_GUESS_PROTOCOL = 0x0001,
         TRANSLATEURL_FL_USE_DEFAULT_PROTOCOL = 0x0002,

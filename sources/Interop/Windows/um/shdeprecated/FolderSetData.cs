@@ -7,7 +7,7 @@ using System;
 
 namespace TerraFX.Interop
 {
-    public partial struct FolderSetData
+    public partial struct FOLDERSETDATA
     {
         public FOLDERSETTINGS _fs;
 

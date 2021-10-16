@@ -17,7 +17,7 @@ namespace TerraFX.Interop.UnitTests
         [Test]
         public static void GuidOfTest()
         {
-            Assert.That(typeof(CODECAPI_AVEncDDSurround90DegreeePhaseShift).GUID, Is.EqualTo(STATIC_CODECAPI_AVEncDDSurround90DegreeePhaseShift));
+            Assert.That(typeof(CODECAPI_AVEncDDSurround90DegreeePhaseShift).GUID, Is.EqualTo(IID_CODECAPI_AVEncDDSurround90DegreeePhaseShift));
         }
 
         /// <summary>Validates that the <see cref="CODECAPI_AVEncDDSurround90DegreeePhaseShift" /> struct is blittable.</summary>

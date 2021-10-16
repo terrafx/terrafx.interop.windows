@@ -17,7 +17,7 @@ namespace TerraFX.Interop.UnitTests
         [Test]
         public static void GuidOfTest()
         {
-            Assert.That(typeof(CODECAPI_AVEncMPAPrivateUserBit).GUID, Is.EqualTo(STATIC_CODECAPI_AVEncMPAPrivateUserBit));
+            Assert.That(typeof(CODECAPI_AVEncMPAPrivateUserBit).GUID, Is.EqualTo(IID_CODECAPI_AVEncMPAPrivateUserBit));
         }
 
         /// <summary>Validates that the <see cref="CODECAPI_AVEncMPAPrivateUserBit" /> struct is blittable.</summary>

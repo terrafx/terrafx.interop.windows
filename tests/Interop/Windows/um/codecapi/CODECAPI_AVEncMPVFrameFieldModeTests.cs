@@ -17,7 +17,7 @@ namespace TerraFX.Interop.UnitTests
         [Test]
         public static void GuidOfTest()
         {
-            Assert.That(typeof(CODECAPI_AVEncMPVFrameFieldMode).GUID, Is.EqualTo(STATIC_CODECAPI_AVEncMPVFrameFieldMode));
+            Assert.That(typeof(CODECAPI_AVEncMPVFrameFieldMode).GUID, Is.EqualTo(IID_CODECAPI_AVEncMPVFrameFieldMode));
         }
 
         /// <summary>Validates that the <see cref="CODECAPI_AVEncMPVFrameFieldMode" /> struct is blittable.</summary>

@@ -8,7 +8,7 @@ namespace TerraFX.Interop
     public unsafe partial struct CRL_ENTRY
     {
         [NativeTypeName("CRYPT_INTEGER_BLOB")]
-        public CRYPTOAPI_BLOB SerialNumber;
+        public CRYPT_DATA_BLOB SerialNumber;
 
         public FILETIME RevocationDate;
 

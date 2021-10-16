@@ -12,8 +12,7 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint cbSize;
 
-        [NativeTypeName("CRYPT_DATA_BLOB")]
-        public CRYPTOAPI_BLOB ListIdentifier;
+        public CRYPT_DATA_BLOB ListIdentifier;
 
         [NativeTypeName("DWORD")]
         public uint cCtlStore;

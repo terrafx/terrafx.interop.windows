@@ -17,7 +17,7 @@ namespace TerraFX.Interop.UnitTests
         [Test]
         public static void GuidOfTest()
         {
-            Assert.That(typeof(CODECAPI_AVDecVideoThumbnailGenerationMode).GUID, Is.EqualTo(STATIC_CODECAPI_AVDecVideoThumbnailGenerationMode));
+            Assert.That(typeof(CODECAPI_AVDecVideoThumbnailGenerationMode).GUID, Is.EqualTo(IID_CODECAPI_AVDecVideoThumbnailGenerationMode));
         }
 
         /// <summary>Validates that the <see cref="CODECAPI_AVDecVideoThumbnailGenerationMode" /> struct is blittable.</summary>

@@ -17,7 +17,7 @@ namespace TerraFX.Interop.UnitTests
         [Test]
         public static void GuidOfTest()
         {
-            Assert.That(typeof(CODECAPI_GUID_AVDecAudioInputWMAPro).GUID, Is.EqualTo(STATIC_CODECAPI_GUID_AVDecAudioInputWMAPro));
+            Assert.That(typeof(CODECAPI_GUID_AVDecAudioInputWMAPro).GUID, Is.EqualTo(IID_CODECAPI_GUID_AVDecAudioInputWMAPro));
         }
 
         /// <summary>Validates that the <see cref="CODECAPI_GUID_AVDecAudioInputWMAPro" /> struct is blittable.</summary>

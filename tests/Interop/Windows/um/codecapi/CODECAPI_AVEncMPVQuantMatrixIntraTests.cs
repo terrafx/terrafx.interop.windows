@@ -17,7 +17,7 @@ namespace TerraFX.Interop.UnitTests
         [Test]
         public static void GuidOfTest()
         {
-            Assert.That(typeof(CODECAPI_AVEncMPVQuantMatrixIntra).GUID, Is.EqualTo(STATIC_CODECAPI_AVEncMPVQuantMatrixIntra));
+            Assert.That(typeof(CODECAPI_AVEncMPVQuantMatrixIntra).GUID, Is.EqualTo(IID_CODECAPI_AVEncMPVQuantMatrixIntra));
         }
 
         /// <summary>Validates that the <see cref="CODECAPI_AVEncMPVQuantMatrixIntra" /> struct is blittable.</summary>

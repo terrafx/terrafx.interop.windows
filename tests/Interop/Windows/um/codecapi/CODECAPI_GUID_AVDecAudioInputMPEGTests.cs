@@ -17,7 +17,7 @@ namespace TerraFX.Interop.UnitTests
         [Test]
         public static void GuidOfTest()
         {
-            Assert.That(typeof(CODECAPI_GUID_AVDecAudioInputMPEG).GUID, Is.EqualTo(STATIC_CODECAPI_GUID_AVDecAudioInputMPEG));
+            Assert.That(typeof(CODECAPI_GUID_AVDecAudioInputMPEG).GUID, Is.EqualTo(IID_CODECAPI_GUID_AVDecAudioInputMPEG));
         }
 
         /// <summary>Validates that the <see cref="CODECAPI_GUID_AVDecAudioInputMPEG" /> struct is blittable.</summary>

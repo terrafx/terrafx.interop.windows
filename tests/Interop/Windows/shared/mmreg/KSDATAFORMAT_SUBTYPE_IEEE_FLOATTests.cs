@@ -17,7 +17,7 @@ namespace TerraFX.Interop.UnitTests
         [Test]
         public static void GuidOfTest()
         {
-            Assert.That(typeof(KSDATAFORMAT_SUBTYPE_IEEE_FLOAT).GUID, Is.EqualTo(STATIC_KSDATAFORMAT_SUBTYPE_IEEE_FLOAT));
+            Assert.That(typeof(KSDATAFORMAT_SUBTYPE_IEEE_FLOAT).GUID, Is.EqualTo(IID_KSDATAFORMAT_SUBTYPE_IEEE_FLOAT));
         }
 
         /// <summary>Validates that the <see cref="KSDATAFORMAT_SUBTYPE_IEEE_FLOAT" /> struct is blittable.</summary>

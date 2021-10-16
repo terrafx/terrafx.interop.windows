@@ -1,10 +1,6 @@
 @../../settings.rsp
 @../../remap.rsp
 --exclude
-CLSID_FXEcho
-CLSID_FXEQ
-CLSID_FXMasteringLimiter
-CLSID_FXReverb
 DEFAULT
 FX_API_
 --file

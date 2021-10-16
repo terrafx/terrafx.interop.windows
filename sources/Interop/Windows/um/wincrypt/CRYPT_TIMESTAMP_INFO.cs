@@ -16,10 +16,10 @@ namespace TerraFX.Interop
         public CRYPT_ALGORITHM_IDENTIFIER HashAlgorithm;
 
         [NativeTypeName("CRYPT_DER_BLOB")]
-        public CRYPTOAPI_BLOB HashedMessage;
+        public CRYPT_DATA_BLOB HashedMessage;
 
         [NativeTypeName("CRYPT_INTEGER_BLOB")]
-        public CRYPTOAPI_BLOB SerialNumber;
+        public CRYPT_DATA_BLOB SerialNumber;
 
         public FILETIME ftTime;
 
@@ -30,10 +30,10 @@ namespace TerraFX.Interop
         public int fOrdering;
 
         [NativeTypeName("CRYPT_DER_BLOB")]
-        public CRYPTOAPI_BLOB Nonce;
+        public CRYPT_DATA_BLOB Nonce;
 
         [NativeTypeName("CRYPT_DER_BLOB")]
-        public CRYPTOAPI_BLOB Tsa;
+        public CRYPT_DATA_BLOB Tsa;
 
         [NativeTypeName("DWORD")]
         public uint cExtension;

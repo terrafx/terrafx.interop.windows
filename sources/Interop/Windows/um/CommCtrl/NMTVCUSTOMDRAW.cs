@@ -7,8 +7,7 @@ namespace TerraFX.Interop
 {
     public partial struct NMTVCUSTOMDRAW
     {
-        [NativeTypeName("NMCUSTOMDRAW")]
-        public NMCUSTOMDRAWINFO nmcd;
+        public NMCUSTOMDRAW nmcd;
 
         [NativeTypeName("COLORREF")]
         public uint clrText;

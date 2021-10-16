@@ -10,12 +10,12 @@ namespace TerraFX.Interop
         public CRYPT_ALGORITHM_IDENTIFIER HashAlgorithm;
 
         [NativeTypeName("CRYPT_HASH_BLOB")]
-        public CRYPTOAPI_BLOB IssuerNameHash;
+        public CRYPT_DATA_BLOB IssuerNameHash;
 
         [NativeTypeName("CRYPT_HASH_BLOB")]
-        public CRYPTOAPI_BLOB IssuerKeyHash;
+        public CRYPT_DATA_BLOB IssuerKeyHash;
 
         [NativeTypeName("CRYPT_INTEGER_BLOB")]
-        public CRYPTOAPI_BLOB SerialNumber;
+        public CRYPT_DATA_BLOB SerialNumber;
     }
 }

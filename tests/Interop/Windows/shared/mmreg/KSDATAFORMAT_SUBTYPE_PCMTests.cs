@@ -17,7 +17,7 @@ namespace TerraFX.Interop.UnitTests
         [Test]
         public static void GuidOfTest()
         {
-            Assert.That(typeof(KSDATAFORMAT_SUBTYPE_PCM).GUID, Is.EqualTo(STATIC_KSDATAFORMAT_SUBTYPE_PCM));
+            Assert.That(typeof(KSDATAFORMAT_SUBTYPE_PCM).GUID, Is.EqualTo(IID_KSDATAFORMAT_SUBTYPE_PCM));
         }
 
         /// <summary>Validates that the <see cref="KSDATAFORMAT_SUBTYPE_PCM" /> struct is blittable.</summary>

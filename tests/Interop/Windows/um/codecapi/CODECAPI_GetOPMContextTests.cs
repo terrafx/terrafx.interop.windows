@@ -17,7 +17,7 @@ namespace TerraFX.Interop.UnitTests
         [Test]
         public static void GuidOfTest()
         {
-            Assert.That(typeof(CODECAPI_GetOPMContext).GUID, Is.EqualTo(STATIC_CODECAPI_GetOPMContext));
+            Assert.That(typeof(CODECAPI_GetOPMContext).GUID, Is.EqualTo(IID_CODECAPI_GetOPMContext));
         }
 
         /// <summary>Validates that the <see cref="CODECAPI_GetOPMContext" /> struct is blittable.</summary>

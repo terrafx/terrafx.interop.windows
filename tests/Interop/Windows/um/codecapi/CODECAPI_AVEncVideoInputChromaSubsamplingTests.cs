@@ -17,7 +17,7 @@ namespace TerraFX.Interop.UnitTests
         [Test]
         public static void GuidOfTest()
         {
-            Assert.That(typeof(CODECAPI_AVEncVideoInputChromaSubsampling).GUID, Is.EqualTo(STATIC_CODECAPI_AVEncVideoInputChromaSubsampling));
+            Assert.That(typeof(CODECAPI_AVEncVideoInputChromaSubsampling).GUID, Is.EqualTo(IID_CODECAPI_AVEncVideoInputChromaSubsampling));
         }
 
         /// <summary>Validates that the <see cref="CODECAPI_AVEncVideoInputChromaSubsampling" /> struct is blittable.</summary>

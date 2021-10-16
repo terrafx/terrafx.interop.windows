@@ -13,7 +13,6 @@ namespace TerraFX.Interop
 
         public int iButton;
 
-        [NativeTypeName("HDITEMA *")]
-        public HD_ITEMA* pitem;
+        public HDITEMA* pitem;
     }
 }

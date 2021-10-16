@@ -17,7 +17,7 @@ namespace TerraFX.Interop.UnitTests
         [Test]
         public static void GuidOfTest()
         {
-            Assert.That(typeof(CODECAPI_AVEncStatWMVDecoderComplexityProfile).GUID, Is.EqualTo(STATIC_CODECAPI_AVEncStatWMVDecoderComplexityProfile));
+            Assert.That(typeof(CODECAPI_AVEncStatWMVDecoderComplexityProfile).GUID, Is.EqualTo(IID_CODECAPI_AVEncStatWMVDecoderComplexityProfile));
         }
 
         /// <summary>Validates that the <see cref="CODECAPI_AVEncStatWMVDecoderComplexityProfile" /> struct is blittable.</summary>

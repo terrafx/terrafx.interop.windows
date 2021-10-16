@@ -8,7 +8,7 @@ namespace TerraFX.Interop
     public partial struct OCSP_BASIC_SIGNED_RESPONSE_INFO
     {
         [NativeTypeName("CRYPT_DER_BLOB")]
-        public CRYPTOAPI_BLOB ToBeSigned;
+        public CRYPT_DATA_BLOB ToBeSigned;
 
         public OCSP_SIGNATURE_INFO SignatureInfo;
     }
