@@ -1,0 +1,22 @@
+@../../settings.rsp
+@../../remap.rsp
+--exclude
+EIRESID
+LWSTDAPIV_
+NetAddr_DisplayErrorTip
+NetAddr_GetAddress
+NetAddr_GetAllowType
+NetAddr_SetAllowType
+SHDOCAPI_
+SHSTDAPI_
+--file
+um-shellapi.h
+--output
+../../../sources/Interop/Windows/um/shellapi
+--test-output
+../../../tests/Interop/Windows/um/shellapi
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/shellapi.h
+--with-librarypath
+*=Shell32
+ShellMessageBox=Shlwapi

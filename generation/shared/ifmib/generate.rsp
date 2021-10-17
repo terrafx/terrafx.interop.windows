@@ -1,0 +1,12 @@
+@../../settings.rsp
+@../../remap.rsp
+--exclude
+SIZEOF_IFTABLE
+--file
+shared-ifmib.h
+--output
+../../../sources/Interop/Windows/shared/ifmib
+--test-output
+../../../tests/Interop/Windows/shared/ifmib
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/shared/ifmib.h

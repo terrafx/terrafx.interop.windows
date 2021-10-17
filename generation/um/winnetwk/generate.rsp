@@ -1,0 +1,12 @@
+@../../settings.rsp
+@../../remap.rsp
+--file
+um-winnetwk.h
+--output
+../../../sources/Interop/Windows/um/winnetwk
+--test-output
+../../../tests/Interop/Windows/um/winnetwk
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winnetwk.h
+--with-librarypath
+*=Mpr

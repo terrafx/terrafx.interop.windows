@@ -1,0 +1,22 @@
+@../../settings.rsp
+@../../remap.rsp
+--exclude
+ANY_SIZE
+ICMP4_ISTYPEERROR
+ICMP6_ISTYPEERROR
+ICMP6_ISTYPEINFORMATIONAL
+SIZEOF_IPADDRTABLE
+SIZEOF_IPFORWARDTABLE
+SIZEOF_IPNETTABLE
+SIZEOF_MCAST_IF_TABLE
+SIZEOF_MIB_MFE
+SIZEOF_MIB_MFE_STATS
+SIZEOF_MIB_MFE_STATS_EX
+--file
+shared-ipmib.h
+--output
+../../../sources/Interop/Windows/shared/ipmib
+--test-output
+../../../tests/Interop/Windows/shared/ipmib
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/shared/ipmib.h
