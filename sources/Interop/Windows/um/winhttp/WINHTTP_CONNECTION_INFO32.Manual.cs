@@ -8,18 +8,13 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop
 {
     [StructLayout(LayoutKind.Sequential, Pack = 4)]
-    public unsafe partial struct WINHTTP_REQUEST_STATS
+    public partial struct WINHTTP_CONNECTION_INFO32
     {
-        [NativeTypeName("ULONGLONG")]
-        public ulong ullFlags;
+        [NativeTypeName("DWORD")]
+        public uint cbSize;
 
-        [NativeTypeName("ULONG")]
-        public uint ulIndex;
+        public SOCKADDR_STORAGE LocalAddress;
 
-        [NativeTypeName("ULONG")]
-        public uint cStats;
-
-        [NativeTypeName("ULONGLONG [32]")]
-        public fixed ulong rgullStats[32];
+        public SOCKADDR_STORAGE RemoteAddress;
     }
 }

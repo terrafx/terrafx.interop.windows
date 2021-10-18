@@ -1,5 +1,10 @@
 @../../settings.rsp
 @../../remap.rsp
+--exclude
+WINHTTP_CONNECTION_INFO
+WINHTTP_REQUEST_STATS
+WINHTTP_REQUEST_TIMES
+WINHTTP_RESOLVER_CACHE_CONFIG
 --file
 um-winhttp.h
 --output

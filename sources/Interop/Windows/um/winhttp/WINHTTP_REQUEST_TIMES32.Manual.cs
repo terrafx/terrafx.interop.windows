@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop
 {
     [StructLayout(LayoutKind.Sequential, Pack = 4)]
-    public unsafe partial struct WINHTTP_REQUEST_TIMES
+    public unsafe partial struct WINHTTP_REQUEST_TIMES32
     {
         [NativeTypeName("ULONG")]
         public uint cTimes;

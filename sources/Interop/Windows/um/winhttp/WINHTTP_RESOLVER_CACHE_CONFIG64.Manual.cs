@@ -3,12 +3,9 @@
 // Ported from um/winhttp.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System.Runtime.InteropServices;
-
 namespace TerraFX.Interop
 {
-    [StructLayout(LayoutKind.Sequential, Pack = 4)]
-    public partial struct WINHTTP_RESOLVER_CACHE_CONFIG
+    public partial struct WINHTTP_RESOLVER_CACHE_CONFIG64
     {
         [NativeTypeName("ULONG")]
         public uint ulMaxResolverCacheEntries;
