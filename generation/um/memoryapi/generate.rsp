@@ -1,0 +1,16 @@
+@../../settings.rsp
+@../../remap.rsp
+--file
+um-memoryapi.h
+--output
+../../../sources/Interop/Windows/um/memoryapi
+--test-output
+../../../tests/Interop/Windows/um/memoryapi
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/memoryapi.h
+--with-librarypath
+*=kernel32
+MapViewOfFileNuma2=kernelbase
+QueryVirtualMemoryInformation=kernelbase
+SetProcessValidCallTargets=kernelbase
+UnmapViewOfFile2=kernelbase

@@ -2498,6 +2498,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "winreg", "winreg", "{B8BC58
 		generation\um\winreg\um-winreg.h = generation\um\winreg\um-winreg.h
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "memoryapi", "memoryapi", "{AB0D7809-3143-4150-A349-9C30254732EC}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\memoryapi\generate.rsp = generation\um\memoryapi\generate.rsp
+		generation\um\memoryapi\header.txt = generation\um\memoryapi\header.txt
+		generation\um\memoryapi\um-memoryapi.h = generation\um\memoryapi\um-memoryapi.h
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -2883,6 +2890,7 @@ Global
 		{99E9BDC1-955C-4E77-B973-C4D095D7B90E} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{293CE981-D0E6-48D8-8820-D8A127BA8E2E} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{B8BC586E-DE35-41E1-8348-1F910E2BB874} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{AB0D7809-3143-4150-A349-9C30254732EC} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2FE36DF8-2D9C-4F20-8787-45DC74B57461}
