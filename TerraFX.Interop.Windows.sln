@@ -2568,6 +2568,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "windowsx", "windowsx", "{60
 		generation\shared\windowsx\shared-windowsx.h = generation\shared\windowsx\shared-windowsx.h
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "guiddef", "guiddef", "{83EFD547-6690-4EA0-A18B-F5B956681D66}"
+	ProjectSection(SolutionItems) = preProject
+		generation\shared\guiddef\generate.rsp = generation\shared\guiddef\generate.rsp
+		generation\shared\guiddef\header.txt = generation\shared\guiddef\header.txt
+		generation\shared\guiddef\shared-guiddef.h = generation\shared\guiddef\shared-guiddef.h
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -2963,6 +2970,7 @@ Global
 		{90EB2997-5CB8-45B3-8F8A-B66E94518572} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{47FC9C6E-E5AB-4049-BC78-85608FC4F73E} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{604816B6-6D2A-4331-9BD2-BB094AC1429A} = {F9716DD9-2967-4295-AC71-F1FD5A9EEFEF}
+		{83EFD547-6690-4EA0-A18B-F5B956681D66} = {F9716DD9-2967-4295-AC71-F1FD5A9EEFEF}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2FE36DF8-2D9C-4F20-8787-45DC74B57461}
