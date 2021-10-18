@@ -2533,6 +2533,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ktmtypes", "ktmtypes", "{C6
 		generation\shared\ktmtypes\shared-ktmtypes.h = generation\shared\ktmtypes\shared-ktmtypes.h
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "timeapi", "timeapi", "{022CC88E-2252-4732-AFF1-A4F98E5FFAD0}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\timeapi\generate.rsp = generation\um\timeapi\generate.rsp
+		generation\um\timeapi\header.txt = generation\um\timeapi\header.txt
+		generation\um\timeapi\um-timeapi.h = generation\um\timeapi\um-timeapi.h
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -2923,6 +2930,7 @@ Global
 		{D85F0E20-29C5-4DFF-BA97-74D4BC30FE45} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{F062F860-49CB-4468-A677-8498182C69D4} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{C646D783-DA76-4813-A21F-68226F01874B} = {F9716DD9-2967-4295-AC71-F1FD5A9EEFEF}
+		{022CC88E-2252-4732-AFF1-A4F98E5FFAD0} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2FE36DF8-2D9C-4F20-8787-45DC74B57461}
