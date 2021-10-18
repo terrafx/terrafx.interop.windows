@@ -1,6 +1,7 @@
 @../../settings.rsp
 @../../remap.rsp
 --exclude
+IID_IQueryAssociations
 IntlStrEqNA
 IntlStrEqNIA
 IntlStrEqNIW

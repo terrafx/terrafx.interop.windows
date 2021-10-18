@@ -2363,28 +2363,5 @@ namespace TerraFX.Interop
 
         [NativeTypeName("#define DLLVER_QFE_MASK 0x000000000000FFFF")]
         public const int DLLVER_QFE_MASK = 0x000000000000FFFF;
-
-        public static ref readonly Guid IID_IQueryAssociations
-        {
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
-                    0x90, 0xA5, 0x6C, 0xC4,
-                    0x3F, 0x3C,
-                    0xD2, 0x11,
-                    0xBE,
-                    0xE6,
-                    0x00,
-                    0x00,
-                    0xF8,
-                    0x05,
-                    0xCA,
-                    0x57
-                };
-
-                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-            }
-        }
     }
 }

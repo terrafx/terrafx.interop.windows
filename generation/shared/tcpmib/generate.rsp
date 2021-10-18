@@ -1,0 +1,20 @@
+@../../settings.rsp
+@../../remap.rsp
+--exclude
+ANY_SIZE
+SIZEOF_TCP6TABLE
+SIZEOF_TCP6TABLE2
+SIZEOF_TCP6TABLE_OWNER_MODULE
+SIZEOF_TCP6TABLE_OWNER_PID
+SIZEOF_TCPTABLE
+SIZEOF_TCPTABLE2
+SIZEOF_TCPTABLE_OWNER_MODULE
+SIZEOF_TCPTABLE_OWNER_PID
+--file
+shared-tcpmib.h
+--output
+../../../sources/Interop/Windows/shared/tcpmib
+--test-output
+../../../tests/Interop/Windows/shared/tcpmib
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/shared/tcpmib.h

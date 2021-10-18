@@ -1,0 +1,36 @@
+// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+
+// Ported from um/ShlObj_core.h in the Windows SDK for Windows 10.0.20348.0
+// Original source is Copyright © Microsoft. All rights reserved.
+
+using System;
+
+namespace TerraFX.Interop
+{
+    public unsafe partial struct DEFCONTEXTMENU
+    {
+        [NativeTypeName("HWND")]
+        public IntPtr hwnd;
+
+        public IContextMenuCB* pcmcb;
+
+        [NativeTypeName("LPCITEMIDLIST")]
+        public ITEMIDLIST* pidlFolder;
+
+        public IShellFolder* psf;
+
+        [NativeTypeName("UINT")]
+        public uint cidl;
+
+        [NativeTypeName("LPCITEMIDLIST *")]
+        public ITEMIDLIST** apidl;
+
+        public IUnknown* punkAssociationInfo;
+
+        [NativeTypeName("UINT")]
+        public uint cKeys;
+
+        [NativeTypeName("const HKEY *")]
+        public IntPtr* aKeys;
+    }
+}

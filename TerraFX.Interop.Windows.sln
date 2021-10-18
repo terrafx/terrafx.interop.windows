@@ -2323,6 +2323,167 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tpcshrd", "tpcshrd", "{3663
 		generation\um\tpcshrd\um-tpcshrd.h = generation\um\tpcshrd\um-tpcshrd.h
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ShlDisp", "ShlDisp", "{1EC85BBE-58B2-47B5-B6A5-1AC5EDA024CF}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\ShlDisp\generate.rsp = generation\um\ShlDisp\generate.rsp
+		generation\um\ShlDisp\header.txt = generation\um\ShlDisp\header.txt
+		generation\um\ShlDisp\um-ShlDisp.h = generation\um\ShlDisp\um-ShlDisp.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ShlGuid", "ShlGuid", "{4131ADF9-83AD-482A-84DA-68A42EF30B67}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\ShlGuid\generate.rsp = generation\um\ShlGuid\generate.rsp
+		generation\um\ShlGuid\header.txt = generation\um\ShlGuid\header.txt
+		generation\um\ShlGuid\um-ShlGuid.h = generation\um\ShlGuid\um-ShlGuid.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ShlObj", "ShlObj", "{C22C11CC-2BB2-49F8-BF6C-DEA0D45D1191}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\ShlObj\generate.rsp = generation\um\ShlObj\generate.rsp
+		generation\um\ShlObj\header.txt = generation\um\ShlObj\header.txt
+		generation\um\ShlObj\um-ShlObj.h = generation\um\ShlObj\um-ShlObj.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ShlObj_core", "ShlObj_core", "{790ADE94-32EE-4091-9189-A37BA1BAD802}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\ShlObj_core\generate.rsp = generation\um\ShlObj_core\generate.rsp
+		generation\um\ShlObj_core\header.txt = generation\um\ShlObj_core\header.txt
+		generation\um\ShlObj_core\um-ShlObj_core.h = generation\um\ShlObj_core\um-ShlObj_core.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "shellapi", "shellapi", "{F9F924D7-F68C-47CA-82F4-1A01C222F5F2}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\shellapi\generate.rsp = generation\um\shellapi\generate.rsp
+		generation\um\shellapi\header.txt = generation\um\shellapi\header.txt
+		generation\um\shellapi\um-shellapi.h = generation\um\shellapi\um-shellapi.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "winnetwk", "winnetwk", "{00D136E3-27BB-4D91-9D74-C83652B44077}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\winnetwk\generate.rsp = generation\um\winnetwk\generate.rsp
+		generation\um\winnetwk\header.txt = generation\um\winnetwk\header.txt
+		generation\um\winnetwk\um-winnetwk.h = generation\um\winnetwk\um-winnetwk.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "iphlpapi", "iphlpapi", "{1AF84402-D07F-4F71-9D06-1B45625D3FBD}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\iphlpapi\generate.rsp = generation\um\iphlpapi\generate.rsp
+		generation\um\iphlpapi\header.txt = generation\um\iphlpapi\header.txt
+		generation\um\iphlpapi\um-iphlpapi.h = generation\um\iphlpapi\um-iphlpapi.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ifmib", "ifmib", "{A6F46FC1-6B97-4B7B-AB33-17742BEA3423}"
+	ProjectSection(SolutionItems) = preProject
+		generation\shared\ifmib\generate.rsp = generation\shared\ifmib\generate.rsp
+		generation\shared\ifmib\header.txt = generation\shared\ifmib\header.txt
+		generation\shared\ifmib\shared-ifmib.h = generation\shared\ifmib\shared-ifmib.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ipmib", "ipmib", "{D14F13BD-F313-40FA-BDFF-1386F66694F3}"
+	ProjectSection(SolutionItems) = preProject
+		generation\shared\ipmib\generate.rsp = generation\shared\ipmib\generate.rsp
+		generation\shared\ipmib\header.txt = generation\shared\ipmib\header.txt
+		generation\shared\ipmib\shared-ipmib.h = generation\shared\ipmib\shared-ipmib.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ipifcons", "ipifcons", "{805B057F-398D-4511-931E-70A35C08934C}"
+	ProjectSection(SolutionItems) = preProject
+		generation\shared\ipifcons\generate.rsp = generation\shared\ipifcons\generate.rsp
+		generation\shared\ipifcons\header.txt = generation\shared\ipifcons\header.txt
+		generation\shared\ipifcons\shared-ipifcons.h = generation\shared\ipifcons\shared-ipifcons.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "nldef", "nldef", "{4C826DAD-A1DD-4D6E-9F81-467DC7AB72F2}"
+	ProjectSection(SolutionItems) = preProject
+		generation\shared\nldef\generate.rsp = generation\shared\nldef\generate.rsp
+		generation\shared\nldef\header.txt = generation\shared\nldef\header.txt
+		generation\shared\nldef\shared-nldef.h = generation\shared\nldef\shared-nldef.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tcpmib", "tcpmib", "{19D75165-8A49-45AE-AA28-E5CCDADAC3C1}"
+	ProjectSection(SolutionItems) = preProject
+		generation\shared\tcpmib\generate.rsp = generation\shared\tcpmib\generate.rsp
+		generation\shared\tcpmib\header.txt = generation\shared\tcpmib\header.txt
+		generation\shared\tcpmib\shared-tcpmib.h = generation\shared\tcpmib\shared-tcpmib.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "udpmib", "udpmib", "{8FC11367-57E3-4357-9A3E-60C801FC5121}"
+	ProjectSection(SolutionItems) = preProject
+		generation\shared\udpmib\generate.rsp = generation\shared\udpmib\generate.rsp
+		generation\shared\udpmib\header.txt = generation\shared\udpmib\header.txt
+		generation\shared\udpmib\shared-udpmib.h = generation\shared\udpmib\shared-udpmib.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Iprtrmib", "Iprtrmib", "{436CA248-7991-49F5-A120-C3DB0D36F1F0}"
+	ProjectSection(SolutionItems) = preProject
+		generation\shared\Iprtrmib\generate.rsp = generation\shared\Iprtrmib\generate.rsp
+		generation\shared\Iprtrmib\header.txt = generation\shared\Iprtrmib\header.txt
+		generation\shared\Iprtrmib\shared-Iprtrmib.h = generation\shared\Iprtrmib\shared-Iprtrmib.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "IPExport", "IPExport", "{2E563F35-08AB-43AC-822A-91C513C3EC56}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\IPExport\generate.rsp = generation\um\IPExport\generate.rsp
+		generation\um\IPExport\header.txt = generation\um\IPExport\header.txt
+		generation\um\IPExport\um-IPExport.h = generation\um\IPExport\um-IPExport.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "IPTypes", "IPTypes", "{A9CC2B71-1FAB-44BB-AD28-B5978246DD20}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\IPTypes\generate.rsp = generation\um\IPTypes\generate.rsp
+		generation\um\IPTypes\header.txt = generation\um\IPTypes\header.txt
+		generation\um\IPTypes\um-IPTypes.h = generation\um\IPTypes\um-IPTypes.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ws2def", "ws2def", "{F0A043BF-5A63-40A4-A18D-EB38B2BE3F8B}"
+	ProjectSection(SolutionItems) = preProject
+		generation\shared\ws2def\generate.rsp = generation\shared\ws2def\generate.rsp
+		generation\shared\ws2def\header.txt = generation\shared\ws2def\header.txt
+		generation\shared\ws2def\shared-ws2def.h = generation\shared\ws2def\shared-ws2def.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ifdef", "ifdef", "{B5916162-79B3-44CC-A362-05422E2A57F7}"
+	ProjectSection(SolutionItems) = preProject
+		generation\shared\ifdef\generate.rsp = generation\shared\ifdef\generate.rsp
+		generation\shared\ifdef\header.txt = generation\shared\ifdef\header.txt
+		generation\shared\ifdef\shared-ifdef.h = generation\shared\ifdef\shared-ifdef.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "inaddr", "inaddr", "{78F9BC21-6316-4F74-AFD4-1DCF7663A3F3}"
+	ProjectSection(SolutionItems) = preProject
+		generation\shared\inaddr\generate.rsp = generation\shared\inaddr\generate.rsp
+		generation\shared\inaddr\header.txt = generation\shared\inaddr\header.txt
+		generation\shared\inaddr\shared-inaddr.h = generation\shared\inaddr\shared-inaddr.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "in6addr", "in6addr", "{507CED9D-DB5D-4063-83F2-5331A5241CA2}"
+	ProjectSection(SolutionItems) = preProject
+		generation\shared\in6addr\generate.rsp = generation\shared\in6addr\generate.rsp
+		generation\shared\in6addr\header.txt = generation\shared\in6addr\header.txt
+		generation\shared\in6addr\shared-in6addr.h = generation\shared\in6addr\shared-in6addr.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ws2ipdef", "ws2ipdef", "{97A5EF2C-9B29-4F1D-9D7B-9D956DA44805}"
+	ProjectSection(SolutionItems) = preProject
+		generation\shared\ws2ipdef\generate.rsp = generation\shared\ws2ipdef\generate.rsp
+		generation\shared\ws2ipdef\header.txt = generation\shared\ws2ipdef\header.txt
+		generation\shared\ws2ipdef\shared-ws2ipdef.h = generation\shared\ws2ipdef\shared-ws2ipdef.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tcpestats", "tcpestats", "{024C06FA-34EA-44E7-BA9F-2A8B064EE127}"
+	ProjectSection(SolutionItems) = preProject
+		generation\shared\tcpestats\generate.rsp = generation\shared\tcpestats\generate.rsp
+		generation\shared\tcpestats\header.txt = generation\shared\tcpestats\header.txt
+		generation\shared\tcpestats\shared-tcpestats.h = generation\shared\tcpestats\shared-tcpestats.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MsHTML", "MsHTML", "{99E9BDC1-955C-4E77-B973-C4D095D7B90E}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\MsHTML\generate.rsp = generation\um\MsHTML\generate.rsp
+		generation\um\MsHTML\header.txt = generation\um\MsHTML\header.txt
+		generation\um\MsHTML\um-MsHTML.h = generation\um\MsHTML\um-MsHTML.h
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -2683,6 +2844,29 @@ Global
 		{B3FD7D49-F8E3-4364-B84F-5706600E2825} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{AEF32986-D77E-4FBC-93AB-C11B1226A427} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{3663C9FD-E555-44F4-87BD-D912A3554FAE} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{1EC85BBE-58B2-47B5-B6A5-1AC5EDA024CF} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{4131ADF9-83AD-482A-84DA-68A42EF30B67} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{C22C11CC-2BB2-49F8-BF6C-DEA0D45D1191} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{790ADE94-32EE-4091-9189-A37BA1BAD802} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{F9F924D7-F68C-47CA-82F4-1A01C222F5F2} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{00D136E3-27BB-4D91-9D74-C83652B44077} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{1AF84402-D07F-4F71-9D06-1B45625D3FBD} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{A6F46FC1-6B97-4B7B-AB33-17742BEA3423} = {F9716DD9-2967-4295-AC71-F1FD5A9EEFEF}
+		{D14F13BD-F313-40FA-BDFF-1386F66694F3} = {F9716DD9-2967-4295-AC71-F1FD5A9EEFEF}
+		{805B057F-398D-4511-931E-70A35C08934C} = {F9716DD9-2967-4295-AC71-F1FD5A9EEFEF}
+		{4C826DAD-A1DD-4D6E-9F81-467DC7AB72F2} = {F9716DD9-2967-4295-AC71-F1FD5A9EEFEF}
+		{19D75165-8A49-45AE-AA28-E5CCDADAC3C1} = {F9716DD9-2967-4295-AC71-F1FD5A9EEFEF}
+		{8FC11367-57E3-4357-9A3E-60C801FC5121} = {F9716DD9-2967-4295-AC71-F1FD5A9EEFEF}
+		{436CA248-7991-49F5-A120-C3DB0D36F1F0} = {F9716DD9-2967-4295-AC71-F1FD5A9EEFEF}
+		{2E563F35-08AB-43AC-822A-91C513C3EC56} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{A9CC2B71-1FAB-44BB-AD28-B5978246DD20} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{F0A043BF-5A63-40A4-A18D-EB38B2BE3F8B} = {F9716DD9-2967-4295-AC71-F1FD5A9EEFEF}
+		{B5916162-79B3-44CC-A362-05422E2A57F7} = {F9716DD9-2967-4295-AC71-F1FD5A9EEFEF}
+		{78F9BC21-6316-4F74-AFD4-1DCF7663A3F3} = {F9716DD9-2967-4295-AC71-F1FD5A9EEFEF}
+		{507CED9D-DB5D-4063-83F2-5331A5241CA2} = {F9716DD9-2967-4295-AC71-F1FD5A9EEFEF}
+		{97A5EF2C-9B29-4F1D-9D7B-9D956DA44805} = {F9716DD9-2967-4295-AC71-F1FD5A9EEFEF}
+		{024C06FA-34EA-44E7-BA9F-2A8B064EE127} = {F9716DD9-2967-4295-AC71-F1FD5A9EEFEF}
+		{99E9BDC1-955C-4E77-B973-C4D095D7B90E} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2FE36DF8-2D9C-4F20-8787-45DC74B57461}

@@ -1,0 +1,41 @@
+@../../settings.rsp
+@../../remap.rsp
+--exclude
+BROWSEUIAPI_
+DriveType(int):int
+GetFileNameFromBrowse(HWND, PWSTR, UINT, PCWSTR, PCWSTR, PCWSTR, PCWSTR):BOOL
+IID_IActiveDesktopP
+IID_IADesktopP2
+IID_IBanneredBar
+IID_IColumnProvider
+IID_ICopyHookA
+IID_ICopyHookW
+IID_ICurrentWorkingDirectory
+IID_IDockingWindowFrame
+IID_IDocViewSite
+IID_INewShortcutHookA
+IID_INewShortcutHookW
+IID_IShellFolderBand
+IID_IThumbnailCapture
+ShellFolderView_AddObject
+ShellFolderView_GetSelectedObjects
+ShellFolderView_ReArrange
+ShellFolderView_RemoveObject
+ShellFolderView_SetClipboard
+ShellFolderView_SetItemPos
+ShellFolderView_SetPoints
+ShellFolderView_UpdateObject
+Shell_GetCachedImageIndex(PCWSTR, int, UINT):int
+SHSTDDOCAPI_
+--file
+um-ShlObj.h
+--output
+../../../sources/Interop/Windows/um/ShlObj
+--test-output
+../../../tests/Interop/Windows/um/ShlObj
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/ShlObj.h
+--with-librarypath
+*=Shell32
+PerUserInit=Mydocs
+SoftwareUpdateMessageBox=Shdocvw

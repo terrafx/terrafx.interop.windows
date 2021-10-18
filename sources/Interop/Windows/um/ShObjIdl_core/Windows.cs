@@ -1529,75 +1529,6 @@ namespace TerraFX.Interop
         [NativeTypeName("#define ISIOI_ICONINDEX 0x00000002")]
         public const int ISIOI_ICONINDEX = 0x00000002;
 
-        public static ref readonly Guid IID_IContextMenu
-        {
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
-                    0xE4, 0x14, 0x02, 0x00,
-                    0x00, 0x00,
-                    0x00, 0x00,
-                    0xC0,
-                    0x00,
-                    0x00,
-                    0x00,
-                    0x00,
-                    0x00,
-                    0x00,
-                    0x46
-                };
-
-                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-            }
-        }
-
-        public static ref readonly Guid IID_IContextMenu2
-        {
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
-                    0xF4, 0x14, 0x02, 0x00,
-                    0x00, 0x00,
-                    0x00, 0x00,
-                    0xC0,
-                    0x00,
-                    0x00,
-                    0x00,
-                    0x00,
-                    0x00,
-                    0x00,
-                    0x46
-                };
-
-                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-            }
-        }
-
-        public static ref readonly Guid IID_IContextMenu3
-        {
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
-                    0xA0, 0xE0, 0xFC, 0xBC,
-                    0x17, 0xEC,
-                    0xD0, 0x11,
-                    0x8D,
-                    0x10,
-                    0x00,
-                    0xA0,
-                    0xC9,
-                    0x0F,
-                    0x27,
-                    0x19
-                };
-
-                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-            }
-        }
-
         public static ref readonly Guid IID_IExecuteCommand
         {
             get
@@ -1614,29 +1545,6 @@ namespace TerraFX.Interop
                     0x4F,
                     0x7B,
                     0x54
-                };
-
-                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-            }
-        }
-
-        public static ref readonly Guid IID_IPersistFolder
-        {
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
-                    0xEA, 0x14, 0x02, 0x00,
-                    0x00, 0x00,
-                    0x00, 0x00,
-                    0xC0,
-                    0x00,
-                    0x00,
-                    0x00,
-                    0x00,
-                    0x00,
-                    0x00,
-                    0x46
                 };
 
                 Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
@@ -1759,29 +1667,6 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid IID_IEnumIDList
-        {
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
-                    0xF2, 0x14, 0x02, 0x00,
-                    0x00, 0x00,
-                    0x00, 0x00,
-                    0xC0,
-                    0x00,
-                    0x00,
-                    0x00,
-                    0x00,
-                    0x00,
-                    0x00,
-                    0x46
-                };
-
-                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-            }
-        }
-
         public static ref readonly Guid IID_IEnumFullIDList
         {
             get
@@ -1867,121 +1752,6 @@ namespace TerraFX.Interop
                     0x2B,
                     0x68,
                     0x5C
-                };
-
-                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-            }
-        }
-
-        public static ref readonly Guid IID_IShellFolder
-        {
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
-                    0xE6, 0x14, 0x02, 0x00,
-                    0x00, 0x00,
-                    0x00, 0x00,
-                    0xC0,
-                    0x00,
-                    0x00,
-                    0x00,
-                    0x00,
-                    0x00,
-                    0x00,
-                    0x46
-                };
-
-                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-            }
-        }
-
-        public static ref readonly Guid IID_IEnumExtraSearch
-        {
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
-                    0xE1, 0x0B, 0x70, 0x0E,
-                    0xB6, 0x9D,
-                    0xD1, 0x11,
-                    0xA1,
-                    0xCE,
-                    0x00,
-                    0xC0,
-                    0x4F,
-                    0xD7,
-                    0x5D,
-                    0x13
-                };
-
-                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-            }
-        }
-
-        public static ref readonly Guid IID_IShellFolder2
-        {
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
-                    0x8C, 0xF6, 0xF2, 0x93,
-                    0x1B, 0x1D,
-                    0xD3, 0x11,
-                    0xA3,
-                    0x0E,
-                    0x00,
-                    0xC0,
-                    0x4F,
-                    0x79,
-                    0xAB,
-                    0xD1
-                };
-
-                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-            }
-        }
-
-        public static ref readonly Guid IID_IShellView
-        {
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
-                    0xE3, 0x14, 0x02, 0x00,
-                    0x00, 0x00,
-                    0x00, 0x00,
-                    0xC0,
-                    0x00,
-                    0x00,
-                    0x00,
-                    0x00,
-                    0x00,
-                    0x00,
-                    0x46
-                };
-
-                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-            }
-        }
-
-        public static ref readonly Guid IID_IShellView2
-        {
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
-                    0x80, 0x9E, 0xE3, 0x88,
-                    0x78, 0x35,
-                    0xCF, 0x11,
-                    0xAE,
-                    0x69,
-                    0x08,
-                    0x00,
-                    0x2B,
-                    0x2E,
-                    0x12,
-                    0x62
                 };
 
                 Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
@@ -2127,52 +1897,6 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid IID_ICommDlgBrowser
-        {
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
-                    0xF1, 0x14, 0x02, 0x00,
-                    0x00, 0x00,
-                    0x00, 0x00,
-                    0xC0,
-                    0x00,
-                    0x00,
-                    0x00,
-                    0x00,
-                    0x00,
-                    0x00,
-                    0x46
-                };
-
-                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-            }
-        }
-
-        public static ref readonly Guid IID_ICommDlgBrowser2
-        {
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
-                    0x16, 0x95, 0x33, 0x10,
-                    0x94, 0x28,
-                    0xD2, 0x11,
-                    0x90,
-                    0x39,
-                    0x00,
-                    0xC0,
-                    0x4F,
-                    0x8E,
-                    0xEB,
-                    0x3E
-                };
-
-                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-            }
-        }
-
         public static ref readonly Guid IID_IColumnManager
         {
             get
@@ -2304,52 +2028,6 @@ namespace TerraFX.Interop
                     0x6C,
                     0xF9,
                     0x2B
-                };
-
-                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-            }
-        }
-
-        public static ref readonly Guid IID_IShellIcon
-        {
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
-                    0xE5, 0x14, 0x02, 0x00,
-                    0x00, 0x00,
-                    0x00, 0x00,
-                    0xC0,
-                    0x00,
-                    0x00,
-                    0x00,
-                    0x00,
-                    0x00,
-                    0x00,
-                    0x46
-                };
-
-                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-            }
-        }
-
-        public static ref readonly Guid IID_IShellBrowser
-        {
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
-                    0xE2, 0x14, 0x02, 0x00,
-                    0x00, 0x00,
-                    0x00, 0x00,
-                    0xC0,
-                    0x00,
-                    0x00,
-                    0x00,
-                    0x00,
-                    0x00,
-                    0x00,
-                    0x46
                 };
 
                 Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
@@ -2840,52 +2518,6 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid IID_IShellLinkA
-        {
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
-                    0xEE, 0x14, 0x02, 0x00,
-                    0x00, 0x00,
-                    0x00, 0x00,
-                    0xC0,
-                    0x00,
-                    0x00,
-                    0x00,
-                    0x00,
-                    0x00,
-                    0x00,
-                    0x46
-                };
-
-                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-            }
-        }
-
-        public static ref readonly Guid IID_IShellLinkW
-        {
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
-                    0xF9, 0x14, 0x02, 0x00,
-                    0x00, 0x00,
-                    0x00, 0x00,
-                    0xC0,
-                    0x00,
-                    0x00,
-                    0x00,
-                    0x00,
-                    0x00,
-                    0x00,
-                    0x46
-                };
-
-                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-            }
-        }
-
         public static ref readonly Guid IID_IShellLinkDataList
         {
             get
@@ -2971,75 +2603,6 @@ namespace TerraFX.Interop
                     0xA6,
                     0x43,
                     0x1C
-                };
-
-                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-            }
-        }
-
-        public static ref readonly Guid IID_IShellExtInit
-        {
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
-                    0xE8, 0x14, 0x02, 0x00,
-                    0x00, 0x00,
-                    0x00, 0x00,
-                    0xC0,
-                    0x00,
-                    0x00,
-                    0x00,
-                    0x00,
-                    0x00,
-                    0x00,
-                    0x46
-                };
-
-                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-            }
-        }
-
-        public static ref readonly Guid IID_IShellPropSheetExt
-        {
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
-                    0xE9, 0x14, 0x02, 0x00,
-                    0x00, 0x00,
-                    0x00, 0x00,
-                    0xC0,
-                    0x00,
-                    0x00,
-                    0x00,
-                    0x00,
-                    0x00,
-                    0x00,
-                    0x46
-                };
-
-                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-            }
-        }
-
-        public static ref readonly Guid IID_IRemoteComputer
-        {
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
-                    0xFE, 0x14, 0x02, 0x00,
-                    0x00, 0x00,
-                    0x00, 0x00,
-                    0xC0,
-                    0x00,
-                    0x00,
-                    0x00,
-                    0x00,
-                    0x00,
-                    0x00,
-                    0x46
                 };
 
                 Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
@@ -4857,29 +4420,6 @@ namespace TerraFX.Interop
                     0x99,
                     0x6A,
                     0xF1
-                };
-
-                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-            }
-        }
-
-        public static ref readonly Guid IID_IFileSystemBindData
-        {
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
-                    0x10, 0x8D, 0xE1, 0x01,
-                    0x8B, 0x4D,
-                    0xD2, 0x11,
-                    0x85,
-                    0x5D,
-                    0x00,
-                    0x60,
-                    0x08,
-                    0x05,
-                    0x93,
-                    0x67
                 };
 
                 Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
@@ -6812,29 +6352,6 @@ namespace TerraFX.Interop
                     0x8A,
                     0x08,
                     0x33
-                };
-
-                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-            }
-        }
-
-        public static ref readonly Guid IID_IShellIconOverlayIdentifier
-        {
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
-                    0x00, 0x42, 0x6C, 0x0C,
-                    0x89, 0xC5,
-                    0xD0, 0x11,
-                    0x99,
-                    0x9A,
-                    0x00,
-                    0xC0,
-                    0x4F,
-                    0xD6,
-                    0x55,
-                    0xE1
                 };
 
                 Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());

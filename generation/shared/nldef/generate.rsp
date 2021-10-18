@@ -1,0 +1,13 @@
+@../../settings.rsp
+@../../remap.rsp
+--exclude
+ANY_SIZE
+MAKE_ROUTE_PROTOCOL
+--file
+shared-nldef.h
+--output
+../../../sources/Interop/Windows/shared/nldef
+--test-output
+../../../tests/Interop/Windows/shared/nldef
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/shared/nldef.h
