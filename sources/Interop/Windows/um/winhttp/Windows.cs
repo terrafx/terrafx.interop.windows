@@ -1048,7 +1048,7 @@ namespace TerraFX.Interop
         public const uint WINHTTP_CALLBACK_FLAG_ALL_NOTIFICATIONS = 0xffffffff;
 
         [NativeTypeName("#define WINHTTP_INVALID_STATUS_CALLBACK ((WINHTTP_STATUS_CALLBACK)(-1L))")]
-        public static delegate*<void*, nuint, uint, void*, uint, void> WINHTTP_INVALID_STATUS_CALLBACK => &((delegate* unmanaged<void*, nuint, uint, void*, uint, void>)(-1));
+        public static delegate* unmanaged<void*, nuint, uint, void*, uint, void> WINHTTP_INVALID_STATUS_CALLBACK => ((delegate* unmanaged<void*, nuint, uint, void*, uint, void>)(-1));
 
         [NativeTypeName("#define WINHTTP_QUERY_MIME_VERSION 0")]
         public const int WINHTTP_QUERY_MIME_VERSION = 0;

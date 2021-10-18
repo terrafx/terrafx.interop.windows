@@ -2526,6 +2526,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ktmw32", "ktmw32", "{F062F8
 		generation\um\ktmw32\um-ktmw32.h = generation\um\ktmw32\um-ktmw32.h
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ktmtypes", "ktmtypes", "{C646D783-DA76-4813-A21F-68226F01874B}"
+	ProjectSection(SolutionItems) = preProject
+		generation\shared\ktmtypes\generate.rsp = generation\shared\ktmtypes\generate.rsp
+		generation\shared\ktmtypes\header.txt = generation\shared\ktmtypes\header.txt
+		generation\shared\ktmtypes\shared-ktmtypes.h = generation\shared\ktmtypes\shared-ktmtypes.h
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -2915,6 +2922,7 @@ Global
 		{8A2D7C50-6134-452E-8EDF-EF3F09629B71} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{D85F0E20-29C5-4DFF-BA97-74D4BC30FE45} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{F062F860-49CB-4468-A677-8498182C69D4} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{C646D783-DA76-4813-A21F-68226F01874B} = {F9716DD9-2967-4295-AC71-F1FD5A9EEFEF}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2FE36DF8-2D9C-4F20-8787-45DC74B57461}
