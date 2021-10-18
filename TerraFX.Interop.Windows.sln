@@ -2540,6 +2540,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "timeapi", "timeapi", "{022C
 		generation\um\timeapi\um-timeapi.h = generation\um\timeapi\um-timeapi.h
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "vsstyle", "vsstyle", "{F95B366E-0126-4AF5-9C6B-4E91EC1F416A}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\vsstyle\generate.rsp = generation\um\vsstyle\generate.rsp
+		generation\um\vsstyle\header.txt = generation\um\vsstyle\header.txt
+		generation\um\vsstyle\um-vsstyle.h = generation\um\vsstyle\um-vsstyle.h
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -2931,6 +2938,7 @@ Global
 		{F062F860-49CB-4468-A677-8498182C69D4} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{C646D783-DA76-4813-A21F-68226F01874B} = {F9716DD9-2967-4295-AC71-F1FD5A9EEFEF}
 		{022CC88E-2252-4732-AFF1-A4F98E5FFAD0} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{F95B366E-0126-4AF5-9C6B-4E91EC1F416A} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2FE36DF8-2D9C-4F20-8787-45DC74B57461}
