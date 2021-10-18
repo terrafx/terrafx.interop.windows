@@ -2505,6 +2505,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "memoryapi", "memoryapi", "{
 		generation\um\memoryapi\um-memoryapi.h = generation\um\memoryapi\um-memoryapi.h
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "vssym32", "vssym32", "{8A2D7C50-6134-452E-8EDF-EF3F09629B71}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\vssym32\generate.rsp = generation\um\vssym32\generate.rsp
+		generation\um\vssym32\header.txt = generation\um\vssym32\header.txt
+		generation\um\vssym32\um-vssym32.h = generation\um\vssym32\um-vssym32.h
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -2891,6 +2898,7 @@ Global
 		{293CE981-D0E6-48D8-8820-D8A127BA8E2E} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{B8BC586E-DE35-41E1-8348-1F910E2BB874} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{AB0D7809-3143-4150-A349-9C30254732EC} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{8A2D7C50-6134-452E-8EDF-EF3F09629B71} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2FE36DF8-2D9C-4F20-8787-45DC74B57461}
