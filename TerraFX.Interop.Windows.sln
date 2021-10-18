@@ -2547,6 +2547,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "vsstyle", "vsstyle", "{F95B
 		generation\um\vsstyle\um-vsstyle.h = generation\um\vsstyle\um-vsstyle.h
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SrRestorePtApi", "SrRestorePtApi", "{90EB2997-5CB8-45B3-8F8A-B66E94518572}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\SrRestorePtApi\generate.rsp = generation\um\SrRestorePtApi\generate.rsp
+		generation\um\SrRestorePtApi\header.txt = generation\um\SrRestorePtApi\header.txt
+		generation\um\SrRestorePtApi\um-SrRestorePtApi.h = generation\um\SrRestorePtApi\um-SrRestorePtApi.h
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -2939,6 +2946,7 @@ Global
 		{C646D783-DA76-4813-A21F-68226F01874B} = {F9716DD9-2967-4295-AC71-F1FD5A9EEFEF}
 		{022CC88E-2252-4732-AFF1-A4F98E5FFAD0} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{F95B366E-0126-4AF5-9C6B-4E91EC1F416A} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{90EB2997-5CB8-45B3-8F8A-B66E94518572} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2FE36DF8-2D9C-4F20-8787-45DC74B57461}
