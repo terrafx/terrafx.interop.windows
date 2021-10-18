@@ -2,6 +2,7 @@
 @../../remap.rsp
 --exclude
 PMSIHANDLE
+_WIN32_MSI
 --file
 um-Msi.h
 --output
