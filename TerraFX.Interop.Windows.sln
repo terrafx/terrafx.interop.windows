@@ -2554,6 +2554,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SrRestorePtApi", "SrRestore
 		generation\um\SrRestorePtApi\um-SrRestorePtApi.h = generation\um\SrRestorePtApi\um-SrRestorePtApi.h
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Msi", "Msi", "{47FC9C6E-E5AB-4049-BC78-85608FC4F73E}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\Msi\generate.rsp = generation\um\Msi\generate.rsp
+		generation\um\Msi\header.txt = generation\um\Msi\header.txt
+		generation\um\Msi\um-Msi.h = generation\um\Msi\um-Msi.h
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -2947,6 +2954,7 @@ Global
 		{022CC88E-2252-4732-AFF1-A4F98E5FFAD0} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{F95B366E-0126-4AF5-9C6B-4E91EC1F416A} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{90EB2997-5CB8-45B3-8F8A-B66E94518572} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{47FC9C6E-E5AB-4049-BC78-85608FC4F73E} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2FE36DF8-2D9C-4F20-8787-45DC74B57461}
