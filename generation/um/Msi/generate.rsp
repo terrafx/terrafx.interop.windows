@@ -1,0 +1,14 @@
+@../../settings.rsp
+@../../remap.rsp
+--exclude
+PMSIHANDLE
+--file
+um-Msi.h
+--output
+../../../sources/Interop/Windows/um/Msi
+--test-output
+../../../tests/Interop/Windows/um/Msi
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/Msi.h
+--with-librarypath
+*=msi

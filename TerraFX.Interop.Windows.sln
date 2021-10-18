@@ -2484,6 +2484,97 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MsHTML", "MsHTML", "{99E9BD
 		generation\um\MsHTML\um-MsHTML.h = generation\um\MsHTML\um-MsHTML.h
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "wow64apiset", "wow64apiset", "{293CE981-D0E6-48D8-8820-D8A127BA8E2E}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\wow64apiset\generate.rsp = generation\um\wow64apiset\generate.rsp
+		generation\um\wow64apiset\header.txt = generation\um\wow64apiset\header.txt
+		generation\um\wow64apiset\um-wow64apiset.h = generation\um\wow64apiset\um-wow64apiset.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "winreg", "winreg", "{B8BC586E-DE35-41E1-8348-1F910E2BB874}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\winreg\generate.rsp = generation\um\winreg\generate.rsp
+		generation\um\winreg\header.txt = generation\um\winreg\header.txt
+		generation\um\winreg\um-winreg.h = generation\um\winreg\um-winreg.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "memoryapi", "memoryapi", "{AB0D7809-3143-4150-A349-9C30254732EC}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\memoryapi\generate.rsp = generation\um\memoryapi\generate.rsp
+		generation\um\memoryapi\header.txt = generation\um\memoryapi\header.txt
+		generation\um\memoryapi\um-memoryapi.h = generation\um\memoryapi\um-memoryapi.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "vssym32", "vssym32", "{8A2D7C50-6134-452E-8EDF-EF3F09629B71}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\vssym32\generate.rsp = generation\um\vssym32\generate.rsp
+		generation\um\vssym32\header.txt = generation\um\vssym32\header.txt
+		generation\um\vssym32\um-vssym32.h = generation\um\vssym32\um-vssym32.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "winhttp", "winhttp", "{D85F0E20-29C5-4DFF-BA97-74D4BC30FE45}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\winhttp\generate.rsp = generation\um\winhttp\generate.rsp
+		generation\um\winhttp\header.txt = generation\um\winhttp\header.txt
+		generation\um\winhttp\um-winhttp.h = generation\um\winhttp\um-winhttp.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ktmw32", "ktmw32", "{F062F860-49CB-4468-A677-8498182C69D4}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\ktmw32\generate.rsp = generation\um\ktmw32\generate.rsp
+		generation\um\ktmw32\header.txt = generation\um\ktmw32\header.txt
+		generation\um\ktmw32\um-ktmw32.h = generation\um\ktmw32\um-ktmw32.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ktmtypes", "ktmtypes", "{C646D783-DA76-4813-A21F-68226F01874B}"
+	ProjectSection(SolutionItems) = preProject
+		generation\shared\ktmtypes\generate.rsp = generation\shared\ktmtypes\generate.rsp
+		generation\shared\ktmtypes\header.txt = generation\shared\ktmtypes\header.txt
+		generation\shared\ktmtypes\shared-ktmtypes.h = generation\shared\ktmtypes\shared-ktmtypes.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "timeapi", "timeapi", "{022CC88E-2252-4732-AFF1-A4F98E5FFAD0}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\timeapi\generate.rsp = generation\um\timeapi\generate.rsp
+		generation\um\timeapi\header.txt = generation\um\timeapi\header.txt
+		generation\um\timeapi\um-timeapi.h = generation\um\timeapi\um-timeapi.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "vsstyle", "vsstyle", "{F95B366E-0126-4AF5-9C6B-4E91EC1F416A}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\vsstyle\generate.rsp = generation\um\vsstyle\generate.rsp
+		generation\um\vsstyle\header.txt = generation\um\vsstyle\header.txt
+		generation\um\vsstyle\um-vsstyle.h = generation\um\vsstyle\um-vsstyle.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SrRestorePtApi", "SrRestorePtApi", "{90EB2997-5CB8-45B3-8F8A-B66E94518572}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\SrRestorePtApi\generate.rsp = generation\um\SrRestorePtApi\generate.rsp
+		generation\um\SrRestorePtApi\header.txt = generation\um\SrRestorePtApi\header.txt
+		generation\um\SrRestorePtApi\um-SrRestorePtApi.h = generation\um\SrRestorePtApi\um-SrRestorePtApi.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Msi", "Msi", "{47FC9C6E-E5AB-4049-BC78-85608FC4F73E}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\Msi\generate.rsp = generation\um\Msi\generate.rsp
+		generation\um\Msi\header.txt = generation\um\Msi\header.txt
+		generation\um\Msi\um-Msi.h = generation\um\Msi\um-Msi.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "windowsx", "windowsx", "{604816B6-6D2A-4331-9BD2-BB094AC1429A}"
+	ProjectSection(SolutionItems) = preProject
+		generation\shared\windowsx\generate.rsp = generation\shared\windowsx\generate.rsp
+		generation\shared\windowsx\header.txt = generation\shared\windowsx\header.txt
+		generation\shared\windowsx\shared-windowsx.h = generation\shared\windowsx\shared-windowsx.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "guiddef", "guiddef", "{83EFD547-6690-4EA0-A18B-F5B956681D66}"
+	ProjectSection(SolutionItems) = preProject
+		generation\shared\guiddef\generate.rsp = generation\shared\guiddef\generate.rsp
+		generation\shared\guiddef\header.txt = generation\shared\guiddef\header.txt
+		generation\shared\guiddef\shared-guiddef.h = generation\shared\guiddef\shared-guiddef.h
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -2867,6 +2958,19 @@ Global
 		{97A5EF2C-9B29-4F1D-9D7B-9D956DA44805} = {F9716DD9-2967-4295-AC71-F1FD5A9EEFEF}
 		{024C06FA-34EA-44E7-BA9F-2A8B064EE127} = {F9716DD9-2967-4295-AC71-F1FD5A9EEFEF}
 		{99E9BDC1-955C-4E77-B973-C4D095D7B90E} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{293CE981-D0E6-48D8-8820-D8A127BA8E2E} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{B8BC586E-DE35-41E1-8348-1F910E2BB874} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{AB0D7809-3143-4150-A349-9C30254732EC} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{8A2D7C50-6134-452E-8EDF-EF3F09629B71} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{D85F0E20-29C5-4DFF-BA97-74D4BC30FE45} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{F062F860-49CB-4468-A677-8498182C69D4} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{C646D783-DA76-4813-A21F-68226F01874B} = {F9716DD9-2967-4295-AC71-F1FD5A9EEFEF}
+		{022CC88E-2252-4732-AFF1-A4F98E5FFAD0} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{F95B366E-0126-4AF5-9C6B-4E91EC1F416A} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{90EB2997-5CB8-45B3-8F8A-B66E94518572} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{47FC9C6E-E5AB-4049-BC78-85608FC4F73E} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{604816B6-6D2A-4331-9BD2-BB094AC1429A} = {F9716DD9-2967-4295-AC71-F1FD5A9EEFEF}
+		{83EFD547-6690-4EA0-A18B-F5B956681D66} = {F9716DD9-2967-4295-AC71-F1FD5A9EEFEF}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2FE36DF8-2D9C-4F20-8787-45DC74B57461}

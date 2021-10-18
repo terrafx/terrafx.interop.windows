@@ -1,6 +1,6 @@
 @../../settings.rsp
 @../../remap.rsp
--exclude
+--exclude
 IServiceProvider.QueryService<Q>(const GUID &, Q **):HRESULT
 --file
 um-servprov.h

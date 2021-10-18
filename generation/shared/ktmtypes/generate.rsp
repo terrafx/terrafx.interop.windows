@@ -1,0 +1,10 @@
+@../../settings.rsp
+@../../remap.rsp
+--file
+shared-ktmtypes.h
+--output
+../../../sources/Interop/Windows/shared/ktmtypes
+--test-output
+../../../tests/Interop/Windows/shared/ktmtypes
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/shared/ktmtypes.h
