@@ -657,9 +657,6 @@ namespace TerraFX.Interop
         [return: NativeTypeName("UINT")]
         public static extern uint MsiJoinTransaction([NativeTypeName("MSIHANDLE")] uint hTransactionHandle, [NativeTypeName("DWORD")] uint dwTransactionAttributes, [NativeTypeName("HANDLE *")] IntPtr* phChangeOfOwnerEvent);
 
-        [NativeTypeName("#define _WIN32_MSI 500")]
-        public const int _WIN32_MSI = 500;
-
         [NativeTypeName("#define MAX_GUID_CHARS 38")]
         public const int MAX_GUID_CHARS = 38;
 

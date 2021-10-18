@@ -2575,6 +2575,27 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "guiddef", "guiddef", "{83EF
 		generation\shared\guiddef\shared-guiddef.h = generation\shared\guiddef\shared-guiddef.h
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "msiltcfg", "msiltcfg", "{406412E8-74A2-4879-B7A1-96A142984499}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\msiltcfg\generate.rsp = generation\um\msiltcfg\generate.rsp
+		generation\um\msiltcfg\header.txt = generation\um\msiltcfg\header.txt
+		generation\um\msiltcfg\um-msiltcfg.h = generation\um\msiltcfg\um-msiltcfg.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MsiDefs", "MsiDefs", "{403EE9A9-8134-41D3-BF67-9B04CD4C2AA4}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\MsiDefs\generate.rsp = generation\um\MsiDefs\generate.rsp
+		generation\um\MsiDefs\header.txt = generation\um\MsiDefs\header.txt
+		generation\um\MsiDefs\um-MsiDefs.h = generation\um\MsiDefs\um-MsiDefs.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MsiQuery", "MsiQuery", "{7A2F032C-D128-438D-9309-8345ABF0C5B9}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\MsiQuery\generate.rsp = generation\um\MsiQuery\generate.rsp
+		generation\um\MsiQuery\header.txt = generation\um\MsiQuery\header.txt
+		generation\um\MsiQuery\um-MsiQuery.h = generation\um\MsiQuery\um-MsiQuery.h
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -2971,6 +2992,9 @@ Global
 		{47FC9C6E-E5AB-4049-BC78-85608FC4F73E} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{604816B6-6D2A-4331-9BD2-BB094AC1429A} = {F9716DD9-2967-4295-AC71-F1FD5A9EEFEF}
 		{83EFD547-6690-4EA0-A18B-F5B956681D66} = {F9716DD9-2967-4295-AC71-F1FD5A9EEFEF}
+		{406412E8-74A2-4879-B7A1-96A142984499} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{403EE9A9-8134-41D3-BF67-9B04CD4C2AA4} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{7A2F032C-D128-438D-9309-8345ABF0C5B9} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2FE36DF8-2D9C-4F20-8787-45DC74B57461}
