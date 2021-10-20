@@ -9,4 +9,8 @@ um-SrRestorePtApi.h
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/SrRestorePtApi.h
 --with-librarypath
-*=srclient
+SRRemoveRestorePoint=srclient
+SRSetRestorePoint=srclient
+SRSetRestorePointA=srclient
+SRSetRestorePointInternal=srclient
+SRSetRestorePointW=srclient

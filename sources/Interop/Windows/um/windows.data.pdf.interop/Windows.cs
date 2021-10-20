@@ -12,7 +12,7 @@ namespace TerraFX.Interop
 {
     public static unsafe partial class Windows
     {
-        [DllImport("Windows.Data.Pdf.dll", ExactSpelling = true)]
+        [DllImport("windows.data.pdf.dll", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int PdfCreateRenderer(IDXGIDevice* pDevice, IPdfRendererNative** ppRenderer);
 

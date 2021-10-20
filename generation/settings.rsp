@@ -1,13 +1,14 @@
 --additional
 -m32
+-Wno-deprecated-declarations
 -Wno-expansion-to-defined
+-Wno-extern-initializer
+-Wno-extra-tokens
 -Wno-ignored-attributes
 -Wno-ignored-pragma-intrinsic
+-Wno-macro-redefined
 -Wno-nonportable-include-path
 -Wno-pragma-pack
--Wno-macro-redefined
--Wno-extra-tokens
--Wno-extern-initializer
 --config
 exclude-com-proxies
 exclude-empty-records

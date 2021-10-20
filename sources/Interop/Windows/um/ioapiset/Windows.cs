@@ -26,7 +26,7 @@ namespace TerraFX.Interop
         [return: NativeTypeName("BOOL")]
         public static extern int PostQueuedCompletionStatus([NativeTypeName("HANDLE")] IntPtr CompletionPort, [NativeTypeName("DWORD")] uint dwNumberOfBytesTransferred, [NativeTypeName("ULONG_PTR")] nuint dwCompletionKey, [NativeTypeName("LPOVERLAPPED")] OVERLAPPED* lpOverlapped);
 
-        [DllImport("kernel32", ExactSpelling = true)]
+        [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int DeviceIoControl([NativeTypeName("HANDLE")] IntPtr hDevice, [NativeTypeName("DWORD")] uint dwIoControlCode, [NativeTypeName("LPVOID")] void* lpInBuffer, [NativeTypeName("DWORD")] uint nInBufferSize, [NativeTypeName("LPVOID")] void* lpOutBuffer, [NativeTypeName("DWORD")] uint nOutBufferSize, [NativeTypeName("LPDWORD")] uint* lpBytesReturned, [NativeTypeName("LPOVERLAPPED")] OVERLAPPED* lpOverlapped);
 

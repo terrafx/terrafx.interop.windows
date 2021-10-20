@@ -43,4 +43,10 @@ um-prsht.h
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/prsht.h
 --with-librarypath
-*=comctl32
+CreatePropertySheetPage=comctl32
+CreatePropertySheetPageA=comctl32
+CreatePropertySheetPageW=comctl32
+DestroyPropertySheetPage=comctl32
+PropertySheet=comctl32
+PropertySheetA=comctl32
+PropertySheetW=comctl32

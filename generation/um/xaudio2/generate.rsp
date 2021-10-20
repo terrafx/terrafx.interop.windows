@@ -14,4 +14,5 @@ um-xaudio2.h
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/xaudio2.h
 --with-librarypath
-*=XAudio2_9
+XAudio2Create=xaudio2_9
+XAudio2CreateWithVersionInfo=xaudio2_9

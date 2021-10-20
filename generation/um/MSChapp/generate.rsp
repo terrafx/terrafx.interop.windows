@@ -9,4 +9,5 @@ um-MSChapp.h
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/MSChapp.h
 --with-librarypath
-*=advapi32
+MSChapSrvChangePassword=advapi32
+MSChapSrvChangePassword2=advapi32

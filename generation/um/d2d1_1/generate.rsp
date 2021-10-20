@@ -30,4 +30,9 @@ D2D1_DEVICE_CONTEXT_OPTIONS=Flags
 D2D1_LAYER_OPTIONS1=Flags
 D2D1_MAP_OPTIONS=Flags
 --with-librarypath
-*=d2d1
+D2D1ConvertColorSpace=d2d1
+D2D1CreateDevice=d2d1
+D2D1CreateDeviceContext=d2d1
+D2D1SinCos=d2d1
+D2D1Tan=d2d1
+D2D1Vec3Length=d2d1

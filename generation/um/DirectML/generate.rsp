@@ -15,4 +15,5 @@ DML_CREATE_DEVICE_FLAGS=Flags
 DML_EXECUTION_FLAGS=Flags
 DML_TENSOR_FLAGS=Flags
 --with-librarypath
-*=DirectML
+DMLCreateDevice=directml
+DMLCreateDevice1=directml

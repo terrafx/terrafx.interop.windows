@@ -9,4 +9,4 @@ um-d3d11on12.h
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/d3d11on12.h
 --with-librarypath
-*=d3d11
+D3D11On12CreateDevice=d3d11

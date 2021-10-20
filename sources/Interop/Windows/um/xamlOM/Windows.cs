@@ -12,7 +12,7 @@ namespace TerraFX.Interop
 {
     public static unsafe partial class Windows
     {
-        [DllImport("Windows.UI.Xaml.dll", ExactSpelling = true)]
+        [DllImport("windows.ui.xaml.dll", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int InitializeXamlDiagnosticsEx([NativeTypeName("LPCWSTR")] ushort* endPointName, [NativeTypeName("DWORD")] uint pid, [NativeTypeName("LPCWSTR")] ushort* wszDllXamlDiagnostics, [NativeTypeName("LPCWSTR")] ushort* wszTAPDllName, [NativeTypeName("CLSID")] Guid tapClsid, [NativeTypeName("LPCWSTR")] ushort* wszInitializationData);
 

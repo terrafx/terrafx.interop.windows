@@ -9,4 +9,4 @@ um-mftransform.h
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/mftransform.h
 --with-librarypath
-*=mfplat
+MFCreateTransformActivate=mfplat

@@ -9,4 +9,6 @@ winrt-Wsdevlicensing.h
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/winrt/Wsdevlicensing.h
 --with-librarypath
-*=wsclient
+AcquireDeveloperLicense=wsclient
+CheckDeveloperLicense=wsclient
+RemoveDeveloperLicense=wsclient

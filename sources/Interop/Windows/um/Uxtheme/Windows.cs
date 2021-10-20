@@ -39,7 +39,7 @@ namespace TerraFX.Interop
         [return: NativeTypeName("HTHEME")]
         public static extern IntPtr OpenThemeData([NativeTypeName("HWND")] IntPtr hwnd, [NativeTypeName("LPCWSTR")] ushort* pszClassList);
 
-        [DllImport("uxtheme", ExactSpelling = true)]
+        [DllImport("user32", ExactSpelling = true)]
         [return: NativeTypeName("HTHEME")]
         public static extern IntPtr OpenThemeDataForDpi([NativeTypeName("HWND")] IntPtr hwnd, [NativeTypeName("LPCWSTR")] ushort* pszClassList, [NativeTypeName("UINT")] uint dpi);
 

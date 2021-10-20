@@ -10,27 +10,27 @@ namespace TerraFX.Interop
 {
     public static unsafe partial class Windows
     {
-        [DllImport("Kernel32", ExactSpelling = true)]
+        [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("HANDLE")]
         public static extern IntPtr CreatePrivateNamespaceW([NativeTypeName("LPSECURITY_ATTRIBUTES")] SECURITY_ATTRIBUTES* lpPrivateNamespaceAttributes, [NativeTypeName("LPVOID")] void* lpBoundaryDescriptor, [NativeTypeName("LPCWSTR")] ushort* lpAliasPrefix);
 
-        [DllImport("Kernel32", ExactSpelling = true)]
+        [DllImport("kernel32", ExactSpelling = true)]
         [return: NativeTypeName("HANDLE")]
         public static extern IntPtr OpenPrivateNamespaceW([NativeTypeName("LPVOID")] void* lpBoundaryDescriptor, [NativeTypeName("LPCWSTR")] ushort* lpAliasPrefix);
 
-        [DllImport("Kernel32", ExactSpelling = true, SetLastError = true)]
+        [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOLEAN")]
         public static extern byte ClosePrivateNamespace([NativeTypeName("HANDLE")] IntPtr Handle, [NativeTypeName("ULONG")] uint Flags);
 
-        [DllImport("Kernel32", ExactSpelling = true)]
+        [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("HANDLE")]
         public static extern IntPtr CreateBoundaryDescriptorW([NativeTypeName("LPCWSTR")] ushort* Name, [NativeTypeName("ULONG")] uint Flags);
 
-        [DllImport("Kernel32", ExactSpelling = true, SetLastError = true)]
+        [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int AddSIDToBoundaryDescriptor([NativeTypeName("HANDLE *")] IntPtr* BoundaryDescriptor, [NativeTypeName("PSID")] void* RequiredSid);
 
-        [DllImport("Kernel32", ExactSpelling = true)]
+        [DllImport("kernel32", ExactSpelling = true)]
         public static extern void DeleteBoundaryDescriptor([NativeTypeName("HANDLE")] IntPtr BoundaryDescriptor);
 
         [NativeTypeName("#define PRIVATE_NAMESPACE_FLAG_DESTROY 0x00000001")]

@@ -42,11 +42,11 @@ namespace TerraFX.Interop
         [return: NativeTypeName("BOOL")]
         public static extern int Process32NextW([NativeTypeName("HANDLE")] IntPtr hSnapshot, [NativeTypeName("LPPROCESSENTRY32W")] PROCESSENTRY32W* lppe);
 
-        [DllImport("kernel32", EntryPoint = "Process32First", ExactSpelling = true)]
+        [DllImport("kernel32", EntryPoint = "Process32First", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int Process32FirstA([NativeTypeName("HANDLE")] IntPtr hSnapshot, [NativeTypeName("LPPROCESSENTRY32")] PROCESSENTRY32* lppe);
 
-        [DllImport("kernel32", EntryPoint = "Process32Next", ExactSpelling = true)]
+        [DllImport("kernel32", EntryPoint = "Process32Next", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int Process32NextA([NativeTypeName("HANDLE")] IntPtr hSnapshot, [NativeTypeName("LPPROCESSENTRY32")] PROCESSENTRY32* lppe);
 
@@ -66,11 +66,11 @@ namespace TerraFX.Interop
         [return: NativeTypeName("BOOL")]
         public static extern int Module32NextW([NativeTypeName("HANDLE")] IntPtr hSnapshot, [NativeTypeName("LPMODULEENTRY32W")] MODULEENTRY32W* lpme);
 
-        [DllImport("kernel32", EntryPoint = "Module32First", ExactSpelling = true)]
+        [DllImport("kernel32", EntryPoint = "Module32First", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int Module32FirstA([NativeTypeName("HANDLE")] IntPtr hSnapshot, [NativeTypeName("LPMODULEENTRY32")] MODULEENTRY32* lpme);
 
-        [DllImport("kernel32", EntryPoint = "Module32Next", ExactSpelling = true)]
+        [DllImport("kernel32", EntryPoint = "Module32Next", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int Module32NextA([NativeTypeName("HANDLE")] IntPtr hSnapshot, [NativeTypeName("LPMODULEENTRY32")] MODULEENTRY32* lpme);
 

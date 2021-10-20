@@ -54,10 +54,6 @@ namespace TerraFX.Interop
         [return: NativeTypeName("BOOL")]
         public static extern int CryptSIPGetCaps(SIP_SUBJECTINFO* pSubjInfo, [NativeTypeName("SIP_CAP_SET *")] SIP_CAP_SET_V3* pCaps);
 
-        [DllImport("crypt32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int CryptSIPGetSealedDigest(SIP_SUBJECTINFO* pSubjectInfo, [NativeTypeName("const BYTE *")] byte* pSig, [NativeTypeName("DWORD")] uint dwSig, [NativeTypeName("BYTE *")] byte* pbDigest, [NativeTypeName("DWORD *")] uint* pcbDigest);
-
         [NativeTypeName("#define MSSIP_FLAGS_PROHIBIT_RESIZE_ON_CREATE 0x00010000")]
         public const int MSSIP_FLAGS_PROHIBIT_RESIZE_ON_CREATE = 0x00010000;
 

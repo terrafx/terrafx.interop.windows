@@ -9,7 +9,8 @@ um-profileapi.h
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/profileapi.h
 --with-librarypath
-*=kernel32
+QueryPerformanceCounter=kernel32
+QueryPerformanceFrequency=kernel32
 --with-setlasterror
 QueryPerformanceCounter
 QueryPerformanceFrequency

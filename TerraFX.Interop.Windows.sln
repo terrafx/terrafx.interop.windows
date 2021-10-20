@@ -2596,6 +2596,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MsiQuery", "MsiQuery", "{7A
 		generation\um\MsiQuery\um-MsiQuery.h = generation\um\MsiQuery\um-MsiQuery.h
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "immdev", "immdev", "{93741128-F4A9-4C99-B4A7-675704FA2ECB}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\immdev\generate.rsp = generation\um\immdev\generate.rsp
+		generation\um\immdev\header.txt = generation\um\immdev\header.txt
+		generation\um\immdev\um-immdev.h = generation\um\immdev\um-immdev.h
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -2995,6 +3002,7 @@ Global
 		{406412E8-74A2-4879-B7A1-96A142984499} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{403EE9A9-8134-41D3-BF67-9B04CD4C2AA4} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{7A2F032C-D128-438D-9309-8345ABF0C5B9} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{93741128-F4A9-4C99-B4A7-675704FA2ECB} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2FE36DF8-2D9C-4F20-8787-45DC74B57461}

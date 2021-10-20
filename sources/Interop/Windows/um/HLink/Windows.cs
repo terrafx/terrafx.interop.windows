@@ -12,115 +12,115 @@ namespace TerraFX.Interop
 {
     public static unsafe partial class Windows
     {
-        [DllImport("Hlink", ExactSpelling = true)]
+        [DllImport("hlink", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int HlinkCreateFromMoniker(IMoniker* pimkTrgt, [NativeTypeName("LPCWSTR")] ushort* pwzLocation, [NativeTypeName("LPCWSTR")] ushort* pwzFriendlyName, IHlinkSite* pihlsite, [NativeTypeName("DWORD")] uint dwSiteData, IUnknown* piunkOuter, [NativeTypeName("const IID &")] Guid* riid, void** ppvObj);
 
-        [DllImport("Hlink", ExactSpelling = true)]
+        [DllImport("hlink", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int HlinkCreateFromString([NativeTypeName("LPCWSTR")] ushort* pwzTarget, [NativeTypeName("LPCWSTR")] ushort* pwzLocation, [NativeTypeName("LPCWSTR")] ushort* pwzFriendlyName, IHlinkSite* pihlsite, [NativeTypeName("DWORD")] uint dwSiteData, IUnknown* piunkOuter, [NativeTypeName("const IID &")] Guid* riid, void** ppvObj);
 
-        [DllImport("Hlink", ExactSpelling = true)]
+        [DllImport("hlink", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int HlinkCreateFromData(IDataObject* piDataObj, IHlinkSite* pihlsite, [NativeTypeName("DWORD")] uint dwSiteData, IUnknown* piunkOuter, [NativeTypeName("const IID &")] Guid* riid, void** ppvObj);
 
-        [DllImport("Hlink", ExactSpelling = true)]
+        [DllImport("hlink", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int HlinkQueryCreateFromData(IDataObject* piDataObj);
 
-        [DllImport("Hlink", ExactSpelling = true)]
+        [DllImport("hlink", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int HlinkClone(IHlink* pihl, [NativeTypeName("const IID &")] Guid* riid, IHlinkSite* pihlsiteForClone, [NativeTypeName("DWORD")] uint dwSiteData, void** ppvObj);
 
-        [DllImport("Hlink", ExactSpelling = true)]
+        [DllImport("hlink", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int HlinkCreateBrowseContext(IUnknown* piunkOuter, [NativeTypeName("const IID &")] Guid* riid, void** ppvObj);
 
-        [DllImport("Hlink", ExactSpelling = true)]
+        [DllImport("hlink", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int HlinkNavigateToStringReference([NativeTypeName("LPCWSTR")] ushort* pwzTarget, [NativeTypeName("LPCWSTR")] ushort* pwzLocation, IHlinkSite* pihlsite, [NativeTypeName("DWORD")] uint dwSiteData, IHlinkFrame* pihlframe, [NativeTypeName("DWORD")] uint grfHLNF, [NativeTypeName("LPBC")] IBindCtx* pibc, IBindStatusCallback* pibsc, IHlinkBrowseContext* pihlbc);
 
-        [DllImport("Hlink", ExactSpelling = true)]
+        [DllImport("hlink", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int HlinkNavigate(IHlink* pihl, IHlinkFrame* pihlframe, [NativeTypeName("DWORD")] uint grfHLNF, [NativeTypeName("LPBC")] IBindCtx* pbc, IBindStatusCallback* pibsc, IHlinkBrowseContext* pihlbc);
 
-        [DllImport("Hlink", ExactSpelling = true)]
+        [DllImport("hlink", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int HlinkOnNavigate(IHlinkFrame* pihlframe, IHlinkBrowseContext* pihlbc, [NativeTypeName("DWORD")] uint grfHLNF, IMoniker* pimkTarget, [NativeTypeName("LPCWSTR")] ushort* pwzLocation, [NativeTypeName("LPCWSTR")] ushort* pwzFriendlyName, [NativeTypeName("ULONG *")] uint* puHLID);
 
-        [DllImport("Hlink", ExactSpelling = true)]
+        [DllImport("hlink", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int HlinkUpdateStackItem(IHlinkFrame* pihlframe, IHlinkBrowseContext* pihlbc, [NativeTypeName("ULONG")] uint uHLID, IMoniker* pimkTrgt, [NativeTypeName("LPCWSTR")] ushort* pwzLocation, [NativeTypeName("LPCWSTR")] ushort* pwzFriendlyName);
 
-        [DllImport("Hlink", ExactSpelling = true)]
+        [DllImport("hlink", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int HlinkOnRenameDocument([NativeTypeName("DWORD")] uint dwReserved, IHlinkBrowseContext* pihlbc, IMoniker* pimkOld, IMoniker* pimkNew);
 
-        [DllImport("Hlink", ExactSpelling = true)]
+        [DllImport("hlink", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int HlinkResolveMonikerForData([NativeTypeName("LPMONIKER")] IMoniker* pimkReference, [NativeTypeName("DWORD")] uint reserved, [NativeTypeName("LPBC")] IBindCtx* pibc, [NativeTypeName("ULONG")] uint cFmtetc, FORMATETC* rgFmtetc, IBindStatusCallback* pibsc, [NativeTypeName("LPMONIKER")] IMoniker* pimkBase);
 
-        [DllImport("Hlink", ExactSpelling = true)]
+        [DllImport("hlink", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int HlinkResolveStringForData([NativeTypeName("LPCWSTR")] ushort* pwzReference, [NativeTypeName("DWORD")] uint reserved, [NativeTypeName("LPBC")] IBindCtx* pibc, [NativeTypeName("ULONG")] uint cFmtetc, FORMATETC* rgFmtetc, IBindStatusCallback* pibsc, [NativeTypeName("LPMONIKER")] IMoniker* pimkBase);
 
-        [DllImport("Hlink", ExactSpelling = true)]
+        [DllImport("hlink", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int HlinkParseDisplayName([NativeTypeName("LPBC")] IBindCtx* pibc, [NativeTypeName("LPCWSTR")] ushort* pwzDisplayName, [NativeTypeName("BOOL")] int fNoForceAbs, [NativeTypeName("ULONG *")] uint* pcchEaten, IMoniker** ppimk);
 
-        [DllImport("Hlink", ExactSpelling = true)]
+        [DllImport("hlink", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int HlinkCreateExtensionServices([NativeTypeName("LPCWSTR")] ushort* pwzAdditionalHeaders, [NativeTypeName("HWND")] IntPtr phwnd, [NativeTypeName("LPCWSTR")] ushort* pszUsername, [NativeTypeName("LPCWSTR")] ushort* pszPassword, IUnknown* piunkOuter, [NativeTypeName("const IID &")] Guid* riid, void** ppvObj);
 
-        [DllImport("Hlink", ExactSpelling = true)]
+        [DllImport("hlink", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int HlinkPreprocessMoniker([NativeTypeName("LPBC")] IBindCtx* pibc, IMoniker* pimkIn, IMoniker** ppimkOut);
 
-        [DllImport("Hlink", ExactSpelling = true)]
+        [DllImport("hlink", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int OleSaveToStreamEx(IUnknown* piunk, IStream* pistm, [NativeTypeName("BOOL")] int fClearDirty);
 
-        [DllImport("Hlink", ExactSpelling = true)]
+        [DllImport("hlink", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int HlinkSetSpecialReference([NativeTypeName("ULONG")] uint uReference, [NativeTypeName("LPCWSTR")] ushort* pwzReference);
 
-        [DllImport("Hlink", ExactSpelling = true)]
+        [DllImport("hlink", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int HlinkGetSpecialReference([NativeTypeName("ULONG")] uint uReference, [NativeTypeName("LPWSTR *")] ushort** ppwzReference);
 
-        [DllImport("Hlink", ExactSpelling = true)]
+        [DllImport("hlink", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int HlinkCreateShortcut([NativeTypeName("DWORD")] uint grfHLSHORTCUTF, IHlink* pihl, [NativeTypeName("LPCWSTR")] ushort* pwzDir, [NativeTypeName("LPCWSTR")] ushort* pwzFileName, [NativeTypeName("LPWSTR *")] ushort** ppwzShortcutFile, [NativeTypeName("DWORD")] uint dwReserved);
 
-        [DllImport("Hlink", ExactSpelling = true)]
+        [DllImport("hlink", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int HlinkCreateShortcutFromMoniker([NativeTypeName("DWORD")] uint grfHLSHORTCUTF, IMoniker* pimkTarget, [NativeTypeName("LPCWSTR")] ushort* pwzLocation, [NativeTypeName("LPCWSTR")] ushort* pwzDir, [NativeTypeName("LPCWSTR")] ushort* pwzFileName, [NativeTypeName("LPWSTR *")] ushort** ppwzShortcutFile, [NativeTypeName("DWORD")] uint dwReserved);
 
-        [DllImport("Hlink", ExactSpelling = true)]
+        [DllImport("hlink", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int HlinkCreateShortcutFromString([NativeTypeName("DWORD")] uint grfHLSHORTCUTF, [NativeTypeName("LPCWSTR")] ushort* pwzTarget, [NativeTypeName("LPCWSTR")] ushort* pwzLocation, [NativeTypeName("LPCWSTR")] ushort* pwzDir, [NativeTypeName("LPCWSTR")] ushort* pwzFileName, [NativeTypeName("LPWSTR *")] ushort** ppwzShortcutFile, [NativeTypeName("DWORD")] uint dwReserved);
 
-        [DllImport("Hlink", ExactSpelling = true)]
+        [DllImport("hlink", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int HlinkResolveShortcut([NativeTypeName("LPCWSTR")] ushort* pwzShortcutFileName, IHlinkSite* pihlsite, [NativeTypeName("DWORD")] uint dwSiteData, IUnknown* piunkOuter, [NativeTypeName("const IID &")] Guid* riid, void** ppvObj);
 
-        [DllImport("Hlink", ExactSpelling = true)]
+        [DllImport("hlink", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int HlinkResolveShortcutToMoniker([NativeTypeName("LPCWSTR")] ushort* pwzShortcutFileName, IMoniker** ppimkTarget, [NativeTypeName("LPWSTR *")] ushort** ppwzLocation);
 
-        [DllImport("Hlink", ExactSpelling = true)]
+        [DllImport("hlink", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int HlinkResolveShortcutToString([NativeTypeName("LPCWSTR")] ushort* pwzShortcutFileName, [NativeTypeName("LPWSTR *")] ushort** ppwzTarget, [NativeTypeName("LPWSTR *")] ushort** ppwzLocation);
 
-        [DllImport("Hlink", ExactSpelling = true)]
+        [DllImport("hlink", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int HlinkIsShortcut([NativeTypeName("LPCWSTR")] ushort* pwzFileName);
 
-        [DllImport("Hlink", ExactSpelling = true)]
+        [DllImport("hlink", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int HlinkGetValueFromParams([NativeTypeName("LPCWSTR")] ushort* pwzParams, [NativeTypeName("LPCWSTR")] ushort* pwzName, [NativeTypeName("LPWSTR *")] ushort** ppwzValue);
 
-        [DllImport("Hlink", ExactSpelling = true)]
+        [DllImport("hlink", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int HlinkTranslateURL([NativeTypeName("LPCWSTR")] ushort* pwzURL, [NativeTypeName("DWORD")] uint grfFlags, [NativeTypeName("LPWSTR *")] ushort** ppwzTranslatedURL);
 

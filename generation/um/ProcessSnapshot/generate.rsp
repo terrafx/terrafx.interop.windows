@@ -15,4 +15,13 @@ PSS_HANDLE_FLAGS=Flags
 PSS_PROCESS_FLAGS=Flags
 PSS_THREAD_FLAGS=Flags
 --with-librarypath
-*=kernel32
+PssCaptureSnapshot=kernel32
+PssDuplicateSnapshot=kernel32
+PssFreeSnapshot=kernel32
+PssQuerySnapshot=kernel32
+PssWalkMarkerCreate=kernel32
+PssWalkMarkerFree=kernel32
+PssWalkMarkerGetPosition=kernel32
+PssWalkMarkerSeekToBeginning=kernel32
+PssWalkMarkerSetPosition=kernel32
+PssWalkSnapshot=kernel32

@@ -11,4 +11,5 @@ um-windows.data.pdf.interop.h
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/windows.data.pdf.interop.h
 --with-librarypath
-*=Windows.Data.Pdf.dll
+PdfCreateRenderer=windows.data.pdf.dll
+PdfRenderParams=windows.data.pdf.dll

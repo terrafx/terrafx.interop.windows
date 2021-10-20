@@ -12,11 +12,11 @@ namespace TerraFX.Interop
 {
     public static unsafe partial class Windows
     {
-        [DllImport("Windows.Media.Audio.dll", ExactSpelling = true)]
+        [DllImport("xaudio2_9", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int CreateAudioVolumeMeter(IUnknown** ppApo);
 
-        [DllImport("Windows.Media.Audio.dll", ExactSpelling = true)]
+        [DllImport("xaudio2_9", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int CreateAudioReverb(IUnknown** ppApo);
 

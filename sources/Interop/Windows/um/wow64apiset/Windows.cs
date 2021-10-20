@@ -14,43 +14,39 @@ namespace TerraFX.Interop
         [return: NativeTypeName("BOOLEAN")]
         public static extern byte Wow64EnableWow64FsRedirection([NativeTypeName("BOOLEAN")] byte Wow64FsEnableRedirection);
 
-        [DllImport("kernel32", ExactSpelling = true)]
+        [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int Wow64DisableWow64FsRedirection([NativeTypeName("PVOID *")] void** OldValue);
 
-        [DllImport("kernel32", ExactSpelling = true)]
+        [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int Wow64RevertWow64FsRedirection([NativeTypeName("PVOID")] void* OlValue);
 
-        [DllImport("kernel32", ExactSpelling = true)]
+        [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int IsWow64Process([NativeTypeName("HANDLE")] IntPtr hProcess, [NativeTypeName("PBOOL")] int* Wow64Process);
 
-        [DllImport("kernel32", ExactSpelling = true)]
+        [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("UINT")]
         public static extern uint GetSystemWow64DirectoryA([NativeTypeName("LPSTR")] sbyte* lpBuffer, [NativeTypeName("UINT")] uint uSize);
 
-        [DllImport("kernel32", ExactSpelling = true)]
+        [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("UINT")]
         public static extern uint GetSystemWow64DirectoryW([NativeTypeName("LPWSTR")] ushort* lpBuffer, [NativeTypeName("UINT")] uint uSize);
 
-        [DllImport("kernel32", ExactSpelling = true)]
-        [return: NativeTypeName("USHORT")]
-        public static extern ushort Wow64SetThreadDefaultGuestMachine([NativeTypeName("USHORT")] ushort Machine);
-
-        [DllImport("kernel32", ExactSpelling = true)]
+        [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int IsWow64Process2([NativeTypeName("HANDLE")] IntPtr hProcess, [NativeTypeName("USHORT *")] ushort* pProcessMachine, [NativeTypeName("USHORT *")] ushort* pNativeMachine);
 
-        [DllImport("kernel32", ExactSpelling = true)]
+        [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("UINT")]
         public static extern uint GetSystemWow64Directory2A([NativeTypeName("LPSTR")] sbyte* lpBuffer, [NativeTypeName("UINT")] uint uSize, [NativeTypeName("WORD")] ushort ImageFileMachineType);
 
-        [DllImport("kernel32", ExactSpelling = true)]
+        [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("UINT")]
         public static extern uint GetSystemWow64Directory2W([NativeTypeName("LPWSTR")] ushort* lpBuffer, [NativeTypeName("UINT")] uint uSize, [NativeTypeName("WORD")] ushort ImageFileMachineType);
 
-        [DllImport("kernel32", ExactSpelling = true)]
+        [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int IsWow64GuestMachineSupported([NativeTypeName("USHORT")] ushort WowGuestMachine, [NativeTypeName("BOOL *")] int* MachineIsSupported);
 

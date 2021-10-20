@@ -18,4 +18,19 @@ winrt-roapi.h
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/winrt/roapi.h
 --with-librarypath
-*=combase
+GetActivationFactory=combase
+WinRTGetActivationFactory=combase
+RoActivateInstance=combase
+WinRTActivateInstance=combase
+RoGetActivationFactory=combase
+RoGetApartmentIdentifier=combase
+RoInitialize=combase
+WinRTInitialize=combase
+RoRegisterActivationFactories=combase
+WinRTRegisterActivationFactories=combase
+RoRegisterForApartmentShutdown=combase
+RoRevokeActivationFactories=combase
+WinRTRevokeActivationFactories=combase
+RoUninitialize=combase
+WinRTUninitialize=combase
+RoUnregisterForApartmentShutdown=combase

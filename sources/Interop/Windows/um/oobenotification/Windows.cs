@@ -11,10 +11,6 @@ namespace TerraFX.Interop
     {
         [DllImport("kernel32", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int OOBEComplete([NativeTypeName("PBOOL")] int* isOOBEComplete);
-
-        [DllImport("kernel32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
         public static extern int RegisterWaitUntilOOBECompleted([NativeTypeName("OOBE_COMPLETED_CALLBACK")] delegate* unmanaged<void*, void> OOBECompletedCallback, [NativeTypeName("PVOID")] void* CallbackContext, [NativeTypeName("PVOID *")] void** WaitHandle);
 
         [DllImport("kernel32", ExactSpelling = true)]

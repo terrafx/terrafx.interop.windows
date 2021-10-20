@@ -11,4 +11,8 @@ C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/wcmapi.h
 --with-attribute
 WCM_CONNECTION_COST=Flags
 --with-librarypath
-*=wcmapi
+WcmFreeMemory=wcmapi
+WcmGetProfileList=wcmapi
+WcmQueryProperty=wcmapi
+WcmSetProfileList=wcmapi
+WcmSetProperty=wcmapi

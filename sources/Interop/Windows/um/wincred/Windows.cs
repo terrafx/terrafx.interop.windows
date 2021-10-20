@@ -118,10 +118,6 @@ namespace TerraFX.Interop
         [return: NativeTypeName("BOOL")]
         public static extern int CredProtectW([NativeTypeName("BOOL")] int fAsSelf, [NativeTypeName("LPWSTR")] ushort* pszCredentials, [NativeTypeName("DWORD")] uint cchCredentials, [NativeTypeName("LPWSTR")] ushort* pszProtectedCredentials, [NativeTypeName("DWORD *")] uint* pcchMaxChars, CRED_PROTECTION_TYPE* ProtectionType);
 
-        [DllImport("advapi32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int CredProtectEx([NativeTypeName("ULONG")] uint Flags, [NativeTypeName("LPWSTR")] ushort* pszCredentials, [NativeTypeName("DWORD")] uint cchCredentials, [NativeTypeName("LPWSTR")] ushort* pszProtectedCredentials, [NativeTypeName("DWORD *")] uint* pcchMaxChars, CRED_PROTECTION_TYPE* ProtectionType);
-
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int CredProtectA([NativeTypeName("BOOL")] int fAsSelf, [NativeTypeName("LPSTR")] sbyte* pszCredentials, [NativeTypeName("DWORD")] uint cchCredentials, [NativeTypeName("LPSTR")] sbyte* pszProtectedCredentials, [NativeTypeName("DWORD *")] uint* pcchMaxChars, CRED_PROTECTION_TYPE* ProtectionType);
@@ -129,10 +125,6 @@ namespace TerraFX.Interop
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int CredUnprotectW([NativeTypeName("BOOL")] int fAsSelf, [NativeTypeName("LPWSTR")] ushort* pszProtectedCredentials, [NativeTypeName("DWORD")] uint cchProtectedCredentials, [NativeTypeName("LPWSTR")] ushort* pszCredentials, [NativeTypeName("DWORD *")] uint* pcchMaxChars);
-
-        [DllImport("advapi32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int CredUnprotectEx([NativeTypeName("ULONG")] uint Flags, [NativeTypeName("LPWSTR")] ushort* pszProtectedCredentials, [NativeTypeName("DWORD")] uint cchProtectedCredentials, [NativeTypeName("LPWSTR")] ushort* pszCredentials, [NativeTypeName("DWORD *")] uint* pcchMaxChars);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]

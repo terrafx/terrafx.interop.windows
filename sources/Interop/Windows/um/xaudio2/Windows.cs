@@ -13,7 +13,7 @@ namespace TerraFX.Interop
 {
     public static unsafe partial class Windows
     {
-        [DllImport("XAudio2_9", ExactSpelling = true)]
+        [DllImport("xaudio2_9", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int XAudio2CreateWithVersionInfo(IXAudio2** ppXAudio2, [NativeTypeName("UINT32")] uint Flags = 0, [NativeTypeName("XAUDIO2_PROCESSOR")] uint XAudio2Processor = 0x00000001, [NativeTypeName("DWORD")] uint ntddiVersion = 0x0A00000A);
 

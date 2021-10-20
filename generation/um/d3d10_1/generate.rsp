@@ -9,4 +9,5 @@ um-d3d10_1.h
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/d3d10_1.h
 --with-librarypath
-*=d3d10_1
+D3D10CreateDevice1=d3d10_1
+D3D10CreateDeviceAndSwapChain1=d3d10_1

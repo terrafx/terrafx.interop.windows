@@ -10,51 +10,51 @@ namespace TerraFX.Interop
 {
     public static unsafe partial class Windows
     {
-        [DllImport("cabinet", ExactSpelling = true)]
+        [DllImport("cabinet", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int CreateCompressor([NativeTypeName("DWORD")] uint Algorithm, [NativeTypeName("PCOMPRESS_ALLOCATION_ROUTINES")] COMPRESS_ALLOCATION_ROUTINES* AllocationRoutines, [NativeTypeName("PCOMPRESSOR_HANDLE")] IntPtr* CompressorHandle);
 
-        [DllImport("cabinet", ExactSpelling = true)]
+        [DllImport("cabinet", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int SetCompressorInformation([NativeTypeName("COMPRESSOR_HANDLE")] IntPtr CompressorHandle, COMPRESS_INFORMATION_CLASS CompressInformationClass, [NativeTypeName("LPCVOID")] void* CompressInformation, [NativeTypeName("SIZE_T")] nuint CompressInformationSize);
 
-        [DllImport("cabinet", ExactSpelling = true)]
+        [DllImport("cabinet", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int QueryCompressorInformation([NativeTypeName("COMPRESSOR_HANDLE")] IntPtr CompressorHandle, COMPRESS_INFORMATION_CLASS CompressInformationClass, [NativeTypeName("PVOID")] void* CompressInformation, [NativeTypeName("SIZE_T")] nuint CompressInformationSize);
 
-        [DllImport("cabinet", ExactSpelling = true)]
+        [DllImport("cabinet", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int Compress([NativeTypeName("COMPRESSOR_HANDLE")] IntPtr CompressorHandle, [NativeTypeName("LPCVOID")] void* UncompressedData, [NativeTypeName("SIZE_T")] nuint UncompressedDataSize, [NativeTypeName("PVOID")] void* CompressedBuffer, [NativeTypeName("SIZE_T")] nuint CompressedBufferSize, [NativeTypeName("PSIZE_T")] nuint* CompressedDataSize);
 
-        [DllImport("cabinet", ExactSpelling = true)]
+        [DllImport("cabinet", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int ResetCompressor([NativeTypeName("COMPRESSOR_HANDLE")] IntPtr CompressorHandle);
 
-        [DllImport("cabinet", ExactSpelling = true)]
+        [DllImport("cabinet", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int CloseCompressor([NativeTypeName("COMPRESSOR_HANDLE")] IntPtr CompressorHandle);
 
-        [DllImport("cabinet", ExactSpelling = true)]
+        [DllImport("cabinet", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int CreateDecompressor([NativeTypeName("DWORD")] uint Algorithm, [NativeTypeName("PCOMPRESS_ALLOCATION_ROUTINES")] COMPRESS_ALLOCATION_ROUTINES* AllocationRoutines, [NativeTypeName("PDECOMPRESSOR_HANDLE")] IntPtr* DecompressorHandle);
 
-        [DllImport("cabinet", ExactSpelling = true)]
+        [DllImport("cabinet", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int SetDecompressorInformation([NativeTypeName("DECOMPRESSOR_HANDLE")] IntPtr DecompressorHandle, COMPRESS_INFORMATION_CLASS CompressInformationClass, [NativeTypeName("LPCVOID")] void* CompressInformation, [NativeTypeName("SIZE_T")] nuint CompressInformationSize);
 
-        [DllImport("cabinet", ExactSpelling = true)]
+        [DllImport("cabinet", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int QueryDecompressorInformation([NativeTypeName("DECOMPRESSOR_HANDLE")] IntPtr DecompressorHandle, COMPRESS_INFORMATION_CLASS CompressInformationClass, [NativeTypeName("PVOID")] void* CompressInformation, [NativeTypeName("SIZE_T")] nuint CompressInformationSize);
 
-        [DllImport("cabinet", ExactSpelling = true)]
+        [DllImport("cabinet", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int Decompress([NativeTypeName("DECOMPRESSOR_HANDLE")] IntPtr DecompressorHandle, [NativeTypeName("LPCVOID")] void* CompressedData, [NativeTypeName("SIZE_T")] nuint CompressedDataSize, [NativeTypeName("PVOID")] void* UncompressedBuffer, [NativeTypeName("SIZE_T")] nuint UncompressedBufferSize, [NativeTypeName("PSIZE_T")] nuint* UncompressedDataSize);
 
-        [DllImport("cabinet", ExactSpelling = true)]
+        [DllImport("cabinet", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int ResetDecompressor([NativeTypeName("DECOMPRESSOR_HANDLE")] IntPtr DecompressorHandle);
 
-        [DllImport("cabinet", ExactSpelling = true)]
+        [DllImport("cabinet", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int CloseDecompressor([NativeTypeName("DECOMPRESSOR_HANDLE")] IntPtr DecompressorHandle);
 

@@ -14,19 +14,15 @@ namespace TerraFX.Interop
 {
     public static unsafe partial class Windows
     {
-        [DllImport("Shell32", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int SHRemovePersonalPropertyValues(IShellItemArray* psia);
-
-        [DllImport("Shell32", ExactSpelling = true)]
+        [DllImport("shell32", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int SHAddDefaultPropertiesByExt([NativeTypeName("PCWSTR")] ushort* pszExt, IPropertyStore* pPropStore);
 
-        [DllImport("Shell32", ExactSpelling = true)]
+        [DllImport("shell32", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int SHCreateDefaultPropertiesOp(IShellItem* psi, IFileOperation** ppFileOp);
 
-        [DllImport("Shell32", ExactSpelling = true)]
+        [DllImport("shell32", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int SHSetDefaultProperties([NativeTypeName("HWND")] IntPtr hwnd, IShellItem* psi, [NativeTypeName("DWORD")] uint dwFileOpFlags, IFileOperationProgressSink* pfops);
 
@@ -66,12 +62,12 @@ namespace TerraFX.Interop
             {
                 IShellItem* psiFolder;
 
-                unchecked(hr) = SHCreateItemFromIDList(pidlFolder, __uuidof<IShellItem>(), (void**)(&psiFolder));
+                hr = SHCreateItemFromIDList(pidlFolder, __uuidof<IShellItem>(), (void**)(&psiFolder));
                 if (((unchecked((int)(hr))) >= 0))
                 {
                     IShellItem* psiResolved;
 
-                    unchecked(hr) = plib->ResolveFolder(psiFolder, dwTimeout, __uuidof<IShellItem>(), (void**)(&psiResolved));
+                    hr = plib->ResolveFolder(psiFolder, dwTimeout, __uuidof<IShellItem>(), (void**)(&psiResolved));
                     if (((unchecked((int)(hr))) >= 0))
                     {
                         unchecked(hr) = psiResolved->GetDisplayName(SIGDN_DESKTOPABSOLUTEPARSING, ppszResolvedPath);

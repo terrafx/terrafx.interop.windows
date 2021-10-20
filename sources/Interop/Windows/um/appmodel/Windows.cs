@@ -60,22 +60,6 @@ namespace TerraFX.Interop
 
         [DllImport("kernel32", ExactSpelling = true)]
         [return: NativeTypeName("LONG")]
-        public static extern int GetPackagePathByFullName2([NativeTypeName("PCWSTR")] ushort* packageFullName, PackagePathType packagePathType, [NativeTypeName("UINT32 *")] uint* pathLength, [NativeTypeName("PWSTR")] ushort* path);
-
-        [DllImport("kernel32", ExactSpelling = true)]
-        [return: NativeTypeName("LONG")]
-        public static extern int GetStagedPackagePathByFullName2([NativeTypeName("PCWSTR")] ushort* packageFullName, PackagePathType packagePathType, [NativeTypeName("UINT32 *")] uint* pathLength, [NativeTypeName("PWSTR")] ushort* path);
-
-        [DllImport("kernel32", ExactSpelling = true)]
-        [return: NativeTypeName("LONG")]
-        public static extern int GetCurrentPackageInfo2([NativeTypeName("const UINT32")] uint flags, PackagePathType packagePathType, [NativeTypeName("UINT32 *")] uint* bufferLength, [NativeTypeName("BYTE *")] byte* buffer, [NativeTypeName("UINT32 *")] uint* count);
-
-        [DllImport("kernel32", ExactSpelling = true)]
-        [return: NativeTypeName("LONG")]
-        public static extern int GetCurrentPackagePath2(PackagePathType packagePathType, [NativeTypeName("UINT32 *")] uint* pathLength, [NativeTypeName("PWSTR")] ushort* path);
-
-        [DllImport("kernel32", ExactSpelling = true)]
-        [return: NativeTypeName("LONG")]
         public static extern int GetCurrentApplicationUserModelId([NativeTypeName("UINT32 *")] uint* applicationUserModelIdLength, [NativeTypeName("PWSTR")] ushort* applicationUserModelId);
 
         [DllImport("kernel32", ExactSpelling = true)]
@@ -85,26 +69,6 @@ namespace TerraFX.Interop
         [DllImport("kernel32", ExactSpelling = true)]
         [return: NativeTypeName("LONG")]
         public static extern int GetApplicationUserModelIdFromToken([NativeTypeName("HANDLE")] IntPtr token, [NativeTypeName("UINT32 *")] uint* applicationUserModelIdLength, [NativeTypeName("PWSTR")] ushort* applicationUserModelId);
-
-        [DllImport("kernel32", ExactSpelling = true)]
-        [return: NativeTypeName("LONG")]
-        public static extern int VerifyPackageFullName([NativeTypeName("PCWSTR")] ushort* packageFullName);
-
-        [DllImport("kernel32", ExactSpelling = true)]
-        [return: NativeTypeName("LONG")]
-        public static extern int VerifyPackageFamilyName([NativeTypeName("PCWSTR")] ushort* packageFamilyName);
-
-        [DllImport("kernel32", ExactSpelling = true)]
-        [return: NativeTypeName("LONG")]
-        public static extern int VerifyPackageId([NativeTypeName("const PACKAGE_ID *")] PACKAGE_ID* packageId);
-
-        [DllImport("kernel32", ExactSpelling = true)]
-        [return: NativeTypeName("LONG")]
-        public static extern int VerifyApplicationUserModelId([NativeTypeName("PCWSTR")] ushort* applicationUserModelId);
-
-        [DllImport("kernel32", ExactSpelling = true)]
-        [return: NativeTypeName("LONG")]
-        public static extern int VerifyPackageRelativeApplicationId([NativeTypeName("PCWSTR")] ushort* packageRelativeApplicationId);
 
         [DllImport("kernel32", ExactSpelling = true)]
         [return: NativeTypeName("LONG")]
@@ -156,10 +120,6 @@ namespace TerraFX.Interop
 
         [DllImport("kernel32", ExactSpelling = true)]
         [return: NativeTypeName("LONG")]
-        public static extern int OpenPackageInfoByFullNameForUser([NativeTypeName("PSID")] void* userSid, [NativeTypeName("PCWSTR")] ushort* packageFullName, [NativeTypeName("const UINT32")] uint reserved, [NativeTypeName("PACKAGE_INFO_REFERENCE *")] _PACKAGE_INFO_REFERENCE** packageInfoReference);
-
-        [DllImport("kernel32", ExactSpelling = true)]
-        [return: NativeTypeName("LONG")]
         public static extern int ClosePackageInfo([NativeTypeName("PACKAGE_INFO_REFERENCE")] _PACKAGE_INFO_REFERENCE* packageInfoReference);
 
         [DllImport("kernel32", ExactSpelling = true)]
@@ -170,43 +130,35 @@ namespace TerraFX.Interop
         [return: NativeTypeName("LONG")]
         public static extern int GetPackageApplicationIds([NativeTypeName("PACKAGE_INFO_REFERENCE")] _PACKAGE_INFO_REFERENCE* packageInfoReference, [NativeTypeName("UINT32 *")] uint* bufferLength, [NativeTypeName("BYTE *")] byte* buffer, [NativeTypeName("UINT32 *")] uint* count);
 
-        [DllImport("kernel32", ExactSpelling = true)]
-        [return: NativeTypeName("LONG")]
-        public static extern int GetPackageInfo2([NativeTypeName("PACKAGE_INFO_REFERENCE")] _PACKAGE_INFO_REFERENCE* packageInfoReference, [NativeTypeName("const UINT32")] uint flags, PackagePathType packagePathType, [NativeTypeName("UINT32 *")] uint* bufferLength, [NativeTypeName("BYTE *")] byte* buffer, [NativeTypeName("UINT32 *")] uint* count);
-
-        [DllImport("kernel32", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int CheckIsMSIXPackage([NativeTypeName("PCWSTR")] ushort* packageFullName, [NativeTypeName("BOOL *")] int* isMSIXPackage);
-
-        [DllImport("kernel32", ExactSpelling = true)]
+        [DllImport("api-ms-win-appmodel-runtime-l1-1-2", ExactSpelling = true)]
         [return: NativeTypeName("LONG")]
         public static extern int AppPolicyGetLifecycleManagement([NativeTypeName("HANDLE")] IntPtr processToken, AppPolicyLifecycleManagement* policy);
 
-        [DllImport("kernel32", ExactSpelling = true)]
+        [DllImport("api-ms-win-appmodel-runtime-l1-1-2", ExactSpelling = true)]
         [return: NativeTypeName("LONG")]
         public static extern int AppPolicyGetWindowingModel([NativeTypeName("HANDLE")] IntPtr processToken, AppPolicyWindowingModel* policy);
 
-        [DllImport("kernel32", ExactSpelling = true)]
+        [DllImport("api-ms-win-appmodel-runtime-l1-1-2", ExactSpelling = true)]
         [return: NativeTypeName("LONG")]
         public static extern int AppPolicyGetMediaFoundationCodecLoading([NativeTypeName("HANDLE")] IntPtr processToken, AppPolicyMediaFoundationCodecLoading* policy);
 
-        [DllImport("kernel32", ExactSpelling = true)]
+        [DllImport("api-ms-win-appmodel-runtime-l1-1-2", ExactSpelling = true)]
         [return: NativeTypeName("LONG")]
         public static extern int AppPolicyGetClrCompat([NativeTypeName("HANDLE")] IntPtr processToken, AppPolicyClrCompat* policy);
 
-        [DllImport("kernel32", ExactSpelling = true)]
+        [DllImport("api-ms-win-appmodel-runtime-l1-1-2", ExactSpelling = true)]
         [return: NativeTypeName("LONG")]
         public static extern int AppPolicyGetThreadInitializationType([NativeTypeName("HANDLE")] IntPtr processToken, AppPolicyThreadInitializationType* policy);
 
-        [DllImport("kernel32", ExactSpelling = true)]
+        [DllImport("api-ms-win-appmodel-runtime-l1-1-2", ExactSpelling = true)]
         [return: NativeTypeName("LONG")]
         public static extern int AppPolicyGetShowDeveloperDiagnostic([NativeTypeName("HANDLE")] IntPtr processToken, AppPolicyShowDeveloperDiagnostic* policy);
 
-        [DllImport("kernel32", ExactSpelling = true)]
+        [DllImport("api-ms-win-appmodel-runtime-l1-1-2", ExactSpelling = true)]
         [return: NativeTypeName("LONG")]
         public static extern int AppPolicyGetProcessTerminationMethod([NativeTypeName("HANDLE")] IntPtr processToken, AppPolicyProcessTerminationMethod* policy);
 
-        [DllImport("kernel32", ExactSpelling = true)]
+        [DllImport("api-ms-win-appmodel-runtime-l1-1-2", ExactSpelling = true)]
         [return: NativeTypeName("LONG")]
         public static extern int AppPolicyGetCreateFileAccess([NativeTypeName("HANDLE")] IntPtr processToken, AppPolicyCreateFileAccess* policy);
 

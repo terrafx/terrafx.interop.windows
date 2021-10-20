@@ -11,4 +11,14 @@ um-d3d10shader.h
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/d3d10shader.h
 --with-librarypath
-*=d3d10
+D3D10CompileShader=d3d10
+D3D10DisassembleShader=d3d10
+D3D10GetGeometryShaderProfile=d3d10
+D3D10GetInputAndOutputSignatureBlob=d3d10
+D3D10GetInputSignatureBlob=d3d10
+D3D10GetOutputSignatureBlob=d3d10
+D3D10GetPixelShaderProfile=d3d10
+D3D10GetShaderDebugInfo=d3d10
+D3D10GetVertexShaderProfile=d3d10
+D3D10PreprocessShader=d3d10
+D3D10ReflectShader=d3d10

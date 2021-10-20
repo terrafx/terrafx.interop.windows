@@ -4,275 +4,273 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
-using System.Diagnostics;
-using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
 {
     public static unsafe partial class Windows
     {
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("PSTR")]
         public static extern sbyte* StrChrA([NativeTypeName("PCSTR")] sbyte* pszStart, [NativeTypeName("WORD")] ushort wMatch);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("PWSTR")]
         public static extern ushort* StrChrW([NativeTypeName("PCWSTR")] ushort* pszStart, [NativeTypeName("WCHAR")] ushort wMatch);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("PSTR")]
         public static extern sbyte* StrChrIA([NativeTypeName("PCSTR")] sbyte* pszStart, [NativeTypeName("WORD")] ushort wMatch);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("PWSTR")]
         public static extern ushort* StrChrIW([NativeTypeName("PCWSTR")] ushort* pszStart, [NativeTypeName("WCHAR")] ushort wMatch);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("PWSTR")]
         public static extern ushort* StrChrNW([NativeTypeName("PCWSTR")] ushort* pszStart, [NativeTypeName("WCHAR")] ushort wMatch, [NativeTypeName("UINT")] uint cchMax);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("PWSTR")]
         public static extern ushort* StrChrNIW([NativeTypeName("PCWSTR")] ushort* pszStart, [NativeTypeName("WCHAR")] ushort wMatch, [NativeTypeName("UINT")] uint cchMax);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         public static extern int StrCmpNA([NativeTypeName("PCSTR")] sbyte* psz1, [NativeTypeName("PCSTR")] sbyte* psz2, int nChar);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         public static extern int StrCmpNW([NativeTypeName("PCWSTR")] ushort* psz1, [NativeTypeName("PCWSTR")] ushort* psz2, int nChar);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         public static extern int StrCmpNIA([NativeTypeName("PCSTR")] sbyte* psz1, [NativeTypeName("PCSTR")] sbyte* psz2, int nChar);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         public static extern int StrCmpNIW([NativeTypeName("PCWSTR")] ushort* psz1, [NativeTypeName("PCWSTR")] ushort* psz2, int nChar);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         public static extern int StrCSpnA([NativeTypeName("PCSTR")] sbyte* pszStr, [NativeTypeName("PCSTR")] sbyte* pszSet);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         public static extern int StrCSpnW([NativeTypeName("PCWSTR")] ushort* pszStr, [NativeTypeName("PCWSTR")] ushort* pszSet);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         public static extern int StrCSpnIA([NativeTypeName("PCSTR")] sbyte* pszStr, [NativeTypeName("PCSTR")] sbyte* pszSet);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         public static extern int StrCSpnIW([NativeTypeName("PCWSTR")] ushort* pszStr, [NativeTypeName("PCWSTR")] ushort* pszSet);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("PSTR")]
         public static extern sbyte* StrDupA([NativeTypeName("PCSTR")] sbyte* pszSrch);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("PWSTR")]
         public static extern ushort* StrDupW([NativeTypeName("PCWSTR")] ushort* pszSrch);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int StrFormatByteSizeEx([NativeTypeName("ULONGLONG")] ulong ull, [NativeTypeName("SFBS_FLAGS")] int flags, [NativeTypeName("PWSTR")] ushort* pszBuf, [NativeTypeName("UINT")] uint cchBuf);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("PSTR")]
         public static extern sbyte* StrFormatByteSizeA([NativeTypeName("DWORD")] uint dw, [NativeTypeName("PSTR")] sbyte* pszBuf, [NativeTypeName("UINT")] uint cchBuf);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("PSTR")]
         public static extern sbyte* StrFormatByteSize64A([NativeTypeName("LONGLONG")] long qdw, [NativeTypeName("PSTR")] sbyte* pszBuf, [NativeTypeName("UINT")] uint cchBuf);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("PWSTR")]
         public static extern ushort* StrFormatByteSizeW([NativeTypeName("LONGLONG")] long qdw, [NativeTypeName("PWSTR")] ushort* pszBuf, [NativeTypeName("UINT")] uint cchBuf);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("PWSTR")]
         public static extern ushort* StrFormatKBSizeW([NativeTypeName("LONGLONG")] long qdw, [NativeTypeName("PWSTR")] ushort* pszBuf, [NativeTypeName("UINT")] uint cchBuf);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("PSTR")]
         public static extern sbyte* StrFormatKBSizeA([NativeTypeName("LONGLONG")] long qdw, [NativeTypeName("PSTR")] sbyte* pszBuf, [NativeTypeName("UINT")] uint cchBuf);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         public static extern int StrFromTimeIntervalA([NativeTypeName("PSTR")] sbyte* pszOut, [NativeTypeName("UINT")] uint cchMax, [NativeTypeName("DWORD")] uint dwTimeMS, int digits);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         public static extern int StrFromTimeIntervalW([NativeTypeName("PWSTR")] ushort* pszOut, [NativeTypeName("UINT")] uint cchMax, [NativeTypeName("DWORD")] uint dwTimeMS, int digits);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int StrIsIntlEqualA([NativeTypeName("BOOL")] int fCaseSens, [NativeTypeName("PCSTR")] sbyte* pszString1, [NativeTypeName("PCSTR")] sbyte* pszString2, int nChar);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int StrIsIntlEqualW([NativeTypeName("BOOL")] int fCaseSens, [NativeTypeName("PCWSTR")] ushort* pszString1, [NativeTypeName("PCWSTR")] ushort* pszString2, int nChar);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("PSTR")]
         public static extern sbyte* StrNCatA([NativeTypeName("PSTR")] sbyte* psz1, [NativeTypeName("PCSTR")] sbyte* psz2, int cchMax);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("PWSTR")]
         public static extern ushort* StrNCatW([NativeTypeName("PWSTR")] ushort* psz1, [NativeTypeName("PCWSTR")] ushort* psz2, int cchMax);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("PSTR")]
         public static extern sbyte* StrPBrkA([NativeTypeName("PCSTR")] sbyte* psz, [NativeTypeName("PCSTR")] sbyte* pszSet);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("PWSTR")]
         public static extern ushort* StrPBrkW([NativeTypeName("PCWSTR")] ushort* psz, [NativeTypeName("PCWSTR")] ushort* pszSet);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("PSTR")]
         public static extern sbyte* StrRChrA([NativeTypeName("PCSTR")] sbyte* pszStart, [NativeTypeName("PCSTR")] sbyte* pszEnd, [NativeTypeName("WORD")] ushort wMatch);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("PWSTR")]
         public static extern ushort* StrRChrW([NativeTypeName("PCWSTR")] ushort* pszStart, [NativeTypeName("PCWSTR")] ushort* pszEnd, [NativeTypeName("WCHAR")] ushort wMatch);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("PSTR")]
         public static extern sbyte* StrRChrIA([NativeTypeName("PCSTR")] sbyte* pszStart, [NativeTypeName("PCSTR")] sbyte* pszEnd, [NativeTypeName("WORD")] ushort wMatch);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("PWSTR")]
         public static extern ushort* StrRChrIW([NativeTypeName("PCWSTR")] ushort* pszStart, [NativeTypeName("PCWSTR")] ushort* pszEnd, [NativeTypeName("WCHAR")] ushort wMatch);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("PSTR")]
         public static extern sbyte* StrRStrIA([NativeTypeName("PCSTR")] sbyte* pszSource, [NativeTypeName("PCSTR")] sbyte* pszLast, [NativeTypeName("PCSTR")] sbyte* pszSrch);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("PWSTR")]
         public static extern ushort* StrRStrIW([NativeTypeName("PCWSTR")] ushort* pszSource, [NativeTypeName("PCWSTR")] ushort* pszLast, [NativeTypeName("PCWSTR")] ushort* pszSrch);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         public static extern int StrSpnA([NativeTypeName("PCSTR")] sbyte* psz, [NativeTypeName("PCSTR")] sbyte* pszSet);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         public static extern int StrSpnW([NativeTypeName("PCWSTR")] ushort* psz, [NativeTypeName("PCWSTR")] ushort* pszSet);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("PSTR")]
         public static extern sbyte* StrStrA([NativeTypeName("PCSTR")] sbyte* pszFirst, [NativeTypeName("PCSTR")] sbyte* pszSrch);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("PWSTR")]
         public static extern ushort* StrStrW([NativeTypeName("PCWSTR")] ushort* pszFirst, [NativeTypeName("PCWSTR")] ushort* pszSrch);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("PSTR")]
         public static extern sbyte* StrStrIA([NativeTypeName("PCSTR")] sbyte* pszFirst, [NativeTypeName("PCSTR")] sbyte* pszSrch);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("PWSTR")]
         public static extern ushort* StrStrIW([NativeTypeName("PCWSTR")] ushort* pszFirst, [NativeTypeName("PCWSTR")] ushort* pszSrch);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shell32", ExactSpelling = true)]
         [return: NativeTypeName("PWSTR")]
         public static extern ushort* StrStrNW([NativeTypeName("PCWSTR")] ushort* pszFirst, [NativeTypeName("PCWSTR")] ushort* pszSrch, [NativeTypeName("UINT")] uint cchMax);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shell32", ExactSpelling = true)]
         [return: NativeTypeName("PWSTR")]
         public static extern ushort* StrStrNIW([NativeTypeName("PCWSTR")] ushort* pszFirst, [NativeTypeName("PCWSTR")] ushort* pszSrch, [NativeTypeName("UINT")] uint cchMax);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         public static extern int StrToIntA([NativeTypeName("PCSTR")] sbyte* pszSrc);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         public static extern int StrToIntW([NativeTypeName("PCWSTR")] ushort* pszSrc);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int StrToIntExA([NativeTypeName("PCSTR")] sbyte* pszString, [NativeTypeName("STIF_FLAGS")] int dwFlags, int* piRet);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int StrToIntExW([NativeTypeName("PCWSTR")] ushort* pszString, [NativeTypeName("STIF_FLAGS")] int dwFlags, int* piRet);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int StrToInt64ExA([NativeTypeName("PCSTR")] sbyte* pszString, [NativeTypeName("STIF_FLAGS")] int dwFlags, [NativeTypeName("LONGLONG *")] long* pllRet);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int StrToInt64ExW([NativeTypeName("PCWSTR")] ushort* pszString, [NativeTypeName("STIF_FLAGS")] int dwFlags, [NativeTypeName("LONGLONG *")] long* pllRet);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int StrTrimA([NativeTypeName("PSTR")] sbyte* psz, [NativeTypeName("PCSTR")] sbyte* pszTrimChars);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int StrTrimW([NativeTypeName("PWSTR")] ushort* psz, [NativeTypeName("PCWSTR")] ushort* pszTrimChars);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("PWSTR")]
         public static extern ushort* StrCatW([NativeTypeName("PWSTR")] ushort* psz1, [NativeTypeName("PCWSTR")] ushort* psz2);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         public static extern int StrCmpW([NativeTypeName("PCWSTR")] ushort* psz1, [NativeTypeName("PCWSTR")] ushort* psz2);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         public static extern int StrCmpIW([NativeTypeName("PCWSTR")] ushort* psz1, [NativeTypeName("PCWSTR")] ushort* psz2);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("PWSTR")]
         public static extern ushort* StrCpyW([NativeTypeName("PWSTR")] ushort* psz1, [NativeTypeName("PCWSTR")] ushort* psz2);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("PWSTR")]
         public static extern ushort* StrCpyNW([NativeTypeName("PWSTR")] ushort* pszDst, [NativeTypeName("PCWSTR")] ushort* pszSrc, int cchMax);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("PWSTR")]
         public static extern ushort* StrCatBuffW([NativeTypeName("PWSTR")] ushort* pszDest, [NativeTypeName("PCWSTR")] ushort* pszSrc, int cchDestBuffSize);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("PSTR")]
         public static extern sbyte* StrCatBuffA([NativeTypeName("PSTR")] sbyte* pszDest, [NativeTypeName("PCSTR")] sbyte* pszSrc, int cchDestBuffSize);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int ChrCmpIA([NativeTypeName("WORD")] ushort w1, [NativeTypeName("WORD")] ushort w2);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int ChrCmpIW([NativeTypeName("WCHAR")] ushort w1, [NativeTypeName("WCHAR")] ushort w2);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         public static extern int wvnsprintfA([NativeTypeName("PSTR")] sbyte* pszDest, int cchDest, [NativeTypeName("PCSTR")] sbyte* pszFmt, [NativeTypeName("va_list")] sbyte* arglist);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         public static extern int wvnsprintfW([NativeTypeName("PWSTR")] ushort* pszDest, int cchDest, [NativeTypeName("PCWSTR")] ushort* pszFmt, [NativeTypeName("va_list")] sbyte* arglist);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         public static extern int wnsprintfA([NativeTypeName("PSTR")] sbyte* pszDest, int cchDest, [NativeTypeName("PCSTR")] sbyte* pszFmt);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         public static extern int wnsprintfW([NativeTypeName("PWSTR")] ushort* pszDest, int cchDest, [NativeTypeName("PCWSTR")] ushort* pszFmt);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int StrRetToStrA(STRRET* pstr, [NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl, [NativeTypeName("LPSTR *")] sbyte** ppsz);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int StrRetToStrW(STRRET* pstr, [NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl, [NativeTypeName("LPWSTR *")] ushort** ppsz);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int StrRetToBufA(STRRET* pstr, [NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl, [NativeTypeName("LPSTR")] sbyte* pszBuf, [NativeTypeName("UINT")] uint cchBuf);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int StrRetToBufW(STRRET* pstr, [NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl, [NativeTypeName("LPWSTR")] ushort* pszBuf, [NativeTypeName("UINT")] uint cchBuf);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int SHStrDupA([NativeTypeName("LPCSTR")] sbyte* psz, [NativeTypeName("LPWSTR *")] ushort** ppwsz);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int SHStrDupW([NativeTypeName("LPCWSTR")] ushort* psz, [NativeTypeName("LPWSTR *")] ushort** ppwsz);
 
@@ -290,833 +288,833 @@ namespace TerraFX.Interop
             return (*ppsz) != null ? ((int)(0)) : unchecked((int)(0x8007000E));
         }
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         public static extern int StrCmpLogicalW([NativeTypeName("PCWSTR")] ushort* psz1, [NativeTypeName("PCWSTR")] ushort* psz2);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
         public static extern uint StrCatChainW([NativeTypeName("PWSTR")] ushort* pszDst, [NativeTypeName("DWORD")] uint cchDst, [NativeTypeName("DWORD")] uint ichAt, [NativeTypeName("PCWSTR")] ushort* pszSrc);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int StrRetToBSTR(STRRET* pstr, [NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl, [NativeTypeName("BSTR *")] ushort** pbstr);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int SHLoadIndirectString([NativeTypeName("PCWSTR")] ushort* pszSource, [NativeTypeName("PWSTR")] ushort* pszOutBuf, [NativeTypeName("UINT")] uint cchOutBuf, void** ppvReserved);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int IsCharSpaceA([NativeTypeName("CHAR")] sbyte wch);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int IsCharSpaceW([NativeTypeName("WCHAR")] ushort wch);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         public static extern int StrCmpCA([NativeTypeName("LPCSTR")] sbyte* pszStr1, [NativeTypeName("LPCSTR")] sbyte* pszStr2);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         public static extern int StrCmpCW([NativeTypeName("LPCWSTR")] ushort* pszStr1, [NativeTypeName("LPCWSTR")] ushort* pszStr2);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         public static extern int StrCmpICA([NativeTypeName("LPCSTR")] sbyte* pszStr1, [NativeTypeName("LPCSTR")] sbyte* pszStr2);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         public static extern int StrCmpICW([NativeTypeName("LPCWSTR")] ushort* pszStr1, [NativeTypeName("LPCWSTR")] ushort* pszStr2);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         public static extern int StrCmpNCA([NativeTypeName("LPCSTR")] sbyte* pszStr1, [NativeTypeName("LPCSTR")] sbyte* pszStr2, int nChar);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         public static extern int StrCmpNCW([NativeTypeName("LPCWSTR")] ushort* pszStr1, [NativeTypeName("LPCWSTR")] ushort* pszStr2, int nChar);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         public static extern int StrCmpNICA([NativeTypeName("LPCSTR")] sbyte* pszStr1, [NativeTypeName("LPCSTR")] sbyte* pszStr2, int nChar);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         public static extern int StrCmpNICW([NativeTypeName("LPCWSTR")] ushort* pszStr1, [NativeTypeName("LPCWSTR")] ushort* pszStr2, int nChar);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int IntlStrEqWorkerA([NativeTypeName("BOOL")] int fCaseSens, [NativeTypeName("LPCSTR")] sbyte* lpString1, [NativeTypeName("LPCSTR")] sbyte* lpString2, int nChar);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int IntlStrEqWorkerW([NativeTypeName("BOOL")] int fCaseSens, [NativeTypeName("LPCWSTR")] ushort* lpString1, [NativeTypeName("LPCWSTR")] ushort* lpString2, int nChar);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("LPSTR")]
         public static extern sbyte* PathAddBackslashA([NativeTypeName("LPSTR")] sbyte* pszPath);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("LPWSTR")]
         public static extern ushort* PathAddBackslashW([NativeTypeName("LPWSTR")] ushort* pszPath);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int PathAddExtensionA([NativeTypeName("LPSTR")] sbyte* pszPath, [NativeTypeName("LPCSTR")] sbyte* pszExt);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int PathAddExtensionW([NativeTypeName("LPWSTR")] ushort* pszPath, [NativeTypeName("LPCWSTR")] ushort* pszExt);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int PathAppendA([NativeTypeName("LPSTR")] sbyte* pszPath, [NativeTypeName("LPCSTR")] sbyte* pszMore);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int PathAppendW([NativeTypeName("LPWSTR")] ushort* pszPath, [NativeTypeName("LPCWSTR")] ushort* pszMore);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("LPSTR")]
         public static extern sbyte* PathBuildRootA([NativeTypeName("LPSTR")] sbyte* pszRoot, int iDrive);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("LPWSTR")]
         public static extern ushort* PathBuildRootW([NativeTypeName("LPWSTR")] ushort* pszRoot, int iDrive);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int PathCanonicalizeA([NativeTypeName("LPSTR")] sbyte* pszBuf, [NativeTypeName("LPCSTR")] sbyte* pszPath);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int PathCanonicalizeW([NativeTypeName("LPWSTR")] ushort* pszBuf, [NativeTypeName("LPCWSTR")] ushort* pszPath);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("LPSTR")]
         public static extern sbyte* PathCombineA([NativeTypeName("LPSTR")] sbyte* pszDest, [NativeTypeName("LPCSTR")] sbyte* pszDir, [NativeTypeName("LPCSTR")] sbyte* pszFile);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("LPWSTR")]
         public static extern ushort* PathCombineW([NativeTypeName("LPWSTR")] ushort* pszDest, [NativeTypeName("LPCWSTR")] ushort* pszDir, [NativeTypeName("LPCWSTR")] ushort* pszFile);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int PathCompactPathA([NativeTypeName("HDC")] IntPtr hDC, [NativeTypeName("LPSTR")] sbyte* pszPath, [NativeTypeName("UINT")] uint dx);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int PathCompactPathW([NativeTypeName("HDC")] IntPtr hDC, [NativeTypeName("LPWSTR")] ushort* pszPath, [NativeTypeName("UINT")] uint dx);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int PathCompactPathExA([NativeTypeName("LPSTR")] sbyte* pszOut, [NativeTypeName("LPCSTR")] sbyte* pszSrc, [NativeTypeName("UINT")] uint cchMax, [NativeTypeName("DWORD")] uint dwFlags);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int PathCompactPathExW([NativeTypeName("LPWSTR")] ushort* pszOut, [NativeTypeName("LPCWSTR")] ushort* pszSrc, [NativeTypeName("UINT")] uint cchMax, [NativeTypeName("DWORD")] uint dwFlags);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         public static extern int PathCommonPrefixA([NativeTypeName("LPCSTR")] sbyte* pszFile1, [NativeTypeName("LPCSTR")] sbyte* pszFile2, [NativeTypeName("LPSTR")] sbyte* achPath);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         public static extern int PathCommonPrefixW([NativeTypeName("LPCWSTR")] ushort* pszFile1, [NativeTypeName("LPCWSTR")] ushort* pszFile2, [NativeTypeName("LPWSTR")] ushort* achPath);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int PathFileExistsA([NativeTypeName("LPCSTR")] sbyte* pszPath);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int PathFileExistsW([NativeTypeName("LPCWSTR")] ushort* pszPath);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("LPSTR")]
         public static extern sbyte* PathFindExtensionA([NativeTypeName("LPCSTR")] sbyte* pszPath);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("LPWSTR")]
         public static extern ushort* PathFindExtensionW([NativeTypeName("LPCWSTR")] ushort* pszPath);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("LPSTR")]
         public static extern sbyte* PathFindFileNameA([NativeTypeName("LPCSTR")] sbyte* pszPath);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("LPWSTR")]
         public static extern ushort* PathFindFileNameW([NativeTypeName("LPCWSTR")] ushort* pszPath);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("LPSTR")]
         public static extern sbyte* PathFindNextComponentA([NativeTypeName("LPCSTR")] sbyte* pszPath);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("LPWSTR")]
         public static extern ushort* PathFindNextComponentW([NativeTypeName("LPCWSTR")] ushort* pszPath);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int PathFindOnPathA([NativeTypeName("LPSTR")] sbyte* pszPath, [NativeTypeName("PZPCSTR")] sbyte** ppszOtherDirs);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int PathFindOnPathW([NativeTypeName("LPWSTR")] ushort* pszPath, [NativeTypeName("PZPCWSTR")] ushort** ppszOtherDirs);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("LPCSTR")]
         public static extern sbyte* PathFindSuffixArrayA([NativeTypeName("LPCSTR")] sbyte* pszPath, [NativeTypeName("const LPCSTR *")] sbyte** apszSuffix, int iArraySize);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("LPCWSTR")]
         public static extern ushort* PathFindSuffixArrayW([NativeTypeName("LPCWSTR")] ushort* pszPath, [NativeTypeName("const LPCWSTR *")] ushort** apszSuffix, int iArraySize);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("LPSTR")]
         public static extern sbyte* PathGetArgsA([NativeTypeName("LPCSTR")] sbyte* pszPath);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("LPWSTR")]
         public static extern ushort* PathGetArgsW([NativeTypeName("LPCWSTR")] ushort* pszPath);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int PathIsLFNFileSpecA([NativeTypeName("LPCSTR")] sbyte* pszName);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int PathIsLFNFileSpecW([NativeTypeName("LPCWSTR")] ushort* pszName);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("UINT")]
         public static extern uint PathGetCharTypeA([NativeTypeName("UCHAR")] byte ch);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("UINT")]
         public static extern uint PathGetCharTypeW([NativeTypeName("WCHAR")] ushort ch);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         public static extern int PathGetDriveNumberA([NativeTypeName("LPCSTR")] sbyte* pszPath);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         public static extern int PathGetDriveNumberW([NativeTypeName("LPCWSTR")] ushort* pszPath);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int PathIsDirectoryA([NativeTypeName("LPCSTR")] sbyte* pszPath);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int PathIsDirectoryW([NativeTypeName("LPCWSTR")] ushort* pszPath);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int PathIsDirectoryEmptyA([NativeTypeName("LPCSTR")] sbyte* pszPath);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int PathIsDirectoryEmptyW([NativeTypeName("LPCWSTR")] ushort* pszPath);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int PathIsFileSpecA([NativeTypeName("LPCSTR")] sbyte* pszPath);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int PathIsFileSpecW([NativeTypeName("LPCWSTR")] ushort* pszPath);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int PathIsPrefixA([NativeTypeName("LPCSTR")] sbyte* pszPrefix, [NativeTypeName("LPCSTR")] sbyte* pszPath);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int PathIsPrefixW([NativeTypeName("LPCWSTR")] ushort* pszPrefix, [NativeTypeName("LPCWSTR")] ushort* pszPath);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int PathIsRelativeA([NativeTypeName("LPCSTR")] sbyte* pszPath);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int PathIsRelativeW([NativeTypeName("LPCWSTR")] ushort* pszPath);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int PathIsRootA([NativeTypeName("LPCSTR")] sbyte* pszPath);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int PathIsRootW([NativeTypeName("LPCWSTR")] ushort* pszPath);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int PathIsSameRootA([NativeTypeName("LPCSTR")] sbyte* pszPath1, [NativeTypeName("LPCSTR")] sbyte* pszPath2);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int PathIsSameRootW([NativeTypeName("LPCWSTR")] ushort* pszPath1, [NativeTypeName("LPCWSTR")] ushort* pszPath2);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int PathIsUNCA([NativeTypeName("LPCSTR")] sbyte* pszPath);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int PathIsUNCW([NativeTypeName("LPCWSTR")] ushort* pszPath);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int PathIsNetworkPathA([NativeTypeName("LPCSTR")] sbyte* pszPath);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int PathIsNetworkPathW([NativeTypeName("LPCWSTR")] ushort* pszPath);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int PathIsUNCServerA([NativeTypeName("LPCSTR")] sbyte* pszPath);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int PathIsUNCServerW([NativeTypeName("LPCWSTR")] ushort* pszPath);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int PathIsUNCServerShareA([NativeTypeName("LPCSTR")] sbyte* pszPath);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int PathIsUNCServerShareW([NativeTypeName("LPCWSTR")] ushort* pszPath);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int PathIsContentTypeA([NativeTypeName("LPCSTR")] sbyte* pszPath, [NativeTypeName("LPCSTR")] sbyte* pszContentType);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int PathIsContentTypeW([NativeTypeName("LPCWSTR")] ushort* pszPath, [NativeTypeName("LPCWSTR")] ushort* pszContentType);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int PathIsURLA([NativeTypeName("LPCSTR")] sbyte* pszPath);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int PathIsURLW([NativeTypeName("LPCWSTR")] ushort* pszPath);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int PathMakePrettyA([NativeTypeName("LPSTR")] sbyte* pszPath);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int PathMakePrettyW([NativeTypeName("LPWSTR")] ushort* pszPath);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int PathMatchSpecA([NativeTypeName("LPCSTR")] sbyte* pszFile, [NativeTypeName("LPCSTR")] sbyte* pszSpec);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int PathMatchSpecW([NativeTypeName("LPCWSTR")] ushort* pszFile, [NativeTypeName("LPCWSTR")] ushort* pszSpec);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int PathMatchSpecExA([NativeTypeName("LPCSTR")] sbyte* pszFile, [NativeTypeName("LPCSTR")] sbyte* pszSpec, [NativeTypeName("DWORD")] uint dwFlags);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int PathMatchSpecExW([NativeTypeName("LPCWSTR")] ushort* pszFile, [NativeTypeName("LPCWSTR")] ushort* pszSpec, [NativeTypeName("DWORD")] uint dwFlags);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         public static extern int PathParseIconLocationA([NativeTypeName("LPSTR")] sbyte* pszIconFile);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         public static extern int PathParseIconLocationW([NativeTypeName("LPWSTR")] ushort* pszIconFile);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int PathQuoteSpacesA([NativeTypeName("LPSTR")] sbyte* lpsz);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int PathQuoteSpacesW([NativeTypeName("LPWSTR")] ushort* lpsz);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int PathRelativePathToA([NativeTypeName("LPSTR")] sbyte* pszPath, [NativeTypeName("LPCSTR")] sbyte* pszFrom, [NativeTypeName("DWORD")] uint dwAttrFrom, [NativeTypeName("LPCSTR")] sbyte* pszTo, [NativeTypeName("DWORD")] uint dwAttrTo);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int PathRelativePathToW([NativeTypeName("LPWSTR")] ushort* pszPath, [NativeTypeName("LPCWSTR")] ushort* pszFrom, [NativeTypeName("DWORD")] uint dwAttrFrom, [NativeTypeName("LPCWSTR")] ushort* pszTo, [NativeTypeName("DWORD")] uint dwAttrTo);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         public static extern void PathRemoveArgsA([NativeTypeName("LPSTR")] sbyte* pszPath);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         public static extern void PathRemoveArgsW([NativeTypeName("LPWSTR")] ushort* pszPath);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("LPSTR")]
         public static extern sbyte* PathRemoveBackslashA([NativeTypeName("LPSTR")] sbyte* pszPath);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("LPWSTR")]
         public static extern ushort* PathRemoveBackslashW([NativeTypeName("LPWSTR")] ushort* pszPath);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         public static extern void PathRemoveBlanksA([NativeTypeName("LPSTR")] sbyte* pszPath);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         public static extern void PathRemoveBlanksW([NativeTypeName("LPWSTR")] ushort* pszPath);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         public static extern void PathRemoveExtensionA([NativeTypeName("LPSTR")] sbyte* pszPath);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         public static extern void PathRemoveExtensionW([NativeTypeName("LPWSTR")] ushort* pszPath);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int PathRemoveFileSpecA([NativeTypeName("LPSTR")] sbyte* pszPath);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int PathRemoveFileSpecW([NativeTypeName("LPWSTR")] ushort* pszPath);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int PathRenameExtensionA([NativeTypeName("LPSTR")] sbyte* pszPath, [NativeTypeName("LPCSTR")] sbyte* pszExt);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int PathRenameExtensionW([NativeTypeName("LPWSTR")] ushort* pszPath, [NativeTypeName("LPCWSTR")] ushort* pszExt);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int PathSearchAndQualifyA([NativeTypeName("LPCSTR")] sbyte* pszPath, [NativeTypeName("LPSTR")] sbyte* pszBuf, [NativeTypeName("UINT")] uint cchBuf);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int PathSearchAndQualifyW([NativeTypeName("LPCWSTR")] ushort* pszPath, [NativeTypeName("LPWSTR")] ushort* pszBuf, [NativeTypeName("UINT")] uint cchBuf);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         public static extern void PathSetDlgItemPathA([NativeTypeName("HWND")] IntPtr hDlg, int id, [NativeTypeName("LPCSTR")] sbyte* pszPath);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         public static extern void PathSetDlgItemPathW([NativeTypeName("HWND")] IntPtr hDlg, int id, [NativeTypeName("LPCWSTR")] ushort* pszPath);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("LPSTR")]
         public static extern sbyte* PathSkipRootA([NativeTypeName("LPCSTR")] sbyte* pszPath);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("LPWSTR")]
         public static extern ushort* PathSkipRootW([NativeTypeName("LPCWSTR")] ushort* pszPath);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         public static extern void PathStripPathA([NativeTypeName("LPSTR")] sbyte* pszPath);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         public static extern void PathStripPathW([NativeTypeName("LPWSTR")] ushort* pszPath);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int PathStripToRootA([NativeTypeName("LPSTR")] sbyte* pszPath);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int PathStripToRootW([NativeTypeName("LPWSTR")] ushort* pszPath);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int PathUnquoteSpacesA([NativeTypeName("LPSTR")] sbyte* lpsz);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int PathUnquoteSpacesW([NativeTypeName("LPWSTR")] ushort* lpsz);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int PathMakeSystemFolderA([NativeTypeName("LPCSTR")] sbyte* pszPath);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int PathMakeSystemFolderW([NativeTypeName("LPCWSTR")] ushort* pszPath);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int PathUnmakeSystemFolderA([NativeTypeName("LPCSTR")] sbyte* pszPath);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int PathUnmakeSystemFolderW([NativeTypeName("LPCWSTR")] ushort* pszPath);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int PathIsSystemFolderA([NativeTypeName("LPCSTR")] sbyte* pszPath, [NativeTypeName("DWORD")] uint dwAttrb);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int PathIsSystemFolderW([NativeTypeName("LPCWSTR")] ushort* pszPath, [NativeTypeName("DWORD")] uint dwAttrb);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         public static extern void PathUndecorateA([NativeTypeName("LPSTR")] sbyte* pszPath);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         public static extern void PathUndecorateW([NativeTypeName("LPWSTR")] ushort* pszPath);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int PathUnExpandEnvStringsA([NativeTypeName("LPCSTR")] sbyte* pszPath, [NativeTypeName("LPSTR")] sbyte* pszBuf, [NativeTypeName("UINT")] uint cchBuf);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int PathUnExpandEnvStringsW([NativeTypeName("LPCWSTR")] ushort* pszPath, [NativeTypeName("LPWSTR")] ushort* pszBuf, [NativeTypeName("UINT")] uint cchBuf);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         public static extern int UrlCompareA([NativeTypeName("PCSTR")] sbyte* psz1, [NativeTypeName("PCSTR")] sbyte* psz2, [NativeTypeName("BOOL")] int fIgnoreSlash);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         public static extern int UrlCompareW([NativeTypeName("PCWSTR")] ushort* psz1, [NativeTypeName("PCWSTR")] ushort* psz2, [NativeTypeName("BOOL")] int fIgnoreSlash);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int UrlCombineA([NativeTypeName("PCSTR")] sbyte* pszBase, [NativeTypeName("PCSTR")] sbyte* pszRelative, [NativeTypeName("PSTR")] sbyte* pszCombined, [NativeTypeName("DWORD *")] uint* pcchCombined, [NativeTypeName("DWORD")] uint dwFlags);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int UrlCombineW([NativeTypeName("PCWSTR")] ushort* pszBase, [NativeTypeName("PCWSTR")] ushort* pszRelative, [NativeTypeName("PWSTR")] ushort* pszCombined, [NativeTypeName("DWORD *")] uint* pcchCombined, [NativeTypeName("DWORD")] uint dwFlags);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int UrlCanonicalizeA([NativeTypeName("PCSTR")] sbyte* pszUrl, [NativeTypeName("PSTR")] sbyte* pszCanonicalized, [NativeTypeName("DWORD *")] uint* pcchCanonicalized, [NativeTypeName("DWORD")] uint dwFlags);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int UrlCanonicalizeW([NativeTypeName("PCWSTR")] ushort* pszUrl, [NativeTypeName("PWSTR")] ushort* pszCanonicalized, [NativeTypeName("DWORD *")] uint* pcchCanonicalized, [NativeTypeName("DWORD")] uint dwFlags);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int UrlIsOpaqueA([NativeTypeName("PCSTR")] sbyte* pszURL);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int UrlIsOpaqueW([NativeTypeName("PCWSTR")] ushort* pszURL);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int UrlIsNoHistoryA([NativeTypeName("PCSTR")] sbyte* pszURL);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int UrlIsNoHistoryW([NativeTypeName("PCWSTR")] ushort* pszURL);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int UrlIsA([NativeTypeName("PCSTR")] sbyte* pszUrl, URLIS UrlIs);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int UrlIsW([NativeTypeName("PCWSTR")] ushort* pszUrl, URLIS UrlIs);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("LPCSTR")]
         public static extern sbyte* UrlGetLocationA([NativeTypeName("PCSTR")] sbyte* pszURL);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("LPCWSTR")]
         public static extern ushort* UrlGetLocationW([NativeTypeName("PCWSTR")] ushort* pszURL);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int UrlUnescapeA([NativeTypeName("PSTR")] sbyte* pszUrl, [NativeTypeName("PSTR")] sbyte* pszUnescaped, [NativeTypeName("DWORD *")] uint* pcchUnescaped, [NativeTypeName("DWORD")] uint dwFlags);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int UrlUnescapeW([NativeTypeName("PWSTR")] ushort* pszUrl, [NativeTypeName("PWSTR")] ushort* pszUnescaped, [NativeTypeName("DWORD *")] uint* pcchUnescaped, [NativeTypeName("DWORD")] uint dwFlags);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int UrlEscapeA([NativeTypeName("PCSTR")] sbyte* pszUrl, [NativeTypeName("PSTR")] sbyte* pszEscaped, [NativeTypeName("DWORD *")] uint* pcchEscaped, [NativeTypeName("DWORD")] uint dwFlags);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int UrlEscapeW([NativeTypeName("PCWSTR")] ushort* pszUrl, [NativeTypeName("PWSTR")] ushort* pszEscaped, [NativeTypeName("DWORD *")] uint* pcchEscaped, [NativeTypeName("DWORD")] uint dwFlags);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int UrlCreateFromPathA([NativeTypeName("PCSTR")] sbyte* pszPath, [NativeTypeName("PSTR")] sbyte* pszUrl, [NativeTypeName("DWORD *")] uint* pcchUrl, [NativeTypeName("DWORD")] uint dwFlags);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int UrlCreateFromPathW([NativeTypeName("PCWSTR")] ushort* pszPath, [NativeTypeName("PWSTR")] ushort* pszUrl, [NativeTypeName("DWORD *")] uint* pcchUrl, [NativeTypeName("DWORD")] uint dwFlags);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int PathCreateFromUrlA([NativeTypeName("PCSTR")] sbyte* pszUrl, [NativeTypeName("PSTR")] sbyte* pszPath, [NativeTypeName("DWORD *")] uint* pcchPath, [NativeTypeName("DWORD")] uint dwFlags);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int PathCreateFromUrlW([NativeTypeName("PCWSTR")] ushort* pszUrl, [NativeTypeName("PWSTR")] ushort* pszPath, [NativeTypeName("DWORD *")] uint* pcchPath, [NativeTypeName("DWORD")] uint dwFlags);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int PathCreateFromUrlAlloc([NativeTypeName("PCWSTR")] ushort* pszIn, [NativeTypeName("PWSTR *")] ushort** ppszOut, [NativeTypeName("DWORD")] uint dwFlags);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int UrlHashA([NativeTypeName("PCSTR")] sbyte* pszUrl, [NativeTypeName("BYTE *")] byte* pbHash, [NativeTypeName("DWORD")] uint cbHash);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int UrlHashW([NativeTypeName("PCWSTR")] ushort* pszUrl, [NativeTypeName("BYTE *")] byte* pbHash, [NativeTypeName("DWORD")] uint cbHash);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int UrlGetPartW([NativeTypeName("PCWSTR")] ushort* pszIn, [NativeTypeName("PWSTR")] ushort* pszOut, [NativeTypeName("DWORD *")] uint* pcchOut, [NativeTypeName("DWORD")] uint dwPart, [NativeTypeName("DWORD")] uint dwFlags);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int UrlGetPartA([NativeTypeName("PCSTR")] sbyte* pszIn, [NativeTypeName("PSTR")] sbyte* pszOut, [NativeTypeName("DWORD *")] uint* pcchOut, [NativeTypeName("DWORD")] uint dwPart, [NativeTypeName("DWORD")] uint dwFlags);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int UrlApplySchemeA([NativeTypeName("PCSTR")] sbyte* pszIn, [NativeTypeName("PSTR")] sbyte* pszOut, [NativeTypeName("DWORD *")] uint* pcchOut, [NativeTypeName("DWORD")] uint dwFlags);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int UrlApplySchemeW([NativeTypeName("PCWSTR")] ushort* pszIn, [NativeTypeName("PWSTR")] ushort* pszOut, [NativeTypeName("DWORD *")] uint* pcchOut, [NativeTypeName("DWORD")] uint dwFlags);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int HashData([NativeTypeName("BYTE *")] byte* pbData, [NativeTypeName("DWORD")] uint cbData, [NativeTypeName("BYTE *")] byte* pbHash, [NativeTypeName("DWORD")] uint cbHash);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int UrlFixupW([NativeTypeName("PCWSTR")] ushort* pcszUrl, [NativeTypeName("PWSTR")] ushort* pszTranslatedUrl, [NativeTypeName("DWORD")] uint cchMax);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int ParseURLA([NativeTypeName("LPCSTR")] sbyte* pcszURL, PARSEDURLA* ppu);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int ParseURLW([NativeTypeName("LPCWSTR")] ushort* pcszURL, PARSEDURLW* ppu);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("LSTATUS")]
         public static extern int SHDeleteEmptyKeyA([NativeTypeName("HKEY")] IntPtr hkey, [NativeTypeName("LPCSTR")] sbyte* pszSubKey);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("LSTATUS")]
         public static extern int SHDeleteEmptyKeyW([NativeTypeName("HKEY")] IntPtr hkey, [NativeTypeName("LPCWSTR")] ushort* pszSubKey);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("LSTATUS")]
         public static extern int SHDeleteKeyA([NativeTypeName("HKEY")] IntPtr hkey, [NativeTypeName("LPCSTR")] sbyte* pszSubKey);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("LSTATUS")]
         public static extern int SHDeleteKeyW([NativeTypeName("HKEY")] IntPtr hkey, [NativeTypeName("LPCWSTR")] ushort* pszSubKey);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("HKEY")]
         public static extern IntPtr SHRegDuplicateHKey([NativeTypeName("HKEY")] IntPtr hkey);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("LSTATUS")]
         public static extern int SHDeleteValueA([NativeTypeName("HKEY")] IntPtr hkey, [NativeTypeName("LPCSTR")] sbyte* pszSubKey, [NativeTypeName("LPCSTR")] sbyte* pszValue);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("LSTATUS")]
         public static extern int SHDeleteValueW([NativeTypeName("HKEY")] IntPtr hkey, [NativeTypeName("LPCWSTR")] ushort* pszSubKey, [NativeTypeName("LPCWSTR")] ushort* pszValue);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("LSTATUS")]
         public static extern int SHGetValueA([NativeTypeName("HKEY")] IntPtr hkey, [NativeTypeName("LPCSTR")] sbyte* pszSubKey, [NativeTypeName("LPCSTR")] sbyte* pszValue, [NativeTypeName("DWORD *")] uint* pdwType, void* pvData, [NativeTypeName("DWORD *")] uint* pcbData);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("LSTATUS")]
         public static extern int SHGetValueW([NativeTypeName("HKEY")] IntPtr hkey, [NativeTypeName("LPCWSTR")] ushort* pszSubKey, [NativeTypeName("LPCWSTR")] ushort* pszValue, [NativeTypeName("DWORD *")] uint* pdwType, void* pvData, [NativeTypeName("DWORD *")] uint* pcbData);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("LSTATUS")]
         public static extern int SHSetValueA([NativeTypeName("HKEY")] IntPtr hkey, [NativeTypeName("LPCSTR")] sbyte* pszSubKey, [NativeTypeName("LPCSTR")] sbyte* pszValue, [NativeTypeName("DWORD")] uint dwType, [NativeTypeName("LPCVOID")] void* pvData, [NativeTypeName("DWORD")] uint cbData);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("LSTATUS")]
         public static extern int SHSetValueW([NativeTypeName("HKEY")] IntPtr hkey, [NativeTypeName("LPCWSTR")] ushort* pszSubKey, [NativeTypeName("LPCWSTR")] ushort* pszValue, [NativeTypeName("DWORD")] uint dwType, [NativeTypeName("LPCVOID")] void* pvData, [NativeTypeName("DWORD")] uint cbData);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("LSTATUS")]
         public static extern int SHRegGetValueA([NativeTypeName("HKEY")] IntPtr hkey, [NativeTypeName("LPCSTR")] sbyte* pszSubKey, [NativeTypeName("LPCSTR")] sbyte* pszValue, [NativeTypeName("SRRF")] int srrfFlags, [NativeTypeName("DWORD *")] uint* pdwType, void* pvData, [NativeTypeName("DWORD *")] uint* pcbData);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("LSTATUS")]
         public static extern int SHRegGetValueW([NativeTypeName("HKEY")] IntPtr hkey, [NativeTypeName("LPCWSTR")] ushort* pszSubKey, [NativeTypeName("LPCWSTR")] ushort* pszValue, [NativeTypeName("SRRF")] int srrfFlags, [NativeTypeName("DWORD *")] uint* pdwType, void* pvData, [NativeTypeName("DWORD *")] uint* pcbData);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("LSTATUS")]
         public static extern int SHRegSetValue([NativeTypeName("HKEY")] IntPtr hkey, [NativeTypeName("LPCWSTR")] ushort* pszSubKey, [NativeTypeName("LPCWSTR")] ushort* pszValue, [NativeTypeName("SRRF")] int srrfFlags, [NativeTypeName("DWORD")] uint dwType, [NativeTypeName("LPCVOID")] void* pvData, [NativeTypeName("DWORD")] uint cbData);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("LSTATUS")]
         public static extern int SHRegGetValueFromHKCUHKLM([NativeTypeName("PCWSTR")] ushort* pwszKey, [NativeTypeName("PCWSTR")] ushort* pwszValue, [NativeTypeName("SRRF")] int srrfFlags, [NativeTypeName("DWORD *")] uint* pdwType, void* pvData, [NativeTypeName("DWORD *")] uint* pcbData);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shell32", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int SHRegGetBoolValueFromHKCUHKLM([NativeTypeName("PCWSTR")] ushort* pszKey, [NativeTypeName("PCWSTR")] ushort* pszValue, [NativeTypeName("BOOL")] int fDefault);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("LSTATUS")]
         public static extern int SHQueryValueExA([NativeTypeName("HKEY")] IntPtr hkey, [NativeTypeName("LPCSTR")] sbyte* pszValue, [NativeTypeName("DWORD *")] uint* pdwReserved, [NativeTypeName("DWORD *")] uint* pdwType, void* pvData, [NativeTypeName("DWORD *")] uint* pcbData);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("LSTATUS")]
         public static extern int SHQueryValueExW([NativeTypeName("HKEY")] IntPtr hkey, [NativeTypeName("LPCWSTR")] ushort* pszValue, [NativeTypeName("DWORD *")] uint* pdwReserved, [NativeTypeName("DWORD *")] uint* pdwType, void* pvData, [NativeTypeName("DWORD *")] uint* pcbData);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("LSTATUS")]
         public static extern int SHEnumKeyExA([NativeTypeName("HKEY")] IntPtr hkey, [NativeTypeName("DWORD")] uint dwIndex, [NativeTypeName("LPSTR")] sbyte* pszName, [NativeTypeName("LPDWORD")] uint* pcchName);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("LSTATUS")]
         public static extern int SHEnumKeyExW([NativeTypeName("HKEY")] IntPtr hkey, [NativeTypeName("DWORD")] uint dwIndex, [NativeTypeName("LPWSTR")] ushort* pszName, [NativeTypeName("LPDWORD")] uint* pcchName);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("LSTATUS")]
         public static extern int SHEnumValueA([NativeTypeName("HKEY")] IntPtr hkey, [NativeTypeName("DWORD")] uint dwIndex, [NativeTypeName("PSTR")] sbyte* pszValueName, [NativeTypeName("LPDWORD")] uint* pcchValueName, [NativeTypeName("LPDWORD")] uint* pdwType, void* pvData, [NativeTypeName("LPDWORD")] uint* pcbData);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("LSTATUS")]
         public static extern int SHEnumValueW([NativeTypeName("HKEY")] IntPtr hkey, [NativeTypeName("DWORD")] uint dwIndex, [NativeTypeName("PWSTR")] ushort* pszValueName, [NativeTypeName("LPDWORD")] uint* pcchValueName, [NativeTypeName("LPDWORD")] uint* pdwType, void* pvData, [NativeTypeName("LPDWORD")] uint* pcbData);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("LSTATUS")]
         public static extern int SHQueryInfoKeyA([NativeTypeName("HKEY")] IntPtr hkey, [NativeTypeName("LPDWORD")] uint* pcSubKeys, [NativeTypeName("LPDWORD")] uint* pcchMaxSubKeyLen, [NativeTypeName("LPDWORD")] uint* pcValues, [NativeTypeName("LPDWORD")] uint* pcchMaxValueNameLen);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("LSTATUS")]
         public static extern int SHQueryInfoKeyW([NativeTypeName("HKEY")] IntPtr hkey, [NativeTypeName("LPDWORD")] uint* pcSubKeys, [NativeTypeName("LPDWORD")] uint* pcchMaxSubKeyLen, [NativeTypeName("LPDWORD")] uint* pcValues, [NativeTypeName("LPDWORD")] uint* pcchMaxValueNameLen);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("LSTATUS")]
         public static extern int SHCopyKeyA([NativeTypeName("HKEY")] IntPtr hkeySrc, [NativeTypeName("LPCSTR")] sbyte* pszSrcSubKey, [NativeTypeName("HKEY")] IntPtr hkeyDest, [NativeTypeName("DWORD")] uint fReserved);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("LSTATUS")]
         public static extern int SHCopyKeyW([NativeTypeName("HKEY")] IntPtr hkeySrc, [NativeTypeName("LPCWSTR")] ushort* pszSrcSubKey, [NativeTypeName("HKEY")] IntPtr hkeyDest, [NativeTypeName("DWORD")] uint fReserved);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("LSTATUS")]
         public static extern int SHRegGetPathA([NativeTypeName("HKEY")] IntPtr hKey, [NativeTypeName("LPCSTR")] sbyte* pcszSubKey, [NativeTypeName("LPCSTR")] sbyte* pcszValue, [NativeTypeName("LPSTR")] sbyte* pszPath, [NativeTypeName("DWORD")] uint dwFlags);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("LSTATUS")]
         public static extern int SHRegGetPathW([NativeTypeName("HKEY")] IntPtr hKey, [NativeTypeName("LPCWSTR")] ushort* pcszSubKey, [NativeTypeName("LPCWSTR")] ushort* pcszValue, [NativeTypeName("LPWSTR")] ushort* pszPath, [NativeTypeName("DWORD")] uint dwFlags);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("LSTATUS")]
         public static extern int SHRegSetPathA([NativeTypeName("HKEY")] IntPtr hKey, [NativeTypeName("LPCSTR")] sbyte* pcszSubKey, [NativeTypeName("LPCSTR")] sbyte* pcszValue, [NativeTypeName("LPCSTR")] sbyte* pcszPath, [NativeTypeName("DWORD")] uint dwFlags);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("LSTATUS")]
         public static extern int SHRegSetPathW([NativeTypeName("HKEY")] IntPtr hKey, [NativeTypeName("LPCWSTR")] ushort* pcszSubKey, [NativeTypeName("LPCWSTR")] ushort* pcszValue, [NativeTypeName("LPCWSTR")] ushort* pcszPath, [NativeTypeName("DWORD")] uint dwFlags);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("LSTATUS")]
         public static extern int SHRegCreateUSKeyA([NativeTypeName("LPCSTR")] sbyte* pszPath, [NativeTypeName("REGSAM")] uint samDesired, [NativeTypeName("HUSKEY")] IntPtr hRelativeUSKey, [NativeTypeName("PHUSKEY")] IntPtr* phNewUSKey, [NativeTypeName("DWORD")] uint dwFlags);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("LSTATUS")]
         public static extern int SHRegCreateUSKeyW([NativeTypeName("LPCWSTR")] ushort* pwzPath, [NativeTypeName("REGSAM")] uint samDesired, [NativeTypeName("HUSKEY")] IntPtr hRelativeUSKey, [NativeTypeName("PHUSKEY")] IntPtr* phNewUSKey, [NativeTypeName("DWORD")] uint dwFlags);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("LSTATUS")]
         public static extern int SHRegOpenUSKeyA([NativeTypeName("LPCSTR")] sbyte* pszPath, [NativeTypeName("REGSAM")] uint samDesired, [NativeTypeName("HUSKEY")] IntPtr hRelativeUSKey, [NativeTypeName("PHUSKEY")] IntPtr* phNewUSKey, [NativeTypeName("BOOL")] int fIgnoreHKCU);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("LSTATUS")]
         public static extern int SHRegOpenUSKeyW([NativeTypeName("LPCWSTR")] ushort* pwzPath, [NativeTypeName("REGSAM")] uint samDesired, [NativeTypeName("HUSKEY")] IntPtr hRelativeUSKey, [NativeTypeName("PHUSKEY")] IntPtr* phNewUSKey, [NativeTypeName("BOOL")] int fIgnoreHKCU);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("LSTATUS")]
         public static extern int SHRegQueryUSValueA([NativeTypeName("HUSKEY")] IntPtr hUSKey, [NativeTypeName("LPCSTR")] sbyte* pszValue, [NativeTypeName("DWORD *")] uint* pdwType, void* pvData, [NativeTypeName("DWORD *")] uint* pcbData, [NativeTypeName("BOOL")] int fIgnoreHKCU, void* pvDefaultData, [NativeTypeName("DWORD")] uint dwDefaultDataSize);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("LSTATUS")]
         public static extern int SHRegQueryUSValueW([NativeTypeName("HUSKEY")] IntPtr hUSKey, [NativeTypeName("LPCWSTR")] ushort* pszValue, [NativeTypeName("DWORD *")] uint* pdwType, void* pvData, [NativeTypeName("DWORD *")] uint* pcbData, [NativeTypeName("BOOL")] int fIgnoreHKCU, void* pvDefaultData, [NativeTypeName("DWORD")] uint dwDefaultDataSize);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("LSTATUS")]
         public static extern int SHRegWriteUSValueA([NativeTypeName("HUSKEY")] IntPtr hUSKey, [NativeTypeName("LPCSTR")] sbyte* pszValue, [NativeTypeName("DWORD")] uint dwType, [NativeTypeName("const void *")] void* pvData, [NativeTypeName("DWORD")] uint cbData, [NativeTypeName("DWORD")] uint dwFlags);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("LSTATUS")]
         public static extern int SHRegWriteUSValueW([NativeTypeName("HUSKEY")] IntPtr hUSKey, [NativeTypeName("LPCWSTR")] ushort* pwzValue, [NativeTypeName("DWORD")] uint dwType, [NativeTypeName("const void *")] void* pvData, [NativeTypeName("DWORD")] uint cbData, [NativeTypeName("DWORD")] uint dwFlags);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("LSTATUS")]
         public static extern int SHRegDeleteUSValueA([NativeTypeName("HUSKEY")] IntPtr hUSKey, [NativeTypeName("LPCSTR")] sbyte* pszValue, SHREGDEL_FLAGS delRegFlags);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("LSTATUS")]
         public static extern int SHRegDeleteUSValueW([NativeTypeName("HUSKEY")] IntPtr hUSKey, [NativeTypeName("LPCWSTR")] ushort* pwzValue, SHREGDEL_FLAGS delRegFlags);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("LSTATUS")]
         public static extern int SHRegDeleteEmptyUSKeyW([NativeTypeName("HUSKEY")] IntPtr hUSKey, [NativeTypeName("LPCWSTR")] ushort* pwzSubKey, SHREGDEL_FLAGS delRegFlags);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("LSTATUS")]
         public static extern int SHRegDeleteEmptyUSKeyA([NativeTypeName("HUSKEY")] IntPtr hUSKey, [NativeTypeName("LPCSTR")] sbyte* pszSubKey, SHREGDEL_FLAGS delRegFlags);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("LSTATUS")]
         public static extern int SHRegEnumUSKeyA([NativeTypeName("HUSKEY")] IntPtr hUSKey, [NativeTypeName("DWORD")] uint dwIndex, [NativeTypeName("LPSTR")] sbyte* pszName, [NativeTypeName("LPDWORD")] uint* pcchName, SHREGENUM_FLAGS enumRegFlags);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("LSTATUS")]
         public static extern int SHRegEnumUSKeyW([NativeTypeName("HUSKEY")] IntPtr hUSKey, [NativeTypeName("DWORD")] uint dwIndex, [NativeTypeName("LPWSTR")] ushort* pwzName, [NativeTypeName("LPDWORD")] uint* pcchName, SHREGENUM_FLAGS enumRegFlags);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("LSTATUS")]
         public static extern int SHRegEnumUSValueA([NativeTypeName("HUSKEY")] IntPtr hUSkey, [NativeTypeName("DWORD")] uint dwIndex, [NativeTypeName("LPSTR")] sbyte* pszValueName, [NativeTypeName("LPDWORD")] uint* pcchValueName, [NativeTypeName("LPDWORD")] uint* pdwType, void* pvData, [NativeTypeName("LPDWORD")] uint* pcbData, SHREGENUM_FLAGS enumRegFlags);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("LSTATUS")]
         public static extern int SHRegEnumUSValueW([NativeTypeName("HUSKEY")] IntPtr hUSkey, [NativeTypeName("DWORD")] uint dwIndex, [NativeTypeName("LPWSTR")] ushort* pszValueName, [NativeTypeName("LPDWORD")] uint* pcchValueName, [NativeTypeName("LPDWORD")] uint* pdwType, void* pvData, [NativeTypeName("LPDWORD")] uint* pcbData, SHREGENUM_FLAGS enumRegFlags);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("LSTATUS")]
         public static extern int SHRegQueryInfoUSKeyA([NativeTypeName("HUSKEY")] IntPtr hUSKey, [NativeTypeName("LPDWORD")] uint* pcSubKeys, [NativeTypeName("LPDWORD")] uint* pcchMaxSubKeyLen, [NativeTypeName("LPDWORD")] uint* pcValues, [NativeTypeName("LPDWORD")] uint* pcchMaxValueNameLen, SHREGENUM_FLAGS enumRegFlags);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("LSTATUS")]
         public static extern int SHRegQueryInfoUSKeyW([NativeTypeName("HUSKEY")] IntPtr hUSKey, [NativeTypeName("LPDWORD")] uint* pcSubKeys, [NativeTypeName("LPDWORD")] uint* pcchMaxSubKeyLen, [NativeTypeName("LPDWORD")] uint* pcValues, [NativeTypeName("LPDWORD")] uint* pcchMaxValueNameLen, SHREGENUM_FLAGS enumRegFlags);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("LSTATUS")]
         public static extern int SHRegCloseUSKey([NativeTypeName("HUSKEY")] IntPtr hUSKey);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("LSTATUS")]
         public static extern int SHRegGetUSValueA([NativeTypeName("LPCSTR")] sbyte* pszSubKey, [NativeTypeName("LPCSTR")] sbyte* pszValue, [NativeTypeName("DWORD *")] uint* pdwType, void* pvData, [NativeTypeName("DWORD *")] uint* pcbData, [NativeTypeName("BOOL")] int fIgnoreHKCU, void* pvDefaultData, [NativeTypeName("DWORD")] uint dwDefaultDataSize);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("LSTATUS")]
         public static extern int SHRegGetUSValueW([NativeTypeName("LPCWSTR")] ushort* pszSubKey, [NativeTypeName("LPCWSTR")] ushort* pszValue, [NativeTypeName("DWORD *")] uint* pdwType, void* pvData, [NativeTypeName("DWORD *")] uint* pcbData, [NativeTypeName("BOOL")] int fIgnoreHKCU, void* pvDefaultData, [NativeTypeName("DWORD")] uint dwDefaultDataSize);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("LSTATUS")]
         public static extern int SHRegSetUSValueA([NativeTypeName("LPCSTR")] sbyte* pszSubKey, [NativeTypeName("LPCSTR")] sbyte* pszValue, [NativeTypeName("DWORD")] uint dwType, [NativeTypeName("const void *")] void* pvData, [NativeTypeName("DWORD")] uint cbData, [NativeTypeName("DWORD")] uint dwFlags);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("LSTATUS")]
         public static extern int SHRegSetUSValueW([NativeTypeName("LPCWSTR")] ushort* pwzSubKey, [NativeTypeName("LPCWSTR")] ushort* pwzValue, [NativeTypeName("DWORD")] uint dwType, [NativeTypeName("const void *")] void* pvData, [NativeTypeName("DWORD")] uint cbData, [NativeTypeName("DWORD")] uint dwFlags);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         public static extern int SHRegGetIntW([NativeTypeName("HKEY")] IntPtr hk, [NativeTypeName("PCWSTR")] ushort* pwzKey, int iDefault);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int SHRegGetBoolUSValueA([NativeTypeName("LPCSTR")] sbyte* pszSubKey, [NativeTypeName("LPCSTR")] sbyte* pszValue, [NativeTypeName("BOOL")] int fIgnoreHKCU, [NativeTypeName("BOOL")] int fDefault);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int SHRegGetBoolUSValueW([NativeTypeName("LPCWSTR")] ushort* pszSubKey, [NativeTypeName("LPCWSTR")] ushort* pszValue, [NativeTypeName("BOOL")] int fIgnoreHKCU, [NativeTypeName("BOOL")] int fDefault);
 
@@ -1140,254 +1138,254 @@ namespace TerraFX.Interop
         public const int ASSOCF_PER_MACHINE_ONLY = 0x00008000;
         public const int ASSOCF_APP_TO_APP = 0x00010000;
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int AssocCreate([NativeTypeName("CLSID")] Guid clsid, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
         public static extern uint SHGetAssocKeys(IQueryAssociations* pqa, [NativeTypeName("HKEY *")] IntPtr* rgKeys, [NativeTypeName("DWORD")] uint cKeys);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int AssocQueryStringA([NativeTypeName("ASSOCF")] uint flags, ASSOCSTR str, [NativeTypeName("LPCSTR")] sbyte* pszAssoc, [NativeTypeName("LPCSTR")] sbyte* pszExtra, [NativeTypeName("LPSTR")] sbyte* pszOut, [NativeTypeName("DWORD *")] uint* pcchOut);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int AssocQueryStringW([NativeTypeName("ASSOCF")] uint flags, ASSOCSTR str, [NativeTypeName("LPCWSTR")] ushort* pszAssoc, [NativeTypeName("LPCWSTR")] ushort* pszExtra, [NativeTypeName("LPWSTR")] ushort* pszOut, [NativeTypeName("DWORD *")] uint* pcchOut);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int AssocQueryStringByKeyA([NativeTypeName("ASSOCF")] uint flags, ASSOCSTR str, [NativeTypeName("HKEY")] IntPtr hkAssoc, [NativeTypeName("LPCSTR")] sbyte* pszExtra, [NativeTypeName("LPSTR")] sbyte* pszOut, [NativeTypeName("DWORD *")] uint* pcchOut);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int AssocQueryStringByKeyW([NativeTypeName("ASSOCF")] uint flags, ASSOCSTR str, [NativeTypeName("HKEY")] IntPtr hkAssoc, [NativeTypeName("LPCWSTR")] ushort* pszExtra, [NativeTypeName("LPWSTR")] ushort* pszOut, [NativeTypeName("DWORD *")] uint* pcchOut);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int AssocQueryKeyA([NativeTypeName("ASSOCF")] uint flags, ASSOCKEY key, [NativeTypeName("LPCSTR")] sbyte* pszAssoc, [NativeTypeName("LPCSTR")] sbyte* pszExtra, [NativeTypeName("HKEY *")] IntPtr* phkeyOut);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int AssocQueryKeyW([NativeTypeName("ASSOCF")] uint flags, ASSOCKEY key, [NativeTypeName("LPCWSTR")] ushort* pszAssoc, [NativeTypeName("LPCWSTR")] ushort* pszExtra, [NativeTypeName("HKEY *")] IntPtr* phkeyOut);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int AssocIsDangerous([NativeTypeName("PCWSTR")] ushort* pszAssoc);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int AssocGetPerceivedType([NativeTypeName("PCWSTR")] ushort* pszExt, PERCEIVED* ptype, [NativeTypeName("PERCEIVEDFLAG *")] uint* pflag, [NativeTypeName("PWSTR *")] ushort** ppszType);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         public static extern IStream* SHOpenRegStreamA([NativeTypeName("HKEY")] IntPtr hkey, [NativeTypeName("LPCSTR")] sbyte* pszSubkey, [NativeTypeName("LPCSTR")] sbyte* pszValue, [NativeTypeName("DWORD")] uint grfMode);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         public static extern IStream* SHOpenRegStreamW([NativeTypeName("HKEY")] IntPtr hkey, [NativeTypeName("LPCWSTR")] ushort* pszSubkey, [NativeTypeName("LPCWSTR")] ushort* pszValue, [NativeTypeName("DWORD")] uint grfMode);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         public static extern IStream* SHOpenRegStream2A([NativeTypeName("HKEY")] IntPtr hkey, [NativeTypeName("LPCSTR")] sbyte* pszSubkey, [NativeTypeName("LPCSTR")] sbyte* pszValue, [NativeTypeName("DWORD")] uint grfMode);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         public static extern IStream* SHOpenRegStream2W([NativeTypeName("HKEY")] IntPtr hkey, [NativeTypeName("LPCWSTR")] ushort* pszSubkey, [NativeTypeName("LPCWSTR")] ushort* pszValue, [NativeTypeName("DWORD")] uint grfMode);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int SHCreateStreamOnFileA([NativeTypeName("LPCSTR")] sbyte* pszFile, [NativeTypeName("DWORD")] uint grfMode, IStream** ppstm);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int SHCreateStreamOnFileW([NativeTypeName("LPCWSTR")] ushort* pszFile, [NativeTypeName("DWORD")] uint grfMode, IStream** ppstm);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int SHCreateStreamOnFileEx([NativeTypeName("LPCWSTR")] ushort* pszFile, [NativeTypeName("DWORD")] uint grfMode, [NativeTypeName("DWORD")] uint dwAttributes, [NativeTypeName("BOOL")] int fCreate, IStream* pstmTemplate, IStream** ppstm);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         public static extern IStream* SHCreateMemStream([NativeTypeName("const BYTE *")] byte* pInit, [NativeTypeName("UINT")] uint cbInit);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int GetAcceptLanguagesA([NativeTypeName("LPSTR")] sbyte* pszLanguages, [NativeTypeName("DWORD *")] uint* pcchLanguages);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int GetAcceptLanguagesW([NativeTypeName("LPWSTR")] ushort* pszLanguages, [NativeTypeName("DWORD *")] uint* pcchLanguages);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         public static extern void IUnknown_Set(IUnknown** ppunk, IUnknown* punk);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         public static extern void IUnknown_AtomicRelease(void** ppunk);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int IUnknown_GetWindow(IUnknown* punk, [NativeTypeName("HWND *")] IntPtr* phwnd);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int IUnknown_SetSite(IUnknown* punk, IUnknown* punkSite);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int IUnknown_GetSite(IUnknown* punk, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int IUnknown_QueryService(IUnknown* punk, [NativeTypeName("const GUID &")] Guid* guidService, [NativeTypeName("const IID &")] Guid* riid, void** ppvOut);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int IStream_Read(IStream* pstm, void* pv, [NativeTypeName("ULONG")] uint cb);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int IStream_Write(IStream* pstm, [NativeTypeName("const void *")] void* pv, [NativeTypeName("ULONG")] uint cb);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int IStream_Reset(IStream* pstm);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int IStream_Size(IStream* pstm, ULARGE_INTEGER* pui);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int ConnectToConnectionPoint(IUnknown* punk, [NativeTypeName("const IID &")] Guid* riidEvent, [NativeTypeName("BOOL")] int fConnect, IUnknown* punkTarget, [NativeTypeName("DWORD *")] uint* pdwCookie, IConnectionPoint** ppcpOut);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int IStream_ReadPidl(IStream* pstm, [NativeTypeName("LPITEMIDLIST *")] ITEMIDLIST** ppidlOut);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int IStream_WritePidl(IStream* pstm, [NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidlWrite);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int IStream_ReadStr(IStream* pstm, [NativeTypeName("PWSTR *")] ushort** ppsz);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int IStream_WriteStr(IStream* pstm, [NativeTypeName("PCWSTR")] ushort* psz);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int IStream_Copy(IStream* pstmFrom, IStream* pstmTo, [NativeTypeName("DWORD")] uint cb);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int SHGetViewStatePropertyBag([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl, [NativeTypeName("PCWSTR")] ushort* pszBagName, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         public static extern int SHFormatDateTimeA([NativeTypeName("const FILETIME *")] FILETIME* pft, [NativeTypeName("DWORD *")] uint* pdwFlags, [NativeTypeName("LPSTR")] sbyte* pszBuf, [NativeTypeName("UINT")] uint cchBuf);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         public static extern int SHFormatDateTimeW([NativeTypeName("const FILETIME *")] FILETIME* pft, [NativeTypeName("DWORD *")] uint* pdwFlags, [NativeTypeName("LPWSTR")] ushort* pszBuf, [NativeTypeName("UINT")] uint cchBuf);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         public static extern int SHAnsiToUnicode([NativeTypeName("PCSTR")] sbyte* pszSrc, [NativeTypeName("PWSTR")] ushort* pwszDst, int cwchBuf);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         public static extern int SHAnsiToAnsi([NativeTypeName("PCSTR")] sbyte* pszSrc, [NativeTypeName("PSTR")] sbyte* pszDst, int cchBuf);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         public static extern int SHUnicodeToAnsi([NativeTypeName("PCWSTR")] ushort* pwszSrc, [NativeTypeName("PSTR")] sbyte* pszDst, int cchBuf);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         public static extern int SHUnicodeToUnicode([NativeTypeName("PCWSTR")] ushort* pwzSrc, [NativeTypeName("PWSTR")] ushort* pwzDst, int cwchBuf);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         public static extern int SHMessageBoxCheckA([NativeTypeName("HWND")] IntPtr hwnd, [NativeTypeName("LPCSTR")] sbyte* pszText, [NativeTypeName("LPCSTR")] sbyte* pszCaption, [NativeTypeName("UINT")] uint uType, int iDefault, [NativeTypeName("LPCSTR")] sbyte* pszRegVal);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         public static extern int SHMessageBoxCheckW([NativeTypeName("HWND")] IntPtr hwnd, [NativeTypeName("LPCWSTR")] ushort* pszText, [NativeTypeName("LPCWSTR")] ushort* pszCaption, [NativeTypeName("UINT")] uint uType, int iDefault, [NativeTypeName("LPCWSTR")] ushort* pszRegVal);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("LRESULT")]
         public static extern nint SHSendMessageBroadcastA([NativeTypeName("UINT")] uint uMsg, [NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("LRESULT")]
         public static extern nint SHSendMessageBroadcastW([NativeTypeName("UINT")] uint uMsg, [NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("CHAR")]
         public static extern sbyte SHStripMneumonicA([NativeTypeName("LPSTR")] sbyte* pszMenu);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("WCHAR")]
         public static extern ushort SHStripMneumonicW([NativeTypeName("LPWSTR")] ushort* pszMenu);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int IsOS([NativeTypeName("DWORD")] uint dwOS);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("long")]
         public static extern int SHGlobalCounterGetValue([NativeTypeName("const SHGLOBALCOUNTER")] SHGLOBALCOUNTER id);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("long")]
         public static extern int SHGlobalCounterIncrement([NativeTypeName("const SHGLOBALCOUNTER")] SHGLOBALCOUNTER id);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("long")]
         public static extern int SHGlobalCounterDecrement([NativeTypeName("const SHGLOBALCOUNTER")] SHGLOBALCOUNTER id);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("HANDLE")]
         public static extern IntPtr SHAllocShared([NativeTypeName("const void *")] void* pvData, [NativeTypeName("DWORD")] uint dwSize, [NativeTypeName("DWORD")] uint dwProcessId);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int SHFreeShared([NativeTypeName("HANDLE")] IntPtr hData, [NativeTypeName("DWORD")] uint dwProcessId);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         public static extern void* SHLockShared([NativeTypeName("HANDLE")] IntPtr hData, [NativeTypeName("DWORD")] uint dwProcessId);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int SHUnlockShared(void* pvData);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("UINT")]
         public static extern uint WhichPlatform();
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int QISearch(void* that, [NativeTypeName("LPCQITAB")] QITAB* pqit, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int SHIsLowMemoryMachine([NativeTypeName("DWORD")] uint dwType);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         public static extern int GetMenuPosFromID([NativeTypeName("HMENU")] IntPtr hmenu, [NativeTypeName("UINT")] uint id);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int SHGetInverseCMAP([NativeTypeName("BYTE *")] byte* pbMap, [NativeTypeName("ULONG")] uint cbMap);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int SHAutoComplete([NativeTypeName("HWND")] IntPtr hwndEdit, [NativeTypeName("DWORD")] uint dwFlags);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int SHCreateThreadRef([NativeTypeName("LONG *")] int* pcRef, IUnknown** ppunk);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int SHSetThreadRef(IUnknown* punk);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int SHGetThreadRef(IUnknown** ppunk);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int SHSkipJunction(IBindCtx* pbc, [NativeTypeName("const CLSID *")] Guid* pclsid);
 
@@ -1407,45 +1405,45 @@ namespace TerraFX.Interop
         public const int CTF_COINIT_MTA = 0x00001000;
         public const int CTF_NOADDREFLIB = 0x00002000;
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int SHCreateThread([NativeTypeName("LPTHREAD_START_ROUTINE")] delegate* unmanaged<void*, uint> pfnThreadProc, void* pData, [NativeTypeName("SHCT_FLAGS")] uint flags, [NativeTypeName("LPTHREAD_START_ROUTINE")] delegate* unmanaged<void*, uint> pfnCallback);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int SHCreateThreadWithHandle([NativeTypeName("LPTHREAD_START_ROUTINE")] delegate* unmanaged<void*, uint> pfnThreadProc, void* pData, [NativeTypeName("SHCT_FLAGS")] uint flags, [NativeTypeName("LPTHREAD_START_ROUTINE")] delegate* unmanaged<void*, uint> pfnCallback, [NativeTypeName("HANDLE *")] IntPtr* pHandle);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("api-ms-win-shcore-thread-l1-1-0", ExactSpelling = true)]
         public static extern void SetProcessReference(IUnknown* punk);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("api-ms-win-shcore-thread-l1-1-0", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int GetProcessReference(IUnknown** punk);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int SHReleaseThreadRef();
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("HPALETTE")]
         public static extern IntPtr SHCreateShellPalette([NativeTypeName("HDC")] IntPtr hdc);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         public static extern void ColorRGBToHLS([NativeTypeName("COLORREF")] uint clrRGB, [NativeTypeName("WORD *")] ushort* pwHue, [NativeTypeName("WORD *")] ushort* pwLuminance, [NativeTypeName("WORD *")] ushort* pwSaturation);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("COLORREF")]
         public static extern uint ColorHLSToRGB([NativeTypeName("WORD")] ushort wHue, [NativeTypeName("WORD")] ushort wLuminance, [NativeTypeName("WORD")] ushort wSaturation);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("COLORREF")]
         public static extern uint ColorAdjustLuma([NativeTypeName("COLORREF")] uint clrRGB, int n, [NativeTypeName("BOOL")] int fScale);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int DllInstall([NativeTypeName("BOOL")] int bInstall, [NativeTypeName("PCWSTR")] ushort* pszCmdLine);
 
-        [DllImport("Shlwapi", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int IsInternetESCEnabled();
 

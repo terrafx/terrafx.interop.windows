@@ -1,5 +1,18 @@
 @../../settings.rsp
 @../../remap.rsp
+--exclude
+CheckIsMSIXPackage(PCWSTR, BOOL *):HRESULT
+GetCurrentPackageInfo2(const UINT32, PackagePathType, UINT32 *, BYTE *, UINT32 *):LONG
+GetCurrentPackagePath2(PackagePathType, UINT32 *, PWSTR):LONG
+GetPackageInfo2(PACKAGE_INFO_REFERENCE, const UINT32, PackagePathType, UINT32 *, BYTE *, UINT32 *):LONG
+GetPackagePathByFullName2(PCWSTR, PackagePathType, UINT32 *, PWSTR):LONG
+GetStagedPackagePathByFullName2(PCWSTR, PackagePathType, UINT32 *, PWSTR):LONG
+OpenPackageInfoByFullNameForUser(PSID, PCWSTR, const UINT32, PACKAGE_INFO_REFERENCE *):LONG
+VerifyApplicationUserModelId(PCWSTR):LONG
+VerifyPackageFamilyName(PCWSTR):LONG
+VerifyPackageFullName(PCWSTR):LONG
+VerifyPackageId(const PACKAGE_ID *):LONG
+VerifyPackageRelativeApplicationId(PCWSTR):LONG
 --file
 um-appmodel.h
 --output
@@ -9,4 +22,42 @@ um-appmodel.h
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/appmodel.h
 --with-librarypath
-*=kernel32
+AppPolicyGetClrCompat=api-ms-win-appmodel-runtime-l1-1-2
+AppPolicyGetCreateFileAccess=api-ms-win-appmodel-runtime-l1-1-2
+AppPolicyGetLifecycleManagement=api-ms-win-appmodel-runtime-l1-1-2
+AppPolicyGetMediaFoundationCodecLoading=api-ms-win-appmodel-runtime-l1-1-2
+AppPolicyGetProcessTerminationMethod=api-ms-win-appmodel-runtime-l1-1-2
+AppPolicyGetShowDeveloperDiagnostic=api-ms-win-appmodel-runtime-l1-1-2
+AppPolicyGetThreadInitializationType=api-ms-win-appmodel-runtime-l1-1-2
+AppPolicyGetWindowingModel=api-ms-win-appmodel-runtime-l1-1-2
+--with-librarypath
+ClosePackageInfo=kernel32
+FindPackagesByPackageFamily=kernel32
+FormatApplicationUserModelId=kernel32
+GetApplicationUserModelId=kernel32
+GetApplicationUserModelIdFromToken=kernel32
+GetCurrentApplicationUserModelId=kernel32
+GetCurrentPackageFamilyName=kernel32
+GetCurrentPackageFullName=kernel32
+GetCurrentPackageId=kernel32
+GetCurrentPackageInfo=kernel32
+GetCurrentPackagePath=kernel32
+GetPackageApplicationIds=kernel32
+GetPackageFamilyName=kernel32
+GetPackageFamilyNameFromToken=kernel32
+GetPackageFullName=kernel32
+GetPackageFullNameFromToken=kernel32
+GetPackageId=kernel32
+GetPackageInfo=kernel32
+GetPackagePath=kernel32
+GetPackagePathByFullName=kernel32
+GetPackagesByPackageFamily=kernel32
+GetStagedPackageOrigin=kernel32
+GetStagedPackagePathByFullName=kernel32
+OpenPackageInfoByFullName=kernel32
+PackageFamilyNameFromFullName=kernel32
+PackageFamilyNameFromId=kernel32
+PackageFullNameFromId=kernel32
+PackageIdFromFullName=kernel32
+PackageNameAndPublisherIdFromFamilyName=kernel32
+ParseApplicationUserModelId=kernel32

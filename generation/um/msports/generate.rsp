@@ -11,4 +11,11 @@ um-msports.h
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/msports.h
 --with-librarypath
-*=msports
+ComDBClaimNextFreePort=msports
+ComDBClaimPort=msports
+ComDBClose=msports
+ComDBGetCurrentPortUsage=msports
+ComDBOpen=msports
+ComDBReleasePort=msports
+ComDBResizeDatabase=msports
+SerialDisplayAdvancedSettings=msports

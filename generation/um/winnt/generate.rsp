@@ -189,6 +189,7 @@ RtlGetDeviceFamilyInfoEnum(ULONGLONG *, DWORD *, DWORD *):void
 RtlGetNonVolatileToken
 RtlGetProductInfo(DWORD, DWORD, DWORD, DWORD, PDWORD):BOOLEAN
 RtlGetReturnAddressHijackTarget():ULONG_PTR
+RtlGetSystemGlobalData(RTL_SYSTEM_GLOBAL_DATA_ID, PVOID, DWORD):DWORD
 RtlIncrementCorrelationVector(PCORRELATION_VECTOR):DWORD
 RtlInitializeCorrelationVector(PCORRELATION_VECTOR, int, const GUID *):DWORD
 RtlInitializeSListHead(PSLIST_HEADER):void
@@ -206,6 +207,7 @@ RtlQueryDepthSList(PSLIST_HEADER):WORD
 RtlRaiseCustomSystemEventTrigger(PCUSTOM_SYSTEM_EVENT_TRIGGER_CONFIG):DWORD
 RtlRaiseException(PEXCEPTION_RECORD):void
 RtlSecureZeroMemory(PVOID, SIZE_T):PVOID
+RtlSetSystemGlobalData(RTL_SYSTEM_GLOBAL_DATA_ID, PVOID, DWORD):DWORD
 RtlSwitchedVVI(PRTL_OSVERSIONINFOEXW, DWORD, ULONGLONG):DWORD
 RtlUnwind(PVOID, PVOID, PEXCEPTION_RECORD, PVOID):void
 RtlValidateCorrelationVector(PCORRELATION_VECTOR):DWORD
@@ -293,54 +295,54 @@ WriteUShortRaw(volatile WORD *, WORD):void
 WriteUShortRelease(volatile WORD *, WORD):void
 WT_SET_MAX_THREADPOOL_THREADS
 _ARRAYSIZE
-_BitScanForward(DWORD *, DWORD):BOOLEAN
-_BitScanReverse(DWORD *, DWORD):BOOLEAN
-_bittest(const LONG *, LONG):BOOLEAN
-_bittestandcomplement(LONG *, LONG):BOOLEAN
-_bittestandreset(LONG *, LONG):BOOLEAN
-_bittestandset(LONG *, LONG):BOOLEAN
+_BitScanForward
+_BitScanReverse
+_bittest
+_bittestandcomplement
+_bittestandreset
+_bittestandset
 _ENUM_FLAG_INTEGER_FOR_SIZE<S>
 _ENUM_FLAG_SIZED_INTEGER<T>
 _EXCEPTION_REGISTRATION_RECORD
 _ImageArchitectureHeader
-_InlineBitScanForward64(DWORD *, DWORD64):BOOLEAN
-_InlineBitScanReverse64(DWORD *, DWORD64):BOOLEAN
-_InlineInterlockedAdd(volatile LONG *, LONG):LONG
-_InlineInterlockedAdd64(volatile LONG64 *, LONG64):LONG64
-_InlineInterlockedAnd64(volatile LONG64 *, LONG64):LONG64
-_InlineInterlockedCompareExchangePointer(volatile PVOID *, PVOID, PVOID):PVOID
-_InlineInterlockedDecrement64(volatile LONGLONG *):LONGLONG
-_InlineInterlockedExchange64(volatile LONGLONG *, LONGLONG):LONGLONG
-_InlineInterlockedExchangeAdd64(volatile LONGLONG *, LONGLONG):LONGLONG
-_InlineInterlockedExchangePointer(volatile PVOID *, PVOID):PVOID
-_InlineInterlockedIncrement64(volatile LONGLONG *):LONGLONG
-_InlineInterlockedOr64(volatile LONGLONG *, LONGLONG):LONGLONG
-_InlineInterlockedXor64(volatile LONG64 *, LONG64):LONG64
-_InterlockedAnd(volatile LONG *, LONG):LONG
-_InterlockedAnd8(volatile char *, char):char
-_InterlockedAnd16(volatile SHORT *, SHORT):SHORT
-_interlockedbittestandreset(volatile LONG *, LONG):BOOLEAN
-_interlockedbittestandset(volatile LONG *, LONG):BOOLEAN
-_InterlockedCompareExchange(volatile LONG *, LONG, LONG):LONG
-_InterlockedCompareExchange16(volatile SHORT *, SHORT, SHORT):SHORT
-_InterlockedCompareExchange64(volatile LONG64 *, LONG64, LONG64):LONG64
-_InterlockedDecrement(volatile LONG *):LONG
-_InterlockedDecrement16(volatile SHORT *):SHORT
-_InterlockedExchange(volatile LONG *, LONG):LONG
-_InterlockedExchange8(volatile CHAR *, CHAR):CHAR
-_InterlockedExchange16(volatile SHORT *, SHORT):SHORT
-_InterlockedExchangeAdd(volatile LONG *, LONG):LONG
-_InterlockedExchangeAdd8(volatile char *, char):char
-_InterlockedIncrement(volatile LONG *):LONG
-_InterlockedIncrement16(volatile SHORT *):SHORT
-_InterlockedOr(volatile LONG *, LONG):LONG
-_InterlockedOr8(volatile char *, char):char
-_InterlockedOr16(volatile SHORT *, SHORT):SHORT
-_InterlockedXor(volatile LONG *, LONG):LONG
-_InterlockedXor8(volatile char *, char):char
-_InterlockedXor16(volatile SHORT *, SHORT):SHORT
-_mm_pause():void
-_mm_prefetch(const CHAR *, int):void
+_InlineBitScanForward64
+_InlineBitScanReverse64
+_InlineInterlockedAdd
+_InlineInterlockedAdd64
+_InlineInterlockedAnd64
+_InlineInterlockedCompareExchangePointer
+_InlineInterlockedDecrement64
+_InlineInterlockedExchange64
+_InlineInterlockedExchangeAdd64
+_InlineInterlockedExchangePointer
+_InlineInterlockedIncrement64
+_InlineInterlockedOr64
+_InlineInterlockedXor64
+_InterlockedAnd
+_InterlockedAnd8
+_InterlockedAnd16
+_interlockedbittestandreset
+_interlockedbittestandset
+_InterlockedCompareExchange
+_InterlockedCompareExchange16
+_InterlockedCompareExchange64
+_InterlockedDecrement
+_InterlockedDecrement16
+_InterlockedExchange
+_InterlockedExchange8
+_InterlockedExchange16
+_InterlockedExchangeAdd
+_InterlockedExchangeAdd8
+_InterlockedIncrement
+_InterlockedIncrement16
+_InterlockedOr
+_InterlockedOr8
+_InterlockedOr16
+_InterlockedXor
+_InterlockedXor8
+_InterlockedXor16
+_mm_pause
+_mm_prefetch
 _NT_TIB
 _rotl(unsigned int, int):unsigned int
 _rotl64(unsigned long long, int):unsigned long long
@@ -355,10 +357,10 @@ __incfsbyte(DWORD):void
 __incfsdword(DWORD):void
 __incfsword(DWORD):void
 __int2c():void
-__rdtsc():DWORD64
-__readfsbyte(DWORD):BYTE
-__readfsdword(DWORD):DWORD
-__readfsword(DWORD):WORD
+__rdtsc
+__readfsbyte
+__readfsdword
+__readfsword
 __readpmc(DWORD):DWORD64
 __TEXT
 __writefsbyte(DWORD, BYTE):void
@@ -380,9 +382,26 @@ JOBOBJECT_IO_ATTRIBUTION_CONTROL_FLAGS=Flags
 ReplacesCorHdrNumericDefines=Flags
 SERVICE_NODE_TYPE=Flags
 --with-librarypath
-*=kernel32
+InterlockedCompareExchange=kernel32
+InterlockedCompareExchange64=kernel32
+InterlockedDecrement=kernel32
+InterlockedExchange=kernel32
+InterlockedExchangeAdd=kernel32
+InterlockedIncrement=kernel32
+RtlAddFunctionTable=kernel32
+RtlCaptureContext=kernel32
+RtlDeleteFunctionTable=kernel32
+RtlInstallFunctionTableCallback=kernel32
+RtlLookupFunctionEntry=kernel32
+RtlPcToFileHeader=kernel32
+RtlRestoreContext=kernel32
+RtlUnwind=kernel32
+RtlUnwind2=kernel32
+RtlUnwindEx=kernel32
+RtlVirtualUnwind=kernel32
+VerSetConditionMask=kernel32
+--with-librarypath
 RtlAddGrowableFunctionTable=ntdll
-RtlCaptureStackBackTrace=ntdll
 RtlDeleteGrowableFunctionTable=ntdll
 RtlFirstEntrySList=ntdll
 RtlGrowFunctionTable=ntdll
@@ -391,3 +410,6 @@ RtlInterlockedFlushSList=ntdll
 RtlInterlockedPopEntrySList=ntdll
 RtlInterlockedPushEntrySList=ntdll
 RtlQueryDepthSList=ntdll
+--with-librarypath
+RtlCaptureStackBackTrace=ntdll
+CaptureStackBackTrace=ntdll

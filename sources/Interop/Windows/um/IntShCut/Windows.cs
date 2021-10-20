@@ -12,31 +12,31 @@ namespace TerraFX.Interop
 {
     public static unsafe partial class Windows
     {
-        [DllImport("Url", ExactSpelling = true)]
+        [DllImport("url", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int TranslateURLA([NativeTypeName("PCSTR")] sbyte* pcszURL, [NativeTypeName("DWORD")] uint dwInFlags, [NativeTypeName("PSTR *")] sbyte** ppszTranslatedURL);
 
-        [DllImport("Url", ExactSpelling = true)]
+        [DllImport("url", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int TranslateURLW([NativeTypeName("PCWSTR")] ushort* pcszURL, [NativeTypeName("DWORD")] uint dwInFlags, [NativeTypeName("PWSTR *")] ushort** ppszTranslatedURL);
 
-        [DllImport("Url", ExactSpelling = true)]
+        [DllImport("url", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int URLAssociationDialogA([NativeTypeName("HWND")] IntPtr hwndParent, [NativeTypeName("DWORD")] uint dwInFlags, [NativeTypeName("PCSTR")] sbyte* pcszFile, [NativeTypeName("PCSTR")] sbyte* pcszURL, [NativeTypeName("PSTR")] sbyte* pszAppBuf, [NativeTypeName("UINT")] uint ucAppBufLen);
 
-        [DllImport("Url", ExactSpelling = true)]
+        [DllImport("url", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int URLAssociationDialogW([NativeTypeName("HWND")] IntPtr hwndParent, [NativeTypeName("DWORD")] uint dwInFlags, [NativeTypeName("PCWSTR")] ushort* pcszFile, [NativeTypeName("PCWSTR")] ushort* pcszURL, [NativeTypeName("PWSTR")] ushort* pszAppBuf, [NativeTypeName("UINT")] uint ucAppBufLen);
 
-        [DllImport("Url", ExactSpelling = true)]
+        [DllImport("url", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int MIMEAssociationDialogA([NativeTypeName("HWND")] IntPtr hwndParent, [NativeTypeName("DWORD")] uint dwInFlags, [NativeTypeName("PCSTR")] sbyte* pcszFile, [NativeTypeName("PCSTR")] sbyte* pcszMIMEContentType, [NativeTypeName("PSTR")] sbyte* pszAppBuf, [NativeTypeName("UINT")] uint ucAppBufLen);
 
-        [DllImport("Url", ExactSpelling = true)]
+        [DllImport("url", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int MIMEAssociationDialogW([NativeTypeName("HWND")] IntPtr hwndParent, [NativeTypeName("DWORD")] uint dwInFlags, [NativeTypeName("PCWSTR")] ushort* pcszFile, [NativeTypeName("PCWSTR")] ushort* pcszMIMEContentType, [NativeTypeName("PWSTR")] ushort* pszAppBuf, [NativeTypeName("UINT")] uint ucAppBufLen);
 
-        [DllImport("Url", ExactSpelling = true)]
+        [DllImport("url", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int InetIsOffline([NativeTypeName("DWORD")] uint dwFlags);
 

@@ -12,4 +12,7 @@ winrt-roparameterizediid.h
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/winrt/roparameterizediid.h
 --with-librarypath
-*=combase
+RoFreeParameterizedTypeExtra=runtimeobject
+RoParameterizedTypeExtraGetTypeSignature=runtimeobject
+--with-librarypath
+RoGetParameterizedTypeInstanceIID=api-ms-win-core-winrt-roparameterizediid-l1-1-0

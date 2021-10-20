@@ -9,4 +9,19 @@ um-dcomp.h
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/dcomp.h
 --with-librarypath
-*=dcomp
+DCompositionAttachMouseDragToHwnd=dcomp
+DCompositionAttachMouseWheelToHwnd=dcomp
+DCompositionCreateDevice=dcomp
+DCompositionCreateDevice2=dcomp
+DCompositionCreateDevice3=dcomp
+DCompositionCreateSurfaceHandle=dcomp
+DCompositionGetFrameId=dcomp
+DCompositionGetStatistics=dcomp
+IDCompositionRectangleClip::SetBottomLeftRadiusX=dcomp
+IDCompositionRectangleClip::SetBottomLeftRadiusY=dcomp
+IDCompositionRectangleClip::SetBottomRightRadiusX=dcomp
+IDCompositionRectangleClip::SetBottomRightRadiusY=dcomp
+IDCompositionRectangleClip::SetTopLeftRadiusX=dcomp
+IDCompositionRectangleClip::SetTopLeftRadiusY=dcomp
+IDCompositionRectangleClip::SetTopRightRadiusX=dcomp
+IDCompositionRectangleClip::SetTopRightRadiusY=dcomp

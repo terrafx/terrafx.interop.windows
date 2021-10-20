@@ -10,18 +10,18 @@ namespace TerraFX.Interop
 {
     public static unsafe partial class Windows
     {
-        [DllImport("Twinapi.core", ExactSpelling = true)]
+        [DllImport("twinapi.appcore.dll", ExactSpelling = true)]
         [return: NativeTypeName("ULONG")]
         public static extern uint RegisterAppStateChangeNotification([NativeTypeName("PAPPSTATE_CHANGE_ROUTINE")] delegate* unmanaged<byte, void*, void> Routine, [NativeTypeName("PVOID")] void* Context, [NativeTypeName("PAPPSTATE_REGISTRATION *")] IntPtr* Registration);
 
-        [DllImport("Twinapi.core", ExactSpelling = true)]
+        [DllImport("twinapi.appcore.dll", ExactSpelling = true)]
         public static extern void UnregisterAppStateChangeNotification([NativeTypeName("PAPPSTATE_REGISTRATION")] IntPtr Registration);
 
-        [DllImport("Twinapi.core", ExactSpelling = true)]
+        [DllImport("twinapi.appcore.dll", ExactSpelling = true)]
         [return: NativeTypeName("ULONG")]
         public static extern uint RegisterAppConstrainedChangeNotification([NativeTypeName("PAPPCONSTRAIN_CHANGE_ROUTINE")] delegate* unmanaged<byte, void*, void> Routine, [NativeTypeName("PVOID")] void* Context, [NativeTypeName("PAPPCONSTRAIN_REGISTRATION *")] IntPtr* Registration);
 
-        [DllImport("Twinapi.core", ExactSpelling = true)]
+        [DllImport("twinapi.appcore.dll", ExactSpelling = true)]
         public static extern void UnregisterAppConstrainedChangeNotification([NativeTypeName("PAPPCONSTRAIN_REGISTRATION")] IntPtr Registration);
     }
 }

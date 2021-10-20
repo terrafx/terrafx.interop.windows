@@ -10,30 +10,30 @@ namespace TerraFX.Interop
 {
     public static unsafe partial class Windows
     {
-        [DllImport("Advapi32", ExactSpelling = true)]
+        [DllImport("advapi32", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
         public static extern uint InstallApplication([NativeTypeName("PINSTALLDATA")] INSTALLDATA* pInstallInfo);
 
-        [DllImport("Advapi32", ExactSpelling = true)]
+        [DllImport("advapi32", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
         public static extern uint UninstallApplication([NativeTypeName("LPWSTR")] ushort* ProductCode, [NativeTypeName("DWORD")] uint dwStatus);
 
-        [DllImport("Advapi32", ExactSpelling = true)]
+        [DllImport("advapi32", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
         public static extern uint CommandLineFromMsiDescriptor([NativeTypeName("LPWSTR")] ushort* Descriptor, [NativeTypeName("LPWSTR")] ushort* CommandLine, [NativeTypeName("DWORD *")] uint* CommandLineLength);
 
-        [DllImport("Advapi32", ExactSpelling = true)]
+        [DllImport("advapi32", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
         public static extern uint GetManagedApplications([NativeTypeName("GUID *")] Guid* pCategory, [NativeTypeName("DWORD")] uint dwQueryFlags, [NativeTypeName("DWORD")] uint dwInfoLevel, [NativeTypeName("LPDWORD")] uint* pdwApps, [NativeTypeName("PMANAGEDAPPLICATION *")] MANAGEDAPPLICATION** prgManagedApps);
 
-        [DllImport("Advapi32", ExactSpelling = true)]
+        [DllImport("advapi32", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
         public static extern uint GetLocalManagedApplications([NativeTypeName("BOOL")] int bUserApps, [NativeTypeName("LPDWORD")] uint* pdwApps, [NativeTypeName("PLOCALMANAGEDAPPLICATION *")] LOCALMANAGEDAPPLICATION** prgLocalApps);
 
-        [DllImport("Advapi32", ExactSpelling = true)]
+        [DllImport("advapi32", ExactSpelling = true)]
         public static extern void GetLocalManagedApplicationData([NativeTypeName("LPWSTR")] ushort* ProductCode, [NativeTypeName("LPWSTR *")] ushort** DisplayName, [NativeTypeName("LPWSTR *")] ushort** SupportUrl);
 
-        [DllImport("Advapi32", ExactSpelling = true)]
+        [DllImport("advapi32", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
         public static extern uint GetManagedApplicationCategories([NativeTypeName("DWORD")] uint dwReserved, APPCATEGORYINFOLIST* pAppCategory);
 

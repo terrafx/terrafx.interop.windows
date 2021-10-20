@@ -355,4 +355,12 @@ um-ddraw.h
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/ddraw.h
 --with-librarypath
-*=ddraw
+DirectDrawCreate=ddraw
+DirectDrawCreateClipper=ddraw
+DirectDrawCreateEx=ddraw
+DirectDrawEnumerateA=ddraw
+DirectDrawEnumerate=ddraw
+DirectDrawEnumerateEx=ddraw
+DirectDrawEnumerateExA=ddraw
+DirectDrawEnumerateExW=ddraw
+DirectDrawEnumerateW=ddraw

@@ -26,7 +26,7 @@ namespace TerraFX.Interop
         [return: NativeTypeName("DWORD")]
         public static extern uint DavGetHTTPFromUNCPath([NativeTypeName("LPCWSTR")] ushort* UncPath, [NativeTypeName("LPWSTR")] ushort* Url, [NativeTypeName("LPDWORD")] uint* lpSize);
 
-        [DllImport("netapi32", ExactSpelling = true)]
+        [DllImport("davclnt", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
         public static extern uint DavGetTheLockOwnerOfTheFile([NativeTypeName("LPCWSTR")] ushort* FileName, [NativeTypeName("PWSTR")] ushort* LockOwnerName, [NativeTypeName("PULONG")] uint* LockOwnerNameLengthInBytes);
 

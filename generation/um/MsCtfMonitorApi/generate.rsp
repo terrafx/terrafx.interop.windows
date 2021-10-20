@@ -1,5 +1,7 @@
 @../../settings.rsp
 @../../remap.rsp
+--exclude
+DoMsCtfMonitor(DWORD, HANDLE):BOOL
 --file
 um-MsCtfMonitorApi.h
 --output
@@ -9,4 +11,5 @@ um-MsCtfMonitorApi.h
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/MsCtfMonitorApi.h
 --with-librarypath
-*=msctf
+InitLocalMsCtfMonitor=msctf
+UninitLocalMsCtfMonitor=msctf

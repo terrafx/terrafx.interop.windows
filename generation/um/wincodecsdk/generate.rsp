@@ -9,4 +9,6 @@ um-wincodecsdk.h
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/wincodecsdk.h
 --with-librarypath
-*=WindowsCodecs
+WICGetMetadataContentSize=windowscodecs
+WICMatchMetadataContent=windowscodecs
+WICSerializeMetadataContent=windowscodecs

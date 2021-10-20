@@ -20,4 +20,4 @@ DWRITE_SCRIPT_SHAPES=Flags
 --with-type
 DWRITE_FONT_FEATURE_TAG=uint
 --with-librarypath
-*=DWrite
+DWriteCreateFactory=dwrite
