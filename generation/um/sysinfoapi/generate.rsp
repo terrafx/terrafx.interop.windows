@@ -55,8 +55,8 @@ SetSystemTimeAdjustment=kernel32
 --with-librarypath
 GetIntegratedDisplaySize=kernelbase
 --with-librarypath
-GetSystemTimeAdjustmentPrecise=api-ms-win-core-version-l1-2-3
-SetSystemTimeAdjustmentPrecise=api-ms-win-core-version-l1-2-3
+GetSystemTimeAdjustmentPrecise=kernelbase
+SetSystemTimeAdjustmentPrecise=kernelbase
 --with-librarypath
 DnsHostnameToComputerNameExW=kernel32
 IsUserCetAvailableInEnvironment=kernel32

@@ -33,4 +33,4 @@ WindowsSubstringWithSpecifiedLength=combase
 WindowsTrimStringEnd=combase
 WindowsTrimStringStart=combase
 --with-librarypath
-WindowsCompareStringOrdinal=winrttype
+WindowsCompareStringOrdinal=combase

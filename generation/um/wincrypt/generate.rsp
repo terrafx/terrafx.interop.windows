@@ -310,9 +310,9 @@ CryptVerifySignature=advapi32
 CryptVerifySignatureA=advapi32
 CryptVerifySignatureW=advapi32
 --with-librarypath
-CryptCloseAsyncHandle=secforwarder
-CryptCreateAsyncHandle=secforwarder
-CryptGetAsyncParam=secforwarder
+CryptCloseAsyncHandle=crypt32
+CryptCreateAsyncHandle=crypt32
+CryptGetAsyncParam=crypt32
 --with-librarypath
 CryptGetObjectUrl=cryptnet
 CryptGetTimeValidObject=cryptnet

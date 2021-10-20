@@ -572,9 +572,9 @@ StrCatChainW=shlwapi
 StrCmpLogicalW=shlwapi
 StrRetToBSTR=shlwapi
 --with-librarypath
-SHRegGetBoolValueFromHKCUHKLM=shell32
-StrStrNIW=shell32
-StrStrNW=shell32
+SHRegGetBoolValueFromHKCUHKLM=shlwapi
+StrStrNIW=shlwapi
+StrStrNW=shlwapi
 --with-setlasterror
 PathCanonicalize
 PathCanonicalizeA

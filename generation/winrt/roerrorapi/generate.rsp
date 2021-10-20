@@ -38,12 +38,12 @@ RoTransformErrorW=combase
 WinRTTransformErrorW=combase
 SetRestrictedErrorInfo=combase
 --with-librarypath
-IsErrorPropagationEnabled=runtimeobject
-RoOriginateError=runtimeobject
+IsErrorPropagationEnabled=combase
+RoOriginateError=combase
+RoOriginateErrorW=combase
+RoReportFailedDelegate=combase
+RoResolveRestrictedErrorInfoReference=combase
 WinRTOriginateError=runtimeobject
-RoOriginateErrorW=runtimeobject
 WinRTOriginateErrorW=runtimeobject
-RoReportFailedDelegate=runtimeobject
-RoResolveRestrictedErrorInfoReference=runtimeobject
 --with-librarypath
 RoReportUnhandledError=api-ms-win-core-winrt-error-l1-1-1
