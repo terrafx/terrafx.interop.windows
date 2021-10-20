@@ -12,6 +12,6 @@ C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/shared/dxgi1_6.h
 DXGI_ADAPTER_FLAG3=Flags
 DXGI_HARDWARE_COMPOSITION_SUPPORT_FLAGS=Flags
 --with-librarypath
-*=dxgi
+DXGIDeclareAdapterRemovalSupport=dxgi
 --with-type
 DXGI_ADAPTER_FLAG3=uint

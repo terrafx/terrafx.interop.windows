@@ -9,4 +9,12 @@ um-swdevice.h
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/swdevice.h
 --with-librarypath
-*=cfgmgr32
+SwDeviceClose=cfgmgr32
+SwDeviceCreate=cfgmgr32
+SwDeviceGetLifetime=cfgmgr32
+SwDeviceInterfacePropertySet=cfgmgr32
+SwDeviceInterfaceRegister=cfgmgr32
+SwDeviceInterfaceSetState=cfgmgr32
+SwDevicePropertySet=cfgmgr32
+SwDeviceSetLifetime=cfgmgr32
+SwMemFree=cfgmgr32

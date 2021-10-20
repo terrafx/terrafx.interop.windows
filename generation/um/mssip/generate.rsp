@@ -9,7 +9,17 @@ um-mssip.h
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/mssip.h
 --with-librarypath
-*=crypt32
+CryptSIPAddProvider=crypt32
+CryptSIPCreateIndirectData=crypt32
+CryptSIPGetCaps=crypt32
+CryptSIPGetSignedDataMsg=crypt32
+CryptSIPLoad=crypt32
+CryptSIPPutSignedDataMsg=crypt32
+CryptSIPRemoveProvider=crypt32
+CryptSIPRemoveSignedDataMsg=crypt32
+CryptSIPRetrieveSubjectGuid=crypt32
+CryptSIPRetrieveSubjectGuidForCatalogFile=crypt32
+CryptSIPVerifyIndirectData=crypt32
 --with-setlasterror
 CryptSIPAddProvider
 CryptSIPCreateIndirectData

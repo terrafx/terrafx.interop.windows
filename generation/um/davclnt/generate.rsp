@@ -10,13 +10,14 @@ um-davclnt.h
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/davclnt.h
 --with-librarypath
 DavAddConnection=netapi32
-DavCancelConnectionsToServer=davclnt
 DavDeleteConnection=netapi32
 DavFlushFile=netapi32
 DavGetExtendedError=netapi32
 DavGetHTTPFromUNCPath=netapi32
-DavGetTheLockOwnerOfTheFile=netapi32
 DavGetUNCFromHTTPPath=netapi32
+--with-librarypath
+DavCancelConnectionsToServer=davclnt
+DavGetTheLockOwnerOfTheFile=davclnt
 DavInvalidateCache=davclnt
 DavRegisterAuthCallback=davclnt
 DavUnregisterAuthCallback=davclnt

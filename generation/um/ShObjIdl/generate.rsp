@@ -37,4 +37,6 @@ SYNC_ENGINE_STATE_FLAGS=Flags
 VPCOLORFLAGS=Flags
 VPWATERMARKFLAGS=Flags
 --with-librarypath
-*=Shell32
+SHAddDefaultPropertiesByExt=shell32
+SHCreateDefaultPropertiesOp=shell32
+SHSetDefaultProperties=shell32

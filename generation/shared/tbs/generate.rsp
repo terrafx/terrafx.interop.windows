@@ -9,4 +9,13 @@ shared-tbs.h
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/shared/tbs.h
 --with-librarypath
-*=tbs
+Tbsip_Cancel_Commands=tbs
+Tbsip_Context_Close=tbs
+Tbsip_Submit_Command=tbs
+Tbsi_Context_Create=tbs
+Tbsi_GetDeviceInfo=tbs
+Tbsi_Get_OwnerAuth=tbs
+Tbsi_Get_TCG_Log=tbs
+Tbsi_Get_TCG_Log_Ex=tbs
+Tbsi_Physical_Presence_Command=tbs
+Tbsi_Revoke_Attestation=tbs

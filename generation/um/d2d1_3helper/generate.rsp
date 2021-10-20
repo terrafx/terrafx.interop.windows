@@ -10,3 +10,9 @@ um-d2d1_3helper.h
 ../../../tests/Interop/Windows/um/d2d1_3helper
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/d2d1_3helper.h
+--with-librarypath
+GradientMeshPatch=d2d1
+GradientMeshPatchFromCoonsPatch=d2d1
+InkBezierSegment=d2d1
+InkPoint=d2d1
+InkStyleProperties=d2d1

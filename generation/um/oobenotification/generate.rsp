@@ -9,4 +9,8 @@ um-oobenotification.h
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/oobenotification.h
 --with-librarypath
-*=kernel32
+isOOBEComplete=kernel32
+RegisterWaitUntilOOBECompleted=kernel32
+UnregisterWaitUntilOOBECompleted=kernel32
+--with-setlasterror
+isOOBEComplete

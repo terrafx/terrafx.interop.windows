@@ -18,6 +18,7 @@ C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/shared/dxgi.h
 DXGI_ADAPTER_FLAG=Flags
 DXGI_SWAP_CHAIN_FLAG=Flags
 --with-librarypath
-*=dxgi
+CreateDXGIFactory=dxgi
+CreateDXGIFactory1=dxgi
 --with-type
 DXGI_ADAPTER_FLAG=uint

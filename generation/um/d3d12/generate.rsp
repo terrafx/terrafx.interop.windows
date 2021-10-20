@@ -70,4 +70,11 @@ D3D12_TILE_RANGE_FLAGS=Flags
 D3D12_VIEW_INSTANCING_FLAGS=Flags
 D3D12_WAVE_MMA_ACCUM_DATATYPE=Flags
 --with-librarypath
-*=D3D12
+D3D12CreateDevice=d3d12
+D3D12CreateRootSignatureDeserializer=d3d12
+D3D12CreateVersionedRootSignatureDeserializer=d3d12
+D3D12EnableExperimentalFeatures=d3d12
+D3D12GetDebugInterface=d3d12
+D3D12GetInterface=d3d12
+D3D12SerializeRootSignature=d3d12
+D3D12SerializeVersionedRootSignature=d3d12

@@ -9,7 +9,22 @@ um-heapapi.h
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/heapapi.h
 --with-librarypath
-*=kernel32
+GetProcessHeap=kernel32
+GetProcessHeaps=kernel32
+HeapAlloc=kernel32
+HeapCompact=kernel32
+HeapCreate=kernel32
+HeapDestroy=kernel32
+HeapFree=kernel32
+HeapLock=kernel32
+HeapQueryInformation=kernel32
+HeapReAlloc=kernel32
+HeapSetInformation=kernel32
+HeapSize=kernel32
+HeapSummary=kernel32
+HeapUnlock=kernel32
+HeapValidate=kernel32
+HeapWalk=kernel32
 --with-setlasterror
 GetProcessHeap
 GetProcessHeaps

@@ -14,4 +14,4 @@ C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/MLOperatorAuthor.
 MLOperatorKernelOptions=Flags
 MLOperatorParameterOptions=Flags
 --with-librarypath
-*=Windows.AI.MachineLearning.dll
+*=windows.ai.machinelearning.dll

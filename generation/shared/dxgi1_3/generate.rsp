@@ -12,4 +12,5 @@ C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/shared/dxgi1_3.h
 DXGI_MULTIPLANE_OVERLAY_YCbCr_FLAGS=Flags
 DXGI_OVERLAY_SUPPORT_FLAG=Flags
 --with-librarypath
-*=dxgi
+CreateDXGIFactory2=dxgi
+DXGIGetDebugInterface1=dxgi

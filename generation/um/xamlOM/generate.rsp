@@ -14,4 +14,4 @@ C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/xamlOM.h
 --with-attribute
 MetadataBit=Flags
 --with-librarypath
-*=Windows.UI.Xaml.dll
+InitializeXamlDiagnosticsEx=windows.ui.xaml.dll

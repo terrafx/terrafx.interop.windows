@@ -9,11 +9,21 @@ um-ioapiset.h
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/ioapiset.h
 --with-librarypath
-*=kernel32
+CancelIo=kernel32
+CancelIoEx=kernel32
+CancelSynchronousIo=kernel32
+CreateIoCompletionPort=kernel32
+DeviceIoControl=kernel32
+GetOverlappedResult=kernel32
+GetOverlappedResultEx=kernel32
+GetQueuedCompletionStatus=kernel32
+GetQueuedCompletionStatusEx=kernel32
+PostQueuedCompletionStatus=kernel32
 --with-setlasterror
 CancelIo
 CancelIoEx
 CancelSynchronousIo
+DeviceIoControl
 GetOverlappedResult
 GetOverlappedResultEx
 GetQueuedCompletionStatus

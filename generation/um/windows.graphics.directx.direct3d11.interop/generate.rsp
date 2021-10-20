@@ -9,4 +9,9 @@ um-windows.graphics.directx.direct3d11.interop.h
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/windows.graphics.directx.direct3d11.interop.h
 --with-librarypath
-*=d3d11
+CreateDirect3D11DeviceFromDXGIDevice=d3d11
+CreateDirect3D11SurfaceFromDXGISurface=d3d11
+interop::CreateDirect3DDevice=d3d11
+interop::CreateDirect3DSurface=d3d11
+interop::GetDXGIInterface=d3d11
+interop::GetDXGIInterfaceFromObject=d3d11

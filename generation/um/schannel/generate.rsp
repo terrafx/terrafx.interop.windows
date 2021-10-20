@@ -11,4 +11,9 @@ C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/schannel.h
 --with-attribute
 SchGetExtensionsOptions=Flags
 --with-librarypath
-*=schannel
+SslCrackCertificate=schannel
+SslEmptyCache=schannel
+SslEmptyCacheA=schannel
+SslEmptyCacheW=schannel
+SslFreeCertificate=schannel
+SslGetServerIdentity=schannel

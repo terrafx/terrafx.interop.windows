@@ -72,4 +72,7 @@ D3D11_VIDEO_PROCESSOR_ITELECINE_CAPS=Flags
 D3D11_VIDEO_PROCESSOR_PROCESSOR_CAPS=Flags
 D3D11_VIDEO_PROCESSOR_STEREO_CAPS=Flags
 --with-librarypath
-*=d3d11
+D3D11CalcSubresource=d3d11
+--with-librarypath
+D3D11CreateDevice=d3d11
+D3D11CreateDeviceAndSwapChain=d3d11

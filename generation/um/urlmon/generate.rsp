@@ -24,4 +24,5 @@ PUAFOUT=Flags
 SZM_FLAGS=Flags
 ZAFLAGS=Flags
 --with-librarypath
-*=urlmon
+CreateAsyncBindCtx=urlmon
+CreateFormatEnumerator=urlmon

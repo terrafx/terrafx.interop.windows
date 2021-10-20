@@ -13,4 +13,14 @@ RM_APP_STATUS=Flags
 RM_REBOOT_REASON=Flags
 RM_SHUTDOWN_TYPE=Flags
 --with-librarypath
-*=rstrtmgr
+RmAddFilter=rstrtmgr
+RmCancelCurrentTask=rstrtmgr
+RmEndSession=rstrtmgr
+RmGetFilterList=rstrtmgr
+RmGetList=rstrtmgr
+RmJoinSession=rstrtmgr
+RmRegisterResources=rstrtmgr
+RmRemoveFilter=rstrtmgr
+RmRestart=rstrtmgr
+RmShutdown=rstrtmgr
+RmStartSession=rstrtmgr

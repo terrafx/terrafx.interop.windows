@@ -9,4 +9,21 @@ um-EvColl.h
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/EvColl.h
 --with-librarypath
-*=wecapi
+EcClose=wecapi
+EcDeleteSubscription=wecapi
+EcEnumNextSubscription=wecapi
+EcGetObjectArrayProperty=wecapi
+EcGetObjectArraySize=wecapi
+EcGetSubscriptionProperty=wecapi
+EcGetSubscriptionRunTimeStatus=wecapi
+EcInsertObjectArrayElement=wecapi
+EcOpenSubscription=wecapi
+EcOpenSubscriptionEnum=wecapi
+EcRemoveObjectArrayElement=wecapi
+EcRetrySubscription=wecapi
+EcSaveSubscription=wecapi
+EcSetObjectArrayProperty=wecapi
+EcSetSubscriptionProperty=wecapi
+--with-setlasterror
+EcOpenSubscription
+EcOpenSubscriptionEnum

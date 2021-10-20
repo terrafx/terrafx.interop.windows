@@ -36,3 +36,5 @@ D3D10_FILTER=Flags
 D3D10_FORMAT_SUPPORT=Flags
 D3D10_RAISE_FLAG=Flags
 D3D10_RESOURCE_MISC_FLAG=Flags
+--with-librarypath
+D3D10CalcSubresource=d3d10

@@ -9,10 +9,14 @@ um-handleapi.h
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/handleapi.h
 --with-librarypath
-*=kernel32
-CompareObjectHandles=KernelBase
+CloseHandle=kernel32
+DuplicateHandle=kernel32
+GetHandleInformation=kernel32
+SetHandleInformation=kernel32
+--with-librarypath
+CompareObjectHandles=kernelbase
 --with-setlasterror
 CloseHandle
 DuplicateHandle
 GetHandleInformation
-SetHandleInformatio
+SetHandleInformation

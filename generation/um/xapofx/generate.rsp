@@ -12,4 +12,4 @@ um-xapofx.h
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/xapofx.h
 --with-librarypath
-*=Windows.Media.Audio.dll
+CreateFX=windows.media.audio.dll

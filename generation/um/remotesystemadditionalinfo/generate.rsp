@@ -8,3 +8,12 @@ um-remotesystemadditionalinfo.h
 ../../../tests/Interop/Windows/um/remotesystemadditionalinfo
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/remotesystemadditionalinfo.h
+--with-librarypath
+HSTRING_UserFree=combase
+HSTRING_UserFree64=combase
+HSTRING_UserMarshal=combase
+HSTRING_UserMarshal64=combase
+HSTRING_UserSize=combase
+HSTRING_UserSize64=combase
+HSTRING_UserUnmarshal=combase
+HSTRING_UserUnmarshal64=combase

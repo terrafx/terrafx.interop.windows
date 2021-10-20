@@ -9,4 +9,6 @@ um-d3d10misc.h
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/d3d10misc.h
 --with-librarypath
-*=d3d10
+D3D10CreateBlob=d3d10
+D3D10CreateDevice=d3d10
+D3D10CreateDeviceAndSwapChain=d3d10

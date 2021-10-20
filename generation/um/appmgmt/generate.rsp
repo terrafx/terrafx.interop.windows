@@ -9,4 +9,8 @@ um-appmgmt.h
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/appmgmt.h
 --with-librarypath
-*=Advapi32
+GetLocalManagedApplications=advapi32
+GetManagedApplicationCategories=advapi32
+GetManagedApplications=advapi32
+InstallApplication=advapi32
+UninstallApplication=advapi32

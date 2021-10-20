@@ -18,3 +18,5 @@ shared-guiddef.h
 ../../../tests/Interop/Windows/shared/guiddef
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/shared/guiddef.h
+--with-librarypath
+IsEqualGUID=ole32

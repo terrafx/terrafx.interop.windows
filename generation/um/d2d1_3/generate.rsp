@@ -14,4 +14,4 @@ D2D1_IMAGE_SOURCE_LOADING_OPTIONS=Flags
 D2D1_SPRITE_OPTIONS=Flags
 D2D1_TRANSFORMED_IMAGE_SOURCE_OPTIONS=Flags
 --with-librarypath
-*=d2d1
+D2D1GetGradientMeshInteriorPointsFromCoonsPatch=d2d1

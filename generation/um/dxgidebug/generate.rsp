@@ -11,4 +11,4 @@ C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/dxgidebug.h
 --with-attribute
 DXGI_DEBUG_RLO_FLAGS=Flags
 --with-librarypath
-*=DXGIDebug
+DXGIGetDebugInterface=dxgidebug
