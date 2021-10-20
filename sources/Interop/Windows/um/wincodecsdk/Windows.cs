@@ -3087,15 +3087,15 @@ namespace TerraFX.Interop
             }
         }
 
-        [DllImport("WindowsCodecs", ExactSpelling = true)]
+        [DllImport("windowscodecs", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int WICMatchMetadataContent([NativeTypeName("const GUID &")] Guid* guidContainerFormat, [NativeTypeName("const GUID *")] Guid* pguidVendor, IStream* pIStream, [NativeTypeName("GUID *")] Guid* pguidMetadataFormat);
 
-        [DllImport("WindowsCodecs", ExactSpelling = true)]
+        [DllImport("windowscodecs", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int WICSerializeMetadataContent([NativeTypeName("const GUID &")] Guid* guidContainerFormat, IWICMetadataWriter* pIWriter, [NativeTypeName("DWORD")] uint dwPersistOptions, IStream* pIStream);
 
-        [DllImport("WindowsCodecs", ExactSpelling = true)]
+        [DllImport("windowscodecs", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int WICGetMetadataContentSize([NativeTypeName("const GUID &")] Guid* guidContainerFormat, IWICMetadataWriter* pIWriter, ULARGE_INTEGER* pcbSize);
 

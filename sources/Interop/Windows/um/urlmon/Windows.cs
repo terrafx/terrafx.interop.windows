@@ -82,10 +82,6 @@ namespace TerraFX.Interop
 
         [DllImport("urlmon", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int CreateURLBinding([NativeTypeName("LPCWSTR")] ushort* lpszUrl, IBindCtx* pbc, IBinding** ppBdg);
-
-        [DllImport("urlmon", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
         public static extern int RegisterMediaTypes([NativeTypeName("UINT")] uint ctypes, [NativeTypeName("const LPCSTR *")] sbyte** rgszTypes, [NativeTypeName("CLIPFORMAT *")] ushort* rgcfTypes);
 
         [DllImport("urlmon", ExactSpelling = true)]

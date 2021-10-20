@@ -10,11 +10,11 @@ namespace TerraFX.Interop
 {
     public static unsafe partial class Windows
     {
-        [DllImport("crypt32", ExactSpelling = true)]
+        [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int CryptAcquireContextA([NativeTypeName("HCRYPTPROV *")] IntPtr* phProv, [NativeTypeName("LPCSTR")] sbyte* szContainer, [NativeTypeName("LPCSTR")] sbyte* szProvider, [NativeTypeName("DWORD")] uint dwProvType, [NativeTypeName("DWORD")] uint dwFlags);
 
-        [DllImport("crypt32", ExactSpelling = true)]
+        [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int CryptAcquireContextW([NativeTypeName("HCRYPTPROV *")] IntPtr* phProv, [NativeTypeName("LPCWSTR")] ushort* szContainer, [NativeTypeName("LPCWSTR")] ushort* szProvider, [NativeTypeName("DWORD")] uint dwProvType, [NativeTypeName("DWORD")] uint dwFlags);
 
@@ -98,59 +98,59 @@ namespace TerraFX.Interop
         [return: NativeTypeName("BOOL")]
         public static extern int CryptDestroyHash([NativeTypeName("HCRYPTHASH")] IntPtr hHash);
 
-        [DllImport("crypt32", ExactSpelling = true)]
+        [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int CryptSignHashA([NativeTypeName("HCRYPTHASH")] IntPtr hHash, [NativeTypeName("DWORD")] uint dwKeySpec, [NativeTypeName("LPCSTR")] sbyte* szDescription, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("BYTE *")] byte* pbSignature, [NativeTypeName("DWORD *")] uint* pdwSigLen);
 
-        [DllImport("crypt32", ExactSpelling = true)]
+        [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int CryptSignHashW([NativeTypeName("HCRYPTHASH")] IntPtr hHash, [NativeTypeName("DWORD")] uint dwKeySpec, [NativeTypeName("LPCWSTR")] ushort* szDescription, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("BYTE *")] byte* pbSignature, [NativeTypeName("DWORD *")] uint* pdwSigLen);
 
-        [DllImport("crypt32", ExactSpelling = true)]
+        [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int CryptVerifySignatureA([NativeTypeName("HCRYPTHASH")] IntPtr hHash, [NativeTypeName("const BYTE *")] byte* pbSignature, [NativeTypeName("DWORD")] uint dwSigLen, [NativeTypeName("HCRYPTKEY")] IntPtr hPubKey, [NativeTypeName("LPCSTR")] sbyte* szDescription, [NativeTypeName("DWORD")] uint dwFlags);
 
-        [DllImport("crypt32", ExactSpelling = true)]
+        [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int CryptVerifySignatureW([NativeTypeName("HCRYPTHASH")] IntPtr hHash, [NativeTypeName("const BYTE *")] byte* pbSignature, [NativeTypeName("DWORD")] uint dwSigLen, [NativeTypeName("HCRYPTKEY")] IntPtr hPubKey, [NativeTypeName("LPCWSTR")] ushort* szDescription, [NativeTypeName("DWORD")] uint dwFlags);
 
-        [DllImport("crypt32", ExactSpelling = true)]
+        [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int CryptSetProviderA([NativeTypeName("LPCSTR")] sbyte* pszProvName, [NativeTypeName("DWORD")] uint dwProvType);
 
-        [DllImport("crypt32", ExactSpelling = true)]
+        [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int CryptSetProviderW([NativeTypeName("LPCWSTR")] ushort* pszProvName, [NativeTypeName("DWORD")] uint dwProvType);
 
-        [DllImport("crypt32", ExactSpelling = true)]
+        [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int CryptSetProviderExA([NativeTypeName("LPCSTR")] sbyte* pszProvName, [NativeTypeName("DWORD")] uint dwProvType, [NativeTypeName("DWORD *")] uint* pdwReserved, [NativeTypeName("DWORD")] uint dwFlags);
 
-        [DllImport("crypt32", ExactSpelling = true)]
+        [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int CryptSetProviderExW([NativeTypeName("LPCWSTR")] ushort* pszProvName, [NativeTypeName("DWORD")] uint dwProvType, [NativeTypeName("DWORD *")] uint* pdwReserved, [NativeTypeName("DWORD")] uint dwFlags);
 
-        [DllImport("crypt32", ExactSpelling = true)]
+        [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int CryptGetDefaultProviderA([NativeTypeName("DWORD")] uint dwProvType, [NativeTypeName("DWORD *")] uint* pdwReserved, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LPSTR")] sbyte* pszProvName, [NativeTypeName("DWORD *")] uint* pcbProvName);
 
-        [DllImport("crypt32", ExactSpelling = true)]
+        [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int CryptGetDefaultProviderW([NativeTypeName("DWORD")] uint dwProvType, [NativeTypeName("DWORD *")] uint* pdwReserved, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LPWSTR")] ushort* pszProvName, [NativeTypeName("DWORD *")] uint* pcbProvName);
 
-        [DllImport("crypt32", ExactSpelling = true)]
+        [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int CryptEnumProviderTypesA([NativeTypeName("DWORD")] uint dwIndex, [NativeTypeName("DWORD *")] uint* pdwReserved, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("DWORD *")] uint* pdwProvType, [NativeTypeName("LPSTR")] sbyte* szTypeName, [NativeTypeName("DWORD *")] uint* pcbTypeName);
 
-        [DllImport("crypt32", ExactSpelling = true)]
+        [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int CryptEnumProviderTypesW([NativeTypeName("DWORD")] uint dwIndex, [NativeTypeName("DWORD *")] uint* pdwReserved, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("DWORD *")] uint* pdwProvType, [NativeTypeName("LPWSTR")] ushort* szTypeName, [NativeTypeName("DWORD *")] uint* pcbTypeName);
 
-        [DllImport("crypt32", ExactSpelling = true)]
+        [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int CryptEnumProvidersA([NativeTypeName("DWORD")] uint dwIndex, [NativeTypeName("DWORD *")] uint* pdwReserved, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("DWORD *")] uint* pdwProvType, [NativeTypeName("LPSTR")] sbyte* szProvName, [NativeTypeName("DWORD *")] uint* pcbProvName);
 
-        [DllImport("crypt32", ExactSpelling = true)]
+        [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int CryptEnumProvidersW([NativeTypeName("DWORD")] uint dwIndex, [NativeTypeName("DWORD *")] uint* pdwReserved, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("DWORD *")] uint* pdwProvType, [NativeTypeName("LPWSTR")] ushort* szProvName, [NativeTypeName("DWORD *")] uint* pcbProvName);
 
@@ -789,11 +789,11 @@ namespace TerraFX.Interop
         [return: NativeTypeName("DWORD")]
         public static extern uint CertNameToStrW([NativeTypeName("DWORD")] uint dwCertEncodingType, [NativeTypeName("PCERT_NAME_BLOB")] CRYPT_DATA_BLOB* pName, [NativeTypeName("DWORD")] uint dwStrType, [NativeTypeName("LPWSTR")] ushort* psz, [NativeTypeName("DWORD")] uint csz);
 
-        [DllImport("crypt32", ExactSpelling = true)]
+        [DllImport("crypt32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int CertStrToNameA([NativeTypeName("DWORD")] uint dwCertEncodingType, [NativeTypeName("LPCSTR")] sbyte* pszX500, [NativeTypeName("DWORD")] uint dwStrType, void* pvReserved, [NativeTypeName("BYTE *")] byte* pbEncoded, [NativeTypeName("DWORD *")] uint* pcbEncoded, [NativeTypeName("LPCSTR *")] sbyte** ppszError);
 
-        [DllImport("crypt32", ExactSpelling = true)]
+        [DllImport("crypt32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int CertStrToNameW([NativeTypeName("DWORD")] uint dwCertEncodingType, [NativeTypeName("LPCWSTR")] ushort* pszX500, [NativeTypeName("DWORD")] uint dwStrType, void* pvReserved, [NativeTypeName("BYTE *")] byte* pbEncoded, [NativeTypeName("DWORD *")] uint* pcbEncoded, [NativeTypeName("LPCWSTR *")] ushort** ppszError);
 
@@ -865,23 +865,23 @@ namespace TerraFX.Interop
         [return: NativeTypeName("BOOL")]
         public static extern int CryptVerifyMessageSignatureWithKey([NativeTypeName("PCRYPT_KEY_VERIFY_MESSAGE_PARA")] CRYPT_KEY_VERIFY_MESSAGE_PARA* pVerifyPara, [NativeTypeName("PCERT_PUBLIC_KEY_INFO")] CERT_PUBLIC_KEY_INFO* pPublicKeyInfo, [NativeTypeName("const BYTE *")] byte* pbSignedBlob, [NativeTypeName("DWORD")] uint cbSignedBlob, [NativeTypeName("BYTE *")] byte* pbDecoded, [NativeTypeName("DWORD *")] uint* pcbDecoded);
 
-        [DllImport("crypt32", ExactSpelling = true)]
+        [DllImport("crypt32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("HCERTSTORE")]
         public static extern IntPtr CertOpenSystemStoreA([NativeTypeName("HCRYPTPROV_LEGACY")] IntPtr hProv, [NativeTypeName("LPCSTR")] sbyte* szSubsystemProtocol);
 
-        [DllImport("crypt32", ExactSpelling = true)]
+        [DllImport("crypt32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("HCERTSTORE")]
         public static extern IntPtr CertOpenSystemStoreW([NativeTypeName("HCRYPTPROV_LEGACY")] IntPtr hProv, [NativeTypeName("LPCWSTR")] ushort* szSubsystemProtocol);
 
-        [DllImport("crypt32", ExactSpelling = true)]
+        [DllImport("crypt32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int CertAddEncodedCertificateToSystemStoreA([NativeTypeName("LPCSTR")] sbyte* szCertStoreName, [NativeTypeName("const BYTE *")] byte* pbCertEncoded, [NativeTypeName("DWORD")] uint cbCertEncoded);
 
-        [DllImport("crypt32", ExactSpelling = true)]
+        [DllImport("crypt32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int CertAddEncodedCertificateToSystemStoreW([NativeTypeName("LPCWSTR")] ushort* szCertStoreName, [NativeTypeName("const BYTE *")] byte* pbCertEncoded, [NativeTypeName("DWORD")] uint cbCertEncoded);
 
-        [DllImport("crypt32", ExactSpelling = true)]
+        [DllImport("wintrust", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int FindCertsByIssuer([NativeTypeName("PCERT_CHAIN")] CERT_CHAIN* pCertChains, [NativeTypeName("DWORD *")] uint* pcbCertChains, [NativeTypeName("DWORD *")] uint* pcCertChains, [NativeTypeName("BYTE *")] byte* pbEncodedIssuerName, [NativeTypeName("DWORD")] uint cbEncodedIssuerName, [NativeTypeName("LPCWSTR")] ushort* pwszPurpose, [NativeTypeName("DWORD")] uint dwKeySpec);
 
@@ -900,39 +900,35 @@ namespace TerraFX.Interop
         [DllImport("crypt32", ExactSpelling = true)]
         public static extern void CryptMemFree([NativeTypeName("LPVOID")] void* pv);
 
-        [DllImport("crypt32", ExactSpelling = true)]
+        [DllImport("secforwarder", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int CryptCreateAsyncHandle([NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("PHCRYPTASYNC")] IntPtr* phAsync);
 
-        [DllImport("crypt32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int CryptSetAsyncParam([NativeTypeName("HCRYPTASYNC")] IntPtr hAsync, [NativeTypeName("LPSTR")] sbyte* pszParamOid, [NativeTypeName("LPVOID")] void* pvParam, [NativeTypeName("PFN_CRYPT_ASYNC_PARAM_FREE_FUNC")] delegate* unmanaged<sbyte*, void*, void> pfnFree);
-
-        [DllImport("crypt32", ExactSpelling = true)]
+        [DllImport("secforwarder", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int CryptGetAsyncParam([NativeTypeName("HCRYPTASYNC")] IntPtr hAsync, [NativeTypeName("LPSTR")] sbyte* pszParamOid, [NativeTypeName("LPVOID *")] void** ppvParam, [NativeTypeName("PFN_CRYPT_ASYNC_PARAM_FREE_FUNC *")] delegate* unmanaged<sbyte*, void*, void>* ppfnFree);
 
-        [DllImport("crypt32", ExactSpelling = true)]
+        [DllImport("secforwarder", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int CryptCloseAsyncHandle([NativeTypeName("HCRYPTASYNC")] IntPtr hAsync);
 
-        [DllImport("crypt32", ExactSpelling = true)]
+        [DllImport("cryptnet", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int CryptRetrieveObjectByUrlA([NativeTypeName("LPCSTR")] sbyte* pszUrl, [NativeTypeName("LPCSTR")] sbyte* pszObjectOid, [NativeTypeName("DWORD")] uint dwRetrievalFlags, [NativeTypeName("DWORD")] uint dwTimeout, [NativeTypeName("LPVOID *")] void** ppvObject, [NativeTypeName("HCRYPTASYNC")] IntPtr hAsyncRetrieve, [NativeTypeName("PCRYPT_CREDENTIALS")] CRYPT_CREDENTIALS* pCredentials, [NativeTypeName("LPVOID")] void* pvVerify, [NativeTypeName("PCRYPT_RETRIEVE_AUX_INFO")] CRYPT_RETRIEVE_AUX_INFO* pAuxInfo);
 
-        [DllImport("crypt32", ExactSpelling = true)]
+        [DllImport("cryptnet", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int CryptRetrieveObjectByUrlW([NativeTypeName("LPCWSTR")] ushort* pszUrl, [NativeTypeName("LPCSTR")] sbyte* pszObjectOid, [NativeTypeName("DWORD")] uint dwRetrievalFlags, [NativeTypeName("DWORD")] uint dwTimeout, [NativeTypeName("LPVOID *")] void** ppvObject, [NativeTypeName("HCRYPTASYNC")] IntPtr hAsyncRetrieve, [NativeTypeName("PCRYPT_CREDENTIALS")] CRYPT_CREDENTIALS* pCredentials, [NativeTypeName("LPVOID")] void* pvVerify, [NativeTypeName("PCRYPT_RETRIEVE_AUX_INFO")] CRYPT_RETRIEVE_AUX_INFO* pAuxInfo);
 
-        [DllImport("crypt32", ExactSpelling = true)]
+        [DllImport("cryptnet", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int CryptInstallCancelRetrieval([NativeTypeName("PFN_CRYPT_CANCEL_RETRIEVAL")] delegate* unmanaged<uint, void*, int> pfnCancel, [NativeTypeName("const void *")] void* pvArg, [NativeTypeName("DWORD")] uint dwFlags, void* pvReserved);
 
-        [DllImport("crypt32", ExactSpelling = true)]
+        [DllImport("cryptnet", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int CryptUninstallCancelRetrieval([NativeTypeName("DWORD")] uint dwFlags, void* pvReserved);
 
-        [DllImport("crypt32", ExactSpelling = true)]
+        [DllImport("cryptnet", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int CryptCancelAsyncRetrieval([NativeTypeName("HCRYPTASYNC")] IntPtr hAsyncRetrieval);
 
@@ -944,7 +940,7 @@ namespace TerraFX.Interop
         [return: NativeTypeName("BOOL")]
         public static extern int CryptGetTimeValidObject([NativeTypeName("LPCSTR")] sbyte* pszTimeValidOid, [NativeTypeName("LPVOID")] void* pvPara, [NativeTypeName("PCCERT_CONTEXT")] CERT_CONTEXT* pIssuer, [NativeTypeName("LPFILETIME")] FILETIME* pftValidFor, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("DWORD")] uint dwTimeout, [NativeTypeName("LPVOID *")] void** ppvObject, [NativeTypeName("PCRYPT_CREDENTIALS")] CRYPT_CREDENTIALS* pCredentials, [NativeTypeName("PCRYPT_GET_TIME_VALID_OBJECT_EXTRA_INFO")] CRYPT_GET_TIME_VALID_OBJECT_EXTRA_INFO* pExtraInfo);
 
-        [DllImport("crypt32", ExactSpelling = true)]
+        [DllImport("cryptnet", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int CryptFlushTimeValidObject([NativeTypeName("LPCSTR")] sbyte* pszFlushTimeValidOid, [NativeTypeName("LPVOID")] void* pvPara, [NativeTypeName("PCCERT_CONTEXT")] CERT_CONTEXT* pIssuer, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LPVOID")] void* pvReserved);
 

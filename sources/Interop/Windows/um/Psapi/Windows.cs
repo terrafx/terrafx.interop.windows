@@ -10,103 +10,103 @@ namespace TerraFX.Interop
 {
     public static unsafe partial class Windows
     {
-        [DllImport("kernel32", ExactSpelling = true)]
+        [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int K32EnumProcesses([NativeTypeName("DWORD *")] uint* lpidProcess, [NativeTypeName("DWORD")] uint cb, [NativeTypeName("LPDWORD")] uint* lpcbNeeded);
 
-        [DllImport("kernel32", ExactSpelling = true)]
+        [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int K32EnumProcessModules([NativeTypeName("HANDLE")] IntPtr hProcess, [NativeTypeName("HMODULE *")] IntPtr* lphModule, [NativeTypeName("DWORD")] uint cb, [NativeTypeName("LPDWORD")] uint* lpcbNeeded);
 
-        [DllImport("kernel32", ExactSpelling = true)]
+        [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int K32EnumProcessModulesEx([NativeTypeName("HANDLE")] IntPtr hProcess, [NativeTypeName("HMODULE *")] IntPtr* lphModule, [NativeTypeName("DWORD")] uint cb, [NativeTypeName("LPDWORD")] uint* lpcbNeeded, [NativeTypeName("DWORD")] uint dwFilterFlag);
 
-        [DllImport("kernel32", ExactSpelling = true)]
+        [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("DWORD")]
         public static extern uint K32GetModuleBaseNameA([NativeTypeName("HANDLE")] IntPtr hProcess, [NativeTypeName("HMODULE")] IntPtr hModule, [NativeTypeName("LPSTR")] sbyte* lpBaseName, [NativeTypeName("DWORD")] uint nSize);
 
-        [DllImport("kernel32", ExactSpelling = true)]
+        [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("DWORD")]
         public static extern uint K32GetModuleBaseNameW([NativeTypeName("HANDLE")] IntPtr hProcess, [NativeTypeName("HMODULE")] IntPtr hModule, [NativeTypeName("LPWSTR")] ushort* lpBaseName, [NativeTypeName("DWORD")] uint nSize);
 
-        [DllImport("kernel32", ExactSpelling = true)]
+        [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("DWORD")]
         public static extern uint K32GetModuleFileNameExA([NativeTypeName("HANDLE")] IntPtr hProcess, [NativeTypeName("HMODULE")] IntPtr hModule, [NativeTypeName("LPSTR")] sbyte* lpFilename, [NativeTypeName("DWORD")] uint nSize);
 
-        [DllImport("kernel32", ExactSpelling = true)]
+        [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("DWORD")]
         public static extern uint K32GetModuleFileNameExW([NativeTypeName("HANDLE")] IntPtr hProcess, [NativeTypeName("HMODULE")] IntPtr hModule, [NativeTypeName("LPWSTR")] ushort* lpFilename, [NativeTypeName("DWORD")] uint nSize);
 
-        [DllImport("kernel32", ExactSpelling = true)]
+        [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int K32GetModuleInformation([NativeTypeName("HANDLE")] IntPtr hProcess, [NativeTypeName("HMODULE")] IntPtr hModule, [NativeTypeName("LPMODULEINFO")] MODULEINFO* lpmodinfo, [NativeTypeName("DWORD")] uint cb);
 
-        [DllImport("kernel32", ExactSpelling = true)]
+        [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int K32EmptyWorkingSet([NativeTypeName("HANDLE")] IntPtr hProcess);
 
-        [DllImport("kernel32", ExactSpelling = true)]
+        [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int K32InitializeProcessForWsWatch([NativeTypeName("HANDLE")] IntPtr hProcess);
 
-        [DllImport("kernel32", ExactSpelling = true)]
+        [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int K32GetWsChanges([NativeTypeName("HANDLE")] IntPtr hProcess, [NativeTypeName("PPSAPI_WS_WATCH_INFORMATION")] PSAPI_WS_WATCH_INFORMATION* lpWatchInfo, [NativeTypeName("DWORD")] uint cb);
 
-        [DllImport("kernel32", ExactSpelling = true)]
+        [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int K32GetWsChangesEx([NativeTypeName("HANDLE")] IntPtr hProcess, [NativeTypeName("PPSAPI_WS_WATCH_INFORMATION_EX")] PSAPI_WS_WATCH_INFORMATION_EX* lpWatchInfoEx, [NativeTypeName("PDWORD")] uint* cb);
 
-        [DllImport("kernel32", ExactSpelling = true)]
+        [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("DWORD")]
         public static extern uint K32GetMappedFileNameW([NativeTypeName("HANDLE")] IntPtr hProcess, [NativeTypeName("LPVOID")] void* lpv, [NativeTypeName("LPWSTR")] ushort* lpFilename, [NativeTypeName("DWORD")] uint nSize);
 
-        [DllImport("kernel32", ExactSpelling = true)]
+        [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("DWORD")]
         public static extern uint K32GetMappedFileNameA([NativeTypeName("HANDLE")] IntPtr hProcess, [NativeTypeName("LPVOID")] void* lpv, [NativeTypeName("LPSTR")] sbyte* lpFilename, [NativeTypeName("DWORD")] uint nSize);
 
-        [DllImport("kernel32", ExactSpelling = true)]
+        [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int K32EnumDeviceDrivers([NativeTypeName("LPVOID *")] void** lpImageBase, [NativeTypeName("DWORD")] uint cb, [NativeTypeName("LPDWORD")] uint* lpcbNeeded);
 
-        [DllImport("kernel32", ExactSpelling = true)]
+        [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("DWORD")]
         public static extern uint K32GetDeviceDriverBaseNameA([NativeTypeName("LPVOID")] void* ImageBase, [NativeTypeName("LPSTR")] sbyte* lpFilename, [NativeTypeName("DWORD")] uint nSize);
 
-        [DllImport("kernel32", ExactSpelling = true)]
+        [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("DWORD")]
         public static extern uint K32GetDeviceDriverBaseNameW([NativeTypeName("LPVOID")] void* ImageBase, [NativeTypeName("LPWSTR")] ushort* lpBaseName, [NativeTypeName("DWORD")] uint nSize);
 
-        [DllImport("kernel32", ExactSpelling = true)]
+        [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("DWORD")]
         public static extern uint K32GetDeviceDriverFileNameA([NativeTypeName("LPVOID")] void* ImageBase, [NativeTypeName("LPSTR")] sbyte* lpFilename, [NativeTypeName("DWORD")] uint nSize);
 
-        [DllImport("kernel32", ExactSpelling = true)]
+        [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("DWORD")]
         public static extern uint K32GetDeviceDriverFileNameW([NativeTypeName("LPVOID")] void* ImageBase, [NativeTypeName("LPWSTR")] ushort* lpFilename, [NativeTypeName("DWORD")] uint nSize);
 
-        [DllImport("kernel32", ExactSpelling = true)]
+        [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int K32QueryWorkingSet([NativeTypeName("HANDLE")] IntPtr hProcess, [NativeTypeName("PVOID")] void* pv, [NativeTypeName("DWORD")] uint cb);
 
-        [DllImport("kernel32", ExactSpelling = true)]
+        [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int K32QueryWorkingSetEx([NativeTypeName("HANDLE")] IntPtr hProcess, [NativeTypeName("PVOID")] void* pv, [NativeTypeName("DWORD")] uint cb);
 
-        [DllImport("kernel32", ExactSpelling = true)]
+        [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int K32GetProcessMemoryInfo([NativeTypeName("HANDLE")] IntPtr Process, [NativeTypeName("PPROCESS_MEMORY_COUNTERS")] PROCESS_MEMORY_COUNTERS* ppsmemCounters, [NativeTypeName("DWORD")] uint cb);
 
-        [DllImport("kernel32", ExactSpelling = true)]
+        [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int K32GetPerformanceInfo([NativeTypeName("PPERFORMANCE_INFORMATION")] PERFORMANCE_INFORMATION* pPerformanceInformation, [NativeTypeName("DWORD")] uint cb);
 
-        [DllImport("kernel32", ExactSpelling = true)]
+        [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int K32EnumPageFilesW([NativeTypeName("PENUM_PAGE_FILE_CALLBACKW")] delegate* unmanaged<void*, ENUM_PAGE_FILE_INFORMATION*, ushort*, int> pCallBackRoutine, [NativeTypeName("LPVOID")] void* pContext);
 
-        [DllImport("kernel32", ExactSpelling = true)]
+        [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int K32EnumPageFilesA([NativeTypeName("PENUM_PAGE_FILE_CALLBACKA")] delegate* unmanaged<void*, ENUM_PAGE_FILE_INFORMATION*, sbyte*, int> pCallBackRoutine, [NativeTypeName("LPVOID")] void* pContext);
 

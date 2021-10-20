@@ -30,7 +30,7 @@ namespace TerraFX.Interop
         [return: NativeTypeName("BOOL")]
         public static extern int IsUserCetAvailableInEnvironment([NativeTypeName("DWORD")] uint UserCetEnvironment);
 
-        [DllImport("kernel32", ExactSpelling = true)]
+        [DllImport("kernelbase", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int GetSystemLeapSecondInformation([NativeTypeName("PBOOL")] int* Enabled, [NativeTypeName("PDWORD")] uint* Flags);
 
@@ -58,39 +58,39 @@ namespace TerraFX.Interop
         [return: NativeTypeName("BOOL")]
         public static extern int GetSystemTimeAdjustmentPrecise([NativeTypeName("PDWORD64")] ulong* lpTimeAdjustment, [NativeTypeName("PDWORD64")] ulong* lpTimeIncrement, [NativeTypeName("PBOOL")] int* lpTimeAdjustmentDisabled);
 
-        [DllImport("kernel32", ExactSpelling = true)]
+        [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("UINT")]
         public static extern uint GetSystemDirectoryA([NativeTypeName("LPSTR")] sbyte* lpBuffer, [NativeTypeName("UINT")] uint uSize);
 
-        [DllImport("kernel32", ExactSpelling = true)]
+        [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("UINT")]
         public static extern uint GetSystemDirectoryW([NativeTypeName("LPWSTR")] ushort* lpBuffer, [NativeTypeName("UINT")] uint uSize);
 
-        [DllImport("kernel32", ExactSpelling = true)]
+        [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("UINT")]
         public static extern uint GetWindowsDirectoryA([NativeTypeName("LPSTR")] sbyte* lpBuffer, [NativeTypeName("UINT")] uint uSize);
 
-        [DllImport("kernel32", ExactSpelling = true)]
+        [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("UINT")]
         public static extern uint GetWindowsDirectoryW([NativeTypeName("LPWSTR")] ushort* lpBuffer, [NativeTypeName("UINT")] uint uSize);
 
-        [DllImport("kernel32", ExactSpelling = true)]
+        [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("UINT")]
         public static extern uint GetSystemWindowsDirectoryA([NativeTypeName("LPSTR")] sbyte* lpBuffer, [NativeTypeName("UINT")] uint uSize);
 
-        [DllImport("kernel32", ExactSpelling = true)]
+        [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("UINT")]
         public static extern uint GetSystemWindowsDirectoryW([NativeTypeName("LPWSTR")] ushort* lpBuffer, [NativeTypeName("UINT")] uint uSize);
 
-        [DllImport("kernel32", ExactSpelling = true)]
+        [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int GetComputerNameExA(COMPUTER_NAME_FORMAT NameType, [NativeTypeName("LPSTR")] sbyte* lpBuffer, [NativeTypeName("LPDWORD")] uint* nSize);
 
-        [DllImport("kernel32", ExactSpelling = true)]
+        [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int GetComputerNameExW(COMPUTER_NAME_FORMAT NameType, [NativeTypeName("LPWSTR")] ushort* lpBuffer, [NativeTypeName("LPDWORD")] uint* nSize);
 
-        [DllImport("kernel32", ExactSpelling = true)]
+        [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int SetComputerNameExW(COMPUTER_NAME_FORMAT NameType, [NativeTypeName("LPCWSTR")] ushort* lpBuffer);
 
@@ -98,11 +98,11 @@ namespace TerraFX.Interop
         [return: NativeTypeName("BOOL")]
         public static extern int SetSystemTime([NativeTypeName("const SYSTEMTIME *")] SYSTEMTIME* lpSystemTime);
 
-        [DllImport("kernel32", ExactSpelling = true)]
+        [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int GetVersionExA([NativeTypeName("LPOSVERSIONINFOA")] OSVERSIONINFOA* lpVersionInformation);
 
-        [DllImport("kernel32", ExactSpelling = true)]
+        [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int GetVersionExW([NativeTypeName("LPOSVERSIONINFOW")] OSVERSIONINFOW* lpVersionInformation);
 
@@ -128,7 +128,7 @@ namespace TerraFX.Interop
         [return: NativeTypeName("ULONGLONG")]
         public static extern ulong VerSetConditionMask([NativeTypeName("ULONGLONG")] ulong ConditionMask, [NativeTypeName("ULONG")] uint TypeMask, [NativeTypeName("UCHAR")] byte Condition);
 
-        [DllImport("kernel32", ExactSpelling = true)]
+        [DllImport("kernelbase", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int GetOsSafeBootMode([NativeTypeName("PDWORD")] uint* Flags);
 
@@ -168,23 +168,23 @@ namespace TerraFX.Interop
         [return: NativeTypeName("BOOL")]
         public static extern int GetProcessorSystemCycleTime([NativeTypeName("USHORT")] ushort Group, [NativeTypeName("PSYSTEM_PROCESSOR_CYCLE_TIME_INFORMATION")] SYSTEM_PROCESSOR_CYCLE_TIME_INFORMATION* Buffer, [NativeTypeName("PDWORD")] uint* ReturnedLength);
 
-        [DllImport("kernel32", ExactSpelling = true)]
+        [DllImport("kernelbase", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int GetOsManufacturingMode([NativeTypeName("PBOOL")] int* pbEnabled);
 
-        [DllImport("KernelBase", ExactSpelling = true)]
+        [DllImport("kernelbase", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int GetIntegratedDisplaySize(double* sizeInInches);
 
-        [DllImport("kernel32", ExactSpelling = true)]
+        [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int SetComputerNameA([NativeTypeName("LPCSTR")] sbyte* lpComputerName);
 
-        [DllImport("kernel32", ExactSpelling = true)]
+        [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int SetComputerNameW([NativeTypeName("LPCWSTR")] ushort* lpComputerName);
 
-        [DllImport("kernel32", ExactSpelling = true)]
+        [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int SetComputerNameExA(COMPUTER_NAME_FORMAT NameType, [NativeTypeName("LPCSTR")] sbyte* lpBuffer);
 

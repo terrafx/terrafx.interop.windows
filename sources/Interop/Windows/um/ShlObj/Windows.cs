@@ -21,61 +21,53 @@ namespace TerraFX.Interop
         public const int DBCID_GETBAR = 4;
         public const int DBCID_UPDATESIZE = 5;
 
-        [DllImport("Shell32", ExactSpelling = true)]
+        [DllImport("shell32", ExactSpelling = true)]
         public static extern void SHChangeNotifyRegisterThread(SCNRT_STATUS status);
 
-        [DllImport("Shell32", ExactSpelling = true)]
+        [DllImport("shell32", ExactSpelling = true)]
         public static extern void PathQualify([NativeTypeName("PWSTR")] ushort* psz);
 
-        [DllImport("Shell32", ExactSpelling = true)]
+        [DllImport("shell32", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int PathIsSlowA([NativeTypeName("LPCSTR")] sbyte* pszFile, [NativeTypeName("DWORD")] uint dwAttr);
 
-        [DllImport("Shell32", ExactSpelling = true)]
+        [DllImport("shell32", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int PathIsSlowW([NativeTypeName("LPCWSTR")] ushort* pszFile, [NativeTypeName("DWORD")] uint dwAttr);
 
-        [DllImport("Shell32", ExactSpelling = true)]
+        [DllImport("shell32", ExactSpelling = true)]
         [return: NativeTypeName("HPSXA")]
         public static extern IntPtr SHCreatePropSheetExtArray([NativeTypeName("HKEY")] IntPtr hKey, [NativeTypeName("PCWSTR")] ushort* pszSubKey, [NativeTypeName("UINT")] uint max_iface);
 
         public const int BMICON_LARGE = 0;
         public const int BMICON_SMALL = 1;
 
-        [DllImport("Shell32", ExactSpelling = true)]
+        [DllImport("shell32", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int SHOpenPropSheetA([NativeTypeName("LPCSTR")] sbyte* pszCaption, [NativeTypeName("HKEY []")] IntPtr* ahkeys, [NativeTypeName("UINT")] uint ckeys, [NativeTypeName("const CLSID *")] Guid* pclsidDefault, IDataObject* pdtobj, IShellBrowser* psb, [NativeTypeName("LPCSTR")] sbyte* pStartPage);
 
-        [DllImport("Shell32", ExactSpelling = true)]
+        [DllImport("shell32", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int SHOpenPropSheetW([NativeTypeName("LPCWSTR")] ushort* pszCaption, [NativeTypeName("HKEY []")] IntPtr* ahkeys, [NativeTypeName("UINT")] uint ckeys, [NativeTypeName("const CLSID *")] Guid* pclsidDefault, IDataObject* pdtobj, IShellBrowser* psb, [NativeTypeName("LPCWSTR")] ushort* pStartPage);
 
-        [DllImport("Shdocvw", ExactSpelling = true)]
+        [DllImport("shdocvw", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
         public static extern uint SoftwareUpdateMessageBox([NativeTypeName("HWND")] IntPtr hWnd, [NativeTypeName("PCWSTR")] ushort* pszDistUnit, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LPSOFTDISTINFO")] SOFTDISTINFO* psdi);
 
-        [DllImport("Shell32", ExactSpelling = true)]
+        [DllImport("shell32", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int SHMultiFileProperties(IDataObject* pdtobj, [NativeTypeName("DWORD")] uint dwFlags);
 
-        [DllImport("Shell32", ExactSpelling = true)]
+        [DllImport("shell32", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int SHCreateQueryCancelAutoPlayMoniker(IMoniker** ppmoniker);
 
-        [DllImport("Mydocs", ExactSpelling = true)]
+        [DllImport("mydocs", ExactSpelling = true)]
         public static extern void PerUserInit();
 
-        [DllImport("Shell32", ExactSpelling = true)]
+        [DllImport("shell32", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int SHRunControlPanel([NativeTypeName("PCWSTR")] ushort* lpcszCmdLine, [NativeTypeName("HWND")] IntPtr hwndMsgParent);
-
-        [DllImport("Shell32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int ImportPrivacySettings([NativeTypeName("PCWSTR")] ushort* pszFilename, [NativeTypeName("BOOL *")] int* pfParsePrivacyPreferences, [NativeTypeName("BOOL *")] int* pfParsePerSiteRules);
-
-        [DllImport("Shell32", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int DoPrivacyDlg([NativeTypeName("HWND")] IntPtr hwndOwner, [NativeTypeName("PCWSTR")] ushort* pszUrl, IEnumPrivacyRecords* pPrivacyEnum, [NativeTypeName("BOOL")] int fReportAllSites);
 
         [NativeTypeName("#define FCIDM_TOOLBAR (FCIDM_BROWSERFIRST + 0)")]
         public const int FCIDM_TOOLBAR = (0xa000 + 0);

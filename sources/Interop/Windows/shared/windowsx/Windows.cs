@@ -5,7 +5,7 @@
 
 namespace TerraFX.Interop
 {
-    public static unsafe partial class Windows
+    public static partial class Windows
     {
         [NativeTypeName("#define WM_CTLCOLOR 0x0019")]
         public const int WM_CTLCOLOR = 0x0019;

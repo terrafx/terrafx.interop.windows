@@ -112,7 +112,7 @@ namespace TerraFX.Interop
             }
         }
 
-        [DllImport("DXGIDebug", ExactSpelling = true)]
+        [DllImport("dxgidebug", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int DXGIGetDebugInterface([NativeTypeName("const IID &")] Guid* riid, void** ppDebug);
 

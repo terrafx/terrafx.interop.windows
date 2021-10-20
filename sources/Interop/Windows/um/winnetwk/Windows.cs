@@ -10,187 +10,187 @@ namespace TerraFX.Interop
 {
     public static unsafe partial class Windows
     {
-        [DllImport("Mpr", ExactSpelling = true)]
+        [DllImport("mpr", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
         public static extern uint WNetAddConnectionA([NativeTypeName("LPCSTR")] sbyte* lpRemoteName, [NativeTypeName("LPCSTR")] sbyte* lpPassword, [NativeTypeName("LPCSTR")] sbyte* lpLocalName);
 
-        [DllImport("Mpr", ExactSpelling = true)]
+        [DllImport("mpr", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
         public static extern uint WNetAddConnectionW([NativeTypeName("LPCWSTR")] ushort* lpRemoteName, [NativeTypeName("LPCWSTR")] ushort* lpPassword, [NativeTypeName("LPCWSTR")] ushort* lpLocalName);
 
-        [DllImport("Mpr", ExactSpelling = true)]
+        [DllImport("mpr", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
         public static extern uint WNetAddConnection2A([NativeTypeName("LPNETRESOURCEA")] NETRESOURCEA* lpNetResource, [NativeTypeName("LPCSTR")] sbyte* lpPassword, [NativeTypeName("LPCSTR")] sbyte* lpUserName, [NativeTypeName("DWORD")] uint dwFlags);
 
-        [DllImport("Mpr", ExactSpelling = true)]
+        [DllImport("mpr", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
         public static extern uint WNetAddConnection2W([NativeTypeName("LPNETRESOURCEW")] NETRESOURCEW* lpNetResource, [NativeTypeName("LPCWSTR")] ushort* lpPassword, [NativeTypeName("LPCWSTR")] ushort* lpUserName, [NativeTypeName("DWORD")] uint dwFlags);
 
-        [DllImport("Mpr", ExactSpelling = true)]
+        [DllImport("mpr", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
         public static extern uint WNetAddConnection3A([NativeTypeName("HWND")] IntPtr hwndOwner, [NativeTypeName("LPNETRESOURCEA")] NETRESOURCEA* lpNetResource, [NativeTypeName("LPCSTR")] sbyte* lpPassword, [NativeTypeName("LPCSTR")] sbyte* lpUserName, [NativeTypeName("DWORD")] uint dwFlags);
 
-        [DllImport("Mpr", ExactSpelling = true)]
+        [DllImport("mpr", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
         public static extern uint WNetAddConnection3W([NativeTypeName("HWND")] IntPtr hwndOwner, [NativeTypeName("LPNETRESOURCEW")] NETRESOURCEW* lpNetResource, [NativeTypeName("LPCWSTR")] ushort* lpPassword, [NativeTypeName("LPCWSTR")] ushort* lpUserName, [NativeTypeName("DWORD")] uint dwFlags);
 
-        [DllImport("Mpr", ExactSpelling = true)]
+        [DllImport("mpr", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
         public static extern uint WNetAddConnection4A([NativeTypeName("HWND")] IntPtr hwndOwner, [NativeTypeName("LPNETRESOURCEA")] NETRESOURCEA* lpNetResource, [NativeTypeName("PVOID")] void* pAuthBuffer, [NativeTypeName("DWORD")] uint cbAuthBuffer, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("PBYTE")] byte* lpUseOptions, [NativeTypeName("DWORD")] uint cbUseOptions);
 
-        [DllImport("Mpr", ExactSpelling = true)]
+        [DllImport("mpr", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
         public static extern uint WNetAddConnection4W([NativeTypeName("HWND")] IntPtr hwndOwner, [NativeTypeName("LPNETRESOURCEW")] NETRESOURCEW* lpNetResource, [NativeTypeName("PVOID")] void* pAuthBuffer, [NativeTypeName("DWORD")] uint cbAuthBuffer, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("PBYTE")] byte* lpUseOptions, [NativeTypeName("DWORD")] uint cbUseOptions);
 
-        [DllImport("Mpr", ExactSpelling = true)]
+        [DllImport("mpr", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
         public static extern uint WNetCancelConnectionA([NativeTypeName("LPCSTR")] sbyte* lpName, [NativeTypeName("BOOL")] int fForce);
 
-        [DllImport("Mpr", ExactSpelling = true)]
+        [DllImport("mpr", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
         public static extern uint WNetCancelConnectionW([NativeTypeName("LPCWSTR")] ushort* lpName, [NativeTypeName("BOOL")] int fForce);
 
-        [DllImport("Mpr", ExactSpelling = true)]
+        [DllImport("mpr", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
         public static extern uint WNetCancelConnection2A([NativeTypeName("LPCSTR")] sbyte* lpName, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("BOOL")] int fForce);
 
-        [DllImport("Mpr", ExactSpelling = true)]
+        [DllImport("mpr", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
         public static extern uint WNetCancelConnection2W([NativeTypeName("LPCWSTR")] ushort* lpName, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("BOOL")] int fForce);
 
-        [DllImport("Mpr", ExactSpelling = true)]
+        [DllImport("mpr", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
         public static extern uint WNetGetConnectionA([NativeTypeName("LPCSTR")] sbyte* lpLocalName, [NativeTypeName("LPSTR")] sbyte* lpRemoteName, [NativeTypeName("LPDWORD")] uint* lpnLength);
 
-        [DllImport("Mpr", ExactSpelling = true)]
+        [DllImport("mpr", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
         public static extern uint WNetGetConnectionW([NativeTypeName("LPCWSTR")] ushort* lpLocalName, [NativeTypeName("LPWSTR")] ushort* lpRemoteName, [NativeTypeName("LPDWORD")] uint* lpnLength);
 
-        [DllImport("Mpr", ExactSpelling = true)]
+        [DllImport("mpr", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
         public static extern uint WNetRestoreSingleConnectionW([NativeTypeName("HWND")] IntPtr hwndParent, [NativeTypeName("LPCWSTR")] ushort* lpDevice, [NativeTypeName("BOOL")] int fUseUI);
 
-        [DllImport("Mpr", ExactSpelling = true)]
+        [DllImport("mpr", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
         public static extern uint WNetUseConnectionA([NativeTypeName("HWND")] IntPtr hwndOwner, [NativeTypeName("LPNETRESOURCEA")] NETRESOURCEA* lpNetResource, [NativeTypeName("LPCSTR")] sbyte* lpPassword, [NativeTypeName("LPCSTR")] sbyte* lpUserId, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LPSTR")] sbyte* lpAccessName, [NativeTypeName("LPDWORD")] uint* lpBufferSize, [NativeTypeName("LPDWORD")] uint* lpResult);
 
-        [DllImport("Mpr", ExactSpelling = true)]
+        [DllImport("mpr", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
         public static extern uint WNetUseConnectionW([NativeTypeName("HWND")] IntPtr hwndOwner, [NativeTypeName("LPNETRESOURCEW")] NETRESOURCEW* lpNetResource, [NativeTypeName("LPCWSTR")] ushort* lpPassword, [NativeTypeName("LPCWSTR")] ushort* lpUserId, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LPWSTR")] ushort* lpAccessName, [NativeTypeName("LPDWORD")] uint* lpBufferSize, [NativeTypeName("LPDWORD")] uint* lpResult);
 
-        [DllImport("Mpr", ExactSpelling = true)]
+        [DllImport("mpr", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
         public static extern uint WNetUseConnection4A([NativeTypeName("HWND")] IntPtr hwndOwner, [NativeTypeName("LPNETRESOURCEA")] NETRESOURCEA* lpNetResource, [NativeTypeName("PVOID")] void* pAuthBuffer, [NativeTypeName("DWORD")] uint cbAuthBuffer, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("PBYTE")] byte* lpUseOptions, [NativeTypeName("DWORD")] uint cbUseOptions, [NativeTypeName("LPSTR")] sbyte* lpAccessName, [NativeTypeName("LPDWORD")] uint* lpBufferSize, [NativeTypeName("LPDWORD")] uint* lpResult);
 
-        [DllImport("Mpr", ExactSpelling = true)]
+        [DllImport("mpr", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
         public static extern uint WNetUseConnection4W([NativeTypeName("HWND")] IntPtr hwndOwner, [NativeTypeName("LPNETRESOURCEW")] NETRESOURCEW* lpNetResource, [NativeTypeName("PVOID")] void* pAuthBuffer, [NativeTypeName("DWORD")] uint cbAuthBuffer, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("PBYTE")] byte* lpUseOptions, [NativeTypeName("DWORD")] uint cbUseOptions, [NativeTypeName("LPWSTR")] ushort* lpAccessName, [NativeTypeName("LPDWORD")] uint* lpBufferSize, [NativeTypeName("LPDWORD")] uint* lpResult);
 
-        [DllImport("Mpr", ExactSpelling = true)]
+        [DllImport("mpr", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
         public static extern uint WNetConnectionDialog([NativeTypeName("HWND")] IntPtr hwnd, [NativeTypeName("DWORD")] uint dwType);
 
-        [DllImport("Mpr", ExactSpelling = true)]
+        [DllImport("mpr", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
         public static extern uint WNetDisconnectDialog([NativeTypeName("HWND")] IntPtr hwnd, [NativeTypeName("DWORD")] uint dwType);
 
-        [DllImport("Mpr", ExactSpelling = true)]
+        [DllImport("mpr", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
         public static extern uint WNetConnectionDialog1A([NativeTypeName("LPCONNECTDLGSTRUCTA")] CONNECTDLGSTRUCTA* lpConnDlgStruct);
 
-        [DllImport("Mpr", ExactSpelling = true)]
+        [DllImport("mpr", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
         public static extern uint WNetConnectionDialog1W([NativeTypeName("LPCONNECTDLGSTRUCTW")] CONNECTDLGSTRUCTW* lpConnDlgStruct);
 
-        [DllImport("Mpr", ExactSpelling = true)]
+        [DllImport("mpr", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
         public static extern uint WNetDisconnectDialog1A([NativeTypeName("LPDISCDLGSTRUCTA")] DISCDLGSTRUCTA* lpConnDlgStruct);
 
-        [DllImport("Mpr", ExactSpelling = true)]
+        [DllImport("mpr", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
         public static extern uint WNetDisconnectDialog1W([NativeTypeName("LPDISCDLGSTRUCTW")] DISCDLGSTRUCTW* lpConnDlgStruct);
 
-        [DllImport("Mpr", ExactSpelling = true)]
+        [DllImport("mpr", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
         public static extern uint WNetOpenEnumA([NativeTypeName("DWORD")] uint dwScope, [NativeTypeName("DWORD")] uint dwType, [NativeTypeName("DWORD")] uint dwUsage, [NativeTypeName("LPNETRESOURCEA")] NETRESOURCEA* lpNetResource, [NativeTypeName("LPHANDLE")] IntPtr* lphEnum);
 
-        [DllImport("Mpr", ExactSpelling = true)]
+        [DllImport("mpr", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
         public static extern uint WNetOpenEnumW([NativeTypeName("DWORD")] uint dwScope, [NativeTypeName("DWORD")] uint dwType, [NativeTypeName("DWORD")] uint dwUsage, [NativeTypeName("LPNETRESOURCEW")] NETRESOURCEW* lpNetResource, [NativeTypeName("LPHANDLE")] IntPtr* lphEnum);
 
-        [DllImport("Mpr", ExactSpelling = true)]
+        [DllImport("mpr", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
         public static extern uint WNetEnumResourceA([NativeTypeName("HANDLE")] IntPtr hEnum, [NativeTypeName("LPDWORD")] uint* lpcCount, [NativeTypeName("LPVOID")] void* lpBuffer, [NativeTypeName("LPDWORD")] uint* lpBufferSize);
 
-        [DllImport("Mpr", ExactSpelling = true)]
+        [DllImport("mpr", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
         public static extern uint WNetEnumResourceW([NativeTypeName("HANDLE")] IntPtr hEnum, [NativeTypeName("LPDWORD")] uint* lpcCount, [NativeTypeName("LPVOID")] void* lpBuffer, [NativeTypeName("LPDWORD")] uint* lpBufferSize);
 
-        [DllImport("Mpr", ExactSpelling = true)]
+        [DllImport("mpr", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
         public static extern uint WNetCloseEnum([NativeTypeName("HANDLE")] IntPtr hEnum);
 
-        [DllImport("Mpr", ExactSpelling = true)]
+        [DllImport("mpr", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
         public static extern uint WNetGetResourceParentA([NativeTypeName("LPNETRESOURCEA")] NETRESOURCEA* lpNetResource, [NativeTypeName("LPVOID")] void* lpBuffer, [NativeTypeName("LPDWORD")] uint* lpcbBuffer);
 
-        [DllImport("Mpr", ExactSpelling = true)]
+        [DllImport("mpr", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
         public static extern uint WNetGetResourceParentW([NativeTypeName("LPNETRESOURCEW")] NETRESOURCEW* lpNetResource, [NativeTypeName("LPVOID")] void* lpBuffer, [NativeTypeName("LPDWORD")] uint* lpcbBuffer);
 
-        [DllImport("Mpr", ExactSpelling = true)]
+        [DllImport("mpr", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
         public static extern uint WNetGetResourceInformationA([NativeTypeName("LPNETRESOURCEA")] NETRESOURCEA* lpNetResource, [NativeTypeName("LPVOID")] void* lpBuffer, [NativeTypeName("LPDWORD")] uint* lpcbBuffer, [NativeTypeName("LPSTR *")] sbyte** lplpSystem);
 
-        [DllImport("Mpr", ExactSpelling = true)]
+        [DllImport("mpr", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
         public static extern uint WNetGetResourceInformationW([NativeTypeName("LPNETRESOURCEW")] NETRESOURCEW* lpNetResource, [NativeTypeName("LPVOID")] void* lpBuffer, [NativeTypeName("LPDWORD")] uint* lpcbBuffer, [NativeTypeName("LPWSTR *")] ushort** lplpSystem);
 
-        [DllImport("Mpr", ExactSpelling = true)]
+        [DllImport("mpr", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
         public static extern uint WNetGetUniversalNameA([NativeTypeName("LPCSTR")] sbyte* lpLocalPath, [NativeTypeName("DWORD")] uint dwInfoLevel, [NativeTypeName("LPVOID")] void* lpBuffer, [NativeTypeName("LPDWORD")] uint* lpBufferSize);
 
-        [DllImport("Mpr", ExactSpelling = true)]
+        [DllImport("mpr", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
         public static extern uint WNetGetUniversalNameW([NativeTypeName("LPCWSTR")] ushort* lpLocalPath, [NativeTypeName("DWORD")] uint dwInfoLevel, [NativeTypeName("LPVOID")] void* lpBuffer, [NativeTypeName("LPDWORD")] uint* lpBufferSize);
 
-        [DllImport("Mpr", ExactSpelling = true)]
+        [DllImport("mpr", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
         public static extern uint WNetGetUserA([NativeTypeName("LPCSTR")] sbyte* lpName, [NativeTypeName("LPSTR")] sbyte* lpUserName, [NativeTypeName("LPDWORD")] uint* lpnLength);
 
-        [DllImport("Mpr", ExactSpelling = true)]
+        [DllImport("mpr", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
         public static extern uint WNetGetUserW([NativeTypeName("LPCWSTR")] ushort* lpName, [NativeTypeName("LPWSTR")] ushort* lpUserName, [NativeTypeName("LPDWORD")] uint* lpnLength);
 
-        [DllImport("Mpr", ExactSpelling = true)]
+        [DllImport("mpr", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
         public static extern uint WNetGetProviderNameA([NativeTypeName("DWORD")] uint dwNetType, [NativeTypeName("LPSTR")] sbyte* lpProviderName, [NativeTypeName("LPDWORD")] uint* lpBufferSize);
 
-        [DllImport("Mpr", ExactSpelling = true)]
+        [DllImport("mpr", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
         public static extern uint WNetGetProviderNameW([NativeTypeName("DWORD")] uint dwNetType, [NativeTypeName("LPWSTR")] ushort* lpProviderName, [NativeTypeName("LPDWORD")] uint* lpBufferSize);
 
-        [DllImport("Mpr", ExactSpelling = true)]
+        [DllImport("mpr", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
         public static extern uint WNetGetNetworkInformationA([NativeTypeName("LPCSTR")] sbyte* lpProvider, [NativeTypeName("LPNETINFOSTRUCT")] NETINFOSTRUCT* lpNetInfoStruct);
 
-        [DllImport("Mpr", ExactSpelling = true)]
+        [DllImport("mpr", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
         public static extern uint WNetGetNetworkInformationW([NativeTypeName("LPCWSTR")] ushort* lpProvider, [NativeTypeName("LPNETINFOSTRUCT")] NETINFOSTRUCT* lpNetInfoStruct);
 
-        [DllImport("Mpr", ExactSpelling = true)]
+        [DllImport("mpr", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
         public static extern uint WNetGetLastErrorA([NativeTypeName("LPDWORD")] uint* lpError, [NativeTypeName("LPSTR")] sbyte* lpErrorBuf, [NativeTypeName("DWORD")] uint nErrorBufSize, [NativeTypeName("LPSTR")] sbyte* lpNameBuf, [NativeTypeName("DWORD")] uint nNameBufSize);
 
-        [DllImport("Mpr", ExactSpelling = true)]
+        [DllImport("mpr", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
         public static extern uint WNetGetLastErrorW([NativeTypeName("LPDWORD")] uint* lpError, [NativeTypeName("LPWSTR")] ushort* lpErrorBuf, [NativeTypeName("DWORD")] uint nErrorBufSize, [NativeTypeName("LPWSTR")] ushort* lpNameBuf, [NativeTypeName("DWORD")] uint nNameBufSize);
 
-        [DllImport("Mpr", ExactSpelling = true)]
+        [DllImport("mpr", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
         public static extern uint MultinetGetConnectionPerformanceA([NativeTypeName("LPNETRESOURCEA")] NETRESOURCEA* lpNetResource, [NativeTypeName("LPNETCONNECTINFOSTRUCT")] NETCONNECTINFOSTRUCT* lpNetConnectInfoStruct);
 
-        [DllImport("Mpr", ExactSpelling = true)]
+        [DllImport("mpr", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
         public static extern uint MultinetGetConnectionPerformanceW([NativeTypeName("LPNETRESOURCEW")] NETRESOURCEW* lpNetResource, [NativeTypeName("LPNETCONNECTINFOSTRUCT")] NETCONNECTINFOSTRUCT* lpNetConnectInfoStruct);
 

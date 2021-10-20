@@ -18,13 +18,6 @@ namespace TerraFX.Interop
         [return: NativeTypeName("BOOL")]
         public static extern int SslEmptyCacheW([NativeTypeName("LPWSTR")] ushort* pszTargetName, [NativeTypeName("DWORD")] uint dwFlags);
 
-        [DllImport("schannel", EntryPoint = "?SslGenerateKeyPair@@YGHPAU_SSL_CREDENTIAL_CERTIFICATE@@PAD1K@Z", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SslGenerateKeyPair([NativeTypeName("PSSL_CREDENTIAL_CERTIFICATE")] SSL_CREDENTIAL_CERTIFICATE* pCerts, [NativeTypeName("PSTR")] sbyte* pszDN, [NativeTypeName("PSTR")] sbyte* pszPassword, [NativeTypeName("DWORD")] uint Bits);
-
-        [DllImport("schannel", EntryPoint = "?SslGenerateRandomBits@@YGXPAEJ@Z", ExactSpelling = true)]
-        public static extern void SslGenerateRandomBits([NativeTypeName("PUCHAR")] byte* pRandomData, [NativeTypeName("LONG")] int cRandomData);
-
         [DllImport("schannel", EntryPoint = "?SslCrackCertificate@@YGHPAEKKPAPAU_X509Certificate@@@Z", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int SslCrackCertificate([NativeTypeName("PUCHAR")] byte* pbCertificate, [NativeTypeName("DWORD")] uint cbCertificate, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("PX509Certificate *")] X509Certificate** ppCertificate);
@@ -32,21 +25,9 @@ namespace TerraFX.Interop
         [DllImport("schannel", EntryPoint = "?SslFreeCertificate@@YGXPAU_X509Certificate@@@Z", ExactSpelling = true)]
         public static extern void SslFreeCertificate([NativeTypeName("PX509Certificate")] X509Certificate* pCertificate);
 
-        [DllImport("schannel", EntryPoint = "?SslGetMaximumKeySize@@YGKK@Z", ExactSpelling = true)]
-        [return: NativeTypeName("DWORD")]
-        public static extern uint SslGetMaximumKeySize([NativeTypeName("DWORD")] uint Reserved);
-
-        [DllImport("schannel", EntryPoint = "?SslGetDefaultIssuers@@YGHPAEPAK@Z", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SslGetDefaultIssuers([NativeTypeName("PBYTE")] byte* pbIssuers, [NativeTypeName("DWORD *")] uint* pcbIssuers);
-
         [DllImport("schannel", ExactSpelling = true)]
         [return: NativeTypeName("SECURITY_STATUS")]
         public static extern int SslGetServerIdentity([NativeTypeName("PBYTE")] byte* ClientHello, [NativeTypeName("DWORD")] uint ClientHelloSize, [NativeTypeName("PBYTE *")] byte** ServerIdentity, [NativeTypeName("PDWORD")] uint* ServerIdentitySize, [NativeTypeName("DWORD")] uint Flags);
-
-        [DllImport("schannel", ExactSpelling = true)]
-        [return: NativeTypeName("SECURITY_STATUS")]
-        public static extern int SslGetExtensions([NativeTypeName("const BYTE *")] byte* clientHello, [NativeTypeName("DWORD")] uint clientHelloByteSize, SCH_EXTENSION_DATA* genericExtensions, [NativeTypeName("BYTE")] byte genericExtensionsCount, [NativeTypeName("DWORD *")] uint* bytesToRead, SchGetExtensionsOptions flags);
 
         [NativeTypeName("#define UNISP_NAME_A \"Microsoft Unified Security Protocol Provider\"")]
         public static ReadOnlySpan<byte> UNISP_NAME_A => new byte[] { 0x4D, 0x69, 0x63, 0x72, 0x6F, 0x73, 0x6F, 0x66, 0x74, 0x20, 0x55, 0x6E, 0x69, 0x66, 0x69, 0x65, 0x64, 0x20, 0x53, 0x65, 0x63, 0x75, 0x72, 0x69, 0x74, 0x79, 0x20, 0x50, 0x72, 0x6F, 0x74, 0x6F, 0x63, 0x6F, 0x6C, 0x20, 0x50, 0x72, 0x6F, 0x76, 0x69, 0x64, 0x65, 0x72, 0x00 };

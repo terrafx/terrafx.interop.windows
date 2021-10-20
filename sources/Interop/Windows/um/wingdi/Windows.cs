@@ -174,11 +174,11 @@ namespace TerraFX.Interop
         [return: NativeTypeName("HRGN")]
         public static extern IntPtr CreateRoundRectRgn(int x1, int y1, int x2, int y2, int w, int h);
 
-        [DllImport("gdi32", ExactSpelling = true)]
+        [DllImport("gdi32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int CreateScalableFontResourceA([NativeTypeName("DWORD")] uint fdwHidden, [NativeTypeName("LPCSTR")] sbyte* lpszFont, [NativeTypeName("LPCSTR")] sbyte* lpszFile, [NativeTypeName("LPCSTR")] sbyte* lpszPath);
 
-        [DllImport("gdi32", ExactSpelling = true)]
+        [DllImport("gdi32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int CreateScalableFontResourceW([NativeTypeName("DWORD")] uint fdwHidden, [NativeTypeName("LPCWSTR")] ushort* lpszFont, [NativeTypeName("LPCWSTR")] ushort* lpszFile, [NativeTypeName("LPCWSTR")] ushort* lpszPath);
 
@@ -201,10 +201,10 @@ namespace TerraFX.Interop
         [DllImport("gdi32", ExactSpelling = true, SetLastError = true)]
         public static extern int DescribePixelFormat([NativeTypeName("HDC")] IntPtr hdc, int iPixelFormat, [NativeTypeName("UINT")] uint nBytes, [NativeTypeName("LPPIXELFORMATDESCRIPTOR")] PIXELFORMATDESCRIPTOR* ppfd);
 
-        [DllImport("gdi32", ExactSpelling = true)]
+        [DllImport("winspool", ExactSpelling = true)]
         public static extern int DeviceCapabilitiesA([NativeTypeName("LPCSTR")] sbyte* pDevice, [NativeTypeName("LPCSTR")] sbyte* pPort, [NativeTypeName("WORD")] ushort fwCapability, [NativeTypeName("LPSTR")] sbyte* pOutput, [NativeTypeName("const DEVMODEA *")] DEVMODEA* pDevMode);
 
-        [DllImport("gdi32", ExactSpelling = true)]
+        [DllImport("winspool", ExactSpelling = true)]
         public static extern int DeviceCapabilitiesW([NativeTypeName("LPCWSTR")] ushort* pDevice, [NativeTypeName("LPCWSTR")] ushort* pPort, [NativeTypeName("WORD")] ushort fwCapability, [NativeTypeName("LPWSTR")] ushort* pOutput, [NativeTypeName("const DEVMODEW *")] DEVMODEW* pDevMode);
 
         [DllImport("gdi32", ExactSpelling = true)]
@@ -972,7 +972,7 @@ namespace TerraFX.Interop
         [return: NativeTypeName("BOOL")]
         public static extern int CombineTransform([NativeTypeName("LPXFORM")] XFORM* lpxfOut, [NativeTypeName("const XFORM *")] XFORM* lpxf1, [NativeTypeName("const XFORM *")] XFORM* lpxf2);
 
-        [DllImport("gdi32", ExactSpelling = true)]
+        [DllImport("gdi32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("HBITMAP")]
         public static extern IntPtr CreateDIBSection([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("const BITMAPINFO *")] BITMAPINFO* pbmi, [NativeTypeName("UINT")] uint usage, void** ppvBits, [NativeTypeName("HANDLE")] IntPtr hSection, [NativeTypeName("DWORD")] uint offset);
 
@@ -1351,11 +1351,11 @@ namespace TerraFX.Interop
         [return: NativeTypeName("BOOL")]
         public static extern int wglShareLists([NativeTypeName("HGLRC")] IntPtr param0, [NativeTypeName("HGLRC")] IntPtr param1);
 
-        [DllImport("gdi32", ExactSpelling = true)]
+        [DllImport("opengl32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int wglUseFontBitmapsA([NativeTypeName("HDC")] IntPtr param0, [NativeTypeName("DWORD")] uint param1, [NativeTypeName("DWORD")] uint param2, [NativeTypeName("DWORD")] uint param3);
 
-        [DllImport("gdi32", ExactSpelling = true)]
+        [DllImport("opengl32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int wglUseFontBitmapsW([NativeTypeName("HDC")] IntPtr param0, [NativeTypeName("DWORD")] uint param1, [NativeTypeName("DWORD")] uint param2, [NativeTypeName("DWORD")] uint param3);
 
@@ -1363,11 +1363,11 @@ namespace TerraFX.Interop
         [return: NativeTypeName("BOOL")]
         public static extern int SwapBuffers([NativeTypeName("HDC")] IntPtr param0);
 
-        [DllImport("gdi32", ExactSpelling = true)]
+        [DllImport("opengl32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int wglUseFontOutlinesA([NativeTypeName("HDC")] IntPtr param0, [NativeTypeName("DWORD")] uint param1, [NativeTypeName("DWORD")] uint param2, [NativeTypeName("DWORD")] uint param3, [NativeTypeName("FLOAT")] float param4, [NativeTypeName("FLOAT")] float param5, int param6, [NativeTypeName("LPGLYPHMETRICSFLOAT")] GLYPHMETRICSFLOAT* param7);
 
-        [DllImport("gdi32", ExactSpelling = true)]
+        [DllImport("opengl32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int wglUseFontOutlinesW([NativeTypeName("HDC")] IntPtr param0, [NativeTypeName("DWORD")] uint param1, [NativeTypeName("DWORD")] uint param2, [NativeTypeName("DWORD")] uint param3, [NativeTypeName("FLOAT")] float param4, [NativeTypeName("FLOAT")] float param5, int param6, [NativeTypeName("LPGLYPHMETRICSFLOAT")] GLYPHMETRICSFLOAT* param7);
 
@@ -1389,7 +1389,7 @@ namespace TerraFX.Interop
         [return: NativeTypeName("BOOL")]
         public static extern int wglSwapLayerBuffers([NativeTypeName("HDC")] IntPtr param0, [NativeTypeName("UINT")] uint param1);
 
-        [DllImport("gdi32", ExactSpelling = true)]
+        [DllImport("opengl32", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
         public static extern uint wglSwapMultipleBuffers([NativeTypeName("UINT")] uint param0, [NativeTypeName("const WGLSWAP *")] WGLSWAP* param1);
 

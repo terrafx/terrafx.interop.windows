@@ -330,27 +330,27 @@ namespace TerraFX.Interop
         [return: NativeTypeName("LSTATUS")]
         public static extern int RegLoadAppKeyW([NativeTypeName("LPCWSTR")] ushort* lpFile, [NativeTypeName("PHKEY")] IntPtr* phkResult, [NativeTypeName("REGSAM")] uint samDesired, [NativeTypeName("DWORD")] uint dwOptions, [NativeTypeName("DWORD")] uint Reserved);
 
-        [DllImport("advapi32", ExactSpelling = true)]
+        [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int InitiateSystemShutdownA([NativeTypeName("LPSTR")] sbyte* lpMachineName, [NativeTypeName("LPSTR")] sbyte* lpMessage, [NativeTypeName("DWORD")] uint dwTimeout, [NativeTypeName("BOOL")] int bForceAppsClosed, [NativeTypeName("BOOL")] int bRebootAfterShutdown);
 
-        [DllImport("advapi32", ExactSpelling = true)]
+        [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int InitiateSystemShutdownW([NativeTypeName("LPWSTR")] ushort* lpMachineName, [NativeTypeName("LPWSTR")] ushort* lpMessage, [NativeTypeName("DWORD")] uint dwTimeout, [NativeTypeName("BOOL")] int bForceAppsClosed, [NativeTypeName("BOOL")] int bRebootAfterShutdown);
 
-        [DllImport("advapi32", ExactSpelling = true)]
+        [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int AbortSystemShutdownA([NativeTypeName("LPSTR")] sbyte* lpMachineName);
 
-        [DllImport("advapi32", ExactSpelling = true)]
+        [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int AbortSystemShutdownW([NativeTypeName("LPWSTR")] ushort* lpMachineName);
 
-        [DllImport("advapi32", ExactSpelling = true)]
+        [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int InitiateSystemShutdownExA([NativeTypeName("LPSTR")] sbyte* lpMachineName, [NativeTypeName("LPSTR")] sbyte* lpMessage, [NativeTypeName("DWORD")] uint dwTimeout, [NativeTypeName("BOOL")] int bForceAppsClosed, [NativeTypeName("BOOL")] int bRebootAfterShutdown, [NativeTypeName("DWORD")] uint dwReason);
 
-        [DllImport("advapi32", ExactSpelling = true)]
+        [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int InitiateSystemShutdownExW([NativeTypeName("LPWSTR")] ushort* lpMachineName, [NativeTypeName("LPWSTR")] ushort* lpMessage, [NativeTypeName("DWORD")] uint dwTimeout, [NativeTypeName("BOOL")] int bForceAppsClosed, [NativeTypeName("BOOL")] int bRebootAfterShutdown, [NativeTypeName("DWORD")] uint dwReason);
 

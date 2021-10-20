@@ -10,14 +10,14 @@ namespace TerraFX.Interop
 {
     public static unsafe partial class Windows
     {
-        [DllImport("combase", ExactSpelling = true)]
+        [DllImport("api-ms-win-core-winrt-roparameterizediid-l1-1-0", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int RoGetParameterizedTypeInstanceIID([NativeTypeName("UINT32")] uint nameElementCount, [NativeTypeName("PCWSTR *")] ushort** nameElements, [NativeTypeName("const IRoMetaDataLocator &")] IRoMetaDataLocator* metaDataLocator, [NativeTypeName("GUID *")] Guid* iid, [NativeTypeName("ROPARAMIIDHANDLE *")] IntPtr* pExtra);
 
-        [DllImport("combase", ExactSpelling = true)]
+        [DllImport("runtimeobject", ExactSpelling = true)]
         public static extern void RoFreeParameterizedTypeExtra([NativeTypeName("ROPARAMIIDHANDLE")] IntPtr extra);
 
-        [DllImport("combase", ExactSpelling = true)]
+        [DllImport("runtimeobject", ExactSpelling = true)]
         [return: NativeTypeName("PCSTR")]
         public static extern sbyte* RoParameterizedTypeExtraGetTypeSignature([NativeTypeName("ROPARAMIIDHANDLE")] IntPtr extra);
     }

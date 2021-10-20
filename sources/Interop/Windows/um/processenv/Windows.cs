@@ -22,7 +22,7 @@ namespace TerraFX.Interop
         [return: NativeTypeName("BOOL")]
         public static extern int SetStdHandle([NativeTypeName("DWORD")] uint nStdHandle, [NativeTypeName("HANDLE")] IntPtr hHandle);
 
-        [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
+        [DllImport("api-ms-win-core-processenvironment-l1-1-0", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int SetStdHandleEx([NativeTypeName("DWORD")] uint nStdHandle, [NativeTypeName("HANDLE")] IntPtr hHandle, [NativeTypeName("PHANDLE")] IntPtr* phPrevValue);
 

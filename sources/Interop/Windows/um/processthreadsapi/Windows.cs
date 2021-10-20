@@ -99,27 +99,27 @@ namespace TerraFX.Interop
         [return: NativeTypeName("DWORD")]
         public static extern uint ResumeThread([NativeTypeName("HANDLE")] IntPtr hThread);
 
-        [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
+        [DllImport("kernelbase", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("DWORD")]
         public static extern uint TlsAlloc();
 
-        [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
+        [DllImport("kernelbase", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("LPVOID")]
         public static extern void* TlsGetValue([NativeTypeName("DWORD")] uint dwTlsIndex);
 
-        [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
+        [DllImport("kernelbase", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int TlsSetValue([NativeTypeName("DWORD")] uint dwTlsIndex, [NativeTypeName("LPVOID")] void* lpTlsValue);
 
-        [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
+        [DllImport("kernelbase", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int TlsFree([NativeTypeName("DWORD")] uint dwTlsIndex);
 
-        [DllImport("kernel32", ExactSpelling = true)]
+        [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int CreateProcessA([NativeTypeName("LPCSTR")] sbyte* lpApplicationName, [NativeTypeName("LPSTR")] sbyte* lpCommandLine, [NativeTypeName("LPSECURITY_ATTRIBUTES")] SECURITY_ATTRIBUTES* lpProcessAttributes, [NativeTypeName("LPSECURITY_ATTRIBUTES")] SECURITY_ATTRIBUTES* lpThreadAttributes, [NativeTypeName("BOOL")] int bInheritHandles, [NativeTypeName("DWORD")] uint dwCreationFlags, [NativeTypeName("LPVOID")] void* lpEnvironment, [NativeTypeName("LPCSTR")] sbyte* lpCurrentDirectory, [NativeTypeName("LPSTARTUPINFOA")] STARTUPINFOA* lpStartupInfo, [NativeTypeName("LPPROCESS_INFORMATION")] PROCESS_INFORMATION* lpProcessInformation);
 
-        [DllImport("kernel32", ExactSpelling = true)]
+        [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int CreateProcessW([NativeTypeName("LPCWSTR")] ushort* lpApplicationName, [NativeTypeName("LPWSTR")] ushort* lpCommandLine, [NativeTypeName("LPSECURITY_ATTRIBUTES")] SECURITY_ATTRIBUTES* lpProcessAttributes, [NativeTypeName("LPSECURITY_ATTRIBUTES")] SECURITY_ATTRIBUTES* lpThreadAttributes, [NativeTypeName("BOOL")] int bInheritHandles, [NativeTypeName("DWORD")] uint dwCreationFlags, [NativeTypeName("LPVOID")] void* lpEnvironment, [NativeTypeName("LPCWSTR")] ushort* lpCurrentDirectory, [NativeTypeName("LPSTARTUPINFOW")] STARTUPINFOW* lpStartupInfo, [NativeTypeName("LPPROCESS_INFORMATION")] PROCESS_INFORMATION* lpProcessInformation);
 
@@ -134,7 +134,7 @@ namespace TerraFX.Interop
         [DllImport("kernel32", ExactSpelling = true)]
         public static extern void GetStartupInfoW([NativeTypeName("LPSTARTUPINFOW")] STARTUPINFOW* lpStartupInfo);
 
-        [DllImport("kernel32", ExactSpelling = true)]
+        [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int CreateProcessAsUserW([NativeTypeName("HANDLE")] IntPtr hToken, [NativeTypeName("LPCWSTR")] ushort* lpApplicationName, [NativeTypeName("LPWSTR")] ushort* lpCommandLine, [NativeTypeName("LPSECURITY_ATTRIBUTES")] SECURITY_ATTRIBUTES* lpProcessAttributes, [NativeTypeName("LPSECURITY_ATTRIBUTES")] SECURITY_ATTRIBUTES* lpThreadAttributes, [NativeTypeName("BOOL")] int bInheritHandles, [NativeTypeName("DWORD")] uint dwCreationFlags, [NativeTypeName("LPVOID")] void* lpEnvironment, [NativeTypeName("LPCWSTR")] ushort* lpCurrentDirectory, [NativeTypeName("LPSTARTUPINFOW")] STARTUPINFOW* lpStartupInfo, [NativeTypeName("LPPROCESS_INFORMATION")] PROCESS_INFORMATION* lpProcessInformation);
 
@@ -166,7 +166,7 @@ namespace TerraFX.Interop
         [return: NativeTypeName("BOOL")]
         public static extern int ProcessIdToSessionId([NativeTypeName("DWORD")] uint dwProcessId, [NativeTypeName("DWORD *")] uint* pSessionId);
 
-        [DllImport("kernel32", ExactSpelling = true)]
+        [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("DWORD")]
         public static extern uint GetProcessId([NativeTypeName("HANDLE")] IntPtr Process);
 
@@ -215,7 +215,7 @@ namespace TerraFX.Interop
         [DllImport("kernel32", ExactSpelling = true)]
         public static extern void GetCurrentThreadStackLimits([NativeTypeName("PULONG_PTR")] uint* LowLimit, [NativeTypeName("PULONG_PTR")] uint* HighLimit);
 
-        [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
+        [DllImport("kernel32", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int GetThreadContext([NativeTypeName("HANDLE")] IntPtr hThread, [NativeTypeName("LPCONTEXT")] CONTEXT* lpContext);
 
@@ -290,7 +290,7 @@ namespace TerraFX.Interop
         [return: NativeTypeName("BOOL")]
         public static extern int SetThreadInformation([NativeTypeName("HANDLE")] IntPtr hThread, THREAD_INFORMATION_CLASS ThreadInformationClass, [NativeTypeName("LPVOID")] void* ThreadInformation, [NativeTypeName("DWORD")] uint ThreadInformationSize);
 
-        [DllImport("ntdll", ExactSpelling = true, SetLastError = true)]
+        [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int IsProcessCritical([NativeTypeName("HANDLE")] IntPtr hProcess, [NativeTypeName("PBOOL")] int* Critical);
 
@@ -334,7 +334,7 @@ namespace TerraFX.Interop
         [return: NativeTypeName("BOOL")]
         public static extern int SetThreadSelectedCpuSets([NativeTypeName("HANDLE")] IntPtr Thread, [NativeTypeName("const ULONG *")] uint* CpuSetIds, [NativeTypeName("ULONG")] uint CpuSetIdCount);
 
-        [DllImport("kernel32", ExactSpelling = true)]
+        [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int CreateProcessAsUserA([NativeTypeName("HANDLE")] IntPtr hToken, [NativeTypeName("LPCSTR")] sbyte* lpApplicationName, [NativeTypeName("LPSTR")] sbyte* lpCommandLine, [NativeTypeName("LPSECURITY_ATTRIBUTES")] SECURITY_ATTRIBUTES* lpProcessAttributes, [NativeTypeName("LPSECURITY_ATTRIBUTES")] SECURITY_ATTRIBUTES* lpThreadAttributes, [NativeTypeName("BOOL")] int bInheritHandles, [NativeTypeName("DWORD")] uint dwCreationFlags, [NativeTypeName("LPVOID")] void* lpEnvironment, [NativeTypeName("LPCSTR")] sbyte* lpCurrentDirectory, [NativeTypeName("LPSTARTUPINFOA")] STARTUPINFOA* lpStartupInfo, [NativeTypeName("LPPROCESS_INFORMATION")] PROCESS_INFORMATION* lpProcessInformation);
 

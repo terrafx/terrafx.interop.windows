@@ -11,31 +11,31 @@ namespace TerraFX.Interop
 {
     public static unsafe partial class Windows
     {
-        [DllImport("wslapi", ExactSpelling = true)]
+        [DllImport("api-ms-win-wsl-api-l1-1-0", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int WslIsDistributionRegistered([NativeTypeName("PCWSTR")] ushort* distributionName);
 
-        [DllImport("wslapi", ExactSpelling = true)]
+        [DllImport("api-ms-win-wsl-api-l1-1-0", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int WslRegisterDistribution([NativeTypeName("PCWSTR")] ushort* distributionName, [NativeTypeName("PCWSTR")] ushort* tarGzFilename);
 
-        [DllImport("wslapi", ExactSpelling = true)]
+        [DllImport("api-ms-win-wsl-api-l1-1-0", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int WslUnregisterDistribution([NativeTypeName("PCWSTR")] ushort* distributionName);
 
-        [DllImport("wslapi", ExactSpelling = true)]
+        [DllImport("api-ms-win-wsl-api-l1-1-0", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int WslConfigureDistribution([NativeTypeName("PCWSTR")] ushort* distributionName, [NativeTypeName("ULONG")] uint defaultUID, WSL_DISTRIBUTION_FLAGS wslDistributionFlags);
 
-        [DllImport("wslapi", ExactSpelling = true)]
+        [DllImport("api-ms-win-wsl-api-l1-1-0", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int WslGetDistributionConfiguration([NativeTypeName("PCWSTR")] ushort* distributionName, [NativeTypeName("ULONG *")] uint* distributionVersion, [NativeTypeName("ULONG *")] uint* defaultUID, WSL_DISTRIBUTION_FLAGS* wslDistributionFlags, [NativeTypeName("PSTR **")] sbyte*** defaultEnvironmentVariables, [NativeTypeName("ULONG *")] uint* defaultEnvironmentVariableCount);
 
-        [DllImport("wslapi", ExactSpelling = true)]
+        [DllImport("api-ms-win-wsl-api-l1-1-0", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int WslLaunchInteractive([NativeTypeName("PCWSTR")] ushort* distributionName, [NativeTypeName("PCWSTR")] ushort* command, [NativeTypeName("BOOL")] int useCurrentWorkingDirectory, [NativeTypeName("DWORD *")] uint* exitCode);
 
-        [DllImport("wslapi", ExactSpelling = true)]
+        [DllImport("api-ms-win-wsl-api-l1-1-0", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int WslLaunch([NativeTypeName("PCWSTR")] ushort* distributionName, [NativeTypeName("PCWSTR")] ushort* command, [NativeTypeName("BOOL")] int useCurrentWorkingDirectory, [NativeTypeName("HANDLE")] IntPtr stdIn, [NativeTypeName("HANDLE")] IntPtr stdOut, [NativeTypeName("HANDLE")] IntPtr stdErr, [NativeTypeName("HANDLE *")] IntPtr* process);
 

@@ -3429,7 +3429,7 @@ namespace TerraFX.Interop
         [return: NativeTypeName("HRESULT")]
         public static extern int MFCreateFMPEG4MediaSink(IMFByteStream* pIByteStream, IMFMediaType* pVideoMediaType, IMFMediaType* pAudioMediaType, IMFMediaSink** ppIMediaSink);
 
-        [DllImport("mf", ExactSpelling = true)]
+        [DllImport("mfsrcsnk", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int MFCreateAVIMediaSink(IMFByteStream* pIByteStream, IMFMediaType* pVideoMediaType, IMFMediaType* pAudioMediaType, IMFMediaSink** ppIMediaSink);
 
@@ -9327,13 +9327,9 @@ namespace TerraFX.Interop
             }
         }
 
-        [DllImport("mf", ExactSpelling = true)]
+        [DllImport("mfsensorgroup", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int MFCreateSensorGroup([NativeTypeName("LPCWSTR")] ushort* SensorGroupSymbolicLink, IMFSensorGroup** ppSensorGroup);
-
-        [DllImport("mf", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int MFCreateSensorStream([NativeTypeName("DWORD")] uint StreamId, IMFAttributes* pAttributes, IMFCollection* pMediaTypeCollection, IMFSensorStream** ppStream);
 
         [DllImport("mfsensorgroup", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
@@ -9397,15 +9393,7 @@ namespace TerraFX.Interop
             }
         }
 
-        [DllImport("mf", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int MFCreateExtendedCameraIntrinsics(IMFExtendedCameraIntrinsics** ppExtendedCameraIntrinsics);
-
-        [DllImport("mf", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int MFCreateExtendedCameraIntrinsicModel([NativeTypeName("const MFCameraIntrinsic_DistortionModelType")] MFCameraIntrinsic_DistortionModelType distortionModelType, IMFExtendedCameraIntrinsicModel** ppExtendedCameraIntrinsicModel);
-
-        [DllImport("mf", ExactSpelling = true)]
+        [DllImport("mfsensorgroup", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int MFCreateRelativePanelWatcher([NativeTypeName("PCWSTR")] ushort* videoDeviceId, [NativeTypeName("PCWSTR")] ushort* displayMonitorDeviceId, IMFRelativePanelWatcher** ppRelativePanelWatcher);
 

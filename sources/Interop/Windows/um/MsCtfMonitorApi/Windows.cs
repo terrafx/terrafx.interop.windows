@@ -3,17 +3,12 @@
 // Ported from um/MsCtfMonitorApi.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
 {
     public static partial class Windows
     {
-        [DllImport("msctf", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int DoMsCtfMonitor([NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("HANDLE")] IntPtr hEventForServiceStop);
-
         [DllImport("msctf", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int InitLocalMsCtfMonitor([NativeTypeName("DWORD")] uint dwFlags);

@@ -14,7 +14,7 @@ namespace TerraFX.Interop
         [return: NativeTypeName("BOOL")]
         public static extern int AccessCheck([NativeTypeName("PSECURITY_DESCRIPTOR")] void* pSecurityDescriptor, [NativeTypeName("HANDLE")] IntPtr ClientToken, [NativeTypeName("DWORD")] uint DesiredAccess, [NativeTypeName("PGENERIC_MAPPING")] GENERIC_MAPPING* GenericMapping, [NativeTypeName("PPRIVILEGE_SET")] PRIVILEGE_SET* PrivilegeSet, [NativeTypeName("LPDWORD")] uint* PrivilegeSetLength, [NativeTypeName("LPDWORD")] uint* GrantedAccess, [NativeTypeName("LPBOOL")] int* AccessStatus);
 
-        [DllImport("advapi32", ExactSpelling = true)]
+        [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int AccessCheckAndAuditAlarmW([NativeTypeName("LPCWSTR")] ushort* SubsystemName, [NativeTypeName("LPVOID")] void* HandleId, [NativeTypeName("LPWSTR")] ushort* ObjectTypeName, [NativeTypeName("LPWSTR")] ushort* ObjectName, [NativeTypeName("PSECURITY_DESCRIPTOR")] void* SecurityDescriptor, [NativeTypeName("DWORD")] uint DesiredAccess, [NativeTypeName("PGENERIC_MAPPING")] GENERIC_MAPPING* GenericMapping, [NativeTypeName("BOOL")] int ObjectCreation, [NativeTypeName("LPDWORD")] uint* GrantedAccess, [NativeTypeName("LPBOOL")] int* AccessStatus, [NativeTypeName("LPBOOL")] int* pfGenerateOnClose);
 
@@ -26,15 +26,15 @@ namespace TerraFX.Interop
         [return: NativeTypeName("BOOL")]
         public static extern int AccessCheckByTypeResultList([NativeTypeName("PSECURITY_DESCRIPTOR")] void* pSecurityDescriptor, [NativeTypeName("PSID")] void* PrincipalSelfSid, [NativeTypeName("HANDLE")] IntPtr ClientToken, [NativeTypeName("DWORD")] uint DesiredAccess, [NativeTypeName("POBJECT_TYPE_LIST")] OBJECT_TYPE_LIST* ObjectTypeList, [NativeTypeName("DWORD")] uint ObjectTypeListLength, [NativeTypeName("PGENERIC_MAPPING")] GENERIC_MAPPING* GenericMapping, [NativeTypeName("PPRIVILEGE_SET")] PRIVILEGE_SET* PrivilegeSet, [NativeTypeName("LPDWORD")] uint* PrivilegeSetLength, [NativeTypeName("LPDWORD")] uint* GrantedAccessList, [NativeTypeName("LPDWORD")] uint* AccessStatusList);
 
-        [DllImport("advapi32", ExactSpelling = true)]
+        [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int AccessCheckByTypeAndAuditAlarmW([NativeTypeName("LPCWSTR")] ushort* SubsystemName, [NativeTypeName("LPVOID")] void* HandleId, [NativeTypeName("LPCWSTR")] ushort* ObjectTypeName, [NativeTypeName("LPCWSTR")] ushort* ObjectName, [NativeTypeName("PSECURITY_DESCRIPTOR")] void* SecurityDescriptor, [NativeTypeName("PSID")] void* PrincipalSelfSid, [NativeTypeName("DWORD")] uint DesiredAccess, AUDIT_EVENT_TYPE AuditType, [NativeTypeName("DWORD")] uint Flags, [NativeTypeName("POBJECT_TYPE_LIST")] OBJECT_TYPE_LIST* ObjectTypeList, [NativeTypeName("DWORD")] uint ObjectTypeListLength, [NativeTypeName("PGENERIC_MAPPING")] GENERIC_MAPPING* GenericMapping, [NativeTypeName("BOOL")] int ObjectCreation, [NativeTypeName("LPDWORD")] uint* GrantedAccess, [NativeTypeName("LPBOOL")] int* AccessStatus, [NativeTypeName("LPBOOL")] int* pfGenerateOnClose);
 
-        [DllImport("advapi32", ExactSpelling = true)]
+        [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int AccessCheckByTypeResultListAndAuditAlarmW([NativeTypeName("LPCWSTR")] ushort* SubsystemName, [NativeTypeName("LPVOID")] void* HandleId, [NativeTypeName("LPCWSTR")] ushort* ObjectTypeName, [NativeTypeName("LPCWSTR")] ushort* ObjectName, [NativeTypeName("PSECURITY_DESCRIPTOR")] void* SecurityDescriptor, [NativeTypeName("PSID")] void* PrincipalSelfSid, [NativeTypeName("DWORD")] uint DesiredAccess, AUDIT_EVENT_TYPE AuditType, [NativeTypeName("DWORD")] uint Flags, [NativeTypeName("POBJECT_TYPE_LIST")] OBJECT_TYPE_LIST* ObjectTypeList, [NativeTypeName("DWORD")] uint ObjectTypeListLength, [NativeTypeName("PGENERIC_MAPPING")] GENERIC_MAPPING* GenericMapping, [NativeTypeName("BOOL")] int ObjectCreation, [NativeTypeName("LPDWORD")] uint* GrantedAccessList, [NativeTypeName("LPDWORD")] uint* AccessStatusList, [NativeTypeName("LPBOOL")] int* pfGenerateOnClose);
 
-        [DllImport("advapi32", ExactSpelling = true)]
+        [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int AccessCheckByTypeResultListAndAuditAlarmByHandleW([NativeTypeName("LPCWSTR")] ushort* SubsystemName, [NativeTypeName("LPVOID")] void* HandleId, [NativeTypeName("HANDLE")] IntPtr ClientToken, [NativeTypeName("LPCWSTR")] ushort* ObjectTypeName, [NativeTypeName("LPCWSTR")] ushort* ObjectName, [NativeTypeName("PSECURITY_DESCRIPTOR")] void* SecurityDescriptor, [NativeTypeName("PSID")] void* PrincipalSelfSid, [NativeTypeName("DWORD")] uint DesiredAccess, AUDIT_EVENT_TYPE AuditType, [NativeTypeName("DWORD")] uint Flags, [NativeTypeName("POBJECT_TYPE_LIST")] OBJECT_TYPE_LIST* ObjectTypeList, [NativeTypeName("DWORD")] uint ObjectTypeListLength, [NativeTypeName("PGENERIC_MAPPING")] GENERIC_MAPPING* GenericMapping, [NativeTypeName("BOOL")] int ObjectCreation, [NativeTypeName("LPDWORD")] uint* GrantedAccessList, [NativeTypeName("LPDWORD")] uint* AccessStatusList, [NativeTypeName("LPBOOL")] int* pfGenerateOnClose);
 
@@ -122,10 +122,6 @@ namespace TerraFX.Interop
         [return: NativeTypeName("BOOL")]
         public static extern int CheckTokenCapability([NativeTypeName("HANDLE")] IntPtr TokenHandle, [NativeTypeName("PSID")] void* CapabilitySidToCheck, [NativeTypeName("PBOOL")] int* HasCapability);
 
-        [DllImport("advapi32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int GetAppContainerAce([NativeTypeName("PACL")] ACL* Acl, [NativeTypeName("DWORD")] uint StartingAceIndex, [NativeTypeName("PVOID *")] void** AppContainerAce, [NativeTypeName("DWORD *")] uint* AppContainerAceIndex);
-
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int CheckTokenMembershipEx([NativeTypeName("HANDLE")] IntPtr TokenHandle, [NativeTypeName("PSID")] void* SidToCheck, [NativeTypeName("DWORD")] uint Flags, [NativeTypeName("PBOOL")] int* IsMember);
@@ -202,7 +198,7 @@ namespace TerraFX.Interop
         [return: NativeTypeName("BOOL")]
         public static extern int GetAclInformation([NativeTypeName("PACL")] ACL* pAcl, [NativeTypeName("LPVOID")] void* pAclInformation, [NativeTypeName("DWORD")] uint nAclInformationLength, ACL_INFORMATION_CLASS dwAclInformationClass);
 
-        [DllImport("advapi32", ExactSpelling = true)]
+        [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int GetFileSecurityW([NativeTypeName("LPCWSTR")] ushort* lpFileName, [NativeTypeName("SECURITY_INFORMATION")] uint RequestedInformation, [NativeTypeName("PSECURITY_DESCRIPTOR")] void* pSecurityDescriptor, [NativeTypeName("DWORD")] uint nLength, [NativeTypeName("LPDWORD")] uint* lpnLengthNeeded);
 
@@ -325,19 +321,19 @@ namespace TerraFX.Interop
         [DllImport("advapi32", ExactSpelling = true)]
         public static extern void MapGenericMask([NativeTypeName("PDWORD")] uint* AccessMask, [NativeTypeName("PGENERIC_MAPPING")] GENERIC_MAPPING* GenericMapping);
 
-        [DllImport("advapi32", ExactSpelling = true)]
+        [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int ObjectCloseAuditAlarmW([NativeTypeName("LPCWSTR")] ushort* SubsystemName, [NativeTypeName("LPVOID")] void* HandleId, [NativeTypeName("BOOL")] int GenerateOnClose);
 
-        [DllImport("advapi32", ExactSpelling = true)]
+        [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int ObjectDeleteAuditAlarmW([NativeTypeName("LPCWSTR")] ushort* SubsystemName, [NativeTypeName("LPVOID")] void* HandleId, [NativeTypeName("BOOL")] int GenerateOnClose);
 
-        [DllImport("advapi32", ExactSpelling = true)]
+        [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int ObjectOpenAuditAlarmW([NativeTypeName("LPCWSTR")] ushort* SubsystemName, [NativeTypeName("LPVOID")] void* HandleId, [NativeTypeName("LPWSTR")] ushort* ObjectTypeName, [NativeTypeName("LPWSTR")] ushort* ObjectName, [NativeTypeName("PSECURITY_DESCRIPTOR")] void* pSecurityDescriptor, [NativeTypeName("HANDLE")] IntPtr ClientToken, [NativeTypeName("DWORD")] uint DesiredAccess, [NativeTypeName("DWORD")] uint GrantedAccess, [NativeTypeName("PPRIVILEGE_SET")] PRIVILEGE_SET* Privileges, [NativeTypeName("BOOL")] int ObjectCreation, [NativeTypeName("BOOL")] int AccessGranted, [NativeTypeName("LPBOOL")] int* GenerateOnClose);
 
-        [DllImport("advapi32", ExactSpelling = true)]
+        [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int ObjectPrivilegeAuditAlarmW([NativeTypeName("LPCWSTR")] ushort* SubsystemName, [NativeTypeName("LPVOID")] void* HandleId, [NativeTypeName("HANDLE")] IntPtr ClientToken, [NativeTypeName("DWORD")] uint DesiredAccess, [NativeTypeName("PPRIVILEGE_SET")] PRIVILEGE_SET* Privileges, [NativeTypeName("BOOL")] int AccessGranted);
 
@@ -345,7 +341,7 @@ namespace TerraFX.Interop
         [return: NativeTypeName("BOOL")]
         public static extern int PrivilegeCheck([NativeTypeName("HANDLE")] IntPtr ClientToken, [NativeTypeName("PPRIVILEGE_SET")] PRIVILEGE_SET* RequiredPrivileges, [NativeTypeName("LPBOOL")] int* pfResult);
 
-        [DllImport("advapi32", ExactSpelling = true)]
+        [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int PrivilegedServiceAuditAlarmW([NativeTypeName("LPCWSTR")] ushort* SubsystemName, [NativeTypeName("LPCWSTR")] ushort* ServiceName, [NativeTypeName("HANDLE")] IntPtr ClientToken, [NativeTypeName("PPRIVILEGE_SET")] PRIVILEGE_SET* Privileges, [NativeTypeName("BOOL")] int AccessGranted);
 
@@ -360,7 +356,7 @@ namespace TerraFX.Interop
         [return: NativeTypeName("BOOL")]
         public static extern int SetAclInformation([NativeTypeName("PACL")] ACL* pAcl, [NativeTypeName("LPVOID")] void* pAclInformation, [NativeTypeName("DWORD")] uint nAclInformationLength, ACL_INFORMATION_CLASS dwAclInformationClass);
 
-        [DllImport("advapi32", ExactSpelling = true)]
+        [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int SetFileSecurityW([NativeTypeName("LPCWSTR")] ushort* lpFileName, [NativeTypeName("SECURITY_INFORMATION")] uint SecurityInformation, [NativeTypeName("PSECURITY_DESCRIPTOR")] void* pSecurityDescriptor);
 
@@ -406,14 +402,6 @@ namespace TerraFX.Interop
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int SetTokenInformation([NativeTypeName("HANDLE")] IntPtr TokenHandle, TOKEN_INFORMATION_CLASS TokenInformationClass, [NativeTypeName("LPVOID")] void* TokenInformation, [NativeTypeName("DWORD")] uint TokenInformationLength);
-
-        [DllImport("advapi32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetCachedSigningLevel([NativeTypeName("PHANDLE")] IntPtr* SourceFiles, [NativeTypeName("ULONG")] uint SourceFileCount, [NativeTypeName("ULONG")] uint Flags, [NativeTypeName("HANDLE")] IntPtr TargetFile);
-
-        [DllImport("advapi32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int GetCachedSigningLevel([NativeTypeName("HANDLE")] IntPtr File, [NativeTypeName("PULONG")] uint* Flags, [NativeTypeName("PULONG")] uint* SigningLevel, [NativeTypeName("PUCHAR")] byte* Thumbprint, [NativeTypeName("PULONG")] uint* ThumbprintSize, [NativeTypeName("PULONG")] uint* ThumbprintAlgorithm);
 
         [DllImport("advapi32", ExactSpelling = true)]
         [return: NativeTypeName("LONG")]
