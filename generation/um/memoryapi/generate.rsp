@@ -1,5 +1,11 @@
 @../../settings.rsp
 @../../remap.rsp
+--exclude
+AllocateUserPhysicalPages2(HANDLE, PULONG_PTR, PULONG_PTR, PMEM_EXTENDED_PARAMETER, ULONG):BOOL
+OpenDedicatedMemoryPartition(HANDLE, ULONG64, ACCESS_MASK, BOOL):HANDLE
+QueryPartitionInformation(HANDLE, WIN32_MEMORY_PARTITION_INFORMATION_CLASS, PVOID, ULONG):BOOL
+SetProcessValidCallTargetsForMappedView(HANDLE, PVOID, SIZE_T, ULONG, PCFG_CALL_TARGET_INFO, HANDLE, ULONG64):BOOL
+VirtualUnlockEx(HANDLE, LPVOID, SIZE_T):BOOL
 --file
 um-memoryapi.h
 --output

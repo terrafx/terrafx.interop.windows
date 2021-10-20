@@ -135,6 +135,10 @@ RegSetValueExW=advapi32
 RegUnLoadKey=advapi32
 RegUnLoadKeyA=advapi32
 RegUnLoadKeyW=advapi32
+--with-librarypath
+CheckForHiberboot=advapi32
+RegConnectRegistryExA=advapi32
+RegConnectRegistryExW=advapi32
 --with-setlasterror
 AbortSystemShutdown
 AbortSystemShutdownA

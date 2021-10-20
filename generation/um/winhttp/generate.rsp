@@ -1,10 +1,12 @@
 @../../settings.rsp
 @../../remap.rsp
 --exclude
-WINHTTP_CONNECTION_INFO
-WINHTTP_REQUEST_STATS
-WINHTTP_REQUEST_TIMES
-WINHTTP_RESOLVER_CACHE_CONFIG
+WinHttpIsHostInProxyBypassList(const WINHTTP_PROXY_INFO *, PCWSTR, INTERNET_SCHEME, INTERNET_PORT, BOOL *):DWORD
+WinHttpQueryAuthParams(HINTERNET, DWORD, LPVOID *):BOOL
+_WINHTTP_CONNECTION_INFO
+_WINHTTP_REQUEST_STATS
+_WINHTTP_REQUEST_TIMES
+_WINHTTP_RESOLVER_CACHE_CONFIG
 --file
 um-winhttp.h
 --output
@@ -56,6 +58,16 @@ WinHttpWebSocketReceive=winhttp
 WinHttpWebSocketSend=winhttp
 WinHttpWebSocketShutdown=winhttp
 WinHttpWriteData=winhttp
+--with-librarypath
+WinHttpReadDataEx=winhttp
+WinHttpGetProxyForUrlEx2=winhttp
+WinHttpGetProxyResultEx=winhttp
+WinHttpGetProxySettingsVersion=winhttp
+WinHttpFreeProxyResultEx=winhttp
+WinHttpFreeProxySettings=winhttp
+WinHttpReadProxySettings=winhttp
+WinHttpSetProxySettingsPerUser=winhttp
+WinHttpWriteProxySettings=winhttp
 --with-setlasterror
 WinHttpAddRequestHeaders
 WinHttpCloseHandle

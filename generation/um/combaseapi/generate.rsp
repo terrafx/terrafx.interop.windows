@@ -5,6 +5,8 @@ DECLARE_INTERFACE
 DECLARE_INTERFACE_
 DECLARE_INTERFACE_IID
 DECLARE_INTERFACE_IID_
+DllCanUnloadNow():HRESULT
+DllGetClassObject(const IID &, const IID &, LPVOID *):HRESULT
 IFACEMETHOD
 IFACEMETHODV
 IFACEMETHODV_
@@ -119,3 +121,6 @@ CoDecodeProxy=combase
 CoFreeUnusedLibrariesEx=combase
 --with-librarypath
 CoWaitForMultipleObjects=combase
+--with-librarypath
+CoRegisterDeviceCatalog=combase
+CoRevokeDeviceCatalog=combase

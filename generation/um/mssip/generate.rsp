@@ -1,5 +1,7 @@
 @../../settings.rsp
 @../../remap.rsp
+--exclude
+CryptSIPGetSealedDigest(SIP_SUBJECTINFO *, const BYTE *, DWORD, BYTE *, DWORD *):BOOL
 --file
 um-mssip.h
 --output

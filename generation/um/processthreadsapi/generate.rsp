@@ -112,6 +112,10 @@ TlsAlloc=kernelbase
 TlsFree=kernelbase
 TlsGetValue=kernelbase
 TlsSetValue=kernelbase
+--with-librarypath
+QueueUserAPC2=kernel32
+SetProcessDynamicEHContinuationTargets=kernel32
+SetProcessDynamicEnforcedCetCompatibleRanges=kernel32
 --with-setlasterror
 CreateProcess
 CreateProcessA

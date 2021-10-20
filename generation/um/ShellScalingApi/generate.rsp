@@ -13,6 +13,7 @@ SCALE_CHANGE_FLAGS=Flags
 --with-librarypath
 GetDpiForMonitor=shcore
 GetDpiForShellUiComponent=shcore
+GetDpiForShellUIComponent=shcore
 GetProcessDpiAwareness=shcore
 GetScaleFactorForDevice=shcore
 GetScaleFactorForMonitor=shcore

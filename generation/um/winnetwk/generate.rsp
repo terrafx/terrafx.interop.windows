@@ -70,3 +70,9 @@ WNetRestoreConnectionW=mpr
 WNetUseConnection=mpr
 WNetUseConnectionA=mpr
 WNetUseConnectionW=mpr
+--with-librarypath
+WNetAddConnection4A=mpr
+WNetAddConnection4W=mpr
+WNetRestoreSingleConnectionW=mpr
+WNetUseConnection4A=mpr
+WNetUseConnection4W=mpr

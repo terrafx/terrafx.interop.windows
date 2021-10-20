@@ -96,3 +96,5 @@ ImmSimulateHotKey=imm32
 ImmUnregisterWord=imm32
 ImmUnregisterWordA=imm32
 ImmUnregisterWordW=imm32
+--with-librarypath
+ImmDisableLegacyIME=imm32

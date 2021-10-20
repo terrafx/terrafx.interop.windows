@@ -1,5 +1,20 @@
 @../../settings.rsp
 @../../remap.rsp
+--exclude
+ImeConfigure(HKL, HWND, DWORD, LPVOID):BOOL
+ImeConversionList(HIMC, LPCTSTR, LPCANDIDATELIST, DWORD, UINT):DWORD
+ImeDestroy(UINT):BOOL
+ImeEnumRegisterWord(REGISTERWORDENUMPROCW, LPCTSTR, DWORD, LPCTSTR, LPVOID):UINT
+ImeEscape(HIMC, UINT, LPVOID):LRESULT
+ImeGetRegisterWordStyle(UINT, LPSTYLEBUF):UINT
+ImeInquire(LPIMEINFO, LPTSTR, DWORD):BOOL
+ImeProcessKey(HIMC, UINT, LPARAM, const LPBYTE):BOOL
+ImeRegisterWord(LPCTSTR, DWORD, LPCTSTR):BOOL
+ImeSelect(HIMC, BOOL):BOOL
+ImeSetActiveContext(HIMC, BOOL):BOOL
+ImeSetCompositionString(HIMC, DWORD, LPVOID, DWORD, LPVOID, DWORD):BOOL
+ImeToAsciiEx(UINT, UINT, const LPBYTE, LPTRANSMSGLIST, UINT, HIMC):UINT
+ImeUnregisterWord(LPCTSTR, DWORD, LPCTSTR):BOOL
 --file
 um-immdev.h
 --output
@@ -95,3 +110,21 @@ ImmSimulateHotKey=imm32
 ImmUnregisterWord=imm32
 ImmUnregisterWordA=imm32
 ImmUnregisterWordW=imm32
+--with-librarypath
+ImmCreateIMCC=imm32
+ImmCreateSoftKeyboard=imm32
+ImmDestroyIMCC=imm32
+ImmDestroySoftKeyboard=imm32
+ImmGenerateMessage=imm32
+ImmGetHotKey=imm32
+ImmGetIMCCLockCount=imm32
+ImmGetIMCCSize=imm32
+ImmGetIMCLockCount=imm32
+ImmLockIMC=imm32
+ImmLockIMCC=imm32
+ImmReSizeIMCC=imm32
+ImmSetHotKey=imm32
+ImmShowSoftKeyboard=imm32
+ImmUnlockIMC=imm32
+ImmUnlockIMCC=imm32
+NotifyIME=imm32

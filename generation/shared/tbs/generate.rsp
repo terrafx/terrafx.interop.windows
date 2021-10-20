@@ -19,3 +19,7 @@ Tbsi_Get_TCG_Log=tbs
 Tbsi_Get_TCG_Log_Ex=tbs
 Tbsi_Physical_Presence_Command=tbs
 Tbsi_Revoke_Attestation=tbs
+--with-librarypath
+GetDeviceID=tbs
+GetDeviceIDString=tbs
+Tbsi_Create_Windows_Key=tbs

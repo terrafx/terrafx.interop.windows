@@ -93,6 +93,9 @@ QueryWorkingSet=kernel32
 K32QueryWorkingSet=kernel32
 QueryWorkingSetEx=kernel32
 K32QueryWorkingSetEx=kernel32
+--with-librarypath
+K32GetProcessImageFileNameA=kernel32
+K32GetProcessImageFileNameW=kernel32
 --with-setlasterror
 EmptyWorkingSet
 EnumDeviceDrivers

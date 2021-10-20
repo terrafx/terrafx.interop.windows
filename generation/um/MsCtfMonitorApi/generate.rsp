@@ -1,5 +1,7 @@
 @../../settings.rsp
 @../../remap.rsp
+--exclude
+DoMsCtfMonitor(DWORD, HANDLE):BOOL
 --file
 um-MsCtfMonitorApi.h
 --output

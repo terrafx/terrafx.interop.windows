@@ -8,6 +8,7 @@ ABI.Windows.Foundation.Diagnostics.OriginateError(HRESULT, UINT, PCWSTR):BOOL
 ABI.Windows.Foundation.Diagnostics.OriginateError(HRESULT, HSTRING):BOOL
 ABI.Windows.Foundation.Diagnostics.TransformError(HRESULT, HRESULT, UINT, PCWSTR):BOOL
 ABI.Windows.Foundation.Diagnostics.TransformError(HRESULT, HRESULT, HSTRING):BOOL
+RoGetMatchingRestrictedErrorInfo(HRESULT, IRestrictedErrorInfo **):HRESULT
 --file
 winrt-roerrorapi.h
 --output

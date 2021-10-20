@@ -37,3 +37,11 @@ SetPropertyInteractionContext=ninput
 StopInteractionContext=ninput
 --with-librarypath
 SetInteractionConfigurationInteractionContext=ninput
+--with-librarypath
+GetHoldParameterInteractionContext=ninput
+GetTapParameterInteractionContext=ninput
+GetTranslationParameterInteractionContext=ninput
+RegisterOutputCallbackInteractionContext2=ninput
+SetHoldParameterInteractionContext=ninput
+SetTapParameterInteractionContext=ninput
+SetTranslationParameterInteractionContext=ninput

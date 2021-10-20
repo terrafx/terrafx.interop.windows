@@ -36,6 +36,13 @@ SetEnvironmentVariableA=kernel32
 SetEnvironmentVariableW=kernel32
 --with-librarypath
 SetStdHandleEx=api-ms-win-core-processenvironment-l1-1-0
+--with-librarypath
+GetCurrentDirectoryA=kernel32
+GetCurrentDirectoryW=kernel32
+GetStdHandle=kernel32
+SetCurrentDirectoryA=kernel32
+SetCurrentDirectoryW=kernel32
+SetStdHandle=kernel32
 --with-setlasterror
 ExpandEnvironmentStrings
 ExpandEnvironmentStringsA
@@ -46,9 +53,11 @@ FreeEnvironmentStringsW
 GetEnvironmentVariable
 GetEnvironmentVariableA
 GetEnvironmentVariableW
+GetStdHandle
 SearchPath
 SearchPathA
 SearchPathW
 SetEnvironmentVariable
 SetEnvironmentVariableA
 SetEnvironmentVariableW
+SetStdHandle

@@ -62,6 +62,12 @@ RSoPResetPolicySettingStatus=userenv
 RSoPSetPolicySettingStatus=userenv
 UnloadUserProfile=userenv
 UnregisterGPNotification=userenv
+--with-librarypath
+GenerateGPNotification=userenv
+RsopAccessCheckByType=userenv
+RsopFileAccessCheck=userenv
+RsopSetPolicySettingStatus=userenv
+RsopResetPolicySettingStatus=userenv
 --with-setlasterror
 CreateEnvironmentBlock
 DeleteProfile

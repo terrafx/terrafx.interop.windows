@@ -57,6 +57,15 @@ GetIntegratedDisplaySize=kernelbase
 --with-librarypath
 GetSystemTimeAdjustmentPrecise=api-ms-win-core-version-l1-2-3
 SetSystemTimeAdjustmentPrecise=api-ms-win-core-version-l1-2-3
+--with-librarypath
+DnsHostnameToComputerNameExW=kernel32
+IsUserCetAvailableInEnvironment=kernel32
+SetComputerNameEx2W=kernel32
+VerSetConditionMask=kernel32
+--with-librarypath
+GetOsManufacturingMode=kernelbase
+GetOsSafeBootMode=kernelbase
+GetSystemLeapSecondInformation=kernelbase
 --with-setlasterror
 EnumSystemFirmwareTables
 GetComputerNameEx

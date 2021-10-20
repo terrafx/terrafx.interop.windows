@@ -101,5 +101,7 @@ SetPerTcpConnectionEStats=iphlpapi
 SetTcpEntry=iphlpapi
 UnenableRouter=iphlpapi
 UnregisterInterfaceTimestampConfigChange=iphlpapi
+--with-librarypath
+GetOwnerModuleFromPidAndInfo=iphlpapi
 --with-setlasterror
 GetRTTAndHopCount

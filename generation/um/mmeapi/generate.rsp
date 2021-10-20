@@ -123,3 +123,12 @@ waveOutSetPlaybackRate=winmm
 waveOutSetVolume=winmm
 waveOutUnprepareHeader=winmm
 waveOutWrite=winmm
+--with-librarypath
+waveInGetDevCapsA=winmm
+waveInGetDevCapsW=winmm
+waveInGetErrorTextA=winmm
+waveInGetErrorTextW=winmm
+waveOutGetDevCapsA=winmm
+waveOutGetDevCapsW=winmm
+waveOutGetErrorTextA=winmm
+waveOutGetErrorTextW=winmm

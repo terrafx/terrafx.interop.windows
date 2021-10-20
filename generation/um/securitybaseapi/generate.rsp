@@ -1,5 +1,9 @@
 @../../settings.rsp
 @../../remap.rsp
+--exclude
+GetAppContainerAce(PACL, DWORD, PVOID *, DWORD *):BOOL
+GetCachedSigningLevel(HANDLE, PULONG, PULONG, PUCHAR, PULONG, PULONG):BOOL
+SetCachedSigningLevel(PHANDLE, ULONG, ULONG, HANDLE):BOOL
 --file
 um-securitybaseapi.h
 --output

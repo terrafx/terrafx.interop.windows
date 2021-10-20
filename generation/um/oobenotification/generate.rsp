@@ -1,5 +1,7 @@
 @../../settings.rsp
 @../../remap.rsp
+--exclude
+OOBEComplete(PBOOL):BOOL
 --file
 um-oobenotification.h
 --output

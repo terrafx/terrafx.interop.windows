@@ -116,6 +116,9 @@ SHSetLocalizedName=shell32
 SHSetUnreadMailCountA=shell32
 SHSetUnreadMailCount=shell32
 SHSetUnreadMailCountW=shell32
+--with-librarypath
+IsLFNDriveA=shell32
+IsLFNDriveW=shell32
 --with-setlasterror
 CommandLineToArgvW
 SHCreateProcessAsUserW

@@ -1,5 +1,7 @@
 @../../settings.rsp
 @../../remap.rsp
+--exclude
+Wow64SetThreadDefaultGuestMachine(USHORT):USHORT
 --file
 um-wow64apiset.h
 --output
@@ -22,6 +24,10 @@ IsWow64Process2=kernel32
 Wow64DisableWow64FsRedirection=kernel32
 Wow64RevertWow64FsRedirection=kernel32
 Wow64SuspendThread=kernel32
+--with-librarypath
+Wow64EnableWow64FsRedirection=kernel32
+Wow64GetThreadContext=kernel32
+Wow64SetThreadContext=kernel32
 --with-setlasterror
 GetSystemWow64Directory
 GetSystemWow64Directory2

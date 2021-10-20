@@ -1,6 +1,7 @@
 @../../settings.rsp
 @../../remap.rsp
 --exclude
+CryptSetAsyncParam(HCRYPTASYNC, LPSTR, LPVOID, PFN_CRYPT_ASYNC_PARAM_FREE_FUNC):BOOL
 GET_ALG_CLASS
 GET_ALG_SID
 GET_ALG_TYPE
@@ -320,6 +321,15 @@ CryptRetrieveObjectByUrlA=cryptnet
 CryptRetrieveObjectByUrlW=cryptnet
 --with-librarypath
 GetEncSChannel=instrsa5
+--with-librarypath
+CertIsWeakHash=crypt32
+--with-librarypath
+CryptCancelAsyncRetrieval=cryptnet
+CryptFlushTimeValidObject=cryptnet
+CryptInstallCancelRetrieval=cryptnet
+CryptUninstallCancelRetrieval=cryptnet
+--with-librarypath
+FindCertsByIssuer=wintrust
 --with-setlasterror
 CertAddCertificateContextToStore
 CertAddCertificateLinkToStore

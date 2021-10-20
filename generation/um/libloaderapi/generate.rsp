@@ -1,5 +1,9 @@
 @../../settings.rsp
 @../../remap.rsp
+--exclude
+LoadString
+LoadStringA(HINSTANCE, UINT, LPSTR, int):int
+LoadStringW(HINSTANCE, UINT, LPWSTR, int):int
 --file
 um-libloaderapi.h
 --output

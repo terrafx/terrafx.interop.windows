@@ -144,6 +144,10 @@ UnlockFileEx=kernel32
 WriteFile=kernel32
 WriteFileEx=kernel32
 WriteFileGather=kernel32
+--with-librarypath
+AreShortNamesEnabled=kernel32
+GetDiskSpaceInformationA=kernel32
+GetDiskSpaceInformationW=kernel32
 --with-setlasterror
 CreateDirectory
 CreateDirectoryA

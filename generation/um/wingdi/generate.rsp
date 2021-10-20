@@ -447,6 +447,10 @@ wglUseFontBitmapsW=opengl32
 wglUseFontOutlines=opengl32
 wglUseFontOutlinesA=opengl32
 wglUseFontOutlinesW=opengl32
+--with-librarypath
+FixBrushOrgEx=gdi32
+--with-librarypath
+wglSwapMultipleBuffers=opengl32
 --with-setlasterror
 BitBlt
 ChoosePixelFormat

@@ -14,3 +14,6 @@ GetManagedApplicationCategories=advapi32
 GetManagedApplications=advapi32
 InstallApplication=advapi32
 UninstallApplication=advapi32
+--with-librarypath
+CommandLineFromMsiDescriptor=advapi32
+GetLocalManagedApplicationData=advapi32
