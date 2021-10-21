@@ -29,6 +29,8 @@ ShellFolderView_SetPoints
 ShellFolderView_UpdateObject
 Shell_GetCachedImageIndex(PCWSTR, int, UINT):int
 SHSTDDOCAPI_
+SHOpenPropSheetA
+SHRunControlPanel
 --file
 um-ShlObj.h
 --output
@@ -48,13 +50,11 @@ SHCreatePropSheetExtArray=shell32
 SHLoadOLE=shell32
 SHMultiFileProperties=shell32
 SHOpenPropSheet=shell32
-SHOpenPropSheetA=shell32
 SHOpenPropSheetW=shell32
 --with-librarypath
 PerUserInit=mydocs
 --with-librarypath
 SHChangeNotifyRegisterThread=shell32
-SHRunControlPanel=shell32
 --with-librarypath
 PathQualify=shell32
 --with-librarypath

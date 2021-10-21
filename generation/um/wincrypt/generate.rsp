@@ -1,6 +1,7 @@
 @../../settings.rsp
 @../../remap.rsp
 --exclude
+CryptExportPKCS8Ex
 CryptSetAsyncParam(HCRYPTASYNC, LPSTR, LPVOID, PFN_CRYPT_ASYNC_PARAM_FREE_FUNC):BOOL
 GET_ALG_CLASS
 GET_ALG_SID
@@ -14,6 +15,7 @@ GET_CERT_UNICODE_VALUE_ERR_INDEX
 GET_CMSG_ENCODING_TYPE
 GET_CRL_DIST_POINT_ERR_INDEX
 GET_CROSS_CERT_DIST_POINT_ERR_INDEX
+GetEncSChannel
 IS_CERT_EXCLUDED_SUBTREE
 IS_CERT_HASH_PROP_ID
 IS_CERT_RDN_CHAR_STRING
@@ -183,7 +185,6 @@ CryptEnumKeyIdentifierProperties=crypt32
 CryptEnumOIDFunction=crypt32
 CryptEnumOIDInfo=crypt32
 CryptExportPKCS8=crypt32
-CryptExportPKCS8Ex=crypt32
 CryptExportPublicKeyInfo=crypt32
 CryptExportPublicKeyInfoEx=crypt32
 CryptExportPublicKeyInfoFromBCryptKeyHandle=crypt32
@@ -310,17 +311,15 @@ CryptVerifySignature=advapi32
 CryptVerifySignatureA=advapi32
 CryptVerifySignatureW=advapi32
 --with-librarypath
-CryptCloseAsyncHandle=secforwarder
-CryptCreateAsyncHandle=secforwarder
-CryptGetAsyncParam=secforwarder
+CryptCloseAsyncHandle=crypt32
+CryptCreateAsyncHandle=crypt32
+CryptGetAsyncParam=crypt32
 --with-librarypath
 CryptGetObjectUrl=cryptnet
 CryptGetTimeValidObject=cryptnet
 CryptRetrieveObjectByUrl=cryptnet
 CryptRetrieveObjectByUrlA=cryptnet
 CryptRetrieveObjectByUrlW=cryptnet
---with-librarypath
-GetEncSChannel=instrsa5
 --with-librarypath
 CertIsWeakHash=crypt32
 --with-librarypath

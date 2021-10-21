@@ -104,14 +104,6 @@ namespace TerraFX.Interop
 
         [DllImport("hid", ExactSpelling = true)]
         [return: NativeTypeName("NTSTATUS")]
-        public static extern int HidP_UsageAndPageListDifference([NativeTypeName("PUSAGE_AND_PAGE")] USAGE_AND_PAGE* PreviousUsageList, [NativeTypeName("PUSAGE_AND_PAGE")] USAGE_AND_PAGE* CurrentUsageList, [NativeTypeName("PUSAGE_AND_PAGE")] USAGE_AND_PAGE* BreakUsageList, [NativeTypeName("PUSAGE_AND_PAGE")] USAGE_AND_PAGE* MakeUsageList, [NativeTypeName("ULONG")] uint UsageListLength);
-
-        [DllImport("hid", ExactSpelling = true)]
-        [return: NativeTypeName("NTSTATUS")]
-        public static extern int HidP_TranslateUsageAndPagesToI8042ScanCodes([NativeTypeName("PUSAGE_AND_PAGE")] USAGE_AND_PAGE* ChangedUsageList, [NativeTypeName("ULONG")] uint UsageListLength, HIDP_KEYBOARD_DIRECTION KeyAction, [NativeTypeName("PHIDP_KEYBOARD_MODIFIER_STATE")] HIDP_KEYBOARD_MODIFIER_STATE* ModifierState, [NativeTypeName("PHIDP_INSERT_SCANCODES")] delegate* unmanaged<void*, sbyte*, uint, byte> InsertCodesProcedure, [NativeTypeName("PVOID")] void* InsertCodesContext);
-
-        [DllImport("hid", ExactSpelling = true)]
-        [return: NativeTypeName("NTSTATUS")]
         public static extern int HidP_TranslateUsagesToI8042ScanCodes([NativeTypeName("PUSAGE")] ushort* ChangedUsageList, [NativeTypeName("ULONG")] uint UsageListLength, HIDP_KEYBOARD_DIRECTION KeyAction, [NativeTypeName("PHIDP_KEYBOARD_MODIFIER_STATE")] HIDP_KEYBOARD_MODIFIER_STATE* ModifierState, [NativeTypeName("PHIDP_INSERT_SCANCODES")] delegate* unmanaged<void*, sbyte*, uint, byte> InsertCodesProcedure, [NativeTypeName("PVOID")] void* InsertCodesContext);
 
         [NativeTypeName("#define HIDP_LINK_COLLECTION_ROOT ((USHORT) -1)")]

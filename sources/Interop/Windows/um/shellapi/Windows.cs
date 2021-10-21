@@ -241,23 +241,11 @@ namespace TerraFX.Interop
 
         [DllImport("shell32", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int SHEnumerateUnreadMailAccountsA([NativeTypeName("HKEY")] IntPtr hKeyUser, [NativeTypeName("DWORD")] uint dwIndex, [NativeTypeName("LPSTR")] sbyte* pszMailAddress, int cchMailAddress);
-
-        [DllImport("shell32", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
         public static extern int SHEnumerateUnreadMailAccountsW([NativeTypeName("HKEY")] IntPtr hKeyUser, [NativeTypeName("DWORD")] uint dwIndex, [NativeTypeName("LPWSTR")] ushort* pszMailAddress, int cchMailAddress);
 
         [DllImport("shell32", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int SHGetUnreadMailCountA([NativeTypeName("HKEY")] IntPtr hKeyUser, [NativeTypeName("LPCSTR")] sbyte* pszMailAddress, [NativeTypeName("DWORD *")] uint* pdwCount, FILETIME* pFileTime, [NativeTypeName("LPSTR")] sbyte* pszShellExecuteCommand, int cchShellExecuteCommand);
-
-        [DllImport("shell32", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
         public static extern int SHGetUnreadMailCountW([NativeTypeName("HKEY")] IntPtr hKeyUser, [NativeTypeName("LPCWSTR")] ushort* pszMailAddress, [NativeTypeName("DWORD *")] uint* pdwCount, FILETIME* pFileTime, [NativeTypeName("LPWSTR")] ushort* pszShellExecuteCommand, int cchShellExecuteCommand);
-
-        [DllImport("shell32", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int SHSetUnreadMailCountA([NativeTypeName("LPCSTR")] sbyte* pszMailAddress, [NativeTypeName("DWORD")] uint dwCount, [NativeTypeName("LPCSTR")] sbyte* pszShellExecuteCommand);
 
         [DllImport("shell32", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]

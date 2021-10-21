@@ -94,6 +94,6 @@ IsAppThemed=uxtheme
 IsThemeDialogTextureEnabled=uxtheme
 SetThemeAppProperties=uxtheme
 --with-librarypath
-OpenThemeDataForDpi=user32
+OpenThemeDataForDpi=uxtheme
 --with-setlasterror
 BeginBufferedPaint

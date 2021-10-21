@@ -1,5 +1,7 @@
 @../../settings.rsp
 @../../remap.rsp
+--exclude
+GetD3D11On12On7Interface
 --file
 other-d3d11on12on7.h
 --output

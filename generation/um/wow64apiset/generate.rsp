@@ -11,9 +11,9 @@ um-wow64apiset.h
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/wow64apiset.h
 --with-librarypath
-GetSystemWow64Directory2=kernel32
-GetSystemWow64Directory2A=kernel32
-GetSystemWow64Directory2W=kernel32
+GetSystemWow64Directory2=kernelbase
+GetSystemWow64Directory2A=kernelbase
+GetSystemWow64Directory2W=kernelbase
 IsWow64GuestMachineSupported=kernel32
 --with-librarypath
 GetSystemWow64Directory=kernel32

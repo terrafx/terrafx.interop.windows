@@ -194,15 +194,15 @@ namespace TerraFX.Interop
         [return: NativeTypeName("BOOL")]
         public static extern int SetProcessValidCallTargets([NativeTypeName("HANDLE")] IntPtr hProcess, [NativeTypeName("PVOID")] void* VirtualAddress, [NativeTypeName("SIZE_T")] nuint RegionSize, [NativeTypeName("ULONG")] uint NumberOfOffsets, [NativeTypeName("PCFG_CALL_TARGET_INFO")] CFG_CALL_TARGET_INFO* OffsetInformation);
 
-        [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
+        [DllImport("kernelbase", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("PVOID")]
         public static extern void* VirtualAllocFromApp([NativeTypeName("PVOID")] void* BaseAddress, [NativeTypeName("SIZE_T")] nuint Size, [NativeTypeName("ULONG")] uint AllocationType, [NativeTypeName("ULONG")] uint Protection);
 
-        [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
+        [DllImport("kernelbase", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int VirtualProtectFromApp([NativeTypeName("PVOID")] void* Address, [NativeTypeName("SIZE_T")] nuint Size, [NativeTypeName("ULONG")] uint NewProtection, [NativeTypeName("PULONG")] uint* OldProtection);
 
-        [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
+        [DllImport("kernelbase", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("HANDLE")]
         public static extern IntPtr OpenFileMappingFromApp([NativeTypeName("ULONG")] uint DesiredAccess, [NativeTypeName("BOOL")] int InheritHandle, [NativeTypeName("PCWSTR")] ushort* Name);
 
@@ -224,23 +224,23 @@ namespace TerraFX.Interop
         [return: NativeTypeName("BOOL")]
         public static extern int UnmapViewOfFile2([NativeTypeName("HANDLE")] IntPtr Process, [NativeTypeName("PVOID")] void* BaseAddress, [NativeTypeName("ULONG")] uint UnmapFlags);
 
-        [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
+        [DllImport("kernelbase", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("PVOID")]
         public static extern void* VirtualAlloc2([NativeTypeName("HANDLE")] IntPtr Process, [NativeTypeName("PVOID")] void* BaseAddress, [NativeTypeName("SIZE_T")] nuint Size, [NativeTypeName("ULONG")] uint AllocationType, [NativeTypeName("ULONG")] uint PageProtection, MEM_EXTENDED_PARAMETER* ExtendedParameters, [NativeTypeName("ULONG")] uint ParameterCount);
 
-        [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
+        [DllImport("kernelbase", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("PVOID")]
         public static extern void* MapViewOfFile3([NativeTypeName("HANDLE")] IntPtr FileMapping, [NativeTypeName("HANDLE")] IntPtr Process, [NativeTypeName("PVOID")] void* BaseAddress, [NativeTypeName("ULONG64")] ulong Offset, [NativeTypeName("SIZE_T")] nuint ViewSize, [NativeTypeName("ULONG")] uint AllocationType, [NativeTypeName("ULONG")] uint PageProtection, MEM_EXTENDED_PARAMETER* ExtendedParameters, [NativeTypeName("ULONG")] uint ParameterCount);
 
-        [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
+        [DllImport("kernelbase", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("PVOID")]
         public static extern void* VirtualAlloc2FromApp([NativeTypeName("HANDLE")] IntPtr Process, [NativeTypeName("PVOID")] void* BaseAddress, [NativeTypeName("SIZE_T")] nuint Size, [NativeTypeName("ULONG")] uint AllocationType, [NativeTypeName("ULONG")] uint PageProtection, MEM_EXTENDED_PARAMETER* ExtendedParameters, [NativeTypeName("ULONG")] uint ParameterCount);
 
-        [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
+        [DllImport("kernelbase", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("PVOID")]
         public static extern void* MapViewOfFile3FromApp([NativeTypeName("HANDLE")] IntPtr FileMapping, [NativeTypeName("HANDLE")] IntPtr Process, [NativeTypeName("PVOID")] void* BaseAddress, [NativeTypeName("ULONG64")] ulong Offset, [NativeTypeName("SIZE_T")] nuint ViewSize, [NativeTypeName("ULONG")] uint AllocationType, [NativeTypeName("ULONG")] uint PageProtection, MEM_EXTENDED_PARAMETER* ExtendedParameters, [NativeTypeName("ULONG")] uint ParameterCount);
 
-        [DllImport("kernel32", ExactSpelling = true)]
+        [DllImport("kernelbase", ExactSpelling = true)]
         [return: NativeTypeName("HANDLE")]
         public static extern IntPtr CreateFileMapping2([NativeTypeName("HANDLE")] IntPtr File, SECURITY_ATTRIBUTES* SecurityAttributes, [NativeTypeName("ULONG")] uint DesiredAccess, [NativeTypeName("ULONG")] uint PageProtection, [NativeTypeName("ULONG")] uint AllocationAttributes, [NativeTypeName("ULONG64")] ulong MaximumSize, [NativeTypeName("PCWSTR")] ushort* Name, MEM_EXTENDED_PARAMETER* ExtendedParameters, [NativeTypeName("ULONG")] uint ParameterCount);
 

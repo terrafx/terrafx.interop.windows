@@ -18,7 +18,7 @@ namespace TerraFX.Interop
         [return: NativeTypeName("HRESULT")]
         public static extern int RoSetErrorReportingFlags([NativeTypeName("UINT32")] uint flags);
 
-        [DllImport("runtimeobject", ExactSpelling = true)]
+        [DllImport("combase", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int RoResolveRestrictedErrorInfoReference([NativeTypeName("PCWSTR")] ushort* reference, IRestrictedErrorInfo** ppRestrictedErrorInfo);
 
@@ -30,11 +30,11 @@ namespace TerraFX.Interop
         [return: NativeTypeName("HRESULT")]
         public static extern int GetRestrictedErrorInfo(IRestrictedErrorInfo** ppRestrictedErrorInfo);
 
-        [DllImport("runtimeobject", ExactSpelling = true)]
+        [DllImport("combase", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int RoOriginateErrorW([NativeTypeName("HRESULT")] int error, [NativeTypeName("UINT")] uint cchMax, [NativeTypeName("PCWSTR")] ushort* message);
 
-        [DllImport("runtimeobject", ExactSpelling = true)]
+        [DllImport("combase", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int RoOriginateError([NativeTypeName("HRESULT")] int error, [NativeTypeName("HSTRING")] IntPtr message);
 
@@ -128,11 +128,11 @@ namespace TerraFX.Interop
         [return: NativeTypeName("HRESULT")]
         public static extern int RoInspectCapturedStackBackTrace([NativeTypeName("UINT_PTR")] nuint targetErrorInfoAddress, [NativeTypeName("USHORT")] ushort machine, [NativeTypeName("PINSPECT_MEMORY_CALLBACK")] delegate* unmanaged<void*, nuint, uint, byte*, int> readMemoryCallback, [NativeTypeName("PVOID")] void* context, [NativeTypeName("UINT32 *")] uint* frameCount, [NativeTypeName("UINT_PTR *")] nuint* targetBackTraceAddress);
 
-        [DllImport("runtimeobject", ExactSpelling = true)]
+        [DllImport("combase", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int RoReportFailedDelegate(IUnknown* punkDelegate, IRestrictedErrorInfo* pRestrictedErrorInfo);
 
-        [DllImport("runtimeobject", ExactSpelling = true)]
+        [DllImport("combase", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int IsErrorPropagationEnabled();
 

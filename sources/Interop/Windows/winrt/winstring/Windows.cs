@@ -42,7 +42,7 @@ namespace TerraFX.Interop
         [return: NativeTypeName("HRESULT")]
         public static extern int WindowsStringHasEmbeddedNull([NativeTypeName("HSTRING")] IntPtr @string, [NativeTypeName("BOOL *")] int* hasEmbedNull);
 
-        [DllImport("winrttype", ExactSpelling = true)]
+        [DllImport("combase", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int WindowsCompareStringOrdinal([NativeTypeName("HSTRING")] IntPtr string1, [NativeTypeName("HSTRING")] IntPtr string2, [NativeTypeName("INT32 *")] int* result);
 

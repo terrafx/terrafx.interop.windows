@@ -76,10 +76,6 @@ namespace TerraFX.Interop
         [return: NativeTypeName("HRESULT")]
         public static extern int ILSaveToStream(IStream* pstm, [NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl);
 
-        [DllImport("shell32", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int ILLoadFromStream(IStream* pstm, [NativeTypeName("LPITEMIDLIST *")] ITEMIDLIST** pidl);
-
         [DllImport("windows.storage.dll", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int ILLoadFromStreamEx(IStream* pstm, [NativeTypeName("LPITEMIDLIST *")] ITEMIDLIST** pidl);
@@ -412,10 +408,6 @@ namespace TerraFX.Interop
 
         [DllImport("shell32", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int SHStartNetConnectionDialogA([NativeTypeName("HWND")] IntPtr hwnd, [NativeTypeName("LPCSTR")] sbyte* pszRemoteName, [NativeTypeName("DWORD")] uint dwType);
-
-        [DllImport("shell32", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
         public static extern int SHStartNetConnectionDialogW([NativeTypeName("HWND")] IntPtr hwnd, [NativeTypeName("LPCWSTR")] ushort* pszRemoteName, [NativeTypeName("DWORD")] uint dwType);
 
         [DllImport("shell32", ExactSpelling = true)]
@@ -547,10 +539,6 @@ namespace TerraFX.Interop
         [DllImport("shell32", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int SHPropStgWriteMultiple(IPropertyStorage* pps, [NativeTypeName("UINT *")] uint* puCodePage, [NativeTypeName("ULONG")] uint cpspec, [NativeTypeName("const PROPSPEC []")] PROPSPEC* rgpspec, [NativeTypeName("PROPVARIANT []")] PROPVARIANT* rgvar, [NativeTypeName("PROPID")] uint propidNameFirst);
-
-        [DllImport("shell32", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int SHCreateFileExtractIconA([NativeTypeName("LPCSTR")] sbyte* pszFile, [NativeTypeName("DWORD")] uint dwFileAttributes, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
 
         [DllImport("shell32", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]

@@ -8,6 +8,9 @@ NetAddr_GetAddress
 NetAddr_GetAllowType
 NetAddr_SetAllowType
 SHDOCAPI_
+SHEnumerateUnreadMailAccountsA
+SHGetUnreadMailCountA
+SHSetUnreadMailCountA
 SHSTDAPI_
 --file
 um-shellapi.h
@@ -34,7 +37,6 @@ FindExecutableA=shell32
 FindExecutableW=shell32
 InitNetworkAddressControl=shell32
 SHEnumerateUnreadMailAccounts=shell32
-SHEnumerateUnreadMailAccountsA=shell32
 SHEnumerateUnreadMailAccountsW=shell32
 SHEvaluateSystemCommandTemplate=shell32
 SHGetDriveMedia=shell32
@@ -45,7 +47,6 @@ SHQueryUserNotificationState=shell32
 SHRemoveLocalizedName=shell32
 --with-librarypath
 CommandLineToArgvW=shell32
-SHGetUnreadMailCountA=shell32
 SHGetUnreadMailCount=shell32
 SHGetUnreadMailCountW=shell32
 SHTestTokenMembership=shell32
@@ -113,7 +114,6 @@ SHQueryRecycleBinW=shell32
 --with-librarypath
 SHSetLocalizedName=shell32
 --with-librarypath
-SHSetUnreadMailCountA=shell32
 SHSetUnreadMailCount=shell32
 SHSetUnreadMailCountW=shell32
 --with-librarypath

@@ -166,10 +166,6 @@ namespace TerraFX.Interop
         [return: NativeTypeName("BOOL")]
         public static extern int CryptDuplicateHash([NativeTypeName("HCRYPTHASH")] IntPtr hHash, [NativeTypeName("DWORD *")] uint* pdwReserved, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("HCRYPTHASH *")] IntPtr* phHash);
 
-        [DllImport("instrsa5", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int GetEncSChannel([NativeTypeName("BYTE **")] byte** pData, [NativeTypeName("DWORD *")] uint* dwDecSize);
-
         [DllImport("crypt32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int CryptFormatObject([NativeTypeName("DWORD")] uint dwCertEncodingType, [NativeTypeName("DWORD")] uint dwFormatType, [NativeTypeName("DWORD")] uint dwFormatStrType, void* pFormatStruct, [NativeTypeName("LPCSTR")] sbyte* lpszStructType, [NativeTypeName("const BYTE *")] byte* pbEncoded, [NativeTypeName("DWORD")] uint cbEncoded, void* pbFormat, [NativeTypeName("DWORD *")] uint* pcbFormat);
@@ -767,10 +763,6 @@ namespace TerraFX.Interop
 
         [DllImport("crypt32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int CryptExportPKCS8Ex(CRYPT_PKCS8_EXPORT_PARAMS* psExportParams, [NativeTypeName("DWORD")] uint dwFlags, void* pvAuxInfo, [NativeTypeName("BYTE *")] byte* pbPrivateKeyBlob, [NativeTypeName("DWORD *")] uint* pcbPrivateKeyBlob);
-
-        [DllImport("crypt32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
         public static extern int CryptHashPublicKeyInfo([NativeTypeName("HCRYPTPROV_LEGACY")] IntPtr hCryptProv, [NativeTypeName("ALG_ID")] uint Algid, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("DWORD")] uint dwCertEncodingType, [NativeTypeName("PCERT_PUBLIC_KEY_INFO")] CERT_PUBLIC_KEY_INFO* pInfo, [NativeTypeName("BYTE *")] byte* pbComputedHash, [NativeTypeName("DWORD *")] uint* pcbComputedHash);
 
         [DllImport("crypt32", ExactSpelling = true)]
@@ -900,15 +892,15 @@ namespace TerraFX.Interop
         [DllImport("crypt32", ExactSpelling = true)]
         public static extern void CryptMemFree([NativeTypeName("LPVOID")] void* pv);
 
-        [DllImport("secforwarder", ExactSpelling = true)]
+        [DllImport("crypt32", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int CryptCreateAsyncHandle([NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("PHCRYPTASYNC")] IntPtr* phAsync);
 
-        [DllImport("secforwarder", ExactSpelling = true)]
+        [DllImport("crypt32", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int CryptGetAsyncParam([NativeTypeName("HCRYPTASYNC")] IntPtr hAsync, [NativeTypeName("LPSTR")] sbyte* pszParamOid, [NativeTypeName("LPVOID *")] void** ppvParam, [NativeTypeName("PFN_CRYPT_ASYNC_PARAM_FREE_FUNC *")] delegate* unmanaged<sbyte*, void*, void>* ppfnFree);
 
-        [DllImport("secforwarder", ExactSpelling = true)]
+        [DllImport("crypt32", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int CryptCloseAsyncHandle([NativeTypeName("HCRYPTASYNC")] IntPtr hAsync);
 

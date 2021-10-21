@@ -2702,19 +2702,15 @@ namespace TerraFX.Interop
         [return: NativeTypeName("BOOL")]
         public static extern int GetCIMSSM(INPUT_MESSAGE_SOURCE* inputMessageSource);
 
-        [DllImport("kernel", ExactSpelling = true)]
+        [DllImport("user32", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int GetAutoRotationState([NativeTypeName("PAR_STATE")] AR_STATE* pState);
 
-        [DllImport("kernel", ExactSpelling = true)]
+        [DllImport("user32", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int GetDisplayAutoRotationPreferences(ORIENTATION_PREFERENCE* pOrientation);
 
-        [DllImport("kernel", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int GetDisplayAutoRotationPreferencesByProcessId([NativeTypeName("DWORD")] uint dwProcessId, ORIENTATION_PREFERENCE* pOrientation, [NativeTypeName("BOOL *")] int* fRotateScreen);
-
-        [DllImport("kernel", ExactSpelling = true)]
+        [DllImport("user32", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int SetDisplayAutoRotationPreferences(ORIENTATION_PREFERENCE orientation);
 

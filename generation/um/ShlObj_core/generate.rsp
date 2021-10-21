@@ -46,9 +46,12 @@ IID_IURLSearchHook2
 ILIsAligned
 ILIsChild
 ILIsEmpty
+ILLoadFromStream
 ILNext
 ILSkip
+SHCreateFileExtractIconA
 Shell_GetCachedImageIndex(PCWSTR, int, UINT):int
+SHStartNetConnectionDialogA
 SHSTDDOCAPI_
 VOID_OFFSET
 --file
@@ -99,7 +102,6 @@ ILGetNext=shell32
 ILGetSize=shell32
 ILIsEqual=shell32
 ILIsParent=shell32
-ILLoadFromStream=shell32
 ILRemoveLastID=shell32
 ILSaveToStream=shell32
 IsNetDrive=shell32
@@ -133,7 +135,6 @@ SHCreateDirectory=shell32
 SHCreateDirectoryEx=shell32
 SHCreateDirectoryExA=shell32
 SHCreateDirectoryExW=shell32
-SHCreateFileExtractIconA=shell32
 SHCreateFileExtractIcon=shell32
 SHCreateFileExtractIconW=shell32
 SHCreateShellFolderView=shell32
@@ -170,7 +171,6 @@ SHSetFolderPathW=shell32
 SHSetInstanceExplorer=shell32
 SHShellFolderView_Message=shell32
 SHStartNetConnectionDialog=shell32
-SHStartNetConnectionDialogA=shell32
 SHStartNetConnectionDialogW=shell32
 SignalFileOpen=shell32
 WriteCabinetState=shell32

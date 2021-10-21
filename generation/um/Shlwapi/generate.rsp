@@ -1,6 +1,7 @@
 @../../settings.rsp
 @../../remap.rsp
 --exclude
+DllInstall
 IID_IQueryAssociations
 IntlStrEqNA
 IntlStrEqNIA
@@ -16,6 +17,11 @@ QITABENT
 QITABENTMULTI
 QITABENTMULTI2
 SHAnsiToTChar
+SHGetAssocKeys
+SHGlobalCounterDecrement
+SHGlobalCounterGetValue
+SHGlobalCounterIncrement
+SHRegSetValue
 SHTCharToAnsi
 SHTCharToUnicode
 SHUnicodeToTChar
@@ -244,7 +250,6 @@ AssocIsDangerous=shlwapi
 ChrCmpI=shlwapi
 ChrCmpIA=shlwapi
 ChrCmpIW=shlwapi
-DllInstall=shlwapi
 PathAddBackslash=shlwapi
 PathAddBackslashA=shlwapi
 PathAddBackslashW=shlwapi
@@ -546,14 +551,9 @@ IStream_WritePidl=shlwapi
 IStream_WriteStr=shlwapi
 PathCreateFromUrlAlloc=shlwapi
 SHAllocShared=shlwapi
-SHGetAssocKeys=shlwapi
-SHGlobalCounterDecrement=shlwapi
-SHGlobalCounterGetValue=shlwapi
-SHGlobalCounterIncrement=shlwapi
 SHLockShared=shlwapi
 SHRegGetIntW=shlwapi
 SHRegGetValueFromHKCUHKLM=shlwapi
-SHRegSetValue=shlwapi
 SHUnlockShared=shlwapi
 --with-librarypath
 ParseURL=shlwapi
@@ -572,9 +572,9 @@ StrCatChainW=shlwapi
 StrCmpLogicalW=shlwapi
 StrRetToBSTR=shlwapi
 --with-librarypath
-SHRegGetBoolValueFromHKCUHKLM=shell32
-StrStrNIW=shell32
-StrStrNW=shell32
+SHRegGetBoolValueFromHKCUHKLM=shlwapi
+StrStrNIW=shlwapi
+StrStrNW=shlwapi
 --with-setlasterror
 PathCanonicalize
 PathCanonicalizeA

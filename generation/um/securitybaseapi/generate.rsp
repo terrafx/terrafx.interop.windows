@@ -125,7 +125,7 @@ AddResourceAttributeAce=kernel32
 AddScopedPolicyIDAce=kernel32
 CheckTokenCapability=kernel32
 CheckTokenMembershipEx=kernel32
-DeriveCapabilitySidsFromName=kernel32
+DeriveCapabilitySidsFromName=kernelbase
 --with-setlasterror
 AccessCheck
 AccessCheckAndAuditAlarm

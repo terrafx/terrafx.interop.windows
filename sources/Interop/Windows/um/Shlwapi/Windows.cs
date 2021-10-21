@@ -166,11 +166,11 @@ namespace TerraFX.Interop
         [return: NativeTypeName("PWSTR")]
         public static extern ushort* StrStrIW([NativeTypeName("PCWSTR")] ushort* pszFirst, [NativeTypeName("PCWSTR")] ushort* pszSrch);
 
-        [DllImport("shell32", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("PWSTR")]
         public static extern ushort* StrStrNW([NativeTypeName("PCWSTR")] ushort* pszFirst, [NativeTypeName("PCWSTR")] ushort* pszSrch, [NativeTypeName("UINT")] uint cchMax);
 
-        [DllImport("shell32", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("PWSTR")]
         public static extern ushort* StrStrNIW([NativeTypeName("PCWSTR")] ushort* pszFirst, [NativeTypeName("PCWSTR")] ushort* pszSrch, [NativeTypeName("UINT")] uint cchMax);
 
@@ -949,13 +949,9 @@ namespace TerraFX.Interop
 
         [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("LSTATUS")]
-        public static extern int SHRegSetValue([NativeTypeName("HKEY")] IntPtr hkey, [NativeTypeName("LPCWSTR")] ushort* pszSubKey, [NativeTypeName("LPCWSTR")] ushort* pszValue, [NativeTypeName("SRRF")] int srrfFlags, [NativeTypeName("DWORD")] uint dwType, [NativeTypeName("LPCVOID")] void* pvData, [NativeTypeName("DWORD")] uint cbData);
-
-        [DllImport("shlwapi", ExactSpelling = true)]
-        [return: NativeTypeName("LSTATUS")]
         public static extern int SHRegGetValueFromHKCUHKLM([NativeTypeName("PCWSTR")] ushort* pwszKey, [NativeTypeName("PCWSTR")] ushort* pwszValue, [NativeTypeName("SRRF")] int srrfFlags, [NativeTypeName("DWORD *")] uint* pdwType, void* pvData, [NativeTypeName("DWORD *")] uint* pcbData);
 
-        [DllImport("shell32", ExactSpelling = true)]
+        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int SHRegGetBoolValueFromHKCUHKLM([NativeTypeName("PCWSTR")] ushort* pszKey, [NativeTypeName("PCWSTR")] ushort* pszValue, [NativeTypeName("BOOL")] int fDefault);
 
@@ -1143,10 +1139,6 @@ namespace TerraFX.Interop
         public static extern int AssocCreate([NativeTypeName("CLSID")] Guid clsid, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
 
         [DllImport("shlwapi", ExactSpelling = true)]
-        [return: NativeTypeName("DWORD")]
-        public static extern uint SHGetAssocKeys(IQueryAssociations* pqa, [NativeTypeName("HKEY *")] IntPtr* rgKeys, [NativeTypeName("DWORD")] uint cKeys);
-
-        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int AssocQueryStringA([NativeTypeName("ASSOCF")] uint flags, ASSOCSTR str, [NativeTypeName("LPCSTR")] sbyte* pszAssoc, [NativeTypeName("LPCSTR")] sbyte* pszExtra, [NativeTypeName("LPSTR")] sbyte* pszOut, [NativeTypeName("DWORD *")] uint* pcchOut);
 
@@ -1324,18 +1316,6 @@ namespace TerraFX.Interop
         public static extern int IsOS([NativeTypeName("DWORD")] uint dwOS);
 
         [DllImport("shlwapi", ExactSpelling = true)]
-        [return: NativeTypeName("long")]
-        public static extern int SHGlobalCounterGetValue([NativeTypeName("const SHGLOBALCOUNTER")] SHGLOBALCOUNTER id);
-
-        [DllImport("shlwapi", ExactSpelling = true)]
-        [return: NativeTypeName("long")]
-        public static extern int SHGlobalCounterIncrement([NativeTypeName("const SHGLOBALCOUNTER")] SHGLOBALCOUNTER id);
-
-        [DllImport("shlwapi", ExactSpelling = true)]
-        [return: NativeTypeName("long")]
-        public static extern int SHGlobalCounterDecrement([NativeTypeName("const SHGLOBALCOUNTER")] SHGLOBALCOUNTER id);
-
-        [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("HANDLE")]
         public static extern IntPtr SHAllocShared([NativeTypeName("const void *")] void* pvData, [NativeTypeName("DWORD")] uint dwSize, [NativeTypeName("DWORD")] uint dwProcessId);
 
@@ -1438,10 +1418,6 @@ namespace TerraFX.Interop
         [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("COLORREF")]
         public static extern uint ColorAdjustLuma([NativeTypeName("COLORREF")] uint clrRGB, int n, [NativeTypeName("BOOL")] int fScale);
-
-        [DllImport("shlwapi", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int DllInstall([NativeTypeName("BOOL")] int bInstall, [NativeTypeName("PCWSTR")] ushort* pszCmdLine);
 
         [DllImport("shlwapi", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]

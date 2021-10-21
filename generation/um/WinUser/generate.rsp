@@ -22,6 +22,7 @@ ExitWindows
 GetClassLongPtr
 GetClassLongPtrA
 GetClassLongPtrW
+GetDisplayAutoRotationPreferencesByProcessId
 GetNextWindow
 GetSysModalWindow
 GetWindowLongPtr
@@ -937,10 +938,9 @@ wvsprintf=user32
 wvsprintfA=user32
 wvsprintfW=user32
 --with-librarypath
-GetAutoRotationState=kernel
-GetDisplayAutoRotationPreferences=kernel
-GetDisplayAutoRotationPreferencesByProcessId=kernel
-SetDisplayAutoRotationPreferences=kernel
+GetAutoRotationState=user32
+GetDisplayAutoRotationPreferences=user32
+SetDisplayAutoRotationPreferences=user32
 --with-librarypath
 CancelShutdown=user32
 ChangeMenuA=user32

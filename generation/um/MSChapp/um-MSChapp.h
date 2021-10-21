@@ -1,2 +1,5 @@
 #include "..\..\TerraFX.h"
-#include <MSChapp.h>
+
+extern "C" {
+  #include <MSChapp.h>
+}

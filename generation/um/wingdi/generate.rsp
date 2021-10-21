@@ -2,6 +2,9 @@
 @../../remap.rsp
 --exclude
 CMYK
+DeviceCapabilities
+DeviceCapabilitiesA
+DeviceCapabilitiesW
 FONTENUMPROC
 FONTENUMPROCA
 FONTENUMPROCW
@@ -422,10 +425,6 @@ WidenPath=gdi32
 AlphaBlend=msimg32
 GradientFill=msimg32
 TransparentBlt=msimg32
---with-librarypath
-DeviceCapabilities=winspool
-DeviceCapabilitiesA=winspool
-DeviceCapabilitiesW=winspool
 --with-librarypath
 wglCopyContext=opengl32
 wglCreateContext=opengl32

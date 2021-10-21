@@ -201,12 +201,6 @@ namespace TerraFX.Interop
         [DllImport("gdi32", ExactSpelling = true, SetLastError = true)]
         public static extern int DescribePixelFormat([NativeTypeName("HDC")] IntPtr hdc, int iPixelFormat, [NativeTypeName("UINT")] uint nBytes, [NativeTypeName("LPPIXELFORMATDESCRIPTOR")] PIXELFORMATDESCRIPTOR* ppfd);
 
-        [DllImport("winspool", ExactSpelling = true)]
-        public static extern int DeviceCapabilitiesA([NativeTypeName("LPCSTR")] sbyte* pDevice, [NativeTypeName("LPCSTR")] sbyte* pPort, [NativeTypeName("WORD")] ushort fwCapability, [NativeTypeName("LPSTR")] sbyte* pOutput, [NativeTypeName("const DEVMODEA *")] DEVMODEA* pDevMode);
-
-        [DllImport("winspool", ExactSpelling = true)]
-        public static extern int DeviceCapabilitiesW([NativeTypeName("LPCWSTR")] ushort* pDevice, [NativeTypeName("LPCWSTR")] ushort* pPort, [NativeTypeName("WORD")] ushort fwCapability, [NativeTypeName("LPWSTR")] ushort* pOutput, [NativeTypeName("const DEVMODEW *")] DEVMODEW* pDevMode);
-
         [DllImport("gdi32", ExactSpelling = true)]
         public static extern int DrawEscape([NativeTypeName("HDC")] IntPtr hdc, int iEscape, int cjIn, [NativeTypeName("LPCSTR")] sbyte* lpIn);
 
@@ -5049,9 +5043,6 @@ namespace TerraFX.Interop
 
         [NativeTypeName("#define DCBA_FACEDOWNRIGHT 0x0103")]
         public const int DCBA_FACEDOWNRIGHT = 0x0103;
-
-        [NativeTypeName("#define DeviceCapabilities DeviceCapabilitiesW")]
-        public static delegate*<ushort*, ushort*, ushort, ushort*, DEVMODEW*, int> DeviceCapabilities => &DeviceCapabilitiesW;
 
         [NativeTypeName("#define EnumFontFamiliesEx EnumFontFamiliesExW")]
         public static delegate*<IntPtr, LOGFONTW*, delegate* unmanaged<LOGFONTW*, TEXTMETRICW*, uint, nint, int>, nint, uint, int> EnumFontFamiliesEx => &EnumFontFamiliesExW;

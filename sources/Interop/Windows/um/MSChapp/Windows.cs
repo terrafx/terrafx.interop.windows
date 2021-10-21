@@ -9,11 +9,11 @@ namespace TerraFX.Interop
 {
     public static unsafe partial class Windows
     {
-        [DllImport("advapi32", EntryPoint = "?MSChapSrvChangePassword@@YGKPA_W0EPAU_LM_OWF_PASSWORD@@111@Z", ExactSpelling = true)]
+        [DllImport("advapi32", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
         public static extern uint MSChapSrvChangePassword([NativeTypeName("PWSTR")] ushort* ServerName, [NativeTypeName("PWSTR")] ushort* UserName, [NativeTypeName("BOOLEAN")] byte LmOldPresent, [NativeTypeName("PLM_OWF_PASSWORD")] LM_OWF_PASSWORD* LmOldOwfPassword, [NativeTypeName("PLM_OWF_PASSWORD")] LM_OWF_PASSWORD* LmNewOwfPassword, [NativeTypeName("PNT_OWF_PASSWORD")] LM_OWF_PASSWORD* NtOldOwfPassword, [NativeTypeName("PNT_OWF_PASSWORD")] LM_OWF_PASSWORD* NtNewOwfPassword);
 
-        [DllImport("advapi32", EntryPoint = "?MSChapSrvChangePassword2@@YGKPA_W0PAU_SAMPR_ENCRYPTED_USER_PASSWORD@@PAU_ENCRYPTED_LM_OWF_PASSWORD@@E12@Z", ExactSpelling = true)]
+        [DllImport("advapi32", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
         public static extern uint MSChapSrvChangePassword2([NativeTypeName("PWSTR")] ushort* ServerName, [NativeTypeName("PWSTR")] ushort* UserName, [NativeTypeName("PSAMPR_ENCRYPTED_USER_PASSWORD")] SAMPR_ENCRYPTED_USER_PASSWORD* NewPasswordEncryptedWithOldNt, [NativeTypeName("PENCRYPTED_NT_OWF_PASSWORD")] ENCRYPTED_LM_OWF_PASSWORD* OldNtOwfPasswordEncryptedWithNewNt, [NativeTypeName("BOOLEAN")] byte LmPresent, [NativeTypeName("PSAMPR_ENCRYPTED_USER_PASSWORD")] SAMPR_ENCRYPTED_USER_PASSWORD* NewPasswordEncryptedWithOldLm, [NativeTypeName("PENCRYPTED_LM_OWF_PASSWORD")] ENCRYPTED_LM_OWF_PASSWORD* OldLmOwfPasswordEncryptedWithNewLmOrNt);
 

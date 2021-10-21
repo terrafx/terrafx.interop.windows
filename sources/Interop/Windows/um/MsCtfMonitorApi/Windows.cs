@@ -9,11 +9,11 @@ namespace TerraFX.Interop
 {
     public static partial class Windows
     {
-        [DllImport("msctf", ExactSpelling = true)]
+        [DllImport("msctfmonitor", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int InitLocalMsCtfMonitor([NativeTypeName("DWORD")] uint dwFlags);
 
-        [DllImport("msctf", ExactSpelling = true)]
+        [DllImport("msctfmonitor", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int UninitLocalMsCtfMonitor();
 
