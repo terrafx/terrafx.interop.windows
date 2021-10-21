@@ -1,2 +1,5 @@
 #include "..\..\TerraFX.h"
-#include <schannel.h>
+
+extern "C" {
+  #include <schannel.h>
+}

@@ -15,6 +15,7 @@ ImeSetActiveContext(HIMC, BOOL):BOOL
 ImeSetCompositionString(HIMC, DWORD, LPVOID, DWORD, LPVOID, DWORD):BOOL
 ImeToAsciiEx(UINT, UINT, const LPBYTE, LPTRANSMSGLIST, UINT, HIMC):UINT
 ImeUnregisterWord(LPCTSTR, DWORD, LPCTSTR):BOOL
+NotifyIME
 --file
 um-immdev.h
 --output
@@ -127,4 +128,3 @@ ImmSetHotKey=imm32
 ImmShowSoftKeyboard=imm32
 ImmUnlockIMC=imm32
 ImmUnlockIMCC=imm32
-NotifyIME=imm32
