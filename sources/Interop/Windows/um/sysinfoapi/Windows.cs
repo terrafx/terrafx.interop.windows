@@ -54,7 +54,7 @@ namespace TerraFX.Interop
         [return: NativeTypeName("BOOL")]
         public static extern int GetSystemTimeAdjustment([NativeTypeName("PDWORD")] uint* lpTimeAdjustment, [NativeTypeName("PDWORD")] uint* lpTimeIncrement, [NativeTypeName("PBOOL")] int* lpTimeAdjustmentDisabled);
 
-        [DllImport("api-ms-win-core-version-l1-2-3", ExactSpelling = true, SetLastError = true)]
+        [DllImport("kernelbase", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int GetSystemTimeAdjustmentPrecise([NativeTypeName("PDWORD64")] ulong* lpTimeAdjustment, [NativeTypeName("PDWORD64")] ulong* lpTimeIncrement, [NativeTypeName("PBOOL")] int* lpTimeAdjustmentDisabled);
 
@@ -156,7 +156,7 @@ namespace TerraFX.Interop
         [return: NativeTypeName("BOOL")]
         public static extern int SetSystemTimeAdjustment([NativeTypeName("DWORD")] uint dwTimeAdjustment, [NativeTypeName("BOOL")] int bTimeAdjustmentDisabled);
 
-        [DllImport("api-ms-win-core-version-l1-2-3", ExactSpelling = true, SetLastError = true)]
+        [DllImport("kernelbase", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int SetSystemTimeAdjustmentPrecise([NativeTypeName("DWORD64")] ulong dwTimeAdjustment, [NativeTypeName("BOOL")] int bTimeAdjustmentDisabled);
 

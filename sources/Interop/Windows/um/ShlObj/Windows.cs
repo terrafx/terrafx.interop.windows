@@ -44,10 +44,6 @@ namespace TerraFX.Interop
 
         [DllImport("shell32", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int SHOpenPropSheetA([NativeTypeName("LPCSTR")] sbyte* pszCaption, [NativeTypeName("HKEY []")] IntPtr* ahkeys, [NativeTypeName("UINT")] uint ckeys, [NativeTypeName("const CLSID *")] Guid* pclsidDefault, IDataObject* pdtobj, IShellBrowser* psb, [NativeTypeName("LPCSTR")] sbyte* pStartPage);
-
-        [DllImport("shell32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
         public static extern int SHOpenPropSheetW([NativeTypeName("LPCWSTR")] ushort* pszCaption, [NativeTypeName("HKEY []")] IntPtr* ahkeys, [NativeTypeName("UINT")] uint ckeys, [NativeTypeName("const CLSID *")] Guid* pclsidDefault, IDataObject* pdtobj, IShellBrowser* psb, [NativeTypeName("LPCWSTR")] ushort* pStartPage);
 
         [DllImport("shdocvw", ExactSpelling = true)]
@@ -64,10 +60,6 @@ namespace TerraFX.Interop
 
         [DllImport("mydocs", ExactSpelling = true)]
         public static extern void PerUserInit();
-
-        [DllImport("shell32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SHRunControlPanel([NativeTypeName("PCWSTR")] ushort* lpcszCmdLine, [NativeTypeName("HWND")] IntPtr hwndMsgParent);
 
         [NativeTypeName("#define FCIDM_TOOLBAR (FCIDM_BROWSERFIRST + 0)")]
         public const int FCIDM_TOOLBAR = (0xa000 + 0);

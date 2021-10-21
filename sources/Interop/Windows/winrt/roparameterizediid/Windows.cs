@@ -14,10 +14,10 @@ namespace TerraFX.Interop
         [return: NativeTypeName("HRESULT")]
         public static extern int RoGetParameterizedTypeInstanceIID([NativeTypeName("UINT32")] uint nameElementCount, [NativeTypeName("PCWSTR *")] ushort** nameElements, [NativeTypeName("const IRoMetaDataLocator &")] IRoMetaDataLocator* metaDataLocator, [NativeTypeName("GUID *")] Guid* iid, [NativeTypeName("ROPARAMIIDHANDLE *")] IntPtr* pExtra);
 
-        [DllImport("runtimeobject", ExactSpelling = true)]
+        [DllImport("combase", ExactSpelling = true)]
         public static extern void RoFreeParameterizedTypeExtra([NativeTypeName("ROPARAMIIDHANDLE")] IntPtr extra);
 
-        [DllImport("runtimeobject", ExactSpelling = true)]
+        [DllImport("combase", ExactSpelling = true)]
         [return: NativeTypeName("PCSTR")]
         public static extern sbyte* RoParameterizedTypeExtraGetTypeSignature([NativeTypeName("ROPARAMIIDHANDLE")] IntPtr extra);
     }

@@ -3433,7 +3433,7 @@ namespace TerraFX.Interop
         [return: NativeTypeName("HRESULT")]
         public static extern int MFCreateAVIMediaSink(IMFByteStream* pIByteStream, IMFMediaType* pVideoMediaType, IMFMediaType* pAudioMediaType, IMFMediaSink** ppIMediaSink);
 
-        [DllImport("mf", ExactSpelling = true)]
+        [DllImport("mfsrcsnk", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int MFCreateWAVEMediaSink(IMFByteStream* pTargetByteStream, IMFMediaType* pAudioMediaType, IMFMediaSink** ppMediaSink);
 

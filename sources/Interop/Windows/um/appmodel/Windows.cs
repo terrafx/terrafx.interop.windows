@@ -34,7 +34,7 @@ namespace TerraFX.Interop
         [return: NativeTypeName("LONG")]
         public static extern int GetPackageFullName([NativeTypeName("HANDLE")] IntPtr hProcess, [NativeTypeName("UINT32 *")] uint* packageFullNameLength, [NativeTypeName("PWSTR")] ushort* packageFullName);
 
-        [DllImport("kernel32", ExactSpelling = true)]
+        [DllImport("kernelbase", ExactSpelling = true)]
         [return: NativeTypeName("LONG")]
         public static extern int GetPackageFullNameFromToken([NativeTypeName("HANDLE")] IntPtr token, [NativeTypeName("UINT32 *")] uint* packageFullNameLength, [NativeTypeName("PWSTR")] ushort* packageFullName);
 
@@ -42,7 +42,7 @@ namespace TerraFX.Interop
         [return: NativeTypeName("LONG")]
         public static extern int GetPackageFamilyName([NativeTypeName("HANDLE")] IntPtr hProcess, [NativeTypeName("UINT32 *")] uint* packageFamilyNameLength, [NativeTypeName("PWSTR")] ushort* packageFamilyName);
 
-        [DllImport("kernel32", ExactSpelling = true)]
+        [DllImport("kernelbase", ExactSpelling = true)]
         [return: NativeTypeName("LONG")]
         public static extern int GetPackageFamilyNameFromToken([NativeTypeName("HANDLE")] IntPtr token, [NativeTypeName("UINT32 *")] uint* packageFamilyNameLength, [NativeTypeName("PWSTR")] ushort* packageFamilyName);
 
@@ -66,7 +66,7 @@ namespace TerraFX.Interop
         [return: NativeTypeName("LONG")]
         public static extern int GetApplicationUserModelId([NativeTypeName("HANDLE")] IntPtr hProcess, [NativeTypeName("UINT32 *")] uint* applicationUserModelIdLength, [NativeTypeName("PWSTR")] ushort* applicationUserModelId);
 
-        [DllImport("kernel32", ExactSpelling = true)]
+        [DllImport("kernelbase", ExactSpelling = true)]
         [return: NativeTypeName("LONG")]
         public static extern int GetApplicationUserModelIdFromToken([NativeTypeName("HANDLE")] IntPtr token, [NativeTypeName("UINT32 *")] uint* applicationUserModelIdLength, [NativeTypeName("PWSTR")] ushort* applicationUserModelId);
 
@@ -106,7 +106,7 @@ namespace TerraFX.Interop
         [return: NativeTypeName("LONG")]
         public static extern int FindPackagesByPackageFamily([NativeTypeName("PCWSTR")] ushort* packageFamilyName, [NativeTypeName("UINT32")] uint packageFilters, [NativeTypeName("UINT32 *")] uint* count, [NativeTypeName("PWSTR *")] ushort** packageFullNames, [NativeTypeName("UINT32 *")] uint* bufferLength, [NativeTypeName("WCHAR *")] ushort* buffer, [NativeTypeName("UINT32 *")] uint* packageProperties);
 
-        [DllImport("kernel32", ExactSpelling = true)]
+        [DllImport("kernelbase", ExactSpelling = true)]
         [return: NativeTypeName("LONG")]
         public static extern int GetStagedPackageOrigin([NativeTypeName("PCWSTR")] ushort* packageFullName, PackageOrigin* origin);
 

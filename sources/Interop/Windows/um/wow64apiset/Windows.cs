@@ -38,11 +38,11 @@ namespace TerraFX.Interop
         [return: NativeTypeName("BOOL")]
         public static extern int IsWow64Process2([NativeTypeName("HANDLE")] IntPtr hProcess, [NativeTypeName("USHORT *")] ushort* pProcessMachine, [NativeTypeName("USHORT *")] ushort* pNativeMachine);
 
-        [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
+        [DllImport("kernelbase", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("UINT")]
         public static extern uint GetSystemWow64Directory2A([NativeTypeName("LPSTR")] sbyte* lpBuffer, [NativeTypeName("UINT")] uint uSize, [NativeTypeName("WORD")] ushort ImageFileMachineType);
 
-        [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
+        [DllImport("kernelbase", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("UINT")]
         public static extern uint GetSystemWow64Directory2W([NativeTypeName("LPWSTR")] ushort* lpBuffer, [NativeTypeName("UINT")] uint uSize, [NativeTypeName("WORD")] ushort ImageFileMachineType);
 

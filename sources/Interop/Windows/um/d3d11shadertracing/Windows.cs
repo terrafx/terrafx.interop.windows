@@ -12,7 +12,7 @@ namespace TerraFX.Interop
 {
     public static unsafe partial class Windows
     {
-        [DllImport("d3d11sdklayers", ExactSpelling = true)]
+        [DllImport("d3dcompiler_47", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int D3DDisassemble11Trace([NativeTypeName("LPCVOID")] void* pSrcData, [NativeTypeName("SIZE_T")] nuint SrcDataSize, ID3D11ShaderTrace* pTrace, [NativeTypeName("UINT")] uint StartStep, [NativeTypeName("UINT")] uint NumSteps, [NativeTypeName("UINT")] uint Flags, [NativeTypeName("struct ID3D10Blob **")] ID3DBlob** ppDisassembly);
 

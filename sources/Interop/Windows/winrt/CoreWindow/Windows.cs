@@ -12,7 +12,7 @@ namespace TerraFX.Interop
 {
     public static unsafe partial class Windows
     {
-        [DllImport("windows.ui.core.dll", ExactSpelling = true)]
+        [DllImport("windows.ui.dll", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int CreateControlInput([NativeTypeName("const IID &")] Guid* riid, void** ppv);
 

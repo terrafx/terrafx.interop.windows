@@ -82,10 +82,6 @@ namespace TerraFX.Interop
         [return: NativeTypeName("DWORD")]
         public static extern uint ImmGetIMCCSize([NativeTypeName("HIMCC")] IntPtr param0);
 
-        [DllImport("imm32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int NotifyIME([NativeTypeName("HIMC")] IntPtr param0, [NativeTypeName("DWORD")] uint param1, [NativeTypeName("DWORD")] uint param2, [NativeTypeName("DWORD")] uint param3);
-
         [NativeTypeName("#define ImmRequestMessage ImmRequestMessageW")]
         public static delegate*<IntPtr, nuint, nint, nint> ImmRequestMessage => &ImmRequestMessageW;
 

@@ -1,6 +1,7 @@
 @../../settings.rsp
 @../../remap.rsp
 --exclude
+DllInstall
 IID_IQueryAssociations
 IntlStrEqNA
 IntlStrEqNIA
@@ -249,7 +250,6 @@ AssocIsDangerous=shlwapi
 ChrCmpI=shlwapi
 ChrCmpIA=shlwapi
 ChrCmpIW=shlwapi
-DllInstall=shlwapi
 PathAddBackslash=shlwapi
 PathAddBackslashA=shlwapi
 PathAddBackslashW=shlwapi
