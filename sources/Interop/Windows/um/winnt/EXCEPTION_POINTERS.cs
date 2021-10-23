@@ -11,6 +11,6 @@ namespace TerraFX.Interop
         public EXCEPTION_RECORD* ExceptionRecord;
 
         [NativeTypeName("PCONTEXT")]
-        public CONTEXT* ContextRecord;
+        public void* ContextRecord;
     }
 }

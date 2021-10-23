@@ -11,6 +11,36 @@ namespace TerraFX.Interop
 {
     public static unsafe partial class Windows
     {
+        public static int CONSOLE_APPLICATION_16BIT
+        {
+            get
+            {
+                if (sizeof(nint) == 4)
+                {
+                    return 0x0001;
+                }
+                else
+                {
+                    return 0x0000;
+                }
+            }
+        }
+
+        public static int GUI_16BITTASK
+        {
+            get
+            {
+                if (sizeof(nint) == 4)
+                {
+                    return 0x00000020;
+                }
+                else
+                {
+                    return 0x00000000;
+                }
+            }
+        }
+
         public const int WH_HARDWARE = 8;
 
         public const int OBM_CLOSE = 32754;

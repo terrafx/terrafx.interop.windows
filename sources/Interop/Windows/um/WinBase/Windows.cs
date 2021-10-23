@@ -204,11 +204,11 @@ namespace TerraFX.Interop
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int QueryUmsThreadInformation([NativeTypeName("PUMS_CONTEXT")] void* UmsThread, [NativeTypeName("UMS_THREAD_INFO_CLASS")] RTL_UMS_THREAD_INFO_CLASS UmsThreadInfoClass, [NativeTypeName("PVOID")] void* UmsThreadInformation, [NativeTypeName("ULONG")] uint UmsThreadInformationLength, [NativeTypeName("PULONG")] uint* ReturnLength);
+        public static extern int QueryUmsThreadInformation([NativeTypeName("PUMS_CONTEXT")] void* UmsThread, UMS_THREAD_INFO_CLASS UmsThreadInfoClass, [NativeTypeName("PVOID")] void* UmsThreadInformation, [NativeTypeName("ULONG")] uint UmsThreadInformationLength, [NativeTypeName("PULONG")] uint* ReturnLength);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int SetUmsThreadInformation([NativeTypeName("PUMS_CONTEXT")] void* UmsThread, [NativeTypeName("UMS_THREAD_INFO_CLASS")] RTL_UMS_THREAD_INFO_CLASS UmsThreadInfoClass, [NativeTypeName("PVOID")] void* UmsThreadInformation, [NativeTypeName("ULONG")] uint UmsThreadInformationLength);
+        public static extern int SetUmsThreadInformation([NativeTypeName("PUMS_CONTEXT")] void* UmsThread, UMS_THREAD_INFO_CLASS UmsThreadInfoClass, [NativeTypeName("PVOID")] void* UmsThreadInformation, [NativeTypeName("ULONG")] uint UmsThreadInformationLength);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
@@ -248,7 +248,7 @@ namespace TerraFX.Interop
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int GetThreadSelectorEntry([NativeTypeName("HANDLE")] IntPtr hThread, [NativeTypeName("DWORD")] uint dwSelector, [NativeTypeName("LPLDT_ENTRY")] LDT_ENTRY* lpSelectorEntry);
+        public static extern int GetThreadSelectorEntry([NativeTypeName("HANDLE")] IntPtr hThread, [NativeTypeName("DWORD")] uint dwSelector, [NativeTypeName("LPLDT_ENTRY")] void* lpSelectorEntry);
 
         [DllImport("kernel32", ExactSpelling = true)]
         [return: NativeTypeName("EXECUTION_STATE")]
@@ -1358,7 +1358,7 @@ namespace TerraFX.Interop
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int IsBadCodePtr([NativeTypeName("FARPROC")] delegate* unmanaged<int> lpfn);
+        public static extern int IsBadCodePtr([NativeTypeName("FARPROC")] IntPtr lpfn);
 
         [DllImport("kernel32", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
@@ -1570,7 +1570,7 @@ namespace TerraFX.Interop
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int MapUserPhysicalPagesScatter([NativeTypeName("PVOID *")] void** VirtualAddresses, [NativeTypeName("ULONG_PTR")] nuint NumberOfPages, [NativeTypeName("PULONG_PTR")] uint* PageArray);
+        public static extern int MapUserPhysicalPagesScatter([NativeTypeName("PVOID *")] void** VirtualAddresses, [NativeTypeName("ULONG_PTR")] nuint NumberOfPages, [NativeTypeName("PULONG_PTR")] nuint* PageArray);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("HANDLE")]
@@ -1811,15 +1811,15 @@ namespace TerraFX.Interop
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int CopyContext([NativeTypeName("PCONTEXT")] CONTEXT* Destination, [NativeTypeName("DWORD")] uint ContextFlags, [NativeTypeName("PCONTEXT")] CONTEXT* Source);
+        public static extern int CopyContext([NativeTypeName("PCONTEXT")] void* Destination, [NativeTypeName("DWORD")] uint ContextFlags, [NativeTypeName("PCONTEXT")] void* Source);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int InitializeContext([NativeTypeName("PVOID")] void* Buffer, [NativeTypeName("DWORD")] uint ContextFlags, [NativeTypeName("PCONTEXT *")] CONTEXT** Context, [NativeTypeName("PDWORD")] uint* ContextLength);
+        public static extern int InitializeContext([NativeTypeName("PVOID")] void* Buffer, [NativeTypeName("DWORD")] uint ContextFlags, [NativeTypeName("PCONTEXT *")] void** Context, [NativeTypeName("PDWORD")] uint* ContextLength);
 
         [DllImport("kernel32", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int InitializeContext2([NativeTypeName("PVOID")] void* Buffer, [NativeTypeName("DWORD")] uint ContextFlags, [NativeTypeName("PCONTEXT *")] CONTEXT** Context, [NativeTypeName("PDWORD")] uint* ContextLength, [NativeTypeName("ULONG64")] ulong XStateCompactionMask);
+        public static extern int InitializeContext2([NativeTypeName("PVOID")] void* Buffer, [NativeTypeName("DWORD")] uint ContextFlags, [NativeTypeName("PCONTEXT *")] void** Context, [NativeTypeName("PDWORD")] uint* ContextLength, [NativeTypeName("ULONG64")] ulong XStateCompactionMask);
 
         [DllImport("kernel32", ExactSpelling = true)]
         [return: NativeTypeName("DWORD64")]
@@ -1827,15 +1827,15 @@ namespace TerraFX.Interop
 
         [DllImport("kernel32", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int GetXStateFeaturesMask([NativeTypeName("PCONTEXT")] CONTEXT* Context, [NativeTypeName("PDWORD64")] ulong* FeatureMask);
+        public static extern int GetXStateFeaturesMask([NativeTypeName("PCONTEXT")] void* Context, [NativeTypeName("PDWORD64")] ulong* FeatureMask);
 
         [DllImport("kernel32", ExactSpelling = true)]
         [return: NativeTypeName("PVOID")]
-        public static extern void* LocateXStateFeature([NativeTypeName("PCONTEXT")] CONTEXT* Context, [NativeTypeName("DWORD")] uint FeatureId, [NativeTypeName("PDWORD")] uint* Length);
+        public static extern void* LocateXStateFeature([NativeTypeName("PCONTEXT")] void* Context, [NativeTypeName("DWORD")] uint FeatureId, [NativeTypeName("PDWORD")] uint* Length);
 
         [DllImport("kernel32", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int SetXStateFeaturesMask([NativeTypeName("PCONTEXT")] CONTEXT* Context, [NativeTypeName("DWORD64")] ulong FeatureMask);
+        public static extern int SetXStateFeaturesMask([NativeTypeName("PCONTEXT")] void* Context, [NativeTypeName("DWORD64")] ulong FeatureMask);
 
         [DllImport("kernel32", ExactSpelling = true)]
         [return: NativeTypeName("DWORD64")]
@@ -2965,9 +2965,6 @@ namespace TerraFX.Interop
 
         [NativeTypeName("#define SCS_64BIT_BINARY 6")]
         public const int SCS_64BIT_BINARY = 6;
-
-        [NativeTypeName("#define SCS_THIS_PLATFORM_BINARY SCS_32BIT_BINARY")]
-        public const int SCS_THIS_PLATFORM_BINARY = 0;
 
         [NativeTypeName("#define GetBinaryType GetBinaryTypeW")]
         public static delegate*<ushort*, uint*, int> GetBinaryType => &GetBinaryTypeW;

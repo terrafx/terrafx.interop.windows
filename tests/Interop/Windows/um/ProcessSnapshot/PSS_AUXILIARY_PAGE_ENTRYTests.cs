@@ -36,7 +36,7 @@ namespace TerraFX.Interop.UnitTests
             }
             else
             {
-                Assert.That(sizeof(PSS_AUXILIARY_PAGE_ENTRY), Is.EqualTo(48));
+                Assert.That(sizeof(PSS_AUXILIARY_PAGE_ENTRY), Is.EqualTo(52));
             }
         }
     }

@@ -1,5 +1,7 @@
 @../../settings.rsp
 @../../remap.rsp
+--exclude
+_HIDD_CONFIGURATION
 --file
 shared-hidsdi.h
 --output

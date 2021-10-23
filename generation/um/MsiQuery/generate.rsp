@@ -143,3 +143,5 @@ MsiViewGetError=msi
 MsiViewGetErrorA=msi
 MsiViewGetErrorW=msi
 MsiViewModify=msi
+--with-type
+MSIDBOPEN_PATCHFILE=uint

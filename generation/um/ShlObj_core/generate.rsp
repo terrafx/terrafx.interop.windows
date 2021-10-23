@@ -235,3 +235,5 @@ SHUpdateImageA=shell32
 SHUpdateImageW=shell32
 --with-setlasterror
 PathResolve
+--with-type
+SHELLSTATE_SIZE_WIN2K=uint

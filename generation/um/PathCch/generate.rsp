@@ -35,3 +35,5 @@ PathCchSkipRoot=kernelbase
 PathCchStripPrefix=kernelbase
 PathCchStripToRoot=kernelbase
 PathIsUNCEx=kernelbase
+--with-type
+VOLUME_PREFIX_LEN=uint

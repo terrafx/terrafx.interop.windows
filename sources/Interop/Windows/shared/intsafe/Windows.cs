@@ -37,18 +37,6 @@ namespace TerraFX.Interop
         [NativeTypeName("#define INT64_MIN (-9223372036854775807i64 - 1)")]
         public const long INT64_MIN = (-9223372036854775807L - 1);
 
-        [NativeTypeName("#define INT_PTR_MIN (-2147483647 - 1)")]
-        public const int INT_PTR_MIN = (-2147483647 - 1);
-
-        [NativeTypeName("#define LONG_PTR_MIN (-2147483647L - 1)")]
-        public const int LONG_PTR_MIN = (-2147483647 - 1);
-
-        [NativeTypeName("#define PTRDIFF_T_MIN (-2147483647 - 1)")]
-        public const int PTRDIFF_T_MIN = (-2147483647 - 1);
-
-        [NativeTypeName("#define SSIZE_T_MIN (-2147483647L - 1)")]
-        public const int SSIZE_T_MIN = (-2147483647 - 1);
-
         [NativeTypeName("#define INT8_MAX 127i8")]
         public const sbyte INT8_MAX = 127;
 
@@ -118,33 +106,6 @@ namespace TerraFX.Interop
         [NativeTypeName("#define UINT64_MAX 0xffffffffffffffffui64")]
         public const ulong UINT64_MAX = 0xffffffffffffffffUL;
 
-        [NativeTypeName("#define INT_PTR_MAX 2147483647")]
-        public const int INT_PTR_MAX = 2147483647;
-
-        [NativeTypeName("#define UINT_PTR_MAX 0xffffffff")]
-        public const uint UINT_PTR_MAX = 0xffffffff;
-
-        [NativeTypeName("#define LONG_PTR_MAX 2147483647L")]
-        public const int LONG_PTR_MAX = 2147483647;
-
-        [NativeTypeName("#define ULONG_PTR_MAX 0xffffffffUL")]
-        public const uint ULONG_PTR_MAX = 0xffffffffU;
-
-        [NativeTypeName("#define DWORD_PTR_MAX 0xffffffffUL")]
-        public const uint DWORD_PTR_MAX = 0xffffffffU;
-
-        [NativeTypeName("#define PTRDIFF_T_MAX 2147483647")]
-        public const int PTRDIFF_T_MAX = 2147483647;
-
-        [NativeTypeName("#define SIZE_T_MAX 0xffffffff")]
-        public const uint SIZE_T_MAX = 0xffffffff;
-
-        [NativeTypeName("#define SSIZE_T_MAX 2147483647L")]
-        public const int SSIZE_T_MAX = 2147483647;
-
-        [NativeTypeName("#define _SIZE_T_MAX 0xffffffffUL")]
-        public const uint _SIZE_T_MAX = 0xffffffffU;
-
         [NativeTypeName("#define INT8_ERROR (-1i8)")]
         public const int INT8_ERROR = (-1);
 
@@ -210,32 +171,5 @@ namespace TerraFX.Interop
 
         [NativeTypeName("#define UINT64_ERROR 0xffffffffffffffffui64")]
         public const ulong UINT64_ERROR = 0xffffffffffffffffUL;
-
-        [NativeTypeName("#define INT_PTR_ERROR (-1)")]
-        public const int INT_PTR_ERROR = (-1);
-
-        [NativeTypeName("#define UINT_PTR_ERROR 0xffffffff")]
-        public const uint UINT_PTR_ERROR = 0xffffffff;
-
-        [NativeTypeName("#define LONG_PTR_ERROR (-1L)")]
-        public const int LONG_PTR_ERROR = (-1);
-
-        [NativeTypeName("#define ULONG_PTR_ERROR 0xffffffffUL")]
-        public const uint ULONG_PTR_ERROR = 0xffffffffU;
-
-        [NativeTypeName("#define DWORD_PTR_ERROR 0xffffffffUL")]
-        public const uint DWORD_PTR_ERROR = 0xffffffffU;
-
-        [NativeTypeName("#define PTRDIFF_T_ERROR (-1)")]
-        public const int PTRDIFF_T_ERROR = (-1);
-
-        [NativeTypeName("#define SIZE_T_ERROR 0xffffffff")]
-        public const uint SIZE_T_ERROR = 0xffffffff;
-
-        [NativeTypeName("#define SSIZE_T_ERROR (-1L)")]
-        public const int SSIZE_T_ERROR = (-1);
-
-        [NativeTypeName("#define _SIZE_T_ERROR 0xffffffffUL")]
-        public const uint _SIZE_T_ERROR = 0xffffffffU;
     }
 }

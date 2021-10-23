@@ -168,7 +168,7 @@ namespace TerraFX.Interop
 
         [DllImport("comctl32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("HWND")]
-        public static extern IntPtr CreateToolbarEx([NativeTypeName("HWND")] IntPtr hwnd, [NativeTypeName("DWORD")] uint ws, [NativeTypeName("UINT")] uint wID, int nBitmaps, [NativeTypeName("HINSTANCE")] IntPtr hBMInst, [NativeTypeName("UINT_PTR")] nuint wBMID, [NativeTypeName("LPCTBBUTTON")] TBBUTTON* lpButtons, int iNumButtons, int dxButton, int dyButton, int dxBitmap, int dyBitmap, [NativeTypeName("UINT")] uint uStructSize);
+        public static extern IntPtr CreateToolbarEx([NativeTypeName("HWND")] IntPtr hwnd, [NativeTypeName("DWORD")] uint ws, [NativeTypeName("UINT")] uint wID, int nBitmaps, [NativeTypeName("HINSTANCE")] IntPtr hBMInst, [NativeTypeName("UINT_PTR")] nuint wBMID, [NativeTypeName("LPCTBBUTTON")] void* lpButtons, int iNumButtons, int dxButton, int dyButton, int dxBitmap, int dyBitmap, [NativeTypeName("UINT")] uint uStructSize);
 
         [DllImport("comctl32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("HBITMAP")]
@@ -6679,9 +6679,6 @@ namespace TerraFX.Interop
 
         [NativeTypeName("#define FSB_REGULAR_MODE 0")]
         public const int FSB_REGULAR_MODE = 0;
-
-        [NativeTypeName("#define FlatSB_GetScrollPropPtr FlatSB_GetScrollProp")]
-        public static delegate*<IntPtr, int, int*, int> FlatSB_GetScrollPropPtr => &FlatSB_GetScrollProp;
 
         [NativeTypeName("#define FlatSB_SetScrollPropPtr FlatSB_SetScrollProp")]
         public static delegate*<IntPtr, uint, nint, int, int> FlatSB_SetScrollPropPtr => &FlatSB_SetScrollProp;

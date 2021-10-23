@@ -27,7 +27,6 @@ FlushProcessWriteBuffers=kernel32
 GetCurrentProcess=kernel32
 GetCurrentProcessId=kernel32
 GetCurrentProcessorNumber=kernel32
-RtlGetCurrentProcessorNumber=kernel32
 GetCurrentProcessorNumberEx=kernel32
 GetCurrentThread=kernel32
 GetCurrentThreadId=kernel32

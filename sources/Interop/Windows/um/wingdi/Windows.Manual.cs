@@ -3,12 +3,15 @@
 // Ported from um/wingdi.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System;
 using System.Runtime.CompilerServices;
 
 namespace TerraFX.Interop
 {
     public static unsafe partial class Windows
     {
+        public static IntPtr HGDI_ERROR => unchecked(((nint)((nint)(0xFFFFFFFF))));
+
         public const int GDIREGISTERDDRAWPACKETVERSION = 0x1;
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

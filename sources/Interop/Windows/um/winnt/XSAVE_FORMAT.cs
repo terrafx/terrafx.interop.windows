@@ -53,11 +53,11 @@ namespace TerraFX.Interop
         [NativeTypeName("M128A [8]")]
         public _FloatRegisters_e__FixedBuffer FloatRegisters;
 
-        [NativeTypeName("M128A [8]")]
+        [NativeTypeName("M128A [16]")]
         public _XmmRegisters_e__FixedBuffer XmmRegisters;
 
-        [NativeTypeName("BYTE [224]")]
-        public fixed byte Reserved4[224];
+        [NativeTypeName("BYTE [96]")]
+        public fixed byte Reserved4[96];
 
         public partial struct _FloatRegisters_e__FixedBuffer
         {
@@ -93,6 +93,14 @@ namespace TerraFX.Interop
             public M128A e5;
             public M128A e6;
             public M128A e7;
+            public M128A e8;
+            public M128A e9;
+            public M128A e10;
+            public M128A e11;
+            public M128A e12;
+            public M128A e13;
+            public M128A e14;
+            public M128A e15;
 
             public ref M128A this[int index]
             {
@@ -104,7 +112,7 @@ namespace TerraFX.Interop
             }
 
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public Span<M128A> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 8);
+            public Span<M128A> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 16);
         }
     }
 }

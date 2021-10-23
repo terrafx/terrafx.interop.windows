@@ -16,7 +16,7 @@ namespace TerraFX.Interop
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int GetQueuedCompletionStatus([NativeTypeName("HANDLE")] IntPtr CompletionPort, [NativeTypeName("LPDWORD")] uint* lpNumberOfBytesTransferred, [NativeTypeName("PULONG_PTR")] uint* lpCompletionKey, [NativeTypeName("LPOVERLAPPED *")] OVERLAPPED** lpOverlapped, [NativeTypeName("DWORD")] uint dwMilliseconds);
+        public static extern int GetQueuedCompletionStatus([NativeTypeName("HANDLE")] IntPtr CompletionPort, [NativeTypeName("LPDWORD")] uint* lpNumberOfBytesTransferred, [NativeTypeName("PULONG_PTR")] nuint* lpCompletionKey, [NativeTypeName("LPOVERLAPPED *")] OVERLAPPED** lpOverlapped, [NativeTypeName("DWORD")] uint dwMilliseconds);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]

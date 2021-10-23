@@ -1335,7 +1335,7 @@ namespace TerraFX.Interop
 
         [DllImport("opengl32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("PROC")]
-        public static extern delegate* unmanaged<int> wglGetProcAddress([NativeTypeName("LPCSTR")] sbyte* param0);
+        public static extern IntPtr wglGetProcAddress([NativeTypeName("LPCSTR")] sbyte* param0);
 
         [DllImport("opengl32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
@@ -1491,9 +1491,6 @@ namespace TerraFX.Interop
 
         [NativeTypeName("#define GDI_ERROR (0xFFFFFFFFL)")]
         public const uint GDI_ERROR = (0xFFFFFFFF);
-
-        [NativeTypeName("#define HGDI_ERROR (LongToHandle(0xFFFFFFFFL))")]
-        public static IntPtr HGDI_ERROR => unchecked(((nint)((nint)(0xFFFFFFFF))));
 
         [NativeTypeName("#define ERROR 0")]
         public const int ERROR = 0;

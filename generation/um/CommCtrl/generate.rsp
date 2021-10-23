@@ -66,6 +66,7 @@ Edit_SetZoom
 Edit_ShowBalloonTip
 Edit_TakeFocus
 FIRST_IPADDRESS
+FlatSB_GetScrollPropPtr
 FORWARD_WM_NOTIFY
 FOURTH_IPADDRESS
 HANDLE_WM_NOTIFY
@@ -344,6 +345,10 @@ TabCtrl_SetMinTabWidth
 TabCtrl_SetPadding
 TabCtrl_SetToolTips
 TabCtrl_SetUnicodeFormat
+tagNMTBRESTORE
+tagNMTBSAVE
+tagNMTOOLBARA
+tagNMTOOLBARW
 THIRD_IPADDRESS
 TreeView_CreateDragImage
 TreeView_DeleteAllItems
@@ -425,6 +430,7 @@ TTTOOLINFO_V1_SIZE
 TVINSERTSTRUCTA_V1_SIZE
 TVINSERTSTRUCTW_V1_SIZE
 TVINSERTSTRUCT_V1_SIZE
+_TBBUTTON
 --file
 um-CommCtrl.h
 --output
@@ -527,3 +533,5 @@ CreateStatusWindow
 CreateStatusWindowA
 CreateStatusWindowW
 CreateToolbarEx
+--with-type
+L_MAX_URL_LENGTH=uint
