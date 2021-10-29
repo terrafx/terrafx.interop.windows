@@ -11,12 +11,8 @@
   -->
 
   <PropertyGroup>
-    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileDirectory)..\Directory.Build.props</MSBuildAllProjects>
-  </PropertyGroup>
-
-  <PropertyGroup>
     <IsPackable>false</IsPackable>
-    <NoWarn>$(NoWarn);CS1591</NoWarn>
+    <NoWarn>$(NoWarn);1591</NoWarn>
     <OutputType>Exe</OutputType>
     <TerraFXProjectCategory>samples</TerraFXProjectCategory>
   </PropertyGroup>
