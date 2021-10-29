@@ -12,7 +12,6 @@
 
   <PropertyGroup>
     <EmbedUntrackedSources>true</EmbedUntrackedSources>
-    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileDirectory)..\Directory.Build.props</MSBuildAllProjects>
     <TerraFXProjectCategory>sources</TerraFXProjectCategory>
   </PropertyGroup>
 
