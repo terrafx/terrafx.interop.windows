@@ -1,0 +1,12 @@
+@../../settings.rsp
+@../../remap.rsp
+--include-directory
+C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/DIA SDK/include
+--file
+other-dia2.h
+--output
+../../../sources/Interop/Windows/other/dia2
+--test-output
+../../../tests/Interop/Windows/other/dia2
+--traverse
+C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/DIA SDK/include/dia2.h
