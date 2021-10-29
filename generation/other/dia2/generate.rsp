@@ -1,5 +1,8 @@
 @../../settings.rsp
 @../../remap.rsp
+--exclude
+__MIDL___MIDL_itf_dia2_0000_0000_0001
+__MIDL___MIDL_itf_dia2_0000_0033_0001
 --include-directory
 C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/DIA SDK/include
 --file
