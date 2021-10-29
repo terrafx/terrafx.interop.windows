@@ -5,7 +5,7 @@
 
 namespace TerraFX.Interop
 {
-    public partial struct __MIDL___MIDL_itf_dia2_0000_0042_0001
+    public partial struct FPODATA
     {
         [NativeTypeName("DWORD")]
         public uint ulOffStart;
