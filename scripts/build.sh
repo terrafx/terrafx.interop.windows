@@ -204,6 +204,7 @@ if [[ ! -z "$architecture" ]]; then
   DotNetInstallDirectory="$ArtifactsDir/dotnet"
   CreateDirectory "$DotNetInstallDirectory"
 
+  . "$DotNetInstallScript" --channel 5.0 --version latest --install-dir "$DotNetInstallDirectory" --architecture "$architecture"
   . "$DotNetInstallScript" --channel 6.0 --version latest --install-dir "$DotNetInstallDirectory" --architecture "$architecture"
 
   PATH="$DotNetInstallDirectory:$PATH:"
