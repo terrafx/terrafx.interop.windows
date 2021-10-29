@@ -17,7 +17,7 @@ namespace TerraFX.Interop.UnitTests
         [Test]
         public static void GuidOfTest()
         {
-            Assert.That(typeof(DiaStackWalker).GUID, Is.EqualTo(IID_DiaStackWalker));
+            Assert.That(typeof(DiaStackWalker).GUID, Is.EqualTo(CLSID_DiaStackWalker));
         }
 
         /// <summary>Validates that the <see cref="DiaStackWalker" /> struct is blittable.</summary>

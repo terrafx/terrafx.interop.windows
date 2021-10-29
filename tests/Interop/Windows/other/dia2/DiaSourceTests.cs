@@ -17,7 +17,7 @@ namespace TerraFX.Interop.UnitTests
         [Test]
         public static void GuidOfTest()
         {
-            Assert.That(typeof(DiaSource).GUID, Is.EqualTo(IID_DiaSource));
+            Assert.That(typeof(DiaSource).GUID, Is.EqualTo(CLSID_DiaSource));
         }
 
         /// <summary>Validates that the <see cref="DiaSource" /> struct is blittable.</summary>

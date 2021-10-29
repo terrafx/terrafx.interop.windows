@@ -105,3 +105,6 @@ IID__ISpeechVoiceEvents=@DIID__ISpeechVoiceEvents
 _IID_IXmlReader=@IID_IXmlReader
 _IID_IXmlWriter=@IID_IXmlWriter
 _IID_IXmlResolver=@IID_IXmlResolver
+IID_DiaSource=@CLSID_DiaSource
+IID_DiaSourceAlt=@CLSID_DiaSourceAlt
+IID_DiaStackWalker=@CLSID_DiaStackWalker

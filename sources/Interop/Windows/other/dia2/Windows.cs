@@ -913,7 +913,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid IID_DiaSource
+        public static ref readonly Guid CLSID_DiaSource
         {
             get
             {
@@ -936,7 +936,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid IID_DiaSourceAlt
+        public static ref readonly Guid CLSID_DiaSourceAlt
         {
             get
             {
@@ -959,7 +959,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ref readonly Guid IID_DiaStackWalker
+        public static ref readonly Guid CLSID_DiaStackWalker
         {
             get
             {
