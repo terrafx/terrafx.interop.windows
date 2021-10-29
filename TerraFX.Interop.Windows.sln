@@ -2603,6 +2603,27 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "immdev", "immdev", "{937411
 		generation\um\immdev\um-immdev.h = generation\um\immdev\um-immdev.h
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "dia2", "dia2", "{E5B09FE0-70D7-4D5A-BC32-AC182D00AE9D}"
+	ProjectSection(SolutionItems) = preProject
+		generation\other\dia2\generate.rsp = generation\other\dia2\generate.rsp
+		generation\other\dia2\header.txt = generation\other\dia2\header.txt
+		generation\other\dia2\other-dia2.h = generation\other\dia2\other-dia2.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "diacreate", "diacreate", "{984B1C7B-852D-4566-B540-BE52618B4E01}"
+	ProjectSection(SolutionItems) = preProject
+		generation\other\diacreate\generate.rsp = generation\other\diacreate\generate.rsp
+		generation\other\diacreate\header.txt = generation\other\diacreate\header.txt
+		generation\other\diacreate\other-diacreate.h = generation\other\diacreate\other-diacreate.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "cvconst", "cvconst", "{546D542D-BEA7-4791-A9FB-44A686BA10BE}"
+	ProjectSection(SolutionItems) = preProject
+		generation\other\cvconst\generate.rsp = generation\other\cvconst\generate.rsp
+		generation\other\cvconst\header.txt = generation\other\cvconst\header.txt
+		generation\other\cvconst\other-cvconst.h = generation\other\cvconst\other-cvconst.h
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -3003,6 +3024,9 @@ Global
 		{403EE9A9-8134-41D3-BF67-9B04CD4C2AA4} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{7A2F032C-D128-438D-9309-8345ABF0C5B9} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{93741128-F4A9-4C99-B4A7-675704FA2ECB} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{E5B09FE0-70D7-4D5A-BC32-AC182D00AE9D} = {B09A774C-A2CD-4E0D-8DE8-AC48459E1699}
+		{984B1C7B-852D-4566-B540-BE52618B4E01} = {B09A774C-A2CD-4E0D-8DE8-AC48459E1699}
+		{546D542D-BEA7-4791-A9FB-44A686BA10BE} = {B09A774C-A2CD-4E0D-8DE8-AC48459E1699}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2FE36DF8-2D9C-4F20-8787-45DC74B57461}

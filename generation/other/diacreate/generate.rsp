@@ -1,0 +1,15 @@
+@../../settings.rsp
+@../../remap.rsp
+--include-directory
+C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/DIA SDK/include
+--file
+other-diacreate.h
+--output
+../../../sources/Interop/Windows/other/diacreate
+--test-output
+../../../tests/Interop/Windows/other/diacreate
+--traverse
+C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/DIA SDK/include/diacreate.h
+--with-librarypath
+NoRegCoCreate=msdia140
+NoOleCoCreate=msdia140
