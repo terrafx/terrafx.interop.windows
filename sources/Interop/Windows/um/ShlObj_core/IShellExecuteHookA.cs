@@ -43,9 +43,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
         [return: NativeTypeName("HRESULT")]
-        public int Execute([NativeTypeName("LPSHELLEXECUTEINFOA")] SHELLEXECUTEINFOA* pei)
+        public int Execute([NativeTypeName("LPSHELLEXECUTEINFOA")] void* pei)
         {
-            return ((delegate* unmanaged<IShellExecuteHookA*, SHELLEXECUTEINFOA*, int>)(lpVtbl[3]))((IShellExecuteHookA*)Unsafe.AsPointer(ref this), pei);
+            return ((delegate* unmanaged<IShellExecuteHookA*, void*, int>)(lpVtbl[3]))((IShellExecuteHookA*)Unsafe.AsPointer(ref this), pei);
         }
     }
 }
