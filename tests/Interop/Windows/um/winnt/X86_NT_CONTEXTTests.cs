@@ -29,7 +29,7 @@ namespace TerraFX.Interop.UnitTests
         [Test]
         public static void SizeOfTest()
         {
-            Assert.That(sizeof(X86_NT_CONTEXT), Is.EqualTo(1232));
+            Assert.That(sizeof(X86_NT_CONTEXT), Is.EqualTo(716));
         }
     }
 }

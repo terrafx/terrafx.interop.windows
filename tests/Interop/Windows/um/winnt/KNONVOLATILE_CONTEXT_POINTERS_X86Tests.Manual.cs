@@ -30,14 +30,7 @@ namespace TerraFX.Interop.UnitTests
         [Test]
         public static void SizeOfTest()
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(KNONVOLATILE_CONTEXT_POINTERS_X86), Is.EqualTo(256));
-            }
-            else
-            {
-                Assert.That(sizeof(KNONVOLATILE_CONTEXT_POINTERS_X86), Is.EqualTo(128));
-            }
+            Assert.That(sizeof(KNONVOLATILE_CONTEXT_POINTERS_X86), Is.EqualTo(4));
         }
     }
 }

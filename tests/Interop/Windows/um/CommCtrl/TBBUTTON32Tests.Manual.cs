@@ -36,7 +36,7 @@ namespace TerraFX.Interop.UnitTests
             }
             else
             {
-                Assert.That(sizeof(TBBUTTON32), Is.EqualTo(24));
+                Assert.That(sizeof(TBBUTTON32), Is.EqualTo(20));
             }
         }
     }

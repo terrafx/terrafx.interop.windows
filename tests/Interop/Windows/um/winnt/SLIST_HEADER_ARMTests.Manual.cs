@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using NUnit.Framework;
+using System;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
@@ -29,7 +30,14 @@ namespace TerraFX.Interop.UnitTests
         [Test]
         public static void SizeOfTest()
         {
-            Assert.That(sizeof(SLIST_HEADER_ARM), Is.EqualTo(16));
+            if (Environment.Is64BitProcess)
+            {
+                Assert.That(sizeof(SRWLOCK), Is.EqualTo(8));
+            }
+            else
+            {
+                Assert.That(sizeof(SRWLOCK), Is.EqualTo(4));
+            }
         }
     }
 }

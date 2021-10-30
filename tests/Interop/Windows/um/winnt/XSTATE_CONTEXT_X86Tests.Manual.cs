@@ -32,11 +32,11 @@ namespace TerraFX.Interop.UnitTests
         {
             if (Environment.Is64BitProcess)
             {
-                Assert.That(sizeof(XSTATE_CONTEXT_X86), Is.EqualTo(32));
+                Assert.That(sizeof(XSTATE_CONTEXT_X86), Is.EqualTo(48));
             }
             else
             {
-                Assert.That(sizeof(XSTATE_CONTEXT_X86), Is.EqualTo(24));
+                Assert.That(sizeof(XSTATE_CONTEXT_X86), Is.EqualTo(32));
             }
         }
     }

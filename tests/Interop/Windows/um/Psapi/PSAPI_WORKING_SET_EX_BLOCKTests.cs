@@ -32,11 +32,11 @@ namespace TerraFX.Interop.UnitTests
         {
             if (Environment.Is64BitProcess)
             {
-                Assert.That(sizeof(PSAPI_WORKING_SET_EX_BLOCK), Is.EqualTo(16));
+                Assert.That(sizeof(PSAPI_WORKING_SET_EX_BLOCK), Is.EqualTo(8));
             }
             else
             {
-                Assert.That(sizeof(PSAPI_WORKING_SET_EX_BLOCK), Is.EqualTo(8));
+                Assert.That(sizeof(PSAPI_WORKING_SET_EX_BLOCK), Is.EqualTo(4));
             }
         }
     }

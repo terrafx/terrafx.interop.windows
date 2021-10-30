@@ -32,7 +32,7 @@ namespace TerraFX.Interop.UnitTests
         {
             if (Environment.Is64BitProcess)
             {
-                Assert.That(sizeof(HIDP_EXTENDED_ATTRIBUTES), Is.EqualTo(24));
+                Assert.That(sizeof(HIDP_EXTENDED_ATTRIBUTES), Is.EqualTo(16));
             }
             else
             {

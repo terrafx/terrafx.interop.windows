@@ -36,7 +36,7 @@ namespace TerraFX.Interop.UnitTests
             }
             else
             {
-                Assert.That(sizeof(NMTBRESTORE32), Is.EqualTo(60));
+                Assert.That(sizeof(NMTBRESTORE32), Is.EqualTo(56));
             }
         }
     }
