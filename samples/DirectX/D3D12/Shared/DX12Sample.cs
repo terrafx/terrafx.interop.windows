@@ -732,16 +732,17 @@ namespace TerraFX.Samples.DirectX.D3D12
             // Schedule a Signal command in the queue.
             ThrowIfFailed(nameof(ID3D12CommandQueue.Signal), CommandQueue->Signal(Fence, FenceValue));
 
-            if (moveToNextFrame)
-            {
-                FrameIndex = SwapChain->GetCurrentBackBufferIndex();
-            }
 
-            if (!moveToNextFrame || (Fence->GetCompletedValue() < FenceValue))
+            if (Fence->GetCompletedValue() < FenceValue)
             {
                 // Wait until the fence has been crossed.
                 ThrowIfFailed(nameof(ID3D12Fence.SetEventOnCompletion), Fence->SetEventOnCompletion(FenceValue, FenceEvent));
                 _ = WaitForSingleObjectEx(FenceEvent, INFINITE, FALSE);
+            }
+
+            if (moveToNextFrame)
+            {
+                FrameIndex = SwapChain->GetCurrentBackBufferIndex();
             }
 
             // Increment the fence value for the current frame.
