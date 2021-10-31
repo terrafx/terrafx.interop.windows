@@ -21,10 +21,7 @@ namespace TerraFX.Interop
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
-                fixed (_Anonymous_e__Union* pField = &Anonymous)
-                {
-                    return ref pField->pKeyTrans;
-                }
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.pKeyTrans;
             }
         }
 
@@ -33,10 +30,7 @@ namespace TerraFX.Interop
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
-                fixed (_Anonymous_e__Union* pField = &Anonymous)
-                {
-                    return ref pField->pKeyAgree;
-                }
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.pKeyAgree;
             }
         }
 
@@ -45,10 +39,7 @@ namespace TerraFX.Interop
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
-                fixed (_Anonymous_e__Union* pField = &Anonymous)
-                {
-                    return ref pField->pMailList;
-                }
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.pMailList;
             }
         }
 

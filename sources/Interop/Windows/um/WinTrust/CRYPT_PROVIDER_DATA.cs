@@ -106,10 +106,7 @@ namespace TerraFX.Interop
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
-                fixed (_Anonymous_e__Union* pField = &Anonymous)
-                {
-                    return ref pField->pPDSip;
-                }
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.pPDSip;
             }
         }
 

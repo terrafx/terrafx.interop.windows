@@ -80,10 +80,7 @@ namespace TerraFX.Interop
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
-                fixed (_Anonymous1_e__Union* pField = &Anonymous1)
-                {
-                    return ref pField->hMainIcon;
-                }
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous1.hMainIcon;
             }
         }
 
@@ -92,10 +89,7 @@ namespace TerraFX.Interop
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
-                fixed (_Anonymous1_e__Union* pField = &Anonymous1)
-                {
-                    return ref pField->pszMainIcon;
-                }
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous1.pszMainIcon;
             }
         }
 
@@ -104,10 +98,7 @@ namespace TerraFX.Interop
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
-                fixed (_Anonymous2_e__Union* pField = &Anonymous2)
-                {
-                    return ref pField->hFooterIcon;
-                }
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous2.hFooterIcon;
             }
         }
 
@@ -116,10 +107,7 @@ namespace TerraFX.Interop
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
-                fixed (_Anonymous2_e__Union* pField = &Anonymous2)
-                {
-                    return ref pField->pszFooterIcon;
-                }
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous2.pszFooterIcon;
             }
         }
 

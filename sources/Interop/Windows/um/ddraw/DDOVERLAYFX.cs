@@ -58,10 +58,7 @@ namespace TerraFX.Interop
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
-                fixed (_Anonymous1_e__Union* pField = &Anonymous1)
-                {
-                    return ref pField->lpDDSAlphaDest;
-                }
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous1.lpDDSAlphaDest;
             }
         }
 
@@ -79,10 +76,7 @@ namespace TerraFX.Interop
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
-                fixed (_Anonymous2_e__Union* pField = &Anonymous2)
-                {
-                    return ref pField->lpDDSAlphaSrc;
-                }
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous2.lpDDSAlphaSrc;
             }
         }
 

@@ -21,10 +21,7 @@ namespace TerraFX.Interop
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
-                fixed (_Anonymous1_e__Union* pField = &Anonymous1)
-                {
-                    return ref pField->hKeyBase;
-                }
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous1.hKeyBase;
             }
         }
 
@@ -33,10 +30,7 @@ namespace TerraFX.Interop
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
-                fixed (_Anonymous1_e__Union* pField = &Anonymous1)
-                {
-                    return ref pField->pvBase;
-                }
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous1.pvBase;
             }
         }
 
@@ -45,10 +39,7 @@ namespace TerraFX.Interop
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
-                fixed (_Anonymous2_e__Union* pField = &Anonymous2)
-                {
-                    return ref pField->pvSystemStore;
-                }
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous2.pvSystemStore;
             }
         }
 
@@ -57,10 +48,7 @@ namespace TerraFX.Interop
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
-                fixed (_Anonymous2_e__Union* pField = &Anonymous2)
-                {
-                    return ref pField->pszSystemStore;
-                }
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous2.pszSystemStore;
             }
         }
 
@@ -69,10 +57,7 @@ namespace TerraFX.Interop
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
-                fixed (_Anonymous2_e__Union* pField = &Anonymous2)
-                {
-                    return ref pField->pwszSystemStore;
-                }
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous2.pwszSystemStore;
             }
         }
 

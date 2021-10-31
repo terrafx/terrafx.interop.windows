@@ -82,7 +82,7 @@ namespace TerraFX.Interop
         // The following isn't exposed as there isn't a good way to
         // convert from ref SP_DEVINFO_DATA32* to ref SP_DEVINFO_DATA*
         //
-        //[NativeTypeName("PSP_DEVINFO_DATA")]
-        //public ref SP_DEVINFO_DATA* DeviceInfoData;
+        // [NativeTypeName("PSP_DEVINFO_DATA")]
+        // public ref SP_DEVINFO_DATA* DeviceInfoData;
     }
 }
