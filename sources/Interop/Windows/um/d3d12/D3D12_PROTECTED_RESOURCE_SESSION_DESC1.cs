@@ -9,12 +9,10 @@ namespace TerraFX.Interop
 {
     public partial struct D3D12_PROTECTED_RESOURCE_SESSION_DESC1
     {
-        [NativeTypeName("UINT")]
         public uint NodeMask;
 
         public D3D12_PROTECTED_RESOURCE_SESSION_FLAGS Flags;
 
-        [NativeTypeName("GUID")]
         public Guid ProtectionType;
     }
 }

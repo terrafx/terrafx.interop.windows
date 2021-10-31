@@ -26,7 +26,6 @@ namespace TerraFX.Interop
         [NativeTypeName("DWM_FRAME_COUNT")]
         public ulong cRefresh;
 
-        [NativeTypeName("UINT")]
         public uint cDXRefresh;
 
         [NativeTypeName("QPC_TIME")]
@@ -35,7 +34,6 @@ namespace TerraFX.Interop
         [NativeTypeName("DWM_FRAME_COUNT")]
         public ulong cFrame;
 
-        [NativeTypeName("UINT")]
         public uint cDXPresent;
 
         [NativeTypeName("DWM_FRAME_COUNT")]
@@ -44,25 +42,21 @@ namespace TerraFX.Interop
         [NativeTypeName("DWM_FRAME_COUNT")]
         public ulong cFrameSubmitted;
 
-        [NativeTypeName("UINT")]
         public uint cDXPresentSubmitted;
 
         [NativeTypeName("DWM_FRAME_COUNT")]
         public ulong cFrameConfirmed;
 
-        [NativeTypeName("UINT")]
         public uint cDXPresentConfirmed;
 
         [NativeTypeName("DWM_FRAME_COUNT")]
         public ulong cRefreshConfirmed;
 
-        [NativeTypeName("UINT")]
         public uint cDXRefreshConfirmed;
 
         [NativeTypeName("DWM_FRAME_COUNT")]
         public ulong cFramesLate;
 
-        [NativeTypeName("UINT")]
         public uint cFramesOutstanding;
 
         [NativeTypeName("DWM_FRAME_COUNT")]

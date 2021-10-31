@@ -7,15 +7,12 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct TVITEMEXA
     {
-        [NativeTypeName("UINT")]
         public uint mask;
 
         public HTREEITEM hItem;
 
-        [NativeTypeName("UINT")]
         public uint state;
 
-        [NativeTypeName("UINT")]
         public uint stateMask;
 
         [NativeTypeName("LPSTR")]
@@ -34,7 +31,6 @@ namespace TerraFX.Interop
 
         public int iIntegral;
 
-        [NativeTypeName("UINT")]
         public uint uStateEx;
 
         public HWND hwnd;

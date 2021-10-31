@@ -10,7 +10,6 @@ namespace TerraFX.Interop
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe partial struct FILE_ATTRIBUTES_ARRAY
     {
-        [NativeTypeName("UINT")]
         public uint cItems;
 
         [NativeTypeName("DWORD")]

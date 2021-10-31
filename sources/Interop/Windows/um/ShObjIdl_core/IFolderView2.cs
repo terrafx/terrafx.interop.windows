@@ -41,14 +41,14 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        public HRESULT GetCurrentViewMode([NativeTypeName("UINT *")] uint* pViewMode)
+        public HRESULT GetCurrentViewMode(uint* pViewMode)
         {
             return ((delegate* unmanaged<IFolderView2*, uint*, int>)(lpVtbl[3]))((IFolderView2*)Unsafe.AsPointer(ref this), pViewMode);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT SetCurrentViewMode([NativeTypeName("UINT")] uint ViewMode)
+        public HRESULT SetCurrentViewMode(uint ViewMode)
         {
             return ((delegate* unmanaged<IFolderView2*, uint, int>)(lpVtbl[4]))((IFolderView2*)Unsafe.AsPointer(ref this), ViewMode);
         }
@@ -69,14 +69,14 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        public HRESULT ItemCount([NativeTypeName("UINT")] uint uFlags, int* pcItems)
+        public HRESULT ItemCount(uint uFlags, int* pcItems)
         {
             return ((delegate* unmanaged<IFolderView2*, uint, int*, int>)(lpVtbl[7]))((IFolderView2*)Unsafe.AsPointer(ref this), uFlags, pcItems);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        public HRESULT Items([NativeTypeName("UINT")] uint uFlags, [NativeTypeName("const IID &")] Guid* riid, void** ppv)
+        public HRESULT Items(uint uFlags, [NativeTypeName("const IID &")] Guid* riid, void** ppv)
         {
             return ((delegate* unmanaged<IFolderView2*, uint, Guid*, void**, int>)(lpVtbl[8]))((IFolderView2*)Unsafe.AsPointer(ref this), uFlags, riid, ppv);
         }
@@ -132,7 +132,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(16)]
-        public HRESULT SelectAndPositionItems([NativeTypeName("UINT")] uint cidl, [NativeTypeName("LPCITEMIDLIST *")] ITEMIDLIST** apidl, POINT* apt, [NativeTypeName("DWORD")] uint dwFlags)
+        public HRESULT SelectAndPositionItems(uint cidl, [NativeTypeName("LPCITEMIDLIST *")] ITEMIDLIST** apidl, POINT* apt, [NativeTypeName("DWORD")] uint dwFlags)
         {
             return ((delegate* unmanaged<IFolderView2*, uint, ITEMIDLIST**, POINT*, uint, int>)(lpVtbl[16]))((IFolderView2*)Unsafe.AsPointer(ref this), cidl, apidl, apt, dwFlags);
         }
@@ -279,14 +279,14 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(37)]
-        public HRESULT SetGroupSubsetCount([NativeTypeName("UINT")] uint cVisibleRows)
+        public HRESULT SetGroupSubsetCount(uint cVisibleRows)
         {
             return ((delegate* unmanaged<IFolderView2*, uint, int>)(lpVtbl[37]))((IFolderView2*)Unsafe.AsPointer(ref this), cVisibleRows);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(38)]
-        public HRESULT GetGroupSubsetCount([NativeTypeName("UINT *")] uint* pcVisibleRows)
+        public HRESULT GetGroupSubsetCount(uint* pcVisibleRows)
         {
             return ((delegate* unmanaged<IFolderView2*, uint*, int>)(lpVtbl[38]))((IFolderView2*)Unsafe.AsPointer(ref this), pcVisibleRows);
         }

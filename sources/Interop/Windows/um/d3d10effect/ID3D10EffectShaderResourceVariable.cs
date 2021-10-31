@@ -36,7 +36,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        public ID3D10EffectVariable* GetAnnotationByIndex([NativeTypeName("UINT")] uint Index)
+        public ID3D10EffectVariable* GetAnnotationByIndex(uint Index)
         {
             return ((delegate* unmanaged<ID3D10EffectShaderResourceVariable*, uint, ID3D10EffectVariable*>)(lpVtbl[3]))((ID3D10EffectShaderResourceVariable*)Unsafe.AsPointer(ref this), Index);
         }
@@ -50,7 +50,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        public ID3D10EffectVariable* GetMemberByIndex([NativeTypeName("UINT")] uint Index)
+        public ID3D10EffectVariable* GetMemberByIndex(uint Index)
         {
             return ((delegate* unmanaged<ID3D10EffectShaderResourceVariable*, uint, ID3D10EffectVariable*>)(lpVtbl[5]))((ID3D10EffectShaderResourceVariable*)Unsafe.AsPointer(ref this), Index);
         }
@@ -71,7 +71,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        public ID3D10EffectVariable* GetElement([NativeTypeName("UINT")] uint Index)
+        public ID3D10EffectVariable* GetElement(uint Index)
         {
             return ((delegate* unmanaged<ID3D10EffectShaderResourceVariable*, uint, ID3D10EffectVariable*>)(lpVtbl[8]))((ID3D10EffectShaderResourceVariable*)Unsafe.AsPointer(ref this), Index);
         }
@@ -176,14 +176,14 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(23)]
-        public HRESULT SetRawValue(void* pData, [NativeTypeName("UINT")] uint Offset, [NativeTypeName("UINT")] uint ByteCount)
+        public HRESULT SetRawValue(void* pData, uint Offset, uint ByteCount)
         {
             return ((delegate* unmanaged<ID3D10EffectShaderResourceVariable*, void*, uint, uint, int>)(lpVtbl[23]))((ID3D10EffectShaderResourceVariable*)Unsafe.AsPointer(ref this), pData, Offset, ByteCount);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(24)]
-        public HRESULT GetRawValue(void* pData, [NativeTypeName("UINT")] uint Offset, [NativeTypeName("UINT")] uint ByteCount)
+        public HRESULT GetRawValue(void* pData, uint Offset, uint ByteCount)
         {
             return ((delegate* unmanaged<ID3D10EffectShaderResourceVariable*, void*, uint, uint, int>)(lpVtbl[24]))((ID3D10EffectShaderResourceVariable*)Unsafe.AsPointer(ref this), pData, Offset, ByteCount);
         }
@@ -204,14 +204,14 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(27)]
-        public HRESULT SetResourceArray(ID3D10ShaderResourceView** ppResources, [NativeTypeName("UINT")] uint Offset, [NativeTypeName("UINT")] uint Count)
+        public HRESULT SetResourceArray(ID3D10ShaderResourceView** ppResources, uint Offset, uint Count)
         {
             return ((delegate* unmanaged<ID3D10EffectShaderResourceVariable*, ID3D10ShaderResourceView**, uint, uint, int>)(lpVtbl[27]))((ID3D10EffectShaderResourceVariable*)Unsafe.AsPointer(ref this), ppResources, Offset, Count);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(28)]
-        public HRESULT GetResourceArray(ID3D10ShaderResourceView** ppResources, [NativeTypeName("UINT")] uint Offset, [NativeTypeName("UINT")] uint Count)
+        public HRESULT GetResourceArray(ID3D10ShaderResourceView** ppResources, uint Offset, uint Count)
         {
             return ((delegate* unmanaged<ID3D10EffectShaderResourceVariable*, ID3D10ShaderResourceView**, uint, uint, int>)(lpVtbl[28]))((ID3D10EffectShaderResourceVariable*)Unsafe.AsPointer(ref this), ppResources, Offset, Count);
         }

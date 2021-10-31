@@ -9,7 +9,6 @@ namespace TerraFX.Interop
     {
         public MFPOLICYMANAGER_ACTION Action;
 
-        [NativeTypeName("BYTE *")]
         public byte* pbTicket;
 
         [NativeTypeName("DWORD")]

@@ -7,19 +7,14 @@ namespace TerraFX.Interop
 {
     public partial struct RAWKEYBOARD
     {
-        [NativeTypeName("USHORT")]
         public ushort MakeCode;
 
-        [NativeTypeName("USHORT")]
         public ushort Flags;
 
-        [NativeTypeName("USHORT")]
         public ushort Reserved;
 
-        [NativeTypeName("USHORT")]
         public ushort VKey;
 
-        [NativeTypeName("UINT")]
         public uint Message;
 
         [NativeTypeName("ULONG")]

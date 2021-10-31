@@ -41,35 +41,35 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        public HRESULT GetDimension([NativeTypeName("UINT *")] uint* dimension)
+        public HRESULT GetDimension(uint* dimension)
         {
             return ((delegate* unmanaged<IUIAnimationTransition2*, uint*, int>)(lpVtbl[3]))((IUIAnimationTransition2*)Unsafe.AsPointer(ref this), dimension);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT SetInitialValue([NativeTypeName("DOUBLE")] double value)
+        public HRESULT SetInitialValue(double value)
         {
             return ((delegate* unmanaged<IUIAnimationTransition2*, double, int>)(lpVtbl[4]))((IUIAnimationTransition2*)Unsafe.AsPointer(ref this), value);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        public HRESULT SetInitialVectorValue([NativeTypeName("const DOUBLE *")] double* value, [NativeTypeName("UINT")] uint cDimension)
+        public HRESULT SetInitialVectorValue([NativeTypeName("const DOUBLE *")] double* value, uint cDimension)
         {
             return ((delegate* unmanaged<IUIAnimationTransition2*, double*, uint, int>)(lpVtbl[5]))((IUIAnimationTransition2*)Unsafe.AsPointer(ref this), value, cDimension);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        public HRESULT SetInitialVelocity([NativeTypeName("DOUBLE")] double velocity)
+        public HRESULT SetInitialVelocity(double velocity)
         {
             return ((delegate* unmanaged<IUIAnimationTransition2*, double, int>)(lpVtbl[6]))((IUIAnimationTransition2*)Unsafe.AsPointer(ref this), velocity);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        public HRESULT SetInitialVectorVelocity([NativeTypeName("const DOUBLE *")] double* velocity, [NativeTypeName("UINT")] uint cDimension)
+        public HRESULT SetInitialVectorVelocity([NativeTypeName("const DOUBLE *")] double* velocity, uint cDimension)
         {
             return ((delegate* unmanaged<IUIAnimationTransition2*, double*, uint, int>)(lpVtbl[7]))((IUIAnimationTransition2*)Unsafe.AsPointer(ref this), velocity, cDimension);
         }

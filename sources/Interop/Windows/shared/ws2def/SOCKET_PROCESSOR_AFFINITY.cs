@@ -9,10 +9,8 @@ namespace TerraFX.Interop
     {
         public PROCESSOR_NUMBER Processor;
 
-        [NativeTypeName("USHORT")]
         public ushort NumaNodeId;
 
-        [NativeTypeName("USHORT")]
         public ushort Reserved;
     }
 }

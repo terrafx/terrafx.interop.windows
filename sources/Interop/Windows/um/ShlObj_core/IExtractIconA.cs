@@ -41,14 +41,14 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        public HRESULT GetIconLocation([NativeTypeName("UINT")] uint uFlags, [NativeTypeName("PSTR")] sbyte* pszIconFile, [NativeTypeName("UINT")] uint cchMax, int* piIndex, [NativeTypeName("UINT *")] uint* pwFlags)
+        public HRESULT GetIconLocation(uint uFlags, [NativeTypeName("PSTR")] sbyte* pszIconFile, uint cchMax, int* piIndex, uint* pwFlags)
         {
             return ((delegate* unmanaged<IExtractIconA*, uint, sbyte*, uint, int*, uint*, int>)(lpVtbl[3]))((IExtractIconA*)Unsafe.AsPointer(ref this), uFlags, pszIconFile, cchMax, piIndex, pwFlags);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT Extract([NativeTypeName("PCSTR")] sbyte* pszFile, [NativeTypeName("UINT")] uint nIconIndex, HICON* phiconLarge, HICON* phiconSmall, [NativeTypeName("UINT")] uint nIconSize)
+        public HRESULT Extract([NativeTypeName("PCSTR")] sbyte* pszFile, uint nIconIndex, HICON* phiconLarge, HICON* phiconSmall, uint nIconSize)
         {
             return ((delegate* unmanaged<IExtractIconA*, sbyte*, uint, HICON*, HICON*, uint, int>)(lpVtbl[4]))((IExtractIconA*)Unsafe.AsPointer(ref this), pszFile, nIconIndex, phiconLarge, phiconSmall, nIconSize);
         }

@@ -10,7 +10,6 @@ namespace TerraFX.Interop
         [NativeTypeName("const D3D12_STATE_SUBOBJECT *")]
         public D3D12_STATE_SUBOBJECT* pSubobjectToAssociate;
 
-        [NativeTypeName("UINT")]
         public uint NumExports;
 
         [NativeTypeName("LPCWSTR *")]

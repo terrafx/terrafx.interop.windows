@@ -13,10 +13,8 @@ namespace TerraFX.Interop
         [NativeTypeName("UINT32")]
         public uint keyIdLength;
 
-        [NativeTypeName("BYTE *")]
         public byte* key;
 
-        [NativeTypeName("BYTE *")]
         public byte* keyId;
     }
 }

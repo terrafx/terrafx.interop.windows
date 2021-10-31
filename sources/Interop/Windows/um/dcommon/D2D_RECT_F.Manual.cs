@@ -27,7 +27,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public D2D_RECT_F([NativeTypeName("FLOAT")] float left = 0.0f, [NativeTypeName("FLOAT")] float top = 0.0f, [NativeTypeName("FLOAT")] float right = 0.0f, [NativeTypeName("FLOAT")] float bottom = 0.0f)
+        public D2D_RECT_F(float left = 0.0f, float top = 0.0f, float right = 0.0f, float bottom = 0.0f)
         {
             this.left = left;
             this.top = top;

@@ -83,7 +83,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        public HRESULT set_imageHeaders([NativeTypeName("DWORD")] uint cbData, [NativeTypeName("BYTE *")] byte* pbData, BOOL originalHeaders)
+        public HRESULT set_imageHeaders([NativeTypeName("DWORD")] uint cbData, byte* pbData, BOOL originalHeaders)
         {
             return ((delegate* unmanaged<IDiaAddressMap*, uint, byte*, BOOL, int>)(lpVtbl[9]))((IDiaAddressMap*)Unsafe.AsPointer(ref this), cbData, pbData, originalHeaders);
         }

@@ -19,7 +19,7 @@ namespace TerraFX.Interop
 
         public byte _bitfield;
 
-        [NativeTypeName("BYTE : 1")]
+        [NativeTypeName("byte : 1")]
         public byte SupportUpgrade
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -35,7 +35,7 @@ namespace TerraFX.Interop
             }
         }
 
-        [NativeTypeName("BYTE : 7")]
+        [NativeTypeName("byte : 7")]
         public byte Reserved0
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -51,13 +51,10 @@ namespace TerraFX.Interop
             }
         }
 
-        [NativeTypeName("BYTE")]
         public byte SlotCount;
 
-        [NativeTypeName("BYTE")]
         public byte ActiveSlot;
 
-        [NativeTypeName("BYTE")]
         public byte PendingActivateSlot;
 
         [NativeTypeName("BOOLEAN")]

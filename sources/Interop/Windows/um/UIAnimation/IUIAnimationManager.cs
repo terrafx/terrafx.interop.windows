@@ -41,7 +41,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        public HRESULT CreateAnimationVariable([NativeTypeName("DOUBLE")] double initialValue, IUIAnimationVariable** variable)
+        public HRESULT CreateAnimationVariable(double initialValue, IUIAnimationVariable** variable)
         {
             return ((delegate* unmanaged<IUIAnimationManager*, double, IUIAnimationVariable**, int>)(lpVtbl[3]))((IUIAnimationManager*)Unsafe.AsPointer(ref this), initialValue, variable);
         }

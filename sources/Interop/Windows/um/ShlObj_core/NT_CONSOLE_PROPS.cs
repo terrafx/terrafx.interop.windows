@@ -32,16 +32,13 @@ namespace TerraFX.Interop
 
         public COORD dwFontSize;
 
-        [NativeTypeName("UINT")]
         public uint uFontFamily;
 
-        [NativeTypeName("UINT")]
         public uint uFontWeight;
 
         [NativeTypeName("WCHAR [32]")]
         public fixed ushort FaceName[32];
 
-        [NativeTypeName("UINT")]
         public uint uCursorSize;
 
         public BOOL bFullScreen;
@@ -52,10 +49,8 @@ namespace TerraFX.Interop
 
         public BOOL bAutoPosition;
 
-        [NativeTypeName("UINT")]
         public uint uHistoryBufferSize;
 
-        [NativeTypeName("UINT")]
         public uint uNumberOfHistoryBuffers;
 
         public BOOL bHistoryNoDup;

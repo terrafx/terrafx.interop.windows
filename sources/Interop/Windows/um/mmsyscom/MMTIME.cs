@@ -10,7 +10,6 @@ namespace TerraFX.Interop
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public partial struct MMTIME
     {
-        [NativeTypeName("UINT")]
         public uint wType;
 
         [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/mmsyscom.h:110:5)")]
@@ -45,22 +44,16 @@ namespace TerraFX.Interop
 
             public unsafe partial struct _smpte_e__Struct
             {
-                [NativeTypeName("BYTE")]
                 public byte hour;
 
-                [NativeTypeName("BYTE")]
                 public byte min;
 
-                [NativeTypeName("BYTE")]
                 public byte sec;
 
-                [NativeTypeName("BYTE")]
                 public byte frame;
 
-                [NativeTypeName("BYTE")]
                 public byte fps;
 
-                [NativeTypeName("BYTE")]
                 public byte dummy;
 
                 [NativeTypeName("BYTE [2]")]

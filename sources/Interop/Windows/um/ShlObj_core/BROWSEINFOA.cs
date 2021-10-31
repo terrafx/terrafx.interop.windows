@@ -18,7 +18,6 @@ namespace TerraFX.Interop
         [NativeTypeName("LPCSTR")]
         public sbyte* lpszTitle;
 
-        [NativeTypeName("UINT")]
         public uint ulFlags;
 
         [NativeTypeName("BFFCALLBACK")]

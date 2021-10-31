@@ -11,34 +11,25 @@ namespace TerraFX.Interop
 {
     public partial struct D3D10_SHADER_DEBUG_INST_INFO
     {
-        [NativeTypeName("UINT")]
         public uint Id;
 
-        [NativeTypeName("UINT")]
         public uint Opcode;
 
-        [NativeTypeName("UINT")]
         public uint uOutputs;
 
         [NativeTypeName("D3D10_SHADER_DEBUG_OUTPUTREG_INFO [2]")]
         public _pOutputs_e__FixedBuffer pOutputs;
 
-        [NativeTypeName("UINT")]
         public uint TokenId;
 
-        [NativeTypeName("UINT")]
         public uint NestingLevel;
 
-        [NativeTypeName("UINT")]
         public uint Scopes;
 
-        [NativeTypeName("UINT")]
         public uint ScopeInfo;
 
-        [NativeTypeName("UINT")]
         public uint AccessedVars;
 
-        [NativeTypeName("UINT")]
         public uint AccessedVarsInfo;
 
         public partial struct _pOutputs_e__FixedBuffer

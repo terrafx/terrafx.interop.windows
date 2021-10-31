@@ -14,14 +14,14 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        public HRESULT SetWinRtInterface([NativeTypeName("GUID")] Guid iid)
+        public HRESULT SetWinRtInterface(Guid iid)
         {
             return ((delegate* unmanaged<IRoSimpleMetaDataBuilder*, Guid, int>)(lpVtbl[0]))((IRoSimpleMetaDataBuilder*)Unsafe.AsPointer(ref this), iid);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(1)]
-        public HRESULT SetDelegate([NativeTypeName("GUID")] Guid iid)
+        public HRESULT SetDelegate(Guid iid)
         {
             return ((delegate* unmanaged<IRoSimpleMetaDataBuilder*, Guid, int>)(lpVtbl[1]))((IRoSimpleMetaDataBuilder*)Unsafe.AsPointer(ref this), iid);
         }
@@ -70,14 +70,14 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        public HRESULT SetParameterizedInterface([NativeTypeName("GUID")] Guid piid, [NativeTypeName("UINT32")] uint numArgs)
+        public HRESULT SetParameterizedInterface(Guid piid, [NativeTypeName("UINT32")] uint numArgs)
         {
             return ((delegate* unmanaged<IRoSimpleMetaDataBuilder*, Guid, uint, int>)(lpVtbl[8]))((IRoSimpleMetaDataBuilder*)Unsafe.AsPointer(ref this), piid, numArgs);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        public HRESULT SetParameterizedDelegate([NativeTypeName("GUID")] Guid piid, [NativeTypeName("UINT32")] uint numArgs)
+        public HRESULT SetParameterizedDelegate(Guid piid, [NativeTypeName("UINT32")] uint numArgs)
         {
             return ((delegate* unmanaged<IRoSimpleMetaDataBuilder*, Guid, uint, int>)(lpVtbl[9]))((IRoSimpleMetaDataBuilder*)Unsafe.AsPointer(ref this), piid, numArgs);
         }

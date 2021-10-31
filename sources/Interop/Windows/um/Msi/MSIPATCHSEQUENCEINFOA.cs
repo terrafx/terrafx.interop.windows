@@ -15,7 +15,6 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint dwOrder;
 
-        [NativeTypeName("UINT")]
         public uint uStatus;
     }
 }

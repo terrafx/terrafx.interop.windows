@@ -23,16 +23,16 @@ namespace TerraFX.Interop
         public static extern int wsprintfW([NativeTypeName("LPWSTR")] ushort* param0, [NativeTypeName("LPCWSTR")] ushort* param1);
 
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
-        public static extern HKL LoadKeyboardLayoutA([NativeTypeName("LPCSTR")] sbyte* pwszKLID, [NativeTypeName("UINT")] uint Flags);
+        public static extern HKL LoadKeyboardLayoutA([NativeTypeName("LPCSTR")] sbyte* pwszKLID, uint Flags);
 
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
-        public static extern HKL LoadKeyboardLayoutW([NativeTypeName("LPCWSTR")] ushort* pwszKLID, [NativeTypeName("UINT")] uint Flags);
+        public static extern HKL LoadKeyboardLayoutW([NativeTypeName("LPCWSTR")] ushort* pwszKLID, uint Flags);
 
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
-        public static extern HKL ActivateKeyboardLayout(HKL hkl, [NativeTypeName("UINT")] uint Flags);
+        public static extern HKL ActivateKeyboardLayout(HKL hkl, uint Flags);
 
         [DllImport("user32", ExactSpelling = true)]
-        public static extern int ToUnicodeEx([NativeTypeName("UINT")] uint wVirtKey, [NativeTypeName("UINT")] uint wScanCode, [NativeTypeName("const BYTE *")] byte* lpKeyState, [NativeTypeName("LPWSTR")] ushort* pwszBuff, int cchBuff, [NativeTypeName("UINT")] uint wFlags, HKL dwhkl);
+        public static extern int ToUnicodeEx(uint wVirtKey, uint wScanCode, [NativeTypeName("const BYTE *")] byte* lpKeyState, [NativeTypeName("LPWSTR")] ushort* pwszBuff, int cchBuff, uint wFlags, HKL dwhkl);
 
         [DllImport("user32", ExactSpelling = true)]
         public static extern BOOL UnloadKeyboardLayout(HKL hkl);
@@ -50,7 +50,7 @@ namespace TerraFX.Interop
         public static extern HKL GetKeyboardLayout([NativeTypeName("DWORD")] uint idThread);
 
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
-        public static extern int GetMouseMovePointsEx([NativeTypeName("UINT")] uint cbSize, [NativeTypeName("LPMOUSEMOVEPOINT")] MOUSEMOVEPOINT* lppt, [NativeTypeName("LPMOUSEMOVEPOINT")] MOUSEMOVEPOINT* lpptBuf, int nBufPoints, [NativeTypeName("DWORD")] uint resolution);
+        public static extern int GetMouseMovePointsEx(uint cbSize, [NativeTypeName("LPMOUSEMOVEPOINT")] MOUSEMOVEPOINT* lppt, [NativeTypeName("LPMOUSEMOVEPOINT")] MOUSEMOVEPOINT* lpptBuf, int nBufPoints, [NativeTypeName("DWORD")] uint resolution);
 
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
         public static extern HDESK CreateDesktopA([NativeTypeName("LPCSTR")] sbyte* lpszDesktop, [NativeTypeName("LPCSTR")] sbyte* lpszDevice, DEVMODEA* pDevmode, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("ACCESS_MASK")] uint dwDesiredAccess, [NativeTypeName("LPSECURITY_ATTRIBUTES")] SECURITY_ATTRIBUTES* lpsa);
@@ -146,33 +146,31 @@ namespace TerraFX.Interop
         public static extern void DisableProcessWindowsGhosting();
 
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("UINT")]
         public static extern uint RegisterWindowMessageA([NativeTypeName("LPCSTR")] sbyte* lpString);
 
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("UINT")]
         public static extern uint RegisterWindowMessageW([NativeTypeName("LPCWSTR")] ushort* lpString);
 
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
         public static extern BOOL TrackMouseEvent([NativeTypeName("LPTRACKMOUSEEVENT")] TRACKMOUSEEVENT* lpEventTrack);
 
         [DllImport("user32", ExactSpelling = true)]
-        public static extern BOOL DrawEdge(HDC hdc, [NativeTypeName("LPRECT")] RECT* qrc, [NativeTypeName("UINT")] uint edge, [NativeTypeName("UINT")] uint grfFlags);
+        public static extern BOOL DrawEdge(HDC hdc, [NativeTypeName("LPRECT")] RECT* qrc, uint edge, uint grfFlags);
 
         [DllImport("user32", ExactSpelling = true)]
-        public static extern BOOL DrawFrameControl(HDC param0, [NativeTypeName("LPRECT")] RECT* param1, [NativeTypeName("UINT")] uint param2, [NativeTypeName("UINT")] uint param3);
+        public static extern BOOL DrawFrameControl(HDC param0, [NativeTypeName("LPRECT")] RECT* param1, uint param2, uint param3);
 
         [DllImport("user32", ExactSpelling = true)]
-        public static extern BOOL DrawCaption(HWND hwnd, HDC hdc, [NativeTypeName("const RECT *")] RECT* lprect, [NativeTypeName("UINT")] uint flags);
+        public static extern BOOL DrawCaption(HWND hwnd, HDC hdc, [NativeTypeName("const RECT *")] RECT* lprect, uint flags);
 
         [DllImport("user32", ExactSpelling = true)]
         public static extern BOOL DrawAnimatedRects(HWND hwnd, int idAni, [NativeTypeName("const RECT *")] RECT* lprcFrom, [NativeTypeName("const RECT *")] RECT* lprcTo);
 
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
-        public static extern BOOL GetMessageA([NativeTypeName("LPMSG")] MSG* lpMsg, HWND hWnd, [NativeTypeName("UINT")] uint wMsgFilterMin, [NativeTypeName("UINT")] uint wMsgFilterMax);
+        public static extern BOOL GetMessageA([NativeTypeName("LPMSG")] MSG* lpMsg, HWND hWnd, uint wMsgFilterMin, uint wMsgFilterMax);
 
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
-        public static extern BOOL GetMessageW([NativeTypeName("LPMSG")] MSG* lpMsg, HWND hWnd, [NativeTypeName("UINT")] uint wMsgFilterMin, [NativeTypeName("UINT")] uint wMsgFilterMax);
+        public static extern BOOL GetMessageW([NativeTypeName("LPMSG")] MSG* lpMsg, HWND hWnd, uint wMsgFilterMin, uint wMsgFilterMax);
 
         [DllImport("user32", ExactSpelling = true)]
         public static extern BOOL TranslateMessage([NativeTypeName("const MSG *")] MSG* lpMsg);
@@ -189,19 +187,19 @@ namespace TerraFX.Interop
         public static extern BOOL SetMessageQueue(int cMessagesMax);
 
         [DllImport("user32", ExactSpelling = true)]
-        public static extern BOOL PeekMessageA([NativeTypeName("LPMSG")] MSG* lpMsg, HWND hWnd, [NativeTypeName("UINT")] uint wMsgFilterMin, [NativeTypeName("UINT")] uint wMsgFilterMax, [NativeTypeName("UINT")] uint wRemoveMsg);
+        public static extern BOOL PeekMessageA([NativeTypeName("LPMSG")] MSG* lpMsg, HWND hWnd, uint wMsgFilterMin, uint wMsgFilterMax, uint wRemoveMsg);
 
         [DllImport("user32", ExactSpelling = true)]
-        public static extern BOOL PeekMessageW([NativeTypeName("LPMSG")] MSG* lpMsg, HWND hWnd, [NativeTypeName("UINT")] uint wMsgFilterMin, [NativeTypeName("UINT")] uint wMsgFilterMax, [NativeTypeName("UINT")] uint wRemoveMsg);
+        public static extern BOOL PeekMessageW([NativeTypeName("LPMSG")] MSG* lpMsg, HWND hWnd, uint wMsgFilterMin, uint wMsgFilterMax, uint wRemoveMsg);
 
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
-        public static extern BOOL RegisterHotKey(HWND hWnd, int id, [NativeTypeName("UINT")] uint fsModifiers, [NativeTypeName("UINT")] uint vk);
+        public static extern BOOL RegisterHotKey(HWND hWnd, int id, uint fsModifiers, uint vk);
 
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
         public static extern BOOL UnregisterHotKey(HWND hWnd, int id);
 
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
-        public static extern BOOL ExitWindowsEx([NativeTypeName("UINT")] uint uFlags, [NativeTypeName("DWORD")] uint dwReason);
+        public static extern BOOL ExitWindowsEx(uint uFlags, [NativeTypeName("DWORD")] uint dwReason);
 
         [DllImport("user32", ExactSpelling = true)]
         public static extern BOOL SwapMouseButton(BOOL fSwap);
@@ -231,47 +229,47 @@ namespace TerraFX.Interop
 
         [DllImport("user32", ExactSpelling = true)]
         [return: NativeTypeName("LRESULT")]
-        public static extern nint SendMessageA(HWND hWnd, [NativeTypeName("UINT")] uint Msg, [NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam);
+        public static extern nint SendMessageA(HWND hWnd, uint Msg, [NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam);
 
         [DllImport("user32", ExactSpelling = true)]
         [return: NativeTypeName("LRESULT")]
-        public static extern nint SendMessageW(HWND hWnd, [NativeTypeName("UINT")] uint Msg, [NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam);
+        public static extern nint SendMessageW(HWND hWnd, uint Msg, [NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam);
 
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("LRESULT")]
-        public static extern nint SendMessageTimeoutA(HWND hWnd, [NativeTypeName("UINT")] uint Msg, [NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam, [NativeTypeName("UINT")] uint fuFlags, [NativeTypeName("UINT")] uint uTimeout, [NativeTypeName("PDWORD_PTR")] nuint* lpdwResult);
+        public static extern nint SendMessageTimeoutA(HWND hWnd, uint Msg, [NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam, uint fuFlags, uint uTimeout, [NativeTypeName("PDWORD_PTR")] nuint* lpdwResult);
 
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("LRESULT")]
-        public static extern nint SendMessageTimeoutW(HWND hWnd, [NativeTypeName("UINT")] uint Msg, [NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam, [NativeTypeName("UINT")] uint fuFlags, [NativeTypeName("UINT")] uint uTimeout, [NativeTypeName("PDWORD_PTR")] nuint* lpdwResult);
+        public static extern nint SendMessageTimeoutW(HWND hWnd, uint Msg, [NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam, uint fuFlags, uint uTimeout, [NativeTypeName("PDWORD_PTR")] nuint* lpdwResult);
 
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
-        public static extern BOOL SendNotifyMessageA(HWND hWnd, [NativeTypeName("UINT")] uint Msg, [NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam);
+        public static extern BOOL SendNotifyMessageA(HWND hWnd, uint Msg, [NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam);
 
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
-        public static extern BOOL SendNotifyMessageW(HWND hWnd, [NativeTypeName("UINT")] uint Msg, [NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam);
+        public static extern BOOL SendNotifyMessageW(HWND hWnd, uint Msg, [NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam);
 
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
-        public static extern BOOL SendMessageCallbackA(HWND hWnd, [NativeTypeName("UINT")] uint Msg, [NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam, [NativeTypeName("SENDASYNCPROC")] delegate* unmanaged<HWND, uint, nuint, nint, void> lpResultCallBack, [NativeTypeName("ULONG_PTR")] nuint dwData);
+        public static extern BOOL SendMessageCallbackA(HWND hWnd, uint Msg, [NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam, [NativeTypeName("SENDASYNCPROC")] delegate* unmanaged<HWND, uint, nuint, nint, void> lpResultCallBack, [NativeTypeName("ULONG_PTR")] nuint dwData);
 
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
-        public static extern BOOL SendMessageCallbackW(HWND hWnd, [NativeTypeName("UINT")] uint Msg, [NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam, [NativeTypeName("SENDASYNCPROC")] delegate* unmanaged<HWND, uint, nuint, nint, void> lpResultCallBack, [NativeTypeName("ULONG_PTR")] nuint dwData);
-
-        [DllImport("user32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("long")]
-        public static extern int BroadcastSystemMessageExA([NativeTypeName("DWORD")] uint flags, [NativeTypeName("LPDWORD")] uint* lpInfo, [NativeTypeName("UINT")] uint Msg, [NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam, [NativeTypeName("PBSMINFO")] BSMINFO* pbsmInfo);
+        public static extern BOOL SendMessageCallbackW(HWND hWnd, uint Msg, [NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam, [NativeTypeName("SENDASYNCPROC")] delegate* unmanaged<HWND, uint, nuint, nint, void> lpResultCallBack, [NativeTypeName("ULONG_PTR")] nuint dwData);
 
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("long")]
-        public static extern int BroadcastSystemMessageExW([NativeTypeName("DWORD")] uint flags, [NativeTypeName("LPDWORD")] uint* lpInfo, [NativeTypeName("UINT")] uint Msg, [NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam, [NativeTypeName("PBSMINFO")] BSMINFO* pbsmInfo);
+        public static extern int BroadcastSystemMessageExA([NativeTypeName("DWORD")] uint flags, [NativeTypeName("LPDWORD")] uint* lpInfo, uint Msg, [NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam, [NativeTypeName("PBSMINFO")] BSMINFO* pbsmInfo);
 
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("long")]
-        public static extern int BroadcastSystemMessageA([NativeTypeName("DWORD")] uint flags, [NativeTypeName("LPDWORD")] uint* lpInfo, [NativeTypeName("UINT")] uint Msg, [NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam);
+        public static extern int BroadcastSystemMessageExW([NativeTypeName("DWORD")] uint flags, [NativeTypeName("LPDWORD")] uint* lpInfo, uint Msg, [NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam, [NativeTypeName("PBSMINFO")] BSMINFO* pbsmInfo);
 
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("long")]
-        public static extern int BroadcastSystemMessageW([NativeTypeName("DWORD")] uint flags, [NativeTypeName("LPDWORD")] uint* lpInfo, [NativeTypeName("UINT")] uint Msg, [NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam);
+        public static extern int BroadcastSystemMessageA([NativeTypeName("DWORD")] uint flags, [NativeTypeName("LPDWORD")] uint* lpInfo, uint Msg, [NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam);
+
+        [DllImport("user32", ExactSpelling = true, SetLastError = true)]
+        [return: NativeTypeName("long")]
+        public static extern int BroadcastSystemMessageW([NativeTypeName("DWORD")] uint flags, [NativeTypeName("LPDWORD")] uint* lpInfo, uint Msg, [NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam);
 
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
         public static extern HDEVNOTIFY RegisterDeviceNotificationA(HANDLE hRecipient, [NativeTypeName("LPVOID")] void* NotificationFilter, [NativeTypeName("DWORD")] uint Flags);
@@ -295,16 +293,16 @@ namespace TerraFX.Interop
         public static extern BOOL UnregisterSuspendResumeNotification(HPOWERNOTIFY Handle);
 
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
-        public static extern BOOL PostMessageA(HWND hWnd, [NativeTypeName("UINT")] uint Msg, [NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam);
+        public static extern BOOL PostMessageA(HWND hWnd, uint Msg, [NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam);
 
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
-        public static extern BOOL PostMessageW(HWND hWnd, [NativeTypeName("UINT")] uint Msg, [NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam);
+        public static extern BOOL PostMessageW(HWND hWnd, uint Msg, [NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam);
 
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
-        public static extern BOOL PostThreadMessageA([NativeTypeName("DWORD")] uint idThread, [NativeTypeName("UINT")] uint Msg, [NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam);
+        public static extern BOOL PostThreadMessageA([NativeTypeName("DWORD")] uint idThread, uint Msg, [NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam);
 
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
-        public static extern BOOL PostThreadMessageW([NativeTypeName("DWORD")] uint idThread, [NativeTypeName("UINT")] uint Msg, [NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam);
+        public static extern BOOL PostThreadMessageW([NativeTypeName("DWORD")] uint idThread, uint Msg, [NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam);
 
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
         public static extern BOOL AttachThreadInput([NativeTypeName("DWORD")] uint idAttach, [NativeTypeName("DWORD")] uint idAttachTo, BOOL fAttach);
@@ -321,22 +319,22 @@ namespace TerraFX.Interop
 
         [DllImport("user32", ExactSpelling = true)]
         [return: NativeTypeName("LRESULT")]
-        public static extern nint DefWindowProcA(HWND hWnd, [NativeTypeName("UINT")] uint Msg, [NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam);
+        public static extern nint DefWindowProcA(HWND hWnd, uint Msg, [NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam);
 
         [DllImport("user32", ExactSpelling = true)]
         [return: NativeTypeName("LRESULT")]
-        public static extern nint DefWindowProcW(HWND hWnd, [NativeTypeName("UINT")] uint Msg, [NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam);
+        public static extern nint DefWindowProcW(HWND hWnd, uint Msg, [NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam);
 
         [DllImport("user32", ExactSpelling = true)]
         public static extern void PostQuitMessage(int nExitCode);
 
         [DllImport("user32", ExactSpelling = true)]
         [return: NativeTypeName("LRESULT")]
-        public static extern nint CallWindowProcA([NativeTypeName("WNDPROC")] delegate* unmanaged<HWND, uint, nuint, nint, nint> lpPrevWndFunc, HWND hWnd, [NativeTypeName("UINT")] uint Msg, [NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam);
+        public static extern nint CallWindowProcA([NativeTypeName("WNDPROC")] delegate* unmanaged<HWND, uint, nuint, nint, nint> lpPrevWndFunc, HWND hWnd, uint Msg, [NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam);
 
         [DllImport("user32", ExactSpelling = true)]
         [return: NativeTypeName("LRESULT")]
-        public static extern nint CallWindowProcW([NativeTypeName("WNDPROC")] delegate* unmanaged<HWND, uint, nuint, nint, nint> lpPrevWndFunc, HWND hWnd, [NativeTypeName("UINT")] uint Msg, [NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam);
+        public static extern nint CallWindowProcW([NativeTypeName("WNDPROC")] delegate* unmanaged<HWND, uint, nuint, nint, nint> lpPrevWndFunc, HWND hWnd, uint Msg, [NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam);
 
         [DllImport("user32", ExactSpelling = true)]
         public static extern BOOL InSendMessage();
@@ -346,11 +344,10 @@ namespace TerraFX.Interop
         public static extern uint InSendMessageEx([NativeTypeName("LPVOID")] void* lpReserved);
 
         [DllImport("user32", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
         public static extern uint GetDoubleClickTime();
 
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
-        public static extern BOOL SetDoubleClickTime([NativeTypeName("UINT")] uint param0);
+        public static extern BOOL SetDoubleClickTime(uint param0);
 
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("ATOM")]
@@ -417,13 +414,13 @@ namespace TerraFX.Interop
         public static extern BOOL UpdateLayeredWindowIndirect(HWND hWnd, [NativeTypeName("const UPDATELAYEREDWINDOWINFO *")] UPDATELAYEREDWINDOWINFO* pULWInfo);
 
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
-        public static extern BOOL GetLayeredWindowAttributes(HWND hwnd, [NativeTypeName("COLORREF *")] uint* pcrKey, [NativeTypeName("BYTE *")] byte* pbAlpha, [NativeTypeName("DWORD *")] uint* pdwFlags);
+        public static extern BOOL GetLayeredWindowAttributes(HWND hwnd, [NativeTypeName("COLORREF *")] uint* pcrKey, byte* pbAlpha, [NativeTypeName("DWORD *")] uint* pdwFlags);
 
         [DllImport("user32", ExactSpelling = true)]
-        public static extern BOOL PrintWindow(HWND hwnd, HDC hdcBlt, [NativeTypeName("UINT")] uint nFlags);
+        public static extern BOOL PrintWindow(HWND hwnd, HDC hdcBlt, uint nFlags);
 
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
-        public static extern BOOL SetLayeredWindowAttributes(HWND hwnd, [NativeTypeName("COLORREF")] uint crKey, [NativeTypeName("BYTE")] byte bAlpha, [NativeTypeName("DWORD")] uint dwFlags);
+        public static extern BOOL SetLayeredWindowAttributes(HWND hwnd, [NativeTypeName("COLORREF")] uint crKey, byte bAlpha, [NativeTypeName("DWORD")] uint dwFlags);
 
         [DllImport("user32", ExactSpelling = true)]
         public static extern BOOL ShowWindowAsync(HWND hWnd, int nCmdShow);
@@ -447,7 +444,7 @@ namespace TerraFX.Interop
         public static extern BOOL MoveWindow(HWND hWnd, int X, int Y, int nWidth, int nHeight, BOOL bRepaint);
 
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
-        public static extern BOOL SetWindowPos(HWND hWnd, HWND hWndInsertAfter, int X, int Y, int cx, int cy, [NativeTypeName("UINT")] uint uFlags);
+        public static extern BOOL SetWindowPos(HWND hWnd, HWND hWndInsertAfter, int X, int Y, int cx, int cy, uint uFlags);
 
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
         public static extern BOOL GetWindowPlacement(HWND hWnd, WINDOWPLACEMENT* lpwndpl);
@@ -467,7 +464,7 @@ namespace TerraFX.Interop
 
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("HDWP")]
-        public static extern HANDLE DeferWindowPos([NativeTypeName("HDWP")] HANDLE hWinPosInfo, HWND hWnd, HWND hWndInsertAfter, int x, int y, int cx, int cy, [NativeTypeName("UINT")] uint uFlags);
+        public static extern HANDLE DeferWindowPos([NativeTypeName("HDWP")] HANDLE hWinPosInfo, HWND hWnd, HWND hWndInsertAfter, int x, int y, int cx, int cy, uint uFlags);
 
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
         public static extern BOOL EndDeferWindowPos([NativeTypeName("HDWP")] HANDLE hWinPosInfo);
@@ -522,10 +519,9 @@ namespace TerraFX.Interop
         public static extern HWND GetDlgItem(HWND hDlg, int nIDDlgItem);
 
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
-        public static extern BOOL SetDlgItemInt(HWND hDlg, int nIDDlgItem, [NativeTypeName("UINT")] uint uValue, BOOL bSigned);
+        public static extern BOOL SetDlgItemInt(HWND hDlg, int nIDDlgItem, uint uValue, BOOL bSigned);
 
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("UINT")]
         public static extern uint GetDlgItemInt(HWND hDlg, int nIDDlgItem, BOOL* lpTranslated, BOOL bSigned);
 
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
@@ -535,30 +531,27 @@ namespace TerraFX.Interop
         public static extern BOOL SetDlgItemTextW(HWND hDlg, int nIDDlgItem, [NativeTypeName("LPCWSTR")] ushort* lpString);
 
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("UINT")]
         public static extern uint GetDlgItemTextA(HWND hDlg, int nIDDlgItem, [NativeTypeName("LPSTR")] sbyte* lpString, int cchMax);
 
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("UINT")]
         public static extern uint GetDlgItemTextW(HWND hDlg, int nIDDlgItem, [NativeTypeName("LPWSTR")] ushort* lpString, int cchMax);
 
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
-        public static extern BOOL CheckDlgButton(HWND hDlg, int nIDButton, [NativeTypeName("UINT")] uint uCheck);
+        public static extern BOOL CheckDlgButton(HWND hDlg, int nIDButton, uint uCheck);
 
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
         public static extern BOOL CheckRadioButton(HWND hDlg, int nIDFirstButton, int nIDLastButton, int nIDCheckButton);
 
         [DllImport("user32", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
         public static extern uint IsDlgButtonChecked(HWND hDlg, int nIDButton);
 
         [DllImport("user32", ExactSpelling = true)]
         [return: NativeTypeName("LRESULT")]
-        public static extern nint SendDlgItemMessageA(HWND hDlg, int nIDDlgItem, [NativeTypeName("UINT")] uint Msg, [NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam);
+        public static extern nint SendDlgItemMessageA(HWND hDlg, int nIDDlgItem, uint Msg, [NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam);
 
         [DllImport("user32", ExactSpelling = true)]
         [return: NativeTypeName("LRESULT")]
-        public static extern nint SendDlgItemMessageW(HWND hDlg, int nIDDlgItem, [NativeTypeName("UINT")] uint Msg, [NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam);
+        public static extern nint SendDlgItemMessageW(HWND hDlg, int nIDDlgItem, uint Msg, [NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam);
 
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
         public static extern HWND GetNextDlgGroupItem(HWND hDlg, HWND hCtl, BOOL bPrevious);
@@ -575,11 +568,11 @@ namespace TerraFX.Interop
 
         [DllImport("user32", ExactSpelling = true)]
         [return: NativeTypeName("LRESULT")]
-        public static extern nint DefDlgProcA(HWND hDlg, [NativeTypeName("UINT")] uint Msg, [NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam);
+        public static extern nint DefDlgProcA(HWND hDlg, uint Msg, [NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam);
 
         [DllImport("user32", ExactSpelling = true)]
         [return: NativeTypeName("LRESULT")]
-        public static extern nint DefDlgProcW(HWND hDlg, [NativeTypeName("UINT")] uint Msg, [NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam);
+        public static extern nint DefDlgProcW(HWND hDlg, uint Msg, [NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam);
 
         [DllImport("user32", ExactSpelling = true)]
         public static extern BOOL SetDialogControlDpiChangeBehavior(HWND hWnd, DIALOG_CONTROL_DPI_CHANGE_BEHAVIORS mask, DIALOG_CONTROL_DPI_CHANGE_BEHAVIORS values);
@@ -622,40 +615,37 @@ namespace TerraFX.Interop
         public static extern BOOL ChangeClipboardChain(HWND hWndRemove, HWND hWndNewNext);
 
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
-        public static extern HANDLE SetClipboardData([NativeTypeName("UINT")] uint uFormat, HANDLE hMem);
+        public static extern HANDLE SetClipboardData(uint uFormat, HANDLE hMem);
 
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
-        public static extern HANDLE GetClipboardData([NativeTypeName("UINT")] uint uFormat);
+        public static extern HANDLE GetClipboardData(uint uFormat);
 
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("UINT")]
         public static extern uint RegisterClipboardFormatA([NativeTypeName("LPCSTR")] sbyte* lpszFormat);
 
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("UINT")]
         public static extern uint RegisterClipboardFormatW([NativeTypeName("LPCWSTR")] ushort* lpszFormat);
 
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
         public static extern int CountClipboardFormats();
 
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("UINT")]
-        public static extern uint EnumClipboardFormats([NativeTypeName("UINT")] uint format);
+        public static extern uint EnumClipboardFormats(uint format);
 
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
-        public static extern int GetClipboardFormatNameA([NativeTypeName("UINT")] uint format, [NativeTypeName("LPSTR")] sbyte* lpszFormatName, int cchMaxCount);
+        public static extern int GetClipboardFormatNameA(uint format, [NativeTypeName("LPSTR")] sbyte* lpszFormatName, int cchMaxCount);
 
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
-        public static extern int GetClipboardFormatNameW([NativeTypeName("UINT")] uint format, [NativeTypeName("LPWSTR")] ushort* lpszFormatName, int cchMaxCount);
+        public static extern int GetClipboardFormatNameW(uint format, [NativeTypeName("LPWSTR")] ushort* lpszFormatName, int cchMaxCount);
 
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
         public static extern BOOL EmptyClipboard();
 
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
-        public static extern BOOL IsClipboardFormatAvailable([NativeTypeName("UINT")] uint format);
+        public static extern BOOL IsClipboardFormatAvailable(uint format);
 
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
-        public static extern int GetPriorityClipboardFormat([NativeTypeName("UINT *")] uint* paFormatPriorityList, int cFormats);
+        public static extern int GetPriorityClipboardFormat(uint* paFormatPriorityList, int cFormats);
 
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
         public static extern HWND GetOpenClipboardWindow();
@@ -667,7 +657,7 @@ namespace TerraFX.Interop
         public static extern BOOL RemoveClipboardFormatListener(HWND hwnd);
 
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
-        public static extern BOOL GetUpdatedClipboardFormats([NativeTypeName("PUINT")] uint* lpuiFormats, [NativeTypeName("UINT")] uint cFormats, [NativeTypeName("PUINT")] uint* pcFormatsOut);
+        public static extern BOOL GetUpdatedClipboardFormats([NativeTypeName("PUINT")] uint* lpuiFormats, uint cFormats, [NativeTypeName("PUINT")] uint* pcFormatsOut);
 
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
         public static extern BOOL CharToOemA([NativeTypeName("LPCSTR")] sbyte* pSrc, [NativeTypeName("LPSTR")] sbyte* pDst);
@@ -783,15 +773,12 @@ namespace TerraFX.Interop
         public static extern HWND GetFocus();
 
         [DllImport("user32", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
         public static extern uint GetKBCodePage();
 
         [DllImport("user32", ExactSpelling = true)]
-        [return: NativeTypeName("SHORT")]
         public static extern short GetKeyState(int nVirtKey);
 
         [DllImport("user32", ExactSpelling = true)]
-        [return: NativeTypeName("SHORT")]
         public static extern short GetAsyncKeyState(int vKey);
 
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
@@ -810,46 +797,41 @@ namespace TerraFX.Interop
         public static extern int GetKeyboardType(int nTypeFlag);
 
         [DllImport("user32", ExactSpelling = true)]
-        public static extern int ToAscii([NativeTypeName("UINT")] uint uVirtKey, [NativeTypeName("UINT")] uint uScanCode, [NativeTypeName("const BYTE *")] byte* lpKeyState, [NativeTypeName("LPWORD")] ushort* lpChar, [NativeTypeName("UINT")] uint uFlags);
+        public static extern int ToAscii(uint uVirtKey, uint uScanCode, [NativeTypeName("const BYTE *")] byte* lpKeyState, [NativeTypeName("LPWORD")] ushort* lpChar, uint uFlags);
 
         [DllImport("user32", ExactSpelling = true)]
-        public static extern int ToAsciiEx([NativeTypeName("UINT")] uint uVirtKey, [NativeTypeName("UINT")] uint uScanCode, [NativeTypeName("const BYTE *")] byte* lpKeyState, [NativeTypeName("LPWORD")] ushort* lpChar, [NativeTypeName("UINT")] uint uFlags, HKL dwhkl);
+        public static extern int ToAsciiEx(uint uVirtKey, uint uScanCode, [NativeTypeName("const BYTE *")] byte* lpKeyState, [NativeTypeName("LPWORD")] ushort* lpChar, uint uFlags, HKL dwhkl);
 
         [DllImport("user32", ExactSpelling = true)]
-        public static extern int ToUnicode([NativeTypeName("UINT")] uint wVirtKey, [NativeTypeName("UINT")] uint wScanCode, [NativeTypeName("const BYTE *")] byte* lpKeyState, [NativeTypeName("LPWSTR")] ushort* pwszBuff, int cchBuff, [NativeTypeName("UINT")] uint wFlags);
+        public static extern int ToUnicode(uint wVirtKey, uint wScanCode, [NativeTypeName("const BYTE *")] byte* lpKeyState, [NativeTypeName("LPWSTR")] ushort* pwszBuff, int cchBuff, uint wFlags);
 
         [DllImport("user32", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
         public static extern uint OemKeyScan([NativeTypeName("WORD")] ushort wOemChar);
 
         [DllImport("user32", ExactSpelling = true)]
-        [return: NativeTypeName("SHORT")]
         public static extern short VkKeyScanA([NativeTypeName("CHAR")] sbyte ch);
 
         [DllImport("user32", ExactSpelling = true)]
-        [return: NativeTypeName("SHORT")]
         public static extern short VkKeyScanW([NativeTypeName("WCHAR")] ushort ch);
 
         [DllImport("user32", ExactSpelling = true)]
-        [return: NativeTypeName("SHORT")]
         public static extern short VkKeyScanExA([NativeTypeName("CHAR")] sbyte ch, HKL dwhkl);
 
         [DllImport("user32", ExactSpelling = true)]
-        [return: NativeTypeName("SHORT")]
         public static extern short VkKeyScanExW([NativeTypeName("WCHAR")] ushort ch, HKL dwhkl);
 
         [DllImport("user32", ExactSpelling = true)]
-        public static extern void keybd_event([NativeTypeName("BYTE")] byte bVk, [NativeTypeName("BYTE")] byte bScan, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("ULONG_PTR")] nuint dwExtraInfo);
+        public static extern void keybd_event(byte bVk, byte bScan, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("ULONG_PTR")] nuint dwExtraInfo);
 
         [DllImport("user32", ExactSpelling = true)]
         public static extern void mouse_event([NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("DWORD")] uint dx, [NativeTypeName("DWORD")] uint dy, [NativeTypeName("DWORD")] uint dwData, [NativeTypeName("ULONG_PTR")] nuint dwExtraInfo);
 
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("UINT")]
-        public static extern uint SendInput([NativeTypeName("UINT")] uint cInputs, [NativeTypeName("LPINPUT")] INPUT* pInputs, int cbSize);
+        public static extern uint SendInput(uint cInputs, [NativeTypeName("LPINPUT")] INPUT* pInputs, int cbSize);
 
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
-        public static extern BOOL GetTouchInputInfo(HTOUCHINPUT hTouchInput, [NativeTypeName("UINT")] uint cInputs, [NativeTypeName("PTOUCHINPUT")] TOUCHINPUT* pInputs, int cbSize);
+        public static extern BOOL GetTouchInputInfo(HTOUCHINPUT hTouchInput, uint cInputs, [NativeTypeName("PTOUCHINPUT")] TOUCHINPUT* pInputs, int cbSize);
 
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
         public static extern BOOL CloseTouchInputHandle(HTOUCHINPUT hTouchInput);
@@ -967,27 +949,23 @@ namespace TerraFX.Interop
         public static extern BOOL GetLastInputInfo([NativeTypeName("PLASTINPUTINFO")] LASTINPUTINFO* plii);
 
         [DllImport("user32", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
-        public static extern uint MapVirtualKeyA([NativeTypeName("UINT")] uint uCode, [NativeTypeName("UINT")] uint uMapType);
+        public static extern uint MapVirtualKeyA(uint uCode, uint uMapType);
 
         [DllImport("user32", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
-        public static extern uint MapVirtualKeyW([NativeTypeName("UINT")] uint uCode, [NativeTypeName("UINT")] uint uMapType);
+        public static extern uint MapVirtualKeyW(uint uCode, uint uMapType);
 
         [DllImport("user32", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
-        public static extern uint MapVirtualKeyExA([NativeTypeName("UINT")] uint uCode, [NativeTypeName("UINT")] uint uMapType, HKL dwhkl);
+        public static extern uint MapVirtualKeyExA(uint uCode, uint uMapType, HKL dwhkl);
 
         [DllImport("user32", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
-        public static extern uint MapVirtualKeyExW([NativeTypeName("UINT")] uint uCode, [NativeTypeName("UINT")] uint uMapType, HKL dwhkl);
+        public static extern uint MapVirtualKeyExW(uint uCode, uint uMapType, HKL dwhkl);
 
         [DllImport("user32", ExactSpelling = true)]
         public static extern BOOL GetInputState();
 
         [DllImport("user32", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
-        public static extern uint GetQueueStatus([NativeTypeName("UINT")] uint flags);
+        public static extern uint GetQueueStatus(uint flags);
 
         [DllImport("user32", ExactSpelling = true)]
         public static extern HWND GetCapture();
@@ -1008,11 +986,11 @@ namespace TerraFX.Interop
 
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("UINT_PTR")]
-        public static extern nuint SetTimer(HWND hWnd, [NativeTypeName("UINT_PTR")] nuint nIDEvent, [NativeTypeName("UINT")] uint uElapse, [NativeTypeName("TIMERPROC")] delegate* unmanaged<HWND, uint, nuint, uint, void> lpTimerFunc);
+        public static extern nuint SetTimer(HWND hWnd, [NativeTypeName("UINT_PTR")] nuint nIDEvent, uint uElapse, [NativeTypeName("TIMERPROC")] delegate* unmanaged<HWND, uint, nuint, uint, void> lpTimerFunc);
 
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("UINT_PTR")]
-        public static extern nuint SetCoalescableTimer(HWND hWnd, [NativeTypeName("UINT_PTR")] nuint nIDEvent, [NativeTypeName("UINT")] uint uElapse, [NativeTypeName("TIMERPROC")] delegate* unmanaged<HWND, uint, nuint, uint, void> lpTimerFunc, [NativeTypeName("ULONG")] uint uToleranceDelay);
+        public static extern nuint SetCoalescableTimer(HWND hWnd, [NativeTypeName("UINT_PTR")] nuint nIDEvent, uint uElapse, [NativeTypeName("TIMERPROC")] delegate* unmanaged<HWND, uint, nuint, uint, void> lpTimerFunc, [NativeTypeName("ULONG")] uint uToleranceDelay);
 
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
         public static extern BOOL KillTimer(HWND hWnd, [NativeTypeName("UINT_PTR")] nuint uIDEvent);
@@ -1057,7 +1035,7 @@ namespace TerraFX.Interop
         public static extern int GetSystemMetrics(int nIndex);
 
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
-        public static extern int GetSystemMetricsForDpi(int nIndex, [NativeTypeName("UINT")] uint dpi);
+        public static extern int GetSystemMetricsForDpi(int nIndex, uint dpi);
 
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
         public static extern HMENU LoadMenuA(HINSTANCE hInstance, [NativeTypeName("LPCSTR")] sbyte* lpMenuName);
@@ -1078,23 +1056,22 @@ namespace TerraFX.Interop
         public static extern BOOL SetMenu(HWND hWnd, HMENU hMenu);
 
         [DllImport("user32", ExactSpelling = true)]
-        public static extern BOOL ChangeMenuA(HMENU hMenu, [NativeTypeName("UINT")] uint cmd, [NativeTypeName("LPCSTR")] sbyte* lpszNewItem, [NativeTypeName("UINT")] uint cmdInsert, [NativeTypeName("UINT")] uint flags);
+        public static extern BOOL ChangeMenuA(HMENU hMenu, uint cmd, [NativeTypeName("LPCSTR")] sbyte* lpszNewItem, uint cmdInsert, uint flags);
 
         [DllImport("user32", ExactSpelling = true)]
-        public static extern BOOL ChangeMenuW(HMENU hMenu, [NativeTypeName("UINT")] uint cmd, [NativeTypeName("LPCWSTR")] ushort* lpszNewItem, [NativeTypeName("UINT")] uint cmdInsert, [NativeTypeName("UINT")] uint flags);
+        public static extern BOOL ChangeMenuW(HMENU hMenu, uint cmd, [NativeTypeName("LPCWSTR")] ushort* lpszNewItem, uint cmdInsert, uint flags);
 
         [DllImport("user32", ExactSpelling = true)]
-        public static extern BOOL HiliteMenuItem(HWND hWnd, HMENU hMenu, [NativeTypeName("UINT")] uint uIDHiliteItem, [NativeTypeName("UINT")] uint uHilite);
+        public static extern BOOL HiliteMenuItem(HWND hWnd, HMENU hMenu, uint uIDHiliteItem, uint uHilite);
 
         [DllImport("user32", ExactSpelling = true)]
-        public static extern int GetMenuStringA(HMENU hMenu, [NativeTypeName("UINT")] uint uIDItem, [NativeTypeName("LPSTR")] sbyte* lpString, int cchMax, [NativeTypeName("UINT")] uint flags);
+        public static extern int GetMenuStringA(HMENU hMenu, uint uIDItem, [NativeTypeName("LPSTR")] sbyte* lpString, int cchMax, uint flags);
 
         [DllImport("user32", ExactSpelling = true)]
-        public static extern int GetMenuStringW(HMENU hMenu, [NativeTypeName("UINT")] uint uIDItem, [NativeTypeName("LPWSTR")] ushort* lpString, int cchMax, [NativeTypeName("UINT")] uint flags);
+        public static extern int GetMenuStringW(HMENU hMenu, uint uIDItem, [NativeTypeName("LPWSTR")] ushort* lpString, int cchMax, uint flags);
 
         [DllImport("user32", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
-        public static extern uint GetMenuState(HMENU hMenu, [NativeTypeName("UINT")] uint uId, [NativeTypeName("UINT")] uint uFlags);
+        public static extern uint GetMenuState(HMENU hMenu, uint uId, uint uFlags);
 
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
         public static extern BOOL DrawMenuBar(HWND hWnd);
@@ -1113,60 +1090,59 @@ namespace TerraFX.Interop
 
         [DllImport("user32", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
-        public static extern uint CheckMenuItem(HMENU hMenu, [NativeTypeName("UINT")] uint uIDCheckItem, [NativeTypeName("UINT")] uint uCheck);
+        public static extern uint CheckMenuItem(HMENU hMenu, uint uIDCheckItem, uint uCheck);
 
         [DllImport("user32", ExactSpelling = true)]
-        public static extern BOOL EnableMenuItem(HMENU hMenu, [NativeTypeName("UINT")] uint uIDEnableItem, [NativeTypeName("UINT")] uint uEnable);
+        public static extern BOOL EnableMenuItem(HMENU hMenu, uint uIDEnableItem, uint uEnable);
 
         [DllImport("user32", ExactSpelling = true)]
         public static extern HMENU GetSubMenu(HMENU hMenu, int nPos);
 
         [DllImport("user32", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
         public static extern uint GetMenuItemID(HMENU hMenu, int nPos);
 
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
         public static extern int GetMenuItemCount(HMENU hMenu);
 
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
-        public static extern BOOL InsertMenuA(HMENU hMenu, [NativeTypeName("UINT")] uint uPosition, [NativeTypeName("UINT")] uint uFlags, [NativeTypeName("UINT_PTR")] nuint uIDNewItem, [NativeTypeName("LPCSTR")] sbyte* lpNewItem);
+        public static extern BOOL InsertMenuA(HMENU hMenu, uint uPosition, uint uFlags, [NativeTypeName("UINT_PTR")] nuint uIDNewItem, [NativeTypeName("LPCSTR")] sbyte* lpNewItem);
 
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
-        public static extern BOOL InsertMenuW(HMENU hMenu, [NativeTypeName("UINT")] uint uPosition, [NativeTypeName("UINT")] uint uFlags, [NativeTypeName("UINT_PTR")] nuint uIDNewItem, [NativeTypeName("LPCWSTR")] ushort* lpNewItem);
+        public static extern BOOL InsertMenuW(HMENU hMenu, uint uPosition, uint uFlags, [NativeTypeName("UINT_PTR")] nuint uIDNewItem, [NativeTypeName("LPCWSTR")] ushort* lpNewItem);
 
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
-        public static extern BOOL AppendMenuA(HMENU hMenu, [NativeTypeName("UINT")] uint uFlags, [NativeTypeName("UINT_PTR")] nuint uIDNewItem, [NativeTypeName("LPCSTR")] sbyte* lpNewItem);
+        public static extern BOOL AppendMenuA(HMENU hMenu, uint uFlags, [NativeTypeName("UINT_PTR")] nuint uIDNewItem, [NativeTypeName("LPCSTR")] sbyte* lpNewItem);
 
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
-        public static extern BOOL AppendMenuW(HMENU hMenu, [NativeTypeName("UINT")] uint uFlags, [NativeTypeName("UINT_PTR")] nuint uIDNewItem, [NativeTypeName("LPCWSTR")] ushort* lpNewItem);
+        public static extern BOOL AppendMenuW(HMENU hMenu, uint uFlags, [NativeTypeName("UINT_PTR")] nuint uIDNewItem, [NativeTypeName("LPCWSTR")] ushort* lpNewItem);
 
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
-        public static extern BOOL ModifyMenuA(HMENU hMnu, [NativeTypeName("UINT")] uint uPosition, [NativeTypeName("UINT")] uint uFlags, [NativeTypeName("UINT_PTR")] nuint uIDNewItem, [NativeTypeName("LPCSTR")] sbyte* lpNewItem);
+        public static extern BOOL ModifyMenuA(HMENU hMnu, uint uPosition, uint uFlags, [NativeTypeName("UINT_PTR")] nuint uIDNewItem, [NativeTypeName("LPCSTR")] sbyte* lpNewItem);
 
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
-        public static extern BOOL ModifyMenuW(HMENU hMnu, [NativeTypeName("UINT")] uint uPosition, [NativeTypeName("UINT")] uint uFlags, [NativeTypeName("UINT_PTR")] nuint uIDNewItem, [NativeTypeName("LPCWSTR")] ushort* lpNewItem);
+        public static extern BOOL ModifyMenuW(HMENU hMnu, uint uPosition, uint uFlags, [NativeTypeName("UINT_PTR")] nuint uIDNewItem, [NativeTypeName("LPCWSTR")] ushort* lpNewItem);
 
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
-        public static extern BOOL RemoveMenu(HMENU hMenu, [NativeTypeName("UINT")] uint uPosition, [NativeTypeName("UINT")] uint uFlags);
+        public static extern BOOL RemoveMenu(HMENU hMenu, uint uPosition, uint uFlags);
 
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
-        public static extern BOOL DeleteMenu(HMENU hMenu, [NativeTypeName("UINT")] uint uPosition, [NativeTypeName("UINT")] uint uFlags);
+        public static extern BOOL DeleteMenu(HMENU hMenu, uint uPosition, uint uFlags);
 
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
-        public static extern BOOL SetMenuItemBitmaps(HMENU hMenu, [NativeTypeName("UINT")] uint uPosition, [NativeTypeName("UINT")] uint uFlags, HBITMAP hBitmapUnchecked, HBITMAP hBitmapChecked);
+        public static extern BOOL SetMenuItemBitmaps(HMENU hMenu, uint uPosition, uint uFlags, HBITMAP hBitmapUnchecked, HBITMAP hBitmapChecked);
 
         [DllImport("user32", ExactSpelling = true)]
         [return: NativeTypeName("LONG")]
         public static extern int GetMenuCheckMarkDimensions();
 
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
-        public static extern BOOL TrackPopupMenu(HMENU hMenu, [NativeTypeName("UINT")] uint uFlags, int x, int y, int nReserved, HWND hWnd, [NativeTypeName("const RECT *")] RECT* prcRect);
+        public static extern BOOL TrackPopupMenu(HMENU hMenu, uint uFlags, int x, int y, int nReserved, HWND hWnd, [NativeTypeName("const RECT *")] RECT* prcRect);
 
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
-        public static extern BOOL TrackPopupMenuEx(HMENU hMenu, [NativeTypeName("UINT")] uint uFlags, int x, int y, HWND hwnd, [NativeTypeName("LPTPMPARAMS")] TPMPARAMS* lptpm);
+        public static extern BOOL TrackPopupMenuEx(HMENU hMenu, uint uFlags, int x, int y, HWND hwnd, [NativeTypeName("LPTPMPARAMS")] TPMPARAMS* lptpm);
 
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
-        public static extern BOOL CalculatePopupWindowPosition([NativeTypeName("const POINT *")] POINT* anchorPoint, [NativeTypeName("const SIZE *")] SIZE* windowSize, [NativeTypeName("UINT")] uint flags, RECT* excludeRect, RECT* popupWindowPosition);
+        public static extern BOOL CalculatePopupWindowPosition([NativeTypeName("const POINT *")] POINT* anchorPoint, [NativeTypeName("const SIZE *")] SIZE* windowSize, uint flags, RECT* excludeRect, RECT* popupWindowPosition);
 
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
         public static extern BOOL GetMenuInfo(HMENU param0, [NativeTypeName("LPMENUINFO")] MENUINFO* param1);
@@ -1178,39 +1154,38 @@ namespace TerraFX.Interop
         public static extern BOOL EndMenu();
 
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
-        public static extern BOOL InsertMenuItemA(HMENU hmenu, [NativeTypeName("UINT")] uint item, BOOL fByPosition, [NativeTypeName("LPCMENUITEMINFOA")] MENUITEMINFOA* lpmi);
+        public static extern BOOL InsertMenuItemA(HMENU hmenu, uint item, BOOL fByPosition, [NativeTypeName("LPCMENUITEMINFOA")] MENUITEMINFOA* lpmi);
 
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
-        public static extern BOOL InsertMenuItemW(HMENU hmenu, [NativeTypeName("UINT")] uint item, BOOL fByPosition, [NativeTypeName("LPCMENUITEMINFOW")] MENUITEMINFOW* lpmi);
+        public static extern BOOL InsertMenuItemW(HMENU hmenu, uint item, BOOL fByPosition, [NativeTypeName("LPCMENUITEMINFOW")] MENUITEMINFOW* lpmi);
 
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
-        public static extern BOOL GetMenuItemInfoA(HMENU hmenu, [NativeTypeName("UINT")] uint item, BOOL fByPosition, [NativeTypeName("LPMENUITEMINFOA")] MENUITEMINFOA* lpmii);
+        public static extern BOOL GetMenuItemInfoA(HMENU hmenu, uint item, BOOL fByPosition, [NativeTypeName("LPMENUITEMINFOA")] MENUITEMINFOA* lpmii);
 
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
-        public static extern BOOL GetMenuItemInfoW(HMENU hmenu, [NativeTypeName("UINT")] uint item, BOOL fByPosition, [NativeTypeName("LPMENUITEMINFOW")] MENUITEMINFOW* lpmii);
+        public static extern BOOL GetMenuItemInfoW(HMENU hmenu, uint item, BOOL fByPosition, [NativeTypeName("LPMENUITEMINFOW")] MENUITEMINFOW* lpmii);
 
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
-        public static extern BOOL SetMenuItemInfoA(HMENU hmenu, [NativeTypeName("UINT")] uint item, BOOL fByPositon, [NativeTypeName("LPCMENUITEMINFOA")] MENUITEMINFOA* lpmii);
+        public static extern BOOL SetMenuItemInfoA(HMENU hmenu, uint item, BOOL fByPositon, [NativeTypeName("LPCMENUITEMINFOA")] MENUITEMINFOA* lpmii);
 
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
-        public static extern BOOL SetMenuItemInfoW(HMENU hmenu, [NativeTypeName("UINT")] uint item, BOOL fByPositon, [NativeTypeName("LPCMENUITEMINFOW")] MENUITEMINFOW* lpmii);
+        public static extern BOOL SetMenuItemInfoW(HMENU hmenu, uint item, BOOL fByPositon, [NativeTypeName("LPCMENUITEMINFOW")] MENUITEMINFOW* lpmii);
 
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("UINT")]
-        public static extern uint GetMenuDefaultItem(HMENU hMenu, [NativeTypeName("UINT")] uint fByPos, [NativeTypeName("UINT")] uint gmdiFlags);
+        public static extern uint GetMenuDefaultItem(HMENU hMenu, uint fByPos, uint gmdiFlags);
 
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
-        public static extern BOOL SetMenuDefaultItem(HMENU hMenu, [NativeTypeName("UINT")] uint uItem, [NativeTypeName("UINT")] uint fByPos);
+        public static extern BOOL SetMenuDefaultItem(HMENU hMenu, uint uItem, uint fByPos);
 
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
-        public static extern BOOL GetMenuItemRect(HWND hWnd, HMENU hMenu, [NativeTypeName("UINT")] uint uItem, [NativeTypeName("LPRECT")] RECT* lprcItem);
+        public static extern BOOL GetMenuItemRect(HWND hWnd, HMENU hMenu, uint uItem, [NativeTypeName("LPRECT")] RECT* lprcItem);
 
         [DllImport("user32", ExactSpelling = true)]
         public static extern int MenuItemFromPoint(HWND hWnd, HMENU hMenu, POINT ptScreen);
 
         [DllImport("user32", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
-        public static extern uint DragObject(HWND hwndParent, HWND hwndFrom, [NativeTypeName("UINT")] uint fmt, [NativeTypeName("ULONG_PTR")] nuint data, [NativeTypeName("HCURSOR")] HICON hcur);
+        public static extern uint DragObject(HWND hwndParent, HWND hwndFrom, uint fmt, [NativeTypeName("ULONG_PTR")] nuint data, [NativeTypeName("HCURSOR")] HICON hcur);
 
         [DllImport("user32", ExactSpelling = true)]
         public static extern BOOL DragDetect(HWND hwnd, POINT pt);
@@ -1219,16 +1194,16 @@ namespace TerraFX.Interop
         public static extern BOOL DrawIcon(HDC hDC, int X, int Y, HICON hIcon);
 
         [DllImport("user32", ExactSpelling = true)]
-        public static extern int DrawTextA(HDC hdc, [NativeTypeName("LPCSTR")] sbyte* lpchText, int cchText, [NativeTypeName("LPRECT")] RECT* lprc, [NativeTypeName("UINT")] uint format);
+        public static extern int DrawTextA(HDC hdc, [NativeTypeName("LPCSTR")] sbyte* lpchText, int cchText, [NativeTypeName("LPRECT")] RECT* lprc, uint format);
 
         [DllImport("user32", ExactSpelling = true)]
-        public static extern int DrawTextW(HDC hdc, [NativeTypeName("LPCWSTR")] ushort* lpchText, int cchText, [NativeTypeName("LPRECT")] RECT* lprc, [NativeTypeName("UINT")] uint format);
+        public static extern int DrawTextW(HDC hdc, [NativeTypeName("LPCWSTR")] ushort* lpchText, int cchText, [NativeTypeName("LPRECT")] RECT* lprc, uint format);
 
         [DllImport("user32", ExactSpelling = true)]
-        public static extern int DrawTextExA(HDC hdc, [NativeTypeName("LPSTR")] sbyte* lpchText, int cchText, [NativeTypeName("LPRECT")] RECT* lprc, [NativeTypeName("UINT")] uint format, [NativeTypeName("LPDRAWTEXTPARAMS")] DRAWTEXTPARAMS* lpdtp);
+        public static extern int DrawTextExA(HDC hdc, [NativeTypeName("LPSTR")] sbyte* lpchText, int cchText, [NativeTypeName("LPRECT")] RECT* lprc, uint format, [NativeTypeName("LPDRAWTEXTPARAMS")] DRAWTEXTPARAMS* lpdtp);
 
         [DllImport("user32", ExactSpelling = true)]
-        public static extern int DrawTextExW(HDC hdc, [NativeTypeName("LPWSTR")] ushort* lpchText, int cchText, [NativeTypeName("LPRECT")] RECT* lprc, [NativeTypeName("UINT")] uint format, [NativeTypeName("LPDRAWTEXTPARAMS")] DRAWTEXTPARAMS* lpdtp);
+        public static extern int DrawTextExW(HDC hdc, [NativeTypeName("LPWSTR")] ushort* lpchText, int cchText, [NativeTypeName("LPRECT")] RECT* lprc, uint format, [NativeTypeName("LPDRAWTEXTPARAMS")] DRAWTEXTPARAMS* lpdtp);
 
         [DllImport("user32", ExactSpelling = true)]
         public static extern BOOL GrayStringA(HDC hDC, HBRUSH hBrush, [NativeTypeName("GRAYSTRINGPROC")] delegate* unmanaged<HDC, nint, int, BOOL> lpOutputFunc, [NativeTypeName("LPARAM")] nint lpData, int nCount, int X, int Y, int nWidth, int nHeight);
@@ -1237,10 +1212,10 @@ namespace TerraFX.Interop
         public static extern BOOL GrayStringW(HDC hDC, HBRUSH hBrush, [NativeTypeName("GRAYSTRINGPROC")] delegate* unmanaged<HDC, nint, int, BOOL> lpOutputFunc, [NativeTypeName("LPARAM")] nint lpData, int nCount, int X, int Y, int nWidth, int nHeight);
 
         [DllImport("user32", ExactSpelling = true)]
-        public static extern BOOL DrawStateA(HDC hdc, HBRUSH hbrFore, [NativeTypeName("DRAWSTATEPROC")] delegate* unmanaged<HDC, nint, nuint, int, int, BOOL> qfnCallBack, [NativeTypeName("LPARAM")] nint lData, [NativeTypeName("WPARAM")] nuint wData, int x, int y, int cx, int cy, [NativeTypeName("UINT")] uint uFlags);
+        public static extern BOOL DrawStateA(HDC hdc, HBRUSH hbrFore, [NativeTypeName("DRAWSTATEPROC")] delegate* unmanaged<HDC, nint, nuint, int, int, BOOL> qfnCallBack, [NativeTypeName("LPARAM")] nint lData, [NativeTypeName("WPARAM")] nuint wData, int x, int y, int cx, int cy, uint uFlags);
 
         [DllImport("user32", ExactSpelling = true)]
-        public static extern BOOL DrawStateW(HDC hdc, HBRUSH hbrFore, [NativeTypeName("DRAWSTATEPROC")] delegate* unmanaged<HDC, nint, nuint, int, int, BOOL> qfnCallBack, [NativeTypeName("LPARAM")] nint lData, [NativeTypeName("WPARAM")] nuint wData, int x, int y, int cx, int cy, [NativeTypeName("UINT")] uint uFlags);
+        public static extern BOOL DrawStateW(HDC hdc, HBRUSH hbrFore, [NativeTypeName("DRAWSTATEPROC")] delegate* unmanaged<HDC, nint, nuint, int, int, BOOL> qfnCallBack, [NativeTypeName("LPARAM")] nint lData, [NativeTypeName("WPARAM")] nuint wData, int x, int y, int cx, int cy, uint uFlags);
 
         [DllImport("user32", ExactSpelling = true)]
         [return: NativeTypeName("LONG")]
@@ -1280,7 +1255,7 @@ namespace TerraFX.Interop
         public static extern BOOL AllowSetForegroundWindow([NativeTypeName("DWORD")] uint dwProcessId);
 
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
-        public static extern BOOL LockSetForegroundWindow([NativeTypeName("UINT")] uint uLockCode);
+        public static extern BOOL LockSetForegroundWindow(uint uLockCode);
 
         [DllImport("user32", ExactSpelling = true)]
         public static extern HWND WindowFromDC(HDC hDC);
@@ -1334,7 +1309,7 @@ namespace TerraFX.Interop
         public static extern BOOL ValidateRgn(HWND hWnd, HRGN hRgn);
 
         [DllImport("user32", ExactSpelling = true)]
-        public static extern BOOL RedrawWindow(HWND hWnd, [NativeTypeName("const RECT *")] RECT* lprcUpdate, HRGN hrgnUpdate, [NativeTypeName("UINT")] uint flags);
+        public static extern BOOL RedrawWindow(HWND hWnd, [NativeTypeName("const RECT *")] RECT* lprcUpdate, HRGN hrgnUpdate, uint flags);
 
         [DllImport("user32", ExactSpelling = true)]
         public static extern BOOL LockWindowUpdate(HWND hWndLock);
@@ -1346,7 +1321,7 @@ namespace TerraFX.Interop
         public static extern BOOL ScrollDC(HDC hDC, int dx, int dy, [NativeTypeName("const RECT *")] RECT* lprcScroll, [NativeTypeName("const RECT *")] RECT* lprcClip, HRGN hrgnUpdate, [NativeTypeName("LPRECT")] RECT* lprcUpdate);
 
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
-        public static extern int ScrollWindowEx(HWND hWnd, int dx, int dy, [NativeTypeName("const RECT *")] RECT* prcScroll, [NativeTypeName("const RECT *")] RECT* prcClip, HRGN hrgnUpdate, [NativeTypeName("LPRECT")] RECT* prcUpdate, [NativeTypeName("UINT")] uint flags);
+        public static extern int ScrollWindowEx(HWND hWnd, int dx, int dy, [NativeTypeName("const RECT *")] RECT* prcScroll, [NativeTypeName("const RECT *")] RECT* prcClip, HRGN hrgnUpdate, [NativeTypeName("LPRECT")] RECT* prcUpdate, uint flags);
 
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
         public static extern int SetScrollPos(HWND hWnd, int nBar, int nPos, BOOL bRedraw);
@@ -1364,7 +1339,7 @@ namespace TerraFX.Interop
         public static extern BOOL ShowScrollBar(HWND hWnd, int wBar, BOOL bShow);
 
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
-        public static extern BOOL EnableScrollBar(HWND hWnd, [NativeTypeName("UINT")] uint wSBflags, [NativeTypeName("UINT")] uint wArrows);
+        public static extern BOOL EnableScrollBar(HWND hWnd, uint wSBflags, uint wArrows);
 
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
         public static extern BOOL SetPropA(HWND hWnd, [NativeTypeName("LPCSTR")] sbyte* lpString, HANDLE hData);
@@ -1427,7 +1402,7 @@ namespace TerraFX.Interop
         public static extern BOOL AdjustWindowRectEx([NativeTypeName("LPRECT")] RECT* lpRect, [NativeTypeName("DWORD")] uint dwStyle, BOOL bMenu, [NativeTypeName("DWORD")] uint dwExStyle);
 
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
-        public static extern BOOL AdjustWindowRectExForDpi([NativeTypeName("LPRECT")] RECT* lpRect, [NativeTypeName("DWORD")] uint dwStyle, BOOL bMenu, [NativeTypeName("DWORD")] uint dwExStyle, [NativeTypeName("UINT")] uint dpi);
+        public static extern BOOL AdjustWindowRectExForDpi([NativeTypeName("LPRECT")] RECT* lpRect, [NativeTypeName("DWORD")] uint dwStyle, BOOL bMenu, [NativeTypeName("DWORD")] uint dwExStyle, uint dpi);
 
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
         public static extern BOOL SetWindowContextHelpId(HWND param0, [NativeTypeName("DWORD")] uint param1);
@@ -1444,16 +1419,16 @@ namespace TerraFX.Interop
         public static extern uint GetMenuContextHelpId(HMENU param0);
 
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
-        public static extern int MessageBoxA(HWND hWnd, [NativeTypeName("LPCSTR")] sbyte* lpText, [NativeTypeName("LPCSTR")] sbyte* lpCaption, [NativeTypeName("UINT")] uint uType);
+        public static extern int MessageBoxA(HWND hWnd, [NativeTypeName("LPCSTR")] sbyte* lpText, [NativeTypeName("LPCSTR")] sbyte* lpCaption, uint uType);
 
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
-        public static extern int MessageBoxW(HWND hWnd, [NativeTypeName("LPCWSTR")] ushort* lpText, [NativeTypeName("LPCWSTR")] ushort* lpCaption, [NativeTypeName("UINT")] uint uType);
+        public static extern int MessageBoxW(HWND hWnd, [NativeTypeName("LPCWSTR")] ushort* lpText, [NativeTypeName("LPCWSTR")] ushort* lpCaption, uint uType);
 
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
-        public static extern int MessageBoxExA(HWND hWnd, [NativeTypeName("LPCSTR")] sbyte* lpText, [NativeTypeName("LPCSTR")] sbyte* lpCaption, [NativeTypeName("UINT")] uint uType, [NativeTypeName("WORD")] ushort wLanguageId);
+        public static extern int MessageBoxExA(HWND hWnd, [NativeTypeName("LPCSTR")] sbyte* lpText, [NativeTypeName("LPCSTR")] sbyte* lpCaption, uint uType, [NativeTypeName("WORD")] ushort wLanguageId);
 
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
-        public static extern int MessageBoxExW(HWND hWnd, [NativeTypeName("LPCWSTR")] ushort* lpText, [NativeTypeName("LPCWSTR")] ushort* lpCaption, [NativeTypeName("UINT")] uint uType, [NativeTypeName("WORD")] ushort wLanguageId);
+        public static extern int MessageBoxExW(HWND hWnd, [NativeTypeName("LPCWSTR")] ushort* lpText, [NativeTypeName("LPCWSTR")] ushort* lpCaption, uint uType, [NativeTypeName("WORD")] ushort wLanguageId);
 
         [DllImport("user32", ExactSpelling = true)]
         public static extern int MessageBoxIndirectA([NativeTypeName("const MSGBOXPARAMSA *")] MSGBOXPARAMSA* lpmbp);
@@ -1462,7 +1437,7 @@ namespace TerraFX.Interop
         public static extern int MessageBoxIndirectW([NativeTypeName("const MSGBOXPARAMSW *")] MSGBOXPARAMSW* lpmbp);
 
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
-        public static extern BOOL MessageBeep([NativeTypeName("UINT")] uint uType);
+        public static extern BOOL MessageBeep(uint uType);
 
         [DllImport("user32", ExactSpelling = true)]
         public static extern int ShowCursor(BOOL bShow);
@@ -1494,11 +1469,10 @@ namespace TerraFX.Interop
         public static extern BOOL CreateCaret(HWND hWnd, HBITMAP hBitmap, int nWidth, int nHeight);
 
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("UINT")]
         public static extern uint GetCaretBlinkTime();
 
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
-        public static extern BOOL SetCaretBlinkTime([NativeTypeName("UINT")] uint uMSeconds);
+        public static extern BOOL SetCaretBlinkTime(uint uMSeconds);
 
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
         public static extern BOOL DestroyCaret();
@@ -1534,7 +1508,7 @@ namespace TerraFX.Interop
         public static extern BOOL PhysicalToLogicalPointForPerMonitorDPI(HWND hWnd, [NativeTypeName("LPPOINT")] POINT* lpPoint);
 
         [DllImport("user32", ExactSpelling = true)]
-        public static extern int MapWindowPoints(HWND hWndFrom, HWND hWndTo, [NativeTypeName("LPPOINT")] POINT* lpPoints, [NativeTypeName("UINT")] uint cPoints);
+        public static extern int MapWindowPoints(HWND hWndFrom, HWND hWndTo, [NativeTypeName("LPPOINT")] POINT* lpPoints, uint cPoints);
 
         [DllImport("user32", ExactSpelling = true)]
         public static extern HWND WindowFromPoint(POINT Point);
@@ -1549,7 +1523,7 @@ namespace TerraFX.Interop
         public static extern BOOL ClipCursor([NativeTypeName("const RECT *")] RECT* lpRect);
 
         [DllImport("user32", ExactSpelling = true)]
-        public static extern HWND ChildWindowFromPointEx(HWND hwnd, POINT pt, [NativeTypeName("UINT")] uint flags);
+        public static extern HWND ChildWindowFromPointEx(HWND hwnd, POINT pt, uint flags);
 
         [DllImport("user32", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
@@ -1719,7 +1693,7 @@ namespace TerraFX.Interop
         public static extern HWND GetLastActivePopup(HWND hWnd);
 
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
-        public static extern HWND GetWindow(HWND hWnd, [NativeTypeName("UINT")] uint uCmd);
+        public static extern HWND GetWindow(HWND hWnd, uint uCmd);
 
         [DllImport("user32", ExactSpelling = true)]
         public static extern HHOOK SetWindowsHookA(int nFilterType, [NativeTypeName("HOOKPROC")] delegate* unmanaged<int, nuint, nint, nint> pfnFilterProc);
@@ -1744,7 +1718,7 @@ namespace TerraFX.Interop
         public static extern nint CallNextHookEx(HHOOK hhk, int nCode, [NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam);
 
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
-        public static extern BOOL CheckMenuRadioItem(HMENU hmenu, [NativeTypeName("UINT")] uint first, [NativeTypeName("UINT")] uint last, [NativeTypeName("UINT")] uint check, [NativeTypeName("UINT")] uint flags);
+        public static extern BOOL CheckMenuRadioItem(HMENU hmenu, uint first, uint last, uint check, uint flags);
 
         [DllImport("user32", ExactSpelling = true)]
         public static extern HBITMAP LoadBitmapA(HINSTANCE hInstance, [NativeTypeName("LPCSTR")] sbyte* lpBitmapName);
@@ -1785,15 +1759,13 @@ namespace TerraFX.Interop
         public static extern HICON LoadIconW(HINSTANCE hInstance, [NativeTypeName("LPCWSTR")] ushort* lpIconName);
 
         [DllImport("user32", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
-        public static extern uint PrivateExtractIconsA([NativeTypeName("LPCSTR")] sbyte* szFileName, int nIconIndex, int cxIcon, int cyIcon, HICON* phicon, [NativeTypeName("UINT *")] uint* piconid, [NativeTypeName("UINT")] uint nIcons, [NativeTypeName("UINT")] uint flags);
+        public static extern uint PrivateExtractIconsA([NativeTypeName("LPCSTR")] sbyte* szFileName, int nIconIndex, int cxIcon, int cyIcon, HICON* phicon, uint* piconid, uint nIcons, uint flags);
 
         [DllImport("user32", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
-        public static extern uint PrivateExtractIconsW([NativeTypeName("LPCWSTR")] ushort* szFileName, int nIconIndex, int cxIcon, int cyIcon, HICON* phicon, [NativeTypeName("UINT *")] uint* piconid, [NativeTypeName("UINT")] uint nIcons, [NativeTypeName("UINT")] uint flags);
+        public static extern uint PrivateExtractIconsW([NativeTypeName("LPCWSTR")] ushort* szFileName, int nIconIndex, int cxIcon, int cyIcon, HICON* phicon, uint* piconid, uint nIcons, uint flags);
 
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
-        public static extern HICON CreateIcon(HINSTANCE hInstance, int nWidth, int nHeight, [NativeTypeName("BYTE")] byte cPlanes, [NativeTypeName("BYTE")] byte cBitsPixel, [NativeTypeName("const BYTE *")] byte* lpbANDbits, [NativeTypeName("const BYTE *")] byte* lpbXORbits);
+        public static extern HICON CreateIcon(HINSTANCE hInstance, int nWidth, int nHeight, byte cPlanes, byte cBitsPixel, [NativeTypeName("const BYTE *")] byte* lpbANDbits, [NativeTypeName("const BYTE *")] byte* lpbXORbits);
 
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
         public static extern BOOL DestroyIcon(HICON hIcon);
@@ -1802,25 +1774,25 @@ namespace TerraFX.Interop
         public static extern int LookupIconIdFromDirectory([NativeTypeName("PBYTE")] byte* presbits, BOOL fIcon);
 
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
-        public static extern int LookupIconIdFromDirectoryEx([NativeTypeName("PBYTE")] byte* presbits, BOOL fIcon, int cxDesired, int cyDesired, [NativeTypeName("UINT")] uint Flags);
+        public static extern int LookupIconIdFromDirectoryEx([NativeTypeName("PBYTE")] byte* presbits, BOOL fIcon, int cxDesired, int cyDesired, uint Flags);
 
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
         public static extern HICON CreateIconFromResource([NativeTypeName("PBYTE")] byte* presbits, [NativeTypeName("DWORD")] uint dwResSize, BOOL fIcon, [NativeTypeName("DWORD")] uint dwVer);
 
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
-        public static extern HICON CreateIconFromResourceEx([NativeTypeName("PBYTE")] byte* presbits, [NativeTypeName("DWORD")] uint dwResSize, BOOL fIcon, [NativeTypeName("DWORD")] uint dwVer, int cxDesired, int cyDesired, [NativeTypeName("UINT")] uint Flags);
+        public static extern HICON CreateIconFromResourceEx([NativeTypeName("PBYTE")] byte* presbits, [NativeTypeName("DWORD")] uint dwResSize, BOOL fIcon, [NativeTypeName("DWORD")] uint dwVer, int cxDesired, int cyDesired, uint Flags);
 
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
-        public static extern HANDLE LoadImageA(HINSTANCE hInst, [NativeTypeName("LPCSTR")] sbyte* name, [NativeTypeName("UINT")] uint type, int cx, int cy, [NativeTypeName("UINT")] uint fuLoad);
+        public static extern HANDLE LoadImageA(HINSTANCE hInst, [NativeTypeName("LPCSTR")] sbyte* name, uint type, int cx, int cy, uint fuLoad);
 
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
-        public static extern HANDLE LoadImageW(HINSTANCE hInst, [NativeTypeName("LPCWSTR")] ushort* name, [NativeTypeName("UINT")] uint type, int cx, int cy, [NativeTypeName("UINT")] uint fuLoad);
+        public static extern HANDLE LoadImageW(HINSTANCE hInst, [NativeTypeName("LPCWSTR")] ushort* name, uint type, int cx, int cy, uint fuLoad);
 
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
-        public static extern HANDLE CopyImage(HANDLE h, [NativeTypeName("UINT")] uint type, int cx, int cy, [NativeTypeName("UINT")] uint flags);
+        public static extern HANDLE CopyImage(HANDLE h, uint type, int cx, int cy, uint flags);
 
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
-        public static extern BOOL DrawIconEx(HDC hdc, int xLeft, int yTop, HICON hIcon, int cxWidth, int cyWidth, [NativeTypeName("UINT")] uint istepIfAniCur, HBRUSH hbrFlickerFreeDraw, [NativeTypeName("UINT")] uint diFlags);
+        public static extern BOOL DrawIconEx(HDC hdc, int xLeft, int yTop, HICON hIcon, int cxWidth, int cyWidth, uint istepIfAniCur, HBRUSH hbrFlickerFreeDraw, uint diFlags);
 
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
         public static extern HICON CreateIconIndirect([NativeTypeName("PICONINFO")] ICONINFO* piconinfo);
@@ -1847,10 +1819,10 @@ namespace TerraFX.Interop
         public static extern BOOL MapDialogRect(HWND hDlg, [NativeTypeName("LPRECT")] RECT* lpRect);
 
         [DllImport("user32", ExactSpelling = true)]
-        public static extern int DlgDirListA(HWND hDlg, [NativeTypeName("LPSTR")] sbyte* lpPathSpec, int nIDListBox, int nIDStaticPath, [NativeTypeName("UINT")] uint uFileType);
+        public static extern int DlgDirListA(HWND hDlg, [NativeTypeName("LPSTR")] sbyte* lpPathSpec, int nIDListBox, int nIDStaticPath, uint uFileType);
 
         [DllImport("user32", ExactSpelling = true)]
-        public static extern int DlgDirListW(HWND hDlg, [NativeTypeName("LPWSTR")] ushort* lpPathSpec, int nIDListBox, int nIDStaticPath, [NativeTypeName("UINT")] uint uFileType);
+        public static extern int DlgDirListW(HWND hDlg, [NativeTypeName("LPWSTR")] ushort* lpPathSpec, int nIDListBox, int nIDStaticPath, uint uFileType);
 
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
         public static extern BOOL DlgDirSelectExA(HWND hwndDlg, [NativeTypeName("LPSTR")] sbyte* lpString, int chCount, int idListBox);
@@ -1859,10 +1831,10 @@ namespace TerraFX.Interop
         public static extern BOOL DlgDirSelectExW(HWND hwndDlg, [NativeTypeName("LPWSTR")] ushort* lpString, int chCount, int idListBox);
 
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
-        public static extern int DlgDirListComboBoxA(HWND hDlg, [NativeTypeName("LPSTR")] sbyte* lpPathSpec, int nIDComboBox, int nIDStaticPath, [NativeTypeName("UINT")] uint uFiletype);
+        public static extern int DlgDirListComboBoxA(HWND hDlg, [NativeTypeName("LPSTR")] sbyte* lpPathSpec, int nIDComboBox, int nIDStaticPath, uint uFiletype);
 
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
-        public static extern int DlgDirListComboBoxW(HWND hDlg, [NativeTypeName("LPWSTR")] ushort* lpPathSpec, int nIDComboBox, int nIDStaticPath, [NativeTypeName("UINT")] uint uFiletype);
+        public static extern int DlgDirListComboBoxW(HWND hDlg, [NativeTypeName("LPWSTR")] ushort* lpPathSpec, int nIDComboBox, int nIDStaticPath, uint uFiletype);
 
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
         public static extern BOOL DlgDirSelectComboBoxExA(HWND hwndDlg, [NativeTypeName("LPSTR")] sbyte* lpString, int cchOut, int idComboBox);
@@ -1878,25 +1850,24 @@ namespace TerraFX.Interop
 
         [DllImport("user32", ExactSpelling = true)]
         [return: NativeTypeName("LRESULT")]
-        public static extern nint DefFrameProcA(HWND hWnd, HWND hWndMDIClient, [NativeTypeName("UINT")] uint uMsg, [NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam);
+        public static extern nint DefFrameProcA(HWND hWnd, HWND hWndMDIClient, uint uMsg, [NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam);
 
         [DllImport("user32", ExactSpelling = true)]
         [return: NativeTypeName("LRESULT")]
-        public static extern nint DefFrameProcW(HWND hWnd, HWND hWndMDIClient, [NativeTypeName("UINT")] uint uMsg, [NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam);
+        public static extern nint DefFrameProcW(HWND hWnd, HWND hWndMDIClient, uint uMsg, [NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam);
 
         [DllImport("user32", ExactSpelling = true)]
         [return: NativeTypeName("LRESULT")]
-        public static extern nint DefMDIChildProcA(HWND hWnd, [NativeTypeName("UINT")] uint uMsg, [NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam);
+        public static extern nint DefMDIChildProcA(HWND hWnd, uint uMsg, [NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam);
 
         [DllImport("user32", ExactSpelling = true)]
         [return: NativeTypeName("LRESULT")]
-        public static extern nint DefMDIChildProcW(HWND hWnd, [NativeTypeName("UINT")] uint uMsg, [NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam);
+        public static extern nint DefMDIChildProcW(HWND hWnd, uint uMsg, [NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam);
 
         [DllImport("user32", ExactSpelling = true)]
         public static extern BOOL TranslateMDISysAccel(HWND hWndClient, [NativeTypeName("LPMSG")] MSG* lpMsg);
 
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("UINT")]
         public static extern uint ArrangeIconicWindows(HWND hWnd);
 
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
@@ -1907,17 +1878,17 @@ namespace TerraFX.Interop
 
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("WORD")]
-        public static extern ushort TileWindows(HWND hwndParent, [NativeTypeName("UINT")] uint wHow, [NativeTypeName("const RECT *")] RECT* lpRect, [NativeTypeName("UINT")] uint cKids, [NativeTypeName("const HWND *")] HWND* lpKids);
+        public static extern ushort TileWindows(HWND hwndParent, uint wHow, [NativeTypeName("const RECT *")] RECT* lpRect, uint cKids, [NativeTypeName("const HWND *")] HWND* lpKids);
 
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("WORD")]
-        public static extern ushort CascadeWindows(HWND hwndParent, [NativeTypeName("UINT")] uint wHow, [NativeTypeName("const RECT *")] RECT* lpRect, [NativeTypeName("UINT")] uint cKids, [NativeTypeName("const HWND *")] HWND* lpKids);
+        public static extern ushort CascadeWindows(HWND hwndParent, uint wHow, [NativeTypeName("const RECT *")] RECT* lpRect, uint cKids, [NativeTypeName("const HWND *")] HWND* lpKids);
 
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
-        public static extern BOOL WinHelpA(HWND hWndMain, [NativeTypeName("LPCSTR")] sbyte* lpszHelp, [NativeTypeName("UINT")] uint uCommand, [NativeTypeName("ULONG_PTR")] nuint dwData);
+        public static extern BOOL WinHelpA(HWND hWndMain, [NativeTypeName("LPCSTR")] sbyte* lpszHelp, uint uCommand, [NativeTypeName("ULONG_PTR")] nuint dwData);
 
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
-        public static extern BOOL WinHelpW(HWND hWndMain, [NativeTypeName("LPCWSTR")] ushort* lpszHelp, [NativeTypeName("UINT")] uint uCommand, [NativeTypeName("ULONG_PTR")] nuint dwData);
+        public static extern BOOL WinHelpW(HWND hWndMain, [NativeTypeName("LPCWSTR")] ushort* lpszHelp, uint uCommand, [NativeTypeName("ULONG_PTR")] nuint dwData);
 
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("DWORD")]
@@ -1978,13 +1949,13 @@ namespace TerraFX.Interop
         public static extern int DisplayConfigSetDeviceInfo(DISPLAYCONFIG_DEVICE_INFO_HEADER* setPacket);
 
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
-        public static extern BOOL SystemParametersInfoA([NativeTypeName("UINT")] uint uiAction, [NativeTypeName("UINT")] uint uiParam, [NativeTypeName("PVOID")] void* pvParam, [NativeTypeName("UINT")] uint fWinIni);
+        public static extern BOOL SystemParametersInfoA(uint uiAction, uint uiParam, [NativeTypeName("PVOID")] void* pvParam, uint fWinIni);
 
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
-        public static extern BOOL SystemParametersInfoW([NativeTypeName("UINT")] uint uiAction, [NativeTypeName("UINT")] uint uiParam, [NativeTypeName("PVOID")] void* pvParam, [NativeTypeName("UINT")] uint fWinIni);
+        public static extern BOOL SystemParametersInfoW(uint uiAction, uint uiParam, [NativeTypeName("PVOID")] void* pvParam, uint fWinIni);
 
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
-        public static extern BOOL SystemParametersInfoForDpi([NativeTypeName("UINT")] uint uiAction, [NativeTypeName("UINT")] uint uiParam, [NativeTypeName("PVOID")] void* pvParam, [NativeTypeName("UINT")] uint fWinIni, [NativeTypeName("UINT")] uint dpi);
+        public static extern BOOL SystemParametersInfoForDpi(uint uiAction, uint uiParam, [NativeTypeName("PVOID")] void* pvParam, uint fWinIni, uint dpi);
 
         [DllImport("user32", ExactSpelling = true)]
         public static extern BOOL SoundSentry();
@@ -2056,7 +2027,6 @@ namespace TerraFX.Interop
         public static extern DPI_AWARENESS GetAwarenessFromDpiAwarenessContext(DPI_AWARENESS_CONTEXT value);
 
         [DllImport("user32", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
         public static extern uint GetDpiFromDpiAwarenessContext(DPI_AWARENESS_CONTEXT value);
 
         [DllImport("user32", ExactSpelling = true)]
@@ -2066,15 +2036,12 @@ namespace TerraFX.Interop
         public static extern BOOL IsValidDpiAwarenessContext(DPI_AWARENESS_CONTEXT value);
 
         [DllImport("user32", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
         public static extern uint GetDpiForWindow(HWND hwnd);
 
         [DllImport("user32", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
         public static extern uint GetDpiForSystem();
 
         [DllImport("user32", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
         public static extern uint GetSystemDpiForProcess(HANDLE hProcess);
 
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
@@ -2099,12 +2066,10 @@ namespace TerraFX.Interop
         public static extern DPI_HOSTING_BEHAVIOR GetWindowDpiHostingBehavior(HWND hwnd);
 
         [DllImport("user32", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
-        public static extern uint GetWindowModuleFileNameA(HWND hwnd, [NativeTypeName("LPSTR")] sbyte* pszFileName, [NativeTypeName("UINT")] uint cchFileNameMax);
+        public static extern uint GetWindowModuleFileNameA(HWND hwnd, [NativeTypeName("LPSTR")] sbyte* pszFileName, uint cchFileNameMax);
 
         [DllImport("user32", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
-        public static extern uint GetWindowModuleFileNameW(HWND hwnd, [NativeTypeName("LPWSTR")] ushort* pszFileName, [NativeTypeName("UINT")] uint cchFileNameMax);
+        public static extern uint GetWindowModuleFileNameW(HWND hwnd, [NativeTypeName("LPWSTR")] ushort* pszFileName, uint cchFileNameMax);
 
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
         public static extern BOOL GetCursorInfo([NativeTypeName("PCURSORINFO")] CURSORINFO* pci);
@@ -2125,24 +2090,22 @@ namespace TerraFX.Interop
         public static extern BOOL GetComboBoxInfo(HWND hwndCombo, [NativeTypeName("PCOMBOBOXINFO")] COMBOBOXINFO* pcbi);
 
         [DllImport("user32", ExactSpelling = true)]
-        public static extern HWND GetAncestor(HWND hwnd, [NativeTypeName("UINT")] uint gaFlags);
+        public static extern HWND GetAncestor(HWND hwnd, uint gaFlags);
 
         [DllImport("user32", ExactSpelling = true)]
         public static extern HWND RealChildWindowFromPoint(HWND hwndParent, POINT ptParentClientCoords);
 
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("UINT")]
-        public static extern uint RealGetWindowClassA(HWND hwnd, [NativeTypeName("LPSTR")] sbyte* ptszClassName, [NativeTypeName("UINT")] uint cchClassNameMax);
+        public static extern uint RealGetWindowClassA(HWND hwnd, [NativeTypeName("LPSTR")] sbyte* ptszClassName, uint cchClassNameMax);
 
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("UINT")]
-        public static extern uint RealGetWindowClassW(HWND hwnd, [NativeTypeName("LPWSTR")] ushort* ptszClassName, [NativeTypeName("UINT")] uint cchClassNameMax);
+        public static extern uint RealGetWindowClassW(HWND hwnd, [NativeTypeName("LPWSTR")] ushort* ptszClassName, uint cchClassNameMax);
 
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
-        public static extern BOOL GetAltTabInfoA(HWND hwnd, int iItem, [NativeTypeName("PALTTABINFO")] ALTTABINFO* pati, [NativeTypeName("LPSTR")] sbyte* pszItemText, [NativeTypeName("UINT")] uint cchItemText);
+        public static extern BOOL GetAltTabInfoA(HWND hwnd, int iItem, [NativeTypeName("PALTTABINFO")] ALTTABINFO* pati, [NativeTypeName("LPSTR")] sbyte* pszItemText, uint cchItemText);
 
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
-        public static extern BOOL GetAltTabInfoW(HWND hwnd, int iItem, [NativeTypeName("PALTTABINFO")] ALTTABINFO* pati, [NativeTypeName("LPWSTR")] ushort* pszItemText, [NativeTypeName("UINT")] uint cchItemText);
+        public static extern BOOL GetAltTabInfoW(HWND hwnd, int iItem, [NativeTypeName("PALTTABINFO")] ALTTABINFO* pati, [NativeTypeName("LPWSTR")] ushort* pszItemText, uint cchItemText);
 
         [DllImport("user32", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
@@ -2155,35 +2118,29 @@ namespace TerraFX.Interop
         public static extern BOOL UserHandleGrantAccess(HANDLE hUserHandle, HANDLE hJob, BOOL bGrant);
 
         [DllImport("user32", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
-        public static extern uint GetRawInputData(HRAWINPUT hRawInput, [NativeTypeName("UINT")] uint uiCommand, [NativeTypeName("LPVOID")] void* pData, [NativeTypeName("PUINT")] uint* pcbSize, [NativeTypeName("UINT")] uint cbSizeHeader);
+        public static extern uint GetRawInputData(HRAWINPUT hRawInput, uint uiCommand, [NativeTypeName("LPVOID")] void* pData, [NativeTypeName("PUINT")] uint* pcbSize, uint cbSizeHeader);
 
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("UINT")]
-        public static extern uint GetRawInputDeviceInfoA(HANDLE hDevice, [NativeTypeName("UINT")] uint uiCommand, [NativeTypeName("LPVOID")] void* pData, [NativeTypeName("PUINT")] uint* pcbSize);
+        public static extern uint GetRawInputDeviceInfoA(HANDLE hDevice, uint uiCommand, [NativeTypeName("LPVOID")] void* pData, [NativeTypeName("PUINT")] uint* pcbSize);
 
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("UINT")]
-        public static extern uint GetRawInputDeviceInfoW(HANDLE hDevice, [NativeTypeName("UINT")] uint uiCommand, [NativeTypeName("LPVOID")] void* pData, [NativeTypeName("PUINT")] uint* pcbSize);
+        public static extern uint GetRawInputDeviceInfoW(HANDLE hDevice, uint uiCommand, [NativeTypeName("LPVOID")] void* pData, [NativeTypeName("PUINT")] uint* pcbSize);
 
         [DllImport("user32", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
-        public static extern uint GetRawInputBuffer([NativeTypeName("PRAWINPUT")] RAWINPUT* pData, [NativeTypeName("PUINT")] uint* pcbSize, [NativeTypeName("UINT")] uint cbSizeHeader);
+        public static extern uint GetRawInputBuffer([NativeTypeName("PRAWINPUT")] RAWINPUT* pData, [NativeTypeName("PUINT")] uint* pcbSize, uint cbSizeHeader);
 
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
-        public static extern BOOL RegisterRawInputDevices([NativeTypeName("PCRAWINPUTDEVICE")] RAWINPUTDEVICE* pRawInputDevices, [NativeTypeName("UINT")] uint uiNumDevices, [NativeTypeName("UINT")] uint cbSize);
+        public static extern BOOL RegisterRawInputDevices([NativeTypeName("PCRAWINPUTDEVICE")] RAWINPUTDEVICE* pRawInputDevices, uint uiNumDevices, uint cbSize);
 
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("UINT")]
-        public static extern uint GetRegisteredRawInputDevices([NativeTypeName("PRAWINPUTDEVICE")] RAWINPUTDEVICE* pRawInputDevices, [NativeTypeName("PUINT")] uint* puiNumDevices, [NativeTypeName("UINT")] uint cbSize);
+        public static extern uint GetRegisteredRawInputDevices([NativeTypeName("PRAWINPUTDEVICE")] RAWINPUTDEVICE* pRawInputDevices, [NativeTypeName("PUINT")] uint* puiNumDevices, uint cbSize);
 
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("UINT")]
-        public static extern uint GetRawInputDeviceList([NativeTypeName("PRAWINPUTDEVICELIST")] RAWINPUTDEVICELIST* pRawInputDeviceList, [NativeTypeName("PUINT")] uint* puiNumDevices, [NativeTypeName("UINT")] uint cbSize);
+        public static extern uint GetRawInputDeviceList([NativeTypeName("PRAWINPUTDEVICELIST")] RAWINPUTDEVICELIST* pRawInputDeviceList, [NativeTypeName("PUINT")] uint* puiNumDevices, uint cbSize);
 
         [DllImport("user32", ExactSpelling = true)]
         [return: NativeTypeName("LRESULT")]
-        public static extern nint DefRawInputProc([NativeTypeName("PRAWINPUT *")] RAWINPUT** paRawInput, [NativeTypeName("INT")] int nInput, [NativeTypeName("UINT")] uint cbSizeHeader);
+        public static extern nint DefRawInputProc([NativeTypeName("PRAWINPUT *")] RAWINPUT** paRawInput, int nInput, uint cbSizeHeader);
 
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
         public static extern BOOL GetPointerDevices([NativeTypeName("UINT32 *")] uint* deviceCount, POINTER_DEVICE_INFO* pointerDevices);
@@ -2207,25 +2164,25 @@ namespace TerraFX.Interop
         public static extern BOOL GetRawPointerDeviceData([NativeTypeName("UINT32")] uint pointerId, [NativeTypeName("UINT32")] uint historyCount, [NativeTypeName("UINT32")] uint propertiesCount, POINTER_DEVICE_PROPERTY* pProperties, [NativeTypeName("LONG *")] int* pValues);
 
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
-        public static extern BOOL ChangeWindowMessageFilter([NativeTypeName("UINT")] uint message, [NativeTypeName("DWORD")] uint dwFlag);
+        public static extern BOOL ChangeWindowMessageFilter(uint message, [NativeTypeName("DWORD")] uint dwFlag);
 
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
-        public static extern BOOL ChangeWindowMessageFilterEx(HWND hwnd, [NativeTypeName("UINT")] uint message, [NativeTypeName("DWORD")] uint action, [NativeTypeName("PCHANGEFILTERSTRUCT")] CHANGEFILTERSTRUCT* pChangeFilterStruct);
+        public static extern BOOL ChangeWindowMessageFilterEx(HWND hwnd, uint message, [NativeTypeName("DWORD")] uint action, [NativeTypeName("PCHANGEFILTERSTRUCT")] CHANGEFILTERSTRUCT* pChangeFilterStruct);
 
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
         public static extern BOOL GetGestureInfo(HGESTUREINFO hGestureInfo, [NativeTypeName("PGESTUREINFO")] GESTUREINFO* pGestureInfo);
 
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
-        public static extern BOOL GetGestureExtraArgs(HGESTUREINFO hGestureInfo, [NativeTypeName("UINT")] uint cbExtraArgs, [NativeTypeName("PBYTE")] byte* pExtraArgs);
+        public static extern BOOL GetGestureExtraArgs(HGESTUREINFO hGestureInfo, uint cbExtraArgs, [NativeTypeName("PBYTE")] byte* pExtraArgs);
 
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
         public static extern BOOL CloseGestureInfoHandle(HGESTUREINFO hGestureInfo);
 
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
-        public static extern BOOL SetGestureConfig(HWND hwnd, [NativeTypeName("DWORD")] uint dwReserved, [NativeTypeName("UINT")] uint cIDs, [NativeTypeName("PGESTURECONFIG")] GESTURECONFIG* pGestureConfig, [NativeTypeName("UINT")] uint cbSize);
+        public static extern BOOL SetGestureConfig(HWND hwnd, [NativeTypeName("DWORD")] uint dwReserved, uint cIDs, [NativeTypeName("PGESTURECONFIG")] GESTURECONFIG* pGestureConfig, uint cbSize);
 
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
-        public static extern BOOL GetGestureConfig(HWND hwnd, [NativeTypeName("DWORD")] uint dwReserved, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("PUINT")] uint* pcIDs, [NativeTypeName("PGESTURECONFIG")] GESTURECONFIG* pGestureConfig, [NativeTypeName("UINT")] uint cbSize);
+        public static extern BOOL GetGestureConfig(HWND hwnd, [NativeTypeName("DWORD")] uint dwReserved, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("PUINT")] uint* pcIDs, [NativeTypeName("PGESTURECONFIG")] GESTURECONFIG* pGestureConfig, uint cbSize);
 
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
         public static extern BOOL ShutdownBlockReasonCreate(HWND hWnd, [NativeTypeName("LPCWSTR")] ushort* pwszReason);

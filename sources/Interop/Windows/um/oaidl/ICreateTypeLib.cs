@@ -97,7 +97,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(11)]
-        public HRESULT SetLibFlags([NativeTypeName("UINT")] uint uLibFlags)
+        public HRESULT SetLibFlags(uint uLibFlags)
         {
             return ((delegate* unmanaged<ICreateTypeLib*, uint, int>)(lpVtbl[11]))((ICreateTypeLib*)Unsafe.AsPointer(ref this), uLibFlags);
         }

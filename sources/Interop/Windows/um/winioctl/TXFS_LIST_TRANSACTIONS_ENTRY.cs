@@ -9,7 +9,6 @@ namespace TerraFX.Interop
 {
     public partial struct TXFS_LIST_TRANSACTIONS_ENTRY
     {
-        [NativeTypeName("GUID")]
         public Guid TransactionId;
 
         [NativeTypeName("DWORD")]

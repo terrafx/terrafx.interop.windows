@@ -10,11 +10,9 @@ namespace TerraFX.Interop
     public static unsafe partial class Windows
     {
         [DllImport("msi", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
         public static extern uint MsiCloseHandle(MSIHANDLE hAny);
 
         [DllImport("msi", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
         public static extern uint MsiCloseAllHandles();
 
         [DllImport("msi", ExactSpelling = true)]
@@ -29,15 +27,12 @@ namespace TerraFX.Interop
         public static extern delegate* unmanaged<void*, uint, ushort*, int> MsiSetExternalUIW([NativeTypeName("INSTALLUI_HANDLERW")] delegate* unmanaged<void*, uint, ushort*, int> puiHandler, [NativeTypeName("DWORD")] uint dwMessageFilter, [NativeTypeName("LPVOID")] void* pvContext);
 
         [DllImport("msi", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
         public static extern uint MsiSetExternalUIRecord([NativeTypeName("INSTALLUI_HANDLER_RECORD")] delegate* unmanaged<void*, uint, MSIHANDLE, int> puiHandler, [NativeTypeName("DWORD")] uint dwMessageFilter, [NativeTypeName("LPVOID")] void* pvContext, [NativeTypeName("PINSTALLUI_HANDLER_RECORD")] delegate* unmanaged<void*, uint, MSIHANDLE, int>* ppuiPrevHandler);
 
         [DllImport("msi", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
         public static extern uint MsiEnableLogA([NativeTypeName("DWORD")] uint dwLogMode, [NativeTypeName("LPCSTR")] sbyte* szLogFile, [NativeTypeName("DWORD")] uint dwLogAttributes);
 
         [DllImport("msi", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
         public static extern uint MsiEnableLogW([NativeTypeName("DWORD")] uint dwLogMode, [NativeTypeName("LPCWSTR")] ushort* szLogFile, [NativeTypeName("DWORD")] uint dwLogAttributes);
 
         [DllImport("msi", ExactSpelling = true)]
@@ -47,99 +42,75 @@ namespace TerraFX.Interop
         public static extern INSTALLSTATE MsiQueryProductStateW([NativeTypeName("LPCWSTR")] ushort* szProduct);
 
         [DllImport("msi", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
         public static extern uint MsiGetProductInfoA([NativeTypeName("LPCSTR")] sbyte* szProduct, [NativeTypeName("LPCSTR")] sbyte* szAttribute, [NativeTypeName("LPSTR")] sbyte* lpValueBuf, [NativeTypeName("LPDWORD")] uint* pcchValueBuf);
 
         [DllImport("msi", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
         public static extern uint MsiGetProductInfoW([NativeTypeName("LPCWSTR")] ushort* szProduct, [NativeTypeName("LPCWSTR")] ushort* szAttribute, [NativeTypeName("LPWSTR")] ushort* lpValueBuf, [NativeTypeName("LPDWORD")] uint* pcchValueBuf);
 
         [DllImport("msi", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
         public static extern uint MsiGetProductInfoExA([NativeTypeName("LPCSTR")] sbyte* szProductCode, [NativeTypeName("LPCSTR")] sbyte* szUserSid, MSIINSTALLCONTEXT dwContext, [NativeTypeName("LPCSTR")] sbyte* szProperty, [NativeTypeName("LPSTR")] sbyte* szValue, [NativeTypeName("LPDWORD")] uint* pcchValue);
 
         [DllImport("msi", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
         public static extern uint MsiGetProductInfoExW([NativeTypeName("LPCWSTR")] ushort* szProductCode, [NativeTypeName("LPCWSTR")] ushort* szUserSid, MSIINSTALLCONTEXT dwContext, [NativeTypeName("LPCWSTR")] ushort* szProperty, [NativeTypeName("LPWSTR")] ushort* szValue, [NativeTypeName("LPDWORD")] uint* pcchValue);
 
         [DllImport("msi", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
         public static extern uint MsiInstallProductA([NativeTypeName("LPCSTR")] sbyte* szPackagePath, [NativeTypeName("LPCSTR")] sbyte* szCommandLine);
 
         [DllImport("msi", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
         public static extern uint MsiInstallProductW([NativeTypeName("LPCWSTR")] ushort* szPackagePath, [NativeTypeName("LPCWSTR")] ushort* szCommandLine);
 
         [DllImport("msi", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
         public static extern uint MsiConfigureProductA([NativeTypeName("LPCSTR")] sbyte* szProduct, int iInstallLevel, INSTALLSTATE eInstallState);
 
         [DllImport("msi", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
         public static extern uint MsiConfigureProductW([NativeTypeName("LPCWSTR")] ushort* szProduct, int iInstallLevel, INSTALLSTATE eInstallState);
 
         [DllImport("msi", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
         public static extern uint MsiConfigureProductExA([NativeTypeName("LPCSTR")] sbyte* szProduct, int iInstallLevel, INSTALLSTATE eInstallState, [NativeTypeName("LPCSTR")] sbyte* szCommandLine);
 
         [DllImport("msi", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
         public static extern uint MsiConfigureProductExW([NativeTypeName("LPCWSTR")] ushort* szProduct, int iInstallLevel, INSTALLSTATE eInstallState, [NativeTypeName("LPCWSTR")] ushort* szCommandLine);
 
         [DllImport("msi", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
         public static extern uint MsiReinstallProductA([NativeTypeName("LPCSTR")] sbyte* szProduct, [NativeTypeName("DWORD")] uint szReinstallMode);
 
         [DllImport("msi", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
         public static extern uint MsiReinstallProductW([NativeTypeName("LPCWSTR")] ushort* szProduct, [NativeTypeName("DWORD")] uint szReinstallMode);
 
         [DllImport("msi", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
         public static extern uint MsiAdvertiseProductExA([NativeTypeName("LPCSTR")] sbyte* szPackagePath, [NativeTypeName("LPCSTR")] sbyte* szScriptfilePath, [NativeTypeName("LPCSTR")] sbyte* szTransforms, [NativeTypeName("LANGID")] ushort lgidLanguage, [NativeTypeName("DWORD")] uint dwPlatform, [NativeTypeName("DWORD")] uint dwOptions);
 
         [DllImport("msi", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
         public static extern uint MsiAdvertiseProductExW([NativeTypeName("LPCWSTR")] ushort* szPackagePath, [NativeTypeName("LPCWSTR")] ushort* szScriptfilePath, [NativeTypeName("LPCWSTR")] ushort* szTransforms, [NativeTypeName("LANGID")] ushort lgidLanguage, [NativeTypeName("DWORD")] uint dwPlatform, [NativeTypeName("DWORD")] uint dwOptions);
 
         [DllImport("msi", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
         public static extern uint MsiAdvertiseProductA([NativeTypeName("LPCSTR")] sbyte* szPackagePath, [NativeTypeName("LPCSTR")] sbyte* szScriptfilePath, [NativeTypeName("LPCSTR")] sbyte* szTransforms, [NativeTypeName("LANGID")] ushort lgidLanguage);
 
         [DllImport("msi", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
         public static extern uint MsiAdvertiseProductW([NativeTypeName("LPCWSTR")] ushort* szPackagePath, [NativeTypeName("LPCWSTR")] ushort* szScriptfilePath, [NativeTypeName("LPCWSTR")] ushort* szTransforms, [NativeTypeName("LANGID")] ushort lgidLanguage);
 
         [DllImport("msi", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
         public static extern uint MsiProcessAdvertiseScriptA([NativeTypeName("LPCSTR")] sbyte* szScriptFile, [NativeTypeName("LPCSTR")] sbyte* szIconFolder, HKEY hRegData, BOOL fShortcuts, BOOL fRemoveItems);
 
         [DllImport("msi", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
         public static extern uint MsiProcessAdvertiseScriptW([NativeTypeName("LPCWSTR")] ushort* szScriptFile, [NativeTypeName("LPCWSTR")] ushort* szIconFolder, HKEY hRegData, BOOL fShortcuts, BOOL fRemoveItems);
 
         [DllImport("msi", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
         public static extern uint MsiAdvertiseScriptA([NativeTypeName("LPCSTR")] sbyte* szScriptFile, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("PHKEY")] HKEY* phRegData, BOOL fRemoveItems);
 
         [DllImport("msi", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
         public static extern uint MsiAdvertiseScriptW([NativeTypeName("LPCWSTR")] ushort* szScriptFile, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("PHKEY")] HKEY* phRegData, BOOL fRemoveItems);
 
         [DllImport("msi", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
         public static extern uint MsiGetProductInfoFromScriptA([NativeTypeName("LPCSTR")] sbyte* szScriptFile, [NativeTypeName("LPSTR")] sbyte* lpProductBuf39, [NativeTypeName("LANGID *")] ushort* plgidLanguage, [NativeTypeName("LPDWORD")] uint* pdwVersion, [NativeTypeName("LPSTR")] sbyte* lpNameBuf, [NativeTypeName("LPDWORD")] uint* pcchNameBuf, [NativeTypeName("LPSTR")] sbyte* lpPackageBuf, [NativeTypeName("LPDWORD")] uint* pcchPackageBuf);
 
         [DllImport("msi", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
         public static extern uint MsiGetProductInfoFromScriptW([NativeTypeName("LPCWSTR")] ushort* szScriptFile, [NativeTypeName("LPWSTR")] ushort* lpProductBuf39, [NativeTypeName("LANGID *")] ushort* plgidLanguage, [NativeTypeName("LPDWORD")] uint* pdwVersion, [NativeTypeName("LPWSTR")] ushort* lpNameBuf, [NativeTypeName("LPDWORD")] uint* pcchNameBuf, [NativeTypeName("LPWSTR")] ushort* lpPackageBuf, [NativeTypeName("LPDWORD")] uint* pcchPackageBuf);
 
         [DllImport("msi", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
         public static extern uint MsiGetProductCodeA([NativeTypeName("LPCSTR")] sbyte* szComponent, [NativeTypeName("LPSTR")] sbyte* lpBuf39);
 
         [DllImport("msi", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
         public static extern uint MsiGetProductCodeW([NativeTypeName("LPCWSTR")] ushort* szComponent, [NativeTypeName("LPWSTR")] ushort* lpBuf39);
 
         [DllImport("msi", ExactSpelling = true)]
@@ -149,91 +120,69 @@ namespace TerraFX.Interop
         public static extern USERINFOSTATE MsiGetUserInfoW([NativeTypeName("LPCWSTR")] ushort* szProduct, [NativeTypeName("LPWSTR")] ushort* lpUserNameBuf, [NativeTypeName("LPDWORD")] uint* pcchUserNameBuf, [NativeTypeName("LPWSTR")] ushort* lpOrgNameBuf, [NativeTypeName("LPDWORD")] uint* pcchOrgNameBuf, [NativeTypeName("LPWSTR")] ushort* lpSerialBuf, [NativeTypeName("LPDWORD")] uint* pcchSerialBuf);
 
         [DllImport("msi", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
         public static extern uint MsiCollectUserInfoA([NativeTypeName("LPCSTR")] sbyte* szProduct);
 
         [DllImport("msi", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
         public static extern uint MsiCollectUserInfoW([NativeTypeName("LPCWSTR")] ushort* szProduct);
 
         [DllImport("msi", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
         public static extern uint MsiApplyPatchA([NativeTypeName("LPCSTR")] sbyte* szPatchPackage, [NativeTypeName("LPCSTR")] sbyte* szInstallPackage, INSTALLTYPE eInstallType, [NativeTypeName("LPCSTR")] sbyte* szCommandLine);
 
         [DllImport("msi", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
         public static extern uint MsiApplyPatchW([NativeTypeName("LPCWSTR")] ushort* szPatchPackage, [NativeTypeName("LPCWSTR")] ushort* szInstallPackage, INSTALLTYPE eInstallType, [NativeTypeName("LPCWSTR")] ushort* szCommandLine);
 
         [DllImport("msi", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
         public static extern uint MsiGetPatchInfoA([NativeTypeName("LPCSTR")] sbyte* szPatch, [NativeTypeName("LPCSTR")] sbyte* szAttribute, [NativeTypeName("LPSTR")] sbyte* lpValueBuf, [NativeTypeName("LPDWORD")] uint* pcchValueBuf);
 
         [DllImport("msi", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
         public static extern uint MsiGetPatchInfoW([NativeTypeName("LPCWSTR")] ushort* szPatch, [NativeTypeName("LPCWSTR")] ushort* szAttribute, [NativeTypeName("LPWSTR")] ushort* lpValueBuf, [NativeTypeName("LPDWORD")] uint* pcchValueBuf);
 
         [DllImport("msi", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
         public static extern uint MsiEnumPatchesA([NativeTypeName("LPCSTR")] sbyte* szProduct, [NativeTypeName("DWORD")] uint iPatchIndex, [NativeTypeName("LPSTR")] sbyte* lpPatchBuf, [NativeTypeName("LPSTR")] sbyte* lpTransformsBuf, [NativeTypeName("LPDWORD")] uint* pcchTransformsBuf);
 
         [DllImport("msi", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
         public static extern uint MsiEnumPatchesW([NativeTypeName("LPCWSTR")] ushort* szProduct, [NativeTypeName("DWORD")] uint iPatchIndex, [NativeTypeName("LPWSTR")] ushort* lpPatchBuf, [NativeTypeName("LPWSTR")] ushort* lpTransformsBuf, [NativeTypeName("LPDWORD")] uint* pcchTransformsBuf);
 
         [DllImport("msi", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
         public static extern uint MsiRemovePatchesA([NativeTypeName("LPCSTR")] sbyte* szPatchList, [NativeTypeName("LPCSTR")] sbyte* szProductCode, INSTALLTYPE eUninstallType, [NativeTypeName("LPCSTR")] sbyte* szPropertyList);
 
         [DllImport("msi", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
         public static extern uint MsiRemovePatchesW([NativeTypeName("LPCWSTR")] ushort* szPatchList, [NativeTypeName("LPCWSTR")] ushort* szProductCode, INSTALLTYPE eUninstallType, [NativeTypeName("LPCWSTR")] ushort* szPropertyList);
 
         [DllImport("msi", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
         public static extern uint MsiExtractPatchXMLDataA([NativeTypeName("LPCSTR")] sbyte* szPatchPath, [NativeTypeName("DWORD")] uint dwReserved, [NativeTypeName("LPSTR")] sbyte* szXMLData, [NativeTypeName("LPDWORD")] uint* pcchXMLData);
 
         [DllImport("msi", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
         public static extern uint MsiExtractPatchXMLDataW([NativeTypeName("LPCWSTR")] ushort* szPatchPath, [NativeTypeName("DWORD")] uint dwReserved, [NativeTypeName("LPWSTR")] ushort* szXMLData, [NativeTypeName("LPDWORD")] uint* pcchXMLData);
 
         [DllImport("msi", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
         public static extern uint MsiGetPatchInfoExA([NativeTypeName("LPCSTR")] sbyte* szPatchCode, [NativeTypeName("LPCSTR")] sbyte* szProductCode, [NativeTypeName("LPCSTR")] sbyte* szUserSid, MSIINSTALLCONTEXT dwContext, [NativeTypeName("LPCSTR")] sbyte* szProperty, [NativeTypeName("LPSTR")] sbyte* lpValue, [NativeTypeName("LPDWORD")] uint* pcchValue);
 
         [DllImport("msi", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
         public static extern uint MsiGetPatchInfoExW([NativeTypeName("LPCWSTR")] ushort* szPatchCode, [NativeTypeName("LPCWSTR")] ushort* szProductCode, [NativeTypeName("LPCWSTR")] ushort* szUserSid, MSIINSTALLCONTEXT dwContext, [NativeTypeName("LPCWSTR")] ushort* szProperty, [NativeTypeName("LPWSTR")] ushort* lpValue, [NativeTypeName("LPDWORD")] uint* pcchValue);
 
         [DllImport("msi", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
         public static extern uint MsiApplyMultiplePatchesA([NativeTypeName("LPCSTR")] sbyte* szPatchPackages, [NativeTypeName("LPCSTR")] sbyte* szProductCode, [NativeTypeName("LPCSTR")] sbyte* szPropertiesList);
 
         [DllImport("msi", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
         public static extern uint MsiApplyMultiplePatchesW([NativeTypeName("LPCWSTR")] ushort* szPatchPackages, [NativeTypeName("LPCWSTR")] ushort* szProductCode, [NativeTypeName("LPCWSTR")] ushort* szPropertiesList);
 
         [DllImport("msi", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
         public static extern uint MsiDeterminePatchSequenceA([NativeTypeName("LPCSTR")] sbyte* szProductCode, [NativeTypeName("LPCSTR")] sbyte* szUserSid, MSIINSTALLCONTEXT dwContext, [NativeTypeName("DWORD")] uint cPatchInfo, [NativeTypeName("PMSIPATCHSEQUENCEINFOA")] MSIPATCHSEQUENCEINFOA* pPatchInfo);
 
         [DllImport("msi", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
         public static extern uint MsiDeterminePatchSequenceW([NativeTypeName("LPCWSTR")] ushort* szProductCode, [NativeTypeName("LPCWSTR")] ushort* szUserSid, MSIINSTALLCONTEXT dwContext, [NativeTypeName("DWORD")] uint cPatchInfo, [NativeTypeName("PMSIPATCHSEQUENCEINFOW")] MSIPATCHSEQUENCEINFOW* pPatchInfo);
 
         [DllImport("msi", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
         public static extern uint MsiDetermineApplicablePatchesA([NativeTypeName("LPCSTR")] sbyte* szProductPackagePath, [NativeTypeName("DWORD")] uint cPatchInfo, [NativeTypeName("PMSIPATCHSEQUENCEINFOA")] MSIPATCHSEQUENCEINFOA* pPatchInfo);
 
         [DllImport("msi", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
         public static extern uint MsiDetermineApplicablePatchesW([NativeTypeName("LPCWSTR")] ushort* szProductPackagePath, [NativeTypeName("DWORD")] uint cPatchInfo, [NativeTypeName("PMSIPATCHSEQUENCEINFOW")] MSIPATCHSEQUENCEINFOW* pPatchInfo);
 
         [DllImport("msi", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
         public static extern uint MsiEnumPatchesExA([NativeTypeName("LPCSTR")] sbyte* szProductCode, [NativeTypeName("LPCSTR")] sbyte* szUserSid, [NativeTypeName("DWORD")] uint dwContext, [NativeTypeName("DWORD")] uint dwFilter, [NativeTypeName("DWORD")] uint dwIndex, [NativeTypeName("CHAR [39]")] sbyte* szPatchCode, [NativeTypeName("CHAR [39]")] sbyte* szTargetProductCode, MSIINSTALLCONTEXT* pdwTargetProductContext, [NativeTypeName("LPSTR")] sbyte* szTargetUserSid, [NativeTypeName("LPDWORD")] uint* pcchTargetUserSid);
 
         [DllImport("msi", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
         public static extern uint MsiEnumPatchesExW([NativeTypeName("LPCWSTR")] ushort* szProductCode, [NativeTypeName("LPCWSTR")] ushort* szUserSid, [NativeTypeName("DWORD")] uint dwContext, [NativeTypeName("DWORD")] uint dwFilter, [NativeTypeName("DWORD")] uint dwIndex, [NativeTypeName("WCHAR [39]")] ushort* szPatchCode, [NativeTypeName("WCHAR [39]")] ushort* szTargetProductCode, MSIINSTALLCONTEXT* pdwTargetProductContext, [NativeTypeName("LPWSTR")] ushort* szTargetUserSid, [NativeTypeName("LPDWORD")] uint* pcchTargetUserSid);
 
         [DllImport("msi", ExactSpelling = true)]
@@ -243,11 +192,9 @@ namespace TerraFX.Interop
         public static extern INSTALLSTATE MsiQueryFeatureStateW([NativeTypeName("LPCWSTR")] ushort* szProduct, [NativeTypeName("LPCWSTR")] ushort* szFeature);
 
         [DllImport("msi", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
         public static extern uint MsiQueryFeatureStateExA([NativeTypeName("LPCSTR")] sbyte* szProductCode, [NativeTypeName("LPCSTR")] sbyte* szUserSid, MSIINSTALLCONTEXT dwContext, [NativeTypeName("LPCSTR")] sbyte* szFeature, INSTALLSTATE* pdwState);
 
         [DllImport("msi", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
         public static extern uint MsiQueryFeatureStateExW([NativeTypeName("LPCWSTR")] ushort* szProductCode, [NativeTypeName("LPCWSTR")] ushort* szUserSid, MSIINSTALLCONTEXT dwContext, [NativeTypeName("LPCWSTR")] ushort* szFeature, INSTALLSTATE* pdwState);
 
         [DllImport("msi", ExactSpelling = true)]
@@ -263,51 +210,39 @@ namespace TerraFX.Interop
         public static extern INSTALLSTATE MsiUseFeatureExW([NativeTypeName("LPCWSTR")] ushort* szProduct, [NativeTypeName("LPCWSTR")] ushort* szFeature, [NativeTypeName("DWORD")] uint dwInstallMode, [NativeTypeName("DWORD")] uint dwReserved);
 
         [DllImport("msi", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
         public static extern uint MsiGetFeatureUsageA([NativeTypeName("LPCSTR")] sbyte* szProduct, [NativeTypeName("LPCSTR")] sbyte* szFeature, [NativeTypeName("LPDWORD")] uint* pdwUseCount, [NativeTypeName("LPWORD")] ushort* pwDateUsed);
 
         [DllImport("msi", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
         public static extern uint MsiGetFeatureUsageW([NativeTypeName("LPCWSTR")] ushort* szProduct, [NativeTypeName("LPCWSTR")] ushort* szFeature, [NativeTypeName("LPDWORD")] uint* pdwUseCount, [NativeTypeName("LPWORD")] ushort* pwDateUsed);
 
         [DllImport("msi", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
         public static extern uint MsiConfigureFeatureA([NativeTypeName("LPCSTR")] sbyte* szProduct, [NativeTypeName("LPCSTR")] sbyte* szFeature, INSTALLSTATE eInstallState);
 
         [DllImport("msi", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
         public static extern uint MsiConfigureFeatureW([NativeTypeName("LPCWSTR")] ushort* szProduct, [NativeTypeName("LPCWSTR")] ushort* szFeature, INSTALLSTATE eInstallState);
 
         [DllImport("msi", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
         public static extern uint MsiReinstallFeatureA([NativeTypeName("LPCSTR")] sbyte* szProduct, [NativeTypeName("LPCSTR")] sbyte* szFeature, [NativeTypeName("DWORD")] uint dwReinstallMode);
 
         [DllImport("msi", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
         public static extern uint MsiReinstallFeatureW([NativeTypeName("LPCWSTR")] ushort* szProduct, [NativeTypeName("LPCWSTR")] ushort* szFeature, [NativeTypeName("DWORD")] uint dwReinstallMode);
 
         [DllImport("msi", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
         public static extern uint MsiProvideComponentA([NativeTypeName("LPCSTR")] sbyte* szProduct, [NativeTypeName("LPCSTR")] sbyte* szFeature, [NativeTypeName("LPCSTR")] sbyte* szComponent, [NativeTypeName("DWORD")] uint dwInstallMode, [NativeTypeName("LPSTR")] sbyte* lpPathBuf, [NativeTypeName("LPDWORD")] uint* pcchPathBuf);
 
         [DllImport("msi", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
         public static extern uint MsiProvideComponentW([NativeTypeName("LPCWSTR")] ushort* szProduct, [NativeTypeName("LPCWSTR")] ushort* szFeature, [NativeTypeName("LPCWSTR")] ushort* szComponent, [NativeTypeName("DWORD")] uint dwInstallMode, [NativeTypeName("LPWSTR")] ushort* lpPathBuf, [NativeTypeName("LPDWORD")] uint* pcchPathBuf);
 
         [DllImport("msi", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
         public static extern uint MsiProvideQualifiedComponentA([NativeTypeName("LPCSTR")] sbyte* szCategory, [NativeTypeName("LPCSTR")] sbyte* szQualifier, [NativeTypeName("DWORD")] uint dwInstallMode, [NativeTypeName("LPSTR")] sbyte* lpPathBuf, [NativeTypeName("LPDWORD")] uint* pcchPathBuf);
 
         [DllImport("msi", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
         public static extern uint MsiProvideQualifiedComponentW([NativeTypeName("LPCWSTR")] ushort* szCategory, [NativeTypeName("LPCWSTR")] ushort* szQualifier, [NativeTypeName("DWORD")] uint dwInstallMode, [NativeTypeName("LPWSTR")] ushort* lpPathBuf, [NativeTypeName("LPDWORD")] uint* pcchPathBuf);
 
         [DllImport("msi", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
         public static extern uint MsiProvideQualifiedComponentExA([NativeTypeName("LPCSTR")] sbyte* szCategory, [NativeTypeName("LPCSTR")] sbyte* szQualifier, [NativeTypeName("DWORD")] uint dwInstallMode, [NativeTypeName("LPCSTR")] sbyte* szProduct, [NativeTypeName("DWORD")] uint dwUnused1, [NativeTypeName("DWORD")] uint dwUnused2, [NativeTypeName("LPSTR")] sbyte* lpPathBuf, [NativeTypeName("LPDWORD")] uint* pcchPathBuf);
 
         [DllImport("msi", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
         public static extern uint MsiProvideQualifiedComponentExW([NativeTypeName("LPCWSTR")] ushort* szCategory, [NativeTypeName("LPCWSTR")] ushort* szQualifier, [NativeTypeName("DWORD")] uint dwInstallMode, [NativeTypeName("LPCWSTR")] ushort* szProduct, [NativeTypeName("DWORD")] uint dwUnused1, [NativeTypeName("DWORD")] uint dwUnused2, [NativeTypeName("LPWSTR")] ushort* lpPathBuf, [NativeTypeName("LPDWORD")] uint* pcchPathBuf);
 
         [DllImport("msi", ExactSpelling = true)]
@@ -323,163 +258,123 @@ namespace TerraFX.Interop
         public static extern INSTALLSTATE MsiGetComponentPathExW([NativeTypeName("LPCWSTR")] ushort* szProductCode, [NativeTypeName("LPCWSTR")] ushort* szComponentCode, [NativeTypeName("LPCWSTR")] ushort* szUserSid, MSIINSTALLCONTEXT dwContext, [NativeTypeName("LPWSTR")] ushort* lpOutPathBuffer, [NativeTypeName("LPDWORD")] uint* pcchOutPathBuffer);
 
         [DllImport("msi", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
         public static extern uint MsiProvideAssemblyA([NativeTypeName("LPCSTR")] sbyte* szAssemblyName, [NativeTypeName("LPCSTR")] sbyte* szAppContext, [NativeTypeName("DWORD")] uint dwInstallMode, [NativeTypeName("DWORD")] uint dwAssemblyInfo, [NativeTypeName("LPSTR")] sbyte* lpPathBuf, [NativeTypeName("LPDWORD")] uint* pcchPathBuf);
 
         [DllImport("msi", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
         public static extern uint MsiProvideAssemblyW([NativeTypeName("LPCWSTR")] ushort* szAssemblyName, [NativeTypeName("LPCWSTR")] ushort* szAppContext, [NativeTypeName("DWORD")] uint dwInstallMode, [NativeTypeName("DWORD")] uint dwAssemblyInfo, [NativeTypeName("LPWSTR")] ushort* lpPathBuf, [NativeTypeName("LPDWORD")] uint* pcchPathBuf);
 
         [DllImport("msi", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
         public static extern uint MsiQueryComponentStateA([NativeTypeName("LPCSTR")] sbyte* szProductCode, [NativeTypeName("LPCSTR")] sbyte* szUserSid, MSIINSTALLCONTEXT dwContext, [NativeTypeName("LPCSTR")] sbyte* szComponentCode, INSTALLSTATE* pdwState);
 
         [DllImport("msi", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
         public static extern uint MsiQueryComponentStateW([NativeTypeName("LPCWSTR")] ushort* szProductCode, [NativeTypeName("LPCWSTR")] ushort* szUserSid, MSIINSTALLCONTEXT dwContext, [NativeTypeName("LPCWSTR")] ushort* szComponentCode, INSTALLSTATE* pdwState);
 
         [DllImport("msi", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
         public static extern uint MsiEnumProductsA([NativeTypeName("DWORD")] uint iProductIndex, [NativeTypeName("LPSTR")] sbyte* lpProductBuf);
 
         [DllImport("msi", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
         public static extern uint MsiEnumProductsW([NativeTypeName("DWORD")] uint iProductIndex, [NativeTypeName("LPWSTR")] ushort* lpProductBuf);
 
         [DllImport("msi", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
         public static extern uint MsiEnumProductsExA([NativeTypeName("LPCSTR")] sbyte* szProductCode, [NativeTypeName("LPCSTR")] sbyte* szUserSid, [NativeTypeName("DWORD")] uint dwContext, [NativeTypeName("DWORD")] uint dwIndex, [NativeTypeName("CHAR [39]")] sbyte* szInstalledProductCode, MSIINSTALLCONTEXT* pdwInstalledContext, [NativeTypeName("LPSTR")] sbyte* szSid, [NativeTypeName("LPDWORD")] uint* pcchSid);
 
         [DllImport("msi", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
         public static extern uint MsiEnumProductsExW([NativeTypeName("LPCWSTR")] ushort* szProductCode, [NativeTypeName("LPCWSTR")] ushort* szUserSid, [NativeTypeName("DWORD")] uint dwContext, [NativeTypeName("DWORD")] uint dwIndex, [NativeTypeName("WCHAR [39]")] ushort* szInstalledProductCode, MSIINSTALLCONTEXT* pdwInstalledContext, [NativeTypeName("LPWSTR")] ushort* szSid, [NativeTypeName("LPDWORD")] uint* pcchSid);
 
         [DllImport("msi", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
         public static extern uint MsiEnumRelatedProductsA([NativeTypeName("LPCSTR")] sbyte* lpUpgradeCode, [NativeTypeName("DWORD")] uint dwReserved, [NativeTypeName("DWORD")] uint iProductIndex, [NativeTypeName("LPSTR")] sbyte* lpProductBuf);
 
         [DllImport("msi", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
         public static extern uint MsiEnumRelatedProductsW([NativeTypeName("LPCWSTR")] ushort* lpUpgradeCode, [NativeTypeName("DWORD")] uint dwReserved, [NativeTypeName("DWORD")] uint iProductIndex, [NativeTypeName("LPWSTR")] ushort* lpProductBuf);
 
         [DllImport("msi", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
         public static extern uint MsiEnumFeaturesA([NativeTypeName("LPCSTR")] sbyte* szProduct, [NativeTypeName("DWORD")] uint iFeatureIndex, [NativeTypeName("LPSTR")] sbyte* lpFeatureBuf, [NativeTypeName("LPSTR")] sbyte* lpParentBuf);
 
         [DllImport("msi", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
         public static extern uint MsiEnumFeaturesW([NativeTypeName("LPCWSTR")] ushort* szProduct, [NativeTypeName("DWORD")] uint iFeatureIndex, [NativeTypeName("LPWSTR")] ushort* lpFeatureBuf, [NativeTypeName("LPWSTR")] ushort* lpParentBuf);
 
         [DllImport("msi", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
         public static extern uint MsiEnumComponentsA([NativeTypeName("DWORD")] uint iComponentIndex, [NativeTypeName("LPSTR")] sbyte* lpComponentBuf);
 
         [DllImport("msi", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
         public static extern uint MsiEnumComponentsW([NativeTypeName("DWORD")] uint iComponentIndex, [NativeTypeName("LPWSTR")] ushort* lpComponentBuf);
 
         [DllImport("msi", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
         public static extern uint MsiEnumComponentsExA([NativeTypeName("LPCSTR")] sbyte* szUserSid, [NativeTypeName("DWORD")] uint dwContext, [NativeTypeName("DWORD")] uint dwIndex, [NativeTypeName("CHAR [39]")] sbyte* szInstalledComponentCode, MSIINSTALLCONTEXT* pdwInstalledContext, [NativeTypeName("LPSTR")] sbyte* szSid, [NativeTypeName("LPDWORD")] uint* pcchSid);
 
         [DllImport("msi", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
         public static extern uint MsiEnumComponentsExW([NativeTypeName("LPCWSTR")] ushort* szUserSid, [NativeTypeName("DWORD")] uint dwContext, [NativeTypeName("DWORD")] uint dwIndex, [NativeTypeName("WCHAR [39]")] ushort* szInstalledComponentCode, MSIINSTALLCONTEXT* pdwInstalledContext, [NativeTypeName("LPWSTR")] ushort* szSid, [NativeTypeName("LPDWORD")] uint* pcchSid);
 
         [DllImport("msi", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
         public static extern uint MsiEnumClientsA([NativeTypeName("LPCSTR")] sbyte* szComponent, [NativeTypeName("DWORD")] uint iProductIndex, [NativeTypeName("LPSTR")] sbyte* lpProductBuf);
 
         [DllImport("msi", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
         public static extern uint MsiEnumClientsW([NativeTypeName("LPCWSTR")] ushort* szComponent, [NativeTypeName("DWORD")] uint iProductIndex, [NativeTypeName("LPWSTR")] ushort* lpProductBuf);
 
         [DllImport("msi", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
         public static extern uint MsiEnumClientsExA([NativeTypeName("LPCSTR")] sbyte* szComponent, [NativeTypeName("LPCSTR")] sbyte* szUserSid, [NativeTypeName("DWORD")] uint dwContext, [NativeTypeName("DWORD")] uint dwProductIndex, [NativeTypeName("CHAR [39]")] sbyte* szProductBuf, MSIINSTALLCONTEXT* pdwInstalledContext, [NativeTypeName("LPSTR")] sbyte* szSid, [NativeTypeName("LPDWORD")] uint* pcchSid);
 
         [DllImport("msi", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
         public static extern uint MsiEnumClientsExW([NativeTypeName("LPCWSTR")] ushort* szComponent, [NativeTypeName("LPCWSTR")] ushort* szUserSid, [NativeTypeName("DWORD")] uint dwContext, [NativeTypeName("DWORD")] uint dwProductIndex, [NativeTypeName("WCHAR [39]")] ushort* szProductBuf, MSIINSTALLCONTEXT* pdwInstalledContext, [NativeTypeName("LPWSTR")] ushort* szSid, [NativeTypeName("LPDWORD")] uint* pcchSid);
 
         [DllImport("msi", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
         public static extern uint MsiEnumComponentQualifiersA([NativeTypeName("LPCSTR")] sbyte* szComponent, [NativeTypeName("DWORD")] uint iIndex, [NativeTypeName("LPSTR")] sbyte* lpQualifierBuf, [NativeTypeName("LPDWORD")] uint* pcchQualifierBuf, [NativeTypeName("LPSTR")] sbyte* lpApplicationDataBuf, [NativeTypeName("LPDWORD")] uint* pcchApplicationDataBuf);
 
         [DllImport("msi", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
         public static extern uint MsiEnumComponentQualifiersW([NativeTypeName("LPCWSTR")] ushort* szComponent, [NativeTypeName("DWORD")] uint iIndex, [NativeTypeName("LPWSTR")] ushort* lpQualifierBuf, [NativeTypeName("LPDWORD")] uint* pcchQualifierBuf, [NativeTypeName("LPWSTR")] ushort* lpApplicationDataBuf, [NativeTypeName("LPDWORD")] uint* pcchApplicationDataBuf);
 
         [DllImport("msi", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
         public static extern uint MsiOpenProductA([NativeTypeName("LPCSTR")] sbyte* szProduct, MSIHANDLE* hProduct);
 
         [DllImport("msi", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
         public static extern uint MsiOpenProductW([NativeTypeName("LPCWSTR")] ushort* szProduct, MSIHANDLE* hProduct);
 
         [DllImport("msi", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
         public static extern uint MsiOpenPackageA([NativeTypeName("LPCSTR")] sbyte* szPackagePath, MSIHANDLE* hProduct);
 
         [DllImport("msi", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
         public static extern uint MsiOpenPackageW([NativeTypeName("LPCWSTR")] ushort* szPackagePath, MSIHANDLE* hProduct);
 
         [DllImport("msi", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
         public static extern uint MsiOpenPackageExA([NativeTypeName("LPCSTR")] sbyte* szPackagePath, [NativeTypeName("DWORD")] uint dwOptions, MSIHANDLE* hProduct);
 
         [DllImport("msi", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
         public static extern uint MsiOpenPackageExW([NativeTypeName("LPCWSTR")] ushort* szPackagePath, [NativeTypeName("DWORD")] uint dwOptions, MSIHANDLE* hProduct);
 
         [DllImport("msi", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
         public static extern uint MsiGetPatchFileListA([NativeTypeName("LPCSTR")] sbyte* szProductCode, [NativeTypeName("LPCSTR")] sbyte* szPatchPackages, [NativeTypeName("LPDWORD")] uint* pcFiles, MSIHANDLE** pphFileRecords);
 
         [DllImport("msi", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
         public static extern uint MsiGetPatchFileListW([NativeTypeName("LPCWSTR")] ushort* szProductCode, [NativeTypeName("LPCWSTR")] ushort* szPatchPackages, [NativeTypeName("LPDWORD")] uint* pcFiles, MSIHANDLE** pphFileRecords);
 
         [DllImport("msi", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
         public static extern uint MsiGetProductPropertyA(MSIHANDLE hProduct, [NativeTypeName("LPCSTR")] sbyte* szProperty, [NativeTypeName("LPSTR")] sbyte* lpValueBuf, [NativeTypeName("LPDWORD")] uint* pcchValueBuf);
 
         [DllImport("msi", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
         public static extern uint MsiGetProductPropertyW(MSIHANDLE hProduct, [NativeTypeName("LPCWSTR")] ushort* szProperty, [NativeTypeName("LPWSTR")] ushort* lpValueBuf, [NativeTypeName("LPDWORD")] uint* pcchValueBuf);
 
         [DllImport("msi", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
         public static extern uint MsiVerifyPackageA([NativeTypeName("LPCSTR")] sbyte* szPackagePath);
 
         [DllImport("msi", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
         public static extern uint MsiVerifyPackageW([NativeTypeName("LPCWSTR")] ushort* szPackagePath);
 
         [DllImport("msi", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
         public static extern uint MsiGetFeatureInfoA(MSIHANDLE hProduct, [NativeTypeName("LPCSTR")] sbyte* szFeature, [NativeTypeName("LPDWORD")] uint* lpAttributes, [NativeTypeName("LPSTR")] sbyte* lpTitleBuf, [NativeTypeName("LPDWORD")] uint* pcchTitleBuf, [NativeTypeName("LPSTR")] sbyte* lpHelpBuf, [NativeTypeName("LPDWORD")] uint* pcchHelpBuf);
 
         [DllImport("msi", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
         public static extern uint MsiGetFeatureInfoW(MSIHANDLE hProduct, [NativeTypeName("LPCWSTR")] ushort* szFeature, [NativeTypeName("LPDWORD")] uint* lpAttributes, [NativeTypeName("LPWSTR")] ushort* lpTitleBuf, [NativeTypeName("LPDWORD")] uint* pcchTitleBuf, [NativeTypeName("LPWSTR")] ushort* lpHelpBuf, [NativeTypeName("LPDWORD")] uint* pcchHelpBuf);
 
         [DllImport("msi", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
         public static extern uint MsiInstallMissingComponentA([NativeTypeName("LPCSTR")] sbyte* szProduct, [NativeTypeName("LPCSTR")] sbyte* szComponent, INSTALLSTATE eInstallState);
 
         [DllImport("msi", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
         public static extern uint MsiInstallMissingComponentW([NativeTypeName("LPCWSTR")] ushort* szProduct, [NativeTypeName("LPCWSTR")] ushort* szComponent, INSTALLSTATE eInstallState);
 
         [DllImport("msi", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
         public static extern uint MsiInstallMissingFileA([NativeTypeName("LPCSTR")] sbyte* szProduct, [NativeTypeName("LPCSTR")] sbyte* szFile);
 
         [DllImport("msi", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
         public static extern uint MsiInstallMissingFileW([NativeTypeName("LPCWSTR")] ushort* szProduct, [NativeTypeName("LPCWSTR")] ushort* szFile);
 
         [DllImport("msi", ExactSpelling = true)]
@@ -489,123 +384,93 @@ namespace TerraFX.Interop
         public static extern INSTALLSTATE MsiLocateComponentW([NativeTypeName("LPCWSTR")] ushort* szComponent, [NativeTypeName("LPWSTR")] ushort* lpPathBuf, [NativeTypeName("LPDWORD")] uint* pcchBuf);
 
         [DllImport("msi", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
         public static extern uint MsiSourceListClearAllA([NativeTypeName("LPCSTR")] sbyte* szProduct, [NativeTypeName("LPCSTR")] sbyte* szUserName, [NativeTypeName("DWORD")] uint dwReserved);
 
         [DllImport("msi", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
         public static extern uint MsiSourceListClearAllW([NativeTypeName("LPCWSTR")] ushort* szProduct, [NativeTypeName("LPCWSTR")] ushort* szUserName, [NativeTypeName("DWORD")] uint dwReserved);
 
         [DllImport("msi", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
         public static extern uint MsiSourceListAddSourceA([NativeTypeName("LPCSTR")] sbyte* szProduct, [NativeTypeName("LPCSTR")] sbyte* szUserName, [NativeTypeName("DWORD")] uint dwReserved, [NativeTypeName("LPCSTR")] sbyte* szSource);
 
         [DllImport("msi", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
         public static extern uint MsiSourceListAddSourceW([NativeTypeName("LPCWSTR")] ushort* szProduct, [NativeTypeName("LPCWSTR")] ushort* szUserName, [NativeTypeName("DWORD")] uint dwReserved, [NativeTypeName("LPCWSTR")] ushort* szSource);
 
         [DllImport("msi", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
         public static extern uint MsiSourceListForceResolutionA([NativeTypeName("LPCSTR")] sbyte* szProduct, [NativeTypeName("LPCSTR")] sbyte* szUserName, [NativeTypeName("DWORD")] uint dwReserved);
 
         [DllImport("msi", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
         public static extern uint MsiSourceListForceResolutionW([NativeTypeName("LPCWSTR")] ushort* szProduct, [NativeTypeName("LPCWSTR")] ushort* szUserName, [NativeTypeName("DWORD")] uint dwReserved);
 
         [DllImport("msi", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
         public static extern uint MsiSourceListAddSourceExA([NativeTypeName("LPCSTR")] sbyte* szProductCodeOrPatchCode, [NativeTypeName("LPCSTR")] sbyte* szUserSid, MSIINSTALLCONTEXT dwContext, [NativeTypeName("DWORD")] uint dwOptions, [NativeTypeName("LPCSTR")] sbyte* szSource, [NativeTypeName("DWORD")] uint dwIndex);
 
         [DllImport("msi", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
         public static extern uint MsiSourceListAddSourceExW([NativeTypeName("LPCWSTR")] ushort* szProductCodeOrPatchCode, [NativeTypeName("LPCWSTR")] ushort* szUserSid, MSIINSTALLCONTEXT dwContext, [NativeTypeName("DWORD")] uint dwOptions, [NativeTypeName("LPCWSTR")] ushort* szSource, [NativeTypeName("DWORD")] uint dwIndex);
 
         [DllImport("msi", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
         public static extern uint MsiSourceListAddMediaDiskA([NativeTypeName("LPCSTR")] sbyte* szProductCodeOrPatchCode, [NativeTypeName("LPCSTR")] sbyte* szUserSid, MSIINSTALLCONTEXT dwContext, [NativeTypeName("DWORD")] uint dwOptions, [NativeTypeName("DWORD")] uint dwDiskId, [NativeTypeName("LPCSTR")] sbyte* szVolumeLabel, [NativeTypeName("LPCSTR")] sbyte* szDiskPrompt);
 
         [DllImport("msi", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
         public static extern uint MsiSourceListAddMediaDiskW([NativeTypeName("LPCWSTR")] ushort* szProductCodeOrPatchCode, [NativeTypeName("LPCWSTR")] ushort* szUserSid, MSIINSTALLCONTEXT dwContext, [NativeTypeName("DWORD")] uint dwOptions, [NativeTypeName("DWORD")] uint dwDiskId, [NativeTypeName("LPCWSTR")] ushort* szVolumeLabel, [NativeTypeName("LPCWSTR")] ushort* szDiskPrompt);
 
         [DllImport("msi", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
         public static extern uint MsiSourceListClearSourceA([NativeTypeName("LPCSTR")] sbyte* szProductCodeOrPatchCode, [NativeTypeName("LPCSTR")] sbyte* szUserSid, MSIINSTALLCONTEXT dwContext, [NativeTypeName("DWORD")] uint dwOptions, [NativeTypeName("LPCSTR")] sbyte* szSource);
 
         [DllImport("msi", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
         public static extern uint MsiSourceListClearSourceW([NativeTypeName("LPCWSTR")] ushort* szProductCodeOrPatchCode, [NativeTypeName("LPCWSTR")] ushort* szUserSid, MSIINSTALLCONTEXT dwContext, [NativeTypeName("DWORD")] uint dwOptions, [NativeTypeName("LPCWSTR")] ushort* szSource);
 
         [DllImport("msi", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
         public static extern uint MsiSourceListClearMediaDiskA([NativeTypeName("LPCSTR")] sbyte* szProductCodeOrPatchCode, [NativeTypeName("LPCSTR")] sbyte* szUserSid, MSIINSTALLCONTEXT dwContext, [NativeTypeName("DWORD")] uint dwOptions, [NativeTypeName("DWORD")] uint dwDiskId);
 
         [DllImport("msi", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
         public static extern uint MsiSourceListClearMediaDiskW([NativeTypeName("LPCWSTR")] ushort* szProductCodeOrPatchCode, [NativeTypeName("LPCWSTR")] ushort* szUserSid, MSIINSTALLCONTEXT dwContext, [NativeTypeName("DWORD")] uint dwOptions, [NativeTypeName("DWORD")] uint dwDiskId);
 
         [DllImport("msi", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
         public static extern uint MsiSourceListClearAllExA([NativeTypeName("LPCSTR")] sbyte* szProductCodeOrPatchCode, [NativeTypeName("LPCSTR")] sbyte* szUserSid, MSIINSTALLCONTEXT dwContext, [NativeTypeName("DWORD")] uint dwOptions);
 
         [DllImport("msi", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
         public static extern uint MsiSourceListClearAllExW([NativeTypeName("LPCWSTR")] ushort* szProductCodeOrPatchCode, [NativeTypeName("LPCWSTR")] ushort* szUserSid, MSIINSTALLCONTEXT dwContext, [NativeTypeName("DWORD")] uint dwOptions);
 
         [DllImport("msi", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
         public static extern uint MsiSourceListForceResolutionExA([NativeTypeName("LPCSTR")] sbyte* szProductCodeOrPatchCode, [NativeTypeName("LPCSTR")] sbyte* szUserSid, MSIINSTALLCONTEXT dwContext, [NativeTypeName("DWORD")] uint dwOptions);
 
         [DllImport("msi", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
         public static extern uint MsiSourceListForceResolutionExW([NativeTypeName("LPCWSTR")] ushort* szProductCodeOrPatchCode, [NativeTypeName("LPCWSTR")] ushort* szUserSid, MSIINSTALLCONTEXT dwContext, [NativeTypeName("DWORD")] uint dwOptions);
 
         [DllImport("msi", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
         public static extern uint MsiSourceListSetInfoA([NativeTypeName("LPCSTR")] sbyte* szProductCodeOrPatchCode, [NativeTypeName("LPCSTR")] sbyte* szUserSid, MSIINSTALLCONTEXT dwContext, [NativeTypeName("DWORD")] uint dwOptions, [NativeTypeName("LPCSTR")] sbyte* szProperty, [NativeTypeName("LPCSTR")] sbyte* szValue);
 
         [DllImport("msi", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
         public static extern uint MsiSourceListSetInfoW([NativeTypeName("LPCWSTR")] ushort* szProductCodeOrPatchCode, [NativeTypeName("LPCWSTR")] ushort* szUserSid, MSIINSTALLCONTEXT dwContext, [NativeTypeName("DWORD")] uint dwOptions, [NativeTypeName("LPCWSTR")] ushort* szProperty, [NativeTypeName("LPCWSTR")] ushort* szValue);
 
         [DllImport("msi", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
         public static extern uint MsiSourceListGetInfoA([NativeTypeName("LPCSTR")] sbyte* szProductCodeOrPatchCode, [NativeTypeName("LPCSTR")] sbyte* szUserSid, MSIINSTALLCONTEXT dwContext, [NativeTypeName("DWORD")] uint dwOptions, [NativeTypeName("LPCSTR")] sbyte* szProperty, [NativeTypeName("LPSTR")] sbyte* szValue, [NativeTypeName("LPDWORD")] uint* pcchValue);
 
         [DllImport("msi", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
         public static extern uint MsiSourceListGetInfoW([NativeTypeName("LPCWSTR")] ushort* szProductCodeOrPatchCode, [NativeTypeName("LPCWSTR")] ushort* szUserSid, MSIINSTALLCONTEXT dwContext, [NativeTypeName("DWORD")] uint dwOptions, [NativeTypeName("LPCWSTR")] ushort* szProperty, [NativeTypeName("LPWSTR")] ushort* szValue, [NativeTypeName("LPDWORD")] uint* pcchValue);
 
         [DllImport("msi", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
         public static extern uint MsiSourceListEnumSourcesA([NativeTypeName("LPCSTR")] sbyte* szProductCodeOrPatchCode, [NativeTypeName("LPCSTR")] sbyte* szUserSid, MSIINSTALLCONTEXT dwContext, [NativeTypeName("DWORD")] uint dwOptions, [NativeTypeName("DWORD")] uint dwIndex, [NativeTypeName("LPSTR")] sbyte* szSource, [NativeTypeName("LPDWORD")] uint* pcchSource);
 
         [DllImport("msi", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
         public static extern uint MsiSourceListEnumSourcesW([NativeTypeName("LPCWSTR")] ushort* szProductCodeOrPatchCode, [NativeTypeName("LPCWSTR")] ushort* szUserSid, MSIINSTALLCONTEXT dwContext, [NativeTypeName("DWORD")] uint dwOptions, [NativeTypeName("DWORD")] uint dwIndex, [NativeTypeName("LPWSTR")] ushort* szSource, [NativeTypeName("LPDWORD")] uint* pcchSource);
 
         [DllImport("msi", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
         public static extern uint MsiSourceListEnumMediaDisksA([NativeTypeName("LPCSTR")] sbyte* szProductCodeOrPatchCode, [NativeTypeName("LPCSTR")] sbyte* szUserSid, MSIINSTALLCONTEXT dwContext, [NativeTypeName("DWORD")] uint dwOptions, [NativeTypeName("DWORD")] uint dwIndex, [NativeTypeName("LPDWORD")] uint* pdwDiskId, [NativeTypeName("LPSTR")] sbyte* szVolumeLabel, [NativeTypeName("LPDWORD")] uint* pcchVolumeLabel, [NativeTypeName("LPSTR")] sbyte* szDiskPrompt, [NativeTypeName("LPDWORD")] uint* pcchDiskPrompt);
 
         [DllImport("msi", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
         public static extern uint MsiSourceListEnumMediaDisksW([NativeTypeName("LPCWSTR")] ushort* szProductCodeOrPatchCode, [NativeTypeName("LPCWSTR")] ushort* szUserSid, MSIINSTALLCONTEXT dwContext, [NativeTypeName("DWORD")] uint dwOptions, [NativeTypeName("DWORD")] uint dwIndex, [NativeTypeName("LPDWORD")] uint* pdwDiskId, [NativeTypeName("LPWSTR")] ushort* szVolumeLabel, [NativeTypeName("LPDWORD")] uint* pcchVolumeLabel, [NativeTypeName("LPWSTR")] ushort* szDiskPrompt, [NativeTypeName("LPDWORD")] uint* pcchDiskPrompt);
 
         [DllImport("msi", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
         public static extern uint MsiGetFileVersionA([NativeTypeName("LPCSTR")] sbyte* szFilePath, [NativeTypeName("LPSTR")] sbyte* lpVersionBuf, [NativeTypeName("LPDWORD")] uint* pcchVersionBuf, [NativeTypeName("LPSTR")] sbyte* lpLangBuf, [NativeTypeName("LPDWORD")] uint* pcchLangBuf);
 
         [DllImport("msi", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
         public static extern uint MsiGetFileVersionW([NativeTypeName("LPCWSTR")] ushort* szFilePath, [NativeTypeName("LPWSTR")] ushort* lpVersionBuf, [NativeTypeName("LPDWORD")] uint* pcchVersionBuf, [NativeTypeName("LPWSTR")] ushort* lpLangBuf, [NativeTypeName("LPDWORD")] uint* pcchLangBuf);
 
         [DllImport("msi", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
         public static extern uint MsiGetFileHashA([NativeTypeName("LPCSTR")] sbyte* szFilePath, [NativeTypeName("DWORD")] uint dwOptions, [NativeTypeName("PMSIFILEHASHINFO")] MSIFILEHASHINFO* pHash);
 
         [DllImport("msi", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
         public static extern uint MsiGetFileHashW([NativeTypeName("LPCWSTR")] ushort* szFilePath, [NativeTypeName("DWORD")] uint dwOptions, [NativeTypeName("PMSIFILEHASHINFO")] MSIFILEHASHINFO* pHash);
 
         [DllImport("msi", ExactSpelling = true)]
@@ -615,43 +480,33 @@ namespace TerraFX.Interop
         public static extern HRESULT MsiGetFileSignatureInformationW([NativeTypeName("LPCWSTR")] ushort* szSignedObjectPath, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("PCCERT_CONTEXT *")] CERT_CONTEXT** ppcCertContext, [NativeTypeName("LPBYTE")] byte* pbHashData, [NativeTypeName("LPDWORD")] uint* pcbHashData);
 
         [DllImport("msi", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
         public static extern uint MsiGetShortcutTargetA([NativeTypeName("LPCSTR")] sbyte* szShortcutPath, [NativeTypeName("LPSTR")] sbyte* szProductCode, [NativeTypeName("LPSTR")] sbyte* szFeatureId, [NativeTypeName("LPSTR")] sbyte* szComponentCode);
 
         [DllImport("msi", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
         public static extern uint MsiGetShortcutTargetW([NativeTypeName("LPCWSTR")] ushort* szShortcutPath, [NativeTypeName("LPWSTR")] ushort* szProductCode, [NativeTypeName("LPWSTR")] ushort* szFeatureId, [NativeTypeName("LPWSTR")] ushort* szComponentCode);
 
         [DllImport("msi", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
         public static extern uint MsiIsProductElevatedA([NativeTypeName("LPCSTR")] sbyte* szProduct, BOOL* pfElevated);
 
         [DllImport("msi", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
         public static extern uint MsiIsProductElevatedW([NativeTypeName("LPCWSTR")] ushort* szProduct, BOOL* pfElevated);
 
         [DllImport("msi", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
         public static extern uint MsiNotifySidChangeA([NativeTypeName("LPCSTR")] sbyte* pOldSid, [NativeTypeName("LPCSTR")] sbyte* pNewSid);
 
         [DllImport("msi", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
         public static extern uint MsiNotifySidChangeW([NativeTypeName("LPCWSTR")] ushort* pOldSid, [NativeTypeName("LPCWSTR")] ushort* pNewSid);
 
         [DllImport("msi", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
         public static extern uint MsiBeginTransactionA([NativeTypeName("LPCSTR")] sbyte* szName, [NativeTypeName("DWORD")] uint dwTransactionAttributes, MSIHANDLE* phTransactionHandle, HANDLE* phChangeOfOwnerEvent);
 
         [DllImport("msi", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
         public static extern uint MsiBeginTransactionW([NativeTypeName("LPCWSTR")] ushort* szName, [NativeTypeName("DWORD")] uint dwTransactionAttributes, MSIHANDLE* phTransactionHandle, HANDLE* phChangeOfOwnerEvent);
 
         [DllImport("msi", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
         public static extern uint MsiEndTransaction([NativeTypeName("DWORD")] uint dwTransactionState);
 
         [DllImport("msi", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
         public static extern uint MsiJoinTransaction(MSIHANDLE hTransactionHandle, [NativeTypeName("DWORD")] uint dwTransactionAttributes, HANDLE* phChangeOfOwnerEvent);
 
         [NativeTypeName("#define MAX_GUID_CHARS 38")]

@@ -7,10 +7,8 @@ namespace TerraFX.Interop
 {
     public partial struct WS_UINT16_DESCRIPTION
     {
-        [NativeTypeName("USHORT")]
         public ushort minValue;
 
-        [NativeTypeName("USHORT")]
         public ushort maxValue;
     }
 }

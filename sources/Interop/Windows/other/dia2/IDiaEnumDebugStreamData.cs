@@ -62,14 +62,14 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        public HRESULT Item([NativeTypeName("DWORD")] uint index, [NativeTypeName("DWORD")] uint cbData, [NativeTypeName("DWORD *")] uint* pcbData, [NativeTypeName("BYTE *")] byte* pbData)
+        public HRESULT Item([NativeTypeName("DWORD")] uint index, [NativeTypeName("DWORD")] uint cbData, [NativeTypeName("DWORD *")] uint* pcbData, byte* pbData)
         {
             return ((delegate* unmanaged<IDiaEnumDebugStreamData*, uint, uint, uint*, byte*, int>)(lpVtbl[6]))((IDiaEnumDebugStreamData*)Unsafe.AsPointer(ref this), index, cbData, pcbData, pbData);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        public HRESULT Next([NativeTypeName("ULONG")] uint celt, [NativeTypeName("DWORD")] uint cbData, [NativeTypeName("DWORD *")] uint* pcbData, [NativeTypeName("BYTE *")] byte* pbData, [NativeTypeName("ULONG *")] uint* pceltFetched)
+        public HRESULT Next([NativeTypeName("ULONG")] uint celt, [NativeTypeName("DWORD")] uint cbData, [NativeTypeName("DWORD *")] uint* pcbData, byte* pbData, [NativeTypeName("ULONG *")] uint* pceltFetched)
         {
             return ((delegate* unmanaged<IDiaEnumDebugStreamData*, uint, uint, uint*, byte*, uint*, int>)(lpVtbl[7]))((IDiaEnumDebugStreamData*)Unsafe.AsPointer(ref this), celt, cbData, pcbData, pbData, pceltFetched);
         }

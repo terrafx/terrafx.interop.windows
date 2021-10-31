@@ -11,7 +11,6 @@ namespace TerraFX.Interop
     {
         public D3D11_AUTHENTICATED_CONFIGURE_INPUT Parameters;
 
-        [NativeTypeName("GUID")]
         public Guid EncryptionGuid;
     }
 }

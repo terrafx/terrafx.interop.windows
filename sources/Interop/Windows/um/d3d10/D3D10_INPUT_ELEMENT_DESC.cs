@@ -10,20 +10,16 @@ namespace TerraFX.Interop
         [NativeTypeName("LPCSTR")]
         public sbyte* SemanticName;
 
-        [NativeTypeName("UINT")]
         public uint SemanticIndex;
 
         public DXGI_FORMAT Format;
 
-        [NativeTypeName("UINT")]
         public uint InputSlot;
 
-        [NativeTypeName("UINT")]
         public uint AlignedByteOffset;
 
         public D3D10_INPUT_CLASSIFICATION InputSlotClass;
 
-        [NativeTypeName("UINT")]
         public uint InstanceDataStepRate;
     }
 }

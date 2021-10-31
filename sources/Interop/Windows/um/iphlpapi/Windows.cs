@@ -167,7 +167,7 @@ namespace TerraFX.Interop
 
         [DllImport("iphlpapi", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
-        public static extern uint SetIpTTL([NativeTypeName("UINT")] uint nTTL);
+        public static extern uint SetIpTTL(uint nTTL);
 
         [DllImport("iphlpapi", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
@@ -328,31 +328,31 @@ namespace TerraFX.Interop
 
         [DllImport("iphlpapi", ExactSpelling = true)]
         [return: NativeTypeName("ULONG")]
-        public static extern uint CreatePersistentTcpPortReservation([NativeTypeName("USHORT")] ushort StartPort, [NativeTypeName("USHORT")] ushort NumberOfPorts, [NativeTypeName("PULONG64")] ulong* Token);
+        public static extern uint CreatePersistentTcpPortReservation(ushort StartPort, ushort NumberOfPorts, [NativeTypeName("PULONG64")] ulong* Token);
 
         [DllImport("iphlpapi", ExactSpelling = true)]
         [return: NativeTypeName("ULONG")]
-        public static extern uint CreatePersistentUdpPortReservation([NativeTypeName("USHORT")] ushort StartPort, [NativeTypeName("USHORT")] ushort NumberOfPorts, [NativeTypeName("PULONG64")] ulong* Token);
+        public static extern uint CreatePersistentUdpPortReservation(ushort StartPort, ushort NumberOfPorts, [NativeTypeName("PULONG64")] ulong* Token);
 
         [DllImport("iphlpapi", ExactSpelling = true)]
         [return: NativeTypeName("ULONG")]
-        public static extern uint DeletePersistentTcpPortReservation([NativeTypeName("USHORT")] ushort StartPort, [NativeTypeName("USHORT")] ushort NumberOfPorts);
+        public static extern uint DeletePersistentTcpPortReservation(ushort StartPort, ushort NumberOfPorts);
 
         [DllImport("iphlpapi", ExactSpelling = true)]
         [return: NativeTypeName("ULONG")]
-        public static extern uint DeletePersistentUdpPortReservation([NativeTypeName("USHORT")] ushort StartPort, [NativeTypeName("USHORT")] ushort NumberOfPorts);
+        public static extern uint DeletePersistentUdpPortReservation(ushort StartPort, ushort NumberOfPorts);
 
         [DllImport("iphlpapi", ExactSpelling = true)]
         [return: NativeTypeName("ULONG")]
-        public static extern uint LookupPersistentTcpPortReservation([NativeTypeName("USHORT")] ushort StartPort, [NativeTypeName("USHORT")] ushort NumberOfPorts, [NativeTypeName("PULONG64")] ulong* Token);
+        public static extern uint LookupPersistentTcpPortReservation(ushort StartPort, ushort NumberOfPorts, [NativeTypeName("PULONG64")] ulong* Token);
 
         [DllImport("iphlpapi", ExactSpelling = true)]
         [return: NativeTypeName("ULONG")]
-        public static extern uint LookupPersistentUdpPortReservation([NativeTypeName("USHORT")] ushort StartPort, [NativeTypeName("USHORT")] ushort NumberOfPorts, [NativeTypeName("PULONG64")] ulong* Token);
+        public static extern uint LookupPersistentUdpPortReservation(ushort StartPort, ushort NumberOfPorts, [NativeTypeName("PULONG64")] ulong* Token);
 
         [DllImport("iphlpapi", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
-        public static extern uint ParseNetworkString([NativeTypeName("const WCHAR *")] ushort* NetworkString, [NativeTypeName("DWORD")] uint Types, [NativeTypeName("PNET_ADDRESS_INFO")] NET_ADDRESS_INFO* AddressInfo, [NativeTypeName("USHORT *")] ushort* PortNumber, [NativeTypeName("BYTE *")] byte* PrefixLength);
+        public static extern uint ParseNetworkString([NativeTypeName("const WCHAR *")] ushort* NetworkString, [NativeTypeName("DWORD")] uint Types, [NativeTypeName("PNET_ADDRESS_INFO")] NET_ADDRESS_INFO* AddressInfo, ushort* PortNumber, byte* PrefixLength);
 
         [NativeTypeName("#define NET_STRING_IPV4_ADDRESS 0x00000001")]
         public const int NET_STRING_IPV4_ADDRESS = 0x00000001;

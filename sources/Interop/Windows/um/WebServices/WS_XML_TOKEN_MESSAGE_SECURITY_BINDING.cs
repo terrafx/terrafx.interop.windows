@@ -13,7 +13,6 @@ namespace TerraFX.Interop
 
         public WS_MESSAGE_SECURITY_USAGE bindingUsage;
 
-        [NativeTypeName("WS_SECURITY_TOKEN *")]
         public IntPtr xmlToken;
     }
 }

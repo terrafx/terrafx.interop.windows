@@ -33,11 +33,11 @@ namespace TerraFX.Interop
             }
         }
 
-        public D2D1_BRUSH_PROPERTIES([NativeTypeName("FLOAT")] float opacity = 1.0f) : this(opacity, IdentityMatrix)
+        public D2D1_BRUSH_PROPERTIES(float opacity = 1.0f) : this(opacity, IdentityMatrix)
         {
         }
 
-        public D2D1_BRUSH_PROPERTIES([NativeTypeName("FLOAT"), Optional, DefaultParameterValue(1.0f)] float opacity, [NativeTypeName("const D2D1_MATRIX_3X2_F &")] in D2D_MATRIX_3X2_F transform)
+        public D2D1_BRUSH_PROPERTIES([Optional, DefaultParameterValue(1.0f)] float opacity, [NativeTypeName("const D2D1_MATRIX_3X2_F &")] in D2D_MATRIX_3X2_F transform)
         {
             this = BrushProperties(opacity, transform);
         }

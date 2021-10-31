@@ -59,7 +59,6 @@ namespace TerraFX.Interop
 
             public partial struct _Gpt_e__Struct
             {
-                [NativeTypeName("GUID")]
                 public Guid DiskId;
             }
         }

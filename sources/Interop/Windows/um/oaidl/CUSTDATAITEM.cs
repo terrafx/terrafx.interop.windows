@@ -9,7 +9,6 @@ namespace TerraFX.Interop
 {
     public partial struct CUSTDATAITEM
     {
-        [NativeTypeName("GUID")]
         public Guid guid;
 
         [NativeTypeName("VARIANTARG")]

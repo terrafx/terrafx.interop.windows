@@ -16,10 +16,8 @@ namespace TerraFX.Interop
         [NativeTypeName("WORD")]
         public ushort Flags;
 
-        [NativeTypeName("BYTE")]
         public byte UserIndex;
 
-        [NativeTypeName("BYTE")]
         public byte HidCode;
     }
 }

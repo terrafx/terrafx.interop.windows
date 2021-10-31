@@ -41,7 +41,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        public HRESULT TranscodeImage(IShellItem* pShellItem, [NativeTypeName("UINT")] uint uiMaxWidth, [NativeTypeName("UINT")] uint uiMaxHeight, [NativeTypeName("DWORD")] uint flags, IStream* pvImage, [NativeTypeName("UINT *")] uint* puiWidth, [NativeTypeName("UINT *")] uint* puiHeight)
+        public HRESULT TranscodeImage(IShellItem* pShellItem, uint uiMaxWidth, uint uiMaxHeight, [NativeTypeName("DWORD")] uint flags, IStream* pvImage, uint* puiWidth, uint* puiHeight)
         {
             return ((delegate* unmanaged<ITranscodeImage*, IShellItem*, uint, uint, uint, IStream*, uint*, uint*, int>)(lpVtbl[3]))((ITranscodeImage*)Unsafe.AsPointer(ref this), pShellItem, uiMaxWidth, uiMaxHeight, flags, pvImage, puiWidth, puiHeight);
         }

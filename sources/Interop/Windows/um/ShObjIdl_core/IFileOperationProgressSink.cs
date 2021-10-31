@@ -125,7 +125,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(15)]
-        public HRESULT UpdateProgress([NativeTypeName("UINT")] uint iWorkTotal, [NativeTypeName("UINT")] uint iWorkSoFar)
+        public HRESULT UpdateProgress(uint iWorkTotal, uint iWorkSoFar)
         {
             return ((delegate* unmanaged<IFileOperationProgressSink*, uint, uint, int>)(lpVtbl[15]))((IFileOperationProgressSink*)Unsafe.AsPointer(ref this), iWorkTotal, iWorkSoFar);
         }

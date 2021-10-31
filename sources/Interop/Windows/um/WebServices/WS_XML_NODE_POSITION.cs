@@ -9,7 +9,6 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct WS_XML_NODE_POSITION
     {
-        [NativeTypeName("WS_XML_BUFFER *")]
         public IntPtr buffer;
 
         public void* node;

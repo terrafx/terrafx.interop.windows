@@ -48,21 +48,21 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT SetFileTypes([NativeTypeName("UINT")] uint cFileTypes, [NativeTypeName("const COMDLG_FILTERSPEC *")] COMDLG_FILTERSPEC* rgFilterSpec)
+        public HRESULT SetFileTypes(uint cFileTypes, [NativeTypeName("const COMDLG_FILTERSPEC *")] COMDLG_FILTERSPEC* rgFilterSpec)
         {
             return ((delegate* unmanaged<IFileDialog2*, uint, COMDLG_FILTERSPEC*, int>)(lpVtbl[4]))((IFileDialog2*)Unsafe.AsPointer(ref this), cFileTypes, rgFilterSpec);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        public HRESULT SetFileTypeIndex([NativeTypeName("UINT")] uint iFileType)
+        public HRESULT SetFileTypeIndex(uint iFileType)
         {
             return ((delegate* unmanaged<IFileDialog2*, uint, int>)(lpVtbl[5]))((IFileDialog2*)Unsafe.AsPointer(ref this), iFileType);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        public HRESULT GetFileTypeIndex([NativeTypeName("UINT *")] uint* piFileType)
+        public HRESULT GetFileTypeIndex(uint* piFileType)
         {
             return ((delegate* unmanaged<IFileDialog2*, uint*, int>)(lpVtbl[6]))((IFileDialog2*)Unsafe.AsPointer(ref this), piFileType);
         }

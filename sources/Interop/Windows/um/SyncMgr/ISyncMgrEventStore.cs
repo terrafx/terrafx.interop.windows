@@ -62,7 +62,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        public HRESULT RemoveEvent([NativeTypeName("GUID *")] Guid* pguidEventIDs, [NativeTypeName("ULONG")] uint cEvents)
+        public HRESULT RemoveEvent(Guid* pguidEventIDs, [NativeTypeName("ULONG")] uint cEvents)
         {
             return ((delegate* unmanaged<ISyncMgrEventStore*, Guid*, uint, int>)(lpVtbl[6]))((ISyncMgrEventStore*)Unsafe.AsPointer(ref this), pguidEventIDs, cEvents);
         }

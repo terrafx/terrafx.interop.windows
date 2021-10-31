@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public partial struct D3D12_FEATURE_DATA_ARCHITECTURE
     {
-        [NativeTypeName("UINT")]
         public uint NodeIndex;
 
         public BOOL TileBasedRenderer;

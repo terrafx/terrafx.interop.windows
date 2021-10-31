@@ -48,7 +48,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT GetGroupingParam([NativeTypeName("GUID *")] Guid* pguidClass)
+        public HRESULT GetGroupingParam(Guid* pguidClass)
         {
             return ((delegate* unmanaged<IMFAudioPolicy*, Guid*, int>)(lpVtbl[4]))((IMFAudioPolicy*)Unsafe.AsPointer(ref this), pguidClass);
         }

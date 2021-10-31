@@ -12,7 +12,6 @@ namespace TerraFX.Interop
 
         public HACCEL hAccel;
 
-        [NativeTypeName("USHORT")]
         public ushort cAccel;
 
         [NativeTypeName("DWORD")]

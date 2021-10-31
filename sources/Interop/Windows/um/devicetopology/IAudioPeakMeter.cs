@@ -41,14 +41,14 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        public HRESULT GetChannelCount([NativeTypeName("UINT *")] uint* pcChannels)
+        public HRESULT GetChannelCount(uint* pcChannels)
         {
             return ((delegate* unmanaged<IAudioPeakMeter*, uint*, int>)(lpVtbl[3]))((IAudioPeakMeter*)Unsafe.AsPointer(ref this), pcChannels);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT GetLevel([NativeTypeName("UINT")] uint nChannel, float* pfLevel)
+        public HRESULT GetLevel(uint nChannel, float* pfLevel)
         {
             return ((delegate* unmanaged<IAudioPeakMeter*, uint, float*, int>)(lpVtbl[4]))((IAudioPeakMeter*)Unsafe.AsPointer(ref this), nChannel, pfLevel);
         }

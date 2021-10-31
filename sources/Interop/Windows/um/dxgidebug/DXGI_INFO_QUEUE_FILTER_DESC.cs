@@ -7,17 +7,14 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct DXGI_INFO_QUEUE_FILTER_DESC
     {
-        [NativeTypeName("UINT")]
         public uint NumCategories;
 
         public DXGI_INFO_QUEUE_MESSAGE_CATEGORY* pCategoryList;
 
-        [NativeTypeName("UINT")]
         public uint NumSeverities;
 
         public DXGI_INFO_QUEUE_MESSAGE_SEVERITY* pSeverityList;
 
-        [NativeTypeName("UINT")]
         public uint NumIDs;
 
         [NativeTypeName("DXGI_INFO_QUEUE_MESSAGE_ID *")]

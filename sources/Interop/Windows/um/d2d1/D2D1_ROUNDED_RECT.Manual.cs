@@ -9,7 +9,7 @@ namespace TerraFX.Interop
 {
     public partial struct D2D1_ROUNDED_RECT
     {
-        public D2D1_ROUNDED_RECT([NativeTypeName("const D2D1_RECT_F")] in D2D_RECT_F rect, [NativeTypeName("FLOAT")] float radiusX, [NativeTypeName("FLOAT")] float radiusY)
+        public D2D1_ROUNDED_RECT([NativeTypeName("const D2D1_RECT_F")] in D2D_RECT_F rect, float radiusX, float radiusY)
         {
             this = RoundedRect(rect, radiusX, radiusY);
         }

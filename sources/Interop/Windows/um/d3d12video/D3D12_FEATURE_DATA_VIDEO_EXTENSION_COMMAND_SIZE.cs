@@ -9,10 +9,8 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct D3D12_FEATURE_DATA_VIDEO_EXTENSION_COMMAND_SIZE
     {
-        [NativeTypeName("UINT")]
         public uint NodeIndex;
 
-        [NativeTypeName("GUID")]
         public Guid CommandId;
 
         [NativeTypeName("const void *")]

@@ -9,10 +9,8 @@ namespace TerraFX.Interop
     {
         public BOOL Enable;
 
-        [NativeTypeName("FLOAT")]
         public float Lower;
 
-        [NativeTypeName("FLOAT")]
         public float Upper;
     }
 }

@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public partial struct STORAGE_BUS_RESET_REQUEST
     {
-        [NativeTypeName("BYTE")]
         public byte PathId;
     }
 }

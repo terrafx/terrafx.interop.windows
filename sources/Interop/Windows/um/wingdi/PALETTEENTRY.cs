@@ -7,16 +7,12 @@ namespace TerraFX.Interop
 {
     public partial struct PALETTEENTRY
     {
-        [NativeTypeName("BYTE")]
         public byte peRed;
 
-        [NativeTypeName("BYTE")]
         public byte peGreen;
 
-        [NativeTypeName("BYTE")]
         public byte peBlue;
 
-        [NativeTypeName("BYTE")]
         public byte peFlags;
     }
 }

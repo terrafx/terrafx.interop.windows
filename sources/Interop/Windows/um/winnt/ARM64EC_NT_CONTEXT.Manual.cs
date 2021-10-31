@@ -997,10 +997,8 @@ namespace TerraFX.Interop
                     [NativeTypeName("WORD")]
                     public ushort AMD64_StatusWord;
 
-                    [NativeTypeName("BYTE")]
                     public byte AMD64_TagWord;
 
-                    [NativeTypeName("BYTE")]
                     public byte AMD64_Reserved1;
 
                     [NativeTypeName("WORD")]

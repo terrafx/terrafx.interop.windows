@@ -41,7 +41,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        public HRESULT SetTrackingOptions([NativeTypeName("UINT")] uint uOptions)
+        public HRESULT SetTrackingOptions(uint uOptions)
         {
             return ((delegate* unmanaged<ID3D11RefTrackingOptions*, uint, int>)(lpVtbl[3]))((ID3D11RefTrackingOptions*)Unsafe.AsPointer(ref this), uOptions);
         }

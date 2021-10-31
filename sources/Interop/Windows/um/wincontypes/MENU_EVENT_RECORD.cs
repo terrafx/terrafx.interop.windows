@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public partial struct MENU_EVENT_RECORD
     {
-        [NativeTypeName("UINT")]
         public uint dwCommandId;
     }
 }

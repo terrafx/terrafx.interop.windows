@@ -11,23 +11,23 @@ namespace TerraFX.Interop
     {
         public static D3D12_CPU_DESCRIPTOR_HANDLE DEFAULT => default;
 
-        public D3D12_CPU_DESCRIPTOR_HANDLE([NativeTypeName("const D3D12_CPU_DESCRIPTOR_HANDLE &")] in D3D12_CPU_DESCRIPTOR_HANDLE other, [NativeTypeName("INT")] int offsetScaledByIncrementSize)
+        public D3D12_CPU_DESCRIPTOR_HANDLE([NativeTypeName("const D3D12_CPU_DESCRIPTOR_HANDLE &")] in D3D12_CPU_DESCRIPTOR_HANDLE other, int offsetScaledByIncrementSize)
         {
             InitOffsetted(out this, other, offsetScaledByIncrementSize);
         }
 
-        public D3D12_CPU_DESCRIPTOR_HANDLE([NativeTypeName("const D3D12_CPU_DESCRIPTOR_HANDLE &")] in D3D12_CPU_DESCRIPTOR_HANDLE other, [NativeTypeName("INT")] int offsetInDescriptors, [NativeTypeName("UINT")]uint descriptorIncrementSize)
+        public D3D12_CPU_DESCRIPTOR_HANDLE([NativeTypeName("const D3D12_CPU_DESCRIPTOR_HANDLE &")] in D3D12_CPU_DESCRIPTOR_HANDLE other, int offsetInDescriptors, uint descriptorIncrementSize)
         {
             InitOffsetted(out this, other, offsetInDescriptors, descriptorIncrementSize);
         }
 
-        public D3D12_CPU_DESCRIPTOR_HANDLE Offset([NativeTypeName("INT")] int offsetInDescriptors, [NativeTypeName("UINT")] uint descriptorIncrementSize)
+        public D3D12_CPU_DESCRIPTOR_HANDLE Offset(int offsetInDescriptors, uint descriptorIncrementSize)
         {
             ptr = unchecked((nuint)((long)ptr + ((long)offsetInDescriptors * (long)descriptorIncrementSize)));
             return this;
         }
 
-        public D3D12_CPU_DESCRIPTOR_HANDLE Offset([NativeTypeName("INT")] int offsetScaledByIncrementSize)
+        public D3D12_CPU_DESCRIPTOR_HANDLE Offset(int offsetScaledByIncrementSize)
         {
             ptr = unchecked((nuint)((long)ptr + (long)offsetScaledByIncrementSize));
             return this;
@@ -43,22 +43,22 @@ namespace TerraFX.Interop
             return (l.ptr != r.ptr);
         }
 
-        public void InitOffsetted([NativeTypeName("const D3D12_CPU_DESCRIPTOR_HANDLE &")] in D3D12_CPU_DESCRIPTOR_HANDLE @base, [NativeTypeName("INT")] int offsetScaledByIncrementSize)
+        public void InitOffsetted([NativeTypeName("const D3D12_CPU_DESCRIPTOR_HANDLE &")] in D3D12_CPU_DESCRIPTOR_HANDLE @base, int offsetScaledByIncrementSize)
         {
             InitOffsetted(out this, @base, offsetScaledByIncrementSize);
         }
 
-        public void InitOffsetted([NativeTypeName("const D3D12_CPU_DESCRIPTOR_HANDLE &")] in D3D12_CPU_DESCRIPTOR_HANDLE @base, [NativeTypeName("INT")] int offsetInDescriptors, [NativeTypeName("UINT")] uint descriptorIncrementSize)
+        public void InitOffsetted([NativeTypeName("const D3D12_CPU_DESCRIPTOR_HANDLE &")] in D3D12_CPU_DESCRIPTOR_HANDLE @base, int offsetInDescriptors, uint descriptorIncrementSize)
         {
             InitOffsetted(out this, @base, offsetInDescriptors, descriptorIncrementSize);
         }
 
-        public static void InitOffsetted([NativeTypeName("D3D12_CPU_DESCRIPTOR_HANDLE &")] out D3D12_CPU_DESCRIPTOR_HANDLE handle, [NativeTypeName("const D3D12_CPU_DESCRIPTOR_HANDLE &")] in D3D12_CPU_DESCRIPTOR_HANDLE @base, [NativeTypeName("INT")] int offsetScaledByIncrementSize)
+        public static void InitOffsetted([NativeTypeName("D3D12_CPU_DESCRIPTOR_HANDLE &")] out D3D12_CPU_DESCRIPTOR_HANDLE handle, [NativeTypeName("const D3D12_CPU_DESCRIPTOR_HANDLE &")] in D3D12_CPU_DESCRIPTOR_HANDLE @base, int offsetScaledByIncrementSize)
         {
             handle.ptr = (nuint)((long)@base.ptr + (long)offsetScaledByIncrementSize);
         }
 
-        public static void InitOffsetted([NativeTypeName("D3D12_CPU_DESCRIPTOR_HANDLE &")] out D3D12_CPU_DESCRIPTOR_HANDLE handle, [NativeTypeName("const D3D12_CPU_DESCRIPTOR_HANDLE &")] in D3D12_CPU_DESCRIPTOR_HANDLE @base, [NativeTypeName("INT")] int offsetInDescriptors, [NativeTypeName("UINT")] uint descriptorIncrementSize)
+        public static void InitOffsetted([NativeTypeName("D3D12_CPU_DESCRIPTOR_HANDLE &")] out D3D12_CPU_DESCRIPTOR_HANDLE handle, [NativeTypeName("const D3D12_CPU_DESCRIPTOR_HANDLE &")] in D3D12_CPU_DESCRIPTOR_HANDLE @base, int offsetInDescriptors, uint descriptorIncrementSize)
         {
             handle.ptr = (nuint)((long)@base.ptr + ((long)offsetInDescriptors * (long)descriptorIncrementSize));
         }

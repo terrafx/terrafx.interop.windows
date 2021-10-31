@@ -10,7 +10,6 @@ namespace TerraFX.Interop
         [NativeTypeName("WCHAR")]
         public ushort wcLow;
 
-        [NativeTypeName("USHORT")]
         public ushort cGlyphs;
     }
 }

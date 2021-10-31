@@ -7,10 +7,8 @@ namespace TerraFX.Interop
 {
     public partial struct WS_UINT8_DESCRIPTION
     {
-        [NativeTypeName("BYTE")]
         public byte minValue;
 
-        [NativeTypeName("BYTE")]
         public byte maxValue;
     }
 }

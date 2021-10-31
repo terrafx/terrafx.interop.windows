@@ -13,13 +13,10 @@ namespace TerraFX.Interop
 
         public BOOL FrontCounterClockwise;
 
-        [NativeTypeName("INT")]
         public int DepthBias;
 
-        [NativeTypeName("FLOAT")]
         public float DepthBiasClamp;
 
-        [NativeTypeName("FLOAT")]
         public float SlopeScaledDepthBias;
 
         public BOOL DepthClipEnable;

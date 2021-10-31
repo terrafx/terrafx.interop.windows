@@ -15,7 +15,6 @@ namespace TerraFX.Interop
         [NativeTypeName("WORD")]
         public ushort wVKey;
 
-        [NativeTypeName("UINT")]
         public uint flags;
     }
 }

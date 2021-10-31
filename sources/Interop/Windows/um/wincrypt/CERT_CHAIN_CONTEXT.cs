@@ -34,7 +34,6 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint dwCreateFlags;
 
-        [NativeTypeName("GUID")]
         public Guid ChainId;
     }
 }

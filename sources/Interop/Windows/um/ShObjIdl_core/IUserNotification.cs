@@ -48,7 +48,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT SetBalloonRetry([NativeTypeName("DWORD")] uint dwShowTime, [NativeTypeName("DWORD")] uint dwInterval, [NativeTypeName("UINT")] uint cRetryCount)
+        public HRESULT SetBalloonRetry([NativeTypeName("DWORD")] uint dwShowTime, [NativeTypeName("DWORD")] uint dwInterval, uint cRetryCount)
         {
             return ((delegate* unmanaged<IUserNotification*, uint, uint, uint, int>)(lpVtbl[4]))((IUserNotification*)Unsafe.AsPointer(ref this), dwShowTime, dwInterval, cRetryCount);
         }

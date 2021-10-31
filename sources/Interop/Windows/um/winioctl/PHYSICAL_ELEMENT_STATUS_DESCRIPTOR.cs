@@ -16,10 +16,8 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint ElementIdentifier;
 
-        [NativeTypeName("BYTE")]
         public byte PhysicalElementType;
 
-        [NativeTypeName("BYTE")]
         public byte PhysicalElementHealth;
 
         [NativeTypeName("BYTE [2]")]

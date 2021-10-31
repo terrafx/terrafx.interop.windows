@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public partial struct D2D1_BRUSH_PROPERTIES
     {
-        [NativeTypeName("FLOAT")]
         public float opacity;
 
         [NativeTypeName("D2D1_MATRIX_3X2_F")]

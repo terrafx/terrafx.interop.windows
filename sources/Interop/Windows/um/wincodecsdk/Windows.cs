@@ -3088,7 +3088,7 @@ namespace TerraFX.Interop
         }
 
         [DllImport("windowscodecs", ExactSpelling = true)]
-        public static extern HRESULT WICMatchMetadataContent([NativeTypeName("const GUID &")] Guid* guidContainerFormat, [NativeTypeName("const GUID *")] Guid* pguidVendor, IStream* pIStream, [NativeTypeName("GUID *")] Guid* pguidMetadataFormat);
+        public static extern HRESULT WICMatchMetadataContent([NativeTypeName("const GUID &")] Guid* guidContainerFormat, [NativeTypeName("const GUID *")] Guid* pguidVendor, IStream* pIStream, Guid* pguidMetadataFormat);
 
         [DllImport("windowscodecs", ExactSpelling = true)]
         public static extern HRESULT WICSerializeMetadataContent([NativeTypeName("const GUID &")] Guid* guidContainerFormat, IWICMetadataWriter* pIWriter, [NativeTypeName("DWORD")] uint dwPersistOptions, IStream* pIStream);

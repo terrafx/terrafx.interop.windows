@@ -253,7 +253,7 @@ namespace TerraFX.Interop
             }
         }
 
-        [NativeTypeName("UINT : 1")]
+        [NativeTypeName("uint : 1")]
         public uint fRestFlags
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]

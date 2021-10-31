@@ -9,7 +9,6 @@ namespace TerraFX.Interop
     {
         public IDWriteFontFace* fontFace;
 
-        [NativeTypeName("FLOAT")]
         public float fontEmSize;
 
         [NativeTypeName("UINT32")]

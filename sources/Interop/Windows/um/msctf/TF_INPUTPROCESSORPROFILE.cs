@@ -18,10 +18,8 @@ namespace TerraFX.Interop
         [NativeTypeName("CLSID")]
         public Guid clsid;
 
-        [NativeTypeName("GUID")]
         public Guid guidProfile;
 
-        [NativeTypeName("GUID")]
         public Guid catid;
 
         public HKL hklSubstitute;

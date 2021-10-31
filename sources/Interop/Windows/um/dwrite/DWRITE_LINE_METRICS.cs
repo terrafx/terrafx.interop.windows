@@ -16,10 +16,8 @@ namespace TerraFX.Interop
         [NativeTypeName("UINT32")]
         public uint newlineLength;
 
-        [NativeTypeName("FLOAT")]
         public float height;
 
-        [NativeTypeName("FLOAT")]
         public float baseline;
 
         public BOOL isTrimmed;

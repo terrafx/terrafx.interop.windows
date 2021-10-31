@@ -7,13 +7,10 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct DWRITE_STRIKETHROUGH
     {
-        [NativeTypeName("FLOAT")]
         public float width;
 
-        [NativeTypeName("FLOAT")]
         public float thickness;
 
-        [NativeTypeName("FLOAT")]
         public float offset;
 
         public DWRITE_READING_DIRECTION readingDirection;

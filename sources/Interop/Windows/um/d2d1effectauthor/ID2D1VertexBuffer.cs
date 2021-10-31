@@ -41,7 +41,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        public HRESULT Map([NativeTypeName("BYTE **")] byte** data, [NativeTypeName("UINT32")] uint bufferSize)
+        public HRESULT Map(byte** data, [NativeTypeName("UINT32")] uint bufferSize)
         {
             return ((delegate* unmanaged<ID2D1VertexBuffer*, byte**, uint, int>)(lpVtbl[3]))((ID2D1VertexBuffer*)Unsafe.AsPointer(ref this), data, bufferSize);
         }

@@ -7,10 +7,8 @@ namespace TerraFX.Interop
 {
     public partial struct D3D11_FEATURE_DATA_SHADER_MIN_PRECISION_SUPPORT
     {
-        [NativeTypeName("UINT")]
         public uint PixelShaderMinPrecision;
 
-        [NativeTypeName("UINT")]
         public uint AllOtherShaderStagesMinPrecision;
     }
 }

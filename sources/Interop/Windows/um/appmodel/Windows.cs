@@ -11,7 +11,7 @@ namespace TerraFX.Interop
     {
         [DllImport("kernel32", ExactSpelling = true)]
         [return: NativeTypeName("LONG")]
-        public static extern int GetCurrentPackageId([NativeTypeName("UINT32 *")] uint* bufferLength, [NativeTypeName("BYTE *")] byte* buffer);
+        public static extern int GetCurrentPackageId([NativeTypeName("UINT32 *")] uint* bufferLength, byte* buffer);
 
         [DllImport("kernel32", ExactSpelling = true)]
         [return: NativeTypeName("LONG")]
@@ -27,7 +27,7 @@ namespace TerraFX.Interop
 
         [DllImport("kernel32", ExactSpelling = true)]
         [return: NativeTypeName("LONG")]
-        public static extern int GetPackageId(HANDLE hProcess, [NativeTypeName("UINT32 *")] uint* bufferLength, [NativeTypeName("BYTE *")] byte* buffer);
+        public static extern int GetPackageId(HANDLE hProcess, [NativeTypeName("UINT32 *")] uint* bufferLength, byte* buffer);
 
         [DllImport("kernel32", ExactSpelling = true)]
         [return: NativeTypeName("LONG")]
@@ -71,7 +71,7 @@ namespace TerraFX.Interop
 
         [DllImport("kernel32", ExactSpelling = true)]
         [return: NativeTypeName("LONG")]
-        public static extern int PackageIdFromFullName([NativeTypeName("PCWSTR")] ushort* packageFullName, [NativeTypeName("const UINT32")] uint flags, [NativeTypeName("UINT32 *")] uint* bufferLength, [NativeTypeName("BYTE *")] byte* buffer);
+        public static extern int PackageIdFromFullName([NativeTypeName("PCWSTR")] ushort* packageFullName, [NativeTypeName("const UINT32")] uint flags, [NativeTypeName("UINT32 *")] uint* bufferLength, byte* buffer);
 
         [DllImport("kernel32", ExactSpelling = true)]
         [return: NativeTypeName("LONG")]
@@ -111,7 +111,7 @@ namespace TerraFX.Interop
 
         [DllImport("kernel32", ExactSpelling = true)]
         [return: NativeTypeName("LONG")]
-        public static extern int GetCurrentPackageInfo([NativeTypeName("const UINT32")] uint flags, [NativeTypeName("UINT32 *")] uint* bufferLength, [NativeTypeName("BYTE *")] byte* buffer, [NativeTypeName("UINT32 *")] uint* count);
+        public static extern int GetCurrentPackageInfo([NativeTypeName("const UINT32")] uint flags, [NativeTypeName("UINT32 *")] uint* bufferLength, byte* buffer, [NativeTypeName("UINT32 *")] uint* count);
 
         [DllImport("kernel32", ExactSpelling = true)]
         [return: NativeTypeName("LONG")]
@@ -123,11 +123,11 @@ namespace TerraFX.Interop
 
         [DllImport("kernel32", ExactSpelling = true)]
         [return: NativeTypeName("LONG")]
-        public static extern int GetPackageInfo(PACKAGE_INFO_REFERENCE packageInfoReference, [NativeTypeName("const UINT32")] uint flags, [NativeTypeName("UINT32 *")] uint* bufferLength, [NativeTypeName("BYTE *")] byte* buffer, [NativeTypeName("UINT32 *")] uint* count);
+        public static extern int GetPackageInfo(PACKAGE_INFO_REFERENCE packageInfoReference, [NativeTypeName("const UINT32")] uint flags, [NativeTypeName("UINT32 *")] uint* bufferLength, byte* buffer, [NativeTypeName("UINT32 *")] uint* count);
 
         [DllImport("kernel32", ExactSpelling = true)]
         [return: NativeTypeName("LONG")]
-        public static extern int GetPackageApplicationIds(PACKAGE_INFO_REFERENCE packageInfoReference, [NativeTypeName("UINT32 *")] uint* bufferLength, [NativeTypeName("BYTE *")] byte* buffer, [NativeTypeName("UINT32 *")] uint* count);
+        public static extern int GetPackageApplicationIds(PACKAGE_INFO_REFERENCE packageInfoReference, [NativeTypeName("UINT32 *")] uint* bufferLength, byte* buffer, [NativeTypeName("UINT32 *")] uint* count);
 
         [DllImport("api-ms-win-appmodel-runtime-l1-1-2", ExactSpelling = true)]
         [return: NativeTypeName("LONG")]

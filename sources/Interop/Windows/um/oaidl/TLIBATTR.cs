@@ -9,7 +9,6 @@ namespace TerraFX.Interop
 {
     public partial struct TLIBATTR
     {
-        [NativeTypeName("GUID")]
         public Guid guid;
 
         [NativeTypeName("LCID")]

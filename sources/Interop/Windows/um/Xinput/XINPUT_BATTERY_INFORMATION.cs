@@ -7,10 +7,8 @@ namespace TerraFX.Interop
 {
     public partial struct XINPUT_BATTERY_INFORMATION
     {
-        [NativeTypeName("BYTE")]
         public byte BatteryType;
 
-        [NativeTypeName("BYTE")]
         public byte BatteryLevel;
     }
 }

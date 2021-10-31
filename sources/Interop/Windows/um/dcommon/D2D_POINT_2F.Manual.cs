@@ -9,7 +9,7 @@ namespace TerraFX.Interop
 {
     public partial struct D2D_POINT_2F : IEquatable<D2D_POINT_2F>
     {
-        public D2D_POINT_2F([NativeTypeName("FLOAT")] float x = 0.0f, [NativeTypeName("FLOAT")] float y = 0.0f)
+        public D2D_POINT_2F(float x = 0.0f, float y = 0.0f)
         {
             this.x = x;
             this.y = y;

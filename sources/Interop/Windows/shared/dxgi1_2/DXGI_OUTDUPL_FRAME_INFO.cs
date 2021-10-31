@@ -11,7 +11,6 @@ namespace TerraFX.Interop
 
         public LARGE_INTEGER LastMouseUpdateTime;
 
-        [NativeTypeName("UINT")]
         public uint AccumulatedFrames;
 
         public BOOL RectsCoalesced;
@@ -20,10 +19,8 @@ namespace TerraFX.Interop
 
         public DXGI_OUTDUPL_POINTER_POSITION PointerPosition;
 
-        [NativeTypeName("UINT")]
         public uint TotalMetadataBufferSize;
 
-        [NativeTypeName("UINT")]
         public uint PointerShapeBufferSize;
     }
 }

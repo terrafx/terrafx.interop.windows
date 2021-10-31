@@ -7,13 +7,10 @@ namespace TerraFX.Interop
 {
     public partial struct DWRITE_INLINE_OBJECT_METRICS
     {
-        [NativeTypeName("FLOAT")]
         public float width;
 
-        [NativeTypeName("FLOAT")]
         public float height;
 
-        [NativeTypeName("FLOAT")]
         public float baseline;
 
         public BOOL supportsSideways;

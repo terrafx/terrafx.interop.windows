@@ -14,10 +14,8 @@ namespace TerraFX.Interop
         [NativeTypeName("WORD")]
         public ushort Magic;
 
-        [NativeTypeName("BYTE")]
         public byte MajorLinkerVersion;
 
-        [NativeTypeName("BYTE")]
         public byte MinorLinkerVersion;
 
         [NativeTypeName("DWORD")]

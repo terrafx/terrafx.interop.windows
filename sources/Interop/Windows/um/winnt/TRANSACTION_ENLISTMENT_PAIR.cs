@@ -9,10 +9,8 @@ namespace TerraFX.Interop
 {
     public partial struct TRANSACTION_ENLISTMENT_PAIR
     {
-        [NativeTypeName("GUID")]
         public Guid EnlistmentId;
 
-        [NativeTypeName("GUID")]
         public Guid ResourceManagerId;
     }
 }

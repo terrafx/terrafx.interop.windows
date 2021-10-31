@@ -7,13 +7,10 @@ namespace TerraFX.Interop
 {
     public partial struct EVENTMSG
     {
-        [NativeTypeName("UINT")]
         public uint message;
 
-        [NativeTypeName("UINT")]
         public uint paramL;
 
-        [NativeTypeName("UINT")]
         public uint paramH;
 
         [NativeTypeName("DWORD")]

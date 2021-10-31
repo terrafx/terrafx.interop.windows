@@ -7,10 +7,8 @@ namespace TerraFX.Interop
 {
     public partial struct UDACCEL
     {
-        [NativeTypeName("UINT")]
         public uint nSec;
 
-        [NativeTypeName("UINT")]
         public uint nInc;
     }
 }

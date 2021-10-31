@@ -7,16 +7,12 @@ namespace TerraFX.Interop
 {
     public partial struct D3D12_TEX2D_SRV
     {
-        [NativeTypeName("UINT")]
         public uint MostDetailedMip;
 
-        [NativeTypeName("UINT")]
         public uint MipLevels;
 
-        [NativeTypeName("UINT")]
         public uint PlaneSlice;
 
-        [NativeTypeName("FLOAT")]
         public float ResourceMinLODClamp;
     }
 }

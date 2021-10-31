@@ -7,10 +7,8 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct D3D12_FEATURE_DATA_VIDEO_EXTENSION_COMMANDS
     {
-        [NativeTypeName("UINT")]
         public uint NodeIndex;
 
-        [NativeTypeName("UINT")]
         public uint CommandCount;
 
         public D3D12_VIDEO_EXTENSION_COMMAND_INFO* pCommandInfos;

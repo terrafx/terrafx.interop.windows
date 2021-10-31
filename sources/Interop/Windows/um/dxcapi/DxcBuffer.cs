@@ -13,7 +13,6 @@ namespace TerraFX.Interop
         [NativeTypeName("SIZE_T")]
         public nuint Size;
 
-        [NativeTypeName("UINT")]
         public uint Encoding;
     }
 }

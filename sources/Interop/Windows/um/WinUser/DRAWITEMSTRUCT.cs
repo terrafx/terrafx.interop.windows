@@ -7,19 +7,14 @@ namespace TerraFX.Interop
 {
     public partial struct DRAWITEMSTRUCT
     {
-        [NativeTypeName("UINT")]
         public uint CtlType;
 
-        [NativeTypeName("UINT")]
         public uint CtlID;
 
-        [NativeTypeName("UINT")]
         public uint itemID;
 
-        [NativeTypeName("UINT")]
         public uint itemAction;
 
-        [NativeTypeName("UINT")]
         public uint itemState;
 
         public HWND hwndItem;

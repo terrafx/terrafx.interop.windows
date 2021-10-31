@@ -7,10 +7,8 @@ namespace TerraFX.Interop
 {
     public partial struct CapturedMetadataISOGains
     {
-        [NativeTypeName("FLOAT")]
         public float AnalogGain;
 
-        [NativeTypeName("FLOAT")]
         public float DigitalGain;
     }
 }

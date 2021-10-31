@@ -85,37 +85,30 @@ namespace TerraFX.Interop
 
             public partial struct _VertexBuffer_e__Struct
             {
-                [NativeTypeName("UINT")]
                 public uint Slot;
             }
 
             public partial struct _Constant_e__Struct
             {
-                [NativeTypeName("UINT")]
                 public uint RootParameterIndex;
 
-                [NativeTypeName("UINT")]
                 public uint DestOffsetIn32BitValues;
 
-                [NativeTypeName("UINT")]
                 public uint Num32BitValuesToSet;
             }
 
             public partial struct _ConstantBufferView_e__Struct
             {
-                [NativeTypeName("UINT")]
                 public uint RootParameterIndex;
             }
 
             public partial struct _ShaderResourceView_e__Struct
             {
-                [NativeTypeName("UINT")]
                 public uint RootParameterIndex;
             }
 
             public partial struct _UnorderedAccessView_e__Struct
             {
-                [NativeTypeName("UINT")]
                 public uint RootParameterIndex;
             }
         }

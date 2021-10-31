@@ -13,7 +13,6 @@ namespace TerraFX.Interop
         [NativeTypeName("PCWSTR")]
         public ushort* Source;
 
-        [NativeTypeName("UINT")]
         public uint Win32Error;
 
         [NativeTypeName("DWORD")]

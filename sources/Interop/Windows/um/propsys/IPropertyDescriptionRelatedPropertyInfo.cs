@@ -90,7 +90,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(10)]
-        public HRESULT GetDefaultColumnWidth([NativeTypeName("UINT *")] uint* pcxChars)
+        public HRESULT GetDefaultColumnWidth(uint* pcxChars)
         {
             return ((delegate* unmanaged<IPropertyDescriptionRelatedPropertyInfo*, uint*, int>)(lpVtbl[10]))((IPropertyDescriptionRelatedPropertyInfo*)Unsafe.AsPointer(ref this), pcxChars);
         }

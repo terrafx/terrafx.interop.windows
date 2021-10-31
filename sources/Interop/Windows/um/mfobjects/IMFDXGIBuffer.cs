@@ -48,7 +48,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT GetSubresourceIndex([NativeTypeName("UINT *")] uint* puSubresource)
+        public HRESULT GetSubresourceIndex(uint* puSubresource)
         {
             return ((delegate* unmanaged<IMFDXGIBuffer*, uint*, int>)(lpVtbl[4]))((IMFDXGIBuffer*)Unsafe.AsPointer(ref this), puSubresource);
         }

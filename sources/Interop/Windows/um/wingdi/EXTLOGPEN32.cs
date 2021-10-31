@@ -13,7 +13,6 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint elpWidth;
 
-        [NativeTypeName("UINT")]
         public uint elpBrushStyle;
 
         [NativeTypeName("COLORREF")]

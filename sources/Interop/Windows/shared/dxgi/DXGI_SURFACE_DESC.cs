@@ -7,10 +7,8 @@ namespace TerraFX.Interop
 {
     public partial struct DXGI_SURFACE_DESC
     {
-        [NativeTypeName("UINT")]
         public uint Width;
 
-        [NativeTypeName("UINT")]
         public uint Height;
 
         public DXGI_FORMAT Format;

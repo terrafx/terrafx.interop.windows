@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public partial struct D3D12_FEATURE_DATA_VIDEO_FEATURE_AREA_SUPPORT
     {
-        [NativeTypeName("UINT")]
         public uint NodeIndex;
 
         public BOOL VideoDecodeSupport;

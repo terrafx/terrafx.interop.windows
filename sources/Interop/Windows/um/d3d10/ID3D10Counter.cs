@@ -48,14 +48,14 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT GetPrivateData([NativeTypeName("const GUID &")] Guid* guid, [NativeTypeName("UINT *")] uint* pDataSize, void* pData)
+        public HRESULT GetPrivateData([NativeTypeName("const GUID &")] Guid* guid, uint* pDataSize, void* pData)
         {
             return ((delegate* unmanaged<ID3D10Counter*, Guid*, uint*, void*, int>)(lpVtbl[4]))((ID3D10Counter*)Unsafe.AsPointer(ref this), guid, pDataSize, pData);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        public HRESULT SetPrivateData([NativeTypeName("const GUID &")] Guid* guid, [NativeTypeName("UINT")] uint DataSize, [NativeTypeName("const void *")] void* pData)
+        public HRESULT SetPrivateData([NativeTypeName("const GUID &")] Guid* guid, uint DataSize, [NativeTypeName("const void *")] void* pData)
         {
             return ((delegate* unmanaged<ID3D10Counter*, Guid*, uint, void*, int>)(lpVtbl[5]))((ID3D10Counter*)Unsafe.AsPointer(ref this), guid, DataSize, pData);
         }
@@ -83,14 +83,13 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        public HRESULT GetData(void* pData, [NativeTypeName("UINT")] uint DataSize, [NativeTypeName("UINT")] uint GetDataFlags)
+        public HRESULT GetData(void* pData, uint DataSize, uint GetDataFlags)
         {
             return ((delegate* unmanaged<ID3D10Counter*, void*, uint, uint, int>)(lpVtbl[9]))((ID3D10Counter*)Unsafe.AsPointer(ref this), pData, DataSize, GetDataFlags);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(10)]
-        [return: NativeTypeName("UINT")]
         public uint GetDataSize()
         {
             return ((delegate* unmanaged<ID3D10Counter*, uint>)(lpVtbl[10]))((ID3D10Counter*)Unsafe.AsPointer(ref this));

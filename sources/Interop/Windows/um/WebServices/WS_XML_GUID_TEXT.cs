@@ -11,7 +11,6 @@ namespace TerraFX.Interop
     {
         public WS_XML_TEXT text;
 
-        [NativeTypeName("GUID")]
         public Guid value;
     }
 }

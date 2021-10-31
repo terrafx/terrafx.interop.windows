@@ -41,14 +41,14 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        public HRESULT AddCubic([NativeTypeName("UINT")] uint dimension, [NativeTypeName("UI_ANIMATION_SECONDS")] double beginOffset, [NativeTypeName("FLOAT")] float constantCoefficient, [NativeTypeName("FLOAT")] float linearCoefficient, [NativeTypeName("FLOAT")] float quadraticCoefficient, [NativeTypeName("FLOAT")] float cubicCoefficient)
+        public HRESULT AddCubic(uint dimension, [NativeTypeName("UI_ANIMATION_SECONDS")] double beginOffset, float constantCoefficient, float linearCoefficient, float quadraticCoefficient, float cubicCoefficient)
         {
             return ((delegate* unmanaged<IUIAnimationPrimitiveInterpolation*, uint, double, float, float, float, float, int>)(lpVtbl[3]))((IUIAnimationPrimitiveInterpolation*)Unsafe.AsPointer(ref this), dimension, beginOffset, constantCoefficient, linearCoefficient, quadraticCoefficient, cubicCoefficient);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT AddSinusoidal([NativeTypeName("UINT")] uint dimension, [NativeTypeName("UI_ANIMATION_SECONDS")] double beginOffset, [NativeTypeName("FLOAT")] float bias, [NativeTypeName("FLOAT")] float amplitude, [NativeTypeName("FLOAT")] float frequency, [NativeTypeName("FLOAT")] float phase)
+        public HRESULT AddSinusoidal(uint dimension, [NativeTypeName("UI_ANIMATION_SECONDS")] double beginOffset, float bias, float amplitude, float frequency, float phase)
         {
             return ((delegate* unmanaged<IUIAnimationPrimitiveInterpolation*, uint, double, float, float, float, float, int>)(lpVtbl[4]))((IUIAnimationPrimitiveInterpolation*)Unsafe.AsPointer(ref this), dimension, beginOffset, bias, amplitude, frequency, phase);
         }

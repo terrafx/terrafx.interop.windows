@@ -41,7 +41,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        public HRESULT ReadExecutableAt([NativeTypeName("DWORDLONG")] ulong fileOffset, [NativeTypeName("DWORD")] uint cbData, [NativeTypeName("DWORD *")] uint* pcbData, [NativeTypeName("BYTE *")] byte* pbData)
+        public HRESULT ReadExecutableAt([NativeTypeName("DWORDLONG")] ulong fileOffset, [NativeTypeName("DWORD")] uint cbData, [NativeTypeName("DWORD *")] uint* pcbData, byte* pbData)
         {
             return ((delegate* unmanaged<IDiaReadExeAtOffsetCallback*, ulong, uint, uint*, byte*, int>)(lpVtbl[3]))((IDiaReadExeAtOffsetCallback*)Unsafe.AsPointer(ref this), fileOffset, cbData, pcbData, pbData);
         }

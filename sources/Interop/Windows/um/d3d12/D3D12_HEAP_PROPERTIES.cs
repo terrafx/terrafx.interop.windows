@@ -13,10 +13,8 @@ namespace TerraFX.Interop
 
         public D3D12_MEMORY_POOL MemoryPoolPreference;
 
-        [NativeTypeName("UINT")]
         public uint CreationNodeMask;
 
-        [NativeTypeName("UINT")]
         public uint VisibleNodeMask;
     }
 }

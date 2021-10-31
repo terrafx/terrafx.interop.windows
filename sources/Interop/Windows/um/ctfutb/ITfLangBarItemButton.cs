@@ -83,7 +83,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        public HRESULT OnMenuSelect([NativeTypeName("UINT")] uint wID)
+        public HRESULT OnMenuSelect(uint wID)
         {
             return ((delegate* unmanaged<ITfLangBarItemButton*, uint, int>)(lpVtbl[9]))((ITfLangBarItemButton*)Unsafe.AsPointer(ref this), wID);
         }

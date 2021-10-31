@@ -90,7 +90,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(10)]
-        public HRESULT GetGUID([NativeTypeName("const GUID &")] Guid* guidKey, [NativeTypeName("GUID *")] Guid* pguidValue)
+        public HRESULT GetGUID([NativeTypeName("const GUID &")] Guid* guidKey, Guid* pguidValue)
         {
             return ((delegate* unmanaged<IMFOutputPolicy*, Guid*, Guid*, int>)(lpVtbl[10]))((IMFOutputPolicy*)Unsafe.AsPointer(ref this), guidKey, pguidValue);
         }
@@ -237,7 +237,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(31)]
-        public HRESULT GetItemByIndex([NativeTypeName("UINT32")] uint unIndex, [NativeTypeName("GUID *")] Guid* pguidKey, PROPVARIANT* pValue)
+        public HRESULT GetItemByIndex([NativeTypeName("UINT32")] uint unIndex, Guid* pguidKey, PROPVARIANT* pValue)
         {
             return ((delegate* unmanaged<IMFOutputPolicy*, uint, Guid*, PROPVARIANT*, int>)(lpVtbl[31]))((IMFOutputPolicy*)Unsafe.AsPointer(ref this), unIndex, pguidKey, pValue);
         }
@@ -251,14 +251,14 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(33)]
-        public HRESULT GenerateRequiredSchemas([NativeTypeName("DWORD")] uint dwAttributes, [NativeTypeName("GUID")] Guid guidOutputSubType, [NativeTypeName("GUID *")] Guid* rgGuidProtectionSchemasSupported, [NativeTypeName("DWORD")] uint cProtectionSchemasSupported, IMFCollection** ppRequiredProtectionSchemas)
+        public HRESULT GenerateRequiredSchemas([NativeTypeName("DWORD")] uint dwAttributes, Guid guidOutputSubType, Guid* rgGuidProtectionSchemasSupported, [NativeTypeName("DWORD")] uint cProtectionSchemasSupported, IMFCollection** ppRequiredProtectionSchemas)
         {
             return ((delegate* unmanaged<IMFOutputPolicy*, uint, Guid, Guid*, uint, IMFCollection**, int>)(lpVtbl[33]))((IMFOutputPolicy*)Unsafe.AsPointer(ref this), dwAttributes, guidOutputSubType, rgGuidProtectionSchemasSupported, cProtectionSchemasSupported, ppRequiredProtectionSchemas);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(34)]
-        public HRESULT GetOriginatorID([NativeTypeName("GUID *")] Guid* pguidOriginatorID)
+        public HRESULT GetOriginatorID(Guid* pguidOriginatorID)
         {
             return ((delegate* unmanaged<IMFOutputPolicy*, Guid*, int>)(lpVtbl[34]))((IMFOutputPolicy*)Unsafe.AsPointer(ref this), pguidOriginatorID);
         }

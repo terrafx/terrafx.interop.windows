@@ -9,7 +9,6 @@ namespace TerraFX.Interop
     {
         public D3D12_SHADER_BYTECODE DXILLibrary;
 
-        [NativeTypeName("UINT")]
         public uint NumExports;
 
         public D3D12_EXPORT_DESC* pExports;

@@ -90,7 +90,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(10)]
-        public HRESULT GetDefaultColumnWidth([NativeTypeName("UINT *")] uint* pcxChars)
+        public HRESULT GetDefaultColumnWidth(uint* pcxChars)
         {
             return ((delegate* unmanaged<IPropertyDescriptionSearchInfo*, uint*, int>)(lpVtbl[10]))((IPropertyDescriptionSearchInfo*)Unsafe.AsPointer(ref this), pcxChars);
         }
@@ -209,7 +209,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(27)]
-        public HRESULT GetMaxSize([NativeTypeName("UINT *")] uint* pcbMaxSize)
+        public HRESULT GetMaxSize(uint* pcbMaxSize)
         {
             return ((delegate* unmanaged<IPropertyDescriptionSearchInfo*, uint*, int>)(lpVtbl[27]))((IPropertyDescriptionSearchInfo*)Unsafe.AsPointer(ref this), pcbMaxSize);
         }

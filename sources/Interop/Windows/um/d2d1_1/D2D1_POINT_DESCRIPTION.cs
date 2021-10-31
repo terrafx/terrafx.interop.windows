@@ -19,7 +19,6 @@ namespace TerraFX.Interop
         [NativeTypeName("UINT32")]
         public uint endFigure;
 
-        [NativeTypeName("FLOAT")]
         public float lengthToEndSegment;
     }
 }

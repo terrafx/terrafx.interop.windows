@@ -9,7 +9,6 @@ namespace TerraFX.Interop
 {
     public partial struct STREAM_MEDIUM
     {
-        [NativeTypeName("GUID")]
         public Guid gidMedium;
 
         [NativeTypeName("UINT32")]

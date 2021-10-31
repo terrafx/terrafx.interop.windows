@@ -7,16 +7,12 @@ namespace TerraFX.Interop
 {
     public partial struct D3D12_VIDEO_SIZE_RANGE
     {
-        [NativeTypeName("UINT")]
         public uint MaxWidth;
 
-        [NativeTypeName("UINT")]
         public uint MaxHeight;
 
-        [NativeTypeName("UINT")]
         public uint MinWidth;
 
-        [NativeTypeName("UINT")]
         public uint MinHeight;
     }
 }

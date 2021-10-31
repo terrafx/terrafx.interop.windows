@@ -7,7 +7,7 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct D3D12_TILE_REGION_SIZE
     {
-        public D3D12_TILE_REGION_SIZE([NativeTypeName("UINT")] uint numTiles, BOOL useBox, [NativeTypeName("UINT")] uint width, [NativeTypeName("UINT16")] ushort height, [NativeTypeName("UINT16")] ushort depth)
+        public D3D12_TILE_REGION_SIZE(uint numTiles, BOOL useBox, uint width, [NativeTypeName("UINT16")] ushort height, [NativeTypeName("UINT16")] ushort depth)
         {
             NumTiles = numTiles;
             UseBox = useBox;

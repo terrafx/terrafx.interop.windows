@@ -55,7 +55,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        public HRESULT GetPreferredVendorGUID([NativeTypeName("GUID *")] Guid* pguidPreferredVendor)
+        public HRESULT GetPreferredVendorGUID(Guid* pguidPreferredVendor)
         {
             return ((delegate* unmanaged<IWICStreamProvider*, Guid*, int>)(lpVtbl[5]))((IWICStreamProvider*)Unsafe.AsPointer(ref this), pguidPreferredVendor);
         }

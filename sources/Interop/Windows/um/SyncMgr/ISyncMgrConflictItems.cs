@@ -41,14 +41,14 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        public HRESULT GetCount([NativeTypeName("UINT *")] uint* pCount)
+        public HRESULT GetCount(uint* pCount)
         {
             return ((delegate* unmanaged<ISyncMgrConflictItems*, uint*, int>)(lpVtbl[3]))((ISyncMgrConflictItems*)Unsafe.AsPointer(ref this), pCount);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT GetItem([NativeTypeName("UINT")] uint iIndex, CONFIRM_CONFLICT_ITEM* pItemInfo)
+        public HRESULT GetItem(uint iIndex, CONFIRM_CONFLICT_ITEM* pItemInfo)
         {
             return ((delegate* unmanaged<ISyncMgrConflictItems*, uint, CONFIRM_CONFLICT_ITEM*, int>)(lpVtbl[4]))((ISyncMgrConflictItems*)Unsafe.AsPointer(ref this), iIndex, pItemInfo);
         }

@@ -9,7 +9,6 @@ namespace TerraFX.Interop
 {
     public partial struct VIRTUALIZATION_INSTANCE_INFO_OUTPUT
     {
-        [NativeTypeName("GUID")]
         public Guid VirtualizationInstanceID;
     }
 }

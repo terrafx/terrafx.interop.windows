@@ -9,12 +9,10 @@ namespace TerraFX.Interop
     {
         public DXGI_RATIONAL CustomRate;
 
-        [NativeTypeName("UINT")]
         public uint OutputFrames;
 
         public BOOL InputInterlaced;
 
-        [NativeTypeName("UINT")]
         public uint InputFramesOrFields;
     }
 }

@@ -10,7 +10,6 @@ namespace TerraFX.Interop
         [NativeTypeName("ULONG")]
         public uint cElems;
 
-        [NativeTypeName("FLOAT *")]
         public float* pElems;
     }
 }

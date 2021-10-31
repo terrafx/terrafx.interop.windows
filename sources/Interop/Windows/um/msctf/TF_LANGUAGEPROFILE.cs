@@ -15,12 +15,10 @@ namespace TerraFX.Interop
         [NativeTypeName("LANGID")]
         public ushort langid;
 
-        [NativeTypeName("GUID")]
         public Guid catid;
 
         public BOOL fActive;
 
-        [NativeTypeName("GUID")]
         public Guid guidProfile;
     }
 }

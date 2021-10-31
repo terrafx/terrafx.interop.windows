@@ -9,10 +9,8 @@ namespace TerraFX.Interop
     {
         public BOOL Enable;
 
-        [NativeTypeName("UINT")]
         public uint Width;
 
-        [NativeTypeName("UINT")]
         public uint Height;
 
         public DXGI_FORMAT Format;

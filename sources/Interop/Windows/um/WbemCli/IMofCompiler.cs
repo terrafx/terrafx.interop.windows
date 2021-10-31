@@ -48,7 +48,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT CompileBuffer([NativeTypeName("long")] int BuffSize, [NativeTypeName("BYTE *")] byte* pBuffer, [NativeTypeName("LPWSTR")] ushort* ServerAndNamespace, [NativeTypeName("LPWSTR")] ushort* User, [NativeTypeName("LPWSTR")] ushort* Authority, [NativeTypeName("LPWSTR")] ushort* Password, [NativeTypeName("LONG")] int lOptionFlags, [NativeTypeName("LONG")] int lClassFlags, [NativeTypeName("LONG")] int lInstanceFlags, WBEM_COMPILE_STATUS_INFO* pInfo)
+        public HRESULT CompileBuffer([NativeTypeName("long")] int BuffSize, byte* pBuffer, [NativeTypeName("LPWSTR")] ushort* ServerAndNamespace, [NativeTypeName("LPWSTR")] ushort* User, [NativeTypeName("LPWSTR")] ushort* Authority, [NativeTypeName("LPWSTR")] ushort* Password, [NativeTypeName("LONG")] int lOptionFlags, [NativeTypeName("LONG")] int lClassFlags, [NativeTypeName("LONG")] int lInstanceFlags, WBEM_COMPILE_STATUS_INFO* pInfo)
         {
             return ((delegate* unmanaged<IMofCompiler*, int, byte*, ushort*, ushort*, ushort*, ushort*, int, int, int, WBEM_COMPILE_STATUS_INFO*, int>)(lpVtbl[4]))((IMofCompiler*)Unsafe.AsPointer(ref this), BuffSize, pBuffer, ServerAndNamespace, User, Authority, Password, lOptionFlags, lClassFlags, lInstanceFlags, pInfo);
         }

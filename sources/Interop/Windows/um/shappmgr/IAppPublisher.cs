@@ -62,7 +62,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        public HRESULT EnumApps([NativeTypeName("GUID *")] Guid* pAppCategoryId, IEnumPublishedApps** ppepa)
+        public HRESULT EnumApps(Guid* pAppCategoryId, IEnumPublishedApps** ppepa)
         {
             return ((delegate* unmanaged<IAppPublisher*, Guid*, IEnumPublishedApps**, int>)(lpVtbl[6]))((IAppPublisher*)Unsafe.AsPointer(ref this), pAppCategoryId, ppepa);
         }

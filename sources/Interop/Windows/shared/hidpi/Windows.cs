@@ -20,7 +20,7 @@ namespace TerraFX.Interop
 
         [DllImport("hid", ExactSpelling = true)]
         [return: NativeTypeName("NTSTATUS")]
-        public static extern int HidP_GetSpecificButtonCaps(HIDP_REPORT_TYPE ReportType, [NativeTypeName("USAGE")] ushort UsagePage, [NativeTypeName("USHORT")] ushort LinkCollection, [NativeTypeName("USAGE")] ushort Usage, [NativeTypeName("PHIDP_BUTTON_CAPS")] HIDP_BUTTON_CAPS* ButtonCaps, [NativeTypeName("PUSHORT")] ushort* ButtonCapsLength, [NativeTypeName("PHIDP_PREPARSED_DATA")] IntPtr PreparsedData);
+        public static extern int HidP_GetSpecificButtonCaps(HIDP_REPORT_TYPE ReportType, [NativeTypeName("USAGE")] ushort UsagePage, ushort LinkCollection, [NativeTypeName("USAGE")] ushort Usage, [NativeTypeName("PHIDP_BUTTON_CAPS")] HIDP_BUTTON_CAPS* ButtonCaps, [NativeTypeName("PUSHORT")] ushort* ButtonCapsLength, [NativeTypeName("PHIDP_PREPARSED_DATA")] IntPtr PreparsedData);
 
         [DllImport("hid", ExactSpelling = true)]
         [return: NativeTypeName("NTSTATUS")]
@@ -28,7 +28,7 @@ namespace TerraFX.Interop
 
         [DllImport("hid", ExactSpelling = true)]
         [return: NativeTypeName("NTSTATUS")]
-        public static extern int HidP_GetSpecificValueCaps(HIDP_REPORT_TYPE ReportType, [NativeTypeName("USAGE")] ushort UsagePage, [NativeTypeName("USHORT")] ushort LinkCollection, [NativeTypeName("USAGE")] ushort Usage, [NativeTypeName("PHIDP_VALUE_CAPS")] HIDP_VALUE_CAPS* ValueCaps, [NativeTypeName("PUSHORT")] ushort* ValueCapsLength, [NativeTypeName("PHIDP_PREPARSED_DATA")] IntPtr PreparsedData);
+        public static extern int HidP_GetSpecificValueCaps(HIDP_REPORT_TYPE ReportType, [NativeTypeName("USAGE")] ushort UsagePage, ushort LinkCollection, [NativeTypeName("USAGE")] ushort Usage, [NativeTypeName("PHIDP_VALUE_CAPS")] HIDP_VALUE_CAPS* ValueCaps, [NativeTypeName("PUSHORT")] ushort* ValueCapsLength, [NativeTypeName("PHIDP_PREPARSED_DATA")] IntPtr PreparsedData);
 
         [DllImport("hid", ExactSpelling = true)]
         [return: NativeTypeName("NTSTATUS")]
@@ -36,7 +36,7 @@ namespace TerraFX.Interop
 
         [DllImport("hid", ExactSpelling = true)]
         [return: NativeTypeName("NTSTATUS")]
-        public static extern int HidP_GetExtendedAttributes(HIDP_REPORT_TYPE ReportType, [NativeTypeName("USHORT")] ushort DataIndex, [NativeTypeName("PHIDP_PREPARSED_DATA")] IntPtr PreparsedData, [NativeTypeName("PHIDP_EXTENDED_ATTRIBUTES")] HIDP_EXTENDED_ATTRIBUTES* Attributes, [NativeTypeName("PULONG")] uint* LengthAttributes);
+        public static extern int HidP_GetExtendedAttributes(HIDP_REPORT_TYPE ReportType, ushort DataIndex, [NativeTypeName("PHIDP_PREPARSED_DATA")] IntPtr PreparsedData, [NativeTypeName("PHIDP_EXTENDED_ATTRIBUTES")] HIDP_EXTENDED_ATTRIBUTES* Attributes, [NativeTypeName("PULONG")] uint* LengthAttributes);
 
         [DllImport("hid", ExactSpelling = true)]
         [return: NativeTypeName("NTSTATUS")]
@@ -56,19 +56,19 @@ namespace TerraFX.Interop
 
         [DllImport("hid", ExactSpelling = true)]
         [return: NativeTypeName("NTSTATUS")]
-        public static extern int HidP_SetUsages(HIDP_REPORT_TYPE ReportType, [NativeTypeName("USAGE")] ushort UsagePage, [NativeTypeName("USHORT")] ushort LinkCollection, [NativeTypeName("PUSAGE")] ushort* UsageList, [NativeTypeName("PULONG")] uint* UsageLength, [NativeTypeName("PHIDP_PREPARSED_DATA")] IntPtr PreparsedData, [NativeTypeName("PCHAR")] sbyte* Report, [NativeTypeName("ULONG")] uint ReportLength);
+        public static extern int HidP_SetUsages(HIDP_REPORT_TYPE ReportType, [NativeTypeName("USAGE")] ushort UsagePage, ushort LinkCollection, [NativeTypeName("PUSAGE")] ushort* UsageList, [NativeTypeName("PULONG")] uint* UsageLength, [NativeTypeName("PHIDP_PREPARSED_DATA")] IntPtr PreparsedData, [NativeTypeName("PCHAR")] sbyte* Report, [NativeTypeName("ULONG")] uint ReportLength);
 
         [DllImport("hid", ExactSpelling = true)]
         [return: NativeTypeName("NTSTATUS")]
-        public static extern int HidP_UnsetUsages(HIDP_REPORT_TYPE ReportType, [NativeTypeName("USAGE")] ushort UsagePage, [NativeTypeName("USHORT")] ushort LinkCollection, [NativeTypeName("PUSAGE")] ushort* UsageList, [NativeTypeName("PULONG")] uint* UsageLength, [NativeTypeName("PHIDP_PREPARSED_DATA")] IntPtr PreparsedData, [NativeTypeName("PCHAR")] sbyte* Report, [NativeTypeName("ULONG")] uint ReportLength);
+        public static extern int HidP_UnsetUsages(HIDP_REPORT_TYPE ReportType, [NativeTypeName("USAGE")] ushort UsagePage, ushort LinkCollection, [NativeTypeName("PUSAGE")] ushort* UsageList, [NativeTypeName("PULONG")] uint* UsageLength, [NativeTypeName("PHIDP_PREPARSED_DATA")] IntPtr PreparsedData, [NativeTypeName("PCHAR")] sbyte* Report, [NativeTypeName("ULONG")] uint ReportLength);
 
         [DllImport("hid", ExactSpelling = true)]
         [return: NativeTypeName("NTSTATUS")]
-        public static extern int HidP_GetUsages(HIDP_REPORT_TYPE ReportType, [NativeTypeName("USAGE")] ushort UsagePage, [NativeTypeName("USHORT")] ushort LinkCollection, [NativeTypeName("PUSAGE")] ushort* UsageList, [NativeTypeName("PULONG")] uint* UsageLength, [NativeTypeName("PHIDP_PREPARSED_DATA")] IntPtr PreparsedData, [NativeTypeName("PCHAR")] sbyte* Report, [NativeTypeName("ULONG")] uint ReportLength);
+        public static extern int HidP_GetUsages(HIDP_REPORT_TYPE ReportType, [NativeTypeName("USAGE")] ushort UsagePage, ushort LinkCollection, [NativeTypeName("PUSAGE")] ushort* UsageList, [NativeTypeName("PULONG")] uint* UsageLength, [NativeTypeName("PHIDP_PREPARSED_DATA")] IntPtr PreparsedData, [NativeTypeName("PCHAR")] sbyte* Report, [NativeTypeName("ULONG")] uint ReportLength);
 
         [DllImport("hid", ExactSpelling = true)]
         [return: NativeTypeName("NTSTATUS")]
-        public static extern int HidP_GetUsagesEx(HIDP_REPORT_TYPE ReportType, [NativeTypeName("USHORT")] ushort LinkCollection, [NativeTypeName("PUSAGE_AND_PAGE")] USAGE_AND_PAGE* ButtonList, [NativeTypeName("ULONG *")] uint* UsageLength, [NativeTypeName("PHIDP_PREPARSED_DATA")] IntPtr PreparsedData, [NativeTypeName("PCHAR")] sbyte* Report, [NativeTypeName("ULONG")] uint ReportLength);
+        public static extern int HidP_GetUsagesEx(HIDP_REPORT_TYPE ReportType, ushort LinkCollection, [NativeTypeName("PUSAGE_AND_PAGE")] USAGE_AND_PAGE* ButtonList, [NativeTypeName("ULONG *")] uint* UsageLength, [NativeTypeName("PHIDP_PREPARSED_DATA")] IntPtr PreparsedData, [NativeTypeName("PCHAR")] sbyte* Report, [NativeTypeName("ULONG")] uint ReportLength);
 
         [DllImport("hid", ExactSpelling = true)]
         [return: NativeTypeName("ULONG")]
@@ -76,27 +76,27 @@ namespace TerraFX.Interop
 
         [DllImport("hid", ExactSpelling = true)]
         [return: NativeTypeName("NTSTATUS")]
-        public static extern int HidP_SetUsageValue(HIDP_REPORT_TYPE ReportType, [NativeTypeName("USAGE")] ushort UsagePage, [NativeTypeName("USHORT")] ushort LinkCollection, [NativeTypeName("USAGE")] ushort Usage, [NativeTypeName("ULONG")] uint UsageValue, [NativeTypeName("PHIDP_PREPARSED_DATA")] IntPtr PreparsedData, [NativeTypeName("PCHAR")] sbyte* Report, [NativeTypeName("ULONG")] uint ReportLength);
+        public static extern int HidP_SetUsageValue(HIDP_REPORT_TYPE ReportType, [NativeTypeName("USAGE")] ushort UsagePage, ushort LinkCollection, [NativeTypeName("USAGE")] ushort Usage, [NativeTypeName("ULONG")] uint UsageValue, [NativeTypeName("PHIDP_PREPARSED_DATA")] IntPtr PreparsedData, [NativeTypeName("PCHAR")] sbyte* Report, [NativeTypeName("ULONG")] uint ReportLength);
 
         [DllImport("hid", ExactSpelling = true)]
         [return: NativeTypeName("NTSTATUS")]
-        public static extern int HidP_SetScaledUsageValue(HIDP_REPORT_TYPE ReportType, [NativeTypeName("USAGE")] ushort UsagePage, [NativeTypeName("USHORT")] ushort LinkCollection, [NativeTypeName("USAGE")] ushort Usage, [NativeTypeName("LONG")] int UsageValue, [NativeTypeName("PHIDP_PREPARSED_DATA")] IntPtr PreparsedData, [NativeTypeName("PCHAR")] sbyte* Report, [NativeTypeName("ULONG")] uint ReportLength);
+        public static extern int HidP_SetScaledUsageValue(HIDP_REPORT_TYPE ReportType, [NativeTypeName("USAGE")] ushort UsagePage, ushort LinkCollection, [NativeTypeName("USAGE")] ushort Usage, [NativeTypeName("LONG")] int UsageValue, [NativeTypeName("PHIDP_PREPARSED_DATA")] IntPtr PreparsedData, [NativeTypeName("PCHAR")] sbyte* Report, [NativeTypeName("ULONG")] uint ReportLength);
 
         [DllImport("hid", ExactSpelling = true)]
         [return: NativeTypeName("NTSTATUS")]
-        public static extern int HidP_SetUsageValueArray(HIDP_REPORT_TYPE ReportType, [NativeTypeName("USAGE")] ushort UsagePage, [NativeTypeName("USHORT")] ushort LinkCollection, [NativeTypeName("USAGE")] ushort Usage, [NativeTypeName("PCHAR")] sbyte* UsageValue, [NativeTypeName("USHORT")] ushort UsageValueByteLength, [NativeTypeName("PHIDP_PREPARSED_DATA")] IntPtr PreparsedData, [NativeTypeName("PCHAR")] sbyte* Report, [NativeTypeName("ULONG")] uint ReportLength);
+        public static extern int HidP_SetUsageValueArray(HIDP_REPORT_TYPE ReportType, [NativeTypeName("USAGE")] ushort UsagePage, ushort LinkCollection, [NativeTypeName("USAGE")] ushort Usage, [NativeTypeName("PCHAR")] sbyte* UsageValue, ushort UsageValueByteLength, [NativeTypeName("PHIDP_PREPARSED_DATA")] IntPtr PreparsedData, [NativeTypeName("PCHAR")] sbyte* Report, [NativeTypeName("ULONG")] uint ReportLength);
 
         [DllImport("hid", ExactSpelling = true)]
         [return: NativeTypeName("NTSTATUS")]
-        public static extern int HidP_GetUsageValue(HIDP_REPORT_TYPE ReportType, [NativeTypeName("USAGE")] ushort UsagePage, [NativeTypeName("USHORT")] ushort LinkCollection, [NativeTypeName("USAGE")] ushort Usage, [NativeTypeName("PULONG")] uint* UsageValue, [NativeTypeName("PHIDP_PREPARSED_DATA")] IntPtr PreparsedData, [NativeTypeName("PCHAR")] sbyte* Report, [NativeTypeName("ULONG")] uint ReportLength);
+        public static extern int HidP_GetUsageValue(HIDP_REPORT_TYPE ReportType, [NativeTypeName("USAGE")] ushort UsagePage, ushort LinkCollection, [NativeTypeName("USAGE")] ushort Usage, [NativeTypeName("PULONG")] uint* UsageValue, [NativeTypeName("PHIDP_PREPARSED_DATA")] IntPtr PreparsedData, [NativeTypeName("PCHAR")] sbyte* Report, [NativeTypeName("ULONG")] uint ReportLength);
 
         [DllImport("hid", ExactSpelling = true)]
         [return: NativeTypeName("NTSTATUS")]
-        public static extern int HidP_GetScaledUsageValue(HIDP_REPORT_TYPE ReportType, [NativeTypeName("USAGE")] ushort UsagePage, [NativeTypeName("USHORT")] ushort LinkCollection, [NativeTypeName("USAGE")] ushort Usage, [NativeTypeName("PLONG")] int* UsageValue, [NativeTypeName("PHIDP_PREPARSED_DATA")] IntPtr PreparsedData, [NativeTypeName("PCHAR")] sbyte* Report, [NativeTypeName("ULONG")] uint ReportLength);
+        public static extern int HidP_GetScaledUsageValue(HIDP_REPORT_TYPE ReportType, [NativeTypeName("USAGE")] ushort UsagePage, ushort LinkCollection, [NativeTypeName("USAGE")] ushort Usage, [NativeTypeName("PLONG")] int* UsageValue, [NativeTypeName("PHIDP_PREPARSED_DATA")] IntPtr PreparsedData, [NativeTypeName("PCHAR")] sbyte* Report, [NativeTypeName("ULONG")] uint ReportLength);
 
         [DllImport("hid", ExactSpelling = true)]
         [return: NativeTypeName("NTSTATUS")]
-        public static extern int HidP_GetUsageValueArray(HIDP_REPORT_TYPE ReportType, [NativeTypeName("USAGE")] ushort UsagePage, [NativeTypeName("USHORT")] ushort LinkCollection, [NativeTypeName("USAGE")] ushort Usage, [NativeTypeName("PCHAR")] sbyte* UsageValue, [NativeTypeName("USHORT")] ushort UsageValueByteLength, [NativeTypeName("PHIDP_PREPARSED_DATA")] IntPtr PreparsedData, [NativeTypeName("PCHAR")] sbyte* Report, [NativeTypeName("ULONG")] uint ReportLength);
+        public static extern int HidP_GetUsageValueArray(HIDP_REPORT_TYPE ReportType, [NativeTypeName("USAGE")] ushort UsagePage, ushort LinkCollection, [NativeTypeName("USAGE")] ushort Usage, [NativeTypeName("PCHAR")] sbyte* UsageValue, ushort UsageValueByteLength, [NativeTypeName("PHIDP_PREPARSED_DATA")] IntPtr PreparsedData, [NativeTypeName("PCHAR")] sbyte* Report, [NativeTypeName("ULONG")] uint ReportLength);
 
         [DllImport("hid", ExactSpelling = true)]
         [return: NativeTypeName("NTSTATUS")]

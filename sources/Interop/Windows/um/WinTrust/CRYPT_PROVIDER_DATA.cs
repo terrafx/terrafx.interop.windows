@@ -20,7 +20,6 @@ namespace TerraFX.Interop
 
         public HWND hWndParent;
 
-        [NativeTypeName("GUID *")]
         public Guid* pgActionID;
 
         public HCRYPTPROV hProv;

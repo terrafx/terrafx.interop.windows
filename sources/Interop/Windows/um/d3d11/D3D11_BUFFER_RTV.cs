@@ -56,11 +56,9 @@ namespace TerraFX.Interop
         public partial struct _Anonymous1_e__Union
         {
             [FieldOffset(0)]
-            [NativeTypeName("UINT")]
             public uint FirstElement;
 
             [FieldOffset(0)]
-            [NativeTypeName("UINT")]
             public uint ElementOffset;
         }
 
@@ -68,11 +66,9 @@ namespace TerraFX.Interop
         public partial struct _Anonymous2_e__Union
         {
             [FieldOffset(0)]
-            [NativeTypeName("UINT")]
             public uint NumElements;
 
             [FieldOffset(0)]
-            [NativeTypeName("UINT")]
             public uint ElementWidth;
         }
     }

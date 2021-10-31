@@ -41,7 +41,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        public HRESULT GetIconOf([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl, [NativeTypeName("UINT")] uint flags, int* pIconIndex)
+        public HRESULT GetIconOf([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl, uint flags, int* pIconIndex)
         {
             return ((delegate* unmanaged<IShellIcon*, ITEMIDLIST*, uint, int*, int>)(lpVtbl[3]))((IShellIcon*)Unsafe.AsPointer(ref this), pidl, flags, pIconIndex);
         }

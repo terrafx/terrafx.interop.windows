@@ -97,7 +97,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(11)]
-        public HRESULT Resize([NativeTypeName("INT")] int newWidth, [NativeTypeName("INT")] int newHeight)
+        public HRESULT Resize(int newWidth, int newHeight)
         {
             return ((delegate* unmanaged<IVirtualSurfaceImageSourceNative*, int, int, int>)(lpVtbl[11]))((IVirtualSurfaceImageSourceNative*)Unsafe.AsPointer(ref this), newWidth, newHeight);
         }

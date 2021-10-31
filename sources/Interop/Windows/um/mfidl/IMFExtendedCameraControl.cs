@@ -64,7 +64,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        public HRESULT LockPayload([NativeTypeName("BYTE **")] byte** ppPayload, [NativeTypeName("ULONG *")] uint* pulPayload)
+        public HRESULT LockPayload(byte** ppPayload, [NativeTypeName("ULONG *")] uint* pulPayload)
         {
             return ((delegate* unmanaged<IMFExtendedCameraControl*, byte**, uint*, int>)(lpVtbl[6]))((IMFExtendedCameraControl*)Unsafe.AsPointer(ref this), ppPayload, pulPayload);
         }

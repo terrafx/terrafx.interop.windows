@@ -41,84 +41,84 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        public HRESULT SendCommandNoData([NativeTypeName("BYTE *")] byte* Cdb, [NativeTypeName("ULONG")] uint CdbSize, [NativeTypeName("BYTE [18]")] byte* SenseBuffer, [NativeTypeName("ULONG")] uint Timeout)
+        public HRESULT SendCommandNoData(byte* Cdb, [NativeTypeName("ULONG")] uint CdbSize, [NativeTypeName("BYTE [18]")] byte* SenseBuffer, [NativeTypeName("ULONG")] uint Timeout)
         {
             return ((delegate* unmanaged<IDiscRecorder2Ex*, byte*, uint, byte*, uint, int>)(lpVtbl[3]))((IDiscRecorder2Ex*)Unsafe.AsPointer(ref this), Cdb, CdbSize, SenseBuffer, Timeout);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT SendCommandSendDataToDevice([NativeTypeName("BYTE *")] byte* Cdb, [NativeTypeName("ULONG")] uint CdbSize, [NativeTypeName("BYTE [18]")] byte* SenseBuffer, [NativeTypeName("ULONG")] uint Timeout, [NativeTypeName("BYTE *")] byte* Buffer, [NativeTypeName("ULONG_IMAPI2_NONZERO")] uint BufferSize)
+        public HRESULT SendCommandSendDataToDevice(byte* Cdb, [NativeTypeName("ULONG")] uint CdbSize, [NativeTypeName("BYTE [18]")] byte* SenseBuffer, [NativeTypeName("ULONG")] uint Timeout, byte* Buffer, [NativeTypeName("ULONG_IMAPI2_NONZERO")] uint BufferSize)
         {
             return ((delegate* unmanaged<IDiscRecorder2Ex*, byte*, uint, byte*, uint, byte*, uint, int>)(lpVtbl[4]))((IDiscRecorder2Ex*)Unsafe.AsPointer(ref this), Cdb, CdbSize, SenseBuffer, Timeout, Buffer, BufferSize);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        public HRESULT SendCommandGetDataFromDevice([NativeTypeName("BYTE *")] byte* Cdb, [NativeTypeName("ULONG")] uint CdbSize, [NativeTypeName("BYTE [18]")] byte* SenseBuffer, [NativeTypeName("ULONG")] uint Timeout, [NativeTypeName("BYTE *")] byte* Buffer, [NativeTypeName("ULONG_IMAPI2_NONZERO")] uint BufferSize, [NativeTypeName("ULONG_IMAPI2_NOT_NEGATIVE *")] uint* BufferFetched)
+        public HRESULT SendCommandGetDataFromDevice(byte* Cdb, [NativeTypeName("ULONG")] uint CdbSize, [NativeTypeName("BYTE [18]")] byte* SenseBuffer, [NativeTypeName("ULONG")] uint Timeout, byte* Buffer, [NativeTypeName("ULONG_IMAPI2_NONZERO")] uint BufferSize, [NativeTypeName("ULONG_IMAPI2_NOT_NEGATIVE *")] uint* BufferFetched)
         {
             return ((delegate* unmanaged<IDiscRecorder2Ex*, byte*, uint, byte*, uint, byte*, uint, uint*, int>)(lpVtbl[5]))((IDiscRecorder2Ex*)Unsafe.AsPointer(ref this), Cdb, CdbSize, SenseBuffer, Timeout, Buffer, BufferSize, BufferFetched);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        public HRESULT ReadDvdStructure([NativeTypeName("ULONG")] uint format, [NativeTypeName("ULONG")] uint address, [NativeTypeName("ULONG")] uint layer, [NativeTypeName("ULONG")] uint agid, [NativeTypeName("BYTE **")] byte** data, [NativeTypeName("ULONG_IMAPI2_DVD_STRUCTURE *")] uint* count)
+        public HRESULT ReadDvdStructure([NativeTypeName("ULONG")] uint format, [NativeTypeName("ULONG")] uint address, [NativeTypeName("ULONG")] uint layer, [NativeTypeName("ULONG")] uint agid, byte** data, [NativeTypeName("ULONG_IMAPI2_DVD_STRUCTURE *")] uint* count)
         {
             return ((delegate* unmanaged<IDiscRecorder2Ex*, uint, uint, uint, uint, byte**, uint*, int>)(lpVtbl[6]))((IDiscRecorder2Ex*)Unsafe.AsPointer(ref this), format, address, layer, agid, data, count);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        public HRESULT SendDvdStructure([NativeTypeName("ULONG")] uint format, [NativeTypeName("BYTE *")] byte* data, [NativeTypeName("ULONG_IMAPI2_DVD_STRUCTURE")] uint count)
+        public HRESULT SendDvdStructure([NativeTypeName("ULONG")] uint format, byte* data, [NativeTypeName("ULONG_IMAPI2_DVD_STRUCTURE")] uint count)
         {
             return ((delegate* unmanaged<IDiscRecorder2Ex*, uint, byte*, uint, int>)(lpVtbl[7]))((IDiscRecorder2Ex*)Unsafe.AsPointer(ref this), format, data, count);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        public HRESULT GetAdapterDescriptor([NativeTypeName("BYTE **")] byte** data, [NativeTypeName("ULONG_IMAPI2_ADAPTER_DESCRIPTOR *")] uint* byteSize)
+        public HRESULT GetAdapterDescriptor(byte** data, [NativeTypeName("ULONG_IMAPI2_ADAPTER_DESCRIPTOR *")] uint* byteSize)
         {
             return ((delegate* unmanaged<IDiscRecorder2Ex*, byte**, uint*, int>)(lpVtbl[8]))((IDiscRecorder2Ex*)Unsafe.AsPointer(ref this), data, byteSize);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        public HRESULT GetDeviceDescriptor([NativeTypeName("BYTE **")] byte** data, [NativeTypeName("ULONG_IMAPI2_DEVICE_DESCRIPTOR *")] uint* byteSize)
+        public HRESULT GetDeviceDescriptor(byte** data, [NativeTypeName("ULONG_IMAPI2_DEVICE_DESCRIPTOR *")] uint* byteSize)
         {
             return ((delegate* unmanaged<IDiscRecorder2Ex*, byte**, uint*, int>)(lpVtbl[9]))((IDiscRecorder2Ex*)Unsafe.AsPointer(ref this), data, byteSize);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(10)]
-        public HRESULT GetDiscInformation([NativeTypeName("BYTE **")] byte** discInformation, [NativeTypeName("ULONG_IMAPI2_DISC_INFORMATION *")] uint* byteSize)
+        public HRESULT GetDiscInformation(byte** discInformation, [NativeTypeName("ULONG_IMAPI2_DISC_INFORMATION *")] uint* byteSize)
         {
             return ((delegate* unmanaged<IDiscRecorder2Ex*, byte**, uint*, int>)(lpVtbl[10]))((IDiscRecorder2Ex*)Unsafe.AsPointer(ref this), discInformation, byteSize);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(11)]
-        public HRESULT GetTrackInformation([NativeTypeName("ULONG")] uint address, IMAPI_READ_TRACK_ADDRESS_TYPE addressType, [NativeTypeName("BYTE **")] byte** trackInformation, [NativeTypeName("ULONG_IMAPI2_TRACK_INFORMATION *")] uint* byteSize)
+        public HRESULT GetTrackInformation([NativeTypeName("ULONG")] uint address, IMAPI_READ_TRACK_ADDRESS_TYPE addressType, byte** trackInformation, [NativeTypeName("ULONG_IMAPI2_TRACK_INFORMATION *")] uint* byteSize)
         {
             return ((delegate* unmanaged<IDiscRecorder2Ex*, uint, IMAPI_READ_TRACK_ADDRESS_TYPE, byte**, uint*, int>)(lpVtbl[11]))((IDiscRecorder2Ex*)Unsafe.AsPointer(ref this), address, addressType, trackInformation, byteSize);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(12)]
-        public HRESULT GetFeaturePage(IMAPI_FEATURE_PAGE_TYPE requestedFeature, [NativeTypeName("BOOLEAN")] byte currentFeatureOnly, [NativeTypeName("BYTE **")] byte** featureData, [NativeTypeName("ULONG_IMAPI2_FEATURE_PAGE *")] uint* byteSize)
+        public HRESULT GetFeaturePage(IMAPI_FEATURE_PAGE_TYPE requestedFeature, [NativeTypeName("BOOLEAN")] byte currentFeatureOnly, byte** featureData, [NativeTypeName("ULONG_IMAPI2_FEATURE_PAGE *")] uint* byteSize)
         {
             return ((delegate* unmanaged<IDiscRecorder2Ex*, IMAPI_FEATURE_PAGE_TYPE, byte, byte**, uint*, int>)(lpVtbl[12]))((IDiscRecorder2Ex*)Unsafe.AsPointer(ref this), requestedFeature, currentFeatureOnly, featureData, byteSize);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(13)]
-        public HRESULT GetModePage(IMAPI_MODE_PAGE_TYPE requestedModePage, IMAPI_MODE_PAGE_REQUEST_TYPE requestType, [NativeTypeName("BYTE **")] byte** modePageData, [NativeTypeName("ULONG_IMAPI2_MODE_PAGE *")] uint* byteSize)
+        public HRESULT GetModePage(IMAPI_MODE_PAGE_TYPE requestedModePage, IMAPI_MODE_PAGE_REQUEST_TYPE requestType, byte** modePageData, [NativeTypeName("ULONG_IMAPI2_MODE_PAGE *")] uint* byteSize)
         {
             return ((delegate* unmanaged<IDiscRecorder2Ex*, IMAPI_MODE_PAGE_TYPE, IMAPI_MODE_PAGE_REQUEST_TYPE, byte**, uint*, int>)(lpVtbl[13]))((IDiscRecorder2Ex*)Unsafe.AsPointer(ref this), requestedModePage, requestType, modePageData, byteSize);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(14)]
-        public HRESULT SetModePage(IMAPI_MODE_PAGE_REQUEST_TYPE requestType, [NativeTypeName("BYTE *")] byte* data, [NativeTypeName("ULONG_IMAPI2_MODE_PAGE")] uint byteSize)
+        public HRESULT SetModePage(IMAPI_MODE_PAGE_REQUEST_TYPE requestType, byte* data, [NativeTypeName("ULONG_IMAPI2_MODE_PAGE")] uint byteSize)
         {
             return ((delegate* unmanaged<IDiscRecorder2Ex*, IMAPI_MODE_PAGE_REQUEST_TYPE, byte*, uint, int>)(lpVtbl[14]))((IDiscRecorder2Ex*)Unsafe.AsPointer(ref this), requestType, data, byteSize);
         }

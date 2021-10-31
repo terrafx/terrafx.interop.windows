@@ -9,17 +9,17 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct D3D12_ROOT_DESCRIPTOR1
     {
-        public D3D12_ROOT_DESCRIPTOR1([NativeTypeName("UINT")] uint shaderRegister, [NativeTypeName("UINT")] uint registerSpace = 0, D3D12_ROOT_DESCRIPTOR_FLAGS flags = D3D12_ROOT_DESCRIPTOR_FLAG_NONE)
+        public D3D12_ROOT_DESCRIPTOR1(uint shaderRegister, uint registerSpace = 0, D3D12_ROOT_DESCRIPTOR_FLAGS flags = D3D12_ROOT_DESCRIPTOR_FLAG_NONE)
         {
             Init(out this, shaderRegister, registerSpace, flags);
         }
 
-        public void Init([NativeTypeName("UINT")] uint shaderRegister, [NativeTypeName("UINT")] uint registerSpace = 0, D3D12_ROOT_DESCRIPTOR_FLAGS flags = D3D12_ROOT_DESCRIPTOR_FLAG_NONE)
+        public void Init(uint shaderRegister, uint registerSpace = 0, D3D12_ROOT_DESCRIPTOR_FLAGS flags = D3D12_ROOT_DESCRIPTOR_FLAG_NONE)
         {
             Init(out this, shaderRegister, registerSpace, flags);
         }
 
-        public static void Init([NativeTypeName("D3D12_ROOT_DESCRIPTOR1 &")] out D3D12_ROOT_DESCRIPTOR1 table, [NativeTypeName("UINT")] uint shaderRegister, [NativeTypeName("UINT")] uint registerSpace = 0, D3D12_ROOT_DESCRIPTOR_FLAGS flags = D3D12_ROOT_DESCRIPTOR_FLAG_NONE)
+        public static void Init([NativeTypeName("D3D12_ROOT_DESCRIPTOR1 &")] out D3D12_ROOT_DESCRIPTOR1 table, uint shaderRegister, uint registerSpace = 0, D3D12_ROOT_DESCRIPTOR_FLAGS flags = D3D12_ROOT_DESCRIPTOR_FLAG_NONE)
         {
             table.ShaderRegister = shaderRegister;
             table.RegisterSpace = registerSpace;

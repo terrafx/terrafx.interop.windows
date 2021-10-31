@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public partial struct FLASHWINFO
     {
-        [NativeTypeName("UINT")]
         public uint cbSize;
 
         public HWND hwnd;
@@ -15,7 +14,6 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint dwFlags;
 
-        [NativeTypeName("UINT")]
         public uint uCount;
 
         [NativeTypeName("DWORD")]

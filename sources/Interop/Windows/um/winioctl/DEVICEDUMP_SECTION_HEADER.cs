@@ -11,7 +11,6 @@ namespace TerraFX.Interop
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe partial struct DEVICEDUMP_SECTION_HEADER
     {
-        [NativeTypeName("GUID")]
         public Guid guidDeviceDataId;
 
         [NativeTypeName("BYTE [16]")]

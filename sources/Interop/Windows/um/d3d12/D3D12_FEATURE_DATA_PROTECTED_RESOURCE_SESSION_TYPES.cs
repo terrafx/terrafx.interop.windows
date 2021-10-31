@@ -9,13 +9,10 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct D3D12_FEATURE_DATA_PROTECTED_RESOURCE_SESSION_TYPES
     {
-        [NativeTypeName("UINT")]
         public uint NodeIndex;
 
-        [NativeTypeName("UINT")]
         public uint Count;
 
-        [NativeTypeName("GUID *")]
         public Guid* pTypes;
     }
 }

@@ -13,7 +13,6 @@ namespace TerraFX.Interop
     {
         public TYPEDESC tdescElem;
 
-        [NativeTypeName("USHORT")]
         public ushort cDims;
 
         [NativeTypeName("SAFEARRAYBOUND [1]")]

@@ -3516,19 +3516,19 @@ namespace TerraFX.Interop
         public static extern HRESULT WICConvertBitmapSource([NativeTypeName("REFWICPixelFormatGUID")] Guid* dstFormat, IWICBitmapSource* pISrc, IWICBitmapSource** ppIDst);
 
         [DllImport("windowscodecs", ExactSpelling = true)]
-        public static extern HRESULT WICCreateBitmapFromSection([NativeTypeName("UINT")] uint width, [NativeTypeName("UINT")] uint height, [NativeTypeName("REFWICPixelFormatGUID")] Guid* pixelFormat, HANDLE hSection, [NativeTypeName("UINT")] uint stride, [NativeTypeName("UINT")] uint offset, IWICBitmap** ppIBitmap);
+        public static extern HRESULT WICCreateBitmapFromSection(uint width, uint height, [NativeTypeName("REFWICPixelFormatGUID")] Guid* pixelFormat, HANDLE hSection, uint stride, uint offset, IWICBitmap** ppIBitmap);
 
         [DllImport("windowscodecs", ExactSpelling = true)]
-        public static extern HRESULT WICCreateBitmapFromSectionEx([NativeTypeName("UINT")] uint width, [NativeTypeName("UINT")] uint height, [NativeTypeName("REFWICPixelFormatGUID")] Guid* pixelFormat, HANDLE hSection, [NativeTypeName("UINT")] uint stride, [NativeTypeName("UINT")] uint offset, WICSectionAccessLevel desiredAccessLevel, IWICBitmap** ppIBitmap);
+        public static extern HRESULT WICCreateBitmapFromSectionEx(uint width, uint height, [NativeTypeName("REFWICPixelFormatGUID")] Guid* pixelFormat, HANDLE hSection, uint stride, uint offset, WICSectionAccessLevel desiredAccessLevel, IWICBitmap** ppIBitmap);
 
         [DllImport("windowscodecs", ExactSpelling = true)]
-        public static extern HRESULT WICMapGuidToShortName([NativeTypeName("const GUID &")] Guid* guid, [NativeTypeName("UINT")] uint cchName, [NativeTypeName("WCHAR *")] ushort* wzName, [NativeTypeName("UINT *")] uint* pcchActual);
+        public static extern HRESULT WICMapGuidToShortName([NativeTypeName("const GUID &")] Guid* guid, uint cchName, [NativeTypeName("WCHAR *")] ushort* wzName, uint* pcchActual);
 
         [DllImport("windowscodecs", ExactSpelling = true)]
-        public static extern HRESULT WICMapShortNameToGuid([NativeTypeName("PCWSTR")] ushort* wzName, [NativeTypeName("GUID *")] Guid* pguid);
+        public static extern HRESULT WICMapShortNameToGuid([NativeTypeName("PCWSTR")] ushort* wzName, Guid* pguid);
 
         [DllImport("windowscodecs", ExactSpelling = true)]
-        public static extern HRESULT WICMapSchemaToName([NativeTypeName("const GUID &")] Guid* guidMetadataFormat, [NativeTypeName("LPWSTR")] ushort* pwzSchema, [NativeTypeName("UINT")] uint cchName, [NativeTypeName("WCHAR *")] ushort* wzName, [NativeTypeName("UINT *")] uint* pcchActual);
+        public static extern HRESULT WICMapSchemaToName([NativeTypeName("const GUID &")] Guid* guidMetadataFormat, [NativeTypeName("LPWSTR")] ushort* pwzSchema, uint cchName, [NativeTypeName("WCHAR *")] ushort* wzName, uint* pcchActual);
 
         [NativeTypeName("#define WINCODEC_SDK_VERSION1 0x0236")]
         public const int WINCODEC_SDK_VERSION1 = 0x0236;

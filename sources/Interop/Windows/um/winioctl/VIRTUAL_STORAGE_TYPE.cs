@@ -12,7 +12,6 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint DeviceId;
 
-        [NativeTypeName("GUID")]
         public Guid VendorId;
     }
 }

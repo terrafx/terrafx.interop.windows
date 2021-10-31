@@ -75,7 +75,6 @@ namespace TerraFX.Interop
 
             public partial struct _ProcessorCore_e__Struct
             {
-                [NativeTypeName("BYTE")]
                 public byte Flags;
             }
 

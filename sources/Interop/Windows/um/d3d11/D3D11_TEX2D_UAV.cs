@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public partial struct D3D11_TEX2D_UAV
     {
-        [NativeTypeName("UINT")]
         public uint MipSlice;
     }
 }

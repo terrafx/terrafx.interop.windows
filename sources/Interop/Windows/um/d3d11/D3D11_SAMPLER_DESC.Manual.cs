@@ -38,7 +38,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public D3D11_SAMPLER_DESC(D3D11_FILTER filter, D3D11_TEXTURE_ADDRESS_MODE addressU, D3D11_TEXTURE_ADDRESS_MODE addressV, D3D11_TEXTURE_ADDRESS_MODE addressW, [NativeTypeName("FLOAT")] float mipLODBias, [NativeTypeName("UINT")] uint maxAnisotropy, D3D11_COMPARISON_FUNC comparisonFunc, [NativeTypeName("FLOAT [4]")] float* borderColor, [NativeTypeName("FLOAT")] float minLOD, [NativeTypeName("FLOAT")] float maxLOD)
+        public D3D11_SAMPLER_DESC(D3D11_FILTER filter, D3D11_TEXTURE_ADDRESS_MODE addressU, D3D11_TEXTURE_ADDRESS_MODE addressV, D3D11_TEXTURE_ADDRESS_MODE addressW, float mipLODBias, uint maxAnisotropy, D3D11_COMPARISON_FUNC comparisonFunc, [NativeTypeName("FLOAT [4]")] float* borderColor, float minLOD, float maxLOD)
         {
             Filter = filter;
             AddressU = addressU;

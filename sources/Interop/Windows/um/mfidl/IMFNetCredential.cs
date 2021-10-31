@@ -41,28 +41,28 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        public HRESULT SetUser([NativeTypeName("BYTE *")] byte* pbData, [NativeTypeName("DWORD")] uint cbData, BOOL fDataIsEncrypted)
+        public HRESULT SetUser(byte* pbData, [NativeTypeName("DWORD")] uint cbData, BOOL fDataIsEncrypted)
         {
             return ((delegate* unmanaged<IMFNetCredential*, byte*, uint, BOOL, int>)(lpVtbl[3]))((IMFNetCredential*)Unsafe.AsPointer(ref this), pbData, cbData, fDataIsEncrypted);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT SetPassword([NativeTypeName("BYTE *")] byte* pbData, [NativeTypeName("DWORD")] uint cbData, BOOL fDataIsEncrypted)
+        public HRESULT SetPassword(byte* pbData, [NativeTypeName("DWORD")] uint cbData, BOOL fDataIsEncrypted)
         {
             return ((delegate* unmanaged<IMFNetCredential*, byte*, uint, BOOL, int>)(lpVtbl[4]))((IMFNetCredential*)Unsafe.AsPointer(ref this), pbData, cbData, fDataIsEncrypted);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        public HRESULT GetUser([NativeTypeName("BYTE *")] byte* pbData, [NativeTypeName("DWORD *")] uint* pcbData, BOOL fEncryptData)
+        public HRESULT GetUser(byte* pbData, [NativeTypeName("DWORD *")] uint* pcbData, BOOL fEncryptData)
         {
             return ((delegate* unmanaged<IMFNetCredential*, byte*, uint*, BOOL, int>)(lpVtbl[5]))((IMFNetCredential*)Unsafe.AsPointer(ref this), pbData, pcbData, fEncryptData);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        public HRESULT GetPassword([NativeTypeName("BYTE *")] byte* pbData, [NativeTypeName("DWORD *")] uint* pcbData, BOOL fEncryptData)
+        public HRESULT GetPassword(byte* pbData, [NativeTypeName("DWORD *")] uint* pcbData, BOOL fEncryptData)
         {
             return ((delegate* unmanaged<IMFNetCredential*, byte*, uint*, BOOL, int>)(lpVtbl[6]))((IMFNetCredential*)Unsafe.AsPointer(ref this), pbData, pcbData, fEncryptData);
         }

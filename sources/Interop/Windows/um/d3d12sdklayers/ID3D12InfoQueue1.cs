@@ -159,7 +159,6 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(19)]
-        [return: NativeTypeName("UINT")]
         public uint GetStorageFilterStackSize()
         {
             return ((delegate* unmanaged<ID3D12InfoQueue1*, uint>)(lpVtbl[19]))((ID3D12InfoQueue1*)Unsafe.AsPointer(ref this));
@@ -216,7 +215,6 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(27)]
-        [return: NativeTypeName("UINT")]
         public uint GetRetrievalFilterStackSize()
         {
             return ((delegate* unmanaged<ID3D12InfoQueue1*, uint>)(lpVtbl[27]))((ID3D12InfoQueue1*)Unsafe.AsPointer(ref this));

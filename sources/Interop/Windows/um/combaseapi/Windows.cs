@@ -34,7 +34,7 @@ namespace TerraFX.Interop
         public static extern HRESULT CoGetCallerTID([NativeTypeName("LPDWORD")] uint* lpdwTID);
 
         [DllImport("ole32", ExactSpelling = true)]
-        public static extern HRESULT CoGetCurrentLogicalThreadId([NativeTypeName("GUID *")] Guid* pguid);
+        public static extern HRESULT CoGetCurrentLogicalThreadId(Guid* pguid);
 
         [DllImport("ole32", ExactSpelling = true)]
         public static extern HRESULT CoGetContextToken([NativeTypeName("ULONG_PTR *")] nuint* pToken);
@@ -225,7 +225,7 @@ namespace TerraFX.Interop
         public static extern int StringFromGUID2([NativeTypeName("const GUID &")] Guid* rguid, [NativeTypeName("LPOLESTR")] ushort* lpsz, int cchMax);
 
         [DllImport("ole32", ExactSpelling = true)]
-        public static extern HRESULT CoCreateGuid([NativeTypeName("GUID *")] Guid* pguid);
+        public static extern HRESULT CoCreateGuid(Guid* pguid);
 
         [DllImport("ole32", ExactSpelling = true)]
         public static extern HRESULT PropVariantCopy(PROPVARIANT* pvarDest, [NativeTypeName("const PROPVARIANT *")] PROPVARIANT* pvarSrc);

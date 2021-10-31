@@ -16,10 +16,8 @@ namespace TerraFX.Interop
 
         public HWND hWnd;
 
-        [NativeTypeName("UINT")]
         public uint uID;
 
-        [NativeTypeName("GUID")]
         public Guid guidItem;
     }
 }

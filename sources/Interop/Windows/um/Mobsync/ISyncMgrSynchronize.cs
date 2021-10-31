@@ -83,7 +83,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        public HRESULT PrepareForSync([NativeTypeName("ULONG")] uint cbNumItems, [NativeTypeName("GUID *")] Guid* pItemIDs, HWND hWndParent, [NativeTypeName("DWORD")] uint dwReserved)
+        public HRESULT PrepareForSync([NativeTypeName("ULONG")] uint cbNumItems, Guid* pItemIDs, HWND hWndParent, [NativeTypeName("DWORD")] uint dwReserved)
         {
             return ((delegate* unmanaged<ISyncMgrSynchronize*, uint, Guid*, HWND, uint, int>)(lpVtbl[9]))((ISyncMgrSynchronize*)Unsafe.AsPointer(ref this), cbNumItems, pItemIDs, hWndParent, dwReserved);
         }

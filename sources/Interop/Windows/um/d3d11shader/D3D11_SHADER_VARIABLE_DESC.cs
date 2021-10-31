@@ -10,28 +10,21 @@ namespace TerraFX.Interop
         [NativeTypeName("LPCSTR")]
         public sbyte* Name;
 
-        [NativeTypeName("UINT")]
         public uint StartOffset;
 
-        [NativeTypeName("UINT")]
         public uint Size;
 
-        [NativeTypeName("UINT")]
         public uint uFlags;
 
         [NativeTypeName("LPVOID")]
         public void* DefaultValue;
 
-        [NativeTypeName("UINT")]
         public uint StartTexture;
 
-        [NativeTypeName("UINT")]
         public uint TextureSize;
 
-        [NativeTypeName("UINT")]
         public uint StartSampler;
 
-        [NativeTypeName("UINT")]
         public uint SamplerSize;
     }
 }

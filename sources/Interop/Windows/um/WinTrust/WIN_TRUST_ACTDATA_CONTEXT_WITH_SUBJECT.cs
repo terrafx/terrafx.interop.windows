@@ -11,7 +11,6 @@ namespace TerraFX.Interop
     {
         public HANDLE hClientToken;
 
-        [NativeTypeName("GUID *")]
         public Guid* SubjectType;
 
         [NativeTypeName("WIN_TRUST_SUBJECT")]

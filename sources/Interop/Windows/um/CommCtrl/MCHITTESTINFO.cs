@@ -7,12 +7,10 @@ namespace TerraFX.Interop
 {
     public partial struct MCHITTESTINFO
     {
-        [NativeTypeName("UINT")]
         public uint cbSize;
 
         public POINT pt;
 
-        [NativeTypeName("UINT")]
         public uint uHit;
 
         public SYSTEMTIME st;

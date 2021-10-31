@@ -111,14 +111,14 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(13)]
-        public HRESULT SetValueWithNotify([NativeTypeName("const GUID *")] Guid* Api, VARIANT* Value, [NativeTypeName("GUID **")] Guid** ChangedParam, [NativeTypeName("ULONG *")] uint* ChangedParamCount)
+        public HRESULT SetValueWithNotify([NativeTypeName("const GUID *")] Guid* Api, VARIANT* Value, Guid** ChangedParam, [NativeTypeName("ULONG *")] uint* ChangedParamCount)
         {
             return ((delegate* unmanaged<ICodecAPI*, Guid*, VARIANT*, Guid**, uint*, int>)(lpVtbl[13]))((ICodecAPI*)Unsafe.AsPointer(ref this), Api, Value, ChangedParam, ChangedParamCount);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(14)]
-        public HRESULT SetAllDefaultsWithNotify([NativeTypeName("GUID **")] Guid** ChangedParam, [NativeTypeName("ULONG *")] uint* ChangedParamCount)
+        public HRESULT SetAllDefaultsWithNotify(Guid** ChangedParam, [NativeTypeName("ULONG *")] uint* ChangedParamCount)
         {
             return ((delegate* unmanaged<ICodecAPI*, Guid**, uint*, int>)(lpVtbl[14]))((ICodecAPI*)Unsafe.AsPointer(ref this), ChangedParam, ChangedParamCount);
         }
@@ -139,7 +139,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(17)]
-        public HRESULT SetAllSettingsWithNotify(IStream* __MIDL__ICodecAPI0002, [NativeTypeName("GUID **")] Guid** ChangedParam, [NativeTypeName("ULONG *")] uint* ChangedParamCount)
+        public HRESULT SetAllSettingsWithNotify(IStream* __MIDL__ICodecAPI0002, Guid** ChangedParam, [NativeTypeName("ULONG *")] uint* ChangedParamCount)
         {
             return ((delegate* unmanaged<ICodecAPI*, IStream*, Guid**, uint*, int>)(lpVtbl[17]))((ICodecAPI*)Unsafe.AsPointer(ref this), __MIDL__ICodecAPI0002, ChangedParam, ChangedParamCount);
         }

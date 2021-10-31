@@ -41,7 +41,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        public HRESULT GetIdentifier([NativeTypeName("GUID *")] Guid* pGuidIdentifier)
+        public HRESULT GetIdentifier(Guid* pGuidIdentifier)
         {
             return ((delegate* unmanaged<IMFSecureBuffer*, Guid*, int>)(lpVtbl[3]))((IMFSecureBuffer*)Unsafe.AsPointer(ref this), pGuidIdentifier);
         }

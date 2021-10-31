@@ -17,7 +17,6 @@ namespace TerraFX.Interop
 
         public HANDLE hFile;
 
-        [NativeTypeName("GUID *")]
         public Guid* pgKnownSubject;
     }
 }

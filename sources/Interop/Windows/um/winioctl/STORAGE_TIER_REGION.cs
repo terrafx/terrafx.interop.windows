@@ -9,7 +9,6 @@ namespace TerraFX.Interop
 {
     public partial struct STORAGE_TIER_REGION
     {
-        [NativeTypeName("GUID")]
         public Guid TierId;
 
         [NativeTypeName("DWORDLONG")]

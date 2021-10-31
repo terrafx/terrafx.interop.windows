@@ -27,7 +27,6 @@ namespace TerraFX.Interop
 
         public BOOL Spatial;
 
-        [NativeTypeName("FLOAT")]
         public float Epsilon;
 
         [NativeTypeName("const DML_OPERATOR_DESC *")]

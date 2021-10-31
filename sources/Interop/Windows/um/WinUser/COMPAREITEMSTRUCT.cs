@@ -7,21 +7,17 @@ namespace TerraFX.Interop
 {
     public partial struct COMPAREITEMSTRUCT
     {
-        [NativeTypeName("UINT")]
         public uint CtlType;
 
-        [NativeTypeName("UINT")]
         public uint CtlID;
 
         public HWND hwndItem;
 
-        [NativeTypeName("UINT")]
         public uint itemID1;
 
         [NativeTypeName("ULONG_PTR")]
         public nuint itemData1;
 
-        [NativeTypeName("UINT")]
         public uint itemID2;
 
         [NativeTypeName("ULONG_PTR")]

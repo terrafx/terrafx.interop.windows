@@ -9,19 +9,14 @@ namespace TerraFX.Interop
     {
         public BOOL IsChildEffect;
 
-        [NativeTypeName("UINT")]
         public uint ConstantBuffers;
 
-        [NativeTypeName("UINT")]
         public uint SharedConstantBuffers;
 
-        [NativeTypeName("UINT")]
         public uint GlobalVariables;
 
-        [NativeTypeName("UINT")]
         public uint SharedGlobalVariables;
 
-        [NativeTypeName("UINT")]
         public uint Techniques;
     }
 }

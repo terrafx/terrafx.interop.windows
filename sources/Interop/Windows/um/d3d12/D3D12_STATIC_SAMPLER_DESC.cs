@@ -15,26 +15,20 @@ namespace TerraFX.Interop
 
         public D3D12_TEXTURE_ADDRESS_MODE AddressW;
 
-        [NativeTypeName("FLOAT")]
         public float MipLODBias;
 
-        [NativeTypeName("UINT")]
         public uint MaxAnisotropy;
 
         public D3D12_COMPARISON_FUNC ComparisonFunc;
 
         public D3D12_STATIC_BORDER_COLOR BorderColor;
 
-        [NativeTypeName("FLOAT")]
         public float MinLOD;
 
-        [NativeTypeName("FLOAT")]
         public float MaxLOD;
 
-        [NativeTypeName("UINT")]
         public uint ShaderRegister;
 
-        [NativeTypeName("UINT")]
         public uint RegisterSpace;
 
         public D3D12_SHADER_VISIBILITY ShaderVisibility;

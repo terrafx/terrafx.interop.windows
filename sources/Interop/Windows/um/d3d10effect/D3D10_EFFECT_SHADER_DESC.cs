@@ -15,16 +15,13 @@ namespace TerraFX.Interop
         [NativeTypeName("const BYTE *")]
         public byte* pBytecode;
 
-        [NativeTypeName("UINT")]
         public uint BytecodeLength;
 
         [NativeTypeName("LPCSTR")]
         public sbyte* SODecl;
 
-        [NativeTypeName("UINT")]
         public uint NumInputSignatureEntries;
 
-        [NativeTypeName("UINT")]
         public uint NumOutputSignatureEntries;
     }
 }

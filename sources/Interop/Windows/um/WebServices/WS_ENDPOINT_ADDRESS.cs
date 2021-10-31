@@ -11,10 +11,8 @@ namespace TerraFX.Interop
     {
         public WS_STRING url;
 
-        [NativeTypeName("WS_XML_BUFFER *")]
         public IntPtr headers;
 
-        [NativeTypeName("WS_XML_BUFFER *")]
         public IntPtr extensions;
 
         public WS_ENDPOINT_IDENTITY* identity;

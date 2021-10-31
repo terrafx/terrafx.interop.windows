@@ -9,7 +9,6 @@ namespace TerraFX.Interop
     {
         public ID3D10EffectShaderVariable* pShaderVariable;
 
-        [NativeTypeName("UINT")]
         public uint ShaderIndex;
     }
 }

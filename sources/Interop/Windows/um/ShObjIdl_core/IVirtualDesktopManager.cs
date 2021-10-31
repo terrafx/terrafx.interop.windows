@@ -48,7 +48,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT GetWindowDesktopId(HWND topLevelWindow, [NativeTypeName("GUID *")] Guid* desktopId)
+        public HRESULT GetWindowDesktopId(HWND topLevelWindow, Guid* desktopId)
         {
             return ((delegate* unmanaged<IVirtualDesktopManager*, HWND, Guid*, int>)(lpVtbl[4]))((IVirtualDesktopManager*)Unsafe.AsPointer(ref this), topLevelWindow, desktopId);
         }

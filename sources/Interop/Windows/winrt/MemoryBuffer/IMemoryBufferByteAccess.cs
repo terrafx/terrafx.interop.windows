@@ -41,7 +41,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        public HRESULT GetBuffer([NativeTypeName("BYTE **")] byte** value, [NativeTypeName("UINT32 *")] uint* capacity)
+        public HRESULT GetBuffer(byte** value, [NativeTypeName("UINT32 *")] uint* capacity)
         {
             return ((delegate* unmanaged<IMemoryBufferByteAccess*, byte**, uint*, int>)(lpVtbl[3]))((IMemoryBufferByteAccess*)Unsafe.AsPointer(ref this), value, capacity);
         }

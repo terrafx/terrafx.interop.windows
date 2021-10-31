@@ -41,14 +41,14 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        public HRESULT SetCancelInformation([NativeTypeName("DWORD")] uint dwThreadID, [NativeTypeName("UINT")] uint uMsgCancel)
+        public HRESULT SetCancelInformation([NativeTypeName("DWORD")] uint dwThreadID, uint uMsgCancel)
         {
             return ((delegate* unmanaged<IIOCancelInformation*, uint, uint, int>)(lpVtbl[3]))((IIOCancelInformation*)Unsafe.AsPointer(ref this), dwThreadID, uMsgCancel);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT GetCancelInformation([NativeTypeName("DWORD *")] uint* pdwThreadID, [NativeTypeName("UINT *")] uint* puMsgCancel)
+        public HRESULT GetCancelInformation([NativeTypeName("DWORD *")] uint* pdwThreadID, uint* puMsgCancel)
         {
             return ((delegate* unmanaged<IIOCancelInformation*, uint*, uint*, int>)(lpVtbl[4]))((IIOCancelInformation*)Unsafe.AsPointer(ref this), pdwThreadID, puMsgCancel);
         }

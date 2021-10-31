@@ -40,7 +40,6 @@ namespace TerraFX.Interop
         [NativeTypeName("const DML_TENSOR_DESC *")]
         public DML_TENSOR_DESC* OutputCellSingleTensor;
 
-        [NativeTypeName("UINT")]
         public uint ActivationDescCount;
 
         [NativeTypeName("const DML_OPERATOR_DESC *")]

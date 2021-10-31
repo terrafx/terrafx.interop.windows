@@ -9,10 +9,8 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct VMRGUID
     {
-        [NativeTypeName("GUID *")]
         public Guid* pGUID;
 
-        [NativeTypeName("GUID")]
         public Guid GUID;
     }
 }

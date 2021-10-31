@@ -41,7 +41,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        public HRESULT GetPointer([NativeTypeName("BYTE **")] byte** ppBuffer)
+        public HRESULT GetPointer(byte** ppBuffer)
         {
             return ((delegate* unmanaged<IMediaSample2*, byte**, int>)(lpVtbl[3]))((IMediaSample2*)Unsafe.AsPointer(ref this), ppBuffer);
         }
@@ -155,7 +155,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(19)]
-        public HRESULT GetProperties([NativeTypeName("DWORD")] uint cbProperties, [NativeTypeName("BYTE *")] byte* pbProperties)
+        public HRESULT GetProperties([NativeTypeName("DWORD")] uint cbProperties, byte* pbProperties)
         {
             return ((delegate* unmanaged<IMediaSample2*, uint, byte*, int>)(lpVtbl[19]))((IMediaSample2*)Unsafe.AsPointer(ref this), cbProperties, pbProperties);
         }

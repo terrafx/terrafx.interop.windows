@@ -9,7 +9,6 @@ namespace TerraFX.Interop
 {
     public partial struct WS_GUID_DESCRIPTION
     {
-        [NativeTypeName("GUID")]
         public Guid value;
     }
 }

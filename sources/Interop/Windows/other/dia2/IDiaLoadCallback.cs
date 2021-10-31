@@ -41,7 +41,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        public HRESULT NotifyDebugDir(BOOL fExecutable, [NativeTypeName("DWORD")] uint cbData, [NativeTypeName("BYTE *")] byte* pbData)
+        public HRESULT NotifyDebugDir(BOOL fExecutable, [NativeTypeName("DWORD")] uint cbData, byte* pbData)
         {
             return ((delegate* unmanaged<IDiaLoadCallback*, BOOL, uint, byte*, int>)(lpVtbl[3]))((IDiaLoadCallback*)Unsafe.AsPointer(ref this), fExecutable, cbData, pbData);
         }

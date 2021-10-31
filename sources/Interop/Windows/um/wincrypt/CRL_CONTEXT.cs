@@ -10,7 +10,6 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint dwCertEncodingType;
 
-        [NativeTypeName("BYTE *")]
         public byte* pbCrlEncoded;
 
         [NativeTypeName("DWORD")]

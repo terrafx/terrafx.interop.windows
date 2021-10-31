@@ -384,7 +384,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(52)]
-        public HRESULT getFuncMDTokenMap([NativeTypeName("DWORD")] uint cb, [NativeTypeName("DWORD *")] uint* pcb, [NativeTypeName("BYTE *")] byte* pb)
+        public HRESULT getFuncMDTokenMap([NativeTypeName("DWORD")] uint cb, [NativeTypeName("DWORD *")] uint* pcb, byte* pb)
         {
             return ((delegate* unmanaged<IDiaSession*, uint, uint*, byte*, int>)(lpVtbl[52]))((IDiaSession*)Unsafe.AsPointer(ref this), cb, pcb, pb);
         }
@@ -398,7 +398,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(54)]
-        public HRESULT getTypeMDTokenMap([NativeTypeName("DWORD")] uint cb, [NativeTypeName("DWORD *")] uint* pcb, [NativeTypeName("BYTE *")] byte* pb)
+        public HRESULT getTypeMDTokenMap([NativeTypeName("DWORD")] uint cb, [NativeTypeName("DWORD *")] uint* pcb, byte* pb)
         {
             return ((delegate* unmanaged<IDiaSession*, uint, uint*, byte*, int>)(lpVtbl[54]))((IDiaSession*)Unsafe.AsPointer(ref this), cb, pcb, pb);
         }

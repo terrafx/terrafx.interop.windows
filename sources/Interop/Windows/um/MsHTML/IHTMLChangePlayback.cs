@@ -41,7 +41,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        public HRESULT ExecChange([NativeTypeName("BYTE *")] byte* pbRecord, BOOL fForward)
+        public HRESULT ExecChange(byte* pbRecord, BOOL fForward)
         {
             return ((delegate* unmanaged<IHTMLChangePlayback*, byte*, BOOL, int>)(lpVtbl[3]))((IHTMLChangePlayback*)Unsafe.AsPointer(ref this), pbRecord, fForward);
         }

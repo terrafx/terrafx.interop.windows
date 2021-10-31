@@ -41,14 +41,14 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        public HRESULT GetCount([NativeTypeName("UINT *")] uint* pCount)
+        public HRESULT GetCount(uint* pCount)
         {
             return ((delegate* unmanaged<IPartsList*, uint*, int>)(lpVtbl[3]))((IPartsList*)Unsafe.AsPointer(ref this), pCount);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT GetPart([NativeTypeName("UINT")] uint nIndex, IPart** ppPart)
+        public HRESULT GetPart(uint nIndex, IPart** ppPart)
         {
             return ((delegate* unmanaged<IPartsList*, uint, IPart**, int>)(lpVtbl[4]))((IPartsList*)Unsafe.AsPointer(ref this), nIndex, ppPart);
         }

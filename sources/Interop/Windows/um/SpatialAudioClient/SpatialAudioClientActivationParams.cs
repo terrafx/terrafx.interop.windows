@@ -9,10 +9,8 @@ namespace TerraFX.Interop
 {
     public partial struct SpatialAudioClientActivationParams
     {
-        [NativeTypeName("GUID")]
         public Guid tracingContextId;
 
-        [NativeTypeName("GUID")]
         public Guid appId;
 
         public int majorVersion;

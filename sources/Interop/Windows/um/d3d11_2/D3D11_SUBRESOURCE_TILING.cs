@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public partial struct D3D11_SUBRESOURCE_TILING
     {
-        [NativeTypeName("UINT")]
         public uint WidthInTiles;
 
         [NativeTypeName("UINT16")]
@@ -16,7 +15,6 @@ namespace TerraFX.Interop
         [NativeTypeName("UINT16")]
         public ushort DepthInTiles;
 
-        [NativeTypeName("UINT")]
         public uint StartTileIndexInOverallResource;
     }
 }

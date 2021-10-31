@@ -9,7 +9,6 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct TYPEATTR
     {
-        [NativeTypeName("GUID")]
         public Guid guid;
 
         [NativeTypeName("LCID")]

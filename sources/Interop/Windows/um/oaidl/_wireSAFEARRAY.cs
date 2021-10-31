@@ -11,10 +11,8 @@ namespace TerraFX.Interop
 {
     public partial struct _wireSAFEARRAY
     {
-        [NativeTypeName("USHORT")]
         public ushort cDims;
 
-        [NativeTypeName("USHORT")]
         public ushort fFeatures;
 
         [NativeTypeName("ULONG")]

@@ -9,10 +9,8 @@ namespace TerraFX.Interop
 {
     public partial struct MT_ARBITRARY_HEADER
     {
-        [NativeTypeName("GUID")]
         public Guid majortype;
 
-        [NativeTypeName("GUID")]
         public Guid subtype;
 
         public BOOL bFixedSizeSamples;
@@ -22,7 +20,6 @@ namespace TerraFX.Interop
         [NativeTypeName("ULONG")]
         public uint lSampleSize;
 
-        [NativeTypeName("GUID")]
         public Guid formattype;
     }
 }

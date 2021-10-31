@@ -7,17 +7,14 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct LVITEMW
     {
-        [NativeTypeName("UINT")]
         public uint mask;
 
         public int iItem;
 
         public int iSubItem;
 
-        [NativeTypeName("UINT")]
         public uint state;
 
-        [NativeTypeName("UINT")]
         public uint stateMask;
 
         [NativeTypeName("LPWSTR")]
@@ -34,7 +31,6 @@ namespace TerraFX.Interop
 
         public int iGroupId;
 
-        [NativeTypeName("UINT")]
         public uint cColumns;
 
         [NativeTypeName("PUINT")]

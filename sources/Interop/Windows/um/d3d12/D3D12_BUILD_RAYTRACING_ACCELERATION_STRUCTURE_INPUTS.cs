@@ -14,7 +14,6 @@ namespace TerraFX.Interop
 
         public D3D12_RAYTRACING_ACCELERATION_STRUCTURE_BUILD_FLAGS Flags;
 
-        [NativeTypeName("UINT")]
         public uint NumDescs;
 
         public D3D12_ELEMENTS_LAYOUT DescsLayout;

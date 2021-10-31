@@ -41,7 +41,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        public HRESULT GetGUID([NativeTypeName("GUID *")] Guid* pguid)
+        public HRESULT GetGUID(Guid* pguid)
         {
             return ((delegate* unmanaged<ITfDisplayAttributeInfo*, Guid*, int>)(lpVtbl[3]))((ITfDisplayAttributeInfo*)Unsafe.AsPointer(ref this), pguid);
         }

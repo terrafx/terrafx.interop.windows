@@ -17,7 +17,6 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint PartitionNumber;
 
-        [NativeTypeName("BYTE")]
         public byte PartitionType;
 
         [NativeTypeName("BOOLEAN")]

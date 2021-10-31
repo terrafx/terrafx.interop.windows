@@ -16,16 +16,12 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint TimeCheck;
 
-        [NativeTypeName("BYTE")]
         public byte PromotePercent;
 
-        [NativeTypeName("BYTE")]
         public byte DemotePercent;
 
-        [NativeTypeName("BYTE")]
         public byte StateType;
 
-        [NativeTypeName("BYTE")]
         public byte Reserved;
 
         [NativeTypeName("DWORD")]

@@ -41,7 +41,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        public HRESULT GetPointer([NativeTypeName("BYTE **")] byte** ppBuffer)
+        public HRESULT GetPointer(byte** ppBuffer)
         {
             return ((delegate* unmanaged<IMediaSample*, byte**, int>)(lpVtbl[3]))((IMediaSample*)Unsafe.AsPointer(ref this), ppBuffer);
         }

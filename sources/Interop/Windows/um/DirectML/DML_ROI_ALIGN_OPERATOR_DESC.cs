@@ -23,19 +23,14 @@ namespace TerraFX.Interop
 
         public DML_INTERPOLATION_MODE InterpolationMode;
 
-        [NativeTypeName("FLOAT")]
         public float SpatialScaleX;
 
-        [NativeTypeName("FLOAT")]
         public float SpatialScaleY;
 
-        [NativeTypeName("FLOAT")]
         public float OutOfBoundsInputValue;
 
-        [NativeTypeName("UINT")]
         public uint MinimumSamplesPerOutput;
 
-        [NativeTypeName("UINT")]
         public uint MaximumSamplesPerOutput;
     }
 }

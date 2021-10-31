@@ -13,7 +13,6 @@ namespace TerraFX.Interop
     {
         public SP_CLASSINSTALL_HEADER32 ClassInstallHeader;
 
-        [NativeTypeName("GUID")]
         public Guid ClassGuid;
 
         [NativeTypeName("DWORD")]

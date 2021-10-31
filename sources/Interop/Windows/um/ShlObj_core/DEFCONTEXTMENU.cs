@@ -16,7 +16,6 @@ namespace TerraFX.Interop
 
         public IShellFolder* psf;
 
-        [NativeTypeName("UINT")]
         public uint cidl;
 
         [NativeTypeName("LPCITEMIDLIST *")]
@@ -24,7 +23,6 @@ namespace TerraFX.Interop
 
         public IUnknown* punkAssociationInfo;
 
-        [NativeTypeName("UINT")]
         public uint cKeys;
 
         [NativeTypeName("const HKEY *")]

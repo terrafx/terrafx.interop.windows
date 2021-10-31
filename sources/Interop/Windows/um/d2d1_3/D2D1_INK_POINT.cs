@@ -7,13 +7,10 @@ namespace TerraFX.Interop
 {
     public partial struct D2D1_INK_POINT
     {
-        [NativeTypeName("FLOAT")]
         public float x;
 
-        [NativeTypeName("FLOAT")]
         public float y;
 
-        [NativeTypeName("FLOAT")]
         public float radius;
     }
 }

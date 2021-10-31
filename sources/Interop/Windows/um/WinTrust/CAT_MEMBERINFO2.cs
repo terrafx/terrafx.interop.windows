@@ -9,7 +9,6 @@ namespace TerraFX.Interop
 {
     public partial struct CAT_MEMBERINFO2
     {
-        [NativeTypeName("GUID")]
         public Guid SubjectGuid;
 
         [NativeTypeName("DWORD")]

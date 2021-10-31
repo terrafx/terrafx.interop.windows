@@ -10,7 +10,6 @@ namespace TerraFX.Interop
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe partial struct DRAGINFO32W
     {
-        [NativeTypeName("UINT")]
         public uint uSize;
 
         public POINT pt;

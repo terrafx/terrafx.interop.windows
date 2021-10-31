@@ -9,7 +9,6 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct D3D12_SERIALIZED_DATA_DRIVER_MATCHING_IDENTIFIER
     {
-        [NativeTypeName("GUID")]
         public Guid DriverOpaqueGUID;
 
         [NativeTypeName("BYTE [16]")]

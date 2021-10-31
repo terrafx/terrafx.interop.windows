@@ -7,13 +7,10 @@ namespace TerraFX.Interop
 {
     public partial struct D3D12_TEX3D_RTV
     {
-        [NativeTypeName("UINT")]
         public uint MipSlice;
 
-        [NativeTypeName("UINT")]
         public uint FirstWSlice;
 
-        [NativeTypeName("UINT")]
         public uint WSize;
     }
 }

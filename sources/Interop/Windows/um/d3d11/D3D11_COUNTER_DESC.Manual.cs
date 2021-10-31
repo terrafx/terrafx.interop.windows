@@ -7,7 +7,7 @@ namespace TerraFX.Interop
 {
     public partial struct D3D11_COUNTER_DESC
     {
-        public D3D11_COUNTER_DESC(D3D11_COUNTER counter, [NativeTypeName("UINT")] uint miscFlags = 0)
+        public D3D11_COUNTER_DESC(D3D11_COUNTER counter, uint miscFlags = 0)
         {
             Counter = counter;
             MiscFlags = miscFlags;

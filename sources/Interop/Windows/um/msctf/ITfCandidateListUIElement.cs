@@ -48,7 +48,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT GetGUID([NativeTypeName("GUID *")] Guid* pguid)
+        public HRESULT GetGUID(Guid* pguid)
         {
             return ((delegate* unmanaged<ITfCandidateListUIElement*, Guid*, int>)(lpVtbl[4]))((ITfCandidateListUIElement*)Unsafe.AsPointer(ref this), pguid);
         }
@@ -83,42 +83,42 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        public HRESULT GetCount([NativeTypeName("UINT *")] uint* puCount)
+        public HRESULT GetCount(uint* puCount)
         {
             return ((delegate* unmanaged<ITfCandidateListUIElement*, uint*, int>)(lpVtbl[9]))((ITfCandidateListUIElement*)Unsafe.AsPointer(ref this), puCount);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(10)]
-        public HRESULT GetSelection([NativeTypeName("UINT *")] uint* puIndex)
+        public HRESULT GetSelection(uint* puIndex)
         {
             return ((delegate* unmanaged<ITfCandidateListUIElement*, uint*, int>)(lpVtbl[10]))((ITfCandidateListUIElement*)Unsafe.AsPointer(ref this), puIndex);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(11)]
-        public HRESULT GetString([NativeTypeName("UINT")] uint uIndex, [NativeTypeName("BSTR *")] ushort** pstr)
+        public HRESULT GetString(uint uIndex, [NativeTypeName("BSTR *")] ushort** pstr)
         {
             return ((delegate* unmanaged<ITfCandidateListUIElement*, uint, ushort**, int>)(lpVtbl[11]))((ITfCandidateListUIElement*)Unsafe.AsPointer(ref this), uIndex, pstr);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(12)]
-        public HRESULT GetPageIndex([NativeTypeName("UINT *")] uint* pIndex, [NativeTypeName("UINT")] uint uSize, [NativeTypeName("UINT *")] uint* puPageCnt)
+        public HRESULT GetPageIndex(uint* pIndex, uint uSize, uint* puPageCnt)
         {
             return ((delegate* unmanaged<ITfCandidateListUIElement*, uint*, uint, uint*, int>)(lpVtbl[12]))((ITfCandidateListUIElement*)Unsafe.AsPointer(ref this), pIndex, uSize, puPageCnt);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(13)]
-        public HRESULT SetPageIndex([NativeTypeName("UINT *")] uint* pIndex, [NativeTypeName("UINT")] uint uPageCnt)
+        public HRESULT SetPageIndex(uint* pIndex, uint uPageCnt)
         {
             return ((delegate* unmanaged<ITfCandidateListUIElement*, uint*, uint, int>)(lpVtbl[13]))((ITfCandidateListUIElement*)Unsafe.AsPointer(ref this), pIndex, uPageCnt);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(14)]
-        public HRESULT GetCurrentPage([NativeTypeName("UINT *")] uint* puPage)
+        public HRESULT GetCurrentPage(uint* puPage)
         {
             return ((delegate* unmanaged<ITfCandidateListUIElement*, uint*, int>)(lpVtbl[14]))((ITfCandidateListUIElement*)Unsafe.AsPointer(ref this), puPage);
         }

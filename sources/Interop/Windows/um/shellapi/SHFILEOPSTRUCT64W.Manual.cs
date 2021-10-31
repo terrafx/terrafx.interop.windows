@@ -11,7 +11,6 @@ namespace TerraFX.Interop
     {
         public HWND hwnd;
 
-        [NativeTypeName("UINT")]
         public uint wFunc;
 
         [NativeTypeName("PCZZWSTR")]

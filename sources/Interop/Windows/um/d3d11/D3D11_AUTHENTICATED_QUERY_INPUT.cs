@@ -9,12 +9,10 @@ namespace TerraFX.Interop
 {
     public partial struct D3D11_AUTHENTICATED_QUERY_INPUT
     {
-        [NativeTypeName("GUID")]
         public Guid QueryType;
 
         public HANDLE hChannel;
 
-        [NativeTypeName("UINT")]
         public uint SequenceNumber;
     }
 }

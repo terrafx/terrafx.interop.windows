@@ -7,13 +7,10 @@ namespace TerraFX.Interop
 {
     public partial struct DELETEITEMSTRUCT
     {
-        [NativeTypeName("UINT")]
         public uint CtlType;
 
-        [NativeTypeName("UINT")]
         public uint CtlID;
 
-        [NativeTypeName("UINT")]
         public uint itemID;
 
         public HWND hwndItem;

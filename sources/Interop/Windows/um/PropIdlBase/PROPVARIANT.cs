@@ -848,11 +848,9 @@ namespace TerraFX.Interop
                     public byte bVal;
 
                     [FieldOffset(0)]
-                    [NativeTypeName("SHORT")]
                     public short iVal;
 
                     [FieldOffset(0)]
-                    [NativeTypeName("USHORT")]
                     public ushort uiVal;
 
                     [FieldOffset(0)]
@@ -864,11 +862,9 @@ namespace TerraFX.Interop
                     public uint ulVal;
 
                     [FieldOffset(0)]
-                    [NativeTypeName("INT")]
                     public int intVal;
 
                     [FieldOffset(0)]
-                    [NativeTypeName("UINT")]
                     public uint uintVal;
 
                     [FieldOffset(0)]
@@ -878,11 +874,9 @@ namespace TerraFX.Interop
                     public ULARGE_INTEGER uhVal;
 
                     [FieldOffset(0)]
-                    [NativeTypeName("FLOAT")]
                     public float fltVal;
 
                     [FieldOffset(0)]
-                    [NativeTypeName("DOUBLE")]
                     public double dblVal;
 
                     [FieldOffset(0)]
@@ -1027,11 +1021,9 @@ namespace TerraFX.Interop
                     public byte* pbVal;
 
                     [FieldOffset(0)]
-                    [NativeTypeName("SHORT *")]
                     public short* piVal;
 
                     [FieldOffset(0)]
-                    [NativeTypeName("USHORT *")]
                     public ushort* puiVal;
 
                     [FieldOffset(0)]
@@ -1043,19 +1035,15 @@ namespace TerraFX.Interop
                     public uint* pulVal;
 
                     [FieldOffset(0)]
-                    [NativeTypeName("INT *")]
                     public int* pintVal;
 
                     [FieldOffset(0)]
-                    [NativeTypeName("UINT *")]
                     public uint* puintVal;
 
                     [FieldOffset(0)]
-                    [NativeTypeName("FLOAT *")]
                     public float* pfltVal;
 
                     [FieldOffset(0)]
-                    [NativeTypeName("DOUBLE *")]
                     public double* pdblVal;
 
                     [FieldOffset(0)]

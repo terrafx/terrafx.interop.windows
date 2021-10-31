@@ -47,11 +47,9 @@ namespace TerraFX.Interop
         public ulong UInt64;
 
         [FieldOffset(0)]
-        [NativeTypeName("FLOAT")]
         public float Float32;
 
         [FieldOffset(0)]
-        [NativeTypeName("DOUBLE")]
         public double Float64;
     }
 }

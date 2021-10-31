@@ -16,13 +16,10 @@ namespace TerraFX.Interop
 
         public HWND hWnd;
 
-        [NativeTypeName("UINT")]
         public uint uID;
 
-        [NativeTypeName("UINT")]
         public uint uFlags;
 
-        [NativeTypeName("UINT")]
         public uint uCallbackMessage;
 
         public HICON hIcon;
@@ -48,7 +45,6 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint dwInfoFlags;
 
-        [NativeTypeName("GUID")]
         public Guid guidItem;
 
         public HICON hBalloonIcon;

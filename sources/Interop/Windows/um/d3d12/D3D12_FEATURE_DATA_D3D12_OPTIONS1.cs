@@ -9,13 +9,10 @@ namespace TerraFX.Interop
     {
         public BOOL WaveOps;
 
-        [NativeTypeName("UINT")]
         public uint WaveLaneCountMin;
 
-        [NativeTypeName("UINT")]
         public uint WaveLaneCountMax;
 
-        [NativeTypeName("UINT")]
         public uint TotalLaneCount;
 
         public BOOL ExpandedComputeResourceStates;

@@ -16,10 +16,8 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint dwVersionNumber;
 
-        [NativeTypeName("USHORT")]
         public ushort usUsagePage;
 
-        [NativeTypeName("USHORT")]
         public ushort usUsage;
     }
 }

@@ -7,10 +7,8 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct SecPkgContext_TokenBinding
     {
-        [NativeTypeName("BYTE")]
         public byte MajorVersion;
 
-        [NativeTypeName("BYTE")]
         public byte MinorVersion;
 
         [NativeTypeName("WORD")]

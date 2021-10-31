@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct DRAGINFO64W
     {
-        [NativeTypeName("UINT")]
         public uint uSize;
 
         public POINT pt;

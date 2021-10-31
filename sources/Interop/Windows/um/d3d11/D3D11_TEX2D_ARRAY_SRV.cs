@@ -7,16 +7,12 @@ namespace TerraFX.Interop
 {
     public partial struct D3D11_TEX2D_ARRAY_SRV
     {
-        [NativeTypeName("UINT")]
         public uint MostDetailedMip;
 
-        [NativeTypeName("UINT")]
         public uint MipLevels;
 
-        [NativeTypeName("UINT")]
         public uint FirstArraySlice;
 
-        [NativeTypeName("UINT")]
         public uint ArraySize;
     }
 }

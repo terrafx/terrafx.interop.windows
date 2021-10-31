@@ -11,10 +11,8 @@ namespace TerraFX.Interop
 {
     public partial struct MOVEREGION_INFO
     {
-        [NativeTypeName("UINT")]
         public uint FrameNumber;
 
-        [NativeTypeName("UINT")]
         public uint NumMoveRegions;
 
         [NativeTypeName("MOVE_RECT [1]")]

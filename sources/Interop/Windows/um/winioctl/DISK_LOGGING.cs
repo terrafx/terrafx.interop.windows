@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct DISK_LOGGING
     {
-        [NativeTypeName("BYTE")]
         public byte Function;
 
         [NativeTypeName("PVOID")]

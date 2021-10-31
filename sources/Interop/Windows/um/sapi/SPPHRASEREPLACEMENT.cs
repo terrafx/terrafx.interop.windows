@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct SPPHRASEREPLACEMENT
     {
-        [NativeTypeName("BYTE")]
         public byte bDisplayAttributes;
 
         [NativeTypeName("LPCWSTR")]

@@ -19,7 +19,6 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD_PTR")]
         public nuint dwItemSpec;
 
-        [NativeTypeName("UINT")]
         public uint uItemState;
 
         [NativeTypeName("LPARAM")]

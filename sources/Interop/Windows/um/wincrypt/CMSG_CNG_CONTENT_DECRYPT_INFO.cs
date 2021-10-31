@@ -21,7 +21,6 @@ namespace TerraFX.Interop
         [NativeTypeName("NCRYPT_KEY_HANDLE")]
         public nuint hNCryptKey;
 
-        [NativeTypeName("BYTE *")]
         public byte* pbContentEncryptKey;
 
         [NativeTypeName("DWORD")]
@@ -30,7 +29,6 @@ namespace TerraFX.Interop
         [NativeTypeName("BCRYPT_KEY_HANDLE")]
         public void* hCNGContentEncryptKey;
 
-        [NativeTypeName("BYTE *")]
         public byte* pbCNGContentEncryptKeyObject;
     }
 }

@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public partial struct DML_BINDING_PROPERTIES
     {
-        [NativeTypeName("UINT")]
         public uint RequiredDescriptorCount;
 
         [NativeTypeName("UINT64")]

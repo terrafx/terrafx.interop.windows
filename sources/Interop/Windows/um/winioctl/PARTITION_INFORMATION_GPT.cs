@@ -9,10 +9,8 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct PARTITION_INFORMATION_GPT
     {
-        [NativeTypeName("GUID")]
         public Guid PartitionType;
 
-        [NativeTypeName("GUID")]
         public Guid PartitionId;
 
         [NativeTypeName("DWORD64")]

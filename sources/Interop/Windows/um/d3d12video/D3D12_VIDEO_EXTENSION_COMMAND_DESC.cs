@@ -9,10 +9,8 @@ namespace TerraFX.Interop
 {
     public partial struct D3D12_VIDEO_EXTENSION_COMMAND_DESC
     {
-        [NativeTypeName("UINT")]
         public uint NodeMask;
 
-        [NativeTypeName("GUID")]
         public Guid CommandId;
     }
 }

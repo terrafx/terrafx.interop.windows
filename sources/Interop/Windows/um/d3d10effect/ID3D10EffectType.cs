@@ -27,7 +27,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(2)]
-        public ID3D10EffectType* GetMemberTypeByIndex([NativeTypeName("UINT")] uint Index)
+        public ID3D10EffectType* GetMemberTypeByIndex(uint Index)
         {
             return ((delegate* unmanaged<ID3D10EffectType*, uint, ID3D10EffectType*>)(lpVtbl[2]))((ID3D10EffectType*)Unsafe.AsPointer(ref this), Index);
         }
@@ -49,7 +49,7 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
         [return: NativeTypeName("LPCSTR")]
-        public sbyte* GetMemberName([NativeTypeName("UINT")] uint Index)
+        public sbyte* GetMemberName(uint Index)
         {
             return ((delegate* unmanaged<ID3D10EffectType*, uint, sbyte*>)(lpVtbl[5]))((ID3D10EffectType*)Unsafe.AsPointer(ref this), Index);
         }
@@ -57,7 +57,7 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
         [return: NativeTypeName("LPCSTR")]
-        public sbyte* GetMemberSemantic([NativeTypeName("UINT")] uint Index)
+        public sbyte* GetMemberSemantic(uint Index)
         {
             return ((delegate* unmanaged<ID3D10EffectType*, uint, sbyte*>)(lpVtbl[6]))((ID3D10EffectType*)Unsafe.AsPointer(ref this), Index);
         }

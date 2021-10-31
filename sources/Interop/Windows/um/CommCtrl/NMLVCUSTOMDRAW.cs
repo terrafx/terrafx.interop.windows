@@ -33,7 +33,6 @@ namespace TerraFX.Interop
 
         public RECT rcText;
 
-        [NativeTypeName("UINT")]
         public uint uAlign;
     }
 }

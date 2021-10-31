@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public partial struct LASTINPUTINFO
     {
-        [NativeTypeName("UINT")]
         public uint cbSize;
 
         [NativeTypeName("DWORD")]

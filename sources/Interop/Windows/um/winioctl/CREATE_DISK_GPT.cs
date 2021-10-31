@@ -9,7 +9,6 @@ namespace TerraFX.Interop
 {
     public partial struct CREATE_DISK_GPT
     {
-        [NativeTypeName("GUID")]
         public Guid DiskId;
 
         [NativeTypeName("DWORD")]

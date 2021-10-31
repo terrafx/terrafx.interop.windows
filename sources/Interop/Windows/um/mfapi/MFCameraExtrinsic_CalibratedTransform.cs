@@ -9,7 +9,6 @@ namespace TerraFX.Interop
 {
     public partial struct MFCameraExtrinsic_CalibratedTransform
     {
-        [NativeTypeName("GUID")]
         public Guid CalibrationId;
 
         public MF_FLOAT3 Position;

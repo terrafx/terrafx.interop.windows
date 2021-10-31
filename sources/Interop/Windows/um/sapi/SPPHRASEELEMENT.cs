@@ -34,7 +34,6 @@ namespace TerraFX.Interop
         [NativeTypeName("const SPPHONEID *")]
         public ushort* pszPronunciation;
 
-        [NativeTypeName("BYTE")]
         public byte bDisplayAttributes;
 
         [NativeTypeName("signed char")]
@@ -43,7 +42,6 @@ namespace TerraFX.Interop
         [NativeTypeName("signed char")]
         public sbyte ActualConfidence;
 
-        [NativeTypeName("BYTE")]
         public byte Reserved;
 
         public float SREngineConfidence;

@@ -12,16 +12,13 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint dwFlags;
 
-        [NativeTypeName("UINT")]
         public uint cInstances;
 
-        [NativeTypeName("UINT")]
         public uint nMediaTypes;
 
         [NativeTypeName("const REGPINTYPES *")]
         public REGPINTYPES* lpMediaType;
 
-        [NativeTypeName("UINT")]
         public uint nMediums;
 
         [NativeTypeName("const REGPINMEDIUM *")]

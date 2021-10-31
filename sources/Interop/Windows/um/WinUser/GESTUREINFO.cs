@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public partial struct GESTUREINFO
     {
-        [NativeTypeName("UINT")]
         public uint cbSize;
 
         [NativeTypeName("DWORD")]
@@ -29,7 +28,6 @@ namespace TerraFX.Interop
         [NativeTypeName("ULONGLONG")]
         public ulong ullArguments;
 
-        [NativeTypeName("UINT")]
         public uint cbExtraArgs;
     }
 }

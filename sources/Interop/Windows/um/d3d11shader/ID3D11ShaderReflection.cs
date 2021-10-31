@@ -48,7 +48,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public ID3D11ShaderReflectionConstantBuffer* GetConstantBufferByIndex([NativeTypeName("UINT")] uint Index)
+        public ID3D11ShaderReflectionConstantBuffer* GetConstantBufferByIndex(uint Index)
         {
             return ((delegate* unmanaged<ID3D11ShaderReflection*, uint, ID3D11ShaderReflectionConstantBuffer*>)(lpVtbl[4]))((ID3D11ShaderReflection*)Unsafe.AsPointer(ref this), Index);
         }
@@ -62,28 +62,28 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        public HRESULT GetResourceBindingDesc([NativeTypeName("UINT")] uint ResourceIndex, D3D11_SHADER_INPUT_BIND_DESC* pDesc)
+        public HRESULT GetResourceBindingDesc(uint ResourceIndex, D3D11_SHADER_INPUT_BIND_DESC* pDesc)
         {
             return ((delegate* unmanaged<ID3D11ShaderReflection*, uint, D3D11_SHADER_INPUT_BIND_DESC*, int>)(lpVtbl[6]))((ID3D11ShaderReflection*)Unsafe.AsPointer(ref this), ResourceIndex, pDesc);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        public HRESULT GetInputParameterDesc([NativeTypeName("UINT")] uint ParameterIndex, D3D11_SIGNATURE_PARAMETER_DESC* pDesc)
+        public HRESULT GetInputParameterDesc(uint ParameterIndex, D3D11_SIGNATURE_PARAMETER_DESC* pDesc)
         {
             return ((delegate* unmanaged<ID3D11ShaderReflection*, uint, D3D11_SIGNATURE_PARAMETER_DESC*, int>)(lpVtbl[7]))((ID3D11ShaderReflection*)Unsafe.AsPointer(ref this), ParameterIndex, pDesc);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        public HRESULT GetOutputParameterDesc([NativeTypeName("UINT")] uint ParameterIndex, D3D11_SIGNATURE_PARAMETER_DESC* pDesc)
+        public HRESULT GetOutputParameterDesc(uint ParameterIndex, D3D11_SIGNATURE_PARAMETER_DESC* pDesc)
         {
             return ((delegate* unmanaged<ID3D11ShaderReflection*, uint, D3D11_SIGNATURE_PARAMETER_DESC*, int>)(lpVtbl[8]))((ID3D11ShaderReflection*)Unsafe.AsPointer(ref this), ParameterIndex, pDesc);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        public HRESULT GetPatchConstantParameterDesc([NativeTypeName("UINT")] uint ParameterIndex, D3D11_SIGNATURE_PARAMETER_DESC* pDesc)
+        public HRESULT GetPatchConstantParameterDesc(uint ParameterIndex, D3D11_SIGNATURE_PARAMETER_DESC* pDesc)
         {
             return ((delegate* unmanaged<ID3D11ShaderReflection*, uint, D3D11_SIGNATURE_PARAMETER_DESC*, int>)(lpVtbl[9]))((ID3D11ShaderReflection*)Unsafe.AsPointer(ref this), ParameterIndex, pDesc);
         }
@@ -104,7 +104,6 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(12)]
-        [return: NativeTypeName("UINT")]
         public uint GetMovInstructionCount()
         {
             return ((delegate* unmanaged<ID3D11ShaderReflection*, uint>)(lpVtbl[12]))((ID3D11ShaderReflection*)Unsafe.AsPointer(ref this));
@@ -112,7 +111,6 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(13)]
-        [return: NativeTypeName("UINT")]
         public uint GetMovcInstructionCount()
         {
             return ((delegate* unmanaged<ID3D11ShaderReflection*, uint>)(lpVtbl[13]))((ID3D11ShaderReflection*)Unsafe.AsPointer(ref this));
@@ -120,7 +118,6 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(14)]
-        [return: NativeTypeName("UINT")]
         public uint GetConversionInstructionCount()
         {
             return ((delegate* unmanaged<ID3D11ShaderReflection*, uint>)(lpVtbl[14]))((ID3D11ShaderReflection*)Unsafe.AsPointer(ref this));
@@ -128,7 +125,6 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(15)]
-        [return: NativeTypeName("UINT")]
         public uint GetBitwiseInstructionCount()
         {
             return ((delegate* unmanaged<ID3D11ShaderReflection*, uint>)(lpVtbl[15]))((ID3D11ShaderReflection*)Unsafe.AsPointer(ref this));
@@ -150,7 +146,6 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(18)]
-        [return: NativeTypeName("UINT")]
         public uint GetNumInterfaceSlots()
         {
             return ((delegate* unmanaged<ID3D11ShaderReflection*, uint>)(lpVtbl[18]))((ID3D11ShaderReflection*)Unsafe.AsPointer(ref this));
@@ -165,8 +160,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(20)]
-        [return: NativeTypeName("UINT")]
-        public uint GetThreadGroupSize([NativeTypeName("UINT *")] uint* pSizeX, [NativeTypeName("UINT *")] uint* pSizeY, [NativeTypeName("UINT *")] uint* pSizeZ)
+        public uint GetThreadGroupSize(uint* pSizeX, uint* pSizeY, uint* pSizeZ)
         {
             return ((delegate* unmanaged<ID3D11ShaderReflection*, uint*, uint*, uint*, uint>)(lpVtbl[20]))((ID3D11ShaderReflection*)Unsafe.AsPointer(ref this), pSizeX, pSizeY, pSizeZ);
         }

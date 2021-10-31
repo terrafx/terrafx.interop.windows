@@ -7,10 +7,8 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct SECURITY_DESCRIPTOR
     {
-        [NativeTypeName("BYTE")]
         public byte Revision;
 
-        [NativeTypeName("BYTE")]
         public byte Sbz1;
 
         [NativeTypeName("SECURITY_DESCRIPTOR_CONTROL")]

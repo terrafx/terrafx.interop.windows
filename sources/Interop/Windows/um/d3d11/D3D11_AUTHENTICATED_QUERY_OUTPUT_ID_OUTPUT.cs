@@ -13,7 +13,6 @@ namespace TerraFX.Interop
 
         public HANDLE CryptoSessionHandle;
 
-        [NativeTypeName("UINT")]
         public uint OutputIDIndex;
 
         [NativeTypeName("UINT64")]

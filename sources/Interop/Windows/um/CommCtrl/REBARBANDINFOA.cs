@@ -7,13 +7,10 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct REBARBANDINFOA
     {
-        [NativeTypeName("UINT")]
         public uint cbSize;
 
-        [NativeTypeName("UINT")]
         public uint fMask;
 
-        [NativeTypeName("UINT")]
         public uint fStyle;
 
         [NativeTypeName("COLORREF")]
@@ -25,48 +22,37 @@ namespace TerraFX.Interop
         [NativeTypeName("LPSTR")]
         public sbyte* lpText;
 
-        [NativeTypeName("UINT")]
         public uint cch;
 
         public int iImage;
 
         public HWND hwndChild;
 
-        [NativeTypeName("UINT")]
         public uint cxMinChild;
 
-        [NativeTypeName("UINT")]
         public uint cyMinChild;
 
-        [NativeTypeName("UINT")]
         public uint cx;
 
         public HBITMAP hbmBack;
 
-        [NativeTypeName("UINT")]
         public uint wID;
 
-        [NativeTypeName("UINT")]
         public uint cyChild;
 
-        [NativeTypeName("UINT")]
         public uint cyMaxChild;
 
-        [NativeTypeName("UINT")]
         public uint cyIntegral;
 
-        [NativeTypeName("UINT")]
         public uint cxIdeal;
 
         [NativeTypeName("LPARAM")]
         public nint lParam;
 
-        [NativeTypeName("UINT")]
         public uint cxHeader;
 
         public RECT rcChevronLocation;
 
-        [NativeTypeName("UINT")]
         public uint uChevronState;
     }
 }

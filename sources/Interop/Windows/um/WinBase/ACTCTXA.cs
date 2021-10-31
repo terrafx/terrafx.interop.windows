@@ -16,7 +16,6 @@ namespace TerraFX.Interop
         [NativeTypeName("LPCSTR")]
         public sbyte* lpSource;
 
-        [NativeTypeName("USHORT")]
         public ushort wProcessorArchitecture;
 
         [NativeTypeName("LANGID")]

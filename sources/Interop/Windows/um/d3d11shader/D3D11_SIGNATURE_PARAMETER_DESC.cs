@@ -10,23 +10,18 @@ namespace TerraFX.Interop
         [NativeTypeName("LPCSTR")]
         public sbyte* SemanticName;
 
-        [NativeTypeName("UINT")]
         public uint SemanticIndex;
 
-        [NativeTypeName("UINT")]
         public uint Register;
 
         public D3D_NAME SystemValueType;
 
         public D3D_REGISTER_COMPONENT_TYPE ComponentType;
 
-        [NativeTypeName("BYTE")]
         public byte Mask;
 
-        [NativeTypeName("BYTE")]
         public byte ReadWriteMask;
 
-        [NativeTypeName("UINT")]
         public uint Stream;
 
         public D3D_MIN_PRECISION MinPrecision;

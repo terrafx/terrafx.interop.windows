@@ -9,7 +9,6 @@ namespace TerraFX.Interop
     {
         public HACCEL haccel;
 
-        [NativeTypeName("UINT")]
         public uint cAccelEntries;
     }
 }

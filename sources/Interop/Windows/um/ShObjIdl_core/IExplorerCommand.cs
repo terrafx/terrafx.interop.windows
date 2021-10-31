@@ -62,7 +62,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        public HRESULT GetCanonicalName([NativeTypeName("GUID *")] Guid* pguidCommandName)
+        public HRESULT GetCanonicalName(Guid* pguidCommandName)
         {
             return ((delegate* unmanaged<IExplorerCommand*, Guid*, int>)(lpVtbl[6]))((IExplorerCommand*)Unsafe.AsPointer(ref this), pguidCommandName);
         }

@@ -15,7 +15,6 @@ namespace TerraFX.Interop
 
         public DML_INTERPOLATION_MODE InterpolationMode;
 
-        [NativeTypeName("UINT")]
         public uint DimensionCount;
 
         [NativeTypeName("const FLOAT *")]

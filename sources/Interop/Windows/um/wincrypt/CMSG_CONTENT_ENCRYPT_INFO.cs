@@ -42,10 +42,8 @@ namespace TerraFX.Interop
 
         public BOOL fCNG;
 
-        [NativeTypeName("BYTE *")]
         public byte* pbCNGContentEncryptKeyObject;
 
-        [NativeTypeName("BYTE *")]
         public byte* pbContentEncryptKey;
 
         [NativeTypeName("DWORD")]

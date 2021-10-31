@@ -7,13 +7,10 @@ namespace TerraFX.Interop
 {
     public partial struct D3D11_ENCRYPTED_BLOCK_INFO
     {
-        [NativeTypeName("UINT")]
         public uint NumEncryptedBytesAtBeginning;
 
-        [NativeTypeName("UINT")]
         public uint NumBytesInSkipPattern;
 
-        [NativeTypeName("UINT")]
         public uint NumBytesInEncryptPattern;
     }
 }

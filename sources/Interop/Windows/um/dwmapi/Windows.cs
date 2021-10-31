@@ -20,13 +20,13 @@ namespace TerraFX.Interop
         public const uint c_DwmMaxAdapters = 16;
 
         [DllImport("dwmapi", ExactSpelling = true)]
-        public static extern BOOL DwmDefWindowProc(HWND hWnd, [NativeTypeName("UINT")] uint msg, [NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam, [NativeTypeName("LRESULT *")] nint* plResult);
+        public static extern BOOL DwmDefWindowProc(HWND hWnd, uint msg, [NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam, [NativeTypeName("LRESULT *")] nint* plResult);
 
         [DllImport("dwmapi", ExactSpelling = true)]
         public static extern HRESULT DwmEnableBlurBehindWindow(HWND hWnd, [NativeTypeName("const DWM_BLURBEHIND *")] DWM_BLURBEHIND* pBlurBehind);
 
         [DllImport("dwmapi", ExactSpelling = true)]
-        public static extern HRESULT DwmEnableComposition([NativeTypeName("UINT")] uint uCompositionAction);
+        public static extern HRESULT DwmEnableComposition(uint uCompositionAction);
 
         [DllImport("dwmapi", ExactSpelling = true)]
         public static extern HRESULT DwmEnableMMCSS(BOOL fEnableMMCSS);
@@ -47,7 +47,7 @@ namespace TerraFX.Interop
         public static extern HRESULT DwmIsCompositionEnabled(BOOL* pfEnabled);
 
         [DllImport("dwmapi", ExactSpelling = true)]
-        public static extern HRESULT DwmModifyPreviousDxFrameDuration(HWND hwnd, [NativeTypeName("INT")] int cRefreshes, BOOL fRelative);
+        public static extern HRESULT DwmModifyPreviousDxFrameDuration(HWND hwnd, int cRefreshes, BOOL fRelative);
 
         [DllImport("dwmapi", ExactSpelling = true)]
         public static extern HRESULT DwmQueryThumbnailSourceSize([NativeTypeName("HTHUMBNAIL")] HANDLE hThumbnail, [NativeTypeName("PSIZE")] SIZE* pSize);
@@ -56,7 +56,7 @@ namespace TerraFX.Interop
         public static extern HRESULT DwmRegisterThumbnail(HWND hwndDestination, HWND hwndSource, [NativeTypeName("PHTHUMBNAIL")] HANDLE* phThumbnailId);
 
         [DllImport("dwmapi", ExactSpelling = true)]
-        public static extern HRESULT DwmSetDxFrameDuration(HWND hwnd, [NativeTypeName("INT")] int cRefreshes);
+        public static extern HRESULT DwmSetDxFrameDuration(HWND hwnd, int cRefreshes);
 
         [DllImport("dwmapi", ExactSpelling = true)]
         public static extern HRESULT DwmSetPresentParameters(HWND hwnd, DWM_PRESENT_PARAMETERS* pPresentParams);
@@ -89,10 +89,10 @@ namespace TerraFX.Interop
         public static extern HRESULT DwmFlush();
 
         [DllImport("dwmapi", ExactSpelling = true)]
-        public static extern HRESULT DwmGetGraphicsStreamTransformHint([NativeTypeName("UINT")] uint uIndex, MilMatrix3x2D* pTransform);
+        public static extern HRESULT DwmGetGraphicsStreamTransformHint(uint uIndex, MilMatrix3x2D* pTransform);
 
         [DllImport("dwmapi", ExactSpelling = true)]
-        public static extern HRESULT DwmGetGraphicsStreamClient([NativeTypeName("UINT")] uint uIndex, [NativeTypeName("UUID *")] Guid* pClientUuid);
+        public static extern HRESULT DwmGetGraphicsStreamClient(uint uIndex, [NativeTypeName("UUID *")] Guid* pClientUuid);
 
         [DllImport("dwmapi", ExactSpelling = true)]
         public static extern HRESULT DwmGetTransportAttributes(BOOL* pfIsRemoting, BOOL* pfIsConnected, [NativeTypeName("DWORD *")] uint* pDwGeneration);
@@ -101,7 +101,7 @@ namespace TerraFX.Interop
         public static extern HRESULT DwmTransitionOwnedWindow(HWND hwnd, [NativeTypeName("enum DWMTRANSITION_OWNEDWINDOW_TARGET")] DWMTRANSITION_OWNEDWINDOW_TARGET target);
 
         [DllImport("dwmapi", ExactSpelling = true)]
-        public static extern HRESULT DwmRenderGesture([NativeTypeName("enum GESTURE_TYPE")] GESTURE_TYPE gt, [NativeTypeName("UINT")] uint cContacts, [NativeTypeName("const DWORD *")] uint* pdwPointerID, [NativeTypeName("const POINT *")] POINT* pPoints);
+        public static extern HRESULT DwmRenderGesture([NativeTypeName("enum GESTURE_TYPE")] GESTURE_TYPE gt, uint cContacts, [NativeTypeName("const DWORD *")] uint* pdwPointerID, [NativeTypeName("const POINT *")] POINT* pPoints);
 
         [DllImport("dwmapi", ExactSpelling = true)]
         public static extern HRESULT DwmTetherContact([NativeTypeName("DWORD")] uint dwPointerID, BOOL fEnable, POINT ptTether);

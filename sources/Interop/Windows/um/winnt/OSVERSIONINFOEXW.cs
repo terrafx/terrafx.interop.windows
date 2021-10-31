@@ -34,10 +34,8 @@ namespace TerraFX.Interop
         [NativeTypeName("WORD")]
         public ushort wSuiteMask;
 
-        [NativeTypeName("BYTE")]
         public byte wProductType;
 
-        [NativeTypeName("BYTE")]
         public byte wReserved;
     }
 }

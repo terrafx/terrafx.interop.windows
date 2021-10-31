@@ -41,7 +41,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        public HRESULT DoContextMenuPopup(IUnknown* punkContextMenu, [NativeTypeName("UINT")] uint fFlags, POINT pt)
+        public HRESULT DoContextMenuPopup(IUnknown* punkContextMenu, uint fFlags, POINT pt)
         {
             return ((delegate* unmanaged<IContextMenuSite*, IUnknown*, uint, POINT, int>)(lpVtbl[3]))((IContextMenuSite*)Unsafe.AsPointer(ref this), punkContextMenu, fFlags, pt);
         }

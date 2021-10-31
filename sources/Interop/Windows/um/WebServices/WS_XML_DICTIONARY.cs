@@ -9,7 +9,6 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct WS_XML_DICTIONARY
     {
-        [NativeTypeName("GUID")]
         public Guid guid;
 
         public WS_XML_STRING* strings;

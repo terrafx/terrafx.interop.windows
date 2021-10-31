@@ -11,7 +11,6 @@ namespace TerraFX.Interop
 {
     public partial struct TRANSMSGLIST
     {
-        [NativeTypeName("UINT")]
         public uint uMsgCount;
 
         [NativeTypeName("TRANSMSG [1]")]

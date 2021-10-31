@@ -9,7 +9,6 @@ namespace TerraFX.Interop
     {
         public IShellItem* psi;
 
-        [NativeTypeName("UINT")]
         public uint uItemState;
 
         [NativeTypeName("NSTCITEMSTATE")]

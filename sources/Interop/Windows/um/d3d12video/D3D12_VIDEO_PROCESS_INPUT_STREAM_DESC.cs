@@ -35,10 +35,8 @@ namespace TerraFX.Interop
 
         public D3D12_VIDEO_PROCESS_LUMA_KEY LumaKey;
 
-        [NativeTypeName("UINT")]
         public uint NumPastFrames;
 
-        [NativeTypeName("UINT")]
         public uint NumFutureFrames;
 
         public BOOL EnableAutoProcessing;

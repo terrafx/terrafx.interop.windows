@@ -10,7 +10,6 @@ namespace TerraFX.Interop
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe partial struct CIDA
     {
-        [NativeTypeName("UINT")]
         public uint cidl;
 
         [NativeTypeName("UINT [1]")]

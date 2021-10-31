@@ -13,7 +13,7 @@ namespace TerraFX.Interop
         public static extern BOOL ImmGetHotKey([NativeTypeName("DWORD")] uint param0, [NativeTypeName("LPUINT")] uint* lpuModifiers, [NativeTypeName("LPUINT")] uint* lpuVKey, [NativeTypeName("LPHKL")] HKL* phKL);
 
         [DllImport("imm32", ExactSpelling = true)]
-        public static extern BOOL ImmSetHotKey([NativeTypeName("DWORD")] uint param0, [NativeTypeName("UINT")] uint param1, [NativeTypeName("UINT")] uint param2, HKL param3);
+        public static extern BOOL ImmSetHotKey([NativeTypeName("DWORD")] uint param0, uint param1, uint param2, HKL param3);
 
         [DllImport("imm32", ExactSpelling = true)]
         public static extern BOOL ImmGenerateMessage(HIMC param0);
@@ -27,7 +27,7 @@ namespace TerraFX.Interop
         public static extern nint ImmRequestMessageW(HIMC param0, [NativeTypeName("WPARAM")] nuint param1, [NativeTypeName("LPARAM")] nint param2);
 
         [DllImport("imm32", ExactSpelling = true)]
-        public static extern HWND ImmCreateSoftKeyboard([NativeTypeName("UINT")] uint param0, HWND param1, int param2, int param3);
+        public static extern HWND ImmCreateSoftKeyboard(uint param0, HWND param1, int param2, int param3);
 
         [DllImport("imm32", ExactSpelling = true)]
         public static extern BOOL ImmDestroySoftKeyboard(HWND param0);

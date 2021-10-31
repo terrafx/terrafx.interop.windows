@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct AASHELLMENUFILENAME
     {
-        [NativeTypeName("SHORT")]
         public short cbTotal;
 
         [NativeTypeName("BYTE [12]")]

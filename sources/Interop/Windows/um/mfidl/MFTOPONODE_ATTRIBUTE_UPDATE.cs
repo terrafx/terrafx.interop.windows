@@ -14,7 +14,6 @@ namespace TerraFX.Interop
         [NativeTypeName("TOPOID")]
         public ulong NodeId;
 
-        [NativeTypeName("GUID")]
         public Guid guidAttributeKey;
 
         public MF_ATTRIBUTE_TYPE attrType;

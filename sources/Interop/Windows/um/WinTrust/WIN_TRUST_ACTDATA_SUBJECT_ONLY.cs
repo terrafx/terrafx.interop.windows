@@ -9,7 +9,6 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct WIN_TRUST_ACTDATA_SUBJECT_ONLY
     {
-        [NativeTypeName("GUID *")]
         public Guid* SubjectType;
 
         [NativeTypeName("WIN_TRUST_SUBJECT")]

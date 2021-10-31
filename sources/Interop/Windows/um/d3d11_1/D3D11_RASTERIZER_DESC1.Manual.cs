@@ -36,7 +36,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public D3D11_RASTERIZER_DESC1(D3D11_FILL_MODE fillMode, D3D11_CULL_MODE cullMode, BOOL frontCounterClockwise, [NativeTypeName("INT")] int depthBias, [NativeTypeName("FLOAT")] float depthBiasClamp, [NativeTypeName("FLOAT")] float slopeScaledDepthBias, BOOL depthClipEnable, BOOL scissorEnable, BOOL multisampleEnable, BOOL antialiasedLineEnable, [NativeTypeName("UINT")] uint forcedSampleCount)
+        public D3D11_RASTERIZER_DESC1(D3D11_FILL_MODE fillMode, D3D11_CULL_MODE cullMode, BOOL frontCounterClockwise, int depthBias, float depthBiasClamp, float slopeScaledDepthBias, BOOL depthClipEnable, BOOL scissorEnable, BOOL multisampleEnable, BOOL antialiasedLineEnable, uint forcedSampleCount)
         {
             FillMode = fillMode;
             CullMode = cullMode;

@@ -9,7 +9,6 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct RESOURCEMANAGER_BASIC_INFORMATION
     {
-        [NativeTypeName("GUID")]
         public Guid ResourceManagerId;
 
         [NativeTypeName("DWORD")]

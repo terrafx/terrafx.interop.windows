@@ -34,7 +34,7 @@ namespace TerraFX.Interop
 
         [DllImport("uxtheme", ExactSpelling = true)]
         [return: NativeTypeName("HTHEME")]
-        public static extern HANDLE OpenThemeDataForDpi(HWND hwnd, [NativeTypeName("LPCWSTR")] ushort* pszClassList, [NativeTypeName("UINT")] uint dpi);
+        public static extern HANDLE OpenThemeDataForDpi(HWND hwnd, [NativeTypeName("LPCWSTR")] ushort* pszClassList, uint dpi);
 
         [DllImport("uxtheme", ExactSpelling = true)]
         [return: NativeTypeName("HTHEME")]
@@ -74,7 +74,7 @@ namespace TerraFX.Interop
         public static extern HRESULT HitTestThemeBackground([NativeTypeName("HTHEME")] HANDLE hTheme, HDC hdc, int iPartId, int iStateId, [NativeTypeName("DWORD")] uint dwOptions, [NativeTypeName("LPCRECT")] RECT* pRect, HRGN hrgn, POINT ptTest, [NativeTypeName("WORD *")] ushort* pwHitTestCode);
 
         [DllImport("uxtheme", ExactSpelling = true)]
-        public static extern HRESULT DrawThemeEdge([NativeTypeName("HTHEME")] HANDLE hTheme, HDC hdc, int iPartId, int iStateId, [NativeTypeName("LPCRECT")] RECT* pDestRect, [NativeTypeName("UINT")] uint uEdge, [NativeTypeName("UINT")] uint uFlags, [NativeTypeName("LPRECT")] RECT* pContentRect);
+        public static extern HRESULT DrawThemeEdge([NativeTypeName("HTHEME")] HANDLE hTheme, HDC hdc, int iPartId, int iStateId, [NativeTypeName("LPCRECT")] RECT* pDestRect, uint uEdge, uint uFlags, [NativeTypeName("LPRECT")] RECT* pContentRect);
 
         [DllImport("uxtheme", ExactSpelling = true)]
         public static extern HRESULT DrawThemeIcon([NativeTypeName("HTHEME")] HANDLE hTheme, HDC hdc, int iPartId, int iStateId, [NativeTypeName("LPCRECT")] RECT* pRect, HIMAGELIST himl, int iImageIndex);
@@ -228,7 +228,7 @@ namespace TerraFX.Interop
         public static extern HRESULT BufferedPaintClear([NativeTypeName("HPAINTBUFFER")] HANDLE hBufferedPaint, [NativeTypeName("const RECT *")] RECT* prc);
 
         [DllImport("uxtheme", ExactSpelling = true)]
-        public static extern HRESULT BufferedPaintSetAlpha([NativeTypeName("HPAINTBUFFER")] HANDLE hBufferedPaint, [NativeTypeName("const RECT *")] RECT* prc, [NativeTypeName("BYTE")] byte alpha);
+        public static extern HRESULT BufferedPaintSetAlpha([NativeTypeName("HPAINTBUFFER")] HANDLE hBufferedPaint, [NativeTypeName("const RECT *")] RECT* prc, byte alpha);
 
         [DllImport("uxtheme", ExactSpelling = true)]
         public static extern HRESULT BufferedPaintStopAllAnimations(HWND hwnd);

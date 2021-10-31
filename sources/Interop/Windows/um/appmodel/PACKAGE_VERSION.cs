@@ -71,16 +71,12 @@ namespace TerraFX.Interop
 
             public partial struct _Anonymous_e__Struct
             {
-                [NativeTypeName("USHORT")]
                 public ushort Revision;
 
-                [NativeTypeName("USHORT")]
                 public ushort Build;
 
-                [NativeTypeName("USHORT")]
                 public ushort Minor;
 
-                [NativeTypeName("USHORT")]
                 public ushort Major;
             }
         }

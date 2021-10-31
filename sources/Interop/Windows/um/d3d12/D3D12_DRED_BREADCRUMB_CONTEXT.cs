@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct D3D12_DRED_BREADCRUMB_CONTEXT
     {
-        [NativeTypeName("UINT")]
         public uint BreadcrumbIndex;
 
         [NativeTypeName("const wchar_t *")]

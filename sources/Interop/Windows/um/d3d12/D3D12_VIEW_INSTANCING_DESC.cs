@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct D3D12_VIEW_INSTANCING_DESC
     {
-        [NativeTypeName("UINT")]
         public uint ViewInstanceCount;
 
         [NativeTypeName("const D3D12_VIEW_INSTANCE_LOCATION *")]

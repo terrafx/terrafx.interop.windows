@@ -10,7 +10,6 @@ namespace TerraFX.Interop
         [NativeTypeName("LPWSTR")]
         public ushort* pszNewName;
 
-        [NativeTypeName("UINT")]
         public uint iItemIndex;
     }
 }

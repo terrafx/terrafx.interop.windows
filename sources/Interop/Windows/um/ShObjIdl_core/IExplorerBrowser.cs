@@ -111,14 +111,14 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(13)]
-        public HRESULT BrowseToIDList([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl, [NativeTypeName("UINT")] uint uFlags)
+        public HRESULT BrowseToIDList([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl, uint uFlags)
         {
             return ((delegate* unmanaged<IExplorerBrowser*, ITEMIDLIST*, uint, int>)(lpVtbl[13]))((IExplorerBrowser*)Unsafe.AsPointer(ref this), pidl, uFlags);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(14)]
-        public HRESULT BrowseToObject(IUnknown* punk, [NativeTypeName("UINT")] uint uFlags)
+        public HRESULT BrowseToObject(IUnknown* punk, uint uFlags)
         {
             return ((delegate* unmanaged<IExplorerBrowser*, IUnknown*, uint, int>)(lpVtbl[14]))((IExplorerBrowser*)Unsafe.AsPointer(ref this), punk, uFlags);
         }

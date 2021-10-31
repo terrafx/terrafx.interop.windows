@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public partial struct OLEINPLACEFRAMEINFO
     {
-        [NativeTypeName("UINT")]
         public uint cb;
 
         public BOOL fMDIApp;
@@ -16,7 +15,6 @@ namespace TerraFX.Interop
 
         public HACCEL haccel;
 
-        [NativeTypeName("UINT")]
         public uint cAccelEntries;
     }
 }

@@ -36,7 +36,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public D2D1_RENDER_TARGET_PROPERTIES(D2D1_RENDER_TARGET_TYPE type = D2D1_RENDER_TARGET_TYPE_DEFAULT, [NativeTypeName("const D2D1_PIXEL_FORMAT &")] in D2D1_PIXEL_FORMAT pixelFormat = default, [NativeTypeName("FLOAT")] float dpiX = 0.0f, [NativeTypeName("FLOAT")] float dpiY = 0.0f, D2D1_RENDER_TARGET_USAGE usage = D2D1_RENDER_TARGET_USAGE_NONE, D2D1_FEATURE_LEVEL minLevel = D2D1_FEATURE_LEVEL_DEFAULT)
+        public D2D1_RENDER_TARGET_PROPERTIES(D2D1_RENDER_TARGET_TYPE type = D2D1_RENDER_TARGET_TYPE_DEFAULT, [NativeTypeName("const D2D1_PIXEL_FORMAT &")] in D2D1_PIXEL_FORMAT pixelFormat = default, float dpiX = 0.0f, float dpiY = 0.0f, D2D1_RENDER_TARGET_USAGE usage = D2D1_RENDER_TARGET_USAGE_NONE, D2D1_FEATURE_LEVEL minLevel = D2D1_FEATURE_LEVEL_DEFAULT)
         {
             this = RenderTargetProperties(type, pixelFormat, dpiX, dpiY, usage, minLevel);
         }

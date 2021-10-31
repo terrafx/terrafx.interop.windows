@@ -610,19 +610,15 @@ namespace TerraFX.Interop
                     public int lVal;
 
                     [FieldOffset(0)]
-                    [NativeTypeName("BYTE")]
                     public byte bVal;
 
                     [FieldOffset(0)]
-                    [NativeTypeName("SHORT")]
                     public short iVal;
 
                     [FieldOffset(0)]
-                    [NativeTypeName("FLOAT")]
                     public float fltVal;
 
                     [FieldOffset(0)]
-                    [NativeTypeName("DOUBLE")]
                     public double dblVal;
 
                     [FieldOffset(0)]
@@ -658,11 +654,9 @@ namespace TerraFX.Interop
                     public SAFEARRAY* parray;
 
                     [FieldOffset(0)]
-                    [NativeTypeName("BYTE *")]
                     public byte* pbVal;
 
                     [FieldOffset(0)]
-                    [NativeTypeName("SHORT *")]
                     public short* piVal;
 
                     [FieldOffset(0)]
@@ -674,11 +668,9 @@ namespace TerraFX.Interop
                     public long* pllVal;
 
                     [FieldOffset(0)]
-                    [NativeTypeName("FLOAT *")]
                     public float* pfltVal;
 
                     [FieldOffset(0)]
-                    [NativeTypeName("DOUBLE *")]
                     public double* pdblVal;
 
                     [FieldOffset(0)]
@@ -725,7 +717,6 @@ namespace TerraFX.Interop
                     public sbyte cVal;
 
                     [FieldOffset(0)]
-                    [NativeTypeName("USHORT")]
                     public ushort uiVal;
 
                     [FieldOffset(0)]
@@ -737,11 +728,9 @@ namespace TerraFX.Interop
                     public ulong ullVal;
 
                     [FieldOffset(0)]
-                    [NativeTypeName("INT")]
                     public int intVal;
 
                     [FieldOffset(0)]
-                    [NativeTypeName("UINT")]
                     public uint uintVal;
 
                     [FieldOffset(0)]
@@ -752,7 +741,6 @@ namespace TerraFX.Interop
                     public sbyte* pcVal;
 
                     [FieldOffset(0)]
-                    [NativeTypeName("USHORT *")]
                     public ushort* puiVal;
 
                     [FieldOffset(0)]
@@ -764,11 +752,9 @@ namespace TerraFX.Interop
                     public ulong* pullVal;
 
                     [FieldOffset(0)]
-                    [NativeTypeName("INT *")]
                     public int* pintVal;
 
                     [FieldOffset(0)]
-                    [NativeTypeName("UINT *")]
                     public uint* puintVal;
 
                     [FieldOffset(0)]

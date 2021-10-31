@@ -7,10 +7,8 @@ namespace TerraFX.Interop
 {
     public partial struct D3D11_FEATURE_DATA_GPU_VIRTUAL_ADDRESS_SUPPORT
     {
-        [NativeTypeName("UINT")]
         public uint MaxGPUVirtualAddressBitsPerResource;
 
-        [NativeTypeName("UINT")]
         public uint MaxGPUVirtualAddressBitsPerProcess;
     }
 }

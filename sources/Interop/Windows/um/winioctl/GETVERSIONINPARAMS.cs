@@ -10,16 +10,12 @@ namespace TerraFX.Interop
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe partial struct GETVERSIONINPARAMS
     {
-        [NativeTypeName("BYTE")]
         public byte bVersion;
 
-        [NativeTypeName("BYTE")]
         public byte bRevision;
 
-        [NativeTypeName("BYTE")]
         public byte bReserved;
 
-        [NativeTypeName("BYTE")]
         public byte bIDEDeviceMap;
 
         [NativeTypeName("DWORD")]

@@ -342,7 +342,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(46)]
-        public HRESULT get_guid([NativeTypeName("GUID *")] Guid* pRetVal)
+        public HRESULT get_guid(Guid* pRetVal)
         {
             return ((delegate* unmanaged<IDiaSymbol3*, Guid*, int>)(lpVtbl[46]))((IDiaSymbol3*)Unsafe.AsPointer(ref this), pRetVal);
         }
@@ -608,7 +608,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(84)]
-        public HRESULT get_dataBytes([NativeTypeName("DWORD")] uint cbData, [NativeTypeName("DWORD *")] uint* pcbData, [NativeTypeName("BYTE *")] byte* pbData)
+        public HRESULT get_dataBytes([NativeTypeName("DWORD")] uint cbData, [NativeTypeName("DWORD *")] uint* pcbData, byte* pbData)
         {
             return ((delegate* unmanaged<IDiaSymbol3*, uint, uint*, byte*, int>)(lpVtbl[84]))((IDiaSymbol3*)Unsafe.AsPointer(ref this), cbData, pcbData, pbData);
         }

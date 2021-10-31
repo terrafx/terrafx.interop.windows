@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public partial struct D3D12_DEPTH_STENCIL_VALUE
     {
-        [NativeTypeName("FLOAT")]
         public float Depth;
 
         [NativeTypeName("UINT8")]

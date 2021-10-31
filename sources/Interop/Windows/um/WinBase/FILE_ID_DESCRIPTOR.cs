@@ -53,7 +53,6 @@ namespace TerraFX.Interop
             public LARGE_INTEGER FileId;
 
             [FieldOffset(0)]
-            [NativeTypeName("GUID")]
             public Guid ObjectId;
 
             [FieldOffset(0)]

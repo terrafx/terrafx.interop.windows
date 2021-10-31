@@ -12,10 +12,8 @@ namespace TerraFX.Interop
         [NativeTypeName("ULONG")]
         public uint Length;
 
-        [NativeTypeName("BYTE *")]
         public byte* Pattern;
 
-        [NativeTypeName("BYTE *")]
         public byte* Mask;
 
         public ULARGE_INTEGER DataOffset;

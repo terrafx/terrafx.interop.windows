@@ -83,14 +83,14 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        public HRESULT GetAttributesOf([NativeTypeName("UINT")] uint cidl, [NativeTypeName("LPCITEMIDLIST *")] ITEMIDLIST** apidl, [NativeTypeName("SFGAOF *")] uint* rgfInOut)
+        public HRESULT GetAttributesOf(uint cidl, [NativeTypeName("LPCITEMIDLIST *")] ITEMIDLIST** apidl, [NativeTypeName("SFGAOF *")] uint* rgfInOut)
         {
             return ((delegate* unmanaged<IShellFolder2*, uint, ITEMIDLIST**, uint*, int>)(lpVtbl[9]))((IShellFolder2*)Unsafe.AsPointer(ref this), cidl, apidl, rgfInOut);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(10)]
-        public HRESULT GetUIObjectOf(HWND hwndOwner, [NativeTypeName("UINT")] uint cidl, [NativeTypeName("LPCITEMIDLIST *")] ITEMIDLIST** apidl, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("UINT *")] uint* rgfReserved, void** ppv)
+        public HRESULT GetUIObjectOf(HWND hwndOwner, uint cidl, [NativeTypeName("LPCITEMIDLIST *")] ITEMIDLIST** apidl, [NativeTypeName("const IID &")] Guid* riid, uint* rgfReserved, void** ppv)
         {
             return ((delegate* unmanaged<IShellFolder2*, HWND, uint, ITEMIDLIST**, Guid*, uint*, void**, int>)(lpVtbl[10]))((IShellFolder2*)Unsafe.AsPointer(ref this), hwndOwner, cidl, apidl, riid, rgfReserved, ppv);
         }
@@ -111,7 +111,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(13)]
-        public HRESULT GetDefaultSearchGUID([NativeTypeName("GUID *")] Guid* pguid)
+        public HRESULT GetDefaultSearchGUID(Guid* pguid)
         {
             return ((delegate* unmanaged<IShellFolder2*, Guid*, int>)(lpVtbl[13]))((IShellFolder2*)Unsafe.AsPointer(ref this), pguid);
         }
@@ -132,7 +132,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(16)]
-        public HRESULT GetDefaultColumnState([NativeTypeName("UINT")] uint iColumn, [NativeTypeName("SHCOLSTATEF *")] uint* pcsFlags)
+        public HRESULT GetDefaultColumnState(uint iColumn, [NativeTypeName("SHCOLSTATEF *")] uint* pcsFlags)
         {
             return ((delegate* unmanaged<IShellFolder2*, uint, uint*, int>)(lpVtbl[16]))((IShellFolder2*)Unsafe.AsPointer(ref this), iColumn, pcsFlags);
         }
@@ -146,14 +146,14 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(18)]
-        public HRESULT GetDetailsOf([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl, [NativeTypeName("UINT")] uint iColumn, SHELLDETAILS* psd)
+        public HRESULT GetDetailsOf([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl, uint iColumn, SHELLDETAILS* psd)
         {
             return ((delegate* unmanaged<IShellFolder2*, ITEMIDLIST*, uint, SHELLDETAILS*, int>)(lpVtbl[18]))((IShellFolder2*)Unsafe.AsPointer(ref this), pidl, iColumn, psd);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(19)]
-        public HRESULT MapColumnToSCID([NativeTypeName("UINT")] uint iColumn, [NativeTypeName("SHCOLUMNID *")] PROPERTYKEY* pscid)
+        public HRESULT MapColumnToSCID(uint iColumn, [NativeTypeName("SHCOLUMNID *")] PROPERTYKEY* pscid)
         {
             return ((delegate* unmanaged<IShellFolder2*, uint, PROPERTYKEY*, int>)(lpVtbl[19]))((IShellFolder2*)Unsafe.AsPointer(ref this), iColumn, pscid);
         }

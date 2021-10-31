@@ -24,7 +24,6 @@ namespace TerraFX.Interop
 
         public HANDLE hMemberFile;
 
-        [NativeTypeName("BYTE *")]
         public byte* pbCalculatedFileHash;
 
         [NativeTypeName("DWORD")]

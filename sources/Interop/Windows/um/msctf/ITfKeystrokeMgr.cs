@@ -90,7 +90,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(10)]
-        public HRESULT GetPreservedKey(ITfContext* pic, [NativeTypeName("const TF_PRESERVEDKEY *")] TF_PRESERVEDKEY* pprekey, [NativeTypeName("GUID *")] Guid* pguid)
+        public HRESULT GetPreservedKey(ITfContext* pic, [NativeTypeName("const TF_PRESERVEDKEY *")] TF_PRESERVEDKEY* pprekey, Guid* pguid)
         {
             return ((delegate* unmanaged<ITfKeystrokeMgr*, ITfContext*, TF_PRESERVEDKEY*, Guid*, int>)(lpVtbl[10]))((ITfKeystrokeMgr*)Unsafe.AsPointer(ref this), pic, pprekey, pguid);
         }

@@ -23,15 +23,13 @@ namespace TerraFX.Interop
         public static extern DXGI_RGBA D2D1ConvertColorSpace(D2D1_COLOR_SPACE sourceColorSpace, D2D1_COLOR_SPACE destinationColorSpace, [NativeTypeName("const D2D1_COLOR_F *")] DXGI_RGBA* color);
 
         [DllImport("d2d1", ExactSpelling = true)]
-        public static extern void D2D1SinCos([NativeTypeName("FLOAT")] float angle, [NativeTypeName("FLOAT *")] float* s, [NativeTypeName("FLOAT *")] float* c);
+        public static extern void D2D1SinCos(float angle, float* s, float* c);
 
         [DllImport("d2d1", ExactSpelling = true)]
-        [return: NativeTypeName("FLOAT")]
-        public static extern float D2D1Tan([NativeTypeName("FLOAT")] float angle);
+        public static extern float D2D1Tan(float angle);
 
         [DllImport("d2d1", ExactSpelling = true)]
-        [return: NativeTypeName("FLOAT")]
-        public static extern float D2D1Vec3Length([NativeTypeName("FLOAT")] float x, [NativeTypeName("FLOAT")] float y, [NativeTypeName("FLOAT")] float z);
+        public static extern float D2D1Vec3Length(float x, float y, float z);
 
         [NativeTypeName("#define D2D1_INVALID_PROPERTY_INDEX UINT_MAX")]
         public const uint D2D1_INVALID_PROPERTY_INDEX = 0xffffffff;

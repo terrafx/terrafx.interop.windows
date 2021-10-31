@@ -7,13 +7,10 @@ namespace TerraFX.Interop
 {
     public partial struct DXGI_FRAME_STATISTICS_MEDIA
     {
-        [NativeTypeName("UINT")]
         public uint PresentCount;
 
-        [NativeTypeName("UINT")]
         public uint PresentRefreshCount;
 
-        [NativeTypeName("UINT")]
         public uint SyncRefreshCount;
 
         public LARGE_INTEGER SyncQPCTime;
@@ -22,7 +19,6 @@ namespace TerraFX.Interop
 
         public DXGI_FRAME_PRESENTATION_MODE CompositionMode;
 
-        [NativeTypeName("UINT")]
         public uint ApprovedPresentDuration;
     }
 }

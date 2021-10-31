@@ -22,7 +22,6 @@ namespace TerraFX.Interop
         [NativeTypeName("ULONG")]
         public uint outputMessageOptions;
 
-        [NativeTypeName("USHORT")]
         public ushort parameterCount;
 
         public WS_PARAMETER_DESCRIPTION* parameterDescription;

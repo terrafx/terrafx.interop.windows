@@ -7,10 +7,8 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct IP_PER_ADAPTER_INFO_W2KSP1
     {
-        [NativeTypeName("UINT")]
         public uint AutoconfigEnabled;
 
-        [NativeTypeName("UINT")]
         public uint AutoconfigActive;
 
         [NativeTypeName("PIP_ADDR_STRING")]

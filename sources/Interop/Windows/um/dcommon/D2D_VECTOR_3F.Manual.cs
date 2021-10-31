@@ -9,7 +9,7 @@ namespace TerraFX.Interop
 {
     public partial struct D2D_VECTOR_3F : IEquatable<D2D_VECTOR_3F>
     {
-        public D2D_VECTOR_3F([NativeTypeName("FLOAT")] float x = 0.0f, [NativeTypeName("FLOAT")] float y = 0.0f, [NativeTypeName("FLOAT")] float z = 0.0f)
+        public D2D_VECTOR_3F(float x = 0.0f, float y = 0.0f, float z = 0.0f)
         {
             this.x = x;
             this.y = y;

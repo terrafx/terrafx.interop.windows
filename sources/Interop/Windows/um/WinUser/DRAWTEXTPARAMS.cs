@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public partial struct DRAWTEXTPARAMS
     {
-        [NativeTypeName("UINT")]
         public uint cbSize;
 
         public int iTabLength;
@@ -16,7 +15,6 @@ namespace TerraFX.Interop
 
         public int iRightMargin;
 
-        [NativeTypeName("UINT")]
         public uint uiLengthDrawn;
     }
 }

@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct HDITEMA
     {
-        [NativeTypeName("UINT")]
         public uint mask;
 
         public int cxy;
@@ -28,12 +27,10 @@ namespace TerraFX.Interop
 
         public int iOrder;
 
-        [NativeTypeName("UINT")]
         public uint type;
 
         public void* pvFilter;
 
-        [NativeTypeName("UINT")]
         public uint state;
     }
 }

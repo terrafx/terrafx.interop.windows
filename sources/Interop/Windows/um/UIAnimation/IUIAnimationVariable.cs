@@ -41,21 +41,21 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        public HRESULT GetValue([NativeTypeName("DOUBLE *")] double* value)
+        public HRESULT GetValue(double* value)
         {
             return ((delegate* unmanaged<IUIAnimationVariable*, double*, int>)(lpVtbl[3]))((IUIAnimationVariable*)Unsafe.AsPointer(ref this), value);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT GetFinalValue([NativeTypeName("DOUBLE *")] double* finalValue)
+        public HRESULT GetFinalValue(double* finalValue)
         {
             return ((delegate* unmanaged<IUIAnimationVariable*, double*, int>)(lpVtbl[4]))((IUIAnimationVariable*)Unsafe.AsPointer(ref this), finalValue);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        public HRESULT GetPreviousValue([NativeTypeName("DOUBLE *")] double* previousValue)
+        public HRESULT GetPreviousValue(double* previousValue)
         {
             return ((delegate* unmanaged<IUIAnimationVariable*, double*, int>)(lpVtbl[5]))((IUIAnimationVariable*)Unsafe.AsPointer(ref this), previousValue);
         }
@@ -90,14 +90,14 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(10)]
-        public HRESULT SetLowerBound([NativeTypeName("DOUBLE")] double bound)
+        public HRESULT SetLowerBound(double bound)
         {
             return ((delegate* unmanaged<IUIAnimationVariable*, double, int>)(lpVtbl[10]))((IUIAnimationVariable*)Unsafe.AsPointer(ref this), bound);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(11)]
-        public HRESULT SetUpperBound([NativeTypeName("DOUBLE")] double bound)
+        public HRESULT SetUpperBound(double bound)
         {
             return ((delegate* unmanaged<IUIAnimationVariable*, double, int>)(lpVtbl[11]))((IUIAnimationVariable*)Unsafe.AsPointer(ref this), bound);
         }

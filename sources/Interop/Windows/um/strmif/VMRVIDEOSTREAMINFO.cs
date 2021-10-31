@@ -19,7 +19,6 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint dwStrmID;
 
-        [NativeTypeName("FLOAT")]
         public float fAlpha;
 
         public DDCOLORKEY ddClrKey;

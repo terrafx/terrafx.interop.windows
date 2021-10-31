@@ -15,15 +15,12 @@ namespace TerraFX.Interop
 
         public BOOL Supported;
 
-        [NativeTypeName("UINT")]
         public uint K;
 
         public D3D12_WAVE_MMA_ACCUM_DATATYPE AccumDataTypes;
 
-        [NativeTypeName("UINT")]
         public uint RequiredWaveLaneCountMin;
 
-        [NativeTypeName("UINT")]
         public uint RequiredWaveLaneCountMax;
     }
 }

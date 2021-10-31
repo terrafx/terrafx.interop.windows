@@ -48,7 +48,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public ID3D12FunctionReflection* GetFunctionByIndex([NativeTypeName("INT")] int FunctionIndex)
+        public ID3D12FunctionReflection* GetFunctionByIndex(int FunctionIndex)
         {
             return ((delegate* unmanaged<ID3D12LibraryReflection*, int, ID3D12FunctionReflection*>)(lpVtbl[4]))((ID3D12LibraryReflection*)Unsafe.AsPointer(ref this), FunctionIndex);
         }

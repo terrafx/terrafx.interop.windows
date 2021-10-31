@@ -12,13 +12,10 @@ namespace TerraFX.Interop
         [NativeTypeName("WICPixelFormatGUID")]
         public Guid Format;
 
-        [NativeTypeName("BYTE *")]
         public byte* pbBuffer;
 
-        [NativeTypeName("UINT")]
         public uint cbStride;
 
-        [NativeTypeName("UINT")]
         public uint cbBufferSize;
     }
 }

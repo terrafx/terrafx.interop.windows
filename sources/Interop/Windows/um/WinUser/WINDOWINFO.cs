@@ -23,10 +23,8 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint dwWindowStatus;
 
-        [NativeTypeName("UINT")]
         public uint cxWindowBorders;
 
-        [NativeTypeName("UINT")]
         public uint cyWindowBorders;
 
         [NativeTypeName("ATOM")]

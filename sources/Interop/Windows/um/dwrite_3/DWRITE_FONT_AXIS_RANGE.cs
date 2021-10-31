@@ -9,10 +9,8 @@ namespace TerraFX.Interop
     {
         public DWRITE_FONT_AXIS_TAG axisTag;
 
-        [NativeTypeName("FLOAT")]
         public float minValue;
 
-        [NativeTypeName("FLOAT")]
         public float maxValue;
     }
 }

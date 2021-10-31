@@ -92,7 +92,7 @@ namespace TerraFX.Interop
 
         [DllImport("winhttp", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
-        public static extern uint WinHttpQueryHeadersEx(HINTERNET hRequest, [NativeTypeName("DWORD")] uint dwInfoLevel, [NativeTypeName("ULONGLONG")] ulong ullFlags, [NativeTypeName("UINT")] uint uiCodePage, [NativeTypeName("PDWORD")] uint* pdwIndex, [NativeTypeName("PWINHTTP_HEADER_NAME")] WINHTTP_HEADER_NAME* pHeaderName, [NativeTypeName("PVOID")] void* pBuffer, [NativeTypeName("PDWORD")] uint* pdwBufferLength, [NativeTypeName("PWINHTTP_EXTENDED_HEADER *")] WINHTTP_EXTENDED_HEADER** ppHeaders, [NativeTypeName("PDWORD")] uint* pdwHeadersCount);
+        public static extern uint WinHttpQueryHeadersEx(HINTERNET hRequest, [NativeTypeName("DWORD")] uint dwInfoLevel, [NativeTypeName("ULONGLONG")] ulong ullFlags, uint uiCodePage, [NativeTypeName("PDWORD")] uint* pdwIndex, [NativeTypeName("PWINHTTP_HEADER_NAME")] WINHTTP_HEADER_NAME* pHeaderName, [NativeTypeName("PVOID")] void* pBuffer, [NativeTypeName("PDWORD")] uint* pdwBufferLength, [NativeTypeName("PWINHTTP_EXTENDED_HEADER *")] WINHTTP_EXTENDED_HEADER** ppHeaders, [NativeTypeName("PDWORD")] uint* pdwHeadersCount);
 
         [DllImport("winhttp", ExactSpelling = true, SetLastError = true)]
         public static extern BOOL WinHttpDetectAutoProxyConfigUrl([NativeTypeName("DWORD")] uint dwAutoDetectFlags, [NativeTypeName("LPWSTR *")] ushort** ppwstrAutoConfigUrl);
@@ -110,7 +110,7 @@ namespace TerraFX.Interop
 
         [DllImport("winhttp", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
-        public static extern uint WinHttpGetProxyForUrlEx2(HINTERNET hResolver, [NativeTypeName("PCWSTR")] ushort* pcwszUrl, WINHTTP_AUTOPROXY_OPTIONS* pAutoProxyOptions, [NativeTypeName("DWORD")] uint cbInterfaceSelectionContext, [NativeTypeName("BYTE *")] byte* pInterfaceSelectionContext, [NativeTypeName("DWORD_PTR")] nuint pContext);
+        public static extern uint WinHttpGetProxyForUrlEx2(HINTERNET hResolver, [NativeTypeName("PCWSTR")] ushort* pcwszUrl, WINHTTP_AUTOPROXY_OPTIONS* pAutoProxyOptions, [NativeTypeName("DWORD")] uint cbInterfaceSelectionContext, byte* pInterfaceSelectionContext, [NativeTypeName("DWORD_PTR")] nuint pContext);
 
         [DllImport("winhttp", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
@@ -165,15 +165,15 @@ namespace TerraFX.Interop
 
         [DllImport("winhttp", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
-        public static extern uint WinHttpWebSocketShutdown(HINTERNET hWebSocket, [NativeTypeName("USHORT")] ushort usStatus, [NativeTypeName("PVOID")] void* pvReason, [NativeTypeName("DWORD")] uint dwReasonLength);
+        public static extern uint WinHttpWebSocketShutdown(HINTERNET hWebSocket, ushort usStatus, [NativeTypeName("PVOID")] void* pvReason, [NativeTypeName("DWORD")] uint dwReasonLength);
 
         [DllImport("winhttp", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
-        public static extern uint WinHttpWebSocketClose(HINTERNET hWebSocket, [NativeTypeName("USHORT")] ushort usStatus, [NativeTypeName("PVOID")] void* pvReason, [NativeTypeName("DWORD")] uint dwReasonLength);
+        public static extern uint WinHttpWebSocketClose(HINTERNET hWebSocket, ushort usStatus, [NativeTypeName("PVOID")] void* pvReason, [NativeTypeName("DWORD")] uint dwReasonLength);
 
         [DllImport("winhttp", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
-        public static extern uint WinHttpWebSocketQueryCloseStatus(HINTERNET hWebSocket, [NativeTypeName("USHORT *")] ushort* pusStatus, [NativeTypeName("PVOID")] void* pvReason, [NativeTypeName("DWORD")] uint dwReasonLength, [NativeTypeName("DWORD *")] uint* pdwReasonLengthConsumed);
+        public static extern uint WinHttpWebSocketQueryCloseStatus(HINTERNET hWebSocket, ushort* pusStatus, [NativeTypeName("PVOID")] void* pvReason, [NativeTypeName("DWORD")] uint dwReasonLength, [NativeTypeName("DWORD *")] uint* pdwReasonLengthConsumed);
 
         [NativeTypeName("#define INTERNET_DEFAULT_PORT 0")]
         public const int INTERNET_DEFAULT_PORT = 0;

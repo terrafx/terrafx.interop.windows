@@ -41,7 +41,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        public HRESULT GetHash([NativeTypeName("UINT32 *")] uint* bufferSize, [NativeTypeName("BYTE **")] byte** buffer)
+        public HRESULT GetHash([NativeTypeName("UINT32 *")] uint* bufferSize, byte** buffer)
         {
             return ((delegate* unmanaged<IAppxBlockMapBlock*, uint*, byte**, int>)(lpVtbl[3]))((IAppxBlockMapBlock*)Unsafe.AsPointer(ref this), bufferSize, buffer);
         }

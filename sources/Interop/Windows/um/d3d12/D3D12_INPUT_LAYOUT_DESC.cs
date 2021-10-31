@@ -10,7 +10,6 @@ namespace TerraFX.Interop
         [NativeTypeName("const D3D12_INPUT_ELEMENT_DESC *")]
         public D3D12_INPUT_ELEMENT_DESC* pInputElementDescs;
 
-        [NativeTypeName("UINT")]
         public uint NumElements;
     }
 }

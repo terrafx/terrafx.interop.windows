@@ -10,7 +10,6 @@ namespace TerraFX.Interop
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public partial struct SHChangeDWORDAsIDList
     {
-        [NativeTypeName("USHORT")]
         public ushort cb;
 
         [NativeTypeName("DWORD")]
@@ -19,7 +18,6 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint dwItem2;
 
-        [NativeTypeName("USHORT")]
         public ushort cbZero;
     }
 }

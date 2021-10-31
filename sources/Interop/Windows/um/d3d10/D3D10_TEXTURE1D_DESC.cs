@@ -7,26 +7,20 @@ namespace TerraFX.Interop
 {
     public partial struct D3D10_TEXTURE1D_DESC
     {
-        [NativeTypeName("UINT")]
         public uint Width;
 
-        [NativeTypeName("UINT")]
         public uint MipLevels;
 
-        [NativeTypeName("UINT")]
         public uint ArraySize;
 
         public DXGI_FORMAT Format;
 
         public D3D10_USAGE Usage;
 
-        [NativeTypeName("UINT")]
         public uint BindFlags;
 
-        [NativeTypeName("UINT")]
         public uint CPUAccessFlags;
 
-        [NativeTypeName("UINT")]
         public uint MiscFlags;
     }
 }

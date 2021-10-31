@@ -9,16 +9,12 @@ namespace TerraFX.Interop
     {
         public BOOL Enable;
 
-        [NativeTypeName("UINT")]
         public uint OutputIndex;
 
-        [NativeTypeName("UINT")]
         public uint InputFrameOrField;
 
-        [NativeTypeName("UINT")]
         public uint PastFrames;
 
-        [NativeTypeName("UINT")]
         public uint FutureFrames;
 
         public ID3D11VideoProcessorInputView** ppPastSurfaces;

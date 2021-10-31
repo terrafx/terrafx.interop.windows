@@ -90,7 +90,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(10)]
-        public HRESULT GetGUID([NativeTypeName("const GUID &")] Guid* guidKey, [NativeTypeName("GUID *")] Guid* pguidValue)
+        public HRESULT GetGUID([NativeTypeName("const GUID &")] Guid* guidKey, Guid* pguidValue)
         {
             return ((delegate* unmanaged<IMFMediaEvent*, Guid*, Guid*, int>)(lpVtbl[10]))((IMFMediaEvent*)Unsafe.AsPointer(ref this), guidKey, pguidValue);
         }
@@ -237,7 +237,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(31)]
-        public HRESULT GetItemByIndex([NativeTypeName("UINT32")] uint unIndex, [NativeTypeName("GUID *")] Guid* pguidKey, PROPVARIANT* pValue)
+        public HRESULT GetItemByIndex([NativeTypeName("UINT32")] uint unIndex, Guid* pguidKey, PROPVARIANT* pValue)
         {
             return ((delegate* unmanaged<IMFMediaEvent*, uint, Guid*, PROPVARIANT*, int>)(lpVtbl[31]))((IMFMediaEvent*)Unsafe.AsPointer(ref this), unIndex, pguidKey, pValue);
         }
@@ -258,7 +258,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(34)]
-        public HRESULT GetExtendedType([NativeTypeName("GUID *")] Guid* pguidExtendedType)
+        public HRESULT GetExtendedType(Guid* pguidExtendedType)
         {
             return ((delegate* unmanaged<IMFMediaEvent*, Guid*, int>)(lpVtbl[34]))((IMFMediaEvent*)Unsafe.AsPointer(ref this), pguidExtendedType);
         }

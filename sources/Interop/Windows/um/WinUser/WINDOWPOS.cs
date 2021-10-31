@@ -19,7 +19,6 @@ namespace TerraFX.Interop
 
         public int cy;
 
-        [NativeTypeName("UINT")]
         public uint flags;
     }
 }

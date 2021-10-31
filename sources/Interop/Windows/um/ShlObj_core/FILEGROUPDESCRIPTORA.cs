@@ -12,7 +12,6 @@ namespace TerraFX.Interop
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public partial struct FILEGROUPDESCRIPTORA
     {
-        [NativeTypeName("UINT")]
         public uint cItems;
 
         [NativeTypeName("FILEDESCRIPTORA [1]")]

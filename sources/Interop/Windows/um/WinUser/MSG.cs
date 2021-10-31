@@ -9,7 +9,6 @@ namespace TerraFX.Interop
     {
         public HWND hwnd;
 
-        [NativeTypeName("UINT")]
         public uint message;
 
         [NativeTypeName("WPARAM")]

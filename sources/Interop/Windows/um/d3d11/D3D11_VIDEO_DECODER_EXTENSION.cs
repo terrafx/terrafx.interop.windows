@@ -7,20 +7,16 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct D3D11_VIDEO_DECODER_EXTENSION
     {
-        [NativeTypeName("UINT")]
         public uint Function;
 
         public void* pPrivateInputData;
 
-        [NativeTypeName("UINT")]
         public uint PrivateInputDataSize;
 
         public void* pPrivateOutputData;
 
-        [NativeTypeName("UINT")]
         public uint PrivateOutputDataSize;
 
-        [NativeTypeName("UINT")]
         public uint ResourceCount;
 
         public ID3D11Resource** ppResourceList;

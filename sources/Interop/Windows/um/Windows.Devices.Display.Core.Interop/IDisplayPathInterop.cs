@@ -48,7 +48,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT GetSourceId([NativeTypeName("UINT *")] uint* pSourceId)
+        public HRESULT GetSourceId(uint* pSourceId)
         {
             return ((delegate* unmanaged<IDisplayPathInterop*, uint*, int>)(lpVtbl[4]))((IDisplayPathInterop*)Unsafe.AsPointer(ref this), pSourceId);
         }

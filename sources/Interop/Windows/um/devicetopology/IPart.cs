@@ -48,7 +48,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT GetLocalId([NativeTypeName("UINT *")] uint* pnId)
+        public HRESULT GetLocalId(uint* pnId)
         {
             return ((delegate* unmanaged<IPart*, uint*, int>)(lpVtbl[4]))((IPart*)Unsafe.AsPointer(ref this), pnId);
         }
@@ -69,21 +69,21 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        public HRESULT GetSubType([NativeTypeName("GUID *")] Guid* pSubType)
+        public HRESULT GetSubType(Guid* pSubType)
         {
             return ((delegate* unmanaged<IPart*, Guid*, int>)(lpVtbl[7]))((IPart*)Unsafe.AsPointer(ref this), pSubType);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        public HRESULT GetControlInterfaceCount([NativeTypeName("UINT *")] uint* pCount)
+        public HRESULT GetControlInterfaceCount(uint* pCount)
         {
             return ((delegate* unmanaged<IPart*, uint*, int>)(lpVtbl[8]))((IPart*)Unsafe.AsPointer(ref this), pCount);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        public HRESULT GetControlInterface([NativeTypeName("UINT")] uint nIndex, IControlInterface** ppInterfaceDesc)
+        public HRESULT GetControlInterface(uint nIndex, IControlInterface** ppInterfaceDesc)
         {
             return ((delegate* unmanaged<IPart*, uint, IControlInterface**, int>)(lpVtbl[9]))((IPart*)Unsafe.AsPointer(ref this), nIndex, ppInterfaceDesc);
         }

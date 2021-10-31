@@ -12,10 +12,10 @@ namespace TerraFX.Interop
     {
         [DllImport("wintrust", ExactSpelling = true)]
         [return: NativeTypeName("LONG")]
-        public static extern int WinVerifyTrust(HWND hwnd, [NativeTypeName("GUID *")] Guid* pgActionID, [NativeTypeName("LPVOID")] void* pWVTData);
+        public static extern int WinVerifyTrust(HWND hwnd, Guid* pgActionID, [NativeTypeName("LPVOID")] void* pWVTData);
 
         [DllImport("wintrust", ExactSpelling = true)]
-        public static extern HRESULT WinVerifyTrustEx(HWND hwnd, [NativeTypeName("GUID *")] Guid* pgActionID, WINTRUST_DATA* pWinTrustData);
+        public static extern HRESULT WinVerifyTrustEx(HWND hwnd, Guid* pgActionID, WINTRUST_DATA* pWinTrustData);
 
         [DllImport("wintrust", ExactSpelling = true)]
         public static extern void WintrustGetRegPolicyFlags([NativeTypeName("DWORD *")] uint* pdwPolicyFlags);
@@ -24,13 +24,13 @@ namespace TerraFX.Interop
         public static extern BOOL WintrustSetRegPolicyFlags([NativeTypeName("DWORD")] uint dwPolicyFlags);
 
         [DllImport("wintrust", ExactSpelling = true, SetLastError = true)]
-        public static extern BOOL WintrustAddActionID([NativeTypeName("GUID *")] Guid* pgActionID, [NativeTypeName("DWORD")] uint fdwFlags, CRYPT_REGISTER_ACTIONID* psProvInfo);
+        public static extern BOOL WintrustAddActionID(Guid* pgActionID, [NativeTypeName("DWORD")] uint fdwFlags, CRYPT_REGISTER_ACTIONID* psProvInfo);
 
         [DllImport("wintrust", ExactSpelling = true)]
-        public static extern BOOL WintrustRemoveActionID([NativeTypeName("GUID *")] Guid* pgActionID);
+        public static extern BOOL WintrustRemoveActionID(Guid* pgActionID);
 
         [DllImport("wintrust", ExactSpelling = true)]
-        public static extern BOOL WintrustLoadFunctionPointers([NativeTypeName("GUID *")] Guid* pgActionID, CRYPT_PROVIDER_FUNCTIONS* pPfns);
+        public static extern BOOL WintrustLoadFunctionPointers(Guid* pgActionID, CRYPT_PROVIDER_FUNCTIONS* pPfns);
 
         [DllImport("wintrust", ExactSpelling = true, SetLastError = true)]
         public static extern BOOL WintrustAddDefaultForUsage([NativeTypeName("const char *")] sbyte* pszUsageOID, CRYPT_PROVIDER_REGDEFUSAGE* psDefUsage);
@@ -48,7 +48,7 @@ namespace TerraFX.Interop
         public static extern CRYPT_PROVIDER_DATA* WTHelperProvDataFromStateData(HANDLE hStateData);
 
         [DllImport("wintrust", ExactSpelling = true)]
-        public static extern CRYPT_PROVIDER_PRIVDATA* WTHelperGetProvPrivateDataFromChain(CRYPT_PROVIDER_DATA* pProvData, [NativeTypeName("GUID *")] Guid* pgProviderID);
+        public static extern CRYPT_PROVIDER_PRIVDATA* WTHelperGetProvPrivateDataFromChain(CRYPT_PROVIDER_DATA* pProvData, Guid* pgProviderID);
 
         [DllImport("wintrust", ExactSpelling = true)]
         public static extern BOOL WTHelperCertIsSelfSigned([NativeTypeName("DWORD")] uint dwEncoding, CERT_INFO* pCert);

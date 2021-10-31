@@ -23,11 +23,11 @@ namespace TerraFX.Interop
 
         [DllImport("rstrtmgr", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
-        public static extern uint RmRegisterResources([NativeTypeName("DWORD")] uint dwSessionHandle, [NativeTypeName("UINT")] uint nFiles, [NativeTypeName("LPCWSTR []")] ushort** rgsFileNames, [NativeTypeName("UINT")] uint nApplications, [NativeTypeName("RM_UNIQUE_PROCESS []")] RM_UNIQUE_PROCESS* rgApplications, [NativeTypeName("UINT")] uint nServices, [NativeTypeName("LPCWSTR []")] ushort** rgsServiceNames);
+        public static extern uint RmRegisterResources([NativeTypeName("DWORD")] uint dwSessionHandle, uint nFiles, [NativeTypeName("LPCWSTR []")] ushort** rgsFileNames, uint nApplications, [NativeTypeName("RM_UNIQUE_PROCESS []")] RM_UNIQUE_PROCESS* rgApplications, uint nServices, [NativeTypeName("LPCWSTR []")] ushort** rgsServiceNames);
 
         [DllImport("rstrtmgr", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
-        public static extern uint RmGetList([NativeTypeName("DWORD")] uint dwSessionHandle, [NativeTypeName("UINT *")] uint* pnProcInfoNeeded, [NativeTypeName("UINT *")] uint* pnProcInfo, [NativeTypeName("RM_PROCESS_INFO []")] RM_PROCESS_INFO* rgAffectedApps, [NativeTypeName("LPDWORD")] uint* lpdwRebootReasons);
+        public static extern uint RmGetList([NativeTypeName("DWORD")] uint dwSessionHandle, uint* pnProcInfoNeeded, uint* pnProcInfo, [NativeTypeName("RM_PROCESS_INFO []")] RM_PROCESS_INFO* rgAffectedApps, [NativeTypeName("LPDWORD")] uint* lpdwRebootReasons);
 
         [DllImport("rstrtmgr", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]

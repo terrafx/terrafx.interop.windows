@@ -11,12 +11,10 @@ namespace TerraFX.Interop
     {
         public D3D11_OMAC omac;
 
-        [NativeTypeName("GUID")]
         public Guid ConfigureType;
 
         public HANDLE hChannel;
 
-        [NativeTypeName("UINT")]
         public uint SequenceNumber;
 
         public HRESULT ReturnCode;

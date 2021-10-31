@@ -62,14 +62,14 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        public HRESULT QueryPreferredFormat([NativeTypeName("GUID *")] Guid* pFormat)
+        public HRESULT QueryPreferredFormat(Guid* pFormat)
         {
             return ((delegate* unmanaged<IMediaSeeking*, Guid*, int>)(lpVtbl[6]))((IMediaSeeking*)Unsafe.AsPointer(ref this), pFormat);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        public HRESULT GetTimeFormat([NativeTypeName("GUID *")] Guid* pFormat)
+        public HRESULT GetTimeFormat(Guid* pFormat)
         {
             return ((delegate* unmanaged<IMediaSeeking*, Guid*, int>)(lpVtbl[7]))((IMediaSeeking*)Unsafe.AsPointer(ref this), pFormat);
         }

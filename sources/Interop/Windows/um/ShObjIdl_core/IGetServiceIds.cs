@@ -41,7 +41,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        public HRESULT GetServiceIds([NativeTypeName("ULONG *")] uint* serviceIdCount, [NativeTypeName("GUID **")] Guid** serviceIds)
+        public HRESULT GetServiceIds([NativeTypeName("ULONG *")] uint* serviceIdCount, Guid** serviceIds)
         {
             return ((delegate* unmanaged<IGetServiceIds*, uint*, Guid**, int>)(lpVtbl[3]))((IGetServiceIds*)Unsafe.AsPointer(ref this), serviceIdCount, serviceIds);
         }

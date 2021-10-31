@@ -41,14 +41,14 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        public HRESULT GetJackCount([NativeTypeName("UINT *")] uint* pcJacks)
+        public HRESULT GetJackCount(uint* pcJacks)
         {
             return ((delegate* unmanaged<IKsJackDescription2*, uint*, int>)(lpVtbl[3]))((IKsJackDescription2*)Unsafe.AsPointer(ref this), pcJacks);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT GetJackDescription2([NativeTypeName("UINT")] uint nJack, KSJACK_DESCRIPTION2* pDescription2)
+        public HRESULT GetJackDescription2(uint nJack, KSJACK_DESCRIPTION2* pDescription2)
         {
             return ((delegate* unmanaged<IKsJackDescription2*, uint, KSJACK_DESCRIPTION2*, int>)(lpVtbl[4]))((IKsJackDescription2*)Unsafe.AsPointer(ref this), nJack, pDescription2);
         }

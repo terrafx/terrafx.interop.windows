@@ -17,7 +17,6 @@ namespace TerraFX.Interop
 
         public HINSTANCE hinst;
 
-        [NativeTypeName("UINT")]
         public uint uFlags;
 
         [NativeTypeName("LPARAM")]

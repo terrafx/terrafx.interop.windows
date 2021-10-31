@@ -22,7 +22,6 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint ProccntUsage;
 
-        [NativeTypeName("BYTE *")]
         public byte* modBaseAddr;
 
         [NativeTypeName("DWORD")]

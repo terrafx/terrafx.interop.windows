@@ -11,7 +11,6 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct D3D12_VIDEO_DECODE_INPUT_STREAM_ARGUMENTS
     {
-        [NativeTypeName("UINT")]
         public uint NumFrameArguments;
 
         [NativeTypeName("D3D12_VIDEO_DECODE_FRAME_ARGUMENT [10]")]

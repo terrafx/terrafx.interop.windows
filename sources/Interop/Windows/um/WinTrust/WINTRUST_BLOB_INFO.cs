@@ -12,7 +12,6 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint cbStruct;
 
-        [NativeTypeName("GUID")]
         public Guid gSubject;
 
         [NativeTypeName("LPCWSTR")]
@@ -21,13 +20,11 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint cbMemObject;
 
-        [NativeTypeName("BYTE *")]
         public byte* pbMemObject;
 
         [NativeTypeName("DWORD")]
         public uint cbMemSignedMsg;
 
-        [NativeTypeName("BYTE *")]
         public byte* pbMemSignedMsg;
     }
 }

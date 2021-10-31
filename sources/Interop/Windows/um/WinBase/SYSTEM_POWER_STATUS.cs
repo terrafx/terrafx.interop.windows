@@ -7,16 +7,12 @@ namespace TerraFX.Interop
 {
     public partial struct SYSTEM_POWER_STATUS
     {
-        [NativeTypeName("BYTE")]
         public byte ACLineStatus;
 
-        [NativeTypeName("BYTE")]
         public byte BatteryFlag;
 
-        [NativeTypeName("BYTE")]
         public byte BatteryLifePercent;
 
-        [NativeTypeName("BYTE")]
         public byte SystemStatusFlag;
 
         [NativeTypeName("DWORD")]

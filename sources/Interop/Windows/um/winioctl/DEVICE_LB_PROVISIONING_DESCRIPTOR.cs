@@ -17,7 +17,7 @@ namespace TerraFX.Interop
 
         public byte _bitfield;
 
-        [NativeTypeName("BYTE : 1")]
+        [NativeTypeName("byte : 1")]
         public byte ThinProvisioningEnabled
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -33,7 +33,7 @@ namespace TerraFX.Interop
             }
         }
 
-        [NativeTypeName("BYTE : 1")]
+        [NativeTypeName("byte : 1")]
         public byte ThinProvisioningReadZeros
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -49,7 +49,7 @@ namespace TerraFX.Interop
             }
         }
 
-        [NativeTypeName("BYTE : 3")]
+        [NativeTypeName("byte : 3")]
         public byte AnchorSupported
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -65,7 +65,7 @@ namespace TerraFX.Interop
             }
         }
 
-        [NativeTypeName("BYTE : 1")]
+        [NativeTypeName("byte : 1")]
         public byte UnmapGranularityAlignmentValid
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -81,7 +81,7 @@ namespace TerraFX.Interop
             }
         }
 
-        [NativeTypeName("BYTE : 1")]
+        [NativeTypeName("byte : 1")]
         public byte GetFreeSpaceSupported
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -97,7 +97,7 @@ namespace TerraFX.Interop
             }
         }
 
-        [NativeTypeName("BYTE : 1")]
+        [NativeTypeName("byte : 1")]
         public byte MapSupported
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]

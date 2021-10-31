@@ -10,7 +10,6 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint dwWindowID;
 
-        [NativeTypeName("UINT")]
         public uint uiCP;
 
         [NativeTypeName("LPITEMIDLIST")]

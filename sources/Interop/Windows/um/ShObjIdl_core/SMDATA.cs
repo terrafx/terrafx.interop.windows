@@ -17,13 +17,10 @@ namespace TerraFX.Interop
 
         public HWND hwnd;
 
-        [NativeTypeName("UINT")]
         public uint uId;
 
-        [NativeTypeName("UINT")]
         public uint uIdParent;
 
-        [NativeTypeName("UINT")]
         public uint uIdAncestor;
 
         public IUnknown* punk;

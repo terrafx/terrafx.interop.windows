@@ -9,10 +9,8 @@ namespace TerraFX.Interop
     {
         public D2D1_ORIENTATION orientation;
 
-        [NativeTypeName("FLOAT")]
         public float scaleX;
 
-        [NativeTypeName("FLOAT")]
         public float scaleY;
 
         public D2D1_INTERPOLATION_MODE interpolationMode;

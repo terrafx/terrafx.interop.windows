@@ -9,10 +9,8 @@ namespace TerraFX.Interop
     {
         public NMHDR hdr;
 
-        [NativeTypeName("UINT")]
         public uint uBand;
 
-        [NativeTypeName("UINT")]
         public uint wID;
 
         [NativeTypeName("LPARAM")]

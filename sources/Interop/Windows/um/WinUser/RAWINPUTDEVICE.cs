@@ -7,10 +7,8 @@ namespace TerraFX.Interop
 {
     public partial struct RAWINPUTDEVICE
     {
-        [NativeTypeName("USHORT")]
         public ushort usUsagePage;
 
-        [NativeTypeName("USHORT")]
         public ushort usUsage;
 
         [NativeTypeName("DWORD")]

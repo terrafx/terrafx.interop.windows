@@ -86,11 +86,9 @@ namespace TerraFX.Interop
         public static extern BOOL VirtualUnlock([NativeTypeName("LPVOID")] void* lpAddress, [NativeTypeName("SIZE_T")] nuint dwSize);
 
         [DllImport("kernel32", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
         public static extern uint GetWriteWatch([NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("PVOID")] void* lpBaseAddress, [NativeTypeName("SIZE_T")] nuint dwRegionSize, [NativeTypeName("PVOID *")] void** lpAddresses, [NativeTypeName("ULONG_PTR *")] nuint* lpdwCount, [NativeTypeName("LPDWORD")] uint* lpdwGranularity);
 
         [DllImport("kernel32", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
         public static extern uint ResetWriteWatch([NativeTypeName("LPVOID")] void* lpBaseAddress, [NativeTypeName("SIZE_T")] nuint dwRegionSize);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]

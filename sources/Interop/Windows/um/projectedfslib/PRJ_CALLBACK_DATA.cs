@@ -19,10 +19,8 @@ namespace TerraFX.Interop
         [NativeTypeName("INT32")]
         public int CommandId;
 
-        [NativeTypeName("GUID")]
         public Guid FileId;
 
-        [NativeTypeName("GUID")]
         public Guid DataStreamId;
 
         [NativeTypeName("PCWSTR")]

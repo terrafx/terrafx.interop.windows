@@ -11,7 +11,6 @@ namespace TerraFX.Interop
 {
     public partial struct KTMOBJECT_CURSOR
     {
-        [NativeTypeName("GUID")]
         public Guid LastQuery;
 
         [NativeTypeName("DWORD")]

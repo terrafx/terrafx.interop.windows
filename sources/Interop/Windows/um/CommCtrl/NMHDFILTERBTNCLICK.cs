@@ -9,7 +9,6 @@ namespace TerraFX.Interop
     {
         public NMHDR hdr;
 
-        [NativeTypeName("INT")]
         public int iItem;
 
         public RECT rc;

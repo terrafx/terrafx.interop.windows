@@ -10,13 +10,11 @@ namespace TerraFX.Interop
         [NativeTypeName("ALG_ID")]
         public uint HashAlgid;
 
-        [NativeTypeName("BYTE *")]
         public byte* pbInnerString;
 
         [NativeTypeName("DWORD")]
         public uint cbInnerString;
 
-        [NativeTypeName("BYTE *")]
         public byte* pbOuterString;
 
         [NativeTypeName("DWORD")]

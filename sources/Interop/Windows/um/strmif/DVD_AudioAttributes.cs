@@ -9,7 +9,6 @@ namespace TerraFX.Interop
     {
         public DVD_AUDIO_APPMODE AppMode;
 
-        [NativeTypeName("BYTE")]
         public byte AppModeData;
 
         public DVD_AUDIO_FORMAT AudioFormat;
@@ -24,10 +23,8 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint dwFrequency;
 
-        [NativeTypeName("BYTE")]
         public byte bQuantization;
 
-        [NativeTypeName("BYTE")]
         public byte bNumberOfChannels;
 
         [NativeTypeName("DWORD [2]")]

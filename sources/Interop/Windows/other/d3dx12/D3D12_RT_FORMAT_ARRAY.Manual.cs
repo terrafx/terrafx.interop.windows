@@ -10,7 +10,7 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct D3D12_RT_FORMAT_ARRAY
     {
-        public D3D12_RT_FORMAT_ARRAY([NativeTypeName("const DXGI_FORMAT *")] DXGI_FORMAT* pFormats, [NativeTypeName("UINT")] uint NumFormats)
+        public D3D12_RT_FORMAT_ARRAY([NativeTypeName("const DXGI_FORMAT *")] DXGI_FORMAT* pFormats, uint NumFormats)
         {
             this = default;
 

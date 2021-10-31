@@ -9,7 +9,6 @@ namespace TerraFX.Interop
 {
     public partial struct NETWORK_APP_INSTANCE_EA
     {
-        [NativeTypeName("GUID")]
         public Guid AppInstanceID;
 
         [NativeTypeName("DWORD")]

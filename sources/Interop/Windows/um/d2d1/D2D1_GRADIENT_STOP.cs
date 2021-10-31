@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public partial struct D2D1_GRADIENT_STOP
     {
-        [NativeTypeName("FLOAT")]
         public float position;
 
         [NativeTypeName("D2D1_COLOR_F")]

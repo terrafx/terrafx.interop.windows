@@ -9,7 +9,6 @@ namespace TerraFX.Interop
 {
     public partial struct TRANSACTIONMANAGER_OLDEST_INFORMATION
     {
-        [NativeTypeName("GUID")]
         public Guid OldestTransactionGuid;
     }
 }

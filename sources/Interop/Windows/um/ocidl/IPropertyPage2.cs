@@ -76,7 +76,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        public HRESULT Show([NativeTypeName("UINT")] uint nCmdShow)
+        public HRESULT Show(uint nCmdShow)
         {
             return ((delegate* unmanaged<IPropertyPage2*, uint, int>)(lpVtbl[8]))((IPropertyPage2*)Unsafe.AsPointer(ref this), nCmdShow);
         }

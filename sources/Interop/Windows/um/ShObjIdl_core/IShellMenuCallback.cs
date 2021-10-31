@@ -41,7 +41,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        public HRESULT CallbackSM([NativeTypeName("LPSMDATA")] SMDATA* psmd, [NativeTypeName("UINT")] uint uMsg, [NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam)
+        public HRESULT CallbackSM([NativeTypeName("LPSMDATA")] SMDATA* psmd, uint uMsg, [NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam)
         {
             return ((delegate* unmanaged<IShellMenuCallback*, SMDATA*, uint, nuint, nint, int>)(lpVtbl[3]))((IShellMenuCallback*)Unsafe.AsPointer(ref this), psmd, uMsg, wParam, lParam);
         }

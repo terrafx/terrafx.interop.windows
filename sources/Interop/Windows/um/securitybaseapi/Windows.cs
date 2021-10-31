@@ -38,7 +38,7 @@ namespace TerraFX.Interop
         public static extern BOOL AddAccessAllowedAceEx([NativeTypeName("PACL")] ACL* pAcl, [NativeTypeName("DWORD")] uint dwAceRevision, [NativeTypeName("DWORD")] uint AceFlags, [NativeTypeName("DWORD")] uint AccessMask, [NativeTypeName("PSID")] void* pSid);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
-        public static extern BOOL AddAccessAllowedObjectAce([NativeTypeName("PACL")] ACL* pAcl, [NativeTypeName("DWORD")] uint dwAceRevision, [NativeTypeName("DWORD")] uint AceFlags, [NativeTypeName("DWORD")] uint AccessMask, [NativeTypeName("GUID *")] Guid* ObjectTypeGuid, [NativeTypeName("GUID *")] Guid* InheritedObjectTypeGuid, [NativeTypeName("PSID")] void* pSid);
+        public static extern BOOL AddAccessAllowedObjectAce([NativeTypeName("PACL")] ACL* pAcl, [NativeTypeName("DWORD")] uint dwAceRevision, [NativeTypeName("DWORD")] uint AceFlags, [NativeTypeName("DWORD")] uint AccessMask, Guid* ObjectTypeGuid, Guid* InheritedObjectTypeGuid, [NativeTypeName("PSID")] void* pSid);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
         public static extern BOOL AddAccessDeniedAce([NativeTypeName("PACL")] ACL* pAcl, [NativeTypeName("DWORD")] uint dwAceRevision, [NativeTypeName("DWORD")] uint AccessMask, [NativeTypeName("PSID")] void* pSid);
@@ -47,7 +47,7 @@ namespace TerraFX.Interop
         public static extern BOOL AddAccessDeniedAceEx([NativeTypeName("PACL")] ACL* pAcl, [NativeTypeName("DWORD")] uint dwAceRevision, [NativeTypeName("DWORD")] uint AceFlags, [NativeTypeName("DWORD")] uint AccessMask, [NativeTypeName("PSID")] void* pSid);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
-        public static extern BOOL AddAccessDeniedObjectAce([NativeTypeName("PACL")] ACL* pAcl, [NativeTypeName("DWORD")] uint dwAceRevision, [NativeTypeName("DWORD")] uint AceFlags, [NativeTypeName("DWORD")] uint AccessMask, [NativeTypeName("GUID *")] Guid* ObjectTypeGuid, [NativeTypeName("GUID *")] Guid* InheritedObjectTypeGuid, [NativeTypeName("PSID")] void* pSid);
+        public static extern BOOL AddAccessDeniedObjectAce([NativeTypeName("PACL")] ACL* pAcl, [NativeTypeName("DWORD")] uint dwAceRevision, [NativeTypeName("DWORD")] uint AceFlags, [NativeTypeName("DWORD")] uint AccessMask, Guid* ObjectTypeGuid, Guid* InheritedObjectTypeGuid, [NativeTypeName("PSID")] void* pSid);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
         public static extern BOOL AddAce([NativeTypeName("PACL")] ACL* pAcl, [NativeTypeName("DWORD")] uint dwAceRevision, [NativeTypeName("DWORD")] uint dwStartingAceIndex, [NativeTypeName("LPVOID")] void* pAceList, [NativeTypeName("DWORD")] uint nAceListLength);
@@ -59,7 +59,7 @@ namespace TerraFX.Interop
         public static extern BOOL AddAuditAccessAceEx([NativeTypeName("PACL")] ACL* pAcl, [NativeTypeName("DWORD")] uint dwAceRevision, [NativeTypeName("DWORD")] uint AceFlags, [NativeTypeName("DWORD")] uint dwAccessMask, [NativeTypeName("PSID")] void* pSid, BOOL bAuditSuccess, BOOL bAuditFailure);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
-        public static extern BOOL AddAuditAccessObjectAce([NativeTypeName("PACL")] ACL* pAcl, [NativeTypeName("DWORD")] uint dwAceRevision, [NativeTypeName("DWORD")] uint AceFlags, [NativeTypeName("DWORD")] uint AccessMask, [NativeTypeName("GUID *")] Guid* ObjectTypeGuid, [NativeTypeName("GUID *")] Guid* InheritedObjectTypeGuid, [NativeTypeName("PSID")] void* pSid, BOOL bAuditSuccess, BOOL bAuditFailure);
+        public static extern BOOL AddAuditAccessObjectAce([NativeTypeName("PACL")] ACL* pAcl, [NativeTypeName("DWORD")] uint dwAceRevision, [NativeTypeName("DWORD")] uint AceFlags, [NativeTypeName("DWORD")] uint AccessMask, Guid* ObjectTypeGuid, Guid* InheritedObjectTypeGuid, [NativeTypeName("PSID")] void* pSid, BOOL bAuditSuccess, BOOL bAuditFailure);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
         public static extern BOOL AddMandatoryAce([NativeTypeName("PACL")] ACL* pAcl, [NativeTypeName("DWORD")] uint dwAceRevision, [NativeTypeName("DWORD")] uint AceFlags, [NativeTypeName("DWORD")] uint MandatoryPolicy, [NativeTypeName("PSID")] void* pLabelSid);
@@ -77,7 +77,7 @@ namespace TerraFX.Interop
         public static extern BOOL AdjustTokenPrivileges(HANDLE TokenHandle, BOOL DisableAllPrivileges, [NativeTypeName("PTOKEN_PRIVILEGES")] TOKEN_PRIVILEGES* NewState, [NativeTypeName("DWORD")] uint BufferLength, [NativeTypeName("PTOKEN_PRIVILEGES")] TOKEN_PRIVILEGES* PreviousState, [NativeTypeName("PDWORD")] uint* ReturnLength);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
-        public static extern BOOL AllocateAndInitializeSid([NativeTypeName("PSID_IDENTIFIER_AUTHORITY")] SID_IDENTIFIER_AUTHORITY* pIdentifierAuthority, [NativeTypeName("BYTE")] byte nSubAuthorityCount, [NativeTypeName("DWORD")] uint nSubAuthority0, [NativeTypeName("DWORD")] uint nSubAuthority1, [NativeTypeName("DWORD")] uint nSubAuthority2, [NativeTypeName("DWORD")] uint nSubAuthority3, [NativeTypeName("DWORD")] uint nSubAuthority4, [NativeTypeName("DWORD")] uint nSubAuthority5, [NativeTypeName("DWORD")] uint nSubAuthority6, [NativeTypeName("DWORD")] uint nSubAuthority7, [NativeTypeName("PSID *")] void** pSid);
+        public static extern BOOL AllocateAndInitializeSid([NativeTypeName("PSID_IDENTIFIER_AUTHORITY")] SID_IDENTIFIER_AUTHORITY* pIdentifierAuthority, byte nSubAuthorityCount, [NativeTypeName("DWORD")] uint nSubAuthority0, [NativeTypeName("DWORD")] uint nSubAuthority1, [NativeTypeName("DWORD")] uint nSubAuthority2, [NativeTypeName("DWORD")] uint nSubAuthority3, [NativeTypeName("DWORD")] uint nSubAuthority4, [NativeTypeName("DWORD")] uint nSubAuthority5, [NativeTypeName("DWORD")] uint nSubAuthority6, [NativeTypeName("DWORD")] uint nSubAuthority7, [NativeTypeName("PSID *")] void** pSid);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
         public static extern BOOL AllocateLocallyUniqueId([NativeTypeName("PLUID")] LUID* Luid);
@@ -98,7 +98,7 @@ namespace TerraFX.Interop
         public static extern BOOL CheckTokenMembershipEx(HANDLE TokenHandle, [NativeTypeName("PSID")] void* SidToCheck, [NativeTypeName("DWORD")] uint Flags, [NativeTypeName("PBOOL")] BOOL* IsMember);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
-        public static extern BOOL ConvertToAutoInheritPrivateObjectSecurity([NativeTypeName("PSECURITY_DESCRIPTOR")] void* ParentDescriptor, [NativeTypeName("PSECURITY_DESCRIPTOR")] void* CurrentSecurityDescriptor, [NativeTypeName("PSECURITY_DESCRIPTOR *")] void** NewSecurityDescriptor, [NativeTypeName("GUID *")] Guid* ObjectType, [NativeTypeName("BOOLEAN")] byte IsDirectoryObject, [NativeTypeName("PGENERIC_MAPPING")] GENERIC_MAPPING* GenericMapping);
+        public static extern BOOL ConvertToAutoInheritPrivateObjectSecurity([NativeTypeName("PSECURITY_DESCRIPTOR")] void* ParentDescriptor, [NativeTypeName("PSECURITY_DESCRIPTOR")] void* CurrentSecurityDescriptor, [NativeTypeName("PSECURITY_DESCRIPTOR *")] void** NewSecurityDescriptor, Guid* ObjectType, [NativeTypeName("BOOLEAN")] byte IsDirectoryObject, [NativeTypeName("PGENERIC_MAPPING")] GENERIC_MAPPING* GenericMapping);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
         public static extern BOOL CopySid([NativeTypeName("DWORD")] uint nDestinationSidLength, [NativeTypeName("PSID")] void* pDestinationSid, [NativeTypeName("PSID")] void* pSourceSid);
@@ -107,10 +107,10 @@ namespace TerraFX.Interop
         public static extern BOOL CreatePrivateObjectSecurity([NativeTypeName("PSECURITY_DESCRIPTOR")] void* ParentDescriptor, [NativeTypeName("PSECURITY_DESCRIPTOR")] void* CreatorDescriptor, [NativeTypeName("PSECURITY_DESCRIPTOR *")] void** NewDescriptor, BOOL IsDirectoryObject, HANDLE Token, [NativeTypeName("PGENERIC_MAPPING")] GENERIC_MAPPING* GenericMapping);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
-        public static extern BOOL CreatePrivateObjectSecurityEx([NativeTypeName("PSECURITY_DESCRIPTOR")] void* ParentDescriptor, [NativeTypeName("PSECURITY_DESCRIPTOR")] void* CreatorDescriptor, [NativeTypeName("PSECURITY_DESCRIPTOR *")] void** NewDescriptor, [NativeTypeName("GUID *")] Guid* ObjectType, BOOL IsContainerObject, [NativeTypeName("ULONG")] uint AutoInheritFlags, HANDLE Token, [NativeTypeName("PGENERIC_MAPPING")] GENERIC_MAPPING* GenericMapping);
+        public static extern BOOL CreatePrivateObjectSecurityEx([NativeTypeName("PSECURITY_DESCRIPTOR")] void* ParentDescriptor, [NativeTypeName("PSECURITY_DESCRIPTOR")] void* CreatorDescriptor, [NativeTypeName("PSECURITY_DESCRIPTOR *")] void** NewDescriptor, Guid* ObjectType, BOOL IsContainerObject, [NativeTypeName("ULONG")] uint AutoInheritFlags, HANDLE Token, [NativeTypeName("PGENERIC_MAPPING")] GENERIC_MAPPING* GenericMapping);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
-        public static extern BOOL CreatePrivateObjectSecurityWithMultipleInheritance([NativeTypeName("PSECURITY_DESCRIPTOR")] void* ParentDescriptor, [NativeTypeName("PSECURITY_DESCRIPTOR")] void* CreatorDescriptor, [NativeTypeName("PSECURITY_DESCRIPTOR *")] void** NewDescriptor, [NativeTypeName("GUID **")] Guid** ObjectTypes, [NativeTypeName("ULONG")] uint GuidCount, BOOL IsContainerObject, [NativeTypeName("ULONG")] uint AutoInheritFlags, HANDLE Token, [NativeTypeName("PGENERIC_MAPPING")] GENERIC_MAPPING* GenericMapping);
+        public static extern BOOL CreatePrivateObjectSecurityWithMultipleInheritance([NativeTypeName("PSECURITY_DESCRIPTOR")] void* ParentDescriptor, [NativeTypeName("PSECURITY_DESCRIPTOR")] void* CreatorDescriptor, [NativeTypeName("PSECURITY_DESCRIPTOR *")] void** NewDescriptor, Guid** ObjectTypes, [NativeTypeName("ULONG")] uint GuidCount, BOOL IsContainerObject, [NativeTypeName("ULONG")] uint AutoInheritFlags, HANDLE Token, [NativeTypeName("PGENERIC_MAPPING")] GENERIC_MAPPING* GenericMapping);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
         public static extern BOOL CreateRestrictedToken(HANDLE ExistingTokenHandle, [NativeTypeName("DWORD")] uint Flags, [NativeTypeName("DWORD")] uint DisableSidCount, [NativeTypeName("PSID_AND_ATTRIBUTES")] SID_AND_ATTRIBUTES* SidsToDisable, [NativeTypeName("DWORD")] uint DeletePrivilegeCount, [NativeTypeName("PLUID_AND_ATTRIBUTES")] LUID_AND_ATTRIBUTES* PrivilegesToDelete, [NativeTypeName("DWORD")] uint RestrictedSidCount, [NativeTypeName("PSID_AND_ATTRIBUTES")] SID_AND_ATTRIBUTES* SidsToRestrict, [NativeTypeName("PHANDLE")] HANDLE* NewTokenHandle);
@@ -226,7 +226,7 @@ namespace TerraFX.Interop
         public static extern BOOL InitializeSecurityDescriptor([NativeTypeName("PSECURITY_DESCRIPTOR")] void* pSecurityDescriptor, [NativeTypeName("DWORD")] uint dwRevision);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
-        public static extern BOOL InitializeSid([NativeTypeName("PSID")] void* Sid, [NativeTypeName("PSID_IDENTIFIER_AUTHORITY")] SID_IDENTIFIER_AUTHORITY* pIdentifierAuthority, [NativeTypeName("BYTE")] byte nSubAuthorityCount);
+        public static extern BOOL InitializeSid([NativeTypeName("PSID")] void* Sid, [NativeTypeName("PSID_IDENTIFIER_AUTHORITY")] SID_IDENTIFIER_AUTHORITY* pIdentifierAuthority, byte nSubAuthorityCount);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
         public static extern BOOL IsTokenRestricted(HANDLE TokenHandle);

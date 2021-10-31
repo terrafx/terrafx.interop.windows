@@ -111,7 +111,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(13)]
-        public HRESULT GetCurrentImage([NativeTypeName("BYTE **")] byte** lpDib)
+        public HRESULT GetCurrentImage(byte** lpDib)
         {
             return ((delegate* unmanaged<IVMRWindowlessControl*, byte**, int>)(lpVtbl[13]))((IVMRWindowlessControl*)Unsafe.AsPointer(ref this), lpDib);
         }

@@ -9,18 +9,14 @@ namespace TerraFX.Interop
     {
         public D3D12_DESCRIPTOR_RANGE_TYPE RangeType;
 
-        [NativeTypeName("UINT")]
         public uint NumDescriptors;
 
-        [NativeTypeName("UINT")]
         public uint BaseShaderRegister;
 
-        [NativeTypeName("UINT")]
         public uint RegisterSpace;
 
         public D3D12_DESCRIPTOR_RANGE_FLAGS Flags;
 
-        [NativeTypeName("UINT")]
         public uint OffsetInDescriptorsFromTableStart;
     }
 }

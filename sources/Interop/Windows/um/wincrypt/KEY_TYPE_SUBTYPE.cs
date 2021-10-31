@@ -12,10 +12,8 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint dwKeySpec;
 
-        [NativeTypeName("GUID")]
         public Guid Type;
 
-        [NativeTypeName("GUID")]
         public Guid Subtype;
     }
 }

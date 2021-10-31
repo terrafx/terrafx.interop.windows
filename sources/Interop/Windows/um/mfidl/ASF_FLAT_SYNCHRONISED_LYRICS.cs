@@ -10,10 +10,8 @@ namespace TerraFX.Interop
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public partial struct ASF_FLAT_SYNCHRONISED_LYRICS
     {
-        [NativeTypeName("BYTE")]
         public byte bTimeStampFormat;
 
-        [NativeTypeName("BYTE")]
         public byte bContentType;
 
         [NativeTypeName("DWORD")]

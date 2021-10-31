@@ -118,7 +118,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(14)]
-        public HRESULT GetFormat([NativeTypeName("GUID *")] Guid* pguidFormatId, WAVEFORMATEX** ppCoMemWaveFormatEx)
+        public HRESULT GetFormat(Guid* pguidFormatId, WAVEFORMATEX** ppCoMemWaveFormatEx)
         {
             return ((delegate* unmanaged<ISpAudio*, Guid*, WAVEFORMATEX**, int>)(lpVtbl[14]))((ISpAudio*)Unsafe.AsPointer(ref this), pguidFormatId, ppCoMemWaveFormatEx);
         }
@@ -160,7 +160,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(20)]
-        public HRESULT GetDefaultFormat([NativeTypeName("GUID *")] Guid* pFormatId, WAVEFORMATEX** ppCoMemWaveFormatEx)
+        public HRESULT GetDefaultFormat(Guid* pFormatId, WAVEFORMATEX** ppCoMemWaveFormatEx)
         {
             return ((delegate* unmanaged<ISpAudio*, Guid*, WAVEFORMATEX**, int>)(lpVtbl[20]))((ISpAudio*)Unsafe.AsPointer(ref this), pFormatId, ppCoMemWaveFormatEx);
         }

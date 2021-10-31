@@ -7,10 +7,8 @@ namespace TerraFX.Interop
 {
     public partial struct D3D11_VIDEO_DECODER_SUB_SAMPLE_MAPPING_BLOCK
     {
-        [NativeTypeName("UINT")]
         public uint ClearSize;
 
-        [NativeTypeName("UINT")]
         public uint EncryptedSize;
     }
 }

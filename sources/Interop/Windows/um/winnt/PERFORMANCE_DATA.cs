@@ -14,10 +14,8 @@ namespace TerraFX.Interop
         [NativeTypeName("WORD")]
         public ushort Size;
 
-        [NativeTypeName("BYTE")]
         public byte Version;
 
-        [NativeTypeName("BYTE")]
         public byte HwCountersCount;
 
         [NativeTypeName("DWORD")]

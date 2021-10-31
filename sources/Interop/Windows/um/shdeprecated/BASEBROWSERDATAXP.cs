@@ -26,7 +26,7 @@ namespace TerraFX.Interop
 
         public uint _bitfield;
 
-        [NativeTypeName("UINT : 1")]
+        [NativeTypeName("uint : 1")]
         public uint _fCreatingViewWindow
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -42,7 +42,6 @@ namespace TerraFX.Interop
             }
         }
 
-        [NativeTypeName("UINT")]
         public uint _uActivateState;
 
         [NativeTypeName("LPCITEMIDLIST")]

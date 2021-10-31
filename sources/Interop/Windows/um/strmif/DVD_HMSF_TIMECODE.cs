@@ -7,16 +7,12 @@ namespace TerraFX.Interop
 {
     public partial struct DVD_HMSF_TIMECODE
     {
-        [NativeTypeName("BYTE")]
         public byte bHours;
 
-        [NativeTypeName("BYTE")]
         public byte bMinutes;
 
-        [NativeTypeName("BYTE")]
         public byte bSeconds;
 
-        [NativeTypeName("BYTE")]
         public byte bFrames;
     }
 }

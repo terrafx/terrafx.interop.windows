@@ -7,16 +7,12 @@ namespace TerraFX.Interop
 {
     public partial struct D3D11_RESOURCE_FLAGS
     {
-        [NativeTypeName("UINT")]
         public uint BindFlags;
 
-        [NativeTypeName("UINT")]
         public uint MiscFlags;
 
-        [NativeTypeName("UINT")]
         public uint CPUAccessFlags;
 
-        [NativeTypeName("UINT")]
         public uint StructureByteStride;
     }
 }

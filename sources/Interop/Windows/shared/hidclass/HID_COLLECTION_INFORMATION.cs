@@ -16,13 +16,10 @@ namespace TerraFX.Interop
         [NativeTypeName("UCHAR [1]")]
         public fixed byte Reserved1[1];
 
-        [NativeTypeName("USHORT")]
         public ushort VendorID;
 
-        [NativeTypeName("USHORT")]
         public ushort ProductID;
 
-        [NativeTypeName("USHORT")]
         public ushort VersionNumber;
     }
 }

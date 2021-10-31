@@ -7,19 +7,14 @@ namespace TerraFX.Interop
 {
     public partial struct MFCameraIntrinsic_DistortionModelArcTan
     {
-        [NativeTypeName("FLOAT")]
         public float Radial_k0;
 
-        [NativeTypeName("FLOAT")]
         public float DistortionCenter_x;
 
-        [NativeTypeName("FLOAT")]
         public float DistortionCenter_y;
 
-        [NativeTypeName("FLOAT")]
         public float Tangential_x;
 
-        [NativeTypeName("FLOAT")]
         public float Tangential_y;
     }
 }

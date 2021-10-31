@@ -7,10 +7,8 @@ namespace TerraFX.Interop
 {
     public partial struct TCP_RESERVE_PORT_RANGE
     {
-        [NativeTypeName("USHORT")]
         public ushort UpperRange;
 
-        [NativeTypeName("USHORT")]
         public ushort LowerRange;
     }
 }

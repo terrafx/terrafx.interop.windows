@@ -19,7 +19,6 @@ namespace TerraFX.Interop
 
         public NORMALIZEDRECT rDest;
 
-        [NativeTypeName("FLOAT")]
         public float fAlpha;
 
         [NativeTypeName("COLORREF")]

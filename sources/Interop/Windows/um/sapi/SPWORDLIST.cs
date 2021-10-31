@@ -10,7 +10,6 @@ namespace TerraFX.Interop
         [NativeTypeName("ULONG")]
         public uint ulSize;
 
-        [NativeTypeName("BYTE *")]
         public byte* pvBuffer;
 
         public SPWORD* pFirstWord;

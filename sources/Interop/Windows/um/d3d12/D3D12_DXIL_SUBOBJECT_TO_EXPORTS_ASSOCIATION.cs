@@ -10,7 +10,6 @@ namespace TerraFX.Interop
         [NativeTypeName("LPCWSTR")]
         public ushort* SubobjectToAssociate;
 
-        [NativeTypeName("UINT")]
         public uint NumExports;
 
         [NativeTypeName("LPCWSTR *")]

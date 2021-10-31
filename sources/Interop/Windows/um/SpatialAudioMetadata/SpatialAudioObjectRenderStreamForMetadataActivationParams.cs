@@ -26,7 +26,6 @@ namespace TerraFX.Interop
 
         public HANDLE EventHandle;
 
-        [NativeTypeName("GUID")]
         public Guid MetadataFormatId;
 
         [NativeTypeName("UINT16")]

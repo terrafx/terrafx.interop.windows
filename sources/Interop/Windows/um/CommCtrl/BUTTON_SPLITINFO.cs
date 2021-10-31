@@ -7,12 +7,10 @@ namespace TerraFX.Interop
 {
     public partial struct BUTTON_SPLITINFO
     {
-        [NativeTypeName("UINT")]
         public uint mask;
 
         public HIMAGELIST himlGlyph;
 
-        [NativeTypeName("UINT")]
         public uint uSplitStyle;
 
         public SIZE size;

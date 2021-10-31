@@ -76,28 +76,28 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        public HRESULT ShowControlWindow([NativeTypeName("UINT")] uint id, BOOL fShow)
+        public HRESULT ShowControlWindow(uint id, BOOL fShow)
         {
             return ((delegate* unmanaged<IBrowserService4*, uint, BOOL, int>)(lpVtbl[8]))((IBrowserService4*)Unsafe.AsPointer(ref this), id, fShow);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        public HRESULT IsControlWindowShown([NativeTypeName("UINT")] uint id, BOOL* pfShown)
+        public HRESULT IsControlWindowShown(uint id, BOOL* pfShown)
         {
             return ((delegate* unmanaged<IBrowserService4*, uint, BOOL*, int>)(lpVtbl[9]))((IBrowserService4*)Unsafe.AsPointer(ref this), id, pfShown);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(10)]
-        public HRESULT IEGetDisplayName([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl, [NativeTypeName("LPWSTR")] ushort* pwszName, [NativeTypeName("UINT")] uint uFlags)
+        public HRESULT IEGetDisplayName([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl, [NativeTypeName("LPWSTR")] ushort* pwszName, uint uFlags)
         {
             return ((delegate* unmanaged<IBrowserService4*, ITEMIDLIST*, ushort*, uint, int>)(lpVtbl[10]))((IBrowserService4*)Unsafe.AsPointer(ref this), pidl, pwszName, uFlags);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(11)]
-        public HRESULT IEParseDisplayName([NativeTypeName("UINT")] uint uiCP, [NativeTypeName("LPCWSTR")] ushort* pwszPath, [NativeTypeName("LPITEMIDLIST *")] ITEMIDLIST** ppidlOut)
+        public HRESULT IEParseDisplayName(uint uiCP, [NativeTypeName("LPCWSTR")] ushort* pwszPath, [NativeTypeName("LPITEMIDLIST *")] ITEMIDLIST** ppidlOut)
         {
             return ((delegate* unmanaged<IBrowserService4*, uint, ushort*, ITEMIDLIST**, int>)(lpVtbl[11]))((IBrowserService4*)Unsafe.AsPointer(ref this), uiCP, pwszPath, ppidlOut);
         }
@@ -253,7 +253,7 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(33)]
         [return: NativeTypeName("LRESULT")]
-        public nint WndProcBS(HWND hwnd, [NativeTypeName("UINT")] uint uMsg, [NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam)
+        public nint WndProcBS(HWND hwnd, uint uMsg, [NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam)
         {
             return ((delegate* unmanaged<IBrowserService4*, HWND, uint, nuint, nint, nint>)(lpVtbl[33]))((IBrowserService4*)Unsafe.AsPointer(ref this), hwnd, uMsg, wParam, lParam);
         }
@@ -403,7 +403,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(54)]
-        public HRESULT SetActivateState([NativeTypeName("UINT")] uint u)
+        public HRESULT SetActivateState(uint u)
         {
             return ((delegate* unmanaged<IBrowserService4*, uint, int>)(lpVtbl[54]))((IBrowserService4*)Unsafe.AsPointer(ref this), u);
         }
@@ -501,7 +501,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(68)]
-        public HRESULT _SendChildren(HWND hwndBar, BOOL fBroadcast, [NativeTypeName("UINT")] uint uMsg, [NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam)
+        public HRESULT _SendChildren(HWND hwndBar, BOOL fBroadcast, uint uMsg, [NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam)
         {
             return ((delegate* unmanaged<IBrowserService4*, HWND, BOOL, uint, nuint, nint, int>)(lpVtbl[68]))((IBrowserService4*)Unsafe.AsPointer(ref this), hwndBar, fBroadcast, uMsg, wParam, lParam);
         }
@@ -515,7 +515,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(70)]
-        public HRESULT _OnFocusChange([NativeTypeName("UINT")] uint itb)
+        public HRESULT _OnFocusChange(uint itb)
         {
             return ((delegate* unmanaged<IBrowserService4*, uint, int>)(lpVtbl[70]))((IBrowserService4*)Unsafe.AsPointer(ref this), itb);
         }
@@ -529,7 +529,6 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(72)]
-        [return: NativeTypeName("UINT")]
         public uint _get_itbLastFocus()
         {
             return ((delegate* unmanaged<IBrowserService4*, uint>)(lpVtbl[72]))((IBrowserService4*)Unsafe.AsPointer(ref this));
@@ -537,14 +536,14 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(73)]
-        public HRESULT _put_itbLastFocus([NativeTypeName("UINT")] uint itbLastFocus)
+        public HRESULT _put_itbLastFocus(uint itbLastFocus)
         {
             return ((delegate* unmanaged<IBrowserService4*, uint, int>)(lpVtbl[73]))((IBrowserService4*)Unsafe.AsPointer(ref this), itbLastFocus);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(74)]
-        public HRESULT _UIActivateView([NativeTypeName("UINT")] uint uState)
+        public HRESULT _UIActivateView(uint uState)
         {
             return ((delegate* unmanaged<IBrowserService4*, uint, int>)(lpVtbl[74]))((IBrowserService4*)Unsafe.AsPointer(ref this), uState);
         }
@@ -565,7 +564,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(77)]
-        public HRESULT _ResizeNextBorder([NativeTypeName("UINT")] uint itb)
+        public HRESULT _ResizeNextBorder(uint itb)
         {
             return ((delegate* unmanaged<IBrowserService4*, uint, int>)(lpVtbl[77]))((IBrowserService4*)Unsafe.AsPointer(ref this), itb);
         }
@@ -594,7 +593,7 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(81)]
         [return: NativeTypeName("LRESULT")]
-        public nint ForwardViewMsg([NativeTypeName("UINT")] uint uMsg, [NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam)
+        public nint ForwardViewMsg(uint uMsg, [NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam)
         {
             return ((delegate* unmanaged<IBrowserService4*, uint, nuint, nint, nint>)(lpVtbl[81]))((IBrowserService4*)Unsafe.AsPointer(ref this), uMsg, wParam, lParam);
         }
@@ -644,21 +643,20 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(88)]
-        public HRESULT v_MayGetNextToolbarFocus([NativeTypeName("LPMSG")] MSG* lpMsg, [NativeTypeName("UINT")] uint itbNext, int citb, [NativeTypeName("LPTOOLBARITEM *")] TOOLBARITEM** pptbi, HWND* phwnd)
+        public HRESULT v_MayGetNextToolbarFocus([NativeTypeName("LPMSG")] MSG* lpMsg, uint itbNext, int citb, [NativeTypeName("LPTOOLBARITEM *")] TOOLBARITEM** pptbi, HWND* phwnd)
         {
             return ((delegate* unmanaged<IBrowserService4*, MSG*, uint, int, TOOLBARITEM**, HWND*, int>)(lpVtbl[88]))((IBrowserService4*)Unsafe.AsPointer(ref this), lpMsg, itbNext, citb, pptbi, phwnd);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(89)]
-        public HRESULT _ResizeNextBorderHelper([NativeTypeName("UINT")] uint itb, BOOL bUseHmonitor)
+        public HRESULT _ResizeNextBorderHelper(uint itb, BOOL bUseHmonitor)
         {
             return ((delegate* unmanaged<IBrowserService4*, uint, BOOL, int>)(lpVtbl[89]))((IBrowserService4*)Unsafe.AsPointer(ref this), itb, bUseHmonitor);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(90)]
-        [return: NativeTypeName("UINT")]
         public uint _FindTBar(IUnknown* punkSrc)
         {
             return ((delegate* unmanaged<IBrowserService4*, IUnknown*, uint>)(lpVtbl[90]))((IBrowserService4*)Unsafe.AsPointer(ref this), punkSrc);
@@ -701,7 +699,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(96)]
-        public HRESULT IEParseDisplayNameEx([NativeTypeName("UINT")] uint uiCP, [NativeTypeName("LPCWSTR")] ushort* pwszPath, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LPITEMIDLIST *")] ITEMIDLIST** ppidlOut)
+        public HRESULT IEParseDisplayNameEx(uint uiCP, [NativeTypeName("LPCWSTR")] ushort* pwszPath, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LPITEMIDLIST *")] ITEMIDLIST** ppidlOut)
         {
             return ((delegate* unmanaged<IBrowserService4*, uint, ushort*, uint, ITEMIDLIST**, int>)(lpVtbl[96]))((IBrowserService4*)Unsafe.AsPointer(ref this), uiCP, pwszPath, dwFlags, ppidlOut);
         }

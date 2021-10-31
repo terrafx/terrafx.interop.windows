@@ -15,7 +15,6 @@ namespace TerraFX.Interop
 
         public POINT pt;
 
-        [NativeTypeName("UINT")]
         public uint cLineHeight;
 
         public RECT rcDocument;

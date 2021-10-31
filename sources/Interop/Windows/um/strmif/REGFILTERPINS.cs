@@ -26,7 +26,6 @@ namespace TerraFX.Interop
         [NativeTypeName("const WCHAR *")]
         public ushort* strConnectsToPin;
 
-        [NativeTypeName("UINT")]
         public uint nMediaTypes;
 
         [NativeTypeName("const REGPINTYPES *")]

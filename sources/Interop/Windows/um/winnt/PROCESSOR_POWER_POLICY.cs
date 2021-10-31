@@ -14,7 +14,6 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint Revision;
 
-        [NativeTypeName("BYTE")]
         public byte DynamicThrottle;
 
         [NativeTypeName("BYTE [3]")]

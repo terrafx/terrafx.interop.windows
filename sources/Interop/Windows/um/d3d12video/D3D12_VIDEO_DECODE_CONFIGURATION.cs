@@ -9,7 +9,6 @@ namespace TerraFX.Interop
 {
     public partial struct D3D12_VIDEO_DECODE_CONFIGURATION
     {
-        [NativeTypeName("GUID")]
         public Guid DecodeProfile;
 
         public D3D12_BITSTREAM_ENCRYPTION_TYPE BitstreamEncryption;

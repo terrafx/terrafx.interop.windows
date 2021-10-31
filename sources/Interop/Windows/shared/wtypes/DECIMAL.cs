@@ -10,7 +10,6 @@ namespace TerraFX.Interop
 {
     public partial struct DECIMAL
     {
-        [NativeTypeName("USHORT")]
         public ushort wReserved;
 
         [NativeTypeName("tagDEC::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/shared/wtypes.h:705:5)")]
@@ -84,15 +83,12 @@ namespace TerraFX.Interop
             public _Anonymous_e__Struct Anonymous;
 
             [FieldOffset(0)]
-            [NativeTypeName("USHORT")]
             public ushort signscale;
 
             public partial struct _Anonymous_e__Struct
             {
-                [NativeTypeName("BYTE")]
                 public byte scale;
 
-                [NativeTypeName("BYTE")]
                 public byte sign;
             }
         }

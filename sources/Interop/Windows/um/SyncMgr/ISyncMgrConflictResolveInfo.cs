@@ -41,7 +41,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        public HRESULT GetIterationInfo([NativeTypeName("UINT *")] uint* pnCurrentConflict, [NativeTypeName("UINT *")] uint* pcConflicts, [NativeTypeName("UINT *")] uint* pcRemainingForApplyToAll)
+        public HRESULT GetIterationInfo(uint* pnCurrentConflict, uint* pcConflicts, uint* pcRemainingForApplyToAll)
         {
             return ((delegate* unmanaged<ISyncMgrConflictResolveInfo*, uint*, uint*, uint*, int>)(lpVtbl[3]))((ISyncMgrConflictResolveInfo*)Unsafe.AsPointer(ref this), pnCurrentConflict, pcConflicts, pcRemainingForApplyToAll);
         }
@@ -62,14 +62,14 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        public HRESULT GetItemChoiceCount([NativeTypeName("UINT *")] uint* pcChoices)
+        public HRESULT GetItemChoiceCount(uint* pcChoices)
         {
             return ((delegate* unmanaged<ISyncMgrConflictResolveInfo*, uint*, int>)(lpVtbl[6]))((ISyncMgrConflictResolveInfo*)Unsafe.AsPointer(ref this), pcChoices);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        public HRESULT GetItemChoice([NativeTypeName("UINT")] uint iChoice, [NativeTypeName("UINT *")] uint* piChoiceIndex)
+        public HRESULT GetItemChoice(uint iChoice, uint* piChoiceIndex)
         {
             return ((delegate* unmanaged<ISyncMgrConflictResolveInfo*, uint, uint*, int>)(lpVtbl[7]))((ISyncMgrConflictResolveInfo*)Unsafe.AsPointer(ref this), iChoice, piChoiceIndex);
         }
@@ -90,7 +90,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(10)]
-        public HRESULT SetItemChoices([NativeTypeName("UINT *")] uint* prgiConflictItemIndexes, [NativeTypeName("UINT")] uint cChoices)
+        public HRESULT SetItemChoices(uint* prgiConflictItemIndexes, uint cChoices)
         {
             return ((delegate* unmanaged<ISyncMgrConflictResolveInfo*, uint*, uint, int>)(lpVtbl[10]))((ISyncMgrConflictResolveInfo*)Unsafe.AsPointer(ref this), prgiConflictItemIndexes, cChoices);
         }

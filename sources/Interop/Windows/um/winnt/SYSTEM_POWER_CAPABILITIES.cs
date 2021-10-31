@@ -56,10 +56,8 @@ namespace TerraFX.Interop
         [NativeTypeName("BOOLEAN")]
         public byte ProcessorThrottle;
 
-        [NativeTypeName("BYTE")]
         public byte ProcessorMinThrottle;
 
-        [NativeTypeName("BYTE")]
         public byte ProcessorMaxThrottle;
 
         [NativeTypeName("BOOLEAN")]
@@ -77,7 +75,6 @@ namespace TerraFX.Interop
         [NativeTypeName("BOOLEAN")]
         public byte DiskSpinDown;
 
-        [NativeTypeName("BYTE")]
         public byte HiberFileType;
 
         [NativeTypeName("BOOLEAN")]

@@ -7,22 +7,16 @@ namespace TerraFX.Interop
 {
     public partial struct HTML_PAINT_XFORM
     {
-        [NativeTypeName("FLOAT")]
         public float eM11;
 
-        [NativeTypeName("FLOAT")]
         public float eM12;
 
-        [NativeTypeName("FLOAT")]
         public float eM21;
 
-        [NativeTypeName("FLOAT")]
         public float eM22;
 
-        [NativeTypeName("FLOAT")]
         public float eDx;
 
-        [NativeTypeName("FLOAT")]
         public float eDy;
     }
 }

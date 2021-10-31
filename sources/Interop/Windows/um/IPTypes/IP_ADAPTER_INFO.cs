@@ -19,7 +19,6 @@ namespace TerraFX.Interop
         [NativeTypeName("char [132]")]
         public fixed sbyte Description[132];
 
-        [NativeTypeName("UINT")]
         public uint AddressLength;
 
         [NativeTypeName("BYTE [8]")]
@@ -28,10 +27,8 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint Index;
 
-        [NativeTypeName("UINT")]
         public uint Type;
 
-        [NativeTypeName("UINT")]
         public uint DhcpEnabled;
 
         [NativeTypeName("PIP_ADDR_STRING")]

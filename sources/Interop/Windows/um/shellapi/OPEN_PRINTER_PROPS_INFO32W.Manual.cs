@@ -16,7 +16,6 @@ namespace TerraFX.Interop
         [NativeTypeName("LPWSTR")]
         public ushort* pszSheetName;
 
-        [NativeTypeName("UINT")]
         public uint uSheetIndex;
 
         [NativeTypeName("DWORD")]

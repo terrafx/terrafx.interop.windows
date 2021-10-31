@@ -7,10 +7,8 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct WNDCLASSEXA
     {
-        [NativeTypeName("UINT")]
         public uint cbSize;
 
-        [NativeTypeName("UINT")]
         public uint style;
 
         [NativeTypeName("WNDPROC")]

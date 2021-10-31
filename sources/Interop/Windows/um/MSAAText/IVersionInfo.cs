@@ -48,7 +48,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT GetImplementationID([NativeTypeName("ULONG")] uint ulSub, [NativeTypeName("GUID *")] Guid* implid)
+        public HRESULT GetImplementationID([NativeTypeName("ULONG")] uint ulSub, Guid* implid)
         {
             return ((delegate* unmanaged<IVersionInfo*, uint, Guid*, int>)(lpVtbl[4]))((IVersionInfo*)Unsafe.AsPointer(ref this), ulSub, implid);
         }

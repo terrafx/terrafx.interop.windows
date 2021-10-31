@@ -7,19 +7,14 @@ namespace TerraFX.Interop
 {
     public partial struct MEASUREITEMSTRUCT
     {
-        [NativeTypeName("UINT")]
         public uint CtlType;
 
-        [NativeTypeName("UINT")]
         public uint CtlID;
 
-        [NativeTypeName("UINT")]
         public uint itemID;
 
-        [NativeTypeName("UINT")]
         public uint itemWidth;
 
-        [NativeTypeName("UINT")]
         public uint itemHeight;
 
         [NativeTypeName("ULONG_PTR")]

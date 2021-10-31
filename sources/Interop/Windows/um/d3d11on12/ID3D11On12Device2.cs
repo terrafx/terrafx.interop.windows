@@ -48,14 +48,14 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public void ReleaseWrappedResources([NativeTypeName("ID3D11Resource *const *")] ID3D11Resource** ppResources, [NativeTypeName("UINT")] uint NumResources)
+        public void ReleaseWrappedResources([NativeTypeName("ID3D11Resource *const *")] ID3D11Resource** ppResources, uint NumResources)
         {
             ((delegate* unmanaged<ID3D11On12Device2*, ID3D11Resource**, uint, void>)(lpVtbl[4]))((ID3D11On12Device2*)Unsafe.AsPointer(ref this), ppResources, NumResources);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        public void AcquireWrappedResources([NativeTypeName("ID3D11Resource *const *")] ID3D11Resource** ppResources, [NativeTypeName("UINT")] uint NumResources)
+        public void AcquireWrappedResources([NativeTypeName("ID3D11Resource *const *")] ID3D11Resource** ppResources, uint NumResources)
         {
             ((delegate* unmanaged<ID3D11On12Device2*, ID3D11Resource**, uint, void>)(lpVtbl[5]))((ID3D11On12Device2*)Unsafe.AsPointer(ref this), ppResources, NumResources);
         }
@@ -76,7 +76,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        public HRESULT ReturnUnderlyingResource(ID3D11Resource* pResource11, [NativeTypeName("UINT")] uint NumSync, [NativeTypeName("UINT64 *")] ulong* pSignalValues, ID3D12Fence** ppFences)
+        public HRESULT ReturnUnderlyingResource(ID3D11Resource* pResource11, uint NumSync, [NativeTypeName("UINT64 *")] ulong* pSignalValues, ID3D12Fence** ppFences)
         {
             return ((delegate* unmanaged<ID3D11On12Device2*, ID3D11Resource*, uint, ulong*, ID3D12Fence**, int>)(lpVtbl[8]))((ID3D11On12Device2*)Unsafe.AsPointer(ref this), pResource11, NumSync, pSignalValues, ppFences);
         }

@@ -15,7 +15,6 @@ namespace TerraFX.Interop
 
         public PROPERTY_UNITS Units;
 
-        [NativeTypeName("FLOAT")]
         public float fResolution;
     }
 }

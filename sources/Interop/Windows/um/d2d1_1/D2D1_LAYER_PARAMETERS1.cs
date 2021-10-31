@@ -17,7 +17,6 @@ namespace TerraFX.Interop
         [NativeTypeName("D2D1_MATRIX_3X2_F")]
         public D2D_MATRIX_3X2_F maskTransform;
 
-        [NativeTypeName("FLOAT")]
         public float opacity;
 
         public ID2D1Brush* opacityBrush;

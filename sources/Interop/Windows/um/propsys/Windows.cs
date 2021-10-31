@@ -31,7 +31,7 @@ namespace TerraFX.Interop
         public static extern HRESULT PSGetImageReferenceForValue([NativeTypeName("const PROPERTYKEY &")] PROPERTYKEY* propkey, [NativeTypeName("const PROPVARIANT &")] PROPVARIANT* propvar, [NativeTypeName("PWSTR *")] ushort** ppszImageRes);
 
         [DllImport("propsys", ExactSpelling = true)]
-        public static extern HRESULT PSStringFromPropertyKey([NativeTypeName("const PROPERTYKEY &")] PROPERTYKEY* pkey, [NativeTypeName("LPWSTR")] ushort* psz, [NativeTypeName("UINT")] uint cch);
+        public static extern HRESULT PSStringFromPropertyKey([NativeTypeName("const PROPERTYKEY &")] PROPERTYKEY* pkey, [NativeTypeName("LPWSTR")] ushort* psz, uint cch);
 
         [DllImport("propsys", ExactSpelling = true)]
         public static extern HRESULT PSPropertyKeyFromString([NativeTypeName("LPCWSTR")] ushort* pszString, PROPERTYKEY* pkey);
@@ -46,7 +46,7 @@ namespace TerraFX.Interop
         public static extern HRESULT PSCreateMultiplexPropertyStore(IUnknown** prgpunkStores, [NativeTypeName("DWORD")] uint cStores, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
 
         [DllImport("propsys", ExactSpelling = true)]
-        public static extern HRESULT PSCreatePropertyChangeArray([NativeTypeName("const PROPERTYKEY *")] PROPERTYKEY* rgpropkey, [NativeTypeName("const PKA_FLAGS *")] PKA_FLAGS* rgflags, [NativeTypeName("const PROPVARIANT *")] PROPVARIANT* rgpropvar, [NativeTypeName("UINT")] uint cChanges, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
+        public static extern HRESULT PSCreatePropertyChangeArray([NativeTypeName("const PROPERTYKEY *")] PROPERTYKEY* rgpropkey, [NativeTypeName("const PKA_FLAGS *")] PKA_FLAGS* rgflags, [NativeTypeName("const PROPVARIANT *")] PROPVARIANT* rgpropvar, uint cChanges, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
 
         [DllImport("propsys", ExactSpelling = true)]
         public static extern HRESULT PSCreateSimplePropertyChange(PKA_FLAGS flags, [NativeTypeName("const PROPERTYKEY &")] PROPERTYKEY* key, [NativeTypeName("const PROPVARIANT &")] PROPVARIANT* propvar, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
@@ -133,16 +133,16 @@ namespace TerraFX.Interop
         public static extern HRESULT PSPropertyBag_WriteBSTR(IPropertyBag* propBag, [NativeTypeName("LPCWSTR")] ushort* propName, [NativeTypeName("BSTR")] ushort* value);
 
         [DllImport("propsys", ExactSpelling = true)]
-        public static extern HRESULT PSPropertyBag_ReadInt(IPropertyBag* propBag, [NativeTypeName("LPCWSTR")] ushort* propName, [NativeTypeName("INT *")] int* value);
+        public static extern HRESULT PSPropertyBag_ReadInt(IPropertyBag* propBag, [NativeTypeName("LPCWSTR")] ushort* propName, int* value);
 
         [DllImport("propsys", ExactSpelling = true)]
-        public static extern HRESULT PSPropertyBag_WriteInt(IPropertyBag* propBag, [NativeTypeName("LPCWSTR")] ushort* propName, [NativeTypeName("INT")] int value);
+        public static extern HRESULT PSPropertyBag_WriteInt(IPropertyBag* propBag, [NativeTypeName("LPCWSTR")] ushort* propName, int value);
 
         [DllImport("propsys", ExactSpelling = true)]
-        public static extern HRESULT PSPropertyBag_ReadSHORT(IPropertyBag* propBag, [NativeTypeName("LPCWSTR")] ushort* propName, [NativeTypeName("SHORT *")] short* value);
+        public static extern HRESULT PSPropertyBag_ReadSHORT(IPropertyBag* propBag, [NativeTypeName("LPCWSTR")] ushort* propName, short* value);
 
         [DllImport("propsys", ExactSpelling = true)]
-        public static extern HRESULT PSPropertyBag_WriteSHORT(IPropertyBag* propBag, [NativeTypeName("LPCWSTR")] ushort* propName, [NativeTypeName("SHORT")] short value);
+        public static extern HRESULT PSPropertyBag_WriteSHORT(IPropertyBag* propBag, [NativeTypeName("LPCWSTR")] ushort* propName, short value);
 
         [DllImport("propsys", ExactSpelling = true)]
         public static extern HRESULT PSPropertyBag_ReadLONG(IPropertyBag* propBag, [NativeTypeName("LPCWSTR")] ushort* propName, [NativeTypeName("LONG *")] int* value);
@@ -202,7 +202,7 @@ namespace TerraFX.Interop
         public static extern HRESULT PSPropertyBag_WriteUnknown(IPropertyBag* propBag, [NativeTypeName("LPCWSTR")] ushort* propName, IUnknown* punk);
 
         [DllImport("propsys", ExactSpelling = true)]
-        public static extern HRESULT PSPropertyBag_ReadGUID(IPropertyBag* propBag, [NativeTypeName("LPCWSTR")] ushort* propName, [NativeTypeName("GUID *")] Guid* value);
+        public static extern HRESULT PSPropertyBag_ReadGUID(IPropertyBag* propBag, [NativeTypeName("LPCWSTR")] ushort* propName, Guid* value);
 
         [DllImport("propsys", ExactSpelling = true)]
         public static extern HRESULT PSPropertyBag_WriteGUID(IPropertyBag* propBag, [NativeTypeName("LPCWSTR")] ushort* propName, [NativeTypeName("const GUID *")] Guid* value);

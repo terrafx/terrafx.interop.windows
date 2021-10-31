@@ -41,14 +41,14 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        public HRESULT SetShaderTrackingOptionsByType([NativeTypeName("UINT")] uint ResourceTypeFlags, [NativeTypeName("UINT")] uint Options)
+        public HRESULT SetShaderTrackingOptionsByType(uint ResourceTypeFlags, uint Options)
         {
             return ((delegate* unmanaged<ID3D11TracingDevice*, uint, uint, int>)(lpVtbl[3]))((ID3D11TracingDevice*)Unsafe.AsPointer(ref this), ResourceTypeFlags, Options);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT SetShaderTrackingOptions(IUnknown* pShader, [NativeTypeName("UINT")] uint Options)
+        public HRESULT SetShaderTrackingOptions(IUnknown* pShader, uint Options)
         {
             return ((delegate* unmanaged<ID3D11TracingDevice*, IUnknown*, uint, int>)(lpVtbl[4]))((ID3D11TracingDevice*)Unsafe.AsPointer(ref this), pShader, Options);
         }

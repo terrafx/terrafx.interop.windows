@@ -18,7 +18,6 @@ namespace TerraFX.Interop
 
         public HMONITOR Monitor;
 
-        [NativeTypeName("UINT")]
         public uint BitsPerColor;
 
         public DXGI_COLOR_SPACE_TYPE ColorSpace;
@@ -35,13 +34,10 @@ namespace TerraFX.Interop
         [NativeTypeName("FLOAT [2]")]
         public fixed float WhitePoint[2];
 
-        [NativeTypeName("FLOAT")]
         public float MinLuminance;
 
-        [NativeTypeName("FLOAT")]
         public float MaxLuminance;
 
-        [NativeTypeName("FLOAT")]
         public float MaxFullFrameLuminance;
     }
 }

@@ -9,7 +9,7 @@ namespace TerraFX.Interop
 {
     public partial struct D2D1_GRADIENT_STOP
     {
-        public D2D1_GRADIENT_STOP([NativeTypeName("FLOAT")] float position, [NativeTypeName("const D2D1_COLOR_F &")] in DXGI_RGBA color)
+        public D2D1_GRADIENT_STOP(float position, [NativeTypeName("const D2D1_COLOR_F &")] in DXGI_RGBA color)
         {
             this = GradientStop(position, color);
         }

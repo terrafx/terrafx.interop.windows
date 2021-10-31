@@ -7,10 +7,8 @@ namespace TerraFX.Interop
 {
     public partial struct D3D12_RAYTRACING_SHADER_CONFIG
     {
-        [NativeTypeName("UINT")]
         public uint MaxPayloadSizeInBytes;
 
-        [NativeTypeName("UINT")]
         public uint MaxAttributeSizeInBytes;
     }
 }

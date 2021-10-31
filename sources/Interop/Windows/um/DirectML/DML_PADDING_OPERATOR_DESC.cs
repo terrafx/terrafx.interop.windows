@@ -15,10 +15,8 @@ namespace TerraFX.Interop
 
         public DML_PADDING_MODE PaddingMode;
 
-        [NativeTypeName("FLOAT")]
         public float PaddingValue;
 
-        [NativeTypeName("UINT")]
         public uint DimensionCount;
 
         [NativeTypeName("const UINT *")]

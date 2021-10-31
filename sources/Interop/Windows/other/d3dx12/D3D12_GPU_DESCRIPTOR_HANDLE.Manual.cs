@@ -11,12 +11,12 @@ namespace TerraFX.Interop
     {
         public static D3D12_GPU_DESCRIPTOR_HANDLE DEFAULT => default;
 
-        public D3D12_GPU_DESCRIPTOR_HANDLE([NativeTypeName("const D3D12_GPU_DESCRIPTOR_HANDLE &")] in D3D12_GPU_DESCRIPTOR_HANDLE other, [NativeTypeName("INT")] int offsetScaledByIncrementSize)
+        public D3D12_GPU_DESCRIPTOR_HANDLE([NativeTypeName("const D3D12_GPU_DESCRIPTOR_HANDLE &")] in D3D12_GPU_DESCRIPTOR_HANDLE other, int offsetScaledByIncrementSize)
         {
             InitOffsetted(out this, other, offsetScaledByIncrementSize);
         }
 
-        public D3D12_GPU_DESCRIPTOR_HANDLE([NativeTypeName("const D3D12_GPU_DESCRIPTOR_HANDLE &")] in D3D12_GPU_DESCRIPTOR_HANDLE other, [NativeTypeName("INT")] int offsetInDescriptors, [NativeTypeName("UINT")] uint descriptorIncrementSize)
+        public D3D12_GPU_DESCRIPTOR_HANDLE([NativeTypeName("const D3D12_GPU_DESCRIPTOR_HANDLE &")] in D3D12_GPU_DESCRIPTOR_HANDLE other, int offsetInDescriptors, uint descriptorIncrementSize)
         {
             InitOffsetted(out this, other, offsetInDescriptors, descriptorIncrementSize);
         }
@@ -43,22 +43,22 @@ namespace TerraFX.Interop
             return (l.ptr != r.ptr);
         }
 
-        public void InitOffsetted([NativeTypeName("const D3D12_GPU_DESCRIPTOR_HANDLE &")] in D3D12_GPU_DESCRIPTOR_HANDLE @base, [NativeTypeName("INT")] int offsetScaledByIncrementSize)
+        public void InitOffsetted([NativeTypeName("const D3D12_GPU_DESCRIPTOR_HANDLE &")] in D3D12_GPU_DESCRIPTOR_HANDLE @base, int offsetScaledByIncrementSize)
         {
             InitOffsetted(out this, @base, offsetScaledByIncrementSize);
         }
 
-        public void InitOffsetted([NativeTypeName("const D3D12_GPU_DESCRIPTOR_HANDLE &")] in D3D12_GPU_DESCRIPTOR_HANDLE @base, [NativeTypeName("INT")] int offsetInDescriptors, [NativeTypeName("UINT")] uint descriptorIncrementSize)
+        public void InitOffsetted([NativeTypeName("const D3D12_GPU_DESCRIPTOR_HANDLE &")] in D3D12_GPU_DESCRIPTOR_HANDLE @base, int offsetInDescriptors, uint descriptorIncrementSize)
         {
             InitOffsetted(out this, @base, offsetInDescriptors, descriptorIncrementSize);
         }
 
-        public static void InitOffsetted([NativeTypeName("D3D12_GPU_DESCRIPTOR_HANDLE &")] out D3D12_GPU_DESCRIPTOR_HANDLE handle, [NativeTypeName("const D3D12_GPU_DESCRIPTOR_HANDLE &")] in D3D12_GPU_DESCRIPTOR_HANDLE @base, [NativeTypeName("INT")] int offsetScaledByIncrementSize)
+        public static void InitOffsetted([NativeTypeName("D3D12_GPU_DESCRIPTOR_HANDLE &")] out D3D12_GPU_DESCRIPTOR_HANDLE handle, [NativeTypeName("const D3D12_GPU_DESCRIPTOR_HANDLE &")] in D3D12_GPU_DESCRIPTOR_HANDLE @base, int offsetScaledByIncrementSize)
         {
             handle.ptr = (ulong)((long)@base.ptr + (long)offsetScaledByIncrementSize);
         }
 
-        public static void InitOffsetted([NativeTypeName("D3D12_GPU_DESCRIPTOR_HANDLE &")] out D3D12_GPU_DESCRIPTOR_HANDLE handle, [NativeTypeName("const D3D12_GPU_DESCRIPTOR_HANDLE &")] in D3D12_GPU_DESCRIPTOR_HANDLE @base, [NativeTypeName("INT")] int offsetInDescriptors, [NativeTypeName("UINT")] uint descriptorIncrementSize)
+        public static void InitOffsetted([NativeTypeName("D3D12_GPU_DESCRIPTOR_HANDLE &")] out D3D12_GPU_DESCRIPTOR_HANDLE handle, [NativeTypeName("const D3D12_GPU_DESCRIPTOR_HANDLE &")] in D3D12_GPU_DESCRIPTOR_HANDLE @base, int offsetInDescriptors, uint descriptorIncrementSize)
         {
             handle.ptr = (ulong)((long)@base.ptr + ((long)offsetInDescriptors * (long)descriptorIncrementSize));
         }

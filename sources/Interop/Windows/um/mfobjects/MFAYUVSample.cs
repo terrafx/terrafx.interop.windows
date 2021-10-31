@@ -7,16 +7,12 @@ namespace TerraFX.Interop
 {
     public partial struct MFAYUVSample
     {
-        [NativeTypeName("BYTE")]
         public byte bCrValue;
 
-        [NativeTypeName("BYTE")]
         public byte bCbValue;
 
-        [NativeTypeName("BYTE")]
         public byte bYValue;
 
-        [NativeTypeName("BYTE")]
         public byte bSampleAlpha8;
     }
 }

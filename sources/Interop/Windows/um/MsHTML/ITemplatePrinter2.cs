@@ -41,28 +41,28 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        public HRESULT GetTypeInfoCount([NativeTypeName("UINT *")] uint* pctinfo)
+        public HRESULT GetTypeInfoCount(uint* pctinfo)
         {
             return ((delegate* unmanaged<ITemplatePrinter2*, uint*, int>)(lpVtbl[3]))((ITemplatePrinter2*)Unsafe.AsPointer(ref this), pctinfo);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT GetTypeInfo([NativeTypeName("UINT")] uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
+        public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
         {
             return ((delegate* unmanaged<ITemplatePrinter2*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((ITemplatePrinter2*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, [NativeTypeName("UINT")] uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+        public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
         {
             return ((delegate* unmanaged<ITemplatePrinter2*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((ITemplatePrinter2*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, [NativeTypeName("UINT *")] uint* puArgErr)
+        public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
         {
             return ((delegate* unmanaged<ITemplatePrinter2*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((ITemplatePrinter2*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
         }
@@ -251,42 +251,42 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(33)]
-        public HRESULT put_copies([NativeTypeName("USHORT")] ushort v)
+        public HRESULT put_copies(ushort v)
         {
             return ((delegate* unmanaged<ITemplatePrinter2*, ushort, int>)(lpVtbl[33]))((ITemplatePrinter2*)Unsafe.AsPointer(ref this), v);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(34)]
-        public HRESULT get_copies([NativeTypeName("USHORT *")] ushort* p)
+        public HRESULT get_copies(ushort* p)
         {
             return ((delegate* unmanaged<ITemplatePrinter2*, ushort*, int>)(lpVtbl[34]))((ITemplatePrinter2*)Unsafe.AsPointer(ref this), p);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(35)]
-        public HRESULT put_pageFrom([NativeTypeName("USHORT")] ushort v)
+        public HRESULT put_pageFrom(ushort v)
         {
             return ((delegate* unmanaged<ITemplatePrinter2*, ushort, int>)(lpVtbl[35]))((ITemplatePrinter2*)Unsafe.AsPointer(ref this), v);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(36)]
-        public HRESULT get_pageFrom([NativeTypeName("USHORT *")] ushort* p)
+        public HRESULT get_pageFrom(ushort* p)
         {
             return ((delegate* unmanaged<ITemplatePrinter2*, ushort*, int>)(lpVtbl[36]))((ITemplatePrinter2*)Unsafe.AsPointer(ref this), p);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(37)]
-        public HRESULT put_pageTo([NativeTypeName("USHORT")] ushort v)
+        public HRESULT put_pageTo(ushort v)
         {
             return ((delegate* unmanaged<ITemplatePrinter2*, ushort, int>)(lpVtbl[37]))((ITemplatePrinter2*)Unsafe.AsPointer(ref this), v);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(38)]
-        public HRESULT get_pageTo([NativeTypeName("USHORT *")] ushort* p)
+        public HRESULT get_pageTo(ushort* p)
         {
             return ((delegate* unmanaged<ITemplatePrinter2*, ushort*, int>)(lpVtbl[38]))((ITemplatePrinter2*)Unsafe.AsPointer(ref this), p);
         }

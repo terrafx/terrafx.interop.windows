@@ -7,16 +7,12 @@ namespace TerraFX.Interop
 {
     public partial struct TOUCHPREDICTIONPARAMETERS
     {
-        [NativeTypeName("UINT")]
         public uint cbSize;
 
-        [NativeTypeName("UINT")]
         public uint dwLatency;
 
-        [NativeTypeName("UINT")]
         public uint dwSampleTime;
 
-        [NativeTypeName("UINT")]
         public uint bUseHWTimeStamp;
     }
 }

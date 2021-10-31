@@ -144,7 +144,7 @@ namespace TerraFX.Interop
         public static extern uint MFMapDXGIFormatToDX9Format(DXGI_FORMAT dx11);
 
         [DllImport("mfplat", ExactSpelling = true)]
-        public static extern HRESULT MFLockDXGIDeviceManager([NativeTypeName("UINT *")] uint* pResetToken, IMFDXGIDeviceManager** ppManager);
+        public static extern HRESULT MFLockDXGIDeviceManager(uint* pResetToken, IMFDXGIDeviceManager** ppManager);
 
         [DllImport("mfplat", ExactSpelling = true)]
         public static extern HRESULT MFUnlockDXGIDeviceManager();
@@ -156,13 +156,13 @@ namespace TerraFX.Interop
         public static extern HRESULT MFCreateWICBitmapBuffer([NativeTypeName("const IID &")] Guid* riid, IUnknown* punkSurface, IMFMediaBuffer** ppBuffer);
 
         [DllImport("mfplat", ExactSpelling = true)]
-        public static extern HRESULT MFCreateDXGISurfaceBuffer([NativeTypeName("const IID &")] Guid* riid, IUnknown* punkSurface, [NativeTypeName("UINT")] uint uSubresourceIndex, BOOL fBottomUpWhenLinear, IMFMediaBuffer** ppBuffer);
+        public static extern HRESULT MFCreateDXGISurfaceBuffer([NativeTypeName("const IID &")] Guid* riid, IUnknown* punkSurface, uint uSubresourceIndex, BOOL fBottomUpWhenLinear, IMFMediaBuffer** ppBuffer);
 
         [DllImport("mfplat", ExactSpelling = true)]
         public static extern HRESULT MFCreateVideoSampleAllocatorEx([NativeTypeName("const IID &")] Guid* riid, void** ppSampleAllocator);
 
         [DllImport("mfplat", ExactSpelling = true)]
-        public static extern HRESULT MFCreateDXGIDeviceManager([NativeTypeName("UINT *")] uint* resetToken, IMFDXGIDeviceManager** ppDeviceManager);
+        public static extern HRESULT MFCreateDXGIDeviceManager(uint* resetToken, IMFDXGIDeviceManager** ppDeviceManager);
 
         [DllImport("mfplat", ExactSpelling = true)]
         public static extern HRESULT MFCreateAlignedMemoryBuffer([NativeTypeName("DWORD")] uint cbMaxLength, [NativeTypeName("DWORD")] uint cbAligment, IMFMediaBuffer** ppBuffer);
@@ -2880,13 +2880,13 @@ namespace TerraFX.Interop
         public static extern HRESULT MFCreateAttributes(IMFAttributes** ppMFAttributes, [NativeTypeName("UINT32")] uint cInitialSize);
 
         [DllImport("mfplat", ExactSpelling = true)]
-        public static extern HRESULT MFInitAttributesFromBlob(IMFAttributes* pAttributes, [NativeTypeName("const UINT8 *")] byte* pBuf, [NativeTypeName("UINT")] uint cbBufSize);
+        public static extern HRESULT MFInitAttributesFromBlob(IMFAttributes* pAttributes, [NativeTypeName("const UINT8 *")] byte* pBuf, uint cbBufSize);
 
         [DllImport("mfplat", ExactSpelling = true)]
         public static extern HRESULT MFGetAttributesAsBlobSize(IMFAttributes* pAttributes, [NativeTypeName("UINT32 *")] uint* pcbBufSize);
 
         [DllImport("mfplat", ExactSpelling = true)]
-        public static extern HRESULT MFGetAttributesAsBlob(IMFAttributes* pAttributes, [NativeTypeName("UINT8 *")] byte* pBuf, [NativeTypeName("UINT")] uint cbBufSize);
+        public static extern HRESULT MFGetAttributesAsBlob(IMFAttributes* pAttributes, [NativeTypeName("UINT8 *")] byte* pBuf, uint cbBufSize);
 
         [NativeTypeName("const GUID")]
         public static ref readonly Guid MFT_CATEGORY_VIDEO_DECODER
@@ -3189,7 +3189,7 @@ namespace TerraFX.Interop
         }
 
         [DllImport("mfplat", ExactSpelling = true)]
-        public static extern HRESULT MFTRegister([NativeTypeName("CLSID")] Guid clsidMFT, [NativeTypeName("GUID")] Guid guidCategory, [NativeTypeName("LPWSTR")] ushort* pszName, [NativeTypeName("UINT32")] uint Flags, [NativeTypeName("UINT32")] uint cInputTypes, MFT_REGISTER_TYPE_INFO* pInputTypes, [NativeTypeName("UINT32")] uint cOutputTypes, MFT_REGISTER_TYPE_INFO* pOutputTypes, IMFAttributes* pAttributes);
+        public static extern HRESULT MFTRegister([NativeTypeName("CLSID")] Guid clsidMFT, Guid guidCategory, [NativeTypeName("LPWSTR")] ushort* pszName, [NativeTypeName("UINT32")] uint Flags, [NativeTypeName("UINT32")] uint cInputTypes, MFT_REGISTER_TYPE_INFO* pInputTypes, [NativeTypeName("UINT32")] uint cOutputTypes, MFT_REGISTER_TYPE_INFO* pOutputTypes, IMFAttributes* pAttributes);
 
         [DllImport("mfplat", ExactSpelling = true)]
         public static extern HRESULT MFTUnregister([NativeTypeName("CLSID")] Guid clsidMFT);
@@ -3207,10 +3207,10 @@ namespace TerraFX.Interop
         public static extern HRESULT MFTUnregisterLocalByCLSID([NativeTypeName("CLSID")] Guid clsidMFT);
 
         [DllImport("mfplat", ExactSpelling = true)]
-        public static extern HRESULT MFTEnum([NativeTypeName("GUID")] Guid guidCategory, [NativeTypeName("UINT32")] uint Flags, MFT_REGISTER_TYPE_INFO* pInputType, MFT_REGISTER_TYPE_INFO* pOutputType, IMFAttributes* pAttributes, [NativeTypeName("CLSID **")] Guid** ppclsidMFT, [NativeTypeName("UINT32 *")] uint* pcMFTs);
+        public static extern HRESULT MFTEnum(Guid guidCategory, [NativeTypeName("UINT32")] uint Flags, MFT_REGISTER_TYPE_INFO* pInputType, MFT_REGISTER_TYPE_INFO* pOutputType, IMFAttributes* pAttributes, [NativeTypeName("CLSID **")] Guid** ppclsidMFT, [NativeTypeName("UINT32 *")] uint* pcMFTs);
 
         [DllImport("mfplat", ExactSpelling = true)]
-        public static extern HRESULT MFTEnumEx([NativeTypeName("GUID")] Guid guidCategory, [NativeTypeName("UINT32")] uint Flags, [NativeTypeName("const MFT_REGISTER_TYPE_INFO *")] MFT_REGISTER_TYPE_INFO* pInputType, [NativeTypeName("const MFT_REGISTER_TYPE_INFO *")] MFT_REGISTER_TYPE_INFO* pOutputType, IMFActivate*** pppMFTActivate, [NativeTypeName("UINT32 *")] uint* pnumMFTActivate);
+        public static extern HRESULT MFTEnumEx(Guid guidCategory, [NativeTypeName("UINT32")] uint Flags, [NativeTypeName("const MFT_REGISTER_TYPE_INFO *")] MFT_REGISTER_TYPE_INFO* pInputType, [NativeTypeName("const MFT_REGISTER_TYPE_INFO *")] MFT_REGISTER_TYPE_INFO* pOutputType, IMFActivate*** pppMFTActivate, [NativeTypeName("UINT32 *")] uint* pnumMFTActivate);
 
         [NativeTypeName("const GUID")]
         public static ref readonly Guid MFT_ENUM_VIDEO_RENDERER_EXTENSION_PROFILE
@@ -3263,7 +3263,7 @@ namespace TerraFX.Interop
         }
 
         [DllImport("mfplat", ExactSpelling = true)]
-        public static extern HRESULT MFTEnum2([NativeTypeName("GUID")] Guid guidCategory, [NativeTypeName("UINT32")] uint Flags, [NativeTypeName("const MFT_REGISTER_TYPE_INFO *")] MFT_REGISTER_TYPE_INFO* pInputType, [NativeTypeName("const MFT_REGISTER_TYPE_INFO *")] MFT_REGISTER_TYPE_INFO* pOutputType, IMFAttributes* pAttributes, IMFActivate*** pppMFTActivate, [NativeTypeName("UINT32 *")] uint* pnumMFTActivate);
+        public static extern HRESULT MFTEnum2(Guid guidCategory, [NativeTypeName("UINT32")] uint Flags, [NativeTypeName("const MFT_REGISTER_TYPE_INFO *")] MFT_REGISTER_TYPE_INFO* pInputType, [NativeTypeName("const MFT_REGISTER_TYPE_INFO *")] MFT_REGISTER_TYPE_INFO* pOutputType, IMFAttributes* pAttributes, IMFActivate*** pppMFTActivate, [NativeTypeName("UINT32 *")] uint* pnumMFTActivate);
 
         [DllImport("mfplat", ExactSpelling = true)]
         public static extern HRESULT MFTGetInfo([NativeTypeName("CLSID")] Guid clsidMFT, [NativeTypeName("LPWSTR *")] ushort** pszName, MFT_REGISTER_TYPE_INFO** ppInputTypes, [NativeTypeName("UINT32 *")] uint* pcInputTypes, MFT_REGISTER_TYPE_INFO** ppOutputTypes, [NativeTypeName("UINT32 *")] uint* pcOutputTypes, IMFAttributes** ppAttributes);
@@ -10571,7 +10571,7 @@ namespace TerraFX.Interop
         }
 
         [DllImport("mfplat", ExactSpelling = true)]
-        public static extern HRESULT MFValidateMediaTypeSize([NativeTypeName("GUID")] Guid FormatType, [NativeTypeName("UINT8 *")] byte* pBlock, [NativeTypeName("UINT32")] uint cbSize);
+        public static extern HRESULT MFValidateMediaTypeSize(Guid FormatType, [NativeTypeName("UINT8 *")] byte* pBlock, [NativeTypeName("UINT32")] uint cbSize);
 
         [DllImport("mfplat", ExactSpelling = true)]
         public static extern HRESULT MFCreateMediaType(IMFMediaType** ppMFType);
@@ -10616,10 +10616,10 @@ namespace TerraFX.Interop
         public static extern HRESULT MFInitMediaTypeFromAMMediaType(IMFMediaType* pMFType, [NativeTypeName("const AM_MEDIA_TYPE *")] AM_MEDIA_TYPE* pAMType);
 
         [DllImport("mfplat", ExactSpelling = true)]
-        public static extern HRESULT MFInitAMMediaTypeFromMFMediaType(IMFMediaType* pMFType, [NativeTypeName("GUID")] Guid guidFormatBlockType, AM_MEDIA_TYPE* pAMType);
+        public static extern HRESULT MFInitAMMediaTypeFromMFMediaType(IMFMediaType* pMFType, Guid guidFormatBlockType, AM_MEDIA_TYPE* pAMType);
 
         [DllImport("mfplat", ExactSpelling = true)]
-        public static extern HRESULT MFCreateAMMediaTypeFromMFMediaType(IMFMediaType* pMFType, [NativeTypeName("GUID")] Guid guidFormatBlockType, AM_MEDIA_TYPE** ppAMType);
+        public static extern HRESULT MFCreateAMMediaTypeFromMFMediaType(IMFMediaType* pMFType, Guid guidFormatBlockType, AM_MEDIA_TYPE** ppAMType);
 
         [DllImport("mfplat", ExactSpelling = true)]
         public static extern BOOL MFCompareFullToPartialMediaType(IMFMediaType* pMFTypeFull, IMFMediaType* pMFTypePartial);
@@ -10652,7 +10652,7 @@ namespace TerraFX.Interop
         public static extern HRESULT MFCreateVideoMediaTypeFromBitMapInfoHeaderEx([NativeTypeName("const BITMAPINFOHEADER *")] BITMAPINFOHEADER* pbmihBitMapInfoHeader, [NativeTypeName("UINT32")] uint cbBitMapInfoHeader, [NativeTypeName("DWORD")] uint dwPixelAspectRatioX, [NativeTypeName("DWORD")] uint dwPixelAspectRatioY, MFVideoInterlaceMode InterlaceMode, [NativeTypeName("QWORD")] ulong VideoFlags, [NativeTypeName("DWORD")] uint dwFramesPerSecondNumerator, [NativeTypeName("DWORD")] uint dwFramesPerSecondDenominator, [NativeTypeName("DWORD")] uint dwMaxBitRate, IMFVideoMediaType** ppIVideoMediaType);
 
         [DllImport("mfplat", ExactSpelling = true)]
-        public static extern HRESULT MFCreateMediaTypeFromRepresentation([NativeTypeName("GUID")] Guid guidRepresentation, [NativeTypeName("LPVOID")] void* pvRepresentation, IMFMediaType** ppIMediaType);
+        public static extern HRESULT MFCreateMediaTypeFromRepresentation(Guid guidRepresentation, [NativeTypeName("LPVOID")] void* pvRepresentation, IMFMediaType** ppIMediaType);
 
         [DllImport("mfplat", ExactSpelling = true)]
         public static extern HRESULT MFCreateAudioMediaType([NativeTypeName("const WAVEFORMATEX *")] WAVEFORMATEX* pAudioFormat, IMFAudioMediaType** ppIAudioMediaType);
@@ -10674,7 +10674,7 @@ namespace TerraFX.Interop
         public static extern HRESULT MFConvertColorInfoFromDXVA(MFVIDEOFORMAT* pToFormat, [NativeTypeName("DWORD")] uint dwFromDXVA);
 
         [DllImport("mfplat", ExactSpelling = true)]
-        public static extern HRESULT MFCopyImage([NativeTypeName("BYTE *")] byte* pDest, [NativeTypeName("LONG")] int lDestStride, [NativeTypeName("const BYTE *")] byte* pSrc, [NativeTypeName("LONG")] int lSrcStride, [NativeTypeName("DWORD")] uint dwWidthInBytes, [NativeTypeName("DWORD")] uint dwLines);
+        public static extern HRESULT MFCopyImage(byte* pDest, [NativeTypeName("LONG")] int lDestStride, [NativeTypeName("const BYTE *")] byte* pSrc, [NativeTypeName("LONG")] int lSrcStride, [NativeTypeName("DWORD")] uint dwWidthInBytes, [NativeTypeName("DWORD")] uint dwLines);
 
         [DllImport("mfplat", ExactSpelling = true)]
         public static extern HRESULT MFConvertFromFP16Array(float* pDest, [NativeTypeName("const WORD *")] ushort* pSrc, [NativeTypeName("DWORD")] uint dwCount);

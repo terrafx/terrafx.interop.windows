@@ -17,10 +17,8 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint Size;
 
-        [NativeTypeName("SHORT")]
         public short CriticalTemperature;
 
-        [NativeTypeName("SHORT")]
         public short WarningTemperature;
 
         [NativeTypeName("WORD")]

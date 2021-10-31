@@ -19,7 +19,6 @@ namespace TerraFX.Interop
         [NativeTypeName("LPRECT")]
         public RECT* lpRect;
 
-        [NativeTypeName("UINT")]
         public uint uFormat;
 
         public BOOL fLink;

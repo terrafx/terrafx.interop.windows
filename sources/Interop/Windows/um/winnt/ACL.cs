@@ -7,10 +7,8 @@ namespace TerraFX.Interop
 {
     public partial struct ACL
     {
-        [NativeTypeName("BYTE")]
         public byte AclRevision;
 
-        [NativeTypeName("BYTE")]
         public byte Sbz1;
 
         [NativeTypeName("WORD")]

@@ -15,7 +15,6 @@ namespace TerraFX.Interop
         [NativeTypeName("UINT8")]
         public byte TargetStampIndex;
 
-        [NativeTypeName("UINT")]
         public uint NumTraceSteps;
 
         [NativeTypeName("D3D11_TRACE_COMPONENT_MASK [32]")]

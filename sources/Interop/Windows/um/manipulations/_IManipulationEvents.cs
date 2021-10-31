@@ -41,21 +41,21 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        public HRESULT ManipulationStarted([NativeTypeName("FLOAT")] float x, [NativeTypeName("FLOAT")] float y)
+        public HRESULT ManipulationStarted(float x, float y)
         {
             return ((delegate* unmanaged<_IManipulationEvents*, float, float, int>)(lpVtbl[3]))((_IManipulationEvents*)Unsafe.AsPointer(ref this), x, y);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT ManipulationDelta([NativeTypeName("FLOAT")] float x, [NativeTypeName("FLOAT")] float y, [NativeTypeName("FLOAT")] float translationDeltaX, [NativeTypeName("FLOAT")] float translationDeltaY, [NativeTypeName("FLOAT")] float scaleDelta, [NativeTypeName("FLOAT")] float expansionDelta, [NativeTypeName("FLOAT")] float rotationDelta, [NativeTypeName("FLOAT")] float cumulativeTranslationX, [NativeTypeName("FLOAT")] float cumulativeTranslationY, [NativeTypeName("FLOAT")] float cumulativeScale, [NativeTypeName("FLOAT")] float cumulativeExpansion, [NativeTypeName("FLOAT")] float cumulativeRotation)
+        public HRESULT ManipulationDelta(float x, float y, float translationDeltaX, float translationDeltaY, float scaleDelta, float expansionDelta, float rotationDelta, float cumulativeTranslationX, float cumulativeTranslationY, float cumulativeScale, float cumulativeExpansion, float cumulativeRotation)
         {
             return ((delegate* unmanaged<_IManipulationEvents*, float, float, float, float, float, float, float, float, float, float, float, float, int>)(lpVtbl[4]))((_IManipulationEvents*)Unsafe.AsPointer(ref this), x, y, translationDeltaX, translationDeltaY, scaleDelta, expansionDelta, rotationDelta, cumulativeTranslationX, cumulativeTranslationY, cumulativeScale, cumulativeExpansion, cumulativeRotation);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        public HRESULT ManipulationCompleted([NativeTypeName("FLOAT")] float x, [NativeTypeName("FLOAT")] float y, [NativeTypeName("FLOAT")] float cumulativeTranslationX, [NativeTypeName("FLOAT")] float cumulativeTranslationY, [NativeTypeName("FLOAT")] float cumulativeScale, [NativeTypeName("FLOAT")] float cumulativeExpansion, [NativeTypeName("FLOAT")] float cumulativeRotation)
+        public HRESULT ManipulationCompleted(float x, float y, float cumulativeTranslationX, float cumulativeTranslationY, float cumulativeScale, float cumulativeExpansion, float cumulativeRotation)
         {
             return ((delegate* unmanaged<_IManipulationEvents*, float, float, float, float, float, float, float, int>)(lpVtbl[5]))((_IManipulationEvents*)Unsafe.AsPointer(ref this), x, y, cumulativeTranslationX, cumulativeTranslationY, cumulativeScale, cumulativeExpansion, cumulativeRotation);
         }

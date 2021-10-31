@@ -48,7 +48,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT ConversionList(HIMC hIMC, [NativeTypeName("LPWSTR")] ushort* szSource, [NativeTypeName("UINT")] uint uFlag, [NativeTypeName("UINT")] uint uBufLen, CANDIDATELIST* pDest, [NativeTypeName("UINT *")] uint* puCopied)
+        public HRESULT ConversionList(HIMC hIMC, [NativeTypeName("LPWSTR")] ushort* szSource, uint uFlag, uint uBufLen, CANDIDATELIST* pDest, uint* puCopied)
         {
             return ((delegate* unmanaged<IActiveIME*, HIMC, ushort*, uint, uint, CANDIDATELIST*, uint*, int>)(lpVtbl[4]))((IActiveIME*)Unsafe.AsPointer(ref this), hIMC, szSource, uFlag, uBufLen, pDest, puCopied);
         }
@@ -62,14 +62,14 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        public HRESULT Destroy([NativeTypeName("UINT")] uint uReserved)
+        public HRESULT Destroy(uint uReserved)
         {
             return ((delegate* unmanaged<IActiveIME*, uint, int>)(lpVtbl[6]))((IActiveIME*)Unsafe.AsPointer(ref this), uReserved);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        public HRESULT Escape(HIMC hIMC, [NativeTypeName("UINT")] uint uEscape, void* pData, [NativeTypeName("LRESULT *")] nint* plResult)
+        public HRESULT Escape(HIMC hIMC, uint uEscape, void* pData, [NativeTypeName("LRESULT *")] nint* plResult)
         {
             return ((delegate* unmanaged<IActiveIME*, HIMC, uint, void*, nint*, int>)(lpVtbl[7]))((IActiveIME*)Unsafe.AsPointer(ref this), hIMC, uEscape, pData, plResult);
         }
@@ -83,7 +83,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        public HRESULT ProcessKey(HIMC hIMC, [NativeTypeName("UINT")] uint uVirKey, [NativeTypeName("DWORD")] uint lParam, [NativeTypeName("BYTE *")] byte* pbKeyState)
+        public HRESULT ProcessKey(HIMC hIMC, uint uVirKey, [NativeTypeName("DWORD")] uint lParam, byte* pbKeyState)
         {
             return ((delegate* unmanaged<IActiveIME*, HIMC, uint, uint, byte*, int>)(lpVtbl[9]))((IActiveIME*)Unsafe.AsPointer(ref this), hIMC, uVirKey, lParam, pbKeyState);
         }
@@ -111,7 +111,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(13)]
-        public HRESULT ToAsciiEx([NativeTypeName("UINT")] uint uVirKey, [NativeTypeName("UINT")] uint uScanCode, [NativeTypeName("BYTE *")] byte* pbKeyState, [NativeTypeName("UINT")] uint fuState, HIMC hIMC, [NativeTypeName("DWORD *")] uint* pdwTransBuf, [NativeTypeName("UINT *")] uint* puSize)
+        public HRESULT ToAsciiEx(uint uVirKey, uint uScanCode, byte* pbKeyState, uint fuState, HIMC hIMC, [NativeTypeName("DWORD *")] uint* pdwTransBuf, uint* puSize)
         {
             return ((delegate* unmanaged<IActiveIME*, uint, uint, byte*, uint, HIMC, uint*, uint*, int>)(lpVtbl[13]))((IActiveIME*)Unsafe.AsPointer(ref this), uVirKey, uScanCode, pbKeyState, fuState, hIMC, pdwTransBuf, puSize);
         }
@@ -132,7 +132,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(16)]
-        public HRESULT GetRegisterWordStyle([NativeTypeName("UINT")] uint nItem, STYLEBUFW* pStyleBuf, [NativeTypeName("UINT *")] uint* puBufSize)
+        public HRESULT GetRegisterWordStyle(uint nItem, STYLEBUFW* pStyleBuf, uint* puBufSize)
         {
             return ((delegate* unmanaged<IActiveIME*, uint, STYLEBUFW*, uint*, int>)(lpVtbl[16]))((IActiveIME*)Unsafe.AsPointer(ref this), nItem, pStyleBuf, puBufSize);
         }
@@ -146,7 +146,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(18)]
-        public HRESULT GetCodePageA([NativeTypeName("UINT *")] uint* uCodePage)
+        public HRESULT GetCodePageA(uint* uCodePage)
         {
             return ((delegate* unmanaged<IActiveIME*, uint*, int>)(lpVtbl[18]))((IActiveIME*)Unsafe.AsPointer(ref this), uCodePage);
         }

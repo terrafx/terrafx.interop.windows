@@ -18,7 +18,6 @@ namespace TerraFX.Interop
         [NativeTypeName("WORD")]
         public ushort Reserved;
 
-        [NativeTypeName("GUID")]
         public Guid ReparseGuid;
 
         [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winnt.h:14636:5)")]

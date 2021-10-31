@@ -14,7 +14,7 @@ namespace TerraFX.Interop
 
         public uint _bitfield1;
 
-        [NativeTypeName("UINT : 24")]
+        [NativeTypeName("uint : 24")]
         public uint InstanceID
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -30,7 +30,7 @@ namespace TerraFX.Interop
             }
         }
 
-        [NativeTypeName("UINT : 8")]
+        [NativeTypeName("uint : 8")]
         public uint InstanceMask
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -48,7 +48,7 @@ namespace TerraFX.Interop
 
         public uint _bitfield2;
 
-        [NativeTypeName("UINT : 24")]
+        [NativeTypeName("uint : 24")]
         public uint InstanceContributionToHitGroupIndex
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -64,7 +64,7 @@ namespace TerraFX.Interop
             }
         }
 
-        [NativeTypeName("UINT : 8")]
+        [NativeTypeName("uint : 8")]
         public uint Flags
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]

@@ -14,10 +14,8 @@ namespace TerraFX.Interop
 
         public HWND hWnd;
 
-        [NativeTypeName("UINT")]
         public uint uCallbackMessage;
 
-        [NativeTypeName("UINT")]
         public uint uEdge;
 
         public RECT rc;

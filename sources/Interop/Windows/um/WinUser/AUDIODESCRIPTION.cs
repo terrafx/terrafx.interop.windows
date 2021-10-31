@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public partial struct AUDIODESCRIPTION
     {
-        [NativeTypeName("UINT")]
         public uint cbSize;
 
         public BOOL Enabled;

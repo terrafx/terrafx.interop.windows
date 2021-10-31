@@ -41,7 +41,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        public void Present(ID3D12Resource* pResource, [NativeTypeName("UINT")] uint Subresource, HWND window)
+        public void Present(ID3D12Resource* pResource, uint Subresource, HWND window)
         {
             ((delegate* unmanaged<ID3D12SharingContract*, ID3D12Resource*, uint, HWND, void>)(lpVtbl[3]))((ID3D12SharingContract*)Unsafe.AsPointer(ref this), pResource, Subresource, window);
         }

@@ -7,10 +7,8 @@ namespace TerraFX.Interop
 {
     public partial struct D2D_SIZE_F
     {
-        [NativeTypeName("FLOAT")]
         public float width;
 
-        [NativeTypeName("FLOAT")]
         public float height;
     }
 }

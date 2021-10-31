@@ -20,7 +20,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(1)]
-        public void NodeMaskCb([NativeTypeName("UINT")] uint param0)
+        public void NodeMaskCb(uint param0)
         {
             ((delegate* unmanaged<ID3DX12PipelineParserCallbacks*, uint, void>)(lpVtbl[1]))((ID3DX12PipelineParserCallbacks*)Unsafe.AsPointer(ref this), param0);
         }
@@ -167,7 +167,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(22)]
-        public void SampleMaskCb([NativeTypeName("UINT")] uint param0)
+        public void SampleMaskCb(uint param0)
         {
             ((delegate* unmanaged<ID3DX12PipelineParserCallbacks*, uint, void>)(lpVtbl[22]))((ID3DX12PipelineParserCallbacks*)Unsafe.AsPointer(ref this), param0);
         }
@@ -188,7 +188,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(25)]
-        public void ErrorBadInputParameter([NativeTypeName("UINT")] uint param0)
+        public void ErrorBadInputParameter(uint param0)
         {
             ((delegate* unmanaged<ID3DX12PipelineParserCallbacks*, uint, void>)(lpVtbl[25]))((ID3DX12PipelineParserCallbacks*)Unsafe.AsPointer(ref this), param0);
         }
@@ -202,7 +202,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(27)]
-        public void ErrorUnknownSubobject([NativeTypeName("UINT")] uint param0)
+        public void ErrorUnknownSubobject(uint param0)
         {
             ((delegate* unmanaged<ID3DX12PipelineParserCallbacks*, uint, void>)(lpVtbl[27]))((ID3DX12PipelineParserCallbacks*)Unsafe.AsPointer(ref this), param0);
         }

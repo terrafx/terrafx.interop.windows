@@ -11,13 +11,11 @@ namespace TerraFX.Interop
 
         public int y;
 
-        [NativeTypeName("UINT")]
         public uint n;
 
         [NativeTypeName("LPCWSTR")]
         public ushort* lpstr;
 
-        [NativeTypeName("UINT")]
         public uint uiFlags;
 
         public RECT rcl;

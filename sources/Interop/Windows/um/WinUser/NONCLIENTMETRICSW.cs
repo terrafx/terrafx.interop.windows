@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public partial struct NONCLIENTMETRICSW
     {
-        [NativeTypeName("UINT")]
         public uint cbSize;
 
         public int iBorderWidth;

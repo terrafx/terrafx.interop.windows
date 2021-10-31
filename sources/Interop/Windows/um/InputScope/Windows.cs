@@ -16,13 +16,13 @@ namespace TerraFX.Interop
         public static extern HRESULT SetInputScope(HWND hwnd, InputScope inputscope);
 
         [DllImport("msctf", ExactSpelling = true)]
-        public static extern HRESULT SetInputScopes(HWND hwnd, [NativeTypeName("const InputScope *")] InputScope* pInputScopes, [NativeTypeName("UINT")] uint cInputScopes, [NativeTypeName("PWSTR *")] ushort** ppszPhraseList, [NativeTypeName("UINT")] uint cPhrases, [NativeTypeName("PWSTR")] ushort* pszRegExp, [NativeTypeName("PWSTR")] ushort* pszSRGS);
+        public static extern HRESULT SetInputScopes(HWND hwnd, [NativeTypeName("const InputScope *")] InputScope* pInputScopes, uint cInputScopes, [NativeTypeName("PWSTR *")] ushort** ppszPhraseList, uint cPhrases, [NativeTypeName("PWSTR")] ushort* pszRegExp, [NativeTypeName("PWSTR")] ushort* pszSRGS);
 
         [DllImport("msctf", ExactSpelling = true)]
         public static extern HRESULT SetInputScopeXML(HWND hwnd, [NativeTypeName("PWSTR")] ushort* pszXML);
 
         [DllImport("msctf", ExactSpelling = true)]
-        public static extern HRESULT SetInputScopes2(HWND hwnd, [NativeTypeName("const InputScope *")] InputScope* pInputScopes, [NativeTypeName("UINT")] uint cInputScopes, IEnumString* pEnumString, [NativeTypeName("PWSTR")] ushort* pszRegExp, [NativeTypeName("PWSTR")] ushort* pszSRGS);
+        public static extern HRESULT SetInputScopes2(HWND hwnd, [NativeTypeName("const InputScope *")] InputScope* pInputScopes, uint cInputScopes, IEnumString* pEnumString, [NativeTypeName("PWSTR")] ushort* pszRegExp, [NativeTypeName("PWSTR")] ushort* pszSRGS);
 
         [NativeTypeName("const GUID")]
         public static ref readonly Guid IID_ITfInputScope

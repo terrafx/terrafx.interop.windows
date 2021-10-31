@@ -41,7 +41,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        public HRESULT GetJackContainerId([NativeTypeName("GUID *")] Guid* pJackContainerId)
+        public HRESULT GetJackContainerId(Guid* pJackContainerId)
         {
             return ((delegate* unmanaged<IKsJackContainerId*, Guid*, int>)(lpVtbl[3]))((IKsJackContainerId*)Unsafe.AsPointer(ref this), pJackContainerId);
         }

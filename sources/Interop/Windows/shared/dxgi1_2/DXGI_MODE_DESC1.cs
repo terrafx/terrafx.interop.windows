@@ -7,10 +7,8 @@ namespace TerraFX.Interop
 {
     public partial struct DXGI_MODE_DESC1
     {
-        [NativeTypeName("UINT")]
         public uint Width;
 
-        [NativeTypeName("UINT")]
         public uint Height;
 
         public DXGI_RATIONAL RefreshRate;

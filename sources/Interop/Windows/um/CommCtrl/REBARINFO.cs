@@ -7,10 +7,8 @@ namespace TerraFX.Interop
 {
     public partial struct REBARINFO
     {
-        [NativeTypeName("UINT")]
         public uint cbSize;
 
-        [NativeTypeName("UINT")]
         public uint fMask;
 
         public HIMAGELIST himl;

@@ -11,10 +11,8 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct CACHE_RELATIONSHIP
     {
-        [NativeTypeName("BYTE")]
         public byte Level;
 
-        [NativeTypeName("BYTE")]
         public byte Associativity;
 
         [NativeTypeName("WORD")]

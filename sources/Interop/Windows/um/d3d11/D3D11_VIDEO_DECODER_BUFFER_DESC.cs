@@ -9,36 +9,26 @@ namespace TerraFX.Interop
     {
         public D3D11_VIDEO_DECODER_BUFFER_TYPE BufferType;
 
-        [NativeTypeName("UINT")]
         public uint BufferIndex;
 
-        [NativeTypeName("UINT")]
         public uint DataOffset;
 
-        [NativeTypeName("UINT")]
         public uint DataSize;
 
-        [NativeTypeName("UINT")]
         public uint FirstMBaddress;
 
-        [NativeTypeName("UINT")]
         public uint NumMBsInBuffer;
 
-        [NativeTypeName("UINT")]
         public uint Width;
 
-        [NativeTypeName("UINT")]
         public uint Height;
 
-        [NativeTypeName("UINT")]
         public uint Stride;
 
-        [NativeTypeName("UINT")]
         public uint ReservedBits;
 
         public void* pIV;
 
-        [NativeTypeName("UINT")]
         public uint IVSize;
 
         public BOOL PartialEncryption;

@@ -15,7 +15,6 @@ namespace TerraFX.Interop
         [NativeTypeName("WORD")]
         public ushort Sbz;
 
-        [NativeTypeName("GUID *")]
         public Guid* ObjectType;
     }
 }

@@ -20,7 +20,6 @@ namespace TerraFX.Interop
         [NativeTypeName("ULONG")]
         public uint cButtons;
 
-        [NativeTypeName("GUID *")]
         public Guid* pguidButtons;
     }
 }

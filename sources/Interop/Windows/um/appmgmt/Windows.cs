@@ -24,7 +24,7 @@ namespace TerraFX.Interop
 
         [DllImport("advapi32", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
-        public static extern uint GetManagedApplications([NativeTypeName("GUID *")] Guid* pCategory, [NativeTypeName("DWORD")] uint dwQueryFlags, [NativeTypeName("DWORD")] uint dwInfoLevel, [NativeTypeName("LPDWORD")] uint* pdwApps, [NativeTypeName("PMANAGEDAPPLICATION *")] MANAGEDAPPLICATION** prgManagedApps);
+        public static extern uint GetManagedApplications(Guid* pCategory, [NativeTypeName("DWORD")] uint dwQueryFlags, [NativeTypeName("DWORD")] uint dwInfoLevel, [NativeTypeName("LPDWORD")] uint* pdwApps, [NativeTypeName("PMANAGEDAPPLICATION *")] MANAGEDAPPLICATION** prgManagedApps);
 
         [DllImport("advapi32", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]

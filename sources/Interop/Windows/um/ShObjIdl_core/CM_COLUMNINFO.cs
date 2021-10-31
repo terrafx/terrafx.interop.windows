@@ -16,13 +16,10 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint dwState;
 
-        [NativeTypeName("UINT")]
         public uint uWidth;
 
-        [NativeTypeName("UINT")]
         public uint uDefaultWidth;
 
-        [NativeTypeName("UINT")]
         public uint uIdealWidth;
 
         [NativeTypeName("WCHAR [80]")]

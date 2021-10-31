@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct MSGBOXPARAMSA
     {
-        [NativeTypeName("UINT")]
         public uint cbSize;
 
         public HWND hwndOwner;

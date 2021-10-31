@@ -9,16 +9,12 @@ namespace TerraFX.Interop
     {
         public DXGI_FORMAT Format;
 
-        [NativeTypeName("UINT")]
         public uint Width;
 
-        [NativeTypeName("UINT")]
         public uint Height;
 
-        [NativeTypeName("UINT")]
         public uint Depth;
 
-        [NativeTypeName("UINT")]
         public uint RowPitch;
     }
 }

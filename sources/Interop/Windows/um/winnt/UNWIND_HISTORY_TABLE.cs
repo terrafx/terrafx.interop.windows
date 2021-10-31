@@ -14,16 +14,12 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint Count;
 
-        [NativeTypeName("BYTE")]
         public byte LocalHint;
 
-        [NativeTypeName("BYTE")]
         public byte GlobalHint;
 
-        [NativeTypeName("BYTE")]
         public byte Search;
 
-        [NativeTypeName("BYTE")]
         public byte Once;
 
         [NativeTypeName("ULONG_PTR")]

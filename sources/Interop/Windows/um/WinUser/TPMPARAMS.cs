@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public partial struct TPMPARAMS
     {
-        [NativeTypeName("UINT")]
         public uint cbSize;
 
         public RECT rcExclude;

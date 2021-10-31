@@ -9,7 +9,6 @@ namespace TerraFX.Interop
     {
         public HDC hdc;
 
-        [NativeTypeName("UINT")]
         public uint uiFlags;
     }
 }

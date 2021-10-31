@@ -7,28 +7,20 @@ namespace TerraFX.Interop
 {
     public partial struct IDEREGS
     {
-        [NativeTypeName("BYTE")]
         public byte bFeaturesReg;
 
-        [NativeTypeName("BYTE")]
         public byte bSectorCountReg;
 
-        [NativeTypeName("BYTE")]
         public byte bSectorNumberReg;
 
-        [NativeTypeName("BYTE")]
         public byte bCylLowReg;
 
-        [NativeTypeName("BYTE")]
         public byte bCylHighReg;
 
-        [NativeTypeName("BYTE")]
         public byte bDriveHeadReg;
 
-        [NativeTypeName("BYTE")]
         public byte bCommandReg;
 
-        [NativeTypeName("BYTE")]
         public byte bReserved;
     }
 }

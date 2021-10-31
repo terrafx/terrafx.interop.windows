@@ -7,13 +7,10 @@ namespace TerraFX.Interop
 {
     public partial struct D3D12_MIP_REGION
     {
-        [NativeTypeName("UINT")]
         public uint Width;
 
-        [NativeTypeName("UINT")]
         public uint Height;
 
-        [NativeTypeName("UINT")]
         public uint Depth;
     }
 }

@@ -17,13 +17,10 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint Size;
 
-        [NativeTypeName("BYTE")]
         public byte ActiveSlot;
 
-        [NativeTypeName("BYTE")]
         public byte NextActiveSlot;
 
-        [NativeTypeName("BYTE")]
         public byte SlotCount;
 
         [NativeTypeName("SCM_PD_FIRMWARE_SLOT_INFO [1]")]

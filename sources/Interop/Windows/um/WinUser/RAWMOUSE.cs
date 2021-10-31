@@ -10,7 +10,6 @@ namespace TerraFX.Interop
 {
     public partial struct RAWMOUSE
     {
-        [NativeTypeName("USHORT")]
         public ushort usFlags;
 
         [NativeTypeName("tagRAWMOUSE::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/WinUser.h:14915:5)")]
@@ -68,10 +67,8 @@ namespace TerraFX.Interop
 
             public partial struct _Anonymous_e__Struct
             {
-                [NativeTypeName("USHORT")]
                 public ushort usButtonFlags;
 
-                [NativeTypeName("USHORT")]
                 public ushort usButtonData;
             }
         }

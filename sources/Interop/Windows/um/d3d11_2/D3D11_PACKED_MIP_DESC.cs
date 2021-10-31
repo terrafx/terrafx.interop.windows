@@ -13,10 +13,8 @@ namespace TerraFX.Interop
         [NativeTypeName("UINT8")]
         public byte NumPackedMips;
 
-        [NativeTypeName("UINT")]
         public uint NumTilesForPackedMips;
 
-        [NativeTypeName("UINT")]
         public uint StartTileIndexInOverallResource;
     }
 }

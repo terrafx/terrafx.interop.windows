@@ -10,7 +10,6 @@ namespace TerraFX.Interop
         [NativeTypeName("UINT64")]
         public ulong FirstElement;
 
-        [NativeTypeName("UINT")]
         public uint NumElements;
     }
 }

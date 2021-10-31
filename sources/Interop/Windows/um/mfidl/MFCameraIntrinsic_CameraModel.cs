@@ -7,16 +7,12 @@ namespace TerraFX.Interop
 {
     public partial struct MFCameraIntrinsic_CameraModel
     {
-        [NativeTypeName("FLOAT")]
         public float FocalLength_x;
 
-        [NativeTypeName("FLOAT")]
         public float FocalLength_y;
 
-        [NativeTypeName("FLOAT")]
         public float PrincipalPoint_x;
 
-        [NativeTypeName("FLOAT")]
         public float PrincipalPoint_y;
     }
 }

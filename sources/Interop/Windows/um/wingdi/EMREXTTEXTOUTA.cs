@@ -14,10 +14,8 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint iGraphicsMode;
 
-        [NativeTypeName("FLOAT")]
         public float exScale;
 
-        [NativeTypeName("FLOAT")]
         public float eyScale;
 
         public EMRTEXT emrtext;

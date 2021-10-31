@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public partial struct BSMINFO
     {
-        [NativeTypeName("UINT")]
         public uint cbSize;
 
         public HDESK hdesk;

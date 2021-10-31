@@ -9,7 +9,6 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct POWERBROADCAST_SETTING
     {
-        [NativeTypeName("GUID")]
         public Guid PowerSetting;
 
         [NativeTypeName("DWORD")]

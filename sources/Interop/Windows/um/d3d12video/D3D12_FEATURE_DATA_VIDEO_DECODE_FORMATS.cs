@@ -7,12 +7,10 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct D3D12_FEATURE_DATA_VIDEO_DECODE_FORMATS
     {
-        [NativeTypeName("UINT")]
         public uint NodeIndex;
 
         public D3D12_VIDEO_DECODE_CONFIGURATION Configuration;
 
-        [NativeTypeName("UINT")]
         public uint FormatCount;
 
         public DXGI_FORMAT* pOutputFormats;

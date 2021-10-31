@@ -9,7 +9,6 @@ namespace TerraFX.Interop
 {
     public partial struct SCM_PD_HEALTH_NOTIFICATION_DATA
     {
-        [NativeTypeName("GUID")]
         public Guid DeviceGuid;
     }
 }

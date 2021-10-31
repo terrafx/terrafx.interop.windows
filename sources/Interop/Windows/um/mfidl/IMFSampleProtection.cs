@@ -55,21 +55,21 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        public HRESULT GetProtectionCertificate([NativeTypeName("DWORD")] uint dwVersion, [NativeTypeName("BYTE **")] byte** ppCert, [NativeTypeName("DWORD *")] uint* pcbCert)
+        public HRESULT GetProtectionCertificate([NativeTypeName("DWORD")] uint dwVersion, byte** ppCert, [NativeTypeName("DWORD *")] uint* pcbCert)
         {
             return ((delegate* unmanaged<IMFSampleProtection*, uint, byte**, uint*, int>)(lpVtbl[5]))((IMFSampleProtection*)Unsafe.AsPointer(ref this), dwVersion, ppCert, pcbCert);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        public HRESULT InitOutputProtection([NativeTypeName("DWORD")] uint dwVersion, [NativeTypeName("DWORD")] uint dwOutputId, [NativeTypeName("BYTE *")] byte* pbCert, [NativeTypeName("DWORD")] uint cbCert, [NativeTypeName("BYTE **")] byte** ppbSeed, [NativeTypeName("DWORD *")] uint* pcbSeed)
+        public HRESULT InitOutputProtection([NativeTypeName("DWORD")] uint dwVersion, [NativeTypeName("DWORD")] uint dwOutputId, byte* pbCert, [NativeTypeName("DWORD")] uint cbCert, byte** ppbSeed, [NativeTypeName("DWORD *")] uint* pcbSeed)
         {
             return ((delegate* unmanaged<IMFSampleProtection*, uint, uint, byte*, uint, byte**, uint*, int>)(lpVtbl[6]))((IMFSampleProtection*)Unsafe.AsPointer(ref this), dwVersion, dwOutputId, pbCert, cbCert, ppbSeed, pcbSeed);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        public HRESULT InitInputProtection([NativeTypeName("DWORD")] uint dwVersion, [NativeTypeName("DWORD")] uint dwInputId, [NativeTypeName("BYTE *")] byte* pbSeed, [NativeTypeName("DWORD")] uint cbSeed)
+        public HRESULT InitInputProtection([NativeTypeName("DWORD")] uint dwVersion, [NativeTypeName("DWORD")] uint dwInputId, byte* pbSeed, [NativeTypeName("DWORD")] uint cbSeed)
         {
             return ((delegate* unmanaged<IMFSampleProtection*, uint, uint, byte*, uint, int>)(lpVtbl[7]))((IMFSampleProtection*)Unsafe.AsPointer(ref this), dwVersion, dwInputId, pbSeed, cbSeed);
         }

@@ -17,7 +17,6 @@ namespace TerraFX.Interop
 
         public RECT rcSource;
 
-        [NativeTypeName("BYTE")]
         public byte opacity;
 
         public BOOL fVisible;

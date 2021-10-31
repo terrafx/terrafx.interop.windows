@@ -9,12 +9,10 @@ namespace TerraFX.Interop
     {
         public D3D12_COMMAND_LIST_TYPE Type;
 
-        [NativeTypeName("INT")]
         public int Priority;
 
         public D3D12_COMMAND_QUEUE_FLAGS Flags;
 
-        [NativeTypeName("UINT")]
         public uint NodeMask;
     }
 }

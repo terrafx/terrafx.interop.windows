@@ -9,7 +9,6 @@ namespace TerraFX.Interop
 {
     public partial struct PRJ_VIRTUALIZATION_INSTANCE_INFO
     {
-        [NativeTypeName("GUID")]
         public Guid InstanceID;
 
         [NativeTypeName("UINT32")]

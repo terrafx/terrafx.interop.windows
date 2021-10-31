@@ -7,20 +7,16 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct D3D12_VIDEO_PROCESS_REFERENCE_SET
     {
-        [NativeTypeName("UINT")]
         public uint NumPastFrames;
 
         public ID3D12Resource** ppPastFrames;
 
-        [NativeTypeName("UINT *")]
         public uint* pPastSubresources;
 
-        [NativeTypeName("UINT")]
         public uint NumFutureFrames;
 
         public ID3D12Resource** ppFutureFrames;
 
-        [NativeTypeName("UINT *")]
         public uint* pFutureSubresources;
     }
 }

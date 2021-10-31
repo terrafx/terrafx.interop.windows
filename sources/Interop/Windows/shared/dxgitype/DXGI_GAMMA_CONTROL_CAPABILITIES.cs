@@ -13,7 +13,6 @@ namespace TerraFX.Interop
 
         public float MinConvertedValue;
 
-        [NativeTypeName("UINT")]
         public uint NumGammaControlPoints;
 
         [NativeTypeName("float [1025]")]

@@ -23,10 +23,8 @@ namespace TerraFX.Interop
 
         public DML_MATRIX_TRANSFORM TransB;
 
-        [NativeTypeName("FLOAT")]
         public float Alpha;
 
-        [NativeTypeName("FLOAT")]
         public float Beta;
 
         [NativeTypeName("const DML_OPERATOR_DESC *")]

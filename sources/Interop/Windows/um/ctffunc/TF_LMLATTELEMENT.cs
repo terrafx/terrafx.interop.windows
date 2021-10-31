@@ -38,7 +38,6 @@ namespace TerraFX.Interop
         public partial struct _Anonymous_e__Union
         {
             [FieldOffset(0)]
-            [NativeTypeName("INT")]
             public int iCost;
         }
     }

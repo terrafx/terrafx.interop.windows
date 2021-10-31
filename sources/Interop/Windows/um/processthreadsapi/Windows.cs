@@ -28,10 +28,10 @@ namespace TerraFX.Interop
         public static extern uint GetCurrentProcessId();
 
         [DllImport("kernel32", ExactSpelling = true)]
-        public static extern void ExitProcess([NativeTypeName("UINT")] uint uExitCode);
+        public static extern void ExitProcess(uint uExitCode);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        public static extern BOOL TerminateProcess(HANDLE hProcess, [NativeTypeName("UINT")] uint uExitCode);
+        public static extern BOOL TerminateProcess(HANDLE hProcess, uint uExitCode);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         public static extern BOOL GetExitCodeProcess(HANDLE hProcess, [NativeTypeName("LPDWORD")] uint* lpExitCode);
@@ -164,10 +164,10 @@ namespace TerraFX.Interop
         public static extern BOOL UpdateProcThreadAttribute([NativeTypeName("LPPROC_THREAD_ATTRIBUTE_LIST")] IntPtr lpAttributeList, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("DWORD_PTR")] nuint Attribute, [NativeTypeName("PVOID")] void* lpValue, [NativeTypeName("SIZE_T")] nuint cbSize, [NativeTypeName("PVOID")] void* lpPreviousValue, [NativeTypeName("PSIZE_T")] nuint* lpReturnSize);
 
         [DllImport("kernel32", ExactSpelling = true)]
-        public static extern BOOL SetProcessDynamicEHContinuationTargets(HANDLE Process, [NativeTypeName("USHORT")] ushort NumberOfTargets, [NativeTypeName("PPROCESS_DYNAMIC_EH_CONTINUATION_TARGET")] PROCESS_DYNAMIC_EH_CONTINUATION_TARGET* Targets);
+        public static extern BOOL SetProcessDynamicEHContinuationTargets(HANDLE Process, ushort NumberOfTargets, [NativeTypeName("PPROCESS_DYNAMIC_EH_CONTINUATION_TARGET")] PROCESS_DYNAMIC_EH_CONTINUATION_TARGET* Targets);
 
         [DllImport("kernel32", ExactSpelling = true)]
-        public static extern BOOL SetProcessDynamicEnforcedCetCompatibleRanges(HANDLE Process, [NativeTypeName("USHORT")] ushort NumberOfRanges, [NativeTypeName("PPROCESS_DYNAMIC_ENFORCED_ADDRESS_RANGE")] PROCESS_DYNAMIC_ENFORCED_ADDRESS_RANGE* Ranges);
+        public static extern BOOL SetProcessDynamicEnforcedCetCompatibleRanges(HANDLE Process, ushort NumberOfRanges, [NativeTypeName("PPROCESS_DYNAMIC_ENFORCED_ADDRESS_RANGE")] PROCESS_DYNAMIC_ENFORCED_ADDRESS_RANGE* Ranges);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         public static extern BOOL SetProcessAffinityUpdateMode(HANDLE hProcess, [NativeTypeName("DWORD")] uint dwFlags);
@@ -280,16 +280,16 @@ namespace TerraFX.Interop
         public static extern BOOL GetProcessShutdownParameters([NativeTypeName("LPDWORD")] uint* lpdwLevel, [NativeTypeName("LPDWORD")] uint* lpdwFlags);
 
         [DllImport("kernel32", ExactSpelling = true)]
-        public static extern BOOL GetProcessDefaultCpuSetMasks(HANDLE Process, [NativeTypeName("PGROUP_AFFINITY")] GROUP_AFFINITY* CpuSetMasks, [NativeTypeName("USHORT")] ushort CpuSetMaskCount, [NativeTypeName("PUSHORT")] ushort* RequiredMaskCount);
+        public static extern BOOL GetProcessDefaultCpuSetMasks(HANDLE Process, [NativeTypeName("PGROUP_AFFINITY")] GROUP_AFFINITY* CpuSetMasks, ushort CpuSetMaskCount, [NativeTypeName("PUSHORT")] ushort* RequiredMaskCount);
 
         [DllImport("kernel32", ExactSpelling = true)]
-        public static extern BOOL SetProcessDefaultCpuSetMasks(HANDLE Process, [NativeTypeName("PGROUP_AFFINITY")] GROUP_AFFINITY* CpuSetMasks, [NativeTypeName("USHORT")] ushort CpuSetMaskCount);
+        public static extern BOOL SetProcessDefaultCpuSetMasks(HANDLE Process, [NativeTypeName("PGROUP_AFFINITY")] GROUP_AFFINITY* CpuSetMasks, ushort CpuSetMaskCount);
 
         [DllImport("kernel32", ExactSpelling = true)]
-        public static extern BOOL GetThreadSelectedCpuSetMasks(HANDLE Thread, [NativeTypeName("PGROUP_AFFINITY")] GROUP_AFFINITY* CpuSetMasks, [NativeTypeName("USHORT")] ushort CpuSetMaskCount, [NativeTypeName("PUSHORT")] ushort* RequiredMaskCount);
+        public static extern BOOL GetThreadSelectedCpuSetMasks(HANDLE Thread, [NativeTypeName("PGROUP_AFFINITY")] GROUP_AFFINITY* CpuSetMasks, ushort CpuSetMaskCount, [NativeTypeName("PUSHORT")] ushort* RequiredMaskCount);
 
         [DllImport("kernel32", ExactSpelling = true)]
-        public static extern BOOL SetThreadSelectedCpuSetMasks(HANDLE Thread, [NativeTypeName("PGROUP_AFFINITY")] GROUP_AFFINITY* CpuSetMasks, [NativeTypeName("USHORT")] ushort CpuSetMaskCount);
+        public static extern BOOL SetThreadSelectedCpuSetMasks(HANDLE Thread, [NativeTypeName("PGROUP_AFFINITY")] GROUP_AFFINITY* CpuSetMasks, ushort CpuSetMaskCount);
 
         [DllImport("kernel32", ExactSpelling = true)]
         public static extern HRESULT SetThreadDescription(HANDLE hThread, [NativeTypeName("PCWSTR")] ushort* lpThreadDescription);

@@ -35,7 +35,6 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint FirstValidatedMinorVersion;
 
-        [NativeTypeName("BYTE")]
         public byte ProductType;
 
         [NativeTypeName("WORD")]

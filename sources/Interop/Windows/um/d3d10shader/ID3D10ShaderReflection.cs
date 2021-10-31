@@ -48,7 +48,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public ID3D10ShaderReflectionConstantBuffer* GetConstantBufferByIndex([NativeTypeName("UINT")] uint Index)
+        public ID3D10ShaderReflectionConstantBuffer* GetConstantBufferByIndex(uint Index)
         {
             return ((delegate* unmanaged<ID3D10ShaderReflection*, uint, ID3D10ShaderReflectionConstantBuffer*>)(lpVtbl[4]))((ID3D10ShaderReflection*)Unsafe.AsPointer(ref this), Index);
         }
@@ -62,21 +62,21 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        public HRESULT GetResourceBindingDesc([NativeTypeName("UINT")] uint ResourceIndex, D3D10_SHADER_INPUT_BIND_DESC* pDesc)
+        public HRESULT GetResourceBindingDesc(uint ResourceIndex, D3D10_SHADER_INPUT_BIND_DESC* pDesc)
         {
             return ((delegate* unmanaged<ID3D10ShaderReflection*, uint, D3D10_SHADER_INPUT_BIND_DESC*, int>)(lpVtbl[6]))((ID3D10ShaderReflection*)Unsafe.AsPointer(ref this), ResourceIndex, pDesc);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        public HRESULT GetInputParameterDesc([NativeTypeName("UINT")] uint ParameterIndex, D3D10_SIGNATURE_PARAMETER_DESC* pDesc)
+        public HRESULT GetInputParameterDesc(uint ParameterIndex, D3D10_SIGNATURE_PARAMETER_DESC* pDesc)
         {
             return ((delegate* unmanaged<ID3D10ShaderReflection*, uint, D3D10_SIGNATURE_PARAMETER_DESC*, int>)(lpVtbl[7]))((ID3D10ShaderReflection*)Unsafe.AsPointer(ref this), ParameterIndex, pDesc);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        public HRESULT GetOutputParameterDesc([NativeTypeName("UINT")] uint ParameterIndex, D3D10_SIGNATURE_PARAMETER_DESC* pDesc)
+        public HRESULT GetOutputParameterDesc(uint ParameterIndex, D3D10_SIGNATURE_PARAMETER_DESC* pDesc)
         {
             return ((delegate* unmanaged<ID3D10ShaderReflection*, uint, D3D10_SIGNATURE_PARAMETER_DESC*, int>)(lpVtbl[8]))((ID3D10ShaderReflection*)Unsafe.AsPointer(ref this), ParameterIndex, pDesc);
         }

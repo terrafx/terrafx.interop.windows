@@ -67,7 +67,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        public ID3D10EffectConstantBuffer* GetConstantBufferByIndex([NativeTypeName("UINT")] uint Index)
+        public ID3D10EffectConstantBuffer* GetConstantBufferByIndex(uint Index)
         {
             return ((delegate* unmanaged<ID3D10Effect*, uint, ID3D10EffectConstantBuffer*>)(lpVtbl[7]))((ID3D10Effect*)Unsafe.AsPointer(ref this), Index);
         }
@@ -81,7 +81,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        public ID3D10EffectVariable* GetVariableByIndex([NativeTypeName("UINT")] uint Index)
+        public ID3D10EffectVariable* GetVariableByIndex(uint Index)
         {
             return ((delegate* unmanaged<ID3D10Effect*, uint, ID3D10EffectVariable*>)(lpVtbl[9]))((ID3D10Effect*)Unsafe.AsPointer(ref this), Index);
         }
@@ -102,7 +102,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(12)]
-        public ID3D10EffectTechnique* GetTechniqueByIndex([NativeTypeName("UINT")] uint Index)
+        public ID3D10EffectTechnique* GetTechniqueByIndex(uint Index)
         {
             return ((delegate* unmanaged<ID3D10Effect*, uint, ID3D10EffectTechnique*>)(lpVtbl[12]))((ID3D10Effect*)Unsafe.AsPointer(ref this), Index);
         }

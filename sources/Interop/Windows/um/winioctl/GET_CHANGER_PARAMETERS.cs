@@ -55,34 +55,24 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint Features1;
 
-        [NativeTypeName("BYTE")]
         public byte MoveFromTransport;
 
-        [NativeTypeName("BYTE")]
         public byte MoveFromSlot;
 
-        [NativeTypeName("BYTE")]
         public byte MoveFromIePort;
 
-        [NativeTypeName("BYTE")]
         public byte MoveFromDrive;
 
-        [NativeTypeName("BYTE")]
         public byte ExchangeFromTransport;
 
-        [NativeTypeName("BYTE")]
         public byte ExchangeFromSlot;
 
-        [NativeTypeName("BYTE")]
         public byte ExchangeFromIePort;
 
-        [NativeTypeName("BYTE")]
         public byte ExchangeFromDrive;
 
-        [NativeTypeName("BYTE")]
         public byte LockUnlockCapabilities;
 
-        [NativeTypeName("BYTE")]
         public byte PositionCapabilities;
 
         [NativeTypeName("BYTE [2]")]

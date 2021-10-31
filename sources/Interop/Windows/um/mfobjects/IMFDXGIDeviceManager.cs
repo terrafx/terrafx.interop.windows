@@ -69,7 +69,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        public HRESULT ResetDevice(IUnknown* pUnkDevice, [NativeTypeName("UINT")] uint resetToken)
+        public HRESULT ResetDevice(IUnknown* pUnkDevice, uint resetToken)
         {
             return ((delegate* unmanaged<IMFDXGIDeviceManager*, IUnknown*, uint, int>)(lpVtbl[7]))((IMFDXGIDeviceManager*)Unsafe.AsPointer(ref this), pUnkDevice, resetToken);
         }

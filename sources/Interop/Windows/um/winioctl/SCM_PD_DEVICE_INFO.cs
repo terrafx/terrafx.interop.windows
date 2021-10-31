@@ -15,7 +15,6 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint Size;
 
-        [NativeTypeName("GUID")]
         public Guid DeviceGuid;
 
         [NativeTypeName("DWORD")]
@@ -39,7 +38,6 @@ namespace TerraFX.Interop
         [NativeTypeName("WORD")]
         public ushort PhysicalId;
 
-        [NativeTypeName("BYTE")]
         public byte NumberOfFormatInterfaceCodes;
 
         [NativeTypeName("WORD [8]")]
@@ -57,13 +55,10 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint SubsystemVendorId;
 
-        [NativeTypeName("BYTE")]
         public byte ManufacturingLocation;
 
-        [NativeTypeName("BYTE")]
         public byte ManufacturingWeek;
 
-        [NativeTypeName("BYTE")]
         public byte ManufacturingYear;
 
         [NativeTypeName("DWORD")]

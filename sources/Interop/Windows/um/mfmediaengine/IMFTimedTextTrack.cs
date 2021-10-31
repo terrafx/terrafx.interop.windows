@@ -112,7 +112,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(13)]
-        public HRESULT GetDataFormat([NativeTypeName("GUID *")] Guid* format)
+        public HRESULT GetDataFormat(Guid* format)
         {
             return ((delegate* unmanaged<IMFTimedTextTrack*, Guid*, int>)(lpVtbl[13]))((IMFTimedTextTrack*)Unsafe.AsPointer(ref this), format);
         }

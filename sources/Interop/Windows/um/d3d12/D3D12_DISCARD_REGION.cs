@@ -7,16 +7,13 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct D3D12_DISCARD_REGION
     {
-        [NativeTypeName("UINT")]
         public uint NumRects;
 
         [NativeTypeName("const D3D12_RECT *")]
         public RECT* pRects;
 
-        [NativeTypeName("UINT")]
         public uint FirstSubresource;
 
-        [NativeTypeName("UINT")]
         public uint NumSubresources;
     }
 }

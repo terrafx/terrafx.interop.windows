@@ -16,7 +16,6 @@ namespace TerraFX.Interop
         [NativeTypeName("const DML_TENSOR_DESC *")]
         public DML_TENSOR_DESC* OutputTensor;
 
-        [NativeTypeName("FLOAT")]
         public float SpatialScale;
 
         public DML_SIZE_2D PooledSize;

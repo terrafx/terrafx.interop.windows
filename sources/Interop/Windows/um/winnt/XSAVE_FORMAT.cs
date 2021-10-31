@@ -17,10 +17,8 @@ namespace TerraFX.Interop
         [NativeTypeName("WORD")]
         public ushort StatusWord;
 
-        [NativeTypeName("BYTE")]
         public byte TagWord;
 
-        [NativeTypeName("BYTE")]
         public byte Reserved1;
 
         [NativeTypeName("WORD")]

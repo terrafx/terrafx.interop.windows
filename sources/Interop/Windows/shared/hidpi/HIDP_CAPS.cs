@@ -13,46 +13,33 @@ namespace TerraFX.Interop
         [NativeTypeName("USAGE")]
         public ushort UsagePage;
 
-        [NativeTypeName("USHORT")]
         public ushort InputReportByteLength;
 
-        [NativeTypeName("USHORT")]
         public ushort OutputReportByteLength;
 
-        [NativeTypeName("USHORT")]
         public ushort FeatureReportByteLength;
 
         [NativeTypeName("USHORT [17]")]
         public fixed ushort Reserved[17];
 
-        [NativeTypeName("USHORT")]
         public ushort NumberLinkCollectionNodes;
 
-        [NativeTypeName("USHORT")]
         public ushort NumberInputButtonCaps;
 
-        [NativeTypeName("USHORT")]
         public ushort NumberInputValueCaps;
 
-        [NativeTypeName("USHORT")]
         public ushort NumberInputDataIndices;
 
-        [NativeTypeName("USHORT")]
         public ushort NumberOutputButtonCaps;
 
-        [NativeTypeName("USHORT")]
         public ushort NumberOutputValueCaps;
 
-        [NativeTypeName("USHORT")]
         public ushort NumberOutputDataIndices;
 
-        [NativeTypeName("USHORT")]
         public ushort NumberFeatureButtonCaps;
 
-        [NativeTypeName("USHORT")]
         public ushort NumberFeatureValueCaps;
 
-        [NativeTypeName("USHORT")]
         public ushort NumberFeatureDataIndices;
     }
 }

@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct IF_COUNTED_STRING_LH
     {
-        [NativeTypeName("USHORT")]
         public ushort Length;
 
         [NativeTypeName("WCHAR [257]")]

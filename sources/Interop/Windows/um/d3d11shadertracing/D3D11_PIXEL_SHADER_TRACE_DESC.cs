@@ -10,10 +10,8 @@ namespace TerraFX.Interop
         [NativeTypeName("UINT64")]
         public ulong Invocation;
 
-        [NativeTypeName("INT")]
         public int X;
 
-        [NativeTypeName("INT")]
         public int Y;
 
         [NativeTypeName("UINT64")]

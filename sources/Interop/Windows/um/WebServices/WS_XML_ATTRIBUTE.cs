@@ -7,10 +7,8 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct WS_XML_ATTRIBUTE
     {
-        [NativeTypeName("BYTE")]
         public byte singleQuote;
 
-        [NativeTypeName("BYTE")]
         public byte isXmlNs;
 
         public WS_XML_STRING* prefix;

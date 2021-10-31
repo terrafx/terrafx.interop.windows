@@ -9,12 +9,10 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct D3D12_FEATURE_DATA_VIDEO_EXTENSION_COMMAND_PARAMETERS
     {
-        [NativeTypeName("GUID")]
         public Guid CommandId;
 
         public D3D12_VIDEO_EXTENSION_COMMAND_PARAMETER_STAGE Stage;
 
-        [NativeTypeName("UINT")]
         public uint ParameterCount;
 
         public D3D12_VIDEO_EXTENSION_COMMAND_PARAMETER_INFO* pParameterInfos;

@@ -41,14 +41,14 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        public HRESULT GetCodePage([NativeTypeName("UINT *")] uint* puiCodePage)
+        public HRESULT GetCodePage(uint* puiCodePage)
         {
             return ((delegate* unmanaged<IQueryCodePage*, uint*, int>)(lpVtbl[3]))((IQueryCodePage*)Unsafe.AsPointer(ref this), puiCodePage);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT SetCodePage([NativeTypeName("UINT")] uint uiCodePage)
+        public HRESULT SetCodePage(uint uiCodePage)
         {
             return ((delegate* unmanaged<IQueryCodePage*, uint, int>)(lpVtbl[4]))((IQueryCodePage*)Unsafe.AsPointer(ref this), uiCodePage);
         }

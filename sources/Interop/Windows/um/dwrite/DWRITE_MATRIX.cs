@@ -7,22 +7,16 @@ namespace TerraFX.Interop
 {
     public partial struct DWRITE_MATRIX
     {
-        [NativeTypeName("FLOAT")]
         public float m11;
 
-        [NativeTypeName("FLOAT")]
         public float m12;
 
-        [NativeTypeName("FLOAT")]
         public float m21;
 
-        [NativeTypeName("FLOAT")]
         public float m22;
 
-        [NativeTypeName("FLOAT")]
         public float dx;
 
-        [NativeTypeName("FLOAT")]
         public float dy;
     }
 }

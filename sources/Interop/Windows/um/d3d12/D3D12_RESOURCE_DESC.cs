@@ -15,7 +15,6 @@ namespace TerraFX.Interop
         [NativeTypeName("UINT64")]
         public ulong Width;
 
-        [NativeTypeName("UINT")]
         public uint Height;
 
         [NativeTypeName("UINT16")]

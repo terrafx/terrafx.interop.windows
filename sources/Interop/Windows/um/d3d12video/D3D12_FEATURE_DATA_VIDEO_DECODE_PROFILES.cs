@@ -9,13 +9,10 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct D3D12_FEATURE_DATA_VIDEO_DECODE_PROFILES
     {
-        [NativeTypeName("UINT")]
         public uint NodeIndex;
 
-        [NativeTypeName("UINT")]
         public uint ProfileCount;
 
-        [NativeTypeName("GUID *")]
         public Guid* pProfiles;
     }
 }

@@ -10,7 +10,6 @@ namespace TerraFX.Interop
 {
     public partial struct D3D11_VIDEO_PROCESSOR_INPUT_VIEW_DESC
     {
-        [NativeTypeName("UINT")]
         public uint FourCC;
 
         public D3D11_VPIV_DIMENSION ViewDimension;

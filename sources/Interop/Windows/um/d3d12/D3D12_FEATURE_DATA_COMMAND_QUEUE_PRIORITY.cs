@@ -9,7 +9,6 @@ namespace TerraFX.Interop
     {
         public D3D12_COMMAND_LIST_TYPE CommandListType;
 
-        [NativeTypeName("UINT")]
         public uint Priority;
 
         public BOOL PriorityForTypeIsSupported;

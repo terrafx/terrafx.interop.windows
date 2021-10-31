@@ -11,18 +11,14 @@ namespace TerraFX.Interop
 
         public DXGI_RATIONAL InputFrameRate;
 
-        [NativeTypeName("UINT")]
         public uint InputWidth;
 
-        [NativeTypeName("UINT")]
         public uint InputHeight;
 
         public DXGI_RATIONAL OutputFrameRate;
 
-        [NativeTypeName("UINT")]
         public uint OutputWidth;
 
-        [NativeTypeName("UINT")]
         public uint OutputHeight;
 
         public D3D11_VIDEO_USAGE Usage;

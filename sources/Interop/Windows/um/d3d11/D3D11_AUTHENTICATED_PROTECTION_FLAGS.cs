@@ -16,14 +16,13 @@ namespace TerraFX.Interop
         public _Flags_e__Struct Flags;
 
         [FieldOffset(0)]
-        [NativeTypeName("UINT")]
         public uint Value;
 
         public partial struct _Flags_e__Struct
         {
             public uint _bitfield;
 
-            [NativeTypeName("UINT : 1")]
+            [NativeTypeName("uint : 1")]
             public uint ProtectionEnabled
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -39,7 +38,7 @@ namespace TerraFX.Interop
                 }
             }
 
-            [NativeTypeName("UINT : 1")]
+            [NativeTypeName("uint : 1")]
             public uint OverlayOrFullscreenRequired
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -55,7 +54,7 @@ namespace TerraFX.Interop
                 }
             }
 
-            [NativeTypeName("UINT : 30")]
+            [NativeTypeName("uint : 30")]
             public uint Reserved
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]

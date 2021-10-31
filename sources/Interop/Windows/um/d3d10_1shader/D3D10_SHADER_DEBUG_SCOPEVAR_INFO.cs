@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public partial struct D3D10_SHADER_DEBUG_SCOPEVAR_INFO
     {
-        [NativeTypeName("UINT")]
         public uint TokenId;
 
         public D3D10_SHADER_DEBUG_VARTYPE VarType;
@@ -15,28 +14,20 @@ namespace TerraFX.Interop
         [NativeTypeName("D3D10_SHADER_VARIABLE_CLASS")]
         public D3D_SHADER_VARIABLE_CLASS Class;
 
-        [NativeTypeName("UINT")]
         public uint Rows;
 
-        [NativeTypeName("UINT")]
         public uint Columns;
 
-        [NativeTypeName("UINT")]
         public uint StructMemberScope;
 
-        [NativeTypeName("UINT")]
         public uint uArrayIndices;
 
-        [NativeTypeName("UINT")]
         public uint ArrayElements;
 
-        [NativeTypeName("UINT")]
         public uint ArrayStrides;
 
-        [NativeTypeName("UINT")]
         public uint uVariables;
 
-        [NativeTypeName("UINT")]
         public uint uFirstVariable;
     }
 }

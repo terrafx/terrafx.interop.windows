@@ -34,13 +34,13 @@ namespace TerraFX.Interop
         public static extern BOOL PathIsSlowW([NativeTypeName("LPCWSTR")] ushort* pszFile, [NativeTypeName("DWORD")] uint dwAttr);
 
         [DllImport("shell32", ExactSpelling = true)]
-        public static extern HPSXA SHCreatePropSheetExtArray(HKEY hKey, [NativeTypeName("PCWSTR")] ushort* pszSubKey, [NativeTypeName("UINT")] uint max_iface);
+        public static extern HPSXA SHCreatePropSheetExtArray(HKEY hKey, [NativeTypeName("PCWSTR")] ushort* pszSubKey, uint max_iface);
 
         public const int BMICON_LARGE = 0;
         public const int BMICON_SMALL = 1;
 
         [DllImport("shell32", ExactSpelling = true)]
-        public static extern BOOL SHOpenPropSheetW([NativeTypeName("LPCWSTR")] ushort* pszCaption, [NativeTypeName("HKEY []")] HKEY* ahkeys, [NativeTypeName("UINT")] uint ckeys, [NativeTypeName("const CLSID *")] Guid* pclsidDefault, IDataObject* pdtobj, IShellBrowser* psb, [NativeTypeName("LPCWSTR")] ushort* pStartPage);
+        public static extern BOOL SHOpenPropSheetW([NativeTypeName("LPCWSTR")] ushort* pszCaption, [NativeTypeName("HKEY []")] HKEY* ahkeys, uint ckeys, [NativeTypeName("const CLSID *")] Guid* pclsidDefault, IDataObject* pdtobj, IShellBrowser* psb, [NativeTypeName("LPCWSTR")] ushort* pStartPage);
 
         [DllImport("shdocvw", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]

@@ -41,7 +41,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        public HRESULT GetNextChange([NativeTypeName("BYTE *")] byte* pbBuffer, [NativeTypeName("long")] int nBufferSize, [NativeTypeName("long *")] int* pnRecordLength)
+        public HRESULT GetNextChange(byte* pbBuffer, [NativeTypeName("long")] int nBufferSize, [NativeTypeName("long *")] int* pnRecordLength)
         {
             return ((delegate* unmanaged<IHTMLChangeLog*, byte*, int, int*, int>)(lpVtbl[3]))((IHTMLChangeLog*)Unsafe.AsPointer(ref this), pbBuffer, nBufferSize, pnRecordLength);
         }

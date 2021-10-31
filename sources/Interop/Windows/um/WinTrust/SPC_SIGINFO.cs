@@ -12,7 +12,6 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint dwSipVersion;
 
-        [NativeTypeName("GUID")]
         public Guid gSIPGuid;
 
         [NativeTypeName("DWORD")]

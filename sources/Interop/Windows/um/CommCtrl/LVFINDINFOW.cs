@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct LVFINDINFOW
     {
-        [NativeTypeName("UINT")]
         public uint flags;
 
         [NativeTypeName("LPCWSTR")]
@@ -18,7 +17,6 @@ namespace TerraFX.Interop
 
         public POINT pt;
 
-        [NativeTypeName("UINT")]
         public uint vkDirection;
     }
 }

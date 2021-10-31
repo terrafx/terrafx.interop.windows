@@ -19,13 +19,11 @@ namespace TerraFX.Interop
         [NativeTypeName("WORD")]
         public ushort Index;
 
-        [NativeTypeName("SHORT")]
         public short Threshold;
 
         [NativeTypeName("BOOLEAN")]
         public byte OverThreshold;
 
-        [NativeTypeName("BYTE")]
         public byte Reserved;
     }
 }

@@ -7,19 +7,14 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct MENUITEMINFOA
     {
-        [NativeTypeName("UINT")]
         public uint cbSize;
 
-        [NativeTypeName("UINT")]
         public uint fMask;
 
-        [NativeTypeName("UINT")]
         public uint fType;
 
-        [NativeTypeName("UINT")]
         public uint fState;
 
-        [NativeTypeName("UINT")]
         public uint wID;
 
         public HMENU hSubMenu;
@@ -34,7 +29,6 @@ namespace TerraFX.Interop
         [NativeTypeName("LPSTR")]
         public sbyte* dwTypeData;
 
-        [NativeTypeName("UINT")]
         public uint cch;
 
         public HBITMAP hbmpItem;

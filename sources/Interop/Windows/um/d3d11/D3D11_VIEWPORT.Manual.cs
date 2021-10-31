@@ -11,7 +11,7 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct D3D11_VIEWPORT : IEquatable<D3D11_VIEWPORT>
     {
-        public D3D11_VIEWPORT([NativeTypeName("FLOAT")] float topLeftX, [NativeTypeName("FLOAT")] float topLeftY, [NativeTypeName("FLOAT")] float width, [NativeTypeName("FLOAT")] float height, [NativeTypeName("FLOAT")] float minDepth = D3D11_MIN_DEPTH, [NativeTypeName("FLOAT")] float maxDepth = D3D11_MAX_DEPTH)
+        public D3D11_VIEWPORT(float topLeftX, float topLeftY, float width, float height, float minDepth = D3D11_MIN_DEPTH, float maxDepth = D3D11_MAX_DEPTH)
         {
             TopLeftX = topLeftX;
             TopLeftY = topLeftY;
@@ -21,7 +21,7 @@ namespace TerraFX.Interop
             MaxDepth = maxDepth;
         }
 
-        public D3D11_VIEWPORT(ID3D11Buffer* param0, ID3D11RenderTargetView* pRTView, [NativeTypeName("FLOAT")] float topLeftX = 0.0f, [NativeTypeName("FLOAT")] float minDepth = D3D11_MIN_DEPTH, [NativeTypeName("FLOAT")] float maxDepth = D3D11_MAX_DEPTH)
+        public D3D11_VIEWPORT(ID3D11Buffer* param0, ID3D11RenderTargetView* pRTView, float topLeftX = 0.0f, float minDepth = D3D11_MIN_DEPTH, float maxDepth = D3D11_MAX_DEPTH)
         {
             D3D11_RENDER_TARGET_VIEW_DESC RTVDesc;
             pRTView->GetDesc(&RTVDesc);
@@ -50,7 +50,7 @@ namespace TerraFX.Interop
             MaxDepth = maxDepth;
         }
 
-        public D3D11_VIEWPORT(ID3D11Texture1D* pTex1D, ID3D11RenderTargetView* pRTView, [NativeTypeName("FLOAT")] float topLeftX = 0.0f, [NativeTypeName("FLOAT")] float minDepth = D3D11_MIN_DEPTH, [NativeTypeName("FLOAT")] float maxDepth = D3D11_MAX_DEPTH)
+        public D3D11_VIEWPORT(ID3D11Texture1D* pTex1D, ID3D11RenderTargetView* pRTView, float topLeftX = 0.0f, float minDepth = D3D11_MIN_DEPTH, float maxDepth = D3D11_MAX_DEPTH)
         {
             D3D11_TEXTURE1D_DESC TexDesc;
             pTex1D->GetDesc(&TexDesc);
@@ -90,7 +90,7 @@ namespace TerraFX.Interop
             MaxDepth = maxDepth;
         }
 
-        public D3D11_VIEWPORT(ID3D11Texture2D* pTex2D, ID3D11RenderTargetView* pRTView, [NativeTypeName("FLOAT")] float topLeftX = 0.0f, [NativeTypeName("FLOAT")] float topLeftY = 0.0f, [NativeTypeName("FLOAT")] float minDepth = D3D11_MIN_DEPTH, [NativeTypeName("FLOAT")] float maxDepth = D3D11_MAX_DEPTH)
+        public D3D11_VIEWPORT(ID3D11Texture2D* pTex2D, ID3D11RenderTargetView* pRTView, float topLeftX = 0.0f, float topLeftY = 0.0f, float minDepth = D3D11_MIN_DEPTH, float maxDepth = D3D11_MAX_DEPTH)
         {
             D3D11_TEXTURE2D_DESC TexDesc;
             pTex2D->GetDesc(&TexDesc);
@@ -137,7 +137,7 @@ namespace TerraFX.Interop
             MaxDepth = maxDepth;
         }
 
-        public D3D11_VIEWPORT(ID3D11Texture3D* pTex3D, ID3D11RenderTargetView* pRTView, [NativeTypeName("FLOAT")] float topLeftX = 0.0f, [NativeTypeName("FLOAT")] float topLeftY = 0.0f, [NativeTypeName("FLOAT")] float minDepth = D3D11_MIN_DEPTH, [NativeTypeName("FLOAT")] float maxDepth = D3D11_MAX_DEPTH)
+        public D3D11_VIEWPORT(ID3D11Texture3D* pTex3D, ID3D11RenderTargetView* pRTView, float topLeftX = 0.0f, float topLeftY = 0.0f, float minDepth = D3D11_MIN_DEPTH, float maxDepth = D3D11_MAX_DEPTH)
         {
             D3D11_TEXTURE3D_DESC TexDesc;
             pTex3D->GetDesc(&TexDesc);

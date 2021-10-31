@@ -52,19 +52,14 @@ namespace TerraFX.Interop
         [NativeTypeName("WCHAR")]
         public ushort tmBreakChar;
 
-        [NativeTypeName("BYTE")]
         public byte tmItalic;
 
-        [NativeTypeName("BYTE")]
         public byte tmUnderlined;
 
-        [NativeTypeName("BYTE")]
         public byte tmStruckOut;
 
-        [NativeTypeName("BYTE")]
         public byte tmPitchAndFamily;
 
-        [NativeTypeName("BYTE")]
         public byte tmCharSet;
     }
 }

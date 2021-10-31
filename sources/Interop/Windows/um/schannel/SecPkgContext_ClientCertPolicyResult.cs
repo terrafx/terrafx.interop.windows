@@ -11,7 +11,6 @@ namespace TerraFX.Interop
     {
         public HRESULT dwPolicyResult;
 
-        [NativeTypeName("GUID")]
         public Guid guidPolicyId;
     }
 }

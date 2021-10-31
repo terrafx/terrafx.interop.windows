@@ -11,10 +11,8 @@ namespace TerraFX.Interop
 
         public int idCommand;
 
-        [NativeTypeName("BYTE")]
         public byte fsState;
 
-        [NativeTypeName("BYTE")]
         public byte fsStyle;
 
         [NativeTypeName("BYTE [6]")]

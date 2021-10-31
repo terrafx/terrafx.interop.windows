@@ -9,10 +9,8 @@ namespace TerraFX.Interop
     {
         public ID3D12VideoMotionVectorHeap* pMotionVectorHeap;
 
-        [NativeTypeName("UINT")]
         public uint PixelWidth;
 
-        [NativeTypeName("UINT")]
         public uint PixelHeight;
     }
 }

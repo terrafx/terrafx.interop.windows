@@ -83,7 +83,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        public HRESULT SetRotationOverride([NativeTypeName("UINT")] uint uiRotation)
+        public HRESULT SetRotationOverride(uint uiRotation)
         {
             return ((delegate* unmanaged<IMFVideoProcessorControl2*, uint, int>)(lpVtbl[9]))((IMFVideoProcessorControl2*)Unsafe.AsPointer(ref this), uiRotation);
         }
@@ -97,7 +97,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(11)]
-        public HRESULT GetSupportedHardwareEffects([NativeTypeName("UINT *")] uint* puiSupport)
+        public HRESULT GetSupportedHardwareEffects(uint* puiSupport)
         {
             return ((delegate* unmanaged<IMFVideoProcessorControl2*, uint*, int>)(lpVtbl[11]))((IMFVideoProcessorControl2*)Unsafe.AsPointer(ref this), puiSupport);
         }

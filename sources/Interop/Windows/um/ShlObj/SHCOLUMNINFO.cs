@@ -19,7 +19,6 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint fmt;
 
-        [NativeTypeName("UINT")]
         public uint cChars;
 
         [NativeTypeName("DWORD")]

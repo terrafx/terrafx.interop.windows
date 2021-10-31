@@ -7,13 +7,10 @@ namespace TerraFX.Interop
 {
     public partial struct D3D12_TILE_SHAPE
     {
-        [NativeTypeName("UINT")]
         public uint WidthInTexels;
 
-        [NativeTypeName("UINT")]
         public uint HeightInTexels;
 
-        [NativeTypeName("UINT")]
         public uint DepthInTexels;
     }
 }

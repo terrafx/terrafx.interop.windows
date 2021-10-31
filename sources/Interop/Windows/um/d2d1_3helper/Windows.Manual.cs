@@ -70,7 +70,7 @@ namespace TerraFX.Interop
             return newPatch;
         }
 
-        public static D2D1_INK_POINT InkPoint([NativeTypeName("const D2D1_POINT_2F &")] in D2D_POINT_2F point, [NativeTypeName("FLOAT")] float radius)
+        public static D2D1_INK_POINT InkPoint([NativeTypeName("const D2D1_POINT_2F &")] in D2D_POINT_2F point, float radius)
         {
             D2D1_INK_POINT inkPoint;
 

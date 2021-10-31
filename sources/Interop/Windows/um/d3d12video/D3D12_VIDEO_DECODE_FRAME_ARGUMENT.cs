@@ -9,7 +9,6 @@ namespace TerraFX.Interop
     {
         public D3D12_VIDEO_DECODE_ARGUMENT_TYPE Type;
 
-        [NativeTypeName("UINT")]
         public uint Size;
 
         public void* pData;

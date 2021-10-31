@@ -31,7 +31,6 @@ namespace TerraFX.Interop
         [NativeTypeName("size_t")]
         public nuint ai_bloblen;
 
-        [NativeTypeName("GUID *")]
         public Guid* ai_provider;
 
         [NativeTypeName("struct addrinfoex4 *")]

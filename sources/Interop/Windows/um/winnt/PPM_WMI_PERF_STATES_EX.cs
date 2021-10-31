@@ -32,16 +32,12 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint ThermalConstraint;
 
-        [NativeTypeName("BYTE")]
         public byte BusyAdjThreshold;
 
-        [NativeTypeName("BYTE")]
         public byte PolicyType;
 
-        [NativeTypeName("BYTE")]
         public byte Type;
 
-        [NativeTypeName("BYTE")]
         public byte Reserved;
 
         [NativeTypeName("DWORD")]

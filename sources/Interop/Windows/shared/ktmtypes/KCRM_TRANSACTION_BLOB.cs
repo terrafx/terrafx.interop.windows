@@ -12,7 +12,6 @@ namespace TerraFX.Interop
         [NativeTypeName("UOW")]
         public Guid UOW;
 
-        [NativeTypeName("GUID")]
         public Guid TmIdentity;
 
         [NativeTypeName("ULONG")]

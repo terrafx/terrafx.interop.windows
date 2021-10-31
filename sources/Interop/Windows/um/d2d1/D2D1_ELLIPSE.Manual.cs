@@ -9,7 +9,7 @@ namespace TerraFX.Interop
 {
     public partial struct D2D1_ELLIPSE
     {
-        public D2D1_ELLIPSE([NativeTypeName("const D2D1_POINT_2F &")] in D2D_POINT_2F center, [NativeTypeName("FLOAT")] float radiusX, [NativeTypeName("FLOAT")] float radiusY)
+        public D2D1_ELLIPSE([NativeTypeName("const D2D1_POINT_2F &")] in D2D_POINT_2F center, float radiusX, float radiusY)
         {
             this = Ellipse(center, radiusX, radiusY);
         }

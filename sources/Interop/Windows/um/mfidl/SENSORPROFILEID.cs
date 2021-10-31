@@ -9,7 +9,6 @@ namespace TerraFX.Interop
 {
     public partial struct SENSORPROFILEID
     {
-        [NativeTypeName("GUID")]
         public Guid Type;
 
         [NativeTypeName("UINT32")]

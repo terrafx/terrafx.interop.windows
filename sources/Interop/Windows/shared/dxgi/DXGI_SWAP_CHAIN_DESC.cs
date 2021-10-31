@@ -14,7 +14,6 @@ namespace TerraFX.Interop
         [NativeTypeName("DXGI_USAGE")]
         public uint BufferUsage;
 
-        [NativeTypeName("UINT")]
         public uint BufferCount;
 
         public HWND OutputWindow;
@@ -23,7 +22,6 @@ namespace TerraFX.Interop
 
         public DXGI_SWAP_EFFECT SwapEffect;
 
-        [NativeTypeName("UINT")]
         public uint Flags;
     }
 }

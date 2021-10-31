@@ -9,7 +9,6 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct EXTRASEARCH
     {
-        [NativeTypeName("GUID")]
         public Guid guidSearch;
 
         [NativeTypeName("WCHAR [80]")]

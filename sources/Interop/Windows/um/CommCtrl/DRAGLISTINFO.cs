@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public partial struct DRAGLISTINFO
     {
-        [NativeTypeName("UINT")]
         public uint uNotification;
 
         public HWND hWnd;

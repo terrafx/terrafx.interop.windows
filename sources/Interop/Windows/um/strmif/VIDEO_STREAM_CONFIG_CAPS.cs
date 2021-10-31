@@ -9,7 +9,6 @@ namespace TerraFX.Interop
 {
     public partial struct VIDEO_STREAM_CONFIG_CAPS
     {
-        [NativeTypeName("GUID")]
         public Guid guid;
 
         [NativeTypeName("ULONG")]

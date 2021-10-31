@@ -9,7 +9,6 @@ namespace TerraFX.Interop
     {
         public D3D12_RAYTRACING_ACCELERATION_STRUCTURE_TYPE Type;
 
-        [NativeTypeName("UINT")]
         public uint NumDescs;
     }
 }

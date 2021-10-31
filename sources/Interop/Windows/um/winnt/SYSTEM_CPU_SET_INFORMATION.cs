@@ -42,19 +42,14 @@ namespace TerraFX.Interop
                 [NativeTypeName("WORD")]
                 public ushort Group;
 
-                [NativeTypeName("BYTE")]
                 public byte LogicalProcessorIndex;
 
-                [NativeTypeName("BYTE")]
                 public byte CoreIndex;
 
-                [NativeTypeName("BYTE")]
                 public byte LastLevelCacheIndex;
 
-                [NativeTypeName("BYTE")]
                 public byte NumaNodeIndex;
 
-                [NativeTypeName("BYTE")]
                 public byte EfficiencyClass;
 
                 [NativeTypeName("_SYSTEM_CPU_SET_INFORMATION::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winnt.h:13671:13)")]
@@ -172,7 +167,6 @@ namespace TerraFX.Interop
                 public partial struct _Anonymous1_e__Union
                 {
                     [FieldOffset(0)]
-                    [NativeTypeName("BYTE")]
                     public byte AllFlags;
 
                     [FieldOffset(0)]
@@ -183,7 +177,7 @@ namespace TerraFX.Interop
                     {
                         public byte _bitfield;
 
-                        [NativeTypeName("BYTE : 1")]
+                        [NativeTypeName("byte : 1")]
                         public byte Parked
                         {
                             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -199,7 +193,7 @@ namespace TerraFX.Interop
                             }
                         }
 
-                        [NativeTypeName("BYTE : 1")]
+                        [NativeTypeName("byte : 1")]
                         public byte Allocated
                         {
                             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -215,7 +209,7 @@ namespace TerraFX.Interop
                             }
                         }
 
-                        [NativeTypeName("BYTE : 1")]
+                        [NativeTypeName("byte : 1")]
                         public byte AllocatedToTargetProcess
                         {
                             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -231,7 +225,7 @@ namespace TerraFX.Interop
                             }
                         }
 
-                        [NativeTypeName("BYTE : 1")]
+                        [NativeTypeName("byte : 1")]
                         public byte RealTime
                         {
                             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -247,7 +241,7 @@ namespace TerraFX.Interop
                             }
                         }
 
-                        [NativeTypeName("BYTE : 4")]
+                        [NativeTypeName("byte : 4")]
                         public byte ReservedFlags
                         {
                             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -273,7 +267,6 @@ namespace TerraFX.Interop
                     public uint Reserved;
 
                     [FieldOffset(0)]
-                    [NativeTypeName("BYTE")]
                     public byte SchedulingClass;
                 }
             }

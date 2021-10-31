@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public partial struct SYSTEM_EVENT_DATA
     {
-        [NativeTypeName("BYTE")]
         public byte bModifier;
 
         [NativeTypeName("WCHAR")]
@@ -19,7 +18,6 @@ namespace TerraFX.Interop
         [NativeTypeName("LONG")]
         public int yPos;
 
-        [NativeTypeName("BYTE")]
         public byte bCursorMode;
 
         [NativeTypeName("DWORD")]

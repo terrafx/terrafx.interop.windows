@@ -48,7 +48,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT GetMeteringChannelCount([NativeTypeName("UINT *")] uint* pnChannelCount)
+        public HRESULT GetMeteringChannelCount(uint* pnChannelCount)
         {
             return ((delegate* unmanaged<IAudioMeterInformation*, uint*, int>)(lpVtbl[4]))((IAudioMeterInformation*)Unsafe.AsPointer(ref this), pnChannelCount);
         }

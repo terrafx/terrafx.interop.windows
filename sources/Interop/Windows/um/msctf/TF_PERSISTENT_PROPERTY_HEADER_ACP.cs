@@ -9,7 +9,6 @@ namespace TerraFX.Interop
 {
     public partial struct TF_PERSISTENT_PROPERTY_HEADER_ACP
     {
-        [NativeTypeName("GUID")]
         public Guid guidType;
 
         [NativeTypeName("LONG")]

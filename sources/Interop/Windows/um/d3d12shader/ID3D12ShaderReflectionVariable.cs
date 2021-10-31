@@ -36,8 +36,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("UINT")]
-        public uint GetInterfaceSlot([NativeTypeName("UINT")] uint uArrayIndex)
+        public uint GetInterfaceSlot(uint uArrayIndex)
         {
             return ((delegate* unmanaged<ID3D12ShaderReflectionVariable*, uint, uint>)(lpVtbl[3]))((ID3D12ShaderReflectionVariable*)Unsafe.AsPointer(ref this), uArrayIndex);
         }

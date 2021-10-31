@@ -55,42 +55,42 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        public HRESULT get_PivotPointX([NativeTypeName("FLOAT *")] float* pivotPointX)
+        public HRESULT get_PivotPointX(float* pivotPointX)
         {
             return ((delegate* unmanaged<IManipulationProcessor*, float*, int>)(lpVtbl[5]))((IManipulationProcessor*)Unsafe.AsPointer(ref this), pivotPointX);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        public HRESULT put_PivotPointX([NativeTypeName("FLOAT")] float pivotPointX)
+        public HRESULT put_PivotPointX(float pivotPointX)
         {
             return ((delegate* unmanaged<IManipulationProcessor*, float, int>)(lpVtbl[6]))((IManipulationProcessor*)Unsafe.AsPointer(ref this), pivotPointX);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        public HRESULT get_PivotPointY([NativeTypeName("FLOAT *")] float* pivotPointY)
+        public HRESULT get_PivotPointY(float* pivotPointY)
         {
             return ((delegate* unmanaged<IManipulationProcessor*, float*, int>)(lpVtbl[7]))((IManipulationProcessor*)Unsafe.AsPointer(ref this), pivotPointY);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        public HRESULT put_PivotPointY([NativeTypeName("FLOAT")] float pivotPointY)
+        public HRESULT put_PivotPointY(float pivotPointY)
         {
             return ((delegate* unmanaged<IManipulationProcessor*, float, int>)(lpVtbl[8]))((IManipulationProcessor*)Unsafe.AsPointer(ref this), pivotPointY);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        public HRESULT get_PivotRadius([NativeTypeName("FLOAT *")] float* pivotRadius)
+        public HRESULT get_PivotRadius(float* pivotRadius)
         {
             return ((delegate* unmanaged<IManipulationProcessor*, float*, int>)(lpVtbl[9]))((IManipulationProcessor*)Unsafe.AsPointer(ref this), pivotRadius);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(10)]
-        public HRESULT put_PivotRadius([NativeTypeName("FLOAT")] float pivotRadius)
+        public HRESULT put_PivotRadius(float pivotRadius)
         {
             return ((delegate* unmanaged<IManipulationProcessor*, float, int>)(lpVtbl[10]))((IManipulationProcessor*)Unsafe.AsPointer(ref this), pivotRadius);
         }
@@ -104,84 +104,84 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(12)]
-        public HRESULT ProcessDown([NativeTypeName("MANIPULATOR_ID")] uint manipulatorId, [NativeTypeName("FLOAT")] float x, [NativeTypeName("FLOAT")] float y)
+        public HRESULT ProcessDown([NativeTypeName("MANIPULATOR_ID")] uint manipulatorId, float x, float y)
         {
             return ((delegate* unmanaged<IManipulationProcessor*, uint, float, float, int>)(lpVtbl[12]))((IManipulationProcessor*)Unsafe.AsPointer(ref this), manipulatorId, x, y);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(13)]
-        public HRESULT ProcessMove([NativeTypeName("MANIPULATOR_ID")] uint manipulatorId, [NativeTypeName("FLOAT")] float x, [NativeTypeName("FLOAT")] float y)
+        public HRESULT ProcessMove([NativeTypeName("MANIPULATOR_ID")] uint manipulatorId, float x, float y)
         {
             return ((delegate* unmanaged<IManipulationProcessor*, uint, float, float, int>)(lpVtbl[13]))((IManipulationProcessor*)Unsafe.AsPointer(ref this), manipulatorId, x, y);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(14)]
-        public HRESULT ProcessUp([NativeTypeName("MANIPULATOR_ID")] uint manipulatorId, [NativeTypeName("FLOAT")] float x, [NativeTypeName("FLOAT")] float y)
+        public HRESULT ProcessUp([NativeTypeName("MANIPULATOR_ID")] uint manipulatorId, float x, float y)
         {
             return ((delegate* unmanaged<IManipulationProcessor*, uint, float, float, int>)(lpVtbl[14]))((IManipulationProcessor*)Unsafe.AsPointer(ref this), manipulatorId, x, y);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(15)]
-        public HRESULT ProcessDownWithTime([NativeTypeName("MANIPULATOR_ID")] uint manipulatorId, [NativeTypeName("FLOAT")] float x, [NativeTypeName("FLOAT")] float y, [NativeTypeName("DWORD")] uint timestamp)
+        public HRESULT ProcessDownWithTime([NativeTypeName("MANIPULATOR_ID")] uint manipulatorId, float x, float y, [NativeTypeName("DWORD")] uint timestamp)
         {
             return ((delegate* unmanaged<IManipulationProcessor*, uint, float, float, uint, int>)(lpVtbl[15]))((IManipulationProcessor*)Unsafe.AsPointer(ref this), manipulatorId, x, y, timestamp);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(16)]
-        public HRESULT ProcessMoveWithTime([NativeTypeName("MANIPULATOR_ID")] uint manipulatorId, [NativeTypeName("FLOAT")] float x, [NativeTypeName("FLOAT")] float y, [NativeTypeName("DWORD")] uint timestamp)
+        public HRESULT ProcessMoveWithTime([NativeTypeName("MANIPULATOR_ID")] uint manipulatorId, float x, float y, [NativeTypeName("DWORD")] uint timestamp)
         {
             return ((delegate* unmanaged<IManipulationProcessor*, uint, float, float, uint, int>)(lpVtbl[16]))((IManipulationProcessor*)Unsafe.AsPointer(ref this), manipulatorId, x, y, timestamp);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(17)]
-        public HRESULT ProcessUpWithTime([NativeTypeName("MANIPULATOR_ID")] uint manipulatorId, [NativeTypeName("FLOAT")] float x, [NativeTypeName("FLOAT")] float y, [NativeTypeName("DWORD")] uint timestamp)
+        public HRESULT ProcessUpWithTime([NativeTypeName("MANIPULATOR_ID")] uint manipulatorId, float x, float y, [NativeTypeName("DWORD")] uint timestamp)
         {
             return ((delegate* unmanaged<IManipulationProcessor*, uint, float, float, uint, int>)(lpVtbl[17]))((IManipulationProcessor*)Unsafe.AsPointer(ref this), manipulatorId, x, y, timestamp);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(18)]
-        public HRESULT GetVelocityX([NativeTypeName("FLOAT *")] float* velocityX)
+        public HRESULT GetVelocityX(float* velocityX)
         {
             return ((delegate* unmanaged<IManipulationProcessor*, float*, int>)(lpVtbl[18]))((IManipulationProcessor*)Unsafe.AsPointer(ref this), velocityX);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(19)]
-        public HRESULT GetVelocityY([NativeTypeName("FLOAT *")] float* velocityY)
+        public HRESULT GetVelocityY(float* velocityY)
         {
             return ((delegate* unmanaged<IManipulationProcessor*, float*, int>)(lpVtbl[19]))((IManipulationProcessor*)Unsafe.AsPointer(ref this), velocityY);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(20)]
-        public HRESULT GetExpansionVelocity([NativeTypeName("FLOAT *")] float* expansionVelocity)
+        public HRESULT GetExpansionVelocity(float* expansionVelocity)
         {
             return ((delegate* unmanaged<IManipulationProcessor*, float*, int>)(lpVtbl[20]))((IManipulationProcessor*)Unsafe.AsPointer(ref this), expansionVelocity);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(21)]
-        public HRESULT GetAngularVelocity([NativeTypeName("FLOAT *")] float* angularVelocity)
+        public HRESULT GetAngularVelocity(float* angularVelocity)
         {
             return ((delegate* unmanaged<IManipulationProcessor*, float*, int>)(lpVtbl[21]))((IManipulationProcessor*)Unsafe.AsPointer(ref this), angularVelocity);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(22)]
-        public HRESULT get_MinimumScaleRotateRadius([NativeTypeName("FLOAT *")] float* minRadius)
+        public HRESULT get_MinimumScaleRotateRadius(float* minRadius)
         {
             return ((delegate* unmanaged<IManipulationProcessor*, float*, int>)(lpVtbl[22]))((IManipulationProcessor*)Unsafe.AsPointer(ref this), minRadius);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(23)]
-        public HRESULT put_MinimumScaleRotateRadius([NativeTypeName("FLOAT")] float minRadius)
+        public HRESULT put_MinimumScaleRotateRadius(float minRadius)
         {
             return ((delegate* unmanaged<IManipulationProcessor*, float, int>)(lpVtbl[23]))((IManipulationProcessor*)Unsafe.AsPointer(ref this), minRadius);
         }

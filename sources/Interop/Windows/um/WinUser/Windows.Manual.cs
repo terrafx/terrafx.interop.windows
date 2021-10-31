@@ -237,10 +237,10 @@ namespace TerraFX.Interop
         public static BOOL ExitWindows(uint dwReserved, int Code) => ExitWindowsEx(EWX_LOGOFF, 0xFFFFFFFF);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static BOOL PostAppMessageA([NativeTypeName("DWORD")] uint idThread, [NativeTypeName("UINT")] uint wMsg, [NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam) => PostThreadMessageA(idThread, wMsg, wParam, lParam);
+        public static BOOL PostAppMessageA([NativeTypeName("DWORD")] uint idThread, uint wMsg, [NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam) => PostThreadMessageA(idThread, wMsg, wParam, lParam);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static BOOL PostAppMessageW([NativeTypeName("DWORD")] uint idThread, [NativeTypeName("UINT")] uint wMsg, [NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam) => PostThreadMessageW(idThread, wMsg, wParam, lParam);
+        public static BOOL PostAppMessageW([NativeTypeName("DWORD")] uint idThread, uint wMsg, [NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam) => PostThreadMessageW(idThread, wMsg, wParam, lParam);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static HWND CreateWindowA([NativeTypeName("LPCSTR")] sbyte* lpClassName, [NativeTypeName("LPCSTR")] sbyte* lpWindowName, [NativeTypeName("DWORD")] uint dwStyle, int x, int y, int nWidth, int nHeight, HWND hWndParent, HMENU hMenu, HINSTANCE hInstance, [NativeTypeName("LPVOID")] void* lpParam) => CreateWindowExA(0, lpClassName, lpWindowName, dwStyle, x, y,nWidth, nHeight, hWndParent, hMenu, hInstance, lpParam);

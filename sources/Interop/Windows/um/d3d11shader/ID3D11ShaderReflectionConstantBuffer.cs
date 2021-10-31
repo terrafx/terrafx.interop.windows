@@ -22,7 +22,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(1)]
-        public ID3D11ShaderReflectionVariable* GetVariableByIndex([NativeTypeName("UINT")] uint Index)
+        public ID3D11ShaderReflectionVariable* GetVariableByIndex(uint Index)
         {
             return ((delegate* unmanaged<ID3D11ShaderReflectionConstantBuffer*, uint, ID3D11ShaderReflectionVariable*>)(lpVtbl[1]))((ID3D11ShaderReflectionConstantBuffer*)Unsafe.AsPointer(ref this), Index);
         }

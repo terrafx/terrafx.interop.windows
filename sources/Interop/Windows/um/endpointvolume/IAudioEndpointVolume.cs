@@ -55,7 +55,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        public HRESULT GetChannelCount([NativeTypeName("UINT *")] uint* pnChannelCount)
+        public HRESULT GetChannelCount(uint* pnChannelCount)
         {
             return ((delegate* unmanaged<IAudioEndpointVolume*, uint*, int>)(lpVtbl[5]))((IAudioEndpointVolume*)Unsafe.AsPointer(ref this), pnChannelCount);
         }
@@ -90,28 +90,28 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(10)]
-        public HRESULT SetChannelVolumeLevel([NativeTypeName("UINT")] uint nChannel, float fLevelDB, [NativeTypeName("LPCGUID")] Guid* pguidEventContext)
+        public HRESULT SetChannelVolumeLevel(uint nChannel, float fLevelDB, [NativeTypeName("LPCGUID")] Guid* pguidEventContext)
         {
             return ((delegate* unmanaged<IAudioEndpointVolume*, uint, float, Guid*, int>)(lpVtbl[10]))((IAudioEndpointVolume*)Unsafe.AsPointer(ref this), nChannel, fLevelDB, pguidEventContext);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(11)]
-        public HRESULT SetChannelVolumeLevelScalar([NativeTypeName("UINT")] uint nChannel, float fLevel, [NativeTypeName("LPCGUID")] Guid* pguidEventContext)
+        public HRESULT SetChannelVolumeLevelScalar(uint nChannel, float fLevel, [NativeTypeName("LPCGUID")] Guid* pguidEventContext)
         {
             return ((delegate* unmanaged<IAudioEndpointVolume*, uint, float, Guid*, int>)(lpVtbl[11]))((IAudioEndpointVolume*)Unsafe.AsPointer(ref this), nChannel, fLevel, pguidEventContext);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(12)]
-        public HRESULT GetChannelVolumeLevel([NativeTypeName("UINT")] uint nChannel, float* pfLevelDB)
+        public HRESULT GetChannelVolumeLevel(uint nChannel, float* pfLevelDB)
         {
             return ((delegate* unmanaged<IAudioEndpointVolume*, uint, float*, int>)(lpVtbl[12]))((IAudioEndpointVolume*)Unsafe.AsPointer(ref this), nChannel, pfLevelDB);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(13)]
-        public HRESULT GetChannelVolumeLevelScalar([NativeTypeName("UINT")] uint nChannel, float* pfLevel)
+        public HRESULT GetChannelVolumeLevelScalar(uint nChannel, float* pfLevel)
         {
             return ((delegate* unmanaged<IAudioEndpointVolume*, uint, float*, int>)(lpVtbl[13]))((IAudioEndpointVolume*)Unsafe.AsPointer(ref this), nChannel, pfLevel);
         }
@@ -132,7 +132,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(16)]
-        public HRESULT GetVolumeStepInfo([NativeTypeName("UINT *")] uint* pnStep, [NativeTypeName("UINT *")] uint* pnStepCount)
+        public HRESULT GetVolumeStepInfo(uint* pnStep, uint* pnStepCount)
         {
             return ((delegate* unmanaged<IAudioEndpointVolume*, uint*, uint*, int>)(lpVtbl[16]))((IAudioEndpointVolume*)Unsafe.AsPointer(ref this), pnStep, pnStepCount);
         }

@@ -10,7 +10,6 @@ namespace TerraFX.Interop
         [NativeTypeName("WORD")]
         public ushort ProtectionProfile;
 
-        [NativeTypeName("BYTE")]
         public byte MasterKeyIdentifierSize;
 
         [NativeTypeName("PBYTE")]

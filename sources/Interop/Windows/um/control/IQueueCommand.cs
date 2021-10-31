@@ -41,14 +41,14 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        public HRESULT InvokeAtStreamTime(IDeferredCommand** pCmd, [NativeTypeName("REFTIME")] double time, [NativeTypeName("GUID *")] Guid* iid, [NativeTypeName("long")] int dispidMethod, short wFlags, [NativeTypeName("long")] int cArgs, VARIANT* pDispParams, VARIANT* pvarResult, short* puArgErr)
+        public HRESULT InvokeAtStreamTime(IDeferredCommand** pCmd, [NativeTypeName("REFTIME")] double time, Guid* iid, [NativeTypeName("long")] int dispidMethod, short wFlags, [NativeTypeName("long")] int cArgs, VARIANT* pDispParams, VARIANT* pvarResult, short* puArgErr)
         {
             return ((delegate* unmanaged<IQueueCommand*, IDeferredCommand**, double, Guid*, int, short, int, VARIANT*, VARIANT*, short*, int>)(lpVtbl[3]))((IQueueCommand*)Unsafe.AsPointer(ref this), pCmd, time, iid, dispidMethod, wFlags, cArgs, pDispParams, pvarResult, puArgErr);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT InvokeAtPresentationTime(IDeferredCommand** pCmd, [NativeTypeName("REFTIME")] double time, [NativeTypeName("GUID *")] Guid* iid, [NativeTypeName("long")] int dispidMethod, short wFlags, [NativeTypeName("long")] int cArgs, VARIANT* pDispParams, VARIANT* pvarResult, short* puArgErr)
+        public HRESULT InvokeAtPresentationTime(IDeferredCommand** pCmd, [NativeTypeName("REFTIME")] double time, Guid* iid, [NativeTypeName("long")] int dispidMethod, short wFlags, [NativeTypeName("long")] int cArgs, VARIANT* pDispParams, VARIANT* pvarResult, short* puArgErr)
         {
             return ((delegate* unmanaged<IQueueCommand*, IDeferredCommand**, double, Guid*, int, short, int, VARIANT*, VARIANT*, short*, int>)(lpVtbl[4]))((IQueueCommand*)Unsafe.AsPointer(ref this), pCmd, time, iid, dispidMethod, wFlags, cArgs, pDispParams, pvarResult, puArgErr);
         }

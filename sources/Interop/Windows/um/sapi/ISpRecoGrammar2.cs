@@ -41,7 +41,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        public HRESULT GetRules(SPRULE** ppCoMemRules, [NativeTypeName("UINT *")] uint* puNumRules)
+        public HRESULT GetRules(SPRULE** ppCoMemRules, uint* puNumRules)
         {
             return ((delegate* unmanaged<ISpRecoGrammar2*, SPRULE**, uint*, int>)(lpVtbl[3]))((ISpRecoGrammar2*)Unsafe.AsPointer(ref this), ppCoMemRules, puNumRules);
         }

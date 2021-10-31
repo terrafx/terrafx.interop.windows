@@ -15,7 +15,6 @@ namespace TerraFX.Interop
 
         public IDEREGS irDriveRegs;
 
-        [NativeTypeName("BYTE")]
         public byte bDriveNumber;
 
         [NativeTypeName("BYTE [3]")]

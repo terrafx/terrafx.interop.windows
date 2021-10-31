@@ -7,16 +7,12 @@ namespace TerraFX.Interop
 {
     public partial struct D3D10_SHADER_DEBUG_FILE_INFO
     {
-        [NativeTypeName("UINT")]
         public uint FileName;
 
-        [NativeTypeName("UINT")]
         public uint FileNameLen;
 
-        [NativeTypeName("UINT")]
         public uint FileData;
 
-        [NativeTypeName("UINT")]
         public uint FileLen;
     }
 }

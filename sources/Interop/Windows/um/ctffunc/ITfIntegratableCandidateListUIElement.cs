@@ -41,7 +41,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        public HRESULT SetIntegrationStyle([NativeTypeName("GUID")] Guid guidIntegrationStyle)
+        public HRESULT SetIntegrationStyle(Guid guidIntegrationStyle)
         {
             return ((delegate* unmanaged<ITfIntegratableCandidateListUIElement*, Guid, int>)(lpVtbl[3]))((ITfIntegratableCandidateListUIElement*)Unsafe.AsPointer(ref this), guidIntegrationStyle);
         }

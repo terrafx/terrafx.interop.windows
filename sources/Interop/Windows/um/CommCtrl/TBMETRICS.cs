@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public partial struct TBMETRICS
     {
-        [NativeTypeName("UINT")]
         public uint cbSize;
 
         [NativeTypeName("DWORD")]

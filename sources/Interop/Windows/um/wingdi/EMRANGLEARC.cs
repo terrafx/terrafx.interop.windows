@@ -14,10 +14,8 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint nRadius;
 
-        [NativeTypeName("FLOAT")]
         public float eStartAngle;
 
-        [NativeTypeName("FLOAT")]
         public float eSweepAngle;
     }
 }

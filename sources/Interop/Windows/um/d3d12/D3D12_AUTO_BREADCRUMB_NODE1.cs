@@ -23,7 +23,6 @@ namespace TerraFX.Interop
 
         public ID3D12CommandQueue* pCommandQueue;
 
-        [NativeTypeName("UINT")]
         public uint BreadcrumbCount;
 
         [NativeTypeName("const UINT *")]
@@ -35,7 +34,6 @@ namespace TerraFX.Interop
         [NativeTypeName("const struct D3D12_AUTO_BREADCRUMB_NODE1 *")]
         public D3D12_AUTO_BREADCRUMB_NODE1* pNext;
 
-        [NativeTypeName("UINT")]
         public uint BreadcrumbContextsCount;
 
         public D3D12_DRED_BREADCRUMB_CONTEXT* pBreadcrumbContexts;

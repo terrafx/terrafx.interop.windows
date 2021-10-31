@@ -11,7 +11,6 @@ namespace TerraFX.Interop
 
         public RECT margin;
 
-        [NativeTypeName("UINT")]
         public uint uAlign;
     }
 }

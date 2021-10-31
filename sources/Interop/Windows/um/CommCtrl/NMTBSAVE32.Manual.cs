@@ -15,7 +15,6 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD *")]
         public uint* pCurrent;
 
-        [NativeTypeName("UINT")]
         public uint cbData;
 
         public int iItem;

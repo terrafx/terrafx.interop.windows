@@ -13,10 +13,8 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint Size;
 
-        [NativeTypeName("BYTE")]
         public byte DeviceType;
 
-        [NativeTypeName("BYTE")]
         public byte DeviceTypeModifier;
 
         [NativeTypeName("BOOLEAN")]

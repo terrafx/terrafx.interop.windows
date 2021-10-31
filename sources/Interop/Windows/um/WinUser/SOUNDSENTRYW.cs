@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct SOUNDSENTRYW
     {
-        [NativeTypeName("UINT")]
         public uint cbSize;
 
         [NativeTypeName("DWORD")]

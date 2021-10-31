@@ -7,22 +7,16 @@ namespace TerraFX.Interop
 {
     public partial struct D3D12_RAYTRACING_AABB
     {
-        [NativeTypeName("FLOAT")]
         public float MinX;
 
-        [NativeTypeName("FLOAT")]
         public float MinY;
 
-        [NativeTypeName("FLOAT")]
         public float MinZ;
 
-        [NativeTypeName("FLOAT")]
         public float MaxX;
 
-        [NativeTypeName("FLOAT")]
         public float MaxY;
 
-        [NativeTypeName("FLOAT")]
         public float MaxZ;
     }
 }

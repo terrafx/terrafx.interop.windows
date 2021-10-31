@@ -41,7 +41,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        public HRESULT SetInitialValueAndVelocity([NativeTypeName("DOUBLE")] double initialValue, [NativeTypeName("DOUBLE")] double initialVelocity)
+        public HRESULT SetInitialValueAndVelocity(double initialValue, double initialVelocity)
         {
             return ((delegate* unmanaged<IUIAnimationInterpolator*, double, double, int>)(lpVtbl[3]))((IUIAnimationInterpolator*)Unsafe.AsPointer(ref this), initialValue, initialVelocity);
         }
@@ -62,21 +62,21 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        public HRESULT GetFinalValue([NativeTypeName("DOUBLE *")] double* value)
+        public HRESULT GetFinalValue(double* value)
         {
             return ((delegate* unmanaged<IUIAnimationInterpolator*, double*, int>)(lpVtbl[6]))((IUIAnimationInterpolator*)Unsafe.AsPointer(ref this), value);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        public HRESULT InterpolateValue([NativeTypeName("UI_ANIMATION_SECONDS")] double offset, [NativeTypeName("DOUBLE *")] double* value)
+        public HRESULT InterpolateValue([NativeTypeName("UI_ANIMATION_SECONDS")] double offset, double* value)
         {
             return ((delegate* unmanaged<IUIAnimationInterpolator*, double, double*, int>)(lpVtbl[7]))((IUIAnimationInterpolator*)Unsafe.AsPointer(ref this), offset, value);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        public HRESULT InterpolateVelocity([NativeTypeName("UI_ANIMATION_SECONDS")] double offset, [NativeTypeName("DOUBLE *")] double* velocity)
+        public HRESULT InterpolateVelocity([NativeTypeName("UI_ANIMATION_SECONDS")] double offset, double* velocity)
         {
             return ((delegate* unmanaged<IUIAnimationInterpolator*, double, double*, int>)(lpVtbl[8]))((IUIAnimationInterpolator*)Unsafe.AsPointer(ref this), offset, velocity);
         }

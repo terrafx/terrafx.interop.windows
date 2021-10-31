@@ -16,7 +16,6 @@ namespace TerraFX.Interop
         [NativeTypeName("LPCWSTR")]
         public ushort* pszText;
 
-        [NativeTypeName("INT")]
         public int ttiIcon;
     }
 }

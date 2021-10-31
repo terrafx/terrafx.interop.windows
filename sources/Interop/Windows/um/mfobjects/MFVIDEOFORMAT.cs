@@ -14,7 +14,6 @@ namespace TerraFX.Interop
 
         public MFVideoInfo videoInfo;
 
-        [NativeTypeName("GUID")]
         public Guid guidFormat;
 
         public MFVideoCompressedInfo compressedInfo;

@@ -13,10 +13,8 @@ namespace TerraFX.Interop
         [NativeTypeName("DISPID *")]
         public int* rgdispidNamedArgs;
 
-        [NativeTypeName("UINT")]
         public uint cArgs;
 
-        [NativeTypeName("UINT")]
         public uint cNamedArgs;
     }
 }

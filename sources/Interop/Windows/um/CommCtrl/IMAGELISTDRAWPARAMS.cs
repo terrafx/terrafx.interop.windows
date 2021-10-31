@@ -34,7 +34,6 @@ namespace TerraFX.Interop
         [NativeTypeName("COLORREF")]
         public uint rgbFg;
 
-        [NativeTypeName("UINT")]
         public uint fStyle;
 
         [NativeTypeName("DWORD")]

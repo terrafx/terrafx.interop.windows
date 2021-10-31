@@ -41,14 +41,14 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        public HRESULT GetCertificate([NativeTypeName("BYTE **")] byte** ppCert, [NativeTypeName("DWORD *")] uint* pcbCert)
+        public HRESULT GetCertificate(byte** ppCert, [NativeTypeName("DWORD *")] uint* pcbCert)
         {
             return ((delegate* unmanaged<IMFSecureChannel*, byte**, uint*, int>)(lpVtbl[3]))((IMFSecureChannel*)Unsafe.AsPointer(ref this), ppCert, pcbCert);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT SetupSession([NativeTypeName("BYTE *")] byte* pbEncryptedSessionKey, [NativeTypeName("DWORD")] uint cbSessionKey)
+        public HRESULT SetupSession(byte* pbEncryptedSessionKey, [NativeTypeName("DWORD")] uint cbSessionKey)
         {
             return ((delegate* unmanaged<IMFSecureChannel*, byte*, uint, int>)(lpVtbl[4]))((IMFSecureChannel*)Unsafe.AsPointer(ref this), pbEncryptedSessionKey, cbSessionKey);
         }

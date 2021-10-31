@@ -15,10 +15,8 @@ namespace TerraFX.Interop
 
         public COORD dwFontSize;
 
-        [NativeTypeName("UINT")]
         public uint FontFamily;
 
-        [NativeTypeName("UINT")]
         public uint FontWeight;
 
         [NativeTypeName("WCHAR [32]")]

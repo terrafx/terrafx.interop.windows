@@ -163,7 +163,7 @@ namespace TerraFX.Interop
             }
         }
 
-        [NativeTypeName("UINT : 7")]
+        [NativeTypeName("uint : 7")]
         public uint fUnusedFlags
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -179,7 +179,6 @@ namespace TerraFX.Interop
             }
         }
 
-        [NativeTypeName("UINT")]
         public uint fMenuEnumFilter;
     }
 }

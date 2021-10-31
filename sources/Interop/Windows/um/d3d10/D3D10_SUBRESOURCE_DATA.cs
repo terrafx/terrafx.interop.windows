@@ -10,10 +10,8 @@ namespace TerraFX.Interop
         [NativeTypeName("const void *")]
         public void* pSysMem;
 
-        [NativeTypeName("UINT")]
         public uint SysMemPitch;
 
-        [NativeTypeName("UINT")]
         public uint SysMemSlicePitch;
     }
 }

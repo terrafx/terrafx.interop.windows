@@ -13,7 +13,6 @@ namespace TerraFX.Interop
         [NativeTypeName("ALG_ID")]
         public uint Algid;
 
-        [NativeTypeName("BYTE *")]
         public byte* pbOID;
 
         [NativeTypeName("DWORD")]

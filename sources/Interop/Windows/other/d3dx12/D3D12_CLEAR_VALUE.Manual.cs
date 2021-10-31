@@ -21,7 +21,7 @@ namespace TerraFX.Interop
             Anonymous.Color[3] = color[3];
         }
 
-        public D3D12_CLEAR_VALUE(DXGI_FORMAT format, [NativeTypeName("FLOAT")] float depth, [NativeTypeName("UINT8")] byte stencil)
+        public D3D12_CLEAR_VALUE(DXGI_FORMAT format, float depth, [NativeTypeName("UINT8")] byte stencil)
         {
             Format = format;
             Anonymous.DepthStencil.Depth = depth;

@@ -27,7 +27,7 @@ namespace TerraFX.Interop
             return SetValueByName(propertyName, (byte*)value, unchecked((uint)sizeof(T)));
         }
 
-        public HRESULT GetValue<U>(U index, [NativeTypeName("BYTE *")] byte* data, [NativeTypeName("UINT32")] uint dataSize)
+        public HRESULT GetValue<U>(U index, byte* data, [NativeTypeName("UINT32")] uint dataSize)
             where U : unmanaged
         {
             return GetValue((uint)(object)index, data, dataSize);

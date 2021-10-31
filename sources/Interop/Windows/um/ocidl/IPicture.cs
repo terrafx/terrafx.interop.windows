@@ -55,7 +55,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        public HRESULT get_Type([NativeTypeName("SHORT *")] short* pType)
+        public HRESULT get_Type(short* pType)
         {
             return ((delegate* unmanaged<IPicture*, short*, int>)(lpVtbl[5]))((IPicture*)Unsafe.AsPointer(ref this), pType);
         }

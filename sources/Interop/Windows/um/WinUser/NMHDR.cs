@@ -12,7 +12,6 @@ namespace TerraFX.Interop
         [NativeTypeName("UINT_PTR")]
         public nuint idFrom;
 
-        [NativeTypeName("UINT")]
         public uint code;
     }
 }

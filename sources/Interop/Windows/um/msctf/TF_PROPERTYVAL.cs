@@ -9,7 +9,6 @@ namespace TerraFX.Interop
 {
     public partial struct TF_PROPERTYVAL
     {
-        [NativeTypeName("GUID")]
         public Guid guidId;
 
         public VARIANT varValue;

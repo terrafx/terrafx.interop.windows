@@ -13,7 +13,6 @@ namespace TerraFX.Interop
 
         public D3D12_VARIABLE_SHADING_RATE_TIER VariableShadingRateTier;
 
-        [NativeTypeName("UINT")]
         public uint ShadingRateImageTileSize;
 
         public BOOL BackgroundProcessingSupported;

@@ -7,10 +7,8 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct TTTOOLINFOW
     {
-        [NativeTypeName("UINT")]
         public uint cbSize;
 
-        [NativeTypeName("UINT")]
         public uint uFlags;
 
         public HWND hwnd;

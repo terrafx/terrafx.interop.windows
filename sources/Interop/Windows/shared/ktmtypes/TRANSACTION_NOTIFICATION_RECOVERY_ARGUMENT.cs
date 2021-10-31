@@ -9,7 +9,6 @@ namespace TerraFX.Interop
 {
     public partial struct TRANSACTION_NOTIFICATION_RECOVERY_ARGUMENT
     {
-        [NativeTypeName("GUID")]
         public Guid EnlistmentId;
 
         [NativeTypeName("UOW")]

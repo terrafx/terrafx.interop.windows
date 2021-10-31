@@ -41,35 +41,35 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        public HRESULT GetConnectorCount([NativeTypeName("UINT *")] uint* pCount)
+        public HRESULT GetConnectorCount(uint* pCount)
         {
             return ((delegate* unmanaged<IDeviceTopology*, uint*, int>)(lpVtbl[3]))((IDeviceTopology*)Unsafe.AsPointer(ref this), pCount);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT GetConnector([NativeTypeName("UINT")] uint nIndex, IConnector** ppConnector)
+        public HRESULT GetConnector(uint nIndex, IConnector** ppConnector)
         {
             return ((delegate* unmanaged<IDeviceTopology*, uint, IConnector**, int>)(lpVtbl[4]))((IDeviceTopology*)Unsafe.AsPointer(ref this), nIndex, ppConnector);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        public HRESULT GetSubunitCount([NativeTypeName("UINT *")] uint* pCount)
+        public HRESULT GetSubunitCount(uint* pCount)
         {
             return ((delegate* unmanaged<IDeviceTopology*, uint*, int>)(lpVtbl[5]))((IDeviceTopology*)Unsafe.AsPointer(ref this), pCount);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        public HRESULT GetSubunit([NativeTypeName("UINT")] uint nIndex, ISubunit** ppSubunit)
+        public HRESULT GetSubunit(uint nIndex, ISubunit** ppSubunit)
         {
             return ((delegate* unmanaged<IDeviceTopology*, uint, ISubunit**, int>)(lpVtbl[6]))((IDeviceTopology*)Unsafe.AsPointer(ref this), nIndex, ppSubunit);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        public HRESULT GetPartById([NativeTypeName("UINT")] uint nId, IPart** ppPart)
+        public HRESULT GetPartById(uint nId, IPart** ppPart)
         {
             return ((delegate* unmanaged<IDeviceTopology*, uint, IPart**, int>)(lpVtbl[7]))((IDeviceTopology*)Unsafe.AsPointer(ref this), nId, ppPart);
         }

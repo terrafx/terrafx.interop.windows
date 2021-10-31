@@ -48,14 +48,14 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT SetPixelFormat([NativeTypeName("GUID")] Guid subtype)
+        public HRESULT SetPixelFormat(Guid subtype)
         {
             return ((delegate* unmanaged<IMFCapturePhotoConfirmation*, Guid, int>)(lpVtbl[4]))((IMFCapturePhotoConfirmation*)Unsafe.AsPointer(ref this), subtype);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        public HRESULT GetPixelFormat([NativeTypeName("GUID *")] Guid* subtype)
+        public HRESULT GetPixelFormat(Guid* subtype)
         {
             return ((delegate* unmanaged<IMFCapturePhotoConfirmation*, Guid*, int>)(lpVtbl[5]))((IMFCapturePhotoConfirmation*)Unsafe.AsPointer(ref this), subtype);
         }

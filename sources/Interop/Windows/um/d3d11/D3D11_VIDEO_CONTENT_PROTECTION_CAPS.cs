@@ -7,13 +7,10 @@ namespace TerraFX.Interop
 {
     public partial struct D3D11_VIDEO_CONTENT_PROTECTION_CAPS
     {
-        [NativeTypeName("UINT")]
         public uint Caps;
 
-        [NativeTypeName("UINT")]
         public uint KeyExchangeTypeCount;
 
-        [NativeTypeName("UINT")]
         public uint BlockAlignmentSize;
 
         [NativeTypeName("ULONGLONG")]

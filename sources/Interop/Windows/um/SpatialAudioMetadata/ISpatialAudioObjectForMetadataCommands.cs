@@ -41,7 +41,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        public HRESULT GetBuffer([NativeTypeName("BYTE **")] byte** buffer, [NativeTypeName("UINT32 *")] uint* bufferLength)
+        public HRESULT GetBuffer(byte** buffer, [NativeTypeName("UINT32 *")] uint* bufferLength)
         {
             return ((delegate* unmanaged<ISpatialAudioObjectForMetadataCommands*, byte**, uint*, int>)(lpVtbl[3]))((ISpatialAudioObjectForMetadataCommands*)Unsafe.AsPointer(ref this), buffer, bufferLength);
         }
@@ -69,7 +69,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        public HRESULT WriteNextMetadataCommand([NativeTypeName("BYTE")] byte commandID, void* valueBuffer, [NativeTypeName("UINT32")] uint valueBufferLength)
+        public HRESULT WriteNextMetadataCommand(byte commandID, void* valueBuffer, [NativeTypeName("UINT32")] uint valueBufferLength)
         {
             return ((delegate* unmanaged<ISpatialAudioObjectForMetadataCommands*, byte, void*, uint, int>)(lpVtbl[7]))((ISpatialAudioObjectForMetadataCommands*)Unsafe.AsPointer(ref this), commandID, valueBuffer, valueBufferLength);
         }

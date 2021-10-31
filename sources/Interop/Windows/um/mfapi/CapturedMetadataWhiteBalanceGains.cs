@@ -7,13 +7,10 @@ namespace TerraFX.Interop
 {
     public partial struct CapturedMetadataWhiteBalanceGains
     {
-        [NativeTypeName("FLOAT")]
         public float R;
 
-        [NativeTypeName("FLOAT")]
         public float G;
 
-        [NativeTypeName("FLOAT")]
         public float B;
     }
 }

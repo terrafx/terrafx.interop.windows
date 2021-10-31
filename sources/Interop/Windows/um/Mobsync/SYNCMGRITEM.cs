@@ -15,7 +15,6 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint dwFlags;
 
-        [NativeTypeName("GUID")]
         public Guid ItemID;
 
         [NativeTypeName("DWORD")]

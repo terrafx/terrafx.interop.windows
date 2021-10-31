@@ -11,7 +11,6 @@ namespace TerraFX.Interop
     {
         public WS_STRING uri;
 
-        [NativeTypeName("GUID")]
         public Guid guid;
     }
 }

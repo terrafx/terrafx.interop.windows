@@ -55,7 +55,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        public HRESULT GetCurrentLogicalThreadId([NativeTypeName("GUID *")] Guid* pguidLogicalThreadId)
+        public HRESULT GetCurrentLogicalThreadId(Guid* pguidLogicalThreadId)
         {
             return ((delegate* unmanaged<IComThreadingInfo*, Guid*, int>)(lpVtbl[5]))((IComThreadingInfo*)Unsafe.AsPointer(ref this), pguidLogicalThreadId);
         }

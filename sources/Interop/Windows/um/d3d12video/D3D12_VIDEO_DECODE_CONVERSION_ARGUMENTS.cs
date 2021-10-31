@@ -11,7 +11,6 @@ namespace TerraFX.Interop
 
         public ID3D12Resource* pReferenceTexture2D;
 
-        [NativeTypeName("UINT")]
         public uint ReferenceSubresource;
 
         public DXGI_COLOR_SPACE_TYPE OutputColorSpace;

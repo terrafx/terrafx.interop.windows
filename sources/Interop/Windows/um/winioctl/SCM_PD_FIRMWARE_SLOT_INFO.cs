@@ -15,12 +15,11 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint Size;
 
-        [NativeTypeName("BYTE")]
         public byte SlotNumber;
 
         public byte _bitfield;
 
-        [NativeTypeName("BYTE : 1")]
+        [NativeTypeName("byte : 1")]
         public byte ReadOnly
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -36,7 +35,7 @@ namespace TerraFX.Interop
             }
         }
 
-        [NativeTypeName("BYTE : 7")]
+        [NativeTypeName("byte : 7")]
         public byte Reserved0
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]

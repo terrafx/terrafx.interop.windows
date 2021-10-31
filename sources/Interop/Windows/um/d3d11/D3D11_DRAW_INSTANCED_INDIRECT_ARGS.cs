@@ -7,16 +7,12 @@ namespace TerraFX.Interop
 {
     public partial struct D3D11_DRAW_INSTANCED_INDIRECT_ARGS
     {
-        [NativeTypeName("UINT")]
         public uint VertexCountPerInstance;
 
-        [NativeTypeName("UINT")]
         public uint InstanceCount;
 
-        [NativeTypeName("UINT")]
         public uint StartVertexLocation;
 
-        [NativeTypeName("UINT")]
         public uint StartInstanceLocation;
     }
 }

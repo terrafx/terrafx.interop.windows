@@ -50,7 +50,7 @@ namespace TerraFX.Interop
 
         public HANDLE hProcess;
 
-        public ref IntPtr hIcon
+        public ref HANDLE hIcon
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
@@ -59,7 +59,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public ref IntPtr hMonitor
+        public ref HANDLE hMonitor
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
@@ -72,12 +72,10 @@ namespace TerraFX.Interop
         public partial struct _Anonymous_e__Union
         {
             [FieldOffset(0)]
-            [NativeTypeName("HANDLE")]
-            public IntPtr hIcon;
+            public HANDLE hIcon;
 
             [FieldOffset(0)]
-            [NativeTypeName("HANDLE")]
-            public IntPtr hMonitor;
+            public HANDLE hMonitor;
         }
     }
 }

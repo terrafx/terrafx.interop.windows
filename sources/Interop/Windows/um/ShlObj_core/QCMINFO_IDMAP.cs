@@ -11,7 +11,6 @@ namespace TerraFX.Interop
 {
     public partial struct QCMINFO_IDMAP
     {
-        [NativeTypeName("UINT")]
         public uint nMaxIds;
 
         [NativeTypeName("QCMINFO_IDMAP_PLACEMENT [1]")]

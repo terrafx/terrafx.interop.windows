@@ -25,7 +25,6 @@ namespace TerraFX.Interop
 
         public D3D12_CONSERVATIVE_RASTERIZATION_TIER ConservativeRasterizationTier;
 
-        [NativeTypeName("UINT")]
         public uint MaxGPUVirtualAddressBitsPerResource;
 
         public BOOL StandardSwizzle64KBSupported;

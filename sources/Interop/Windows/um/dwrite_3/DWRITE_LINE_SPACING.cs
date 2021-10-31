@@ -9,13 +9,10 @@ namespace TerraFX.Interop
     {
         public DWRITE_LINE_SPACING_METHOD method;
 
-        [NativeTypeName("FLOAT")]
         public float height;
 
-        [NativeTypeName("FLOAT")]
         public float baseline;
 
-        [NativeTypeName("FLOAT")]
         public float leadingBefore;
 
         public DWRITE_FONT_LINE_GAP_USAGE fontLineGapUsage;

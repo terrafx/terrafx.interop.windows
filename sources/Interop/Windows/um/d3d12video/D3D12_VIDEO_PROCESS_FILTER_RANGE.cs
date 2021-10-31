@@ -7,16 +7,12 @@ namespace TerraFX.Interop
 {
     public partial struct D3D12_VIDEO_PROCESS_FILTER_RANGE
     {
-        [NativeTypeName("INT")]
         public int Minimum;
 
-        [NativeTypeName("INT")]
         public int Maximum;
 
-        [NativeTypeName("INT")]
         public int Default;
 
-        [NativeTypeName("FLOAT")]
         public float Multiplier;
     }
 }

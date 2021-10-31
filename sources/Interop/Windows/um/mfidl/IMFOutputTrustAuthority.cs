@@ -48,7 +48,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT SetPolicy(IMFOutputPolicy** ppPolicy, [NativeTypeName("DWORD")] uint nPolicy, [NativeTypeName("BYTE **")] byte** ppbTicket, [NativeTypeName("DWORD *")] uint* pcbTicket)
+        public HRESULT SetPolicy(IMFOutputPolicy** ppPolicy, [NativeTypeName("DWORD")] uint nPolicy, byte** ppbTicket, [NativeTypeName("DWORD *")] uint* pcbTicket)
         {
             return ((delegate* unmanaged<IMFOutputTrustAuthority*, IMFOutputPolicy**, uint, byte**, uint*, int>)(lpVtbl[4]))((IMFOutputTrustAuthority*)Unsafe.AsPointer(ref this), ppPolicy, nPolicy, ppbTicket, pcbTicket);
         }

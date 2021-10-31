@@ -10,10 +10,8 @@ namespace TerraFX.Interop
         [NativeTypeName("struct NET_ADDRESS_INFO_ *")]
         public NET_ADDRESS_INFO* pAddrInfo;
 
-        [NativeTypeName("USHORT")]
         public ushort PortNumber;
 
-        [NativeTypeName("BYTE")]
         public byte PrefixLength;
     }
 }

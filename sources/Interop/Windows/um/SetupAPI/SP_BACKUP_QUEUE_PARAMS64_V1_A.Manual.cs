@@ -13,7 +13,6 @@ namespace TerraFX.Interop
         [NativeTypeName("CHAR [260]")]
         public fixed sbyte FullInfPath[260];
 
-        [NativeTypeName("INT")]
         public int FilenameOffset;
     }
 }

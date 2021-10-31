@@ -90,28 +90,28 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(10)]
-        public HRESULT EscapeA(HKL hKL, HIMC hIMC, [NativeTypeName("UINT")] uint uEscape, [NativeTypeName("LPVOID")] void* pData, [NativeTypeName("LRESULT *")] nint* plResult)
+        public HRESULT EscapeA(HKL hKL, HIMC hIMC, uint uEscape, [NativeTypeName("LPVOID")] void* pData, [NativeTypeName("LRESULT *")] nint* plResult)
         {
             return ((delegate* unmanaged<IActiveIMMIME*, HKL, HIMC, uint, void*, nint*, int>)(lpVtbl[10]))((IActiveIMMIME*)Unsafe.AsPointer(ref this), hKL, hIMC, uEscape, pData, plResult);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(11)]
-        public HRESULT EscapeW(HKL hKL, HIMC hIMC, [NativeTypeName("UINT")] uint uEscape, [NativeTypeName("LPVOID")] void* pData, [NativeTypeName("LRESULT *")] nint* plResult)
+        public HRESULT EscapeW(HKL hKL, HIMC hIMC, uint uEscape, [NativeTypeName("LPVOID")] void* pData, [NativeTypeName("LRESULT *")] nint* plResult)
         {
             return ((delegate* unmanaged<IActiveIMMIME*, HKL, HIMC, uint, void*, nint*, int>)(lpVtbl[11]))((IActiveIMMIME*)Unsafe.AsPointer(ref this), hKL, hIMC, uEscape, pData, plResult);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(12)]
-        public HRESULT GetCandidateListA(HIMC hIMC, [NativeTypeName("DWORD")] uint dwIndex, [NativeTypeName("UINT")] uint uBufLen, CANDIDATELIST* pCandList, [NativeTypeName("UINT *")] uint* puCopied)
+        public HRESULT GetCandidateListA(HIMC hIMC, [NativeTypeName("DWORD")] uint dwIndex, uint uBufLen, CANDIDATELIST* pCandList, uint* puCopied)
         {
             return ((delegate* unmanaged<IActiveIMMIME*, HIMC, uint, uint, CANDIDATELIST*, uint*, int>)(lpVtbl[12]))((IActiveIMMIME*)Unsafe.AsPointer(ref this), hIMC, dwIndex, uBufLen, pCandList, puCopied);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(13)]
-        public HRESULT GetCandidateListW(HIMC hIMC, [NativeTypeName("DWORD")] uint dwIndex, [NativeTypeName("UINT")] uint uBufLen, CANDIDATELIST* pCandList, [NativeTypeName("UINT *")] uint* puCopied)
+        public HRESULT GetCandidateListW(HIMC hIMC, [NativeTypeName("DWORD")] uint dwIndex, uint uBufLen, CANDIDATELIST* pCandList, uint* puCopied)
         {
             return ((delegate* unmanaged<IActiveIMMIME*, HIMC, uint, uint, CANDIDATELIST*, uint*, int>)(lpVtbl[13]))((IActiveIMMIME*)Unsafe.AsPointer(ref this), hIMC, dwIndex, uBufLen, pCandList, puCopied);
         }
@@ -181,14 +181,14 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(23)]
-        public HRESULT GetConversionListA(HKL hKL, HIMC hIMC, [NativeTypeName("LPSTR")] sbyte* pSrc, [NativeTypeName("UINT")] uint uBufLen, [NativeTypeName("UINT")] uint uFlag, CANDIDATELIST* pDst, [NativeTypeName("UINT *")] uint* puCopied)
+        public HRESULT GetConversionListA(HKL hKL, HIMC hIMC, [NativeTypeName("LPSTR")] sbyte* pSrc, uint uBufLen, uint uFlag, CANDIDATELIST* pDst, uint* puCopied)
         {
             return ((delegate* unmanaged<IActiveIMMIME*, HKL, HIMC, sbyte*, uint, uint, CANDIDATELIST*, uint*, int>)(lpVtbl[23]))((IActiveIMMIME*)Unsafe.AsPointer(ref this), hKL, hIMC, pSrc, uBufLen, uFlag, pDst, puCopied);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(24)]
-        public HRESULT GetConversionListW(HKL hKL, HIMC hIMC, [NativeTypeName("LPWSTR")] ushort* pSrc, [NativeTypeName("UINT")] uint uBufLen, [NativeTypeName("UINT")] uint uFlag, CANDIDATELIST* pDst, [NativeTypeName("UINT *")] uint* puCopied)
+        public HRESULT GetConversionListW(HKL hKL, HIMC hIMC, [NativeTypeName("LPWSTR")] ushort* pSrc, uint uBufLen, uint uFlag, CANDIDATELIST* pDst, uint* puCopied)
         {
             return ((delegate* unmanaged<IActiveIMMIME*, HKL, HIMC, ushort*, uint, uint, CANDIDATELIST*, uint*, int>)(lpVtbl[24]))((IActiveIMMIME*)Unsafe.AsPointer(ref this), hKL, hIMC, pSrc, uBufLen, uFlag, pDst, puCopied);
         }
@@ -209,14 +209,14 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(27)]
-        public HRESULT GetDescriptionA(HKL hKL, [NativeTypeName("UINT")] uint uBufLen, [NativeTypeName("LPSTR")] sbyte* szDescription, [NativeTypeName("UINT *")] uint* puCopied)
+        public HRESULT GetDescriptionA(HKL hKL, uint uBufLen, [NativeTypeName("LPSTR")] sbyte* szDescription, uint* puCopied)
         {
             return ((delegate* unmanaged<IActiveIMMIME*, HKL, uint, sbyte*, uint*, int>)(lpVtbl[27]))((IActiveIMMIME*)Unsafe.AsPointer(ref this), hKL, uBufLen, szDescription, puCopied);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(28)]
-        public HRESULT GetDescriptionW(HKL hKL, [NativeTypeName("UINT")] uint uBufLen, [NativeTypeName("LPWSTR")] ushort* szDescription, [NativeTypeName("UINT *")] uint* puCopied)
+        public HRESULT GetDescriptionW(HKL hKL, uint uBufLen, [NativeTypeName("LPWSTR")] ushort* szDescription, uint* puCopied)
         {
             return ((delegate* unmanaged<IActiveIMMIME*, HKL, uint, ushort*, uint*, int>)(lpVtbl[28]))((IActiveIMMIME*)Unsafe.AsPointer(ref this), hKL, uBufLen, szDescription, puCopied);
         }
@@ -237,14 +237,14 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(31)]
-        public HRESULT GetIMEFileNameA(HKL hKL, [NativeTypeName("UINT")] uint uBufLen, [NativeTypeName("LPSTR")] sbyte* szFileName, [NativeTypeName("UINT *")] uint* puCopied)
+        public HRESULT GetIMEFileNameA(HKL hKL, uint uBufLen, [NativeTypeName("LPSTR")] sbyte* szFileName, uint* puCopied)
         {
             return ((delegate* unmanaged<IActiveIMMIME*, HKL, uint, sbyte*, uint*, int>)(lpVtbl[31]))((IActiveIMMIME*)Unsafe.AsPointer(ref this), hKL, uBufLen, szFileName, puCopied);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(32)]
-        public HRESULT GetIMEFileNameW(HKL hKL, [NativeTypeName("UINT")] uint uBufLen, [NativeTypeName("LPWSTR")] ushort* szFileName, [NativeTypeName("UINT *")] uint* puCopied)
+        public HRESULT GetIMEFileNameW(HKL hKL, uint uBufLen, [NativeTypeName("LPWSTR")] ushort* szFileName, uint* puCopied)
         {
             return ((delegate* unmanaged<IActiveIMMIME*, HKL, uint, ushort*, uint*, int>)(lpVtbl[32]))((IActiveIMMIME*)Unsafe.AsPointer(ref this), hKL, uBufLen, szFileName, puCopied);
         }
@@ -265,14 +265,14 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(35)]
-        public HRESULT GetRegisterWordStyleA(HKL hKL, [NativeTypeName("UINT")] uint nItem, STYLEBUFA* pStyleBuf, [NativeTypeName("UINT *")] uint* puCopied)
+        public HRESULT GetRegisterWordStyleA(HKL hKL, uint nItem, STYLEBUFA* pStyleBuf, uint* puCopied)
         {
             return ((delegate* unmanaged<IActiveIMMIME*, HKL, uint, STYLEBUFA*, uint*, int>)(lpVtbl[35]))((IActiveIMMIME*)Unsafe.AsPointer(ref this), hKL, nItem, pStyleBuf, puCopied);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(36)]
-        public HRESULT GetRegisterWordStyleW(HKL hKL, [NativeTypeName("UINT")] uint nItem, STYLEBUFW* pStyleBuf, [NativeTypeName("UINT *")] uint* puCopied)
+        public HRESULT GetRegisterWordStyleW(HKL hKL, uint nItem, STYLEBUFW* pStyleBuf, uint* puCopied)
         {
             return ((delegate* unmanaged<IActiveIMMIME*, HKL, uint, STYLEBUFW*, uint*, int>)(lpVtbl[36]))((IActiveIMMIME*)Unsafe.AsPointer(ref this), hKL, nItem, pStyleBuf, puCopied);
         }
@@ -286,7 +286,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(38)]
-        public HRESULT GetVirtualKey(HWND hWnd, [NativeTypeName("UINT *")] uint* puVirtualKey)
+        public HRESULT GetVirtualKey(HWND hWnd, uint* puVirtualKey)
         {
             return ((delegate* unmanaged<IActiveIMMIME*, HWND, uint*, int>)(lpVtbl[38]))((IActiveIMMIME*)Unsafe.AsPointer(ref this), hWnd, puVirtualKey);
         }
@@ -314,14 +314,14 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(42)]
-        public HRESULT IsUIMessageA(HWND hWndIME, [NativeTypeName("UINT")] uint msg, [NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam)
+        public HRESULT IsUIMessageA(HWND hWndIME, uint msg, [NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam)
         {
             return ((delegate* unmanaged<IActiveIMMIME*, HWND, uint, nuint, nint, int>)(lpVtbl[42]))((IActiveIMMIME*)Unsafe.AsPointer(ref this), hWndIME, msg, wParam, lParam);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(43)]
-        public HRESULT IsUIMessageW(HWND hWndIME, [NativeTypeName("UINT")] uint msg, [NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam)
+        public HRESULT IsUIMessageW(HWND hWndIME, uint msg, [NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam)
         {
             return ((delegate* unmanaged<IActiveIMMIME*, HWND, uint, nuint, nint, int>)(lpVtbl[43]))((IActiveIMMIME*)Unsafe.AsPointer(ref this), hWndIME, msg, wParam, lParam);
         }
@@ -517,21 +517,21 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(71)]
-        public HRESULT GetHotKey([NativeTypeName("DWORD")] uint dwHotKeyID, [NativeTypeName("UINT *")] uint* puModifiers, [NativeTypeName("UINT *")] uint* puVKey, HKL* phKL)
+        public HRESULT GetHotKey([NativeTypeName("DWORD")] uint dwHotKeyID, uint* puModifiers, uint* puVKey, HKL* phKL)
         {
             return ((delegate* unmanaged<IActiveIMMIME*, uint, uint*, uint*, HKL*, int>)(lpVtbl[71]))((IActiveIMMIME*)Unsafe.AsPointer(ref this), dwHotKeyID, puModifiers, puVKey, phKL);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(72)]
-        public HRESULT SetHotKey([NativeTypeName("DWORD")] uint dwHotKeyID, [NativeTypeName("UINT")] uint uModifiers, [NativeTypeName("UINT")] uint uVKey, HKL hKL)
+        public HRESULT SetHotKey([NativeTypeName("DWORD")] uint dwHotKeyID, uint uModifiers, uint uVKey, HKL hKL)
         {
             return ((delegate* unmanaged<IActiveIMMIME*, uint, uint, uint, HKL, int>)(lpVtbl[72]))((IActiveIMMIME*)Unsafe.AsPointer(ref this), dwHotKeyID, uModifiers, uVKey, hKL);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(73)]
-        public HRESULT CreateSoftKeyboard([NativeTypeName("UINT")] uint uType, HWND hOwner, int x, int y, HWND* phSoftKbdWnd)
+        public HRESULT CreateSoftKeyboard(uint uType, HWND hOwner, int x, int y, HWND* phSoftKbdWnd)
         {
             return ((delegate* unmanaged<IActiveIMMIME*, uint, HWND, int, int, HWND*, int>)(lpVtbl[73]))((IActiveIMMIME*)Unsafe.AsPointer(ref this), uType, hOwner, x, y, phSoftKbdWnd);
         }
@@ -552,7 +552,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(76)]
-        public HRESULT GetCodePageA(HKL hKL, [NativeTypeName("UINT *")] uint* uCodePage)
+        public HRESULT GetCodePageA(HKL hKL, uint* uCodePage)
         {
             return ((delegate* unmanaged<IActiveIMMIME*, HKL, uint*, int>)(lpVtbl[76]))((IActiveIMMIME*)Unsafe.AsPointer(ref this), hKL, uCodePage);
         }
@@ -566,7 +566,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(78)]
-        public HRESULT KeybdEvent([NativeTypeName("LANGID")] ushort lgidIME, [NativeTypeName("BYTE")] byte bVk, [NativeTypeName("BYTE")] byte bScan, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("DWORD")] uint dwExtraInfo)
+        public HRESULT KeybdEvent([NativeTypeName("LANGID")] ushort lgidIME, byte bVk, byte bScan, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("DWORD")] uint dwExtraInfo)
         {
             return ((delegate* unmanaged<IActiveIMMIME*, ushort, byte, byte, uint, uint, int>)(lpVtbl[78]))((IActiveIMMIME*)Unsafe.AsPointer(ref this), lgidIME, bVk, bScan, dwFlags, dwExtraInfo);
         }
@@ -636,14 +636,14 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(88)]
-        public HRESULT SendIMCA(HWND hWnd, [NativeTypeName("UINT")] uint uMsg, [NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam, [NativeTypeName("LRESULT *")] nint* plResult)
+        public HRESULT SendIMCA(HWND hWnd, uint uMsg, [NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam, [NativeTypeName("LRESULT *")] nint* plResult)
         {
             return ((delegate* unmanaged<IActiveIMMIME*, HWND, uint, nuint, nint, nint*, int>)(lpVtbl[88]))((IActiveIMMIME*)Unsafe.AsPointer(ref this), hWnd, uMsg, wParam, lParam, plResult);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(89)]
-        public HRESULT SendIMCW(HWND hWnd, [NativeTypeName("UINT")] uint uMsg, [NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam, [NativeTypeName("LRESULT *")] nint* plResult)
+        public HRESULT SendIMCW(HWND hWnd, uint uMsg, [NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam, [NativeTypeName("LRESULT *")] nint* plResult)
         {
             return ((delegate* unmanaged<IActiveIMMIME*, HWND, uint, nuint, nint, nint*, int>)(lpVtbl[89]))((IActiveIMMIME*)Unsafe.AsPointer(ref this), hWnd, uMsg, wParam, lParam, plResult);
         }

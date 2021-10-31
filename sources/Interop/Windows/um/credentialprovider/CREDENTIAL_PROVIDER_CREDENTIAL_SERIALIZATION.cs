@@ -12,7 +12,6 @@ namespace TerraFX.Interop
         [NativeTypeName("ULONG")]
         public uint ulAuthenticationPackage;
 
-        [NativeTypeName("GUID")]
         public Guid clsidCredentialProvider;
 
         [NativeTypeName("ULONG")]

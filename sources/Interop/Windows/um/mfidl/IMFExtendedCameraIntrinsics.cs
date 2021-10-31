@@ -41,7 +41,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        public HRESULT InitializeFromBuffer([NativeTypeName("BYTE *")] byte* pbBuffer, [NativeTypeName("DWORD")] uint dwBufferSize)
+        public HRESULT InitializeFromBuffer(byte* pbBuffer, [NativeTypeName("DWORD")] uint dwBufferSize)
         {
             return ((delegate* unmanaged<IMFExtendedCameraIntrinsics*, byte*, uint, int>)(lpVtbl[3]))((IMFExtendedCameraIntrinsics*)Unsafe.AsPointer(ref this), pbBuffer, dwBufferSize);
         }
@@ -55,7 +55,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        public HRESULT SerializeToBuffer([NativeTypeName("BYTE *")] byte* pbBuffer, [NativeTypeName("DWORD *")] uint* pdwBufferSize)
+        public HRESULT SerializeToBuffer(byte* pbBuffer, [NativeTypeName("DWORD *")] uint* pdwBufferSize)
         {
             return ((delegate* unmanaged<IMFExtendedCameraIntrinsics*, byte*, uint*, int>)(lpVtbl[5]))((IMFExtendedCameraIntrinsics*)Unsafe.AsPointer(ref this), pbBuffer, pdwBufferSize);
         }

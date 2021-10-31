@@ -7,16 +7,12 @@ namespace TerraFX.Interop
 {
     public partial struct MFARGB
     {
-        [NativeTypeName("BYTE")]
         public byte rgbBlue;
 
-        [NativeTypeName("BYTE")]
         public byte rgbGreen;
 
-        [NativeTypeName("BYTE")]
         public byte rgbRed;
 
-        [NativeTypeName("BYTE")]
         public byte rgbAlpha;
     }
 }

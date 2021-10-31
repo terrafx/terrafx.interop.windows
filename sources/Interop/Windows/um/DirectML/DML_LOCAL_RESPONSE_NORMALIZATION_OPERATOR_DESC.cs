@@ -15,16 +15,12 @@ namespace TerraFX.Interop
 
         public BOOL CrossChannel;
 
-        [NativeTypeName("UINT")]
         public uint LocalSize;
 
-        [NativeTypeName("FLOAT")]
         public float Alpha;
 
-        [NativeTypeName("FLOAT")]
         public float Beta;
 
-        [NativeTypeName("FLOAT")]
         public float Bias;
     }
 }

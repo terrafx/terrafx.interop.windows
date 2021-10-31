@@ -11,7 +11,6 @@ namespace TerraFX.Interop
 
         public int iItem;
 
-        [NativeTypeName("UINT")]
         public uint mask;
 
         [NativeTypeName("LPSTR")]

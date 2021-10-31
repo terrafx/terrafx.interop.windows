@@ -36,7 +36,6 @@ namespace TerraFX.Interop
         [NativeTypeName("LPFNPSPCALLBACKW")]
         public delegate* unmanaged<HWND, uint, PROPSHEETPAGEW*, uint> pfnCallback;
 
-        [NativeTypeName("UINT *")]
         public uint* pcRefParent;
 
         [NativeTypeName("LPCWSTR")]

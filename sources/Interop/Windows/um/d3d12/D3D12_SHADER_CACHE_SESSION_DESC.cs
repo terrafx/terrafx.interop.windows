@@ -9,20 +9,16 @@ namespace TerraFX.Interop
 {
     public partial struct D3D12_SHADER_CACHE_SESSION_DESC
     {
-        [NativeTypeName("GUID")]
         public Guid Identifier;
 
         public D3D12_SHADER_CACHE_MODE Mode;
 
         public D3D12_SHADER_CACHE_FLAGS Flags;
 
-        [NativeTypeName("UINT")]
         public uint MaximumInMemoryCacheSizeBytes;
 
-        [NativeTypeName("UINT")]
         public uint MaximumInMemoryCacheEntries;
 
-        [NativeTypeName("UINT")]
         public uint MaximumValueFileSizeBytes;
 
         [NativeTypeName("UINT64")]

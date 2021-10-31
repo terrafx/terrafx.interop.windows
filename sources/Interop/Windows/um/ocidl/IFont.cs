@@ -125,28 +125,28 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(15)]
-        public HRESULT get_Weight([NativeTypeName("SHORT *")] short* pWeight)
+        public HRESULT get_Weight(short* pWeight)
         {
             return ((delegate* unmanaged<IFont*, short*, int>)(lpVtbl[15]))((IFont*)Unsafe.AsPointer(ref this), pWeight);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(16)]
-        public HRESULT put_Weight([NativeTypeName("SHORT")] short weight)
+        public HRESULT put_Weight(short weight)
         {
             return ((delegate* unmanaged<IFont*, short, int>)(lpVtbl[16]))((IFont*)Unsafe.AsPointer(ref this), weight);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(17)]
-        public HRESULT get_Charset([NativeTypeName("SHORT *")] short* pCharset)
+        public HRESULT get_Charset(short* pCharset)
         {
             return ((delegate* unmanaged<IFont*, short*, int>)(lpVtbl[17]))((IFont*)Unsafe.AsPointer(ref this), pCharset);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(18)]
-        public HRESULT put_Charset([NativeTypeName("SHORT")] short charset)
+        public HRESULT put_Charset(short charset)
         {
             return ((delegate* unmanaged<IFont*, short, int>)(lpVtbl[18]))((IFont*)Unsafe.AsPointer(ref this), charset);
         }

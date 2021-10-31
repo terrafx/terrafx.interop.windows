@@ -41,14 +41,14 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        public HRESULT GetCount([NativeTypeName("UINT *")] uint* columnCount)
+        public HRESULT GetCount(uint* columnCount)
         {
             return ((delegate* unmanaged<ISortColumnArray*, uint*, int>)(lpVtbl[3]))((ISortColumnArray*)Unsafe.AsPointer(ref this), columnCount);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT GetAt([NativeTypeName("UINT")] uint index, SORTCOLUMN* sortcolumn)
+        public HRESULT GetAt(uint index, SORTCOLUMN* sortcolumn)
         {
             return ((delegate* unmanaged<ISortColumnArray*, uint, SORTCOLUMN*, int>)(lpVtbl[4]))((ISortColumnArray*)Unsafe.AsPointer(ref this), index, sortcolumn);
         }

@@ -13,10 +13,8 @@ namespace TerraFX.Interop
     {
         public D3D10_SHADER_DEBUG_REGTYPE OutputRegisterSet;
 
-        [NativeTypeName("UINT")]
         public uint OutputReg;
 
-        [NativeTypeName("UINT")]
         public uint TempArrayReg;
 
         [NativeTypeName("UINT [4]")]
@@ -25,10 +23,8 @@ namespace TerraFX.Interop
         [NativeTypeName("D3D10_SHADER_DEBUG_OUTPUTVAR [4]")]
         public _OutputVars_e__FixedBuffer OutputVars;
 
-        [NativeTypeName("UINT")]
         public uint IndexReg;
 
-        [NativeTypeName("UINT")]
         public uint IndexComp;
 
         public partial struct _OutputVars_e__FixedBuffer

@@ -13,7 +13,6 @@ namespace TerraFX.Interop
         [NativeTypeName("const DML_TENSOR_DESC *")]
         public DML_TENSOR_DESC* OutputTensor;
 
-        [NativeTypeName("UINT")]
         public uint Axis;
 
         public DML_AXIS_DIRECTION AxisDirection;

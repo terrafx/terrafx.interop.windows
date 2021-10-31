@@ -48,14 +48,14 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT GetProperty([NativeTypeName("UINT")] uint nProperty, [NativeTypeName("LONG_PTR *")] nint* ppValue)
+        public HRESULT GetProperty(uint nProperty, [NativeTypeName("LONG_PTR *")] nint* ppValue)
         {
             return ((delegate* unmanaged<IXmlWriterLite*, uint, nint*, int>)(lpVtbl[4]))((IXmlWriterLite*)Unsafe.AsPointer(ref this), nProperty, ppValue);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        public HRESULT SetProperty([NativeTypeName("UINT")] uint nProperty, [NativeTypeName("LONG_PTR")] nint pValue)
+        public HRESULT SetProperty(uint nProperty, [NativeTypeName("LONG_PTR")] nint pValue)
         {
             return ((delegate* unmanaged<IXmlWriterLite*, uint, nint, int>)(lpVtbl[5]))((IXmlWriterLite*)Unsafe.AsPointer(ref this), nProperty, pValue);
         }
@@ -69,7 +69,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        public HRESULT WriteAttributeString([NativeTypeName("const WCHAR *")] ushort* pwszQName, [NativeTypeName("UINT")] uint cwszQName, [NativeTypeName("const WCHAR *")] ushort* pwszValue, [NativeTypeName("UINT")] uint cwszValue)
+        public HRESULT WriteAttributeString([NativeTypeName("const WCHAR *")] ushort* pwszQName, uint cwszQName, [NativeTypeName("const WCHAR *")] ushort* pwszValue, uint cwszValue)
         {
             return ((delegate* unmanaged<IXmlWriterLite*, ushort*, uint, ushort*, uint, int>)(lpVtbl[7]))((IXmlWriterLite*)Unsafe.AsPointer(ref this), pwszQName, cwszQName, pwszValue, cwszValue);
         }
@@ -90,7 +90,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(10)]
-        public HRESULT WriteChars([NativeTypeName("const WCHAR *")] ushort* pwch, [NativeTypeName("UINT")] uint cwch)
+        public HRESULT WriteChars([NativeTypeName("const WCHAR *")] ushort* pwch, uint cwch)
         {
             return ((delegate* unmanaged<IXmlWriterLite*, ushort*, uint, int>)(lpVtbl[10]))((IXmlWriterLite*)Unsafe.AsPointer(ref this), pwch, cwch);
         }
@@ -111,7 +111,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(13)]
-        public HRESULT WriteElementString([NativeTypeName("const WCHAR *")] ushort* pwszQName, [NativeTypeName("UINT")] uint cwszQName, [NativeTypeName("LPCWSTR")] ushort* pwszValue)
+        public HRESULT WriteElementString([NativeTypeName("const WCHAR *")] ushort* pwszQName, uint cwszQName, [NativeTypeName("LPCWSTR")] ushort* pwszValue)
         {
             return ((delegate* unmanaged<IXmlWriterLite*, ushort*, uint, ushort*, int>)(lpVtbl[13]))((IXmlWriterLite*)Unsafe.AsPointer(ref this), pwszQName, cwszQName, pwszValue);
         }
@@ -125,7 +125,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(15)]
-        public HRESULT WriteEndElement([NativeTypeName("const WCHAR *")] ushort* pwszQName, [NativeTypeName("UINT")] uint cwszQName)
+        public HRESULT WriteEndElement([NativeTypeName("const WCHAR *")] ushort* pwszQName, uint cwszQName)
         {
             return ((delegate* unmanaged<IXmlWriterLite*, ushort*, uint, int>)(lpVtbl[15]))((IXmlWriterLite*)Unsafe.AsPointer(ref this), pwszQName, cwszQName);
         }
@@ -139,7 +139,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(17)]
-        public HRESULT WriteFullEndElement([NativeTypeName("const WCHAR *")] ushort* pwszQName, [NativeTypeName("UINT")] uint cwszQName)
+        public HRESULT WriteFullEndElement([NativeTypeName("const WCHAR *")] ushort* pwszQName, uint cwszQName)
         {
             return ((delegate* unmanaged<IXmlWriterLite*, ushort*, uint, int>)(lpVtbl[17]))((IXmlWriterLite*)Unsafe.AsPointer(ref this), pwszQName, cwszQName);
         }
@@ -188,7 +188,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(24)]
-        public HRESULT WriteRawChars([NativeTypeName("const WCHAR *")] ushort* pwch, [NativeTypeName("UINT")] uint cwch)
+        public HRESULT WriteRawChars([NativeTypeName("const WCHAR *")] ushort* pwch, uint cwch)
         {
             return ((delegate* unmanaged<IXmlWriterLite*, ushort*, uint, int>)(lpVtbl[24]))((IXmlWriterLite*)Unsafe.AsPointer(ref this), pwch, cwch);
         }
@@ -202,7 +202,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(26)]
-        public HRESULT WriteStartElement([NativeTypeName("const WCHAR *")] ushort* pwszQName, [NativeTypeName("UINT")] uint cwszQName)
+        public HRESULT WriteStartElement([NativeTypeName("const WCHAR *")] ushort* pwszQName, uint cwszQName)
         {
             return ((delegate* unmanaged<IXmlWriterLite*, ushort*, uint, int>)(lpVtbl[26]))((IXmlWriterLite*)Unsafe.AsPointer(ref this), pwszQName, cwszQName);
         }

@@ -11,7 +11,6 @@ namespace TerraFX.Interop
     {
         public WS_ENDPOINT_ADDRESS endpointAddress;
 
-        [NativeTypeName("WS_POLICY *")]
         public IntPtr endpointPolicy;
 
         public WS_XML_STRING* portName;

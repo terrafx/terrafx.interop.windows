@@ -11,7 +11,6 @@ namespace TerraFX.Interop
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe partial struct TASKDIALOGCONFIG
     {
-        [NativeTypeName("UINT")]
         public uint cbSize;
 
         public HWND hwndParent;
@@ -36,7 +35,6 @@ namespace TerraFX.Interop
         [NativeTypeName("PCWSTR")]
         public ushort* pszContent;
 
-        [NativeTypeName("UINT")]
         public uint cButtons;
 
         [NativeTypeName("const TASKDIALOG_BUTTON *")]
@@ -44,7 +42,6 @@ namespace TerraFX.Interop
 
         public int nDefaultButton;
 
-        [NativeTypeName("UINT")]
         public uint cRadioButtons;
 
         [NativeTypeName("const TASKDIALOG_BUTTON *")]
@@ -76,7 +73,6 @@ namespace TerraFX.Interop
         [NativeTypeName("LONG_PTR")]
         public nint lpCallbackData;
 
-        [NativeTypeName("UINT")]
         public uint cxWidth;
 
         public ref HICON hMainIcon

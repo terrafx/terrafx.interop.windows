@@ -15,7 +15,6 @@ namespace TerraFX.Interop
         [NativeTypeName("LPSTR")]
         public sbyte* pszImage;
 
-        [NativeTypeName("UINT")]
         public uint cchImageMax;
 
         public int xOffsetPercent;

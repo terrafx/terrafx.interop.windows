@@ -7,22 +7,16 @@ namespace TerraFX.Interop
 {
     public partial struct D3D12_VIEWPORT
     {
-        [NativeTypeName("FLOAT")]
         public float TopLeftX;
 
-        [NativeTypeName("FLOAT")]
         public float TopLeftY;
 
-        [NativeTypeName("FLOAT")]
         public float Width;
 
-        [NativeTypeName("FLOAT")]
         public float Height;
 
-        [NativeTypeName("FLOAT")]
         public float MinDepth;
 
-        [NativeTypeName("FLOAT")]
         public float MaxDepth;
     }
 }

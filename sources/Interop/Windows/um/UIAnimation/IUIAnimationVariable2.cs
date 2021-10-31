@@ -41,21 +41,21 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        public HRESULT GetDimension([NativeTypeName("UINT *")] uint* dimension)
+        public HRESULT GetDimension(uint* dimension)
         {
             return ((delegate* unmanaged<IUIAnimationVariable2*, uint*, int>)(lpVtbl[3]))((IUIAnimationVariable2*)Unsafe.AsPointer(ref this), dimension);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT GetValue([NativeTypeName("DOUBLE *")] double* value)
+        public HRESULT GetValue(double* value)
         {
             return ((delegate* unmanaged<IUIAnimationVariable2*, double*, int>)(lpVtbl[4]))((IUIAnimationVariable2*)Unsafe.AsPointer(ref this), value);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        public HRESULT GetVectorValue([NativeTypeName("DOUBLE *")] double* value, [NativeTypeName("UINT")] uint cDimension)
+        public HRESULT GetVectorValue(double* value, uint cDimension)
         {
             return ((delegate* unmanaged<IUIAnimationVariable2*, double*, uint, int>)(lpVtbl[5]))((IUIAnimationVariable2*)Unsafe.AsPointer(ref this), value, cDimension);
         }
@@ -69,35 +69,35 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        public HRESULT GetVectorCurve(IDCompositionAnimation** animation, [NativeTypeName("UINT")] uint cDimension)
+        public HRESULT GetVectorCurve(IDCompositionAnimation** animation, uint cDimension)
         {
             return ((delegate* unmanaged<IUIAnimationVariable2*, IDCompositionAnimation**, uint, int>)(lpVtbl[7]))((IUIAnimationVariable2*)Unsafe.AsPointer(ref this), animation, cDimension);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        public HRESULT GetFinalValue([NativeTypeName("DOUBLE *")] double* finalValue)
+        public HRESULT GetFinalValue(double* finalValue)
         {
             return ((delegate* unmanaged<IUIAnimationVariable2*, double*, int>)(lpVtbl[8]))((IUIAnimationVariable2*)Unsafe.AsPointer(ref this), finalValue);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        public HRESULT GetFinalVectorValue([NativeTypeName("DOUBLE *")] double* finalValue, [NativeTypeName("UINT")] uint cDimension)
+        public HRESULT GetFinalVectorValue(double* finalValue, uint cDimension)
         {
             return ((delegate* unmanaged<IUIAnimationVariable2*, double*, uint, int>)(lpVtbl[9]))((IUIAnimationVariable2*)Unsafe.AsPointer(ref this), finalValue, cDimension);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(10)]
-        public HRESULT GetPreviousValue([NativeTypeName("DOUBLE *")] double* previousValue)
+        public HRESULT GetPreviousValue(double* previousValue)
         {
             return ((delegate* unmanaged<IUIAnimationVariable2*, double*, int>)(lpVtbl[10]))((IUIAnimationVariable2*)Unsafe.AsPointer(ref this), previousValue);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(11)]
-        public HRESULT GetPreviousVectorValue([NativeTypeName("DOUBLE *")] double* previousValue, [NativeTypeName("UINT")] uint cDimension)
+        public HRESULT GetPreviousVectorValue(double* previousValue, uint cDimension)
         {
             return ((delegate* unmanaged<IUIAnimationVariable2*, double*, uint, int>)(lpVtbl[11]))((IUIAnimationVariable2*)Unsafe.AsPointer(ref this), previousValue, cDimension);
         }
@@ -111,7 +111,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(13)]
-        public HRESULT GetIntegerVectorValue([NativeTypeName("INT32 *")] int* value, [NativeTypeName("UINT")] uint cDimension)
+        public HRESULT GetIntegerVectorValue([NativeTypeName("INT32 *")] int* value, uint cDimension)
         {
             return ((delegate* unmanaged<IUIAnimationVariable2*, int*, uint, int>)(lpVtbl[13]))((IUIAnimationVariable2*)Unsafe.AsPointer(ref this), value, cDimension);
         }
@@ -125,7 +125,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(15)]
-        public HRESULT GetFinalIntegerVectorValue([NativeTypeName("INT32 *")] int* finalValue, [NativeTypeName("UINT")] uint cDimension)
+        public HRESULT GetFinalIntegerVectorValue([NativeTypeName("INT32 *")] int* finalValue, uint cDimension)
         {
             return ((delegate* unmanaged<IUIAnimationVariable2*, int*, uint, int>)(lpVtbl[15]))((IUIAnimationVariable2*)Unsafe.AsPointer(ref this), finalValue, cDimension);
         }
@@ -139,7 +139,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(17)]
-        public HRESULT GetPreviousIntegerVectorValue([NativeTypeName("INT32 *")] int* previousValue, [NativeTypeName("UINT")] uint cDimension)
+        public HRESULT GetPreviousIntegerVectorValue([NativeTypeName("INT32 *")] int* previousValue, uint cDimension)
         {
             return ((delegate* unmanaged<IUIAnimationVariable2*, int*, uint, int>)(lpVtbl[17]))((IUIAnimationVariable2*)Unsafe.AsPointer(ref this), previousValue, cDimension);
         }
@@ -153,28 +153,28 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(19)]
-        public HRESULT SetLowerBound([NativeTypeName("DOUBLE")] double bound)
+        public HRESULT SetLowerBound(double bound)
         {
             return ((delegate* unmanaged<IUIAnimationVariable2*, double, int>)(lpVtbl[19]))((IUIAnimationVariable2*)Unsafe.AsPointer(ref this), bound);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(20)]
-        public HRESULT SetLowerBoundVector([NativeTypeName("const DOUBLE *")] double* bound, [NativeTypeName("UINT")] uint cDimension)
+        public HRESULT SetLowerBoundVector([NativeTypeName("const DOUBLE *")] double* bound, uint cDimension)
         {
             return ((delegate* unmanaged<IUIAnimationVariable2*, double*, uint, int>)(lpVtbl[20]))((IUIAnimationVariable2*)Unsafe.AsPointer(ref this), bound, cDimension);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(21)]
-        public HRESULT SetUpperBound([NativeTypeName("DOUBLE")] double bound)
+        public HRESULT SetUpperBound(double bound)
         {
             return ((delegate* unmanaged<IUIAnimationVariable2*, double, int>)(lpVtbl[21]))((IUIAnimationVariable2*)Unsafe.AsPointer(ref this), bound);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(22)]
-        public HRESULT SetUpperBoundVector([NativeTypeName("const DOUBLE *")] double* bound, [NativeTypeName("UINT")] uint cDimension)
+        public HRESULT SetUpperBoundVector([NativeTypeName("const DOUBLE *")] double* bound, uint cDimension)
         {
             return ((delegate* unmanaged<IUIAnimationVariable2*, double*, uint, int>)(lpVtbl[22]))((IUIAnimationVariable2*)Unsafe.AsPointer(ref this), bound, cDimension);
         }

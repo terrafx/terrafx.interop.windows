@@ -7,10 +7,8 @@ namespace TerraFX.Interop
 {
     public partial struct DWRITE_GLYPH_OFFSET
     {
-        [NativeTypeName("FLOAT")]
         public float advanceOffset;
 
-        [NativeTypeName("FLOAT")]
         public float ascenderOffset;
     }
 }

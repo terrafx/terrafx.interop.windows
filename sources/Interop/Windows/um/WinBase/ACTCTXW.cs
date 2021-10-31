@@ -16,7 +16,6 @@ namespace TerraFX.Interop
         [NativeTypeName("LPCWSTR")]
         public ushort* lpSource;
 
-        [NativeTypeName("USHORT")]
         public ushort wProcessorArchitecture;
 
         [NativeTypeName("LANGID")]

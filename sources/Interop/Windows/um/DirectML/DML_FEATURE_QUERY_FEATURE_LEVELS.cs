@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct DML_FEATURE_QUERY_FEATURE_LEVELS
     {
-        [NativeTypeName("UINT")]
         public uint RequestedFeatureLevelCount;
 
         [NativeTypeName("const DML_FEATURE_LEVEL *")]

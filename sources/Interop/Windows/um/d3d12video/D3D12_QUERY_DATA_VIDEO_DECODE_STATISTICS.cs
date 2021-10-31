@@ -15,7 +15,6 @@ namespace TerraFX.Interop
 
         public DXGI_RATIONAL FrameRate;
 
-        [NativeTypeName("UINT")]
         public uint BitRate;
     }
 }

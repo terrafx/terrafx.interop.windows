@@ -15,13 +15,10 @@ namespace TerraFX.Interop
 
         public D3D12_GPU_VIRTUAL_ADDRESS_RANGE_AND_STRIDE CallableShaderTable;
 
-        [NativeTypeName("UINT")]
         public uint Width;
 
-        [NativeTypeName("UINT")]
         public uint Height;
 
-        [NativeTypeName("UINT")]
         public uint Depth;
     }
 }

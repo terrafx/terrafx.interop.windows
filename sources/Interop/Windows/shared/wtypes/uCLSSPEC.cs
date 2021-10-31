@@ -52,16 +52,13 @@ namespace TerraFX.Interop
                 [NativeTypeName("LPOLESTR")]
                 public ushort* pPackageName;
 
-                [NativeTypeName("GUID")]
                 public Guid PolicyId;
             }
 
             public partial struct _ByObjectId_e__Struct
             {
-                [NativeTypeName("GUID")]
                 public Guid ObjectId;
 
-                [NativeTypeName("GUID")]
                 public Guid PolicyId;
             }
         }

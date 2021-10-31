@@ -10,7 +10,6 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint cbEncoded;
 
-        [NativeTypeName("BYTE *")]
         public byte* pbEncoded;
 
         [NativeTypeName("PCRYPT_TIMESTAMP_INFO")]

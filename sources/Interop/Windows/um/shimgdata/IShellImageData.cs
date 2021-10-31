@@ -153,7 +153,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(19)]
-        public HRESULT GetRawDataFormat([NativeTypeName("GUID *")] Guid* pDataFormat)
+        public HRESULT GetRawDataFormat(Guid* pDataFormat)
         {
             return ((delegate* unmanaged<IShellImageData*, Guid*, int>)(lpVtbl[19]))((IShellImageData*)Unsafe.AsPointer(ref this), pDataFormat);
         }
@@ -209,7 +209,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(27)]
-        public HRESULT DisplayName([NativeTypeName("LPWSTR")] ushort* wszName, [NativeTypeName("UINT")] uint cch)
+        public HRESULT DisplayName([NativeTypeName("LPWSTR")] ushort* wszName, uint cch)
         {
             return ((delegate* unmanaged<IShellImageData*, ushort*, uint, int>)(lpVtbl[27]))((IShellImageData*)Unsafe.AsPointer(ref this), wszName, cch);
         }
@@ -223,7 +223,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(29)]
-        public HRESULT GetEncoderParams([NativeTypeName("GUID *")] Guid* pguidFmt, [NativeTypeName("EncoderParameters **")] byte** ppEncParams)
+        public HRESULT GetEncoderParams(Guid* pguidFmt, [NativeTypeName("EncoderParameters **")] byte** ppEncParams)
         {
             return ((delegate* unmanaged<IShellImageData*, Guid*, byte**, int>)(lpVtbl[29]))((IShellImageData*)Unsafe.AsPointer(ref this), pguidFmt, ppEncParams);
         }

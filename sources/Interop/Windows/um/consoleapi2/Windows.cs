@@ -31,10 +31,10 @@ namespace TerraFX.Interop
         public static extern BOOL FlushConsoleInputBuffer(HANDLE hConsoleInput);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        public static extern BOOL SetConsoleCP([NativeTypeName("UINT")] uint wCodePageID);
+        public static extern BOOL SetConsoleCP(uint wCodePageID);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        public static extern BOOL SetConsoleOutputCP([NativeTypeName("UINT")] uint wCodePageID);
+        public static extern BOOL SetConsoleOutputCP(uint wCodePageID);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         public static extern BOOL GetConsoleCursorInfo(HANDLE hConsoleOutput, [NativeTypeName("PCONSOLE_CURSOR_INFO")] CONSOLE_CURSOR_INFO* lpConsoleCursorInfo);

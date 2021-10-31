@@ -9,7 +9,6 @@ namespace TerraFX.Interop
     {
         public HANDLE hWindowMenu;
 
-        [NativeTypeName("UINT")]
         public uint idFirstChild;
     }
 }

@@ -7,7 +7,7 @@ namespace TerraFX.Interop
 {
     public partial struct DXGI_RGBA
     {
-        public DXGI_RGBA([NativeTypeName("UINT32")] uint rgb, [NativeTypeName("FLOAT")] float a = 1.0f)
+        public DXGI_RGBA([NativeTypeName("UINT32")] uint rgb, float a = 1.0f)
         {
             this.r = (float)((rgb & sc_redMask) >> (int)sc_redShift) / 255.0f;
             this.g = (float)((rgb & sc_greenMask) >> (int)sc_greenShift) / 255.0f;

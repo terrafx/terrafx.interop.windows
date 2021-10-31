@@ -17,12 +17,12 @@ namespace TerraFX.Interop
     {
         public void** lpVtbl;
 
-        public HRESULT SetAttributeValue([NativeTypeName("PCWSTR")] ushort* name, [NativeTypeName("FLOAT")] float value)
+        public HRESULT SetAttributeValue([NativeTypeName("PCWSTR")] ushort* name, float value)
         {
             return SetAttributeValue(name, D2D1_SVG_ATTRIBUTE_POD_TYPE_FLOAT, &value, sizeof(float));
         }
 
-        public HRESULT GetAttributeValue([NativeTypeName("PCWSTR")] ushort* name, [NativeTypeName("FLOAT *")] float* value)
+        public HRESULT GetAttributeValue([NativeTypeName("PCWSTR")] ushort* name, float* value)
         {
             return GetAttributeValue(name, D2D1_SVG_ATTRIBUTE_POD_TYPE_FLOAT, value, sizeof(float));
         }

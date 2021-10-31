@@ -12,20 +12,16 @@ namespace TerraFX.Interop
 
         public D3D_SHADER_INPUT_TYPE Type;
 
-        [NativeTypeName("UINT")]
         public uint BindPoint;
 
-        [NativeTypeName("UINT")]
         public uint BindCount;
 
-        [NativeTypeName("UINT")]
         public uint uFlags;
 
         public D3D_RESOURCE_RETURN_TYPE ReturnType;
 
         public D3D_SRV_DIMENSION Dimension;
 
-        [NativeTypeName("UINT")]
         public uint NumSamples;
     }
 }

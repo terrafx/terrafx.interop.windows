@@ -17,26 +17,20 @@ namespace TerraFX.Interop
 
         public D3D_SHADER_VARIABLE_CLASS Class;
 
-        [NativeTypeName("UINT")]
         public uint Rows;
 
-        [NativeTypeName("UINT")]
         public uint Columns;
 
         public D3D_INTERPOLATION_MODE InterpolationMode;
 
         public D3D_PARAMETER_FLAGS Flags;
 
-        [NativeTypeName("UINT")]
         public uint FirstInRegister;
 
-        [NativeTypeName("UINT")]
         public uint FirstInComponent;
 
-        [NativeTypeName("UINT")]
         public uint FirstOutRegister;
 
-        [NativeTypeName("UINT")]
         public uint FirstOutComponent;
     }
 }

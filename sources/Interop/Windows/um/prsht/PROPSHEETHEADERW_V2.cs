@@ -26,7 +26,6 @@ namespace TerraFX.Interop
         [NativeTypeName("LPCWSTR")]
         public ushort* pszCaption;
 
-        [NativeTypeName("UINT")]
         public uint nPages;
 
         [NativeTypeName("_PROPSHEETHEADERW_V2::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/prsht.h:526:5)")]
@@ -178,7 +177,6 @@ namespace TerraFX.Interop
         public unsafe partial struct _Anonymous2_e__Union
         {
             [FieldOffset(0)]
-            [NativeTypeName("UINT")]
             public uint nStartPage;
 
             [FieldOffset(0)]

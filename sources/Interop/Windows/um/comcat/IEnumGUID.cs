@@ -41,7 +41,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        public HRESULT Next([NativeTypeName("ULONG")] uint celt, [NativeTypeName("GUID *")] Guid* rgelt, [NativeTypeName("ULONG *")] uint* pceltFetched)
+        public HRESULT Next([NativeTypeName("ULONG")] uint celt, Guid* rgelt, [NativeTypeName("ULONG *")] uint* pceltFetched)
         {
             return ((delegate* unmanaged<IEnumGUID*, uint, Guid*, uint*, int>)(lpVtbl[3]))((IEnumGUID*)Unsafe.AsPointer(ref this), celt, rgelt, pceltFetched);
         }

@@ -16,7 +16,6 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint dwStyle;
 
-        [NativeTypeName("UINT")]
         public uint cyMax;
 
         public HBRUSH hbrBack;

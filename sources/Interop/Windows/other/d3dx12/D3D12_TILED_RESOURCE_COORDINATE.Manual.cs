@@ -7,7 +7,7 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct D3D12_TILED_RESOURCE_COORDINATE
     {
-        public D3D12_TILED_RESOURCE_COORDINATE([NativeTypeName("UINT")] uint x, [NativeTypeName("UINT")] uint y, [NativeTypeName("UINT")] uint z, [NativeTypeName("UINT")] uint subresource)
+        public D3D12_TILED_RESOURCE_COORDINATE(uint x, uint y, uint z, uint subresource)
         {
             X = x;
             Y = y;

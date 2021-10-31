@@ -14,10 +14,8 @@ namespace TerraFX.Interop
 
         public DXGI_FORMAT VertexFormat;
 
-        [NativeTypeName("UINT")]
         public uint IndexCount;
 
-        [NativeTypeName("UINT")]
         public uint VertexCount;
 
         [NativeTypeName("D3D12_GPU_VIRTUAL_ADDRESS")]

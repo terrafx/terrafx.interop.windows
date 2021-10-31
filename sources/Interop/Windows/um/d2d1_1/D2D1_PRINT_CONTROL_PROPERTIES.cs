@@ -9,7 +9,6 @@ namespace TerraFX.Interop
     {
         public D2D1_PRINT_FONT_SUBSET_MODE fontSubset;
 
-        [NativeTypeName("FLOAT")]
         public float rasterDPI;
 
         public D2D1_COLOR_SPACE colorSpace;

@@ -9,15 +9,12 @@ namespace TerraFX.Interop
     {
         public NMHDR hdr;
 
-        [NativeTypeName("UINT")]
         public uint uChanged;
 
         public HTREEITEM hItem;
 
-        [NativeTypeName("UINT")]
         public uint uStateNew;
 
-        [NativeTypeName("UINT")]
         public uint uStateOld;
 
         [NativeTypeName("LPARAM")]

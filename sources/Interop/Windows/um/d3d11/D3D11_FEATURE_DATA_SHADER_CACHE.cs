@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public partial struct D3D11_FEATURE_DATA_SHADER_CACHE
     {
-        [NativeTypeName("UINT")]
         public uint SupportFlags;
     }
 }

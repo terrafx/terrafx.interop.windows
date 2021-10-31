@@ -12,7 +12,6 @@ namespace TerraFX.Interop
         [NativeTypeName("ULONG")]
         public uint MarshalCookie;
 
-        [NativeTypeName("GUID")]
         public Guid UOW;
     }
 }

@@ -9,10 +9,8 @@ namespace TerraFX.Interop
     {
         public THUMBBUTTONMASK dwMask;
 
-        [NativeTypeName("UINT")]
         public uint iId;
 
-        [NativeTypeName("UINT")]
         public uint iBitmap;
 
         public HICON hIcon;

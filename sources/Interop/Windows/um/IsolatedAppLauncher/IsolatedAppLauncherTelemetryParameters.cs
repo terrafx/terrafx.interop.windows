@@ -11,7 +11,6 @@ namespace TerraFX.Interop
     {
         public BOOL EnableForLaunch;
 
-        [NativeTypeName("GUID")]
         public Guid CorrelationGUID;
     }
 }

@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct IMAGE_POLICY_METADATA
     {
-        [NativeTypeName("BYTE")]
         public byte Version;
 
         [NativeTypeName("BYTE [7]")]

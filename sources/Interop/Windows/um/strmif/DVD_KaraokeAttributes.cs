@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct DVD_KaraokeAttributes
     {
-        [NativeTypeName("BYTE")]
         public byte bVersion;
 
         public BOOL fMasterOfCeremoniesInGuideVocal1;

@@ -41,14 +41,14 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        public HRESULT GetDetailsOf([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl, [NativeTypeName("UINT")] uint iColumn, SHELLDETAILS* pDetails)
+        public HRESULT GetDetailsOf([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl, uint iColumn, SHELLDETAILS* pDetails)
         {
             return ((delegate* unmanaged<IShellDetails*, ITEMIDLIST*, uint, SHELLDETAILS*, int>)(lpVtbl[3]))((IShellDetails*)Unsafe.AsPointer(ref this), pidl, iColumn, pDetails);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT ColumnClick([NativeTypeName("UINT")] uint iColumn)
+        public HRESULT ColumnClick(uint iColumn)
         {
             return ((delegate* unmanaged<IShellDetails*, uint, int>)(lpVtbl[4]))((IShellDetails*)Unsafe.AsPointer(ref this), iColumn);
         }

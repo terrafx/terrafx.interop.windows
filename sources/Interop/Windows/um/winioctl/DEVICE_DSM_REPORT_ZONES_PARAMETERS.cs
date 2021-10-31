@@ -10,10 +10,8 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint Size;
 
-        [NativeTypeName("BYTE")]
         public byte ReportOption;
 
-        [NativeTypeName("BYTE")]
         public byte Partial;
 
         [NativeTypeName("BYTE [2]")]

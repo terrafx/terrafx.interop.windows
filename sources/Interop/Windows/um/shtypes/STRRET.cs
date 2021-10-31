@@ -11,7 +11,6 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct STRRET
     {
-        [NativeTypeName("UINT")]
         public uint uType;
 
         [NativeTypeName("_STRRET::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/shtypes.h:285:36)")]
@@ -55,7 +54,6 @@ namespace TerraFX.Interop
             public ushort* pOleStr;
 
             [FieldOffset(0)]
-            [NativeTypeName("UINT")]
             public uint uOffset;
 
             [FieldOffset(0)]

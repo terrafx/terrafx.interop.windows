@@ -118,7 +118,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(14)]
-        public HRESULT GetFormat([NativeTypeName("GUID *")] Guid* pguidFormatId, WAVEFORMATEX** ppCoMemWaveFormatEx)
+        public HRESULT GetFormat(Guid* pguidFormatId, WAVEFORMATEX** ppCoMemWaveFormatEx)
         {
             return ((delegate* unmanaged<ISpStreamFormat*, Guid*, WAVEFORMATEX**, int>)(lpVtbl[14]))((ISpStreamFormat*)Unsafe.AsPointer(ref this), pguidFormatId, ppCoMemWaveFormatEx);
         }

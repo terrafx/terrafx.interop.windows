@@ -9,7 +9,6 @@ namespace TerraFX.Interop
 {
     public partial struct COMPATIBILITY_CONTEXT_ELEMENT
     {
-        [NativeTypeName("GUID")]
         public Guid Id;
 
         public ACTCTX_COMPATIBILITY_ELEMENT_TYPE Type;

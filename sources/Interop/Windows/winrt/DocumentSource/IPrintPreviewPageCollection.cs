@@ -48,7 +48,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT MakePage([NativeTypeName("UINT32")] uint desiredJobPage, [NativeTypeName("FLOAT")] float width, [NativeTypeName("FLOAT")] float height)
+        public HRESULT MakePage([NativeTypeName("UINT32")] uint desiredJobPage, float width, float height)
         {
             return ((delegate* unmanaged<IPrintPreviewPageCollection*, uint, float, float, int>)(lpVtbl[4]))((IPrintPreviewPageCollection*)Unsafe.AsPointer(ref this), desiredJobPage, width, height);
         }

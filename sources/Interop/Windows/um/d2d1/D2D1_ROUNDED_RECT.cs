@@ -10,10 +10,8 @@ namespace TerraFX.Interop
         [NativeTypeName("D2D1_RECT_F")]
         public D2D_RECT_F rect;
 
-        [NativeTypeName("FLOAT")]
         public float radiusX;
 
-        [NativeTypeName("FLOAT")]
         public float radiusY;
     }
 }

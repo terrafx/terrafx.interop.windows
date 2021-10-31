@@ -10,10 +10,8 @@ namespace TerraFX.Interop
         [NativeTypeName("UINT64")]
         public ulong Offset;
 
-        [NativeTypeName("UINT")]
         public uint RowPitch;
 
-        [NativeTypeName("UINT")]
         public uint DepthPitch;
     }
 }

@@ -36,7 +36,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        public ID3D10EffectVariable* GetAnnotationByIndex([NativeTypeName("UINT")] uint Index)
+        public ID3D10EffectVariable* GetAnnotationByIndex(uint Index)
         {
             return ((delegate* unmanaged<ID3D10EffectShaderVariable*, uint, ID3D10EffectVariable*>)(lpVtbl[3]))((ID3D10EffectShaderVariable*)Unsafe.AsPointer(ref this), Index);
         }
@@ -50,7 +50,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        public ID3D10EffectVariable* GetMemberByIndex([NativeTypeName("UINT")] uint Index)
+        public ID3D10EffectVariable* GetMemberByIndex(uint Index)
         {
             return ((delegate* unmanaged<ID3D10EffectShaderVariable*, uint, ID3D10EffectVariable*>)(lpVtbl[5]))((ID3D10EffectShaderVariable*)Unsafe.AsPointer(ref this), Index);
         }
@@ -71,7 +71,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        public ID3D10EffectVariable* GetElement([NativeTypeName("UINT")] uint Index)
+        public ID3D10EffectVariable* GetElement(uint Index)
         {
             return ((delegate* unmanaged<ID3D10EffectShaderVariable*, uint, ID3D10EffectVariable*>)(lpVtbl[8]))((ID3D10EffectShaderVariable*)Unsafe.AsPointer(ref this), Index);
         }
@@ -176,56 +176,56 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(23)]
-        public HRESULT SetRawValue(void* pData, [NativeTypeName("UINT")] uint Offset, [NativeTypeName("UINT")] uint ByteCount)
+        public HRESULT SetRawValue(void* pData, uint Offset, uint ByteCount)
         {
             return ((delegate* unmanaged<ID3D10EffectShaderVariable*, void*, uint, uint, int>)(lpVtbl[23]))((ID3D10EffectShaderVariable*)Unsafe.AsPointer(ref this), pData, Offset, ByteCount);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(24)]
-        public HRESULT GetRawValue(void* pData, [NativeTypeName("UINT")] uint Offset, [NativeTypeName("UINT")] uint ByteCount)
+        public HRESULT GetRawValue(void* pData, uint Offset, uint ByteCount)
         {
             return ((delegate* unmanaged<ID3D10EffectShaderVariable*, void*, uint, uint, int>)(lpVtbl[24]))((ID3D10EffectShaderVariable*)Unsafe.AsPointer(ref this), pData, Offset, ByteCount);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(25)]
-        public HRESULT GetShaderDesc([NativeTypeName("UINT")] uint ShaderIndex, D3D10_EFFECT_SHADER_DESC* pDesc)
+        public HRESULT GetShaderDesc(uint ShaderIndex, D3D10_EFFECT_SHADER_DESC* pDesc)
         {
             return ((delegate* unmanaged<ID3D10EffectShaderVariable*, uint, D3D10_EFFECT_SHADER_DESC*, int>)(lpVtbl[25]))((ID3D10EffectShaderVariable*)Unsafe.AsPointer(ref this), ShaderIndex, pDesc);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(26)]
-        public HRESULT GetVertexShader([NativeTypeName("UINT")] uint ShaderIndex, ID3D10VertexShader** ppVS)
+        public HRESULT GetVertexShader(uint ShaderIndex, ID3D10VertexShader** ppVS)
         {
             return ((delegate* unmanaged<ID3D10EffectShaderVariable*, uint, ID3D10VertexShader**, int>)(lpVtbl[26]))((ID3D10EffectShaderVariable*)Unsafe.AsPointer(ref this), ShaderIndex, ppVS);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(27)]
-        public HRESULT GetGeometryShader([NativeTypeName("UINT")] uint ShaderIndex, ID3D10GeometryShader** ppGS)
+        public HRESULT GetGeometryShader(uint ShaderIndex, ID3D10GeometryShader** ppGS)
         {
             return ((delegate* unmanaged<ID3D10EffectShaderVariable*, uint, ID3D10GeometryShader**, int>)(lpVtbl[27]))((ID3D10EffectShaderVariable*)Unsafe.AsPointer(ref this), ShaderIndex, ppGS);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(28)]
-        public HRESULT GetPixelShader([NativeTypeName("UINT")] uint ShaderIndex, ID3D10PixelShader** ppPS)
+        public HRESULT GetPixelShader(uint ShaderIndex, ID3D10PixelShader** ppPS)
         {
             return ((delegate* unmanaged<ID3D10EffectShaderVariable*, uint, ID3D10PixelShader**, int>)(lpVtbl[28]))((ID3D10EffectShaderVariable*)Unsafe.AsPointer(ref this), ShaderIndex, ppPS);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(29)]
-        public HRESULT GetInputSignatureElementDesc([NativeTypeName("UINT")] uint ShaderIndex, [NativeTypeName("UINT")] uint Element, D3D10_SIGNATURE_PARAMETER_DESC* pDesc)
+        public HRESULT GetInputSignatureElementDesc(uint ShaderIndex, uint Element, D3D10_SIGNATURE_PARAMETER_DESC* pDesc)
         {
             return ((delegate* unmanaged<ID3D10EffectShaderVariable*, uint, uint, D3D10_SIGNATURE_PARAMETER_DESC*, int>)(lpVtbl[29]))((ID3D10EffectShaderVariable*)Unsafe.AsPointer(ref this), ShaderIndex, Element, pDesc);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(30)]
-        public HRESULT GetOutputSignatureElementDesc([NativeTypeName("UINT")] uint ShaderIndex, [NativeTypeName("UINT")] uint Element, D3D10_SIGNATURE_PARAMETER_DESC* pDesc)
+        public HRESULT GetOutputSignatureElementDesc(uint ShaderIndex, uint Element, D3D10_SIGNATURE_PARAMETER_DESC* pDesc)
         {
             return ((delegate* unmanaged<ID3D10EffectShaderVariable*, uint, uint, D3D10_SIGNATURE_PARAMETER_DESC*, int>)(lpVtbl[30]))((ID3D10EffectShaderVariable*)Unsafe.AsPointer(ref this), ShaderIndex, Element, pDesc);
         }

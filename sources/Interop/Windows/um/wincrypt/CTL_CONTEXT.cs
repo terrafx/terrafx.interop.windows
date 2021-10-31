@@ -10,7 +10,6 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint dwMsgAndCertEncodingType;
 
-        [NativeTypeName("BYTE *")]
         public byte* pbCtlEncoded;
 
         [NativeTypeName("DWORD")]
@@ -23,7 +22,6 @@ namespace TerraFX.Interop
 
         public HCRYPTMSG hCryptMsg;
 
-        [NativeTypeName("BYTE *")]
         public byte* pbCtlContent;
 
         [NativeTypeName("DWORD")]

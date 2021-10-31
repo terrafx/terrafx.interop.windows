@@ -9,13 +9,10 @@ namespace TerraFX.Interop
     {
         public HMENU hmenu;
 
-        [NativeTypeName("UINT")]
         public uint indexMenu;
 
-        [NativeTypeName("UINT")]
         public uint idCmdFirst;
 
-        [NativeTypeName("UINT")]
         public uint idCmdLast;
 
         [NativeTypeName("const QCMINFO_IDMAP *")]

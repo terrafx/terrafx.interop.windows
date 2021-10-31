@@ -9,7 +9,7 @@ namespace TerraFX.Interop
 {
     public partial struct D2D_SIZE_F : IEquatable<D2D_SIZE_F>
     {
-        public D2D_SIZE_F([NativeTypeName("FLOAT")] float width = 0.0f, [NativeTypeName("FLOAT")] float height = 0.0f)
+        public D2D_SIZE_F(float width = 0.0f, float height = 0.0f)
         {
             this.width = width;
             this.height = height;

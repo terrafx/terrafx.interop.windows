@@ -30,7 +30,6 @@ namespace TerraFX.Interop
 
         public AM_MEDIA_TYPE* pMediaType;
 
-        [NativeTypeName("BYTE *")]
         public byte* pbBuffer;
 
         [NativeTypeName("LONG")]

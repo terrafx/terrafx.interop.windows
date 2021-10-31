@@ -12,13 +12,10 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint dwMask;
 
-        [NativeTypeName("UINT")]
         public uint uBand;
 
-        [NativeTypeName("UINT")]
         public uint fStyle;
 
-        [NativeTypeName("UINT")]
         public uint wID;
 
         [NativeTypeName("LPARAM")]

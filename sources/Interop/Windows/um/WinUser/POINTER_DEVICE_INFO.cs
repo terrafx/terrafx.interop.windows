@@ -19,7 +19,6 @@ namespace TerraFX.Interop
         [NativeTypeName("ULONG")]
         public uint startingCursorId;
 
-        [NativeTypeName("USHORT")]
         public ushort maxActiveContacts;
 
         [NativeTypeName("WCHAR [520]")]

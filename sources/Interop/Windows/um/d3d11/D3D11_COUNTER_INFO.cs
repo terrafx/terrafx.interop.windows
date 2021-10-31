@@ -9,7 +9,6 @@ namespace TerraFX.Interop
     {
         public D3D11_COUNTER LastDeviceDependentCounter;
 
-        [NativeTypeName("UINT")]
         public uint NumSimultaneousCounters;
 
         [NativeTypeName("UINT8")]

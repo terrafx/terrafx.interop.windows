@@ -99,11 +99,11 @@ namespace TerraFX.Interop
 
         [DllImport("userenv", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
-        public static extern uint GetAppliedGPOListA([NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LPCSTR")] sbyte* pMachineName, [NativeTypeName("PSID")] void* pSidUser, [NativeTypeName("GUID *")] Guid* pGuidExtension, [NativeTypeName("PGROUP_POLICY_OBJECTA *")] GROUP_POLICY_OBJECTA** ppGPOList);
+        public static extern uint GetAppliedGPOListA([NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LPCSTR")] sbyte* pMachineName, [NativeTypeName("PSID")] void* pSidUser, Guid* pGuidExtension, [NativeTypeName("PGROUP_POLICY_OBJECTA *")] GROUP_POLICY_OBJECTA** ppGPOList);
 
         [DllImport("userenv", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
-        public static extern uint GetAppliedGPOListW([NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LPCWSTR")] ushort* pMachineName, [NativeTypeName("PSID")] void* pSidUser, [NativeTypeName("GUID *")] Guid* pGuidExtension, [NativeTypeName("PGROUP_POLICY_OBJECTW *")] GROUP_POLICY_OBJECTW** ppGPOList);
+        public static extern uint GetAppliedGPOListW([NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LPCWSTR")] ushort* pMachineName, [NativeTypeName("PSID")] void* pSidUser, Guid* pGuidExtension, [NativeTypeName("PGROUP_POLICY_OBJECTW *")] GROUP_POLICY_OBJECTW** ppGPOList);
 
         [DllImport("userenv", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]

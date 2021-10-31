@@ -19,10 +19,8 @@ namespace TerraFX.Interop
         [NativeTypeName("BOOLEAN")]
         public byte IsAlias;
 
-        [NativeTypeName("USHORT")]
         public ushort BitField;
 
-        [NativeTypeName("USHORT")]
         public ushort LinkCollection;
 
         [NativeTypeName("USAGE")]
@@ -86,22 +84,16 @@ namespace TerraFX.Interop
                 [NativeTypeName("USAGE")]
                 public ushort UsageMax;
 
-                [NativeTypeName("USHORT")]
                 public ushort StringMin;
 
-                [NativeTypeName("USHORT")]
                 public ushort StringMax;
 
-                [NativeTypeName("USHORT")]
                 public ushort DesignatorMin;
 
-                [NativeTypeName("USHORT")]
                 public ushort DesignatorMax;
 
-                [NativeTypeName("USHORT")]
                 public ushort DataIndexMin;
 
-                [NativeTypeName("USHORT")]
                 public ushort DataIndexMax;
             }
 
@@ -113,22 +105,16 @@ namespace TerraFX.Interop
                 [NativeTypeName("USAGE")]
                 public ushort Reserved1;
 
-                [NativeTypeName("USHORT")]
                 public ushort StringIndex;
 
-                [NativeTypeName("USHORT")]
                 public ushort Reserved2;
 
-                [NativeTypeName("USHORT")]
                 public ushort DesignatorIndex;
 
-                [NativeTypeName("USHORT")]
                 public ushort Reserved3;
 
-                [NativeTypeName("USHORT")]
                 public ushort DataIndex;
 
-                [NativeTypeName("USHORT")]
                 public ushort Reserved4;
             }
         }

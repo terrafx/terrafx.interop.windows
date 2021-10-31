@@ -62,7 +62,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        public HRESULT SetAnimation(HINSTANCE hInstAnimation, [NativeTypeName("UINT")] uint idAnimation)
+        public HRESULT SetAnimation(HINSTANCE hInstAnimation, uint idAnimation)
         {
             return ((delegate* unmanaged<IProgressDialog*, HINSTANCE, uint, int>)(lpVtbl[6]))((IProgressDialog*)Unsafe.AsPointer(ref this), hInstAnimation, idAnimation);
         }

@@ -56,7 +56,7 @@ namespace TerraFX.Interop
         public static extern HRESULT D3D12GetDebugInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvDebug);
 
         [DllImport("d3d12", ExactSpelling = true)]
-        public static extern HRESULT D3D12EnableExperimentalFeatures([NativeTypeName("UINT")] uint NumFeatures, [NativeTypeName("const IID *")] Guid* pIIDs, void* pConfigurationStructs, [NativeTypeName("UINT *")] uint* pConfigurationStructSizes);
+        public static extern HRESULT D3D12EnableExperimentalFeatures(uint NumFeatures, [NativeTypeName("const IID *")] Guid* pIIDs, void* pConfigurationStructs, uint* pConfigurationStructSizes);
 
         [NativeTypeName("const UUID")]
         public static ref readonly Guid D3D12ExperimentalShaderModels

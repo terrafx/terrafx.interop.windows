@@ -55,7 +55,6 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("UINT")]
         public uint CountTasks([NativeTypeName("const TASKOWNERID &")] Guid* rtoid)
         {
             return ((delegate* unmanaged<IShellTaskScheduler*, Guid*, uint>)(lpVtbl[5]))((IShellTaskScheduler*)Unsafe.AsPointer(ref this), rtoid);

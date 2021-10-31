@@ -2931,10 +2931,10 @@ namespace TerraFX.Interop
         public static extern HRESULT MFRequireProtectedEnvironment(IMFPresentationDescriptor* pPresentationDescriptor);
 
         [DllImport("mfplat", ExactSpelling = true)]
-        public static extern HRESULT MFSerializePresentationDescriptor(IMFPresentationDescriptor* pPD, [NativeTypeName("DWORD *")] uint* pcbData, [NativeTypeName("BYTE **")] byte** ppbData);
+        public static extern HRESULT MFSerializePresentationDescriptor(IMFPresentationDescriptor* pPD, [NativeTypeName("DWORD *")] uint* pcbData, byte** ppbData);
 
         [DllImport("mfplat", ExactSpelling = true)]
-        public static extern HRESULT MFDeserializePresentationDescriptor([NativeTypeName("DWORD")] uint cbData, [NativeTypeName("BYTE *")] byte* pbData, IMFPresentationDescriptor** ppPD);
+        public static extern HRESULT MFDeserializePresentationDescriptor([NativeTypeName("DWORD")] uint cbData, byte* pbData, IMFPresentationDescriptor** ppPD);
 
         [NativeTypeName("const IID")]
         public static ref readonly Guid MF_SD_LANGUAGE
@@ -3395,7 +3395,7 @@ namespace TerraFX.Interop
         public static extern HRESULT MFCreateADTSMediaSink(IMFByteStream* pTargetByteStream, IMFMediaType* pAudioMediaType, IMFMediaSink** ppMediaSink);
 
         [DllImport("mf", ExactSpelling = true)]
-        public static extern HRESULT MFCreateMuxSink([NativeTypeName("GUID")] Guid guidOutputSubType, IMFAttributes* pOutputAttributes, IMFByteStream* pOutputByteStream, IMFMediaSink** ppMuxSink);
+        public static extern HRESULT MFCreateMuxSink(Guid guidOutputSubType, IMFAttributes* pOutputAttributes, IMFByteStream* pOutputByteStream, IMFMediaSink** ppMuxSink);
 
         [DllImport("mf", ExactSpelling = true)]
         public static extern HRESULT MFCreateFMPEG4MediaSink(IMFByteStream* pIByteStream, IMFMediaType* pVideoMediaType, IMFMediaType* pAudioMediaType, IMFMediaSink** ppIMediaSink);

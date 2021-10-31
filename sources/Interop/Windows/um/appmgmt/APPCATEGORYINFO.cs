@@ -15,7 +15,6 @@ namespace TerraFX.Interop
         [NativeTypeName("LPWSTR")]
         public ushort* pszDescription;
 
-        [NativeTypeName("GUID")]
         public Guid AppCategoryId;
     }
 }

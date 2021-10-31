@@ -7,10 +7,8 @@ namespace TerraFX.Interop
 {
     public partial struct WICJpegScanHeader
     {
-        [NativeTypeName("UINT")]
         public uint cComponents;
 
-        [NativeTypeName("UINT")]
         public uint RestartInterval;
 
         [NativeTypeName("DWORD")]
@@ -19,16 +17,12 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint HuffmanTableIndices;
 
-        [NativeTypeName("BYTE")]
         public byte StartSpectralSelection;
 
-        [NativeTypeName("BYTE")]
         public byte EndSpectralSelection;
 
-        [NativeTypeName("BYTE")]
         public byte SuccessiveApproximationHigh;
 
-        [NativeTypeName("BYTE")]
         public byte SuccessiveApproximationLow;
     }
 }

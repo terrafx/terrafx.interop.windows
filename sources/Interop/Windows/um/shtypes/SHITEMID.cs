@@ -10,7 +10,6 @@ namespace TerraFX.Interop
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe partial struct SHITEMID
     {
-        [NativeTypeName("USHORT")]
         public ushort cb;
 
         [NativeTypeName("BYTE [1]")]

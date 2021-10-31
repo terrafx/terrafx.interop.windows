@@ -144,7 +144,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(18)]
-        public HRESULT Initialize([NativeTypeName("GUID *")] Guid* param0)
+        public HRESULT Initialize(Guid* param0)
         {
             return ((delegate* unmanaged<IDirectDraw2*, Guid*, int>)(lpVtbl[18]))((IDirectDraw2*)Unsafe.AsPointer(ref this), param0);
         }

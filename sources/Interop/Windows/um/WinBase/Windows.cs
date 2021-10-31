@@ -14,11 +14,11 @@ namespace TerraFX.Interop
     {
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("HGLOBAL")]
-        public static extern HANDLE GlobalAlloc([NativeTypeName("UINT")] uint uFlags, [NativeTypeName("SIZE_T")] nuint dwBytes);
+        public static extern HANDLE GlobalAlloc(uint uFlags, [NativeTypeName("SIZE_T")] nuint dwBytes);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("HGLOBAL")]
-        public static extern HANDLE GlobalReAlloc([NativeTypeName("HGLOBAL")] HANDLE hMem, [NativeTypeName("SIZE_T")] nuint dwBytes, [NativeTypeName("UINT")] uint uFlags);
+        public static extern HANDLE GlobalReAlloc([NativeTypeName("HGLOBAL")] HANDLE hMem, [NativeTypeName("SIZE_T")] nuint dwBytes, uint uFlags);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("SIZE_T")]
@@ -32,7 +32,6 @@ namespace TerraFX.Interop
         public static extern void* GlobalLock([NativeTypeName("HGLOBAL")] HANDLE hMem);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("UINT")]
         public static extern uint GlobalFlags([NativeTypeName("HGLOBAL")] HANDLE hMem);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
@@ -65,11 +64,11 @@ namespace TerraFX.Interop
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("HLOCAL")]
-        public static extern HANDLE LocalAlloc([NativeTypeName("UINT")] uint uFlags, [NativeTypeName("SIZE_T")] nuint uBytes);
+        public static extern HANDLE LocalAlloc(uint uFlags, [NativeTypeName("SIZE_T")] nuint uBytes);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("HLOCAL")]
-        public static extern HANDLE LocalReAlloc([NativeTypeName("HLOCAL")] HANDLE hMem, [NativeTypeName("SIZE_T")] nuint uBytes, [NativeTypeName("UINT")] uint uFlags);
+        public static extern HANDLE LocalReAlloc([NativeTypeName("HLOCAL")] HANDLE hMem, [NativeTypeName("SIZE_T")] nuint uBytes, uint uFlags);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("LPVOID")]
@@ -87,7 +86,6 @@ namespace TerraFX.Interop
         public static extern nuint LocalSize([NativeTypeName("HLOCAL")] HANDLE hMem);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("UINT")]
         public static extern uint LocalFlags([NativeTypeName("HLOCAL")] HANDLE hMem);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
@@ -96,11 +94,11 @@ namespace TerraFX.Interop
 
         [DllImport("kernel32", ExactSpelling = true)]
         [return: NativeTypeName("SIZE_T")]
-        public static extern nuint LocalShrink([NativeTypeName("HLOCAL")] HANDLE hMem, [NativeTypeName("UINT")] uint cbNewSize);
+        public static extern nuint LocalShrink([NativeTypeName("HLOCAL")] HANDLE hMem, uint cbNewSize);
 
         [DllImport("kernel32", ExactSpelling = true)]
         [return: NativeTypeName("SIZE_T")]
-        public static extern nuint LocalCompact([NativeTypeName("UINT")] uint uMinFree);
+        public static extern nuint LocalCompact(uint uMinFree);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         public static extern BOOL GetBinaryTypeA([NativeTypeName("LPCSTR")] sbyte* lpApplicationName, [NativeTypeName("LPDWORD")] uint* lpBinaryType);
@@ -263,8 +261,7 @@ namespace TerraFX.Interop
         public static extern ushort DeleteAtom([NativeTypeName("ATOM")] ushort nAtom);
 
         [DllImport("kernel32", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
-        public static extern uint SetHandleCount([NativeTypeName("UINT")] uint uNumber);
+        public static extern uint SetHandleCount(uint uNumber);
 
         [DllImport("kernel32", ExactSpelling = true)]
         public static extern BOOL RequestDeviceWakeup(HANDLE hDevice);
@@ -289,8 +286,7 @@ namespace TerraFX.Interop
         public static extern uint LoadModule([NativeTypeName("LPCSTR")] sbyte* lpModuleName, [NativeTypeName("LPVOID")] void* lpParameterBlock);
 
         [DllImport("kernel32", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
-        public static extern uint WinExec([NativeTypeName("LPCSTR")] sbyte* lpCmdLine, [NativeTypeName("UINT")] uint uCmdShow);
+        public static extern uint WinExec([NativeTypeName("LPCSTR")] sbyte* lpCmdLine, uint uCmdShow);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         public static extern BOOL ClearCommBreak(HANDLE hFile);
@@ -505,7 +501,7 @@ namespace TerraFX.Interop
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("HFILE")]
-        public static extern int OpenFile([NativeTypeName("LPCSTR")] sbyte* lpFileName, [NativeTypeName("LPOFSTRUCT")] OFSTRUCT* lpReOpenBuff, [NativeTypeName("UINT")] uint uStyle);
+        public static extern int OpenFile([NativeTypeName("LPCSTR")] sbyte* lpFileName, [NativeTypeName("LPOFSTRUCT")] OFSTRUCT* lpReOpenBuff, uint uStyle);
 
         [DllImport("kernel32", ExactSpelling = true)]
         [return: NativeTypeName("HFILE")]
@@ -516,12 +512,10 @@ namespace TerraFX.Interop
         public static extern int _lcreat([NativeTypeName("LPCSTR")] sbyte* lpPathName, int iAttribute);
 
         [DllImport("kernel32", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
-        public static extern uint _lread([NativeTypeName("HFILE")] int hFile, [NativeTypeName("LPVOID")] void* lpBuffer, [NativeTypeName("UINT")] uint uBytes);
+        public static extern uint _lread([NativeTypeName("HFILE")] int hFile, [NativeTypeName("LPVOID")] void* lpBuffer, uint uBytes);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("UINT")]
-        public static extern uint _lwrite([NativeTypeName("HFILE")] int hFile, [NativeTypeName("LPCCH")] sbyte* lpBuffer, [NativeTypeName("UINT")] uint uBytes);
+        public static extern uint _lwrite([NativeTypeName("HFILE")] int hFile, [NativeTypeName("LPCCH")] sbyte* lpBuffer, uint uBytes);
 
         [DllImport("kernel32", ExactSpelling = true)]
         [return: NativeTypeName("HFILE")]
@@ -685,11 +679,9 @@ namespace TerraFX.Interop
         public static extern ushort GlobalFindAtomW([NativeTypeName("LPCWSTR")] ushort* lpString);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("UINT")]
         public static extern uint GlobalGetAtomNameA([NativeTypeName("ATOM")] ushort nAtom, [NativeTypeName("LPSTR")] sbyte* lpBuffer, int nSize);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("UINT")]
         public static extern uint GlobalGetAtomNameW([NativeTypeName("ATOM")] ushort nAtom, [NativeTypeName("LPWSTR")] ushort* lpBuffer, int nSize);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
@@ -709,20 +701,16 @@ namespace TerraFX.Interop
         public static extern ushort FindAtomW([NativeTypeName("LPCWSTR")] ushort* lpString);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("UINT")]
         public static extern uint GetAtomNameA([NativeTypeName("ATOM")] ushort nAtom, [NativeTypeName("LPSTR")] sbyte* lpBuffer, int nSize);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("UINT")]
         public static extern uint GetAtomNameW([NativeTypeName("ATOM")] ushort nAtom, [NativeTypeName("LPWSTR")] ushort* lpBuffer, int nSize);
 
         [DllImport("kernel32", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
-        public static extern uint GetProfileIntA([NativeTypeName("LPCSTR")] sbyte* lpAppName, [NativeTypeName("LPCSTR")] sbyte* lpKeyName, [NativeTypeName("INT")] int nDefault);
+        public static extern uint GetProfileIntA([NativeTypeName("LPCSTR")] sbyte* lpAppName, [NativeTypeName("LPCSTR")] sbyte* lpKeyName, int nDefault);
 
         [DllImport("kernel32", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
-        public static extern uint GetProfileIntW([NativeTypeName("LPCWSTR")] ushort* lpAppName, [NativeTypeName("LPCWSTR")] ushort* lpKeyName, [NativeTypeName("INT")] int nDefault);
+        public static extern uint GetProfileIntW([NativeTypeName("LPCWSTR")] ushort* lpAppName, [NativeTypeName("LPCWSTR")] ushort* lpKeyName, int nDefault);
 
         [DllImport("kernel32", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
@@ -753,12 +741,10 @@ namespace TerraFX.Interop
         public static extern BOOL WriteProfileSectionW([NativeTypeName("LPCWSTR")] ushort* lpAppName, [NativeTypeName("LPCWSTR")] ushort* lpString);
 
         [DllImport("kernel32", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
-        public static extern uint GetPrivateProfileIntA([NativeTypeName("LPCSTR")] sbyte* lpAppName, [NativeTypeName("LPCSTR")] sbyte* lpKeyName, [NativeTypeName("INT")] int nDefault, [NativeTypeName("LPCSTR")] sbyte* lpFileName);
+        public static extern uint GetPrivateProfileIntA([NativeTypeName("LPCSTR")] sbyte* lpAppName, [NativeTypeName("LPCSTR")] sbyte* lpKeyName, int nDefault, [NativeTypeName("LPCSTR")] sbyte* lpFileName);
 
         [DllImport("kernel32", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
-        public static extern uint GetPrivateProfileIntW([NativeTypeName("LPCWSTR")] ushort* lpAppName, [NativeTypeName("LPCWSTR")] ushort* lpKeyName, [NativeTypeName("INT")] int nDefault, [NativeTypeName("LPCWSTR")] ushort* lpFileName);
+        public static extern uint GetPrivateProfileIntW([NativeTypeName("LPCWSTR")] ushort* lpAppName, [NativeTypeName("LPCWSTR")] ushort* lpKeyName, int nDefault, [NativeTypeName("LPCWSTR")] ushort* lpFileName);
 
         [DllImport("kernel32", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
@@ -797,16 +783,16 @@ namespace TerraFX.Interop
         public static extern uint GetPrivateProfileSectionNamesW([NativeTypeName("LPWSTR")] ushort* lpszReturnBuffer, [NativeTypeName("DWORD")] uint nSize, [NativeTypeName("LPCWSTR")] ushort* lpFileName);
 
         [DllImport("kernel32", ExactSpelling = true)]
-        public static extern BOOL GetPrivateProfileStructA([NativeTypeName("LPCSTR")] sbyte* lpszSection, [NativeTypeName("LPCSTR")] sbyte* lpszKey, [NativeTypeName("LPVOID")] void* lpStruct, [NativeTypeName("UINT")] uint uSizeStruct, [NativeTypeName("LPCSTR")] sbyte* szFile);
+        public static extern BOOL GetPrivateProfileStructA([NativeTypeName("LPCSTR")] sbyte* lpszSection, [NativeTypeName("LPCSTR")] sbyte* lpszKey, [NativeTypeName("LPVOID")] void* lpStruct, uint uSizeStruct, [NativeTypeName("LPCSTR")] sbyte* szFile);
 
         [DllImport("kernel32", ExactSpelling = true)]
-        public static extern BOOL GetPrivateProfileStructW([NativeTypeName("LPCWSTR")] ushort* lpszSection, [NativeTypeName("LPCWSTR")] ushort* lpszKey, [NativeTypeName("LPVOID")] void* lpStruct, [NativeTypeName("UINT")] uint uSizeStruct, [NativeTypeName("LPCWSTR")] ushort* szFile);
+        public static extern BOOL GetPrivateProfileStructW([NativeTypeName("LPCWSTR")] ushort* lpszSection, [NativeTypeName("LPCWSTR")] ushort* lpszKey, [NativeTypeName("LPVOID")] void* lpStruct, uint uSizeStruct, [NativeTypeName("LPCWSTR")] ushort* szFile);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        public static extern BOOL WritePrivateProfileStructA([NativeTypeName("LPCSTR")] sbyte* lpszSection, [NativeTypeName("LPCSTR")] sbyte* lpszKey, [NativeTypeName("LPVOID")] void* lpStruct, [NativeTypeName("UINT")] uint uSizeStruct, [NativeTypeName("LPCSTR")] sbyte* szFile);
+        public static extern BOOL WritePrivateProfileStructA([NativeTypeName("LPCSTR")] sbyte* lpszSection, [NativeTypeName("LPCSTR")] sbyte* lpszKey, [NativeTypeName("LPVOID")] void* lpStruct, uint uSizeStruct, [NativeTypeName("LPCSTR")] sbyte* szFile);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        public static extern BOOL WritePrivateProfileStructW([NativeTypeName("LPCWSTR")] ushort* lpszSection, [NativeTypeName("LPCWSTR")] ushort* lpszKey, [NativeTypeName("LPVOID")] void* lpStruct, [NativeTypeName("UINT")] uint uSizeStruct, [NativeTypeName("LPCWSTR")] ushort* szFile);
+        public static extern BOOL WritePrivateProfileStructW([NativeTypeName("LPCWSTR")] ushort* lpszSection, [NativeTypeName("LPCWSTR")] ushort* lpszKey, [NativeTypeName("LPVOID")] void* lpStruct, uint uSizeStruct, [NativeTypeName("LPCWSTR")] ushort* szFile);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         public static extern BOOL SetDllDirectoryA([NativeTypeName("LPCSTR")] sbyte* lpPathName);
@@ -1427,7 +1413,7 @@ namespace TerraFX.Interop
         public static extern BOOL GetNumaAvailableMemoryNode([NativeTypeName("UCHAR")] byte Node, [NativeTypeName("PULONGLONG")] ulong* AvailableBytes);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        public static extern BOOL GetNumaAvailableMemoryNodeEx([NativeTypeName("USHORT")] ushort Node, [NativeTypeName("PULONGLONG")] ulong* AvailableBytes);
+        public static extern BOOL GetNumaAvailableMemoryNodeEx(ushort Node, [NativeTypeName("PULONGLONG")] ulong* AvailableBytes);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         public static extern BOOL GetNumaProximityNode([NativeTypeName("ULONG")] uint ProximityId, [NativeTypeName("PUCHAR")] byte* NodeNumber);

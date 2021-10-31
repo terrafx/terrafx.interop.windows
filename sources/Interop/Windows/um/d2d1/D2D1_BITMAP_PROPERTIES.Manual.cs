@@ -30,7 +30,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public D2D1_BITMAP_PROPERTIES([NativeTypeName("const D2D1_PIXEL_FORMAT &")] in D2D1_PIXEL_FORMAT pixelFormat = default, [NativeTypeName("FLOAT")] float dpiX = 96.0f, [NativeTypeName("FLOAT")] float dpiY = 96.0f)
+        public D2D1_BITMAP_PROPERTIES([NativeTypeName("const D2D1_PIXEL_FORMAT &")] in D2D1_PIXEL_FORMAT pixelFormat = default, float dpiX = 96.0f, float dpiY = 96.0f)
         {
             this = BitmapProperties(pixelFormat, dpiX, dpiY);
         }

@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public partial struct HELPINFO
     {
-        [NativeTypeName("UINT")]
         public uint cbSize;
 
         public int iContextType;

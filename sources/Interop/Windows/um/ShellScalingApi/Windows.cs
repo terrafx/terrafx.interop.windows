@@ -13,7 +13,7 @@ namespace TerraFX.Interop
         public static extern DEVICE_SCALE_FACTOR GetScaleFactorForDevice(DISPLAY_DEVICE_TYPE deviceType);
 
         [DllImport("shcore", ExactSpelling = true)]
-        public static extern HRESULT RegisterScaleChangeNotifications(DISPLAY_DEVICE_TYPE displayDevice, HWND hwndNotify, [NativeTypeName("UINT")] uint uMsgNotify, [NativeTypeName("DWORD *")] uint* pdwCookie);
+        public static extern HRESULT RegisterScaleChangeNotifications(DISPLAY_DEVICE_TYPE displayDevice, HWND hwndNotify, uint uMsgNotify, [NativeTypeName("DWORD *")] uint* pdwCookie);
 
         [DllImport("shcore", ExactSpelling = true)]
         public static extern HRESULT RevokeScaleChangeNotifications(DISPLAY_DEVICE_TYPE displayDevice, [NativeTypeName("DWORD")] uint dwCookie);
@@ -34,10 +34,9 @@ namespace TerraFX.Interop
         public static extern HRESULT GetProcessDpiAwareness(HANDLE hprocess, PROCESS_DPI_AWARENESS* value);
 
         [DllImport("shcore", ExactSpelling = true)]
-        public static extern HRESULT GetDpiForMonitor(HMONITOR hmonitor, MONITOR_DPI_TYPE dpiType, [NativeTypeName("UINT *")] uint* dpiX, [NativeTypeName("UINT *")] uint* dpiY);
+        public static extern HRESULT GetDpiForMonitor(HMONITOR hmonitor, MONITOR_DPI_TYPE dpiType, uint* dpiX, uint* dpiY);
 
         [DllImport("shcore", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
         public static extern uint GetDpiForShellUIComponent(SHELL_UI_COMPONENT param0);
     }
 }

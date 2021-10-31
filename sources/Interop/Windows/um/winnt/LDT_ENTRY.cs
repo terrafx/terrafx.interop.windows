@@ -32,16 +32,12 @@ namespace TerraFX.Interop
 
             public partial struct _Bytes_e__Struct
             {
-                [NativeTypeName("BYTE")]
                 public byte BaseMid;
 
-                [NativeTypeName("BYTE")]
                 public byte Flags1;
 
-                [NativeTypeName("BYTE")]
                 public byte Flags2;
 
-                [NativeTypeName("BYTE")]
                 public byte BaseHi;
             }
 

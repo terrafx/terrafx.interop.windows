@@ -288,7 +288,6 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint dwWin95Unused;
 
-        [NativeTypeName("UINT")]
         public uint uWin95Unused;
 
         [NativeTypeName("LONG")]
@@ -296,10 +295,8 @@ namespace TerraFX.Interop
 
         public int iSortDirection;
 
-        [NativeTypeName("UINT")]
         public uint version;
 
-        [NativeTypeName("UINT")]
         public uint uNotUsed;
 
         public BOOL _bitfield2;
@@ -416,7 +413,7 @@ namespace TerraFX.Interop
             }
         }
 
-        [NativeTypeName("UINT : 9")]
+        [NativeTypeName("uint : 9")]
         public uint fSpareFlags
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]

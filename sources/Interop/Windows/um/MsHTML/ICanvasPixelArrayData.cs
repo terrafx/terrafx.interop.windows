@@ -41,7 +41,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        public HRESULT GetBufferPointer([NativeTypeName("BYTE **")] byte** ppBuffer, [NativeTypeName("ULONG *")] uint* pBufferLength)
+        public HRESULT GetBufferPointer(byte** ppBuffer, [NativeTypeName("ULONG *")] uint* pBufferLength)
         {
             return ((delegate* unmanaged<ICanvasPixelArrayData*, byte**, uint*, int>)(lpVtbl[3]))((ICanvasPixelArrayData*)Unsafe.AsPointer(ref this), ppBuffer, pBufferLength);
         }

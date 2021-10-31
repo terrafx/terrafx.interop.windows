@@ -12,7 +12,7 @@ namespace TerraFX.Interop
 {
     public partial struct D2D_MATRIX_4X3_F : IEquatable<D2D_MATRIX_4X3_F>
     {
-        public D2D_MATRIX_4X3_F([NativeTypeName("FLOAT")] float m11, [NativeTypeName("FLOAT")] float m12, [NativeTypeName("FLOAT")] float m13, [NativeTypeName("FLOAT")] float m21, [NativeTypeName("FLOAT")] float m22, [NativeTypeName("FLOAT")] float m23, [NativeTypeName("FLOAT")] float m31, [NativeTypeName("FLOAT")] float m32, [NativeTypeName("FLOAT")] float m33, [NativeTypeName("FLOAT")] float m41, [NativeTypeName("FLOAT")] float m42, [NativeTypeName("FLOAT")] float m43)
+        public D2D_MATRIX_4X3_F(float m11, float m12, float m13, float m21, float m22, float m23, float m31, float m32, float m33, float m41, float m42, float m43)
         {
             this = default;
 

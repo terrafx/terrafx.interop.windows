@@ -7,10 +7,8 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct MFMediaKeyStatus
     {
-        [NativeTypeName("BYTE *")]
         public byte* pbKeyId;
 
-        [NativeTypeName("UINT")]
         public uint cbKeyId;
 
         public MF_MEDIAKEY_STATUS eMediaKeyStatus;

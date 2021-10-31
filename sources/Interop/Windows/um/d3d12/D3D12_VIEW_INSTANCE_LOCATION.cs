@@ -7,10 +7,8 @@ namespace TerraFX.Interop
 {
     public partial struct D3D12_VIEW_INSTANCE_LOCATION
     {
-        [NativeTypeName("UINT")]
         public uint ViewportArrayIndex;
 
-        [NativeTypeName("UINT")]
         public uint RenderTargetArrayIndex;
     }
 }

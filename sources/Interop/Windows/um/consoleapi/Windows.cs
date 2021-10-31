@@ -19,11 +19,9 @@ namespace TerraFX.Interop
         public static extern BOOL AttachConsole([NativeTypeName("DWORD")] uint dwProcessId);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("UINT")]
         public static extern uint GetConsoleCP();
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("UINT")]
         public static extern uint GetConsoleOutputCP();
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]

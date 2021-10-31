@@ -90,7 +90,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(10)]
-        public HRESULT GetIcon(int i, [NativeTypeName("UINT")] uint flags, HICON* picon)
+        public HRESULT GetIcon(int i, uint flags, HICON* picon)
         {
             return ((delegate* unmanaged<IImageList2*, int, uint, HICON*, int>)(lpVtbl[10]))((IImageList2*)Unsafe.AsPointer(ref this), i, flags, picon);
         }
@@ -104,7 +104,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(12)]
-        public HRESULT Copy(int iDst, IUnknown* punkSrc, int iSrc, [NativeTypeName("UINT")] uint uFlags)
+        public HRESULT Copy(int iDst, IUnknown* punkSrc, int iSrc, uint uFlags)
         {
             return ((delegate* unmanaged<IImageList2*, int, IUnknown*, int, uint, int>)(lpVtbl[12]))((IImageList2*)Unsafe.AsPointer(ref this), iDst, punkSrc, iSrc, uFlags);
         }
@@ -153,7 +153,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(19)]
-        public HRESULT SetImageCount([NativeTypeName("UINT")] uint uNewCount)
+        public HRESULT SetImageCount(uint uNewCount)
         {
             return ((delegate* unmanaged<IImageList2*, uint, int>)(lpVtbl[19]))((IImageList2*)Unsafe.AsPointer(ref this), uNewCount);
         }
@@ -307,7 +307,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(41)]
-        public HRESULT Initialize(int cx, int cy, [NativeTypeName("UINT")] uint flags, int cInitial, int cGrow)
+        public HRESULT Initialize(int cx, int cy, uint flags, int cInitial, int cGrow)
         {
             return ((delegate* unmanaged<IImageList2*, int, int, uint, int, int, int>)(lpVtbl[41]))((IImageList2*)Unsafe.AsPointer(ref this), cx, cy, flags, cInitial, cGrow);
         }

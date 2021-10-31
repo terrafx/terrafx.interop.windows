@@ -7,18 +7,14 @@ namespace TerraFX.Interop
 {
     public partial struct GLYPHMETRICSFLOAT
     {
-        [NativeTypeName("FLOAT")]
         public float gmfBlackBoxX;
 
-        [NativeTypeName("FLOAT")]
         public float gmfBlackBoxY;
 
         public POINTFLOAT gmfptGlyphOrigin;
 
-        [NativeTypeName("FLOAT")]
         public float gmfCellIncX;
 
-        [NativeTypeName("FLOAT")]
         public float gmfCellIncY;
     }
 }

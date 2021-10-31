@@ -9,7 +9,6 @@ namespace TerraFX.Interop
 {
     public partial struct TRANSACTIONMANAGER_BASIC_INFORMATION
     {
-        [NativeTypeName("GUID")]
         public Guid TmIdentity;
 
         public LARGE_INTEGER VirtualClock;

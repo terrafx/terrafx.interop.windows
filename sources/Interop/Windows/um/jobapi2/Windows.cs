@@ -22,7 +22,7 @@ namespace TerraFX.Interop
         public static extern BOOL AssignProcessToJobObject(HANDLE hJob, HANDLE hProcess);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        public static extern BOOL TerminateJobObject(HANDLE hJob, [NativeTypeName("UINT")] uint uExitCode);
+        public static extern BOOL TerminateJobObject(HANDLE hJob, uint uExitCode);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         public static extern BOOL SetInformationJobObject(HANDLE hJob, JOBOBJECTINFOCLASS JobObjectInformationClass, [NativeTypeName("LPVOID")] void* lpJobObjectInformation, [NativeTypeName("DWORD")] uint cbJobObjectInformationLength);
