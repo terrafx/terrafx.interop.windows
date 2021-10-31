@@ -11,7 +11,7 @@ namespace TerraFX.Interop
     [StructLayout(LayoutKind.Explicit)]
     public unsafe partial struct SP_DEVICE_INTERFACE_DETAIL_DATA_A
     {
-        public static uint Size
+        public static uint SizeOf
         {
             get
             {

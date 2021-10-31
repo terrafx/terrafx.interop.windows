@@ -10,7 +10,7 @@ namespace TerraFX.Interop
     [StructLayout(LayoutKind.Explicit)]
     public unsafe partial struct OPEN_PRINTER_PROPS_INFOW
     {
-        public static uint Size
+        public static uint SizeOf
         {
             get
             {

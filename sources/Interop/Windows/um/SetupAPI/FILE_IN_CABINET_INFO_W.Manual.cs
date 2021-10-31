@@ -11,7 +11,7 @@ namespace TerraFX.Interop
     [StructLayout(LayoutKind.Explicit)]
     public unsafe partial struct FILE_IN_CABINET_INFO_W
     {
-        public static uint Size
+        public static uint SizeOf
         {
             get
             {

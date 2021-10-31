@@ -11,7 +11,7 @@ namespace TerraFX.Interop
     [StructLayout(LayoutKind.Explicit)]
     public unsafe partial struct SP_DRVINFO_DATA_V2_W
     {
-        public static uint Size
+        public static uint SizeOf
         {
             get
             {

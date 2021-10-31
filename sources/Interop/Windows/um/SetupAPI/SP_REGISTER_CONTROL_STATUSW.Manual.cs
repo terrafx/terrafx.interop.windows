@@ -10,7 +10,7 @@ namespace TerraFX.Interop
     [StructLayout(LayoutKind.Explicit)]
     public unsafe partial struct SP_REGISTER_CONTROL_STATUSW
     {
-        public static uint Size
+        public static uint SizeOf
         {
             get
             {

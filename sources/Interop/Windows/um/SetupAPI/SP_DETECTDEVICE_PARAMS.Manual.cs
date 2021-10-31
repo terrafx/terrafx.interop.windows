@@ -11,7 +11,7 @@ namespace TerraFX.Interop
     [StructLayout(LayoutKind.Explicit)]
     public unsafe partial struct SP_DETECTDEVICE_PARAMS
     {
-        public static uint Size
+        public static uint SizeOf
         {
             get
             {

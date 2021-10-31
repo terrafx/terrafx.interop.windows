@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [StructLayout(LayoutKind.Explicit)]
     public unsafe partial struct SP_POWERMESSAGEWAKE_PARAMS_A
     {
-        public static uint Size
+        public static uint SizeOf
         {
             get
             {
