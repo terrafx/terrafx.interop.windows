@@ -47,9 +47,9 @@ namespace TerraFX.Interop
 
         public static explicit operator HCERTSTORE(void* value) => new HCERTSTORE(value);
 
-        public static implicit operator int(HCERTSTORE value) => (int)(value.Value);
+        public static explicit operator int(HCERTSTORE value) => (int)(value.Value);
 
-        public static implicit operator uint(HCERTSTORE value) => (uint)(value.Value);
+        public static explicit operator uint(HCERTSTORE value) => (uint)(value.Value);
 
         public static implicit operator nint(HCERTSTORE value) => (nint)(value.Value);
 

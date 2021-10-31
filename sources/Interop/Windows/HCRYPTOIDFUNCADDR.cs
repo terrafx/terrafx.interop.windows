@@ -47,9 +47,9 @@ namespace TerraFX.Interop
 
         public static explicit operator HCRYPTOIDFUNCADDR(void* value) => new HCRYPTOIDFUNCADDR(value);
 
-        public static implicit operator int(HCRYPTOIDFUNCADDR value) => (int)(value.Value);
+        public static explicit operator int(HCRYPTOIDFUNCADDR value) => (int)(value.Value);
 
-        public static implicit operator uint(HCRYPTOIDFUNCADDR value) => (uint)(value.Value);
+        public static explicit operator uint(HCRYPTOIDFUNCADDR value) => (uint)(value.Value);
 
         public static implicit operator nint(HCRYPTOIDFUNCADDR value) => (nint)(value.Value);
 

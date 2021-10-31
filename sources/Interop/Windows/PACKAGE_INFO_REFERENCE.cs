@@ -47,9 +47,9 @@ namespace TerraFX.Interop
 
         public static explicit operator PACKAGE_INFO_REFERENCE(void* value) => new PACKAGE_INFO_REFERENCE(value);
 
-        public static implicit operator int(PACKAGE_INFO_REFERENCE value) => (int)(value.Value);
+        public static explicit operator int(PACKAGE_INFO_REFERENCE value) => (int)(value.Value);
 
-        public static implicit operator uint(PACKAGE_INFO_REFERENCE value) => (uint)(value.Value);
+        public static explicit operator uint(PACKAGE_INFO_REFERENCE value) => (uint)(value.Value);
 
         public static implicit operator nint(PACKAGE_INFO_REFERENCE value) => (nint)(value.Value);
 

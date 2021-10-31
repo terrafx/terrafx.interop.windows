@@ -47,9 +47,9 @@ namespace TerraFX.Interop
 
         public static explicit operator HSPFILELOG(void* value) => new HSPFILELOG(value);
 
-        public static implicit operator int(HSPFILELOG value) => (int)(value.Value);
+        public static explicit operator int(HSPFILELOG value) => (int)(value.Value);
 
-        public static implicit operator uint(HSPFILELOG value) => (uint)(value.Value);
+        public static explicit operator uint(HSPFILELOG value) => (uint)(value.Value);
 
         public static implicit operator nint(HSPFILELOG value) => (nint)(value.Value);
 

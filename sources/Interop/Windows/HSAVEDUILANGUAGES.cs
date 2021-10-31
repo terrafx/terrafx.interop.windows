@@ -56,9 +56,9 @@ namespace TerraFX.Interop
 
         public static explicit operator HSAVEDUILANGUAGES(HANDLE value) => new HSAVEDUILANGUAGES(value);
 
-        public static implicit operator int(HSAVEDUILANGUAGES value) => (int)(value.Value);
+        public static explicit operator int(HSAVEDUILANGUAGES value) => (int)(value.Value);
 
-        public static implicit operator uint(HSAVEDUILANGUAGES value) => (uint)(value.Value);
+        public static explicit operator uint(HSAVEDUILANGUAGES value) => (uint)(value.Value);
 
         public static implicit operator nint(HSAVEDUILANGUAGES value) => (nint)(value.Value);
 

@@ -56,9 +56,9 @@ namespace TerraFX.Interop
 
         public static explicit operator HPSXA(HANDLE value) => new HPSXA(value);
 
-        public static implicit operator int(HPSXA value) => (int)(value.Value);
+        public static explicit operator int(HPSXA value) => (int)(value.Value);
 
-        public static implicit operator uint(HPSXA value) => (uint)(value.Value);
+        public static explicit operator uint(HPSXA value) => (uint)(value.Value);
 
         public static implicit operator nint(HPSXA value) => (nint)(value.Value);
 

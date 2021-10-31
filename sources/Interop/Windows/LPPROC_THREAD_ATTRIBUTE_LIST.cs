@@ -47,9 +47,9 @@ namespace TerraFX.Interop
 
         public static explicit operator LPPROC_THREAD_ATTRIBUTE_LIST(void* value) => new LPPROC_THREAD_ATTRIBUTE_LIST(value);
 
-        public static implicit operator int(LPPROC_THREAD_ATTRIBUTE_LIST value) => (int)(value.Value);
+        public static explicit operator int(LPPROC_THREAD_ATTRIBUTE_LIST value) => (int)(value.Value);
 
-        public static implicit operator uint(LPPROC_THREAD_ATTRIBUTE_LIST value) => (uint)(value.Value);
+        public static explicit operator uint(LPPROC_THREAD_ATTRIBUTE_LIST value) => (uint)(value.Value);
 
         public static implicit operator nint(LPPROC_THREAD_ATTRIBUTE_LIST value) => (nint)(value.Value);
 

@@ -56,9 +56,9 @@ namespace TerraFX.Interop
 
         public static explicit operator SPPHRASEPROPERTYHANDLE(HANDLE value) => new SPPHRASEPROPERTYHANDLE(value);
 
-        public static implicit operator int(SPPHRASEPROPERTYHANDLE value) => (int)(value.Value);
+        public static explicit operator int(SPPHRASEPROPERTYHANDLE value) => (int)(value.Value);
 
-        public static implicit operator uint(SPPHRASEPROPERTYHANDLE value) => (uint)(value.Value);
+        public static explicit operator uint(SPPHRASEPROPERTYHANDLE value) => (uint)(value.Value);
 
         public static implicit operator nint(SPPHRASEPROPERTYHANDLE value) => (nint)(value.Value);
 

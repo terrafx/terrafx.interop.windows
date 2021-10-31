@@ -47,9 +47,9 @@ namespace TerraFX.Interop
 
         public static explicit operator PHIDP_PREPARSED_DATA(void* value) => new PHIDP_PREPARSED_DATA(value);
 
-        public static implicit operator int(PHIDP_PREPARSED_DATA value) => (int)(value.Value);
+        public static explicit operator int(PHIDP_PREPARSED_DATA value) => (int)(value.Value);
 
-        public static implicit operator uint(PHIDP_PREPARSED_DATA value) => (uint)(value.Value);
+        public static explicit operator uint(PHIDP_PREPARSED_DATA value) => (uint)(value.Value);
 
         public static implicit operator nint(PHIDP_PREPARSED_DATA value) => (nint)(value.Value);
 

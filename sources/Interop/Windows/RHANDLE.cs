@@ -56,9 +56,9 @@ namespace TerraFX.Interop
 
         public static explicit operator RHANDLE(HANDLE value) => new RHANDLE(value);
 
-        public static implicit operator int(RHANDLE value) => (int)(value.Value);
+        public static explicit operator int(RHANDLE value) => (int)(value.Value);
 
-        public static implicit operator uint(RHANDLE value) => (uint)(value.Value);
+        public static explicit operator uint(RHANDLE value) => (uint)(value.Value);
 
         public static implicit operator nint(RHANDLE value) => (nint)(value.Value);
 

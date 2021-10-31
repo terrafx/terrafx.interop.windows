@@ -56,9 +56,9 @@ namespace TerraFX.Interop
 
         public static explicit operator HCONV(HANDLE value) => new HCONV(value);
 
-        public static implicit operator int(HCONV value) => (int)(value.Value);
+        public static explicit operator int(HCONV value) => (int)(value.Value);
 
-        public static implicit operator uint(HCONV value) => (uint)(value.Value);
+        public static explicit operator uint(HCONV value) => (uint)(value.Value);
 
         public static implicit operator nint(HCONV value) => (nint)(value.Value);
 

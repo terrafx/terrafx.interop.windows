@@ -47,9 +47,9 @@ namespace TerraFX.Interop
 
         public static explicit operator HIMAGELIST(void* value) => new HIMAGELIST(value);
 
-        public static implicit operator int(HIMAGELIST value) => (int)(value.Value);
+        public static explicit operator int(HIMAGELIST value) => (int)(value.Value);
 
-        public static implicit operator uint(HIMAGELIST value) => (uint)(value.Value);
+        public static explicit operator uint(HIMAGELIST value) => (uint)(value.Value);
 
         public static implicit operator nint(HIMAGELIST value) => (nint)(value.Value);
 

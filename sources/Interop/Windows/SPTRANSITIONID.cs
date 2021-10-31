@@ -56,9 +56,9 @@ namespace TerraFX.Interop
 
         public static explicit operator SPTRANSITIONID(HANDLE value) => new SPTRANSITIONID(value);
 
-        public static implicit operator int(SPTRANSITIONID value) => (int)(value.Value);
+        public static explicit operator int(SPTRANSITIONID value) => (int)(value.Value);
 
-        public static implicit operator uint(SPTRANSITIONID value) => (uint)(value.Value);
+        public static explicit operator uint(SPTRANSITIONID value) => (uint)(value.Value);
 
         public static implicit operator nint(SPTRANSITIONID value) => (nint)(value.Value);
 

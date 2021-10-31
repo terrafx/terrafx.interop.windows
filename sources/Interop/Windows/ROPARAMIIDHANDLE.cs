@@ -56,9 +56,9 @@ namespace TerraFX.Interop
 
         public static explicit operator ROPARAMIIDHANDLE(HANDLE value) => new ROPARAMIIDHANDLE(value);
 
-        public static implicit operator int(ROPARAMIIDHANDLE value) => (int)(value.Value);
+        public static explicit operator int(ROPARAMIIDHANDLE value) => (int)(value.Value);
 
-        public static implicit operator uint(ROPARAMIIDHANDLE value) => (uint)(value.Value);
+        public static explicit operator uint(ROPARAMIIDHANDLE value) => (uint)(value.Value);
 
         public static implicit operator nint(ROPARAMIIDHANDLE value) => (nint)(value.Value);
 

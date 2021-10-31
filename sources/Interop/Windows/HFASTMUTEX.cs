@@ -56,9 +56,9 @@ namespace TerraFX.Interop
 
         public static explicit operator HFASTMUTEX(HANDLE value) => new HFASTMUTEX(value);
 
-        public static implicit operator int(HFASTMUTEX value) => (int)(value.Value);
+        public static explicit operator int(HFASTMUTEX value) => (int)(value.Value);
 
-        public static implicit operator uint(HFASTMUTEX value) => (uint)(value.Value);
+        public static explicit operator uint(HFASTMUTEX value) => (uint)(value.Value);
 
         public static implicit operator nint(HFASTMUTEX value) => (nint)(value.Value);
 

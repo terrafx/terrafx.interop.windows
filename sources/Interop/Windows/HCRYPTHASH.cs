@@ -47,9 +47,9 @@ namespace TerraFX.Interop
 
         public static explicit operator HCRYPTHASH(void* value) => new HCRYPTHASH(value);
 
-        public static implicit operator int(HCRYPTHASH value) => (int)(value.Value);
+        public static explicit operator int(HCRYPTHASH value) => (int)(value.Value);
 
-        public static implicit operator uint(HCRYPTHASH value) => (uint)(value.Value);
+        public static explicit operator uint(HCRYPTHASH value) => (uint)(value.Value);
 
         public static implicit operator nint(HCRYPTHASH value) => (nint)(value.Value);
 

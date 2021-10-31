@@ -56,9 +56,9 @@ namespace TerraFX.Interop
 
         public static explicit operator NCRYPT_STREAM_HANDLE(HANDLE value) => new NCRYPT_STREAM_HANDLE(value);
 
-        public static implicit operator int(NCRYPT_STREAM_HANDLE value) => (int)(value.Value);
+        public static explicit operator int(NCRYPT_STREAM_HANDLE value) => (int)(value.Value);
 
-        public static implicit operator uint(NCRYPT_STREAM_HANDLE value) => (uint)(value.Value);
+        public static explicit operator uint(NCRYPT_STREAM_HANDLE value) => (uint)(value.Value);
 
         public static implicit operator nint(NCRYPT_STREAM_HANDLE value) => (nint)(value.Value);
 

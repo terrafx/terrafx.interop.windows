@@ -56,9 +56,9 @@ namespace TerraFX.Interop
 
         public static explicit operator HMIDI(HANDLE value) => new HMIDI(value);
 
-        public static implicit operator int(HMIDI value) => (int)(value.Value);
+        public static explicit operator int(HMIDI value) => (int)(value.Value);
 
-        public static implicit operator uint(HMIDI value) => (uint)(value.Value);
+        public static explicit operator uint(HMIDI value) => (uint)(value.Value);
 
         public static implicit operator nint(HMIDI value) => (nint)(value.Value);
 

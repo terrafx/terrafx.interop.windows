@@ -56,9 +56,9 @@ namespace TerraFX.Interop
 
         public static explicit operator HSURF(HANDLE value) => new HSURF(value);
 
-        public static implicit operator int(HSURF value) => (int)(value.Value);
+        public static explicit operator int(HSURF value) => (int)(value.Value);
 
-        public static implicit operator uint(HSURF value) => (uint)(value.Value);
+        public static explicit operator uint(HSURF value) => (uint)(value.Value);
 
         public static implicit operator nint(HSURF value) => (nint)(value.Value);
 

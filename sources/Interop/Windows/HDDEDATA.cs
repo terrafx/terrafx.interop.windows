@@ -56,9 +56,9 @@ namespace TerraFX.Interop
 
         public static explicit operator HDDEDATA(HANDLE value) => new HDDEDATA(value);
 
-        public static implicit operator int(HDDEDATA value) => (int)(value.Value);
+        public static explicit operator int(HDDEDATA value) => (int)(value.Value);
 
-        public static implicit operator uint(HDDEDATA value) => (uint)(value.Value);
+        public static explicit operator uint(HDDEDATA value) => (uint)(value.Value);
 
         public static implicit operator nint(HDDEDATA value) => (nint)(value.Value);
 

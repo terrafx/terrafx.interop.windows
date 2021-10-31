@@ -56,9 +56,9 @@ namespace TerraFX.Interop
 
         public static explicit operator HRSRC(HANDLE value) => new HRSRC(value);
 
-        public static implicit operator int(HRSRC value) => (int)(value.Value);
+        public static explicit operator int(HRSRC value) => (int)(value.Value);
 
-        public static implicit operator uint(HRSRC value) => (uint)(value.Value);
+        public static explicit operator uint(HRSRC value) => (uint)(value.Value);
 
         public static implicit operator nint(HRSRC value) => (nint)(value.Value);
 

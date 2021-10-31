@@ -56,9 +56,9 @@ namespace TerraFX.Interop
 
         public static explicit operator HCMNOTIFICATION(HANDLE value) => new HCMNOTIFICATION(value);
 
-        public static implicit operator int(HCMNOTIFICATION value) => (int)(value.Value);
+        public static explicit operator int(HCMNOTIFICATION value) => (int)(value.Value);
 
-        public static implicit operator uint(HCMNOTIFICATION value) => (uint)(value.Value);
+        public static explicit operator uint(HCMNOTIFICATION value) => (uint)(value.Value);
 
         public static implicit operator nint(HCMNOTIFICATION value) => (nint)(value.Value);
 

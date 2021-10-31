@@ -47,9 +47,9 @@ namespace TerraFX.Interop
 
         public static explicit operator HSTRING(void* value) => new HSTRING(value);
 
-        public static implicit operator int(HSTRING value) => (int)(value.Value);
+        public static explicit operator int(HSTRING value) => (int)(value.Value);
 
-        public static implicit operator uint(HSTRING value) => (uint)(value.Value);
+        public static explicit operator uint(HSTRING value) => (uint)(value.Value);
 
         public static implicit operator nint(HSTRING value) => (nint)(value.Value);
 

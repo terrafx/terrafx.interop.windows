@@ -47,9 +47,9 @@ namespace TerraFX.Interop
 
         public static explicit operator HCERT_SERVER_OCSP_RESPONSE(void* value) => new HCERT_SERVER_OCSP_RESPONSE(value);
 
-        public static implicit operator int(HCERT_SERVER_OCSP_RESPONSE value) => (int)(value.Value);
+        public static explicit operator int(HCERT_SERVER_OCSP_RESPONSE value) => (int)(value.Value);
 
-        public static implicit operator uint(HCERT_SERVER_OCSP_RESPONSE value) => (uint)(value.Value);
+        public static explicit operator uint(HCERT_SERVER_OCSP_RESPONSE value) => (uint)(value.Value);
 
         public static implicit operator nint(HCERT_SERVER_OCSP_RESPONSE value) => (nint)(value.Value);
 

@@ -47,9 +47,9 @@ namespace TerraFX.Interop
 
         public static explicit operator HINTERNET(void* value) => new HINTERNET(value);
 
-        public static implicit operator int(HINTERNET value) => (int)(value.Value);
+        public static explicit operator int(HINTERNET value) => (int)(value.Value);
 
-        public static implicit operator uint(HINTERNET value) => (uint)(value.Value);
+        public static explicit operator uint(HINTERNET value) => (uint)(value.Value);
 
         public static implicit operator nint(HINTERNET value) => (nint)(value.Value);
 

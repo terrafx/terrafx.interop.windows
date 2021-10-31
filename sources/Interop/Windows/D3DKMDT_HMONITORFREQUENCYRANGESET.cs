@@ -56,9 +56,9 @@ namespace TerraFX.Interop
 
         public static explicit operator D3DKMDT_HMONITORFREQUENCYRANGESET(HANDLE value) => new D3DKMDT_HMONITORFREQUENCYRANGESET(value);
 
-        public static implicit operator int(D3DKMDT_HMONITORFREQUENCYRANGESET value) => (int)(value.Value);
+        public static explicit operator int(D3DKMDT_HMONITORFREQUENCYRANGESET value) => (int)(value.Value);
 
-        public static implicit operator uint(D3DKMDT_HMONITORFREQUENCYRANGESET value) => (uint)(value.Value);
+        public static explicit operator uint(D3DKMDT_HMONITORFREQUENCYRANGESET value) => (uint)(value.Value);
 
         public static implicit operator nint(D3DKMDT_HMONITORFREQUENCYRANGESET value) => (nint)(value.Value);
 

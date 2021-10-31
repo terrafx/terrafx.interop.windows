@@ -47,9 +47,9 @@ namespace TerraFX.Interop
 
         public static explicit operator HPOWERNOTIFY(void* value) => new HPOWERNOTIFY(value);
 
-        public static implicit operator int(HPOWERNOTIFY value) => (int)(value.Value);
+        public static explicit operator int(HPOWERNOTIFY value) => (int)(value.Value);
 
-        public static implicit operator uint(HPOWERNOTIFY value) => (uint)(value.Value);
+        public static explicit operator uint(HPOWERNOTIFY value) => (uint)(value.Value);
 
         public static implicit operator nint(HPOWERNOTIFY value) => (nint)(value.Value);
 

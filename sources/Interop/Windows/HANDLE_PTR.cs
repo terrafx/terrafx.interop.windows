@@ -47,9 +47,9 @@ namespace TerraFX.Interop
 
         public static explicit operator HANDLE_PTR(void* value) => new HANDLE_PTR(value);
 
-        public static implicit operator int(HANDLE_PTR value) => (int)(value.Value);
+        public static explicit operator int(HANDLE_PTR value) => (int)(value.Value);
 
-        public static implicit operator uint(HANDLE_PTR value) => (uint)(value.Value);
+        public static explicit operator uint(HANDLE_PTR value) => (uint)(value.Value);
 
         public static implicit operator nint(HANDLE_PTR value) => (nint)(value.Value);
 

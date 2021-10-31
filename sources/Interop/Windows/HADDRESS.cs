@@ -56,9 +56,9 @@ namespace TerraFX.Interop
 
         public static explicit operator HADDRESS(HANDLE value) => new HADDRESS(value);
 
-        public static implicit operator int(HADDRESS value) => (int)(value.Value);
+        public static explicit operator int(HADDRESS value) => (int)(value.Value);
 
-        public static implicit operator uint(HADDRESS value) => (uint)(value.Value);
+        public static explicit operator uint(HADDRESS value) => (uint)(value.Value);
 
         public static implicit operator nint(HADDRESS value) => (nint)(value.Value);
 

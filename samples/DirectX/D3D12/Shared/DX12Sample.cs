@@ -284,7 +284,7 @@ namespace TerraFX.Samples.DirectX.D3D12
             {
                 var fenceEvent = CreateEventW(lpEventAttributes: null, bManualReset: FALSE, bInitialState: FALSE, lpName: null);
 
-                if (fenceEvent == 0)
+                if (fenceEvent == HANDLE.NULL)
                 {
                     var hr = Marshal.GetHRForLastWin32Error();
                     Marshal.ThrowExceptionForHR(hr);

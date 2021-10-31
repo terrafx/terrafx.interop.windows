@@ -47,9 +47,9 @@ namespace TerraFX.Interop
 
         public static explicit operator PTP_POOL(void* value) => new PTP_POOL(value);
 
-        public static implicit operator int(PTP_POOL value) => (int)(value.Value);
+        public static explicit operator int(PTP_POOL value) => (int)(value.Value);
 
-        public static implicit operator uint(PTP_POOL value) => (uint)(value.Value);
+        public static explicit operator uint(PTP_POOL value) => (uint)(value.Value);
 
         public static implicit operator nint(PTP_POOL value) => (nint)(value.Value);
 

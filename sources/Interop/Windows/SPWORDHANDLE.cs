@@ -56,9 +56,9 @@ namespace TerraFX.Interop
 
         public static explicit operator SPWORDHANDLE(HANDLE value) => new SPWORDHANDLE(value);
 
-        public static implicit operator int(SPWORDHANDLE value) => (int)(value.Value);
+        public static explicit operator int(SPWORDHANDLE value) => (int)(value.Value);
 
-        public static implicit operator uint(SPWORDHANDLE value) => (uint)(value.Value);
+        public static explicit operator uint(SPWORDHANDLE value) => (uint)(value.Value);
 
         public static implicit operator nint(SPWORDHANDLE value) => (nint)(value.Value);
 

@@ -56,9 +56,9 @@ namespace TerraFX.Interop
 
         public static explicit operator HACMSTREAM(HANDLE value) => new HACMSTREAM(value);
 
-        public static implicit operator int(HACMSTREAM value) => (int)(value.Value);
+        public static explicit operator int(HACMSTREAM value) => (int)(value.Value);
 
-        public static implicit operator uint(HACMSTREAM value) => (uint)(value.Value);
+        public static explicit operator uint(HACMSTREAM value) => (uint)(value.Value);
 
         public static implicit operator nint(HACMSTREAM value) => (nint)(value.Value);
 

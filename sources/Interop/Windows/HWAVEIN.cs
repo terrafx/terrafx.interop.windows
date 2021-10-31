@@ -56,9 +56,9 @@ namespace TerraFX.Interop
 
         public static explicit operator HWAVEIN(HANDLE value) => new HWAVEIN(value);
 
-        public static implicit operator int(HWAVEIN value) => (int)(value.Value);
+        public static explicit operator int(HWAVEIN value) => (int)(value.Value);
 
-        public static implicit operator uint(HWAVEIN value) => (uint)(value.Value);
+        public static explicit operator uint(HWAVEIN value) => (uint)(value.Value);
 
         public static implicit operator nint(HWAVEIN value) => (nint)(value.Value);
 

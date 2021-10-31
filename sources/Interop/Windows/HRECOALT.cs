@@ -56,9 +56,9 @@ namespace TerraFX.Interop
 
         public static explicit operator HRECOALT(HANDLE value) => new HRECOALT(value);
 
-        public static implicit operator int(HRECOALT value) => (int)(value.Value);
+        public static explicit operator int(HRECOALT value) => (int)(value.Value);
 
-        public static implicit operator uint(HRECOALT value) => (uint)(value.Value);
+        public static explicit operator uint(HRECOALT value) => (uint)(value.Value);
 
         public static implicit operator nint(HRECOALT value) => (nint)(value.Value);
 

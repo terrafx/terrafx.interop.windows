@@ -56,9 +56,9 @@ namespace TerraFX.Interop
 
         public static explicit operator HMONITOR(HANDLE value) => new HMONITOR(value);
 
-        public static implicit operator int(HMONITOR value) => (int)(value.Value);
+        public static explicit operator int(HMONITOR value) => (int)(value.Value);
 
-        public static implicit operator uint(HMONITOR value) => (uint)(value.Value);
+        public static explicit operator uint(HMONITOR value) => (uint)(value.Value);
 
         public static implicit operator nint(HMONITOR value) => (nint)(value.Value);
 

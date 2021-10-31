@@ -56,9 +56,9 @@ namespace TerraFX.Interop
 
         public static explicit operator HHEADERROW(HANDLE value) => new HHEADERROW(value);
 
-        public static implicit operator int(HHEADERROW value) => (int)(value.Value);
+        public static explicit operator int(HHEADERROW value) => (int)(value.Value);
 
-        public static implicit operator uint(HHEADERROW value) => (uint)(value.Value);
+        public static explicit operator uint(HHEADERROW value) => (uint)(value.Value);
 
         public static implicit operator nint(HHEADERROW value) => (nint)(value.Value);
 

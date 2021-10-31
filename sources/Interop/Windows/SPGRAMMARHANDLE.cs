@@ -56,9 +56,9 @@ namespace TerraFX.Interop
 
         public static explicit operator SPGRAMMARHANDLE(HANDLE value) => new SPGRAMMARHANDLE(value);
 
-        public static implicit operator int(SPGRAMMARHANDLE value) => (int)(value.Value);
+        public static explicit operator int(SPGRAMMARHANDLE value) => (int)(value.Value);
 
-        public static implicit operator uint(SPGRAMMARHANDLE value) => (uint)(value.Value);
+        public static explicit operator uint(SPGRAMMARHANDLE value) => (uint)(value.Value);
 
         public static implicit operator nint(SPGRAMMARHANDLE value) => (nint)(value.Value);
 

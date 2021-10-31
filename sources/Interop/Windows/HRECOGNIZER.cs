@@ -56,9 +56,9 @@ namespace TerraFX.Interop
 
         public static explicit operator HRECOGNIZER(HANDLE value) => new HRECOGNIZER(value);
 
-        public static implicit operator int(HRECOGNIZER value) => (int)(value.Value);
+        public static explicit operator int(HRECOGNIZER value) => (int)(value.Value);
 
-        public static implicit operator uint(HRECOGNIZER value) => (uint)(value.Value);
+        public static explicit operator uint(HRECOGNIZER value) => (uint)(value.Value);
 
         public static implicit operator nint(HRECOGNIZER value) => (nint)(value.Value);
 

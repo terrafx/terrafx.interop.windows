@@ -56,9 +56,9 @@ namespace TerraFX.Interop
 
         public static explicit operator HSWDEVICE(HANDLE value) => new HSWDEVICE(value);
 
-        public static implicit operator int(HSWDEVICE value) => (int)(value.Value);
+        public static explicit operator int(HSWDEVICE value) => (int)(value.Value);
 
-        public static implicit operator uint(HSWDEVICE value) => (uint)(value.Value);
+        public static explicit operator uint(HSWDEVICE value) => (uint)(value.Value);
 
         public static implicit operator nint(HSWDEVICE value) => (nint)(value.Value);
 

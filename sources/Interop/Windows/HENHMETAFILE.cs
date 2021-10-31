@@ -56,9 +56,9 @@ namespace TerraFX.Interop
 
         public static explicit operator HENHMETAFILE(HANDLE value) => new HENHMETAFILE(value);
 
-        public static implicit operator int(HENHMETAFILE value) => (int)(value.Value);
+        public static explicit operator int(HENHMETAFILE value) => (int)(value.Value);
 
-        public static implicit operator uint(HENHMETAFILE value) => (uint)(value.Value);
+        public static explicit operator uint(HENHMETAFILE value) => (uint)(value.Value);
 
         public static implicit operator nint(HENHMETAFILE value) => (nint)(value.Value);
 

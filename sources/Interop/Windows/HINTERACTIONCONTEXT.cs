@@ -56,9 +56,9 @@ namespace TerraFX.Interop
 
         public static explicit operator HINTERACTIONCONTEXT(HANDLE value) => new HINTERACTIONCONTEXT(value);
 
-        public static implicit operator int(HINTERACTIONCONTEXT value) => (int)(value.Value);
+        public static explicit operator int(HINTERACTIONCONTEXT value) => (int)(value.Value);
 
-        public static implicit operator uint(HINTERACTIONCONTEXT value) => (uint)(value.Value);
+        public static explicit operator uint(HINTERACTIONCONTEXT value) => (uint)(value.Value);
 
         public static implicit operator nint(HINTERACTIONCONTEXT value) => (nint)(value.Value);
 

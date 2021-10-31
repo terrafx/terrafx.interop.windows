@@ -47,9 +47,9 @@ namespace TerraFX.Interop
 
         public static explicit operator HPCON(void* value) => new HPCON(value);
 
-        public static implicit operator int(HPCON value) => (int)(value.Value);
+        public static explicit operator int(HPCON value) => (int)(value.Value);
 
-        public static implicit operator uint(HPCON value) => (uint)(value.Value);
+        public static explicit operator uint(HPCON value) => (uint)(value.Value);
 
         public static implicit operator nint(HPCON value) => (nint)(value.Value);
 

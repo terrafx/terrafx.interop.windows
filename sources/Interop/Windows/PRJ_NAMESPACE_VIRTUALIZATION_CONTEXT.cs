@@ -56,9 +56,9 @@ namespace TerraFX.Interop
 
         public static explicit operator PRJ_NAMESPACE_VIRTUALIZATION_CONTEXT(HANDLE value) => new PRJ_NAMESPACE_VIRTUALIZATION_CONTEXT(value);
 
-        public static implicit operator int(PRJ_NAMESPACE_VIRTUALIZATION_CONTEXT value) => (int)(value.Value);
+        public static explicit operator int(PRJ_NAMESPACE_VIRTUALIZATION_CONTEXT value) => (int)(value.Value);
 
-        public static implicit operator uint(PRJ_NAMESPACE_VIRTUALIZATION_CONTEXT value) => (uint)(value.Value);
+        public static explicit operator uint(PRJ_NAMESPACE_VIRTUALIZATION_CONTEXT value) => (uint)(value.Value);
 
         public static implicit operator nint(PRJ_NAMESPACE_VIRTUALIZATION_CONTEXT value) => (nint)(value.Value);
 

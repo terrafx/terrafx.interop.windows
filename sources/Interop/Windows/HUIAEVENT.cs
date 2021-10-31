@@ -56,9 +56,9 @@ namespace TerraFX.Interop
 
         public static explicit operator HUIAEVENT(HANDLE value) => new HUIAEVENT(value);
 
-        public static implicit operator int(HUIAEVENT value) => (int)(value.Value);
+        public static explicit operator int(HUIAEVENT value) => (int)(value.Value);
 
-        public static implicit operator uint(HUIAEVENT value) => (uint)(value.Value);
+        public static explicit operator uint(HUIAEVENT value) => (uint)(value.Value);
 
         public static implicit operator nint(HUIAEVENT value) => (nint)(value.Value);
 

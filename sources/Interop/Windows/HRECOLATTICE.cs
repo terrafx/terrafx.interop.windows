@@ -56,9 +56,9 @@ namespace TerraFX.Interop
 
         public static explicit operator HRECOLATTICE(HANDLE value) => new HRECOLATTICE(value);
 
-        public static implicit operator int(HRECOLATTICE value) => (int)(value.Value);
+        public static explicit operator int(HRECOLATTICE value) => (int)(value.Value);
 
-        public static implicit operator uint(HRECOLATTICE value) => (uint)(value.Value);
+        public static explicit operator uint(HRECOLATTICE value) => (uint)(value.Value);
 
         public static implicit operator nint(HRECOLATTICE value) => (nint)(value.Value);
 

@@ -47,9 +47,9 @@ namespace TerraFX.Interop
 
         public static explicit operator HSPFILEQ(void* value) => new HSPFILEQ(value);
 
-        public static implicit operator int(HSPFILEQ value) => (int)(value.Value);
+        public static explicit operator int(HSPFILEQ value) => (int)(value.Value);
 
-        public static implicit operator uint(HSPFILEQ value) => (uint)(value.Value);
+        public static explicit operator uint(HSPFILEQ value) => (uint)(value.Value);
 
         public static implicit operator nint(HSPFILEQ value) => (nint)(value.Value);
 

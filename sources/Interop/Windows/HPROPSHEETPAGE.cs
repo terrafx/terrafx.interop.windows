@@ -47,9 +47,9 @@ namespace TerraFX.Interop
 
         public static explicit operator HPROPSHEETPAGE(void* value) => new HPROPSHEETPAGE(value);
 
-        public static implicit operator int(HPROPSHEETPAGE value) => (int)(value.Value);
+        public static explicit operator int(HPROPSHEETPAGE value) => (int)(value.Value);
 
-        public static implicit operator uint(HPROPSHEETPAGE value) => (uint)(value.Value);
+        public static explicit operator uint(HPROPSHEETPAGE value) => (uint)(value.Value);
 
         public static implicit operator nint(HPROPSHEETPAGE value) => (nint)(value.Value);
 

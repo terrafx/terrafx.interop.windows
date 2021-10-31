@@ -56,9 +56,9 @@ namespace TerraFX.Interop
 
         public static explicit operator HMODULE(HANDLE value) => new HMODULE(value);
 
-        public static implicit operator int(HMODULE value) => (int)(value.Value);
+        public static explicit operator int(HMODULE value) => (int)(value.Value);
 
-        public static implicit operator uint(HMODULE value) => (uint)(value.Value);
+        public static explicit operator uint(HMODULE value) => (uint)(value.Value);
 
         public static implicit operator nint(HMODULE value) => (nint)(value.Value);
 

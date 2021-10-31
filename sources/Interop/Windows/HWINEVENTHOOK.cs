@@ -56,9 +56,9 @@ namespace TerraFX.Interop
 
         public static explicit operator HWINEVENTHOOK(HANDLE value) => new HWINEVENTHOOK(value);
 
-        public static implicit operator int(HWINEVENTHOOK value) => (int)(value.Value);
+        public static explicit operator int(HWINEVENTHOOK value) => (int)(value.Value);
 
-        public static implicit operator uint(HWINEVENTHOOK value) => (uint)(value.Value);
+        public static explicit operator uint(HWINEVENTHOOK value) => (uint)(value.Value);
 
         public static implicit operator nint(HWINEVENTHOOK value) => (nint)(value.Value);
 

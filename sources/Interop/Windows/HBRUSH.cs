@@ -56,9 +56,9 @@ namespace TerraFX.Interop
 
         public static explicit operator HBRUSH(HANDLE value) => new HBRUSH(value);
 
-        public static implicit operator int(HBRUSH value) => (int)(value.Value);
+        public static explicit operator int(HBRUSH value) => (int)(value.Value);
 
-        public static implicit operator uint(HBRUSH value) => (uint)(value.Value);
+        public static explicit operator uint(HBRUSH value) => (uint)(value.Value);
 
         public static implicit operator nint(HBRUSH value) => (nint)(value.Value);
 

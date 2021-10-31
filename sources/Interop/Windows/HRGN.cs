@@ -56,9 +56,9 @@ namespace TerraFX.Interop
 
         public static explicit operator HRGN(HANDLE value) => new HRGN(value);
 
-        public static implicit operator int(HRGN value) => (int)(value.Value);
+        public static explicit operator int(HRGN value) => (int)(value.Value);
 
-        public static implicit operator uint(HRGN value) => (uint)(value.Value);
+        public static explicit operator uint(HRGN value) => (uint)(value.Value);
 
         public static implicit operator nint(HRGN value) => (nint)(value.Value);
 

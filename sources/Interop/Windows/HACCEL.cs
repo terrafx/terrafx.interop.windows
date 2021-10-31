@@ -56,9 +56,9 @@ namespace TerraFX.Interop
 
         public static explicit operator HACCEL(HANDLE value) => new HACCEL(value);
 
-        public static implicit operator int(HACCEL value) => (int)(value.Value);
+        public static explicit operator int(HACCEL value) => (int)(value.Value);
 
-        public static implicit operator uint(HACCEL value) => (uint)(value.Value);
+        public static explicit operator uint(HACCEL value) => (uint)(value.Value);
 
         public static implicit operator nint(HACCEL value) => (nint)(value.Value);
 

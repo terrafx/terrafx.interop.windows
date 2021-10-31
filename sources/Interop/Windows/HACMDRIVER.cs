@@ -56,9 +56,9 @@ namespace TerraFX.Interop
 
         public static explicit operator HACMDRIVER(HANDLE value) => new HACMDRIVER(value);
 
-        public static implicit operator int(HACMDRIVER value) => (int)(value.Value);
+        public static explicit operator int(HACMDRIVER value) => (int)(value.Value);
 
-        public static implicit operator uint(HACMDRIVER value) => (uint)(value.Value);
+        public static explicit operator uint(HACMDRIVER value) => (uint)(value.Value);
 
         public static implicit operator nint(HACMDRIVER value) => (nint)(value.Value);
 

@@ -56,9 +56,9 @@ namespace TerraFX.Interop
 
         public static explicit operator HCOLORSPACE(HANDLE value) => new HCOLORSPACE(value);
 
-        public static implicit operator int(HCOLORSPACE value) => (int)(value.Value);
+        public static explicit operator int(HCOLORSPACE value) => (int)(value.Value);
 
-        public static implicit operator uint(HCOLORSPACE value) => (uint)(value.Value);
+        public static explicit operator uint(HCOLORSPACE value) => (uint)(value.Value);
 
         public static implicit operator nint(HCOLORSPACE value) => (nint)(value.Value);
 

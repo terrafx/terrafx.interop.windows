@@ -56,9 +56,9 @@ namespace TerraFX.Interop
 
         public static explicit operator HWND(HANDLE value) => new HWND(value);
 
-        public static implicit operator int(HWND value) => (int)(value.Value);
+        public static explicit operator int(HWND value) => (int)(value.Value);
 
-        public static implicit operator uint(HWND value) => (uint)(value.Value);
+        public static explicit operator uint(HWND value) => (uint)(value.Value);
 
         public static implicit operator nint(HWND value) => (nint)(value.Value);
 

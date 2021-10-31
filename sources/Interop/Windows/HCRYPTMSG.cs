@@ -47,9 +47,9 @@ namespace TerraFX.Interop
 
         public static explicit operator HCRYPTMSG(void* value) => new HCRYPTMSG(value);
 
-        public static implicit operator int(HCRYPTMSG value) => (int)(value.Value);
+        public static explicit operator int(HCRYPTMSG value) => (int)(value.Value);
 
-        public static implicit operator uint(HCRYPTMSG value) => (uint)(value.Value);
+        public static explicit operator uint(HCRYPTMSG value) => (uint)(value.Value);
 
         public static implicit operator nint(HCRYPTMSG value) => (nint)(value.Value);
 

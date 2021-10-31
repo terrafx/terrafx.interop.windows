@@ -56,9 +56,9 @@ namespace TerraFX.Interop
 
         public static explicit operator HPEN(HANDLE value) => new HPEN(value);
 
-        public static implicit operator int(HPEN value) => (int)(value.Value);
+        public static explicit operator int(HPEN value) => (int)(value.Value);
 
-        public static implicit operator uint(HPEN value) => (uint)(value.Value);
+        public static explicit operator uint(HPEN value) => (uint)(value.Value);
 
         public static implicit operator nint(HPEN value) => (nint)(value.Value);
 

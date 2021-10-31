@@ -47,9 +47,9 @@ namespace TerraFX.Interop
 
         public static explicit operator HDEVNOTIFY(void* value) => new HDEVNOTIFY(value);
 
-        public static implicit operator int(HDEVNOTIFY value) => (int)(value.Value);
+        public static explicit operator int(HDEVNOTIFY value) => (int)(value.Value);
 
-        public static implicit operator uint(HDEVNOTIFY value) => (uint)(value.Value);
+        public static explicit operator uint(HDEVNOTIFY value) => (uint)(value.Value);
 
         public static implicit operator nint(HDEVNOTIFY value) => (nint)(value.Value);
 

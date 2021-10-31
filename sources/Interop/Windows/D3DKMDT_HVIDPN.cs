@@ -56,9 +56,9 @@ namespace TerraFX.Interop
 
         public static explicit operator D3DKMDT_HVIDPN(HANDLE value) => new D3DKMDT_HVIDPN(value);
 
-        public static implicit operator int(D3DKMDT_HVIDPN value) => (int)(value.Value);
+        public static explicit operator int(D3DKMDT_HVIDPN value) => (int)(value.Value);
 
-        public static implicit operator uint(D3DKMDT_HVIDPN value) => (uint)(value.Value);
+        public static explicit operator uint(D3DKMDT_HVIDPN value) => (uint)(value.Value);
 
         public static implicit operator nint(D3DKMDT_HVIDPN value) => (nint)(value.Value);
 

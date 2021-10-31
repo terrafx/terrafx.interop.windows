@@ -56,9 +56,9 @@ namespace TerraFX.Interop
 
         public static explicit operator HBODY(HANDLE value) => new HBODY(value);
 
-        public static implicit operator int(HBODY value) => (int)(value.Value);
+        public static explicit operator int(HBODY value) => (int)(value.Value);
 
-        public static implicit operator uint(HBODY value) => (uint)(value.Value);
+        public static explicit operator uint(HBODY value) => (uint)(value.Value);
 
         public static implicit operator nint(HBODY value) => (nint)(value.Value);
 

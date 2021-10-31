@@ -56,9 +56,9 @@ namespace TerraFX.Interop
 
         public static explicit operator HSEMAPHORE(HANDLE value) => new HSEMAPHORE(value);
 
-        public static implicit operator int(HSEMAPHORE value) => (int)(value.Value);
+        public static explicit operator int(HSEMAPHORE value) => (int)(value.Value);
 
-        public static implicit operator uint(HSEMAPHORE value) => (uint)(value.Value);
+        public static explicit operator uint(HSEMAPHORE value) => (uint)(value.Value);
 
         public static implicit operator nint(HSEMAPHORE value) => (nint)(value.Value);
 

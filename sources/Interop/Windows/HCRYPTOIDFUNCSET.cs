@@ -47,9 +47,9 @@ namespace TerraFX.Interop
 
         public static explicit operator HCRYPTOIDFUNCSET(void* value) => new HCRYPTOIDFUNCSET(value);
 
-        public static implicit operator int(HCRYPTOIDFUNCSET value) => (int)(value.Value);
+        public static explicit operator int(HCRYPTOIDFUNCSET value) => (int)(value.Value);
 
-        public static implicit operator uint(HCRYPTOIDFUNCSET value) => (uint)(value.Value);
+        public static explicit operator uint(HCRYPTOIDFUNCSET value) => (uint)(value.Value);
 
         public static implicit operator nint(HCRYPTOIDFUNCSET value) => (nint)(value.Value);
 

@@ -47,9 +47,9 @@ namespace TerraFX.Interop
 
         public static explicit operator HCERTSTOREPROV(void* value) => new HCERTSTOREPROV(value);
 
-        public static implicit operator int(HCERTSTOREPROV value) => (int)(value.Value);
+        public static explicit operator int(HCERTSTOREPROV value) => (int)(value.Value);
 
-        public static implicit operator uint(HCERTSTOREPROV value) => (uint)(value.Value);
+        public static explicit operator uint(HCERTSTOREPROV value) => (uint)(value.Value);
 
         public static implicit operator nint(HCERTSTOREPROV value) => (nint)(value.Value);
 

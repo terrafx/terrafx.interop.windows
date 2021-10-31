@@ -56,9 +56,9 @@ namespace TerraFX.Interop
 
         public static explicit operator HKL(HANDLE value) => new HKL(value);
 
-        public static implicit operator int(HKL value) => (int)(value.Value);
+        public static explicit operator int(HKL value) => (int)(value.Value);
 
-        public static implicit operator uint(HKL value) => (uint)(value.Value);
+        public static explicit operator uint(HKL value) => (uint)(value.Value);
 
         public static implicit operator nint(HKL value) => (nint)(value.Value);
 

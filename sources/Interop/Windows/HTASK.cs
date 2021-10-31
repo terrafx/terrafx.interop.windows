@@ -56,9 +56,9 @@ namespace TerraFX.Interop
 
         public static explicit operator HTASK(HANDLE value) => new HTASK(value);
 
-        public static implicit operator int(HTASK value) => (int)(value.Value);
+        public static explicit operator int(HTASK value) => (int)(value.Value);
 
-        public static implicit operator uint(HTASK value) => (uint)(value.Value);
+        public static explicit operator uint(HTASK value) => (uint)(value.Value);
 
         public static implicit operator nint(HTASK value) => (nint)(value.Value);
 

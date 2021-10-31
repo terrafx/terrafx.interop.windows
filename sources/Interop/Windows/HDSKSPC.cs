@@ -47,9 +47,9 @@ namespace TerraFX.Interop
 
         public static explicit operator HDSKSPC(void* value) => new HDSKSPC(value);
 
-        public static implicit operator int(HDSKSPC value) => (int)(value.Value);
+        public static explicit operator int(HDSKSPC value) => (int)(value.Value);
 
-        public static implicit operator uint(HDSKSPC value) => (uint)(value.Value);
+        public static explicit operator uint(HDSKSPC value) => (uint)(value.Value);
 
         public static implicit operator nint(HDSKSPC value) => (nint)(value.Value);
 

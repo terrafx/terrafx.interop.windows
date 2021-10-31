@@ -56,9 +56,9 @@ namespace TerraFX.Interop
 
         public static explicit operator HMETAFILEPICT(HANDLE value) => new HMETAFILEPICT(value);
 
-        public static implicit operator int(HMETAFILEPICT value) => (int)(value.Value);
+        public static explicit operator int(HMETAFILEPICT value) => (int)(value.Value);
 
-        public static implicit operator uint(HMETAFILEPICT value) => (uint)(value.Value);
+        public static explicit operator uint(HMETAFILEPICT value) => (uint)(value.Value);
 
         public static implicit operator nint(HMETAFILEPICT value) => (nint)(value.Value);
 

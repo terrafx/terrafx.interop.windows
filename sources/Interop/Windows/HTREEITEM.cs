@@ -47,9 +47,9 @@ namespace TerraFX.Interop
 
         public static explicit operator HTREEITEM(void* value) => new HTREEITEM(value);
 
-        public static implicit operator int(HTREEITEM value) => (int)(value.Value);
+        public static explicit operator int(HTREEITEM value) => (int)(value.Value);
 
-        public static implicit operator uint(HTREEITEM value) => (uint)(value.Value);
+        public static explicit operator uint(HTREEITEM value) => (uint)(value.Value);
 
         public static implicit operator nint(HTREEITEM value) => (nint)(value.Value);
 

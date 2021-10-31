@@ -47,9 +47,9 @@ namespace TerraFX.Interop
 
         public static explicit operator PAPPCONSTRAIN_REGISTRATION(void* value) => new PAPPCONSTRAIN_REGISTRATION(value);
 
-        public static implicit operator int(PAPPCONSTRAIN_REGISTRATION value) => (int)(value.Value);
+        public static explicit operator int(PAPPCONSTRAIN_REGISTRATION value) => (int)(value.Value);
 
-        public static implicit operator uint(PAPPCONSTRAIN_REGISTRATION value) => (uint)(value.Value);
+        public static explicit operator uint(PAPPCONSTRAIN_REGISTRATION value) => (uint)(value.Value);
 
         public static implicit operator nint(PAPPCONSTRAIN_REGISTRATION value) => (nint)(value.Value);
 

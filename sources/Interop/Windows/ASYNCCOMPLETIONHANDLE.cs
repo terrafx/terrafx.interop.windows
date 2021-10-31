@@ -47,9 +47,9 @@ namespace TerraFX.Interop
 
         public static explicit operator ASYNCCOMPLETIONHANDLE(void* value) => new ASYNCCOMPLETIONHANDLE(value);
 
-        public static implicit operator int(ASYNCCOMPLETIONHANDLE value) => (int)(value.Value);
+        public static explicit operator int(ASYNCCOMPLETIONHANDLE value) => (int)(value.Value);
 
-        public static implicit operator uint(ASYNCCOMPLETIONHANDLE value) => (uint)(value.Value);
+        public static explicit operator uint(ASYNCCOMPLETIONHANDLE value) => (uint)(value.Value);
 
         public static implicit operator nint(ASYNCCOMPLETIONHANDLE value) => (nint)(value.Value);
 

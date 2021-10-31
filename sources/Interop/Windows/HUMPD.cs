@@ -56,9 +56,9 @@ namespace TerraFX.Interop
 
         public static explicit operator HUMPD(HANDLE value) => new HUMPD(value);
 
-        public static implicit operator int(HUMPD value) => (int)(value.Value);
+        public static explicit operator int(HUMPD value) => (int)(value.Value);
 
-        public static implicit operator uint(HUMPD value) => (uint)(value.Value);
+        public static explicit operator uint(HUMPD value) => (uint)(value.Value);
 
         public static implicit operator nint(HUMPD value) => (nint)(value.Value);
 

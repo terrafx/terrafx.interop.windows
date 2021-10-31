@@ -56,9 +56,9 @@ namespace TerraFX.Interop
 
         public static explicit operator HDRVOBJ(HANDLE value) => new HDRVOBJ(value);
 
-        public static implicit operator int(HDRVOBJ value) => (int)(value.Value);
+        public static explicit operator int(HDRVOBJ value) => (int)(value.Value);
 
-        public static implicit operator uint(HDRVOBJ value) => (uint)(value.Value);
+        public static explicit operator uint(HDRVOBJ value) => (uint)(value.Value);
 
         public static implicit operator nint(HDRVOBJ value) => (nint)(value.Value);
 

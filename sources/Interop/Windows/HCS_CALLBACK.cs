@@ -56,9 +56,9 @@ namespace TerraFX.Interop
 
         public static explicit operator HCS_CALLBACK(HANDLE value) => new HCS_CALLBACK(value);
 
-        public static implicit operator int(HCS_CALLBACK value) => (int)(value.Value);
+        public static explicit operator int(HCS_CALLBACK value) => (int)(value.Value);
 
-        public static implicit operator uint(HCS_CALLBACK value) => (uint)(value.Value);
+        public static explicit operator uint(HCS_CALLBACK value) => (uint)(value.Value);
 
         public static implicit operator nint(HCS_CALLBACK value) => (nint)(value.Value);
 

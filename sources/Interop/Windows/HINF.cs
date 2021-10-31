@@ -47,9 +47,9 @@ namespace TerraFX.Interop
 
         public static explicit operator HINF(void* value) => new HINF(value);
 
-        public static implicit operator int(HINF value) => (int)(value.Value);
+        public static explicit operator int(HINF value) => (int)(value.Value);
 
-        public static implicit operator uint(HINF value) => (uint)(value.Value);
+        public static explicit operator uint(HINF value) => (uint)(value.Value);
 
         public static implicit operator nint(HINF value) => (nint)(value.Value);
 

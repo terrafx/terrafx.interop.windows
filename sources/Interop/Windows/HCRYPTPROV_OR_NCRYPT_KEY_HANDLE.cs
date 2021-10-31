@@ -47,9 +47,9 @@ namespace TerraFX.Interop
 
         public static explicit operator HCRYPTPROV_OR_NCRYPT_KEY_HANDLE(void* value) => new HCRYPTPROV_OR_NCRYPT_KEY_HANDLE(value);
 
-        public static implicit operator int(HCRYPTPROV_OR_NCRYPT_KEY_HANDLE value) => (int)(value.Value);
+        public static explicit operator int(HCRYPTPROV_OR_NCRYPT_KEY_HANDLE value) => (int)(value.Value);
 
-        public static implicit operator uint(HCRYPTPROV_OR_NCRYPT_KEY_HANDLE value) => (uint)(value.Value);
+        public static explicit operator uint(HCRYPTPROV_OR_NCRYPT_KEY_HANDLE value) => (uint)(value.Value);
 
         public static implicit operator nint(HCRYPTPROV_OR_NCRYPT_KEY_HANDLE value) => (nint)(value.Value);
 

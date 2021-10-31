@@ -56,9 +56,9 @@ namespace TerraFX.Interop
 
         public static explicit operator SPSTATEHANDLE(HANDLE value) => new SPSTATEHANDLE(value);
 
-        public static implicit operator int(SPSTATEHANDLE value) => (int)(value.Value);
+        public static explicit operator int(SPSTATEHANDLE value) => (int)(value.Value);
 
-        public static implicit operator uint(SPSTATEHANDLE value) => (uint)(value.Value);
+        public static explicit operator uint(SPSTATEHANDLE value) => (uint)(value.Value);
 
         public static implicit operator nint(SPSTATEHANDLE value) => (nint)(value.Value);
 

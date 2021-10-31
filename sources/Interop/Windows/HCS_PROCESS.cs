@@ -56,9 +56,9 @@ namespace TerraFX.Interop
 
         public static explicit operator HCS_PROCESS(HANDLE value) => new HCS_PROCESS(value);
 
-        public static implicit operator int(HCS_PROCESS value) => (int)(value.Value);
+        public static explicit operator int(HCS_PROCESS value) => (int)(value.Value);
 
-        public static implicit operator uint(HCS_PROCESS value) => (uint)(value.Value);
+        public static explicit operator uint(HCS_PROCESS value) => (uint)(value.Value);
 
         public static implicit operator nint(HCS_PROCESS value) => (nint)(value.Value);
 

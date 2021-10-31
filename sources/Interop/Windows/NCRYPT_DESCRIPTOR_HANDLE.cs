@@ -56,9 +56,9 @@ namespace TerraFX.Interop
 
         public static explicit operator NCRYPT_DESCRIPTOR_HANDLE(HANDLE value) => new NCRYPT_DESCRIPTOR_HANDLE(value);
 
-        public static implicit operator int(NCRYPT_DESCRIPTOR_HANDLE value) => (int)(value.Value);
+        public static explicit operator int(NCRYPT_DESCRIPTOR_HANDLE value) => (int)(value.Value);
 
-        public static implicit operator uint(NCRYPT_DESCRIPTOR_HANDLE value) => (uint)(value.Value);
+        public static explicit operator uint(NCRYPT_DESCRIPTOR_HANDLE value) => (uint)(value.Value);
 
         public static implicit operator nint(NCRYPT_DESCRIPTOR_HANDLE value) => (nint)(value.Value);
 

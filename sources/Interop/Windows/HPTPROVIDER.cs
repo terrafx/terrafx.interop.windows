@@ -56,9 +56,9 @@ namespace TerraFX.Interop
 
         public static explicit operator HPTPROVIDER(HANDLE value) => new HPTPROVIDER(value);
 
-        public static implicit operator int(HPTPROVIDER value) => (int)(value.Value);
+        public static explicit operator int(HPTPROVIDER value) => (int)(value.Value);
 
-        public static implicit operator uint(HPTPROVIDER value) => (uint)(value.Value);
+        public static explicit operator uint(HPTPROVIDER value) => (uint)(value.Value);
 
         public static implicit operator nint(HPTPROVIDER value) => (nint)(value.Value);
 

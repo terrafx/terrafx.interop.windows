@@ -56,9 +56,9 @@ namespace TerraFX.Interop
 
         public static explicit operator HCOMDB(HANDLE value) => new HCOMDB(value);
 
-        public static implicit operator int(HCOMDB value) => (int)(value.Value);
+        public static explicit operator int(HCOMDB value) => (int)(value.Value);
 
-        public static implicit operator uint(HCOMDB value) => (uint)(value.Value);
+        public static explicit operator uint(HCOMDB value) => (uint)(value.Value);
 
         public static implicit operator nint(HCOMDB value) => (nint)(value.Value);
 

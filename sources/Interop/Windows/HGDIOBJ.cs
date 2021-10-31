@@ -56,9 +56,9 @@ namespace TerraFX.Interop
 
         public static explicit operator HGDIOBJ(HANDLE value) => new HGDIOBJ(value);
 
-        public static implicit operator int(HGDIOBJ value) => (int)(value.Value);
+        public static explicit operator int(HGDIOBJ value) => (int)(value.Value);
 
-        public static implicit operator uint(HGDIOBJ value) => (uint)(value.Value);
+        public static explicit operator uint(HGDIOBJ value) => (uint)(value.Value);
 
         public static implicit operator nint(HGDIOBJ value) => (nint)(value.Value);
 

@@ -56,9 +56,9 @@ namespace TerraFX.Interop
 
         public static explicit operator CO_MTA_USAGE_COOKIE(HANDLE value) => new CO_MTA_USAGE_COOKIE(value);
 
-        public static implicit operator int(CO_MTA_USAGE_COOKIE value) => (int)(value.Value);
+        public static explicit operator int(CO_MTA_USAGE_COOKIE value) => (int)(value.Value);
 
-        public static implicit operator uint(CO_MTA_USAGE_COOKIE value) => (uint)(value.Value);
+        public static explicit operator uint(CO_MTA_USAGE_COOKIE value) => (uint)(value.Value);
 
         public static implicit operator nint(CO_MTA_USAGE_COOKIE value) => (nint)(value.Value);
 

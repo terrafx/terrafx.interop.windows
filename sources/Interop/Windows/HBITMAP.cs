@@ -56,9 +56,9 @@ namespace TerraFX.Interop
 
         public static explicit operator HBITMAP(HANDLE value) => new HBITMAP(value);
 
-        public static implicit operator int(HBITMAP value) => (int)(value.Value);
+        public static explicit operator int(HBITMAP value) => (int)(value.Value);
 
-        public static implicit operator uint(HBITMAP value) => (uint)(value.Value);
+        public static explicit operator uint(HBITMAP value) => (uint)(value.Value);
 
         public static implicit operator nint(HBITMAP value) => (nint)(value.Value);
 

@@ -56,9 +56,9 @@ namespace TerraFX.Interop
 
         public static explicit operator WEB_SOCKET_HANDLE(HANDLE value) => new WEB_SOCKET_HANDLE(value);
 
-        public static implicit operator int(WEB_SOCKET_HANDLE value) => (int)(value.Value);
+        public static explicit operator int(WEB_SOCKET_HANDLE value) => (int)(value.Value);
 
-        public static implicit operator uint(WEB_SOCKET_HANDLE value) => (uint)(value.Value);
+        public static explicit operator uint(WEB_SOCKET_HANDLE value) => (uint)(value.Value);
 
         public static implicit operator nint(WEB_SOCKET_HANDLE value) => (nint)(value.Value);
 

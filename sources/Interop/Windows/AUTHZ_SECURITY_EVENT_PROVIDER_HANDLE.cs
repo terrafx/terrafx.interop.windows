@@ -56,9 +56,9 @@ namespace TerraFX.Interop
 
         public static explicit operator AUTHZ_SECURITY_EVENT_PROVIDER_HANDLE(HANDLE value) => new AUTHZ_SECURITY_EVENT_PROVIDER_HANDLE(value);
 
-        public static implicit operator int(AUTHZ_SECURITY_EVENT_PROVIDER_HANDLE value) => (int)(value.Value);
+        public static explicit operator int(AUTHZ_SECURITY_EVENT_PROVIDER_HANDLE value) => (int)(value.Value);
 
-        public static implicit operator uint(AUTHZ_SECURITY_EVENT_PROVIDER_HANDLE value) => (uint)(value.Value);
+        public static explicit operator uint(AUTHZ_SECURITY_EVENT_PROVIDER_HANDLE value) => (uint)(value.Value);
 
         public static implicit operator nint(AUTHZ_SECURITY_EVENT_PROVIDER_HANDLE value) => (nint)(value.Value);
 

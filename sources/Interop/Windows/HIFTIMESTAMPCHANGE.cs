@@ -56,9 +56,9 @@ namespace TerraFX.Interop
 
         public static explicit operator HIFTIMESTAMPCHANGE(HANDLE value) => new HIFTIMESTAMPCHANGE(value);
 
-        public static implicit operator int(HIFTIMESTAMPCHANGE value) => (int)(value.Value);
+        public static explicit operator int(HIFTIMESTAMPCHANGE value) => (int)(value.Value);
 
-        public static implicit operator uint(HIFTIMESTAMPCHANGE value) => (uint)(value.Value);
+        public static explicit operator uint(HIFTIMESTAMPCHANGE value) => (uint)(value.Value);
 
         public static implicit operator nint(HIFTIMESTAMPCHANGE value) => (nint)(value.Value);
 

@@ -56,9 +56,9 @@ namespace TerraFX.Interop
 
         public static explicit operator DHPDEV(HANDLE value) => new DHPDEV(value);
 
-        public static implicit operator int(DHPDEV value) => (int)(value.Value);
+        public static explicit operator int(DHPDEV value) => (int)(value.Value);
 
-        public static implicit operator uint(DHPDEV value) => (uint)(value.Value);
+        public static explicit operator uint(DHPDEV value) => (uint)(value.Value);
 
         public static implicit operator nint(DHPDEV value) => (nint)(value.Value);
 

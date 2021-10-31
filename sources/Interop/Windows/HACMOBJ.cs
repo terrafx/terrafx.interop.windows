@@ -56,9 +56,9 @@ namespace TerraFX.Interop
 
         public static explicit operator HACMOBJ(HANDLE value) => new HACMOBJ(value);
 
-        public static implicit operator int(HACMOBJ value) => (int)(value.Value);
+        public static explicit operator int(HACMOBJ value) => (int)(value.Value);
 
-        public static implicit operator uint(HACMOBJ value) => (uint)(value.Value);
+        public static explicit operator uint(HACMOBJ value) => (uint)(value.Value);
 
         public static implicit operator nint(HACMOBJ value) => (nint)(value.Value);
 

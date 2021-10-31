@@ -56,9 +56,9 @@ namespace TerraFX.Interop
 
         public static explicit operator HICON(HANDLE value) => new HICON(value);
 
-        public static implicit operator int(HICON value) => (int)(value.Value);
+        public static explicit operator int(HICON value) => (int)(value.Value);
 
-        public static implicit operator uint(HICON value) => (uint)(value.Value);
+        public static explicit operator uint(HICON value) => (uint)(value.Value);
 
         public static implicit operator nint(HICON value) => (nint)(value.Value);
 

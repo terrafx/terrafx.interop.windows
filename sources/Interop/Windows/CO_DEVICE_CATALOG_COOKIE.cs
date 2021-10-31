@@ -56,9 +56,9 @@ namespace TerraFX.Interop
 
         public static explicit operator CO_DEVICE_CATALOG_COOKIE(HANDLE value) => new CO_DEVICE_CATALOG_COOKIE(value);
 
-        public static implicit operator int(CO_DEVICE_CATALOG_COOKIE value) => (int)(value.Value);
+        public static explicit operator int(CO_DEVICE_CATALOG_COOKIE value) => (int)(value.Value);
 
-        public static implicit operator uint(CO_DEVICE_CATALOG_COOKIE value) => (uint)(value.Value);
+        public static explicit operator uint(CO_DEVICE_CATALOG_COOKIE value) => (uint)(value.Value);
 
         public static implicit operator nint(CO_DEVICE_CATALOG_COOKIE value) => (nint)(value.Value);
 

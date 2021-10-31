@@ -56,9 +56,9 @@ namespace TerraFX.Interop
 
         public static explicit operator HCS_SYSTEM(HANDLE value) => new HCS_SYSTEM(value);
 
-        public static implicit operator int(HCS_SYSTEM value) => (int)(value.Value);
+        public static explicit operator int(HCS_SYSTEM value) => (int)(value.Value);
 
-        public static implicit operator uint(HCS_SYSTEM value) => (uint)(value.Value);
+        public static explicit operator uint(HCS_SYSTEM value) => (uint)(value.Value);
 
         public static implicit operator nint(HCS_SYSTEM value) => (nint)(value.Value);
 

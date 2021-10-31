@@ -47,9 +47,9 @@ namespace TerraFX.Interop
 
         public static explicit operator PTP_CALLBACK_INSTANCE(void* value) => new PTP_CALLBACK_INSTANCE(value);
 
-        public static implicit operator int(PTP_CALLBACK_INSTANCE value) => (int)(value.Value);
+        public static explicit operator int(PTP_CALLBACK_INSTANCE value) => (int)(value.Value);
 
-        public static implicit operator uint(PTP_CALLBACK_INSTANCE value) => (uint)(value.Value);
+        public static explicit operator uint(PTP_CALLBACK_INSTANCE value) => (uint)(value.Value);
 
         public static implicit operator nint(PTP_CALLBACK_INSTANCE value) => (nint)(value.Value);
 

@@ -56,9 +56,9 @@ namespace TerraFX.Interop
 
         public static explicit operator D3DKMDT_HVIDEOPRESENTTARGETSET(HANDLE value) => new D3DKMDT_HVIDEOPRESENTTARGETSET(value);
 
-        public static implicit operator int(D3DKMDT_HVIDEOPRESENTTARGETSET value) => (int)(value.Value);
+        public static explicit operator int(D3DKMDT_HVIDEOPRESENTTARGETSET value) => (int)(value.Value);
 
-        public static implicit operator uint(D3DKMDT_HVIDEOPRESENTTARGETSET value) => (uint)(value.Value);
+        public static explicit operator uint(D3DKMDT_HVIDEOPRESENTTARGETSET value) => (uint)(value.Value);
 
         public static implicit operator nint(D3DKMDT_HVIDEOPRESENTTARGETSET value) => (nint)(value.Value);
 

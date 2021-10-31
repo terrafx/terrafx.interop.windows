@@ -47,9 +47,9 @@ namespace TerraFX.Interop
 
         public static explicit operator HANDLE(void* value) => new HANDLE(value);
 
-        public static implicit operator int(HANDLE value) => (int)(value.Value);
+        public static explicit operator int(HANDLE value) => (int)(value.Value);
 
-        public static implicit operator uint(HANDLE value) => (uint)(value.Value);
+        public static explicit operator uint(HANDLE value) => (uint)(value.Value);
 
         public static implicit operator nint(HANDLE value) => (nint)(value.Value);
 

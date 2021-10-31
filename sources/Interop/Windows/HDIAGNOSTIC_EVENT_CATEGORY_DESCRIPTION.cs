@@ -56,9 +56,9 @@ namespace TerraFX.Interop
 
         public static explicit operator HDIAGNOSTIC_EVENT_CATEGORY_DESCRIPTION(HANDLE value) => new HDIAGNOSTIC_EVENT_CATEGORY_DESCRIPTION(value);
 
-        public static implicit operator int(HDIAGNOSTIC_EVENT_CATEGORY_DESCRIPTION value) => (int)(value.Value);
+        public static explicit operator int(HDIAGNOSTIC_EVENT_CATEGORY_DESCRIPTION value) => (int)(value.Value);
 
-        public static implicit operator uint(HDIAGNOSTIC_EVENT_CATEGORY_DESCRIPTION value) => (uint)(value.Value);
+        public static explicit operator uint(HDIAGNOSTIC_EVENT_CATEGORY_DESCRIPTION value) => (uint)(value.Value);
 
         public static implicit operator nint(HDIAGNOSTIC_EVENT_CATEGORY_DESCRIPTION value) => (nint)(value.Value);
 

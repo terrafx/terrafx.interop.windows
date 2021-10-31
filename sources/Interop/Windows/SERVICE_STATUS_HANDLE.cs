@@ -56,9 +56,9 @@ namespace TerraFX.Interop
 
         public static explicit operator SERVICE_STATUS_HANDLE(HANDLE value) => new SERVICE_STATUS_HANDLE(value);
 
-        public static implicit operator int(SERVICE_STATUS_HANDLE value) => (int)(value.Value);
+        public static explicit operator int(SERVICE_STATUS_HANDLE value) => (int)(value.Value);
 
-        public static implicit operator uint(SERVICE_STATUS_HANDLE value) => (uint)(value.Value);
+        public static explicit operator uint(SERVICE_STATUS_HANDLE value) => (uint)(value.Value);
 
         public static implicit operator nint(SERVICE_STATUS_HANDLE value) => (nint)(value.Value);
 
