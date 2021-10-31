@@ -23,7 +23,7 @@ namespace TerraFX.Interop
             CoTaskMemFree(pcci->pszAlternateName);
             CoTaskMemFree(pcci->pszLocationShort);
             CoTaskMemFree(pcci->pszLocationFull);
-            Unsafe.InitBlockUnaligned((pcci), 0, (unchecked((uint)(sizeof(CONFIRM_CONFLICT_ITEM)))));
+            Unsafe.InitBlockUnaligned((pcci), 0, ((uint)(sizeof(CONFIRM_CONFLICT_ITEM))));
         }
 
         [NativeTypeName("#define MAX_SYNCMGR_ID ( 64 )")]

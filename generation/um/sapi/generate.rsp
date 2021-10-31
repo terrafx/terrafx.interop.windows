@@ -10,3 +10,6 @@ um-sapi.h
 ../../../tests/Interop/Windows/um/sapi
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/sapi.h
+--with-type
+SP_SPPHRASESIZE_500=uint
+SP_SPPHRASESIZE_530=uint

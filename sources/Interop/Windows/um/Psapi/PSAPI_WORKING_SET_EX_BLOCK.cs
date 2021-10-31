@@ -154,6 +154,21 @@ namespace TerraFX.Interop
             }
         }
 
+        public nuint ReservedUlong
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                return Anonymous.Anonymous.ReservedUlong;
+            }
+
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            set
+            {
+                Anonymous.Anonymous.ReservedUlong = value;
+            }
+        }
+
         public ref _Anonymous_e__Union._Invalid_e__Struct Invalid
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -321,6 +336,22 @@ namespace TerraFX.Interop
                         _bitfield = (_bitfield & ~(0x1u << 31)) | ((value & 0x1u) << 31);
                     }
                 }
+
+                [NativeTypeName("ULONG_PTR : 32")]
+                public nuint ReservedUlong
+                {
+                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                    get
+                    {
+                        return (_bitfield >> 32) & 0x0u;
+                    }
+
+                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                    set
+                    {
+                        _bitfield = (_bitfield & ~(0x0u << 32)) | ((value & 0x0u) << 32);
+                    }
+                }
             }
 
             public partial struct _Invalid_e__Struct
@@ -404,6 +435,22 @@ namespace TerraFX.Interop
                     set
                     {
                         _bitfield = (_bitfield & ~(0x1u << 31)) | ((value & 0x1u) << 31);
+                    }
+                }
+
+                [NativeTypeName("ULONG_PTR : 32")]
+                public nuint ReservedUlong
+                {
+                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                    get
+                    {
+                        return (_bitfield >> 32) & 0x0u;
+                    }
+
+                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                    set
+                    {
+                        _bitfield = (_bitfield & ~(0x0u << 32)) | ((value & 0x0u) << 32);
                     }
                 }
             }

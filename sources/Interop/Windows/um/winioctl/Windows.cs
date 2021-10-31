@@ -23,48 +23,6 @@ namespace TerraFX.Interop
             return (DEVICE_DATA_SET_RANGE*)((nuint)(Input) + Input->DataSetRangesOffset);
         }
 
-        [return: NativeTypeName("DWORD")]
-        public static uint DeviceDsmNumberOfDataSetRanges([NativeTypeName("PDEVICE_DSM_INPUT")] DEVICE_MANAGE_DATA_SET_ATTRIBUTES* Input)
-        {
-            return Input->DataSetRangesLength / unchecked((uint)(sizeof(DEVICE_DATA_SET_RANGE)));
-        }
-
-        [return: NativeTypeName("DWORD")]
-        public static uint DeviceDsmGetInputLength([NativeTypeName("PDEVICE_DSM_DEFINITION")] DEVICE_DSM_DEFINITION* Definition, [NativeTypeName("DWORD")] uint ParameterBlockLength, [NativeTypeName("DWORD")] uint NumberOfDataSetRanges)
-        {
-            uint Bytes = 28;
-
-            if (ParameterBlockLength != 0)
-            {
-                unchecked(Bytes) = unchecked(((Bytes) + ((Definition->ParameterBlockAlignment) - 1)) / (Definition->ParameterBlockAlignment) * (Definition->ParameterBlockAlignment));
-                unchecked(Bytes) += ParameterBlockLength;
-            }
-
-            if (NumberOfDataSetRanges != 0)
-            {
-                unchecked(Bytes) = unchecked(((Bytes) + ((8) - 1)) / (8) * (8));
-                unchecked(Bytes) += unchecked((uint)(sizeof(DEVICE_DATA_SET_RANGE)) * NumberOfDataSetRanges);
-            }
-
-            return Bytes;
-        }
-
-        [return: NativeTypeName("DWORD")]
-        public static uint DeviceDsmGetNumberOfDataSetRanges([NativeTypeName("PDEVICE_DSM_DEFINITION")] DEVICE_DSM_DEFINITION* Definition, [NativeTypeName("DWORD")] uint InputLength, [NativeTypeName("DWORD")] uint ParameterBlockLength)
-        {
-            uint Bytes = 28;
-
-            if (ParameterBlockLength != 0)
-            {
-                unchecked(Bytes) = unchecked(((Bytes) + ((Definition->ParameterBlockAlignment) - 1)) / (Definition->ParameterBlockAlignment) * (Definition->ParameterBlockAlignment));
-                unchecked(Bytes) += ParameterBlockLength;
-            }
-
-            unchecked(Bytes) = unchecked(((Bytes) + ((8) - 1)) / (8) * (8));
-            unchecked(Bytes) = unchecked(InputLength - Bytes);
-            return unchecked(Bytes) / unchecked((uint)(sizeof(DEVICE_DATA_SET_RANGE)));
-        }
-
         public static void DeviceDsmInitializeInput([NativeTypeName("PDEVICE_DSM_DEFINITION")] DEVICE_DSM_DEFINITION* Definition, [NativeTypeName("PDEVICE_DSM_INPUT")] DEVICE_MANAGE_DATA_SET_ATTRIBUTES* Input, [NativeTypeName("DWORD")] uint InputLength, [NativeTypeName("DWORD")] uint Flags, [NativeTypeName("PVOID")] void* Parameters, [NativeTypeName("DWORD")] uint ParameterBlockLength)
         {
             uint Bytes = 28;
@@ -89,57 +47,6 @@ namespace TerraFX.Interop
             Unsafe.CopyBlockUnaligned((DeviceDsmParameterBlock(Input)), (Parameters), (Input->ParameterBlockLength));
             Cleanup:
             return;
-        }
-
-        [return: NativeTypeName("BOOLEAN")]
-        public static byte DeviceDsmAddDataSetRange([NativeTypeName("PDEVICE_DSM_INPUT")] DEVICE_MANAGE_DATA_SET_ATTRIBUTES* Input, [NativeTypeName("DWORD")] uint InputLength, [NativeTypeName("LONGLONG")] long Offset, [NativeTypeName("DWORDLONG")] ulong Length)
-        {
-            uint Bytes = 0;
-            uint Index = 0;
-            DEVICE_DATA_SET_RANGE* Ranges = null;
-            byte Return = 0;
-
-            if ((Input->Flags & 0x00000001) != 0)
-            {
-                goto Cleanup;
-            }
-
-            if (Input->DataSetRangesLength == 0)
-            {
-                if (Input->ParameterBlockLength == 0)
-                {
-                    Bytes = unchecked((uint)(sizeof(DEVICE_MANAGE_DATA_SET_ATTRIBUTES)));
-                }
-                else
-                {
-                    Bytes = Input->ParameterBlockOffset + Input->ParameterBlockLength;
-                }
-
-                Bytes = (((Bytes) + ((8) - 1)) / (8) * (8));
-            }
-            else
-            {
-                Bytes = Input->DataSetRangesOffset + Input->DataSetRangesLength;
-            }
-
-            if ((InputLength - Bytes) < sizeof(DEVICE_DATA_SET_RANGE))
-            {
-                goto Cleanup;
-            }
-
-            if (Input->DataSetRangesOffset == 0)
-            {
-                Input->DataSetRangesOffset = Bytes;
-            }
-
-            Ranges = DeviceDsmDataSetRanges(Input);
-            Index = DeviceDsmNumberOfDataSetRanges(Input);
-            Ranges[Index].StartingOffset = Offset;
-            Ranges[Index].LengthInBytes = Length;
-            Input->DataSetRangesLength += unchecked((uint)(sizeof(DEVICE_DATA_SET_RANGE)));
-            Return = 1;
-            Cleanup:
-            return Return;
         }
 
         [return: NativeTypeName("BOOLEAN")]
@@ -3603,9 +3510,6 @@ namespace TerraFX.Interop
 
         [NativeTypeName("#define FILE_REGION_USAGE_LARGE_PAGE_ALIGNMENT 0x00000008")]
         public const int FILE_REGION_USAGE_LARGE_PAGE_ALIGNMENT = 0x00000008;
-
-        [NativeTypeName("#define FILE_REGION_USAGE_QUERY_ALIGNMENT (FILE_REGION_USAGE_LARGE_PAGE_ALIGNMENT)")]
-        public const int FILE_REGION_USAGE_QUERY_ALIGNMENT = (0x00000008);
 
         [NativeTypeName("#define VALID_WRITE_USN_REASON_MASK (USN_REASON_DATA_OVERWRITE |        \\\r\n                                         USN_REASON_CLOSE)")]
         public const uint VALID_WRITE_USN_REASON_MASK = ((0x00000001) | (0x80000000));

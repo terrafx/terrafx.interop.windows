@@ -128,3 +128,6 @@ ImmSetHotKey=imm32
 ImmShowSoftKeyboard=imm32
 ImmUnlockIMC=imm32
 ImmUnlockIMCC=imm32
+--with-type
+IMMGWL_PRIVATE=uint
+IMMGWLP_PRIVATE=uint

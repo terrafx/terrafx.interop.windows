@@ -31,3 +31,7 @@ um-amvideo.h
 ../../../tests/Interop/Windows/um/amvideo
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/amvideo.h
+--with-type
+SIZE_EGA_PALETTE=uint
+SIZE_MASKS=uint
+SIZE_PALETTE=uint

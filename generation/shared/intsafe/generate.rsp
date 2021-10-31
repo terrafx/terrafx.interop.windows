@@ -2,8 +2,8 @@
 @../../settings.rsp
 @../../remap.rsp
 --exclude
-ByteToChar(BYTE, CHAR *):HRESULT
-ByteToInt8(BYTE, INT8 *):HRESULT
+ByteToChar
+ByteToInt8
 C_ASSERT
 DWord64Add
 DWord64Mult
@@ -57,8 +57,8 @@ DWordLongToLongLong
 DWordLongToLongPtr
 DWordLongToPtrdiffT
 DWordLongToShort
-DWordLongToSIZET
 DWordLongToSizeT
+DWordLongToSIZET
 DWordLongToSSIZET
 DWordLongToUChar
 DWordLongToUInt
@@ -71,9 +71,9 @@ DWordLongToULongPtr
 DWordLongToUShort
 DWordLongToWord
 DWordMult
-DWordPtrAdd(DWORD_PTR, DWORD_PTR, DWORD_PTR *):HRESULT
-DWordPtrMult(DWORD_PTR, DWORD_PTR, DWORD_PTR *):HRESULT
-DWordPtrSub(DWORD_PTR, DWORD_PTR, DWORD_PTR *):HRESULT
+DWordPtrAdd
+DWordPtrMult
+DWordPtrSub
 DWordPtrToByte
 DWordPtrToChar
 DWordPtrToDWord
@@ -120,6 +120,8 @@ DWordToUInt32
 DWordToUIntPtr
 DWordToUShort
 DWordToWord
+DWORD_PTR_ERROR
+DWORD_PTR_MAX
 FAILED
 HIDWORD
 Int8ToByte
@@ -129,18 +131,18 @@ Int8ToDWordLong
 Int8ToDWordPtr
 Int8ToSIZET
 Int8ToSizeT
-Int8ToUChar(INT8, UCHAR *):HRESULT
-Int8ToUInt(INT8, UINT *):HRESULT
-Int8ToUInt8(INT8, UINT8 *):HRESULT
+Int8ToUChar
+Int8ToUInt
+Int8ToUInt8
 Int8ToUInt16
 Int8ToUInt32
 Int8ToUInt64
-Int8ToUIntPtr(INT8, UINT_PTR *):HRESULT
-Int8ToULong(INT8, ULONG *):HRESULT
+Int8ToUIntPtr
+Int8ToULong
 Int8ToULong64
-Int8ToULongLong(INT8, ULONGLONG *):HRESULT
-Int8ToULongPtr(INT8, ULONG_PTR *):HRESULT
-Int8ToUShort(INT8, USHORT *):HRESULT
+Int8ToULongLong
+Int8ToULongPtr
+Int8ToUShort
 Int8ToWord
 Int16ToByte
 Int16ToChar
@@ -203,8 +205,8 @@ Int64ToLong
 Int64ToLongPtr
 Int64ToPtrdiffT
 Int64ToShort
-Int64ToSizeT
 Int64ToSIZET
+Int64ToSizeT
 Int64ToSSIZET
 Int64ToUChar
 Int64ToUInt
@@ -220,56 +222,59 @@ Int64ToULongPtr
 Int64ToUShort
 Int64ToWord
 IntPtrToByte
-IntPtrToChar(INT_PTR, CHAR *):HRESULT
+IntPtrToChar
 IntPtrToDWord
 IntPtrToDWord64
 IntPtrToDWordLong
 IntPtrToDWordPtr
-IntPtrToInt(INT_PTR, INT *):HRESULT
-IntPtrToInt8(INT_PTR, INT8 *):HRESULT
+IntPtrToInt
+IntPtrToInt8
 IntPtrToInt16
 IntPtrToInt32
-IntPtrToLong(INT_PTR, LONG *):HRESULT
-IntPtrToLongPtr(INT_PTR, LONG_PTR *):HRESULT
-IntPtrToShort(INT_PTR, SHORT *):HRESULT
+IntPtrToLong
+IntPtrToLongPtr
+IntPtrToShort
 IntPtrToSizeT
 IntPtrToSIZET
-IntPtrToUChar(INT_PTR, UCHAR *):HRESULT
-IntPtrToUInt(INT_PTR, UINT *):HRESULT
-IntPtrToUInt8(INT_PTR, UINT8 *):HRESULT
+IntPtrToUChar
+IntPtrToUInt
+IntPtrToUInt8
 IntPtrToUInt16
 IntPtrToUInt32
 IntPtrToUInt64
-IntPtrToUIntPtr(INT_PTR, UINT_PTR *):HRESULT
-IntPtrToULong(INT_PTR, ULONG *):HRESULT
+IntPtrToUIntPtr
+IntPtrToULong
 IntPtrToULong64
-IntPtrToULongLong(INT_PTR, ULONGLONG *):HRESULT
-IntPtrToULongPtr(INT_PTR, ULONG_PTR *):HRESULT
-IntPtrToUShort(INT_PTR, USHORT *):HRESULT
+IntPtrToULongLong
+IntPtrToULongPtr
+IntPtrToUShort
 IntPtrToWord
 IntToByte
-IntToChar(INT, CHAR *):HRESULT
+IntToChar
 IntToDWord
 IntToDWord64
 IntToDWordLong
 IntToDWordPtr
-IntToInt8(INT, INT8 *):HRESULT
+IntToInt8
 IntToInt16
-IntToShort(INT, SHORT *):HRESULT
+IntToShort
 IntToSizeT
 IntToSIZET
-IntToUChar(INT, UCHAR *):HRESULT
-IntToUInt(INT, UINT *):HRESULT
-IntToUInt8(INT, UINT8 *):HRESULT
+IntToUChar
+IntToUInt
+IntToUInt8
 IntToUInt16
 IntToUInt64
 IntToUIntPtr
-IntToULong(INT, ULONG *):HRESULT
+IntToULong
 IntToULong64
-IntToULongLong(INT, ULONGLONG *):HRESULT
+IntToULongLong
 IntToULongPtr
-IntToUShort(INT, USHORT *):HRESULT
+IntToUShort
 IntToWord
+INT_PTR_ERROR
+INT_PTR_MAX
+INT_PTR_MIN
 LODWORD
 Long64ToByte
 Long64ToChar
@@ -284,8 +289,8 @@ Long64ToLong
 Long64ToLongPtr
 Long64ToPtrdiffT
 Long64ToShort
-Long64ToSIZET
 Long64ToSizeT
+Long64ToSIZET
 Long64ToSSIZET
 Long64ToUChar
 Long64ToUInt
@@ -299,92 +304,95 @@ Long64ToULongPtr
 Long64ToUShort
 Long64ToWord
 LongLongToByte
-LongLongToChar(LONGLONG, CHAR *):HRESULT
+LongLongToChar
 LongLongToDWord
 LongLongToDWord64
 LongLongToDWordLong
 LongLongToDWordPtr
-LongLongToInt(LONGLONG, INT *):HRESULT
-LongLongToInt8(LONGLONG, INT8 *):HRESULT
+LongLongToInt
+LongLongToInt8
 LongLongToInt16
 LongLongToInt32
 LongLongToIntPtr
-LongLongToLong(LONGLONG, LONG *):HRESULT
+LongLongToLong
 LongLongToLongPtr
 LongLongToPtrdiffT
-LongLongToShort(LONGLONG, SHORT *):HRESULT
-LongLongToSIZET
+LongLongToShort
 LongLongToSizeT
+LongLongToSIZET
 LongLongToSSIZET
-LongLongToUChar(LONGLONG, UCHAR *):HRESULT
-LongLongToUInt(LONGLONG, UINT *):HRESULT
-LongLongToUInt8(LONGLONG, UINT8 *):HRESULT
+LongLongToUChar
+LongLongToUInt
+LongLongToUInt8
 LongLongToUInt16
 LongLongToUInt32
 LongLongToUInt64
 LongLongToUIntPtr
-LongLongToULong(LONGLONG, ULONG *):HRESULT
+LongLongToULong
 LongLongToULong64
-LongLongToULongLong(LONGLONG, ULONGLONG *):HRESULT
+LongLongToULongLong
 LongLongToULongPtr
-LongLongToUShort(LONGLONG, USHORT *):HRESULT
+LongLongToUShort
 LongLongToWord
 LongPtrToByte
-LongPtrToChar(LONG_PTR, CHAR *):HRESULT
+LongPtrToChar
 LongPtrToDWord
 LongPtrToDWord64
 LongPtrToDWordLong
 LongPtrToDWordPtr
-LongPtrToInt(LONG_PTR, INT *):HRESULT
-LongPtrToInt8(LONG_PTR, INT8 *):HRESULT
+LongPtrToInt
+LongPtrToInt8
 LongPtrToInt16
 LongPtrToInt32
-LongPtrToIntPtr(LONG_PTR, INT_PTR *):HRESULT
-LongPtrToLong(LONG_PTR, LONG *):HRESULT
-LongPtrToShort(LONG_PTR, SHORT *):HRESULT
-LongPtrToSizeT
+LongPtrToIntPtr
+LongPtrToLong
+LongPtrToShort
 LongPtrToSIZET
-LongPtrToUChar(LONG_PTR, UCHAR *):HRESULT
-LongPtrToUInt(LONG_PTR, UINT *):HRESULT
-LongPtrToUInt8(LONG_PTR, UINT8 *):HRESULT
+LongPtrToSizeT
+LongPtrToUChar
+LongPtrToUInt
+LongPtrToUInt8
 LongPtrToUInt16
 LongPtrToUInt32
 LongPtrToUInt64
-LongPtrToUIntPtr(LONG_PTR, UINT_PTR *):HRESULT
-LongPtrToULong(LONG_PTR, ULONG *):HRESULT
+LongPtrToUIntPtr
+LongPtrToULong
 LongPtrToULong64
-LongPtrToULongLong(LONG_PTR, ULONGLONG *):HRESULT
-LongPtrToULongPtr(LONG_PTR, ULONG_PTR *):HRESULT
-LongPtrToUShort(LONG_PTR, USHORT *):HRESULT
+LongPtrToULongLong
+LongPtrToULongPtr
+LongPtrToUShort
 LongPtrToWord
 LongToByte
-LongToChar(LONG, CHAR *):HRESULT
+LongToChar
 LongToDWord
 LongToDWord64
 LongToDWordLong
 LongToDWordPtr
-LongToInt(LONG, INT *):HRESULT
-LongToInt8(LONG, INT8 *):HRESULT
+LongToInt
+LongToInt8
 LongToInt16
 LongToInt32
 LongToIntPtr
 LongToPtrdiffT
-LongToShort(LONG, SHORT *):HRESULT
-LongToSIZET
+LongToShort
 LongToSizeT
-LongToUChar(LONG, UCHAR *):HRESULT
-LongToUInt(LONG, UINT *):HRESULT
-LongToUInt8(LONG, UINT8 *):HRESULT
+LongToSIZET
+LongToUChar
+LongToUInt
+LongToUInt8
 LongToUInt16
 LongToUInt32
 LongToUInt64
 LongToUIntPtr
-LongToULong(LONG, ULONG *):HRESULT
+LongToULong
 LongToULong64
-LongToULongLong(LONG, ULONGLONG *):HRESULT
+LongToULongLong
 LongToULongPtr
-LongToUShort(LONG, USHORT *):HRESULT
+LongToUShort
 LongToWord
+LONG_PTR_ERROR
+LONG_PTR_MAX
+LONG_PTR_MIN
 PtrdiffTToByte
 PtrdiffTToChar
 PtrdiffTToDWord
@@ -398,8 +406,8 @@ PtrdiffTToInt32
 PtrdiffTToLong
 PtrdiffTToLongPtr
 PtrdiffTToShort
-PtrdiffTToSizeT
 PtrdiffTToSIZET
+PtrdiffTToSizeT
 PtrdiffTToUChar
 PtrdiffTToUInt
 PtrdiffTToUInt8
@@ -413,42 +421,45 @@ PtrdiffTToULongLong
 PtrdiffTToULongPtr
 PtrdiffTToUShort
 PtrdiffTToWord
+PTRDIFF_T_ERROR
+PTRDIFF_T_MAX
+PTRDIFF_T_MIN
 ShortToByte
-ShortToChar(SHORT, CHAR *):HRESULT
+ShortToChar
 ShortToDWord
 ShortToDWord64
 ShortToDWordLong
-ShortToDWordPtr(SHORT, DWORD_PTR *):HRESULT
-ShortToInt8(SHORT, INT8 *):HRESULT
-ShortToSIZET
+ShortToDWordPtr
+ShortToInt8
 ShortToSizeT
-ShortToUChar(SHORT, UCHAR *):HRESULT
-ShortToUInt(SHORT, UINT *):HRESULT
-ShortToUInt8(SHORT, UINT8 *):HRESULT
+ShortToSIZET
+ShortToUChar
+ShortToUInt
+ShortToUInt8
 ShortToUInt16
 ShortToUInt32
 ShortToUInt64
-ShortToUIntPtr(SHORT, UINT_PTR *):HRESULT
-ShortToULong(SHORT, ULONG *):HRESULT
+ShortToUIntPtr
+ShortToULong
 ShortToULong64
-ShortToULongLong(SHORT, ULONGLONG *):HRESULT
-ShortToULongPtr(SHORT, ULONG_PTR *):HRESULT
-ShortToUShort(SHORT, USHORT *):HRESULT
+ShortToULongLong
+ShortToULongPtr
+ShortToUShort
 ShortToWord
-SizeTAdd(size_t, size_t, size_t *):HRESULT
-SIZETAdd(SIZE_T, SIZE_T, SIZE_T *):HRESULT
-SIZETMult(SIZE_T, SIZE_T, SIZE_T *):HRESULT
-SizeTMult(size_t, size_t, size_t *):HRESULT
-SizeTSub(size_t, size_t, size_t *):HRESULT
-SIZETSub(SIZE_T, SIZE_T, SIZE_T *):HRESULT
-SizeTToByte
+SizeTAdd
+SIZETAdd
+SizeTMult
+SIZETMult
+SIZETSub
+SizeTSub
 SIZETToByte
+SizeTToByte
 SIZETToChar
 SizeTToChar
-SizeTToDWord
 SIZETToDWord
-SIZETToInt
+SizeTToDWord
 SizeTToInt
+SIZETToInt
 SIZETToInt8
 SizeTToInt8
 SizeTToInt16
@@ -457,24 +468,24 @@ SizeTToInt32
 SIZETToInt32
 SizeTToInt64
 SIZETToInt64
-SIZETToIntPtr
 SizeTToIntPtr
+SIZETToIntPtr
 SizeTToLong
 SIZETToLong
 SIZETToLong64
 SizeTToLong64
 SizeTToLongLong
 SIZETToLongLong
-SizeTToLongPtr
 SIZETToLongPtr
-SIZETToPtrdiffT
+SizeTToLongPtr
 SizeTToPtrdiffT
+SIZETToPtrdiffT
 SizeTToShort
 SIZETToShort
 SIZETToSSIZET
 SizeTToSSIZET
-SIZETToUChar
 SizeTToUChar
+SIZETToUChar
 SIZETToUInt
 SizeTToUInt
 SizeTToUInt8
@@ -486,10 +497,12 @@ SizeTToUInt32
 SIZETToUIntPtr
 SizeTToULong
 SIZETToULong
-SizeTToUShort
 SIZETToUShort
-SIZETToWord
+SizeTToUShort
 SizeTToWord
+SIZETToWord
+SIZE_T_ERROR
+SIZE_T_MAX
 SSIZETToByte
 SSIZETToChar
 SSIZETToDWord
@@ -503,8 +516,8 @@ SSIZETToInt32
 SSIZETToIntPtr
 SSIZETToLong
 SSIZETToShort
-SSIZETToSizeT
 SSIZETToSIZET
+SSIZETToSizeT
 SSIZETToUChar
 SSIZETToUInt
 SSIZETToUInt8
@@ -518,13 +531,16 @@ SSIZETToULongLong
 SSIZETToULongPtr
 SSIZETToUShort
 SSIZETToWord
+SSIZE_T_ERROR
+SSIZE_T_MAX
+SSIZE_T_MIN
 SUCCEEDED
 S_OK
-UInt8Add(UINT8, UINT8, UINT8 *):HRESULT
-UInt8Mult(UINT8, UINT8, UINT8 *):HRESULT
-UInt8Sub(UINT8, UINT8, UINT8 *):HRESULT
-UInt8ToChar(UINT8, CHAR *):HRESULT
-UInt8ToInt8(UINT8, INT8 *):HRESULT
+UInt8Add
+UInt8Mult
+UInt8Sub
+UInt8ToChar
+UInt8ToInt8
 UInt16Add
 UInt16Mult
 UInt16Sub
@@ -587,53 +603,55 @@ UInt64ToULong
 UInt64ToULongPtr
 UInt64ToUShort
 UInt64ToWord
-UIntAdd(UINT, UINT, UINT *):HRESULT
-UIntMult(UINT, UINT, UINT *):HRESULT
-UIntPtrAdd(UINT_PTR, UINT_PTR, UINT_PTR *):HRESULT
-UIntPtrMult(UINT_PTR, UINT_PTR, UINT_PTR *):HRESULT
-UIntPtrSub(UINT_PTR, UINT_PTR, UINT_PTR *):HRESULT
+UIntAdd
+UIntMult
+UIntPtrAdd
+UIntPtrMult
+UIntPtrSub
 UIntPtrToByte
-UIntPtrToChar(UINT_PTR, CHAR *):HRESULT
+UIntPtrToChar
 UIntPtrToDWord
-UIntPtrToInt(UINT_PTR, INT *):HRESULT
-UIntPtrToInt8(UINT_PTR, INT8 *):HRESULT
-UIntPtrToInt16(UINT_PTR, INT16 *):HRESULT
+UIntPtrToInt
+UIntPtrToInt8
+UIntPtrToInt16
 UIntPtrToInt32
 UIntPtrToInt64
-UIntPtrToIntPtr(UINT_PTR, INT_PTR *):HRESULT
-UIntPtrToLong(UINT_PTR, LONG *):HRESULT
+UIntPtrToIntPtr
+UIntPtrToLong
 UIntPtrToLong64
-UIntPtrToLongLong(UINT_PTR, LONGLONG *):HRESULT
-UIntPtrToLongPtr(UINT_PTR, LONG_PTR *):HRESULT
+UIntPtrToLongLong
+UIntPtrToLongPtr
 UIntPtrToPtrdiffT
-UIntPtrToShort(UINT_PTR, SHORT *):HRESULT
+UIntPtrToShort
 UIntPtrToSSIZET
-UIntPtrToUChar(UINT_PTR, UCHAR *):HRESULT
-UIntPtrToUInt(UINT_PTR, UINT *):HRESULT
-UIntPtrToUInt8(UINT_PTR, UINT8 *):HRESULT
-UIntPtrToUInt16(UINT_PTR, UINT16 *):HRESULT
+UIntPtrToUChar
+UIntPtrToUInt
+UIntPtrToUInt8
+UIntPtrToUInt16
 UIntPtrToUInt32
-UIntPtrToULong(UINT_PTR, ULONG *):HRESULT
-UIntPtrToUShort(UINT_PTR, USHORT *):HRESULT
+UIntPtrToULong
+UIntPtrToUShort
 UIntPtrToWord
-UIntSub(UINT, UINT, UINT *):HRESULT
+UIntSub
 UIntToByte
-UIntToChar(UINT, CHAR *):HRESULT
-UIntToInt(UINT, INT *):HRESULT
-UIntToInt8(UINT, INT8 *):HRESULT
+UIntToChar
+UIntToInt
+UIntToInt8
 UIntToInt16
 UIntToInt32
 UIntToIntPtr
-UIntToLong(UINT, LONG *):HRESULT
+UIntToLong
 UIntToLongPtr
 UIntToPtrdiffT
-UIntToShort(UINT, SHORT *):HRESULT
+UIntToShort
 UIntToSSIZET
-UIntToUChar(UINT, UCHAR *):HRESULT
-UIntToUInt8(UINT, UINT8 *):HRESULT
+UIntToUChar
+UIntToUInt8
 UIntToUInt16
-UIntToUShort(UINT, USHORT *):HRESULT
+UIntToUShort
 UIntToWord
+UINT_PTR_ERROR
+UINT_PTR_MAX
 ULong64Add
 ULong64Mult
 ULong64Sub
@@ -653,8 +671,8 @@ ULong64ToLongLong
 ULong64ToLongPtr
 ULong64ToPtrdiffT
 ULong64ToShort
-ULong64ToSizeT
 ULong64ToSIZET
+ULong64ToSizeT
 ULong64ToSSIZET
 ULong64ToUChar
 ULong64ToUInt
@@ -666,99 +684,101 @@ ULong64ToULong
 ULong64ToULongPtr
 ULong64ToUShort
 ULong64ToWord
-ULongAdd(ULONG, ULONG, ULONG *):HRESULT
-ULongLongAdd(ULONGLONG, ULONGLONG, ULONGLONG *):HRESULT
-ULongLongMult(ULONGLONG, ULONGLONG, ULONGLONG *):HRESULT
-ULongLongSub(ULONGLONG, ULONGLONG, ULONGLONG *):HRESULT
+ULongAdd
+ULongLongAdd
+ULongLongMult
+ULongLongSub
 ULongLongToByte
-ULongLongToChar(ULONGLONG, CHAR *):HRESULT
+ULongLongToChar
 ULongLongToDWord
 ULongLongToDWordPtr
-ULongLongToInt(ULONGLONG, INT *):HRESULT
-ULongLongToInt8(ULONGLONG, INT8 *):HRESULT
+ULongLongToInt
+ULongLongToInt8
 ULongLongToInt16
 ULongLongToInt32
 ULongLongToInt64
 ULongLongToIntPtr
-ULongLongToLong(ULONGLONG, LONG *):HRESULT
+ULongLongToLong
 ULongLongToLong64
-ULongLongToLongLong(ULONGLONG, LONGLONG *):HRESULT
-ULongLongToLongPtr(ULONGLONG, LONG_PTR *):HRESULT
+ULongLongToLongLong
+ULongLongToLongPtr
 ULongLongToPtrdiffT
-ULongLongToShort(ULONGLONG, SHORT *):HRESULT
+ULongLongToShort
 ULongLongToSIZET
 ULongLongToSizeT
 ULongLongToSSIZET
-ULongLongToUChar(ULONGLONG, UCHAR *):HRESULT
-ULongLongToUInt(ULONGLONG, UINT *):HRESULT
-ULongLongToUInt8(ULONGLONG, UINT8 *):HRESULT
+ULongLongToUChar
+ULongLongToUInt
+ULongLongToUInt8
 ULongLongToUInt16
 ULongLongToUInt32
 ULongLongToUIntPtr
-ULongLongToULong(ULONGLONG, ULONG *):HRESULT
+ULongLongToULong
 ULongLongToULongPtr
-ULongLongToUShort(ULONGLONG, USHORT *):HRESULT
+ULongLongToUShort
 ULongLongToWord
-ULongMult(ULONG, ULONG, ULONG *):HRESULT
-ULongPtrAdd(ULONG_PTR, ULONG_PTR, ULONG_PTR *):HRESULT
-ULongPtrMult(ULONG_PTR, ULONG_PTR, ULONG_PTR *):HRESULT
-ULongPtrSub(ULONG_PTR, ULONG_PTR, ULONG_PTR *):HRESULT
+ULongMult
+ULongPtrAdd
+ULongPtrMult
+ULongPtrSub
 ULongPtrToByte
-ULongPtrToChar(ULONG_PTR, CHAR *):HRESULT
+ULongPtrToChar
 ULongPtrToDWord
-ULongPtrToInt(ULONG_PTR, INT *):HRESULT
-ULongPtrToInt8(ULONG_PTR, INT8 *):HRESULT
+ULongPtrToInt
+ULongPtrToInt8
 ULongPtrToInt16
 ULongPtrToInt32
 ULongPtrToInt64
-ULongPtrToIntPtr(ULONG_PTR, INT_PTR *):HRESULT
-ULongPtrToLong(ULONG_PTR, LONG *):HRESULT
+ULongPtrToIntPtr
+ULongPtrToLong
 ULongPtrToLong64
-ULongPtrToLongLong(ULONG_PTR, LONGLONG *):HRESULT
-ULongPtrToLongPtr(ULONG_PTR, LONG_PTR *):HRESULT
+ULongPtrToLongLong
+ULongPtrToLongPtr
 ULongPtrToPtrdiffT
-ULongPtrToShort(ULONG_PTR, SHORT *):HRESULT
+ULongPtrToShort
 ULongPtrToSSIZET
-ULongPtrToUChar(ULONG_PTR, UCHAR *):HRESULT
-ULongPtrToUInt(ULONG_PTR, UINT *):HRESULT
-ULongPtrToUInt8(ULONG_PTR, UINT8 *):HRESULT
+ULongPtrToUChar
+ULongPtrToUInt
+ULongPtrToUInt8
 ULongPtrToUInt16
 ULongPtrToUInt32
-ULongPtrToUIntPtr(ULONG_PTR, UINT_PTR *):HRESULT
-ULongPtrToULong(ULONG_PTR, ULONG *):HRESULT
-ULongPtrToUShort(ULONG_PTR, USHORT *):HRESULT
+ULongPtrToUIntPtr
+ULongPtrToULong
+ULongPtrToUShort
 ULongPtrToWord
-ULongSub(ULONG, ULONG, ULONG *):HRESULT
+ULongSub
 ULongToByte
-ULongToChar(ULONG, CHAR *):HRESULT
-ULongToInt(ULONG, INT *):HRESULT
-ULongToInt8(ULONG, INT8 *):HRESULT
+ULongToChar
+ULongToInt
+ULongToInt8
 ULongToInt16
 ULongToInt32
 ULongToIntPtr
-ULongToLong(ULONG, LONG *):HRESULT
+ULongToLong
 ULongToLongPtr
 ULongToPtrdiffT
-ULongToShort(ULONG, SHORT *):HRESULT
+ULongToShort
 ULongToSSIZET
-ULongToUChar(ULONG, UCHAR *):HRESULT
-ULongToUInt(ULONG, UINT *):HRESULT
-ULongToUInt8(ULONG, UINT8 *):HRESULT
+ULongToUChar
+ULongToUInt
+ULongToUInt8
 ULongToUInt16
 ULongToUInt32
 ULongToUIntPtr
-ULongToUShort(ULONG, USHORT *):HRESULT
+ULongToUShort
 ULongToWord
-UShortAdd(USHORT, USHORT, USHORT *):HRESULT
-UShortMult(USHORT, USHORT, USHORT *):HRESULT
-UShortSub(USHORT, USHORT, USHORT *):HRESULT
+ULONG_PTR_ERROR
+ULONG_PTR_MAX
+UShortAdd
+UShortMult
+UShortSub
 UShortToByte
-UShortToChar(USHORT, CHAR *):HRESULT
-UShortToInt8(USHORT, INT8 *):HRESULT
+UShortToChar
+UShortToInt8
 UShortToInt16
-UShortToShort(USHORT, SHORT *):HRESULT
-UShortToUChar(USHORT, UCHAR *):HRESULT
-UShortToUInt8(USHORT, UINT8 *):HRESULT
+UShortToShort
+UShortToUChar
+UShortToUInt8
 WordAdd
 WordMult
 WordSub
@@ -769,6 +789,9 @@ WordToInt16
 WordToShort
 WordToUChar
 WordToUInt8
+_SIZE_T_ERROR
+_SIZE_T_MAX
+_umul128
 --file
 shared-intsafe.h
 --output

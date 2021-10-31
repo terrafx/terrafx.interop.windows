@@ -16,6 +16,9 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint AllocationProtect;
 
+        [NativeTypeName("WORD")]
+        public ushort PartitionId;
+
         [NativeTypeName("SIZE_T")]
         public nuint RegionSize;
 

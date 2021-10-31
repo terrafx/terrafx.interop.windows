@@ -8,11 +8,14 @@ GetPackageInfo2(PACKAGE_INFO_REFERENCE, const UINT32, PackagePathType, UINT32 *,
 GetPackagePathByFullName2(PCWSTR, PackagePathType, UINT32 *, PWSTR):LONG
 GetStagedPackagePathByFullName2(PCWSTR, PackagePathType, UINT32 *, PWSTR):LONG
 OpenPackageInfoByFullNameForUser(PSID, PCWSTR, const UINT32, PACKAGE_INFO_REFERENCE *):LONG
+PACKAGE_ID
+PACKAGE_INFO
 VerifyApplicationUserModelId(PCWSTR):LONG
 VerifyPackageFamilyName(PCWSTR):LONG
 VerifyPackageFullName(PCWSTR):LONG
 VerifyPackageId(const PACKAGE_ID *):LONG
 VerifyPackageRelativeApplicationId(PCWSTR):LONG
+_PACKAGE_INFO_REFERENCE
 --file
 um-appmodel.h
 --output

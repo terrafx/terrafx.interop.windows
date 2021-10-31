@@ -51,6 +51,6 @@ namespace TerraFX.Interop
         public ushort SizeOfContextRecord;
 
         [NativeTypeName("PCONTEXT")]
-        public CONTEXT* ContextRecord;
+        public void* ContextRecord;
     }
 }

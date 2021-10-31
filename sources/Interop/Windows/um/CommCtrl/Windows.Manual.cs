@@ -3,12 +3,38 @@
 // Ported from um/CommCtrl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System;
 using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
 {
     public static unsafe partial class Windows
     {
+        [DllImport("comctl32", EntryPoint = "CreateToolbarEx", ExactSpelling = true, SetLastError = true)]
+        [return: NativeTypeName("HWND")]
+        public static extern IntPtr CreateToolbarEx32([NativeTypeName("HWND")] IntPtr hwnd, [NativeTypeName("DWORD")] uint ws, [NativeTypeName("UINT")] uint wID, int nBitmaps, [NativeTypeName("HINSTANCE")] IntPtr hBMInst, [NativeTypeName("UINT_PTR")] nuint wBMID, [NativeTypeName("LPCTBBUTTON")] TBBUTTON32* lpButtons, int iNumButtons, int dxButton, int dyButton, int dxBitmap, int dyBitmap, [NativeTypeName("UINT")] uint uStructSize);
+
+        [DllImport("comctl32", EntryPoint = "CreateToolbarEx", ExactSpelling = true, SetLastError = true)]
+        [return: NativeTypeName("HWND")]
+        public static extern IntPtr CreateToolbarEx64([NativeTypeName("HWND")] IntPtr hwnd, [NativeTypeName("DWORD")] uint ws, [NativeTypeName("UINT")] uint wID, int nBitmaps, [NativeTypeName("HINSTANCE")] IntPtr hBMInst, [NativeTypeName("UINT_PTR")] nuint wBMID, [NativeTypeName("LPCTBBUTTON")] TBBUTTON64* lpButtons, int iNumButtons, int dxButton, int dyButton, int dxBitmap, int dyBitmap, [NativeTypeName("UINT")] uint uStructSize);
+
+        public static int FlatSB_GetScrollPropPtr(IntPtr param0, int propIndex, int* param2)
+        {
+            if (sizeof(nint) == 4)
+            {
+                return FlatSB_GetScrollProp(param0, propIndex, param2);
+            }
+            else
+            {
+                [DllImport("comctl32", EntryPoint = "FlatSB_GetScrollPropPtr", ExactSpelling = true)]
+                [return: NativeTypeName("LONG_PTR")]
+                static extern int _FlatSB_GetScrollPropPtr(IntPtr param0, int propIndex, int* param2);
+
+                return _FlatSB_GetScrollPropPtr(param0, propIndex, param2);
+            }
+        }
+
         [NativeTypeName("#define IMAGELISTDRAWPARAMS_V3_SIZE CCSIZEOF_STRUCT(IMAGELISTDRAWPARAMS, dwRop)")]
         public static uint IMAGELISTDRAWPARAMS_V3_SIZE
         {

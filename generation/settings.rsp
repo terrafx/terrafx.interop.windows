@@ -1,7 +1,8 @@
 --additional
--m32
+-m64
 -Wno-deprecated-declarations
 -Wno-expansion-to-defined
+-Wno-extern-c-compat
 -Wno-extern-initializer
 -Wno-extra-tokens
 -Wno-ignored-attributes

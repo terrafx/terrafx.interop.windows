@@ -359,9 +359,6 @@ namespace TerraFX.Interop
         [NativeTypeName("#define CLSCTX_SERVER (CLSCTX_INPROC_SERVER|CLSCTX_LOCAL_SERVER|CLSCTX_REMOTE_SERVER)")]
         public const int CLSCTX_SERVER = ((int)(CLSCTX_INPROC_SERVER) | (int)(CLSCTX_LOCAL_SERVER) | (int)(CLSCTX_REMOTE_SERVER));
 
-        [NativeTypeName("#define _CRT_INTERNAL_COMBASE_SYMBOL_PREFIX \"_\"")]
-        public static ReadOnlySpan<byte> _CRT_INTERNAL_COMBASE_SYMBOL_PREFIX => new byte[] { 0x5F, 0x00 };
-
         [NativeTypeName("#define COM_RIGHTS_EXECUTE 1")]
         public const int COM_RIGHTS_EXECUTE = 1;
 

@@ -148,19 +148,19 @@ namespace TerraFX.Interop
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int AllocateUserPhysicalPages([NativeTypeName("HANDLE")] IntPtr hProcess, [NativeTypeName("PULONG_PTR")] uint* NumberOfPages, [NativeTypeName("PULONG_PTR")] uint* PageArray);
+        public static extern int AllocateUserPhysicalPages([NativeTypeName("HANDLE")] IntPtr hProcess, [NativeTypeName("PULONG_PTR")] nuint* NumberOfPages, [NativeTypeName("PULONG_PTR")] nuint* PageArray);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int FreeUserPhysicalPages([NativeTypeName("HANDLE")] IntPtr hProcess, [NativeTypeName("PULONG_PTR")] uint* NumberOfPages, [NativeTypeName("PULONG_PTR")] uint* PageArray);
+        public static extern int FreeUserPhysicalPages([NativeTypeName("HANDLE")] IntPtr hProcess, [NativeTypeName("PULONG_PTR")] nuint* NumberOfPages, [NativeTypeName("PULONG_PTR")] nuint* PageArray);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int MapUserPhysicalPages([NativeTypeName("PVOID")] void* VirtualAddress, [NativeTypeName("ULONG_PTR")] nuint NumberOfPages, [NativeTypeName("PULONG_PTR")] uint* PageArray);
+        public static extern int MapUserPhysicalPages([NativeTypeName("PVOID")] void* VirtualAddress, [NativeTypeName("ULONG_PTR")] nuint NumberOfPages, [NativeTypeName("PULONG_PTR")] nuint* PageArray);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int AllocateUserPhysicalPagesNuma([NativeTypeName("HANDLE")] IntPtr hProcess, [NativeTypeName("PULONG_PTR")] uint* NumberOfPages, [NativeTypeName("PULONG_PTR")] uint* PageArray, [NativeTypeName("DWORD")] uint nndPreferred);
+        public static extern int AllocateUserPhysicalPagesNuma([NativeTypeName("HANDLE")] IntPtr hProcess, [NativeTypeName("PULONG_PTR")] nuint* NumberOfPages, [NativeTypeName("PULONG_PTR")] nuint* PageArray, [NativeTypeName("DWORD")] uint nndPreferred);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("LPVOID")]

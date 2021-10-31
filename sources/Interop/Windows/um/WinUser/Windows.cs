@@ -11083,9 +11083,6 @@ namespace TerraFX.Interop
         [NativeTypeName("#define EVENT_CONSOLE_END_APPLICATION 0x4007")]
         public const int EVENT_CONSOLE_END_APPLICATION = 0x4007;
 
-        [NativeTypeName("#define CONSOLE_APPLICATION_16BIT 0x0001")]
-        public const int CONSOLE_APPLICATION_16BIT = 0x0001;
-
         [NativeTypeName("#define CONSOLE_CARET_SELECTION 0x0001")]
         public const int CONSOLE_CARET_SELECTION = 0x0001;
 
@@ -11298,9 +11295,6 @@ namespace TerraFX.Interop
 
         [NativeTypeName("#define GUI_POPUPMENUMODE 0x00000010")]
         public const int GUI_POPUPMENUMODE = 0x00000010;
-
-        [NativeTypeName("#define GUI_16BITTASK 0x00000020")]
-        public const int GUI_16BITTASK = 0x00000020;
 
         [NativeTypeName("#define USER_DEFAULT_SCREEN_DPI 96")]
         public const int USER_DEFAULT_SCREEN_DPI = 96;

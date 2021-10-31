@@ -29,3 +29,7 @@ shared-ws2def.h
 ../../../tests/Interop/Windows/shared/ws2def
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/shared/ws2def.h
+--with-type
+_SS_ALIGNSIZE=uint
+_SS_PAD1SIZE=uint
+_SS_PAD2SIZE=uint

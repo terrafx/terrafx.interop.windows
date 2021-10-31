@@ -36,7 +36,7 @@ namespace TerraFX.Interop.UnitTests
             }
             else
             {
-                Assert.That(sizeof(MEMORY_BASIC_INFORMATION), Is.EqualTo(28));
+                Assert.That(sizeof(MEMORY_BASIC_INFORMATION), Is.EqualTo(32));
             }
         }
     }

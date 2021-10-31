@@ -37,3 +37,5 @@ shared-ws2ipdef.h
 ../../../tests/Interop/Windows/shared/ws2ipdef
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/shared/ws2ipdef.h
+--with-type
+IPV6_ADDRESS_BITS=uint

@@ -162,7 +162,7 @@ namespace TerraFX.Interop
                 }
             }
 
-            [NativeTypeName("ULONG_PTR : 20")]
+            [NativeTypeName("ULONG_PTR : 52")]
             public nuint VirtualPage
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]

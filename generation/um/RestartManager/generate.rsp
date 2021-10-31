@@ -24,3 +24,6 @@ RmRemoveFilter=rstrtmgr
 RmRestart=rstrtmgr
 RmShutdown=rstrtmgr
 RmStartSession=rstrtmgr
+--with-type
+CCH_RM_SESSION_KEY=uint
+RM_SESSION_KEY_LEN=uint

@@ -10,6 +10,8 @@ HidP_SetButtons
 HidP_TranslateUsageAndPagesToI8042ScanCodes
 HidP_UnsetButtons
 HidP_UsageAndPageListDifference
+_HIDP_EXTENDED_ATTRIBUTES
+_HIDP_LINK_COLLECTION_NODE
 --file
 shared-hidpi.h
 --output

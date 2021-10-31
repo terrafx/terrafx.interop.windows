@@ -18,7 +18,7 @@ namespace TerraFX.Interop
 
         [DllImport("url", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int TranslateURLW([NativeTypeName("PCWSTR")] ushort* pcszURL, [NativeTypeName("DWORD")] uint dwInFlags, [NativeTypeName("PWSTR *")] ushort** ppszTranslatedURL);
+        public static extern int TranslateURLW([NativeTypeName("PCWSTR")] ushort* pcszURL, [NativeTypeName("DWORD")] uint dwInFlags, [NativeTypeName("__unaligned PWSTR *")] ushort** ppszTranslatedURL);
 
         [DllImport("url", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]

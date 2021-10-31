@@ -1,6 +1,7 @@
 @../../settings.rsp
 @../../remap.rsp
 --exclude
+CONSOLE_APPLICATION_16BIT
 CopyCursor
 CreateDialogA
 CreateDialogIndirectA
@@ -43,6 +44,7 @@ GET_WHEEL_DELTA_WPARAM
 GET_XBUTTON_WPARAM
 GID_ROTATE_ANGLE_FROM_ARGUMENT
 GID_ROTATE_ANGLE_TO_ARGUMENT
+GUI_16BITTASK
 HAS_POINTER_CONFIDENCE_WPARAM
 IS_INTRESOURCE
 IS_POINTER_CANCELED_WPARAM
@@ -1464,3 +1466,6 @@ wsprintfW
 wvsprintf
 wvsprintfA
 wvsprintfW
+--with-type
+DWLP_DLGPROC=uint
+DWLP_USER=uint

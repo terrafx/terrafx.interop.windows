@@ -11,87 +11,87 @@ namespace TerraFX.Interop
     public static unsafe partial class Windows
     {
         [DllImport("kernel32", ExactSpelling = true)]
-        public static extern void InitializeSRWLock([NativeTypeName("PSRWLOCK")] RTL_SRWLOCK* SRWLock);
+        public static extern void InitializeSRWLock([NativeTypeName("PSRWLOCK")] SRWLOCK* SRWLock);
 
         [DllImport("kernel32", ExactSpelling = true)]
-        public static extern void ReleaseSRWLockExclusive([NativeTypeName("PSRWLOCK")] RTL_SRWLOCK* SRWLock);
+        public static extern void ReleaseSRWLockExclusive([NativeTypeName("PSRWLOCK")] SRWLOCK* SRWLock);
 
         [DllImport("kernel32", ExactSpelling = true)]
-        public static extern void ReleaseSRWLockShared([NativeTypeName("PSRWLOCK")] RTL_SRWLOCK* SRWLock);
+        public static extern void ReleaseSRWLockShared([NativeTypeName("PSRWLOCK")] SRWLOCK* SRWLock);
 
         [DllImport("kernel32", ExactSpelling = true)]
-        public static extern void AcquireSRWLockExclusive([NativeTypeName("PSRWLOCK")] RTL_SRWLOCK* SRWLock);
+        public static extern void AcquireSRWLockExclusive([NativeTypeName("PSRWLOCK")] SRWLOCK* SRWLock);
 
         [DllImport("kernel32", ExactSpelling = true)]
-        public static extern void AcquireSRWLockShared([NativeTypeName("PSRWLOCK")] RTL_SRWLOCK* SRWLock);
-
-        [DllImport("kernel32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOLEAN")]
-        public static extern byte TryAcquireSRWLockExclusive([NativeTypeName("PSRWLOCK")] RTL_SRWLOCK* SRWLock);
+        public static extern void AcquireSRWLockShared([NativeTypeName("PSRWLOCK")] SRWLOCK* SRWLock);
 
         [DllImport("kernel32", ExactSpelling = true)]
         [return: NativeTypeName("BOOLEAN")]
-        public static extern byte TryAcquireSRWLockShared([NativeTypeName("PSRWLOCK")] RTL_SRWLOCK* SRWLock);
+        public static extern byte TryAcquireSRWLockExclusive([NativeTypeName("PSRWLOCK")] SRWLOCK* SRWLock);
 
         [DllImport("kernel32", ExactSpelling = true)]
-        public static extern void InitializeCriticalSection([NativeTypeName("LPCRITICAL_SECTION")] RTL_CRITICAL_SECTION* lpCriticalSection);
+        [return: NativeTypeName("BOOLEAN")]
+        public static extern byte TryAcquireSRWLockShared([NativeTypeName("PSRWLOCK")] SRWLOCK* SRWLock);
 
         [DllImport("kernel32", ExactSpelling = true)]
-        public static extern void EnterCriticalSection([NativeTypeName("LPCRITICAL_SECTION")] RTL_CRITICAL_SECTION* lpCriticalSection);
+        public static extern void InitializeCriticalSection([NativeTypeName("LPCRITICAL_SECTION")] CRITICAL_SECTION* lpCriticalSection);
 
         [DllImport("kernel32", ExactSpelling = true)]
-        public static extern void LeaveCriticalSection([NativeTypeName("LPCRITICAL_SECTION")] RTL_CRITICAL_SECTION* lpCriticalSection);
+        public static extern void EnterCriticalSection([NativeTypeName("LPCRITICAL_SECTION")] CRITICAL_SECTION* lpCriticalSection);
+
+        [DllImport("kernel32", ExactSpelling = true)]
+        public static extern void LeaveCriticalSection([NativeTypeName("LPCRITICAL_SECTION")] CRITICAL_SECTION* lpCriticalSection);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int InitializeCriticalSectionAndSpinCount([NativeTypeName("LPCRITICAL_SECTION")] RTL_CRITICAL_SECTION* lpCriticalSection, [NativeTypeName("DWORD")] uint dwSpinCount);
+        public static extern int InitializeCriticalSectionAndSpinCount([NativeTypeName("LPCRITICAL_SECTION")] CRITICAL_SECTION* lpCriticalSection, [NativeTypeName("DWORD")] uint dwSpinCount);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int InitializeCriticalSectionEx([NativeTypeName("LPCRITICAL_SECTION")] RTL_CRITICAL_SECTION* lpCriticalSection, [NativeTypeName("DWORD")] uint dwSpinCount, [NativeTypeName("DWORD")] uint Flags);
+        public static extern int InitializeCriticalSectionEx([NativeTypeName("LPCRITICAL_SECTION")] CRITICAL_SECTION* lpCriticalSection, [NativeTypeName("DWORD")] uint dwSpinCount, [NativeTypeName("DWORD")] uint Flags);
 
         [DllImport("kernel32", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
-        public static extern uint SetCriticalSectionSpinCount([NativeTypeName("LPCRITICAL_SECTION")] RTL_CRITICAL_SECTION* lpCriticalSection, [NativeTypeName("DWORD")] uint dwSpinCount);
+        public static extern uint SetCriticalSectionSpinCount([NativeTypeName("LPCRITICAL_SECTION")] CRITICAL_SECTION* lpCriticalSection, [NativeTypeName("DWORD")] uint dwSpinCount);
 
         [DllImport("kernel32", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int TryEnterCriticalSection([NativeTypeName("LPCRITICAL_SECTION")] RTL_CRITICAL_SECTION* lpCriticalSection);
+        public static extern int TryEnterCriticalSection([NativeTypeName("LPCRITICAL_SECTION")] CRITICAL_SECTION* lpCriticalSection);
 
         [DllImport("kernel32", ExactSpelling = true)]
-        public static extern void DeleteCriticalSection([NativeTypeName("LPCRITICAL_SECTION")] RTL_CRITICAL_SECTION* lpCriticalSection);
+        public static extern void DeleteCriticalSection([NativeTypeName("LPCRITICAL_SECTION")] CRITICAL_SECTION* lpCriticalSection);
 
         [DllImport("kernel32", ExactSpelling = true)]
-        public static extern void InitOnceInitialize([NativeTypeName("PINIT_ONCE")] RTL_RUN_ONCE* InitOnce);
+        public static extern void InitOnceInitialize([NativeTypeName("PINIT_ONCE")] INIT_ONCE* InitOnce);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int InitOnceExecuteOnce([NativeTypeName("PINIT_ONCE")] RTL_RUN_ONCE* InitOnce, [NativeTypeName("PINIT_ONCE_FN")] delegate* unmanaged<RTL_RUN_ONCE*, void*, void**, int> InitFn, [NativeTypeName("PVOID")] void* Parameter, [NativeTypeName("LPVOID *")] void** Context);
+        public static extern int InitOnceExecuteOnce([NativeTypeName("PINIT_ONCE")] INIT_ONCE* InitOnce, [NativeTypeName("PINIT_ONCE_FN")] delegate* unmanaged<INIT_ONCE*, void*, void**, int> InitFn, [NativeTypeName("PVOID")] void* Parameter, [NativeTypeName("LPVOID *")] void** Context);
 
         [DllImport("kernel32", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int InitOnceBeginInitialize([NativeTypeName("LPINIT_ONCE")] RTL_RUN_ONCE* lpInitOnce, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("PBOOL")] int* fPending, [NativeTypeName("LPVOID *")] void** lpContext);
+        public static extern int InitOnceBeginInitialize([NativeTypeName("LPINIT_ONCE")] INIT_ONCE* lpInitOnce, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("PBOOL")] int* fPending, [NativeTypeName("LPVOID *")] void** lpContext);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int InitOnceComplete([NativeTypeName("LPINIT_ONCE")] RTL_RUN_ONCE* lpInitOnce, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LPVOID")] void* lpContext);
+        public static extern int InitOnceComplete([NativeTypeName("LPINIT_ONCE")] INIT_ONCE* lpInitOnce, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LPVOID")] void* lpContext);
 
         [DllImport("kernel32", ExactSpelling = true)]
-        public static extern void InitializeConditionVariable([NativeTypeName("PCONDITION_VARIABLE")] RTL_CONDITION_VARIABLE* ConditionVariable);
+        public static extern void InitializeConditionVariable([NativeTypeName("PCONDITION_VARIABLE")] CONDITION_VARIABLE* ConditionVariable);
 
         [DllImport("kernel32", ExactSpelling = true)]
-        public static extern void WakeConditionVariable([NativeTypeName("PCONDITION_VARIABLE")] RTL_CONDITION_VARIABLE* ConditionVariable);
+        public static extern void WakeConditionVariable([NativeTypeName("PCONDITION_VARIABLE")] CONDITION_VARIABLE* ConditionVariable);
 
         [DllImport("kernel32", ExactSpelling = true)]
-        public static extern void WakeAllConditionVariable([NativeTypeName("PCONDITION_VARIABLE")] RTL_CONDITION_VARIABLE* ConditionVariable);
+        public static extern void WakeAllConditionVariable([NativeTypeName("PCONDITION_VARIABLE")] CONDITION_VARIABLE* ConditionVariable);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int SleepConditionVariableCS([NativeTypeName("PCONDITION_VARIABLE")] RTL_CONDITION_VARIABLE* ConditionVariable, [NativeTypeName("PCRITICAL_SECTION")] RTL_CRITICAL_SECTION* CriticalSection, [NativeTypeName("DWORD")] uint dwMilliseconds);
+        public static extern int SleepConditionVariableCS([NativeTypeName("PCONDITION_VARIABLE")] CONDITION_VARIABLE* ConditionVariable, [NativeTypeName("PCRITICAL_SECTION")] CRITICAL_SECTION* CriticalSection, [NativeTypeName("DWORD")] uint dwMilliseconds);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int SleepConditionVariableSRW([NativeTypeName("PCONDITION_VARIABLE")] RTL_CONDITION_VARIABLE* ConditionVariable, [NativeTypeName("PSRWLOCK")] RTL_SRWLOCK* SRWLock, [NativeTypeName("DWORD")] uint dwMilliseconds, [NativeTypeName("ULONG")] uint Flags);
+        public static extern int SleepConditionVariableSRW([NativeTypeName("PCONDITION_VARIABLE")] CONDITION_VARIABLE* ConditionVariable, [NativeTypeName("PSRWLOCK")] SRWLOCK* SRWLock, [NativeTypeName("DWORD")] uint dwMilliseconds, [NativeTypeName("ULONG")] uint Flags);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
@@ -199,15 +199,15 @@ namespace TerraFX.Interop
 
         [DllImport("kernel32", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int EnterSynchronizationBarrier([NativeTypeName("LPSYNCHRONIZATION_BARRIER")] RTL_BARRIER* lpBarrier, [NativeTypeName("DWORD")] uint dwFlags);
+        public static extern int EnterSynchronizationBarrier([NativeTypeName("LPSYNCHRONIZATION_BARRIER")] SYNCHRONIZATION_BARRIER* lpBarrier, [NativeTypeName("DWORD")] uint dwFlags);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int InitializeSynchronizationBarrier([NativeTypeName("LPSYNCHRONIZATION_BARRIER")] RTL_BARRIER* lpBarrier, [NativeTypeName("LONG")] int lTotalThreads, [NativeTypeName("LONG")] int lSpinCount);
+        public static extern int InitializeSynchronizationBarrier([NativeTypeName("LPSYNCHRONIZATION_BARRIER")] SYNCHRONIZATION_BARRIER* lpBarrier, [NativeTypeName("LONG")] int lTotalThreads, [NativeTypeName("LONG")] int lSpinCount);
 
         [DllImport("kernel32", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int DeleteSynchronizationBarrier([NativeTypeName("LPSYNCHRONIZATION_BARRIER")] RTL_BARRIER* lpBarrier);
+        public static extern int DeleteSynchronizationBarrier([NativeTypeName("LPSYNCHRONIZATION_BARRIER")] SYNCHRONIZATION_BARRIER* lpBarrier);
 
         [DllImport("kernel32", ExactSpelling = true)]
         public static extern void Sleep([NativeTypeName("DWORD")] uint dwMilliseconds);

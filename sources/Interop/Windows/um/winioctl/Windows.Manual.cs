@@ -9,8 +9,136 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
 {
-    public static partial class Windows
+    public static unsafe partial class Windows
     {
+        [return: NativeTypeName("DWORD")]
+        public static uint DeviceDsmNumberOfDataSetRanges([NativeTypeName("PDEVICE_DSM_INPUT")] DEVICE_MANAGE_DATA_SET_ATTRIBUTES* Input)
+        {
+            return Input->DataSetRangesLength / unchecked((uint)(sizeof(DEVICE_DATA_SET_RANGE)));
+        }
+
+        [return: NativeTypeName("DWORD")]
+        public static uint DeviceDsmGetInputLength([NativeTypeName("PDEVICE_DSM_DEFINITION")] DEVICE_DSM_DEFINITION* Definition, [NativeTypeName("DWORD")] uint ParameterBlockLength, [NativeTypeName("DWORD")] uint NumberOfDataSetRanges)
+        {
+            uint Bytes = 28;
+
+            if (ParameterBlockLength != 0)
+            {
+                unchecked(Bytes) = unchecked(((Bytes) + ((Definition->ParameterBlockAlignment) - 1)) / (Definition->ParameterBlockAlignment) * (Definition->ParameterBlockAlignment));
+                unchecked(Bytes) += ParameterBlockLength;
+            }
+
+            if (NumberOfDataSetRanges != 0)
+            {
+                unchecked(Bytes) = unchecked(((Bytes) + ((8) - 1)) / (8) * (8));
+                unchecked(Bytes) += unchecked((uint)(sizeof(DEVICE_DATA_SET_RANGE)) * NumberOfDataSetRanges);
+            }
+
+            return Bytes;
+        }
+
+        [return: NativeTypeName("DWORD")]
+        public static uint DeviceDsmGetNumberOfDataSetRanges([NativeTypeName("PDEVICE_DSM_DEFINITION")] DEVICE_DSM_DEFINITION* Definition, [NativeTypeName("DWORD")] uint InputLength, [NativeTypeName("DWORD")] uint ParameterBlockLength)
+        {
+            uint Bytes = 28;
+
+            if (ParameterBlockLength != 0)
+            {
+                unchecked(Bytes) = unchecked(((Bytes) + ((Definition->ParameterBlockAlignment) - 1)) / (Definition->ParameterBlockAlignment) * (Definition->ParameterBlockAlignment));
+                unchecked(Bytes) += ParameterBlockLength;
+            }
+
+            unchecked(Bytes) = unchecked(((Bytes) + ((8) - 1)) / (8) * (8));
+            unchecked(Bytes) = unchecked(InputLength - Bytes);
+            return unchecked(Bytes) / unchecked((uint)(sizeof(DEVICE_DATA_SET_RANGE)));
+        }
+
+        [return: NativeTypeName("BOOLEAN")]
+        public static byte DeviceDsmAddDataSetRange([NativeTypeName("PDEVICE_DSM_INPUT")] DEVICE_MANAGE_DATA_SET_ATTRIBUTES* Input, [NativeTypeName("DWORD")] uint InputLength, [NativeTypeName("LONGLONG")] long Offset, [NativeTypeName("DWORDLONG")] ulong Length)
+        {
+            uint Bytes = 0;
+            uint Index = 0;
+            DEVICE_DATA_SET_RANGE* Ranges = null;
+            byte Return = 0;
+
+            if ((Input->Flags & 0x00000001) != 0)
+            {
+                goto Cleanup;
+            }
+
+            if (Input->DataSetRangesLength == 0)
+            {
+                if (Input->ParameterBlockLength == 0)
+                {
+                    Bytes = unchecked((uint)(sizeof(DEVICE_MANAGE_DATA_SET_ATTRIBUTES)));
+                }
+                else
+                {
+                    Bytes = Input->ParameterBlockOffset + Input->ParameterBlockLength;
+                }
+
+                Bytes = (((Bytes) + ((8) - 1)) / (8) * (8));
+            }
+            else
+            {
+                Bytes = Input->DataSetRangesOffset + Input->DataSetRangesLength;
+            }
+
+            if ((InputLength - Bytes) < sizeof(DEVICE_DATA_SET_RANGE))
+            {
+                goto Cleanup;
+            }
+
+            if (Input->DataSetRangesOffset == 0)
+            {
+                Input->DataSetRangesOffset = Bytes;
+            }
+
+            Ranges = DeviceDsmDataSetRanges(Input);
+            Index = DeviceDsmNumberOfDataSetRanges(Input);
+            Ranges[Index].StartingOffset = Offset;
+            Ranges[Index].LengthInBytes = Length;
+            Input->DataSetRangesLength += unchecked((uint)(sizeof(DEVICE_DATA_SET_RANGE)));
+            Return = 1;
+        Cleanup:
+            return Return;
+        }
+
+        [NativeTypeName("#define FSCTL_ENABLE_PER_IO_FLAGS CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 267, METHOD_BUFFERED, FILE_ANY_ACCESS)")]
+        public static int FSCTL_ENABLE_PER_IO_FLAGS
+        {
+            get
+            {
+                if (sizeof(nint) == 4)
+                {
+                    return 0;
+                }
+                else
+                {
+                    return (((0x00000009) << 16) | ((0) << 14) | ((267) << 2) | (0));
+                }
+            }
+        }
+
+        [NativeTypeName("#define FILE_REGION_USAGE_HUGE_PAGE_ALIGNMENT 0x00000010")]
+        public static int FILE_REGION_USAGE_HUGE_PAGE_ALIGNMENT
+        {
+            get
+            {
+                if (sizeof(nint) == 4)
+                {
+                    return 0;
+                }
+                else
+                {
+                    return 0x00000010;
+                }
+            }
+        }
+
+        [NativeTypeName("#define FILE_REGION_USAGE_QUERY_ALIGNMENT (FILE_REGION_USAGE_LARGE_PAGE_ALIGNMENT   |\\\r\n                                                 FILE_REGION_USAGE_HUGE_PAGE_ALIGNMENT)")]
+        public static int FILE_REGION_USAGE_QUERY_ALIGNMENT = FILE_REGION_USAGE_LARGE_PAGE_ALIGNMENT | FILE_REGION_USAGE_HUGE_PAGE_ALIGNMENT;
+
         public static ref readonly Guid GUID_DEVINTERFACE_DISK
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]

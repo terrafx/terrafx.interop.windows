@@ -4,6 +4,7 @@ INT_PTR=@nint
 LONG_PTR=@nint
 LPARAM=@nint
 LRESULT=@nint
+PULONG_PTR=@nuint*
 SHANDLE_PTR=@nint
 SIZE_T=@nuint
 SSIZE_T=@nint
