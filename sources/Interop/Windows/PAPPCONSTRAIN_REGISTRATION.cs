@@ -6,32 +6,50 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct PAPPCONSTRAIN_REGISTRATION : IEquatable<PAPPCONSTRAIN_REGISTRATION>
     {
-        public readonly nint Value;
+        public readonly void* Value;
+
+        public PAPPCONSTRAIN_REGISTRATION(int value)
+        {
+            Value = ((void*)(value));
+        }
+
+        public PAPPCONSTRAIN_REGISTRATION(uint value)
+        {
+            Value = ((void*)(value));
+        }
 
         public PAPPCONSTRAIN_REGISTRATION(nint value)
         {
-            Value = ((nint)(value));
+            Value = ((void*)(value));
         }
 
         public PAPPCONSTRAIN_REGISTRATION(nuint value)
         {
-            Value = ((nint)(value));
+            Value = ((void*)(value));
         }
 
         public PAPPCONSTRAIN_REGISTRATION(void* value)
         {
-            Value = ((nint)(value));
+            Value = ((void*)(value));
         }
 
         public static bool operator ==(PAPPCONSTRAIN_REGISTRATION left, PAPPCONSTRAIN_REGISTRATION right) => left.Value == right.Value;
 
         public static bool operator !=(PAPPCONSTRAIN_REGISTRATION left, PAPPCONSTRAIN_REGISTRATION right) => left.Value != right.Value;
 
+        public static explicit operator PAPPCONSTRAIN_REGISTRATION(int value) => new PAPPCONSTRAIN_REGISTRATION(value);
+
+        public static explicit operator PAPPCONSTRAIN_REGISTRATION(uint value) => new PAPPCONSTRAIN_REGISTRATION(value);
+
         public static explicit operator PAPPCONSTRAIN_REGISTRATION(nint value) => new PAPPCONSTRAIN_REGISTRATION(value);
 
         public static explicit operator PAPPCONSTRAIN_REGISTRATION(nuint value) => new PAPPCONSTRAIN_REGISTRATION(value);
 
         public static explicit operator PAPPCONSTRAIN_REGISTRATION(void* value) => new PAPPCONSTRAIN_REGISTRATION(value);
+
+        public static implicit operator int(PAPPCONSTRAIN_REGISTRATION value) => (int)(value.Value);
+
+        public static implicit operator uint(PAPPCONSTRAIN_REGISTRATION value) => (uint)(value.Value);
 
         public static implicit operator nint(PAPPCONSTRAIN_REGISTRATION value) => (nint)(value.Value);
 

@@ -22,8 +22,7 @@ namespace TerraFX.Interop
 
         public HICON hIcon;
 
-        [NativeTypeName("HCURSOR")]
-        public HICON hCursor;
+        public HCURSOR hCursor;
 
         public HBRUSH hbrBackground;
 

@@ -8,6 +8,16 @@ namespace TerraFX.Interop
     {
         public readonly nint Value;
 
+        public HCOLORSPACE(int value)
+        {
+            Value = ((nint)(value));
+        }
+
+        public HCOLORSPACE(uint value)
+        {
+            Value = ((nint)(value));
+        }
+
         public HCOLORSPACE(nint value)
         {
             Value = ((nint)(value));
@@ -23,9 +33,18 @@ namespace TerraFX.Interop
             Value = ((nint)(value));
         }
 
+        public HCOLORSPACE(HANDLE value)
+        {
+            Value = value.Value;
+        }
+
         public static bool operator ==(HCOLORSPACE left, HCOLORSPACE right) => left.Value == right.Value;
 
         public static bool operator !=(HCOLORSPACE left, HCOLORSPACE right) => left.Value != right.Value;
+
+        public static explicit operator HCOLORSPACE(int value) => new HCOLORSPACE(value);
+
+        public static explicit operator HCOLORSPACE(uint value) => new HCOLORSPACE(value);
 
         public static explicit operator HCOLORSPACE(nint value) => new HCOLORSPACE(value);
 
@@ -33,11 +52,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HCOLORSPACE(void* value) => new HCOLORSPACE(value);
 
+        public static explicit operator HCOLORSPACE(HANDLE value) => new HCOLORSPACE(value);
+
+        public static implicit operator int(HCOLORSPACE value) => (int)(value.Value);
+
+        public static implicit operator uint(HCOLORSPACE value) => (uint)(value.Value);
+
         public static implicit operator nint(HCOLORSPACE value) => (nint)(value.Value);
 
         public static implicit operator nuint(HCOLORSPACE value) => (nuint)(value.Value);
 
         public static implicit operator void*(HCOLORSPACE value) => (void*)(value.Value);
+
+        public static implicit operator HANDLE(HCOLORSPACE value) => (HANDLE)(value.Value);
 
         public override bool Equals(object? obj) => (obj is HCOLORSPACE other) && Equals(other);
 

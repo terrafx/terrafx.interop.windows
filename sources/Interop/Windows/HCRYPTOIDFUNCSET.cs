@@ -6,32 +6,50 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct HCRYPTOIDFUNCSET : IEquatable<HCRYPTOIDFUNCSET>
     {
-        public readonly nint Value;
+        public readonly void* Value;
+
+        public HCRYPTOIDFUNCSET(int value)
+        {
+            Value = ((void*)(value));
+        }
+
+        public HCRYPTOIDFUNCSET(uint value)
+        {
+            Value = ((void*)(value));
+        }
 
         public HCRYPTOIDFUNCSET(nint value)
         {
-            Value = ((nint)(value));
+            Value = ((void*)(value));
         }
 
         public HCRYPTOIDFUNCSET(nuint value)
         {
-            Value = ((nint)(value));
+            Value = ((void*)(value));
         }
 
         public HCRYPTOIDFUNCSET(void* value)
         {
-            Value = ((nint)(value));
+            Value = ((void*)(value));
         }
 
         public static bool operator ==(HCRYPTOIDFUNCSET left, HCRYPTOIDFUNCSET right) => left.Value == right.Value;
 
         public static bool operator !=(HCRYPTOIDFUNCSET left, HCRYPTOIDFUNCSET right) => left.Value != right.Value;
 
+        public static explicit operator HCRYPTOIDFUNCSET(int value) => new HCRYPTOIDFUNCSET(value);
+
+        public static explicit operator HCRYPTOIDFUNCSET(uint value) => new HCRYPTOIDFUNCSET(value);
+
         public static explicit operator HCRYPTOIDFUNCSET(nint value) => new HCRYPTOIDFUNCSET(value);
 
         public static explicit operator HCRYPTOIDFUNCSET(nuint value) => new HCRYPTOIDFUNCSET(value);
 
         public static explicit operator HCRYPTOIDFUNCSET(void* value) => new HCRYPTOIDFUNCSET(value);
+
+        public static implicit operator int(HCRYPTOIDFUNCSET value) => (int)(value.Value);
+
+        public static implicit operator uint(HCRYPTOIDFUNCSET value) => (uint)(value.Value);
 
         public static implicit operator nint(HCRYPTOIDFUNCSET value) => (nint)(value.Value);
 

@@ -8,6 +8,16 @@ namespace TerraFX.Interop
     {
         public readonly nint Value;
 
+        public HSEMAPHORE(int value)
+        {
+            Value = ((nint)(value));
+        }
+
+        public HSEMAPHORE(uint value)
+        {
+            Value = ((nint)(value));
+        }
+
         public HSEMAPHORE(nint value)
         {
             Value = ((nint)(value));
@@ -23,9 +33,18 @@ namespace TerraFX.Interop
             Value = ((nint)(value));
         }
 
+        public HSEMAPHORE(HANDLE value)
+        {
+            Value = value.Value;
+        }
+
         public static bool operator ==(HSEMAPHORE left, HSEMAPHORE right) => left.Value == right.Value;
 
         public static bool operator !=(HSEMAPHORE left, HSEMAPHORE right) => left.Value != right.Value;
+
+        public static explicit operator HSEMAPHORE(int value) => new HSEMAPHORE(value);
+
+        public static explicit operator HSEMAPHORE(uint value) => new HSEMAPHORE(value);
 
         public static explicit operator HSEMAPHORE(nint value) => new HSEMAPHORE(value);
 
@@ -33,11 +52,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HSEMAPHORE(void* value) => new HSEMAPHORE(value);
 
+        public static explicit operator HSEMAPHORE(HANDLE value) => new HSEMAPHORE(value);
+
+        public static implicit operator int(HSEMAPHORE value) => (int)(value.Value);
+
+        public static implicit operator uint(HSEMAPHORE value) => (uint)(value.Value);
+
         public static implicit operator nint(HSEMAPHORE value) => (nint)(value.Value);
 
         public static implicit operator nuint(HSEMAPHORE value) => (nuint)(value.Value);
 
         public static implicit operator void*(HSEMAPHORE value) => (void*)(value.Value);
+
+        public static implicit operator HANDLE(HSEMAPHORE value) => (HANDLE)(value.Value);
 
         public override bool Equals(object? obj) => (obj is HSEMAPHORE other) && Equals(other);
 

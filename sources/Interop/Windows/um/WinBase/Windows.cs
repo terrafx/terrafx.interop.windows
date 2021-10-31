@@ -572,8 +572,7 @@ namespace TerraFX.Interop
         public static extern uint GetLogicalDriveStringsA([NativeTypeName("DWORD")] uint nBufferLength, [NativeTypeName("LPSTR")] sbyte* lpBuffer);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("HMODULE")]
-        public static extern HINSTANCE LoadPackagedLibrary([NativeTypeName("LPCWSTR")] ushort* lpwLibFileName, [NativeTypeName("DWORD")] uint Reserved);
+        public static extern HMODULE LoadPackagedLibrary([NativeTypeName("LPCWSTR")] ushort* lpwLibFileName, [NativeTypeName("DWORD")] uint Reserved);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         public static extern BOOL QueryFullProcessImageNameA(HANDLE hProcess, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LPSTR")] sbyte* lpExeName, [NativeTypeName("PDWORD")] uint* lpdwSize);
@@ -619,22 +618,22 @@ namespace TerraFX.Interop
         public static extern BOOL IsNativeVhdBoot([NativeTypeName("PBOOL")] BOOL* NativeVhdBoot);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        public static extern HRSRC FindResourceA([NativeTypeName("HMODULE")] HINSTANCE hModule, [NativeTypeName("LPCSTR")] sbyte* lpName, [NativeTypeName("LPCSTR")] sbyte* lpType);
+        public static extern HRSRC FindResourceA(HMODULE hModule, [NativeTypeName("LPCSTR")] sbyte* lpName, [NativeTypeName("LPCSTR")] sbyte* lpType);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        public static extern HRSRC FindResourceExA([NativeTypeName("HMODULE")] HINSTANCE hModule, [NativeTypeName("LPCSTR")] sbyte* lpType, [NativeTypeName("LPCSTR")] sbyte* lpName, [NativeTypeName("WORD")] ushort wLanguage);
+        public static extern HRSRC FindResourceExA(HMODULE hModule, [NativeTypeName("LPCSTR")] sbyte* lpType, [NativeTypeName("LPCSTR")] sbyte* lpName, [NativeTypeName("WORD")] ushort wLanguage);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        public static extern BOOL EnumResourceTypesA([NativeTypeName("HMODULE")] HINSTANCE hModule, [NativeTypeName("ENUMRESTYPEPROCA")] delegate* unmanaged<HINSTANCE, sbyte*, nint, BOOL> lpEnumFunc, [NativeTypeName("LONG_PTR")] nint lParam);
+        public static extern BOOL EnumResourceTypesA(HMODULE hModule, [NativeTypeName("ENUMRESTYPEPROCA")] delegate* unmanaged<HMODULE, sbyte*, nint, BOOL> lpEnumFunc, [NativeTypeName("LONG_PTR")] nint lParam);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        public static extern BOOL EnumResourceTypesW([NativeTypeName("HMODULE")] HINSTANCE hModule, [NativeTypeName("ENUMRESTYPEPROCW")] delegate* unmanaged<HINSTANCE, ushort*, nint, BOOL> lpEnumFunc, [NativeTypeName("LONG_PTR")] nint lParam);
+        public static extern BOOL EnumResourceTypesW(HMODULE hModule, [NativeTypeName("ENUMRESTYPEPROCW")] delegate* unmanaged<HMODULE, ushort*, nint, BOOL> lpEnumFunc, [NativeTypeName("LONG_PTR")] nint lParam);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        public static extern BOOL EnumResourceLanguagesA([NativeTypeName("HMODULE")] HINSTANCE hModule, [NativeTypeName("LPCSTR")] sbyte* lpType, [NativeTypeName("LPCSTR")] sbyte* lpName, [NativeTypeName("ENUMRESLANGPROCA")] delegate* unmanaged<HINSTANCE, sbyte*, sbyte*, ushort, nint, BOOL> lpEnumFunc, [NativeTypeName("LONG_PTR")] nint lParam);
+        public static extern BOOL EnumResourceLanguagesA(HMODULE hModule, [NativeTypeName("LPCSTR")] sbyte* lpType, [NativeTypeName("LPCSTR")] sbyte* lpName, [NativeTypeName("ENUMRESLANGPROCA")] delegate* unmanaged<HMODULE, sbyte*, sbyte*, ushort, nint, BOOL> lpEnumFunc, [NativeTypeName("LONG_PTR")] nint lParam);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        public static extern BOOL EnumResourceLanguagesW([NativeTypeName("HMODULE")] HINSTANCE hModule, [NativeTypeName("LPCWSTR")] ushort* lpType, [NativeTypeName("LPCWSTR")] ushort* lpName, [NativeTypeName("ENUMRESLANGPROCW")] delegate* unmanaged<HINSTANCE, ushort*, ushort*, ushort, nint, BOOL> lpEnumFunc, [NativeTypeName("LONG_PTR")] nint lParam);
+        public static extern BOOL EnumResourceLanguagesW(HMODULE hModule, [NativeTypeName("LPCWSTR")] ushort* lpType, [NativeTypeName("LPCWSTR")] ushort* lpName, [NativeTypeName("ENUMRESLANGPROCW")] delegate* unmanaged<HMODULE, ushort*, ushort*, ushort, nint, BOOL> lpEnumFunc, [NativeTypeName("LONG_PTR")] nint lParam);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         public static extern HANDLE BeginUpdateResourceA([NativeTypeName("LPCSTR")] sbyte* pFileName, BOOL bDeleteExistingResources);
@@ -3483,10 +3482,10 @@ namespace TerraFX.Interop
         public static delegate*<ushort*, ushort*, void*, uint, uint, BOOL> SetFirmwareEnvironmentVariableEx => &SetFirmwareEnvironmentVariableExW;
 
         [NativeTypeName("#define EnumResourceTypes EnumResourceTypesW")]
-        public static delegate*<HINSTANCE, delegate* unmanaged<HINSTANCE, ushort*, nint, BOOL>, nint, BOOL> EnumResourceTypes => &EnumResourceTypesW;
+        public static delegate*<HMODULE, delegate* unmanaged<HMODULE, ushort*, nint, BOOL>, nint, BOOL> EnumResourceTypes => &EnumResourceTypesW;
 
         [NativeTypeName("#define EnumResourceLanguages EnumResourceLanguagesW")]
-        public static delegate*<HINSTANCE, ushort*, ushort*, delegate* unmanaged<HINSTANCE, ushort*, ushort*, ushort, nint, BOOL>, nint, BOOL> EnumResourceLanguages => &EnumResourceLanguagesW;
+        public static delegate*<HMODULE, ushort*, ushort*, delegate* unmanaged<HMODULE, ushort*, ushort*, ushort, nint, BOOL>, nint, BOOL> EnumResourceLanguages => &EnumResourceLanguagesW;
 
         [NativeTypeName("#define BeginUpdateResource BeginUpdateResourceW")]
         public static delegate*<ushort*, BOOL, HANDLE> BeginUpdateResource => &BeginUpdateResourceW;

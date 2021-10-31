@@ -6,32 +6,50 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct HCRYPTMSG : IEquatable<HCRYPTMSG>
     {
-        public readonly nint Value;
+        public readonly void* Value;
+
+        public HCRYPTMSG(int value)
+        {
+            Value = ((void*)(value));
+        }
+
+        public HCRYPTMSG(uint value)
+        {
+            Value = ((void*)(value));
+        }
 
         public HCRYPTMSG(nint value)
         {
-            Value = ((nint)(value));
+            Value = ((void*)(value));
         }
 
         public HCRYPTMSG(nuint value)
         {
-            Value = ((nint)(value));
+            Value = ((void*)(value));
         }
 
         public HCRYPTMSG(void* value)
         {
-            Value = ((nint)(value));
+            Value = ((void*)(value));
         }
 
         public static bool operator ==(HCRYPTMSG left, HCRYPTMSG right) => left.Value == right.Value;
 
         public static bool operator !=(HCRYPTMSG left, HCRYPTMSG right) => left.Value != right.Value;
 
+        public static explicit operator HCRYPTMSG(int value) => new HCRYPTMSG(value);
+
+        public static explicit operator HCRYPTMSG(uint value) => new HCRYPTMSG(value);
+
         public static explicit operator HCRYPTMSG(nint value) => new HCRYPTMSG(value);
 
         public static explicit operator HCRYPTMSG(nuint value) => new HCRYPTMSG(value);
 
         public static explicit operator HCRYPTMSG(void* value) => new HCRYPTMSG(value);
+
+        public static implicit operator int(HCRYPTMSG value) => (int)(value.Value);
+
+        public static implicit operator uint(HCRYPTMSG value) => (uint)(value.Value);
 
         public static implicit operator nint(HCRYPTMSG value) => (nint)(value.Value);
 

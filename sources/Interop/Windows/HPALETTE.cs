@@ -8,6 +8,16 @@ namespace TerraFX.Interop
     {
         public readonly nint Value;
 
+        public HPALETTE(int value)
+        {
+            Value = ((nint)(value));
+        }
+
+        public HPALETTE(uint value)
+        {
+            Value = ((nint)(value));
+        }
+
         public HPALETTE(nint value)
         {
             Value = ((nint)(value));
@@ -23,9 +33,18 @@ namespace TerraFX.Interop
             Value = ((nint)(value));
         }
 
+        public HPALETTE(HANDLE value)
+        {
+            Value = value.Value;
+        }
+
         public static bool operator ==(HPALETTE left, HPALETTE right) => left.Value == right.Value;
 
         public static bool operator !=(HPALETTE left, HPALETTE right) => left.Value != right.Value;
+
+        public static explicit operator HPALETTE(int value) => new HPALETTE(value);
+
+        public static explicit operator HPALETTE(uint value) => new HPALETTE(value);
 
         public static explicit operator HPALETTE(nint value) => new HPALETTE(value);
 
@@ -33,11 +52,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HPALETTE(void* value) => new HPALETTE(value);
 
+        public static explicit operator HPALETTE(HANDLE value) => new HPALETTE(value);
+
+        public static implicit operator int(HPALETTE value) => (int)(value.Value);
+
+        public static implicit operator uint(HPALETTE value) => (uint)(value.Value);
+
         public static implicit operator nint(HPALETTE value) => (nint)(value.Value);
 
         public static implicit operator nuint(HPALETTE value) => (nuint)(value.Value);
 
         public static implicit operator void*(HPALETTE value) => (void*)(value.Value);
+
+        public static implicit operator HANDLE(HPALETTE value) => (HANDLE)(value.Value);
 
         public override bool Equals(object? obj) => (obj is HPALETTE other) && Equals(other);
 

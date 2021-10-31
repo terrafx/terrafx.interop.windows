@@ -8,6 +8,16 @@ namespace TerraFX.Interop
     {
         public readonly nint Value;
 
+        public HIMC(int value)
+        {
+            Value = ((nint)(value));
+        }
+
+        public HIMC(uint value)
+        {
+            Value = ((nint)(value));
+        }
+
         public HIMC(nint value)
         {
             Value = ((nint)(value));
@@ -23,9 +33,18 @@ namespace TerraFX.Interop
             Value = ((nint)(value));
         }
 
+        public HIMC(HANDLE value)
+        {
+            Value = value.Value;
+        }
+
         public static bool operator ==(HIMC left, HIMC right) => left.Value == right.Value;
 
         public static bool operator !=(HIMC left, HIMC right) => left.Value != right.Value;
+
+        public static explicit operator HIMC(int value) => new HIMC(value);
+
+        public static explicit operator HIMC(uint value) => new HIMC(value);
 
         public static explicit operator HIMC(nint value) => new HIMC(value);
 
@@ -33,11 +52,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HIMC(void* value) => new HIMC(value);
 
+        public static explicit operator HIMC(HANDLE value) => new HIMC(value);
+
+        public static implicit operator int(HIMC value) => (int)(value.Value);
+
+        public static implicit operator uint(HIMC value) => (uint)(value.Value);
+
         public static implicit operator nint(HIMC value) => (nint)(value.Value);
 
         public static implicit operator nuint(HIMC value) => (nuint)(value.Value);
 
         public static implicit operator void*(HIMC value) => (void*)(value.Value);
+
+        public static implicit operator HANDLE(HIMC value) => (HANDLE)(value.Value);
 
         public override bool Equals(object? obj) => (obj is HIMC other) && Equals(other);
 

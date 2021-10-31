@@ -418,36 +418,6 @@ namespace TerraFX.Interop
         [NativeTypeName("#define REG_USE_CURRENT_SECURITY_CONTEXT 0x00000002")]
         public const int REG_USE_CURRENT_SECURITY_CONTEXT = 0x00000002;
 
-        [NativeTypeName("#define HKEY_CLASSES_ROOT (( HKEY ) (ULONG_PTR)((LONG)0x80000000) )")]
-        public static HKEY HKEY_CLASSES_ROOT => unchecked((nint)((nuint)((int)(0x80000000))));
-
-        [NativeTypeName("#define HKEY_CURRENT_USER (( HKEY ) (ULONG_PTR)((LONG)0x80000001) )")]
-        public static HKEY HKEY_CURRENT_USER => unchecked((nint)((nuint)((int)(0x80000001))));
-
-        [NativeTypeName("#define HKEY_LOCAL_MACHINE (( HKEY ) (ULONG_PTR)((LONG)0x80000002) )")]
-        public static HKEY HKEY_LOCAL_MACHINE => unchecked((nint)((nuint)((int)(0x80000002))));
-
-        [NativeTypeName("#define HKEY_USERS (( HKEY ) (ULONG_PTR)((LONG)0x80000003) )")]
-        public static HKEY HKEY_USERS => unchecked((nint)((nuint)((int)(0x80000003))));
-
-        [NativeTypeName("#define HKEY_PERFORMANCE_DATA (( HKEY ) (ULONG_PTR)((LONG)0x80000004) )")]
-        public static HKEY HKEY_PERFORMANCE_DATA => unchecked((nint)((nuint)((int)(0x80000004))));
-
-        [NativeTypeName("#define HKEY_PERFORMANCE_TEXT (( HKEY ) (ULONG_PTR)((LONG)0x80000050) )")]
-        public static HKEY HKEY_PERFORMANCE_TEXT => unchecked((nint)((nuint)((int)(0x80000050))));
-
-        [NativeTypeName("#define HKEY_PERFORMANCE_NLSTEXT (( HKEY ) (ULONG_PTR)((LONG)0x80000060) )")]
-        public static HKEY HKEY_PERFORMANCE_NLSTEXT => unchecked((nint)((nuint)((int)(0x80000060))));
-
-        [NativeTypeName("#define HKEY_CURRENT_CONFIG (( HKEY ) (ULONG_PTR)((LONG)0x80000005) )")]
-        public static HKEY HKEY_CURRENT_CONFIG => unchecked((nint)((nuint)((int)(0x80000005))));
-
-        [NativeTypeName("#define HKEY_DYN_DATA (( HKEY ) (ULONG_PTR)((LONG)0x80000006) )")]
-        public static HKEY HKEY_DYN_DATA => unchecked((nint)((nuint)((int)(0x80000006))));
-
-        [NativeTypeName("#define HKEY_CURRENT_USER_LOCAL_SETTINGS (( HKEY ) (ULONG_PTR)((LONG)0x80000007) )")]
-        public static HKEY HKEY_CURRENT_USER_LOCAL_SETTINGS => unchecked((nint)((nuint)((int)(0x80000007))));
-
         [NativeTypeName("#define PROVIDER_KEEPS_VALUE_LENGTH 0x1")]
         public const int PROVIDER_KEEPS_VALUE_LENGTH = 0x1;
 

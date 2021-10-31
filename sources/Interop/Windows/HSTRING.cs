@@ -6,32 +6,50 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct HSTRING : IEquatable<HSTRING>
     {
-        public readonly nint Value;
+        public readonly void* Value;
+
+        public HSTRING(int value)
+        {
+            Value = ((void*)(value));
+        }
+
+        public HSTRING(uint value)
+        {
+            Value = ((void*)(value));
+        }
 
         public HSTRING(nint value)
         {
-            Value = ((nint)(value));
+            Value = ((void*)(value));
         }
 
         public HSTRING(nuint value)
         {
-            Value = ((nint)(value));
+            Value = ((void*)(value));
         }
 
         public HSTRING(void* value)
         {
-            Value = ((nint)(value));
+            Value = ((void*)(value));
         }
 
         public static bool operator ==(HSTRING left, HSTRING right) => left.Value == right.Value;
 
         public static bool operator !=(HSTRING left, HSTRING right) => left.Value != right.Value;
 
+        public static explicit operator HSTRING(int value) => new HSTRING(value);
+
+        public static explicit operator HSTRING(uint value) => new HSTRING(value);
+
         public static explicit operator HSTRING(nint value) => new HSTRING(value);
 
         public static explicit operator HSTRING(nuint value) => new HSTRING(value);
 
         public static explicit operator HSTRING(void* value) => new HSTRING(value);
+
+        public static implicit operator int(HSTRING value) => (int)(value.Value);
+
+        public static implicit operator uint(HSTRING value) => (uint)(value.Value);
 
         public static implicit operator nint(HSTRING value) => (nint)(value.Value);
 

@@ -2,6 +2,8 @@
 @../../remap.rsp
 --define-macro
 SERIAL_ADVANCED_SETTINGS
+--exclude
+HCOMDB_INVALID_HANDLE_VALUE
 --file
 um-msports.h
 --output

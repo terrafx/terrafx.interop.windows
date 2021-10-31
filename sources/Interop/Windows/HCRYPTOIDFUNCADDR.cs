@@ -6,32 +6,50 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct HCRYPTOIDFUNCADDR : IEquatable<HCRYPTOIDFUNCADDR>
     {
-        public readonly nint Value;
+        public readonly void* Value;
+
+        public HCRYPTOIDFUNCADDR(int value)
+        {
+            Value = ((void*)(value));
+        }
+
+        public HCRYPTOIDFUNCADDR(uint value)
+        {
+            Value = ((void*)(value));
+        }
 
         public HCRYPTOIDFUNCADDR(nint value)
         {
-            Value = ((nint)(value));
+            Value = ((void*)(value));
         }
 
         public HCRYPTOIDFUNCADDR(nuint value)
         {
-            Value = ((nint)(value));
+            Value = ((void*)(value));
         }
 
         public HCRYPTOIDFUNCADDR(void* value)
         {
-            Value = ((nint)(value));
+            Value = ((void*)(value));
         }
 
         public static bool operator ==(HCRYPTOIDFUNCADDR left, HCRYPTOIDFUNCADDR right) => left.Value == right.Value;
 
         public static bool operator !=(HCRYPTOIDFUNCADDR left, HCRYPTOIDFUNCADDR right) => left.Value != right.Value;
 
+        public static explicit operator HCRYPTOIDFUNCADDR(int value) => new HCRYPTOIDFUNCADDR(value);
+
+        public static explicit operator HCRYPTOIDFUNCADDR(uint value) => new HCRYPTOIDFUNCADDR(value);
+
         public static explicit operator HCRYPTOIDFUNCADDR(nint value) => new HCRYPTOIDFUNCADDR(value);
 
         public static explicit operator HCRYPTOIDFUNCADDR(nuint value) => new HCRYPTOIDFUNCADDR(value);
 
         public static explicit operator HCRYPTOIDFUNCADDR(void* value) => new HCRYPTOIDFUNCADDR(value);
+
+        public static implicit operator int(HCRYPTOIDFUNCADDR value) => (int)(value.Value);
+
+        public static implicit operator uint(HCRYPTOIDFUNCADDR value) => (uint)(value.Value);
 
         public static implicit operator nint(HCRYPTOIDFUNCADDR value) => (nint)(value.Value);
 

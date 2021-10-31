@@ -8,6 +8,16 @@ namespace TerraFX.Interop
     {
         public readonly nint Value;
 
+        public HANDLE(int value)
+        {
+            Value = ((nint)(value));
+        }
+
+        public HANDLE(uint value)
+        {
+            Value = ((nint)(value));
+        }
+
         public HANDLE(nint value)
         {
             Value = ((nint)(value));
@@ -27,11 +37,19 @@ namespace TerraFX.Interop
 
         public static bool operator !=(HANDLE left, HANDLE right) => left.Value != right.Value;
 
+        public static explicit operator HANDLE(int value) => new HANDLE(value);
+
+        public static explicit operator HANDLE(uint value) => new HANDLE(value);
+
         public static explicit operator HANDLE(nint value) => new HANDLE(value);
 
         public static explicit operator HANDLE(nuint value) => new HANDLE(value);
 
         public static explicit operator HANDLE(void* value) => new HANDLE(value);
+
+        public static implicit operator int(HANDLE value) => (int)(value.Value);
+
+        public static implicit operator uint(HANDLE value) => (uint)(value.Value);
 
         public static implicit operator nint(HANDLE value) => (nint)(value.Value);
 

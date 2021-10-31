@@ -38,7 +38,7 @@ namespace TerraFX.Samples.DirectX.D3D12
 
         private ID3D12Fence* _fence;
         private ulong[] _fenceValues;
-        private IntPtr _fenceEvent;
+        private HANDLE _fenceEvent;
 
         private ID3D12GraphicsCommandList*[] _graphicsCommandLists;
         private ID3D12RootSignature* _rootSignature;
@@ -68,7 +68,7 @@ namespace TerraFX.Samples.DirectX.D3D12
 
         public ID3D12Fence* Fence => _fence;
 
-        public IntPtr FenceEvent => _fenceEvent;
+        public HANDLE FenceEvent => _fenceEvent;
 
         public ref ulong FenceValue => ref _fenceValues[FrameIndex];
 
@@ -280,7 +280,7 @@ namespace TerraFX.Samples.DirectX.D3D12
                 return fence;
             }
 
-            IntPtr CreateFenceEvent()
+            HANDLE CreateFenceEvent()
             {
                 var fenceEvent = CreateEventW(lpEventAttributes: null, bManualReset: FALSE, bInitialState: FALSE, lpName: null);
 
@@ -591,9 +591,9 @@ namespace TerraFX.Samples.DirectX.D3D12
             {
                 var fenceEvent = _fenceEvent;
 
-                if (fenceEvent != IntPtr.Zero)
+                if (fenceEvent != (HANDLE)(NULL))
                 {
-                    _fenceEvent = IntPtr.Zero;
+                    _fenceEvent = (HANDLE)(NULL);
                     _ = CloseHandle(_fenceEvent);
                 }
             }

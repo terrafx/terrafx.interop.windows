@@ -8,6 +8,16 @@ namespace TerraFX.Interop
     {
         public readonly nint Value;
 
+        public HWND(int value)
+        {
+            Value = ((nint)(value));
+        }
+
+        public HWND(uint value)
+        {
+            Value = ((nint)(value));
+        }
+
         public HWND(nint value)
         {
             Value = ((nint)(value));
@@ -23,9 +33,18 @@ namespace TerraFX.Interop
             Value = ((nint)(value));
         }
 
+        public HWND(HANDLE value)
+        {
+            Value = value.Value;
+        }
+
         public static bool operator ==(HWND left, HWND right) => left.Value == right.Value;
 
         public static bool operator !=(HWND left, HWND right) => left.Value != right.Value;
+
+        public static explicit operator HWND(int value) => new HWND(value);
+
+        public static explicit operator HWND(uint value) => new HWND(value);
 
         public static explicit operator HWND(nint value) => new HWND(value);
 
@@ -33,11 +52,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HWND(void* value) => new HWND(value);
 
+        public static explicit operator HWND(HANDLE value) => new HWND(value);
+
+        public static implicit operator int(HWND value) => (int)(value.Value);
+
+        public static implicit operator uint(HWND value) => (uint)(value.Value);
+
         public static implicit operator nint(HWND value) => (nint)(value.Value);
 
         public static implicit operator nuint(HWND value) => (nuint)(value.Value);
 
         public static implicit operator void*(HWND value) => (void*)(value.Value);
+
+        public static implicit operator HANDLE(HWND value) => (HANDLE)(value.Value);
 
         public override bool Equals(object? obj) => (obj is HWND other) && Equals(other);
 

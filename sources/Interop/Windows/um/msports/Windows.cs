@@ -41,9 +41,6 @@ namespace TerraFX.Interop
         [return: NativeTypeName("LONG")]
         public static extern int ComDBResizeDatabase(HCOMDB HComDB, [NativeTypeName("DWORD")] uint NewSize);
 
-        [NativeTypeName("#define HCOMDB_INVALID_HANDLE_VALUE ((HCOMDB) INVALID_HANDLE_VALUE)")]
-        public static HCOMDB HCOMDB_INVALID_HANDLE_VALUE => ((nint)((nint)((nint)(-1))));
-
         [NativeTypeName("#define COMDB_MIN_PORTS_ARBITRATED 256")]
         public const int COMDB_MIN_PORTS_ARBITRATED = 256;
 

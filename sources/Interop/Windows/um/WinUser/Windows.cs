@@ -1185,7 +1185,7 @@ namespace TerraFX.Interop
 
         [DllImport("user32", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
-        public static extern uint DragObject(HWND hwndParent, HWND hwndFrom, uint fmt, [NativeTypeName("ULONG_PTR")] nuint data, [NativeTypeName("HCURSOR")] HICON hcur);
+        public static extern uint DragObject(HWND hwndParent, HWND hwndFrom, uint fmt, [NativeTypeName("ULONG_PTR")] nuint data, HCURSOR hcur);
 
         [DllImport("user32", ExactSpelling = true)]
         public static extern BOOL DragDetect(HWND hwnd, POINT pt);
@@ -1449,8 +1449,7 @@ namespace TerraFX.Interop
         public static extern BOOL SetPhysicalCursorPos(int X, int Y);
 
         [DllImport("user32", ExactSpelling = true)]
-        [return: NativeTypeName("HCURSOR")]
-        public static extern HICON SetCursor([NativeTypeName("HCURSOR")] HICON hCursor);
+        public static extern HCURSOR SetCursor(HCURSOR hCursor);
 
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
         public static extern BOOL GetCursorPos([NativeTypeName("LPPOINT")] POINT* lpPoint);
@@ -1462,8 +1461,7 @@ namespace TerraFX.Interop
         public static extern BOOL GetClipCursor([NativeTypeName("LPRECT")] RECT* lpRect);
 
         [DllImport("user32", ExactSpelling = true)]
-        [return: NativeTypeName("HCURSOR")]
-        public static extern HICON GetCursor();
+        public static extern HCURSOR GetCursor();
 
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
         public static extern BOOL CreateCaret(HWND hWnd, HBITMAP hBitmap, int nWidth, int nHeight);
@@ -1727,30 +1725,25 @@ namespace TerraFX.Interop
         public static extern HBITMAP LoadBitmapW(HINSTANCE hInstance, [NativeTypeName("LPCWSTR")] ushort* lpBitmapName);
 
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("HCURSOR")]
-        public static extern HICON LoadCursorA(HINSTANCE hInstance, [NativeTypeName("LPCSTR")] sbyte* lpCursorName);
+        public static extern HCURSOR LoadCursorA(HINSTANCE hInstance, [NativeTypeName("LPCSTR")] sbyte* lpCursorName);
 
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("HCURSOR")]
-        public static extern HICON LoadCursorW(HINSTANCE hInstance, [NativeTypeName("LPCWSTR")] ushort* lpCursorName);
+        public static extern HCURSOR LoadCursorW(HINSTANCE hInstance, [NativeTypeName("LPCWSTR")] ushort* lpCursorName);
 
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("HCURSOR")]
-        public static extern HICON LoadCursorFromFileA([NativeTypeName("LPCSTR")] sbyte* lpFileName);
+        public static extern HCURSOR LoadCursorFromFileA([NativeTypeName("LPCSTR")] sbyte* lpFileName);
 
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("HCURSOR")]
-        public static extern HICON LoadCursorFromFileW([NativeTypeName("LPCWSTR")] ushort* lpFileName);
+        public static extern HCURSOR LoadCursorFromFileW([NativeTypeName("LPCWSTR")] ushort* lpFileName);
 
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("HCURSOR")]
-        public static extern HICON CreateCursor(HINSTANCE hInst, int xHotSpot, int yHotSpot, int nWidth, int nHeight, [NativeTypeName("const void *")] void* pvANDPlane, [NativeTypeName("const void *")] void* pvXORPlane);
+        public static extern HCURSOR CreateCursor(HINSTANCE hInst, int xHotSpot, int yHotSpot, int nWidth, int nHeight, [NativeTypeName("const void *")] void* pvANDPlane, [NativeTypeName("const void *")] void* pvXORPlane);
 
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
-        public static extern BOOL DestroyCursor([NativeTypeName("HCURSOR")] HICON hCursor);
+        public static extern BOOL DestroyCursor(HCURSOR hCursor);
 
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
-        public static extern BOOL SetSystemCursor([NativeTypeName("HCURSOR")] HICON hcur, [NativeTypeName("DWORD")] uint id);
+        public static extern BOOL SetSystemCursor(HCURSOR hcur, [NativeTypeName("DWORD")] uint id);
 
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
         public static extern HICON LoadIconA(HINSTANCE hInstance, [NativeTypeName("LPCSTR")] sbyte* lpIconName);
@@ -1994,7 +1987,7 @@ namespace TerraFX.Interop
         public static extern void NotifyWinEvent([NativeTypeName("DWORD")] uint @event, HWND hwnd, [NativeTypeName("LONG")] int idObject, [NativeTypeName("LONG")] int idChild);
 
         [DllImport("user32", ExactSpelling = true)]
-        public static extern HWINEVENTHOOK SetWinEventHook([NativeTypeName("DWORD")] uint eventMin, [NativeTypeName("DWORD")] uint eventMax, [NativeTypeName("HMODULE")] HINSTANCE hmodWinEventProc, [NativeTypeName("WINEVENTPROC")] delegate* unmanaged<HWINEVENTHOOK, uint, HWND, int, int, uint, uint, void> pfnWinEventProc, [NativeTypeName("DWORD")] uint idProcess, [NativeTypeName("DWORD")] uint idThread, [NativeTypeName("DWORD")] uint dwFlags);
+        public static extern HWINEVENTHOOK SetWinEventHook([NativeTypeName("DWORD")] uint eventMin, [NativeTypeName("DWORD")] uint eventMax, HMODULE hmodWinEventProc, [NativeTypeName("WINEVENTPROC")] delegate* unmanaged<HWINEVENTHOOK, uint, HWND, int, int, uint, uint, void> pfnWinEventProc, [NativeTypeName("DWORD")] uint idProcess, [NativeTypeName("DWORD")] uint idThread, [NativeTypeName("DWORD")] uint dwFlags);
 
         [DllImport("user32", ExactSpelling = true)]
         public static extern BOOL IsWinEventHookInstalled([NativeTypeName("DWORD")] uint @event);
@@ -5658,12 +5651,6 @@ namespace TerraFX.Interop
         [NativeTypeName("#define PostThreadMessage PostThreadMessageW")]
         public static delegate*<uint, uint, nuint, nint, BOOL> PostThreadMessage => &PostThreadMessageW;
 
-        [NativeTypeName("#define HWND_BROADCAST ((HWND)0xffff)")]
-        public static HWND HWND_BROADCAST => ((nint)(0xffff));
-
-        [NativeTypeName("#define HWND_MESSAGE ((HWND)-3)")]
-        public static HWND HWND_MESSAGE => ((nint)(-3));
-
         [NativeTypeName("#define DefWindowProc DefWindowProcW")]
         public static delegate*<HWND, uint, nuint, nint, nint> DefWindowProc => &DefWindowProcW;
 
@@ -5702,9 +5689,6 @@ namespace TerraFX.Interop
 
         [NativeTypeName("#define CW_USEDEFAULT ((int)0x80000000)")]
         public const int CW_USEDEFAULT = unchecked((int)(0x80000000));
-
-        [NativeTypeName("#define HWND_DESKTOP ((HWND)0)")]
-        public static HWND HWND_DESKTOP => ((nint)(0));
 
         [NativeTypeName("#define CreateWindowEx CreateWindowExW")]
         public static delegate*<uint, ushort*, ushort*, uint, int, int, int, int, HWND, HMENU, HINSTANCE, void*, HWND> CreateWindowEx => &CreateWindowExW;
@@ -5804,18 +5788,6 @@ namespace TerraFX.Interop
 
         [NativeTypeName("#define SWP_ASYNCWINDOWPOS 0x4000")]
         public const int SWP_ASYNCWINDOWPOS = 0x4000;
-
-        [NativeTypeName("#define HWND_TOP ((HWND)0)")]
-        public static HWND HWND_TOP => ((nint)(0));
-
-        [NativeTypeName("#define HWND_BOTTOM ((HWND)1)")]
-        public static HWND HWND_BOTTOM => ((nint)(1));
-
-        [NativeTypeName("#define HWND_TOPMOST ((HWND)-1)")]
-        public static HWND HWND_TOPMOST => ((nint)(-1));
-
-        [NativeTypeName("#define HWND_NOTOPMOST ((HWND)-2)")]
-        public static HWND HWND_NOTOPMOST => ((nint)(-2));
 
         [NativeTypeName("#define CreateDialogParam CreateDialogParamW")]
         public static delegate*<HINSTANCE, ushort*, HWND, delegate* unmanaged<HWND, uint, nuint, nint, nint>, nint, HWND> CreateDialogParam => &CreateDialogParamW;
@@ -6738,39 +6710,6 @@ namespace TerraFX.Interop
         [NativeTypeName("#define MIIM_FTYPE 0x00000100")]
         public const int MIIM_FTYPE = 0x00000100;
 
-        [NativeTypeName("#define HBMMENU_CALLBACK ((HBITMAP) -1)")]
-        public static HBITMAP HBMMENU_CALLBACK => ((nint)(-1));
-
-        [NativeTypeName("#define HBMMENU_SYSTEM ((HBITMAP)  1)")]
-        public static HBITMAP HBMMENU_SYSTEM => ((nint)(1));
-
-        [NativeTypeName("#define HBMMENU_MBAR_RESTORE ((HBITMAP)  2)")]
-        public static HBITMAP HBMMENU_MBAR_RESTORE => ((nint)(2));
-
-        [NativeTypeName("#define HBMMENU_MBAR_MINIMIZE ((HBITMAP)  3)")]
-        public static HBITMAP HBMMENU_MBAR_MINIMIZE => ((nint)(3));
-
-        [NativeTypeName("#define HBMMENU_MBAR_CLOSE ((HBITMAP)  5)")]
-        public static HBITMAP HBMMENU_MBAR_CLOSE => ((nint)(5));
-
-        [NativeTypeName("#define HBMMENU_MBAR_CLOSE_D ((HBITMAP)  6)")]
-        public static HBITMAP HBMMENU_MBAR_CLOSE_D => ((nint)(6));
-
-        [NativeTypeName("#define HBMMENU_MBAR_MINIMIZE_D ((HBITMAP)  7)")]
-        public static HBITMAP HBMMENU_MBAR_MINIMIZE_D => ((nint)(7));
-
-        [NativeTypeName("#define HBMMENU_POPUP_CLOSE ((HBITMAP)  8)")]
-        public static HBITMAP HBMMENU_POPUP_CLOSE => ((nint)(8));
-
-        [NativeTypeName("#define HBMMENU_POPUP_RESTORE ((HBITMAP)  9)")]
-        public static HBITMAP HBMMENU_POPUP_RESTORE => ((nint)(9));
-
-        [NativeTypeName("#define HBMMENU_POPUP_MAXIMIZE ((HBITMAP) 10)")]
-        public static HBITMAP HBMMENU_POPUP_MAXIMIZE => ((nint)(10));
-
-        [NativeTypeName("#define HBMMENU_POPUP_MINIMIZE ((HBITMAP) 11)")]
-        public static HBITMAP HBMMENU_POPUP_MINIMIZE => ((nint)(11));
-
         [NativeTypeName("#define InsertMenuItem InsertMenuItemW")]
         public static delegate*<HMENU, uint, BOOL, MENUITEMINFOW*, BOOL> InsertMenuItem => &InsertMenuItemW;
 
@@ -7666,10 +7605,10 @@ namespace TerraFX.Interop
         public static delegate*<HINSTANCE, ushort*, HBITMAP> LoadBitmap => &LoadBitmapW;
 
         [NativeTypeName("#define LoadCursor LoadCursorW")]
-        public static delegate*<HINSTANCE, ushort*, HICON> LoadCursor => &LoadCursorW;
+        public static delegate*<HINSTANCE, ushort*, HCURSOR> LoadCursor => &LoadCursorW;
 
         [NativeTypeName("#define LoadCursorFromFile LoadCursorFromFileW")]
-        public static delegate*<ushort*, HICON> LoadCursorFromFile => &LoadCursorFromFileW;
+        public static delegate*<ushort*, HCURSOR> LoadCursorFromFile => &LoadCursorFromFileW;
 
         [NativeTypeName("#define IDC_ARROW MAKEINTRESOURCE(32512)")]
         public static ushort* IDC_ARROW => ((ushort*)((nuint)((ushort)(32512))));
@@ -9134,9 +9073,6 @@ namespace TerraFX.Interop
 
         [NativeTypeName("#define GR_USEROBJECTS_PEAK 4")]
         public const int GR_USEROBJECTS_PEAK = 4;
-
-        [NativeTypeName("#define GR_GLOBAL ((HANDLE)-2)")]
-        public static HANDLE GR_GLOBAL => ((nint)(-2));
 
         [NativeTypeName("#define SPI_GETBEEP 0x0001")]
         public const int SPI_GETBEEP = 0x0001;

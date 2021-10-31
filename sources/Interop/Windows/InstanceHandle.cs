@@ -22,7 +22,7 @@ namespace TerraFX.Interop
 
         public static bool operator !=(InstanceHandle left, InstanceHandle right) => left.Value != right.Value;
 
-        public static explicit operator InstanceHandle(long value) => newInstanceHandle(value);
+        public static explicit operator InstanceHandle(long value) => new InstanceHandle(value);
 
         public static explicit operator long(InstanceHandle value) => (long)(value.Value);
 

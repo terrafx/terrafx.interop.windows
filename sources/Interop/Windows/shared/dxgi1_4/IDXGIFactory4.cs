@@ -97,9 +97,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(11)]
-        public HRESULT CreateSoftwareAdapter([NativeTypeName("HMODULE")] HINSTANCE Module, IDXGIAdapter** ppAdapter)
+        public HRESULT CreateSoftwareAdapter(HMODULE Module, IDXGIAdapter** ppAdapter)
         {
-            return ((delegate* unmanaged<IDXGIFactory4*, HINSTANCE, IDXGIAdapter**, int>)(lpVtbl[11]))((IDXGIFactory4*)Unsafe.AsPointer(ref this), Module, ppAdapter);
+            return ((delegate* unmanaged<IDXGIFactory4*, HMODULE, IDXGIAdapter**, int>)(lpVtbl[11]))((IDXGIFactory4*)Unsafe.AsPointer(ref this), Module, ppAdapter);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

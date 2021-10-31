@@ -6,32 +6,50 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct HCERTSTORE : IEquatable<HCERTSTORE>
     {
-        public readonly nint Value;
+        public readonly void* Value;
+
+        public HCERTSTORE(int value)
+        {
+            Value = ((void*)(value));
+        }
+
+        public HCERTSTORE(uint value)
+        {
+            Value = ((void*)(value));
+        }
 
         public HCERTSTORE(nint value)
         {
-            Value = ((nint)(value));
+            Value = ((void*)(value));
         }
 
         public HCERTSTORE(nuint value)
         {
-            Value = ((nint)(value));
+            Value = ((void*)(value));
         }
 
         public HCERTSTORE(void* value)
         {
-            Value = ((nint)(value));
+            Value = ((void*)(value));
         }
 
         public static bool operator ==(HCERTSTORE left, HCERTSTORE right) => left.Value == right.Value;
 
         public static bool operator !=(HCERTSTORE left, HCERTSTORE right) => left.Value != right.Value;
 
+        public static explicit operator HCERTSTORE(int value) => new HCERTSTORE(value);
+
+        public static explicit operator HCERTSTORE(uint value) => new HCERTSTORE(value);
+
         public static explicit operator HCERTSTORE(nint value) => new HCERTSTORE(value);
 
         public static explicit operator HCERTSTORE(nuint value) => new HCERTSTORE(value);
 
         public static explicit operator HCERTSTORE(void* value) => new HCERTSTORE(value);
+
+        public static implicit operator int(HCERTSTORE value) => (int)(value.Value);
+
+        public static implicit operator uint(HCERTSTORE value) => (uint)(value.Value);
 
         public static implicit operator nint(HCERTSTORE value) => (nint)(value.Value);
 

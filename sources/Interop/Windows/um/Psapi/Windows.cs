@@ -13,29 +13,29 @@ namespace TerraFX.Interop
         public static extern BOOL K32EnumProcesses([NativeTypeName("DWORD *")] uint* lpidProcess, [NativeTypeName("DWORD")] uint cb, [NativeTypeName("LPDWORD")] uint* lpcbNeeded);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        public static extern BOOL K32EnumProcessModules(HANDLE hProcess, [NativeTypeName("HMODULE *")] HINSTANCE* lphModule, [NativeTypeName("DWORD")] uint cb, [NativeTypeName("LPDWORD")] uint* lpcbNeeded);
+        public static extern BOOL K32EnumProcessModules(HANDLE hProcess, HMODULE* lphModule, [NativeTypeName("DWORD")] uint cb, [NativeTypeName("LPDWORD")] uint* lpcbNeeded);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        public static extern BOOL K32EnumProcessModulesEx(HANDLE hProcess, [NativeTypeName("HMODULE *")] HINSTANCE* lphModule, [NativeTypeName("DWORD")] uint cb, [NativeTypeName("LPDWORD")] uint* lpcbNeeded, [NativeTypeName("DWORD")] uint dwFilterFlag);
-
-        [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("DWORD")]
-        public static extern uint K32GetModuleBaseNameA(HANDLE hProcess, [NativeTypeName("HMODULE")] HINSTANCE hModule, [NativeTypeName("LPSTR")] sbyte* lpBaseName, [NativeTypeName("DWORD")] uint nSize);
+        public static extern BOOL K32EnumProcessModulesEx(HANDLE hProcess, HMODULE* lphModule, [NativeTypeName("DWORD")] uint cb, [NativeTypeName("LPDWORD")] uint* lpcbNeeded, [NativeTypeName("DWORD")] uint dwFilterFlag);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("DWORD")]
-        public static extern uint K32GetModuleBaseNameW(HANDLE hProcess, [NativeTypeName("HMODULE")] HINSTANCE hModule, [NativeTypeName("LPWSTR")] ushort* lpBaseName, [NativeTypeName("DWORD")] uint nSize);
+        public static extern uint K32GetModuleBaseNameA(HANDLE hProcess, HMODULE hModule, [NativeTypeName("LPSTR")] sbyte* lpBaseName, [NativeTypeName("DWORD")] uint nSize);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("DWORD")]
-        public static extern uint K32GetModuleFileNameExA(HANDLE hProcess, [NativeTypeName("HMODULE")] HINSTANCE hModule, [NativeTypeName("LPSTR")] sbyte* lpFilename, [NativeTypeName("DWORD")] uint nSize);
+        public static extern uint K32GetModuleBaseNameW(HANDLE hProcess, HMODULE hModule, [NativeTypeName("LPWSTR")] ushort* lpBaseName, [NativeTypeName("DWORD")] uint nSize);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("DWORD")]
-        public static extern uint K32GetModuleFileNameExW(HANDLE hProcess, [NativeTypeName("HMODULE")] HINSTANCE hModule, [NativeTypeName("LPWSTR")] ushort* lpFilename, [NativeTypeName("DWORD")] uint nSize);
+        public static extern uint K32GetModuleFileNameExA(HANDLE hProcess, HMODULE hModule, [NativeTypeName("LPSTR")] sbyte* lpFilename, [NativeTypeName("DWORD")] uint nSize);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        public static extern BOOL K32GetModuleInformation(HANDLE hProcess, [NativeTypeName("HMODULE")] HINSTANCE hModule, [NativeTypeName("LPMODULEINFO")] MODULEINFO* lpmodinfo, [NativeTypeName("DWORD")] uint cb);
+        [return: NativeTypeName("DWORD")]
+        public static extern uint K32GetModuleFileNameExW(HANDLE hProcess, HMODULE hModule, [NativeTypeName("LPWSTR")] ushort* lpFilename, [NativeTypeName("DWORD")] uint nSize);
+
+        [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
+        public static extern BOOL K32GetModuleInformation(HANDLE hProcess, HMODULE hModule, [NativeTypeName("LPMODULEINFO")] MODULEINFO* lpmodinfo, [NativeTypeName("DWORD")] uint cb);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         public static extern BOOL K32EmptyWorkingSet(HANDLE hProcess);
@@ -118,10 +118,10 @@ namespace TerraFX.Interop
         public const int PSAPI_VERSION = 2;
 
         [NativeTypeName("#define EnumProcessModules K32EnumProcessModules")]
-        public static delegate*<HANDLE, HINSTANCE*, uint, uint*, BOOL> EnumProcessModules => &K32EnumProcessModules;
+        public static delegate*<HANDLE, HMODULE*, uint, uint*, BOOL> EnumProcessModules => &K32EnumProcessModules;
 
         [NativeTypeName("#define EnumProcessModulesEx K32EnumProcessModulesEx")]
-        public static delegate*<HANDLE, HINSTANCE*, uint, uint*, uint, BOOL> EnumProcessModulesEx => &K32EnumProcessModulesEx;
+        public static delegate*<HANDLE, HMODULE*, uint, uint*, uint, BOOL> EnumProcessModulesEx => &K32EnumProcessModulesEx;
 
         [NativeTypeName("#define InitializeProcessForWsWatch K32InitializeProcessForWsWatch")]
         public static delegate*<HANDLE, BOOL> InitializeProcessForWsWatch => &K32InitializeProcessForWsWatch;
@@ -163,16 +163,16 @@ namespace TerraFX.Interop
         public static delegate*<HANDLE, ushort*, uint, uint> GetProcessImageFileNameW => &K32GetProcessImageFileNameW;
 
         [NativeTypeName("#define GetModuleBaseNameA K32GetModuleBaseNameA")]
-        public static delegate*<HANDLE, HINSTANCE, sbyte*, uint, uint> GetModuleBaseNameA => &K32GetModuleBaseNameA;
+        public static delegate*<HANDLE, HMODULE, sbyte*, uint, uint> GetModuleBaseNameA => &K32GetModuleBaseNameA;
 
         [NativeTypeName("#define GetModuleBaseNameW K32GetModuleBaseNameW")]
-        public static delegate*<HANDLE, HINSTANCE, ushort*, uint, uint> GetModuleBaseNameW => &K32GetModuleBaseNameW;
+        public static delegate*<HANDLE, HMODULE, ushort*, uint, uint> GetModuleBaseNameW => &K32GetModuleBaseNameW;
 
         [NativeTypeName("#define GetModuleFileNameExA K32GetModuleFileNameExA")]
-        public static delegate*<HANDLE, HINSTANCE, sbyte*, uint, uint> GetModuleFileNameExA => &K32GetModuleFileNameExA;
+        public static delegate*<HANDLE, HMODULE, sbyte*, uint, uint> GetModuleFileNameExA => &K32GetModuleFileNameExA;
 
         [NativeTypeName("#define GetModuleFileNameExW K32GetModuleFileNameExW")]
-        public static delegate*<HANDLE, HINSTANCE, ushort*, uint, uint> GetModuleFileNameExW => &K32GetModuleFileNameExW;
+        public static delegate*<HANDLE, HMODULE, ushort*, uint, uint> GetModuleFileNameExW => &K32GetModuleFileNameExW;
 
         [NativeTypeName("#define EmptyWorkingSet K32EmptyWorkingSet")]
         public static delegate*<HANDLE, BOOL> EmptyWorkingSet => &K32EmptyWorkingSet;
@@ -190,7 +190,7 @@ namespace TerraFX.Interop
         public static delegate*<HANDLE, PROCESS_MEMORY_COUNTERS*, uint, BOOL> GetProcessMemoryInfo => &K32GetProcessMemoryInfo;
 
         [NativeTypeName("#define GetModuleInformation K32GetModuleInformation")]
-        public static delegate*<HANDLE, HINSTANCE, MODULEINFO*, uint, BOOL> GetModuleInformation => &K32GetModuleInformation;
+        public static delegate*<HANDLE, HMODULE, MODULEINFO*, uint, BOOL> GetModuleInformation => &K32GetModuleInformation;
 
         [NativeTypeName("#define QueryWorkingSet K32QueryWorkingSet")]
         public static delegate*<HANDLE, void*, uint, BOOL> QueryWorkingSet => &K32QueryWorkingSet;
@@ -199,10 +199,10 @@ namespace TerraFX.Interop
         public static delegate*<HANDLE, void*, uint, BOOL> QueryWorkingSetEx => &K32QueryWorkingSetEx;
 
         [NativeTypeName("#define GetModuleBaseName GetModuleBaseNameW")]
-        public static delegate*<HANDLE, HINSTANCE, ushort*, uint, uint> GetModuleBaseName => &K32GetModuleBaseNameW;
+        public static delegate*<HANDLE, HMODULE, ushort*, uint, uint> GetModuleBaseName => &K32GetModuleBaseNameW;
 
         [NativeTypeName("#define GetModuleFileNameEx GetModuleFileNameExW")]
-        public static delegate*<HANDLE, HINSTANCE, ushort*, uint, uint> GetModuleFileNameEx => &K32GetModuleFileNameExW;
+        public static delegate*<HANDLE, HMODULE, ushort*, uint, uint> GetModuleFileNameEx => &K32GetModuleFileNameExW;
 
         [NativeTypeName("#define GetMappedFileName GetMappedFileNameW")]
         public static delegate*<HANDLE, void*, ushort*, uint, uint> GetMappedFileName => &K32GetMappedFileNameW;

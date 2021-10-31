@@ -8,6 +8,16 @@ namespace TerraFX.Interop
     {
         public readonly nint Value;
 
+        public HPSXA(int value)
+        {
+            Value = ((nint)(value));
+        }
+
+        public HPSXA(uint value)
+        {
+            Value = ((nint)(value));
+        }
+
         public HPSXA(nint value)
         {
             Value = ((nint)(value));
@@ -23,9 +33,18 @@ namespace TerraFX.Interop
             Value = ((nint)(value));
         }
 
+        public HPSXA(HANDLE value)
+        {
+            Value = value.Value;
+        }
+
         public static bool operator ==(HPSXA left, HPSXA right) => left.Value == right.Value;
 
         public static bool operator !=(HPSXA left, HPSXA right) => left.Value != right.Value;
+
+        public static explicit operator HPSXA(int value) => new HPSXA(value);
+
+        public static explicit operator HPSXA(uint value) => new HPSXA(value);
 
         public static explicit operator HPSXA(nint value) => new HPSXA(value);
 
@@ -33,11 +52,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HPSXA(void* value) => new HPSXA(value);
 
+        public static explicit operator HPSXA(HANDLE value) => new HPSXA(value);
+
+        public static implicit operator int(HPSXA value) => (int)(value.Value);
+
+        public static implicit operator uint(HPSXA value) => (uint)(value.Value);
+
         public static implicit operator nint(HPSXA value) => (nint)(value.Value);
 
         public static implicit operator nuint(HPSXA value) => (nuint)(value.Value);
 
         public static implicit operator void*(HPSXA value) => (void*)(value.Value);
+
+        public static implicit operator HANDLE(HPSXA value) => (HANDLE)(value.Value);
 
         public override bool Equals(object? obj) => (obj is HPSXA other) && Equals(other);
 

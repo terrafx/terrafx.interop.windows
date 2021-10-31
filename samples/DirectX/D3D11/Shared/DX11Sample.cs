@@ -60,7 +60,7 @@ namespace TerraFX.Samples.DirectX.D3D11
                 ID3D11DeviceContext* immediateContext;
 
                 var featureLevel = D3D_FEATURE_LEVEL_11_0;
-                ThrowIfFailed(nameof(D3D11CreateDevice), D3D11CreateDevice((IDXGIAdapter*)DxgiAdapter, D3D_DRIVER_TYPE_HARDWARE, Software: IntPtr.Zero, Flags: 0, &featureLevel, FeatureLevels: 1, D3D11_SDK_VERSION, &d3dDevice, pFeatureLevel: null, &immediateContext));
+                ThrowIfFailed(nameof(D3D11CreateDevice), D3D11CreateDevice((IDXGIAdapter*)DxgiAdapter, D3D_DRIVER_TYPE_HARDWARE, Software: (HMODULE)(NULL), Flags: 0, &featureLevel, FeatureLevels: 1, D3D11_SDK_VERSION, &d3dDevice, pFeatureLevel: null, &immediateContext));
 
                 pImmediateContext = immediateContext;
                 return d3dDevice;
@@ -325,7 +325,7 @@ namespace TerraFX.Samples.DirectX.D3D11
         protected override unsafe bool SupportsRequiredDirect3DVersion(IDXGIAdapter1* adapter)
         {
             var featureLevel = D3D_FEATURE_LEVEL_11_0;
-            return SUCCEEDED(D3D11CreateDevice((IDXGIAdapter*)adapter, D3D_DRIVER_TYPE_HARDWARE, Software: IntPtr.Zero, Flags: 0, &featureLevel, FeatureLevels: 1, D3D11_SDK_VERSION, ppDevice: null, pFeatureLevel: null, ppImmediateContext: null));
+            return SUCCEEDED(D3D11CreateDevice((IDXGIAdapter*)adapter, D3D_DRIVER_TYPE_HARDWARE, Software: (HMODULE)(NULL), Flags: 0, &featureLevel, FeatureLevels: 1, D3D11_SDK_VERSION, ppDevice: null, pFeatureLevel: null, ppImmediateContext: null));
         }
     }
 }

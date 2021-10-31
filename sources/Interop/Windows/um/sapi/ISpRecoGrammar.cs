@@ -125,9 +125,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(15)]
-        public HRESULT LoadCmdFromResource([NativeTypeName("HMODULE")] HINSTANCE hModule, [NativeTypeName("LPCWSTR")] ushort* pszResourceName, [NativeTypeName("LPCWSTR")] ushort* pszResourceType, [NativeTypeName("WORD")] ushort wLanguage, SPLOADOPTIONS Options)
+        public HRESULT LoadCmdFromResource(HMODULE hModule, [NativeTypeName("LPCWSTR")] ushort* pszResourceName, [NativeTypeName("LPCWSTR")] ushort* pszResourceType, [NativeTypeName("WORD")] ushort wLanguage, SPLOADOPTIONS Options)
         {
-            return ((delegate* unmanaged<ISpRecoGrammar*, HINSTANCE, ushort*, ushort*, ushort, SPLOADOPTIONS, int>)(lpVtbl[15]))((ISpRecoGrammar*)Unsafe.AsPointer(ref this), hModule, pszResourceName, pszResourceType, wLanguage, Options);
+            return ((delegate* unmanaged<ISpRecoGrammar*, HMODULE, ushort*, ushort*, ushort, SPLOADOPTIONS, int>)(lpVtbl[15]))((ISpRecoGrammar*)Unsafe.AsPointer(ref this), hModule, pszResourceName, pszResourceType, wLanguage, Options);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

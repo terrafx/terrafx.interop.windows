@@ -8,6 +8,16 @@ namespace TerraFX.Interop
     {
         public readonly nint Value;
 
+        public HENHMETAFILE(int value)
+        {
+            Value = ((nint)(value));
+        }
+
+        public HENHMETAFILE(uint value)
+        {
+            Value = ((nint)(value));
+        }
+
         public HENHMETAFILE(nint value)
         {
             Value = ((nint)(value));
@@ -23,9 +33,18 @@ namespace TerraFX.Interop
             Value = ((nint)(value));
         }
 
+        public HENHMETAFILE(HANDLE value)
+        {
+            Value = value.Value;
+        }
+
         public static bool operator ==(HENHMETAFILE left, HENHMETAFILE right) => left.Value == right.Value;
 
         public static bool operator !=(HENHMETAFILE left, HENHMETAFILE right) => left.Value != right.Value;
+
+        public static explicit operator HENHMETAFILE(int value) => new HENHMETAFILE(value);
+
+        public static explicit operator HENHMETAFILE(uint value) => new HENHMETAFILE(value);
 
         public static explicit operator HENHMETAFILE(nint value) => new HENHMETAFILE(value);
 
@@ -33,11 +52,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HENHMETAFILE(void* value) => new HENHMETAFILE(value);
 
+        public static explicit operator HENHMETAFILE(HANDLE value) => new HENHMETAFILE(value);
+
+        public static implicit operator int(HENHMETAFILE value) => (int)(value.Value);
+
+        public static implicit operator uint(HENHMETAFILE value) => (uint)(value.Value);
+
         public static implicit operator nint(HENHMETAFILE value) => (nint)(value.Value);
 
         public static implicit operator nuint(HENHMETAFILE value) => (nuint)(value.Value);
 
         public static implicit operator void*(HENHMETAFILE value) => (void*)(value.Value);
+
+        public static implicit operator HANDLE(HENHMETAFILE value) => (HANDLE)(value.Value);
 
         public override bool Equals(object? obj) => (obj is HENHMETAFILE other) && Equals(other);
 

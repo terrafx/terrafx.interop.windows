@@ -85,7 +85,7 @@ namespace TerraFX.Interop
         [VtblIndex(9)]
         public HANDLE GetEventHandle()
         {
-            return ((delegate* unmanaged<ISpNotifyTranslator*, nint>)(lpVtbl[9]))((ISpNotifyTranslator*)Unsafe.AsPointer(ref this));
+            return ((HANDLE)(((delegate* unmanaged<ISpNotifyTranslator*, nint>)(lpVtbl[9]))((ISpNotifyTranslator*)Unsafe.AsPointer(ref this))));
         }
     }
 }

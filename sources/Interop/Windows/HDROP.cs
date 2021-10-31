@@ -8,6 +8,16 @@ namespace TerraFX.Interop
     {
         public readonly nint Value;
 
+        public HDROP(int value)
+        {
+            Value = ((nint)(value));
+        }
+
+        public HDROP(uint value)
+        {
+            Value = ((nint)(value));
+        }
+
         public HDROP(nint value)
         {
             Value = ((nint)(value));
@@ -23,9 +33,18 @@ namespace TerraFX.Interop
             Value = ((nint)(value));
         }
 
+        public HDROP(HANDLE value)
+        {
+            Value = value.Value;
+        }
+
         public static bool operator ==(HDROP left, HDROP right) => left.Value == right.Value;
 
         public static bool operator !=(HDROP left, HDROP right) => left.Value != right.Value;
+
+        public static explicit operator HDROP(int value) => new HDROP(value);
+
+        public static explicit operator HDROP(uint value) => new HDROP(value);
 
         public static explicit operator HDROP(nint value) => new HDROP(value);
 
@@ -33,11 +52,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HDROP(void* value) => new HDROP(value);
 
+        public static explicit operator HDROP(HANDLE value) => new HDROP(value);
+
+        public static implicit operator int(HDROP value) => (int)(value.Value);
+
+        public static implicit operator uint(HDROP value) => (uint)(value.Value);
+
         public static implicit operator nint(HDROP value) => (nint)(value.Value);
 
         public static implicit operator nuint(HDROP value) => (nuint)(value.Value);
 
         public static implicit operator void*(HDROP value) => (void*)(value.Value);
+
+        public static implicit operator HANDLE(HDROP value) => (HANDLE)(value.Value);
 
         public override bool Equals(object? obj) => (obj is HDROP other) && Equals(other);
 

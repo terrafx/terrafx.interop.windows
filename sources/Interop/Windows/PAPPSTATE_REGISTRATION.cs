@@ -6,32 +6,50 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct PAPPSTATE_REGISTRATION : IEquatable<PAPPSTATE_REGISTRATION>
     {
-        public readonly nint Value;
+        public readonly void* Value;
+
+        public PAPPSTATE_REGISTRATION(int value)
+        {
+            Value = ((void*)(value));
+        }
+
+        public PAPPSTATE_REGISTRATION(uint value)
+        {
+            Value = ((void*)(value));
+        }
 
         public PAPPSTATE_REGISTRATION(nint value)
         {
-            Value = ((nint)(value));
+            Value = ((void*)(value));
         }
 
         public PAPPSTATE_REGISTRATION(nuint value)
         {
-            Value = ((nint)(value));
+            Value = ((void*)(value));
         }
 
         public PAPPSTATE_REGISTRATION(void* value)
         {
-            Value = ((nint)(value));
+            Value = ((void*)(value));
         }
 
         public static bool operator ==(PAPPSTATE_REGISTRATION left, PAPPSTATE_REGISTRATION right) => left.Value == right.Value;
 
         public static bool operator !=(PAPPSTATE_REGISTRATION left, PAPPSTATE_REGISTRATION right) => left.Value != right.Value;
 
+        public static explicit operator PAPPSTATE_REGISTRATION(int value) => new PAPPSTATE_REGISTRATION(value);
+
+        public static explicit operator PAPPSTATE_REGISTRATION(uint value) => new PAPPSTATE_REGISTRATION(value);
+
         public static explicit operator PAPPSTATE_REGISTRATION(nint value) => new PAPPSTATE_REGISTRATION(value);
 
         public static explicit operator PAPPSTATE_REGISTRATION(nuint value) => new PAPPSTATE_REGISTRATION(value);
 
         public static explicit operator PAPPSTATE_REGISTRATION(void* value) => new PAPPSTATE_REGISTRATION(value);
+
+        public static implicit operator int(PAPPSTATE_REGISTRATION value) => (int)(value.Value);
+
+        public static implicit operator uint(PAPPSTATE_REGISTRATION value) => (uint)(value.Value);
 
         public static implicit operator nint(PAPPSTATE_REGISTRATION value) => (nint)(value.Value);
 

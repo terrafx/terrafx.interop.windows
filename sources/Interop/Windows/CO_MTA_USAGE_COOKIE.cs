@@ -8,6 +8,16 @@ namespace TerraFX.Interop
     {
         public readonly nint Value;
 
+        public CO_MTA_USAGE_COOKIE(int value)
+        {
+            Value = ((nint)(value));
+        }
+
+        public CO_MTA_USAGE_COOKIE(uint value)
+        {
+            Value = ((nint)(value));
+        }
+
         public CO_MTA_USAGE_COOKIE(nint value)
         {
             Value = ((nint)(value));
@@ -23,9 +33,18 @@ namespace TerraFX.Interop
             Value = ((nint)(value));
         }
 
+        public CO_MTA_USAGE_COOKIE(HANDLE value)
+        {
+            Value = value.Value;
+        }
+
         public static bool operator ==(CO_MTA_USAGE_COOKIE left, CO_MTA_USAGE_COOKIE right) => left.Value == right.Value;
 
         public static bool operator !=(CO_MTA_USAGE_COOKIE left, CO_MTA_USAGE_COOKIE right) => left.Value != right.Value;
+
+        public static explicit operator CO_MTA_USAGE_COOKIE(int value) => new CO_MTA_USAGE_COOKIE(value);
+
+        public static explicit operator CO_MTA_USAGE_COOKIE(uint value) => new CO_MTA_USAGE_COOKIE(value);
 
         public static explicit operator CO_MTA_USAGE_COOKIE(nint value) => new CO_MTA_USAGE_COOKIE(value);
 
@@ -33,11 +52,19 @@ namespace TerraFX.Interop
 
         public static explicit operator CO_MTA_USAGE_COOKIE(void* value) => new CO_MTA_USAGE_COOKIE(value);
 
+        public static explicit operator CO_MTA_USAGE_COOKIE(HANDLE value) => new CO_MTA_USAGE_COOKIE(value);
+
+        public static implicit operator int(CO_MTA_USAGE_COOKIE value) => (int)(value.Value);
+
+        public static implicit operator uint(CO_MTA_USAGE_COOKIE value) => (uint)(value.Value);
+
         public static implicit operator nint(CO_MTA_USAGE_COOKIE value) => (nint)(value.Value);
 
         public static implicit operator nuint(CO_MTA_USAGE_COOKIE value) => (nuint)(value.Value);
 
         public static implicit operator void*(CO_MTA_USAGE_COOKIE value) => (void*)(value.Value);
+
+        public static implicit operator HANDLE(CO_MTA_USAGE_COOKIE value) => (HANDLE)(value.Value);
 
         public override bool Equals(object? obj) => (obj is CO_MTA_USAGE_COOKIE other) && Equals(other);
 

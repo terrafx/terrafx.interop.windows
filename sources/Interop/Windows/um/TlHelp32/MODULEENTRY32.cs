@@ -27,8 +27,7 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint modBaseSize;
 
-        [NativeTypeName("HMODULE")]
-        public HINSTANCE hModule;
+        public HMODULE hModule;
 
         [NativeTypeName("char [256]")]
         public fixed sbyte szModule[256];

@@ -8,6 +8,16 @@ namespace TerraFX.Interop
     {
         public readonly nint Value;
 
+        public HACCEL(int value)
+        {
+            Value = ((nint)(value));
+        }
+
+        public HACCEL(uint value)
+        {
+            Value = ((nint)(value));
+        }
+
         public HACCEL(nint value)
         {
             Value = ((nint)(value));
@@ -23,9 +33,18 @@ namespace TerraFX.Interop
             Value = ((nint)(value));
         }
 
+        public HACCEL(HANDLE value)
+        {
+            Value = value.Value;
+        }
+
         public static bool operator ==(HACCEL left, HACCEL right) => left.Value == right.Value;
 
         public static bool operator !=(HACCEL left, HACCEL right) => left.Value != right.Value;
+
+        public static explicit operator HACCEL(int value) => new HACCEL(value);
+
+        public static explicit operator HACCEL(uint value) => new HACCEL(value);
 
         public static explicit operator HACCEL(nint value) => new HACCEL(value);
 
@@ -33,11 +52,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HACCEL(void* value) => new HACCEL(value);
 
+        public static explicit operator HACCEL(HANDLE value) => new HACCEL(value);
+
+        public static implicit operator int(HACCEL value) => (int)(value.Value);
+
+        public static implicit operator uint(HACCEL value) => (uint)(value.Value);
+
         public static implicit operator nint(HACCEL value) => (nint)(value.Value);
 
         public static implicit operator nuint(HACCEL value) => (nuint)(value.Value);
 
         public static implicit operator void*(HACCEL value) => (void*)(value.Value);
+
+        public static implicit operator HANDLE(HACCEL value) => (HANDLE)(value.Value);
 
         public override bool Equals(object? obj) => (obj is HACCEL other) && Equals(other);
 

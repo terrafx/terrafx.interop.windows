@@ -8,6 +8,16 @@ namespace TerraFX.Interop
     {
         public readonly nint Value;
 
+        public HINTERACTIONCONTEXT(int value)
+        {
+            Value = ((nint)(value));
+        }
+
+        public HINTERACTIONCONTEXT(uint value)
+        {
+            Value = ((nint)(value));
+        }
+
         public HINTERACTIONCONTEXT(nint value)
         {
             Value = ((nint)(value));
@@ -23,9 +33,18 @@ namespace TerraFX.Interop
             Value = ((nint)(value));
         }
 
+        public HINTERACTIONCONTEXT(HANDLE value)
+        {
+            Value = value.Value;
+        }
+
         public static bool operator ==(HINTERACTIONCONTEXT left, HINTERACTIONCONTEXT right) => left.Value == right.Value;
 
         public static bool operator !=(HINTERACTIONCONTEXT left, HINTERACTIONCONTEXT right) => left.Value != right.Value;
+
+        public static explicit operator HINTERACTIONCONTEXT(int value) => new HINTERACTIONCONTEXT(value);
+
+        public static explicit operator HINTERACTIONCONTEXT(uint value) => new HINTERACTIONCONTEXT(value);
 
         public static explicit operator HINTERACTIONCONTEXT(nint value) => new HINTERACTIONCONTEXT(value);
 
@@ -33,11 +52,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HINTERACTIONCONTEXT(void* value) => new HINTERACTIONCONTEXT(value);
 
+        public static explicit operator HINTERACTIONCONTEXT(HANDLE value) => new HINTERACTIONCONTEXT(value);
+
+        public static implicit operator int(HINTERACTIONCONTEXT value) => (int)(value.Value);
+
+        public static implicit operator uint(HINTERACTIONCONTEXT value) => (uint)(value.Value);
+
         public static implicit operator nint(HINTERACTIONCONTEXT value) => (nint)(value.Value);
 
         public static implicit operator nuint(HINTERACTIONCONTEXT value) => (nuint)(value.Value);
 
         public static implicit operator void*(HINTERACTIONCONTEXT value) => (void*)(value.Value);
+
+        public static implicit operator HANDLE(HINTERACTIONCONTEXT value) => (HANDLE)(value.Value);
 
         public override bool Equals(object? obj) => (obj is HINTERACTIONCONTEXT other) && Equals(other);
 

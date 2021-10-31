@@ -6,32 +6,50 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct HCRYPTDEFAULTCONTEXT : IEquatable<HCRYPTDEFAULTCONTEXT>
     {
-        public readonly nint Value;
+        public readonly void* Value;
+
+        public HCRYPTDEFAULTCONTEXT(int value)
+        {
+            Value = ((void*)(value));
+        }
+
+        public HCRYPTDEFAULTCONTEXT(uint value)
+        {
+            Value = ((void*)(value));
+        }
 
         public HCRYPTDEFAULTCONTEXT(nint value)
         {
-            Value = ((nint)(value));
+            Value = ((void*)(value));
         }
 
         public HCRYPTDEFAULTCONTEXT(nuint value)
         {
-            Value = ((nint)(value));
+            Value = ((void*)(value));
         }
 
         public HCRYPTDEFAULTCONTEXT(void* value)
         {
-            Value = ((nint)(value));
+            Value = ((void*)(value));
         }
 
         public static bool operator ==(HCRYPTDEFAULTCONTEXT left, HCRYPTDEFAULTCONTEXT right) => left.Value == right.Value;
 
         public static bool operator !=(HCRYPTDEFAULTCONTEXT left, HCRYPTDEFAULTCONTEXT right) => left.Value != right.Value;
 
+        public static explicit operator HCRYPTDEFAULTCONTEXT(int value) => new HCRYPTDEFAULTCONTEXT(value);
+
+        public static explicit operator HCRYPTDEFAULTCONTEXT(uint value) => new HCRYPTDEFAULTCONTEXT(value);
+
         public static explicit operator HCRYPTDEFAULTCONTEXT(nint value) => new HCRYPTDEFAULTCONTEXT(value);
 
         public static explicit operator HCRYPTDEFAULTCONTEXT(nuint value) => new HCRYPTDEFAULTCONTEXT(value);
 
         public static explicit operator HCRYPTDEFAULTCONTEXT(void* value) => new HCRYPTDEFAULTCONTEXT(value);
+
+        public static implicit operator int(HCRYPTDEFAULTCONTEXT value) => (int)(value.Value);
+
+        public static implicit operator uint(HCRYPTDEFAULTCONTEXT value) => (uint)(value.Value);
 
         public static implicit operator nint(HCRYPTDEFAULTCONTEXT value) => (nint)(value.Value);
 

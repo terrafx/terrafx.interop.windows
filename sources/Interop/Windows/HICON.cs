@@ -8,6 +8,16 @@ namespace TerraFX.Interop
     {
         public readonly nint Value;
 
+        public HICON(int value)
+        {
+            Value = ((nint)(value));
+        }
+
+        public HICON(uint value)
+        {
+            Value = ((nint)(value));
+        }
+
         public HICON(nint value)
         {
             Value = ((nint)(value));
@@ -23,9 +33,18 @@ namespace TerraFX.Interop
             Value = ((nint)(value));
         }
 
+        public HICON(HANDLE value)
+        {
+            Value = value.Value;
+        }
+
         public static bool operator ==(HICON left, HICON right) => left.Value == right.Value;
 
         public static bool operator !=(HICON left, HICON right) => left.Value != right.Value;
+
+        public static explicit operator HICON(int value) => new HICON(value);
+
+        public static explicit operator HICON(uint value) => new HICON(value);
 
         public static explicit operator HICON(nint value) => new HICON(value);
 
@@ -33,11 +52,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HICON(void* value) => new HICON(value);
 
+        public static explicit operator HICON(HANDLE value) => new HICON(value);
+
+        public static implicit operator int(HICON value) => (int)(value.Value);
+
+        public static implicit operator uint(HICON value) => (uint)(value.Value);
+
         public static implicit operator nint(HICON value) => (nint)(value.Value);
 
         public static implicit operator nuint(HICON value) => (nuint)(value.Value);
 
         public static implicit operator void*(HICON value) => (void*)(value.Value);
+
+        public static implicit operator HANDLE(HICON value) => (HANDLE)(value.Value);
 
         public override bool Equals(object? obj) => (obj is HICON other) && Equals(other);
 

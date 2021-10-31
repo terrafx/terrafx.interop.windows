@@ -8,6 +8,16 @@ namespace TerraFX.Interop
     {
         public readonly nint Value;
 
+        public HUMPD(int value)
+        {
+            Value = ((nint)(value));
+        }
+
+        public HUMPD(uint value)
+        {
+            Value = ((nint)(value));
+        }
+
         public HUMPD(nint value)
         {
             Value = ((nint)(value));
@@ -23,9 +33,18 @@ namespace TerraFX.Interop
             Value = ((nint)(value));
         }
 
+        public HUMPD(HANDLE value)
+        {
+            Value = value.Value;
+        }
+
         public static bool operator ==(HUMPD left, HUMPD right) => left.Value == right.Value;
 
         public static bool operator !=(HUMPD left, HUMPD right) => left.Value != right.Value;
+
+        public static explicit operator HUMPD(int value) => new HUMPD(value);
+
+        public static explicit operator HUMPD(uint value) => new HUMPD(value);
 
         public static explicit operator HUMPD(nint value) => new HUMPD(value);
 
@@ -33,11 +52,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HUMPD(void* value) => new HUMPD(value);
 
+        public static explicit operator HUMPD(HANDLE value) => new HUMPD(value);
+
+        public static implicit operator int(HUMPD value) => (int)(value.Value);
+
+        public static implicit operator uint(HUMPD value) => (uint)(value.Value);
+
         public static implicit operator nint(HUMPD value) => (nint)(value.Value);
 
         public static implicit operator nuint(HUMPD value) => (nuint)(value.Value);
 
         public static implicit operator void*(HUMPD value) => (void*)(value.Value);
+
+        public static implicit operator HANDLE(HUMPD value) => (HANDLE)(value.Value);
 
         public override bool Equals(object? obj) => (obj is HUMPD other) && Equals(other);
 

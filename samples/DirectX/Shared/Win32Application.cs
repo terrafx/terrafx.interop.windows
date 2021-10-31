@@ -43,7 +43,7 @@ namespace TerraFX.Samples.DirectX
                     style = CS_HREDRAW | CS_VREDRAW,
                     lpfnWndProc = &WindowProc,
                     hInstance = hInstance,
-                    hCursor = LoadCursorW(IntPtr.Zero, (ushort*)IDC_ARROW),
+                    hCursor = LoadCursorW((HINSTANCE)(NULL), (ushort*)IDC_ARROW),
                     lpszClassName = (ushort*)lpszClassName
                 };
                 _ = RegisterClassExW(&windowClass);
@@ -58,8 +58,8 @@ namespace TerraFX.Samples.DirectX
                     CW_USEDEFAULT,
                     CW_USEDEFAULT,
                     CW_USEDEFAULT,
-                    NULL,                               // We have no parent window.
-                    NULL,                               // We aren't using menus.
+                    (HWND)(NULL),                       // We have no parent window.
+                    (HMENU)(NULL),                      // We aren't using menus.
                     hInstance,
                     ((IntPtr)GCHandle.Alloc(sample)).ToPointer()
                 );
@@ -116,7 +116,7 @@ namespace TerraFX.Samples.DirectX
             {
                 // Process any messages in the queue.
 
-                while (PeekMessageW(lpMsg, hWnd: IntPtr.Zero, wMsgFilterMin: WM_NULL, wMsgFilterMax: WM_NULL, PM_REMOVE) != FALSE)
+                while (PeekMessageW(lpMsg, hWnd: (HWND)(NULL), wMsgFilterMin: WM_NULL, wMsgFilterMax: WM_NULL, PM_REMOVE) != FALSE)
                 {
                     _ = TranslateMessage(lpMsg);
                     _ = DispatchMessageW(lpMsg);
@@ -129,7 +129,7 @@ namespace TerraFX.Samples.DirectX
         private static nint WindowProc(HWND hWnd, uint message, nuint wParam, nint lParam)
         {
             var handle = GetWindowLongPtrW(hWnd, GWLP_USERDATA);
-            var pSample = (handle != IntPtr.Zero) ? (DXSample?)GCHandle.FromIntPtr(handle).Target : null;
+            var pSample = (handle != 0) ? (DXSample?)GCHandle.FromIntPtr(handle).Target : null;
 
             switch (message)
             {
@@ -138,13 +138,13 @@ namespace TerraFX.Samples.DirectX
                     // Save the DXSample* passed in to CreateWindow.
                     var pCreateStruct = (CREATESTRUCTW*)lParam;
                     _ = SetWindowLongPtrW(hWnd, GWLP_USERDATA, (IntPtr)pCreateStruct->lpCreateParams);
-                    return IntPtr.Zero;
+                    return 0;
                 }
 
                 case WM_DESTROY:
                 {
                     PostQuitMessage(0);
-                    return IntPtr.Zero;
+                    return 0;
                 }
 
                 case WM_SIZE:
@@ -154,19 +154,19 @@ namespace TerraFX.Samples.DirectX
                         var size = new Size(LOWORD(lParam), HIWORD(lParam));
                         pSample.OnWindowSizeChanged(size);
                     }
-                    return IntPtr.Zero;
+                    return 0;
                 }
 
                 case WM_KEYDOWN:
                 {
                     pSample?.OnKeyDown((byte)wParam);
-                    return IntPtr.Zero;
+                    return 0;
                 }
 
                 case WM_KEYUP:
                 {
                     pSample?.OnKeyUp((byte)wParam);
-                    return IntPtr.Zero;
+                    return 0;
                 }
 
                 default:

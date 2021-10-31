@@ -143,7 +143,7 @@ namespace TerraFX.Interop
         public static extern BOOL CryptDecodeObject([NativeTypeName("DWORD")] uint dwCertEncodingType, [NativeTypeName("LPCSTR")] sbyte* lpszStructType, [NativeTypeName("const BYTE *")] byte* pbEncoded, [NativeTypeName("DWORD")] uint cbEncoded, [NativeTypeName("DWORD")] uint dwFlags, void* pvStructInfo, [NativeTypeName("DWORD *")] uint* pcbStructInfo);
 
         [DllImport("crypt32", ExactSpelling = true)]
-        public static extern BOOL CryptInstallOIDFunctionAddress([NativeTypeName("HMODULE")] HINSTANCE hModule, [NativeTypeName("DWORD")] uint dwEncodingType, [NativeTypeName("LPCSTR")] sbyte* pszFuncName, [NativeTypeName("DWORD")] uint cFuncEntry, [NativeTypeName("const CRYPT_OID_FUNC_ENTRY []")] CRYPT_OID_FUNC_ENTRY* rgFuncEntry, [NativeTypeName("DWORD")] uint dwFlags);
+        public static extern BOOL CryptInstallOIDFunctionAddress(HMODULE hModule, [NativeTypeName("DWORD")] uint dwEncodingType, [NativeTypeName("LPCSTR")] sbyte* pszFuncName, [NativeTypeName("DWORD")] uint cFuncEntry, [NativeTypeName("const CRYPT_OID_FUNC_ENTRY []")] CRYPT_OID_FUNC_ENTRY* rgFuncEntry, [NativeTypeName("DWORD")] uint dwFlags);
 
         [DllImport("crypt32", ExactSpelling = true)]
         public static extern HCRYPTOIDFUNCSET CryptInitOIDFunctionSet([NativeTypeName("LPCSTR")] sbyte* pszFuncName, [NativeTypeName("DWORD")] uint dwFlags);
@@ -7817,15 +7817,6 @@ namespace TerraFX.Interop
 
         [NativeTypeName("#define CERT_CHAIN_CRL_VALIDITY_EXT_PERIOD_HOURS_DEFAULT 12")]
         public const int CERT_CHAIN_CRL_VALIDITY_EXT_PERIOD_HOURS_DEFAULT = 12;
-
-        [NativeTypeName("#define HCCE_CURRENT_USER ((HCERTCHAINENGINE)NULL)")]
-        public static HANDLE HCCE_CURRENT_USER => ((nint)(0));
-
-        [NativeTypeName("#define HCCE_LOCAL_MACHINE ((HCERTCHAINENGINE)0x1)")]
-        public static HANDLE HCCE_LOCAL_MACHINE => ((nint)(0x1));
-
-        [NativeTypeName("#define HCCE_SERIAL_LOCAL_MACHINE ((HCERTCHAINENGINE)0x2)")]
-        public static HANDLE HCCE_SERIAL_LOCAL_MACHINE => ((nint)(0x2));
 
         [NativeTypeName("#define CERT_CHAIN_CACHE_END_CERT 0x00000001")]
         public const int CERT_CHAIN_CACHE_END_CERT = 0x00000001;

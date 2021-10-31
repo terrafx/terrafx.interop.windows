@@ -8,6 +8,16 @@ namespace TerraFX.Interop
     {
         public readonly nint Value;
 
+        public HMIXER(int value)
+        {
+            Value = ((nint)(value));
+        }
+
+        public HMIXER(uint value)
+        {
+            Value = ((nint)(value));
+        }
+
         public HMIXER(nint value)
         {
             Value = ((nint)(value));
@@ -23,9 +33,18 @@ namespace TerraFX.Interop
             Value = ((nint)(value));
         }
 
+        public HMIXER(HANDLE value)
+        {
+            Value = value.Value;
+        }
+
         public static bool operator ==(HMIXER left, HMIXER right) => left.Value == right.Value;
 
         public static bool operator !=(HMIXER left, HMIXER right) => left.Value != right.Value;
+
+        public static explicit operator HMIXER(int value) => new HMIXER(value);
+
+        public static explicit operator HMIXER(uint value) => new HMIXER(value);
 
         public static explicit operator HMIXER(nint value) => new HMIXER(value);
 
@@ -33,11 +52,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HMIXER(void* value) => new HMIXER(value);
 
+        public static explicit operator HMIXER(HANDLE value) => new HMIXER(value);
+
+        public static implicit operator int(HMIXER value) => (int)(value.Value);
+
+        public static implicit operator uint(HMIXER value) => (uint)(value.Value);
+
         public static implicit operator nint(HMIXER value) => (nint)(value.Value);
 
         public static implicit operator nuint(HMIXER value) => (nuint)(value.Value);
 
         public static implicit operator void*(HMIXER value) => (void*)(value.Value);
+
+        public static implicit operator HANDLE(HMIXER value) => (HANDLE)(value.Value);
 
         public override bool Equals(object? obj) => (obj is HMIXER other) && Equals(other);
 

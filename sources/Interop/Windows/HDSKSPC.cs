@@ -6,32 +6,50 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct HDSKSPC : IEquatable<HDSKSPC>
     {
-        public readonly nint Value;
+        public readonly void* Value;
+
+        public HDSKSPC(int value)
+        {
+            Value = ((void*)(value));
+        }
+
+        public HDSKSPC(uint value)
+        {
+            Value = ((void*)(value));
+        }
 
         public HDSKSPC(nint value)
         {
-            Value = ((nint)(value));
+            Value = ((void*)(value));
         }
 
         public HDSKSPC(nuint value)
         {
-            Value = ((nint)(value));
+            Value = ((void*)(value));
         }
 
         public HDSKSPC(void* value)
         {
-            Value = ((nint)(value));
+            Value = ((void*)(value));
         }
 
         public static bool operator ==(HDSKSPC left, HDSKSPC right) => left.Value == right.Value;
 
         public static bool operator !=(HDSKSPC left, HDSKSPC right) => left.Value != right.Value;
 
+        public static explicit operator HDSKSPC(int value) => new HDSKSPC(value);
+
+        public static explicit operator HDSKSPC(uint value) => new HDSKSPC(value);
+
         public static explicit operator HDSKSPC(nint value) => new HDSKSPC(value);
 
         public static explicit operator HDSKSPC(nuint value) => new HDSKSPC(value);
 
         public static explicit operator HDSKSPC(void* value) => new HDSKSPC(value);
+
+        public static implicit operator int(HDSKSPC value) => (int)(value.Value);
+
+        public static implicit operator uint(HDSKSPC value) => (uint)(value.Value);
 
         public static implicit operator nint(HDSKSPC value) => (nint)(value.Value);
 

@@ -473,13 +473,13 @@ namespace TerraFX.Interop
         public static HWND GetNextWindow(HWND hWnd, ushort wCmd) => GetWindow(hWnd, wCmd);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static HWND GetSysModalWindow() => IntPtr.Zero;
+        public static HWND GetSysModalWindow() => (HWND)(NULL);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static HWND SetSysModalWindow(HWND hWnd) => IntPtr.Zero;
+        public static HWND SetSysModalWindow(HWND hWnd) => (HWND)(NULL);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static HANDLE GetWindowTask(HWND hWnd) => (nint)GetWindowThreadProcessId(hWnd, null);
+        public static HANDLE GetWindowTask(HWND hWnd) => (HANDLE)GetWindowThreadProcessId(hWnd, null);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("LRESULT")]
@@ -511,5 +511,62 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static double GID_ROTATE_ANGLE_FROM_ARGUMENT(double  _arg_) => (_arg_ / 65535.0 * 4.0 * 3.14159265) - (2.0 * 3.14159265);
+
+        [NativeTypeName("#define HWND_BROADCAST ((HWND)0xffff)")]
+        public static HWND HWND_BROADCAST => ((HWND)(0xffff));
+
+        [NativeTypeName("#define HWND_MESSAGE ((HWND)-3)")]
+        public static HWND HWND_MESSAGE => ((HWND)(-3));
+
+        [NativeTypeName("#define HWND_DESKTOP ((HWND)0)")]
+        public static HWND HWND_DESKTOP => ((HWND)(0));
+
+        [NativeTypeName("#define HWND_TOP ((HWND)0)")]
+        public static HWND HWND_TOP => ((HWND)(0));
+
+        [NativeTypeName("#define HWND_BOTTOM ((HWND)1)")]
+        public static HWND HWND_BOTTOM => ((HWND)(1));
+
+        [NativeTypeName("#define HWND_TOPMOST ((HWND)-1)")]
+        public static HWND HWND_TOPMOST => ((HWND)(-1));
+
+        [NativeTypeName("#define HWND_NOTOPMOST ((HWND)-2)")]
+        public static HWND HWND_NOTOPMOST => ((HWND)(-2));
+
+        [NativeTypeName("#define HBMMENU_CALLBACK ((HBITMAP) -1)")]
+        public static HBITMAP HBMMENU_CALLBACK => ((HBITMAP)(-1));
+
+        [NativeTypeName("#define HBMMENU_SYSTEM ((HBITMAP)  1)")]
+        public static HBITMAP HBMMENU_SYSTEM => ((HBITMAP)(1));
+
+        [NativeTypeName("#define HBMMENU_MBAR_RESTORE ((HBITMAP)  2)")]
+        public static HBITMAP HBMMENU_MBAR_RESTORE => ((HBITMAP)(2));
+
+        [NativeTypeName("#define HBMMENU_MBAR_MINIMIZE ((HBITMAP)  3)")]
+        public static HBITMAP HBMMENU_MBAR_MINIMIZE => ((HBITMAP)(3));
+
+        [NativeTypeName("#define HBMMENU_MBAR_CLOSE ((HBITMAP)  5)")]
+        public static HBITMAP HBMMENU_MBAR_CLOSE => ((HBITMAP)(5));
+
+        [NativeTypeName("#define HBMMENU_MBAR_CLOSE_D ((HBITMAP)  6)")]
+        public static HBITMAP HBMMENU_MBAR_CLOSE_D => ((HBITMAP)(6));
+
+        [NativeTypeName("#define HBMMENU_MBAR_MINIMIZE_D ((HBITMAP)  7)")]
+        public static HBITMAP HBMMENU_MBAR_MINIMIZE_D => ((HBITMAP)(7));
+
+        [NativeTypeName("#define HBMMENU_POPUP_CLOSE ((HBITMAP)  8)")]
+        public static HBITMAP HBMMENU_POPUP_CLOSE => ((HBITMAP)(8));
+
+        [NativeTypeName("#define HBMMENU_POPUP_RESTORE ((HBITMAP)  9)")]
+        public static HBITMAP HBMMENU_POPUP_RESTORE => ((HBITMAP)(9));
+
+        [NativeTypeName("#define HBMMENU_POPUP_MAXIMIZE ((HBITMAP) 10)")]
+        public static HBITMAP HBMMENU_POPUP_MAXIMIZE => ((HBITMAP)(10));
+
+        [NativeTypeName("#define HBMMENU_POPUP_MINIMIZE ((HBITMAP) 11)")]
+        public static HBITMAP HBMMENU_POPUP_MINIMIZE => ((HBITMAP)(11));
+
+        [NativeTypeName("#define GR_GLOBAL ((HANDLE)-2)")]
+        public static HANDLE GR_GLOBAL => ((HANDLE)(-2));
     }
 }

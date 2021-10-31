@@ -301,5 +301,14 @@ namespace TerraFX.Interop
                 }
             }
         }
+
+        [NativeTypeName("#define MEMORY_CURRENT_PARTITION_HANDLE ((HANDLE) (LONG_PTR) -1)")]
+        public static HANDLE MEMORY_CURRENT_PARTITION_HANDLE => ((HANDLE)((nint)(-1)));
+
+        [NativeTypeName("#define MEMORY_SYSTEM_PARTITION_HANDLE ((HANDLE) (LONG_PTR) -2)")]
+        public static HANDLE MEMORY_SYSTEM_PARTITION_HANDLE => ((HANDLE)((nint)(-2)));
+
+        [NativeTypeName("#define MEMORY_EXISTING_VAD_PARTITION_HANDLE ((HANDLE) (LONG_PTR) -3)")]
+        public static HANDLE MEMORY_EXISTING_VAD_PARTITION_HANDLE => ((HANDLE)((nint)(-3)));
     }
 }

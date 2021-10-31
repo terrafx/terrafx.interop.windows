@@ -8,6 +8,16 @@ namespace TerraFX.Interop
     {
         public readonly nint Value;
 
+        public HSTR(int value)
+        {
+            Value = ((nint)(value));
+        }
+
+        public HSTR(uint value)
+        {
+            Value = ((nint)(value));
+        }
+
         public HSTR(nint value)
         {
             Value = ((nint)(value));
@@ -23,9 +33,18 @@ namespace TerraFX.Interop
             Value = ((nint)(value));
         }
 
+        public HSTR(HANDLE value)
+        {
+            Value = value.Value;
+        }
+
         public static bool operator ==(HSTR left, HSTR right) => left.Value == right.Value;
 
         public static bool operator !=(HSTR left, HSTR right) => left.Value != right.Value;
+
+        public static explicit operator HSTR(int value) => new HSTR(value);
+
+        public static explicit operator HSTR(uint value) => new HSTR(value);
 
         public static explicit operator HSTR(nint value) => new HSTR(value);
 
@@ -33,11 +52,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HSTR(void* value) => new HSTR(value);
 
+        public static explicit operator HSTR(HANDLE value) => new HSTR(value);
+
+        public static implicit operator int(HSTR value) => (int)(value.Value);
+
+        public static implicit operator uint(HSTR value) => (uint)(value.Value);
+
         public static implicit operator nint(HSTR value) => (nint)(value.Value);
 
         public static implicit operator nuint(HSTR value) => (nuint)(value.Value);
 
         public static implicit operator void*(HSTR value) => (void*)(value.Value);
+
+        public static implicit operator HANDLE(HSTR value) => (HANDLE)(value.Value);
 
         public override bool Equals(object? obj) => (obj is HSTR other) && Equals(other);
 

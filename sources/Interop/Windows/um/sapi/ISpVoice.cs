@@ -85,7 +85,7 @@ namespace TerraFX.Interop
         [VtblIndex(9)]
         public HANDLE GetNotifyEventHandle()
         {
-            return ((delegate* unmanaged<ISpVoice*, nint>)(lpVtbl[9]))((ISpVoice*)Unsafe.AsPointer(ref this));
+            return ((HANDLE)(((delegate* unmanaged<ISpVoice*, nint>)(lpVtbl[9]))((ISpVoice*)Unsafe.AsPointer(ref this))));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -267,7 +267,7 @@ namespace TerraFX.Interop
         [VtblIndex(35)]
         public HANDLE SpeakCompleteEvent()
         {
-            return ((delegate* unmanaged<ISpVoice*, nint>)(lpVtbl[35]))((ISpVoice*)Unsafe.AsPointer(ref this));
+            return ((HANDLE)(((delegate* unmanaged<ISpVoice*, nint>)(lpVtbl[35]))((ISpVoice*)Unsafe.AsPointer(ref this))));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

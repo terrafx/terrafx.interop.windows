@@ -6,32 +6,50 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct HPOWERNOTIFY : IEquatable<HPOWERNOTIFY>
     {
-        public readonly nint Value;
+        public readonly void* Value;
+
+        public HPOWERNOTIFY(int value)
+        {
+            Value = ((void*)(value));
+        }
+
+        public HPOWERNOTIFY(uint value)
+        {
+            Value = ((void*)(value));
+        }
 
         public HPOWERNOTIFY(nint value)
         {
-            Value = ((nint)(value));
+            Value = ((void*)(value));
         }
 
         public HPOWERNOTIFY(nuint value)
         {
-            Value = ((nint)(value));
+            Value = ((void*)(value));
         }
 
         public HPOWERNOTIFY(void* value)
         {
-            Value = ((nint)(value));
+            Value = ((void*)(value));
         }
 
         public static bool operator ==(HPOWERNOTIFY left, HPOWERNOTIFY right) => left.Value == right.Value;
 
         public static bool operator !=(HPOWERNOTIFY left, HPOWERNOTIFY right) => left.Value != right.Value;
 
+        public static explicit operator HPOWERNOTIFY(int value) => new HPOWERNOTIFY(value);
+
+        public static explicit operator HPOWERNOTIFY(uint value) => new HPOWERNOTIFY(value);
+
         public static explicit operator HPOWERNOTIFY(nint value) => new HPOWERNOTIFY(value);
 
         public static explicit operator HPOWERNOTIFY(nuint value) => new HPOWERNOTIFY(value);
 
         public static explicit operator HPOWERNOTIFY(void* value) => new HPOWERNOTIFY(value);
+
+        public static implicit operator int(HPOWERNOTIFY value) => (int)(value.Value);
+
+        public static implicit operator uint(HPOWERNOTIFY value) => (uint)(value.Value);
 
         public static implicit operator nint(HPOWERNOTIFY value) => (nint)(value.Value);
 

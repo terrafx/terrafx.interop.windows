@@ -6,32 +6,50 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct HANDLE_PTR : IEquatable<HANDLE_PTR>
     {
-        public readonly nint Value;
+        public readonly nuint Value;
+
+        public HANDLE_PTR(int value)
+        {
+            Value = ((nuint)(value));
+        }
+
+        public HANDLE_PTR(uint value)
+        {
+            Value = ((nuint)(value));
+        }
 
         public HANDLE_PTR(nint value)
         {
-            Value = ((nint)(value));
+            Value = ((nuint)(value));
         }
 
         public HANDLE_PTR(nuint value)
         {
-            Value = ((nint)(value));
+            Value = ((nuint)(value));
         }
 
         public HANDLE_PTR(void* value)
         {
-            Value = ((nint)(value));
+            Value = ((nuint)(value));
         }
 
         public static bool operator ==(HANDLE_PTR left, HANDLE_PTR right) => left.Value == right.Value;
 
         public static bool operator !=(HANDLE_PTR left, HANDLE_PTR right) => left.Value != right.Value;
 
+        public static explicit operator HANDLE_PTR(int value) => new HANDLE_PTR(value);
+
+        public static explicit operator HANDLE_PTR(uint value) => new HANDLE_PTR(value);
+
         public static explicit operator HANDLE_PTR(nint value) => new HANDLE_PTR(value);
 
         public static explicit operator HANDLE_PTR(nuint value) => new HANDLE_PTR(value);
 
         public static explicit operator HANDLE_PTR(void* value) => new HANDLE_PTR(value);
+
+        public static implicit operator int(HANDLE_PTR value) => (int)(value.Value);
+
+        public static implicit operator uint(HANDLE_PTR value) => (uint)(value.Value);
 
         public static implicit operator nint(HANDLE_PTR value) => (nint)(value.Value);
 

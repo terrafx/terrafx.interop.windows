@@ -6,32 +6,50 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct HCRYPTHASH : IEquatable<HCRYPTHASH>
     {
-        public readonly nint Value;
+        public readonly nuint Value;
+
+        public HCRYPTHASH(int value)
+        {
+            Value = ((nuint)(value));
+        }
+
+        public HCRYPTHASH(uint value)
+        {
+            Value = ((nuint)(value));
+        }
 
         public HCRYPTHASH(nint value)
         {
-            Value = ((nint)(value));
+            Value = ((nuint)(value));
         }
 
         public HCRYPTHASH(nuint value)
         {
-            Value = ((nint)(value));
+            Value = ((nuint)(value));
         }
 
         public HCRYPTHASH(void* value)
         {
-            Value = ((nint)(value));
+            Value = ((nuint)(value));
         }
 
         public static bool operator ==(HCRYPTHASH left, HCRYPTHASH right) => left.Value == right.Value;
 
         public static bool operator !=(HCRYPTHASH left, HCRYPTHASH right) => left.Value != right.Value;
 
+        public static explicit operator HCRYPTHASH(int value) => new HCRYPTHASH(value);
+
+        public static explicit operator HCRYPTHASH(uint value) => new HCRYPTHASH(value);
+
         public static explicit operator HCRYPTHASH(nint value) => new HCRYPTHASH(value);
 
         public static explicit operator HCRYPTHASH(nuint value) => new HCRYPTHASH(value);
 
         public static explicit operator HCRYPTHASH(void* value) => new HCRYPTHASH(value);
+
+        public static implicit operator int(HCRYPTHASH value) => (int)(value.Value);
+
+        public static implicit operator uint(HCRYPTHASH value) => (uint)(value.Value);
 
         public static implicit operator nint(HCRYPTHASH value) => (nint)(value.Value);
 

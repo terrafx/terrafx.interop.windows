@@ -6,32 +6,50 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct MachineGlobalObjectTableRegistrationToken : IEquatable<MachineGlobalObjectTableRegistrationToken>
     {
-        public readonly nint Value;
+        public readonly void* Value;
+
+        public MachineGlobalObjectTableRegistrationToken(int value)
+        {
+            Value = ((void*)(value));
+        }
+
+        public MachineGlobalObjectTableRegistrationToken(uint value)
+        {
+            Value = ((void*)(value));
+        }
 
         public MachineGlobalObjectTableRegistrationToken(nint value)
         {
-            Value = ((nint)(value));
+            Value = ((void*)(value));
         }
 
         public MachineGlobalObjectTableRegistrationToken(nuint value)
         {
-            Value = ((nint)(value));
+            Value = ((void*)(value));
         }
 
         public MachineGlobalObjectTableRegistrationToken(void* value)
         {
-            Value = ((nint)(value));
+            Value = ((void*)(value));
         }
 
         public static bool operator ==(MachineGlobalObjectTableRegistrationToken left, MachineGlobalObjectTableRegistrationToken right) => left.Value == right.Value;
 
         public static bool operator !=(MachineGlobalObjectTableRegistrationToken left, MachineGlobalObjectTableRegistrationToken right) => left.Value != right.Value;
 
+        public static explicit operator MachineGlobalObjectTableRegistrationToken(int value) => new MachineGlobalObjectTableRegistrationToken(value);
+
+        public static explicit operator MachineGlobalObjectTableRegistrationToken(uint value) => new MachineGlobalObjectTableRegistrationToken(value);
+
         public static explicit operator MachineGlobalObjectTableRegistrationToken(nint value) => new MachineGlobalObjectTableRegistrationToken(value);
 
         public static explicit operator MachineGlobalObjectTableRegistrationToken(nuint value) => new MachineGlobalObjectTableRegistrationToken(value);
 
         public static explicit operator MachineGlobalObjectTableRegistrationToken(void* value) => new MachineGlobalObjectTableRegistrationToken(value);
+
+        public static implicit operator int(MachineGlobalObjectTableRegistrationToken value) => (int)(value.Value);
+
+        public static implicit operator uint(MachineGlobalObjectTableRegistrationToken value) => (uint)(value.Value);
 
         public static implicit operator nint(MachineGlobalObjectTableRegistrationToken value) => (nint)(value.Value);
 

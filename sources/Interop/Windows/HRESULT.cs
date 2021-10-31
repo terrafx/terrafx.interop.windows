@@ -22,7 +22,7 @@ namespace TerraFX.Interop
 
         public static bool operator !=(HRESULT left, HRESULT right) => left.Value != right.Value;
 
-        public static explicit operator HRESULT(uint value) => newHRESULT(value);
+        public static explicit operator HRESULT(uint value) => new HRESULT(value);
 
         public static explicit operator uint(HRESULT value) => (uint)(value.Value);
 

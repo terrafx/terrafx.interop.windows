@@ -3,6 +3,7 @@
 using System;
 using System.Numerics;
 using System.Windows.Forms;
+using TerraFX.Interop;
 using TerraFX.Samples.DirectX;
 using static TerraFX.Interop.DXGI_FORMAT;
 
@@ -40,7 +41,7 @@ namespace TerraFX.Samples.WinForms
                 if (value is not null)
                 {
                     var backgroundColor = new Vector4(BackColor.R / 255.0f, BackColor.G / 255.0f, BackColor.B / 255.0f, BackColor.A / 255.0f);
-                    value.OnInit(DXGI_FORMAT_UNKNOWN, backgroundColor, DXGI_FORMAT_UNKNOWN, 1.0f, 2, Handle, true, ClientSize, _useWarpDevice);
+                    value.OnInit(DXGI_FORMAT_UNKNOWN, backgroundColor, DXGI_FORMAT_UNKNOWN, 1.0f, 2, (HWND)(Handle), true, ClientSize, _useWarpDevice);
                 }
 
                 _dxSample = value;
@@ -62,7 +63,7 @@ namespace TerraFX.Samples.WinForms
                     _dxSample.OnDestroy();
 
                     var backgroundColor = new Vector4(0.0f, 0.2f, 0.4f, 1.0f);
-                    _dxSample.OnInit(DXGI_FORMAT_UNKNOWN, backgroundColor, DXGI_FORMAT_UNKNOWN, 1.0f, 2, Handle, true, ClientSize, _useWarpDevice);
+                    _dxSample.OnInit(DXGI_FORMAT_UNKNOWN, backgroundColor, DXGI_FORMAT_UNKNOWN, 1.0f, 2, (HWND)(Handle), true, ClientSize, _useWarpDevice);
                 }
                 _useWarpDevice = value;
             }

@@ -6,32 +6,50 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct RO_REGISTRATION_COOKIE : IEquatable<RO_REGISTRATION_COOKIE>
     {
-        public readonly nint Value;
+        public readonly void* Value;
+
+        public RO_REGISTRATION_COOKIE(int value)
+        {
+            Value = ((void*)(value));
+        }
+
+        public RO_REGISTRATION_COOKIE(uint value)
+        {
+            Value = ((void*)(value));
+        }
 
         public RO_REGISTRATION_COOKIE(nint value)
         {
-            Value = ((nint)(value));
+            Value = ((void*)(value));
         }
 
         public RO_REGISTRATION_COOKIE(nuint value)
         {
-            Value = ((nint)(value));
+            Value = ((void*)(value));
         }
 
         public RO_REGISTRATION_COOKIE(void* value)
         {
-            Value = ((nint)(value));
+            Value = ((void*)(value));
         }
 
         public static bool operator ==(RO_REGISTRATION_COOKIE left, RO_REGISTRATION_COOKIE right) => left.Value == right.Value;
 
         public static bool operator !=(RO_REGISTRATION_COOKIE left, RO_REGISTRATION_COOKIE right) => left.Value != right.Value;
 
+        public static explicit operator RO_REGISTRATION_COOKIE(int value) => new RO_REGISTRATION_COOKIE(value);
+
+        public static explicit operator RO_REGISTRATION_COOKIE(uint value) => new RO_REGISTRATION_COOKIE(value);
+
         public static explicit operator RO_REGISTRATION_COOKIE(nint value) => new RO_REGISTRATION_COOKIE(value);
 
         public static explicit operator RO_REGISTRATION_COOKIE(nuint value) => new RO_REGISTRATION_COOKIE(value);
 
         public static explicit operator RO_REGISTRATION_COOKIE(void* value) => new RO_REGISTRATION_COOKIE(value);
+
+        public static implicit operator int(RO_REGISTRATION_COOKIE value) => (int)(value.Value);
+
+        public static implicit operator uint(RO_REGISTRATION_COOKIE value) => (uint)(value.Value);
 
         public static implicit operator nint(RO_REGISTRATION_COOKIE value) => (nint)(value.Value);
 

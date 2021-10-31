@@ -6,32 +6,50 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct HDEVNOTIFY : IEquatable<HDEVNOTIFY>
     {
-        public readonly nint Value;
+        public readonly void* Value;
+
+        public HDEVNOTIFY(int value)
+        {
+            Value = ((void*)(value));
+        }
+
+        public HDEVNOTIFY(uint value)
+        {
+            Value = ((void*)(value));
+        }
 
         public HDEVNOTIFY(nint value)
         {
-            Value = ((nint)(value));
+            Value = ((void*)(value));
         }
 
         public HDEVNOTIFY(nuint value)
         {
-            Value = ((nint)(value));
+            Value = ((void*)(value));
         }
 
         public HDEVNOTIFY(void* value)
         {
-            Value = ((nint)(value));
+            Value = ((void*)(value));
         }
 
         public static bool operator ==(HDEVNOTIFY left, HDEVNOTIFY right) => left.Value == right.Value;
 
         public static bool operator !=(HDEVNOTIFY left, HDEVNOTIFY right) => left.Value != right.Value;
 
+        public static explicit operator HDEVNOTIFY(int value) => new HDEVNOTIFY(value);
+
+        public static explicit operator HDEVNOTIFY(uint value) => new HDEVNOTIFY(value);
+
         public static explicit operator HDEVNOTIFY(nint value) => new HDEVNOTIFY(value);
 
         public static explicit operator HDEVNOTIFY(nuint value) => new HDEVNOTIFY(value);
 
         public static explicit operator HDEVNOTIFY(void* value) => new HDEVNOTIFY(value);
+
+        public static implicit operator int(HDEVNOTIFY value) => (int)(value.Value);
+
+        public static implicit operator uint(HDEVNOTIFY value) => (uint)(value.Value);
 
         public static implicit operator nint(HDEVNOTIFY value) => (nint)(value.Value);
 

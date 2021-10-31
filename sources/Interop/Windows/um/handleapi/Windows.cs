@@ -23,8 +23,5 @@ namespace TerraFX.Interop
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         public static extern BOOL SetHandleInformation(HANDLE hObject, [NativeTypeName("DWORD")] uint dwMask, [NativeTypeName("DWORD")] uint dwFlags);
-
-        [NativeTypeName("#define INVALID_HANDLE_VALUE ((HANDLE)(LONG_PTR)-1)")]
-        public static HANDLE INVALID_HANDLE_VALUE => ((nint)((nint)(-1)));
     }
 }

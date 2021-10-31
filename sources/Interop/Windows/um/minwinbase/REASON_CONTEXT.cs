@@ -31,8 +31,7 @@ namespace TerraFX.Interop
 
             public unsafe partial struct _Detailed_e__Struct
             {
-                [NativeTypeName("HMODULE")]
-                public HINSTANCE LocalizedReasonModule;
+                public HMODULE LocalizedReasonModule;
 
                 [NativeTypeName("ULONG")]
                 public uint LocalizedReasonId;

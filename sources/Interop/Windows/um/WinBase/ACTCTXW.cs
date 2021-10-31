@@ -30,7 +30,6 @@ namespace TerraFX.Interop
         [NativeTypeName("LPCWSTR")]
         public ushort* lpApplicationName;
 
-        [NativeTypeName("HMODULE")]
-        public HINSTANCE hModule;
+        public HMODULE hModule;
     }
 }

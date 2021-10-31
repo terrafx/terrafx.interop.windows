@@ -17,7 +17,7 @@ namespace TerraFX.Interop
         [DllImport("comctl32", EntryPoint = "CreateToolbarEx", ExactSpelling = true, SetLastError = true)]
         public static extern HWND CreateToolbarEx64(HWND hwnd, [NativeTypeName("DWORD")] uint ws, uint wID, int nBitmaps, HINSTANCE hBMInst, [NativeTypeName("UINT_PTR")] nuint wBMID, [NativeTypeName("LPCTBBUTTON")] TBBUTTON64* lpButtons, int iNumButtons, int dxButton, int dyButton, int dxBitmap, int dyBitmap, uint uStructSize);
 
-        public static int FlatSB_GetScrollPropPtr(IntPtr param0, int propIndex, int* param2)
+        public static int FlatSB_GetScrollPropPtr(HWND param0, int propIndex, int* param2)
         {
             if (sizeof(nint) == 4)
             {
@@ -27,7 +27,7 @@ namespace TerraFX.Interop
             {
                 [DllImport("comctl32", EntryPoint = "FlatSB_GetScrollPropPtr", ExactSpelling = true)]
                 [return: NativeTypeName("LONG_PTR")]
-                static extern int _FlatSB_GetScrollPropPtr(IntPtr param0, int propIndex, int* param2);
+                static extern int _FlatSB_GetScrollPropPtr(HWND param0, int propIndex, int* param2);
 
                 return _FlatSB_GetScrollPropPtr(param0, propIndex, param2);
             }
@@ -349,5 +349,26 @@ namespace TerraFX.Interop
                 return (uint)((byte*)(&value.st) - ((byte*)(&value))) + (uint)(sizeof(SYSTEMTIME));
             }
         }
+
+        [NativeTypeName("#define HBITMAP_CALLBACK ((HBITMAP)-1)")]
+        public static HBITMAP HBITMAP_CALLBACK => ((HBITMAP)(-1));
+
+        [NativeTypeName("#define HINST_COMMCTRL ((HINSTANCE)-1)")]
+        public static HINSTANCE HINST_COMMCTRL => ((HINSTANCE)(-1));
+
+        [NativeTypeName("#define TVI_ROOT ((HTREEITEM)(ULONG_PTR)-0x10000)")]
+        public static HTREEITEM TVI_ROOT => unchecked((HTREEITEM)((nuint)(-0x10000)));
+
+        [NativeTypeName("#define TVI_FIRST ((HTREEITEM)(ULONG_PTR)-0x0FFFF)")]
+        public static HTREEITEM TVI_FIRST => unchecked((HTREEITEM)((nuint)(-0x0FFFF)));
+
+        [NativeTypeName("#define TVI_LAST ((HTREEITEM)(ULONG_PTR)-0x0FFFE)")]
+        public static HTREEITEM TVI_LAST => unchecked((HTREEITEM)((nuint)(-0x0FFFE)));
+
+        [NativeTypeName("#define TVI_SORT ((HTREEITEM)(ULONG_PTR)-0x0FFFD)")]
+        public static HTREEITEM TVI_SORT => unchecked((HTREEITEM)((nuint)(-0x0FFFD)));
+
+        [NativeTypeName("#define BCCL_NOGLYPH (HIMAGELIST)(-1)")]
+        public static HIMAGELIST BCCL_NOGLYPH => (HIMAGELIST)(-1);
     }
 }

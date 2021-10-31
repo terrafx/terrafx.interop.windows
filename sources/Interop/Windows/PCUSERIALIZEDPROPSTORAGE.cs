@@ -6,32 +6,50 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct PCUSERIALIZEDPROPSTORAGE : IEquatable<PCUSERIALIZEDPROPSTORAGE>
     {
-        public readonly nint Value;
+        public readonly void* Value;
+
+        public PCUSERIALIZEDPROPSTORAGE(int value)
+        {
+            Value = ((void*)(value));
+        }
+
+        public PCUSERIALIZEDPROPSTORAGE(uint value)
+        {
+            Value = ((void*)(value));
+        }
 
         public PCUSERIALIZEDPROPSTORAGE(nint value)
         {
-            Value = ((nint)(value));
+            Value = ((void*)(value));
         }
 
         public PCUSERIALIZEDPROPSTORAGE(nuint value)
         {
-            Value = ((nint)(value));
+            Value = ((void*)(value));
         }
 
         public PCUSERIALIZEDPROPSTORAGE(void* value)
         {
-            Value = ((nint)(value));
+            Value = ((void*)(value));
         }
 
         public static bool operator ==(PCUSERIALIZEDPROPSTORAGE left, PCUSERIALIZEDPROPSTORAGE right) => left.Value == right.Value;
 
         public static bool operator !=(PCUSERIALIZEDPROPSTORAGE left, PCUSERIALIZEDPROPSTORAGE right) => left.Value != right.Value;
 
+        public static explicit operator PCUSERIALIZEDPROPSTORAGE(int value) => new PCUSERIALIZEDPROPSTORAGE(value);
+
+        public static explicit operator PCUSERIALIZEDPROPSTORAGE(uint value) => new PCUSERIALIZEDPROPSTORAGE(value);
+
         public static explicit operator PCUSERIALIZEDPROPSTORAGE(nint value) => new PCUSERIALIZEDPROPSTORAGE(value);
 
         public static explicit operator PCUSERIALIZEDPROPSTORAGE(nuint value) => new PCUSERIALIZEDPROPSTORAGE(value);
 
         public static explicit operator PCUSERIALIZEDPROPSTORAGE(void* value) => new PCUSERIALIZEDPROPSTORAGE(value);
+
+        public static implicit operator int(PCUSERIALIZEDPROPSTORAGE value) => (int)(value.Value);
+
+        public static implicit operator uint(PCUSERIALIZEDPROPSTORAGE value) => (uint)(value.Value);
 
         public static implicit operator nint(PCUSERIALIZEDPROPSTORAGE value) => (nint)(value.Value);
 

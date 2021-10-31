@@ -6,32 +6,50 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct HCRYPTPROV_OR_NCRYPT_KEY_HANDLE : IEquatable<HCRYPTPROV_OR_NCRYPT_KEY_HANDLE>
     {
-        public readonly nint Value;
+        public readonly nuint Value;
+
+        public HCRYPTPROV_OR_NCRYPT_KEY_HANDLE(int value)
+        {
+            Value = ((nuint)(value));
+        }
+
+        public HCRYPTPROV_OR_NCRYPT_KEY_HANDLE(uint value)
+        {
+            Value = ((nuint)(value));
+        }
 
         public HCRYPTPROV_OR_NCRYPT_KEY_HANDLE(nint value)
         {
-            Value = ((nint)(value));
+            Value = ((nuint)(value));
         }
 
         public HCRYPTPROV_OR_NCRYPT_KEY_HANDLE(nuint value)
         {
-            Value = ((nint)(value));
+            Value = ((nuint)(value));
         }
 
         public HCRYPTPROV_OR_NCRYPT_KEY_HANDLE(void* value)
         {
-            Value = ((nint)(value));
+            Value = ((nuint)(value));
         }
 
         public static bool operator ==(HCRYPTPROV_OR_NCRYPT_KEY_HANDLE left, HCRYPTPROV_OR_NCRYPT_KEY_HANDLE right) => left.Value == right.Value;
 
         public static bool operator !=(HCRYPTPROV_OR_NCRYPT_KEY_HANDLE left, HCRYPTPROV_OR_NCRYPT_KEY_HANDLE right) => left.Value != right.Value;
 
+        public static explicit operator HCRYPTPROV_OR_NCRYPT_KEY_HANDLE(int value) => new HCRYPTPROV_OR_NCRYPT_KEY_HANDLE(value);
+
+        public static explicit operator HCRYPTPROV_OR_NCRYPT_KEY_HANDLE(uint value) => new HCRYPTPROV_OR_NCRYPT_KEY_HANDLE(value);
+
         public static explicit operator HCRYPTPROV_OR_NCRYPT_KEY_HANDLE(nint value) => new HCRYPTPROV_OR_NCRYPT_KEY_HANDLE(value);
 
         public static explicit operator HCRYPTPROV_OR_NCRYPT_KEY_HANDLE(nuint value) => new HCRYPTPROV_OR_NCRYPT_KEY_HANDLE(value);
 
         public static explicit operator HCRYPTPROV_OR_NCRYPT_KEY_HANDLE(void* value) => new HCRYPTPROV_OR_NCRYPT_KEY_HANDLE(value);
+
+        public static implicit operator int(HCRYPTPROV_OR_NCRYPT_KEY_HANDLE value) => (int)(value.Value);
+
+        public static implicit operator uint(HCRYPTPROV_OR_NCRYPT_KEY_HANDLE value) => (uint)(value.Value);
 
         public static implicit operator nint(HCRYPTPROV_OR_NCRYPT_KEY_HANDLE value) => (nint)(value.Value);
 

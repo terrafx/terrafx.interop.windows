@@ -6,32 +6,50 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct PTP_POOL : IEquatable<PTP_POOL>
     {
-        public readonly nint Value;
+        public readonly void* Value;
+
+        public PTP_POOL(int value)
+        {
+            Value = ((void*)(value));
+        }
+
+        public PTP_POOL(uint value)
+        {
+            Value = ((void*)(value));
+        }
 
         public PTP_POOL(nint value)
         {
-            Value = ((nint)(value));
+            Value = ((void*)(value));
         }
 
         public PTP_POOL(nuint value)
         {
-            Value = ((nint)(value));
+            Value = ((void*)(value));
         }
 
         public PTP_POOL(void* value)
         {
-            Value = ((nint)(value));
+            Value = ((void*)(value));
         }
 
         public static bool operator ==(PTP_POOL left, PTP_POOL right) => left.Value == right.Value;
 
         public static bool operator !=(PTP_POOL left, PTP_POOL right) => left.Value != right.Value;
 
+        public static explicit operator PTP_POOL(int value) => new PTP_POOL(value);
+
+        public static explicit operator PTP_POOL(uint value) => new PTP_POOL(value);
+
         public static explicit operator PTP_POOL(nint value) => new PTP_POOL(value);
 
         public static explicit operator PTP_POOL(nuint value) => new PTP_POOL(value);
 
         public static explicit operator PTP_POOL(void* value) => new PTP_POOL(value);
+
+        public static implicit operator int(PTP_POOL value) => (int)(value.Value);
+
+        public static implicit operator uint(PTP_POOL value) => (uint)(value.Value);
 
         public static implicit operator nint(PTP_POOL value) => (nint)(value.Value);
 

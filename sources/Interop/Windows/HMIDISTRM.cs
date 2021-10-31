@@ -8,6 +8,16 @@ namespace TerraFX.Interop
     {
         public readonly nint Value;
 
+        public HMIDISTRM(int value)
+        {
+            Value = ((nint)(value));
+        }
+
+        public HMIDISTRM(uint value)
+        {
+            Value = ((nint)(value));
+        }
+
         public HMIDISTRM(nint value)
         {
             Value = ((nint)(value));
@@ -23,9 +33,18 @@ namespace TerraFX.Interop
             Value = ((nint)(value));
         }
 
+        public HMIDISTRM(HANDLE value)
+        {
+            Value = value.Value;
+        }
+
         public static bool operator ==(HMIDISTRM left, HMIDISTRM right) => left.Value == right.Value;
 
         public static bool operator !=(HMIDISTRM left, HMIDISTRM right) => left.Value != right.Value;
+
+        public static explicit operator HMIDISTRM(int value) => new HMIDISTRM(value);
+
+        public static explicit operator HMIDISTRM(uint value) => new HMIDISTRM(value);
 
         public static explicit operator HMIDISTRM(nint value) => new HMIDISTRM(value);
 
@@ -33,11 +52,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HMIDISTRM(void* value) => new HMIDISTRM(value);
 
+        public static explicit operator HMIDISTRM(HANDLE value) => new HMIDISTRM(value);
+
+        public static implicit operator int(HMIDISTRM value) => (int)(value.Value);
+
+        public static implicit operator uint(HMIDISTRM value) => (uint)(value.Value);
+
         public static implicit operator nint(HMIDISTRM value) => (nint)(value.Value);
 
         public static implicit operator nuint(HMIDISTRM value) => (nuint)(value.Value);
 
         public static implicit operator void*(HMIDISTRM value) => (void*)(value.Value);
+
+        public static implicit operator HANDLE(HMIDISTRM value) => (HANDLE)(value.Value);
 
         public override bool Equals(object? obj) => (obj is HMIDISTRM other) && Equals(other);
 

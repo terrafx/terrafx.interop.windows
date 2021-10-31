@@ -793,9 +793,6 @@ namespace TerraFX.Interop
         [NativeTypeName("#define ILGT_ASYNC 0x00000001")]
         public const int ILGT_ASYNC = 0x00000001;
 
-        [NativeTypeName("#define HBITMAP_CALLBACK ((HBITMAP)-1)")]
-        public static HBITMAP HBITMAP_CALLBACK => ((nint)(-1));
-
         [NativeTypeName("#define ImageList_LoadImage ImageList_LoadImageW")]
         public static delegate*<HINSTANCE, ushort*, int, int, uint, uint, uint, HIMAGELIST> ImageList_LoadImage => &ImageList_LoadImageW;
 
@@ -1401,9 +1398,6 @@ namespace TerraFX.Interop
 
         [NativeTypeName("#define TB_ADDBITMAP (WM_USER + 19)")]
         public const int TB_ADDBITMAP = (0x0400 + 19);
-
-        [NativeTypeName("#define HINST_COMMCTRL ((HINSTANCE)-1)")]
-        public static HINSTANCE HINST_COMMCTRL => ((nint)(-1));
 
         [NativeTypeName("#define IDB_STD_SMALL_COLOR 0")]
         public const int IDB_STD_SMALL_COLOR = 0;
@@ -4813,18 +4807,6 @@ namespace TerraFX.Interop
         [NativeTypeName("#define I_CHILDRENAUTO (-2)")]
         public const int I_CHILDRENAUTO = (-2);
 
-        [NativeTypeName("#define TVI_ROOT ((HTREEITEM)(ULONG_PTR)-0x10000)")]
-        public static HTREEITEM TVI_ROOT => unchecked((nint)((nuint)(-0x10000)));
-
-        [NativeTypeName("#define TVI_FIRST ((HTREEITEM)(ULONG_PTR)-0x0FFFF)")]
-        public static HTREEITEM TVI_FIRST => unchecked((nint)((nuint)(-0x0FFFF)));
-
-        [NativeTypeName("#define TVI_LAST ((HTREEITEM)(ULONG_PTR)-0x0FFFE)")]
-        public static HTREEITEM TVI_LAST => unchecked((nint)((nuint)(-0x0FFFE)));
-
-        [NativeTypeName("#define TVI_SORT ((HTREEITEM)(ULONG_PTR)-0x0FFFD)")]
-        public static HTREEITEM TVI_SORT => unchecked((nint)((nuint)(-0x0FFFD)));
-
         [NativeTypeName("#define TVM_INSERTITEMA (TV_FIRST + 0)")]
         public const int TVM_INSERTITEMA = (0x1100 + 0);
 
@@ -6414,9 +6396,6 @@ namespace TerraFX.Interop
 
         [NativeTypeName("#define BCM_SETSHIELD (BCM_FIRST + 0x000C)")]
         public const int BCM_SETSHIELD = (0x1600 + 0x000C);
-
-        [NativeTypeName("#define BCCL_NOGLYPH (HIMAGELIST)(-1)")]
-        public static HIMAGELIST BCCL_NOGLYPH => (nint)(-1);
 
         [NativeTypeName("#define BCN_DROPDOWN (BCN_FIRST + 0x0002)")]
         public const uint BCN_DROPDOWN = unchecked((0U - 1250U) + 0x0002);

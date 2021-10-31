@@ -8,6 +8,16 @@ namespace TerraFX.Interop
     {
         public readonly nint Value;
 
+        public HSPRITE(int value)
+        {
+            Value = ((nint)(value));
+        }
+
+        public HSPRITE(uint value)
+        {
+            Value = ((nint)(value));
+        }
+
         public HSPRITE(nint value)
         {
             Value = ((nint)(value));
@@ -23,9 +33,18 @@ namespace TerraFX.Interop
             Value = ((nint)(value));
         }
 
+        public HSPRITE(HANDLE value)
+        {
+            Value = value.Value;
+        }
+
         public static bool operator ==(HSPRITE left, HSPRITE right) => left.Value == right.Value;
 
         public static bool operator !=(HSPRITE left, HSPRITE right) => left.Value != right.Value;
+
+        public static explicit operator HSPRITE(int value) => new HSPRITE(value);
+
+        public static explicit operator HSPRITE(uint value) => new HSPRITE(value);
 
         public static explicit operator HSPRITE(nint value) => new HSPRITE(value);
 
@@ -33,11 +52,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HSPRITE(void* value) => new HSPRITE(value);
 
+        public static explicit operator HSPRITE(HANDLE value) => new HSPRITE(value);
+
+        public static implicit operator int(HSPRITE value) => (int)(value.Value);
+
+        public static implicit operator uint(HSPRITE value) => (uint)(value.Value);
+
         public static implicit operator nint(HSPRITE value) => (nint)(value.Value);
 
         public static implicit operator nuint(HSPRITE value) => (nuint)(value.Value);
 
         public static implicit operator void*(HSPRITE value) => (void*)(value.Value);
+
+        public static implicit operator HANDLE(HSPRITE value) => (HANDLE)(value.Value);
 
         public override bool Equals(object? obj) => (obj is HSPRITE other) && Equals(other);
 

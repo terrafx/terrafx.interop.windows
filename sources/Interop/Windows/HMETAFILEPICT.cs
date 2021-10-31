@@ -8,6 +8,16 @@ namespace TerraFX.Interop
     {
         public readonly nint Value;
 
+        public HMETAFILEPICT(int value)
+        {
+            Value = ((nint)(value));
+        }
+
+        public HMETAFILEPICT(uint value)
+        {
+            Value = ((nint)(value));
+        }
+
         public HMETAFILEPICT(nint value)
         {
             Value = ((nint)(value));
@@ -23,9 +33,18 @@ namespace TerraFX.Interop
             Value = ((nint)(value));
         }
 
+        public HMETAFILEPICT(HANDLE value)
+        {
+            Value = value.Value;
+        }
+
         public static bool operator ==(HMETAFILEPICT left, HMETAFILEPICT right) => left.Value == right.Value;
 
         public static bool operator !=(HMETAFILEPICT left, HMETAFILEPICT right) => left.Value != right.Value;
+
+        public static explicit operator HMETAFILEPICT(int value) => new HMETAFILEPICT(value);
+
+        public static explicit operator HMETAFILEPICT(uint value) => new HMETAFILEPICT(value);
 
         public static explicit operator HMETAFILEPICT(nint value) => new HMETAFILEPICT(value);
 
@@ -33,11 +52,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HMETAFILEPICT(void* value) => new HMETAFILEPICT(value);
 
+        public static explicit operator HMETAFILEPICT(HANDLE value) => new HMETAFILEPICT(value);
+
+        public static implicit operator int(HMETAFILEPICT value) => (int)(value.Value);
+
+        public static implicit operator uint(HMETAFILEPICT value) => (uint)(value.Value);
+
         public static implicit operator nint(HMETAFILEPICT value) => (nint)(value.Value);
 
         public static implicit operator nuint(HMETAFILEPICT value) => (nuint)(value.Value);
 
         public static implicit operator void*(HMETAFILEPICT value) => (void*)(value.Value);
+
+        public static implicit operator HANDLE(HMETAFILEPICT value) => (HANDLE)(value.Value);
 
         public override bool Equals(object? obj) => (obj is HMETAFILEPICT other) && Equals(other);
 

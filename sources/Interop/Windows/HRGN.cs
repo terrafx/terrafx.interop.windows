@@ -8,6 +8,16 @@ namespace TerraFX.Interop
     {
         public readonly nint Value;
 
+        public HRGN(int value)
+        {
+            Value = ((nint)(value));
+        }
+
+        public HRGN(uint value)
+        {
+            Value = ((nint)(value));
+        }
+
         public HRGN(nint value)
         {
             Value = ((nint)(value));
@@ -23,9 +33,18 @@ namespace TerraFX.Interop
             Value = ((nint)(value));
         }
 
+        public HRGN(HANDLE value)
+        {
+            Value = value.Value;
+        }
+
         public static bool operator ==(HRGN left, HRGN right) => left.Value == right.Value;
 
         public static bool operator !=(HRGN left, HRGN right) => left.Value != right.Value;
+
+        public static explicit operator HRGN(int value) => new HRGN(value);
+
+        public static explicit operator HRGN(uint value) => new HRGN(value);
 
         public static explicit operator HRGN(nint value) => new HRGN(value);
 
@@ -33,11 +52,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HRGN(void* value) => new HRGN(value);
 
+        public static explicit operator HRGN(HANDLE value) => new HRGN(value);
+
+        public static implicit operator int(HRGN value) => (int)(value.Value);
+
+        public static implicit operator uint(HRGN value) => (uint)(value.Value);
+
         public static implicit operator nint(HRGN value) => (nint)(value.Value);
 
         public static implicit operator nuint(HRGN value) => (nuint)(value.Value);
 
         public static implicit operator void*(HRGN value) => (void*)(value.Value);
+
+        public static implicit operator HANDLE(HRGN value) => (HANDLE)(value.Value);
 
         public override bool Equals(object? obj) => (obj is HRGN other) && Equals(other);
 

@@ -1,5 +1,7 @@
 @../../settings.rsp
 @../../remap.rsp
+--exclude
+INVALID_HANDLE_VALUE
 --file
 um-handleapi.h
 --output

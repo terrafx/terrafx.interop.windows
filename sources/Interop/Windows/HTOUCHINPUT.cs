@@ -8,6 +8,16 @@ namespace TerraFX.Interop
     {
         public readonly nint Value;
 
+        public HTOUCHINPUT(int value)
+        {
+            Value = ((nint)(value));
+        }
+
+        public HTOUCHINPUT(uint value)
+        {
+            Value = ((nint)(value));
+        }
+
         public HTOUCHINPUT(nint value)
         {
             Value = ((nint)(value));
@@ -23,9 +33,18 @@ namespace TerraFX.Interop
             Value = ((nint)(value));
         }
 
+        public HTOUCHINPUT(HANDLE value)
+        {
+            Value = value.Value;
+        }
+
         public static bool operator ==(HTOUCHINPUT left, HTOUCHINPUT right) => left.Value == right.Value;
 
         public static bool operator !=(HTOUCHINPUT left, HTOUCHINPUT right) => left.Value != right.Value;
+
+        public static explicit operator HTOUCHINPUT(int value) => new HTOUCHINPUT(value);
+
+        public static explicit operator HTOUCHINPUT(uint value) => new HTOUCHINPUT(value);
 
         public static explicit operator HTOUCHINPUT(nint value) => new HTOUCHINPUT(value);
 
@@ -33,11 +52,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HTOUCHINPUT(void* value) => new HTOUCHINPUT(value);
 
+        public static explicit operator HTOUCHINPUT(HANDLE value) => new HTOUCHINPUT(value);
+
+        public static implicit operator int(HTOUCHINPUT value) => (int)(value.Value);
+
+        public static implicit operator uint(HTOUCHINPUT value) => (uint)(value.Value);
+
         public static implicit operator nint(HTOUCHINPUT value) => (nint)(value.Value);
 
         public static implicit operator nuint(HTOUCHINPUT value) => (nuint)(value.Value);
 
         public static implicit operator void*(HTOUCHINPUT value) => (void*)(value.Value);
+
+        public static implicit operator HANDLE(HTOUCHINPUT value) => (HANDLE)(value.Value);
 
         public override bool Equals(object? obj) => (obj is HTOUCHINPUT other) && Equals(other);
 

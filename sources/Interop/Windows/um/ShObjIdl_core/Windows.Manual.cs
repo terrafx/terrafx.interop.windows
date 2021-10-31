@@ -159,7 +159,7 @@ namespace TerraFX.Interop
             {
                 if (hwndDelegate != (nint)(0))
                 {
-                    SetPropW(hwndSource, (ushort*)(lpString), (nint)(hwndDelegate));
+                    SetPropW(hwndSource, (ushort*)(lpString), (HANDLE)(hwndDelegate));
                 }
                 else
                 {

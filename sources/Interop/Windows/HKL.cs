@@ -8,6 +8,16 @@ namespace TerraFX.Interop
     {
         public readonly nint Value;
 
+        public HKL(int value)
+        {
+            Value = ((nint)(value));
+        }
+
+        public HKL(uint value)
+        {
+            Value = ((nint)(value));
+        }
+
         public HKL(nint value)
         {
             Value = ((nint)(value));
@@ -23,9 +33,18 @@ namespace TerraFX.Interop
             Value = ((nint)(value));
         }
 
+        public HKL(HANDLE value)
+        {
+            Value = value.Value;
+        }
+
         public static bool operator ==(HKL left, HKL right) => left.Value == right.Value;
 
         public static bool operator !=(HKL left, HKL right) => left.Value != right.Value;
+
+        public static explicit operator HKL(int value) => new HKL(value);
+
+        public static explicit operator HKL(uint value) => new HKL(value);
 
         public static explicit operator HKL(nint value) => new HKL(value);
 
@@ -33,11 +52,19 @@ namespace TerraFX.Interop
 
         public static explicit operator HKL(void* value) => new HKL(value);
 
+        public static explicit operator HKL(HANDLE value) => new HKL(value);
+
+        public static implicit operator int(HKL value) => (int)(value.Value);
+
+        public static implicit operator uint(HKL value) => (uint)(value.Value);
+
         public static implicit operator nint(HKL value) => (nint)(value.Value);
 
         public static implicit operator nuint(HKL value) => (nuint)(value.Value);
 
         public static implicit operator void*(HKL value) => (void*)(value.Value);
+
+        public static implicit operator HANDLE(HKL value) => (HANDLE)(value.Value);
 
         public override bool Equals(object? obj) => (obj is HKL other) && Equals(other);
 

@@ -13,8 +13,7 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint flags;
 
-        [NativeTypeName("HCURSOR")]
-        public HICON hCursor;
+        public HCURSOR hCursor;
 
         public POINT ptScreenPos;
     }

@@ -6,32 +6,50 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct HPCON : IEquatable<HPCON>
     {
-        public readonly nint Value;
+        public readonly void* Value;
+
+        public HPCON(int value)
+        {
+            Value = ((void*)(value));
+        }
+
+        public HPCON(uint value)
+        {
+            Value = ((void*)(value));
+        }
 
         public HPCON(nint value)
         {
-            Value = ((nint)(value));
+            Value = ((void*)(value));
         }
 
         public HPCON(nuint value)
         {
-            Value = ((nint)(value));
+            Value = ((void*)(value));
         }
 
         public HPCON(void* value)
         {
-            Value = ((nint)(value));
+            Value = ((void*)(value));
         }
 
         public static bool operator ==(HPCON left, HPCON right) => left.Value == right.Value;
 
         public static bool operator !=(HPCON left, HPCON right) => left.Value != right.Value;
 
+        public static explicit operator HPCON(int value) => new HPCON(value);
+
+        public static explicit operator HPCON(uint value) => new HPCON(value);
+
         public static explicit operator HPCON(nint value) => new HPCON(value);
 
         public static explicit operator HPCON(nuint value) => new HPCON(value);
 
         public static explicit operator HPCON(void* value) => new HPCON(value);
+
+        public static implicit operator int(HPCON value) => (int)(value.Value);
+
+        public static implicit operator uint(HPCON value) => (uint)(value.Value);
 
         public static implicit operator nint(HPCON value) => (nint)(value.Value);
 

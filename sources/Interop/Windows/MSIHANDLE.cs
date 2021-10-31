@@ -22,7 +22,7 @@ namespace TerraFX.Interop
 
         public static bool operator !=(MSIHANDLE left, MSIHANDLE right) => left.Value != right.Value;
 
-        public static explicit operator MSIHANDLE(int value) => newMSIHANDLE(value);
+        public static explicit operator MSIHANDLE(int value) => new MSIHANDLE(value);
 
         public static explicit operator int(MSIHANDLE value) => (int)(value.Value);
 
