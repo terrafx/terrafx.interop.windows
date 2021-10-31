@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<ID2D1ImageSource*, Guid*, void**, int>)(lpVtbl[0]))((ID2D1ImageSource*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -49,16 +48,14 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int OfferResources()
+        public HRESULT OfferResources()
         {
             return ((delegate* unmanaged<ID2D1ImageSource*, int>)(lpVtbl[4]))((ID2D1ImageSource*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int TryReclaimResources(BOOL* resourcesDiscarded)
+        public HRESULT TryReclaimResources(BOOL* resourcesDiscarded)
         {
             return ((delegate* unmanaged<ID2D1ImageSource*, BOOL*, int>)(lpVtbl[5]))((ID2D1ImageSource*)Unsafe.AsPointer(ref this), resourcesDiscarded);
         }

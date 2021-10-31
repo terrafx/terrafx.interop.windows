@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IPropertyKeyStore*, Guid*, void**, int>)(lpVtbl[0]))((IPropertyKeyStore*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,48 +41,42 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetKeyCount(int* keyCount)
+        public HRESULT GetKeyCount(int* keyCount)
         {
             return ((delegate* unmanaged<IPropertyKeyStore*, int*, int>)(lpVtbl[3]))((IPropertyKeyStore*)Unsafe.AsPointer(ref this), keyCount);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetKeyAt(int index, PROPERTYKEY* pkey)
+        public HRESULT GetKeyAt(int index, PROPERTYKEY* pkey)
         {
             return ((delegate* unmanaged<IPropertyKeyStore*, int, PROPERTYKEY*, int>)(lpVtbl[4]))((IPropertyKeyStore*)Unsafe.AsPointer(ref this), index, pkey);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int AppendKey([NativeTypeName("const PROPERTYKEY &")] PROPERTYKEY* key)
+        public HRESULT AppendKey([NativeTypeName("const PROPERTYKEY &")] PROPERTYKEY* key)
         {
             return ((delegate* unmanaged<IPropertyKeyStore*, PROPERTYKEY*, int>)(lpVtbl[5]))((IPropertyKeyStore*)Unsafe.AsPointer(ref this), key);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int DeleteKey(int index)
+        public HRESULT DeleteKey(int index)
         {
             return ((delegate* unmanaged<IPropertyKeyStore*, int, int>)(lpVtbl[6]))((IPropertyKeyStore*)Unsafe.AsPointer(ref this), index);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        [return: NativeTypeName("HRESULT")]
-        public int IsKeyInStore([NativeTypeName("const PROPERTYKEY &")] PROPERTYKEY* key)
+        public HRESULT IsKeyInStore([NativeTypeName("const PROPERTYKEY &")] PROPERTYKEY* key)
         {
             return ((delegate* unmanaged<IPropertyKeyStore*, PROPERTYKEY*, int>)(lpVtbl[7]))((IPropertyKeyStore*)Unsafe.AsPointer(ref this), key);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        [return: NativeTypeName("HRESULT")]
-        public int RemoveKey([NativeTypeName("const PROPERTYKEY &")] PROPERTYKEY* key)
+        public HRESULT RemoveKey([NativeTypeName("const PROPERTYKEY &")] PROPERTYKEY* key)
         {
             return ((delegate* unmanaged<IPropertyKeyStore*, PROPERTYKEY*, int>)(lpVtbl[8]))((IPropertyKeyStore*)Unsafe.AsPointer(ref this), key);
         }

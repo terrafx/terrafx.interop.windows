@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IOleInPlaceActiveObject*, Guid*, void**, int>)(lpVtbl[0]))((IOleInPlaceActiveObject*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,56 +41,49 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetWindow([NativeTypeName("HWND *")] IntPtr* phwnd)
+        public HRESULT GetWindow([NativeTypeName("HWND *")] IntPtr* phwnd)
         {
             return ((delegate* unmanaged<IOleInPlaceActiveObject*, IntPtr*, int>)(lpVtbl[3]))((IOleInPlaceActiveObject*)Unsafe.AsPointer(ref this), phwnd);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int ContextSensitiveHelp(BOOL fEnterMode)
+        public HRESULT ContextSensitiveHelp(BOOL fEnterMode)
         {
             return ((delegate* unmanaged<IOleInPlaceActiveObject*, BOOL, int>)(lpVtbl[4]))((IOleInPlaceActiveObject*)Unsafe.AsPointer(ref this), fEnterMode);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int TranslateAccelerator([NativeTypeName("LPMSG")] MSG* lpmsg)
+        public HRESULT TranslateAccelerator([NativeTypeName("LPMSG")] MSG* lpmsg)
         {
             return ((delegate* unmanaged<IOleInPlaceActiveObject*, MSG*, int>)(lpVtbl[5]))((IOleInPlaceActiveObject*)Unsafe.AsPointer(ref this), lpmsg);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int OnFrameWindowActivate(BOOL fActivate)
+        public HRESULT OnFrameWindowActivate(BOOL fActivate)
         {
             return ((delegate* unmanaged<IOleInPlaceActiveObject*, BOOL, int>)(lpVtbl[6]))((IOleInPlaceActiveObject*)Unsafe.AsPointer(ref this), fActivate);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        [return: NativeTypeName("HRESULT")]
-        public int OnDocWindowActivate(BOOL fActivate)
+        public HRESULT OnDocWindowActivate(BOOL fActivate)
         {
             return ((delegate* unmanaged<IOleInPlaceActiveObject*, BOOL, int>)(lpVtbl[7]))((IOleInPlaceActiveObject*)Unsafe.AsPointer(ref this), fActivate);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        [return: NativeTypeName("HRESULT")]
-        public int ResizeBorder([NativeTypeName("LPCRECT")] RECT* prcBorder, IOleInPlaceUIWindow* pUIWindow, BOOL fFrameWindow)
+        public HRESULT ResizeBorder([NativeTypeName("LPCRECT")] RECT* prcBorder, IOleInPlaceUIWindow* pUIWindow, BOOL fFrameWindow)
         {
             return ((delegate* unmanaged<IOleInPlaceActiveObject*, RECT*, IOleInPlaceUIWindow*, BOOL, int>)(lpVtbl[8]))((IOleInPlaceActiveObject*)Unsafe.AsPointer(ref this), prcBorder, pUIWindow, fFrameWindow);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        [return: NativeTypeName("HRESULT")]
-        public int EnableModeless(BOOL fEnable)
+        public HRESULT EnableModeless(BOOL fEnable)
         {
             return ((delegate* unmanaged<IOleInPlaceActiveObject*, BOOL, int>)(lpVtbl[9]))((IOleInPlaceActiveObject*)Unsafe.AsPointer(ref this), fEnable);
         }

@@ -9,36 +9,31 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct ID2D1SvgElement
     {
-        [return: NativeTypeName("HRESULT")]
-        public int GetAttributeValue([NativeTypeName("PCWSTR")] ushort* name, [NativeTypeName("ID2D1SvgAttribute **")] ID2D1SvgAttribute** value)
+        public HRESULT GetAttributeValue([NativeTypeName("PCWSTR")] ushort* name, [NativeTypeName("ID2D1SvgAttribute **")] ID2D1SvgAttribute** value)
         {
             var iid = IID_ID2D1SvgAttribute;
             return GetAttributeValue(name, &iid, (void**)value);
         }
 
-        [return: NativeTypeName("HRESULT")]
-        public int GetAttributeValue([NativeTypeName("PCWSTR")] ushort* name, [NativeTypeName("ID2D1SvgPaint **")] ID2D1SvgPaint** value)
+        public HRESULT GetAttributeValue([NativeTypeName("PCWSTR")] ushort* name, [NativeTypeName("ID2D1SvgPaint **")] ID2D1SvgPaint** value)
         {
             var iid = IID_ID2D1SvgPaint;
             return GetAttributeValue(name, &iid, (void**)value);
         }
 
-        [return: NativeTypeName("HRESULT")]
-        public int GetAttributeValue([NativeTypeName("PCWSTR")] ushort* name, [NativeTypeName("ID2D1SvgStrokeDashArray **")] ID2D1SvgStrokeDashArray** value)
+        public HRESULT GetAttributeValue([NativeTypeName("PCWSTR")] ushort* name, [NativeTypeName("ID2D1SvgStrokeDashArray **")] ID2D1SvgStrokeDashArray** value)
         {
             var iid = IID_ID2D1SvgStrokeDashArray;
             return GetAttributeValue(name, &iid, (void**)value);
         }
 
-        [return: NativeTypeName("HRESULT")]
-        public int GetAttributeValue([NativeTypeName("PCWSTR")] ushort* name, [NativeTypeName("ID2D1SvgPointCollection **")] ID2D1SvgPointCollection** value)
+        public HRESULT GetAttributeValue([NativeTypeName("PCWSTR")] ushort* name, [NativeTypeName("ID2D1SvgPointCollection **")] ID2D1SvgPointCollection** value)
         {
             var iid = IID_ID2D1SvgPointCollection;
             return GetAttributeValue(name, &iid, (void**)value);
         }
 
-        [return: NativeTypeName("HRESULT")]
-        public int GetAttributeValue([NativeTypeName("PCWSTR")] ushort* name, [NativeTypeName("ID2D1SvgPathData **")] ID2D1SvgPathData** value)
+        public HRESULT GetAttributeValue([NativeTypeName("PCWSTR")] ushort* name, [NativeTypeName("ID2D1SvgPathData **")] ID2D1SvgPathData** value)
         {
             var iid = IID_ID2D1SvgPathData;
             return GetAttributeValue(name, &iid, (void**)value);

@@ -7,10 +7,9 @@ namespace TerraFX.Interop
 {
     public static partial class Windows
     {
-        [return: NativeTypeName("HRESULT")]
-        public static int HRESULT_FROM_WIN32([NativeTypeName("unsigned long")] uint x)
+        public static HRESULT HRESULT_FROM_WIN32([NativeTypeName("unsigned long")] uint x)
         {
-            return (int)(x) <= 0 ? (int)(x) : unchecked((int)(((x) & 0x0000FFFF) | (7 << 16) | 0x80000000));
+            return (HRESULT)(x) <= 0 ? (HRESULT)(x) : (HRESULT)(((x) & 0x0000FFFF) | (7 << 16) | 0x80000000);
         }
 
         [NativeTypeName("#define FACILITY_NULL 0")]

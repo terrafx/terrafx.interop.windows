@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<ID3D12DebugDevice2*, Guid*, void**, int>)(lpVtbl[0]))((ID3D12DebugDevice2*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,8 +41,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetFeatureMask(D3D12_DEBUG_FEATURE Mask)
+        public HRESULT SetFeatureMask(D3D12_DEBUG_FEATURE Mask)
         {
             return ((delegate* unmanaged<ID3D12DebugDevice2*, D3D12_DEBUG_FEATURE, int>)(lpVtbl[3]))((ID3D12DebugDevice2*)Unsafe.AsPointer(ref this), Mask);
         }
@@ -57,24 +55,21 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int ReportLiveDeviceObjects(D3D12_RLDO_FLAGS Flags)
+        public HRESULT ReportLiveDeviceObjects(D3D12_RLDO_FLAGS Flags)
         {
             return ((delegate* unmanaged<ID3D12DebugDevice2*, D3D12_RLDO_FLAGS, int>)(lpVtbl[5]))((ID3D12DebugDevice2*)Unsafe.AsPointer(ref this), Flags);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetDebugParameter(D3D12_DEBUG_DEVICE_PARAMETER_TYPE Type, [NativeTypeName("const void *")] void* pData, [NativeTypeName("UINT")] uint DataSize)
+        public HRESULT SetDebugParameter(D3D12_DEBUG_DEVICE_PARAMETER_TYPE Type, [NativeTypeName("const void *")] void* pData, [NativeTypeName("UINT")] uint DataSize)
         {
             return ((delegate* unmanaged<ID3D12DebugDevice2*, D3D12_DEBUG_DEVICE_PARAMETER_TYPE, void*, uint, int>)(lpVtbl[6]))((ID3D12DebugDevice2*)Unsafe.AsPointer(ref this), Type, pData, DataSize);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetDebugParameter(D3D12_DEBUG_DEVICE_PARAMETER_TYPE Type, void* pData, [NativeTypeName("UINT")] uint DataSize)
+        public HRESULT GetDebugParameter(D3D12_DEBUG_DEVICE_PARAMETER_TYPE Type, void* pData, [NativeTypeName("UINT")] uint DataSize)
         {
             return ((delegate* unmanaged<ID3D12DebugDevice2*, D3D12_DEBUG_DEVICE_PARAMETER_TYPE, void*, uint, int>)(lpVtbl[7]))((ID3D12DebugDevice2*)Unsafe.AsPointer(ref this), Type, pData, DataSize);
         }

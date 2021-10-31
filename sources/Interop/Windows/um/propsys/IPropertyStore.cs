@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IPropertyStore*, Guid*, void**, int>)(lpVtbl[0]))((IPropertyStore*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,40 +41,35 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetCount([NativeTypeName("DWORD *")] uint* cProps)
+        public HRESULT GetCount([NativeTypeName("DWORD *")] uint* cProps)
         {
             return ((delegate* unmanaged<IPropertyStore*, uint*, int>)(lpVtbl[3]))((IPropertyStore*)Unsafe.AsPointer(ref this), cProps);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetAt([NativeTypeName("DWORD")] uint iProp, PROPERTYKEY* pkey)
+        public HRESULT GetAt([NativeTypeName("DWORD")] uint iProp, PROPERTYKEY* pkey)
         {
             return ((delegate* unmanaged<IPropertyStore*, uint, PROPERTYKEY*, int>)(lpVtbl[4]))((IPropertyStore*)Unsafe.AsPointer(ref this), iProp, pkey);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetValue([NativeTypeName("const PROPERTYKEY &")] PROPERTYKEY* key, PROPVARIANT* pv)
+        public HRESULT GetValue([NativeTypeName("const PROPERTYKEY &")] PROPERTYKEY* key, PROPVARIANT* pv)
         {
             return ((delegate* unmanaged<IPropertyStore*, PROPERTYKEY*, PROPVARIANT*, int>)(lpVtbl[5]))((IPropertyStore*)Unsafe.AsPointer(ref this), key, pv);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetValue([NativeTypeName("const PROPERTYKEY &")] PROPERTYKEY* key, [NativeTypeName("const PROPVARIANT &")] PROPVARIANT* propvar)
+        public HRESULT SetValue([NativeTypeName("const PROPERTYKEY &")] PROPERTYKEY* key, [NativeTypeName("const PROPVARIANT &")] PROPVARIANT* propvar)
         {
             return ((delegate* unmanaged<IPropertyStore*, PROPERTYKEY*, PROPVARIANT*, int>)(lpVtbl[6]))((IPropertyStore*)Unsafe.AsPointer(ref this), key, propvar);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        [return: NativeTypeName("HRESULT")]
-        public int Commit()
+        public HRESULT Commit()
         {
             return ((delegate* unmanaged<IPropertyStore*, int>)(lpVtbl[7]))((IPropertyStore*)Unsafe.AsPointer(ref this));
         }

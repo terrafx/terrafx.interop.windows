@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IUserActivitySourceHostInterop*, Guid*, void**, int>)(lpVtbl[0]))((IUserActivitySourceHostInterop*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,32 +41,28 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetIids([NativeTypeName("ULONG *")] uint* iidCount, [NativeTypeName("IID **")] Guid** iids)
+        public HRESULT GetIids([NativeTypeName("ULONG *")] uint* iidCount, [NativeTypeName("IID **")] Guid** iids)
         {
             return ((delegate* unmanaged<IUserActivitySourceHostInterop*, uint*, Guid**, int>)(lpVtbl[3]))((IUserActivitySourceHostInterop*)Unsafe.AsPointer(ref this), iidCount, iids);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetRuntimeClassName([NativeTypeName("HSTRING *")] IntPtr* className)
+        public HRESULT GetRuntimeClassName([NativeTypeName("HSTRING *")] IntPtr* className)
         {
             return ((delegate* unmanaged<IUserActivitySourceHostInterop*, IntPtr*, int>)(lpVtbl[4]))((IUserActivitySourceHostInterop*)Unsafe.AsPointer(ref this), className);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetTrustLevel(TrustLevel* trustLevel)
+        public HRESULT GetTrustLevel(TrustLevel* trustLevel)
         {
             return ((delegate* unmanaged<IUserActivitySourceHostInterop*, TrustLevel*, int>)(lpVtbl[5]))((IUserActivitySourceHostInterop*)Unsafe.AsPointer(ref this), trustLevel);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetActivitySourceHost([NativeTypeName("HSTRING")] IntPtr activitySourceHost)
+        public HRESULT SetActivitySourceHost([NativeTypeName("HSTRING")] IntPtr activitySourceHost)
         {
             return ((delegate* unmanaged<IUserActivitySourceHostInterop*, IntPtr, int>)(lpVtbl[6]))((IUserActivitySourceHostInterop*)Unsafe.AsPointer(ref this), activitySourceHost);
         }

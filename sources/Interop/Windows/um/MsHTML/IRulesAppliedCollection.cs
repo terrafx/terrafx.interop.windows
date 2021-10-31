@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IRulesAppliedCollection*, Guid*, void**, int>)(lpVtbl[0]))((IRulesAppliedCollection*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,96 +41,84 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetTypeInfoCount([NativeTypeName("UINT *")] uint* pctinfo)
+        public HRESULT GetTypeInfoCount([NativeTypeName("UINT *")] uint* pctinfo)
         {
             return ((delegate* unmanaged<IRulesAppliedCollection*, uint*, int>)(lpVtbl[3]))((IRulesAppliedCollection*)Unsafe.AsPointer(ref this), pctinfo);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetTypeInfo([NativeTypeName("UINT")] uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
+        public HRESULT GetTypeInfo([NativeTypeName("UINT")] uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
         {
             return ((delegate* unmanaged<IRulesAppliedCollection*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IRulesAppliedCollection*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, [NativeTypeName("UINT")] uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+        public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, [NativeTypeName("UINT")] uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
         {
             return ((delegate* unmanaged<IRulesAppliedCollection*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IRulesAppliedCollection*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, [NativeTypeName("UINT *")] uint* puArgErr)
+        public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, [NativeTypeName("UINT *")] uint* puArgErr)
         {
             return ((delegate* unmanaged<IRulesAppliedCollection*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IRulesAppliedCollection*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        [return: NativeTypeName("HRESULT")]
-        public int item([NativeTypeName("long")] int index, IRulesApplied** ppRulesApplied)
+        public HRESULT item([NativeTypeName("long")] int index, IRulesApplied** ppRulesApplied)
         {
             return ((delegate* unmanaged<IRulesAppliedCollection*, int, IRulesApplied**, int>)(lpVtbl[7]))((IRulesAppliedCollection*)Unsafe.AsPointer(ref this), index, ppRulesApplied);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        [return: NativeTypeName("HRESULT")]
-        public int get_length([NativeTypeName("long *")] int* p)
+        public HRESULT get_length([NativeTypeName("long *")] int* p)
         {
             return ((delegate* unmanaged<IRulesAppliedCollection*, int*, int>)(lpVtbl[8]))((IRulesAppliedCollection*)Unsafe.AsPointer(ref this), p);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        [return: NativeTypeName("HRESULT")]
-        public int get_element(IHTMLElement** p)
+        public HRESULT get_element(IHTMLElement** p)
         {
             return ((delegate* unmanaged<IRulesAppliedCollection*, IHTMLElement**, int>)(lpVtbl[9]))((IRulesAppliedCollection*)Unsafe.AsPointer(ref this), p);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(10)]
-        [return: NativeTypeName("HRESULT")]
-        public int propertyInheritedFrom([NativeTypeName("BSTR")] ushort* name, IRulesApplied** ppRulesApplied)
+        public HRESULT propertyInheritedFrom([NativeTypeName("BSTR")] ushort* name, IRulesApplied** ppRulesApplied)
         {
             return ((delegate* unmanaged<IRulesAppliedCollection*, ushort*, IRulesApplied**, int>)(lpVtbl[10]))((IRulesAppliedCollection*)Unsafe.AsPointer(ref this), name, ppRulesApplied);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(11)]
-        [return: NativeTypeName("HRESULT")]
-        public int get_propertyCount([NativeTypeName("long *")] int* p)
+        public HRESULT get_propertyCount([NativeTypeName("long *")] int* p)
         {
             return ((delegate* unmanaged<IRulesAppliedCollection*, int*, int>)(lpVtbl[11]))((IRulesAppliedCollection*)Unsafe.AsPointer(ref this), p);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(12)]
-        [return: NativeTypeName("HRESULT")]
-        public int property([NativeTypeName("long")] int index, [NativeTypeName("BSTR *")] ushort** pbstrProperty)
+        public HRESULT property([NativeTypeName("long")] int index, [NativeTypeName("BSTR *")] ushort** pbstrProperty)
         {
             return ((delegate* unmanaged<IRulesAppliedCollection*, int, ushort**, int>)(lpVtbl[12]))((IRulesAppliedCollection*)Unsafe.AsPointer(ref this), index, pbstrProperty);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(13)]
-        [return: NativeTypeName("HRESULT")]
-        public int propertyInheritedTrace([NativeTypeName("BSTR")] ushort* name, [NativeTypeName("long")] int index, IRulesApplied** ppRulesApplied)
+        public HRESULT propertyInheritedTrace([NativeTypeName("BSTR")] ushort* name, [NativeTypeName("long")] int index, IRulesApplied** ppRulesApplied)
         {
             return ((delegate* unmanaged<IRulesAppliedCollection*, ushort*, int, IRulesApplied**, int>)(lpVtbl[13]))((IRulesAppliedCollection*)Unsafe.AsPointer(ref this), name, index, ppRulesApplied);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(14)]
-        [return: NativeTypeName("HRESULT")]
-        public int propertyInheritedTraceLength([NativeTypeName("BSTR")] ushort* name, [NativeTypeName("long *")] int* pLength)
+        public HRESULT propertyInheritedTraceLength([NativeTypeName("BSTR")] ushort* name, [NativeTypeName("long *")] int* pLength)
         {
             return ((delegate* unmanaged<IRulesAppliedCollection*, ushort*, int*, int>)(lpVtbl[14]))((IRulesAppliedCollection*)Unsafe.AsPointer(ref this), name, pLength);
         }

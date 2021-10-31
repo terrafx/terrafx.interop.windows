@@ -13,12 +13,10 @@ namespace TerraFX.Interop
     public static unsafe partial class Windows
     {
         [DllImport("d3d10_1", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int D3D10CreateDevice1(IDXGIAdapter* pAdapter, D3D10_DRIVER_TYPE DriverType, [NativeTypeName("HMODULE")] IntPtr Software, [NativeTypeName("UINT")] uint Flags, D3D10_FEATURE_LEVEL1 HardwareLevel, [NativeTypeName("UINT")] uint SDKVersion, ID3D10Device1** ppDevice);
+        public static extern HRESULT D3D10CreateDevice1(IDXGIAdapter* pAdapter, D3D10_DRIVER_TYPE DriverType, [NativeTypeName("HMODULE")] IntPtr Software, [NativeTypeName("UINT")] uint Flags, D3D10_FEATURE_LEVEL1 HardwareLevel, [NativeTypeName("UINT")] uint SDKVersion, ID3D10Device1** ppDevice);
 
         [DllImport("d3d10_1", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int D3D10CreateDeviceAndSwapChain1(IDXGIAdapter* pAdapter, D3D10_DRIVER_TYPE DriverType, [NativeTypeName("HMODULE")] IntPtr Software, [NativeTypeName("UINT")] uint Flags, D3D10_FEATURE_LEVEL1 HardwareLevel, [NativeTypeName("UINT")] uint SDKVersion, DXGI_SWAP_CHAIN_DESC* pSwapChainDesc, IDXGISwapChain** ppSwapChain, ID3D10Device1** ppDevice);
+        public static extern HRESULT D3D10CreateDeviceAndSwapChain1(IDXGIAdapter* pAdapter, D3D10_DRIVER_TYPE DriverType, [NativeTypeName("HMODULE")] IntPtr Software, [NativeTypeName("UINT")] uint Flags, D3D10_FEATURE_LEVEL1 HardwareLevel, [NativeTypeName("UINT")] uint SDKVersion, DXGI_SWAP_CHAIN_DESC* pSwapChainDesc, IDXGISwapChain** ppSwapChain, ID3D10Device1** ppDevice);
 
         [NativeTypeName("const GUID")]
         public static ref readonly Guid IID_ID3D10BlendState1

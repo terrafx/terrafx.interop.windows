@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IShellPropSheetExt*, Guid*, void**, int>)(lpVtbl[0]))((IShellPropSheetExt*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,16 +41,14 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int AddPages([NativeTypeName("LPFNSVADDPROPSHEETPAGE")] delegate* unmanaged<IntPtr, nint, BOOL> pfnAddPage, [NativeTypeName("LPARAM")] nint lParam)
+        public HRESULT AddPages([NativeTypeName("LPFNSVADDPROPSHEETPAGE")] delegate* unmanaged<IntPtr, nint, BOOL> pfnAddPage, [NativeTypeName("LPARAM")] nint lParam)
         {
             return ((delegate* unmanaged<IShellPropSheetExt*, delegate* unmanaged<IntPtr, nint, BOOL>, nint, int>)(lpVtbl[3]))((IShellPropSheetExt*)Unsafe.AsPointer(ref this), pfnAddPage, lParam);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int ReplacePage([NativeTypeName("EXPPS")] uint uPageID, [NativeTypeName("LPFNSVADDPROPSHEETPAGE")] delegate* unmanaged<IntPtr, nint, BOOL> pfnReplaceWith, [NativeTypeName("LPARAM")] nint lParam)
+        public HRESULT ReplacePage([NativeTypeName("EXPPS")] uint uPageID, [NativeTypeName("LPFNSVADDPROPSHEETPAGE")] delegate* unmanaged<IntPtr, nint, BOOL> pfnReplaceWith, [NativeTypeName("LPARAM")] nint lParam)
         {
             return ((delegate* unmanaged<IShellPropSheetExt*, uint, delegate* unmanaged<IntPtr, nint, BOOL>, nint, int>)(lpVtbl[4]))((IShellPropSheetExt*)Unsafe.AsPointer(ref this), uPageID, pfnReplaceWith, lParam);
         }

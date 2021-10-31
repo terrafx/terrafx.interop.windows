@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<ISVGTests*, Guid*, void**, int>)(lpVtbl[0]))((ISVGTests*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,64 +41,56 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetTypeInfoCount([NativeTypeName("UINT *")] uint* pctinfo)
+        public HRESULT GetTypeInfoCount([NativeTypeName("UINT *")] uint* pctinfo)
         {
             return ((delegate* unmanaged<ISVGTests*, uint*, int>)(lpVtbl[3]))((ISVGTests*)Unsafe.AsPointer(ref this), pctinfo);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetTypeInfo([NativeTypeName("UINT")] uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
+        public HRESULT GetTypeInfo([NativeTypeName("UINT")] uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
         {
             return ((delegate* unmanaged<ISVGTests*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((ISVGTests*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, [NativeTypeName("UINT")] uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+        public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, [NativeTypeName("UINT")] uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
         {
             return ((delegate* unmanaged<ISVGTests*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((ISVGTests*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, [NativeTypeName("UINT *")] uint* puArgErr)
+        public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, [NativeTypeName("UINT *")] uint* puArgErr)
         {
             return ((delegate* unmanaged<ISVGTests*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((ISVGTests*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        [return: NativeTypeName("HRESULT")]
-        public int get_requiredFeatures(ISVGStringList** p)
+        public HRESULT get_requiredFeatures(ISVGStringList** p)
         {
             return ((delegate* unmanaged<ISVGTests*, ISVGStringList**, int>)(lpVtbl[7]))((ISVGTests*)Unsafe.AsPointer(ref this), p);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        [return: NativeTypeName("HRESULT")]
-        public int get_requiredExtensions(ISVGStringList** p)
+        public HRESULT get_requiredExtensions(ISVGStringList** p)
         {
             return ((delegate* unmanaged<ISVGTests*, ISVGStringList**, int>)(lpVtbl[8]))((ISVGTests*)Unsafe.AsPointer(ref this), p);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        [return: NativeTypeName("HRESULT")]
-        public int get_systemLanguage(ISVGStringList** p)
+        public HRESULT get_systemLanguage(ISVGStringList** p)
         {
             return ((delegate* unmanaged<ISVGTests*, ISVGStringList**, int>)(lpVtbl[9]))((ISVGTests*)Unsafe.AsPointer(ref this), p);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(10)]
-        [return: NativeTypeName("HRESULT")]
-        public int hasExtension([NativeTypeName("BSTR")] ushort* extension, [NativeTypeName("VARIANT_BOOL *")] short* pResult)
+        public HRESULT hasExtension([NativeTypeName("BSTR")] ushort* extension, [NativeTypeName("VARIANT_BOOL *")] short* pResult)
         {
             return ((delegate* unmanaged<ISVGTests*, ushort*, short*, int>)(lpVtbl[10]))((ISVGTests*)Unsafe.AsPointer(ref this), extension, pResult);
         }

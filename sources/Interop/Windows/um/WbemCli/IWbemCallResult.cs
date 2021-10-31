@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IWbemCallResult*, Guid*, void**, int>)(lpVtbl[0]))((IWbemCallResult*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,32 +41,28 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetResultObject([NativeTypeName("long")] int lTimeout, IWbemClassObject** ppResultObject)
+        public HRESULT GetResultObject([NativeTypeName("long")] int lTimeout, IWbemClassObject** ppResultObject)
         {
             return ((delegate* unmanaged<IWbemCallResult*, int, IWbemClassObject**, int>)(lpVtbl[3]))((IWbemCallResult*)Unsafe.AsPointer(ref this), lTimeout, ppResultObject);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetResultString([NativeTypeName("long")] int lTimeout, [NativeTypeName("BSTR *")] ushort** pstrResultString)
+        public HRESULT GetResultString([NativeTypeName("long")] int lTimeout, [NativeTypeName("BSTR *")] ushort** pstrResultString)
         {
             return ((delegate* unmanaged<IWbemCallResult*, int, ushort**, int>)(lpVtbl[4]))((IWbemCallResult*)Unsafe.AsPointer(ref this), lTimeout, pstrResultString);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetResultServices([NativeTypeName("long")] int lTimeout, IWbemServices** ppServices)
+        public HRESULT GetResultServices([NativeTypeName("long")] int lTimeout, IWbemServices** ppServices)
         {
             return ((delegate* unmanaged<IWbemCallResult*, int, IWbemServices**, int>)(lpVtbl[5]))((IWbemCallResult*)Unsafe.AsPointer(ref this), lTimeout, ppServices);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetCallStatus([NativeTypeName("long")] int lTimeout, [NativeTypeName("long *")] int* plStatus)
+        public HRESULT GetCallStatus([NativeTypeName("long")] int lTimeout, [NativeTypeName("long *")] int* plStatus)
         {
             return ((delegate* unmanaged<IWbemCallResult*, int, int*, int>)(lpVtbl[6]))((IWbemCallResult*)Unsafe.AsPointer(ref this), lTimeout, plStatus);
         }

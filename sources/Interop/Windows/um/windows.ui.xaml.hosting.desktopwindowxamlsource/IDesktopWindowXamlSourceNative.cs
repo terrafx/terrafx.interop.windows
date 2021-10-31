@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IDesktopWindowXamlSourceNative*, Guid*, void**, int>)(lpVtbl[0]))((IDesktopWindowXamlSourceNative*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,16 +41,14 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int AttachToWindow([NativeTypeName("HWND")] IntPtr parentWnd)
+        public HRESULT AttachToWindow([NativeTypeName("HWND")] IntPtr parentWnd)
         {
             return ((delegate* unmanaged<IDesktopWindowXamlSourceNative*, IntPtr, int>)(lpVtbl[3]))((IDesktopWindowXamlSourceNative*)Unsafe.AsPointer(ref this), parentWnd);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int get_WindowHandle([NativeTypeName("HWND *")] IntPtr* hWnd)
+        public HRESULT get_WindowHandle([NativeTypeName("HWND *")] IntPtr* hWnd)
         {
             return ((delegate* unmanaged<IDesktopWindowXamlSourceNative*, IntPtr*, int>)(lpVtbl[4]))((IDesktopWindowXamlSourceNative*)Unsafe.AsPointer(ref this), hWnd);
         }

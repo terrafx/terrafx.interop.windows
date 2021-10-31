@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IHTMLPaintSite*, Guid*, void**, int>)(lpVtbl[0]))((IHTMLPaintSite*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,56 +41,49 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int InvalidatePainterInfo()
+        public HRESULT InvalidatePainterInfo()
         {
             return ((delegate* unmanaged<IHTMLPaintSite*, int>)(lpVtbl[3]))((IHTMLPaintSite*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int InvalidateRect(RECT* prcInvalid)
+        public HRESULT InvalidateRect(RECT* prcInvalid)
         {
             return ((delegate* unmanaged<IHTMLPaintSite*, RECT*, int>)(lpVtbl[4]))((IHTMLPaintSite*)Unsafe.AsPointer(ref this), prcInvalid);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int InvalidateRegion([NativeTypeName("HRGN")] IntPtr rgnInvalid)
+        public HRESULT InvalidateRegion([NativeTypeName("HRGN")] IntPtr rgnInvalid)
         {
             return ((delegate* unmanaged<IHTMLPaintSite*, IntPtr, int>)(lpVtbl[5]))((IHTMLPaintSite*)Unsafe.AsPointer(ref this), rgnInvalid);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetDrawInfo([NativeTypeName("LONG")] int lFlags, HTML_PAINT_DRAW_INFO* pDrawInfo)
+        public HRESULT GetDrawInfo([NativeTypeName("LONG")] int lFlags, HTML_PAINT_DRAW_INFO* pDrawInfo)
         {
             return ((delegate* unmanaged<IHTMLPaintSite*, int, HTML_PAINT_DRAW_INFO*, int>)(lpVtbl[6]))((IHTMLPaintSite*)Unsafe.AsPointer(ref this), lFlags, pDrawInfo);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        [return: NativeTypeName("HRESULT")]
-        public int TransformGlobalToLocal(POINT ptGlobal, POINT* pptLocal)
+        public HRESULT TransformGlobalToLocal(POINT ptGlobal, POINT* pptLocal)
         {
             return ((delegate* unmanaged<IHTMLPaintSite*, POINT, POINT*, int>)(lpVtbl[7]))((IHTMLPaintSite*)Unsafe.AsPointer(ref this), ptGlobal, pptLocal);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        [return: NativeTypeName("HRESULT")]
-        public int TransformLocalToGlobal(POINT ptLocal, POINT* pptGlobal)
+        public HRESULT TransformLocalToGlobal(POINT ptLocal, POINT* pptGlobal)
         {
             return ((delegate* unmanaged<IHTMLPaintSite*, POINT, POINT*, int>)(lpVtbl[8]))((IHTMLPaintSite*)Unsafe.AsPointer(ref this), ptLocal, pptGlobal);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetHitTestCookie([NativeTypeName("LONG *")] int* plCookie)
+        public HRESULT GetHitTestCookie([NativeTypeName("LONG *")] int* plCookie)
         {
             return ((delegate* unmanaged<IHTMLPaintSite*, int*, int>)(lpVtbl[9]))((IHTMLPaintSite*)Unsafe.AsPointer(ref this), plCookie);
         }

@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<ITensorNative*, Guid*, void**, int>)(lpVtbl[0]))((ITensorNative*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,16 +41,14 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetBuffer([NativeTypeName("BYTE **")] byte** value, [NativeTypeName("UINT32 *")] uint* capacity)
+        public HRESULT GetBuffer([NativeTypeName("BYTE **")] byte** value, [NativeTypeName("UINT32 *")] uint* capacity)
         {
             return ((delegate* unmanaged<ITensorNative*, byte**, uint*, int>)(lpVtbl[3]))((ITensorNative*)Unsafe.AsPointer(ref this), value, capacity);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetD3D12Resource(ID3D12Resource** result)
+        public HRESULT GetD3D12Resource(ID3D12Resource** result)
         {
             return ((delegate* unmanaged<ITensorNative*, ID3D12Resource**, int>)(lpVtbl[4]))((ITensorNative*)Unsafe.AsPointer(ref this), result);
         }

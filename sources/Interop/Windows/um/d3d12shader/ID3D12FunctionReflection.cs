@@ -15,8 +15,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetDesc(D3D12_FUNCTION_DESC* pDesc)
+        public HRESULT GetDesc(D3D12_FUNCTION_DESC* pDesc)
         {
             return ((delegate* unmanaged<ID3D12FunctionReflection*, D3D12_FUNCTION_DESC*, int>)(lpVtbl[0]))((ID3D12FunctionReflection*)Unsafe.AsPointer(ref this), pDesc);
         }
@@ -37,8 +36,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetResourceBindingDesc([NativeTypeName("UINT")] uint ResourceIndex, D3D12_SHADER_INPUT_BIND_DESC* pDesc)
+        public HRESULT GetResourceBindingDesc([NativeTypeName("UINT")] uint ResourceIndex, D3D12_SHADER_INPUT_BIND_DESC* pDesc)
         {
             return ((delegate* unmanaged<ID3D12FunctionReflection*, uint, D3D12_SHADER_INPUT_BIND_DESC*, int>)(lpVtbl[3]))((ID3D12FunctionReflection*)Unsafe.AsPointer(ref this), ResourceIndex, pDesc);
         }
@@ -52,8 +50,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetResourceBindingDescByName([NativeTypeName("LPCSTR")] sbyte* Name, D3D12_SHADER_INPUT_BIND_DESC* pDesc)
+        public HRESULT GetResourceBindingDescByName([NativeTypeName("LPCSTR")] sbyte* Name, D3D12_SHADER_INPUT_BIND_DESC* pDesc)
         {
             return ((delegate* unmanaged<ID3D12FunctionReflection*, sbyte*, D3D12_SHADER_INPUT_BIND_DESC*, int>)(lpVtbl[5]))((ID3D12FunctionReflection*)Unsafe.AsPointer(ref this), Name, pDesc);
         }

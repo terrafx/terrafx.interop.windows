@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<ITfInputProcessorProfileSubstituteLayout*, Guid*, void**, int>)(lpVtbl[0]))((ITfInputProcessorProfileSubstituteLayout*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,8 +41,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetSubstituteKeyboardLayout([NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("LANGID")] ushort langid, [NativeTypeName("const GUID &")] Guid* guidProfile, [NativeTypeName("HKL *")] IntPtr* phKL)
+        public HRESULT GetSubstituteKeyboardLayout([NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("LANGID")] ushort langid, [NativeTypeName("const GUID &")] Guid* guidProfile, [NativeTypeName("HKL *")] IntPtr* phKL)
         {
             return ((delegate* unmanaged<ITfInputProcessorProfileSubstituteLayout*, Guid*, ushort, Guid*, IntPtr*, int>)(lpVtbl[3]))((ITfInputProcessorProfileSubstituteLayout*)Unsafe.AsPointer(ref this), rclsid, langid, guidProfile, phKL);
         }

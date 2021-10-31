@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<ICoreWindowComponentInterop*, Guid*, void**, int>)(lpVtbl[0]))((ICoreWindowComponentInterop*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,16 +41,14 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int ConfigureComponentInput([NativeTypeName("UINT32")] uint hostViewInstanceId, [NativeTypeName("HWND")] IntPtr hwndHost, IUnknown* inputSourceVisual)
+        public HRESULT ConfigureComponentInput([NativeTypeName("UINT32")] uint hostViewInstanceId, [NativeTypeName("HWND")] IntPtr hwndHost, IUnknown* inputSourceVisual)
         {
             return ((delegate* unmanaged<ICoreWindowComponentInterop*, uint, IntPtr, IUnknown*, int>)(lpVtbl[3]))((ICoreWindowComponentInterop*)Unsafe.AsPointer(ref this), hostViewInstanceId, hwndHost, inputSourceVisual);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetViewInstanceId([NativeTypeName("UINT32 *")] uint* componentViewInstanceId)
+        public HRESULT GetViewInstanceId([NativeTypeName("UINT32 *")] uint* componentViewInstanceId)
         {
             return ((delegate* unmanaged<ICoreWindowComponentInterop*, uint*, int>)(lpVtbl[4]))((ICoreWindowComponentInterop*)Unsafe.AsPointer(ref this), componentViewInstanceId);
         }

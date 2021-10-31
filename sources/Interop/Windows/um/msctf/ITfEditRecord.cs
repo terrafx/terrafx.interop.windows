@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<ITfEditRecord*, Guid*, void**, int>)(lpVtbl[0]))((ITfEditRecord*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,16 +41,14 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetSelectionStatus(BOOL* pfChanged)
+        public HRESULT GetSelectionStatus(BOOL* pfChanged)
         {
             return ((delegate* unmanaged<ITfEditRecord*, BOOL*, int>)(lpVtbl[3]))((ITfEditRecord*)Unsafe.AsPointer(ref this), pfChanged);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetTextAndPropertyUpdates([NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("const GUID **")] Guid** prgProperties, [NativeTypeName("ULONG")] uint cProperties, IEnumTfRanges** ppEnum)
+        public HRESULT GetTextAndPropertyUpdates([NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("const GUID **")] Guid** prgProperties, [NativeTypeName("ULONG")] uint cProperties, IEnumTfRanges** ppEnum)
         {
             return ((delegate* unmanaged<ITfEditRecord*, uint, Guid**, uint, IEnumTfRanges**, int>)(lpVtbl[4]))((ITfEditRecord*)Unsafe.AsPointer(ref this), dwFlags, prgProperties, cProperties, ppEnum);
         }

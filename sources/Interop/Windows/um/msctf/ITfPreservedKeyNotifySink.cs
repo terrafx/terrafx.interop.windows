@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<ITfPreservedKeyNotifySink*, Guid*, void**, int>)(lpVtbl[0]))((ITfPreservedKeyNotifySink*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,8 +41,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int OnUpdated([NativeTypeName("const TF_PRESERVEDKEY *")] TF_PRESERVEDKEY* pprekey)
+        public HRESULT OnUpdated([NativeTypeName("const TF_PRESERVEDKEY *")] TF_PRESERVEDKEY* pprekey)
         {
             return ((delegate* unmanaged<ITfPreservedKeyNotifySink*, TF_PRESERVEDKEY*, int>)(lpVtbl[3]))((ITfPreservedKeyNotifySink*)Unsafe.AsPointer(ref this), pprekey);
         }

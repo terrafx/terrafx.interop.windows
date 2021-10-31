@@ -16,8 +16,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IQualProp*, Guid*, void**, int>)(lpVtbl[0]))((IQualProp*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -40,48 +39,42 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int get_FramesDroppedInRenderer(int* pcFrames)
+        public HRESULT get_FramesDroppedInRenderer(int* pcFrames)
         {
             return ((delegate* unmanaged<IQualProp*, int*, int>)(lpVtbl[3]))((IQualProp*)Unsafe.AsPointer(ref this), pcFrames);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int get_FramesDrawn(int* pcFramesDrawn)
+        public HRESULT get_FramesDrawn(int* pcFramesDrawn)
         {
             return ((delegate* unmanaged<IQualProp*, int*, int>)(lpVtbl[4]))((IQualProp*)Unsafe.AsPointer(ref this), pcFramesDrawn);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int get_AvgFrameRate(int* piAvgFrameRate)
+        public HRESULT get_AvgFrameRate(int* piAvgFrameRate)
         {
             return ((delegate* unmanaged<IQualProp*, int*, int>)(lpVtbl[5]))((IQualProp*)Unsafe.AsPointer(ref this), piAvgFrameRate);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int get_Jitter(int* iJitter)
+        public HRESULT get_Jitter(int* iJitter)
         {
             return ((delegate* unmanaged<IQualProp*, int*, int>)(lpVtbl[6]))((IQualProp*)Unsafe.AsPointer(ref this), iJitter);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        [return: NativeTypeName("HRESULT")]
-        public int get_AvgSyncOffset(int* piAvg)
+        public HRESULT get_AvgSyncOffset(int* piAvg)
         {
             return ((delegate* unmanaged<IQualProp*, int*, int>)(lpVtbl[7]))((IQualProp*)Unsafe.AsPointer(ref this), piAvg);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        [return: NativeTypeName("HRESULT")]
-        public int get_DevSyncOffset(int* piDev)
+        public HRESULT get_DevSyncOffset(int* piDev)
         {
             return ((delegate* unmanaged<IQualProp*, int*, int>)(lpVtbl[8]))((IQualProp*)Unsafe.AsPointer(ref this), piDev);
         }

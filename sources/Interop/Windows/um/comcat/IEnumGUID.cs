@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IEnumGUID*, Guid*, void**, int>)(lpVtbl[0]))((IEnumGUID*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,32 +41,28 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int Next([NativeTypeName("ULONG")] uint celt, [NativeTypeName("GUID *")] Guid* rgelt, [NativeTypeName("ULONG *")] uint* pceltFetched)
+        public HRESULT Next([NativeTypeName("ULONG")] uint celt, [NativeTypeName("GUID *")] Guid* rgelt, [NativeTypeName("ULONG *")] uint* pceltFetched)
         {
             return ((delegate* unmanaged<IEnumGUID*, uint, Guid*, uint*, int>)(lpVtbl[3]))((IEnumGUID*)Unsafe.AsPointer(ref this), celt, rgelt, pceltFetched);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int Skip([NativeTypeName("ULONG")] uint celt)
+        public HRESULT Skip([NativeTypeName("ULONG")] uint celt)
         {
             return ((delegate* unmanaged<IEnumGUID*, uint, int>)(lpVtbl[4]))((IEnumGUID*)Unsafe.AsPointer(ref this), celt);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int Reset()
+        public HRESULT Reset()
         {
             return ((delegate* unmanaged<IEnumGUID*, int>)(lpVtbl[5]))((IEnumGUID*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int Clone(IEnumGUID** ppenum)
+        public HRESULT Clone(IEnumGUID** ppenum)
         {
             return ((delegate* unmanaged<IEnumGUID*, IEnumGUID**, int>)(lpVtbl[6]))((IEnumGUID*)Unsafe.AsPointer(ref this), ppenum);
         }

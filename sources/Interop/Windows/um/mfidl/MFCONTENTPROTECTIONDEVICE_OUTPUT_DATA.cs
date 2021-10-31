@@ -16,8 +16,7 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint HWProtectionDataByteCount;
 
-        [NativeTypeName("HRESULT")]
-        public int Status;
+        public HRESULT Status;
 
         [NativeTypeName("LONGLONG")]
         public long TransportTimeInHundredsOfNanoseconds;

@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IEnumTfProperties*, Guid*, void**, int>)(lpVtbl[0]))((IEnumTfProperties*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,32 +41,28 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int Clone(IEnumTfProperties** ppEnum)
+        public HRESULT Clone(IEnumTfProperties** ppEnum)
         {
             return ((delegate* unmanaged<IEnumTfProperties*, IEnumTfProperties**, int>)(lpVtbl[3]))((IEnumTfProperties*)Unsafe.AsPointer(ref this), ppEnum);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int Next([NativeTypeName("ULONG")] uint ulCount, ITfProperty** ppProp, [NativeTypeName("ULONG *")] uint* pcFetched)
+        public HRESULT Next([NativeTypeName("ULONG")] uint ulCount, ITfProperty** ppProp, [NativeTypeName("ULONG *")] uint* pcFetched)
         {
             return ((delegate* unmanaged<IEnumTfProperties*, uint, ITfProperty**, uint*, int>)(lpVtbl[4]))((IEnumTfProperties*)Unsafe.AsPointer(ref this), ulCount, ppProp, pcFetched);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int Reset()
+        public HRESULT Reset()
         {
             return ((delegate* unmanaged<IEnumTfProperties*, int>)(lpVtbl[5]))((IEnumTfProperties*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int Skip([NativeTypeName("ULONG")] uint ulCount)
+        public HRESULT Skip([NativeTypeName("ULONG")] uint ulCount)
         {
             return ((delegate* unmanaged<IEnumTfProperties*, uint, int>)(lpVtbl[6]))((IEnumTfProperties*)Unsafe.AsPointer(ref this), ulCount);
         }

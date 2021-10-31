@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IAccClientDocMgr*, Guid*, void**, int>)(lpVtbl[0]))((IAccClientDocMgr*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,32 +41,28 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetDocuments(IEnumUnknown** enumUnknown)
+        public HRESULT GetDocuments(IEnumUnknown** enumUnknown)
         {
             return ((delegate* unmanaged<IAccClientDocMgr*, IEnumUnknown**, int>)(lpVtbl[3]))((IAccClientDocMgr*)Unsafe.AsPointer(ref this), enumUnknown);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int LookupByHWND([NativeTypeName("HWND")] IntPtr hWnd, [NativeTypeName("const IID &")] Guid* riid, IUnknown** ppunk)
+        public HRESULT LookupByHWND([NativeTypeName("HWND")] IntPtr hWnd, [NativeTypeName("const IID &")] Guid* riid, IUnknown** ppunk)
         {
             return ((delegate* unmanaged<IAccClientDocMgr*, IntPtr, Guid*, IUnknown**, int>)(lpVtbl[4]))((IAccClientDocMgr*)Unsafe.AsPointer(ref this), hWnd, riid, ppunk);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int LookupByPoint(POINT pt, [NativeTypeName("const IID &")] Guid* riid, IUnknown** ppunk)
+        public HRESULT LookupByPoint(POINT pt, [NativeTypeName("const IID &")] Guid* riid, IUnknown** ppunk)
         {
             return ((delegate* unmanaged<IAccClientDocMgr*, POINT, Guid*, IUnknown**, int>)(lpVtbl[5]))((IAccClientDocMgr*)Unsafe.AsPointer(ref this), pt, riid, ppunk);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetFocused([NativeTypeName("const IID &")] Guid* riid, IUnknown** ppunk)
+        public HRESULT GetFocused([NativeTypeName("const IID &")] Guid* riid, IUnknown** ppunk)
         {
             return ((delegate* unmanaged<IAccClientDocMgr*, Guid*, IUnknown**, int>)(lpVtbl[6]))((IAccClientDocMgr*)Unsafe.AsPointer(ref this), riid, ppunk);
         }

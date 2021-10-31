@@ -13,12 +13,10 @@ namespace TerraFX.Interop
     public static unsafe partial class Windows
     {
         [DllImport("dxgi", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int CreateDXGIFactory([NativeTypeName("const IID &")] Guid* riid, void** ppFactory);
+        public static extern HRESULT CreateDXGIFactory([NativeTypeName("const IID &")] Guid* riid, void** ppFactory);
 
         [DllImport("dxgi", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int CreateDXGIFactory1([NativeTypeName("const IID &")] Guid* riid, void** ppFactory);
+        public static extern HRESULT CreateDXGIFactory1([NativeTypeName("const IID &")] Guid* riid, void** ppFactory);
 
         [NativeTypeName("const GUID")]
         public static ref readonly Guid IID_IDXGIObject

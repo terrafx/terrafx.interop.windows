@@ -761,14 +761,12 @@ namespace TerraFX.Interop
             }
         }
 
-        [return: NativeTypeName("HRESULT")]
-        public static int XAudio2CreateVolumeMeter([NativeTypeName("IUnknown **")] IUnknown** ppApo, [NativeTypeName("UINT32")] uint Flags = 0)
+        public static HRESULT XAudio2CreateVolumeMeter([NativeTypeName("IUnknown **")] IUnknown** ppApo, [NativeTypeName("UINT32")] uint Flags = 0)
         {
             return CreateAudioVolumeMeter(ppApo);
         }
 
-        [return: NativeTypeName("HRESULT")]
-        public static int XAudio2CreateReverb([NativeTypeName("IUnknown **")] IUnknown** ppApo, [NativeTypeName("UINT32")] uint Flags = 0)
+        public static HRESULT XAudio2CreateReverb([NativeTypeName("IUnknown **")] IUnknown** ppApo, [NativeTypeName("UINT32")] uint Flags = 0)
         {
             return CreateAudioReverb(ppApo);
         }

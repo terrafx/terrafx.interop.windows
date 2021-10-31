@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<ISearchFolderItemFactory*, Guid*, void**, int>)(lpVtbl[0]))((ISearchFolderItemFactory*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,96 +41,84 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetDisplayName([NativeTypeName("LPCWSTR")] ushort* pszDisplayName)
+        public HRESULT SetDisplayName([NativeTypeName("LPCWSTR")] ushort* pszDisplayName)
         {
             return ((delegate* unmanaged<ISearchFolderItemFactory*, ushort*, int>)(lpVtbl[3]))((ISearchFolderItemFactory*)Unsafe.AsPointer(ref this), pszDisplayName);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetFolderTypeID([NativeTypeName("FOLDERTYPEID")] Guid ftid)
+        public HRESULT SetFolderTypeID([NativeTypeName("FOLDERTYPEID")] Guid ftid)
         {
             return ((delegate* unmanaged<ISearchFolderItemFactory*, Guid, int>)(lpVtbl[4]))((ISearchFolderItemFactory*)Unsafe.AsPointer(ref this), ftid);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetFolderLogicalViewMode(FOLDERLOGICALVIEWMODE flvm)
+        public HRESULT SetFolderLogicalViewMode(FOLDERLOGICALVIEWMODE flvm)
         {
             return ((delegate* unmanaged<ISearchFolderItemFactory*, FOLDERLOGICALVIEWMODE, int>)(lpVtbl[5]))((ISearchFolderItemFactory*)Unsafe.AsPointer(ref this), flvm);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetIconSize(int iIconSize)
+        public HRESULT SetIconSize(int iIconSize)
         {
             return ((delegate* unmanaged<ISearchFolderItemFactory*, int, int>)(lpVtbl[6]))((ISearchFolderItemFactory*)Unsafe.AsPointer(ref this), iIconSize);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetVisibleColumns([NativeTypeName("UINT")] uint cVisibleColumns, [NativeTypeName("const PROPERTYKEY *")] PROPERTYKEY* rgKey)
+        public HRESULT SetVisibleColumns([NativeTypeName("UINT")] uint cVisibleColumns, [NativeTypeName("const PROPERTYKEY *")] PROPERTYKEY* rgKey)
         {
             return ((delegate* unmanaged<ISearchFolderItemFactory*, uint, PROPERTYKEY*, int>)(lpVtbl[7]))((ISearchFolderItemFactory*)Unsafe.AsPointer(ref this), cVisibleColumns, rgKey);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetSortColumns([NativeTypeName("UINT")] uint cSortColumns, SORTCOLUMN* rgSortColumns)
+        public HRESULT SetSortColumns([NativeTypeName("UINT")] uint cSortColumns, SORTCOLUMN* rgSortColumns)
         {
             return ((delegate* unmanaged<ISearchFolderItemFactory*, uint, SORTCOLUMN*, int>)(lpVtbl[8]))((ISearchFolderItemFactory*)Unsafe.AsPointer(ref this), cSortColumns, rgSortColumns);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetGroupColumn([NativeTypeName("const PROPERTYKEY &")] PROPERTYKEY* keyGroup)
+        public HRESULT SetGroupColumn([NativeTypeName("const PROPERTYKEY &")] PROPERTYKEY* keyGroup)
         {
             return ((delegate* unmanaged<ISearchFolderItemFactory*, PROPERTYKEY*, int>)(lpVtbl[9]))((ISearchFolderItemFactory*)Unsafe.AsPointer(ref this), keyGroup);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(10)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetStacks([NativeTypeName("UINT")] uint cStackKeys, PROPERTYKEY* rgStackKeys)
+        public HRESULT SetStacks([NativeTypeName("UINT")] uint cStackKeys, PROPERTYKEY* rgStackKeys)
         {
             return ((delegate* unmanaged<ISearchFolderItemFactory*, uint, PROPERTYKEY*, int>)(lpVtbl[10]))((ISearchFolderItemFactory*)Unsafe.AsPointer(ref this), cStackKeys, rgStackKeys);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(11)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetScope(IShellItemArray* psiaScope)
+        public HRESULT SetScope(IShellItemArray* psiaScope)
         {
             return ((delegate* unmanaged<ISearchFolderItemFactory*, IShellItemArray*, int>)(lpVtbl[11]))((ISearchFolderItemFactory*)Unsafe.AsPointer(ref this), psiaScope);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(12)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetCondition(ICondition* pCondition)
+        public HRESULT SetCondition(ICondition* pCondition)
         {
             return ((delegate* unmanaged<ISearchFolderItemFactory*, ICondition*, int>)(lpVtbl[12]))((ISearchFolderItemFactory*)Unsafe.AsPointer(ref this), pCondition);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(13)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetShellItem([NativeTypeName("const IID &")] Guid* riid, void** ppv)
+        public HRESULT GetShellItem([NativeTypeName("const IID &")] Guid* riid, void** ppv)
         {
             return ((delegate* unmanaged<ISearchFolderItemFactory*, Guid*, void**, int>)(lpVtbl[13]))((ISearchFolderItemFactory*)Unsafe.AsPointer(ref this), riid, ppv);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(14)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetIDList([NativeTypeName("LPITEMIDLIST *")] ITEMIDLIST** ppidl)
+        public HRESULT GetIDList([NativeTypeName("LPITEMIDLIST *")] ITEMIDLIST** ppidl)
         {
             return ((delegate* unmanaged<ISearchFolderItemFactory*, ITEMIDLIST**, int>)(lpVtbl[14]))((ISearchFolderItemFactory*)Unsafe.AsPointer(ref this), ppidl);
         }

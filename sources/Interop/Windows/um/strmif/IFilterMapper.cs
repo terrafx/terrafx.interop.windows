@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IFilterMapper*, Guid*, void**, int>)(lpVtbl[0]))((IFilterMapper*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,64 +41,56 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int RegisterFilter([NativeTypeName("CLSID")] Guid clsid, [NativeTypeName("LPCWSTR")] ushort* Name, [NativeTypeName("DWORD")] uint dwMerit)
+        public HRESULT RegisterFilter([NativeTypeName("CLSID")] Guid clsid, [NativeTypeName("LPCWSTR")] ushort* Name, [NativeTypeName("DWORD")] uint dwMerit)
         {
             return ((delegate* unmanaged<IFilterMapper*, Guid, ushort*, uint, int>)(lpVtbl[3]))((IFilterMapper*)Unsafe.AsPointer(ref this), clsid, Name, dwMerit);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int RegisterFilterInstance([NativeTypeName("CLSID")] Guid clsid, [NativeTypeName("LPCWSTR")] ushort* Name, [NativeTypeName("CLSID *")] Guid* MRId)
+        public HRESULT RegisterFilterInstance([NativeTypeName("CLSID")] Guid clsid, [NativeTypeName("LPCWSTR")] ushort* Name, [NativeTypeName("CLSID *")] Guid* MRId)
         {
             return ((delegate* unmanaged<IFilterMapper*, Guid, ushort*, Guid*, int>)(lpVtbl[4]))((IFilterMapper*)Unsafe.AsPointer(ref this), clsid, Name, MRId);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int RegisterPin([NativeTypeName("CLSID")] Guid Filter, [NativeTypeName("LPCWSTR")] ushort* Name, BOOL bRendered, BOOL bOutput, BOOL bZero, BOOL bMany, [NativeTypeName("CLSID")] Guid ConnectsToFilter, [NativeTypeName("LPCWSTR")] ushort* ConnectsToPin)
+        public HRESULT RegisterPin([NativeTypeName("CLSID")] Guid Filter, [NativeTypeName("LPCWSTR")] ushort* Name, BOOL bRendered, BOOL bOutput, BOOL bZero, BOOL bMany, [NativeTypeName("CLSID")] Guid ConnectsToFilter, [NativeTypeName("LPCWSTR")] ushort* ConnectsToPin)
         {
             return ((delegate* unmanaged<IFilterMapper*, Guid, ushort*, BOOL, BOOL, BOOL, BOOL, Guid, ushort*, int>)(lpVtbl[5]))((IFilterMapper*)Unsafe.AsPointer(ref this), Filter, Name, bRendered, bOutput, bZero, bMany, ConnectsToFilter, ConnectsToPin);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int RegisterPinType([NativeTypeName("CLSID")] Guid clsFilter, [NativeTypeName("LPCWSTR")] ushort* strName, [NativeTypeName("CLSID")] Guid clsMajorType, [NativeTypeName("CLSID")] Guid clsSubType)
+        public HRESULT RegisterPinType([NativeTypeName("CLSID")] Guid clsFilter, [NativeTypeName("LPCWSTR")] ushort* strName, [NativeTypeName("CLSID")] Guid clsMajorType, [NativeTypeName("CLSID")] Guid clsSubType)
         {
             return ((delegate* unmanaged<IFilterMapper*, Guid, ushort*, Guid, Guid, int>)(lpVtbl[6]))((IFilterMapper*)Unsafe.AsPointer(ref this), clsFilter, strName, clsMajorType, clsSubType);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        [return: NativeTypeName("HRESULT")]
-        public int UnregisterFilter([NativeTypeName("CLSID")] Guid Filter)
+        public HRESULT UnregisterFilter([NativeTypeName("CLSID")] Guid Filter)
         {
             return ((delegate* unmanaged<IFilterMapper*, Guid, int>)(lpVtbl[7]))((IFilterMapper*)Unsafe.AsPointer(ref this), Filter);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        [return: NativeTypeName("HRESULT")]
-        public int UnregisterFilterInstance([NativeTypeName("CLSID")] Guid MRId)
+        public HRESULT UnregisterFilterInstance([NativeTypeName("CLSID")] Guid MRId)
         {
             return ((delegate* unmanaged<IFilterMapper*, Guid, int>)(lpVtbl[8]))((IFilterMapper*)Unsafe.AsPointer(ref this), MRId);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        [return: NativeTypeName("HRESULT")]
-        public int UnregisterPin([NativeTypeName("CLSID")] Guid Filter, [NativeTypeName("LPCWSTR")] ushort* Name)
+        public HRESULT UnregisterPin([NativeTypeName("CLSID")] Guid Filter, [NativeTypeName("LPCWSTR")] ushort* Name)
         {
             return ((delegate* unmanaged<IFilterMapper*, Guid, ushort*, int>)(lpVtbl[9]))((IFilterMapper*)Unsafe.AsPointer(ref this), Filter, Name);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(10)]
-        [return: NativeTypeName("HRESULT")]
-        public int EnumMatchingFilters(IEnumRegFilters** ppEnum, [NativeTypeName("DWORD")] uint dwMerit, BOOL bInputNeeded, [NativeTypeName("CLSID")] Guid clsInMaj, [NativeTypeName("CLSID")] Guid clsInSub, BOOL bRender, BOOL bOututNeeded, [NativeTypeName("CLSID")] Guid clsOutMaj, [NativeTypeName("CLSID")] Guid clsOutSub)
+        public HRESULT EnumMatchingFilters(IEnumRegFilters** ppEnum, [NativeTypeName("DWORD")] uint dwMerit, BOOL bInputNeeded, [NativeTypeName("CLSID")] Guid clsInMaj, [NativeTypeName("CLSID")] Guid clsInSub, BOOL bRender, BOOL bOututNeeded, [NativeTypeName("CLSID")] Guid clsOutMaj, [NativeTypeName("CLSID")] Guid clsOutSub)
         {
             return ((delegate* unmanaged<IFilterMapper*, IEnumRegFilters**, uint, BOOL, Guid, Guid, BOOL, BOOL, Guid, Guid, int>)(lpVtbl[10]))((IFilterMapper*)Unsafe.AsPointer(ref this), ppEnum, dwMerit, bInputNeeded, clsInMaj, clsInSub, bRender, bOututNeeded, clsOutMaj, clsOutSub);
         }

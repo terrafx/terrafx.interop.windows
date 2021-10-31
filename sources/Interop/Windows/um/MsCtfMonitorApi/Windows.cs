@@ -10,12 +10,10 @@ namespace TerraFX.Interop
     public static partial class Windows
     {
         [DllImport("msctfmonitor", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int InitLocalMsCtfMonitor([NativeTypeName("DWORD")] uint dwFlags);
+        public static extern HRESULT InitLocalMsCtfMonitor([NativeTypeName("DWORD")] uint dwFlags);
 
         [DllImport("msctfmonitor", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int UninitLocalMsCtfMonitor();
+        public static extern HRESULT UninitLocalMsCtfMonitor();
 
         [NativeTypeName("#define DCM_FLAGS_TASKENG 0x00000001")]
         public const int DCM_FLAGS_TASKENG = 0x00000001;

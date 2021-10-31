@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IMFAsyncResult*, Guid*, void**, int>)(lpVtbl[0]))((IMFAsyncResult*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,32 +41,28 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetState(IUnknown** ppunkState)
+        public HRESULT GetState(IUnknown** ppunkState)
         {
             return ((delegate* unmanaged<IMFAsyncResult*, IUnknown**, int>)(lpVtbl[3]))((IMFAsyncResult*)Unsafe.AsPointer(ref this), ppunkState);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetStatus()
+        public HRESULT GetStatus()
         {
             return ((delegate* unmanaged<IMFAsyncResult*, int>)(lpVtbl[4]))((IMFAsyncResult*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetStatus([NativeTypeName("HRESULT")] int hrStatus)
+        public HRESULT SetStatus(HRESULT hrStatus)
         {
-            return ((delegate* unmanaged<IMFAsyncResult*, int, int>)(lpVtbl[5]))((IMFAsyncResult*)Unsafe.AsPointer(ref this), hrStatus);
+            return ((delegate* unmanaged<IMFAsyncResult*, HRESULT, int>)(lpVtbl[5]))((IMFAsyncResult*)Unsafe.AsPointer(ref this), hrStatus);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetObject(IUnknown** ppObject)
+        public HRESULT GetObject(IUnknown** ppObject)
         {
             return ((delegate* unmanaged<IMFAsyncResult*, IUnknown**, int>)(lpVtbl[6]))((IMFAsyncResult*)Unsafe.AsPointer(ref this), ppObject);
         }

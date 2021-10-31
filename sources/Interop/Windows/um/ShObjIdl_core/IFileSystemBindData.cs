@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IFileSystemBindData*, Guid*, void**, int>)(lpVtbl[0]))((IFileSystemBindData*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,16 +41,14 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetFindData([NativeTypeName("const WIN32_FIND_DATAW *")] WIN32_FIND_DATAW* pfd)
+        public HRESULT SetFindData([NativeTypeName("const WIN32_FIND_DATAW *")] WIN32_FIND_DATAW* pfd)
         {
             return ((delegate* unmanaged<IFileSystemBindData*, WIN32_FIND_DATAW*, int>)(lpVtbl[3]))((IFileSystemBindData*)Unsafe.AsPointer(ref this), pfd);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetFindData(WIN32_FIND_DATAW* pfd)
+        public HRESULT GetFindData(WIN32_FIND_DATAW* pfd)
         {
             return ((delegate* unmanaged<IFileSystemBindData*, WIN32_FIND_DATAW*, int>)(lpVtbl[4]))((IFileSystemBindData*)Unsafe.AsPointer(ref this), pfd);
         }

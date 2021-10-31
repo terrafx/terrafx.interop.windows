@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IBanneredBar*, Guid*, void**, int>)(lpVtbl[0]))((IBanneredBar*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,32 +41,28 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetIconSize([NativeTypeName("DWORD")] uint iIcon)
+        public HRESULT SetIconSize([NativeTypeName("DWORD")] uint iIcon)
         {
             return ((delegate* unmanaged<IBanneredBar*, uint, int>)(lpVtbl[3]))((IBanneredBar*)Unsafe.AsPointer(ref this), iIcon);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetIconSize([NativeTypeName("DWORD *")] uint* piIcon)
+        public HRESULT GetIconSize([NativeTypeName("DWORD *")] uint* piIcon)
         {
             return ((delegate* unmanaged<IBanneredBar*, uint*, int>)(lpVtbl[4]))((IBanneredBar*)Unsafe.AsPointer(ref this), piIcon);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetBitmap([NativeTypeName("HBITMAP")] IntPtr hBitmap)
+        public HRESULT SetBitmap([NativeTypeName("HBITMAP")] IntPtr hBitmap)
         {
             return ((delegate* unmanaged<IBanneredBar*, IntPtr, int>)(lpVtbl[5]))((IBanneredBar*)Unsafe.AsPointer(ref this), hBitmap);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetBitmap([NativeTypeName("HBITMAP *")] IntPtr* phBitmap)
+        public HRESULT GetBitmap([NativeTypeName("HBITMAP *")] IntPtr* phBitmap)
         {
             return ((delegate* unmanaged<IBanneredBar*, IntPtr*, int>)(lpVtbl[6]))((IBanneredBar*)Unsafe.AsPointer(ref this), phBitmap);
         }

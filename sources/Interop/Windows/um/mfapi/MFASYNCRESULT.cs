@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         public IMFAsyncCallback* pCallback;
 
-        [NativeTypeName("HRESULT")]
-        public int hrStatusResult;
+        public HRESULT hrStatusResult;
 
         [NativeTypeName("DWORD")]
         public uint dwBytesTransferred;
@@ -29,8 +28,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<MFASYNCRESULT*, Guid*, void**, int>)(lpVtbl[0]))((MFASYNCRESULT*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -53,32 +51,28 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetState(IUnknown** ppunkState)
+        public HRESULT GetState(IUnknown** ppunkState)
         {
             return ((delegate* unmanaged<MFASYNCRESULT*, IUnknown**, int>)(lpVtbl[3]))((MFASYNCRESULT*)Unsafe.AsPointer(ref this), ppunkState);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetStatus()
+        public HRESULT GetStatus()
         {
             return ((delegate* unmanaged<MFASYNCRESULT*, int>)(lpVtbl[4]))((MFASYNCRESULT*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetStatus([NativeTypeName("HRESULT")] int hrStatus)
+        public HRESULT SetStatus(HRESULT hrStatus)
         {
-            return ((delegate* unmanaged<MFASYNCRESULT*, int, int>)(lpVtbl[5]))((MFASYNCRESULT*)Unsafe.AsPointer(ref this), hrStatus);
+            return ((delegate* unmanaged<MFASYNCRESULT*, HRESULT, int>)(lpVtbl[5]))((MFASYNCRESULT*)Unsafe.AsPointer(ref this), hrStatus);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetObject(IUnknown** ppObject)
+        public HRESULT GetObject(IUnknown** ppObject)
         {
             return ((delegate* unmanaged<MFASYNCRESULT*, IUnknown**, int>)(lpVtbl[6]))((MFASYNCRESULT*)Unsafe.AsPointer(ref this), ppObject);
         }

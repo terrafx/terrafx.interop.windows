@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IResourceConsumer*, Guid*, void**, int>)(lpVtbl[0]))((IResourceConsumer*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,16 +41,14 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int AcquireResource([NativeTypeName("LONG")] int idResource)
+        public HRESULT AcquireResource([NativeTypeName("LONG")] int idResource)
         {
             return ((delegate* unmanaged<IResourceConsumer*, int, int>)(lpVtbl[3]))((IResourceConsumer*)Unsafe.AsPointer(ref this), idResource);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int ReleaseResource([NativeTypeName("LONG")] int idResource)
+        public HRESULT ReleaseResource([NativeTypeName("LONG")] int idResource)
         {
             return ((delegate* unmanaged<IResourceConsumer*, int, int>)(lpVtbl[4]))((IResourceConsumer*)Unsafe.AsPointer(ref this), idResource);
         }

@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<ITfCompositionView*, Guid*, void**, int>)(lpVtbl[0]))((ITfCompositionView*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,16 +41,14 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetOwnerClsid([NativeTypeName("CLSID *")] Guid* pclsid)
+        public HRESULT GetOwnerClsid([NativeTypeName("CLSID *")] Guid* pclsid)
         {
             return ((delegate* unmanaged<ITfCompositionView*, Guid*, int>)(lpVtbl[3]))((ITfCompositionView*)Unsafe.AsPointer(ref this), pclsid);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetRange(ITfRange** ppRange)
+        public HRESULT GetRange(ITfRange** ppRange)
         {
             return ((delegate* unmanaged<ITfCompositionView*, ITfRange**, int>)(lpVtbl[4]))((ITfCompositionView*)Unsafe.AsPointer(ref this), ppRange);
         }

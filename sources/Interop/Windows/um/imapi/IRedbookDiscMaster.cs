@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IRedbookDiscMaster*, Guid*, void**, int>)(lpVtbl[0]))((IRedbookDiscMaster*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,64 +41,56 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetTotalAudioTracks([NativeTypeName("long *")] int* pnTracks)
+        public HRESULT GetTotalAudioTracks([NativeTypeName("long *")] int* pnTracks)
         {
             return ((delegate* unmanaged<IRedbookDiscMaster*, int*, int>)(lpVtbl[3]))((IRedbookDiscMaster*)Unsafe.AsPointer(ref this), pnTracks);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetTotalAudioBlocks([NativeTypeName("long *")] int* pnBlocks)
+        public HRESULT GetTotalAudioBlocks([NativeTypeName("long *")] int* pnBlocks)
         {
             return ((delegate* unmanaged<IRedbookDiscMaster*, int*, int>)(lpVtbl[4]))((IRedbookDiscMaster*)Unsafe.AsPointer(ref this), pnBlocks);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetUsedAudioBlocks([NativeTypeName("long *")] int* pnBlocks)
+        public HRESULT GetUsedAudioBlocks([NativeTypeName("long *")] int* pnBlocks)
         {
             return ((delegate* unmanaged<IRedbookDiscMaster*, int*, int>)(lpVtbl[5]))((IRedbookDiscMaster*)Unsafe.AsPointer(ref this), pnBlocks);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetAvailableAudioTrackBlocks([NativeTypeName("long *")] int* pnBlocks)
+        public HRESULT GetAvailableAudioTrackBlocks([NativeTypeName("long *")] int* pnBlocks)
         {
             return ((delegate* unmanaged<IRedbookDiscMaster*, int*, int>)(lpVtbl[6]))((IRedbookDiscMaster*)Unsafe.AsPointer(ref this), pnBlocks);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetAudioBlockSize([NativeTypeName("long *")] int* pnBlockBytes)
+        public HRESULT GetAudioBlockSize([NativeTypeName("long *")] int* pnBlockBytes)
         {
             return ((delegate* unmanaged<IRedbookDiscMaster*, int*, int>)(lpVtbl[7]))((IRedbookDiscMaster*)Unsafe.AsPointer(ref this), pnBlockBytes);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        [return: NativeTypeName("HRESULT")]
-        public int CreateAudioTrack([NativeTypeName("long")] int nBlocks)
+        public HRESULT CreateAudioTrack([NativeTypeName("long")] int nBlocks)
         {
             return ((delegate* unmanaged<IRedbookDiscMaster*, int, int>)(lpVtbl[8]))((IRedbookDiscMaster*)Unsafe.AsPointer(ref this), nBlocks);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        [return: NativeTypeName("HRESULT")]
-        public int AddAudioTrackBlocks(byte* pby, [NativeTypeName("long")] int cb)
+        public HRESULT AddAudioTrackBlocks(byte* pby, [NativeTypeName("long")] int cb)
         {
             return ((delegate* unmanaged<IRedbookDiscMaster*, byte*, int, int>)(lpVtbl[9]))((IRedbookDiscMaster*)Unsafe.AsPointer(ref this), pby, cb);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(10)]
-        [return: NativeTypeName("HRESULT")]
-        public int CloseAudioTrack()
+        public HRESULT CloseAudioTrack()
         {
             return ((delegate* unmanaged<IRedbookDiscMaster*, int>)(lpVtbl[10]))((IRedbookDiscMaster*)Unsafe.AsPointer(ref this));
         }

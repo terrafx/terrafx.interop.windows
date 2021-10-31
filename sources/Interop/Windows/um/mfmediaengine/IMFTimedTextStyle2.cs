@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IMFTimedTextStyle2*, Guid*, void**, int>)(lpVtbl[0]))((IMFTimedTextStyle2*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,32 +41,28 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetRuby(IMFTimedTextRuby** ruby)
+        public HRESULT GetRuby(IMFTimedTextRuby** ruby)
         {
             return ((delegate* unmanaged<IMFTimedTextStyle2*, IMFTimedTextRuby**, int>)(lpVtbl[3]))((IMFTimedTextStyle2*)Unsafe.AsPointer(ref this), ruby);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetBouten(IMFTimedTextBouten** bouten)
+        public HRESULT GetBouten(IMFTimedTextBouten** bouten)
         {
             return ((delegate* unmanaged<IMFTimedTextStyle2*, IMFTimedTextBouten**, int>)(lpVtbl[4]))((IMFTimedTextStyle2*)Unsafe.AsPointer(ref this), bouten);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int IsTextCombined(BOOL* value)
+        public HRESULT IsTextCombined(BOOL* value)
         {
             return ((delegate* unmanaged<IMFTimedTextStyle2*, BOOL*, int>)(lpVtbl[5]))((IMFTimedTextStyle2*)Unsafe.AsPointer(ref this), value);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetFontAngleInDegrees(double* value)
+        public HRESULT GetFontAngleInDegrees(double* value)
         {
             return ((delegate* unmanaged<IMFTimedTextStyle2*, double*, int>)(lpVtbl[6]))((IMFTimedTextStyle2*)Unsafe.AsPointer(ref this), value);
         }

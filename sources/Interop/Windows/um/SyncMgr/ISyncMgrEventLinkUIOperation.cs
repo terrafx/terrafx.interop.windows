@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<ISyncMgrEventLinkUIOperation*, Guid*, void**, int>)(lpVtbl[0]))((ISyncMgrEventLinkUIOperation*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,16 +41,14 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int Run([NativeTypeName("HWND")] IntPtr hwndOwner)
+        public HRESULT Run([NativeTypeName("HWND")] IntPtr hwndOwner)
         {
             return ((delegate* unmanaged<ISyncMgrEventLinkUIOperation*, IntPtr, int>)(lpVtbl[3]))((ISyncMgrEventLinkUIOperation*)Unsafe.AsPointer(ref this), hwndOwner);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int Init([NativeTypeName("const GUID &")] Guid* rguidEventID, ISyncMgrEvent* pEvent)
+        public HRESULT Init([NativeTypeName("const GUID &")] Guid* rguidEventID, ISyncMgrEvent* pEvent)
         {
             return ((delegate* unmanaged<ISyncMgrEventLinkUIOperation*, Guid*, ISyncMgrEvent*, int>)(lpVtbl[4]))((ISyncMgrEventLinkUIOperation*)Unsafe.AsPointer(ref this), rguidEventID, pEvent);
         }

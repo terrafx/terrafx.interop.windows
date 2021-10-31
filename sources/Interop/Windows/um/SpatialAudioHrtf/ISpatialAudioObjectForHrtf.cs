@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<ISpatialAudioObjectForHrtf*, Guid*, void**, int>)(lpVtbl[0]))((ISpatialAudioObjectForHrtf*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,80 +41,70 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetBuffer([NativeTypeName("BYTE **")] byte** buffer, [NativeTypeName("UINT32 *")] uint* bufferLength)
+        public HRESULT GetBuffer([NativeTypeName("BYTE **")] byte** buffer, [NativeTypeName("UINT32 *")] uint* bufferLength)
         {
             return ((delegate* unmanaged<ISpatialAudioObjectForHrtf*, byte**, uint*, int>)(lpVtbl[3]))((ISpatialAudioObjectForHrtf*)Unsafe.AsPointer(ref this), buffer, bufferLength);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetEndOfStream([NativeTypeName("UINT32")] uint frameCount)
+        public HRESULT SetEndOfStream([NativeTypeName("UINT32")] uint frameCount)
         {
             return ((delegate* unmanaged<ISpatialAudioObjectForHrtf*, uint, int>)(lpVtbl[4]))((ISpatialAudioObjectForHrtf*)Unsafe.AsPointer(ref this), frameCount);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int IsActive(BOOL* isActive)
+        public HRESULT IsActive(BOOL* isActive)
         {
             return ((delegate* unmanaged<ISpatialAudioObjectForHrtf*, BOOL*, int>)(lpVtbl[5]))((ISpatialAudioObjectForHrtf*)Unsafe.AsPointer(ref this), isActive);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetAudioObjectType(AudioObjectType* audioObjectType)
+        public HRESULT GetAudioObjectType(AudioObjectType* audioObjectType)
         {
             return ((delegate* unmanaged<ISpatialAudioObjectForHrtf*, AudioObjectType*, int>)(lpVtbl[6]))((ISpatialAudioObjectForHrtf*)Unsafe.AsPointer(ref this), audioObjectType);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetPosition(float x, float y, float z)
+        public HRESULT SetPosition(float x, float y, float z)
         {
             return ((delegate* unmanaged<ISpatialAudioObjectForHrtf*, float, float, float, int>)(lpVtbl[7]))((ISpatialAudioObjectForHrtf*)Unsafe.AsPointer(ref this), x, y, z);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetGain(float gain)
+        public HRESULT SetGain(float gain)
         {
             return ((delegate* unmanaged<ISpatialAudioObjectForHrtf*, float, int>)(lpVtbl[8]))((ISpatialAudioObjectForHrtf*)Unsafe.AsPointer(ref this), gain);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetOrientation([NativeTypeName("const SpatialAudioHrtfOrientation *")] float** orientation)
+        public HRESULT SetOrientation([NativeTypeName("const SpatialAudioHrtfOrientation *")] float** orientation)
         {
             return ((delegate* unmanaged<ISpatialAudioObjectForHrtf*, float**, int>)(lpVtbl[9]))((ISpatialAudioObjectForHrtf*)Unsafe.AsPointer(ref this), orientation);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(10)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetEnvironment(SpatialAudioHrtfEnvironmentType environment)
+        public HRESULT SetEnvironment(SpatialAudioHrtfEnvironmentType environment)
         {
             return ((delegate* unmanaged<ISpatialAudioObjectForHrtf*, SpatialAudioHrtfEnvironmentType, int>)(lpVtbl[10]))((ISpatialAudioObjectForHrtf*)Unsafe.AsPointer(ref this), environment);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(11)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetDistanceDecay(SpatialAudioHrtfDistanceDecay* distanceDecay)
+        public HRESULT SetDistanceDecay(SpatialAudioHrtfDistanceDecay* distanceDecay)
         {
             return ((delegate* unmanaged<ISpatialAudioObjectForHrtf*, SpatialAudioHrtfDistanceDecay*, int>)(lpVtbl[11]))((ISpatialAudioObjectForHrtf*)Unsafe.AsPointer(ref this), distanceDecay);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(12)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetDirectivity(SpatialAudioHrtfDirectivityUnion* directivity)
+        public HRESULT SetDirectivity(SpatialAudioHrtfDirectivityUnion* directivity)
         {
             return ((delegate* unmanaged<ISpatialAudioObjectForHrtf*, SpatialAudioHrtfDirectivityUnion*, int>)(lpVtbl[12]))((ISpatialAudioObjectForHrtf*)Unsafe.AsPointer(ref this), directivity);
         }

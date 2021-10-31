@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<ILaunchSourceViewSizePreference*, Guid*, void**, int>)(lpVtbl[0]))((ILaunchSourceViewSizePreference*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,16 +41,14 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetSourceViewToPosition([NativeTypeName("HWND *")] IntPtr* hwnd)
+        public HRESULT GetSourceViewToPosition([NativeTypeName("HWND *")] IntPtr* hwnd)
         {
             return ((delegate* unmanaged<ILaunchSourceViewSizePreference*, IntPtr*, int>)(lpVtbl[3]))((ILaunchSourceViewSizePreference*)Unsafe.AsPointer(ref this), hwnd);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetSourceViewSizePreference(APPLICATION_VIEW_SIZE_PREFERENCE* sourceSizeAfterLaunch)
+        public HRESULT GetSourceViewSizePreference(APPLICATION_VIEW_SIZE_PREFERENCE* sourceSizeAfterLaunch)
         {
             return ((delegate* unmanaged<ILaunchSourceViewSizePreference*, APPLICATION_VIEW_SIZE_PREFERENCE*, int>)(lpVtbl[4]))((ILaunchSourceViewSizePreference*)Unsafe.AsPointer(ref this), sourceSizeAfterLaunch);
         }

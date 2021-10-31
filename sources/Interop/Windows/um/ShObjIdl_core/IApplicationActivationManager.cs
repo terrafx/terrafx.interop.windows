@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IApplicationActivationManager*, Guid*, void**, int>)(lpVtbl[0]))((IApplicationActivationManager*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,24 +41,21 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int ActivateApplication([NativeTypeName("LPCWSTR")] ushort* appUserModelId, [NativeTypeName("LPCWSTR")] ushort* arguments, ACTIVATEOPTIONS options, [NativeTypeName("DWORD *")] uint* processId)
+        public HRESULT ActivateApplication([NativeTypeName("LPCWSTR")] ushort* appUserModelId, [NativeTypeName("LPCWSTR")] ushort* arguments, ACTIVATEOPTIONS options, [NativeTypeName("DWORD *")] uint* processId)
         {
             return ((delegate* unmanaged<IApplicationActivationManager*, ushort*, ushort*, ACTIVATEOPTIONS, uint*, int>)(lpVtbl[3]))((IApplicationActivationManager*)Unsafe.AsPointer(ref this), appUserModelId, arguments, options, processId);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int ActivateForFile([NativeTypeName("LPCWSTR")] ushort* appUserModelId, IShellItemArray* itemArray, [NativeTypeName("LPCWSTR")] ushort* verb, [NativeTypeName("DWORD *")] uint* processId)
+        public HRESULT ActivateForFile([NativeTypeName("LPCWSTR")] ushort* appUserModelId, IShellItemArray* itemArray, [NativeTypeName("LPCWSTR")] ushort* verb, [NativeTypeName("DWORD *")] uint* processId)
         {
             return ((delegate* unmanaged<IApplicationActivationManager*, ushort*, IShellItemArray*, ushort*, uint*, int>)(lpVtbl[4]))((IApplicationActivationManager*)Unsafe.AsPointer(ref this), appUserModelId, itemArray, verb, processId);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int ActivateForProtocol([NativeTypeName("LPCWSTR")] ushort* appUserModelId, IShellItemArray* itemArray, [NativeTypeName("DWORD *")] uint* processId)
+        public HRESULT ActivateForProtocol([NativeTypeName("LPCWSTR")] ushort* appUserModelId, IShellItemArray* itemArray, [NativeTypeName("DWORD *")] uint* processId)
         {
             return ((delegate* unmanaged<IApplicationActivationManager*, ushort*, IShellItemArray*, uint*, int>)(lpVtbl[5]))((IApplicationActivationManager*)Unsafe.AsPointer(ref this), appUserModelId, itemArray, processId);
         }

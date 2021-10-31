@@ -10,7 +10,6 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint dwChainErrorStatus;
 
-        [NativeTypeName("HRESULT")]
-        public int hrVerifyChainStatus;
+        public HRESULT hrVerifyChainStatus;
     }
 }

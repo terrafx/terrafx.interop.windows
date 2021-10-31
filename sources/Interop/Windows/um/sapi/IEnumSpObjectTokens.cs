@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IEnumSpObjectTokens*, Guid*, void**, int>)(lpVtbl[0]))((IEnumSpObjectTokens*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,48 +41,42 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int Next([NativeTypeName("ULONG")] uint celt, ISpObjectToken** pelt, [NativeTypeName("ULONG *")] uint* pceltFetched)
+        public HRESULT Next([NativeTypeName("ULONG")] uint celt, ISpObjectToken** pelt, [NativeTypeName("ULONG *")] uint* pceltFetched)
         {
             return ((delegate* unmanaged<IEnumSpObjectTokens*, uint, ISpObjectToken**, uint*, int>)(lpVtbl[3]))((IEnumSpObjectTokens*)Unsafe.AsPointer(ref this), celt, pelt, pceltFetched);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int Skip([NativeTypeName("ULONG")] uint celt)
+        public HRESULT Skip([NativeTypeName("ULONG")] uint celt)
         {
             return ((delegate* unmanaged<IEnumSpObjectTokens*, uint, int>)(lpVtbl[4]))((IEnumSpObjectTokens*)Unsafe.AsPointer(ref this), celt);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int Reset()
+        public HRESULT Reset()
         {
             return ((delegate* unmanaged<IEnumSpObjectTokens*, int>)(lpVtbl[5]))((IEnumSpObjectTokens*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int Clone(IEnumSpObjectTokens** ppEnum)
+        public HRESULT Clone(IEnumSpObjectTokens** ppEnum)
         {
             return ((delegate* unmanaged<IEnumSpObjectTokens*, IEnumSpObjectTokens**, int>)(lpVtbl[6]))((IEnumSpObjectTokens*)Unsafe.AsPointer(ref this), ppEnum);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        [return: NativeTypeName("HRESULT")]
-        public int Item([NativeTypeName("ULONG")] uint Index, ISpObjectToken** ppToken)
+        public HRESULT Item([NativeTypeName("ULONG")] uint Index, ISpObjectToken** ppToken)
         {
             return ((delegate* unmanaged<IEnumSpObjectTokens*, uint, ISpObjectToken**, int>)(lpVtbl[7]))((IEnumSpObjectTokens*)Unsafe.AsPointer(ref this), Index, ppToken);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetCount([NativeTypeName("ULONG *")] uint* pCount)
+        public HRESULT GetCount([NativeTypeName("ULONG *")] uint* pCount)
         {
             return ((delegate* unmanaged<IEnumSpObjectTokens*, uint*, int>)(lpVtbl[8]))((IEnumSpObjectTokens*)Unsafe.AsPointer(ref this), pCount);
         }

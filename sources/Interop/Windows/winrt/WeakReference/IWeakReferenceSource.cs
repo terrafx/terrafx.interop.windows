@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IWeakReferenceSource*, Guid*, void**, int>)(lpVtbl[0]))((IWeakReferenceSource*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,8 +41,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetWeakReference(IWeakReference** weakReference)
+        public HRESULT GetWeakReference(IWeakReference** weakReference)
         {
             return ((delegate* unmanaged<IWeakReferenceSource*, IWeakReference**, int>)(lpVtbl[3]))((IWeakReferenceSource*)Unsafe.AsPointer(ref this), weakReference);
         }

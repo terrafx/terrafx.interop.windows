@@ -299,12 +299,10 @@ namespace TerraFX.Interop
         public static extern BOOL SetThreadSelectedCpuSetMasks([NativeTypeName("HANDLE")] IntPtr Thread, [NativeTypeName("PGROUP_AFFINITY")] GROUP_AFFINITY* CpuSetMasks, [NativeTypeName("USHORT")] ushort CpuSetMaskCount);
 
         [DllImport("kernel32", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int SetThreadDescription([NativeTypeName("HANDLE")] IntPtr hThread, [NativeTypeName("PCWSTR")] ushort* lpThreadDescription);
+        public static extern HRESULT SetThreadDescription([NativeTypeName("HANDLE")] IntPtr hThread, [NativeTypeName("PCWSTR")] ushort* lpThreadDescription);
 
         [DllImport("kernel32", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int GetThreadDescription([NativeTypeName("HANDLE")] IntPtr hThread, [NativeTypeName("PWSTR *")] ushort** ppszThreadDescription);
+        public static extern HRESULT GetThreadDescription([NativeTypeName("HANDLE")] IntPtr hThread, [NativeTypeName("PWSTR *")] ushort** ppszThreadDescription);
 
         [NativeTypeName("#define TLS_OUT_OF_INDEXES ((DWORD)0xFFFFFFFF)")]
         public const uint TLS_OUT_OF_INDEXES = ((uint)(0xFFFFFFFF));

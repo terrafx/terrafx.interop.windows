@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IMFSampleProtection*, Guid*, void**, int>)(lpVtbl[0]))((IMFSampleProtection*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,40 +41,35 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetInputProtectionVersion([NativeTypeName("DWORD *")] uint* pdwVersion)
+        public HRESULT GetInputProtectionVersion([NativeTypeName("DWORD *")] uint* pdwVersion)
         {
             return ((delegate* unmanaged<IMFSampleProtection*, uint*, int>)(lpVtbl[3]))((IMFSampleProtection*)Unsafe.AsPointer(ref this), pdwVersion);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetOutputProtectionVersion([NativeTypeName("DWORD *")] uint* pdwVersion)
+        public HRESULT GetOutputProtectionVersion([NativeTypeName("DWORD *")] uint* pdwVersion)
         {
             return ((delegate* unmanaged<IMFSampleProtection*, uint*, int>)(lpVtbl[4]))((IMFSampleProtection*)Unsafe.AsPointer(ref this), pdwVersion);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetProtectionCertificate([NativeTypeName("DWORD")] uint dwVersion, [NativeTypeName("BYTE **")] byte** ppCert, [NativeTypeName("DWORD *")] uint* pcbCert)
+        public HRESULT GetProtectionCertificate([NativeTypeName("DWORD")] uint dwVersion, [NativeTypeName("BYTE **")] byte** ppCert, [NativeTypeName("DWORD *")] uint* pcbCert)
         {
             return ((delegate* unmanaged<IMFSampleProtection*, uint, byte**, uint*, int>)(lpVtbl[5]))((IMFSampleProtection*)Unsafe.AsPointer(ref this), dwVersion, ppCert, pcbCert);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int InitOutputProtection([NativeTypeName("DWORD")] uint dwVersion, [NativeTypeName("DWORD")] uint dwOutputId, [NativeTypeName("BYTE *")] byte* pbCert, [NativeTypeName("DWORD")] uint cbCert, [NativeTypeName("BYTE **")] byte** ppbSeed, [NativeTypeName("DWORD *")] uint* pcbSeed)
+        public HRESULT InitOutputProtection([NativeTypeName("DWORD")] uint dwVersion, [NativeTypeName("DWORD")] uint dwOutputId, [NativeTypeName("BYTE *")] byte* pbCert, [NativeTypeName("DWORD")] uint cbCert, [NativeTypeName("BYTE **")] byte** ppbSeed, [NativeTypeName("DWORD *")] uint* pcbSeed)
         {
             return ((delegate* unmanaged<IMFSampleProtection*, uint, uint, byte*, uint, byte**, uint*, int>)(lpVtbl[6]))((IMFSampleProtection*)Unsafe.AsPointer(ref this), dwVersion, dwOutputId, pbCert, cbCert, ppbSeed, pcbSeed);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        [return: NativeTypeName("HRESULT")]
-        public int InitInputProtection([NativeTypeName("DWORD")] uint dwVersion, [NativeTypeName("DWORD")] uint dwInputId, [NativeTypeName("BYTE *")] byte* pbSeed, [NativeTypeName("DWORD")] uint cbSeed)
+        public HRESULT InitInputProtection([NativeTypeName("DWORD")] uint dwVersion, [NativeTypeName("DWORD")] uint dwInputId, [NativeTypeName("BYTE *")] byte* pbSeed, [NativeTypeName("DWORD")] uint cbSeed)
         {
             return ((delegate* unmanaged<IMFSampleProtection*, uint, uint, byte*, uint, int>)(lpVtbl[7]))((IMFSampleProtection*)Unsafe.AsPointer(ref this), dwVersion, dwInputId, pbSeed, cbSeed);
         }

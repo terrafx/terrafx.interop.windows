@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IDeskBar*, Guid*, void**, int>)(lpVtbl[0]))((IDeskBar*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,40 +41,35 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetWindow([NativeTypeName("HWND *")] IntPtr* phwnd)
+        public HRESULT GetWindow([NativeTypeName("HWND *")] IntPtr* phwnd)
         {
             return ((delegate* unmanaged<IDeskBar*, IntPtr*, int>)(lpVtbl[3]))((IDeskBar*)Unsafe.AsPointer(ref this), phwnd);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int ContextSensitiveHelp(BOOL fEnterMode)
+        public HRESULT ContextSensitiveHelp(BOOL fEnterMode)
         {
             return ((delegate* unmanaged<IDeskBar*, BOOL, int>)(lpVtbl[4]))((IDeskBar*)Unsafe.AsPointer(ref this), fEnterMode);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetClient(IUnknown* punkClient)
+        public HRESULT SetClient(IUnknown* punkClient)
         {
             return ((delegate* unmanaged<IDeskBar*, IUnknown*, int>)(lpVtbl[5]))((IDeskBar*)Unsafe.AsPointer(ref this), punkClient);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetClient(IUnknown** ppunkClient)
+        public HRESULT GetClient(IUnknown** ppunkClient)
         {
             return ((delegate* unmanaged<IDeskBar*, IUnknown**, int>)(lpVtbl[6]))((IDeskBar*)Unsafe.AsPointer(ref this), ppunkClient);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        [return: NativeTypeName("HRESULT")]
-        public int OnPosRectChangeDB(RECT* prc)
+        public HRESULT OnPosRectChangeDB(RECT* prc)
         {
             return ((delegate* unmanaged<IDeskBar*, RECT*, int>)(lpVtbl[7]))((IDeskBar*)Unsafe.AsPointer(ref this), prc);
         }

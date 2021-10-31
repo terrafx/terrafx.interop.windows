@@ -530,14 +530,13 @@ namespace TerraFX.Interop
         }
 
         [DllImport("mmdevapi", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int ActivateAudioInterfaceAsync([NativeTypeName("LPCWSTR")] ushort* deviceInterfacePath, [NativeTypeName("const IID &")] Guid* riid, PROPVARIANT* activationParams, IActivateAudioInterfaceCompletionHandler* completionHandler, IActivateAudioInterfaceAsyncOperation** activationOperation);
+        public static extern HRESULT ActivateAudioInterfaceAsync([NativeTypeName("LPCWSTR")] ushort* deviceInterfacePath, [NativeTypeName("const IID &")] Guid* riid, PROPVARIANT* activationParams, IActivateAudioInterfaceCompletionHandler* completionHandler, IActivateAudioInterfaceAsyncOperation** activationOperation);
 
         [NativeTypeName("#define E_NOTFOUND HRESULT_FROM_WIN32(ERROR_NOT_FOUND)")]
-        public static int E_NOTFOUND => HRESULT_FROM_WIN32(1168);
+        public static HRESULT E_NOTFOUND => HRESULT_FROM_WIN32(1168);
 
         [NativeTypeName("#define E_UNSUPPORTED_TYPE HRESULT_FROM_WIN32(ERROR_UNSUPPORTED_TYPE)")]
-        public static int E_UNSUPPORTED_TYPE => HRESULT_FROM_WIN32(1630);
+        public static HRESULT E_UNSUPPORTED_TYPE => HRESULT_FROM_WIN32(1630);
 
         [NativeTypeName("#define DEVICE_STATE_ACTIVE 0x00000001")]
         public const int DEVICE_STATE_ACTIVE = 0x00000001;

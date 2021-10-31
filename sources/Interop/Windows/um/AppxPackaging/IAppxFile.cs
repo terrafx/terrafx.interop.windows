@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IAppxFile*, Guid*, void**, int>)(lpVtbl[0]))((IAppxFile*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,40 +41,35 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetCompressionOption(APPX_COMPRESSION_OPTION* compressionOption)
+        public HRESULT GetCompressionOption(APPX_COMPRESSION_OPTION* compressionOption)
         {
             return ((delegate* unmanaged<IAppxFile*, APPX_COMPRESSION_OPTION*, int>)(lpVtbl[3]))((IAppxFile*)Unsafe.AsPointer(ref this), compressionOption);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetContentType([NativeTypeName("LPWSTR *")] ushort** contentType)
+        public HRESULT GetContentType([NativeTypeName("LPWSTR *")] ushort** contentType)
         {
             return ((delegate* unmanaged<IAppxFile*, ushort**, int>)(lpVtbl[4]))((IAppxFile*)Unsafe.AsPointer(ref this), contentType);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetName([NativeTypeName("LPWSTR *")] ushort** fileName)
+        public HRESULT GetName([NativeTypeName("LPWSTR *")] ushort** fileName)
         {
             return ((delegate* unmanaged<IAppxFile*, ushort**, int>)(lpVtbl[5]))((IAppxFile*)Unsafe.AsPointer(ref this), fileName);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetSize([NativeTypeName("UINT64 *")] ulong* size)
+        public HRESULT GetSize([NativeTypeName("UINT64 *")] ulong* size)
         {
             return ((delegate* unmanaged<IAppxFile*, ulong*, int>)(lpVtbl[6]))((IAppxFile*)Unsafe.AsPointer(ref this), size);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetStream(IStream** stream)
+        public HRESULT GetStream(IStream** stream)
         {
             return ((delegate* unmanaged<IAppxFile*, IStream**, int>)(lpVtbl[7]))((IAppxFile*)Unsafe.AsPointer(ref this), stream);
         }

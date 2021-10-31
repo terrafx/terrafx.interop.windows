@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<ITfMouseTracker*, Guid*, void**, int>)(lpVtbl[0]))((ITfMouseTracker*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,16 +41,14 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int AdviseMouseSink(ITfRange* range, ITfMouseSink* pSink, [NativeTypeName("DWORD *")] uint* pdwCookie)
+        public HRESULT AdviseMouseSink(ITfRange* range, ITfMouseSink* pSink, [NativeTypeName("DWORD *")] uint* pdwCookie)
         {
             return ((delegate* unmanaged<ITfMouseTracker*, ITfRange*, ITfMouseSink*, uint*, int>)(lpVtbl[3]))((ITfMouseTracker*)Unsafe.AsPointer(ref this), range, pSink, pdwCookie);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int UnadviseMouseSink([NativeTypeName("DWORD")] uint dwCookie)
+        public HRESULT UnadviseMouseSink([NativeTypeName("DWORD")] uint dwCookie)
         {
             return ((delegate* unmanaged<ITfMouseTracker*, uint, int>)(lpVtbl[4]))((ITfMouseTracker*)Unsafe.AsPointer(ref this), dwCookie);
         }

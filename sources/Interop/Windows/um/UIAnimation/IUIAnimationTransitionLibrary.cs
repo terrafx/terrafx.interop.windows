@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IUIAnimationTransitionLibrary*, Guid*, void**, int>)(lpVtbl[0]))((IUIAnimationTransitionLibrary*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,96 +41,84 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int CreateInstantaneousTransition([NativeTypeName("DOUBLE")] double finalValue, IUIAnimationTransition** transition)
+        public HRESULT CreateInstantaneousTransition([NativeTypeName("DOUBLE")] double finalValue, IUIAnimationTransition** transition)
         {
             return ((delegate* unmanaged<IUIAnimationTransitionLibrary*, double, IUIAnimationTransition**, int>)(lpVtbl[3]))((IUIAnimationTransitionLibrary*)Unsafe.AsPointer(ref this), finalValue, transition);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int CreateConstantTransition([NativeTypeName("UI_ANIMATION_SECONDS")] double duration, IUIAnimationTransition** transition)
+        public HRESULT CreateConstantTransition([NativeTypeName("UI_ANIMATION_SECONDS")] double duration, IUIAnimationTransition** transition)
         {
             return ((delegate* unmanaged<IUIAnimationTransitionLibrary*, double, IUIAnimationTransition**, int>)(lpVtbl[4]))((IUIAnimationTransitionLibrary*)Unsafe.AsPointer(ref this), duration, transition);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int CreateDiscreteTransition([NativeTypeName("UI_ANIMATION_SECONDS")] double delay, [NativeTypeName("DOUBLE")] double finalValue, [NativeTypeName("UI_ANIMATION_SECONDS")] double hold, IUIAnimationTransition** transition)
+        public HRESULT CreateDiscreteTransition([NativeTypeName("UI_ANIMATION_SECONDS")] double delay, [NativeTypeName("DOUBLE")] double finalValue, [NativeTypeName("UI_ANIMATION_SECONDS")] double hold, IUIAnimationTransition** transition)
         {
             return ((delegate* unmanaged<IUIAnimationTransitionLibrary*, double, double, double, IUIAnimationTransition**, int>)(lpVtbl[5]))((IUIAnimationTransitionLibrary*)Unsafe.AsPointer(ref this), delay, finalValue, hold, transition);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int CreateLinearTransition([NativeTypeName("UI_ANIMATION_SECONDS")] double duration, [NativeTypeName("DOUBLE")] double finalValue, IUIAnimationTransition** transition)
+        public HRESULT CreateLinearTransition([NativeTypeName("UI_ANIMATION_SECONDS")] double duration, [NativeTypeName("DOUBLE")] double finalValue, IUIAnimationTransition** transition)
         {
             return ((delegate* unmanaged<IUIAnimationTransitionLibrary*, double, double, IUIAnimationTransition**, int>)(lpVtbl[6]))((IUIAnimationTransitionLibrary*)Unsafe.AsPointer(ref this), duration, finalValue, transition);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        [return: NativeTypeName("HRESULT")]
-        public int CreateLinearTransitionFromSpeed([NativeTypeName("DOUBLE")] double speed, [NativeTypeName("DOUBLE")] double finalValue, IUIAnimationTransition** transition)
+        public HRESULT CreateLinearTransitionFromSpeed([NativeTypeName("DOUBLE")] double speed, [NativeTypeName("DOUBLE")] double finalValue, IUIAnimationTransition** transition)
         {
             return ((delegate* unmanaged<IUIAnimationTransitionLibrary*, double, double, IUIAnimationTransition**, int>)(lpVtbl[7]))((IUIAnimationTransitionLibrary*)Unsafe.AsPointer(ref this), speed, finalValue, transition);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        [return: NativeTypeName("HRESULT")]
-        public int CreateSinusoidalTransitionFromVelocity([NativeTypeName("UI_ANIMATION_SECONDS")] double duration, [NativeTypeName("UI_ANIMATION_SECONDS")] double period, IUIAnimationTransition** transition)
+        public HRESULT CreateSinusoidalTransitionFromVelocity([NativeTypeName("UI_ANIMATION_SECONDS")] double duration, [NativeTypeName("UI_ANIMATION_SECONDS")] double period, IUIAnimationTransition** transition)
         {
             return ((delegate* unmanaged<IUIAnimationTransitionLibrary*, double, double, IUIAnimationTransition**, int>)(lpVtbl[8]))((IUIAnimationTransitionLibrary*)Unsafe.AsPointer(ref this), duration, period, transition);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        [return: NativeTypeName("HRESULT")]
-        public int CreateSinusoidalTransitionFromRange([NativeTypeName("UI_ANIMATION_SECONDS")] double duration, [NativeTypeName("DOUBLE")] double minimumValue, [NativeTypeName("DOUBLE")] double maximumValue, [NativeTypeName("UI_ANIMATION_SECONDS")] double period, UI_ANIMATION_SLOPE slope, IUIAnimationTransition** transition)
+        public HRESULT CreateSinusoidalTransitionFromRange([NativeTypeName("UI_ANIMATION_SECONDS")] double duration, [NativeTypeName("DOUBLE")] double minimumValue, [NativeTypeName("DOUBLE")] double maximumValue, [NativeTypeName("UI_ANIMATION_SECONDS")] double period, UI_ANIMATION_SLOPE slope, IUIAnimationTransition** transition)
         {
             return ((delegate* unmanaged<IUIAnimationTransitionLibrary*, double, double, double, double, UI_ANIMATION_SLOPE, IUIAnimationTransition**, int>)(lpVtbl[9]))((IUIAnimationTransitionLibrary*)Unsafe.AsPointer(ref this), duration, minimumValue, maximumValue, period, slope, transition);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(10)]
-        [return: NativeTypeName("HRESULT")]
-        public int CreateAccelerateDecelerateTransition([NativeTypeName("UI_ANIMATION_SECONDS")] double duration, [NativeTypeName("DOUBLE")] double finalValue, [NativeTypeName("DOUBLE")] double accelerationRatio, [NativeTypeName("DOUBLE")] double decelerationRatio, IUIAnimationTransition** transition)
+        public HRESULT CreateAccelerateDecelerateTransition([NativeTypeName("UI_ANIMATION_SECONDS")] double duration, [NativeTypeName("DOUBLE")] double finalValue, [NativeTypeName("DOUBLE")] double accelerationRatio, [NativeTypeName("DOUBLE")] double decelerationRatio, IUIAnimationTransition** transition)
         {
             return ((delegate* unmanaged<IUIAnimationTransitionLibrary*, double, double, double, double, IUIAnimationTransition**, int>)(lpVtbl[10]))((IUIAnimationTransitionLibrary*)Unsafe.AsPointer(ref this), duration, finalValue, accelerationRatio, decelerationRatio, transition);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(11)]
-        [return: NativeTypeName("HRESULT")]
-        public int CreateReversalTransition([NativeTypeName("UI_ANIMATION_SECONDS")] double duration, IUIAnimationTransition** transition)
+        public HRESULT CreateReversalTransition([NativeTypeName("UI_ANIMATION_SECONDS")] double duration, IUIAnimationTransition** transition)
         {
             return ((delegate* unmanaged<IUIAnimationTransitionLibrary*, double, IUIAnimationTransition**, int>)(lpVtbl[11]))((IUIAnimationTransitionLibrary*)Unsafe.AsPointer(ref this), duration, transition);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(12)]
-        [return: NativeTypeName("HRESULT")]
-        public int CreateCubicTransition([NativeTypeName("UI_ANIMATION_SECONDS")] double duration, [NativeTypeName("DOUBLE")] double finalValue, [NativeTypeName("DOUBLE")] double finalVelocity, IUIAnimationTransition** transition)
+        public HRESULT CreateCubicTransition([NativeTypeName("UI_ANIMATION_SECONDS")] double duration, [NativeTypeName("DOUBLE")] double finalValue, [NativeTypeName("DOUBLE")] double finalVelocity, IUIAnimationTransition** transition)
         {
             return ((delegate* unmanaged<IUIAnimationTransitionLibrary*, double, double, double, IUIAnimationTransition**, int>)(lpVtbl[12]))((IUIAnimationTransitionLibrary*)Unsafe.AsPointer(ref this), duration, finalValue, finalVelocity, transition);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(13)]
-        [return: NativeTypeName("HRESULT")]
-        public int CreateSmoothStopTransition([NativeTypeName("UI_ANIMATION_SECONDS")] double maximumDuration, [NativeTypeName("DOUBLE")] double finalValue, IUIAnimationTransition** transition)
+        public HRESULT CreateSmoothStopTransition([NativeTypeName("UI_ANIMATION_SECONDS")] double maximumDuration, [NativeTypeName("DOUBLE")] double finalValue, IUIAnimationTransition** transition)
         {
             return ((delegate* unmanaged<IUIAnimationTransitionLibrary*, double, double, IUIAnimationTransition**, int>)(lpVtbl[13]))((IUIAnimationTransitionLibrary*)Unsafe.AsPointer(ref this), maximumDuration, finalValue, transition);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(14)]
-        [return: NativeTypeName("HRESULT")]
-        public int CreateParabolicTransitionFromAcceleration([NativeTypeName("DOUBLE")] double finalValue, [NativeTypeName("DOUBLE")] double finalVelocity, [NativeTypeName("DOUBLE")] double acceleration, IUIAnimationTransition** transition)
+        public HRESULT CreateParabolicTransitionFromAcceleration([NativeTypeName("DOUBLE")] double finalValue, [NativeTypeName("DOUBLE")] double finalVelocity, [NativeTypeName("DOUBLE")] double acceleration, IUIAnimationTransition** transition)
         {
             return ((delegate* unmanaged<IUIAnimationTransitionLibrary*, double, double, double, IUIAnimationTransition**, int>)(lpVtbl[14]))((IUIAnimationTransitionLibrary*)Unsafe.AsPointer(ref this), finalValue, finalVelocity, acceleration, transition);
         }

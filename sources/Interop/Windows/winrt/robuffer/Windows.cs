@@ -13,8 +13,7 @@ namespace TerraFX.Interop
     public static unsafe partial class Windows
     {
         [DllImport("wintypes", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int RoGetBufferMarshaler(IMarshal** bufferMarshaler);
+        public static extern HRESULT RoGetBufferMarshaler(IMarshal** bufferMarshaler);
 
         public static ref readonly Guid IID_IBufferByteAccess
         {

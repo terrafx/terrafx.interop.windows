@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IInternetProtocolRoot*, Guid*, void**, int>)(lpVtbl[0]))((IInternetProtocolRoot*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,48 +41,42 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int Start([NativeTypeName("LPCWSTR")] ushort* szUrl, IInternetProtocolSink* pOIProtSink, IInternetBindInfo* pOIBindInfo, [NativeTypeName("DWORD")] uint grfPI, [NativeTypeName("HANDLE_PTR")] IntPtr dwReserved)
+        public HRESULT Start([NativeTypeName("LPCWSTR")] ushort* szUrl, IInternetProtocolSink* pOIProtSink, IInternetBindInfo* pOIBindInfo, [NativeTypeName("DWORD")] uint grfPI, [NativeTypeName("HANDLE_PTR")] IntPtr dwReserved)
         {
             return ((delegate* unmanaged<IInternetProtocolRoot*, ushort*, IInternetProtocolSink*, IInternetBindInfo*, uint, IntPtr, int>)(lpVtbl[3]))((IInternetProtocolRoot*)Unsafe.AsPointer(ref this), szUrl, pOIProtSink, pOIBindInfo, grfPI, dwReserved);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int Continue(PROTOCOLDATA* pProtocolData)
+        public HRESULT Continue(PROTOCOLDATA* pProtocolData)
         {
             return ((delegate* unmanaged<IInternetProtocolRoot*, PROTOCOLDATA*, int>)(lpVtbl[4]))((IInternetProtocolRoot*)Unsafe.AsPointer(ref this), pProtocolData);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int Abort([NativeTypeName("HRESULT")] int hrReason, [NativeTypeName("DWORD")] uint dwOptions)
+        public HRESULT Abort(HRESULT hrReason, [NativeTypeName("DWORD")] uint dwOptions)
         {
-            return ((delegate* unmanaged<IInternetProtocolRoot*, int, uint, int>)(lpVtbl[5]))((IInternetProtocolRoot*)Unsafe.AsPointer(ref this), hrReason, dwOptions);
+            return ((delegate* unmanaged<IInternetProtocolRoot*, HRESULT, uint, int>)(lpVtbl[5]))((IInternetProtocolRoot*)Unsafe.AsPointer(ref this), hrReason, dwOptions);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int Terminate([NativeTypeName("DWORD")] uint dwOptions)
+        public HRESULT Terminate([NativeTypeName("DWORD")] uint dwOptions)
         {
             return ((delegate* unmanaged<IInternetProtocolRoot*, uint, int>)(lpVtbl[6]))((IInternetProtocolRoot*)Unsafe.AsPointer(ref this), dwOptions);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        [return: NativeTypeName("HRESULT")]
-        public int Suspend()
+        public HRESULT Suspend()
         {
             return ((delegate* unmanaged<IInternetProtocolRoot*, int>)(lpVtbl[7]))((IInternetProtocolRoot*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        [return: NativeTypeName("HRESULT")]
-        public int Resume()
+        public HRESULT Resume()
         {
             return ((delegate* unmanaged<IInternetProtocolRoot*, int>)(lpVtbl[8]))((IInternetProtocolRoot*)Unsafe.AsPointer(ref this));
         }

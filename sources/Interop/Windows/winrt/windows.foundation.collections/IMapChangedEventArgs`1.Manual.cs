@@ -16,8 +16,7 @@ namespace TerraFX.Interop
         public void** lpVtbl;
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
             return ((delegate* unmanaged<IMapChangedEventArgs<K>*, Guid*, void**, int>)(lpVtbl[0]))((IMapChangedEventArgs<K>*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -37,36 +36,31 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetIids([NativeTypeName("ULONG *")] uint* iidCount, [NativeTypeName("IID **")] Guid** iids)
+        public HRESULT GetIids([NativeTypeName("ULONG *")] uint* iidCount, [NativeTypeName("IID **")] Guid** iids)
         {
             return ((delegate* unmanaged<IMapChangedEventArgs<K>*, uint*, Guid**, int>)(lpVtbl[3]))((IMapChangedEventArgs<K>*)Unsafe.AsPointer(ref this), iidCount, iids);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetRuntimeClassName([NativeTypeName("HSTRING *")] IntPtr* className)
+        public HRESULT GetRuntimeClassName([NativeTypeName("HSTRING *")] IntPtr* className)
         {
             return ((delegate* unmanaged<IMapChangedEventArgs<K>*, IntPtr*, int>)(lpVtbl[4]))((IMapChangedEventArgs<K>*)Unsafe.AsPointer(ref this), className);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetTrustLevel([NativeTypeName("TrustLevel *")] TrustLevel* trustLevel)
+        public HRESULT GetTrustLevel([NativeTypeName("TrustLevel *")] TrustLevel* trustLevel)
         {
             return ((delegate* unmanaged<IMapChangedEventArgs<K>*, TrustLevel*, int>)(lpVtbl[5]))((IMapChangedEventArgs<K>*)Unsafe.AsPointer(ref this), trustLevel);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [return: NativeTypeName("HRESULT")]
-        public int get_CollectionChange([NativeTypeName("CollectionChange *")] CollectionChange* value)
+        public HRESULT get_CollectionChange([NativeTypeName("CollectionChange *")] CollectionChange* value)
         {
             return ((delegate* unmanaged<IMapChangedEventArgs<K>*, CollectionChange*, int>)(lpVtbl[6]))((IMapChangedEventArgs<K>*)Unsafe.AsPointer(ref this), value);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [return: NativeTypeName("HRESULT")]
-        public int get_Key([NativeTypeName("K_abi *")] K* value)
+        public HRESULT get_Key([NativeTypeName("K_abi *")] K* value)
         {
             return ((delegate* unmanaged<IMapChangedEventArgs<K>*, K*, int>)(lpVtbl[7]))((IMapChangedEventArgs<K>*)Unsafe.AsPointer(ref this), value);
         }

@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IMFHDCPStatus*, Guid*, void**, int>)(lpVtbl[0]))((IMFHDCPStatus*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,16 +41,14 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int Query(MF_HDCP_STATUS* pStatus, BOOL* pfStatus)
+        public HRESULT Query(MF_HDCP_STATUS* pStatus, BOOL* pfStatus)
         {
             return ((delegate* unmanaged<IMFHDCPStatus*, MF_HDCP_STATUS*, BOOL*, int>)(lpVtbl[3]))((IMFHDCPStatus*)Unsafe.AsPointer(ref this), pStatus, pfStatus);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int Set(MF_HDCP_STATUS status)
+        public HRESULT Set(MF_HDCP_STATUS status)
         {
             return ((delegate* unmanaged<IMFHDCPStatus*, MF_HDCP_STATUS, int>)(lpVtbl[4]))((IMFHDCPStatus*)Unsafe.AsPointer(ref this), status);
         }

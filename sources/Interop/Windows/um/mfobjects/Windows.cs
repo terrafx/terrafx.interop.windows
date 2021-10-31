@@ -14,12 +14,10 @@ namespace TerraFX.Interop
     public static unsafe partial class Windows
     {
         [DllImport("mfplat", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int MFSerializeAttributesToStream(IMFAttributes* pAttr, [NativeTypeName("DWORD")] uint dwOptions, IStream* pStm);
+        public static extern HRESULT MFSerializeAttributesToStream(IMFAttributes* pAttr, [NativeTypeName("DWORD")] uint dwOptions, IStream* pStm);
 
         [DllImport("mfplat", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int MFDeserializeAttributesFromStream(IMFAttributes* pAttr, [NativeTypeName("DWORD")] uint dwOptions, IStream* pStm);
+        public static extern HRESULT MFDeserializeAttributesFromStream(IMFAttributes* pAttr, [NativeTypeName("DWORD")] uint dwOptions, IStream* pStm);
 
         [NativeTypeName("const IID")]
         public static ref readonly Guid MF_BYTESTREAM_ORIGIN_NAME

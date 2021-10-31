@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<INameSpaceTreeAccessible*, Guid*, void**, int>)(lpVtbl[0]))((INameSpaceTreeAccessible*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,24 +41,21 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int OnGetDefaultAccessibilityAction(IShellItem* psi, [NativeTypeName("BSTR *")] ushort** pbstrDefaultAction)
+        public HRESULT OnGetDefaultAccessibilityAction(IShellItem* psi, [NativeTypeName("BSTR *")] ushort** pbstrDefaultAction)
         {
             return ((delegate* unmanaged<INameSpaceTreeAccessible*, IShellItem*, ushort**, int>)(lpVtbl[3]))((INameSpaceTreeAccessible*)Unsafe.AsPointer(ref this), psi, pbstrDefaultAction);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int OnDoDefaultAccessibilityAction(IShellItem* psi)
+        public HRESULT OnDoDefaultAccessibilityAction(IShellItem* psi)
         {
             return ((delegate* unmanaged<INameSpaceTreeAccessible*, IShellItem*, int>)(lpVtbl[4]))((INameSpaceTreeAccessible*)Unsafe.AsPointer(ref this), psi);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int OnGetAccessibilityRole(IShellItem* psi, VARIANT* pvarRole)
+        public HRESULT OnGetAccessibilityRole(IShellItem* psi, VARIANT* pvarRole)
         {
             return ((delegate* unmanaged<INameSpaceTreeAccessible*, IShellItem*, VARIANT*, int>)(lpVtbl[5]))((INameSpaceTreeAccessible*)Unsafe.AsPointer(ref this), psi, pvarRole);
         }

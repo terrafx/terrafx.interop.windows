@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IPartsList*, Guid*, void**, int>)(lpVtbl[0]))((IPartsList*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,16 +41,14 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetCount([NativeTypeName("UINT *")] uint* pCount)
+        public HRESULT GetCount([NativeTypeName("UINT *")] uint* pCount)
         {
             return ((delegate* unmanaged<IPartsList*, uint*, int>)(lpVtbl[3]))((IPartsList*)Unsafe.AsPointer(ref this), pCount);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetPart([NativeTypeName("UINT")] uint nIndex, IPart** ppPart)
+        public HRESULT GetPart([NativeTypeName("UINT")] uint nIndex, IPart** ppPart)
         {
             return ((delegate* unmanaged<IPartsList*, uint, IPart**, int>)(lpVtbl[4]))((IPartsList*)Unsafe.AsPointer(ref this), nIndex, ppPart);
         }

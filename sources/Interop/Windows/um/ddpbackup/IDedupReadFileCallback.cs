@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IDedupReadFileCallback*, Guid*, void**, int>)(lpVtbl[0]))((IDedupReadFileCallback*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,24 +41,21 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int ReadBackupFile([NativeTypeName("BSTR")] ushort* FileFullPath, [NativeTypeName("long long")] long FileOffset, [NativeTypeName("ULONG")] uint SizeToRead, [NativeTypeName("BYTE *")] byte* FileBuffer, [NativeTypeName("ULONG *")] uint* ReturnedSize, [NativeTypeName("DWORD")] uint Flags)
+        public HRESULT ReadBackupFile([NativeTypeName("BSTR")] ushort* FileFullPath, [NativeTypeName("long long")] long FileOffset, [NativeTypeName("ULONG")] uint SizeToRead, [NativeTypeName("BYTE *")] byte* FileBuffer, [NativeTypeName("ULONG *")] uint* ReturnedSize, [NativeTypeName("DWORD")] uint Flags)
         {
             return ((delegate* unmanaged<IDedupReadFileCallback*, ushort*, long, uint, byte*, uint*, uint, int>)(lpVtbl[3]))((IDedupReadFileCallback*)Unsafe.AsPointer(ref this), FileFullPath, FileOffset, SizeToRead, FileBuffer, ReturnedSize, Flags);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int OrderContainersRestore([NativeTypeName("ULONG")] uint NumberOfContainers, [NativeTypeName("BSTR *")] ushort** ContainerPaths, [NativeTypeName("ULONG *")] uint* ReadPlanEntries, DEDUP_CONTAINER_EXTENT** ReadPlan)
+        public HRESULT OrderContainersRestore([NativeTypeName("ULONG")] uint NumberOfContainers, [NativeTypeName("BSTR *")] ushort** ContainerPaths, [NativeTypeName("ULONG *")] uint* ReadPlanEntries, DEDUP_CONTAINER_EXTENT** ReadPlan)
         {
             return ((delegate* unmanaged<IDedupReadFileCallback*, uint, ushort**, uint*, DEDUP_CONTAINER_EXTENT**, int>)(lpVtbl[4]))((IDedupReadFileCallback*)Unsafe.AsPointer(ref this), NumberOfContainers, ContainerPaths, ReadPlanEntries, ReadPlan);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int PreviewContainerRead([NativeTypeName("BSTR")] ushort* FileFullPath, [NativeTypeName("ULONG")] uint NumberOfReads, DDP_FILE_EXTENT* ReadOffsets)
+        public HRESULT PreviewContainerRead([NativeTypeName("BSTR")] ushort* FileFullPath, [NativeTypeName("ULONG")] uint NumberOfReads, DDP_FILE_EXTENT* ReadOffsets)
         {
             return ((delegate* unmanaged<IDedupReadFileCallback*, ushort*, uint, DDP_FILE_EXTENT*, int>)(lpVtbl[5]))((IDedupReadFileCallback*)Unsafe.AsPointer(ref this), FileFullPath, NumberOfReads, ReadOffsets);
         }

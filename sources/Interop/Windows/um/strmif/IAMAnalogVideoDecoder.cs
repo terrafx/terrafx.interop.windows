@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IAMAnalogVideoDecoder*, Guid*, void**, int>)(lpVtbl[0]))((IAMAnalogVideoDecoder*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,72 +41,63 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int get_AvailableTVFormats([NativeTypeName("long *")] int* lAnalogVideoStandard)
+        public HRESULT get_AvailableTVFormats([NativeTypeName("long *")] int* lAnalogVideoStandard)
         {
             return ((delegate* unmanaged<IAMAnalogVideoDecoder*, int*, int>)(lpVtbl[3]))((IAMAnalogVideoDecoder*)Unsafe.AsPointer(ref this), lAnalogVideoStandard);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int put_TVFormat([NativeTypeName("long")] int lAnalogVideoStandard)
+        public HRESULT put_TVFormat([NativeTypeName("long")] int lAnalogVideoStandard)
         {
             return ((delegate* unmanaged<IAMAnalogVideoDecoder*, int, int>)(lpVtbl[4]))((IAMAnalogVideoDecoder*)Unsafe.AsPointer(ref this), lAnalogVideoStandard);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int get_TVFormat([NativeTypeName("long *")] int* plAnalogVideoStandard)
+        public HRESULT get_TVFormat([NativeTypeName("long *")] int* plAnalogVideoStandard)
         {
             return ((delegate* unmanaged<IAMAnalogVideoDecoder*, int*, int>)(lpVtbl[5]))((IAMAnalogVideoDecoder*)Unsafe.AsPointer(ref this), plAnalogVideoStandard);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int get_HorizontalLocked([NativeTypeName("long *")] int* plLocked)
+        public HRESULT get_HorizontalLocked([NativeTypeName("long *")] int* plLocked)
         {
             return ((delegate* unmanaged<IAMAnalogVideoDecoder*, int*, int>)(lpVtbl[6]))((IAMAnalogVideoDecoder*)Unsafe.AsPointer(ref this), plLocked);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        [return: NativeTypeName("HRESULT")]
-        public int put_VCRHorizontalLocking([NativeTypeName("long")] int lVCRHorizontalLocking)
+        public HRESULT put_VCRHorizontalLocking([NativeTypeName("long")] int lVCRHorizontalLocking)
         {
             return ((delegate* unmanaged<IAMAnalogVideoDecoder*, int, int>)(lpVtbl[7]))((IAMAnalogVideoDecoder*)Unsafe.AsPointer(ref this), lVCRHorizontalLocking);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        [return: NativeTypeName("HRESULT")]
-        public int get_VCRHorizontalLocking([NativeTypeName("long *")] int* plVCRHorizontalLocking)
+        public HRESULT get_VCRHorizontalLocking([NativeTypeName("long *")] int* plVCRHorizontalLocking)
         {
             return ((delegate* unmanaged<IAMAnalogVideoDecoder*, int*, int>)(lpVtbl[8]))((IAMAnalogVideoDecoder*)Unsafe.AsPointer(ref this), plVCRHorizontalLocking);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        [return: NativeTypeName("HRESULT")]
-        public int get_NumberOfLines([NativeTypeName("long *")] int* plNumberOfLines)
+        public HRESULT get_NumberOfLines([NativeTypeName("long *")] int* plNumberOfLines)
         {
             return ((delegate* unmanaged<IAMAnalogVideoDecoder*, int*, int>)(lpVtbl[9]))((IAMAnalogVideoDecoder*)Unsafe.AsPointer(ref this), plNumberOfLines);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(10)]
-        [return: NativeTypeName("HRESULT")]
-        public int put_OutputEnable([NativeTypeName("long")] int lOutputEnable)
+        public HRESULT put_OutputEnable([NativeTypeName("long")] int lOutputEnable)
         {
             return ((delegate* unmanaged<IAMAnalogVideoDecoder*, int, int>)(lpVtbl[10]))((IAMAnalogVideoDecoder*)Unsafe.AsPointer(ref this), lOutputEnable);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(11)]
-        [return: NativeTypeName("HRESULT")]
-        public int get_OutputEnable([NativeTypeName("long *")] int* plOutputEnable)
+        public HRESULT get_OutputEnable([NativeTypeName("long *")] int* plOutputEnable)
         {
             return ((delegate* unmanaged<IAMAnalogVideoDecoder*, int*, int>)(lpVtbl[11]))((IAMAnalogVideoDecoder*)Unsafe.AsPointer(ref this), plOutputEnable);
         }

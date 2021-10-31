@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<ID2D1GdiInteropRenderTarget*, Guid*, void**, int>)(lpVtbl[0]))((ID2D1GdiInteropRenderTarget*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,16 +41,14 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetDC(D2D1_DC_INITIALIZE_MODE mode, [NativeTypeName("HDC *")] IntPtr* hdc)
+        public HRESULT GetDC(D2D1_DC_INITIALIZE_MODE mode, [NativeTypeName("HDC *")] IntPtr* hdc)
         {
             return ((delegate* unmanaged<ID2D1GdiInteropRenderTarget*, D2D1_DC_INITIALIZE_MODE, IntPtr*, int>)(lpVtbl[3]))((ID2D1GdiInteropRenderTarget*)Unsafe.AsPointer(ref this), mode, hdc);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int ReleaseDC([NativeTypeName("const RECT *")] RECT* update)
+        public HRESULT ReleaseDC([NativeTypeName("const RECT *")] RECT* update)
         {
             return ((delegate* unmanaged<ID2D1GdiInteropRenderTarget*, RECT*, int>)(lpVtbl[4]))((ID2D1GdiInteropRenderTarget*)Unsafe.AsPointer(ref this), update);
         }

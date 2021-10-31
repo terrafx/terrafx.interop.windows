@@ -7,8 +7,7 @@ namespace TerraFX.Interop
 {
     public partial struct D3D12_DEVICE_REMOVED_EXTENDED_DATA3
     {
-        [NativeTypeName("HRESULT")]
-        public int DeviceRemovedReason;
+        public HRESULT DeviceRemovedReason;
 
         public D3D12_DRED_AUTO_BREADCRUMBS_OUTPUT1 AutoBreadcrumbsOutput;
 

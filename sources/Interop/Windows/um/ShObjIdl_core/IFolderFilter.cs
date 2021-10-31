@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IFolderFilter*, Guid*, void**, int>)(lpVtbl[0]))((IFolderFilter*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,16 +41,14 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int ShouldShow(IShellFolder* psf, [NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidlFolder, [NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidlItem)
+        public HRESULT ShouldShow(IShellFolder* psf, [NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidlFolder, [NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidlItem)
         {
             return ((delegate* unmanaged<IFolderFilter*, IShellFolder*, ITEMIDLIST*, ITEMIDLIST*, int>)(lpVtbl[3]))((IFolderFilter*)Unsafe.AsPointer(ref this), psf, pidlFolder, pidlItem);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetEnumFlags(IShellFolder* psf, [NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidlFolder, [NativeTypeName("HWND *")] IntPtr* phwnd, [NativeTypeName("DWORD *")] uint* pgrfFlags)
+        public HRESULT GetEnumFlags(IShellFolder* psf, [NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidlFolder, [NativeTypeName("HWND *")] IntPtr* phwnd, [NativeTypeName("DWORD *")] uint* pgrfFlags)
         {
             return ((delegate* unmanaged<IFolderFilter*, IShellFolder*, ITEMIDLIST*, IntPtr*, uint*, int>)(lpVtbl[4]))((IFolderFilter*)Unsafe.AsPointer(ref this), psf, pidlFolder, phwnd, pgrfFlags);
         }

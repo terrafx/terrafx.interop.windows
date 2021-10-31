@@ -16,84 +16,64 @@ namespace TerraFX.Interop
         public static extern BOOL PathCchIsRoot([NativeTypeName("PCWSTR")] ushort* pszPath);
 
         [DllImport("kernelbase", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int PathCchAddBackslashEx([NativeTypeName("PWSTR")] ushort* pszPath, [NativeTypeName("size_t")] nuint cchPath, [NativeTypeName("PWSTR *")] ushort** ppszEnd, [NativeTypeName("size_t *")] nuint* pcchRemaining);
+        public static extern HRESULT PathCchAddBackslashEx([NativeTypeName("PWSTR")] ushort* pszPath, [NativeTypeName("size_t")] nuint cchPath, [NativeTypeName("PWSTR *")] ushort** ppszEnd, [NativeTypeName("size_t *")] nuint* pcchRemaining);
 
         [DllImport("kernelbase", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int PathCchAddBackslash([NativeTypeName("PWSTR")] ushort* pszPath, [NativeTypeName("size_t")] nuint cchPath);
+        public static extern HRESULT PathCchAddBackslash([NativeTypeName("PWSTR")] ushort* pszPath, [NativeTypeName("size_t")] nuint cchPath);
 
         [DllImport("kernelbase", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int PathCchRemoveBackslashEx([NativeTypeName("PWSTR")] ushort* pszPath, [NativeTypeName("size_t")] nuint cchPath, [NativeTypeName("PWSTR *")] ushort** ppszEnd, [NativeTypeName("size_t *")] nuint* pcchRemaining);
+        public static extern HRESULT PathCchRemoveBackslashEx([NativeTypeName("PWSTR")] ushort* pszPath, [NativeTypeName("size_t")] nuint cchPath, [NativeTypeName("PWSTR *")] ushort** ppszEnd, [NativeTypeName("size_t *")] nuint* pcchRemaining);
 
         [DllImport("kernelbase", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int PathCchRemoveBackslash([NativeTypeName("PWSTR")] ushort* pszPath, [NativeTypeName("size_t")] nuint cchPath);
+        public static extern HRESULT PathCchRemoveBackslash([NativeTypeName("PWSTR")] ushort* pszPath, [NativeTypeName("size_t")] nuint cchPath);
 
         [DllImport("kernelbase", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int PathCchSkipRoot([NativeTypeName("PCWSTR")] ushort* pszPath, [NativeTypeName("PCWSTR *")] ushort** ppszRootEnd);
+        public static extern HRESULT PathCchSkipRoot([NativeTypeName("PCWSTR")] ushort* pszPath, [NativeTypeName("PCWSTR *")] ushort** ppszRootEnd);
 
         [DllImport("kernelbase", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int PathCchStripToRoot([NativeTypeName("PWSTR")] ushort* pszPath, [NativeTypeName("size_t")] nuint cchPath);
+        public static extern HRESULT PathCchStripToRoot([NativeTypeName("PWSTR")] ushort* pszPath, [NativeTypeName("size_t")] nuint cchPath);
 
         [DllImport("kernelbase", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int PathCchRemoveFileSpec([NativeTypeName("PWSTR")] ushort* pszPath, [NativeTypeName("size_t")] nuint cchPath);
+        public static extern HRESULT PathCchRemoveFileSpec([NativeTypeName("PWSTR")] ushort* pszPath, [NativeTypeName("size_t")] nuint cchPath);
 
         [DllImport("kernelbase", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int PathCchFindExtension([NativeTypeName("PCWSTR")] ushort* pszPath, [NativeTypeName("size_t")] nuint cchPath, [NativeTypeName("PCWSTR *")] ushort** ppszExt);
+        public static extern HRESULT PathCchFindExtension([NativeTypeName("PCWSTR")] ushort* pszPath, [NativeTypeName("size_t")] nuint cchPath, [NativeTypeName("PCWSTR *")] ushort** ppszExt);
 
         [DllImport("kernelbase", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int PathCchAddExtension([NativeTypeName("PWSTR")] ushort* pszPath, [NativeTypeName("size_t")] nuint cchPath, [NativeTypeName("PCWSTR")] ushort* pszExt);
+        public static extern HRESULT PathCchAddExtension([NativeTypeName("PWSTR")] ushort* pszPath, [NativeTypeName("size_t")] nuint cchPath, [NativeTypeName("PCWSTR")] ushort* pszExt);
 
         [DllImport("kernelbase", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int PathCchRenameExtension([NativeTypeName("PWSTR")] ushort* pszPath, [NativeTypeName("size_t")] nuint cchPath, [NativeTypeName("PCWSTR")] ushort* pszExt);
+        public static extern HRESULT PathCchRenameExtension([NativeTypeName("PWSTR")] ushort* pszPath, [NativeTypeName("size_t")] nuint cchPath, [NativeTypeName("PCWSTR")] ushort* pszExt);
 
         [DllImport("kernelbase", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int PathCchRemoveExtension([NativeTypeName("PWSTR")] ushort* pszPath, [NativeTypeName("size_t")] nuint cchPath);
+        public static extern HRESULT PathCchRemoveExtension([NativeTypeName("PWSTR")] ushort* pszPath, [NativeTypeName("size_t")] nuint cchPath);
 
         [DllImport("kernelbase", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int PathCchCanonicalizeEx([NativeTypeName("PWSTR")] ushort* pszPathOut, [NativeTypeName("size_t")] nuint cchPathOut, [NativeTypeName("PCWSTR")] ushort* pszPathIn, [NativeTypeName("ULONG")] uint dwFlags);
+        public static extern HRESULT PathCchCanonicalizeEx([NativeTypeName("PWSTR")] ushort* pszPathOut, [NativeTypeName("size_t")] nuint cchPathOut, [NativeTypeName("PCWSTR")] ushort* pszPathIn, [NativeTypeName("ULONG")] uint dwFlags);
 
         [DllImport("kernelbase", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int PathCchCanonicalize([NativeTypeName("PWSTR")] ushort* pszPathOut, [NativeTypeName("size_t")] nuint cchPathOut, [NativeTypeName("PCWSTR")] ushort* pszPathIn);
+        public static extern HRESULT PathCchCanonicalize([NativeTypeName("PWSTR")] ushort* pszPathOut, [NativeTypeName("size_t")] nuint cchPathOut, [NativeTypeName("PCWSTR")] ushort* pszPathIn);
 
         [DllImport("kernelbase", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int PathCchCombineEx([NativeTypeName("PWSTR")] ushort* pszPathOut, [NativeTypeName("size_t")] nuint cchPathOut, [NativeTypeName("PCWSTR")] ushort* pszPathIn, [NativeTypeName("PCWSTR")] ushort* pszMore, [NativeTypeName("ULONG")] uint dwFlags);
+        public static extern HRESULT PathCchCombineEx([NativeTypeName("PWSTR")] ushort* pszPathOut, [NativeTypeName("size_t")] nuint cchPathOut, [NativeTypeName("PCWSTR")] ushort* pszPathIn, [NativeTypeName("PCWSTR")] ushort* pszMore, [NativeTypeName("ULONG")] uint dwFlags);
 
         [DllImport("kernelbase", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int PathCchCombine([NativeTypeName("PWSTR")] ushort* pszPathOut, [NativeTypeName("size_t")] nuint cchPathOut, [NativeTypeName("PCWSTR")] ushort* pszPathIn, [NativeTypeName("PCWSTR")] ushort* pszMore);
+        public static extern HRESULT PathCchCombine([NativeTypeName("PWSTR")] ushort* pszPathOut, [NativeTypeName("size_t")] nuint cchPathOut, [NativeTypeName("PCWSTR")] ushort* pszPathIn, [NativeTypeName("PCWSTR")] ushort* pszMore);
 
         [DllImport("kernelbase", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int PathCchAppendEx([NativeTypeName("PWSTR")] ushort* pszPath, [NativeTypeName("size_t")] nuint cchPath, [NativeTypeName("PCWSTR")] ushort* pszMore, [NativeTypeName("ULONG")] uint dwFlags);
+        public static extern HRESULT PathCchAppendEx([NativeTypeName("PWSTR")] ushort* pszPath, [NativeTypeName("size_t")] nuint cchPath, [NativeTypeName("PCWSTR")] ushort* pszMore, [NativeTypeName("ULONG")] uint dwFlags);
 
         [DllImport("kernelbase", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int PathCchAppend([NativeTypeName("PWSTR")] ushort* pszPath, [NativeTypeName("size_t")] nuint cchPath, [NativeTypeName("PCWSTR")] ushort* pszMore);
+        public static extern HRESULT PathCchAppend([NativeTypeName("PWSTR")] ushort* pszPath, [NativeTypeName("size_t")] nuint cchPath, [NativeTypeName("PCWSTR")] ushort* pszMore);
 
         [DllImport("kernelbase", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int PathCchStripPrefix([NativeTypeName("PWSTR")] ushort* pszPath, [NativeTypeName("size_t")] nuint cchPath);
+        public static extern HRESULT PathCchStripPrefix([NativeTypeName("PWSTR")] ushort* pszPath, [NativeTypeName("size_t")] nuint cchPath);
 
         [DllImport("kernelbase", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int PathAllocCombine([NativeTypeName("PCWSTR")] ushort* pszPathIn, [NativeTypeName("PCWSTR")] ushort* pszMore, [NativeTypeName("ULONG")] uint dwFlags, [NativeTypeName("PWSTR *")] ushort** ppszPathOut);
+        public static extern HRESULT PathAllocCombine([NativeTypeName("PCWSTR")] ushort* pszPathIn, [NativeTypeName("PCWSTR")] ushort* pszMore, [NativeTypeName("ULONG")] uint dwFlags, [NativeTypeName("PWSTR *")] ushort** ppszPathOut);
 
         [DllImport("kernelbase", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int PathAllocCanonicalize([NativeTypeName("PCWSTR")] ushort* pszPathIn, [NativeTypeName("ULONG")] uint dwFlags, [NativeTypeName("PWSTR *")] ushort** ppszPathOut);
+        public static extern HRESULT PathAllocCanonicalize([NativeTypeName("PCWSTR")] ushort* pszPathIn, [NativeTypeName("ULONG")] uint dwFlags, [NativeTypeName("PWSTR *")] ushort** ppszPathOut);
 
         [NativeTypeName("#define VOLUME_PREFIX L\"\\\\\\\\?\\\\Volume\"")]
         public const string VOLUME_PREFIX = "\\\\?\\Volume";

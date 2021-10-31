@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IApplicationDesignModeSettings2*, Guid*, void**, int>)(lpVtbl[0]))((IApplicationDesignModeSettings2*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,104 +41,91 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetNativeDisplaySize(SIZE nativeDisplaySizePixels)
+        public HRESULT SetNativeDisplaySize(SIZE nativeDisplaySizePixels)
         {
             return ((delegate* unmanaged<IApplicationDesignModeSettings2*, SIZE, int>)(lpVtbl[3]))((IApplicationDesignModeSettings2*)Unsafe.AsPointer(ref this), nativeDisplaySizePixels);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetScaleFactor(DEVICE_SCALE_FACTOR scaleFactor)
+        public HRESULT SetScaleFactor(DEVICE_SCALE_FACTOR scaleFactor)
         {
             return ((delegate* unmanaged<IApplicationDesignModeSettings2*, DEVICE_SCALE_FACTOR, int>)(lpVtbl[4]))((IApplicationDesignModeSettings2*)Unsafe.AsPointer(ref this), scaleFactor);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetApplicationViewState(APPLICATION_VIEW_STATE viewState)
+        public HRESULT SetApplicationViewState(APPLICATION_VIEW_STATE viewState)
         {
             return ((delegate* unmanaged<IApplicationDesignModeSettings2*, APPLICATION_VIEW_STATE, int>)(lpVtbl[5]))((IApplicationDesignModeSettings2*)Unsafe.AsPointer(ref this), viewState);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int ComputeApplicationSize(SIZE* applicationSizePixels)
+        public HRESULT ComputeApplicationSize(SIZE* applicationSizePixels)
         {
             return ((delegate* unmanaged<IApplicationDesignModeSettings2*, SIZE*, int>)(lpVtbl[6]))((IApplicationDesignModeSettings2*)Unsafe.AsPointer(ref this), applicationSizePixels);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        [return: NativeTypeName("HRESULT")]
-        public int IsApplicationViewStateSupported(APPLICATION_VIEW_STATE viewState, SIZE nativeDisplaySizePixels, DEVICE_SCALE_FACTOR scaleFactor, BOOL* supported)
+        public HRESULT IsApplicationViewStateSupported(APPLICATION_VIEW_STATE viewState, SIZE nativeDisplaySizePixels, DEVICE_SCALE_FACTOR scaleFactor, BOOL* supported)
         {
             return ((delegate* unmanaged<IApplicationDesignModeSettings2*, APPLICATION_VIEW_STATE, SIZE, DEVICE_SCALE_FACTOR, BOOL*, int>)(lpVtbl[7]))((IApplicationDesignModeSettings2*)Unsafe.AsPointer(ref this), viewState, nativeDisplaySizePixels, scaleFactor, supported);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        [return: NativeTypeName("HRESULT")]
-        public int TriggerEdgeGesture(EDGE_GESTURE_KIND edgeGestureKind)
+        public HRESULT TriggerEdgeGesture(EDGE_GESTURE_KIND edgeGestureKind)
         {
             return ((delegate* unmanaged<IApplicationDesignModeSettings2*, EDGE_GESTURE_KIND, int>)(lpVtbl[8]))((IApplicationDesignModeSettings2*)Unsafe.AsPointer(ref this), edgeGestureKind);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetNativeDisplayOrientation(NATIVE_DISPLAY_ORIENTATION nativeDisplayOrientation)
+        public HRESULT SetNativeDisplayOrientation(NATIVE_DISPLAY_ORIENTATION nativeDisplayOrientation)
         {
             return ((delegate* unmanaged<IApplicationDesignModeSettings2*, NATIVE_DISPLAY_ORIENTATION, int>)(lpVtbl[9]))((IApplicationDesignModeSettings2*)Unsafe.AsPointer(ref this), nativeDisplayOrientation);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(10)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetApplicationViewOrientation(APPLICATION_VIEW_ORIENTATION viewOrientation)
+        public HRESULT SetApplicationViewOrientation(APPLICATION_VIEW_ORIENTATION viewOrientation)
         {
             return ((delegate* unmanaged<IApplicationDesignModeSettings2*, APPLICATION_VIEW_ORIENTATION, int>)(lpVtbl[10]))((IApplicationDesignModeSettings2*)Unsafe.AsPointer(ref this), viewOrientation);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(11)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetAdjacentDisplayEdges(ADJACENT_DISPLAY_EDGES adjacentDisplayEdges)
+        public HRESULT SetAdjacentDisplayEdges(ADJACENT_DISPLAY_EDGES adjacentDisplayEdges)
         {
             return ((delegate* unmanaged<IApplicationDesignModeSettings2*, ADJACENT_DISPLAY_EDGES, int>)(lpVtbl[11]))((IApplicationDesignModeSettings2*)Unsafe.AsPointer(ref this), adjacentDisplayEdges);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(12)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetIsOnLockScreen(BOOL isOnLockScreen)
+        public HRESULT SetIsOnLockScreen(BOOL isOnLockScreen)
         {
             return ((delegate* unmanaged<IApplicationDesignModeSettings2*, BOOL, int>)(lpVtbl[12]))((IApplicationDesignModeSettings2*)Unsafe.AsPointer(ref this), isOnLockScreen);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(13)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetApplicationViewMinWidth(APPLICATION_VIEW_MIN_WIDTH viewMinWidth)
+        public HRESULT SetApplicationViewMinWidth(APPLICATION_VIEW_MIN_WIDTH viewMinWidth)
         {
             return ((delegate* unmanaged<IApplicationDesignModeSettings2*, APPLICATION_VIEW_MIN_WIDTH, int>)(lpVtbl[13]))((IApplicationDesignModeSettings2*)Unsafe.AsPointer(ref this), viewMinWidth);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(14)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetApplicationSizeBounds(SIZE* minApplicationSizePixels, SIZE* maxApplicationSizePixels)
+        public HRESULT GetApplicationSizeBounds(SIZE* minApplicationSizePixels, SIZE* maxApplicationSizePixels)
         {
             return ((delegate* unmanaged<IApplicationDesignModeSettings2*, SIZE*, SIZE*, int>)(lpVtbl[14]))((IApplicationDesignModeSettings2*)Unsafe.AsPointer(ref this), minApplicationSizePixels, maxApplicationSizePixels);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(15)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetApplicationViewOrientation(SIZE applicationSizePixels, APPLICATION_VIEW_ORIENTATION* viewOrientation)
+        public HRESULT GetApplicationViewOrientation(SIZE applicationSizePixels, APPLICATION_VIEW_ORIENTATION* viewOrientation)
         {
             return ((delegate* unmanaged<IApplicationDesignModeSettings2*, SIZE, APPLICATION_VIEW_ORIENTATION*, int>)(lpVtbl[15]))((IApplicationDesignModeSettings2*)Unsafe.AsPointer(ref this), applicationSizePixels, viewOrientation);
         }

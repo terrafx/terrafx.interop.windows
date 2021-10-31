@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IDCompositionRectangleClip*, Guid*, void**, int>)(lpVtbl[0]))((IDCompositionRectangleClip*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,192 +41,168 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetLeft(float left)
+        public HRESULT SetLeft(float left)
         {
             return ((delegate* unmanaged<IDCompositionRectangleClip*, float, int>)(lpVtbl[4]))((IDCompositionRectangleClip*)Unsafe.AsPointer(ref this), left);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetLeft(IDCompositionAnimation* animation)
+        public HRESULT SetLeft(IDCompositionAnimation* animation)
         {
             return ((delegate* unmanaged<IDCompositionRectangleClip*, IDCompositionAnimation*, int>)(lpVtbl[3]))((IDCompositionRectangleClip*)Unsafe.AsPointer(ref this), animation);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetTop(float top)
+        public HRESULT SetTop(float top)
         {
             return ((delegate* unmanaged<IDCompositionRectangleClip*, float, int>)(lpVtbl[6]))((IDCompositionRectangleClip*)Unsafe.AsPointer(ref this), top);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetTop(IDCompositionAnimation* animation)
+        public HRESULT SetTop(IDCompositionAnimation* animation)
         {
             return ((delegate* unmanaged<IDCompositionRectangleClip*, IDCompositionAnimation*, int>)(lpVtbl[5]))((IDCompositionRectangleClip*)Unsafe.AsPointer(ref this), animation);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetRight(float right)
+        public HRESULT SetRight(float right)
         {
             return ((delegate* unmanaged<IDCompositionRectangleClip*, float, int>)(lpVtbl[8]))((IDCompositionRectangleClip*)Unsafe.AsPointer(ref this), right);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetRight(IDCompositionAnimation* animation)
+        public HRESULT SetRight(IDCompositionAnimation* animation)
         {
             return ((delegate* unmanaged<IDCompositionRectangleClip*, IDCompositionAnimation*, int>)(lpVtbl[7]))((IDCompositionRectangleClip*)Unsafe.AsPointer(ref this), animation);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(10)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetBottom(float bottom)
+        public HRESULT SetBottom(float bottom)
         {
             return ((delegate* unmanaged<IDCompositionRectangleClip*, float, int>)(lpVtbl[10]))((IDCompositionRectangleClip*)Unsafe.AsPointer(ref this), bottom);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetBottom(IDCompositionAnimation* animation)
+        public HRESULT SetBottom(IDCompositionAnimation* animation)
         {
             return ((delegate* unmanaged<IDCompositionRectangleClip*, IDCompositionAnimation*, int>)(lpVtbl[9]))((IDCompositionRectangleClip*)Unsafe.AsPointer(ref this), animation);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(12)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetTopLeftRadiusX(float radius)
+        public HRESULT SetTopLeftRadiusX(float radius)
         {
             return ((delegate* unmanaged<IDCompositionRectangleClip*, float, int>)(lpVtbl[12]))((IDCompositionRectangleClip*)Unsafe.AsPointer(ref this), radius);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(11)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetTopLeftRadiusX(IDCompositionAnimation* animation)
+        public HRESULT SetTopLeftRadiusX(IDCompositionAnimation* animation)
         {
             return ((delegate* unmanaged<IDCompositionRectangleClip*, IDCompositionAnimation*, int>)(lpVtbl[11]))((IDCompositionRectangleClip*)Unsafe.AsPointer(ref this), animation);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(14)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetTopLeftRadiusY(float radius)
+        public HRESULT SetTopLeftRadiusY(float radius)
         {
             return ((delegate* unmanaged<IDCompositionRectangleClip*, float, int>)(lpVtbl[14]))((IDCompositionRectangleClip*)Unsafe.AsPointer(ref this), radius);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(13)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetTopLeftRadiusY(IDCompositionAnimation* animation)
+        public HRESULT SetTopLeftRadiusY(IDCompositionAnimation* animation)
         {
             return ((delegate* unmanaged<IDCompositionRectangleClip*, IDCompositionAnimation*, int>)(lpVtbl[13]))((IDCompositionRectangleClip*)Unsafe.AsPointer(ref this), animation);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(16)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetTopRightRadiusX(float radius)
+        public HRESULT SetTopRightRadiusX(float radius)
         {
             return ((delegate* unmanaged<IDCompositionRectangleClip*, float, int>)(lpVtbl[16]))((IDCompositionRectangleClip*)Unsafe.AsPointer(ref this), radius);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(15)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetTopRightRadiusX(IDCompositionAnimation* animation)
+        public HRESULT SetTopRightRadiusX(IDCompositionAnimation* animation)
         {
             return ((delegate* unmanaged<IDCompositionRectangleClip*, IDCompositionAnimation*, int>)(lpVtbl[15]))((IDCompositionRectangleClip*)Unsafe.AsPointer(ref this), animation);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(18)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetTopRightRadiusY(float radius)
+        public HRESULT SetTopRightRadiusY(float radius)
         {
             return ((delegate* unmanaged<IDCompositionRectangleClip*, float, int>)(lpVtbl[18]))((IDCompositionRectangleClip*)Unsafe.AsPointer(ref this), radius);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(17)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetTopRightRadiusY(IDCompositionAnimation* animation)
+        public HRESULT SetTopRightRadiusY(IDCompositionAnimation* animation)
         {
             return ((delegate* unmanaged<IDCompositionRectangleClip*, IDCompositionAnimation*, int>)(lpVtbl[17]))((IDCompositionRectangleClip*)Unsafe.AsPointer(ref this), animation);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(20)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetBottomLeftRadiusX(float radius)
+        public HRESULT SetBottomLeftRadiusX(float radius)
         {
             return ((delegate* unmanaged<IDCompositionRectangleClip*, float, int>)(lpVtbl[20]))((IDCompositionRectangleClip*)Unsafe.AsPointer(ref this), radius);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(19)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetBottomLeftRadiusX(IDCompositionAnimation* animation)
+        public HRESULT SetBottomLeftRadiusX(IDCompositionAnimation* animation)
         {
             return ((delegate* unmanaged<IDCompositionRectangleClip*, IDCompositionAnimation*, int>)(lpVtbl[19]))((IDCompositionRectangleClip*)Unsafe.AsPointer(ref this), animation);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(22)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetBottomLeftRadiusY(float radius)
+        public HRESULT SetBottomLeftRadiusY(float radius)
         {
             return ((delegate* unmanaged<IDCompositionRectangleClip*, float, int>)(lpVtbl[22]))((IDCompositionRectangleClip*)Unsafe.AsPointer(ref this), radius);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(21)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetBottomLeftRadiusY(IDCompositionAnimation* animation)
+        public HRESULT SetBottomLeftRadiusY(IDCompositionAnimation* animation)
         {
             return ((delegate* unmanaged<IDCompositionRectangleClip*, IDCompositionAnimation*, int>)(lpVtbl[21]))((IDCompositionRectangleClip*)Unsafe.AsPointer(ref this), animation);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(24)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetBottomRightRadiusX(float radius)
+        public HRESULT SetBottomRightRadiusX(float radius)
         {
             return ((delegate* unmanaged<IDCompositionRectangleClip*, float, int>)(lpVtbl[24]))((IDCompositionRectangleClip*)Unsafe.AsPointer(ref this), radius);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(23)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetBottomRightRadiusX(IDCompositionAnimation* animation)
+        public HRESULT SetBottomRightRadiusX(IDCompositionAnimation* animation)
         {
             return ((delegate* unmanaged<IDCompositionRectangleClip*, IDCompositionAnimation*, int>)(lpVtbl[23]))((IDCompositionRectangleClip*)Unsafe.AsPointer(ref this), animation);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(26)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetBottomRightRadiusY(float radius)
+        public HRESULT SetBottomRightRadiusY(float radius)
         {
             return ((delegate* unmanaged<IDCompositionRectangleClip*, float, int>)(lpVtbl[26]))((IDCompositionRectangleClip*)Unsafe.AsPointer(ref this), radius);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(25)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetBottomRightRadiusY(IDCompositionAnimation* animation)
+        public HRESULT SetBottomRightRadiusY(IDCompositionAnimation* animation)
         {
             return ((delegate* unmanaged<IDCompositionRectangleClip*, IDCompositionAnimation*, int>)(lpVtbl[25]))((IDCompositionRectangleClip*)Unsafe.AsPointer(ref this), animation);
         }

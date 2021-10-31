@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IMessageDispatcher*, Guid*, void**, int>)(lpVtbl[0]))((IMessageDispatcher*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,32 +41,28 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetIids([NativeTypeName("ULONG *")] uint* iidCount, [NativeTypeName("IID **")] Guid** iids)
+        public HRESULT GetIids([NativeTypeName("ULONG *")] uint* iidCount, [NativeTypeName("IID **")] Guid** iids)
         {
             return ((delegate* unmanaged<IMessageDispatcher*, uint*, Guid**, int>)(lpVtbl[3]))((IMessageDispatcher*)Unsafe.AsPointer(ref this), iidCount, iids);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetRuntimeClassName([NativeTypeName("HSTRING *")] IntPtr* className)
+        public HRESULT GetRuntimeClassName([NativeTypeName("HSTRING *")] IntPtr* className)
         {
             return ((delegate* unmanaged<IMessageDispatcher*, IntPtr*, int>)(lpVtbl[4]))((IMessageDispatcher*)Unsafe.AsPointer(ref this), className);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetTrustLevel(TrustLevel* trustLevel)
+        public HRESULT GetTrustLevel(TrustLevel* trustLevel)
         {
             return ((delegate* unmanaged<IMessageDispatcher*, TrustLevel*, int>)(lpVtbl[5]))((IMessageDispatcher*)Unsafe.AsPointer(ref this), trustLevel);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int PumpMessages()
+        public HRESULT PumpMessages()
         {
             return ((delegate* unmanaged<IMessageDispatcher*, int>)(lpVtbl[6]))((IMessageDispatcher*)Unsafe.AsPointer(ref this));
         }

@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IScriptEventHandlerSourceInfo*, Guid*, void**, int>)(lpVtbl[0]))((IScriptEventHandlerSourceInfo*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,8 +41,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetSourceInfo([NativeTypeName("BSTR *")] ushort** pbstrFunctionName, [NativeTypeName("UINT32 *")] uint* line, [NativeTypeName("UINT32 *")] uint* column, [NativeTypeName("UINT32 *")] uint* cchLength)
+        public HRESULT GetSourceInfo([NativeTypeName("BSTR *")] ushort** pbstrFunctionName, [NativeTypeName("UINT32 *")] uint* line, [NativeTypeName("UINT32 *")] uint* column, [NativeTypeName("UINT32 *")] uint* cchLength)
         {
             return ((delegate* unmanaged<IScriptEventHandlerSourceInfo*, ushort**, uint*, uint*, uint*, int>)(lpVtbl[3]))((IScriptEventHandlerSourceInfo*)Unsafe.AsPointer(ref this), pbstrFunctionName, line, column, cchLength);
         }

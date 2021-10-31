@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<ISharedBitmap*, Guid*, void**, int>)(lpVtbl[0]))((ISharedBitmap*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,40 +41,35 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetSharedBitmap([NativeTypeName("HBITMAP *")] IntPtr* phbm)
+        public HRESULT GetSharedBitmap([NativeTypeName("HBITMAP *")] IntPtr* phbm)
         {
             return ((delegate* unmanaged<ISharedBitmap*, IntPtr*, int>)(lpVtbl[3]))((ISharedBitmap*)Unsafe.AsPointer(ref this), phbm);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetSize(SIZE* pSize)
+        public HRESULT GetSize(SIZE* pSize)
         {
             return ((delegate* unmanaged<ISharedBitmap*, SIZE*, int>)(lpVtbl[4]))((ISharedBitmap*)Unsafe.AsPointer(ref this), pSize);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetFormat(WTS_ALPHATYPE* pat)
+        public HRESULT GetFormat(WTS_ALPHATYPE* pat)
         {
             return ((delegate* unmanaged<ISharedBitmap*, WTS_ALPHATYPE*, int>)(lpVtbl[5]))((ISharedBitmap*)Unsafe.AsPointer(ref this), pat);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int InitializeBitmap([NativeTypeName("HBITMAP")] IntPtr hbm, WTS_ALPHATYPE wtsAT)
+        public HRESULT InitializeBitmap([NativeTypeName("HBITMAP")] IntPtr hbm, WTS_ALPHATYPE wtsAT)
         {
             return ((delegate* unmanaged<ISharedBitmap*, IntPtr, WTS_ALPHATYPE, int>)(lpVtbl[6]))((ISharedBitmap*)Unsafe.AsPointer(ref this), hbm, wtsAT);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        [return: NativeTypeName("HRESULT")]
-        public int Detach([NativeTypeName("HBITMAP *")] IntPtr* phbm)
+        public HRESULT Detach([NativeTypeName("HBITMAP *")] IntPtr* phbm)
         {
             return ((delegate* unmanaged<ISharedBitmap*, IntPtr*, int>)(lpVtbl[7]))((ISharedBitmap*)Unsafe.AsPointer(ref this), phbm);
         }

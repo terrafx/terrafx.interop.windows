@@ -19,7 +19,6 @@ namespace TerraFX.Interop
         [NativeTypeName("LPWSTR")]
         public ushort* pszDescription;
 
-        [NativeTypeName("HRESULT")]
-        public int hrResultCode;
+        public HRESULT hrResultCode;
     }
 }

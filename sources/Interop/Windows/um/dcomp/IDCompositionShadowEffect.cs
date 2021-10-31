@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IDCompositionShadowEffect*, Guid*, void**, int>)(lpVtbl[0]))((IDCompositionShadowEffect*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,96 +41,84 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetInput([NativeTypeName("UINT")] uint index, IUnknown* input, [NativeTypeName("UINT")] uint flags)
+        public HRESULT SetInput([NativeTypeName("UINT")] uint index, IUnknown* input, [NativeTypeName("UINT")] uint flags)
         {
             return ((delegate* unmanaged<IDCompositionShadowEffect*, uint, IUnknown*, uint, int>)(lpVtbl[3]))((IDCompositionShadowEffect*)Unsafe.AsPointer(ref this), index, input, flags);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetStandardDeviation(float amount)
+        public HRESULT SetStandardDeviation(float amount)
         {
             return ((delegate* unmanaged<IDCompositionShadowEffect*, float, int>)(lpVtbl[5]))((IDCompositionShadowEffect*)Unsafe.AsPointer(ref this), amount);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetStandardDeviation(IDCompositionAnimation* animation)
+        public HRESULT SetStandardDeviation(IDCompositionAnimation* animation)
         {
             return ((delegate* unmanaged<IDCompositionShadowEffect*, IDCompositionAnimation*, int>)(lpVtbl[4]))((IDCompositionShadowEffect*)Unsafe.AsPointer(ref this), animation);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetColor([NativeTypeName("const D2D1_VECTOR_4F &")] D2D_VECTOR_4F* color)
+        public HRESULT SetColor([NativeTypeName("const D2D1_VECTOR_4F &")] D2D_VECTOR_4F* color)
         {
             return ((delegate* unmanaged<IDCompositionShadowEffect*, D2D_VECTOR_4F*, int>)(lpVtbl[6]))((IDCompositionShadowEffect*)Unsafe.AsPointer(ref this), color);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetRed(float amount)
+        public HRESULT SetRed(float amount)
         {
             return ((delegate* unmanaged<IDCompositionShadowEffect*, float, int>)(lpVtbl[8]))((IDCompositionShadowEffect*)Unsafe.AsPointer(ref this), amount);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetRed(IDCompositionAnimation* animation)
+        public HRESULT SetRed(IDCompositionAnimation* animation)
         {
             return ((delegate* unmanaged<IDCompositionShadowEffect*, IDCompositionAnimation*, int>)(lpVtbl[7]))((IDCompositionShadowEffect*)Unsafe.AsPointer(ref this), animation);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(10)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetGreen(float amount)
+        public HRESULT SetGreen(float amount)
         {
             return ((delegate* unmanaged<IDCompositionShadowEffect*, float, int>)(lpVtbl[10]))((IDCompositionShadowEffect*)Unsafe.AsPointer(ref this), amount);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetGreen(IDCompositionAnimation* animation)
+        public HRESULT SetGreen(IDCompositionAnimation* animation)
         {
             return ((delegate* unmanaged<IDCompositionShadowEffect*, IDCompositionAnimation*, int>)(lpVtbl[9]))((IDCompositionShadowEffect*)Unsafe.AsPointer(ref this), animation);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(12)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetBlue(float amount)
+        public HRESULT SetBlue(float amount)
         {
             return ((delegate* unmanaged<IDCompositionShadowEffect*, float, int>)(lpVtbl[12]))((IDCompositionShadowEffect*)Unsafe.AsPointer(ref this), amount);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(11)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetBlue(IDCompositionAnimation* animation)
+        public HRESULT SetBlue(IDCompositionAnimation* animation)
         {
             return ((delegate* unmanaged<IDCompositionShadowEffect*, IDCompositionAnimation*, int>)(lpVtbl[11]))((IDCompositionShadowEffect*)Unsafe.AsPointer(ref this), animation);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(14)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetAlpha(float amount)
+        public HRESULT SetAlpha(float amount)
         {
             return ((delegate* unmanaged<IDCompositionShadowEffect*, float, int>)(lpVtbl[14]))((IDCompositionShadowEffect*)Unsafe.AsPointer(ref this), amount);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(13)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetAlpha(IDCompositionAnimation* animation)
+        public HRESULT SetAlpha(IDCompositionAnimation* animation)
         {
             return ((delegate* unmanaged<IDCompositionShadowEffect*, IDCompositionAnimation*, int>)(lpVtbl[13]))((IDCompositionShadowEffect*)Unsafe.AsPointer(ref this), animation);
         }

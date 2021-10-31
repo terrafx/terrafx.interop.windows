@@ -15,8 +15,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetDesc(D3D12_SHADER_TYPE_DESC* pDesc)
+        public HRESULT GetDesc(D3D12_SHADER_TYPE_DESC* pDesc)
         {
             return ((delegate* unmanaged<ID3D12ShaderReflectionType*, D3D12_SHADER_TYPE_DESC*, int>)(lpVtbl[0]))((ID3D12ShaderReflectionType*)Unsafe.AsPointer(ref this), pDesc);
         }
@@ -45,8 +44,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int IsEqual(ID3D12ShaderReflectionType* pType)
+        public HRESULT IsEqual(ID3D12ShaderReflectionType* pType)
         {
             return ((delegate* unmanaged<ID3D12ShaderReflectionType*, ID3D12ShaderReflectionType*, int>)(lpVtbl[4]))((ID3D12ShaderReflectionType*)Unsafe.AsPointer(ref this), pType);
         }
@@ -82,16 +80,14 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        [return: NativeTypeName("HRESULT")]
-        public int IsOfType(ID3D12ShaderReflectionType* pType)
+        public HRESULT IsOfType(ID3D12ShaderReflectionType* pType)
         {
             return ((delegate* unmanaged<ID3D12ShaderReflectionType*, ID3D12ShaderReflectionType*, int>)(lpVtbl[9]))((ID3D12ShaderReflectionType*)Unsafe.AsPointer(ref this), pType);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(10)]
-        [return: NativeTypeName("HRESULT")]
-        public int ImplementsInterface(ID3D12ShaderReflectionType* pBase)
+        public HRESULT ImplementsInterface(ID3D12ShaderReflectionType* pBase)
         {
             return ((delegate* unmanaged<ID3D12ShaderReflectionType*, ID3D12ShaderReflectionType*, int>)(lpVtbl[10]))((ID3D12ShaderReflectionType*)Unsafe.AsPointer(ref this), pBase);
         }

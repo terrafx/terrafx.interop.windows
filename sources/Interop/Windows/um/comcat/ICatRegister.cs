@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<ICatRegister*, Guid*, void**, int>)(lpVtbl[0]))((ICatRegister*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,48 +41,42 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int RegisterCategories([NativeTypeName("ULONG")] uint cCategories, [NativeTypeName("CATEGORYINFO []")] CATEGORYINFO* rgCategoryInfo)
+        public HRESULT RegisterCategories([NativeTypeName("ULONG")] uint cCategories, [NativeTypeName("CATEGORYINFO []")] CATEGORYINFO* rgCategoryInfo)
         {
             return ((delegate* unmanaged<ICatRegister*, uint, CATEGORYINFO*, int>)(lpVtbl[3]))((ICatRegister*)Unsafe.AsPointer(ref this), cCategories, rgCategoryInfo);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int UnRegisterCategories([NativeTypeName("ULONG")] uint cCategories, [NativeTypeName("CATID []")] Guid* rgcatid)
+        public HRESULT UnRegisterCategories([NativeTypeName("ULONG")] uint cCategories, [NativeTypeName("CATID []")] Guid* rgcatid)
         {
             return ((delegate* unmanaged<ICatRegister*, uint, Guid*, int>)(lpVtbl[4]))((ICatRegister*)Unsafe.AsPointer(ref this), cCategories, rgcatid);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int RegisterClassImplCategories([NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("ULONG")] uint cCategories, [NativeTypeName("CATID []")] Guid* rgcatid)
+        public HRESULT RegisterClassImplCategories([NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("ULONG")] uint cCategories, [NativeTypeName("CATID []")] Guid* rgcatid)
         {
             return ((delegate* unmanaged<ICatRegister*, Guid*, uint, Guid*, int>)(lpVtbl[5]))((ICatRegister*)Unsafe.AsPointer(ref this), rclsid, cCategories, rgcatid);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int UnRegisterClassImplCategories([NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("ULONG")] uint cCategories, [NativeTypeName("CATID []")] Guid* rgcatid)
+        public HRESULT UnRegisterClassImplCategories([NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("ULONG")] uint cCategories, [NativeTypeName("CATID []")] Guid* rgcatid)
         {
             return ((delegate* unmanaged<ICatRegister*, Guid*, uint, Guid*, int>)(lpVtbl[6]))((ICatRegister*)Unsafe.AsPointer(ref this), rclsid, cCategories, rgcatid);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        [return: NativeTypeName("HRESULT")]
-        public int RegisterClassReqCategories([NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("ULONG")] uint cCategories, [NativeTypeName("CATID []")] Guid* rgcatid)
+        public HRESULT RegisterClassReqCategories([NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("ULONG")] uint cCategories, [NativeTypeName("CATID []")] Guid* rgcatid)
         {
             return ((delegate* unmanaged<ICatRegister*, Guid*, uint, Guid*, int>)(lpVtbl[7]))((ICatRegister*)Unsafe.AsPointer(ref this), rclsid, cCategories, rgcatid);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        [return: NativeTypeName("HRESULT")]
-        public int UnRegisterClassReqCategories([NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("ULONG")] uint cCategories, [NativeTypeName("CATID []")] Guid* rgcatid)
+        public HRESULT UnRegisterClassReqCategories([NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("ULONG")] uint cCategories, [NativeTypeName("CATID []")] Guid* rgcatid)
         {
             return ((delegate* unmanaged<ICatRegister*, Guid*, uint, Guid*, int>)(lpVtbl[8]))((ICatRegister*)Unsafe.AsPointer(ref this), rclsid, cCategories, rgcatid);
         }

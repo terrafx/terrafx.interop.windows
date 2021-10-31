@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<ITfReverseConversionList*, Guid*, void**, int>)(lpVtbl[0]))((ITfReverseConversionList*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,16 +41,14 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetLength([NativeTypeName("UINT *")] uint* puIndex)
+        public HRESULT GetLength([NativeTypeName("UINT *")] uint* puIndex)
         {
             return ((delegate* unmanaged<ITfReverseConversionList*, uint*, int>)(lpVtbl[3]))((ITfReverseConversionList*)Unsafe.AsPointer(ref this), puIndex);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetString([NativeTypeName("UINT")] uint uIndex, [NativeTypeName("BSTR *")] ushort** pbstr)
+        public HRESULT GetString([NativeTypeName("UINT")] uint uIndex, [NativeTypeName("BSTR *")] ushort** pbstr)
         {
             return ((delegate* unmanaged<ITfReverseConversionList*, uint, ushort**, int>)(lpVtbl[4]))((ITfReverseConversionList*)Unsafe.AsPointer(ref this), uIndex, pbstr);
         }

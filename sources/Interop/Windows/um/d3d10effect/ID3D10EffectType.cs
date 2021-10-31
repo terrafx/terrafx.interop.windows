@@ -20,8 +20,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(1)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetDesc(D3D10_EFFECT_TYPE_DESC* pDesc)
+        public HRESULT GetDesc(D3D10_EFFECT_TYPE_DESC* pDesc)
         {
             return ((delegate* unmanaged<ID3D10EffectType*, D3D10_EFFECT_TYPE_DESC*, int>)(lpVtbl[1]))((ID3D10EffectType*)Unsafe.AsPointer(ref this), pDesc);
         }

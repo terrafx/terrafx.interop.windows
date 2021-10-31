@@ -12,8 +12,7 @@ namespace TerraFX.Interop
 {
     public static unsafe partial class Windows
     {
-        [return: NativeTypeName("HRESULT")]
-        public static int SHResolveFolderPathInLibrary(IShellLibrary* plib, [NativeTypeName("PCWSTR")] ushort* pszFolderPath, [NativeTypeName("DWORD")] uint dwTimeout, [NativeTypeName("PWSTR *")] ushort** ppszResolvedPath)
+        public static HRESULT SHResolveFolderPathInLibrary(IShellLibrary* plib, [NativeTypeName("PCWSTR")] ushort* pszFolderPath, [NativeTypeName("DWORD")] uint dwTimeout, [NativeTypeName("PWSTR *")] ushort** ppszResolvedPath)
         {
             *ppszResolvedPath = null;
             ITEMIDLIST* pidlFolder = SHSimpleIDListFromPath(pszFolderPath);

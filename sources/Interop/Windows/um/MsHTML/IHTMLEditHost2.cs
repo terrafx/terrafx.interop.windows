@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IHTMLEditHost2*, Guid*, void**, int>)(lpVtbl[0]))((IHTMLEditHost2*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,16 +41,14 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int SnapRect(IHTMLElement* pIElement, RECT* prcNew, ELEMENT_CORNER eHandle)
+        public HRESULT SnapRect(IHTMLElement* pIElement, RECT* prcNew, ELEMENT_CORNER eHandle)
         {
             return ((delegate* unmanaged<IHTMLEditHost2*, IHTMLElement*, RECT*, ELEMENT_CORNER, int>)(lpVtbl[3]))((IHTMLEditHost2*)Unsafe.AsPointer(ref this), pIElement, prcNew, eHandle);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int PreDrag()
+        public HRESULT PreDrag()
         {
             return ((delegate* unmanaged<IHTMLEditHost2*, int>)(lpVtbl[4]))((IHTMLEditHost2*)Unsafe.AsPointer(ref this));
         }

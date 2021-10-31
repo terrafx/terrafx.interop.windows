@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IMFMediaEngineNotify*, Guid*, void**, int>)(lpVtbl[0]))((IMFMediaEngineNotify*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,8 +41,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int EventNotify([NativeTypeName("DWORD")] uint @event, [NativeTypeName("DWORD_PTR")] nuint param1, [NativeTypeName("DWORD")] uint param2)
+        public HRESULT EventNotify([NativeTypeName("DWORD")] uint @event, [NativeTypeName("DWORD_PTR")] nuint param1, [NativeTypeName("DWORD")] uint param2)
         {
             return ((delegate* unmanaged<IMFMediaEngineNotify*, uint, nuint, uint, int>)(lpVtbl[3]))((IMFMediaEngineNotify*)Unsafe.AsPointer(ref this), @event, param1, param2);
         }

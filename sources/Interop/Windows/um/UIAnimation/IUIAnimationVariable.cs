@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IUIAnimationVariable*, Guid*, void**, int>)(lpVtbl[0]))((IUIAnimationVariable*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,112 +41,98 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetValue([NativeTypeName("DOUBLE *")] double* value)
+        public HRESULT GetValue([NativeTypeName("DOUBLE *")] double* value)
         {
             return ((delegate* unmanaged<IUIAnimationVariable*, double*, int>)(lpVtbl[3]))((IUIAnimationVariable*)Unsafe.AsPointer(ref this), value);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetFinalValue([NativeTypeName("DOUBLE *")] double* finalValue)
+        public HRESULT GetFinalValue([NativeTypeName("DOUBLE *")] double* finalValue)
         {
             return ((delegate* unmanaged<IUIAnimationVariable*, double*, int>)(lpVtbl[4]))((IUIAnimationVariable*)Unsafe.AsPointer(ref this), finalValue);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetPreviousValue([NativeTypeName("DOUBLE *")] double* previousValue)
+        public HRESULT GetPreviousValue([NativeTypeName("DOUBLE *")] double* previousValue)
         {
             return ((delegate* unmanaged<IUIAnimationVariable*, double*, int>)(lpVtbl[5]))((IUIAnimationVariable*)Unsafe.AsPointer(ref this), previousValue);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetIntegerValue([NativeTypeName("INT32 *")] int* value)
+        public HRESULT GetIntegerValue([NativeTypeName("INT32 *")] int* value)
         {
             return ((delegate* unmanaged<IUIAnimationVariable*, int*, int>)(lpVtbl[6]))((IUIAnimationVariable*)Unsafe.AsPointer(ref this), value);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetFinalIntegerValue([NativeTypeName("INT32 *")] int* finalValue)
+        public HRESULT GetFinalIntegerValue([NativeTypeName("INT32 *")] int* finalValue)
         {
             return ((delegate* unmanaged<IUIAnimationVariable*, int*, int>)(lpVtbl[7]))((IUIAnimationVariable*)Unsafe.AsPointer(ref this), finalValue);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetPreviousIntegerValue([NativeTypeName("INT32 *")] int* previousValue)
+        public HRESULT GetPreviousIntegerValue([NativeTypeName("INT32 *")] int* previousValue)
         {
             return ((delegate* unmanaged<IUIAnimationVariable*, int*, int>)(lpVtbl[8]))((IUIAnimationVariable*)Unsafe.AsPointer(ref this), previousValue);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetCurrentStoryboard(IUIAnimationStoryboard** storyboard)
+        public HRESULT GetCurrentStoryboard(IUIAnimationStoryboard** storyboard)
         {
             return ((delegate* unmanaged<IUIAnimationVariable*, IUIAnimationStoryboard**, int>)(lpVtbl[9]))((IUIAnimationVariable*)Unsafe.AsPointer(ref this), storyboard);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(10)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetLowerBound([NativeTypeName("DOUBLE")] double bound)
+        public HRESULT SetLowerBound([NativeTypeName("DOUBLE")] double bound)
         {
             return ((delegate* unmanaged<IUIAnimationVariable*, double, int>)(lpVtbl[10]))((IUIAnimationVariable*)Unsafe.AsPointer(ref this), bound);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(11)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetUpperBound([NativeTypeName("DOUBLE")] double bound)
+        public HRESULT SetUpperBound([NativeTypeName("DOUBLE")] double bound)
         {
             return ((delegate* unmanaged<IUIAnimationVariable*, double, int>)(lpVtbl[11]))((IUIAnimationVariable*)Unsafe.AsPointer(ref this), bound);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(12)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetRoundingMode(UI_ANIMATION_ROUNDING_MODE mode)
+        public HRESULT SetRoundingMode(UI_ANIMATION_ROUNDING_MODE mode)
         {
             return ((delegate* unmanaged<IUIAnimationVariable*, UI_ANIMATION_ROUNDING_MODE, int>)(lpVtbl[12]))((IUIAnimationVariable*)Unsafe.AsPointer(ref this), mode);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(13)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetTag(IUnknown* @object, [NativeTypeName("UINT32")] uint id)
+        public HRESULT SetTag(IUnknown* @object, [NativeTypeName("UINT32")] uint id)
         {
             return ((delegate* unmanaged<IUIAnimationVariable*, IUnknown*, uint, int>)(lpVtbl[13]))((IUIAnimationVariable*)Unsafe.AsPointer(ref this), @object, id);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(14)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetTag(IUnknown** @object, [NativeTypeName("UINT32 *")] uint* id)
+        public HRESULT GetTag(IUnknown** @object, [NativeTypeName("UINT32 *")] uint* id)
         {
             return ((delegate* unmanaged<IUIAnimationVariable*, IUnknown**, uint*, int>)(lpVtbl[14]))((IUIAnimationVariable*)Unsafe.AsPointer(ref this), @object, id);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(15)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetVariableChangeHandler(IUIAnimationVariableChangeHandler* handler)
+        public HRESULT SetVariableChangeHandler(IUIAnimationVariableChangeHandler* handler)
         {
             return ((delegate* unmanaged<IUIAnimationVariable*, IUIAnimationVariableChangeHandler*, int>)(lpVtbl[15]))((IUIAnimationVariable*)Unsafe.AsPointer(ref this), handler);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(16)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetVariableIntegerChangeHandler(IUIAnimationVariableIntegerChangeHandler* handler)
+        public HRESULT SetVariableIntegerChangeHandler(IUIAnimationVariableIntegerChangeHandler* handler)
         {
             return ((delegate* unmanaged<IUIAnimationVariable*, IUIAnimationVariableIntegerChangeHandler*, int>)(lpVtbl[16]))((IUIAnimationVariable*)Unsafe.AsPointer(ref this), handler);
         }

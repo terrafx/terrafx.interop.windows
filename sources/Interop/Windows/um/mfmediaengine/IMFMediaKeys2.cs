@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IMFMediaKeys2*, Guid*, void**, int>)(lpVtbl[0]))((IMFMediaKeys2*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,58 +41,51 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int CreateSession([NativeTypeName("BSTR")] ushort* mimeType, [NativeTypeName("const BYTE *")] byte* initData, [NativeTypeName("DWORD")] uint cb, [NativeTypeName("const BYTE *")] byte* customData, [NativeTypeName("DWORD")] uint cbCustomData, IMFMediaKeySessionNotify* notify, IMFMediaKeySession** ppSession)
+        public HRESULT CreateSession([NativeTypeName("BSTR")] ushort* mimeType, [NativeTypeName("const BYTE *")] byte* initData, [NativeTypeName("DWORD")] uint cb, [NativeTypeName("const BYTE *")] byte* customData, [NativeTypeName("DWORD")] uint cbCustomData, IMFMediaKeySessionNotify* notify, IMFMediaKeySession** ppSession)
         {
             return ((delegate* unmanaged<IMFMediaKeys2*, ushort*, byte*, uint, byte*, uint, IMFMediaKeySessionNotify*, IMFMediaKeySession**, int>)(lpVtbl[3]))((IMFMediaKeys2*)Unsafe.AsPointer(ref this), mimeType, initData, cb, customData, cbCustomData, notify, ppSession);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int get_KeySystem([NativeTypeName("BSTR *")] ushort** keySystem)
+        public HRESULT get_KeySystem([NativeTypeName("BSTR *")] ushort** keySystem)
         {
             return ((delegate* unmanaged<IMFMediaKeys2*, ushort**, int>)(lpVtbl[4]))((IMFMediaKeys2*)Unsafe.AsPointer(ref this), keySystem);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int Shutdown()
+        public HRESULT Shutdown()
         {
             return ((delegate* unmanaged<IMFMediaKeys2*, int>)(lpVtbl[5]))((IMFMediaKeys2*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetSuspendNotify(IMFCdmSuspendNotify** notify)
+        public HRESULT GetSuspendNotify(IMFCdmSuspendNotify** notify)
         {
             return ((delegate* unmanaged<IMFMediaKeys2*, IMFCdmSuspendNotify**, int>)(lpVtbl[6]))((IMFMediaKeys2*)Unsafe.AsPointer(ref this), notify);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        [return: NativeTypeName("HRESULT")]
-        public int CreateSession2(MF_MEDIAKEYSESSION_TYPE eSessionType, IMFMediaKeySessionNotify2* pMFMediaKeySessionNotify2, IMFMediaKeySession2** ppSession)
+        public HRESULT CreateSession2(MF_MEDIAKEYSESSION_TYPE eSessionType, IMFMediaKeySessionNotify2* pMFMediaKeySessionNotify2, IMFMediaKeySession2** ppSession)
         {
             return ((delegate* unmanaged<IMFMediaKeys2*, MF_MEDIAKEYSESSION_TYPE, IMFMediaKeySessionNotify2*, IMFMediaKeySession2**, int>)(lpVtbl[7]))((IMFMediaKeys2*)Unsafe.AsPointer(ref this), eSessionType, pMFMediaKeySessionNotify2, ppSession);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetServerCertificate([NativeTypeName("const BYTE *")] byte* pbServerCertificate, [NativeTypeName("DWORD")] uint cb)
+        public HRESULT SetServerCertificate([NativeTypeName("const BYTE *")] byte* pbServerCertificate, [NativeTypeName("DWORD")] uint cb)
         {
             return ((delegate* unmanaged<IMFMediaKeys2*, byte*, uint, int>)(lpVtbl[8]))((IMFMediaKeys2*)Unsafe.AsPointer(ref this), pbServerCertificate, cb);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetDOMException([NativeTypeName("HRESULT")] int systemCode, [NativeTypeName("HRESULT *")] int* code)
+        public HRESULT GetDOMException(HRESULT systemCode, HRESULT* code)
         {
-            return ((delegate* unmanaged<IMFMediaKeys2*, int, int*, int>)(lpVtbl[9]))((IMFMediaKeys2*)Unsafe.AsPointer(ref this), systemCode, code);
+            return ((delegate* unmanaged<IMFMediaKeys2*, HRESULT, HRESULT*, int>)(lpVtbl[9]))((IMFMediaKeys2*)Unsafe.AsPointer(ref this), systemCode, code);
         }
     }
 }

@@ -29,8 +29,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(2)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetDesc(D3D10_EFFECT_VARIABLE_DESC* pDesc)
+        public HRESULT GetDesc(D3D10_EFFECT_VARIABLE_DESC* pDesc)
         {
             return ((delegate* unmanaged<ID3D10EffectRenderTargetViewVariable*, D3D10_EFFECT_VARIABLE_DESC*, int>)(lpVtbl[2]))((ID3D10EffectRenderTargetViewVariable*)Unsafe.AsPointer(ref this), pDesc);
         }
@@ -177,48 +176,42 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(23)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetRawValue(void* pData, [NativeTypeName("UINT")] uint Offset, [NativeTypeName("UINT")] uint ByteCount)
+        public HRESULT SetRawValue(void* pData, [NativeTypeName("UINT")] uint Offset, [NativeTypeName("UINT")] uint ByteCount)
         {
             return ((delegate* unmanaged<ID3D10EffectRenderTargetViewVariable*, void*, uint, uint, int>)(lpVtbl[23]))((ID3D10EffectRenderTargetViewVariable*)Unsafe.AsPointer(ref this), pData, Offset, ByteCount);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(24)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetRawValue(void* pData, [NativeTypeName("UINT")] uint Offset, [NativeTypeName("UINT")] uint ByteCount)
+        public HRESULT GetRawValue(void* pData, [NativeTypeName("UINT")] uint Offset, [NativeTypeName("UINT")] uint ByteCount)
         {
             return ((delegate* unmanaged<ID3D10EffectRenderTargetViewVariable*, void*, uint, uint, int>)(lpVtbl[24]))((ID3D10EffectRenderTargetViewVariable*)Unsafe.AsPointer(ref this), pData, Offset, ByteCount);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(25)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetRenderTarget(ID3D10RenderTargetView* pResource)
+        public HRESULT SetRenderTarget(ID3D10RenderTargetView* pResource)
         {
             return ((delegate* unmanaged<ID3D10EffectRenderTargetViewVariable*, ID3D10RenderTargetView*, int>)(lpVtbl[25]))((ID3D10EffectRenderTargetViewVariable*)Unsafe.AsPointer(ref this), pResource);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(26)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetRenderTarget(ID3D10RenderTargetView** ppResource)
+        public HRESULT GetRenderTarget(ID3D10RenderTargetView** ppResource)
         {
             return ((delegate* unmanaged<ID3D10EffectRenderTargetViewVariable*, ID3D10RenderTargetView**, int>)(lpVtbl[26]))((ID3D10EffectRenderTargetViewVariable*)Unsafe.AsPointer(ref this), ppResource);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(27)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetRenderTargetArray(ID3D10RenderTargetView** ppResources, [NativeTypeName("UINT")] uint Offset, [NativeTypeName("UINT")] uint Count)
+        public HRESULT SetRenderTargetArray(ID3D10RenderTargetView** ppResources, [NativeTypeName("UINT")] uint Offset, [NativeTypeName("UINT")] uint Count)
         {
             return ((delegate* unmanaged<ID3D10EffectRenderTargetViewVariable*, ID3D10RenderTargetView**, uint, uint, int>)(lpVtbl[27]))((ID3D10EffectRenderTargetViewVariable*)Unsafe.AsPointer(ref this), ppResources, Offset, Count);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(28)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetRenderTargetArray(ID3D10RenderTargetView** ppResources, [NativeTypeName("UINT")] uint Offset, [NativeTypeName("UINT")] uint Count)
+        public HRESULT GetRenderTargetArray(ID3D10RenderTargetView** ppResources, [NativeTypeName("UINT")] uint Offset, [NativeTypeName("UINT")] uint Count)
         {
             return ((delegate* unmanaged<ID3D10EffectRenderTargetViewVariable*, ID3D10RenderTargetView**, uint, uint, int>)(lpVtbl[28]))((ID3D10EffectRenderTargetViewVariable*)Unsafe.AsPointer(ref this), ppResources, Offset, Count);
         }

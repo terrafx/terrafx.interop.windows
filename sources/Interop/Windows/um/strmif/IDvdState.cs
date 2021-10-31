@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IDvdState*, Guid*, void**, int>)(lpVtbl[0]))((IDvdState*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,16 +41,14 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetDiscID([NativeTypeName("ULONGLONG *")] ulong* pullUniqueID)
+        public HRESULT GetDiscID([NativeTypeName("ULONGLONG *")] ulong* pullUniqueID)
         {
             return ((delegate* unmanaged<IDvdState*, ulong*, int>)(lpVtbl[3]))((IDvdState*)Unsafe.AsPointer(ref this), pullUniqueID);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetParentalLevel([NativeTypeName("ULONG *")] uint* pulParentalLevel)
+        public HRESULT GetParentalLevel([NativeTypeName("ULONG *")] uint* pulParentalLevel)
         {
             return ((delegate* unmanaged<IDvdState*, uint*, int>)(lpVtbl[4]))((IDvdState*)Unsafe.AsPointer(ref this), pulParentalLevel);
         }

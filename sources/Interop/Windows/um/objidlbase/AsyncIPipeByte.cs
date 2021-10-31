@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<AsyncIPipeByte*, Guid*, void**, int>)(lpVtbl[0]))((AsyncIPipeByte*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,32 +41,28 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int Begin_Pull([NativeTypeName("ULONG")] uint cRequest)
+        public HRESULT Begin_Pull([NativeTypeName("ULONG")] uint cRequest)
         {
             return ((delegate* unmanaged<AsyncIPipeByte*, uint, int>)(lpVtbl[3]))((AsyncIPipeByte*)Unsafe.AsPointer(ref this), cRequest);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int Finish_Pull([NativeTypeName("BYTE *")] byte* buf, [NativeTypeName("ULONG *")] uint* pcReturned)
+        public HRESULT Finish_Pull([NativeTypeName("BYTE *")] byte* buf, [NativeTypeName("ULONG *")] uint* pcReturned)
         {
             return ((delegate* unmanaged<AsyncIPipeByte*, byte*, uint*, int>)(lpVtbl[4]))((AsyncIPipeByte*)Unsafe.AsPointer(ref this), buf, pcReturned);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int Begin_Push([NativeTypeName("BYTE *")] byte* buf, [NativeTypeName("ULONG")] uint cSent)
+        public HRESULT Begin_Push([NativeTypeName("BYTE *")] byte* buf, [NativeTypeName("ULONG")] uint cSent)
         {
             return ((delegate* unmanaged<AsyncIPipeByte*, byte*, uint, int>)(lpVtbl[5]))((AsyncIPipeByte*)Unsafe.AsPointer(ref this), buf, cSent);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int Finish_Push()
+        public HRESULT Finish_Push()
         {
             return ((delegate* unmanaged<AsyncIPipeByte*, int>)(lpVtbl[6]))((AsyncIPipeByte*)Unsafe.AsPointer(ref this));
         }

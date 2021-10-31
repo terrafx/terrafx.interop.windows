@@ -122,36 +122,28 @@ namespace TerraFX.Interop
         public static extern BOOL SHCreateProcessAsUserW([NativeTypeName("PSHCREATEPROCESSINFOW")] void* pscpi);
 
         [DllImport("shell32", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int SHEvaluateSystemCommandTemplate([NativeTypeName("PCWSTR")] ushort* pszCmdTemplate, [NativeTypeName("PWSTR *")] ushort** ppszApplication, [NativeTypeName("PWSTR *")] ushort** ppszCommandLine, [NativeTypeName("PWSTR *")] ushort** ppszParameters);
+        public static extern HRESULT SHEvaluateSystemCommandTemplate([NativeTypeName("PCWSTR")] ushort* pszCmdTemplate, [NativeTypeName("PWSTR *")] ushort** ppszApplication, [NativeTypeName("PWSTR *")] ushort** ppszCommandLine, [NativeTypeName("PWSTR *")] ushort** ppszParameters);
 
         [DllImport("shell32", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int AssocCreateForClasses([NativeTypeName("const ASSOCIATIONELEMENT *")] void* rgClasses, [NativeTypeName("ULONG")] uint cClasses, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
+        public static extern HRESULT AssocCreateForClasses([NativeTypeName("const ASSOCIATIONELEMENT *")] void* rgClasses, [NativeTypeName("ULONG")] uint cClasses, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
 
         [DllImport("shell32", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int SHQueryRecycleBinA([NativeTypeName("LPCSTR")] sbyte* pszRootPath, [NativeTypeName("LPSHQUERYRBINFO")] void* pSHQueryRBInfo);
+        public static extern HRESULT SHQueryRecycleBinA([NativeTypeName("LPCSTR")] sbyte* pszRootPath, [NativeTypeName("LPSHQUERYRBINFO")] void* pSHQueryRBInfo);
 
         [DllImport("shell32", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int SHQueryRecycleBinW([NativeTypeName("LPCWSTR")] ushort* pszRootPath, [NativeTypeName("LPSHQUERYRBINFO")] void* pSHQueryRBInfo);
+        public static extern HRESULT SHQueryRecycleBinW([NativeTypeName("LPCWSTR")] ushort* pszRootPath, [NativeTypeName("LPSHQUERYRBINFO")] void* pSHQueryRBInfo);
 
         [DllImport("shell32", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int SHEmptyRecycleBinA([NativeTypeName("HWND")] IntPtr hwnd, [NativeTypeName("LPCSTR")] sbyte* pszRootPath, [NativeTypeName("DWORD")] uint dwFlags);
+        public static extern HRESULT SHEmptyRecycleBinA([NativeTypeName("HWND")] IntPtr hwnd, [NativeTypeName("LPCSTR")] sbyte* pszRootPath, [NativeTypeName("DWORD")] uint dwFlags);
 
         [DllImport("shell32", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int SHEmptyRecycleBinW([NativeTypeName("HWND")] IntPtr hwnd, [NativeTypeName("LPCWSTR")] ushort* pszRootPath, [NativeTypeName("DWORD")] uint dwFlags);
+        public static extern HRESULT SHEmptyRecycleBinW([NativeTypeName("HWND")] IntPtr hwnd, [NativeTypeName("LPCWSTR")] ushort* pszRootPath, [NativeTypeName("DWORD")] uint dwFlags);
 
         [DllImport("shell32", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int SHQueryUserNotificationState(QUERY_USER_NOTIFICATION_STATE* pquns);
+        public static extern HRESULT SHQueryUserNotificationState(QUERY_USER_NOTIFICATION_STATE* pquns);
 
         [DllImport("shell32", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int SHGetPropertyStoreForWindow([NativeTypeName("HWND")] IntPtr hwnd, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
+        public static extern HRESULT SHGetPropertyStoreForWindow([NativeTypeName("HWND")] IntPtr hwnd, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
 
         [DllImport("shell32", ExactSpelling = true)]
         public static extern BOOL Shell_NotifyIconA([NativeTypeName("DWORD")] uint dwMessage, [NativeTypeName("PNOTIFYICONDATAA")] void* lpData);
@@ -160,8 +152,7 @@ namespace TerraFX.Interop
         public static extern BOOL Shell_NotifyIconW([NativeTypeName("DWORD")] uint dwMessage, [NativeTypeName("PNOTIFYICONDATAW")] void* lpData);
 
         [DllImport("shell32", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int Shell_NotifyIconGetRect([NativeTypeName("const NOTIFYICONIDENTIFIER *")] void* identifier, RECT* iconLocation);
+        public static extern HRESULT Shell_NotifyIconGetRect([NativeTypeName("const NOTIFYICONIDENTIFIER *")] void* identifier, RECT* iconLocation);
 
         [DllImport("shell32", ExactSpelling = true)]
         [return: NativeTypeName("DWORD_PTR")]
@@ -172,8 +163,7 @@ namespace TerraFX.Interop
         public static extern nuint SHGetFileInfoW([NativeTypeName("LPCWSTR")] ushort* pszPath, [NativeTypeName("DWORD")] uint dwFileAttributes, [NativeTypeName("SHFILEINFOW *")] void* psfi, [NativeTypeName("UINT")] uint cbFileInfo, [NativeTypeName("UINT")] uint uFlags);
 
         [DllImport("shell32", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int SHGetStockIconInfo(SHSTOCKICONID siid, [NativeTypeName("UINT")] uint uFlags, [NativeTypeName("SHSTOCKICONINFO *")] void* psii);
+        public static extern HRESULT SHGetStockIconInfo(SHSTOCKICONID siid, [NativeTypeName("UINT")] uint uFlags, [NativeTypeName("SHSTOCKICONINFO *")] void* psii);
 
         [DllImport("shell32", ExactSpelling = true)]
         public static extern BOOL SHGetDiskFreeSpaceExA([NativeTypeName("LPCSTR")] sbyte* pszDirectoryName, ULARGE_INTEGER* pulFreeBytesAvailableToCaller, ULARGE_INTEGER* pulTotalNumberOfBytes, ULARGE_INTEGER* pulTotalNumberOfFreeBytes);
@@ -194,24 +184,19 @@ namespace TerraFX.Interop
         public static extern BOOL SHInvokePrinterCommandW([NativeTypeName("HWND")] IntPtr hwnd, [NativeTypeName("UINT")] uint uAction, [NativeTypeName("LPCWSTR")] ushort* lpBuf1, [NativeTypeName("LPCWSTR")] ushort* lpBuf2, BOOL fModal);
 
         [DllImport("shell32", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int SHLoadNonloadedIconOverlayIdentifiers();
+        public static extern HRESULT SHLoadNonloadedIconOverlayIdentifiers();
 
         [DllImport("shell32", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int SHIsFileAvailableOffline([NativeTypeName("PCWSTR")] ushort* pwszPath, [NativeTypeName("DWORD *")] uint* pdwStatus);
+        public static extern HRESULT SHIsFileAvailableOffline([NativeTypeName("PCWSTR")] ushort* pwszPath, [NativeTypeName("DWORD *")] uint* pdwStatus);
 
         [DllImport("shell32", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int SHSetLocalizedName([NativeTypeName("PCWSTR")] ushort* pszPath, [NativeTypeName("PCWSTR")] ushort* pszResModule, int idsRes);
+        public static extern HRESULT SHSetLocalizedName([NativeTypeName("PCWSTR")] ushort* pszPath, [NativeTypeName("PCWSTR")] ushort* pszResModule, int idsRes);
 
         [DllImport("shell32", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int SHRemoveLocalizedName([NativeTypeName("PCWSTR")] ushort* pszPath);
+        public static extern HRESULT SHRemoveLocalizedName([NativeTypeName("PCWSTR")] ushort* pszPath);
 
         [DllImport("shell32", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int SHGetLocalizedName([NativeTypeName("PCWSTR")] ushort* pszPath, [NativeTypeName("PWSTR")] ushort* pszResModule, [NativeTypeName("UINT")] uint cch, int* pidsRes);
+        public static extern HRESULT SHGetLocalizedName([NativeTypeName("PCWSTR")] ushort* pszPath, [NativeTypeName("PWSTR")] ushort* pszResModule, [NativeTypeName("UINT")] uint cch, int* pidsRes);
 
         [DllImport("shlwapi", ExactSpelling = true, SetLastError = true)]
         public static extern int ShellMessageBoxA([NativeTypeName("HINSTANCE")] IntPtr hAppInst, [NativeTypeName("HWND")] IntPtr hWnd, [NativeTypeName("LPCSTR")] sbyte* lpcText, [NativeTypeName("LPCSTR")] sbyte* lpcTitle, [NativeTypeName("UINT")] uint fuStyle);
@@ -226,30 +211,25 @@ namespace TerraFX.Interop
         public static extern BOOL IsLFNDriveW([NativeTypeName("LPCWSTR")] ushort* pszPath);
 
         [DllImport("shell32", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int SHEnumerateUnreadMailAccountsW([NativeTypeName("HKEY")] IntPtr hKeyUser, [NativeTypeName("DWORD")] uint dwIndex, [NativeTypeName("LPWSTR")] ushort* pszMailAddress, int cchMailAddress);
+        public static extern HRESULT SHEnumerateUnreadMailAccountsW([NativeTypeName("HKEY")] IntPtr hKeyUser, [NativeTypeName("DWORD")] uint dwIndex, [NativeTypeName("LPWSTR")] ushort* pszMailAddress, int cchMailAddress);
 
         [DllImport("shell32", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int SHGetUnreadMailCountW([NativeTypeName("HKEY")] IntPtr hKeyUser, [NativeTypeName("LPCWSTR")] ushort* pszMailAddress, [NativeTypeName("DWORD *")] uint* pdwCount, FILETIME* pFileTime, [NativeTypeName("LPWSTR")] ushort* pszShellExecuteCommand, int cchShellExecuteCommand);
+        public static extern HRESULT SHGetUnreadMailCountW([NativeTypeName("HKEY")] IntPtr hKeyUser, [NativeTypeName("LPCWSTR")] ushort* pszMailAddress, [NativeTypeName("DWORD *")] uint* pdwCount, FILETIME* pFileTime, [NativeTypeName("LPWSTR")] ushort* pszShellExecuteCommand, int cchShellExecuteCommand);
 
         [DllImport("shell32", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int SHSetUnreadMailCountW([NativeTypeName("LPCWSTR")] ushort* pszMailAddress, [NativeTypeName("DWORD")] uint dwCount, [NativeTypeName("LPCWSTR")] ushort* pszShellExecuteCommand);
+        public static extern HRESULT SHSetUnreadMailCountW([NativeTypeName("LPCWSTR")] ushort* pszMailAddress, [NativeTypeName("DWORD")] uint dwCount, [NativeTypeName("LPCWSTR")] ushort* pszShellExecuteCommand);
 
         [DllImport("shell32", ExactSpelling = true)]
         public static extern BOOL SHTestTokenMembership([NativeTypeName("HANDLE")] IntPtr hToken, [NativeTypeName("ULONG")] uint ulRID);
 
         [DllImport("shell32", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int SHGetImageList(int iImageList, [NativeTypeName("const IID &")] Guid* riid, void** ppvObj);
+        public static extern HRESULT SHGetImageList(int iImageList, [NativeTypeName("const IID &")] Guid* riid, void** ppvObj);
 
         [DllImport("shell32", ExactSpelling = true)]
         public static extern BOOL InitNetworkAddressControl();
 
         [DllImport("shell32", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int SHGetDriveMedia([NativeTypeName("PCWSTR")] ushort* pszDrive, [NativeTypeName("DWORD *")] uint* pdwMediaContent);
+        public static extern HRESULT SHGetDriveMedia([NativeTypeName("PCWSTR")] ushort* pszDrive, [NativeTypeName("DWORD *")] uint* pdwMediaContent);
 
         [NativeTypeName("#define DragQueryFile DragQueryFileW")]
         public static delegate*<IntPtr, uint, ushort*, uint, uint> DragQueryFile => &DragQueryFileW;
@@ -534,10 +514,10 @@ namespace TerraFX.Interop
         public const int SHERB_NOSOUND = 0x00000004;
 
         [NativeTypeName("#define SHQueryRecycleBin SHQueryRecycleBinW")]
-        public static delegate*<ushort*, void*, int> SHQueryRecycleBin => &SHQueryRecycleBinW;
+        public static delegate*<ushort*, void*, HRESULT> SHQueryRecycleBin => &SHQueryRecycleBinW;
 
         [NativeTypeName("#define SHEmptyRecycleBin SHEmptyRecycleBinW")]
-        public static delegate*<IntPtr, ushort*, uint, int> SHEmptyRecycleBin => &SHEmptyRecycleBinW;
+        public static delegate*<IntPtr, ushort*, uint, HRESULT> SHEmptyRecycleBin => &SHEmptyRecycleBinW;
 
         [NativeTypeName("#define NIN_SELECT (WM_USER + 0)")]
         public const int NIN_SELECT = (0x0400 + 0);
@@ -804,13 +784,13 @@ namespace TerraFX.Interop
         public static delegate*<ushort*, BOOL> IsLFNDrive => &IsLFNDriveW;
 
         [NativeTypeName("#define SHEnumerateUnreadMailAccounts SHEnumerateUnreadMailAccountsW")]
-        public static delegate*<IntPtr, uint, ushort*, int, int> SHEnumerateUnreadMailAccounts => &SHEnumerateUnreadMailAccountsW;
+        public static delegate*<IntPtr, uint, ushort*, int, HRESULT> SHEnumerateUnreadMailAccounts => &SHEnumerateUnreadMailAccountsW;
 
         [NativeTypeName("#define SHGetUnreadMailCount SHGetUnreadMailCountW")]
-        public static delegate*<IntPtr, ushort*, uint*, FILETIME*, ushort*, int, int> SHGetUnreadMailCount => &SHGetUnreadMailCountW;
+        public static delegate*<IntPtr, ushort*, uint*, FILETIME*, ushort*, int, HRESULT> SHGetUnreadMailCount => &SHGetUnreadMailCountW;
 
         [NativeTypeName("#define SHSetUnreadMailCount SHSetUnreadMailCountW")]
-        public static delegate*<ushort*, uint, ushort*, int> SHSetUnreadMailCount => &SHSetUnreadMailCountW;
+        public static delegate*<ushort*, uint, ushort*, HRESULT> SHSetUnreadMailCount => &SHSetUnreadMailCountW;
 
         [NativeTypeName("#define SHIL_LARGE 0")]
         public const int SHIL_LARGE = 0;

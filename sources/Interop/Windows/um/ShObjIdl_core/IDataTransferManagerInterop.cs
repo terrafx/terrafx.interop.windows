@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IDataTransferManagerInterop*, Guid*, void**, int>)(lpVtbl[0]))((IDataTransferManagerInterop*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,16 +41,14 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetForWindow([NativeTypeName("HWND")] IntPtr appWindow, [NativeTypeName("const IID &")] Guid* riid, void** dataTransferManager)
+        public HRESULT GetForWindow([NativeTypeName("HWND")] IntPtr appWindow, [NativeTypeName("const IID &")] Guid* riid, void** dataTransferManager)
         {
             return ((delegate* unmanaged<IDataTransferManagerInterop*, IntPtr, Guid*, void**, int>)(lpVtbl[3]))((IDataTransferManagerInterop*)Unsafe.AsPointer(ref this), appWindow, riid, dataTransferManager);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int ShowShareUIForWindow([NativeTypeName("HWND")] IntPtr appWindow)
+        public HRESULT ShowShareUIForWindow([NativeTypeName("HWND")] IntPtr appWindow)
         {
             return ((delegate* unmanaged<IDataTransferManagerInterop*, IntPtr, int>)(lpVtbl[4]))((IDataTransferManagerInterop*)Unsafe.AsPointer(ref this), appWindow);
         }

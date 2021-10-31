@@ -23,7 +23,7 @@ namespace TerraFX.Interop
         public int lEvents;
 
         [NativeTypeName("LPFNVIEWCALLBACK")]
-        public delegate* unmanaged<IShellView*, IShellFolder*, IntPtr, uint, nuint, nint, int> pfnCallback;
+        public delegate* unmanaged<IShellView*, IShellFolder*, IntPtr, uint, nuint, nint, HRESULT> pfnCallback;
 
         public FOLDERVIEWMODE fvm;
     }

@@ -31,30 +31,30 @@ namespace TerraFX.Interop
         public delegate* unmanaged<CRYPT_PROVIDER_DATA*, CRYPT_PROVIDER_PRIVDATA*, BOOL> pfnAddPrivData2Chain;
 
         [NativeTypeName("PFN_PROVIDER_INIT_CALL")]
-        public delegate* unmanaged<CRYPT_PROVIDER_DATA*, int> pfnInitialize;
+        public delegate* unmanaged<CRYPT_PROVIDER_DATA*, HRESULT> pfnInitialize;
 
         [NativeTypeName("PFN_PROVIDER_OBJTRUST_CALL")]
-        public delegate* unmanaged<CRYPT_PROVIDER_DATA*, int> pfnObjectTrust;
+        public delegate* unmanaged<CRYPT_PROVIDER_DATA*, HRESULT> pfnObjectTrust;
 
         [NativeTypeName("PFN_PROVIDER_SIGTRUST_CALL")]
-        public delegate* unmanaged<CRYPT_PROVIDER_DATA*, int> pfnSignatureTrust;
+        public delegate* unmanaged<CRYPT_PROVIDER_DATA*, HRESULT> pfnSignatureTrust;
 
         [NativeTypeName("PFN_PROVIDER_CERTTRUST_CALL")]
-        public delegate* unmanaged<CRYPT_PROVIDER_DATA*, int> pfnCertificateTrust;
+        public delegate* unmanaged<CRYPT_PROVIDER_DATA*, HRESULT> pfnCertificateTrust;
 
         [NativeTypeName("PFN_PROVIDER_FINALPOLICY_CALL")]
-        public delegate* unmanaged<CRYPT_PROVIDER_DATA*, int> pfnFinalPolicy;
+        public delegate* unmanaged<CRYPT_PROVIDER_DATA*, HRESULT> pfnFinalPolicy;
 
         [NativeTypeName("PFN_PROVIDER_CERTCHKPOLICY_CALL")]
         public delegate* unmanaged<CRYPT_PROVIDER_DATA*, uint, BOOL, uint, BOOL> pfnCertCheckPolicy;
 
         [NativeTypeName("PFN_PROVIDER_TESTFINALPOLICY_CALL")]
-        public delegate* unmanaged<CRYPT_PROVIDER_DATA*, int> pfnTestFinalPolicy;
+        public delegate* unmanaged<CRYPT_PROVIDER_DATA*, HRESULT> pfnTestFinalPolicy;
 
         [NativeTypeName("struct _CRYPT_PROVUI_FUNCS *")]
         public CRYPT_PROVUI_FUNCS* psUIpfns;
 
         [NativeTypeName("PFN_PROVIDER_CLEANUP_CALL")]
-        public delegate* unmanaged<CRYPT_PROVIDER_DATA*, int> pfnCleanupPolicy;
+        public delegate* unmanaged<CRYPT_PROVIDER_DATA*, HRESULT> pfnCleanupPolicy;
     }
 }

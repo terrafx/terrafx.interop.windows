@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IOleLink*, Guid*, void**, int>)(lpVtbl[0]))((IOleLink*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,88 +41,77 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetUpdateOptions([NativeTypeName("DWORD")] uint dwUpdateOpt)
+        public HRESULT SetUpdateOptions([NativeTypeName("DWORD")] uint dwUpdateOpt)
         {
             return ((delegate* unmanaged<IOleLink*, uint, int>)(lpVtbl[3]))((IOleLink*)Unsafe.AsPointer(ref this), dwUpdateOpt);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetUpdateOptions([NativeTypeName("DWORD *")] uint* pdwUpdateOpt)
+        public HRESULT GetUpdateOptions([NativeTypeName("DWORD *")] uint* pdwUpdateOpt)
         {
             return ((delegate* unmanaged<IOleLink*, uint*, int>)(lpVtbl[4]))((IOleLink*)Unsafe.AsPointer(ref this), pdwUpdateOpt);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetSourceMoniker(IMoniker* pmk, [NativeTypeName("const IID &")] Guid* rclsid)
+        public HRESULT SetSourceMoniker(IMoniker* pmk, [NativeTypeName("const IID &")] Guid* rclsid)
         {
             return ((delegate* unmanaged<IOleLink*, IMoniker*, Guid*, int>)(lpVtbl[5]))((IOleLink*)Unsafe.AsPointer(ref this), pmk, rclsid);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetSourceMoniker(IMoniker** ppmk)
+        public HRESULT GetSourceMoniker(IMoniker** ppmk)
         {
             return ((delegate* unmanaged<IOleLink*, IMoniker**, int>)(lpVtbl[6]))((IOleLink*)Unsafe.AsPointer(ref this), ppmk);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetSourceDisplayName([NativeTypeName("LPCOLESTR")] ushort* pszStatusText)
+        public HRESULT SetSourceDisplayName([NativeTypeName("LPCOLESTR")] ushort* pszStatusText)
         {
             return ((delegate* unmanaged<IOleLink*, ushort*, int>)(lpVtbl[7]))((IOleLink*)Unsafe.AsPointer(ref this), pszStatusText);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetSourceDisplayName([NativeTypeName("LPOLESTR *")] ushort** ppszDisplayName)
+        public HRESULT GetSourceDisplayName([NativeTypeName("LPOLESTR *")] ushort** ppszDisplayName)
         {
             return ((delegate* unmanaged<IOleLink*, ushort**, int>)(lpVtbl[8]))((IOleLink*)Unsafe.AsPointer(ref this), ppszDisplayName);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        [return: NativeTypeName("HRESULT")]
-        public int BindToSource([NativeTypeName("DWORD")] uint bindflags, IBindCtx* pbc)
+        public HRESULT BindToSource([NativeTypeName("DWORD")] uint bindflags, IBindCtx* pbc)
         {
             return ((delegate* unmanaged<IOleLink*, uint, IBindCtx*, int>)(lpVtbl[9]))((IOleLink*)Unsafe.AsPointer(ref this), bindflags, pbc);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(10)]
-        [return: NativeTypeName("HRESULT")]
-        public int BindIfRunning()
+        public HRESULT BindIfRunning()
         {
             return ((delegate* unmanaged<IOleLink*, int>)(lpVtbl[10]))((IOleLink*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(11)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetBoundSource(IUnknown** ppunk)
+        public HRESULT GetBoundSource(IUnknown** ppunk)
         {
             return ((delegate* unmanaged<IOleLink*, IUnknown**, int>)(lpVtbl[11]))((IOleLink*)Unsafe.AsPointer(ref this), ppunk);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(12)]
-        [return: NativeTypeName("HRESULT")]
-        public int UnbindSource()
+        public HRESULT UnbindSource()
         {
             return ((delegate* unmanaged<IOleLink*, int>)(lpVtbl[12]))((IOleLink*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(13)]
-        [return: NativeTypeName("HRESULT")]
-        public int Update(IBindCtx* pbc)
+        public HRESULT Update(IBindCtx* pbc)
         {
             return ((delegate* unmanaged<IOleLink*, IBindCtx*, int>)(lpVtbl[13]))((IOleLink*)Unsafe.AsPointer(ref this), pbc);
         }

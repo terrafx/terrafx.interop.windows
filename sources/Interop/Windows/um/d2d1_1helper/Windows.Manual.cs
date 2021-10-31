@@ -252,8 +252,7 @@ namespace TerraFX.Interop
             return rect;
         }
 
-        [return: NativeTypeName("HRESULT")]
-        public static int SetDpiCompensatedEffectInput([NativeTypeName("ID2D1DeviceContext *")] ID2D1DeviceContext *deviceContext, [NativeTypeName("ID2D1Effect *")] ID2D1Effect *effect, [NativeTypeName("UINT32")] uint inputIndex, [NativeTypeName("ID2D1Bitmap *")] ID2D1Bitmap* inputBitmap, D2D1_INTERPOLATION_MODE interpolationMode = D2D1_INTERPOLATION_MODE_LINEAR, D2D1_BORDER_MODE borderMode = D2D1_BORDER_MODE_HARD)
+        public static HRESULT SetDpiCompensatedEffectInput([NativeTypeName("ID2D1DeviceContext *")] ID2D1DeviceContext *deviceContext, [NativeTypeName("ID2D1Effect *")] ID2D1Effect *effect, [NativeTypeName("UINT32")] uint inputIndex, [NativeTypeName("ID2D1Bitmap *")] ID2D1Bitmap* inputBitmap, D2D1_INTERPOLATION_MODE interpolationMode = D2D1_INTERPOLATION_MODE_LINEAR, D2D1_BORDER_MODE borderMode = D2D1_BORDER_MODE_HARD)
         {
             int hr = S_OK;
             ID2D1Effect *dpiCompensationEffect = null;

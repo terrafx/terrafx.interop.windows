@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IVideoWindow*, Guid*, void**, int>)(lpVtbl[0]))((IVideoWindow*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,344 +41,301 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetTypeInfoCount([NativeTypeName("UINT *")] uint* pctinfo)
+        public HRESULT GetTypeInfoCount([NativeTypeName("UINT *")] uint* pctinfo)
         {
             return ((delegate* unmanaged<IVideoWindow*, uint*, int>)(lpVtbl[3]))((IVideoWindow*)Unsafe.AsPointer(ref this), pctinfo);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetTypeInfo([NativeTypeName("UINT")] uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
+        public HRESULT GetTypeInfo([NativeTypeName("UINT")] uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
         {
             return ((delegate* unmanaged<IVideoWindow*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IVideoWindow*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, [NativeTypeName("UINT")] uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+        public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, [NativeTypeName("UINT")] uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
         {
             return ((delegate* unmanaged<IVideoWindow*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IVideoWindow*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, [NativeTypeName("UINT *")] uint* puArgErr)
+        public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, [NativeTypeName("UINT *")] uint* puArgErr)
         {
             return ((delegate* unmanaged<IVideoWindow*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IVideoWindow*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        [return: NativeTypeName("HRESULT")]
-        public int put_Caption([NativeTypeName("BSTR")] ushort* strCaption)
+        public HRESULT put_Caption([NativeTypeName("BSTR")] ushort* strCaption)
         {
             return ((delegate* unmanaged<IVideoWindow*, ushort*, int>)(lpVtbl[7]))((IVideoWindow*)Unsafe.AsPointer(ref this), strCaption);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        [return: NativeTypeName("HRESULT")]
-        public int get_Caption([NativeTypeName("BSTR *")] ushort** strCaption)
+        public HRESULT get_Caption([NativeTypeName("BSTR *")] ushort** strCaption)
         {
             return ((delegate* unmanaged<IVideoWindow*, ushort**, int>)(lpVtbl[8]))((IVideoWindow*)Unsafe.AsPointer(ref this), strCaption);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        [return: NativeTypeName("HRESULT")]
-        public int put_WindowStyle([NativeTypeName("long")] int WindowStyle)
+        public HRESULT put_WindowStyle([NativeTypeName("long")] int WindowStyle)
         {
             return ((delegate* unmanaged<IVideoWindow*, int, int>)(lpVtbl[9]))((IVideoWindow*)Unsafe.AsPointer(ref this), WindowStyle);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(10)]
-        [return: NativeTypeName("HRESULT")]
-        public int get_WindowStyle([NativeTypeName("long *")] int* WindowStyle)
+        public HRESULT get_WindowStyle([NativeTypeName("long *")] int* WindowStyle)
         {
             return ((delegate* unmanaged<IVideoWindow*, int*, int>)(lpVtbl[10]))((IVideoWindow*)Unsafe.AsPointer(ref this), WindowStyle);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(11)]
-        [return: NativeTypeName("HRESULT")]
-        public int put_WindowStyleEx([NativeTypeName("long")] int WindowStyleEx)
+        public HRESULT put_WindowStyleEx([NativeTypeName("long")] int WindowStyleEx)
         {
             return ((delegate* unmanaged<IVideoWindow*, int, int>)(lpVtbl[11]))((IVideoWindow*)Unsafe.AsPointer(ref this), WindowStyleEx);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(12)]
-        [return: NativeTypeName("HRESULT")]
-        public int get_WindowStyleEx([NativeTypeName("long *")] int* WindowStyleEx)
+        public HRESULT get_WindowStyleEx([NativeTypeName("long *")] int* WindowStyleEx)
         {
             return ((delegate* unmanaged<IVideoWindow*, int*, int>)(lpVtbl[12]))((IVideoWindow*)Unsafe.AsPointer(ref this), WindowStyleEx);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(13)]
-        [return: NativeTypeName("HRESULT")]
-        public int put_AutoShow([NativeTypeName("long")] int AutoShow)
+        public HRESULT put_AutoShow([NativeTypeName("long")] int AutoShow)
         {
             return ((delegate* unmanaged<IVideoWindow*, int, int>)(lpVtbl[13]))((IVideoWindow*)Unsafe.AsPointer(ref this), AutoShow);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(14)]
-        [return: NativeTypeName("HRESULT")]
-        public int get_AutoShow([NativeTypeName("long *")] int* AutoShow)
+        public HRESULT get_AutoShow([NativeTypeName("long *")] int* AutoShow)
         {
             return ((delegate* unmanaged<IVideoWindow*, int*, int>)(lpVtbl[14]))((IVideoWindow*)Unsafe.AsPointer(ref this), AutoShow);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(15)]
-        [return: NativeTypeName("HRESULT")]
-        public int put_WindowState([NativeTypeName("long")] int WindowState)
+        public HRESULT put_WindowState([NativeTypeName("long")] int WindowState)
         {
             return ((delegate* unmanaged<IVideoWindow*, int, int>)(lpVtbl[15]))((IVideoWindow*)Unsafe.AsPointer(ref this), WindowState);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(16)]
-        [return: NativeTypeName("HRESULT")]
-        public int get_WindowState([NativeTypeName("long *")] int* WindowState)
+        public HRESULT get_WindowState([NativeTypeName("long *")] int* WindowState)
         {
             return ((delegate* unmanaged<IVideoWindow*, int*, int>)(lpVtbl[16]))((IVideoWindow*)Unsafe.AsPointer(ref this), WindowState);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(17)]
-        [return: NativeTypeName("HRESULT")]
-        public int put_BackgroundPalette([NativeTypeName("long")] int BackgroundPalette)
+        public HRESULT put_BackgroundPalette([NativeTypeName("long")] int BackgroundPalette)
         {
             return ((delegate* unmanaged<IVideoWindow*, int, int>)(lpVtbl[17]))((IVideoWindow*)Unsafe.AsPointer(ref this), BackgroundPalette);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(18)]
-        [return: NativeTypeName("HRESULT")]
-        public int get_BackgroundPalette([NativeTypeName("long *")] int* pBackgroundPalette)
+        public HRESULT get_BackgroundPalette([NativeTypeName("long *")] int* pBackgroundPalette)
         {
             return ((delegate* unmanaged<IVideoWindow*, int*, int>)(lpVtbl[18]))((IVideoWindow*)Unsafe.AsPointer(ref this), pBackgroundPalette);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(19)]
-        [return: NativeTypeName("HRESULT")]
-        public int put_Visible([NativeTypeName("long")] int Visible)
+        public HRESULT put_Visible([NativeTypeName("long")] int Visible)
         {
             return ((delegate* unmanaged<IVideoWindow*, int, int>)(lpVtbl[19]))((IVideoWindow*)Unsafe.AsPointer(ref this), Visible);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(20)]
-        [return: NativeTypeName("HRESULT")]
-        public int get_Visible([NativeTypeName("long *")] int* pVisible)
+        public HRESULT get_Visible([NativeTypeName("long *")] int* pVisible)
         {
             return ((delegate* unmanaged<IVideoWindow*, int*, int>)(lpVtbl[20]))((IVideoWindow*)Unsafe.AsPointer(ref this), pVisible);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(21)]
-        [return: NativeTypeName("HRESULT")]
-        public int put_Left([NativeTypeName("long")] int Left)
+        public HRESULT put_Left([NativeTypeName("long")] int Left)
         {
             return ((delegate* unmanaged<IVideoWindow*, int, int>)(lpVtbl[21]))((IVideoWindow*)Unsafe.AsPointer(ref this), Left);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(22)]
-        [return: NativeTypeName("HRESULT")]
-        public int get_Left([NativeTypeName("long *")] int* pLeft)
+        public HRESULT get_Left([NativeTypeName("long *")] int* pLeft)
         {
             return ((delegate* unmanaged<IVideoWindow*, int*, int>)(lpVtbl[22]))((IVideoWindow*)Unsafe.AsPointer(ref this), pLeft);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(23)]
-        [return: NativeTypeName("HRESULT")]
-        public int put_Width([NativeTypeName("long")] int Width)
+        public HRESULT put_Width([NativeTypeName("long")] int Width)
         {
             return ((delegate* unmanaged<IVideoWindow*, int, int>)(lpVtbl[23]))((IVideoWindow*)Unsafe.AsPointer(ref this), Width);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(24)]
-        [return: NativeTypeName("HRESULT")]
-        public int get_Width([NativeTypeName("long *")] int* pWidth)
+        public HRESULT get_Width([NativeTypeName("long *")] int* pWidth)
         {
             return ((delegate* unmanaged<IVideoWindow*, int*, int>)(lpVtbl[24]))((IVideoWindow*)Unsafe.AsPointer(ref this), pWidth);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(25)]
-        [return: NativeTypeName("HRESULT")]
-        public int put_Top([NativeTypeName("long")] int Top)
+        public HRESULT put_Top([NativeTypeName("long")] int Top)
         {
             return ((delegate* unmanaged<IVideoWindow*, int, int>)(lpVtbl[25]))((IVideoWindow*)Unsafe.AsPointer(ref this), Top);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(26)]
-        [return: NativeTypeName("HRESULT")]
-        public int get_Top([NativeTypeName("long *")] int* pTop)
+        public HRESULT get_Top([NativeTypeName("long *")] int* pTop)
         {
             return ((delegate* unmanaged<IVideoWindow*, int*, int>)(lpVtbl[26]))((IVideoWindow*)Unsafe.AsPointer(ref this), pTop);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(27)]
-        [return: NativeTypeName("HRESULT")]
-        public int put_Height([NativeTypeName("long")] int Height)
+        public HRESULT put_Height([NativeTypeName("long")] int Height)
         {
             return ((delegate* unmanaged<IVideoWindow*, int, int>)(lpVtbl[27]))((IVideoWindow*)Unsafe.AsPointer(ref this), Height);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(28)]
-        [return: NativeTypeName("HRESULT")]
-        public int get_Height([NativeTypeName("long *")] int* pHeight)
+        public HRESULT get_Height([NativeTypeName("long *")] int* pHeight)
         {
             return ((delegate* unmanaged<IVideoWindow*, int*, int>)(lpVtbl[28]))((IVideoWindow*)Unsafe.AsPointer(ref this), pHeight);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(29)]
-        [return: NativeTypeName("HRESULT")]
-        public int put_Owner([NativeTypeName("OAHWND")] nint Owner)
+        public HRESULT put_Owner([NativeTypeName("OAHWND")] nint Owner)
         {
             return ((delegate* unmanaged<IVideoWindow*, nint, int>)(lpVtbl[29]))((IVideoWindow*)Unsafe.AsPointer(ref this), Owner);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(30)]
-        [return: NativeTypeName("HRESULT")]
-        public int get_Owner([NativeTypeName("OAHWND *")] nint* Owner)
+        public HRESULT get_Owner([NativeTypeName("OAHWND *")] nint* Owner)
         {
             return ((delegate* unmanaged<IVideoWindow*, nint*, int>)(lpVtbl[30]))((IVideoWindow*)Unsafe.AsPointer(ref this), Owner);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(31)]
-        [return: NativeTypeName("HRESULT")]
-        public int put_MessageDrain([NativeTypeName("OAHWND")] nint Drain)
+        public HRESULT put_MessageDrain([NativeTypeName("OAHWND")] nint Drain)
         {
             return ((delegate* unmanaged<IVideoWindow*, nint, int>)(lpVtbl[31]))((IVideoWindow*)Unsafe.AsPointer(ref this), Drain);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(32)]
-        [return: NativeTypeName("HRESULT")]
-        public int get_MessageDrain([NativeTypeName("OAHWND *")] nint* Drain)
+        public HRESULT get_MessageDrain([NativeTypeName("OAHWND *")] nint* Drain)
         {
             return ((delegate* unmanaged<IVideoWindow*, nint*, int>)(lpVtbl[32]))((IVideoWindow*)Unsafe.AsPointer(ref this), Drain);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(33)]
-        [return: NativeTypeName("HRESULT")]
-        public int get_BorderColor([NativeTypeName("long *")] int* Color)
+        public HRESULT get_BorderColor([NativeTypeName("long *")] int* Color)
         {
             return ((delegate* unmanaged<IVideoWindow*, int*, int>)(lpVtbl[33]))((IVideoWindow*)Unsafe.AsPointer(ref this), Color);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(34)]
-        [return: NativeTypeName("HRESULT")]
-        public int put_BorderColor([NativeTypeName("long")] int Color)
+        public HRESULT put_BorderColor([NativeTypeName("long")] int Color)
         {
             return ((delegate* unmanaged<IVideoWindow*, int, int>)(lpVtbl[34]))((IVideoWindow*)Unsafe.AsPointer(ref this), Color);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(35)]
-        [return: NativeTypeName("HRESULT")]
-        public int get_FullScreenMode([NativeTypeName("long *")] int* FullScreenMode)
+        public HRESULT get_FullScreenMode([NativeTypeName("long *")] int* FullScreenMode)
         {
             return ((delegate* unmanaged<IVideoWindow*, int*, int>)(lpVtbl[35]))((IVideoWindow*)Unsafe.AsPointer(ref this), FullScreenMode);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(36)]
-        [return: NativeTypeName("HRESULT")]
-        public int put_FullScreenMode([NativeTypeName("long")] int FullScreenMode)
+        public HRESULT put_FullScreenMode([NativeTypeName("long")] int FullScreenMode)
         {
             return ((delegate* unmanaged<IVideoWindow*, int, int>)(lpVtbl[36]))((IVideoWindow*)Unsafe.AsPointer(ref this), FullScreenMode);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(37)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetWindowForeground([NativeTypeName("long")] int Focus)
+        public HRESULT SetWindowForeground([NativeTypeName("long")] int Focus)
         {
             return ((delegate* unmanaged<IVideoWindow*, int, int>)(lpVtbl[37]))((IVideoWindow*)Unsafe.AsPointer(ref this), Focus);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(38)]
-        [return: NativeTypeName("HRESULT")]
-        public int NotifyOwnerMessage([NativeTypeName("OAHWND")] nint hwnd, [NativeTypeName("long")] int uMsg, [NativeTypeName("LONG_PTR")] nint wParam, [NativeTypeName("LONG_PTR")] nint lParam)
+        public HRESULT NotifyOwnerMessage([NativeTypeName("OAHWND")] nint hwnd, [NativeTypeName("long")] int uMsg, [NativeTypeName("LONG_PTR")] nint wParam, [NativeTypeName("LONG_PTR")] nint lParam)
         {
             return ((delegate* unmanaged<IVideoWindow*, nint, int, nint, nint, int>)(lpVtbl[38]))((IVideoWindow*)Unsafe.AsPointer(ref this), hwnd, uMsg, wParam, lParam);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(39)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetWindowPosition([NativeTypeName("long")] int Left, [NativeTypeName("long")] int Top, [NativeTypeName("long")] int Width, [NativeTypeName("long")] int Height)
+        public HRESULT SetWindowPosition([NativeTypeName("long")] int Left, [NativeTypeName("long")] int Top, [NativeTypeName("long")] int Width, [NativeTypeName("long")] int Height)
         {
             return ((delegate* unmanaged<IVideoWindow*, int, int, int, int, int>)(lpVtbl[39]))((IVideoWindow*)Unsafe.AsPointer(ref this), Left, Top, Width, Height);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(40)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetWindowPosition([NativeTypeName("long *")] int* pLeft, [NativeTypeName("long *")] int* pTop, [NativeTypeName("long *")] int* pWidth, [NativeTypeName("long *")] int* pHeight)
+        public HRESULT GetWindowPosition([NativeTypeName("long *")] int* pLeft, [NativeTypeName("long *")] int* pTop, [NativeTypeName("long *")] int* pWidth, [NativeTypeName("long *")] int* pHeight)
         {
             return ((delegate* unmanaged<IVideoWindow*, int*, int*, int*, int*, int>)(lpVtbl[40]))((IVideoWindow*)Unsafe.AsPointer(ref this), pLeft, pTop, pWidth, pHeight);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(41)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetMinIdealImageSize([NativeTypeName("long *")] int* pWidth, [NativeTypeName("long *")] int* pHeight)
+        public HRESULT GetMinIdealImageSize([NativeTypeName("long *")] int* pWidth, [NativeTypeName("long *")] int* pHeight)
         {
             return ((delegate* unmanaged<IVideoWindow*, int*, int*, int>)(lpVtbl[41]))((IVideoWindow*)Unsafe.AsPointer(ref this), pWidth, pHeight);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(42)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetMaxIdealImageSize([NativeTypeName("long *")] int* pWidth, [NativeTypeName("long *")] int* pHeight)
+        public HRESULT GetMaxIdealImageSize([NativeTypeName("long *")] int* pWidth, [NativeTypeName("long *")] int* pHeight)
         {
             return ((delegate* unmanaged<IVideoWindow*, int*, int*, int>)(lpVtbl[42]))((IVideoWindow*)Unsafe.AsPointer(ref this), pWidth, pHeight);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(43)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetRestorePosition([NativeTypeName("long *")] int* pLeft, [NativeTypeName("long *")] int* pTop, [NativeTypeName("long *")] int* pWidth, [NativeTypeName("long *")] int* pHeight)
+        public HRESULT GetRestorePosition([NativeTypeName("long *")] int* pLeft, [NativeTypeName("long *")] int* pTop, [NativeTypeName("long *")] int* pWidth, [NativeTypeName("long *")] int* pHeight)
         {
             return ((delegate* unmanaged<IVideoWindow*, int*, int*, int*, int*, int>)(lpVtbl[43]))((IVideoWindow*)Unsafe.AsPointer(ref this), pLeft, pTop, pWidth, pHeight);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(44)]
-        [return: NativeTypeName("HRESULT")]
-        public int HideCursor([NativeTypeName("long")] int HideCursor)
+        public HRESULT HideCursor([NativeTypeName("long")] int HideCursor)
         {
             return ((delegate* unmanaged<IVideoWindow*, int, int>)(lpVtbl[44]))((IVideoWindow*)Unsafe.AsPointer(ref this), HideCursor);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(45)]
-        [return: NativeTypeName("HRESULT")]
-        public int IsCursorHidden([NativeTypeName("long *")] int* CursorHidden)
+        public HRESULT IsCursorHidden([NativeTypeName("long *")] int* CursorHidden)
         {
             return ((delegate* unmanaged<IVideoWindow*, int*, int>)(lpVtbl[45]))((IVideoWindow*)Unsafe.AsPointer(ref this), CursorHidden);
         }

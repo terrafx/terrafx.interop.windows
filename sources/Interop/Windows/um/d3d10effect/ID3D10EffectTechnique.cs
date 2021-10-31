@@ -20,8 +20,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(1)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetDesc(D3D10_TECHNIQUE_DESC* pDesc)
+        public HRESULT GetDesc(D3D10_TECHNIQUE_DESC* pDesc)
         {
             return ((delegate* unmanaged<ID3D10EffectTechnique*, D3D10_TECHNIQUE_DESC*, int>)(lpVtbl[1]))((ID3D10EffectTechnique*)Unsafe.AsPointer(ref this), pDesc);
         }
@@ -56,8 +55,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int ComputeStateBlockMask(D3D10_STATE_BLOCK_MASK* pStateBlockMask)
+        public HRESULT ComputeStateBlockMask(D3D10_STATE_BLOCK_MASK* pStateBlockMask)
         {
             return ((delegate* unmanaged<ID3D10EffectTechnique*, D3D10_STATE_BLOCK_MASK*, int>)(lpVtbl[6]))((ID3D10EffectTechnique*)Unsafe.AsPointer(ref this), pStateBlockMask);
         }

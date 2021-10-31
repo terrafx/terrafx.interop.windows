@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IUIAnimationTransition*, Guid*, void**, int>)(lpVtbl[0]))((IUIAnimationTransition*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,32 +41,28 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetInitialValue([NativeTypeName("DOUBLE")] double value)
+        public HRESULT SetInitialValue([NativeTypeName("DOUBLE")] double value)
         {
             return ((delegate* unmanaged<IUIAnimationTransition*, double, int>)(lpVtbl[3]))((IUIAnimationTransition*)Unsafe.AsPointer(ref this), value);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetInitialVelocity([NativeTypeName("DOUBLE")] double velocity)
+        public HRESULT SetInitialVelocity([NativeTypeName("DOUBLE")] double velocity)
         {
             return ((delegate* unmanaged<IUIAnimationTransition*, double, int>)(lpVtbl[4]))((IUIAnimationTransition*)Unsafe.AsPointer(ref this), velocity);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int IsDurationKnown()
+        public HRESULT IsDurationKnown()
         {
             return ((delegate* unmanaged<IUIAnimationTransition*, int>)(lpVtbl[5]))((IUIAnimationTransition*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetDuration([NativeTypeName("UI_ANIMATION_SECONDS *")] double* duration)
+        public HRESULT GetDuration([NativeTypeName("UI_ANIMATION_SECONDS *")] double* duration)
         {
             return ((delegate* unmanaged<IUIAnimationTransition*, double*, int>)(lpVtbl[6]))((IUIAnimationTransition*)Unsafe.AsPointer(ref this), duration);
         }

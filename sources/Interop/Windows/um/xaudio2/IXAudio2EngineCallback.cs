@@ -27,9 +27,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(2)]
-        public void OnCriticalError([NativeTypeName("HRESULT")] int Error)
+        public void OnCriticalError(HRESULT Error)
         {
-            ((delegate* unmanaged<IXAudio2EngineCallback*, int, void>)(lpVtbl[2]))((IXAudio2EngineCallback*)Unsafe.AsPointer(ref this), Error);
+            ((delegate* unmanaged<IXAudio2EngineCallback*, HRESULT, void>)(lpVtbl[2]))((IXAudio2EngineCallback*)Unsafe.AsPointer(ref this), Error);
         }
     }
 }

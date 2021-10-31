@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IPersistPropertyBag2*, Guid*, void**, int>)(lpVtbl[0]))((IPersistPropertyBag2*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,40 +41,35 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetClassID([NativeTypeName("CLSID *")] Guid* pClassID)
+        public HRESULT GetClassID([NativeTypeName("CLSID *")] Guid* pClassID)
         {
             return ((delegate* unmanaged<IPersistPropertyBag2*, Guid*, int>)(lpVtbl[3]))((IPersistPropertyBag2*)Unsafe.AsPointer(ref this), pClassID);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int InitNew()
+        public HRESULT InitNew()
         {
             return ((delegate* unmanaged<IPersistPropertyBag2*, int>)(lpVtbl[4]))((IPersistPropertyBag2*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int Load(IPropertyBag2* pPropBag, IErrorLog* pErrLog)
+        public HRESULT Load(IPropertyBag2* pPropBag, IErrorLog* pErrLog)
         {
             return ((delegate* unmanaged<IPersistPropertyBag2*, IPropertyBag2*, IErrorLog*, int>)(lpVtbl[5]))((IPersistPropertyBag2*)Unsafe.AsPointer(ref this), pPropBag, pErrLog);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int Save(IPropertyBag2* pPropBag, BOOL fClearDirty, BOOL fSaveAllProperties)
+        public HRESULT Save(IPropertyBag2* pPropBag, BOOL fClearDirty, BOOL fSaveAllProperties)
         {
             return ((delegate* unmanaged<IPersistPropertyBag2*, IPropertyBag2*, BOOL, BOOL, int>)(lpVtbl[6]))((IPersistPropertyBag2*)Unsafe.AsPointer(ref this), pPropBag, fClearDirty, fSaveAllProperties);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        [return: NativeTypeName("HRESULT")]
-        public int IsDirty()
+        public HRESULT IsDirty()
         {
             return ((delegate* unmanaged<IPersistPropertyBag2*, int>)(lpVtbl[7]))((IPersistPropertyBag2*)Unsafe.AsPointer(ref this));
         }

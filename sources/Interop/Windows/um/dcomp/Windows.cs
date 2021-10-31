@@ -13,28 +13,22 @@ namespace TerraFX.Interop
     public static unsafe partial class Windows
     {
         [DllImport("dcomp", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int DCompositionCreateDevice(IDXGIDevice* dxgiDevice, [NativeTypeName("const IID &")] Guid* iid, void** dcompositionDevice);
+        public static extern HRESULT DCompositionCreateDevice(IDXGIDevice* dxgiDevice, [NativeTypeName("const IID &")] Guid* iid, void** dcompositionDevice);
 
         [DllImport("dcomp", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int DCompositionCreateDevice2(IUnknown* renderingDevice, [NativeTypeName("const IID &")] Guid* iid, void** dcompositionDevice);
+        public static extern HRESULT DCompositionCreateDevice2(IUnknown* renderingDevice, [NativeTypeName("const IID &")] Guid* iid, void** dcompositionDevice);
 
         [DllImport("dcomp", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int DCompositionCreateDevice3(IUnknown* renderingDevice, [NativeTypeName("const IID &")] Guid* iid, void** dcompositionDevice);
+        public static extern HRESULT DCompositionCreateDevice3(IUnknown* renderingDevice, [NativeTypeName("const IID &")] Guid* iid, void** dcompositionDevice);
 
         [DllImport("dcomp", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int DCompositionCreateSurfaceHandle([NativeTypeName("DWORD")] uint desiredAccess, SECURITY_ATTRIBUTES* securityAttributes, [NativeTypeName("HANDLE *")] IntPtr* surfaceHandle);
+        public static extern HRESULT DCompositionCreateSurfaceHandle([NativeTypeName("DWORD")] uint desiredAccess, SECURITY_ATTRIBUTES* securityAttributes, [NativeTypeName("HANDLE *")] IntPtr* surfaceHandle);
 
         [DllImport("dcomp", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int DCompositionAttachMouseWheelToHwnd(IDCompositionVisual* visual, [NativeTypeName("HWND")] IntPtr hwnd, BOOL enable);
+        public static extern HRESULT DCompositionAttachMouseWheelToHwnd(IDCompositionVisual* visual, [NativeTypeName("HWND")] IntPtr hwnd, BOOL enable);
 
         [DllImport("dcomp", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int DCompositionAttachMouseDragToHwnd(IDCompositionVisual* visual, [NativeTypeName("HWND")] IntPtr hwnd, BOOL enable);
+        public static extern HRESULT DCompositionAttachMouseDragToHwnd(IDCompositionVisual* visual, [NativeTypeName("HWND")] IntPtr hwnd, BOOL enable);
 
         public static ref readonly Guid IID_IDCompositionDevice
         {

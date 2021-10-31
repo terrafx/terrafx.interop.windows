@@ -13,8 +13,7 @@ namespace TerraFX.Interop
     public static unsafe partial class Windows
     {
         [DllImport("d3d11", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int D3D11On12CreateDevice(IUnknown* pDevice, [NativeTypeName("UINT")] uint Flags, [NativeTypeName("const D3D_FEATURE_LEVEL *")] D3D_FEATURE_LEVEL* pFeatureLevels, [NativeTypeName("UINT")] uint FeatureLevels, [NativeTypeName("IUnknown *const *")] IUnknown** ppCommandQueues, [NativeTypeName("UINT")] uint NumQueues, [NativeTypeName("UINT")] uint NodeMask, ID3D11Device** ppDevice, ID3D11DeviceContext** ppImmediateContext, D3D_FEATURE_LEVEL* pChosenFeatureLevel);
+        public static extern HRESULT D3D11On12CreateDevice(IUnknown* pDevice, [NativeTypeName("UINT")] uint Flags, [NativeTypeName("const D3D_FEATURE_LEVEL *")] D3D_FEATURE_LEVEL* pFeatureLevels, [NativeTypeName("UINT")] uint FeatureLevels, [NativeTypeName("IUnknown *const *")] IUnknown** ppCommandQueues, [NativeTypeName("UINT")] uint NumQueues, [NativeTypeName("UINT")] uint NodeMask, ID3D11Device** ppDevice, ID3D11DeviceContext** ppImmediateContext, D3D_FEATURE_LEVEL* pChosenFeatureLevel);
 
         [NativeTypeName("const GUID")]
         public static ref readonly Guid IID_ID3D11On12Device

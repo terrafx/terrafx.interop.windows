@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IWICStreamProvider*, Guid*, void**, int>)(lpVtbl[0]))((IWICStreamProvider*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,32 +41,28 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetStream(IStream** ppIStream)
+        public HRESULT GetStream(IStream** ppIStream)
         {
             return ((delegate* unmanaged<IWICStreamProvider*, IStream**, int>)(lpVtbl[3]))((IWICStreamProvider*)Unsafe.AsPointer(ref this), ppIStream);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetPersistOptions([NativeTypeName("DWORD *")] uint* pdwPersistOptions)
+        public HRESULT GetPersistOptions([NativeTypeName("DWORD *")] uint* pdwPersistOptions)
         {
             return ((delegate* unmanaged<IWICStreamProvider*, uint*, int>)(lpVtbl[4]))((IWICStreamProvider*)Unsafe.AsPointer(ref this), pdwPersistOptions);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetPreferredVendorGUID([NativeTypeName("GUID *")] Guid* pguidPreferredVendor)
+        public HRESULT GetPreferredVendorGUID([NativeTypeName("GUID *")] Guid* pguidPreferredVendor)
         {
             return ((delegate* unmanaged<IWICStreamProvider*, Guid*, int>)(lpVtbl[5]))((IWICStreamProvider*)Unsafe.AsPointer(ref this), pguidPreferredVendor);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int RefreshStream()
+        public HRESULT RefreshStream()
         {
             return ((delegate* unmanaged<IWICStreamProvider*, int>)(lpVtbl[6]))((IWICStreamProvider*)Unsafe.AsPointer(ref this));
         }

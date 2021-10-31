@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IDesktopWindowXamlSourceNative2*, Guid*, void**, int>)(lpVtbl[0]))((IDesktopWindowXamlSourceNative2*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,24 +41,21 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int AttachToWindow([NativeTypeName("HWND")] IntPtr parentWnd)
+        public HRESULT AttachToWindow([NativeTypeName("HWND")] IntPtr parentWnd)
         {
             return ((delegate* unmanaged<IDesktopWindowXamlSourceNative2*, IntPtr, int>)(lpVtbl[3]))((IDesktopWindowXamlSourceNative2*)Unsafe.AsPointer(ref this), parentWnd);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int get_WindowHandle([NativeTypeName("HWND *")] IntPtr* hWnd)
+        public HRESULT get_WindowHandle([NativeTypeName("HWND *")] IntPtr* hWnd)
         {
             return ((delegate* unmanaged<IDesktopWindowXamlSourceNative2*, IntPtr*, int>)(lpVtbl[4]))((IDesktopWindowXamlSourceNative2*)Unsafe.AsPointer(ref this), hWnd);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int PreTranslateMessage([NativeTypeName("const MSG *")] MSG* message, BOOL* result)
+        public HRESULT PreTranslateMessage([NativeTypeName("const MSG *")] MSG* message, BOOL* result)
         {
             return ((delegate* unmanaged<IDesktopWindowXamlSourceNative2*, MSG*, BOOL*, int>)(lpVtbl[5]))((IDesktopWindowXamlSourceNative2*)Unsafe.AsPointer(ref this), message, result);
         }

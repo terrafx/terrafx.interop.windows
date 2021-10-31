@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IShellIconOverlay*, Guid*, void**, int>)(lpVtbl[0]))((IShellIconOverlay*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,16 +41,14 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetOverlayIndex([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl, int* pIndex)
+        public HRESULT GetOverlayIndex([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl, int* pIndex)
         {
             return ((delegate* unmanaged<IShellIconOverlay*, ITEMIDLIST*, int*, int>)(lpVtbl[3]))((IShellIconOverlay*)Unsafe.AsPointer(ref this), pidl, pIndex);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetOverlayIconIndex([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl, int* pIconIndex)
+        public HRESULT GetOverlayIconIndex([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl, int* pIconIndex)
         {
             return ((delegate* unmanaged<IShellIconOverlay*, ITEMIDLIST*, int*, int>)(lpVtbl[4]))((IShellIconOverlay*)Unsafe.AsPointer(ref this), pidl, pIconIndex);
         }

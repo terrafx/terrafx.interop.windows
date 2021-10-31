@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IDiaReadExeAtRVACallback*, Guid*, void**, int>)(lpVtbl[0]))((IDiaReadExeAtRVACallback*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,8 +41,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int ReadExecutableAtRVA([NativeTypeName("DWORD")] uint relativeVirtualAddress, [NativeTypeName("DWORD")] uint cbData, [NativeTypeName("DWORD *")] uint* pcbData, [NativeTypeName("BYTE *")] byte* pbData)
+        public HRESULT ReadExecutableAtRVA([NativeTypeName("DWORD")] uint relativeVirtualAddress, [NativeTypeName("DWORD")] uint cbData, [NativeTypeName("DWORD *")] uint* pcbData, [NativeTypeName("BYTE *")] byte* pbData)
         {
             return ((delegate* unmanaged<IDiaReadExeAtRVACallback*, uint, uint, uint*, byte*, int>)(lpVtbl[3]))((IDiaReadExeAtRVACallback*)Unsafe.AsPointer(ref this), relativeVirtualAddress, cbData, pcbData, pbData);
         }

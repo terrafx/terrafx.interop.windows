@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IFileOpenDialog*, Guid*, void**, int>)(lpVtbl[0]))((IFileOpenDialog*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,208 +41,182 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int Show([NativeTypeName("HWND")] IntPtr hwndOwner)
+        public HRESULT Show([NativeTypeName("HWND")] IntPtr hwndOwner)
         {
             return ((delegate* unmanaged<IFileOpenDialog*, IntPtr, int>)(lpVtbl[3]))((IFileOpenDialog*)Unsafe.AsPointer(ref this), hwndOwner);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetFileTypes([NativeTypeName("UINT")] uint cFileTypes, [NativeTypeName("const COMDLG_FILTERSPEC *")] COMDLG_FILTERSPEC* rgFilterSpec)
+        public HRESULT SetFileTypes([NativeTypeName("UINT")] uint cFileTypes, [NativeTypeName("const COMDLG_FILTERSPEC *")] COMDLG_FILTERSPEC* rgFilterSpec)
         {
             return ((delegate* unmanaged<IFileOpenDialog*, uint, COMDLG_FILTERSPEC*, int>)(lpVtbl[4]))((IFileOpenDialog*)Unsafe.AsPointer(ref this), cFileTypes, rgFilterSpec);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetFileTypeIndex([NativeTypeName("UINT")] uint iFileType)
+        public HRESULT SetFileTypeIndex([NativeTypeName("UINT")] uint iFileType)
         {
             return ((delegate* unmanaged<IFileOpenDialog*, uint, int>)(lpVtbl[5]))((IFileOpenDialog*)Unsafe.AsPointer(ref this), iFileType);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetFileTypeIndex([NativeTypeName("UINT *")] uint* piFileType)
+        public HRESULT GetFileTypeIndex([NativeTypeName("UINT *")] uint* piFileType)
         {
             return ((delegate* unmanaged<IFileOpenDialog*, uint*, int>)(lpVtbl[6]))((IFileOpenDialog*)Unsafe.AsPointer(ref this), piFileType);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        [return: NativeTypeName("HRESULT")]
-        public int Advise(IFileDialogEvents* pfde, [NativeTypeName("DWORD *")] uint* pdwCookie)
+        public HRESULT Advise(IFileDialogEvents* pfde, [NativeTypeName("DWORD *")] uint* pdwCookie)
         {
             return ((delegate* unmanaged<IFileOpenDialog*, IFileDialogEvents*, uint*, int>)(lpVtbl[7]))((IFileOpenDialog*)Unsafe.AsPointer(ref this), pfde, pdwCookie);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        [return: NativeTypeName("HRESULT")]
-        public int Unadvise([NativeTypeName("DWORD")] uint dwCookie)
+        public HRESULT Unadvise([NativeTypeName("DWORD")] uint dwCookie)
         {
             return ((delegate* unmanaged<IFileOpenDialog*, uint, int>)(lpVtbl[8]))((IFileOpenDialog*)Unsafe.AsPointer(ref this), dwCookie);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetOptions([NativeTypeName("FILEOPENDIALOGOPTIONS")] uint fos)
+        public HRESULT SetOptions([NativeTypeName("FILEOPENDIALOGOPTIONS")] uint fos)
         {
             return ((delegate* unmanaged<IFileOpenDialog*, uint, int>)(lpVtbl[9]))((IFileOpenDialog*)Unsafe.AsPointer(ref this), fos);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(10)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetOptions([NativeTypeName("FILEOPENDIALOGOPTIONS *")] uint* pfos)
+        public HRESULT GetOptions([NativeTypeName("FILEOPENDIALOGOPTIONS *")] uint* pfos)
         {
             return ((delegate* unmanaged<IFileOpenDialog*, uint*, int>)(lpVtbl[10]))((IFileOpenDialog*)Unsafe.AsPointer(ref this), pfos);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(11)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetDefaultFolder(IShellItem* psi)
+        public HRESULT SetDefaultFolder(IShellItem* psi)
         {
             return ((delegate* unmanaged<IFileOpenDialog*, IShellItem*, int>)(lpVtbl[11]))((IFileOpenDialog*)Unsafe.AsPointer(ref this), psi);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(12)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetFolder(IShellItem* psi)
+        public HRESULT SetFolder(IShellItem* psi)
         {
             return ((delegate* unmanaged<IFileOpenDialog*, IShellItem*, int>)(lpVtbl[12]))((IFileOpenDialog*)Unsafe.AsPointer(ref this), psi);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(13)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetFolder(IShellItem** ppsi)
+        public HRESULT GetFolder(IShellItem** ppsi)
         {
             return ((delegate* unmanaged<IFileOpenDialog*, IShellItem**, int>)(lpVtbl[13]))((IFileOpenDialog*)Unsafe.AsPointer(ref this), ppsi);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(14)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetCurrentSelection(IShellItem** ppsi)
+        public HRESULT GetCurrentSelection(IShellItem** ppsi)
         {
             return ((delegate* unmanaged<IFileOpenDialog*, IShellItem**, int>)(lpVtbl[14]))((IFileOpenDialog*)Unsafe.AsPointer(ref this), ppsi);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(15)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetFileName([NativeTypeName("LPCWSTR")] ushort* pszName)
+        public HRESULT SetFileName([NativeTypeName("LPCWSTR")] ushort* pszName)
         {
             return ((delegate* unmanaged<IFileOpenDialog*, ushort*, int>)(lpVtbl[15]))((IFileOpenDialog*)Unsafe.AsPointer(ref this), pszName);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(16)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetFileName([NativeTypeName("LPWSTR *")] ushort** pszName)
+        public HRESULT GetFileName([NativeTypeName("LPWSTR *")] ushort** pszName)
         {
             return ((delegate* unmanaged<IFileOpenDialog*, ushort**, int>)(lpVtbl[16]))((IFileOpenDialog*)Unsafe.AsPointer(ref this), pszName);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(17)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetTitle([NativeTypeName("LPCWSTR")] ushort* pszTitle)
+        public HRESULT SetTitle([NativeTypeName("LPCWSTR")] ushort* pszTitle)
         {
             return ((delegate* unmanaged<IFileOpenDialog*, ushort*, int>)(lpVtbl[17]))((IFileOpenDialog*)Unsafe.AsPointer(ref this), pszTitle);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(18)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetOkButtonLabel([NativeTypeName("LPCWSTR")] ushort* pszText)
+        public HRESULT SetOkButtonLabel([NativeTypeName("LPCWSTR")] ushort* pszText)
         {
             return ((delegate* unmanaged<IFileOpenDialog*, ushort*, int>)(lpVtbl[18]))((IFileOpenDialog*)Unsafe.AsPointer(ref this), pszText);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(19)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetFileNameLabel([NativeTypeName("LPCWSTR")] ushort* pszLabel)
+        public HRESULT SetFileNameLabel([NativeTypeName("LPCWSTR")] ushort* pszLabel)
         {
             return ((delegate* unmanaged<IFileOpenDialog*, ushort*, int>)(lpVtbl[19]))((IFileOpenDialog*)Unsafe.AsPointer(ref this), pszLabel);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(20)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetResult(IShellItem** ppsi)
+        public HRESULT GetResult(IShellItem** ppsi)
         {
             return ((delegate* unmanaged<IFileOpenDialog*, IShellItem**, int>)(lpVtbl[20]))((IFileOpenDialog*)Unsafe.AsPointer(ref this), ppsi);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(21)]
-        [return: NativeTypeName("HRESULT")]
-        public int AddPlace(IShellItem* psi, FDAP fdap)
+        public HRESULT AddPlace(IShellItem* psi, FDAP fdap)
         {
             return ((delegate* unmanaged<IFileOpenDialog*, IShellItem*, FDAP, int>)(lpVtbl[21]))((IFileOpenDialog*)Unsafe.AsPointer(ref this), psi, fdap);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(22)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetDefaultExtension([NativeTypeName("LPCWSTR")] ushort* pszDefaultExtension)
+        public HRESULT SetDefaultExtension([NativeTypeName("LPCWSTR")] ushort* pszDefaultExtension)
         {
             return ((delegate* unmanaged<IFileOpenDialog*, ushort*, int>)(lpVtbl[22]))((IFileOpenDialog*)Unsafe.AsPointer(ref this), pszDefaultExtension);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(23)]
-        [return: NativeTypeName("HRESULT")]
-        public int Close([NativeTypeName("HRESULT")] int hr)
+        public HRESULT Close(HRESULT hr)
         {
-            return ((delegate* unmanaged<IFileOpenDialog*, int, int>)(lpVtbl[23]))((IFileOpenDialog*)Unsafe.AsPointer(ref this), hr);
+            return ((delegate* unmanaged<IFileOpenDialog*, HRESULT, int>)(lpVtbl[23]))((IFileOpenDialog*)Unsafe.AsPointer(ref this), hr);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(24)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetClientGuid([NativeTypeName("const GUID &")] Guid* guid)
+        public HRESULT SetClientGuid([NativeTypeName("const GUID &")] Guid* guid)
         {
             return ((delegate* unmanaged<IFileOpenDialog*, Guid*, int>)(lpVtbl[24]))((IFileOpenDialog*)Unsafe.AsPointer(ref this), guid);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(25)]
-        [return: NativeTypeName("HRESULT")]
-        public int ClearClientData()
+        public HRESULT ClearClientData()
         {
             return ((delegate* unmanaged<IFileOpenDialog*, int>)(lpVtbl[25]))((IFileOpenDialog*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(26)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetFilter(IShellItemFilter* pFilter)
+        public HRESULT SetFilter(IShellItemFilter* pFilter)
         {
             return ((delegate* unmanaged<IFileOpenDialog*, IShellItemFilter*, int>)(lpVtbl[26]))((IFileOpenDialog*)Unsafe.AsPointer(ref this), pFilter);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(27)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetResults(IShellItemArray** ppenum)
+        public HRESULT GetResults(IShellItemArray** ppenum)
         {
             return ((delegate* unmanaged<IFileOpenDialog*, IShellItemArray**, int>)(lpVtbl[27]))((IFileOpenDialog*)Unsafe.AsPointer(ref this), ppenum);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(28)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetSelectedItems(IShellItemArray** ppsai)
+        public HRESULT GetSelectedItems(IShellItemArray** ppsai)
         {
             return ((delegate* unmanaged<IFileOpenDialog*, IShellItemArray**, int>)(lpVtbl[28]))((IFileOpenDialog*)Unsafe.AsPointer(ref this), ppsai);
         }

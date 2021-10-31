@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IMFNetCredential*, Guid*, void**, int>)(lpVtbl[0]))((IMFNetCredential*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,40 +41,35 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetUser([NativeTypeName("BYTE *")] byte* pbData, [NativeTypeName("DWORD")] uint cbData, BOOL fDataIsEncrypted)
+        public HRESULT SetUser([NativeTypeName("BYTE *")] byte* pbData, [NativeTypeName("DWORD")] uint cbData, BOOL fDataIsEncrypted)
         {
             return ((delegate* unmanaged<IMFNetCredential*, byte*, uint, BOOL, int>)(lpVtbl[3]))((IMFNetCredential*)Unsafe.AsPointer(ref this), pbData, cbData, fDataIsEncrypted);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetPassword([NativeTypeName("BYTE *")] byte* pbData, [NativeTypeName("DWORD")] uint cbData, BOOL fDataIsEncrypted)
+        public HRESULT SetPassword([NativeTypeName("BYTE *")] byte* pbData, [NativeTypeName("DWORD")] uint cbData, BOOL fDataIsEncrypted)
         {
             return ((delegate* unmanaged<IMFNetCredential*, byte*, uint, BOOL, int>)(lpVtbl[4]))((IMFNetCredential*)Unsafe.AsPointer(ref this), pbData, cbData, fDataIsEncrypted);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetUser([NativeTypeName("BYTE *")] byte* pbData, [NativeTypeName("DWORD *")] uint* pcbData, BOOL fEncryptData)
+        public HRESULT GetUser([NativeTypeName("BYTE *")] byte* pbData, [NativeTypeName("DWORD *")] uint* pcbData, BOOL fEncryptData)
         {
             return ((delegate* unmanaged<IMFNetCredential*, byte*, uint*, BOOL, int>)(lpVtbl[5]))((IMFNetCredential*)Unsafe.AsPointer(ref this), pbData, pcbData, fEncryptData);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetPassword([NativeTypeName("BYTE *")] byte* pbData, [NativeTypeName("DWORD *")] uint* pcbData, BOOL fEncryptData)
+        public HRESULT GetPassword([NativeTypeName("BYTE *")] byte* pbData, [NativeTypeName("DWORD *")] uint* pcbData, BOOL fEncryptData)
         {
             return ((delegate* unmanaged<IMFNetCredential*, byte*, uint*, BOOL, int>)(lpVtbl[6]))((IMFNetCredential*)Unsafe.AsPointer(ref this), pbData, pcbData, fEncryptData);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        [return: NativeTypeName("HRESULT")]
-        public int LoggedOnUser(BOOL* pfLoggedOnUser)
+        public HRESULT LoggedOnUser(BOOL* pfLoggedOnUser)
         {
             return ((delegate* unmanaged<IMFNetCredential*, BOOL*, int>)(lpVtbl[7]))((IMFNetCredential*)Unsafe.AsPointer(ref this), pfLoggedOnUser);
         }

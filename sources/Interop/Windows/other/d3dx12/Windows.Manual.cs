@@ -255,8 +255,7 @@ namespace TerraFX.Interop
             return (ID3D12CommandList**)pp;
         }
 
-        [return: NativeTypeName("HRESULT")]
-        public static int D3D12SerializeVersionedRootSignature([NativeTypeName("const D3D12_VERSIONED_ROOT_SIGNATURE_DESC *")] D3D12_VERSIONED_ROOT_SIGNATURE_DESC* pRootSignatureDesc, D3D_ROOT_SIGNATURE_VERSION MaxVersion, [NativeTypeName("ID3DBlob **")] ID3DBlob** ppBlob, [NativeTypeName("ID3DBlob **")] ID3DBlob** ppErrorBlob)
+        public static HRESULT D3D12SerializeVersionedRootSignature([NativeTypeName("const D3D12_VERSIONED_ROOT_SIGNATURE_DESC *")] D3D12_VERSIONED_ROOT_SIGNATURE_DESC* pRootSignatureDesc, D3D_ROOT_SIGNATURE_VERSION MaxVersion, [NativeTypeName("ID3DBlob **")] ID3DBlob** ppBlob, [NativeTypeName("ID3DBlob **")] ID3DBlob** ppErrorBlob)
         {
             if (ppErrorBlob != null)
             {

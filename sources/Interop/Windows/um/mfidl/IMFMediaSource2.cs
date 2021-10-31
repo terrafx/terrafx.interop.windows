@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IMFMediaSource2*, Guid*, void**, int>)(lpVtbl[0]))((IMFMediaSource2*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,112 +41,98 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetEvent([NativeTypeName("DWORD")] uint dwFlags, IMFMediaEvent** ppEvent)
+        public HRESULT GetEvent([NativeTypeName("DWORD")] uint dwFlags, IMFMediaEvent** ppEvent)
         {
             return ((delegate* unmanaged<IMFMediaSource2*, uint, IMFMediaEvent**, int>)(lpVtbl[3]))((IMFMediaSource2*)Unsafe.AsPointer(ref this), dwFlags, ppEvent);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int BeginGetEvent(IMFAsyncCallback* pCallback, IUnknown* punkState)
+        public HRESULT BeginGetEvent(IMFAsyncCallback* pCallback, IUnknown* punkState)
         {
             return ((delegate* unmanaged<IMFMediaSource2*, IMFAsyncCallback*, IUnknown*, int>)(lpVtbl[4]))((IMFMediaSource2*)Unsafe.AsPointer(ref this), pCallback, punkState);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int EndGetEvent(IMFAsyncResult* pResult, IMFMediaEvent** ppEvent)
+        public HRESULT EndGetEvent(IMFAsyncResult* pResult, IMFMediaEvent** ppEvent)
         {
             return ((delegate* unmanaged<IMFMediaSource2*, IMFAsyncResult*, IMFMediaEvent**, int>)(lpVtbl[5]))((IMFMediaSource2*)Unsafe.AsPointer(ref this), pResult, ppEvent);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueueEvent([NativeTypeName("MediaEventType")] uint met, [NativeTypeName("const GUID &")] Guid* guidExtendedType, [NativeTypeName("HRESULT")] int hrStatus, [NativeTypeName("const PROPVARIANT *")] PROPVARIANT* pvValue)
+        public HRESULT QueueEvent([NativeTypeName("MediaEventType")] uint met, [NativeTypeName("const GUID &")] Guid* guidExtendedType, HRESULT hrStatus, [NativeTypeName("const PROPVARIANT *")] PROPVARIANT* pvValue)
         {
-            return ((delegate* unmanaged<IMFMediaSource2*, uint, Guid*, int, PROPVARIANT*, int>)(lpVtbl[6]))((IMFMediaSource2*)Unsafe.AsPointer(ref this), met, guidExtendedType, hrStatus, pvValue);
+            return ((delegate* unmanaged<IMFMediaSource2*, uint, Guid*, HRESULT, PROPVARIANT*, int>)(lpVtbl[6]))((IMFMediaSource2*)Unsafe.AsPointer(ref this), met, guidExtendedType, hrStatus, pvValue);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetCharacteristics([NativeTypeName("DWORD *")] uint* pdwCharacteristics)
+        public HRESULT GetCharacteristics([NativeTypeName("DWORD *")] uint* pdwCharacteristics)
         {
             return ((delegate* unmanaged<IMFMediaSource2*, uint*, int>)(lpVtbl[7]))((IMFMediaSource2*)Unsafe.AsPointer(ref this), pdwCharacteristics);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        [return: NativeTypeName("HRESULT")]
-        public int CreatePresentationDescriptor(IMFPresentationDescriptor** ppPresentationDescriptor)
+        public HRESULT CreatePresentationDescriptor(IMFPresentationDescriptor** ppPresentationDescriptor)
         {
             return ((delegate* unmanaged<IMFMediaSource2*, IMFPresentationDescriptor**, int>)(lpVtbl[8]))((IMFMediaSource2*)Unsafe.AsPointer(ref this), ppPresentationDescriptor);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        [return: NativeTypeName("HRESULT")]
-        public int Start(IMFPresentationDescriptor* pPresentationDescriptor, [NativeTypeName("const GUID *")] Guid* pguidTimeFormat, [NativeTypeName("const PROPVARIANT *")] PROPVARIANT* pvarStartPosition)
+        public HRESULT Start(IMFPresentationDescriptor* pPresentationDescriptor, [NativeTypeName("const GUID *")] Guid* pguidTimeFormat, [NativeTypeName("const PROPVARIANT *")] PROPVARIANT* pvarStartPosition)
         {
             return ((delegate* unmanaged<IMFMediaSource2*, IMFPresentationDescriptor*, Guid*, PROPVARIANT*, int>)(lpVtbl[9]))((IMFMediaSource2*)Unsafe.AsPointer(ref this), pPresentationDescriptor, pguidTimeFormat, pvarStartPosition);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(10)]
-        [return: NativeTypeName("HRESULT")]
-        public int Stop()
+        public HRESULT Stop()
         {
             return ((delegate* unmanaged<IMFMediaSource2*, int>)(lpVtbl[10]))((IMFMediaSource2*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(11)]
-        [return: NativeTypeName("HRESULT")]
-        public int Pause()
+        public HRESULT Pause()
         {
             return ((delegate* unmanaged<IMFMediaSource2*, int>)(lpVtbl[11]))((IMFMediaSource2*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(12)]
-        [return: NativeTypeName("HRESULT")]
-        public int Shutdown()
+        public HRESULT Shutdown()
         {
             return ((delegate* unmanaged<IMFMediaSource2*, int>)(lpVtbl[12]))((IMFMediaSource2*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(13)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetSourceAttributes(IMFAttributes** ppAttributes)
+        public HRESULT GetSourceAttributes(IMFAttributes** ppAttributes)
         {
             return ((delegate* unmanaged<IMFMediaSource2*, IMFAttributes**, int>)(lpVtbl[13]))((IMFMediaSource2*)Unsafe.AsPointer(ref this), ppAttributes);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(14)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetStreamAttributes([NativeTypeName("DWORD")] uint dwStreamIdentifier, IMFAttributes** ppAttributes)
+        public HRESULT GetStreamAttributes([NativeTypeName("DWORD")] uint dwStreamIdentifier, IMFAttributes** ppAttributes)
         {
             return ((delegate* unmanaged<IMFMediaSource2*, uint, IMFAttributes**, int>)(lpVtbl[14]))((IMFMediaSource2*)Unsafe.AsPointer(ref this), dwStreamIdentifier, ppAttributes);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(15)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetD3DManager(IUnknown* pManager)
+        public HRESULT SetD3DManager(IUnknown* pManager)
         {
             return ((delegate* unmanaged<IMFMediaSource2*, IUnknown*, int>)(lpVtbl[15]))((IMFMediaSource2*)Unsafe.AsPointer(ref this), pManager);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(16)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetMediaType([NativeTypeName("DWORD")] uint dwStreamID, IMFMediaType* pMediaType)
+        public HRESULT SetMediaType([NativeTypeName("DWORD")] uint dwStreamID, IMFMediaType* pMediaType)
         {
             return ((delegate* unmanaged<IMFMediaSource2*, uint, IMFMediaType*, int>)(lpVtbl[16]))((IMFMediaSource2*)Unsafe.AsPointer(ref this), dwStreamID, pMediaType);
         }

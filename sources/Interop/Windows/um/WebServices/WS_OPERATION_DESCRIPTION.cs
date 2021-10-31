@@ -28,7 +28,7 @@ namespace TerraFX.Interop
         public WS_PARAMETER_DESCRIPTION* parameterDescription;
 
         [NativeTypeName("WS_SERVICE_STUB_CALLBACK")]
-        public delegate* unmanaged<IntPtr, void*, void*, WS_ASYNC_CONTEXT*, IntPtr, int> stubCallback;
+        public delegate* unmanaged<IntPtr, void*, void*, WS_ASYNC_CONTEXT*, IntPtr, HRESULT> stubCallback;
 
         public WS_OPERATION_STYLE style;
     }

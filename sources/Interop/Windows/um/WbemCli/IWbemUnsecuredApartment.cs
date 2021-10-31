@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IWbemUnsecuredApartment*, Guid*, void**, int>)(lpVtbl[0]))((IWbemUnsecuredApartment*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,16 +41,14 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int CreateObjectStub(IUnknown* pObject, IUnknown** ppStub)
+        public HRESULT CreateObjectStub(IUnknown* pObject, IUnknown** ppStub)
         {
             return ((delegate* unmanaged<IWbemUnsecuredApartment*, IUnknown*, IUnknown**, int>)(lpVtbl[3]))((IWbemUnsecuredApartment*)Unsafe.AsPointer(ref this), pObject, ppStub);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int CreateSinkStub(IWbemObjectSink* pSink, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LPCWSTR")] ushort* wszReserved, IWbemObjectSink** ppStub)
+        public HRESULT CreateSinkStub(IWbemObjectSink* pSink, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LPCWSTR")] ushort* wszReserved, IWbemObjectSink** ppStub)
         {
             return ((delegate* unmanaged<IWbemUnsecuredApartment*, IWbemObjectSink*, uint, ushort*, IWbemObjectSink**, int>)(lpVtbl[4]))((IWbemUnsecuredApartment*)Unsafe.AsPointer(ref this), pSink, dwFlags, wszReserved, ppStub);
         }

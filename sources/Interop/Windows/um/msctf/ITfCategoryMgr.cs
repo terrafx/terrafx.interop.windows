@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<ITfCategoryMgr*, Guid*, void**, int>)(lpVtbl[0]))((ITfCategoryMgr*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,112 +41,98 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int RegisterCategory([NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("const GUID &")] Guid* rcatid, [NativeTypeName("const GUID &")] Guid* rguid)
+        public HRESULT RegisterCategory([NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("const GUID &")] Guid* rcatid, [NativeTypeName("const GUID &")] Guid* rguid)
         {
             return ((delegate* unmanaged<ITfCategoryMgr*, Guid*, Guid*, Guid*, int>)(lpVtbl[3]))((ITfCategoryMgr*)Unsafe.AsPointer(ref this), rclsid, rcatid, rguid);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int UnregisterCategory([NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("const GUID &")] Guid* rcatid, [NativeTypeName("const GUID &")] Guid* rguid)
+        public HRESULT UnregisterCategory([NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("const GUID &")] Guid* rcatid, [NativeTypeName("const GUID &")] Guid* rguid)
         {
             return ((delegate* unmanaged<ITfCategoryMgr*, Guid*, Guid*, Guid*, int>)(lpVtbl[4]))((ITfCategoryMgr*)Unsafe.AsPointer(ref this), rclsid, rcatid, rguid);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int EnumCategoriesInItem([NativeTypeName("const GUID &")] Guid* rguid, IEnumGUID** ppEnum)
+        public HRESULT EnumCategoriesInItem([NativeTypeName("const GUID &")] Guid* rguid, IEnumGUID** ppEnum)
         {
             return ((delegate* unmanaged<ITfCategoryMgr*, Guid*, IEnumGUID**, int>)(lpVtbl[5]))((ITfCategoryMgr*)Unsafe.AsPointer(ref this), rguid, ppEnum);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int EnumItemsInCategory([NativeTypeName("const GUID &")] Guid* rcatid, IEnumGUID** ppEnum)
+        public HRESULT EnumItemsInCategory([NativeTypeName("const GUID &")] Guid* rcatid, IEnumGUID** ppEnum)
         {
             return ((delegate* unmanaged<ITfCategoryMgr*, Guid*, IEnumGUID**, int>)(lpVtbl[6]))((ITfCategoryMgr*)Unsafe.AsPointer(ref this), rcatid, ppEnum);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        [return: NativeTypeName("HRESULT")]
-        public int FindClosestCategory([NativeTypeName("const GUID &")] Guid* rguid, [NativeTypeName("GUID *")] Guid* pcatid, [NativeTypeName("const GUID **")] Guid** ppcatidList, [NativeTypeName("ULONG")] uint ulCount)
+        public HRESULT FindClosestCategory([NativeTypeName("const GUID &")] Guid* rguid, [NativeTypeName("GUID *")] Guid* pcatid, [NativeTypeName("const GUID **")] Guid** ppcatidList, [NativeTypeName("ULONG")] uint ulCount)
         {
             return ((delegate* unmanaged<ITfCategoryMgr*, Guid*, Guid*, Guid**, uint, int>)(lpVtbl[7]))((ITfCategoryMgr*)Unsafe.AsPointer(ref this), rguid, pcatid, ppcatidList, ulCount);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        [return: NativeTypeName("HRESULT")]
-        public int RegisterGUIDDescription([NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("const GUID &")] Guid* rguid, [NativeTypeName("const WCHAR *")] ushort* pchDesc, [NativeTypeName("ULONG")] uint cch)
+        public HRESULT RegisterGUIDDescription([NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("const GUID &")] Guid* rguid, [NativeTypeName("const WCHAR *")] ushort* pchDesc, [NativeTypeName("ULONG")] uint cch)
         {
             return ((delegate* unmanaged<ITfCategoryMgr*, Guid*, Guid*, ushort*, uint, int>)(lpVtbl[8]))((ITfCategoryMgr*)Unsafe.AsPointer(ref this), rclsid, rguid, pchDesc, cch);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        [return: NativeTypeName("HRESULT")]
-        public int UnregisterGUIDDescription([NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("const GUID &")] Guid* rguid)
+        public HRESULT UnregisterGUIDDescription([NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("const GUID &")] Guid* rguid)
         {
             return ((delegate* unmanaged<ITfCategoryMgr*, Guid*, Guid*, int>)(lpVtbl[9]))((ITfCategoryMgr*)Unsafe.AsPointer(ref this), rclsid, rguid);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(10)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetGUIDDescription([NativeTypeName("const GUID &")] Guid* rguid, [NativeTypeName("BSTR *")] ushort** pbstrDesc)
+        public HRESULT GetGUIDDescription([NativeTypeName("const GUID &")] Guid* rguid, [NativeTypeName("BSTR *")] ushort** pbstrDesc)
         {
             return ((delegate* unmanaged<ITfCategoryMgr*, Guid*, ushort**, int>)(lpVtbl[10]))((ITfCategoryMgr*)Unsafe.AsPointer(ref this), rguid, pbstrDesc);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(11)]
-        [return: NativeTypeName("HRESULT")]
-        public int RegisterGUIDDWORD([NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("const GUID &")] Guid* rguid, [NativeTypeName("DWORD")] uint dw)
+        public HRESULT RegisterGUIDDWORD([NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("const GUID &")] Guid* rguid, [NativeTypeName("DWORD")] uint dw)
         {
             return ((delegate* unmanaged<ITfCategoryMgr*, Guid*, Guid*, uint, int>)(lpVtbl[11]))((ITfCategoryMgr*)Unsafe.AsPointer(ref this), rclsid, rguid, dw);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(12)]
-        [return: NativeTypeName("HRESULT")]
-        public int UnregisterGUIDDWORD([NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("const GUID &")] Guid* rguid)
+        public HRESULT UnregisterGUIDDWORD([NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("const GUID &")] Guid* rguid)
         {
             return ((delegate* unmanaged<ITfCategoryMgr*, Guid*, Guid*, int>)(lpVtbl[12]))((ITfCategoryMgr*)Unsafe.AsPointer(ref this), rclsid, rguid);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(13)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetGUIDDWORD([NativeTypeName("const GUID &")] Guid* rguid, [NativeTypeName("DWORD *")] uint* pdw)
+        public HRESULT GetGUIDDWORD([NativeTypeName("const GUID &")] Guid* rguid, [NativeTypeName("DWORD *")] uint* pdw)
         {
             return ((delegate* unmanaged<ITfCategoryMgr*, Guid*, uint*, int>)(lpVtbl[13]))((ITfCategoryMgr*)Unsafe.AsPointer(ref this), rguid, pdw);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(14)]
-        [return: NativeTypeName("HRESULT")]
-        public int RegisterGUID([NativeTypeName("const GUID &")] Guid* rguid, [NativeTypeName("TfGuidAtom *")] uint* pguidatom)
+        public HRESULT RegisterGUID([NativeTypeName("const GUID &")] Guid* rguid, [NativeTypeName("TfGuidAtom *")] uint* pguidatom)
         {
             return ((delegate* unmanaged<ITfCategoryMgr*, Guid*, uint*, int>)(lpVtbl[14]))((ITfCategoryMgr*)Unsafe.AsPointer(ref this), rguid, pguidatom);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(15)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetGUID([NativeTypeName("TfGuidAtom")] uint guidatom, [NativeTypeName("GUID *")] Guid* pguid)
+        public HRESULT GetGUID([NativeTypeName("TfGuidAtom")] uint guidatom, [NativeTypeName("GUID *")] Guid* pguid)
         {
             return ((delegate* unmanaged<ITfCategoryMgr*, uint, Guid*, int>)(lpVtbl[15]))((ITfCategoryMgr*)Unsafe.AsPointer(ref this), guidatom, pguid);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(16)]
-        [return: NativeTypeName("HRESULT")]
-        public int IsEqualTfGuidAtom([NativeTypeName("TfGuidAtom")] uint guidatom, [NativeTypeName("const GUID &")] Guid* rguid, BOOL* pfEqual)
+        public HRESULT IsEqualTfGuidAtom([NativeTypeName("TfGuidAtom")] uint guidatom, [NativeTypeName("const GUID &")] Guid* rguid, BOOL* pfEqual)
         {
             return ((delegate* unmanaged<ITfCategoryMgr*, uint, Guid*, BOOL*, int>)(lpVtbl[16]))((ITfCategoryMgr*)Unsafe.AsPointer(ref this), guidatom, rguid, pfEqual);
         }

@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<ITfCreatePropertyStore*, Guid*, void**, int>)(lpVtbl[0]))((ITfCreatePropertyStore*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,16 +41,14 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int IsStoreSerializable([NativeTypeName("const GUID &")] Guid* guidProp, ITfRange* pRange, ITfPropertyStore* pPropStore, BOOL* pfSerializable)
+        public HRESULT IsStoreSerializable([NativeTypeName("const GUID &")] Guid* guidProp, ITfRange* pRange, ITfPropertyStore* pPropStore, BOOL* pfSerializable)
         {
             return ((delegate* unmanaged<ITfCreatePropertyStore*, Guid*, ITfRange*, ITfPropertyStore*, BOOL*, int>)(lpVtbl[3]))((ITfCreatePropertyStore*)Unsafe.AsPointer(ref this), guidProp, pRange, pPropStore, pfSerializable);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int CreatePropertyStore([NativeTypeName("const GUID &")] Guid* guidProp, ITfRange* pRange, [NativeTypeName("ULONG")] uint cb, IStream* pStream, ITfPropertyStore** ppStore)
+        public HRESULT CreatePropertyStore([NativeTypeName("const GUID &")] Guid* guidProp, ITfRange* pRange, [NativeTypeName("ULONG")] uint cb, IStream* pStream, ITfPropertyStore** ppStore)
         {
             return ((delegate* unmanaged<ITfCreatePropertyStore*, Guid*, ITfRange*, uint, IStream*, ITfPropertyStore**, int>)(lpVtbl[4]))((ITfCreatePropertyStore*)Unsafe.AsPointer(ref this), guidProp, pRange, cb, pStream, ppStore);
         }

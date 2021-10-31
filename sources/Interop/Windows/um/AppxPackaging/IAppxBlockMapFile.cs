@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IAppxBlockMapFile*, Guid*, void**, int>)(lpVtbl[0]))((IAppxBlockMapFile*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,40 +41,35 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetBlocks(IAppxBlockMapBlocksEnumerator** blocks)
+        public HRESULT GetBlocks(IAppxBlockMapBlocksEnumerator** blocks)
         {
             return ((delegate* unmanaged<IAppxBlockMapFile*, IAppxBlockMapBlocksEnumerator**, int>)(lpVtbl[3]))((IAppxBlockMapFile*)Unsafe.AsPointer(ref this), blocks);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetLocalFileHeaderSize([NativeTypeName("UINT32 *")] uint* lfhSize)
+        public HRESULT GetLocalFileHeaderSize([NativeTypeName("UINT32 *")] uint* lfhSize)
         {
             return ((delegate* unmanaged<IAppxBlockMapFile*, uint*, int>)(lpVtbl[4]))((IAppxBlockMapFile*)Unsafe.AsPointer(ref this), lfhSize);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetName([NativeTypeName("LPWSTR *")] ushort** name)
+        public HRESULT GetName([NativeTypeName("LPWSTR *")] ushort** name)
         {
             return ((delegate* unmanaged<IAppxBlockMapFile*, ushort**, int>)(lpVtbl[5]))((IAppxBlockMapFile*)Unsafe.AsPointer(ref this), name);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetUncompressedSize([NativeTypeName("UINT64 *")] ulong* size)
+        public HRESULT GetUncompressedSize([NativeTypeName("UINT64 *")] ulong* size)
         {
             return ((delegate* unmanaged<IAppxBlockMapFile*, ulong*, int>)(lpVtbl[6]))((IAppxBlockMapFile*)Unsafe.AsPointer(ref this), size);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        [return: NativeTypeName("HRESULT")]
-        public int ValidateFileHash(IStream* fileStream, BOOL* isValid)
+        public HRESULT ValidateFileHash(IStream* fileStream, BOOL* isValid)
         {
             return ((delegate* unmanaged<IAppxBlockMapFile*, IStream*, BOOL*, int>)(lpVtbl[7]))((IAppxBlockMapFile*)Unsafe.AsPointer(ref this), fileStream, isValid);
         }

@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IObjectWithAppUserModelID*, Guid*, void**, int>)(lpVtbl[0]))((IObjectWithAppUserModelID*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,16 +41,14 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetAppID([NativeTypeName("LPCWSTR")] ushort* pszAppID)
+        public HRESULT SetAppID([NativeTypeName("LPCWSTR")] ushort* pszAppID)
         {
             return ((delegate* unmanaged<IObjectWithAppUserModelID*, ushort*, int>)(lpVtbl[3]))((IObjectWithAppUserModelID*)Unsafe.AsPointer(ref this), pszAppID);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetAppID([NativeTypeName("LPWSTR *")] ushort** ppszAppID)
+        public HRESULT GetAppID([NativeTypeName("LPWSTR *")] ushort** ppszAppID)
         {
             return ((delegate* unmanaged<IObjectWithAppUserModelID*, ushort**, int>)(lpVtbl[4]))((IObjectWithAppUserModelID*)Unsafe.AsPointer(ref this), ppszAppID);
         }

@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<ID2D1ImageSourceFromWic*, Guid*, void**, int>)(lpVtbl[0]))((ID2D1ImageSourceFromWic*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -49,32 +48,28 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int OfferResources()
+        public HRESULT OfferResources()
         {
             return ((delegate* unmanaged<ID2D1ImageSourceFromWic*, int>)(lpVtbl[4]))((ID2D1ImageSourceFromWic*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int TryReclaimResources(BOOL* resourcesDiscarded)
+        public HRESULT TryReclaimResources(BOOL* resourcesDiscarded)
         {
             return ((delegate* unmanaged<ID2D1ImageSourceFromWic*, BOOL*, int>)(lpVtbl[5]))((ID2D1ImageSourceFromWic*)Unsafe.AsPointer(ref this), resourcesDiscarded);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int EnsureCached([NativeTypeName("const D2D1_RECT_U *")] D2D_RECT_U* rectangleToFill)
+        public HRESULT EnsureCached([NativeTypeName("const D2D1_RECT_U *")] D2D_RECT_U* rectangleToFill)
         {
             return ((delegate* unmanaged<ID2D1ImageSourceFromWic*, D2D_RECT_U*, int>)(lpVtbl[6]))((ID2D1ImageSourceFromWic*)Unsafe.AsPointer(ref this), rectangleToFill);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        [return: NativeTypeName("HRESULT")]
-        public int TrimCache([NativeTypeName("const D2D1_RECT_U *")] D2D_RECT_U* rectangleToPreserve)
+        public HRESULT TrimCache([NativeTypeName("const D2D1_RECT_U *")] D2D_RECT_U* rectangleToPreserve)
         {
             return ((delegate* unmanaged<ID2D1ImageSourceFromWic*, D2D_RECT_U*, int>)(lpVtbl[7]))((ID2D1ImageSourceFromWic*)Unsafe.AsPointer(ref this), rectangleToPreserve);
         }

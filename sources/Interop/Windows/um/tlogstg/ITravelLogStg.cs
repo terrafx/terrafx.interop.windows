@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<ITravelLogStg*, Guid*, void**, int>)(lpVtbl[0]))((ITravelLogStg*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,56 +41,49 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int CreateEntry([NativeTypeName("LPCWSTR")] ushort* pszUrl, [NativeTypeName("LPCWSTR")] ushort* pszTitle, ITravelLogEntry* ptleRelativeTo, BOOL fPrepend, ITravelLogEntry** pptle)
+        public HRESULT CreateEntry([NativeTypeName("LPCWSTR")] ushort* pszUrl, [NativeTypeName("LPCWSTR")] ushort* pszTitle, ITravelLogEntry* ptleRelativeTo, BOOL fPrepend, ITravelLogEntry** pptle)
         {
             return ((delegate* unmanaged<ITravelLogStg*, ushort*, ushort*, ITravelLogEntry*, BOOL, ITravelLogEntry**, int>)(lpVtbl[3]))((ITravelLogStg*)Unsafe.AsPointer(ref this), pszUrl, pszTitle, ptleRelativeTo, fPrepend, pptle);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int TravelTo(ITravelLogEntry* ptle)
+        public HRESULT TravelTo(ITravelLogEntry* ptle)
         {
             return ((delegate* unmanaged<ITravelLogStg*, ITravelLogEntry*, int>)(lpVtbl[4]))((ITravelLogStg*)Unsafe.AsPointer(ref this), ptle);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int EnumEntries([NativeTypeName("TLENUMF")] uint flags, IEnumTravelLogEntry** ppenum)
+        public HRESULT EnumEntries([NativeTypeName("TLENUMF")] uint flags, IEnumTravelLogEntry** ppenum)
         {
             return ((delegate* unmanaged<ITravelLogStg*, uint, IEnumTravelLogEntry**, int>)(lpVtbl[5]))((ITravelLogStg*)Unsafe.AsPointer(ref this), flags, ppenum);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int FindEntries([NativeTypeName("TLENUMF")] uint flags, [NativeTypeName("LPCWSTR")] ushort* pszUrl, IEnumTravelLogEntry** ppenum)
+        public HRESULT FindEntries([NativeTypeName("TLENUMF")] uint flags, [NativeTypeName("LPCWSTR")] ushort* pszUrl, IEnumTravelLogEntry** ppenum)
         {
             return ((delegate* unmanaged<ITravelLogStg*, uint, ushort*, IEnumTravelLogEntry**, int>)(lpVtbl[6]))((ITravelLogStg*)Unsafe.AsPointer(ref this), flags, pszUrl, ppenum);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetCount([NativeTypeName("TLENUMF")] uint flags, [NativeTypeName("DWORD *")] uint* pcEntries)
+        public HRESULT GetCount([NativeTypeName("TLENUMF")] uint flags, [NativeTypeName("DWORD *")] uint* pcEntries)
         {
             return ((delegate* unmanaged<ITravelLogStg*, uint, uint*, int>)(lpVtbl[7]))((ITravelLogStg*)Unsafe.AsPointer(ref this), flags, pcEntries);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        [return: NativeTypeName("HRESULT")]
-        public int RemoveEntry(ITravelLogEntry* ptle)
+        public HRESULT RemoveEntry(ITravelLogEntry* ptle)
         {
             return ((delegate* unmanaged<ITravelLogStg*, ITravelLogEntry*, int>)(lpVtbl[8]))((ITravelLogStg*)Unsafe.AsPointer(ref this), ptle);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetRelativeEntry(int iOffset, ITravelLogEntry** ptle)
+        public HRESULT GetRelativeEntry(int iOffset, ITravelLogEntry** ptle)
         {
             return ((delegate* unmanaged<ITravelLogStg*, int, ITravelLogEntry**, int>)(lpVtbl[9]))((ITravelLogStg*)Unsafe.AsPointer(ref this), iOffset, ptle);
         }

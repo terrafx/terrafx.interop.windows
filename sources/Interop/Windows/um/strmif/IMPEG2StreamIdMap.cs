@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IMPEG2StreamIdMap*, Guid*, void**, int>)(lpVtbl[0]))((IMPEG2StreamIdMap*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,24 +41,21 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int MapStreamId([NativeTypeName("ULONG")] uint ulStreamId, [NativeTypeName("DWORD")] uint MediaSampleContent, [NativeTypeName("ULONG")] uint ulSubstreamFilterValue, int iDataOffset)
+        public HRESULT MapStreamId([NativeTypeName("ULONG")] uint ulStreamId, [NativeTypeName("DWORD")] uint MediaSampleContent, [NativeTypeName("ULONG")] uint ulSubstreamFilterValue, int iDataOffset)
         {
             return ((delegate* unmanaged<IMPEG2StreamIdMap*, uint, uint, uint, int, int>)(lpVtbl[3]))((IMPEG2StreamIdMap*)Unsafe.AsPointer(ref this), ulStreamId, MediaSampleContent, ulSubstreamFilterValue, iDataOffset);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int UnmapStreamId([NativeTypeName("ULONG")] uint culStreamId, [NativeTypeName("ULONG *")] uint* pulStreamId)
+        public HRESULT UnmapStreamId([NativeTypeName("ULONG")] uint culStreamId, [NativeTypeName("ULONG *")] uint* pulStreamId)
         {
             return ((delegate* unmanaged<IMPEG2StreamIdMap*, uint, uint*, int>)(lpVtbl[4]))((IMPEG2StreamIdMap*)Unsafe.AsPointer(ref this), culStreamId, pulStreamId);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int EnumStreamIdMap(IEnumStreamIdMap** ppIEnumStreamIdMap)
+        public HRESULT EnumStreamIdMap(IEnumStreamIdMap** ppIEnumStreamIdMap)
         {
             return ((delegate* unmanaged<IMPEG2StreamIdMap*, IEnumStreamIdMap**, int>)(lpVtbl[5]))((IMPEG2StreamIdMap*)Unsafe.AsPointer(ref this), ppIEnumStreamIdMap);
         }

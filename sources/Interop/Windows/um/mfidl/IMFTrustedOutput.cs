@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IMFTrustedOutput*, Guid*, void**, int>)(lpVtbl[0]))((IMFTrustedOutput*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,24 +41,21 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetOutputTrustAuthorityCount([NativeTypeName("DWORD *")] uint* pcOutputTrustAuthorities)
+        public HRESULT GetOutputTrustAuthorityCount([NativeTypeName("DWORD *")] uint* pcOutputTrustAuthorities)
         {
             return ((delegate* unmanaged<IMFTrustedOutput*, uint*, int>)(lpVtbl[3]))((IMFTrustedOutput*)Unsafe.AsPointer(ref this), pcOutputTrustAuthorities);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetOutputTrustAuthorityByIndex([NativeTypeName("DWORD")] uint dwIndex, IMFOutputTrustAuthority** ppauthority)
+        public HRESULT GetOutputTrustAuthorityByIndex([NativeTypeName("DWORD")] uint dwIndex, IMFOutputTrustAuthority** ppauthority)
         {
             return ((delegate* unmanaged<IMFTrustedOutput*, uint, IMFOutputTrustAuthority**, int>)(lpVtbl[4]))((IMFTrustedOutput*)Unsafe.AsPointer(ref this), dwIndex, ppauthority);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int IsFinal(BOOL* pfIsFinal)
+        public HRESULT IsFinal(BOOL* pfIsFinal)
         {
             return ((delegate* unmanaged<IMFTrustedOutput*, BOOL*, int>)(lpVtbl[5]))((IMFTrustedOutput*)Unsafe.AsPointer(ref this), pfIsFinal);
         }

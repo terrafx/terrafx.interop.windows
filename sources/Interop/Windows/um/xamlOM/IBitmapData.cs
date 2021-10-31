@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IBitmapData*, Guid*, void**, int>)(lpVtbl[0]))((IBitmapData*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,32 +41,28 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int CopyBytesTo([NativeTypeName("unsigned int")] uint sourceOffsetInBytes, [NativeTypeName("unsigned int")] uint maxBytesToCopy, byte* pvBytes, [NativeTypeName("unsigned int *")] uint* numberOfBytesCopied)
+        public HRESULT CopyBytesTo([NativeTypeName("unsigned int")] uint sourceOffsetInBytes, [NativeTypeName("unsigned int")] uint maxBytesToCopy, byte* pvBytes, [NativeTypeName("unsigned int *")] uint* numberOfBytesCopied)
         {
             return ((delegate* unmanaged<IBitmapData*, uint, uint, byte*, uint*, int>)(lpVtbl[3]))((IBitmapData*)Unsafe.AsPointer(ref this), sourceOffsetInBytes, maxBytesToCopy, pvBytes, numberOfBytesCopied);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetStride([NativeTypeName("unsigned int *")] uint* pStride)
+        public HRESULT GetStride([NativeTypeName("unsigned int *")] uint* pStride)
         {
             return ((delegate* unmanaged<IBitmapData*, uint*, int>)(lpVtbl[4]))((IBitmapData*)Unsafe.AsPointer(ref this), pStride);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetBitmapDescription(BitmapDescription* pBitmapDescription)
+        public HRESULT GetBitmapDescription(BitmapDescription* pBitmapDescription)
         {
             return ((delegate* unmanaged<IBitmapData*, BitmapDescription*, int>)(lpVtbl[5]))((IBitmapData*)Unsafe.AsPointer(ref this), pBitmapDescription);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetSourceBitmapDescription(BitmapDescription* pBitmapDescription)
+        public HRESULT GetSourceBitmapDescription(BitmapDescription* pBitmapDescription)
         {
             return ((delegate* unmanaged<IBitmapData*, BitmapDescription*, int>)(lpVtbl[6]))((IBitmapData*)Unsafe.AsPointer(ref this), pBitmapDescription);
         }

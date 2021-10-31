@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IMFSensorProfileCollection*, Guid*, void**, int>)(lpVtbl[0]))((IMFSensorProfileCollection*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -50,24 +49,21 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetProfile([NativeTypeName("DWORD")] uint Index, IMFSensorProfile** ppProfile)
+        public HRESULT GetProfile([NativeTypeName("DWORD")] uint Index, IMFSensorProfile** ppProfile)
         {
             return ((delegate* unmanaged<IMFSensorProfileCollection*, uint, IMFSensorProfile**, int>)(lpVtbl[4]))((IMFSensorProfileCollection*)Unsafe.AsPointer(ref this), Index, ppProfile);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int AddProfile(IMFSensorProfile* pProfile)
+        public HRESULT AddProfile(IMFSensorProfile* pProfile)
         {
             return ((delegate* unmanaged<IMFSensorProfileCollection*, IMFSensorProfile*, int>)(lpVtbl[5]))((IMFSensorProfileCollection*)Unsafe.AsPointer(ref this), pProfile);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int FindProfile(SENSORPROFILEID* ProfileId, IMFSensorProfile** ppProfile)
+        public HRESULT FindProfile(SENSORPROFILEID* ProfileId, IMFSensorProfile** ppProfile)
         {
             return ((delegate* unmanaged<IMFSensorProfileCollection*, SENSORPROFILEID*, IMFSensorProfile**, int>)(lpVtbl[6]))((IMFSensorProfileCollection*)Unsafe.AsPointer(ref this), ProfileId, ppProfile);
         }

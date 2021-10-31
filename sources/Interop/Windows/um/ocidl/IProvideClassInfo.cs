@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IProvideClassInfo*, Guid*, void**, int>)(lpVtbl[0]))((IProvideClassInfo*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,8 +41,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetClassInfo(ITypeInfo** ppTI)
+        public HRESULT GetClassInfo(ITypeInfo** ppTI)
         {
             return ((delegate* unmanaged<IProvideClassInfo*, ITypeInfo**, int>)(lpVtbl[3]))((IProvideClassInfo*)Unsafe.AsPointer(ref this), ppTI);
         }

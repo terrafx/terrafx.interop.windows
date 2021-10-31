@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IHomeGroup*, Guid*, void**, int>)(lpVtbl[0]))((IHomeGroup*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,16 +41,14 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int IsMember(BOOL* member)
+        public HRESULT IsMember(BOOL* member)
         {
             return ((delegate* unmanaged<IHomeGroup*, BOOL*, int>)(lpVtbl[3]))((IHomeGroup*)Unsafe.AsPointer(ref this), member);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int ShowSharingWizard([NativeTypeName("HWND")] IntPtr owner, HOMEGROUPSHARINGCHOICES* sharingchoices)
+        public HRESULT ShowSharingWizard([NativeTypeName("HWND")] IntPtr owner, HOMEGROUPSHARINGCHOICES* sharingchoices)
         {
             return ((delegate* unmanaged<IHomeGroup*, IntPtr, HOMEGROUPSHARINGCHOICES*, int>)(lpVtbl[4]))((IHomeGroup*)Unsafe.AsPointer(ref this), owner, sharingchoices);
         }

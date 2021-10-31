@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IInkD2DRenderer2*, Guid*, void**, int>)(lpVtbl[0]))((IInkD2DRenderer2*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,8 +41,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int Draw(IUnknown* pD2D1DeviceContext, IUnknown* pInkStrokeIterable, INK_HIGH_CONTRAST_ADJUSTMENT highContrastAdjustment)
+        public HRESULT Draw(IUnknown* pD2D1DeviceContext, IUnknown* pInkStrokeIterable, INK_HIGH_CONTRAST_ADJUSTMENT highContrastAdjustment)
         {
             return ((delegate* unmanaged<IInkD2DRenderer2*, IUnknown*, IUnknown*, INK_HIGH_CONTRAST_ADJUSTMENT, int>)(lpVtbl[3]))((IInkD2DRenderer2*)Unsafe.AsPointer(ref this), pD2D1DeviceContext, pInkStrokeIterable, highContrastAdjustment);
         }

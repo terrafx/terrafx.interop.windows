@@ -10,8 +10,7 @@ namespace TerraFX.Interop
         [NativeTypeName("long")]
         public int lPhaseError;
 
-        [NativeTypeName("HRESULT")]
-        public int hRes;
+        public HRESULT hRes;
 
         [NativeTypeName("long")]
         public int ObjectNum;

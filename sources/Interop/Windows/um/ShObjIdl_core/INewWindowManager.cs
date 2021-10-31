@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<INewWindowManager*, Guid*, void**, int>)(lpVtbl[0]))((INewWindowManager*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,8 +41,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int EvaluateNewWindow([NativeTypeName("LPCWSTR")] ushort* pszUrl, [NativeTypeName("LPCWSTR")] ushort* pszName, [NativeTypeName("LPCWSTR")] ushort* pszUrlContext, [NativeTypeName("LPCWSTR")] ushort* pszFeatures, BOOL fReplace, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("DWORD")] uint dwUserActionTime)
+        public HRESULT EvaluateNewWindow([NativeTypeName("LPCWSTR")] ushort* pszUrl, [NativeTypeName("LPCWSTR")] ushort* pszName, [NativeTypeName("LPCWSTR")] ushort* pszUrlContext, [NativeTypeName("LPCWSTR")] ushort* pszFeatures, BOOL fReplace, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("DWORD")] uint dwUserActionTime)
         {
             return ((delegate* unmanaged<INewWindowManager*, ushort*, ushort*, ushort*, ushort*, BOOL, uint, uint, int>)(lpVtbl[3]))((INewWindowManager*)Unsafe.AsPointer(ref this), pszUrl, pszName, pszUrlContext, pszFeatures, fReplace, dwFlags, dwUserActionTime);
         }

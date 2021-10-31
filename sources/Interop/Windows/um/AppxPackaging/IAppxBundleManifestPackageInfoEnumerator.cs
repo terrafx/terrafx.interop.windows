@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IAppxBundleManifestPackageInfoEnumerator*, Guid*, void**, int>)(lpVtbl[0]))((IAppxBundleManifestPackageInfoEnumerator*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,24 +41,21 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetCurrent(IAppxBundleManifestPackageInfo** packageInfo)
+        public HRESULT GetCurrent(IAppxBundleManifestPackageInfo** packageInfo)
         {
             return ((delegate* unmanaged<IAppxBundleManifestPackageInfoEnumerator*, IAppxBundleManifestPackageInfo**, int>)(lpVtbl[3]))((IAppxBundleManifestPackageInfoEnumerator*)Unsafe.AsPointer(ref this), packageInfo);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetHasCurrent(BOOL* hasCurrent)
+        public HRESULT GetHasCurrent(BOOL* hasCurrent)
         {
             return ((delegate* unmanaged<IAppxBundleManifestPackageInfoEnumerator*, BOOL*, int>)(lpVtbl[4]))((IAppxBundleManifestPackageInfoEnumerator*)Unsafe.AsPointer(ref this), hasCurrent);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int MoveNext(BOOL* hasNext)
+        public HRESULT MoveNext(BOOL* hasNext)
         {
             return ((delegate* unmanaged<IAppxBundleManifestPackageInfoEnumerator*, BOOL*, int>)(lpVtbl[5]))((IAppxBundleManifestPackageInfoEnumerator*)Unsafe.AsPointer(ref this), hasNext);
         }

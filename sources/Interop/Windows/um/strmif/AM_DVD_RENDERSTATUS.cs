@@ -7,8 +7,7 @@ namespace TerraFX.Interop
 {
     public partial struct AM_DVD_RENDERSTATUS
     {
-        [NativeTypeName("HRESULT")]
-        public int hrVPEStatus;
+        public HRESULT hrVPEStatus;
 
         public BOOL bDvdVolInvalid;
 

@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<ISpPhrase*, Guid*, void**, int>)(lpVtbl[0]))((ISpPhrase*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,32 +41,28 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetPhrase(SPPHRASE** ppCoMemPhrase)
+        public HRESULT GetPhrase(SPPHRASE** ppCoMemPhrase)
         {
             return ((delegate* unmanaged<ISpPhrase*, SPPHRASE**, int>)(lpVtbl[3]))((ISpPhrase*)Unsafe.AsPointer(ref this), ppCoMemPhrase);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetSerializedPhrase(SPSERIALIZEDPHRASE** ppCoMemPhrase)
+        public HRESULT GetSerializedPhrase(SPSERIALIZEDPHRASE** ppCoMemPhrase)
         {
             return ((delegate* unmanaged<ISpPhrase*, SPSERIALIZEDPHRASE**, int>)(lpVtbl[4]))((ISpPhrase*)Unsafe.AsPointer(ref this), ppCoMemPhrase);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetText([NativeTypeName("ULONG")] uint ulStart, [NativeTypeName("ULONG")] uint ulCount, BOOL fUseTextReplacements, [NativeTypeName("LPWSTR *")] ushort** ppszCoMemText, [NativeTypeName("BYTE *")] byte* pbDisplayAttributes)
+        public HRESULT GetText([NativeTypeName("ULONG")] uint ulStart, [NativeTypeName("ULONG")] uint ulCount, BOOL fUseTextReplacements, [NativeTypeName("LPWSTR *")] ushort** ppszCoMemText, [NativeTypeName("BYTE *")] byte* pbDisplayAttributes)
         {
             return ((delegate* unmanaged<ISpPhrase*, uint, uint, BOOL, ushort**, byte*, int>)(lpVtbl[5]))((ISpPhrase*)Unsafe.AsPointer(ref this), ulStart, ulCount, fUseTextReplacements, ppszCoMemText, pbDisplayAttributes);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int Discard([NativeTypeName("DWORD")] uint dwValueTypes)
+        public HRESULT Discard([NativeTypeName("DWORD")] uint dwValueTypes)
         {
             return ((delegate* unmanaged<ISpPhrase*, uint, int>)(lpVtbl[6]))((ISpPhrase*)Unsafe.AsPointer(ref this), dwValueTypes);
         }

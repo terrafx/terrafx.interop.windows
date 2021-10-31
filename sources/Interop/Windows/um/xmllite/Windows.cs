@@ -13,28 +13,22 @@ namespace TerraFX.Interop
     public static unsafe partial class Windows
     {
         [DllImport("xmllite", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int CreateXmlReader([NativeTypeName("const IID &")] Guid* riid, void** ppvObject, IMalloc* pMalloc);
+        public static extern HRESULT CreateXmlReader([NativeTypeName("const IID &")] Guid* riid, void** ppvObject, IMalloc* pMalloc);
 
         [DllImport("xmllite", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int CreateXmlReaderInputWithEncodingCodePage(IUnknown* pInputStream, IMalloc* pMalloc, [NativeTypeName("UINT")] uint nEncodingCodePage, BOOL fEncodingHint, [NativeTypeName("LPCWSTR")] ushort* pwszBaseUri, [NativeTypeName("IXmlReaderInput **")] IUnknown** ppInput);
+        public static extern HRESULT CreateXmlReaderInputWithEncodingCodePage(IUnknown* pInputStream, IMalloc* pMalloc, [NativeTypeName("UINT")] uint nEncodingCodePage, BOOL fEncodingHint, [NativeTypeName("LPCWSTR")] ushort* pwszBaseUri, [NativeTypeName("IXmlReaderInput **")] IUnknown** ppInput);
 
         [DllImport("xmllite", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int CreateXmlReaderInputWithEncodingName(IUnknown* pInputStream, IMalloc* pMalloc, [NativeTypeName("LPCWSTR")] ushort* pwszEncodingName, BOOL fEncodingHint, [NativeTypeName("LPCWSTR")] ushort* pwszBaseUri, [NativeTypeName("IXmlReaderInput **")] IUnknown** ppInput);
+        public static extern HRESULT CreateXmlReaderInputWithEncodingName(IUnknown* pInputStream, IMalloc* pMalloc, [NativeTypeName("LPCWSTR")] ushort* pwszEncodingName, BOOL fEncodingHint, [NativeTypeName("LPCWSTR")] ushort* pwszBaseUri, [NativeTypeName("IXmlReaderInput **")] IUnknown** ppInput);
 
         [DllImport("xmllite", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int CreateXmlWriter([NativeTypeName("const IID &")] Guid* riid, void** ppvObject, IMalloc* pMalloc);
+        public static extern HRESULT CreateXmlWriter([NativeTypeName("const IID &")] Guid* riid, void** ppvObject, IMalloc* pMalloc);
 
         [DllImport("xmllite", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int CreateXmlWriterOutputWithEncodingCodePage(IUnknown* pOutputStream, IMalloc* pMalloc, [NativeTypeName("UINT")] uint nEncodingCodePage, [NativeTypeName("IXmlWriterOutput **")] IUnknown** ppOutput);
+        public static extern HRESULT CreateXmlWriterOutputWithEncodingCodePage(IUnknown* pOutputStream, IMalloc* pMalloc, [NativeTypeName("UINT")] uint nEncodingCodePage, [NativeTypeName("IXmlWriterOutput **")] IUnknown** ppOutput);
 
         [DllImport("xmllite", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int CreateXmlWriterOutputWithEncodingName(IUnknown* pOutputStream, IMalloc* pMalloc, [NativeTypeName("LPCWSTR")] ushort* pwszEncodingName, [NativeTypeName("IXmlWriterOutput **")] IUnknown** ppOutput);
+        public static extern HRESULT CreateXmlWriterOutputWithEncodingName(IUnknown* pOutputStream, IMalloc* pMalloc, [NativeTypeName("LPCWSTR")] ushort* pwszEncodingName, [NativeTypeName("IXmlWriterOutput **")] IUnknown** ppOutput);
 
         [NativeTypeName("const IID")]
         public static ref readonly Guid IID_IXmlReader

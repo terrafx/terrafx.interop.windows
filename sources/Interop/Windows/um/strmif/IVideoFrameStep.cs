@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IVideoFrameStep*, Guid*, void**, int>)(lpVtbl[0]))((IVideoFrameStep*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,24 +41,21 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int Step([NativeTypeName("DWORD")] uint dwFrames, IUnknown* pStepObject)
+        public HRESULT Step([NativeTypeName("DWORD")] uint dwFrames, IUnknown* pStepObject)
         {
             return ((delegate* unmanaged<IVideoFrameStep*, uint, IUnknown*, int>)(lpVtbl[3]))((IVideoFrameStep*)Unsafe.AsPointer(ref this), dwFrames, pStepObject);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int CanStep([NativeTypeName("long")] int bMultiple, IUnknown* pStepObject)
+        public HRESULT CanStep([NativeTypeName("long")] int bMultiple, IUnknown* pStepObject)
         {
             return ((delegate* unmanaged<IVideoFrameStep*, int, IUnknown*, int>)(lpVtbl[4]))((IVideoFrameStep*)Unsafe.AsPointer(ref this), bMultiple, pStepObject);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int CancelStep()
+        public HRESULT CancelStep()
         {
             return ((delegate* unmanaged<IVideoFrameStep*, int>)(lpVtbl[5]))((IVideoFrameStep*)Unsafe.AsPointer(ref this));
         }

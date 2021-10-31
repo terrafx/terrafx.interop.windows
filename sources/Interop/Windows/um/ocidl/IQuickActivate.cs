@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IQuickActivate*, Guid*, void**, int>)(lpVtbl[0]))((IQuickActivate*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,24 +41,21 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int QuickActivate(QACONTAINER* pQaContainer, QACONTROL* pQaControl)
+        public HRESULT QuickActivate(QACONTAINER* pQaContainer, QACONTROL* pQaControl)
         {
             return ((delegate* unmanaged<IQuickActivate*, QACONTAINER*, QACONTROL*, int>)(lpVtbl[3]))((IQuickActivate*)Unsafe.AsPointer(ref this), pQaContainer, pQaControl);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetContentExtent([NativeTypeName("LPSIZEL")] SIZE* pSizel)
+        public HRESULT SetContentExtent([NativeTypeName("LPSIZEL")] SIZE* pSizel)
         {
             return ((delegate* unmanaged<IQuickActivate*, SIZE*, int>)(lpVtbl[4]))((IQuickActivate*)Unsafe.AsPointer(ref this), pSizel);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetContentExtent([NativeTypeName("LPSIZEL")] SIZE* pSizel)
+        public HRESULT GetContentExtent([NativeTypeName("LPSIZEL")] SIZE* pSizel)
         {
             return ((delegate* unmanaged<IQuickActivate*, SIZE*, int>)(lpVtbl[5]))((IQuickActivate*)Unsafe.AsPointer(ref this), pSizel);
         }

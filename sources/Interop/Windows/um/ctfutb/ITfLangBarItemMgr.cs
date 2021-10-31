@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<ITfLangBarItemMgr*, Guid*, void**, int>)(lpVtbl[0]))((ITfLangBarItemMgr*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,96 +41,84 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int EnumItems(IEnumTfLangBarItems** ppEnum)
+        public HRESULT EnumItems(IEnumTfLangBarItems** ppEnum)
         {
             return ((delegate* unmanaged<ITfLangBarItemMgr*, IEnumTfLangBarItems**, int>)(lpVtbl[3]))((ITfLangBarItemMgr*)Unsafe.AsPointer(ref this), ppEnum);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetItem([NativeTypeName("const GUID &")] Guid* rguid, ITfLangBarItem** ppItem)
+        public HRESULT GetItem([NativeTypeName("const GUID &")] Guid* rguid, ITfLangBarItem** ppItem)
         {
             return ((delegate* unmanaged<ITfLangBarItemMgr*, Guid*, ITfLangBarItem**, int>)(lpVtbl[4]))((ITfLangBarItemMgr*)Unsafe.AsPointer(ref this), rguid, ppItem);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int AddItem(ITfLangBarItem* punk)
+        public HRESULT AddItem(ITfLangBarItem* punk)
         {
             return ((delegate* unmanaged<ITfLangBarItemMgr*, ITfLangBarItem*, int>)(lpVtbl[5]))((ITfLangBarItemMgr*)Unsafe.AsPointer(ref this), punk);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int RemoveItem(ITfLangBarItem* punk)
+        public HRESULT RemoveItem(ITfLangBarItem* punk)
         {
             return ((delegate* unmanaged<ITfLangBarItemMgr*, ITfLangBarItem*, int>)(lpVtbl[6]))((ITfLangBarItemMgr*)Unsafe.AsPointer(ref this), punk);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        [return: NativeTypeName("HRESULT")]
-        public int AdviseItemSink(ITfLangBarItemSink* punk, [NativeTypeName("DWORD *")] uint* pdwCookie, [NativeTypeName("const GUID &")] Guid* rguidItem)
+        public HRESULT AdviseItemSink(ITfLangBarItemSink* punk, [NativeTypeName("DWORD *")] uint* pdwCookie, [NativeTypeName("const GUID &")] Guid* rguidItem)
         {
             return ((delegate* unmanaged<ITfLangBarItemMgr*, ITfLangBarItemSink*, uint*, Guid*, int>)(lpVtbl[7]))((ITfLangBarItemMgr*)Unsafe.AsPointer(ref this), punk, pdwCookie, rguidItem);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        [return: NativeTypeName("HRESULT")]
-        public int UnadviseItemSink([NativeTypeName("DWORD")] uint dwCookie)
+        public HRESULT UnadviseItemSink([NativeTypeName("DWORD")] uint dwCookie)
         {
             return ((delegate* unmanaged<ITfLangBarItemMgr*, uint, int>)(lpVtbl[8]))((ITfLangBarItemMgr*)Unsafe.AsPointer(ref this), dwCookie);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetItemFloatingRect([NativeTypeName("DWORD")] uint dwThreadId, [NativeTypeName("const GUID &")] Guid* rguid, RECT* prc)
+        public HRESULT GetItemFloatingRect([NativeTypeName("DWORD")] uint dwThreadId, [NativeTypeName("const GUID &")] Guid* rguid, RECT* prc)
         {
             return ((delegate* unmanaged<ITfLangBarItemMgr*, uint, Guid*, RECT*, int>)(lpVtbl[9]))((ITfLangBarItemMgr*)Unsafe.AsPointer(ref this), dwThreadId, rguid, prc);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(10)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetItemsStatus([NativeTypeName("ULONG")] uint ulCount, [NativeTypeName("const GUID *")] Guid* prgguid, [NativeTypeName("DWORD *")] uint* pdwStatus)
+        public HRESULT GetItemsStatus([NativeTypeName("ULONG")] uint ulCount, [NativeTypeName("const GUID *")] Guid* prgguid, [NativeTypeName("DWORD *")] uint* pdwStatus)
         {
             return ((delegate* unmanaged<ITfLangBarItemMgr*, uint, Guid*, uint*, int>)(lpVtbl[10]))((ITfLangBarItemMgr*)Unsafe.AsPointer(ref this), ulCount, prgguid, pdwStatus);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(11)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetItemNum([NativeTypeName("ULONG *")] uint* pulCount)
+        public HRESULT GetItemNum([NativeTypeName("ULONG *")] uint* pulCount)
         {
             return ((delegate* unmanaged<ITfLangBarItemMgr*, uint*, int>)(lpVtbl[11]))((ITfLangBarItemMgr*)Unsafe.AsPointer(ref this), pulCount);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(12)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetItems([NativeTypeName("ULONG")] uint ulCount, ITfLangBarItem** ppItem, TF_LANGBARITEMINFO* pInfo, [NativeTypeName("DWORD *")] uint* pdwStatus, [NativeTypeName("ULONG *")] uint* pcFetched)
+        public HRESULT GetItems([NativeTypeName("ULONG")] uint ulCount, ITfLangBarItem** ppItem, TF_LANGBARITEMINFO* pInfo, [NativeTypeName("DWORD *")] uint* pdwStatus, [NativeTypeName("ULONG *")] uint* pcFetched)
         {
             return ((delegate* unmanaged<ITfLangBarItemMgr*, uint, ITfLangBarItem**, TF_LANGBARITEMINFO*, uint*, uint*, int>)(lpVtbl[12]))((ITfLangBarItemMgr*)Unsafe.AsPointer(ref this), ulCount, ppItem, pInfo, pdwStatus, pcFetched);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(13)]
-        [return: NativeTypeName("HRESULT")]
-        public int AdviseItemsSink([NativeTypeName("ULONG")] uint ulCount, ITfLangBarItemSink** ppunk, [NativeTypeName("const GUID *")] Guid* pguidItem, [NativeTypeName("DWORD *")] uint* pdwCookie)
+        public HRESULT AdviseItemsSink([NativeTypeName("ULONG")] uint ulCount, ITfLangBarItemSink** ppunk, [NativeTypeName("const GUID *")] Guid* pguidItem, [NativeTypeName("DWORD *")] uint* pdwCookie)
         {
             return ((delegate* unmanaged<ITfLangBarItemMgr*, uint, ITfLangBarItemSink**, Guid*, uint*, int>)(lpVtbl[13]))((ITfLangBarItemMgr*)Unsafe.AsPointer(ref this), ulCount, ppunk, pguidItem, pdwCookie);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(14)]
-        [return: NativeTypeName("HRESULT")]
-        public int UnadviseItemsSink([NativeTypeName("ULONG")] uint ulCount, [NativeTypeName("DWORD *")] uint* pdwCookie)
+        public HRESULT UnadviseItemsSink([NativeTypeName("ULONG")] uint ulCount, [NativeTypeName("DWORD *")] uint* pdwCookie)
         {
             return ((delegate* unmanaged<ITfLangBarItemMgr*, uint, uint*, int>)(lpVtbl[14]))((ITfLangBarItemMgr*)Unsafe.AsPointer(ref this), ulCount, pdwCookie);
         }

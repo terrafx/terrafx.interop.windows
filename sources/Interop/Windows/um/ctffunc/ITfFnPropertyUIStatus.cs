@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<ITfFnPropertyUIStatus*, Guid*, void**, int>)(lpVtbl[0]))((ITfFnPropertyUIStatus*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,24 +41,21 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetDisplayName([NativeTypeName("BSTR *")] ushort** pbstrName)
+        public HRESULT GetDisplayName([NativeTypeName("BSTR *")] ushort** pbstrName)
         {
             return ((delegate* unmanaged<ITfFnPropertyUIStatus*, ushort**, int>)(lpVtbl[3]))((ITfFnPropertyUIStatus*)Unsafe.AsPointer(ref this), pbstrName);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetStatus([NativeTypeName("const GUID &")] Guid* refguidProp, [NativeTypeName("DWORD *")] uint* pdw)
+        public HRESULT GetStatus([NativeTypeName("const GUID &")] Guid* refguidProp, [NativeTypeName("DWORD *")] uint* pdw)
         {
             return ((delegate* unmanaged<ITfFnPropertyUIStatus*, Guid*, uint*, int>)(lpVtbl[4]))((ITfFnPropertyUIStatus*)Unsafe.AsPointer(ref this), refguidProp, pdw);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetStatus([NativeTypeName("const GUID &")] Guid* refguidProp, [NativeTypeName("DWORD")] uint dw)
+        public HRESULT SetStatus([NativeTypeName("const GUID &")] Guid* refguidProp, [NativeTypeName("DWORD")] uint dw)
         {
             return ((delegate* unmanaged<ITfFnPropertyUIStatus*, Guid*, uint, int>)(lpVtbl[5]))((ITfFnPropertyUIStatus*)Unsafe.AsPointer(ref this), refguidProp, dw);
         }

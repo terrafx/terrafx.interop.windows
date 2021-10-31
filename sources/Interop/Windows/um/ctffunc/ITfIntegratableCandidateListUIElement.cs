@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<ITfIntegratableCandidateListUIElement*, Guid*, void**, int>)(lpVtbl[0]))((ITfIntegratableCandidateListUIElement*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,40 +41,35 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetIntegrationStyle([NativeTypeName("GUID")] Guid guidIntegrationStyle)
+        public HRESULT SetIntegrationStyle([NativeTypeName("GUID")] Guid guidIntegrationStyle)
         {
             return ((delegate* unmanaged<ITfIntegratableCandidateListUIElement*, Guid, int>)(lpVtbl[3]))((ITfIntegratableCandidateListUIElement*)Unsafe.AsPointer(ref this), guidIntegrationStyle);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetSelectionStyle(TfIntegratableCandidateListSelectionStyle* ptfSelectionStyle)
+        public HRESULT GetSelectionStyle(TfIntegratableCandidateListSelectionStyle* ptfSelectionStyle)
         {
             return ((delegate* unmanaged<ITfIntegratableCandidateListUIElement*, TfIntegratableCandidateListSelectionStyle*, int>)(lpVtbl[4]))((ITfIntegratableCandidateListUIElement*)Unsafe.AsPointer(ref this), ptfSelectionStyle);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int OnKeyDown([NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam, BOOL* pfEaten)
+        public HRESULT OnKeyDown([NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam, BOOL* pfEaten)
         {
             return ((delegate* unmanaged<ITfIntegratableCandidateListUIElement*, nuint, nint, BOOL*, int>)(lpVtbl[5]))((ITfIntegratableCandidateListUIElement*)Unsafe.AsPointer(ref this), wParam, lParam, pfEaten);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int ShowCandidateNumbers(BOOL* pfShow)
+        public HRESULT ShowCandidateNumbers(BOOL* pfShow)
         {
             return ((delegate* unmanaged<ITfIntegratableCandidateListUIElement*, BOOL*, int>)(lpVtbl[6]))((ITfIntegratableCandidateListUIElement*)Unsafe.AsPointer(ref this), pfShow);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        [return: NativeTypeName("HRESULT")]
-        public int FinalizeExactCompositionString()
+        public HRESULT FinalizeExactCompositionString()
         {
             return ((delegate* unmanaged<ITfIntegratableCandidateListUIElement*, int>)(lpVtbl[7]))((ITfIntegratableCandidateListUIElement*)Unsafe.AsPointer(ref this));
         }

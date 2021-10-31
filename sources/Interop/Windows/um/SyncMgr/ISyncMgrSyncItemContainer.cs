@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<ISyncMgrSyncItemContainer*, Guid*, void**, int>)(lpVtbl[0]))((ISyncMgrSyncItemContainer*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,24 +41,21 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetSyncItem([NativeTypeName("LPCWSTR")] ushort* pszItemID, ISyncMgrSyncItem** ppItem)
+        public HRESULT GetSyncItem([NativeTypeName("LPCWSTR")] ushort* pszItemID, ISyncMgrSyncItem** ppItem)
         {
             return ((delegate* unmanaged<ISyncMgrSyncItemContainer*, ushort*, ISyncMgrSyncItem**, int>)(lpVtbl[3]))((ISyncMgrSyncItemContainer*)Unsafe.AsPointer(ref this), pszItemID, ppItem);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetSyncItemEnumerator(IEnumSyncMgrSyncItems** ppenum)
+        public HRESULT GetSyncItemEnumerator(IEnumSyncMgrSyncItems** ppenum)
         {
             return ((delegate* unmanaged<ISyncMgrSyncItemContainer*, IEnumSyncMgrSyncItems**, int>)(lpVtbl[4]))((ISyncMgrSyncItemContainer*)Unsafe.AsPointer(ref this), ppenum);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetSyncItemCount([NativeTypeName("ULONG *")] uint* pcItems)
+        public HRESULT GetSyncItemCount([NativeTypeName("ULONG *")] uint* pcItems)
         {
             return ((delegate* unmanaged<ISyncMgrSyncItemContainer*, uint*, int>)(lpVtbl[5]))((ISyncMgrSyncItemContainer*)Unsafe.AsPointer(ref this), pcItems);
         }

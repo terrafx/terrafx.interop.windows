@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<ITfUIElementMgr*, Guid*, void**, int>)(lpVtbl[0]))((ITfUIElementMgr*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,40 +41,35 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int BeginUIElement(ITfUIElement* pElement, BOOL* pbShow, [NativeTypeName("DWORD *")] uint* pdwUIElementId)
+        public HRESULT BeginUIElement(ITfUIElement* pElement, BOOL* pbShow, [NativeTypeName("DWORD *")] uint* pdwUIElementId)
         {
             return ((delegate* unmanaged<ITfUIElementMgr*, ITfUIElement*, BOOL*, uint*, int>)(lpVtbl[3]))((ITfUIElementMgr*)Unsafe.AsPointer(ref this), pElement, pbShow, pdwUIElementId);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int UpdateUIElement([NativeTypeName("DWORD")] uint dwUIElementId)
+        public HRESULT UpdateUIElement([NativeTypeName("DWORD")] uint dwUIElementId)
         {
             return ((delegate* unmanaged<ITfUIElementMgr*, uint, int>)(lpVtbl[4]))((ITfUIElementMgr*)Unsafe.AsPointer(ref this), dwUIElementId);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int EndUIElement([NativeTypeName("DWORD")] uint dwUIElementId)
+        public HRESULT EndUIElement([NativeTypeName("DWORD")] uint dwUIElementId)
         {
             return ((delegate* unmanaged<ITfUIElementMgr*, uint, int>)(lpVtbl[5]))((ITfUIElementMgr*)Unsafe.AsPointer(ref this), dwUIElementId);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetUIElement([NativeTypeName("DWORD")] uint dwUIELementId, ITfUIElement** ppElement)
+        public HRESULT GetUIElement([NativeTypeName("DWORD")] uint dwUIELementId, ITfUIElement** ppElement)
         {
             return ((delegate* unmanaged<ITfUIElementMgr*, uint, ITfUIElement**, int>)(lpVtbl[6]))((ITfUIElementMgr*)Unsafe.AsPointer(ref this), dwUIELementId, ppElement);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        [return: NativeTypeName("HRESULT")]
-        public int EnumUIElements(IEnumTfUIElements** ppEnum)
+        public HRESULT EnumUIElements(IEnumTfUIElements** ppEnum)
         {
             return ((delegate* unmanaged<ITfUIElementMgr*, IEnumTfUIElements**, int>)(lpVtbl[7]))((ITfUIElementMgr*)Unsafe.AsPointer(ref this), ppEnum);
         }

@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IShellImageDataFactory*, Guid*, void**, int>)(lpVtbl[0]))((IShellImageDataFactory*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,32 +41,28 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int CreateIShellImageData(IShellImageData** ppshimg)
+        public HRESULT CreateIShellImageData(IShellImageData** ppshimg)
         {
             return ((delegate* unmanaged<IShellImageDataFactory*, IShellImageData**, int>)(lpVtbl[3]))((IShellImageDataFactory*)Unsafe.AsPointer(ref this), ppshimg);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int CreateImageFromFile([NativeTypeName("LPCWSTR")] ushort* pszPath, IShellImageData** ppshimg)
+        public HRESULT CreateImageFromFile([NativeTypeName("LPCWSTR")] ushort* pszPath, IShellImageData** ppshimg)
         {
             return ((delegate* unmanaged<IShellImageDataFactory*, ushort*, IShellImageData**, int>)(lpVtbl[4]))((IShellImageDataFactory*)Unsafe.AsPointer(ref this), pszPath, ppshimg);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int CreateImageFromStream(IStream* pStream, IShellImageData** ppshimg)
+        public HRESULT CreateImageFromStream(IStream* pStream, IShellImageData** ppshimg)
         {
             return ((delegate* unmanaged<IShellImageDataFactory*, IStream*, IShellImageData**, int>)(lpVtbl[5]))((IShellImageDataFactory*)Unsafe.AsPointer(ref this), pStream, ppshimg);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetDataFormatFromPath([NativeTypeName("LPCWSTR")] ushort* pszPath, [NativeTypeName("GUID *")] Guid* pDataFormat)
+        public HRESULT GetDataFormatFromPath([NativeTypeName("LPCWSTR")] ushort* pszPath, [NativeTypeName("GUID *")] Guid* pDataFormat)
         {
             return ((delegate* unmanaged<IShellImageDataFactory*, ushort*, Guid*, int>)(lpVtbl[6]))((IShellImageDataFactory*)Unsafe.AsPointer(ref this), pszPath, pDataFormat);
         }

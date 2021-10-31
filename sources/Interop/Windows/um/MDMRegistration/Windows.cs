@@ -11,67 +11,52 @@ namespace TerraFX.Interop
     public static unsafe partial class Windows
     {
         [DllImport("mdmregistration", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int GetDeviceRegistrationInfo(REGISTRATION_INFORMATION_CLASS DeviceInformationClass, [NativeTypeName("PVOID *")] void** ppDeviceRegistrationInfo);
+        public static extern HRESULT GetDeviceRegistrationInfo(REGISTRATION_INFORMATION_CLASS DeviceInformationClass, [NativeTypeName("PVOID *")] void** ppDeviceRegistrationInfo);
 
         [DllImport("mdmregistration", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int IsDeviceRegisteredWithManagement(BOOL* pfIsDeviceRegisteredWithManagement, [NativeTypeName("DWORD")] uint cchUPN, [NativeTypeName("LPWSTR")] ushort* pszUPN);
+        public static extern HRESULT IsDeviceRegisteredWithManagement(BOOL* pfIsDeviceRegisteredWithManagement, [NativeTypeName("DWORD")] uint cchUPN, [NativeTypeName("LPWSTR")] ushort* pszUPN);
 
         [DllImport("mdmregistration", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int IsManagementRegistrationAllowed(BOOL* pfIsManagementRegistrationAllowed);
+        public static extern HRESULT IsManagementRegistrationAllowed(BOOL* pfIsManagementRegistrationAllowed);
 
         [DllImport("mdmregistration", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int IsMdmUxWithoutAadAllowed(BOOL* isEnrollmentAllowed);
+        public static extern HRESULT IsMdmUxWithoutAadAllowed(BOOL* isEnrollmentAllowed);
 
         [DllImport("mdmregistration", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int SetManagedExternally(BOOL IsManagedExternally);
+        public static extern HRESULT SetManagedExternally(BOOL IsManagedExternally);
 
         [DllImport("mdmregistration", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int DiscoverManagementService([NativeTypeName("LPCWSTR")] ushort* pszUPN, [NativeTypeName("PMANAGEMENT_SERVICE_INFO *")] MANAGEMENT_SERVICE_INFO** ppMgmtInfo);
+        public static extern HRESULT DiscoverManagementService([NativeTypeName("LPCWSTR")] ushort* pszUPN, [NativeTypeName("PMANAGEMENT_SERVICE_INFO *")] MANAGEMENT_SERVICE_INFO** ppMgmtInfo);
 
         [DllImport("mdmregistration", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int RegisterDeviceWithManagementUsingAADCredentials([NativeTypeName("HANDLE")] IntPtr UserToken);
+        public static extern HRESULT RegisterDeviceWithManagementUsingAADCredentials([NativeTypeName("HANDLE")] IntPtr UserToken);
 
         [DllImport("mdmregistration", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int RegisterDeviceWithManagementUsingAADDeviceCredentials();
+        public static extern HRESULT RegisterDeviceWithManagementUsingAADDeviceCredentials();
 
         [DllImport("mdmregistration", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int RegisterDeviceWithManagementUsingAADDeviceCredentials2([NativeTypeName("PCWSTR")] ushort* MDMApplicationID);
+        public static extern HRESULT RegisterDeviceWithManagementUsingAADDeviceCredentials2([NativeTypeName("PCWSTR")] ushort* MDMApplicationID);
 
         [DllImport("mdmregistration", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int RegisterDeviceWithManagement([NativeTypeName("LPCWSTR")] ushort* pszUPN, [NativeTypeName("LPCWSTR")] ushort* ppszMDMServiceUri, [NativeTypeName("LPCWSTR")] ushort* ppzsAccessToken);
+        public static extern HRESULT RegisterDeviceWithManagement([NativeTypeName("LPCWSTR")] ushort* pszUPN, [NativeTypeName("LPCWSTR")] ushort* ppszMDMServiceUri, [NativeTypeName("LPCWSTR")] ushort* ppzsAccessToken);
 
         [DllImport("mdmregistration", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int UnregisterDeviceWithManagement([NativeTypeName("LPCWSTR")] ushort* enrollmentID);
+        public static extern HRESULT UnregisterDeviceWithManagement([NativeTypeName("LPCWSTR")] ushort* enrollmentID);
 
         [DllImport("mdmregistration", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int GetDeviceManagementConfigInfo([NativeTypeName("PCWSTR")] ushort* providerID, [NativeTypeName("DWORD *")] uint* configStringBufferLength, [NativeTypeName("PWSTR")] ushort* configString);
+        public static extern HRESULT GetDeviceManagementConfigInfo([NativeTypeName("PCWSTR")] ushort* providerID, [NativeTypeName("DWORD *")] uint* configStringBufferLength, [NativeTypeName("PWSTR")] ushort* configString);
 
         [DllImport("mdmregistration", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int SetDeviceManagementConfigInfo([NativeTypeName("PCWSTR")] ushort* providerID, [NativeTypeName("PCWSTR")] ushort* configString);
+        public static extern HRESULT SetDeviceManagementConfigInfo([NativeTypeName("PCWSTR")] ushort* providerID, [NativeTypeName("PCWSTR")] ushort* configString);
 
         [DllImport("mdmregistration", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int GetManagementAppHyperlink([NativeTypeName("DWORD")] uint cchHyperlink, [NativeTypeName("LPWSTR")] ushort* pszHyperlink);
+        public static extern HRESULT GetManagementAppHyperlink([NativeTypeName("DWORD")] uint cchHyperlink, [NativeTypeName("LPWSTR")] ushort* pszHyperlink);
 
         [DllImport("mdmregistration", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int DiscoverManagementServiceEx([NativeTypeName("LPCWSTR")] ushort* pszUPN, [NativeTypeName("LPCWSTR")] ushort* pszDiscoveryServiceCandidate, [NativeTypeName("PMANAGEMENT_SERVICE_INFO *")] MANAGEMENT_SERVICE_INFO** ppMgmtInfo);
+        public static extern HRESULT DiscoverManagementServiceEx([NativeTypeName("LPCWSTR")] ushort* pszUPN, [NativeTypeName("LPCWSTR")] ushort* pszDiscoveryServiceCandidate, [NativeTypeName("PMANAGEMENT_SERVICE_INFO *")] MANAGEMENT_SERVICE_INFO** ppMgmtInfo);
 
         [NativeTypeName("#define E_DATATYPE_MISMATCH HRESULT_FROM_WIN32(ERROR_DATATYPE_MISMATCH)")]
-        public static int E_DATATYPE_MISMATCH => HRESULT_FROM_WIN32(1629);
+        public static HRESULT E_DATATYPE_MISMATCH => HRESULT_FROM_WIN32(1629);
 
         [NativeTypeName("#define MDM_REGISTRATION_FACILITY_CODE 25")]
         public const int MDM_REGISTRATION_FACILITY_CODE = 25;

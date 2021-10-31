@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IShellLinkDataList*, Guid*, void**, int>)(lpVtbl[0]))((IShellLinkDataList*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,40 +41,35 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int AddDataBlock(void* pDataBlock)
+        public HRESULT AddDataBlock(void* pDataBlock)
         {
             return ((delegate* unmanaged<IShellLinkDataList*, void*, int>)(lpVtbl[3]))((IShellLinkDataList*)Unsafe.AsPointer(ref this), pDataBlock);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int CopyDataBlock([NativeTypeName("DWORD")] uint dwSig, void** ppDataBlock)
+        public HRESULT CopyDataBlock([NativeTypeName("DWORD")] uint dwSig, void** ppDataBlock)
         {
             return ((delegate* unmanaged<IShellLinkDataList*, uint, void**, int>)(lpVtbl[4]))((IShellLinkDataList*)Unsafe.AsPointer(ref this), dwSig, ppDataBlock);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int RemoveDataBlock([NativeTypeName("DWORD")] uint dwSig)
+        public HRESULT RemoveDataBlock([NativeTypeName("DWORD")] uint dwSig)
         {
             return ((delegate* unmanaged<IShellLinkDataList*, uint, int>)(lpVtbl[5]))((IShellLinkDataList*)Unsafe.AsPointer(ref this), dwSig);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetFlags([NativeTypeName("DWORD *")] uint* pdwFlags)
+        public HRESULT GetFlags([NativeTypeName("DWORD *")] uint* pdwFlags)
         {
             return ((delegate* unmanaged<IShellLinkDataList*, uint*, int>)(lpVtbl[6]))((IShellLinkDataList*)Unsafe.AsPointer(ref this), pdwFlags);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetFlags([NativeTypeName("DWORD")] uint dwFlags)
+        public HRESULT SetFlags([NativeTypeName("DWORD")] uint dwFlags)
         {
             return ((delegate* unmanaged<IShellLinkDataList*, uint, int>)(lpVtbl[7]))((IShellLinkDataList*)Unsafe.AsPointer(ref this), dwFlags);
         }

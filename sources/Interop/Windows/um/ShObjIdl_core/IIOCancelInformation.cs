@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IIOCancelInformation*, Guid*, void**, int>)(lpVtbl[0]))((IIOCancelInformation*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,16 +41,14 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetCancelInformation([NativeTypeName("DWORD")] uint dwThreadID, [NativeTypeName("UINT")] uint uMsgCancel)
+        public HRESULT SetCancelInformation([NativeTypeName("DWORD")] uint dwThreadID, [NativeTypeName("UINT")] uint uMsgCancel)
         {
             return ((delegate* unmanaged<IIOCancelInformation*, uint, uint, int>)(lpVtbl[3]))((IIOCancelInformation*)Unsafe.AsPointer(ref this), dwThreadID, uMsgCancel);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetCancelInformation([NativeTypeName("DWORD *")] uint* pdwThreadID, [NativeTypeName("UINT *")] uint* puMsgCancel)
+        public HRESULT GetCancelInformation([NativeTypeName("DWORD *")] uint* pdwThreadID, [NativeTypeName("UINT *")] uint* puMsgCancel)
         {
             return ((delegate* unmanaged<IIOCancelInformation*, uint*, uint*, int>)(lpVtbl[4]))((IIOCancelInformation*)Unsafe.AsPointer(ref this), pdwThreadID, puMsgCancel);
         }

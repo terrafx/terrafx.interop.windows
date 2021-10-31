@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<ICategoryProvider*, Guid*, void**, int>)(lpVtbl[0]))((ICategoryProvider*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,48 +41,42 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int CanCategorizeOnSCID([NativeTypeName("const SHCOLUMNID *")] PROPERTYKEY* pscid)
+        public HRESULT CanCategorizeOnSCID([NativeTypeName("const SHCOLUMNID *")] PROPERTYKEY* pscid)
         {
             return ((delegate* unmanaged<ICategoryProvider*, PROPERTYKEY*, int>)(lpVtbl[3]))((ICategoryProvider*)Unsafe.AsPointer(ref this), pscid);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetDefaultCategory([NativeTypeName("GUID *")] Guid* pguid, [NativeTypeName("SHCOLUMNID *")] PROPERTYKEY* pscid)
+        public HRESULT GetDefaultCategory([NativeTypeName("GUID *")] Guid* pguid, [NativeTypeName("SHCOLUMNID *")] PROPERTYKEY* pscid)
         {
             return ((delegate* unmanaged<ICategoryProvider*, Guid*, PROPERTYKEY*, int>)(lpVtbl[4]))((ICategoryProvider*)Unsafe.AsPointer(ref this), pguid, pscid);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetCategoryForSCID([NativeTypeName("const SHCOLUMNID *")] PROPERTYKEY* pscid, [NativeTypeName("GUID *")] Guid* pguid)
+        public HRESULT GetCategoryForSCID([NativeTypeName("const SHCOLUMNID *")] PROPERTYKEY* pscid, [NativeTypeName("GUID *")] Guid* pguid)
         {
             return ((delegate* unmanaged<ICategoryProvider*, PROPERTYKEY*, Guid*, int>)(lpVtbl[5]))((ICategoryProvider*)Unsafe.AsPointer(ref this), pscid, pguid);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int EnumCategories(IEnumGUID** penum)
+        public HRESULT EnumCategories(IEnumGUID** penum)
         {
             return ((delegate* unmanaged<ICategoryProvider*, IEnumGUID**, int>)(lpVtbl[6]))((ICategoryProvider*)Unsafe.AsPointer(ref this), penum);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetCategoryName([NativeTypeName("const GUID *")] Guid* pguid, [NativeTypeName("LPWSTR")] ushort* pszName, [NativeTypeName("UINT")] uint cch)
+        public HRESULT GetCategoryName([NativeTypeName("const GUID *")] Guid* pguid, [NativeTypeName("LPWSTR")] ushort* pszName, [NativeTypeName("UINT")] uint cch)
         {
             return ((delegate* unmanaged<ICategoryProvider*, Guid*, ushort*, uint, int>)(lpVtbl[7]))((ICategoryProvider*)Unsafe.AsPointer(ref this), pguid, pszName, cch);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        [return: NativeTypeName("HRESULT")]
-        public int CreateCategory([NativeTypeName("const GUID *")] Guid* pguid, [NativeTypeName("const IID &")] Guid* riid, void** ppv)
+        public HRESULT CreateCategory([NativeTypeName("const GUID *")] Guid* pguid, [NativeTypeName("const IID &")] Guid* riid, void** ppv)
         {
             return ((delegate* unmanaged<ICategoryProvider*, Guid*, Guid*, void**, int>)(lpVtbl[8]))((ICategoryProvider*)Unsafe.AsPointer(ref this), pguid, riid, ppv);
         }

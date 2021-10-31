@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IActiveIMMRegistrar*, Guid*, void**, int>)(lpVtbl[0]))((IActiveIMMRegistrar*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,16 +41,14 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int RegisterIME([NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("LANGID")] ushort lgid, [NativeTypeName("LPCWSTR")] ushort* pszIconFile, [NativeTypeName("LPCWSTR")] ushort* pszDesc)
+        public HRESULT RegisterIME([NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("LANGID")] ushort lgid, [NativeTypeName("LPCWSTR")] ushort* pszIconFile, [NativeTypeName("LPCWSTR")] ushort* pszDesc)
         {
             return ((delegate* unmanaged<IActiveIMMRegistrar*, Guid*, ushort, ushort*, ushort*, int>)(lpVtbl[3]))((IActiveIMMRegistrar*)Unsafe.AsPointer(ref this), rclsid, lgid, pszIconFile, pszDesc);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int UnregisterIME([NativeTypeName("const IID &")] Guid* rclsid)
+        public HRESULT UnregisterIME([NativeTypeName("const IID &")] Guid* rclsid)
         {
             return ((delegate* unmanaged<IActiveIMMRegistrar*, Guid*, int>)(lpVtbl[4]))((IActiveIMMRegistrar*)Unsafe.AsPointer(ref this), rclsid);
         }

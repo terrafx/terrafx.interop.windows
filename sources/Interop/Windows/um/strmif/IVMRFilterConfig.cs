@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IVMRFilterConfig*, Guid*, void**, int>)(lpVtbl[0]))((IVMRFilterConfig*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,56 +41,49 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetImageCompositor(IVMRImageCompositor* lpVMRImgCompositor)
+        public HRESULT SetImageCompositor(IVMRImageCompositor* lpVMRImgCompositor)
         {
             return ((delegate* unmanaged<IVMRFilterConfig*, IVMRImageCompositor*, int>)(lpVtbl[3]))((IVMRFilterConfig*)Unsafe.AsPointer(ref this), lpVMRImgCompositor);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetNumberOfStreams([NativeTypeName("DWORD")] uint dwMaxStreams)
+        public HRESULT SetNumberOfStreams([NativeTypeName("DWORD")] uint dwMaxStreams)
         {
             return ((delegate* unmanaged<IVMRFilterConfig*, uint, int>)(lpVtbl[4]))((IVMRFilterConfig*)Unsafe.AsPointer(ref this), dwMaxStreams);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetNumberOfStreams([NativeTypeName("DWORD *")] uint* pdwMaxStreams)
+        public HRESULT GetNumberOfStreams([NativeTypeName("DWORD *")] uint* pdwMaxStreams)
         {
             return ((delegate* unmanaged<IVMRFilterConfig*, uint*, int>)(lpVtbl[5]))((IVMRFilterConfig*)Unsafe.AsPointer(ref this), pdwMaxStreams);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetRenderingPrefs([NativeTypeName("DWORD")] uint dwRenderFlags)
+        public HRESULT SetRenderingPrefs([NativeTypeName("DWORD")] uint dwRenderFlags)
         {
             return ((delegate* unmanaged<IVMRFilterConfig*, uint, int>)(lpVtbl[6]))((IVMRFilterConfig*)Unsafe.AsPointer(ref this), dwRenderFlags);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetRenderingPrefs([NativeTypeName("DWORD *")] uint* pdwRenderFlags)
+        public HRESULT GetRenderingPrefs([NativeTypeName("DWORD *")] uint* pdwRenderFlags)
         {
             return ((delegate* unmanaged<IVMRFilterConfig*, uint*, int>)(lpVtbl[7]))((IVMRFilterConfig*)Unsafe.AsPointer(ref this), pdwRenderFlags);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetRenderingMode([NativeTypeName("DWORD")] uint Mode)
+        public HRESULT SetRenderingMode([NativeTypeName("DWORD")] uint Mode)
         {
             return ((delegate* unmanaged<IVMRFilterConfig*, uint, int>)(lpVtbl[8]))((IVMRFilterConfig*)Unsafe.AsPointer(ref this), Mode);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetRenderingMode([NativeTypeName("DWORD *")] uint* pMode)
+        public HRESULT GetRenderingMode([NativeTypeName("DWORD *")] uint* pMode)
         {
             return ((delegate* unmanaged<IVMRFilterConfig*, uint*, int>)(lpVtbl[9]))((IVMRFilterConfig*)Unsafe.AsPointer(ref this), pMode);
         }

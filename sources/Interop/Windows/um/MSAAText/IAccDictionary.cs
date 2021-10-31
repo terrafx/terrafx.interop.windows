@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IAccDictionary*, Guid*, void**, int>)(lpVtbl[0]))((IAccDictionary*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,40 +41,35 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetLocalizedString([NativeTypeName("const GUID &")] Guid* Term, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("BSTR *")] ushort** pResult, [NativeTypeName("LCID *")] uint* plcid)
+        public HRESULT GetLocalizedString([NativeTypeName("const GUID &")] Guid* Term, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("BSTR *")] ushort** pResult, [NativeTypeName("LCID *")] uint* plcid)
         {
             return ((delegate* unmanaged<IAccDictionary*, Guid*, uint, ushort**, uint*, int>)(lpVtbl[3]))((IAccDictionary*)Unsafe.AsPointer(ref this), Term, lcid, pResult, plcid);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetParentTerm([NativeTypeName("const GUID &")] Guid* Term, [NativeTypeName("GUID *")] Guid* pParentTerm)
+        public HRESULT GetParentTerm([NativeTypeName("const GUID &")] Guid* Term, [NativeTypeName("GUID *")] Guid* pParentTerm)
         {
             return ((delegate* unmanaged<IAccDictionary*, Guid*, Guid*, int>)(lpVtbl[4]))((IAccDictionary*)Unsafe.AsPointer(ref this), Term, pParentTerm);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetMnemonicString([NativeTypeName("const GUID &")] Guid* Term, [NativeTypeName("BSTR *")] ushort** pResult)
+        public HRESULT GetMnemonicString([NativeTypeName("const GUID &")] Guid* Term, [NativeTypeName("BSTR *")] ushort** pResult)
         {
             return ((delegate* unmanaged<IAccDictionary*, Guid*, ushort**, int>)(lpVtbl[5]))((IAccDictionary*)Unsafe.AsPointer(ref this), Term, pResult);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int LookupMnemonicTerm([NativeTypeName("BSTR")] ushort* bstrMnemonic, [NativeTypeName("GUID *")] Guid* pTerm)
+        public HRESULT LookupMnemonicTerm([NativeTypeName("BSTR")] ushort* bstrMnemonic, [NativeTypeName("GUID *")] Guid* pTerm)
         {
             return ((delegate* unmanaged<IAccDictionary*, ushort*, Guid*, int>)(lpVtbl[6]))((IAccDictionary*)Unsafe.AsPointer(ref this), bstrMnemonic, pTerm);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        [return: NativeTypeName("HRESULT")]
-        public int ConvertValueToString([NativeTypeName("const GUID &")] Guid* Term, [NativeTypeName("LCID")] uint lcid, VARIANT varValue, [NativeTypeName("BSTR *")] ushort** pbstrResult, [NativeTypeName("LCID *")] uint* plcid)
+        public HRESULT ConvertValueToString([NativeTypeName("const GUID &")] Guid* Term, [NativeTypeName("LCID")] uint lcid, VARIANT varValue, [NativeTypeName("BSTR *")] ushort** pbstrResult, [NativeTypeName("LCID *")] uint* plcid)
         {
             return ((delegate* unmanaged<IAccDictionary*, Guid*, uint, VARIANT, ushort**, uint*, int>)(lpVtbl[7]))((IAccDictionary*)Unsafe.AsPointer(ref this), Term, lcid, varValue, pbstrResult, plcid);
         }

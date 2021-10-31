@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IGraphConfig*, Guid*, void**, int>)(lpVtbl[0]))((IGraphConfig*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,80 +41,70 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int Reconnect(IPin* pOutputPin, IPin* pInputPin, [NativeTypeName("const AM_MEDIA_TYPE *")] AM_MEDIA_TYPE* pmtFirstConnection, IBaseFilter* pUsingFilter, [NativeTypeName("HANDLE")] IntPtr hAbortEvent, [NativeTypeName("DWORD")] uint dwFlags)
+        public HRESULT Reconnect(IPin* pOutputPin, IPin* pInputPin, [NativeTypeName("const AM_MEDIA_TYPE *")] AM_MEDIA_TYPE* pmtFirstConnection, IBaseFilter* pUsingFilter, [NativeTypeName("HANDLE")] IntPtr hAbortEvent, [NativeTypeName("DWORD")] uint dwFlags)
         {
             return ((delegate* unmanaged<IGraphConfig*, IPin*, IPin*, AM_MEDIA_TYPE*, IBaseFilter*, IntPtr, uint, int>)(lpVtbl[3]))((IGraphConfig*)Unsafe.AsPointer(ref this), pOutputPin, pInputPin, pmtFirstConnection, pUsingFilter, hAbortEvent, dwFlags);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int Reconfigure(IGraphConfigCallback* pCallback, [NativeTypeName("PVOID")] void* pvContext, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("HANDLE")] IntPtr hAbortEvent)
+        public HRESULT Reconfigure(IGraphConfigCallback* pCallback, [NativeTypeName("PVOID")] void* pvContext, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("HANDLE")] IntPtr hAbortEvent)
         {
             return ((delegate* unmanaged<IGraphConfig*, IGraphConfigCallback*, void*, uint, IntPtr, int>)(lpVtbl[4]))((IGraphConfig*)Unsafe.AsPointer(ref this), pCallback, pvContext, dwFlags, hAbortEvent);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int AddFilterToCache(IBaseFilter* pFilter)
+        public HRESULT AddFilterToCache(IBaseFilter* pFilter)
         {
             return ((delegate* unmanaged<IGraphConfig*, IBaseFilter*, int>)(lpVtbl[5]))((IGraphConfig*)Unsafe.AsPointer(ref this), pFilter);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int EnumCacheFilter(IEnumFilters** pEnum)
+        public HRESULT EnumCacheFilter(IEnumFilters** pEnum)
         {
             return ((delegate* unmanaged<IGraphConfig*, IEnumFilters**, int>)(lpVtbl[6]))((IGraphConfig*)Unsafe.AsPointer(ref this), pEnum);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        [return: NativeTypeName("HRESULT")]
-        public int RemoveFilterFromCache(IBaseFilter* pFilter)
+        public HRESULT RemoveFilterFromCache(IBaseFilter* pFilter)
         {
             return ((delegate* unmanaged<IGraphConfig*, IBaseFilter*, int>)(lpVtbl[7]))((IGraphConfig*)Unsafe.AsPointer(ref this), pFilter);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetStartTime([NativeTypeName("REFERENCE_TIME *")] long* prtStart)
+        public HRESULT GetStartTime([NativeTypeName("REFERENCE_TIME *")] long* prtStart)
         {
             return ((delegate* unmanaged<IGraphConfig*, long*, int>)(lpVtbl[8]))((IGraphConfig*)Unsafe.AsPointer(ref this), prtStart);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        [return: NativeTypeName("HRESULT")]
-        public int PushThroughData(IPin* pOutputPin, IPinConnection* pConnection, [NativeTypeName("HANDLE")] IntPtr hEventAbort)
+        public HRESULT PushThroughData(IPin* pOutputPin, IPinConnection* pConnection, [NativeTypeName("HANDLE")] IntPtr hEventAbort)
         {
             return ((delegate* unmanaged<IGraphConfig*, IPin*, IPinConnection*, IntPtr, int>)(lpVtbl[9]))((IGraphConfig*)Unsafe.AsPointer(ref this), pOutputPin, pConnection, hEventAbort);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(10)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetFilterFlags(IBaseFilter* pFilter, [NativeTypeName("DWORD")] uint dwFlags)
+        public HRESULT SetFilterFlags(IBaseFilter* pFilter, [NativeTypeName("DWORD")] uint dwFlags)
         {
             return ((delegate* unmanaged<IGraphConfig*, IBaseFilter*, uint, int>)(lpVtbl[10]))((IGraphConfig*)Unsafe.AsPointer(ref this), pFilter, dwFlags);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(11)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetFilterFlags(IBaseFilter* pFilter, [NativeTypeName("DWORD *")] uint* pdwFlags)
+        public HRESULT GetFilterFlags(IBaseFilter* pFilter, [NativeTypeName("DWORD *")] uint* pdwFlags)
         {
             return ((delegate* unmanaged<IGraphConfig*, IBaseFilter*, uint*, int>)(lpVtbl[11]))((IGraphConfig*)Unsafe.AsPointer(ref this), pFilter, pdwFlags);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(12)]
-        [return: NativeTypeName("HRESULT")]
-        public int RemoveFilterEx(IBaseFilter* pFilter, [NativeTypeName("DWORD")] uint Flags)
+        public HRESULT RemoveFilterEx(IBaseFilter* pFilter, [NativeTypeName("DWORD")] uint Flags)
         {
             return ((delegate* unmanaged<IGraphConfig*, IBaseFilter*, uint, int>)(lpVtbl[12]))((IGraphConfig*)Unsafe.AsPointer(ref this), pFilter, Flags);
         }

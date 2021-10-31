@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IWebAuthenticationCoreManagerInterop*, Guid*, void**, int>)(lpVtbl[0]))((IWebAuthenticationCoreManagerInterop*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,40 +41,35 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetIids([NativeTypeName("ULONG *")] uint* iidCount, [NativeTypeName("IID **")] Guid** iids)
+        public HRESULT GetIids([NativeTypeName("ULONG *")] uint* iidCount, [NativeTypeName("IID **")] Guid** iids)
         {
             return ((delegate* unmanaged<IWebAuthenticationCoreManagerInterop*, uint*, Guid**, int>)(lpVtbl[3]))((IWebAuthenticationCoreManagerInterop*)Unsafe.AsPointer(ref this), iidCount, iids);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetRuntimeClassName([NativeTypeName("HSTRING *")] IntPtr* className)
+        public HRESULT GetRuntimeClassName([NativeTypeName("HSTRING *")] IntPtr* className)
         {
             return ((delegate* unmanaged<IWebAuthenticationCoreManagerInterop*, IntPtr*, int>)(lpVtbl[4]))((IWebAuthenticationCoreManagerInterop*)Unsafe.AsPointer(ref this), className);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetTrustLevel(TrustLevel* trustLevel)
+        public HRESULT GetTrustLevel(TrustLevel* trustLevel)
         {
             return ((delegate* unmanaged<IWebAuthenticationCoreManagerInterop*, TrustLevel*, int>)(lpVtbl[5]))((IWebAuthenticationCoreManagerInterop*)Unsafe.AsPointer(ref this), trustLevel);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int RequestTokenForWindowAsync([NativeTypeName("HWND")] IntPtr appWindow, IInspectable* request, [NativeTypeName("const IID &")] Guid* riid, void** asyncInfo)
+        public HRESULT RequestTokenForWindowAsync([NativeTypeName("HWND")] IntPtr appWindow, IInspectable* request, [NativeTypeName("const IID &")] Guid* riid, void** asyncInfo)
         {
             return ((delegate* unmanaged<IWebAuthenticationCoreManagerInterop*, IntPtr, IInspectable*, Guid*, void**, int>)(lpVtbl[6]))((IWebAuthenticationCoreManagerInterop*)Unsafe.AsPointer(ref this), appWindow, request, riid, asyncInfo);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        [return: NativeTypeName("HRESULT")]
-        public int RequestTokenWithWebAccountForWindowAsync([NativeTypeName("HWND")] IntPtr appWindow, IInspectable* request, IInspectable* webAccount, [NativeTypeName("const IID &")] Guid* riid, void** asyncInfo)
+        public HRESULT RequestTokenWithWebAccountForWindowAsync([NativeTypeName("HWND")] IntPtr appWindow, IInspectable* request, IInspectable* webAccount, [NativeTypeName("const IID &")] Guid* riid, void** asyncInfo)
         {
             return ((delegate* unmanaged<IWebAuthenticationCoreManagerInterop*, IntPtr, IInspectable*, IInspectable*, Guid*, void**, int>)(lpVtbl[7]))((IWebAuthenticationCoreManagerInterop*)Unsafe.AsPointer(ref this), appWindow, request, webAccount, riid, asyncInfo);
         }

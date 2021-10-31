@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IDockingWindow*, Guid*, void**, int>)(lpVtbl[0]))((IDockingWindow*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,40 +41,35 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetWindow([NativeTypeName("HWND *")] IntPtr* phwnd)
+        public HRESULT GetWindow([NativeTypeName("HWND *")] IntPtr* phwnd)
         {
             return ((delegate* unmanaged<IDockingWindow*, IntPtr*, int>)(lpVtbl[3]))((IDockingWindow*)Unsafe.AsPointer(ref this), phwnd);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int ContextSensitiveHelp(BOOL fEnterMode)
+        public HRESULT ContextSensitiveHelp(BOOL fEnterMode)
         {
             return ((delegate* unmanaged<IDockingWindow*, BOOL, int>)(lpVtbl[4]))((IDockingWindow*)Unsafe.AsPointer(ref this), fEnterMode);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int ShowDW(BOOL fShow)
+        public HRESULT ShowDW(BOOL fShow)
         {
             return ((delegate* unmanaged<IDockingWindow*, BOOL, int>)(lpVtbl[5]))((IDockingWindow*)Unsafe.AsPointer(ref this), fShow);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int CloseDW([NativeTypeName("DWORD")] uint dwReserved)
+        public HRESULT CloseDW([NativeTypeName("DWORD")] uint dwReserved)
         {
             return ((delegate* unmanaged<IDockingWindow*, uint, int>)(lpVtbl[6]))((IDockingWindow*)Unsafe.AsPointer(ref this), dwReserved);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        [return: NativeTypeName("HRESULT")]
-        public int ResizeBorderDW([NativeTypeName("LPCRECT")] RECT* prcBorder, IUnknown* punkToolbarSite, BOOL fReserved)
+        public HRESULT ResizeBorderDW([NativeTypeName("LPCRECT")] RECT* prcBorder, IUnknown* punkToolbarSite, BOOL fReserved)
         {
             return ((delegate* unmanaged<IDockingWindow*, RECT*, IUnknown*, BOOL, int>)(lpVtbl[7]))((IDockingWindow*)Unsafe.AsPointer(ref this), prcBorder, punkToolbarSite, fReserved);
         }

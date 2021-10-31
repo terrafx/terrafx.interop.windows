@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IOperationsProgressDialog*, Guid*, void**, int>)(lpVtbl[0]))((IOperationsProgressDialog*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,88 +41,77 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int StartProgressDialog([NativeTypeName("HWND")] IntPtr hwndOwner, [NativeTypeName("OPPROGDLGF")] uint flags)
+        public HRESULT StartProgressDialog([NativeTypeName("HWND")] IntPtr hwndOwner, [NativeTypeName("OPPROGDLGF")] uint flags)
         {
             return ((delegate* unmanaged<IOperationsProgressDialog*, IntPtr, uint, int>)(lpVtbl[3]))((IOperationsProgressDialog*)Unsafe.AsPointer(ref this), hwndOwner, flags);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int StopProgressDialog()
+        public HRESULT StopProgressDialog()
         {
             return ((delegate* unmanaged<IOperationsProgressDialog*, int>)(lpVtbl[4]))((IOperationsProgressDialog*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetOperation(SPACTION action)
+        public HRESULT SetOperation(SPACTION action)
         {
             return ((delegate* unmanaged<IOperationsProgressDialog*, SPACTION, int>)(lpVtbl[5]))((IOperationsProgressDialog*)Unsafe.AsPointer(ref this), action);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetMode([NativeTypeName("PDMODE")] uint mode)
+        public HRESULT SetMode([NativeTypeName("PDMODE")] uint mode)
         {
             return ((delegate* unmanaged<IOperationsProgressDialog*, uint, int>)(lpVtbl[6]))((IOperationsProgressDialog*)Unsafe.AsPointer(ref this), mode);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        [return: NativeTypeName("HRESULT")]
-        public int UpdateProgress([NativeTypeName("ULONGLONG")] ulong ullPointsCurrent, [NativeTypeName("ULONGLONG")] ulong ullPointsTotal, [NativeTypeName("ULONGLONG")] ulong ullSizeCurrent, [NativeTypeName("ULONGLONG")] ulong ullSizeTotal, [NativeTypeName("ULONGLONG")] ulong ullItemsCurrent, [NativeTypeName("ULONGLONG")] ulong ullItemsTotal)
+        public HRESULT UpdateProgress([NativeTypeName("ULONGLONG")] ulong ullPointsCurrent, [NativeTypeName("ULONGLONG")] ulong ullPointsTotal, [NativeTypeName("ULONGLONG")] ulong ullSizeCurrent, [NativeTypeName("ULONGLONG")] ulong ullSizeTotal, [NativeTypeName("ULONGLONG")] ulong ullItemsCurrent, [NativeTypeName("ULONGLONG")] ulong ullItemsTotal)
         {
             return ((delegate* unmanaged<IOperationsProgressDialog*, ulong, ulong, ulong, ulong, ulong, ulong, int>)(lpVtbl[7]))((IOperationsProgressDialog*)Unsafe.AsPointer(ref this), ullPointsCurrent, ullPointsTotal, ullSizeCurrent, ullSizeTotal, ullItemsCurrent, ullItemsTotal);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        [return: NativeTypeName("HRESULT")]
-        public int UpdateLocations(IShellItem* psiSource, IShellItem* psiTarget, IShellItem* psiItem)
+        public HRESULT UpdateLocations(IShellItem* psiSource, IShellItem* psiTarget, IShellItem* psiItem)
         {
             return ((delegate* unmanaged<IOperationsProgressDialog*, IShellItem*, IShellItem*, IShellItem*, int>)(lpVtbl[8]))((IOperationsProgressDialog*)Unsafe.AsPointer(ref this), psiSource, psiTarget, psiItem);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        [return: NativeTypeName("HRESULT")]
-        public int ResetTimer()
+        public HRESULT ResetTimer()
         {
             return ((delegate* unmanaged<IOperationsProgressDialog*, int>)(lpVtbl[9]))((IOperationsProgressDialog*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(10)]
-        [return: NativeTypeName("HRESULT")]
-        public int PauseTimer()
+        public HRESULT PauseTimer()
         {
             return ((delegate* unmanaged<IOperationsProgressDialog*, int>)(lpVtbl[10]))((IOperationsProgressDialog*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(11)]
-        [return: NativeTypeName("HRESULT")]
-        public int ResumeTimer()
+        public HRESULT ResumeTimer()
         {
             return ((delegate* unmanaged<IOperationsProgressDialog*, int>)(lpVtbl[11]))((IOperationsProgressDialog*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(12)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetMilliseconds([NativeTypeName("ULONGLONG *")] ulong* pullElapsed, [NativeTypeName("ULONGLONG *")] ulong* pullRemaining)
+        public HRESULT GetMilliseconds([NativeTypeName("ULONGLONG *")] ulong* pullElapsed, [NativeTypeName("ULONGLONG *")] ulong* pullRemaining)
         {
             return ((delegate* unmanaged<IOperationsProgressDialog*, ulong*, ulong*, int>)(lpVtbl[12]))((IOperationsProgressDialog*)Unsafe.AsPointer(ref this), pullElapsed, pullRemaining);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(13)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetOperationStatus(PDOPSTATUS* popstatus)
+        public HRESULT GetOperationStatus(PDOPSTATUS* popstatus)
         {
             return ((delegate* unmanaged<IOperationsProgressDialog*, PDOPSTATUS*, int>)(lpVtbl[13]))((IOperationsProgressDialog*)Unsafe.AsPointer(ref this), popstatus);
         }

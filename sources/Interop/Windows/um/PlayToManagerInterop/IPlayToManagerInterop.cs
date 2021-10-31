@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IPlayToManagerInterop*, Guid*, void**, int>)(lpVtbl[0]))((IPlayToManagerInterop*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,40 +41,35 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetIids([NativeTypeName("ULONG *")] uint* iidCount, [NativeTypeName("IID **")] Guid** iids)
+        public HRESULT GetIids([NativeTypeName("ULONG *")] uint* iidCount, [NativeTypeName("IID **")] Guid** iids)
         {
             return ((delegate* unmanaged<IPlayToManagerInterop*, uint*, Guid**, int>)(lpVtbl[3]))((IPlayToManagerInterop*)Unsafe.AsPointer(ref this), iidCount, iids);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetRuntimeClassName([NativeTypeName("HSTRING *")] IntPtr* className)
+        public HRESULT GetRuntimeClassName([NativeTypeName("HSTRING *")] IntPtr* className)
         {
             return ((delegate* unmanaged<IPlayToManagerInterop*, IntPtr*, int>)(lpVtbl[4]))((IPlayToManagerInterop*)Unsafe.AsPointer(ref this), className);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetTrustLevel(TrustLevel* trustLevel)
+        public HRESULT GetTrustLevel(TrustLevel* trustLevel)
         {
             return ((delegate* unmanaged<IPlayToManagerInterop*, TrustLevel*, int>)(lpVtbl[5]))((IPlayToManagerInterop*)Unsafe.AsPointer(ref this), trustLevel);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetForWindow([NativeTypeName("HWND")] IntPtr appWindow, [NativeTypeName("const IID &")] Guid* riid, void** playToManager)
+        public HRESULT GetForWindow([NativeTypeName("HWND")] IntPtr appWindow, [NativeTypeName("const IID &")] Guid* riid, void** playToManager)
         {
             return ((delegate* unmanaged<IPlayToManagerInterop*, IntPtr, Guid*, void**, int>)(lpVtbl[6]))((IPlayToManagerInterop*)Unsafe.AsPointer(ref this), appWindow, riid, playToManager);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        [return: NativeTypeName("HRESULT")]
-        public int ShowPlayToUIForWindow([NativeTypeName("HWND")] IntPtr appWindow)
+        public HRESULT ShowPlayToUIForWindow([NativeTypeName("HWND")] IntPtr appWindow)
         {
             return ((delegate* unmanaged<IPlayToManagerInterop*, IntPtr, int>)(lpVtbl[7]))((IPlayToManagerInterop*)Unsafe.AsPointer(ref this), appWindow);
         }

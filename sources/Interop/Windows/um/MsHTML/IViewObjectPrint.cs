@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IViewObjectPrint*, Guid*, void**, int>)(lpVtbl[0]))((IViewObjectPrint*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,8 +41,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetPrintBitmap(IUnknown** ppPrintBitmap)
+        public HRESULT GetPrintBitmap(IUnknown** ppPrintBitmap)
         {
             return ((delegate* unmanaged<IViewObjectPrint*, IUnknown**, int>)(lpVtbl[3]))((IViewObjectPrint*)Unsafe.AsPointer(ref this), ppPrintBitmap);
         }

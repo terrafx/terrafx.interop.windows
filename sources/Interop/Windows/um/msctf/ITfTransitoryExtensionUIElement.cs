@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<ITfTransitoryExtensionUIElement*, Guid*, void**, int>)(lpVtbl[0]))((ITfTransitoryExtensionUIElement*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,40 +41,35 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetDescription([NativeTypeName("BSTR *")] ushort** pbstrDescription)
+        public HRESULT GetDescription([NativeTypeName("BSTR *")] ushort** pbstrDescription)
         {
             return ((delegate* unmanaged<ITfTransitoryExtensionUIElement*, ushort**, int>)(lpVtbl[3]))((ITfTransitoryExtensionUIElement*)Unsafe.AsPointer(ref this), pbstrDescription);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetGUID([NativeTypeName("GUID *")] Guid* pguid)
+        public HRESULT GetGUID([NativeTypeName("GUID *")] Guid* pguid)
         {
             return ((delegate* unmanaged<ITfTransitoryExtensionUIElement*, Guid*, int>)(lpVtbl[4]))((ITfTransitoryExtensionUIElement*)Unsafe.AsPointer(ref this), pguid);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int Show(BOOL bShow)
+        public HRESULT Show(BOOL bShow)
         {
             return ((delegate* unmanaged<ITfTransitoryExtensionUIElement*, BOOL, int>)(lpVtbl[5]))((ITfTransitoryExtensionUIElement*)Unsafe.AsPointer(ref this), bShow);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int IsShown(BOOL* pbShow)
+        public HRESULT IsShown(BOOL* pbShow)
         {
             return ((delegate* unmanaged<ITfTransitoryExtensionUIElement*, BOOL*, int>)(lpVtbl[6]))((ITfTransitoryExtensionUIElement*)Unsafe.AsPointer(ref this), pbShow);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetDocumentMgr(ITfDocumentMgr** ppdim)
+        public HRESULT GetDocumentMgr(ITfDocumentMgr** ppdim)
         {
             return ((delegate* unmanaged<ITfTransitoryExtensionUIElement*, ITfDocumentMgr**, int>)(lpVtbl[7]))((ITfTransitoryExtensionUIElement*)Unsafe.AsPointer(ref this), ppdim);
         }

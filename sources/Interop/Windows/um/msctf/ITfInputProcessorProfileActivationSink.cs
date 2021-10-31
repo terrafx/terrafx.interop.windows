@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<ITfInputProcessorProfileActivationSink*, Guid*, void**, int>)(lpVtbl[0]))((ITfInputProcessorProfileActivationSink*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,8 +41,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int OnActivated([NativeTypeName("DWORD")] uint dwProfileType, [NativeTypeName("LANGID")] ushort langid, [NativeTypeName("const IID &")] Guid* clsid, [NativeTypeName("const GUID &")] Guid* catid, [NativeTypeName("const GUID &")] Guid* guidProfile, [NativeTypeName("HKL")] IntPtr hkl, [NativeTypeName("DWORD")] uint dwFlags)
+        public HRESULT OnActivated([NativeTypeName("DWORD")] uint dwProfileType, [NativeTypeName("LANGID")] ushort langid, [NativeTypeName("const IID &")] Guid* clsid, [NativeTypeName("const GUID &")] Guid* catid, [NativeTypeName("const GUID &")] Guid* guidProfile, [NativeTypeName("HKL")] IntPtr hkl, [NativeTypeName("DWORD")] uint dwFlags)
         {
             return ((delegate* unmanaged<ITfInputProcessorProfileActivationSink*, uint, ushort, Guid*, Guid*, Guid*, IntPtr, uint, int>)(lpVtbl[3]))((ITfInputProcessorProfileActivationSink*)Unsafe.AsPointer(ref this), dwProfileType, langid, clsid, catid, guidProfile, hkl, dwFlags);
         }

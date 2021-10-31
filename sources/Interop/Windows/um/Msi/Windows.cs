@@ -610,12 +610,10 @@ namespace TerraFX.Interop
         public static extern uint MsiGetFileHashW([NativeTypeName("LPCWSTR")] ushort* szFilePath, [NativeTypeName("DWORD")] uint dwOptions, [NativeTypeName("PMSIFILEHASHINFO")] MSIFILEHASHINFO* pHash);
 
         [DllImport("msi", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int MsiGetFileSignatureInformationA([NativeTypeName("LPCSTR")] sbyte* szSignedObjectPath, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("PCCERT_CONTEXT *")] CERT_CONTEXT** ppcCertContext, [NativeTypeName("LPBYTE")] byte* pbHashData, [NativeTypeName("LPDWORD")] uint* pcbHashData);
+        public static extern HRESULT MsiGetFileSignatureInformationA([NativeTypeName("LPCSTR")] sbyte* szSignedObjectPath, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("PCCERT_CONTEXT *")] CERT_CONTEXT** ppcCertContext, [NativeTypeName("LPBYTE")] byte* pbHashData, [NativeTypeName("LPDWORD")] uint* pcbHashData);
 
         [DllImport("msi", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int MsiGetFileSignatureInformationW([NativeTypeName("LPCWSTR")] ushort* szSignedObjectPath, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("PCCERT_CONTEXT *")] CERT_CONTEXT** ppcCertContext, [NativeTypeName("LPBYTE")] byte* pbHashData, [NativeTypeName("LPDWORD")] uint* pcbHashData);
+        public static extern HRESULT MsiGetFileSignatureInformationW([NativeTypeName("LPCWSTR")] ushort* szSignedObjectPath, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("PCCERT_CONTEXT *")] CERT_CONTEXT** ppcCertContext, [NativeTypeName("LPBYTE")] byte* pbHashData, [NativeTypeName("LPDWORD")] uint* pcbHashData);
 
         [DllImport("msi", ExactSpelling = true)]
         [return: NativeTypeName("UINT")]
@@ -1009,7 +1007,7 @@ namespace TerraFX.Interop
         public static delegate*<ushort*, uint, MSIFILEHASHINFO*, uint> MsiGetFileHash => &MsiGetFileHashW;
 
         [NativeTypeName("#define MsiGetFileSignatureInformation MsiGetFileSignatureInformationW")]
-        public static delegate*<ushort*, uint, CERT_CONTEXT**, byte*, uint*, int> MsiGetFileSignatureInformation => &MsiGetFileSignatureInformationW;
+        public static delegate*<ushort*, uint, CERT_CONTEXT**, byte*, uint*, HRESULT> MsiGetFileSignatureInformation => &MsiGetFileSignatureInformationW;
 
         [NativeTypeName("#define MSI_INVALID_HASH_IS_FATAL 0x1")]
         public const int MSI_INVALID_HASH_IS_FATAL = 0x1;

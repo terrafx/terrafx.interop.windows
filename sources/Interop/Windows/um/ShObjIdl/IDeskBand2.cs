@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IDeskBand2*, Guid*, void**, int>)(lpVtbl[0]))((IDeskBand2*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,72 +41,63 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetWindow([NativeTypeName("HWND *")] IntPtr* phwnd)
+        public HRESULT GetWindow([NativeTypeName("HWND *")] IntPtr* phwnd)
         {
             return ((delegate* unmanaged<IDeskBand2*, IntPtr*, int>)(lpVtbl[3]))((IDeskBand2*)Unsafe.AsPointer(ref this), phwnd);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int ContextSensitiveHelp(BOOL fEnterMode)
+        public HRESULT ContextSensitiveHelp(BOOL fEnterMode)
         {
             return ((delegate* unmanaged<IDeskBand2*, BOOL, int>)(lpVtbl[4]))((IDeskBand2*)Unsafe.AsPointer(ref this), fEnterMode);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int ShowDW(BOOL fShow)
+        public HRESULT ShowDW(BOOL fShow)
         {
             return ((delegate* unmanaged<IDeskBand2*, BOOL, int>)(lpVtbl[5]))((IDeskBand2*)Unsafe.AsPointer(ref this), fShow);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int CloseDW([NativeTypeName("DWORD")] uint dwReserved)
+        public HRESULT CloseDW([NativeTypeName("DWORD")] uint dwReserved)
         {
             return ((delegate* unmanaged<IDeskBand2*, uint, int>)(lpVtbl[6]))((IDeskBand2*)Unsafe.AsPointer(ref this), dwReserved);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        [return: NativeTypeName("HRESULT")]
-        public int ResizeBorderDW([NativeTypeName("LPCRECT")] RECT* prcBorder, IUnknown* punkToolbarSite, BOOL fReserved)
+        public HRESULT ResizeBorderDW([NativeTypeName("LPCRECT")] RECT* prcBorder, IUnknown* punkToolbarSite, BOOL fReserved)
         {
             return ((delegate* unmanaged<IDeskBand2*, RECT*, IUnknown*, BOOL, int>)(lpVtbl[7]))((IDeskBand2*)Unsafe.AsPointer(ref this), prcBorder, punkToolbarSite, fReserved);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetBandInfo([NativeTypeName("DWORD")] uint dwBandID, [NativeTypeName("DWORD")] uint dwViewMode, DESKBANDINFO* pdbi)
+        public HRESULT GetBandInfo([NativeTypeName("DWORD")] uint dwBandID, [NativeTypeName("DWORD")] uint dwViewMode, DESKBANDINFO* pdbi)
         {
             return ((delegate* unmanaged<IDeskBand2*, uint, uint, DESKBANDINFO*, int>)(lpVtbl[8]))((IDeskBand2*)Unsafe.AsPointer(ref this), dwBandID, dwViewMode, pdbi);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        [return: NativeTypeName("HRESULT")]
-        public int CanRenderComposited(BOOL* pfCanRenderComposited)
+        public HRESULT CanRenderComposited(BOOL* pfCanRenderComposited)
         {
             return ((delegate* unmanaged<IDeskBand2*, BOOL*, int>)(lpVtbl[9]))((IDeskBand2*)Unsafe.AsPointer(ref this), pfCanRenderComposited);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(10)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetCompositionState(BOOL fCompositionEnabled)
+        public HRESULT SetCompositionState(BOOL fCompositionEnabled)
         {
             return ((delegate* unmanaged<IDeskBand2*, BOOL, int>)(lpVtbl[10]))((IDeskBand2*)Unsafe.AsPointer(ref this), fCompositionEnabled);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(11)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetCompositionState(BOOL* pfCompositionEnabled)
+        public HRESULT GetCompositionState(BOOL* pfCompositionEnabled)
         {
             return ((delegate* unmanaged<IDeskBand2*, BOOL*, int>)(lpVtbl[11]))((IDeskBand2*)Unsafe.AsPointer(ref this), pfCompositionEnabled);
         }

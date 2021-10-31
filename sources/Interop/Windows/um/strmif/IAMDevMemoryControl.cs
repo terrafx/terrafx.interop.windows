@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IAMDevMemoryControl*, Guid*, void**, int>)(lpVtbl[0]))((IAMDevMemoryControl*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,24 +41,21 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryWriteSync()
+        public HRESULT QueryWriteSync()
         {
             return ((delegate* unmanaged<IAMDevMemoryControl*, int>)(lpVtbl[3]))((IAMDevMemoryControl*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int WriteSync()
+        public HRESULT WriteSync()
         {
             return ((delegate* unmanaged<IAMDevMemoryControl*, int>)(lpVtbl[4]))((IAMDevMemoryControl*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetDevId([NativeTypeName("DWORD *")] uint* pdwDevId)
+        public HRESULT GetDevId([NativeTypeName("DWORD *")] uint* pdwDevId)
         {
             return ((delegate* unmanaged<IAMDevMemoryControl*, uint*, int>)(lpVtbl[5]))((IAMDevMemoryControl*)Unsafe.AsPointer(ref this), pdwDevId);
         }

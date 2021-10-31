@@ -64,12 +64,10 @@ namespace TerraFX.Interop
         public static extern BOOL SetConsoleCtrlHandler([NativeTypeName("PHANDLER_ROUTINE")] delegate* unmanaged<uint, BOOL> HandlerRoutine, BOOL Add);
 
         [DllImport("kernel32", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int CreatePseudoConsole(COORD size, [NativeTypeName("HANDLE")] IntPtr hInput, [NativeTypeName("HANDLE")] IntPtr hOutput, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("HPCON *")] IntPtr* phPC);
+        public static extern HRESULT CreatePseudoConsole(COORD size, [NativeTypeName("HANDLE")] IntPtr hInput, [NativeTypeName("HANDLE")] IntPtr hOutput, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("HPCON *")] IntPtr* phPC);
 
         [DllImport("kernel32", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int ResizePseudoConsole([NativeTypeName("HPCON")] IntPtr hPC, COORD size);
+        public static extern HRESULT ResizePseudoConsole([NativeTypeName("HPCON")] IntPtr hPC, COORD size);
 
         [DllImport("kernel32", ExactSpelling = true)]
         public static extern void ClosePseudoConsole([NativeTypeName("HPCON")] IntPtr hPC);

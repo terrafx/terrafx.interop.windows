@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IMFQualityAdvise2*, Guid*, void**, int>)(lpVtbl[0]))((IMFQualityAdvise2*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,48 +41,42 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetDropMode(MF_QUALITY_DROP_MODE eDropMode)
+        public HRESULT SetDropMode(MF_QUALITY_DROP_MODE eDropMode)
         {
             return ((delegate* unmanaged<IMFQualityAdvise2*, MF_QUALITY_DROP_MODE, int>)(lpVtbl[3]))((IMFQualityAdvise2*)Unsafe.AsPointer(ref this), eDropMode);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetQualityLevel(MF_QUALITY_LEVEL eQualityLevel)
+        public HRESULT SetQualityLevel(MF_QUALITY_LEVEL eQualityLevel)
         {
             return ((delegate* unmanaged<IMFQualityAdvise2*, MF_QUALITY_LEVEL, int>)(lpVtbl[4]))((IMFQualityAdvise2*)Unsafe.AsPointer(ref this), eQualityLevel);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetDropMode(MF_QUALITY_DROP_MODE* peDropMode)
+        public HRESULT GetDropMode(MF_QUALITY_DROP_MODE* peDropMode)
         {
             return ((delegate* unmanaged<IMFQualityAdvise2*, MF_QUALITY_DROP_MODE*, int>)(lpVtbl[5]))((IMFQualityAdvise2*)Unsafe.AsPointer(ref this), peDropMode);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetQualityLevel(MF_QUALITY_LEVEL* peQualityLevel)
+        public HRESULT GetQualityLevel(MF_QUALITY_LEVEL* peQualityLevel)
         {
             return ((delegate* unmanaged<IMFQualityAdvise2*, MF_QUALITY_LEVEL*, int>)(lpVtbl[6]))((IMFQualityAdvise2*)Unsafe.AsPointer(ref this), peQualityLevel);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        [return: NativeTypeName("HRESULT")]
-        public int DropTime([NativeTypeName("LONGLONG")] long hnsAmountToDrop)
+        public HRESULT DropTime([NativeTypeName("LONGLONG")] long hnsAmountToDrop)
         {
             return ((delegate* unmanaged<IMFQualityAdvise2*, long, int>)(lpVtbl[7]))((IMFQualityAdvise2*)Unsafe.AsPointer(ref this), hnsAmountToDrop);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        [return: NativeTypeName("HRESULT")]
-        public int NotifyQualityEvent(IMFMediaEvent* pEvent, [NativeTypeName("DWORD *")] uint* pdwFlags)
+        public HRESULT NotifyQualityEvent(IMFMediaEvent* pEvent, [NativeTypeName("DWORD *")] uint* pdwFlags)
         {
             return ((delegate* unmanaged<IMFQualityAdvise2*, IMFMediaEvent*, uint*, int>)(lpVtbl[8]))((IMFQualityAdvise2*)Unsafe.AsPointer(ref this), pEvent, pdwFlags);
         }

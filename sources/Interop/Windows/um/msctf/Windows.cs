@@ -13,32 +13,25 @@ namespace TerraFX.Interop
     public static unsafe partial class Windows
     {
         [DllImport("msctf", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int TF_CreateThreadMgr(ITfThreadMgr** pptim);
+        public static extern HRESULT TF_CreateThreadMgr(ITfThreadMgr** pptim);
 
         [DllImport("msctf", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int TF_GetThreadMgr(ITfThreadMgr** pptim);
+        public static extern HRESULT TF_GetThreadMgr(ITfThreadMgr** pptim);
 
         [DllImport("msctf", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int TF_CreateInputProcessorProfiles(ITfInputProcessorProfiles** ppipr);
+        public static extern HRESULT TF_CreateInputProcessorProfiles(ITfInputProcessorProfiles** ppipr);
 
         [DllImport("msctf", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int TF_CreateDisplayAttributeMgr(ITfDisplayAttributeMgr** ppdam);
+        public static extern HRESULT TF_CreateDisplayAttributeMgr(ITfDisplayAttributeMgr** ppdam);
 
         [DllImport("msctf", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int TF_CreateLangBarMgr(ITfLangBarMgr** pppbm);
+        public static extern HRESULT TF_CreateLangBarMgr(ITfLangBarMgr** pppbm);
 
         [DllImport("msctf", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int TF_CreateLangBarItemMgr(ITfLangBarItemMgr** pplbim);
+        public static extern HRESULT TF_CreateLangBarItemMgr(ITfLangBarItemMgr** pplbim);
 
         [DllImport("msctf", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int TF_CreateCategoryMgr(ITfCategoryMgr** ppcat);
+        public static extern HRESULT TF_CreateCategoryMgr(ITfCategoryMgr** ppcat);
 
         [NativeTypeName("const GUID")]
         public static ref readonly Guid TF_PROFILE_NEWPHONETIC

@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IFilterChain*, Guid*, void**, int>)(lpVtbl[0]))((IFilterChain*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,32 +41,28 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int StartChain(IBaseFilter* pStartFilter, IBaseFilter* pEndFilter)
+        public HRESULT StartChain(IBaseFilter* pStartFilter, IBaseFilter* pEndFilter)
         {
             return ((delegate* unmanaged<IFilterChain*, IBaseFilter*, IBaseFilter*, int>)(lpVtbl[3]))((IFilterChain*)Unsafe.AsPointer(ref this), pStartFilter, pEndFilter);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int PauseChain(IBaseFilter* pStartFilter, IBaseFilter* pEndFilter)
+        public HRESULT PauseChain(IBaseFilter* pStartFilter, IBaseFilter* pEndFilter)
         {
             return ((delegate* unmanaged<IFilterChain*, IBaseFilter*, IBaseFilter*, int>)(lpVtbl[4]))((IFilterChain*)Unsafe.AsPointer(ref this), pStartFilter, pEndFilter);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int StopChain(IBaseFilter* pStartFilter, IBaseFilter* pEndFilter)
+        public HRESULT StopChain(IBaseFilter* pStartFilter, IBaseFilter* pEndFilter)
         {
             return ((delegate* unmanaged<IFilterChain*, IBaseFilter*, IBaseFilter*, int>)(lpVtbl[5]))((IFilterChain*)Unsafe.AsPointer(ref this), pStartFilter, pEndFilter);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int RemoveChain(IBaseFilter* pStartFilter, IBaseFilter* pEndFilter)
+        public HRESULT RemoveChain(IBaseFilter* pStartFilter, IBaseFilter* pEndFilter)
         {
             return ((delegate* unmanaged<IFilterChain*, IBaseFilter*, IBaseFilter*, int>)(lpVtbl[6]))((IFilterChain*)Unsafe.AsPointer(ref this), pStartFilter, pEndFilter);
         }

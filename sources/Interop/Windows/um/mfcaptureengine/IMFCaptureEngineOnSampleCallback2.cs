@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IMFCaptureEngineOnSampleCallback2*, Guid*, void**, int>)(lpVtbl[0]))((IMFCaptureEngineOnSampleCallback2*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,16 +41,14 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int OnSample(IMFSample* pSample)
+        public HRESULT OnSample(IMFSample* pSample)
         {
             return ((delegate* unmanaged<IMFCaptureEngineOnSampleCallback2*, IMFSample*, int>)(lpVtbl[3]))((IMFCaptureEngineOnSampleCallback2*)Unsafe.AsPointer(ref this), pSample);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int OnSynchronizedEvent(IMFMediaEvent* pEvent)
+        public HRESULT OnSynchronizedEvent(IMFMediaEvent* pEvent)
         {
             return ((delegate* unmanaged<IMFCaptureEngineOnSampleCallback2*, IMFMediaEvent*, int>)(lpVtbl[4]))((IMFCaptureEngineOnSampleCallback2*)Unsafe.AsPointer(ref this), pEvent);
         }

@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<ITfCandidateList*, Guid*, void**, int>)(lpVtbl[0]))((ITfCandidateList*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,32 +41,28 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int EnumCandidates(IEnumTfCandidates** ppEnum)
+        public HRESULT EnumCandidates(IEnumTfCandidates** ppEnum)
         {
             return ((delegate* unmanaged<ITfCandidateList*, IEnumTfCandidates**, int>)(lpVtbl[3]))((ITfCandidateList*)Unsafe.AsPointer(ref this), ppEnum);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetCandidate([NativeTypeName("ULONG")] uint nIndex, ITfCandidateString** ppCand)
+        public HRESULT GetCandidate([NativeTypeName("ULONG")] uint nIndex, ITfCandidateString** ppCand)
         {
             return ((delegate* unmanaged<ITfCandidateList*, uint, ITfCandidateString**, int>)(lpVtbl[4]))((ITfCandidateList*)Unsafe.AsPointer(ref this), nIndex, ppCand);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetCandidateNum([NativeTypeName("ULONG *")] uint* pnCnt)
+        public HRESULT GetCandidateNum([NativeTypeName("ULONG *")] uint* pnCnt)
         {
             return ((delegate* unmanaged<ITfCandidateList*, uint*, int>)(lpVtbl[5]))((ITfCandidateList*)Unsafe.AsPointer(ref this), pnCnt);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetResult([NativeTypeName("ULONG")] uint nIndex, TfCandidateResult imcr)
+        public HRESULT SetResult([NativeTypeName("ULONG")] uint nIndex, TfCandidateResult imcr)
         {
             return ((delegate* unmanaged<ITfCandidateList*, uint, TfCandidateResult, int>)(lpVtbl[6]))((ITfCandidateList*)Unsafe.AsPointer(ref this), nIndex, imcr);
         }

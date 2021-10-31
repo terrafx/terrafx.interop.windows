@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IUIManagerEventSink*, Guid*, void**, int>)(lpVtbl[0]))((IUIManagerEventSink*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,48 +41,42 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int OnWindowOpening(RECT* prcBounds)
+        public HRESULT OnWindowOpening(RECT* prcBounds)
         {
             return ((delegate* unmanaged<IUIManagerEventSink*, RECT*, int>)(lpVtbl[3]))((IUIManagerEventSink*)Unsafe.AsPointer(ref this), prcBounds);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int OnWindowOpened(RECT* prcBounds)
+        public HRESULT OnWindowOpened(RECT* prcBounds)
         {
             return ((delegate* unmanaged<IUIManagerEventSink*, RECT*, int>)(lpVtbl[4]))((IUIManagerEventSink*)Unsafe.AsPointer(ref this), prcBounds);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int OnWindowUpdating(RECT* prcUpdatedBounds)
+        public HRESULT OnWindowUpdating(RECT* prcUpdatedBounds)
         {
             return ((delegate* unmanaged<IUIManagerEventSink*, RECT*, int>)(lpVtbl[5]))((IUIManagerEventSink*)Unsafe.AsPointer(ref this), prcUpdatedBounds);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int OnWindowUpdated(RECT* prcUpdatedBounds)
+        public HRESULT OnWindowUpdated(RECT* prcUpdatedBounds)
         {
             return ((delegate* unmanaged<IUIManagerEventSink*, RECT*, int>)(lpVtbl[6]))((IUIManagerEventSink*)Unsafe.AsPointer(ref this), prcUpdatedBounds);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        [return: NativeTypeName("HRESULT")]
-        public int OnWindowClosing()
+        public HRESULT OnWindowClosing()
         {
             return ((delegate* unmanaged<IUIManagerEventSink*, int>)(lpVtbl[7]))((IUIManagerEventSink*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        [return: NativeTypeName("HRESULT")]
-        public int OnWindowClosed()
+        public HRESULT OnWindowClosed()
         {
             return ((delegate* unmanaged<IUIManagerEventSink*, int>)(lpVtbl[8]))((IUIManagerEventSink*)Unsafe.AsPointer(ref this));
         }

@@ -14,16 +14,13 @@ namespace TerraFX.Interop
     public static unsafe partial class Windows
     {
         [DllImport("shell32", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int SHAddDefaultPropertiesByExt([NativeTypeName("PCWSTR")] ushort* pszExt, IPropertyStore* pPropStore);
+        public static extern HRESULT SHAddDefaultPropertiesByExt([NativeTypeName("PCWSTR")] ushort* pszExt, IPropertyStore* pPropStore);
 
         [DllImport("shell32", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int SHCreateDefaultPropertiesOp(IShellItem* psi, IFileOperation** ppFileOp);
+        public static extern HRESULT SHCreateDefaultPropertiesOp(IShellItem* psi, IFileOperation** ppFileOp);
 
         [DllImport("shell32", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int SHSetDefaultProperties([NativeTypeName("HWND")] IntPtr hwnd, IShellItem* psi, [NativeTypeName("DWORD")] uint dwFileOpFlags, IFileOperationProgressSink* pfops);
+        public static extern HRESULT SHSetDefaultProperties([NativeTypeName("HWND")] IntPtr hwnd, IShellItem* psi, [NativeTypeName("DWORD")] uint dwFileOpFlags, IFileOperationProgressSink* pfops);
 
         [NativeTypeName("const GUID")]
         public static ref readonly Guid SID_SCommandBarState

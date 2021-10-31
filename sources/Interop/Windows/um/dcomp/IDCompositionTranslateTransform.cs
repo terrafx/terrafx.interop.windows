@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IDCompositionTranslateTransform*, Guid*, void**, int>)(lpVtbl[0]))((IDCompositionTranslateTransform*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,32 +41,28 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetOffsetX(float offsetX)
+        public HRESULT SetOffsetX(float offsetX)
         {
             return ((delegate* unmanaged<IDCompositionTranslateTransform*, float, int>)(lpVtbl[4]))((IDCompositionTranslateTransform*)Unsafe.AsPointer(ref this), offsetX);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetOffsetX(IDCompositionAnimation* animation)
+        public HRESULT SetOffsetX(IDCompositionAnimation* animation)
         {
             return ((delegate* unmanaged<IDCompositionTranslateTransform*, IDCompositionAnimation*, int>)(lpVtbl[3]))((IDCompositionTranslateTransform*)Unsafe.AsPointer(ref this), animation);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetOffsetY(float offsetY)
+        public HRESULT SetOffsetY(float offsetY)
         {
             return ((delegate* unmanaged<IDCompositionTranslateTransform*, float, int>)(lpVtbl[6]))((IDCompositionTranslateTransform*)Unsafe.AsPointer(ref this), offsetY);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetOffsetY(IDCompositionAnimation* animation)
+        public HRESULT SetOffsetY(IDCompositionAnimation* animation)
         {
             return ((delegate* unmanaged<IDCompositionTranslateTransform*, IDCompositionAnimation*, int>)(lpVtbl[5]))((IDCompositionTranslateTransform*)Unsafe.AsPointer(ref this), animation);
         }

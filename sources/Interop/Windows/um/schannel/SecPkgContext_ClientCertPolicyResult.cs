@@ -9,8 +9,7 @@ namespace TerraFX.Interop
 {
     public partial struct SecPkgContext_ClientCertPolicyResult
     {
-        [NativeTypeName("HRESULT")]
-        public int dwPolicyResult;
+        public HRESULT dwPolicyResult;
 
         [NativeTypeName("GUID")]
         public Guid guidPolicyId;

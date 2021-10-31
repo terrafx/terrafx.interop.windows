@@ -74,7 +74,7 @@ namespace TerraFX.Interop
         public ushort* pszFooter;
 
         [NativeTypeName("PFTASKDIALOGCALLBACK")]
-        public delegate* unmanaged<IntPtr, uint, nuint, nint, nint, int> pfCallback;
+        public delegate* unmanaged<IntPtr, uint, nuint, nint, nint, HRESULT> pfCallback;
 
         [NativeTypeName("LONG_PTR")]
         public nint lpCallbackData;

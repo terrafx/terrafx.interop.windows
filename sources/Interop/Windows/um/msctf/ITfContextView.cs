@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<ITfContextView*, Guid*, void**, int>)(lpVtbl[0]))((ITfContextView*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,32 +41,28 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetRangeFromPoint([NativeTypeName("TfEditCookie")] uint ec, [NativeTypeName("const POINT *")] POINT* ppt, [NativeTypeName("DWORD")] uint dwFlags, ITfRange** ppRange)
+        public HRESULT GetRangeFromPoint([NativeTypeName("TfEditCookie")] uint ec, [NativeTypeName("const POINT *")] POINT* ppt, [NativeTypeName("DWORD")] uint dwFlags, ITfRange** ppRange)
         {
             return ((delegate* unmanaged<ITfContextView*, uint, POINT*, uint, ITfRange**, int>)(lpVtbl[3]))((ITfContextView*)Unsafe.AsPointer(ref this), ec, ppt, dwFlags, ppRange);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetTextExt([NativeTypeName("TfEditCookie")] uint ec, ITfRange* pRange, RECT* prc, BOOL* pfClipped)
+        public HRESULT GetTextExt([NativeTypeName("TfEditCookie")] uint ec, ITfRange* pRange, RECT* prc, BOOL* pfClipped)
         {
             return ((delegate* unmanaged<ITfContextView*, uint, ITfRange*, RECT*, BOOL*, int>)(lpVtbl[4]))((ITfContextView*)Unsafe.AsPointer(ref this), ec, pRange, prc, pfClipped);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetScreenExt(RECT* prc)
+        public HRESULT GetScreenExt(RECT* prc)
         {
             return ((delegate* unmanaged<ITfContextView*, RECT*, int>)(lpVtbl[5]))((ITfContextView*)Unsafe.AsPointer(ref this), prc);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetWnd([NativeTypeName("HWND *")] IntPtr* phwnd)
+        public HRESULT GetWnd([NativeTypeName("HWND *")] IntPtr* phwnd)
         {
             return ((delegate* unmanaged<ITfContextView*, IntPtr*, int>)(lpVtbl[6]))((ITfContextView*)Unsafe.AsPointer(ref this), phwnd);
         }

@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IMFTimedTextRuby*, Guid*, void**, int>)(lpVtbl[0]))((IMFTimedTextRuby*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,32 +41,28 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetRubyText([NativeTypeName("LPWSTR *")] ushort** rubyText)
+        public HRESULT GetRubyText([NativeTypeName("LPWSTR *")] ushort** rubyText)
         {
             return ((delegate* unmanaged<IMFTimedTextRuby*, ushort**, int>)(lpVtbl[3]))((IMFTimedTextRuby*)Unsafe.AsPointer(ref this), rubyText);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetRubyPosition(MF_TIMED_TEXT_RUBY_POSITION* value)
+        public HRESULT GetRubyPosition(MF_TIMED_TEXT_RUBY_POSITION* value)
         {
             return ((delegate* unmanaged<IMFTimedTextRuby*, MF_TIMED_TEXT_RUBY_POSITION*, int>)(lpVtbl[4]))((IMFTimedTextRuby*)Unsafe.AsPointer(ref this), value);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetRubyAlign(MF_TIMED_TEXT_RUBY_ALIGN* value)
+        public HRESULT GetRubyAlign(MF_TIMED_TEXT_RUBY_ALIGN* value)
         {
             return ((delegate* unmanaged<IMFTimedTextRuby*, MF_TIMED_TEXT_RUBY_ALIGN*, int>)(lpVtbl[5]))((IMFTimedTextRuby*)Unsafe.AsPointer(ref this), value);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetRubyReserve(MF_TIMED_TEXT_RUBY_RESERVE* value)
+        public HRESULT GetRubyReserve(MF_TIMED_TEXT_RUBY_RESERVE* value)
         {
             return ((delegate* unmanaged<IMFTimedTextRuby*, MF_TIMED_TEXT_RUBY_RESERVE*, int>)(lpVtbl[6]))((IMFTimedTextRuby*)Unsafe.AsPointer(ref this), value);
         }

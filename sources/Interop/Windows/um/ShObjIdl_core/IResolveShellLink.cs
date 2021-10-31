@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IResolveShellLink*, Guid*, void**, int>)(lpVtbl[0]))((IResolveShellLink*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,8 +41,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int ResolveShellLink(IUnknown* punkLink, [NativeTypeName("HWND")] IntPtr hwnd, [NativeTypeName("DWORD")] uint fFlags)
+        public HRESULT ResolveShellLink(IUnknown* punkLink, [NativeTypeName("HWND")] IntPtr hwnd, [NativeTypeName("DWORD")] uint fFlags)
         {
             return ((delegate* unmanaged<IResolveShellLink*, IUnknown*, IntPtr, uint, int>)(lpVtbl[3]))((IResolveShellLink*)Unsafe.AsPointer(ref this), punkLink, hwnd, fFlags);
         }

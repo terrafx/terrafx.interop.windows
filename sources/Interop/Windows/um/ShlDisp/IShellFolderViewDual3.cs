@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IShellFolderViewDual3*, Guid*, void**, int>)(lpVtbl[0]))((IShellFolderViewDual3*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,200 +41,175 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetTypeInfoCount([NativeTypeName("UINT *")] uint* pctinfo)
+        public HRESULT GetTypeInfoCount([NativeTypeName("UINT *")] uint* pctinfo)
         {
             return ((delegate* unmanaged<IShellFolderViewDual3*, uint*, int>)(lpVtbl[3]))((IShellFolderViewDual3*)Unsafe.AsPointer(ref this), pctinfo);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetTypeInfo([NativeTypeName("UINT")] uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
+        public HRESULT GetTypeInfo([NativeTypeName("UINT")] uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
         {
             return ((delegate* unmanaged<IShellFolderViewDual3*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IShellFolderViewDual3*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, [NativeTypeName("UINT")] uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+        public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, [NativeTypeName("UINT")] uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
         {
             return ((delegate* unmanaged<IShellFolderViewDual3*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IShellFolderViewDual3*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, [NativeTypeName("UINT *")] uint* puArgErr)
+        public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, [NativeTypeName("UINT *")] uint* puArgErr)
         {
             return ((delegate* unmanaged<IShellFolderViewDual3*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IShellFolderViewDual3*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        [return: NativeTypeName("HRESULT")]
-        public int get_Application(IDispatch** ppid)
+        public HRESULT get_Application(IDispatch** ppid)
         {
             return ((delegate* unmanaged<IShellFolderViewDual3*, IDispatch**, int>)(lpVtbl[7]))((IShellFolderViewDual3*)Unsafe.AsPointer(ref this), ppid);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        [return: NativeTypeName("HRESULT")]
-        public int get_Parent(IDispatch** ppid)
+        public HRESULT get_Parent(IDispatch** ppid)
         {
             return ((delegate* unmanaged<IShellFolderViewDual3*, IDispatch**, int>)(lpVtbl[8]))((IShellFolderViewDual3*)Unsafe.AsPointer(ref this), ppid);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        [return: NativeTypeName("HRESULT")]
-        public int get_Folder(Folder** ppid)
+        public HRESULT get_Folder(Folder** ppid)
         {
             return ((delegate* unmanaged<IShellFolderViewDual3*, Folder**, int>)(lpVtbl[9]))((IShellFolderViewDual3*)Unsafe.AsPointer(ref this), ppid);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(10)]
-        [return: NativeTypeName("HRESULT")]
-        public int SelectedItems(FolderItems** ppid)
+        public HRESULT SelectedItems(FolderItems** ppid)
         {
             return ((delegate* unmanaged<IShellFolderViewDual3*, FolderItems**, int>)(lpVtbl[10]))((IShellFolderViewDual3*)Unsafe.AsPointer(ref this), ppid);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(11)]
-        [return: NativeTypeName("HRESULT")]
-        public int get_FocusedItem(FolderItem** ppid)
+        public HRESULT get_FocusedItem(FolderItem** ppid)
         {
             return ((delegate* unmanaged<IShellFolderViewDual3*, FolderItem**, int>)(lpVtbl[11]))((IShellFolderViewDual3*)Unsafe.AsPointer(ref this), ppid);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(12)]
-        [return: NativeTypeName("HRESULT")]
-        public int SelectItem(VARIANT* pvfi, int dwFlags)
+        public HRESULT SelectItem(VARIANT* pvfi, int dwFlags)
         {
             return ((delegate* unmanaged<IShellFolderViewDual3*, VARIANT*, int, int>)(lpVtbl[12]))((IShellFolderViewDual3*)Unsafe.AsPointer(ref this), pvfi, dwFlags);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(13)]
-        [return: NativeTypeName("HRESULT")]
-        public int PopupItemMenu(FolderItem* pfi, VARIANT vx, VARIANT vy, [NativeTypeName("BSTR *")] ushort** pbs)
+        public HRESULT PopupItemMenu(FolderItem* pfi, VARIANT vx, VARIANT vy, [NativeTypeName("BSTR *")] ushort** pbs)
         {
             return ((delegate* unmanaged<IShellFolderViewDual3*, FolderItem*, VARIANT, VARIANT, ushort**, int>)(lpVtbl[13]))((IShellFolderViewDual3*)Unsafe.AsPointer(ref this), pfi, vx, vy, pbs);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(14)]
-        [return: NativeTypeName("HRESULT")]
-        public int get_Script(IDispatch** ppDisp)
+        public HRESULT get_Script(IDispatch** ppDisp)
         {
             return ((delegate* unmanaged<IShellFolderViewDual3*, IDispatch**, int>)(lpVtbl[14]))((IShellFolderViewDual3*)Unsafe.AsPointer(ref this), ppDisp);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(15)]
-        [return: NativeTypeName("HRESULT")]
-        public int get_ViewOptions([NativeTypeName("long *")] int* plViewOptions)
+        public HRESULT get_ViewOptions([NativeTypeName("long *")] int* plViewOptions)
         {
             return ((delegate* unmanaged<IShellFolderViewDual3*, int*, int>)(lpVtbl[15]))((IShellFolderViewDual3*)Unsafe.AsPointer(ref this), plViewOptions);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(16)]
-        [return: NativeTypeName("HRESULT")]
-        public int get_CurrentViewMode([NativeTypeName("UINT *")] uint* pViewMode)
+        public HRESULT get_CurrentViewMode([NativeTypeName("UINT *")] uint* pViewMode)
         {
             return ((delegate* unmanaged<IShellFolderViewDual3*, uint*, int>)(lpVtbl[16]))((IShellFolderViewDual3*)Unsafe.AsPointer(ref this), pViewMode);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(17)]
-        [return: NativeTypeName("HRESULT")]
-        public int put_CurrentViewMode([NativeTypeName("UINT")] uint ViewMode)
+        public HRESULT put_CurrentViewMode([NativeTypeName("UINT")] uint ViewMode)
         {
             return ((delegate* unmanaged<IShellFolderViewDual3*, uint, int>)(lpVtbl[17]))((IShellFolderViewDual3*)Unsafe.AsPointer(ref this), ViewMode);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(18)]
-        [return: NativeTypeName("HRESULT")]
-        public int SelectItemRelative(int iRelative)
+        public HRESULT SelectItemRelative(int iRelative)
         {
             return ((delegate* unmanaged<IShellFolderViewDual3*, int, int>)(lpVtbl[18]))((IShellFolderViewDual3*)Unsafe.AsPointer(ref this), iRelative);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(19)]
-        [return: NativeTypeName("HRESULT")]
-        public int get_GroupBy([NativeTypeName("BSTR *")] ushort** pbstrGroupBy)
+        public HRESULT get_GroupBy([NativeTypeName("BSTR *")] ushort** pbstrGroupBy)
         {
             return ((delegate* unmanaged<IShellFolderViewDual3*, ushort**, int>)(lpVtbl[19]))((IShellFolderViewDual3*)Unsafe.AsPointer(ref this), pbstrGroupBy);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(20)]
-        [return: NativeTypeName("HRESULT")]
-        public int put_GroupBy([NativeTypeName("BSTR")] ushort* bstrGroupBy)
+        public HRESULT put_GroupBy([NativeTypeName("BSTR")] ushort* bstrGroupBy)
         {
             return ((delegate* unmanaged<IShellFolderViewDual3*, ushort*, int>)(lpVtbl[20]))((IShellFolderViewDual3*)Unsafe.AsPointer(ref this), bstrGroupBy);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(21)]
-        [return: NativeTypeName("HRESULT")]
-        public int get_FolderFlags([NativeTypeName("DWORD *")] uint* pdwFlags)
+        public HRESULT get_FolderFlags([NativeTypeName("DWORD *")] uint* pdwFlags)
         {
             return ((delegate* unmanaged<IShellFolderViewDual3*, uint*, int>)(lpVtbl[21]))((IShellFolderViewDual3*)Unsafe.AsPointer(ref this), pdwFlags);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(22)]
-        [return: NativeTypeName("HRESULT")]
-        public int put_FolderFlags([NativeTypeName("DWORD")] uint dwFlags)
+        public HRESULT put_FolderFlags([NativeTypeName("DWORD")] uint dwFlags)
         {
             return ((delegate* unmanaged<IShellFolderViewDual3*, uint, int>)(lpVtbl[22]))((IShellFolderViewDual3*)Unsafe.AsPointer(ref this), dwFlags);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(23)]
-        [return: NativeTypeName("HRESULT")]
-        public int get_SortColumns([NativeTypeName("BSTR *")] ushort** pbstrSortColumns)
+        public HRESULT get_SortColumns([NativeTypeName("BSTR *")] ushort** pbstrSortColumns)
         {
             return ((delegate* unmanaged<IShellFolderViewDual3*, ushort**, int>)(lpVtbl[23]))((IShellFolderViewDual3*)Unsafe.AsPointer(ref this), pbstrSortColumns);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(24)]
-        [return: NativeTypeName("HRESULT")]
-        public int put_SortColumns([NativeTypeName("BSTR")] ushort* bstrSortColumns)
+        public HRESULT put_SortColumns([NativeTypeName("BSTR")] ushort* bstrSortColumns)
         {
             return ((delegate* unmanaged<IShellFolderViewDual3*, ushort*, int>)(lpVtbl[24]))((IShellFolderViewDual3*)Unsafe.AsPointer(ref this), bstrSortColumns);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(25)]
-        [return: NativeTypeName("HRESULT")]
-        public int put_IconSize(int iIconSize)
+        public HRESULT put_IconSize(int iIconSize)
         {
             return ((delegate* unmanaged<IShellFolderViewDual3*, int, int>)(lpVtbl[25]))((IShellFolderViewDual3*)Unsafe.AsPointer(ref this), iIconSize);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(26)]
-        [return: NativeTypeName("HRESULT")]
-        public int get_IconSize(int* piIconSize)
+        public HRESULT get_IconSize(int* piIconSize)
         {
             return ((delegate* unmanaged<IShellFolderViewDual3*, int*, int>)(lpVtbl[26]))((IShellFolderViewDual3*)Unsafe.AsPointer(ref this), piIconSize);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(27)]
-        [return: NativeTypeName("HRESULT")]
-        public int FilterView([NativeTypeName("BSTR")] ushort* bstrFilterText)
+        public HRESULT FilterView([NativeTypeName("BSTR")] ushort* bstrFilterText)
         {
             return ((delegate* unmanaged<IShellFolderViewDual3*, ushort*, int>)(lpVtbl[27]))((IShellFolderViewDual3*)Unsafe.AsPointer(ref this), bstrFilterText);
         }

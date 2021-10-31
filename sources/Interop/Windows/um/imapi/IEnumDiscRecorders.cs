@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IEnumDiscRecorders*, Guid*, void**, int>)(lpVtbl[0]))((IEnumDiscRecorders*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,32 +41,28 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int Next([NativeTypeName("ULONG")] uint cRecorders, IDiscRecorder** ppRecorder, [NativeTypeName("ULONG *")] uint* pcFetched)
+        public HRESULT Next([NativeTypeName("ULONG")] uint cRecorders, IDiscRecorder** ppRecorder, [NativeTypeName("ULONG *")] uint* pcFetched)
         {
             return ((delegate* unmanaged<IEnumDiscRecorders*, uint, IDiscRecorder**, uint*, int>)(lpVtbl[3]))((IEnumDiscRecorders*)Unsafe.AsPointer(ref this), cRecorders, ppRecorder, pcFetched);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int Skip([NativeTypeName("ULONG")] uint cRecorders)
+        public HRESULT Skip([NativeTypeName("ULONG")] uint cRecorders)
         {
             return ((delegate* unmanaged<IEnumDiscRecorders*, uint, int>)(lpVtbl[4]))((IEnumDiscRecorders*)Unsafe.AsPointer(ref this), cRecorders);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int Reset()
+        public HRESULT Reset()
         {
             return ((delegate* unmanaged<IEnumDiscRecorders*, int>)(lpVtbl[5]))((IEnumDiscRecorders*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int Clone(IEnumDiscRecorders** ppEnum)
+        public HRESULT Clone(IEnumDiscRecorders** ppEnum)
         {
             return ((delegate* unmanaged<IEnumDiscRecorders*, IEnumDiscRecorders**, int>)(lpVtbl[6]))((IEnumDiscRecorders*)Unsafe.AsPointer(ref this), ppEnum);
         }

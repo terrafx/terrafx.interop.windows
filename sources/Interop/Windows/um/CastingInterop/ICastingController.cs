@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<ICastingController*, Guid*, void**, int>)(lpVtbl[0]))((ICastingController*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,40 +41,35 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int Initialize(IUnknown* castingEngine, IUnknown* castingSource)
+        public HRESULT Initialize(IUnknown* castingEngine, IUnknown* castingSource)
         {
             return ((delegate* unmanaged<ICastingController*, IUnknown*, IUnknown*, int>)(lpVtbl[3]))((ICastingController*)Unsafe.AsPointer(ref this), castingEngine, castingSource);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int Connect()
+        public HRESULT Connect()
         {
             return ((delegate* unmanaged<ICastingController*, int>)(lpVtbl[4]))((ICastingController*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int Disconnect()
+        public HRESULT Disconnect()
         {
             return ((delegate* unmanaged<ICastingController*, int>)(lpVtbl[5]))((ICastingController*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int Advise(ICastingEventHandler* eventHandler, [NativeTypeName("DWORD *")] uint* cookie)
+        public HRESULT Advise(ICastingEventHandler* eventHandler, [NativeTypeName("DWORD *")] uint* cookie)
         {
             return ((delegate* unmanaged<ICastingController*, ICastingEventHandler*, uint*, int>)(lpVtbl[6]))((ICastingController*)Unsafe.AsPointer(ref this), eventHandler, cookie);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        [return: NativeTypeName("HRESULT")]
-        public int UnAdvise([NativeTypeName("DWORD")] uint cookie)
+        public HRESULT UnAdvise([NativeTypeName("DWORD")] uint cookie)
         {
             return ((delegate* unmanaged<ICastingController*, uint, int>)(lpVtbl[7]))((ICastingController*)Unsafe.AsPointer(ref this), cookie);
         }

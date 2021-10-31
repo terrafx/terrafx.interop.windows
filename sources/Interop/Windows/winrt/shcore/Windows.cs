@@ -11,15 +11,12 @@ namespace TerraFX.Interop
     public static unsafe partial class Windows
     {
         [DllImport("shcore", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int CreateRandomAccessStreamOnFile([NativeTypeName("PCWSTR")] ushort* filePath, [NativeTypeName("DWORD")] uint accessMode, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
+        public static extern HRESULT CreateRandomAccessStreamOnFile([NativeTypeName("PCWSTR")] ushort* filePath, [NativeTypeName("DWORD")] uint accessMode, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
 
         [DllImport("shcore", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int CreateRandomAccessStreamOverStream(IStream* stream, BSOS_OPTIONS options, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
+        public static extern HRESULT CreateRandomAccessStreamOverStream(IStream* stream, BSOS_OPTIONS options, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
 
         [DllImport("shcore", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int CreateStreamOverRandomAccessStream(IUnknown* randomAccessStream, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
+        public static extern HRESULT CreateStreamOverRandomAccessStream(IUnknown* randomAccessStream, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
     }
 }

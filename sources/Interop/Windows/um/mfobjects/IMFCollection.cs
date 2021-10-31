@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IMFCollection*, Guid*, void**, int>)(lpVtbl[0]))((IMFCollection*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,48 +41,42 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetElementCount([NativeTypeName("DWORD *")] uint* pcElements)
+        public HRESULT GetElementCount([NativeTypeName("DWORD *")] uint* pcElements)
         {
             return ((delegate* unmanaged<IMFCollection*, uint*, int>)(lpVtbl[3]))((IMFCollection*)Unsafe.AsPointer(ref this), pcElements);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetElement([NativeTypeName("DWORD")] uint dwElementIndex, IUnknown** ppUnkElement)
+        public HRESULT GetElement([NativeTypeName("DWORD")] uint dwElementIndex, IUnknown** ppUnkElement)
         {
             return ((delegate* unmanaged<IMFCollection*, uint, IUnknown**, int>)(lpVtbl[4]))((IMFCollection*)Unsafe.AsPointer(ref this), dwElementIndex, ppUnkElement);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int AddElement(IUnknown* pUnkElement)
+        public HRESULT AddElement(IUnknown* pUnkElement)
         {
             return ((delegate* unmanaged<IMFCollection*, IUnknown*, int>)(lpVtbl[5]))((IMFCollection*)Unsafe.AsPointer(ref this), pUnkElement);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int RemoveElement([NativeTypeName("DWORD")] uint dwElementIndex, IUnknown** ppUnkElement)
+        public HRESULT RemoveElement([NativeTypeName("DWORD")] uint dwElementIndex, IUnknown** ppUnkElement)
         {
             return ((delegate* unmanaged<IMFCollection*, uint, IUnknown**, int>)(lpVtbl[6]))((IMFCollection*)Unsafe.AsPointer(ref this), dwElementIndex, ppUnkElement);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        [return: NativeTypeName("HRESULT")]
-        public int InsertElementAt([NativeTypeName("DWORD")] uint dwIndex, IUnknown* pUnknown)
+        public HRESULT InsertElementAt([NativeTypeName("DWORD")] uint dwIndex, IUnknown* pUnknown)
         {
             return ((delegate* unmanaged<IMFCollection*, uint, IUnknown*, int>)(lpVtbl[7]))((IMFCollection*)Unsafe.AsPointer(ref this), dwIndex, pUnknown);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        [return: NativeTypeName("HRESULT")]
-        public int RemoveAllElements()
+        public HRESULT RemoveAllElements()
         {
             return ((delegate* unmanaged<IMFCollection*, int>)(lpVtbl[8]))((IMFCollection*)Unsafe.AsPointer(ref this));
         }

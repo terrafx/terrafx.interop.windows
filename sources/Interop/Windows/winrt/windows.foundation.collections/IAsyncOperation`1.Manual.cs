@@ -16,8 +16,7 @@ namespace TerraFX.Interop
         public void** lpVtbl;
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
             return ((delegate* unmanaged<IAsyncOperation<TResult>*, Guid*, void**, int>)(lpVtbl[0]))((IAsyncOperation<TResult>*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -37,43 +36,37 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetIids([NativeTypeName("ULONG *")] uint* iidCount, [NativeTypeName("IID **")] Guid** iids)
+        public HRESULT GetIids([NativeTypeName("ULONG *")] uint* iidCount, [NativeTypeName("IID **")] Guid** iids)
         {
             return ((delegate* unmanaged<IAsyncOperation<TResult>*, uint*, Guid**, int>)(lpVtbl[3]))((IAsyncOperation<TResult>*)Unsafe.AsPointer(ref this), iidCount, iids);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetRuntimeClassName([NativeTypeName("HSTRING *")] IntPtr* className)
+        public HRESULT GetRuntimeClassName([NativeTypeName("HSTRING *")] IntPtr* className)
         {
             return ((delegate* unmanaged<IAsyncOperation<TResult>*, IntPtr*, int>)(lpVtbl[4]))((IAsyncOperation<TResult>*)Unsafe.AsPointer(ref this), className);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetTrustLevel([NativeTypeName("TrustLevel *")] TrustLevel* trustLevel)
+        public HRESULT GetTrustLevel([NativeTypeName("TrustLevel *")] TrustLevel* trustLevel)
         {
             return ((delegate* unmanaged<IAsyncOperation<TResult>*, TrustLevel*, int>)(lpVtbl[5]))((IAsyncOperation<TResult>*)Unsafe.AsPointer(ref this), trustLevel);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [return: NativeTypeName("HRESULT")]
-        public int put_Completed([NativeTypeName("IAsyncOperationCompletedHandler<TResult_logical> *")] IAsyncOperationCompletedHandler<TResult>* handler)
+        public HRESULT put_Completed([NativeTypeName("IAsyncOperationCompletedHandler<TResult_logical> *")] IAsyncOperationCompletedHandler<TResult>* handler)
         {
             return ((delegate* unmanaged<IAsyncOperation<TResult>*, IAsyncOperationCompletedHandler<TResult>*, int>)(lpVtbl[6]))((IAsyncOperation<TResult>*)Unsafe.AsPointer(ref this), handler);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [return: NativeTypeName("HRESULT")]
-        public int get_Completed([NativeTypeName("IAsyncOperationCompletedHandler<TResult_logical> **")] IAsyncOperationCompletedHandler<TResult>** handler)
+        public HRESULT get_Completed([NativeTypeName("IAsyncOperationCompletedHandler<TResult_logical> **")] IAsyncOperationCompletedHandler<TResult>** handler)
         {
             return ((delegate* unmanaged<IAsyncOperation<TResult>*, IAsyncOperationCompletedHandler<TResult>**, int>)(lpVtbl[7]))((IAsyncOperation<TResult>*)Unsafe.AsPointer(ref this), handler);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetResults([NativeTypeName("TResult_abi *")] TResult* results)
+        public HRESULT GetResults([NativeTypeName("TResult_abi *")] TResult* results)
         {
             return ((delegate* unmanaged<IAsyncOperation<TResult>*, TResult*, int>)(lpVtbl[8]))((IAsyncOperation<TResult>*)Unsafe.AsPointer(ref this), results);
         }

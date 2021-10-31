@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<ID3D10Debug*, Guid*, void**, int>)(lpVtbl[0]))((ID3D10Debug*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,8 +41,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetFeatureMask([NativeTypeName("UINT")] uint Mask)
+        public HRESULT SetFeatureMask([NativeTypeName("UINT")] uint Mask)
         {
             return ((delegate* unmanaged<ID3D10Debug*, uint, int>)(lpVtbl[3]))((ID3D10Debug*)Unsafe.AsPointer(ref this), Mask);
         }
@@ -58,8 +56,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetPresentPerRenderOpDelay([NativeTypeName("UINT")] uint Milliseconds)
+        public HRESULT SetPresentPerRenderOpDelay([NativeTypeName("UINT")] uint Milliseconds)
         {
             return ((delegate* unmanaged<ID3D10Debug*, uint, int>)(lpVtbl[5]))((ID3D10Debug*)Unsafe.AsPointer(ref this), Milliseconds);
         }
@@ -74,24 +71,21 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetSwapChain(IDXGISwapChain* pSwapChain)
+        public HRESULT SetSwapChain(IDXGISwapChain* pSwapChain)
         {
             return ((delegate* unmanaged<ID3D10Debug*, IDXGISwapChain*, int>)(lpVtbl[7]))((ID3D10Debug*)Unsafe.AsPointer(ref this), pSwapChain);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetSwapChain(IDXGISwapChain** ppSwapChain)
+        public HRESULT GetSwapChain(IDXGISwapChain** ppSwapChain)
         {
             return ((delegate* unmanaged<ID3D10Debug*, IDXGISwapChain**, int>)(lpVtbl[8]))((ID3D10Debug*)Unsafe.AsPointer(ref this), ppSwapChain);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        [return: NativeTypeName("HRESULT")]
-        public int Validate()
+        public HRESULT Validate()
         {
             return ((delegate* unmanaged<ID3D10Debug*, int>)(lpVtbl[9]))((ID3D10Debug*)Unsafe.AsPointer(ref this));
         }

@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IAccessibilityDockingService*, Guid*, void**, int>)(lpVtbl[0]))((IAccessibilityDockingService*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,24 +41,21 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetAvailableSize([NativeTypeName("HMONITOR")] IntPtr hMonitor, [NativeTypeName("UINT *")] uint* pcxFixed, [NativeTypeName("UINT *")] uint* pcyMax)
+        public HRESULT GetAvailableSize([NativeTypeName("HMONITOR")] IntPtr hMonitor, [NativeTypeName("UINT *")] uint* pcxFixed, [NativeTypeName("UINT *")] uint* pcyMax)
         {
             return ((delegate* unmanaged<IAccessibilityDockingService*, IntPtr, uint*, uint*, int>)(lpVtbl[3]))((IAccessibilityDockingService*)Unsafe.AsPointer(ref this), hMonitor, pcxFixed, pcyMax);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int DockWindow([NativeTypeName("HWND")] IntPtr hwnd, [NativeTypeName("HMONITOR")] IntPtr hMonitor, [NativeTypeName("UINT")] uint cyRequested, IAccessibilityDockingServiceCallback* pCallback)
+        public HRESULT DockWindow([NativeTypeName("HWND")] IntPtr hwnd, [NativeTypeName("HMONITOR")] IntPtr hMonitor, [NativeTypeName("UINT")] uint cyRequested, IAccessibilityDockingServiceCallback* pCallback)
         {
             return ((delegate* unmanaged<IAccessibilityDockingService*, IntPtr, IntPtr, uint, IAccessibilityDockingServiceCallback*, int>)(lpVtbl[4]))((IAccessibilityDockingService*)Unsafe.AsPointer(ref this), hwnd, hMonitor, cyRequested, pCallback);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int UndockWindow([NativeTypeName("HWND")] IntPtr hwnd)
+        public HRESULT UndockWindow([NativeTypeName("HWND")] IntPtr hwnd)
         {
             return ((delegate* unmanaged<IAccessibilityDockingService*, IntPtr, int>)(lpVtbl[5]))((IAccessibilityDockingService*)Unsafe.AsPointer(ref this), hwnd);
         }

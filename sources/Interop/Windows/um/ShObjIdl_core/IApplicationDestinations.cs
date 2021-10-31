@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IApplicationDestinations*, Guid*, void**, int>)(lpVtbl[0]))((IApplicationDestinations*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,24 +41,21 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetAppID([NativeTypeName("LPCWSTR")] ushort* pszAppID)
+        public HRESULT SetAppID([NativeTypeName("LPCWSTR")] ushort* pszAppID)
         {
             return ((delegate* unmanaged<IApplicationDestinations*, ushort*, int>)(lpVtbl[3]))((IApplicationDestinations*)Unsafe.AsPointer(ref this), pszAppID);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int RemoveDestination(IUnknown* punk)
+        public HRESULT RemoveDestination(IUnknown* punk)
         {
             return ((delegate* unmanaged<IApplicationDestinations*, IUnknown*, int>)(lpVtbl[4]))((IApplicationDestinations*)Unsafe.AsPointer(ref this), punk);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int RemoveAllDestinations()
+        public HRESULT RemoveAllDestinations()
         {
             return ((delegate* unmanaged<IApplicationDestinations*, int>)(lpVtbl[5]))((IApplicationDestinations*)Unsafe.AsPointer(ref this));
         }

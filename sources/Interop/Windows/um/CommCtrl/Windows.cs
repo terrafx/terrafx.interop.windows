@@ -112,12 +112,10 @@ namespace TerraFX.Interop
         public static extern BOOL ImageList_Write([NativeTypeName("HIMAGELIST")] IntPtr himl, [NativeTypeName("struct IStream *")] IStream* pstm);
 
         [DllImport("comctl32", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int ImageList_ReadEx([NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("struct IStream *")] IStream* pstm, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("PVOID *")] void** ppv);
+        public static extern HRESULT ImageList_ReadEx([NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("struct IStream *")] IStream* pstm, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("PVOID *")] void** ppv);
 
         [DllImport("comctl32", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int ImageList_WriteEx([NativeTypeName("HIMAGELIST")] IntPtr himl, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("struct IStream *")] IStream* pstm);
+        public static extern HRESULT ImageList_WriteEx([NativeTypeName("HIMAGELIST")] IntPtr himl, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("struct IStream *")] IStream* pstm);
 
         [DllImport("comctl32", ExactSpelling = true)]
         public static extern BOOL ImageList_GetIconSize([NativeTypeName("HIMAGELIST")] IntPtr himl, int* cx, int* cy);
@@ -137,8 +135,7 @@ namespace TerraFX.Interop
         public static extern IntPtr ImageList_Duplicate([NativeTypeName("HIMAGELIST")] IntPtr himl);
 
         [DllImport("comctl32", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int HIMAGELIST_QueryInterface([NativeTypeName("HIMAGELIST")] IntPtr himl, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
+        public static extern HRESULT HIMAGELIST_QueryInterface([NativeTypeName("HIMAGELIST")] IntPtr himl, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
 
         [return: NativeTypeName("HIMAGELIST")]
         public static IntPtr IImageListToHIMAGELIST([NativeTypeName("struct IImageList *")] IImageList* himl)
@@ -191,12 +188,10 @@ namespace TerraFX.Interop
         public static extern IntPtr CreateUpDownControl([NativeTypeName("DWORD")] uint dwStyle, int x, int y, int cx, int cy, [NativeTypeName("HWND")] IntPtr hParent, int nID, [NativeTypeName("HINSTANCE")] IntPtr hInst, [NativeTypeName("HWND")] IntPtr hBuddy, int nUpper, int nLower, int nPos);
 
         [DllImport("comctl32", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int TaskDialogIndirect([NativeTypeName("const TASKDIALOGCONFIG *")] TASKDIALOGCONFIG* pTaskConfig, int* pnButton, int* pnRadioButton, BOOL* pfVerificationFlagChecked);
+        public static extern HRESULT TaskDialogIndirect([NativeTypeName("const TASKDIALOGCONFIG *")] TASKDIALOGCONFIG* pTaskConfig, int* pnButton, int* pnRadioButton, BOOL* pfVerificationFlagChecked);
 
         [DllImport("comctl32", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int TaskDialog([NativeTypeName("HWND")] IntPtr hwndOwner, [NativeTypeName("HINSTANCE")] IntPtr hInstance, [NativeTypeName("PCWSTR")] ushort* pszWindowTitle, [NativeTypeName("PCWSTR")] ushort* pszMainInstruction, [NativeTypeName("PCWSTR")] ushort* pszContent, [NativeTypeName("TASKDIALOG_COMMON_BUTTON_FLAGS")] int dwCommonButtons, [NativeTypeName("PCWSTR")] ushort* pszIcon, int* pnButton);
+        public static extern HRESULT TaskDialog([NativeTypeName("HWND")] IntPtr hwndOwner, [NativeTypeName("HINSTANCE")] IntPtr hInstance, [NativeTypeName("PCWSTR")] ushort* pszWindowTitle, [NativeTypeName("PCWSTR")] ushort* pszMainInstruction, [NativeTypeName("PCWSTR")] ushort* pszContent, [NativeTypeName("TASKDIALOG_COMMON_BUTTON_FLAGS")] int dwCommonButtons, [NativeTypeName("PCWSTR")] ushort* pszIcon, int* pnButton);
 
         [DllImport("comctl32", ExactSpelling = true)]
         public static extern void InitMUILanguage([NativeTypeName("LANGID")] ushort uiLang);
@@ -242,8 +237,7 @@ namespace TerraFX.Interop
         public static extern BOOL InitializeFlatSB([NativeTypeName("HWND")] IntPtr param0);
 
         [DllImport("comctl32", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int UninitializeFlatSB([NativeTypeName("HWND")] IntPtr param0);
+        public static extern HRESULT UninitializeFlatSB([NativeTypeName("HWND")] IntPtr param0);
 
         [DllImport("comctl32", ExactSpelling = true)]
         public static extern BOOL SetWindowSubclass([NativeTypeName("HWND")] IntPtr hWnd, [NativeTypeName("SUBCLASSPROC")] delegate* unmanaged<IntPtr, uint, nuint, nint, nuint, nuint, nint> pfnSubclass, [NativeTypeName("UINT_PTR")] nuint uIdSubclass, [NativeTypeName("DWORD_PTR")] nuint dwRefData);
@@ -259,12 +253,10 @@ namespace TerraFX.Interop
         public static extern nint DefSubclassProc([NativeTypeName("HWND")] IntPtr hWnd, [NativeTypeName("UINT")] uint uMsg, [NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam);
 
         [DllImport("comctl32", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int LoadIconMetric([NativeTypeName("HINSTANCE")] IntPtr hinst, [NativeTypeName("PCWSTR")] ushort* pszName, int lims, [NativeTypeName("HICON *")] IntPtr* phico);
+        public static extern HRESULT LoadIconMetric([NativeTypeName("HINSTANCE")] IntPtr hinst, [NativeTypeName("PCWSTR")] ushort* pszName, int lims, [NativeTypeName("HICON *")] IntPtr* phico);
 
         [DllImport("comctl32", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int LoadIconWithScaleDown([NativeTypeName("HINSTANCE")] IntPtr hinst, [NativeTypeName("PCWSTR")] ushort* pszName, int cx, int cy, [NativeTypeName("HICON *")] IntPtr* phico);
+        public static extern HRESULT LoadIconWithScaleDown([NativeTypeName("HINSTANCE")] IntPtr hinst, [NativeTypeName("PCWSTR")] ushort* pszName, int cx, int cy, [NativeTypeName("HICON *")] IntPtr* phico);
 
         [DllImport("comctl32", ExactSpelling = true)]
         public static extern int DrawShadowText([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("LPCWSTR")] ushort* pszText, [NativeTypeName("UINT")] uint cch, RECT* prc, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("COLORREF")] uint crText, [NativeTypeName("COLORREF")] uint crShadow, int ixOffset, int iyOffset);

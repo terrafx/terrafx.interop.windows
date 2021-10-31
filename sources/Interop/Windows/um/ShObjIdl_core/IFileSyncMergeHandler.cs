@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IFileSyncMergeHandler*, Guid*, void**, int>)(lpVtbl[0]))((IFileSyncMergeHandler*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,16 +41,14 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int Merge([NativeTypeName("LPCWSTR")] ushort* localFilePath, [NativeTypeName("LPCWSTR")] ushort* serverFilePath, MERGE_UPDATE_STATUS* updateStatus)
+        public HRESULT Merge([NativeTypeName("LPCWSTR")] ushort* localFilePath, [NativeTypeName("LPCWSTR")] ushort* serverFilePath, MERGE_UPDATE_STATUS* updateStatus)
         {
             return ((delegate* unmanaged<IFileSyncMergeHandler*, ushort*, ushort*, MERGE_UPDATE_STATUS*, int>)(lpVtbl[3]))((IFileSyncMergeHandler*)Unsafe.AsPointer(ref this), localFilePath, serverFilePath, updateStatus);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int ShowResolveConflictUIAsync([NativeTypeName("LPCWSTR")] ushort* localFilePath, [NativeTypeName("HMONITOR")] IntPtr monitorToDisplayOn)
+        public HRESULT ShowResolveConflictUIAsync([NativeTypeName("LPCWSTR")] ushort* localFilePath, [NativeTypeName("HMONITOR")] IntPtr monitorToDisplayOn)
         {
             return ((delegate* unmanaged<IFileSyncMergeHandler*, ushort*, IntPtr, int>)(lpVtbl[4]))((IFileSyncMergeHandler*)Unsafe.AsPointer(ref this), localFilePath, monitorToDisplayOn);
         }

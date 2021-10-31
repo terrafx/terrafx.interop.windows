@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IStorageProviderHandler*, Guid*, void**, int>)(lpVtbl[0]))((IStorageProviderHandler*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,24 +41,21 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetPropertyHandlerFromPath([NativeTypeName("LPCWSTR")] ushort* path, IStorageProviderPropertyHandler** propertyHandler)
+        public HRESULT GetPropertyHandlerFromPath([NativeTypeName("LPCWSTR")] ushort* path, IStorageProviderPropertyHandler** propertyHandler)
         {
             return ((delegate* unmanaged<IStorageProviderHandler*, ushort*, IStorageProviderPropertyHandler**, int>)(lpVtbl[3]))((IStorageProviderHandler*)Unsafe.AsPointer(ref this), path, propertyHandler);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetPropertyHandlerFromUri([NativeTypeName("LPCWSTR")] ushort* uri, IStorageProviderPropertyHandler** propertyHandler)
+        public HRESULT GetPropertyHandlerFromUri([NativeTypeName("LPCWSTR")] ushort* uri, IStorageProviderPropertyHandler** propertyHandler)
         {
             return ((delegate* unmanaged<IStorageProviderHandler*, ushort*, IStorageProviderPropertyHandler**, int>)(lpVtbl[4]))((IStorageProviderHandler*)Unsafe.AsPointer(ref this), uri, propertyHandler);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetPropertyHandlerFromFileId([NativeTypeName("LPCWSTR")] ushort* fileId, IStorageProviderPropertyHandler** propertyHandler)
+        public HRESULT GetPropertyHandlerFromFileId([NativeTypeName("LPCWSTR")] ushort* fileId, IStorageProviderPropertyHandler** propertyHandler)
         {
             return ((delegate* unmanaged<IStorageProviderHandler*, ushort*, IStorageProviderPropertyHandler**, int>)(lpVtbl[5]))((IStorageProviderHandler*)Unsafe.AsPointer(ref this), fileId, propertyHandler);
         }

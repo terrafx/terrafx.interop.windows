@@ -13,272 +13,205 @@ namespace TerraFX.Interop
     public static unsafe partial class Windows
     {
         [DllImport("propsys", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int PropVariantToWinRTPropertyValue([NativeTypeName("const PROPVARIANT &")] PROPVARIANT* propvar, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
+        public static extern HRESULT PropVariantToWinRTPropertyValue([NativeTypeName("const PROPVARIANT &")] PROPVARIANT* propvar, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
 
         [DllImport("propsys", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int WinRTPropertyValueToPropVariant(IUnknown* punkPropertyValue, PROPVARIANT* ppropvar);
+        public static extern HRESULT WinRTPropertyValueToPropVariant(IUnknown* punkPropertyValue, PROPVARIANT* ppropvar);
 
         [DllImport("propsys", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int PSFormatForDisplay([NativeTypeName("const PROPERTYKEY &")] PROPERTYKEY* propkey, [NativeTypeName("const PROPVARIANT &")] PROPVARIANT* propvar, PROPDESC_FORMAT_FLAGS pdfFlags, [NativeTypeName("LPWSTR")] ushort* pwszText, [NativeTypeName("DWORD")] uint cchText);
+        public static extern HRESULT PSFormatForDisplay([NativeTypeName("const PROPERTYKEY &")] PROPERTYKEY* propkey, [NativeTypeName("const PROPVARIANT &")] PROPVARIANT* propvar, PROPDESC_FORMAT_FLAGS pdfFlags, [NativeTypeName("LPWSTR")] ushort* pwszText, [NativeTypeName("DWORD")] uint cchText);
 
         [DllImport("propsys", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int PSFormatForDisplayAlloc([NativeTypeName("const PROPERTYKEY &")] PROPERTYKEY* key, [NativeTypeName("const PROPVARIANT &")] PROPVARIANT* propvar, PROPDESC_FORMAT_FLAGS pdff, [NativeTypeName("PWSTR *")] ushort** ppszDisplay);
+        public static extern HRESULT PSFormatForDisplayAlloc([NativeTypeName("const PROPERTYKEY &")] PROPERTYKEY* key, [NativeTypeName("const PROPVARIANT &")] PROPVARIANT* propvar, PROPDESC_FORMAT_FLAGS pdff, [NativeTypeName("PWSTR *")] ushort** ppszDisplay);
 
         [DllImport("propsys", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int PSFormatPropertyValue(IPropertyStore* pps, IPropertyDescription* ppd, PROPDESC_FORMAT_FLAGS pdff, [NativeTypeName("LPWSTR *")] ushort** ppszDisplay);
+        public static extern HRESULT PSFormatPropertyValue(IPropertyStore* pps, IPropertyDescription* ppd, PROPDESC_FORMAT_FLAGS pdff, [NativeTypeName("LPWSTR *")] ushort** ppszDisplay);
 
         [DllImport("propsys", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int PSGetImageReferenceForValue([NativeTypeName("const PROPERTYKEY &")] PROPERTYKEY* propkey, [NativeTypeName("const PROPVARIANT &")] PROPVARIANT* propvar, [NativeTypeName("PWSTR *")] ushort** ppszImageRes);
+        public static extern HRESULT PSGetImageReferenceForValue([NativeTypeName("const PROPERTYKEY &")] PROPERTYKEY* propkey, [NativeTypeName("const PROPVARIANT &")] PROPVARIANT* propvar, [NativeTypeName("PWSTR *")] ushort** ppszImageRes);
 
         [DllImport("propsys", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int PSStringFromPropertyKey([NativeTypeName("const PROPERTYKEY &")] PROPERTYKEY* pkey, [NativeTypeName("LPWSTR")] ushort* psz, [NativeTypeName("UINT")] uint cch);
+        public static extern HRESULT PSStringFromPropertyKey([NativeTypeName("const PROPERTYKEY &")] PROPERTYKEY* pkey, [NativeTypeName("LPWSTR")] ushort* psz, [NativeTypeName("UINT")] uint cch);
 
         [DllImport("propsys", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int PSPropertyKeyFromString([NativeTypeName("LPCWSTR")] ushort* pszString, PROPERTYKEY* pkey);
+        public static extern HRESULT PSPropertyKeyFromString([NativeTypeName("LPCWSTR")] ushort* pszString, PROPERTYKEY* pkey);
 
         [DllImport("propsys", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int PSCreateMemoryPropertyStore([NativeTypeName("const IID &")] Guid* riid, void** ppv);
+        public static extern HRESULT PSCreateMemoryPropertyStore([NativeTypeName("const IID &")] Guid* riid, void** ppv);
 
         [DllImport("propsys", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int PSCreateDelayedMultiplexPropertyStore(GETPROPERTYSTOREFLAGS flags, IDelayedPropertyStoreFactory* pdpsf, [NativeTypeName("const DWORD *")] uint* rgStoreIds, [NativeTypeName("DWORD")] uint cStores, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
+        public static extern HRESULT PSCreateDelayedMultiplexPropertyStore(GETPROPERTYSTOREFLAGS flags, IDelayedPropertyStoreFactory* pdpsf, [NativeTypeName("const DWORD *")] uint* rgStoreIds, [NativeTypeName("DWORD")] uint cStores, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
 
         [DllImport("propsys", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int PSCreateMultiplexPropertyStore(IUnknown** prgpunkStores, [NativeTypeName("DWORD")] uint cStores, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
+        public static extern HRESULT PSCreateMultiplexPropertyStore(IUnknown** prgpunkStores, [NativeTypeName("DWORD")] uint cStores, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
 
         [DllImport("propsys", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int PSCreatePropertyChangeArray([NativeTypeName("const PROPERTYKEY *")] PROPERTYKEY* rgpropkey, [NativeTypeName("const PKA_FLAGS *")] PKA_FLAGS* rgflags, [NativeTypeName("const PROPVARIANT *")] PROPVARIANT* rgpropvar, [NativeTypeName("UINT")] uint cChanges, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
+        public static extern HRESULT PSCreatePropertyChangeArray([NativeTypeName("const PROPERTYKEY *")] PROPERTYKEY* rgpropkey, [NativeTypeName("const PKA_FLAGS *")] PKA_FLAGS* rgflags, [NativeTypeName("const PROPVARIANT *")] PROPVARIANT* rgpropvar, [NativeTypeName("UINT")] uint cChanges, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
 
         [DllImport("propsys", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int PSCreateSimplePropertyChange(PKA_FLAGS flags, [NativeTypeName("const PROPERTYKEY &")] PROPERTYKEY* key, [NativeTypeName("const PROPVARIANT &")] PROPVARIANT* propvar, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
+        public static extern HRESULT PSCreateSimplePropertyChange(PKA_FLAGS flags, [NativeTypeName("const PROPERTYKEY &")] PROPERTYKEY* key, [NativeTypeName("const PROPVARIANT &")] PROPVARIANT* propvar, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
 
         [DllImport("propsys", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int PSGetPropertyDescription([NativeTypeName("const PROPERTYKEY &")] PROPERTYKEY* propkey, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
+        public static extern HRESULT PSGetPropertyDescription([NativeTypeName("const PROPERTYKEY &")] PROPERTYKEY* propkey, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
 
         [DllImport("propsys", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int PSGetPropertyDescriptionByName([NativeTypeName("LPCWSTR")] ushort* pszCanonicalName, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
+        public static extern HRESULT PSGetPropertyDescriptionByName([NativeTypeName("LPCWSTR")] ushort* pszCanonicalName, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
 
         [DllImport("propsys", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int PSLookupPropertyHandlerCLSID([NativeTypeName("PCWSTR")] ushort* pszFilePath, [NativeTypeName("CLSID *")] Guid* pclsid);
+        public static extern HRESULT PSLookupPropertyHandlerCLSID([NativeTypeName("PCWSTR")] ushort* pszFilePath, [NativeTypeName("CLSID *")] Guid* pclsid);
 
         [DllImport("propsys", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int PSGetItemPropertyHandler(IUnknown* punkItem, BOOL fReadWrite, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
+        public static extern HRESULT PSGetItemPropertyHandler(IUnknown* punkItem, BOOL fReadWrite, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
 
         [DllImport("propsys", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int PSGetItemPropertyHandlerWithCreateObject(IUnknown* punkItem, BOOL fReadWrite, IUnknown* punkCreateObject, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
+        public static extern HRESULT PSGetItemPropertyHandlerWithCreateObject(IUnknown* punkItem, BOOL fReadWrite, IUnknown* punkCreateObject, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
 
         [DllImport("propsys", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int PSGetPropertyValue(IPropertyStore* pps, IPropertyDescription* ppd, PROPVARIANT* ppropvar);
+        public static extern HRESULT PSGetPropertyValue(IPropertyStore* pps, IPropertyDescription* ppd, PROPVARIANT* ppropvar);
 
         [DllImport("propsys", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int PSSetPropertyValue(IPropertyStore* pps, IPropertyDescription* ppd, [NativeTypeName("const PROPVARIANT &")] PROPVARIANT* propvar);
+        public static extern HRESULT PSSetPropertyValue(IPropertyStore* pps, IPropertyDescription* ppd, [NativeTypeName("const PROPVARIANT &")] PROPVARIANT* propvar);
 
         [DllImport("propsys", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int PSRegisterPropertySchema([NativeTypeName("PCWSTR")] ushort* pszPath);
+        public static extern HRESULT PSRegisterPropertySchema([NativeTypeName("PCWSTR")] ushort* pszPath);
 
         [DllImport("propsys", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int PSUnregisterPropertySchema([NativeTypeName("PCWSTR")] ushort* pszPath);
+        public static extern HRESULT PSUnregisterPropertySchema([NativeTypeName("PCWSTR")] ushort* pszPath);
 
         [DllImport("propsys", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int PSRefreshPropertySchema();
+        public static extern HRESULT PSRefreshPropertySchema();
 
         [DllImport("propsys", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int PSEnumeratePropertyDescriptions(PROPDESC_ENUMFILTER filterOn, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
+        public static extern HRESULT PSEnumeratePropertyDescriptions(PROPDESC_ENUMFILTER filterOn, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
 
         [DllImport("propsys", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int PSGetPropertyKeyFromName([NativeTypeName("PCWSTR")] ushort* pszName, PROPERTYKEY* ppropkey);
+        public static extern HRESULT PSGetPropertyKeyFromName([NativeTypeName("PCWSTR")] ushort* pszName, PROPERTYKEY* ppropkey);
 
         [DllImport("propsys", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int PSGetNameFromPropertyKey([NativeTypeName("const PROPERTYKEY &")] PROPERTYKEY* propkey, [NativeTypeName("PWSTR *")] ushort** ppszCanonicalName);
+        public static extern HRESULT PSGetNameFromPropertyKey([NativeTypeName("const PROPERTYKEY &")] PROPERTYKEY* propkey, [NativeTypeName("PWSTR *")] ushort** ppszCanonicalName);
 
         [DllImport("propsys", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int PSCoerceToCanonicalValue([NativeTypeName("const PROPERTYKEY &")] PROPERTYKEY* key, PROPVARIANT* ppropvar);
+        public static extern HRESULT PSCoerceToCanonicalValue([NativeTypeName("const PROPERTYKEY &")] PROPERTYKEY* key, PROPVARIANT* ppropvar);
 
         [DllImport("propsys", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int PSGetPropertyDescriptionListFromString([NativeTypeName("LPCWSTR")] ushort* pszPropList, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
+        public static extern HRESULT PSGetPropertyDescriptionListFromString([NativeTypeName("LPCWSTR")] ushort* pszPropList, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
 
         [DllImport("propsys", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int PSCreatePropertyStoreFromPropertySetStorage(IPropertySetStorage* ppss, [NativeTypeName("DWORD")] uint grfMode, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
+        public static extern HRESULT PSCreatePropertyStoreFromPropertySetStorage(IPropertySetStorage* ppss, [NativeTypeName("DWORD")] uint grfMode, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
 
         [DllImport("propsys", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int PSCreatePropertyStoreFromObject(IUnknown* punk, [NativeTypeName("DWORD")] uint grfMode, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
+        public static extern HRESULT PSCreatePropertyStoreFromObject(IUnknown* punk, [NativeTypeName("DWORD")] uint grfMode, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
 
         [DllImport("propsys", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int PSCreateAdapterFromPropertyStore(IPropertyStore* pps, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
+        public static extern HRESULT PSCreateAdapterFromPropertyStore(IPropertyStore* pps, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
 
         [DllImport("propsys", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int PSGetPropertySystem([NativeTypeName("const IID &")] Guid* riid, void** ppv);
+        public static extern HRESULT PSGetPropertySystem([NativeTypeName("const IID &")] Guid* riid, void** ppv);
 
         [DllImport("propsys", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int PSGetPropertyFromPropertyStorage([NativeTypeName("PCUSERIALIZEDPROPSTORAGE")] IntPtr psps, [NativeTypeName("DWORD")] uint cb, [NativeTypeName("const PROPERTYKEY &")] PROPERTYKEY* rpkey, PROPVARIANT* ppropvar);
+        public static extern HRESULT PSGetPropertyFromPropertyStorage([NativeTypeName("PCUSERIALIZEDPROPSTORAGE")] IntPtr psps, [NativeTypeName("DWORD")] uint cb, [NativeTypeName("const PROPERTYKEY &")] PROPERTYKEY* rpkey, PROPVARIANT* ppropvar);
 
         [DllImport("propsys", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int PSGetNamedPropertyFromPropertyStorage([NativeTypeName("PCUSERIALIZEDPROPSTORAGE")] IntPtr psps, [NativeTypeName("DWORD")] uint cb, [NativeTypeName("LPCWSTR")] ushort* pszName, PROPVARIANT* ppropvar);
+        public static extern HRESULT PSGetNamedPropertyFromPropertyStorage([NativeTypeName("PCUSERIALIZEDPROPSTORAGE")] IntPtr psps, [NativeTypeName("DWORD")] uint cb, [NativeTypeName("LPCWSTR")] ushort* pszName, PROPVARIANT* ppropvar);
 
         [DllImport("propsys", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int PSPropertyBag_ReadType(IPropertyBag* propBag, [NativeTypeName("LPCWSTR")] ushort* propName, VARIANT* var, [NativeTypeName("VARTYPE")] ushort type);
+        public static extern HRESULT PSPropertyBag_ReadType(IPropertyBag* propBag, [NativeTypeName("LPCWSTR")] ushort* propName, VARIANT* var, [NativeTypeName("VARTYPE")] ushort type);
 
         [DllImport("propsys", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int PSPropertyBag_ReadStr(IPropertyBag* propBag, [NativeTypeName("LPCWSTR")] ushort* propName, [NativeTypeName("LPWSTR")] ushort* value, int characterCount);
+        public static extern HRESULT PSPropertyBag_ReadStr(IPropertyBag* propBag, [NativeTypeName("LPCWSTR")] ushort* propName, [NativeTypeName("LPWSTR")] ushort* value, int characterCount);
 
         [DllImport("propsys", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int PSPropertyBag_ReadStrAlloc(IPropertyBag* propBag, [NativeTypeName("LPCWSTR")] ushort* propName, [NativeTypeName("PWSTR *")] ushort** value);
+        public static extern HRESULT PSPropertyBag_ReadStrAlloc(IPropertyBag* propBag, [NativeTypeName("LPCWSTR")] ushort* propName, [NativeTypeName("PWSTR *")] ushort** value);
 
         [DllImport("propsys", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int PSPropertyBag_ReadBSTR(IPropertyBag* propBag, [NativeTypeName("LPCWSTR")] ushort* propName, [NativeTypeName("BSTR *")] ushort** value);
+        public static extern HRESULT PSPropertyBag_ReadBSTR(IPropertyBag* propBag, [NativeTypeName("LPCWSTR")] ushort* propName, [NativeTypeName("BSTR *")] ushort** value);
 
         [DllImport("propsys", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int PSPropertyBag_WriteStr(IPropertyBag* propBag, [NativeTypeName("LPCWSTR")] ushort* propName, [NativeTypeName("LPCWSTR")] ushort* value);
+        public static extern HRESULT PSPropertyBag_WriteStr(IPropertyBag* propBag, [NativeTypeName("LPCWSTR")] ushort* propName, [NativeTypeName("LPCWSTR")] ushort* value);
 
         [DllImport("propsys", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int PSPropertyBag_WriteBSTR(IPropertyBag* propBag, [NativeTypeName("LPCWSTR")] ushort* propName, [NativeTypeName("BSTR")] ushort* value);
+        public static extern HRESULT PSPropertyBag_WriteBSTR(IPropertyBag* propBag, [NativeTypeName("LPCWSTR")] ushort* propName, [NativeTypeName("BSTR")] ushort* value);
 
         [DllImport("propsys", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int PSPropertyBag_ReadInt(IPropertyBag* propBag, [NativeTypeName("LPCWSTR")] ushort* propName, [NativeTypeName("INT *")] int* value);
+        public static extern HRESULT PSPropertyBag_ReadInt(IPropertyBag* propBag, [NativeTypeName("LPCWSTR")] ushort* propName, [NativeTypeName("INT *")] int* value);
 
         [DllImport("propsys", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int PSPropertyBag_WriteInt(IPropertyBag* propBag, [NativeTypeName("LPCWSTR")] ushort* propName, [NativeTypeName("INT")] int value);
+        public static extern HRESULT PSPropertyBag_WriteInt(IPropertyBag* propBag, [NativeTypeName("LPCWSTR")] ushort* propName, [NativeTypeName("INT")] int value);
 
         [DllImport("propsys", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int PSPropertyBag_ReadSHORT(IPropertyBag* propBag, [NativeTypeName("LPCWSTR")] ushort* propName, [NativeTypeName("SHORT *")] short* value);
+        public static extern HRESULT PSPropertyBag_ReadSHORT(IPropertyBag* propBag, [NativeTypeName("LPCWSTR")] ushort* propName, [NativeTypeName("SHORT *")] short* value);
 
         [DllImport("propsys", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int PSPropertyBag_WriteSHORT(IPropertyBag* propBag, [NativeTypeName("LPCWSTR")] ushort* propName, [NativeTypeName("SHORT")] short value);
+        public static extern HRESULT PSPropertyBag_WriteSHORT(IPropertyBag* propBag, [NativeTypeName("LPCWSTR")] ushort* propName, [NativeTypeName("SHORT")] short value);
 
         [DllImport("propsys", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int PSPropertyBag_ReadLONG(IPropertyBag* propBag, [NativeTypeName("LPCWSTR")] ushort* propName, [NativeTypeName("LONG *")] int* value);
+        public static extern HRESULT PSPropertyBag_ReadLONG(IPropertyBag* propBag, [NativeTypeName("LPCWSTR")] ushort* propName, [NativeTypeName("LONG *")] int* value);
 
         [DllImport("propsys", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int PSPropertyBag_WriteLONG(IPropertyBag* propBag, [NativeTypeName("LPCWSTR")] ushort* propName, [NativeTypeName("LONG")] int value);
+        public static extern HRESULT PSPropertyBag_WriteLONG(IPropertyBag* propBag, [NativeTypeName("LPCWSTR")] ushort* propName, [NativeTypeName("LONG")] int value);
 
         [DllImport("propsys", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int PSPropertyBag_ReadDWORD(IPropertyBag* propBag, [NativeTypeName("LPCWSTR")] ushort* propName, [NativeTypeName("DWORD *")] uint* value);
+        public static extern HRESULT PSPropertyBag_ReadDWORD(IPropertyBag* propBag, [NativeTypeName("LPCWSTR")] ushort* propName, [NativeTypeName("DWORD *")] uint* value);
 
         [DllImport("propsys", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int PSPropertyBag_WriteDWORD(IPropertyBag* propBag, [NativeTypeName("LPCWSTR")] ushort* propName, [NativeTypeName("DWORD")] uint value);
+        public static extern HRESULT PSPropertyBag_WriteDWORD(IPropertyBag* propBag, [NativeTypeName("LPCWSTR")] ushort* propName, [NativeTypeName("DWORD")] uint value);
 
         [DllImport("propsys", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int PSPropertyBag_ReadBOOL(IPropertyBag* propBag, [NativeTypeName("LPCWSTR")] ushort* propName, BOOL* value);
+        public static extern HRESULT PSPropertyBag_ReadBOOL(IPropertyBag* propBag, [NativeTypeName("LPCWSTR")] ushort* propName, BOOL* value);
 
         [DllImport("propsys", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int PSPropertyBag_WriteBOOL(IPropertyBag* propBag, [NativeTypeName("LPCWSTR")] ushort* propName, BOOL value);
+        public static extern HRESULT PSPropertyBag_WriteBOOL(IPropertyBag* propBag, [NativeTypeName("LPCWSTR")] ushort* propName, BOOL value);
 
         [DllImport("propsys", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int PSPropertyBag_ReadPOINTL(IPropertyBag* propBag, [NativeTypeName("LPCWSTR")] ushort* propName, POINTL* value);
+        public static extern HRESULT PSPropertyBag_ReadPOINTL(IPropertyBag* propBag, [NativeTypeName("LPCWSTR")] ushort* propName, POINTL* value);
 
         [DllImport("propsys", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int PSPropertyBag_WritePOINTL(IPropertyBag* propBag, [NativeTypeName("LPCWSTR")] ushort* propName, [NativeTypeName("const POINTL *")] POINTL* value);
+        public static extern HRESULT PSPropertyBag_WritePOINTL(IPropertyBag* propBag, [NativeTypeName("LPCWSTR")] ushort* propName, [NativeTypeName("const POINTL *")] POINTL* value);
 
         [DllImport("propsys", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int PSPropertyBag_ReadPOINTS(IPropertyBag* propBag, [NativeTypeName("LPCWSTR")] ushort* propName, POINTS* value);
+        public static extern HRESULT PSPropertyBag_ReadPOINTS(IPropertyBag* propBag, [NativeTypeName("LPCWSTR")] ushort* propName, POINTS* value);
 
         [DllImport("propsys", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int PSPropertyBag_WritePOINTS(IPropertyBag* propBag, [NativeTypeName("LPCWSTR")] ushort* propName, [NativeTypeName("const POINTS *")] POINTS* value);
+        public static extern HRESULT PSPropertyBag_WritePOINTS(IPropertyBag* propBag, [NativeTypeName("LPCWSTR")] ushort* propName, [NativeTypeName("const POINTS *")] POINTS* value);
 
         [DllImport("propsys", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int PSPropertyBag_ReadRECTL(IPropertyBag* propBag, [NativeTypeName("LPCWSTR")] ushort* propName, RECTL* value);
+        public static extern HRESULT PSPropertyBag_ReadRECTL(IPropertyBag* propBag, [NativeTypeName("LPCWSTR")] ushort* propName, RECTL* value);
 
         [DllImport("propsys", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int PSPropertyBag_WriteRECTL(IPropertyBag* propBag, [NativeTypeName("LPCWSTR")] ushort* propName, [NativeTypeName("const RECTL *")] RECTL* value);
+        public static extern HRESULT PSPropertyBag_WriteRECTL(IPropertyBag* propBag, [NativeTypeName("LPCWSTR")] ushort* propName, [NativeTypeName("const RECTL *")] RECTL* value);
 
         [DllImport("propsys", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int PSPropertyBag_ReadStream(IPropertyBag* propBag, [NativeTypeName("LPCWSTR")] ushort* propName, IStream** value);
+        public static extern HRESULT PSPropertyBag_ReadStream(IPropertyBag* propBag, [NativeTypeName("LPCWSTR")] ushort* propName, IStream** value);
 
         [DllImport("propsys", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int PSPropertyBag_WriteStream(IPropertyBag* propBag, [NativeTypeName("LPCWSTR")] ushort* propName, IStream* value);
+        public static extern HRESULT PSPropertyBag_WriteStream(IPropertyBag* propBag, [NativeTypeName("LPCWSTR")] ushort* propName, IStream* value);
 
         [DllImport("propsys", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int PSPropertyBag_Delete(IPropertyBag* propBag, [NativeTypeName("LPCWSTR")] ushort* propName);
+        public static extern HRESULT PSPropertyBag_Delete(IPropertyBag* propBag, [NativeTypeName("LPCWSTR")] ushort* propName);
 
         [DllImport("propsys", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int PSPropertyBag_ReadULONGLONG(IPropertyBag* propBag, [NativeTypeName("LPCWSTR")] ushort* propName, [NativeTypeName("ULONGLONG *")] ulong* value);
+        public static extern HRESULT PSPropertyBag_ReadULONGLONG(IPropertyBag* propBag, [NativeTypeName("LPCWSTR")] ushort* propName, [NativeTypeName("ULONGLONG *")] ulong* value);
 
         [DllImport("propsys", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int PSPropertyBag_WriteULONGLONG(IPropertyBag* propBag, [NativeTypeName("LPCWSTR")] ushort* propName, [NativeTypeName("ULONGLONG")] ulong value);
+        public static extern HRESULT PSPropertyBag_WriteULONGLONG(IPropertyBag* propBag, [NativeTypeName("LPCWSTR")] ushort* propName, [NativeTypeName("ULONGLONG")] ulong value);
 
         [DllImport("propsys", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int PSPropertyBag_ReadUnknown(IPropertyBag* propBag, [NativeTypeName("LPCWSTR")] ushort* propName, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
+        public static extern HRESULT PSPropertyBag_ReadUnknown(IPropertyBag* propBag, [NativeTypeName("LPCWSTR")] ushort* propName, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
 
         [DllImport("propsys", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int PSPropertyBag_WriteUnknown(IPropertyBag* propBag, [NativeTypeName("LPCWSTR")] ushort* propName, IUnknown* punk);
+        public static extern HRESULT PSPropertyBag_WriteUnknown(IPropertyBag* propBag, [NativeTypeName("LPCWSTR")] ushort* propName, IUnknown* punk);
 
         [DllImport("propsys", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int PSPropertyBag_ReadGUID(IPropertyBag* propBag, [NativeTypeName("LPCWSTR")] ushort* propName, [NativeTypeName("GUID *")] Guid* value);
+        public static extern HRESULT PSPropertyBag_ReadGUID(IPropertyBag* propBag, [NativeTypeName("LPCWSTR")] ushort* propName, [NativeTypeName("GUID *")] Guid* value);
 
         [DllImport("propsys", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int PSPropertyBag_WriteGUID(IPropertyBag* propBag, [NativeTypeName("LPCWSTR")] ushort* propName, [NativeTypeName("const GUID *")] Guid* value);
+        public static extern HRESULT PSPropertyBag_WriteGUID(IPropertyBag* propBag, [NativeTypeName("LPCWSTR")] ushort* propName, [NativeTypeName("const GUID *")] Guid* value);
 
         [DllImport("propsys", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int PSPropertyBag_ReadPropertyKey(IPropertyBag* propBag, [NativeTypeName("LPCWSTR")] ushort* propName, PROPERTYKEY* value);
+        public static extern HRESULT PSPropertyBag_ReadPropertyKey(IPropertyBag* propBag, [NativeTypeName("LPCWSTR")] ushort* propName, PROPERTYKEY* value);
 
         [DllImport("propsys", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int PSPropertyBag_WritePropertyKey(IPropertyBag* propBag, [NativeTypeName("LPCWSTR")] ushort* propName, [NativeTypeName("const PROPERTYKEY &")] PROPERTYKEY* value);
+        public static extern HRESULT PSPropertyBag_WritePropertyKey(IPropertyBag* propBag, [NativeTypeName("LPCWSTR")] ushort* propName, [NativeTypeName("const PROPERTYKEY &")] PROPERTYKEY* value);
 
         [NativeTypeName("#define PDFF_PREFERFRIENDLY static_cast<PROPDESC_FORMAT_FLAGS>(0x10000000)")]
         public const PROPDESC_FORMAT_FLAGS PDFF_PREFERFRIENDLY = (PROPDESC_FORMAT_FLAGS)(0x10000000);

@@ -12,19 +12,19 @@ namespace TerraFX.Interop
         public void* createContext;
 
         [NativeTypeName("WS_CREATE_ENCODER_CALLBACK")]
-        public delegate* unmanaged<void*, delegate* unmanaged<void*, WS_BYTES*, uint, WS_ASYNC_CONTEXT*, IntPtr, int>, void*, void**, IntPtr, int> createEncoderCallback;
+        public delegate* unmanaged<void*, delegate* unmanaged<void*, WS_BYTES*, uint, WS_ASYNC_CONTEXT*, IntPtr, HRESULT>, void*, void**, IntPtr, HRESULT> createEncoderCallback;
 
         [NativeTypeName("WS_ENCODER_GET_CONTENT_TYPE_CALLBACK")]
-        public delegate* unmanaged<void*, WS_STRING*, WS_STRING*, WS_STRING*, IntPtr, int> encoderGetContentTypeCallback;
+        public delegate* unmanaged<void*, WS_STRING*, WS_STRING*, WS_STRING*, IntPtr, HRESULT> encoderGetContentTypeCallback;
 
         [NativeTypeName("WS_ENCODER_START_CALLBACK")]
-        public delegate* unmanaged<void*, WS_ASYNC_CONTEXT*, IntPtr, int> encoderStartCallback;
+        public delegate* unmanaged<void*, WS_ASYNC_CONTEXT*, IntPtr, HRESULT> encoderStartCallback;
 
         [NativeTypeName("WS_ENCODER_ENCODE_CALLBACK")]
-        public delegate* unmanaged<void*, WS_BYTES*, uint, WS_ASYNC_CONTEXT*, IntPtr, int> encoderEncodeCallback;
+        public delegate* unmanaged<void*, WS_BYTES*, uint, WS_ASYNC_CONTEXT*, IntPtr, HRESULT> encoderEncodeCallback;
 
         [NativeTypeName("WS_ENCODER_END_CALLBACK")]
-        public delegate* unmanaged<void*, WS_ASYNC_CONTEXT*, IntPtr, int> encoderEndCallback;
+        public delegate* unmanaged<void*, WS_ASYNC_CONTEXT*, IntPtr, HRESULT> encoderEndCallback;
 
         [NativeTypeName("WS_FREE_ENCODER_CALLBACK")]
         public delegate* unmanaged<void*, void> freeEncoderCallback;

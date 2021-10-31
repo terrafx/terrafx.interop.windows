@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IMediaObject*, Guid*, void**, int>)(lpVtbl[0]))((IMediaObject*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,168 +41,147 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetStreamCount([NativeTypeName("DWORD *")] uint* pcInputStreams, [NativeTypeName("DWORD *")] uint* pcOutputStreams)
+        public HRESULT GetStreamCount([NativeTypeName("DWORD *")] uint* pcInputStreams, [NativeTypeName("DWORD *")] uint* pcOutputStreams)
         {
             return ((delegate* unmanaged<IMediaObject*, uint*, uint*, int>)(lpVtbl[3]))((IMediaObject*)Unsafe.AsPointer(ref this), pcInputStreams, pcOutputStreams);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetInputStreamInfo([NativeTypeName("DWORD")] uint dwInputStreamIndex, [NativeTypeName("DWORD *")] uint* pdwFlags)
+        public HRESULT GetInputStreamInfo([NativeTypeName("DWORD")] uint dwInputStreamIndex, [NativeTypeName("DWORD *")] uint* pdwFlags)
         {
             return ((delegate* unmanaged<IMediaObject*, uint, uint*, int>)(lpVtbl[4]))((IMediaObject*)Unsafe.AsPointer(ref this), dwInputStreamIndex, pdwFlags);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetOutputStreamInfo([NativeTypeName("DWORD")] uint dwOutputStreamIndex, [NativeTypeName("DWORD *")] uint* pdwFlags)
+        public HRESULT GetOutputStreamInfo([NativeTypeName("DWORD")] uint dwOutputStreamIndex, [NativeTypeName("DWORD *")] uint* pdwFlags)
         {
             return ((delegate* unmanaged<IMediaObject*, uint, uint*, int>)(lpVtbl[5]))((IMediaObject*)Unsafe.AsPointer(ref this), dwOutputStreamIndex, pdwFlags);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetInputType([NativeTypeName("DWORD")] uint dwInputStreamIndex, [NativeTypeName("DWORD")] uint dwTypeIndex, DMO_MEDIA_TYPE* pmt)
+        public HRESULT GetInputType([NativeTypeName("DWORD")] uint dwInputStreamIndex, [NativeTypeName("DWORD")] uint dwTypeIndex, DMO_MEDIA_TYPE* pmt)
         {
             return ((delegate* unmanaged<IMediaObject*, uint, uint, DMO_MEDIA_TYPE*, int>)(lpVtbl[6]))((IMediaObject*)Unsafe.AsPointer(ref this), dwInputStreamIndex, dwTypeIndex, pmt);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetOutputType([NativeTypeName("DWORD")] uint dwOutputStreamIndex, [NativeTypeName("DWORD")] uint dwTypeIndex, DMO_MEDIA_TYPE* pmt)
+        public HRESULT GetOutputType([NativeTypeName("DWORD")] uint dwOutputStreamIndex, [NativeTypeName("DWORD")] uint dwTypeIndex, DMO_MEDIA_TYPE* pmt)
         {
             return ((delegate* unmanaged<IMediaObject*, uint, uint, DMO_MEDIA_TYPE*, int>)(lpVtbl[7]))((IMediaObject*)Unsafe.AsPointer(ref this), dwOutputStreamIndex, dwTypeIndex, pmt);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetInputType([NativeTypeName("DWORD")] uint dwInputStreamIndex, [NativeTypeName("const DMO_MEDIA_TYPE *")] DMO_MEDIA_TYPE* pmt, [NativeTypeName("DWORD")] uint dwFlags)
+        public HRESULT SetInputType([NativeTypeName("DWORD")] uint dwInputStreamIndex, [NativeTypeName("const DMO_MEDIA_TYPE *")] DMO_MEDIA_TYPE* pmt, [NativeTypeName("DWORD")] uint dwFlags)
         {
             return ((delegate* unmanaged<IMediaObject*, uint, DMO_MEDIA_TYPE*, uint, int>)(lpVtbl[8]))((IMediaObject*)Unsafe.AsPointer(ref this), dwInputStreamIndex, pmt, dwFlags);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetOutputType([NativeTypeName("DWORD")] uint dwOutputStreamIndex, [NativeTypeName("const DMO_MEDIA_TYPE *")] DMO_MEDIA_TYPE* pmt, [NativeTypeName("DWORD")] uint dwFlags)
+        public HRESULT SetOutputType([NativeTypeName("DWORD")] uint dwOutputStreamIndex, [NativeTypeName("const DMO_MEDIA_TYPE *")] DMO_MEDIA_TYPE* pmt, [NativeTypeName("DWORD")] uint dwFlags)
         {
             return ((delegate* unmanaged<IMediaObject*, uint, DMO_MEDIA_TYPE*, uint, int>)(lpVtbl[9]))((IMediaObject*)Unsafe.AsPointer(ref this), dwOutputStreamIndex, pmt, dwFlags);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(10)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetInputCurrentType([NativeTypeName("DWORD")] uint dwInputStreamIndex, DMO_MEDIA_TYPE* pmt)
+        public HRESULT GetInputCurrentType([NativeTypeName("DWORD")] uint dwInputStreamIndex, DMO_MEDIA_TYPE* pmt)
         {
             return ((delegate* unmanaged<IMediaObject*, uint, DMO_MEDIA_TYPE*, int>)(lpVtbl[10]))((IMediaObject*)Unsafe.AsPointer(ref this), dwInputStreamIndex, pmt);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(11)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetOutputCurrentType([NativeTypeName("DWORD")] uint dwOutputStreamIndex, DMO_MEDIA_TYPE* pmt)
+        public HRESULT GetOutputCurrentType([NativeTypeName("DWORD")] uint dwOutputStreamIndex, DMO_MEDIA_TYPE* pmt)
         {
             return ((delegate* unmanaged<IMediaObject*, uint, DMO_MEDIA_TYPE*, int>)(lpVtbl[11]))((IMediaObject*)Unsafe.AsPointer(ref this), dwOutputStreamIndex, pmt);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(12)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetInputSizeInfo([NativeTypeName("DWORD")] uint dwInputStreamIndex, [NativeTypeName("DWORD *")] uint* pcbSize, [NativeTypeName("DWORD *")] uint* pcbMaxLookahead, [NativeTypeName("DWORD *")] uint* pcbAlignment)
+        public HRESULT GetInputSizeInfo([NativeTypeName("DWORD")] uint dwInputStreamIndex, [NativeTypeName("DWORD *")] uint* pcbSize, [NativeTypeName("DWORD *")] uint* pcbMaxLookahead, [NativeTypeName("DWORD *")] uint* pcbAlignment)
         {
             return ((delegate* unmanaged<IMediaObject*, uint, uint*, uint*, uint*, int>)(lpVtbl[12]))((IMediaObject*)Unsafe.AsPointer(ref this), dwInputStreamIndex, pcbSize, pcbMaxLookahead, pcbAlignment);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(13)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetOutputSizeInfo([NativeTypeName("DWORD")] uint dwOutputStreamIndex, [NativeTypeName("DWORD *")] uint* pcbSize, [NativeTypeName("DWORD *")] uint* pcbAlignment)
+        public HRESULT GetOutputSizeInfo([NativeTypeName("DWORD")] uint dwOutputStreamIndex, [NativeTypeName("DWORD *")] uint* pcbSize, [NativeTypeName("DWORD *")] uint* pcbAlignment)
         {
             return ((delegate* unmanaged<IMediaObject*, uint, uint*, uint*, int>)(lpVtbl[13]))((IMediaObject*)Unsafe.AsPointer(ref this), dwOutputStreamIndex, pcbSize, pcbAlignment);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(14)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetInputMaxLatency([NativeTypeName("DWORD")] uint dwInputStreamIndex, [NativeTypeName("REFERENCE_TIME *")] long* prtMaxLatency)
+        public HRESULT GetInputMaxLatency([NativeTypeName("DWORD")] uint dwInputStreamIndex, [NativeTypeName("REFERENCE_TIME *")] long* prtMaxLatency)
         {
             return ((delegate* unmanaged<IMediaObject*, uint, long*, int>)(lpVtbl[14]))((IMediaObject*)Unsafe.AsPointer(ref this), dwInputStreamIndex, prtMaxLatency);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(15)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetInputMaxLatency([NativeTypeName("DWORD")] uint dwInputStreamIndex, [NativeTypeName("REFERENCE_TIME")] long rtMaxLatency)
+        public HRESULT SetInputMaxLatency([NativeTypeName("DWORD")] uint dwInputStreamIndex, [NativeTypeName("REFERENCE_TIME")] long rtMaxLatency)
         {
             return ((delegate* unmanaged<IMediaObject*, uint, long, int>)(lpVtbl[15]))((IMediaObject*)Unsafe.AsPointer(ref this), dwInputStreamIndex, rtMaxLatency);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(16)]
-        [return: NativeTypeName("HRESULT")]
-        public int Flush()
+        public HRESULT Flush()
         {
             return ((delegate* unmanaged<IMediaObject*, int>)(lpVtbl[16]))((IMediaObject*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(17)]
-        [return: NativeTypeName("HRESULT")]
-        public int Discontinuity([NativeTypeName("DWORD")] uint dwInputStreamIndex)
+        public HRESULT Discontinuity([NativeTypeName("DWORD")] uint dwInputStreamIndex)
         {
             return ((delegate* unmanaged<IMediaObject*, uint, int>)(lpVtbl[17]))((IMediaObject*)Unsafe.AsPointer(ref this), dwInputStreamIndex);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(18)]
-        [return: NativeTypeName("HRESULT")]
-        public int AllocateStreamingResources()
+        public HRESULT AllocateStreamingResources()
         {
             return ((delegate* unmanaged<IMediaObject*, int>)(lpVtbl[18]))((IMediaObject*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(19)]
-        [return: NativeTypeName("HRESULT")]
-        public int FreeStreamingResources()
+        public HRESULT FreeStreamingResources()
         {
             return ((delegate* unmanaged<IMediaObject*, int>)(lpVtbl[19]))((IMediaObject*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(20)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetInputStatus([NativeTypeName("DWORD")] uint dwInputStreamIndex, [NativeTypeName("DWORD *")] uint* dwFlags)
+        public HRESULT GetInputStatus([NativeTypeName("DWORD")] uint dwInputStreamIndex, [NativeTypeName("DWORD *")] uint* dwFlags)
         {
             return ((delegate* unmanaged<IMediaObject*, uint, uint*, int>)(lpVtbl[20]))((IMediaObject*)Unsafe.AsPointer(ref this), dwInputStreamIndex, dwFlags);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(21)]
-        [return: NativeTypeName("HRESULT")]
-        public int ProcessInput([NativeTypeName("DWORD")] uint dwInputStreamIndex, IMediaBuffer* pBuffer, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("REFERENCE_TIME")] long rtTimestamp, [NativeTypeName("REFERENCE_TIME")] long rtTimelength)
+        public HRESULT ProcessInput([NativeTypeName("DWORD")] uint dwInputStreamIndex, IMediaBuffer* pBuffer, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("REFERENCE_TIME")] long rtTimestamp, [NativeTypeName("REFERENCE_TIME")] long rtTimelength)
         {
             return ((delegate* unmanaged<IMediaObject*, uint, IMediaBuffer*, uint, long, long, int>)(lpVtbl[21]))((IMediaObject*)Unsafe.AsPointer(ref this), dwInputStreamIndex, pBuffer, dwFlags, rtTimestamp, rtTimelength);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(22)]
-        [return: NativeTypeName("HRESULT")]
-        public int ProcessOutput([NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("DWORD")] uint cOutputBufferCount, DMO_OUTPUT_DATA_BUFFER* pOutputBuffers, [NativeTypeName("DWORD *")] uint* pdwStatus)
+        public HRESULT ProcessOutput([NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("DWORD")] uint cOutputBufferCount, DMO_OUTPUT_DATA_BUFFER* pOutputBuffers, [NativeTypeName("DWORD *")] uint* pdwStatus)
         {
             return ((delegate* unmanaged<IMediaObject*, uint, uint, DMO_OUTPUT_DATA_BUFFER*, uint*, int>)(lpVtbl[22]))((IMediaObject*)Unsafe.AsPointer(ref this), dwFlags, cOutputBufferCount, pOutputBuffers, pdwStatus);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(23)]
-        [return: NativeTypeName("HRESULT")]
-        public int Lock([NativeTypeName("LONG")] int bLock)
+        public HRESULT Lock([NativeTypeName("LONG")] int bLock)
         {
             return ((delegate* unmanaged<IMediaObject*, int, int>)(lpVtbl[23]))((IMediaObject*)Unsafe.AsPointer(ref this), bLock);
         }

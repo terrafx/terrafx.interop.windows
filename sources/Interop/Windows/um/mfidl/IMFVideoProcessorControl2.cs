@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IMFVideoProcessorControl2*, Guid*, void**, int>)(lpVtbl[0]))((IMFVideoProcessorControl2*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,72 +41,63 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetBorderColor(MFARGB* pBorderColor)
+        public HRESULT SetBorderColor(MFARGB* pBorderColor)
         {
             return ((delegate* unmanaged<IMFVideoProcessorControl2*, MFARGB*, int>)(lpVtbl[3]))((IMFVideoProcessorControl2*)Unsafe.AsPointer(ref this), pBorderColor);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetSourceRectangle(RECT* pSrcRect)
+        public HRESULT SetSourceRectangle(RECT* pSrcRect)
         {
             return ((delegate* unmanaged<IMFVideoProcessorControl2*, RECT*, int>)(lpVtbl[4]))((IMFVideoProcessorControl2*)Unsafe.AsPointer(ref this), pSrcRect);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetDestinationRectangle(RECT* pDstRect)
+        public HRESULT SetDestinationRectangle(RECT* pDstRect)
         {
             return ((delegate* unmanaged<IMFVideoProcessorControl2*, RECT*, int>)(lpVtbl[5]))((IMFVideoProcessorControl2*)Unsafe.AsPointer(ref this), pDstRect);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetMirror(MF_VIDEO_PROCESSOR_MIRROR eMirror)
+        public HRESULT SetMirror(MF_VIDEO_PROCESSOR_MIRROR eMirror)
         {
             return ((delegate* unmanaged<IMFVideoProcessorControl2*, MF_VIDEO_PROCESSOR_MIRROR, int>)(lpVtbl[6]))((IMFVideoProcessorControl2*)Unsafe.AsPointer(ref this), eMirror);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetRotation(MF_VIDEO_PROCESSOR_ROTATION eRotation)
+        public HRESULT SetRotation(MF_VIDEO_PROCESSOR_ROTATION eRotation)
         {
             return ((delegate* unmanaged<IMFVideoProcessorControl2*, MF_VIDEO_PROCESSOR_ROTATION, int>)(lpVtbl[7]))((IMFVideoProcessorControl2*)Unsafe.AsPointer(ref this), eRotation);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetConstrictionSize(SIZE* pConstrictionSize)
+        public HRESULT SetConstrictionSize(SIZE* pConstrictionSize)
         {
             return ((delegate* unmanaged<IMFVideoProcessorControl2*, SIZE*, int>)(lpVtbl[8]))((IMFVideoProcessorControl2*)Unsafe.AsPointer(ref this), pConstrictionSize);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetRotationOverride([NativeTypeName("UINT")] uint uiRotation)
+        public HRESULT SetRotationOverride([NativeTypeName("UINT")] uint uiRotation)
         {
             return ((delegate* unmanaged<IMFVideoProcessorControl2*, uint, int>)(lpVtbl[9]))((IMFVideoProcessorControl2*)Unsafe.AsPointer(ref this), uiRotation);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(10)]
-        [return: NativeTypeName("HRESULT")]
-        public int EnableHardwareEffects(BOOL fEnabled)
+        public HRESULT EnableHardwareEffects(BOOL fEnabled)
         {
             return ((delegate* unmanaged<IMFVideoProcessorControl2*, BOOL, int>)(lpVtbl[10]))((IMFVideoProcessorControl2*)Unsafe.AsPointer(ref this), fEnabled);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(11)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetSupportedHardwareEffects([NativeTypeName("UINT *")] uint* puiSupport)
+        public HRESULT GetSupportedHardwareEffects([NativeTypeName("UINT *")] uint* puiSupport)
         {
             return ((delegate* unmanaged<IMFVideoProcessorControl2*, uint*, int>)(lpVtbl[11]))((IMFVideoProcessorControl2*)Unsafe.AsPointer(ref this), puiSupport);
         }

@@ -14,168 +14,127 @@ namespace TerraFX.Interop
     public static unsafe partial class Windows
     {
         [DllImport("mfplat", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int MFStartup([NativeTypeName("ULONG")] uint Version, [NativeTypeName("DWORD")] uint dwFlags = 0);
+        public static extern HRESULT MFStartup([NativeTypeName("ULONG")] uint Version, [NativeTypeName("DWORD")] uint dwFlags = 0);
 
         [DllImport("mfplat", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int MFShutdown();
+        public static extern HRESULT MFShutdown();
 
         [DllImport("mfplat", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int MFLockPlatform();
+        public static extern HRESULT MFLockPlatform();
 
         [DllImport("mfplat", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int MFUnlockPlatform();
+        public static extern HRESULT MFUnlockPlatform();
 
         [DllImport("mfplat", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int MFPutWorkItem([NativeTypeName("DWORD")] uint dwQueue, IMFAsyncCallback* pCallback, IUnknown* pState);
+        public static extern HRESULT MFPutWorkItem([NativeTypeName("DWORD")] uint dwQueue, IMFAsyncCallback* pCallback, IUnknown* pState);
 
         [DllImport("mfplat", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int MFPutWorkItem2([NativeTypeName("DWORD")] uint dwQueue, [NativeTypeName("LONG")] int Priority, IMFAsyncCallback* pCallback, IUnknown* pState);
+        public static extern HRESULT MFPutWorkItem2([NativeTypeName("DWORD")] uint dwQueue, [NativeTypeName("LONG")] int Priority, IMFAsyncCallback* pCallback, IUnknown* pState);
 
         [DllImport("mfplat", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int MFPutWorkItemEx([NativeTypeName("DWORD")] uint dwQueue, IMFAsyncResult* pResult);
+        public static extern HRESULT MFPutWorkItemEx([NativeTypeName("DWORD")] uint dwQueue, IMFAsyncResult* pResult);
 
         [DllImport("mfplat", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int MFPutWorkItemEx2([NativeTypeName("DWORD")] uint dwQueue, [NativeTypeName("LONG")] int Priority, IMFAsyncResult* pResult);
+        public static extern HRESULT MFPutWorkItemEx2([NativeTypeName("DWORD")] uint dwQueue, [NativeTypeName("LONG")] int Priority, IMFAsyncResult* pResult);
 
         [DllImport("mfplat", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int MFPutWaitingWorkItem([NativeTypeName("HANDLE")] IntPtr hEvent, [NativeTypeName("LONG")] int Priority, IMFAsyncResult* pResult, [NativeTypeName("MFWORKITEM_KEY *")] ulong* pKey);
+        public static extern HRESULT MFPutWaitingWorkItem([NativeTypeName("HANDLE")] IntPtr hEvent, [NativeTypeName("LONG")] int Priority, IMFAsyncResult* pResult, [NativeTypeName("MFWORKITEM_KEY *")] ulong* pKey);
 
         [DllImport("mfplat", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int MFAllocateSerialWorkQueue([NativeTypeName("DWORD")] uint dwWorkQueue, [NativeTypeName("DWORD *")] uint* pdwWorkQueue);
+        public static extern HRESULT MFAllocateSerialWorkQueue([NativeTypeName("DWORD")] uint dwWorkQueue, [NativeTypeName("DWORD *")] uint* pdwWorkQueue);
 
         [DllImport("mfplat", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int MFScheduleWorkItemEx(IMFAsyncResult* pResult, [NativeTypeName("INT64")] long Timeout, [NativeTypeName("MFWORKITEM_KEY *")] ulong* pKey);
+        public static extern HRESULT MFScheduleWorkItemEx(IMFAsyncResult* pResult, [NativeTypeName("INT64")] long Timeout, [NativeTypeName("MFWORKITEM_KEY *")] ulong* pKey);
 
         [DllImport("mfplat", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int MFScheduleWorkItem(IMFAsyncCallback* pCallback, IUnknown* pState, [NativeTypeName("INT64")] long Timeout, [NativeTypeName("MFWORKITEM_KEY *")] ulong* pKey);
+        public static extern HRESULT MFScheduleWorkItem(IMFAsyncCallback* pCallback, IUnknown* pState, [NativeTypeName("INT64")] long Timeout, [NativeTypeName("MFWORKITEM_KEY *")] ulong* pKey);
 
         [DllImport("mfplat", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int MFCancelWorkItem([NativeTypeName("MFWORKITEM_KEY")] ulong Key);
+        public static extern HRESULT MFCancelWorkItem([NativeTypeName("MFWORKITEM_KEY")] ulong Key);
 
         [DllImport("mfplat", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int MFGetTimerPeriodicity([NativeTypeName("DWORD *")] uint* Periodicity);
+        public static extern HRESULT MFGetTimerPeriodicity([NativeTypeName("DWORD *")] uint* Periodicity);
 
         [DllImport("mfplat", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int MFAddPeriodicCallback([NativeTypeName("MFPERIODICCALLBACK")] delegate* unmanaged<IUnknown*, void> Callback, IUnknown* pContext, [NativeTypeName("DWORD *")] uint* pdwKey);
+        public static extern HRESULT MFAddPeriodicCallback([NativeTypeName("MFPERIODICCALLBACK")] delegate* unmanaged<IUnknown*, void> Callback, IUnknown* pContext, [NativeTypeName("DWORD *")] uint* pdwKey);
 
         [DllImport("mfplat", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int MFRemovePeriodicCallback([NativeTypeName("DWORD")] uint dwKey);
+        public static extern HRESULT MFRemovePeriodicCallback([NativeTypeName("DWORD")] uint dwKey);
 
         [DllImport("mfplat", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int MFAllocateWorkQueueEx(MFASYNC_WORKQUEUE_TYPE WorkQueueType, [NativeTypeName("DWORD *")] uint* pdwWorkQueue);
+        public static extern HRESULT MFAllocateWorkQueueEx(MFASYNC_WORKQUEUE_TYPE WorkQueueType, [NativeTypeName("DWORD *")] uint* pdwWorkQueue);
 
         [DllImport("mfplat", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int MFAllocateWorkQueue([NativeTypeName("DWORD *")] uint* pdwWorkQueue);
+        public static extern HRESULT MFAllocateWorkQueue([NativeTypeName("DWORD *")] uint* pdwWorkQueue);
 
         [DllImport("mfplat", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int MFLockWorkQueue([NativeTypeName("DWORD")] uint dwWorkQueue);
+        public static extern HRESULT MFLockWorkQueue([NativeTypeName("DWORD")] uint dwWorkQueue);
 
         [DllImport("mfplat", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int MFUnlockWorkQueue([NativeTypeName("DWORD")] uint dwWorkQueue);
+        public static extern HRESULT MFUnlockWorkQueue([NativeTypeName("DWORD")] uint dwWorkQueue);
 
         [DllImport("mfplat", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int MFBeginRegisterWorkQueueWithMMCSS([NativeTypeName("DWORD")] uint dwWorkQueueId, [NativeTypeName("LPCWSTR")] ushort* wszClass, [NativeTypeName("DWORD")] uint dwTaskId, IMFAsyncCallback* pDoneCallback, IUnknown* pDoneState);
+        public static extern HRESULT MFBeginRegisterWorkQueueWithMMCSS([NativeTypeName("DWORD")] uint dwWorkQueueId, [NativeTypeName("LPCWSTR")] ushort* wszClass, [NativeTypeName("DWORD")] uint dwTaskId, IMFAsyncCallback* pDoneCallback, IUnknown* pDoneState);
 
         [DllImport("mfplat", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int MFBeginRegisterWorkQueueWithMMCSSEx([NativeTypeName("DWORD")] uint dwWorkQueueId, [NativeTypeName("LPCWSTR")] ushort* wszClass, [NativeTypeName("DWORD")] uint dwTaskId, [NativeTypeName("LONG")] int lPriority, IMFAsyncCallback* pDoneCallback, IUnknown* pDoneState);
+        public static extern HRESULT MFBeginRegisterWorkQueueWithMMCSSEx([NativeTypeName("DWORD")] uint dwWorkQueueId, [NativeTypeName("LPCWSTR")] ushort* wszClass, [NativeTypeName("DWORD")] uint dwTaskId, [NativeTypeName("LONG")] int lPriority, IMFAsyncCallback* pDoneCallback, IUnknown* pDoneState);
 
         [DllImport("mfplat", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int MFEndRegisterWorkQueueWithMMCSS(IMFAsyncResult* pResult, [NativeTypeName("DWORD *")] uint* pdwTaskId);
+        public static extern HRESULT MFEndRegisterWorkQueueWithMMCSS(IMFAsyncResult* pResult, [NativeTypeName("DWORD *")] uint* pdwTaskId);
 
         [DllImport("mfplat", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int MFBeginUnregisterWorkQueueWithMMCSS([NativeTypeName("DWORD")] uint dwWorkQueueId, IMFAsyncCallback* pDoneCallback, IUnknown* pDoneState);
+        public static extern HRESULT MFBeginUnregisterWorkQueueWithMMCSS([NativeTypeName("DWORD")] uint dwWorkQueueId, IMFAsyncCallback* pDoneCallback, IUnknown* pDoneState);
 
         [DllImport("mfplat", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int MFEndUnregisterWorkQueueWithMMCSS(IMFAsyncResult* pResult);
+        public static extern HRESULT MFEndUnregisterWorkQueueWithMMCSS(IMFAsyncResult* pResult);
 
         [DllImport("mfplat", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int MFGetWorkQueueMMCSSClass([NativeTypeName("DWORD")] uint dwWorkQueueId, [NativeTypeName("LPWSTR")] ushort* pwszClass, [NativeTypeName("DWORD *")] uint* pcchClass);
+        public static extern HRESULT MFGetWorkQueueMMCSSClass([NativeTypeName("DWORD")] uint dwWorkQueueId, [NativeTypeName("LPWSTR")] ushort* pwszClass, [NativeTypeName("DWORD *")] uint* pcchClass);
 
         [DllImport("mfplat", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int MFGetWorkQueueMMCSSTaskId([NativeTypeName("DWORD")] uint dwWorkQueueId, [NativeTypeName("LPDWORD")] uint* pdwTaskId);
+        public static extern HRESULT MFGetWorkQueueMMCSSTaskId([NativeTypeName("DWORD")] uint dwWorkQueueId, [NativeTypeName("LPDWORD")] uint* pdwTaskId);
 
         [DllImport("mfplat", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int MFRegisterPlatformWithMMCSS([NativeTypeName("PCWSTR")] ushort* wszClass, [NativeTypeName("DWORD *")] uint* pdwTaskId, [NativeTypeName("LONG")] int lPriority);
+        public static extern HRESULT MFRegisterPlatformWithMMCSS([NativeTypeName("PCWSTR")] ushort* wszClass, [NativeTypeName("DWORD *")] uint* pdwTaskId, [NativeTypeName("LONG")] int lPriority);
 
         [DllImport("mfplat", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int MFUnregisterPlatformFromMMCSS();
+        public static extern HRESULT MFUnregisterPlatformFromMMCSS();
 
         [DllImport("mfplat", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int MFLockSharedWorkQueue([NativeTypeName("PCWSTR")] ushort* wszClass, [NativeTypeName("LONG")] int BasePriority, [NativeTypeName("DWORD *")] uint* pdwTaskId, [NativeTypeName("DWORD *")] uint* pID);
+        public static extern HRESULT MFLockSharedWorkQueue([NativeTypeName("PCWSTR")] ushort* wszClass, [NativeTypeName("LONG")] int BasePriority, [NativeTypeName("DWORD *")] uint* pdwTaskId, [NativeTypeName("DWORD *")] uint* pID);
 
         [DllImport("mfplat", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int MFGetWorkQueueMMCSSPriority([NativeTypeName("DWORD")] uint dwWorkQueueId, [NativeTypeName("LONG *")] int* lPriority);
+        public static extern HRESULT MFGetWorkQueueMMCSSPriority([NativeTypeName("DWORD")] uint dwWorkQueueId, [NativeTypeName("LONG *")] int* lPriority);
 
         [DllImport("mfplat", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int MFCreateAsyncResult(IUnknown* punkObject, IMFAsyncCallback* pCallback, IUnknown* punkState, IMFAsyncResult** ppAsyncResult);
+        public static extern HRESULT MFCreateAsyncResult(IUnknown* punkObject, IMFAsyncCallback* pCallback, IUnknown* punkState, IMFAsyncResult** ppAsyncResult);
 
         [DllImport("mfplat", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int MFInvokeCallback(IMFAsyncResult* pAsyncResult);
+        public static extern HRESULT MFInvokeCallback(IMFAsyncResult* pAsyncResult);
 
         [DllImport("mfplat", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int MFCreateFile(MF_FILE_ACCESSMODE AccessMode, MF_FILE_OPENMODE OpenMode, MF_FILE_FLAGS fFlags, [NativeTypeName("LPCWSTR")] ushort* pwszFileURL, IMFByteStream** ppIByteStream);
+        public static extern HRESULT MFCreateFile(MF_FILE_ACCESSMODE AccessMode, MF_FILE_OPENMODE OpenMode, MF_FILE_FLAGS fFlags, [NativeTypeName("LPCWSTR")] ushort* pwszFileURL, IMFByteStream** ppIByteStream);
 
         [DllImport("mfplat", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int MFCreateTempFile(MF_FILE_ACCESSMODE AccessMode, MF_FILE_OPENMODE OpenMode, MF_FILE_FLAGS fFlags, IMFByteStream** ppIByteStream);
+        public static extern HRESULT MFCreateTempFile(MF_FILE_ACCESSMODE AccessMode, MF_FILE_OPENMODE OpenMode, MF_FILE_FLAGS fFlags, IMFByteStream** ppIByteStream);
 
         [DllImport("mfplat", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int MFBeginCreateFile(MF_FILE_ACCESSMODE AccessMode, MF_FILE_OPENMODE OpenMode, MF_FILE_FLAGS fFlags, [NativeTypeName("LPCWSTR")] ushort* pwszFilePath, IMFAsyncCallback* pCallback, IUnknown* pState, IUnknown** ppCancelCookie);
+        public static extern HRESULT MFBeginCreateFile(MF_FILE_ACCESSMODE AccessMode, MF_FILE_OPENMODE OpenMode, MF_FILE_FLAGS fFlags, [NativeTypeName("LPCWSTR")] ushort* pwszFilePath, IMFAsyncCallback* pCallback, IUnknown* pState, IUnknown** ppCancelCookie);
 
         [DllImport("mfplat", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int MFEndCreateFile(IMFAsyncResult* pResult, IMFByteStream** ppFile);
+        public static extern HRESULT MFEndCreateFile(IMFAsyncResult* pResult, IMFByteStream** ppFile);
 
         [DllImport("mfplat", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int MFCancelCreateFile(IUnknown* pCancelCookie);
+        public static extern HRESULT MFCancelCreateFile(IUnknown* pCancelCookie);
 
         [DllImport("mfplat", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int MFCreateMemoryBuffer([NativeTypeName("DWORD")] uint cbMaxLength, IMFMediaBuffer** ppBuffer);
+        public static extern HRESULT MFCreateMemoryBuffer([NativeTypeName("DWORD")] uint cbMaxLength, IMFMediaBuffer** ppBuffer);
 
         [DllImport("mfplat", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int MFCreateMediaBufferWrapper(IMFMediaBuffer* pBuffer, [NativeTypeName("DWORD")] uint cbOffset, [NativeTypeName("DWORD")] uint dwLength, IMFMediaBuffer** ppBuffer);
+        public static extern HRESULT MFCreateMediaBufferWrapper(IMFMediaBuffer* pBuffer, [NativeTypeName("DWORD")] uint cbOffset, [NativeTypeName("DWORD")] uint dwLength, IMFMediaBuffer** ppBuffer);
 
         [DllImport("mfplat", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int MFCreateLegacyMediaBufferOnMFMediaBuffer(IMFSample* pSample, IMFMediaBuffer* pMFMediaBuffer, [NativeTypeName("DWORD")] uint cbOffset, IMediaBuffer** ppMediaBuffer);
+        public static extern HRESULT MFCreateLegacyMediaBufferOnMFMediaBuffer(IMFSample* pSample, IMFMediaBuffer* pMFMediaBuffer, [NativeTypeName("DWORD")] uint cbOffset, IMediaBuffer** ppMediaBuffer);
 
         [DllImport("mfplat", ExactSpelling = true)]
         public static extern DXGI_FORMAT MFMapDX9FormatToDXGIFormat([NativeTypeName("DWORD")] uint dx9);
@@ -185,44 +144,34 @@ namespace TerraFX.Interop
         public static extern uint MFMapDXGIFormatToDX9Format(DXGI_FORMAT dx11);
 
         [DllImport("mfplat", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int MFLockDXGIDeviceManager([NativeTypeName("UINT *")] uint* pResetToken, IMFDXGIDeviceManager** ppManager);
+        public static extern HRESULT MFLockDXGIDeviceManager([NativeTypeName("UINT *")] uint* pResetToken, IMFDXGIDeviceManager** ppManager);
 
         [DllImport("mfplat", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int MFUnlockDXGIDeviceManager();
+        public static extern HRESULT MFUnlockDXGIDeviceManager();
 
         [DllImport("evr", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int MFCreateDXSurfaceBuffer([NativeTypeName("const IID &")] Guid* riid, IUnknown* punkSurface, BOOL fBottomUpWhenLinear, IMFMediaBuffer** ppBuffer);
+        public static extern HRESULT MFCreateDXSurfaceBuffer([NativeTypeName("const IID &")] Guid* riid, IUnknown* punkSurface, BOOL fBottomUpWhenLinear, IMFMediaBuffer** ppBuffer);
 
         [DllImport("mfplat", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int MFCreateWICBitmapBuffer([NativeTypeName("const IID &")] Guid* riid, IUnknown* punkSurface, IMFMediaBuffer** ppBuffer);
+        public static extern HRESULT MFCreateWICBitmapBuffer([NativeTypeName("const IID &")] Guid* riid, IUnknown* punkSurface, IMFMediaBuffer** ppBuffer);
 
         [DllImport("mfplat", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int MFCreateDXGISurfaceBuffer([NativeTypeName("const IID &")] Guid* riid, IUnknown* punkSurface, [NativeTypeName("UINT")] uint uSubresourceIndex, BOOL fBottomUpWhenLinear, IMFMediaBuffer** ppBuffer);
+        public static extern HRESULT MFCreateDXGISurfaceBuffer([NativeTypeName("const IID &")] Guid* riid, IUnknown* punkSurface, [NativeTypeName("UINT")] uint uSubresourceIndex, BOOL fBottomUpWhenLinear, IMFMediaBuffer** ppBuffer);
 
         [DllImport("mfplat", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int MFCreateVideoSampleAllocatorEx([NativeTypeName("const IID &")] Guid* riid, void** ppSampleAllocator);
+        public static extern HRESULT MFCreateVideoSampleAllocatorEx([NativeTypeName("const IID &")] Guid* riid, void** ppSampleAllocator);
 
         [DllImport("mfplat", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int MFCreateDXGIDeviceManager([NativeTypeName("UINT *")] uint* resetToken, IMFDXGIDeviceManager** ppDeviceManager);
+        public static extern HRESULT MFCreateDXGIDeviceManager([NativeTypeName("UINT *")] uint* resetToken, IMFDXGIDeviceManager** ppDeviceManager);
 
         [DllImport("mfplat", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int MFCreateAlignedMemoryBuffer([NativeTypeName("DWORD")] uint cbMaxLength, [NativeTypeName("DWORD")] uint cbAligment, IMFMediaBuffer** ppBuffer);
+        public static extern HRESULT MFCreateAlignedMemoryBuffer([NativeTypeName("DWORD")] uint cbMaxLength, [NativeTypeName("DWORD")] uint cbAligment, IMFMediaBuffer** ppBuffer);
 
         [DllImport("mfplat", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int MFCreateMediaEvent([NativeTypeName("MediaEventType")] uint met, [NativeTypeName("const GUID &")] Guid* guidExtendedType, [NativeTypeName("HRESULT")] int hrStatus, [NativeTypeName("const PROPVARIANT *")] PROPVARIANT* pvValue, IMFMediaEvent** ppEvent);
+        public static extern HRESULT MFCreateMediaEvent([NativeTypeName("MediaEventType")] uint met, [NativeTypeName("const GUID &")] Guid* guidExtendedType, HRESULT hrStatus, [NativeTypeName("const PROPVARIANT *")] PROPVARIANT* pvValue, IMFMediaEvent** ppEvent);
 
         [DllImport("mfplat", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int MFCreateEventQueue(IMFMediaEventQueue** ppMediaEventQueue);
+        public static extern HRESULT MFCreateEventQueue(IMFMediaEventQueue** ppMediaEventQueue);
 
         [NativeTypeName("const GUID")]
         public static ref readonly Guid MF_EVENT_SESSIONCAPS
@@ -725,8 +674,7 @@ namespace TerraFX.Interop
         }
 
         [DllImport("mfplat", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int MFCreateSample(IMFSample** ppIMFSample);
+        public static extern HRESULT MFCreateSample(IMFSample** ppIMFSample);
 
         [NativeTypeName("const GUID")]
         public static ref readonly Guid MFSampleExtension_MaxDecodeFrameSize
@@ -2929,20 +2877,16 @@ namespace TerraFX.Interop
         }
 
         [DllImport("mfplat", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int MFCreateAttributes(IMFAttributes** ppMFAttributes, [NativeTypeName("UINT32")] uint cInitialSize);
+        public static extern HRESULT MFCreateAttributes(IMFAttributes** ppMFAttributes, [NativeTypeName("UINT32")] uint cInitialSize);
 
         [DllImport("mfplat", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int MFInitAttributesFromBlob(IMFAttributes* pAttributes, [NativeTypeName("const UINT8 *")] byte* pBuf, [NativeTypeName("UINT")] uint cbBufSize);
+        public static extern HRESULT MFInitAttributesFromBlob(IMFAttributes* pAttributes, [NativeTypeName("const UINT8 *")] byte* pBuf, [NativeTypeName("UINT")] uint cbBufSize);
 
         [DllImport("mfplat", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int MFGetAttributesAsBlobSize(IMFAttributes* pAttributes, [NativeTypeName("UINT32 *")] uint* pcbBufSize);
+        public static extern HRESULT MFGetAttributesAsBlobSize(IMFAttributes* pAttributes, [NativeTypeName("UINT32 *")] uint* pcbBufSize);
 
         [DllImport("mfplat", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int MFGetAttributesAsBlob(IMFAttributes* pAttributes, [NativeTypeName("UINT8 *")] byte* pBuf, [NativeTypeName("UINT")] uint cbBufSize);
+        public static extern HRESULT MFGetAttributesAsBlob(IMFAttributes* pAttributes, [NativeTypeName("UINT8 *")] byte* pBuf, [NativeTypeName("UINT")] uint cbBufSize);
 
         [NativeTypeName("const GUID")]
         public static ref readonly Guid MFT_CATEGORY_VIDEO_DECODER
@@ -3245,36 +3189,28 @@ namespace TerraFX.Interop
         }
 
         [DllImport("mfplat", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int MFTRegister([NativeTypeName("CLSID")] Guid clsidMFT, [NativeTypeName("GUID")] Guid guidCategory, [NativeTypeName("LPWSTR")] ushort* pszName, [NativeTypeName("UINT32")] uint Flags, [NativeTypeName("UINT32")] uint cInputTypes, MFT_REGISTER_TYPE_INFO* pInputTypes, [NativeTypeName("UINT32")] uint cOutputTypes, MFT_REGISTER_TYPE_INFO* pOutputTypes, IMFAttributes* pAttributes);
+        public static extern HRESULT MFTRegister([NativeTypeName("CLSID")] Guid clsidMFT, [NativeTypeName("GUID")] Guid guidCategory, [NativeTypeName("LPWSTR")] ushort* pszName, [NativeTypeName("UINT32")] uint Flags, [NativeTypeName("UINT32")] uint cInputTypes, MFT_REGISTER_TYPE_INFO* pInputTypes, [NativeTypeName("UINT32")] uint cOutputTypes, MFT_REGISTER_TYPE_INFO* pOutputTypes, IMFAttributes* pAttributes);
 
         [DllImport("mfplat", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int MFTUnregister([NativeTypeName("CLSID")] Guid clsidMFT);
+        public static extern HRESULT MFTUnregister([NativeTypeName("CLSID")] Guid clsidMFT);
 
         [DllImport("mfplat", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int MFTRegisterLocal(IClassFactory* pClassFactory, [NativeTypeName("const GUID &")] Guid* guidCategory, [NativeTypeName("LPCWSTR")] ushort* pszName, [NativeTypeName("UINT32")] uint Flags, [NativeTypeName("UINT32")] uint cInputTypes, [NativeTypeName("const MFT_REGISTER_TYPE_INFO *")] MFT_REGISTER_TYPE_INFO* pInputTypes, [NativeTypeName("UINT32")] uint cOutputTypes, [NativeTypeName("const MFT_REGISTER_TYPE_INFO *")] MFT_REGISTER_TYPE_INFO* pOutputTypes);
+        public static extern HRESULT MFTRegisterLocal(IClassFactory* pClassFactory, [NativeTypeName("const GUID &")] Guid* guidCategory, [NativeTypeName("LPCWSTR")] ushort* pszName, [NativeTypeName("UINT32")] uint Flags, [NativeTypeName("UINT32")] uint cInputTypes, [NativeTypeName("const MFT_REGISTER_TYPE_INFO *")] MFT_REGISTER_TYPE_INFO* pInputTypes, [NativeTypeName("UINT32")] uint cOutputTypes, [NativeTypeName("const MFT_REGISTER_TYPE_INFO *")] MFT_REGISTER_TYPE_INFO* pOutputTypes);
 
         [DllImport("mfplat", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int MFTUnregisterLocal(IClassFactory* pClassFactory);
+        public static extern HRESULT MFTUnregisterLocal(IClassFactory* pClassFactory);
 
         [DllImport("mfplat", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int MFTRegisterLocalByCLSID([NativeTypeName("const IID &")] Guid* clisdMFT, [NativeTypeName("const GUID &")] Guid* guidCategory, [NativeTypeName("LPCWSTR")] ushort* pszName, [NativeTypeName("UINT32")] uint Flags, [NativeTypeName("UINT32")] uint cInputTypes, [NativeTypeName("const MFT_REGISTER_TYPE_INFO *")] MFT_REGISTER_TYPE_INFO* pInputTypes, [NativeTypeName("UINT32")] uint cOutputTypes, [NativeTypeName("const MFT_REGISTER_TYPE_INFO *")] MFT_REGISTER_TYPE_INFO* pOutputTypes);
+        public static extern HRESULT MFTRegisterLocalByCLSID([NativeTypeName("const IID &")] Guid* clisdMFT, [NativeTypeName("const GUID &")] Guid* guidCategory, [NativeTypeName("LPCWSTR")] ushort* pszName, [NativeTypeName("UINT32")] uint Flags, [NativeTypeName("UINT32")] uint cInputTypes, [NativeTypeName("const MFT_REGISTER_TYPE_INFO *")] MFT_REGISTER_TYPE_INFO* pInputTypes, [NativeTypeName("UINT32")] uint cOutputTypes, [NativeTypeName("const MFT_REGISTER_TYPE_INFO *")] MFT_REGISTER_TYPE_INFO* pOutputTypes);
 
         [DllImport("mfplat", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int MFTUnregisterLocalByCLSID([NativeTypeName("CLSID")] Guid clsidMFT);
+        public static extern HRESULT MFTUnregisterLocalByCLSID([NativeTypeName("CLSID")] Guid clsidMFT);
 
         [DllImport("mfplat", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int MFTEnum([NativeTypeName("GUID")] Guid guidCategory, [NativeTypeName("UINT32")] uint Flags, MFT_REGISTER_TYPE_INFO* pInputType, MFT_REGISTER_TYPE_INFO* pOutputType, IMFAttributes* pAttributes, [NativeTypeName("CLSID **")] Guid** ppclsidMFT, [NativeTypeName("UINT32 *")] uint* pcMFTs);
+        public static extern HRESULT MFTEnum([NativeTypeName("GUID")] Guid guidCategory, [NativeTypeName("UINT32")] uint Flags, MFT_REGISTER_TYPE_INFO* pInputType, MFT_REGISTER_TYPE_INFO* pOutputType, IMFAttributes* pAttributes, [NativeTypeName("CLSID **")] Guid** ppclsidMFT, [NativeTypeName("UINT32 *")] uint* pcMFTs);
 
         [DllImport("mfplat", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int MFTEnumEx([NativeTypeName("GUID")] Guid guidCategory, [NativeTypeName("UINT32")] uint Flags, [NativeTypeName("const MFT_REGISTER_TYPE_INFO *")] MFT_REGISTER_TYPE_INFO* pInputType, [NativeTypeName("const MFT_REGISTER_TYPE_INFO *")] MFT_REGISTER_TYPE_INFO* pOutputType, IMFActivate*** pppMFTActivate, [NativeTypeName("UINT32 *")] uint* pnumMFTActivate);
+        public static extern HRESULT MFTEnumEx([NativeTypeName("GUID")] Guid guidCategory, [NativeTypeName("UINT32")] uint Flags, [NativeTypeName("const MFT_REGISTER_TYPE_INFO *")] MFT_REGISTER_TYPE_INFO* pInputType, [NativeTypeName("const MFT_REGISTER_TYPE_INFO *")] MFT_REGISTER_TYPE_INFO* pOutputType, IMFActivate*** pppMFTActivate, [NativeTypeName("UINT32 *")] uint* pnumMFTActivate);
 
         [NativeTypeName("const GUID")]
         public static ref readonly Guid MFT_ENUM_VIDEO_RENDERER_EXTENSION_PROFILE
@@ -3327,36 +3263,28 @@ namespace TerraFX.Interop
         }
 
         [DllImport("mfplat", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int MFTEnum2([NativeTypeName("GUID")] Guid guidCategory, [NativeTypeName("UINT32")] uint Flags, [NativeTypeName("const MFT_REGISTER_TYPE_INFO *")] MFT_REGISTER_TYPE_INFO* pInputType, [NativeTypeName("const MFT_REGISTER_TYPE_INFO *")] MFT_REGISTER_TYPE_INFO* pOutputType, IMFAttributes* pAttributes, IMFActivate*** pppMFTActivate, [NativeTypeName("UINT32 *")] uint* pnumMFTActivate);
+        public static extern HRESULT MFTEnum2([NativeTypeName("GUID")] Guid guidCategory, [NativeTypeName("UINT32")] uint Flags, [NativeTypeName("const MFT_REGISTER_TYPE_INFO *")] MFT_REGISTER_TYPE_INFO* pInputType, [NativeTypeName("const MFT_REGISTER_TYPE_INFO *")] MFT_REGISTER_TYPE_INFO* pOutputType, IMFAttributes* pAttributes, IMFActivate*** pppMFTActivate, [NativeTypeName("UINT32 *")] uint* pnumMFTActivate);
 
         [DllImport("mfplat", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int MFTGetInfo([NativeTypeName("CLSID")] Guid clsidMFT, [NativeTypeName("LPWSTR *")] ushort** pszName, MFT_REGISTER_TYPE_INFO** ppInputTypes, [NativeTypeName("UINT32 *")] uint* pcInputTypes, MFT_REGISTER_TYPE_INFO** ppOutputTypes, [NativeTypeName("UINT32 *")] uint* pcOutputTypes, IMFAttributes** ppAttributes);
+        public static extern HRESULT MFTGetInfo([NativeTypeName("CLSID")] Guid clsidMFT, [NativeTypeName("LPWSTR *")] ushort** pszName, MFT_REGISTER_TYPE_INFO** ppInputTypes, [NativeTypeName("UINT32 *")] uint* pcInputTypes, MFT_REGISTER_TYPE_INFO** ppOutputTypes, [NativeTypeName("UINT32 *")] uint* pcOutputTypes, IMFAttributes** ppAttributes);
 
         [DllImport("mfplat", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int MFGetPluginControl(IMFPluginControl** ppPluginControl);
+        public static extern HRESULT MFGetPluginControl(IMFPluginControl** ppPluginControl);
 
         [DllImport("mfplat", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int MFGetMFTMerit(IUnknown* pMFT, [NativeTypeName("UINT32")] uint cbVerifier, [NativeTypeName("const BYTE *")] byte* verifier, [NativeTypeName("DWORD *")] uint* merit);
+        public static extern HRESULT MFGetMFTMerit(IUnknown* pMFT, [NativeTypeName("UINT32")] uint cbVerifier, [NativeTypeName("const BYTE *")] byte* verifier, [NativeTypeName("DWORD *")] uint* merit);
 
         [DllImport("mfplat", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int MFRegisterLocalSchemeHandler([NativeTypeName("PCWSTR")] ushort* szScheme, IMFActivate* pActivate);
+        public static extern HRESULT MFRegisterLocalSchemeHandler([NativeTypeName("PCWSTR")] ushort* szScheme, IMFActivate* pActivate);
 
         [DllImport("mfplat", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int MFRegisterLocalByteStreamHandler([NativeTypeName("PCWSTR")] ushort* szFileExtension, [NativeTypeName("PCWSTR")] ushort* szMimeType, IMFActivate* pActivate);
+        public static extern HRESULT MFRegisterLocalByteStreamHandler([NativeTypeName("PCWSTR")] ushort* szFileExtension, [NativeTypeName("PCWSTR")] ushort* szMimeType, IMFActivate* pActivate);
 
         [DllImport("mfplat", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int MFCreateMFByteStreamWrapper(IMFByteStream* pStream, IMFByteStream** ppStreamWrapper);
+        public static extern HRESULT MFCreateMFByteStreamWrapper(IMFByteStream* pStream, IMFByteStream** ppStreamWrapper);
 
         [DllImport("mfplat", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int MFCreateMediaExtensionActivate([NativeTypeName("PCWSTR")] ushort* szActivatableClassId, IUnknown* pConfiguration, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPVOID *")] void** ppvObject);
+        public static extern HRESULT MFCreateMediaExtensionActivate([NativeTypeName("PCWSTR")] ushort* szActivatableClassId, IUnknown* pConfiguration, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPVOID *")] void** ppvObject);
 
         [NativeTypeName("const GUID")]
         public static ref readonly Guid MFT_SUPPORT_DYNAMIC_FORMAT_CHANGE
@@ -7009,16 +6937,13 @@ namespace TerraFX.Interop
         }
 
         [DllImport("mfplat", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int MFCreateMuxStreamAttributes(IMFCollection* pAttributesToMux, IMFAttributes** ppMuxAttribs);
+        public static extern HRESULT MFCreateMuxStreamAttributes(IMFCollection* pAttributesToMux, IMFAttributes** ppMuxAttribs);
 
         [DllImport("mfplat", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int MFCreateMuxStreamMediaType(IMFCollection* pMediaTypesToMux, IMFMediaType** ppMuxMediaType);
+        public static extern HRESULT MFCreateMuxStreamMediaType(IMFCollection* pMediaTypesToMux, IMFMediaType** ppMuxMediaType);
 
         [DllImport("mfplat", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int MFCreateMuxStreamSample(IMFCollection* pSamplesToMux, IMFSample** ppMuxSample);
+        public static extern HRESULT MFCreateMuxStreamSample(IMFCollection* pSamplesToMux, IMFSample** ppMuxSample);
 
         [NativeTypeName("const GUID")]
         public static ref readonly Guid MF_MT_SECURE
@@ -10646,158 +10571,122 @@ namespace TerraFX.Interop
         }
 
         [DllImport("mfplat", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int MFValidateMediaTypeSize([NativeTypeName("GUID")] Guid FormatType, [NativeTypeName("UINT8 *")] byte* pBlock, [NativeTypeName("UINT32")] uint cbSize);
+        public static extern HRESULT MFValidateMediaTypeSize([NativeTypeName("GUID")] Guid FormatType, [NativeTypeName("UINT8 *")] byte* pBlock, [NativeTypeName("UINT32")] uint cbSize);
 
         [DllImport("mfplat", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int MFCreateMediaType(IMFMediaType** ppMFType);
+        public static extern HRESULT MFCreateMediaType(IMFMediaType** ppMFType);
 
         [DllImport("mfplat", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int MFCreateMFVideoFormatFromMFMediaType(IMFMediaType* pMFType, MFVIDEOFORMAT** ppMFVF, [NativeTypeName("UINT32 *")] uint* pcbSize);
+        public static extern HRESULT MFCreateMFVideoFormatFromMFMediaType(IMFMediaType* pMFType, MFVIDEOFORMAT** ppMFVF, [NativeTypeName("UINT32 *")] uint* pcbSize);
 
         [DllImport("mfplat", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int MFCreateWaveFormatExFromMFMediaType(IMFMediaType* pMFType, WAVEFORMATEX** ppWF, [NativeTypeName("UINT32 *")] uint* pcbSize, [NativeTypeName("UINT32")] uint Flags = (uint)(MFWaveFormatExConvertFlag_Normal));
+        public static extern HRESULT MFCreateWaveFormatExFromMFMediaType(IMFMediaType* pMFType, WAVEFORMATEX** ppWF, [NativeTypeName("UINT32 *")] uint* pcbSize, [NativeTypeName("UINT32")] uint Flags = (uint)(MFWaveFormatExConvertFlag_Normal));
 
         [DllImport("mfplat", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int MFInitMediaTypeFromVideoInfoHeader(IMFMediaType* pMFType, [NativeTypeName("const VIDEOINFOHEADER *")] VIDEOINFOHEADER* pVIH, [NativeTypeName("UINT32")] uint cbBufSize, [NativeTypeName("const GUID *")] Guid* pSubtype = null);
+        public static extern HRESULT MFInitMediaTypeFromVideoInfoHeader(IMFMediaType* pMFType, [NativeTypeName("const VIDEOINFOHEADER *")] VIDEOINFOHEADER* pVIH, [NativeTypeName("UINT32")] uint cbBufSize, [NativeTypeName("const GUID *")] Guid* pSubtype = null);
 
         [DllImport("mfplat", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int MFInitMediaTypeFromVideoInfoHeader2(IMFMediaType* pMFType, [NativeTypeName("const VIDEOINFOHEADER2 *")] VIDEOINFOHEADER2* pVIH2, [NativeTypeName("UINT32")] uint cbBufSize, [NativeTypeName("const GUID *")] Guid* pSubtype = null);
+        public static extern HRESULT MFInitMediaTypeFromVideoInfoHeader2(IMFMediaType* pMFType, [NativeTypeName("const VIDEOINFOHEADER2 *")] VIDEOINFOHEADER2* pVIH2, [NativeTypeName("UINT32")] uint cbBufSize, [NativeTypeName("const GUID *")] Guid* pSubtype = null);
 
         [DllImport("mfplat", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int MFInitMediaTypeFromMPEG1VideoInfo(IMFMediaType* pMFType, [NativeTypeName("const MPEG1VIDEOINFO *")] MPEG1VIDEOINFO* pMP1VI, [NativeTypeName("UINT32")] uint cbBufSize, [NativeTypeName("const GUID *")] Guid* pSubtype = null);
+        public static extern HRESULT MFInitMediaTypeFromMPEG1VideoInfo(IMFMediaType* pMFType, [NativeTypeName("const MPEG1VIDEOINFO *")] MPEG1VIDEOINFO* pMP1VI, [NativeTypeName("UINT32")] uint cbBufSize, [NativeTypeName("const GUID *")] Guid* pSubtype = null);
 
         [DllImport("mfplat", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int MFInitMediaTypeFromMPEG2VideoInfo(IMFMediaType* pMFType, [NativeTypeName("const MPEG2VIDEOINFO *")] MPEG2VIDEOINFO* pMP2VI, [NativeTypeName("UINT32")] uint cbBufSize, [NativeTypeName("const GUID *")] Guid* pSubtype = null);
+        public static extern HRESULT MFInitMediaTypeFromMPEG2VideoInfo(IMFMediaType* pMFType, [NativeTypeName("const MPEG2VIDEOINFO *")] MPEG2VIDEOINFO* pMP2VI, [NativeTypeName("UINT32")] uint cbBufSize, [NativeTypeName("const GUID *")] Guid* pSubtype = null);
 
         [DllImport("mfplat", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int MFCalculateBitmapImageSize([NativeTypeName("const BITMAPINFOHEADER *")] BITMAPINFOHEADER* pBMIH, [NativeTypeName("UINT32")] uint cbBufSize, [NativeTypeName("UINT32 *")] uint* pcbImageSize, BOOL* pbKnown = null);
+        public static extern HRESULT MFCalculateBitmapImageSize([NativeTypeName("const BITMAPINFOHEADER *")] BITMAPINFOHEADER* pBMIH, [NativeTypeName("UINT32")] uint cbBufSize, [NativeTypeName("UINT32 *")] uint* pcbImageSize, BOOL* pbKnown = null);
 
         [DllImport("mfplat", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int MFCalculateImageSize([NativeTypeName("const GUID &")] Guid* guidSubtype, [NativeTypeName("UINT32")] uint unWidth, [NativeTypeName("UINT32")] uint unHeight, [NativeTypeName("UINT32 *")] uint* pcbImageSize);
+        public static extern HRESULT MFCalculateImageSize([NativeTypeName("const GUID &")] Guid* guidSubtype, [NativeTypeName("UINT32")] uint unWidth, [NativeTypeName("UINT32")] uint unHeight, [NativeTypeName("UINT32 *")] uint* pcbImageSize);
 
         [DllImport("mfplat", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int MFFrameRateToAverageTimePerFrame([NativeTypeName("UINT32")] uint unNumerator, [NativeTypeName("UINT32")] uint unDenominator, [NativeTypeName("UINT64 *")] ulong* punAverageTimePerFrame);
+        public static extern HRESULT MFFrameRateToAverageTimePerFrame([NativeTypeName("UINT32")] uint unNumerator, [NativeTypeName("UINT32")] uint unDenominator, [NativeTypeName("UINT64 *")] ulong* punAverageTimePerFrame);
 
         [DllImport("mfplat", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int MFAverageTimePerFrameToFrameRate([NativeTypeName("UINT64")] ulong unAverageTimePerFrame, [NativeTypeName("UINT32 *")] uint* punNumerator, [NativeTypeName("UINT32 *")] uint* punDenominator);
+        public static extern HRESULT MFAverageTimePerFrameToFrameRate([NativeTypeName("UINT64")] ulong unAverageTimePerFrame, [NativeTypeName("UINT32 *")] uint* punNumerator, [NativeTypeName("UINT32 *")] uint* punDenominator);
 
         [DllImport("mfplat", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int MFInitMediaTypeFromMFVideoFormat(IMFMediaType* pMFType, [NativeTypeName("const MFVIDEOFORMAT *")] MFVIDEOFORMAT* pMFVF, [NativeTypeName("UINT32")] uint cbBufSize);
+        public static extern HRESULT MFInitMediaTypeFromMFVideoFormat(IMFMediaType* pMFType, [NativeTypeName("const MFVIDEOFORMAT *")] MFVIDEOFORMAT* pMFVF, [NativeTypeName("UINT32")] uint cbBufSize);
 
         [DllImport("mfplat", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int MFInitMediaTypeFromWaveFormatEx(IMFMediaType* pMFType, [NativeTypeName("const WAVEFORMATEX *")] WAVEFORMATEX* pWaveFormat, [NativeTypeName("UINT32")] uint cbBufSize);
+        public static extern HRESULT MFInitMediaTypeFromWaveFormatEx(IMFMediaType* pMFType, [NativeTypeName("const WAVEFORMATEX *")] WAVEFORMATEX* pWaveFormat, [NativeTypeName("UINT32")] uint cbBufSize);
 
         [DllImport("mfplat", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int MFInitMediaTypeFromAMMediaType(IMFMediaType* pMFType, [NativeTypeName("const AM_MEDIA_TYPE *")] AM_MEDIA_TYPE* pAMType);
+        public static extern HRESULT MFInitMediaTypeFromAMMediaType(IMFMediaType* pMFType, [NativeTypeName("const AM_MEDIA_TYPE *")] AM_MEDIA_TYPE* pAMType);
 
         [DllImport("mfplat", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int MFInitAMMediaTypeFromMFMediaType(IMFMediaType* pMFType, [NativeTypeName("GUID")] Guid guidFormatBlockType, AM_MEDIA_TYPE* pAMType);
+        public static extern HRESULT MFInitAMMediaTypeFromMFMediaType(IMFMediaType* pMFType, [NativeTypeName("GUID")] Guid guidFormatBlockType, AM_MEDIA_TYPE* pAMType);
 
         [DllImport("mfplat", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int MFCreateAMMediaTypeFromMFMediaType(IMFMediaType* pMFType, [NativeTypeName("GUID")] Guid guidFormatBlockType, AM_MEDIA_TYPE** ppAMType);
+        public static extern HRESULT MFCreateAMMediaTypeFromMFMediaType(IMFMediaType* pMFType, [NativeTypeName("GUID")] Guid guidFormatBlockType, AM_MEDIA_TYPE** ppAMType);
 
         [DllImport("mfplat", ExactSpelling = true)]
         public static extern BOOL MFCompareFullToPartialMediaType(IMFMediaType* pMFTypeFull, IMFMediaType* pMFTypePartial);
 
         [DllImport("mfplat", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int MFWrapMediaType(IMFMediaType* pOrig, [NativeTypeName("const GUID &")] Guid* MajorType, [NativeTypeName("const GUID &")] Guid* SubType, IMFMediaType** ppWrap);
+        public static extern HRESULT MFWrapMediaType(IMFMediaType* pOrig, [NativeTypeName("const GUID &")] Guid* MajorType, [NativeTypeName("const GUID &")] Guid* SubType, IMFMediaType** ppWrap);
 
         [DllImport("mfplat", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int MFUnwrapMediaType(IMFMediaType* pWrap, IMFMediaType** ppOrig);
+        public static extern HRESULT MFUnwrapMediaType(IMFMediaType* pWrap, IMFMediaType** ppOrig);
 
         [DllImport("mfplat", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int MFCreateVideoMediaType([NativeTypeName("const MFVIDEOFORMAT *")] MFVIDEOFORMAT* pVideoFormat, IMFVideoMediaType** ppIVideoMediaType);
+        public static extern HRESULT MFCreateVideoMediaType([NativeTypeName("const MFVIDEOFORMAT *")] MFVIDEOFORMAT* pVideoFormat, IMFVideoMediaType** ppIVideoMediaType);
 
         [DllImport("mfplat", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int MFCreateVideoMediaTypeFromSubtype([NativeTypeName("const GUID *")] Guid* pAMSubtype, IMFVideoMediaType** ppIVideoMediaType);
+        public static extern HRESULT MFCreateVideoMediaTypeFromSubtype([NativeTypeName("const GUID *")] Guid* pAMSubtype, IMFVideoMediaType** ppIVideoMediaType);
 
         [DllImport("evr", ExactSpelling = true)]
         public static extern BOOL MFIsFormatYUV([NativeTypeName("DWORD")] uint Format);
 
         [DllImport("mfplat", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int MFCreateVideoMediaTypeFromBitMapInfoHeader([NativeTypeName("const BITMAPINFOHEADER *")] BITMAPINFOHEADER* pbmihBitMapInfoHeader, [NativeTypeName("DWORD")] uint dwPixelAspectRatioX, [NativeTypeName("DWORD")] uint dwPixelAspectRatioY, MFVideoInterlaceMode InterlaceMode, [NativeTypeName("QWORD")] ulong VideoFlags, [NativeTypeName("QWORD")] ulong qwFramesPerSecondNumerator, [NativeTypeName("QWORD")] ulong qwFramesPerSecondDenominator, [NativeTypeName("DWORD")] uint dwMaxBitRate, IMFVideoMediaType** ppIVideoMediaType);
+        public static extern HRESULT MFCreateVideoMediaTypeFromBitMapInfoHeader([NativeTypeName("const BITMAPINFOHEADER *")] BITMAPINFOHEADER* pbmihBitMapInfoHeader, [NativeTypeName("DWORD")] uint dwPixelAspectRatioX, [NativeTypeName("DWORD")] uint dwPixelAspectRatioY, MFVideoInterlaceMode InterlaceMode, [NativeTypeName("QWORD")] ulong VideoFlags, [NativeTypeName("QWORD")] ulong qwFramesPerSecondNumerator, [NativeTypeName("QWORD")] ulong qwFramesPerSecondDenominator, [NativeTypeName("DWORD")] uint dwMaxBitRate, IMFVideoMediaType** ppIVideoMediaType);
 
         [DllImport("mfplat", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int MFGetStrideForBitmapInfoHeader([NativeTypeName("DWORD")] uint format, [NativeTypeName("DWORD")] uint dwWidth, [NativeTypeName("LONG *")] int* pStride);
+        public static extern HRESULT MFGetStrideForBitmapInfoHeader([NativeTypeName("DWORD")] uint format, [NativeTypeName("DWORD")] uint dwWidth, [NativeTypeName("LONG *")] int* pStride);
 
         [DllImport("mfplat", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int MFGetPlaneSize([NativeTypeName("DWORD")] uint format, [NativeTypeName("DWORD")] uint dwWidth, [NativeTypeName("DWORD")] uint dwHeight, [NativeTypeName("DWORD *")] uint* pdwPlaneSize);
+        public static extern HRESULT MFGetPlaneSize([NativeTypeName("DWORD")] uint format, [NativeTypeName("DWORD")] uint dwWidth, [NativeTypeName("DWORD")] uint dwHeight, [NativeTypeName("DWORD *")] uint* pdwPlaneSize);
 
         [DllImport("mfplat", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int MFCreateVideoMediaTypeFromBitMapInfoHeaderEx([NativeTypeName("const BITMAPINFOHEADER *")] BITMAPINFOHEADER* pbmihBitMapInfoHeader, [NativeTypeName("UINT32")] uint cbBitMapInfoHeader, [NativeTypeName("DWORD")] uint dwPixelAspectRatioX, [NativeTypeName("DWORD")] uint dwPixelAspectRatioY, MFVideoInterlaceMode InterlaceMode, [NativeTypeName("QWORD")] ulong VideoFlags, [NativeTypeName("DWORD")] uint dwFramesPerSecondNumerator, [NativeTypeName("DWORD")] uint dwFramesPerSecondDenominator, [NativeTypeName("DWORD")] uint dwMaxBitRate, IMFVideoMediaType** ppIVideoMediaType);
+        public static extern HRESULT MFCreateVideoMediaTypeFromBitMapInfoHeaderEx([NativeTypeName("const BITMAPINFOHEADER *")] BITMAPINFOHEADER* pbmihBitMapInfoHeader, [NativeTypeName("UINT32")] uint cbBitMapInfoHeader, [NativeTypeName("DWORD")] uint dwPixelAspectRatioX, [NativeTypeName("DWORD")] uint dwPixelAspectRatioY, MFVideoInterlaceMode InterlaceMode, [NativeTypeName("QWORD")] ulong VideoFlags, [NativeTypeName("DWORD")] uint dwFramesPerSecondNumerator, [NativeTypeName("DWORD")] uint dwFramesPerSecondDenominator, [NativeTypeName("DWORD")] uint dwMaxBitRate, IMFVideoMediaType** ppIVideoMediaType);
 
         [DllImport("mfplat", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int MFCreateMediaTypeFromRepresentation([NativeTypeName("GUID")] Guid guidRepresentation, [NativeTypeName("LPVOID")] void* pvRepresentation, IMFMediaType** ppIMediaType);
+        public static extern HRESULT MFCreateMediaTypeFromRepresentation([NativeTypeName("GUID")] Guid guidRepresentation, [NativeTypeName("LPVOID")] void* pvRepresentation, IMFMediaType** ppIMediaType);
 
         [DllImport("mfplat", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int MFCreateAudioMediaType([NativeTypeName("const WAVEFORMATEX *")] WAVEFORMATEX* pAudioFormat, IMFAudioMediaType** ppIAudioMediaType);
+        public static extern HRESULT MFCreateAudioMediaType([NativeTypeName("const WAVEFORMATEX *")] WAVEFORMATEX* pAudioFormat, IMFAudioMediaType** ppIAudioMediaType);
 
         [DllImport("mfplat", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
         public static extern uint MFGetUncompressedVideoFormat([NativeTypeName("const MFVIDEOFORMAT *")] MFVIDEOFORMAT* pVideoFormat);
 
         [DllImport("mfplat", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int MFInitVideoFormat(MFVIDEOFORMAT* pVideoFormat, MFStandardVideoFormat type);
+        public static extern HRESULT MFInitVideoFormat(MFVIDEOFORMAT* pVideoFormat, MFStandardVideoFormat type);
 
         [DllImport("mfplat", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int MFInitVideoFormat_RGB(MFVIDEOFORMAT* pVideoFormat, [NativeTypeName("DWORD")] uint dwWidth, [NativeTypeName("DWORD")] uint dwHeight, [NativeTypeName("DWORD")] uint D3Dfmt);
+        public static extern HRESULT MFInitVideoFormat_RGB(MFVIDEOFORMAT* pVideoFormat, [NativeTypeName("DWORD")] uint dwWidth, [NativeTypeName("DWORD")] uint dwHeight, [NativeTypeName("DWORD")] uint D3Dfmt);
 
         [DllImport("mfplat", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int MFConvertColorInfoToDXVA([NativeTypeName("DWORD *")] uint* pdwToDXVA, [NativeTypeName("const MFVIDEOFORMAT *")] MFVIDEOFORMAT* pFromFormat);
+        public static extern HRESULT MFConvertColorInfoToDXVA([NativeTypeName("DWORD *")] uint* pdwToDXVA, [NativeTypeName("const MFVIDEOFORMAT *")] MFVIDEOFORMAT* pFromFormat);
 
         [DllImport("mfplat", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int MFConvertColorInfoFromDXVA(MFVIDEOFORMAT* pToFormat, [NativeTypeName("DWORD")] uint dwFromDXVA);
+        public static extern HRESULT MFConvertColorInfoFromDXVA(MFVIDEOFORMAT* pToFormat, [NativeTypeName("DWORD")] uint dwFromDXVA);
 
         [DllImport("mfplat", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int MFCopyImage([NativeTypeName("BYTE *")] byte* pDest, [NativeTypeName("LONG")] int lDestStride, [NativeTypeName("const BYTE *")] byte* pSrc, [NativeTypeName("LONG")] int lSrcStride, [NativeTypeName("DWORD")] uint dwWidthInBytes, [NativeTypeName("DWORD")] uint dwLines);
+        public static extern HRESULT MFCopyImage([NativeTypeName("BYTE *")] byte* pDest, [NativeTypeName("LONG")] int lDestStride, [NativeTypeName("const BYTE *")] byte* pSrc, [NativeTypeName("LONG")] int lSrcStride, [NativeTypeName("DWORD")] uint dwWidthInBytes, [NativeTypeName("DWORD")] uint dwLines);
 
         [DllImport("mfplat", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int MFConvertFromFP16Array(float* pDest, [NativeTypeName("const WORD *")] ushort* pSrc, [NativeTypeName("DWORD")] uint dwCount);
+        public static extern HRESULT MFConvertFromFP16Array(float* pDest, [NativeTypeName("const WORD *")] ushort* pSrc, [NativeTypeName("DWORD")] uint dwCount);
 
         [DllImport("mfplat", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int MFConvertToFP16Array([NativeTypeName("WORD *")] ushort* pDest, [NativeTypeName("const float *")] float* pSrc, [NativeTypeName("DWORD")] uint dwCount);
+        public static extern HRESULT MFConvertToFP16Array([NativeTypeName("WORD *")] ushort* pDest, [NativeTypeName("const float *")] float* pSrc, [NativeTypeName("DWORD")] uint dwCount);
 
         [DllImport("mfplat", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int MFCreate2DMediaBuffer([NativeTypeName("DWORD")] uint dwWidth, [NativeTypeName("DWORD")] uint dwHeight, [NativeTypeName("DWORD")] uint dwFourCC, BOOL fBottomUp, IMFMediaBuffer** ppBuffer);
+        public static extern HRESULT MFCreate2DMediaBuffer([NativeTypeName("DWORD")] uint dwWidth, [NativeTypeName("DWORD")] uint dwHeight, [NativeTypeName("DWORD")] uint dwFourCC, BOOL fBottomUp, IMFMediaBuffer** ppBuffer);
 
         [DllImport("mfplat", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int MFCreateMediaBufferFromMediaType(IMFMediaType* pMediaType, [NativeTypeName("LONGLONG")] long llDuration, [NativeTypeName("DWORD")] uint dwMinLength, [NativeTypeName("DWORD")] uint dwMinAlignment, IMFMediaBuffer** ppBuffer);
+        public static extern HRESULT MFCreateMediaBufferFromMediaType(IMFMediaType* pMediaType, [NativeTypeName("LONGLONG")] long llDuration, [NativeTypeName("DWORD")] uint dwMinLength, [NativeTypeName("DWORD")] uint dwMinAlignment, IMFMediaBuffer** ppBuffer);
 
         [return: NativeTypeName("UINT32")]
         public static uint HI32([NativeTypeName("UINT64")] ulong unPacked)
@@ -10850,7 +10739,7 @@ namespace TerraFX.Interop
         {
             uint unRet;
 
-            if ((((int)(pAttributes->GetUINT32(guidKey, &unRet))) < 0))
+            if ((((HRESULT)(pAttributes->GetUINT32(guidKey, &unRet))) < 0))
             {
                 unRet = unDefault;
             }
@@ -10863,7 +10752,7 @@ namespace TerraFX.Interop
         {
             ulong unRet;
 
-            if ((((int)(pAttributes->GetUINT64(guidKey, &unRet))) < 0))
+            if ((((HRESULT)(pAttributes->GetUINT64(guidKey, &unRet))) < 0))
             {
                 unRet = unDefault;
             }
@@ -10875,7 +10764,7 @@ namespace TerraFX.Interop
         {
             double fRet;
 
-            if ((((int)(pAttributes->GetDouble(guidKey, &fRet))) < 0))
+            if ((((HRESULT)(pAttributes->GetDouble(guidKey, &fRet))) < 0))
             {
                 fRet = fDefault;
             }
@@ -10883,14 +10772,13 @@ namespace TerraFX.Interop
             return fRet;
         }
 
-        [return: NativeTypeName("HRESULT")]
-        public static int MFGetAttribute2UINT32asUINT64(IMFAttributes* pAttributes, [NativeTypeName("const GUID &")] Guid* guidKey, [NativeTypeName("UINT32 *")] uint* punHigh32, [NativeTypeName("UINT32 *")] uint* punLow32)
+        public static HRESULT MFGetAttribute2UINT32asUINT64(IMFAttributes* pAttributes, [NativeTypeName("const GUID &")] Guid* guidKey, [NativeTypeName("UINT32 *")] uint* punHigh32, [NativeTypeName("UINT32 *")] uint* punLow32)
         {
             ulong unPacked;
-            int hr = ((int)(0));
+            HRESULT hr = ((HRESULT)(0));
 
             hr = pAttributes->GetUINT64(guidKey, &unPacked);
-            if ((((int)(hr)) < 0))
+            if ((((HRESULT)(hr)) < 0))
             {
                 return hr;
             }
@@ -10899,39 +10787,33 @@ namespace TerraFX.Interop
             return hr;
         }
 
-        [return: NativeTypeName("HRESULT")]
-        public static int MFSetAttribute2UINT32asUINT64(IMFAttributes* pAttributes, [NativeTypeName("const GUID &")] Guid* guidKey, [NativeTypeName("UINT32")] uint unHigh32, [NativeTypeName("UINT32")] uint unLow32)
+        public static HRESULT MFSetAttribute2UINT32asUINT64(IMFAttributes* pAttributes, [NativeTypeName("const GUID &")] Guid* guidKey, [NativeTypeName("UINT32")] uint unHigh32, [NativeTypeName("UINT32")] uint unLow32)
         {
             return pAttributes->SetUINT64(guidKey, Pack2UINT32AsUINT64(unHigh32, unLow32));
         }
 
-        [return: NativeTypeName("HRESULT")]
-        public static int MFGetAttributeRatio(IMFAttributes* pAttributes, [NativeTypeName("const GUID &")] Guid* guidKey, [NativeTypeName("UINT32 *")] uint* punNumerator, [NativeTypeName("UINT32 *")] uint* punDenominator)
+        public static HRESULT MFGetAttributeRatio(IMFAttributes* pAttributes, [NativeTypeName("const GUID &")] Guid* guidKey, [NativeTypeName("UINT32 *")] uint* punNumerator, [NativeTypeName("UINT32 *")] uint* punDenominator)
         {
             return MFGetAttribute2UINT32asUINT64(pAttributes, guidKey, punNumerator, punDenominator);
         }
 
-        [return: NativeTypeName("HRESULT")]
-        public static int MFGetAttributeSize(IMFAttributes* pAttributes, [NativeTypeName("const GUID &")] Guid* guidKey, [NativeTypeName("UINT32 *")] uint* punWidth, [NativeTypeName("UINT32 *")] uint* punHeight)
+        public static HRESULT MFGetAttributeSize(IMFAttributes* pAttributes, [NativeTypeName("const GUID &")] Guid* guidKey, [NativeTypeName("UINT32 *")] uint* punWidth, [NativeTypeName("UINT32 *")] uint* punHeight)
         {
             return MFGetAttribute2UINT32asUINT64(pAttributes, guidKey, punWidth, punHeight);
         }
 
-        [return: NativeTypeName("HRESULT")]
-        public static int MFSetAttributeRatio(IMFAttributes* pAttributes, [NativeTypeName("const GUID &")] Guid* guidKey, [NativeTypeName("UINT32")] uint unNumerator, [NativeTypeName("UINT32")] uint unDenominator)
+        public static HRESULT MFSetAttributeRatio(IMFAttributes* pAttributes, [NativeTypeName("const GUID &")] Guid* guidKey, [NativeTypeName("UINT32")] uint unNumerator, [NativeTypeName("UINT32")] uint unDenominator)
         {
             return MFSetAttribute2UINT32asUINT64(pAttributes, guidKey, unNumerator, unDenominator);
         }
 
-        [return: NativeTypeName("HRESULT")]
-        public static int MFSetAttributeSize(IMFAttributes* pAttributes, [NativeTypeName("const GUID &")] Guid* guidKey, [NativeTypeName("UINT32")] uint unWidth, [NativeTypeName("UINT32")] uint unHeight)
+        public static HRESULT MFSetAttributeSize(IMFAttributes* pAttributes, [NativeTypeName("const GUID &")] Guid* guidKey, [NativeTypeName("UINT32")] uint unWidth, [NativeTypeName("UINT32")] uint unHeight)
         {
             return MFSetAttribute2UINT32asUINT64(pAttributes, guidKey, unWidth, unHeight);
         }
 
         [DllImport("mfplat", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int MFCreateCollection(IMFCollection** ppIMFCollection);
+        public static extern HRESULT MFCreateCollection(IMFCollection** ppIMFCollection);
 
         [DllImport("mfplat", ExactSpelling = true)]
         public static extern void* MFHeapAlloc([NativeTypeName("size_t")] nuint nSize, [NativeTypeName("ULONG")] uint dwFlags, [NativeTypeName("char *")] sbyte* pszFile, int line, EAllocationType eat);
@@ -10969,8 +10851,7 @@ namespace TerraFX.Interop
         public static extern long MFllMulDiv([NativeTypeName("LONGLONG")] long a, [NativeTypeName("LONGLONG")] long b, [NativeTypeName("LONGLONG")] long c, [NativeTypeName("LONGLONG")] long d);
 
         [DllImport("mfplat", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int MFGetContentProtectionSystemCLSID([NativeTypeName("const GUID &")] Guid* guidProtectionSystemID, [NativeTypeName("CLSID *")] Guid* pclsid);
+        public static extern HRESULT MFGetContentProtectionSystemCLSID([NativeTypeName("const GUID &")] Guid* guidProtectionSystemID, [NativeTypeName("CLSID *")] Guid* pclsid);
 
         [NativeTypeName("const GUID")]
         public static ref readonly Guid MF_DEVICESTREAM_ATTRIBUTE_FACEAUTH_CAPABILITY
@@ -11023,12 +10904,10 @@ namespace TerraFX.Interop
         }
 
         [DllImport("mfplat", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int MFCombineSamples(IMFSample* pSample, IMFSample* pSampleToAdd, [NativeTypeName("DWORD")] uint dwMaxMergedDurationInMS, BOOL* pMerged);
+        public static extern HRESULT MFCombineSamples(IMFSample* pSample, IMFSample* pSampleToAdd, [NativeTypeName("DWORD")] uint dwMaxMergedDurationInMS, BOOL* pMerged);
 
         [DllImport("mfplat", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int MFSplitSample(IMFSample* pSample, IMFSample** pOutputSamples, [NativeTypeName("DWORD")] uint dwOutputSampleMaxCount, [NativeTypeName("DWORD *")] uint* pdwOutputSampleCount);
+        public static extern HRESULT MFSplitSample(IMFSample* pSample, IMFSample** pOutputSamples, [NativeTypeName("DWORD")] uint dwOutputSampleMaxCount, [NativeTypeName("DWORD *")] uint* pdwOutputSampleCount);
 
         [NativeTypeName("#define MF_SDK_VERSION 0x0002")]
         public const int MF_SDK_VERSION = 0x0002;

@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IRestrictedErrorInfo*, Guid*, void**, int>)(lpVtbl[0]))((IRestrictedErrorInfo*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,16 +41,14 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetErrorDetails([NativeTypeName("BSTR *")] ushort** description, [NativeTypeName("HRESULT *")] int* error, [NativeTypeName("BSTR *")] ushort** restrictedDescription, [NativeTypeName("BSTR *")] ushort** capabilitySid)
+        public HRESULT GetErrorDetails([NativeTypeName("BSTR *")] ushort** description, HRESULT* error, [NativeTypeName("BSTR *")] ushort** restrictedDescription, [NativeTypeName("BSTR *")] ushort** capabilitySid)
         {
-            return ((delegate* unmanaged<IRestrictedErrorInfo*, ushort**, int*, ushort**, ushort**, int>)(lpVtbl[3]))((IRestrictedErrorInfo*)Unsafe.AsPointer(ref this), description, error, restrictedDescription, capabilitySid);
+            return ((delegate* unmanaged<IRestrictedErrorInfo*, ushort**, HRESULT*, ushort**, ushort**, int>)(lpVtbl[3]))((IRestrictedErrorInfo*)Unsafe.AsPointer(ref this), description, error, restrictedDescription, capabilitySid);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetReference([NativeTypeName("BSTR *")] ushort** reference)
+        public HRESULT GetReference([NativeTypeName("BSTR *")] ushort** reference)
         {
             return ((delegate* unmanaged<IRestrictedErrorInfo*, ushort**, int>)(lpVtbl[4]))((IRestrictedErrorInfo*)Unsafe.AsPointer(ref this), reference);
         }

@@ -8,7 +8,7 @@ namespace TerraFX.Interop
     public unsafe partial struct WS_CERTIFICATE_VALIDATION_CALLBACK_CONTEXT
     {
         [NativeTypeName("WS_CERTIFICATE_VALIDATION_CALLBACK")]
-        public delegate* unmanaged<CERT_CONTEXT*, void*, int> callback;
+        public delegate* unmanaged<CERT_CONTEXT*, void*, HRESULT> callback;
 
         public void* state;
     }

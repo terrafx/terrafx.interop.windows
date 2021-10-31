@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IDirectManipulationUpdateManager*, Guid*, void**, int>)(lpVtbl[0]))((IDirectManipulationUpdateManager*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,24 +41,21 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int RegisterWaitHandleCallback([NativeTypeName("HANDLE")] IntPtr handle, IDirectManipulationUpdateHandler* eventHandler, [NativeTypeName("DWORD *")] uint* cookie)
+        public HRESULT RegisterWaitHandleCallback([NativeTypeName("HANDLE")] IntPtr handle, IDirectManipulationUpdateHandler* eventHandler, [NativeTypeName("DWORD *")] uint* cookie)
         {
             return ((delegate* unmanaged<IDirectManipulationUpdateManager*, IntPtr, IDirectManipulationUpdateHandler*, uint*, int>)(lpVtbl[3]))((IDirectManipulationUpdateManager*)Unsafe.AsPointer(ref this), handle, eventHandler, cookie);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int UnregisterWaitHandleCallback([NativeTypeName("DWORD")] uint cookie)
+        public HRESULT UnregisterWaitHandleCallback([NativeTypeName("DWORD")] uint cookie)
         {
             return ((delegate* unmanaged<IDirectManipulationUpdateManager*, uint, int>)(lpVtbl[4]))((IDirectManipulationUpdateManager*)Unsafe.AsPointer(ref this), cookie);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int Update(IDirectManipulationFrameInfoProvider* frameInfo)
+        public HRESULT Update(IDirectManipulationFrameInfoProvider* frameInfo)
         {
             return ((delegate* unmanaged<IDirectManipulationUpdateManager*, IDirectManipulationFrameInfoProvider*, int>)(lpVtbl[5]))((IDirectManipulationUpdateManager*)Unsafe.AsPointer(ref this), frameInfo);
         }

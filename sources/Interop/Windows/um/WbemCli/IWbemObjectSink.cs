@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IWbemObjectSink*, Guid*, void**, int>)(lpVtbl[0]))((IWbemObjectSink*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,18 +41,16 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int Indicate([NativeTypeName("long")] int lObjectCount, IWbemClassObject** apObjArray)
+        public HRESULT Indicate([NativeTypeName("long")] int lObjectCount, IWbemClassObject** apObjArray)
         {
             return ((delegate* unmanaged<IWbemObjectSink*, int, IWbemClassObject**, int>)(lpVtbl[3]))((IWbemObjectSink*)Unsafe.AsPointer(ref this), lObjectCount, apObjArray);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetStatus([NativeTypeName("long")] int lFlags, [NativeTypeName("HRESULT")] int hResult, [NativeTypeName("BSTR")] ushort* strParam, IWbemClassObject* pObjParam)
+        public HRESULT SetStatus([NativeTypeName("long")] int lFlags, HRESULT hResult, [NativeTypeName("BSTR")] ushort* strParam, IWbemClassObject* pObjParam)
         {
-            return ((delegate* unmanaged<IWbemObjectSink*, int, int, ushort*, IWbemClassObject*, int>)(lpVtbl[4]))((IWbemObjectSink*)Unsafe.AsPointer(ref this), lFlags, hResult, strParam, pObjParam);
+            return ((delegate* unmanaged<IWbemObjectSink*, int, HRESULT, ushort*, IWbemClassObject*, int>)(lpVtbl[4]))((IWbemObjectSink*)Unsafe.AsPointer(ref this), lFlags, hResult, strParam, pObjParam);
         }
     }
 }

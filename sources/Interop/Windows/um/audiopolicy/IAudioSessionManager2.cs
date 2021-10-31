@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IAudioSessionManager2*, Guid*, void**, int>)(lpVtbl[0]))((IAudioSessionManager2*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,56 +41,49 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetAudioSessionControl([NativeTypeName("LPCGUID")] Guid* AudioSessionGuid, [NativeTypeName("DWORD")] uint StreamFlags, IAudioSessionControl** SessionControl)
+        public HRESULT GetAudioSessionControl([NativeTypeName("LPCGUID")] Guid* AudioSessionGuid, [NativeTypeName("DWORD")] uint StreamFlags, IAudioSessionControl** SessionControl)
         {
             return ((delegate* unmanaged<IAudioSessionManager2*, Guid*, uint, IAudioSessionControl**, int>)(lpVtbl[3]))((IAudioSessionManager2*)Unsafe.AsPointer(ref this), AudioSessionGuid, StreamFlags, SessionControl);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetSimpleAudioVolume([NativeTypeName("LPCGUID")] Guid* AudioSessionGuid, [NativeTypeName("DWORD")] uint StreamFlags, ISimpleAudioVolume** AudioVolume)
+        public HRESULT GetSimpleAudioVolume([NativeTypeName("LPCGUID")] Guid* AudioSessionGuid, [NativeTypeName("DWORD")] uint StreamFlags, ISimpleAudioVolume** AudioVolume)
         {
             return ((delegate* unmanaged<IAudioSessionManager2*, Guid*, uint, ISimpleAudioVolume**, int>)(lpVtbl[4]))((IAudioSessionManager2*)Unsafe.AsPointer(ref this), AudioSessionGuid, StreamFlags, AudioVolume);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetSessionEnumerator(IAudioSessionEnumerator** SessionEnum)
+        public HRESULT GetSessionEnumerator(IAudioSessionEnumerator** SessionEnum)
         {
             return ((delegate* unmanaged<IAudioSessionManager2*, IAudioSessionEnumerator**, int>)(lpVtbl[5]))((IAudioSessionManager2*)Unsafe.AsPointer(ref this), SessionEnum);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int RegisterSessionNotification(IAudioSessionNotification* SessionNotification)
+        public HRESULT RegisterSessionNotification(IAudioSessionNotification* SessionNotification)
         {
             return ((delegate* unmanaged<IAudioSessionManager2*, IAudioSessionNotification*, int>)(lpVtbl[6]))((IAudioSessionManager2*)Unsafe.AsPointer(ref this), SessionNotification);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        [return: NativeTypeName("HRESULT")]
-        public int UnregisterSessionNotification(IAudioSessionNotification* SessionNotification)
+        public HRESULT UnregisterSessionNotification(IAudioSessionNotification* SessionNotification)
         {
             return ((delegate* unmanaged<IAudioSessionManager2*, IAudioSessionNotification*, int>)(lpVtbl[7]))((IAudioSessionManager2*)Unsafe.AsPointer(ref this), SessionNotification);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        [return: NativeTypeName("HRESULT")]
-        public int RegisterDuckNotification([NativeTypeName("LPCWSTR")] ushort* sessionID, IAudioVolumeDuckNotification* duckNotification)
+        public HRESULT RegisterDuckNotification([NativeTypeName("LPCWSTR")] ushort* sessionID, IAudioVolumeDuckNotification* duckNotification)
         {
             return ((delegate* unmanaged<IAudioSessionManager2*, ushort*, IAudioVolumeDuckNotification*, int>)(lpVtbl[8]))((IAudioSessionManager2*)Unsafe.AsPointer(ref this), sessionID, duckNotification);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        [return: NativeTypeName("HRESULT")]
-        public int UnregisterDuckNotification(IAudioVolumeDuckNotification* duckNotification)
+        public HRESULT UnregisterDuckNotification(IAudioVolumeDuckNotification* duckNotification)
         {
             return ((delegate* unmanaged<IAudioSessionManager2*, IAudioVolumeDuckNotification*, int>)(lpVtbl[9]))((IAudioSessionManager2*)Unsafe.AsPointer(ref this), duckNotification);
         }

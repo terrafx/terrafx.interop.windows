@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<ID3D12VideoExtensionCommand*, Guid*, void**, int>)(lpVtbl[0]))((ID3D12VideoExtensionCommand*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,40 +41,35 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetPrivateData([NativeTypeName("const GUID &")] Guid* guid, [NativeTypeName("UINT *")] uint* pDataSize, void* pData)
+        public HRESULT GetPrivateData([NativeTypeName("const GUID &")] Guid* guid, [NativeTypeName("UINT *")] uint* pDataSize, void* pData)
         {
             return ((delegate* unmanaged<ID3D12VideoExtensionCommand*, Guid*, uint*, void*, int>)(lpVtbl[3]))((ID3D12VideoExtensionCommand*)Unsafe.AsPointer(ref this), guid, pDataSize, pData);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetPrivateData([NativeTypeName("const GUID &")] Guid* guid, [NativeTypeName("UINT")] uint DataSize, [NativeTypeName("const void *")] void* pData)
+        public HRESULT SetPrivateData([NativeTypeName("const GUID &")] Guid* guid, [NativeTypeName("UINT")] uint DataSize, [NativeTypeName("const void *")] void* pData)
         {
             return ((delegate* unmanaged<ID3D12VideoExtensionCommand*, Guid*, uint, void*, int>)(lpVtbl[4]))((ID3D12VideoExtensionCommand*)Unsafe.AsPointer(ref this), guid, DataSize, pData);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetPrivateDataInterface([NativeTypeName("const GUID &")] Guid* guid, [NativeTypeName("const IUnknown *")] IUnknown* pData)
+        public HRESULT SetPrivateDataInterface([NativeTypeName("const GUID &")] Guid* guid, [NativeTypeName("const IUnknown *")] IUnknown* pData)
         {
             return ((delegate* unmanaged<ID3D12VideoExtensionCommand*, Guid*, IUnknown*, int>)(lpVtbl[5]))((ID3D12VideoExtensionCommand*)Unsafe.AsPointer(ref this), guid, pData);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetName([NativeTypeName("LPCWSTR")] ushort* Name)
+        public HRESULT SetName([NativeTypeName("LPCWSTR")] ushort* Name)
         {
             return ((delegate* unmanaged<ID3D12VideoExtensionCommand*, ushort*, int>)(lpVtbl[6]))((ID3D12VideoExtensionCommand*)Unsafe.AsPointer(ref this), Name);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetDevice([NativeTypeName("const IID &")] Guid* riid, void** ppvDevice)
+        public HRESULT GetDevice([NativeTypeName("const IID &")] Guid* riid, void** ppvDevice)
         {
             return ((delegate* unmanaged<ID3D12VideoExtensionCommand*, Guid*, void**, int>)(lpVtbl[7]))((ID3D12VideoExtensionCommand*)Unsafe.AsPointer(ref this), riid, ppvDevice);
         }
@@ -90,8 +84,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetProtectedResourceSession([NativeTypeName("const IID &")] Guid* riid, void** ppProtectedSession)
+        public HRESULT GetProtectedResourceSession([NativeTypeName("const IID &")] Guid* riid, void** ppProtectedSession)
         {
             return ((delegate* unmanaged<ID3D12VideoExtensionCommand*, Guid*, void**, int>)(lpVtbl[9]))((ID3D12VideoExtensionCommand*)Unsafe.AsPointer(ref this), riid, ppProtectedSession);
         }

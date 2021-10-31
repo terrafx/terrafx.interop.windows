@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IFileDialogControlEvents*, Guid*, void**, int>)(lpVtbl[0]))((IFileDialogControlEvents*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,32 +41,28 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int OnItemSelected(IFileDialogCustomize* pfdc, [NativeTypeName("DWORD")] uint dwIDCtl, [NativeTypeName("DWORD")] uint dwIDItem)
+        public HRESULT OnItemSelected(IFileDialogCustomize* pfdc, [NativeTypeName("DWORD")] uint dwIDCtl, [NativeTypeName("DWORD")] uint dwIDItem)
         {
             return ((delegate* unmanaged<IFileDialogControlEvents*, IFileDialogCustomize*, uint, uint, int>)(lpVtbl[3]))((IFileDialogControlEvents*)Unsafe.AsPointer(ref this), pfdc, dwIDCtl, dwIDItem);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int OnButtonClicked(IFileDialogCustomize* pfdc, [NativeTypeName("DWORD")] uint dwIDCtl)
+        public HRESULT OnButtonClicked(IFileDialogCustomize* pfdc, [NativeTypeName("DWORD")] uint dwIDCtl)
         {
             return ((delegate* unmanaged<IFileDialogControlEvents*, IFileDialogCustomize*, uint, int>)(lpVtbl[4]))((IFileDialogControlEvents*)Unsafe.AsPointer(ref this), pfdc, dwIDCtl);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int OnCheckButtonToggled(IFileDialogCustomize* pfdc, [NativeTypeName("DWORD")] uint dwIDCtl, BOOL bChecked)
+        public HRESULT OnCheckButtonToggled(IFileDialogCustomize* pfdc, [NativeTypeName("DWORD")] uint dwIDCtl, BOOL bChecked)
         {
             return ((delegate* unmanaged<IFileDialogControlEvents*, IFileDialogCustomize*, uint, BOOL, int>)(lpVtbl[5]))((IFileDialogControlEvents*)Unsafe.AsPointer(ref this), pfdc, dwIDCtl, bChecked);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int OnControlActivating(IFileDialogCustomize* pfdc, [NativeTypeName("DWORD")] uint dwIDCtl)
+        public HRESULT OnControlActivating(IFileDialogCustomize* pfdc, [NativeTypeName("DWORD")] uint dwIDCtl)
         {
             return ((delegate* unmanaged<IFileDialogControlEvents*, IFileDialogCustomize*, uint, int>)(lpVtbl[6]))((IFileDialogControlEvents*)Unsafe.AsPointer(ref this), pfdc, dwIDCtl);
         }

@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<ITfContextOwner*, Guid*, void**, int>)(lpVtbl[0]))((ITfContextOwner*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,48 +41,42 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetACPFromPoint([NativeTypeName("const POINT *")] POINT* ptScreen, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LONG *")] int* pacp)
+        public HRESULT GetACPFromPoint([NativeTypeName("const POINT *")] POINT* ptScreen, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LONG *")] int* pacp)
         {
             return ((delegate* unmanaged<ITfContextOwner*, POINT*, uint, int*, int>)(lpVtbl[3]))((ITfContextOwner*)Unsafe.AsPointer(ref this), ptScreen, dwFlags, pacp);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetTextExt([NativeTypeName("LONG")] int acpStart, [NativeTypeName("LONG")] int acpEnd, RECT* prc, BOOL* pfClipped)
+        public HRESULT GetTextExt([NativeTypeName("LONG")] int acpStart, [NativeTypeName("LONG")] int acpEnd, RECT* prc, BOOL* pfClipped)
         {
             return ((delegate* unmanaged<ITfContextOwner*, int, int, RECT*, BOOL*, int>)(lpVtbl[4]))((ITfContextOwner*)Unsafe.AsPointer(ref this), acpStart, acpEnd, prc, pfClipped);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetScreenExt(RECT* prc)
+        public HRESULT GetScreenExt(RECT* prc)
         {
             return ((delegate* unmanaged<ITfContextOwner*, RECT*, int>)(lpVtbl[5]))((ITfContextOwner*)Unsafe.AsPointer(ref this), prc);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetStatus([NativeTypeName("TF_STATUS *")] TS_STATUS* pdcs)
+        public HRESULT GetStatus([NativeTypeName("TF_STATUS *")] TS_STATUS* pdcs)
         {
             return ((delegate* unmanaged<ITfContextOwner*, TS_STATUS*, int>)(lpVtbl[6]))((ITfContextOwner*)Unsafe.AsPointer(ref this), pdcs);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetWnd([NativeTypeName("HWND *")] IntPtr* phwnd)
+        public HRESULT GetWnd([NativeTypeName("HWND *")] IntPtr* phwnd)
         {
             return ((delegate* unmanaged<ITfContextOwner*, IntPtr*, int>)(lpVtbl[7]))((ITfContextOwner*)Unsafe.AsPointer(ref this), phwnd);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetAttribute([NativeTypeName("const GUID &")] Guid* rguidAttribute, VARIANT* pvarValue)
+        public HRESULT GetAttribute([NativeTypeName("const GUID &")] Guid* rguidAttribute, VARIANT* pvarValue)
         {
             return ((delegate* unmanaged<ITfContextOwner*, Guid*, VARIANT*, int>)(lpVtbl[8]))((ITfContextOwner*)Unsafe.AsPointer(ref this), rguidAttribute, pvarValue);
         }

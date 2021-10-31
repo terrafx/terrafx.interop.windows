@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IMFMediaEngineSupportsSourceTransfer*, Guid*, void**, int>)(lpVtbl[0]))((IMFMediaEngineSupportsSourceTransfer*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,24 +41,21 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int ShouldTransferSource(BOOL* pfShouldTransfer)
+        public HRESULT ShouldTransferSource(BOOL* pfShouldTransfer)
         {
             return ((delegate* unmanaged<IMFMediaEngineSupportsSourceTransfer*, BOOL*, int>)(lpVtbl[3]))((IMFMediaEngineSupportsSourceTransfer*)Unsafe.AsPointer(ref this), pfShouldTransfer);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int DetachMediaSource(IMFByteStream** ppByteStream, IMFMediaSource** ppMediaSource, IMFMediaSourceExtension** ppMSE)
+        public HRESULT DetachMediaSource(IMFByteStream** ppByteStream, IMFMediaSource** ppMediaSource, IMFMediaSourceExtension** ppMSE)
         {
             return ((delegate* unmanaged<IMFMediaEngineSupportsSourceTransfer*, IMFByteStream**, IMFMediaSource**, IMFMediaSourceExtension**, int>)(lpVtbl[4]))((IMFMediaEngineSupportsSourceTransfer*)Unsafe.AsPointer(ref this), ppByteStream, ppMediaSource, ppMSE);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int AttachMediaSource(IMFByteStream* pByteStream, IMFMediaSource* pMediaSource, IMFMediaSourceExtension* pMSE)
+        public HRESULT AttachMediaSource(IMFByteStream* pByteStream, IMFMediaSource* pMediaSource, IMFMediaSourceExtension* pMSE)
         {
             return ((delegate* unmanaged<IMFMediaEngineSupportsSourceTransfer*, IMFByteStream*, IMFMediaSource*, IMFMediaSourceExtension*, int>)(lpVtbl[5]))((IMFMediaEngineSupportsSourceTransfer*)Unsafe.AsPointer(ref this), pByteStream, pMediaSource, pMSE);
         }

@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IMFContentDecryptionModuleFactory*, Guid*, void**, int>)(lpVtbl[0]))((IMFContentDecryptionModuleFactory*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -49,8 +48,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int CreateContentDecryptionModuleAccess([NativeTypeName("LPCWSTR")] ushort* keySystem, IPropertyStore** configurations, [NativeTypeName("DWORD")] uint numConfigurations, IMFContentDecryptionModuleAccess** contentDecryptionModuleAccess)
+        public HRESULT CreateContentDecryptionModuleAccess([NativeTypeName("LPCWSTR")] ushort* keySystem, IPropertyStore** configurations, [NativeTypeName("DWORD")] uint numConfigurations, IMFContentDecryptionModuleAccess** contentDecryptionModuleAccess)
         {
             return ((delegate* unmanaged<IMFContentDecryptionModuleFactory*, ushort*, IPropertyStore**, uint, IMFContentDecryptionModuleAccess**, int>)(lpVtbl[4]))((IMFContentDecryptionModuleFactory*)Unsafe.AsPointer(ref this), keySystem, configurations, numConfigurations, contentDecryptionModuleAccess);
         }

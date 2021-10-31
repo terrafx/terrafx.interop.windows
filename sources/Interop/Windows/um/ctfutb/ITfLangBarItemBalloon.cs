@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<ITfLangBarItemBalloon*, Guid*, void**, int>)(lpVtbl[0]))((ITfLangBarItemBalloon*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,56 +41,49 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetInfo(TF_LANGBARITEMINFO* pInfo)
+        public HRESULT GetInfo(TF_LANGBARITEMINFO* pInfo)
         {
             return ((delegate* unmanaged<ITfLangBarItemBalloon*, TF_LANGBARITEMINFO*, int>)(lpVtbl[3]))((ITfLangBarItemBalloon*)Unsafe.AsPointer(ref this), pInfo);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetStatus([NativeTypeName("DWORD *")] uint* pdwStatus)
+        public HRESULT GetStatus([NativeTypeName("DWORD *")] uint* pdwStatus)
         {
             return ((delegate* unmanaged<ITfLangBarItemBalloon*, uint*, int>)(lpVtbl[4]))((ITfLangBarItemBalloon*)Unsafe.AsPointer(ref this), pdwStatus);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int Show(BOOL fShow)
+        public HRESULT Show(BOOL fShow)
         {
             return ((delegate* unmanaged<ITfLangBarItemBalloon*, BOOL, int>)(lpVtbl[5]))((ITfLangBarItemBalloon*)Unsafe.AsPointer(ref this), fShow);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetTooltipString([NativeTypeName("BSTR *")] ushort** pbstrToolTip)
+        public HRESULT GetTooltipString([NativeTypeName("BSTR *")] ushort** pbstrToolTip)
         {
             return ((delegate* unmanaged<ITfLangBarItemBalloon*, ushort**, int>)(lpVtbl[6]))((ITfLangBarItemBalloon*)Unsafe.AsPointer(ref this), pbstrToolTip);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        [return: NativeTypeName("HRESULT")]
-        public int OnClick(TfLBIClick click, POINT pt, [NativeTypeName("const RECT *")] RECT* prcArea)
+        public HRESULT OnClick(TfLBIClick click, POINT pt, [NativeTypeName("const RECT *")] RECT* prcArea)
         {
             return ((delegate* unmanaged<ITfLangBarItemBalloon*, TfLBIClick, POINT, RECT*, int>)(lpVtbl[7]))((ITfLangBarItemBalloon*)Unsafe.AsPointer(ref this), click, pt, prcArea);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetPreferredSize([NativeTypeName("const SIZE *")] SIZE* pszDefault, SIZE* psz)
+        public HRESULT GetPreferredSize([NativeTypeName("const SIZE *")] SIZE* pszDefault, SIZE* psz)
         {
             return ((delegate* unmanaged<ITfLangBarItemBalloon*, SIZE*, SIZE*, int>)(lpVtbl[8]))((ITfLangBarItemBalloon*)Unsafe.AsPointer(ref this), pszDefault, psz);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetBalloonInfo(TF_LBBALLOONINFO* pInfo)
+        public HRESULT GetBalloonInfo(TF_LBBALLOONINFO* pInfo)
         {
             return ((delegate* unmanaged<ITfLangBarItemBalloon*, TF_LBBALLOONINFO*, int>)(lpVtbl[9]))((ITfLangBarItemBalloon*)Unsafe.AsPointer(ref this), pInfo);
         }

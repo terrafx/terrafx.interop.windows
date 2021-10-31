@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IOleInPlaceSite*, Guid*, void**, int>)(lpVtbl[0]))((IOleInPlaceSite*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,96 +41,84 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetWindow([NativeTypeName("HWND *")] IntPtr* phwnd)
+        public HRESULT GetWindow([NativeTypeName("HWND *")] IntPtr* phwnd)
         {
             return ((delegate* unmanaged<IOleInPlaceSite*, IntPtr*, int>)(lpVtbl[3]))((IOleInPlaceSite*)Unsafe.AsPointer(ref this), phwnd);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int ContextSensitiveHelp(BOOL fEnterMode)
+        public HRESULT ContextSensitiveHelp(BOOL fEnterMode)
         {
             return ((delegate* unmanaged<IOleInPlaceSite*, BOOL, int>)(lpVtbl[4]))((IOleInPlaceSite*)Unsafe.AsPointer(ref this), fEnterMode);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int CanInPlaceActivate()
+        public HRESULT CanInPlaceActivate()
         {
             return ((delegate* unmanaged<IOleInPlaceSite*, int>)(lpVtbl[5]))((IOleInPlaceSite*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int OnInPlaceActivate()
+        public HRESULT OnInPlaceActivate()
         {
             return ((delegate* unmanaged<IOleInPlaceSite*, int>)(lpVtbl[6]))((IOleInPlaceSite*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        [return: NativeTypeName("HRESULT")]
-        public int OnUIActivate()
+        public HRESULT OnUIActivate()
         {
             return ((delegate* unmanaged<IOleInPlaceSite*, int>)(lpVtbl[7]))((IOleInPlaceSite*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetWindowContext(IOleInPlaceFrame** ppFrame, IOleInPlaceUIWindow** ppDoc, [NativeTypeName("LPRECT")] RECT* lprcPosRect, [NativeTypeName("LPRECT")] RECT* lprcClipRect, [NativeTypeName("LPOLEINPLACEFRAMEINFO")] OLEINPLACEFRAMEINFO* lpFrameInfo)
+        public HRESULT GetWindowContext(IOleInPlaceFrame** ppFrame, IOleInPlaceUIWindow** ppDoc, [NativeTypeName("LPRECT")] RECT* lprcPosRect, [NativeTypeName("LPRECT")] RECT* lprcClipRect, [NativeTypeName("LPOLEINPLACEFRAMEINFO")] OLEINPLACEFRAMEINFO* lpFrameInfo)
         {
             return ((delegate* unmanaged<IOleInPlaceSite*, IOleInPlaceFrame**, IOleInPlaceUIWindow**, RECT*, RECT*, OLEINPLACEFRAMEINFO*, int>)(lpVtbl[8]))((IOleInPlaceSite*)Unsafe.AsPointer(ref this), ppFrame, ppDoc, lprcPosRect, lprcClipRect, lpFrameInfo);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        [return: NativeTypeName("HRESULT")]
-        public int Scroll(SIZE scrollExtant)
+        public HRESULT Scroll(SIZE scrollExtant)
         {
             return ((delegate* unmanaged<IOleInPlaceSite*, SIZE, int>)(lpVtbl[9]))((IOleInPlaceSite*)Unsafe.AsPointer(ref this), scrollExtant);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(10)]
-        [return: NativeTypeName("HRESULT")]
-        public int OnUIDeactivate(BOOL fUndoable)
+        public HRESULT OnUIDeactivate(BOOL fUndoable)
         {
             return ((delegate* unmanaged<IOleInPlaceSite*, BOOL, int>)(lpVtbl[10]))((IOleInPlaceSite*)Unsafe.AsPointer(ref this), fUndoable);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(11)]
-        [return: NativeTypeName("HRESULT")]
-        public int OnInPlaceDeactivate()
+        public HRESULT OnInPlaceDeactivate()
         {
             return ((delegate* unmanaged<IOleInPlaceSite*, int>)(lpVtbl[11]))((IOleInPlaceSite*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(12)]
-        [return: NativeTypeName("HRESULT")]
-        public int DiscardUndoState()
+        public HRESULT DiscardUndoState()
         {
             return ((delegate* unmanaged<IOleInPlaceSite*, int>)(lpVtbl[12]))((IOleInPlaceSite*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(13)]
-        [return: NativeTypeName("HRESULT")]
-        public int DeactivateAndUndo()
+        public HRESULT DeactivateAndUndo()
         {
             return ((delegate* unmanaged<IOleInPlaceSite*, int>)(lpVtbl[13]))((IOleInPlaceSite*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(14)]
-        [return: NativeTypeName("HRESULT")]
-        public int OnPosRectChange([NativeTypeName("LPCRECT")] RECT* lprcPosRect)
+        public HRESULT OnPosRectChange([NativeTypeName("LPCRECT")] RECT* lprcPosRect)
         {
             return ((delegate* unmanaged<IOleInPlaceSite*, RECT*, int>)(lpVtbl[14]))((IOleInPlaceSite*)Unsafe.AsPointer(ref this), lprcPosRect);
         }

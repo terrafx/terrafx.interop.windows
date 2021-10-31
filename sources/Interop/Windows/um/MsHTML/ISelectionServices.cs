@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<ISelectionServices*, Guid*, void**, int>)(lpVtbl[0]))((ISelectionServices*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,48 +41,42 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetSelectionType(SELECTION_TYPE eType, ISelectionServicesListener* pIListener)
+        public HRESULT SetSelectionType(SELECTION_TYPE eType, ISelectionServicesListener* pIListener)
         {
             return ((delegate* unmanaged<ISelectionServices*, SELECTION_TYPE, ISelectionServicesListener*, int>)(lpVtbl[3]))((ISelectionServices*)Unsafe.AsPointer(ref this), eType, pIListener);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetMarkupContainer(IMarkupContainer** ppIContainer)
+        public HRESULT GetMarkupContainer(IMarkupContainer** ppIContainer)
         {
             return ((delegate* unmanaged<ISelectionServices*, IMarkupContainer**, int>)(lpVtbl[4]))((ISelectionServices*)Unsafe.AsPointer(ref this), ppIContainer);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int AddSegment(IMarkupPointer* pIStart, IMarkupPointer* pIEnd, ISegment** ppISegmentAdded)
+        public HRESULT AddSegment(IMarkupPointer* pIStart, IMarkupPointer* pIEnd, ISegment** ppISegmentAdded)
         {
             return ((delegate* unmanaged<ISelectionServices*, IMarkupPointer*, IMarkupPointer*, ISegment**, int>)(lpVtbl[5]))((ISelectionServices*)Unsafe.AsPointer(ref this), pIStart, pIEnd, ppISegmentAdded);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int AddElementSegment(IHTMLElement* pIElement, IElementSegment** ppISegmentAdded)
+        public HRESULT AddElementSegment(IHTMLElement* pIElement, IElementSegment** ppISegmentAdded)
         {
             return ((delegate* unmanaged<ISelectionServices*, IHTMLElement*, IElementSegment**, int>)(lpVtbl[6]))((ISelectionServices*)Unsafe.AsPointer(ref this), pIElement, ppISegmentAdded);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        [return: NativeTypeName("HRESULT")]
-        public int RemoveSegment(ISegment* pISegment)
+        public HRESULT RemoveSegment(ISegment* pISegment)
         {
             return ((delegate* unmanaged<ISelectionServices*, ISegment*, int>)(lpVtbl[7]))((ISelectionServices*)Unsafe.AsPointer(ref this), pISegment);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetSelectionServicesListener(ISelectionServicesListener** ppISelectionServicesListener)
+        public HRESULT GetSelectionServicesListener(ISelectionServicesListener** ppISelectionServicesListener)
         {
             return ((delegate* unmanaged<ISelectionServices*, ISelectionServicesListener**, int>)(lpVtbl[8]))((ISelectionServices*)Unsafe.AsPointer(ref this), ppISelectionServicesListener);
         }

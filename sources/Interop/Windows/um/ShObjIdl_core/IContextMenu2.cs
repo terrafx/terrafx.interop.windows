@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IContextMenu2*, Guid*, void**, int>)(lpVtbl[0]))((IContextMenu2*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,32 +41,28 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryContextMenu([NativeTypeName("HMENU")] IntPtr hmenu, [NativeTypeName("UINT")] uint indexMenu, [NativeTypeName("UINT")] uint idCmdFirst, [NativeTypeName("UINT")] uint idCmdLast, [NativeTypeName("UINT")] uint uFlags)
+        public HRESULT QueryContextMenu([NativeTypeName("HMENU")] IntPtr hmenu, [NativeTypeName("UINT")] uint indexMenu, [NativeTypeName("UINT")] uint idCmdFirst, [NativeTypeName("UINT")] uint idCmdLast, [NativeTypeName("UINT")] uint uFlags)
         {
             return ((delegate* unmanaged<IContextMenu2*, IntPtr, uint, uint, uint, uint, int>)(lpVtbl[3]))((IContextMenu2*)Unsafe.AsPointer(ref this), hmenu, indexMenu, idCmdFirst, idCmdLast, uFlags);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int InvokeCommand(CMINVOKECOMMANDINFO* pici)
+        public HRESULT InvokeCommand(CMINVOKECOMMANDINFO* pici)
         {
             return ((delegate* unmanaged<IContextMenu2*, CMINVOKECOMMANDINFO*, int>)(lpVtbl[4]))((IContextMenu2*)Unsafe.AsPointer(ref this), pici);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetCommandString([NativeTypeName("UINT_PTR")] nuint idCmd, [NativeTypeName("UINT")] uint uType, [NativeTypeName("UINT *")] uint* pReserved, [NativeTypeName("CHAR *")] sbyte* pszName, [NativeTypeName("UINT")] uint cchMax)
+        public HRESULT GetCommandString([NativeTypeName("UINT_PTR")] nuint idCmd, [NativeTypeName("UINT")] uint uType, [NativeTypeName("UINT *")] uint* pReserved, [NativeTypeName("CHAR *")] sbyte* pszName, [NativeTypeName("UINT")] uint cchMax)
         {
             return ((delegate* unmanaged<IContextMenu2*, nuint, uint, uint*, sbyte*, uint, int>)(lpVtbl[5]))((IContextMenu2*)Unsafe.AsPointer(ref this), idCmd, uType, pReserved, pszName, cchMax);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int HandleMenuMsg([NativeTypeName("UINT")] uint uMsg, [NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam)
+        public HRESULT HandleMenuMsg([NativeTypeName("UINT")] uint uMsg, [NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam)
         {
             return ((delegate* unmanaged<IContextMenu2*, uint, nuint, nint, int>)(lpVtbl[6]))((IContextMenu2*)Unsafe.AsPointer(ref this), uMsg, wParam, lParam);
         }

@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<ISyncMgrConflict*, Guid*, void**, int>)(lpVtbl[0]))((ISyncMgrConflict*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,40 +41,35 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetProperty([NativeTypeName("const PROPERTYKEY &")] PROPERTYKEY* propkey, PROPVARIANT* ppropvar)
+        public HRESULT GetProperty([NativeTypeName("const PROPERTYKEY &")] PROPERTYKEY* propkey, PROPVARIANT* ppropvar)
         {
             return ((delegate* unmanaged<ISyncMgrConflict*, PROPERTYKEY*, PROPVARIANT*, int>)(lpVtbl[3]))((ISyncMgrConflict*)Unsafe.AsPointer(ref this), propkey, ppropvar);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetConflictIdInfo(SYNCMGR_CONFLICT_ID_INFO* pConflictIdInfo)
+        public HRESULT GetConflictIdInfo(SYNCMGR_CONFLICT_ID_INFO* pConflictIdInfo)
         {
             return ((delegate* unmanaged<ISyncMgrConflict*, SYNCMGR_CONFLICT_ID_INFO*, int>)(lpVtbl[4]))((ISyncMgrConflict*)Unsafe.AsPointer(ref this), pConflictIdInfo);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetItemsArray(ISyncMgrConflictItems** ppArray)
+        public HRESULT GetItemsArray(ISyncMgrConflictItems** ppArray)
         {
             return ((delegate* unmanaged<ISyncMgrConflict*, ISyncMgrConflictItems**, int>)(lpVtbl[5]))((ISyncMgrConflict*)Unsafe.AsPointer(ref this), ppArray);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int Resolve(ISyncMgrConflictResolveInfo* pResolveInfo)
+        public HRESULT Resolve(ISyncMgrConflictResolveInfo* pResolveInfo)
         {
             return ((delegate* unmanaged<ISyncMgrConflict*, ISyncMgrConflictResolveInfo*, int>)(lpVtbl[6]))((ISyncMgrConflict*)Unsafe.AsPointer(ref this), pResolveInfo);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetResolutionHandler([NativeTypeName("const IID &")] Guid* riid, void** ppvResolutionHandler)
+        public HRESULT GetResolutionHandler([NativeTypeName("const IID &")] Guid* riid, void** ppvResolutionHandler)
         {
             return ((delegate* unmanaged<ISyncMgrConflict*, Guid*, void**, int>)(lpVtbl[7]))((ISyncMgrConflict*)Unsafe.AsPointer(ref this), riid, ppvResolutionHandler);
         }

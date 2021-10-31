@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         public void* pObject;
 
-        [NativeTypeName("HRESULT")]
-        public int hResult;
+        public HRESULT hResult;
 
         [NativeTypeName("DWORD")]
         public uint dwFlags;

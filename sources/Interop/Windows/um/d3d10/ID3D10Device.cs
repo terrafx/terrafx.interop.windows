@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<ID3D10Device*, Guid*, void**, int>)(lpVtbl[0]))((ID3D10Device*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -462,16 +461,14 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(63)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetDeviceRemovedReason()
+        public HRESULT GetDeviceRemovedReason()
         {
             return ((delegate* unmanaged<ID3D10Device*, int>)(lpVtbl[63]))((ID3D10Device*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(64)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetExceptionMode([NativeTypeName("UINT")] uint RaiseFlags)
+        public HRESULT SetExceptionMode([NativeTypeName("UINT")] uint RaiseFlags)
         {
             return ((delegate* unmanaged<ID3D10Device*, uint, int>)(lpVtbl[64]))((ID3D10Device*)Unsafe.AsPointer(ref this), RaiseFlags);
         }
@@ -486,24 +483,21 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(66)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetPrivateData([NativeTypeName("const GUID &")] Guid* guid, [NativeTypeName("UINT *")] uint* pDataSize, void* pData)
+        public HRESULT GetPrivateData([NativeTypeName("const GUID &")] Guid* guid, [NativeTypeName("UINT *")] uint* pDataSize, void* pData)
         {
             return ((delegate* unmanaged<ID3D10Device*, Guid*, uint*, void*, int>)(lpVtbl[66]))((ID3D10Device*)Unsafe.AsPointer(ref this), guid, pDataSize, pData);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(67)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetPrivateData([NativeTypeName("const GUID &")] Guid* guid, [NativeTypeName("UINT")] uint DataSize, [NativeTypeName("const void *")] void* pData)
+        public HRESULT SetPrivateData([NativeTypeName("const GUID &")] Guid* guid, [NativeTypeName("UINT")] uint DataSize, [NativeTypeName("const void *")] void* pData)
         {
             return ((delegate* unmanaged<ID3D10Device*, Guid*, uint, void*, int>)(lpVtbl[67]))((ID3D10Device*)Unsafe.AsPointer(ref this), guid, DataSize, pData);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(68)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetPrivateDataInterface([NativeTypeName("const GUID &")] Guid* guid, [NativeTypeName("const IUnknown *")] IUnknown* pData)
+        public HRESULT SetPrivateDataInterface([NativeTypeName("const GUID &")] Guid* guid, [NativeTypeName("const IUnknown *")] IUnknown* pData)
         {
             return ((delegate* unmanaged<ID3D10Device*, Guid*, IUnknown*, int>)(lpVtbl[68]))((ID3D10Device*)Unsafe.AsPointer(ref this), guid, pData);
         }
@@ -524,168 +518,147 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(71)]
-        [return: NativeTypeName("HRESULT")]
-        public int CreateBuffer([NativeTypeName("const D3D10_BUFFER_DESC *")] D3D10_BUFFER_DESC* pDesc, [NativeTypeName("const D3D10_SUBRESOURCE_DATA *")] D3D10_SUBRESOURCE_DATA* pInitialData, ID3D10Buffer** ppBuffer)
+        public HRESULT CreateBuffer([NativeTypeName("const D3D10_BUFFER_DESC *")] D3D10_BUFFER_DESC* pDesc, [NativeTypeName("const D3D10_SUBRESOURCE_DATA *")] D3D10_SUBRESOURCE_DATA* pInitialData, ID3D10Buffer** ppBuffer)
         {
             return ((delegate* unmanaged<ID3D10Device*, D3D10_BUFFER_DESC*, D3D10_SUBRESOURCE_DATA*, ID3D10Buffer**, int>)(lpVtbl[71]))((ID3D10Device*)Unsafe.AsPointer(ref this), pDesc, pInitialData, ppBuffer);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(72)]
-        [return: NativeTypeName("HRESULT")]
-        public int CreateTexture1D([NativeTypeName("const D3D10_TEXTURE1D_DESC *")] D3D10_TEXTURE1D_DESC* pDesc, [NativeTypeName("const D3D10_SUBRESOURCE_DATA *")] D3D10_SUBRESOURCE_DATA* pInitialData, ID3D10Texture1D** ppTexture1D)
+        public HRESULT CreateTexture1D([NativeTypeName("const D3D10_TEXTURE1D_DESC *")] D3D10_TEXTURE1D_DESC* pDesc, [NativeTypeName("const D3D10_SUBRESOURCE_DATA *")] D3D10_SUBRESOURCE_DATA* pInitialData, ID3D10Texture1D** ppTexture1D)
         {
             return ((delegate* unmanaged<ID3D10Device*, D3D10_TEXTURE1D_DESC*, D3D10_SUBRESOURCE_DATA*, ID3D10Texture1D**, int>)(lpVtbl[72]))((ID3D10Device*)Unsafe.AsPointer(ref this), pDesc, pInitialData, ppTexture1D);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(73)]
-        [return: NativeTypeName("HRESULT")]
-        public int CreateTexture2D([NativeTypeName("const D3D10_TEXTURE2D_DESC *")] D3D10_TEXTURE2D_DESC* pDesc, [NativeTypeName("const D3D10_SUBRESOURCE_DATA *")] D3D10_SUBRESOURCE_DATA* pInitialData, ID3D10Texture2D** ppTexture2D)
+        public HRESULT CreateTexture2D([NativeTypeName("const D3D10_TEXTURE2D_DESC *")] D3D10_TEXTURE2D_DESC* pDesc, [NativeTypeName("const D3D10_SUBRESOURCE_DATA *")] D3D10_SUBRESOURCE_DATA* pInitialData, ID3D10Texture2D** ppTexture2D)
         {
             return ((delegate* unmanaged<ID3D10Device*, D3D10_TEXTURE2D_DESC*, D3D10_SUBRESOURCE_DATA*, ID3D10Texture2D**, int>)(lpVtbl[73]))((ID3D10Device*)Unsafe.AsPointer(ref this), pDesc, pInitialData, ppTexture2D);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(74)]
-        [return: NativeTypeName("HRESULT")]
-        public int CreateTexture3D([NativeTypeName("const D3D10_TEXTURE3D_DESC *")] D3D10_TEXTURE3D_DESC* pDesc, [NativeTypeName("const D3D10_SUBRESOURCE_DATA *")] D3D10_SUBRESOURCE_DATA* pInitialData, ID3D10Texture3D** ppTexture3D)
+        public HRESULT CreateTexture3D([NativeTypeName("const D3D10_TEXTURE3D_DESC *")] D3D10_TEXTURE3D_DESC* pDesc, [NativeTypeName("const D3D10_SUBRESOURCE_DATA *")] D3D10_SUBRESOURCE_DATA* pInitialData, ID3D10Texture3D** ppTexture3D)
         {
             return ((delegate* unmanaged<ID3D10Device*, D3D10_TEXTURE3D_DESC*, D3D10_SUBRESOURCE_DATA*, ID3D10Texture3D**, int>)(lpVtbl[74]))((ID3D10Device*)Unsafe.AsPointer(ref this), pDesc, pInitialData, ppTexture3D);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(75)]
-        [return: NativeTypeName("HRESULT")]
-        public int CreateShaderResourceView(ID3D10Resource* pResource, [NativeTypeName("const D3D10_SHADER_RESOURCE_VIEW_DESC *")] D3D10_SHADER_RESOURCE_VIEW_DESC* pDesc, ID3D10ShaderResourceView** ppSRView)
+        public HRESULT CreateShaderResourceView(ID3D10Resource* pResource, [NativeTypeName("const D3D10_SHADER_RESOURCE_VIEW_DESC *")] D3D10_SHADER_RESOURCE_VIEW_DESC* pDesc, ID3D10ShaderResourceView** ppSRView)
         {
             return ((delegate* unmanaged<ID3D10Device*, ID3D10Resource*, D3D10_SHADER_RESOURCE_VIEW_DESC*, ID3D10ShaderResourceView**, int>)(lpVtbl[75]))((ID3D10Device*)Unsafe.AsPointer(ref this), pResource, pDesc, ppSRView);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(76)]
-        [return: NativeTypeName("HRESULT")]
-        public int CreateRenderTargetView(ID3D10Resource* pResource, [NativeTypeName("const D3D10_RENDER_TARGET_VIEW_DESC *")] D3D10_RENDER_TARGET_VIEW_DESC* pDesc, ID3D10RenderTargetView** ppRTView)
+        public HRESULT CreateRenderTargetView(ID3D10Resource* pResource, [NativeTypeName("const D3D10_RENDER_TARGET_VIEW_DESC *")] D3D10_RENDER_TARGET_VIEW_DESC* pDesc, ID3D10RenderTargetView** ppRTView)
         {
             return ((delegate* unmanaged<ID3D10Device*, ID3D10Resource*, D3D10_RENDER_TARGET_VIEW_DESC*, ID3D10RenderTargetView**, int>)(lpVtbl[76]))((ID3D10Device*)Unsafe.AsPointer(ref this), pResource, pDesc, ppRTView);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(77)]
-        [return: NativeTypeName("HRESULT")]
-        public int CreateDepthStencilView(ID3D10Resource* pResource, [NativeTypeName("const D3D10_DEPTH_STENCIL_VIEW_DESC *")] D3D10_DEPTH_STENCIL_VIEW_DESC* pDesc, ID3D10DepthStencilView** ppDepthStencilView)
+        public HRESULT CreateDepthStencilView(ID3D10Resource* pResource, [NativeTypeName("const D3D10_DEPTH_STENCIL_VIEW_DESC *")] D3D10_DEPTH_STENCIL_VIEW_DESC* pDesc, ID3D10DepthStencilView** ppDepthStencilView)
         {
             return ((delegate* unmanaged<ID3D10Device*, ID3D10Resource*, D3D10_DEPTH_STENCIL_VIEW_DESC*, ID3D10DepthStencilView**, int>)(lpVtbl[77]))((ID3D10Device*)Unsafe.AsPointer(ref this), pResource, pDesc, ppDepthStencilView);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(78)]
-        [return: NativeTypeName("HRESULT")]
-        public int CreateInputLayout([NativeTypeName("const D3D10_INPUT_ELEMENT_DESC *")] D3D10_INPUT_ELEMENT_DESC* pInputElementDescs, [NativeTypeName("UINT")] uint NumElements, [NativeTypeName("const void *")] void* pShaderBytecodeWithInputSignature, [NativeTypeName("SIZE_T")] nuint BytecodeLength, ID3D10InputLayout** ppInputLayout)
+        public HRESULT CreateInputLayout([NativeTypeName("const D3D10_INPUT_ELEMENT_DESC *")] D3D10_INPUT_ELEMENT_DESC* pInputElementDescs, [NativeTypeName("UINT")] uint NumElements, [NativeTypeName("const void *")] void* pShaderBytecodeWithInputSignature, [NativeTypeName("SIZE_T")] nuint BytecodeLength, ID3D10InputLayout** ppInputLayout)
         {
             return ((delegate* unmanaged<ID3D10Device*, D3D10_INPUT_ELEMENT_DESC*, uint, void*, nuint, ID3D10InputLayout**, int>)(lpVtbl[78]))((ID3D10Device*)Unsafe.AsPointer(ref this), pInputElementDescs, NumElements, pShaderBytecodeWithInputSignature, BytecodeLength, ppInputLayout);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(79)]
-        [return: NativeTypeName("HRESULT")]
-        public int CreateVertexShader([NativeTypeName("const void *")] void* pShaderBytecode, [NativeTypeName("SIZE_T")] nuint BytecodeLength, ID3D10VertexShader** ppVertexShader)
+        public HRESULT CreateVertexShader([NativeTypeName("const void *")] void* pShaderBytecode, [NativeTypeName("SIZE_T")] nuint BytecodeLength, ID3D10VertexShader** ppVertexShader)
         {
             return ((delegate* unmanaged<ID3D10Device*, void*, nuint, ID3D10VertexShader**, int>)(lpVtbl[79]))((ID3D10Device*)Unsafe.AsPointer(ref this), pShaderBytecode, BytecodeLength, ppVertexShader);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(80)]
-        [return: NativeTypeName("HRESULT")]
-        public int CreateGeometryShader([NativeTypeName("const void *")] void* pShaderBytecode, [NativeTypeName("SIZE_T")] nuint BytecodeLength, ID3D10GeometryShader** ppGeometryShader)
+        public HRESULT CreateGeometryShader([NativeTypeName("const void *")] void* pShaderBytecode, [NativeTypeName("SIZE_T")] nuint BytecodeLength, ID3D10GeometryShader** ppGeometryShader)
         {
             return ((delegate* unmanaged<ID3D10Device*, void*, nuint, ID3D10GeometryShader**, int>)(lpVtbl[80]))((ID3D10Device*)Unsafe.AsPointer(ref this), pShaderBytecode, BytecodeLength, ppGeometryShader);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(81)]
-        [return: NativeTypeName("HRESULT")]
-        public int CreateGeometryShaderWithStreamOutput([NativeTypeName("const void *")] void* pShaderBytecode, [NativeTypeName("SIZE_T")] nuint BytecodeLength, [NativeTypeName("const D3D10_SO_DECLARATION_ENTRY *")] D3D10_SO_DECLARATION_ENTRY* pSODeclaration, [NativeTypeName("UINT")] uint NumEntries, [NativeTypeName("UINT")] uint OutputStreamStride, ID3D10GeometryShader** ppGeometryShader)
+        public HRESULT CreateGeometryShaderWithStreamOutput([NativeTypeName("const void *")] void* pShaderBytecode, [NativeTypeName("SIZE_T")] nuint BytecodeLength, [NativeTypeName("const D3D10_SO_DECLARATION_ENTRY *")] D3D10_SO_DECLARATION_ENTRY* pSODeclaration, [NativeTypeName("UINT")] uint NumEntries, [NativeTypeName("UINT")] uint OutputStreamStride, ID3D10GeometryShader** ppGeometryShader)
         {
             return ((delegate* unmanaged<ID3D10Device*, void*, nuint, D3D10_SO_DECLARATION_ENTRY*, uint, uint, ID3D10GeometryShader**, int>)(lpVtbl[81]))((ID3D10Device*)Unsafe.AsPointer(ref this), pShaderBytecode, BytecodeLength, pSODeclaration, NumEntries, OutputStreamStride, ppGeometryShader);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(82)]
-        [return: NativeTypeName("HRESULT")]
-        public int CreatePixelShader([NativeTypeName("const void *")] void* pShaderBytecode, [NativeTypeName("SIZE_T")] nuint BytecodeLength, ID3D10PixelShader** ppPixelShader)
+        public HRESULT CreatePixelShader([NativeTypeName("const void *")] void* pShaderBytecode, [NativeTypeName("SIZE_T")] nuint BytecodeLength, ID3D10PixelShader** ppPixelShader)
         {
             return ((delegate* unmanaged<ID3D10Device*, void*, nuint, ID3D10PixelShader**, int>)(lpVtbl[82]))((ID3D10Device*)Unsafe.AsPointer(ref this), pShaderBytecode, BytecodeLength, ppPixelShader);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(83)]
-        [return: NativeTypeName("HRESULT")]
-        public int CreateBlendState([NativeTypeName("const D3D10_BLEND_DESC *")] D3D10_BLEND_DESC* pBlendStateDesc, ID3D10BlendState** ppBlendState)
+        public HRESULT CreateBlendState([NativeTypeName("const D3D10_BLEND_DESC *")] D3D10_BLEND_DESC* pBlendStateDesc, ID3D10BlendState** ppBlendState)
         {
             return ((delegate* unmanaged<ID3D10Device*, D3D10_BLEND_DESC*, ID3D10BlendState**, int>)(lpVtbl[83]))((ID3D10Device*)Unsafe.AsPointer(ref this), pBlendStateDesc, ppBlendState);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(84)]
-        [return: NativeTypeName("HRESULT")]
-        public int CreateDepthStencilState([NativeTypeName("const D3D10_DEPTH_STENCIL_DESC *")] D3D10_DEPTH_STENCIL_DESC* pDepthStencilDesc, ID3D10DepthStencilState** ppDepthStencilState)
+        public HRESULT CreateDepthStencilState([NativeTypeName("const D3D10_DEPTH_STENCIL_DESC *")] D3D10_DEPTH_STENCIL_DESC* pDepthStencilDesc, ID3D10DepthStencilState** ppDepthStencilState)
         {
             return ((delegate* unmanaged<ID3D10Device*, D3D10_DEPTH_STENCIL_DESC*, ID3D10DepthStencilState**, int>)(lpVtbl[84]))((ID3D10Device*)Unsafe.AsPointer(ref this), pDepthStencilDesc, ppDepthStencilState);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(85)]
-        [return: NativeTypeName("HRESULT")]
-        public int CreateRasterizerState([NativeTypeName("const D3D10_RASTERIZER_DESC *")] D3D10_RASTERIZER_DESC* pRasterizerDesc, ID3D10RasterizerState** ppRasterizerState)
+        public HRESULT CreateRasterizerState([NativeTypeName("const D3D10_RASTERIZER_DESC *")] D3D10_RASTERIZER_DESC* pRasterizerDesc, ID3D10RasterizerState** ppRasterizerState)
         {
             return ((delegate* unmanaged<ID3D10Device*, D3D10_RASTERIZER_DESC*, ID3D10RasterizerState**, int>)(lpVtbl[85]))((ID3D10Device*)Unsafe.AsPointer(ref this), pRasterizerDesc, ppRasterizerState);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(86)]
-        [return: NativeTypeName("HRESULT")]
-        public int CreateSamplerState([NativeTypeName("const D3D10_SAMPLER_DESC *")] D3D10_SAMPLER_DESC* pSamplerDesc, ID3D10SamplerState** ppSamplerState)
+        public HRESULT CreateSamplerState([NativeTypeName("const D3D10_SAMPLER_DESC *")] D3D10_SAMPLER_DESC* pSamplerDesc, ID3D10SamplerState** ppSamplerState)
         {
             return ((delegate* unmanaged<ID3D10Device*, D3D10_SAMPLER_DESC*, ID3D10SamplerState**, int>)(lpVtbl[86]))((ID3D10Device*)Unsafe.AsPointer(ref this), pSamplerDesc, ppSamplerState);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(87)]
-        [return: NativeTypeName("HRESULT")]
-        public int CreateQuery([NativeTypeName("const D3D10_QUERY_DESC *")] D3D10_QUERY_DESC* pQueryDesc, ID3D10Query** ppQuery)
+        public HRESULT CreateQuery([NativeTypeName("const D3D10_QUERY_DESC *")] D3D10_QUERY_DESC* pQueryDesc, ID3D10Query** ppQuery)
         {
             return ((delegate* unmanaged<ID3D10Device*, D3D10_QUERY_DESC*, ID3D10Query**, int>)(lpVtbl[87]))((ID3D10Device*)Unsafe.AsPointer(ref this), pQueryDesc, ppQuery);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(88)]
-        [return: NativeTypeName("HRESULT")]
-        public int CreatePredicate([NativeTypeName("const D3D10_QUERY_DESC *")] D3D10_QUERY_DESC* pPredicateDesc, ID3D10Predicate** ppPredicate)
+        public HRESULT CreatePredicate([NativeTypeName("const D3D10_QUERY_DESC *")] D3D10_QUERY_DESC* pPredicateDesc, ID3D10Predicate** ppPredicate)
         {
             return ((delegate* unmanaged<ID3D10Device*, D3D10_QUERY_DESC*, ID3D10Predicate**, int>)(lpVtbl[88]))((ID3D10Device*)Unsafe.AsPointer(ref this), pPredicateDesc, ppPredicate);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(89)]
-        [return: NativeTypeName("HRESULT")]
-        public int CreateCounter([NativeTypeName("const D3D10_COUNTER_DESC *")] D3D10_COUNTER_DESC* pCounterDesc, ID3D10Counter** ppCounter)
+        public HRESULT CreateCounter([NativeTypeName("const D3D10_COUNTER_DESC *")] D3D10_COUNTER_DESC* pCounterDesc, ID3D10Counter** ppCounter)
         {
             return ((delegate* unmanaged<ID3D10Device*, D3D10_COUNTER_DESC*, ID3D10Counter**, int>)(lpVtbl[89]))((ID3D10Device*)Unsafe.AsPointer(ref this), pCounterDesc, ppCounter);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(90)]
-        [return: NativeTypeName("HRESULT")]
-        public int CheckFormatSupport(DXGI_FORMAT Format, [NativeTypeName("UINT *")] uint* pFormatSupport)
+        public HRESULT CheckFormatSupport(DXGI_FORMAT Format, [NativeTypeName("UINT *")] uint* pFormatSupport)
         {
             return ((delegate* unmanaged<ID3D10Device*, DXGI_FORMAT, uint*, int>)(lpVtbl[90]))((ID3D10Device*)Unsafe.AsPointer(ref this), Format, pFormatSupport);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(91)]
-        [return: NativeTypeName("HRESULT")]
-        public int CheckMultisampleQualityLevels(DXGI_FORMAT Format, [NativeTypeName("UINT")] uint SampleCount, [NativeTypeName("UINT *")] uint* pNumQualityLevels)
+        public HRESULT CheckMultisampleQualityLevels(DXGI_FORMAT Format, [NativeTypeName("UINT")] uint SampleCount, [NativeTypeName("UINT *")] uint* pNumQualityLevels)
         {
             return ((delegate* unmanaged<ID3D10Device*, DXGI_FORMAT, uint, uint*, int>)(lpVtbl[91]))((ID3D10Device*)Unsafe.AsPointer(ref this), Format, SampleCount, pNumQualityLevels);
         }
@@ -699,8 +672,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(93)]
-        [return: NativeTypeName("HRESULT")]
-        public int CheckCounter([NativeTypeName("const D3D10_COUNTER_DESC *")] D3D10_COUNTER_DESC* pDesc, D3D10_COUNTER_TYPE* pType, [NativeTypeName("UINT *")] uint* pActiveCounters, [NativeTypeName("LPSTR")] sbyte* szName, [NativeTypeName("UINT *")] uint* pNameLength, [NativeTypeName("LPSTR")] sbyte* szUnits, [NativeTypeName("UINT *")] uint* pUnitsLength, [NativeTypeName("LPSTR")] sbyte* szDescription, [NativeTypeName("UINT *")] uint* pDescriptionLength)
+        public HRESULT CheckCounter([NativeTypeName("const D3D10_COUNTER_DESC *")] D3D10_COUNTER_DESC* pDesc, D3D10_COUNTER_TYPE* pType, [NativeTypeName("UINT *")] uint* pActiveCounters, [NativeTypeName("LPSTR")] sbyte* szName, [NativeTypeName("UINT *")] uint* pNameLength, [NativeTypeName("LPSTR")] sbyte* szUnits, [NativeTypeName("UINT *")] uint* pUnitsLength, [NativeTypeName("LPSTR")] sbyte* szDescription, [NativeTypeName("UINT *")] uint* pDescriptionLength)
         {
             return ((delegate* unmanaged<ID3D10Device*, D3D10_COUNTER_DESC*, D3D10_COUNTER_TYPE*, uint*, sbyte*, uint*, sbyte*, uint*, sbyte*, uint*, int>)(lpVtbl[93]))((ID3D10Device*)Unsafe.AsPointer(ref this), pDesc, pType, pActiveCounters, szName, pNameLength, szUnits, pUnitsLength, szDescription, pDescriptionLength);
         }
@@ -715,8 +687,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(95)]
-        [return: NativeTypeName("HRESULT")]
-        public int OpenSharedResource([NativeTypeName("HANDLE")] IntPtr hResource, [NativeTypeName("const IID &")] Guid* ReturnedInterface, void** ppResource)
+        public HRESULT OpenSharedResource([NativeTypeName("HANDLE")] IntPtr hResource, [NativeTypeName("const IID &")] Guid* ReturnedInterface, void** ppResource)
         {
             return ((delegate* unmanaged<ID3D10Device*, IntPtr, Guid*, void**, int>)(lpVtbl[95]))((ID3D10Device*)Unsafe.AsPointer(ref this), hResource, ReturnedInterface, ppResource);
         }

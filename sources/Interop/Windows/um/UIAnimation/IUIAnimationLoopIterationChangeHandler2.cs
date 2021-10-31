@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IUIAnimationLoopIterationChangeHandler2*, Guid*, void**, int>)(lpVtbl[0]))((IUIAnimationLoopIterationChangeHandler2*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,8 +41,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int OnLoopIterationChanged(IUIAnimationStoryboard2* storyboard, [NativeTypeName("UINT_PTR")] nuint id, [NativeTypeName("UINT32")] uint newIterationCount, [NativeTypeName("UINT32")] uint oldIterationCount)
+        public HRESULT OnLoopIterationChanged(IUIAnimationStoryboard2* storyboard, [NativeTypeName("UINT_PTR")] nuint id, [NativeTypeName("UINT32")] uint newIterationCount, [NativeTypeName("UINT32")] uint oldIterationCount)
         {
             return ((delegate* unmanaged<IUIAnimationLoopIterationChangeHandler2*, IUIAnimationStoryboard2*, nuint, uint, uint, int>)(lpVtbl[3]))((IUIAnimationLoopIterationChangeHandler2*)Unsafe.AsPointer(ref this), storyboard, id, newIterationCount, oldIterationCount);
         }

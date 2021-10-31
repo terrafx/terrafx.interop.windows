@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IDiaEnumInjectedSources*, Guid*, void**, int>)(lpVtbl[0]))((IDiaEnumInjectedSources*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,56 +41,49 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int get__NewEnum(IUnknown** pRetVal)
+        public HRESULT get__NewEnum(IUnknown** pRetVal)
         {
             return ((delegate* unmanaged<IDiaEnumInjectedSources*, IUnknown**, int>)(lpVtbl[3]))((IDiaEnumInjectedSources*)Unsafe.AsPointer(ref this), pRetVal);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int get_Count([NativeTypeName("LONG *")] int* pRetVal)
+        public HRESULT get_Count([NativeTypeName("LONG *")] int* pRetVal)
         {
             return ((delegate* unmanaged<IDiaEnumInjectedSources*, int*, int>)(lpVtbl[4]))((IDiaEnumInjectedSources*)Unsafe.AsPointer(ref this), pRetVal);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int Item([NativeTypeName("DWORD")] uint index, IDiaInjectedSource** injectedSource)
+        public HRESULT Item([NativeTypeName("DWORD")] uint index, IDiaInjectedSource** injectedSource)
         {
             return ((delegate* unmanaged<IDiaEnumInjectedSources*, uint, IDiaInjectedSource**, int>)(lpVtbl[5]))((IDiaEnumInjectedSources*)Unsafe.AsPointer(ref this), index, injectedSource);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int Next([NativeTypeName("ULONG")] uint celt, IDiaInjectedSource** rgelt, [NativeTypeName("ULONG *")] uint* pceltFetched)
+        public HRESULT Next([NativeTypeName("ULONG")] uint celt, IDiaInjectedSource** rgelt, [NativeTypeName("ULONG *")] uint* pceltFetched)
         {
             return ((delegate* unmanaged<IDiaEnumInjectedSources*, uint, IDiaInjectedSource**, uint*, int>)(lpVtbl[6]))((IDiaEnumInjectedSources*)Unsafe.AsPointer(ref this), celt, rgelt, pceltFetched);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        [return: NativeTypeName("HRESULT")]
-        public int Skip([NativeTypeName("ULONG")] uint celt)
+        public HRESULT Skip([NativeTypeName("ULONG")] uint celt)
         {
             return ((delegate* unmanaged<IDiaEnumInjectedSources*, uint, int>)(lpVtbl[7]))((IDiaEnumInjectedSources*)Unsafe.AsPointer(ref this), celt);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        [return: NativeTypeName("HRESULT")]
-        public int Reset()
+        public HRESULT Reset()
         {
             return ((delegate* unmanaged<IDiaEnumInjectedSources*, int>)(lpVtbl[8]))((IDiaEnumInjectedSources*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        [return: NativeTypeName("HRESULT")]
-        public int Clone(IDiaEnumInjectedSources** ppenum)
+        public HRESULT Clone(IDiaEnumInjectedSources** ppenum)
         {
             return ((delegate* unmanaged<IDiaEnumInjectedSources*, IDiaEnumInjectedSources**, int>)(lpVtbl[9]))((IDiaEnumInjectedSources*)Unsafe.AsPointer(ref this), ppenum);
         }

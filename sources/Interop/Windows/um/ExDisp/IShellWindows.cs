@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IShellWindows*, Guid*, void**, int>)(lpVtbl[0]))((IShellWindows*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,120 +41,105 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetTypeInfoCount([NativeTypeName("UINT *")] uint* pctinfo)
+        public HRESULT GetTypeInfoCount([NativeTypeName("UINT *")] uint* pctinfo)
         {
             return ((delegate* unmanaged<IShellWindows*, uint*, int>)(lpVtbl[3]))((IShellWindows*)Unsafe.AsPointer(ref this), pctinfo);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetTypeInfo([NativeTypeName("UINT")] uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
+        public HRESULT GetTypeInfo([NativeTypeName("UINT")] uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
         {
             return ((delegate* unmanaged<IShellWindows*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IShellWindows*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, [NativeTypeName("UINT")] uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+        public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, [NativeTypeName("UINT")] uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
         {
             return ((delegate* unmanaged<IShellWindows*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IShellWindows*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, [NativeTypeName("UINT *")] uint* puArgErr)
+        public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, [NativeTypeName("UINT *")] uint* puArgErr)
         {
             return ((delegate* unmanaged<IShellWindows*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IShellWindows*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        [return: NativeTypeName("HRESULT")]
-        public int get_Count([NativeTypeName("long *")] int* Count)
+        public HRESULT get_Count([NativeTypeName("long *")] int* Count)
         {
             return ((delegate* unmanaged<IShellWindows*, int*, int>)(lpVtbl[7]))((IShellWindows*)Unsafe.AsPointer(ref this), Count);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        [return: NativeTypeName("HRESULT")]
-        public int Item(VARIANT index, IDispatch** Folder)
+        public HRESULT Item(VARIANT index, IDispatch** Folder)
         {
             return ((delegate* unmanaged<IShellWindows*, VARIANT, IDispatch**, int>)(lpVtbl[8]))((IShellWindows*)Unsafe.AsPointer(ref this), index, Folder);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        [return: NativeTypeName("HRESULT")]
-        public int _NewEnum(IUnknown** ppunk)
+        public HRESULT _NewEnum(IUnknown** ppunk)
         {
             return ((delegate* unmanaged<IShellWindows*, IUnknown**, int>)(lpVtbl[9]))((IShellWindows*)Unsafe.AsPointer(ref this), ppunk);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(10)]
-        [return: NativeTypeName("HRESULT")]
-        public int Register(IDispatch* pid, [NativeTypeName("long")] int hwnd, int swClass, [NativeTypeName("long *")] int* plCookie)
+        public HRESULT Register(IDispatch* pid, [NativeTypeName("long")] int hwnd, int swClass, [NativeTypeName("long *")] int* plCookie)
         {
             return ((delegate* unmanaged<IShellWindows*, IDispatch*, int, int, int*, int>)(lpVtbl[10]))((IShellWindows*)Unsafe.AsPointer(ref this), pid, hwnd, swClass, plCookie);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(11)]
-        [return: NativeTypeName("HRESULT")]
-        public int RegisterPending([NativeTypeName("long")] int lThreadId, VARIANT* pvarloc, VARIANT* pvarlocRoot, int swClass, [NativeTypeName("long *")] int* plCookie)
+        public HRESULT RegisterPending([NativeTypeName("long")] int lThreadId, VARIANT* pvarloc, VARIANT* pvarlocRoot, int swClass, [NativeTypeName("long *")] int* plCookie)
         {
             return ((delegate* unmanaged<IShellWindows*, int, VARIANT*, VARIANT*, int, int*, int>)(lpVtbl[11]))((IShellWindows*)Unsafe.AsPointer(ref this), lThreadId, pvarloc, pvarlocRoot, swClass, plCookie);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(12)]
-        [return: NativeTypeName("HRESULT")]
-        public int Revoke([NativeTypeName("long")] int lCookie)
+        public HRESULT Revoke([NativeTypeName("long")] int lCookie)
         {
             return ((delegate* unmanaged<IShellWindows*, int, int>)(lpVtbl[12]))((IShellWindows*)Unsafe.AsPointer(ref this), lCookie);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(13)]
-        [return: NativeTypeName("HRESULT")]
-        public int OnNavigate([NativeTypeName("long")] int lCookie, VARIANT* pvarLoc)
+        public HRESULT OnNavigate([NativeTypeName("long")] int lCookie, VARIANT* pvarLoc)
         {
             return ((delegate* unmanaged<IShellWindows*, int, VARIANT*, int>)(lpVtbl[13]))((IShellWindows*)Unsafe.AsPointer(ref this), lCookie, pvarLoc);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(14)]
-        [return: NativeTypeName("HRESULT")]
-        public int OnActivated([NativeTypeName("long")] int lCookie, [NativeTypeName("VARIANT_BOOL")] short fActive)
+        public HRESULT OnActivated([NativeTypeName("long")] int lCookie, [NativeTypeName("VARIANT_BOOL")] short fActive)
         {
             return ((delegate* unmanaged<IShellWindows*, int, short, int>)(lpVtbl[14]))((IShellWindows*)Unsafe.AsPointer(ref this), lCookie, fActive);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(15)]
-        [return: NativeTypeName("HRESULT")]
-        public int FindWindowSW(VARIANT* pvarLoc, VARIANT* pvarLocRoot, int swClass, [NativeTypeName("long *")] int* phwnd, int swfwOptions, IDispatch** ppdispOut)
+        public HRESULT FindWindowSW(VARIANT* pvarLoc, VARIANT* pvarLocRoot, int swClass, [NativeTypeName("long *")] int* phwnd, int swfwOptions, IDispatch** ppdispOut)
         {
             return ((delegate* unmanaged<IShellWindows*, VARIANT*, VARIANT*, int, int*, int, IDispatch**, int>)(lpVtbl[15]))((IShellWindows*)Unsafe.AsPointer(ref this), pvarLoc, pvarLocRoot, swClass, phwnd, swfwOptions, ppdispOut);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(16)]
-        [return: NativeTypeName("HRESULT")]
-        public int OnCreated([NativeTypeName("long")] int lCookie, IUnknown* punk)
+        public HRESULT OnCreated([NativeTypeName("long")] int lCookie, IUnknown* punk)
         {
             return ((delegate* unmanaged<IShellWindows*, int, IUnknown*, int>)(lpVtbl[16]))((IShellWindows*)Unsafe.AsPointer(ref this), lCookie, punk);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(17)]
-        [return: NativeTypeName("HRESULT")]
-        public int ProcessAttachDetach([NativeTypeName("VARIANT_BOOL")] short fAttach)
+        public HRESULT ProcessAttachDetach([NativeTypeName("VARIANT_BOOL")] short fAttach)
         {
             return ((delegate* unmanaged<IShellWindows*, short, int>)(lpVtbl[17]))((IShellWindows*)Unsafe.AsPointer(ref this), fAttach);
         }

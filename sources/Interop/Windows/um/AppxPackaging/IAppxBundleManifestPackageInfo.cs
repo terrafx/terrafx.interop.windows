@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IAppxBundleManifestPackageInfo*, Guid*, void**, int>)(lpVtbl[0]))((IAppxBundleManifestPackageInfo*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,48 +41,42 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetPackageType(APPX_BUNDLE_PAYLOAD_PACKAGE_TYPE* packageType)
+        public HRESULT GetPackageType(APPX_BUNDLE_PAYLOAD_PACKAGE_TYPE* packageType)
         {
             return ((delegate* unmanaged<IAppxBundleManifestPackageInfo*, APPX_BUNDLE_PAYLOAD_PACKAGE_TYPE*, int>)(lpVtbl[3]))((IAppxBundleManifestPackageInfo*)Unsafe.AsPointer(ref this), packageType);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetPackageId(IAppxManifestPackageId** packageId)
+        public HRESULT GetPackageId(IAppxManifestPackageId** packageId)
         {
             return ((delegate* unmanaged<IAppxBundleManifestPackageInfo*, IAppxManifestPackageId**, int>)(lpVtbl[4]))((IAppxBundleManifestPackageInfo*)Unsafe.AsPointer(ref this), packageId);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetFileName([NativeTypeName("LPWSTR *")] ushort** fileName)
+        public HRESULT GetFileName([NativeTypeName("LPWSTR *")] ushort** fileName)
         {
             return ((delegate* unmanaged<IAppxBundleManifestPackageInfo*, ushort**, int>)(lpVtbl[5]))((IAppxBundleManifestPackageInfo*)Unsafe.AsPointer(ref this), fileName);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetOffset([NativeTypeName("UINT64 *")] ulong* offset)
+        public HRESULT GetOffset([NativeTypeName("UINT64 *")] ulong* offset)
         {
             return ((delegate* unmanaged<IAppxBundleManifestPackageInfo*, ulong*, int>)(lpVtbl[6]))((IAppxBundleManifestPackageInfo*)Unsafe.AsPointer(ref this), offset);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetSize([NativeTypeName("UINT64 *")] ulong* size)
+        public HRESULT GetSize([NativeTypeName("UINT64 *")] ulong* size)
         {
             return ((delegate* unmanaged<IAppxBundleManifestPackageInfo*, ulong*, int>)(lpVtbl[7]))((IAppxBundleManifestPackageInfo*)Unsafe.AsPointer(ref this), size);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetResources(IAppxManifestQualifiedResourcesEnumerator** resources)
+        public HRESULT GetResources(IAppxManifestQualifiedResourcesEnumerator** resources)
         {
             return ((delegate* unmanaged<IAppxBundleManifestPackageInfo*, IAppxManifestQualifiedResourcesEnumerator**, int>)(lpVtbl[8]))((IAppxBundleManifestPackageInfo*)Unsafe.AsPointer(ref this), resources);
         }

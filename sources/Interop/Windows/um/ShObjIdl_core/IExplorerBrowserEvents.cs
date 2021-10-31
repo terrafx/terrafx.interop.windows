@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IExplorerBrowserEvents*, Guid*, void**, int>)(lpVtbl[0]))((IExplorerBrowserEvents*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,32 +41,28 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int OnNavigationPending([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidlFolder)
+        public HRESULT OnNavigationPending([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidlFolder)
         {
             return ((delegate* unmanaged<IExplorerBrowserEvents*, ITEMIDLIST*, int>)(lpVtbl[3]))((IExplorerBrowserEvents*)Unsafe.AsPointer(ref this), pidlFolder);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int OnViewCreated(IShellView* psv)
+        public HRESULT OnViewCreated(IShellView* psv)
         {
             return ((delegate* unmanaged<IExplorerBrowserEvents*, IShellView*, int>)(lpVtbl[4]))((IExplorerBrowserEvents*)Unsafe.AsPointer(ref this), psv);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int OnNavigationComplete([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidlFolder)
+        public HRESULT OnNavigationComplete([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidlFolder)
         {
             return ((delegate* unmanaged<IExplorerBrowserEvents*, ITEMIDLIST*, int>)(lpVtbl[5]))((IExplorerBrowserEvents*)Unsafe.AsPointer(ref this), pidlFolder);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int OnNavigationFailed([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidlFolder)
+        public HRESULT OnNavigationFailed([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidlFolder)
         {
             return ((delegate* unmanaged<IExplorerBrowserEvents*, ITEMIDLIST*, int>)(lpVtbl[6]))((IExplorerBrowserEvents*)Unsafe.AsPointer(ref this), pidlFolder);
         }

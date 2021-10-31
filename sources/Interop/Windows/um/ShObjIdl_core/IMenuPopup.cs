@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IMenuPopup*, Guid*, void**, int>)(lpVtbl[0]))((IMenuPopup*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,64 +41,56 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetWindow([NativeTypeName("HWND *")] IntPtr* phwnd)
+        public HRESULT GetWindow([NativeTypeName("HWND *")] IntPtr* phwnd)
         {
             return ((delegate* unmanaged<IMenuPopup*, IntPtr*, int>)(lpVtbl[3]))((IMenuPopup*)Unsafe.AsPointer(ref this), phwnd);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int ContextSensitiveHelp(BOOL fEnterMode)
+        public HRESULT ContextSensitiveHelp(BOOL fEnterMode)
         {
             return ((delegate* unmanaged<IMenuPopup*, BOOL, int>)(lpVtbl[4]))((IMenuPopup*)Unsafe.AsPointer(ref this), fEnterMode);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetClient(IUnknown* punkClient)
+        public HRESULT SetClient(IUnknown* punkClient)
         {
             return ((delegate* unmanaged<IMenuPopup*, IUnknown*, int>)(lpVtbl[5]))((IMenuPopup*)Unsafe.AsPointer(ref this), punkClient);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetClient(IUnknown** ppunkClient)
+        public HRESULT GetClient(IUnknown** ppunkClient)
         {
             return ((delegate* unmanaged<IMenuPopup*, IUnknown**, int>)(lpVtbl[6]))((IMenuPopup*)Unsafe.AsPointer(ref this), ppunkClient);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        [return: NativeTypeName("HRESULT")]
-        public int OnPosRectChangeDB(RECT* prc)
+        public HRESULT OnPosRectChangeDB(RECT* prc)
         {
             return ((delegate* unmanaged<IMenuPopup*, RECT*, int>)(lpVtbl[7]))((IMenuPopup*)Unsafe.AsPointer(ref this), prc);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        [return: NativeTypeName("HRESULT")]
-        public int Popup(POINTL* ppt, RECTL* prcExclude, [NativeTypeName("MP_POPUPFLAGS")] int dwFlags)
+        public HRESULT Popup(POINTL* ppt, RECTL* prcExclude, [NativeTypeName("MP_POPUPFLAGS")] int dwFlags)
         {
             return ((delegate* unmanaged<IMenuPopup*, POINTL*, RECTL*, int, int>)(lpVtbl[8]))((IMenuPopup*)Unsafe.AsPointer(ref this), ppt, prcExclude, dwFlags);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        [return: NativeTypeName("HRESULT")]
-        public int OnSelect([NativeTypeName("DWORD")] uint dwSelectType)
+        public HRESULT OnSelect([NativeTypeName("DWORD")] uint dwSelectType)
         {
             return ((delegate* unmanaged<IMenuPopup*, uint, int>)(lpVtbl[9]))((IMenuPopup*)Unsafe.AsPointer(ref this), dwSelectType);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(10)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetSubMenu(IMenuPopup* pmp, BOOL fSet)
+        public HRESULT SetSubMenu(IMenuPopup* pmp, BOOL fSet)
         {
             return ((delegate* unmanaged<IMenuPopup*, IMenuPopup*, BOOL, int>)(lpVtbl[10]))((IMenuPopup*)Unsafe.AsPointer(ref this), pmp, fSet);
         }

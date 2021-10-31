@@ -29,8 +29,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(2)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetDesc(D3D10_EFFECT_VARIABLE_DESC* pDesc)
+        public HRESULT GetDesc(D3D10_EFFECT_VARIABLE_DESC* pDesc)
         {
             return ((delegate* unmanaged<ID3D10EffectConstantBuffer*, D3D10_EFFECT_VARIABLE_DESC*, int>)(lpVtbl[2]))((ID3D10EffectConstantBuffer*)Unsafe.AsPointer(ref this), pDesc);
         }
@@ -177,48 +176,42 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(23)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetRawValue(void* pData, [NativeTypeName("UINT")] uint Offset, [NativeTypeName("UINT")] uint ByteCount)
+        public HRESULT SetRawValue(void* pData, [NativeTypeName("UINT")] uint Offset, [NativeTypeName("UINT")] uint ByteCount)
         {
             return ((delegate* unmanaged<ID3D10EffectConstantBuffer*, void*, uint, uint, int>)(lpVtbl[23]))((ID3D10EffectConstantBuffer*)Unsafe.AsPointer(ref this), pData, Offset, ByteCount);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(24)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetRawValue(void* pData, [NativeTypeName("UINT")] uint Offset, [NativeTypeName("UINT")] uint ByteCount)
+        public HRESULT GetRawValue(void* pData, [NativeTypeName("UINT")] uint Offset, [NativeTypeName("UINT")] uint ByteCount)
         {
             return ((delegate* unmanaged<ID3D10EffectConstantBuffer*, void*, uint, uint, int>)(lpVtbl[24]))((ID3D10EffectConstantBuffer*)Unsafe.AsPointer(ref this), pData, Offset, ByteCount);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(25)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetConstantBuffer(ID3D10Buffer* pConstantBuffer)
+        public HRESULT SetConstantBuffer(ID3D10Buffer* pConstantBuffer)
         {
             return ((delegate* unmanaged<ID3D10EffectConstantBuffer*, ID3D10Buffer*, int>)(lpVtbl[25]))((ID3D10EffectConstantBuffer*)Unsafe.AsPointer(ref this), pConstantBuffer);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(26)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetConstantBuffer(ID3D10Buffer** ppConstantBuffer)
+        public HRESULT GetConstantBuffer(ID3D10Buffer** ppConstantBuffer)
         {
             return ((delegate* unmanaged<ID3D10EffectConstantBuffer*, ID3D10Buffer**, int>)(lpVtbl[26]))((ID3D10EffectConstantBuffer*)Unsafe.AsPointer(ref this), ppConstantBuffer);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(27)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetTextureBuffer(ID3D10ShaderResourceView* pTextureBuffer)
+        public HRESULT SetTextureBuffer(ID3D10ShaderResourceView* pTextureBuffer)
         {
             return ((delegate* unmanaged<ID3D10EffectConstantBuffer*, ID3D10ShaderResourceView*, int>)(lpVtbl[27]))((ID3D10EffectConstantBuffer*)Unsafe.AsPointer(ref this), pTextureBuffer);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(28)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetTextureBuffer(ID3D10ShaderResourceView** ppTextureBuffer)
+        public HRESULT GetTextureBuffer(ID3D10ShaderResourceView** ppTextureBuffer)
         {
             return ((delegate* unmanaged<ID3D10EffectConstantBuffer*, ID3D10ShaderResourceView**, int>)(lpVtbl[28]))((ID3D10EffectConstantBuffer*)Unsafe.AsPointer(ref this), ppTextureBuffer);
         }

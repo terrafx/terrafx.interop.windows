@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IProtectedModeMenuServices*, Guid*, void**, int>)(lpVtbl[0]))((IProtectedModeMenuServices*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,24 +41,21 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int CreateMenu([NativeTypeName("HMENU *")] IntPtr* phMenu)
+        public HRESULT CreateMenu([NativeTypeName("HMENU *")] IntPtr* phMenu)
         {
             return ((delegate* unmanaged<IProtectedModeMenuServices*, IntPtr*, int>)(lpVtbl[3]))((IProtectedModeMenuServices*)Unsafe.AsPointer(ref this), phMenu);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int LoadMenuW([NativeTypeName("LPCWSTR")] ushort* pszModuleName, [NativeTypeName("LPCWSTR")] ushort* pszMenuName, [NativeTypeName("HMENU *")] IntPtr* phMenu)
+        public HRESULT LoadMenuW([NativeTypeName("LPCWSTR")] ushort* pszModuleName, [NativeTypeName("LPCWSTR")] ushort* pszMenuName, [NativeTypeName("HMENU *")] IntPtr* phMenu)
         {
             return ((delegate* unmanaged<IProtectedModeMenuServices*, ushort*, ushort*, IntPtr*, int>)(lpVtbl[4]))((IProtectedModeMenuServices*)Unsafe.AsPointer(ref this), pszModuleName, pszMenuName, phMenu);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int LoadMenuID([NativeTypeName("LPCWSTR")] ushort* pszModuleName, [NativeTypeName("WORD")] ushort wResourceID, [NativeTypeName("HMENU *")] IntPtr* phMenu)
+        public HRESULT LoadMenuID([NativeTypeName("LPCWSTR")] ushort* pszModuleName, [NativeTypeName("WORD")] ushort wResourceID, [NativeTypeName("HMENU *")] IntPtr* phMenu)
         {
             return ((delegate* unmanaged<IProtectedModeMenuServices*, ushort*, ushort, IntPtr*, int>)(lpVtbl[5]))((IProtectedModeMenuServices*)Unsafe.AsPointer(ref this), pszModuleName, wResourceID, phMenu);
         }

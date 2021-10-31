@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IDefaultFolderMenuInitialize*, Guid*, void**, int>)(lpVtbl[0]))((IDefaultFolderMenuInitialize*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,32 +41,28 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int Initialize([NativeTypeName("HWND")] IntPtr hwnd, IContextMenuCB* pcmcb, [NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidlFolder, IShellFolder* psf, [NativeTypeName("UINT")] uint cidl, [NativeTypeName("LPCITEMIDLIST *")] ITEMIDLIST** apidl, IUnknown* punkAssociation, [NativeTypeName("UINT")] uint cKeys, [NativeTypeName("const HKEY *")] IntPtr* aKeys)
+        public HRESULT Initialize([NativeTypeName("HWND")] IntPtr hwnd, IContextMenuCB* pcmcb, [NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidlFolder, IShellFolder* psf, [NativeTypeName("UINT")] uint cidl, [NativeTypeName("LPCITEMIDLIST *")] ITEMIDLIST** apidl, IUnknown* punkAssociation, [NativeTypeName("UINT")] uint cKeys, [NativeTypeName("const HKEY *")] IntPtr* aKeys)
         {
             return ((delegate* unmanaged<IDefaultFolderMenuInitialize*, IntPtr, IContextMenuCB*, ITEMIDLIST*, IShellFolder*, uint, ITEMIDLIST**, IUnknown*, uint, IntPtr*, int>)(lpVtbl[3]))((IDefaultFolderMenuInitialize*)Unsafe.AsPointer(ref this), hwnd, pcmcb, pidlFolder, psf, cidl, apidl, punkAssociation, cKeys, aKeys);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetMenuRestrictions(DEFAULT_FOLDER_MENU_RESTRICTIONS dfmrValues)
+        public HRESULT SetMenuRestrictions(DEFAULT_FOLDER_MENU_RESTRICTIONS dfmrValues)
         {
             return ((delegate* unmanaged<IDefaultFolderMenuInitialize*, DEFAULT_FOLDER_MENU_RESTRICTIONS, int>)(lpVtbl[4]))((IDefaultFolderMenuInitialize*)Unsafe.AsPointer(ref this), dfmrValues);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetMenuRestrictions(DEFAULT_FOLDER_MENU_RESTRICTIONS dfmrMask, DEFAULT_FOLDER_MENU_RESTRICTIONS* pdfmrValues)
+        public HRESULT GetMenuRestrictions(DEFAULT_FOLDER_MENU_RESTRICTIONS dfmrMask, DEFAULT_FOLDER_MENU_RESTRICTIONS* pdfmrValues)
         {
             return ((delegate* unmanaged<IDefaultFolderMenuInitialize*, DEFAULT_FOLDER_MENU_RESTRICTIONS, DEFAULT_FOLDER_MENU_RESTRICTIONS*, int>)(lpVtbl[5]))((IDefaultFolderMenuInitialize*)Unsafe.AsPointer(ref this), dfmrMask, pdfmrValues);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetHandlerClsid([NativeTypeName("const IID &")] Guid* rclsid)
+        public HRESULT SetHandlerClsid([NativeTypeName("const IID &")] Guid* rclsid)
         {
             return ((delegate* unmanaged<IDefaultFolderMenuInitialize*, Guid*, int>)(lpVtbl[6]))((IDefaultFolderMenuInitialize*)Unsafe.AsPointer(ref this), rclsid);
         }

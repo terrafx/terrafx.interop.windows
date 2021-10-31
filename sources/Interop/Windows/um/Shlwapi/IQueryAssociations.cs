@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IQueryAssociations*, Guid*, void**, int>)(lpVtbl[0]))((IQueryAssociations*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,40 +41,35 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int Init([NativeTypeName("ASSOCF")] uint flags, [NativeTypeName("LPCWSTR")] ushort* pszAssoc, [NativeTypeName("HKEY")] IntPtr hkProgid, [NativeTypeName("HWND")] IntPtr hwnd)
+        public HRESULT Init([NativeTypeName("ASSOCF")] uint flags, [NativeTypeName("LPCWSTR")] ushort* pszAssoc, [NativeTypeName("HKEY")] IntPtr hkProgid, [NativeTypeName("HWND")] IntPtr hwnd)
         {
             return ((delegate* unmanaged<IQueryAssociations*, uint, ushort*, IntPtr, IntPtr, int>)(lpVtbl[3]))((IQueryAssociations*)Unsafe.AsPointer(ref this), flags, pszAssoc, hkProgid, hwnd);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetString([NativeTypeName("ASSOCF")] uint flags, ASSOCSTR str, [NativeTypeName("LPCWSTR")] ushort* pszExtra, [NativeTypeName("LPWSTR")] ushort* pszOut, [NativeTypeName("DWORD *")] uint* pcchOut)
+        public HRESULT GetString([NativeTypeName("ASSOCF")] uint flags, ASSOCSTR str, [NativeTypeName("LPCWSTR")] ushort* pszExtra, [NativeTypeName("LPWSTR")] ushort* pszOut, [NativeTypeName("DWORD *")] uint* pcchOut)
         {
             return ((delegate* unmanaged<IQueryAssociations*, uint, ASSOCSTR, ushort*, ushort*, uint*, int>)(lpVtbl[4]))((IQueryAssociations*)Unsafe.AsPointer(ref this), flags, str, pszExtra, pszOut, pcchOut);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetKey([NativeTypeName("ASSOCF")] uint flags, ASSOCKEY key, [NativeTypeName("LPCWSTR")] ushort* pszExtra, [NativeTypeName("HKEY *")] IntPtr* phkeyOut)
+        public HRESULT GetKey([NativeTypeName("ASSOCF")] uint flags, ASSOCKEY key, [NativeTypeName("LPCWSTR")] ushort* pszExtra, [NativeTypeName("HKEY *")] IntPtr* phkeyOut)
         {
             return ((delegate* unmanaged<IQueryAssociations*, uint, ASSOCKEY, ushort*, IntPtr*, int>)(lpVtbl[5]))((IQueryAssociations*)Unsafe.AsPointer(ref this), flags, key, pszExtra, phkeyOut);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetData([NativeTypeName("ASSOCF")] uint flags, ASSOCDATA data, [NativeTypeName("LPCWSTR")] ushort* pszExtra, void* pvOut, [NativeTypeName("DWORD *")] uint* pcbOut)
+        public HRESULT GetData([NativeTypeName("ASSOCF")] uint flags, ASSOCDATA data, [NativeTypeName("LPCWSTR")] ushort* pszExtra, void* pvOut, [NativeTypeName("DWORD *")] uint* pcbOut)
         {
             return ((delegate* unmanaged<IQueryAssociations*, uint, ASSOCDATA, ushort*, void*, uint*, int>)(lpVtbl[6]))((IQueryAssociations*)Unsafe.AsPointer(ref this), flags, data, pszExtra, pvOut, pcbOut);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetEnum([NativeTypeName("ASSOCF")] uint flags, ASSOCENUM assocenum, [NativeTypeName("LPCWSTR")] ushort* pszExtra, [NativeTypeName("const IID &")] Guid* riid, void** ppvOut)
+        public HRESULT GetEnum([NativeTypeName("ASSOCF")] uint flags, ASSOCENUM assocenum, [NativeTypeName("LPCWSTR")] ushort* pszExtra, [NativeTypeName("const IID &")] Guid* riid, void** ppvOut)
         {
             return ((delegate* unmanaged<IQueryAssociations*, uint, ASSOCENUM, ushort*, Guid*, void**, int>)(lpVtbl[7]))((IQueryAssociations*)Unsafe.AsPointer(ref this), flags, assocenum, pszExtra, riid, ppvOut);
         }

@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IVMRImagePresenter*, Guid*, void**, int>)(lpVtbl[0]))((IVMRImagePresenter*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,24 +41,21 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int StartPresenting([NativeTypeName("DWORD_PTR")] nuint dwUserID)
+        public HRESULT StartPresenting([NativeTypeName("DWORD_PTR")] nuint dwUserID)
         {
             return ((delegate* unmanaged<IVMRImagePresenter*, nuint, int>)(lpVtbl[3]))((IVMRImagePresenter*)Unsafe.AsPointer(ref this), dwUserID);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int StopPresenting([NativeTypeName("DWORD_PTR")] nuint dwUserID)
+        public HRESULT StopPresenting([NativeTypeName("DWORD_PTR")] nuint dwUserID)
         {
             return ((delegate* unmanaged<IVMRImagePresenter*, nuint, int>)(lpVtbl[4]))((IVMRImagePresenter*)Unsafe.AsPointer(ref this), dwUserID);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int PresentImage([NativeTypeName("DWORD_PTR")] nuint dwUserID, VMRPRESENTATIONINFO* lpPresInfo)
+        public HRESULT PresentImage([NativeTypeName("DWORD_PTR")] nuint dwUserID, VMRPRESENTATIONINFO* lpPresInfo)
         {
             return ((delegate* unmanaged<IVMRImagePresenter*, nuint, VMRPRESENTATIONINFO*, int>)(lpVtbl[5]))((IVMRImagePresenter*)Unsafe.AsPointer(ref this), dwUserID, lpPresInfo);
         }

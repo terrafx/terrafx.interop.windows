@@ -43,8 +43,7 @@ namespace TerraFX.Interop
         public static extern uint GetSystemWow64Directory2W([NativeTypeName("LPWSTR")] ushort* lpBuffer, [NativeTypeName("UINT")] uint uSize, [NativeTypeName("WORD")] ushort ImageFileMachineType);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int IsWow64GuestMachineSupported([NativeTypeName("USHORT")] ushort WowGuestMachine, BOOL* MachineIsSupported);
+        public static extern HRESULT IsWow64GuestMachineSupported([NativeTypeName("USHORT")] ushort WowGuestMachine, BOOL* MachineIsSupported);
 
         [DllImport("kernel32", ExactSpelling = true)]
         public static extern BOOL Wow64GetThreadContext([NativeTypeName("HANDLE")] IntPtr hThread, [NativeTypeName("PWOW64_CONTEXT")] WOW64_CONTEXT* lpContext);

@@ -150,8 +150,7 @@ namespace TerraFX.Interop
                 [NativeTypeName("DWORD")]
                 public uint dwStreamNumber;
 
-                [NativeTypeName("HRESULT")]
-                public int hrFailure;
+                public HRESULT hrFailure;
 
                 [NativeTypeName("DWORD")]
                 public uint dwReserved;

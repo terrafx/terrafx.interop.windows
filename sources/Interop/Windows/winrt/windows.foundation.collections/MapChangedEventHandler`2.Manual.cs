@@ -17,8 +17,7 @@ namespace TerraFX.Interop
         public void** lpVtbl;
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
             return ((delegate* unmanaged<MapChangedEventHandler<K, V>*, Guid*, void**, int>)(lpVtbl[0]))((MapChangedEventHandler<K, V>*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -38,8 +37,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [return: NativeTypeName("HRESULT")]
-        public int Invoke([NativeTypeName("IObservableMap<K_logical, V_logical> *")] IObservableMap<K, V>* sender, [NativeTypeName("IMapChangedEventArgs<K_logical> *")] IMapChangedEventArgs<K>* e)
+        public HRESULT Invoke([NativeTypeName("IObservableMap<K_logical, V_logical> *")] IObservableMap<K, V>* sender, [NativeTypeName("IMapChangedEventArgs<K_logical> *")] IMapChangedEventArgs<K>* e)
         {
             return ((delegate* unmanaged<MapChangedEventHandler<K, V>*, IObservableMap<K, V>*, IMapChangedEventArgs<K>*, int>)(lpVtbl[3]))((MapChangedEventHandler<K, V>*)Unsafe.AsPointer(ref this), sender, e);
         }

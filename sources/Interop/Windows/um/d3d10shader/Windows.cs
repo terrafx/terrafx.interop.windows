@@ -113,12 +113,10 @@ namespace TerraFX.Interop
         }
 
         [DllImport("d3d10", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int D3D10CompileShader([NativeTypeName("LPCSTR")] sbyte* pSrcData, [NativeTypeName("SIZE_T")] nuint SrcDataSize, [NativeTypeName("LPCSTR")] sbyte* pFileName, [NativeTypeName("const D3D10_SHADER_MACRO *")] D3D_SHADER_MACRO* pDefines, [NativeTypeName("LPD3D10INCLUDE")] ID3DInclude* pInclude, [NativeTypeName("LPCSTR")] sbyte* pFunctionName, [NativeTypeName("LPCSTR")] sbyte* pProfile, [NativeTypeName("UINT")] uint Flags, [NativeTypeName("ID3D10Blob **")] ID3DBlob** ppShader, [NativeTypeName("ID3D10Blob **")] ID3DBlob** ppErrorMsgs);
+        public static extern HRESULT D3D10CompileShader([NativeTypeName("LPCSTR")] sbyte* pSrcData, [NativeTypeName("SIZE_T")] nuint SrcDataSize, [NativeTypeName("LPCSTR")] sbyte* pFileName, [NativeTypeName("const D3D10_SHADER_MACRO *")] D3D_SHADER_MACRO* pDefines, [NativeTypeName("LPD3D10INCLUDE")] ID3DInclude* pInclude, [NativeTypeName("LPCSTR")] sbyte* pFunctionName, [NativeTypeName("LPCSTR")] sbyte* pProfile, [NativeTypeName("UINT")] uint Flags, [NativeTypeName("ID3D10Blob **")] ID3DBlob** ppShader, [NativeTypeName("ID3D10Blob **")] ID3DBlob** ppErrorMsgs);
 
         [DllImport("d3d10", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int D3D10DisassembleShader([NativeTypeName("const void *")] void* pShader, [NativeTypeName("SIZE_T")] nuint BytecodeLength, BOOL EnableColorCode, [NativeTypeName("LPCSTR")] sbyte* pComments, [NativeTypeName("ID3D10Blob **")] ID3DBlob** ppDisassembly);
+        public static extern HRESULT D3D10DisassembleShader([NativeTypeName("const void *")] void* pShader, [NativeTypeName("SIZE_T")] nuint BytecodeLength, BOOL EnableColorCode, [NativeTypeName("LPCSTR")] sbyte* pComments, [NativeTypeName("ID3D10Blob **")] ID3DBlob** ppDisassembly);
 
         [DllImport("d3d10", ExactSpelling = true)]
         [return: NativeTypeName("LPCSTR")]
@@ -133,28 +131,22 @@ namespace TerraFX.Interop
         public static extern sbyte* D3D10GetGeometryShaderProfile(ID3D10Device* pDevice);
 
         [DllImport("d3d10", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int D3D10ReflectShader([NativeTypeName("const void *")] void* pShaderBytecode, [NativeTypeName("SIZE_T")] nuint BytecodeLength, ID3D10ShaderReflection** ppReflector);
+        public static extern HRESULT D3D10ReflectShader([NativeTypeName("const void *")] void* pShaderBytecode, [NativeTypeName("SIZE_T")] nuint BytecodeLength, ID3D10ShaderReflection** ppReflector);
 
         [DllImport("d3d10", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int D3D10PreprocessShader([NativeTypeName("LPCSTR")] sbyte* pSrcData, [NativeTypeName("SIZE_T")] nuint SrcDataSize, [NativeTypeName("LPCSTR")] sbyte* pFileName, [NativeTypeName("const D3D10_SHADER_MACRO *")] D3D_SHADER_MACRO* pDefines, [NativeTypeName("LPD3D10INCLUDE")] ID3DInclude* pInclude, [NativeTypeName("ID3D10Blob **")] ID3DBlob** ppShaderText, [NativeTypeName("ID3D10Blob **")] ID3DBlob** ppErrorMsgs);
+        public static extern HRESULT D3D10PreprocessShader([NativeTypeName("LPCSTR")] sbyte* pSrcData, [NativeTypeName("SIZE_T")] nuint SrcDataSize, [NativeTypeName("LPCSTR")] sbyte* pFileName, [NativeTypeName("const D3D10_SHADER_MACRO *")] D3D_SHADER_MACRO* pDefines, [NativeTypeName("LPD3D10INCLUDE")] ID3DInclude* pInclude, [NativeTypeName("ID3D10Blob **")] ID3DBlob** ppShaderText, [NativeTypeName("ID3D10Blob **")] ID3DBlob** ppErrorMsgs);
 
         [DllImport("d3d10", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int D3D10GetInputSignatureBlob([NativeTypeName("const void *")] void* pShaderBytecode, [NativeTypeName("SIZE_T")] nuint BytecodeLength, [NativeTypeName("ID3D10Blob **")] ID3DBlob** ppSignatureBlob);
+        public static extern HRESULT D3D10GetInputSignatureBlob([NativeTypeName("const void *")] void* pShaderBytecode, [NativeTypeName("SIZE_T")] nuint BytecodeLength, [NativeTypeName("ID3D10Blob **")] ID3DBlob** ppSignatureBlob);
 
         [DllImport("d3d10", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int D3D10GetOutputSignatureBlob([NativeTypeName("const void *")] void* pShaderBytecode, [NativeTypeName("SIZE_T")] nuint BytecodeLength, [NativeTypeName("ID3D10Blob **")] ID3DBlob** ppSignatureBlob);
+        public static extern HRESULT D3D10GetOutputSignatureBlob([NativeTypeName("const void *")] void* pShaderBytecode, [NativeTypeName("SIZE_T")] nuint BytecodeLength, [NativeTypeName("ID3D10Blob **")] ID3DBlob** ppSignatureBlob);
 
         [DllImport("d3d10", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int D3D10GetInputAndOutputSignatureBlob([NativeTypeName("const void *")] void* pShaderBytecode, [NativeTypeName("SIZE_T")] nuint BytecodeLength, [NativeTypeName("ID3D10Blob **")] ID3DBlob** ppSignatureBlob);
+        public static extern HRESULT D3D10GetInputAndOutputSignatureBlob([NativeTypeName("const void *")] void* pShaderBytecode, [NativeTypeName("SIZE_T")] nuint BytecodeLength, [NativeTypeName("ID3D10Blob **")] ID3DBlob** ppSignatureBlob);
 
         [DllImport("d3d10", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int D3D10GetShaderDebugInfo([NativeTypeName("const void *")] void* pShaderBytecode, [NativeTypeName("SIZE_T")] nuint BytecodeLength, [NativeTypeName("ID3D10Blob **")] ID3DBlob** ppDebugInfo);
+        public static extern HRESULT D3D10GetShaderDebugInfo([NativeTypeName("const void *")] void* pShaderBytecode, [NativeTypeName("SIZE_T")] nuint BytecodeLength, [NativeTypeName("ID3D10Blob **")] ID3DBlob** ppDebugInfo);
 
         [NativeTypeName("#define D3D10_SHADER_DEBUG (1 << 0)")]
         public const int D3D10_SHADER_DEBUG = (1 << 0);

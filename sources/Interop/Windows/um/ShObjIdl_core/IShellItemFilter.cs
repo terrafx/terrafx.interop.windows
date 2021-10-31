@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IShellItemFilter*, Guid*, void**, int>)(lpVtbl[0]))((IShellItemFilter*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,16 +41,14 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int IncludeItem(IShellItem* psi)
+        public HRESULT IncludeItem(IShellItem* psi)
         {
             return ((delegate* unmanaged<IShellItemFilter*, IShellItem*, int>)(lpVtbl[3]))((IShellItemFilter*)Unsafe.AsPointer(ref this), psi);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetEnumFlagsForItem(IShellItem* psi, [NativeTypeName("SHCONTF *")] uint* pgrfFlags)
+        public HRESULT GetEnumFlagsForItem(IShellItem* psi, [NativeTypeName("SHCONTF *")] uint* pgrfFlags)
         {
             return ((delegate* unmanaged<IShellItemFilter*, IShellItem*, uint*, int>)(lpVtbl[4]))((IShellItemFilter*)Unsafe.AsPointer(ref this), psi, pgrfFlags);
         }

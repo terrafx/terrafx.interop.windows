@@ -10,6 +10,6 @@ namespace TerraFX.Interop
     public unsafe partial struct WS_SERVICE_PROPERTY_CLOSE_CALLBACK
     {
         [NativeTypeName("WS_SERVICE_CLOSE_CHANNEL_CALLBACK")]
-        public delegate* unmanaged<IntPtr, WS_ASYNC_CONTEXT*, int> callback;
+        public delegate* unmanaged<IntPtr, WS_ASYNC_CONTEXT*, HRESULT> callback;
     }
 }

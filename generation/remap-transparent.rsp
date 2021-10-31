@@ -1,2 +1,3 @@
 --with-transparent-struct
 BOOL=int
+HRESULT=int

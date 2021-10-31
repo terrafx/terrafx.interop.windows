@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IColumnProvider*, Guid*, void**, int>)(lpVtbl[0]))((IColumnProvider*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,24 +41,21 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int Initialize([NativeTypeName("LPCSHCOLUMNINIT")] SHCOLUMNINIT* psci)
+        public HRESULT Initialize([NativeTypeName("LPCSHCOLUMNINIT")] SHCOLUMNINIT* psci)
         {
             return ((delegate* unmanaged<IColumnProvider*, SHCOLUMNINIT*, int>)(lpVtbl[3]))((IColumnProvider*)Unsafe.AsPointer(ref this), psci);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetColumnInfo([NativeTypeName("DWORD")] uint dwIndex, SHCOLUMNINFO* psci)
+        public HRESULT GetColumnInfo([NativeTypeName("DWORD")] uint dwIndex, SHCOLUMNINFO* psci)
         {
             return ((delegate* unmanaged<IColumnProvider*, uint, SHCOLUMNINFO*, int>)(lpVtbl[4]))((IColumnProvider*)Unsafe.AsPointer(ref this), dwIndex, psci);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetItemData([NativeTypeName("LPCSHCOLUMNID")] PROPERTYKEY* pscid, [NativeTypeName("LPCSHCOLUMNDATA")] SHCOLUMNDATA* pscd, VARIANT* pvarData)
+        public HRESULT GetItemData([NativeTypeName("LPCSHCOLUMNID")] PROPERTYKEY* pscid, [NativeTypeName("LPCSHCOLUMNDATA")] SHCOLUMNDATA* pscd, VARIANT* pvarData)
         {
             return ((delegate* unmanaged<IColumnProvider*, PROPERTYKEY*, SHCOLUMNDATA*, VARIANT*, int>)(lpVtbl[5]))((IColumnProvider*)Unsafe.AsPointer(ref this), pscid, pscd, pvarData);
         }

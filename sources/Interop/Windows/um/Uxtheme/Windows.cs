@@ -21,16 +21,13 @@ namespace TerraFX.Interop
         public static extern BOOL EndPanningFeedback([NativeTypeName("HWND")] IntPtr hwnd, BOOL fAnimateBack);
 
         [DllImport("uxtheme", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int GetThemeAnimationProperty([NativeTypeName("HTHEME")] IntPtr hTheme, int iStoryboardId, int iTargetId, TA_PROPERTY eProperty, void* pvProperty, [NativeTypeName("DWORD")] uint cbSize, [NativeTypeName("DWORD *")] uint* pcbSizeOut);
+        public static extern HRESULT GetThemeAnimationProperty([NativeTypeName("HTHEME")] IntPtr hTheme, int iStoryboardId, int iTargetId, TA_PROPERTY eProperty, void* pvProperty, [NativeTypeName("DWORD")] uint cbSize, [NativeTypeName("DWORD *")] uint* pcbSizeOut);
 
         [DllImport("uxtheme", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int GetThemeAnimationTransform([NativeTypeName("HTHEME")] IntPtr hTheme, int iStoryboardId, int iTargetId, [NativeTypeName("DWORD")] uint dwTransformIndex, TA_TRANSFORM* pTransform, [NativeTypeName("DWORD")] uint cbSize, [NativeTypeName("DWORD *")] uint* pcbSizeOut);
+        public static extern HRESULT GetThemeAnimationTransform([NativeTypeName("HTHEME")] IntPtr hTheme, int iStoryboardId, int iTargetId, [NativeTypeName("DWORD")] uint dwTransformIndex, TA_TRANSFORM* pTransform, [NativeTypeName("DWORD")] uint cbSize, [NativeTypeName("DWORD *")] uint* pcbSizeOut);
 
         [DllImport("uxtheme", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int GetThemeTimingFunction([NativeTypeName("HTHEME")] IntPtr hTheme, int iTimingFunctionId, TA_TIMINGFUNCTION* pTimingFunction, [NativeTypeName("DWORD")] uint cbSize, [NativeTypeName("DWORD *")] uint* pcbSizeOut);
+        public static extern HRESULT GetThemeTimingFunction([NativeTypeName("HTHEME")] IntPtr hTheme, int iTimingFunctionId, TA_TIMINGFUNCTION* pTimingFunction, [NativeTypeName("DWORD")] uint cbSize, [NativeTypeName("DWORD *")] uint* pcbSizeOut);
 
         [DllImport("uxtheme", ExactSpelling = true)]
         [return: NativeTypeName("HTHEME")]
@@ -45,56 +42,43 @@ namespace TerraFX.Interop
         public static extern IntPtr OpenThemeDataEx([NativeTypeName("HWND")] IntPtr hwnd, [NativeTypeName("LPCWSTR")] ushort* pszClassList, [NativeTypeName("DWORD")] uint dwFlags);
 
         [DllImport("uxtheme", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int CloseThemeData([NativeTypeName("HTHEME")] IntPtr hTheme);
+        public static extern HRESULT CloseThemeData([NativeTypeName("HTHEME")] IntPtr hTheme);
 
         [DllImport("uxtheme", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int DrawThemeBackground([NativeTypeName("HTHEME")] IntPtr hTheme, [NativeTypeName("HDC")] IntPtr hdc, int iPartId, int iStateId, [NativeTypeName("LPCRECT")] RECT* pRect, [NativeTypeName("LPCRECT")] RECT* pClipRect);
+        public static extern HRESULT DrawThemeBackground([NativeTypeName("HTHEME")] IntPtr hTheme, [NativeTypeName("HDC")] IntPtr hdc, int iPartId, int iStateId, [NativeTypeName("LPCRECT")] RECT* pRect, [NativeTypeName("LPCRECT")] RECT* pClipRect);
 
         [DllImport("uxtheme", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int DrawThemeBackgroundEx([NativeTypeName("HTHEME")] IntPtr hTheme, [NativeTypeName("HDC")] IntPtr hdc, int iPartId, int iStateId, [NativeTypeName("LPCRECT")] RECT* pRect, [NativeTypeName("const DTBGOPTS *")] DTBGOPTS* pOptions);
+        public static extern HRESULT DrawThemeBackgroundEx([NativeTypeName("HTHEME")] IntPtr hTheme, [NativeTypeName("HDC")] IntPtr hdc, int iPartId, int iStateId, [NativeTypeName("LPCRECT")] RECT* pRect, [NativeTypeName("const DTBGOPTS *")] DTBGOPTS* pOptions);
 
         [DllImport("uxtheme", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int DrawThemeText([NativeTypeName("HTHEME")] IntPtr hTheme, [NativeTypeName("HDC")] IntPtr hdc, int iPartId, int iStateId, [NativeTypeName("LPCWSTR")] ushort* pszText, int cchText, [NativeTypeName("DWORD")] uint dwTextFlags, [NativeTypeName("DWORD")] uint dwTextFlags2, [NativeTypeName("LPCRECT")] RECT* pRect);
+        public static extern HRESULT DrawThemeText([NativeTypeName("HTHEME")] IntPtr hTheme, [NativeTypeName("HDC")] IntPtr hdc, int iPartId, int iStateId, [NativeTypeName("LPCWSTR")] ushort* pszText, int cchText, [NativeTypeName("DWORD")] uint dwTextFlags, [NativeTypeName("DWORD")] uint dwTextFlags2, [NativeTypeName("LPCRECT")] RECT* pRect);
 
         [DllImport("uxtheme", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int GetThemeBackgroundContentRect([NativeTypeName("HTHEME")] IntPtr hTheme, [NativeTypeName("HDC")] IntPtr hdc, int iPartId, int iStateId, [NativeTypeName("LPCRECT")] RECT* pBoundingRect, [NativeTypeName("LPRECT")] RECT* pContentRect);
+        public static extern HRESULT GetThemeBackgroundContentRect([NativeTypeName("HTHEME")] IntPtr hTheme, [NativeTypeName("HDC")] IntPtr hdc, int iPartId, int iStateId, [NativeTypeName("LPCRECT")] RECT* pBoundingRect, [NativeTypeName("LPRECT")] RECT* pContentRect);
 
         [DllImport("uxtheme", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int GetThemeBackgroundExtent([NativeTypeName("HTHEME")] IntPtr hTheme, [NativeTypeName("HDC")] IntPtr hdc, int iPartId, int iStateId, [NativeTypeName("LPCRECT")] RECT* pContentRect, [NativeTypeName("LPRECT")] RECT* pExtentRect);
+        public static extern HRESULT GetThemeBackgroundExtent([NativeTypeName("HTHEME")] IntPtr hTheme, [NativeTypeName("HDC")] IntPtr hdc, int iPartId, int iStateId, [NativeTypeName("LPCRECT")] RECT* pContentRect, [NativeTypeName("LPRECT")] RECT* pExtentRect);
 
         [DllImport("uxtheme", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int GetThemeBackgroundRegion([NativeTypeName("HTHEME")] IntPtr hTheme, [NativeTypeName("HDC")] IntPtr hdc, int iPartId, int iStateId, [NativeTypeName("LPCRECT")] RECT* pRect, [NativeTypeName("HRGN *")] IntPtr* pRegion);
+        public static extern HRESULT GetThemeBackgroundRegion([NativeTypeName("HTHEME")] IntPtr hTheme, [NativeTypeName("HDC")] IntPtr hdc, int iPartId, int iStateId, [NativeTypeName("LPCRECT")] RECT* pRect, [NativeTypeName("HRGN *")] IntPtr* pRegion);
 
         [DllImport("uxtheme", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int GetThemePartSize([NativeTypeName("HTHEME")] IntPtr hTheme, [NativeTypeName("HDC")] IntPtr hdc, int iPartId, int iStateId, [NativeTypeName("LPCRECT")] RECT* prc, [NativeTypeName("enum THEMESIZE")] THEMESIZE eSize, SIZE* psz);
+        public static extern HRESULT GetThemePartSize([NativeTypeName("HTHEME")] IntPtr hTheme, [NativeTypeName("HDC")] IntPtr hdc, int iPartId, int iStateId, [NativeTypeName("LPCRECT")] RECT* prc, [NativeTypeName("enum THEMESIZE")] THEMESIZE eSize, SIZE* psz);
 
         [DllImport("uxtheme", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int GetThemeTextExtent([NativeTypeName("HTHEME")] IntPtr hTheme, [NativeTypeName("HDC")] IntPtr hdc, int iPartId, int iStateId, [NativeTypeName("LPCWSTR")] ushort* pszText, int cchCharCount, [NativeTypeName("DWORD")] uint dwTextFlags, [NativeTypeName("LPCRECT")] RECT* pBoundingRect, [NativeTypeName("LPRECT")] RECT* pExtentRect);
+        public static extern HRESULT GetThemeTextExtent([NativeTypeName("HTHEME")] IntPtr hTheme, [NativeTypeName("HDC")] IntPtr hdc, int iPartId, int iStateId, [NativeTypeName("LPCWSTR")] ushort* pszText, int cchCharCount, [NativeTypeName("DWORD")] uint dwTextFlags, [NativeTypeName("LPCRECT")] RECT* pBoundingRect, [NativeTypeName("LPRECT")] RECT* pExtentRect);
 
         [DllImport("uxtheme", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int GetThemeTextMetrics([NativeTypeName("HTHEME")] IntPtr hTheme, [NativeTypeName("HDC")] IntPtr hdc, int iPartId, int iStateId, TEXTMETRICW* ptm);
+        public static extern HRESULT GetThemeTextMetrics([NativeTypeName("HTHEME")] IntPtr hTheme, [NativeTypeName("HDC")] IntPtr hdc, int iPartId, int iStateId, TEXTMETRICW* ptm);
 
         [DllImport("uxtheme", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int HitTestThemeBackground([NativeTypeName("HTHEME")] IntPtr hTheme, [NativeTypeName("HDC")] IntPtr hdc, int iPartId, int iStateId, [NativeTypeName("DWORD")] uint dwOptions, [NativeTypeName("LPCRECT")] RECT* pRect, [NativeTypeName("HRGN")] IntPtr hrgn, POINT ptTest, [NativeTypeName("WORD *")] ushort* pwHitTestCode);
+        public static extern HRESULT HitTestThemeBackground([NativeTypeName("HTHEME")] IntPtr hTheme, [NativeTypeName("HDC")] IntPtr hdc, int iPartId, int iStateId, [NativeTypeName("DWORD")] uint dwOptions, [NativeTypeName("LPCRECT")] RECT* pRect, [NativeTypeName("HRGN")] IntPtr hrgn, POINT ptTest, [NativeTypeName("WORD *")] ushort* pwHitTestCode);
 
         [DllImport("uxtheme", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int DrawThemeEdge([NativeTypeName("HTHEME")] IntPtr hTheme, [NativeTypeName("HDC")] IntPtr hdc, int iPartId, int iStateId, [NativeTypeName("LPCRECT")] RECT* pDestRect, [NativeTypeName("UINT")] uint uEdge, [NativeTypeName("UINT")] uint uFlags, [NativeTypeName("LPRECT")] RECT* pContentRect);
+        public static extern HRESULT DrawThemeEdge([NativeTypeName("HTHEME")] IntPtr hTheme, [NativeTypeName("HDC")] IntPtr hdc, int iPartId, int iStateId, [NativeTypeName("LPCRECT")] RECT* pDestRect, [NativeTypeName("UINT")] uint uEdge, [NativeTypeName("UINT")] uint uFlags, [NativeTypeName("LPRECT")] RECT* pContentRect);
 
         [DllImport("uxtheme", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int DrawThemeIcon([NativeTypeName("HTHEME")] IntPtr hTheme, [NativeTypeName("HDC")] IntPtr hdc, int iPartId, int iStateId, [NativeTypeName("LPCRECT")] RECT* pRect, [NativeTypeName("HIMAGELIST")] IntPtr himl, int iImageIndex);
+        public static extern HRESULT DrawThemeIcon([NativeTypeName("HTHEME")] IntPtr hTheme, [NativeTypeName("HDC")] IntPtr hdc, int iPartId, int iStateId, [NativeTypeName("LPCRECT")] RECT* pRect, [NativeTypeName("HIMAGELIST")] IntPtr himl, int iImageIndex);
 
         [DllImport("uxtheme", ExactSpelling = true)]
         public static extern BOOL IsThemePartDefined([NativeTypeName("HTHEME")] IntPtr hTheme, int iPartId, int iStateId);
@@ -103,60 +87,46 @@ namespace TerraFX.Interop
         public static extern BOOL IsThemeBackgroundPartiallyTransparent([NativeTypeName("HTHEME")] IntPtr hTheme, int iPartId, int iStateId);
 
         [DllImport("uxtheme", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int GetThemeColor([NativeTypeName("HTHEME")] IntPtr hTheme, int iPartId, int iStateId, int iPropId, [NativeTypeName("COLORREF *")] uint* pColor);
+        public static extern HRESULT GetThemeColor([NativeTypeName("HTHEME")] IntPtr hTheme, int iPartId, int iStateId, int iPropId, [NativeTypeName("COLORREF *")] uint* pColor);
 
         [DllImport("uxtheme", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int GetThemeMetric([NativeTypeName("HTHEME")] IntPtr hTheme, [NativeTypeName("HDC")] IntPtr hdc, int iPartId, int iStateId, int iPropId, int* piVal);
+        public static extern HRESULT GetThemeMetric([NativeTypeName("HTHEME")] IntPtr hTheme, [NativeTypeName("HDC")] IntPtr hdc, int iPartId, int iStateId, int iPropId, int* piVal);
 
         [DllImport("uxtheme", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int GetThemeString([NativeTypeName("HTHEME")] IntPtr hTheme, int iPartId, int iStateId, int iPropId, [NativeTypeName("LPWSTR")] ushort* pszBuff, int cchMaxBuffChars);
+        public static extern HRESULT GetThemeString([NativeTypeName("HTHEME")] IntPtr hTheme, int iPartId, int iStateId, int iPropId, [NativeTypeName("LPWSTR")] ushort* pszBuff, int cchMaxBuffChars);
 
         [DllImport("uxtheme", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int GetThemeBool([NativeTypeName("HTHEME")] IntPtr hTheme, int iPartId, int iStateId, int iPropId, BOOL* pfVal);
+        public static extern HRESULT GetThemeBool([NativeTypeName("HTHEME")] IntPtr hTheme, int iPartId, int iStateId, int iPropId, BOOL* pfVal);
 
         [DllImport("uxtheme", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int GetThemeInt([NativeTypeName("HTHEME")] IntPtr hTheme, int iPartId, int iStateId, int iPropId, int* piVal);
+        public static extern HRESULT GetThemeInt([NativeTypeName("HTHEME")] IntPtr hTheme, int iPartId, int iStateId, int iPropId, int* piVal);
 
         [DllImport("uxtheme", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int GetThemeEnumValue([NativeTypeName("HTHEME")] IntPtr hTheme, int iPartId, int iStateId, int iPropId, int* piVal);
+        public static extern HRESULT GetThemeEnumValue([NativeTypeName("HTHEME")] IntPtr hTheme, int iPartId, int iStateId, int iPropId, int* piVal);
 
         [DllImport("uxtheme", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int GetThemePosition([NativeTypeName("HTHEME")] IntPtr hTheme, int iPartId, int iStateId, int iPropId, POINT* pPoint);
+        public static extern HRESULT GetThemePosition([NativeTypeName("HTHEME")] IntPtr hTheme, int iPartId, int iStateId, int iPropId, POINT* pPoint);
 
         [DllImport("uxtheme", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int GetThemeFont([NativeTypeName("HTHEME")] IntPtr hTheme, [NativeTypeName("HDC")] IntPtr hdc, int iPartId, int iStateId, int iPropId, LOGFONTW* pFont);
+        public static extern HRESULT GetThemeFont([NativeTypeName("HTHEME")] IntPtr hTheme, [NativeTypeName("HDC")] IntPtr hdc, int iPartId, int iStateId, int iPropId, LOGFONTW* pFont);
 
         [DllImport("uxtheme", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int GetThemeRect([NativeTypeName("HTHEME")] IntPtr hTheme, int iPartId, int iStateId, int iPropId, [NativeTypeName("LPRECT")] RECT* pRect);
+        public static extern HRESULT GetThemeRect([NativeTypeName("HTHEME")] IntPtr hTheme, int iPartId, int iStateId, int iPropId, [NativeTypeName("LPRECT")] RECT* pRect);
 
         [DllImport("uxtheme", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int GetThemeMargins([NativeTypeName("HTHEME")] IntPtr hTheme, [NativeTypeName("HDC")] IntPtr hdc, int iPartId, int iStateId, int iPropId, [NativeTypeName("LPCRECT")] RECT* prc, MARGINS* pMargins);
+        public static extern HRESULT GetThemeMargins([NativeTypeName("HTHEME")] IntPtr hTheme, [NativeTypeName("HDC")] IntPtr hdc, int iPartId, int iStateId, int iPropId, [NativeTypeName("LPCRECT")] RECT* prc, MARGINS* pMargins);
 
         [DllImport("uxtheme", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int GetThemeIntList([NativeTypeName("HTHEME")] IntPtr hTheme, int iPartId, int iStateId, int iPropId, INTLIST* pIntList);
+        public static extern HRESULT GetThemeIntList([NativeTypeName("HTHEME")] IntPtr hTheme, int iPartId, int iStateId, int iPropId, INTLIST* pIntList);
 
         [DllImport("uxtheme", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int GetThemePropertyOrigin([NativeTypeName("HTHEME")] IntPtr hTheme, int iPartId, int iStateId, int iPropId, [NativeTypeName("enum PROPERTYORIGIN *")] PROPERTYORIGIN* pOrigin);
+        public static extern HRESULT GetThemePropertyOrigin([NativeTypeName("HTHEME")] IntPtr hTheme, int iPartId, int iStateId, int iPropId, [NativeTypeName("enum PROPERTYORIGIN *")] PROPERTYORIGIN* pOrigin);
 
         [DllImport("uxtheme", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int SetWindowTheme([NativeTypeName("HWND")] IntPtr hwnd, [NativeTypeName("LPCWSTR")] ushort* pszSubAppName, [NativeTypeName("LPCWSTR")] ushort* pszSubIdList);
+        public static extern HRESULT SetWindowTheme([NativeTypeName("HWND")] IntPtr hwnd, [NativeTypeName("LPCWSTR")] ushort* pszSubAppName, [NativeTypeName("LPCWSTR")] ushort* pszSubIdList);
 
         [DllImport("uxtheme", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int GetThemeFilename([NativeTypeName("HTHEME")] IntPtr hTheme, int iPartId, int iStateId, int iPropId, [NativeTypeName("LPWSTR")] ushort* pszThemeFileName, int cchMaxBuffChars);
+        public static extern HRESULT GetThemeFilename([NativeTypeName("HTHEME")] IntPtr hTheme, int iPartId, int iStateId, int iPropId, [NativeTypeName("LPWSTR")] ushort* pszThemeFileName, int cchMaxBuffChars);
 
         [DllImport("uxtheme", ExactSpelling = true)]
         [return: NativeTypeName("COLORREF")]
@@ -173,16 +143,13 @@ namespace TerraFX.Interop
         public static extern int GetThemeSysSize([NativeTypeName("HTHEME")] IntPtr hTheme, int iSizeId);
 
         [DllImport("uxtheme", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int GetThemeSysFont([NativeTypeName("HTHEME")] IntPtr hTheme, int iFontId, LOGFONTW* plf);
+        public static extern HRESULT GetThemeSysFont([NativeTypeName("HTHEME")] IntPtr hTheme, int iFontId, LOGFONTW* plf);
 
         [DllImport("uxtheme", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int GetThemeSysString([NativeTypeName("HTHEME")] IntPtr hTheme, int iStringId, [NativeTypeName("LPWSTR")] ushort* pszStringBuff, int cchMaxStringChars);
+        public static extern HRESULT GetThemeSysString([NativeTypeName("HTHEME")] IntPtr hTheme, int iStringId, [NativeTypeName("LPWSTR")] ushort* pszStringBuff, int cchMaxStringChars);
 
         [DllImport("uxtheme", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int GetThemeSysInt([NativeTypeName("HTHEME")] IntPtr hTheme, int iIntId, int* piValue);
+        public static extern HRESULT GetThemeSysInt([NativeTypeName("HTHEME")] IntPtr hTheme, int iIntId, int* piValue);
 
         [DllImport("uxtheme", ExactSpelling = true)]
         public static extern BOOL IsThemeActive();
@@ -195,8 +162,7 @@ namespace TerraFX.Interop
         public static extern IntPtr GetWindowTheme([NativeTypeName("HWND")] IntPtr hwnd);
 
         [DllImport("uxtheme", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int EnableThemeDialogTexture([NativeTypeName("HWND")] IntPtr hwnd, [NativeTypeName("DWORD")] uint dwFlags);
+        public static extern HRESULT EnableThemeDialogTexture([NativeTypeName("HWND")] IntPtr hwnd, [NativeTypeName("DWORD")] uint dwFlags);
 
         [DllImport("uxtheme", ExactSpelling = true)]
         public static extern BOOL IsThemeDialogTextureEnabled([NativeTypeName("HWND")] IntPtr hwnd);
@@ -209,60 +175,47 @@ namespace TerraFX.Interop
         public static extern void SetThemeAppProperties([NativeTypeName("DWORD")] uint dwFlags);
 
         [DllImport("uxtheme", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int GetCurrentThemeName([NativeTypeName("LPWSTR")] ushort* pszThemeFileName, int cchMaxNameChars, [NativeTypeName("LPWSTR")] ushort* pszColorBuff, int cchMaxColorChars, [NativeTypeName("LPWSTR")] ushort* pszSizeBuff, int cchMaxSizeChars);
+        public static extern HRESULT GetCurrentThemeName([NativeTypeName("LPWSTR")] ushort* pszThemeFileName, int cchMaxNameChars, [NativeTypeName("LPWSTR")] ushort* pszColorBuff, int cchMaxColorChars, [NativeTypeName("LPWSTR")] ushort* pszSizeBuff, int cchMaxSizeChars);
 
         [DllImport("uxtheme", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int GetThemeDocumentationProperty([NativeTypeName("LPCWSTR")] ushort* pszThemeName, [NativeTypeName("LPCWSTR")] ushort* pszPropertyName, [NativeTypeName("LPWSTR")] ushort* pszValueBuff, int cchMaxValChars);
+        public static extern HRESULT GetThemeDocumentationProperty([NativeTypeName("LPCWSTR")] ushort* pszThemeName, [NativeTypeName("LPCWSTR")] ushort* pszPropertyName, [NativeTypeName("LPWSTR")] ushort* pszValueBuff, int cchMaxValChars);
 
         [DllImport("uxtheme", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int DrawThemeParentBackground([NativeTypeName("HWND")] IntPtr hwnd, [NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("const RECT *")] RECT* prc);
+        public static extern HRESULT DrawThemeParentBackground([NativeTypeName("HWND")] IntPtr hwnd, [NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("const RECT *")] RECT* prc);
 
         [DllImport("uxtheme", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int EnableTheming(BOOL fEnable);
+        public static extern HRESULT EnableTheming(BOOL fEnable);
 
         [DllImport("uxtheme", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int DrawThemeParentBackgroundEx([NativeTypeName("HWND")] IntPtr hwnd, [NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("const RECT *")] RECT* prc);
+        public static extern HRESULT DrawThemeParentBackgroundEx([NativeTypeName("HWND")] IntPtr hwnd, [NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("const RECT *")] RECT* prc);
 
         [DllImport("uxtheme", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int SetWindowThemeAttribute([NativeTypeName("HWND")] IntPtr hwnd, [NativeTypeName("enum WINDOWTHEMEATTRIBUTETYPE")] WINDOWTHEMEATTRIBUTETYPE eAttribute, [NativeTypeName("PVOID")] void* pvAttribute, [NativeTypeName("DWORD")] uint cbAttribute);
+        public static extern HRESULT SetWindowThemeAttribute([NativeTypeName("HWND")] IntPtr hwnd, [NativeTypeName("enum WINDOWTHEMEATTRIBUTETYPE")] WINDOWTHEMEATTRIBUTETYPE eAttribute, [NativeTypeName("PVOID")] void* pvAttribute, [NativeTypeName("DWORD")] uint cbAttribute);
 
         [DllImport("uxtheme", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int DrawThemeTextEx([NativeTypeName("HTHEME")] IntPtr hTheme, [NativeTypeName("HDC")] IntPtr hdc, int iPartId, int iStateId, [NativeTypeName("LPCWSTR")] ushort* pszText, int cchText, [NativeTypeName("DWORD")] uint dwTextFlags, [NativeTypeName("LPRECT")] RECT* pRect, [NativeTypeName("const DTTOPTS *")] DTTOPTS* pOptions);
+        public static extern HRESULT DrawThemeTextEx([NativeTypeName("HTHEME")] IntPtr hTheme, [NativeTypeName("HDC")] IntPtr hdc, int iPartId, int iStateId, [NativeTypeName("LPCWSTR")] ushort* pszText, int cchText, [NativeTypeName("DWORD")] uint dwTextFlags, [NativeTypeName("LPRECT")] RECT* pRect, [NativeTypeName("const DTTOPTS *")] DTTOPTS* pOptions);
 
         [DllImport("uxtheme", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int GetThemeBitmap([NativeTypeName("HTHEME")] IntPtr hTheme, int iPartId, int iStateId, int iPropId, [NativeTypeName("ULONG")] uint dwFlags, [NativeTypeName("HBITMAP *")] IntPtr* phBitmap);
+        public static extern HRESULT GetThemeBitmap([NativeTypeName("HTHEME")] IntPtr hTheme, int iPartId, int iStateId, int iPropId, [NativeTypeName("ULONG")] uint dwFlags, [NativeTypeName("HBITMAP *")] IntPtr* phBitmap);
 
         [DllImport("uxtheme", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int GetThemeStream([NativeTypeName("HTHEME")] IntPtr hTheme, int iPartId, int iStateId, int iPropId, void** ppvStream, [NativeTypeName("DWORD *")] uint* pcbStream, [NativeTypeName("HINSTANCE")] IntPtr hInst);
+        public static extern HRESULT GetThemeStream([NativeTypeName("HTHEME")] IntPtr hTheme, int iPartId, int iStateId, int iPropId, void** ppvStream, [NativeTypeName("DWORD *")] uint* pcbStream, [NativeTypeName("HINSTANCE")] IntPtr hInst);
 
         [DllImport("uxtheme", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int BufferedPaintInit();
+        public static extern HRESULT BufferedPaintInit();
 
         [DllImport("uxtheme", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int BufferedPaintUnInit();
+        public static extern HRESULT BufferedPaintUnInit();
 
         [DllImport("uxtheme", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("HPAINTBUFFER")]
         public static extern IntPtr BeginBufferedPaint([NativeTypeName("HDC")] IntPtr hdcTarget, [NativeTypeName("const RECT *")] RECT* prcTarget, BP_BUFFERFORMAT dwFormat, BP_PAINTPARAMS* pPaintParams, [NativeTypeName("HDC *")] IntPtr* phdc);
 
         [DllImport("uxtheme", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int EndBufferedPaint([NativeTypeName("HPAINTBUFFER")] IntPtr hBufferedPaint, BOOL fUpdateTarget);
+        public static extern HRESULT EndBufferedPaint([NativeTypeName("HPAINTBUFFER")] IntPtr hBufferedPaint, BOOL fUpdateTarget);
 
         [DllImport("uxtheme", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int GetBufferedPaintTargetRect([NativeTypeName("HPAINTBUFFER")] IntPtr hBufferedPaint, RECT* prc);
+        public static extern HRESULT GetBufferedPaintTargetRect([NativeTypeName("HPAINTBUFFER")] IntPtr hBufferedPaint, RECT* prc);
 
         [DllImport("uxtheme", ExactSpelling = true)]
         [return: NativeTypeName("HDC")]
@@ -273,28 +226,23 @@ namespace TerraFX.Interop
         public static extern IntPtr GetBufferedPaintDC([NativeTypeName("HPAINTBUFFER")] IntPtr hBufferedPaint);
 
         [DllImport("uxtheme", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int GetBufferedPaintBits([NativeTypeName("HPAINTBUFFER")] IntPtr hBufferedPaint, RGBQUAD** ppbBuffer, int* pcxRow);
+        public static extern HRESULT GetBufferedPaintBits([NativeTypeName("HPAINTBUFFER")] IntPtr hBufferedPaint, RGBQUAD** ppbBuffer, int* pcxRow);
 
         [DllImport("uxtheme", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int BufferedPaintClear([NativeTypeName("HPAINTBUFFER")] IntPtr hBufferedPaint, [NativeTypeName("const RECT *")] RECT* prc);
+        public static extern HRESULT BufferedPaintClear([NativeTypeName("HPAINTBUFFER")] IntPtr hBufferedPaint, [NativeTypeName("const RECT *")] RECT* prc);
 
         [DllImport("uxtheme", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int BufferedPaintSetAlpha([NativeTypeName("HPAINTBUFFER")] IntPtr hBufferedPaint, [NativeTypeName("const RECT *")] RECT* prc, [NativeTypeName("BYTE")] byte alpha);
+        public static extern HRESULT BufferedPaintSetAlpha([NativeTypeName("HPAINTBUFFER")] IntPtr hBufferedPaint, [NativeTypeName("const RECT *")] RECT* prc, [NativeTypeName("BYTE")] byte alpha);
 
         [DllImport("uxtheme", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int BufferedPaintStopAllAnimations([NativeTypeName("HWND")] IntPtr hwnd);
+        public static extern HRESULT BufferedPaintStopAllAnimations([NativeTypeName("HWND")] IntPtr hwnd);
 
         [DllImport("uxtheme", ExactSpelling = true)]
         [return: NativeTypeName("HANIMATIONBUFFER")]
         public static extern IntPtr BeginBufferedAnimation([NativeTypeName("HWND")] IntPtr hwnd, [NativeTypeName("HDC")] IntPtr hdcTarget, [NativeTypeName("const RECT *")] RECT* prcTarget, BP_BUFFERFORMAT dwFormat, BP_PAINTPARAMS* pPaintParams, BP_ANIMATIONPARAMS* pAnimationParams, [NativeTypeName("HDC *")] IntPtr* phdcFrom, [NativeTypeName("HDC *")] IntPtr* phdcTo);
 
         [DllImport("uxtheme", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int EndBufferedAnimation([NativeTypeName("HANIMATIONBUFFER")] IntPtr hbpAnimation, BOOL fUpdateTarget);
+        public static extern HRESULT EndBufferedAnimation([NativeTypeName("HANIMATIONBUFFER")] IntPtr hbpAnimation, BOOL fUpdateTarget);
 
         [DllImport("uxtheme", ExactSpelling = true)]
         public static extern BOOL BufferedPaintRenderAnimation([NativeTypeName("HWND")] IntPtr hwnd, [NativeTypeName("HDC")] IntPtr hdcTarget);
@@ -303,8 +251,7 @@ namespace TerraFX.Interop
         public static extern BOOL IsCompositionActive();
 
         [DllImport("uxtheme", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int GetThemeTransitionDuration([NativeTypeName("HTHEME")] IntPtr hTheme, int iPartId, int iStateIdFrom, int iStateIdTo, int iPropId, [NativeTypeName("DWORD *")] uint* pdwDuration);
+        public static extern HRESULT GetThemeTransitionDuration([NativeTypeName("HTHEME")] IntPtr hTheme, int iPartId, int iStateIdFrom, int iStateIdTo, int iPropId, [NativeTypeName("DWORD *")] uint* pdwDuration);
 
         [NativeTypeName("#define MAX_THEMECOLOR 64")]
         public const int MAX_THEMECOLOR = 64;

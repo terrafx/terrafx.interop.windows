@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IDiaReadExeAtOffsetCallback*, Guid*, void**, int>)(lpVtbl[0]))((IDiaReadExeAtOffsetCallback*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,8 +41,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int ReadExecutableAt([NativeTypeName("DWORDLONG")] ulong fileOffset, [NativeTypeName("DWORD")] uint cbData, [NativeTypeName("DWORD *")] uint* pcbData, [NativeTypeName("BYTE *")] byte* pbData)
+        public HRESULT ReadExecutableAt([NativeTypeName("DWORDLONG")] ulong fileOffset, [NativeTypeName("DWORD")] uint cbData, [NativeTypeName("DWORD *")] uint* pcbData, [NativeTypeName("BYTE *")] byte* pbData)
         {
             return ((delegate* unmanaged<IDiaReadExeAtOffsetCallback*, ulong, uint, uint*, byte*, int>)(lpVtbl[3]))((IDiaReadExeAtOffsetCallback*)Unsafe.AsPointer(ref this), fileOffset, cbData, pcbData, pbData);
         }

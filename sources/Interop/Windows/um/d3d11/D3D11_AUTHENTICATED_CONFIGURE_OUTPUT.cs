@@ -20,7 +20,6 @@ namespace TerraFX.Interop
         [NativeTypeName("UINT")]
         public uint SequenceNumber;
 
-        [NativeTypeName("HRESULT")]
-        public int ReturnCode;
+        public HRESULT ReturnCode;
     }
 }

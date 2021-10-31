@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<ISyncMgrEventStore*, Guid*, void**, int>)(lpVtbl[0]))((ISyncMgrEventStore*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,32 +41,28 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetEventEnumerator(IEnumSyncMgrEvents** ppenum)
+        public HRESULT GetEventEnumerator(IEnumSyncMgrEvents** ppenum)
         {
             return ((delegate* unmanaged<ISyncMgrEventStore*, IEnumSyncMgrEvents**, int>)(lpVtbl[3]))((ISyncMgrEventStore*)Unsafe.AsPointer(ref this), ppenum);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetEventCount([NativeTypeName("ULONG *")] uint* pcEvents)
+        public HRESULT GetEventCount([NativeTypeName("ULONG *")] uint* pcEvents)
         {
             return ((delegate* unmanaged<ISyncMgrEventStore*, uint*, int>)(lpVtbl[4]))((ISyncMgrEventStore*)Unsafe.AsPointer(ref this), pcEvents);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetEvent([NativeTypeName("const GUID &")] Guid* rguidEventID, ISyncMgrEvent** ppEvent)
+        public HRESULT GetEvent([NativeTypeName("const GUID &")] Guid* rguidEventID, ISyncMgrEvent** ppEvent)
         {
             return ((delegate* unmanaged<ISyncMgrEventStore*, Guid*, ISyncMgrEvent**, int>)(lpVtbl[5]))((ISyncMgrEventStore*)Unsafe.AsPointer(ref this), rguidEventID, ppEvent);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int RemoveEvent([NativeTypeName("GUID *")] Guid* pguidEventIDs, [NativeTypeName("ULONG")] uint cEvents)
+        public HRESULT RemoveEvent([NativeTypeName("GUID *")] Guid* pguidEventIDs, [NativeTypeName("ULONG")] uint cEvents)
         {
             return ((delegate* unmanaged<ISyncMgrEventStore*, Guid*, uint, int>)(lpVtbl[6]))((ISyncMgrEventStore*)Unsafe.AsPointer(ref this), pguidEventIDs, cEvents);
         }

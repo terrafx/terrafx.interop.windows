@@ -14,8 +14,7 @@ namespace TerraFX.Interop
 
         public BOOL fProceedWithAuthentication;
 
-        [NativeTypeName("HRESULT")]
-        public int hrAuthenticationStatus;
+        public HRESULT hrAuthenticationStatus;
 
         [NativeTypeName("LPCWSTR")]
         public ushort* pwszURL;

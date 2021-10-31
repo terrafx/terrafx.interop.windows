@@ -13,8 +13,7 @@ namespace TerraFX.Interop
 {
     public static unsafe partial class Windows
     {
-        [return: NativeTypeName("HRESULT")]
-        public static int SHCreateLibrary([NativeTypeName("const IID &")] Guid* riid, void** ppv)
+        public static HRESULT SHCreateLibrary([NativeTypeName("const IID &")] Guid* riid, void** ppv)
         {
             fixed (Guid* rclsid = &CLSID_ShellLibrary)
             {
@@ -22,8 +21,7 @@ namespace TerraFX.Interop
             }
         }
 
-        [return: NativeTypeName("HRESULT")]
-        public static int SHLoadLibraryFromItem(IShellItem* psiLibrary, [NativeTypeName("DWORD")] uint grfMode, [NativeTypeName("const IID &")] Guid* riid, void** ppv)
+        public static HRESULT SHLoadLibraryFromItem(IShellItem* psiLibrary, [NativeTypeName("DWORD")] uint grfMode, [NativeTypeName("const IID &")] Guid* riid, void** ppv)
         {
             *ppv = null;
             IShellLibrary* plib;
@@ -48,8 +46,7 @@ namespace TerraFX.Interop
             return hr;
         }
 
-        [return: NativeTypeName("HRESULT")]
-        public static int SHLoadLibraryFromKnownFolder([NativeTypeName("const KNOWNFOLDERID &")] Guid* kfidLibrary, [NativeTypeName("DWORD")] uint grfMode, [NativeTypeName("const IID &")] Guid* riid, void** ppv)
+        public static HRESULT SHLoadLibraryFromKnownFolder([NativeTypeName("const KNOWNFOLDERID &")] Guid* kfidLibrary, [NativeTypeName("DWORD")] uint grfMode, [NativeTypeName("const IID &")] Guid* riid, void** ppv)
         {
             *ppv = null;
             IShellLibrary* plib;
@@ -74,8 +71,7 @@ namespace TerraFX.Interop
             return hr;
         }
 
-        [return: NativeTypeName("HRESULT")]
-        public static int SHLoadLibraryFromParsingName([NativeTypeName("PCWSTR")] ushort* pszParsingName, [NativeTypeName("DWORD")] uint grfMode, [NativeTypeName("const IID &")] Guid* riid, void** ppv)
+        public static HRESULT SHLoadLibraryFromParsingName([NativeTypeName("PCWSTR")] ushort* pszParsingName, [NativeTypeName("DWORD")] uint grfMode, [NativeTypeName("const IID &")] Guid* riid, void** ppv)
         {
             *ppv = null;
             IShellItem* psiLibrary;
@@ -90,8 +86,7 @@ namespace TerraFX.Interop
             return hr;
         }
 
-        [return: NativeTypeName("HRESULT")]
-        public static int SHAddFolderPathToLibrary(IShellLibrary* plib, [NativeTypeName("PCWSTR")] ushort* pszFolderPath)
+        public static HRESULT SHAddFolderPathToLibrary(IShellLibrary* plib, [NativeTypeName("PCWSTR")] ushort* pszFolderPath)
         {
             IShellItem* psiFolder;
             int hr = SHCreateItemFromParsingName(pszFolderPath, null, __uuidof<IShellItem>(), (void**)(&psiFolder));
@@ -105,8 +100,7 @@ namespace TerraFX.Interop
             return hr;
         }
 
-        [return: NativeTypeName("HRESULT")]
-        public static int SHRemoveFolderPathFromLibrary(IShellLibrary* plib, [NativeTypeName("PCWSTR")] ushort* pszFolderPath)
+        public static HRESULT SHRemoveFolderPathFromLibrary(IShellLibrary* plib, [NativeTypeName("PCWSTR")] ushort* pszFolderPath)
         {
             ITEMIDLIST* pidlFolder = SHSimpleIDListFromPath(pszFolderPath);
             int hr = unchecked((pidlFolder) != null ? ((int)(0)) : ((int)(0x80070057)));
@@ -128,8 +122,7 @@ namespace TerraFX.Interop
             return hr;
         }
 
-        [return: NativeTypeName("HRESULT")]
-        public static int SHSaveLibraryInFolderPath(IShellLibrary* plib, [NativeTypeName("PCWSTR")] ushort* pszFolderPath, [NativeTypeName("PCWSTR")] ushort* pszLibraryName, LIBRARYSAVEFLAGS lsf, [NativeTypeName("PWSTR *")] ushort** ppszSavedToPath)
+        public static HRESULT SHSaveLibraryInFolderPath(IShellLibrary* plib, [NativeTypeName("PCWSTR")] ushort* pszFolderPath, [NativeTypeName("PCWSTR")] ushort* pszLibraryName, LIBRARYSAVEFLAGS lsf, [NativeTypeName("PWSTR *")] ushort** ppszSavedToPath)
         {
             if ((ppszSavedToPath) != null)
             {

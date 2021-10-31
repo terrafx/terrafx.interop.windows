@@ -14,7 +14,6 @@ namespace TerraFX.Interop
 
         public D3D11_KEY_EXCHANGE_HW_PROTECTION_OUTPUT_DATA* pOutputData;
 
-        [NativeTypeName("HRESULT")]
-        public int Status;
+        public HRESULT Status;
     }
 }

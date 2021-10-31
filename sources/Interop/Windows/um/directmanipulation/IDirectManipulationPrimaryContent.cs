@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IDirectManipulationPrimaryContent*, Guid*, void**, int>)(lpVtbl[0]))((IDirectManipulationPrimaryContent*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,72 +41,63 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetSnapInterval(DIRECTMANIPULATION_MOTION_TYPES motion, float interval, float offset)
+        public HRESULT SetSnapInterval(DIRECTMANIPULATION_MOTION_TYPES motion, float interval, float offset)
         {
             return ((delegate* unmanaged<IDirectManipulationPrimaryContent*, DIRECTMANIPULATION_MOTION_TYPES, float, float, int>)(lpVtbl[3]))((IDirectManipulationPrimaryContent*)Unsafe.AsPointer(ref this), motion, interval, offset);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetSnapPoints(DIRECTMANIPULATION_MOTION_TYPES motion, [NativeTypeName("const float *")] float* points, [NativeTypeName("DWORD")] uint pointCount)
+        public HRESULT SetSnapPoints(DIRECTMANIPULATION_MOTION_TYPES motion, [NativeTypeName("const float *")] float* points, [NativeTypeName("DWORD")] uint pointCount)
         {
             return ((delegate* unmanaged<IDirectManipulationPrimaryContent*, DIRECTMANIPULATION_MOTION_TYPES, float*, uint, int>)(lpVtbl[4]))((IDirectManipulationPrimaryContent*)Unsafe.AsPointer(ref this), motion, points, pointCount);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetSnapType(DIRECTMANIPULATION_MOTION_TYPES motion, DIRECTMANIPULATION_SNAPPOINT_TYPE type)
+        public HRESULT SetSnapType(DIRECTMANIPULATION_MOTION_TYPES motion, DIRECTMANIPULATION_SNAPPOINT_TYPE type)
         {
             return ((delegate* unmanaged<IDirectManipulationPrimaryContent*, DIRECTMANIPULATION_MOTION_TYPES, DIRECTMANIPULATION_SNAPPOINT_TYPE, int>)(lpVtbl[5]))((IDirectManipulationPrimaryContent*)Unsafe.AsPointer(ref this), motion, type);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetSnapCoordinate(DIRECTMANIPULATION_MOTION_TYPES motion, DIRECTMANIPULATION_SNAPPOINT_COORDINATE coordinate, float origin)
+        public HRESULT SetSnapCoordinate(DIRECTMANIPULATION_MOTION_TYPES motion, DIRECTMANIPULATION_SNAPPOINT_COORDINATE coordinate, float origin)
         {
             return ((delegate* unmanaged<IDirectManipulationPrimaryContent*, DIRECTMANIPULATION_MOTION_TYPES, DIRECTMANIPULATION_SNAPPOINT_COORDINATE, float, int>)(lpVtbl[6]))((IDirectManipulationPrimaryContent*)Unsafe.AsPointer(ref this), motion, coordinate, origin);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetZoomBoundaries(float zoomMinimum, float zoomMaximum)
+        public HRESULT SetZoomBoundaries(float zoomMinimum, float zoomMaximum)
         {
             return ((delegate* unmanaged<IDirectManipulationPrimaryContent*, float, float, int>)(lpVtbl[7]))((IDirectManipulationPrimaryContent*)Unsafe.AsPointer(ref this), zoomMinimum, zoomMaximum);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetHorizontalAlignment(DIRECTMANIPULATION_HORIZONTALALIGNMENT alignment)
+        public HRESULT SetHorizontalAlignment(DIRECTMANIPULATION_HORIZONTALALIGNMENT alignment)
         {
             return ((delegate* unmanaged<IDirectManipulationPrimaryContent*, DIRECTMANIPULATION_HORIZONTALALIGNMENT, int>)(lpVtbl[8]))((IDirectManipulationPrimaryContent*)Unsafe.AsPointer(ref this), alignment);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetVerticalAlignment(DIRECTMANIPULATION_VERTICALALIGNMENT alignment)
+        public HRESULT SetVerticalAlignment(DIRECTMANIPULATION_VERTICALALIGNMENT alignment)
         {
             return ((delegate* unmanaged<IDirectManipulationPrimaryContent*, DIRECTMANIPULATION_VERTICALALIGNMENT, int>)(lpVtbl[9]))((IDirectManipulationPrimaryContent*)Unsafe.AsPointer(ref this), alignment);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(10)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetInertiaEndTransform(float* matrix, [NativeTypeName("DWORD")] uint pointCount)
+        public HRESULT GetInertiaEndTransform(float* matrix, [NativeTypeName("DWORD")] uint pointCount)
         {
             return ((delegate* unmanaged<IDirectManipulationPrimaryContent*, float*, uint, int>)(lpVtbl[10]))((IDirectManipulationPrimaryContent*)Unsafe.AsPointer(ref this), matrix, pointCount);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(11)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetCenterPoint(float* centerX, float* centerY)
+        public HRESULT GetCenterPoint(float* centerX, float* centerY)
         {
             return ((delegate* unmanaged<IDirectManipulationPrimaryContent*, float*, float*, int>)(lpVtbl[11]))((IDirectManipulationPrimaryContent*)Unsafe.AsPointer(ref this), centerX, centerY);
         }

@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IAppxManifestOSPackageDependency*, Guid*, void**, int>)(lpVtbl[0]))((IAppxManifestOSPackageDependency*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,16 +41,14 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetName([NativeTypeName("LPWSTR *")] ushort** name)
+        public HRESULT GetName([NativeTypeName("LPWSTR *")] ushort** name)
         {
             return ((delegate* unmanaged<IAppxManifestOSPackageDependency*, ushort**, int>)(lpVtbl[3]))((IAppxManifestOSPackageDependency*)Unsafe.AsPointer(ref this), name);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetVersion([NativeTypeName("UINT64 *")] ulong* version)
+        public HRESULT GetVersion([NativeTypeName("UINT64 *")] ulong* version)
         {
             return ((delegate* unmanaged<IAppxManifestOSPackageDependency*, ulong*, int>)(lpVtbl[4]))((IAppxManifestOSPackageDependency*)Unsafe.AsPointer(ref this), version);
         }

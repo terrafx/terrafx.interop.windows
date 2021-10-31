@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IRendezvousSession*, Guid*, void**, int>)(lpVtbl[0]))((IRendezvousSession*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,42 +41,37 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int get_State(RENDEZVOUS_SESSION_STATE* pSessionState)
+        public HRESULT get_State(RENDEZVOUS_SESSION_STATE* pSessionState)
         {
             return ((delegate* unmanaged<IRendezvousSession*, RENDEZVOUS_SESSION_STATE*, int>)(lpVtbl[3]))((IRendezvousSession*)Unsafe.AsPointer(ref this), pSessionState);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int get_RemoteUser([NativeTypeName("BSTR *")] ushort** bstrUserName)
+        public HRESULT get_RemoteUser([NativeTypeName("BSTR *")] ushort** bstrUserName)
         {
             return ((delegate* unmanaged<IRendezvousSession*, ushort**, int>)(lpVtbl[4]))((IRendezvousSession*)Unsafe.AsPointer(ref this), bstrUserName);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int get_Flags([NativeTypeName("LONG *")] int* pFlags)
+        public HRESULT get_Flags([NativeTypeName("LONG *")] int* pFlags)
         {
             return ((delegate* unmanaged<IRendezvousSession*, int*, int>)(lpVtbl[5]))((IRendezvousSession*)Unsafe.AsPointer(ref this), pFlags);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int SendContextData([NativeTypeName("BSTR")] ushort* bstrData)
+        public HRESULT SendContextData([NativeTypeName("BSTR")] ushort* bstrData)
         {
             return ((delegate* unmanaged<IRendezvousSession*, ushort*, int>)(lpVtbl[6]))((IRendezvousSession*)Unsafe.AsPointer(ref this), bstrData);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        [return: NativeTypeName("HRESULT")]
-        public int Terminate([NativeTypeName("HRESULT")] int hr, [NativeTypeName("BSTR")] ushort* bstrAppData)
+        public HRESULT Terminate(HRESULT hr, [NativeTypeName("BSTR")] ushort* bstrAppData)
         {
-            return ((delegate* unmanaged<IRendezvousSession*, int, ushort*, int>)(lpVtbl[7]))((IRendezvousSession*)Unsafe.AsPointer(ref this), hr, bstrAppData);
+            return ((delegate* unmanaged<IRendezvousSession*, HRESULT, ushort*, int>)(lpVtbl[7]))((IRendezvousSession*)Unsafe.AsPointer(ref this), hr, bstrAppData);
         }
     }
 }

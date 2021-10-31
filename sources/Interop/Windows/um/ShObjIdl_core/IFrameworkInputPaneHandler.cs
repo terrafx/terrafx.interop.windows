@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IFrameworkInputPaneHandler*, Guid*, void**, int>)(lpVtbl[0]))((IFrameworkInputPaneHandler*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,16 +41,14 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int Showing(RECT* prcInputPaneScreenLocation, BOOL fEnsureFocusedElementInView)
+        public HRESULT Showing(RECT* prcInputPaneScreenLocation, BOOL fEnsureFocusedElementInView)
         {
             return ((delegate* unmanaged<IFrameworkInputPaneHandler*, RECT*, BOOL, int>)(lpVtbl[3]))((IFrameworkInputPaneHandler*)Unsafe.AsPointer(ref this), prcInputPaneScreenLocation, fEnsureFocusedElementInView);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int Hiding(BOOL fEnsureFocusedElementInView)
+        public HRESULT Hiding(BOOL fEnsureFocusedElementInView)
         {
             return ((delegate* unmanaged<IFrameworkInputPaneHandler*, BOOL, int>)(lpVtbl[4]))((IFrameworkInputPaneHandler*)Unsafe.AsPointer(ref this), fEnsureFocusedElementInView);
         }

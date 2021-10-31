@@ -16,8 +16,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<ID3D10Effect*, Guid*, void**, int>)(lpVtbl[0]))((ID3D10Effect*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -54,16 +53,14 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetDevice(ID3D10Device** ppDevice)
+        public HRESULT GetDevice(ID3D10Device** ppDevice)
         {
             return ((delegate* unmanaged<ID3D10Effect*, ID3D10Device**, int>)(lpVtbl[5]))((ID3D10Effect*)Unsafe.AsPointer(ref this), ppDevice);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetDesc(D3D10_EFFECT_DESC* pDesc)
+        public HRESULT GetDesc(D3D10_EFFECT_DESC* pDesc)
         {
             return ((delegate* unmanaged<ID3D10Effect*, D3D10_EFFECT_DESC*, int>)(lpVtbl[6]))((ID3D10Effect*)Unsafe.AsPointer(ref this), pDesc);
         }
@@ -119,8 +116,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(14)]
-        [return: NativeTypeName("HRESULT")]
-        public int Optimize()
+        public HRESULT Optimize()
         {
             return ((delegate* unmanaged<ID3D10Effect*, int>)(lpVtbl[14]))((ID3D10Effect*)Unsafe.AsPointer(ref this));
         }

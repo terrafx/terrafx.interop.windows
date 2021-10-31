@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IAttachmentExecute*, Guid*, void**, int>)(lpVtbl[0]))((IAttachmentExecute*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,96 +41,84 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetClientTitle([NativeTypeName("LPCWSTR")] ushort* pszTitle)
+        public HRESULT SetClientTitle([NativeTypeName("LPCWSTR")] ushort* pszTitle)
         {
             return ((delegate* unmanaged<IAttachmentExecute*, ushort*, int>)(lpVtbl[3]))((IAttachmentExecute*)Unsafe.AsPointer(ref this), pszTitle);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetClientGuid([NativeTypeName("const GUID &")] Guid* guid)
+        public HRESULT SetClientGuid([NativeTypeName("const GUID &")] Guid* guid)
         {
             return ((delegate* unmanaged<IAttachmentExecute*, Guid*, int>)(lpVtbl[4]))((IAttachmentExecute*)Unsafe.AsPointer(ref this), guid);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetLocalPath([NativeTypeName("LPCWSTR")] ushort* pszLocalPath)
+        public HRESULT SetLocalPath([NativeTypeName("LPCWSTR")] ushort* pszLocalPath)
         {
             return ((delegate* unmanaged<IAttachmentExecute*, ushort*, int>)(lpVtbl[5]))((IAttachmentExecute*)Unsafe.AsPointer(ref this), pszLocalPath);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetFileName([NativeTypeName("LPCWSTR")] ushort* pszFileName)
+        public HRESULT SetFileName([NativeTypeName("LPCWSTR")] ushort* pszFileName)
         {
             return ((delegate* unmanaged<IAttachmentExecute*, ushort*, int>)(lpVtbl[6]))((IAttachmentExecute*)Unsafe.AsPointer(ref this), pszFileName);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetSource([NativeTypeName("LPCWSTR")] ushort* pszSource)
+        public HRESULT SetSource([NativeTypeName("LPCWSTR")] ushort* pszSource)
         {
             return ((delegate* unmanaged<IAttachmentExecute*, ushort*, int>)(lpVtbl[7]))((IAttachmentExecute*)Unsafe.AsPointer(ref this), pszSource);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetReferrer([NativeTypeName("LPCWSTR")] ushort* pszReferrer)
+        public HRESULT SetReferrer([NativeTypeName("LPCWSTR")] ushort* pszReferrer)
         {
             return ((delegate* unmanaged<IAttachmentExecute*, ushort*, int>)(lpVtbl[8]))((IAttachmentExecute*)Unsafe.AsPointer(ref this), pszReferrer);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        [return: NativeTypeName("HRESULT")]
-        public int CheckPolicy()
+        public HRESULT CheckPolicy()
         {
             return ((delegate* unmanaged<IAttachmentExecute*, int>)(lpVtbl[9]))((IAttachmentExecute*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(10)]
-        [return: NativeTypeName("HRESULT")]
-        public int Prompt([NativeTypeName("HWND")] IntPtr hwnd, ATTACHMENT_PROMPT prompt, ATTACHMENT_ACTION* paction)
+        public HRESULT Prompt([NativeTypeName("HWND")] IntPtr hwnd, ATTACHMENT_PROMPT prompt, ATTACHMENT_ACTION* paction)
         {
             return ((delegate* unmanaged<IAttachmentExecute*, IntPtr, ATTACHMENT_PROMPT, ATTACHMENT_ACTION*, int>)(lpVtbl[10]))((IAttachmentExecute*)Unsafe.AsPointer(ref this), hwnd, prompt, paction);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(11)]
-        [return: NativeTypeName("HRESULT")]
-        public int Save()
+        public HRESULT Save()
         {
             return ((delegate* unmanaged<IAttachmentExecute*, int>)(lpVtbl[11]))((IAttachmentExecute*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(12)]
-        [return: NativeTypeName("HRESULT")]
-        public int Execute([NativeTypeName("HWND")] IntPtr hwnd, [NativeTypeName("LPCWSTR")] ushort* pszVerb, [NativeTypeName("HANDLE *")] IntPtr* phProcess)
+        public HRESULT Execute([NativeTypeName("HWND")] IntPtr hwnd, [NativeTypeName("LPCWSTR")] ushort* pszVerb, [NativeTypeName("HANDLE *")] IntPtr* phProcess)
         {
             return ((delegate* unmanaged<IAttachmentExecute*, IntPtr, ushort*, IntPtr*, int>)(lpVtbl[12]))((IAttachmentExecute*)Unsafe.AsPointer(ref this), hwnd, pszVerb, phProcess);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(13)]
-        [return: NativeTypeName("HRESULT")]
-        public int SaveWithUI([NativeTypeName("HWND")] IntPtr hwnd)
+        public HRESULT SaveWithUI([NativeTypeName("HWND")] IntPtr hwnd)
         {
             return ((delegate* unmanaged<IAttachmentExecute*, IntPtr, int>)(lpVtbl[13]))((IAttachmentExecute*)Unsafe.AsPointer(ref this), hwnd);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(14)]
-        [return: NativeTypeName("HRESULT")]
-        public int ClearClientState()
+        public HRESULT ClearClientState()
         {
             return ((delegate* unmanaged<IAttachmentExecute*, int>)(lpVtbl[14]))((IAttachmentExecute*)Unsafe.AsPointer(ref this));
         }

@@ -149,8 +149,7 @@ namespace TerraFX.Interop
         public static extern BOOL GetOsManufacturingMode([NativeTypeName("PBOOL")] BOOL* pbEnabled);
 
         [DllImport("kernelbase", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int GetIntegratedDisplaySize(double* sizeInInches);
+        public static extern HRESULT GetIntegratedDisplaySize(double* sizeInInches);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         public static extern BOOL SetComputerNameA([NativeTypeName("LPCSTR")] sbyte* lpComputerName);

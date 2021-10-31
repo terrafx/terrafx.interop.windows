@@ -14,8 +14,7 @@ namespace TerraFX.Interop
     public static unsafe partial class Windows
     {
         [DllImport("xaudio2_9", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int XAudio2CreateWithVersionInfo(IXAudio2** ppXAudio2, [NativeTypeName("UINT32")] uint Flags = 0, [NativeTypeName("XAUDIO2_PROCESSOR")] uint XAudio2Processor = 0x00000001, [NativeTypeName("DWORD")] uint ntddiVersion = 0x0A00000A);
+        public static extern HRESULT XAudio2CreateWithVersionInfo(IXAudio2** ppXAudio2, [NativeTypeName("UINT32")] uint Flags = 0, [NativeTypeName("XAUDIO2_PROCESSOR")] uint XAudio2Processor = 0x00000001, [NativeTypeName("DWORD")] uint ntddiVersion = 0x0A00000A);
 
         [NativeTypeName("#define XAUDIO2_DLL_A \"xaudio2_9.dll\"")]
         public static ReadOnlySpan<byte> XAUDIO2_DLL_A => new byte[] { 0x78, 0x61, 0x75, 0x64, 0x69, 0x6F, 0x32, 0x5F, 0x39, 0x2E, 0x64, 0x6C, 0x6C, 0x00 };

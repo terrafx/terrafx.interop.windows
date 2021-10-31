@@ -17,8 +17,7 @@ namespace TerraFX.Interop
         public void** lpVtbl;
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
             return ((delegate* unmanaged<IMap<K, V>*, Guid*, void**, int>)(lpVtbl[0]))((IMap<K, V>*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -38,71 +37,61 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetIids([NativeTypeName("ULONG *")] uint* iidCount, [NativeTypeName("IID **")] Guid** iids)
+        public HRESULT GetIids([NativeTypeName("ULONG *")] uint* iidCount, [NativeTypeName("IID **")] Guid** iids)
         {
             return ((delegate* unmanaged<IMap<K, V>*, uint*, Guid**, int>)(lpVtbl[3]))((IMap<K, V>*)Unsafe.AsPointer(ref this), iidCount, iids);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetRuntimeClassName([NativeTypeName("HSTRING *")] IntPtr* className)
+        public HRESULT GetRuntimeClassName([NativeTypeName("HSTRING *")] IntPtr* className)
         {
             return ((delegate* unmanaged<IMap<K, V>*, IntPtr*, int>)(lpVtbl[4]))((IMap<K, V>*)Unsafe.AsPointer(ref this), className);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetTrustLevel([NativeTypeName("TrustLevel *")] TrustLevel* trustLevel)
+        public HRESULT GetTrustLevel([NativeTypeName("TrustLevel *")] TrustLevel* trustLevel)
         {
             return ((delegate* unmanaged<IMap<K, V>*, TrustLevel*, int>)(lpVtbl[5]))((IMap<K, V>*)Unsafe.AsPointer(ref this), trustLevel);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [return: NativeTypeName("HRESULT")]
-        public int Lookup([NativeTypeName("K_abi")] K key, [NativeTypeName("V_abi *")] V* value)
+        public HRESULT Lookup([NativeTypeName("K_abi")] K key, [NativeTypeName("V_abi *")] V* value)
         {
             return ((delegate* unmanaged<IMap<K, V>*, K, V*, int>)(lpVtbl[6]))((IMap<K, V>*)Unsafe.AsPointer(ref this), key, value);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [return: NativeTypeName("HRESULT")]
-        public int get_Size([NativeTypeName("unsigned int *")] uint* size)
+        public HRESULT get_Size([NativeTypeName("unsigned int *")] uint* size)
         {
             return ((delegate* unmanaged<IMap<K, V>*, uint*, int>)(lpVtbl[7]))((IMap<K, V>*)Unsafe.AsPointer(ref this), size);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [return: NativeTypeName("HRESULT")]
-        public int HasKey([NativeTypeName("T_abi")] K key, [NativeTypeName("boolean *")] byte* found)
+        public HRESULT HasKey([NativeTypeName("T_abi")] K key, [NativeTypeName("boolean *")] byte* found)
         {
             return ((delegate* unmanaged<IMap<K, V>*, K, byte*, int>)(lpVtbl[8]))((IMap<K, V>*)Unsafe.AsPointer(ref this), key, found);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetView([NativeTypeName("IMapView<K_logical, V_logical> **")] IMapView<K, V>** view)
+        public HRESULT GetView([NativeTypeName("IMapView<K_logical, V_logical> **")] IMapView<K, V>** view)
         {
             return ((delegate* unmanaged<IMap<K, V>*, IMapView<K, V>**, int>)(lpVtbl[9]))((IMap<K, V>*)Unsafe.AsPointer(ref this), view);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [return: NativeTypeName("HRESULT")]
-        public int Insert([NativeTypeName("unsigned int *")] uint* size)
+        public HRESULT Insert([NativeTypeName("unsigned int *")] uint* size)
         {
             return ((delegate* unmanaged<IMap<K, V>*, uint*, int>)(lpVtbl[10]))((IMap<K, V>*)Unsafe.AsPointer(ref this), size);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [return: NativeTypeName("HRESULT")]
-        public int Remove([NativeTypeName("K_abi")] K key, [NativeTypeName("V_abi")] V value, [NativeTypeName("boolean *")] byte* replaced)
+        public HRESULT Remove([NativeTypeName("K_abi")] K key, [NativeTypeName("V_abi")] V value, [NativeTypeName("boolean *")] byte* replaced)
         {
             return ((delegate* unmanaged<IMap<K, V>*, K, V, byte*, int>)(lpVtbl[11]))((IMap<K, V>*)Unsafe.AsPointer(ref this), key, value, replaced);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [return: NativeTypeName("HRESULT")]
-        public int Clear()
+        public HRESULT Clear()
         {
             return ((delegate* unmanaged<IMap<K, V>*, int>)(lpVtbl[12]))((IMap<K, V>*)Unsafe.AsPointer(ref this));
         }

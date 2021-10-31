@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IMFSensorGroup*, Guid*, void**, int>)(lpVtbl[0]))((IMFSensorGroup*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,64 +41,56 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetSymbolicLink([NativeTypeName("LPWSTR")] ushort* SymbolicLink, [NativeTypeName("LONG")] int cchSymbolicLink, [NativeTypeName("LONG *")] int* pcchWritten)
+        public HRESULT GetSymbolicLink([NativeTypeName("LPWSTR")] ushort* SymbolicLink, [NativeTypeName("LONG")] int cchSymbolicLink, [NativeTypeName("LONG *")] int* pcchWritten)
         {
             return ((delegate* unmanaged<IMFSensorGroup*, ushort*, int, int*, int>)(lpVtbl[3]))((IMFSensorGroup*)Unsafe.AsPointer(ref this), SymbolicLink, cchSymbolicLink, pcchWritten);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetFlags([NativeTypeName("ULONGLONG *")] ulong* pFlags)
+        public HRESULT GetFlags([NativeTypeName("ULONGLONG *")] ulong* pFlags)
         {
             return ((delegate* unmanaged<IMFSensorGroup*, ulong*, int>)(lpVtbl[4]))((IMFSensorGroup*)Unsafe.AsPointer(ref this), pFlags);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetSensorGroupAttributes(IMFAttributes** ppAttributes)
+        public HRESULT GetSensorGroupAttributes(IMFAttributes** ppAttributes)
         {
             return ((delegate* unmanaged<IMFSensorGroup*, IMFAttributes**, int>)(lpVtbl[5]))((IMFSensorGroup*)Unsafe.AsPointer(ref this), ppAttributes);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetSensorDeviceCount([NativeTypeName("DWORD *")] uint* pdwCount)
+        public HRESULT GetSensorDeviceCount([NativeTypeName("DWORD *")] uint* pdwCount)
         {
             return ((delegate* unmanaged<IMFSensorGroup*, uint*, int>)(lpVtbl[6]))((IMFSensorGroup*)Unsafe.AsPointer(ref this), pdwCount);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetSensorDevice([NativeTypeName("DWORD")] uint dwIndex, IMFSensorDevice** ppDevice)
+        public HRESULT GetSensorDevice([NativeTypeName("DWORD")] uint dwIndex, IMFSensorDevice** ppDevice)
         {
             return ((delegate* unmanaged<IMFSensorGroup*, uint, IMFSensorDevice**, int>)(lpVtbl[7]))((IMFSensorGroup*)Unsafe.AsPointer(ref this), dwIndex, ppDevice);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetDefaultSensorDeviceIndex([NativeTypeName("DWORD")] uint dwIndex)
+        public HRESULT SetDefaultSensorDeviceIndex([NativeTypeName("DWORD")] uint dwIndex)
         {
             return ((delegate* unmanaged<IMFSensorGroup*, uint, int>)(lpVtbl[8]))((IMFSensorGroup*)Unsafe.AsPointer(ref this), dwIndex);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetDefaultSensorDeviceIndex([NativeTypeName("DWORD *")] uint* pdwIndex)
+        public HRESULT GetDefaultSensorDeviceIndex([NativeTypeName("DWORD *")] uint* pdwIndex)
         {
             return ((delegate* unmanaged<IMFSensorGroup*, uint*, int>)(lpVtbl[9]))((IMFSensorGroup*)Unsafe.AsPointer(ref this), pdwIndex);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(10)]
-        [return: NativeTypeName("HRESULT")]
-        public int CreateMediaSource(IMFMediaSource** ppSource)
+        public HRESULT CreateMediaSource(IMFMediaSource** ppSource)
         {
             return ((delegate* unmanaged<IMFSensorGroup*, IMFMediaSource**, int>)(lpVtbl[10]))((IMFSensorGroup*)Unsafe.AsPointer(ref this), ppSource);
         }

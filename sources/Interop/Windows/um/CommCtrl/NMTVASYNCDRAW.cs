@@ -13,8 +13,7 @@ namespace TerraFX.Interop
 
         public IMAGELISTDRAWPARAMS* pimldp;
 
-        [NativeTypeName("HRESULT")]
-        public int hr;
+        public HRESULT hr;
 
         [NativeTypeName("HTREEITEM")]
         public IntPtr hItem;

@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<ILanguageExceptionStackBackTrace*, Guid*, void**, int>)(lpVtbl[0]))((ILanguageExceptionStackBackTrace*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,8 +41,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetStackBackTrace([NativeTypeName("ULONG")] uint maxFramesToCapture, [NativeTypeName("UINT_PTR []")] nuint* stackBackTrace, [NativeTypeName("ULONG *")] uint* framesCaptured)
+        public HRESULT GetStackBackTrace([NativeTypeName("ULONG")] uint maxFramesToCapture, [NativeTypeName("UINT_PTR []")] nuint* stackBackTrace, [NativeTypeName("ULONG *")] uint* framesCaptured)
         {
             return ((delegate* unmanaged<ILanguageExceptionStackBackTrace*, uint, nuint*, uint*, int>)(lpVtbl[3]))((ILanguageExceptionStackBackTrace*)Unsafe.AsPointer(ref this), maxFramesToCapture, stackBackTrace, framesCaptured);
         }

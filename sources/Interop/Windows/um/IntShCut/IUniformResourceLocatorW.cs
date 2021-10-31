@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IUniformResourceLocatorW*, Guid*, void**, int>)(lpVtbl[0]))((IUniformResourceLocatorW*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,24 +41,21 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetURL([NativeTypeName("LPCWSTR")] ushort* pcszURL, [NativeTypeName("DWORD")] uint dwInFlags)
+        public HRESULT SetURL([NativeTypeName("LPCWSTR")] ushort* pcszURL, [NativeTypeName("DWORD")] uint dwInFlags)
         {
             return ((delegate* unmanaged<IUniformResourceLocatorW*, ushort*, uint, int>)(lpVtbl[3]))((IUniformResourceLocatorW*)Unsafe.AsPointer(ref this), pcszURL, dwInFlags);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetURL([NativeTypeName("LPWSTR *")] ushort** ppszURL)
+        public HRESULT GetURL([NativeTypeName("LPWSTR *")] ushort** ppszURL)
         {
             return ((delegate* unmanaged<IUniformResourceLocatorW*, ushort**, int>)(lpVtbl[4]))((IUniformResourceLocatorW*)Unsafe.AsPointer(ref this), ppszURL);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int InvokeCommand([NativeTypeName("PURLINVOKECOMMANDINFOW")] URLINVOKECOMMANDINFOW* purlici)
+        public HRESULT InvokeCommand([NativeTypeName("PURLINVOKECOMMANDINFOW")] URLINVOKECOMMANDINFOW* purlici)
         {
             return ((delegate* unmanaged<IUniformResourceLocatorW*, URLINVOKECOMMANDINFOW*, int>)(lpVtbl[5]))((IUniformResourceLocatorW*)Unsafe.AsPointer(ref this), purlici);
         }

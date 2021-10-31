@@ -15,8 +15,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetDesc(D3D11_PARAMETER_DESC* pDesc)
+        public HRESULT GetDesc(D3D11_PARAMETER_DESC* pDesc)
         {
             return ((delegate* unmanaged<ID3D11FunctionParameterReflection*, D3D11_PARAMETER_DESC*, int>)(lpVtbl[0]))((ID3D11FunctionParameterReflection*)Unsafe.AsPointer(ref this), pDesc);
         }

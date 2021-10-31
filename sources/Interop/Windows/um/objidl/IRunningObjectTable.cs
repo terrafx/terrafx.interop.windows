@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IRunningObjectTable*, Guid*, void**, int>)(lpVtbl[0]))((IRunningObjectTable*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,56 +41,49 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int Register([NativeTypeName("DWORD")] uint grfFlags, IUnknown* punkObject, IMoniker* pmkObjectName, [NativeTypeName("DWORD *")] uint* pdwRegister)
+        public HRESULT Register([NativeTypeName("DWORD")] uint grfFlags, IUnknown* punkObject, IMoniker* pmkObjectName, [NativeTypeName("DWORD *")] uint* pdwRegister)
         {
             return ((delegate* unmanaged<IRunningObjectTable*, uint, IUnknown*, IMoniker*, uint*, int>)(lpVtbl[3]))((IRunningObjectTable*)Unsafe.AsPointer(ref this), grfFlags, punkObject, pmkObjectName, pdwRegister);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int Revoke([NativeTypeName("DWORD")] uint dwRegister)
+        public HRESULT Revoke([NativeTypeName("DWORD")] uint dwRegister)
         {
             return ((delegate* unmanaged<IRunningObjectTable*, uint, int>)(lpVtbl[4]))((IRunningObjectTable*)Unsafe.AsPointer(ref this), dwRegister);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int IsRunning(IMoniker* pmkObjectName)
+        public HRESULT IsRunning(IMoniker* pmkObjectName)
         {
             return ((delegate* unmanaged<IRunningObjectTable*, IMoniker*, int>)(lpVtbl[5]))((IRunningObjectTable*)Unsafe.AsPointer(ref this), pmkObjectName);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetObject(IMoniker* pmkObjectName, IUnknown** ppunkObject)
+        public HRESULT GetObject(IMoniker* pmkObjectName, IUnknown** ppunkObject)
         {
             return ((delegate* unmanaged<IRunningObjectTable*, IMoniker*, IUnknown**, int>)(lpVtbl[6]))((IRunningObjectTable*)Unsafe.AsPointer(ref this), pmkObjectName, ppunkObject);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        [return: NativeTypeName("HRESULT")]
-        public int NoteChangeTime([NativeTypeName("DWORD")] uint dwRegister, FILETIME* pfiletime)
+        public HRESULT NoteChangeTime([NativeTypeName("DWORD")] uint dwRegister, FILETIME* pfiletime)
         {
             return ((delegate* unmanaged<IRunningObjectTable*, uint, FILETIME*, int>)(lpVtbl[7]))((IRunningObjectTable*)Unsafe.AsPointer(ref this), dwRegister, pfiletime);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetTimeOfLastChange(IMoniker* pmkObjectName, FILETIME* pfiletime)
+        public HRESULT GetTimeOfLastChange(IMoniker* pmkObjectName, FILETIME* pfiletime)
         {
             return ((delegate* unmanaged<IRunningObjectTable*, IMoniker*, FILETIME*, int>)(lpVtbl[8]))((IRunningObjectTable*)Unsafe.AsPointer(ref this), pmkObjectName, pfiletime);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        [return: NativeTypeName("HRESULT")]
-        public int EnumRunning(IEnumMoniker** ppenumMoniker)
+        public HRESULT EnumRunning(IEnumMoniker** ppenumMoniker)
         {
             return ((delegate* unmanaged<IRunningObjectTable*, IEnumMoniker**, int>)(lpVtbl[9]))((IRunningObjectTable*)Unsafe.AsPointer(ref this), ppenumMoniker);
         }

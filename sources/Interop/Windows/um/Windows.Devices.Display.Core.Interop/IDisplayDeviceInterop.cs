@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IDisplayDeviceInterop*, Guid*, void**, int>)(lpVtbl[0]))((IDisplayDeviceInterop*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,16 +41,14 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int CreateSharedHandle(IInspectable* pObject, [NativeTypeName("const SECURITY_ATTRIBUTES *")] SECURITY_ATTRIBUTES* pSecurityAttributes, [NativeTypeName("DWORD")] uint Access, [NativeTypeName("HSTRING")] IntPtr Name, [NativeTypeName("HANDLE *")] IntPtr* pHandle)
+        public HRESULT CreateSharedHandle(IInspectable* pObject, [NativeTypeName("const SECURITY_ATTRIBUTES *")] SECURITY_ATTRIBUTES* pSecurityAttributes, [NativeTypeName("DWORD")] uint Access, [NativeTypeName("HSTRING")] IntPtr Name, [NativeTypeName("HANDLE *")] IntPtr* pHandle)
         {
             return ((delegate* unmanaged<IDisplayDeviceInterop*, IInspectable*, SECURITY_ATTRIBUTES*, uint, IntPtr, IntPtr*, int>)(lpVtbl[3]))((IDisplayDeviceInterop*)Unsafe.AsPointer(ref this), pObject, pSecurityAttributes, Access, Name, pHandle);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int OpenSharedHandle([NativeTypeName("HANDLE")] IntPtr NTHandle, [NativeTypeName("IID")] Guid riid, void** ppvObj)
+        public HRESULT OpenSharedHandle([NativeTypeName("HANDLE")] IntPtr NTHandle, [NativeTypeName("IID")] Guid riid, void** ppvObj)
         {
             return ((delegate* unmanaged<IDisplayDeviceInterop*, IntPtr, Guid, void**, int>)(lpVtbl[4]))((IDisplayDeviceInterop*)Unsafe.AsPointer(ref this), NTHandle, riid, ppvObj);
         }

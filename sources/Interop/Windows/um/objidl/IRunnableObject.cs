@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IRunnableObject*, Guid*, void**, int>)(lpVtbl[0]))((IRunnableObject*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,16 +41,14 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetRunningClass([NativeTypeName("LPCLSID")] Guid* lpClsid)
+        public HRESULT GetRunningClass([NativeTypeName("LPCLSID")] Guid* lpClsid)
         {
             return ((delegate* unmanaged<IRunnableObject*, Guid*, int>)(lpVtbl[3]))((IRunnableObject*)Unsafe.AsPointer(ref this), lpClsid);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int Run([NativeTypeName("LPBINDCTX")] IBindCtx* pbc)
+        public HRESULT Run([NativeTypeName("LPBINDCTX")] IBindCtx* pbc)
         {
             return ((delegate* unmanaged<IRunnableObject*, IBindCtx*, int>)(lpVtbl[4]))((IRunnableObject*)Unsafe.AsPointer(ref this), pbc);
         }
@@ -65,16 +62,14 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int LockRunning(BOOL fLock, BOOL fLastUnlockCloses)
+        public HRESULT LockRunning(BOOL fLock, BOOL fLastUnlockCloses)
         {
             return ((delegate* unmanaged<IRunnableObject*, BOOL, BOOL, int>)(lpVtbl[6]))((IRunnableObject*)Unsafe.AsPointer(ref this), fLock, fLastUnlockCloses);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetContainedObject(BOOL fContained)
+        public HRESULT SetContainedObject(BOOL fContained)
         {
             return ((delegate* unmanaged<IRunnableObject*, BOOL, int>)(lpVtbl[7]))((IRunnableObject*)Unsafe.AsPointer(ref this), fContained);
         }

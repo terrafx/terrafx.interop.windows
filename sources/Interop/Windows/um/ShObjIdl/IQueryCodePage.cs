@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IQueryCodePage*, Guid*, void**, int>)(lpVtbl[0]))((IQueryCodePage*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,16 +41,14 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetCodePage([NativeTypeName("UINT *")] uint* puiCodePage)
+        public HRESULT GetCodePage([NativeTypeName("UINT *")] uint* puiCodePage)
         {
             return ((delegate* unmanaged<IQueryCodePage*, uint*, int>)(lpVtbl[3]))((IQueryCodePage*)Unsafe.AsPointer(ref this), puiCodePage);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetCodePage([NativeTypeName("UINT")] uint uiCodePage)
+        public HRESULT SetCodePage([NativeTypeName("UINT")] uint uiCodePage)
         {
             return ((delegate* unmanaged<IQueryCodePage*, uint, int>)(lpVtbl[4]))((IQueryCodePage*)Unsafe.AsPointer(ref this), uiCodePage);
         }

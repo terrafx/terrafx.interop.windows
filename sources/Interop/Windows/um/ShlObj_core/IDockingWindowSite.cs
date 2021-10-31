@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IDockingWindowSite*, Guid*, void**, int>)(lpVtbl[0]))((IDockingWindowSite*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,40 +41,35 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetWindow([NativeTypeName("HWND *")] IntPtr* phwnd)
+        public HRESULT GetWindow([NativeTypeName("HWND *")] IntPtr* phwnd)
         {
             return ((delegate* unmanaged<IDockingWindowSite*, IntPtr*, int>)(lpVtbl[3]))((IDockingWindowSite*)Unsafe.AsPointer(ref this), phwnd);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int ContextSensitiveHelp(BOOL fEnterMode)
+        public HRESULT ContextSensitiveHelp(BOOL fEnterMode)
         {
             return ((delegate* unmanaged<IDockingWindowSite*, BOOL, int>)(lpVtbl[4]))((IDockingWindowSite*)Unsafe.AsPointer(ref this), fEnterMode);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetBorderDW(IUnknown* punkObj, RECT* prcBorder)
+        public HRESULT GetBorderDW(IUnknown* punkObj, RECT* prcBorder)
         {
             return ((delegate* unmanaged<IDockingWindowSite*, IUnknown*, RECT*, int>)(lpVtbl[5]))((IDockingWindowSite*)Unsafe.AsPointer(ref this), punkObj, prcBorder);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int RequestBorderSpaceDW(IUnknown* punkObj, [NativeTypeName("LPCBORDERWIDTHS")] RECT* pbw)
+        public HRESULT RequestBorderSpaceDW(IUnknown* punkObj, [NativeTypeName("LPCBORDERWIDTHS")] RECT* pbw)
         {
             return ((delegate* unmanaged<IDockingWindowSite*, IUnknown*, RECT*, int>)(lpVtbl[6]))((IDockingWindowSite*)Unsafe.AsPointer(ref this), punkObj, pbw);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetBorderSpaceDW(IUnknown* punkObj, [NativeTypeName("LPCBORDERWIDTHS")] RECT* pbw)
+        public HRESULT SetBorderSpaceDW(IUnknown* punkObj, [NativeTypeName("LPCBORDERWIDTHS")] RECT* pbw)
         {
             return ((delegate* unmanaged<IDockingWindowSite*, IUnknown*, RECT*, int>)(lpVtbl[7]))((IDockingWindowSite*)Unsafe.AsPointer(ref this), punkObj, pbw);
         }

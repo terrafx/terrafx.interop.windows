@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<ITfFnAdviseText*, Guid*, void**, int>)(lpVtbl[0]))((ITfFnAdviseText*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,24 +41,21 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetDisplayName([NativeTypeName("BSTR *")] ushort** pbstrName)
+        public HRESULT GetDisplayName([NativeTypeName("BSTR *")] ushort** pbstrName)
         {
             return ((delegate* unmanaged<ITfFnAdviseText*, ushort**, int>)(lpVtbl[3]))((ITfFnAdviseText*)Unsafe.AsPointer(ref this), pbstrName);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int OnTextUpdate(ITfRange* pRange, [NativeTypeName("const WCHAR *")] ushort* pchText, [NativeTypeName("LONG")] int cch)
+        public HRESULT OnTextUpdate(ITfRange* pRange, [NativeTypeName("const WCHAR *")] ushort* pchText, [NativeTypeName("LONG")] int cch)
         {
             return ((delegate* unmanaged<ITfFnAdviseText*, ITfRange*, ushort*, int, int>)(lpVtbl[4]))((ITfFnAdviseText*)Unsafe.AsPointer(ref this), pRange, pchText, cch);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int OnLatticeUpdate(ITfRange* pRange, ITfLMLattice* pLattice)
+        public HRESULT OnLatticeUpdate(ITfRange* pRange, ITfLMLattice* pLattice)
         {
             return ((delegate* unmanaged<ITfFnAdviseText*, ITfRange*, ITfLMLattice*, int>)(lpVtbl[5]))((ITfFnAdviseText*)Unsafe.AsPointer(ref this), pRange, pLattice);
         }

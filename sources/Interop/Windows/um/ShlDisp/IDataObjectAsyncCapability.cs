@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IDataObjectAsyncCapability*, Guid*, void**, int>)(lpVtbl[0]))((IDataObjectAsyncCapability*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,42 +41,37 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetAsyncMode(BOOL fDoOpAsync)
+        public HRESULT SetAsyncMode(BOOL fDoOpAsync)
         {
             return ((delegate* unmanaged<IDataObjectAsyncCapability*, BOOL, int>)(lpVtbl[3]))((IDataObjectAsyncCapability*)Unsafe.AsPointer(ref this), fDoOpAsync);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetAsyncMode(BOOL* pfIsOpAsync)
+        public HRESULT GetAsyncMode(BOOL* pfIsOpAsync)
         {
             return ((delegate* unmanaged<IDataObjectAsyncCapability*, BOOL*, int>)(lpVtbl[4]))((IDataObjectAsyncCapability*)Unsafe.AsPointer(ref this), pfIsOpAsync);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int StartOperation(IBindCtx* pbcReserved)
+        public HRESULT StartOperation(IBindCtx* pbcReserved)
         {
             return ((delegate* unmanaged<IDataObjectAsyncCapability*, IBindCtx*, int>)(lpVtbl[5]))((IDataObjectAsyncCapability*)Unsafe.AsPointer(ref this), pbcReserved);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int InOperation(BOOL* pfInAsyncOp)
+        public HRESULT InOperation(BOOL* pfInAsyncOp)
         {
             return ((delegate* unmanaged<IDataObjectAsyncCapability*, BOOL*, int>)(lpVtbl[6]))((IDataObjectAsyncCapability*)Unsafe.AsPointer(ref this), pfInAsyncOp);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        [return: NativeTypeName("HRESULT")]
-        public int EndOperation([NativeTypeName("HRESULT")] int hResult, IBindCtx* pbcReserved, [NativeTypeName("DWORD")] uint dwEffects)
+        public HRESULT EndOperation(HRESULT hResult, IBindCtx* pbcReserved, [NativeTypeName("DWORD")] uint dwEffects)
         {
-            return ((delegate* unmanaged<IDataObjectAsyncCapability*, int, IBindCtx*, uint, int>)(lpVtbl[7]))((IDataObjectAsyncCapability*)Unsafe.AsPointer(ref this), hResult, pbcReserved, dwEffects);
+            return ((delegate* unmanaged<IDataObjectAsyncCapability*, HRESULT, IBindCtx*, uint, int>)(lpVtbl[7]))((IDataObjectAsyncCapability*)Unsafe.AsPointer(ref this), hResult, pbcReserved, dwEffects);
         }
     }
 }

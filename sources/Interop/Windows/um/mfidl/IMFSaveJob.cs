@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IMFSaveJob*, Guid*, void**, int>)(lpVtbl[0]))((IMFSaveJob*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,32 +41,28 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int BeginSave(IMFByteStream* pStream, IMFAsyncCallback* pCallback, IUnknown* pState)
+        public HRESULT BeginSave(IMFByteStream* pStream, IMFAsyncCallback* pCallback, IUnknown* pState)
         {
             return ((delegate* unmanaged<IMFSaveJob*, IMFByteStream*, IMFAsyncCallback*, IUnknown*, int>)(lpVtbl[3]))((IMFSaveJob*)Unsafe.AsPointer(ref this), pStream, pCallback, pState);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int EndSave(IMFAsyncResult* pResult)
+        public HRESULT EndSave(IMFAsyncResult* pResult)
         {
             return ((delegate* unmanaged<IMFSaveJob*, IMFAsyncResult*, int>)(lpVtbl[4]))((IMFSaveJob*)Unsafe.AsPointer(ref this), pResult);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int CancelSave()
+        public HRESULT CancelSave()
         {
             return ((delegate* unmanaged<IMFSaveJob*, int>)(lpVtbl[5]))((IMFSaveJob*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetProgress([NativeTypeName("DWORD *")] uint* pdwPercentComplete)
+        public HRESULT GetProgress([NativeTypeName("DWORD *")] uint* pdwPercentComplete)
         {
             return ((delegate* unmanaged<IMFSaveJob*, uint*, int>)(lpVtbl[6]))((IMFSaveJob*)Unsafe.AsPointer(ref this), pdwPercentComplete);
         }

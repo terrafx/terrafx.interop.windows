@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<ISpatialAudioMetadataCopier*, Guid*, void**, int>)(lpVtbl[0]))((ISpatialAudioMetadataCopier*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,24 +41,21 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int Open(ISpatialAudioMetadataItems* metadataItems)
+        public HRESULT Open(ISpatialAudioMetadataItems* metadataItems)
         {
             return ((delegate* unmanaged<ISpatialAudioMetadataCopier*, ISpatialAudioMetadataItems*, int>)(lpVtbl[3]))((ISpatialAudioMetadataCopier*)Unsafe.AsPointer(ref this), metadataItems);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int CopyMetadataForFrames([NativeTypeName("UINT16")] ushort copyFrameCount, SpatialAudioMetadataCopyMode copyMode, ISpatialAudioMetadataItems* dstMetadataItems, [NativeTypeName("UINT16 *")] ushort* itemsCopied)
+        public HRESULT CopyMetadataForFrames([NativeTypeName("UINT16")] ushort copyFrameCount, SpatialAudioMetadataCopyMode copyMode, ISpatialAudioMetadataItems* dstMetadataItems, [NativeTypeName("UINT16 *")] ushort* itemsCopied)
         {
             return ((delegate* unmanaged<ISpatialAudioMetadataCopier*, ushort, SpatialAudioMetadataCopyMode, ISpatialAudioMetadataItems*, ushort*, int>)(lpVtbl[4]))((ISpatialAudioMetadataCopier*)Unsafe.AsPointer(ref this), copyFrameCount, copyMode, dstMetadataItems, itemsCopied);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int Close()
+        public HRESULT Close()
         {
             return ((delegate* unmanaged<ISpatialAudioMetadataCopier*, int>)(lpVtbl[5]))((ISpatialAudioMetadataCopier*)Unsafe.AsPointer(ref this));
         }

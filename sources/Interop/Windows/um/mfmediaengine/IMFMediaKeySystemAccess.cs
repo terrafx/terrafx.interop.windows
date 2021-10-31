@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IMFMediaKeySystemAccess*, Guid*, void**, int>)(lpVtbl[0]))((IMFMediaKeySystemAccess*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,24 +41,21 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int CreateMediaKeys(IPropertyStore* pCdmCustomConfig, IMFMediaKeys2** ppKeys)
+        public HRESULT CreateMediaKeys(IPropertyStore* pCdmCustomConfig, IMFMediaKeys2** ppKeys)
         {
             return ((delegate* unmanaged<IMFMediaKeySystemAccess*, IPropertyStore*, IMFMediaKeys2**, int>)(lpVtbl[3]))((IMFMediaKeySystemAccess*)Unsafe.AsPointer(ref this), pCdmCustomConfig, ppKeys);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int get_SupportedConfiguration(IPropertyStore** ppSupportedConfiguration)
+        public HRESULT get_SupportedConfiguration(IPropertyStore** ppSupportedConfiguration)
         {
             return ((delegate* unmanaged<IMFMediaKeySystemAccess*, IPropertyStore**, int>)(lpVtbl[4]))((IMFMediaKeySystemAccess*)Unsafe.AsPointer(ref this), ppSupportedConfiguration);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int get_KeySystem([NativeTypeName("BSTR *")] ushort** pKeySystem)
+        public HRESULT get_KeySystem([NativeTypeName("BSTR *")] ushort** pKeySystem)
         {
             return ((delegate* unmanaged<IMFMediaKeySystemAccess*, ushort**, int>)(lpVtbl[5]))((IMFMediaKeySystemAccess*)Unsafe.AsPointer(ref this), pKeySystem);
         }

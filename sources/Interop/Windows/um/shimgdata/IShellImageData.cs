@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IShellImageData*, Guid*, void**, int>)(lpVtbl[0]))((IShellImageData*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,240 +41,210 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int Decode([NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("ULONG")] uint cxDesired, [NativeTypeName("ULONG")] uint cyDesired)
+        public HRESULT Decode([NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("ULONG")] uint cxDesired, [NativeTypeName("ULONG")] uint cyDesired)
         {
             return ((delegate* unmanaged<IShellImageData*, uint, uint, uint, int>)(lpVtbl[3]))((IShellImageData*)Unsafe.AsPointer(ref this), dwFlags, cxDesired, cyDesired);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int Draw([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("LPRECT")] RECT* prcDest, [NativeTypeName("LPRECT")] RECT* prcSrc)
+        public HRESULT Draw([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("LPRECT")] RECT* prcDest, [NativeTypeName("LPRECT")] RECT* prcSrc)
         {
             return ((delegate* unmanaged<IShellImageData*, IntPtr, RECT*, RECT*, int>)(lpVtbl[4]))((IShellImageData*)Unsafe.AsPointer(ref this), hdc, prcDest, prcSrc);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int NextFrame()
+        public HRESULT NextFrame()
         {
             return ((delegate* unmanaged<IShellImageData*, int>)(lpVtbl[5]))((IShellImageData*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int NextPage()
+        public HRESULT NextPage()
         {
             return ((delegate* unmanaged<IShellImageData*, int>)(lpVtbl[6]))((IShellImageData*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        [return: NativeTypeName("HRESULT")]
-        public int PrevPage()
+        public HRESULT PrevPage()
         {
             return ((delegate* unmanaged<IShellImageData*, int>)(lpVtbl[7]))((IShellImageData*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        [return: NativeTypeName("HRESULT")]
-        public int IsTransparent()
+        public HRESULT IsTransparent()
         {
             return ((delegate* unmanaged<IShellImageData*, int>)(lpVtbl[8]))((IShellImageData*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        [return: NativeTypeName("HRESULT")]
-        public int IsAnimated()
+        public HRESULT IsAnimated()
         {
             return ((delegate* unmanaged<IShellImageData*, int>)(lpVtbl[9]))((IShellImageData*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(10)]
-        [return: NativeTypeName("HRESULT")]
-        public int IsVector()
+        public HRESULT IsVector()
         {
             return ((delegate* unmanaged<IShellImageData*, int>)(lpVtbl[10]))((IShellImageData*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(11)]
-        [return: NativeTypeName("HRESULT")]
-        public int IsMultipage()
+        public HRESULT IsMultipage()
         {
             return ((delegate* unmanaged<IShellImageData*, int>)(lpVtbl[11]))((IShellImageData*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(12)]
-        [return: NativeTypeName("HRESULT")]
-        public int IsEditable()
+        public HRESULT IsEditable()
         {
             return ((delegate* unmanaged<IShellImageData*, int>)(lpVtbl[12]))((IShellImageData*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(13)]
-        [return: NativeTypeName("HRESULT")]
-        public int IsPrintable()
+        public HRESULT IsPrintable()
         {
             return ((delegate* unmanaged<IShellImageData*, int>)(lpVtbl[13]))((IShellImageData*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(14)]
-        [return: NativeTypeName("HRESULT")]
-        public int IsDecoded()
+        public HRESULT IsDecoded()
         {
             return ((delegate* unmanaged<IShellImageData*, int>)(lpVtbl[14]))((IShellImageData*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(15)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetCurrentPage([NativeTypeName("ULONG *")] uint* pnPage)
+        public HRESULT GetCurrentPage([NativeTypeName("ULONG *")] uint* pnPage)
         {
             return ((delegate* unmanaged<IShellImageData*, uint*, int>)(lpVtbl[15]))((IShellImageData*)Unsafe.AsPointer(ref this), pnPage);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(16)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetPageCount([NativeTypeName("ULONG *")] uint* pcPages)
+        public HRESULT GetPageCount([NativeTypeName("ULONG *")] uint* pcPages)
         {
             return ((delegate* unmanaged<IShellImageData*, uint*, int>)(lpVtbl[16]))((IShellImageData*)Unsafe.AsPointer(ref this), pcPages);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(17)]
-        [return: NativeTypeName("HRESULT")]
-        public int SelectPage([NativeTypeName("ULONG")] uint iPage)
+        public HRESULT SelectPage([NativeTypeName("ULONG")] uint iPage)
         {
             return ((delegate* unmanaged<IShellImageData*, uint, int>)(lpVtbl[17]))((IShellImageData*)Unsafe.AsPointer(ref this), iPage);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(18)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetSize(SIZE* pSize)
+        public HRESULT GetSize(SIZE* pSize)
         {
             return ((delegate* unmanaged<IShellImageData*, SIZE*, int>)(lpVtbl[18]))((IShellImageData*)Unsafe.AsPointer(ref this), pSize);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(19)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetRawDataFormat([NativeTypeName("GUID *")] Guid* pDataFormat)
+        public HRESULT GetRawDataFormat([NativeTypeName("GUID *")] Guid* pDataFormat)
         {
             return ((delegate* unmanaged<IShellImageData*, Guid*, int>)(lpVtbl[19]))((IShellImageData*)Unsafe.AsPointer(ref this), pDataFormat);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(20)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetPixelFormat([NativeTypeName("PixelFormat *")] uint* pFormat)
+        public HRESULT GetPixelFormat([NativeTypeName("PixelFormat *")] uint* pFormat)
         {
             return ((delegate* unmanaged<IShellImageData*, uint*, int>)(lpVtbl[20]))((IShellImageData*)Unsafe.AsPointer(ref this), pFormat);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(21)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetDelay([NativeTypeName("DWORD *")] uint* pdwDelay)
+        public HRESULT GetDelay([NativeTypeName("DWORD *")] uint* pdwDelay)
         {
             return ((delegate* unmanaged<IShellImageData*, uint*, int>)(lpVtbl[21]))((IShellImageData*)Unsafe.AsPointer(ref this), pdwDelay);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(22)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetProperties([NativeTypeName("DWORD")] uint dwMode, IPropertySetStorage** ppPropSet)
+        public HRESULT GetProperties([NativeTypeName("DWORD")] uint dwMode, IPropertySetStorage** ppPropSet)
         {
             return ((delegate* unmanaged<IShellImageData*, uint, IPropertySetStorage**, int>)(lpVtbl[22]))((IShellImageData*)Unsafe.AsPointer(ref this), dwMode, ppPropSet);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(23)]
-        [return: NativeTypeName("HRESULT")]
-        public int Rotate([NativeTypeName("DWORD")] uint dwAngle)
+        public HRESULT Rotate([NativeTypeName("DWORD")] uint dwAngle)
         {
             return ((delegate* unmanaged<IShellImageData*, uint, int>)(lpVtbl[23]))((IShellImageData*)Unsafe.AsPointer(ref this), dwAngle);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(24)]
-        [return: NativeTypeName("HRESULT")]
-        public int Scale([NativeTypeName("ULONG")] uint cx, [NativeTypeName("ULONG")] uint cy, [NativeTypeName("InterpolationMode")] uint hints)
+        public HRESULT Scale([NativeTypeName("ULONG")] uint cx, [NativeTypeName("ULONG")] uint cy, [NativeTypeName("InterpolationMode")] uint hints)
         {
             return ((delegate* unmanaged<IShellImageData*, uint, uint, uint, int>)(lpVtbl[24]))((IShellImageData*)Unsafe.AsPointer(ref this), cx, cy, hints);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(25)]
-        [return: NativeTypeName("HRESULT")]
-        public int DiscardEdit()
+        public HRESULT DiscardEdit()
         {
             return ((delegate* unmanaged<IShellImageData*, int>)(lpVtbl[25]))((IShellImageData*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(26)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetEncoderParams(IPropertyBag* pbagEnc)
+        public HRESULT SetEncoderParams(IPropertyBag* pbagEnc)
         {
             return ((delegate* unmanaged<IShellImageData*, IPropertyBag*, int>)(lpVtbl[26]))((IShellImageData*)Unsafe.AsPointer(ref this), pbagEnc);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(27)]
-        [return: NativeTypeName("HRESULT")]
-        public int DisplayName([NativeTypeName("LPWSTR")] ushort* wszName, [NativeTypeName("UINT")] uint cch)
+        public HRESULT DisplayName([NativeTypeName("LPWSTR")] ushort* wszName, [NativeTypeName("UINT")] uint cch)
         {
             return ((delegate* unmanaged<IShellImageData*, ushort*, uint, int>)(lpVtbl[27]))((IShellImageData*)Unsafe.AsPointer(ref this), wszName, cch);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(28)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetResolution([NativeTypeName("ULONG *")] uint* puResolutionX, [NativeTypeName("ULONG *")] uint* puResolutionY)
+        public HRESULT GetResolution([NativeTypeName("ULONG *")] uint* puResolutionX, [NativeTypeName("ULONG *")] uint* puResolutionY)
         {
             return ((delegate* unmanaged<IShellImageData*, uint*, uint*, int>)(lpVtbl[28]))((IShellImageData*)Unsafe.AsPointer(ref this), puResolutionX, puResolutionY);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(29)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetEncoderParams([NativeTypeName("GUID *")] Guid* pguidFmt, [NativeTypeName("EncoderParameters **")] byte** ppEncParams)
+        public HRESULT GetEncoderParams([NativeTypeName("GUID *")] Guid* pguidFmt, [NativeTypeName("EncoderParameters **")] byte** ppEncParams)
         {
             return ((delegate* unmanaged<IShellImageData*, Guid*, byte**, int>)(lpVtbl[29]))((IShellImageData*)Unsafe.AsPointer(ref this), pguidFmt, ppEncParams);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(30)]
-        [return: NativeTypeName("HRESULT")]
-        public int RegisterAbort(IShellImageDataAbort* pAbort, IShellImageDataAbort** ppAbortPrev)
+        public HRESULT RegisterAbort(IShellImageDataAbort* pAbort, IShellImageDataAbort** ppAbortPrev)
         {
             return ((delegate* unmanaged<IShellImageData*, IShellImageDataAbort*, IShellImageDataAbort**, int>)(lpVtbl[30]))((IShellImageData*)Unsafe.AsPointer(ref this), pAbort, ppAbortPrev);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(31)]
-        [return: NativeTypeName("HRESULT")]
-        public int CloneFrame([NativeTypeName("Image **")] byte** ppImg)
+        public HRESULT CloneFrame([NativeTypeName("Image **")] byte** ppImg)
         {
             return ((delegate* unmanaged<IShellImageData*, byte**, int>)(lpVtbl[31]))((IShellImageData*)Unsafe.AsPointer(ref this), ppImg);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(32)]
-        [return: NativeTypeName("HRESULT")]
-        public int ReplaceFrame([NativeTypeName("Image *")] byte* pImg)
+        public HRESULT ReplaceFrame([NativeTypeName("Image *")] byte* pImg)
         {
             return ((delegate* unmanaged<IShellImageData*, byte*, int>)(lpVtbl[32]))((IShellImageData*)Unsafe.AsPointer(ref this), pImg);
         }

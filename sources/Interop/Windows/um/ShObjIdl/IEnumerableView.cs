@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IEnumerableView*, Guid*, void**, int>)(lpVtbl[0]))((IEnumerableView*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,16 +41,14 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetEnumReadyCallback(IEnumReadyCallback* percb)
+        public HRESULT SetEnumReadyCallback(IEnumReadyCallback* percb)
         {
             return ((delegate* unmanaged<IEnumerableView*, IEnumReadyCallback*, int>)(lpVtbl[3]))((IEnumerableView*)Unsafe.AsPointer(ref this), percb);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int CreateEnumIDListFromContents([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidlFolder, [NativeTypeName("DWORD")] uint dwEnumFlags, IEnumIDList** ppEnumIDList)
+        public HRESULT CreateEnumIDListFromContents([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidlFolder, [NativeTypeName("DWORD")] uint dwEnumFlags, IEnumIDList** ppEnumIDList)
         {
             return ((delegate* unmanaged<IEnumerableView*, ITEMIDLIST*, uint, IEnumIDList**, int>)(lpVtbl[4]))((IEnumerableView*)Unsafe.AsPointer(ref this), pidlFolder, dwEnumFlags, ppEnumIDList);
         }

@@ -10,6 +10,6 @@ namespace TerraFX.Interop
     public unsafe partial struct WS_ASYNC_OPERATION
     {
         [NativeTypeName("WS_ASYNC_FUNCTION")]
-        public delegate* unmanaged<int, WS_CALLBACK_MODEL, void*, WS_ASYNC_OPERATION*, WS_ASYNC_CONTEXT*, IntPtr, int> function;
+        public delegate* unmanaged<HRESULT, WS_CALLBACK_MODEL, void*, WS_ASYNC_OPERATION*, WS_ASYNC_CONTEXT*, IntPtr, HRESULT> function;
     }
 }

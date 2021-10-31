@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IWbemContext*, Guid*, void**, int>)(lpVtbl[0]))((IWbemContext*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,72 +41,63 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int Clone(IWbemContext** ppNewCopy)
+        public HRESULT Clone(IWbemContext** ppNewCopy)
         {
             return ((delegate* unmanaged<IWbemContext*, IWbemContext**, int>)(lpVtbl[3]))((IWbemContext*)Unsafe.AsPointer(ref this), ppNewCopy);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetNames([NativeTypeName("long")] int lFlags, SAFEARRAY** pNames)
+        public HRESULT GetNames([NativeTypeName("long")] int lFlags, SAFEARRAY** pNames)
         {
             return ((delegate* unmanaged<IWbemContext*, int, SAFEARRAY**, int>)(lpVtbl[4]))((IWbemContext*)Unsafe.AsPointer(ref this), lFlags, pNames);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int BeginEnumeration([NativeTypeName("long")] int lFlags)
+        public HRESULT BeginEnumeration([NativeTypeName("long")] int lFlags)
         {
             return ((delegate* unmanaged<IWbemContext*, int, int>)(lpVtbl[5]))((IWbemContext*)Unsafe.AsPointer(ref this), lFlags);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int Next([NativeTypeName("long")] int lFlags, [NativeTypeName("BSTR *")] ushort** pstrName, VARIANT* pValue)
+        public HRESULT Next([NativeTypeName("long")] int lFlags, [NativeTypeName("BSTR *")] ushort** pstrName, VARIANT* pValue)
         {
             return ((delegate* unmanaged<IWbemContext*, int, ushort**, VARIANT*, int>)(lpVtbl[6]))((IWbemContext*)Unsafe.AsPointer(ref this), lFlags, pstrName, pValue);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        [return: NativeTypeName("HRESULT")]
-        public int EndEnumeration()
+        public HRESULT EndEnumeration()
         {
             return ((delegate* unmanaged<IWbemContext*, int>)(lpVtbl[7]))((IWbemContext*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetValue([NativeTypeName("LPCWSTR")] ushort* wszName, [NativeTypeName("long")] int lFlags, VARIANT* pValue)
+        public HRESULT SetValue([NativeTypeName("LPCWSTR")] ushort* wszName, [NativeTypeName("long")] int lFlags, VARIANT* pValue)
         {
             return ((delegate* unmanaged<IWbemContext*, ushort*, int, VARIANT*, int>)(lpVtbl[8]))((IWbemContext*)Unsafe.AsPointer(ref this), wszName, lFlags, pValue);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetValue([NativeTypeName("LPCWSTR")] ushort* wszName, [NativeTypeName("long")] int lFlags, VARIANT* pValue)
+        public HRESULT GetValue([NativeTypeName("LPCWSTR")] ushort* wszName, [NativeTypeName("long")] int lFlags, VARIANT* pValue)
         {
             return ((delegate* unmanaged<IWbemContext*, ushort*, int, VARIANT*, int>)(lpVtbl[9]))((IWbemContext*)Unsafe.AsPointer(ref this), wszName, lFlags, pValue);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(10)]
-        [return: NativeTypeName("HRESULT")]
-        public int DeleteValue([NativeTypeName("LPCWSTR")] ushort* wszName, [NativeTypeName("long")] int lFlags)
+        public HRESULT DeleteValue([NativeTypeName("LPCWSTR")] ushort* wszName, [NativeTypeName("long")] int lFlags)
         {
             return ((delegate* unmanaged<IWbemContext*, ushort*, int, int>)(lpVtbl[10]))((IWbemContext*)Unsafe.AsPointer(ref this), wszName, lFlags);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(11)]
-        [return: NativeTypeName("HRESULT")]
-        public int DeleteAll()
+        public HRESULT DeleteAll()
         {
             return ((delegate* unmanaged<IWbemContext*, int>)(lpVtbl[11]))((IWbemContext*)Unsafe.AsPointer(ref this));
         }

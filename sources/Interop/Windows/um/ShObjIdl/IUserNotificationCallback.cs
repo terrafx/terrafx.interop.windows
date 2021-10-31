@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IUserNotificationCallback*, Guid*, void**, int>)(lpVtbl[0]))((IUserNotificationCallback*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,24 +41,21 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int OnBalloonUserClick(POINT* pt)
+        public HRESULT OnBalloonUserClick(POINT* pt)
         {
             return ((delegate* unmanaged<IUserNotificationCallback*, POINT*, int>)(lpVtbl[3]))((IUserNotificationCallback*)Unsafe.AsPointer(ref this), pt);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int OnLeftClick(POINT* pt)
+        public HRESULT OnLeftClick(POINT* pt)
         {
             return ((delegate* unmanaged<IUserNotificationCallback*, POINT*, int>)(lpVtbl[4]))((IUserNotificationCallback*)Unsafe.AsPointer(ref this), pt);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int OnContextMenu(POINT* pt)
+        public HRESULT OnContextMenu(POINT* pt)
         {
             return ((delegate* unmanaged<IUserNotificationCallback*, POINT*, int>)(lpVtbl[5]))((IUserNotificationCallback*)Unsafe.AsPointer(ref this), pt);
         }

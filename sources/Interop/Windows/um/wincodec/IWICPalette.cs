@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IWICPalette*, Guid*, void**, int>)(lpVtbl[0]))((IWICPalette*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,80 +41,70 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int InitializePredefined(WICBitmapPaletteType ePaletteType, BOOL fAddTransparentColor)
+        public HRESULT InitializePredefined(WICBitmapPaletteType ePaletteType, BOOL fAddTransparentColor)
         {
             return ((delegate* unmanaged<IWICPalette*, WICBitmapPaletteType, BOOL, int>)(lpVtbl[3]))((IWICPalette*)Unsafe.AsPointer(ref this), ePaletteType, fAddTransparentColor);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int InitializeCustom([NativeTypeName("WICColor *")] uint* pColors, [NativeTypeName("UINT")] uint cCount)
+        public HRESULT InitializeCustom([NativeTypeName("WICColor *")] uint* pColors, [NativeTypeName("UINT")] uint cCount)
         {
             return ((delegate* unmanaged<IWICPalette*, uint*, uint, int>)(lpVtbl[4]))((IWICPalette*)Unsafe.AsPointer(ref this), pColors, cCount);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int InitializeFromBitmap(IWICBitmapSource* pISurface, [NativeTypeName("UINT")] uint cCount, BOOL fAddTransparentColor)
+        public HRESULT InitializeFromBitmap(IWICBitmapSource* pISurface, [NativeTypeName("UINT")] uint cCount, BOOL fAddTransparentColor)
         {
             return ((delegate* unmanaged<IWICPalette*, IWICBitmapSource*, uint, BOOL, int>)(lpVtbl[5]))((IWICPalette*)Unsafe.AsPointer(ref this), pISurface, cCount, fAddTransparentColor);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int InitializeFromPalette(IWICPalette* pIPalette)
+        public HRESULT InitializeFromPalette(IWICPalette* pIPalette)
         {
             return ((delegate* unmanaged<IWICPalette*, IWICPalette*, int>)(lpVtbl[6]))((IWICPalette*)Unsafe.AsPointer(ref this), pIPalette);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetType(WICBitmapPaletteType* pePaletteType)
+        public HRESULT GetType(WICBitmapPaletteType* pePaletteType)
         {
             return ((delegate* unmanaged<IWICPalette*, WICBitmapPaletteType*, int>)(lpVtbl[7]))((IWICPalette*)Unsafe.AsPointer(ref this), pePaletteType);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetColorCount([NativeTypeName("UINT *")] uint* pcCount)
+        public HRESULT GetColorCount([NativeTypeName("UINT *")] uint* pcCount)
         {
             return ((delegate* unmanaged<IWICPalette*, uint*, int>)(lpVtbl[8]))((IWICPalette*)Unsafe.AsPointer(ref this), pcCount);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetColors([NativeTypeName("UINT")] uint cCount, [NativeTypeName("WICColor *")] uint* pColors, [NativeTypeName("UINT *")] uint* pcActualColors)
+        public HRESULT GetColors([NativeTypeName("UINT")] uint cCount, [NativeTypeName("WICColor *")] uint* pColors, [NativeTypeName("UINT *")] uint* pcActualColors)
         {
             return ((delegate* unmanaged<IWICPalette*, uint, uint*, uint*, int>)(lpVtbl[9]))((IWICPalette*)Unsafe.AsPointer(ref this), cCount, pColors, pcActualColors);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(10)]
-        [return: NativeTypeName("HRESULT")]
-        public int IsBlackWhite(BOOL* pfIsBlackWhite)
+        public HRESULT IsBlackWhite(BOOL* pfIsBlackWhite)
         {
             return ((delegate* unmanaged<IWICPalette*, BOOL*, int>)(lpVtbl[10]))((IWICPalette*)Unsafe.AsPointer(ref this), pfIsBlackWhite);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(11)]
-        [return: NativeTypeName("HRESULT")]
-        public int IsGrayscale(BOOL* pfIsGrayscale)
+        public HRESULT IsGrayscale(BOOL* pfIsGrayscale)
         {
             return ((delegate* unmanaged<IWICPalette*, BOOL*, int>)(lpVtbl[11]))((IWICPalette*)Unsafe.AsPointer(ref this), pfIsGrayscale);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(12)]
-        [return: NativeTypeName("HRESULT")]
-        public int HasAlpha(BOOL* pfHasAlpha)
+        public HRESULT HasAlpha(BOOL* pfHasAlpha)
         {
             return ((delegate* unmanaged<IWICPalette*, BOOL*, int>)(lpVtbl[12]))((IWICPalette*)Unsafe.AsPointer(ref this), pfHasAlpha);
         }

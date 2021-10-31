@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<ITypeLib2*, Guid*, void**, int>)(lpVtbl[0]))((ITypeLib2*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -50,64 +49,56 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetTypeInfo([NativeTypeName("UINT")] uint index, ITypeInfo** ppTInfo)
+        public HRESULT GetTypeInfo([NativeTypeName("UINT")] uint index, ITypeInfo** ppTInfo)
         {
             return ((delegate* unmanaged<ITypeLib2*, uint, ITypeInfo**, int>)(lpVtbl[4]))((ITypeLib2*)Unsafe.AsPointer(ref this), index, ppTInfo);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetTypeInfoType([NativeTypeName("UINT")] uint index, TYPEKIND* pTKind)
+        public HRESULT GetTypeInfoType([NativeTypeName("UINT")] uint index, TYPEKIND* pTKind)
         {
             return ((delegate* unmanaged<ITypeLib2*, uint, TYPEKIND*, int>)(lpVtbl[5]))((ITypeLib2*)Unsafe.AsPointer(ref this), index, pTKind);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetTypeInfoOfGuid([NativeTypeName("const GUID &")] Guid* guid, ITypeInfo** ppTinfo)
+        public HRESULT GetTypeInfoOfGuid([NativeTypeName("const GUID &")] Guid* guid, ITypeInfo** ppTinfo)
         {
             return ((delegate* unmanaged<ITypeLib2*, Guid*, ITypeInfo**, int>)(lpVtbl[6]))((ITypeLib2*)Unsafe.AsPointer(ref this), guid, ppTinfo);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetLibAttr(TLIBATTR** ppTLibAttr)
+        public HRESULT GetLibAttr(TLIBATTR** ppTLibAttr)
         {
             return ((delegate* unmanaged<ITypeLib2*, TLIBATTR**, int>)(lpVtbl[7]))((ITypeLib2*)Unsafe.AsPointer(ref this), ppTLibAttr);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetTypeComp(ITypeComp** ppTComp)
+        public HRESULT GetTypeComp(ITypeComp** ppTComp)
         {
             return ((delegate* unmanaged<ITypeLib2*, ITypeComp**, int>)(lpVtbl[8]))((ITypeLib2*)Unsafe.AsPointer(ref this), ppTComp);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetDocumentation([NativeTypeName("INT")] int index, [NativeTypeName("BSTR *")] ushort** pBstrName, [NativeTypeName("BSTR *")] ushort** pBstrDocString, [NativeTypeName("DWORD *")] uint* pdwHelpContext, [NativeTypeName("BSTR *")] ushort** pBstrHelpFile)
+        public HRESULT GetDocumentation([NativeTypeName("INT")] int index, [NativeTypeName("BSTR *")] ushort** pBstrName, [NativeTypeName("BSTR *")] ushort** pBstrDocString, [NativeTypeName("DWORD *")] uint* pdwHelpContext, [NativeTypeName("BSTR *")] ushort** pBstrHelpFile)
         {
             return ((delegate* unmanaged<ITypeLib2*, int, ushort**, ushort**, uint*, ushort**, int>)(lpVtbl[9]))((ITypeLib2*)Unsafe.AsPointer(ref this), index, pBstrName, pBstrDocString, pdwHelpContext, pBstrHelpFile);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(10)]
-        [return: NativeTypeName("HRESULT")]
-        public int IsName([NativeTypeName("LPOLESTR")] ushort* szNameBuf, [NativeTypeName("ULONG")] uint lHashVal, BOOL* pfName)
+        public HRESULT IsName([NativeTypeName("LPOLESTR")] ushort* szNameBuf, [NativeTypeName("ULONG")] uint lHashVal, BOOL* pfName)
         {
             return ((delegate* unmanaged<ITypeLib2*, ushort*, uint, BOOL*, int>)(lpVtbl[10]))((ITypeLib2*)Unsafe.AsPointer(ref this), szNameBuf, lHashVal, pfName);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(11)]
-        [return: NativeTypeName("HRESULT")]
-        public int FindName([NativeTypeName("LPOLESTR")] ushort* szNameBuf, [NativeTypeName("ULONG")] uint lHashVal, ITypeInfo** ppTInfo, [NativeTypeName("MEMBERID *")] int* rgMemId, [NativeTypeName("USHORT *")] ushort* pcFound)
+        public HRESULT FindName([NativeTypeName("LPOLESTR")] ushort* szNameBuf, [NativeTypeName("ULONG")] uint lHashVal, ITypeInfo** ppTInfo, [NativeTypeName("MEMBERID *")] int* rgMemId, [NativeTypeName("USHORT *")] ushort* pcFound)
         {
             return ((delegate* unmanaged<ITypeLib2*, ushort*, uint, ITypeInfo**, int*, ushort*, int>)(lpVtbl[11]))((ITypeLib2*)Unsafe.AsPointer(ref this), szNameBuf, lHashVal, ppTInfo, rgMemId, pcFound);
         }
@@ -121,32 +112,28 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(13)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetCustData([NativeTypeName("const GUID &")] Guid* guid, VARIANT* pVarVal)
+        public HRESULT GetCustData([NativeTypeName("const GUID &")] Guid* guid, VARIANT* pVarVal)
         {
             return ((delegate* unmanaged<ITypeLib2*, Guid*, VARIANT*, int>)(lpVtbl[13]))((ITypeLib2*)Unsafe.AsPointer(ref this), guid, pVarVal);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(14)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetLibStatistics([NativeTypeName("ULONG *")] uint* pcUniqueNames, [NativeTypeName("ULONG *")] uint* pcchUniqueNames)
+        public HRESULT GetLibStatistics([NativeTypeName("ULONG *")] uint* pcUniqueNames, [NativeTypeName("ULONG *")] uint* pcchUniqueNames)
         {
             return ((delegate* unmanaged<ITypeLib2*, uint*, uint*, int>)(lpVtbl[14]))((ITypeLib2*)Unsafe.AsPointer(ref this), pcUniqueNames, pcchUniqueNames);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(15)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetDocumentation2([NativeTypeName("INT")] int index, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("BSTR *")] ushort** pbstrHelpString, [NativeTypeName("DWORD *")] uint* pdwHelpStringContext, [NativeTypeName("BSTR *")] ushort** pbstrHelpStringDll)
+        public HRESULT GetDocumentation2([NativeTypeName("INT")] int index, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("BSTR *")] ushort** pbstrHelpString, [NativeTypeName("DWORD *")] uint* pdwHelpStringContext, [NativeTypeName("BSTR *")] ushort** pbstrHelpStringDll)
         {
             return ((delegate* unmanaged<ITypeLib2*, int, uint, ushort**, uint*, ushort**, int>)(lpVtbl[15]))((ITypeLib2*)Unsafe.AsPointer(ref this), index, lcid, pbstrHelpString, pdwHelpStringContext, pbstrHelpStringDll);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(16)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetAllCustData(CUSTDATA* pCustData)
+        public HRESULT GetAllCustData(CUSTDATA* pCustData)
         {
             return ((delegate* unmanaged<ITypeLib2*, CUSTDATA*, int>)(lpVtbl[16]))((ITypeLib2*)Unsafe.AsPointer(ref this), pCustData);
         }

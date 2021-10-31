@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IStorageProviderPropertyHandler*, Guid*, void**, int>)(lpVtbl[0]))((IStorageProviderPropertyHandler*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,16 +41,14 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int RetrieveProperties([NativeTypeName("const PROPERTYKEY *")] PROPERTYKEY* propertiesToRetrieve, [NativeTypeName("ULONG")] uint propertiesToRetrieveCount, IPropertyStore** retrievedProperties)
+        public HRESULT RetrieveProperties([NativeTypeName("const PROPERTYKEY *")] PROPERTYKEY* propertiesToRetrieve, [NativeTypeName("ULONG")] uint propertiesToRetrieveCount, IPropertyStore** retrievedProperties)
         {
             return ((delegate* unmanaged<IStorageProviderPropertyHandler*, PROPERTYKEY*, uint, IPropertyStore**, int>)(lpVtbl[3]))((IStorageProviderPropertyHandler*)Unsafe.AsPointer(ref this), propertiesToRetrieve, propertiesToRetrieveCount, retrievedProperties);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int SaveProperties(IPropertyStore* propertiesToSave)
+        public HRESULT SaveProperties(IPropertyStore* propertiesToSave)
         {
             return ((delegate* unmanaged<IStorageProviderPropertyHandler*, IPropertyStore*, int>)(lpVtbl[4]))((IStorageProviderPropertyHandler*)Unsafe.AsPointer(ref this), propertiesToSave);
         }

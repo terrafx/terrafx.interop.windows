@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IAppxBundleManifestReader2*, Guid*, void**, int>)(lpVtbl[0]))((IAppxBundleManifestReader2*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,8 +41,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetOptionalBundles(IAppxBundleManifestOptionalBundleInfoEnumerator** optionalBundles)
+        public HRESULT GetOptionalBundles(IAppxBundleManifestOptionalBundleInfoEnumerator** optionalBundles)
         {
             return ((delegate* unmanaged<IAppxBundleManifestReader2*, IAppxBundleManifestOptionalBundleInfoEnumerator**, int>)(lpVtbl[3]))((IAppxBundleManifestReader2*)Unsafe.AsPointer(ref this), optionalBundles);
         }

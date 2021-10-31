@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IAppxManifestPackageDependency*, Guid*, void**, int>)(lpVtbl[0]))((IAppxManifestPackageDependency*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,24 +41,21 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetName([NativeTypeName("LPWSTR *")] ushort** name)
+        public HRESULT GetName([NativeTypeName("LPWSTR *")] ushort** name)
         {
             return ((delegate* unmanaged<IAppxManifestPackageDependency*, ushort**, int>)(lpVtbl[3]))((IAppxManifestPackageDependency*)Unsafe.AsPointer(ref this), name);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetPublisher([NativeTypeName("LPWSTR *")] ushort** publisher)
+        public HRESULT GetPublisher([NativeTypeName("LPWSTR *")] ushort** publisher)
         {
             return ((delegate* unmanaged<IAppxManifestPackageDependency*, ushort**, int>)(lpVtbl[4]))((IAppxManifestPackageDependency*)Unsafe.AsPointer(ref this), publisher);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetMinVersion([NativeTypeName("UINT64 *")] ulong* minVersion)
+        public HRESULT GetMinVersion([NativeTypeName("UINT64 *")] ulong* minVersion)
         {
             return ((delegate* unmanaged<IAppxManifestPackageDependency*, ulong*, int>)(lpVtbl[5]))((IAppxManifestPackageDependency*)Unsafe.AsPointer(ref this), minVersion);
         }

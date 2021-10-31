@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<ITfContextOwnerCompositionSink*, Guid*, void**, int>)(lpVtbl[0]))((ITfContextOwnerCompositionSink*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,24 +41,21 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int OnStartComposition(ITfCompositionView* pComposition, BOOL* pfOk)
+        public HRESULT OnStartComposition(ITfCompositionView* pComposition, BOOL* pfOk)
         {
             return ((delegate* unmanaged<ITfContextOwnerCompositionSink*, ITfCompositionView*, BOOL*, int>)(lpVtbl[3]))((ITfContextOwnerCompositionSink*)Unsafe.AsPointer(ref this), pComposition, pfOk);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int OnUpdateComposition(ITfCompositionView* pComposition, ITfRange* pRangeNew)
+        public HRESULT OnUpdateComposition(ITfCompositionView* pComposition, ITfRange* pRangeNew)
         {
             return ((delegate* unmanaged<ITfContextOwnerCompositionSink*, ITfCompositionView*, ITfRange*, int>)(lpVtbl[4]))((ITfContextOwnerCompositionSink*)Unsafe.AsPointer(ref this), pComposition, pRangeNew);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int OnEndComposition(ITfCompositionView* pComposition)
+        public HRESULT OnEndComposition(ITfCompositionView* pComposition)
         {
             return ((delegate* unmanaged<ITfContextOwnerCompositionSink*, ITfCompositionView*, int>)(lpVtbl[5]))((ITfContextOwnerCompositionSink*)Unsafe.AsPointer(ref this), pComposition);
         }

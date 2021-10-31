@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IHTMLElementRender*, Guid*, void**, int>)(lpVtbl[0]))((IHTMLElementRender*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,16 +41,14 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int DrawToDC([NativeTypeName("HDC")] IntPtr hDC)
+        public HRESULT DrawToDC([NativeTypeName("HDC")] IntPtr hDC)
         {
             return ((delegate* unmanaged<IHTMLElementRender*, IntPtr, int>)(lpVtbl[3]))((IHTMLElementRender*)Unsafe.AsPointer(ref this), hDC);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetDocumentPrinter([NativeTypeName("BSTR")] ushort* bstrPrinterName, [NativeTypeName("HDC")] IntPtr hDC)
+        public HRESULT SetDocumentPrinter([NativeTypeName("BSTR")] ushort* bstrPrinterName, [NativeTypeName("HDC")] IntPtr hDC)
         {
             return ((delegate* unmanaged<IHTMLElementRender*, ushort*, IntPtr, int>)(lpVtbl[4]))((IHTMLElementRender*)Unsafe.AsPointer(ref this), bstrPrinterName, hDC);
         }

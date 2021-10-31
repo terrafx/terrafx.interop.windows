@@ -23,124 +23,94 @@ namespace TerraFX.Interop
         public static extern BOOL DwmDefWindowProc([NativeTypeName("HWND")] IntPtr hWnd, [NativeTypeName("UINT")] uint msg, [NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam, [NativeTypeName("LRESULT *")] nint* plResult);
 
         [DllImport("dwmapi", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int DwmEnableBlurBehindWindow([NativeTypeName("HWND")] IntPtr hWnd, [NativeTypeName("const DWM_BLURBEHIND *")] DWM_BLURBEHIND* pBlurBehind);
+        public static extern HRESULT DwmEnableBlurBehindWindow([NativeTypeName("HWND")] IntPtr hWnd, [NativeTypeName("const DWM_BLURBEHIND *")] DWM_BLURBEHIND* pBlurBehind);
 
         [DllImport("dwmapi", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int DwmEnableComposition([NativeTypeName("UINT")] uint uCompositionAction);
+        public static extern HRESULT DwmEnableComposition([NativeTypeName("UINT")] uint uCompositionAction);
 
         [DllImport("dwmapi", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int DwmEnableMMCSS(BOOL fEnableMMCSS);
+        public static extern HRESULT DwmEnableMMCSS(BOOL fEnableMMCSS);
 
         [DllImport("dwmapi", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int DwmExtendFrameIntoClientArea([NativeTypeName("HWND")] IntPtr hWnd, [NativeTypeName("const MARGINS *")] MARGINS* pMarInset);
+        public static extern HRESULT DwmExtendFrameIntoClientArea([NativeTypeName("HWND")] IntPtr hWnd, [NativeTypeName("const MARGINS *")] MARGINS* pMarInset);
 
         [DllImport("dwmapi", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int DwmGetColorizationColor([NativeTypeName("DWORD *")] uint* pcrColorization, BOOL* pfOpaqueBlend);
+        public static extern HRESULT DwmGetColorizationColor([NativeTypeName("DWORD *")] uint* pcrColorization, BOOL* pfOpaqueBlend);
 
         [DllImport("dwmapi", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int DwmGetCompositionTimingInfo([NativeTypeName("HWND")] IntPtr hwnd, DWM_TIMING_INFO* pTimingInfo);
+        public static extern HRESULT DwmGetCompositionTimingInfo([NativeTypeName("HWND")] IntPtr hwnd, DWM_TIMING_INFO* pTimingInfo);
 
         [DllImport("dwmapi", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int DwmGetWindowAttribute([NativeTypeName("HWND")] IntPtr hwnd, [NativeTypeName("DWORD")] uint dwAttribute, [NativeTypeName("PVOID")] void* pvAttribute, [NativeTypeName("DWORD")] uint cbAttribute);
+        public static extern HRESULT DwmGetWindowAttribute([NativeTypeName("HWND")] IntPtr hwnd, [NativeTypeName("DWORD")] uint dwAttribute, [NativeTypeName("PVOID")] void* pvAttribute, [NativeTypeName("DWORD")] uint cbAttribute);
 
         [DllImport("dwmapi", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int DwmIsCompositionEnabled(BOOL* pfEnabled);
+        public static extern HRESULT DwmIsCompositionEnabled(BOOL* pfEnabled);
 
         [DllImport("dwmapi", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int DwmModifyPreviousDxFrameDuration([NativeTypeName("HWND")] IntPtr hwnd, [NativeTypeName("INT")] int cRefreshes, BOOL fRelative);
+        public static extern HRESULT DwmModifyPreviousDxFrameDuration([NativeTypeName("HWND")] IntPtr hwnd, [NativeTypeName("INT")] int cRefreshes, BOOL fRelative);
 
         [DllImport("dwmapi", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int DwmQueryThumbnailSourceSize([NativeTypeName("HTHUMBNAIL")] IntPtr hThumbnail, [NativeTypeName("PSIZE")] SIZE* pSize);
+        public static extern HRESULT DwmQueryThumbnailSourceSize([NativeTypeName("HTHUMBNAIL")] IntPtr hThumbnail, [NativeTypeName("PSIZE")] SIZE* pSize);
 
         [DllImport("dwmapi", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int DwmRegisterThumbnail([NativeTypeName("HWND")] IntPtr hwndDestination, [NativeTypeName("HWND")] IntPtr hwndSource, [NativeTypeName("PHTHUMBNAIL")] IntPtr* phThumbnailId);
+        public static extern HRESULT DwmRegisterThumbnail([NativeTypeName("HWND")] IntPtr hwndDestination, [NativeTypeName("HWND")] IntPtr hwndSource, [NativeTypeName("PHTHUMBNAIL")] IntPtr* phThumbnailId);
 
         [DllImport("dwmapi", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int DwmSetDxFrameDuration([NativeTypeName("HWND")] IntPtr hwnd, [NativeTypeName("INT")] int cRefreshes);
+        public static extern HRESULT DwmSetDxFrameDuration([NativeTypeName("HWND")] IntPtr hwnd, [NativeTypeName("INT")] int cRefreshes);
 
         [DllImport("dwmapi", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int DwmSetPresentParameters([NativeTypeName("HWND")] IntPtr hwnd, DWM_PRESENT_PARAMETERS* pPresentParams);
+        public static extern HRESULT DwmSetPresentParameters([NativeTypeName("HWND")] IntPtr hwnd, DWM_PRESENT_PARAMETERS* pPresentParams);
 
         [DllImport("dwmapi", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int DwmSetWindowAttribute([NativeTypeName("HWND")] IntPtr hwnd, [NativeTypeName("DWORD")] uint dwAttribute, [NativeTypeName("LPCVOID")] void* pvAttribute, [NativeTypeName("DWORD")] uint cbAttribute);
+        public static extern HRESULT DwmSetWindowAttribute([NativeTypeName("HWND")] IntPtr hwnd, [NativeTypeName("DWORD")] uint dwAttribute, [NativeTypeName("LPCVOID")] void* pvAttribute, [NativeTypeName("DWORD")] uint cbAttribute);
 
         [DllImport("dwmapi", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int DwmUnregisterThumbnail([NativeTypeName("HTHUMBNAIL")] IntPtr hThumbnailId);
+        public static extern HRESULT DwmUnregisterThumbnail([NativeTypeName("HTHUMBNAIL")] IntPtr hThumbnailId);
 
         [DllImport("dwmapi", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int DwmUpdateThumbnailProperties([NativeTypeName("HTHUMBNAIL")] IntPtr hThumbnailId, [NativeTypeName("const DWM_THUMBNAIL_PROPERTIES *")] DWM_THUMBNAIL_PROPERTIES* ptnProperties);
+        public static extern HRESULT DwmUpdateThumbnailProperties([NativeTypeName("HTHUMBNAIL")] IntPtr hThumbnailId, [NativeTypeName("const DWM_THUMBNAIL_PROPERTIES *")] DWM_THUMBNAIL_PROPERTIES* ptnProperties);
 
         [DllImport("dwmapi", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int DwmSetIconicThumbnail([NativeTypeName("HWND")] IntPtr hwnd, [NativeTypeName("HBITMAP")] IntPtr hbmp, [NativeTypeName("DWORD")] uint dwSITFlags);
+        public static extern HRESULT DwmSetIconicThumbnail([NativeTypeName("HWND")] IntPtr hwnd, [NativeTypeName("HBITMAP")] IntPtr hbmp, [NativeTypeName("DWORD")] uint dwSITFlags);
 
         [DllImport("dwmapi", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int DwmSetIconicLivePreviewBitmap([NativeTypeName("HWND")] IntPtr hwnd, [NativeTypeName("HBITMAP")] IntPtr hbmp, POINT* pptClient, [NativeTypeName("DWORD")] uint dwSITFlags);
+        public static extern HRESULT DwmSetIconicLivePreviewBitmap([NativeTypeName("HWND")] IntPtr hwnd, [NativeTypeName("HBITMAP")] IntPtr hbmp, POINT* pptClient, [NativeTypeName("DWORD")] uint dwSITFlags);
 
         [DllImport("dwmapi", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int DwmInvalidateIconicBitmaps([NativeTypeName("HWND")] IntPtr hwnd);
+        public static extern HRESULT DwmInvalidateIconicBitmaps([NativeTypeName("HWND")] IntPtr hwnd);
 
         [DllImport("dwmapi", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int DwmAttachMilContent([NativeTypeName("HWND")] IntPtr hwnd);
+        public static extern HRESULT DwmAttachMilContent([NativeTypeName("HWND")] IntPtr hwnd);
 
         [DllImport("dwmapi", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int DwmDetachMilContent([NativeTypeName("HWND")] IntPtr hwnd);
+        public static extern HRESULT DwmDetachMilContent([NativeTypeName("HWND")] IntPtr hwnd);
 
         [DllImport("dwmapi", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int DwmFlush();
+        public static extern HRESULT DwmFlush();
 
         [DllImport("dwmapi", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int DwmGetGraphicsStreamTransformHint([NativeTypeName("UINT")] uint uIndex, MilMatrix3x2D* pTransform);
+        public static extern HRESULT DwmGetGraphicsStreamTransformHint([NativeTypeName("UINT")] uint uIndex, MilMatrix3x2D* pTransform);
 
         [DllImport("dwmapi", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int DwmGetGraphicsStreamClient([NativeTypeName("UINT")] uint uIndex, [NativeTypeName("UUID *")] Guid* pClientUuid);
+        public static extern HRESULT DwmGetGraphicsStreamClient([NativeTypeName("UINT")] uint uIndex, [NativeTypeName("UUID *")] Guid* pClientUuid);
 
         [DllImport("dwmapi", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int DwmGetTransportAttributes(BOOL* pfIsRemoting, BOOL* pfIsConnected, [NativeTypeName("DWORD *")] uint* pDwGeneration);
+        public static extern HRESULT DwmGetTransportAttributes(BOOL* pfIsRemoting, BOOL* pfIsConnected, [NativeTypeName("DWORD *")] uint* pDwGeneration);
 
         [DllImport("dwmapi", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int DwmTransitionOwnedWindow([NativeTypeName("HWND")] IntPtr hwnd, [NativeTypeName("enum DWMTRANSITION_OWNEDWINDOW_TARGET")] DWMTRANSITION_OWNEDWINDOW_TARGET target);
+        public static extern HRESULT DwmTransitionOwnedWindow([NativeTypeName("HWND")] IntPtr hwnd, [NativeTypeName("enum DWMTRANSITION_OWNEDWINDOW_TARGET")] DWMTRANSITION_OWNEDWINDOW_TARGET target);
 
         [DllImport("dwmapi", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int DwmRenderGesture([NativeTypeName("enum GESTURE_TYPE")] GESTURE_TYPE gt, [NativeTypeName("UINT")] uint cContacts, [NativeTypeName("const DWORD *")] uint* pdwPointerID, [NativeTypeName("const POINT *")] POINT* pPoints);
+        public static extern HRESULT DwmRenderGesture([NativeTypeName("enum GESTURE_TYPE")] GESTURE_TYPE gt, [NativeTypeName("UINT")] uint cContacts, [NativeTypeName("const DWORD *")] uint* pdwPointerID, [NativeTypeName("const POINT *")] POINT* pPoints);
 
         [DllImport("dwmapi", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int DwmTetherContact([NativeTypeName("DWORD")] uint dwPointerID, BOOL fEnable, POINT ptTether);
+        public static extern HRESULT DwmTetherContact([NativeTypeName("DWORD")] uint dwPointerID, BOOL fEnable, POINT ptTether);
 
         [DllImport("dwmapi", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int DwmShowContact([NativeTypeName("DWORD")] uint dwPointerID, [NativeTypeName("enum DWM_SHOWCONTACT")] DWM_SHOWCONTACT eShowContact);
+        public static extern HRESULT DwmShowContact([NativeTypeName("DWORD")] uint dwPointerID, [NativeTypeName("enum DWM_SHOWCONTACT")] DWM_SHOWCONTACT eShowContact);
 
         [DllImport("dwmapi", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int DwmGetUnmetTabRequirements([NativeTypeName("HWND")] IntPtr appWindow, [NativeTypeName("enum DWM_TAB_WINDOW_REQUIREMENTS *")] DWM_TAB_WINDOW_REQUIREMENTS* value);
+        public static extern HRESULT DwmGetUnmetTabRequirements([NativeTypeName("HWND")] IntPtr appWindow, [NativeTypeName("enum DWM_TAB_WINDOW_REQUIREMENTS *")] DWM_TAB_WINDOW_REQUIREMENTS* value);
 
         [NativeTypeName("#define DWM_BB_ENABLE 0x00000001")]
         public const int DWM_BB_ENABLE = 0x00000001;

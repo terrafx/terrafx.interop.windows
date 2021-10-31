@@ -9,8 +9,7 @@ namespace TerraFX.Interop
     {
         public MFP_EVENT_TYPE eEventType;
 
-        [NativeTypeName("HRESULT")]
-        public int hrEvent;
+        public HRESULT hrEvent;
 
         public IMFPMediaPlayer* pMediaPlayer;
 

@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IPart*, Guid*, void**, int>)(lpVtbl[0]))((IPart*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,104 +41,91 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetName([NativeTypeName("LPWSTR *")] ushort** ppwstrName)
+        public HRESULT GetName([NativeTypeName("LPWSTR *")] ushort** ppwstrName)
         {
             return ((delegate* unmanaged<IPart*, ushort**, int>)(lpVtbl[3]))((IPart*)Unsafe.AsPointer(ref this), ppwstrName);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetLocalId([NativeTypeName("UINT *")] uint* pnId)
+        public HRESULT GetLocalId([NativeTypeName("UINT *")] uint* pnId)
         {
             return ((delegate* unmanaged<IPart*, uint*, int>)(lpVtbl[4]))((IPart*)Unsafe.AsPointer(ref this), pnId);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetGlobalId([NativeTypeName("LPWSTR *")] ushort** ppwstrGlobalId)
+        public HRESULT GetGlobalId([NativeTypeName("LPWSTR *")] ushort** ppwstrGlobalId)
         {
             return ((delegate* unmanaged<IPart*, ushort**, int>)(lpVtbl[5]))((IPart*)Unsafe.AsPointer(ref this), ppwstrGlobalId);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetPartType(PartType* pPartType)
+        public HRESULT GetPartType(PartType* pPartType)
         {
             return ((delegate* unmanaged<IPart*, PartType*, int>)(lpVtbl[6]))((IPart*)Unsafe.AsPointer(ref this), pPartType);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetSubType([NativeTypeName("GUID *")] Guid* pSubType)
+        public HRESULT GetSubType([NativeTypeName("GUID *")] Guid* pSubType)
         {
             return ((delegate* unmanaged<IPart*, Guid*, int>)(lpVtbl[7]))((IPart*)Unsafe.AsPointer(ref this), pSubType);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetControlInterfaceCount([NativeTypeName("UINT *")] uint* pCount)
+        public HRESULT GetControlInterfaceCount([NativeTypeName("UINT *")] uint* pCount)
         {
             return ((delegate* unmanaged<IPart*, uint*, int>)(lpVtbl[8]))((IPart*)Unsafe.AsPointer(ref this), pCount);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetControlInterface([NativeTypeName("UINT")] uint nIndex, IControlInterface** ppInterfaceDesc)
+        public HRESULT GetControlInterface([NativeTypeName("UINT")] uint nIndex, IControlInterface** ppInterfaceDesc)
         {
             return ((delegate* unmanaged<IPart*, uint, IControlInterface**, int>)(lpVtbl[9]))((IPart*)Unsafe.AsPointer(ref this), nIndex, ppInterfaceDesc);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(10)]
-        [return: NativeTypeName("HRESULT")]
-        public int EnumPartsIncoming(IPartsList** ppParts)
+        public HRESULT EnumPartsIncoming(IPartsList** ppParts)
         {
             return ((delegate* unmanaged<IPart*, IPartsList**, int>)(lpVtbl[10]))((IPart*)Unsafe.AsPointer(ref this), ppParts);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(11)]
-        [return: NativeTypeName("HRESULT")]
-        public int EnumPartsOutgoing(IPartsList** ppParts)
+        public HRESULT EnumPartsOutgoing(IPartsList** ppParts)
         {
             return ((delegate* unmanaged<IPart*, IPartsList**, int>)(lpVtbl[11]))((IPart*)Unsafe.AsPointer(ref this), ppParts);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(12)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetTopologyObject(IDeviceTopology** ppTopology)
+        public HRESULT GetTopologyObject(IDeviceTopology** ppTopology)
         {
             return ((delegate* unmanaged<IPart*, IDeviceTopology**, int>)(lpVtbl[12]))((IPart*)Unsafe.AsPointer(ref this), ppTopology);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(13)]
-        [return: NativeTypeName("HRESULT")]
-        public int Activate([NativeTypeName("DWORD")] uint dwClsContext, [NativeTypeName("const IID &")] Guid* refiid, void** ppvObject)
+        public HRESULT Activate([NativeTypeName("DWORD")] uint dwClsContext, [NativeTypeName("const IID &")] Guid* refiid, void** ppvObject)
         {
             return ((delegate* unmanaged<IPart*, uint, Guid*, void**, int>)(lpVtbl[13]))((IPart*)Unsafe.AsPointer(ref this), dwClsContext, refiid, ppvObject);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(14)]
-        [return: NativeTypeName("HRESULT")]
-        public int RegisterControlChangeCallback([NativeTypeName("const GUID &")] Guid* riid, IControlChangeNotify* pNotify)
+        public HRESULT RegisterControlChangeCallback([NativeTypeName("const GUID &")] Guid* riid, IControlChangeNotify* pNotify)
         {
             return ((delegate* unmanaged<IPart*, Guid*, IControlChangeNotify*, int>)(lpVtbl[14]))((IPart*)Unsafe.AsPointer(ref this), riid, pNotify);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(15)]
-        [return: NativeTypeName("HRESULT")]
-        public int UnregisterControlChangeCallback(IControlChangeNotify* pNotify)
+        public HRESULT UnregisterControlChangeCallback(IControlChangeNotify* pNotify)
         {
             return ((delegate* unmanaged<IPart*, IControlChangeNotify*, int>)(lpVtbl[15]))((IPart*)Unsafe.AsPointer(ref this), pNotify);
         }

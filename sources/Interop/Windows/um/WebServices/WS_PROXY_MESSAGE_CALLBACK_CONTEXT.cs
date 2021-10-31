@@ -10,7 +10,7 @@ namespace TerraFX.Interop
     public unsafe partial struct WS_PROXY_MESSAGE_CALLBACK_CONTEXT
     {
         [NativeTypeName("WS_PROXY_MESSAGE_CALLBACK")]
-        public delegate* unmanaged<IntPtr, IntPtr, void*, IntPtr, int> callback;
+        public delegate* unmanaged<IntPtr, IntPtr, void*, IntPtr, HRESULT> callback;
 
         public void* state;
     }

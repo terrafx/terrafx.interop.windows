@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IAppxManifestTargetDeviceFamily*, Guid*, void**, int>)(lpVtbl[0]))((IAppxManifestTargetDeviceFamily*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,24 +41,21 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetName([NativeTypeName("LPWSTR *")] ushort** name)
+        public HRESULT GetName([NativeTypeName("LPWSTR *")] ushort** name)
         {
             return ((delegate* unmanaged<IAppxManifestTargetDeviceFamily*, ushort**, int>)(lpVtbl[3]))((IAppxManifestTargetDeviceFamily*)Unsafe.AsPointer(ref this), name);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetMinVersion([NativeTypeName("UINT64 *")] ulong* minVersion)
+        public HRESULT GetMinVersion([NativeTypeName("UINT64 *")] ulong* minVersion)
         {
             return ((delegate* unmanaged<IAppxManifestTargetDeviceFamily*, ulong*, int>)(lpVtbl[4]))((IAppxManifestTargetDeviceFamily*)Unsafe.AsPointer(ref this), minVersion);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetMaxVersionTested([NativeTypeName("UINT64 *")] ulong* maxVersionTested)
+        public HRESULT GetMaxVersionTested([NativeTypeName("UINT64 *")] ulong* maxVersionTested)
         {
             return ((delegate* unmanaged<IAppxManifestTargetDeviceFamily*, ulong*, int>)(lpVtbl[5]))((IAppxManifestTargetDeviceFamily*)Unsafe.AsPointer(ref this), maxVersionTested);
         }

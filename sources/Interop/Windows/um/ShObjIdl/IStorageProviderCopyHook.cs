@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IStorageProviderCopyHook*, Guid*, void**, int>)(lpVtbl[0]))((IStorageProviderCopyHook*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,8 +41,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int CopyCallback([NativeTypeName("HWND")] IntPtr hwnd, [NativeTypeName("UINT")] uint operation, [NativeTypeName("UINT")] uint flags, [NativeTypeName("LPCWSTR")] ushort* srcFile, [NativeTypeName("DWORD")] uint srcAttribs, [NativeTypeName("LPCWSTR")] ushort* destFile, [NativeTypeName("DWORD")] uint destAttribs, [NativeTypeName("UINT *")] uint* result)
+        public HRESULT CopyCallback([NativeTypeName("HWND")] IntPtr hwnd, [NativeTypeName("UINT")] uint operation, [NativeTypeName("UINT")] uint flags, [NativeTypeName("LPCWSTR")] ushort* srcFile, [NativeTypeName("DWORD")] uint srcAttribs, [NativeTypeName("LPCWSTR")] ushort* destFile, [NativeTypeName("DWORD")] uint destAttribs, [NativeTypeName("UINT *")] uint* result)
         {
             return ((delegate* unmanaged<IStorageProviderCopyHook*, IntPtr, uint, uint, ushort*, uint, ushort*, uint, uint*, int>)(lpVtbl[3]))((IStorageProviderCopyHook*)Unsafe.AsPointer(ref this), hwnd, operation, flags, srcFile, srcAttribs, destFile, destAttribs, result);
         }

@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IAssocHandler*, Guid*, void**, int>)(lpVtbl[0]))((IAssocHandler*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,56 +41,49 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetName([NativeTypeName("LPWSTR *")] ushort** ppsz)
+        public HRESULT GetName([NativeTypeName("LPWSTR *")] ushort** ppsz)
         {
             return ((delegate* unmanaged<IAssocHandler*, ushort**, int>)(lpVtbl[3]))((IAssocHandler*)Unsafe.AsPointer(ref this), ppsz);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetUIName([NativeTypeName("LPWSTR *")] ushort** ppsz)
+        public HRESULT GetUIName([NativeTypeName("LPWSTR *")] ushort** ppsz)
         {
             return ((delegate* unmanaged<IAssocHandler*, ushort**, int>)(lpVtbl[4]))((IAssocHandler*)Unsafe.AsPointer(ref this), ppsz);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetIconLocation([NativeTypeName("LPWSTR *")] ushort** ppszPath, int* pIndex)
+        public HRESULT GetIconLocation([NativeTypeName("LPWSTR *")] ushort** ppszPath, int* pIndex)
         {
             return ((delegate* unmanaged<IAssocHandler*, ushort**, int*, int>)(lpVtbl[5]))((IAssocHandler*)Unsafe.AsPointer(ref this), ppszPath, pIndex);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int IsRecommended()
+        public HRESULT IsRecommended()
         {
             return ((delegate* unmanaged<IAssocHandler*, int>)(lpVtbl[6]))((IAssocHandler*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        [return: NativeTypeName("HRESULT")]
-        public int MakeDefault([NativeTypeName("LPCWSTR")] ushort* pszDescription)
+        public HRESULT MakeDefault([NativeTypeName("LPCWSTR")] ushort* pszDescription)
         {
             return ((delegate* unmanaged<IAssocHandler*, ushort*, int>)(lpVtbl[7]))((IAssocHandler*)Unsafe.AsPointer(ref this), pszDescription);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        [return: NativeTypeName("HRESULT")]
-        public int Invoke(IDataObject* pdo)
+        public HRESULT Invoke(IDataObject* pdo)
         {
             return ((delegate* unmanaged<IAssocHandler*, IDataObject*, int>)(lpVtbl[8]))((IAssocHandler*)Unsafe.AsPointer(ref this), pdo);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        [return: NativeTypeName("HRESULT")]
-        public int CreateInvoker(IDataObject* pdo, IAssocHandlerInvoker** ppInvoker)
+        public HRESULT CreateInvoker(IDataObject* pdo, IAssocHandlerInvoker** ppInvoker)
         {
             return ((delegate* unmanaged<IAssocHandler*, IDataObject*, IAssocHandlerInvoker**, int>)(lpVtbl[9]))((IAssocHandler*)Unsafe.AsPointer(ref this), pdo, ppInvoker);
         }

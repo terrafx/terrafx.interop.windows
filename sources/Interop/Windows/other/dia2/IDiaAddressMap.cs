@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IDiaAddressMap*, Guid*, void**, int>)(lpVtbl[0]))((IDiaAddressMap*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,64 +41,56 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int get_addressMapEnabled(BOOL* pRetVal)
+        public HRESULT get_addressMapEnabled(BOOL* pRetVal)
         {
             return ((delegate* unmanaged<IDiaAddressMap*, BOOL*, int>)(lpVtbl[3]))((IDiaAddressMap*)Unsafe.AsPointer(ref this), pRetVal);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int put_addressMapEnabled(BOOL NewVal)
+        public HRESULT put_addressMapEnabled(BOOL NewVal)
         {
             return ((delegate* unmanaged<IDiaAddressMap*, BOOL, int>)(lpVtbl[4]))((IDiaAddressMap*)Unsafe.AsPointer(ref this), NewVal);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int get_relativeVirtualAddressEnabled(BOOL* pRetVal)
+        public HRESULT get_relativeVirtualAddressEnabled(BOOL* pRetVal)
         {
             return ((delegate* unmanaged<IDiaAddressMap*, BOOL*, int>)(lpVtbl[5]))((IDiaAddressMap*)Unsafe.AsPointer(ref this), pRetVal);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int put_relativeVirtualAddressEnabled(BOOL NewVal)
+        public HRESULT put_relativeVirtualAddressEnabled(BOOL NewVal)
         {
             return ((delegate* unmanaged<IDiaAddressMap*, BOOL, int>)(lpVtbl[6]))((IDiaAddressMap*)Unsafe.AsPointer(ref this), NewVal);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        [return: NativeTypeName("HRESULT")]
-        public int get_imageAlign([NativeTypeName("DWORD *")] uint* pRetVal)
+        public HRESULT get_imageAlign([NativeTypeName("DWORD *")] uint* pRetVal)
         {
             return ((delegate* unmanaged<IDiaAddressMap*, uint*, int>)(lpVtbl[7]))((IDiaAddressMap*)Unsafe.AsPointer(ref this), pRetVal);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        [return: NativeTypeName("HRESULT")]
-        public int put_imageAlign([NativeTypeName("DWORD")] uint NewVal)
+        public HRESULT put_imageAlign([NativeTypeName("DWORD")] uint NewVal)
         {
             return ((delegate* unmanaged<IDiaAddressMap*, uint, int>)(lpVtbl[8]))((IDiaAddressMap*)Unsafe.AsPointer(ref this), NewVal);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        [return: NativeTypeName("HRESULT")]
-        public int set_imageHeaders([NativeTypeName("DWORD")] uint cbData, [NativeTypeName("BYTE *")] byte* pbData, BOOL originalHeaders)
+        public HRESULT set_imageHeaders([NativeTypeName("DWORD")] uint cbData, [NativeTypeName("BYTE *")] byte* pbData, BOOL originalHeaders)
         {
             return ((delegate* unmanaged<IDiaAddressMap*, uint, byte*, BOOL, int>)(lpVtbl[9]))((IDiaAddressMap*)Unsafe.AsPointer(ref this), cbData, pbData, originalHeaders);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(10)]
-        [return: NativeTypeName("HRESULT")]
-        public int set_addressMap([NativeTypeName("DWORD")] uint cData, [NativeTypeName("struct DiaAddressMapEntry *")] DiaAddressMapEntry* pData, BOOL imageToSymbols)
+        public HRESULT set_addressMap([NativeTypeName("DWORD")] uint cData, [NativeTypeName("struct DiaAddressMapEntry *")] DiaAddressMapEntry* pData, BOOL imageToSymbols)
         {
             return ((delegate* unmanaged<IDiaAddressMap*, uint, DiaAddressMapEntry*, BOOL, int>)(lpVtbl[10]))((IDiaAddressMap*)Unsafe.AsPointer(ref this), cData, pData, imageToSymbols);
         }

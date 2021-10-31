@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<ITfReadOnlyProperty*, Guid*, void**, int>)(lpVtbl[0]))((ITfReadOnlyProperty*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,32 +41,28 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetType([NativeTypeName("GUID *")] Guid* pguid)
+        public HRESULT GetType([NativeTypeName("GUID *")] Guid* pguid)
         {
             return ((delegate* unmanaged<ITfReadOnlyProperty*, Guid*, int>)(lpVtbl[3]))((ITfReadOnlyProperty*)Unsafe.AsPointer(ref this), pguid);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int EnumRanges([NativeTypeName("TfEditCookie")] uint ec, IEnumTfRanges** ppEnum, ITfRange* pTargetRange)
+        public HRESULT EnumRanges([NativeTypeName("TfEditCookie")] uint ec, IEnumTfRanges** ppEnum, ITfRange* pTargetRange)
         {
             return ((delegate* unmanaged<ITfReadOnlyProperty*, uint, IEnumTfRanges**, ITfRange*, int>)(lpVtbl[4]))((ITfReadOnlyProperty*)Unsafe.AsPointer(ref this), ec, ppEnum, pTargetRange);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetValue([NativeTypeName("TfEditCookie")] uint ec, ITfRange* pRange, VARIANT* pvarValue)
+        public HRESULT GetValue([NativeTypeName("TfEditCookie")] uint ec, ITfRange* pRange, VARIANT* pvarValue)
         {
             return ((delegate* unmanaged<ITfReadOnlyProperty*, uint, ITfRange*, VARIANT*, int>)(lpVtbl[5]))((ITfReadOnlyProperty*)Unsafe.AsPointer(ref this), ec, pRange, pvarValue);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetContext(ITfContext** ppContext)
+        public HRESULT GetContext(ITfContext** ppContext)
         {
             return ((delegate* unmanaged<ITfReadOnlyProperty*, ITfContext**, int>)(lpVtbl[6]))((ITfReadOnlyProperty*)Unsafe.AsPointer(ref this), ppContext);
         }

@@ -11,15 +11,12 @@ namespace TerraFX.Interop
     public static unsafe partial class Windows
     {
         [DllImport("wsclient", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int CheckDeveloperLicense(FILETIME* pExpiration);
+        public static extern HRESULT CheckDeveloperLicense(FILETIME* pExpiration);
 
         [DllImport("wsclient", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int AcquireDeveloperLicense([NativeTypeName("HWND")] IntPtr hwndParent, FILETIME* pExpiration);
+        public static extern HRESULT AcquireDeveloperLicense([NativeTypeName("HWND")] IntPtr hwndParent, FILETIME* pExpiration);
 
         [DllImport("wsclient", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int RemoveDeveloperLicense([NativeTypeName("HWND")] IntPtr hwndParent);
+        public static extern HRESULT RemoveDeveloperLicense([NativeTypeName("HWND")] IntPtr hwndParent);
     }
 }

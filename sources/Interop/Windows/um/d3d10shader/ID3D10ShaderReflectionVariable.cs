@@ -15,8 +15,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetDesc(D3D10_SHADER_VARIABLE_DESC* pDesc)
+        public HRESULT GetDesc(D3D10_SHADER_VARIABLE_DESC* pDesc)
         {
             return ((delegate* unmanaged<ID3D10ShaderReflectionVariable*, D3D10_SHADER_VARIABLE_DESC*, int>)(lpVtbl[0]))((ID3D10ShaderReflectionVariable*)Unsafe.AsPointer(ref this), pDesc);
         }

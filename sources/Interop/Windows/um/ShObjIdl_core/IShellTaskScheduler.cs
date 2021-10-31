@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IShellTaskScheduler*, Guid*, void**, int>)(lpVtbl[0]))((IShellTaskScheduler*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,16 +41,14 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int AddTask(IRunnableTask* prt, [NativeTypeName("const TASKOWNERID &")] Guid* rtoid, [NativeTypeName("DWORD_PTR")] nuint lParam, [NativeTypeName("DWORD")] uint dwPriority)
+        public HRESULT AddTask(IRunnableTask* prt, [NativeTypeName("const TASKOWNERID &")] Guid* rtoid, [NativeTypeName("DWORD_PTR")] nuint lParam, [NativeTypeName("DWORD")] uint dwPriority)
         {
             return ((delegate* unmanaged<IShellTaskScheduler*, IRunnableTask*, Guid*, nuint, uint, int>)(lpVtbl[3]))((IShellTaskScheduler*)Unsafe.AsPointer(ref this), prt, rtoid, lParam, dwPriority);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int RemoveTasks([NativeTypeName("const TASKOWNERID &")] Guid* rtoid, [NativeTypeName("DWORD_PTR")] nuint lParam, BOOL bWaitIfRunning)
+        public HRESULT RemoveTasks([NativeTypeName("const TASKOWNERID &")] Guid* rtoid, [NativeTypeName("DWORD_PTR")] nuint lParam, BOOL bWaitIfRunning)
         {
             return ((delegate* unmanaged<IShellTaskScheduler*, Guid*, nuint, BOOL, int>)(lpVtbl[4]))((IShellTaskScheduler*)Unsafe.AsPointer(ref this), rtoid, lParam, bWaitIfRunning);
         }
@@ -66,8 +63,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int Status([NativeTypeName("DWORD")] uint dwReleaseStatus, [NativeTypeName("DWORD")] uint dwThreadTimeout)
+        public HRESULT Status([NativeTypeName("DWORD")] uint dwReleaseStatus, [NativeTypeName("DWORD")] uint dwThreadTimeout)
         {
             return ((delegate* unmanaged<IShellTaskScheduler*, uint, uint, int>)(lpVtbl[6]))((IShellTaskScheduler*)Unsafe.AsPointer(ref this), dwReleaseStatus, dwThreadTimeout);
         }

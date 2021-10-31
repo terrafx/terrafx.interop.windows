@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IOverlayNotify*, Guid*, void**, int>)(lpVtbl[0]))((IOverlayNotify*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,32 +41,28 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int OnPaletteChange([NativeTypeName("DWORD")] uint dwColors, [NativeTypeName("const PALETTEENTRY *")] PALETTEENTRY* pPalette)
+        public HRESULT OnPaletteChange([NativeTypeName("DWORD")] uint dwColors, [NativeTypeName("const PALETTEENTRY *")] PALETTEENTRY* pPalette)
         {
             return ((delegate* unmanaged<IOverlayNotify*, uint, PALETTEENTRY*, int>)(lpVtbl[3]))((IOverlayNotify*)Unsafe.AsPointer(ref this), dwColors, pPalette);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int OnClipChange([NativeTypeName("const RECT *")] RECT* pSourceRect, [NativeTypeName("const RECT *")] RECT* pDestinationRect, [NativeTypeName("const RGNDATA *")] RGNDATA* pRgnData)
+        public HRESULT OnClipChange([NativeTypeName("const RECT *")] RECT* pSourceRect, [NativeTypeName("const RECT *")] RECT* pDestinationRect, [NativeTypeName("const RGNDATA *")] RGNDATA* pRgnData)
         {
             return ((delegate* unmanaged<IOverlayNotify*, RECT*, RECT*, RGNDATA*, int>)(lpVtbl[4]))((IOverlayNotify*)Unsafe.AsPointer(ref this), pSourceRect, pDestinationRect, pRgnData);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int OnColorKeyChange([NativeTypeName("const COLORKEY *")] COLORKEY* pColorKey)
+        public HRESULT OnColorKeyChange([NativeTypeName("const COLORKEY *")] COLORKEY* pColorKey)
         {
             return ((delegate* unmanaged<IOverlayNotify*, COLORKEY*, int>)(lpVtbl[5]))((IOverlayNotify*)Unsafe.AsPointer(ref this), pColorKey);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int OnPositionChange([NativeTypeName("const RECT *")] RECT* pSourceRect, [NativeTypeName("const RECT *")] RECT* pDestinationRect)
+        public HRESULT OnPositionChange([NativeTypeName("const RECT *")] RECT* pSourceRect, [NativeTypeName("const RECT *")] RECT* pDestinationRect)
         {
             return ((delegate* unmanaged<IOverlayNotify*, RECT*, RECT*, int>)(lpVtbl[6]))((IOverlayNotify*)Unsafe.AsPointer(ref this), pSourceRect, pDestinationRect);
         }

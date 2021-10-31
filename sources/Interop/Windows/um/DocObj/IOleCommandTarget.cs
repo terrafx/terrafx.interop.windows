@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IOleCommandTarget*, Guid*, void**, int>)(lpVtbl[0]))((IOleCommandTarget*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,16 +41,14 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryStatus([NativeTypeName("const GUID *")] Guid* pguidCmdGroup, [NativeTypeName("ULONG")] uint cCmds, [NativeTypeName("OLECMD []")] OLECMD* prgCmds, OLECMDTEXT* pCmdText)
+        public HRESULT QueryStatus([NativeTypeName("const GUID *")] Guid* pguidCmdGroup, [NativeTypeName("ULONG")] uint cCmds, [NativeTypeName("OLECMD []")] OLECMD* prgCmds, OLECMDTEXT* pCmdText)
         {
             return ((delegate* unmanaged<IOleCommandTarget*, Guid*, uint, OLECMD*, OLECMDTEXT*, int>)(lpVtbl[3]))((IOleCommandTarget*)Unsafe.AsPointer(ref this), pguidCmdGroup, cCmds, prgCmds, pCmdText);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int Exec([NativeTypeName("const GUID *")] Guid* pguidCmdGroup, [NativeTypeName("DWORD")] uint nCmdID, [NativeTypeName("DWORD")] uint nCmdexecopt, VARIANT* pvaIn, VARIANT* pvaOut)
+        public HRESULT Exec([NativeTypeName("const GUID *")] Guid* pguidCmdGroup, [NativeTypeName("DWORD")] uint nCmdID, [NativeTypeName("DWORD")] uint nCmdexecopt, VARIANT* pvaIn, VARIANT* pvaOut)
         {
             return ((delegate* unmanaged<IOleCommandTarget*, Guid*, uint, uint, VARIANT*, VARIANT*, int>)(lpVtbl[4]))((IOleCommandTarget*)Unsafe.AsPointer(ref this), pguidCmdGroup, nCmdID, nCmdexecopt, pvaIn, pvaOut);
         }

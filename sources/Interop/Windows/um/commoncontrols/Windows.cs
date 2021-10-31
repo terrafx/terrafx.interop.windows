@@ -13,8 +13,7 @@ namespace TerraFX.Interop
     public static unsafe partial class Windows
     {
         [DllImport("comctl32", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int ImageList_CoCreateInstance([NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("const IUnknown *")] IUnknown* punkOuter, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
+        public static extern HRESULT ImageList_CoCreateInstance([NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("const IUnknown *")] IUnknown* punkOuter, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
 
         [NativeTypeName("#define ILIF_ALPHA 0x00000001")]
         public const int ILIF_ALPHA = 0x00000001;

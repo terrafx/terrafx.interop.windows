@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IMFVideoSampleAllocatorCallback*, Guid*, void**, int>)(lpVtbl[0]))((IMFVideoSampleAllocatorCallback*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,16 +41,14 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetCallback(IMFVideoSampleAllocatorNotify* pNotify)
+        public HRESULT SetCallback(IMFVideoSampleAllocatorNotify* pNotify)
         {
             return ((delegate* unmanaged<IMFVideoSampleAllocatorCallback*, IMFVideoSampleAllocatorNotify*, int>)(lpVtbl[3]))((IMFVideoSampleAllocatorCallback*)Unsafe.AsPointer(ref this), pNotify);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetFreeSampleCount([NativeTypeName("LONG *")] int* plSamples)
+        public HRESULT GetFreeSampleCount([NativeTypeName("LONG *")] int* plSamples)
         {
             return ((delegate* unmanaged<IMFVideoSampleAllocatorCallback*, int*, int>)(lpVtbl[4]))((IMFVideoSampleAllocatorCallback*)Unsafe.AsPointer(ref this), plSamples);
         }

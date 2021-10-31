@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<ITfProperty*, Guid*, void**, int>)(lpVtbl[0]))((ITfProperty*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,64 +41,56 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetType([NativeTypeName("GUID *")] Guid* pguid)
+        public HRESULT GetType([NativeTypeName("GUID *")] Guid* pguid)
         {
             return ((delegate* unmanaged<ITfProperty*, Guid*, int>)(lpVtbl[3]))((ITfProperty*)Unsafe.AsPointer(ref this), pguid);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int EnumRanges([NativeTypeName("TfEditCookie")] uint ec, IEnumTfRanges** ppEnum, ITfRange* pTargetRange)
+        public HRESULT EnumRanges([NativeTypeName("TfEditCookie")] uint ec, IEnumTfRanges** ppEnum, ITfRange* pTargetRange)
         {
             return ((delegate* unmanaged<ITfProperty*, uint, IEnumTfRanges**, ITfRange*, int>)(lpVtbl[4]))((ITfProperty*)Unsafe.AsPointer(ref this), ec, ppEnum, pTargetRange);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetValue([NativeTypeName("TfEditCookie")] uint ec, ITfRange* pRange, VARIANT* pvarValue)
+        public HRESULT GetValue([NativeTypeName("TfEditCookie")] uint ec, ITfRange* pRange, VARIANT* pvarValue)
         {
             return ((delegate* unmanaged<ITfProperty*, uint, ITfRange*, VARIANT*, int>)(lpVtbl[5]))((ITfProperty*)Unsafe.AsPointer(ref this), ec, pRange, pvarValue);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetContext(ITfContext** ppContext)
+        public HRESULT GetContext(ITfContext** ppContext)
         {
             return ((delegate* unmanaged<ITfProperty*, ITfContext**, int>)(lpVtbl[6]))((ITfProperty*)Unsafe.AsPointer(ref this), ppContext);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        [return: NativeTypeName("HRESULT")]
-        public int FindRange([NativeTypeName("TfEditCookie")] uint ec, ITfRange* pRange, ITfRange** ppRange, TfAnchor aPos)
+        public HRESULT FindRange([NativeTypeName("TfEditCookie")] uint ec, ITfRange* pRange, ITfRange** ppRange, TfAnchor aPos)
         {
             return ((delegate* unmanaged<ITfProperty*, uint, ITfRange*, ITfRange**, TfAnchor, int>)(lpVtbl[7]))((ITfProperty*)Unsafe.AsPointer(ref this), ec, pRange, ppRange, aPos);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetValueStore([NativeTypeName("TfEditCookie")] uint ec, ITfRange* pRange, ITfPropertyStore* pPropStore)
+        public HRESULT SetValueStore([NativeTypeName("TfEditCookie")] uint ec, ITfRange* pRange, ITfPropertyStore* pPropStore)
         {
             return ((delegate* unmanaged<ITfProperty*, uint, ITfRange*, ITfPropertyStore*, int>)(lpVtbl[8]))((ITfProperty*)Unsafe.AsPointer(ref this), ec, pRange, pPropStore);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetValue([NativeTypeName("TfEditCookie")] uint ec, ITfRange* pRange, [NativeTypeName("const VARIANT *")] VARIANT* pvarValue)
+        public HRESULT SetValue([NativeTypeName("TfEditCookie")] uint ec, ITfRange* pRange, [NativeTypeName("const VARIANT *")] VARIANT* pvarValue)
         {
             return ((delegate* unmanaged<ITfProperty*, uint, ITfRange*, VARIANT*, int>)(lpVtbl[9]))((ITfProperty*)Unsafe.AsPointer(ref this), ec, pRange, pvarValue);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(10)]
-        [return: NativeTypeName("HRESULT")]
-        public int Clear([NativeTypeName("TfEditCookie")] uint ec, ITfRange* pRange)
+        public HRESULT Clear([NativeTypeName("TfEditCookie")] uint ec, ITfRange* pRange)
         {
             return ((delegate* unmanaged<ITfProperty*, uint, ITfRange*, int>)(lpVtbl[10]))((ITfProperty*)Unsafe.AsPointer(ref this), ec, pRange);
         }

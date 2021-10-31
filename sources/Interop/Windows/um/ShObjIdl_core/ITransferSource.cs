@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<ITransferSource*, Guid*, void**, int>)(lpVtbl[0]))((ITransferSource*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,104 +41,91 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int Advise(ITransferAdviseSink* psink, [NativeTypeName("DWORD *")] uint* pdwCookie)
+        public HRESULT Advise(ITransferAdviseSink* psink, [NativeTypeName("DWORD *")] uint* pdwCookie)
         {
             return ((delegate* unmanaged<ITransferSource*, ITransferAdviseSink*, uint*, int>)(lpVtbl[3]))((ITransferSource*)Unsafe.AsPointer(ref this), psink, pdwCookie);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int Unadvise([NativeTypeName("DWORD")] uint dwCookie)
+        public HRESULT Unadvise([NativeTypeName("DWORD")] uint dwCookie)
         {
             return ((delegate* unmanaged<ITransferSource*, uint, int>)(lpVtbl[4]))((ITransferSource*)Unsafe.AsPointer(ref this), dwCookie);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetProperties(IPropertyChangeArray* pproparray)
+        public HRESULT SetProperties(IPropertyChangeArray* pproparray)
         {
             return ((delegate* unmanaged<ITransferSource*, IPropertyChangeArray*, int>)(lpVtbl[5]))((ITransferSource*)Unsafe.AsPointer(ref this), pproparray);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int OpenItem(IShellItem* psi, [NativeTypeName("TRANSFER_SOURCE_FLAGS")] uint flags, [NativeTypeName("const IID &")] Guid* riid, void** ppv)
+        public HRESULT OpenItem(IShellItem* psi, [NativeTypeName("TRANSFER_SOURCE_FLAGS")] uint flags, [NativeTypeName("const IID &")] Guid* riid, void** ppv)
         {
             return ((delegate* unmanaged<ITransferSource*, IShellItem*, uint, Guid*, void**, int>)(lpVtbl[6]))((ITransferSource*)Unsafe.AsPointer(ref this), psi, flags, riid, ppv);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        [return: NativeTypeName("HRESULT")]
-        public int MoveItem(IShellItem* psi, IShellItem* psiParentDst, [NativeTypeName("LPCWSTR")] ushort* pszNameDst, [NativeTypeName("TRANSFER_SOURCE_FLAGS")] uint flags, IShellItem** ppsiNew)
+        public HRESULT MoveItem(IShellItem* psi, IShellItem* psiParentDst, [NativeTypeName("LPCWSTR")] ushort* pszNameDst, [NativeTypeName("TRANSFER_SOURCE_FLAGS")] uint flags, IShellItem** ppsiNew)
         {
             return ((delegate* unmanaged<ITransferSource*, IShellItem*, IShellItem*, ushort*, uint, IShellItem**, int>)(lpVtbl[7]))((ITransferSource*)Unsafe.AsPointer(ref this), psi, psiParentDst, pszNameDst, flags, ppsiNew);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        [return: NativeTypeName("HRESULT")]
-        public int RecycleItem(IShellItem* psiSource, IShellItem* psiParentDest, [NativeTypeName("TRANSFER_SOURCE_FLAGS")] uint flags, IShellItem** ppsiNewDest)
+        public HRESULT RecycleItem(IShellItem* psiSource, IShellItem* psiParentDest, [NativeTypeName("TRANSFER_SOURCE_FLAGS")] uint flags, IShellItem** ppsiNewDest)
         {
             return ((delegate* unmanaged<ITransferSource*, IShellItem*, IShellItem*, uint, IShellItem**, int>)(lpVtbl[8]))((ITransferSource*)Unsafe.AsPointer(ref this), psiSource, psiParentDest, flags, ppsiNewDest);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        [return: NativeTypeName("HRESULT")]
-        public int RemoveItem(IShellItem* psiSource, [NativeTypeName("TRANSFER_SOURCE_FLAGS")] uint flags)
+        public HRESULT RemoveItem(IShellItem* psiSource, [NativeTypeName("TRANSFER_SOURCE_FLAGS")] uint flags)
         {
             return ((delegate* unmanaged<ITransferSource*, IShellItem*, uint, int>)(lpVtbl[9]))((ITransferSource*)Unsafe.AsPointer(ref this), psiSource, flags);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(10)]
-        [return: NativeTypeName("HRESULT")]
-        public int RenameItem(IShellItem* psiSource, [NativeTypeName("LPCWSTR")] ushort* pszNewName, [NativeTypeName("TRANSFER_SOURCE_FLAGS")] uint flags, IShellItem** ppsiNewDest)
+        public HRESULT RenameItem(IShellItem* psiSource, [NativeTypeName("LPCWSTR")] ushort* pszNewName, [NativeTypeName("TRANSFER_SOURCE_FLAGS")] uint flags, IShellItem** ppsiNewDest)
         {
             return ((delegate* unmanaged<ITransferSource*, IShellItem*, ushort*, uint, IShellItem**, int>)(lpVtbl[10]))((ITransferSource*)Unsafe.AsPointer(ref this), psiSource, pszNewName, flags, ppsiNewDest);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(11)]
-        [return: NativeTypeName("HRESULT")]
-        public int LinkItem(IShellItem* psiSource, IShellItem* psiParentDest, [NativeTypeName("LPCWSTR")] ushort* pszNewName, [NativeTypeName("TRANSFER_SOURCE_FLAGS")] uint flags, IShellItem** ppsiNewDest)
+        public HRESULT LinkItem(IShellItem* psiSource, IShellItem* psiParentDest, [NativeTypeName("LPCWSTR")] ushort* pszNewName, [NativeTypeName("TRANSFER_SOURCE_FLAGS")] uint flags, IShellItem** ppsiNewDest)
         {
             return ((delegate* unmanaged<ITransferSource*, IShellItem*, IShellItem*, ushort*, uint, IShellItem**, int>)(lpVtbl[11]))((ITransferSource*)Unsafe.AsPointer(ref this), psiSource, psiParentDest, pszNewName, flags, ppsiNewDest);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(12)]
-        [return: NativeTypeName("HRESULT")]
-        public int ApplyPropertiesToItem(IShellItem* psiSource, IShellItem** ppsiNew)
+        public HRESULT ApplyPropertiesToItem(IShellItem* psiSource, IShellItem** ppsiNew)
         {
             return ((delegate* unmanaged<ITransferSource*, IShellItem*, IShellItem**, int>)(lpVtbl[12]))((ITransferSource*)Unsafe.AsPointer(ref this), psiSource, ppsiNew);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(13)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetDefaultDestinationName(IShellItem* psiSource, IShellItem* psiParentDest, [NativeTypeName("LPWSTR *")] ushort** ppszDestinationName)
+        public HRESULT GetDefaultDestinationName(IShellItem* psiSource, IShellItem* psiParentDest, [NativeTypeName("LPWSTR *")] ushort** ppszDestinationName)
         {
             return ((delegate* unmanaged<ITransferSource*, IShellItem*, IShellItem*, ushort**, int>)(lpVtbl[13]))((ITransferSource*)Unsafe.AsPointer(ref this), psiSource, psiParentDest, ppszDestinationName);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(14)]
-        [return: NativeTypeName("HRESULT")]
-        public int EnterFolder(IShellItem* psiChildFolderDest)
+        public HRESULT EnterFolder(IShellItem* psiChildFolderDest)
         {
             return ((delegate* unmanaged<ITransferSource*, IShellItem*, int>)(lpVtbl[14]))((ITransferSource*)Unsafe.AsPointer(ref this), psiChildFolderDest);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(15)]
-        [return: NativeTypeName("HRESULT")]
-        public int LeaveFolder(IShellItem* psiChildFolderDest)
+        public HRESULT LeaveFolder(IShellItem* psiChildFolderDest)
         {
             return ((delegate* unmanaged<ITransferSource*, IShellItem*, int>)(lpVtbl[15]))((ITransferSource*)Unsafe.AsPointer(ref this), psiChildFolderDest);
         }

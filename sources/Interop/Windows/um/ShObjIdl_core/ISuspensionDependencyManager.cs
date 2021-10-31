@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<ISuspensionDependencyManager*, Guid*, void**, int>)(lpVtbl[0]))((ISuspensionDependencyManager*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,24 +41,21 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int RegisterAsChild([NativeTypeName("HANDLE")] IntPtr processHandle)
+        public HRESULT RegisterAsChild([NativeTypeName("HANDLE")] IntPtr processHandle)
         {
             return ((delegate* unmanaged<ISuspensionDependencyManager*, IntPtr, int>)(lpVtbl[3]))((ISuspensionDependencyManager*)Unsafe.AsPointer(ref this), processHandle);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int GroupChildWithParent([NativeTypeName("HANDLE")] IntPtr childProcessHandle)
+        public HRESULT GroupChildWithParent([NativeTypeName("HANDLE")] IntPtr childProcessHandle)
         {
             return ((delegate* unmanaged<ISuspensionDependencyManager*, IntPtr, int>)(lpVtbl[4]))((ISuspensionDependencyManager*)Unsafe.AsPointer(ref this), childProcessHandle);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int UngroupChildFromParent([NativeTypeName("HANDLE")] IntPtr childProcessHandle)
+        public HRESULT UngroupChildFromParent([NativeTypeName("HANDLE")] IntPtr childProcessHandle)
         {
             return ((delegate* unmanaged<ISuspensionDependencyManager*, IntPtr, int>)(lpVtbl[5]))((ISuspensionDependencyManager*)Unsafe.AsPointer(ref this), childProcessHandle);
         }

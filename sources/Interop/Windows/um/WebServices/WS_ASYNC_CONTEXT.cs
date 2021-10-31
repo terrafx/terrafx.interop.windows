@@ -8,7 +8,7 @@ namespace TerraFX.Interop
     public unsafe partial struct WS_ASYNC_CONTEXT
     {
         [NativeTypeName("WS_ASYNC_CALLBACK")]
-        public delegate* unmanaged<int, WS_CALLBACK_MODEL, void*, void> callback;
+        public delegate* unmanaged<HRESULT, WS_CALLBACK_MODEL, void*, void> callback;
 
         public void* callbackState;
     }

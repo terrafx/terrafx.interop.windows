@@ -35,8 +35,7 @@ namespace TerraFX.Interop
         public static extern BOOL DeleteProfileW([NativeTypeName("LPCWSTR")] ushort* lpSidString, [NativeTypeName("LPCWSTR")] ushort* lpProfilePath, [NativeTypeName("LPCWSTR")] ushort* lpComputerName);
 
         [DllImport("userenv", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int CreateProfile([NativeTypeName("LPCWSTR")] ushort* pszUserSid, [NativeTypeName("LPCWSTR")] ushort* pszUserName, [NativeTypeName("LPWSTR")] ushort* pszProfilePath, [NativeTypeName("DWORD")] uint cchProfilePath);
+        public static extern HRESULT CreateProfile([NativeTypeName("LPCWSTR")] ushort* pszUserSid, [NativeTypeName("LPCWSTR")] ushort* pszUserName, [NativeTypeName("LPWSTR")] ushort* pszProfilePath, [NativeTypeName("DWORD")] uint cchProfilePath);
 
         [DllImport("userenv", ExactSpelling = true, SetLastError = true)]
         public static extern BOOL GetDefaultUserProfileDirectoryA([NativeTypeName("LPSTR")] sbyte* lpProfileDir, [NativeTypeName("LPDWORD")] uint* lpcchSize);
@@ -113,51 +112,41 @@ namespace TerraFX.Interop
 
         [DllImport("userenv", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
-        public static extern uint ProcessGroupPolicyCompletedEx([NativeTypeName("REFGPEXTENSIONID")] Guid* extensionId, [NativeTypeName("ASYNCCOMPLETIONHANDLE")] nuint pAsyncHandle, [NativeTypeName("DWORD")] uint dwStatus, [NativeTypeName("HRESULT")] int RsopStatus);
+        public static extern uint ProcessGroupPolicyCompletedEx([NativeTypeName("REFGPEXTENSIONID")] Guid* extensionId, [NativeTypeName("ASYNCCOMPLETIONHANDLE")] nuint pAsyncHandle, [NativeTypeName("DWORD")] uint dwStatus, HRESULT RsopStatus);
 
         [DllImport("userenv", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int RsopAccessCheckByType([NativeTypeName("PSECURITY_DESCRIPTOR")] void* pSecurityDescriptor, [NativeTypeName("PSID")] void* pPrincipalSelfSid, [NativeTypeName("PRSOPTOKEN")] void* pRsopToken, [NativeTypeName("DWORD")] uint dwDesiredAccessMask, [NativeTypeName("POBJECT_TYPE_LIST")] OBJECT_TYPE_LIST* pObjectTypeList, [NativeTypeName("DWORD")] uint ObjectTypeListLength, [NativeTypeName("PGENERIC_MAPPING")] GENERIC_MAPPING* pGenericMapping, [NativeTypeName("PPRIVILEGE_SET")] PRIVILEGE_SET* pPrivilegeSet, [NativeTypeName("LPDWORD")] uint* pdwPrivilegeSetLength, [NativeTypeName("LPDWORD")] uint* pdwGrantedAccessMask, [NativeTypeName("LPBOOL")] BOOL* pbAccessStatus);
+        public static extern HRESULT RsopAccessCheckByType([NativeTypeName("PSECURITY_DESCRIPTOR")] void* pSecurityDescriptor, [NativeTypeName("PSID")] void* pPrincipalSelfSid, [NativeTypeName("PRSOPTOKEN")] void* pRsopToken, [NativeTypeName("DWORD")] uint dwDesiredAccessMask, [NativeTypeName("POBJECT_TYPE_LIST")] OBJECT_TYPE_LIST* pObjectTypeList, [NativeTypeName("DWORD")] uint ObjectTypeListLength, [NativeTypeName("PGENERIC_MAPPING")] GENERIC_MAPPING* pGenericMapping, [NativeTypeName("PPRIVILEGE_SET")] PRIVILEGE_SET* pPrivilegeSet, [NativeTypeName("LPDWORD")] uint* pdwPrivilegeSetLength, [NativeTypeName("LPDWORD")] uint* pdwGrantedAccessMask, [NativeTypeName("LPBOOL")] BOOL* pbAccessStatus);
 
         [DllImport("userenv", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int RsopFileAccessCheck([NativeTypeName("LPWSTR")] ushort* pszFileName, [NativeTypeName("PRSOPTOKEN")] void* pRsopToken, [NativeTypeName("DWORD")] uint dwDesiredAccessMask, [NativeTypeName("LPDWORD")] uint* pdwGrantedAccessMask, [NativeTypeName("LPBOOL")] BOOL* pbAccessStatus);
+        public static extern HRESULT RsopFileAccessCheck([NativeTypeName("LPWSTR")] ushort* pszFileName, [NativeTypeName("PRSOPTOKEN")] void* pRsopToken, [NativeTypeName("DWORD")] uint dwDesiredAccessMask, [NativeTypeName("LPDWORD")] uint* pdwGrantedAccessMask, [NativeTypeName("LPBOOL")] BOOL* pbAccessStatus);
 
         [DllImport("userenv", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int RsopSetPolicySettingStatus([NativeTypeName("DWORD")] uint dwFlags, IWbemServices* pServices, IWbemClassObject* pSettingInstance, [NativeTypeName("DWORD")] uint nInfo, POLICYSETTINGSTATUSINFO* pStatus);
+        public static extern HRESULT RsopSetPolicySettingStatus([NativeTypeName("DWORD")] uint dwFlags, IWbemServices* pServices, IWbemClassObject* pSettingInstance, [NativeTypeName("DWORD")] uint nInfo, POLICYSETTINGSTATUSINFO* pStatus);
 
         [DllImport("userenv", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int RsopResetPolicySettingStatus([NativeTypeName("DWORD")] uint dwFlags, IWbemServices* pServices, IWbemClassObject* pSettingInstance);
+        public static extern HRESULT RsopResetPolicySettingStatus([NativeTypeName("DWORD")] uint dwFlags, IWbemServices* pServices, IWbemClassObject* pSettingInstance);
 
         [DllImport("userenv", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
         public static extern uint GenerateGPNotification(BOOL bMachine, [NativeTypeName("LPCWSTR")] ushort* lpwszMgmtProduct, [NativeTypeName("DWORD")] uint dwMgmtProductOptions);
 
         [DllImport("userenv", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int CreateAppContainerProfile([NativeTypeName("PCWSTR")] ushort* pszAppContainerName, [NativeTypeName("PCWSTR")] ushort* pszDisplayName, [NativeTypeName("PCWSTR")] ushort* pszDescription, [NativeTypeName("PSID_AND_ATTRIBUTES")] SID_AND_ATTRIBUTES* pCapabilities, [NativeTypeName("DWORD")] uint dwCapabilityCount, [NativeTypeName("PSID *")] void** ppSidAppContainerSid);
+        public static extern HRESULT CreateAppContainerProfile([NativeTypeName("PCWSTR")] ushort* pszAppContainerName, [NativeTypeName("PCWSTR")] ushort* pszDisplayName, [NativeTypeName("PCWSTR")] ushort* pszDescription, [NativeTypeName("PSID_AND_ATTRIBUTES")] SID_AND_ATTRIBUTES* pCapabilities, [NativeTypeName("DWORD")] uint dwCapabilityCount, [NativeTypeName("PSID *")] void** ppSidAppContainerSid);
 
         [DllImport("userenv", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int DeleteAppContainerProfile([NativeTypeName("PCWSTR")] ushort* pszAppContainerName);
+        public static extern HRESULT DeleteAppContainerProfile([NativeTypeName("PCWSTR")] ushort* pszAppContainerName);
 
         [DllImport("userenv", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int GetAppContainerRegistryLocation([NativeTypeName("REGSAM")] uint desiredAccess, [NativeTypeName("PHKEY")] IntPtr* phAppContainerKey);
+        public static extern HRESULT GetAppContainerRegistryLocation([NativeTypeName("REGSAM")] uint desiredAccess, [NativeTypeName("PHKEY")] IntPtr* phAppContainerKey);
 
         [DllImport("userenv", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int GetAppContainerFolderPath([NativeTypeName("PCWSTR")] ushort* pszAppContainerSid, [NativeTypeName("PWSTR *")] ushort** ppszPath);
+        public static extern HRESULT GetAppContainerFolderPath([NativeTypeName("PCWSTR")] ushort* pszAppContainerSid, [NativeTypeName("PWSTR *")] ushort** ppszPath);
 
         [DllImport("userenv", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int DeriveRestrictedAppContainerSidFromAppContainerSidAndRestrictedName([NativeTypeName("PSID")] void* psidAppContainerSid, [NativeTypeName("PCWSTR")] ushort* pszRestrictedAppContainerName, [NativeTypeName("PSID *")] void** ppsidRestrictedAppContainerSid);
+        public static extern HRESULT DeriveRestrictedAppContainerSidFromAppContainerSidAndRestrictedName([NativeTypeName("PSID")] void* psidAppContainerSid, [NativeTypeName("PCWSTR")] ushort* pszRestrictedAppContainerName, [NativeTypeName("PSID *")] void** ppsidRestrictedAppContainerSid);
 
         [DllImport("userenv", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int DeriveAppContainerSidFromAppContainerName([NativeTypeName("PCWSTR")] ushort* pszAppContainerName, [NativeTypeName("PSID *")] void** ppsidAppContainerSid);
+        public static extern HRESULT DeriveAppContainerSidFromAppContainerName([NativeTypeName("PCWSTR")] ushort* pszAppContainerName, [NativeTypeName("PSID *")] void** ppsidAppContainerSid);
 
         [NativeTypeName("#define PI_NOUI 0x00000001")]
         public const int PI_NOUI = 0x00000001;

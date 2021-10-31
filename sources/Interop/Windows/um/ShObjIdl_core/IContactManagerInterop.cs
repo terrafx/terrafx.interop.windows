@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IContactManagerInterop*, Guid*, void**, int>)(lpVtbl[0]))((IContactManagerInterop*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,8 +41,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int ShowContactCardForWindow([NativeTypeName("HWND")] IntPtr appWindow, IUnknown* contact, [NativeTypeName("const RECT *")] RECT* selection, FLYOUT_PLACEMENT preferredPlacement)
+        public HRESULT ShowContactCardForWindow([NativeTypeName("HWND")] IntPtr appWindow, IUnknown* contact, [NativeTypeName("const RECT *")] RECT* selection, FLYOUT_PLACEMENT preferredPlacement)
         {
             return ((delegate* unmanaged<IContactManagerInterop*, IntPtr, IUnknown*, RECT*, FLYOUT_PLACEMENT, int>)(lpVtbl[3]))((IContactManagerInterop*)Unsafe.AsPointer(ref this), appWindow, contact, selection, preferredPlacement);
         }

@@ -15,8 +15,7 @@ namespace TerraFX.Interop
         public static extern int WinVerifyTrust([NativeTypeName("HWND")] IntPtr hwnd, [NativeTypeName("GUID *")] Guid* pgActionID, [NativeTypeName("LPVOID")] void* pWVTData);
 
         [DllImport("wintrust", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int WinVerifyTrustEx([NativeTypeName("HWND")] IntPtr hwnd, [NativeTypeName("GUID *")] Guid* pgActionID, WINTRUST_DATA* pWinTrustData);
+        public static extern HRESULT WinVerifyTrustEx([NativeTypeName("HWND")] IntPtr hwnd, [NativeTypeName("GUID *")] Guid* pgActionID, WINTRUST_DATA* pWinTrustData);
 
         [DllImport("wintrust", ExactSpelling = true)]
         public static extern void WintrustGetRegPolicyFlags([NativeTypeName("DWORD *")] uint* pdwPolicyFlags);
@@ -55,8 +54,7 @@ namespace TerraFX.Interop
         public static extern BOOL WTHelperCertIsSelfSigned([NativeTypeName("DWORD")] uint dwEncoding, CERT_INFO* pCert);
 
         [DllImport("wintrust", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int WTHelperCertCheckValidSignature(CRYPT_PROVIDER_DATA* pProvData);
+        public static extern HRESULT WTHelperCertCheckValidSignature(CRYPT_PROVIDER_DATA* pProvData);
 
         [DllImport("wintrust", ExactSpelling = true)]
         public static extern BOOL OpenPersonalTrustDBDialogEx([NativeTypeName("HWND")] IntPtr hwndParent, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("PVOID *")] void** pvReserved);

@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IOleAdviseHolder*, Guid*, void**, int>)(lpVtbl[0]))((IOleAdviseHolder*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,48 +41,42 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int Advise(IAdviseSink* pAdvise, [NativeTypeName("DWORD *")] uint* pdwConnection)
+        public HRESULT Advise(IAdviseSink* pAdvise, [NativeTypeName("DWORD *")] uint* pdwConnection)
         {
             return ((delegate* unmanaged<IOleAdviseHolder*, IAdviseSink*, uint*, int>)(lpVtbl[3]))((IOleAdviseHolder*)Unsafe.AsPointer(ref this), pAdvise, pdwConnection);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int Unadvise([NativeTypeName("DWORD")] uint dwConnection)
+        public HRESULT Unadvise([NativeTypeName("DWORD")] uint dwConnection)
         {
             return ((delegate* unmanaged<IOleAdviseHolder*, uint, int>)(lpVtbl[4]))((IOleAdviseHolder*)Unsafe.AsPointer(ref this), dwConnection);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int EnumAdvise(IEnumSTATDATA** ppenumAdvise)
+        public HRESULT EnumAdvise(IEnumSTATDATA** ppenumAdvise)
         {
             return ((delegate* unmanaged<IOleAdviseHolder*, IEnumSTATDATA**, int>)(lpVtbl[5]))((IOleAdviseHolder*)Unsafe.AsPointer(ref this), ppenumAdvise);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int SendOnRename(IMoniker* pmk)
+        public HRESULT SendOnRename(IMoniker* pmk)
         {
             return ((delegate* unmanaged<IOleAdviseHolder*, IMoniker*, int>)(lpVtbl[6]))((IOleAdviseHolder*)Unsafe.AsPointer(ref this), pmk);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        [return: NativeTypeName("HRESULT")]
-        public int SendOnSave()
+        public HRESULT SendOnSave()
         {
             return ((delegate* unmanaged<IOleAdviseHolder*, int>)(lpVtbl[7]))((IOleAdviseHolder*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        [return: NativeTypeName("HRESULT")]
-        public int SendOnClose()
+        public HRESULT SendOnClose()
         {
             return ((delegate* unmanaged<IOleAdviseHolder*, int>)(lpVtbl[8]))((IOleAdviseHolder*)Unsafe.AsPointer(ref this));
         }

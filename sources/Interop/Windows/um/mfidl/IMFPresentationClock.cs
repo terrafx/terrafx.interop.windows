@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IMFPresentationClock*, Guid*, void**, int>)(lpVtbl[0]))((IMFPresentationClock*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,104 +41,91 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetClockCharacteristics([NativeTypeName("DWORD *")] uint* pdwCharacteristics)
+        public HRESULT GetClockCharacteristics([NativeTypeName("DWORD *")] uint* pdwCharacteristics)
         {
             return ((delegate* unmanaged<IMFPresentationClock*, uint*, int>)(lpVtbl[3]))((IMFPresentationClock*)Unsafe.AsPointer(ref this), pdwCharacteristics);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetCorrelatedTime([NativeTypeName("DWORD")] uint dwReserved, [NativeTypeName("LONGLONG *")] long* pllClockTime, [NativeTypeName("MFTIME *")] long* phnsSystemTime)
+        public HRESULT GetCorrelatedTime([NativeTypeName("DWORD")] uint dwReserved, [NativeTypeName("LONGLONG *")] long* pllClockTime, [NativeTypeName("MFTIME *")] long* phnsSystemTime)
         {
             return ((delegate* unmanaged<IMFPresentationClock*, uint, long*, long*, int>)(lpVtbl[4]))((IMFPresentationClock*)Unsafe.AsPointer(ref this), dwReserved, pllClockTime, phnsSystemTime);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetContinuityKey([NativeTypeName("DWORD *")] uint* pdwContinuityKey)
+        public HRESULT GetContinuityKey([NativeTypeName("DWORD *")] uint* pdwContinuityKey)
         {
             return ((delegate* unmanaged<IMFPresentationClock*, uint*, int>)(lpVtbl[5]))((IMFPresentationClock*)Unsafe.AsPointer(ref this), pdwContinuityKey);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetState([NativeTypeName("DWORD")] uint dwReserved, MFCLOCK_STATE* peClockState)
+        public HRESULT GetState([NativeTypeName("DWORD")] uint dwReserved, MFCLOCK_STATE* peClockState)
         {
             return ((delegate* unmanaged<IMFPresentationClock*, uint, MFCLOCK_STATE*, int>)(lpVtbl[6]))((IMFPresentationClock*)Unsafe.AsPointer(ref this), dwReserved, peClockState);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetProperties(MFCLOCK_PROPERTIES* pClockProperties)
+        public HRESULT GetProperties(MFCLOCK_PROPERTIES* pClockProperties)
         {
             return ((delegate* unmanaged<IMFPresentationClock*, MFCLOCK_PROPERTIES*, int>)(lpVtbl[7]))((IMFPresentationClock*)Unsafe.AsPointer(ref this), pClockProperties);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetTimeSource(IMFPresentationTimeSource* pTimeSource)
+        public HRESULT SetTimeSource(IMFPresentationTimeSource* pTimeSource)
         {
             return ((delegate* unmanaged<IMFPresentationClock*, IMFPresentationTimeSource*, int>)(lpVtbl[8]))((IMFPresentationClock*)Unsafe.AsPointer(ref this), pTimeSource);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetTimeSource(IMFPresentationTimeSource** ppTimeSource)
+        public HRESULT GetTimeSource(IMFPresentationTimeSource** ppTimeSource)
         {
             return ((delegate* unmanaged<IMFPresentationClock*, IMFPresentationTimeSource**, int>)(lpVtbl[9]))((IMFPresentationClock*)Unsafe.AsPointer(ref this), ppTimeSource);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(10)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetTime([NativeTypeName("MFTIME *")] long* phnsClockTime)
+        public HRESULT GetTime([NativeTypeName("MFTIME *")] long* phnsClockTime)
         {
             return ((delegate* unmanaged<IMFPresentationClock*, long*, int>)(lpVtbl[10]))((IMFPresentationClock*)Unsafe.AsPointer(ref this), phnsClockTime);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(11)]
-        [return: NativeTypeName("HRESULT")]
-        public int AddClockStateSink(IMFClockStateSink* pStateSink)
+        public HRESULT AddClockStateSink(IMFClockStateSink* pStateSink)
         {
             return ((delegate* unmanaged<IMFPresentationClock*, IMFClockStateSink*, int>)(lpVtbl[11]))((IMFPresentationClock*)Unsafe.AsPointer(ref this), pStateSink);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(12)]
-        [return: NativeTypeName("HRESULT")]
-        public int RemoveClockStateSink(IMFClockStateSink* pStateSink)
+        public HRESULT RemoveClockStateSink(IMFClockStateSink* pStateSink)
         {
             return ((delegate* unmanaged<IMFPresentationClock*, IMFClockStateSink*, int>)(lpVtbl[12]))((IMFPresentationClock*)Unsafe.AsPointer(ref this), pStateSink);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(13)]
-        [return: NativeTypeName("HRESULT")]
-        public int Start([NativeTypeName("LONGLONG")] long llClockStartOffset)
+        public HRESULT Start([NativeTypeName("LONGLONG")] long llClockStartOffset)
         {
             return ((delegate* unmanaged<IMFPresentationClock*, long, int>)(lpVtbl[13]))((IMFPresentationClock*)Unsafe.AsPointer(ref this), llClockStartOffset);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(14)]
-        [return: NativeTypeName("HRESULT")]
-        public int Stop()
+        public HRESULT Stop()
         {
             return ((delegate* unmanaged<IMFPresentationClock*, int>)(lpVtbl[14]))((IMFPresentationClock*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(15)]
-        [return: NativeTypeName("HRESULT")]
-        public int Pause()
+        public HRESULT Pause()
         {
             return ((delegate* unmanaged<IMFPresentationClock*, int>)(lpVtbl[15]))((IMFPresentationClock*)Unsafe.AsPointer(ref this));
         }

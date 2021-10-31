@@ -21,7 +21,7 @@ namespace TerraFX.Interop
         public CERT_CONTEXT* decryptionCert;
 
         [NativeTypeName("WS_VALIDATE_SAML_CALLBACK")]
-        public delegate* unmanaged<void*, IntPtr, IntPtr, int> samlValidator;
+        public delegate* unmanaged<void*, IntPtr, IntPtr, HRESULT> samlValidator;
 
         public void* samlValidatorCallbackState;
     }

@@ -48,12 +48,10 @@ namespace TerraFX.Interop
         public static extern uint SoftwareUpdateMessageBox([NativeTypeName("HWND")] IntPtr hWnd, [NativeTypeName("PCWSTR")] ushort* pszDistUnit, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LPSOFTDISTINFO")] SOFTDISTINFO* psdi);
 
         [DllImport("shell32", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int SHMultiFileProperties(IDataObject* pdtobj, [NativeTypeName("DWORD")] uint dwFlags);
+        public static extern HRESULT SHMultiFileProperties(IDataObject* pdtobj, [NativeTypeName("DWORD")] uint dwFlags);
 
         [DllImport("shell32", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int SHCreateQueryCancelAutoPlayMoniker(IMoniker** ppmoniker);
+        public static extern HRESULT SHCreateQueryCancelAutoPlayMoniker(IMoniker** ppmoniker);
 
         [DllImport("mydocs", ExactSpelling = true)]
         public static extern void PerUserInit();

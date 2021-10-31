@@ -947,8 +947,7 @@ namespace TerraFX.Interop
         public static extern BOOL CopyFileTransactedW([NativeTypeName("LPCWSTR")] ushort* lpExistingFileName, [NativeTypeName("LPCWSTR")] ushort* lpNewFileName, [NativeTypeName("LPPROGRESS_ROUTINE")] delegate* unmanaged<LARGE_INTEGER, LARGE_INTEGER, LARGE_INTEGER, LARGE_INTEGER, uint, uint, IntPtr, IntPtr, void*, uint> lpProgressRoutine, [NativeTypeName("LPVOID")] void* lpData, [NativeTypeName("LPBOOL")] BOOL* pbCancel, [NativeTypeName("DWORD")] uint dwCopyFlags, [NativeTypeName("HANDLE")] IntPtr hTransaction);
 
         [DllImport("kernel32", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int CopyFile2([NativeTypeName("PCWSTR")] ushort* pwszExistingFileName, [NativeTypeName("PCWSTR")] ushort* pwszNewFileName, COPYFILE2_EXTENDED_PARAMETERS* pExtendedParameters);
+        public static extern HRESULT CopyFile2([NativeTypeName("PCWSTR")] ushort* pwszExistingFileName, [NativeTypeName("PCWSTR")] ushort* pwszNewFileName, COPYFILE2_EXTENDED_PARAMETERS* pExtendedParameters);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         public static extern BOOL MoveFileA([NativeTypeName("LPCSTR")] sbyte* lpExistingFileName, [NativeTypeName("LPCSTR")] sbyte* lpNewFileName);
@@ -1477,32 +1476,25 @@ namespace TerraFX.Interop
         public static extern BOOL GetNumaProximityNode([NativeTypeName("ULONG")] uint ProximityId, [NativeTypeName("PUCHAR")] byte* NodeNumber);
 
         [DllImport("kernel32", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int RegisterApplicationRecoveryCallback([NativeTypeName("APPLICATION_RECOVERY_CALLBACK")] delegate* unmanaged<void*, uint> pRecoveyCallback, [NativeTypeName("PVOID")] void* pvParameter, [NativeTypeName("DWORD")] uint dwPingInterval, [NativeTypeName("DWORD")] uint dwFlags);
+        public static extern HRESULT RegisterApplicationRecoveryCallback([NativeTypeName("APPLICATION_RECOVERY_CALLBACK")] delegate* unmanaged<void*, uint> pRecoveyCallback, [NativeTypeName("PVOID")] void* pvParameter, [NativeTypeName("DWORD")] uint dwPingInterval, [NativeTypeName("DWORD")] uint dwFlags);
 
         [DllImport("kernel32", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int UnregisterApplicationRecoveryCallback();
+        public static extern HRESULT UnregisterApplicationRecoveryCallback();
 
         [DllImport("kernel32", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int RegisterApplicationRestart([NativeTypeName("PCWSTR")] ushort* pwzCommandline, [NativeTypeName("DWORD")] uint dwFlags);
+        public static extern HRESULT RegisterApplicationRestart([NativeTypeName("PCWSTR")] ushort* pwzCommandline, [NativeTypeName("DWORD")] uint dwFlags);
 
         [DllImport("kernel32", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int UnregisterApplicationRestart();
+        public static extern HRESULT UnregisterApplicationRestart();
 
         [DllImport("kernel32", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int GetApplicationRecoveryCallback([NativeTypeName("HANDLE")] IntPtr hProcess, [NativeTypeName("APPLICATION_RECOVERY_CALLBACK *")] delegate* unmanaged<void*, uint>* pRecoveryCallback, [NativeTypeName("PVOID *")] void** ppvParameter, [NativeTypeName("PDWORD")] uint* pdwPingInterval, [NativeTypeName("PDWORD")] uint* pdwFlags);
+        public static extern HRESULT GetApplicationRecoveryCallback([NativeTypeName("HANDLE")] IntPtr hProcess, [NativeTypeName("APPLICATION_RECOVERY_CALLBACK *")] delegate* unmanaged<void*, uint>* pRecoveryCallback, [NativeTypeName("PVOID *")] void** ppvParameter, [NativeTypeName("PDWORD")] uint* pdwPingInterval, [NativeTypeName("PDWORD")] uint* pdwFlags);
 
         [DllImport("kernel32", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int GetApplicationRestartSettings([NativeTypeName("HANDLE")] IntPtr hProcess, [NativeTypeName("PWSTR")] ushort* pwzCommandline, [NativeTypeName("PDWORD")] uint* pcchSize, [NativeTypeName("PDWORD")] uint* pdwFlags);
+        public static extern HRESULT GetApplicationRestartSettings([NativeTypeName("HANDLE")] IntPtr hProcess, [NativeTypeName("PWSTR")] ushort* pwzCommandline, [NativeTypeName("PDWORD")] uint* pcchSize, [NativeTypeName("PDWORD")] uint* pdwFlags);
 
         [DllImport("kernel32", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int ApplicationRecoveryInProgress([NativeTypeName("PBOOL")] BOOL* pbCancelled);
+        public static extern HRESULT ApplicationRecoveryInProgress([NativeTypeName("PBOOL")] BOOL* pbCancelled);
 
         [DllImport("kernel32", ExactSpelling = true)]
         public static extern void ApplicationRecoveryFinished(BOOL bSuccess);

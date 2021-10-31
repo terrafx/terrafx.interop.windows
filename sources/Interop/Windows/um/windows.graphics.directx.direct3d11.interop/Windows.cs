@@ -13,12 +13,10 @@ namespace TerraFX.Interop
     public static unsafe partial class Windows
     {
         [DllImport("d3d11", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int CreateDirect3D11DeviceFromDXGIDevice(IDXGIDevice* dxgiDevice, IInspectable** graphicsDevice);
+        public static extern HRESULT CreateDirect3D11DeviceFromDXGIDevice(IDXGIDevice* dxgiDevice, IInspectable** graphicsDevice);
 
         [DllImport("d3d11", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int CreateDirect3D11SurfaceFromDXGISurface(IDXGISurface* dgxiSurface, IInspectable** graphicsSurface);
+        public static extern HRESULT CreateDirect3D11SurfaceFromDXGISurface(IDXGISurface* dgxiSurface, IInspectable** graphicsSurface);
 
         public static ref readonly Guid IID_IDirect3DDxgiInterfaceAccess
         {

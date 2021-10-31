@@ -26,7 +26,7 @@ namespace TerraFX.Interop
                 PlaneCount = 0,
             };
 
-            if ((((int)(pDevice->CheckFeatureSupport(D3D12_FEATURE_FORMAT_INFO, &formatInfo, (uint)(sizeof(D3D12_FEATURE_DATA_FORMAT_INFO))))) < 0))
+            if ((((HRESULT)(pDevice->CheckFeatureSupport(D3D12_FEATURE_FORMAT_INFO, &formatInfo, (uint)(sizeof(D3D12_FEATURE_DATA_FORMAT_INFO))))) < 0))
             {
                 return 0;
             }
@@ -46,9 +46,9 @@ namespace TerraFX.Interop
             }
 
             byte* pData;
-            int hr = pIntermediate->Map(0, null, (void**)(&pData));
+            HRESULT hr = pIntermediate->Map(0, null, (void**)(&pData));
 
-            if ((((int)(hr)) < 0))
+            if ((((HRESULT)(hr)) < 0))
             {
                 return 0;
             }

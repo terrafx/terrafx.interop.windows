@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IMFExtendedCameraControl*, Guid*, void**, int>)(lpVtbl[0]))((IMFExtendedCameraControl*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -50,8 +49,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetFlags([NativeTypeName("ULONGLONG")] ulong ulFlags)
+        public HRESULT SetFlags([NativeTypeName("ULONGLONG")] ulong ulFlags)
         {
             return ((delegate* unmanaged<IMFExtendedCameraControl*, ulong, int>)(lpVtbl[4]))((IMFExtendedCameraControl*)Unsafe.AsPointer(ref this), ulFlags);
         }
@@ -66,24 +64,21 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int LockPayload([NativeTypeName("BYTE **")] byte** ppPayload, [NativeTypeName("ULONG *")] uint* pulPayload)
+        public HRESULT LockPayload([NativeTypeName("BYTE **")] byte** ppPayload, [NativeTypeName("ULONG *")] uint* pulPayload)
         {
             return ((delegate* unmanaged<IMFExtendedCameraControl*, byte**, uint*, int>)(lpVtbl[6]))((IMFExtendedCameraControl*)Unsafe.AsPointer(ref this), ppPayload, pulPayload);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        [return: NativeTypeName("HRESULT")]
-        public int UnlockPayload()
+        public HRESULT UnlockPayload()
         {
             return ((delegate* unmanaged<IMFExtendedCameraControl*, int>)(lpVtbl[7]))((IMFExtendedCameraControl*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        [return: NativeTypeName("HRESULT")]
-        public int CommitSettings()
+        public HRESULT CommitSettings()
         {
             return ((delegate* unmanaged<IMFExtendedCameraControl*, int>)(lpVtbl[8]))((IMFExtendedCameraControl*)Unsafe.AsPointer(ref this));
         }

@@ -16,8 +16,7 @@ namespace TerraFX.Interop
         public void** lpVtbl;
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
             return ((delegate* unmanaged<IAsyncActionWithProgress<TProgress>*, Guid*, void**, int>)(lpVtbl[0]))((IAsyncActionWithProgress<TProgress>*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -37,57 +36,49 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetIids([NativeTypeName("ULONG *")] uint* iidCount, [NativeTypeName("IID **")] Guid** iids)
+        public HRESULT GetIids([NativeTypeName("ULONG *")] uint* iidCount, [NativeTypeName("IID **")] Guid** iids)
         {
             return ((delegate* unmanaged<IAsyncActionWithProgress<TProgress>*, uint*, Guid**, int>)(lpVtbl[3]))((IAsyncActionWithProgress<TProgress>*)Unsafe.AsPointer(ref this), iidCount, iids);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetRuntimeClassName([NativeTypeName("HSTRING *")] IntPtr* className)
+        public HRESULT GetRuntimeClassName([NativeTypeName("HSTRING *")] IntPtr* className)
         {
             return ((delegate* unmanaged<IAsyncActionWithProgress<TProgress>*, IntPtr*, int>)(lpVtbl[4]))((IAsyncActionWithProgress<TProgress>*)Unsafe.AsPointer(ref this), className);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetTrustLevel([NativeTypeName("TrustLevel *")] TrustLevel* trustLevel)
+        public HRESULT GetTrustLevel([NativeTypeName("TrustLevel *")] TrustLevel* trustLevel)
         {
             return ((delegate* unmanaged<IAsyncActionWithProgress<TProgress>*, TrustLevel*, int>)(lpVtbl[5]))((IAsyncActionWithProgress<TProgress>*)Unsafe.AsPointer(ref this), trustLevel);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [return: NativeTypeName("HRESULT")]
-        public int put_Progress([NativeTypeName("IAsyncActionWithProgressCompletedHandler<TProgress_logical> *")] IAsyncActionWithProgressCompletedHandler<TProgress>* handler)
+        public HRESULT put_Progress([NativeTypeName("IAsyncActionWithProgressCompletedHandler<TProgress_logical> *")] IAsyncActionWithProgressCompletedHandler<TProgress>* handler)
         {
             return ((delegate* unmanaged<IAsyncActionWithProgress<TProgress>*, IAsyncActionWithProgressCompletedHandler<TProgress>*, int>)(lpVtbl[6]))((IAsyncActionWithProgress<TProgress>*)Unsafe.AsPointer(ref this), handler);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [return: NativeTypeName("HRESULT")]
-        public int get_Progress([NativeTypeName("IAsyncActionWithProgressCompletedHandler<TProgress_logical> **")] IAsyncActionWithProgressCompletedHandler<TProgress>** handler)
+        public HRESULT get_Progress([NativeTypeName("IAsyncActionWithProgressCompletedHandler<TProgress_logical> **")] IAsyncActionWithProgressCompletedHandler<TProgress>** handler)
         {
             return ((delegate* unmanaged<IAsyncActionWithProgress<TProgress>*, IAsyncActionWithProgressCompletedHandler<TProgress>**, int>)(lpVtbl[7]))((IAsyncActionWithProgress<TProgress>*)Unsafe.AsPointer(ref this), handler);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [return: NativeTypeName("HRESULT")]
-        public int put_Completed([NativeTypeName("IAsyncActionWithProgressCompletedHandler<TProgress_logical> *")] IAsyncActionWithProgressCompletedHandler<TProgress>* handler)
+        public HRESULT put_Completed([NativeTypeName("IAsyncActionWithProgressCompletedHandler<TProgress_logical> *")] IAsyncActionWithProgressCompletedHandler<TProgress>* handler)
         {
             return ((delegate* unmanaged<IAsyncActionWithProgress<TProgress>*, IAsyncActionWithProgressCompletedHandler<TProgress>*, int>)(lpVtbl[8]))((IAsyncActionWithProgress<TProgress>*)Unsafe.AsPointer(ref this), handler);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [return: NativeTypeName("HRESULT")]
-        public int get_Completed([NativeTypeName("IAsyncActionWithProgressCompletedHandler<TProgress_logical> **")] IAsyncActionWithProgressCompletedHandler<TProgress>** handler)
+        public HRESULT get_Completed([NativeTypeName("IAsyncActionWithProgressCompletedHandler<TProgress_logical> **")] IAsyncActionWithProgressCompletedHandler<TProgress>** handler)
         {
             return ((delegate* unmanaged<IAsyncActionWithProgress<TProgress>*, IAsyncActionWithProgressCompletedHandler<TProgress>**, int>)(lpVtbl[9]))((IAsyncActionWithProgress<TProgress>*)Unsafe.AsPointer(ref this), handler);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetResults()
+        public HRESULT GetResults()
         {
             return ((delegate* unmanaged<IAsyncActionWithProgress<TProgress>*, int>)(lpVtbl[10]))((IAsyncActionWithProgress<TProgress>*)Unsafe.AsPointer(ref this));
         }

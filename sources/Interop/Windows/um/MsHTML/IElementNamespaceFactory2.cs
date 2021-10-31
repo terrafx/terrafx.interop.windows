@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IElementNamespaceFactory2*, Guid*, void**, int>)(lpVtbl[0]))((IElementNamespaceFactory2*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,16 +41,14 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int Create(IElementNamespace* pNamespace)
+        public HRESULT Create(IElementNamespace* pNamespace)
         {
             return ((delegate* unmanaged<IElementNamespaceFactory2*, IElementNamespace*, int>)(lpVtbl[3]))((IElementNamespaceFactory2*)Unsafe.AsPointer(ref this), pNamespace);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int CreateWithImplementation(IElementNamespace* pNamespace, [NativeTypeName("BSTR")] ushort* bstrImplementation)
+        public HRESULT CreateWithImplementation(IElementNamespace* pNamespace, [NativeTypeName("BSTR")] ushort* bstrImplementation)
         {
             return ((delegate* unmanaged<IElementNamespaceFactory2*, IElementNamespace*, ushort*, int>)(lpVtbl[4]))((IElementNamespaceFactory2*)Unsafe.AsPointer(ref this), pNamespace, bstrImplementation);
         }

@@ -8,7 +8,7 @@ namespace TerraFX.Interop
 
         public static BOOL TRUE => Windows.TRUE;
 
-        public static explicit operator BOOL(uint value) => new BOOL(value);
+        public static explicit operator BOOL(uint value) => new BOOL((int)(value));
 
         public static explicit operator uint(BOOL value) => (uint)(value.Value);
 

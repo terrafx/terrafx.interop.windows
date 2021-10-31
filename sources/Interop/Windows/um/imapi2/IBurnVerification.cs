@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IBurnVerification*, Guid*, void**, int>)(lpVtbl[0]))((IBurnVerification*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,16 +41,14 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int put_BurnVerificationLevel(IMAPI_BURN_VERIFICATION_LEVEL value)
+        public HRESULT put_BurnVerificationLevel(IMAPI_BURN_VERIFICATION_LEVEL value)
         {
             return ((delegate* unmanaged<IBurnVerification*, IMAPI_BURN_VERIFICATION_LEVEL, int>)(lpVtbl[3]))((IBurnVerification*)Unsafe.AsPointer(ref this), value);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int get_BurnVerificationLevel(IMAPI_BURN_VERIFICATION_LEVEL* value)
+        public HRESULT get_BurnVerificationLevel(IMAPI_BURN_VERIFICATION_LEVEL* value)
         {
             return ((delegate* unmanaged<IBurnVerification*, IMAPI_BURN_VERIFICATION_LEVEL*, int>)(lpVtbl[4]))((IBurnVerification*)Unsafe.AsPointer(ref this), value);
         }

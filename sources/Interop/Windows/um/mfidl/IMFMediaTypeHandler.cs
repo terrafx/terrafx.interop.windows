@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IMFMediaTypeHandler*, Guid*, void**, int>)(lpVtbl[0]))((IMFMediaTypeHandler*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,48 +41,42 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int IsMediaTypeSupported(IMFMediaType* pMediaType, IMFMediaType** ppMediaType)
+        public HRESULT IsMediaTypeSupported(IMFMediaType* pMediaType, IMFMediaType** ppMediaType)
         {
             return ((delegate* unmanaged<IMFMediaTypeHandler*, IMFMediaType*, IMFMediaType**, int>)(lpVtbl[3]))((IMFMediaTypeHandler*)Unsafe.AsPointer(ref this), pMediaType, ppMediaType);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetMediaTypeCount([NativeTypeName("DWORD *")] uint* pdwTypeCount)
+        public HRESULT GetMediaTypeCount([NativeTypeName("DWORD *")] uint* pdwTypeCount)
         {
             return ((delegate* unmanaged<IMFMediaTypeHandler*, uint*, int>)(lpVtbl[4]))((IMFMediaTypeHandler*)Unsafe.AsPointer(ref this), pdwTypeCount);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetMediaTypeByIndex([NativeTypeName("DWORD")] uint dwIndex, IMFMediaType** ppType)
+        public HRESULT GetMediaTypeByIndex([NativeTypeName("DWORD")] uint dwIndex, IMFMediaType** ppType)
         {
             return ((delegate* unmanaged<IMFMediaTypeHandler*, uint, IMFMediaType**, int>)(lpVtbl[5]))((IMFMediaTypeHandler*)Unsafe.AsPointer(ref this), dwIndex, ppType);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetCurrentMediaType(IMFMediaType* pMediaType)
+        public HRESULT SetCurrentMediaType(IMFMediaType* pMediaType)
         {
             return ((delegate* unmanaged<IMFMediaTypeHandler*, IMFMediaType*, int>)(lpVtbl[6]))((IMFMediaTypeHandler*)Unsafe.AsPointer(ref this), pMediaType);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetCurrentMediaType(IMFMediaType** ppMediaType)
+        public HRESULT GetCurrentMediaType(IMFMediaType** ppMediaType)
         {
             return ((delegate* unmanaged<IMFMediaTypeHandler*, IMFMediaType**, int>)(lpVtbl[7]))((IMFMediaTypeHandler*)Unsafe.AsPointer(ref this), ppMediaType);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetMajorType([NativeTypeName("GUID *")] Guid* pguidMajorType)
+        public HRESULT GetMajorType([NativeTypeName("GUID *")] Guid* pguidMajorType)
         {
             return ((delegate* unmanaged<IMFMediaTypeHandler*, Guid*, int>)(lpVtbl[8]))((IMFMediaTypeHandler*)Unsafe.AsPointer(ref this), pguidMajorType);
         }

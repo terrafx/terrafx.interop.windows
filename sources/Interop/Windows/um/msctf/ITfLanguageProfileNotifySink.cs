@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<ITfLanguageProfileNotifySink*, Guid*, void**, int>)(lpVtbl[0]))((ITfLanguageProfileNotifySink*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,16 +41,14 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int OnLanguageChange([NativeTypeName("LANGID")] ushort langid, BOOL* pfAccept)
+        public HRESULT OnLanguageChange([NativeTypeName("LANGID")] ushort langid, BOOL* pfAccept)
         {
             return ((delegate* unmanaged<ITfLanguageProfileNotifySink*, ushort, BOOL*, int>)(lpVtbl[3]))((ITfLanguageProfileNotifySink*)Unsafe.AsPointer(ref this), langid, pfAccept);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int OnLanguageChanged()
+        public HRESULT OnLanguageChanged()
         {
             return ((delegate* unmanaged<ITfLanguageProfileNotifySink*, int>)(lpVtbl[4]))((ITfLanguageProfileNotifySink*)Unsafe.AsPointer(ref this));
         }

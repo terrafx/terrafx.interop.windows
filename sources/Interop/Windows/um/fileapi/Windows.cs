@@ -108,12 +108,10 @@ namespace TerraFX.Interop
         public static extern BOOL GetDiskFreeSpaceExW([NativeTypeName("LPCWSTR")] ushort* lpDirectoryName, [NativeTypeName("PULARGE_INTEGER")] ULARGE_INTEGER* lpFreeBytesAvailableToCaller, [NativeTypeName("PULARGE_INTEGER")] ULARGE_INTEGER* lpTotalNumberOfBytes, [NativeTypeName("PULARGE_INTEGER")] ULARGE_INTEGER* lpTotalNumberOfFreeBytes);
 
         [DllImport("kernel32", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int GetDiskSpaceInformationA([NativeTypeName("LPCSTR")] sbyte* rootPath, DISK_SPACE_INFORMATION* diskSpaceInfo);
+        public static extern HRESULT GetDiskSpaceInformationA([NativeTypeName("LPCSTR")] sbyte* rootPath, DISK_SPACE_INFORMATION* diskSpaceInfo);
 
         [DllImport("kernel32", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int GetDiskSpaceInformationW([NativeTypeName("LPCWSTR")] ushort* rootPath, DISK_SPACE_INFORMATION* diskSpaceInfo);
+        public static extern HRESULT GetDiskSpaceInformationW([NativeTypeName("LPCWSTR")] ushort* rootPath, DISK_SPACE_INFORMATION* diskSpaceInfo);
 
         [DllImport("kernel32", ExactSpelling = true)]
         [return: NativeTypeName("UINT")]
@@ -405,7 +403,7 @@ namespace TerraFX.Interop
         public static delegate*<ushort*, ULARGE_INTEGER*, ULARGE_INTEGER*, ULARGE_INTEGER*, BOOL> GetDiskFreeSpaceEx => &GetDiskFreeSpaceExW;
 
         [NativeTypeName("#define GetDiskSpaceInformation GetDiskSpaceInformationW")]
-        public static delegate*<ushort*, DISK_SPACE_INFORMATION*, int> GetDiskSpaceInformation => &GetDiskSpaceInformationW;
+        public static delegate*<ushort*, DISK_SPACE_INFORMATION*, HRESULT> GetDiskSpaceInformation => &GetDiskSpaceInformationW;
 
         [NativeTypeName("#define GetDriveType GetDriveTypeW")]
         public static delegate*<ushort*, uint> GetDriveType => &GetDriveTypeW;

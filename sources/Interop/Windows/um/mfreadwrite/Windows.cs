@@ -63,16 +63,13 @@ namespace TerraFX.Interop
         }
 
         [DllImport("mfreadwrite", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int MFCreateSourceReaderFromURL([NativeTypeName("LPCWSTR")] ushort* pwszURL, IMFAttributes* pAttributes, IMFSourceReader** ppSourceReader);
+        public static extern HRESULT MFCreateSourceReaderFromURL([NativeTypeName("LPCWSTR")] ushort* pwszURL, IMFAttributes* pAttributes, IMFSourceReader** ppSourceReader);
 
         [DllImport("mfreadwrite", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int MFCreateSourceReaderFromByteStream(IMFByteStream* pByteStream, IMFAttributes* pAttributes, IMFSourceReader** ppSourceReader);
+        public static extern HRESULT MFCreateSourceReaderFromByteStream(IMFByteStream* pByteStream, IMFAttributes* pAttributes, IMFSourceReader** ppSourceReader);
 
         [DllImport("mfreadwrite", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int MFCreateSourceReaderFromMediaSource(IMFMediaSource* pMediaSource, IMFAttributes* pAttributes, IMFSourceReader** ppSourceReader);
+        public static extern HRESULT MFCreateSourceReaderFromMediaSource(IMFMediaSource* pMediaSource, IMFAttributes* pAttributes, IMFSourceReader** ppSourceReader);
 
         [NativeTypeName("const IID")]
         public static ref readonly Guid MF_SOURCE_READER_ASYNC_CALLBACK
@@ -375,12 +372,10 @@ namespace TerraFX.Interop
         }
 
         [DllImport("mfreadwrite", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int MFCreateSinkWriterFromURL([NativeTypeName("LPCWSTR")] ushort* pwszOutputURL, IMFByteStream* pByteStream, IMFAttributes* pAttributes, IMFSinkWriter** ppSinkWriter);
+        public static extern HRESULT MFCreateSinkWriterFromURL([NativeTypeName("LPCWSTR")] ushort* pwszOutputURL, IMFByteStream* pByteStream, IMFAttributes* pAttributes, IMFSinkWriter** ppSinkWriter);
 
         [DllImport("mfreadwrite", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int MFCreateSinkWriterFromMediaSink(IMFMediaSink* pMediaSink, IMFAttributes* pAttributes, IMFSinkWriter** ppSinkWriter);
+        public static extern HRESULT MFCreateSinkWriterFromMediaSink(IMFMediaSink* pMediaSink, IMFAttributes* pAttributes, IMFSinkWriter** ppSinkWriter);
 
         [NativeTypeName("const IID")]
         public static ref readonly Guid MF_SINK_WRITER_ASYNC_CALLBACK

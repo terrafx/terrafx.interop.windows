@@ -22,7 +22,7 @@ namespace TerraFX.Interop
         public WS_SERVICE_CONTRACT* contract;
 
         [NativeTypeName("WS_SERVICE_SECURITY_CALLBACK")]
-        public delegate* unmanaged<IntPtr, BOOL*, IntPtr, int> authorizationCallback;
+        public delegate* unmanaged<IntPtr, BOOL*, IntPtr, HRESULT> authorizationCallback;
 
         [NativeTypeName("const WS_SERVICE_ENDPOINT_PROPERTY *")]
         public WS_SERVICE_ENDPOINT_PROPERTY* properties;

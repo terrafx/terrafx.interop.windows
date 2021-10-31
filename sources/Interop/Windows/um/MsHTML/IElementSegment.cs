@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IElementSegment*, Guid*, void**, int>)(lpVtbl[0]))((IElementSegment*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,32 +41,28 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetPointers(IMarkupPointer* pIStart, IMarkupPointer* pIEnd)
+        public HRESULT GetPointers(IMarkupPointer* pIStart, IMarkupPointer* pIEnd)
         {
             return ((delegate* unmanaged<IElementSegment*, IMarkupPointer*, IMarkupPointer*, int>)(lpVtbl[3]))((IElementSegment*)Unsafe.AsPointer(ref this), pIStart, pIEnd);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetElement(IHTMLElement** ppIElement)
+        public HRESULT GetElement(IHTMLElement** ppIElement)
         {
             return ((delegate* unmanaged<IElementSegment*, IHTMLElement**, int>)(lpVtbl[4]))((IElementSegment*)Unsafe.AsPointer(ref this), ppIElement);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetPrimary(BOOL fPrimary)
+        public HRESULT SetPrimary(BOOL fPrimary)
         {
             return ((delegate* unmanaged<IElementSegment*, BOOL, int>)(lpVtbl[5]))((IElementSegment*)Unsafe.AsPointer(ref this), fPrimary);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int IsPrimary(BOOL* pfPrimary)
+        public HRESULT IsPrimary(BOOL* pfPrimary)
         {
             return ((delegate* unmanaged<IElementSegment*, BOOL*, int>)(lpVtbl[6]))((IElementSegment*)Unsafe.AsPointer(ref this), pfPrimary);
         }

@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IFrameworkInputPane*, Guid*, void**, int>)(lpVtbl[0]))((IFrameworkInputPane*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,32 +41,28 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int Advise(IUnknown* pWindow, IFrameworkInputPaneHandler* pHandler, [NativeTypeName("DWORD *")] uint* pdwCookie)
+        public HRESULT Advise(IUnknown* pWindow, IFrameworkInputPaneHandler* pHandler, [NativeTypeName("DWORD *")] uint* pdwCookie)
         {
             return ((delegate* unmanaged<IFrameworkInputPane*, IUnknown*, IFrameworkInputPaneHandler*, uint*, int>)(lpVtbl[3]))((IFrameworkInputPane*)Unsafe.AsPointer(ref this), pWindow, pHandler, pdwCookie);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int AdviseWithHWND([NativeTypeName("HWND")] IntPtr hwnd, IFrameworkInputPaneHandler* pHandler, [NativeTypeName("DWORD *")] uint* pdwCookie)
+        public HRESULT AdviseWithHWND([NativeTypeName("HWND")] IntPtr hwnd, IFrameworkInputPaneHandler* pHandler, [NativeTypeName("DWORD *")] uint* pdwCookie)
         {
             return ((delegate* unmanaged<IFrameworkInputPane*, IntPtr, IFrameworkInputPaneHandler*, uint*, int>)(lpVtbl[4]))((IFrameworkInputPane*)Unsafe.AsPointer(ref this), hwnd, pHandler, pdwCookie);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int Unadvise([NativeTypeName("DWORD")] uint dwCookie)
+        public HRESULT Unadvise([NativeTypeName("DWORD")] uint dwCookie)
         {
             return ((delegate* unmanaged<IFrameworkInputPane*, uint, int>)(lpVtbl[5]))((IFrameworkInputPane*)Unsafe.AsPointer(ref this), dwCookie);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int Location(RECT* prcInputPaneScreenLocation)
+        public HRESULT Location(RECT* prcInputPaneScreenLocation)
         {
             return ((delegate* unmanaged<IFrameworkInputPane*, RECT*, int>)(lpVtbl[6]))((IFrameworkInputPane*)Unsafe.AsPointer(ref this), prcInputPaneScreenLocation);
         }

@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IMLOperatorKernelContext*, Guid*, void**, int>)(lpVtbl[0]))((IMLOperatorKernelContext*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,32 +41,28 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetInputTensor([NativeTypeName("uint32_t")] uint inputIndex, IMLOperatorTensor** tensor)
+        public HRESULT GetInputTensor([NativeTypeName("uint32_t")] uint inputIndex, IMLOperatorTensor** tensor)
         {
             return ((delegate* unmanaged<IMLOperatorKernelContext*, uint, IMLOperatorTensor**, int>)(lpVtbl[3]))((IMLOperatorKernelContext*)Unsafe.AsPointer(ref this), inputIndex, tensor);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetOutputTensor([NativeTypeName("uint32_t")] uint outputIndex, IMLOperatorTensor** tensor)
+        public HRESULT GetOutputTensor([NativeTypeName("uint32_t")] uint outputIndex, IMLOperatorTensor** tensor)
         {
             return ((delegate* unmanaged<IMLOperatorKernelContext*, uint, IMLOperatorTensor**, int>)(lpVtbl[5]))((IMLOperatorKernelContext*)Unsafe.AsPointer(ref this), outputIndex, tensor);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetOutputTensor([NativeTypeName("uint32_t")] uint outputIndex, [NativeTypeName("uint32_t")] uint dimensionCount, [NativeTypeName("const uint32_t *")] uint* dimensionSizes, IMLOperatorTensor** tensor)
+        public HRESULT GetOutputTensor([NativeTypeName("uint32_t")] uint outputIndex, [NativeTypeName("uint32_t")] uint dimensionCount, [NativeTypeName("const uint32_t *")] uint* dimensionSizes, IMLOperatorTensor** tensor)
         {
             return ((delegate* unmanaged<IMLOperatorKernelContext*, uint, uint, uint*, IMLOperatorTensor**, int>)(lpVtbl[4]))((IMLOperatorKernelContext*)Unsafe.AsPointer(ref this), outputIndex, dimensionCount, dimensionSizes, tensor);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int AllocateTemporaryData([NativeTypeName("size_t")] nuint size, IUnknown** data)
+        public HRESULT AllocateTemporaryData([NativeTypeName("size_t")] nuint size, IUnknown** data)
         {
             return ((delegate* unmanaged<IMLOperatorKernelContext*, nuint, IUnknown**, int>)(lpVtbl[6]))((IMLOperatorKernelContext*)Unsafe.AsPointer(ref this), size, data);
         }

@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IMFSpatialAudioObjectBuffer*, Guid*, void**, int>)(lpVtbl[0]))((IMFSpatialAudioObjectBuffer*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,80 +41,70 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int Lock([NativeTypeName("BYTE **")] byte** ppbBuffer, [NativeTypeName("DWORD *")] uint* pcbMaxLength, [NativeTypeName("DWORD *")] uint* pcbCurrentLength)
+        public HRESULT Lock([NativeTypeName("BYTE **")] byte** ppbBuffer, [NativeTypeName("DWORD *")] uint* pcbMaxLength, [NativeTypeName("DWORD *")] uint* pcbCurrentLength)
         {
             return ((delegate* unmanaged<IMFSpatialAudioObjectBuffer*, byte**, uint*, uint*, int>)(lpVtbl[3]))((IMFSpatialAudioObjectBuffer*)Unsafe.AsPointer(ref this), ppbBuffer, pcbMaxLength, pcbCurrentLength);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int Unlock()
+        public HRESULT Unlock()
         {
             return ((delegate* unmanaged<IMFSpatialAudioObjectBuffer*, int>)(lpVtbl[4]))((IMFSpatialAudioObjectBuffer*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetCurrentLength([NativeTypeName("DWORD *")] uint* pcbCurrentLength)
+        public HRESULT GetCurrentLength([NativeTypeName("DWORD *")] uint* pcbCurrentLength)
         {
             return ((delegate* unmanaged<IMFSpatialAudioObjectBuffer*, uint*, int>)(lpVtbl[5]))((IMFSpatialAudioObjectBuffer*)Unsafe.AsPointer(ref this), pcbCurrentLength);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetCurrentLength([NativeTypeName("DWORD")] uint cbCurrentLength)
+        public HRESULT SetCurrentLength([NativeTypeName("DWORD")] uint cbCurrentLength)
         {
             return ((delegate* unmanaged<IMFSpatialAudioObjectBuffer*, uint, int>)(lpVtbl[6]))((IMFSpatialAudioObjectBuffer*)Unsafe.AsPointer(ref this), cbCurrentLength);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetMaxLength([NativeTypeName("DWORD *")] uint* pcbMaxLength)
+        public HRESULT GetMaxLength([NativeTypeName("DWORD *")] uint* pcbMaxLength)
         {
             return ((delegate* unmanaged<IMFSpatialAudioObjectBuffer*, uint*, int>)(lpVtbl[7]))((IMFSpatialAudioObjectBuffer*)Unsafe.AsPointer(ref this), pcbMaxLength);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetID([NativeTypeName("UINT32")] uint u32ID)
+        public HRESULT SetID([NativeTypeName("UINT32")] uint u32ID)
         {
             return ((delegate* unmanaged<IMFSpatialAudioObjectBuffer*, uint, int>)(lpVtbl[8]))((IMFSpatialAudioObjectBuffer*)Unsafe.AsPointer(ref this), u32ID);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetID([NativeTypeName("UINT32 *")] uint* pu32ID)
+        public HRESULT GetID([NativeTypeName("UINT32 *")] uint* pu32ID)
         {
             return ((delegate* unmanaged<IMFSpatialAudioObjectBuffer*, uint*, int>)(lpVtbl[9]))((IMFSpatialAudioObjectBuffer*)Unsafe.AsPointer(ref this), pu32ID);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(10)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetType(AudioObjectType type)
+        public HRESULT SetType(AudioObjectType type)
         {
             return ((delegate* unmanaged<IMFSpatialAudioObjectBuffer*, AudioObjectType, int>)(lpVtbl[10]))((IMFSpatialAudioObjectBuffer*)Unsafe.AsPointer(ref this), type);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(11)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetType(AudioObjectType* pType)
+        public HRESULT GetType(AudioObjectType* pType)
         {
             return ((delegate* unmanaged<IMFSpatialAudioObjectBuffer*, AudioObjectType*, int>)(lpVtbl[11]))((IMFSpatialAudioObjectBuffer*)Unsafe.AsPointer(ref this), pType);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(12)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetMetadataItems(ISpatialAudioMetadataItems** ppMetadataItems)
+        public HRESULT GetMetadataItems(ISpatialAudioMetadataItems** ppMetadataItems)
         {
             return ((delegate* unmanaged<IMFSpatialAudioObjectBuffer*, ISpatialAudioMetadataItems**, int>)(lpVtbl[12]))((IMFSpatialAudioObjectBuffer*)Unsafe.AsPointer(ref this), ppMetadataItems);
         }

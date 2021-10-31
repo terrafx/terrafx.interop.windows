@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IActiveIMMMessagePumpOwner*, Guid*, void**, int>)(lpVtbl[0]))((IActiveIMMMessagePumpOwner*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,40 +41,35 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int Start()
+        public HRESULT Start()
         {
             return ((delegate* unmanaged<IActiveIMMMessagePumpOwner*, int>)(lpVtbl[3]))((IActiveIMMMessagePumpOwner*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int End()
+        public HRESULT End()
         {
             return ((delegate* unmanaged<IActiveIMMMessagePumpOwner*, int>)(lpVtbl[4]))((IActiveIMMMessagePumpOwner*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int OnTranslateMessage([NativeTypeName("const MSG *")] MSG* pMsg)
+        public HRESULT OnTranslateMessage([NativeTypeName("const MSG *")] MSG* pMsg)
         {
             return ((delegate* unmanaged<IActiveIMMMessagePumpOwner*, MSG*, int>)(lpVtbl[5]))((IActiveIMMMessagePumpOwner*)Unsafe.AsPointer(ref this), pMsg);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int Pause([NativeTypeName("DWORD *")] uint* pdwCookie)
+        public HRESULT Pause([NativeTypeName("DWORD *")] uint* pdwCookie)
         {
             return ((delegate* unmanaged<IActiveIMMMessagePumpOwner*, uint*, int>)(lpVtbl[6]))((IActiveIMMMessagePumpOwner*)Unsafe.AsPointer(ref this), pdwCookie);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        [return: NativeTypeName("HRESULT")]
-        public int Resume([NativeTypeName("DWORD")] uint dwCookie)
+        public HRESULT Resume([NativeTypeName("DWORD")] uint dwCookie)
         {
             return ((delegate* unmanaged<IActiveIMMMessagePumpOwner*, uint, int>)(lpVtbl[7]))((IActiveIMMMessagePumpOwner*)Unsafe.AsPointer(ref this), dwCookie);
         }

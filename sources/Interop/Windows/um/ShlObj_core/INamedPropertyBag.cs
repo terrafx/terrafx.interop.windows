@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<INamedPropertyBag*, Guid*, void**, int>)(lpVtbl[0]))((INamedPropertyBag*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,24 +41,21 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int ReadPropertyNPB([NativeTypeName("PCWSTR")] ushort* pszBagname, [NativeTypeName("PCWSTR")] ushort* pszPropName, PROPVARIANT* pVar)
+        public HRESULT ReadPropertyNPB([NativeTypeName("PCWSTR")] ushort* pszBagname, [NativeTypeName("PCWSTR")] ushort* pszPropName, PROPVARIANT* pVar)
         {
             return ((delegate* unmanaged<INamedPropertyBag*, ushort*, ushort*, PROPVARIANT*, int>)(lpVtbl[3]))((INamedPropertyBag*)Unsafe.AsPointer(ref this), pszBagname, pszPropName, pVar);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int WritePropertyNPB([NativeTypeName("PCWSTR")] ushort* pszBagname, [NativeTypeName("PCWSTR")] ushort* pszPropName, PROPVARIANT* pVar)
+        public HRESULT WritePropertyNPB([NativeTypeName("PCWSTR")] ushort* pszBagname, [NativeTypeName("PCWSTR")] ushort* pszPropName, PROPVARIANT* pVar)
         {
             return ((delegate* unmanaged<INamedPropertyBag*, ushort*, ushort*, PROPVARIANT*, int>)(lpVtbl[4]))((INamedPropertyBag*)Unsafe.AsPointer(ref this), pszBagname, pszPropName, pVar);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int RemovePropertyNPB([NativeTypeName("PCWSTR")] ushort* pszBagname, [NativeTypeName("PCWSTR")] ushort* pszPropName)
+        public HRESULT RemovePropertyNPB([NativeTypeName("PCWSTR")] ushort* pszBagname, [NativeTypeName("PCWSTR")] ushort* pszPropName)
         {
             return ((delegate* unmanaged<INamedPropertyBag*, ushort*, ushort*, int>)(lpVtbl[5]))((INamedPropertyBag*)Unsafe.AsPointer(ref this), pszBagname, pszPropName);
         }

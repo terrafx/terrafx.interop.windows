@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IMFStreamingSinkConfig*, Guid*, void**, int>)(lpVtbl[0]))((IMFStreamingSinkConfig*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,8 +41,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int StartStreaming(BOOL fSeekOffsetIsByteOffset, [NativeTypeName("QWORD")] ulong qwSeekOffset)
+        public HRESULT StartStreaming(BOOL fSeekOffsetIsByteOffset, [NativeTypeName("QWORD")] ulong qwSeekOffset)
         {
             return ((delegate* unmanaged<IMFStreamingSinkConfig*, BOOL, ulong, int>)(lpVtbl[3]))((IMFStreamingSinkConfig*)Unsafe.AsPointer(ref this), fSeekOffsetIsByteOffset, qwSeekOffset);
         }

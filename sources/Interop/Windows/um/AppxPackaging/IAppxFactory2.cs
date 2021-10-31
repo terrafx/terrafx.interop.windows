@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IAppxFactory2*, Guid*, void**, int>)(lpVtbl[0]))((IAppxFactory2*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,24 +41,21 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int CreateContentGroupMapReader(IStream* inputStream, IAppxContentGroupMapReader** contentGroupMapReader)
+        public HRESULT CreateContentGroupMapReader(IStream* inputStream, IAppxContentGroupMapReader** contentGroupMapReader)
         {
             return ((delegate* unmanaged<IAppxFactory2*, IStream*, IAppxContentGroupMapReader**, int>)(lpVtbl[3]))((IAppxFactory2*)Unsafe.AsPointer(ref this), inputStream, contentGroupMapReader);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int CreateSourceContentGroupMapReader(IStream* inputStream, IAppxSourceContentGroupMapReader** reader)
+        public HRESULT CreateSourceContentGroupMapReader(IStream* inputStream, IAppxSourceContentGroupMapReader** reader)
         {
             return ((delegate* unmanaged<IAppxFactory2*, IStream*, IAppxSourceContentGroupMapReader**, int>)(lpVtbl[4]))((IAppxFactory2*)Unsafe.AsPointer(ref this), inputStream, reader);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int CreateContentGroupMapWriter(IStream* stream, IAppxContentGroupMapWriter** contentGroupMapWriter)
+        public HRESULT CreateContentGroupMapWriter(IStream* stream, IAppxContentGroupMapWriter** contentGroupMapWriter)
         {
             return ((delegate* unmanaged<IAppxFactory2*, IStream*, IAppxContentGroupMapWriter**, int>)(lpVtbl[5]))((IAppxFactory2*)Unsafe.AsPointer(ref this), stream, contentGroupMapWriter);
         }
