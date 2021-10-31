@@ -8,6 +8,8 @@ namespace TerraFX.Interop
     {
         public readonly nint Value;
 
+        public static HCHARSET NULL => (HCHARSET)(0);
+
         public HCHARSET(int value)
         {
             Value = ((nint)(value));

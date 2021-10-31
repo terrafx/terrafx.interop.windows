@@ -8,6 +8,8 @@ namespace TerraFX.Interop
     {
         public readonly nint Value;
 
+        public static HHOOK NULL => (HHOOK)(0);
+
         public HHOOK(int value)
         {
             Value = ((nint)(value));

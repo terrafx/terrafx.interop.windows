@@ -8,6 +8,8 @@ namespace TerraFX.Interop
     {
         public readonly nint Value;
 
+        public static HAMSISESSION NULL => (HAMSISESSION)(0);
+
         public HAMSISESSION(int value)
         {
             Value = ((nint)(value));

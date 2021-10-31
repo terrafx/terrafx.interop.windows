@@ -8,6 +8,8 @@ namespace TerraFX.Interop
     {
         public readonly nint Value;
 
+        public static HACMSTREAM NULL => (HACMSTREAM)(0);
+
         public HACMSTREAM(int value)
         {
             Value = ((nint)(value));

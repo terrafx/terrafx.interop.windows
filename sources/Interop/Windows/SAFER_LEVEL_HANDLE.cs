@@ -8,6 +8,8 @@ namespace TerraFX.Interop
     {
         public readonly nint Value;
 
+        public static SAFER_LEVEL_HANDLE NULL => (SAFER_LEVEL_HANDLE)(0);
+
         public SAFER_LEVEL_HANDLE(int value)
         {
             Value = ((nint)(value));

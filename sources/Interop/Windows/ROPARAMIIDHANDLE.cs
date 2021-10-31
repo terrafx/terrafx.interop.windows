@@ -8,6 +8,8 @@ namespace TerraFX.Interop
     {
         public readonly nint Value;
 
+        public static ROPARAMIIDHANDLE NULL => (ROPARAMIIDHANDLE)(0);
+
         public ROPARAMIIDHANDLE(int value)
         {
             Value = ((nint)(value));

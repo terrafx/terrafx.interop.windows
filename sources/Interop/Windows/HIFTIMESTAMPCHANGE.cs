@@ -8,6 +8,8 @@ namespace TerraFX.Interop
     {
         public readonly nint Value;
 
+        public static HIFTIMESTAMPCHANGE NULL => (HIFTIMESTAMPCHANGE)(0);
+
         public HIFTIMESTAMPCHANGE(int value)
         {
             Value = ((nint)(value));

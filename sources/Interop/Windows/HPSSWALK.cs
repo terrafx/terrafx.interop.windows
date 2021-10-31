@@ -8,6 +8,8 @@ namespace TerraFX.Interop
     {
         public readonly nint Value;
 
+        public static HPSSWALK NULL => (HPSSWALK)(0);
+
         public HPSSWALK(int value)
         {
             Value = ((nint)(value));

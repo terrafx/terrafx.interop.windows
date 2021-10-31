@@ -8,6 +8,8 @@ namespace TerraFX.Interop
     {
         public readonly nint Value;
 
+        public static APARTMENT_SHUTDOWN_REGISTRATION_COOKIE NULL => (APARTMENT_SHUTDOWN_REGISTRATION_COOKIE)(0);
+
         public APARTMENT_SHUTDOWN_REGISTRATION_COOKIE(int value)
         {
             Value = ((nint)(value));

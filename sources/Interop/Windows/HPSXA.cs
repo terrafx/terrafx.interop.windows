@@ -8,6 +8,8 @@ namespace TerraFX.Interop
     {
         public readonly nint Value;
 
+        public static HPSXA NULL => (HPSXA)(0);
+
         public HPSXA(int value)
         {
             Value = ((nint)(value));

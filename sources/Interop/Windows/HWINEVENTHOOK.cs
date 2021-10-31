@@ -8,6 +8,8 @@ namespace TerraFX.Interop
     {
         public readonly nint Value;
 
+        public static HWINEVENTHOOK NULL => (HWINEVENTHOOK)(0);
+
         public HWINEVENTHOOK(int value)
         {
             Value = ((nint)(value));

@@ -8,6 +8,8 @@ namespace TerraFX.Interop
     {
         public readonly nint Value;
 
+        public static HCONVLIST NULL => (HCONVLIST)(0);
+
         public HCONVLIST(int value)
         {
             Value = ((nint)(value));

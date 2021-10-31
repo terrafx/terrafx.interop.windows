@@ -8,6 +8,8 @@ namespace TerraFX.Interop
     {
         public readonly nint Value;
 
+        public static HINTERACTIONCONTEXT NULL => (HINTERACTIONCONTEXT)(0);
+
         public HINTERACTIONCONTEXT(int value)
         {
             Value = ((nint)(value));

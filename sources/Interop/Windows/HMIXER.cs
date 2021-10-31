@@ -8,6 +8,8 @@ namespace TerraFX.Interop
     {
         public readonly nint Value;
 
+        public static HMIXER NULL => (HMIXER)(0);
+
         public HMIXER(int value)
         {
             Value = ((nint)(value));

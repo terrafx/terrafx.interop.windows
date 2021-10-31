@@ -8,6 +8,8 @@ namespace TerraFX.Interop
     {
         public readonly nint Value;
 
+        public static HBODY NULL => (HBODY)(0);
+
         public HBODY(int value)
         {
             Value = ((nint)(value));

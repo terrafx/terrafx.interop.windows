@@ -8,6 +8,8 @@ namespace TerraFX.Interop
     {
         public readonly nint Value;
 
+        public static HWND NULL => (HWND)(0);
+
         public HWND(int value)
         {
             Value = ((nint)(value));

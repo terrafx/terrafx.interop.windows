@@ -8,6 +8,8 @@ namespace TerraFX.Interop
     {
         public readonly nint Value;
 
+        public static HWAVEOUT NULL => (HWAVEOUT)(0);
+
         public HWAVEOUT(int value)
         {
             Value = ((nint)(value));

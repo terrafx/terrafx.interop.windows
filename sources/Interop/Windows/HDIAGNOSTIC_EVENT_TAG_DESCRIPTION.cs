@@ -8,6 +8,8 @@ namespace TerraFX.Interop
     {
         public readonly nint Value;
 
+        public static HDIAGNOSTIC_EVENT_TAG_DESCRIPTION NULL => (HDIAGNOSTIC_EVENT_TAG_DESCRIPTION)(0);
+
         public HDIAGNOSTIC_EVENT_TAG_DESCRIPTION(int value)
         {
             Value = ((nint)(value));

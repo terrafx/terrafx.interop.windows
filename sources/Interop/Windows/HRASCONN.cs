@@ -8,6 +8,8 @@ namespace TerraFX.Interop
     {
         public readonly nint Value;
 
+        public static HRASCONN NULL => (HRASCONN)(0);
+
         public HRASCONN(int value)
         {
             Value = ((nint)(value));

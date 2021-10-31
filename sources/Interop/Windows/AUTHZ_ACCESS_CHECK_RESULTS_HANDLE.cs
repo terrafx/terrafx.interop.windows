@@ -8,6 +8,8 @@ namespace TerraFX.Interop
     {
         public readonly nint Value;
 
+        public static AUTHZ_ACCESS_CHECK_RESULTS_HANDLE NULL => (AUTHZ_ACCESS_CHECK_RESULTS_HANDLE)(0);
+
         public AUTHZ_ACCESS_CHECK_RESULTS_HANDLE(int value)
         {
             Value = ((nint)(value));

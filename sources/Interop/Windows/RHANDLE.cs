@@ -8,6 +8,8 @@ namespace TerraFX.Interop
     {
         public readonly nint Value;
 
+        public static RHANDLE NULL => (RHANDLE)(0);
+
         public RHANDLE(int value)
         {
             Value = ((nint)(value));

@@ -8,6 +8,8 @@ namespace TerraFX.Interop
     {
         public readonly nint Value;
 
+        public static HWINWATCH NULL => (HWINWATCH)(0);
+
         public HWINWATCH(int value)
         {
             Value = ((nint)(value));

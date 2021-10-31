@@ -8,6 +8,8 @@ namespace TerraFX.Interop
     {
         public readonly nint Value;
 
+        public static SPSTATEHANDLE NULL => (SPSTATEHANDLE)(0);
+
         public SPSTATEHANDLE(int value)
         {
             Value = ((nint)(value));

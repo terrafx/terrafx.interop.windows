@@ -8,6 +8,8 @@ namespace TerraFX.Interop
     {
         public readonly nint Value;
 
+        public static SPGRAMMARHANDLE NULL => (SPGRAMMARHANDLE)(0);
+
         public SPGRAMMARHANDLE(int value)
         {
             Value = ((nint)(value));

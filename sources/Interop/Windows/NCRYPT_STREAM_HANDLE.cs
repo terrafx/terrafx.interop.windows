@@ -8,6 +8,8 @@ namespace TerraFX.Interop
     {
         public readonly nint Value;
 
+        public static NCRYPT_STREAM_HANDLE NULL => (NCRYPT_STREAM_HANDLE)(0);
+
         public NCRYPT_STREAM_HANDLE(int value)
         {
             Value = ((nint)(value));

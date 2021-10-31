@@ -8,6 +8,8 @@ namespace TerraFX.Interop
     {
         public readonly nint Value;
 
+        public static HSPRITE NULL => (HSPRITE)(0);
+
         public HSPRITE(int value)
         {
             Value = ((nint)(value));

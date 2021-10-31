@@ -8,6 +8,8 @@ namespace TerraFX.Interop
     {
         public readonly nint Value;
 
+        public static HMETAFILE NULL => (HMETAFILE)(0);
+
         public HMETAFILE(int value)
         {
             Value = ((nint)(value));

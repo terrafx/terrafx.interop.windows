@@ -8,6 +8,8 @@ namespace TerraFX.Interop
     {
         public readonly nint Value;
 
+        public static DHPDEV NULL => (DHPDEV)(0);
+
         public DHPDEV(int value)
         {
             Value = ((nint)(value));

@@ -8,6 +8,8 @@ namespace TerraFX.Interop
     {
         public readonly nint Value;
 
+        public static CO_MTA_USAGE_COOKIE NULL => (CO_MTA_USAGE_COOKIE)(0);
+
         public CO_MTA_USAGE_COOKIE(int value)
         {
             Value = ((nint)(value));

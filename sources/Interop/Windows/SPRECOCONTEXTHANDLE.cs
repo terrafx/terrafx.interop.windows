@@ -8,6 +8,8 @@ namespace TerraFX.Interop
     {
         public readonly nint Value;
 
+        public static SPRECOCONTEXTHANDLE NULL => (SPRECOCONTEXTHANDLE)(0);
+
         public SPRECOCONTEXTHANDLE(int value)
         {
             Value = ((nint)(value));

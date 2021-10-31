@@ -8,6 +8,8 @@ namespace TerraFX.Interop
     {
         public readonly nint Value;
 
+        public static WEB_SOCKET_HANDLE NULL => (WEB_SOCKET_HANDLE)(0);
+
         public WEB_SOCKET_HANDLE(int value)
         {
             Value = ((nint)(value));

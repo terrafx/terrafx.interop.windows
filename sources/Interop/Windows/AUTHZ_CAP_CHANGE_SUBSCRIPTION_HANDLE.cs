@@ -8,6 +8,8 @@ namespace TerraFX.Interop
     {
         public readonly nint Value;
 
+        public static AUTHZ_CAP_CHANGE_SUBSCRIPTION_HANDLE NULL => (AUTHZ_CAP_CHANGE_SUBSCRIPTION_HANDLE)(0);
+
         public AUTHZ_CAP_CHANGE_SUBSCRIPTION_HANDLE(int value)
         {
             Value = ((nint)(value));

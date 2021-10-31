@@ -8,6 +8,8 @@ namespace TerraFX.Interop
     {
         public readonly nint Value;
 
+        public static USB_CHANGE_REGISTRATION_HANDLE NULL => (USB_CHANGE_REGISTRATION_HANDLE)(0);
+
         public USB_CHANGE_REGISTRATION_HANDLE(int value)
         {
             Value = ((nint)(value));

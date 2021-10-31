@@ -8,6 +8,8 @@ namespace TerraFX.Interop
     {
         public readonly nint Value;
 
+        public static HPEN NULL => (HPEN)(0);
+
         public HPEN(int value)
         {
             Value = ((nint)(value));

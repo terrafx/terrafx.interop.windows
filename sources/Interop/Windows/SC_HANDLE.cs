@@ -8,6 +8,8 @@ namespace TerraFX.Interop
     {
         public readonly nint Value;
 
+        public static SC_HANDLE NULL => (SC_HANDLE)(0);
+
         public SC_HANDLE(int value)
         {
             Value = ((nint)(value));

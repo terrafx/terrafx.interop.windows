@@ -8,6 +8,8 @@ namespace TerraFX.Interop
     {
         public readonly nint Value;
 
+        public static LPM_HANDLE NULL => (LPM_HANDLE)(0);
+
         public LPM_HANDLE(int value)
         {
             Value = ((nint)(value));

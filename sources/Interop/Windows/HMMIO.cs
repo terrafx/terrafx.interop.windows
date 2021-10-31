@@ -8,6 +8,8 @@ namespace TerraFX.Interop
     {
         public readonly nint Value;
 
+        public static HMMIO NULL => (HMMIO)(0);
+
         public HMMIO(int value)
         {
             Value = ((nint)(value));

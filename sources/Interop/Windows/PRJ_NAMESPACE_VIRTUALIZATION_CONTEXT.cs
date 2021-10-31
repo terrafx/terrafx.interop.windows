@@ -8,6 +8,8 @@ namespace TerraFX.Interop
     {
         public readonly nint Value;
 
+        public static PRJ_NAMESPACE_VIRTUALIZATION_CONTEXT NULL => (PRJ_NAMESPACE_VIRTUALIZATION_CONTEXT)(0);
+
         public PRJ_NAMESPACE_VIRTUALIZATION_CONTEXT(int value)
         {
             Value = ((nint)(value));

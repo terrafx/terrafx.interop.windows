@@ -8,6 +8,8 @@ namespace TerraFX.Interop
     {
         public readonly nint Value;
 
+        public static HRECOGNIZER NULL => (HRECOGNIZER)(0);
+
         public HRECOGNIZER(int value)
         {
             Value = ((nint)(value));

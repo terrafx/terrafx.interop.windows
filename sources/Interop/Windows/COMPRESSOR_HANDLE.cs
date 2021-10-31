@@ -8,6 +8,8 @@ namespace TerraFX.Interop
     {
         public readonly nint Value;
 
+        public static COMPRESSOR_HANDLE NULL => (COMPRESSOR_HANDLE)(0);
+
         public COMPRESSOR_HANDLE(int value)
         {
             Value = ((nint)(value));

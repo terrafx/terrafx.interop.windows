@@ -8,6 +8,8 @@ namespace TerraFX.Interop
     {
         public readonly nint Value;
 
+        public static AUTHZ_SECURITY_EVENT_PROVIDER_HANDLE NULL => (AUTHZ_SECURITY_EVENT_PROVIDER_HANDLE)(0);
+
         public AUTHZ_SECURITY_EVENT_PROVIDER_HANDLE(int value)
         {
             Value = ((nint)(value));

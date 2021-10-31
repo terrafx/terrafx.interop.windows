@@ -8,6 +8,8 @@ namespace TerraFX.Interop
     {
         public readonly nint Value;
 
+        public static HUIANODE NULL => (HUIANODE)(0);
+
         public HUIANODE(int value)
         {
             Value = ((nint)(value));

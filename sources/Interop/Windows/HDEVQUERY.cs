@@ -8,6 +8,8 @@ namespace TerraFX.Interop
     {
         public readonly nint Value;
 
+        public static HDEVQUERY NULL => (HDEVQUERY)(0);
+
         public HDEVQUERY(int value)
         {
             Value = ((nint)(value));

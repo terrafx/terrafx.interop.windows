@@ -8,6 +8,8 @@ namespace TerraFX.Interop
     {
         public readonly nint Value;
 
+        public static HUMPD NULL => (HUMPD)(0);
+
         public HUMPD(int value)
         {
             Value = ((nint)(value));

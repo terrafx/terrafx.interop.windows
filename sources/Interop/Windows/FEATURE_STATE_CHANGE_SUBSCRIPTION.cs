@@ -8,6 +8,8 @@ namespace TerraFX.Interop
     {
         public readonly nint Value;
 
+        public static FEATURE_STATE_CHANGE_SUBSCRIPTION NULL => (FEATURE_STATE_CHANGE_SUBSCRIPTION)(0);
+
         public FEATURE_STATE_CHANGE_SUBSCRIPTION(int value)
         {
             Value = ((nint)(value));

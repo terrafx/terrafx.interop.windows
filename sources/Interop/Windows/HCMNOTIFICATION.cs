@@ -8,6 +8,8 @@ namespace TerraFX.Interop
     {
         public readonly nint Value;
 
+        public static HCMNOTIFICATION NULL => (HCMNOTIFICATION)(0);
+
         public HCMNOTIFICATION(int value)
         {
             Value = ((nint)(value));

@@ -8,6 +8,8 @@ namespace TerraFX.Interop
     {
         public readonly nint Value;
 
+        public static HVIDEO NULL => (HVIDEO)(0);
+
         public HVIDEO(int value)
         {
             Value = ((nint)(value));

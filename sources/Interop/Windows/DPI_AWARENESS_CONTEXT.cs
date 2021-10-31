@@ -8,6 +8,8 @@ namespace TerraFX.Interop
     {
         public readonly nint Value;
 
+        public static DPI_AWARENESS_CONTEXT NULL => (DPI_AWARENESS_CONTEXT)(0);
+
         public DPI_AWARENESS_CONTEXT(int value)
         {
             Value = ((nint)(value));

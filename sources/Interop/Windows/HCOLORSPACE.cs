@@ -8,6 +8,8 @@ namespace TerraFX.Interop
     {
         public readonly nint Value;
 
+        public static HCOLORSPACE NULL => (HCOLORSPACE)(0);
+
         public HCOLORSPACE(int value)
         {
             Value = ((nint)(value));

@@ -8,6 +8,8 @@ namespace TerraFX.Interop
     {
         public readonly nint Value;
 
+        public static SPTRANSITIONID NULL => (SPTRANSITIONID)(0);
+
         public SPTRANSITIONID(int value)
         {
             Value = ((nint)(value));

@@ -8,6 +8,8 @@ namespace TerraFX.Interop
     {
         public readonly nint Value;
 
+        public static HDRVOBJ NULL => (HDRVOBJ)(0);
+
         public HDRVOBJ(int value)
         {
             Value = ((nint)(value));

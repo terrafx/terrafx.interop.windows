@@ -8,6 +8,8 @@ namespace TerraFX.Interop
     {
         public readonly nint Value;
 
+        public static HPTPROVIDER NULL => (HPTPROVIDER)(0);
+
         public HPTPROVIDER(int value)
         {
             Value = ((nint)(value));

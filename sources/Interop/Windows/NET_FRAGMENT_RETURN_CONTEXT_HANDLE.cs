@@ -8,6 +8,8 @@ namespace TerraFX.Interop
     {
         public readonly nint Value;
 
+        public static NET_FRAGMENT_RETURN_CONTEXT_HANDLE NULL => (NET_FRAGMENT_RETURN_CONTEXT_HANDLE)(0);
+
         public NET_FRAGMENT_RETURN_CONTEXT_HANDLE(int value)
         {
             Value = ((nint)(value));

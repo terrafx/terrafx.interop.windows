@@ -8,6 +8,8 @@ namespace TerraFX.Interop
     {
         public readonly nint Value;
 
+        public static HICON NULL => (HICON)(0);
+
         public HICON(int value)
         {
             Value = ((nint)(value));

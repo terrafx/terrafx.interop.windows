@@ -8,6 +8,8 @@ namespace TerraFX.Interop
     {
         public readonly nint Value;
 
+        public static HSAVEDUILANGUAGES NULL => (HSAVEDUILANGUAGES)(0);
+
         public HSAVEDUILANGUAGES(int value)
         {
             Value = ((nint)(value));

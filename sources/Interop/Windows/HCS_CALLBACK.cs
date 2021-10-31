@@ -8,6 +8,8 @@ namespace TerraFX.Interop
     {
         public readonly nint Value;
 
+        public static HCS_CALLBACK NULL => (HCS_CALLBACK)(0);
+
         public HCS_CALLBACK(int value)
         {
             Value = ((nint)(value));

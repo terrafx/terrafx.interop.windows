@@ -8,6 +8,8 @@ namespace TerraFX.Interop
     {
         public readonly nint Value;
 
+        public static HTASK NULL => (HTASK)(0);
+
         public HTASK(int value)
         {
             Value = ((nint)(value));

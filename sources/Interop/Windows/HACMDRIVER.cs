@@ -8,6 +8,8 @@ namespace TerraFX.Interop
     {
         public readonly nint Value;
 
+        public static HACMDRIVER NULL => (HACMDRIVER)(0);
+
         public HACMDRIVER(int value)
         {
             Value = ((nint)(value));

@@ -8,6 +8,8 @@ namespace TerraFX.Interop
     {
         public readonly nint Value;
 
+        public static HSWDEVICE NULL => (HSWDEVICE)(0);
+
         public HSWDEVICE(int value)
         {
             Value = ((nint)(value));

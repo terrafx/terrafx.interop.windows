@@ -8,6 +8,8 @@ namespace TerraFX.Interop
     {
         public readonly nint Value;
 
+        public static HINSTANCE NULL => (HINSTANCE)(0);
+
         public HINSTANCE(int value)
         {
             Value = ((nint)(value));

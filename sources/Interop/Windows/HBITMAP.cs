@@ -8,6 +8,8 @@ namespace TerraFX.Interop
     {
         public readonly nint Value;
 
+        public static HBITMAP NULL => (HBITMAP)(0);
+
         public HBITMAP(int value)
         {
             Value = ((nint)(value));

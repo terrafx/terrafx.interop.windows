@@ -8,6 +8,8 @@ namespace TerraFX.Interop
     {
         public readonly nint Value;
 
+        public static HSEMAPHORE NULL => (HSEMAPHORE)(0);
+
         public HSEMAPHORE(int value)
         {
             Value = ((nint)(value));

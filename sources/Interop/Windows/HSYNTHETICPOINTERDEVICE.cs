@@ -8,6 +8,8 @@ namespace TerraFX.Interop
     {
         public readonly nint Value;
 
+        public static HSYNTHETICPOINTERDEVICE NULL => (HSYNTHETICPOINTERDEVICE)(0);
+
         public HSYNTHETICPOINTERDEVICE(int value)
         {
             Value = ((nint)(value));

@@ -8,6 +8,8 @@ namespace TerraFX.Interop
     {
         public readonly nint Value;
 
+        public static HFASTMUTEX NULL => (HFASTMUTEX)(0);
+
         public HFASTMUTEX(int value)
         {
             Value = ((nint)(value));

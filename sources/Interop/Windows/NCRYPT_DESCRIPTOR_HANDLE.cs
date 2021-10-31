@@ -8,6 +8,8 @@ namespace TerraFX.Interop
     {
         public readonly nint Value;
 
+        public static NCRYPT_DESCRIPTOR_HANDLE NULL => (NCRYPT_DESCRIPTOR_HANDLE)(0);
+
         public NCRYPT_DESCRIPTOR_HANDLE(int value)
         {
             Value = ((nint)(value));

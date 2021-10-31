@@ -8,6 +8,8 @@ namespace TerraFX.Interop
     {
         public readonly nint Value;
 
+        public static HSTRING_BUFFER NULL => (HSTRING_BUFFER)(0);
+
         public HSTRING_BUFFER(int value)
         {
             Value = ((nint)(value));

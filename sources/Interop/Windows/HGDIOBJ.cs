@@ -8,6 +8,8 @@ namespace TerraFX.Interop
     {
         public readonly nint Value;
 
+        public static HGDIOBJ NULL => (HGDIOBJ)(0);
+
         public HGDIOBJ(int value)
         {
             Value = ((nint)(value));

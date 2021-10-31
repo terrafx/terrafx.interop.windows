@@ -8,6 +8,8 @@ namespace TerraFX.Interop
     {
         public readonly nint Value;
 
+        public static HMONITOR NULL => (HMONITOR)(0);
+
         public HMONITOR(int value)
         {
             Value = ((nint)(value));

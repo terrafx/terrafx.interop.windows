@@ -8,6 +8,8 @@ namespace TerraFX.Interop
     {
         public readonly nint Value;
 
+        public static HKEY NULL => (HKEY)(0);
+
         public HKEY(int value)
         {
             Value = ((nint)(value));

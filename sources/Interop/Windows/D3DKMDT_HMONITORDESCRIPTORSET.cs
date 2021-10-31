@@ -8,6 +8,8 @@ namespace TerraFX.Interop
     {
         public readonly nint Value;
 
+        public static D3DKMDT_HMONITORDESCRIPTORSET NULL => (D3DKMDT_HMONITORDESCRIPTORSET)(0);
+
         public D3DKMDT_HMONITORDESCRIPTORSET(int value)
         {
             Value = ((nint)(value));

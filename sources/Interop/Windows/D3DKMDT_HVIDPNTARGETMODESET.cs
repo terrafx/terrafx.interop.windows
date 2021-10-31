@@ -8,6 +8,8 @@ namespace TerraFX.Interop
     {
         public readonly nint Value;
 
+        public static D3DKMDT_HVIDPNTARGETMODESET NULL => (D3DKMDT_HVIDPNTARGETMODESET)(0);
+
         public D3DKMDT_HVIDPNTARGETMODESET(int value)
         {
             Value = ((nint)(value));

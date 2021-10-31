@@ -8,6 +8,8 @@ namespace TerraFX.Interop
     {
         public readonly nint Value;
 
+        public static HPALETTE NULL => (HPALETTE)(0);
+
         public HPALETTE(int value)
         {
             Value = ((nint)(value));

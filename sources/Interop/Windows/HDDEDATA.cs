@@ -8,6 +8,8 @@ namespace TerraFX.Interop
     {
         public readonly nint Value;
 
+        public static HDDEDATA NULL => (HDDEDATA)(0);
+
         public HDDEDATA(int value)
         {
             Value = ((nint)(value));

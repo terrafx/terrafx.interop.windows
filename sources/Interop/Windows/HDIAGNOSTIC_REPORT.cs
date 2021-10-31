@@ -8,6 +8,8 @@ namespace TerraFX.Interop
     {
         public readonly nint Value;
 
+        public static HDIAGNOSTIC_REPORT NULL => (HDIAGNOSTIC_REPORT)(0);
+
         public HDIAGNOSTIC_REPORT(int value)
         {
             Value = ((nint)(value));

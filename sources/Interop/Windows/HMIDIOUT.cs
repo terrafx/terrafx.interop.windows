@@ -8,6 +8,8 @@ namespace TerraFX.Interop
     {
         public readonly nint Value;
 
+        public static HMIDIOUT NULL => (HMIDIOUT)(0);
+
         public HMIDIOUT(int value)
         {
             Value = ((nint)(value));

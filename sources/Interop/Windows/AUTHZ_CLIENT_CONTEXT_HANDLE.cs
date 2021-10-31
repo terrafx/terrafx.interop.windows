@@ -8,6 +8,8 @@ namespace TerraFX.Interop
     {
         public readonly nint Value;
 
+        public static AUTHZ_CLIENT_CONTEXT_HANDLE NULL => (AUTHZ_CLIENT_CONTEXT_HANDLE)(0);
+
         public AUTHZ_CLIENT_CONTEXT_HANDLE(int value)
         {
             Value = ((nint)(value));

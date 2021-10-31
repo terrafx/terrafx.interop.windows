@@ -8,6 +8,8 @@ namespace TerraFX.Interop
     {
         public readonly nint Value;
 
+        public static HUIAPATTERNOBJECT NULL => (HUIAPATTERNOBJECT)(0);
+
         public HUIAPATTERNOBJECT(int value)
         {
             Value = ((nint)(value));

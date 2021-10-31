@@ -8,6 +8,8 @@ namespace TerraFX.Interop
     {
         public readonly nint Value;
 
+        public static HUIATEXTRANGE NULL => (HUIATEXTRANGE)(0);
+
         public HUIATEXTRANGE(int value)
         {
             Value = ((nint)(value));

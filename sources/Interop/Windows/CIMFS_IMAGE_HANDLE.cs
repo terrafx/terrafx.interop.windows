@@ -8,6 +8,8 @@ namespace TerraFX.Interop
     {
         public readonly nint Value;
 
+        public static CIMFS_IMAGE_HANDLE NULL => (CIMFS_IMAGE_HANDLE)(0);
+
         public CIMFS_IMAGE_HANDLE(int value)
         {
             Value = ((nint)(value));

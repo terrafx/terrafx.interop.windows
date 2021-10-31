@@ -8,6 +8,8 @@ namespace TerraFX.Interop
     {
         public readonly nint Value;
 
+        public static HACMOBJ NULL => (HACMOBJ)(0);
+
         public HACMOBJ(int value)
         {
             Value = ((nint)(value));

@@ -8,6 +8,8 @@ namespace TerraFX.Interop
     {
         public readonly nint Value;
 
+        public static SERVICE_STATUS_HANDLE NULL => (SERVICE_STATUS_HANDLE)(0);
+
         public SERVICE_STATUS_HANDLE(int value)
         {
             Value = ((nint)(value));

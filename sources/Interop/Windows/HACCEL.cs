@@ -8,6 +8,8 @@ namespace TerraFX.Interop
     {
         public readonly nint Value;
 
+        public static HACCEL NULL => (HACCEL)(0);
+
         public HACCEL(int value)
         {
             Value = ((nint)(value));

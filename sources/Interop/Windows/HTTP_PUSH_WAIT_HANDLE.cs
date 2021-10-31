@@ -8,6 +8,8 @@ namespace TerraFX.Interop
     {
         public readonly nint Value;
 
+        public static HTTP_PUSH_WAIT_HANDLE NULL => (HTTP_PUSH_WAIT_HANDLE)(0);
+
         public HTTP_PUSH_WAIT_HANDLE(int value)
         {
             Value = ((nint)(value));

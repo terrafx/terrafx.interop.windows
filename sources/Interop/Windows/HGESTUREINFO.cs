@@ -8,6 +8,8 @@ namespace TerraFX.Interop
     {
         public readonly nint Value;
 
+        public static HGESTUREINFO NULL => (HGESTUREINFO)(0);
+
         public HGESTUREINFO(int value)
         {
             Value = ((nint)(value));

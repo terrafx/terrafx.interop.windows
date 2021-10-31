@@ -8,6 +8,8 @@ namespace TerraFX.Interop
     {
         public readonly nint Value;
 
+        public static PRJ_DIR_ENTRY_BUFFER_HANDLE NULL => (PRJ_DIR_ENTRY_BUFFER_HANDLE)(0);
+
         public PRJ_DIR_ENTRY_BUFFER_HANDLE(int value)
         {
             Value = ((nint)(value));

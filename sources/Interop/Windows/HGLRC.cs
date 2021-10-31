@@ -8,6 +8,8 @@ namespace TerraFX.Interop
     {
         public readonly nint Value;
 
+        public static HGLRC NULL => (HGLRC)(0);
+
         public HGLRC(int value)
         {
             Value = ((nint)(value));

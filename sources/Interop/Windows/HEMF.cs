@@ -8,6 +8,8 @@ namespace TerraFX.Interop
     {
         public readonly nint Value;
 
+        public static HEMF NULL => (HEMF)(0);
+
         public HEMF(int value)
         {
             Value = ((nint)(value));

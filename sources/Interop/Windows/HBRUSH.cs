@@ -8,6 +8,8 @@ namespace TerraFX.Interop
     {
         public readonly nint Value;
 
+        public static HBRUSH NULL => (HBRUSH)(0);
+
         public HBRUSH(int value)
         {
             Value = ((nint)(value));

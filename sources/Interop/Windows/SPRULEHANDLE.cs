@@ -8,6 +8,8 @@ namespace TerraFX.Interop
     {
         public readonly nint Value;
 
+        public static SPRULEHANDLE NULL => (SPRULEHANDLE)(0);
+
         public SPRULEHANDLE(int value)
         {
             Value = ((nint)(value));

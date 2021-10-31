@@ -8,6 +8,8 @@ namespace TerraFX.Interop
     {
         public readonly nint Value;
 
+        public static SPPHRASEPROPERTYHANDLE NULL => (SPPHRASEPROPERTYHANDLE)(0);
+
         public SPPHRASEPROPERTYHANDLE(int value)
         {
             Value = ((nint)(value));

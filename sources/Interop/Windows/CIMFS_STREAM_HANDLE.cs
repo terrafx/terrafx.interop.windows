@@ -8,6 +8,8 @@ namespace TerraFX.Interop
     {
         public readonly nint Value;
 
+        public static CIMFS_STREAM_HANDLE NULL => (CIMFS_STREAM_HANDLE)(0);
+
         public CIMFS_STREAM_HANDLE(int value)
         {
             Value = ((nint)(value));

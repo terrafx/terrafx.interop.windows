@@ -8,6 +8,8 @@ namespace TerraFX.Interop
     {
         public readonly nint Value;
 
+        public static HTOUCHINPUT NULL => (HTOUCHINPUT)(0);
+
         public HTOUCHINPUT(int value)
         {
             Value = ((nint)(value));

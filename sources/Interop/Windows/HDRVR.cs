@@ -8,6 +8,8 @@ namespace TerraFX.Interop
     {
         public readonly nint Value;
 
+        public static HDRVR NULL => (HDRVR)(0);
+
         public HDRVR(int value)
         {
             Value = ((nint)(value));

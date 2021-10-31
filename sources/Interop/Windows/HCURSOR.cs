@@ -8,6 +8,8 @@ namespace TerraFX.Interop
     {
         public readonly nint Value;
 
+        public static HCURSOR NULL => (HCURSOR)(0);
+
         public HCURSOR(int value)
         {
             Value = ((nint)(value));
