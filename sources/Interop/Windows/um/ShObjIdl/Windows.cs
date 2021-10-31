@@ -8,7 +8,6 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.NSTCSTYLE2;
-using static TerraFX.Interop.SIGDN;
 
 namespace TerraFX.Interop
 {
@@ -49,38 +48,6 @@ namespace TerraFX.Interop
                 Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
                 return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
             }
-        }
-
-        [return: NativeTypeName("HRESULT")]
-        public static int SHResolveFolderPathInLibrary(IShellLibrary* plib, [NativeTypeName("PCWSTR")] ushort* pszFolderPath, [NativeTypeName("DWORD")] uint dwTimeout, [NativeTypeName("PWSTR *")] ushort** ppszResolvedPath)
-        {
-            *ppszResolvedPath = null;
-            ITEMIDLIST* pidlFolder = SHSimpleIDListFromPath(pszFolderPath);
-            int hr = unchecked((pidlFolder) != null ? ((int)(0)) : ((int)(0x80070057)));
-
-            if (((unchecked((int)(hr))) >= 0))
-            {
-                IShellItem* psiFolder;
-
-                hr = SHCreateItemFromIDList(pidlFolder, __uuidof<IShellItem>(), (void**)(&psiFolder));
-                if (((unchecked((int)(hr))) >= 0))
-                {
-                    IShellItem* psiResolved;
-
-                    hr = plib->ResolveFolder(psiFolder, dwTimeout, __uuidof<IShellItem>(), (void**)(&psiResolved));
-                    if (((unchecked((int)(hr))) >= 0))
-                    {
-                        unchecked(hr) = psiResolved->GetDisplayName(SIGDN_DESKTOPABSOLUTEPARSING, ppszResolvedPath);
-                        psiResolved->Release();
-                    }
-
-                    psiFolder->Release();
-                }
-
-                CoTaskMemFree(pidlFolder);
-            }
-
-            return hr;
         }
 
         [NativeTypeName("#define IDD_WIZEXTN_FIRST 0x5000")]

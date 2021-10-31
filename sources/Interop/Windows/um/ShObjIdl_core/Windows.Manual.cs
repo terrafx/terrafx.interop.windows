@@ -6,11 +6,175 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.CLSCTX;
+using static TerraFX.Interop.SIGDN;
 
 namespace TerraFX.Interop
 {
     public static unsafe partial class Windows
     {
+        [return: NativeTypeName("HRESULT")]
+        public static int SHCreateLibrary([NativeTypeName("const IID &")] Guid* riid, void** ppv)
+        {
+            fixed (Guid* rclsid = &CLSID_ShellLibrary)
+            {
+                return CoCreateInstance(rclsid, null, (uint)(CLSCTX_INPROC_SERVER), riid, ppv);
+            }
+        }
+
+        [return: NativeTypeName("HRESULT")]
+        public static int SHLoadLibraryFromItem(IShellItem* psiLibrary, [NativeTypeName("DWORD")] uint grfMode, [NativeTypeName("const IID &")] Guid* riid, void** ppv)
+        {
+            *ppv = null;
+            IShellLibrary* plib;
+            int hr;
+
+            fixed (Guid* rclsid = &CLSID_ShellLibrary)
+            {
+                hr = CoCreateInstance(rclsid, null, (uint)(CLSCTX_INPROC_SERVER), __uuidof<IShellLibrary>(), (void**)(&plib));
+            }
+
+            if ((((int)(hr)) >= 0))
+            {
+                hr = plib->LoadLibraryFromItem(psiLibrary, grfMode);
+                if ((((int)(hr)) >= 0))
+                {
+                    hr = plib->QueryInterface(riid, ppv);
+                }
+
+                plib->Release();
+            }
+
+            return hr;
+        }
+
+        [return: NativeTypeName("HRESULT")]
+        public static int SHLoadLibraryFromKnownFolder([NativeTypeName("const KNOWNFOLDERID &")] Guid* kfidLibrary, [NativeTypeName("DWORD")] uint grfMode, [NativeTypeName("const IID &")] Guid* riid, void** ppv)
+        {
+            *ppv = null;
+            IShellLibrary* plib;
+            int hr;
+
+            fixed (Guid* rclsid = &CLSID_ShellLibrary)
+            {
+                hr = CoCreateInstance(rclsid, null, (uint)(CLSCTX_INPROC_SERVER), __uuidof<IShellLibrary>(), (void**)(&plib));
+            }
+
+            if ((((int)(hr)) >= 0))
+            {
+                hr = plib->LoadLibraryFromKnownFolder(kfidLibrary, grfMode);
+                if ((((int)(hr)) >= 0))
+                {
+                    hr = plib->QueryInterface(riid, ppv);
+                }
+
+                plib->Release();
+            }
+
+            return hr;
+        }
+
+        [return: NativeTypeName("HRESULT")]
+        public static int SHLoadLibraryFromParsingName([NativeTypeName("PCWSTR")] ushort* pszParsingName, [NativeTypeName("DWORD")] uint grfMode, [NativeTypeName("const IID &")] Guid* riid, void** ppv)
+        {
+            *ppv = null;
+            IShellItem* psiLibrary;
+            int hr = SHCreateItemFromParsingName(pszParsingName, null, __uuidof<IShellItem>(), (void**)(&psiLibrary));
+
+            if ((((int)(hr)) >= 0))
+            {
+                hr = SHLoadLibraryFromItem(psiLibrary, grfMode, riid, ppv);
+                psiLibrary->Release();
+            }
+
+            return hr;
+        }
+
+        [return: NativeTypeName("HRESULT")]
+        public static int SHAddFolderPathToLibrary(IShellLibrary* plib, [NativeTypeName("PCWSTR")] ushort* pszFolderPath)
+        {
+            IShellItem* psiFolder;
+            int hr = SHCreateItemFromParsingName(pszFolderPath, null, __uuidof<IShellItem>(), (void**)(&psiFolder));
+
+            if ((((int)(hr)) >= 0))
+            {
+                hr = plib->AddFolder(psiFolder);
+                psiFolder->Release();
+            }
+
+            return hr;
+        }
+
+        [return: NativeTypeName("HRESULT")]
+        public static int SHRemoveFolderPathFromLibrary(IShellLibrary* plib, [NativeTypeName("PCWSTR")] ushort* pszFolderPath)
+        {
+            ITEMIDLIST* pidlFolder = SHSimpleIDListFromPath(pszFolderPath);
+            int hr = unchecked((pidlFolder) != null ? ((int)(0)) : ((int)(0x80070057)));
+
+            if (((unchecked((int)(hr))) >= 0))
+            {
+                IShellItem* psiFolder;
+
+                unchecked(hr) = SHCreateItemFromIDList(pidlFolder, __uuidof<IShellItem>(), (void**)(&psiFolder));
+                if (((unchecked((int)(hr))) >= 0))
+                {
+                    unchecked(hr) = plib->RemoveFolder(psiFolder);
+                    psiFolder->Release();
+                }
+
+                CoTaskMemFree(pidlFolder);
+            }
+
+            return hr;
+        }
+
+        [return: NativeTypeName("HRESULT")]
+        public static int SHSaveLibraryInFolderPath(IShellLibrary* plib, [NativeTypeName("PCWSTR")] ushort* pszFolderPath, [NativeTypeName("PCWSTR")] ushort* pszLibraryName, LIBRARYSAVEFLAGS lsf, [NativeTypeName("PWSTR *")] ushort** ppszSavedToPath)
+        {
+            if ((ppszSavedToPath) != null)
+            {
+                *ppszSavedToPath = null;
+            }
+
+            IShellItem* psiFolder;
+            int hr = SHCreateItemFromParsingName(pszFolderPath, null, __uuidof<IShellItem>(), (void**)(&psiFolder));
+
+            if ((((int)(hr)) >= 0))
+            {
+                IShellItem* psiSavedTo;
+
+                hr = plib->Save(psiFolder, pszLibraryName, lsf, &psiSavedTo);
+                if ((((int)(hr)) >= 0))
+                {
+                    if ((ppszSavedToPath) != null)
+                    {
+                        hr = psiSavedTo->GetDisplayName(SIGDN_DESKTOPABSOLUTEPARSING, ppszSavedToPath);
+                    }
+
+                    psiSavedTo->Release();
+                }
+
+                psiFolder->Release();
+            }
+
+            return hr;
+        }
+
+        public static void SetContractDelegateWindow([NativeTypeName("HWND")] IntPtr hwndSource, [NativeTypeName("HWND")] IntPtr hwndDelegate)
+        {
+            fixed (char* lpString = "ContractDelegate")
+            {
+                if (hwndDelegate != (nint)(0))
+                {
+                    SetPropW(hwndSource, (ushort*)(lpString), (nint)(hwndDelegate));
+                }
+                else
+                {
+                    RemovePropW(hwndSource, (ushort*)(lpString));
+                }
+            }
+        }
+
         public static ref readonly Guid CLSID_ShellLibrary
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]

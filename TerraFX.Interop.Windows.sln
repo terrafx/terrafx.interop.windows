@@ -2624,6 +2624,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "cvconst", "cvconst", "{546D
 		generation\other\cvconst\other-cvconst.h = generation\other\cvconst\other-cvconst.h
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "helper-types", "helper-types", "{3EB33755-7EB9-4ED1-AD8D-083D836D9EFA}"
+	ProjectSection(SolutionItems) = preProject
+		generation\other\helper-types\generate.rsp = generation\other\helper-types\generate.rsp
+		generation\other\helper-types\header.txt = generation\other\helper-types\header.txt
+		generation\other\helper-types\other-helper-types.h = generation\other\helper-types\other-helper-types.h
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -3027,6 +3034,7 @@ Global
 		{E5B09FE0-70D7-4D5A-BC32-AC182D00AE9D} = {B09A774C-A2CD-4E0D-8DE8-AC48459E1699}
 		{984B1C7B-852D-4566-B540-BE52618B4E01} = {B09A774C-A2CD-4E0D-8DE8-AC48459E1699}
 		{546D542D-BEA7-4791-A9FB-44A686BA10BE} = {B09A774C-A2CD-4E0D-8DE8-AC48459E1699}
+		{3EB33755-7EB9-4ED1-AD8D-083D836D9EFA} = {B09A774C-A2CD-4E0D-8DE8-AC48459E1699}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2FE36DF8-2D9C-4F20-8787-45DC74B57461}

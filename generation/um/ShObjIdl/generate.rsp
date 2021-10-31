@@ -22,6 +22,7 @@ PITEMID_CHILD_UserSize64
 PITEMID_CHILD_UserUnmarshal
 PITEMID_CHILD_UserUnmarshal64
 SHRemovePersonalPropertyValues(IShellItemArray *):HRESULT
+SHResolveFolderPathInLibrary
 --file
 um-ShObjIdl.h
 --output
