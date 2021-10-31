@@ -158,9 +158,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(20)]
-        public HRESULT SetCooperativeLevel([NativeTypeName("HWND")] IntPtr param0, [NativeTypeName("DWORD")] uint param1)
+        public HRESULT SetCooperativeLevel(HWND param0, [NativeTypeName("DWORD")] uint param1)
         {
-            return ((delegate* unmanaged<IDirectDraw4*, IntPtr, uint, int>)(lpVtbl[20]))((IDirectDraw4*)Unsafe.AsPointer(ref this), param0, param1);
+            return ((delegate* unmanaged<IDirectDraw4*, HWND, uint, int>)(lpVtbl[20]))((IDirectDraw4*)Unsafe.AsPointer(ref this), param0, param1);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -172,9 +172,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(22)]
-        public HRESULT WaitForVerticalBlank([NativeTypeName("DWORD")] uint param0, [NativeTypeName("HANDLE")] IntPtr param1)
+        public HRESULT WaitForVerticalBlank([NativeTypeName("DWORD")] uint param0, HANDLE param1)
         {
-            return ((delegate* unmanaged<IDirectDraw4*, uint, IntPtr, int>)(lpVtbl[22]))((IDirectDraw4*)Unsafe.AsPointer(ref this), param0, param1);
+            return ((delegate* unmanaged<IDirectDraw4*, uint, HANDLE, int>)(lpVtbl[22]))((IDirectDraw4*)Unsafe.AsPointer(ref this), param0, param1);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -186,9 +186,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(24)]
-        public HRESULT GetSurfaceFromDC([NativeTypeName("HDC")] IntPtr param0, [NativeTypeName("LPDIRECTDRAWSURFACE4 *")] IDirectDrawSurface4** param1)
+        public HRESULT GetSurfaceFromDC(HDC param0, [NativeTypeName("LPDIRECTDRAWSURFACE4 *")] IDirectDrawSurface4** param1)
         {
-            return ((delegate* unmanaged<IDirectDraw4*, IntPtr, IDirectDrawSurface4**, int>)(lpVtbl[24]))((IDirectDraw4*)Unsafe.AsPointer(ref this), param0, param1);
+            return ((delegate* unmanaged<IDirectDraw4*, HDC, IDirectDrawSurface4**, int>)(lpVtbl[24]))((IDirectDraw4*)Unsafe.AsPointer(ref this), param0, param1);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

@@ -41,9 +41,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        public HRESULT ConfigureComponentInput([NativeTypeName("UINT32")] uint hostViewInstanceId, [NativeTypeName("HWND")] IntPtr hwndHost, IUnknown* inputSourceVisual)
+        public HRESULT ConfigureComponentInput([NativeTypeName("UINT32")] uint hostViewInstanceId, HWND hwndHost, IUnknown* inputSourceVisual)
         {
-            return ((delegate* unmanaged<ICoreWindowComponentInterop*, uint, IntPtr, IUnknown*, int>)(lpVtbl[3]))((ICoreWindowComponentInterop*)Unsafe.AsPointer(ref this), hostViewInstanceId, hwndHost, inputSourceVisual);
+            return ((delegate* unmanaged<ICoreWindowComponentInterop*, uint, HWND, IUnknown*, int>)(lpVtbl[3]))((ICoreWindowComponentInterop*)Unsafe.AsPointer(ref this), hostViewInstanceId, hwndHost, inputSourceVisual);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

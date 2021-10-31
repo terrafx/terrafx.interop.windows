@@ -3,7 +3,6 @@
 // Ported from um/mmeapi.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -30,12 +29,15 @@ namespace TerraFX.Interop
         [NativeTypeName("LPVOID")]
         public void* paDetails;
 
-        public ref IntPtr hwndOwner
+        public ref HWND hwndOwner
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.hwndOwner, 1));
+                fixed (_Anonymous_e__Union* pField = &Anonymous)
+                {
+                    return ref pField->hwndOwner;
+                }
             }
         }
 
@@ -52,8 +54,7 @@ namespace TerraFX.Interop
         public partial struct _Anonymous_e__Union
         {
             [FieldOffset(0)]
-            [NativeTypeName("HWND")]
-            public IntPtr hwndOwner;
+            public HWND hwndOwner;
 
             [FieldOffset(0)]
             [NativeTypeName("DWORD")]

@@ -19,16 +19,16 @@ namespace TerraFX.Interop
         public static extern HRESULT TranslateURLW([NativeTypeName("PCWSTR")] ushort* pcszURL, [NativeTypeName("DWORD")] uint dwInFlags, [NativeTypeName("__unaligned PWSTR *")] ushort** ppszTranslatedURL);
 
         [DllImport("url", ExactSpelling = true)]
-        public static extern HRESULT URLAssociationDialogA([NativeTypeName("HWND")] IntPtr hwndParent, [NativeTypeName("DWORD")] uint dwInFlags, [NativeTypeName("PCSTR")] sbyte* pcszFile, [NativeTypeName("PCSTR")] sbyte* pcszURL, [NativeTypeName("PSTR")] sbyte* pszAppBuf, [NativeTypeName("UINT")] uint ucAppBufLen);
+        public static extern HRESULT URLAssociationDialogA(HWND hwndParent, [NativeTypeName("DWORD")] uint dwInFlags, [NativeTypeName("PCSTR")] sbyte* pcszFile, [NativeTypeName("PCSTR")] sbyte* pcszURL, [NativeTypeName("PSTR")] sbyte* pszAppBuf, [NativeTypeName("UINT")] uint ucAppBufLen);
 
         [DllImport("url", ExactSpelling = true)]
-        public static extern HRESULT URLAssociationDialogW([NativeTypeName("HWND")] IntPtr hwndParent, [NativeTypeName("DWORD")] uint dwInFlags, [NativeTypeName("PCWSTR")] ushort* pcszFile, [NativeTypeName("PCWSTR")] ushort* pcszURL, [NativeTypeName("PWSTR")] ushort* pszAppBuf, [NativeTypeName("UINT")] uint ucAppBufLen);
+        public static extern HRESULT URLAssociationDialogW(HWND hwndParent, [NativeTypeName("DWORD")] uint dwInFlags, [NativeTypeName("PCWSTR")] ushort* pcszFile, [NativeTypeName("PCWSTR")] ushort* pcszURL, [NativeTypeName("PWSTR")] ushort* pszAppBuf, [NativeTypeName("UINT")] uint ucAppBufLen);
 
         [DllImport("url", ExactSpelling = true)]
-        public static extern HRESULT MIMEAssociationDialogA([NativeTypeName("HWND")] IntPtr hwndParent, [NativeTypeName("DWORD")] uint dwInFlags, [NativeTypeName("PCSTR")] sbyte* pcszFile, [NativeTypeName("PCSTR")] sbyte* pcszMIMEContentType, [NativeTypeName("PSTR")] sbyte* pszAppBuf, [NativeTypeName("UINT")] uint ucAppBufLen);
+        public static extern HRESULT MIMEAssociationDialogA(HWND hwndParent, [NativeTypeName("DWORD")] uint dwInFlags, [NativeTypeName("PCSTR")] sbyte* pcszFile, [NativeTypeName("PCSTR")] sbyte* pcszMIMEContentType, [NativeTypeName("PSTR")] sbyte* pszAppBuf, [NativeTypeName("UINT")] uint ucAppBufLen);
 
         [DllImport("url", ExactSpelling = true)]
-        public static extern HRESULT MIMEAssociationDialogW([NativeTypeName("HWND")] IntPtr hwndParent, [NativeTypeName("DWORD")] uint dwInFlags, [NativeTypeName("PCWSTR")] ushort* pcszFile, [NativeTypeName("PCWSTR")] ushort* pcszMIMEContentType, [NativeTypeName("PWSTR")] ushort* pszAppBuf, [NativeTypeName("UINT")] uint ucAppBufLen);
+        public static extern HRESULT MIMEAssociationDialogW(HWND hwndParent, [NativeTypeName("DWORD")] uint dwInFlags, [NativeTypeName("PCWSTR")] ushort* pcszFile, [NativeTypeName("PCWSTR")] ushort* pcszMIMEContentType, [NativeTypeName("PWSTR")] ushort* pszAppBuf, [NativeTypeName("UINT")] uint ucAppBufLen);
 
         [DllImport("url", ExactSpelling = true)]
         public static extern BOOL InetIsOffline([NativeTypeName("DWORD")] uint dwFlags);
@@ -49,10 +49,10 @@ namespace TerraFX.Interop
         public static delegate*<ushort*, uint, ushort**, HRESULT> TranslateURL => &TranslateURLW;
 
         [NativeTypeName("#define URLAssociationDialog URLAssociationDialogW")]
-        public static delegate*<IntPtr, uint, ushort*, ushort*, ushort*, uint, HRESULT> URLAssociationDialog => &URLAssociationDialogW;
+        public static delegate*<HWND, uint, ushort*, ushort*, ushort*, uint, HRESULT> URLAssociationDialog => &URLAssociationDialogW;
 
         [NativeTypeName("#define MIMEAssociationDialog MIMEAssociationDialogW")]
-        public static delegate*<IntPtr, uint, ushort*, ushort*, ushort*, uint, HRESULT> MIMEAssociationDialog => &MIMEAssociationDialogW;
+        public static delegate*<HWND, uint, ushort*, ushort*, ushort*, uint, HRESULT> MIMEAssociationDialog => &MIMEAssociationDialogW;
 
         public static ref readonly Guid IID_IUniformResourceLocatorA
         {

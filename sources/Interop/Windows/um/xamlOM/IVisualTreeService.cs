@@ -62,65 +62,65 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        public HRESULT CreateInstance([NativeTypeName("BSTR")] ushort* typeName, [NativeTypeName("BSTR")] ushort* value, [NativeTypeName("InstanceHandle *")] ulong* pInstanceHandle)
+        public HRESULT CreateInstance([NativeTypeName("BSTR")] ushort* typeName, [NativeTypeName("BSTR")] ushort* value, InstanceHandle* pInstanceHandle)
         {
-            return ((delegate* unmanaged<IVisualTreeService*, ushort*, ushort*, ulong*, int>)(lpVtbl[6]))((IVisualTreeService*)Unsafe.AsPointer(ref this), typeName, value, pInstanceHandle);
+            return ((delegate* unmanaged<IVisualTreeService*, ushort*, ushort*, InstanceHandle*, int>)(lpVtbl[6]))((IVisualTreeService*)Unsafe.AsPointer(ref this), typeName, value, pInstanceHandle);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        public HRESULT GetPropertyValuesChain([NativeTypeName("InstanceHandle")] ulong instanceHandle, [NativeTypeName("unsigned int *")] uint* pSourceCount, PropertyChainSource** ppPropertySources, [NativeTypeName("unsigned int *")] uint* pPropertyCount, PropertyChainValue** ppPropertyValues)
+        public HRESULT GetPropertyValuesChain(InstanceHandle instanceHandle, [NativeTypeName("unsigned int *")] uint* pSourceCount, PropertyChainSource** ppPropertySources, [NativeTypeName("unsigned int *")] uint* pPropertyCount, PropertyChainValue** ppPropertyValues)
         {
-            return ((delegate* unmanaged<IVisualTreeService*, ulong, uint*, PropertyChainSource**, uint*, PropertyChainValue**, int>)(lpVtbl[7]))((IVisualTreeService*)Unsafe.AsPointer(ref this), instanceHandle, pSourceCount, ppPropertySources, pPropertyCount, ppPropertyValues);
+            return ((delegate* unmanaged<IVisualTreeService*, InstanceHandle, uint*, PropertyChainSource**, uint*, PropertyChainValue**, int>)(lpVtbl[7]))((IVisualTreeService*)Unsafe.AsPointer(ref this), instanceHandle, pSourceCount, ppPropertySources, pPropertyCount, ppPropertyValues);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        public HRESULT SetProperty([NativeTypeName("InstanceHandle")] ulong instanceHandle, [NativeTypeName("InstanceHandle")] ulong value, [NativeTypeName("unsigned int")] uint propertyIndex)
+        public HRESULT SetProperty(InstanceHandle instanceHandle, InstanceHandle value, [NativeTypeName("unsigned int")] uint propertyIndex)
         {
-            return ((delegate* unmanaged<IVisualTreeService*, ulong, ulong, uint, int>)(lpVtbl[8]))((IVisualTreeService*)Unsafe.AsPointer(ref this), instanceHandle, value, propertyIndex);
+            return ((delegate* unmanaged<IVisualTreeService*, InstanceHandle, InstanceHandle, uint, int>)(lpVtbl[8]))((IVisualTreeService*)Unsafe.AsPointer(ref this), instanceHandle, value, propertyIndex);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        public HRESULT ClearProperty([NativeTypeName("InstanceHandle")] ulong instanceHandle, [NativeTypeName("unsigned int")] uint propertyIndex)
+        public HRESULT ClearProperty(InstanceHandle instanceHandle, [NativeTypeName("unsigned int")] uint propertyIndex)
         {
-            return ((delegate* unmanaged<IVisualTreeService*, ulong, uint, int>)(lpVtbl[9]))((IVisualTreeService*)Unsafe.AsPointer(ref this), instanceHandle, propertyIndex);
+            return ((delegate* unmanaged<IVisualTreeService*, InstanceHandle, uint, int>)(lpVtbl[9]))((IVisualTreeService*)Unsafe.AsPointer(ref this), instanceHandle, propertyIndex);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(10)]
-        public HRESULT GetCollectionCount([NativeTypeName("InstanceHandle")] ulong instanceHandle, [NativeTypeName("unsigned int *")] uint* pCollectionSize)
+        public HRESULT GetCollectionCount(InstanceHandle instanceHandle, [NativeTypeName("unsigned int *")] uint* pCollectionSize)
         {
-            return ((delegate* unmanaged<IVisualTreeService*, ulong, uint*, int>)(lpVtbl[10]))((IVisualTreeService*)Unsafe.AsPointer(ref this), instanceHandle, pCollectionSize);
+            return ((delegate* unmanaged<IVisualTreeService*, InstanceHandle, uint*, int>)(lpVtbl[10]))((IVisualTreeService*)Unsafe.AsPointer(ref this), instanceHandle, pCollectionSize);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(11)]
-        public HRESULT GetCollectionElements([NativeTypeName("InstanceHandle")] ulong instanceHandle, [NativeTypeName("unsigned int")] uint startIndex, [NativeTypeName("unsigned int *")] uint* pElementCount, CollectionElementValue** ppElementValues)
+        public HRESULT GetCollectionElements(InstanceHandle instanceHandle, [NativeTypeName("unsigned int")] uint startIndex, [NativeTypeName("unsigned int *")] uint* pElementCount, CollectionElementValue** ppElementValues)
         {
-            return ((delegate* unmanaged<IVisualTreeService*, ulong, uint, uint*, CollectionElementValue**, int>)(lpVtbl[11]))((IVisualTreeService*)Unsafe.AsPointer(ref this), instanceHandle, startIndex, pElementCount, ppElementValues);
+            return ((delegate* unmanaged<IVisualTreeService*, InstanceHandle, uint, uint*, CollectionElementValue**, int>)(lpVtbl[11]))((IVisualTreeService*)Unsafe.AsPointer(ref this), instanceHandle, startIndex, pElementCount, ppElementValues);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(12)]
-        public HRESULT AddChild([NativeTypeName("InstanceHandle")] ulong parent, [NativeTypeName("InstanceHandle")] ulong child, [NativeTypeName("unsigned int")] uint index)
+        public HRESULT AddChild(InstanceHandle parent, InstanceHandle child, [NativeTypeName("unsigned int")] uint index)
         {
-            return ((delegate* unmanaged<IVisualTreeService*, ulong, ulong, uint, int>)(lpVtbl[12]))((IVisualTreeService*)Unsafe.AsPointer(ref this), parent, child, index);
+            return ((delegate* unmanaged<IVisualTreeService*, InstanceHandle, InstanceHandle, uint, int>)(lpVtbl[12]))((IVisualTreeService*)Unsafe.AsPointer(ref this), parent, child, index);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(13)]
-        public HRESULT RemoveChild([NativeTypeName("InstanceHandle")] ulong parent, [NativeTypeName("unsigned int")] uint index)
+        public HRESULT RemoveChild(InstanceHandle parent, [NativeTypeName("unsigned int")] uint index)
         {
-            return ((delegate* unmanaged<IVisualTreeService*, ulong, uint, int>)(lpVtbl[13]))((IVisualTreeService*)Unsafe.AsPointer(ref this), parent, index);
+            return ((delegate* unmanaged<IVisualTreeService*, InstanceHandle, uint, int>)(lpVtbl[13]))((IVisualTreeService*)Unsafe.AsPointer(ref this), parent, index);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(14)]
-        public HRESULT ClearChildren([NativeTypeName("InstanceHandle")] ulong parent)
+        public HRESULT ClearChildren(InstanceHandle parent)
         {
-            return ((delegate* unmanaged<IVisualTreeService*, ulong, int>)(lpVtbl[14]))((IVisualTreeService*)Unsafe.AsPointer(ref this), parent);
+            return ((delegate* unmanaged<IVisualTreeService*, InstanceHandle, int>)(lpVtbl[14]))((IVisualTreeService*)Unsafe.AsPointer(ref this), parent);
         }
     }
 }

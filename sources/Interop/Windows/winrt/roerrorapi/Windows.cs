@@ -3,7 +3,6 @@
 // Ported from winrt/roerrorapi.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
@@ -29,13 +28,13 @@ namespace TerraFX.Interop
         public static extern BOOL RoOriginateErrorW(HRESULT error, [NativeTypeName("UINT")] uint cchMax, [NativeTypeName("PCWSTR")] ushort* message);
 
         [DllImport("combase", ExactSpelling = true)]
-        public static extern BOOL RoOriginateError(HRESULT error, [NativeTypeName("HSTRING")] IntPtr message);
+        public static extern BOOL RoOriginateError(HRESULT error, HSTRING message);
 
         [DllImport("combase", ExactSpelling = true)]
         public static extern BOOL RoTransformErrorW(HRESULT oldError, HRESULT newError, [NativeTypeName("UINT")] uint cchMax, [NativeTypeName("PCWSTR")] ushort* message);
 
         [DllImport("combase", ExactSpelling = true)]
-        public static extern BOOL RoTransformError(HRESULT oldError, HRESULT newError, [NativeTypeName("HSTRING")] IntPtr message);
+        public static extern BOOL RoTransformError(HRESULT oldError, HRESULT newError, HSTRING message);
 
         [DllImport("combase", ExactSpelling = true)]
         public static extern HRESULT RoCaptureErrorContext(HRESULT hr);
@@ -63,7 +62,7 @@ namespace TerraFX.Interop
             return RoOriginateErrorW(error, cchMax, message);
         }
 
-        public static BOOL OriginateError(HRESULT error, [NativeTypeName("HSTRING")] IntPtr message)
+        public static BOOL OriginateError(HRESULT error, HSTRING message)
         {
             if ((((HRESULT)(error)) >= 0))
             {
@@ -83,7 +82,7 @@ namespace TerraFX.Interop
             return RoTransformErrorW(oldError, newError, cchMax, message);
         }
 
-        public static BOOL TransformError(HRESULT oldError, HRESULT newError, [NativeTypeName("HSTRING")] IntPtr message)
+        public static BOOL TransformError(HRESULT oldError, HRESULT newError, HSTRING message)
         {
             if ((oldError == newError) || ((((HRESULT)(oldError)) >= 0) && (((HRESULT)(newError)) >= 0)))
             {
@@ -94,7 +93,7 @@ namespace TerraFX.Interop
         }
 
         [DllImport("combase", ExactSpelling = true)]
-        public static extern BOOL RoOriginateLanguageException(HRESULT error, [NativeTypeName("HSTRING")] IntPtr message, IUnknown* languageException);
+        public static extern BOOL RoOriginateLanguageException(HRESULT error, HSTRING message, IUnknown* languageException);
 
         [DllImport("combase", ExactSpelling = true)]
         public static extern void RoClearError();

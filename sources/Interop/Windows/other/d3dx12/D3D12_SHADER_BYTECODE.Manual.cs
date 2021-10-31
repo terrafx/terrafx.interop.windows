@@ -7,7 +7,7 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct D3D12_SHADER_BYTECODE
     {
-        public D3D12_SHADER_BYTECODE([NativeTypeName("ID3DBlob *")] ID3DBlob* pShaderBlob)
+        public D3D12_SHADER_BYTECODE(ID3DBlob* pShaderBlob)
         {
             pShaderBytecode = pShaderBlob->GetBufferPointer();
             BytecodeLength = pShaderBlob->GetBufferSize();

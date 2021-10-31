@@ -3,8 +3,6 @@
 // Ported from um/CommCtrl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
-
 namespace TerraFX.Interop
 {
     public partial struct DATETIMEPICKERINFO
@@ -22,13 +20,10 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint stateButton;
 
-        [NativeTypeName("HWND")]
-        public IntPtr hwndEdit;
+        public HWND hwndEdit;
 
-        [NativeTypeName("HWND")]
-        public IntPtr hwndUD;
+        public HWND hwndUD;
 
-        [NativeTypeName("HWND")]
-        public IntPtr hwndDropDown;
+        public HWND hwndDropDown;
     }
 }

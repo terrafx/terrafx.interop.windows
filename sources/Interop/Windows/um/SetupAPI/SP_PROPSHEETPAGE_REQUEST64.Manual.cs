@@ -15,8 +15,7 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint PageRequested;
 
-        [NativeTypeName("HDEVINFO")]
-        public IntPtr DeviceInfoSet;
+        public HDEVINFO DeviceInfoSet;
 
         [NativeTypeName("PSP_DEVINFO_DATA")]
         public SP_DEVINFO_DATA64* DeviceInfoData;

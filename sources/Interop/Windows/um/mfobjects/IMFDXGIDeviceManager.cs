@@ -41,30 +41,30 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        public HRESULT CloseDeviceHandle([NativeTypeName("HANDLE")] IntPtr hDevice)
+        public HRESULT CloseDeviceHandle(HANDLE hDevice)
         {
-            return ((delegate* unmanaged<IMFDXGIDeviceManager*, IntPtr, int>)(lpVtbl[3]))((IMFDXGIDeviceManager*)Unsafe.AsPointer(ref this), hDevice);
+            return ((delegate* unmanaged<IMFDXGIDeviceManager*, HANDLE, int>)(lpVtbl[3]))((IMFDXGIDeviceManager*)Unsafe.AsPointer(ref this), hDevice);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT GetVideoService([NativeTypeName("HANDLE")] IntPtr hDevice, [NativeTypeName("const IID &")] Guid* riid, void** ppService)
+        public HRESULT GetVideoService(HANDLE hDevice, [NativeTypeName("const IID &")] Guid* riid, void** ppService)
         {
-            return ((delegate* unmanaged<IMFDXGIDeviceManager*, IntPtr, Guid*, void**, int>)(lpVtbl[4]))((IMFDXGIDeviceManager*)Unsafe.AsPointer(ref this), hDevice, riid, ppService);
+            return ((delegate* unmanaged<IMFDXGIDeviceManager*, HANDLE, Guid*, void**, int>)(lpVtbl[4]))((IMFDXGIDeviceManager*)Unsafe.AsPointer(ref this), hDevice, riid, ppService);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        public HRESULT LockDevice([NativeTypeName("HANDLE")] IntPtr hDevice, [NativeTypeName("const IID &")] Guid* riid, void** ppUnkDevice, BOOL fBlock)
+        public HRESULT LockDevice(HANDLE hDevice, [NativeTypeName("const IID &")] Guid* riid, void** ppUnkDevice, BOOL fBlock)
         {
-            return ((delegate* unmanaged<IMFDXGIDeviceManager*, IntPtr, Guid*, void**, BOOL, int>)(lpVtbl[5]))((IMFDXGIDeviceManager*)Unsafe.AsPointer(ref this), hDevice, riid, ppUnkDevice, fBlock);
+            return ((delegate* unmanaged<IMFDXGIDeviceManager*, HANDLE, Guid*, void**, BOOL, int>)(lpVtbl[5]))((IMFDXGIDeviceManager*)Unsafe.AsPointer(ref this), hDevice, riid, ppUnkDevice, fBlock);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        public HRESULT OpenDeviceHandle([NativeTypeName("HANDLE *")] IntPtr* phDevice)
+        public HRESULT OpenDeviceHandle(HANDLE* phDevice)
         {
-            return ((delegate* unmanaged<IMFDXGIDeviceManager*, IntPtr*, int>)(lpVtbl[6]))((IMFDXGIDeviceManager*)Unsafe.AsPointer(ref this), phDevice);
+            return ((delegate* unmanaged<IMFDXGIDeviceManager*, HANDLE*, int>)(lpVtbl[6]))((IMFDXGIDeviceManager*)Unsafe.AsPointer(ref this), phDevice);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -76,16 +76,16 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        public HRESULT TestDevice([NativeTypeName("HANDLE")] IntPtr hDevice)
+        public HRESULT TestDevice(HANDLE hDevice)
         {
-            return ((delegate* unmanaged<IMFDXGIDeviceManager*, IntPtr, int>)(lpVtbl[8]))((IMFDXGIDeviceManager*)Unsafe.AsPointer(ref this), hDevice);
+            return ((delegate* unmanaged<IMFDXGIDeviceManager*, HANDLE, int>)(lpVtbl[8]))((IMFDXGIDeviceManager*)Unsafe.AsPointer(ref this), hDevice);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        public HRESULT UnlockDevice([NativeTypeName("HANDLE")] IntPtr hDevice, BOOL fSaveState)
+        public HRESULT UnlockDevice(HANDLE hDevice, BOOL fSaveState)
         {
-            return ((delegate* unmanaged<IMFDXGIDeviceManager*, IntPtr, BOOL, int>)(lpVtbl[9]))((IMFDXGIDeviceManager*)Unsafe.AsPointer(ref this), hDevice, fSaveState);
+            return ((delegate* unmanaged<IMFDXGIDeviceManager*, HANDLE, BOOL, int>)(lpVtbl[9]))((IMFDXGIDeviceManager*)Unsafe.AsPointer(ref this), hDevice, fSaveState);
         }
     }
 }

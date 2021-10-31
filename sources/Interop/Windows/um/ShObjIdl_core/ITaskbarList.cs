@@ -48,30 +48,30 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT AddTab([NativeTypeName("HWND")] IntPtr hwnd)
+        public HRESULT AddTab(HWND hwnd)
         {
-            return ((delegate* unmanaged<ITaskbarList*, IntPtr, int>)(lpVtbl[4]))((ITaskbarList*)Unsafe.AsPointer(ref this), hwnd);
+            return ((delegate* unmanaged<ITaskbarList*, HWND, int>)(lpVtbl[4]))((ITaskbarList*)Unsafe.AsPointer(ref this), hwnd);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        public HRESULT DeleteTab([NativeTypeName("HWND")] IntPtr hwnd)
+        public HRESULT DeleteTab(HWND hwnd)
         {
-            return ((delegate* unmanaged<ITaskbarList*, IntPtr, int>)(lpVtbl[5]))((ITaskbarList*)Unsafe.AsPointer(ref this), hwnd);
+            return ((delegate* unmanaged<ITaskbarList*, HWND, int>)(lpVtbl[5]))((ITaskbarList*)Unsafe.AsPointer(ref this), hwnd);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        public HRESULT ActivateTab([NativeTypeName("HWND")] IntPtr hwnd)
+        public HRESULT ActivateTab(HWND hwnd)
         {
-            return ((delegate* unmanaged<ITaskbarList*, IntPtr, int>)(lpVtbl[6]))((ITaskbarList*)Unsafe.AsPointer(ref this), hwnd);
+            return ((delegate* unmanaged<ITaskbarList*, HWND, int>)(lpVtbl[6]))((ITaskbarList*)Unsafe.AsPointer(ref this), hwnd);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        public HRESULT SetActiveAlt([NativeTypeName("HWND")] IntPtr hwnd)
+        public HRESULT SetActiveAlt(HWND hwnd)
         {
-            return ((delegate* unmanaged<ITaskbarList*, IntPtr, int>)(lpVtbl[7]))((ITaskbarList*)Unsafe.AsPointer(ref this), hwnd);
+            return ((delegate* unmanaged<ITaskbarList*, HWND, int>)(lpVtbl[7]))((ITaskbarList*)Unsafe.AsPointer(ref this), hwnd);
         }
     }
 }

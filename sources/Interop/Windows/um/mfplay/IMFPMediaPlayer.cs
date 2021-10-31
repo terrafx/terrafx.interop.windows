@@ -237,9 +237,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(31)]
-        public HRESULT GetVideoWindow([NativeTypeName("HWND *")] IntPtr* phwndVideo)
+        public HRESULT GetVideoWindow(HWND* phwndVideo)
         {
-            return ((delegate* unmanaged<IMFPMediaPlayer*, IntPtr*, int>)(lpVtbl[31]))((IMFPMediaPlayer*)Unsafe.AsPointer(ref this), phwndVideo);
+            return ((delegate* unmanaged<IMFPMediaPlayer*, HWND*, int>)(lpVtbl[31]))((IMFPMediaPlayer*)Unsafe.AsPointer(ref this), phwndVideo);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

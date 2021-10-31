@@ -41,9 +41,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        public HRESULT AdviseEventSink(ITfLangBarEventSink* pSink, [NativeTypeName("HWND")] IntPtr hwnd, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("DWORD *")] uint* pdwCookie)
+        public HRESULT AdviseEventSink(ITfLangBarEventSink* pSink, HWND hwnd, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("DWORD *")] uint* pdwCookie)
         {
-            return ((delegate* unmanaged<ITfLangBarMgr*, ITfLangBarEventSink*, IntPtr, uint, uint*, int>)(lpVtbl[3]))((ITfLangBarMgr*)Unsafe.AsPointer(ref this), pSink, hwnd, dwFlags, pdwCookie);
+            return ((delegate* unmanaged<ITfLangBarMgr*, ITfLangBarEventSink*, HWND, uint, uint*, int>)(lpVtbl[3]))((ITfLangBarMgr*)Unsafe.AsPointer(ref this), pSink, hwnd, dwFlags, pdwCookie);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

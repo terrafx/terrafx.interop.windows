@@ -41,9 +41,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        public HRESULT Draw([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("LONG")] int lLayer, RECT* pRect, IUnknown* pReserved)
+        public HRESULT Draw(HDC hdc, [NativeTypeName("LONG")] int lLayer, RECT* pRect, IUnknown* pReserved)
         {
-            return ((delegate* unmanaged<IElementBehaviorRender*, IntPtr, int, RECT*, IUnknown*, int>)(lpVtbl[3]))((IElementBehaviorRender*)Unsafe.AsPointer(ref this), hdc, lLayer, pRect, pReserved);
+            return ((delegate* unmanaged<IElementBehaviorRender*, HDC, int, RECT*, IUnknown*, int>)(lpVtbl[3]))((IElementBehaviorRender*)Unsafe.AsPointer(ref this), hdc, lLayer, pRect, pReserved);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

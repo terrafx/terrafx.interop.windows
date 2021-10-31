@@ -3,8 +3,6 @@
 // Ported from um/wincrypt.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
-
 namespace TerraFX.Interop
 {
     public unsafe partial struct CRYPT_PKCS8_IMPORT_PARAMS
@@ -13,7 +11,7 @@ namespace TerraFX.Interop
         public CRYPT_DATA_BLOB PrivateKey;
 
         [NativeTypeName("PCRYPT_RESOLVE_HCRYPTPROV_FUNC")]
-        public delegate* unmanaged<CRYPT_PRIVATE_KEY_INFO*, IntPtr*, void*, BOOL> pResolvehCryptProvFunc;
+        public delegate* unmanaged<CRYPT_PRIVATE_KEY_INFO*, HCRYPTPROV*, void*, BOOL> pResolvehCryptProvFunc;
 
         [NativeTypeName("LPVOID")]
         public void* pVoidResolveFunc;

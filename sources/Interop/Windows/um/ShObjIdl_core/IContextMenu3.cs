@@ -41,9 +41,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        public HRESULT QueryContextMenu([NativeTypeName("HMENU")] IntPtr hmenu, [NativeTypeName("UINT")] uint indexMenu, [NativeTypeName("UINT")] uint idCmdFirst, [NativeTypeName("UINT")] uint idCmdLast, [NativeTypeName("UINT")] uint uFlags)
+        public HRESULT QueryContextMenu(HMENU hmenu, [NativeTypeName("UINT")] uint indexMenu, [NativeTypeName("UINT")] uint idCmdFirst, [NativeTypeName("UINT")] uint idCmdLast, [NativeTypeName("UINT")] uint uFlags)
         {
-            return ((delegate* unmanaged<IContextMenu3*, IntPtr, uint, uint, uint, uint, int>)(lpVtbl[3]))((IContextMenu3*)Unsafe.AsPointer(ref this), hmenu, indexMenu, idCmdFirst, idCmdLast, uFlags);
+            return ((delegate* unmanaged<IContextMenu3*, HMENU, uint, uint, uint, uint, int>)(lpVtbl[3]))((IContextMenu3*)Unsafe.AsPointer(ref this), hmenu, indexMenu, idCmdFirst, idCmdLast, uFlags);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

@@ -104,7 +104,7 @@ namespace TerraFX.Interop
         public static extern HRESULT SHSetTemporaryPropertyForItem(IShellItem* psi, [NativeTypeName("const PROPERTYKEY &")] PROPERTYKEY* propkey, [NativeTypeName("const PROPVARIANT &")] PROPVARIANT* propvar);
 
         [DllImport("shell32", ExactSpelling = true)]
-        public static extern HRESULT SHShowManageLibraryUI(IShellItem* psiLibrary, [NativeTypeName("HWND")] IntPtr hwndOwner, [NativeTypeName("LPCWSTR")] ushort* pszTitle, [NativeTypeName("LPCWSTR")] ushort* pszInstruction, LIBRARYMANAGEDIALOGOPTIONS lmdOptions);
+        public static extern HRESULT SHShowManageLibraryUI(IShellItem* psiLibrary, HWND hwndOwner, [NativeTypeName("LPCWSTR")] ushort* pszTitle, [NativeTypeName("LPCWSTR")] ushort* pszInstruction, LIBRARYMANAGEDIALOGOPTIONS lmdOptions);
 
         [DllImport("shell32", ExactSpelling = true)]
         public static extern HRESULT SHResolveLibrary(IShellItem* psiLibrary);

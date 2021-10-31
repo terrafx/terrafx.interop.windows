@@ -48,9 +48,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT Draw([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("LPRECT")] RECT* prcDest, [NativeTypeName("LPRECT")] RECT* prcSrc)
+        public HRESULT Draw(HDC hdc, [NativeTypeName("LPRECT")] RECT* prcDest, [NativeTypeName("LPRECT")] RECT* prcSrc)
         {
-            return ((delegate* unmanaged<IShellImageData*, IntPtr, RECT*, RECT*, int>)(lpVtbl[4]))((IShellImageData*)Unsafe.AsPointer(ref this), hdc, prcDest, prcSrc);
+            return ((delegate* unmanaged<IShellImageData*, HDC, RECT*, RECT*, int>)(lpVtbl[4]))((IShellImageData*)Unsafe.AsPointer(ref this), hdc, prcDest, prcSrc);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

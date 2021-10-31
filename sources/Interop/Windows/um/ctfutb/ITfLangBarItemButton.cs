@@ -90,9 +90,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(10)]
-        public HRESULT GetIcon([NativeTypeName("HICON *")] IntPtr* phIcon)
+        public HRESULT GetIcon(HICON* phIcon)
         {
-            return ((delegate* unmanaged<ITfLangBarItemButton*, IntPtr*, int>)(lpVtbl[10]))((ITfLangBarItemButton*)Unsafe.AsPointer(ref this), phIcon);
+            return ((delegate* unmanaged<ITfLangBarItemButton*, HICON*, int>)(lpVtbl[10]))((ITfLangBarItemButton*)Unsafe.AsPointer(ref this), phIcon);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

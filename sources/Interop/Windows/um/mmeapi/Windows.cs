@@ -3,7 +3,6 @@
 // Ported from um/mmeapi.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
@@ -24,11 +23,11 @@ namespace TerraFX.Interop
 
         [DllImport("winmm", ExactSpelling = true)]
         [return: NativeTypeName("MMRESULT")]
-        public static extern uint waveOutGetVolume([NativeTypeName("HWAVEOUT")] IntPtr hwo, [NativeTypeName("LPDWORD")] uint* pdwVolume);
+        public static extern uint waveOutGetVolume(HWAVEOUT hwo, [NativeTypeName("LPDWORD")] uint* pdwVolume);
 
         [DllImport("winmm", ExactSpelling = true)]
         [return: NativeTypeName("MMRESULT")]
-        public static extern uint waveOutSetVolume([NativeTypeName("HWAVEOUT")] IntPtr hwo, [NativeTypeName("DWORD")] uint dwVolume);
+        public static extern uint waveOutSetVolume(HWAVEOUT hwo, [NativeTypeName("DWORD")] uint dwVolume);
 
         [DllImport("winmm", ExactSpelling = true)]
         [return: NativeTypeName("MMRESULT")]
@@ -40,67 +39,67 @@ namespace TerraFX.Interop
 
         [DllImport("winmm", ExactSpelling = true)]
         [return: NativeTypeName("MMRESULT")]
-        public static extern uint waveOutOpen([NativeTypeName("LPHWAVEOUT")] IntPtr* phwo, [NativeTypeName("UINT")] uint uDeviceID, [NativeTypeName("LPCWAVEFORMATEX")] WAVEFORMATEX* pwfx, [NativeTypeName("DWORD_PTR")] nuint dwCallback, [NativeTypeName("DWORD_PTR")] nuint dwInstance, [NativeTypeName("DWORD")] uint fdwOpen);
+        public static extern uint waveOutOpen([NativeTypeName("LPHWAVEOUT")] HWAVEOUT* phwo, [NativeTypeName("UINT")] uint uDeviceID, [NativeTypeName("LPCWAVEFORMATEX")] WAVEFORMATEX* pwfx, [NativeTypeName("DWORD_PTR")] nuint dwCallback, [NativeTypeName("DWORD_PTR")] nuint dwInstance, [NativeTypeName("DWORD")] uint fdwOpen);
 
         [DllImport("winmm", ExactSpelling = true)]
         [return: NativeTypeName("MMRESULT")]
-        public static extern uint waveOutClose([NativeTypeName("HWAVEOUT")] IntPtr hwo);
+        public static extern uint waveOutClose(HWAVEOUT hwo);
 
         [DllImport("winmm", ExactSpelling = true)]
         [return: NativeTypeName("MMRESULT")]
-        public static extern uint waveOutPrepareHeader([NativeTypeName("HWAVEOUT")] IntPtr hwo, [NativeTypeName("LPWAVEHDR")] WAVEHDR* pwh, [NativeTypeName("UINT")] uint cbwh);
+        public static extern uint waveOutPrepareHeader(HWAVEOUT hwo, [NativeTypeName("LPWAVEHDR")] WAVEHDR* pwh, [NativeTypeName("UINT")] uint cbwh);
 
         [DllImport("winmm", ExactSpelling = true)]
         [return: NativeTypeName("MMRESULT")]
-        public static extern uint waveOutUnprepareHeader([NativeTypeName("HWAVEOUT")] IntPtr hwo, [NativeTypeName("LPWAVEHDR")] WAVEHDR* pwh, [NativeTypeName("UINT")] uint cbwh);
+        public static extern uint waveOutUnprepareHeader(HWAVEOUT hwo, [NativeTypeName("LPWAVEHDR")] WAVEHDR* pwh, [NativeTypeName("UINT")] uint cbwh);
 
         [DllImport("winmm", ExactSpelling = true)]
         [return: NativeTypeName("MMRESULT")]
-        public static extern uint waveOutWrite([NativeTypeName("HWAVEOUT")] IntPtr hwo, [NativeTypeName("LPWAVEHDR")] WAVEHDR* pwh, [NativeTypeName("UINT")] uint cbwh);
+        public static extern uint waveOutWrite(HWAVEOUT hwo, [NativeTypeName("LPWAVEHDR")] WAVEHDR* pwh, [NativeTypeName("UINT")] uint cbwh);
 
         [DllImport("winmm", ExactSpelling = true)]
         [return: NativeTypeName("MMRESULT")]
-        public static extern uint waveOutPause([NativeTypeName("HWAVEOUT")] IntPtr hwo);
+        public static extern uint waveOutPause(HWAVEOUT hwo);
 
         [DllImport("winmm", ExactSpelling = true)]
         [return: NativeTypeName("MMRESULT")]
-        public static extern uint waveOutRestart([NativeTypeName("HWAVEOUT")] IntPtr hwo);
+        public static extern uint waveOutRestart(HWAVEOUT hwo);
 
         [DllImport("winmm", ExactSpelling = true)]
         [return: NativeTypeName("MMRESULT")]
-        public static extern uint waveOutReset([NativeTypeName("HWAVEOUT")] IntPtr hwo);
+        public static extern uint waveOutReset(HWAVEOUT hwo);
 
         [DllImport("winmm", ExactSpelling = true)]
         [return: NativeTypeName("MMRESULT")]
-        public static extern uint waveOutBreakLoop([NativeTypeName("HWAVEOUT")] IntPtr hwo);
+        public static extern uint waveOutBreakLoop(HWAVEOUT hwo);
 
         [DllImport("winmm", ExactSpelling = true)]
         [return: NativeTypeName("MMRESULT")]
-        public static extern uint waveOutGetPosition([NativeTypeName("HWAVEOUT")] IntPtr hwo, [NativeTypeName("LPMMTIME")] MMTIME* pmmt, [NativeTypeName("UINT")] uint cbmmt);
+        public static extern uint waveOutGetPosition(HWAVEOUT hwo, [NativeTypeName("LPMMTIME")] MMTIME* pmmt, [NativeTypeName("UINT")] uint cbmmt);
 
         [DllImport("winmm", ExactSpelling = true)]
         [return: NativeTypeName("MMRESULT")]
-        public static extern uint waveOutGetPitch([NativeTypeName("HWAVEOUT")] IntPtr hwo, [NativeTypeName("LPDWORD")] uint* pdwPitch);
+        public static extern uint waveOutGetPitch(HWAVEOUT hwo, [NativeTypeName("LPDWORD")] uint* pdwPitch);
 
         [DllImport("winmm", ExactSpelling = true)]
         [return: NativeTypeName("MMRESULT")]
-        public static extern uint waveOutSetPitch([NativeTypeName("HWAVEOUT")] IntPtr hwo, [NativeTypeName("DWORD")] uint dwPitch);
+        public static extern uint waveOutSetPitch(HWAVEOUT hwo, [NativeTypeName("DWORD")] uint dwPitch);
 
         [DllImport("winmm", ExactSpelling = true)]
         [return: NativeTypeName("MMRESULT")]
-        public static extern uint waveOutGetPlaybackRate([NativeTypeName("HWAVEOUT")] IntPtr hwo, [NativeTypeName("LPDWORD")] uint* pdwRate);
+        public static extern uint waveOutGetPlaybackRate(HWAVEOUT hwo, [NativeTypeName("LPDWORD")] uint* pdwRate);
 
         [DllImport("winmm", ExactSpelling = true)]
         [return: NativeTypeName("MMRESULT")]
-        public static extern uint waveOutSetPlaybackRate([NativeTypeName("HWAVEOUT")] IntPtr hwo, [NativeTypeName("DWORD")] uint dwRate);
+        public static extern uint waveOutSetPlaybackRate(HWAVEOUT hwo, [NativeTypeName("DWORD")] uint dwRate);
 
         [DllImport("winmm", ExactSpelling = true)]
         [return: NativeTypeName("MMRESULT")]
-        public static extern uint waveOutGetID([NativeTypeName("HWAVEOUT")] IntPtr hwo, [NativeTypeName("LPUINT")] uint* puDeviceID);
+        public static extern uint waveOutGetID(HWAVEOUT hwo, [NativeTypeName("LPUINT")] uint* puDeviceID);
 
         [DllImport("winmm", ExactSpelling = true)]
         [return: NativeTypeName("MMRESULT")]
-        public static extern uint waveOutMessage([NativeTypeName("HWAVEOUT")] IntPtr hwo, [NativeTypeName("UINT")] uint uMsg, [NativeTypeName("DWORD_PTR")] nuint dw1, [NativeTypeName("DWORD_PTR")] nuint dw2);
+        public static extern uint waveOutMessage(HWAVEOUT hwo, [NativeTypeName("UINT")] uint uMsg, [NativeTypeName("DWORD_PTR")] nuint dw1, [NativeTypeName("DWORD_PTR")] nuint dw2);
 
         [DllImport("winmm", ExactSpelling = true)]
         [return: NativeTypeName("UINT")]
@@ -124,47 +123,47 @@ namespace TerraFX.Interop
 
         [DllImport("winmm", ExactSpelling = true)]
         [return: NativeTypeName("MMRESULT")]
-        public static extern uint waveInOpen([NativeTypeName("LPHWAVEIN")] IntPtr* phwi, [NativeTypeName("UINT")] uint uDeviceID, [NativeTypeName("LPCWAVEFORMATEX")] WAVEFORMATEX* pwfx, [NativeTypeName("DWORD_PTR")] nuint dwCallback, [NativeTypeName("DWORD_PTR")] nuint dwInstance, [NativeTypeName("DWORD")] uint fdwOpen);
+        public static extern uint waveInOpen([NativeTypeName("LPHWAVEIN")] HWAVEIN* phwi, [NativeTypeName("UINT")] uint uDeviceID, [NativeTypeName("LPCWAVEFORMATEX")] WAVEFORMATEX* pwfx, [NativeTypeName("DWORD_PTR")] nuint dwCallback, [NativeTypeName("DWORD_PTR")] nuint dwInstance, [NativeTypeName("DWORD")] uint fdwOpen);
 
         [DllImport("winmm", ExactSpelling = true)]
         [return: NativeTypeName("MMRESULT")]
-        public static extern uint waveInClose([NativeTypeName("HWAVEIN")] IntPtr hwi);
+        public static extern uint waveInClose(HWAVEIN hwi);
 
         [DllImport("winmm", ExactSpelling = true)]
         [return: NativeTypeName("MMRESULT")]
-        public static extern uint waveInPrepareHeader([NativeTypeName("HWAVEIN")] IntPtr hwi, [NativeTypeName("LPWAVEHDR")] WAVEHDR* pwh, [NativeTypeName("UINT")] uint cbwh);
+        public static extern uint waveInPrepareHeader(HWAVEIN hwi, [NativeTypeName("LPWAVEHDR")] WAVEHDR* pwh, [NativeTypeName("UINT")] uint cbwh);
 
         [DllImport("winmm", ExactSpelling = true)]
         [return: NativeTypeName("MMRESULT")]
-        public static extern uint waveInUnprepareHeader([NativeTypeName("HWAVEIN")] IntPtr hwi, [NativeTypeName("LPWAVEHDR")] WAVEHDR* pwh, [NativeTypeName("UINT")] uint cbwh);
+        public static extern uint waveInUnprepareHeader(HWAVEIN hwi, [NativeTypeName("LPWAVEHDR")] WAVEHDR* pwh, [NativeTypeName("UINT")] uint cbwh);
 
         [DllImport("winmm", ExactSpelling = true)]
         [return: NativeTypeName("MMRESULT")]
-        public static extern uint waveInAddBuffer([NativeTypeName("HWAVEIN")] IntPtr hwi, [NativeTypeName("LPWAVEHDR")] WAVEHDR* pwh, [NativeTypeName("UINT")] uint cbwh);
+        public static extern uint waveInAddBuffer(HWAVEIN hwi, [NativeTypeName("LPWAVEHDR")] WAVEHDR* pwh, [NativeTypeName("UINT")] uint cbwh);
 
         [DllImport("winmm", ExactSpelling = true)]
         [return: NativeTypeName("MMRESULT")]
-        public static extern uint waveInStart([NativeTypeName("HWAVEIN")] IntPtr hwi);
+        public static extern uint waveInStart(HWAVEIN hwi);
 
         [DllImport("winmm", ExactSpelling = true)]
         [return: NativeTypeName("MMRESULT")]
-        public static extern uint waveInStop([NativeTypeName("HWAVEIN")] IntPtr hwi);
+        public static extern uint waveInStop(HWAVEIN hwi);
 
         [DllImport("winmm", ExactSpelling = true)]
         [return: NativeTypeName("MMRESULT")]
-        public static extern uint waveInReset([NativeTypeName("HWAVEIN")] IntPtr hwi);
+        public static extern uint waveInReset(HWAVEIN hwi);
 
         [DllImport("winmm", ExactSpelling = true)]
         [return: NativeTypeName("MMRESULT")]
-        public static extern uint waveInGetPosition([NativeTypeName("HWAVEIN")] IntPtr hwi, [NativeTypeName("LPMMTIME")] MMTIME* pmmt, [NativeTypeName("UINT")] uint cbmmt);
+        public static extern uint waveInGetPosition(HWAVEIN hwi, [NativeTypeName("LPMMTIME")] MMTIME* pmmt, [NativeTypeName("UINT")] uint cbmmt);
 
         [DllImport("winmm", ExactSpelling = true)]
         [return: NativeTypeName("MMRESULT")]
-        public static extern uint waveInGetID([NativeTypeName("HWAVEIN")] IntPtr hwi, [NativeTypeName("LPUINT")] uint* puDeviceID);
+        public static extern uint waveInGetID(HWAVEIN hwi, [NativeTypeName("LPUINT")] uint* puDeviceID);
 
         [DllImport("winmm", ExactSpelling = true)]
         [return: NativeTypeName("MMRESULT")]
-        public static extern uint waveInMessage([NativeTypeName("HWAVEIN")] IntPtr hwi, [NativeTypeName("UINT")] uint uMsg, [NativeTypeName("DWORD_PTR")] nuint dw1, [NativeTypeName("DWORD_PTR")] nuint dw2);
+        public static extern uint waveInMessage(HWAVEIN hwi, [NativeTypeName("UINT")] uint uMsg, [NativeTypeName("DWORD_PTR")] nuint dw1, [NativeTypeName("DWORD_PTR")] nuint dw2);
 
         [DllImport("winmm", ExactSpelling = true)]
         [return: NativeTypeName("UINT")]
@@ -172,43 +171,43 @@ namespace TerraFX.Interop
 
         [DllImport("winmm", ExactSpelling = true)]
         [return: NativeTypeName("MMRESULT")]
-        public static extern uint midiStreamOpen([NativeTypeName("LPHMIDISTRM")] IntPtr* phms, [NativeTypeName("LPUINT")] uint* puDeviceID, [NativeTypeName("DWORD")] uint cMidi, [NativeTypeName("DWORD_PTR")] nuint dwCallback, [NativeTypeName("DWORD_PTR")] nuint dwInstance, [NativeTypeName("DWORD")] uint fdwOpen);
+        public static extern uint midiStreamOpen([NativeTypeName("LPHMIDISTRM")] HMIDISTRM* phms, [NativeTypeName("LPUINT")] uint* puDeviceID, [NativeTypeName("DWORD")] uint cMidi, [NativeTypeName("DWORD_PTR")] nuint dwCallback, [NativeTypeName("DWORD_PTR")] nuint dwInstance, [NativeTypeName("DWORD")] uint fdwOpen);
 
         [DllImport("winmm", ExactSpelling = true)]
         [return: NativeTypeName("MMRESULT")]
-        public static extern uint midiStreamClose([NativeTypeName("HMIDISTRM")] IntPtr hms);
+        public static extern uint midiStreamClose(HMIDISTRM hms);
 
         [DllImport("winmm", ExactSpelling = true)]
         [return: NativeTypeName("MMRESULT")]
-        public static extern uint midiStreamProperty([NativeTypeName("HMIDISTRM")] IntPtr hms, [NativeTypeName("LPBYTE")] byte* lppropdata, [NativeTypeName("DWORD")] uint dwProperty);
+        public static extern uint midiStreamProperty(HMIDISTRM hms, [NativeTypeName("LPBYTE")] byte* lppropdata, [NativeTypeName("DWORD")] uint dwProperty);
 
         [DllImport("winmm", ExactSpelling = true)]
         [return: NativeTypeName("MMRESULT")]
-        public static extern uint midiStreamPosition([NativeTypeName("HMIDISTRM")] IntPtr hms, [NativeTypeName("LPMMTIME")] MMTIME* lpmmt, [NativeTypeName("UINT")] uint cbmmt);
+        public static extern uint midiStreamPosition(HMIDISTRM hms, [NativeTypeName("LPMMTIME")] MMTIME* lpmmt, [NativeTypeName("UINT")] uint cbmmt);
 
         [DllImport("winmm", ExactSpelling = true)]
         [return: NativeTypeName("MMRESULT")]
-        public static extern uint midiStreamOut([NativeTypeName("HMIDISTRM")] IntPtr hms, [NativeTypeName("LPMIDIHDR")] MIDIHDR* pmh, [NativeTypeName("UINT")] uint cbmh);
+        public static extern uint midiStreamOut(HMIDISTRM hms, [NativeTypeName("LPMIDIHDR")] MIDIHDR* pmh, [NativeTypeName("UINT")] uint cbmh);
 
         [DllImport("winmm", ExactSpelling = true)]
         [return: NativeTypeName("MMRESULT")]
-        public static extern uint midiStreamPause([NativeTypeName("HMIDISTRM")] IntPtr hms);
+        public static extern uint midiStreamPause(HMIDISTRM hms);
 
         [DllImport("winmm", ExactSpelling = true)]
         [return: NativeTypeName("MMRESULT")]
-        public static extern uint midiStreamRestart([NativeTypeName("HMIDISTRM")] IntPtr hms);
+        public static extern uint midiStreamRestart(HMIDISTRM hms);
 
         [DllImport("winmm", ExactSpelling = true)]
         [return: NativeTypeName("MMRESULT")]
-        public static extern uint midiStreamStop([NativeTypeName("HMIDISTRM")] IntPtr hms);
+        public static extern uint midiStreamStop(HMIDISTRM hms);
 
         [DllImport("winmm", ExactSpelling = true)]
         [return: NativeTypeName("MMRESULT")]
-        public static extern uint midiConnect([NativeTypeName("HMIDI")] IntPtr hmi, [NativeTypeName("HMIDIOUT")] IntPtr hmo, [NativeTypeName("LPVOID")] void* pReserved);
+        public static extern uint midiConnect(HMIDI hmi, HMIDIOUT hmo, [NativeTypeName("LPVOID")] void* pReserved);
 
         [DllImport("winmm", ExactSpelling = true)]
         [return: NativeTypeName("MMRESULT")]
-        public static extern uint midiDisconnect([NativeTypeName("HMIDI")] IntPtr hmi, [NativeTypeName("HMIDIOUT")] IntPtr hmo, [NativeTypeName("LPVOID")] void* pReserved);
+        public static extern uint midiDisconnect(HMIDI hmi, HMIDIOUT hmo, [NativeTypeName("LPVOID")] void* pReserved);
 
         [DllImport("winmm", ExactSpelling = true)]
         [return: NativeTypeName("MMRESULT")]
@@ -220,11 +219,11 @@ namespace TerraFX.Interop
 
         [DllImport("winmm", ExactSpelling = true)]
         [return: NativeTypeName("MMRESULT")]
-        public static extern uint midiOutGetVolume([NativeTypeName("HMIDIOUT")] IntPtr hmo, [NativeTypeName("LPDWORD")] uint* pdwVolume);
+        public static extern uint midiOutGetVolume(HMIDIOUT hmo, [NativeTypeName("LPDWORD")] uint* pdwVolume);
 
         [DllImport("winmm", ExactSpelling = true)]
         [return: NativeTypeName("MMRESULT")]
-        public static extern uint midiOutSetVolume([NativeTypeName("HMIDIOUT")] IntPtr hmo, [NativeTypeName("DWORD")] uint dwVolume);
+        public static extern uint midiOutSetVolume(HMIDIOUT hmo, [NativeTypeName("DWORD")] uint dwVolume);
 
         [DllImport("winmm", ExactSpelling = true)]
         [return: NativeTypeName("MMRESULT")]
@@ -236,47 +235,47 @@ namespace TerraFX.Interop
 
         [DllImport("winmm", ExactSpelling = true)]
         [return: NativeTypeName("MMRESULT")]
-        public static extern uint midiOutOpen([NativeTypeName("LPHMIDIOUT")] IntPtr* phmo, [NativeTypeName("UINT")] uint uDeviceID, [NativeTypeName("DWORD_PTR")] nuint dwCallback, [NativeTypeName("DWORD_PTR")] nuint dwInstance, [NativeTypeName("DWORD")] uint fdwOpen);
+        public static extern uint midiOutOpen([NativeTypeName("LPHMIDIOUT")] HMIDIOUT* phmo, [NativeTypeName("UINT")] uint uDeviceID, [NativeTypeName("DWORD_PTR")] nuint dwCallback, [NativeTypeName("DWORD_PTR")] nuint dwInstance, [NativeTypeName("DWORD")] uint fdwOpen);
 
         [DllImport("winmm", ExactSpelling = true)]
         [return: NativeTypeName("MMRESULT")]
-        public static extern uint midiOutClose([NativeTypeName("HMIDIOUT")] IntPtr hmo);
+        public static extern uint midiOutClose(HMIDIOUT hmo);
 
         [DllImport("winmm", ExactSpelling = true)]
         [return: NativeTypeName("MMRESULT")]
-        public static extern uint midiOutPrepareHeader([NativeTypeName("HMIDIOUT")] IntPtr hmo, [NativeTypeName("LPMIDIHDR")] MIDIHDR* pmh, [NativeTypeName("UINT")] uint cbmh);
+        public static extern uint midiOutPrepareHeader(HMIDIOUT hmo, [NativeTypeName("LPMIDIHDR")] MIDIHDR* pmh, [NativeTypeName("UINT")] uint cbmh);
 
         [DllImport("winmm", ExactSpelling = true)]
         [return: NativeTypeName("MMRESULT")]
-        public static extern uint midiOutUnprepareHeader([NativeTypeName("HMIDIOUT")] IntPtr hmo, [NativeTypeName("LPMIDIHDR")] MIDIHDR* pmh, [NativeTypeName("UINT")] uint cbmh);
+        public static extern uint midiOutUnprepareHeader(HMIDIOUT hmo, [NativeTypeName("LPMIDIHDR")] MIDIHDR* pmh, [NativeTypeName("UINT")] uint cbmh);
 
         [DllImport("winmm", ExactSpelling = true)]
         [return: NativeTypeName("MMRESULT")]
-        public static extern uint midiOutShortMsg([NativeTypeName("HMIDIOUT")] IntPtr hmo, [NativeTypeName("DWORD")] uint dwMsg);
+        public static extern uint midiOutShortMsg(HMIDIOUT hmo, [NativeTypeName("DWORD")] uint dwMsg);
 
         [DllImport("winmm", ExactSpelling = true)]
         [return: NativeTypeName("MMRESULT")]
-        public static extern uint midiOutLongMsg([NativeTypeName("HMIDIOUT")] IntPtr hmo, [NativeTypeName("LPMIDIHDR")] MIDIHDR* pmh, [NativeTypeName("UINT")] uint cbmh);
+        public static extern uint midiOutLongMsg(HMIDIOUT hmo, [NativeTypeName("LPMIDIHDR")] MIDIHDR* pmh, [NativeTypeName("UINT")] uint cbmh);
 
         [DllImport("winmm", ExactSpelling = true)]
         [return: NativeTypeName("MMRESULT")]
-        public static extern uint midiOutReset([NativeTypeName("HMIDIOUT")] IntPtr hmo);
+        public static extern uint midiOutReset(HMIDIOUT hmo);
 
         [DllImport("winmm", ExactSpelling = true)]
         [return: NativeTypeName("MMRESULT")]
-        public static extern uint midiOutCachePatches([NativeTypeName("HMIDIOUT")] IntPtr hmo, [NativeTypeName("UINT")] uint uBank, [NativeTypeName("LPWORD")] ushort* pwpa, [NativeTypeName("UINT")] uint fuCache);
+        public static extern uint midiOutCachePatches(HMIDIOUT hmo, [NativeTypeName("UINT")] uint uBank, [NativeTypeName("LPWORD")] ushort* pwpa, [NativeTypeName("UINT")] uint fuCache);
 
         [DllImport("winmm", ExactSpelling = true)]
         [return: NativeTypeName("MMRESULT")]
-        public static extern uint midiOutCacheDrumPatches([NativeTypeName("HMIDIOUT")] IntPtr hmo, [NativeTypeName("UINT")] uint uPatch, [NativeTypeName("LPWORD")] ushort* pwkya, [NativeTypeName("UINT")] uint fuCache);
+        public static extern uint midiOutCacheDrumPatches(HMIDIOUT hmo, [NativeTypeName("UINT")] uint uPatch, [NativeTypeName("LPWORD")] ushort* pwkya, [NativeTypeName("UINT")] uint fuCache);
 
         [DllImport("winmm", ExactSpelling = true)]
         [return: NativeTypeName("MMRESULT")]
-        public static extern uint midiOutGetID([NativeTypeName("HMIDIOUT")] IntPtr hmo, [NativeTypeName("LPUINT")] uint* puDeviceID);
+        public static extern uint midiOutGetID(HMIDIOUT hmo, [NativeTypeName("LPUINT")] uint* puDeviceID);
 
         [DllImport("winmm", ExactSpelling = true)]
         [return: NativeTypeName("MMRESULT")]
-        public static extern uint midiOutMessage([NativeTypeName("HMIDIOUT")] IntPtr hmo, [NativeTypeName("UINT")] uint uMsg, [NativeTypeName("DWORD_PTR")] nuint dw1, [NativeTypeName("DWORD_PTR")] nuint dw2);
+        public static extern uint midiOutMessage(HMIDIOUT hmo, [NativeTypeName("UINT")] uint uMsg, [NativeTypeName("DWORD_PTR")] nuint dw1, [NativeTypeName("DWORD_PTR")] nuint dw2);
 
         [DllImport("winmm", ExactSpelling = true)]
         [return: NativeTypeName("UINT")]
@@ -300,43 +299,43 @@ namespace TerraFX.Interop
 
         [DllImport("winmm", ExactSpelling = true)]
         [return: NativeTypeName("MMRESULT")]
-        public static extern uint midiInOpen([NativeTypeName("LPHMIDIIN")] IntPtr* phmi, [NativeTypeName("UINT")] uint uDeviceID, [NativeTypeName("DWORD_PTR")] nuint dwCallback, [NativeTypeName("DWORD_PTR")] nuint dwInstance, [NativeTypeName("DWORD")] uint fdwOpen);
+        public static extern uint midiInOpen([NativeTypeName("LPHMIDIIN")] HMIDIIN* phmi, [NativeTypeName("UINT")] uint uDeviceID, [NativeTypeName("DWORD_PTR")] nuint dwCallback, [NativeTypeName("DWORD_PTR")] nuint dwInstance, [NativeTypeName("DWORD")] uint fdwOpen);
 
         [DllImport("winmm", ExactSpelling = true)]
         [return: NativeTypeName("MMRESULT")]
-        public static extern uint midiInClose([NativeTypeName("HMIDIIN")] IntPtr hmi);
+        public static extern uint midiInClose(HMIDIIN hmi);
 
         [DllImport("winmm", ExactSpelling = true)]
         [return: NativeTypeName("MMRESULT")]
-        public static extern uint midiInPrepareHeader([NativeTypeName("HMIDIIN")] IntPtr hmi, [NativeTypeName("LPMIDIHDR")] MIDIHDR* pmh, [NativeTypeName("UINT")] uint cbmh);
+        public static extern uint midiInPrepareHeader(HMIDIIN hmi, [NativeTypeName("LPMIDIHDR")] MIDIHDR* pmh, [NativeTypeName("UINT")] uint cbmh);
 
         [DllImport("winmm", ExactSpelling = true)]
         [return: NativeTypeName("MMRESULT")]
-        public static extern uint midiInUnprepareHeader([NativeTypeName("HMIDIIN")] IntPtr hmi, [NativeTypeName("LPMIDIHDR")] MIDIHDR* pmh, [NativeTypeName("UINT")] uint cbmh);
+        public static extern uint midiInUnprepareHeader(HMIDIIN hmi, [NativeTypeName("LPMIDIHDR")] MIDIHDR* pmh, [NativeTypeName("UINT")] uint cbmh);
 
         [DllImport("winmm", ExactSpelling = true)]
         [return: NativeTypeName("MMRESULT")]
-        public static extern uint midiInAddBuffer([NativeTypeName("HMIDIIN")] IntPtr hmi, [NativeTypeName("LPMIDIHDR")] MIDIHDR* pmh, [NativeTypeName("UINT")] uint cbmh);
+        public static extern uint midiInAddBuffer(HMIDIIN hmi, [NativeTypeName("LPMIDIHDR")] MIDIHDR* pmh, [NativeTypeName("UINT")] uint cbmh);
 
         [DllImport("winmm", ExactSpelling = true)]
         [return: NativeTypeName("MMRESULT")]
-        public static extern uint midiInStart([NativeTypeName("HMIDIIN")] IntPtr hmi);
+        public static extern uint midiInStart(HMIDIIN hmi);
 
         [DllImport("winmm", ExactSpelling = true)]
         [return: NativeTypeName("MMRESULT")]
-        public static extern uint midiInStop([NativeTypeName("HMIDIIN")] IntPtr hmi);
+        public static extern uint midiInStop(HMIDIIN hmi);
 
         [DllImport("winmm", ExactSpelling = true)]
         [return: NativeTypeName("MMRESULT")]
-        public static extern uint midiInReset([NativeTypeName("HMIDIIN")] IntPtr hmi);
+        public static extern uint midiInReset(HMIDIIN hmi);
 
         [DllImport("winmm", ExactSpelling = true)]
         [return: NativeTypeName("MMRESULT")]
-        public static extern uint midiInGetID([NativeTypeName("HMIDIIN")] IntPtr hmi, [NativeTypeName("LPUINT")] uint* puDeviceID);
+        public static extern uint midiInGetID(HMIDIIN hmi, [NativeTypeName("LPUINT")] uint* puDeviceID);
 
         [DllImport("winmm", ExactSpelling = true)]
         [return: NativeTypeName("MMRESULT")]
-        public static extern uint midiInMessage([NativeTypeName("HMIDIIN")] IntPtr hmi, [NativeTypeName("UINT")] uint uMsg, [NativeTypeName("DWORD_PTR")] nuint dw1, [NativeTypeName("DWORD_PTR")] nuint dw2);
+        public static extern uint midiInMessage(HMIDIIN hmi, [NativeTypeName("UINT")] uint uMsg, [NativeTypeName("DWORD_PTR")] nuint dw1, [NativeTypeName("DWORD_PTR")] nuint dw2);
 
         [DllImport("winmm", ExactSpelling = true)]
         [return: NativeTypeName("UINT")]
@@ -376,47 +375,47 @@ namespace TerraFX.Interop
 
         [DllImport("winmm", ExactSpelling = true)]
         [return: NativeTypeName("MMRESULT")]
-        public static extern uint mixerOpen([NativeTypeName("LPHMIXER")] IntPtr* phmx, [NativeTypeName("UINT")] uint uMxId, [NativeTypeName("DWORD_PTR")] nuint dwCallback, [NativeTypeName("DWORD_PTR")] nuint dwInstance, [NativeTypeName("DWORD")] uint fdwOpen);
+        public static extern uint mixerOpen([NativeTypeName("LPHMIXER")] HMIXER* phmx, [NativeTypeName("UINT")] uint uMxId, [NativeTypeName("DWORD_PTR")] nuint dwCallback, [NativeTypeName("DWORD_PTR")] nuint dwInstance, [NativeTypeName("DWORD")] uint fdwOpen);
 
         [DllImport("winmm", ExactSpelling = true)]
         [return: NativeTypeName("MMRESULT")]
-        public static extern uint mixerClose([NativeTypeName("HMIXER")] IntPtr hmx);
+        public static extern uint mixerClose(HMIXER hmx);
 
         [DllImport("winmm", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
-        public static extern uint mixerMessage([NativeTypeName("HMIXER")] IntPtr hmx, [NativeTypeName("UINT")] uint uMsg, [NativeTypeName("DWORD_PTR")] nuint dwParam1, [NativeTypeName("DWORD_PTR")] nuint dwParam2);
+        public static extern uint mixerMessage(HMIXER hmx, [NativeTypeName("UINT")] uint uMsg, [NativeTypeName("DWORD_PTR")] nuint dwParam1, [NativeTypeName("DWORD_PTR")] nuint dwParam2);
 
         [DllImport("winmm", ExactSpelling = true)]
         [return: NativeTypeName("MMRESULT")]
-        public static extern uint mixerGetLineInfoA([NativeTypeName("HMIXEROBJ")] IntPtr hmxobj, [NativeTypeName("LPMIXERLINEA")] MIXERLINEA* pmxl, [NativeTypeName("DWORD")] uint fdwInfo);
+        public static extern uint mixerGetLineInfoA(HMIXEROBJ hmxobj, [NativeTypeName("LPMIXERLINEA")] MIXERLINEA* pmxl, [NativeTypeName("DWORD")] uint fdwInfo);
 
         [DllImport("winmm", ExactSpelling = true)]
         [return: NativeTypeName("MMRESULT")]
-        public static extern uint mixerGetLineInfoW([NativeTypeName("HMIXEROBJ")] IntPtr hmxobj, [NativeTypeName("LPMIXERLINEW")] MIXERLINEW* pmxl, [NativeTypeName("DWORD")] uint fdwInfo);
+        public static extern uint mixerGetLineInfoW(HMIXEROBJ hmxobj, [NativeTypeName("LPMIXERLINEW")] MIXERLINEW* pmxl, [NativeTypeName("DWORD")] uint fdwInfo);
 
         [DllImport("winmm", ExactSpelling = true)]
         [return: NativeTypeName("MMRESULT")]
-        public static extern uint mixerGetID([NativeTypeName("HMIXEROBJ")] IntPtr hmxobj, [NativeTypeName("UINT *")] uint* puMxId, [NativeTypeName("DWORD")] uint fdwId);
+        public static extern uint mixerGetID(HMIXEROBJ hmxobj, [NativeTypeName("UINT *")] uint* puMxId, [NativeTypeName("DWORD")] uint fdwId);
 
         [DllImport("winmm", ExactSpelling = true)]
         [return: NativeTypeName("MMRESULT")]
-        public static extern uint mixerGetLineControlsA([NativeTypeName("HMIXEROBJ")] IntPtr hmxobj, [NativeTypeName("LPMIXERLINECONTROLSA")] MIXERLINECONTROLSA* pmxlc, [NativeTypeName("DWORD")] uint fdwControls);
+        public static extern uint mixerGetLineControlsA(HMIXEROBJ hmxobj, [NativeTypeName("LPMIXERLINECONTROLSA")] MIXERLINECONTROLSA* pmxlc, [NativeTypeName("DWORD")] uint fdwControls);
 
         [DllImport("winmm", ExactSpelling = true)]
         [return: NativeTypeName("MMRESULT")]
-        public static extern uint mixerGetLineControlsW([NativeTypeName("HMIXEROBJ")] IntPtr hmxobj, [NativeTypeName("LPMIXERLINECONTROLSW")] MIXERLINECONTROLSW* pmxlc, [NativeTypeName("DWORD")] uint fdwControls);
+        public static extern uint mixerGetLineControlsW(HMIXEROBJ hmxobj, [NativeTypeName("LPMIXERLINECONTROLSW")] MIXERLINECONTROLSW* pmxlc, [NativeTypeName("DWORD")] uint fdwControls);
 
         [DllImport("winmm", ExactSpelling = true)]
         [return: NativeTypeName("MMRESULT")]
-        public static extern uint mixerGetControlDetailsA([NativeTypeName("HMIXEROBJ")] IntPtr hmxobj, [NativeTypeName("LPMIXERCONTROLDETAILS")] MIXERCONTROLDETAILS* pmxcd, [NativeTypeName("DWORD")] uint fdwDetails);
+        public static extern uint mixerGetControlDetailsA(HMIXEROBJ hmxobj, [NativeTypeName("LPMIXERCONTROLDETAILS")] MIXERCONTROLDETAILS* pmxcd, [NativeTypeName("DWORD")] uint fdwDetails);
 
         [DllImport("winmm", ExactSpelling = true)]
         [return: NativeTypeName("MMRESULT")]
-        public static extern uint mixerGetControlDetailsW([NativeTypeName("HMIXEROBJ")] IntPtr hmxobj, [NativeTypeName("LPMIXERCONTROLDETAILS")] MIXERCONTROLDETAILS* pmxcd, [NativeTypeName("DWORD")] uint fdwDetails);
+        public static extern uint mixerGetControlDetailsW(HMIXEROBJ hmxobj, [NativeTypeName("LPMIXERCONTROLDETAILS")] MIXERCONTROLDETAILS* pmxcd, [NativeTypeName("DWORD")] uint fdwDetails);
 
         [DllImport("winmm", ExactSpelling = true)]
         [return: NativeTypeName("MMRESULT")]
-        public static extern uint mixerSetControlDetails([NativeTypeName("HMIXEROBJ")] IntPtr hmxobj, [NativeTypeName("LPMIXERCONTROLDETAILS")] MIXERCONTROLDETAILS* pmxcd, [NativeTypeName("DWORD")] uint fdwDetails);
+        public static extern uint mixerSetControlDetails(HMIXEROBJ hmxobj, [NativeTypeName("LPMIXERCONTROLDETAILS")] MIXERCONTROLDETAILS* pmxcd, [NativeTypeName("DWORD")] uint fdwDetails);
 
         [NativeTypeName("#define WAVERR_BADFORMAT (WAVERR_BASE + 0)")]
         public const int WAVERR_BADFORMAT = (32 + 0);
@@ -953,7 +952,7 @@ namespace TerraFX.Interop
         public const int MIXERLINE_TARGETTYPE_AUX = 5;
 
         [NativeTypeName("#define mixerGetLineInfo mixerGetLineInfoW")]
-        public static delegate*<IntPtr, MIXERLINEW*, uint, uint> mixerGetLineInfo => &mixerGetLineInfoW;
+        public static delegate*<HMIXEROBJ, MIXERLINEW*, uint, uint> mixerGetLineInfo => &mixerGetLineInfoW;
 
         [NativeTypeName("#define MIXER_GETLINEINFOF_DESTINATION 0x00000000L")]
         public const int MIXER_GETLINEINFOF_DESTINATION = 0x00000000;
@@ -1148,7 +1147,7 @@ namespace TerraFX.Interop
         public const int MIXERCONTROL_CONTROLTYPE_MILLITIME = (0x60000000 | 0x01000000 | 0x00030000);
 
         [NativeTypeName("#define mixerGetLineControls mixerGetLineControlsW")]
-        public static delegate*<IntPtr, MIXERLINECONTROLSW*, uint, uint> mixerGetLineControls => &mixerGetLineControlsW;
+        public static delegate*<HMIXEROBJ, MIXERLINECONTROLSW*, uint, uint> mixerGetLineControls => &mixerGetLineControlsW;
 
         [NativeTypeName("#define MIXER_GETLINECONTROLSF_ALL 0x00000000L")]
         public const int MIXER_GETLINECONTROLSF_ALL = 0x00000000;
@@ -1163,7 +1162,7 @@ namespace TerraFX.Interop
         public const int MIXER_GETLINECONTROLSF_QUERYMASK = 0x0000000F;
 
         [NativeTypeName("#define mixerGetControlDetails mixerGetControlDetailsW")]
-        public static delegate*<IntPtr, MIXERCONTROLDETAILS*, uint, uint> mixerGetControlDetails => &mixerGetControlDetailsW;
+        public static delegate*<HMIXEROBJ, MIXERCONTROLDETAILS*, uint, uint> mixerGetControlDetails => &mixerGetControlDetailsW;
 
         [NativeTypeName("#define MIXER_GETCONTROLDETAILSF_VALUE 0x00000000L")]
         public const int MIXER_GETCONTROLDETAILSF_VALUE = 0x00000000;

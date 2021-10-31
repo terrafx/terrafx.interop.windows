@@ -76,9 +76,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        public HRESULT SetRenderHandle([NativeTypeName("HANDLE")] IntPtr handle)
+        public HRESULT SetRenderHandle(HANDLE handle)
         {
-            return ((delegate* unmanaged<IMFCapturePreviewSink*, IntPtr, int>)(lpVtbl[8]))((IMFCapturePreviewSink*)Unsafe.AsPointer(ref this), handle);
+            return ((delegate* unmanaged<IMFCapturePreviewSink*, HANDLE, int>)(lpVtbl[8]))((IMFCapturePreviewSink*)Unsafe.AsPointer(ref this), handle);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

@@ -48,9 +48,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT Extract([NativeTypeName("PCWSTR")] ushort* pszFile, [NativeTypeName("UINT")] uint nIconIndex, [NativeTypeName("HICON *")] IntPtr* phiconLarge, [NativeTypeName("HICON *")] IntPtr* phiconSmall, [NativeTypeName("UINT")] uint nIconSize)
+        public HRESULT Extract([NativeTypeName("PCWSTR")] ushort* pszFile, [NativeTypeName("UINT")] uint nIconIndex, HICON* phiconLarge, HICON* phiconSmall, [NativeTypeName("UINT")] uint nIconSize)
         {
-            return ((delegate* unmanaged<IExtractIconW*, ushort*, uint, IntPtr*, IntPtr*, uint, int>)(lpVtbl[4]))((IExtractIconW*)Unsafe.AsPointer(ref this), pszFile, nIconIndex, phiconLarge, phiconSmall, nIconSize);
+            return ((delegate* unmanaged<IExtractIconW*, ushort*, uint, HICON*, HICON*, uint, int>)(lpVtbl[4]))((IExtractIconW*)Unsafe.AsPointer(ref this), pszFile, nIconIndex, phiconLarge, phiconSmall, nIconSize);
         }
     }
 }

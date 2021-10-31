@@ -41,9 +41,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        public HRESULT Draw(RECT rcBounds, RECT rcUpdate, [NativeTypeName("LONG")] int lDrawFlags, [NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("LPVOID")] void* pvDrawObject)
+        public HRESULT Draw(RECT rcBounds, RECT rcUpdate, [NativeTypeName("LONG")] int lDrawFlags, HDC hdc, [NativeTypeName("LPVOID")] void* pvDrawObject)
         {
-            return ((delegate* unmanaged<IHTMLPainter*, RECT, RECT, int, IntPtr, void*, int>)(lpVtbl[3]))((IHTMLPainter*)Unsafe.AsPointer(ref this), rcBounds, rcUpdate, lDrawFlags, hdc, pvDrawObject);
+            return ((delegate* unmanaged<IHTMLPainter*, RECT, RECT, int, HDC, void*, int>)(lpVtbl[3]))((IHTMLPainter*)Unsafe.AsPointer(ref this), rcBounds, rcUpdate, lDrawFlags, hdc, pvDrawObject);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

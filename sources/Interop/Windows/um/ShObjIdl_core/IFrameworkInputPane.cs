@@ -48,9 +48,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT AdviseWithHWND([NativeTypeName("HWND")] IntPtr hwnd, IFrameworkInputPaneHandler* pHandler, [NativeTypeName("DWORD *")] uint* pdwCookie)
+        public HRESULT AdviseWithHWND(HWND hwnd, IFrameworkInputPaneHandler* pHandler, [NativeTypeName("DWORD *")] uint* pdwCookie)
         {
-            return ((delegate* unmanaged<IFrameworkInputPane*, IntPtr, IFrameworkInputPaneHandler*, uint*, int>)(lpVtbl[4]))((IFrameworkInputPane*)Unsafe.AsPointer(ref this), hwnd, pHandler, pdwCookie);
+            return ((delegate* unmanaged<IFrameworkInputPane*, HWND, IFrameworkInputPaneHandler*, uint*, int>)(lpVtbl[4]))((IFrameworkInputPane*)Unsafe.AsPointer(ref this), hwnd, pHandler, pdwCookie);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

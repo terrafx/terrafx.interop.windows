@@ -76,16 +76,16 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        public HRESULT MakeWindowAssociation([NativeTypeName("HWND")] IntPtr WindowHandle, [NativeTypeName("UINT")] uint Flags)
+        public HRESULT MakeWindowAssociation(HWND WindowHandle, [NativeTypeName("UINT")] uint Flags)
         {
-            return ((delegate* unmanaged<IDXGIFactory*, IntPtr, uint, int>)(lpVtbl[8]))((IDXGIFactory*)Unsafe.AsPointer(ref this), WindowHandle, Flags);
+            return ((delegate* unmanaged<IDXGIFactory*, HWND, uint, int>)(lpVtbl[8]))((IDXGIFactory*)Unsafe.AsPointer(ref this), WindowHandle, Flags);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        public HRESULT GetWindowAssociation([NativeTypeName("HWND *")] IntPtr* pWindowHandle)
+        public HRESULT GetWindowAssociation(HWND* pWindowHandle)
         {
-            return ((delegate* unmanaged<IDXGIFactory*, IntPtr*, int>)(lpVtbl[9]))((IDXGIFactory*)Unsafe.AsPointer(ref this), pWindowHandle);
+            return ((delegate* unmanaged<IDXGIFactory*, HWND*, int>)(lpVtbl[9]))((IDXGIFactory*)Unsafe.AsPointer(ref this), pWindowHandle);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -97,9 +97,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(11)]
-        public HRESULT CreateSoftwareAdapter([NativeTypeName("HMODULE")] IntPtr Module, IDXGIAdapter** ppAdapter)
+        public HRESULT CreateSoftwareAdapter([NativeTypeName("HMODULE")] HINSTANCE Module, IDXGIAdapter** ppAdapter)
         {
-            return ((delegate* unmanaged<IDXGIFactory*, IntPtr, IDXGIAdapter**, int>)(lpVtbl[11]))((IDXGIFactory*)Unsafe.AsPointer(ref this), Module, ppAdapter);
+            return ((delegate* unmanaged<IDXGIFactory*, HINSTANCE, IDXGIAdapter**, int>)(lpVtbl[11]))((IDXGIFactory*)Unsafe.AsPointer(ref this), Module, ppAdapter);
         }
     }
 }

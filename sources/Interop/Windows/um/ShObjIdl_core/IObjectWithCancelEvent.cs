@@ -41,9 +41,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        public HRESULT GetCancelEvent([NativeTypeName("HANDLE *")] IntPtr* phEvent)
+        public HRESULT GetCancelEvent(HANDLE* phEvent)
         {
-            return ((delegate* unmanaged<IObjectWithCancelEvent*, IntPtr*, int>)(lpVtbl[3]))((IObjectWithCancelEvent*)Unsafe.AsPointer(ref this), phEvent);
+            return ((delegate* unmanaged<IObjectWithCancelEvent*, HANDLE*, int>)(lpVtbl[3]))((IObjectWithCancelEvent*)Unsafe.AsPointer(ref this), phEvent);
         }
     }
 }

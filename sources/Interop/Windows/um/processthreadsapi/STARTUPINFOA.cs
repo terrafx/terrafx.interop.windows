@@ -3,8 +3,6 @@
 // Ported from um/processthreadsapi.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
-
 namespace TerraFX.Interop
 {
     public unsafe partial struct STARTUPINFOA
@@ -54,13 +52,10 @@ namespace TerraFX.Interop
         [NativeTypeName("LPBYTE")]
         public byte* lpReserved2;
 
-        [NativeTypeName("HANDLE")]
-        public IntPtr hStdInput;
+        public HANDLE hStdInput;
 
-        [NativeTypeName("HANDLE")]
-        public IntPtr hStdOutput;
+        public HANDLE hStdOutput;
 
-        [NativeTypeName("HANDLE")]
-        public IntPtr hStdError;
+        public HANDLE hStdError;
     }
 }

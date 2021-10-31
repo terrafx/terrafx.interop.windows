@@ -241,23 +241,23 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(31)]
-        public HRESULT CreateSharedHandle(ID3D12DeviceChild* pObject, [NativeTypeName("const SECURITY_ATTRIBUTES *")] SECURITY_ATTRIBUTES* pAttributes, [NativeTypeName("DWORD")] uint Access, [NativeTypeName("LPCWSTR")] ushort* Name, [NativeTypeName("HANDLE *")] IntPtr* pHandle)
+        public HRESULT CreateSharedHandle(ID3D12DeviceChild* pObject, [NativeTypeName("const SECURITY_ATTRIBUTES *")] SECURITY_ATTRIBUTES* pAttributes, [NativeTypeName("DWORD")] uint Access, [NativeTypeName("LPCWSTR")] ushort* Name, HANDLE* pHandle)
         {
-            return ((delegate* unmanaged<ID3D12Device7*, ID3D12DeviceChild*, SECURITY_ATTRIBUTES*, uint, ushort*, IntPtr*, int>)(lpVtbl[31]))((ID3D12Device7*)Unsafe.AsPointer(ref this), pObject, pAttributes, Access, Name, pHandle);
+            return ((delegate* unmanaged<ID3D12Device7*, ID3D12DeviceChild*, SECURITY_ATTRIBUTES*, uint, ushort*, HANDLE*, int>)(lpVtbl[31]))((ID3D12Device7*)Unsafe.AsPointer(ref this), pObject, pAttributes, Access, Name, pHandle);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(32)]
-        public HRESULT OpenSharedHandle([NativeTypeName("HANDLE")] IntPtr NTHandle, [NativeTypeName("const IID &")] Guid* riid, void** ppvObj)
+        public HRESULT OpenSharedHandle(HANDLE NTHandle, [NativeTypeName("const IID &")] Guid* riid, void** ppvObj)
         {
-            return ((delegate* unmanaged<ID3D12Device7*, IntPtr, Guid*, void**, int>)(lpVtbl[32]))((ID3D12Device7*)Unsafe.AsPointer(ref this), NTHandle, riid, ppvObj);
+            return ((delegate* unmanaged<ID3D12Device7*, HANDLE, Guid*, void**, int>)(lpVtbl[32]))((ID3D12Device7*)Unsafe.AsPointer(ref this), NTHandle, riid, ppvObj);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(33)]
-        public HRESULT OpenSharedHandleByName([NativeTypeName("LPCWSTR")] ushort* Name, [NativeTypeName("DWORD")] uint Access, [NativeTypeName("HANDLE *")] IntPtr* pNTHandle)
+        public HRESULT OpenSharedHandleByName([NativeTypeName("LPCWSTR")] ushort* Name, [NativeTypeName("DWORD")] uint Access, HANDLE* pNTHandle)
         {
-            return ((delegate* unmanaged<ID3D12Device7*, ushort*, uint, IntPtr*, int>)(lpVtbl[33]))((ID3D12Device7*)Unsafe.AsPointer(ref this), Name, Access, pNTHandle);
+            return ((delegate* unmanaged<ID3D12Device7*, ushort*, uint, HANDLE*, int>)(lpVtbl[33]))((ID3D12Device7*)Unsafe.AsPointer(ref this), Name, Access, pNTHandle);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -340,9 +340,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(45)]
-        public HRESULT SetEventOnMultipleFenceCompletion([NativeTypeName("ID3D12Fence *const *")] ID3D12Fence** ppFences, [NativeTypeName("const UINT64 *")] ulong* pFenceValues, [NativeTypeName("UINT")] uint NumFences, D3D12_MULTIPLE_FENCE_WAIT_FLAGS Flags, [NativeTypeName("HANDLE")] IntPtr hEvent)
+        public HRESULT SetEventOnMultipleFenceCompletion([NativeTypeName("ID3D12Fence *const *")] ID3D12Fence** ppFences, [NativeTypeName("const UINT64 *")] ulong* pFenceValues, [NativeTypeName("UINT")] uint NumFences, D3D12_MULTIPLE_FENCE_WAIT_FLAGS Flags, HANDLE hEvent)
         {
-            return ((delegate* unmanaged<ID3D12Device7*, ID3D12Fence**, ulong*, uint, D3D12_MULTIPLE_FENCE_WAIT_FLAGS, IntPtr, int>)(lpVtbl[45]))((ID3D12Device7*)Unsafe.AsPointer(ref this), ppFences, pFenceValues, NumFences, Flags, hEvent);
+            return ((delegate* unmanaged<ID3D12Device7*, ID3D12Fence**, ulong*, uint, D3D12_MULTIPLE_FENCE_WAIT_FLAGS, HANDLE, int>)(lpVtbl[45]))((ID3D12Device7*)Unsafe.AsPointer(ref this), ppFences, pFenceValues, NumFences, Flags, hEvent);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -368,9 +368,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(49)]
-        public HRESULT OpenExistingHeapFromFileMapping([NativeTypeName("HANDLE")] IntPtr hFileMapping, [NativeTypeName("const IID &")] Guid* riid, void** ppvHeap)
+        public HRESULT OpenExistingHeapFromFileMapping(HANDLE hFileMapping, [NativeTypeName("const IID &")] Guid* riid, void** ppvHeap)
         {
-            return ((delegate* unmanaged<ID3D12Device7*, IntPtr, Guid*, void**, int>)(lpVtbl[49]))((ID3D12Device7*)Unsafe.AsPointer(ref this), hFileMapping, riid, ppvHeap);
+            return ((delegate* unmanaged<ID3D12Device7*, HANDLE, Guid*, void**, int>)(lpVtbl[49]))((ID3D12Device7*)Unsafe.AsPointer(ref this), hFileMapping, riid, ppvHeap);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -481,9 +481,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(65)]
-        public HRESULT SetBackgroundProcessingMode(D3D12_BACKGROUND_PROCESSING_MODE Mode, D3D12_MEASUREMENTS_ACTION MeasurementsAction, [NativeTypeName("HANDLE")] IntPtr hEventToSignalUponCompletion, BOOL* pbFurtherMeasurementsDesired)
+        public HRESULT SetBackgroundProcessingMode(D3D12_BACKGROUND_PROCESSING_MODE Mode, D3D12_MEASUREMENTS_ACTION MeasurementsAction, HANDLE hEventToSignalUponCompletion, BOOL* pbFurtherMeasurementsDesired)
         {
-            return ((delegate* unmanaged<ID3D12Device7*, D3D12_BACKGROUND_PROCESSING_MODE, D3D12_MEASUREMENTS_ACTION, IntPtr, BOOL*, int>)(lpVtbl[65]))((ID3D12Device7*)Unsafe.AsPointer(ref this), Mode, MeasurementsAction, hEventToSignalUponCompletion, pbFurtherMeasurementsDesired);
+            return ((delegate* unmanaged<ID3D12Device7*, D3D12_BACKGROUND_PROCESSING_MODE, D3D12_MEASUREMENTS_ACTION, HANDLE, BOOL*, int>)(lpVtbl[65]))((ID3D12Device7*)Unsafe.AsPointer(ref this), Mode, MeasurementsAction, hEventToSignalUponCompletion, pbFurtherMeasurementsDesired);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

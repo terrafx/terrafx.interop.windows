@@ -90,9 +90,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(10)]
-        public HRESULT Logon([NativeTypeName("HANDLE")] IntPtr hCurrentUser)
+        public HRESULT Logon(HANDLE hCurrentUser)
         {
-            return ((delegate* unmanaged<IBPCSatelliteTuner*, IntPtr, int>)(lpVtbl[10]))((IBPCSatelliteTuner*)Unsafe.AsPointer(ref this), hCurrentUser);
+            return ((delegate* unmanaged<IBPCSatelliteTuner*, HANDLE, int>)(lpVtbl[10]))((IBPCSatelliteTuner*)Unsafe.AsPointer(ref this), hCurrentUser);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

@@ -76,7 +76,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public static ulong GetRequiredIntermediateSize([NativeTypeName("ID3D12Resource *")] ID3D12Resource* pDestinationResource, [NativeTypeName("UINT")] uint FirstSubresource, [NativeTypeName("UINT")] uint NumSubresources)
+        public static ulong GetRequiredIntermediateSize(ID3D12Resource* pDestinationResource, [NativeTypeName("UINT")] uint FirstSubresource, [NativeTypeName("UINT")] uint NumSubresources)
         {
             var Desc = pDestinationResource->GetDesc();
             ulong RequiredSize = 0;
@@ -91,7 +91,7 @@ namespace TerraFX.Interop
             return RequiredSize;
         }
 
-        public static ulong UpdateSubresources([NativeTypeName("ID3D12GraphicsCommandList *")] ID3D12GraphicsCommandList* pCmdList, [NativeTypeName("ID3D12Resource *")] ID3D12Resource* pDestinationResource, [NativeTypeName("ID3D12Resource *")] ID3D12Resource* pIntermediate, [NativeTypeName("UINT")] uint FirstSubresource, [NativeTypeName("UINT")] uint NumSubresources, [NativeTypeName("UINT64")] ulong RequiredSize, [NativeTypeName("const D3D12_PLACED_SUBRESOURCE_FOOTPRINT *")] D3D12_PLACED_SUBRESOURCE_FOOTPRINT* pLayouts, [NativeTypeName("const UINT *")] uint* pNumRows, [NativeTypeName("const UINT64 *")] ulong* pRowSizesInBytes, [NativeTypeName("const void *")] void* pResourceData, [NativeTypeName("const D3D12_SUBRESOURCE_INFO *")] D3D12_SUBRESOURCE_INFO* pSrcData)
+        public static ulong UpdateSubresources(ID3D12GraphicsCommandList* pCmdList, ID3D12Resource* pDestinationResource, ID3D12Resource* pIntermediate, [NativeTypeName("UINT")] uint FirstSubresource, [NativeTypeName("UINT")] uint NumSubresources, [NativeTypeName("UINT64")] ulong RequiredSize, [NativeTypeName("const D3D12_PLACED_SUBRESOURCE_FOOTPRINT *")] D3D12_PLACED_SUBRESOURCE_FOOTPRINT* pLayouts, [NativeTypeName("const UINT *")] uint* pNumRows, [NativeTypeName("const UINT64 *")] ulong* pRowSizesInBytes, [NativeTypeName("const void *")] void* pResourceData, [NativeTypeName("const D3D12_SUBRESOURCE_INFO *")] D3D12_SUBRESOURCE_INFO* pSrcData)
         {
             var IntermediateDesc = pIntermediate->GetDesc();
             var DestinationDesc = pDestinationResource->GetDesc();
@@ -141,7 +141,7 @@ namespace TerraFX.Interop
             return RequiredSize;
         }
 
-        public static ulong UpdateSubresources([NativeTypeName("ID3D12GraphicsCommandList *")] ID3D12GraphicsCommandList* pCmdList, [NativeTypeName("ID3D12Resource *")] ID3D12Resource* pDestinationResource, [NativeTypeName("ID3D12Resource *")] ID3D12Resource* pIntermediate, [NativeTypeName("UINT64")] ulong IntermediateOffset, [NativeTypeName("UINT")] uint FirstSubresource, [NativeTypeName("UINT")] uint NumSubresources, [NativeTypeName("D3D12_SUBRESOURCE_DATA *")] D3D12_SUBRESOURCE_DATA* pSrcData)
+        public static ulong UpdateSubresources(ID3D12GraphicsCommandList* pCmdList, ID3D12Resource* pDestinationResource, ID3D12Resource* pIntermediate, [NativeTypeName("UINT64")] ulong IntermediateOffset, [NativeTypeName("UINT")] uint FirstSubresource, [NativeTypeName("UINT")] uint NumSubresources, D3D12_SUBRESOURCE_DATA* pSrcData)
         {
             ulong RequiredSize = 0;
             ulong MemToAlloc = (ulong)(sizeof(D3D12_PLACED_SUBRESOURCE_FOOTPRINT) + sizeof(uint) + sizeof(ulong)) * NumSubresources;
@@ -176,7 +176,7 @@ namespace TerraFX.Interop
             return Result;
         }
 
-        public static ulong UpdateSubresources([NativeTypeName("ID3D12GraphicsCommandList *")] ID3D12GraphicsCommandList* pCmdList, [NativeTypeName("ID3D12Resource *")] ID3D12Resource* pDestinationResource, [NativeTypeName("ID3D12Resource *")] ID3D12Resource* pIntermediate, [NativeTypeName("UINT64")] ulong IntermediateOffset, [NativeTypeName("UINT")] uint FirstSubresource, [NativeTypeName("UINT")] uint NumSubresources, [NativeTypeName("const void *")] void* pResourceData, [NativeTypeName("D3D12_SUBRESOURCE_INFO *")] D3D12_SUBRESOURCE_INFO* pSrcData)
+        public static ulong UpdateSubresources(ID3D12GraphicsCommandList* pCmdList, ID3D12Resource* pDestinationResource, ID3D12Resource* pIntermediate, [NativeTypeName("UINT64")] ulong IntermediateOffset, [NativeTypeName("UINT")] uint FirstSubresource, [NativeTypeName("UINT")] uint NumSubresources, [NativeTypeName("const void *")] void* pResourceData, [NativeTypeName("D3D12_SUBRESOURCE_INFO *")] D3D12_SUBRESOURCE_INFO* pSrcData)
         {
             ulong RequiredSize = 0;
             ulong MemToAlloc = (ulong)(sizeof(D3D12_PLACED_SUBRESOURCE_FOOTPRINT) + sizeof(uint) + sizeof(ulong)) * NumSubresources;
@@ -211,7 +211,7 @@ namespace TerraFX.Interop
             return Result;
         }
 
-        public static ulong UpdateSubresources([NativeTypeName("UINT")] uint MaxSubresources, [NativeTypeName("ID3D12GraphicsCommandList *")] ID3D12GraphicsCommandList* pCmdList, [NativeTypeName("ID3D12Resource *")] ID3D12Resource* pDestinationResource, [NativeTypeName("ID3D12Resource *")] ID3D12Resource* pIntermediate, [NativeTypeName("UINT64")] ulong IntermediateOffset, [NativeTypeName("UINT")] uint FirstSubresource, [NativeTypeName("UINT")] uint NumSubresources, [NativeTypeName("D3D12_SUBRESOURCE_DATA *")] D3D12_SUBRESOURCE_DATA* pSrcData)
+        public static ulong UpdateSubresources([NativeTypeName("UINT")] uint MaxSubresources, ID3D12GraphicsCommandList* pCmdList, ID3D12Resource* pDestinationResource, ID3D12Resource* pIntermediate, [NativeTypeName("UINT64")] ulong IntermediateOffset, [NativeTypeName("UINT")] uint FirstSubresource, [NativeTypeName("UINT")] uint NumSubresources, D3D12_SUBRESOURCE_DATA* pSrcData)
         {
             ulong RequiredSize = 0;
             D3D12_PLACED_SUBRESOURCE_FOOTPRINT* Layouts = stackalloc D3D12_PLACED_SUBRESOURCE_FOOTPRINT[(int)MaxSubresources];
@@ -230,7 +230,7 @@ namespace TerraFX.Interop
             return UpdateSubresources(pCmdList, pDestinationResource, pIntermediate, FirstSubresource, NumSubresources, RequiredSize, Layouts, NumRows, RowSizesInBytes, pSrcData);
         }
 
-        public static ulong UpdateSubresources([NativeTypeName("UINT")] uint MaxSubresources, [NativeTypeName("ID3D12GraphicsCommandList *")] ID3D12GraphicsCommandList* pCmdList, [NativeTypeName("ID3D12Resource *")] ID3D12Resource* pDestinationResource, [NativeTypeName("ID3D12Resource *")] ID3D12Resource* pIntermediate, [NativeTypeName("UINT64")] ulong IntermediateOffset, [NativeTypeName("UINT")] uint FirstSubresource, [NativeTypeName("UINT")] uint NumSubresources, [NativeTypeName("const void *")] void* pResourceData, [NativeTypeName("D3D12_SUBRESOURCE_INFO *")] D3D12_SUBRESOURCE_INFO* pSrcData)
+        public static ulong UpdateSubresources([NativeTypeName("UINT")] uint MaxSubresources, ID3D12GraphicsCommandList* pCmdList, ID3D12Resource* pDestinationResource, ID3D12Resource* pIntermediate, [NativeTypeName("UINT64")] ulong IntermediateOffset, [NativeTypeName("UINT")] uint FirstSubresource, [NativeTypeName("UINT")] uint NumSubresources, [NativeTypeName("const void *")] void* pResourceData, [NativeTypeName("D3D12_SUBRESOURCE_INFO *")] D3D12_SUBRESOURCE_INFO* pSrcData)
         {
             ulong RequiredSize = 0;
             D3D12_PLACED_SUBRESOURCE_FOOTPRINT* Layouts = stackalloc D3D12_PLACED_SUBRESOURCE_FOOTPRINT[(int)MaxSubresources];
@@ -255,7 +255,7 @@ namespace TerraFX.Interop
             return (ID3D12CommandList**)pp;
         }
 
-        public static HRESULT D3D12SerializeVersionedRootSignature([NativeTypeName("const D3D12_VERSIONED_ROOT_SIGNATURE_DESC *")] D3D12_VERSIONED_ROOT_SIGNATURE_DESC* pRootSignatureDesc, D3D_ROOT_SIGNATURE_VERSION MaxVersion, [NativeTypeName("ID3DBlob **")] ID3DBlob** ppBlob, [NativeTypeName("ID3DBlob **")] ID3DBlob** ppErrorBlob)
+        public static HRESULT D3D12SerializeVersionedRootSignature([NativeTypeName("const D3D12_VERSIONED_ROOT_SIGNATURE_DESC *")] D3D12_VERSIONED_ROOT_SIGNATURE_DESC* pRootSignatureDesc, D3D_ROOT_SIGNATURE_VERSION MaxVersion, ID3DBlob** ppBlob, ID3DBlob** ppErrorBlob)
         {
             if (ppErrorBlob != null)
             {

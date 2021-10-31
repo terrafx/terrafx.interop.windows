@@ -97,9 +97,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(11)]
-        public void GetCryptoSessionHandle([NativeTypeName("HANDLE *")] IntPtr* pCryptoSessionHandle)
+        public void GetCryptoSessionHandle(HANDLE* pCryptoSessionHandle)
         {
-            ((delegate* unmanaged<ID3D11CryptoSession*, IntPtr*, void>)(lpVtbl[11]))((ID3D11CryptoSession*)Unsafe.AsPointer(ref this), pCryptoSessionHandle);
+            ((delegate* unmanaged<ID3D11CryptoSession*, HANDLE*, void>)(lpVtbl[11]))((ID3D11CryptoSession*)Unsafe.AsPointer(ref this), pCryptoSessionHandle);
         }
     }
 }

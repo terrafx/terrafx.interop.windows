@@ -48,9 +48,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT InitWindowMessage([NativeTypeName("HWND")] IntPtr hWnd, [NativeTypeName("UINT")] uint Msg, [NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam)
+        public HRESULT InitWindowMessage(HWND hWnd, [NativeTypeName("UINT")] uint Msg, [NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam)
         {
-            return ((delegate* unmanaged<ISpNotifyTranslator*, IntPtr, uint, nuint, nint, int>)(lpVtbl[4]))((ISpNotifyTranslator*)Unsafe.AsPointer(ref this), hWnd, Msg, wParam, lParam);
+            return ((delegate* unmanaged<ISpNotifyTranslator*, HWND, uint, nuint, nint, int>)(lpVtbl[4]))((ISpNotifyTranslator*)Unsafe.AsPointer(ref this), hWnd, Msg, wParam, lParam);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -69,9 +69,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        public HRESULT InitWin32Event([NativeTypeName("HANDLE")] IntPtr hEvent, BOOL fCloseHandleOnRelease)
+        public HRESULT InitWin32Event(HANDLE hEvent, BOOL fCloseHandleOnRelease)
         {
-            return ((delegate* unmanaged<ISpNotifyTranslator*, IntPtr, BOOL, int>)(lpVtbl[7]))((ISpNotifyTranslator*)Unsafe.AsPointer(ref this), hEvent, fCloseHandleOnRelease);
+            return ((delegate* unmanaged<ISpNotifyTranslator*, HANDLE, BOOL, int>)(lpVtbl[7]))((ISpNotifyTranslator*)Unsafe.AsPointer(ref this), hEvent, fCloseHandleOnRelease);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -83,10 +83,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        [return: NativeTypeName("HANDLE")]
-        public IntPtr GetEventHandle()
+        public HANDLE GetEventHandle()
         {
-            return ((delegate* unmanaged<ISpNotifyTranslator*, IntPtr>)(lpVtbl[9]))((ISpNotifyTranslator*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<ISpNotifyTranslator*, nint>)(lpVtbl[9]))((ISpNotifyTranslator*)Unsafe.AsPointer(ref this));
         }
     }
 }

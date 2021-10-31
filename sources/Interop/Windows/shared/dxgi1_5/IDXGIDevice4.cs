@@ -132,9 +132,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(16)]
-        public HRESULT EnqueueSetEvent([NativeTypeName("HANDLE")] IntPtr hEvent)
+        public HRESULT EnqueueSetEvent(HANDLE hEvent)
         {
-            return ((delegate* unmanaged<IDXGIDevice4*, IntPtr, int>)(lpVtbl[16]))((IDXGIDevice4*)Unsafe.AsPointer(ref this), hEvent);
+            return ((delegate* unmanaged<IDXGIDevice4*, HANDLE, int>)(lpVtbl[16]))((IDXGIDevice4*)Unsafe.AsPointer(ref this), hEvent);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

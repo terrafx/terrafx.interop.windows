@@ -506,9 +506,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(57)]
-        public HRESULT BindDC([NativeTypeName("const HDC")] IntPtr hDC, [NativeTypeName("const RECT *")] RECT* pSubRect)
+        public HRESULT BindDC([NativeTypeName("const HDC")] HDC hDC, [NativeTypeName("const RECT *")] RECT* pSubRect)
         {
-            return ((delegate* unmanaged<ID2D1DCRenderTarget*, IntPtr, RECT*, int>)(lpVtbl[57]))((ID2D1DCRenderTarget*)Unsafe.AsPointer(ref this), hDC, pSubRect);
+            return ((delegate* unmanaged<ID2D1DCRenderTarget*, HDC, RECT*, int>)(lpVtbl[57]))((ID2D1DCRenderTarget*)Unsafe.AsPointer(ref this), hDC, pSubRect);
         }
     }
 }

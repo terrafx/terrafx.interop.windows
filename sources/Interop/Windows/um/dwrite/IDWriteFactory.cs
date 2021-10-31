@@ -97,9 +97,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(11)]
-        public HRESULT CreateMonitorRenderingParams([NativeTypeName("HMONITOR")] IntPtr monitor, IDWriteRenderingParams** renderingParams)
+        public HRESULT CreateMonitorRenderingParams(HMONITOR monitor, IDWriteRenderingParams** renderingParams)
         {
-            return ((delegate* unmanaged<IDWriteFactory*, IntPtr, IDWriteRenderingParams**, int>)(lpVtbl[11]))((IDWriteFactory*)Unsafe.AsPointer(ref this), monitor, renderingParams);
+            return ((delegate* unmanaged<IDWriteFactory*, HMONITOR, IDWriteRenderingParams**, int>)(lpVtbl[11]))((IDWriteFactory*)Unsafe.AsPointer(ref this), monitor, renderingParams);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

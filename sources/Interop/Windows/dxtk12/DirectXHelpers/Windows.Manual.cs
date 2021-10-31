@@ -9,7 +9,7 @@ namespace TerraFX.Interop
 {
     public static unsafe partial class Windows
     {
-        public static HRESULT CreateRootSignature([NativeTypeName("ID3D12Device *")] ID3D12Device* device, [NativeTypeName("const D3D12_ROOT_SIGNATURE_DESC *")] D3D12_ROOT_SIGNATURE_DESC* rootSignatureDesc, [NativeTypeName("ID3D12RootSignature **")] ID3D12RootSignature** rootSignature)
+        public static HRESULT CreateRootSignature(ID3D12Device* device, [NativeTypeName("const D3D12_ROOT_SIGNATURE_DESC *")] D3D12_ROOT_SIGNATURE_DESC* rootSignatureDesc, ID3D12RootSignature** rootSignature)
         {
             using ComPtr<ID3DBlob> pSignature = new ComPtr<ID3DBlob>();
             using ComPtr<ID3DBlob> pError = new ComPtr<ID3DBlob>();

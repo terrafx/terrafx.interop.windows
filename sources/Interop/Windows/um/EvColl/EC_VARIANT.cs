@@ -3,7 +3,6 @@
 // Ported from um/EvColl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -107,12 +106,15 @@ namespace TerraFX.Interop
             }
         }
 
-        public ref IntPtr PropertyHandleVal
+        public ref HANDLE PropertyHandleVal
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.PropertyHandleVal, 1));
+                fixed (_Anonymous_e__Union* pField = &Anonymous)
+                {
+                    return ref pField->PropertyHandleVal;
+                }
             }
         }
 
@@ -151,7 +153,7 @@ namespace TerraFX.Interop
 
             [FieldOffset(0)]
             [NativeTypeName("EC_OBJECT_ARRAY_PROPERTY_HANDLE")]
-            public IntPtr PropertyHandleVal;
+            public HANDLE PropertyHandleVal;
         }
     }
 }

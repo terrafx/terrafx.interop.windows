@@ -526,9 +526,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(72)]
-        public HRESULT GetVideoSwapchainHandle([NativeTypeName("HANDLE *")] IntPtr* phSwapchain)
+        public HRESULT GetVideoSwapchainHandle(HANDLE* phSwapchain)
         {
-            return ((delegate* unmanaged<IMFMediaEngineEx*, IntPtr*, int>)(lpVtbl[72]))((IMFMediaEngineEx*)Unsafe.AsPointer(ref this), phSwapchain);
+            return ((delegate* unmanaged<IMFMediaEngineEx*, HANDLE*, int>)(lpVtbl[72]))((IMFMediaEngineEx*)Unsafe.AsPointer(ref this), phSwapchain);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

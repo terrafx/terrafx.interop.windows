@@ -3,7 +3,6 @@
 // Ported from um/winnetwk.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
@@ -28,19 +27,19 @@ namespace TerraFX.Interop
 
         [DllImport("mpr", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
-        public static extern uint WNetAddConnection3A([NativeTypeName("HWND")] IntPtr hwndOwner, [NativeTypeName("LPNETRESOURCEA")] NETRESOURCEA* lpNetResource, [NativeTypeName("LPCSTR")] sbyte* lpPassword, [NativeTypeName("LPCSTR")] sbyte* lpUserName, [NativeTypeName("DWORD")] uint dwFlags);
+        public static extern uint WNetAddConnection3A(HWND hwndOwner, [NativeTypeName("LPNETRESOURCEA")] NETRESOURCEA* lpNetResource, [NativeTypeName("LPCSTR")] sbyte* lpPassword, [NativeTypeName("LPCSTR")] sbyte* lpUserName, [NativeTypeName("DWORD")] uint dwFlags);
 
         [DllImport("mpr", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
-        public static extern uint WNetAddConnection3W([NativeTypeName("HWND")] IntPtr hwndOwner, [NativeTypeName("LPNETRESOURCEW")] NETRESOURCEW* lpNetResource, [NativeTypeName("LPCWSTR")] ushort* lpPassword, [NativeTypeName("LPCWSTR")] ushort* lpUserName, [NativeTypeName("DWORD")] uint dwFlags);
+        public static extern uint WNetAddConnection3W(HWND hwndOwner, [NativeTypeName("LPNETRESOURCEW")] NETRESOURCEW* lpNetResource, [NativeTypeName("LPCWSTR")] ushort* lpPassword, [NativeTypeName("LPCWSTR")] ushort* lpUserName, [NativeTypeName("DWORD")] uint dwFlags);
 
         [DllImport("mpr", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
-        public static extern uint WNetAddConnection4A([NativeTypeName("HWND")] IntPtr hwndOwner, [NativeTypeName("LPNETRESOURCEA")] NETRESOURCEA* lpNetResource, [NativeTypeName("PVOID")] void* pAuthBuffer, [NativeTypeName("DWORD")] uint cbAuthBuffer, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("PBYTE")] byte* lpUseOptions, [NativeTypeName("DWORD")] uint cbUseOptions);
+        public static extern uint WNetAddConnection4A(HWND hwndOwner, [NativeTypeName("LPNETRESOURCEA")] NETRESOURCEA* lpNetResource, [NativeTypeName("PVOID")] void* pAuthBuffer, [NativeTypeName("DWORD")] uint cbAuthBuffer, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("PBYTE")] byte* lpUseOptions, [NativeTypeName("DWORD")] uint cbUseOptions);
 
         [DllImport("mpr", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
-        public static extern uint WNetAddConnection4W([NativeTypeName("HWND")] IntPtr hwndOwner, [NativeTypeName("LPNETRESOURCEW")] NETRESOURCEW* lpNetResource, [NativeTypeName("PVOID")] void* pAuthBuffer, [NativeTypeName("DWORD")] uint cbAuthBuffer, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("PBYTE")] byte* lpUseOptions, [NativeTypeName("DWORD")] uint cbUseOptions);
+        public static extern uint WNetAddConnection4W(HWND hwndOwner, [NativeTypeName("LPNETRESOURCEW")] NETRESOURCEW* lpNetResource, [NativeTypeName("PVOID")] void* pAuthBuffer, [NativeTypeName("DWORD")] uint cbAuthBuffer, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("PBYTE")] byte* lpUseOptions, [NativeTypeName("DWORD")] uint cbUseOptions);
 
         [DllImport("mpr", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
@@ -68,31 +67,31 @@ namespace TerraFX.Interop
 
         [DllImport("mpr", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
-        public static extern uint WNetRestoreSingleConnectionW([NativeTypeName("HWND")] IntPtr hwndParent, [NativeTypeName("LPCWSTR")] ushort* lpDevice, BOOL fUseUI);
+        public static extern uint WNetRestoreSingleConnectionW(HWND hwndParent, [NativeTypeName("LPCWSTR")] ushort* lpDevice, BOOL fUseUI);
 
         [DllImport("mpr", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
-        public static extern uint WNetUseConnectionA([NativeTypeName("HWND")] IntPtr hwndOwner, [NativeTypeName("LPNETRESOURCEA")] NETRESOURCEA* lpNetResource, [NativeTypeName("LPCSTR")] sbyte* lpPassword, [NativeTypeName("LPCSTR")] sbyte* lpUserId, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LPSTR")] sbyte* lpAccessName, [NativeTypeName("LPDWORD")] uint* lpBufferSize, [NativeTypeName("LPDWORD")] uint* lpResult);
+        public static extern uint WNetUseConnectionA(HWND hwndOwner, [NativeTypeName("LPNETRESOURCEA")] NETRESOURCEA* lpNetResource, [NativeTypeName("LPCSTR")] sbyte* lpPassword, [NativeTypeName("LPCSTR")] sbyte* lpUserId, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LPSTR")] sbyte* lpAccessName, [NativeTypeName("LPDWORD")] uint* lpBufferSize, [NativeTypeName("LPDWORD")] uint* lpResult);
 
         [DllImport("mpr", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
-        public static extern uint WNetUseConnectionW([NativeTypeName("HWND")] IntPtr hwndOwner, [NativeTypeName("LPNETRESOURCEW")] NETRESOURCEW* lpNetResource, [NativeTypeName("LPCWSTR")] ushort* lpPassword, [NativeTypeName("LPCWSTR")] ushort* lpUserId, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LPWSTR")] ushort* lpAccessName, [NativeTypeName("LPDWORD")] uint* lpBufferSize, [NativeTypeName("LPDWORD")] uint* lpResult);
+        public static extern uint WNetUseConnectionW(HWND hwndOwner, [NativeTypeName("LPNETRESOURCEW")] NETRESOURCEW* lpNetResource, [NativeTypeName("LPCWSTR")] ushort* lpPassword, [NativeTypeName("LPCWSTR")] ushort* lpUserId, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LPWSTR")] ushort* lpAccessName, [NativeTypeName("LPDWORD")] uint* lpBufferSize, [NativeTypeName("LPDWORD")] uint* lpResult);
 
         [DllImport("mpr", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
-        public static extern uint WNetUseConnection4A([NativeTypeName("HWND")] IntPtr hwndOwner, [NativeTypeName("LPNETRESOURCEA")] NETRESOURCEA* lpNetResource, [NativeTypeName("PVOID")] void* pAuthBuffer, [NativeTypeName("DWORD")] uint cbAuthBuffer, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("PBYTE")] byte* lpUseOptions, [NativeTypeName("DWORD")] uint cbUseOptions, [NativeTypeName("LPSTR")] sbyte* lpAccessName, [NativeTypeName("LPDWORD")] uint* lpBufferSize, [NativeTypeName("LPDWORD")] uint* lpResult);
+        public static extern uint WNetUseConnection4A(HWND hwndOwner, [NativeTypeName("LPNETRESOURCEA")] NETRESOURCEA* lpNetResource, [NativeTypeName("PVOID")] void* pAuthBuffer, [NativeTypeName("DWORD")] uint cbAuthBuffer, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("PBYTE")] byte* lpUseOptions, [NativeTypeName("DWORD")] uint cbUseOptions, [NativeTypeName("LPSTR")] sbyte* lpAccessName, [NativeTypeName("LPDWORD")] uint* lpBufferSize, [NativeTypeName("LPDWORD")] uint* lpResult);
 
         [DllImport("mpr", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
-        public static extern uint WNetUseConnection4W([NativeTypeName("HWND")] IntPtr hwndOwner, [NativeTypeName("LPNETRESOURCEW")] NETRESOURCEW* lpNetResource, [NativeTypeName("PVOID")] void* pAuthBuffer, [NativeTypeName("DWORD")] uint cbAuthBuffer, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("PBYTE")] byte* lpUseOptions, [NativeTypeName("DWORD")] uint cbUseOptions, [NativeTypeName("LPWSTR")] ushort* lpAccessName, [NativeTypeName("LPDWORD")] uint* lpBufferSize, [NativeTypeName("LPDWORD")] uint* lpResult);
+        public static extern uint WNetUseConnection4W(HWND hwndOwner, [NativeTypeName("LPNETRESOURCEW")] NETRESOURCEW* lpNetResource, [NativeTypeName("PVOID")] void* pAuthBuffer, [NativeTypeName("DWORD")] uint cbAuthBuffer, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("PBYTE")] byte* lpUseOptions, [NativeTypeName("DWORD")] uint cbUseOptions, [NativeTypeName("LPWSTR")] ushort* lpAccessName, [NativeTypeName("LPDWORD")] uint* lpBufferSize, [NativeTypeName("LPDWORD")] uint* lpResult);
 
         [DllImport("mpr", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
-        public static extern uint WNetConnectionDialog([NativeTypeName("HWND")] IntPtr hwnd, [NativeTypeName("DWORD")] uint dwType);
+        public static extern uint WNetConnectionDialog(HWND hwnd, [NativeTypeName("DWORD")] uint dwType);
 
         [DllImport("mpr", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
-        public static extern uint WNetDisconnectDialog([NativeTypeName("HWND")] IntPtr hwnd, [NativeTypeName("DWORD")] uint dwType);
+        public static extern uint WNetDisconnectDialog(HWND hwnd, [NativeTypeName("DWORD")] uint dwType);
 
         [DllImport("mpr", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
@@ -112,23 +111,23 @@ namespace TerraFX.Interop
 
         [DllImport("mpr", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
-        public static extern uint WNetOpenEnumA([NativeTypeName("DWORD")] uint dwScope, [NativeTypeName("DWORD")] uint dwType, [NativeTypeName("DWORD")] uint dwUsage, [NativeTypeName("LPNETRESOURCEA")] NETRESOURCEA* lpNetResource, [NativeTypeName("LPHANDLE")] IntPtr* lphEnum);
+        public static extern uint WNetOpenEnumA([NativeTypeName("DWORD")] uint dwScope, [NativeTypeName("DWORD")] uint dwType, [NativeTypeName("DWORD")] uint dwUsage, [NativeTypeName("LPNETRESOURCEA")] NETRESOURCEA* lpNetResource, [NativeTypeName("LPHANDLE")] HANDLE* lphEnum);
 
         [DllImport("mpr", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
-        public static extern uint WNetOpenEnumW([NativeTypeName("DWORD")] uint dwScope, [NativeTypeName("DWORD")] uint dwType, [NativeTypeName("DWORD")] uint dwUsage, [NativeTypeName("LPNETRESOURCEW")] NETRESOURCEW* lpNetResource, [NativeTypeName("LPHANDLE")] IntPtr* lphEnum);
+        public static extern uint WNetOpenEnumW([NativeTypeName("DWORD")] uint dwScope, [NativeTypeName("DWORD")] uint dwType, [NativeTypeName("DWORD")] uint dwUsage, [NativeTypeName("LPNETRESOURCEW")] NETRESOURCEW* lpNetResource, [NativeTypeName("LPHANDLE")] HANDLE* lphEnum);
 
         [DllImport("mpr", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
-        public static extern uint WNetEnumResourceA([NativeTypeName("HANDLE")] IntPtr hEnum, [NativeTypeName("LPDWORD")] uint* lpcCount, [NativeTypeName("LPVOID")] void* lpBuffer, [NativeTypeName("LPDWORD")] uint* lpBufferSize);
+        public static extern uint WNetEnumResourceA(HANDLE hEnum, [NativeTypeName("LPDWORD")] uint* lpcCount, [NativeTypeName("LPVOID")] void* lpBuffer, [NativeTypeName("LPDWORD")] uint* lpBufferSize);
 
         [DllImport("mpr", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
-        public static extern uint WNetEnumResourceW([NativeTypeName("HANDLE")] IntPtr hEnum, [NativeTypeName("LPDWORD")] uint* lpcCount, [NativeTypeName("LPVOID")] void* lpBuffer, [NativeTypeName("LPDWORD")] uint* lpBufferSize);
+        public static extern uint WNetEnumResourceW(HANDLE hEnum, [NativeTypeName("LPDWORD")] uint* lpcCount, [NativeTypeName("LPVOID")] void* lpBuffer, [NativeTypeName("LPDWORD")] uint* lpBufferSize);
 
         [DllImport("mpr", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
-        public static extern uint WNetCloseEnum([NativeTypeName("HANDLE")] IntPtr hEnum);
+        public static extern uint WNetCloseEnum(HANDLE hEnum);
 
         [DllImport("mpr", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
@@ -348,10 +347,10 @@ namespace TerraFX.Interop
         public static delegate*<NETRESOURCEW*, ushort*, ushort*, uint, uint> WNetAddConnection2 => &WNetAddConnection2W;
 
         [NativeTypeName("#define WNetAddConnection3 WNetAddConnection3W")]
-        public static delegate*<IntPtr, NETRESOURCEW*, ushort*, ushort*, uint, uint> WNetAddConnection3 => &WNetAddConnection3W;
+        public static delegate*<HWND, NETRESOURCEW*, ushort*, ushort*, uint, uint> WNetAddConnection3 => &WNetAddConnection3W;
 
         [NativeTypeName("#define WNetAddConnection4 WNetAddConnection4W")]
-        public static delegate*<IntPtr, NETRESOURCEW*, void*, uint, uint, byte*, uint, uint> WNetAddConnection4 => &WNetAddConnection4W;
+        public static delegate*<HWND, NETRESOURCEW*, void*, uint, uint, byte*, uint, uint> WNetAddConnection4 => &WNetAddConnection4W;
 
         [NativeTypeName("#define WNetCancelConnection WNetCancelConnectionW")]
         public static delegate*<ushort*, BOOL, uint> WNetCancelConnection => &WNetCancelConnectionW;
@@ -363,10 +362,10 @@ namespace TerraFX.Interop
         public static delegate*<ushort*, ushort*, uint*, uint> WNetGetConnection => &WNetGetConnectionW;
 
         [NativeTypeName("#define WNetUseConnection WNetUseConnectionW")]
-        public static delegate*<IntPtr, NETRESOURCEW*, ushort*, ushort*, uint, ushort*, uint*, uint*, uint> WNetUseConnection => &WNetUseConnectionW;
+        public static delegate*<HWND, NETRESOURCEW*, ushort*, ushort*, uint, ushort*, uint*, uint*, uint> WNetUseConnection => &WNetUseConnectionW;
 
         [NativeTypeName("#define WNetUseConnection4 WNetUseConnection4W")]
-        public static delegate*<IntPtr, NETRESOURCEW*, void*, uint, uint, byte*, uint, ushort*, uint*, uint*, uint> WNetUseConnection4 => &WNetUseConnection4W;
+        public static delegate*<HWND, NETRESOURCEW*, void*, uint, uint, byte*, uint, ushort*, uint*, uint*, uint> WNetUseConnection4 => &WNetUseConnection4W;
 
         [NativeTypeName("#define CONNDLG_RO_PATH 0x00000001")]
         public const int CONNDLG_RO_PATH = 0x00000001;
@@ -399,10 +398,10 @@ namespace TerraFX.Interop
         public static delegate*<DISCDLGSTRUCTW*, uint> WNetDisconnectDialog1 => &WNetDisconnectDialog1W;
 
         [NativeTypeName("#define WNetOpenEnum WNetOpenEnumW")]
-        public static delegate*<uint, uint, uint, NETRESOURCEW*, IntPtr*, uint> WNetOpenEnum => &WNetOpenEnumW;
+        public static delegate*<uint, uint, uint, NETRESOURCEW*, HANDLE*, uint> WNetOpenEnum => &WNetOpenEnumW;
 
         [NativeTypeName("#define WNetEnumResource WNetEnumResourceW")]
-        public static delegate*<IntPtr, uint*, void*, uint*, uint> WNetEnumResource => &WNetEnumResourceW;
+        public static delegate*<HANDLE, uint*, void*, uint*, uint> WNetEnumResource => &WNetEnumResourceW;
 
         [NativeTypeName("#define WNetGetResourceParent WNetGetResourceParentW")]
         public static delegate*<NETRESOURCEW*, void*, uint*, uint> WNetGetResourceParent => &WNetGetResourceParentW;

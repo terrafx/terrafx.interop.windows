@@ -41,9 +41,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        public HRESULT get_CorrelationVector([NativeTypeName("HSTRING *")] IntPtr* cv)
+        public HRESULT get_CorrelationVector(HSTRING* cv)
         {
-            return ((delegate* unmanaged<ICorrelationVectorSource*, IntPtr*, int>)(lpVtbl[3]))((ICorrelationVectorSource*)Unsafe.AsPointer(ref this), cv);
+            return ((delegate* unmanaged<ICorrelationVectorSource*, HSTRING*, int>)(lpVtbl[3]))((ICorrelationVectorSource*)Unsafe.AsPointer(ref this), cv);
         }
     }
 }

@@ -160,9 +160,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(20)]
-        public HRESULT GetHwnd([NativeTypeName("HWND *")] IntPtr* pHwnd)
+        public HRESULT GetHwnd(HWND* pHwnd)
         {
-            return ((delegate* unmanaged<IDXGISwapChain1*, IntPtr*, int>)(lpVtbl[20]))((IDXGISwapChain1*)Unsafe.AsPointer(ref this), pHwnd);
+            return ((delegate* unmanaged<IDXGISwapChain1*, HWND*, int>)(lpVtbl[20]))((IDXGISwapChain1*)Unsafe.AsPointer(ref this), pHwnd);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

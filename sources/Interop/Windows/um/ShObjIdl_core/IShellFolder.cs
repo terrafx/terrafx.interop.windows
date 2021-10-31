@@ -41,16 +41,16 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        public HRESULT ParseDisplayName([NativeTypeName("HWND")] IntPtr hwnd, IBindCtx* pbc, [NativeTypeName("LPWSTR")] ushort* pszDisplayName, [NativeTypeName("ULONG *")] uint* pchEaten, [NativeTypeName("LPITEMIDLIST *")] ITEMIDLIST** ppidl, [NativeTypeName("ULONG *")] uint* pdwAttributes)
+        public HRESULT ParseDisplayName(HWND hwnd, IBindCtx* pbc, [NativeTypeName("LPWSTR")] ushort* pszDisplayName, [NativeTypeName("ULONG *")] uint* pchEaten, [NativeTypeName("LPITEMIDLIST *")] ITEMIDLIST** ppidl, [NativeTypeName("ULONG *")] uint* pdwAttributes)
         {
-            return ((delegate* unmanaged<IShellFolder*, IntPtr, IBindCtx*, ushort*, uint*, ITEMIDLIST**, uint*, int>)(lpVtbl[3]))((IShellFolder*)Unsafe.AsPointer(ref this), hwnd, pbc, pszDisplayName, pchEaten, ppidl, pdwAttributes);
+            return ((delegate* unmanaged<IShellFolder*, HWND, IBindCtx*, ushort*, uint*, ITEMIDLIST**, uint*, int>)(lpVtbl[3]))((IShellFolder*)Unsafe.AsPointer(ref this), hwnd, pbc, pszDisplayName, pchEaten, ppidl, pdwAttributes);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT EnumObjects([NativeTypeName("HWND")] IntPtr hwnd, [NativeTypeName("SHCONTF")] uint grfFlags, IEnumIDList** ppenumIDList)
+        public HRESULT EnumObjects(HWND hwnd, [NativeTypeName("SHCONTF")] uint grfFlags, IEnumIDList** ppenumIDList)
         {
-            return ((delegate* unmanaged<IShellFolder*, IntPtr, uint, IEnumIDList**, int>)(lpVtbl[4]))((IShellFolder*)Unsafe.AsPointer(ref this), hwnd, grfFlags, ppenumIDList);
+            return ((delegate* unmanaged<IShellFolder*, HWND, uint, IEnumIDList**, int>)(lpVtbl[4]))((IShellFolder*)Unsafe.AsPointer(ref this), hwnd, grfFlags, ppenumIDList);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -76,9 +76,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        public HRESULT CreateViewObject([NativeTypeName("HWND")] IntPtr hwndOwner, [NativeTypeName("const IID &")] Guid* riid, void** ppv)
+        public HRESULT CreateViewObject(HWND hwndOwner, [NativeTypeName("const IID &")] Guid* riid, void** ppv)
         {
-            return ((delegate* unmanaged<IShellFolder*, IntPtr, Guid*, void**, int>)(lpVtbl[8]))((IShellFolder*)Unsafe.AsPointer(ref this), hwndOwner, riid, ppv);
+            return ((delegate* unmanaged<IShellFolder*, HWND, Guid*, void**, int>)(lpVtbl[8]))((IShellFolder*)Unsafe.AsPointer(ref this), hwndOwner, riid, ppv);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -90,9 +90,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(10)]
-        public HRESULT GetUIObjectOf([NativeTypeName("HWND")] IntPtr hwndOwner, [NativeTypeName("UINT")] uint cidl, [NativeTypeName("LPCITEMIDLIST *")] ITEMIDLIST** apidl, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("UINT *")] uint* rgfReserved, void** ppv)
+        public HRESULT GetUIObjectOf(HWND hwndOwner, [NativeTypeName("UINT")] uint cidl, [NativeTypeName("LPCITEMIDLIST *")] ITEMIDLIST** apidl, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("UINT *")] uint* rgfReserved, void** ppv)
         {
-            return ((delegate* unmanaged<IShellFolder*, IntPtr, uint, ITEMIDLIST**, Guid*, uint*, void**, int>)(lpVtbl[10]))((IShellFolder*)Unsafe.AsPointer(ref this), hwndOwner, cidl, apidl, riid, rgfReserved, ppv);
+            return ((delegate* unmanaged<IShellFolder*, HWND, uint, ITEMIDLIST**, Guid*, uint*, void**, int>)(lpVtbl[10]))((IShellFolder*)Unsafe.AsPointer(ref this), hwndOwner, cidl, apidl, riid, rgfReserved, ppv);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -104,9 +104,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(12)]
-        public HRESULT SetNameOf([NativeTypeName("HWND")] IntPtr hwnd, [NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl, [NativeTypeName("LPCWSTR")] ushort* pszName, [NativeTypeName("SHGDNF")] uint uFlags, [NativeTypeName("LPITEMIDLIST *")] ITEMIDLIST** ppidlOut)
+        public HRESULT SetNameOf(HWND hwnd, [NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl, [NativeTypeName("LPCWSTR")] ushort* pszName, [NativeTypeName("SHGDNF")] uint uFlags, [NativeTypeName("LPITEMIDLIST *")] ITEMIDLIST** ppidlOut)
         {
-            return ((delegate* unmanaged<IShellFolder*, IntPtr, ITEMIDLIST*, ushort*, uint, ITEMIDLIST**, int>)(lpVtbl[12]))((IShellFolder*)Unsafe.AsPointer(ref this), hwnd, pidl, pszName, uFlags, ppidlOut);
+            return ((delegate* unmanaged<IShellFolder*, HWND, ITEMIDLIST*, ushort*, uint, ITEMIDLIST**, int>)(lpVtbl[12]))((IShellFolder*)Unsafe.AsPointer(ref this), hwnd, pidl, pszName, uFlags, ppidlOut);
         }
     }
 }

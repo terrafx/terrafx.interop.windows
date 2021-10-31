@@ -41,9 +41,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        public HRESULT Show([NativeTypeName("HWND")] IntPtr hwndOwner)
+        public HRESULT Show(HWND hwndOwner)
         {
-            return ((delegate* unmanaged<IFileSaveDialog*, IntPtr, int>)(lpVtbl[3]))((IFileSaveDialog*)Unsafe.AsPointer(ref this), hwndOwner);
+            return ((delegate* unmanaged<IFileSaveDialog*, HWND, int>)(lpVtbl[3]))((IFileSaveDialog*)Unsafe.AsPointer(ref this), hwndOwner);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -237,9 +237,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(31)]
-        public HRESULT ApplyProperties(IShellItem* psi, IPropertyStore* pStore, [NativeTypeName("HWND")] IntPtr hwnd, IFileOperationProgressSink* pSink)
+        public HRESULT ApplyProperties(IShellItem* psi, IPropertyStore* pStore, HWND hwnd, IFileOperationProgressSink* pSink)
         {
-            return ((delegate* unmanaged<IFileSaveDialog*, IShellItem*, IPropertyStore*, IntPtr, IFileOperationProgressSink*, int>)(lpVtbl[31]))((IFileSaveDialog*)Unsafe.AsPointer(ref this), psi, pStore, hwnd, pSink);
+            return ((delegate* unmanaged<IFileSaveDialog*, IShellItem*, IPropertyStore*, HWND, IFileOperationProgressSink*, int>)(lpVtbl[31]))((IFileSaveDialog*)Unsafe.AsPointer(ref this), psi, pStore, hwnd, pSink);
         }
     }
 }

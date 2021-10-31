@@ -3,7 +3,6 @@
 // Ported from winrt/Wsdevlicensing.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
@@ -14,9 +13,9 @@ namespace TerraFX.Interop
         public static extern HRESULT CheckDeveloperLicense(FILETIME* pExpiration);
 
         [DllImport("wsclient", ExactSpelling = true)]
-        public static extern HRESULT AcquireDeveloperLicense([NativeTypeName("HWND")] IntPtr hwndParent, FILETIME* pExpiration);
+        public static extern HRESULT AcquireDeveloperLicense(HWND hwndParent, FILETIME* pExpiration);
 
         [DllImport("wsclient", ExactSpelling = true)]
-        public static extern HRESULT RemoveDeveloperLicense([NativeTypeName("HWND")] IntPtr hwndParent);
+        public static extern HRESULT RemoveDeveloperLicense(HWND hwndParent);
     }
 }

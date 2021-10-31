@@ -3,8 +3,6 @@
 // Ported from um/WinUser.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
-
 namespace TerraFX.Interop
 {
     public unsafe partial struct MSGBOXPARAMSA
@@ -12,11 +10,9 @@ namespace TerraFX.Interop
         [NativeTypeName("UINT")]
         public uint cbSize;
 
-        [NativeTypeName("HWND")]
-        public IntPtr hwndOwner;
+        public HWND hwndOwner;
 
-        [NativeTypeName("HINSTANCE")]
-        public IntPtr hInstance;
+        public HINSTANCE hInstance;
 
         [NativeTypeName("LPCSTR")]
         public sbyte* lpszText;

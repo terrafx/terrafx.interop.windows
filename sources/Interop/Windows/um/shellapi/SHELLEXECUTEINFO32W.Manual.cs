@@ -18,8 +18,7 @@ namespace TerraFX.Interop
         [NativeTypeName("ULONG")]
         public uint fMask;
 
-        [NativeTypeName("HWND")]
-        public IntPtr hwnd;
+        public HWND hwnd;
 
         [NativeTypeName("LPCWSTR")]
         public ushort* lpVerb;
@@ -35,16 +34,14 @@ namespace TerraFX.Interop
 
         public int nShow;
 
-        [NativeTypeName("HINSTANCE")]
-        public IntPtr hInstApp;
+        public HINSTANCE hInstApp;
 
         public void* lpIDList;
 
         [NativeTypeName("LPCWSTR")]
         public ushort* lpClass;
 
-        [NativeTypeName("HKEY")]
-        public IntPtr hkeyClass;
+        public HKEY hkeyClass;
 
         [NativeTypeName("DWORD")]
         public uint dwHotKey;
@@ -52,8 +49,7 @@ namespace TerraFX.Interop
         [NativeTypeName("_SHELLEXECUTEINFOW::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/shellapi.h:484:5)")]
         public _Anonymous_e__Union Anonymous;
 
-        [NativeTypeName("HANDLE")]
-        public IntPtr hProcess;
+        public HANDLE hProcess;
 
         public ref IntPtr hIcon
         {

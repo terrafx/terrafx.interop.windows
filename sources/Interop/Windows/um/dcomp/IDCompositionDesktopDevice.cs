@@ -188,23 +188,23 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(24)]
-        public HRESULT CreateTargetForHwnd([NativeTypeName("HWND")] IntPtr hwnd, BOOL topmost, IDCompositionTarget** target)
+        public HRESULT CreateTargetForHwnd(HWND hwnd, BOOL topmost, IDCompositionTarget** target)
         {
-            return ((delegate* unmanaged<IDCompositionDesktopDevice*, IntPtr, BOOL, IDCompositionTarget**, int>)(lpVtbl[24]))((IDCompositionDesktopDevice*)Unsafe.AsPointer(ref this), hwnd, topmost, target);
+            return ((delegate* unmanaged<IDCompositionDesktopDevice*, HWND, BOOL, IDCompositionTarget**, int>)(lpVtbl[24]))((IDCompositionDesktopDevice*)Unsafe.AsPointer(ref this), hwnd, topmost, target);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(25)]
-        public HRESULT CreateSurfaceFromHandle([NativeTypeName("HANDLE")] IntPtr handle, IUnknown** surface)
+        public HRESULT CreateSurfaceFromHandle(HANDLE handle, IUnknown** surface)
         {
-            return ((delegate* unmanaged<IDCompositionDesktopDevice*, IntPtr, IUnknown**, int>)(lpVtbl[25]))((IDCompositionDesktopDevice*)Unsafe.AsPointer(ref this), handle, surface);
+            return ((delegate* unmanaged<IDCompositionDesktopDevice*, HANDLE, IUnknown**, int>)(lpVtbl[25]))((IDCompositionDesktopDevice*)Unsafe.AsPointer(ref this), handle, surface);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(26)]
-        public HRESULT CreateSurfaceFromHwnd([NativeTypeName("HWND")] IntPtr hwnd, IUnknown** surface)
+        public HRESULT CreateSurfaceFromHwnd(HWND hwnd, IUnknown** surface)
         {
-            return ((delegate* unmanaged<IDCompositionDesktopDevice*, IntPtr, IUnknown**, int>)(lpVtbl[26]))((IDCompositionDesktopDevice*)Unsafe.AsPointer(ref this), hwnd, surface);
+            return ((delegate* unmanaged<IDCompositionDesktopDevice*, HWND, IUnknown**, int>)(lpVtbl[26]))((IDCompositionDesktopDevice*)Unsafe.AsPointer(ref this), hwnd, surface);
         }
     }
 }

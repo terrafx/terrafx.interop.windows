@@ -112,10 +112,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(13)]
-        [return: NativeTypeName("HANDLE")]
-        public IntPtr GetExpirationEvent()
+        public HANDLE GetExpirationEvent()
         {
-            return ((delegate* unmanaged<IDWriteFontCollection3*, IntPtr>)(lpVtbl[13]))((IDWriteFontCollection3*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IDWriteFontCollection3*, nint>)(lpVtbl[13]))((IDWriteFontCollection3*)Unsafe.AsPointer(ref this));
         }
     }
 }

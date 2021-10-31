@@ -3,14 +3,11 @@
 // Ported from um/wingdi.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
-
 namespace TerraFX.Interop
 {
     public partial struct WGLSWAP
     {
-        [NativeTypeName("HDC")]
-        public IntPtr hdc;
+        public HDC hdc;
 
         [NativeTypeName("UINT")]
         public uint uiFlags;

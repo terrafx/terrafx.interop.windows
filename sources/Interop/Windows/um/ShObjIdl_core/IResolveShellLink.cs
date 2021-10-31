@@ -41,9 +41,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        public HRESULT ResolveShellLink(IUnknown* punkLink, [NativeTypeName("HWND")] IntPtr hwnd, [NativeTypeName("DWORD")] uint fFlags)
+        public HRESULT ResolveShellLink(IUnknown* punkLink, HWND hwnd, [NativeTypeName("DWORD")] uint fFlags)
         {
-            return ((delegate* unmanaged<IResolveShellLink*, IUnknown*, IntPtr, uint, int>)(lpVtbl[3]))((IResolveShellLink*)Unsafe.AsPointer(ref this), punkLink, hwnd, fFlags);
+            return ((delegate* unmanaged<IResolveShellLink*, IUnknown*, HWND, uint, int>)(lpVtbl[3]))((IResolveShellLink*)Unsafe.AsPointer(ref this), punkLink, hwnd, fFlags);
         }
     }
 }

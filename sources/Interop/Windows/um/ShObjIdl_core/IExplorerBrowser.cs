@@ -41,9 +41,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        public HRESULT Initialize([NativeTypeName("HWND")] IntPtr hwndParent, [NativeTypeName("const RECT *")] RECT* prc, [NativeTypeName("const FOLDERSETTINGS *")] FOLDERSETTINGS* pfs)
+        public HRESULT Initialize(HWND hwndParent, [NativeTypeName("const RECT *")] RECT* prc, [NativeTypeName("const FOLDERSETTINGS *")] FOLDERSETTINGS* pfs)
         {
-            return ((delegate* unmanaged<IExplorerBrowser*, IntPtr, RECT*, FOLDERSETTINGS*, int>)(lpVtbl[3]))((IExplorerBrowser*)Unsafe.AsPointer(ref this), hwndParent, prc, pfs);
+            return ((delegate* unmanaged<IExplorerBrowser*, HWND, RECT*, FOLDERSETTINGS*, int>)(lpVtbl[3]))((IExplorerBrowser*)Unsafe.AsPointer(ref this), hwndParent, prc, pfs);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -55,9 +55,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        public HRESULT SetRect([NativeTypeName("HDWP *")] IntPtr* phdwp, RECT rcBrowser)
+        public HRESULT SetRect([NativeTypeName("HDWP *")] HANDLE* phdwp, RECT rcBrowser)
         {
-            return ((delegate* unmanaged<IExplorerBrowser*, IntPtr*, RECT, int>)(lpVtbl[5]))((IExplorerBrowser*)Unsafe.AsPointer(ref this), phdwp, rcBrowser);
+            return ((delegate* unmanaged<IExplorerBrowser*, HANDLE*, RECT, int>)(lpVtbl[5]))((IExplorerBrowser*)Unsafe.AsPointer(ref this), phdwp, rcBrowser);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

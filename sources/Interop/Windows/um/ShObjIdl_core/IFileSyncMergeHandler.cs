@@ -48,9 +48,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT ShowResolveConflictUIAsync([NativeTypeName("LPCWSTR")] ushort* localFilePath, [NativeTypeName("HMONITOR")] IntPtr monitorToDisplayOn)
+        public HRESULT ShowResolveConflictUIAsync([NativeTypeName("LPCWSTR")] ushort* localFilePath, HMONITOR monitorToDisplayOn)
         {
-            return ((delegate* unmanaged<IFileSyncMergeHandler*, ushort*, IntPtr, int>)(lpVtbl[4]))((IFileSyncMergeHandler*)Unsafe.AsPointer(ref this), localFilePath, monitorToDisplayOn);
+            return ((delegate* unmanaged<IFileSyncMergeHandler*, ushort*, HMONITOR, int>)(lpVtbl[4]))((IFileSyncMergeHandler*)Unsafe.AsPointer(ref this), localFilePath, monitorToDisplayOn);
         }
     }
 }

@@ -3,7 +3,6 @@
 // Ported from um/winnt.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -77,12 +76,15 @@ namespace TerraFX.Interop
             }
         }
 
-        public ref IntPtr Handle
+        public ref HANDLE Handle
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous2.Handle, 1));
+                fixed (_Anonymous2_e__Union* pField = &Anonymous2)
+                {
+                    return ref pField->Handle;
+                }
             }
         }
 
@@ -148,8 +150,7 @@ namespace TerraFX.Interop
             public nuint Size;
 
             [FieldOffset(0)]
-            [NativeTypeName("HANDLE")]
-            public IntPtr Handle;
+            public HANDLE Handle;
 
             [FieldOffset(0)]
             [NativeTypeName("DWORD")]

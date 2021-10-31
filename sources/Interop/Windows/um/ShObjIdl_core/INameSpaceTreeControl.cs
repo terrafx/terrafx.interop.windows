@@ -41,9 +41,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        public HRESULT Initialize([NativeTypeName("HWND")] IntPtr hwndParent, RECT* prc, [NativeTypeName("NSTCSTYLE")] uint nsctsFlags)
+        public HRESULT Initialize(HWND hwndParent, RECT* prc, [NativeTypeName("NSTCSTYLE")] uint nsctsFlags)
         {
-            return ((delegate* unmanaged<INameSpaceTreeControl*, IntPtr, RECT*, uint, int>)(lpVtbl[3]))((INameSpaceTreeControl*)Unsafe.AsPointer(ref this), hwndParent, prc, nsctsFlags);
+            return ((delegate* unmanaged<INameSpaceTreeControl*, HWND, RECT*, uint, int>)(lpVtbl[3]))((INameSpaceTreeControl*)Unsafe.AsPointer(ref this), hwndParent, prc, nsctsFlags);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

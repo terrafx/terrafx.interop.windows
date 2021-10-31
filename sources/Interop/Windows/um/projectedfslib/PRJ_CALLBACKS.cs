@@ -16,7 +16,7 @@ namespace TerraFX.Interop
         public delegate* unmanaged<PRJ_CALLBACK_DATA*, Guid*, HRESULT> EndDirectoryEnumerationCallback;
 
         [NativeTypeName("PRJ_GET_DIRECTORY_ENUMERATION_CB *")]
-        public delegate* unmanaged<PRJ_CALLBACK_DATA*, Guid*, ushort*, IntPtr, HRESULT> GetDirectoryEnumerationCallback;
+        public delegate* unmanaged<PRJ_CALLBACK_DATA*, Guid*, ushort*, PRJ_DIR_ENTRY_BUFFER_HANDLE, HRESULT> GetDirectoryEnumerationCallback;
 
         [NativeTypeName("PRJ_GET_PLACEHOLDER_INFO_CB *")]
         public delegate* unmanaged<PRJ_CALLBACK_DATA*, HRESULT> GetPlaceholderInfoCallback;

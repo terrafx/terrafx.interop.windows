@@ -7,11 +7,9 @@ namespace TerraFX.Interop
 {
     public partial struct ParentChildRelation
     {
-        [NativeTypeName("InstanceHandle")]
-        public ulong Parent;
+        public InstanceHandle Parent;
 
-        [NativeTypeName("InstanceHandle")]
-        public ulong Child;
+        public InstanceHandle Child;
 
         [NativeTypeName("unsigned int")]
         public uint ChildIndex;

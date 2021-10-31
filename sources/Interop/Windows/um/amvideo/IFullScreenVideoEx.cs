@@ -95,16 +95,16 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(11)]
-        public HRESULT SetMessageDrain([NativeTypeName("HWND")] IntPtr hwnd)
+        public HRESULT SetMessageDrain(HWND hwnd)
         {
-            return ((delegate* unmanaged<IFullScreenVideoEx*, IntPtr, int>)(lpVtbl[11]))((IFullScreenVideoEx*)Unsafe.AsPointer(ref this), hwnd);
+            return ((delegate* unmanaged<IFullScreenVideoEx*, HWND, int>)(lpVtbl[11]))((IFullScreenVideoEx*)Unsafe.AsPointer(ref this), hwnd);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(12)]
-        public HRESULT GetMessageDrain([NativeTypeName("HWND *")] IntPtr* hwnd)
+        public HRESULT GetMessageDrain(HWND* hwnd)
         {
-            return ((delegate* unmanaged<IFullScreenVideoEx*, IntPtr*, int>)(lpVtbl[12]))((IFullScreenVideoEx*)Unsafe.AsPointer(ref this), hwnd);
+            return ((delegate* unmanaged<IFullScreenVideoEx*, HWND*, int>)(lpVtbl[12]))((IFullScreenVideoEx*)Unsafe.AsPointer(ref this), hwnd);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -158,16 +158,16 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(20)]
-        public HRESULT SetAcceleratorTable([NativeTypeName("HWND")] IntPtr hwnd, [NativeTypeName("HACCEL")] IntPtr hAccel)
+        public HRESULT SetAcceleratorTable(HWND hwnd, HACCEL hAccel)
         {
-            return ((delegate* unmanaged<IFullScreenVideoEx*, IntPtr, IntPtr, int>)(lpVtbl[20]))((IFullScreenVideoEx*)Unsafe.AsPointer(ref this), hwnd, hAccel);
+            return ((delegate* unmanaged<IFullScreenVideoEx*, HWND, HACCEL, int>)(lpVtbl[20]))((IFullScreenVideoEx*)Unsafe.AsPointer(ref this), hwnd, hAccel);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(21)]
-        public HRESULT GetAcceleratorTable([NativeTypeName("HWND *")] IntPtr* phwnd, [NativeTypeName("HACCEL *")] IntPtr* phAccel)
+        public HRESULT GetAcceleratorTable(HWND* phwnd, HACCEL* phAccel)
         {
-            return ((delegate* unmanaged<IFullScreenVideoEx*, IntPtr*, IntPtr*, int>)(lpVtbl[21]))((IFullScreenVideoEx*)Unsafe.AsPointer(ref this), phwnd, phAccel);
+            return ((delegate* unmanaged<IFullScreenVideoEx*, HWND*, HACCEL*, int>)(lpVtbl[21]))((IFullScreenVideoEx*)Unsafe.AsPointer(ref this), phwnd, phAccel);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

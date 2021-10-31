@@ -18,8 +18,7 @@ namespace TerraFX.Interop
         [NativeTypeName("PCCERT_CONTEXT *")]
         public CERT_CONTEXT** paCred;
 
-        [NativeTypeName("HCERTSTORE")]
-        public IntPtr hRootStore;
+        public HCERTSTORE hRootStore;
 
         [NativeTypeName("DWORD")]
         public uint cMappers;

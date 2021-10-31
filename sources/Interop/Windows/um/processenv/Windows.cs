@@ -3,7 +3,6 @@
 // Ported from um/processenv.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
@@ -14,14 +13,13 @@ namespace TerraFX.Interop
         public static extern BOOL SetEnvironmentStringsW([NativeTypeName("LPWCH")] ushort* NewEnvironment);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("HANDLE")]
-        public static extern IntPtr GetStdHandle([NativeTypeName("DWORD")] uint nStdHandle);
+        public static extern HANDLE GetStdHandle([NativeTypeName("DWORD")] uint nStdHandle);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        public static extern BOOL SetStdHandle([NativeTypeName("DWORD")] uint nStdHandle, [NativeTypeName("HANDLE")] IntPtr hHandle);
+        public static extern BOOL SetStdHandle([NativeTypeName("DWORD")] uint nStdHandle, HANDLE hHandle);
 
         [DllImport("api-ms-win-core-processenvironment-l1-1-0", ExactSpelling = true)]
-        public static extern BOOL SetStdHandleEx([NativeTypeName("DWORD")] uint nStdHandle, [NativeTypeName("HANDLE")] IntPtr hHandle, [NativeTypeName("PHANDLE")] IntPtr* phPrevValue);
+        public static extern BOOL SetStdHandleEx([NativeTypeName("DWORD")] uint nStdHandle, HANDLE hHandle, [NativeTypeName("PHANDLE")] HANDLE* phPrevValue);
 
         [DllImport("kernel32", ExactSpelling = true)]
         [return: NativeTypeName("LPSTR")]

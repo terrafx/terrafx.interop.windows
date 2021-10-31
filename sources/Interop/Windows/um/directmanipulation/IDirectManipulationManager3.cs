@@ -41,23 +41,23 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        public HRESULT Activate([NativeTypeName("HWND")] IntPtr window)
+        public HRESULT Activate(HWND window)
         {
-            return ((delegate* unmanaged<IDirectManipulationManager3*, IntPtr, int>)(lpVtbl[3]))((IDirectManipulationManager3*)Unsafe.AsPointer(ref this), window);
+            return ((delegate* unmanaged<IDirectManipulationManager3*, HWND, int>)(lpVtbl[3]))((IDirectManipulationManager3*)Unsafe.AsPointer(ref this), window);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT Deactivate([NativeTypeName("HWND")] IntPtr window)
+        public HRESULT Deactivate(HWND window)
         {
-            return ((delegate* unmanaged<IDirectManipulationManager3*, IntPtr, int>)(lpVtbl[4]))((IDirectManipulationManager3*)Unsafe.AsPointer(ref this), window);
+            return ((delegate* unmanaged<IDirectManipulationManager3*, HWND, int>)(lpVtbl[4]))((IDirectManipulationManager3*)Unsafe.AsPointer(ref this), window);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        public HRESULT RegisterHitTestTarget([NativeTypeName("HWND")] IntPtr window, [NativeTypeName("HWND")] IntPtr hitTestWindow, DIRECTMANIPULATION_HITTEST_TYPE type)
+        public HRESULT RegisterHitTestTarget(HWND window, HWND hitTestWindow, DIRECTMANIPULATION_HITTEST_TYPE type)
         {
-            return ((delegate* unmanaged<IDirectManipulationManager3*, IntPtr, IntPtr, DIRECTMANIPULATION_HITTEST_TYPE, int>)(lpVtbl[5]))((IDirectManipulationManager3*)Unsafe.AsPointer(ref this), window, hitTestWindow, type);
+            return ((delegate* unmanaged<IDirectManipulationManager3*, HWND, HWND, DIRECTMANIPULATION_HITTEST_TYPE, int>)(lpVtbl[5]))((IDirectManipulationManager3*)Unsafe.AsPointer(ref this), window, hitTestWindow, type);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -76,9 +76,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        public HRESULT CreateViewport(IDirectManipulationFrameInfoProvider* frameInfo, [NativeTypeName("HWND")] IntPtr window, [NativeTypeName("const IID &")] Guid* riid, void** @object)
+        public HRESULT CreateViewport(IDirectManipulationFrameInfoProvider* frameInfo, HWND window, [NativeTypeName("const IID &")] Guid* riid, void** @object)
         {
-            return ((delegate* unmanaged<IDirectManipulationManager3*, IDirectManipulationFrameInfoProvider*, IntPtr, Guid*, void**, int>)(lpVtbl[8]))((IDirectManipulationManager3*)Unsafe.AsPointer(ref this), frameInfo, window, riid, @object);
+            return ((delegate* unmanaged<IDirectManipulationManager3*, IDirectManipulationFrameInfoProvider*, HWND, Guid*, void**, int>)(lpVtbl[8]))((IDirectManipulationManager3*)Unsafe.AsPointer(ref this), frameInfo, window, riid, @object);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

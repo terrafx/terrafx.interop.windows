@@ -3377,7 +3377,7 @@ namespace TerraFX.Interop
         }
 
         [DllImport("mf", ExactSpelling = true)]
-        public static extern HRESULT MFCreateVideoRendererActivate([NativeTypeName("HWND")] IntPtr hwndVideo, IMFActivate** ppActivate);
+        public static extern HRESULT MFCreateVideoRendererActivate(HWND hwndVideo, IMFActivate** ppActivate);
 
         [DllImport("mf", ExactSpelling = true)]
         public static extern HRESULT MFCreateMPEG4MediaSink(IMFByteStream* pIByteStream, IMFMediaType* pVideoMediaType, IMFMediaType* pAudioMediaType, IMFMediaSink** ppIMediaSink);

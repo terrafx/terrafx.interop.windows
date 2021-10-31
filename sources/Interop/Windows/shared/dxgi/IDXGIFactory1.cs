@@ -76,16 +76,16 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        public HRESULT MakeWindowAssociation([NativeTypeName("HWND")] IntPtr WindowHandle, [NativeTypeName("UINT")] uint Flags)
+        public HRESULT MakeWindowAssociation(HWND WindowHandle, [NativeTypeName("UINT")] uint Flags)
         {
-            return ((delegate* unmanaged<IDXGIFactory1*, IntPtr, uint, int>)(lpVtbl[8]))((IDXGIFactory1*)Unsafe.AsPointer(ref this), WindowHandle, Flags);
+            return ((delegate* unmanaged<IDXGIFactory1*, HWND, uint, int>)(lpVtbl[8]))((IDXGIFactory1*)Unsafe.AsPointer(ref this), WindowHandle, Flags);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        public HRESULT GetWindowAssociation([NativeTypeName("HWND *")] IntPtr* pWindowHandle)
+        public HRESULT GetWindowAssociation(HWND* pWindowHandle)
         {
-            return ((delegate* unmanaged<IDXGIFactory1*, IntPtr*, int>)(lpVtbl[9]))((IDXGIFactory1*)Unsafe.AsPointer(ref this), pWindowHandle);
+            return ((delegate* unmanaged<IDXGIFactory1*, HWND*, int>)(lpVtbl[9]))((IDXGIFactory1*)Unsafe.AsPointer(ref this), pWindowHandle);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -97,9 +97,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(11)]
-        public HRESULT CreateSoftwareAdapter([NativeTypeName("HMODULE")] IntPtr Module, IDXGIAdapter** ppAdapter)
+        public HRESULT CreateSoftwareAdapter([NativeTypeName("HMODULE")] HINSTANCE Module, IDXGIAdapter** ppAdapter)
         {
-            return ((delegate* unmanaged<IDXGIFactory1*, IntPtr, IDXGIAdapter**, int>)(lpVtbl[11]))((IDXGIFactory1*)Unsafe.AsPointer(ref this), Module, ppAdapter);
+            return ((delegate* unmanaged<IDXGIFactory1*, HINSTANCE, IDXGIAdapter**, int>)(lpVtbl[11]))((IDXGIFactory1*)Unsafe.AsPointer(ref this), Module, ppAdapter);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

@@ -48,9 +48,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT SetAuthenticateData([NativeTypeName("HWND")] IntPtr phwnd, [NativeTypeName("LPCWSTR")] ushort* pwzUsername, [NativeTypeName("LPCWSTR")] ushort* pwzPassword)
+        public HRESULT SetAuthenticateData(HWND phwnd, [NativeTypeName("LPCWSTR")] ushort* pwzUsername, [NativeTypeName("LPCWSTR")] ushort* pwzPassword)
         {
-            return ((delegate* unmanaged<IExtensionServices*, IntPtr, ushort*, ushort*, int>)(lpVtbl[4]))((IExtensionServices*)Unsafe.AsPointer(ref this), phwnd, pwzUsername, pwzPassword);
+            return ((delegate* unmanaged<IExtensionServices*, HWND, ushort*, ushort*, int>)(lpVtbl[4]))((IExtensionServices*)Unsafe.AsPointer(ref this), phwnd, pwzUsername, pwzPassword);
         }
     }
 }

@@ -3,8 +3,6 @@
 // Ported from um/TlHelp32.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
-
 namespace TerraFX.Interop
 {
     public unsafe partial struct MODULEENTRY32W
@@ -31,7 +29,7 @@ namespace TerraFX.Interop
         public uint modBaseSize;
 
         [NativeTypeName("HMODULE")]
-        public IntPtr hModule;
+        public HINSTANCE hModule;
 
         [NativeTypeName("WCHAR [256]")]
         public fixed ushort szModule[256];

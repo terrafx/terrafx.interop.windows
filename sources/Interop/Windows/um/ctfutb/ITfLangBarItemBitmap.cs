@@ -83,9 +83,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        public HRESULT DrawBitmap([NativeTypeName("LONG")] int bmWidth, [NativeTypeName("LONG")] int bmHeight, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("HBITMAP *")] IntPtr* phbmp, [NativeTypeName("HBITMAP *")] IntPtr* phbmpMask)
+        public HRESULT DrawBitmap([NativeTypeName("LONG")] int bmWidth, [NativeTypeName("LONG")] int bmHeight, [NativeTypeName("DWORD")] uint dwFlags, HBITMAP* phbmp, HBITMAP* phbmpMask)
         {
-            return ((delegate* unmanaged<ITfLangBarItemBitmap*, int, int, uint, IntPtr*, IntPtr*, int>)(lpVtbl[9]))((ITfLangBarItemBitmap*)Unsafe.AsPointer(ref this), bmWidth, bmHeight, dwFlags, phbmp, phbmpMask);
+            return ((delegate* unmanaged<ITfLangBarItemBitmap*, int, int, uint, HBITMAP*, HBITMAP*, int>)(lpVtbl[9]))((ITfLangBarItemBitmap*)Unsafe.AsPointer(ref this), bmWidth, bmHeight, dwFlags, phbmp, phbmpMask);
         }
     }
 }

@@ -76,9 +76,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        public HRESULT GetSharedHandle([NativeTypeName("HANDLE *")] IntPtr* pSharedHandle)
+        public HRESULT GetSharedHandle(HANDLE* pSharedHandle)
         {
-            return ((delegate* unmanaged<IDXGIResource*, IntPtr*, int>)(lpVtbl[8]))((IDXGIResource*)Unsafe.AsPointer(ref this), pSharedHandle);
+            return ((delegate* unmanaged<IDXGIResource*, HANDLE*, int>)(lpVtbl[8]))((IDXGIResource*)Unsafe.AsPointer(ref this), pSharedHandle);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

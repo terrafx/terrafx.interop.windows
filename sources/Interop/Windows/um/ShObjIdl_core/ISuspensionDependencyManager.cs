@@ -41,23 +41,23 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        public HRESULT RegisterAsChild([NativeTypeName("HANDLE")] IntPtr processHandle)
+        public HRESULT RegisterAsChild(HANDLE processHandle)
         {
-            return ((delegate* unmanaged<ISuspensionDependencyManager*, IntPtr, int>)(lpVtbl[3]))((ISuspensionDependencyManager*)Unsafe.AsPointer(ref this), processHandle);
+            return ((delegate* unmanaged<ISuspensionDependencyManager*, HANDLE, int>)(lpVtbl[3]))((ISuspensionDependencyManager*)Unsafe.AsPointer(ref this), processHandle);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT GroupChildWithParent([NativeTypeName("HANDLE")] IntPtr childProcessHandle)
+        public HRESULT GroupChildWithParent(HANDLE childProcessHandle)
         {
-            return ((delegate* unmanaged<ISuspensionDependencyManager*, IntPtr, int>)(lpVtbl[4]))((ISuspensionDependencyManager*)Unsafe.AsPointer(ref this), childProcessHandle);
+            return ((delegate* unmanaged<ISuspensionDependencyManager*, HANDLE, int>)(lpVtbl[4]))((ISuspensionDependencyManager*)Unsafe.AsPointer(ref this), childProcessHandle);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        public HRESULT UngroupChildFromParent([NativeTypeName("HANDLE")] IntPtr childProcessHandle)
+        public HRESULT UngroupChildFromParent(HANDLE childProcessHandle)
         {
-            return ((delegate* unmanaged<ISuspensionDependencyManager*, IntPtr, int>)(lpVtbl[5]))((ISuspensionDependencyManager*)Unsafe.AsPointer(ref this), childProcessHandle);
+            return ((delegate* unmanaged<ISuspensionDependencyManager*, HANDLE, int>)(lpVtbl[5]))((ISuspensionDependencyManager*)Unsafe.AsPointer(ref this), childProcessHandle);
         }
     }
 }

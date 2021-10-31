@@ -24,7 +24,6 @@ namespace TerraFX.Interop
         [NativeTypeName("const SHELLVIEWID *")]
         public Guid* pvid;
 
-        [NativeTypeName("HWND")]
-        public IntPtr hwndView;
+        public HWND hwndView;
     }
 }

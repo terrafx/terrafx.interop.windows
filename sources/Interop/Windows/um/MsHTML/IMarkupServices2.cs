@@ -118,9 +118,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(14)]
-        public HRESULT ParseGlobal([NativeTypeName("HGLOBAL")] IntPtr hglobalHTML, [NativeTypeName("DWORD")] uint dwFlags, IMarkupContainer** ppContainerResult, IMarkupPointer* pPointerStart, IMarkupPointer* pPointerFinish)
+        public HRESULT ParseGlobal([NativeTypeName("HGLOBAL")] HANDLE hglobalHTML, [NativeTypeName("DWORD")] uint dwFlags, IMarkupContainer** ppContainerResult, IMarkupPointer* pPointerStart, IMarkupPointer* pPointerFinish)
         {
-            return ((delegate* unmanaged<IMarkupServices2*, IntPtr, uint, IMarkupContainer**, IMarkupPointer*, IMarkupPointer*, int>)(lpVtbl[14]))((IMarkupServices2*)Unsafe.AsPointer(ref this), hglobalHTML, dwFlags, ppContainerResult, pPointerStart, pPointerFinish);
+            return ((delegate* unmanaged<IMarkupServices2*, HANDLE, uint, IMarkupContainer**, IMarkupPointer*, IMarkupPointer*, int>)(lpVtbl[14]))((IMarkupServices2*)Unsafe.AsPointer(ref this), hglobalHTML, dwFlags, ppContainerResult, pPointerStart, pPointerFinish);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -181,9 +181,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(23)]
-        public HRESULT ParseGlobalEx([NativeTypeName("HGLOBAL")] IntPtr hglobalHTML, [NativeTypeName("DWORD")] uint dwFlags, IMarkupContainer* pContext, IMarkupContainer** ppContainerResult, IMarkupPointer* pPointerStart, IMarkupPointer* pPointerFinish)
+        public HRESULT ParseGlobalEx([NativeTypeName("HGLOBAL")] HANDLE hglobalHTML, [NativeTypeName("DWORD")] uint dwFlags, IMarkupContainer* pContext, IMarkupContainer** ppContainerResult, IMarkupPointer* pPointerStart, IMarkupPointer* pPointerFinish)
         {
-            return ((delegate* unmanaged<IMarkupServices2*, IntPtr, uint, IMarkupContainer*, IMarkupContainer**, IMarkupPointer*, IMarkupPointer*, int>)(lpVtbl[23]))((IMarkupServices2*)Unsafe.AsPointer(ref this), hglobalHTML, dwFlags, pContext, ppContainerResult, pPointerStart, pPointerFinish);
+            return ((delegate* unmanaged<IMarkupServices2*, HANDLE, uint, IMarkupContainer*, IMarkupContainer**, IMarkupPointer*, IMarkupPointer*, int>)(lpVtbl[23]))((IMarkupServices2*)Unsafe.AsPointer(ref this), hglobalHTML, dwFlags, pContext, ppContainerResult, pPointerStart, pPointerFinish);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

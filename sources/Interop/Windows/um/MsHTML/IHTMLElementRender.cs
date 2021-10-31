@@ -41,16 +41,16 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        public HRESULT DrawToDC([NativeTypeName("HDC")] IntPtr hDC)
+        public HRESULT DrawToDC(HDC hDC)
         {
-            return ((delegate* unmanaged<IHTMLElementRender*, IntPtr, int>)(lpVtbl[3]))((IHTMLElementRender*)Unsafe.AsPointer(ref this), hDC);
+            return ((delegate* unmanaged<IHTMLElementRender*, HDC, int>)(lpVtbl[3]))((IHTMLElementRender*)Unsafe.AsPointer(ref this), hDC);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT SetDocumentPrinter([NativeTypeName("BSTR")] ushort* bstrPrinterName, [NativeTypeName("HDC")] IntPtr hDC)
+        public HRESULT SetDocumentPrinter([NativeTypeName("BSTR")] ushort* bstrPrinterName, HDC hDC)
         {
-            return ((delegate* unmanaged<IHTMLElementRender*, ushort*, IntPtr, int>)(lpVtbl[4]))((IHTMLElementRender*)Unsafe.AsPointer(ref this), bstrPrinterName, hDC);
+            return ((delegate* unmanaged<IHTMLElementRender*, ushort*, HDC, int>)(lpVtbl[4]))((IHTMLElementRender*)Unsafe.AsPointer(ref this), bstrPrinterName, hDC);
         }
     }
 }

@@ -3,7 +3,6 @@
 // Ported from um/MDMRegistration.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
@@ -29,7 +28,7 @@ namespace TerraFX.Interop
         public static extern HRESULT DiscoverManagementService([NativeTypeName("LPCWSTR")] ushort* pszUPN, [NativeTypeName("PMANAGEMENT_SERVICE_INFO *")] MANAGEMENT_SERVICE_INFO** ppMgmtInfo);
 
         [DllImport("mdmregistration", ExactSpelling = true)]
-        public static extern HRESULT RegisterDeviceWithManagementUsingAADCredentials([NativeTypeName("HANDLE")] IntPtr UserToken);
+        public static extern HRESULT RegisterDeviceWithManagementUsingAADCredentials(HANDLE UserToken);
 
         [DllImport("mdmregistration", ExactSpelling = true)]
         public static extern HRESULT RegisterDeviceWithManagementUsingAADDeviceCredentials();

@@ -3,8 +3,6 @@
 // Ported from um/wincrypt.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
-
 namespace TerraFX.Interop
 {
     public unsafe partial struct CERT_REVOCATION_CHAIN_PARA
@@ -13,10 +11,9 @@ namespace TerraFX.Interop
         public uint cbSize;
 
         [NativeTypeName("HCERTCHAINENGINE")]
-        public IntPtr hChainEngine;
+        public HANDLE hChainEngine;
 
-        [NativeTypeName("HCERTSTORE")]
-        public IntPtr hAdditionalStore;
+        public HCERTSTORE hAdditionalStore;
 
         [NativeTypeName("DWORD")]
         public uint dwChainFlags;

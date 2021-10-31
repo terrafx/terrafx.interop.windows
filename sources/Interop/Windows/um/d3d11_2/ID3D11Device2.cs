@@ -216,9 +216,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(28)]
-        public HRESULT OpenSharedResource([NativeTypeName("HANDLE")] IntPtr hResource, [NativeTypeName("const IID &")] Guid* ReturnedInterface, void** ppResource)
+        public HRESULT OpenSharedResource(HANDLE hResource, [NativeTypeName("const IID &")] Guid* ReturnedInterface, void** ppResource)
         {
-            return ((delegate* unmanaged<ID3D11Device2*, IntPtr, Guid*, void**, int>)(lpVtbl[28]))((ID3D11Device2*)Unsafe.AsPointer(ref this), hResource, ReturnedInterface, ppResource);
+            return ((delegate* unmanaged<ID3D11Device2*, HANDLE, Guid*, void**, int>)(lpVtbl[28]))((ID3D11Device2*)Unsafe.AsPointer(ref this), hResource, ReturnedInterface, ppResource);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -358,9 +358,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(48)]
-        public HRESULT OpenSharedResource1([NativeTypeName("HANDLE")] IntPtr hResource, [NativeTypeName("const IID &")] Guid* returnedInterface, void** ppResource)
+        public HRESULT OpenSharedResource1(HANDLE hResource, [NativeTypeName("const IID &")] Guid* returnedInterface, void** ppResource)
         {
-            return ((delegate* unmanaged<ID3D11Device2*, IntPtr, Guid*, void**, int>)(lpVtbl[48]))((ID3D11Device2*)Unsafe.AsPointer(ref this), hResource, returnedInterface, ppResource);
+            return ((delegate* unmanaged<ID3D11Device2*, HANDLE, Guid*, void**, int>)(lpVtbl[48]))((ID3D11Device2*)Unsafe.AsPointer(ref this), hResource, returnedInterface, ppResource);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

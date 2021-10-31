@@ -3,8 +3,6 @@
 // Ported from shared/dxgi.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
-
 namespace TerraFX.Interop
 {
     public unsafe partial struct DXGI_OUTPUT_DESC
@@ -18,7 +16,6 @@ namespace TerraFX.Interop
 
         public DXGI_MODE_ROTATION Rotation;
 
-        [NativeTypeName("HMONITOR")]
-        public IntPtr Monitor;
+        public HMONITOR Monitor;
     }
 }

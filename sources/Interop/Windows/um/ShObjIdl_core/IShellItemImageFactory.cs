@@ -41,9 +41,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        public HRESULT GetImage(SIZE size, [NativeTypeName("SIIGBF")] int flags, [NativeTypeName("HBITMAP *")] IntPtr* phbm)
+        public HRESULT GetImage(SIZE size, [NativeTypeName("SIIGBF")] int flags, HBITMAP* phbm)
         {
-            return ((delegate* unmanaged<IShellItemImageFactory*, SIZE, int, IntPtr*, int>)(lpVtbl[3]))((IShellItemImageFactory*)Unsafe.AsPointer(ref this), size, flags, phbm);
+            return ((delegate* unmanaged<IShellItemImageFactory*, SIZE, int, HBITMAP*, int>)(lpVtbl[3]))((IShellItemImageFactory*)Unsafe.AsPointer(ref this), size, flags, phbm);
         }
     }
 }

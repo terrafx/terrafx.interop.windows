@@ -90,9 +90,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(10)]
-        public HRESULT Synchronize([NativeTypeName("LPCWSTR *")] ushort** ppszItemIDs, [NativeTypeName("ULONG")] uint cItems, [NativeTypeName("HWND")] IntPtr hwndOwner, ISyncMgrSessionCreator* pSessionCreator, IUnknown* punk)
+        public HRESULT Synchronize([NativeTypeName("LPCWSTR *")] ushort** ppszItemIDs, [NativeTypeName("ULONG")] uint cItems, HWND hwndOwner, ISyncMgrSessionCreator* pSessionCreator, IUnknown* punk)
         {
-            return ((delegate* unmanaged<ISyncMgrHandler*, ushort**, uint, IntPtr, ISyncMgrSessionCreator*, IUnknown*, int>)(lpVtbl[10]))((ISyncMgrHandler*)Unsafe.AsPointer(ref this), ppszItemIDs, cItems, hwndOwner, pSessionCreator, punk);
+            return ((delegate* unmanaged<ISyncMgrHandler*, ushort**, uint, HWND, ISyncMgrSessionCreator*, IUnknown*, int>)(lpVtbl[10]))((ISyncMgrHandler*)Unsafe.AsPointer(ref this), ppszItemIDs, cItems, hwndOwner, pSessionCreator, punk);
         }
     }
 }

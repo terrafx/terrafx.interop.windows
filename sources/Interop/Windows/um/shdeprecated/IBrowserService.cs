@@ -238,9 +238,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(31)]
-        public HRESULT GetPalette([NativeTypeName("HPALETTE *")] IntPtr* hpal)
+        public HRESULT GetPalette(HPALETTE* hpal)
         {
-            return ((delegate* unmanaged<IBrowserService*, IntPtr*, int>)(lpVtbl[31]))((IBrowserService*)Unsafe.AsPointer(ref this), hpal);
+            return ((delegate* unmanaged<IBrowserService*, HPALETTE*, int>)(lpVtbl[31]))((IBrowserService*)Unsafe.AsPointer(ref this), hpal);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

@@ -3,8 +3,6 @@
 // Ported from um/CommCtrl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
-
 namespace TerraFX.Interop
 {
     public partial struct BUTTON_SPLITINFO
@@ -12,8 +10,7 @@ namespace TerraFX.Interop
         [NativeTypeName("UINT")]
         public uint mask;
 
-        [NativeTypeName("HIMAGELIST")]
-        public IntPtr himlGlyph;
+        public HIMAGELIST himlGlyph;
 
         [NativeTypeName("UINT")]
         public uint uSplitStyle;

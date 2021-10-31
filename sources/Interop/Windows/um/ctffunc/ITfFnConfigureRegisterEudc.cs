@@ -48,9 +48,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT Show([NativeTypeName("HWND")] IntPtr hwndParent, [NativeTypeName("LANGID")] ushort langid, [NativeTypeName("const GUID &")] Guid* rguidProfile, [NativeTypeName("BSTR")] ushort* bstrRegistered)
+        public HRESULT Show(HWND hwndParent, [NativeTypeName("LANGID")] ushort langid, [NativeTypeName("const GUID &")] Guid* rguidProfile, [NativeTypeName("BSTR")] ushort* bstrRegistered)
         {
-            return ((delegate* unmanaged<ITfFnConfigureRegisterEudc*, IntPtr, ushort, Guid*, ushort*, int>)(lpVtbl[4]))((ITfFnConfigureRegisterEudc*)Unsafe.AsPointer(ref this), hwndParent, langid, rguidProfile, bstrRegistered);
+            return ((delegate* unmanaged<ITfFnConfigureRegisterEudc*, HWND, ushort, Guid*, ushort*, int>)(lpVtbl[4]))((ITfFnConfigureRegisterEudc*)Unsafe.AsPointer(ref this), hwndParent, langid, rguidProfile, bstrRegistered);
         }
     }
 }

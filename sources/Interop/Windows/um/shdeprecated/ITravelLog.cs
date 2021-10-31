@@ -90,9 +90,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(10)]
-        public HRESULT InsertMenuEntries(IUnknown* punk, [NativeTypeName("HMENU")] IntPtr hmenu, int nPos, int idFirst, int idLast, [NativeTypeName("DWORD")] uint dwFlags)
+        public HRESULT InsertMenuEntries(IUnknown* punk, HMENU hmenu, int nPos, int idFirst, int idLast, [NativeTypeName("DWORD")] uint dwFlags)
         {
-            return ((delegate* unmanaged<ITravelLog*, IUnknown*, IntPtr, int, int, int, uint, int>)(lpVtbl[10]))((ITravelLog*)Unsafe.AsPointer(ref this), punk, hmenu, nPos, idFirst, idLast, dwFlags);
+            return ((delegate* unmanaged<ITravelLog*, IUnknown*, HMENU, int, int, int, uint, int>)(lpVtbl[10]))((ITravelLog*)Unsafe.AsPointer(ref this), punk, hmenu, nPos, idFirst, idLast, dwFlags);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

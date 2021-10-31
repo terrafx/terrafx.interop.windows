@@ -41,9 +41,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        public HRESULT GetWindow([NativeTypeName("HWND *")] IntPtr* phwnd)
+        public HRESULT GetWindow(HWND* phwnd)
         {
-            return ((delegate* unmanaged<IShellBrowser*, IntPtr*, int>)(lpVtbl[3]))((IShellBrowser*)Unsafe.AsPointer(ref this), phwnd);
+            return ((delegate* unmanaged<IShellBrowser*, HWND*, int>)(lpVtbl[3]))((IShellBrowser*)Unsafe.AsPointer(ref this), phwnd);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -55,23 +55,23 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        public HRESULT InsertMenusSB([NativeTypeName("HMENU")] IntPtr hmenuShared, [NativeTypeName("LPOLEMENUGROUPWIDTHS")] OLEMENUGROUPWIDTHS* lpMenuWidths)
+        public HRESULT InsertMenusSB(HMENU hmenuShared, [NativeTypeName("LPOLEMENUGROUPWIDTHS")] OLEMENUGROUPWIDTHS* lpMenuWidths)
         {
-            return ((delegate* unmanaged<IShellBrowser*, IntPtr, OLEMENUGROUPWIDTHS*, int>)(lpVtbl[5]))((IShellBrowser*)Unsafe.AsPointer(ref this), hmenuShared, lpMenuWidths);
+            return ((delegate* unmanaged<IShellBrowser*, HMENU, OLEMENUGROUPWIDTHS*, int>)(lpVtbl[5]))((IShellBrowser*)Unsafe.AsPointer(ref this), hmenuShared, lpMenuWidths);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        public HRESULT SetMenuSB([NativeTypeName("HMENU")] IntPtr hmenuShared, [NativeTypeName("HOLEMENU")] IntPtr holemenuRes, [NativeTypeName("HWND")] IntPtr hwndActiveObject)
+        public HRESULT SetMenuSB(HMENU hmenuShared, [NativeTypeName("HOLEMENU")] HANDLE holemenuRes, HWND hwndActiveObject)
         {
-            return ((delegate* unmanaged<IShellBrowser*, IntPtr, IntPtr, IntPtr, int>)(lpVtbl[6]))((IShellBrowser*)Unsafe.AsPointer(ref this), hmenuShared, holemenuRes, hwndActiveObject);
+            return ((delegate* unmanaged<IShellBrowser*, HMENU, HANDLE, HWND, int>)(lpVtbl[6]))((IShellBrowser*)Unsafe.AsPointer(ref this), hmenuShared, holemenuRes, hwndActiveObject);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        public HRESULT RemoveMenusSB([NativeTypeName("HMENU")] IntPtr hmenuShared)
+        public HRESULT RemoveMenusSB(HMENU hmenuShared)
         {
-            return ((delegate* unmanaged<IShellBrowser*, IntPtr, int>)(lpVtbl[7]))((IShellBrowser*)Unsafe.AsPointer(ref this), hmenuShared);
+            return ((delegate* unmanaged<IShellBrowser*, HMENU, int>)(lpVtbl[7]))((IShellBrowser*)Unsafe.AsPointer(ref this), hmenuShared);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -111,9 +111,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(13)]
-        public HRESULT GetControlWindow([NativeTypeName("UINT")] uint id, [NativeTypeName("HWND *")] IntPtr* phwnd)
+        public HRESULT GetControlWindow([NativeTypeName("UINT")] uint id, HWND* phwnd)
         {
-            return ((delegate* unmanaged<IShellBrowser*, uint, IntPtr*, int>)(lpVtbl[13]))((IShellBrowser*)Unsafe.AsPointer(ref this), id, phwnd);
+            return ((delegate* unmanaged<IShellBrowser*, uint, HWND*, int>)(lpVtbl[13]))((IShellBrowser*)Unsafe.AsPointer(ref this), id, phwnd);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

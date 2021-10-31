@@ -3,7 +3,6 @@
 // Ported from um/ShellScalingApi.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
@@ -14,16 +13,16 @@ namespace TerraFX.Interop
         public static extern DEVICE_SCALE_FACTOR GetScaleFactorForDevice(DISPLAY_DEVICE_TYPE deviceType);
 
         [DllImport("shcore", ExactSpelling = true)]
-        public static extern HRESULT RegisterScaleChangeNotifications(DISPLAY_DEVICE_TYPE displayDevice, [NativeTypeName("HWND")] IntPtr hwndNotify, [NativeTypeName("UINT")] uint uMsgNotify, [NativeTypeName("DWORD *")] uint* pdwCookie);
+        public static extern HRESULT RegisterScaleChangeNotifications(DISPLAY_DEVICE_TYPE displayDevice, HWND hwndNotify, [NativeTypeName("UINT")] uint uMsgNotify, [NativeTypeName("DWORD *")] uint* pdwCookie);
 
         [DllImport("shcore", ExactSpelling = true)]
         public static extern HRESULT RevokeScaleChangeNotifications(DISPLAY_DEVICE_TYPE displayDevice, [NativeTypeName("DWORD")] uint dwCookie);
 
         [DllImport("shcore", ExactSpelling = true)]
-        public static extern HRESULT GetScaleFactorForMonitor([NativeTypeName("HMONITOR")] IntPtr hMon, DEVICE_SCALE_FACTOR* pScale);
+        public static extern HRESULT GetScaleFactorForMonitor(HMONITOR hMon, DEVICE_SCALE_FACTOR* pScale);
 
         [DllImport("shcore", ExactSpelling = true)]
-        public static extern HRESULT RegisterScaleChangeEvent([NativeTypeName("HANDLE")] IntPtr hEvent, [NativeTypeName("DWORD_PTR *")] nuint* pdwCookie);
+        public static extern HRESULT RegisterScaleChangeEvent(HANDLE hEvent, [NativeTypeName("DWORD_PTR *")] nuint* pdwCookie);
 
         [DllImport("shcore", ExactSpelling = true)]
         public static extern HRESULT UnregisterScaleChangeEvent([NativeTypeName("DWORD_PTR")] nuint dwCookie);
@@ -32,10 +31,10 @@ namespace TerraFX.Interop
         public static extern HRESULT SetProcessDpiAwareness(PROCESS_DPI_AWARENESS value);
 
         [DllImport("shcore", ExactSpelling = true)]
-        public static extern HRESULT GetProcessDpiAwareness([NativeTypeName("HANDLE")] IntPtr hprocess, PROCESS_DPI_AWARENESS* value);
+        public static extern HRESULT GetProcessDpiAwareness(HANDLE hprocess, PROCESS_DPI_AWARENESS* value);
 
         [DllImport("shcore", ExactSpelling = true)]
-        public static extern HRESULT GetDpiForMonitor([NativeTypeName("HMONITOR")] IntPtr hmonitor, MONITOR_DPI_TYPE dpiType, [NativeTypeName("UINT *")] uint* dpiX, [NativeTypeName("UINT *")] uint* dpiY);
+        public static extern HRESULT GetDpiForMonitor(HMONITOR hmonitor, MONITOR_DPI_TYPE dpiType, [NativeTypeName("UINT *")] uint* dpiX, [NativeTypeName("UINT *")] uint* dpiY);
 
         [DllImport("shcore", ExactSpelling = true)]
         [return: NativeTypeName("UINT")]

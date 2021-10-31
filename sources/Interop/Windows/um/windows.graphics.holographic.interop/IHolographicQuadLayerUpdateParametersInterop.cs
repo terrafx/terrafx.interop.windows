@@ -48,9 +48,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT GetRuntimeClassName([NativeTypeName("HSTRING *")] IntPtr* className)
+        public HRESULT GetRuntimeClassName(HSTRING* className)
         {
-            return ((delegate* unmanaged<IHolographicQuadLayerUpdateParametersInterop*, IntPtr*, int>)(lpVtbl[4]))((IHolographicQuadLayerUpdateParametersInterop*)Unsafe.AsPointer(ref this), className);
+            return ((delegate* unmanaged<IHolographicQuadLayerUpdateParametersInterop*, HSTRING*, int>)(lpVtbl[4]))((IHolographicQuadLayerUpdateParametersInterop*)Unsafe.AsPointer(ref this), className);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

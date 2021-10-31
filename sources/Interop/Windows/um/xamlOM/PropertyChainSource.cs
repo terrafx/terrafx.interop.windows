@@ -7,8 +7,7 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct PropertyChainSource
     {
-        [NativeTypeName("InstanceHandle")]
-        public ulong Handle;
+        public InstanceHandle Handle;
 
         [NativeTypeName("BSTR")]
         public ushort* TargetType;

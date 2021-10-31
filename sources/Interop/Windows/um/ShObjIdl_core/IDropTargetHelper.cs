@@ -41,9 +41,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        public HRESULT DragEnter([NativeTypeName("HWND")] IntPtr hwndTarget, IDataObject* pDataObject, POINT* ppt, [NativeTypeName("DWORD")] uint dwEffect)
+        public HRESULT DragEnter(HWND hwndTarget, IDataObject* pDataObject, POINT* ppt, [NativeTypeName("DWORD")] uint dwEffect)
         {
-            return ((delegate* unmanaged<IDropTargetHelper*, IntPtr, IDataObject*, POINT*, uint, int>)(lpVtbl[3]))((IDropTargetHelper*)Unsafe.AsPointer(ref this), hwndTarget, pDataObject, ppt, dwEffect);
+            return ((delegate* unmanaged<IDropTargetHelper*, HWND, IDataObject*, POINT*, uint, int>)(lpVtbl[3]))((IDropTargetHelper*)Unsafe.AsPointer(ref this), hwndTarget, pDataObject, ppt, dwEffect);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

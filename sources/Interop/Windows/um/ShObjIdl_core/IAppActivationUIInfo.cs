@@ -41,9 +41,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        public HRESULT GetMonitor([NativeTypeName("HMONITOR *")] IntPtr* value)
+        public HRESULT GetMonitor(HMONITOR* value)
         {
-            return ((delegate* unmanaged<IAppActivationUIInfo*, IntPtr*, int>)(lpVtbl[3]))((IAppActivationUIInfo*)Unsafe.AsPointer(ref this), value);
+            return ((delegate* unmanaged<IAppActivationUIInfo*, HMONITOR*, int>)(lpVtbl[3]))((IAppActivationUIInfo*)Unsafe.AsPointer(ref this), value);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

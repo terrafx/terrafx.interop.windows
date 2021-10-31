@@ -48,9 +48,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT SetSwapChainHandle([NativeTypeName("HANDLE")] IntPtr swapChainHandle)
+        public HRESULT SetSwapChainHandle(HANDLE swapChainHandle)
         {
-            return ((delegate* unmanaged<ISwapChainPanelNative2*, IntPtr, int>)(lpVtbl[4]))((ISwapChainPanelNative2*)Unsafe.AsPointer(ref this), swapChainHandle);
+            return ((delegate* unmanaged<ISwapChainPanelNative2*, HANDLE, int>)(lpVtbl[4]))((ISwapChainPanelNative2*)Unsafe.AsPointer(ref this), swapChainHandle);
         }
     }
 }

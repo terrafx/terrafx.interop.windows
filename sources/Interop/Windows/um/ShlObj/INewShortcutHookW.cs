@@ -41,9 +41,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        public HRESULT SetReferent([NativeTypeName("PCWSTR")] ushort* pcszReferent, [NativeTypeName("HWND")] IntPtr hwnd)
+        public HRESULT SetReferent([NativeTypeName("PCWSTR")] ushort* pcszReferent, HWND hwnd)
         {
-            return ((delegate* unmanaged<INewShortcutHookW*, ushort*, IntPtr, int>)(lpVtbl[3]))((INewShortcutHookW*)Unsafe.AsPointer(ref this), pcszReferent, hwnd);
+            return ((delegate* unmanaged<INewShortcutHookW*, ushort*, HWND, int>)(lpVtbl[3]))((INewShortcutHookW*)Unsafe.AsPointer(ref this), pcszReferent, hwnd);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

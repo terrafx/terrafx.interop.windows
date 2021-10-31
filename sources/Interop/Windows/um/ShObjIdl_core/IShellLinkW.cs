@@ -153,9 +153,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(19)]
-        public HRESULT Resolve([NativeTypeName("HWND")] IntPtr hwnd, [NativeTypeName("DWORD")] uint fFlags)
+        public HRESULT Resolve(HWND hwnd, [NativeTypeName("DWORD")] uint fFlags)
         {
-            return ((delegate* unmanaged<IShellLinkW*, IntPtr, uint, int>)(lpVtbl[19]))((IShellLinkW*)Unsafe.AsPointer(ref this), hwnd, fFlags);
+            return ((delegate* unmanaged<IShellLinkW*, HWND, uint, int>)(lpVtbl[19]))((IShellLinkW*)Unsafe.AsPointer(ref this), hwnd, fFlags);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

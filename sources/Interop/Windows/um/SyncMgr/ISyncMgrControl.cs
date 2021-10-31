@@ -41,23 +41,23 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        public HRESULT StartHandlerSync([NativeTypeName("LPCWSTR")] ushort* pszHandlerID, [NativeTypeName("HWND")] IntPtr hwndOwner, IUnknown* punk, SYNCMGR_SYNC_CONTROL_FLAGS nSyncControlFlags, ISyncMgrSyncResult* pResult)
+        public HRESULT StartHandlerSync([NativeTypeName("LPCWSTR")] ushort* pszHandlerID, HWND hwndOwner, IUnknown* punk, SYNCMGR_SYNC_CONTROL_FLAGS nSyncControlFlags, ISyncMgrSyncResult* pResult)
         {
-            return ((delegate* unmanaged<ISyncMgrControl*, ushort*, IntPtr, IUnknown*, SYNCMGR_SYNC_CONTROL_FLAGS, ISyncMgrSyncResult*, int>)(lpVtbl[3]))((ISyncMgrControl*)Unsafe.AsPointer(ref this), pszHandlerID, hwndOwner, punk, nSyncControlFlags, pResult);
+            return ((delegate* unmanaged<ISyncMgrControl*, ushort*, HWND, IUnknown*, SYNCMGR_SYNC_CONTROL_FLAGS, ISyncMgrSyncResult*, int>)(lpVtbl[3]))((ISyncMgrControl*)Unsafe.AsPointer(ref this), pszHandlerID, hwndOwner, punk, nSyncControlFlags, pResult);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT StartItemSync([NativeTypeName("LPCWSTR")] ushort* pszHandlerID, [NativeTypeName("LPCWSTR *")] ushort** ppszItemIDs, [NativeTypeName("ULONG")] uint cItems, [NativeTypeName("HWND")] IntPtr hwndOwner, IUnknown* punk, SYNCMGR_SYNC_CONTROL_FLAGS nSyncControlFlags, ISyncMgrSyncResult* pResult)
+        public HRESULT StartItemSync([NativeTypeName("LPCWSTR")] ushort* pszHandlerID, [NativeTypeName("LPCWSTR *")] ushort** ppszItemIDs, [NativeTypeName("ULONG")] uint cItems, HWND hwndOwner, IUnknown* punk, SYNCMGR_SYNC_CONTROL_FLAGS nSyncControlFlags, ISyncMgrSyncResult* pResult)
         {
-            return ((delegate* unmanaged<ISyncMgrControl*, ushort*, ushort**, uint, IntPtr, IUnknown*, SYNCMGR_SYNC_CONTROL_FLAGS, ISyncMgrSyncResult*, int>)(lpVtbl[4]))((ISyncMgrControl*)Unsafe.AsPointer(ref this), pszHandlerID, ppszItemIDs, cItems, hwndOwner, punk, nSyncControlFlags, pResult);
+            return ((delegate* unmanaged<ISyncMgrControl*, ushort*, ushort**, uint, HWND, IUnknown*, SYNCMGR_SYNC_CONTROL_FLAGS, ISyncMgrSyncResult*, int>)(lpVtbl[4]))((ISyncMgrControl*)Unsafe.AsPointer(ref this), pszHandlerID, ppszItemIDs, cItems, hwndOwner, punk, nSyncControlFlags, pResult);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        public HRESULT StartSyncAll([NativeTypeName("HWND")] IntPtr hwndOwner)
+        public HRESULT StartSyncAll(HWND hwndOwner)
         {
-            return ((delegate* unmanaged<ISyncMgrControl*, IntPtr, int>)(lpVtbl[5]))((ISyncMgrControl*)Unsafe.AsPointer(ref this), hwndOwner);
+            return ((delegate* unmanaged<ISyncMgrControl*, HWND, int>)(lpVtbl[5]))((ISyncMgrControl*)Unsafe.AsPointer(ref this), hwndOwner);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -125,23 +125,23 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(15)]
-        public HRESULT ActivateHandler(BOOL fActivate, [NativeTypeName("LPCWSTR")] ushort* pszHandlerID, [NativeTypeName("HWND")] IntPtr hwndOwner, SYNCMGR_CONTROL_FLAGS nControlFlags)
+        public HRESULT ActivateHandler(BOOL fActivate, [NativeTypeName("LPCWSTR")] ushort* pszHandlerID, HWND hwndOwner, SYNCMGR_CONTROL_FLAGS nControlFlags)
         {
-            return ((delegate* unmanaged<ISyncMgrControl*, BOOL, ushort*, IntPtr, SYNCMGR_CONTROL_FLAGS, int>)(lpVtbl[15]))((ISyncMgrControl*)Unsafe.AsPointer(ref this), fActivate, pszHandlerID, hwndOwner, nControlFlags);
+            return ((delegate* unmanaged<ISyncMgrControl*, BOOL, ushort*, HWND, SYNCMGR_CONTROL_FLAGS, int>)(lpVtbl[15]))((ISyncMgrControl*)Unsafe.AsPointer(ref this), fActivate, pszHandlerID, hwndOwner, nControlFlags);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(16)]
-        public HRESULT EnableHandler(BOOL fEnable, [NativeTypeName("LPCWSTR")] ushort* pszHandlerID, [NativeTypeName("HWND")] IntPtr hwndOwner, SYNCMGR_CONTROL_FLAGS nControlFlags)
+        public HRESULT EnableHandler(BOOL fEnable, [NativeTypeName("LPCWSTR")] ushort* pszHandlerID, HWND hwndOwner, SYNCMGR_CONTROL_FLAGS nControlFlags)
         {
-            return ((delegate* unmanaged<ISyncMgrControl*, BOOL, ushort*, IntPtr, SYNCMGR_CONTROL_FLAGS, int>)(lpVtbl[16]))((ISyncMgrControl*)Unsafe.AsPointer(ref this), fEnable, pszHandlerID, hwndOwner, nControlFlags);
+            return ((delegate* unmanaged<ISyncMgrControl*, BOOL, ushort*, HWND, SYNCMGR_CONTROL_FLAGS, int>)(lpVtbl[16]))((ISyncMgrControl*)Unsafe.AsPointer(ref this), fEnable, pszHandlerID, hwndOwner, nControlFlags);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(17)]
-        public HRESULT EnableItem(BOOL fEnable, [NativeTypeName("LPCWSTR")] ushort* pszHandlerID, [NativeTypeName("LPCWSTR")] ushort* pszItemID, [NativeTypeName("HWND")] IntPtr hwndOwner, SYNCMGR_CONTROL_FLAGS nControlFlags)
+        public HRESULT EnableItem(BOOL fEnable, [NativeTypeName("LPCWSTR")] ushort* pszHandlerID, [NativeTypeName("LPCWSTR")] ushort* pszItemID, HWND hwndOwner, SYNCMGR_CONTROL_FLAGS nControlFlags)
         {
-            return ((delegate* unmanaged<ISyncMgrControl*, BOOL, ushort*, ushort*, IntPtr, SYNCMGR_CONTROL_FLAGS, int>)(lpVtbl[17]))((ISyncMgrControl*)Unsafe.AsPointer(ref this), fEnable, pszHandlerID, pszItemID, hwndOwner, nControlFlags);
+            return ((delegate* unmanaged<ISyncMgrControl*, BOOL, ushort*, ushort*, HWND, SYNCMGR_CONTROL_FLAGS, int>)(lpVtbl[17]))((ISyncMgrControl*)Unsafe.AsPointer(ref this), fEnable, pszHandlerID, pszItemID, hwndOwner, nControlFlags);
         }
     }
 }

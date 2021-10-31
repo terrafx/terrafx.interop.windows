@@ -10,8 +10,7 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct BASEBROWSERDATA
     {
-        [NativeTypeName("HWND")]
-        public IntPtr _hwnd;
+        public HWND _hwnd;
 
         public ITravelLog* _ptl;
 
@@ -58,8 +57,7 @@ namespace TerraFX.Interop
 
         public IShellFolder* _psf;
 
-        [NativeTypeName("HWND")]
-        public IntPtr _hwndView;
+        public HWND _hwndView;
 
         [NativeTypeName("LPWSTR")]
         public ushort* _pszTitleCur;
@@ -71,8 +69,7 @@ namespace TerraFX.Interop
 
         public IShellFolder* _psfPending;
 
-        [NativeTypeName("HWND")]
-        public IntPtr _hwndViewPending;
+        public HWND _hwndViewPending;
 
         [NativeTypeName("LPWSTR")]
         public ushort* _pszTitlePending;
@@ -87,8 +84,7 @@ namespace TerraFX.Interop
         [NativeTypeName("CLSID")]
         public Guid _clsidViewPending;
 
-        [NativeTypeName("HWND")]
-        public IntPtr _hwndFrame;
+        public HWND _hwndFrame;
 
         [NativeTypeName("LONG")]
         public int _lPhishingFilterStatus;

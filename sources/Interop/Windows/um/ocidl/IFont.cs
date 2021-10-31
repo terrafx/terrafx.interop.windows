@@ -153,9 +153,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(19)]
-        public HRESULT get_hFont([NativeTypeName("HFONT *")] IntPtr* phFont)
+        public HRESULT get_hFont(HFONT* phFont)
         {
-            return ((delegate* unmanaged<IFont*, IntPtr*, int>)(lpVtbl[19]))((IFont*)Unsafe.AsPointer(ref this), phFont);
+            return ((delegate* unmanaged<IFont*, HFONT*, int>)(lpVtbl[19]))((IFont*)Unsafe.AsPointer(ref this), phFont);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -188,23 +188,23 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(24)]
-        public HRESULT AddRefHfont([NativeTypeName("HFONT")] IntPtr hFont)
+        public HRESULT AddRefHfont(HFONT hFont)
         {
-            return ((delegate* unmanaged<IFont*, IntPtr, int>)(lpVtbl[24]))((IFont*)Unsafe.AsPointer(ref this), hFont);
+            return ((delegate* unmanaged<IFont*, HFONT, int>)(lpVtbl[24]))((IFont*)Unsafe.AsPointer(ref this), hFont);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(25)]
-        public HRESULT ReleaseHfont([NativeTypeName("HFONT")] IntPtr hFont)
+        public HRESULT ReleaseHfont(HFONT hFont)
         {
-            return ((delegate* unmanaged<IFont*, IntPtr, int>)(lpVtbl[25]))((IFont*)Unsafe.AsPointer(ref this), hFont);
+            return ((delegate* unmanaged<IFont*, HFONT, int>)(lpVtbl[25]))((IFont*)Unsafe.AsPointer(ref this), hFont);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(26)]
-        public HRESULT SetHdc([NativeTypeName("HDC")] IntPtr hDC)
+        public HRESULT SetHdc(HDC hDC)
         {
-            return ((delegate* unmanaged<IFont*, IntPtr, int>)(lpVtbl[26]))((IFont*)Unsafe.AsPointer(ref this), hDC);
+            return ((delegate* unmanaged<IFont*, HDC, int>)(lpVtbl[26]))((IFont*)Unsafe.AsPointer(ref this), hDC);
         }
     }
 }

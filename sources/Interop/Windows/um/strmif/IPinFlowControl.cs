@@ -41,9 +41,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        public HRESULT Block([NativeTypeName("DWORD")] uint dwBlockFlags, [NativeTypeName("HANDLE")] IntPtr hEvent)
+        public HRESULT Block([NativeTypeName("DWORD")] uint dwBlockFlags, HANDLE hEvent)
         {
-            return ((delegate* unmanaged<IPinFlowControl*, uint, IntPtr, int>)(lpVtbl[3]))((IPinFlowControl*)Unsafe.AsPointer(ref this), dwBlockFlags, hEvent);
+            return ((delegate* unmanaged<IPinFlowControl*, uint, HANDLE, int>)(lpVtbl[3]))((IPinFlowControl*)Unsafe.AsPointer(ref this), dwBlockFlags, hEvent);
         }
     }
 }

@@ -48,9 +48,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT NotifyEndOfStream([NativeTypeName("HANDLE")] IntPtr hNotifyEvent)
+        public HRESULT NotifyEndOfStream(HANDLE hNotifyEvent)
         {
-            return ((delegate* unmanaged<IPinConnection*, IntPtr, int>)(lpVtbl[4]))((IPinConnection*)Unsafe.AsPointer(ref this), hNotifyEvent);
+            return ((delegate* unmanaged<IPinConnection*, HANDLE, int>)(lpVtbl[4]))((IPinConnection*)Unsafe.AsPointer(ref this), hNotifyEvent);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

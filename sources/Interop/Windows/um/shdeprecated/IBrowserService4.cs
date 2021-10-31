@@ -238,9 +238,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(31)]
-        public HRESULT GetPalette([NativeTypeName("HPALETTE *")] IntPtr* hpal)
+        public HRESULT GetPalette(HPALETTE* hpal)
         {
-            return ((delegate* unmanaged<IBrowserService4*, IntPtr*, int>)(lpVtbl[31]))((IBrowserService4*)Unsafe.AsPointer(ref this), hpal);
+            return ((delegate* unmanaged<IBrowserService4*, HPALETTE*, int>)(lpVtbl[31]))((IBrowserService4*)Unsafe.AsPointer(ref this), hpal);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -253,9 +253,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(33)]
         [return: NativeTypeName("LRESULT")]
-        public nint WndProcBS([NativeTypeName("HWND")] IntPtr hwnd, [NativeTypeName("UINT")] uint uMsg, [NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam)
+        public nint WndProcBS(HWND hwnd, [NativeTypeName("UINT")] uint uMsg, [NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam)
         {
-            return ((delegate* unmanaged<IBrowserService4*, IntPtr, uint, nuint, nint, nint>)(lpVtbl[33]))((IBrowserService4*)Unsafe.AsPointer(ref this), hwnd, uMsg, wParam, lParam);
+            return ((delegate* unmanaged<IBrowserService4*, HWND, uint, nuint, nint, nint>)(lpVtbl[33]))((IBrowserService4*)Unsafe.AsPointer(ref this), hwnd, uMsg, wParam, lParam);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -339,9 +339,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(45)]
-        public HRESULT CreateViewWindow(IShellView* psvNew, IShellView* psvOld, [NativeTypeName("LPRECT")] RECT* prcView, [NativeTypeName("HWND *")] IntPtr* phwnd)
+        public HRESULT CreateViewWindow(IShellView* psvNew, IShellView* psvOld, [NativeTypeName("LPRECT")] RECT* prcView, HWND* phwnd)
         {
-            return ((delegate* unmanaged<IBrowserService4*, IShellView*, IShellView*, RECT*, IntPtr*, int>)(lpVtbl[45]))((IBrowserService4*)Unsafe.AsPointer(ref this), psvNew, psvOld, prcView, phwnd);
+            return ((delegate* unmanaged<IBrowserService4*, IShellView*, IShellView*, RECT*, HWND*, int>)(lpVtbl[45]))((IBrowserService4*)Unsafe.AsPointer(ref this), psvNew, psvOld, prcView, phwnd);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -353,9 +353,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(47)]
-        public HRESULT GetViewWindow([NativeTypeName("HWND *")] IntPtr* phwndView)
+        public HRESULT GetViewWindow(HWND* phwndView)
         {
-            return ((delegate* unmanaged<IBrowserService4*, IntPtr*, int>)(lpVtbl[47]))((IBrowserService4*)Unsafe.AsPointer(ref this), phwndView);
+            return ((delegate* unmanaged<IBrowserService4*, HWND*, int>)(lpVtbl[47]))((IBrowserService4*)Unsafe.AsPointer(ref this), phwndView);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -431,9 +431,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(58)]
-        public HRESULT _Initialize([NativeTypeName("HWND")] IntPtr hwnd, IUnknown* pauto)
+        public HRESULT _Initialize(HWND hwnd, IUnknown* pauto)
         {
-            return ((delegate* unmanaged<IBrowserService4*, IntPtr, IUnknown*, int>)(lpVtbl[58]))((IBrowserService4*)Unsafe.AsPointer(ref this), hwnd, pauto);
+            return ((delegate* unmanaged<IBrowserService4*, HWND, IUnknown*, int>)(lpVtbl[58]))((IBrowserService4*)Unsafe.AsPointer(ref this), hwnd, pauto);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -501,9 +501,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(68)]
-        public HRESULT _SendChildren([NativeTypeName("HWND")] IntPtr hwndBar, BOOL fBroadcast, [NativeTypeName("UINT")] uint uMsg, [NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam)
+        public HRESULT _SendChildren(HWND hwndBar, BOOL fBroadcast, [NativeTypeName("UINT")] uint uMsg, [NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam)
         {
-            return ((delegate* unmanaged<IBrowserService4*, IntPtr, BOOL, uint, nuint, nint, int>)(lpVtbl[68]))((IBrowserService4*)Unsafe.AsPointer(ref this), hwndBar, fBroadcast, uMsg, wParam, lParam);
+            return ((delegate* unmanaged<IBrowserService4*, HWND, BOOL, uint, nuint, nint, int>)(lpVtbl[68]))((IBrowserService4*)Unsafe.AsPointer(ref this), hwndBar, fBroadcast, uMsg, wParam, lParam);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -579,9 +579,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(79)]
-        public HRESULT _GetEffectiveClientArea([NativeTypeName("LPRECT")] RECT* lprectBorder, [NativeTypeName("HMONITOR")] IntPtr hmon)
+        public HRESULT _GetEffectiveClientArea([NativeTypeName("LPRECT")] RECT* lprectBorder, HMONITOR hmon)
         {
-            return ((delegate* unmanaged<IBrowserService4*, RECT*, IntPtr, int>)(lpVtbl[79]))((IBrowserService4*)Unsafe.AsPointer(ref this), lprectBorder, hmon);
+            return ((delegate* unmanaged<IBrowserService4*, RECT*, HMONITOR, int>)(lpVtbl[79]))((IBrowserService4*)Unsafe.AsPointer(ref this), lprectBorder, hmon);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -601,9 +601,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(82)]
-        public HRESULT SetAcceleratorMenu([NativeTypeName("HACCEL")] IntPtr hacc)
+        public HRESULT SetAcceleratorMenu(HACCEL hacc)
         {
-            return ((delegate* unmanaged<IBrowserService4*, IntPtr, int>)(lpVtbl[82]))((IBrowserService4*)Unsafe.AsPointer(ref this), hacc);
+            return ((delegate* unmanaged<IBrowserService4*, HACCEL, int>)(lpVtbl[82]))((IBrowserService4*)Unsafe.AsPointer(ref this), hacc);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -644,9 +644,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(88)]
-        public HRESULT v_MayGetNextToolbarFocus([NativeTypeName("LPMSG")] MSG* lpMsg, [NativeTypeName("UINT")] uint itbNext, int citb, [NativeTypeName("LPTOOLBARITEM *")] TOOLBARITEM** pptbi, [NativeTypeName("HWND *")] IntPtr* phwnd)
+        public HRESULT v_MayGetNextToolbarFocus([NativeTypeName("LPMSG")] MSG* lpMsg, [NativeTypeName("UINT")] uint itbNext, int citb, [NativeTypeName("LPTOOLBARITEM *")] TOOLBARITEM** pptbi, HWND* phwnd)
         {
-            return ((delegate* unmanaged<IBrowserService4*, MSG*, uint, int, TOOLBARITEM**, IntPtr*, int>)(lpVtbl[88]))((IBrowserService4*)Unsafe.AsPointer(ref this), lpMsg, itbNext, citb, pptbi, phwnd);
+            return ((delegate* unmanaged<IBrowserService4*, MSG*, uint, int, TOOLBARITEM**, HWND*, int>)(lpVtbl[88]))((IBrowserService4*)Unsafe.AsPointer(ref this), lpMsg, itbNext, citb, pptbi, phwnd);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -666,9 +666,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(91)]
-        public HRESULT _SetFocus([NativeTypeName("LPTOOLBARITEM")] TOOLBARITEM* ptbi, [NativeTypeName("HWND")] IntPtr hwnd, [NativeTypeName("LPMSG")] MSG* lpMsg)
+        public HRESULT _SetFocus([NativeTypeName("LPTOOLBARITEM")] TOOLBARITEM* ptbi, HWND hwnd, [NativeTypeName("LPMSG")] MSG* lpMsg)
         {
-            return ((delegate* unmanaged<IBrowserService4*, TOOLBARITEM*, IntPtr, MSG*, int>)(lpVtbl[91]))((IBrowserService4*)Unsafe.AsPointer(ref this), ptbi, hwnd, lpMsg);
+            return ((delegate* unmanaged<IBrowserService4*, TOOLBARITEM*, HWND, MSG*, int>)(lpVtbl[91]))((IBrowserService4*)Unsafe.AsPointer(ref this), ptbi, hwnd, lpMsg);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -694,9 +694,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(95)]
-        public HRESULT _PositionViewWindow([NativeTypeName("HWND")] IntPtr hwnd, [NativeTypeName("LPRECT")] RECT* prc)
+        public HRESULT _PositionViewWindow(HWND hwnd, [NativeTypeName("LPRECT")] RECT* prc)
         {
-            return ((delegate* unmanaged<IBrowserService4*, IntPtr, RECT*, int>)(lpVtbl[95]))((IBrowserService4*)Unsafe.AsPointer(ref this), hwnd, prc);
+            return ((delegate* unmanaged<IBrowserService4*, HWND, RECT*, int>)(lpVtbl[95]))((IBrowserService4*)Unsafe.AsPointer(ref this), hwnd, prc);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

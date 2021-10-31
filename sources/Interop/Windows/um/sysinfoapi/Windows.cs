@@ -3,7 +3,6 @@
 // Ported from um/sysinfoapi.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
@@ -140,7 +139,7 @@ namespace TerraFX.Interop
         public static extern BOOL SetSystemTimeAdjustmentPrecise([NativeTypeName("DWORD64")] ulong dwTimeAdjustment, BOOL bTimeAdjustmentDisabled);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        public static extern BOOL InstallELAMCertificateInfo([NativeTypeName("HANDLE")] IntPtr ELAMFile);
+        public static extern BOOL InstallELAMCertificateInfo(HANDLE ELAMFile);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         public static extern BOOL GetProcessorSystemCycleTime([NativeTypeName("USHORT")] ushort Group, [NativeTypeName("PSYSTEM_PROCESSOR_CYCLE_TIME_INFORMATION")] SYSTEM_PROCESSOR_CYCLE_TIME_INFORMATION* Buffer, [NativeTypeName("PDWORD")] uint* ReturnedLength);

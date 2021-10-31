@@ -38,10 +38,10 @@ namespace TerraFX.Interop
         }
 
         [DllImport("d3d10", ExactSpelling = true)]
-        public static extern HRESULT D3D10CreateDevice(IDXGIAdapter* pAdapter, D3D10_DRIVER_TYPE DriverType, [NativeTypeName("HMODULE")] IntPtr Software, [NativeTypeName("UINT")] uint Flags, [NativeTypeName("UINT")] uint SDKVersion, ID3D10Device** ppDevice);
+        public static extern HRESULT D3D10CreateDevice(IDXGIAdapter* pAdapter, D3D10_DRIVER_TYPE DriverType, [NativeTypeName("HMODULE")] HINSTANCE Software, [NativeTypeName("UINT")] uint Flags, [NativeTypeName("UINT")] uint SDKVersion, ID3D10Device** ppDevice);
 
         [DllImport("d3d10", ExactSpelling = true)]
-        public static extern HRESULT D3D10CreateDeviceAndSwapChain(IDXGIAdapter* pAdapter, D3D10_DRIVER_TYPE DriverType, [NativeTypeName("HMODULE")] IntPtr Software, [NativeTypeName("UINT")] uint Flags, [NativeTypeName("UINT")] uint SDKVersion, DXGI_SWAP_CHAIN_DESC* pSwapChainDesc, IDXGISwapChain** ppSwapChain, ID3D10Device** ppDevice);
+        public static extern HRESULT D3D10CreateDeviceAndSwapChain(IDXGIAdapter* pAdapter, D3D10_DRIVER_TYPE DriverType, [NativeTypeName("HMODULE")] HINSTANCE Software, [NativeTypeName("UINT")] uint Flags, [NativeTypeName("UINT")] uint SDKVersion, DXGI_SWAP_CHAIN_DESC* pSwapChainDesc, IDXGISwapChain** ppSwapChain, ID3D10Device** ppDevice);
 
         [DllImport("d3d10", ExactSpelling = true)]
         public static extern HRESULT D3D10CreateBlob([NativeTypeName("SIZE_T")] nuint NumBytes, [NativeTypeName("LPD3D10BLOB *")] ID3DBlob** ppBuffer);

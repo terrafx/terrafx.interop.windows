@@ -48,9 +48,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT GetRuntimeClassName([NativeTypeName("HSTRING *")] IntPtr* className)
+        public HRESULT GetRuntimeClassName(HSTRING* className)
         {
-            return ((delegate* unmanaged<IAudioFrameNative*, IntPtr*, int>)(lpVtbl[4]))((IAudioFrameNative*)Unsafe.AsPointer(ref this), className);
+            return ((delegate* unmanaged<IAudioFrameNative*, HSTRING*, int>)(lpVtbl[4]))((IAudioFrameNative*)Unsafe.AsPointer(ref this), className);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

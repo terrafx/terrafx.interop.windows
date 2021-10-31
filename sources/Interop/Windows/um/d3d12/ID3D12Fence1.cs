@@ -84,9 +84,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        public HRESULT SetEventOnCompletion([NativeTypeName("UINT64")] ulong Value, [NativeTypeName("HANDLE")] IntPtr hEvent)
+        public HRESULT SetEventOnCompletion([NativeTypeName("UINT64")] ulong Value, HANDLE hEvent)
         {
-            return ((delegate* unmanaged<ID3D12Fence1*, ulong, IntPtr, int>)(lpVtbl[9]))((ID3D12Fence1*)Unsafe.AsPointer(ref this), Value, hEvent);
+            return ((delegate* unmanaged<ID3D12Fence1*, ulong, HANDLE, int>)(lpVtbl[9]))((ID3D12Fence1*)Unsafe.AsPointer(ref this), Value, hEvent);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

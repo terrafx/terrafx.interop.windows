@@ -76,9 +76,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        public HRESULT GetDriverHandle([NativeTypeName("HANDLE *")] IntPtr* pDriverHandle)
+        public HRESULT GetDriverHandle(HANDLE* pDriverHandle)
         {
-            return ((delegate* unmanaged<ID3D11VideoDecoder*, IntPtr*, int>)(lpVtbl[8]))((ID3D11VideoDecoder*)Unsafe.AsPointer(ref this), pDriverHandle);
+            return ((delegate* unmanaged<ID3D11VideoDecoder*, HANDLE*, int>)(lpVtbl[8]))((ID3D11VideoDecoder*)Unsafe.AsPointer(ref this), pDriverHandle);
         }
     }
 }

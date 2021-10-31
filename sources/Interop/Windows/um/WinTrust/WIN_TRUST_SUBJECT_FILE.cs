@@ -3,14 +3,11 @@
 // Ported from um/WinTrust.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
-
 namespace TerraFX.Interop
 {
     public unsafe partial struct WIN_TRUST_SUBJECT_FILE
     {
-        [NativeTypeName("HANDLE")]
-        public IntPtr hFile;
+        public HANDLE hFile;
 
         [NativeTypeName("LPCWSTR")]
         public ushort* lpPath;

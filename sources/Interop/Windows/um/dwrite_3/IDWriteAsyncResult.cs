@@ -41,10 +41,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HANDLE")]
-        public IntPtr GetWaitHandle()
+        public HANDLE GetWaitHandle()
         {
-            return ((delegate* unmanaged<IDWriteAsyncResult*, IntPtr>)(lpVtbl[3]))((IDWriteAsyncResult*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IDWriteAsyncResult*, nint>)(lpVtbl[3]))((IDWriteAsyncResult*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

@@ -41,9 +41,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        public HRESULT ExtractThumbnail(IStorage* pStg, [NativeTypeName("ULONG")] uint ulLength, [NativeTypeName("ULONG")] uint ulHeight, [NativeTypeName("ULONG *")] uint* pulOutputLength, [NativeTypeName("ULONG *")] uint* pulOutputHeight, [NativeTypeName("HBITMAP *")] IntPtr* phOutputBitmap)
+        public HRESULT ExtractThumbnail(IStorage* pStg, [NativeTypeName("ULONG")] uint ulLength, [NativeTypeName("ULONG")] uint ulHeight, [NativeTypeName("ULONG *")] uint* pulOutputLength, [NativeTypeName("ULONG *")] uint* pulOutputHeight, HBITMAP* phOutputBitmap)
         {
-            return ((delegate* unmanaged<IThumbnailExtractor*, IStorage*, uint, uint, uint*, uint*, IntPtr*, int>)(lpVtbl[3]))((IThumbnailExtractor*)Unsafe.AsPointer(ref this), pStg, ulLength, ulHeight, pulOutputLength, pulOutputHeight, phOutputBitmap);
+            return ((delegate* unmanaged<IThumbnailExtractor*, IStorage*, uint, uint, uint*, uint*, HBITMAP*, int>)(lpVtbl[3]))((IThumbnailExtractor*)Unsafe.AsPointer(ref this), pStg, ulLength, ulHeight, pulOutputLength, pulOutputHeight, phOutputBitmap);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

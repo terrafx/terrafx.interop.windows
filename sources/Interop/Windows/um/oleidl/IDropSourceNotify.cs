@@ -41,9 +41,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        public HRESULT DragEnterTarget([NativeTypeName("HWND")] IntPtr hwndTarget)
+        public HRESULT DragEnterTarget(HWND hwndTarget)
         {
-            return ((delegate* unmanaged<IDropSourceNotify*, IntPtr, int>)(lpVtbl[3]))((IDropSourceNotify*)Unsafe.AsPointer(ref this), hwndTarget);
+            return ((delegate* unmanaged<IDropSourceNotify*, HWND, int>)(lpVtbl[3]))((IDropSourceNotify*)Unsafe.AsPointer(ref this), hwndTarget);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

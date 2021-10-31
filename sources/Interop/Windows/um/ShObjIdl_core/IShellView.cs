@@ -41,9 +41,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        public HRESULT GetWindow([NativeTypeName("HWND *")] IntPtr* phwnd)
+        public HRESULT GetWindow(HWND* phwnd)
         {
-            return ((delegate* unmanaged<IShellView*, IntPtr*, int>)(lpVtbl[3]))((IShellView*)Unsafe.AsPointer(ref this), phwnd);
+            return ((delegate* unmanaged<IShellView*, HWND*, int>)(lpVtbl[3]))((IShellView*)Unsafe.AsPointer(ref this), phwnd);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -83,9 +83,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        public HRESULT CreateViewWindow(IShellView* psvPrevious, [NativeTypeName("LPCFOLDERSETTINGS")] FOLDERSETTINGS* pfs, IShellBrowser* psb, RECT* prcView, [NativeTypeName("HWND *")] IntPtr* phWnd)
+        public HRESULT CreateViewWindow(IShellView* psvPrevious, [NativeTypeName("LPCFOLDERSETTINGS")] FOLDERSETTINGS* pfs, IShellBrowser* psb, RECT* prcView, HWND* phWnd)
         {
-            return ((delegate* unmanaged<IShellView*, IShellView*, FOLDERSETTINGS*, IShellBrowser*, RECT*, IntPtr*, int>)(lpVtbl[9]))((IShellView*)Unsafe.AsPointer(ref this), psvPrevious, pfs, psb, prcView, phWnd);
+            return ((delegate* unmanaged<IShellView*, IShellView*, FOLDERSETTINGS*, IShellBrowser*, RECT*, HWND*, int>)(lpVtbl[9]))((IShellView*)Unsafe.AsPointer(ref this), psvPrevious, pfs, psb, prcView, phWnd);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -104,9 +104,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(12)]
-        public HRESULT AddPropertySheetPages([NativeTypeName("DWORD")] uint dwReserved, [NativeTypeName("LPFNSVADDPROPSHEETPAGE")] delegate* unmanaged<IntPtr, nint, BOOL> pfn, [NativeTypeName("LPARAM")] nint lparam)
+        public HRESULT AddPropertySheetPages([NativeTypeName("DWORD")] uint dwReserved, [NativeTypeName("LPFNSVADDPROPSHEETPAGE")] delegate* unmanaged<HPROPSHEETPAGE, nint, BOOL> pfn, [NativeTypeName("LPARAM")] nint lparam)
         {
-            return ((delegate* unmanaged<IShellView*, uint, delegate* unmanaged<IntPtr, nint, BOOL>, nint, int>)(lpVtbl[12]))((IShellView*)Unsafe.AsPointer(ref this), dwReserved, pfn, lparam);
+            return ((delegate* unmanaged<IShellView*, uint, delegate* unmanaged<HPROPSHEETPAGE, nint, BOOL>, nint, int>)(lpVtbl[12]))((IShellView*)Unsafe.AsPointer(ref this), dwReserved, pfn, lparam);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

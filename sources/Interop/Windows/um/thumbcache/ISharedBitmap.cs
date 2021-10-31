@@ -41,9 +41,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        public HRESULT GetSharedBitmap([NativeTypeName("HBITMAP *")] IntPtr* phbm)
+        public HRESULT GetSharedBitmap(HBITMAP* phbm)
         {
-            return ((delegate* unmanaged<ISharedBitmap*, IntPtr*, int>)(lpVtbl[3]))((ISharedBitmap*)Unsafe.AsPointer(ref this), phbm);
+            return ((delegate* unmanaged<ISharedBitmap*, HBITMAP*, int>)(lpVtbl[3]))((ISharedBitmap*)Unsafe.AsPointer(ref this), phbm);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -62,16 +62,16 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        public HRESULT InitializeBitmap([NativeTypeName("HBITMAP")] IntPtr hbm, WTS_ALPHATYPE wtsAT)
+        public HRESULT InitializeBitmap(HBITMAP hbm, WTS_ALPHATYPE wtsAT)
         {
-            return ((delegate* unmanaged<ISharedBitmap*, IntPtr, WTS_ALPHATYPE, int>)(lpVtbl[6]))((ISharedBitmap*)Unsafe.AsPointer(ref this), hbm, wtsAT);
+            return ((delegate* unmanaged<ISharedBitmap*, HBITMAP, WTS_ALPHATYPE, int>)(lpVtbl[6]))((ISharedBitmap*)Unsafe.AsPointer(ref this), hbm, wtsAT);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        public HRESULT Detach([NativeTypeName("HBITMAP *")] IntPtr* phbm)
+        public HRESULT Detach(HBITMAP* phbm)
         {
-            return ((delegate* unmanaged<ISharedBitmap*, IntPtr*, int>)(lpVtbl[7]))((ISharedBitmap*)Unsafe.AsPointer(ref this), phbm);
+            return ((delegate* unmanaged<ISharedBitmap*, HBITMAP*, int>)(lpVtbl[7]))((ISharedBitmap*)Unsafe.AsPointer(ref this), phbm);
         }
     }
 }

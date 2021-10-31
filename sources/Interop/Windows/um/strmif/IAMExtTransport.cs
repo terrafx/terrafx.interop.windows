@@ -153,16 +153,16 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(19)]
-        public HRESULT GetChase([NativeTypeName("long *")] int* pEnabled, [NativeTypeName("long *")] int* pOffset, [NativeTypeName("HEVENT *")] IntPtr* phEvent)
+        public HRESULT GetChase([NativeTypeName("long *")] int* pEnabled, [NativeTypeName("long *")] int* pOffset, HEVENT* phEvent)
         {
-            return ((delegate* unmanaged<IAMExtTransport*, int*, int*, IntPtr*, int>)(lpVtbl[19]))((IAMExtTransport*)Unsafe.AsPointer(ref this), pEnabled, pOffset, phEvent);
+            return ((delegate* unmanaged<IAMExtTransport*, int*, int*, HEVENT*, int>)(lpVtbl[19]))((IAMExtTransport*)Unsafe.AsPointer(ref this), pEnabled, pOffset, phEvent);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(20)]
-        public HRESULT SetChase([NativeTypeName("long")] int Enable, [NativeTypeName("long")] int Offset, [NativeTypeName("HEVENT")] IntPtr hEvent)
+        public HRESULT SetChase([NativeTypeName("long")] int Enable, [NativeTypeName("long")] int Offset, HEVENT hEvent)
         {
-            return ((delegate* unmanaged<IAMExtTransport*, int, int, IntPtr, int>)(lpVtbl[20]))((IAMExtTransport*)Unsafe.AsPointer(ref this), Enable, Offset, hEvent);
+            return ((delegate* unmanaged<IAMExtTransport*, int, int, HEVENT, int>)(lpVtbl[20]))((IAMExtTransport*)Unsafe.AsPointer(ref this), Enable, Offset, hEvent);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

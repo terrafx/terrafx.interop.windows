@@ -41,16 +41,16 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        public HRESULT Add([NativeTypeName("HBITMAP")] IntPtr hbmImage, [NativeTypeName("HBITMAP")] IntPtr hbmMask, int* pi)
+        public HRESULT Add(HBITMAP hbmImage, HBITMAP hbmMask, int* pi)
         {
-            return ((delegate* unmanaged<IImageList*, IntPtr, IntPtr, int*, int>)(lpVtbl[3]))((IImageList*)Unsafe.AsPointer(ref this), hbmImage, hbmMask, pi);
+            return ((delegate* unmanaged<IImageList*, HBITMAP, HBITMAP, int*, int>)(lpVtbl[3]))((IImageList*)Unsafe.AsPointer(ref this), hbmImage, hbmMask, pi);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT ReplaceIcon(int i, [NativeTypeName("HICON")] IntPtr hicon, int* pi)
+        public HRESULT ReplaceIcon(int i, HICON hicon, int* pi)
         {
-            return ((delegate* unmanaged<IImageList*, int, IntPtr, int*, int>)(lpVtbl[4]))((IImageList*)Unsafe.AsPointer(ref this), i, hicon, pi);
+            return ((delegate* unmanaged<IImageList*, int, HICON, int*, int>)(lpVtbl[4]))((IImageList*)Unsafe.AsPointer(ref this), i, hicon, pi);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -62,16 +62,16 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        public HRESULT Replace(int i, [NativeTypeName("HBITMAP")] IntPtr hbmImage, [NativeTypeName("HBITMAP")] IntPtr hbmMask)
+        public HRESULT Replace(int i, HBITMAP hbmImage, HBITMAP hbmMask)
         {
-            return ((delegate* unmanaged<IImageList*, int, IntPtr, IntPtr, int>)(lpVtbl[6]))((IImageList*)Unsafe.AsPointer(ref this), i, hbmImage, hbmMask);
+            return ((delegate* unmanaged<IImageList*, int, HBITMAP, HBITMAP, int>)(lpVtbl[6]))((IImageList*)Unsafe.AsPointer(ref this), i, hbmImage, hbmMask);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        public HRESULT AddMasked([NativeTypeName("HBITMAP")] IntPtr hbmImage, [NativeTypeName("COLORREF")] uint crMask, int* pi)
+        public HRESULT AddMasked(HBITMAP hbmImage, [NativeTypeName("COLORREF")] uint crMask, int* pi)
         {
-            return ((delegate* unmanaged<IImageList*, IntPtr, uint, int*, int>)(lpVtbl[7]))((IImageList*)Unsafe.AsPointer(ref this), hbmImage, crMask, pi);
+            return ((delegate* unmanaged<IImageList*, HBITMAP, uint, int*, int>)(lpVtbl[7]))((IImageList*)Unsafe.AsPointer(ref this), hbmImage, crMask, pi);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -90,9 +90,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(10)]
-        public HRESULT GetIcon(int i, [NativeTypeName("UINT")] uint flags, [NativeTypeName("HICON *")] IntPtr* picon)
+        public HRESULT GetIcon(int i, [NativeTypeName("UINT")] uint flags, HICON* picon)
         {
-            return ((delegate* unmanaged<IImageList*, int, uint, IntPtr*, int>)(lpVtbl[10]))((IImageList*)Unsafe.AsPointer(ref this), i, flags, picon);
+            return ((delegate* unmanaged<IImageList*, int, uint, HICON*, int>)(lpVtbl[10]))((IImageList*)Unsafe.AsPointer(ref this), i, flags, picon);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -188,16 +188,16 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(24)]
-        public HRESULT DragEnter([NativeTypeName("HWND")] IntPtr hwndLock, int x, int y)
+        public HRESULT DragEnter(HWND hwndLock, int x, int y)
         {
-            return ((delegate* unmanaged<IImageList*, IntPtr, int, int, int>)(lpVtbl[24]))((IImageList*)Unsafe.AsPointer(ref this), hwndLock, x, y);
+            return ((delegate* unmanaged<IImageList*, HWND, int, int, int>)(lpVtbl[24]))((IImageList*)Unsafe.AsPointer(ref this), hwndLock, x, y);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(25)]
-        public HRESULT DragLeave([NativeTypeName("HWND")] IntPtr hwndLock)
+        public HRESULT DragLeave(HWND hwndLock)
         {
-            return ((delegate* unmanaged<IImageList*, IntPtr, int>)(lpVtbl[25]))((IImageList*)Unsafe.AsPointer(ref this), hwndLock);
+            return ((delegate* unmanaged<IImageList*, HWND, int>)(lpVtbl[25]))((IImageList*)Unsafe.AsPointer(ref this), hwndLock);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

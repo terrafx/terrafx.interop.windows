@@ -42,9 +42,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
         [return: NativeTypeName("UINT")]
-        public uint CopyCallback([NativeTypeName("HWND")] IntPtr hwnd, [NativeTypeName("UINT")] uint wFunc, [NativeTypeName("UINT")] uint wFlags, [NativeTypeName("PCWSTR")] ushort* pszSrcFile, [NativeTypeName("DWORD")] uint dwSrcAttribs, [NativeTypeName("PCWSTR")] ushort* pszDestFile, [NativeTypeName("DWORD")] uint dwDestAttribs)
+        public uint CopyCallback(HWND hwnd, [NativeTypeName("UINT")] uint wFunc, [NativeTypeName("UINT")] uint wFlags, [NativeTypeName("PCWSTR")] ushort* pszSrcFile, [NativeTypeName("DWORD")] uint dwSrcAttribs, [NativeTypeName("PCWSTR")] ushort* pszDestFile, [NativeTypeName("DWORD")] uint dwDestAttribs)
         {
-            return ((delegate* unmanaged<ICopyHookW*, IntPtr, uint, uint, ushort*, uint, ushort*, uint, uint>)(lpVtbl[3]))((ICopyHookW*)Unsafe.AsPointer(ref this), hwnd, wFunc, wFlags, pszSrcFile, dwSrcAttribs, pszDestFile, dwDestAttribs);
+            return ((delegate* unmanaged<ICopyHookW*, HWND, uint, uint, ushort*, uint, ushort*, uint, uint>)(lpVtbl[3]))((ICopyHookW*)Unsafe.AsPointer(ref this), hwnd, wFunc, wFlags, pszSrcFile, dwSrcAttribs, pszDestFile, dwDestAttribs);
         }
     }
 }

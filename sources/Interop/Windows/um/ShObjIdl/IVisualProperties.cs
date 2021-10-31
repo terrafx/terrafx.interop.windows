@@ -41,9 +41,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        public HRESULT SetWatermark([NativeTypeName("HBITMAP")] IntPtr hbmp, VPWATERMARKFLAGS vpwf)
+        public HRESULT SetWatermark(HBITMAP hbmp, VPWATERMARKFLAGS vpwf)
         {
-            return ((delegate* unmanaged<IVisualProperties*, IntPtr, VPWATERMARKFLAGS, int>)(lpVtbl[3]))((IVisualProperties*)Unsafe.AsPointer(ref this), hbmp, vpwf);
+            return ((delegate* unmanaged<IVisualProperties*, HBITMAP, VPWATERMARKFLAGS, int>)(lpVtbl[3]))((IVisualProperties*)Unsafe.AsPointer(ref this), hbmp, vpwf);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

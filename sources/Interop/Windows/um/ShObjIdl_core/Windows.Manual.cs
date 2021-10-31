@@ -153,7 +153,7 @@ namespace TerraFX.Interop
             return hr;
         }
 
-        public static void SetContractDelegateWindow([NativeTypeName("HWND")] IntPtr hwndSource, [NativeTypeName("HWND")] IntPtr hwndDelegate)
+        public static void SetContractDelegateWindow(HWND hwndSource, HWND hwndDelegate)
         {
             fixed (char* lpString = "ContractDelegate")
             {

@@ -18,22 +18,22 @@ namespace TerraFX.Interop
         public static extern void RoUninitialize();
 
         [DllImport("combase", ExactSpelling = true)]
-        public static extern HRESULT RoActivateInstance([NativeTypeName("HSTRING")] IntPtr activatableClassId, IInspectable** instance);
+        public static extern HRESULT RoActivateInstance(HSTRING activatableClassId, IInspectable** instance);
 
         [DllImport("combase", ExactSpelling = true)]
-        public static extern HRESULT RoRegisterActivationFactories([NativeTypeName("HSTRING *")] IntPtr* activatableClassIds, [NativeTypeName("PFNGETACTIVATIONFACTORY *")] delegate* unmanaged<IntPtr, IActivationFactory**, HRESULT>* activationFactoryCallbacks, [NativeTypeName("UINT32")] uint count, [NativeTypeName("RO_REGISTRATION_COOKIE *")] IntPtr* cookie);
+        public static extern HRESULT RoRegisterActivationFactories(HSTRING* activatableClassIds, [NativeTypeName("PFNGETACTIVATIONFACTORY *")] delegate* unmanaged<HSTRING, IActivationFactory**, HRESULT>* activationFactoryCallbacks, [NativeTypeName("UINT32")] uint count, RO_REGISTRATION_COOKIE* cookie);
 
         [DllImport("combase", ExactSpelling = true)]
-        public static extern void RoRevokeActivationFactories([NativeTypeName("RO_REGISTRATION_COOKIE")] IntPtr cookie);
+        public static extern void RoRevokeActivationFactories(RO_REGISTRATION_COOKIE cookie);
 
         [DllImport("combase", ExactSpelling = true)]
-        public static extern HRESULT RoGetActivationFactory([NativeTypeName("HSTRING")] IntPtr activatableClassId, [NativeTypeName("const IID &")] Guid* iid, void** factory);
+        public static extern HRESULT RoGetActivationFactory(HSTRING activatableClassId, [NativeTypeName("const IID &")] Guid* iid, void** factory);
 
         [DllImport("combase", ExactSpelling = true)]
-        public static extern HRESULT RoRegisterForApartmentShutdown(IApartmentShutdown* callbackObject, [NativeTypeName("UINT64 *")] ulong* apartmentIdentifier, [NativeTypeName("APARTMENT_SHUTDOWN_REGISTRATION_COOKIE *")] IntPtr* regCookie);
+        public static extern HRESULT RoRegisterForApartmentShutdown(IApartmentShutdown* callbackObject, [NativeTypeName("UINT64 *")] ulong* apartmentIdentifier, APARTMENT_SHUTDOWN_REGISTRATION_COOKIE* regCookie);
 
         [DllImport("combase", ExactSpelling = true)]
-        public static extern HRESULT RoUnregisterForApartmentShutdown([NativeTypeName("APARTMENT_SHUTDOWN_REGISTRATION_COOKIE")] IntPtr regCookie);
+        public static extern HRESULT RoUnregisterForApartmentShutdown(APARTMENT_SHUTDOWN_REGISTRATION_COOKIE regCookie);
 
         [DllImport("combase", ExactSpelling = true)]
         public static extern HRESULT RoGetApartmentIdentifier([NativeTypeName("UINT64 *")] ulong* apartmentIdentifier);
@@ -48,12 +48,12 @@ namespace TerraFX.Interop
             RoUninitialize();
         }
 
-        public static HRESULT RegisterActivationFactories([NativeTypeName("HSTRING *")] IntPtr* activatableClassIds, [NativeTypeName("PFNGETACTIVATIONFACTORY *")] delegate* unmanaged<IntPtr, IActivationFactory**, HRESULT>* activationFactoryCallbacks, [NativeTypeName("UINT32")] uint count, [NativeTypeName("RO_REGISTRATION_COOKIE *")] IntPtr* cookie)
+        public static HRESULT RegisterActivationFactories(HSTRING* activatableClassIds, [NativeTypeName("PFNGETACTIVATIONFACTORY *")] delegate* unmanaged<HSTRING, IActivationFactory**, HRESULT>* activationFactoryCallbacks, [NativeTypeName("UINT32")] uint count, RO_REGISTRATION_COOKIE* cookie)
         {
             return RoRegisterActivationFactories(activatableClassIds, activationFactoryCallbacks, count, cookie);
         }
 
-        public static void RevokeActivationFactories([NativeTypeName("RO_REGISTRATION_COOKIE")] IntPtr cookie)
+        public static void RevokeActivationFactories(RO_REGISTRATION_COOKIE cookie)
         {
             RoRevokeActivationFactories(cookie);
         }

@@ -3,8 +3,6 @@
 // Ported from um/WinUser.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
-
 namespace TerraFX.Interop
 {
     public partial struct HELPINFO
@@ -16,8 +14,7 @@ namespace TerraFX.Interop
 
         public int iCtrlId;
 
-        [NativeTypeName("HANDLE")]
-        public IntPtr hItemHandle;
+        public HANDLE hItemHandle;
 
         [NativeTypeName("DWORD_PTR")]
         public nuint dwContextId;

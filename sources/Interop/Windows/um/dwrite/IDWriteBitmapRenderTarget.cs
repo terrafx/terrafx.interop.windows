@@ -48,10 +48,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HDC")]
-        public IntPtr GetMemoryDC()
+        public HDC GetMemoryDC()
         {
-            return ((delegate* unmanaged<IDWriteBitmapRenderTarget*, IntPtr>)(lpVtbl[4]))((IDWriteBitmapRenderTarget*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IDWriteBitmapRenderTarget*, nint>)(lpVtbl[4]))((IDWriteBitmapRenderTarget*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

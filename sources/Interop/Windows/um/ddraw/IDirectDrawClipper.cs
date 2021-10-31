@@ -46,9 +46,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT GetHWnd([NativeTypeName("HWND *")] IntPtr* param0)
+        public HRESULT GetHWnd(HWND* param0)
         {
-            return ((delegate* unmanaged<IDirectDrawClipper*, IntPtr*, int>)(lpVtbl[4]))((IDirectDrawClipper*)Unsafe.AsPointer(ref this), param0);
+            return ((delegate* unmanaged<IDirectDrawClipper*, HWND*, int>)(lpVtbl[4]))((IDirectDrawClipper*)Unsafe.AsPointer(ref this), param0);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -74,9 +74,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        public HRESULT SetHWnd([NativeTypeName("DWORD")] uint param0, [NativeTypeName("HWND")] IntPtr param1)
+        public HRESULT SetHWnd([NativeTypeName("DWORD")] uint param0, HWND param1)
         {
-            return ((delegate* unmanaged<IDirectDrawClipper*, uint, IntPtr, int>)(lpVtbl[8]))((IDirectDrawClipper*)Unsafe.AsPointer(ref this), param0, param1);
+            return ((delegate* unmanaged<IDirectDrawClipper*, uint, HWND, int>)(lpVtbl[8]))((IDirectDrawClipper*)Unsafe.AsPointer(ref this), param0, param1);
         }
     }
 }

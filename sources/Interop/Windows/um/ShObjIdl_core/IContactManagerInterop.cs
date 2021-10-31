@@ -41,9 +41,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        public HRESULT ShowContactCardForWindow([NativeTypeName("HWND")] IntPtr appWindow, IUnknown* contact, [NativeTypeName("const RECT *")] RECT* selection, FLYOUT_PLACEMENT preferredPlacement)
+        public HRESULT ShowContactCardForWindow(HWND appWindow, IUnknown* contact, [NativeTypeName("const RECT *")] RECT* selection, FLYOUT_PLACEMENT preferredPlacement)
         {
-            return ((delegate* unmanaged<IContactManagerInterop*, IntPtr, IUnknown*, RECT*, FLYOUT_PLACEMENT, int>)(lpVtbl[3]))((IContactManagerInterop*)Unsafe.AsPointer(ref this), appWindow, contact, selection, preferredPlacement);
+            return ((delegate* unmanaged<IContactManagerInterop*, HWND, IUnknown*, RECT*, FLYOUT_PLACEMENT, int>)(lpVtbl[3]))((IContactManagerInterop*)Unsafe.AsPointer(ref this), appWindow, contact, selection, preferredPlacement);
         }
     }
 }

@@ -3,7 +3,6 @@
 // Ported from um/minwinbase.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -20,8 +19,7 @@ namespace TerraFX.Interop
         [NativeTypeName("_OVERLAPPED::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/minwinbase.h:55:5)")]
         public _Anonymous_e__Union Anonymous;
 
-        [NativeTypeName("HANDLE")]
-        public IntPtr hEvent;
+        public HANDLE hEvent;
 
         public ref uint Offset
         {

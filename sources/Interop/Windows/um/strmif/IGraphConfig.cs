@@ -41,16 +41,16 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        public HRESULT Reconnect(IPin* pOutputPin, IPin* pInputPin, [NativeTypeName("const AM_MEDIA_TYPE *")] AM_MEDIA_TYPE* pmtFirstConnection, IBaseFilter* pUsingFilter, [NativeTypeName("HANDLE")] IntPtr hAbortEvent, [NativeTypeName("DWORD")] uint dwFlags)
+        public HRESULT Reconnect(IPin* pOutputPin, IPin* pInputPin, [NativeTypeName("const AM_MEDIA_TYPE *")] AM_MEDIA_TYPE* pmtFirstConnection, IBaseFilter* pUsingFilter, HANDLE hAbortEvent, [NativeTypeName("DWORD")] uint dwFlags)
         {
-            return ((delegate* unmanaged<IGraphConfig*, IPin*, IPin*, AM_MEDIA_TYPE*, IBaseFilter*, IntPtr, uint, int>)(lpVtbl[3]))((IGraphConfig*)Unsafe.AsPointer(ref this), pOutputPin, pInputPin, pmtFirstConnection, pUsingFilter, hAbortEvent, dwFlags);
+            return ((delegate* unmanaged<IGraphConfig*, IPin*, IPin*, AM_MEDIA_TYPE*, IBaseFilter*, HANDLE, uint, int>)(lpVtbl[3]))((IGraphConfig*)Unsafe.AsPointer(ref this), pOutputPin, pInputPin, pmtFirstConnection, pUsingFilter, hAbortEvent, dwFlags);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT Reconfigure(IGraphConfigCallback* pCallback, [NativeTypeName("PVOID")] void* pvContext, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("HANDLE")] IntPtr hAbortEvent)
+        public HRESULT Reconfigure(IGraphConfigCallback* pCallback, [NativeTypeName("PVOID")] void* pvContext, [NativeTypeName("DWORD")] uint dwFlags, HANDLE hAbortEvent)
         {
-            return ((delegate* unmanaged<IGraphConfig*, IGraphConfigCallback*, void*, uint, IntPtr, int>)(lpVtbl[4]))((IGraphConfig*)Unsafe.AsPointer(ref this), pCallback, pvContext, dwFlags, hAbortEvent);
+            return ((delegate* unmanaged<IGraphConfig*, IGraphConfigCallback*, void*, uint, HANDLE, int>)(lpVtbl[4]))((IGraphConfig*)Unsafe.AsPointer(ref this), pCallback, pvContext, dwFlags, hAbortEvent);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -83,9 +83,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        public HRESULT PushThroughData(IPin* pOutputPin, IPinConnection* pConnection, [NativeTypeName("HANDLE")] IntPtr hEventAbort)
+        public HRESULT PushThroughData(IPin* pOutputPin, IPinConnection* pConnection, HANDLE hEventAbort)
         {
-            return ((delegate* unmanaged<IGraphConfig*, IPin*, IPinConnection*, IntPtr, int>)(lpVtbl[9]))((IGraphConfig*)Unsafe.AsPointer(ref this), pOutputPin, pConnection, hEventAbort);
+            return ((delegate* unmanaged<IGraphConfig*, IPin*, IPinConnection*, HANDLE, int>)(lpVtbl[9]))((IGraphConfig*)Unsafe.AsPointer(ref this), pOutputPin, pConnection, hEventAbort);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

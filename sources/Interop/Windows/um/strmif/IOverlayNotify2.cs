@@ -69,9 +69,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        public HRESULT OnDisplayChange([NativeTypeName("HMONITOR")] IntPtr hMonitor)
+        public HRESULT OnDisplayChange(HMONITOR hMonitor)
         {
-            return ((delegate* unmanaged<IOverlayNotify2*, IntPtr, int>)(lpVtbl[7]))((IOverlayNotify2*)Unsafe.AsPointer(ref this), hMonitor);
+            return ((delegate* unmanaged<IOverlayNotify2*, HMONITOR, int>)(lpVtbl[7]))((IOverlayNotify2*)Unsafe.AsPointer(ref this), hMonitor);
         }
     }
 }

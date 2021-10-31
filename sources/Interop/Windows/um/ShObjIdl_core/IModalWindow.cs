@@ -41,9 +41,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        public HRESULT Show([NativeTypeName("HWND")] IntPtr hwndOwner)
+        public HRESULT Show(HWND hwndOwner)
         {
-            return ((delegate* unmanaged<IModalWindow*, IntPtr, int>)(lpVtbl[3]))((IModalWindow*)Unsafe.AsPointer(ref this), hwndOwner);
+            return ((delegate* unmanaged<IModalWindow*, HWND, int>)(lpVtbl[3]))((IModalWindow*)Unsafe.AsPointer(ref this), hwndOwner);
         }
     }
 }

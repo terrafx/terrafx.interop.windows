@@ -41,16 +41,16 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        public HRESULT AttachToWindow([NativeTypeName("HWND")] IntPtr parentWnd)
+        public HRESULT AttachToWindow(HWND parentWnd)
         {
-            return ((delegate* unmanaged<IDesktopWindowXamlSourceNative2*, IntPtr, int>)(lpVtbl[3]))((IDesktopWindowXamlSourceNative2*)Unsafe.AsPointer(ref this), parentWnd);
+            return ((delegate* unmanaged<IDesktopWindowXamlSourceNative2*, HWND, int>)(lpVtbl[3]))((IDesktopWindowXamlSourceNative2*)Unsafe.AsPointer(ref this), parentWnd);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT get_WindowHandle([NativeTypeName("HWND *")] IntPtr* hWnd)
+        public HRESULT get_WindowHandle(HWND* hWnd)
         {
-            return ((delegate* unmanaged<IDesktopWindowXamlSourceNative2*, IntPtr*, int>)(lpVtbl[4]))((IDesktopWindowXamlSourceNative2*)Unsafe.AsPointer(ref this), hWnd);
+            return ((delegate* unmanaged<IDesktopWindowXamlSourceNative2*, HWND*, int>)(lpVtbl[4]))((IDesktopWindowXamlSourceNative2*)Unsafe.AsPointer(ref this), hWnd);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

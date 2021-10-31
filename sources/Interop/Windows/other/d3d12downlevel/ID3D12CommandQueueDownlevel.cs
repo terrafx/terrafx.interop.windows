@@ -41,9 +41,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        public HRESULT Present(ID3D12GraphicsCommandList* pOpenCommandList, ID3D12Resource* pSourceTex2D, [NativeTypeName("HWND")] IntPtr hWindow, D3D12_DOWNLEVEL_PRESENT_FLAGS Flags)
+        public HRESULT Present(ID3D12GraphicsCommandList* pOpenCommandList, ID3D12Resource* pSourceTex2D, HWND hWindow, D3D12_DOWNLEVEL_PRESENT_FLAGS Flags)
         {
-            return ((delegate* unmanaged<ID3D12CommandQueueDownlevel*, ID3D12GraphicsCommandList*, ID3D12Resource*, IntPtr, D3D12_DOWNLEVEL_PRESENT_FLAGS, int>)(lpVtbl[3]))((ID3D12CommandQueueDownlevel*)Unsafe.AsPointer(ref this), pOpenCommandList, pSourceTex2D, hWindow, Flags);
+            return ((delegate* unmanaged<ID3D12CommandQueueDownlevel*, ID3D12GraphicsCommandList*, ID3D12Resource*, HWND, D3D12_DOWNLEVEL_PRESENT_FLAGS, int>)(lpVtbl[3]))((ID3D12CommandQueueDownlevel*)Unsafe.AsPointer(ref this), pOpenCommandList, pSourceTex2D, hWindow, Flags);
         }
     }
 }

@@ -3,8 +3,6 @@
 // Ported from shared/dxgi.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
-
 namespace TerraFX.Interop
 {
     public partial struct DXGI_SWAP_CHAIN_DESC
@@ -19,8 +17,7 @@ namespace TerraFX.Interop
         [NativeTypeName("UINT")]
         public uint BufferCount;
 
-        [NativeTypeName("HWND")]
-        public IntPtr OutputWindow;
+        public HWND OutputWindow;
 
         public BOOL Windowed;
 

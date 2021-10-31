@@ -41,9 +41,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        public HRESULT GetWindow([NativeTypeName("HWND *")] IntPtr* phwnd)
+        public HRESULT GetWindow(HWND* phwnd)
         {
-            return ((delegate* unmanaged<IOleInPlaceSiteWindowless*, IntPtr*, int>)(lpVtbl[3]))((IOleInPlaceSiteWindowless*)Unsafe.AsPointer(ref this), phwnd);
+            return ((delegate* unmanaged<IOleInPlaceSiteWindowless*, HWND*, int>)(lpVtbl[3]))((IOleInPlaceSiteWindowless*)Unsafe.AsPointer(ref this), phwnd);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -181,16 +181,16 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(23)]
-        public HRESULT GetDC([NativeTypeName("LPCRECT")] RECT* pRect, [NativeTypeName("DWORD")] uint grfFlags, [NativeTypeName("HDC *")] IntPtr* phDC)
+        public HRESULT GetDC([NativeTypeName("LPCRECT")] RECT* pRect, [NativeTypeName("DWORD")] uint grfFlags, HDC* phDC)
         {
-            return ((delegate* unmanaged<IOleInPlaceSiteWindowless*, RECT*, uint, IntPtr*, int>)(lpVtbl[23]))((IOleInPlaceSiteWindowless*)Unsafe.AsPointer(ref this), pRect, grfFlags, phDC);
+            return ((delegate* unmanaged<IOleInPlaceSiteWindowless*, RECT*, uint, HDC*, int>)(lpVtbl[23]))((IOleInPlaceSiteWindowless*)Unsafe.AsPointer(ref this), pRect, grfFlags, phDC);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(24)]
-        public HRESULT ReleaseDC([NativeTypeName("HDC")] IntPtr hDC)
+        public HRESULT ReleaseDC(HDC hDC)
         {
-            return ((delegate* unmanaged<IOleInPlaceSiteWindowless*, IntPtr, int>)(lpVtbl[24]))((IOleInPlaceSiteWindowless*)Unsafe.AsPointer(ref this), hDC);
+            return ((delegate* unmanaged<IOleInPlaceSiteWindowless*, HDC, int>)(lpVtbl[24]))((IOleInPlaceSiteWindowless*)Unsafe.AsPointer(ref this), hDC);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -202,9 +202,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(26)]
-        public HRESULT InvalidateRgn([NativeTypeName("HRGN")] IntPtr hRGN, BOOL fErase)
+        public HRESULT InvalidateRgn(HRGN hRGN, BOOL fErase)
         {
-            return ((delegate* unmanaged<IOleInPlaceSiteWindowless*, IntPtr, BOOL, int>)(lpVtbl[26]))((IOleInPlaceSiteWindowless*)Unsafe.AsPointer(ref this), hRGN, fErase);
+            return ((delegate* unmanaged<IOleInPlaceSiteWindowless*, HRGN, BOOL, int>)(lpVtbl[26]))((IOleInPlaceSiteWindowless*)Unsafe.AsPointer(ref this), hRGN, fErase);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

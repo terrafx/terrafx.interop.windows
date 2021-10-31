@@ -41,9 +41,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        public HRESULT Initialize([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidlFolder, IDataObject* pdtobj, [NativeTypeName("HKEY")] IntPtr hkeyProgID)
+        public HRESULT Initialize([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidlFolder, IDataObject* pdtobj, HKEY hkeyProgID)
         {
-            return ((delegate* unmanaged<IShellExtInit*, ITEMIDLIST*, IDataObject*, IntPtr, int>)(lpVtbl[3]))((IShellExtInit*)Unsafe.AsPointer(ref this), pidlFolder, pdtobj, hkeyProgID);
+            return ((delegate* unmanaged<IShellExtInit*, ITEMIDLIST*, IDataObject*, HKEY, int>)(lpVtbl[3]))((IShellExtInit*)Unsafe.AsPointer(ref this), pidlFolder, pdtobj, hkeyProgID);
         }
     }
 }

@@ -3,8 +3,6 @@
 // Ported from um/schannel.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
-
 namespace TerraFX.Interop
 {
     public unsafe partial struct SCHANNEL_CERT_HASH
@@ -15,8 +13,7 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint dwFlags;
 
-        [NativeTypeName("HCRYPTPROV")]
-        public IntPtr hProv;
+        public HCRYPTPROV hProv;
 
         [NativeTypeName("BYTE [20]")]
         public fixed byte ShaHash[20];

@@ -48,9 +48,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT Burn([NativeTypeName("HWND")] IntPtr hwnd)
+        public HRESULT Burn(HWND hwnd)
         {
-            return ((delegate* unmanaged<ICDBurn*, IntPtr, int>)(lpVtbl[4]))((ICDBurn*)Unsafe.AsPointer(ref this), hwnd);
+            return ((delegate* unmanaged<ICDBurn*, HWND, int>)(lpVtbl[4]))((ICDBurn*)Unsafe.AsPointer(ref this), hwnd);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

@@ -83,9 +83,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        public HRESULT AssociateFocus([NativeTypeName("HWND")] IntPtr hwnd, ITfDocumentMgr* pdimNew, ITfDocumentMgr** ppdimPrev)
+        public HRESULT AssociateFocus(HWND hwnd, ITfDocumentMgr* pdimNew, ITfDocumentMgr** ppdimPrev)
         {
-            return ((delegate* unmanaged<ITfThreadMgrEx*, IntPtr, ITfDocumentMgr*, ITfDocumentMgr**, int>)(lpVtbl[9]))((ITfThreadMgrEx*)Unsafe.AsPointer(ref this), hwnd, pdimNew, ppdimPrev);
+            return ((delegate* unmanaged<ITfThreadMgrEx*, HWND, ITfDocumentMgr*, ITfDocumentMgr**, int>)(lpVtbl[9]))((ITfThreadMgrEx*)Unsafe.AsPointer(ref this), hwnd, pdimNew, ppdimPrev);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

@@ -48,9 +48,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT SetKey([NativeTypeName("HKEY")] IntPtr hkey)
+        public HRESULT SetKey(HKEY hkey)
         {
-            return ((delegate* unmanaged<IDefaultExtractIconInit*, IntPtr, int>)(lpVtbl[4]))((IDefaultExtractIconInit*)Unsafe.AsPointer(ref this), hkey);
+            return ((delegate* unmanaged<IDefaultExtractIconInit*, HKEY, int>)(lpVtbl[4]))((IDefaultExtractIconInit*)Unsafe.AsPointer(ref this), hkey);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

@@ -83,9 +83,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        public HRESULT GetBitmapValue([NativeTypeName("DWORD")] uint dwFieldID, [NativeTypeName("HBITMAP *")] IntPtr* phbmp)
+        public HRESULT GetBitmapValue([NativeTypeName("DWORD")] uint dwFieldID, HBITMAP* phbmp)
         {
-            return ((delegate* unmanaged<IConnectableCredentialProviderCredential*, uint, IntPtr*, int>)(lpVtbl[9]))((IConnectableCredentialProviderCredential*)Unsafe.AsPointer(ref this), dwFieldID, phbmp);
+            return ((delegate* unmanaged<IConnectableCredentialProviderCredential*, uint, HBITMAP*, int>)(lpVtbl[9]))((IConnectableCredentialProviderCredential*)Unsafe.AsPointer(ref this), dwFieldID, phbmp);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

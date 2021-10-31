@@ -216,9 +216,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(28)]
-        public HRESULT OpenSharedResource([NativeTypeName("HANDLE")] IntPtr hResource, [NativeTypeName("const IID &")] Guid* ReturnedInterface, void** ppResource)
+        public HRESULT OpenSharedResource(HANDLE hResource, [NativeTypeName("const IID &")] Guid* ReturnedInterface, void** ppResource)
         {
-            return ((delegate* unmanaged<ID3D11Device4*, IntPtr, Guid*, void**, int>)(lpVtbl[28]))((ID3D11Device4*)Unsafe.AsPointer(ref this), hResource, ReturnedInterface, ppResource);
+            return ((delegate* unmanaged<ID3D11Device4*, HANDLE, Guid*, void**, int>)(lpVtbl[28]))((ID3D11Device4*)Unsafe.AsPointer(ref this), hResource, ReturnedInterface, ppResource);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -358,9 +358,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(48)]
-        public HRESULT OpenSharedResource1([NativeTypeName("HANDLE")] IntPtr hResource, [NativeTypeName("const IID &")] Guid* returnedInterface, void** ppResource)
+        public HRESULT OpenSharedResource1(HANDLE hResource, [NativeTypeName("const IID &")] Guid* returnedInterface, void** ppResource)
         {
-            return ((delegate* unmanaged<ID3D11Device4*, IntPtr, Guid*, void**, int>)(lpVtbl[48]))((ID3D11Device4*)Unsafe.AsPointer(ref this), hResource, returnedInterface, ppResource);
+            return ((delegate* unmanaged<ID3D11Device4*, HANDLE, Guid*, void**, int>)(lpVtbl[48]))((ID3D11Device4*)Unsafe.AsPointer(ref this), hResource, returnedInterface, ppResource);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -477,9 +477,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(65)]
-        public HRESULT RegisterDeviceRemovedEvent([NativeTypeName("HANDLE")] IntPtr hEvent, [NativeTypeName("DWORD *")] uint* pdwCookie)
+        public HRESULT RegisterDeviceRemovedEvent(HANDLE hEvent, [NativeTypeName("DWORD *")] uint* pdwCookie)
         {
-            return ((delegate* unmanaged<ID3D11Device4*, IntPtr, uint*, int>)(lpVtbl[65]))((ID3D11Device4*)Unsafe.AsPointer(ref this), hEvent, pdwCookie);
+            return ((delegate* unmanaged<ID3D11Device4*, HANDLE, uint*, int>)(lpVtbl[65]))((ID3D11Device4*)Unsafe.AsPointer(ref this), hEvent, pdwCookie);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

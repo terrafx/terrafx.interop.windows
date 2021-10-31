@@ -48,9 +48,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT GetRuntimeClassName([NativeTypeName("HSTRING *")] IntPtr* className)
+        public HRESULT GetRuntimeClassName(HSTRING* className)
         {
-            return ((delegate* unmanaged<IUserActivitySourceHostInterop*, IntPtr*, int>)(lpVtbl[4]))((IUserActivitySourceHostInterop*)Unsafe.AsPointer(ref this), className);
+            return ((delegate* unmanaged<IUserActivitySourceHostInterop*, HSTRING*, int>)(lpVtbl[4]))((IUserActivitySourceHostInterop*)Unsafe.AsPointer(ref this), className);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -62,9 +62,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        public HRESULT SetActivitySourceHost([NativeTypeName("HSTRING")] IntPtr activitySourceHost)
+        public HRESULT SetActivitySourceHost(HSTRING activitySourceHost)
         {
-            return ((delegate* unmanaged<IUserActivitySourceHostInterop*, IntPtr, int>)(lpVtbl[6]))((IUserActivitySourceHostInterop*)Unsafe.AsPointer(ref this), activitySourceHost);
+            return ((delegate* unmanaged<IUserActivitySourceHostInterop*, HSTRING, int>)(lpVtbl[6]))((IUserActivitySourceHostInterop*)Unsafe.AsPointer(ref this), activitySourceHost);
         }
     }
 }

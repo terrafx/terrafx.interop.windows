@@ -48,9 +48,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT GetEnumFlags(IShellFolder* psf, [NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidlFolder, [NativeTypeName("HWND *")] IntPtr* phwnd, [NativeTypeName("DWORD *")] uint* pgrfFlags)
+        public HRESULT GetEnumFlags(IShellFolder* psf, [NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidlFolder, HWND* phwnd, [NativeTypeName("DWORD *")] uint* pgrfFlags)
         {
-            return ((delegate* unmanaged<IFolderFilter*, IShellFolder*, ITEMIDLIST*, IntPtr*, uint*, int>)(lpVtbl[4]))((IFolderFilter*)Unsafe.AsPointer(ref this), psf, pidlFolder, phwnd, pgrfFlags);
+            return ((delegate* unmanaged<IFolderFilter*, IShellFolder*, ITEMIDLIST*, HWND*, uint*, int>)(lpVtbl[4]))((IFolderFilter*)Unsafe.AsPointer(ref this), psf, pidlFolder, phwnd, pgrfFlags);
         }
     }
 }

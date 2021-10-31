@@ -48,9 +48,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT GetRuntimeClassName([NativeTypeName("HSTRING *")] IntPtr* className)
+        public HRESULT GetRuntimeClassName(HSTRING* className)
         {
-            return ((delegate* unmanaged<ISpatialInteractionManagerInterop*, IntPtr*, int>)(lpVtbl[4]))((ISpatialInteractionManagerInterop*)Unsafe.AsPointer(ref this), className);
+            return ((delegate* unmanaged<ISpatialInteractionManagerInterop*, HSTRING*, int>)(lpVtbl[4]))((ISpatialInteractionManagerInterop*)Unsafe.AsPointer(ref this), className);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -62,9 +62,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        public HRESULT GetForWindow([NativeTypeName("HWND")] IntPtr window, [NativeTypeName("const IID &")] Guid* riid, void** spatialInteractionManager)
+        public HRESULT GetForWindow(HWND window, [NativeTypeName("const IID &")] Guid* riid, void** spatialInteractionManager)
         {
-            return ((delegate* unmanaged<ISpatialInteractionManagerInterop*, IntPtr, Guid*, void**, int>)(lpVtbl[6]))((ISpatialInteractionManagerInterop*)Unsafe.AsPointer(ref this), window, riid, spatialInteractionManager);
+            return ((delegate* unmanaged<ISpatialInteractionManagerInterop*, HWND, Guid*, void**, int>)(lpVtbl[6]))((ISpatialInteractionManagerInterop*)Unsafe.AsPointer(ref this), window, riid, spatialInteractionManager);
         }
     }
 }

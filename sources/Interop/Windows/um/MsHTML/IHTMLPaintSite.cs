@@ -55,9 +55,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        public HRESULT InvalidateRegion([NativeTypeName("HRGN")] IntPtr rgnInvalid)
+        public HRESULT InvalidateRegion(HRGN rgnInvalid)
         {
-            return ((delegate* unmanaged<IHTMLPaintSite*, IntPtr, int>)(lpVtbl[5]))((IHTMLPaintSite*)Unsafe.AsPointer(ref this), rgnInvalid);
+            return ((delegate* unmanaged<IHTMLPaintSite*, HRGN, int>)(lpVtbl[5]))((IHTMLPaintSite*)Unsafe.AsPointer(ref this), rgnInvalid);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

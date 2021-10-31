@@ -3,7 +3,6 @@
 // Ported from um/prsht.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -17,11 +16,9 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint dwFlags;
 
-        [NativeTypeName("HWND")]
-        public IntPtr hwndParent;
+        public HWND hwndParent;
 
-        [NativeTypeName("HINSTANCE")]
-        public IntPtr hInstance;
+        public HINSTANCE hInstance;
 
         [NativeTypeName("_PROPSHEETHEADERA_V1::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/prsht.h:473:5)")]
         public _Anonymous1_e__Union Anonymous1;
@@ -39,14 +36,17 @@ namespace TerraFX.Interop
         public _Anonymous3_e__Union Anonymous3;
 
         [NativeTypeName("PFNPROPSHEETCALLBACK")]
-        public delegate* unmanaged<IntPtr, uint, nint, int> pfnCallback;
+        public delegate* unmanaged<HWND, uint, nint, int> pfnCallback;
 
-        public ref IntPtr hIcon
+        public ref HICON hIcon
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous1.hIcon, 1));
+                fixed (_Anonymous1_e__Union* pField = &Anonymous1)
+                {
+                    return ref pField->hIcon;
+                }
             }
         }
 
@@ -95,7 +95,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public ref IntPtr* phpage
+        public ref HPROPSHEETPAGE* phpage
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
@@ -111,8 +111,7 @@ namespace TerraFX.Interop
         public unsafe partial struct _Anonymous1_e__Union
         {
             [FieldOffset(0)]
-            [NativeTypeName("HICON")]
-            public IntPtr hIcon;
+            public HICON hIcon;
 
             [FieldOffset(0)]
             [NativeTypeName("LPCSTR")]
@@ -139,8 +138,7 @@ namespace TerraFX.Interop
             public PROPSHEETPAGEA* ppsp;
 
             [FieldOffset(0)]
-            [NativeTypeName("HPROPSHEETPAGE *")]
-            public IntPtr* phpage;
+            public HPROPSHEETPAGE* phpage;
         }
     }
 }

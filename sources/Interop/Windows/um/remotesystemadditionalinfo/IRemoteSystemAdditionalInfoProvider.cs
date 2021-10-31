@@ -41,9 +41,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        public HRESULT GetAdditionalInfo([NativeTypeName("HSTRING *")] IntPtr* deduplicationId, [NativeTypeName("const IID &")] Guid* riid, void** mapView)
+        public HRESULT GetAdditionalInfo(HSTRING* deduplicationId, [NativeTypeName("const IID &")] Guid* riid, void** mapView)
         {
-            return ((delegate* unmanaged<IRemoteSystemAdditionalInfoProvider*, IntPtr*, Guid*, void**, int>)(lpVtbl[3]))((IRemoteSystemAdditionalInfoProvider*)Unsafe.AsPointer(ref this), deduplicationId, riid, mapView);
+            return ((delegate* unmanaged<IRemoteSystemAdditionalInfoProvider*, HSTRING*, Guid*, void**, int>)(lpVtbl[3]))((IRemoteSystemAdditionalInfoProvider*)Unsafe.AsPointer(ref this), deduplicationId, riid, mapView);
         }
     }
 }

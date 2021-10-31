@@ -41,23 +41,23 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        public HRESULT GetPreviousPage([NativeTypeName("HPROPSHEETPAGE *")] IntPtr* phpage)
+        public HRESULT GetPreviousPage(HPROPSHEETPAGE* phpage)
         {
-            return ((delegate* unmanaged<IWizardSite*, IntPtr*, int>)(lpVtbl[3]))((IWizardSite*)Unsafe.AsPointer(ref this), phpage);
+            return ((delegate* unmanaged<IWizardSite*, HPROPSHEETPAGE*, int>)(lpVtbl[3]))((IWizardSite*)Unsafe.AsPointer(ref this), phpage);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT GetNextPage([NativeTypeName("HPROPSHEETPAGE *")] IntPtr* phpage)
+        public HRESULT GetNextPage(HPROPSHEETPAGE* phpage)
         {
-            return ((delegate* unmanaged<IWizardSite*, IntPtr*, int>)(lpVtbl[4]))((IWizardSite*)Unsafe.AsPointer(ref this), phpage);
+            return ((delegate* unmanaged<IWizardSite*, HPROPSHEETPAGE*, int>)(lpVtbl[4]))((IWizardSite*)Unsafe.AsPointer(ref this), phpage);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        public HRESULT GetCancelledPage([NativeTypeName("HPROPSHEETPAGE *")] IntPtr* phpage)
+        public HRESULT GetCancelledPage(HPROPSHEETPAGE* phpage)
         {
-            return ((delegate* unmanaged<IWizardSite*, IntPtr*, int>)(lpVtbl[5]))((IWizardSite*)Unsafe.AsPointer(ref this), phpage);
+            return ((delegate* unmanaged<IWizardSite*, HPROPSHEETPAGE*, int>)(lpVtbl[5]))((IWizardSite*)Unsafe.AsPointer(ref this), phpage);
         }
     }
 }

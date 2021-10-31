@@ -55,16 +55,16 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        public HRESULT SetBitmap([NativeTypeName("HBITMAP")] IntPtr hBitmap)
+        public HRESULT SetBitmap(HBITMAP hBitmap)
         {
-            return ((delegate* unmanaged<IBanneredBar*, IntPtr, int>)(lpVtbl[5]))((IBanneredBar*)Unsafe.AsPointer(ref this), hBitmap);
+            return ((delegate* unmanaged<IBanneredBar*, HBITMAP, int>)(lpVtbl[5]))((IBanneredBar*)Unsafe.AsPointer(ref this), hBitmap);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        public HRESULT GetBitmap([NativeTypeName("HBITMAP *")] IntPtr* phBitmap)
+        public HRESULT GetBitmap(HBITMAP* phBitmap)
         {
-            return ((delegate* unmanaged<IBanneredBar*, IntPtr*, int>)(lpVtbl[6]))((IBanneredBar*)Unsafe.AsPointer(ref this), phBitmap);
+            return ((delegate* unmanaged<IBanneredBar*, HBITMAP*, int>)(lpVtbl[6]))((IBanneredBar*)Unsafe.AsPointer(ref this), phBitmap);
         }
     }
 }

@@ -62,30 +62,30 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        public HRESULT GetIInspectableFromHandle([NativeTypeName("InstanceHandle")] ulong instanceHandle, IInspectable** ppInstance)
+        public HRESULT GetIInspectableFromHandle(InstanceHandle instanceHandle, IInspectable** ppInstance)
         {
-            return ((delegate* unmanaged<IXamlDiagnostics*, ulong, IInspectable**, int>)(lpVtbl[6]))((IXamlDiagnostics*)Unsafe.AsPointer(ref this), instanceHandle, ppInstance);
+            return ((delegate* unmanaged<IXamlDiagnostics*, InstanceHandle, IInspectable**, int>)(lpVtbl[6]))((IXamlDiagnostics*)Unsafe.AsPointer(ref this), instanceHandle, ppInstance);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        public HRESULT GetHandleFromIInspectable(IInspectable* pInstance, [NativeTypeName("InstanceHandle *")] ulong* pHandle)
+        public HRESULT GetHandleFromIInspectable(IInspectable* pInstance, InstanceHandle* pHandle)
         {
-            return ((delegate* unmanaged<IXamlDiagnostics*, IInspectable*, ulong*, int>)(lpVtbl[7]))((IXamlDiagnostics*)Unsafe.AsPointer(ref this), pInstance, pHandle);
+            return ((delegate* unmanaged<IXamlDiagnostics*, IInspectable*, InstanceHandle*, int>)(lpVtbl[7]))((IXamlDiagnostics*)Unsafe.AsPointer(ref this), pInstance, pHandle);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        public HRESULT HitTest(RECT rect, [NativeTypeName("unsigned int *")] uint* pCount, [NativeTypeName("InstanceHandle **")] ulong** ppInstanceHandles)
+        public HRESULT HitTest(RECT rect, [NativeTypeName("unsigned int *")] uint* pCount, InstanceHandle** ppInstanceHandles)
         {
-            return ((delegate* unmanaged<IXamlDiagnostics*, RECT, uint*, ulong**, int>)(lpVtbl[8]))((IXamlDiagnostics*)Unsafe.AsPointer(ref this), rect, pCount, ppInstanceHandles);
+            return ((delegate* unmanaged<IXamlDiagnostics*, RECT, uint*, InstanceHandle**, int>)(lpVtbl[8]))((IXamlDiagnostics*)Unsafe.AsPointer(ref this), rect, pCount, ppInstanceHandles);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        public HRESULT RegisterInstance(IInspectable* pInstance, [NativeTypeName("InstanceHandle *")] ulong* pInstanceHandle)
+        public HRESULT RegisterInstance(IInspectable* pInstance, InstanceHandle* pInstanceHandle)
         {
-            return ((delegate* unmanaged<IXamlDiagnostics*, IInspectable*, ulong*, int>)(lpVtbl[9]))((IXamlDiagnostics*)Unsafe.AsPointer(ref this), pInstance, pInstanceHandle);
+            return ((delegate* unmanaged<IXamlDiagnostics*, IInspectable*, InstanceHandle*, int>)(lpVtbl[9]))((IXamlDiagnostics*)Unsafe.AsPointer(ref this), pInstance, pInstanceHandle);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

@@ -264,7 +264,7 @@ namespace TerraFX.Interop
             return renderTargetProperties;
         }
 
-        public static D2D1_HWND_RENDER_TARGET_PROPERTIES HwndRenderTargetProperties([NativeTypeName("HWND")] IntPtr hwnd, [NativeTypeName("D2D1_SIZE_U")] D2D_SIZE_U pixelSize = default, D2D1_PRESENT_OPTIONS presentOptions = D2D1_PRESENT_OPTIONS_NONE)
+        public static D2D1_HWND_RENDER_TARGET_PROPERTIES HwndRenderTargetProperties(HWND hwnd, [NativeTypeName("D2D1_SIZE_U")] D2D_SIZE_U pixelSize = default, D2D1_PRESENT_OPTIONS presentOptions = D2D1_PRESENT_OPTIONS_NONE)
         {
             D2D1_HWND_RENDER_TARGET_PROPERTIES hwndRenderTargetProperties;
 

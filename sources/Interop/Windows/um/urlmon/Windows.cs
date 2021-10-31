@@ -56,7 +56,7 @@ namespace TerraFX.Interop
         public static extern HRESULT IEInstallScope([NativeTypeName("LPDWORD")] uint* pdwScope);
 
         [DllImport("urlmon", ExactSpelling = true)]
-        public static extern HRESULT FaultInIEFeature([NativeTypeName("HWND")] IntPtr hWnd, uCLSSPEC* pClassSpec, QUERYCONTEXT* pQuery, [NativeTypeName("DWORD")] uint dwFlags);
+        public static extern HRESULT FaultInIEFeature(HWND hWnd, uCLSSPEC* pClassSpec, QUERYCONTEXT* pQuery, [NativeTypeName("DWORD")] uint dwFlags);
 
         [DllImport("urlmon", ExactSpelling = true)]
         public static extern HRESULT GetComponentIDFromCLSSPEC(uCLSSPEC* pClassspec, [NativeTypeName("LPSTR *")] sbyte** ppszComponentID);
@@ -104,7 +104,7 @@ namespace TerraFX.Interop
         public static extern HRESULT CompatFlagsFromClsid([NativeTypeName("CLSID *")] Guid* pclsid, [NativeTypeName("LPDWORD")] uint* pdwCompatFlags, [NativeTypeName("LPDWORD")] uint* pdwMiscStatusFlags);
 
         [DllImport("urlmon", ExactSpelling = true)]
-        public static extern HRESULT SetAccessForIEAppContainer([NativeTypeName("HANDLE")] IntPtr hObject, IEObjectType ieObjectType, [NativeTypeName("DWORD")] uint dwAccessMask);
+        public static extern HRESULT SetAccessForIEAppContainer(HANDLE hObject, IEObjectType ieObjectType, [NativeTypeName("DWORD")] uint dwAccessMask);
 
         [DllImport("urlmon", ExactSpelling = true)]
         public static extern HRESULT CreateUri([NativeTypeName("LPCWSTR")] ushort* pwzURI, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("DWORD_PTR")] nuint dwReserved, IUri** ppURI);

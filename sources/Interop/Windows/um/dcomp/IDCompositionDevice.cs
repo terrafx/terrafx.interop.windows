@@ -62,9 +62,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        public HRESULT CreateTargetForHwnd([NativeTypeName("HWND")] IntPtr hwnd, BOOL topmost, IDCompositionTarget** target)
+        public HRESULT CreateTargetForHwnd(HWND hwnd, BOOL topmost, IDCompositionTarget** target)
         {
-            return ((delegate* unmanaged<IDCompositionDevice*, IntPtr, BOOL, IDCompositionTarget**, int>)(lpVtbl[6]))((IDCompositionDevice*)Unsafe.AsPointer(ref this), hwnd, topmost, target);
+            return ((delegate* unmanaged<IDCompositionDevice*, HWND, BOOL, IDCompositionTarget**, int>)(lpVtbl[6]))((IDCompositionDevice*)Unsafe.AsPointer(ref this), hwnd, topmost, target);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -90,16 +90,16 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(10)]
-        public HRESULT CreateSurfaceFromHandle([NativeTypeName("HANDLE")] IntPtr handle, IUnknown** surface)
+        public HRESULT CreateSurfaceFromHandle(HANDLE handle, IUnknown** surface)
         {
-            return ((delegate* unmanaged<IDCompositionDevice*, IntPtr, IUnknown**, int>)(lpVtbl[10]))((IDCompositionDevice*)Unsafe.AsPointer(ref this), handle, surface);
+            return ((delegate* unmanaged<IDCompositionDevice*, HANDLE, IUnknown**, int>)(lpVtbl[10]))((IDCompositionDevice*)Unsafe.AsPointer(ref this), handle, surface);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(11)]
-        public HRESULT CreateSurfaceFromHwnd([NativeTypeName("HWND")] IntPtr hwnd, IUnknown** surface)
+        public HRESULT CreateSurfaceFromHwnd(HWND hwnd, IUnknown** surface)
         {
-            return ((delegate* unmanaged<IDCompositionDevice*, IntPtr, IUnknown**, int>)(lpVtbl[11]))((IDCompositionDevice*)Unsafe.AsPointer(ref this), hwnd, surface);
+            return ((delegate* unmanaged<IDCompositionDevice*, HWND, IUnknown**, int>)(lpVtbl[11]))((IDCompositionDevice*)Unsafe.AsPointer(ref this), hwnd, surface);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

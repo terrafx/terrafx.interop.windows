@@ -95,16 +95,16 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(11)]
-        public HRESULT SetMessageDrain([NativeTypeName("HWND")] IntPtr hwnd)
+        public HRESULT SetMessageDrain(HWND hwnd)
         {
-            return ((delegate* unmanaged<IFullScreenVideo*, IntPtr, int>)(lpVtbl[11]))((IFullScreenVideo*)Unsafe.AsPointer(ref this), hwnd);
+            return ((delegate* unmanaged<IFullScreenVideo*, HWND, int>)(lpVtbl[11]))((IFullScreenVideo*)Unsafe.AsPointer(ref this), hwnd);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(12)]
-        public HRESULT GetMessageDrain([NativeTypeName("HWND *")] IntPtr* hwnd)
+        public HRESULT GetMessageDrain(HWND* hwnd)
         {
-            return ((delegate* unmanaged<IFullScreenVideo*, IntPtr*, int>)(lpVtbl[12]))((IFullScreenVideo*)Unsafe.AsPointer(ref this), hwnd);
+            return ((delegate* unmanaged<IFullScreenVideo*, HWND*, int>)(lpVtbl[12]))((IFullScreenVideo*)Unsafe.AsPointer(ref this), hwnd);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

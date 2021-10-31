@@ -3,7 +3,6 @@
 // Ported from um/consoleapi3.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
@@ -14,16 +13,16 @@ namespace TerraFX.Interop
         public static extern BOOL GetNumberOfConsoleMouseButtons([NativeTypeName("LPDWORD")] uint* lpNumberOfMouseButtons);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        public static extern COORD GetConsoleFontSize([NativeTypeName("HANDLE")] IntPtr hConsoleOutput, [NativeTypeName("DWORD")] uint nFont);
+        public static extern COORD GetConsoleFontSize(HANDLE hConsoleOutput, [NativeTypeName("DWORD")] uint nFont);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        public static extern BOOL GetCurrentConsoleFont([NativeTypeName("HANDLE")] IntPtr hConsoleOutput, BOOL bMaximumWindow, [NativeTypeName("PCONSOLE_FONT_INFO")] CONSOLE_FONT_INFO* lpConsoleCurrentFont);
+        public static extern BOOL GetCurrentConsoleFont(HANDLE hConsoleOutput, BOOL bMaximumWindow, [NativeTypeName("PCONSOLE_FONT_INFO")] CONSOLE_FONT_INFO* lpConsoleCurrentFont);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        public static extern BOOL GetCurrentConsoleFontEx([NativeTypeName("HANDLE")] IntPtr hConsoleOutput, BOOL bMaximumWindow, [NativeTypeName("PCONSOLE_FONT_INFOEX")] CONSOLE_FONT_INFOEX* lpConsoleCurrentFontEx);
+        public static extern BOOL GetCurrentConsoleFontEx(HANDLE hConsoleOutput, BOOL bMaximumWindow, [NativeTypeName("PCONSOLE_FONT_INFOEX")] CONSOLE_FONT_INFOEX* lpConsoleCurrentFontEx);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        public static extern BOOL SetCurrentConsoleFontEx([NativeTypeName("HANDLE")] IntPtr hConsoleOutput, BOOL bMaximumWindow, [NativeTypeName("PCONSOLE_FONT_INFOEX")] CONSOLE_FONT_INFOEX* lpConsoleCurrentFontEx);
+        public static extern BOOL SetCurrentConsoleFontEx(HANDLE hConsoleOutput, BOOL bMaximumWindow, [NativeTypeName("PCONSOLE_FONT_INFOEX")] CONSOLE_FONT_INFOEX* lpConsoleCurrentFontEx);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         public static extern BOOL GetConsoleSelectionInfo([NativeTypeName("PCONSOLE_SELECTION_INFO")] CONSOLE_SELECTION_INFO* lpConsoleSelectionInfo);
@@ -38,11 +37,10 @@ namespace TerraFX.Interop
         public static extern BOOL GetConsoleDisplayMode([NativeTypeName("LPDWORD")] uint* lpModeFlags);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        public static extern BOOL SetConsoleDisplayMode([NativeTypeName("HANDLE")] IntPtr hConsoleOutput, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("PCOORD")] COORD* lpNewScreenBufferDimensions);
+        public static extern BOOL SetConsoleDisplayMode(HANDLE hConsoleOutput, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("PCOORD")] COORD* lpNewScreenBufferDimensions);
 
         [DllImport("kernel32", ExactSpelling = true)]
-        [return: NativeTypeName("HWND")]
-        public static extern IntPtr GetConsoleWindow();
+        public static extern HWND GetConsoleWindow();
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         public static extern BOOL AddConsoleAliasA([NativeTypeName("LPSTR")] sbyte* Source, [NativeTypeName("LPSTR")] sbyte* Target, [NativeTypeName("LPSTR")] sbyte* ExeName);

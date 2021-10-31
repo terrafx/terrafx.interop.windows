@@ -3,14 +3,11 @@
 // Ported from um/d2d1.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
-
 namespace TerraFX.Interop
 {
     public partial struct D2D1_HWND_RENDER_TARGET_PROPERTIES
     {
-        [NativeTypeName("HWND")]
-        public IntPtr hwnd;
+        public HWND hwnd;
 
         [NativeTypeName("D2D1_SIZE_U")]
         public D2D_SIZE_U pixelSize;

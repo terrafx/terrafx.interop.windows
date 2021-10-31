@@ -3,7 +3,6 @@
 // Ported from um/Msi.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
@@ -12,14 +11,14 @@ namespace TerraFX.Interop
     {
         [DllImport("msi", ExactSpelling = true)]
         [return: NativeTypeName("UINT")]
-        public static extern uint MsiCloseHandle([NativeTypeName("MSIHANDLE")] uint hAny);
+        public static extern uint MsiCloseHandle(MSIHANDLE hAny);
 
         [DllImport("msi", ExactSpelling = true)]
         [return: NativeTypeName("UINT")]
         public static extern uint MsiCloseAllHandles();
 
         [DllImport("msi", ExactSpelling = true)]
-        public static extern INSTALLUILEVEL MsiSetInternalUI(INSTALLUILEVEL dwUILevel, [NativeTypeName("HWND *")] IntPtr* phWnd);
+        public static extern INSTALLUILEVEL MsiSetInternalUI(INSTALLUILEVEL dwUILevel, HWND* phWnd);
 
         [DllImport("msi", ExactSpelling = true)]
         [return: NativeTypeName("INSTALLUI_HANDLERA")]
@@ -31,7 +30,7 @@ namespace TerraFX.Interop
 
         [DllImport("msi", ExactSpelling = true)]
         [return: NativeTypeName("UINT")]
-        public static extern uint MsiSetExternalUIRecord([NativeTypeName("INSTALLUI_HANDLER_RECORD")] delegate* unmanaged<void*, uint, uint, int> puiHandler, [NativeTypeName("DWORD")] uint dwMessageFilter, [NativeTypeName("LPVOID")] void* pvContext, [NativeTypeName("PINSTALLUI_HANDLER_RECORD")] delegate* unmanaged<void*, uint, uint, int>* ppuiPrevHandler);
+        public static extern uint MsiSetExternalUIRecord([NativeTypeName("INSTALLUI_HANDLER_RECORD")] delegate* unmanaged<void*, uint, MSIHANDLE, int> puiHandler, [NativeTypeName("DWORD")] uint dwMessageFilter, [NativeTypeName("LPVOID")] void* pvContext, [NativeTypeName("PINSTALLUI_HANDLER_RECORD")] delegate* unmanaged<void*, uint, MSIHANDLE, int>* ppuiPrevHandler);
 
         [DllImport("msi", ExactSpelling = true)]
         [return: NativeTypeName("UINT")]
@@ -113,19 +112,19 @@ namespace TerraFX.Interop
 
         [DllImport("msi", ExactSpelling = true)]
         [return: NativeTypeName("UINT")]
-        public static extern uint MsiProcessAdvertiseScriptA([NativeTypeName("LPCSTR")] sbyte* szScriptFile, [NativeTypeName("LPCSTR")] sbyte* szIconFolder, [NativeTypeName("HKEY")] IntPtr hRegData, BOOL fShortcuts, BOOL fRemoveItems);
+        public static extern uint MsiProcessAdvertiseScriptA([NativeTypeName("LPCSTR")] sbyte* szScriptFile, [NativeTypeName("LPCSTR")] sbyte* szIconFolder, HKEY hRegData, BOOL fShortcuts, BOOL fRemoveItems);
 
         [DllImport("msi", ExactSpelling = true)]
         [return: NativeTypeName("UINT")]
-        public static extern uint MsiProcessAdvertiseScriptW([NativeTypeName("LPCWSTR")] ushort* szScriptFile, [NativeTypeName("LPCWSTR")] ushort* szIconFolder, [NativeTypeName("HKEY")] IntPtr hRegData, BOOL fShortcuts, BOOL fRemoveItems);
+        public static extern uint MsiProcessAdvertiseScriptW([NativeTypeName("LPCWSTR")] ushort* szScriptFile, [NativeTypeName("LPCWSTR")] ushort* szIconFolder, HKEY hRegData, BOOL fShortcuts, BOOL fRemoveItems);
 
         [DllImport("msi", ExactSpelling = true)]
         [return: NativeTypeName("UINT")]
-        public static extern uint MsiAdvertiseScriptA([NativeTypeName("LPCSTR")] sbyte* szScriptFile, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("PHKEY")] IntPtr* phRegData, BOOL fRemoveItems);
+        public static extern uint MsiAdvertiseScriptA([NativeTypeName("LPCSTR")] sbyte* szScriptFile, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("PHKEY")] HKEY* phRegData, BOOL fRemoveItems);
 
         [DllImport("msi", ExactSpelling = true)]
         [return: NativeTypeName("UINT")]
-        public static extern uint MsiAdvertiseScriptW([NativeTypeName("LPCWSTR")] ushort* szScriptFile, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("PHKEY")] IntPtr* phRegData, BOOL fRemoveItems);
+        public static extern uint MsiAdvertiseScriptW([NativeTypeName("LPCWSTR")] ushort* szScriptFile, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("PHKEY")] HKEY* phRegData, BOOL fRemoveItems);
 
         [DllImport("msi", ExactSpelling = true)]
         [return: NativeTypeName("UINT")]
@@ -413,43 +412,43 @@ namespace TerraFX.Interop
 
         [DllImport("msi", ExactSpelling = true)]
         [return: NativeTypeName("UINT")]
-        public static extern uint MsiOpenProductA([NativeTypeName("LPCSTR")] sbyte* szProduct, [NativeTypeName("MSIHANDLE *")] uint* hProduct);
+        public static extern uint MsiOpenProductA([NativeTypeName("LPCSTR")] sbyte* szProduct, MSIHANDLE* hProduct);
 
         [DllImport("msi", ExactSpelling = true)]
         [return: NativeTypeName("UINT")]
-        public static extern uint MsiOpenProductW([NativeTypeName("LPCWSTR")] ushort* szProduct, [NativeTypeName("MSIHANDLE *")] uint* hProduct);
+        public static extern uint MsiOpenProductW([NativeTypeName("LPCWSTR")] ushort* szProduct, MSIHANDLE* hProduct);
 
         [DllImport("msi", ExactSpelling = true)]
         [return: NativeTypeName("UINT")]
-        public static extern uint MsiOpenPackageA([NativeTypeName("LPCSTR")] sbyte* szPackagePath, [NativeTypeName("MSIHANDLE *")] uint* hProduct);
+        public static extern uint MsiOpenPackageA([NativeTypeName("LPCSTR")] sbyte* szPackagePath, MSIHANDLE* hProduct);
 
         [DllImport("msi", ExactSpelling = true)]
         [return: NativeTypeName("UINT")]
-        public static extern uint MsiOpenPackageW([NativeTypeName("LPCWSTR")] ushort* szPackagePath, [NativeTypeName("MSIHANDLE *")] uint* hProduct);
+        public static extern uint MsiOpenPackageW([NativeTypeName("LPCWSTR")] ushort* szPackagePath, MSIHANDLE* hProduct);
 
         [DllImport("msi", ExactSpelling = true)]
         [return: NativeTypeName("UINT")]
-        public static extern uint MsiOpenPackageExA([NativeTypeName("LPCSTR")] sbyte* szPackagePath, [NativeTypeName("DWORD")] uint dwOptions, [NativeTypeName("MSIHANDLE *")] uint* hProduct);
+        public static extern uint MsiOpenPackageExA([NativeTypeName("LPCSTR")] sbyte* szPackagePath, [NativeTypeName("DWORD")] uint dwOptions, MSIHANDLE* hProduct);
 
         [DllImport("msi", ExactSpelling = true)]
         [return: NativeTypeName("UINT")]
-        public static extern uint MsiOpenPackageExW([NativeTypeName("LPCWSTR")] ushort* szPackagePath, [NativeTypeName("DWORD")] uint dwOptions, [NativeTypeName("MSIHANDLE *")] uint* hProduct);
+        public static extern uint MsiOpenPackageExW([NativeTypeName("LPCWSTR")] ushort* szPackagePath, [NativeTypeName("DWORD")] uint dwOptions, MSIHANDLE* hProduct);
 
         [DllImport("msi", ExactSpelling = true)]
         [return: NativeTypeName("UINT")]
-        public static extern uint MsiGetPatchFileListA([NativeTypeName("LPCSTR")] sbyte* szProductCode, [NativeTypeName("LPCSTR")] sbyte* szPatchPackages, [NativeTypeName("LPDWORD")] uint* pcFiles, [NativeTypeName("MSIHANDLE **")] uint** pphFileRecords);
+        public static extern uint MsiGetPatchFileListA([NativeTypeName("LPCSTR")] sbyte* szProductCode, [NativeTypeName("LPCSTR")] sbyte* szPatchPackages, [NativeTypeName("LPDWORD")] uint* pcFiles, MSIHANDLE** pphFileRecords);
 
         [DllImport("msi", ExactSpelling = true)]
         [return: NativeTypeName("UINT")]
-        public static extern uint MsiGetPatchFileListW([NativeTypeName("LPCWSTR")] ushort* szProductCode, [NativeTypeName("LPCWSTR")] ushort* szPatchPackages, [NativeTypeName("LPDWORD")] uint* pcFiles, [NativeTypeName("MSIHANDLE **")] uint** pphFileRecords);
+        public static extern uint MsiGetPatchFileListW([NativeTypeName("LPCWSTR")] ushort* szProductCode, [NativeTypeName("LPCWSTR")] ushort* szPatchPackages, [NativeTypeName("LPDWORD")] uint* pcFiles, MSIHANDLE** pphFileRecords);
 
         [DllImport("msi", ExactSpelling = true)]
         [return: NativeTypeName("UINT")]
-        public static extern uint MsiGetProductPropertyA([NativeTypeName("MSIHANDLE")] uint hProduct, [NativeTypeName("LPCSTR")] sbyte* szProperty, [NativeTypeName("LPSTR")] sbyte* lpValueBuf, [NativeTypeName("LPDWORD")] uint* pcchValueBuf);
+        public static extern uint MsiGetProductPropertyA(MSIHANDLE hProduct, [NativeTypeName("LPCSTR")] sbyte* szProperty, [NativeTypeName("LPSTR")] sbyte* lpValueBuf, [NativeTypeName("LPDWORD")] uint* pcchValueBuf);
 
         [DllImport("msi", ExactSpelling = true)]
         [return: NativeTypeName("UINT")]
-        public static extern uint MsiGetProductPropertyW([NativeTypeName("MSIHANDLE")] uint hProduct, [NativeTypeName("LPCWSTR")] ushort* szProperty, [NativeTypeName("LPWSTR")] ushort* lpValueBuf, [NativeTypeName("LPDWORD")] uint* pcchValueBuf);
+        public static extern uint MsiGetProductPropertyW(MSIHANDLE hProduct, [NativeTypeName("LPCWSTR")] ushort* szProperty, [NativeTypeName("LPWSTR")] ushort* lpValueBuf, [NativeTypeName("LPDWORD")] uint* pcchValueBuf);
 
         [DllImport("msi", ExactSpelling = true)]
         [return: NativeTypeName("UINT")]
@@ -461,11 +460,11 @@ namespace TerraFX.Interop
 
         [DllImport("msi", ExactSpelling = true)]
         [return: NativeTypeName("UINT")]
-        public static extern uint MsiGetFeatureInfoA([NativeTypeName("MSIHANDLE")] uint hProduct, [NativeTypeName("LPCSTR")] sbyte* szFeature, [NativeTypeName("LPDWORD")] uint* lpAttributes, [NativeTypeName("LPSTR")] sbyte* lpTitleBuf, [NativeTypeName("LPDWORD")] uint* pcchTitleBuf, [NativeTypeName("LPSTR")] sbyte* lpHelpBuf, [NativeTypeName("LPDWORD")] uint* pcchHelpBuf);
+        public static extern uint MsiGetFeatureInfoA(MSIHANDLE hProduct, [NativeTypeName("LPCSTR")] sbyte* szFeature, [NativeTypeName("LPDWORD")] uint* lpAttributes, [NativeTypeName("LPSTR")] sbyte* lpTitleBuf, [NativeTypeName("LPDWORD")] uint* pcchTitleBuf, [NativeTypeName("LPSTR")] sbyte* lpHelpBuf, [NativeTypeName("LPDWORD")] uint* pcchHelpBuf);
 
         [DllImport("msi", ExactSpelling = true)]
         [return: NativeTypeName("UINT")]
-        public static extern uint MsiGetFeatureInfoW([NativeTypeName("MSIHANDLE")] uint hProduct, [NativeTypeName("LPCWSTR")] ushort* szFeature, [NativeTypeName("LPDWORD")] uint* lpAttributes, [NativeTypeName("LPWSTR")] ushort* lpTitleBuf, [NativeTypeName("LPDWORD")] uint* pcchTitleBuf, [NativeTypeName("LPWSTR")] ushort* lpHelpBuf, [NativeTypeName("LPDWORD")] uint* pcchHelpBuf);
+        public static extern uint MsiGetFeatureInfoW(MSIHANDLE hProduct, [NativeTypeName("LPCWSTR")] ushort* szFeature, [NativeTypeName("LPDWORD")] uint* lpAttributes, [NativeTypeName("LPWSTR")] ushort* lpTitleBuf, [NativeTypeName("LPDWORD")] uint* pcchTitleBuf, [NativeTypeName("LPWSTR")] ushort* lpHelpBuf, [NativeTypeName("LPDWORD")] uint* pcchHelpBuf);
 
         [DllImport("msi", ExactSpelling = true)]
         [return: NativeTypeName("UINT")]
@@ -641,11 +640,11 @@ namespace TerraFX.Interop
 
         [DllImport("msi", ExactSpelling = true)]
         [return: NativeTypeName("UINT")]
-        public static extern uint MsiBeginTransactionA([NativeTypeName("LPCSTR")] sbyte* szName, [NativeTypeName("DWORD")] uint dwTransactionAttributes, [NativeTypeName("MSIHANDLE *")] uint* phTransactionHandle, [NativeTypeName("HANDLE *")] IntPtr* phChangeOfOwnerEvent);
+        public static extern uint MsiBeginTransactionA([NativeTypeName("LPCSTR")] sbyte* szName, [NativeTypeName("DWORD")] uint dwTransactionAttributes, MSIHANDLE* phTransactionHandle, HANDLE* phChangeOfOwnerEvent);
 
         [DllImport("msi", ExactSpelling = true)]
         [return: NativeTypeName("UINT")]
-        public static extern uint MsiBeginTransactionW([NativeTypeName("LPCWSTR")] ushort* szName, [NativeTypeName("DWORD")] uint dwTransactionAttributes, [NativeTypeName("MSIHANDLE *")] uint* phTransactionHandle, [NativeTypeName("HANDLE *")] IntPtr* phChangeOfOwnerEvent);
+        public static extern uint MsiBeginTransactionW([NativeTypeName("LPCWSTR")] ushort* szName, [NativeTypeName("DWORD")] uint dwTransactionAttributes, MSIHANDLE* phTransactionHandle, HANDLE* phChangeOfOwnerEvent);
 
         [DllImport("msi", ExactSpelling = true)]
         [return: NativeTypeName("UINT")]
@@ -653,7 +652,7 @@ namespace TerraFX.Interop
 
         [DllImport("msi", ExactSpelling = true)]
         [return: NativeTypeName("UINT")]
-        public static extern uint MsiJoinTransaction([NativeTypeName("MSIHANDLE")] uint hTransactionHandle, [NativeTypeName("DWORD")] uint dwTransactionAttributes, [NativeTypeName("HANDLE *")] IntPtr* phChangeOfOwnerEvent);
+        public static extern uint MsiJoinTransaction(MSIHANDLE hTransactionHandle, [NativeTypeName("DWORD")] uint dwTransactionAttributes, HANDLE* phChangeOfOwnerEvent);
 
         [NativeTypeName("#define MAX_GUID_CHARS 38")]
         public const int MAX_GUID_CHARS = 38;
@@ -809,10 +808,10 @@ namespace TerraFX.Interop
         public static delegate*<ushort*, ushort*, ushort*, ushort, uint> MsiAdvertiseProduct => &MsiAdvertiseProductW;
 
         [NativeTypeName("#define MsiProcessAdvertiseScript MsiProcessAdvertiseScriptW")]
-        public static delegate*<ushort*, ushort*, IntPtr, BOOL, BOOL, uint> MsiProcessAdvertiseScript => &MsiProcessAdvertiseScriptW;
+        public static delegate*<ushort*, ushort*, HKEY, BOOL, BOOL, uint> MsiProcessAdvertiseScript => &MsiProcessAdvertiseScriptW;
 
         [NativeTypeName("#define MsiAdvertiseScript MsiAdvertiseScriptW")]
-        public static delegate*<ushort*, uint, IntPtr*, BOOL, uint> MsiAdvertiseScript => &MsiAdvertiseScriptW;
+        public static delegate*<ushort*, uint, HKEY*, BOOL, uint> MsiAdvertiseScript => &MsiAdvertiseScriptW;
 
         [NativeTypeName("#define MsiGetProductInfoFromScript MsiGetProductInfoFromScriptW")]
         public static delegate*<ushort*, ushort*, ushort*, uint*, ushort*, uint*, ushort*, uint*, uint> MsiGetProductInfoFromScript => &MsiGetProductInfoFromScriptW;
@@ -932,25 +931,25 @@ namespace TerraFX.Interop
         public static delegate*<ushort*, uint, ushort*, uint*, ushort*, uint*, uint> MsiEnumComponentQualifiers => &MsiEnumComponentQualifiersW;
 
         [NativeTypeName("#define MsiOpenProduct MsiOpenProductW")]
-        public static delegate*<ushort*, uint*, uint> MsiOpenProduct => &MsiOpenProductW;
+        public static delegate*<ushort*, MSIHANDLE*, uint> MsiOpenProduct => &MsiOpenProductW;
 
         [NativeTypeName("#define MsiOpenPackage MsiOpenPackageW")]
-        public static delegate*<ushort*, uint*, uint> MsiOpenPackage => &MsiOpenPackageW;
+        public static delegate*<ushort*, MSIHANDLE*, uint> MsiOpenPackage => &MsiOpenPackageW;
 
         [NativeTypeName("#define MsiOpenPackageEx MsiOpenPackageExW")]
-        public static delegate*<ushort*, uint, uint*, uint> MsiOpenPackageEx => &MsiOpenPackageExW;
+        public static delegate*<ushort*, uint, MSIHANDLE*, uint> MsiOpenPackageEx => &MsiOpenPackageExW;
 
         [NativeTypeName("#define MsiGetPatchFileList MsiGetPatchFileListW")]
-        public static delegate*<ushort*, ushort*, uint*, uint**, uint> MsiGetPatchFileList => &MsiGetPatchFileListW;
+        public static delegate*<ushort*, ushort*, uint*, MSIHANDLE**, uint> MsiGetPatchFileList => &MsiGetPatchFileListW;
 
         [NativeTypeName("#define MsiGetProductProperty MsiGetProductPropertyW")]
-        public static delegate*<uint, ushort*, ushort*, uint*, uint> MsiGetProductProperty => &MsiGetProductPropertyW;
+        public static delegate*<MSIHANDLE, ushort*, ushort*, uint*, uint> MsiGetProductProperty => &MsiGetProductPropertyW;
 
         [NativeTypeName("#define MsiVerifyPackage MsiVerifyPackageW")]
         public static delegate*<ushort*, uint> MsiVerifyPackage => &MsiVerifyPackageW;
 
         [NativeTypeName("#define MsiGetFeatureInfo MsiGetFeatureInfoW")]
-        public static delegate*<uint, ushort*, uint*, ushort*, uint*, ushort*, uint*, uint> MsiGetFeatureInfo => &MsiGetFeatureInfoW;
+        public static delegate*<MSIHANDLE, ushort*, uint*, ushort*, uint*, ushort*, uint*, uint> MsiGetFeatureInfo => &MsiGetFeatureInfoW;
 
         [NativeTypeName("#define MsiInstallMissingComponent MsiInstallMissingComponentW")]
         public static delegate*<ushort*, ushort*, INSTALLSTATE, uint> MsiInstallMissingComponent => &MsiInstallMissingComponentW;
@@ -1022,7 +1021,7 @@ namespace TerraFX.Interop
         public static delegate*<ushort*, ushort*, uint> MsiNotifySidChange => &MsiNotifySidChangeW;
 
         [NativeTypeName("#define MsiBeginTransaction MsiBeginTransactionW")]
-        public static delegate*<ushort*, uint, uint*, IntPtr*, uint> MsiBeginTransaction => &MsiBeginTransactionW;
+        public static delegate*<ushort*, uint, MSIHANDLE*, HANDLE*, uint> MsiBeginTransaction => &MsiBeginTransactionW;
 
         [NativeTypeName("#define ERROR_ROLLBACK_DISABLED 1653L")]
         public const int ERROR_ROLLBACK_DISABLED = 1653;

@@ -41,9 +41,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        public HRESULT Dummy([NativeTypeName("HICON")] IntPtr h1, [NativeTypeName("HDC")] IntPtr h2)
+        public HRESULT Dummy(HICON h1, HDC h2)
         {
-            return ((delegate* unmanaged<IDummyHICONIncluder*, IntPtr, IntPtr, int>)(lpVtbl[3]))((IDummyHICONIncluder*)Unsafe.AsPointer(ref this), h1, h2);
+            return ((delegate* unmanaged<IDummyHICONIncluder*, HICON, HDC, int>)(lpVtbl[3]))((IDummyHICONIncluder*)Unsafe.AsPointer(ref this), h1, h2);
         }
     }
 }

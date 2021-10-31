@@ -17,8 +17,7 @@ namespace TerraFX.Interop
         [NativeTypeName("GUID")]
         public Guid ClassGuid;
 
-        [NativeTypeName("HANDLE")]
-        public IntPtr RemoteMachineHandle;
+        public HANDLE RemoteMachineHandle;
 
         [NativeTypeName("CHAR [263]")]
         public fixed sbyte RemoteMachineName[263];

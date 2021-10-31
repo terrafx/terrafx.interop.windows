@@ -9,8 +9,7 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct SHFILEINFO64A
     {
-        [NativeTypeName("HICON")]
-        public IntPtr hIcon;
+        public HICON hIcon;
 
         public int iIcon;
 

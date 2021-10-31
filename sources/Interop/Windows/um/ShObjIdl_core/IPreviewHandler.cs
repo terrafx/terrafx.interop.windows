@@ -41,9 +41,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        public HRESULT SetWindow([NativeTypeName("HWND")] IntPtr hwnd, [NativeTypeName("const RECT *")] RECT* prc)
+        public HRESULT SetWindow(HWND hwnd, [NativeTypeName("const RECT *")] RECT* prc)
         {
-            return ((delegate* unmanaged<IPreviewHandler*, IntPtr, RECT*, int>)(lpVtbl[3]))((IPreviewHandler*)Unsafe.AsPointer(ref this), hwnd, prc);
+            return ((delegate* unmanaged<IPreviewHandler*, HWND, RECT*, int>)(lpVtbl[3]))((IPreviewHandler*)Unsafe.AsPointer(ref this), hwnd, prc);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -76,9 +76,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        public HRESULT QueryFocus([NativeTypeName("HWND *")] IntPtr* phwnd)
+        public HRESULT QueryFocus(HWND* phwnd)
         {
-            return ((delegate* unmanaged<IPreviewHandler*, IntPtr*, int>)(lpVtbl[8]))((IPreviewHandler*)Unsafe.AsPointer(ref this), phwnd);
+            return ((delegate* unmanaged<IPreviewHandler*, HWND*, int>)(lpVtbl[8]))((IPreviewHandler*)Unsafe.AsPointer(ref this), phwnd);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

@@ -76,16 +76,16 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        public HRESULT MakeWindowAssociation([NativeTypeName("HWND")] IntPtr WindowHandle, [NativeTypeName("UINT")] uint Flags)
+        public HRESULT MakeWindowAssociation(HWND WindowHandle, [NativeTypeName("UINT")] uint Flags)
         {
-            return ((delegate* unmanaged<IDXGIFactory3*, IntPtr, uint, int>)(lpVtbl[8]))((IDXGIFactory3*)Unsafe.AsPointer(ref this), WindowHandle, Flags);
+            return ((delegate* unmanaged<IDXGIFactory3*, HWND, uint, int>)(lpVtbl[8]))((IDXGIFactory3*)Unsafe.AsPointer(ref this), WindowHandle, Flags);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        public HRESULT GetWindowAssociation([NativeTypeName("HWND *")] IntPtr* pWindowHandle)
+        public HRESULT GetWindowAssociation(HWND* pWindowHandle)
         {
-            return ((delegate* unmanaged<IDXGIFactory3*, IntPtr*, int>)(lpVtbl[9]))((IDXGIFactory3*)Unsafe.AsPointer(ref this), pWindowHandle);
+            return ((delegate* unmanaged<IDXGIFactory3*, HWND*, int>)(lpVtbl[9]))((IDXGIFactory3*)Unsafe.AsPointer(ref this), pWindowHandle);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -97,9 +97,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(11)]
-        public HRESULT CreateSoftwareAdapter([NativeTypeName("HMODULE")] IntPtr Module, IDXGIAdapter** ppAdapter)
+        public HRESULT CreateSoftwareAdapter([NativeTypeName("HMODULE")] HINSTANCE Module, IDXGIAdapter** ppAdapter)
         {
-            return ((delegate* unmanaged<IDXGIFactory3*, IntPtr, IDXGIAdapter**, int>)(lpVtbl[11]))((IDXGIFactory3*)Unsafe.AsPointer(ref this), Module, ppAdapter);
+            return ((delegate* unmanaged<IDXGIFactory3*, HINSTANCE, IDXGIAdapter**, int>)(lpVtbl[11]))((IDXGIFactory3*)Unsafe.AsPointer(ref this), Module, ppAdapter);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -125,9 +125,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(15)]
-        public HRESULT CreateSwapChainForHwnd(IUnknown* pDevice, [NativeTypeName("HWND")] IntPtr hWnd, [NativeTypeName("const DXGI_SWAP_CHAIN_DESC1 *")] DXGI_SWAP_CHAIN_DESC1* pDesc, [NativeTypeName("const DXGI_SWAP_CHAIN_FULLSCREEN_DESC *")] DXGI_SWAP_CHAIN_FULLSCREEN_DESC* pFullscreenDesc, IDXGIOutput* pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
+        public HRESULT CreateSwapChainForHwnd(IUnknown* pDevice, HWND hWnd, [NativeTypeName("const DXGI_SWAP_CHAIN_DESC1 *")] DXGI_SWAP_CHAIN_DESC1* pDesc, [NativeTypeName("const DXGI_SWAP_CHAIN_FULLSCREEN_DESC *")] DXGI_SWAP_CHAIN_FULLSCREEN_DESC* pFullscreenDesc, IDXGIOutput* pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
         {
-            return ((delegate* unmanaged<IDXGIFactory3*, IUnknown*, IntPtr, DXGI_SWAP_CHAIN_DESC1*, DXGI_SWAP_CHAIN_FULLSCREEN_DESC*, IDXGIOutput*, IDXGISwapChain1**, int>)(lpVtbl[15]))((IDXGIFactory3*)Unsafe.AsPointer(ref this), pDevice, hWnd, pDesc, pFullscreenDesc, pRestrictToOutput, ppSwapChain);
+            return ((delegate* unmanaged<IDXGIFactory3*, IUnknown*, HWND, DXGI_SWAP_CHAIN_DESC1*, DXGI_SWAP_CHAIN_FULLSCREEN_DESC*, IDXGIOutput*, IDXGISwapChain1**, int>)(lpVtbl[15]))((IDXGIFactory3*)Unsafe.AsPointer(ref this), pDevice, hWnd, pDesc, pFullscreenDesc, pRestrictToOutput, ppSwapChain);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -139,23 +139,23 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(17)]
-        public HRESULT GetSharedResourceAdapterLuid([NativeTypeName("HANDLE")] IntPtr hResource, LUID* pLuid)
+        public HRESULT GetSharedResourceAdapterLuid(HANDLE hResource, LUID* pLuid)
         {
-            return ((delegate* unmanaged<IDXGIFactory3*, IntPtr, LUID*, int>)(lpVtbl[17]))((IDXGIFactory3*)Unsafe.AsPointer(ref this), hResource, pLuid);
+            return ((delegate* unmanaged<IDXGIFactory3*, HANDLE, LUID*, int>)(lpVtbl[17]))((IDXGIFactory3*)Unsafe.AsPointer(ref this), hResource, pLuid);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(18)]
-        public HRESULT RegisterStereoStatusWindow([NativeTypeName("HWND")] IntPtr WindowHandle, [NativeTypeName("UINT")] uint wMsg, [NativeTypeName("DWORD *")] uint* pdwCookie)
+        public HRESULT RegisterStereoStatusWindow(HWND WindowHandle, [NativeTypeName("UINT")] uint wMsg, [NativeTypeName("DWORD *")] uint* pdwCookie)
         {
-            return ((delegate* unmanaged<IDXGIFactory3*, IntPtr, uint, uint*, int>)(lpVtbl[18]))((IDXGIFactory3*)Unsafe.AsPointer(ref this), WindowHandle, wMsg, pdwCookie);
+            return ((delegate* unmanaged<IDXGIFactory3*, HWND, uint, uint*, int>)(lpVtbl[18]))((IDXGIFactory3*)Unsafe.AsPointer(ref this), WindowHandle, wMsg, pdwCookie);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(19)]
-        public HRESULT RegisterStereoStatusEvent([NativeTypeName("HANDLE")] IntPtr hEvent, [NativeTypeName("DWORD *")] uint* pdwCookie)
+        public HRESULT RegisterStereoStatusEvent(HANDLE hEvent, [NativeTypeName("DWORD *")] uint* pdwCookie)
         {
-            return ((delegate* unmanaged<IDXGIFactory3*, IntPtr, uint*, int>)(lpVtbl[19]))((IDXGIFactory3*)Unsafe.AsPointer(ref this), hEvent, pdwCookie);
+            return ((delegate* unmanaged<IDXGIFactory3*, HANDLE, uint*, int>)(lpVtbl[19]))((IDXGIFactory3*)Unsafe.AsPointer(ref this), hEvent, pdwCookie);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -167,16 +167,16 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(21)]
-        public HRESULT RegisterOcclusionStatusWindow([NativeTypeName("HWND")] IntPtr WindowHandle, [NativeTypeName("UINT")] uint wMsg, [NativeTypeName("DWORD *")] uint* pdwCookie)
+        public HRESULT RegisterOcclusionStatusWindow(HWND WindowHandle, [NativeTypeName("UINT")] uint wMsg, [NativeTypeName("DWORD *")] uint* pdwCookie)
         {
-            return ((delegate* unmanaged<IDXGIFactory3*, IntPtr, uint, uint*, int>)(lpVtbl[21]))((IDXGIFactory3*)Unsafe.AsPointer(ref this), WindowHandle, wMsg, pdwCookie);
+            return ((delegate* unmanaged<IDXGIFactory3*, HWND, uint, uint*, int>)(lpVtbl[21]))((IDXGIFactory3*)Unsafe.AsPointer(ref this), WindowHandle, wMsg, pdwCookie);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(22)]
-        public HRESULT RegisterOcclusionStatusEvent([NativeTypeName("HANDLE")] IntPtr hEvent, [NativeTypeName("DWORD *")] uint* pdwCookie)
+        public HRESULT RegisterOcclusionStatusEvent(HANDLE hEvent, [NativeTypeName("DWORD *")] uint* pdwCookie)
         {
-            return ((delegate* unmanaged<IDXGIFactory3*, IntPtr, uint*, int>)(lpVtbl[22]))((IDXGIFactory3*)Unsafe.AsPointer(ref this), hEvent, pdwCookie);
+            return ((delegate* unmanaged<IDXGIFactory3*, HANDLE, uint*, int>)(lpVtbl[22]))((IDXGIFactory3*)Unsafe.AsPointer(ref this), hEvent, pdwCookie);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

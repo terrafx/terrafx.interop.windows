@@ -41,9 +41,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        public HRESULT CallBack(IShellFolder* psf, [NativeTypeName("HWND")] IntPtr hwndOwner, IDataObject* pdtobj, [NativeTypeName("UINT")] uint uMsg, [NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam)
+        public HRESULT CallBack(IShellFolder* psf, HWND hwndOwner, IDataObject* pdtobj, [NativeTypeName("UINT")] uint uMsg, [NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam)
         {
-            return ((delegate* unmanaged<IContextMenuCB*, IShellFolder*, IntPtr, IDataObject*, uint, nuint, nint, int>)(lpVtbl[3]))((IContextMenuCB*)Unsafe.AsPointer(ref this), psf, hwndOwner, pdtobj, uMsg, wParam, lParam);
+            return ((delegate* unmanaged<IContextMenuCB*, IShellFolder*, HWND, IDataObject*, uint, nuint, nint, int>)(lpVtbl[3]))((IContextMenuCB*)Unsafe.AsPointer(ref this), psf, hwndOwner, pdtobj, uMsg, wParam, lParam);
         }
     }
 }

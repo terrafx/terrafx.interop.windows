@@ -3,8 +3,6 @@
 // Ported from um/CommCtrl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
-
 namespace TerraFX.Interop
 {
     public unsafe partial struct NMTVASYNCDRAW
@@ -15,8 +13,7 @@ namespace TerraFX.Interop
 
         public HRESULT hr;
 
-        [NativeTypeName("HTREEITEM")]
-        public IntPtr hItem;
+        public HTREEITEM hItem;
 
         [NativeTypeName("LPARAM")]
         public nint lParam;

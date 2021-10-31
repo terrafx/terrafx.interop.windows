@@ -13,16 +13,16 @@ namespace TerraFX.Interop
     public static unsafe partial class Windows
     {
         [DllImport("msctf", ExactSpelling = true)]
-        public static extern HRESULT SetInputScope([NativeTypeName("HWND")] IntPtr hwnd, InputScope inputscope);
+        public static extern HRESULT SetInputScope(HWND hwnd, InputScope inputscope);
 
         [DllImport("msctf", ExactSpelling = true)]
-        public static extern HRESULT SetInputScopes([NativeTypeName("HWND")] IntPtr hwnd, [NativeTypeName("const InputScope *")] InputScope* pInputScopes, [NativeTypeName("UINT")] uint cInputScopes, [NativeTypeName("PWSTR *")] ushort** ppszPhraseList, [NativeTypeName("UINT")] uint cPhrases, [NativeTypeName("PWSTR")] ushort* pszRegExp, [NativeTypeName("PWSTR")] ushort* pszSRGS);
+        public static extern HRESULT SetInputScopes(HWND hwnd, [NativeTypeName("const InputScope *")] InputScope* pInputScopes, [NativeTypeName("UINT")] uint cInputScopes, [NativeTypeName("PWSTR *")] ushort** ppszPhraseList, [NativeTypeName("UINT")] uint cPhrases, [NativeTypeName("PWSTR")] ushort* pszRegExp, [NativeTypeName("PWSTR")] ushort* pszSRGS);
 
         [DllImport("msctf", ExactSpelling = true)]
-        public static extern HRESULT SetInputScopeXML([NativeTypeName("HWND")] IntPtr hwnd, [NativeTypeName("PWSTR")] ushort* pszXML);
+        public static extern HRESULT SetInputScopeXML(HWND hwnd, [NativeTypeName("PWSTR")] ushort* pszXML);
 
         [DllImport("msctf", ExactSpelling = true)]
-        public static extern HRESULT SetInputScopes2([NativeTypeName("HWND")] IntPtr hwnd, [NativeTypeName("const InputScope *")] InputScope* pInputScopes, [NativeTypeName("UINT")] uint cInputScopes, IEnumString* pEnumString, [NativeTypeName("PWSTR")] ushort* pszRegExp, [NativeTypeName("PWSTR")] ushort* pszSRGS);
+        public static extern HRESULT SetInputScopes2(HWND hwnd, [NativeTypeName("const InputScope *")] InputScope* pInputScopes, [NativeTypeName("UINT")] uint cInputScopes, IEnumString* pEnumString, [NativeTypeName("PWSTR")] ushort* pszRegExp, [NativeTypeName("PWSTR")] ushort* pszSRGS);
 
         [NativeTypeName("const GUID")]
         public static ref readonly Guid IID_ITfInputScope

@@ -41,9 +41,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        public HRESULT SetAssociatedWindow([NativeTypeName("HWND")] IntPtr value)
+        public HRESULT SetAssociatedWindow(HWND value)
         {
-            return ((delegate* unmanaged<ILaunchUIContext*, IntPtr, int>)(lpVtbl[3]))((ILaunchUIContext*)Unsafe.AsPointer(ref this), value);
+            return ((delegate* unmanaged<ILaunchUIContext*, HWND, int>)(lpVtbl[3]))((ILaunchUIContext*)Unsafe.AsPointer(ref this), value);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

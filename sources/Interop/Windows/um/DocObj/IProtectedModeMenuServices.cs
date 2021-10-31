@@ -41,23 +41,23 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        public HRESULT CreateMenu([NativeTypeName("HMENU *")] IntPtr* phMenu)
+        public HRESULT CreateMenu(HMENU* phMenu)
         {
-            return ((delegate* unmanaged<IProtectedModeMenuServices*, IntPtr*, int>)(lpVtbl[3]))((IProtectedModeMenuServices*)Unsafe.AsPointer(ref this), phMenu);
+            return ((delegate* unmanaged<IProtectedModeMenuServices*, HMENU*, int>)(lpVtbl[3]))((IProtectedModeMenuServices*)Unsafe.AsPointer(ref this), phMenu);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT LoadMenuW([NativeTypeName("LPCWSTR")] ushort* pszModuleName, [NativeTypeName("LPCWSTR")] ushort* pszMenuName, [NativeTypeName("HMENU *")] IntPtr* phMenu)
+        public HRESULT LoadMenuW([NativeTypeName("LPCWSTR")] ushort* pszModuleName, [NativeTypeName("LPCWSTR")] ushort* pszMenuName, HMENU* phMenu)
         {
-            return ((delegate* unmanaged<IProtectedModeMenuServices*, ushort*, ushort*, IntPtr*, int>)(lpVtbl[4]))((IProtectedModeMenuServices*)Unsafe.AsPointer(ref this), pszModuleName, pszMenuName, phMenu);
+            return ((delegate* unmanaged<IProtectedModeMenuServices*, ushort*, ushort*, HMENU*, int>)(lpVtbl[4]))((IProtectedModeMenuServices*)Unsafe.AsPointer(ref this), pszModuleName, pszMenuName, phMenu);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        public HRESULT LoadMenuID([NativeTypeName("LPCWSTR")] ushort* pszModuleName, [NativeTypeName("WORD")] ushort wResourceID, [NativeTypeName("HMENU *")] IntPtr* phMenu)
+        public HRESULT LoadMenuID([NativeTypeName("LPCWSTR")] ushort* pszModuleName, [NativeTypeName("WORD")] ushort wResourceID, HMENU* phMenu)
         {
-            return ((delegate* unmanaged<IProtectedModeMenuServices*, ushort*, ushort, IntPtr*, int>)(lpVtbl[5]))((IProtectedModeMenuServices*)Unsafe.AsPointer(ref this), pszModuleName, wResourceID, phMenu);
+            return ((delegate* unmanaged<IProtectedModeMenuServices*, ushort*, ushort, HMENU*, int>)(lpVtbl[5]))((IProtectedModeMenuServices*)Unsafe.AsPointer(ref this), pszModuleName, wResourceID, phMenu);
         }
     }
 }

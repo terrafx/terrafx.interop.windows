@@ -44,7 +44,6 @@ namespace TerraFX.Interop
 
         public int ai_interfaceindex;
 
-        [NativeTypeName("HANDLE")]
-        public IntPtr ai_resolutionhandle;
+        public HANDLE ai_resolutionhandle;
     }
 }

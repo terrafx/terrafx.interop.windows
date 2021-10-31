@@ -48,9 +48,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT ShowSharingWizard([NativeTypeName("HWND")] IntPtr owner, HOMEGROUPSHARINGCHOICES* sharingchoices)
+        public HRESULT ShowSharingWizard(HWND owner, HOMEGROUPSHARINGCHOICES* sharingchoices)
         {
-            return ((delegate* unmanaged<IHomeGroup*, IntPtr, HOMEGROUPSHARINGCHOICES*, int>)(lpVtbl[4]))((IHomeGroup*)Unsafe.AsPointer(ref this), owner, sharingchoices);
+            return ((delegate* unmanaged<IHomeGroup*, HWND, HOMEGROUPSHARINGCHOICES*, int>)(lpVtbl[4]))((IHomeGroup*)Unsafe.AsPointer(ref this), owner, sharingchoices);
         }
     }
 }

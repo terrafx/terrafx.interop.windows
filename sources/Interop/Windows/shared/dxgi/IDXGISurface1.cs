@@ -97,9 +97,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(11)]
-        public HRESULT GetDC(BOOL Discard, [NativeTypeName("HDC *")] IntPtr* phdc)
+        public HRESULT GetDC(BOOL Discard, HDC* phdc)
         {
-            return ((delegate* unmanaged<IDXGISurface1*, BOOL, IntPtr*, int>)(lpVtbl[11]))((IDXGISurface1*)Unsafe.AsPointer(ref this), Discard, phdc);
+            return ((delegate* unmanaged<IDXGISurface1*, BOOL, HDC*, int>)(lpVtbl[11]))((IDXGISurface1*)Unsafe.AsPointer(ref this), Discard, phdc);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

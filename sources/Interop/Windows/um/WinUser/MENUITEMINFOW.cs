@@ -3,8 +3,6 @@
 // Ported from um/WinUser.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
-
 namespace TerraFX.Interop
 {
     public unsafe partial struct MENUITEMINFOW
@@ -24,14 +22,11 @@ namespace TerraFX.Interop
         [NativeTypeName("UINT")]
         public uint wID;
 
-        [NativeTypeName("HMENU")]
-        public IntPtr hSubMenu;
+        public HMENU hSubMenu;
 
-        [NativeTypeName("HBITMAP")]
-        public IntPtr hbmpChecked;
+        public HBITMAP hbmpChecked;
 
-        [NativeTypeName("HBITMAP")]
-        public IntPtr hbmpUnchecked;
+        public HBITMAP hbmpUnchecked;
 
         [NativeTypeName("ULONG_PTR")]
         public nuint dwItemData;
@@ -42,7 +37,6 @@ namespace TerraFX.Interop
         [NativeTypeName("UINT")]
         public uint cch;
 
-        [NativeTypeName("HBITMAP")]
-        public IntPtr hbmpItem;
+        public HBITMAP hbmpItem;
     }
 }

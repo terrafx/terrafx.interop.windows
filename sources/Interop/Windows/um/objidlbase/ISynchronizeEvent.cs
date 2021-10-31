@@ -41,16 +41,16 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        public HRESULT GetHandle([NativeTypeName("HANDLE *")] IntPtr* ph)
+        public HRESULT GetHandle(HANDLE* ph)
         {
-            return ((delegate* unmanaged<ISynchronizeEvent*, IntPtr*, int>)(lpVtbl[3]))((ISynchronizeEvent*)Unsafe.AsPointer(ref this), ph);
+            return ((delegate* unmanaged<ISynchronizeEvent*, HANDLE*, int>)(lpVtbl[3]))((ISynchronizeEvent*)Unsafe.AsPointer(ref this), ph);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT SetEventHandle([NativeTypeName("HANDLE *")] IntPtr* ph)
+        public HRESULT SetEventHandle(HANDLE* ph)
         {
-            return ((delegate* unmanaged<ISynchronizeEvent*, IntPtr*, int>)(lpVtbl[4]))((ISynchronizeEvent*)Unsafe.AsPointer(ref this), ph);
+            return ((delegate* unmanaged<ISynchronizeEvent*, HANDLE*, int>)(lpVtbl[4]))((ISynchronizeEvent*)Unsafe.AsPointer(ref this), ph);
         }
     }
 }

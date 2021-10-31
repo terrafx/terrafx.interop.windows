@@ -41,9 +41,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        public HRESULT StartProgressDialog([NativeTypeName("HWND")] IntPtr hwndParent, IUnknown* punkEnableModless, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LPCVOID")] void* pvResevered)
+        public HRESULT StartProgressDialog(HWND hwndParent, IUnknown* punkEnableModless, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LPCVOID")] void* pvResevered)
         {
-            return ((delegate* unmanaged<IProgressDialog*, IntPtr, IUnknown*, uint, void*, int>)(lpVtbl[3]))((IProgressDialog*)Unsafe.AsPointer(ref this), hwndParent, punkEnableModless, dwFlags, pvResevered);
+            return ((delegate* unmanaged<IProgressDialog*, HWND, IUnknown*, uint, void*, int>)(lpVtbl[3]))((IProgressDialog*)Unsafe.AsPointer(ref this), hwndParent, punkEnableModless, dwFlags, pvResevered);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -62,9 +62,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        public HRESULT SetAnimation([NativeTypeName("HINSTANCE")] IntPtr hInstAnimation, [NativeTypeName("UINT")] uint idAnimation)
+        public HRESULT SetAnimation(HINSTANCE hInstAnimation, [NativeTypeName("UINT")] uint idAnimation)
         {
-            return ((delegate* unmanaged<IProgressDialog*, IntPtr, uint, int>)(lpVtbl[6]))((IProgressDialog*)Unsafe.AsPointer(ref this), hInstAnimation, idAnimation);
+            return ((delegate* unmanaged<IProgressDialog*, HINSTANCE, uint, int>)(lpVtbl[6]))((IProgressDialog*)Unsafe.AsPointer(ref this), hInstAnimation, idAnimation);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

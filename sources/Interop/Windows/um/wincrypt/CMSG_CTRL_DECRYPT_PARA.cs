@@ -3,7 +3,6 @@
 // Ported from um/wincrypt.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -23,7 +22,7 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint dwRecipientIndex;
 
-        public ref IntPtr hCryptProv
+        public ref HCRYPTPROV hCryptProv
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
@@ -45,8 +44,7 @@ namespace TerraFX.Interop
         public partial struct _Anonymous_e__Union
         {
             [FieldOffset(0)]
-            [NativeTypeName("HCRYPTPROV")]
-            public IntPtr hCryptProv;
+            public HCRYPTPROV hCryptProv;
 
             [FieldOffset(0)]
             [NativeTypeName("NCRYPT_KEY_HANDLE")]

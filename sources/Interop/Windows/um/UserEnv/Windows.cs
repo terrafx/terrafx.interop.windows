@@ -11,13 +11,13 @@ namespace TerraFX.Interop
     public static unsafe partial class Windows
     {
         [DllImport("userenv", ExactSpelling = true, SetLastError = true)]
-        public static extern BOOL LoadUserProfileA([NativeTypeName("HANDLE")] IntPtr hToken, [NativeTypeName("LPPROFILEINFOA")] PROFILEINFOA* lpProfileInfo);
+        public static extern BOOL LoadUserProfileA(HANDLE hToken, [NativeTypeName("LPPROFILEINFOA")] PROFILEINFOA* lpProfileInfo);
 
         [DllImport("userenv", ExactSpelling = true, SetLastError = true)]
-        public static extern BOOL LoadUserProfileW([NativeTypeName("HANDLE")] IntPtr hToken, [NativeTypeName("LPPROFILEINFOW")] PROFILEINFOW* lpProfileInfo);
+        public static extern BOOL LoadUserProfileW(HANDLE hToken, [NativeTypeName("LPPROFILEINFOW")] PROFILEINFOW* lpProfileInfo);
 
         [DllImport("userenv", ExactSpelling = true, SetLastError = true)]
-        public static extern BOOL UnloadUserProfile([NativeTypeName("HANDLE")] IntPtr hToken, [NativeTypeName("HANDLE")] IntPtr hProfile);
+        public static extern BOOL UnloadUserProfile(HANDLE hToken, HANDLE hProfile);
 
         [DllImport("userenv", ExactSpelling = true, SetLastError = true)]
         public static extern BOOL GetProfilesDirectoryA([NativeTypeName("LPSTR")] sbyte* lpProfileDir, [NativeTypeName("LPDWORD")] uint* lpcchSize);
@@ -50,22 +50,22 @@ namespace TerraFX.Interop
         public static extern BOOL GetAllUsersProfileDirectoryW([NativeTypeName("LPWSTR")] ushort* lpProfileDir, [NativeTypeName("LPDWORD")] uint* lpcchSize);
 
         [DllImport("userenv", ExactSpelling = true, SetLastError = true)]
-        public static extern BOOL GetUserProfileDirectoryA([NativeTypeName("HANDLE")] IntPtr hToken, [NativeTypeName("LPSTR")] sbyte* lpProfileDir, [NativeTypeName("LPDWORD")] uint* lpcchSize);
+        public static extern BOOL GetUserProfileDirectoryA(HANDLE hToken, [NativeTypeName("LPSTR")] sbyte* lpProfileDir, [NativeTypeName("LPDWORD")] uint* lpcchSize);
 
         [DllImport("userenv", ExactSpelling = true, SetLastError = true)]
-        public static extern BOOL GetUserProfileDirectoryW([NativeTypeName("HANDLE")] IntPtr hToken, [NativeTypeName("LPWSTR")] ushort* lpProfileDir, [NativeTypeName("LPDWORD")] uint* lpcchSize);
+        public static extern BOOL GetUserProfileDirectoryW(HANDLE hToken, [NativeTypeName("LPWSTR")] ushort* lpProfileDir, [NativeTypeName("LPDWORD")] uint* lpcchSize);
 
         [DllImport("userenv", ExactSpelling = true, SetLastError = true)]
-        public static extern BOOL CreateEnvironmentBlock([NativeTypeName("LPVOID *")] void** lpEnvironment, [NativeTypeName("HANDLE")] IntPtr hToken, BOOL bInherit);
+        public static extern BOOL CreateEnvironmentBlock([NativeTypeName("LPVOID *")] void** lpEnvironment, HANDLE hToken, BOOL bInherit);
 
         [DllImport("userenv", ExactSpelling = true, SetLastError = true)]
         public static extern BOOL DestroyEnvironmentBlock([NativeTypeName("LPVOID")] void* lpEnvironment);
 
         [DllImport("userenv", ExactSpelling = true, SetLastError = true)]
-        public static extern BOOL ExpandEnvironmentStringsForUserA([NativeTypeName("HANDLE")] IntPtr hToken, [NativeTypeName("LPCSTR")] sbyte* lpSrc, [NativeTypeName("LPSTR")] sbyte* lpDest, [NativeTypeName("DWORD")] uint dwSize);
+        public static extern BOOL ExpandEnvironmentStringsForUserA(HANDLE hToken, [NativeTypeName("LPCSTR")] sbyte* lpSrc, [NativeTypeName("LPSTR")] sbyte* lpDest, [NativeTypeName("DWORD")] uint dwSize);
 
         [DllImport("userenv", ExactSpelling = true, SetLastError = true)]
-        public static extern BOOL ExpandEnvironmentStringsForUserW([NativeTypeName("HANDLE")] IntPtr hToken, [NativeTypeName("LPCWSTR")] ushort* lpSrc, [NativeTypeName("LPWSTR")] ushort* lpDest, [NativeTypeName("DWORD")] uint dwSize);
+        public static extern BOOL ExpandEnvironmentStringsForUserW(HANDLE hToken, [NativeTypeName("LPCWSTR")] ushort* lpSrc, [NativeTypeName("LPWSTR")] ushort* lpDest, [NativeTypeName("DWORD")] uint dwSize);
 
         [DllImport("userenv", ExactSpelling = true, SetLastError = true)]
         public static extern BOOL RefreshPolicy(BOOL bMachine);
@@ -74,23 +74,22 @@ namespace TerraFX.Interop
         public static extern BOOL RefreshPolicyEx(BOOL bMachine, [NativeTypeName("DWORD")] uint dwOptions);
 
         [DllImport("userenv", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("HANDLE")]
-        public static extern IntPtr EnterCriticalPolicySection(BOOL bMachine);
+        public static extern HANDLE EnterCriticalPolicySection(BOOL bMachine);
 
         [DllImport("userenv", ExactSpelling = true, SetLastError = true)]
-        public static extern BOOL LeaveCriticalPolicySection([NativeTypeName("HANDLE")] IntPtr hSection);
+        public static extern BOOL LeaveCriticalPolicySection(HANDLE hSection);
 
         [DllImport("userenv", ExactSpelling = true, SetLastError = true)]
-        public static extern BOOL RegisterGPNotification([NativeTypeName("HANDLE")] IntPtr hEvent, BOOL bMachine);
+        public static extern BOOL RegisterGPNotification(HANDLE hEvent, BOOL bMachine);
 
         [DllImport("userenv", ExactSpelling = true, SetLastError = true)]
-        public static extern BOOL UnregisterGPNotification([NativeTypeName("HANDLE")] IntPtr hEvent);
+        public static extern BOOL UnregisterGPNotification(HANDLE hEvent);
 
         [DllImport("userenv", ExactSpelling = true, SetLastError = true)]
-        public static extern BOOL GetGPOListA([NativeTypeName("HANDLE")] IntPtr hToken, [NativeTypeName("LPCSTR")] sbyte* lpName, [NativeTypeName("LPCSTR")] sbyte* lpHostName, [NativeTypeName("LPCSTR")] sbyte* lpComputerName, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("PGROUP_POLICY_OBJECTA *")] GROUP_POLICY_OBJECTA** pGPOList);
+        public static extern BOOL GetGPOListA(HANDLE hToken, [NativeTypeName("LPCSTR")] sbyte* lpName, [NativeTypeName("LPCSTR")] sbyte* lpHostName, [NativeTypeName("LPCSTR")] sbyte* lpComputerName, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("PGROUP_POLICY_OBJECTA *")] GROUP_POLICY_OBJECTA** pGPOList);
 
         [DllImport("userenv", ExactSpelling = true, SetLastError = true)]
-        public static extern BOOL GetGPOListW([NativeTypeName("HANDLE")] IntPtr hToken, [NativeTypeName("LPCWSTR")] ushort* lpName, [NativeTypeName("LPCWSTR")] ushort* lpHostName, [NativeTypeName("LPCWSTR")] ushort* lpComputerName, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("PGROUP_POLICY_OBJECTW *")] GROUP_POLICY_OBJECTW** pGPOList);
+        public static extern BOOL GetGPOListW(HANDLE hToken, [NativeTypeName("LPCWSTR")] ushort* lpName, [NativeTypeName("LPCWSTR")] ushort* lpHostName, [NativeTypeName("LPCWSTR")] ushort* lpComputerName, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("PGROUP_POLICY_OBJECTW *")] GROUP_POLICY_OBJECTW** pGPOList);
 
         [DllImport("userenv", ExactSpelling = true, SetLastError = true)]
         public static extern BOOL FreeGPOListA([NativeTypeName("PGROUP_POLICY_OBJECTA")] GROUP_POLICY_OBJECTA* pGPOList);
@@ -108,11 +107,11 @@ namespace TerraFX.Interop
 
         [DllImport("userenv", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
-        public static extern uint ProcessGroupPolicyCompleted([NativeTypeName("REFGPEXTENSIONID")] Guid* extensionId, [NativeTypeName("ASYNCCOMPLETIONHANDLE")] nuint pAsyncHandle, [NativeTypeName("DWORD")] uint dwStatus);
+        public static extern uint ProcessGroupPolicyCompleted([NativeTypeName("REFGPEXTENSIONID")] Guid* extensionId, ASYNCCOMPLETIONHANDLE pAsyncHandle, [NativeTypeName("DWORD")] uint dwStatus);
 
         [DllImport("userenv", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
-        public static extern uint ProcessGroupPolicyCompletedEx([NativeTypeName("REFGPEXTENSIONID")] Guid* extensionId, [NativeTypeName("ASYNCCOMPLETIONHANDLE")] nuint pAsyncHandle, [NativeTypeName("DWORD")] uint dwStatus, HRESULT RsopStatus);
+        public static extern uint ProcessGroupPolicyCompletedEx([NativeTypeName("REFGPEXTENSIONID")] Guid* extensionId, ASYNCCOMPLETIONHANDLE pAsyncHandle, [NativeTypeName("DWORD")] uint dwStatus, HRESULT RsopStatus);
 
         [DllImport("userenv", ExactSpelling = true)]
         public static extern HRESULT RsopAccessCheckByType([NativeTypeName("PSECURITY_DESCRIPTOR")] void* pSecurityDescriptor, [NativeTypeName("PSID")] void* pPrincipalSelfSid, [NativeTypeName("PRSOPTOKEN")] void* pRsopToken, [NativeTypeName("DWORD")] uint dwDesiredAccessMask, [NativeTypeName("POBJECT_TYPE_LIST")] OBJECT_TYPE_LIST* pObjectTypeList, [NativeTypeName("DWORD")] uint ObjectTypeListLength, [NativeTypeName("PGENERIC_MAPPING")] GENERIC_MAPPING* pGenericMapping, [NativeTypeName("PPRIVILEGE_SET")] PRIVILEGE_SET* pPrivilegeSet, [NativeTypeName("LPDWORD")] uint* pdwPrivilegeSetLength, [NativeTypeName("LPDWORD")] uint* pdwGrantedAccessMask, [NativeTypeName("LPBOOL")] BOOL* pbAccessStatus);
@@ -137,7 +136,7 @@ namespace TerraFX.Interop
         public static extern HRESULT DeleteAppContainerProfile([NativeTypeName("PCWSTR")] ushort* pszAppContainerName);
 
         [DllImport("userenv", ExactSpelling = true)]
-        public static extern HRESULT GetAppContainerRegistryLocation([NativeTypeName("REGSAM")] uint desiredAccess, [NativeTypeName("PHKEY")] IntPtr* phAppContainerKey);
+        public static extern HRESULT GetAppContainerRegistryLocation([NativeTypeName("REGSAM")] uint desiredAccess, [NativeTypeName("PHKEY")] HKEY* phAppContainerKey);
 
         [DllImport("userenv", ExactSpelling = true)]
         public static extern HRESULT GetAppContainerFolderPath([NativeTypeName("PCWSTR")] ushort* pszAppContainerSid, [NativeTypeName("PWSTR *")] ushort** ppszPath);
@@ -155,7 +154,7 @@ namespace TerraFX.Interop
         public const int PI_APPLYPOLICY = 0x00000002;
 
         [NativeTypeName("#define LoadUserProfile LoadUserProfileW")]
-        public static delegate*<IntPtr, PROFILEINFOW*, BOOL> LoadUserProfile => &LoadUserProfileW;
+        public static delegate*<HANDLE, PROFILEINFOW*, BOOL> LoadUserProfile => &LoadUserProfileW;
 
         [NativeTypeName("#define GetProfilesDirectory GetProfilesDirectoryW")]
         public static delegate*<ushort*, uint*, BOOL> GetProfilesDirectory => &GetProfilesDirectoryW;
@@ -182,10 +181,10 @@ namespace TerraFX.Interop
         public static delegate*<ushort*, uint*, BOOL> GetAllUsersProfileDirectory => &GetAllUsersProfileDirectoryW;
 
         [NativeTypeName("#define GetUserProfileDirectory GetUserProfileDirectoryW")]
-        public static delegate*<IntPtr, ushort*, uint*, BOOL> GetUserProfileDirectory => &GetUserProfileDirectoryW;
+        public static delegate*<HANDLE, ushort*, uint*, BOOL> GetUserProfileDirectory => &GetUserProfileDirectoryW;
 
         [NativeTypeName("#define ExpandEnvironmentStringsForUser ExpandEnvironmentStringsForUserW")]
-        public static delegate*<IntPtr, ushort*, ushort*, uint, BOOL> ExpandEnvironmentStringsForUser => &ExpandEnvironmentStringsForUserW;
+        public static delegate*<HANDLE, ushort*, ushort*, uint, BOOL> ExpandEnvironmentStringsForUser => &ExpandEnvironmentStringsForUserW;
 
         [NativeTypeName("#define RP_FORCE 1")]
         public const int RP_FORCE = 1;
@@ -215,7 +214,7 @@ namespace TerraFX.Interop
         public const int GPO_LIST_FLAG_NO_SECURITYFILTERS = 0x00000008;
 
         [NativeTypeName("#define GetGPOList GetGPOListW")]
-        public static delegate*<IntPtr, ushort*, ushort*, ushort*, uint, GROUP_POLICY_OBJECTW**, BOOL> GetGPOList => &GetGPOListW;
+        public static delegate*<HANDLE, ushort*, ushort*, ushort*, uint, GROUP_POLICY_OBJECTW**, BOOL> GetGPOList => &GetGPOListW;
 
         [NativeTypeName("#define FreeGPOList FreeGPOListW")]
         public static delegate*<GROUP_POLICY_OBJECTW*, BOOL> FreeGPOList => &FreeGPOListW;

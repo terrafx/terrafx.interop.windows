@@ -48,9 +48,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT GetRuntimeClassName([NativeTypeName("HSTRING *")] IntPtr* className)
+        public HRESULT GetRuntimeClassName(HSTRING* className)
         {
-            return ((delegate* unmanaged<ICorrelationVectorInformation*, IntPtr*, int>)(lpVtbl[4]))((ICorrelationVectorInformation*)Unsafe.AsPointer(ref this), className);
+            return ((delegate* unmanaged<ICorrelationVectorInformation*, HSTRING*, int>)(lpVtbl[4]))((ICorrelationVectorInformation*)Unsafe.AsPointer(ref this), className);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -62,23 +62,23 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        public HRESULT get_LastCorrelationVectorForThread([NativeTypeName("HSTRING *")] IntPtr* cv)
+        public HRESULT get_LastCorrelationVectorForThread(HSTRING* cv)
         {
-            return ((delegate* unmanaged<ICorrelationVectorInformation*, IntPtr*, int>)(lpVtbl[6]))((ICorrelationVectorInformation*)Unsafe.AsPointer(ref this), cv);
+            return ((delegate* unmanaged<ICorrelationVectorInformation*, HSTRING*, int>)(lpVtbl[6]))((ICorrelationVectorInformation*)Unsafe.AsPointer(ref this), cv);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        public HRESULT get_NextCorrelationVectorForThread([NativeTypeName("HSTRING *")] IntPtr* cv)
+        public HRESULT get_NextCorrelationVectorForThread(HSTRING* cv)
         {
-            return ((delegate* unmanaged<ICorrelationVectorInformation*, IntPtr*, int>)(lpVtbl[7]))((ICorrelationVectorInformation*)Unsafe.AsPointer(ref this), cv);
+            return ((delegate* unmanaged<ICorrelationVectorInformation*, HSTRING*, int>)(lpVtbl[7]))((ICorrelationVectorInformation*)Unsafe.AsPointer(ref this), cv);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        public HRESULT put_NextCorrelationVectorForThread([NativeTypeName("HSTRING")] IntPtr cv)
+        public HRESULT put_NextCorrelationVectorForThread(HSTRING cv)
         {
-            return ((delegate* unmanaged<ICorrelationVectorInformation*, IntPtr, int>)(lpVtbl[8]))((ICorrelationVectorInformation*)Unsafe.AsPointer(ref this), cv);
+            return ((delegate* unmanaged<ICorrelationVectorInformation*, HSTRING, int>)(lpVtbl[8]))((ICorrelationVectorInformation*)Unsafe.AsPointer(ref this), cv);
         }
     }
 }

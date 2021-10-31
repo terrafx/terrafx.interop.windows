@@ -41,23 +41,23 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        public HRESULT GetAvailableSize([NativeTypeName("HMONITOR")] IntPtr hMonitor, [NativeTypeName("UINT *")] uint* pcxFixed, [NativeTypeName("UINT *")] uint* pcyMax)
+        public HRESULT GetAvailableSize(HMONITOR hMonitor, [NativeTypeName("UINT *")] uint* pcxFixed, [NativeTypeName("UINT *")] uint* pcyMax)
         {
-            return ((delegate* unmanaged<IAccessibilityDockingService*, IntPtr, uint*, uint*, int>)(lpVtbl[3]))((IAccessibilityDockingService*)Unsafe.AsPointer(ref this), hMonitor, pcxFixed, pcyMax);
+            return ((delegate* unmanaged<IAccessibilityDockingService*, HMONITOR, uint*, uint*, int>)(lpVtbl[3]))((IAccessibilityDockingService*)Unsafe.AsPointer(ref this), hMonitor, pcxFixed, pcyMax);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT DockWindow([NativeTypeName("HWND")] IntPtr hwnd, [NativeTypeName("HMONITOR")] IntPtr hMonitor, [NativeTypeName("UINT")] uint cyRequested, IAccessibilityDockingServiceCallback* pCallback)
+        public HRESULT DockWindow(HWND hwnd, HMONITOR hMonitor, [NativeTypeName("UINT")] uint cyRequested, IAccessibilityDockingServiceCallback* pCallback)
         {
-            return ((delegate* unmanaged<IAccessibilityDockingService*, IntPtr, IntPtr, uint, IAccessibilityDockingServiceCallback*, int>)(lpVtbl[4]))((IAccessibilityDockingService*)Unsafe.AsPointer(ref this), hwnd, hMonitor, cyRequested, pCallback);
+            return ((delegate* unmanaged<IAccessibilityDockingService*, HWND, HMONITOR, uint, IAccessibilityDockingServiceCallback*, int>)(lpVtbl[4]))((IAccessibilityDockingService*)Unsafe.AsPointer(ref this), hwnd, hMonitor, cyRequested, pCallback);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        public HRESULT UndockWindow([NativeTypeName("HWND")] IntPtr hwnd)
+        public HRESULT UndockWindow(HWND hwnd)
         {
-            return ((delegate* unmanaged<IAccessibilityDockingService*, IntPtr, int>)(lpVtbl[5]))((IAccessibilityDockingService*)Unsafe.AsPointer(ref this), hwnd);
+            return ((delegate* unmanaged<IAccessibilityDockingService*, HWND, int>)(lpVtbl[5]))((IAccessibilityDockingService*)Unsafe.AsPointer(ref this), hwnd);
         }
     }
 }

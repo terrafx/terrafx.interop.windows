@@ -15,10 +15,10 @@ namespace TerraFX.Interop
         public static extern HRESULT CoGetMalloc([NativeTypeName("DWORD")] uint dwMemContext, [NativeTypeName("LPMALLOC *")] IMalloc** ppMalloc);
 
         [DllImport("ole32", ExactSpelling = true)]
-        public static extern HRESULT CreateStreamOnHGlobal([NativeTypeName("HGLOBAL")] IntPtr hGlobal, BOOL fDeleteOnRelease, [NativeTypeName("LPSTREAM *")] IStream** ppstm);
+        public static extern HRESULT CreateStreamOnHGlobal([NativeTypeName("HGLOBAL")] HANDLE hGlobal, BOOL fDeleteOnRelease, [NativeTypeName("LPSTREAM *")] IStream** ppstm);
 
         [DllImport("ole32", ExactSpelling = true)]
-        public static extern HRESULT GetHGlobalFromStream([NativeTypeName("LPSTREAM")] IStream* pstm, [NativeTypeName("HGLOBAL *")] IntPtr* phglobal);
+        public static extern HRESULT GetHGlobalFromStream([NativeTypeName("LPSTREAM")] IStream* pstm, [NativeTypeName("HGLOBAL *")] HANDLE* phglobal);
 
         [DllImport("ole32", ExactSpelling = true)]
         public static extern void CoUninitialize();
@@ -49,10 +49,10 @@ namespace TerraFX.Interop
         public static extern HRESULT CoDecodeProxy([NativeTypeName("DWORD")] uint dwClientPid, [NativeTypeName("UINT64")] ulong ui64ProxyAddress, [NativeTypeName("PServerInformation")] ServerInformation* pServerInformation);
 
         [DllImport("ole32", ExactSpelling = true)]
-        public static extern HRESULT CoIncrementMTAUsage([NativeTypeName("CO_MTA_USAGE_COOKIE *")] IntPtr* pCookie);
+        public static extern HRESULT CoIncrementMTAUsage(CO_MTA_USAGE_COOKIE* pCookie);
 
         [DllImport("ole32", ExactSpelling = true)]
-        public static extern HRESULT CoDecrementMTAUsage([NativeTypeName("CO_MTA_USAGE_COOKIE")] IntPtr Cookie);
+        public static extern HRESULT CoDecrementMTAUsage(CO_MTA_USAGE_COOKIE Cookie);
 
         [DllImport("ole32", ExactSpelling = true)]
         public static extern HRESULT CoAllowUnmarshalerCLSID([NativeTypeName("const IID &")] Guid* clsid);
@@ -237,10 +237,10 @@ namespace TerraFX.Interop
         public static extern HRESULT FreePropVariantArray([NativeTypeName("ULONG")] uint cVariants, PROPVARIANT* rgvars);
 
         [DllImport("ole32", ExactSpelling = true)]
-        public static extern HRESULT CoWaitForMultipleHandles([NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("DWORD")] uint dwTimeout, [NativeTypeName("ULONG")] uint cHandles, [NativeTypeName("LPHANDLE")] IntPtr* pHandles, [NativeTypeName("LPDWORD")] uint* lpdwindex);
+        public static extern HRESULT CoWaitForMultipleHandles([NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("DWORD")] uint dwTimeout, [NativeTypeName("ULONG")] uint cHandles, [NativeTypeName("LPHANDLE")] HANDLE* pHandles, [NativeTypeName("LPDWORD")] uint* lpdwindex);
 
         [DllImport("combase", ExactSpelling = true)]
-        public static extern HRESULT CoWaitForMultipleObjects([NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("DWORD")] uint dwTimeout, [NativeTypeName("ULONG")] uint cHandles, [NativeTypeName("const HANDLE *")] IntPtr* pHandles, [NativeTypeName("LPDWORD")] uint* lpdwindex);
+        public static extern HRESULT CoWaitForMultipleObjects([NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("DWORD")] uint dwTimeout, [NativeTypeName("ULONG")] uint cHandles, [NativeTypeName("const HANDLE *")] HANDLE* pHandles, [NativeTypeName("LPDWORD")] uint* lpdwindex);
 
         [DllImport("ole32", ExactSpelling = true)]
         public static extern HRESULT CoGetTreatAsClass([NativeTypeName("const IID &")] Guid* clsidOld, [NativeTypeName("LPCLSID")] Guid* pClsidNew);
@@ -269,10 +269,10 @@ namespace TerraFX.Interop
         public static extern HRESULT CLSIDFromProgIDEx([NativeTypeName("LPCOLESTR")] ushort* lpszProgID, [NativeTypeName("LPCLSID")] Guid* lpclsid);
 
         [DllImport("combase", ExactSpelling = true)]
-        public static extern HRESULT CoRegisterDeviceCatalog([NativeTypeName("PCWSTR")] ushort* deviceInstanceId, [NativeTypeName("CO_DEVICE_CATALOG_COOKIE *")] IntPtr* cookie);
+        public static extern HRESULT CoRegisterDeviceCatalog([NativeTypeName("PCWSTR")] ushort* deviceInstanceId, CO_DEVICE_CATALOG_COOKIE* cookie);
 
         [DllImport("combase", ExactSpelling = true)]
-        public static extern HRESULT CoRevokeDeviceCatalog([NativeTypeName("CO_DEVICE_CATALOG_COOKIE")] IntPtr cookie);
+        public static extern HRESULT CoRevokeDeviceCatalog(CO_DEVICE_CATALOG_COOKIE cookie);
 
         [NativeTypeName("#define CLSCTX_INPROC (CLSCTX_INPROC_SERVER|CLSCTX_INPROC_HANDLER)")]
         public const int CLSCTX_INPROC = ((int)(CLSCTX_INPROC_SERVER) | (int)(CLSCTX_INPROC_HANDLER));

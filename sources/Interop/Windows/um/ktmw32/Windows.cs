@@ -11,129 +11,120 @@ namespace TerraFX.Interop
     public static unsafe partial class Windows
     {
         [DllImport("ktmw32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("HANDLE")]
-        public static extern IntPtr CreateTransaction([NativeTypeName("LPSECURITY_ATTRIBUTES")] SECURITY_ATTRIBUTES* lpTransactionAttributes, [NativeTypeName("LPGUID")] Guid* UOW, [NativeTypeName("DWORD")] uint CreateOptions, [NativeTypeName("DWORD")] uint IsolationLevel, [NativeTypeName("DWORD")] uint IsolationFlags, [NativeTypeName("DWORD")] uint Timeout, [NativeTypeName("LPWSTR")] ushort* Description);
+        public static extern HANDLE CreateTransaction([NativeTypeName("LPSECURITY_ATTRIBUTES")] SECURITY_ATTRIBUTES* lpTransactionAttributes, [NativeTypeName("LPGUID")] Guid* UOW, [NativeTypeName("DWORD")] uint CreateOptions, [NativeTypeName("DWORD")] uint IsolationLevel, [NativeTypeName("DWORD")] uint IsolationFlags, [NativeTypeName("DWORD")] uint Timeout, [NativeTypeName("LPWSTR")] ushort* Description);
 
         [DllImport("ktmw32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("HANDLE")]
-        public static extern IntPtr OpenTransaction([NativeTypeName("DWORD")] uint dwDesiredAccess, [NativeTypeName("LPGUID")] Guid* TransactionId);
+        public static extern HANDLE OpenTransaction([NativeTypeName("DWORD")] uint dwDesiredAccess, [NativeTypeName("LPGUID")] Guid* TransactionId);
 
         [DllImport("ktmw32", ExactSpelling = true, SetLastError = true)]
-        public static extern BOOL CommitTransaction([NativeTypeName("HANDLE")] IntPtr TransactionHandle);
+        public static extern BOOL CommitTransaction(HANDLE TransactionHandle);
 
         [DllImport("ktmw32", ExactSpelling = true, SetLastError = true)]
-        public static extern BOOL CommitTransactionAsync([NativeTypeName("HANDLE")] IntPtr TransactionHandle);
+        public static extern BOOL CommitTransactionAsync(HANDLE TransactionHandle);
 
         [DllImport("ktmw32", ExactSpelling = true, SetLastError = true)]
-        public static extern BOOL RollbackTransaction([NativeTypeName("HANDLE")] IntPtr TransactionHandle);
+        public static extern BOOL RollbackTransaction(HANDLE TransactionHandle);
 
         [DllImport("ktmw32", ExactSpelling = true, SetLastError = true)]
-        public static extern BOOL RollbackTransactionAsync([NativeTypeName("HANDLE")] IntPtr TransactionHandle);
+        public static extern BOOL RollbackTransactionAsync(HANDLE TransactionHandle);
 
         [DllImport("ktmw32", ExactSpelling = true, SetLastError = true)]
-        public static extern BOOL GetTransactionId([NativeTypeName("HANDLE")] IntPtr TransactionHandle, [NativeTypeName("LPGUID")] Guid* TransactionId);
+        public static extern BOOL GetTransactionId(HANDLE TransactionHandle, [NativeTypeName("LPGUID")] Guid* TransactionId);
 
         [DllImport("ktmw32", ExactSpelling = true, SetLastError = true)]
-        public static extern BOOL GetTransactionInformation([NativeTypeName("HANDLE")] IntPtr TransactionHandle, [NativeTypeName("PDWORD")] uint* Outcome, [NativeTypeName("PDWORD")] uint* IsolationLevel, [NativeTypeName("PDWORD")] uint* IsolationFlags, [NativeTypeName("PDWORD")] uint* Timeout, [NativeTypeName("DWORD")] uint BufferLength, [NativeTypeName("LPWSTR")] ushort* Description);
+        public static extern BOOL GetTransactionInformation(HANDLE TransactionHandle, [NativeTypeName("PDWORD")] uint* Outcome, [NativeTypeName("PDWORD")] uint* IsolationLevel, [NativeTypeName("PDWORD")] uint* IsolationFlags, [NativeTypeName("PDWORD")] uint* Timeout, [NativeTypeName("DWORD")] uint BufferLength, [NativeTypeName("LPWSTR")] ushort* Description);
 
         [DllImport("ktmw32", ExactSpelling = true, SetLastError = true)]
-        public static extern BOOL SetTransactionInformation([NativeTypeName("HANDLE")] IntPtr TransactionHandle, [NativeTypeName("DWORD")] uint IsolationLevel, [NativeTypeName("DWORD")] uint IsolationFlags, [NativeTypeName("DWORD")] uint Timeout, [NativeTypeName("LPWSTR")] ushort* Description);
+        public static extern BOOL SetTransactionInformation(HANDLE TransactionHandle, [NativeTypeName("DWORD")] uint IsolationLevel, [NativeTypeName("DWORD")] uint IsolationFlags, [NativeTypeName("DWORD")] uint Timeout, [NativeTypeName("LPWSTR")] ushort* Description);
 
         [DllImport("ktmw32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("HANDLE")]
-        public static extern IntPtr CreateTransactionManager([NativeTypeName("LPSECURITY_ATTRIBUTES")] SECURITY_ATTRIBUTES* lpTransactionAttributes, [NativeTypeName("LPWSTR")] ushort* LogFileName, [NativeTypeName("ULONG")] uint CreateOptions, [NativeTypeName("ULONG")] uint CommitStrength);
+        public static extern HANDLE CreateTransactionManager([NativeTypeName("LPSECURITY_ATTRIBUTES")] SECURITY_ATTRIBUTES* lpTransactionAttributes, [NativeTypeName("LPWSTR")] ushort* LogFileName, [NativeTypeName("ULONG")] uint CreateOptions, [NativeTypeName("ULONG")] uint CommitStrength);
 
         [DllImport("ktmw32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("HANDLE")]
-        public static extern IntPtr OpenTransactionManager([NativeTypeName("LPWSTR")] ushort* LogFileName, [NativeTypeName("ACCESS_MASK")] uint DesiredAccess, [NativeTypeName("ULONG")] uint OpenOptions);
+        public static extern HANDLE OpenTransactionManager([NativeTypeName("LPWSTR")] ushort* LogFileName, [NativeTypeName("ACCESS_MASK")] uint DesiredAccess, [NativeTypeName("ULONG")] uint OpenOptions);
 
         [DllImport("ktmw32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("HANDLE")]
-        public static extern IntPtr OpenTransactionManagerById([NativeTypeName("LPGUID")] Guid* TransactionManagerId, [NativeTypeName("ACCESS_MASK")] uint DesiredAccess, [NativeTypeName("ULONG")] uint OpenOptions);
+        public static extern HANDLE OpenTransactionManagerById([NativeTypeName("LPGUID")] Guid* TransactionManagerId, [NativeTypeName("ACCESS_MASK")] uint DesiredAccess, [NativeTypeName("ULONG")] uint OpenOptions);
 
         [DllImport("ktmw32", ExactSpelling = true, SetLastError = true)]
         public static extern BOOL RenameTransactionManager([NativeTypeName("LPWSTR")] ushort* LogFileName, [NativeTypeName("LPGUID")] Guid* ExistingTransactionManagerGuid);
 
         [DllImport("ktmw32", ExactSpelling = true, SetLastError = true)]
-        public static extern BOOL RollforwardTransactionManager([NativeTypeName("HANDLE")] IntPtr TransactionManagerHandle, [NativeTypeName("PLARGE_INTEGER")] LARGE_INTEGER* TmVirtualClock);
+        public static extern BOOL RollforwardTransactionManager(HANDLE TransactionManagerHandle, [NativeTypeName("PLARGE_INTEGER")] LARGE_INTEGER* TmVirtualClock);
 
         [DllImport("ktmw32", ExactSpelling = true, SetLastError = true)]
-        public static extern BOOL RecoverTransactionManager([NativeTypeName("HANDLE")] IntPtr TransactionManagerHandle);
+        public static extern BOOL RecoverTransactionManager(HANDLE TransactionManagerHandle);
 
         [DllImport("ktmw32", ExactSpelling = true, SetLastError = true)]
-        public static extern BOOL GetCurrentClockTransactionManager([NativeTypeName("HANDLE")] IntPtr TransactionManagerHandle, [NativeTypeName("PLARGE_INTEGER")] LARGE_INTEGER* TmVirtualClock);
+        public static extern BOOL GetCurrentClockTransactionManager(HANDLE TransactionManagerHandle, [NativeTypeName("PLARGE_INTEGER")] LARGE_INTEGER* TmVirtualClock);
 
         [DllImport("ktmw32", ExactSpelling = true, SetLastError = true)]
-        public static extern BOOL GetTransactionManagerId([NativeTypeName("HANDLE")] IntPtr TransactionManagerHandle, [NativeTypeName("LPGUID")] Guid* TransactionManagerId);
+        public static extern BOOL GetTransactionManagerId(HANDLE TransactionManagerHandle, [NativeTypeName("LPGUID")] Guid* TransactionManagerId);
 
         [DllImport("ktmw32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("HANDLE")]
-        public static extern IntPtr CreateResourceManager([NativeTypeName("LPSECURITY_ATTRIBUTES")] SECURITY_ATTRIBUTES* lpResourceManagerAttributes, [NativeTypeName("LPGUID")] Guid* ResourceManagerId, [NativeTypeName("DWORD")] uint CreateOptions, [NativeTypeName("HANDLE")] IntPtr TmHandle, [NativeTypeName("LPWSTR")] ushort* Description);
+        public static extern HANDLE CreateResourceManager([NativeTypeName("LPSECURITY_ATTRIBUTES")] SECURITY_ATTRIBUTES* lpResourceManagerAttributes, [NativeTypeName("LPGUID")] Guid* ResourceManagerId, [NativeTypeName("DWORD")] uint CreateOptions, HANDLE TmHandle, [NativeTypeName("LPWSTR")] ushort* Description);
 
         [DllImport("ktmw32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("HANDLE")]
-        public static extern IntPtr OpenResourceManager([NativeTypeName("DWORD")] uint dwDesiredAccess, [NativeTypeName("HANDLE")] IntPtr TmHandle, [NativeTypeName("LPGUID")] Guid* ResourceManagerId);
+        public static extern HANDLE OpenResourceManager([NativeTypeName("DWORD")] uint dwDesiredAccess, HANDLE TmHandle, [NativeTypeName("LPGUID")] Guid* ResourceManagerId);
 
         [DllImport("ktmw32", ExactSpelling = true, SetLastError = true)]
-        public static extern BOOL RecoverResourceManager([NativeTypeName("HANDLE")] IntPtr ResourceManagerHandle);
+        public static extern BOOL RecoverResourceManager(HANDLE ResourceManagerHandle);
 
         [DllImport("ktmw32", ExactSpelling = true, SetLastError = true)]
-        public static extern BOOL GetNotificationResourceManager([NativeTypeName("HANDLE")] IntPtr ResourceManagerHandle, [NativeTypeName("PTRANSACTION_NOTIFICATION")] TRANSACTION_NOTIFICATION* TransactionNotification, [NativeTypeName("ULONG")] uint NotificationLength, [NativeTypeName("DWORD")] uint dwMilliseconds, [NativeTypeName("PULONG")] uint* ReturnLength);
+        public static extern BOOL GetNotificationResourceManager(HANDLE ResourceManagerHandle, [NativeTypeName("PTRANSACTION_NOTIFICATION")] TRANSACTION_NOTIFICATION* TransactionNotification, [NativeTypeName("ULONG")] uint NotificationLength, [NativeTypeName("DWORD")] uint dwMilliseconds, [NativeTypeName("PULONG")] uint* ReturnLength);
 
         [DllImport("ktmw32", ExactSpelling = true, SetLastError = true)]
-        public static extern BOOL GetNotificationResourceManagerAsync([NativeTypeName("HANDLE")] IntPtr ResourceManagerHandle, [NativeTypeName("PTRANSACTION_NOTIFICATION")] TRANSACTION_NOTIFICATION* TransactionNotification, [NativeTypeName("ULONG")] uint TransactionNotificationLength, [NativeTypeName("PULONG")] uint* ReturnLength, [NativeTypeName("LPOVERLAPPED")] OVERLAPPED* lpOverlapped);
+        public static extern BOOL GetNotificationResourceManagerAsync(HANDLE ResourceManagerHandle, [NativeTypeName("PTRANSACTION_NOTIFICATION")] TRANSACTION_NOTIFICATION* TransactionNotification, [NativeTypeName("ULONG")] uint TransactionNotificationLength, [NativeTypeName("PULONG")] uint* ReturnLength, [NativeTypeName("LPOVERLAPPED")] OVERLAPPED* lpOverlapped);
 
         [DllImport("ktmw32", ExactSpelling = true, SetLastError = true)]
-        public static extern BOOL SetResourceManagerCompletionPort([NativeTypeName("HANDLE")] IntPtr ResourceManagerHandle, [NativeTypeName("HANDLE")] IntPtr IoCompletionPortHandle, [NativeTypeName("ULONG_PTR")] nuint CompletionKey);
+        public static extern BOOL SetResourceManagerCompletionPort(HANDLE ResourceManagerHandle, HANDLE IoCompletionPortHandle, [NativeTypeName("ULONG_PTR")] nuint CompletionKey);
 
         [DllImport("ktmw32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("HANDLE")]
-        public static extern IntPtr CreateEnlistment([NativeTypeName("LPSECURITY_ATTRIBUTES")] SECURITY_ATTRIBUTES* lpEnlistmentAttributes, [NativeTypeName("HANDLE")] IntPtr ResourceManagerHandle, [NativeTypeName("HANDLE")] IntPtr TransactionHandle, [NativeTypeName("NOTIFICATION_MASK")] uint NotificationMask, [NativeTypeName("DWORD")] uint CreateOptions, [NativeTypeName("PVOID")] void* EnlistmentKey);
+        public static extern HANDLE CreateEnlistment([NativeTypeName("LPSECURITY_ATTRIBUTES")] SECURITY_ATTRIBUTES* lpEnlistmentAttributes, HANDLE ResourceManagerHandle, HANDLE TransactionHandle, [NativeTypeName("NOTIFICATION_MASK")] uint NotificationMask, [NativeTypeName("DWORD")] uint CreateOptions, [NativeTypeName("PVOID")] void* EnlistmentKey);
 
         [DllImport("ktmw32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("HANDLE")]
-        public static extern IntPtr OpenEnlistment([NativeTypeName("DWORD")] uint dwDesiredAccess, [NativeTypeName("HANDLE")] IntPtr ResourceManagerHandle, [NativeTypeName("LPGUID")] Guid* EnlistmentId);
+        public static extern HANDLE OpenEnlistment([NativeTypeName("DWORD")] uint dwDesiredAccess, HANDLE ResourceManagerHandle, [NativeTypeName("LPGUID")] Guid* EnlistmentId);
 
         [DllImport("ktmw32", ExactSpelling = true, SetLastError = true)]
-        public static extern BOOL RecoverEnlistment([NativeTypeName("HANDLE")] IntPtr EnlistmentHandle, [NativeTypeName("PVOID")] void* EnlistmentKey);
+        public static extern BOOL RecoverEnlistment(HANDLE EnlistmentHandle, [NativeTypeName("PVOID")] void* EnlistmentKey);
 
         [DllImport("ktmw32", ExactSpelling = true, SetLastError = true)]
-        public static extern BOOL GetEnlistmentRecoveryInformation([NativeTypeName("HANDLE")] IntPtr EnlistmentHandle, [NativeTypeName("ULONG")] uint BufferSize, [NativeTypeName("PVOID")] void* Buffer, [NativeTypeName("PULONG")] uint* BufferUsed);
+        public static extern BOOL GetEnlistmentRecoveryInformation(HANDLE EnlistmentHandle, [NativeTypeName("ULONG")] uint BufferSize, [NativeTypeName("PVOID")] void* Buffer, [NativeTypeName("PULONG")] uint* BufferUsed);
 
         [DllImport("ktmw32", ExactSpelling = true, SetLastError = true)]
-        public static extern BOOL GetEnlistmentId([NativeTypeName("HANDLE")] IntPtr EnlistmentHandle, [NativeTypeName("LPGUID")] Guid* EnlistmentId);
+        public static extern BOOL GetEnlistmentId(HANDLE EnlistmentHandle, [NativeTypeName("LPGUID")] Guid* EnlistmentId);
 
         [DllImport("ktmw32", ExactSpelling = true, SetLastError = true)]
-        public static extern BOOL SetEnlistmentRecoveryInformation([NativeTypeName("HANDLE")] IntPtr EnlistmentHandle, [NativeTypeName("ULONG")] uint BufferSize, [NativeTypeName("PVOID")] void* Buffer);
+        public static extern BOOL SetEnlistmentRecoveryInformation(HANDLE EnlistmentHandle, [NativeTypeName("ULONG")] uint BufferSize, [NativeTypeName("PVOID")] void* Buffer);
 
         [DllImport("ktmw32", ExactSpelling = true, SetLastError = true)]
-        public static extern BOOL PrepareEnlistment([NativeTypeName("HANDLE")] IntPtr EnlistmentHandle, [NativeTypeName("PLARGE_INTEGER")] LARGE_INTEGER* TmVirtualClock);
+        public static extern BOOL PrepareEnlistment(HANDLE EnlistmentHandle, [NativeTypeName("PLARGE_INTEGER")] LARGE_INTEGER* TmVirtualClock);
 
         [DllImport("ktmw32", ExactSpelling = true, SetLastError = true)]
-        public static extern BOOL PrePrepareEnlistment([NativeTypeName("HANDLE")] IntPtr EnlistmentHandle, [NativeTypeName("PLARGE_INTEGER")] LARGE_INTEGER* TmVirtualClock);
+        public static extern BOOL PrePrepareEnlistment(HANDLE EnlistmentHandle, [NativeTypeName("PLARGE_INTEGER")] LARGE_INTEGER* TmVirtualClock);
 
         [DllImport("ktmw32", ExactSpelling = true, SetLastError = true)]
-        public static extern BOOL CommitEnlistment([NativeTypeName("HANDLE")] IntPtr EnlistmentHandle, [NativeTypeName("PLARGE_INTEGER")] LARGE_INTEGER* TmVirtualClock);
+        public static extern BOOL CommitEnlistment(HANDLE EnlistmentHandle, [NativeTypeName("PLARGE_INTEGER")] LARGE_INTEGER* TmVirtualClock);
 
         [DllImport("ktmw32", ExactSpelling = true, SetLastError = true)]
-        public static extern BOOL RollbackEnlistment([NativeTypeName("HANDLE")] IntPtr EnlistmentHandle, [NativeTypeName("PLARGE_INTEGER")] LARGE_INTEGER* TmVirtualClock);
+        public static extern BOOL RollbackEnlistment(HANDLE EnlistmentHandle, [NativeTypeName("PLARGE_INTEGER")] LARGE_INTEGER* TmVirtualClock);
 
         [DllImport("ktmw32", ExactSpelling = true, SetLastError = true)]
-        public static extern BOOL PrePrepareComplete([NativeTypeName("HANDLE")] IntPtr EnlistmentHandle, [NativeTypeName("PLARGE_INTEGER")] LARGE_INTEGER* TmVirtualClock);
+        public static extern BOOL PrePrepareComplete(HANDLE EnlistmentHandle, [NativeTypeName("PLARGE_INTEGER")] LARGE_INTEGER* TmVirtualClock);
 
         [DllImport("ktmw32", ExactSpelling = true, SetLastError = true)]
-        public static extern BOOL PrepareComplete([NativeTypeName("HANDLE")] IntPtr EnlistmentHandle, [NativeTypeName("PLARGE_INTEGER")] LARGE_INTEGER* TmVirtualClock);
+        public static extern BOOL PrepareComplete(HANDLE EnlistmentHandle, [NativeTypeName("PLARGE_INTEGER")] LARGE_INTEGER* TmVirtualClock);
 
         [DllImport("ktmw32", ExactSpelling = true, SetLastError = true)]
-        public static extern BOOL ReadOnlyEnlistment([NativeTypeName("HANDLE")] IntPtr EnlistmentHandle, [NativeTypeName("PLARGE_INTEGER")] LARGE_INTEGER* TmVirtualClock);
+        public static extern BOOL ReadOnlyEnlistment(HANDLE EnlistmentHandle, [NativeTypeName("PLARGE_INTEGER")] LARGE_INTEGER* TmVirtualClock);
 
         [DllImport("ktmw32", ExactSpelling = true, SetLastError = true)]
-        public static extern BOOL CommitComplete([NativeTypeName("HANDLE")] IntPtr EnlistmentHandle, [NativeTypeName("PLARGE_INTEGER")] LARGE_INTEGER* TmVirtualClock);
+        public static extern BOOL CommitComplete(HANDLE EnlistmentHandle, [NativeTypeName("PLARGE_INTEGER")] LARGE_INTEGER* TmVirtualClock);
 
         [DllImport("ktmw32", ExactSpelling = true, SetLastError = true)]
-        public static extern BOOL RollbackComplete([NativeTypeName("HANDLE")] IntPtr EnlistmentHandle, [NativeTypeName("PLARGE_INTEGER")] LARGE_INTEGER* TmVirtualClock);
+        public static extern BOOL RollbackComplete(HANDLE EnlistmentHandle, [NativeTypeName("PLARGE_INTEGER")] LARGE_INTEGER* TmVirtualClock);
 
         [DllImport("ktmw32", ExactSpelling = true, SetLastError = true)]
-        public static extern BOOL SinglePhaseReject([NativeTypeName("HANDLE")] IntPtr EnlistmentHandle, [NativeTypeName("PLARGE_INTEGER")] LARGE_INTEGER* TmVirtualClock);
+        public static extern BOOL SinglePhaseReject(HANDLE EnlistmentHandle, [NativeTypeName("PLARGE_INTEGER")] LARGE_INTEGER* TmVirtualClock);
     }
 }

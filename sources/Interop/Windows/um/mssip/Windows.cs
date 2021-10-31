@@ -29,10 +29,10 @@ namespace TerraFX.Interop
         public static extern BOOL CryptSIPLoad([NativeTypeName("const GUID *")] Guid* pgSubject, [NativeTypeName("DWORD")] uint dwFlags, SIP_DISPATCH_INFO* pSipDispatch);
 
         [DllImport("crypt32", ExactSpelling = true, SetLastError = true)]
-        public static extern BOOL CryptSIPRetrieveSubjectGuid([NativeTypeName("LPCWSTR")] ushort* FileName, [NativeTypeName("HANDLE")] IntPtr hFileIn, [NativeTypeName("GUID *")] Guid* pgSubject);
+        public static extern BOOL CryptSIPRetrieveSubjectGuid([NativeTypeName("LPCWSTR")] ushort* FileName, HANDLE hFileIn, [NativeTypeName("GUID *")] Guid* pgSubject);
 
         [DllImport("crypt32", ExactSpelling = true, SetLastError = true)]
-        public static extern BOOL CryptSIPRetrieveSubjectGuidForCatalogFile([NativeTypeName("LPCWSTR")] ushort* FileName, [NativeTypeName("HANDLE")] IntPtr hFileIn, [NativeTypeName("GUID *")] Guid* pgSubject);
+        public static extern BOOL CryptSIPRetrieveSubjectGuidForCatalogFile([NativeTypeName("LPCWSTR")] ushort* FileName, HANDLE hFileIn, [NativeTypeName("GUID *")] Guid* pgSubject);
 
         [DllImport("crypt32", ExactSpelling = true, SetLastError = true)]
         public static extern BOOL CryptSIPAddProvider(SIP_ADD_NEWPROVIDER* psNewProv);

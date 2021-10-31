@@ -41,9 +41,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        public HRESULT Init([NativeTypeName("ASSOCF")] uint flags, [NativeTypeName("LPCWSTR")] ushort* pszAssoc, [NativeTypeName("HKEY")] IntPtr hkProgid, [NativeTypeName("HWND")] IntPtr hwnd)
+        public HRESULT Init([NativeTypeName("ASSOCF")] uint flags, [NativeTypeName("LPCWSTR")] ushort* pszAssoc, HKEY hkProgid, HWND hwnd)
         {
-            return ((delegate* unmanaged<IQueryAssociations*, uint, ushort*, IntPtr, IntPtr, int>)(lpVtbl[3]))((IQueryAssociations*)Unsafe.AsPointer(ref this), flags, pszAssoc, hkProgid, hwnd);
+            return ((delegate* unmanaged<IQueryAssociations*, uint, ushort*, HKEY, HWND, int>)(lpVtbl[3]))((IQueryAssociations*)Unsafe.AsPointer(ref this), flags, pszAssoc, hkProgid, hwnd);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -55,9 +55,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        public HRESULT GetKey([NativeTypeName("ASSOCF")] uint flags, ASSOCKEY key, [NativeTypeName("LPCWSTR")] ushort* pszExtra, [NativeTypeName("HKEY *")] IntPtr* phkeyOut)
+        public HRESULT GetKey([NativeTypeName("ASSOCF")] uint flags, ASSOCKEY key, [NativeTypeName("LPCWSTR")] ushort* pszExtra, HKEY* phkeyOut)
         {
-            return ((delegate* unmanaged<IQueryAssociations*, uint, ASSOCKEY, ushort*, IntPtr*, int>)(lpVtbl[5]))((IQueryAssociations*)Unsafe.AsPointer(ref this), flags, key, pszExtra, phkeyOut);
+            return ((delegate* unmanaged<IQueryAssociations*, uint, ASSOCKEY, ushort*, HKEY*, int>)(lpVtbl[5]))((IQueryAssociations*)Unsafe.AsPointer(ref this), flags, key, pszExtra, phkeyOut);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

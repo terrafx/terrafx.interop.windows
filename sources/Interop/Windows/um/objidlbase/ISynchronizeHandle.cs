@@ -41,9 +41,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        public HRESULT GetHandle([NativeTypeName("HANDLE *")] IntPtr* ph)
+        public HRESULT GetHandle(HANDLE* ph)
         {
-            return ((delegate* unmanaged<ISynchronizeHandle*, IntPtr*, int>)(lpVtbl[3]))((ISynchronizeHandle*)Unsafe.AsPointer(ref this), ph);
+            return ((delegate* unmanaged<ISynchronizeHandle*, HANDLE*, int>)(lpVtbl[3]))((ISynchronizeHandle*)Unsafe.AsPointer(ref this), ph);
         }
     }
 }

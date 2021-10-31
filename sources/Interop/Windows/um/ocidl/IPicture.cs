@@ -76,9 +76,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        public HRESULT Render([NativeTypeName("HDC")] IntPtr hDC, [NativeTypeName("LONG")] int x, [NativeTypeName("LONG")] int y, [NativeTypeName("LONG")] int cx, [NativeTypeName("LONG")] int cy, [NativeTypeName("OLE_XPOS_HIMETRIC")] int xSrc, [NativeTypeName("OLE_YPOS_HIMETRIC")] int ySrc, [NativeTypeName("OLE_XSIZE_HIMETRIC")] int cxSrc, [NativeTypeName("OLE_YSIZE_HIMETRIC")] int cySrc, [NativeTypeName("LPCRECT")] RECT* pRcWBounds)
+        public HRESULT Render(HDC hDC, [NativeTypeName("LONG")] int x, [NativeTypeName("LONG")] int y, [NativeTypeName("LONG")] int cx, [NativeTypeName("LONG")] int cy, [NativeTypeName("OLE_XPOS_HIMETRIC")] int xSrc, [NativeTypeName("OLE_YPOS_HIMETRIC")] int ySrc, [NativeTypeName("OLE_XSIZE_HIMETRIC")] int cxSrc, [NativeTypeName("OLE_YSIZE_HIMETRIC")] int cySrc, [NativeTypeName("LPCRECT")] RECT* pRcWBounds)
         {
-            return ((delegate* unmanaged<IPicture*, IntPtr, int, int, int, int, int, int, int, int, RECT*, int>)(lpVtbl[8]))((IPicture*)Unsafe.AsPointer(ref this), hDC, x, y, cx, cy, xSrc, ySrc, cxSrc, cySrc, pRcWBounds);
+            return ((delegate* unmanaged<IPicture*, HDC, int, int, int, int, int, int, int, int, RECT*, int>)(lpVtbl[8]))((IPicture*)Unsafe.AsPointer(ref this), hDC, x, y, cx, cy, xSrc, ySrc, cxSrc, cySrc, pRcWBounds);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -90,16 +90,16 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(10)]
-        public HRESULT get_CurDC([NativeTypeName("HDC *")] IntPtr* phDC)
+        public HRESULT get_CurDC(HDC* phDC)
         {
-            return ((delegate* unmanaged<IPicture*, IntPtr*, int>)(lpVtbl[10]))((IPicture*)Unsafe.AsPointer(ref this), phDC);
+            return ((delegate* unmanaged<IPicture*, HDC*, int>)(lpVtbl[10]))((IPicture*)Unsafe.AsPointer(ref this), phDC);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(11)]
-        public HRESULT SelectPicture([NativeTypeName("HDC")] IntPtr hDCIn, [NativeTypeName("HDC *")] IntPtr* phDCOut, [NativeTypeName("OLE_HANDLE *")] uint* phBmpOut)
+        public HRESULT SelectPicture(HDC hDCIn, HDC* phDCOut, [NativeTypeName("OLE_HANDLE *")] uint* phBmpOut)
         {
-            return ((delegate* unmanaged<IPicture*, IntPtr, IntPtr*, uint*, int>)(lpVtbl[11]))((IPicture*)Unsafe.AsPointer(ref this), hDCIn, phDCOut, phBmpOut);
+            return ((delegate* unmanaged<IPicture*, HDC, HDC*, uint*, int>)(lpVtbl[11]))((IPicture*)Unsafe.AsPointer(ref this), hDCIn, phDCOut, phBmpOut);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

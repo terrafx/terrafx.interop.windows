@@ -48,9 +48,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT GetRuntimeClassName([NativeTypeName("HSTRING *")] IntPtr* className)
+        public HRESULT GetRuntimeClassName(HSTRING* className)
         {
-            return ((delegate* unmanaged<IInputPaneInterop*, IntPtr*, int>)(lpVtbl[4]))((IInputPaneInterop*)Unsafe.AsPointer(ref this), className);
+            return ((delegate* unmanaged<IInputPaneInterop*, HSTRING*, int>)(lpVtbl[4]))((IInputPaneInterop*)Unsafe.AsPointer(ref this), className);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -62,9 +62,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        public HRESULT GetForWindow([NativeTypeName("HWND")] IntPtr appWindow, [NativeTypeName("const IID &")] Guid* riid, void** inputPane)
+        public HRESULT GetForWindow(HWND appWindow, [NativeTypeName("const IID &")] Guid* riid, void** inputPane)
         {
-            return ((delegate* unmanaged<IInputPaneInterop*, IntPtr, Guid*, void**, int>)(lpVtbl[6]))((IInputPaneInterop*)Unsafe.AsPointer(ref this), appWindow, riid, inputPane);
+            return ((delegate* unmanaged<IInputPaneInterop*, HWND, Guid*, void**, int>)(lpVtbl[6]))((IInputPaneInterop*)Unsafe.AsPointer(ref this), appWindow, riid, inputPane);
         }
     }
 }

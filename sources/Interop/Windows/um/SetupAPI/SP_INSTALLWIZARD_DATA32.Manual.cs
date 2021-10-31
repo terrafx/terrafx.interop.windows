@@ -32,34 +32,33 @@ namespace TerraFX.Interop
         [NativeTypeName("LPARAM")]
         public nint PrivateData;
 
-        [NativeTypeName("HWND")]
-        public IntPtr hwndWizardDlg;
+        public HWND hwndWizardDlg;
 
         [StructLayout(LayoutKind.Sequential, Pack = 1)]
         public partial struct _DynamicPages_e__FixedBuffer
         {
-            public IntPtr e0;
-            public IntPtr e1;
-            public IntPtr e2;
-            public IntPtr e3;
-            public IntPtr e4;
-            public IntPtr e5;
-            public IntPtr e6;
-            public IntPtr e7;
-            public IntPtr e8;
-            public IntPtr e9;
-            public IntPtr e10;
-            public IntPtr e11;
-            public IntPtr e12;
-            public IntPtr e13;
-            public IntPtr e14;
-            public IntPtr e15;
-            public IntPtr e16;
-            public IntPtr e17;
-            public IntPtr e18;
-            public IntPtr e19;
+            public HPROPSHEETPAGE e0;
+            public HPROPSHEETPAGE e1;
+            public HPROPSHEETPAGE e2;
+            public HPROPSHEETPAGE e3;
+            public HPROPSHEETPAGE e4;
+            public HPROPSHEETPAGE e5;
+            public HPROPSHEETPAGE e6;
+            public HPROPSHEETPAGE e7;
+            public HPROPSHEETPAGE e8;
+            public HPROPSHEETPAGE e9;
+            public HPROPSHEETPAGE e10;
+            public HPROPSHEETPAGE e11;
+            public HPROPSHEETPAGE e12;
+            public HPROPSHEETPAGE e13;
+            public HPROPSHEETPAGE e14;
+            public HPROPSHEETPAGE e15;
+            public HPROPSHEETPAGE e16;
+            public HPROPSHEETPAGE e17;
+            public HPROPSHEETPAGE e18;
+            public HPROPSHEETPAGE e19;
 
-            public ref IntPtr this[int index]
+            public ref HPROPSHEETPAGE this[int index]
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
                 get
@@ -69,7 +68,7 @@ namespace TerraFX.Interop
             }
 
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public Span<IntPtr> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 20);
+            public Span<HPROPSHEETPAGE> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 20);
         }
     }
 }

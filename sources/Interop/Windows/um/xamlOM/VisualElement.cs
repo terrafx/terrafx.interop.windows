@@ -7,8 +7,7 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct VisualElement
     {
-        [NativeTypeName("InstanceHandle")]
-        public ulong Handle;
+        public InstanceHandle Handle;
 
         public SourceInfo SrcInfo;
 

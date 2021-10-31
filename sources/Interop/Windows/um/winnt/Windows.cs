@@ -9891,13 +9891,13 @@ namespace TerraFX.Interop
         public const int MEM_EXTENDED_PARAMETER_TYPE_BITS = 8;
 
         [NativeTypeName("#define MEMORY_CURRENT_PARTITION_HANDLE ((HANDLE) (LONG_PTR) -1)")]
-        public static IntPtr MEMORY_CURRENT_PARTITION_HANDLE => ((nint)((nint)(-1)));
+        public static HANDLE MEMORY_CURRENT_PARTITION_HANDLE => ((nint)((nint)(-1)));
 
         [NativeTypeName("#define MEMORY_SYSTEM_PARTITION_HANDLE ((HANDLE) (LONG_PTR) -2)")]
-        public static IntPtr MEMORY_SYSTEM_PARTITION_HANDLE => ((nint)((nint)(-2)));
+        public static HANDLE MEMORY_SYSTEM_PARTITION_HANDLE => ((nint)((nint)(-2)));
 
         [NativeTypeName("#define MEMORY_EXISTING_VAD_PARTITION_HANDLE ((HANDLE) (LONG_PTR) -3)")]
-        public static IntPtr MEMORY_EXISTING_VAD_PARTITION_HANDLE => ((nint)((nint)(-3)));
+        public static HANDLE MEMORY_EXISTING_VAD_PARTITION_HANDLE => ((nint)((nint)(-3)));
 
         [NativeTypeName("#define MEM_DEDICATED_ATTRIBUTE_NOT_SPECIFIED ((DWORD64) -1)")]
         public const ulong MEM_DEDICATED_ATTRIBUTE_NOT_SPECIFIED = unchecked((ulong)(-1));

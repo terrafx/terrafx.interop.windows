@@ -48,9 +48,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT Extract([NativeTypeName("HBITMAP *")] IntPtr* phBmpThumbnail)
+        public HRESULT Extract(HBITMAP* phBmpThumbnail)
         {
-            return ((delegate* unmanaged<IExtractImage*, IntPtr*, int>)(lpVtbl[4]))((IExtractImage*)Unsafe.AsPointer(ref this), phBmpThumbnail);
+            return ((delegate* unmanaged<IExtractImage*, HBITMAP*, int>)(lpVtbl[4]))((IExtractImage*)Unsafe.AsPointer(ref this), phBmpThumbnail);
         }
     }
 }

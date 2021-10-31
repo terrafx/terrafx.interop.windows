@@ -687,9 +687,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(95)]
-        public HRESULT OpenSharedResource([NativeTypeName("HANDLE")] IntPtr hResource, [NativeTypeName("const IID &")] Guid* ReturnedInterface, void** ppResource)
+        public HRESULT OpenSharedResource(HANDLE hResource, [NativeTypeName("const IID &")] Guid* ReturnedInterface, void** ppResource)
         {
-            return ((delegate* unmanaged<ID3D10Device*, IntPtr, Guid*, void**, int>)(lpVtbl[95]))((ID3D10Device*)Unsafe.AsPointer(ref this), hResource, ReturnedInterface, ppResource);
+            return ((delegate* unmanaged<ID3D10Device*, HANDLE, Guid*, void**, int>)(lpVtbl[95]))((ID3D10Device*)Unsafe.AsPointer(ref this), hResource, ReturnedInterface, ppResource);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

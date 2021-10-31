@@ -41,9 +41,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        public HRESULT CreateSourcePresentationHandle([NativeTypeName("HANDLE *")] IntPtr* pValue)
+        public HRESULT CreateSourcePresentationHandle(HANDLE* pValue)
         {
-            return ((delegate* unmanaged<IDisplayPathInterop*, IntPtr*, int>)(lpVtbl[3]))((IDisplayPathInterop*)Unsafe.AsPointer(ref this), pValue);
+            return ((delegate* unmanaged<IDisplayPathInterop*, HANDLE*, int>)(lpVtbl[3]))((IDisplayPathInterop*)Unsafe.AsPointer(ref this), pValue);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

@@ -48,16 +48,16 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT SetDDrawDevice([NativeTypeName("LPDIRECTDRAW7")] IDirectDraw7* lpDDrawDevice, [NativeTypeName("HMONITOR")] IntPtr hMonitor)
+        public HRESULT SetDDrawDevice([NativeTypeName("LPDIRECTDRAW7")] IDirectDraw7* lpDDrawDevice, HMONITOR hMonitor)
         {
-            return ((delegate* unmanaged<IVMRSurfaceAllocatorNotify*, IDirectDraw7*, IntPtr, int>)(lpVtbl[4]))((IVMRSurfaceAllocatorNotify*)Unsafe.AsPointer(ref this), lpDDrawDevice, hMonitor);
+            return ((delegate* unmanaged<IVMRSurfaceAllocatorNotify*, IDirectDraw7*, HMONITOR, int>)(lpVtbl[4]))((IVMRSurfaceAllocatorNotify*)Unsafe.AsPointer(ref this), lpDDrawDevice, hMonitor);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        public HRESULT ChangeDDrawDevice([NativeTypeName("LPDIRECTDRAW7")] IDirectDraw7* lpDDrawDevice, [NativeTypeName("HMONITOR")] IntPtr hMonitor)
+        public HRESULT ChangeDDrawDevice([NativeTypeName("LPDIRECTDRAW7")] IDirectDraw7* lpDDrawDevice, HMONITOR hMonitor)
         {
-            return ((delegate* unmanaged<IVMRSurfaceAllocatorNotify*, IDirectDraw7*, IntPtr, int>)(lpVtbl[5]))((IVMRSurfaceAllocatorNotify*)Unsafe.AsPointer(ref this), lpDDrawDevice, hMonitor);
+            return ((delegate* unmanaged<IVMRSurfaceAllocatorNotify*, IDirectDraw7*, HMONITOR, int>)(lpVtbl[5]))((IVMRSurfaceAllocatorNotify*)Unsafe.AsPointer(ref this), lpDDrawDevice, hMonitor);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

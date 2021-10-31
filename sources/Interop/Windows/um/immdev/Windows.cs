@@ -3,7 +3,6 @@
 // Ported from um/immdev.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
@@ -11,72 +10,68 @@ namespace TerraFX.Interop
     public static unsafe partial class Windows
     {
         [DllImport("imm32", ExactSpelling = true)]
-        public static extern BOOL ImmGetHotKey([NativeTypeName("DWORD")] uint param0, [NativeTypeName("LPUINT")] uint* lpuModifiers, [NativeTypeName("LPUINT")] uint* lpuVKey, [NativeTypeName("LPHKL")] IntPtr* phKL);
+        public static extern BOOL ImmGetHotKey([NativeTypeName("DWORD")] uint param0, [NativeTypeName("LPUINT")] uint* lpuModifiers, [NativeTypeName("LPUINT")] uint* lpuVKey, [NativeTypeName("LPHKL")] HKL* phKL);
 
         [DllImport("imm32", ExactSpelling = true)]
-        public static extern BOOL ImmSetHotKey([NativeTypeName("DWORD")] uint param0, [NativeTypeName("UINT")] uint param1, [NativeTypeName("UINT")] uint param2, [NativeTypeName("HKL")] IntPtr param3);
+        public static extern BOOL ImmSetHotKey([NativeTypeName("DWORD")] uint param0, [NativeTypeName("UINT")] uint param1, [NativeTypeName("UINT")] uint param2, HKL param3);
 
         [DllImport("imm32", ExactSpelling = true)]
-        public static extern BOOL ImmGenerateMessage([NativeTypeName("HIMC")] IntPtr param0);
-
-        [DllImport("imm32", ExactSpelling = true)]
-        [return: NativeTypeName("LRESULT")]
-        public static extern nint ImmRequestMessageA([NativeTypeName("HIMC")] IntPtr param0, [NativeTypeName("WPARAM")] nuint param1, [NativeTypeName("LPARAM")] nint param2);
+        public static extern BOOL ImmGenerateMessage(HIMC param0);
 
         [DllImport("imm32", ExactSpelling = true)]
         [return: NativeTypeName("LRESULT")]
-        public static extern nint ImmRequestMessageW([NativeTypeName("HIMC")] IntPtr param0, [NativeTypeName("WPARAM")] nuint param1, [NativeTypeName("LPARAM")] nint param2);
+        public static extern nint ImmRequestMessageA(HIMC param0, [NativeTypeName("WPARAM")] nuint param1, [NativeTypeName("LPARAM")] nint param2);
 
         [DllImport("imm32", ExactSpelling = true)]
-        [return: NativeTypeName("HWND")]
-        public static extern IntPtr ImmCreateSoftKeyboard([NativeTypeName("UINT")] uint param0, [NativeTypeName("HWND")] IntPtr param1, int param2, int param3);
+        [return: NativeTypeName("LRESULT")]
+        public static extern nint ImmRequestMessageW(HIMC param0, [NativeTypeName("WPARAM")] nuint param1, [NativeTypeName("LPARAM")] nint param2);
 
         [DllImport("imm32", ExactSpelling = true)]
-        public static extern BOOL ImmDestroySoftKeyboard([NativeTypeName("HWND")] IntPtr param0);
+        public static extern HWND ImmCreateSoftKeyboard([NativeTypeName("UINT")] uint param0, HWND param1, int param2, int param3);
 
         [DllImport("imm32", ExactSpelling = true)]
-        public static extern BOOL ImmShowSoftKeyboard([NativeTypeName("HWND")] IntPtr param0, int param1);
+        public static extern BOOL ImmDestroySoftKeyboard(HWND param0);
+
+        [DllImport("imm32", ExactSpelling = true)]
+        public static extern BOOL ImmShowSoftKeyboard(HWND param0, int param1);
 
         [DllImport("imm32", ExactSpelling = true)]
         [return: NativeTypeName("LPINPUTCONTEXT")]
-        public static extern INPUTCONTEXT* ImmLockIMC([NativeTypeName("HIMC")] IntPtr param0);
+        public static extern INPUTCONTEXT* ImmLockIMC(HIMC param0);
 
         [DllImport("imm32", ExactSpelling = true)]
-        public static extern BOOL ImmUnlockIMC([NativeTypeName("HIMC")] IntPtr param0);
+        public static extern BOOL ImmUnlockIMC(HIMC param0);
 
         [DllImport("imm32", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
-        public static extern uint ImmGetIMCLockCount([NativeTypeName("HIMC")] IntPtr param0);
+        public static extern uint ImmGetIMCLockCount(HIMC param0);
 
         [DllImport("imm32", ExactSpelling = true)]
-        [return: NativeTypeName("HIMCC")]
-        public static extern IntPtr ImmCreateIMCC([NativeTypeName("DWORD")] uint param0);
+        public static extern HIMCC ImmCreateIMCC([NativeTypeName("DWORD")] uint param0);
 
         [DllImport("imm32", ExactSpelling = true)]
-        [return: NativeTypeName("HIMCC")]
-        public static extern IntPtr ImmDestroyIMCC([NativeTypeName("HIMCC")] IntPtr param0);
+        public static extern HIMCC ImmDestroyIMCC(HIMCC param0);
 
         [DllImport("imm32", ExactSpelling = true)]
         [return: NativeTypeName("LPVOID")]
-        public static extern void* ImmLockIMCC([NativeTypeName("HIMCC")] IntPtr param0);
+        public static extern void* ImmLockIMCC(HIMCC param0);
 
         [DllImport("imm32", ExactSpelling = true)]
-        public static extern BOOL ImmUnlockIMCC([NativeTypeName("HIMCC")] IntPtr param0);
-
-        [DllImport("imm32", ExactSpelling = true)]
-        [return: NativeTypeName("DWORD")]
-        public static extern uint ImmGetIMCCLockCount([NativeTypeName("HIMCC")] IntPtr param0);
-
-        [DllImport("imm32", ExactSpelling = true)]
-        [return: NativeTypeName("HIMCC")]
-        public static extern IntPtr ImmReSizeIMCC([NativeTypeName("HIMCC")] IntPtr param0, [NativeTypeName("DWORD")] uint param1);
+        public static extern BOOL ImmUnlockIMCC(HIMCC param0);
 
         [DllImport("imm32", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
-        public static extern uint ImmGetIMCCSize([NativeTypeName("HIMCC")] IntPtr param0);
+        public static extern uint ImmGetIMCCLockCount(HIMCC param0);
+
+        [DllImport("imm32", ExactSpelling = true)]
+        public static extern HIMCC ImmReSizeIMCC(HIMCC param0, [NativeTypeName("DWORD")] uint param1);
+
+        [DllImport("imm32", ExactSpelling = true)]
+        [return: NativeTypeName("DWORD")]
+        public static extern uint ImmGetIMCCSize(HIMCC param0);
 
         [NativeTypeName("#define ImmRequestMessage ImmRequestMessageW")]
-        public static delegate*<IntPtr, nuint, nint, nint> ImmRequestMessage => &ImmRequestMessageW;
+        public static delegate*<HIMC, nuint, nint, nint> ImmRequestMessage => &ImmRequestMessageW;
 
         [NativeTypeName("#define IMMGWL_IMC 0")]
         public const int IMMGWL_IMC = 0;

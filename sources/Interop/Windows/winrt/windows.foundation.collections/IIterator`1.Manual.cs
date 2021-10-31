@@ -42,9 +42,9 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public HRESULT GetRuntimeClassName([NativeTypeName("HSTRING *")] IntPtr* className)
+        public HRESULT GetRuntimeClassName(HSTRING* className)
         {
-            return ((delegate* unmanaged<IIterator<T>*, IntPtr*, int>)(lpVtbl[4]))((IIterator<T>*)Unsafe.AsPointer(ref this), className);
+            return ((delegate* unmanaged<IIterator<T>*, HSTRING*, int>)(lpVtbl[4]))((IIterator<T>*)Unsafe.AsPointer(ref this), className);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

@@ -3,8 +3,6 @@
 // Ported from um/imm.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
-
 namespace TerraFX.Interop
 {
     public unsafe partial struct IMEMENUITEMINFOA
@@ -21,11 +19,9 @@ namespace TerraFX.Interop
         [NativeTypeName("UINT")]
         public uint wID;
 
-        [NativeTypeName("HBITMAP")]
-        public IntPtr hbmpChecked;
+        public HBITMAP hbmpChecked;
 
-        [NativeTypeName("HBITMAP")]
-        public IntPtr hbmpUnchecked;
+        public HBITMAP hbmpUnchecked;
 
         [NativeTypeName("DWORD")]
         public uint dwItemData;
@@ -33,7 +29,6 @@ namespace TerraFX.Interop
         [NativeTypeName("CHAR [80]")]
         public fixed sbyte szString[80];
 
-        [NativeTypeName("HBITMAP")]
-        public IntPtr hbmpItem;
+        public HBITMAP hbmpItem;
     }
 }

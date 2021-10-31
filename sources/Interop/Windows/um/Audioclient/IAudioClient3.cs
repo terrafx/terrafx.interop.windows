@@ -111,9 +111,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(13)]
-        public HRESULT SetEventHandle([NativeTypeName("HANDLE")] IntPtr eventHandle)
+        public HRESULT SetEventHandle(HANDLE eventHandle)
         {
-            return ((delegate* unmanaged<IAudioClient3*, IntPtr, int>)(lpVtbl[13]))((IAudioClient3*)Unsafe.AsPointer(ref this), eventHandle);
+            return ((delegate* unmanaged<IAudioClient3*, HANDLE, int>)(lpVtbl[13]))((IAudioClient3*)Unsafe.AsPointer(ref this), eventHandle);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

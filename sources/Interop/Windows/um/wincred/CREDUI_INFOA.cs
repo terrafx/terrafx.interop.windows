@@ -3,8 +3,6 @@
 // Ported from um/wincrypt.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
-
 namespace TerraFX.Interop
 {
     public unsafe partial struct CREDUI_INFOA
@@ -12,8 +10,7 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint cbSize;
 
-        [NativeTypeName("HWND")]
-        public IntPtr hwndParent;
+        public HWND hwndParent;
 
         [NativeTypeName("PCSTR")]
         public sbyte* pszMessageText;
@@ -21,7 +18,6 @@ namespace TerraFX.Interop
         [NativeTypeName("PCSTR")]
         public sbyte* pszCaptionText;
 
-        [NativeTypeName("HBITMAP")]
-        public IntPtr hbmBanner;
+        public HBITMAP hbmBanner;
     }
 }

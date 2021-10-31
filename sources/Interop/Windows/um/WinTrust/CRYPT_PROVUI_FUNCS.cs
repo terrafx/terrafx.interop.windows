@@ -3,8 +3,6 @@
 // Ported from um/WinTrust.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
-
 namespace TerraFX.Interop
 {
     public unsafe partial struct CRYPT_PROVUI_FUNCS
@@ -16,15 +14,15 @@ namespace TerraFX.Interop
         public CRYPT_PROVUI_DATA* psUIData;
 
         [NativeTypeName("PFN_PROVUI_CALL")]
-        public delegate* unmanaged<IntPtr, CRYPT_PROVIDER_DATA*, BOOL> pfnOnMoreInfoClick;
+        public delegate* unmanaged<HWND, CRYPT_PROVIDER_DATA*, BOOL> pfnOnMoreInfoClick;
 
         [NativeTypeName("PFN_PROVUI_CALL")]
-        public delegate* unmanaged<IntPtr, CRYPT_PROVIDER_DATA*, BOOL> pfnOnMoreInfoClickDefault;
+        public delegate* unmanaged<HWND, CRYPT_PROVIDER_DATA*, BOOL> pfnOnMoreInfoClickDefault;
 
         [NativeTypeName("PFN_PROVUI_CALL")]
-        public delegate* unmanaged<IntPtr, CRYPT_PROVIDER_DATA*, BOOL> pfnOnAdvancedClick;
+        public delegate* unmanaged<HWND, CRYPT_PROVIDER_DATA*, BOOL> pfnOnAdvancedClick;
 
         [NativeTypeName("PFN_PROVUI_CALL")]
-        public delegate* unmanaged<IntPtr, CRYPT_PROVIDER_DATA*, BOOL> pfnOnAdvancedClickDefault;
+        public delegate* unmanaged<HWND, CRYPT_PROVIDER_DATA*, BOOL> pfnOnAdvancedClickDefault;
     }
 }

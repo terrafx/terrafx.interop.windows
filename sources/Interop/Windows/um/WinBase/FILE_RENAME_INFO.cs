@@ -3,7 +3,6 @@
 // Ported from um/WinBase.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -14,8 +13,7 @@ namespace TerraFX.Interop
         [NativeTypeName("_FILE_RENAME_INFO::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/WinBase.h:8878:5)")]
         public _Anonymous_e__Union Anonymous;
 
-        [NativeTypeName("HANDLE")]
-        public IntPtr RootDirectory;
+        public HANDLE RootDirectory;
 
         [NativeTypeName("DWORD")]
         public uint FileNameLength;

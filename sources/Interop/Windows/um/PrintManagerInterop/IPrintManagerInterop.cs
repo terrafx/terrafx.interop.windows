@@ -48,9 +48,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT GetRuntimeClassName([NativeTypeName("HSTRING *")] IntPtr* className)
+        public HRESULT GetRuntimeClassName(HSTRING* className)
         {
-            return ((delegate* unmanaged<IPrintManagerInterop*, IntPtr*, int>)(lpVtbl[4]))((IPrintManagerInterop*)Unsafe.AsPointer(ref this), className);
+            return ((delegate* unmanaged<IPrintManagerInterop*, HSTRING*, int>)(lpVtbl[4]))((IPrintManagerInterop*)Unsafe.AsPointer(ref this), className);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -62,16 +62,16 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        public HRESULT GetForWindow([NativeTypeName("HWND")] IntPtr appWindow, [NativeTypeName("const IID &")] Guid* riid, void** printManager)
+        public HRESULT GetForWindow(HWND appWindow, [NativeTypeName("const IID &")] Guid* riid, void** printManager)
         {
-            return ((delegate* unmanaged<IPrintManagerInterop*, IntPtr, Guid*, void**, int>)(lpVtbl[6]))((IPrintManagerInterop*)Unsafe.AsPointer(ref this), appWindow, riid, printManager);
+            return ((delegate* unmanaged<IPrintManagerInterop*, HWND, Guid*, void**, int>)(lpVtbl[6]))((IPrintManagerInterop*)Unsafe.AsPointer(ref this), appWindow, riid, printManager);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        public HRESULT ShowPrintUIForWindowAsync([NativeTypeName("HWND")] IntPtr appWindow, [NativeTypeName("const IID &")] Guid* riid, void** asyncOperation)
+        public HRESULT ShowPrintUIForWindowAsync(HWND appWindow, [NativeTypeName("const IID &")] Guid* riid, void** asyncOperation)
         {
-            return ((delegate* unmanaged<IPrintManagerInterop*, IntPtr, Guid*, void**, int>)(lpVtbl[7]))((IPrintManagerInterop*)Unsafe.AsPointer(ref this), appWindow, riid, asyncOperation);
+            return ((delegate* unmanaged<IPrintManagerInterop*, HWND, Guid*, void**, int>)(lpVtbl[7]))((IPrintManagerInterop*)Unsafe.AsPointer(ref this), appWindow, riid, asyncOperation);
         }
     }
 }

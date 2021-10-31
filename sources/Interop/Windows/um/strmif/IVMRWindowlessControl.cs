@@ -90,16 +90,16 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(10)]
-        public HRESULT SetVideoClippingWindow([NativeTypeName("HWND")] IntPtr hwnd)
+        public HRESULT SetVideoClippingWindow(HWND hwnd)
         {
-            return ((delegate* unmanaged<IVMRWindowlessControl*, IntPtr, int>)(lpVtbl[10]))((IVMRWindowlessControl*)Unsafe.AsPointer(ref this), hwnd);
+            return ((delegate* unmanaged<IVMRWindowlessControl*, HWND, int>)(lpVtbl[10]))((IVMRWindowlessControl*)Unsafe.AsPointer(ref this), hwnd);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(11)]
-        public HRESULT RepaintVideo([NativeTypeName("HWND")] IntPtr hwnd, [NativeTypeName("HDC")] IntPtr hdc)
+        public HRESULT RepaintVideo(HWND hwnd, HDC hdc)
         {
-            return ((delegate* unmanaged<IVMRWindowlessControl*, IntPtr, IntPtr, int>)(lpVtbl[11]))((IVMRWindowlessControl*)Unsafe.AsPointer(ref this), hwnd, hdc);
+            return ((delegate* unmanaged<IVMRWindowlessControl*, HWND, HDC, int>)(lpVtbl[11]))((IVMRWindowlessControl*)Unsafe.AsPointer(ref this), hwnd, hdc);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

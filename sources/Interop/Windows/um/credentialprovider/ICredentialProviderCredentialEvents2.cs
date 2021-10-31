@@ -69,9 +69,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        public HRESULT SetFieldBitmap(ICredentialProviderCredential* pcpc, [NativeTypeName("DWORD")] uint dwFieldID, [NativeTypeName("HBITMAP")] IntPtr hbmp)
+        public HRESULT SetFieldBitmap(ICredentialProviderCredential* pcpc, [NativeTypeName("DWORD")] uint dwFieldID, HBITMAP hbmp)
         {
-            return ((delegate* unmanaged<ICredentialProviderCredentialEvents2*, ICredentialProviderCredential*, uint, IntPtr, int>)(lpVtbl[7]))((ICredentialProviderCredentialEvents2*)Unsafe.AsPointer(ref this), pcpc, dwFieldID, hbmp);
+            return ((delegate* unmanaged<ICredentialProviderCredentialEvents2*, ICredentialProviderCredential*, uint, HBITMAP, int>)(lpVtbl[7]))((ICredentialProviderCredentialEvents2*)Unsafe.AsPointer(ref this), pcpc, dwFieldID, hbmp);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -104,9 +104,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(12)]
-        public HRESULT OnCreatingWindow([NativeTypeName("HWND *")] IntPtr* phwndOwner)
+        public HRESULT OnCreatingWindow(HWND* phwndOwner)
         {
-            return ((delegate* unmanaged<ICredentialProviderCredentialEvents2*, IntPtr*, int>)(lpVtbl[12]))((ICredentialProviderCredentialEvents2*)Unsafe.AsPointer(ref this), phwndOwner);
+            return ((delegate* unmanaged<ICredentialProviderCredentialEvents2*, HWND*, int>)(lpVtbl[12]))((ICredentialProviderCredentialEvents2*)Unsafe.AsPointer(ref this), phwndOwner);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

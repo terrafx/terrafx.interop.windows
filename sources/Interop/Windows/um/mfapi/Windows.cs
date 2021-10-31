@@ -38,7 +38,7 @@ namespace TerraFX.Interop
         public static extern HRESULT MFPutWorkItemEx2([NativeTypeName("DWORD")] uint dwQueue, [NativeTypeName("LONG")] int Priority, IMFAsyncResult* pResult);
 
         [DllImport("mfplat", ExactSpelling = true)]
-        public static extern HRESULT MFPutWaitingWorkItem([NativeTypeName("HANDLE")] IntPtr hEvent, [NativeTypeName("LONG")] int Priority, IMFAsyncResult* pResult, [NativeTypeName("MFWORKITEM_KEY *")] ulong* pKey);
+        public static extern HRESULT MFPutWaitingWorkItem(HANDLE hEvent, [NativeTypeName("LONG")] int Priority, IMFAsyncResult* pResult, [NativeTypeName("MFWORKITEM_KEY *")] ulong* pKey);
 
         [DllImport("mfplat", ExactSpelling = true)]
         public static extern HRESULT MFAllocateSerialWorkQueue([NativeTypeName("DWORD")] uint dwWorkQueue, [NativeTypeName("DWORD *")] uint* pdwWorkQueue);

@@ -41,9 +41,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        public HRESULT OnActivated([NativeTypeName("DWORD")] uint dwProfileType, [NativeTypeName("LANGID")] ushort langid, [NativeTypeName("const IID &")] Guid* clsid, [NativeTypeName("const GUID &")] Guid* catid, [NativeTypeName("const GUID &")] Guid* guidProfile, [NativeTypeName("HKL")] IntPtr hkl, [NativeTypeName("DWORD")] uint dwFlags)
+        public HRESULT OnActivated([NativeTypeName("DWORD")] uint dwProfileType, [NativeTypeName("LANGID")] ushort langid, [NativeTypeName("const IID &")] Guid* clsid, [NativeTypeName("const GUID &")] Guid* catid, [NativeTypeName("const GUID &")] Guid* guidProfile, HKL hkl, [NativeTypeName("DWORD")] uint dwFlags)
         {
-            return ((delegate* unmanaged<ITfInputProcessorProfileActivationSink*, uint, ushort, Guid*, Guid*, Guid*, IntPtr, uint, int>)(lpVtbl[3]))((ITfInputProcessorProfileActivationSink*)Unsafe.AsPointer(ref this), dwProfileType, langid, clsid, catid, guidProfile, hkl, dwFlags);
+            return ((delegate* unmanaged<ITfInputProcessorProfileActivationSink*, uint, ushort, Guid*, Guid*, Guid*, HKL, uint, int>)(lpVtbl[3]))((ITfInputProcessorProfileActivationSink*)Unsafe.AsPointer(ref this), dwProfileType, langid, clsid, catid, guidProfile, hkl, dwFlags);
         }
     }
 }

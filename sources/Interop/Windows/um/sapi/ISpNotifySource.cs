@@ -48,9 +48,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT SetNotifyWindowMessage([NativeTypeName("HWND")] IntPtr hWnd, [NativeTypeName("UINT")] uint Msg, [NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam)
+        public HRESULT SetNotifyWindowMessage(HWND hWnd, [NativeTypeName("UINT")] uint Msg, [NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam)
         {
-            return ((delegate* unmanaged<ISpNotifySource*, IntPtr, uint, nuint, nint, int>)(lpVtbl[4]))((ISpNotifySource*)Unsafe.AsPointer(ref this), hWnd, Msg, wParam, lParam);
+            return ((delegate* unmanaged<ISpNotifySource*, HWND, uint, nuint, nint, int>)(lpVtbl[4]))((ISpNotifySource*)Unsafe.AsPointer(ref this), hWnd, Msg, wParam, lParam);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -83,10 +83,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        [return: NativeTypeName("HANDLE")]
-        public IntPtr GetNotifyEventHandle()
+        public HANDLE GetNotifyEventHandle()
         {
-            return ((delegate* unmanaged<ISpNotifySource*, IntPtr>)(lpVtbl[9]))((ISpNotifySource*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<ISpNotifySource*, nint>)(lpVtbl[9]))((ISpNotifySource*)Unsafe.AsPointer(ref this));
         }
     }
 }

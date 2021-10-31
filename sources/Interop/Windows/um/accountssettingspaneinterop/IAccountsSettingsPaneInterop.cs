@@ -48,9 +48,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT GetRuntimeClassName([NativeTypeName("HSTRING *")] IntPtr* className)
+        public HRESULT GetRuntimeClassName(HSTRING* className)
         {
-            return ((delegate* unmanaged<IAccountsSettingsPaneInterop*, IntPtr*, int>)(lpVtbl[4]))((IAccountsSettingsPaneInterop*)Unsafe.AsPointer(ref this), className);
+            return ((delegate* unmanaged<IAccountsSettingsPaneInterop*, HSTRING*, int>)(lpVtbl[4]))((IAccountsSettingsPaneInterop*)Unsafe.AsPointer(ref this), className);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -62,23 +62,23 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        public HRESULT GetForWindow([NativeTypeName("HWND")] IntPtr appWindow, [NativeTypeName("const IID &")] Guid* riid, void** accountsSettingsPane)
+        public HRESULT GetForWindow(HWND appWindow, [NativeTypeName("const IID &")] Guid* riid, void** accountsSettingsPane)
         {
-            return ((delegate* unmanaged<IAccountsSettingsPaneInterop*, IntPtr, Guid*, void**, int>)(lpVtbl[6]))((IAccountsSettingsPaneInterop*)Unsafe.AsPointer(ref this), appWindow, riid, accountsSettingsPane);
+            return ((delegate* unmanaged<IAccountsSettingsPaneInterop*, HWND, Guid*, void**, int>)(lpVtbl[6]))((IAccountsSettingsPaneInterop*)Unsafe.AsPointer(ref this), appWindow, riid, accountsSettingsPane);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        public HRESULT ShowManageAccountsForWindowAsync([NativeTypeName("HWND")] IntPtr appWindow, [NativeTypeName("const IID &")] Guid* riid, void** asyncAction)
+        public HRESULT ShowManageAccountsForWindowAsync(HWND appWindow, [NativeTypeName("const IID &")] Guid* riid, void** asyncAction)
         {
-            return ((delegate* unmanaged<IAccountsSettingsPaneInterop*, IntPtr, Guid*, void**, int>)(lpVtbl[7]))((IAccountsSettingsPaneInterop*)Unsafe.AsPointer(ref this), appWindow, riid, asyncAction);
+            return ((delegate* unmanaged<IAccountsSettingsPaneInterop*, HWND, Guid*, void**, int>)(lpVtbl[7]))((IAccountsSettingsPaneInterop*)Unsafe.AsPointer(ref this), appWindow, riid, asyncAction);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        public HRESULT ShowAddAccountForWindowAsync([NativeTypeName("HWND")] IntPtr appWindow, [NativeTypeName("const IID &")] Guid* riid, void** asyncAction)
+        public HRESULT ShowAddAccountForWindowAsync(HWND appWindow, [NativeTypeName("const IID &")] Guid* riid, void** asyncAction)
         {
-            return ((delegate* unmanaged<IAccountsSettingsPaneInterop*, IntPtr, Guid*, void**, int>)(lpVtbl[8]))((IAccountsSettingsPaneInterop*)Unsafe.AsPointer(ref this), appWindow, riid, asyncAction);
+            return ((delegate* unmanaged<IAccountsSettingsPaneInterop*, HWND, Guid*, void**, int>)(lpVtbl[8]))((IAccountsSettingsPaneInterop*)Unsafe.AsPointer(ref this), appWindow, riid, asyncAction);
         }
     }
 }

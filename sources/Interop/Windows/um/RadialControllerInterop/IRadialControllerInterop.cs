@@ -48,9 +48,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT GetRuntimeClassName([NativeTypeName("HSTRING *")] IntPtr* className)
+        public HRESULT GetRuntimeClassName(HSTRING* className)
         {
-            return ((delegate* unmanaged<IRadialControllerInterop*, IntPtr*, int>)(lpVtbl[4]))((IRadialControllerInterop*)Unsafe.AsPointer(ref this), className);
+            return ((delegate* unmanaged<IRadialControllerInterop*, HSTRING*, int>)(lpVtbl[4]))((IRadialControllerInterop*)Unsafe.AsPointer(ref this), className);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -62,9 +62,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        public HRESULT CreateForWindow([NativeTypeName("HWND")] IntPtr hwnd, [NativeTypeName("const IID &")] Guid* riid, void** ppv)
+        public HRESULT CreateForWindow(HWND hwnd, [NativeTypeName("const IID &")] Guid* riid, void** ppv)
         {
-            return ((delegate* unmanaged<IRadialControllerInterop*, IntPtr, Guid*, void**, int>)(lpVtbl[6]))((IRadialControllerInterop*)Unsafe.AsPointer(ref this), hwnd, riid, ppv);
+            return ((delegate* unmanaged<IRadialControllerInterop*, HWND, Guid*, void**, int>)(lpVtbl[6]))((IRadialControllerInterop*)Unsafe.AsPointer(ref this), hwnd, riid, ppv);
         }
     }
 }

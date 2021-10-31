@@ -48,9 +48,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT ShowDialog(int iDialog, [NativeTypeName("HWND")] IntPtr hwnd)
+        public HRESULT ShowDialog(int iDialog, HWND hwnd)
         {
-            return ((delegate* unmanaged<IAMVfwCaptureDialogs*, int, IntPtr, int>)(lpVtbl[4]))((IAMVfwCaptureDialogs*)Unsafe.AsPointer(ref this), iDialog, hwnd);
+            return ((delegate* unmanaged<IAMVfwCaptureDialogs*, int, HWND, int>)(lpVtbl[4]))((IAMVfwCaptureDialogs*)Unsafe.AsPointer(ref this), iDialog, hwnd);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

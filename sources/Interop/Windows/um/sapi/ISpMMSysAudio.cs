@@ -167,10 +167,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(21)]
-        [return: NativeTypeName("HANDLE")]
-        public IntPtr EventHandle()
+        public HANDLE EventHandle()
         {
-            return ((delegate* unmanaged<ISpMMSysAudio*, IntPtr>)(lpVtbl[21]))((ISpMMSysAudio*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<ISpMMSysAudio*, nint>)(lpVtbl[21]))((ISpMMSysAudio*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

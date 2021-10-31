@@ -58,8 +58,8 @@ namespace TerraFX.Samples.DirectX
                     CW_USEDEFAULT,
                     CW_USEDEFAULT,
                     CW_USEDEFAULT,
-                    HWND.NULL,                              // We have no parent window.
-                    HMENU.NULL,                             // We aren't using menus.
+                    NULL,                               // We have no parent window.
+                    NULL,                               // We aren't using menus.
                     hInstance,
                     ((IntPtr)GCHandle.Alloc(sample)).ToPointer()
                 );
@@ -126,7 +126,7 @@ namespace TerraFX.Samples.DirectX
 
         // Main message handler for the sample
         [UnmanagedCallersOnly]
-        private static nint WindowProc(IntPtr hWnd, uint message, nuint wParam, nint lParam)
+        private static nint WindowProc(HWND hWnd, uint message, nuint wParam, nint lParam)
         {
             var handle = GetWindowLongPtrW(hWnd, GWLP_USERDATA);
             var pSample = (handle != IntPtr.Zero) ? (DXSample?)GCHandle.FromIntPtr(handle).Target : null;

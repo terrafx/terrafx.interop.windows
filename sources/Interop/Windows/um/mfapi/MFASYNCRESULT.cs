@@ -23,8 +23,7 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint dwBytesTransferred;
 
-        [NativeTypeName("HANDLE")]
-        public IntPtr hEvent;
+        public HANDLE hEvent;
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]

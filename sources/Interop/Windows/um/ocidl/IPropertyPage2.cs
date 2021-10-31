@@ -48,9 +48,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT Activate([NativeTypeName("HWND")] IntPtr hWndParent, [NativeTypeName("LPCRECT")] RECT* pRect, BOOL bModal)
+        public HRESULT Activate(HWND hWndParent, [NativeTypeName("LPCRECT")] RECT* pRect, BOOL bModal)
         {
-            return ((delegate* unmanaged<IPropertyPage2*, IntPtr, RECT*, BOOL, int>)(lpVtbl[4]))((IPropertyPage2*)Unsafe.AsPointer(ref this), hWndParent, pRect, bModal);
+            return ((delegate* unmanaged<IPropertyPage2*, HWND, RECT*, BOOL, int>)(lpVtbl[4]))((IPropertyPage2*)Unsafe.AsPointer(ref this), hWndParent, pRect, bModal);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

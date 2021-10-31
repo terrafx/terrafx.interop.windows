@@ -41,9 +41,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        public HRESULT CaptureThumbnail([NativeTypeName("const SIZE *")] SIZE* pMaxSize, IUnknown* pHTMLDoc2, [NativeTypeName("HBITMAP *")] IntPtr* phbmThumbnail)
+        public HRESULT CaptureThumbnail([NativeTypeName("const SIZE *")] SIZE* pMaxSize, IUnknown* pHTMLDoc2, HBITMAP* phbmThumbnail)
         {
-            return ((delegate* unmanaged<IThumbnailCapture*, SIZE*, IUnknown*, IntPtr*, int>)(lpVtbl[3]))((IThumbnailCapture*)Unsafe.AsPointer(ref this), pMaxSize, pHTMLDoc2, phbmThumbnail);
+            return ((delegate* unmanaged<IThumbnailCapture*, SIZE*, IUnknown*, HBITMAP*, int>)(lpVtbl[3]))((IThumbnailCapture*)Unsafe.AsPointer(ref this), pMaxSize, pHTMLDoc2, phbmThumbnail);
         }
     }
 }

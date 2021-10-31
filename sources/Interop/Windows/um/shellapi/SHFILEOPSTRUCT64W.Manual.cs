@@ -9,8 +9,7 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct SHFILEOPSTRUCT64W
     {
-        [NativeTypeName("HWND")]
-        public IntPtr hwnd;
+        public HWND hwnd;
 
         [NativeTypeName("UINT")]
         public uint wFunc;

@@ -3,16 +3,13 @@
 // Ported from um/CommCtrl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
-
 namespace TerraFX.Interop
 {
     public partial struct NMTVSTATEIMAGECHANGING
     {
         public NMHDR hdr;
 
-        [NativeTypeName("HTREEITEM")]
-        public IntPtr hti;
+        public HTREEITEM hti;
 
         public int iOldStateImageIndex;
 

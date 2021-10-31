@@ -12,12 +12,10 @@ namespace TerraFX.Interop
     public static unsafe partial class Windows
     {
         [DllImport("comctl32", EntryPoint = "CreateToolbarEx", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("HWND")]
-        public static extern IntPtr CreateToolbarEx32([NativeTypeName("HWND")] IntPtr hwnd, [NativeTypeName("DWORD")] uint ws, [NativeTypeName("UINT")] uint wID, int nBitmaps, [NativeTypeName("HINSTANCE")] IntPtr hBMInst, [NativeTypeName("UINT_PTR")] nuint wBMID, [NativeTypeName("LPCTBBUTTON")] TBBUTTON32* lpButtons, int iNumButtons, int dxButton, int dyButton, int dxBitmap, int dyBitmap, [NativeTypeName("UINT")] uint uStructSize);
+        public static extern HWND CreateToolbarEx32(HWND hwnd, [NativeTypeName("DWORD")] uint ws, [NativeTypeName("UINT")] uint wID, int nBitmaps, HINSTANCE hBMInst, [NativeTypeName("UINT_PTR")] nuint wBMID, [NativeTypeName("LPCTBBUTTON")] TBBUTTON32* lpButtons, int iNumButtons, int dxButton, int dyButton, int dxBitmap, int dyBitmap, [NativeTypeName("UINT")] uint uStructSize);
 
         [DllImport("comctl32", EntryPoint = "CreateToolbarEx", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("HWND")]
-        public static extern IntPtr CreateToolbarEx64([NativeTypeName("HWND")] IntPtr hwnd, [NativeTypeName("DWORD")] uint ws, [NativeTypeName("UINT")] uint wID, int nBitmaps, [NativeTypeName("HINSTANCE")] IntPtr hBMInst, [NativeTypeName("UINT_PTR")] nuint wBMID, [NativeTypeName("LPCTBBUTTON")] TBBUTTON64* lpButtons, int iNumButtons, int dxButton, int dyButton, int dxBitmap, int dyBitmap, [NativeTypeName("UINT")] uint uStructSize);
+        public static extern HWND CreateToolbarEx64(HWND hwnd, [NativeTypeName("DWORD")] uint ws, [NativeTypeName("UINT")] uint wID, int nBitmaps, HINSTANCE hBMInst, [NativeTypeName("UINT_PTR")] nuint wBMID, [NativeTypeName("LPCTBBUTTON")] TBBUTTON64* lpButtons, int iNumButtons, int dxButton, int dyButton, int dxBitmap, int dyBitmap, [NativeTypeName("UINT")] uint uStructSize);
 
         public static int FlatSB_GetScrollPropPtr(IntPtr param0, int propIndex, int* param2)
         {

@@ -3,7 +3,6 @@
 // Ported from um/CommCtrl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -15,11 +14,9 @@ namespace TerraFX.Interop
         [NativeTypeName("UINT")]
         public uint cbSize;
 
-        [NativeTypeName("HWND")]
-        public IntPtr hwndParent;
+        public HWND hwndParent;
 
-        [NativeTypeName("HINSTANCE")]
-        public IntPtr hInstance;
+        public HINSTANCE hInstance;
 
         [NativeTypeName("TASKDIALOG_FLAGS")]
         public int dwFlags;
@@ -74,7 +71,7 @@ namespace TerraFX.Interop
         public ushort* pszFooter;
 
         [NativeTypeName("PFTASKDIALOGCALLBACK")]
-        public delegate* unmanaged<IntPtr, uint, nuint, nint, nint, HRESULT> pfCallback;
+        public delegate* unmanaged<HWND, uint, nuint, nint, nint, HRESULT> pfCallback;
 
         [NativeTypeName("LONG_PTR")]
         public nint lpCallbackData;
@@ -82,12 +79,15 @@ namespace TerraFX.Interop
         [NativeTypeName("UINT")]
         public uint cxWidth;
 
-        public ref IntPtr hMainIcon
+        public ref HICON hMainIcon
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous1.hMainIcon, 1));
+                fixed (_Anonymous1_e__Union* pField = &Anonymous1)
+                {
+                    return ref pField->hMainIcon;
+                }
             }
         }
 
@@ -103,12 +103,15 @@ namespace TerraFX.Interop
             }
         }
 
-        public ref IntPtr hFooterIcon
+        public ref HICON hFooterIcon
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous2.hFooterIcon, 1));
+                fixed (_Anonymous2_e__Union* pField = &Anonymous2)
+                {
+                    return ref pField->hFooterIcon;
+                }
             }
         }
 
@@ -128,8 +131,7 @@ namespace TerraFX.Interop
         public unsafe partial struct _Anonymous1_e__Union
         {
             [FieldOffset(0)]
-            [NativeTypeName("HICON")]
-            public IntPtr hMainIcon;
+            public HICON hMainIcon;
 
             [FieldOffset(0)]
             [NativeTypeName("PCWSTR")]
@@ -140,8 +142,7 @@ namespace TerraFX.Interop
         public unsafe partial struct _Anonymous2_e__Union
         {
             [FieldOffset(0)]
-            [NativeTypeName("HICON")]
-            public IntPtr hFooterIcon;
+            public HICON hFooterIcon;
 
             [FieldOffset(0)]
             [NativeTypeName("PCWSTR")]

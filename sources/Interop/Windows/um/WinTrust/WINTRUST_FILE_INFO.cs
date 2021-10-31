@@ -15,8 +15,7 @@ namespace TerraFX.Interop
         [NativeTypeName("LPCWSTR")]
         public ushort* pcwszFilePath;
 
-        [NativeTypeName("HANDLE")]
-        public IntPtr hFile;
+        public HANDLE hFile;
 
         [NativeTypeName("GUID *")]
         public Guid* pgKnownSubject;

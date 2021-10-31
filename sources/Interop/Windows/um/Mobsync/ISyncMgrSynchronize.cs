@@ -69,9 +69,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        public HRESULT ShowProperties([NativeTypeName("HWND")] IntPtr hWndParent, [NativeTypeName("const GUID &")] Guid* ItemID)
+        public HRESULT ShowProperties(HWND hWndParent, [NativeTypeName("const GUID &")] Guid* ItemID)
         {
-            return ((delegate* unmanaged<ISyncMgrSynchronize*, IntPtr, Guid*, int>)(lpVtbl[7]))((ISyncMgrSynchronize*)Unsafe.AsPointer(ref this), hWndParent, ItemID);
+            return ((delegate* unmanaged<ISyncMgrSynchronize*, HWND, Guid*, int>)(lpVtbl[7]))((ISyncMgrSynchronize*)Unsafe.AsPointer(ref this), hWndParent, ItemID);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -83,16 +83,16 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        public HRESULT PrepareForSync([NativeTypeName("ULONG")] uint cbNumItems, [NativeTypeName("GUID *")] Guid* pItemIDs, [NativeTypeName("HWND")] IntPtr hWndParent, [NativeTypeName("DWORD")] uint dwReserved)
+        public HRESULT PrepareForSync([NativeTypeName("ULONG")] uint cbNumItems, [NativeTypeName("GUID *")] Guid* pItemIDs, HWND hWndParent, [NativeTypeName("DWORD")] uint dwReserved)
         {
-            return ((delegate* unmanaged<ISyncMgrSynchronize*, uint, Guid*, IntPtr, uint, int>)(lpVtbl[9]))((ISyncMgrSynchronize*)Unsafe.AsPointer(ref this), cbNumItems, pItemIDs, hWndParent, dwReserved);
+            return ((delegate* unmanaged<ISyncMgrSynchronize*, uint, Guid*, HWND, uint, int>)(lpVtbl[9]))((ISyncMgrSynchronize*)Unsafe.AsPointer(ref this), cbNumItems, pItemIDs, hWndParent, dwReserved);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(10)]
-        public HRESULT Synchronize([NativeTypeName("HWND")] IntPtr hWndParent)
+        public HRESULT Synchronize(HWND hWndParent)
         {
-            return ((delegate* unmanaged<ISyncMgrSynchronize*, IntPtr, int>)(lpVtbl[10]))((ISyncMgrSynchronize*)Unsafe.AsPointer(ref this), hWndParent);
+            return ((delegate* unmanaged<ISyncMgrSynchronize*, HWND, int>)(lpVtbl[10]))((ISyncMgrSynchronize*)Unsafe.AsPointer(ref this), hWndParent);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -104,9 +104,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(12)]
-        public HRESULT ShowError([NativeTypeName("HWND")] IntPtr hWndParent, [NativeTypeName("const GUID &")] Guid* ErrorID)
+        public HRESULT ShowError(HWND hWndParent, [NativeTypeName("const GUID &")] Guid* ErrorID)
         {
-            return ((delegate* unmanaged<ISyncMgrSynchronize*, IntPtr, Guid*, int>)(lpVtbl[12]))((ISyncMgrSynchronize*)Unsafe.AsPointer(ref this), hWndParent, ErrorID);
+            return ((delegate* unmanaged<ISyncMgrSynchronize*, HWND, Guid*, int>)(lpVtbl[12]))((ISyncMgrSynchronize*)Unsafe.AsPointer(ref this), hWndParent, ErrorID);
         }
     }
 }

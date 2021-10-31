@@ -20,7 +20,7 @@ namespace TerraFX.Interop
         public static extern HRESULT SHCreateDefaultPropertiesOp(IShellItem* psi, IFileOperation** ppFileOp);
 
         [DllImport("shell32", ExactSpelling = true)]
-        public static extern HRESULT SHSetDefaultProperties([NativeTypeName("HWND")] IntPtr hwnd, IShellItem* psi, [NativeTypeName("DWORD")] uint dwFileOpFlags, IFileOperationProgressSink* pfops);
+        public static extern HRESULT SHSetDefaultProperties(HWND hwnd, IShellItem* psi, [NativeTypeName("DWORD")] uint dwFileOpFlags, IFileOperationProgressSink* pfops);
 
         [NativeTypeName("const GUID")]
         public static ref readonly Guid SID_SCommandBarState

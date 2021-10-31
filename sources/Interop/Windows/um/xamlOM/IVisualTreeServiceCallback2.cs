@@ -48,9 +48,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT OnElementStateChanged([NativeTypeName("InstanceHandle")] ulong element, VisualElementState elementState, [NativeTypeName("LPCWSTR")] ushort* context)
+        public HRESULT OnElementStateChanged(InstanceHandle element, VisualElementState elementState, [NativeTypeName("LPCWSTR")] ushort* context)
         {
-            return ((delegate* unmanaged<IVisualTreeServiceCallback2*, ulong, VisualElementState, ushort*, int>)(lpVtbl[4]))((IVisualTreeServiceCallback2*)Unsafe.AsPointer(ref this), element, elementState, context);
+            return ((delegate* unmanaged<IVisualTreeServiceCallback2*, InstanceHandle, VisualElementState, ushort*, int>)(lpVtbl[4]))((IVisualTreeServiceCallback2*)Unsafe.AsPointer(ref this), element, elementState, context);
         }
     }
 }

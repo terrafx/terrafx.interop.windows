@@ -17,8 +17,7 @@ namespace TerraFX.Interop
         [NativeTypeName("ULONG")]
         public uint fMask;
 
-        [NativeTypeName("HWND")]
-        public IntPtr hwnd;
+        public HWND hwnd;
 
         [NativeTypeName("LPCWSTR")]
         public ushort* pszFile;
@@ -29,8 +28,7 @@ namespace TerraFX.Interop
         [NativeTypeName("LPCWSTR")]
         public ushort* pszCurrentDirectory;
 
-        [NativeTypeName("HANDLE")]
-        public IntPtr hUserToken;
+        public HANDLE hUserToken;
 
         [NativeTypeName("LPSECURITY_ATTRIBUTES")]
         public SECURITY_ATTRIBUTES* lpProcessAttributes;

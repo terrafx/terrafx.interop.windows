@@ -3,7 +3,6 @@
 // Ported from um/prsht.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -17,8 +16,7 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint dwFlags;
 
-        [NativeTypeName("HINSTANCE")]
-        public IntPtr hInstance;
+        public HINSTANCE hInstance;
 
         [NativeTypeName("_PROPSHEETPAGEA::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/prsht.h:225:5)")]
         public _Anonymous1_e__Union Anonymous1;
@@ -30,13 +28,13 @@ namespace TerraFX.Interop
         public sbyte* pszTitle;
 
         [NativeTypeName("DLGPROC")]
-        public delegate* unmanaged<IntPtr, uint, nuint, nint, nint> pfnDlgProc;
+        public delegate* unmanaged<HWND, uint, nuint, nint, nint> pfnDlgProc;
 
         [NativeTypeName("LPARAM")]
         public nint lParam;
 
         [NativeTypeName("LPFNPSPCALLBACKA")]
-        public delegate* unmanaged<IntPtr, uint, PROPSHEETPAGEA*, uint> pfnCallback;
+        public delegate* unmanaged<HWND, uint, PROPSHEETPAGEA*, uint> pfnCallback;
 
         [NativeTypeName("UINT *")]
         public uint* pcRefParent;
@@ -47,8 +45,7 @@ namespace TerraFX.Interop
         [NativeTypeName("LPCSTR")]
         public sbyte* pszHeaderSubTitle;
 
-        [NativeTypeName("HANDLE")]
-        public IntPtr hActCtx;
+        public HANDLE hActCtx;
 
         [NativeTypeName("_PROPSHEETPAGEA::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/prsht.h:232:5)")]
         public _Anonymous3_e__Union Anonymous3;
@@ -77,12 +74,15 @@ namespace TerraFX.Interop
             }
         }
 
-        public ref IntPtr hIcon
+        public ref HICON hIcon
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous2.hIcon, 1));
+                fixed (_Anonymous2_e__Union* pField = &Anonymous2)
+                {
+                    return ref pField->hIcon;
+                }
             }
         }
 
@@ -98,12 +98,15 @@ namespace TerraFX.Interop
             }
         }
 
-        public ref IntPtr hbmHeader
+        public ref HBITMAP hbmHeader
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous3.hbmHeader, 1));
+                fixed (_Anonymous3_e__Union* pField = &Anonymous3)
+                {
+                    return ref pField->hbmHeader;
+                }
             }
         }
 
@@ -135,8 +138,7 @@ namespace TerraFX.Interop
         public unsafe partial struct _Anonymous2_e__Union
         {
             [FieldOffset(0)]
-            [NativeTypeName("HICON")]
-            public IntPtr hIcon;
+            public HICON hIcon;
 
             [FieldOffset(0)]
             [NativeTypeName("LPCSTR")]
@@ -147,8 +149,7 @@ namespace TerraFX.Interop
         public unsafe partial struct _Anonymous3_e__Union
         {
             [FieldOffset(0)]
-            [NativeTypeName("HBITMAP")]
-            public IntPtr hbmHeader;
+            public HBITMAP hbmHeader;
 
             [FieldOffset(0)]
             [NativeTypeName("LPCSTR")]

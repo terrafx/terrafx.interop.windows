@@ -41,9 +41,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        public HRESULT GetDC(D2D1_DC_INITIALIZE_MODE mode, [NativeTypeName("HDC *")] IntPtr* hdc)
+        public HRESULT GetDC(D2D1_DC_INITIALIZE_MODE mode, HDC* hdc)
         {
-            return ((delegate* unmanaged<ID2D1GdiInteropRenderTarget*, D2D1_DC_INITIALIZE_MODE, IntPtr*, int>)(lpVtbl[3]))((ID2D1GdiInteropRenderTarget*)Unsafe.AsPointer(ref this), mode, hdc);
+            return ((delegate* unmanaged<ID2D1GdiInteropRenderTarget*, D2D1_DC_INITIALIZE_MODE, HDC*, int>)(lpVtbl[3]))((ID2D1GdiInteropRenderTarget*)Unsafe.AsPointer(ref this), mode, hdc);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

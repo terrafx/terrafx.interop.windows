@@ -111,9 +111,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(13)]
-        public HRESULT SetNotifyWindow([NativeTypeName("OAHWND")] nint hwnd, [NativeTypeName("long")] int lMsg, [NativeTypeName("LONG_PTR")] nint lInstanceData)
+        public HRESULT SetNotifyWindow(OAHWND hwnd, [NativeTypeName("long")] int lMsg, [NativeTypeName("LONG_PTR")] nint lInstanceData)
         {
-            return ((delegate* unmanaged<IMediaEventEx*, nint, int, nint, int>)(lpVtbl[13]))((IMediaEventEx*)Unsafe.AsPointer(ref this), hwnd, lMsg, lInstanceData);
+            return ((delegate* unmanaged<IMediaEventEx*, OAHWND, int, nint, int>)(lpVtbl[13]))((IMediaEventEx*)Unsafe.AsPointer(ref this), hwnd, lMsg, lInstanceData);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

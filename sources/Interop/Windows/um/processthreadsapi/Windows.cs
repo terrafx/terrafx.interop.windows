@@ -12,17 +12,16 @@ namespace TerraFX.Interop
     {
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("DWORD")]
-        public static extern uint QueueUserAPC([NativeTypeName("PAPCFUNC")] delegate* unmanaged<nuint, void> pfnAPC, [NativeTypeName("HANDLE")] IntPtr hThread, [NativeTypeName("ULONG_PTR")] nuint dwData);
+        public static extern uint QueueUserAPC([NativeTypeName("PAPCFUNC")] delegate* unmanaged<nuint, void> pfnAPC, HANDLE hThread, [NativeTypeName("ULONG_PTR")] nuint dwData);
 
         [DllImport("kernel32", ExactSpelling = true)]
-        public static extern BOOL QueueUserAPC2([NativeTypeName("PAPCFUNC")] delegate* unmanaged<nuint, void> ApcRoutine, [NativeTypeName("HANDLE")] IntPtr Thread, [NativeTypeName("ULONG_PTR")] nuint Data, QUEUE_USER_APC_FLAGS Flags);
+        public static extern BOOL QueueUserAPC2([NativeTypeName("PAPCFUNC")] delegate* unmanaged<nuint, void> ApcRoutine, HANDLE Thread, [NativeTypeName("ULONG_PTR")] nuint Data, QUEUE_USER_APC_FLAGS Flags);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        public static extern BOOL GetProcessTimes([NativeTypeName("HANDLE")] IntPtr hProcess, [NativeTypeName("LPFILETIME")] FILETIME* lpCreationTime, [NativeTypeName("LPFILETIME")] FILETIME* lpExitTime, [NativeTypeName("LPFILETIME")] FILETIME* lpKernelTime, [NativeTypeName("LPFILETIME")] FILETIME* lpUserTime);
+        public static extern BOOL GetProcessTimes(HANDLE hProcess, [NativeTypeName("LPFILETIME")] FILETIME* lpCreationTime, [NativeTypeName("LPFILETIME")] FILETIME* lpExitTime, [NativeTypeName("LPFILETIME")] FILETIME* lpKernelTime, [NativeTypeName("LPFILETIME")] FILETIME* lpUserTime);
 
         [DllImport("kernel32", ExactSpelling = true)]
-        [return: NativeTypeName("HANDLE")]
-        public static extern IntPtr GetCurrentProcess();
+        public static extern HANDLE GetCurrentProcess();
 
         [DllImport("kernel32", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
@@ -32,62 +31,58 @@ namespace TerraFX.Interop
         public static extern void ExitProcess([NativeTypeName("UINT")] uint uExitCode);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        public static extern BOOL TerminateProcess([NativeTypeName("HANDLE")] IntPtr hProcess, [NativeTypeName("UINT")] uint uExitCode);
+        public static extern BOOL TerminateProcess(HANDLE hProcess, [NativeTypeName("UINT")] uint uExitCode);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        public static extern BOOL GetExitCodeProcess([NativeTypeName("HANDLE")] IntPtr hProcess, [NativeTypeName("LPDWORD")] uint* lpExitCode);
+        public static extern BOOL GetExitCodeProcess(HANDLE hProcess, [NativeTypeName("LPDWORD")] uint* lpExitCode);
 
         [DllImport("kernel32", ExactSpelling = true)]
         public static extern BOOL SwitchToThread();
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("HANDLE")]
-        public static extern IntPtr CreateThread([NativeTypeName("LPSECURITY_ATTRIBUTES")] SECURITY_ATTRIBUTES* lpThreadAttributes, [NativeTypeName("SIZE_T")] nuint dwStackSize, [NativeTypeName("LPTHREAD_START_ROUTINE")] delegate* unmanaged<void*, uint> lpStartAddress, [NativeTypeName("LPVOID")] void* lpParameter, [NativeTypeName("DWORD")] uint dwCreationFlags, [NativeTypeName("LPDWORD")] uint* lpThreadId);
+        public static extern HANDLE CreateThread([NativeTypeName("LPSECURITY_ATTRIBUTES")] SECURITY_ATTRIBUTES* lpThreadAttributes, [NativeTypeName("SIZE_T")] nuint dwStackSize, [NativeTypeName("LPTHREAD_START_ROUTINE")] delegate* unmanaged<void*, uint> lpStartAddress, [NativeTypeName("LPVOID")] void* lpParameter, [NativeTypeName("DWORD")] uint dwCreationFlags, [NativeTypeName("LPDWORD")] uint* lpThreadId);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("HANDLE")]
-        public static extern IntPtr CreateRemoteThread([NativeTypeName("HANDLE")] IntPtr hProcess, [NativeTypeName("LPSECURITY_ATTRIBUTES")] SECURITY_ATTRIBUTES* lpThreadAttributes, [NativeTypeName("SIZE_T")] nuint dwStackSize, [NativeTypeName("LPTHREAD_START_ROUTINE")] delegate* unmanaged<void*, uint> lpStartAddress, [NativeTypeName("LPVOID")] void* lpParameter, [NativeTypeName("DWORD")] uint dwCreationFlags, [NativeTypeName("LPDWORD")] uint* lpThreadId);
+        public static extern HANDLE CreateRemoteThread(HANDLE hProcess, [NativeTypeName("LPSECURITY_ATTRIBUTES")] SECURITY_ATTRIBUTES* lpThreadAttributes, [NativeTypeName("SIZE_T")] nuint dwStackSize, [NativeTypeName("LPTHREAD_START_ROUTINE")] delegate* unmanaged<void*, uint> lpStartAddress, [NativeTypeName("LPVOID")] void* lpParameter, [NativeTypeName("DWORD")] uint dwCreationFlags, [NativeTypeName("LPDWORD")] uint* lpThreadId);
 
         [DllImport("kernel32", ExactSpelling = true)]
-        [return: NativeTypeName("HANDLE")]
-        public static extern IntPtr GetCurrentThread();
+        public static extern HANDLE GetCurrentThread();
 
         [DllImport("kernel32", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
         public static extern uint GetCurrentThreadId();
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("HANDLE")]
-        public static extern IntPtr OpenThread([NativeTypeName("DWORD")] uint dwDesiredAccess, BOOL bInheritHandle, [NativeTypeName("DWORD")] uint dwThreadId);
+        public static extern HANDLE OpenThread([NativeTypeName("DWORD")] uint dwDesiredAccess, BOOL bInheritHandle, [NativeTypeName("DWORD")] uint dwThreadId);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        public static extern BOOL SetThreadPriority([NativeTypeName("HANDLE")] IntPtr hThread, int nPriority);
+        public static extern BOOL SetThreadPriority(HANDLE hThread, int nPriority);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        public static extern BOOL SetThreadPriorityBoost([NativeTypeName("HANDLE")] IntPtr hThread, BOOL bDisablePriorityBoost);
+        public static extern BOOL SetThreadPriorityBoost(HANDLE hThread, BOOL bDisablePriorityBoost);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        public static extern BOOL GetThreadPriorityBoost([NativeTypeName("HANDLE")] IntPtr hThread, [NativeTypeName("PBOOL")] BOOL* pDisablePriorityBoost);
+        public static extern BOOL GetThreadPriorityBoost(HANDLE hThread, [NativeTypeName("PBOOL")] BOOL* pDisablePriorityBoost);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        public static extern int GetThreadPriority([NativeTypeName("HANDLE")] IntPtr hThread);
+        public static extern int GetThreadPriority(HANDLE hThread);
 
         [DllImport("kernel32", ExactSpelling = true)]
         public static extern void ExitThread([NativeTypeName("DWORD")] uint dwExitCode);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        public static extern BOOL TerminateThread([NativeTypeName("HANDLE")] IntPtr hThread, [NativeTypeName("DWORD")] uint dwExitCode);
+        public static extern BOOL TerminateThread(HANDLE hThread, [NativeTypeName("DWORD")] uint dwExitCode);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        public static extern BOOL GetExitCodeThread([NativeTypeName("HANDLE")] IntPtr hThread, [NativeTypeName("LPDWORD")] uint* lpExitCode);
-
-        [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("DWORD")]
-        public static extern uint SuspendThread([NativeTypeName("HANDLE")] IntPtr hThread);
+        public static extern BOOL GetExitCodeThread(HANDLE hThread, [NativeTypeName("LPDWORD")] uint* lpExitCode);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("DWORD")]
-        public static extern uint ResumeThread([NativeTypeName("HANDLE")] IntPtr hThread);
+        public static extern uint SuspendThread(HANDLE hThread);
+
+        [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
+        [return: NativeTypeName("DWORD")]
+        public static extern uint ResumeThread(HANDLE hThread);
 
         [DllImport("kernelbase", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("DWORD")]
@@ -120,23 +115,23 @@ namespace TerraFX.Interop
         public static extern void GetStartupInfoW([NativeTypeName("LPSTARTUPINFOW")] STARTUPINFOW* lpStartupInfo);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
-        public static extern BOOL CreateProcessAsUserW([NativeTypeName("HANDLE")] IntPtr hToken, [NativeTypeName("LPCWSTR")] ushort* lpApplicationName, [NativeTypeName("LPWSTR")] ushort* lpCommandLine, [NativeTypeName("LPSECURITY_ATTRIBUTES")] SECURITY_ATTRIBUTES* lpProcessAttributes, [NativeTypeName("LPSECURITY_ATTRIBUTES")] SECURITY_ATTRIBUTES* lpThreadAttributes, BOOL bInheritHandles, [NativeTypeName("DWORD")] uint dwCreationFlags, [NativeTypeName("LPVOID")] void* lpEnvironment, [NativeTypeName("LPCWSTR")] ushort* lpCurrentDirectory, [NativeTypeName("LPSTARTUPINFOW")] STARTUPINFOW* lpStartupInfo, [NativeTypeName("LPPROCESS_INFORMATION")] PROCESS_INFORMATION* lpProcessInformation);
+        public static extern BOOL CreateProcessAsUserW(HANDLE hToken, [NativeTypeName("LPCWSTR")] ushort* lpApplicationName, [NativeTypeName("LPWSTR")] ushort* lpCommandLine, [NativeTypeName("LPSECURITY_ATTRIBUTES")] SECURITY_ATTRIBUTES* lpProcessAttributes, [NativeTypeName("LPSECURITY_ATTRIBUTES")] SECURITY_ATTRIBUTES* lpThreadAttributes, BOOL bInheritHandles, [NativeTypeName("DWORD")] uint dwCreationFlags, [NativeTypeName("LPVOID")] void* lpEnvironment, [NativeTypeName("LPCWSTR")] ushort* lpCurrentDirectory, [NativeTypeName("LPSTARTUPINFOW")] STARTUPINFOW* lpStartupInfo, [NativeTypeName("LPPROCESS_INFORMATION")] PROCESS_INFORMATION* lpProcessInformation);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
-        public static extern BOOL SetThreadToken([NativeTypeName("PHANDLE")] IntPtr* Thread, [NativeTypeName("HANDLE")] IntPtr Token);
+        public static extern BOOL SetThreadToken([NativeTypeName("PHANDLE")] HANDLE* Thread, HANDLE Token);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
-        public static extern BOOL OpenProcessToken([NativeTypeName("HANDLE")] IntPtr ProcessHandle, [NativeTypeName("DWORD")] uint DesiredAccess, [NativeTypeName("PHANDLE")] IntPtr* TokenHandle);
+        public static extern BOOL OpenProcessToken(HANDLE ProcessHandle, [NativeTypeName("DWORD")] uint DesiredAccess, [NativeTypeName("PHANDLE")] HANDLE* TokenHandle);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
-        public static extern BOOL OpenThreadToken([NativeTypeName("HANDLE")] IntPtr ThreadHandle, [NativeTypeName("DWORD")] uint DesiredAccess, BOOL OpenAsSelf, [NativeTypeName("PHANDLE")] IntPtr* TokenHandle);
+        public static extern BOOL OpenThreadToken(HANDLE ThreadHandle, [NativeTypeName("DWORD")] uint DesiredAccess, BOOL OpenAsSelf, [NativeTypeName("PHANDLE")] HANDLE* TokenHandle);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        public static extern BOOL SetPriorityClass([NativeTypeName("HANDLE")] IntPtr hProcess, [NativeTypeName("DWORD")] uint dwPriorityClass);
+        public static extern BOOL SetPriorityClass(HANDLE hProcess, [NativeTypeName("DWORD")] uint dwPriorityClass);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("DWORD")]
-        public static extern uint GetPriorityClass([NativeTypeName("HANDLE")] IntPtr hProcess);
+        public static extern uint GetPriorityClass(HANDLE hProcess);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         public static extern BOOL SetThreadStackGuarantee([NativeTypeName("PULONG")] uint* StackSizeInBytes);
@@ -146,18 +141,18 @@ namespace TerraFX.Interop
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("DWORD")]
-        public static extern uint GetProcessId([NativeTypeName("HANDLE")] IntPtr Process);
+        public static extern uint GetProcessId(HANDLE Process);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("DWORD")]
-        public static extern uint GetThreadId([NativeTypeName("HANDLE")] IntPtr Thread);
+        public static extern uint GetThreadId(HANDLE Thread);
 
         [DllImport("kernel32", ExactSpelling = true)]
         public static extern void FlushProcessWriteBuffers();
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("DWORD")]
-        public static extern uint GetProcessIdOfThread([NativeTypeName("HANDLE")] IntPtr Thread);
+        public static extern uint GetProcessIdOfThread(HANDLE Thread);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         public static extern BOOL InitializeProcThreadAttributeList([NativeTypeName("LPPROC_THREAD_ATTRIBUTE_LIST")] IntPtr lpAttributeList, [NativeTypeName("DWORD")] uint dwAttributeCount, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("PSIZE_T")] nuint* lpSize);
@@ -169,85 +164,83 @@ namespace TerraFX.Interop
         public static extern BOOL UpdateProcThreadAttribute([NativeTypeName("LPPROC_THREAD_ATTRIBUTE_LIST")] IntPtr lpAttributeList, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("DWORD_PTR")] nuint Attribute, [NativeTypeName("PVOID")] void* lpValue, [NativeTypeName("SIZE_T")] nuint cbSize, [NativeTypeName("PVOID")] void* lpPreviousValue, [NativeTypeName("PSIZE_T")] nuint* lpReturnSize);
 
         [DllImport("kernel32", ExactSpelling = true)]
-        public static extern BOOL SetProcessDynamicEHContinuationTargets([NativeTypeName("HANDLE")] IntPtr Process, [NativeTypeName("USHORT")] ushort NumberOfTargets, [NativeTypeName("PPROCESS_DYNAMIC_EH_CONTINUATION_TARGET")] PROCESS_DYNAMIC_EH_CONTINUATION_TARGET* Targets);
+        public static extern BOOL SetProcessDynamicEHContinuationTargets(HANDLE Process, [NativeTypeName("USHORT")] ushort NumberOfTargets, [NativeTypeName("PPROCESS_DYNAMIC_EH_CONTINUATION_TARGET")] PROCESS_DYNAMIC_EH_CONTINUATION_TARGET* Targets);
 
         [DllImport("kernel32", ExactSpelling = true)]
-        public static extern BOOL SetProcessDynamicEnforcedCetCompatibleRanges([NativeTypeName("HANDLE")] IntPtr Process, [NativeTypeName("USHORT")] ushort NumberOfRanges, [NativeTypeName("PPROCESS_DYNAMIC_ENFORCED_ADDRESS_RANGE")] PROCESS_DYNAMIC_ENFORCED_ADDRESS_RANGE* Ranges);
+        public static extern BOOL SetProcessDynamicEnforcedCetCompatibleRanges(HANDLE Process, [NativeTypeName("USHORT")] ushort NumberOfRanges, [NativeTypeName("PPROCESS_DYNAMIC_ENFORCED_ADDRESS_RANGE")] PROCESS_DYNAMIC_ENFORCED_ADDRESS_RANGE* Ranges);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        public static extern BOOL SetProcessAffinityUpdateMode([NativeTypeName("HANDLE")] IntPtr hProcess, [NativeTypeName("DWORD")] uint dwFlags);
+        public static extern BOOL SetProcessAffinityUpdateMode(HANDLE hProcess, [NativeTypeName("DWORD")] uint dwFlags);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        public static extern BOOL QueryProcessAffinityUpdateMode([NativeTypeName("HANDLE")] IntPtr hProcess, [NativeTypeName("LPDWORD")] uint* lpdwFlags);
+        public static extern BOOL QueryProcessAffinityUpdateMode(HANDLE hProcess, [NativeTypeName("LPDWORD")] uint* lpdwFlags);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("HANDLE")]
-        public static extern IntPtr CreateRemoteThreadEx([NativeTypeName("HANDLE")] IntPtr hProcess, [NativeTypeName("LPSECURITY_ATTRIBUTES")] SECURITY_ATTRIBUTES* lpThreadAttributes, [NativeTypeName("SIZE_T")] nuint dwStackSize, [NativeTypeName("LPTHREAD_START_ROUTINE")] delegate* unmanaged<void*, uint> lpStartAddress, [NativeTypeName("LPVOID")] void* lpParameter, [NativeTypeName("DWORD")] uint dwCreationFlags, [NativeTypeName("LPPROC_THREAD_ATTRIBUTE_LIST")] IntPtr lpAttributeList, [NativeTypeName("LPDWORD")] uint* lpThreadId);
+        public static extern HANDLE CreateRemoteThreadEx(HANDLE hProcess, [NativeTypeName("LPSECURITY_ATTRIBUTES")] SECURITY_ATTRIBUTES* lpThreadAttributes, [NativeTypeName("SIZE_T")] nuint dwStackSize, [NativeTypeName("LPTHREAD_START_ROUTINE")] delegate* unmanaged<void*, uint> lpStartAddress, [NativeTypeName("LPVOID")] void* lpParameter, [NativeTypeName("DWORD")] uint dwCreationFlags, [NativeTypeName("LPPROC_THREAD_ATTRIBUTE_LIST")] IntPtr lpAttributeList, [NativeTypeName("LPDWORD")] uint* lpThreadId);
 
         [DllImport("kernel32", ExactSpelling = true)]
         public static extern void GetCurrentThreadStackLimits([NativeTypeName("PULONG_PTR")] nuint* LowLimit, [NativeTypeName("PULONG_PTR")] nuint* HighLimit);
 
         [DllImport("kernel32", ExactSpelling = true)]
-        public static extern BOOL GetThreadContext([NativeTypeName("HANDLE")] IntPtr hThread, [NativeTypeName("LPCONTEXT")] void* lpContext);
+        public static extern BOOL GetThreadContext(HANDLE hThread, [NativeTypeName("LPCONTEXT")] void* lpContext);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        public static extern BOOL GetProcessMitigationPolicy([NativeTypeName("HANDLE")] IntPtr hProcess, PROCESS_MITIGATION_POLICY MitigationPolicy, [NativeTypeName("PVOID")] void* lpBuffer, [NativeTypeName("SIZE_T")] nuint dwLength);
+        public static extern BOOL GetProcessMitigationPolicy(HANDLE hProcess, PROCESS_MITIGATION_POLICY MitigationPolicy, [NativeTypeName("PVOID")] void* lpBuffer, [NativeTypeName("SIZE_T")] nuint dwLength);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        public static extern BOOL SetThreadContext([NativeTypeName("HANDLE")] IntPtr hThread, [NativeTypeName("const CONTEXT *")] void* lpContext);
+        public static extern BOOL SetThreadContext(HANDLE hThread, [NativeTypeName("const CONTEXT *")] void* lpContext);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         public static extern BOOL SetProcessMitigationPolicy(PROCESS_MITIGATION_POLICY MitigationPolicy, [NativeTypeName("PVOID")] void* lpBuffer, [NativeTypeName("SIZE_T")] nuint dwLength);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        public static extern BOOL FlushInstructionCache([NativeTypeName("HANDLE")] IntPtr hProcess, [NativeTypeName("LPCVOID")] void* lpBaseAddress, [NativeTypeName("SIZE_T")] nuint dwSize);
+        public static extern BOOL FlushInstructionCache(HANDLE hProcess, [NativeTypeName("LPCVOID")] void* lpBaseAddress, [NativeTypeName("SIZE_T")] nuint dwSize);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        public static extern BOOL GetThreadTimes([NativeTypeName("HANDLE")] IntPtr hThread, [NativeTypeName("LPFILETIME")] FILETIME* lpCreationTime, [NativeTypeName("LPFILETIME")] FILETIME* lpExitTime, [NativeTypeName("LPFILETIME")] FILETIME* lpKernelTime, [NativeTypeName("LPFILETIME")] FILETIME* lpUserTime);
+        public static extern BOOL GetThreadTimes(HANDLE hThread, [NativeTypeName("LPFILETIME")] FILETIME* lpCreationTime, [NativeTypeName("LPFILETIME")] FILETIME* lpExitTime, [NativeTypeName("LPFILETIME")] FILETIME* lpKernelTime, [NativeTypeName("LPFILETIME")] FILETIME* lpUserTime);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("HANDLE")]
-        public static extern IntPtr OpenProcess([NativeTypeName("DWORD")] uint dwDesiredAccess, BOOL bInheritHandle, [NativeTypeName("DWORD")] uint dwProcessId);
+        public static extern HANDLE OpenProcess([NativeTypeName("DWORD")] uint dwDesiredAccess, BOOL bInheritHandle, [NativeTypeName("DWORD")] uint dwProcessId);
 
         [DllImport("kernel32", ExactSpelling = true)]
         public static extern BOOL IsProcessorFeaturePresent([NativeTypeName("DWORD")] uint ProcessorFeature);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        public static extern BOOL GetProcessHandleCount([NativeTypeName("HANDLE")] IntPtr hProcess, [NativeTypeName("PDWORD")] uint* pdwHandleCount);
+        public static extern BOOL GetProcessHandleCount(HANDLE hProcess, [NativeTypeName("PDWORD")] uint* pdwHandleCount);
 
         [DllImport("kernel32", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
         public static extern uint GetCurrentProcessorNumber();
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        public static extern BOOL SetThreadIdealProcessorEx([NativeTypeName("HANDLE")] IntPtr hThread, [NativeTypeName("PPROCESSOR_NUMBER")] PROCESSOR_NUMBER* lpIdealProcessor, [NativeTypeName("PPROCESSOR_NUMBER")] PROCESSOR_NUMBER* lpPreviousIdealProcessor);
+        public static extern BOOL SetThreadIdealProcessorEx(HANDLE hThread, [NativeTypeName("PPROCESSOR_NUMBER")] PROCESSOR_NUMBER* lpIdealProcessor, [NativeTypeName("PPROCESSOR_NUMBER")] PROCESSOR_NUMBER* lpPreviousIdealProcessor);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        public static extern BOOL GetThreadIdealProcessorEx([NativeTypeName("HANDLE")] IntPtr hThread, [NativeTypeName("PPROCESSOR_NUMBER")] PROCESSOR_NUMBER* lpIdealProcessor);
+        public static extern BOOL GetThreadIdealProcessorEx(HANDLE hThread, [NativeTypeName("PPROCESSOR_NUMBER")] PROCESSOR_NUMBER* lpIdealProcessor);
 
         [DllImport("kernel32", ExactSpelling = true)]
         public static extern void GetCurrentProcessorNumberEx([NativeTypeName("PPROCESSOR_NUMBER")] PROCESSOR_NUMBER* ProcNumber);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        public static extern BOOL GetProcessPriorityBoost([NativeTypeName("HANDLE")] IntPtr hProcess, [NativeTypeName("PBOOL")] BOOL* pDisablePriorityBoost);
+        public static extern BOOL GetProcessPriorityBoost(HANDLE hProcess, [NativeTypeName("PBOOL")] BOOL* pDisablePriorityBoost);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        public static extern BOOL SetProcessPriorityBoost([NativeTypeName("HANDLE")] IntPtr hProcess, BOOL bDisablePriorityBoost);
+        public static extern BOOL SetProcessPriorityBoost(HANDLE hProcess, BOOL bDisablePriorityBoost);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        public static extern BOOL GetThreadIOPendingFlag([NativeTypeName("HANDLE")] IntPtr hThread, [NativeTypeName("PBOOL")] BOOL* lpIOIsPending);
+        public static extern BOOL GetThreadIOPendingFlag(HANDLE hThread, [NativeTypeName("PBOOL")] BOOL* lpIOIsPending);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         public static extern BOOL GetSystemTimes([NativeTypeName("PFILETIME")] FILETIME* lpIdleTime, [NativeTypeName("PFILETIME")] FILETIME* lpKernelTime, [NativeTypeName("PFILETIME")] FILETIME* lpUserTime);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        public static extern BOOL GetThreadInformation([NativeTypeName("HANDLE")] IntPtr hThread, THREAD_INFORMATION_CLASS ThreadInformationClass, [NativeTypeName("LPVOID")] void* ThreadInformation, [NativeTypeName("DWORD")] uint ThreadInformationSize);
+        public static extern BOOL GetThreadInformation(HANDLE hThread, THREAD_INFORMATION_CLASS ThreadInformationClass, [NativeTypeName("LPVOID")] void* ThreadInformation, [NativeTypeName("DWORD")] uint ThreadInformationSize);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        public static extern BOOL SetThreadInformation([NativeTypeName("HANDLE")] IntPtr hThread, THREAD_INFORMATION_CLASS ThreadInformationClass, [NativeTypeName("LPVOID")] void* ThreadInformation, [NativeTypeName("DWORD")] uint ThreadInformationSize);
+        public static extern BOOL SetThreadInformation(HANDLE hThread, THREAD_INFORMATION_CLASS ThreadInformationClass, [NativeTypeName("LPVOID")] void* ThreadInformation, [NativeTypeName("DWORD")] uint ThreadInformationSize);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        public static extern BOOL IsProcessCritical([NativeTypeName("HANDLE")] IntPtr hProcess, [NativeTypeName("PBOOL")] BOOL* Critical);
+        public static extern BOOL IsProcessCritical(HANDLE hProcess, [NativeTypeName("PBOOL")] BOOL* Critical);
 
         [DllImport("kernel32", ExactSpelling = true)]
         public static extern BOOL SetProtectedPolicy([NativeTypeName("LPCGUID")] Guid* PolicyGuid, [NativeTypeName("ULONG_PTR")] nuint PolicyValue, [NativeTypeName("PULONG_PTR")] nuint* OldPolicyValue);
@@ -257,52 +250,52 @@ namespace TerraFX.Interop
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("DWORD")]
-        public static extern uint SetThreadIdealProcessor([NativeTypeName("HANDLE")] IntPtr hThread, [NativeTypeName("DWORD")] uint dwIdealProcessor);
+        public static extern uint SetThreadIdealProcessor(HANDLE hThread, [NativeTypeName("DWORD")] uint dwIdealProcessor);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        public static extern BOOL SetProcessInformation([NativeTypeName("HANDLE")] IntPtr hProcess, PROCESS_INFORMATION_CLASS ProcessInformationClass, [NativeTypeName("LPVOID")] void* ProcessInformation, [NativeTypeName("DWORD")] uint ProcessInformationSize);
+        public static extern BOOL SetProcessInformation(HANDLE hProcess, PROCESS_INFORMATION_CLASS ProcessInformationClass, [NativeTypeName("LPVOID")] void* ProcessInformation, [NativeTypeName("DWORD")] uint ProcessInformationSize);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        public static extern BOOL GetProcessInformation([NativeTypeName("HANDLE")] IntPtr hProcess, PROCESS_INFORMATION_CLASS ProcessInformationClass, [NativeTypeName("LPVOID")] void* ProcessInformation, [NativeTypeName("DWORD")] uint ProcessInformationSize);
+        public static extern BOOL GetProcessInformation(HANDLE hProcess, PROCESS_INFORMATION_CLASS ProcessInformationClass, [NativeTypeName("LPVOID")] void* ProcessInformation, [NativeTypeName("DWORD")] uint ProcessInformationSize);
 
         [DllImport("kernel32", ExactSpelling = true)]
-        public static extern BOOL GetSystemCpuSetInformation([NativeTypeName("PSYSTEM_CPU_SET_INFORMATION")] SYSTEM_CPU_SET_INFORMATION* Information, [NativeTypeName("ULONG")] uint BufferLength, [NativeTypeName("PULONG")] uint* ReturnedLength, [NativeTypeName("HANDLE")] IntPtr Process, [NativeTypeName("ULONG")] uint Flags);
+        public static extern BOOL GetSystemCpuSetInformation([NativeTypeName("PSYSTEM_CPU_SET_INFORMATION")] SYSTEM_CPU_SET_INFORMATION* Information, [NativeTypeName("ULONG")] uint BufferLength, [NativeTypeName("PULONG")] uint* ReturnedLength, HANDLE Process, [NativeTypeName("ULONG")] uint Flags);
 
         [DllImport("kernel32", ExactSpelling = true)]
-        public static extern BOOL GetProcessDefaultCpuSets([NativeTypeName("HANDLE")] IntPtr Process, [NativeTypeName("PULONG")] uint* CpuSetIds, [NativeTypeName("ULONG")] uint CpuSetIdCount, [NativeTypeName("PULONG")] uint* RequiredIdCount);
+        public static extern BOOL GetProcessDefaultCpuSets(HANDLE Process, [NativeTypeName("PULONG")] uint* CpuSetIds, [NativeTypeName("ULONG")] uint CpuSetIdCount, [NativeTypeName("PULONG")] uint* RequiredIdCount);
 
         [DllImport("kernel32", ExactSpelling = true)]
-        public static extern BOOL SetProcessDefaultCpuSets([NativeTypeName("HANDLE")] IntPtr Process, [NativeTypeName("const ULONG *")] uint* CpuSetIds, [NativeTypeName("ULONG")] uint CpuSetIdCount);
+        public static extern BOOL SetProcessDefaultCpuSets(HANDLE Process, [NativeTypeName("const ULONG *")] uint* CpuSetIds, [NativeTypeName("ULONG")] uint CpuSetIdCount);
 
         [DllImport("kernel32", ExactSpelling = true)]
-        public static extern BOOL GetThreadSelectedCpuSets([NativeTypeName("HANDLE")] IntPtr Thread, [NativeTypeName("PULONG")] uint* CpuSetIds, [NativeTypeName("ULONG")] uint CpuSetIdCount, [NativeTypeName("PULONG")] uint* RequiredIdCount);
+        public static extern BOOL GetThreadSelectedCpuSets(HANDLE Thread, [NativeTypeName("PULONG")] uint* CpuSetIds, [NativeTypeName("ULONG")] uint CpuSetIdCount, [NativeTypeName("PULONG")] uint* RequiredIdCount);
 
         [DllImport("kernel32", ExactSpelling = true)]
-        public static extern BOOL SetThreadSelectedCpuSets([NativeTypeName("HANDLE")] IntPtr Thread, [NativeTypeName("const ULONG *")] uint* CpuSetIds, [NativeTypeName("ULONG")] uint CpuSetIdCount);
+        public static extern BOOL SetThreadSelectedCpuSets(HANDLE Thread, [NativeTypeName("const ULONG *")] uint* CpuSetIds, [NativeTypeName("ULONG")] uint CpuSetIdCount);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
-        public static extern BOOL CreateProcessAsUserA([NativeTypeName("HANDLE")] IntPtr hToken, [NativeTypeName("LPCSTR")] sbyte* lpApplicationName, [NativeTypeName("LPSTR")] sbyte* lpCommandLine, [NativeTypeName("LPSECURITY_ATTRIBUTES")] SECURITY_ATTRIBUTES* lpProcessAttributes, [NativeTypeName("LPSECURITY_ATTRIBUTES")] SECURITY_ATTRIBUTES* lpThreadAttributes, BOOL bInheritHandles, [NativeTypeName("DWORD")] uint dwCreationFlags, [NativeTypeName("LPVOID")] void* lpEnvironment, [NativeTypeName("LPCSTR")] sbyte* lpCurrentDirectory, [NativeTypeName("LPSTARTUPINFOA")] STARTUPINFOA* lpStartupInfo, [NativeTypeName("LPPROCESS_INFORMATION")] PROCESS_INFORMATION* lpProcessInformation);
+        public static extern BOOL CreateProcessAsUserA(HANDLE hToken, [NativeTypeName("LPCSTR")] sbyte* lpApplicationName, [NativeTypeName("LPSTR")] sbyte* lpCommandLine, [NativeTypeName("LPSECURITY_ATTRIBUTES")] SECURITY_ATTRIBUTES* lpProcessAttributes, [NativeTypeName("LPSECURITY_ATTRIBUTES")] SECURITY_ATTRIBUTES* lpThreadAttributes, BOOL bInheritHandles, [NativeTypeName("DWORD")] uint dwCreationFlags, [NativeTypeName("LPVOID")] void* lpEnvironment, [NativeTypeName("LPCSTR")] sbyte* lpCurrentDirectory, [NativeTypeName("LPSTARTUPINFOA")] STARTUPINFOA* lpStartupInfo, [NativeTypeName("LPPROCESS_INFORMATION")] PROCESS_INFORMATION* lpProcessInformation);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         public static extern BOOL GetProcessShutdownParameters([NativeTypeName("LPDWORD")] uint* lpdwLevel, [NativeTypeName("LPDWORD")] uint* lpdwFlags);
 
         [DllImport("kernel32", ExactSpelling = true)]
-        public static extern BOOL GetProcessDefaultCpuSetMasks([NativeTypeName("HANDLE")] IntPtr Process, [NativeTypeName("PGROUP_AFFINITY")] GROUP_AFFINITY* CpuSetMasks, [NativeTypeName("USHORT")] ushort CpuSetMaskCount, [NativeTypeName("PUSHORT")] ushort* RequiredMaskCount);
+        public static extern BOOL GetProcessDefaultCpuSetMasks(HANDLE Process, [NativeTypeName("PGROUP_AFFINITY")] GROUP_AFFINITY* CpuSetMasks, [NativeTypeName("USHORT")] ushort CpuSetMaskCount, [NativeTypeName("PUSHORT")] ushort* RequiredMaskCount);
 
         [DllImport("kernel32", ExactSpelling = true)]
-        public static extern BOOL SetProcessDefaultCpuSetMasks([NativeTypeName("HANDLE")] IntPtr Process, [NativeTypeName("PGROUP_AFFINITY")] GROUP_AFFINITY* CpuSetMasks, [NativeTypeName("USHORT")] ushort CpuSetMaskCount);
+        public static extern BOOL SetProcessDefaultCpuSetMasks(HANDLE Process, [NativeTypeName("PGROUP_AFFINITY")] GROUP_AFFINITY* CpuSetMasks, [NativeTypeName("USHORT")] ushort CpuSetMaskCount);
 
         [DllImport("kernel32", ExactSpelling = true)]
-        public static extern BOOL GetThreadSelectedCpuSetMasks([NativeTypeName("HANDLE")] IntPtr Thread, [NativeTypeName("PGROUP_AFFINITY")] GROUP_AFFINITY* CpuSetMasks, [NativeTypeName("USHORT")] ushort CpuSetMaskCount, [NativeTypeName("PUSHORT")] ushort* RequiredMaskCount);
+        public static extern BOOL GetThreadSelectedCpuSetMasks(HANDLE Thread, [NativeTypeName("PGROUP_AFFINITY")] GROUP_AFFINITY* CpuSetMasks, [NativeTypeName("USHORT")] ushort CpuSetMaskCount, [NativeTypeName("PUSHORT")] ushort* RequiredMaskCount);
 
         [DllImport("kernel32", ExactSpelling = true)]
-        public static extern BOOL SetThreadSelectedCpuSetMasks([NativeTypeName("HANDLE")] IntPtr Thread, [NativeTypeName("PGROUP_AFFINITY")] GROUP_AFFINITY* CpuSetMasks, [NativeTypeName("USHORT")] ushort CpuSetMaskCount);
+        public static extern BOOL SetThreadSelectedCpuSetMasks(HANDLE Thread, [NativeTypeName("PGROUP_AFFINITY")] GROUP_AFFINITY* CpuSetMasks, [NativeTypeName("USHORT")] ushort CpuSetMaskCount);
 
         [DllImport("kernel32", ExactSpelling = true)]
-        public static extern HRESULT SetThreadDescription([NativeTypeName("HANDLE")] IntPtr hThread, [NativeTypeName("PCWSTR")] ushort* lpThreadDescription);
+        public static extern HRESULT SetThreadDescription(HANDLE hThread, [NativeTypeName("PCWSTR")] ushort* lpThreadDescription);
 
         [DllImport("kernel32", ExactSpelling = true)]
-        public static extern HRESULT GetThreadDescription([NativeTypeName("HANDLE")] IntPtr hThread, [NativeTypeName("PWSTR *")] ushort** ppszThreadDescription);
+        public static extern HRESULT GetThreadDescription(HANDLE hThread, [NativeTypeName("PWSTR *")] ushort** ppszThreadDescription);
 
         [NativeTypeName("#define TLS_OUT_OF_INDEXES ((DWORD)0xFFFFFFFF)")]
         public const uint TLS_OUT_OF_INDEXES = ((uint)(0xFFFFFFFF));
@@ -314,7 +307,7 @@ namespace TerraFX.Interop
         public static delegate*<STARTUPINFOW*, void> GetStartupInfo => &GetStartupInfoW;
 
         [NativeTypeName("#define CreateProcessAsUser CreateProcessAsUserW")]
-        public static delegate*<IntPtr, ushort*, ushort*, SECURITY_ATTRIBUTES*, SECURITY_ATTRIBUTES*, BOOL, uint, void*, ushort*, STARTUPINFOW*, PROCESS_INFORMATION*, BOOL> CreateProcessAsUser => &CreateProcessAsUserW;
+        public static delegate*<HANDLE, ushort*, ushort*, SECURITY_ATTRIBUTES*, SECURITY_ATTRIBUTES*, BOOL, uint, void*, ushort*, STARTUPINFOW*, PROCESS_INFORMATION*, BOOL> CreateProcessAsUser => &CreateProcessAsUserW;
 
         [NativeTypeName("#define PROC_THREAD_ATTRIBUTE_REPLACE_VALUE 0x00000001")]
         public const int PROC_THREAD_ATTRIBUTE_REPLACE_VALUE = 0x00000001;

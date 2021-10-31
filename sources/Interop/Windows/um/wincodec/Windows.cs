@@ -3516,10 +3516,10 @@ namespace TerraFX.Interop
         public static extern HRESULT WICConvertBitmapSource([NativeTypeName("REFWICPixelFormatGUID")] Guid* dstFormat, IWICBitmapSource* pISrc, IWICBitmapSource** ppIDst);
 
         [DllImport("windowscodecs", ExactSpelling = true)]
-        public static extern HRESULT WICCreateBitmapFromSection([NativeTypeName("UINT")] uint width, [NativeTypeName("UINT")] uint height, [NativeTypeName("REFWICPixelFormatGUID")] Guid* pixelFormat, [NativeTypeName("HANDLE")] IntPtr hSection, [NativeTypeName("UINT")] uint stride, [NativeTypeName("UINT")] uint offset, IWICBitmap** ppIBitmap);
+        public static extern HRESULT WICCreateBitmapFromSection([NativeTypeName("UINT")] uint width, [NativeTypeName("UINT")] uint height, [NativeTypeName("REFWICPixelFormatGUID")] Guid* pixelFormat, HANDLE hSection, [NativeTypeName("UINT")] uint stride, [NativeTypeName("UINT")] uint offset, IWICBitmap** ppIBitmap);
 
         [DllImport("windowscodecs", ExactSpelling = true)]
-        public static extern HRESULT WICCreateBitmapFromSectionEx([NativeTypeName("UINT")] uint width, [NativeTypeName("UINT")] uint height, [NativeTypeName("REFWICPixelFormatGUID")] Guid* pixelFormat, [NativeTypeName("HANDLE")] IntPtr hSection, [NativeTypeName("UINT")] uint stride, [NativeTypeName("UINT")] uint offset, WICSectionAccessLevel desiredAccessLevel, IWICBitmap** ppIBitmap);
+        public static extern HRESULT WICCreateBitmapFromSectionEx([NativeTypeName("UINT")] uint width, [NativeTypeName("UINT")] uint height, [NativeTypeName("REFWICPixelFormatGUID")] Guid* pixelFormat, HANDLE hSection, [NativeTypeName("UINT")] uint stride, [NativeTypeName("UINT")] uint offset, WICSectionAccessLevel desiredAccessLevel, IWICBitmap** ppIBitmap);
 
         [DllImport("windowscodecs", ExactSpelling = true)]
         public static extern HRESULT WICMapGuidToShortName([NativeTypeName("const GUID &")] Guid* guid, [NativeTypeName("UINT")] uint cchName, [NativeTypeName("WCHAR *")] ushort* wzName, [NativeTypeName("UINT *")] uint* pcchActual);

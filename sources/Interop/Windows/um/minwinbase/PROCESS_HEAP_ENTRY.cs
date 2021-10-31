@@ -3,7 +3,6 @@
 // Ported from um/minwinbase.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -60,8 +59,7 @@ namespace TerraFX.Interop
 
             public unsafe partial struct _Block_e__Struct
             {
-                [NativeTypeName("HANDLE")]
-                public IntPtr hMem;
+                public HANDLE hMem;
 
                 [NativeTypeName("DWORD [3]")]
                 public fixed uint dwReserved[3];

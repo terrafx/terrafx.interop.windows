@@ -3,8 +3,6 @@
 // Ported from um/CommCtrl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
-
 namespace TerraFX.Interop
 {
     public unsafe partial struct HDITEMW
@@ -17,8 +15,7 @@ namespace TerraFX.Interop
         [NativeTypeName("LPWSTR")]
         public ushort* pszText;
 
-        [NativeTypeName("HBITMAP")]
-        public IntPtr hbm;
+        public HBITMAP hbm;
 
         public int cchTextMax;
 

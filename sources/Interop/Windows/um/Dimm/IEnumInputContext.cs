@@ -48,9 +48,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT Next([NativeTypeName("ULONG")] uint ulCount, [NativeTypeName("HIMC *")] IntPtr* rgInputContext, [NativeTypeName("ULONG *")] uint* pcFetched)
+        public HRESULT Next([NativeTypeName("ULONG")] uint ulCount, HIMC* rgInputContext, [NativeTypeName("ULONG *")] uint* pcFetched)
         {
-            return ((delegate* unmanaged<IEnumInputContext*, uint, IntPtr*, uint*, int>)(lpVtbl[4]))((IEnumInputContext*)Unsafe.AsPointer(ref this), ulCount, rgInputContext, pcFetched);
+            return ((delegate* unmanaged<IEnumInputContext*, uint, HIMC*, uint*, int>)(lpVtbl[4]))((IEnumInputContext*)Unsafe.AsPointer(ref this), ulCount, rgInputContext, pcFetched);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

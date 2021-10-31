@@ -3,19 +3,14 @@
 // Ported from um/WinUser.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
-
 namespace TerraFX.Interop
 {
     public partial struct MDINEXTMENU
     {
-        [NativeTypeName("HMENU")]
-        public IntPtr hmenuIn;
+        public HMENU hmenuIn;
 
-        [NativeTypeName("HMENU")]
-        public IntPtr hmenuNext;
+        public HMENU hmenuNext;
 
-        [NativeTypeName("HWND")]
-        public IntPtr hwndNext;
+        public HWND hwndNext;
     }
 }

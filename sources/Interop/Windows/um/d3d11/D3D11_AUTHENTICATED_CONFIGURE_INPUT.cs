@@ -14,8 +14,7 @@ namespace TerraFX.Interop
         [NativeTypeName("GUID")]
         public Guid ConfigureType;
 
-        [NativeTypeName("HANDLE")]
-        public IntPtr hChannel;
+        public HANDLE hChannel;
 
         [NativeTypeName("UINT")]
         public uint SequenceNumber;

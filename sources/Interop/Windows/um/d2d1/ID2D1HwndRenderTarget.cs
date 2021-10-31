@@ -520,10 +520,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(59)]
-        [return: NativeTypeName("HWND")]
-        public IntPtr GetHwnd()
+        public HWND GetHwnd()
         {
-            return ((delegate* unmanaged<ID2D1HwndRenderTarget*, IntPtr>)(lpVtbl[59]))((ID2D1HwndRenderTarget*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<ID2D1HwndRenderTarget*, nint>)(lpVtbl[59]))((ID2D1HwndRenderTarget*)Unsafe.AsPointer(ref this));
         }
     }
 }

@@ -41,9 +41,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        public HRESULT GetWindow([NativeTypeName("HWND *")] IntPtr* phwnd)
+        public HRESULT GetWindow(HWND* phwnd)
         {
-            return ((delegate* unmanaged<IDeskBand*, IntPtr*, int>)(lpVtbl[3]))((IDeskBand*)Unsafe.AsPointer(ref this), phwnd);
+            return ((delegate* unmanaged<IDeskBand*, HWND*, int>)(lpVtbl[3]))((IDeskBand*)Unsafe.AsPointer(ref this), phwnd);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

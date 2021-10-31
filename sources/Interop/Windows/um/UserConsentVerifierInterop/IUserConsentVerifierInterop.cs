@@ -48,9 +48,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT GetRuntimeClassName([NativeTypeName("HSTRING *")] IntPtr* className)
+        public HRESULT GetRuntimeClassName(HSTRING* className)
         {
-            return ((delegate* unmanaged<IUserConsentVerifierInterop*, IntPtr*, int>)(lpVtbl[4]))((IUserConsentVerifierInterop*)Unsafe.AsPointer(ref this), className);
+            return ((delegate* unmanaged<IUserConsentVerifierInterop*, HSTRING*, int>)(lpVtbl[4]))((IUserConsentVerifierInterop*)Unsafe.AsPointer(ref this), className);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -62,9 +62,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        public HRESULT RequestVerificationForWindowAsync([NativeTypeName("HWND")] IntPtr appWindow, [NativeTypeName("HSTRING")] IntPtr message, [NativeTypeName("const IID &")] Guid* riid, void** asyncOperation)
+        public HRESULT RequestVerificationForWindowAsync(HWND appWindow, HSTRING message, [NativeTypeName("const IID &")] Guid* riid, void** asyncOperation)
         {
-            return ((delegate* unmanaged<IUserConsentVerifierInterop*, IntPtr, IntPtr, Guid*, void**, int>)(lpVtbl[6]))((IUserConsentVerifierInterop*)Unsafe.AsPointer(ref this), appWindow, message, riid, asyncOperation);
+            return ((delegate* unmanaged<IUserConsentVerifierInterop*, HWND, HSTRING, Guid*, void**, int>)(lpVtbl[6]))((IUserConsentVerifierInterop*)Unsafe.AsPointer(ref this), appWindow, message, riid, asyncOperation);
         }
     }
 }

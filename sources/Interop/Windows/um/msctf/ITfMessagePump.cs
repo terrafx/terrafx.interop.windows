@@ -41,30 +41,30 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        public HRESULT PeekMessageA([NativeTypeName("LPMSG")] MSG* pMsg, [NativeTypeName("HWND")] IntPtr hwnd, [NativeTypeName("UINT")] uint wMsgFilterMin, [NativeTypeName("UINT")] uint wMsgFilterMax, [NativeTypeName("UINT")] uint wRemoveMsg, BOOL* pfResult)
+        public HRESULT PeekMessageA([NativeTypeName("LPMSG")] MSG* pMsg, HWND hwnd, [NativeTypeName("UINT")] uint wMsgFilterMin, [NativeTypeName("UINT")] uint wMsgFilterMax, [NativeTypeName("UINT")] uint wRemoveMsg, BOOL* pfResult)
         {
-            return ((delegate* unmanaged<ITfMessagePump*, MSG*, IntPtr, uint, uint, uint, BOOL*, int>)(lpVtbl[3]))((ITfMessagePump*)Unsafe.AsPointer(ref this), pMsg, hwnd, wMsgFilterMin, wMsgFilterMax, wRemoveMsg, pfResult);
+            return ((delegate* unmanaged<ITfMessagePump*, MSG*, HWND, uint, uint, uint, BOOL*, int>)(lpVtbl[3]))((ITfMessagePump*)Unsafe.AsPointer(ref this), pMsg, hwnd, wMsgFilterMin, wMsgFilterMax, wRemoveMsg, pfResult);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT GetMessageA([NativeTypeName("LPMSG")] MSG* pMsg, [NativeTypeName("HWND")] IntPtr hwnd, [NativeTypeName("UINT")] uint wMsgFilterMin, [NativeTypeName("UINT")] uint wMsgFilterMax, BOOL* pfResult)
+        public HRESULT GetMessageA([NativeTypeName("LPMSG")] MSG* pMsg, HWND hwnd, [NativeTypeName("UINT")] uint wMsgFilterMin, [NativeTypeName("UINT")] uint wMsgFilterMax, BOOL* pfResult)
         {
-            return ((delegate* unmanaged<ITfMessagePump*, MSG*, IntPtr, uint, uint, BOOL*, int>)(lpVtbl[4]))((ITfMessagePump*)Unsafe.AsPointer(ref this), pMsg, hwnd, wMsgFilterMin, wMsgFilterMax, pfResult);
+            return ((delegate* unmanaged<ITfMessagePump*, MSG*, HWND, uint, uint, BOOL*, int>)(lpVtbl[4]))((ITfMessagePump*)Unsafe.AsPointer(ref this), pMsg, hwnd, wMsgFilterMin, wMsgFilterMax, pfResult);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        public HRESULT PeekMessageW([NativeTypeName("LPMSG")] MSG* pMsg, [NativeTypeName("HWND")] IntPtr hwnd, [NativeTypeName("UINT")] uint wMsgFilterMin, [NativeTypeName("UINT")] uint wMsgFilterMax, [NativeTypeName("UINT")] uint wRemoveMsg, BOOL* pfResult)
+        public HRESULT PeekMessageW([NativeTypeName("LPMSG")] MSG* pMsg, HWND hwnd, [NativeTypeName("UINT")] uint wMsgFilterMin, [NativeTypeName("UINT")] uint wMsgFilterMax, [NativeTypeName("UINT")] uint wRemoveMsg, BOOL* pfResult)
         {
-            return ((delegate* unmanaged<ITfMessagePump*, MSG*, IntPtr, uint, uint, uint, BOOL*, int>)(lpVtbl[5]))((ITfMessagePump*)Unsafe.AsPointer(ref this), pMsg, hwnd, wMsgFilterMin, wMsgFilterMax, wRemoveMsg, pfResult);
+            return ((delegate* unmanaged<ITfMessagePump*, MSG*, HWND, uint, uint, uint, BOOL*, int>)(lpVtbl[5]))((ITfMessagePump*)Unsafe.AsPointer(ref this), pMsg, hwnd, wMsgFilterMin, wMsgFilterMax, wRemoveMsg, pfResult);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        public HRESULT GetMessageW([NativeTypeName("LPMSG")] MSG* pMsg, [NativeTypeName("HWND")] IntPtr hwnd, [NativeTypeName("UINT")] uint wMsgFilterMin, [NativeTypeName("UINT")] uint wMsgFilterMax, BOOL* pfResult)
+        public HRESULT GetMessageW([NativeTypeName("LPMSG")] MSG* pMsg, HWND hwnd, [NativeTypeName("UINT")] uint wMsgFilterMin, [NativeTypeName("UINT")] uint wMsgFilterMax, BOOL* pfResult)
         {
-            return ((delegate* unmanaged<ITfMessagePump*, MSG*, IntPtr, uint, uint, BOOL*, int>)(lpVtbl[6]))((ITfMessagePump*)Unsafe.AsPointer(ref this), pMsg, hwnd, wMsgFilterMin, wMsgFilterMax, pfResult);
+            return ((delegate* unmanaged<ITfMessagePump*, MSG*, HWND, uint, uint, BOOL*, int>)(lpVtbl[6]))((ITfMessagePump*)Unsafe.AsPointer(ref this), pMsg, hwnd, wMsgFilterMin, wMsgFilterMax, pfResult);
         }
     }
 }

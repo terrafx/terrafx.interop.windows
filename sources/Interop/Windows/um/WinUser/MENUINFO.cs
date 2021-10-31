@@ -3,8 +3,6 @@
 // Ported from um/WinUser.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
-
 namespace TerraFX.Interop
 {
     public partial struct MENUINFO
@@ -21,8 +19,7 @@ namespace TerraFX.Interop
         [NativeTypeName("UINT")]
         public uint cyMax;
 
-        [NativeTypeName("HBRUSH")]
-        public IntPtr hbrBack;
+        public HBRUSH hbrBack;
 
         [NativeTypeName("DWORD")]
         public uint dwContextHelpID;

@@ -3,8 +3,6 @@
 // Ported from um/WinBase.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
-
 namespace TerraFX.Interop
 {
     public unsafe partial struct ACTCTX_SECTION_KEYED_DATA
@@ -33,8 +31,7 @@ namespace TerraFX.Interop
         [NativeTypeName("ULONG")]
         public uint ulSectionTotalLength;
 
-        [NativeTypeName("HANDLE")]
-        public IntPtr hActCtx;
+        public HANDLE hActCtx;
 
         [NativeTypeName("ULONG")]
         public uint ulAssemblyRosterIndex;

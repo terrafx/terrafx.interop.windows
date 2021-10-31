@@ -41,30 +41,30 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        public HRESULT PrePaint([NativeTypeName("HDC")] IntPtr hdc, RECT* prc, [NativeTypeName("LRESULT *")] nint* plres)
+        public HRESULT PrePaint(HDC hdc, RECT* prc, [NativeTypeName("LRESULT *")] nint* plres)
         {
-            return ((delegate* unmanaged<INameSpaceTreeControlCustomDraw*, IntPtr, RECT*, nint*, int>)(lpVtbl[3]))((INameSpaceTreeControlCustomDraw*)Unsafe.AsPointer(ref this), hdc, prc, plres);
+            return ((delegate* unmanaged<INameSpaceTreeControlCustomDraw*, HDC, RECT*, nint*, int>)(lpVtbl[3]))((INameSpaceTreeControlCustomDraw*)Unsafe.AsPointer(ref this), hdc, prc, plres);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT PostPaint([NativeTypeName("HDC")] IntPtr hdc, RECT* prc)
+        public HRESULT PostPaint(HDC hdc, RECT* prc)
         {
-            return ((delegate* unmanaged<INameSpaceTreeControlCustomDraw*, IntPtr, RECT*, int>)(lpVtbl[4]))((INameSpaceTreeControlCustomDraw*)Unsafe.AsPointer(ref this), hdc, prc);
+            return ((delegate* unmanaged<INameSpaceTreeControlCustomDraw*, HDC, RECT*, int>)(lpVtbl[4]))((INameSpaceTreeControlCustomDraw*)Unsafe.AsPointer(ref this), hdc, prc);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        public HRESULT ItemPrePaint([NativeTypeName("HDC")] IntPtr hdc, RECT* prc, NSTCCUSTOMDRAW* pnstccdItem, [NativeTypeName("COLORREF *")] uint* pclrText, [NativeTypeName("COLORREF *")] uint* pclrTextBk, [NativeTypeName("LRESULT *")] nint* plres)
+        public HRESULT ItemPrePaint(HDC hdc, RECT* prc, NSTCCUSTOMDRAW* pnstccdItem, [NativeTypeName("COLORREF *")] uint* pclrText, [NativeTypeName("COLORREF *")] uint* pclrTextBk, [NativeTypeName("LRESULT *")] nint* plres)
         {
-            return ((delegate* unmanaged<INameSpaceTreeControlCustomDraw*, IntPtr, RECT*, NSTCCUSTOMDRAW*, uint*, uint*, nint*, int>)(lpVtbl[5]))((INameSpaceTreeControlCustomDraw*)Unsafe.AsPointer(ref this), hdc, prc, pnstccdItem, pclrText, pclrTextBk, plres);
+            return ((delegate* unmanaged<INameSpaceTreeControlCustomDraw*, HDC, RECT*, NSTCCUSTOMDRAW*, uint*, uint*, nint*, int>)(lpVtbl[5]))((INameSpaceTreeControlCustomDraw*)Unsafe.AsPointer(ref this), hdc, prc, pnstccdItem, pclrText, pclrTextBk, plres);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        public HRESULT ItemPostPaint([NativeTypeName("HDC")] IntPtr hdc, RECT* prc, NSTCCUSTOMDRAW* pnstccdItem)
+        public HRESULT ItemPostPaint(HDC hdc, RECT* prc, NSTCCUSTOMDRAW* pnstccdItem)
         {
-            return ((delegate* unmanaged<INameSpaceTreeControlCustomDraw*, IntPtr, RECT*, NSTCCUSTOMDRAW*, int>)(lpVtbl[6]))((INameSpaceTreeControlCustomDraw*)Unsafe.AsPointer(ref this), hdc, prc, pnstccdItem);
+            return ((delegate* unmanaged<INameSpaceTreeControlCustomDraw*, HDC, RECT*, NSTCCUSTOMDRAW*, int>)(lpVtbl[6]))((INameSpaceTreeControlCustomDraw*)Unsafe.AsPointer(ref this), hdc, prc, pnstccdItem);
         }
     }
 }

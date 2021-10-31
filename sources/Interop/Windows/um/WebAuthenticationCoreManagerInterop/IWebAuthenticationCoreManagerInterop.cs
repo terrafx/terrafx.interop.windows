@@ -48,9 +48,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT GetRuntimeClassName([NativeTypeName("HSTRING *")] IntPtr* className)
+        public HRESULT GetRuntimeClassName(HSTRING* className)
         {
-            return ((delegate* unmanaged<IWebAuthenticationCoreManagerInterop*, IntPtr*, int>)(lpVtbl[4]))((IWebAuthenticationCoreManagerInterop*)Unsafe.AsPointer(ref this), className);
+            return ((delegate* unmanaged<IWebAuthenticationCoreManagerInterop*, HSTRING*, int>)(lpVtbl[4]))((IWebAuthenticationCoreManagerInterop*)Unsafe.AsPointer(ref this), className);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -62,16 +62,16 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        public HRESULT RequestTokenForWindowAsync([NativeTypeName("HWND")] IntPtr appWindow, IInspectable* request, [NativeTypeName("const IID &")] Guid* riid, void** asyncInfo)
+        public HRESULT RequestTokenForWindowAsync(HWND appWindow, IInspectable* request, [NativeTypeName("const IID &")] Guid* riid, void** asyncInfo)
         {
-            return ((delegate* unmanaged<IWebAuthenticationCoreManagerInterop*, IntPtr, IInspectable*, Guid*, void**, int>)(lpVtbl[6]))((IWebAuthenticationCoreManagerInterop*)Unsafe.AsPointer(ref this), appWindow, request, riid, asyncInfo);
+            return ((delegate* unmanaged<IWebAuthenticationCoreManagerInterop*, HWND, IInspectable*, Guid*, void**, int>)(lpVtbl[6]))((IWebAuthenticationCoreManagerInterop*)Unsafe.AsPointer(ref this), appWindow, request, riid, asyncInfo);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        public HRESULT RequestTokenWithWebAccountForWindowAsync([NativeTypeName("HWND")] IntPtr appWindow, IInspectable* request, IInspectable* webAccount, [NativeTypeName("const IID &")] Guid* riid, void** asyncInfo)
+        public HRESULT RequestTokenWithWebAccountForWindowAsync(HWND appWindow, IInspectable* request, IInspectable* webAccount, [NativeTypeName("const IID &")] Guid* riid, void** asyncInfo)
         {
-            return ((delegate* unmanaged<IWebAuthenticationCoreManagerInterop*, IntPtr, IInspectable*, IInspectable*, Guid*, void**, int>)(lpVtbl[7]))((IWebAuthenticationCoreManagerInterop*)Unsafe.AsPointer(ref this), appWindow, request, webAccount, riid, asyncInfo);
+            return ((delegate* unmanaged<IWebAuthenticationCoreManagerInterop*, HWND, IInspectable*, IInspectable*, Guid*, void**, int>)(lpVtbl[7]))((IWebAuthenticationCoreManagerInterop*)Unsafe.AsPointer(ref this), appWindow, request, webAccount, riid, asyncInfo);
         }
     }
 }

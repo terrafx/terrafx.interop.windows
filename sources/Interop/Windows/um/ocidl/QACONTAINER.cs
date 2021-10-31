@@ -3,8 +3,6 @@
 // Ported from um/ocidl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
-
 namespace TerraFX.Interop
 {
     public unsafe partial struct QACONTAINER
@@ -39,8 +37,7 @@ namespace TerraFX.Interop
         [NativeTypeName("LONG")]
         public int lcid;
 
-        [NativeTypeName("HPALETTE")]
-        public IntPtr hpal;
+        public HPALETTE hpal;
 
         public IBindHost* pBindHost;
 

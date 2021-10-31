@@ -24,14 +24,12 @@ namespace TerraFX.Interop
         [NativeTypeName("GUID")]
         public Guid catid;
 
-        [NativeTypeName("HKL")]
-        public IntPtr hklSubstitute;
+        public HKL hklSubstitute;
 
         [NativeTypeName("DWORD")]
         public uint dwCaps;
 
-        [NativeTypeName("HKL")]
-        public IntPtr hkl;
+        public HKL hkl;
 
         [NativeTypeName("DWORD")]
         public uint dwFlags;

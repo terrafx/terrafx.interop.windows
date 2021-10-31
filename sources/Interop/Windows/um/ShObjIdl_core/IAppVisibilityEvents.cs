@@ -41,9 +41,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        public HRESULT AppVisibilityOnMonitorChanged([NativeTypeName("HMONITOR")] IntPtr hMonitor, MONITOR_APP_VISIBILITY previousMode, MONITOR_APP_VISIBILITY currentMode)
+        public HRESULT AppVisibilityOnMonitorChanged(HMONITOR hMonitor, MONITOR_APP_VISIBILITY previousMode, MONITOR_APP_VISIBILITY currentMode)
         {
-            return ((delegate* unmanaged<IAppVisibilityEvents*, IntPtr, MONITOR_APP_VISIBILITY, MONITOR_APP_VISIBILITY, int>)(lpVtbl[3]))((IAppVisibilityEvents*)Unsafe.AsPointer(ref this), hMonitor, previousMode, currentMode);
+            return ((delegate* unmanaged<IAppVisibilityEvents*, HMONITOR, MONITOR_APP_VISIBILITY, MONITOR_APP_VISIBILITY, int>)(lpVtbl[3]))((IAppVisibilityEvents*)Unsafe.AsPointer(ref this), hMonitor, previousMode, currentMode);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

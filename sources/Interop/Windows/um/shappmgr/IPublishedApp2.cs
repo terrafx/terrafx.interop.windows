@@ -97,9 +97,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(11)]
-        public HRESULT Install2([NativeTypeName("LPSYSTEMTIME")] SYSTEMTIME* pstInstall, [NativeTypeName("HWND")] IntPtr hwndParent)
+        public HRESULT Install2([NativeTypeName("LPSYSTEMTIME")] SYSTEMTIME* pstInstall, HWND hwndParent)
         {
-            return ((delegate* unmanaged<IPublishedApp2*, SYSTEMTIME*, IntPtr, int>)(lpVtbl[11]))((IPublishedApp2*)Unsafe.AsPointer(ref this), pstInstall, hwndParent);
+            return ((delegate* unmanaged<IPublishedApp2*, SYSTEMTIME*, HWND, int>)(lpVtbl[11]))((IPublishedApp2*)Unsafe.AsPointer(ref this), pstInstall, hwndParent);
         }
     }
 }

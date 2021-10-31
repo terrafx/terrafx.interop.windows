@@ -3,8 +3,6 @@
 // Ported from um/ShObjIdl_core.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
-
 namespace TerraFX.Interop
 {
     public unsafe partial struct THUMBBUTTON
@@ -17,8 +15,7 @@ namespace TerraFX.Interop
         [NativeTypeName("UINT")]
         public uint iBitmap;
 
-        [NativeTypeName("HICON")]
-        public IntPtr hIcon;
+        public HICON hIcon;
 
         [NativeTypeName("WCHAR [260]")]
         public fixed ushort szTip[260];

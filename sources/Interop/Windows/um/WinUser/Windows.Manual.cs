@@ -243,44 +243,38 @@ namespace TerraFX.Interop
         public static BOOL PostAppMessageW([NativeTypeName("DWORD")] uint idThread, [NativeTypeName("UINT")] uint wMsg, [NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam) => PostThreadMessageW(idThread, wMsg, wParam, lParam);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [return: NativeTypeName("HWND")]
-        public static IntPtr CreateWindowA([NativeTypeName("LPCSTR")] sbyte* lpClassName, [NativeTypeName("LPCSTR")] sbyte* lpWindowName, [NativeTypeName("DWORD")] uint dwStyle, int x, int y, int nWidth, int nHeight, [NativeTypeName("HWND")] IntPtr hWndParent, [NativeTypeName("HMENU")] IntPtr hMenu, [NativeTypeName("HINSTANCE")] IntPtr hInstance, [NativeTypeName("LPVOID")] void* lpParam) => CreateWindowExA(0, lpClassName, lpWindowName, dwStyle, x, y,nWidth, nHeight, hWndParent, hMenu, hInstance, lpParam);
+        public static HWND CreateWindowA([NativeTypeName("LPCSTR")] sbyte* lpClassName, [NativeTypeName("LPCSTR")] sbyte* lpWindowName, [NativeTypeName("DWORD")] uint dwStyle, int x, int y, int nWidth, int nHeight, HWND hWndParent, HMENU hMenu, HINSTANCE hInstance, [NativeTypeName("LPVOID")] void* lpParam) => CreateWindowExA(0, lpClassName, lpWindowName, dwStyle, x, y,nWidth, nHeight, hWndParent, hMenu, hInstance, lpParam);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [return: NativeTypeName("HWND")]
-        public static IntPtr CreateWindowW([NativeTypeName("LPCWSTR")] ushort* lpClassName, [NativeTypeName("LPCWSTR")] ushort* lpWindowName, [NativeTypeName("DWORD")] uint dwStyle, int x, int y, int nWidth, int nHeight, [NativeTypeName("HWND")] IntPtr hWndParent, [NativeTypeName("HMENU")] IntPtr hMenu, [NativeTypeName("HINSTANCE")] IntPtr hInstance, [NativeTypeName("LPVOID")] void* lpParam) => CreateWindowExW(0, lpClassName, lpWindowName, dwStyle, x, y, nWidth, nHeight, hWndParent, hMenu, hInstance, lpParam);
+        public static HWND CreateWindowW([NativeTypeName("LPCWSTR")] ushort* lpClassName, [NativeTypeName("LPCWSTR")] ushort* lpWindowName, [NativeTypeName("DWORD")] uint dwStyle, int x, int y, int nWidth, int nHeight, HWND hWndParent, HMENU hMenu, HINSTANCE hInstance, [NativeTypeName("LPVOID")] void* lpParam) => CreateWindowExW(0, lpClassName, lpWindowName, dwStyle, x, y, nWidth, nHeight, hWndParent, hMenu, hInstance, lpParam);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [return: NativeTypeName("HWND")]
-        public static IntPtr CreateDialogA([NativeTypeName("HINSTANCE")] IntPtr hInstance, [NativeTypeName("LPCSTR")] sbyte* lpName, [NativeTypeName("HWND")] IntPtr hWndParent, [NativeTypeName("DLGPROC")] delegate* unmanaged<IntPtr, uint, nuint, nint, nint> lpDialogFunc) => CreateDialogParamA(hInstance, lpName, hWndParent, lpDialogFunc, dwInitParam: 0);
+        public static HWND CreateDialogA(HINSTANCE hInstance, [NativeTypeName("LPCSTR")] sbyte* lpName, HWND hWndParent, [NativeTypeName("DLGPROC")] delegate* unmanaged<HWND, uint, nuint, nint, nint> lpDialogFunc) => CreateDialogParamA(hInstance, lpName, hWndParent, lpDialogFunc, dwInitParam: 0);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [return: NativeTypeName("HWND")]
-        public static IntPtr CreateDialogW([NativeTypeName("HINSTANCE")] IntPtr hInstance, [NativeTypeName("LPCWSTR")] ushort* lpName, [NativeTypeName("HWND")] IntPtr hWndParent, [NativeTypeName("DLGPROC")] delegate* unmanaged<IntPtr, uint, nuint, nint, nint> lpDialogFunc) => CreateDialogParamW(hInstance, lpName, hWndParent, lpDialogFunc, dwInitParam: 0);
+        public static HWND CreateDialogW(HINSTANCE hInstance, [NativeTypeName("LPCWSTR")] ushort* lpName, HWND hWndParent, [NativeTypeName("DLGPROC")] delegate* unmanaged<HWND, uint, nuint, nint, nint> lpDialogFunc) => CreateDialogParamW(hInstance, lpName, hWndParent, lpDialogFunc, dwInitParam: 0);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [return: NativeTypeName("HWND")]
-        public static IntPtr CreateDialogIndirectA([NativeTypeName("HINSTANCE")] IntPtr hInstance, [NativeTypeName("LPCDLGTEMPLATEW")] DLGTEMPLATE* lpTemplate, [NativeTypeName("HWND")] IntPtr hWndParent, [NativeTypeName("DLGPROC")] delegate* unmanaged<IntPtr, uint, nuint, nint, nint> lpDialogFunc) => CreateDialogIndirectParamA(hInstance, lpTemplate, hWndParent, lpDialogFunc, dwInitParam: 0);
+        public static HWND CreateDialogIndirectA(HINSTANCE hInstance, [NativeTypeName("LPCDLGTEMPLATEW")] DLGTEMPLATE* lpTemplate, HWND hWndParent, [NativeTypeName("DLGPROC")] delegate* unmanaged<HWND, uint, nuint, nint, nint> lpDialogFunc) => CreateDialogIndirectParamA(hInstance, lpTemplate, hWndParent, lpDialogFunc, dwInitParam: 0);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [return: NativeTypeName("HWND")]
-        public static IntPtr CreateDialogIndirectW([NativeTypeName("HINSTANCE")] IntPtr hInstance, [NativeTypeName("LPCDLGTEMPLATEW")] DLGTEMPLATE* lpTemplate, [NativeTypeName("HWND")] IntPtr hWndParent, [NativeTypeName("DLGPROC")] delegate* unmanaged<IntPtr, uint, nuint, nint, nint> lpDialogFunc) => CreateDialogIndirectParamW(hInstance, lpTemplate, hWndParent, lpDialogFunc, dwInitParam: 0);
+        public static HWND CreateDialogIndirectW(HINSTANCE hInstance, [NativeTypeName("LPCDLGTEMPLATEW")] DLGTEMPLATE* lpTemplate, HWND hWndParent, [NativeTypeName("DLGPROC")] delegate* unmanaged<HWND, uint, nuint, nint, nint> lpDialogFunc) => CreateDialogIndirectParamW(hInstance, lpTemplate, hWndParent, lpDialogFunc, dwInitParam: 0);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("INT_PTR")]
-        public static IntPtr DialogBoxA([NativeTypeName("HINSTANCE")] IntPtr hInstance, [NativeTypeName("LPCSTR")] sbyte* lpTemplate, [NativeTypeName("HWND")] IntPtr hWndParent, [NativeTypeName("DLGPROC")] delegate* unmanaged<IntPtr, uint, nuint, nint, nint> lpDialogFunc) => DialogBoxParamA(hInstance, lpTemplate, hWndParent, lpDialogFunc, dwInitParam: 0);
+        public static IntPtr DialogBoxA(HINSTANCE hInstance, [NativeTypeName("LPCSTR")] sbyte* lpTemplate, HWND hWndParent, [NativeTypeName("DLGPROC")] delegate* unmanaged<HWND, uint, nuint, nint, nint> lpDialogFunc) => DialogBoxParamA(hInstance, lpTemplate, hWndParent, lpDialogFunc, dwInitParam: 0);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("INT_PTR")]
-        public static IntPtr DialogBoxW([NativeTypeName("HINSTANCE")] IntPtr hInstance, [NativeTypeName("LPCWSTR")] ushort* lpTemplate, [NativeTypeName("HWND")] IntPtr hWndParent, [NativeTypeName("DLGPROC")] delegate* unmanaged<IntPtr, uint, nuint, nint, nint> lpDialogFunc) => DialogBoxParamW(hInstance, lpTemplate, hWndParent, lpDialogFunc, dwInitParam: 0);
+        public static IntPtr DialogBoxW(HINSTANCE hInstance, [NativeTypeName("LPCWSTR")] ushort* lpTemplate, HWND hWndParent, [NativeTypeName("DLGPROC")] delegate* unmanaged<HWND, uint, nuint, nint, nint> lpDialogFunc) => DialogBoxParamW(hInstance, lpTemplate, hWndParent, lpDialogFunc, dwInitParam: 0);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("INT_PTR")]
-        public static IntPtr DialogBoxIndirectA([NativeTypeName("HINSTANCE")] IntPtr hInstance, [NativeTypeName("LPCDLGTEMPLATEA")] DLGTEMPLATE* lpTemplate, [NativeTypeName("HWND")] IntPtr hWndParent, [NativeTypeName("DLGPROC")] delegate* unmanaged<IntPtr, uint, nuint, nint, nint> lpDialogFunc) => DialogBoxIndirectParamA(hInstance, lpTemplate, hWndParent, lpDialogFunc, dwInitParam: 0);
+        public static IntPtr DialogBoxIndirectA(HINSTANCE hInstance, [NativeTypeName("LPCDLGTEMPLATEA")] DLGTEMPLATE* lpTemplate, HWND hWndParent, [NativeTypeName("DLGPROC")] delegate* unmanaged<HWND, uint, nuint, nint, nint> lpDialogFunc) => DialogBoxIndirectParamA(hInstance, lpTemplate, hWndParent, lpDialogFunc, dwInitParam: 0);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("INT_PTR")]
-        public static IntPtr DialogBoxIndirectW([NativeTypeName("HINSTANCE")] IntPtr hInstance, [NativeTypeName("LPCDLGTEMPLATEW")] DLGTEMPLATE* lpTemplate, [NativeTypeName("HWND")] IntPtr hWndParent, [NativeTypeName("DLGPROC")] delegate* unmanaged<IntPtr, uint, nuint, nint, nint> lpDialogFunc) => DialogBoxIndirectParamW(hInstance, lpTemplate, hWndParent, lpDialogFunc, dwInitParam: 0);
+        public static IntPtr DialogBoxIndirectW(HINSTANCE hInstance, [NativeTypeName("LPCDLGTEMPLATEW")] DLGTEMPLATE* lpTemplate, HWND hWndParent, [NativeTypeName("DLGPROC")] delegate* unmanaged<HWND, uint, nuint, nint, nint> lpDialogFunc) => DialogBoxIndirectParamW(hInstance, lpTemplate, hWndParent, lpDialogFunc, dwInitParam: 0);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static int TOUCH_COORD_TO_PIXEL(int l) => l / 100;
@@ -325,10 +319,10 @@ namespace TerraFX.Interop
         public static bool IS_POINTER_CANCELED_WPARAM([NativeTypeName("WPARAM")] nuint wParam) => IS_POINTER_FLAG_SET_WPARAM(wParam, POINTER_MESSAGE_FLAG_CANCELED);
 
         [NativeTypeName("#define GetWindowLongPtr GetWindowLongPtrW")]
-        public static delegate*<IntPtr, int, nint> GetWindowLongPtr => &GetWindowLongPtrW;
+        public static delegate*<HWND, int, nint> GetWindowLongPtr => &GetWindowLongPtrW;
 
         [return: NativeTypeName("LONG_PTR")]
-        public static nint GetWindowLongPtrA([NativeTypeName("HWND")] IntPtr hWnd, int nIndex)
+        public static nint GetWindowLongPtrA(HWND hWnd, int nIndex)
         {
             if (sizeof(nint) == 4)
             {
@@ -338,14 +332,14 @@ namespace TerraFX.Interop
             {
                 [DllImport("user32", EntryPoint = "GetWindowLongPtrA", ExactSpelling = true)]
                 [return: NativeTypeName("LONG_PTR")]
-                static extern nint _GetWindowLongPtrA([NativeTypeName("HWND")] IntPtr hWnd, int nIndex);
+                static extern nint _GetWindowLongPtrA(HWND hWnd, int nIndex);
 
                 return _GetWindowLongPtrA(hWnd, nIndex);
             }
         }
 
         [return: NativeTypeName("LONG_PTR")]
-        public static nint GetWindowLongPtrW([NativeTypeName("HWND")] IntPtr hWnd, int nIndex)
+        public static nint GetWindowLongPtrW(HWND hWnd, int nIndex)
         {
             if (sizeof(nint) == 4)
             {
@@ -355,17 +349,17 @@ namespace TerraFX.Interop
             {
                 [DllImport("user32", EntryPoint = "GetWindowLongPtrW", ExactSpelling = true)]
                 [return: NativeTypeName("LONG_PTR")]
-                static extern nint _GetWindowLongPtrW([NativeTypeName("HWND")] IntPtr hWnd, int nIndex);
+                static extern nint _GetWindowLongPtrW(HWND hWnd, int nIndex);
 
                 return _GetWindowLongPtrW(hWnd, nIndex);
             }
         }
 
         [NativeTypeName("#define SetWindowLongPtr SetWindowLongPtrW")]
-        public static delegate*<IntPtr, int, nint, nint> SetWindowLongPtr => &SetWindowLongPtrW;
+        public static delegate*<HWND, int, nint, nint> SetWindowLongPtr => &SetWindowLongPtrW;
 
         [return: NativeTypeName("LONG_PTR")]
-        public static nint SetWindowLongPtrA([NativeTypeName("HWND")] IntPtr hWnd, int nIndex, [NativeTypeName("LONG_PTR")] nint dwNewLong)
+        public static nint SetWindowLongPtrA(HWND hWnd, int nIndex, [NativeTypeName("LONG_PTR")] nint dwNewLong)
         {
             if (sizeof(nint) == 4)
             {
@@ -375,14 +369,14 @@ namespace TerraFX.Interop
             {
                 [DllImport("user32", EntryPoint = "SetWindowLongPtrA", ExactSpelling = true)]
                 [return: NativeTypeName("LONG_PTR")]
-                static extern nint _SetWindowLongPtrA([NativeTypeName("HWND")] IntPtr hWnd, int nIndex, [NativeTypeName("LONG_PTR")] nint dwNewLong);
+                static extern nint _SetWindowLongPtrA(HWND hWnd, int nIndex, [NativeTypeName("LONG_PTR")] nint dwNewLong);
 
                 return _SetWindowLongPtrA(hWnd, nIndex, dwNewLong);
             }
         }
 
         [return: NativeTypeName("LONG_PTR")]
-        public static nint SetWindowLongPtrW([NativeTypeName("HWND")] IntPtr hWnd, int nIndex, [NativeTypeName("LONG_PTR")] nint dwNewLong)
+        public static nint SetWindowLongPtrW(HWND hWnd, int nIndex, [NativeTypeName("LONG_PTR")] nint dwNewLong)
         {
             if (sizeof(nint) == 4)
             {
@@ -392,17 +386,17 @@ namespace TerraFX.Interop
             {
                 [DllImport("user32", EntryPoint = "SetWindowLongPtrW", ExactSpelling = true)]
                 [return: NativeTypeName("LONG_PTR")]
-                static extern nint _SetWindowLongPtrW([NativeTypeName("HWND")] IntPtr hWnd, int nIndex, [NativeTypeName("LONG_PTR")] nint dwNewLong);
+                static extern nint _SetWindowLongPtrW(HWND hWnd, int nIndex, [NativeTypeName("LONG_PTR")] nint dwNewLong);
 
                 return _SetWindowLongPtrW(hWnd, nIndex, dwNewLong);
             }
         }
 
         [NativeTypeName("#define GetClassLongPtr GetClassLongPtrW")]
-        public static delegate*<IntPtr, int, nuint> GetClassLongPtr => &GetClassLongPtrW;
+        public static delegate*<HWND, int, nuint> GetClassLongPtr => &GetClassLongPtrW;
 
         [return: NativeTypeName("ULONG_PTR")]
-        public static nuint GetClassLongPtrA([NativeTypeName("HWND")] IntPtr hWnd, int nIndex)
+        public static nuint GetClassLongPtrA(HWND hWnd, int nIndex)
         {
             if (sizeof(nuint) == 4)
             {
@@ -412,14 +406,14 @@ namespace TerraFX.Interop
             {
                 [DllImport("user32", EntryPoint = "GetClassLongPtrA", ExactSpelling = true)]
                 [return: NativeTypeName("ULONG_PTR")]
-                static extern nuint _GetClassLongPtrA([NativeTypeName("HWND")] IntPtr hWnd, int nIndex);
+                static extern nuint _GetClassLongPtrA(HWND hWnd, int nIndex);
 
                 return _GetClassLongPtrA(hWnd, nIndex);
             }
         }
 
         [return: NativeTypeName("ULONG_PTR")]
-        public static nuint GetClassLongPtrW([NativeTypeName("HWND")] IntPtr hWnd, int nIndex)
+        public static nuint GetClassLongPtrW(HWND hWnd, int nIndex)
         {
             if (sizeof(nuint) == 4)
             {
@@ -429,17 +423,17 @@ namespace TerraFX.Interop
             {
                 [DllImport("user32", EntryPoint = "GetClassLongPtrW", ExactSpelling = true)]
                 [return: NativeTypeName("ULONG_PTR")]
-                static extern nuint _GetClassLongPtrW([NativeTypeName("HWND")] IntPtr hWnd, int nIndex);
+                static extern nuint _GetClassLongPtrW(HWND hWnd, int nIndex);
 
                 return _GetClassLongPtrW(hWnd, nIndex);
             }
         }
 
         [NativeTypeName("#define SetClassLongPtr SetClassLongPtrW")]
-        public static delegate*<IntPtr, int, nint, nuint> SetClassLongPtr => &SetClassLongPtrW;
+        public static delegate*<HWND, int, nint, nuint> SetClassLongPtr => &SetClassLongPtrW;
 
         [return: NativeTypeName("ULONG_PTR")]
-        public static nuint SetClassLongPtrA([NativeTypeName("HWND")] IntPtr hWnd, int nIndex, [NativeTypeName("LONG_PTR")] nint dwNewLong)
+        public static nuint SetClassLongPtrA(HWND hWnd, int nIndex, [NativeTypeName("LONG_PTR")] nint dwNewLong)
         {
             if (sizeof(nuint) == 4)
             {
@@ -449,14 +443,14 @@ namespace TerraFX.Interop
             {
                 [DllImport("user32", EntryPoint = "SetClassLongPtrA", ExactSpelling = true)]
                 [return: NativeTypeName("ULONG_PTR")]
-                static extern nuint _SetClassLongPtrA([NativeTypeName("HWND")] IntPtr hWnd, int nIndex, [NativeTypeName("LONG_PTR")] nint dwNewLong);
+                static extern nuint _SetClassLongPtrA(HWND hWnd, int nIndex, [NativeTypeName("LONG_PTR")] nint dwNewLong);
 
                 return _SetClassLongPtrA(hWnd, nIndex, dwNewLong);
             }
         }
 
         [return: NativeTypeName("ULONG_PTR")]
-        public static nuint SetClassLongPtrW([NativeTypeName("HWND")] IntPtr hWnd, int nIndex, [NativeTypeName("LONG_PTR")] nint dwNewLong)
+        public static nuint SetClassLongPtrW(HWND hWnd, int nIndex, [NativeTypeName("LONG_PTR")] nint dwNewLong)
         {
             if (sizeof(nuint) == 4)
             {
@@ -466,34 +460,30 @@ namespace TerraFX.Interop
             {
                 [DllImport("user32", EntryPoint = "SetClassLongPtrW", ExactSpelling = true)]
                 [return: NativeTypeName("ULONG_PTR")]
-                static extern nuint _SetClassLongPtrW([NativeTypeName("HWND")] IntPtr hWnd, int nIndex, [NativeTypeName("LONG_PTR")] nint dwNewLong);
+                static extern nuint _SetClassLongPtrW(HWND hWnd, int nIndex, [NativeTypeName("LONG_PTR")] nint dwNewLong);
 
                 return _SetClassLongPtrW(hWnd, nIndex, dwNewLong);
             }
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static BOOL EnumTaskWindows(IntPtr hTask, [NativeTypeName("WNDENUMPROC")] delegate* unmanaged<IntPtr, nint, BOOL> lpfn, [NativeTypeName("LPARAM")] nint lParam) => EnumThreadWindows((uint)hTask, lpfn, lParam);
+        public static BOOL EnumTaskWindows(IntPtr hTask, [NativeTypeName("WNDENUMPROC")] delegate* unmanaged<HWND, nint, BOOL> lpfn, [NativeTypeName("LPARAM")] nint lParam) => EnumThreadWindows((uint)hTask, lpfn, lParam);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [return: NativeTypeName("HWND")]
-        public static IntPtr GetNextWindow([NativeTypeName("HWND")] IntPtr hWnd, ushort wCmd) => GetWindow(hWnd, wCmd);
+        public static HWND GetNextWindow(HWND hWnd, ushort wCmd) => GetWindow(hWnd, wCmd);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [return: NativeTypeName("HWND")]
-        public static IntPtr GetSysModalWindow() => IntPtr.Zero;
+        public static HWND GetSysModalWindow() => IntPtr.Zero;
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [return: NativeTypeName("HWND")]
-        public static IntPtr SetSysModalWindow([NativeTypeName("HWND")] IntPtr hWnd) => IntPtr.Zero;
+        public static HWND SetSysModalWindow(HWND hWnd) => IntPtr.Zero;
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [return: NativeTypeName("HANDLE")]
-        public static void* GetWindowTask([NativeTypeName("HWND")] IntPtr hWnd) => (void*)(nuint)GetWindowThreadProcessId(hWnd, null);
+        public static HANDLE GetWindowTask(HWND hWnd) => (nint)GetWindowThreadProcessId(hWnd, null);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("LRESULT")]
-        public static IntPtr DefHookProc(int nCode, [NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam, [NativeTypeName("HHOOK")] IntPtr* phhk) => CallNextHookEx(*phhk, nCode, wParam, lParam);
+        public static IntPtr DefHookProc(int nCode, [NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam, HHOOK phhk) => CallNextHookEx(phhk, nCode, wParam, lParam);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static int GET_SC_WPARAM([NativeTypeName("WPARAM")] nuint wParam) => unchecked((int)(wParam & 0xFFF0));

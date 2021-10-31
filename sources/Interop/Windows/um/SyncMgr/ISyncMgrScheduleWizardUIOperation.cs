@@ -41,9 +41,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        public HRESULT Run([NativeTypeName("HWND")] IntPtr hwndOwner)
+        public HRESULT Run(HWND hwndOwner)
         {
-            return ((delegate* unmanaged<ISyncMgrScheduleWizardUIOperation*, IntPtr, int>)(lpVtbl[3]))((ISyncMgrScheduleWizardUIOperation*)Unsafe.AsPointer(ref this), hwndOwner);
+            return ((delegate* unmanaged<ISyncMgrScheduleWizardUIOperation*, HWND, int>)(lpVtbl[3]))((ISyncMgrScheduleWizardUIOperation*)Unsafe.AsPointer(ref this), hwndOwner);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

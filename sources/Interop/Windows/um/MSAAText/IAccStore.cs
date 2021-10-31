@@ -62,9 +62,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        public HRESULT LookupByHWND([NativeTypeName("HWND")] IntPtr hWnd, [NativeTypeName("const IID &")] Guid* riid, IUnknown** ppunk)
+        public HRESULT LookupByHWND(HWND hWnd, [NativeTypeName("const IID &")] Guid* riid, IUnknown** ppunk)
         {
-            return ((delegate* unmanaged<IAccStore*, IntPtr, Guid*, IUnknown**, int>)(lpVtbl[6]))((IAccStore*)Unsafe.AsPointer(ref this), hWnd, riid, ppunk);
+            return ((delegate* unmanaged<IAccStore*, HWND, Guid*, IUnknown**, int>)(lpVtbl[6]))((IAccStore*)Unsafe.AsPointer(ref this), hWnd, riid, ppunk);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

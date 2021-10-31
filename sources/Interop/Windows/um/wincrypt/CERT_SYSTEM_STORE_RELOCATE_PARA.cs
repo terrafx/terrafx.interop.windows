@@ -3,7 +3,6 @@
 // Ported from um/wincrypt.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -17,12 +16,15 @@ namespace TerraFX.Interop
         [NativeTypeName("_CERT_SYSTEM_STORE_RELOCATE_PARA::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/wincrypt.h:9487:5)")]
         public _Anonymous2_e__Union Anonymous2;
 
-        public ref IntPtr hKeyBase
+        public ref HKEY hKeyBase
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous1.hKeyBase, 1));
+                fixed (_Anonymous1_e__Union* pField = &Anonymous1)
+                {
+                    return ref pField->hKeyBase;
+                }
             }
         }
 
@@ -78,8 +80,7 @@ namespace TerraFX.Interop
         public unsafe partial struct _Anonymous1_e__Union
         {
             [FieldOffset(0)]
-            [NativeTypeName("HKEY")]
-            public IntPtr hKeyBase;
+            public HKEY hKeyBase;
 
             [FieldOffset(0)]
             public void* pvBase;

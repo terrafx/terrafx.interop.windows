@@ -83,9 +83,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        public void GetChannelHandle([NativeTypeName("HANDLE *")] IntPtr* pChannelHandle)
+        public void GetChannelHandle(HANDLE* pChannelHandle)
         {
-            ((delegate* unmanaged<ID3D11AuthenticatedChannel*, IntPtr*, void>)(lpVtbl[9]))((ID3D11AuthenticatedChannel*)Unsafe.AsPointer(ref this), pChannelHandle);
+            ((delegate* unmanaged<ID3D11AuthenticatedChannel*, HANDLE*, void>)(lpVtbl[9]))((ID3D11AuthenticatedChannel*)Unsafe.AsPointer(ref this), pChannelHandle);
         }
     }
 }

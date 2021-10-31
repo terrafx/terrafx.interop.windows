@@ -3,8 +3,6 @@
 // Ported from um/wincrypt.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
-
 namespace TerraFX.Interop
 {
     public unsafe partial struct CTL_CONTEXT
@@ -21,11 +19,9 @@ namespace TerraFX.Interop
         [NativeTypeName("PCTL_INFO")]
         public CTL_INFO* pCtlInfo;
 
-        [NativeTypeName("HCERTSTORE")]
-        public IntPtr hCertStore;
+        public HCERTSTORE hCertStore;
 
-        [NativeTypeName("HCRYPTMSG")]
-        public IntPtr hCryptMsg;
+        public HCRYPTMSG hCryptMsg;
 
         [NativeTypeName("BYTE *")]
         public byte* pbCtlContent;

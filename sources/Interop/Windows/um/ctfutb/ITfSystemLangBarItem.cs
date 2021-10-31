@@ -41,9 +41,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        public HRESULT SetIcon([NativeTypeName("HICON")] IntPtr hIcon)
+        public HRESULT SetIcon(HICON hIcon)
         {
-            return ((delegate* unmanaged<ITfSystemLangBarItem*, IntPtr, int>)(lpVtbl[3]))((ITfSystemLangBarItem*)Unsafe.AsPointer(ref this), hIcon);
+            return ((delegate* unmanaged<ITfSystemLangBarItem*, HICON, int>)(lpVtbl[3]))((ITfSystemLangBarItem*)Unsafe.AsPointer(ref this), hIcon);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

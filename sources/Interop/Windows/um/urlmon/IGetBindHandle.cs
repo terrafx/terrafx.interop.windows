@@ -41,9 +41,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        public HRESULT GetBindHandle(BINDHANDLETYPES enumRequestedHandle, [NativeTypeName("HANDLE *")] IntPtr* pRetHandle)
+        public HRESULT GetBindHandle(BINDHANDLETYPES enumRequestedHandle, HANDLE* pRetHandle)
         {
-            return ((delegate* unmanaged<IGetBindHandle*, BINDHANDLETYPES, IntPtr*, int>)(lpVtbl[3]))((IGetBindHandle*)Unsafe.AsPointer(ref this), enumRequestedHandle, pRetHandle);
+            return ((delegate* unmanaged<IGetBindHandle*, BINDHANDLETYPES, HANDLE*, int>)(lpVtbl[3]))((IGetBindHandle*)Unsafe.AsPointer(ref this), enumRequestedHandle, pRetHandle);
         }
     }
 }

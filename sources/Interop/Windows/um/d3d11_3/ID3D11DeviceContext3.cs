@@ -1030,9 +1030,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(144)]
-        public void Flush1(D3D11_CONTEXT_TYPE ContextType, [NativeTypeName("HANDLE")] IntPtr hEvent)
+        public void Flush1(D3D11_CONTEXT_TYPE ContextType, HANDLE hEvent)
         {
-            ((delegate* unmanaged<ID3D11DeviceContext3*, D3D11_CONTEXT_TYPE, IntPtr, void>)(lpVtbl[144]))((ID3D11DeviceContext3*)Unsafe.AsPointer(ref this), ContextType, hEvent);
+            ((delegate* unmanaged<ID3D11DeviceContext3*, D3D11_CONTEXT_TYPE, HANDLE, void>)(lpVtbl[144]))((ID3D11DeviceContext3*)Unsafe.AsPointer(ref this), ContextType, hEvent);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

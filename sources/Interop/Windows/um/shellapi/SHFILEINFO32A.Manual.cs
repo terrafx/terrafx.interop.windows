@@ -11,8 +11,7 @@ namespace TerraFX.Interop
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe partial struct SHFILEINFO32A
     {
-        [NativeTypeName("HICON")]
-        public IntPtr hIcon;
+        public HICON hIcon;
 
         public int iIcon;
 

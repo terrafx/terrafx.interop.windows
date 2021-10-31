@@ -55,9 +55,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        public HRESULT SetOPMWindow([NativeTypeName("HWND")] IntPtr hwnd)
+        public HRESULT SetOPMWindow(HWND hwnd)
         {
-            return ((delegate* unmanaged<IMFMediaEngineProtectedContent*, IntPtr, int>)(lpVtbl[5]))((IMFMediaEngineProtectedContent*)Unsafe.AsPointer(ref this), hwnd);
+            return ((delegate* unmanaged<IMFMediaEngineProtectedContent*, HWND, int>)(lpVtbl[5]))((IMFMediaEngineProtectedContent*)Unsafe.AsPointer(ref this), hwnd);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

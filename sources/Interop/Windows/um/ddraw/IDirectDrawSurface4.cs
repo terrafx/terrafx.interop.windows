@@ -137,9 +137,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(17)]
-        public HRESULT GetDC([NativeTypeName("HDC *")] IntPtr* param0)
+        public HRESULT GetDC(HDC* param0)
         {
-            return ((delegate* unmanaged<IDirectDrawSurface4*, IntPtr*, int>)(lpVtbl[17]))((IDirectDrawSurface4*)Unsafe.AsPointer(ref this), param0);
+            return ((delegate* unmanaged<IDirectDrawSurface4*, HDC*, int>)(lpVtbl[17]))((IDirectDrawSurface4*)Unsafe.AsPointer(ref this), param0);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -193,16 +193,16 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(25)]
-        public HRESULT Lock([NativeTypeName("LPRECT")] RECT* param0, [NativeTypeName("LPDDSURFACEDESC2")] DDSURFACEDESC2* param1, [NativeTypeName("DWORD")] uint param2, [NativeTypeName("HANDLE")] IntPtr param3)
+        public HRESULT Lock([NativeTypeName("LPRECT")] RECT* param0, [NativeTypeName("LPDDSURFACEDESC2")] DDSURFACEDESC2* param1, [NativeTypeName("DWORD")] uint param2, HANDLE param3)
         {
-            return ((delegate* unmanaged<IDirectDrawSurface4*, RECT*, DDSURFACEDESC2*, uint, IntPtr, int>)(lpVtbl[25]))((IDirectDrawSurface4*)Unsafe.AsPointer(ref this), param0, param1, param2, param3);
+            return ((delegate* unmanaged<IDirectDrawSurface4*, RECT*, DDSURFACEDESC2*, uint, HANDLE, int>)(lpVtbl[25]))((IDirectDrawSurface4*)Unsafe.AsPointer(ref this), param0, param1, param2, param3);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(26)]
-        public HRESULT ReleaseDC([NativeTypeName("HDC")] IntPtr param0)
+        public HRESULT ReleaseDC(HDC param0)
         {
-            return ((delegate* unmanaged<IDirectDrawSurface4*, IntPtr, int>)(lpVtbl[26]))((IDirectDrawSurface4*)Unsafe.AsPointer(ref this), param0);
+            return ((delegate* unmanaged<IDirectDrawSurface4*, HDC, int>)(lpVtbl[26]))((IDirectDrawSurface4*)Unsafe.AsPointer(ref this), param0);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

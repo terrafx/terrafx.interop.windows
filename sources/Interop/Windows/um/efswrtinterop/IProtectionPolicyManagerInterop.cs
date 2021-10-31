@@ -48,9 +48,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT GetRuntimeClassName([NativeTypeName("HSTRING *")] IntPtr* className)
+        public HRESULT GetRuntimeClassName(HSTRING* className)
         {
-            return ((delegate* unmanaged<IProtectionPolicyManagerInterop*, IntPtr*, int>)(lpVtbl[4]))((IProtectionPolicyManagerInterop*)Unsafe.AsPointer(ref this), className);
+            return ((delegate* unmanaged<IProtectionPolicyManagerInterop*, HSTRING*, int>)(lpVtbl[4]))((IProtectionPolicyManagerInterop*)Unsafe.AsPointer(ref this), className);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -62,16 +62,16 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        public HRESULT RequestAccessForWindowAsync([NativeTypeName("HWND")] IntPtr appWindow, [NativeTypeName("HSTRING")] IntPtr sourceIdentity, [NativeTypeName("HSTRING")] IntPtr targetIdentity, [NativeTypeName("const IID &")] Guid* riid, void** asyncOperation)
+        public HRESULT RequestAccessForWindowAsync(HWND appWindow, HSTRING sourceIdentity, HSTRING targetIdentity, [NativeTypeName("const IID &")] Guid* riid, void** asyncOperation)
         {
-            return ((delegate* unmanaged<IProtectionPolicyManagerInterop*, IntPtr, IntPtr, IntPtr, Guid*, void**, int>)(lpVtbl[6]))((IProtectionPolicyManagerInterop*)Unsafe.AsPointer(ref this), appWindow, sourceIdentity, targetIdentity, riid, asyncOperation);
+            return ((delegate* unmanaged<IProtectionPolicyManagerInterop*, HWND, HSTRING, HSTRING, Guid*, void**, int>)(lpVtbl[6]))((IProtectionPolicyManagerInterop*)Unsafe.AsPointer(ref this), appWindow, sourceIdentity, targetIdentity, riid, asyncOperation);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        public HRESULT GetForWindow([NativeTypeName("HWND")] IntPtr appWindow, [NativeTypeName("const IID &")] Guid* riid, void** result)
+        public HRESULT GetForWindow(HWND appWindow, [NativeTypeName("const IID &")] Guid* riid, void** result)
         {
-            return ((delegate* unmanaged<IProtectionPolicyManagerInterop*, IntPtr, Guid*, void**, int>)(lpVtbl[7]))((IProtectionPolicyManagerInterop*)Unsafe.AsPointer(ref this), appWindow, riid, result);
+            return ((delegate* unmanaged<IProtectionPolicyManagerInterop*, HWND, Guid*, void**, int>)(lpVtbl[7]))((IProtectionPolicyManagerInterop*)Unsafe.AsPointer(ref this), appWindow, riid, result);
         }
     }
 }

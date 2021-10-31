@@ -48,16 +48,16 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT ConversionList([NativeTypeName("HIMC")] IntPtr hIMC, [NativeTypeName("LPWSTR")] ushort* szSource, [NativeTypeName("UINT")] uint uFlag, [NativeTypeName("UINT")] uint uBufLen, CANDIDATELIST* pDest, [NativeTypeName("UINT *")] uint* puCopied)
+        public HRESULT ConversionList(HIMC hIMC, [NativeTypeName("LPWSTR")] ushort* szSource, [NativeTypeName("UINT")] uint uFlag, [NativeTypeName("UINT")] uint uBufLen, CANDIDATELIST* pDest, [NativeTypeName("UINT *")] uint* puCopied)
         {
-            return ((delegate* unmanaged<IActiveIME2*, IntPtr, ushort*, uint, uint, CANDIDATELIST*, uint*, int>)(lpVtbl[4]))((IActiveIME2*)Unsafe.AsPointer(ref this), hIMC, szSource, uFlag, uBufLen, pDest, puCopied);
+            return ((delegate* unmanaged<IActiveIME2*, HIMC, ushort*, uint, uint, CANDIDATELIST*, uint*, int>)(lpVtbl[4]))((IActiveIME2*)Unsafe.AsPointer(ref this), hIMC, szSource, uFlag, uBufLen, pDest, puCopied);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        public HRESULT Configure([NativeTypeName("HKL")] IntPtr hKL, [NativeTypeName("HWND")] IntPtr hWnd, [NativeTypeName("DWORD")] uint dwMode, REGISTERWORDW* pRegisterWord)
+        public HRESULT Configure(HKL hKL, HWND hWnd, [NativeTypeName("DWORD")] uint dwMode, REGISTERWORDW* pRegisterWord)
         {
-            return ((delegate* unmanaged<IActiveIME2*, IntPtr, IntPtr, uint, REGISTERWORDW*, int>)(lpVtbl[5]))((IActiveIME2*)Unsafe.AsPointer(ref this), hKL, hWnd, dwMode, pRegisterWord);
+            return ((delegate* unmanaged<IActiveIME2*, HKL, HWND, uint, REGISTERWORDW*, int>)(lpVtbl[5]))((IActiveIME2*)Unsafe.AsPointer(ref this), hKL, hWnd, dwMode, pRegisterWord);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -69,51 +69,51 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        public HRESULT Escape([NativeTypeName("HIMC")] IntPtr hIMC, [NativeTypeName("UINT")] uint uEscape, void* pData, [NativeTypeName("LRESULT *")] nint* plResult)
+        public HRESULT Escape(HIMC hIMC, [NativeTypeName("UINT")] uint uEscape, void* pData, [NativeTypeName("LRESULT *")] nint* plResult)
         {
-            return ((delegate* unmanaged<IActiveIME2*, IntPtr, uint, void*, nint*, int>)(lpVtbl[7]))((IActiveIME2*)Unsafe.AsPointer(ref this), hIMC, uEscape, pData, plResult);
+            return ((delegate* unmanaged<IActiveIME2*, HIMC, uint, void*, nint*, int>)(lpVtbl[7]))((IActiveIME2*)Unsafe.AsPointer(ref this), hIMC, uEscape, pData, plResult);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        public HRESULT SetActiveContext([NativeTypeName("HIMC")] IntPtr hIMC, BOOL fFlag)
+        public HRESULT SetActiveContext(HIMC hIMC, BOOL fFlag)
         {
-            return ((delegate* unmanaged<IActiveIME2*, IntPtr, BOOL, int>)(lpVtbl[8]))((IActiveIME2*)Unsafe.AsPointer(ref this), hIMC, fFlag);
+            return ((delegate* unmanaged<IActiveIME2*, HIMC, BOOL, int>)(lpVtbl[8]))((IActiveIME2*)Unsafe.AsPointer(ref this), hIMC, fFlag);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        public HRESULT ProcessKey([NativeTypeName("HIMC")] IntPtr hIMC, [NativeTypeName("UINT")] uint uVirKey, [NativeTypeName("DWORD")] uint lParam, [NativeTypeName("BYTE *")] byte* pbKeyState)
+        public HRESULT ProcessKey(HIMC hIMC, [NativeTypeName("UINT")] uint uVirKey, [NativeTypeName("DWORD")] uint lParam, [NativeTypeName("BYTE *")] byte* pbKeyState)
         {
-            return ((delegate* unmanaged<IActiveIME2*, IntPtr, uint, uint, byte*, int>)(lpVtbl[9]))((IActiveIME2*)Unsafe.AsPointer(ref this), hIMC, uVirKey, lParam, pbKeyState);
+            return ((delegate* unmanaged<IActiveIME2*, HIMC, uint, uint, byte*, int>)(lpVtbl[9]))((IActiveIME2*)Unsafe.AsPointer(ref this), hIMC, uVirKey, lParam, pbKeyState);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(10)]
-        public HRESULT Notify([NativeTypeName("HIMC")] IntPtr hIMC, [NativeTypeName("DWORD")] uint dwAction, [NativeTypeName("DWORD")] uint dwIndex, [NativeTypeName("DWORD")] uint dwValue)
+        public HRESULT Notify(HIMC hIMC, [NativeTypeName("DWORD")] uint dwAction, [NativeTypeName("DWORD")] uint dwIndex, [NativeTypeName("DWORD")] uint dwValue)
         {
-            return ((delegate* unmanaged<IActiveIME2*, IntPtr, uint, uint, uint, int>)(lpVtbl[10]))((IActiveIME2*)Unsafe.AsPointer(ref this), hIMC, dwAction, dwIndex, dwValue);
+            return ((delegate* unmanaged<IActiveIME2*, HIMC, uint, uint, uint, int>)(lpVtbl[10]))((IActiveIME2*)Unsafe.AsPointer(ref this), hIMC, dwAction, dwIndex, dwValue);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(11)]
-        public HRESULT Select([NativeTypeName("HIMC")] IntPtr hIMC, BOOL fSelect)
+        public HRESULT Select(HIMC hIMC, BOOL fSelect)
         {
-            return ((delegate* unmanaged<IActiveIME2*, IntPtr, BOOL, int>)(lpVtbl[11]))((IActiveIME2*)Unsafe.AsPointer(ref this), hIMC, fSelect);
+            return ((delegate* unmanaged<IActiveIME2*, HIMC, BOOL, int>)(lpVtbl[11]))((IActiveIME2*)Unsafe.AsPointer(ref this), hIMC, fSelect);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(12)]
-        public HRESULT SetCompositionString([NativeTypeName("HIMC")] IntPtr hIMC, [NativeTypeName("DWORD")] uint dwIndex, void* pComp, [NativeTypeName("DWORD")] uint dwCompLen, void* pRead, [NativeTypeName("DWORD")] uint dwReadLen)
+        public HRESULT SetCompositionString(HIMC hIMC, [NativeTypeName("DWORD")] uint dwIndex, void* pComp, [NativeTypeName("DWORD")] uint dwCompLen, void* pRead, [NativeTypeName("DWORD")] uint dwReadLen)
         {
-            return ((delegate* unmanaged<IActiveIME2*, IntPtr, uint, void*, uint, void*, uint, int>)(lpVtbl[12]))((IActiveIME2*)Unsafe.AsPointer(ref this), hIMC, dwIndex, pComp, dwCompLen, pRead, dwReadLen);
+            return ((delegate* unmanaged<IActiveIME2*, HIMC, uint, void*, uint, void*, uint, int>)(lpVtbl[12]))((IActiveIME2*)Unsafe.AsPointer(ref this), hIMC, dwIndex, pComp, dwCompLen, pRead, dwReadLen);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(13)]
-        public HRESULT ToAsciiEx([NativeTypeName("UINT")] uint uVirKey, [NativeTypeName("UINT")] uint uScanCode, [NativeTypeName("BYTE *")] byte* pbKeyState, [NativeTypeName("UINT")] uint fuState, [NativeTypeName("HIMC")] IntPtr hIMC, [NativeTypeName("DWORD *")] uint* pdwTransBuf, [NativeTypeName("UINT *")] uint* puSize)
+        public HRESULT ToAsciiEx([NativeTypeName("UINT")] uint uVirKey, [NativeTypeName("UINT")] uint uScanCode, [NativeTypeName("BYTE *")] byte* pbKeyState, [NativeTypeName("UINT")] uint fuState, HIMC hIMC, [NativeTypeName("DWORD *")] uint* pdwTransBuf, [NativeTypeName("UINT *")] uint* puSize)
         {
-            return ((delegate* unmanaged<IActiveIME2*, uint, uint, byte*, uint, IntPtr, uint*, uint*, int>)(lpVtbl[13]))((IActiveIME2*)Unsafe.AsPointer(ref this), uVirKey, uScanCode, pbKeyState, fuState, hIMC, pdwTransBuf, puSize);
+            return ((delegate* unmanaged<IActiveIME2*, uint, uint, byte*, uint, HIMC, uint*, uint*, int>)(lpVtbl[13]))((IActiveIME2*)Unsafe.AsPointer(ref this), uVirKey, uScanCode, pbKeyState, fuState, hIMC, pdwTransBuf, puSize);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

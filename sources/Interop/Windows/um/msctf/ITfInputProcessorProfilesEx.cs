@@ -160,9 +160,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(20)]
-        public HRESULT SubstituteKeyboardLayout([NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("LANGID")] ushort langid, [NativeTypeName("const GUID &")] Guid* guidProfile, [NativeTypeName("HKL")] IntPtr hKL)
+        public HRESULT SubstituteKeyboardLayout([NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("LANGID")] ushort langid, [NativeTypeName("const GUID &")] Guid* guidProfile, HKL hKL)
         {
-            return ((delegate* unmanaged<ITfInputProcessorProfilesEx*, Guid*, ushort, Guid*, IntPtr, int>)(lpVtbl[20]))((ITfInputProcessorProfilesEx*)Unsafe.AsPointer(ref this), rclsid, langid, guidProfile, hKL);
+            return ((delegate* unmanaged<ITfInputProcessorProfilesEx*, Guid*, ushort, Guid*, HKL, int>)(lpVtbl[20]))((ITfInputProcessorProfilesEx*)Unsafe.AsPointer(ref this), rclsid, langid, guidProfile, hKL);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

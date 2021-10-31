@@ -14,8 +14,7 @@ namespace TerraFX.Interop
 
         public PRJ_CALLBACK_DATA_FLAGS Flags;
 
-        [NativeTypeName("PRJ_NAMESPACE_VIRTUALIZATION_CONTEXT")]
-        public IntPtr NamespaceVirtualizationContext;
+        public PRJ_NAMESPACE_VIRTUALIZATION_CONTEXT NamespaceVirtualizationContext;
 
         [NativeTypeName("INT32")]
         public int CommandId;

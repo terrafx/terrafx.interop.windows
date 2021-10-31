@@ -43,9 +43,9 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public HRESULT GetRuntimeClassName([NativeTypeName("HSTRING *")] IntPtr* className)
+        public HRESULT GetRuntimeClassName(HSTRING* className)
         {
-            return ((delegate* unmanaged<IAsyncOperationWithProgress<TResult, TProgress>*, IntPtr*, int>)(lpVtbl[4]))((IAsyncOperationWithProgress<TResult, TProgress>*)Unsafe.AsPointer(ref this), className);
+            return ((delegate* unmanaged<IAsyncOperationWithProgress<TResult, TProgress>*, HSTRING*, int>)(lpVtbl[4]))((IAsyncOperationWithProgress<TResult, TProgress>*)Unsafe.AsPointer(ref this), className);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

@@ -21,8 +21,7 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint dwItemState;
 
-        [NativeTypeName("HICON")]
-        public IntPtr hIcon;
+        public HICON hIcon;
 
         [NativeTypeName("WCHAR [128]")]
         public fixed ushort wszItemName[128];

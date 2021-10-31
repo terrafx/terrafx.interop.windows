@@ -14,8 +14,7 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint cbSize;
 
-        [NativeTypeName("HWND")]
-        public IntPtr hWnd;
+        public HWND hWnd;
 
         [NativeTypeName("UINT")]
         public uint uID;

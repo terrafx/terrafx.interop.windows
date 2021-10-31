@@ -18,14 +18,12 @@ namespace TerraFX.Interop
 
         public BOOL fOpenedFile;
 
-        [NativeTypeName("HWND")]
-        public IntPtr hWndParent;
+        public HWND hWndParent;
 
         [NativeTypeName("GUID *")]
         public Guid* pgActionID;
 
-        [NativeTypeName("HCRYPTPROV")]
-        public IntPtr hProv;
+        public HCRYPTPROV hProv;
 
         [NativeTypeName("DWORD")]
         public uint dwError;
@@ -48,14 +46,12 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint chStores;
 
-        [NativeTypeName("HCERTSTORE *")]
-        public IntPtr* pahStores;
+        public HCERTSTORE* pahStores;
 
         [NativeTypeName("DWORD")]
         public uint dwEncoding;
 
-        [NativeTypeName("HCRYPTMSG")]
-        public IntPtr hMsg;
+        public HCRYPTMSG hMsg;
 
         [NativeTypeName("DWORD")]
         public uint csSigners;

@@ -3,7 +3,6 @@
 // Ported from um/msports.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
@@ -12,38 +11,38 @@ namespace TerraFX.Interop
     {
         [DllImport("msports", ExactSpelling = true)]
         [return: NativeTypeName("LONG")]
-        public static extern int SerialDisplayAdvancedSettings([NativeTypeName("HWND")] IntPtr ParentHwnd, [NativeTypeName("HDEVINFO")] IntPtr DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData);
+        public static extern int SerialDisplayAdvancedSettings(HWND ParentHwnd, HDEVINFO DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData);
 
         [DllImport("msports", ExactSpelling = true)]
         [return: NativeTypeName("LONG")]
-        public static extern int ComDBOpen([NativeTypeName("PHCOMDB")] IntPtr* PHComDB);
+        public static extern int ComDBOpen([NativeTypeName("PHCOMDB")] HCOMDB* PHComDB);
 
         [DllImport("msports", ExactSpelling = true)]
         [return: NativeTypeName("LONG")]
-        public static extern int ComDBClose([NativeTypeName("HCOMDB")] IntPtr HComDB);
+        public static extern int ComDBClose(HCOMDB HComDB);
 
         [DllImport("msports", ExactSpelling = true)]
         [return: NativeTypeName("LONG")]
-        public static extern int ComDBGetCurrentPortUsage([NativeTypeName("HCOMDB")] IntPtr HComDB, [NativeTypeName("PBYTE")] byte* Buffer, [NativeTypeName("DWORD")] uint BufferSize, [NativeTypeName("ULONG")] uint ReportType, [NativeTypeName("LPDWORD")] uint* MaxPortsReported);
+        public static extern int ComDBGetCurrentPortUsage(HCOMDB HComDB, [NativeTypeName("PBYTE")] byte* Buffer, [NativeTypeName("DWORD")] uint BufferSize, [NativeTypeName("ULONG")] uint ReportType, [NativeTypeName("LPDWORD")] uint* MaxPortsReported);
 
         [DllImport("msports", ExactSpelling = true)]
         [return: NativeTypeName("LONG")]
-        public static extern int ComDBClaimNextFreePort([NativeTypeName("HCOMDB")] IntPtr HComDB, [NativeTypeName("LPDWORD")] uint* ComNumber);
+        public static extern int ComDBClaimNextFreePort(HCOMDB HComDB, [NativeTypeName("LPDWORD")] uint* ComNumber);
 
         [DllImport("msports", ExactSpelling = true)]
         [return: NativeTypeName("LONG")]
-        public static extern int ComDBClaimPort([NativeTypeName("HCOMDB")] IntPtr HComDB, [NativeTypeName("DWORD")] uint ComNumber, BOOL ForceClaim, [NativeTypeName("PBOOL")] BOOL* Forced);
+        public static extern int ComDBClaimPort(HCOMDB HComDB, [NativeTypeName("DWORD")] uint ComNumber, BOOL ForceClaim, [NativeTypeName("PBOOL")] BOOL* Forced);
 
         [DllImport("msports", ExactSpelling = true)]
         [return: NativeTypeName("LONG")]
-        public static extern int ComDBReleasePort([NativeTypeName("HCOMDB")] IntPtr HComDB, [NativeTypeName("DWORD")] uint ComNumber);
+        public static extern int ComDBReleasePort(HCOMDB HComDB, [NativeTypeName("DWORD")] uint ComNumber);
 
         [DllImport("msports", ExactSpelling = true)]
         [return: NativeTypeName("LONG")]
-        public static extern int ComDBResizeDatabase([NativeTypeName("HCOMDB")] IntPtr HComDB, [NativeTypeName("DWORD")] uint NewSize);
+        public static extern int ComDBResizeDatabase(HCOMDB HComDB, [NativeTypeName("DWORD")] uint NewSize);
 
         [NativeTypeName("#define HCOMDB_INVALID_HANDLE_VALUE ((HCOMDB) INVALID_HANDLE_VALUE)")]
-        public static IntPtr HCOMDB_INVALID_HANDLE_VALUE => ((nint)((nint)((nint)(-1))));
+        public static HCOMDB HCOMDB_INVALID_HANDLE_VALUE => ((nint)((nint)((nint)(-1))));
 
         [NativeTypeName("#define COMDB_MIN_PORTS_ARBITRATED 256")]
         public const int COMDB_MIN_PORTS_ARBITRATED = 256;

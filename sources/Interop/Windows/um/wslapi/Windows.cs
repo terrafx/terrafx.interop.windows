@@ -3,7 +3,6 @@
 // Ported from um/wslapi.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.WSL_DISTRIBUTION_FLAGS;
 
@@ -30,7 +29,7 @@ namespace TerraFX.Interop
         public static extern HRESULT WslLaunchInteractive([NativeTypeName("PCWSTR")] ushort* distributionName, [NativeTypeName("PCWSTR")] ushort* command, BOOL useCurrentWorkingDirectory, [NativeTypeName("DWORD *")] uint* exitCode);
 
         [DllImport("api-ms-win-wsl-api-l1-1-0", ExactSpelling = true)]
-        public static extern HRESULT WslLaunch([NativeTypeName("PCWSTR")] ushort* distributionName, [NativeTypeName("PCWSTR")] ushort* command, BOOL useCurrentWorkingDirectory, [NativeTypeName("HANDLE")] IntPtr stdIn, [NativeTypeName("HANDLE")] IntPtr stdOut, [NativeTypeName("HANDLE")] IntPtr stdErr, [NativeTypeName("HANDLE *")] IntPtr* process);
+        public static extern HRESULT WslLaunch([NativeTypeName("PCWSTR")] ushort* distributionName, [NativeTypeName("PCWSTR")] ushort* command, BOOL useCurrentWorkingDirectory, HANDLE stdIn, HANDLE stdOut, HANDLE stdErr, HANDLE* process);
 
         [NativeTypeName("#define WSL_DISTRIBUTION_FLAGS_VALID (WSL_DISTRIBUTION_FLAGS_ENABLE_INTEROP | WSL_DISTRIBUTION_FLAGS_APPEND_NT_PATH | WSL_DISTRIBUTION_FLAGS_ENABLE_DRIVE_MOUNTING)")]
         public const WSL_DISTRIBUTION_FLAGS WSL_DISTRIBUTION_FLAGS_VALID = (WSL_DISTRIBUTION_FLAGS_ENABLE_INTEROP | WSL_DISTRIBUTION_FLAGS_APPEND_NT_PATH | WSL_DISTRIBUTION_FLAGS_ENABLE_DRIVE_MOUNTING);

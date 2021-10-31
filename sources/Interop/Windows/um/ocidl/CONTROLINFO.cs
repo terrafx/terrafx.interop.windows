@@ -3,8 +3,6 @@
 // Ported from um/ocidl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
-
 namespace TerraFX.Interop
 {
     public partial struct CONTROLINFO
@@ -12,8 +10,7 @@ namespace TerraFX.Interop
         [NativeTypeName("ULONG")]
         public uint cb;
 
-        [NativeTypeName("HACCEL")]
-        public IntPtr hAccel;
+        public HACCEL hAccel;
 
         [NativeTypeName("USHORT")]
         public ushort cAccel;

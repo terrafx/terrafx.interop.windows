@@ -223,30 +223,30 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(29)]
-        public HRESULT put_Owner([NativeTypeName("OAHWND")] nint Owner)
+        public HRESULT put_Owner(OAHWND Owner)
         {
-            return ((delegate* unmanaged<IVideoWindow*, nint, int>)(lpVtbl[29]))((IVideoWindow*)Unsafe.AsPointer(ref this), Owner);
+            return ((delegate* unmanaged<IVideoWindow*, OAHWND, int>)(lpVtbl[29]))((IVideoWindow*)Unsafe.AsPointer(ref this), Owner);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(30)]
-        public HRESULT get_Owner([NativeTypeName("OAHWND *")] nint* Owner)
+        public HRESULT get_Owner(OAHWND* Owner)
         {
-            return ((delegate* unmanaged<IVideoWindow*, nint*, int>)(lpVtbl[30]))((IVideoWindow*)Unsafe.AsPointer(ref this), Owner);
+            return ((delegate* unmanaged<IVideoWindow*, OAHWND*, int>)(lpVtbl[30]))((IVideoWindow*)Unsafe.AsPointer(ref this), Owner);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(31)]
-        public HRESULT put_MessageDrain([NativeTypeName("OAHWND")] nint Drain)
+        public HRESULT put_MessageDrain(OAHWND Drain)
         {
-            return ((delegate* unmanaged<IVideoWindow*, nint, int>)(lpVtbl[31]))((IVideoWindow*)Unsafe.AsPointer(ref this), Drain);
+            return ((delegate* unmanaged<IVideoWindow*, OAHWND, int>)(lpVtbl[31]))((IVideoWindow*)Unsafe.AsPointer(ref this), Drain);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(32)]
-        public HRESULT get_MessageDrain([NativeTypeName("OAHWND *")] nint* Drain)
+        public HRESULT get_MessageDrain(OAHWND* Drain)
         {
-            return ((delegate* unmanaged<IVideoWindow*, nint*, int>)(lpVtbl[32]))((IVideoWindow*)Unsafe.AsPointer(ref this), Drain);
+            return ((delegate* unmanaged<IVideoWindow*, OAHWND*, int>)(lpVtbl[32]))((IVideoWindow*)Unsafe.AsPointer(ref this), Drain);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -286,9 +286,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(38)]
-        public HRESULT NotifyOwnerMessage([NativeTypeName("OAHWND")] nint hwnd, [NativeTypeName("long")] int uMsg, [NativeTypeName("LONG_PTR")] nint wParam, [NativeTypeName("LONG_PTR")] nint lParam)
+        public HRESULT NotifyOwnerMessage(OAHWND hwnd, [NativeTypeName("long")] int uMsg, [NativeTypeName("LONG_PTR")] nint wParam, [NativeTypeName("LONG_PTR")] nint lParam)
         {
-            return ((delegate* unmanaged<IVideoWindow*, nint, int, nint, nint, int>)(lpVtbl[38]))((IVideoWindow*)Unsafe.AsPointer(ref this), hwnd, uMsg, wParam, lParam);
+            return ((delegate* unmanaged<IVideoWindow*, OAHWND, int, nint, nint, int>)(lpVtbl[38]))((IVideoWindow*)Unsafe.AsPointer(ref this), hwnd, uMsg, wParam, lParam);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

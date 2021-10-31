@@ -12,10 +12,10 @@ namespace TerraFX.Interop
     {
         [DllImport("wintrust", ExactSpelling = true)]
         [return: NativeTypeName("LONG")]
-        public static extern int WinVerifyTrust([NativeTypeName("HWND")] IntPtr hwnd, [NativeTypeName("GUID *")] Guid* pgActionID, [NativeTypeName("LPVOID")] void* pWVTData);
+        public static extern int WinVerifyTrust(HWND hwnd, [NativeTypeName("GUID *")] Guid* pgActionID, [NativeTypeName("LPVOID")] void* pWVTData);
 
         [DllImport("wintrust", ExactSpelling = true)]
-        public static extern HRESULT WinVerifyTrustEx([NativeTypeName("HWND")] IntPtr hwnd, [NativeTypeName("GUID *")] Guid* pgActionID, WINTRUST_DATA* pWinTrustData);
+        public static extern HRESULT WinVerifyTrustEx(HWND hwnd, [NativeTypeName("GUID *")] Guid* pgActionID, WINTRUST_DATA* pWinTrustData);
 
         [DllImport("wintrust", ExactSpelling = true)]
         public static extern void WintrustGetRegPolicyFlags([NativeTypeName("DWORD *")] uint* pdwPolicyFlags);
@@ -45,7 +45,7 @@ namespace TerraFX.Interop
         public static extern CRYPT_PROVIDER_CERT* WTHelperGetProvCertFromChain(CRYPT_PROVIDER_SGNR* pSgnr, [NativeTypeName("DWORD")] uint idxCert);
 
         [DllImport("wintrust", ExactSpelling = true)]
-        public static extern CRYPT_PROVIDER_DATA* WTHelperProvDataFromStateData([NativeTypeName("HANDLE")] IntPtr hStateData);
+        public static extern CRYPT_PROVIDER_DATA* WTHelperProvDataFromStateData(HANDLE hStateData);
 
         [DllImport("wintrust", ExactSpelling = true)]
         public static extern CRYPT_PROVIDER_PRIVDATA* WTHelperGetProvPrivateDataFromChain(CRYPT_PROVIDER_DATA* pProvData, [NativeTypeName("GUID *")] Guid* pgProviderID);
@@ -57,10 +57,10 @@ namespace TerraFX.Interop
         public static extern HRESULT WTHelperCertCheckValidSignature(CRYPT_PROVIDER_DATA* pProvData);
 
         [DllImport("wintrust", ExactSpelling = true)]
-        public static extern BOOL OpenPersonalTrustDBDialogEx([NativeTypeName("HWND")] IntPtr hwndParent, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("PVOID *")] void** pvReserved);
+        public static extern BOOL OpenPersonalTrustDBDialogEx(HWND hwndParent, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("PVOID *")] void** pvReserved);
 
         [DllImport("wintrust", ExactSpelling = true)]
-        public static extern BOOL OpenPersonalTrustDBDialog([NativeTypeName("HWND")] IntPtr hwndParent);
+        public static extern BOOL OpenPersonalTrustDBDialog(HWND hwndParent);
 
         [DllImport("wintrust", ExactSpelling = true)]
         public static extern void WintrustSetDefaultIncludePEPageHashes(BOOL fIncludePEPageHashes);

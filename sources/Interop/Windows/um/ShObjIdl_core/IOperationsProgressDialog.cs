@@ -41,9 +41,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        public HRESULT StartProgressDialog([NativeTypeName("HWND")] IntPtr hwndOwner, [NativeTypeName("OPPROGDLGF")] uint flags)
+        public HRESULT StartProgressDialog(HWND hwndOwner, [NativeTypeName("OPPROGDLGF")] uint flags)
         {
-            return ((delegate* unmanaged<IOperationsProgressDialog*, IntPtr, uint, int>)(lpVtbl[3]))((IOperationsProgressDialog*)Unsafe.AsPointer(ref this), hwndOwner, flags);
+            return ((delegate* unmanaged<IOperationsProgressDialog*, HWND, uint, int>)(lpVtbl[3]))((IOperationsProgressDialog*)Unsafe.AsPointer(ref this), hwndOwner, flags);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

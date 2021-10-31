@@ -90,9 +90,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(10)]
-        public HRESULT Prompt([NativeTypeName("HWND")] IntPtr hwnd, ATTACHMENT_PROMPT prompt, ATTACHMENT_ACTION* paction)
+        public HRESULT Prompt(HWND hwnd, ATTACHMENT_PROMPT prompt, ATTACHMENT_ACTION* paction)
         {
-            return ((delegate* unmanaged<IAttachmentExecute*, IntPtr, ATTACHMENT_PROMPT, ATTACHMENT_ACTION*, int>)(lpVtbl[10]))((IAttachmentExecute*)Unsafe.AsPointer(ref this), hwnd, prompt, paction);
+            return ((delegate* unmanaged<IAttachmentExecute*, HWND, ATTACHMENT_PROMPT, ATTACHMENT_ACTION*, int>)(lpVtbl[10]))((IAttachmentExecute*)Unsafe.AsPointer(ref this), hwnd, prompt, paction);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -104,16 +104,16 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(12)]
-        public HRESULT Execute([NativeTypeName("HWND")] IntPtr hwnd, [NativeTypeName("LPCWSTR")] ushort* pszVerb, [NativeTypeName("HANDLE *")] IntPtr* phProcess)
+        public HRESULT Execute(HWND hwnd, [NativeTypeName("LPCWSTR")] ushort* pszVerb, HANDLE* phProcess)
         {
-            return ((delegate* unmanaged<IAttachmentExecute*, IntPtr, ushort*, IntPtr*, int>)(lpVtbl[12]))((IAttachmentExecute*)Unsafe.AsPointer(ref this), hwnd, pszVerb, phProcess);
+            return ((delegate* unmanaged<IAttachmentExecute*, HWND, ushort*, HANDLE*, int>)(lpVtbl[12]))((IAttachmentExecute*)Unsafe.AsPointer(ref this), hwnd, pszVerb, phProcess);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(13)]
-        public HRESULT SaveWithUI([NativeTypeName("HWND")] IntPtr hwnd)
+        public HRESULT SaveWithUI(HWND hwnd)
         {
-            return ((delegate* unmanaged<IAttachmentExecute*, IntPtr, int>)(lpVtbl[13]))((IAttachmentExecute*)Unsafe.AsPointer(ref this), hwnd);
+            return ((delegate* unmanaged<IAttachmentExecute*, HWND, int>)(lpVtbl[13]))((IAttachmentExecute*)Unsafe.AsPointer(ref this), hwnd);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

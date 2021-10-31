@@ -48,9 +48,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT InitializeFromWindow([NativeTypeName("HWND")] IntPtr hwnd, POINT* ppt, IDataObject* pDataObject)
+        public HRESULT InitializeFromWindow(HWND hwnd, POINT* ppt, IDataObject* pDataObject)
         {
-            return ((delegate* unmanaged<IDragSourceHelper2*, IntPtr, POINT*, IDataObject*, int>)(lpVtbl[4]))((IDragSourceHelper2*)Unsafe.AsPointer(ref this), hwnd, ppt, pDataObject);
+            return ((delegate* unmanaged<IDragSourceHelper2*, HWND, POINT*, IDataObject*, int>)(lpVtbl[4]))((IDragSourceHelper2*)Unsafe.AsPointer(ref this), hwnd, ppt, pDataObject);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

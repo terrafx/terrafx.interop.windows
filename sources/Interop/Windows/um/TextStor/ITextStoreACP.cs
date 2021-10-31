@@ -216,9 +216,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(28)]
-        public HRESULT GetWnd([NativeTypeName("TsViewCookie")] uint vcView, [NativeTypeName("HWND *")] IntPtr* phwnd)
+        public HRESULT GetWnd([NativeTypeName("TsViewCookie")] uint vcView, HWND* phwnd)
         {
-            return ((delegate* unmanaged<ITextStoreACP*, uint, IntPtr*, int>)(lpVtbl[28]))((ITextStoreACP*)Unsafe.AsPointer(ref this), vcView, phwnd);
+            return ((delegate* unmanaged<ITextStoreACP*, uint, HWND*, int>)(lpVtbl[28]))((ITextStoreACP*)Unsafe.AsPointer(ref this), vcView, phwnd);
         }
     }
 }

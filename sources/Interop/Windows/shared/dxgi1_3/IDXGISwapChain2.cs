@@ -160,9 +160,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(20)]
-        public HRESULT GetHwnd([NativeTypeName("HWND *")] IntPtr* pHwnd)
+        public HRESULT GetHwnd(HWND* pHwnd)
         {
-            return ((delegate* unmanaged<IDXGISwapChain2*, IntPtr*, int>)(lpVtbl[20]))((IDXGISwapChain2*)Unsafe.AsPointer(ref this), pHwnd);
+            return ((delegate* unmanaged<IDXGISwapChain2*, HWND*, int>)(lpVtbl[20]))((IDXGISwapChain2*)Unsafe.AsPointer(ref this), pHwnd);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -251,10 +251,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(33)]
-        [return: NativeTypeName("HANDLE")]
-        public IntPtr GetFrameLatencyWaitableObject()
+        public HANDLE GetFrameLatencyWaitableObject()
         {
-            return ((delegate* unmanaged<IDXGISwapChain2*, IntPtr>)(lpVtbl[33]))((IDXGISwapChain2*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IDXGISwapChain2*, nint>)(lpVtbl[33]))((IDXGISwapChain2*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

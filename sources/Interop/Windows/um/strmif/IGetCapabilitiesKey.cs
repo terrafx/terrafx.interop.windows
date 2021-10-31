@@ -41,9 +41,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        public HRESULT GetCapabilitiesKey([NativeTypeName("HKEY *")] IntPtr* pHKey)
+        public HRESULT GetCapabilitiesKey(HKEY* pHKey)
         {
-            return ((delegate* unmanaged<IGetCapabilitiesKey*, IntPtr*, int>)(lpVtbl[3]))((IGetCapabilitiesKey*)Unsafe.AsPointer(ref this), pHKey);
+            return ((delegate* unmanaged<IGetCapabilitiesKey*, HKEY*, int>)(lpVtbl[3]))((IGetCapabilitiesKey*)Unsafe.AsPointer(ref this), pHKey);
         }
     }
 }
