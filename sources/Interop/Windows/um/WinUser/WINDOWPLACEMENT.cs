@@ -7,13 +7,10 @@ namespace TerraFX.Interop
 {
     public partial struct WINDOWPLACEMENT
     {
-        [NativeTypeName("UINT")]
         public uint length;
 
-        [NativeTypeName("UINT")]
         public uint flags;
 
-        [NativeTypeName("UINT")]
         public uint showCmd;
 
         public POINT ptMinPosition;

@@ -7,13 +7,11 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct D3D12_ROOT_SIGNATURE_DESC
     {
-        [NativeTypeName("UINT")]
         public uint NumParameters;
 
         [NativeTypeName("const D3D12_ROOT_PARAMETER *")]
         public D3D12_ROOT_PARAMETER* pParameters;
 
-        [NativeTypeName("UINT")]
         public uint NumStaticSamplers;
 
         [NativeTypeName("const D3D12_STATIC_SAMPLER_DESC *")]

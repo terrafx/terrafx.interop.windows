@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IFileOperation2*, Guid*, void**, int>)(lpVtbl[0]))((IFileOperation2*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,168 +41,147 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int Advise(IFileOperationProgressSink* pfops, [NativeTypeName("DWORD *")] uint* pdwCookie)
+        public HRESULT Advise(IFileOperationProgressSink* pfops, [NativeTypeName("DWORD *")] uint* pdwCookie)
         {
             return ((delegate* unmanaged<IFileOperation2*, IFileOperationProgressSink*, uint*, int>)(lpVtbl[3]))((IFileOperation2*)Unsafe.AsPointer(ref this), pfops, pdwCookie);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int Unadvise([NativeTypeName("DWORD")] uint dwCookie)
+        public HRESULT Unadvise([NativeTypeName("DWORD")] uint dwCookie)
         {
             return ((delegate* unmanaged<IFileOperation2*, uint, int>)(lpVtbl[4]))((IFileOperation2*)Unsafe.AsPointer(ref this), dwCookie);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetOperationFlags([NativeTypeName("DWORD")] uint dwOperationFlags)
+        public HRESULT SetOperationFlags([NativeTypeName("DWORD")] uint dwOperationFlags)
         {
             return ((delegate* unmanaged<IFileOperation2*, uint, int>)(lpVtbl[5]))((IFileOperation2*)Unsafe.AsPointer(ref this), dwOperationFlags);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetProgressMessage([NativeTypeName("LPCWSTR")] ushort* pszMessage)
+        public HRESULT SetProgressMessage([NativeTypeName("LPCWSTR")] ushort* pszMessage)
         {
             return ((delegate* unmanaged<IFileOperation2*, ushort*, int>)(lpVtbl[6]))((IFileOperation2*)Unsafe.AsPointer(ref this), pszMessage);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetProgressDialog(IOperationsProgressDialog* popd)
+        public HRESULT SetProgressDialog(IOperationsProgressDialog* popd)
         {
             return ((delegate* unmanaged<IFileOperation2*, IOperationsProgressDialog*, int>)(lpVtbl[7]))((IFileOperation2*)Unsafe.AsPointer(ref this), popd);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetProperties(IPropertyChangeArray* pproparray)
+        public HRESULT SetProperties(IPropertyChangeArray* pproparray)
         {
             return ((delegate* unmanaged<IFileOperation2*, IPropertyChangeArray*, int>)(lpVtbl[8]))((IFileOperation2*)Unsafe.AsPointer(ref this), pproparray);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetOwnerWindow([NativeTypeName("HWND")] IntPtr hwndOwner)
+        public HRESULT SetOwnerWindow(HWND hwndOwner)
         {
-            return ((delegate* unmanaged<IFileOperation2*, IntPtr, int>)(lpVtbl[9]))((IFileOperation2*)Unsafe.AsPointer(ref this), hwndOwner);
+            return ((delegate* unmanaged<IFileOperation2*, HWND, int>)(lpVtbl[9]))((IFileOperation2*)Unsafe.AsPointer(ref this), hwndOwner);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(10)]
-        [return: NativeTypeName("HRESULT")]
-        public int ApplyPropertiesToItem(IShellItem* psiItem)
+        public HRESULT ApplyPropertiesToItem(IShellItem* psiItem)
         {
             return ((delegate* unmanaged<IFileOperation2*, IShellItem*, int>)(lpVtbl[10]))((IFileOperation2*)Unsafe.AsPointer(ref this), psiItem);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(11)]
-        [return: NativeTypeName("HRESULT")]
-        public int ApplyPropertiesToItems(IUnknown* punkItems)
+        public HRESULT ApplyPropertiesToItems(IUnknown* punkItems)
         {
             return ((delegate* unmanaged<IFileOperation2*, IUnknown*, int>)(lpVtbl[11]))((IFileOperation2*)Unsafe.AsPointer(ref this), punkItems);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(12)]
-        [return: NativeTypeName("HRESULT")]
-        public int RenameItem(IShellItem* psiItem, [NativeTypeName("LPCWSTR")] ushort* pszNewName, IFileOperationProgressSink* pfopsItem)
+        public HRESULT RenameItem(IShellItem* psiItem, [NativeTypeName("LPCWSTR")] ushort* pszNewName, IFileOperationProgressSink* pfopsItem)
         {
             return ((delegate* unmanaged<IFileOperation2*, IShellItem*, ushort*, IFileOperationProgressSink*, int>)(lpVtbl[12]))((IFileOperation2*)Unsafe.AsPointer(ref this), psiItem, pszNewName, pfopsItem);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(13)]
-        [return: NativeTypeName("HRESULT")]
-        public int RenameItems(IUnknown* pUnkItems, [NativeTypeName("LPCWSTR")] ushort* pszNewName)
+        public HRESULT RenameItems(IUnknown* pUnkItems, [NativeTypeName("LPCWSTR")] ushort* pszNewName)
         {
             return ((delegate* unmanaged<IFileOperation2*, IUnknown*, ushort*, int>)(lpVtbl[13]))((IFileOperation2*)Unsafe.AsPointer(ref this), pUnkItems, pszNewName);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(14)]
-        [return: NativeTypeName("HRESULT")]
-        public int MoveItem(IShellItem* psiItem, IShellItem* psiDestinationFolder, [NativeTypeName("LPCWSTR")] ushort* pszNewName, IFileOperationProgressSink* pfopsItem)
+        public HRESULT MoveItem(IShellItem* psiItem, IShellItem* psiDestinationFolder, [NativeTypeName("LPCWSTR")] ushort* pszNewName, IFileOperationProgressSink* pfopsItem)
         {
             return ((delegate* unmanaged<IFileOperation2*, IShellItem*, IShellItem*, ushort*, IFileOperationProgressSink*, int>)(lpVtbl[14]))((IFileOperation2*)Unsafe.AsPointer(ref this), psiItem, psiDestinationFolder, pszNewName, pfopsItem);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(15)]
-        [return: NativeTypeName("HRESULT")]
-        public int MoveItems(IUnknown* punkItems, IShellItem* psiDestinationFolder)
+        public HRESULT MoveItems(IUnknown* punkItems, IShellItem* psiDestinationFolder)
         {
             return ((delegate* unmanaged<IFileOperation2*, IUnknown*, IShellItem*, int>)(lpVtbl[15]))((IFileOperation2*)Unsafe.AsPointer(ref this), punkItems, psiDestinationFolder);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(16)]
-        [return: NativeTypeName("HRESULT")]
-        public int CopyItem(IShellItem* psiItem, IShellItem* psiDestinationFolder, [NativeTypeName("LPCWSTR")] ushort* pszCopyName, IFileOperationProgressSink* pfopsItem)
+        public HRESULT CopyItem(IShellItem* psiItem, IShellItem* psiDestinationFolder, [NativeTypeName("LPCWSTR")] ushort* pszCopyName, IFileOperationProgressSink* pfopsItem)
         {
             return ((delegate* unmanaged<IFileOperation2*, IShellItem*, IShellItem*, ushort*, IFileOperationProgressSink*, int>)(lpVtbl[16]))((IFileOperation2*)Unsafe.AsPointer(ref this), psiItem, psiDestinationFolder, pszCopyName, pfopsItem);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(17)]
-        [return: NativeTypeName("HRESULT")]
-        public int CopyItems(IUnknown* punkItems, IShellItem* psiDestinationFolder)
+        public HRESULT CopyItems(IUnknown* punkItems, IShellItem* psiDestinationFolder)
         {
             return ((delegate* unmanaged<IFileOperation2*, IUnknown*, IShellItem*, int>)(lpVtbl[17]))((IFileOperation2*)Unsafe.AsPointer(ref this), punkItems, psiDestinationFolder);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(18)]
-        [return: NativeTypeName("HRESULT")]
-        public int DeleteItem(IShellItem* psiItem, IFileOperationProgressSink* pfopsItem)
+        public HRESULT DeleteItem(IShellItem* psiItem, IFileOperationProgressSink* pfopsItem)
         {
             return ((delegate* unmanaged<IFileOperation2*, IShellItem*, IFileOperationProgressSink*, int>)(lpVtbl[18]))((IFileOperation2*)Unsafe.AsPointer(ref this), psiItem, pfopsItem);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(19)]
-        [return: NativeTypeName("HRESULT")]
-        public int DeleteItems(IUnknown* punkItems)
+        public HRESULT DeleteItems(IUnknown* punkItems)
         {
             return ((delegate* unmanaged<IFileOperation2*, IUnknown*, int>)(lpVtbl[19]))((IFileOperation2*)Unsafe.AsPointer(ref this), punkItems);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(20)]
-        [return: NativeTypeName("HRESULT")]
-        public int NewItem(IShellItem* psiDestinationFolder, [NativeTypeName("DWORD")] uint dwFileAttributes, [NativeTypeName("LPCWSTR")] ushort* pszName, [NativeTypeName("LPCWSTR")] ushort* pszTemplateName, IFileOperationProgressSink* pfopsItem)
+        public HRESULT NewItem(IShellItem* psiDestinationFolder, [NativeTypeName("DWORD")] uint dwFileAttributes, [NativeTypeName("LPCWSTR")] ushort* pszName, [NativeTypeName("LPCWSTR")] ushort* pszTemplateName, IFileOperationProgressSink* pfopsItem)
         {
             return ((delegate* unmanaged<IFileOperation2*, IShellItem*, uint, ushort*, ushort*, IFileOperationProgressSink*, int>)(lpVtbl[20]))((IFileOperation2*)Unsafe.AsPointer(ref this), psiDestinationFolder, dwFileAttributes, pszName, pszTemplateName, pfopsItem);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(21)]
-        [return: NativeTypeName("HRESULT")]
-        public int PerformOperations()
+        public HRESULT PerformOperations()
         {
             return ((delegate* unmanaged<IFileOperation2*, int>)(lpVtbl[21]))((IFileOperation2*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(22)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetAnyOperationsAborted([NativeTypeName("BOOL *")] int* pfAnyOperationsAborted)
+        public HRESULT GetAnyOperationsAborted(BOOL* pfAnyOperationsAborted)
         {
-            return ((delegate* unmanaged<IFileOperation2*, int*, int>)(lpVtbl[22]))((IFileOperation2*)Unsafe.AsPointer(ref this), pfAnyOperationsAborted);
+            return ((delegate* unmanaged<IFileOperation2*, BOOL*, int>)(lpVtbl[22]))((IFileOperation2*)Unsafe.AsPointer(ref this), pfAnyOperationsAborted);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(23)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetOperationFlags2(FILE_OPERATION_FLAGS2 operationFlags2)
+        public HRESULT SetOperationFlags2(FILE_OPERATION_FLAGS2 operationFlags2)
         {
             return ((delegate* unmanaged<IFileOperation2*, FILE_OPERATION_FLAGS2, int>)(lpVtbl[23]))((IFileOperation2*)Unsafe.AsPointer(ref this), operationFlags2);
         }

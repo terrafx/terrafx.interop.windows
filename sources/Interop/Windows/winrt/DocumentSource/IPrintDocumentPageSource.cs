@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IPrintDocumentPageSource*, Guid*, void**, int>)(lpVtbl[0]))((IPrintDocumentPageSource*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,16 +41,14 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetPreviewPageCollection(IPrintDocumentPackageTarget* docPackageTarget, IPrintPreviewPageCollection** docPageCollection)
+        public HRESULT GetPreviewPageCollection(IPrintDocumentPackageTarget* docPackageTarget, IPrintPreviewPageCollection** docPageCollection)
         {
             return ((delegate* unmanaged<IPrintDocumentPageSource*, IPrintDocumentPackageTarget*, IPrintPreviewPageCollection**, int>)(lpVtbl[3]))((IPrintDocumentPageSource*)Unsafe.AsPointer(ref this), docPackageTarget, docPageCollection);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int MakeDocument(IInspectable* printTaskOptions, IPrintDocumentPackageTarget* docPackageTarget)
+        public HRESULT MakeDocument(IInspectable* printTaskOptions, IPrintDocumentPackageTarget* docPackageTarget)
         {
             return ((delegate* unmanaged<IPrintDocumentPageSource*, IInspectable*, IPrintDocumentPackageTarget*, int>)(lpVtbl[4]))((IPrintDocumentPageSource*)Unsafe.AsPointer(ref this), printTaskOptions, docPackageTarget);
         }

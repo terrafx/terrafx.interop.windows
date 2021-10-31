@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct SOFTKBDDATA
     {
-        [NativeTypeName("UINT")]
         public uint uCount;
 
         [NativeTypeName("WORD [1][256]")]

@@ -7,13 +7,10 @@ namespace TerraFX.Interop
 {
     public partial struct CONSOLE_HISTORY_INFO
     {
-        [NativeTypeName("UINT")]
         public uint cbSize;
 
-        [NativeTypeName("UINT")]
         public uint HistoryBufferSize;
 
-        [NativeTypeName("UINT")]
         public uint NumberOfHistoryBuffers;
 
         [NativeTypeName("DWORD")]

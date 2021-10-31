@@ -7,13 +7,10 @@ namespace TerraFX.Interop
 {
     public partial struct D3D12_DISPATCH_ARGUMENTS
     {
-        [NativeTypeName("UINT")]
         public uint ThreadGroupCountX;
 
-        [NativeTypeName("UINT")]
         public uint ThreadGroupCountY;
 
-        [NativeTypeName("UINT")]
         public uint ThreadGroupCountZ;
     }
 }

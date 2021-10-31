@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IObjectWithSelection*, Guid*, void**, int>)(lpVtbl[0]))((IObjectWithSelection*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,16 +41,14 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetSelection(IShellItemArray* psia)
+        public HRESULT SetSelection(IShellItemArray* psia)
         {
             return ((delegate* unmanaged<IObjectWithSelection*, IShellItemArray*, int>)(lpVtbl[3]))((IObjectWithSelection*)Unsafe.AsPointer(ref this), psia);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetSelection([NativeTypeName("const IID &")] Guid* riid, void** ppv)
+        public HRESULT GetSelection([NativeTypeName("const IID &")] Guid* riid, void** ppv)
         {
             return ((delegate* unmanaged<IObjectWithSelection*, Guid*, void**, int>)(lpVtbl[4]))((IObjectWithSelection*)Unsafe.AsPointer(ref this), riid, ppv);
         }

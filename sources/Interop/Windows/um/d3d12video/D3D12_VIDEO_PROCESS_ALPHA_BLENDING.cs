@@ -7,10 +7,8 @@ namespace TerraFX.Interop
 {
     public partial struct D3D12_VIDEO_PROCESS_ALPHA_BLENDING
     {
-        [NativeTypeName("BOOL")]
-        public int Enable;
+        public BOOL Enable;
 
-        [NativeTypeName("FLOAT")]
         public float Alpha;
     }
 }

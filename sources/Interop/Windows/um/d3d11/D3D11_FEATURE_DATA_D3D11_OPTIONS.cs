@@ -7,46 +7,32 @@ namespace TerraFX.Interop
 {
     public partial struct D3D11_FEATURE_DATA_D3D11_OPTIONS
     {
-        [NativeTypeName("BOOL")]
-        public int OutputMergerLogicOp;
+        public BOOL OutputMergerLogicOp;
 
-        [NativeTypeName("BOOL")]
-        public int UAVOnlyRenderingForcedSampleCount;
+        public BOOL UAVOnlyRenderingForcedSampleCount;
 
-        [NativeTypeName("BOOL")]
-        public int DiscardAPIsSeenByDriver;
+        public BOOL DiscardAPIsSeenByDriver;
 
-        [NativeTypeName("BOOL")]
-        public int FlagsForUpdateAndCopySeenByDriver;
+        public BOOL FlagsForUpdateAndCopySeenByDriver;
 
-        [NativeTypeName("BOOL")]
-        public int ClearView;
+        public BOOL ClearView;
 
-        [NativeTypeName("BOOL")]
-        public int CopyWithOverlap;
+        public BOOL CopyWithOverlap;
 
-        [NativeTypeName("BOOL")]
-        public int ConstantBufferPartialUpdate;
+        public BOOL ConstantBufferPartialUpdate;
 
-        [NativeTypeName("BOOL")]
-        public int ConstantBufferOffsetting;
+        public BOOL ConstantBufferOffsetting;
 
-        [NativeTypeName("BOOL")]
-        public int MapNoOverwriteOnDynamicConstantBuffer;
+        public BOOL MapNoOverwriteOnDynamicConstantBuffer;
 
-        [NativeTypeName("BOOL")]
-        public int MapNoOverwriteOnDynamicBufferSRV;
+        public BOOL MapNoOverwriteOnDynamicBufferSRV;
 
-        [NativeTypeName("BOOL")]
-        public int MultisampleRTVWithForcedSampleCountOne;
+        public BOOL MultisampleRTVWithForcedSampleCountOne;
 
-        [NativeTypeName("BOOL")]
-        public int SAD4ShaderInstructions;
+        public BOOL SAD4ShaderInstructions;
 
-        [NativeTypeName("BOOL")]
-        public int ExtendedDoublesShaderInstructions;
+        public BOOL ExtendedDoublesShaderInstructions;
 
-        [NativeTypeName("BOOL")]
-        public int ExtendedResourceSharing;
+        public BOOL ExtendedResourceSharing;
     }
 }

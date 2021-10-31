@@ -10,7 +10,6 @@ namespace TerraFX.Interop
 {
     public partial struct SCM_BUS_DEDICATED_MEMORY_DEVICE_INFO
     {
-        [NativeTypeName("GUID")]
         public Guid DeviceGuid;
 
         [NativeTypeName("DWORD")]

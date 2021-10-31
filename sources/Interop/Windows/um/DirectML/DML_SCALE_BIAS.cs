@@ -7,10 +7,8 @@ namespace TerraFX.Interop
 {
     public partial struct DML_SCALE_BIAS
     {
-        [NativeTypeName("FLOAT")]
         public float Scale;
 
-        [NativeTypeName("FLOAT")]
         public float Bias;
     }
 }

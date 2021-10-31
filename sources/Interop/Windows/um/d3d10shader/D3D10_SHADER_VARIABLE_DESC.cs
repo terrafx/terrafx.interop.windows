@@ -10,13 +10,10 @@ namespace TerraFX.Interop
         [NativeTypeName("LPCSTR")]
         public sbyte* Name;
 
-        [NativeTypeName("UINT")]
         public uint StartOffset;
 
-        [NativeTypeName("UINT")]
         public uint Size;
 
-        [NativeTypeName("UINT")]
         public uint uFlags;
 
         [NativeTypeName("LPVOID")]

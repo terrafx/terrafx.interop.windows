@@ -3,8 +3,6 @@
 // Ported from um/WinTrust.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
-
 namespace TerraFX.Interop
 {
     public unsafe partial struct CRYPT_PROVIDER_SIGSTATE
@@ -12,17 +10,13 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint cbStruct;
 
-        [NativeTypeName("HCRYPTMSG *")]
-        public IntPtr* rhSecondarySigs;
+        public HCRYPTMSG* rhSecondarySigs;
 
-        [NativeTypeName("HCRYPTMSG")]
-        public IntPtr hPrimarySig;
+        public HCRYPTMSG hPrimarySig;
 
-        [NativeTypeName("BOOL")]
-        public int fFirstAttemptMade;
+        public BOOL fFirstAttemptMade;
 
-        [NativeTypeName("BOOL")]
-        public int fNoMoreSigs;
+        public BOOL fNoMoreSigs;
 
         [NativeTypeName("DWORD")]
         public uint cSecondarySigs;
@@ -30,8 +24,7 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint dwCurrentIndex;
 
-        [NativeTypeName("BOOL")]
-        public int fSupportMultiSig;
+        public BOOL fSupportMultiSig;
 
         [NativeTypeName("DWORD")]
         public uint dwCryptoPolicySupport;
@@ -39,8 +32,7 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint iAttemptCount;
 
-        [NativeTypeName("BOOL")]
-        public int fCheckedSealing;
+        public BOOL fCheckedSealing;
 
         [NativeTypeName("struct _SEALING_SIGNATURE_ATTRIBUTE *")]
         public SEALING_SIGNATURE_ATTRIBUTE* pSealingSignature;

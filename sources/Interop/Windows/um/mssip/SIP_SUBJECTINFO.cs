@@ -14,11 +14,9 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint cbSize;
 
-        [NativeTypeName("GUID *")]
         public Guid* pgSubjectType;
 
-        [NativeTypeName("HANDLE")]
-        public IntPtr hFile;
+        public HANDLE hFile;
 
         [NativeTypeName("LPCWSTR")]
         public ushort* pwsFileName;
@@ -32,8 +30,7 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint dwIntVersion;
 
-        [NativeTypeName("HCRYPTPROV")]
-        public IntPtr hProv;
+        public HCRYPTPROV hProv;
 
         public CRYPT_ALGORITHM_IDENTIFIER DigestAlgorithm;
 

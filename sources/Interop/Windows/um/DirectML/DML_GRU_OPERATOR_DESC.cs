@@ -31,7 +31,6 @@ namespace TerraFX.Interop
         [NativeTypeName("const DML_TENSOR_DESC *")]
         public DML_TENSOR_DESC* OutputSingleTensor;
 
-        [NativeTypeName("UINT")]
         public uint ActivationDescCount;
 
         [NativeTypeName("const DML_OPERATOR_DESC *")]
@@ -39,7 +38,6 @@ namespace TerraFX.Interop
 
         public DML_RECURRENT_NETWORK_DIRECTION Direction;
 
-        [NativeTypeName("BOOL")]
-        public int LinearBeforeReset;
+        public BOOL LinearBeforeReset;
     }
 }

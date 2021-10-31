@@ -3,7 +3,6 @@
 // Ported from um/objidl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -19,39 +18,51 @@ namespace TerraFX.Interop
 
         public IUnknown* pUnkForRelease;
 
-        public ref IntPtr hBitmap
+        public ref HBITMAP hBitmap
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.hBitmap, 1));
+                fixed (_Anonymous_e__Union* pField = &Anonymous)
+                {
+                    return ref pField->hBitmap;
+                }
             }
         }
 
-        public ref IntPtr hMetaFilePict
+        public ref HMETAFILEPICT hMetaFilePict
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.hMetaFilePict, 1));
+                fixed (_Anonymous_e__Union* pField = &Anonymous)
+                {
+                    return ref pField->hMetaFilePict;
+                }
             }
         }
 
-        public ref IntPtr hEnhMetaFile
+        public ref HENHMETAFILE hEnhMetaFile
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.hEnhMetaFile, 1));
+                fixed (_Anonymous_e__Union* pField = &Anonymous)
+                {
+                    return ref pField->hEnhMetaFile;
+                }
             }
         }
 
-        public ref IntPtr hGlobal
+        public ref HANDLE hGlobal
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.hGlobal, 1));
+                fixed (_Anonymous_e__Union* pField = &Anonymous)
+                {
+                    return ref pField->hGlobal;
+                }
             }
         }
 
@@ -95,20 +106,17 @@ namespace TerraFX.Interop
         public unsafe partial struct _Anonymous_e__Union
         {
             [FieldOffset(0)]
-            [NativeTypeName("HBITMAP")]
-            public IntPtr hBitmap;
+            public HBITMAP hBitmap;
 
             [FieldOffset(0)]
-            [NativeTypeName("HMETAFILEPICT")]
-            public IntPtr hMetaFilePict;
+            public HMETAFILEPICT hMetaFilePict;
 
             [FieldOffset(0)]
-            [NativeTypeName("HENHMETAFILE")]
-            public IntPtr hEnhMetaFile;
+            public HENHMETAFILE hEnhMetaFile;
 
             [FieldOffset(0)]
             [NativeTypeName("HGLOBAL")]
-            public IntPtr hGlobal;
+            public HANDLE hGlobal;
 
             [FieldOffset(0)]
             [NativeTypeName("LPOLESTR")]

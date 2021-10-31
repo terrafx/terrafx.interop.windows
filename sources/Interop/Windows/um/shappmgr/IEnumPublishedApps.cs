@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IEnumPublishedApps*, Guid*, void**, int>)(lpVtbl[0]))((IEnumPublishedApps*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,16 +41,14 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int Next(IPublishedApp** pia)
+        public HRESULT Next(IPublishedApp** pia)
         {
             return ((delegate* unmanaged<IEnumPublishedApps*, IPublishedApp**, int>)(lpVtbl[3]))((IEnumPublishedApps*)Unsafe.AsPointer(ref this), pia);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int Reset()
+        public HRESULT Reset()
         {
             return ((delegate* unmanaged<IEnumPublishedApps*, int>)(lpVtbl[4]))((IEnumPublishedApps*)Unsafe.AsPointer(ref this));
         }

@@ -7,10 +7,8 @@ namespace TerraFX.Interop
 {
     public partial struct TF_PRESERVEDKEY
     {
-        [NativeTypeName("UINT")]
         public uint uVKey;
 
-        [NativeTypeName("UINT")]
         public uint uModifiers;
     }
 }

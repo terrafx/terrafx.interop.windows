@@ -18,10 +18,8 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint PromoteLimit;
 
-        [NativeTypeName("BYTE")]
         public byte DemotePercent;
 
-        [NativeTypeName("BYTE")]
         public byte PromotePercent;
 
         [NativeTypeName("BYTE [2]")]

@@ -14,11 +14,9 @@ namespace TerraFX.Interop
         [NativeTypeName("ULONG")]
         public uint cbStruct;
 
-        [NativeTypeName("BOOL")]
-        public int fOddPages;
+        public BOOL fOddPages;
 
-        [NativeTypeName("BOOL")]
-        public int fEvenPages;
+        public BOOL fEvenPages;
 
         [NativeTypeName("ULONG")]
         public uint cPageRange;

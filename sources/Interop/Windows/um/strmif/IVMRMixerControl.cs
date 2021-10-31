@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IVMRMixerControl*, Guid*, void**, int>)(lpVtbl[0]))((IVMRMixerControl*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,80 +41,70 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetAlpha([NativeTypeName("DWORD")] uint dwStreamID, float Alpha)
+        public HRESULT SetAlpha([NativeTypeName("DWORD")] uint dwStreamID, float Alpha)
         {
             return ((delegate* unmanaged<IVMRMixerControl*, uint, float, int>)(lpVtbl[3]))((IVMRMixerControl*)Unsafe.AsPointer(ref this), dwStreamID, Alpha);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetAlpha([NativeTypeName("DWORD")] uint dwStreamID, float* pAlpha)
+        public HRESULT GetAlpha([NativeTypeName("DWORD")] uint dwStreamID, float* pAlpha)
         {
             return ((delegate* unmanaged<IVMRMixerControl*, uint, float*, int>)(lpVtbl[4]))((IVMRMixerControl*)Unsafe.AsPointer(ref this), dwStreamID, pAlpha);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetZOrder([NativeTypeName("DWORD")] uint dwStreamID, [NativeTypeName("DWORD")] uint dwZ)
+        public HRESULT SetZOrder([NativeTypeName("DWORD")] uint dwStreamID, [NativeTypeName("DWORD")] uint dwZ)
         {
             return ((delegate* unmanaged<IVMRMixerControl*, uint, uint, int>)(lpVtbl[5]))((IVMRMixerControl*)Unsafe.AsPointer(ref this), dwStreamID, dwZ);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetZOrder([NativeTypeName("DWORD")] uint dwStreamID, [NativeTypeName("DWORD *")] uint* pZ)
+        public HRESULT GetZOrder([NativeTypeName("DWORD")] uint dwStreamID, [NativeTypeName("DWORD *")] uint* pZ)
         {
             return ((delegate* unmanaged<IVMRMixerControl*, uint, uint*, int>)(lpVtbl[6]))((IVMRMixerControl*)Unsafe.AsPointer(ref this), dwStreamID, pZ);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetOutputRect([NativeTypeName("DWORD")] uint dwStreamID, [NativeTypeName("const NORMALIZEDRECT *")] NORMALIZEDRECT* pRect)
+        public HRESULT SetOutputRect([NativeTypeName("DWORD")] uint dwStreamID, [NativeTypeName("const NORMALIZEDRECT *")] NORMALIZEDRECT* pRect)
         {
             return ((delegate* unmanaged<IVMRMixerControl*, uint, NORMALIZEDRECT*, int>)(lpVtbl[7]))((IVMRMixerControl*)Unsafe.AsPointer(ref this), dwStreamID, pRect);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetOutputRect([NativeTypeName("DWORD")] uint dwStreamID, NORMALIZEDRECT* pRect)
+        public HRESULT GetOutputRect([NativeTypeName("DWORD")] uint dwStreamID, NORMALIZEDRECT* pRect)
         {
             return ((delegate* unmanaged<IVMRMixerControl*, uint, NORMALIZEDRECT*, int>)(lpVtbl[8]))((IVMRMixerControl*)Unsafe.AsPointer(ref this), dwStreamID, pRect);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetBackgroundClr([NativeTypeName("COLORREF")] uint ClrBkg)
+        public HRESULT SetBackgroundClr([NativeTypeName("COLORREF")] uint ClrBkg)
         {
             return ((delegate* unmanaged<IVMRMixerControl*, uint, int>)(lpVtbl[9]))((IVMRMixerControl*)Unsafe.AsPointer(ref this), ClrBkg);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(10)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetBackgroundClr([NativeTypeName("COLORREF *")] uint* lpClrBkg)
+        public HRESULT GetBackgroundClr([NativeTypeName("COLORREF *")] uint* lpClrBkg)
         {
             return ((delegate* unmanaged<IVMRMixerControl*, uint*, int>)(lpVtbl[10]))((IVMRMixerControl*)Unsafe.AsPointer(ref this), lpClrBkg);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(11)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetMixingPrefs([NativeTypeName("DWORD")] uint dwMixerPrefs)
+        public HRESULT SetMixingPrefs([NativeTypeName("DWORD")] uint dwMixerPrefs)
         {
             return ((delegate* unmanaged<IVMRMixerControl*, uint, int>)(lpVtbl[11]))((IVMRMixerControl*)Unsafe.AsPointer(ref this), dwMixerPrefs);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(12)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetMixingPrefs([NativeTypeName("DWORD *")] uint* pdwMixerPrefs)
+        public HRESULT GetMixingPrefs([NativeTypeName("DWORD *")] uint* pdwMixerPrefs)
         {
             return ((delegate* unmanaged<IVMRMixerControl*, uint*, int>)(lpVtbl[12]))((IVMRMixerControl*)Unsafe.AsPointer(ref this), pdwMixerPrefs);
         }

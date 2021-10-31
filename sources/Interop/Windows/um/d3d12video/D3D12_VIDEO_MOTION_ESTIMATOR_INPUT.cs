@@ -9,12 +9,10 @@ namespace TerraFX.Interop
     {
         public ID3D12Resource* pInputTexture2D;
 
-        [NativeTypeName("UINT")]
         public uint InputSubresourceIndex;
 
         public ID3D12Resource* pReferenceTexture2D;
 
-        [NativeTypeName("UINT")]
         public uint ReferenceSubresourceIndex;
 
         public ID3D12VideoMotionVectorHeap* pHintMotionVectorHeap;

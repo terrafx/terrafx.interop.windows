@@ -24,10 +24,8 @@ namespace TerraFX.Interop
 
         public AUDIO_STREAM_CATEGORY Category;
 
-        [NativeTypeName("HANDLE")]
-        public IntPtr EventHandle;
+        public HANDLE EventHandle;
 
-        [NativeTypeName("GUID")]
         public Guid MetadataFormatId;
 
         [NativeTypeName("UINT16")]

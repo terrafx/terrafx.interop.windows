@@ -61,7 +61,6 @@ namespace TerraFX.Interop
         }
 
         [DllImport("XAudio2_9", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int XAudio2Create([NativeTypeName("IXAudio2 **")] IXAudio2** ppXAudio2, [NativeTypeName("UINT32")] uint Flags = 0, [NativeTypeName("XAUDIO2_PROCESSOR")] uint XAudio2Processor = XAUDIO2_DEFAULT_PROCESSOR);
+        public static extern HRESULT XAudio2Create([NativeTypeName("IXAudio2 **")] IXAudio2** ppXAudio2, [NativeTypeName("UINT32")] uint Flags = 0, [NativeTypeName("XAUDIO2_PROCESSOR")] uint XAudio2Processor = XAUDIO2_DEFAULT_PROCESSOR);
     }
 }

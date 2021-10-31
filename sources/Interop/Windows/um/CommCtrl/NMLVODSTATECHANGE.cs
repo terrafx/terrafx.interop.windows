@@ -13,10 +13,8 @@ namespace TerraFX.Interop
 
         public int iTo;
 
-        [NativeTypeName("UINT")]
         public uint uNewState;
 
-        [NativeTypeName("UINT")]
         public uint uOldState;
     }
 }

@@ -7,11 +7,9 @@ namespace TerraFX.Interop
 {
     public partial struct D3D12_FEATURE_DATA_D3D12_OPTIONS
     {
-        [NativeTypeName("BOOL")]
-        public int DoublePrecisionFloatShaderOps;
+        public BOOL DoublePrecisionFloatShaderOps;
 
-        [NativeTypeName("BOOL")]
-        public int OutputMergerLogicOp;
+        public BOOL OutputMergerLogicOp;
 
         public D3D12_SHADER_MIN_PRECISION_SUPPORT MinPrecisionSupport;
 
@@ -19,30 +17,23 @@ namespace TerraFX.Interop
 
         public D3D12_RESOURCE_BINDING_TIER ResourceBindingTier;
 
-        [NativeTypeName("BOOL")]
-        public int PSSpecifiedStencilRefSupported;
+        public BOOL PSSpecifiedStencilRefSupported;
 
-        [NativeTypeName("BOOL")]
-        public int TypedUAVLoadAdditionalFormats;
+        public BOOL TypedUAVLoadAdditionalFormats;
 
-        [NativeTypeName("BOOL")]
-        public int ROVsSupported;
+        public BOOL ROVsSupported;
 
         public D3D12_CONSERVATIVE_RASTERIZATION_TIER ConservativeRasterizationTier;
 
-        [NativeTypeName("UINT")]
         public uint MaxGPUVirtualAddressBitsPerResource;
 
-        [NativeTypeName("BOOL")]
-        public int StandardSwizzle64KBSupported;
+        public BOOL StandardSwizzle64KBSupported;
 
         public D3D12_CROSS_NODE_SHARING_TIER CrossNodeSharingTier;
 
-        [NativeTypeName("BOOL")]
-        public int CrossAdapterRowMajorTextureSupported;
+        public BOOL CrossAdapterRowMajorTextureSupported;
 
-        [NativeTypeName("BOOL")]
-        public int VPAndRTArrayIndexFromAnyShaderFeedingRasterizerSupportedWithoutGSEmulation;
+        public BOOL VPAndRTArrayIndexFromAnyShaderFeedingRasterizerSupportedWithoutGSEmulation;
 
         public D3D12_RESOURCE_HEAP_TIER ResourceHeapTier;
     }

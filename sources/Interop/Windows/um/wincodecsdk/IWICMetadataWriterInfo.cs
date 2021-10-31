@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IWICMetadataWriterInfo*, Guid*, void**, int>)(lpVtbl[0]))((IWICMetadataWriterInfo*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,136 +41,119 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetComponentType(WICComponentType* pType)
+        public HRESULT GetComponentType(WICComponentType* pType)
         {
             return ((delegate* unmanaged<IWICMetadataWriterInfo*, WICComponentType*, int>)(lpVtbl[3]))((IWICMetadataWriterInfo*)Unsafe.AsPointer(ref this), pType);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetCLSID([NativeTypeName("CLSID *")] Guid* pclsid)
+        public HRESULT GetCLSID([NativeTypeName("CLSID *")] Guid* pclsid)
         {
             return ((delegate* unmanaged<IWICMetadataWriterInfo*, Guid*, int>)(lpVtbl[4]))((IWICMetadataWriterInfo*)Unsafe.AsPointer(ref this), pclsid);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetSigningStatus([NativeTypeName("DWORD *")] uint* pStatus)
+        public HRESULT GetSigningStatus([NativeTypeName("DWORD *")] uint* pStatus)
         {
             return ((delegate* unmanaged<IWICMetadataWriterInfo*, uint*, int>)(lpVtbl[5]))((IWICMetadataWriterInfo*)Unsafe.AsPointer(ref this), pStatus);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetAuthor([NativeTypeName("UINT")] uint cchAuthor, [NativeTypeName("WCHAR *")] ushort* wzAuthor, [NativeTypeName("UINT *")] uint* pcchActual)
+        public HRESULT GetAuthor(uint cchAuthor, [NativeTypeName("WCHAR *")] ushort* wzAuthor, uint* pcchActual)
         {
             return ((delegate* unmanaged<IWICMetadataWriterInfo*, uint, ushort*, uint*, int>)(lpVtbl[6]))((IWICMetadataWriterInfo*)Unsafe.AsPointer(ref this), cchAuthor, wzAuthor, pcchActual);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetVendorGUID([NativeTypeName("GUID *")] Guid* pguidVendor)
+        public HRESULT GetVendorGUID(Guid* pguidVendor)
         {
             return ((delegate* unmanaged<IWICMetadataWriterInfo*, Guid*, int>)(lpVtbl[7]))((IWICMetadataWriterInfo*)Unsafe.AsPointer(ref this), pguidVendor);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetVersion([NativeTypeName("UINT")] uint cchVersion, [NativeTypeName("WCHAR *")] ushort* wzVersion, [NativeTypeName("UINT *")] uint* pcchActual)
+        public HRESULT GetVersion(uint cchVersion, [NativeTypeName("WCHAR *")] ushort* wzVersion, uint* pcchActual)
         {
             return ((delegate* unmanaged<IWICMetadataWriterInfo*, uint, ushort*, uint*, int>)(lpVtbl[8]))((IWICMetadataWriterInfo*)Unsafe.AsPointer(ref this), cchVersion, wzVersion, pcchActual);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetSpecVersion([NativeTypeName("UINT")] uint cchSpecVersion, [NativeTypeName("WCHAR *")] ushort* wzSpecVersion, [NativeTypeName("UINT *")] uint* pcchActual)
+        public HRESULT GetSpecVersion(uint cchSpecVersion, [NativeTypeName("WCHAR *")] ushort* wzSpecVersion, uint* pcchActual)
         {
             return ((delegate* unmanaged<IWICMetadataWriterInfo*, uint, ushort*, uint*, int>)(lpVtbl[9]))((IWICMetadataWriterInfo*)Unsafe.AsPointer(ref this), cchSpecVersion, wzSpecVersion, pcchActual);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(10)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetFriendlyName([NativeTypeName("UINT")] uint cchFriendlyName, [NativeTypeName("WCHAR *")] ushort* wzFriendlyName, [NativeTypeName("UINT *")] uint* pcchActual)
+        public HRESULT GetFriendlyName(uint cchFriendlyName, [NativeTypeName("WCHAR *")] ushort* wzFriendlyName, uint* pcchActual)
         {
             return ((delegate* unmanaged<IWICMetadataWriterInfo*, uint, ushort*, uint*, int>)(lpVtbl[10]))((IWICMetadataWriterInfo*)Unsafe.AsPointer(ref this), cchFriendlyName, wzFriendlyName, pcchActual);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(11)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetMetadataFormat([NativeTypeName("GUID *")] Guid* pguidMetadataFormat)
+        public HRESULT GetMetadataFormat(Guid* pguidMetadataFormat)
         {
             return ((delegate* unmanaged<IWICMetadataWriterInfo*, Guid*, int>)(lpVtbl[11]))((IWICMetadataWriterInfo*)Unsafe.AsPointer(ref this), pguidMetadataFormat);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(12)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetContainerFormats([NativeTypeName("UINT")] uint cContainerFormats, [NativeTypeName("GUID *")] Guid* pguidContainerFormats, [NativeTypeName("UINT *")] uint* pcchActual)
+        public HRESULT GetContainerFormats(uint cContainerFormats, Guid* pguidContainerFormats, uint* pcchActual)
         {
             return ((delegate* unmanaged<IWICMetadataWriterInfo*, uint, Guid*, uint*, int>)(lpVtbl[12]))((IWICMetadataWriterInfo*)Unsafe.AsPointer(ref this), cContainerFormats, pguidContainerFormats, pcchActual);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(13)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetDeviceManufacturer([NativeTypeName("UINT")] uint cchDeviceManufacturer, [NativeTypeName("WCHAR *")] ushort* wzDeviceManufacturer, [NativeTypeName("UINT *")] uint* pcchActual)
+        public HRESULT GetDeviceManufacturer(uint cchDeviceManufacturer, [NativeTypeName("WCHAR *")] ushort* wzDeviceManufacturer, uint* pcchActual)
         {
             return ((delegate* unmanaged<IWICMetadataWriterInfo*, uint, ushort*, uint*, int>)(lpVtbl[13]))((IWICMetadataWriterInfo*)Unsafe.AsPointer(ref this), cchDeviceManufacturer, wzDeviceManufacturer, pcchActual);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(14)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetDeviceModels([NativeTypeName("UINT")] uint cchDeviceModels, [NativeTypeName("WCHAR *")] ushort* wzDeviceModels, [NativeTypeName("UINT *")] uint* pcchActual)
+        public HRESULT GetDeviceModels(uint cchDeviceModels, [NativeTypeName("WCHAR *")] ushort* wzDeviceModels, uint* pcchActual)
         {
             return ((delegate* unmanaged<IWICMetadataWriterInfo*, uint, ushort*, uint*, int>)(lpVtbl[14]))((IWICMetadataWriterInfo*)Unsafe.AsPointer(ref this), cchDeviceModels, wzDeviceModels, pcchActual);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(15)]
-        [return: NativeTypeName("HRESULT")]
-        public int DoesRequireFullStream([NativeTypeName("BOOL *")] int* pfRequiresFullStream)
+        public HRESULT DoesRequireFullStream(BOOL* pfRequiresFullStream)
         {
-            return ((delegate* unmanaged<IWICMetadataWriterInfo*, int*, int>)(lpVtbl[15]))((IWICMetadataWriterInfo*)Unsafe.AsPointer(ref this), pfRequiresFullStream);
+            return ((delegate* unmanaged<IWICMetadataWriterInfo*, BOOL*, int>)(lpVtbl[15]))((IWICMetadataWriterInfo*)Unsafe.AsPointer(ref this), pfRequiresFullStream);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(16)]
-        [return: NativeTypeName("HRESULT")]
-        public int DoesSupportPadding([NativeTypeName("BOOL *")] int* pfSupportsPadding)
+        public HRESULT DoesSupportPadding(BOOL* pfSupportsPadding)
         {
-            return ((delegate* unmanaged<IWICMetadataWriterInfo*, int*, int>)(lpVtbl[16]))((IWICMetadataWriterInfo*)Unsafe.AsPointer(ref this), pfSupportsPadding);
+            return ((delegate* unmanaged<IWICMetadataWriterInfo*, BOOL*, int>)(lpVtbl[16]))((IWICMetadataWriterInfo*)Unsafe.AsPointer(ref this), pfSupportsPadding);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(17)]
-        [return: NativeTypeName("HRESULT")]
-        public int DoesRequireFixedSize([NativeTypeName("BOOL *")] int* pfFixedSize)
+        public HRESULT DoesRequireFixedSize(BOOL* pfFixedSize)
         {
-            return ((delegate* unmanaged<IWICMetadataWriterInfo*, int*, int>)(lpVtbl[17]))((IWICMetadataWriterInfo*)Unsafe.AsPointer(ref this), pfFixedSize);
+            return ((delegate* unmanaged<IWICMetadataWriterInfo*, BOOL*, int>)(lpVtbl[17]))((IWICMetadataWriterInfo*)Unsafe.AsPointer(ref this), pfFixedSize);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(18)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetHeader([NativeTypeName("const GUID &")] Guid* guidContainerFormat, [NativeTypeName("UINT")] uint cbSize, WICMetadataHeader* pHeader, [NativeTypeName("UINT *")] uint* pcbActual)
+        public HRESULT GetHeader([NativeTypeName("const GUID &")] Guid* guidContainerFormat, uint cbSize, WICMetadataHeader* pHeader, uint* pcbActual)
         {
             return ((delegate* unmanaged<IWICMetadataWriterInfo*, Guid*, uint, WICMetadataHeader*, uint*, int>)(lpVtbl[18]))((IWICMetadataWriterInfo*)Unsafe.AsPointer(ref this), guidContainerFormat, cbSize, pHeader, pcbActual);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(19)]
-        [return: NativeTypeName("HRESULT")]
-        public int CreateInstance(IWICMetadataWriter** ppIWriter)
+        public HRESULT CreateInstance(IWICMetadataWriter** ppIWriter)
         {
             return ((delegate* unmanaged<IWICMetadataWriterInfo*, IWICMetadataWriter**, int>)(lpVtbl[19]))((IWICMetadataWriterInfo*)Unsafe.AsPointer(ref this), ppIWriter);
         }

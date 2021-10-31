@@ -7,11 +7,9 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct WINHTTP_PROXY_RESULT_ENTRY
     {
-        [NativeTypeName("BOOL")]
-        public int fProxy;
+        public BOOL fProxy;
 
-        [NativeTypeName("BOOL")]
-        public int fBypass;
+        public BOOL fBypass;
 
         [NativeTypeName("INTERNET_SCHEME")]
         public int ProxyScheme;

@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IAMAsyncReaderTimestampScaling*, Guid*, void**, int>)(lpVtbl[0]))((IAMAsyncReaderTimestampScaling*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,18 +41,16 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetTimestampMode([NativeTypeName("BOOL *")] int* pfRaw)
+        public HRESULT GetTimestampMode(BOOL* pfRaw)
         {
-            return ((delegate* unmanaged<IAMAsyncReaderTimestampScaling*, int*, int>)(lpVtbl[3]))((IAMAsyncReaderTimestampScaling*)Unsafe.AsPointer(ref this), pfRaw);
+            return ((delegate* unmanaged<IAMAsyncReaderTimestampScaling*, BOOL*, int>)(lpVtbl[3]))((IAMAsyncReaderTimestampScaling*)Unsafe.AsPointer(ref this), pfRaw);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetTimestampMode([NativeTypeName("BOOL")] int fRaw)
+        public HRESULT SetTimestampMode(BOOL fRaw)
         {
-            return ((delegate* unmanaged<IAMAsyncReaderTimestampScaling*, int, int>)(lpVtbl[4]))((IAMAsyncReaderTimestampScaling*)Unsafe.AsPointer(ref this), fRaw);
+            return ((delegate* unmanaged<IAMAsyncReaderTimestampScaling*, BOOL, int>)(lpVtbl[4]))((IAMAsyncReaderTimestampScaling*)Unsafe.AsPointer(ref this), fRaw);
         }
     }
 }

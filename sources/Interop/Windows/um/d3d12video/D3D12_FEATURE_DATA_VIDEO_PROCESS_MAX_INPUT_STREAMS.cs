@@ -7,10 +7,8 @@ namespace TerraFX.Interop
 {
     public partial struct D3D12_FEATURE_DATA_VIDEO_PROCESS_MAX_INPUT_STREAMS
     {
-        [NativeTypeName("UINT")]
         public uint NodeIndex;
 
-        [NativeTypeName("UINT")]
         public uint MaxInputStreams;
     }
 }

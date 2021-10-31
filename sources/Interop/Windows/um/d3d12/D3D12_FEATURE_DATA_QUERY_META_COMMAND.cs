@@ -9,10 +9,8 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct D3D12_FEATURE_DATA_QUERY_META_COMMAND
     {
-        [NativeTypeName("GUID")]
         public Guid CommandId;
 
-        [NativeTypeName("UINT")]
         public uint NodeMask;
 
         [NativeTypeName("const void *")]

@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public partial struct PPM_THERMAL_POLICY_EVENT
     {
-        [NativeTypeName("BYTE")]
         public byte Mode;
 
         [NativeTypeName("DWORD64")]

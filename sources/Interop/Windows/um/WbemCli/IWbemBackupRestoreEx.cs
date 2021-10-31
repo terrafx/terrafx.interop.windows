@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IWbemBackupRestoreEx*, Guid*, void**, int>)(lpVtbl[0]))((IWbemBackupRestoreEx*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,32 +41,28 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int Backup([NativeTypeName("LPCWSTR")] ushort* strBackupToFile, [NativeTypeName("long")] int lFlags)
+        public HRESULT Backup([NativeTypeName("LPCWSTR")] ushort* strBackupToFile, [NativeTypeName("long")] int lFlags)
         {
             return ((delegate* unmanaged<IWbemBackupRestoreEx*, ushort*, int, int>)(lpVtbl[3]))((IWbemBackupRestoreEx*)Unsafe.AsPointer(ref this), strBackupToFile, lFlags);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int Restore([NativeTypeName("LPCWSTR")] ushort* strRestoreFromFile, [NativeTypeName("long")] int lFlags)
+        public HRESULT Restore([NativeTypeName("LPCWSTR")] ushort* strRestoreFromFile, [NativeTypeName("long")] int lFlags)
         {
             return ((delegate* unmanaged<IWbemBackupRestoreEx*, ushort*, int, int>)(lpVtbl[4]))((IWbemBackupRestoreEx*)Unsafe.AsPointer(ref this), strRestoreFromFile, lFlags);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int Pause()
+        public HRESULT Pause()
         {
             return ((delegate* unmanaged<IWbemBackupRestoreEx*, int>)(lpVtbl[5]))((IWbemBackupRestoreEx*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int Resume()
+        public HRESULT Resume()
         {
             return ((delegate* unmanaged<IWbemBackupRestoreEx*, int>)(lpVtbl[6]))((IWbemBackupRestoreEx*)Unsafe.AsPointer(ref this));
         }

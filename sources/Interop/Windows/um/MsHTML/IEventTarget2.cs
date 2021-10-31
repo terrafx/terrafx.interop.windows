@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IEventTarget2*, Guid*, void**, int>)(lpVtbl[0]))((IEventTarget2*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,32 +41,28 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetRegisteredEventTypes(SAFEARRAY** ppEventTypeArray)
+        public HRESULT GetRegisteredEventTypes(SAFEARRAY** ppEventTypeArray)
         {
             return ((delegate* unmanaged<IEventTarget2*, SAFEARRAY**, int>)(lpVtbl[3]))((IEventTarget2*)Unsafe.AsPointer(ref this), ppEventTypeArray);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetListenersForType([NativeTypeName("LPCWSTR")] ushort* pszEventType, SAFEARRAY** ppEventHandlerArray)
+        public HRESULT GetListenersForType([NativeTypeName("LPCWSTR")] ushort* pszEventType, SAFEARRAY** ppEventHandlerArray)
         {
             return ((delegate* unmanaged<IEventTarget2*, ushort*, SAFEARRAY**, int>)(lpVtbl[4]))((IEventTarget2*)Unsafe.AsPointer(ref this), pszEventType, ppEventHandlerArray);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int RegisterForDOMEventListeners(IDOMEventRegistrationCallback* pCallback)
+        public HRESULT RegisterForDOMEventListeners(IDOMEventRegistrationCallback* pCallback)
         {
             return ((delegate* unmanaged<IEventTarget2*, IDOMEventRegistrationCallback*, int>)(lpVtbl[5]))((IEventTarget2*)Unsafe.AsPointer(ref this), pCallback);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int UnregisterForDOMEventListeners(IDOMEventRegistrationCallback* pCallback)
+        public HRESULT UnregisterForDOMEventListeners(IDOMEventRegistrationCallback* pCallback)
         {
             return ((delegate* unmanaged<IEventTarget2*, IDOMEventRegistrationCallback*, int>)(lpVtbl[6]))((IEventTarget2*)Unsafe.AsPointer(ref this), pCallback);
         }

@@ -3,8 +3,6 @@
 // Ported from um/Uxtheme.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
-
 namespace TerraFX.Interop
 {
     public unsafe partial struct DTTOPTS
@@ -36,13 +34,12 @@ namespace TerraFX.Interop
 
         public int iStateId;
 
-        [NativeTypeName("BOOL")]
-        public int fApplyOverlay;
+        public BOOL fApplyOverlay;
 
         public int iGlowSize;
 
         [NativeTypeName("DTT_CALLBACK_PROC")]
-        public delegate* unmanaged<IntPtr, ushort*, int, RECT*, uint, nint, int> pfnDrawTextCallback;
+        public delegate* unmanaged<HDC, ushort*, int, RECT*, uint, nint, int> pfnDrawTextCallback;
 
         [NativeTypeName("LPARAM")]
         public nint lParam;

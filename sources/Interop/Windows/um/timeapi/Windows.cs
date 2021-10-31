@@ -11,7 +11,7 @@ namespace TerraFX.Interop
     {
         [DllImport("winmm", ExactSpelling = true)]
         [return: NativeTypeName("MMRESULT")]
-        public static extern uint timeGetSystemTime([NativeTypeName("LPMMTIME")] MMTIME* pmmt, [NativeTypeName("UINT")] uint cbmmt);
+        public static extern uint timeGetSystemTime([NativeTypeName("LPMMTIME")] MMTIME* pmmt, uint cbmmt);
 
         [DllImport("winmm", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
@@ -19,15 +19,15 @@ namespace TerraFX.Interop
 
         [DllImport("winmm", ExactSpelling = true)]
         [return: NativeTypeName("MMRESULT")]
-        public static extern uint timeGetDevCaps([NativeTypeName("LPTIMECAPS")] TIMECAPS* ptc, [NativeTypeName("UINT")] uint cbtc);
+        public static extern uint timeGetDevCaps([NativeTypeName("LPTIMECAPS")] TIMECAPS* ptc, uint cbtc);
 
         [DllImport("winmm", ExactSpelling = true)]
         [return: NativeTypeName("MMRESULT")]
-        public static extern uint timeBeginPeriod([NativeTypeName("UINT")] uint uPeriod);
+        public static extern uint timeBeginPeriod(uint uPeriod);
 
         [DllImport("winmm", ExactSpelling = true)]
         [return: NativeTypeName("MMRESULT")]
-        public static extern uint timeEndPeriod([NativeTypeName("UINT")] uint uPeriod);
+        public static extern uint timeEndPeriod(uint uPeriod);
 
         [NativeTypeName("#define TIMERR_NOERROR (0)")]
         public const int TIMERR_NOERROR = (0);

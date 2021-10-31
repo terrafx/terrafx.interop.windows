@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public partial struct LOGBRUSH
     {
-        [NativeTypeName("UINT")]
         public uint lbStyle;
 
         [NativeTypeName("COLORREF")]

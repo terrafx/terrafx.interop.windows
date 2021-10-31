@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IExtractIconW*, Guid*, void**, int>)(lpVtbl[0]))((IExtractIconW*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,18 +41,16 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetIconLocation([NativeTypeName("UINT")] uint uFlags, [NativeTypeName("PWSTR")] ushort* pszIconFile, [NativeTypeName("UINT")] uint cchMax, int* piIndex, [NativeTypeName("UINT *")] uint* pwFlags)
+        public HRESULT GetIconLocation(uint uFlags, [NativeTypeName("PWSTR")] ushort* pszIconFile, uint cchMax, int* piIndex, uint* pwFlags)
         {
             return ((delegate* unmanaged<IExtractIconW*, uint, ushort*, uint, int*, uint*, int>)(lpVtbl[3]))((IExtractIconW*)Unsafe.AsPointer(ref this), uFlags, pszIconFile, cchMax, piIndex, pwFlags);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int Extract([NativeTypeName("PCWSTR")] ushort* pszFile, [NativeTypeName("UINT")] uint nIconIndex, [NativeTypeName("HICON *")] IntPtr* phiconLarge, [NativeTypeName("HICON *")] IntPtr* phiconSmall, [NativeTypeName("UINT")] uint nIconSize)
+        public HRESULT Extract([NativeTypeName("PCWSTR")] ushort* pszFile, uint nIconIndex, HICON* phiconLarge, HICON* phiconSmall, uint nIconSize)
         {
-            return ((delegate* unmanaged<IExtractIconW*, ushort*, uint, IntPtr*, IntPtr*, uint, int>)(lpVtbl[4]))((IExtractIconW*)Unsafe.AsPointer(ref this), pszFile, nIconIndex, phiconLarge, phiconSmall, nIconSize);
+            return ((delegate* unmanaged<IExtractIconW*, ushort*, uint, HICON*, HICON*, uint, int>)(lpVtbl[4]))((IExtractIconW*)Unsafe.AsPointer(ref this), pszFile, nIconIndex, phiconLarge, phiconSmall, nIconSize);
         }
     }
 }

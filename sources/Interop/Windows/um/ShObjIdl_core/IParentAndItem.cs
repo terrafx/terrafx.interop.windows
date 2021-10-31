@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IParentAndItem*, Guid*, void**, int>)(lpVtbl[0]))((IParentAndItem*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,16 +41,14 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetParentAndItem([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidlParent, IShellFolder* psf, [NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidlChild)
+        public HRESULT SetParentAndItem([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidlParent, IShellFolder* psf, [NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidlChild)
         {
             return ((delegate* unmanaged<IParentAndItem*, ITEMIDLIST*, IShellFolder*, ITEMIDLIST*, int>)(lpVtbl[3]))((IParentAndItem*)Unsafe.AsPointer(ref this), pidlParent, psf, pidlChild);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetParentAndItem([NativeTypeName("LPITEMIDLIST *")] ITEMIDLIST** ppidlParent, IShellFolder** ppsf, [NativeTypeName("LPITEMIDLIST *")] ITEMIDLIST** ppidlChild)
+        public HRESULT GetParentAndItem([NativeTypeName("LPITEMIDLIST *")] ITEMIDLIST** ppidlParent, IShellFolder** ppsf, [NativeTypeName("LPITEMIDLIST *")] ITEMIDLIST** ppidlChild)
         {
             return ((delegate* unmanaged<IParentAndItem*, ITEMIDLIST**, IShellFolder**, ITEMIDLIST**, int>)(lpVtbl[4]))((IParentAndItem*)Unsafe.AsPointer(ref this), ppidlParent, ppsf, ppidlChild);
         }

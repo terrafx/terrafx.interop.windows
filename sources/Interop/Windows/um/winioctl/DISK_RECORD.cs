@@ -19,7 +19,6 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint NumberOfBytes;
 
-        [NativeTypeName("BYTE")]
         public byte DeviceNumber;
 
         [NativeTypeName("BOOLEAN")]

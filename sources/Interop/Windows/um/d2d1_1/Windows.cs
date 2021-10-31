@@ -13,27 +13,23 @@ namespace TerraFX.Interop
     public static unsafe partial class Windows
     {
         [DllImport("d2d1", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int D2D1CreateDevice(IDXGIDevice* dxgiDevice, [NativeTypeName("const D2D1_CREATION_PROPERTIES *")] D2D1_CREATION_PROPERTIES* creationProperties, ID2D1Device** d2dDevice);
+        public static extern HRESULT D2D1CreateDevice(IDXGIDevice* dxgiDevice, [NativeTypeName("const D2D1_CREATION_PROPERTIES *")] D2D1_CREATION_PROPERTIES* creationProperties, ID2D1Device** d2dDevice);
 
         [DllImport("d2d1", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int D2D1CreateDeviceContext(IDXGISurface* dxgiSurface, [NativeTypeName("const D2D1_CREATION_PROPERTIES *")] D2D1_CREATION_PROPERTIES* creationProperties, ID2D1DeviceContext** d2dDeviceContext);
+        public static extern HRESULT D2D1CreateDeviceContext(IDXGISurface* dxgiSurface, [NativeTypeName("const D2D1_CREATION_PROPERTIES *")] D2D1_CREATION_PROPERTIES* creationProperties, ID2D1DeviceContext** d2dDeviceContext);
 
         [DllImport("d2d1", ExactSpelling = true)]
         [return: NativeTypeName("D2D1_COLOR_F")]
         public static extern DXGI_RGBA D2D1ConvertColorSpace(D2D1_COLOR_SPACE sourceColorSpace, D2D1_COLOR_SPACE destinationColorSpace, [NativeTypeName("const D2D1_COLOR_F *")] DXGI_RGBA* color);
 
         [DllImport("d2d1", ExactSpelling = true)]
-        public static extern void D2D1SinCos([NativeTypeName("FLOAT")] float angle, [NativeTypeName("FLOAT *")] float* s, [NativeTypeName("FLOAT *")] float* c);
+        public static extern void D2D1SinCos(float angle, float* s, float* c);
 
         [DllImport("d2d1", ExactSpelling = true)]
-        [return: NativeTypeName("FLOAT")]
-        public static extern float D2D1Tan([NativeTypeName("FLOAT")] float angle);
+        public static extern float D2D1Tan(float angle);
 
         [DllImport("d2d1", ExactSpelling = true)]
-        [return: NativeTypeName("FLOAT")]
-        public static extern float D2D1Vec3Length([NativeTypeName("FLOAT")] float x, [NativeTypeName("FLOAT")] float y, [NativeTypeName("FLOAT")] float z);
+        public static extern float D2D1Vec3Length(float x, float y, float z);
 
         [NativeTypeName("#define D2D1_INVALID_PROPERTY_INDEX UINT_MAX")]
         public const uint D2D1_INVALID_PROPERTY_INDEX = 0xffffffff;

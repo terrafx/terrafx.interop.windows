@@ -12,10 +12,8 @@ namespace TerraFX.Interop
         [NativeTypeName("WICPixelFormatGUID")]
         public Guid Format;
 
-        [NativeTypeName("UINT")]
         public uint Width;
 
-        [NativeTypeName("UINT")]
         public uint Height;
     }
 }

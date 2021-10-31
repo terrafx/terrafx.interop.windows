@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IAccServerDocMgr*, Guid*, void**, int>)(lpVtbl[0]))((IAccServerDocMgr*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,24 +41,21 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int NewDocument([NativeTypeName("const IID &")] Guid* riid, IUnknown* punk)
+        public HRESULT NewDocument([NativeTypeName("const IID &")] Guid* riid, IUnknown* punk)
         {
             return ((delegate* unmanaged<IAccServerDocMgr*, Guid*, IUnknown*, int>)(lpVtbl[3]))((IAccServerDocMgr*)Unsafe.AsPointer(ref this), riid, punk);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int RevokeDocument(IUnknown* punk)
+        public HRESULT RevokeDocument(IUnknown* punk)
         {
             return ((delegate* unmanaged<IAccServerDocMgr*, IUnknown*, int>)(lpVtbl[4]))((IAccServerDocMgr*)Unsafe.AsPointer(ref this), punk);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int OnDocumentFocus(IUnknown* punk)
+        public HRESULT OnDocumentFocus(IUnknown* punk)
         {
             return ((delegate* unmanaged<IAccServerDocMgr*, IUnknown*, int>)(lpVtbl[5]))((IAccServerDocMgr*)Unsafe.AsPointer(ref this), punk);
         }

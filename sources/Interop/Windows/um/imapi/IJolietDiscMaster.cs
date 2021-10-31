@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IJolietDiscMaster*, Guid*, void**, int>)(lpVtbl[0]))((IJolietDiscMaster*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,48 +41,42 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetTotalDataBlocks([NativeTypeName("long *")] int* pnBlocks)
+        public HRESULT GetTotalDataBlocks([NativeTypeName("long *")] int* pnBlocks)
         {
             return ((delegate* unmanaged<IJolietDiscMaster*, int*, int>)(lpVtbl[3]))((IJolietDiscMaster*)Unsafe.AsPointer(ref this), pnBlocks);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetUsedDataBlocks([NativeTypeName("long *")] int* pnBlocks)
+        public HRESULT GetUsedDataBlocks([NativeTypeName("long *")] int* pnBlocks)
         {
             return ((delegate* unmanaged<IJolietDiscMaster*, int*, int>)(lpVtbl[4]))((IJolietDiscMaster*)Unsafe.AsPointer(ref this), pnBlocks);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetDataBlockSize([NativeTypeName("long *")] int* pnBlockBytes)
+        public HRESULT GetDataBlockSize([NativeTypeName("long *")] int* pnBlockBytes)
         {
             return ((delegate* unmanaged<IJolietDiscMaster*, int*, int>)(lpVtbl[5]))((IJolietDiscMaster*)Unsafe.AsPointer(ref this), pnBlockBytes);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int AddData(IStorage* pStorage, [NativeTypeName("long")] int lFileOverwrite)
+        public HRESULT AddData(IStorage* pStorage, [NativeTypeName("long")] int lFileOverwrite)
         {
             return ((delegate* unmanaged<IJolietDiscMaster*, IStorage*, int, int>)(lpVtbl[6]))((IJolietDiscMaster*)Unsafe.AsPointer(ref this), pStorage, lFileOverwrite);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetJolietProperties(IPropertyStorage** ppPropStg)
+        public HRESULT GetJolietProperties(IPropertyStorage** ppPropStg)
         {
             return ((delegate* unmanaged<IJolietDiscMaster*, IPropertyStorage**, int>)(lpVtbl[7]))((IJolietDiscMaster*)Unsafe.AsPointer(ref this), ppPropStg);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetJolietProperties(IPropertyStorage* pPropStg)
+        public HRESULT SetJolietProperties(IPropertyStorage* pPropStg)
         {
             return ((delegate* unmanaged<IJolietDiscMaster*, IPropertyStorage*, int>)(lpVtbl[8]))((IJolietDiscMaster*)Unsafe.AsPointer(ref this), pPropStg);
         }

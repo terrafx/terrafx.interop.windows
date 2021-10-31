@@ -9,15 +9,12 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct AUDIO_VOLUME_NOTIFICATION_DATA
     {
-        [NativeTypeName("GUID")]
         public Guid guidEventContext;
 
-        [NativeTypeName("BOOL")]
-        public int bMuted;
+        public BOOL bMuted;
 
         public float fMasterVolume;
 
-        [NativeTypeName("UINT")]
         public uint nChannels;
 
         [NativeTypeName("float [1]")]

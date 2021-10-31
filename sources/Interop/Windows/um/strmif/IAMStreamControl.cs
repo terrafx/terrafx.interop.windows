@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IAMStreamControl*, Guid*, void**, int>)(lpVtbl[0]))((IAMStreamControl*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,24 +41,21 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int StartAt([NativeTypeName("const REFERENCE_TIME *")] long* ptStart, [NativeTypeName("DWORD")] uint dwCookie)
+        public HRESULT StartAt([NativeTypeName("const REFERENCE_TIME *")] long* ptStart, [NativeTypeName("DWORD")] uint dwCookie)
         {
             return ((delegate* unmanaged<IAMStreamControl*, long*, uint, int>)(lpVtbl[3]))((IAMStreamControl*)Unsafe.AsPointer(ref this), ptStart, dwCookie);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int StopAt([NativeTypeName("const REFERENCE_TIME *")] long* ptStop, [NativeTypeName("BOOL")] int bSendExtra, [NativeTypeName("DWORD")] uint dwCookie)
+        public HRESULT StopAt([NativeTypeName("const REFERENCE_TIME *")] long* ptStop, BOOL bSendExtra, [NativeTypeName("DWORD")] uint dwCookie)
         {
-            return ((delegate* unmanaged<IAMStreamControl*, long*, int, uint, int>)(lpVtbl[4]))((IAMStreamControl*)Unsafe.AsPointer(ref this), ptStop, bSendExtra, dwCookie);
+            return ((delegate* unmanaged<IAMStreamControl*, long*, BOOL, uint, int>)(lpVtbl[4]))((IAMStreamControl*)Unsafe.AsPointer(ref this), ptStop, bSendExtra, dwCookie);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetInfo(AM_STREAM_INFO* pInfo)
+        public HRESULT GetInfo(AM_STREAM_INFO* pInfo)
         {
             return ((delegate* unmanaged<IAMStreamControl*, AM_STREAM_INFO*, int>)(lpVtbl[5]))((IAMStreamControl*)Unsafe.AsPointer(ref this), pInfo);
         }

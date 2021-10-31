@@ -9,12 +9,10 @@ namespace TerraFX.Interop
     {
         public D3D12_DESCRIPTOR_HEAP_TYPE Type;
 
-        [NativeTypeName("UINT")]
         public uint NumDescriptors;
 
         public D3D12_DESCRIPTOR_HEAP_FLAGS Flags;
 
-        [NativeTypeName("UINT")]
         public uint NodeMask;
     }
 }

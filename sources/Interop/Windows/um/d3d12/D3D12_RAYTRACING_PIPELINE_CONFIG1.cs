@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public partial struct D3D12_RAYTRACING_PIPELINE_CONFIG1
     {
-        [NativeTypeName("UINT")]
         public uint MaxTraceRecursionDepth;
 
         public D3D12_RAYTRACING_PIPELINE_FLAGS Flags;

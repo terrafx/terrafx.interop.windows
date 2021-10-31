@@ -7,13 +7,10 @@ namespace TerraFX.Interop
 {
     public partial struct D3D11_TEX1D_ARRAY_RTV
     {
-        [NativeTypeName("UINT")]
         public uint MipSlice;
 
-        [NativeTypeName("UINT")]
         public uint FirstArraySlice;
 
-        [NativeTypeName("UINT")]
         public uint ArraySize;
     }
 }

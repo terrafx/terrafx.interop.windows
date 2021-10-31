@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IUri*, Guid*, void**, int>)(lpVtbl[0]))((IUri*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,202 +41,177 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetPropertyBSTR(Uri_PROPERTY uriProp, [NativeTypeName("BSTR *")] ushort** pbstrProperty, [NativeTypeName("DWORD")] uint dwFlags)
+        public HRESULT GetPropertyBSTR(Uri_PROPERTY uriProp, [NativeTypeName("BSTR *")] ushort** pbstrProperty, [NativeTypeName("DWORD")] uint dwFlags)
         {
             return ((delegate* unmanaged<IUri*, Uri_PROPERTY, ushort**, uint, int>)(lpVtbl[3]))((IUri*)Unsafe.AsPointer(ref this), uriProp, pbstrProperty, dwFlags);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetPropertyLength(Uri_PROPERTY uriProp, [NativeTypeName("DWORD *")] uint* pcchProperty, [NativeTypeName("DWORD")] uint dwFlags)
+        public HRESULT GetPropertyLength(Uri_PROPERTY uriProp, [NativeTypeName("DWORD *")] uint* pcchProperty, [NativeTypeName("DWORD")] uint dwFlags)
         {
             return ((delegate* unmanaged<IUri*, Uri_PROPERTY, uint*, uint, int>)(lpVtbl[4]))((IUri*)Unsafe.AsPointer(ref this), uriProp, pcchProperty, dwFlags);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetPropertyDWORD(Uri_PROPERTY uriProp, [NativeTypeName("DWORD *")] uint* pdwProperty, [NativeTypeName("DWORD")] uint dwFlags)
+        public HRESULT GetPropertyDWORD(Uri_PROPERTY uriProp, [NativeTypeName("DWORD *")] uint* pdwProperty, [NativeTypeName("DWORD")] uint dwFlags)
         {
             return ((delegate* unmanaged<IUri*, Uri_PROPERTY, uint*, uint, int>)(lpVtbl[5]))((IUri*)Unsafe.AsPointer(ref this), uriProp, pdwProperty, dwFlags);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int HasProperty(Uri_PROPERTY uriProp, [NativeTypeName("BOOL *")] int* pfHasProperty)
+        public HRESULT HasProperty(Uri_PROPERTY uriProp, BOOL* pfHasProperty)
         {
-            return ((delegate* unmanaged<IUri*, Uri_PROPERTY, int*, int>)(lpVtbl[6]))((IUri*)Unsafe.AsPointer(ref this), uriProp, pfHasProperty);
+            return ((delegate* unmanaged<IUri*, Uri_PROPERTY, BOOL*, int>)(lpVtbl[6]))((IUri*)Unsafe.AsPointer(ref this), uriProp, pfHasProperty);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetAbsoluteUri([NativeTypeName("BSTR *")] ushort** pbstrAbsoluteUri)
+        public HRESULT GetAbsoluteUri([NativeTypeName("BSTR *")] ushort** pbstrAbsoluteUri)
         {
             return ((delegate* unmanaged<IUri*, ushort**, int>)(lpVtbl[7]))((IUri*)Unsafe.AsPointer(ref this), pbstrAbsoluteUri);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetAuthority([NativeTypeName("BSTR *")] ushort** pbstrAuthority)
+        public HRESULT GetAuthority([NativeTypeName("BSTR *")] ushort** pbstrAuthority)
         {
             return ((delegate* unmanaged<IUri*, ushort**, int>)(lpVtbl[8]))((IUri*)Unsafe.AsPointer(ref this), pbstrAuthority);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetDisplayUri([NativeTypeName("BSTR *")] ushort** pbstrDisplayString)
+        public HRESULT GetDisplayUri([NativeTypeName("BSTR *")] ushort** pbstrDisplayString)
         {
             return ((delegate* unmanaged<IUri*, ushort**, int>)(lpVtbl[9]))((IUri*)Unsafe.AsPointer(ref this), pbstrDisplayString);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(10)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetDomain([NativeTypeName("BSTR *")] ushort** pbstrDomain)
+        public HRESULT GetDomain([NativeTypeName("BSTR *")] ushort** pbstrDomain)
         {
             return ((delegate* unmanaged<IUri*, ushort**, int>)(lpVtbl[10]))((IUri*)Unsafe.AsPointer(ref this), pbstrDomain);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(11)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetExtension([NativeTypeName("BSTR *")] ushort** pbstrExtension)
+        public HRESULT GetExtension([NativeTypeName("BSTR *")] ushort** pbstrExtension)
         {
             return ((delegate* unmanaged<IUri*, ushort**, int>)(lpVtbl[11]))((IUri*)Unsafe.AsPointer(ref this), pbstrExtension);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(12)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetFragment([NativeTypeName("BSTR *")] ushort** pbstrFragment)
+        public HRESULT GetFragment([NativeTypeName("BSTR *")] ushort** pbstrFragment)
         {
             return ((delegate* unmanaged<IUri*, ushort**, int>)(lpVtbl[12]))((IUri*)Unsafe.AsPointer(ref this), pbstrFragment);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(13)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetHost([NativeTypeName("BSTR *")] ushort** pbstrHost)
+        public HRESULT GetHost([NativeTypeName("BSTR *")] ushort** pbstrHost)
         {
             return ((delegate* unmanaged<IUri*, ushort**, int>)(lpVtbl[13]))((IUri*)Unsafe.AsPointer(ref this), pbstrHost);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(14)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetPassword([NativeTypeName("BSTR *")] ushort** pbstrPassword)
+        public HRESULT GetPassword([NativeTypeName("BSTR *")] ushort** pbstrPassword)
         {
             return ((delegate* unmanaged<IUri*, ushort**, int>)(lpVtbl[14]))((IUri*)Unsafe.AsPointer(ref this), pbstrPassword);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(15)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetPath([NativeTypeName("BSTR *")] ushort** pbstrPath)
+        public HRESULT GetPath([NativeTypeName("BSTR *")] ushort** pbstrPath)
         {
             return ((delegate* unmanaged<IUri*, ushort**, int>)(lpVtbl[15]))((IUri*)Unsafe.AsPointer(ref this), pbstrPath);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(16)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetPathAndQuery([NativeTypeName("BSTR *")] ushort** pbstrPathAndQuery)
+        public HRESULT GetPathAndQuery([NativeTypeName("BSTR *")] ushort** pbstrPathAndQuery)
         {
             return ((delegate* unmanaged<IUri*, ushort**, int>)(lpVtbl[16]))((IUri*)Unsafe.AsPointer(ref this), pbstrPathAndQuery);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(17)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetQuery([NativeTypeName("BSTR *")] ushort** pbstrQuery)
+        public HRESULT GetQuery([NativeTypeName("BSTR *")] ushort** pbstrQuery)
         {
             return ((delegate* unmanaged<IUri*, ushort**, int>)(lpVtbl[17]))((IUri*)Unsafe.AsPointer(ref this), pbstrQuery);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(18)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetRawUri([NativeTypeName("BSTR *")] ushort** pbstrRawUri)
+        public HRESULT GetRawUri([NativeTypeName("BSTR *")] ushort** pbstrRawUri)
         {
             return ((delegate* unmanaged<IUri*, ushort**, int>)(lpVtbl[18]))((IUri*)Unsafe.AsPointer(ref this), pbstrRawUri);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(19)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetSchemeName([NativeTypeName("BSTR *")] ushort** pbstrSchemeName)
+        public HRESULT GetSchemeName([NativeTypeName("BSTR *")] ushort** pbstrSchemeName)
         {
             return ((delegate* unmanaged<IUri*, ushort**, int>)(lpVtbl[19]))((IUri*)Unsafe.AsPointer(ref this), pbstrSchemeName);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(20)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetUserInfo([NativeTypeName("BSTR *")] ushort** pbstrUserInfo)
+        public HRESULT GetUserInfo([NativeTypeName("BSTR *")] ushort** pbstrUserInfo)
         {
             return ((delegate* unmanaged<IUri*, ushort**, int>)(lpVtbl[20]))((IUri*)Unsafe.AsPointer(ref this), pbstrUserInfo);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(21)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetUserName([NativeTypeName("BSTR *")] ushort** pbstrUserName)
+        public HRESULT GetUserName([NativeTypeName("BSTR *")] ushort** pbstrUserName)
         {
             return ((delegate* unmanaged<IUri*, ushort**, int>)(lpVtbl[21]))((IUri*)Unsafe.AsPointer(ref this), pbstrUserName);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(22)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetHostType([NativeTypeName("DWORD *")] uint* pdwHostType)
+        public HRESULT GetHostType([NativeTypeName("DWORD *")] uint* pdwHostType)
         {
             return ((delegate* unmanaged<IUri*, uint*, int>)(lpVtbl[22]))((IUri*)Unsafe.AsPointer(ref this), pdwHostType);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(23)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetPort([NativeTypeName("DWORD *")] uint* pdwPort)
+        public HRESULT GetPort([NativeTypeName("DWORD *")] uint* pdwPort)
         {
             return ((delegate* unmanaged<IUri*, uint*, int>)(lpVtbl[23]))((IUri*)Unsafe.AsPointer(ref this), pdwPort);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(24)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetScheme([NativeTypeName("DWORD *")] uint* pdwScheme)
+        public HRESULT GetScheme([NativeTypeName("DWORD *")] uint* pdwScheme)
         {
             return ((delegate* unmanaged<IUri*, uint*, int>)(lpVtbl[24]))((IUri*)Unsafe.AsPointer(ref this), pdwScheme);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(25)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetZone([NativeTypeName("DWORD *")] uint* pdwZone)
+        public HRESULT GetZone([NativeTypeName("DWORD *")] uint* pdwZone)
         {
             return ((delegate* unmanaged<IUri*, uint*, int>)(lpVtbl[25]))((IUri*)Unsafe.AsPointer(ref this), pdwZone);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(26)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetProperties([NativeTypeName("LPDWORD")] uint* pdwFlags)
+        public HRESULT GetProperties([NativeTypeName("LPDWORD")] uint* pdwFlags)
         {
             return ((delegate* unmanaged<IUri*, uint*, int>)(lpVtbl[26]))((IUri*)Unsafe.AsPointer(ref this), pdwFlags);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(27)]
-        [return: NativeTypeName("HRESULT")]
-        public int IsEqual(IUri* pUri, [NativeTypeName("BOOL *")] int* pfEqual)
+        public HRESULT IsEqual(IUri* pUri, BOOL* pfEqual)
         {
-            return ((delegate* unmanaged<IUri*, IUri*, int*, int>)(lpVtbl[27]))((IUri*)Unsafe.AsPointer(ref this), pUri, pfEqual);
+            return ((delegate* unmanaged<IUri*, IUri*, BOOL*, int>)(lpVtbl[27]))((IUri*)Unsafe.AsPointer(ref this), pUri, pfEqual);
         }
     }
 }

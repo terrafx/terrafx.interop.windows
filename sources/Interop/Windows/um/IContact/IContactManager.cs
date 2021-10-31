@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IContactManager*, Guid*, void**, int>)(lpVtbl[0]))((IContactManager*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,48 +41,42 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int Initialize([NativeTypeName("LPCWSTR")] ushort* pszAppName, [NativeTypeName("LPCWSTR")] ushort* pszAppVersion)
+        public HRESULT Initialize([NativeTypeName("LPCWSTR")] ushort* pszAppName, [NativeTypeName("LPCWSTR")] ushort* pszAppVersion)
         {
             return ((delegate* unmanaged<IContactManager*, ushort*, ushort*, int>)(lpVtbl[3]))((IContactManager*)Unsafe.AsPointer(ref this), pszAppName, pszAppVersion);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int Load([NativeTypeName("LPCWSTR")] ushort* pszContactID, IContact** ppContact)
+        public HRESULT Load([NativeTypeName("LPCWSTR")] ushort* pszContactID, IContact** ppContact)
         {
             return ((delegate* unmanaged<IContactManager*, ushort*, IContact**, int>)(lpVtbl[4]))((IContactManager*)Unsafe.AsPointer(ref this), pszContactID, ppContact);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int MergeContactIDs([NativeTypeName("LPCWSTR")] ushort* pszNewContactID, [NativeTypeName("LPCWSTR")] ushort* pszOldContactID)
+        public HRESULT MergeContactIDs([NativeTypeName("LPCWSTR")] ushort* pszNewContactID, [NativeTypeName("LPCWSTR")] ushort* pszOldContactID)
         {
             return ((delegate* unmanaged<IContactManager*, ushort*, ushort*, int>)(lpVtbl[5]))((IContactManager*)Unsafe.AsPointer(ref this), pszNewContactID, pszOldContactID);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetMeContact(IContact** ppMeContact)
+        public HRESULT GetMeContact(IContact** ppMeContact)
         {
             return ((delegate* unmanaged<IContactManager*, IContact**, int>)(lpVtbl[6]))((IContactManager*)Unsafe.AsPointer(ref this), ppMeContact);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetMeContact(IContact* pMeContact)
+        public HRESULT SetMeContact(IContact* pMeContact)
         {
             return ((delegate* unmanaged<IContactManager*, IContact*, int>)(lpVtbl[7]))((IContactManager*)Unsafe.AsPointer(ref this), pMeContact);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetContactCollection(IContactCollection** ppContactCollection)
+        public HRESULT GetContactCollection(IContactCollection** ppContactCollection)
         {
             return ((delegate* unmanaged<IContactManager*, IContactCollection**, int>)(lpVtbl[8]))((IContactManager*)Unsafe.AsPointer(ref this), ppContactCollection);
         }

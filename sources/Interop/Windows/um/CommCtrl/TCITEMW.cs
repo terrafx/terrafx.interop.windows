@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct TCITEMW
     {
-        [NativeTypeName("UINT")]
         public uint mask;
 
         [NativeTypeName("DWORD")]

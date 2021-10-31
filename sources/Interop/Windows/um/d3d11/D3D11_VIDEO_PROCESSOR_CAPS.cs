@@ -7,31 +7,22 @@ namespace TerraFX.Interop
 {
     public partial struct D3D11_VIDEO_PROCESSOR_CAPS
     {
-        [NativeTypeName("UINT")]
         public uint DeviceCaps;
 
-        [NativeTypeName("UINT")]
         public uint FeatureCaps;
 
-        [NativeTypeName("UINT")]
         public uint FilterCaps;
 
-        [NativeTypeName("UINT")]
         public uint InputFormatCaps;
 
-        [NativeTypeName("UINT")]
         public uint AutoStreamCaps;
 
-        [NativeTypeName("UINT")]
         public uint StereoCaps;
 
-        [NativeTypeName("UINT")]
         public uint RateConversionCapsCount;
 
-        [NativeTypeName("UINT")]
         public uint MaxInputStreams;
 
-        [NativeTypeName("UINT")]
         public uint MaxStreamStates;
     }
 }

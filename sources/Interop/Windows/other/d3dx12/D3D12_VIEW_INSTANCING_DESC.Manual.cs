@@ -42,7 +42,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public D3D12_VIEW_INSTANCING_DESC([NativeTypeName("UINT")] uint InViewInstanceCount, [NativeTypeName("const D3D12_VIEW_INSTANCE_LOCATION *")] D3D12_VIEW_INSTANCE_LOCATION* InViewInstanceLocations, D3D12_VIEW_INSTANCING_FLAGS InFlags)
+        public D3D12_VIEW_INSTANCING_DESC(uint InViewInstanceCount, [NativeTypeName("const D3D12_VIEW_INSTANCE_LOCATION *")] D3D12_VIEW_INSTANCE_LOCATION* InViewInstanceLocations, D3D12_VIEW_INSTANCING_FLAGS InFlags)
         {
             ViewInstanceCount = InViewInstanceCount;
             pViewInstanceLocations = InViewInstanceLocations;

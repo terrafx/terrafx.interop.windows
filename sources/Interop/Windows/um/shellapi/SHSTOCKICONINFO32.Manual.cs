@@ -14,8 +14,7 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint cbSize;
 
-        [NativeTypeName("HICON")]
-        public IntPtr hIcon;
+        public HICON hIcon;
 
         public int iSysImageIndex;
 

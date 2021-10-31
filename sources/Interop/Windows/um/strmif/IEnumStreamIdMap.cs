@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IEnumStreamIdMap*, Guid*, void**, int>)(lpVtbl[0]))((IEnumStreamIdMap*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,32 +41,28 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int Next([NativeTypeName("ULONG")] uint cRequest, STREAM_ID_MAP* pStreamIdMap, [NativeTypeName("ULONG *")] uint* pcReceived)
+        public HRESULT Next([NativeTypeName("ULONG")] uint cRequest, STREAM_ID_MAP* pStreamIdMap, [NativeTypeName("ULONG *")] uint* pcReceived)
         {
             return ((delegate* unmanaged<IEnumStreamIdMap*, uint, STREAM_ID_MAP*, uint*, int>)(lpVtbl[3]))((IEnumStreamIdMap*)Unsafe.AsPointer(ref this), cRequest, pStreamIdMap, pcReceived);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int Skip([NativeTypeName("ULONG")] uint cRecords)
+        public HRESULT Skip([NativeTypeName("ULONG")] uint cRecords)
         {
             return ((delegate* unmanaged<IEnumStreamIdMap*, uint, int>)(lpVtbl[4]))((IEnumStreamIdMap*)Unsafe.AsPointer(ref this), cRecords);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int Reset()
+        public HRESULT Reset()
         {
             return ((delegate* unmanaged<IEnumStreamIdMap*, int>)(lpVtbl[5]))((IEnumStreamIdMap*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int Clone(IEnumStreamIdMap** ppIEnumStreamIdMap)
+        public HRESULT Clone(IEnumStreamIdMap** ppIEnumStreamIdMap)
         {
             return ((delegate* unmanaged<IEnumStreamIdMap*, IEnumStreamIdMap**, int>)(lpVtbl[6]))((IEnumStreamIdMap*)Unsafe.AsPointer(ref this), ppIEnumStreamIdMap);
         }

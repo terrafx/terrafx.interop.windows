@@ -7,10 +7,8 @@ namespace TerraFX.Interop
 {
     public partial struct QCMINFO_IDMAP_PLACEMENT
     {
-        [NativeTypeName("UINT")]
         public uint id;
 
-        [NativeTypeName("UINT")]
         public uint fFlags;
     }
 }

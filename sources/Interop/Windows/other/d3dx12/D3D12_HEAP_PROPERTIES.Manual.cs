@@ -12,7 +12,7 @@ namespace TerraFX.Interop
 {
     public partial struct D3D12_HEAP_PROPERTIES : IEquatable<D3D12_HEAP_PROPERTIES>
     {
-        public D3D12_HEAP_PROPERTIES(D3D12_CPU_PAGE_PROPERTY cpuPageProperty, D3D12_MEMORY_POOL memoryPoolPreference, [NativeTypeName("UINT")] uint creationNodeMask = 1, [NativeTypeName("UINT")] uint nodeMask = 1)
+        public D3D12_HEAP_PROPERTIES(D3D12_CPU_PAGE_PROPERTY cpuPageProperty, D3D12_MEMORY_POOL memoryPoolPreference, uint creationNodeMask = 1, uint nodeMask = 1)
         {
             Type = D3D12_HEAP_TYPE_CUSTOM;
             CPUPageProperty = cpuPageProperty;
@@ -21,7 +21,7 @@ namespace TerraFX.Interop
             VisibleNodeMask = nodeMask;
         }
 
-        public D3D12_HEAP_PROPERTIES(D3D12_HEAP_TYPE type, [NativeTypeName("UINT")] uint creationNodeMask = 1, [NativeTypeName("UINT")] uint nodeMask = 1)
+        public D3D12_HEAP_PROPERTIES(D3D12_HEAP_TYPE type, uint creationNodeMask = 1, uint nodeMask = 1)
         {
             Type = type;
             CPUPageProperty = D3D12_CPU_PAGE_PROPERTY_UNKNOWN;

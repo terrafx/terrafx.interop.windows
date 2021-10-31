@@ -7,22 +7,16 @@ namespace TerraFX.Interop
 {
     public partial struct LVGROUPMETRICS
     {
-        [NativeTypeName("UINT")]
         public uint cbSize;
 
-        [NativeTypeName("UINT")]
         public uint mask;
 
-        [NativeTypeName("UINT")]
         public uint Left;
 
-        [NativeTypeName("UINT")]
         public uint Top;
 
-        [NativeTypeName("UINT")]
         public uint Right;
 
-        [NativeTypeName("UINT")]
         public uint Bottom;
 
         [NativeTypeName("COLORREF")]

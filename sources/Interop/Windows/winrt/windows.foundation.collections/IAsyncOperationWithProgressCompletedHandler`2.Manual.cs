@@ -17,8 +17,7 @@ namespace TerraFX.Interop
         public void** lpVtbl;
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
             return ((delegate* unmanaged<IAsyncOperationWithProgressCompletedHandler<TResult, TProgress>*, Guid*, void**, int>)(lpVtbl[0]))((IAsyncOperationWithProgressCompletedHandler<TResult, TProgress>*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -38,8 +37,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [return: NativeTypeName("HRESULT")]
-        public int Invoke([NativeTypeName("IAsyncOperationWithProgress<TResult_logical, TProgress_logical> *")] IAsyncOperationWithProgress<TResult, TProgress>* asyncInfo, [NativeTypeName("Windows::Foundation::AsyncStatus")] AsyncStatus status)
+        public HRESULT Invoke([NativeTypeName("IAsyncOperationWithProgress<TResult_logical, TProgress_logical> *")] IAsyncOperationWithProgress<TResult, TProgress>* asyncInfo, [NativeTypeName("Windows::Foundation::AsyncStatus")] AsyncStatus status)
         {
             return ((delegate* unmanaged<IAsyncOperationWithProgressCompletedHandler<TResult, TProgress>*, IAsyncOperationWithProgress<TResult, TProgress>*, AsyncStatus, int>)(lpVtbl[3]))((IAsyncOperationWithProgressCompletedHandler<TResult, TProgress>*)Unsafe.AsPointer(ref this), asyncInfo, status);
         }

@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct HIGHCONTRASTA
     {
-        [NativeTypeName("UINT")]
         public uint cbSize;
 
         [NativeTypeName("DWORD")]

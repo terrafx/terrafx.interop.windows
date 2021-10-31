@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IDropTargetHelper*, Guid*, void**, int>)(lpVtbl[0]))((IDropTargetHelper*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,42 +41,37 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int DragEnter([NativeTypeName("HWND")] IntPtr hwndTarget, IDataObject* pDataObject, POINT* ppt, [NativeTypeName("DWORD")] uint dwEffect)
+        public HRESULT DragEnter(HWND hwndTarget, IDataObject* pDataObject, POINT* ppt, [NativeTypeName("DWORD")] uint dwEffect)
         {
-            return ((delegate* unmanaged<IDropTargetHelper*, IntPtr, IDataObject*, POINT*, uint, int>)(lpVtbl[3]))((IDropTargetHelper*)Unsafe.AsPointer(ref this), hwndTarget, pDataObject, ppt, dwEffect);
+            return ((delegate* unmanaged<IDropTargetHelper*, HWND, IDataObject*, POINT*, uint, int>)(lpVtbl[3]))((IDropTargetHelper*)Unsafe.AsPointer(ref this), hwndTarget, pDataObject, ppt, dwEffect);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int DragLeave()
+        public HRESULT DragLeave()
         {
             return ((delegate* unmanaged<IDropTargetHelper*, int>)(lpVtbl[4]))((IDropTargetHelper*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int DragOver(POINT* ppt, [NativeTypeName("DWORD")] uint dwEffect)
+        public HRESULT DragOver(POINT* ppt, [NativeTypeName("DWORD")] uint dwEffect)
         {
             return ((delegate* unmanaged<IDropTargetHelper*, POINT*, uint, int>)(lpVtbl[5]))((IDropTargetHelper*)Unsafe.AsPointer(ref this), ppt, dwEffect);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int Drop(IDataObject* pDataObject, POINT* ppt, [NativeTypeName("DWORD")] uint dwEffect)
+        public HRESULT Drop(IDataObject* pDataObject, POINT* ppt, [NativeTypeName("DWORD")] uint dwEffect)
         {
             return ((delegate* unmanaged<IDropTargetHelper*, IDataObject*, POINT*, uint, int>)(lpVtbl[6]))((IDropTargetHelper*)Unsafe.AsPointer(ref this), pDataObject, ppt, dwEffect);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        [return: NativeTypeName("HRESULT")]
-        public int Show([NativeTypeName("BOOL")] int fShow)
+        public HRESULT Show(BOOL fShow)
         {
-            return ((delegate* unmanaged<IDropTargetHelper*, int, int>)(lpVtbl[7]))((IDropTargetHelper*)Unsafe.AsPointer(ref this), fShow);
+            return ((delegate* unmanaged<IDropTargetHelper*, BOOL, int>)(lpVtbl[7]))((IDropTargetHelper*)Unsafe.AsPointer(ref this), fShow);
         }
     }
 }

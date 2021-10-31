@@ -9,7 +9,6 @@ namespace TerraFX.Interop
 {
     public partial struct PROPERTYKEY
     {
-        [NativeTypeName("GUID")]
         public Guid fmtid;
 
         [NativeTypeName("DWORD")]

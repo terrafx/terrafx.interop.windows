@@ -10,7 +10,6 @@ namespace TerraFX.Interop
         [NativeTypeName("ULONG")]
         public uint cbSize;
 
-        [NativeTypeName("BYTE *")]
         public byte* pData;
     }
 }

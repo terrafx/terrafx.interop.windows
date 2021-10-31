@@ -30,10 +30,8 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint IdleTimeout;
 
-        [NativeTypeName("BYTE")]
         public byte IdleSensitivity;
 
-        [NativeTypeName("BYTE")]
         public byte DynamicThrottle;
 
         [NativeTypeName("BYTE [2]")]
@@ -75,13 +73,10 @@ namespace TerraFX.Interop
         [NativeTypeName("BOOLEAN")]
         public byte OptimizeForPower;
 
-        [NativeTypeName("BYTE")]
         public byte FanThrottleTolerance;
 
-        [NativeTypeName("BYTE")]
         public byte ForcedThrottle;
 
-        [NativeTypeName("BYTE")]
         public byte MinThrottle;
 
         public POWER_ACTION_POLICY OverThrottled;

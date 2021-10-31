@@ -9,20 +9,16 @@ namespace TerraFX.Interop
     {
         public D3D11_VIDEO_DECODER_BUFFER_TYPE BufferType;
 
-        [NativeTypeName("UINT")]
         public uint DataOffset;
 
-        [NativeTypeName("UINT")]
         public uint DataSize;
 
         public void* pIV;
 
-        [NativeTypeName("UINT")]
         public uint IVSize;
 
         public D3D11_VIDEO_DECODER_SUB_SAMPLE_MAPPING_BLOCK* pSubSampleMappingBlock;
 
-        [NativeTypeName("UINT")]
         public uint SubSampleMappingCount;
     }
 }

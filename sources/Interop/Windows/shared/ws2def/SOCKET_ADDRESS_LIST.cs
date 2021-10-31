@@ -11,7 +11,6 @@ namespace TerraFX.Interop
 {
     public partial struct SOCKET_ADDRESS_LIST
     {
-        [NativeTypeName("INT")]
         public int iAddressCount;
 
         [NativeTypeName("SOCKET_ADDRESS [1]")]

@@ -7,10 +7,8 @@ namespace TerraFX.Interop
 {
     public partial struct D3D11_TEX3D_SRV
     {
-        [NativeTypeName("UINT")]
         public uint MostDetailedMip;
 
-        [NativeTypeName("UINT")]
         public uint MipLevels;
     }
 }

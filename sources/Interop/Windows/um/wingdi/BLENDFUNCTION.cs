@@ -7,16 +7,12 @@ namespace TerraFX.Interop
 {
     public partial struct BLENDFUNCTION
     {
-        [NativeTypeName("BYTE")]
         public byte BlendOp;
 
-        [NativeTypeName("BYTE")]
         public byte BlendFlags;
 
-        [NativeTypeName("BYTE")]
         public byte SourceConstantAlpha;
 
-        [NativeTypeName("BYTE")]
         public byte AlphaFormat;
     }
 }

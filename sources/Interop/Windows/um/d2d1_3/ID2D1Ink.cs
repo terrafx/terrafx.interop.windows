@@ -16,16 +16,14 @@ namespace TerraFX.Interop
     {
         public void** lpVtbl;
 
-        [return: NativeTypeName("HRESULT")]
-        public int StreamAsGeometry(ID2D1InkStyle* inkStyle, [NativeTypeName("const D2D1_MATRIX_3X2_F *")] D2D_MATRIX_3X2_F* worldTransform, ID2D1SimplifiedGeometrySink* geometrySink)
+        public HRESULT StreamAsGeometry(ID2D1InkStyle* inkStyle, [NativeTypeName("const D2D1_MATRIX_3X2_F *")] D2D_MATRIX_3X2_F* worldTransform, ID2D1SimplifiedGeometrySink* geometrySink)
         {
             return StreamAsGeometry(inkStyle, worldTransform, (0.25f), geometrySink);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<ID2D1Ink*, Guid*, void**, int>)(lpVtbl[0]))((ID2D1Ink*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -70,32 +68,28 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int AddSegments([NativeTypeName("const D2D1_INK_BEZIER_SEGMENT *")] D2D1_INK_BEZIER_SEGMENT* segments, [NativeTypeName("UINT32")] uint segmentsCount)
+        public HRESULT AddSegments([NativeTypeName("const D2D1_INK_BEZIER_SEGMENT *")] D2D1_INK_BEZIER_SEGMENT* segments, [NativeTypeName("UINT32")] uint segmentsCount)
         {
             return ((delegate* unmanaged<ID2D1Ink*, D2D1_INK_BEZIER_SEGMENT*, uint, int>)(lpVtbl[6]))((ID2D1Ink*)Unsafe.AsPointer(ref this), segments, segmentsCount);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        [return: NativeTypeName("HRESULT")]
-        public int RemoveSegmentsAtEnd([NativeTypeName("UINT32")] uint segmentsCount)
+        public HRESULT RemoveSegmentsAtEnd([NativeTypeName("UINT32")] uint segmentsCount)
         {
             return ((delegate* unmanaged<ID2D1Ink*, uint, int>)(lpVtbl[7]))((ID2D1Ink*)Unsafe.AsPointer(ref this), segmentsCount);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetSegments([NativeTypeName("UINT32")] uint startSegment, [NativeTypeName("const D2D1_INK_BEZIER_SEGMENT *")] D2D1_INK_BEZIER_SEGMENT* segments, [NativeTypeName("UINT32")] uint segmentsCount)
+        public HRESULT SetSegments([NativeTypeName("UINT32")] uint startSegment, [NativeTypeName("const D2D1_INK_BEZIER_SEGMENT *")] D2D1_INK_BEZIER_SEGMENT* segments, [NativeTypeName("UINT32")] uint segmentsCount)
         {
             return ((delegate* unmanaged<ID2D1Ink*, uint, D2D1_INK_BEZIER_SEGMENT*, uint, int>)(lpVtbl[8]))((ID2D1Ink*)Unsafe.AsPointer(ref this), startSegment, segments, segmentsCount);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetSegmentAtEnd([NativeTypeName("const D2D1_INK_BEZIER_SEGMENT *")] D2D1_INK_BEZIER_SEGMENT* segment)
+        public HRESULT SetSegmentAtEnd([NativeTypeName("const D2D1_INK_BEZIER_SEGMENT *")] D2D1_INK_BEZIER_SEGMENT* segment)
         {
             return ((delegate* unmanaged<ID2D1Ink*, D2D1_INK_BEZIER_SEGMENT*, int>)(lpVtbl[9]))((ID2D1Ink*)Unsafe.AsPointer(ref this), segment);
         }
@@ -110,24 +104,21 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(11)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetSegments([NativeTypeName("UINT32")] uint startSegment, D2D1_INK_BEZIER_SEGMENT* segments, [NativeTypeName("UINT32")] uint segmentsCount)
+        public HRESULT GetSegments([NativeTypeName("UINT32")] uint startSegment, D2D1_INK_BEZIER_SEGMENT* segments, [NativeTypeName("UINT32")] uint segmentsCount)
         {
             return ((delegate* unmanaged<ID2D1Ink*, uint, D2D1_INK_BEZIER_SEGMENT*, uint, int>)(lpVtbl[11]))((ID2D1Ink*)Unsafe.AsPointer(ref this), startSegment, segments, segmentsCount);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(12)]
-        [return: NativeTypeName("HRESULT")]
-        public int StreamAsGeometry(ID2D1InkStyle* inkStyle, [NativeTypeName("const D2D1_MATRIX_3X2_F *")] D2D_MATRIX_3X2_F* worldTransform, [NativeTypeName("FLOAT")] float flatteningTolerance, ID2D1SimplifiedGeometrySink* geometrySink)
+        public HRESULT StreamAsGeometry(ID2D1InkStyle* inkStyle, [NativeTypeName("const D2D1_MATRIX_3X2_F *")] D2D_MATRIX_3X2_F* worldTransform, float flatteningTolerance, ID2D1SimplifiedGeometrySink* geometrySink)
         {
             return ((delegate* unmanaged<ID2D1Ink*, ID2D1InkStyle*, D2D_MATRIX_3X2_F*, float, ID2D1SimplifiedGeometrySink*, int>)(lpVtbl[12]))((ID2D1Ink*)Unsafe.AsPointer(ref this), inkStyle, worldTransform, flatteningTolerance, geometrySink);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(13)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetBounds(ID2D1InkStyle* inkStyle, [NativeTypeName("const D2D1_MATRIX_3X2_F *")] D2D_MATRIX_3X2_F* worldTransform, [NativeTypeName("D2D1_RECT_F *")] D2D_RECT_F* bounds)
+        public HRESULT GetBounds(ID2D1InkStyle* inkStyle, [NativeTypeName("const D2D1_MATRIX_3X2_F *")] D2D_MATRIX_3X2_F* worldTransform, [NativeTypeName("D2D1_RECT_F *")] D2D_RECT_F* bounds)
         {
             return ((delegate* unmanaged<ID2D1Ink*, ID2D1InkStyle*, D2D_MATRIX_3X2_F*, D2D_RECT_F*, int>)(lpVtbl[13]))((ID2D1Ink*)Unsafe.AsPointer(ref this), inkStyle, worldTransform, bounds);
         }

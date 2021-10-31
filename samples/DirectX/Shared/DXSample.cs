@@ -42,7 +42,7 @@ namespace TerraFX.Samples.DirectX
         private uint _frameIndex;
         private uint _framesPerSecond;
         private uint _framesThisSecond;
-        private IntPtr _hwnd;
+        private HWND _hwnd;
         private bool _isWindowVisible;
         private uint _previousFrameCount;
         private TimeSpan _previousTimestamp;
@@ -91,7 +91,7 @@ namespace TerraFX.Samples.DirectX
 
         public ref uint FrameIndex => ref _frameIndex;
 
-        public IntPtr Hwnd => _hwnd;
+        public HWND Hwnd => _hwnd;
 
         public bool IsWindowVisible => _isWindowVisible;
 
@@ -153,7 +153,7 @@ namespace TerraFX.Samples.DirectX
             DestroyDeviceDependentResources();
         }
 
-        public void OnInit(DXGI_FORMAT backBufferFormat, Vector4 backgroundColor, DXGI_FORMAT depthBufferFormat, float dpi, uint frameCount, IntPtr hwnd, bool isWindowVisible, Size size, bool useWarpDevice)
+        public void OnInit(DXGI_FORMAT backBufferFormat, Vector4 backgroundColor, DXGI_FORMAT depthBufferFormat, float dpi, uint frameCount, HWND hwnd, bool isWindowVisible, Size size, bool useWarpDevice)
         {
             _backBufferFormat = (backBufferFormat != DXGI_FORMAT_UNKNOWN) ? backBufferFormat : DXGI_FORMAT_R8G8B8A8_UNORM;
             _backgroundColor = backgroundColor;

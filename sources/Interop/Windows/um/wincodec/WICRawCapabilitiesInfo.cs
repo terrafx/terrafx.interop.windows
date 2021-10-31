@@ -7,13 +7,10 @@ namespace TerraFX.Interop
 {
     public partial struct WICRawCapabilitiesInfo
     {
-        [NativeTypeName("UINT")]
         public uint cbSize;
 
-        [NativeTypeName("UINT")]
         public uint CodecMajorVersion;
 
-        [NativeTypeName("UINT")]
         public uint CodecMinorVersion;
 
         public WICRawCapabilities ExposureCompensationSupport;
@@ -24,7 +21,6 @@ namespace TerraFX.Interop
 
         public WICRawCapabilities NamedWhitePointSupport;
 
-        [NativeTypeName("UINT")]
         public uint NamedWhitePointSupportMask;
 
         public WICRawCapabilities KelvinWhitePointSupport;

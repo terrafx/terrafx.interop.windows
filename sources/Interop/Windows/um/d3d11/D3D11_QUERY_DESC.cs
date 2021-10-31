@@ -9,7 +9,6 @@ namespace TerraFX.Interop
     {
         public D3D11_QUERY Query;
 
-        [NativeTypeName("UINT")]
         public uint MiscFlags;
     }
 }

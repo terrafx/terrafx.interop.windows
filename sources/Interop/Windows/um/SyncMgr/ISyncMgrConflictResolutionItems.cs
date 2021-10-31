@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<ISyncMgrConflictResolutionItems*, Guid*, void**, int>)(lpVtbl[0]))((ISyncMgrConflictResolutionItems*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,16 +41,14 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetCount([NativeTypeName("UINT *")] uint* pCount)
+        public HRESULT GetCount(uint* pCount)
         {
             return ((delegate* unmanaged<ISyncMgrConflictResolutionItems*, uint*, int>)(lpVtbl[3]))((ISyncMgrConflictResolutionItems*)Unsafe.AsPointer(ref this), pCount);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetItem([NativeTypeName("UINT")] uint iIndex, CONFIRM_CONFLICT_RESULT_INFO* pItemInfo)
+        public HRESULT GetItem(uint iIndex, CONFIRM_CONFLICT_RESULT_INFO* pItemInfo)
         {
             return ((delegate* unmanaged<ISyncMgrConflictResolutionItems*, uint, CONFIRM_CONFLICT_RESULT_INFO*, int>)(lpVtbl[4]))((ISyncMgrConflictResolutionItems*)Unsafe.AsPointer(ref this), iIndex, pItemInfo);
         }

@@ -16,16 +16,13 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint Value;
 
-        [NativeTypeName("SHORT")]
         public short SectionNumber;
 
         [NativeTypeName("WORD")]
         public ushort Type;
 
-        [NativeTypeName("BYTE")]
         public byte StorageClass;
 
-        [NativeTypeName("BYTE")]
         public byte NumberOfAuxSymbols;
 
         [StructLayout(LayoutKind.Explicit, Pack = 2)]

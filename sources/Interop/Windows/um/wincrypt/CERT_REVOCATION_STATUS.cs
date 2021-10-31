@@ -19,8 +19,7 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint dwReason;
 
-        [NativeTypeName("BOOL")]
-        public int fHasFreshnessTime;
+        public BOOL fHasFreshnessTime;
 
         [NativeTypeName("DWORD")]
         public uint dwFreshnessTime;

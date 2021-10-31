@@ -9,7 +9,7 @@ namespace TerraFX.Interop
 {
     public partial struct D3D10_BUFFER_DESC
     {
-        public D3D10_BUFFER_DESC([NativeTypeName("UINT")] uint byteWidth, [NativeTypeName("UINT")] uint bindFlags, D3D10_USAGE usage = D3D10_USAGE_DEFAULT, [NativeTypeName("UINT")] uint cpuaccessFlags = 0, [NativeTypeName("UINT")] uint miscFlags = 0)
+        public D3D10_BUFFER_DESC(uint byteWidth, uint bindFlags, D3D10_USAGE usage = D3D10_USAGE_DEFAULT, uint cpuaccessFlags = 0, uint miscFlags = 0)
         {
             ByteWidth = byteWidth;
             Usage = usage;

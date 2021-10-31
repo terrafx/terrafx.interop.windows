@@ -7,10 +7,8 @@ namespace TerraFX.Interop
 {
     public partial struct TBINFO
     {
-        [NativeTypeName("UINT")]
         public uint cbuttons;
 
-        [NativeTypeName("UINT")]
         public uint uFlags;
     }
 }

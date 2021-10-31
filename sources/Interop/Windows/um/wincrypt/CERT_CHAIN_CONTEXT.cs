@@ -26,8 +26,7 @@ namespace TerraFX.Interop
         [NativeTypeName("PCCERT_CHAIN_CONTEXT *")]
         public CERT_CHAIN_CONTEXT** rgpLowerQualityChainContext;
 
-        [NativeTypeName("BOOL")]
-        public int fHasRevocationFreshnessTime;
+        public BOOL fHasRevocationFreshnessTime;
 
         [NativeTypeName("DWORD")]
         public uint dwRevocationFreshnessTime;
@@ -35,7 +34,6 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint dwCreateFlags;
 
-        [NativeTypeName("GUID")]
         public Guid ChainId;
     }
 }

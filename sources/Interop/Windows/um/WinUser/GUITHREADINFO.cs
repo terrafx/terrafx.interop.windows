@@ -3,8 +3,6 @@
 // Ported from um/WinUser.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
-
 namespace TerraFX.Interop
 {
     public partial struct GUITHREADINFO
@@ -15,23 +13,17 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint flags;
 
-        [NativeTypeName("HWND")]
-        public IntPtr hwndActive;
+        public HWND hwndActive;
 
-        [NativeTypeName("HWND")]
-        public IntPtr hwndFocus;
+        public HWND hwndFocus;
 
-        [NativeTypeName("HWND")]
-        public IntPtr hwndCapture;
+        public HWND hwndCapture;
 
-        [NativeTypeName("HWND")]
-        public IntPtr hwndMenuOwner;
+        public HWND hwndMenuOwner;
 
-        [NativeTypeName("HWND")]
-        public IntPtr hwndMoveSize;
+        public HWND hwndMoveSize;
 
-        [NativeTypeName("HWND")]
-        public IntPtr hwndCaret;
+        public HWND hwndCaret;
 
         public RECT rcCaret;
     }

@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IMFSampleAllocatorControl*, Guid*, void**, int>)(lpVtbl[0]))((IMFSampleAllocatorControl*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,16 +41,14 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetDefaultAllocator([NativeTypeName("DWORD")] uint dwOutputStreamID, IUnknown* pAllocator)
+        public HRESULT SetDefaultAllocator([NativeTypeName("DWORD")] uint dwOutputStreamID, IUnknown* pAllocator)
         {
             return ((delegate* unmanaged<IMFSampleAllocatorControl*, uint, IUnknown*, int>)(lpVtbl[3]))((IMFSampleAllocatorControl*)Unsafe.AsPointer(ref this), dwOutputStreamID, pAllocator);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetAllocatorUsage([NativeTypeName("DWORD")] uint dwOutputStreamID, [NativeTypeName("DWORD *")] uint* pdwInputStreamID, MFSampleAllocatorUsage* peUsage)
+        public HRESULT GetAllocatorUsage([NativeTypeName("DWORD")] uint dwOutputStreamID, [NativeTypeName("DWORD *")] uint* pdwInputStreamID, MFSampleAllocatorUsage* peUsage)
         {
             return ((delegate* unmanaged<IMFSampleAllocatorControl*, uint, uint*, MFSampleAllocatorUsage*, int>)(lpVtbl[4]))((IMFSampleAllocatorControl*)Unsafe.AsPointer(ref this), dwOutputStreamID, pdwInputStreamID, peUsage);
         }

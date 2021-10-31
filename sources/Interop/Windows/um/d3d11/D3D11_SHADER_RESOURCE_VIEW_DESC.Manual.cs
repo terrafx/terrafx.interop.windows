@@ -10,7 +10,7 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct D3D11_SHADER_RESOURCE_VIEW_DESC
     {
-        public D3D11_SHADER_RESOURCE_VIEW_DESC(D3D_SRV_DIMENSION viewDimension, DXGI_FORMAT format = DXGI_FORMAT_UNKNOWN, [NativeTypeName("UINT")] uint mostDetailedMip = 0, [NativeTypeName("UINT")] uint mipLevels = unchecked((uint)-1), [NativeTypeName("UINT")] uint firstArraySlice = 0, [NativeTypeName("UINT")] uint arraySize = unchecked((uint)-1), [NativeTypeName("UINT")] uint flags = 0)
+        public D3D11_SHADER_RESOURCE_VIEW_DESC(D3D_SRV_DIMENSION viewDimension, DXGI_FORMAT format = DXGI_FORMAT_UNKNOWN, uint mostDetailedMip = 0, uint mipLevels = unchecked((uint)-1), uint firstArraySlice = 0, uint arraySize = unchecked((uint)-1), uint flags = 0)
         {
             Format = format;
             ViewDimension = viewDimension;
@@ -107,7 +107,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public D3D11_SHADER_RESOURCE_VIEW_DESC(ID3D11Buffer* param0, DXGI_FORMAT format, [NativeTypeName("UINT")] uint firstElement, [NativeTypeName("UINT")] uint numElements, [NativeTypeName("UINT")] uint flags = 0)
+        public D3D11_SHADER_RESOURCE_VIEW_DESC(ID3D11Buffer* param0, DXGI_FORMAT format, uint firstElement, uint numElements, uint flags = 0)
         {
             Format = format;
             ViewDimension = D3D11_SRV_DIMENSION_BUFFEREX;
@@ -118,7 +118,7 @@ namespace TerraFX.Interop
             Anonymous.BufferEx.Flags = flags;
         }
 
-        public D3D11_SHADER_RESOURCE_VIEW_DESC(ID3D11Texture1D* pTex1D, D3D_SRV_DIMENSION viewDimension, DXGI_FORMAT format = DXGI_FORMAT_UNKNOWN, [NativeTypeName("UINT")] uint  mostDetailedMip = 0, [NativeTypeName("UINT")] uint  mipLevels = unchecked((uint)-1), [NativeTypeName("UINT")] uint  firstArraySlice = 0, [NativeTypeName("UINT")] uint arraySize = unchecked((uint)-1))
+        public D3D11_SHADER_RESOURCE_VIEW_DESC(ID3D11Texture1D* pTex1D, D3D_SRV_DIMENSION viewDimension, DXGI_FORMAT format = DXGI_FORMAT_UNKNOWN, uint  mostDetailedMip = 0, uint  mipLevels = unchecked((uint)-1), uint  firstArraySlice = 0, uint arraySize = unchecked((uint)-1))
         {
             ViewDimension = viewDimension;
 
@@ -170,7 +170,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public D3D11_SHADER_RESOURCE_VIEW_DESC(ID3D11Texture2D* pTex2D, D3D_SRV_DIMENSION viewDimension, DXGI_FORMAT format = DXGI_FORMAT_UNKNOWN, [NativeTypeName("UINT")] uint mostDetailedMip = 0, [NativeTypeName("UINT")] uint mipLevels = unchecked((uint)-1), [NativeTypeName("UINT")] uint firstArraySlice = 0, [NativeTypeName("UINT")] uint arraySize = unchecked((uint)-1))
+        public D3D11_SHADER_RESOURCE_VIEW_DESC(ID3D11Texture2D* pTex2D, D3D_SRV_DIMENSION viewDimension, DXGI_FORMAT format = DXGI_FORMAT_UNKNOWN, uint mostDetailedMip = 0, uint mipLevels = unchecked((uint)-1), uint firstArraySlice = 0, uint arraySize = unchecked((uint)-1))
         {
             ViewDimension = viewDimension;
 
@@ -253,7 +253,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public D3D11_SHADER_RESOURCE_VIEW_DESC(ID3D11Texture3D* pTex3D, DXGI_FORMAT format = DXGI_FORMAT_UNKNOWN, [NativeTypeName("UINT")] uint mostDetailedMip = 0, [NativeTypeName("UINT")] uint mipLevels = unchecked((uint)-1))
+        public D3D11_SHADER_RESOURCE_VIEW_DESC(ID3D11Texture3D* pTex3D, DXGI_FORMAT format = DXGI_FORMAT_UNKNOWN, uint mostDetailedMip = 0, uint mipLevels = unchecked((uint)-1))
         {
             ViewDimension = D3D11_SRV_DIMENSION_TEXTURE3D;
 

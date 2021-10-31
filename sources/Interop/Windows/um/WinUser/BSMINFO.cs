@@ -3,20 +3,15 @@
 // Ported from um/WinUser.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
-
 namespace TerraFX.Interop
 {
     public partial struct BSMINFO
     {
-        [NativeTypeName("UINT")]
         public uint cbSize;
 
-        [NativeTypeName("HDESK")]
-        public IntPtr hdesk;
+        public HDESK hdesk;
 
-        [NativeTypeName("HWND")]
-        public IntPtr hwnd;
+        public HWND hwnd;
 
         public LUID luid;
     }

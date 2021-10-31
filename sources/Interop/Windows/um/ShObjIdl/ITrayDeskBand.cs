@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<ITrayDeskBand*, Guid*, void**, int>)(lpVtbl[0]))((ITrayDeskBand*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,32 +41,28 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int ShowDeskBand([NativeTypeName("const IID &")] Guid* clsid)
+        public HRESULT ShowDeskBand([NativeTypeName("const IID &")] Guid* clsid)
         {
             return ((delegate* unmanaged<ITrayDeskBand*, Guid*, int>)(lpVtbl[3]))((ITrayDeskBand*)Unsafe.AsPointer(ref this), clsid);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int HideDeskBand([NativeTypeName("const IID &")] Guid* clsid)
+        public HRESULT HideDeskBand([NativeTypeName("const IID &")] Guid* clsid)
         {
             return ((delegate* unmanaged<ITrayDeskBand*, Guid*, int>)(lpVtbl[4]))((ITrayDeskBand*)Unsafe.AsPointer(ref this), clsid);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int IsDeskBandShown([NativeTypeName("const IID &")] Guid* clsid)
+        public HRESULT IsDeskBandShown([NativeTypeName("const IID &")] Guid* clsid)
         {
             return ((delegate* unmanaged<ITrayDeskBand*, Guid*, int>)(lpVtbl[5]))((ITrayDeskBand*)Unsafe.AsPointer(ref this), clsid);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int DeskBandRegistrationChanged()
+        public HRESULT DeskBandRegistrationChanged()
         {
             return ((delegate* unmanaged<ITrayDeskBand*, int>)(lpVtbl[6]))((ITrayDeskBand*)Unsafe.AsPointer(ref this));
         }

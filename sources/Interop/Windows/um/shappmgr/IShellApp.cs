@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IShellApp*, Guid*, void**, int>)(lpVtbl[0]))((IShellApp*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,40 +41,35 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetAppInfo([NativeTypeName("PAPPINFODATA")] APPINFODATA* pai)
+        public HRESULT GetAppInfo([NativeTypeName("PAPPINFODATA")] APPINFODATA* pai)
         {
             return ((delegate* unmanaged<IShellApp*, APPINFODATA*, int>)(lpVtbl[3]))((IShellApp*)Unsafe.AsPointer(ref this), pai);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetPossibleActions([NativeTypeName("DWORD *")] uint* pdwActions)
+        public HRESULT GetPossibleActions([NativeTypeName("DWORD *")] uint* pdwActions)
         {
             return ((delegate* unmanaged<IShellApp*, uint*, int>)(lpVtbl[4]))((IShellApp*)Unsafe.AsPointer(ref this), pdwActions);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetSlowAppInfo([NativeTypeName("PSLOWAPPINFO")] SLOWAPPINFO* psaid)
+        public HRESULT GetSlowAppInfo([NativeTypeName("PSLOWAPPINFO")] SLOWAPPINFO* psaid)
         {
             return ((delegate* unmanaged<IShellApp*, SLOWAPPINFO*, int>)(lpVtbl[5]))((IShellApp*)Unsafe.AsPointer(ref this), psaid);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetCachedSlowAppInfo([NativeTypeName("PSLOWAPPINFO")] SLOWAPPINFO* psaid)
+        public HRESULT GetCachedSlowAppInfo([NativeTypeName("PSLOWAPPINFO")] SLOWAPPINFO* psaid)
         {
             return ((delegate* unmanaged<IShellApp*, SLOWAPPINFO*, int>)(lpVtbl[6]))((IShellApp*)Unsafe.AsPointer(ref this), psaid);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        [return: NativeTypeName("HRESULT")]
-        public int IsInstalled()
+        public HRESULT IsInstalled()
         {
             return ((delegate* unmanaged<IShellApp*, int>)(lpVtbl[7]))((IShellApp*)Unsafe.AsPointer(ref this));
         }

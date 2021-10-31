@@ -3225,5 +3225,6 @@ namespace TerraFX.Interop
         CV_AMD64_TMM5 = 852,
         CV_AMD64_TMM6 = 853,
         CV_AMD64_TMM7 = 854,
+        CV_AMD64_TILECFG = 855,
     }
 }

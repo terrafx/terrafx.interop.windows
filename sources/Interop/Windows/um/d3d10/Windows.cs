@@ -12,8 +12,7 @@ namespace TerraFX.Interop
 {
     public static partial class Windows
     {
-        [return: NativeTypeName("UINT")]
-        public static uint D3D10CalcSubresource([NativeTypeName("UINT")] uint MipSlice, [NativeTypeName("UINT")] uint ArraySlice, [NativeTypeName("UINT")] uint MipLevels)
+        public static uint D3D10CalcSubresource(uint MipSlice, uint ArraySlice, uint MipLevels)
         {
             return MipSlice + ArraySlice * MipLevels;
         }

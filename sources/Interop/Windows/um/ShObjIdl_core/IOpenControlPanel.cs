@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IOpenControlPanel*, Guid*, void**, int>)(lpVtbl[0]))((IOpenControlPanel*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,24 +41,21 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int Open([NativeTypeName("LPCWSTR")] ushort* pszName, [NativeTypeName("LPCWSTR")] ushort* pszPage, IUnknown* punkSite)
+        public HRESULT Open([NativeTypeName("LPCWSTR")] ushort* pszName, [NativeTypeName("LPCWSTR")] ushort* pszPage, IUnknown* punkSite)
         {
             return ((delegate* unmanaged<IOpenControlPanel*, ushort*, ushort*, IUnknown*, int>)(lpVtbl[3]))((IOpenControlPanel*)Unsafe.AsPointer(ref this), pszName, pszPage, punkSite);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetPath([NativeTypeName("LPCWSTR")] ushort* pszName, [NativeTypeName("LPWSTR")] ushort* pszPath, [NativeTypeName("UINT")] uint cchPath)
+        public HRESULT GetPath([NativeTypeName("LPCWSTR")] ushort* pszName, [NativeTypeName("LPWSTR")] ushort* pszPath, uint cchPath)
         {
             return ((delegate* unmanaged<IOpenControlPanel*, ushort*, ushort*, uint, int>)(lpVtbl[4]))((IOpenControlPanel*)Unsafe.AsPointer(ref this), pszName, pszPath, cchPath);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetCurrentView(CPVIEW* pView)
+        public HRESULT GetCurrentView(CPVIEW* pView)
         {
             return ((delegate* unmanaged<IOpenControlPanel*, CPVIEW*, int>)(lpVtbl[5]))((IOpenControlPanel*)Unsafe.AsPointer(ref this), pView);
         }

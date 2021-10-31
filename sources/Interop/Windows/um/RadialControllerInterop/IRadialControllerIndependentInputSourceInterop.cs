@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IRadialControllerIndependentInputSourceInterop*, Guid*, void**, int>)(lpVtbl[0]))((IRadialControllerIndependentInputSourceInterop*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,34 +41,30 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetIids([NativeTypeName("ULONG *")] uint* iidCount, [NativeTypeName("IID **")] Guid** iids)
+        public HRESULT GetIids([NativeTypeName("ULONG *")] uint* iidCount, [NativeTypeName("IID **")] Guid** iids)
         {
             return ((delegate* unmanaged<IRadialControllerIndependentInputSourceInterop*, uint*, Guid**, int>)(lpVtbl[3]))((IRadialControllerIndependentInputSourceInterop*)Unsafe.AsPointer(ref this), iidCount, iids);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetRuntimeClassName([NativeTypeName("HSTRING *")] IntPtr* className)
+        public HRESULT GetRuntimeClassName(HSTRING* className)
         {
-            return ((delegate* unmanaged<IRadialControllerIndependentInputSourceInterop*, IntPtr*, int>)(lpVtbl[4]))((IRadialControllerIndependentInputSourceInterop*)Unsafe.AsPointer(ref this), className);
+            return ((delegate* unmanaged<IRadialControllerIndependentInputSourceInterop*, HSTRING*, int>)(lpVtbl[4]))((IRadialControllerIndependentInputSourceInterop*)Unsafe.AsPointer(ref this), className);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetTrustLevel(TrustLevel* trustLevel)
+        public HRESULT GetTrustLevel(TrustLevel* trustLevel)
         {
             return ((delegate* unmanaged<IRadialControllerIndependentInputSourceInterop*, TrustLevel*, int>)(lpVtbl[5]))((IRadialControllerIndependentInputSourceInterop*)Unsafe.AsPointer(ref this), trustLevel);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int CreateForWindow([NativeTypeName("HWND")] IntPtr hwnd, [NativeTypeName("const IID &")] Guid* riid, void** ppv)
+        public HRESULT CreateForWindow(HWND hwnd, [NativeTypeName("const IID &")] Guid* riid, void** ppv)
         {
-            return ((delegate* unmanaged<IRadialControllerIndependentInputSourceInterop*, IntPtr, Guid*, void**, int>)(lpVtbl[6]))((IRadialControllerIndependentInputSourceInterop*)Unsafe.AsPointer(ref this), hwnd, riid, ppv);
+            return ((delegate* unmanaged<IRadialControllerIndependentInputSourceInterop*, HWND, Guid*, void**, int>)(lpVtbl[6]))((IRadialControllerIndependentInputSourceInterop*)Unsafe.AsPointer(ref this), hwnd, riid, ppv);
         }
     }
 }

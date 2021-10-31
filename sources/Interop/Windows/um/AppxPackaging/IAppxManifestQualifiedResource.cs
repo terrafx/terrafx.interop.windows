@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IAppxManifestQualifiedResource*, Guid*, void**, int>)(lpVtbl[0]))((IAppxManifestQualifiedResource*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,24 +41,21 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetLanguage([NativeTypeName("LPWSTR *")] ushort** language)
+        public HRESULT GetLanguage([NativeTypeName("LPWSTR *")] ushort** language)
         {
             return ((delegate* unmanaged<IAppxManifestQualifiedResource*, ushort**, int>)(lpVtbl[3]))((IAppxManifestQualifiedResource*)Unsafe.AsPointer(ref this), language);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetScale([NativeTypeName("UINT32 *")] uint* scale)
+        public HRESULT GetScale([NativeTypeName("UINT32 *")] uint* scale)
         {
             return ((delegate* unmanaged<IAppxManifestQualifiedResource*, uint*, int>)(lpVtbl[4]))((IAppxManifestQualifiedResource*)Unsafe.AsPointer(ref this), scale);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetDXFeatureLevel(DX_FEATURE_LEVEL* dxFeatureLevel)
+        public HRESULT GetDXFeatureLevel(DX_FEATURE_LEVEL* dxFeatureLevel)
         {
             return ((delegate* unmanaged<IAppxManifestQualifiedResource*, DX_FEATURE_LEVEL*, int>)(lpVtbl[5]))((IAppxManifestQualifiedResource*)Unsafe.AsPointer(ref this), dxFeatureLevel);
         }

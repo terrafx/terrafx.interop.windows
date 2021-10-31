@@ -9,7 +9,6 @@ namespace TerraFX.Interop
 {
     public partial struct OBJECTID
     {
-        [NativeTypeName("GUID")]
         public Guid Lineage;
 
         [NativeTypeName("DWORD")]

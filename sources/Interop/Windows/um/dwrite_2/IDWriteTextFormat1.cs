@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IDWriteTextFormat1*, Guid*, void**, int>)(lpVtbl[0]))((IDWriteTextFormat1*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,64 +41,56 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetTextAlignment(DWRITE_TEXT_ALIGNMENT textAlignment)
+        public HRESULT SetTextAlignment(DWRITE_TEXT_ALIGNMENT textAlignment)
         {
             return ((delegate* unmanaged<IDWriteTextFormat1*, DWRITE_TEXT_ALIGNMENT, int>)(lpVtbl[3]))((IDWriteTextFormat1*)Unsafe.AsPointer(ref this), textAlignment);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetParagraphAlignment(DWRITE_PARAGRAPH_ALIGNMENT paragraphAlignment)
+        public HRESULT SetParagraphAlignment(DWRITE_PARAGRAPH_ALIGNMENT paragraphAlignment)
         {
             return ((delegate* unmanaged<IDWriteTextFormat1*, DWRITE_PARAGRAPH_ALIGNMENT, int>)(lpVtbl[4]))((IDWriteTextFormat1*)Unsafe.AsPointer(ref this), paragraphAlignment);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetWordWrapping(DWRITE_WORD_WRAPPING wordWrapping)
+        public HRESULT SetWordWrapping(DWRITE_WORD_WRAPPING wordWrapping)
         {
             return ((delegate* unmanaged<IDWriteTextFormat1*, DWRITE_WORD_WRAPPING, int>)(lpVtbl[5]))((IDWriteTextFormat1*)Unsafe.AsPointer(ref this), wordWrapping);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetReadingDirection(DWRITE_READING_DIRECTION readingDirection)
+        public HRESULT SetReadingDirection(DWRITE_READING_DIRECTION readingDirection)
         {
             return ((delegate* unmanaged<IDWriteTextFormat1*, DWRITE_READING_DIRECTION, int>)(lpVtbl[6]))((IDWriteTextFormat1*)Unsafe.AsPointer(ref this), readingDirection);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetFlowDirection(DWRITE_FLOW_DIRECTION flowDirection)
+        public HRESULT SetFlowDirection(DWRITE_FLOW_DIRECTION flowDirection)
         {
             return ((delegate* unmanaged<IDWriteTextFormat1*, DWRITE_FLOW_DIRECTION, int>)(lpVtbl[7]))((IDWriteTextFormat1*)Unsafe.AsPointer(ref this), flowDirection);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetIncrementalTabStop([NativeTypeName("FLOAT")] float incrementalTabStop)
+        public HRESULT SetIncrementalTabStop(float incrementalTabStop)
         {
             return ((delegate* unmanaged<IDWriteTextFormat1*, float, int>)(lpVtbl[8]))((IDWriteTextFormat1*)Unsafe.AsPointer(ref this), incrementalTabStop);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetTrimming([NativeTypeName("const DWRITE_TRIMMING *")] DWRITE_TRIMMING* trimmingOptions, IDWriteInlineObject* trimmingSign)
+        public HRESULT SetTrimming([NativeTypeName("const DWRITE_TRIMMING *")] DWRITE_TRIMMING* trimmingOptions, IDWriteInlineObject* trimmingSign)
         {
             return ((delegate* unmanaged<IDWriteTextFormat1*, DWRITE_TRIMMING*, IDWriteInlineObject*, int>)(lpVtbl[9]))((IDWriteTextFormat1*)Unsafe.AsPointer(ref this), trimmingOptions, trimmingSign);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(10)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetLineSpacing(DWRITE_LINE_SPACING_METHOD lineSpacingMethod, [NativeTypeName("FLOAT")] float lineSpacing, [NativeTypeName("FLOAT")] float baseline)
+        public HRESULT SetLineSpacing(DWRITE_LINE_SPACING_METHOD lineSpacingMethod, float lineSpacing, float baseline)
         {
             return ((delegate* unmanaged<IDWriteTextFormat1*, DWRITE_LINE_SPACING_METHOD, float, float, int>)(lpVtbl[10]))((IDWriteTextFormat1*)Unsafe.AsPointer(ref this), lineSpacingMethod, lineSpacing, baseline);
         }
@@ -141,7 +132,6 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(16)]
-        [return: NativeTypeName("FLOAT")]
         public float GetIncrementalTabStop()
         {
             return ((delegate* unmanaged<IDWriteTextFormat1*, float>)(lpVtbl[16]))((IDWriteTextFormat1*)Unsafe.AsPointer(ref this));
@@ -149,24 +139,21 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(17)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetTrimming(DWRITE_TRIMMING* trimmingOptions, IDWriteInlineObject** trimmingSign)
+        public HRESULT GetTrimming(DWRITE_TRIMMING* trimmingOptions, IDWriteInlineObject** trimmingSign)
         {
             return ((delegate* unmanaged<IDWriteTextFormat1*, DWRITE_TRIMMING*, IDWriteInlineObject**, int>)(lpVtbl[17]))((IDWriteTextFormat1*)Unsafe.AsPointer(ref this), trimmingOptions, trimmingSign);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(18)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetLineSpacing(DWRITE_LINE_SPACING_METHOD* lineSpacingMethod, [NativeTypeName("FLOAT *")] float* lineSpacing, [NativeTypeName("FLOAT *")] float* baseline)
+        public HRESULT GetLineSpacing(DWRITE_LINE_SPACING_METHOD* lineSpacingMethod, float* lineSpacing, float* baseline)
         {
             return ((delegate* unmanaged<IDWriteTextFormat1*, DWRITE_LINE_SPACING_METHOD*, float*, float*, int>)(lpVtbl[18]))((IDWriteTextFormat1*)Unsafe.AsPointer(ref this), lineSpacingMethod, lineSpacing, baseline);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(19)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetFontCollection(IDWriteFontCollection** fontCollection)
+        public HRESULT GetFontCollection(IDWriteFontCollection** fontCollection)
         {
             return ((delegate* unmanaged<IDWriteTextFormat1*, IDWriteFontCollection**, int>)(lpVtbl[19]))((IDWriteTextFormat1*)Unsafe.AsPointer(ref this), fontCollection);
         }
@@ -181,8 +168,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(21)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetFontFamilyName([NativeTypeName("WCHAR *")] ushort* fontFamilyName, [NativeTypeName("UINT32")] uint nameSize)
+        public HRESULT GetFontFamilyName([NativeTypeName("WCHAR *")] ushort* fontFamilyName, [NativeTypeName("UINT32")] uint nameSize)
         {
             return ((delegate* unmanaged<IDWriteTextFormat1*, ushort*, uint, int>)(lpVtbl[21]))((IDWriteTextFormat1*)Unsafe.AsPointer(ref this), fontFamilyName, nameSize);
         }
@@ -210,7 +196,6 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(25)]
-        [return: NativeTypeName("FLOAT")]
         public float GetFontSize()
         {
             return ((delegate* unmanaged<IDWriteTextFormat1*, float>)(lpVtbl[25]))((IDWriteTextFormat1*)Unsafe.AsPointer(ref this));
@@ -226,16 +211,14 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(27)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetLocaleName([NativeTypeName("WCHAR *")] ushort* localeName, [NativeTypeName("UINT32")] uint nameSize)
+        public HRESULT GetLocaleName([NativeTypeName("WCHAR *")] ushort* localeName, [NativeTypeName("UINT32")] uint nameSize)
         {
             return ((delegate* unmanaged<IDWriteTextFormat1*, ushort*, uint, int>)(lpVtbl[27]))((IDWriteTextFormat1*)Unsafe.AsPointer(ref this), localeName, nameSize);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(28)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetVerticalGlyphOrientation(DWRITE_VERTICAL_GLYPH_ORIENTATION glyphOrientation)
+        public HRESULT SetVerticalGlyphOrientation(DWRITE_VERTICAL_GLYPH_ORIENTATION glyphOrientation)
         {
             return ((delegate* unmanaged<IDWriteTextFormat1*, DWRITE_VERTICAL_GLYPH_ORIENTATION, int>)(lpVtbl[28]))((IDWriteTextFormat1*)Unsafe.AsPointer(ref this), glyphOrientation);
         }
@@ -249,24 +232,21 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(30)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetLastLineWrapping([NativeTypeName("BOOL")] int isLastLineWrappingEnabled)
+        public HRESULT SetLastLineWrapping(BOOL isLastLineWrappingEnabled)
         {
-            return ((delegate* unmanaged<IDWriteTextFormat1*, int, int>)(lpVtbl[30]))((IDWriteTextFormat1*)Unsafe.AsPointer(ref this), isLastLineWrappingEnabled);
+            return ((delegate* unmanaged<IDWriteTextFormat1*, BOOL, int>)(lpVtbl[30]))((IDWriteTextFormat1*)Unsafe.AsPointer(ref this), isLastLineWrappingEnabled);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(31)]
-        [return: NativeTypeName("BOOL")]
-        public int GetLastLineWrapping()
+        public BOOL GetLastLineWrapping()
         {
             return ((delegate* unmanaged<IDWriteTextFormat1*, int>)(lpVtbl[31]))((IDWriteTextFormat1*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(32)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetOpticalAlignment(DWRITE_OPTICAL_ALIGNMENT opticalAlignment)
+        public HRESULT SetOpticalAlignment(DWRITE_OPTICAL_ALIGNMENT opticalAlignment)
         {
             return ((delegate* unmanaged<IDWriteTextFormat1*, DWRITE_OPTICAL_ALIGNMENT, int>)(lpVtbl[32]))((IDWriteTextFormat1*)Unsafe.AsPointer(ref this), opticalAlignment);
         }
@@ -280,16 +260,14 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(34)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetFontFallback(IDWriteFontFallback* fontFallback)
+        public HRESULT SetFontFallback(IDWriteFontFallback* fontFallback)
         {
             return ((delegate* unmanaged<IDWriteTextFormat1*, IDWriteFontFallback*, int>)(lpVtbl[34]))((IDWriteTextFormat1*)Unsafe.AsPointer(ref this), fontFallback);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(35)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetFontFallback(IDWriteFontFallback** fontFallback)
+        public HRESULT GetFontFallback(IDWriteFontFallback** fontFallback)
         {
             return ((delegate* unmanaged<IDWriteTextFormat1*, IDWriteFontFallback**, int>)(lpVtbl[35]))((IDWriteTextFormat1*)Unsafe.AsPointer(ref this), fontFallback);
         }

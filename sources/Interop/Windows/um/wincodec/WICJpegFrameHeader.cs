@@ -7,17 +7,14 @@ namespace TerraFX.Interop
 {
     public partial struct WICJpegFrameHeader
     {
-        [NativeTypeName("UINT")]
         public uint Width;
 
-        [NativeTypeName("UINT")]
         public uint Height;
 
         public WICJpegTransferMatrix TransferMatrix;
 
         public WICJpegScanType ScanType;
 
-        [NativeTypeName("UINT")]
         public uint cComponents;
 
         [NativeTypeName("DWORD")]

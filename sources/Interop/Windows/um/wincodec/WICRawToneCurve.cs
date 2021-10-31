@@ -11,7 +11,6 @@ namespace TerraFX.Interop
 {
     public partial struct WICRawToneCurve
     {
-        [NativeTypeName("UINT")]
         public uint cPoints;
 
         [NativeTypeName("WICRawToneCurvePoint [1]")]

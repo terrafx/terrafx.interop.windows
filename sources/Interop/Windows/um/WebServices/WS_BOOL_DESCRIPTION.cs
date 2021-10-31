@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public partial struct WS_BOOL_DESCRIPTION
     {
-        [NativeTypeName("BOOL")]
-        public int value;
+        public BOOL value;
     }
 }

@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<ITravelEntry*, Guid*, void**, int>)(lpVtbl[0]))((ITravelEntry*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,24 +41,21 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int Invoke(IUnknown* punk)
+        public HRESULT Invoke(IUnknown* punk)
         {
             return ((delegate* unmanaged<ITravelEntry*, IUnknown*, int>)(lpVtbl[3]))((ITravelEntry*)Unsafe.AsPointer(ref this), punk);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int Update(IUnknown* punk, [NativeTypeName("BOOL")] int fIsLocalAnchor)
+        public HRESULT Update(IUnknown* punk, BOOL fIsLocalAnchor)
         {
-            return ((delegate* unmanaged<ITravelEntry*, IUnknown*, int, int>)(lpVtbl[4]))((ITravelEntry*)Unsafe.AsPointer(ref this), punk, fIsLocalAnchor);
+            return ((delegate* unmanaged<ITravelEntry*, IUnknown*, BOOL, int>)(lpVtbl[4]))((ITravelEntry*)Unsafe.AsPointer(ref this), punk, fIsLocalAnchor);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetPidl([NativeTypeName("LPITEMIDLIST *")] ITEMIDLIST** ppidl)
+        public HRESULT GetPidl([NativeTypeName("LPITEMIDLIST *")] ITEMIDLIST** ppidl)
         {
             return ((delegate* unmanaged<ITravelEntry*, ITEMIDLIST**, int>)(lpVtbl[5]))((ITravelEntry*)Unsafe.AsPointer(ref this), ppidl);
         }

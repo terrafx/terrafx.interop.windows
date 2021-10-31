@@ -9,25 +9,19 @@ namespace TerraFX.Interop
 {
     public partial struct FILE_REMOTE_PROTOCOL_INFO
     {
-        [NativeTypeName("USHORT")]
         public ushort StructureVersion;
 
-        [NativeTypeName("USHORT")]
         public ushort StructureSize;
 
         [NativeTypeName("ULONG")]
         public uint Protocol;
 
-        [NativeTypeName("USHORT")]
         public ushort ProtocolMajorVersion;
 
-        [NativeTypeName("USHORT")]
         public ushort ProtocolMinorVersion;
 
-        [NativeTypeName("USHORT")]
         public ushort ProtocolRevision;
 
-        [NativeTypeName("USHORT")]
         public ushort Reserved;
 
         [NativeTypeName("ULONG")]

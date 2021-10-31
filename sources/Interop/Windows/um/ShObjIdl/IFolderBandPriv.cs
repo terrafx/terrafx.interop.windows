@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IFolderBandPriv*, Guid*, void**, int>)(lpVtbl[0]))((IFolderBandPriv*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,34 +41,30 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetCascade([NativeTypeName("BOOL")] int fCascade)
+        public HRESULT SetCascade(BOOL fCascade)
         {
-            return ((delegate* unmanaged<IFolderBandPriv*, int, int>)(lpVtbl[3]))((IFolderBandPriv*)Unsafe.AsPointer(ref this), fCascade);
+            return ((delegate* unmanaged<IFolderBandPriv*, BOOL, int>)(lpVtbl[3]))((IFolderBandPriv*)Unsafe.AsPointer(ref this), fCascade);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetAccelerators([NativeTypeName("BOOL")] int fAccelerators)
+        public HRESULT SetAccelerators(BOOL fAccelerators)
         {
-            return ((delegate* unmanaged<IFolderBandPriv*, int, int>)(lpVtbl[4]))((IFolderBandPriv*)Unsafe.AsPointer(ref this), fAccelerators);
+            return ((delegate* unmanaged<IFolderBandPriv*, BOOL, int>)(lpVtbl[4]))((IFolderBandPriv*)Unsafe.AsPointer(ref this), fAccelerators);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetNoIcons([NativeTypeName("BOOL")] int fNoIcons)
+        public HRESULT SetNoIcons(BOOL fNoIcons)
         {
-            return ((delegate* unmanaged<IFolderBandPriv*, int, int>)(lpVtbl[5]))((IFolderBandPriv*)Unsafe.AsPointer(ref this), fNoIcons);
+            return ((delegate* unmanaged<IFolderBandPriv*, BOOL, int>)(lpVtbl[5]))((IFolderBandPriv*)Unsafe.AsPointer(ref this), fNoIcons);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetNoText([NativeTypeName("BOOL")] int fNoText)
+        public HRESULT SetNoText(BOOL fNoText)
         {
-            return ((delegate* unmanaged<IFolderBandPriv*, int, int>)(lpVtbl[6]))((IFolderBandPriv*)Unsafe.AsPointer(ref this), fNoText);
+            return ((delegate* unmanaged<IFolderBandPriv*, BOOL, int>)(lpVtbl[6]))((IFolderBandPriv*)Unsafe.AsPointer(ref this), fNoText);
         }
     }
 }

@@ -3,14 +3,11 @@
 // Ported from um/minwinbase.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
-
 namespace TerraFX.Interop
 {
     public unsafe partial struct LOAD_DLL_DEBUG_INFO
     {
-        [NativeTypeName("HANDLE")]
-        public IntPtr hFile;
+        public HANDLE hFile;
 
         [NativeTypeName("LPVOID")]
         public void* lpBaseOfDll;

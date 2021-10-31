@@ -26,7 +26,6 @@ namespace TerraFX.Interop
 
         public CSVFS_DISK_CONNECTIVITY DiskConnectivity;
 
-        [NativeTypeName("GUID")]
         public Guid VolumeId;
 
         [NativeTypeName("DWORD")]

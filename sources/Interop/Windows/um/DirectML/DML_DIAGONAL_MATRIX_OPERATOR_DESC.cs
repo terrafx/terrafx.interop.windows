@@ -10,10 +10,8 @@ namespace TerraFX.Interop
         [NativeTypeName("const DML_TENSOR_DESC *")]
         public DML_TENSOR_DESC* OutputTensor;
 
-        [NativeTypeName("INT")]
         public int Offset;
 
-        [NativeTypeName("FLOAT")]
         public float Value;
     }
 }

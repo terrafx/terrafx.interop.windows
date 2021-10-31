@@ -9,7 +9,6 @@ namespace TerraFX.Interop
     {
         public POINT pt;
 
-        [NativeTypeName("UINT")]
         public uint flags;
 
         public int iBand;

@@ -7,16 +7,12 @@ namespace TerraFX.Interop
 {
     public partial struct D3D11_TEXCUBE_ARRAY_SRV
     {
-        [NativeTypeName("UINT")]
         public uint MostDetailedMip;
 
-        [NativeTypeName("UINT")]
         public uint MipLevels;
 
-        [NativeTypeName("UINT")]
         public uint First2DArrayFace;
 
-        [NativeTypeName("UINT")]
         public uint NumCubes;
     }
 }

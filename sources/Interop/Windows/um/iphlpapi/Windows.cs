@@ -3,7 +3,6 @@
 // Ported from um/iphlpapi.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
@@ -20,27 +19,27 @@ namespace TerraFX.Interop
 
         [DllImport("iphlpapi", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
-        public static extern uint GetIfTable([NativeTypeName("PMIB_IFTABLE")] MIB_IFTABLE* pIfTable, [NativeTypeName("PULONG")] uint* pdwSize, [NativeTypeName("BOOL")] int bOrder);
+        public static extern uint GetIfTable([NativeTypeName("PMIB_IFTABLE")] MIB_IFTABLE* pIfTable, [NativeTypeName("PULONG")] uint* pdwSize, BOOL bOrder);
 
         [DllImport("iphlpapi", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
-        public static extern uint GetIpAddrTable([NativeTypeName("PMIB_IPADDRTABLE")] MIB_IPADDRTABLE* pIpAddrTable, [NativeTypeName("PULONG")] uint* pdwSize, [NativeTypeName("BOOL")] int bOrder);
+        public static extern uint GetIpAddrTable([NativeTypeName("PMIB_IPADDRTABLE")] MIB_IPADDRTABLE* pIpAddrTable, [NativeTypeName("PULONG")] uint* pdwSize, BOOL bOrder);
 
         [DllImport("iphlpapi", ExactSpelling = true)]
         [return: NativeTypeName("ULONG")]
-        public static extern uint GetIpNetTable([NativeTypeName("PMIB_IPNETTABLE")] MIB_IPNETTABLE* IpNetTable, [NativeTypeName("PULONG")] uint* SizePointer, [NativeTypeName("BOOL")] int Order);
+        public static extern uint GetIpNetTable([NativeTypeName("PMIB_IPNETTABLE")] MIB_IPNETTABLE* IpNetTable, [NativeTypeName("PULONG")] uint* SizePointer, BOOL Order);
 
         [DllImport("iphlpapi", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
-        public static extern uint GetIpForwardTable([NativeTypeName("PMIB_IPFORWARDTABLE")] MIB_IPFORWARDTABLE* pIpForwardTable, [NativeTypeName("PULONG")] uint* pdwSize, [NativeTypeName("BOOL")] int bOrder);
+        public static extern uint GetIpForwardTable([NativeTypeName("PMIB_IPFORWARDTABLE")] MIB_IPFORWARDTABLE* pIpForwardTable, [NativeTypeName("PULONG")] uint* pdwSize, BOOL bOrder);
 
         [DllImport("iphlpapi", ExactSpelling = true)]
         [return: NativeTypeName("ULONG")]
-        public static extern uint GetTcpTable([NativeTypeName("PMIB_TCPTABLE")] MIB_TCPTABLE* TcpTable, [NativeTypeName("PULONG")] uint* SizePointer, [NativeTypeName("BOOL")] int Order);
+        public static extern uint GetTcpTable([NativeTypeName("PMIB_TCPTABLE")] MIB_TCPTABLE* TcpTable, [NativeTypeName("PULONG")] uint* SizePointer, BOOL Order);
 
         [DllImport("iphlpapi", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
-        public static extern uint GetExtendedTcpTable([NativeTypeName("PVOID")] void* pTcpTable, [NativeTypeName("PDWORD")] uint* pdwSize, [NativeTypeName("BOOL")] int bOrder, [NativeTypeName("ULONG")] uint ulAf, TCP_TABLE_CLASS TableClass, [NativeTypeName("ULONG")] uint Reserved);
+        public static extern uint GetExtendedTcpTable([NativeTypeName("PVOID")] void* pTcpTable, [NativeTypeName("PDWORD")] uint* pdwSize, BOOL bOrder, [NativeTypeName("ULONG")] uint ulAf, TCP_TABLE_CLASS TableClass, [NativeTypeName("ULONG")] uint Reserved);
 
         [DllImport("iphlpapi", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
@@ -48,11 +47,11 @@ namespace TerraFX.Interop
 
         [DllImport("iphlpapi", ExactSpelling = true)]
         [return: NativeTypeName("ULONG")]
-        public static extern uint GetUdpTable([NativeTypeName("PMIB_UDPTABLE")] MIB_UDPTABLE* UdpTable, [NativeTypeName("PULONG")] uint* SizePointer, [NativeTypeName("BOOL")] int Order);
+        public static extern uint GetUdpTable([NativeTypeName("PMIB_UDPTABLE")] MIB_UDPTABLE* UdpTable, [NativeTypeName("PULONG")] uint* SizePointer, BOOL Order);
 
         [DllImport("iphlpapi", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
-        public static extern uint GetExtendedUdpTable([NativeTypeName("PVOID")] void* pUdpTable, [NativeTypeName("PDWORD")] uint* pdwSize, [NativeTypeName("BOOL")] int bOrder, [NativeTypeName("ULONG")] uint ulAf, UDP_TABLE_CLASS TableClass, [NativeTypeName("ULONG")] uint Reserved);
+        public static extern uint GetExtendedUdpTable([NativeTypeName("PVOID")] void* pUdpTable, [NativeTypeName("PDWORD")] uint* pdwSize, BOOL bOrder, [NativeTypeName("ULONG")] uint ulAf, UDP_TABLE_CLASS TableClass, [NativeTypeName("ULONG")] uint Reserved);
 
         [DllImport("iphlpapi", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
@@ -60,15 +59,15 @@ namespace TerraFX.Interop
 
         [DllImport("iphlpapi", ExactSpelling = true)]
         [return: NativeTypeName("ULONG")]
-        public static extern uint GetTcpTable2([NativeTypeName("PMIB_TCPTABLE2")] MIB_TCPTABLE2* TcpTable, [NativeTypeName("PULONG")] uint* SizePointer, [NativeTypeName("BOOL")] int Order);
+        public static extern uint GetTcpTable2([NativeTypeName("PMIB_TCPTABLE2")] MIB_TCPTABLE2* TcpTable, [NativeTypeName("PULONG")] uint* SizePointer, BOOL Order);
 
         [DllImport("iphlpapi", ExactSpelling = true)]
         [return: NativeTypeName("ULONG")]
-        public static extern uint GetTcp6Table([NativeTypeName("PMIB_TCP6TABLE")] MIB_TCP6TABLE* TcpTable, [NativeTypeName("PULONG")] uint* SizePointer, [NativeTypeName("BOOL")] int Order);
+        public static extern uint GetTcp6Table([NativeTypeName("PMIB_TCP6TABLE")] MIB_TCP6TABLE* TcpTable, [NativeTypeName("PULONG")] uint* SizePointer, BOOL Order);
 
         [DllImport("iphlpapi", ExactSpelling = true)]
         [return: NativeTypeName("ULONG")]
-        public static extern uint GetTcp6Table2([NativeTypeName("PMIB_TCP6TABLE2")] MIB_TCP6TABLE2* TcpTable, [NativeTypeName("PULONG")] uint* SizePointer, [NativeTypeName("BOOL")] int Order);
+        public static extern uint GetTcp6Table2([NativeTypeName("PMIB_TCP6TABLE2")] MIB_TCP6TABLE2* TcpTable, [NativeTypeName("PULONG")] uint* SizePointer, BOOL Order);
 
         [DllImport("iphlpapi", ExactSpelling = true)]
         [return: NativeTypeName("ULONG")]
@@ -92,7 +91,7 @@ namespace TerraFX.Interop
 
         [DllImport("iphlpapi", ExactSpelling = true)]
         [return: NativeTypeName("ULONG")]
-        public static extern uint GetUdp6Table([NativeTypeName("PMIB_UDP6TABLE")] MIB_UDP6TABLE* Udp6Table, [NativeTypeName("PULONG")] uint* SizePointer, [NativeTypeName("BOOL")] int Order);
+        public static extern uint GetUdp6Table([NativeTypeName("PMIB_UDP6TABLE")] MIB_UDP6TABLE* Udp6Table, [NativeTypeName("PULONG")] uint* SizePointer, BOOL Order);
 
         [DllImport("iphlpapi", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
@@ -168,7 +167,7 @@ namespace TerraFX.Interop
 
         [DllImport("iphlpapi", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
-        public static extern uint SetIpTTL([NativeTypeName("UINT")] uint nTTL);
+        public static extern uint SetIpTTL(uint nTTL);
 
         [DllImport("iphlpapi", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
@@ -208,7 +207,7 @@ namespace TerraFX.Interop
 
         [DllImport("iphlpapi", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
-        public static extern uint NhpAllocateAndGetInterfaceInfoFromStack([NativeTypeName("IP_INTERFACE_NAME_INFO **")] IP_INTERFACE_NAME_INFO_W2KSP1** ppTable, [NativeTypeName("PDWORD")] uint* pdwCount, [NativeTypeName("BOOL")] int bOrder, [NativeTypeName("HANDLE")] IntPtr hHeap, [NativeTypeName("DWORD")] uint dwFlags);
+        public static extern uint NhpAllocateAndGetInterfaceInfoFromStack([NativeTypeName("IP_INTERFACE_NAME_INFO **")] IP_INTERFACE_NAME_INFO_W2KSP1** ppTable, [NativeTypeName("PDWORD")] uint* pdwCount, BOOL bOrder, HANDLE hHeap, [NativeTypeName("DWORD")] uint dwFlags);
 
         [DllImport("iphlpapi", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
@@ -224,15 +223,14 @@ namespace TerraFX.Interop
 
         [DllImport("iphlpapi", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
-        public static extern uint NotifyAddrChange([NativeTypeName("PHANDLE")] IntPtr* Handle, [NativeTypeName("LPOVERLAPPED")] OVERLAPPED* overlapped);
+        public static extern uint NotifyAddrChange([NativeTypeName("PHANDLE")] HANDLE* Handle, [NativeTypeName("LPOVERLAPPED")] OVERLAPPED* overlapped);
 
         [DllImport("iphlpapi", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
-        public static extern uint NotifyRouteChange([NativeTypeName("PHANDLE")] IntPtr* Handle, [NativeTypeName("LPOVERLAPPED")] OVERLAPPED* overlapped);
+        public static extern uint NotifyRouteChange([NativeTypeName("PHANDLE")] HANDLE* Handle, [NativeTypeName("LPOVERLAPPED")] OVERLAPPED* overlapped);
 
         [DllImport("iphlpapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int CancelIPChangeNotify([NativeTypeName("LPOVERLAPPED")] OVERLAPPED* notifyOverlapped);
+        public static extern BOOL CancelIPChangeNotify([NativeTypeName("LPOVERLAPPED")] OVERLAPPED* notifyOverlapped);
 
         [DllImport("iphlpapi", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
@@ -280,10 +278,10 @@ namespace TerraFX.Interop
 
         [DllImport("iphlpapi", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
-        public static extern uint RegisterInterfaceTimestampConfigChange([NativeTypeName("PINTERFACE_TIMESTAMP_CONFIG_CHANGE_CALLBACK")] delegate* unmanaged<void*, void> Callback, [NativeTypeName("PVOID")] void* CallerContext, [NativeTypeName("HIFTIMESTAMPCHANGE *")] IntPtr* NotificationHandle);
+        public static extern uint RegisterInterfaceTimestampConfigChange([NativeTypeName("PINTERFACE_TIMESTAMP_CONFIG_CHANGE_CALLBACK")] delegate* unmanaged<void*, void> Callback, [NativeTypeName("PVOID")] void* CallerContext, HIFTIMESTAMPCHANGE* NotificationHandle);
 
         [DllImport("iphlpapi", ExactSpelling = true)]
-        public static extern void UnregisterInterfaceTimestampConfigChange([NativeTypeName("HIFTIMESTAMPCHANGE")] IntPtr NotificationHandle);
+        public static extern void UnregisterInterfaceTimestampConfigChange(HIFTIMESTAMPCHANGE NotificationHandle);
 
         [DllImport("iphlpapi", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
@@ -298,8 +296,7 @@ namespace TerraFX.Interop
         public static extern uint SendARP([NativeTypeName("IPAddr")] uint DestIP, [NativeTypeName("IPAddr")] uint SrcIP, [NativeTypeName("PVOID")] void* pMacAddr, [NativeTypeName("PULONG")] uint* PhyAddrLen);
 
         [DllImport("iphlpapi", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int GetRTTAndHopCount([NativeTypeName("IPAddr")] uint DestIpAddress, [NativeTypeName("PULONG")] uint* HopCount, [NativeTypeName("ULONG")] uint MaxHops, [NativeTypeName("PULONG")] uint* RTT);
+        public static extern BOOL GetRTTAndHopCount([NativeTypeName("IPAddr")] uint DestIpAddress, [NativeTypeName("PULONG")] uint* HopCount, [NativeTypeName("ULONG")] uint MaxHops, [NativeTypeName("PULONG")] uint* RTT);
 
         [DllImport("iphlpapi", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
@@ -307,7 +304,7 @@ namespace TerraFX.Interop
 
         [DllImport("iphlpapi", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
-        public static extern uint EnableRouter([NativeTypeName("HANDLE *")] IntPtr* pHandle, OVERLAPPED* pOverlapped);
+        public static extern uint EnableRouter(HANDLE* pHandle, OVERLAPPED* pOverlapped);
 
         [DllImport("iphlpapi", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
@@ -315,7 +312,7 @@ namespace TerraFX.Interop
 
         [DllImport("iphlpapi", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
-        public static extern uint DisableMediaSense([NativeTypeName("HANDLE *")] IntPtr* pHandle, OVERLAPPED* pOverLapped);
+        public static extern uint DisableMediaSense(HANDLE* pHandle, OVERLAPPED* pOverLapped);
 
         [DllImport("iphlpapi", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
@@ -331,31 +328,31 @@ namespace TerraFX.Interop
 
         [DllImport("iphlpapi", ExactSpelling = true)]
         [return: NativeTypeName("ULONG")]
-        public static extern uint CreatePersistentTcpPortReservation([NativeTypeName("USHORT")] ushort StartPort, [NativeTypeName("USHORT")] ushort NumberOfPorts, [NativeTypeName("PULONG64")] ulong* Token);
+        public static extern uint CreatePersistentTcpPortReservation(ushort StartPort, ushort NumberOfPorts, [NativeTypeName("PULONG64")] ulong* Token);
 
         [DllImport("iphlpapi", ExactSpelling = true)]
         [return: NativeTypeName("ULONG")]
-        public static extern uint CreatePersistentUdpPortReservation([NativeTypeName("USHORT")] ushort StartPort, [NativeTypeName("USHORT")] ushort NumberOfPorts, [NativeTypeName("PULONG64")] ulong* Token);
+        public static extern uint CreatePersistentUdpPortReservation(ushort StartPort, ushort NumberOfPorts, [NativeTypeName("PULONG64")] ulong* Token);
 
         [DllImport("iphlpapi", ExactSpelling = true)]
         [return: NativeTypeName("ULONG")]
-        public static extern uint DeletePersistentTcpPortReservation([NativeTypeName("USHORT")] ushort StartPort, [NativeTypeName("USHORT")] ushort NumberOfPorts);
+        public static extern uint DeletePersistentTcpPortReservation(ushort StartPort, ushort NumberOfPorts);
 
         [DllImport("iphlpapi", ExactSpelling = true)]
         [return: NativeTypeName("ULONG")]
-        public static extern uint DeletePersistentUdpPortReservation([NativeTypeName("USHORT")] ushort StartPort, [NativeTypeName("USHORT")] ushort NumberOfPorts);
+        public static extern uint DeletePersistentUdpPortReservation(ushort StartPort, ushort NumberOfPorts);
 
         [DllImport("iphlpapi", ExactSpelling = true)]
         [return: NativeTypeName("ULONG")]
-        public static extern uint LookupPersistentTcpPortReservation([NativeTypeName("USHORT")] ushort StartPort, [NativeTypeName("USHORT")] ushort NumberOfPorts, [NativeTypeName("PULONG64")] ulong* Token);
+        public static extern uint LookupPersistentTcpPortReservation(ushort StartPort, ushort NumberOfPorts, [NativeTypeName("PULONG64")] ulong* Token);
 
         [DllImport("iphlpapi", ExactSpelling = true)]
         [return: NativeTypeName("ULONG")]
-        public static extern uint LookupPersistentUdpPortReservation([NativeTypeName("USHORT")] ushort StartPort, [NativeTypeName("USHORT")] ushort NumberOfPorts, [NativeTypeName("PULONG64")] ulong* Token);
+        public static extern uint LookupPersistentUdpPortReservation(ushort StartPort, ushort NumberOfPorts, [NativeTypeName("PULONG64")] ulong* Token);
 
         [DllImport("iphlpapi", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
-        public static extern uint ParseNetworkString([NativeTypeName("const WCHAR *")] ushort* NetworkString, [NativeTypeName("DWORD")] uint Types, [NativeTypeName("PNET_ADDRESS_INFO")] NET_ADDRESS_INFO* AddressInfo, [NativeTypeName("USHORT *")] ushort* PortNumber, [NativeTypeName("BYTE *")] byte* PrefixLength);
+        public static extern uint ParseNetworkString([NativeTypeName("const WCHAR *")] ushort* NetworkString, [NativeTypeName("DWORD")] uint Types, [NativeTypeName("PNET_ADDRESS_INFO")] NET_ADDRESS_INFO* AddressInfo, ushort* PortNumber, byte* PrefixLength);
 
         [NativeTypeName("#define NET_STRING_IPV4_ADDRESS 0x00000001")]
         public const int NET_STRING_IPV4_ADDRESS = 0x00000001;

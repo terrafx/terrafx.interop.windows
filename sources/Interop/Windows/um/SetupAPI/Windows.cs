@@ -11,155 +11,121 @@ namespace TerraFX.Interop
     public static unsafe partial class Windows
     {
         [DllImport("setupapi", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupGetInfInformationA([NativeTypeName("LPCVOID")] void* InfSpec, [NativeTypeName("DWORD")] uint SearchControl, [NativeTypeName("PSP_INF_INFORMATION")] void* ReturnBuffer, [NativeTypeName("DWORD")] uint ReturnBufferSize, [NativeTypeName("PDWORD")] uint* RequiredSize);
+        public static extern BOOL SetupGetInfInformationA([NativeTypeName("LPCVOID")] void* InfSpec, [NativeTypeName("DWORD")] uint SearchControl, [NativeTypeName("PSP_INF_INFORMATION")] void* ReturnBuffer, [NativeTypeName("DWORD")] uint ReturnBufferSize, [NativeTypeName("PDWORD")] uint* RequiredSize);
 
         [DllImport("setupapi", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupGetInfInformationW([NativeTypeName("LPCVOID")] void* InfSpec, [NativeTypeName("DWORD")] uint SearchControl, [NativeTypeName("PSP_INF_INFORMATION")] void* ReturnBuffer, [NativeTypeName("DWORD")] uint ReturnBufferSize, [NativeTypeName("PDWORD")] uint* RequiredSize);
+        public static extern BOOL SetupGetInfInformationW([NativeTypeName("LPCVOID")] void* InfSpec, [NativeTypeName("DWORD")] uint SearchControl, [NativeTypeName("PSP_INF_INFORMATION")] void* ReturnBuffer, [NativeTypeName("DWORD")] uint ReturnBufferSize, [NativeTypeName("PDWORD")] uint* RequiredSize);
 
         [DllImport("setupapi", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupQueryInfFileInformationA([NativeTypeName("PSP_INF_INFORMATION")] void* InfInformation, [NativeTypeName("UINT")] uint InfIndex, [NativeTypeName("PSTR")] sbyte* ReturnBuffer, [NativeTypeName("DWORD")] uint ReturnBufferSize, [NativeTypeName("PDWORD")] uint* RequiredSize);
+        public static extern BOOL SetupQueryInfFileInformationA([NativeTypeName("PSP_INF_INFORMATION")] void* InfInformation, uint InfIndex, [NativeTypeName("PSTR")] sbyte* ReturnBuffer, [NativeTypeName("DWORD")] uint ReturnBufferSize, [NativeTypeName("PDWORD")] uint* RequiredSize);
 
         [DllImport("setupapi", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupQueryInfFileInformationW([NativeTypeName("PSP_INF_INFORMATION")] void* InfInformation, [NativeTypeName("UINT")] uint InfIndex, [NativeTypeName("PWSTR")] ushort* ReturnBuffer, [NativeTypeName("DWORD")] uint ReturnBufferSize, [NativeTypeName("PDWORD")] uint* RequiredSize);
+        public static extern BOOL SetupQueryInfFileInformationW([NativeTypeName("PSP_INF_INFORMATION")] void* InfInformation, uint InfIndex, [NativeTypeName("PWSTR")] ushort* ReturnBuffer, [NativeTypeName("DWORD")] uint ReturnBufferSize, [NativeTypeName("PDWORD")] uint* RequiredSize);
 
         [DllImport("setupapi", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupQueryInfOriginalFileInformationA([NativeTypeName("PSP_INF_INFORMATION")] void* InfInformation, [NativeTypeName("UINT")] uint InfIndex, [NativeTypeName("PSP_ALTPLATFORM_INFO")] void* AlternatePlatformInfo, [NativeTypeName("PSP_ORIGINAL_FILE_INFO_A")] void* OriginalFileInfo);
+        public static extern BOOL SetupQueryInfOriginalFileInformationA([NativeTypeName("PSP_INF_INFORMATION")] void* InfInformation, uint InfIndex, [NativeTypeName("PSP_ALTPLATFORM_INFO")] void* AlternatePlatformInfo, [NativeTypeName("PSP_ORIGINAL_FILE_INFO_A")] void* OriginalFileInfo);
 
         [DllImport("setupapi", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupQueryInfOriginalFileInformationW([NativeTypeName("PSP_INF_INFORMATION")] void* InfInformation, [NativeTypeName("UINT")] uint InfIndex, [NativeTypeName("PSP_ALTPLATFORM_INFO")] void* AlternatePlatformInfo, [NativeTypeName("PSP_ORIGINAL_FILE_INFO_W")] void* OriginalFileInfo);
+        public static extern BOOL SetupQueryInfOriginalFileInformationW([NativeTypeName("PSP_INF_INFORMATION")] void* InfInformation, uint InfIndex, [NativeTypeName("PSP_ALTPLATFORM_INFO")] void* AlternatePlatformInfo, [NativeTypeName("PSP_ORIGINAL_FILE_INFO_W")] void* OriginalFileInfo);
 
         [DllImport("setupapi", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupQueryInfVersionInformationA([NativeTypeName("PSP_INF_INFORMATION")] void* InfInformation, [NativeTypeName("UINT")] uint InfIndex, [NativeTypeName("PCSTR")] sbyte* Key, [NativeTypeName("PSTR")] sbyte* ReturnBuffer, [NativeTypeName("DWORD")] uint ReturnBufferSize, [NativeTypeName("PDWORD")] uint* RequiredSize);
+        public static extern BOOL SetupQueryInfVersionInformationA([NativeTypeName("PSP_INF_INFORMATION")] void* InfInformation, uint InfIndex, [NativeTypeName("PCSTR")] sbyte* Key, [NativeTypeName("PSTR")] sbyte* ReturnBuffer, [NativeTypeName("DWORD")] uint ReturnBufferSize, [NativeTypeName("PDWORD")] uint* RequiredSize);
 
         [DllImport("setupapi", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupQueryInfVersionInformationW([NativeTypeName("PSP_INF_INFORMATION")] void* InfInformation, [NativeTypeName("UINT")] uint InfIndex, [NativeTypeName("PCWSTR")] ushort* Key, [NativeTypeName("PWSTR")] ushort* ReturnBuffer, [NativeTypeName("DWORD")] uint ReturnBufferSize, [NativeTypeName("PDWORD")] uint* RequiredSize);
+        public static extern BOOL SetupQueryInfVersionInformationW([NativeTypeName("PSP_INF_INFORMATION")] void* InfInformation, uint InfIndex, [NativeTypeName("PCWSTR")] ushort* Key, [NativeTypeName("PWSTR")] ushort* ReturnBuffer, [NativeTypeName("DWORD")] uint ReturnBufferSize, [NativeTypeName("PDWORD")] uint* RequiredSize);
 
         [DllImport("setupapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupGetInfDriverStoreLocationA([NativeTypeName("PCSTR")] sbyte* FileName, [NativeTypeName("PSP_ALTPLATFORM_INFO")] void* AlternatePlatformInfo, [NativeTypeName("PCSTR")] sbyte* LocaleName, [NativeTypeName("PSTR")] sbyte* ReturnBuffer, [NativeTypeName("DWORD")] uint ReturnBufferSize, [NativeTypeName("PDWORD")] uint* RequiredSize);
+        public static extern BOOL SetupGetInfDriverStoreLocationA([NativeTypeName("PCSTR")] sbyte* FileName, [NativeTypeName("PSP_ALTPLATFORM_INFO")] void* AlternatePlatformInfo, [NativeTypeName("PCSTR")] sbyte* LocaleName, [NativeTypeName("PSTR")] sbyte* ReturnBuffer, [NativeTypeName("DWORD")] uint ReturnBufferSize, [NativeTypeName("PDWORD")] uint* RequiredSize);
 
         [DllImport("setupapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupGetInfDriverStoreLocationW([NativeTypeName("PCWSTR")] ushort* FileName, [NativeTypeName("PSP_ALTPLATFORM_INFO")] void* AlternatePlatformInfo, [NativeTypeName("PCWSTR")] ushort* LocaleName, [NativeTypeName("PWSTR")] ushort* ReturnBuffer, [NativeTypeName("DWORD")] uint ReturnBufferSize, [NativeTypeName("PDWORD")] uint* RequiredSize);
+        public static extern BOOL SetupGetInfDriverStoreLocationW([NativeTypeName("PCWSTR")] ushort* FileName, [NativeTypeName("PSP_ALTPLATFORM_INFO")] void* AlternatePlatformInfo, [NativeTypeName("PCWSTR")] ushort* LocaleName, [NativeTypeName("PWSTR")] ushort* ReturnBuffer, [NativeTypeName("DWORD")] uint ReturnBufferSize, [NativeTypeName("PDWORD")] uint* RequiredSize);
 
         [DllImport("setupapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupGetInfPublishedNameA([NativeTypeName("PCSTR")] sbyte* DriverStoreLocation, [NativeTypeName("PSTR")] sbyte* ReturnBuffer, [NativeTypeName("DWORD")] uint ReturnBufferSize, [NativeTypeName("PDWORD")] uint* RequiredSize);
+        public static extern BOOL SetupGetInfPublishedNameA([NativeTypeName("PCSTR")] sbyte* DriverStoreLocation, [NativeTypeName("PSTR")] sbyte* ReturnBuffer, [NativeTypeName("DWORD")] uint ReturnBufferSize, [NativeTypeName("PDWORD")] uint* RequiredSize);
 
         [DllImport("setupapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupGetInfPublishedNameW([NativeTypeName("PCWSTR")] ushort* DriverStoreLocation, [NativeTypeName("PWSTR")] ushort* ReturnBuffer, [NativeTypeName("DWORD")] uint ReturnBufferSize, [NativeTypeName("PDWORD")] uint* RequiredSize);
+        public static extern BOOL SetupGetInfPublishedNameW([NativeTypeName("PCWSTR")] ushort* DriverStoreLocation, [NativeTypeName("PWSTR")] ushort* ReturnBuffer, [NativeTypeName("DWORD")] uint ReturnBufferSize, [NativeTypeName("PDWORD")] uint* RequiredSize);
 
         [DllImport("setupapi", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupGetInfFileListA([NativeTypeName("PCSTR")] sbyte* DirectoryPath, [NativeTypeName("DWORD")] uint InfStyle, [NativeTypeName("PSTR")] sbyte* ReturnBuffer, [NativeTypeName("DWORD")] uint ReturnBufferSize, [NativeTypeName("PDWORD")] uint* RequiredSize);
+        public static extern BOOL SetupGetInfFileListA([NativeTypeName("PCSTR")] sbyte* DirectoryPath, [NativeTypeName("DWORD")] uint InfStyle, [NativeTypeName("PSTR")] sbyte* ReturnBuffer, [NativeTypeName("DWORD")] uint ReturnBufferSize, [NativeTypeName("PDWORD")] uint* RequiredSize);
 
         [DllImport("setupapi", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupGetInfFileListW([NativeTypeName("PCWSTR")] ushort* DirectoryPath, [NativeTypeName("DWORD")] uint InfStyle, [NativeTypeName("PWSTR")] ushort* ReturnBuffer, [NativeTypeName("DWORD")] uint ReturnBufferSize, [NativeTypeName("PDWORD")] uint* RequiredSize);
+        public static extern BOOL SetupGetInfFileListW([NativeTypeName("PCWSTR")] ushort* DirectoryPath, [NativeTypeName("DWORD")] uint InfStyle, [NativeTypeName("PWSTR")] ushort* ReturnBuffer, [NativeTypeName("DWORD")] uint ReturnBufferSize, [NativeTypeName("PDWORD")] uint* RequiredSize);
 
         [DllImport("setupapi", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("HINF")]
-        public static extern IntPtr SetupOpenInfFileW([NativeTypeName("PCWSTR")] ushort* FileName, [NativeTypeName("PCWSTR")] ushort* InfClass, [NativeTypeName("DWORD")] uint InfStyle, [NativeTypeName("PUINT")] uint* ErrorLine);
+        public static extern HINF SetupOpenInfFileW([NativeTypeName("PCWSTR")] ushort* FileName, [NativeTypeName("PCWSTR")] ushort* InfClass, [NativeTypeName("DWORD")] uint InfStyle, [NativeTypeName("PUINT")] uint* ErrorLine);
 
         [DllImport("setupapi", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("HINF")]
-        public static extern IntPtr SetupOpenInfFileA([NativeTypeName("PCSTR")] sbyte* FileName, [NativeTypeName("PCSTR")] sbyte* InfClass, [NativeTypeName("DWORD")] uint InfStyle, [NativeTypeName("PUINT")] uint* ErrorLine);
+        public static extern HINF SetupOpenInfFileA([NativeTypeName("PCSTR")] sbyte* FileName, [NativeTypeName("PCSTR")] sbyte* InfClass, [NativeTypeName("DWORD")] uint InfStyle, [NativeTypeName("PUINT")] uint* ErrorLine);
 
         [DllImport("setupapi", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("HINF")]
-        public static extern IntPtr SetupOpenMasterInf();
+        public static extern HINF SetupOpenMasterInf();
 
         [DllImport("setupapi", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupOpenAppendInfFileW([NativeTypeName("PCWSTR")] ushort* FileName, [NativeTypeName("HINF")] IntPtr InfHandle, [NativeTypeName("PUINT")] uint* ErrorLine);
+        public static extern BOOL SetupOpenAppendInfFileW([NativeTypeName("PCWSTR")] ushort* FileName, HINF InfHandle, [NativeTypeName("PUINT")] uint* ErrorLine);
 
         [DllImport("setupapi", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupOpenAppendInfFileA([NativeTypeName("PCSTR")] sbyte* FileName, [NativeTypeName("HINF")] IntPtr InfHandle, [NativeTypeName("PUINT")] uint* ErrorLine);
+        public static extern BOOL SetupOpenAppendInfFileA([NativeTypeName("PCSTR")] sbyte* FileName, HINF InfHandle, [NativeTypeName("PUINT")] uint* ErrorLine);
 
         [DllImport("setupapi", ExactSpelling = true)]
-        public static extern void SetupCloseInfFile([NativeTypeName("HINF")] IntPtr InfHandle);
+        public static extern void SetupCloseInfFile(HINF InfHandle);
 
         [DllImport("setupapi", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupFindFirstLineA([NativeTypeName("HINF")] IntPtr InfHandle, [NativeTypeName("PCSTR")] sbyte* Section, [NativeTypeName("PCSTR")] sbyte* Key, [NativeTypeName("PINFCONTEXT")] void* Context);
+        public static extern BOOL SetupFindFirstLineA(HINF InfHandle, [NativeTypeName("PCSTR")] sbyte* Section, [NativeTypeName("PCSTR")] sbyte* Key, [NativeTypeName("PINFCONTEXT")] void* Context);
 
         [DllImport("setupapi", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupFindFirstLineW([NativeTypeName("HINF")] IntPtr InfHandle, [NativeTypeName("PCWSTR")] ushort* Section, [NativeTypeName("PCWSTR")] ushort* Key, [NativeTypeName("PINFCONTEXT")] void* Context);
+        public static extern BOOL SetupFindFirstLineW(HINF InfHandle, [NativeTypeName("PCWSTR")] ushort* Section, [NativeTypeName("PCWSTR")] ushort* Key, [NativeTypeName("PINFCONTEXT")] void* Context);
 
         [DllImport("setupapi", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupFindNextLine([NativeTypeName("PINFCONTEXT")] void* ContextIn, [NativeTypeName("PINFCONTEXT")] void* ContextOut);
+        public static extern BOOL SetupFindNextLine([NativeTypeName("PINFCONTEXT")] void* ContextIn, [NativeTypeName("PINFCONTEXT")] void* ContextOut);
 
         [DllImport("setupapi", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupFindNextMatchLineA([NativeTypeName("PINFCONTEXT")] void* ContextIn, [NativeTypeName("PCSTR")] sbyte* Key, [NativeTypeName("PINFCONTEXT")] void* ContextOut);
+        public static extern BOOL SetupFindNextMatchLineA([NativeTypeName("PINFCONTEXT")] void* ContextIn, [NativeTypeName("PCSTR")] sbyte* Key, [NativeTypeName("PINFCONTEXT")] void* ContextOut);
 
         [DllImport("setupapi", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupFindNextMatchLineW([NativeTypeName("PINFCONTEXT")] void* ContextIn, [NativeTypeName("PCWSTR")] ushort* Key, [NativeTypeName("PINFCONTEXT")] void* ContextOut);
+        public static extern BOOL SetupFindNextMatchLineW([NativeTypeName("PINFCONTEXT")] void* ContextIn, [NativeTypeName("PCWSTR")] ushort* Key, [NativeTypeName("PINFCONTEXT")] void* ContextOut);
 
         [DllImport("setupapi", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupGetLineByIndexA([NativeTypeName("HINF")] IntPtr InfHandle, [NativeTypeName("PCSTR")] sbyte* Section, [NativeTypeName("DWORD")] uint Index, [NativeTypeName("PINFCONTEXT")] void* Context);
+        public static extern BOOL SetupGetLineByIndexA(HINF InfHandle, [NativeTypeName("PCSTR")] sbyte* Section, [NativeTypeName("DWORD")] uint Index, [NativeTypeName("PINFCONTEXT")] void* Context);
 
         [DllImport("setupapi", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupGetLineByIndexW([NativeTypeName("HINF")] IntPtr InfHandle, [NativeTypeName("PCWSTR")] ushort* Section, [NativeTypeName("DWORD")] uint Index, [NativeTypeName("PINFCONTEXT")] void* Context);
+        public static extern BOOL SetupGetLineByIndexW(HINF InfHandle, [NativeTypeName("PCWSTR")] ushort* Section, [NativeTypeName("DWORD")] uint Index, [NativeTypeName("PINFCONTEXT")] void* Context);
 
         [DllImport("setupapi", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("LONG")]
-        public static extern int SetupGetLineCountA([NativeTypeName("HINF")] IntPtr InfHandle, [NativeTypeName("PCSTR")] sbyte* Section);
+        public static extern int SetupGetLineCountA(HINF InfHandle, [NativeTypeName("PCSTR")] sbyte* Section);
 
         [DllImport("setupapi", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("LONG")]
-        public static extern int SetupGetLineCountW([NativeTypeName("HINF")] IntPtr InfHandle, [NativeTypeName("PCWSTR")] ushort* Section);
+        public static extern int SetupGetLineCountW(HINF InfHandle, [NativeTypeName("PCWSTR")] ushort* Section);
 
         [DllImport("setupapi", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupGetLineTextA([NativeTypeName("PINFCONTEXT")] void* Context, [NativeTypeName("HINF")] IntPtr InfHandle, [NativeTypeName("PCSTR")] sbyte* Section, [NativeTypeName("PCSTR")] sbyte* Key, [NativeTypeName("PSTR")] sbyte* ReturnBuffer, [NativeTypeName("DWORD")] uint ReturnBufferSize, [NativeTypeName("PDWORD")] uint* RequiredSize);
+        public static extern BOOL SetupGetLineTextA([NativeTypeName("PINFCONTEXT")] void* Context, HINF InfHandle, [NativeTypeName("PCSTR")] sbyte* Section, [NativeTypeName("PCSTR")] sbyte* Key, [NativeTypeName("PSTR")] sbyte* ReturnBuffer, [NativeTypeName("DWORD")] uint ReturnBufferSize, [NativeTypeName("PDWORD")] uint* RequiredSize);
 
         [DllImport("setupapi", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupGetLineTextW([NativeTypeName("PINFCONTEXT")] void* Context, [NativeTypeName("HINF")] IntPtr InfHandle, [NativeTypeName("PCWSTR")] ushort* Section, [NativeTypeName("PCWSTR")] ushort* Key, [NativeTypeName("PWSTR")] ushort* ReturnBuffer, [NativeTypeName("DWORD")] uint ReturnBufferSize, [NativeTypeName("PDWORD")] uint* RequiredSize);
+        public static extern BOOL SetupGetLineTextW([NativeTypeName("PINFCONTEXT")] void* Context, HINF InfHandle, [NativeTypeName("PCWSTR")] ushort* Section, [NativeTypeName("PCWSTR")] ushort* Key, [NativeTypeName("PWSTR")] ushort* ReturnBuffer, [NativeTypeName("DWORD")] uint ReturnBufferSize, [NativeTypeName("PDWORD")] uint* RequiredSize);
 
         [DllImport("setupapi", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("DWORD")]
         public static extern uint SetupGetFieldCount([NativeTypeName("PINFCONTEXT")] void* Context);
 
         [DllImport("setupapi", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupGetStringFieldA([NativeTypeName("PINFCONTEXT")] void* Context, [NativeTypeName("DWORD")] uint FieldIndex, [NativeTypeName("PSTR")] sbyte* ReturnBuffer, [NativeTypeName("DWORD")] uint ReturnBufferSize, [NativeTypeName("PDWORD")] uint* RequiredSize);
+        public static extern BOOL SetupGetStringFieldA([NativeTypeName("PINFCONTEXT")] void* Context, [NativeTypeName("DWORD")] uint FieldIndex, [NativeTypeName("PSTR")] sbyte* ReturnBuffer, [NativeTypeName("DWORD")] uint ReturnBufferSize, [NativeTypeName("PDWORD")] uint* RequiredSize);
 
         [DllImport("setupapi", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupGetStringFieldW([NativeTypeName("PINFCONTEXT")] void* Context, [NativeTypeName("DWORD")] uint FieldIndex, [NativeTypeName("PWSTR")] ushort* ReturnBuffer, [NativeTypeName("DWORD")] uint ReturnBufferSize, [NativeTypeName("PDWORD")] uint* RequiredSize);
+        public static extern BOOL SetupGetStringFieldW([NativeTypeName("PINFCONTEXT")] void* Context, [NativeTypeName("DWORD")] uint FieldIndex, [NativeTypeName("PWSTR")] ushort* ReturnBuffer, [NativeTypeName("DWORD")] uint ReturnBufferSize, [NativeTypeName("PDWORD")] uint* RequiredSize);
 
         [DllImport("setupapi", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupGetIntField([NativeTypeName("PINFCONTEXT")] void* Context, [NativeTypeName("DWORD")] uint FieldIndex, [NativeTypeName("PINT")] int* IntegerValue);
+        public static extern BOOL SetupGetIntField([NativeTypeName("PINFCONTEXT")] void* Context, [NativeTypeName("DWORD")] uint FieldIndex, [NativeTypeName("PINT")] int* IntegerValue);
 
         [DllImport("setupapi", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupGetMultiSzFieldA([NativeTypeName("PINFCONTEXT")] void* Context, [NativeTypeName("DWORD")] uint FieldIndex, [NativeTypeName("PSTR")] sbyte* ReturnBuffer, [NativeTypeName("DWORD")] uint ReturnBufferSize, [NativeTypeName("LPDWORD")] uint* RequiredSize);
+        public static extern BOOL SetupGetMultiSzFieldA([NativeTypeName("PINFCONTEXT")] void* Context, [NativeTypeName("DWORD")] uint FieldIndex, [NativeTypeName("PSTR")] sbyte* ReturnBuffer, [NativeTypeName("DWORD")] uint ReturnBufferSize, [NativeTypeName("LPDWORD")] uint* RequiredSize);
 
         [DllImport("setupapi", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupGetMultiSzFieldW([NativeTypeName("PINFCONTEXT")] void* Context, [NativeTypeName("DWORD")] uint FieldIndex, [NativeTypeName("PWSTR")] ushort* ReturnBuffer, [NativeTypeName("DWORD")] uint ReturnBufferSize, [NativeTypeName("LPDWORD")] uint* RequiredSize);
+        public static extern BOOL SetupGetMultiSzFieldW([NativeTypeName("PINFCONTEXT")] void* Context, [NativeTypeName("DWORD")] uint FieldIndex, [NativeTypeName("PWSTR")] ushort* ReturnBuffer, [NativeTypeName("DWORD")] uint ReturnBufferSize, [NativeTypeName("LPDWORD")] uint* RequiredSize);
 
         [DllImport("setupapi", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupGetBinaryField([NativeTypeName("PINFCONTEXT")] void* Context, [NativeTypeName("DWORD")] uint FieldIndex, [NativeTypeName("PBYTE")] byte* ReturnBuffer, [NativeTypeName("DWORD")] uint ReturnBufferSize, [NativeTypeName("LPDWORD")] uint* RequiredSize);
+        public static extern BOOL SetupGetBinaryField([NativeTypeName("PINFCONTEXT")] void* Context, [NativeTypeName("DWORD")] uint FieldIndex, [NativeTypeName("PBYTE")] byte* ReturnBuffer, [NativeTypeName("DWORD")] uint ReturnBufferSize, [NativeTypeName("LPDWORD")] uint* RequiredSize);
 
         [DllImport("setupapi", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("DWORD")]
@@ -170,12 +136,10 @@ namespace TerraFX.Interop
         public static extern uint SetupGetFileCompressionInfoW([NativeTypeName("PCWSTR")] ushort* SourceFileName, [NativeTypeName("PWSTR *")] ushort** ActualSourceFileName, [NativeTypeName("PDWORD")] uint* SourceFileSize, [NativeTypeName("PDWORD")] uint* TargetFileSize, [NativeTypeName("PUINT")] uint* CompressionType);
 
         [DllImport("setupapi", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupGetFileCompressionInfoExA([NativeTypeName("PCSTR")] sbyte* SourceFileName, [NativeTypeName("PSTR")] sbyte* ActualSourceFileNameBuffer, [NativeTypeName("DWORD")] uint ActualSourceFileNameBufferLen, [NativeTypeName("PDWORD")] uint* RequiredBufferLen, [NativeTypeName("PDWORD")] uint* SourceFileSize, [NativeTypeName("PDWORD")] uint* TargetFileSize, [NativeTypeName("PUINT")] uint* CompressionType);
+        public static extern BOOL SetupGetFileCompressionInfoExA([NativeTypeName("PCSTR")] sbyte* SourceFileName, [NativeTypeName("PSTR")] sbyte* ActualSourceFileNameBuffer, [NativeTypeName("DWORD")] uint ActualSourceFileNameBufferLen, [NativeTypeName("PDWORD")] uint* RequiredBufferLen, [NativeTypeName("PDWORD")] uint* SourceFileSize, [NativeTypeName("PDWORD")] uint* TargetFileSize, [NativeTypeName("PUINT")] uint* CompressionType);
 
         [DllImport("setupapi", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupGetFileCompressionInfoExW([NativeTypeName("PCWSTR")] ushort* SourceFileName, [NativeTypeName("PWSTR")] ushort* ActualSourceFileNameBuffer, [NativeTypeName("DWORD")] uint ActualSourceFileNameBufferLen, [NativeTypeName("PDWORD")] uint* RequiredBufferLen, [NativeTypeName("PDWORD")] uint* SourceFileSize, [NativeTypeName("PDWORD")] uint* TargetFileSize, [NativeTypeName("PUINT")] uint* CompressionType);
+        public static extern BOOL SetupGetFileCompressionInfoExW([NativeTypeName("PCWSTR")] ushort* SourceFileName, [NativeTypeName("PWSTR")] ushort* ActualSourceFileNameBuffer, [NativeTypeName("DWORD")] uint ActualSourceFileNameBufferLen, [NativeTypeName("PDWORD")] uint* RequiredBufferLen, [NativeTypeName("PDWORD")] uint* SourceFileSize, [NativeTypeName("PDWORD")] uint* TargetFileSize, [NativeTypeName("PUINT")] uint* CompressionType);
 
         [DllImport("setupapi", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("DWORD")]
@@ -186,497 +150,378 @@ namespace TerraFX.Interop
         public static extern uint SetupDecompressOrCopyFileW([NativeTypeName("PCWSTR")] ushort* SourceFileName, [NativeTypeName("PCWSTR")] ushort* TargetFileName, [NativeTypeName("PUINT")] uint* CompressionType);
 
         [DllImport("setupapi", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupGetSourceFileLocationA([NativeTypeName("HINF")] IntPtr InfHandle, [NativeTypeName("PINFCONTEXT")] void* InfContext, [NativeTypeName("PCSTR")] sbyte* FileName, [NativeTypeName("PUINT")] uint* SourceId, [NativeTypeName("PSTR")] sbyte* ReturnBuffer, [NativeTypeName("DWORD")] uint ReturnBufferSize, [NativeTypeName("PDWORD")] uint* RequiredSize);
+        public static extern BOOL SetupGetSourceFileLocationA(HINF InfHandle, [NativeTypeName("PINFCONTEXT")] void* InfContext, [NativeTypeName("PCSTR")] sbyte* FileName, [NativeTypeName("PUINT")] uint* SourceId, [NativeTypeName("PSTR")] sbyte* ReturnBuffer, [NativeTypeName("DWORD")] uint ReturnBufferSize, [NativeTypeName("PDWORD")] uint* RequiredSize);
 
         [DllImport("setupapi", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupGetSourceFileLocationW([NativeTypeName("HINF")] IntPtr InfHandle, [NativeTypeName("PINFCONTEXT")] void* InfContext, [NativeTypeName("PCWSTR")] ushort* FileName, [NativeTypeName("PUINT")] uint* SourceId, [NativeTypeName("PWSTR")] ushort* ReturnBuffer, [NativeTypeName("DWORD")] uint ReturnBufferSize, [NativeTypeName("PDWORD")] uint* RequiredSize);
+        public static extern BOOL SetupGetSourceFileLocationW(HINF InfHandle, [NativeTypeName("PINFCONTEXT")] void* InfContext, [NativeTypeName("PCWSTR")] ushort* FileName, [NativeTypeName("PUINT")] uint* SourceId, [NativeTypeName("PWSTR")] ushort* ReturnBuffer, [NativeTypeName("DWORD")] uint ReturnBufferSize, [NativeTypeName("PDWORD")] uint* RequiredSize);
 
         [DllImport("setupapi", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupGetSourceFileSizeA([NativeTypeName("HINF")] IntPtr InfHandle, [NativeTypeName("PINFCONTEXT")] void* InfContext, [NativeTypeName("PCSTR")] sbyte* FileName, [NativeTypeName("PCSTR")] sbyte* Section, [NativeTypeName("PDWORD")] uint* FileSize, [NativeTypeName("UINT")] uint RoundingFactor);
+        public static extern BOOL SetupGetSourceFileSizeA(HINF InfHandle, [NativeTypeName("PINFCONTEXT")] void* InfContext, [NativeTypeName("PCSTR")] sbyte* FileName, [NativeTypeName("PCSTR")] sbyte* Section, [NativeTypeName("PDWORD")] uint* FileSize, uint RoundingFactor);
 
         [DllImport("setupapi", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupGetSourceFileSizeW([NativeTypeName("HINF")] IntPtr InfHandle, [NativeTypeName("PINFCONTEXT")] void* InfContext, [NativeTypeName("PCWSTR")] ushort* FileName, [NativeTypeName("PCWSTR")] ushort* Section, [NativeTypeName("PDWORD")] uint* FileSize, [NativeTypeName("UINT")] uint RoundingFactor);
+        public static extern BOOL SetupGetSourceFileSizeW(HINF InfHandle, [NativeTypeName("PINFCONTEXT")] void* InfContext, [NativeTypeName("PCWSTR")] ushort* FileName, [NativeTypeName("PCWSTR")] ushort* Section, [NativeTypeName("PDWORD")] uint* FileSize, uint RoundingFactor);
 
         [DllImport("setupapi", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupGetTargetPathA([NativeTypeName("HINF")] IntPtr InfHandle, [NativeTypeName("PINFCONTEXT")] void* InfContext, [NativeTypeName("PCSTR")] sbyte* Section, [NativeTypeName("PSTR")] sbyte* ReturnBuffer, [NativeTypeName("DWORD")] uint ReturnBufferSize, [NativeTypeName("PDWORD")] uint* RequiredSize);
+        public static extern BOOL SetupGetTargetPathA(HINF InfHandle, [NativeTypeName("PINFCONTEXT")] void* InfContext, [NativeTypeName("PCSTR")] sbyte* Section, [NativeTypeName("PSTR")] sbyte* ReturnBuffer, [NativeTypeName("DWORD")] uint ReturnBufferSize, [NativeTypeName("PDWORD")] uint* RequiredSize);
 
         [DllImport("setupapi", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupGetTargetPathW([NativeTypeName("HINF")] IntPtr InfHandle, [NativeTypeName("PINFCONTEXT")] void* InfContext, [NativeTypeName("PCWSTR")] ushort* Section, [NativeTypeName("PWSTR")] ushort* ReturnBuffer, [NativeTypeName("DWORD")] uint ReturnBufferSize, [NativeTypeName("PDWORD")] uint* RequiredSize);
+        public static extern BOOL SetupGetTargetPathW(HINF InfHandle, [NativeTypeName("PINFCONTEXT")] void* InfContext, [NativeTypeName("PCWSTR")] ushort* Section, [NativeTypeName("PWSTR")] ushort* ReturnBuffer, [NativeTypeName("DWORD")] uint ReturnBufferSize, [NativeTypeName("PDWORD")] uint* RequiredSize);
 
         [DllImport("setupapi", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupSetSourceListA([NativeTypeName("DWORD")] uint Flags, [NativeTypeName("PCSTR *")] sbyte** SourceList, [NativeTypeName("UINT")] uint SourceCount);
+        public static extern BOOL SetupSetSourceListA([NativeTypeName("DWORD")] uint Flags, [NativeTypeName("PCSTR *")] sbyte** SourceList, uint SourceCount);
 
         [DllImport("setupapi", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupSetSourceListW([NativeTypeName("DWORD")] uint Flags, [NativeTypeName("PCWSTR *")] ushort** SourceList, [NativeTypeName("UINT")] uint SourceCount);
+        public static extern BOOL SetupSetSourceListW([NativeTypeName("DWORD")] uint Flags, [NativeTypeName("PCWSTR *")] ushort** SourceList, uint SourceCount);
 
         [DllImport("setupapi", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupCancelTemporarySourceList();
+        public static extern BOOL SetupCancelTemporarySourceList();
 
         [DllImport("setupapi", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupAddToSourceListA([NativeTypeName("DWORD")] uint Flags, [NativeTypeName("PCSTR")] sbyte* Source);
+        public static extern BOOL SetupAddToSourceListA([NativeTypeName("DWORD")] uint Flags, [NativeTypeName("PCSTR")] sbyte* Source);
 
         [DllImport("setupapi", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupAddToSourceListW([NativeTypeName("DWORD")] uint Flags, [NativeTypeName("PCWSTR")] ushort* Source);
+        public static extern BOOL SetupAddToSourceListW([NativeTypeName("DWORD")] uint Flags, [NativeTypeName("PCWSTR")] ushort* Source);
 
         [DllImport("setupapi", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupRemoveFromSourceListA([NativeTypeName("DWORD")] uint Flags, [NativeTypeName("PCSTR")] sbyte* Source);
+        public static extern BOOL SetupRemoveFromSourceListA([NativeTypeName("DWORD")] uint Flags, [NativeTypeName("PCSTR")] sbyte* Source);
 
         [DllImport("setupapi", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupRemoveFromSourceListW([NativeTypeName("DWORD")] uint Flags, [NativeTypeName("PCWSTR")] ushort* Source);
+        public static extern BOOL SetupRemoveFromSourceListW([NativeTypeName("DWORD")] uint Flags, [NativeTypeName("PCWSTR")] ushort* Source);
 
         [DllImport("setupapi", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupQuerySourceListA([NativeTypeName("DWORD")] uint Flags, [NativeTypeName("PCSTR **")] sbyte*** List, [NativeTypeName("PUINT")] uint* Count);
+        public static extern BOOL SetupQuerySourceListA([NativeTypeName("DWORD")] uint Flags, [NativeTypeName("PCSTR **")] sbyte*** List, [NativeTypeName("PUINT")] uint* Count);
 
         [DllImport("setupapi", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupQuerySourceListW([NativeTypeName("DWORD")] uint Flags, [NativeTypeName("PCWSTR **")] ushort*** List, [NativeTypeName("PUINT")] uint* Count);
+        public static extern BOOL SetupQuerySourceListW([NativeTypeName("DWORD")] uint Flags, [NativeTypeName("PCWSTR **")] ushort*** List, [NativeTypeName("PUINT")] uint* Count);
 
         [DllImport("setupapi", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupFreeSourceListA([NativeTypeName("PCSTR **")] sbyte*** List, [NativeTypeName("UINT")] uint Count);
+        public static extern BOOL SetupFreeSourceListA([NativeTypeName("PCSTR **")] sbyte*** List, uint Count);
 
         [DllImport("setupapi", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupFreeSourceListW([NativeTypeName("PCWSTR **")] ushort*** List, [NativeTypeName("UINT")] uint Count);
+        public static extern BOOL SetupFreeSourceListW([NativeTypeName("PCWSTR **")] ushort*** List, uint Count);
 
         [DllImport("setupapi", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("UINT")]
-        public static extern uint SetupPromptForDiskA([NativeTypeName("HWND")] IntPtr hwndParent, [NativeTypeName("PCSTR")] sbyte* DialogTitle, [NativeTypeName("PCSTR")] sbyte* DiskName, [NativeTypeName("PCSTR")] sbyte* PathToSource, [NativeTypeName("PCSTR")] sbyte* FileSought, [NativeTypeName("PCSTR")] sbyte* TagFile, [NativeTypeName("DWORD")] uint DiskPromptStyle, [NativeTypeName("PSTR")] sbyte* PathBuffer, [NativeTypeName("DWORD")] uint PathBufferSize, [NativeTypeName("PDWORD")] uint* PathRequiredSize);
+        public static extern uint SetupPromptForDiskA(HWND hwndParent, [NativeTypeName("PCSTR")] sbyte* DialogTitle, [NativeTypeName("PCSTR")] sbyte* DiskName, [NativeTypeName("PCSTR")] sbyte* PathToSource, [NativeTypeName("PCSTR")] sbyte* FileSought, [NativeTypeName("PCSTR")] sbyte* TagFile, [NativeTypeName("DWORD")] uint DiskPromptStyle, [NativeTypeName("PSTR")] sbyte* PathBuffer, [NativeTypeName("DWORD")] uint PathBufferSize, [NativeTypeName("PDWORD")] uint* PathRequiredSize);
 
         [DllImport("setupapi", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("UINT")]
-        public static extern uint SetupPromptForDiskW([NativeTypeName("HWND")] IntPtr hwndParent, [NativeTypeName("PCWSTR")] ushort* DialogTitle, [NativeTypeName("PCWSTR")] ushort* DiskName, [NativeTypeName("PCWSTR")] ushort* PathToSource, [NativeTypeName("PCWSTR")] ushort* FileSought, [NativeTypeName("PCWSTR")] ushort* TagFile, [NativeTypeName("DWORD")] uint DiskPromptStyle, [NativeTypeName("PWSTR")] ushort* PathBuffer, [NativeTypeName("DWORD")] uint PathBufferSize, [NativeTypeName("PDWORD")] uint* PathRequiredSize);
+        public static extern uint SetupPromptForDiskW(HWND hwndParent, [NativeTypeName("PCWSTR")] ushort* DialogTitle, [NativeTypeName("PCWSTR")] ushort* DiskName, [NativeTypeName("PCWSTR")] ushort* PathToSource, [NativeTypeName("PCWSTR")] ushort* FileSought, [NativeTypeName("PCWSTR")] ushort* TagFile, [NativeTypeName("DWORD")] uint DiskPromptStyle, [NativeTypeName("PWSTR")] ushort* PathBuffer, [NativeTypeName("DWORD")] uint PathBufferSize, [NativeTypeName("PDWORD")] uint* PathRequiredSize);
 
         [DllImport("setupapi", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("UINT")]
-        public static extern uint SetupCopyErrorA([NativeTypeName("HWND")] IntPtr hwndParent, [NativeTypeName("PCSTR")] sbyte* DialogTitle, [NativeTypeName("PCSTR")] sbyte* DiskName, [NativeTypeName("PCSTR")] sbyte* PathToSource, [NativeTypeName("PCSTR")] sbyte* SourceFile, [NativeTypeName("PCSTR")] sbyte* TargetPathFile, [NativeTypeName("UINT")] uint Win32ErrorCode, [NativeTypeName("DWORD")] uint Style, [NativeTypeName("PSTR")] sbyte* PathBuffer, [NativeTypeName("DWORD")] uint PathBufferSize, [NativeTypeName("PDWORD")] uint* PathRequiredSize);
+        public static extern uint SetupCopyErrorA(HWND hwndParent, [NativeTypeName("PCSTR")] sbyte* DialogTitle, [NativeTypeName("PCSTR")] sbyte* DiskName, [NativeTypeName("PCSTR")] sbyte* PathToSource, [NativeTypeName("PCSTR")] sbyte* SourceFile, [NativeTypeName("PCSTR")] sbyte* TargetPathFile, uint Win32ErrorCode, [NativeTypeName("DWORD")] uint Style, [NativeTypeName("PSTR")] sbyte* PathBuffer, [NativeTypeName("DWORD")] uint PathBufferSize, [NativeTypeName("PDWORD")] uint* PathRequiredSize);
 
         [DllImport("setupapi", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("UINT")]
-        public static extern uint SetupCopyErrorW([NativeTypeName("HWND")] IntPtr hwndParent, [NativeTypeName("PCWSTR")] ushort* DialogTitle, [NativeTypeName("PCWSTR")] ushort* DiskName, [NativeTypeName("PCWSTR")] ushort* PathToSource, [NativeTypeName("PCWSTR")] ushort* SourceFile, [NativeTypeName("PCWSTR")] ushort* TargetPathFile, [NativeTypeName("UINT")] uint Win32ErrorCode, [NativeTypeName("DWORD")] uint Style, [NativeTypeName("PWSTR")] ushort* PathBuffer, [NativeTypeName("DWORD")] uint PathBufferSize, [NativeTypeName("PDWORD")] uint* PathRequiredSize);
+        public static extern uint SetupCopyErrorW(HWND hwndParent, [NativeTypeName("PCWSTR")] ushort* DialogTitle, [NativeTypeName("PCWSTR")] ushort* DiskName, [NativeTypeName("PCWSTR")] ushort* PathToSource, [NativeTypeName("PCWSTR")] ushort* SourceFile, [NativeTypeName("PCWSTR")] ushort* TargetPathFile, uint Win32ErrorCode, [NativeTypeName("DWORD")] uint Style, [NativeTypeName("PWSTR")] ushort* PathBuffer, [NativeTypeName("DWORD")] uint PathBufferSize, [NativeTypeName("PDWORD")] uint* PathRequiredSize);
 
         [DllImport("setupapi", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("UINT")]
-        public static extern uint SetupRenameErrorA([NativeTypeName("HWND")] IntPtr hwndParent, [NativeTypeName("PCSTR")] sbyte* DialogTitle, [NativeTypeName("PCSTR")] sbyte* SourceFile, [NativeTypeName("PCSTR")] sbyte* TargetFile, [NativeTypeName("UINT")] uint Win32ErrorCode, [NativeTypeName("DWORD")] uint Style);
+        public static extern uint SetupRenameErrorA(HWND hwndParent, [NativeTypeName("PCSTR")] sbyte* DialogTitle, [NativeTypeName("PCSTR")] sbyte* SourceFile, [NativeTypeName("PCSTR")] sbyte* TargetFile, uint Win32ErrorCode, [NativeTypeName("DWORD")] uint Style);
 
         [DllImport("setupapi", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("UINT")]
-        public static extern uint SetupRenameErrorW([NativeTypeName("HWND")] IntPtr hwndParent, [NativeTypeName("PCWSTR")] ushort* DialogTitle, [NativeTypeName("PCWSTR")] ushort* SourceFile, [NativeTypeName("PCWSTR")] ushort* TargetFile, [NativeTypeName("UINT")] uint Win32ErrorCode, [NativeTypeName("DWORD")] uint Style);
+        public static extern uint SetupRenameErrorW(HWND hwndParent, [NativeTypeName("PCWSTR")] ushort* DialogTitle, [NativeTypeName("PCWSTR")] ushort* SourceFile, [NativeTypeName("PCWSTR")] ushort* TargetFile, uint Win32ErrorCode, [NativeTypeName("DWORD")] uint Style);
 
         [DllImport("setupapi", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("UINT")]
-        public static extern uint SetupDeleteErrorA([NativeTypeName("HWND")] IntPtr hwndParent, [NativeTypeName("PCSTR")] sbyte* DialogTitle, [NativeTypeName("PCSTR")] sbyte* File, [NativeTypeName("UINT")] uint Win32ErrorCode, [NativeTypeName("DWORD")] uint Style);
+        public static extern uint SetupDeleteErrorA(HWND hwndParent, [NativeTypeName("PCSTR")] sbyte* DialogTitle, [NativeTypeName("PCSTR")] sbyte* File, uint Win32ErrorCode, [NativeTypeName("DWORD")] uint Style);
 
         [DllImport("setupapi", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("UINT")]
-        public static extern uint SetupDeleteErrorW([NativeTypeName("HWND")] IntPtr hwndParent, [NativeTypeName("PCWSTR")] ushort* DialogTitle, [NativeTypeName("PCWSTR")] ushort* File, [NativeTypeName("UINT")] uint Win32ErrorCode, [NativeTypeName("DWORD")] uint Style);
+        public static extern uint SetupDeleteErrorW(HWND hwndParent, [NativeTypeName("PCWSTR")] ushort* DialogTitle, [NativeTypeName("PCWSTR")] ushort* File, uint Win32ErrorCode, [NativeTypeName("DWORD")] uint Style);
 
         [DllImport("setupapi", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("UINT")]
-        public static extern uint SetupBackupErrorA([NativeTypeName("HWND")] IntPtr hwndParent, [NativeTypeName("PCSTR")] sbyte* DialogTitle, [NativeTypeName("PCSTR")] sbyte* SourceFile, [NativeTypeName("PCSTR")] sbyte* TargetFile, [NativeTypeName("UINT")] uint Win32ErrorCode, [NativeTypeName("DWORD")] uint Style);
+        public static extern uint SetupBackupErrorA(HWND hwndParent, [NativeTypeName("PCSTR")] sbyte* DialogTitle, [NativeTypeName("PCSTR")] sbyte* SourceFile, [NativeTypeName("PCSTR")] sbyte* TargetFile, uint Win32ErrorCode, [NativeTypeName("DWORD")] uint Style);
 
         [DllImport("setupapi", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("UINT")]
-        public static extern uint SetupBackupErrorW([NativeTypeName("HWND")] IntPtr hwndParent, [NativeTypeName("PCWSTR")] ushort* DialogTitle, [NativeTypeName("PCWSTR")] ushort* SourceFile, [NativeTypeName("PCWSTR")] ushort* TargetFile, [NativeTypeName("UINT")] uint Win32ErrorCode, [NativeTypeName("DWORD")] uint Style);
+        public static extern uint SetupBackupErrorW(HWND hwndParent, [NativeTypeName("PCWSTR")] ushort* DialogTitle, [NativeTypeName("PCWSTR")] ushort* SourceFile, [NativeTypeName("PCWSTR")] ushort* TargetFile, uint Win32ErrorCode, [NativeTypeName("DWORD")] uint Style);
 
         [DllImport("setupapi", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupSetDirectoryIdA([NativeTypeName("HINF")] IntPtr InfHandle, [NativeTypeName("DWORD")] uint Id, [NativeTypeName("PCSTR")] sbyte* Directory);
+        public static extern BOOL SetupSetDirectoryIdA(HINF InfHandle, [NativeTypeName("DWORD")] uint Id, [NativeTypeName("PCSTR")] sbyte* Directory);
 
         [DllImport("setupapi", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupSetDirectoryIdW([NativeTypeName("HINF")] IntPtr InfHandle, [NativeTypeName("DWORD")] uint Id, [NativeTypeName("PCWSTR")] ushort* Directory);
+        public static extern BOOL SetupSetDirectoryIdW(HINF InfHandle, [NativeTypeName("DWORD")] uint Id, [NativeTypeName("PCWSTR")] ushort* Directory);
 
         [DllImport("setupapi", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupSetDirectoryIdExA([NativeTypeName("HINF")] IntPtr InfHandle, [NativeTypeName("DWORD")] uint Id, [NativeTypeName("PCSTR")] sbyte* Directory, [NativeTypeName("DWORD")] uint Flags, [NativeTypeName("DWORD")] uint Reserved1, [NativeTypeName("PVOID")] void* Reserved2);
+        public static extern BOOL SetupSetDirectoryIdExA(HINF InfHandle, [NativeTypeName("DWORD")] uint Id, [NativeTypeName("PCSTR")] sbyte* Directory, [NativeTypeName("DWORD")] uint Flags, [NativeTypeName("DWORD")] uint Reserved1, [NativeTypeName("PVOID")] void* Reserved2);
 
         [DllImport("setupapi", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupSetDirectoryIdExW([NativeTypeName("HINF")] IntPtr InfHandle, [NativeTypeName("DWORD")] uint Id, [NativeTypeName("PCWSTR")] ushort* Directory, [NativeTypeName("DWORD")] uint Flags, [NativeTypeName("DWORD")] uint Reserved1, [NativeTypeName("PVOID")] void* Reserved2);
+        public static extern BOOL SetupSetDirectoryIdExW(HINF InfHandle, [NativeTypeName("DWORD")] uint Id, [NativeTypeName("PCWSTR")] ushort* Directory, [NativeTypeName("DWORD")] uint Flags, [NativeTypeName("DWORD")] uint Reserved1, [NativeTypeName("PVOID")] void* Reserved2);
 
         [DllImport("setupapi", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupGetSourceInfoA([NativeTypeName("HINF")] IntPtr InfHandle, [NativeTypeName("UINT")] uint SourceId, [NativeTypeName("UINT")] uint InfoDesired, [NativeTypeName("PSTR")] sbyte* ReturnBuffer, [NativeTypeName("DWORD")] uint ReturnBufferSize, [NativeTypeName("PDWORD")] uint* RequiredSize);
+        public static extern BOOL SetupGetSourceInfoA(HINF InfHandle, uint SourceId, uint InfoDesired, [NativeTypeName("PSTR")] sbyte* ReturnBuffer, [NativeTypeName("DWORD")] uint ReturnBufferSize, [NativeTypeName("PDWORD")] uint* RequiredSize);
 
         [DllImport("setupapi", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupGetSourceInfoW([NativeTypeName("HINF")] IntPtr InfHandle, [NativeTypeName("UINT")] uint SourceId, [NativeTypeName("UINT")] uint InfoDesired, [NativeTypeName("PWSTR")] ushort* ReturnBuffer, [NativeTypeName("DWORD")] uint ReturnBufferSize, [NativeTypeName("PDWORD")] uint* RequiredSize);
+        public static extern BOOL SetupGetSourceInfoW(HINF InfHandle, uint SourceId, uint InfoDesired, [NativeTypeName("PWSTR")] ushort* ReturnBuffer, [NativeTypeName("DWORD")] uint ReturnBufferSize, [NativeTypeName("PDWORD")] uint* RequiredSize);
 
         [DllImport("setupapi", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupInstallFileA([NativeTypeName("HINF")] IntPtr InfHandle, [NativeTypeName("PINFCONTEXT")] void* InfContext, [NativeTypeName("PCSTR")] sbyte* SourceFile, [NativeTypeName("PCSTR")] sbyte* SourcePathRoot, [NativeTypeName("PCSTR")] sbyte* DestinationName, [NativeTypeName("DWORD")] uint CopyStyle, [NativeTypeName("PSP_FILE_CALLBACK_A")] delegate* unmanaged<void*, uint, nuint, nuint, uint> CopyMsgHandler, [NativeTypeName("PVOID")] void* Context);
+        public static extern BOOL SetupInstallFileA(HINF InfHandle, [NativeTypeName("PINFCONTEXT")] void* InfContext, [NativeTypeName("PCSTR")] sbyte* SourceFile, [NativeTypeName("PCSTR")] sbyte* SourcePathRoot, [NativeTypeName("PCSTR")] sbyte* DestinationName, [NativeTypeName("DWORD")] uint CopyStyle, [NativeTypeName("PSP_FILE_CALLBACK_A")] delegate* unmanaged<void*, uint, nuint, nuint, uint> CopyMsgHandler, [NativeTypeName("PVOID")] void* Context);
 
         [DllImport("setupapi", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupInstallFileW([NativeTypeName("HINF")] IntPtr InfHandle, [NativeTypeName("PINFCONTEXT")] void* InfContext, [NativeTypeName("PCWSTR")] ushort* SourceFile, [NativeTypeName("PCWSTR")] ushort* SourcePathRoot, [NativeTypeName("PCWSTR")] ushort* DestinationName, [NativeTypeName("DWORD")] uint CopyStyle, [NativeTypeName("PSP_FILE_CALLBACK_W")] delegate* unmanaged<void*, uint, nuint, nuint, uint> CopyMsgHandler, [NativeTypeName("PVOID")] void* Context);
+        public static extern BOOL SetupInstallFileW(HINF InfHandle, [NativeTypeName("PINFCONTEXT")] void* InfContext, [NativeTypeName("PCWSTR")] ushort* SourceFile, [NativeTypeName("PCWSTR")] ushort* SourcePathRoot, [NativeTypeName("PCWSTR")] ushort* DestinationName, [NativeTypeName("DWORD")] uint CopyStyle, [NativeTypeName("PSP_FILE_CALLBACK_W")] delegate* unmanaged<void*, uint, nuint, nuint, uint> CopyMsgHandler, [NativeTypeName("PVOID")] void* Context);
 
         [DllImport("setupapi", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupInstallFileExA([NativeTypeName("HINF")] IntPtr InfHandle, [NativeTypeName("PINFCONTEXT")] void* InfContext, [NativeTypeName("PCSTR")] sbyte* SourceFile, [NativeTypeName("PCSTR")] sbyte* SourcePathRoot, [NativeTypeName("PCSTR")] sbyte* DestinationName, [NativeTypeName("DWORD")] uint CopyStyle, [NativeTypeName("PSP_FILE_CALLBACK_A")] delegate* unmanaged<void*, uint, nuint, nuint, uint> CopyMsgHandler, [NativeTypeName("PVOID")] void* Context, [NativeTypeName("PBOOL")] int* FileWasInUse);
+        public static extern BOOL SetupInstallFileExA(HINF InfHandle, [NativeTypeName("PINFCONTEXT")] void* InfContext, [NativeTypeName("PCSTR")] sbyte* SourceFile, [NativeTypeName("PCSTR")] sbyte* SourcePathRoot, [NativeTypeName("PCSTR")] sbyte* DestinationName, [NativeTypeName("DWORD")] uint CopyStyle, [NativeTypeName("PSP_FILE_CALLBACK_A")] delegate* unmanaged<void*, uint, nuint, nuint, uint> CopyMsgHandler, [NativeTypeName("PVOID")] void* Context, [NativeTypeName("PBOOL")] BOOL* FileWasInUse);
 
         [DllImport("setupapi", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupInstallFileExW([NativeTypeName("HINF")] IntPtr InfHandle, [NativeTypeName("PINFCONTEXT")] void* InfContext, [NativeTypeName("PCWSTR")] ushort* SourceFile, [NativeTypeName("PCWSTR")] ushort* SourcePathRoot, [NativeTypeName("PCWSTR")] ushort* DestinationName, [NativeTypeName("DWORD")] uint CopyStyle, [NativeTypeName("PSP_FILE_CALLBACK_W")] delegate* unmanaged<void*, uint, nuint, nuint, uint> CopyMsgHandler, [NativeTypeName("PVOID")] void* Context, [NativeTypeName("PBOOL")] int* FileWasInUse);
+        public static extern BOOL SetupInstallFileExW(HINF InfHandle, [NativeTypeName("PINFCONTEXT")] void* InfContext, [NativeTypeName("PCWSTR")] ushort* SourceFile, [NativeTypeName("PCWSTR")] ushort* SourcePathRoot, [NativeTypeName("PCWSTR")] ushort* DestinationName, [NativeTypeName("DWORD")] uint CopyStyle, [NativeTypeName("PSP_FILE_CALLBACK_W")] delegate* unmanaged<void*, uint, nuint, nuint, uint> CopyMsgHandler, [NativeTypeName("PVOID")] void* Context, [NativeTypeName("PBOOL")] BOOL* FileWasInUse);
 
         [DllImport("setupapi", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("HSPFILEQ")]
-        public static extern IntPtr SetupOpenFileQueue();
+        public static extern HSPFILEQ SetupOpenFileQueue();
 
         [DllImport("setupapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupCloseFileQueue([NativeTypeName("HSPFILEQ")] IntPtr QueueHandle);
+        public static extern BOOL SetupCloseFileQueue(HSPFILEQ QueueHandle);
 
         [DllImport("setupapi", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupSetFileQueueAlternatePlatformA([NativeTypeName("HSPFILEQ")] IntPtr QueueHandle, [NativeTypeName("PSP_ALTPLATFORM_INFO")] void* AlternatePlatformInfo, [NativeTypeName("PCSTR")] sbyte* AlternateDefaultCatalogFile);
+        public static extern BOOL SetupSetFileQueueAlternatePlatformA(HSPFILEQ QueueHandle, [NativeTypeName("PSP_ALTPLATFORM_INFO")] void* AlternatePlatformInfo, [NativeTypeName("PCSTR")] sbyte* AlternateDefaultCatalogFile);
 
         [DllImport("setupapi", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupSetFileQueueAlternatePlatformW([NativeTypeName("HSPFILEQ")] IntPtr QueueHandle, [NativeTypeName("PSP_ALTPLATFORM_INFO")] void* AlternatePlatformInfo, [NativeTypeName("PCWSTR")] ushort* AlternateDefaultCatalogFile);
+        public static extern BOOL SetupSetFileQueueAlternatePlatformW(HSPFILEQ QueueHandle, [NativeTypeName("PSP_ALTPLATFORM_INFO")] void* AlternatePlatformInfo, [NativeTypeName("PCWSTR")] ushort* AlternateDefaultCatalogFile);
 
         [DllImport("setupapi", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupSetPlatformPathOverrideA([NativeTypeName("PCSTR")] sbyte* Override);
+        public static extern BOOL SetupSetPlatformPathOverrideA([NativeTypeName("PCSTR")] sbyte* Override);
 
         [DllImport("setupapi", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupSetPlatformPathOverrideW([NativeTypeName("PCWSTR")] ushort* Override);
+        public static extern BOOL SetupSetPlatformPathOverrideW([NativeTypeName("PCWSTR")] ushort* Override);
 
         [DllImport("setupapi", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupQueueCopyA([NativeTypeName("HSPFILEQ")] IntPtr QueueHandle, [NativeTypeName("PCSTR")] sbyte* SourceRootPath, [NativeTypeName("PCSTR")] sbyte* SourcePath, [NativeTypeName("PCSTR")] sbyte* SourceFilename, [NativeTypeName("PCSTR")] sbyte* SourceDescription, [NativeTypeName("PCSTR")] sbyte* SourceTagfile, [NativeTypeName("PCSTR")] sbyte* TargetDirectory, [NativeTypeName("PCSTR")] sbyte* TargetFilename, [NativeTypeName("DWORD")] uint CopyStyle);
+        public static extern BOOL SetupQueueCopyA(HSPFILEQ QueueHandle, [NativeTypeName("PCSTR")] sbyte* SourceRootPath, [NativeTypeName("PCSTR")] sbyte* SourcePath, [NativeTypeName("PCSTR")] sbyte* SourceFilename, [NativeTypeName("PCSTR")] sbyte* SourceDescription, [NativeTypeName("PCSTR")] sbyte* SourceTagfile, [NativeTypeName("PCSTR")] sbyte* TargetDirectory, [NativeTypeName("PCSTR")] sbyte* TargetFilename, [NativeTypeName("DWORD")] uint CopyStyle);
 
         [DllImport("setupapi", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupQueueCopyW([NativeTypeName("HSPFILEQ")] IntPtr QueueHandle, [NativeTypeName("PCWSTR")] ushort* SourceRootPath, [NativeTypeName("PCWSTR")] ushort* SourcePath, [NativeTypeName("PCWSTR")] ushort* SourceFilename, [NativeTypeName("PCWSTR")] ushort* SourceDescription, [NativeTypeName("PCWSTR")] ushort* SourceTagfile, [NativeTypeName("PCWSTR")] ushort* TargetDirectory, [NativeTypeName("PCWSTR")] ushort* TargetFilename, [NativeTypeName("DWORD")] uint CopyStyle);
+        public static extern BOOL SetupQueueCopyW(HSPFILEQ QueueHandle, [NativeTypeName("PCWSTR")] ushort* SourceRootPath, [NativeTypeName("PCWSTR")] ushort* SourcePath, [NativeTypeName("PCWSTR")] ushort* SourceFilename, [NativeTypeName("PCWSTR")] ushort* SourceDescription, [NativeTypeName("PCWSTR")] ushort* SourceTagfile, [NativeTypeName("PCWSTR")] ushort* TargetDirectory, [NativeTypeName("PCWSTR")] ushort* TargetFilename, [NativeTypeName("DWORD")] uint CopyStyle);
 
         [DllImport("setupapi", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupQueueCopyIndirectA([NativeTypeName("PSP_FILE_COPY_PARAMS_A")] void* CopyParams);
+        public static extern BOOL SetupQueueCopyIndirectA([NativeTypeName("PSP_FILE_COPY_PARAMS_A")] void* CopyParams);
 
         [DllImport("setupapi", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupQueueCopyIndirectW([NativeTypeName("PSP_FILE_COPY_PARAMS_W")] void* CopyParams);
+        public static extern BOOL SetupQueueCopyIndirectW([NativeTypeName("PSP_FILE_COPY_PARAMS_W")] void* CopyParams);
 
         [DllImport("setupapi", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupQueueDefaultCopyA([NativeTypeName("HSPFILEQ")] IntPtr QueueHandle, [NativeTypeName("HINF")] IntPtr InfHandle, [NativeTypeName("PCSTR")] sbyte* SourceRootPath, [NativeTypeName("PCSTR")] sbyte* SourceFilename, [NativeTypeName("PCSTR")] sbyte* TargetFilename, [NativeTypeName("DWORD")] uint CopyStyle);
+        public static extern BOOL SetupQueueDefaultCopyA(HSPFILEQ QueueHandle, HINF InfHandle, [NativeTypeName("PCSTR")] sbyte* SourceRootPath, [NativeTypeName("PCSTR")] sbyte* SourceFilename, [NativeTypeName("PCSTR")] sbyte* TargetFilename, [NativeTypeName("DWORD")] uint CopyStyle);
 
         [DllImport("setupapi", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupQueueDefaultCopyW([NativeTypeName("HSPFILEQ")] IntPtr QueueHandle, [NativeTypeName("HINF")] IntPtr InfHandle, [NativeTypeName("PCWSTR")] ushort* SourceRootPath, [NativeTypeName("PCWSTR")] ushort* SourceFilename, [NativeTypeName("PCWSTR")] ushort* TargetFilename, [NativeTypeName("DWORD")] uint CopyStyle);
+        public static extern BOOL SetupQueueDefaultCopyW(HSPFILEQ QueueHandle, HINF InfHandle, [NativeTypeName("PCWSTR")] ushort* SourceRootPath, [NativeTypeName("PCWSTR")] ushort* SourceFilename, [NativeTypeName("PCWSTR")] ushort* TargetFilename, [NativeTypeName("DWORD")] uint CopyStyle);
 
         [DllImport("setupapi", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupQueueCopySectionA([NativeTypeName("HSPFILEQ")] IntPtr QueueHandle, [NativeTypeName("PCSTR")] sbyte* SourceRootPath, [NativeTypeName("HINF")] IntPtr InfHandle, [NativeTypeName("HINF")] IntPtr ListInfHandle, [NativeTypeName("PCSTR")] sbyte* Section, [NativeTypeName("DWORD")] uint CopyStyle);
+        public static extern BOOL SetupQueueCopySectionA(HSPFILEQ QueueHandle, [NativeTypeName("PCSTR")] sbyte* SourceRootPath, HINF InfHandle, HINF ListInfHandle, [NativeTypeName("PCSTR")] sbyte* Section, [NativeTypeName("DWORD")] uint CopyStyle);
 
         [DllImport("setupapi", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupQueueCopySectionW([NativeTypeName("HSPFILEQ")] IntPtr QueueHandle, [NativeTypeName("PCWSTR")] ushort* SourceRootPath, [NativeTypeName("HINF")] IntPtr InfHandle, [NativeTypeName("HINF")] IntPtr ListInfHandle, [NativeTypeName("PCWSTR")] ushort* Section, [NativeTypeName("DWORD")] uint CopyStyle);
+        public static extern BOOL SetupQueueCopySectionW(HSPFILEQ QueueHandle, [NativeTypeName("PCWSTR")] ushort* SourceRootPath, HINF InfHandle, HINF ListInfHandle, [NativeTypeName("PCWSTR")] ushort* Section, [NativeTypeName("DWORD")] uint CopyStyle);
 
         [DllImport("setupapi", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupQueueDeleteA([NativeTypeName("HSPFILEQ")] IntPtr QueueHandle, [NativeTypeName("PCSTR")] sbyte* PathPart1, [NativeTypeName("PCSTR")] sbyte* PathPart2);
+        public static extern BOOL SetupQueueDeleteA(HSPFILEQ QueueHandle, [NativeTypeName("PCSTR")] sbyte* PathPart1, [NativeTypeName("PCSTR")] sbyte* PathPart2);
 
         [DllImport("setupapi", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupQueueDeleteW([NativeTypeName("HSPFILEQ")] IntPtr QueueHandle, [NativeTypeName("PCWSTR")] ushort* PathPart1, [NativeTypeName("PCWSTR")] ushort* PathPart2);
+        public static extern BOOL SetupQueueDeleteW(HSPFILEQ QueueHandle, [NativeTypeName("PCWSTR")] ushort* PathPart1, [NativeTypeName("PCWSTR")] ushort* PathPart2);
 
         [DllImport("setupapi", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupQueueDeleteSectionA([NativeTypeName("HSPFILEQ")] IntPtr QueueHandle, [NativeTypeName("HINF")] IntPtr InfHandle, [NativeTypeName("HINF")] IntPtr ListInfHandle, [NativeTypeName("PCSTR")] sbyte* Section);
+        public static extern BOOL SetupQueueDeleteSectionA(HSPFILEQ QueueHandle, HINF InfHandle, HINF ListInfHandle, [NativeTypeName("PCSTR")] sbyte* Section);
 
         [DllImport("setupapi", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupQueueDeleteSectionW([NativeTypeName("HSPFILEQ")] IntPtr QueueHandle, [NativeTypeName("HINF")] IntPtr InfHandle, [NativeTypeName("HINF")] IntPtr ListInfHandle, [NativeTypeName("PCWSTR")] ushort* Section);
+        public static extern BOOL SetupQueueDeleteSectionW(HSPFILEQ QueueHandle, HINF InfHandle, HINF ListInfHandle, [NativeTypeName("PCWSTR")] ushort* Section);
 
         [DllImport("setupapi", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupQueueRenameA([NativeTypeName("HSPFILEQ")] IntPtr QueueHandle, [NativeTypeName("PCSTR")] sbyte* SourcePath, [NativeTypeName("PCSTR")] sbyte* SourceFilename, [NativeTypeName("PCSTR")] sbyte* TargetPath, [NativeTypeName("PCSTR")] sbyte* TargetFilename);
+        public static extern BOOL SetupQueueRenameA(HSPFILEQ QueueHandle, [NativeTypeName("PCSTR")] sbyte* SourcePath, [NativeTypeName("PCSTR")] sbyte* SourceFilename, [NativeTypeName("PCSTR")] sbyte* TargetPath, [NativeTypeName("PCSTR")] sbyte* TargetFilename);
 
         [DllImport("setupapi", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupQueueRenameW([NativeTypeName("HSPFILEQ")] IntPtr QueueHandle, [NativeTypeName("PCWSTR")] ushort* SourcePath, [NativeTypeName("PCWSTR")] ushort* SourceFilename, [NativeTypeName("PCWSTR")] ushort* TargetPath, [NativeTypeName("PCWSTR")] ushort* TargetFilename);
+        public static extern BOOL SetupQueueRenameW(HSPFILEQ QueueHandle, [NativeTypeName("PCWSTR")] ushort* SourcePath, [NativeTypeName("PCWSTR")] ushort* SourceFilename, [NativeTypeName("PCWSTR")] ushort* TargetPath, [NativeTypeName("PCWSTR")] ushort* TargetFilename);
 
         [DllImport("setupapi", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupQueueRenameSectionA([NativeTypeName("HSPFILEQ")] IntPtr QueueHandle, [NativeTypeName("HINF")] IntPtr InfHandle, [NativeTypeName("HINF")] IntPtr ListInfHandle, [NativeTypeName("PCSTR")] sbyte* Section);
+        public static extern BOOL SetupQueueRenameSectionA(HSPFILEQ QueueHandle, HINF InfHandle, HINF ListInfHandle, [NativeTypeName("PCSTR")] sbyte* Section);
 
         [DllImport("setupapi", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupQueueRenameSectionW([NativeTypeName("HSPFILEQ")] IntPtr QueueHandle, [NativeTypeName("HINF")] IntPtr InfHandle, [NativeTypeName("HINF")] IntPtr ListInfHandle, [NativeTypeName("PCWSTR")] ushort* Section);
+        public static extern BOOL SetupQueueRenameSectionW(HSPFILEQ QueueHandle, HINF InfHandle, HINF ListInfHandle, [NativeTypeName("PCWSTR")] ushort* Section);
 
         [DllImport("setupapi", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupCommitFileQueueA([NativeTypeName("HWND")] IntPtr Owner, [NativeTypeName("HSPFILEQ")] IntPtr QueueHandle, [NativeTypeName("PSP_FILE_CALLBACK_A")] delegate* unmanaged<void*, uint, nuint, nuint, uint> MsgHandler, [NativeTypeName("PVOID")] void* Context);
+        public static extern BOOL SetupCommitFileQueueA(HWND Owner, HSPFILEQ QueueHandle, [NativeTypeName("PSP_FILE_CALLBACK_A")] delegate* unmanaged<void*, uint, nuint, nuint, uint> MsgHandler, [NativeTypeName("PVOID")] void* Context);
 
         [DllImport("setupapi", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupCommitFileQueueW([NativeTypeName("HWND")] IntPtr Owner, [NativeTypeName("HSPFILEQ")] IntPtr QueueHandle, [NativeTypeName("PSP_FILE_CALLBACK_W")] delegate* unmanaged<void*, uint, nuint, nuint, uint> MsgHandler, [NativeTypeName("PVOID")] void* Context);
+        public static extern BOOL SetupCommitFileQueueW(HWND Owner, HSPFILEQ QueueHandle, [NativeTypeName("PSP_FILE_CALLBACK_W")] delegate* unmanaged<void*, uint, nuint, nuint, uint> MsgHandler, [NativeTypeName("PVOID")] void* Context);
 
         [DllImport("setupapi", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupScanFileQueueA([NativeTypeName("HSPFILEQ")] IntPtr FileQueue, [NativeTypeName("DWORD")] uint Flags, [NativeTypeName("HWND")] IntPtr Window, [NativeTypeName("PSP_FILE_CALLBACK_A")] delegate* unmanaged<void*, uint, nuint, nuint, uint> CallbackRoutine, [NativeTypeName("PVOID")] void* CallbackContext, [NativeTypeName("PDWORD")] uint* Result);
+        public static extern BOOL SetupScanFileQueueA(HSPFILEQ FileQueue, [NativeTypeName("DWORD")] uint Flags, HWND Window, [NativeTypeName("PSP_FILE_CALLBACK_A")] delegate* unmanaged<void*, uint, nuint, nuint, uint> CallbackRoutine, [NativeTypeName("PVOID")] void* CallbackContext, [NativeTypeName("PDWORD")] uint* Result);
 
         [DllImport("setupapi", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupScanFileQueueW([NativeTypeName("HSPFILEQ")] IntPtr FileQueue, [NativeTypeName("DWORD")] uint Flags, [NativeTypeName("HWND")] IntPtr Window, [NativeTypeName("PSP_FILE_CALLBACK_W")] delegate* unmanaged<void*, uint, nuint, nuint, uint> CallbackRoutine, [NativeTypeName("PVOID")] void* CallbackContext, [NativeTypeName("PDWORD")] uint* Result);
+        public static extern BOOL SetupScanFileQueueW(HSPFILEQ FileQueue, [NativeTypeName("DWORD")] uint Flags, HWND Window, [NativeTypeName("PSP_FILE_CALLBACK_W")] delegate* unmanaged<void*, uint, nuint, nuint, uint> CallbackRoutine, [NativeTypeName("PVOID")] void* CallbackContext, [NativeTypeName("PDWORD")] uint* Result);
 
         [DllImport("setupapi", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupGetFileQueueCount([NativeTypeName("HSPFILEQ")] IntPtr FileQueue, [NativeTypeName("UINT")] uint SubQueueFileOp, [NativeTypeName("PUINT")] uint* NumOperations);
+        public static extern BOOL SetupGetFileQueueCount(HSPFILEQ FileQueue, uint SubQueueFileOp, [NativeTypeName("PUINT")] uint* NumOperations);
 
         [DllImport("setupapi", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupGetFileQueueFlags([NativeTypeName("HSPFILEQ")] IntPtr FileQueue, [NativeTypeName("PDWORD")] uint* Flags);
+        public static extern BOOL SetupGetFileQueueFlags(HSPFILEQ FileQueue, [NativeTypeName("PDWORD")] uint* Flags);
 
         [DllImport("setupapi", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupSetFileQueueFlags([NativeTypeName("HSPFILEQ")] IntPtr FileQueue, [NativeTypeName("DWORD")] uint FlagMask, [NativeTypeName("DWORD")] uint Flags);
+        public static extern BOOL SetupSetFileQueueFlags(HSPFILEQ FileQueue, [NativeTypeName("DWORD")] uint FlagMask, [NativeTypeName("DWORD")] uint Flags);
 
         [DllImport("setupapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupCopyOEMInfA([NativeTypeName("PCSTR")] sbyte* SourceInfFileName, [NativeTypeName("PCSTR")] sbyte* OEMSourceMediaLocation, [NativeTypeName("DWORD")] uint OEMSourceMediaType, [NativeTypeName("DWORD")] uint CopyStyle, [NativeTypeName("PSTR")] sbyte* DestinationInfFileName, [NativeTypeName("DWORD")] uint DestinationInfFileNameSize, [NativeTypeName("PDWORD")] uint* RequiredSize, [NativeTypeName("PSTR *")] sbyte** DestinationInfFileNameComponent);
+        public static extern BOOL SetupCopyOEMInfA([NativeTypeName("PCSTR")] sbyte* SourceInfFileName, [NativeTypeName("PCSTR")] sbyte* OEMSourceMediaLocation, [NativeTypeName("DWORD")] uint OEMSourceMediaType, [NativeTypeName("DWORD")] uint CopyStyle, [NativeTypeName("PSTR")] sbyte* DestinationInfFileName, [NativeTypeName("DWORD")] uint DestinationInfFileNameSize, [NativeTypeName("PDWORD")] uint* RequiredSize, [NativeTypeName("PSTR *")] sbyte** DestinationInfFileNameComponent);
 
         [DllImport("setupapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupCopyOEMInfW([NativeTypeName("PCWSTR")] ushort* SourceInfFileName, [NativeTypeName("PCWSTR")] ushort* OEMSourceMediaLocation, [NativeTypeName("DWORD")] uint OEMSourceMediaType, [NativeTypeName("DWORD")] uint CopyStyle, [NativeTypeName("PWSTR")] ushort* DestinationInfFileName, [NativeTypeName("DWORD")] uint DestinationInfFileNameSize, [NativeTypeName("PDWORD")] uint* RequiredSize, [NativeTypeName("PWSTR *")] ushort** DestinationInfFileNameComponent);
+        public static extern BOOL SetupCopyOEMInfW([NativeTypeName("PCWSTR")] ushort* SourceInfFileName, [NativeTypeName("PCWSTR")] ushort* OEMSourceMediaLocation, [NativeTypeName("DWORD")] uint OEMSourceMediaType, [NativeTypeName("DWORD")] uint CopyStyle, [NativeTypeName("PWSTR")] ushort* DestinationInfFileName, [NativeTypeName("DWORD")] uint DestinationInfFileNameSize, [NativeTypeName("PDWORD")] uint* RequiredSize, [NativeTypeName("PWSTR *")] ushort** DestinationInfFileNameComponent);
 
         [DllImport("setupapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupUninstallOEMInfA([NativeTypeName("PCSTR")] sbyte* InfFileName, [NativeTypeName("DWORD")] uint Flags, [NativeTypeName("PVOID")] void* Reserved);
+        public static extern BOOL SetupUninstallOEMInfA([NativeTypeName("PCSTR")] sbyte* InfFileName, [NativeTypeName("DWORD")] uint Flags, [NativeTypeName("PVOID")] void* Reserved);
 
         [DllImport("setupapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupUninstallOEMInfW([NativeTypeName("PCWSTR")] ushort* InfFileName, [NativeTypeName("DWORD")] uint Flags, [NativeTypeName("PVOID")] void* Reserved);
+        public static extern BOOL SetupUninstallOEMInfW([NativeTypeName("PCWSTR")] ushort* InfFileName, [NativeTypeName("DWORD")] uint Flags, [NativeTypeName("PVOID")] void* Reserved);
 
         [DllImport("setupapi", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupUninstallNewlyCopiedInfs([NativeTypeName("HSPFILEQ")] IntPtr FileQueue, [NativeTypeName("DWORD")] uint Flags, [NativeTypeName("PVOID")] void* Reserved);
+        public static extern BOOL SetupUninstallNewlyCopiedInfs(HSPFILEQ FileQueue, [NativeTypeName("DWORD")] uint Flags, [NativeTypeName("PVOID")] void* Reserved);
 
         [DllImport("setupapi", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("HDSKSPC")]
-        public static extern IntPtr SetupCreateDiskSpaceListA([NativeTypeName("PVOID")] void* Reserved1, [NativeTypeName("DWORD")] uint Reserved2, [NativeTypeName("UINT")] uint Flags);
+        public static extern HDSKSPC SetupCreateDiskSpaceListA([NativeTypeName("PVOID")] void* Reserved1, [NativeTypeName("DWORD")] uint Reserved2, uint Flags);
 
         [DllImport("setupapi", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("HDSKSPC")]
-        public static extern IntPtr SetupCreateDiskSpaceListW([NativeTypeName("PVOID")] void* Reserved1, [NativeTypeName("DWORD")] uint Reserved2, [NativeTypeName("UINT")] uint Flags);
+        public static extern HDSKSPC SetupCreateDiskSpaceListW([NativeTypeName("PVOID")] void* Reserved1, [NativeTypeName("DWORD")] uint Reserved2, uint Flags);
 
         [DllImport("setupapi", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("HDSKSPC")]
-        public static extern IntPtr SetupDuplicateDiskSpaceListA([NativeTypeName("HDSKSPC")] IntPtr DiskSpace, [NativeTypeName("PVOID")] void* Reserved1, [NativeTypeName("DWORD")] uint Reserved2, [NativeTypeName("UINT")] uint Flags);
+        public static extern HDSKSPC SetupDuplicateDiskSpaceListA(HDSKSPC DiskSpace, [NativeTypeName("PVOID")] void* Reserved1, [NativeTypeName("DWORD")] uint Reserved2, uint Flags);
 
         [DllImport("setupapi", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("HDSKSPC")]
-        public static extern IntPtr SetupDuplicateDiskSpaceListW([NativeTypeName("HDSKSPC")] IntPtr DiskSpace, [NativeTypeName("PVOID")] void* Reserved1, [NativeTypeName("DWORD")] uint Reserved2, [NativeTypeName("UINT")] uint Flags);
+        public static extern HDSKSPC SetupDuplicateDiskSpaceListW(HDSKSPC DiskSpace, [NativeTypeName("PVOID")] void* Reserved1, [NativeTypeName("DWORD")] uint Reserved2, uint Flags);
 
         [DllImport("setupapi", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupDestroyDiskSpaceList([NativeTypeName("HDSKSPC")] IntPtr DiskSpace);
+        public static extern BOOL SetupDestroyDiskSpaceList(HDSKSPC DiskSpace);
 
         [DllImport("setupapi", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupQueryDrivesInDiskSpaceListA([NativeTypeName("HDSKSPC")] IntPtr DiskSpace, [NativeTypeName("PSTR")] sbyte* ReturnBuffer, [NativeTypeName("DWORD")] uint ReturnBufferSize, [NativeTypeName("PDWORD")] uint* RequiredSize);
+        public static extern BOOL SetupQueryDrivesInDiskSpaceListA(HDSKSPC DiskSpace, [NativeTypeName("PSTR")] sbyte* ReturnBuffer, [NativeTypeName("DWORD")] uint ReturnBufferSize, [NativeTypeName("PDWORD")] uint* RequiredSize);
 
         [DllImport("setupapi", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupQueryDrivesInDiskSpaceListW([NativeTypeName("HDSKSPC")] IntPtr DiskSpace, [NativeTypeName("PWSTR")] ushort* ReturnBuffer, [NativeTypeName("DWORD")] uint ReturnBufferSize, [NativeTypeName("PDWORD")] uint* RequiredSize);
+        public static extern BOOL SetupQueryDrivesInDiskSpaceListW(HDSKSPC DiskSpace, [NativeTypeName("PWSTR")] ushort* ReturnBuffer, [NativeTypeName("DWORD")] uint ReturnBufferSize, [NativeTypeName("PDWORD")] uint* RequiredSize);
 
         [DllImport("setupapi", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupQuerySpaceRequiredOnDriveA([NativeTypeName("HDSKSPC")] IntPtr DiskSpace, [NativeTypeName("PCSTR")] sbyte* DriveSpec, [NativeTypeName("LONGLONG *")] long* SpaceRequired, [NativeTypeName("PVOID")] void* Reserved1, [NativeTypeName("UINT")] uint Reserved2);
+        public static extern BOOL SetupQuerySpaceRequiredOnDriveA(HDSKSPC DiskSpace, [NativeTypeName("PCSTR")] sbyte* DriveSpec, [NativeTypeName("LONGLONG *")] long* SpaceRequired, [NativeTypeName("PVOID")] void* Reserved1, uint Reserved2);
 
         [DllImport("setupapi", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupQuerySpaceRequiredOnDriveW([NativeTypeName("HDSKSPC")] IntPtr DiskSpace, [NativeTypeName("PCWSTR")] ushort* DriveSpec, [NativeTypeName("LONGLONG *")] long* SpaceRequired, [NativeTypeName("PVOID")] void* Reserved1, [NativeTypeName("UINT")] uint Reserved2);
+        public static extern BOOL SetupQuerySpaceRequiredOnDriveW(HDSKSPC DiskSpace, [NativeTypeName("PCWSTR")] ushort* DriveSpec, [NativeTypeName("LONGLONG *")] long* SpaceRequired, [NativeTypeName("PVOID")] void* Reserved1, uint Reserved2);
 
         [DllImport("setupapi", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupAdjustDiskSpaceListA([NativeTypeName("HDSKSPC")] IntPtr DiskSpace, [NativeTypeName("LPCSTR")] sbyte* DriveRoot, [NativeTypeName("LONGLONG")] long Amount, [NativeTypeName("PVOID")] void* Reserved1, [NativeTypeName("UINT")] uint Reserved2);
+        public static extern BOOL SetupAdjustDiskSpaceListA(HDSKSPC DiskSpace, [NativeTypeName("LPCSTR")] sbyte* DriveRoot, [NativeTypeName("LONGLONG")] long Amount, [NativeTypeName("PVOID")] void* Reserved1, uint Reserved2);
 
         [DllImport("setupapi", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupAdjustDiskSpaceListW([NativeTypeName("HDSKSPC")] IntPtr DiskSpace, [NativeTypeName("LPCWSTR")] ushort* DriveRoot, [NativeTypeName("LONGLONG")] long Amount, [NativeTypeName("PVOID")] void* Reserved1, [NativeTypeName("UINT")] uint Reserved2);
+        public static extern BOOL SetupAdjustDiskSpaceListW(HDSKSPC DiskSpace, [NativeTypeName("LPCWSTR")] ushort* DriveRoot, [NativeTypeName("LONGLONG")] long Amount, [NativeTypeName("PVOID")] void* Reserved1, uint Reserved2);
 
         [DllImport("setupapi", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupAddToDiskSpaceListA([NativeTypeName("HDSKSPC")] IntPtr DiskSpace, [NativeTypeName("PCSTR")] sbyte* TargetFilespec, [NativeTypeName("LONGLONG")] long FileSize, [NativeTypeName("UINT")] uint Operation, [NativeTypeName("PVOID")] void* Reserved1, [NativeTypeName("UINT")] uint Reserved2);
+        public static extern BOOL SetupAddToDiskSpaceListA(HDSKSPC DiskSpace, [NativeTypeName("PCSTR")] sbyte* TargetFilespec, [NativeTypeName("LONGLONG")] long FileSize, uint Operation, [NativeTypeName("PVOID")] void* Reserved1, uint Reserved2);
 
         [DllImport("setupapi", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupAddToDiskSpaceListW([NativeTypeName("HDSKSPC")] IntPtr DiskSpace, [NativeTypeName("PCWSTR")] ushort* TargetFilespec, [NativeTypeName("LONGLONG")] long FileSize, [NativeTypeName("UINT")] uint Operation, [NativeTypeName("PVOID")] void* Reserved1, [NativeTypeName("UINT")] uint Reserved2);
+        public static extern BOOL SetupAddToDiskSpaceListW(HDSKSPC DiskSpace, [NativeTypeName("PCWSTR")] ushort* TargetFilespec, [NativeTypeName("LONGLONG")] long FileSize, uint Operation, [NativeTypeName("PVOID")] void* Reserved1, uint Reserved2);
 
         [DllImport("setupapi", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupAddSectionToDiskSpaceListA([NativeTypeName("HDSKSPC")] IntPtr DiskSpace, [NativeTypeName("HINF")] IntPtr InfHandle, [NativeTypeName("HINF")] IntPtr ListInfHandle, [NativeTypeName("PCSTR")] sbyte* SectionName, [NativeTypeName("UINT")] uint Operation, [NativeTypeName("PVOID")] void* Reserved1, [NativeTypeName("UINT")] uint Reserved2);
+        public static extern BOOL SetupAddSectionToDiskSpaceListA(HDSKSPC DiskSpace, HINF InfHandle, HINF ListInfHandle, [NativeTypeName("PCSTR")] sbyte* SectionName, uint Operation, [NativeTypeName("PVOID")] void* Reserved1, uint Reserved2);
 
         [DllImport("setupapi", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupAddSectionToDiskSpaceListW([NativeTypeName("HDSKSPC")] IntPtr DiskSpace, [NativeTypeName("HINF")] IntPtr InfHandle, [NativeTypeName("HINF")] IntPtr ListInfHandle, [NativeTypeName("PCWSTR")] ushort* SectionName, [NativeTypeName("UINT")] uint Operation, [NativeTypeName("PVOID")] void* Reserved1, [NativeTypeName("UINT")] uint Reserved2);
+        public static extern BOOL SetupAddSectionToDiskSpaceListW(HDSKSPC DiskSpace, HINF InfHandle, HINF ListInfHandle, [NativeTypeName("PCWSTR")] ushort* SectionName, uint Operation, [NativeTypeName("PVOID")] void* Reserved1, uint Reserved2);
 
         [DllImport("setupapi", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupAddInstallSectionToDiskSpaceListA([NativeTypeName("HDSKSPC")] IntPtr DiskSpace, [NativeTypeName("HINF")] IntPtr InfHandle, [NativeTypeName("HINF")] IntPtr LayoutInfHandle, [NativeTypeName("PCSTR")] sbyte* SectionName, [NativeTypeName("PVOID")] void* Reserved1, [NativeTypeName("UINT")] uint Reserved2);
+        public static extern BOOL SetupAddInstallSectionToDiskSpaceListA(HDSKSPC DiskSpace, HINF InfHandle, HINF LayoutInfHandle, [NativeTypeName("PCSTR")] sbyte* SectionName, [NativeTypeName("PVOID")] void* Reserved1, uint Reserved2);
 
         [DllImport("setupapi", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupAddInstallSectionToDiskSpaceListW([NativeTypeName("HDSKSPC")] IntPtr DiskSpace, [NativeTypeName("HINF")] IntPtr InfHandle, [NativeTypeName("HINF")] IntPtr LayoutInfHandle, [NativeTypeName("PCWSTR")] ushort* SectionName, [NativeTypeName("PVOID")] void* Reserved1, [NativeTypeName("UINT")] uint Reserved2);
+        public static extern BOOL SetupAddInstallSectionToDiskSpaceListW(HDSKSPC DiskSpace, HINF InfHandle, HINF LayoutInfHandle, [NativeTypeName("PCWSTR")] ushort* SectionName, [NativeTypeName("PVOID")] void* Reserved1, uint Reserved2);
 
         [DllImport("setupapi", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupRemoveFromDiskSpaceListA([NativeTypeName("HDSKSPC")] IntPtr DiskSpace, [NativeTypeName("PCSTR")] sbyte* TargetFilespec, [NativeTypeName("UINT")] uint Operation, [NativeTypeName("PVOID")] void* Reserved1, [NativeTypeName("UINT")] uint Reserved2);
+        public static extern BOOL SetupRemoveFromDiskSpaceListA(HDSKSPC DiskSpace, [NativeTypeName("PCSTR")] sbyte* TargetFilespec, uint Operation, [NativeTypeName("PVOID")] void* Reserved1, uint Reserved2);
 
         [DllImport("setupapi", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupRemoveFromDiskSpaceListW([NativeTypeName("HDSKSPC")] IntPtr DiskSpace, [NativeTypeName("PCWSTR")] ushort* TargetFilespec, [NativeTypeName("UINT")] uint Operation, [NativeTypeName("PVOID")] void* Reserved1, [NativeTypeName("UINT")] uint Reserved2);
+        public static extern BOOL SetupRemoveFromDiskSpaceListW(HDSKSPC DiskSpace, [NativeTypeName("PCWSTR")] ushort* TargetFilespec, uint Operation, [NativeTypeName("PVOID")] void* Reserved1, uint Reserved2);
 
         [DllImport("setupapi", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupRemoveSectionFromDiskSpaceListA([NativeTypeName("HDSKSPC")] IntPtr DiskSpace, [NativeTypeName("HINF")] IntPtr InfHandle, [NativeTypeName("HINF")] IntPtr ListInfHandle, [NativeTypeName("PCSTR")] sbyte* SectionName, [NativeTypeName("UINT")] uint Operation, [NativeTypeName("PVOID")] void* Reserved1, [NativeTypeName("UINT")] uint Reserved2);
+        public static extern BOOL SetupRemoveSectionFromDiskSpaceListA(HDSKSPC DiskSpace, HINF InfHandle, HINF ListInfHandle, [NativeTypeName("PCSTR")] sbyte* SectionName, uint Operation, [NativeTypeName("PVOID")] void* Reserved1, uint Reserved2);
 
         [DllImport("setupapi", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupRemoveSectionFromDiskSpaceListW([NativeTypeName("HDSKSPC")] IntPtr DiskSpace, [NativeTypeName("HINF")] IntPtr InfHandle, [NativeTypeName("HINF")] IntPtr ListInfHandle, [NativeTypeName("PCWSTR")] ushort* SectionName, [NativeTypeName("UINT")] uint Operation, [NativeTypeName("PVOID")] void* Reserved1, [NativeTypeName("UINT")] uint Reserved2);
+        public static extern BOOL SetupRemoveSectionFromDiskSpaceListW(HDSKSPC DiskSpace, HINF InfHandle, HINF ListInfHandle, [NativeTypeName("PCWSTR")] ushort* SectionName, uint Operation, [NativeTypeName("PVOID")] void* Reserved1, uint Reserved2);
 
         [DllImport("setupapi", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupRemoveInstallSectionFromDiskSpaceListA([NativeTypeName("HDSKSPC")] IntPtr DiskSpace, [NativeTypeName("HINF")] IntPtr InfHandle, [NativeTypeName("HINF")] IntPtr LayoutInfHandle, [NativeTypeName("PCSTR")] sbyte* SectionName, [NativeTypeName("PVOID")] void* Reserved1, [NativeTypeName("UINT")] uint Reserved2);
+        public static extern BOOL SetupRemoveInstallSectionFromDiskSpaceListA(HDSKSPC DiskSpace, HINF InfHandle, HINF LayoutInfHandle, [NativeTypeName("PCSTR")] sbyte* SectionName, [NativeTypeName("PVOID")] void* Reserved1, uint Reserved2);
 
         [DllImport("setupapi", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupRemoveInstallSectionFromDiskSpaceListW([NativeTypeName("HDSKSPC")] IntPtr DiskSpace, [NativeTypeName("HINF")] IntPtr InfHandle, [NativeTypeName("HINF")] IntPtr LayoutInfHandle, [NativeTypeName("PCWSTR")] ushort* SectionName, [NativeTypeName("PVOID")] void* Reserved1, [NativeTypeName("UINT")] uint Reserved2);
+        public static extern BOOL SetupRemoveInstallSectionFromDiskSpaceListW(HDSKSPC DiskSpace, HINF InfHandle, HINF LayoutInfHandle, [NativeTypeName("PCWSTR")] ushort* SectionName, [NativeTypeName("PVOID")] void* Reserved1, uint Reserved2);
 
         [DllImport("setupapi", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupIterateCabinetA([NativeTypeName("PCSTR")] sbyte* CabinetFile, [NativeTypeName("DWORD")] uint Reserved, [NativeTypeName("PSP_FILE_CALLBACK_A")] delegate* unmanaged<void*, uint, nuint, nuint, uint> MsgHandler, [NativeTypeName("PVOID")] void* Context);
+        public static extern BOOL SetupIterateCabinetA([NativeTypeName("PCSTR")] sbyte* CabinetFile, [NativeTypeName("DWORD")] uint Reserved, [NativeTypeName("PSP_FILE_CALLBACK_A")] delegate* unmanaged<void*, uint, nuint, nuint, uint> MsgHandler, [NativeTypeName("PVOID")] void* Context);
 
         [DllImport("setupapi", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupIterateCabinetW([NativeTypeName("PCWSTR")] ushort* CabinetFile, [NativeTypeName("DWORD")] uint Reserved, [NativeTypeName("PSP_FILE_CALLBACK_W")] delegate* unmanaged<void*, uint, nuint, nuint, uint> MsgHandler, [NativeTypeName("PVOID")] void* Context);
+        public static extern BOOL SetupIterateCabinetW([NativeTypeName("PCWSTR")] ushort* CabinetFile, [NativeTypeName("DWORD")] uint Reserved, [NativeTypeName("PSP_FILE_CALLBACK_W")] delegate* unmanaged<void*, uint, nuint, nuint, uint> MsgHandler, [NativeTypeName("PVOID")] void* Context);
 
         [DllImport("setupapi", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("INT")]
-        public static extern int SetupPromptReboot([NativeTypeName("HSPFILEQ")] IntPtr FileQueue, [NativeTypeName("HWND")] IntPtr Owner, [NativeTypeName("BOOL")] int ScanOnly);
+        public static extern int SetupPromptReboot(HSPFILEQ FileQueue, HWND Owner, BOOL ScanOnly);
 
         [DllImport("setupapi", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("PVOID")]
-        public static extern void* SetupInitDefaultQueueCallback([NativeTypeName("HWND")] IntPtr OwnerWindow);
+        public static extern void* SetupInitDefaultQueueCallback(HWND OwnerWindow);
 
         [DllImport("setupapi", ExactSpelling = true)]
         [return: NativeTypeName("PVOID")]
-        public static extern void* SetupInitDefaultQueueCallbackEx([NativeTypeName("HWND")] IntPtr OwnerWindow, [NativeTypeName("HWND")] IntPtr AlternateProgressWindow, [NativeTypeName("UINT")] uint ProgressMessage, [NativeTypeName("DWORD")] uint Reserved1, [NativeTypeName("PVOID")] void* Reserved2);
+        public static extern void* SetupInitDefaultQueueCallbackEx(HWND OwnerWindow, HWND AlternateProgressWindow, uint ProgressMessage, [NativeTypeName("DWORD")] uint Reserved1, [NativeTypeName("PVOID")] void* Reserved2);
 
         [DllImport("setupapi", ExactSpelling = true, SetLastError = true)]
         public static extern void SetupTermDefaultQueueCallback([NativeTypeName("PVOID")] void* Context);
 
         [DllImport("setupapi", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("UINT")]
-        public static extern uint SetupDefaultQueueCallbackA([NativeTypeName("PVOID")] void* Context, [NativeTypeName("UINT")] uint Notification, [NativeTypeName("UINT_PTR")] nuint Param1, [NativeTypeName("UINT_PTR")] nuint Param2);
+        public static extern uint SetupDefaultQueueCallbackA([NativeTypeName("PVOID")] void* Context, uint Notification, [NativeTypeName("UINT_PTR")] nuint Param1, [NativeTypeName("UINT_PTR")] nuint Param2);
 
         [DllImport("setupapi", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("UINT")]
-        public static extern uint SetupDefaultQueueCallbackW([NativeTypeName("PVOID")] void* Context, [NativeTypeName("UINT")] uint Notification, [NativeTypeName("UINT_PTR")] nuint Param1, [NativeTypeName("UINT_PTR")] nuint Param2);
+        public static extern uint SetupDefaultQueueCallbackW([NativeTypeName("PVOID")] void* Context, uint Notification, [NativeTypeName("UINT_PTR")] nuint Param1, [NativeTypeName("UINT_PTR")] nuint Param2);
 
         [DllImport("setupapi", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupInstallFromInfSectionA([NativeTypeName("HWND")] IntPtr Owner, [NativeTypeName("HINF")] IntPtr InfHandle, [NativeTypeName("PCSTR")] sbyte* SectionName, [NativeTypeName("UINT")] uint Flags, [NativeTypeName("HKEY")] IntPtr RelativeKeyRoot, [NativeTypeName("PCSTR")] sbyte* SourceRootPath, [NativeTypeName("UINT")] uint CopyFlags, [NativeTypeName("PSP_FILE_CALLBACK_A")] delegate* unmanaged<void*, uint, nuint, nuint, uint> MsgHandler, [NativeTypeName("PVOID")] void* Context, [NativeTypeName("HDEVINFO")] IntPtr DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData);
+        public static extern BOOL SetupInstallFromInfSectionA(HWND Owner, HINF InfHandle, [NativeTypeName("PCSTR")] sbyte* SectionName, uint Flags, HKEY RelativeKeyRoot, [NativeTypeName("PCSTR")] sbyte* SourceRootPath, uint CopyFlags, [NativeTypeName("PSP_FILE_CALLBACK_A")] delegate* unmanaged<void*, uint, nuint, nuint, uint> MsgHandler, [NativeTypeName("PVOID")] void* Context, HDEVINFO DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData);
 
         [DllImport("setupapi", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupInstallFromInfSectionW([NativeTypeName("HWND")] IntPtr Owner, [NativeTypeName("HINF")] IntPtr InfHandle, [NativeTypeName("PCWSTR")] ushort* SectionName, [NativeTypeName("UINT")] uint Flags, [NativeTypeName("HKEY")] IntPtr RelativeKeyRoot, [NativeTypeName("PCWSTR")] ushort* SourceRootPath, [NativeTypeName("UINT")] uint CopyFlags, [NativeTypeName("PSP_FILE_CALLBACK_W")] delegate* unmanaged<void*, uint, nuint, nuint, uint> MsgHandler, [NativeTypeName("PVOID")] void* Context, [NativeTypeName("HDEVINFO")] IntPtr DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData);
+        public static extern BOOL SetupInstallFromInfSectionW(HWND Owner, HINF InfHandle, [NativeTypeName("PCWSTR")] ushort* SectionName, uint Flags, HKEY RelativeKeyRoot, [NativeTypeName("PCWSTR")] ushort* SourceRootPath, uint CopyFlags, [NativeTypeName("PSP_FILE_CALLBACK_W")] delegate* unmanaged<void*, uint, nuint, nuint, uint> MsgHandler, [NativeTypeName("PVOID")] void* Context, HDEVINFO DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData);
 
         [DllImport("setupapi", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupInstallFilesFromInfSectionA([NativeTypeName("HINF")] IntPtr InfHandle, [NativeTypeName("HINF")] IntPtr LayoutInfHandle, [NativeTypeName("HSPFILEQ")] IntPtr FileQueue, [NativeTypeName("PCSTR")] sbyte* SectionName, [NativeTypeName("PCSTR")] sbyte* SourceRootPath, [NativeTypeName("UINT")] uint CopyFlags);
+        public static extern BOOL SetupInstallFilesFromInfSectionA(HINF InfHandle, HINF LayoutInfHandle, HSPFILEQ FileQueue, [NativeTypeName("PCSTR")] sbyte* SectionName, [NativeTypeName("PCSTR")] sbyte* SourceRootPath, uint CopyFlags);
 
         [DllImport("setupapi", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupInstallFilesFromInfSectionW([NativeTypeName("HINF")] IntPtr InfHandle, [NativeTypeName("HINF")] IntPtr LayoutInfHandle, [NativeTypeName("HSPFILEQ")] IntPtr FileQueue, [NativeTypeName("PCWSTR")] ushort* SectionName, [NativeTypeName("PCWSTR")] ushort* SourceRootPath, [NativeTypeName("UINT")] uint CopyFlags);
+        public static extern BOOL SetupInstallFilesFromInfSectionW(HINF InfHandle, HINF LayoutInfHandle, HSPFILEQ FileQueue, [NativeTypeName("PCWSTR")] ushort* SectionName, [NativeTypeName("PCWSTR")] ushort* SourceRootPath, uint CopyFlags);
 
         [DllImport("setupapi", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupInstallServicesFromInfSectionA([NativeTypeName("HINF")] IntPtr InfHandle, [NativeTypeName("PCSTR")] sbyte* SectionName, [NativeTypeName("DWORD")] uint Flags);
+        public static extern BOOL SetupInstallServicesFromInfSectionA(HINF InfHandle, [NativeTypeName("PCSTR")] sbyte* SectionName, [NativeTypeName("DWORD")] uint Flags);
 
         [DllImport("setupapi", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupInstallServicesFromInfSectionW([NativeTypeName("HINF")] IntPtr InfHandle, [NativeTypeName("PCWSTR")] ushort* SectionName, [NativeTypeName("DWORD")] uint Flags);
+        public static extern BOOL SetupInstallServicesFromInfSectionW(HINF InfHandle, [NativeTypeName("PCWSTR")] ushort* SectionName, [NativeTypeName("DWORD")] uint Flags);
 
         [DllImport("setupapi", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupInstallServicesFromInfSectionExA([NativeTypeName("HINF")] IntPtr InfHandle, [NativeTypeName("PCSTR")] sbyte* SectionName, [NativeTypeName("DWORD")] uint Flags, [NativeTypeName("HDEVINFO")] IntPtr DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData, [NativeTypeName("PVOID")] void* Reserved1, [NativeTypeName("PVOID")] void* Reserved2);
+        public static extern BOOL SetupInstallServicesFromInfSectionExA(HINF InfHandle, [NativeTypeName("PCSTR")] sbyte* SectionName, [NativeTypeName("DWORD")] uint Flags, HDEVINFO DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData, [NativeTypeName("PVOID")] void* Reserved1, [NativeTypeName("PVOID")] void* Reserved2);
 
         [DllImport("setupapi", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupInstallServicesFromInfSectionExW([NativeTypeName("HINF")] IntPtr InfHandle, [NativeTypeName("PCWSTR")] ushort* SectionName, [NativeTypeName("DWORD")] uint Flags, [NativeTypeName("HDEVINFO")] IntPtr DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData, [NativeTypeName("PVOID")] void* Reserved1, [NativeTypeName("PVOID")] void* Reserved2);
+        public static extern BOOL SetupInstallServicesFromInfSectionExW(HINF InfHandle, [NativeTypeName("PCWSTR")] ushort* SectionName, [NativeTypeName("DWORD")] uint Flags, HDEVINFO DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData, [NativeTypeName("PVOID")] void* Reserved1, [NativeTypeName("PVOID")] void* Reserved2);
 
         [DllImport("setupapi", ExactSpelling = true)]
-        public static extern void InstallHinfSectionA([NativeTypeName("HWND")] IntPtr Window, [NativeTypeName("HINSTANCE")] IntPtr ModuleHandle, [NativeTypeName("PCSTR")] sbyte* CommandLine, [NativeTypeName("INT")] int ShowCommand);
+        public static extern void InstallHinfSectionA(HWND Window, HINSTANCE ModuleHandle, [NativeTypeName("PCSTR")] sbyte* CommandLine, int ShowCommand);
 
         [DllImport("setupapi", ExactSpelling = true)]
-        public static extern void InstallHinfSectionW([NativeTypeName("HWND")] IntPtr Window, [NativeTypeName("HINSTANCE")] IntPtr ModuleHandle, [NativeTypeName("PCWSTR")] ushort* CommandLine, [NativeTypeName("INT")] int ShowCommand);
+        public static extern void InstallHinfSectionW(HWND Window, HINSTANCE ModuleHandle, [NativeTypeName("PCWSTR")] ushort* CommandLine, int ShowCommand);
 
         [DllImport("setupapi", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("HSPFILELOG")]
-        public static extern IntPtr SetupInitializeFileLogA([NativeTypeName("PCSTR")] sbyte* LogFileName, [NativeTypeName("DWORD")] uint Flags);
+        public static extern HSPFILELOG SetupInitializeFileLogA([NativeTypeName("PCSTR")] sbyte* LogFileName, [NativeTypeName("DWORD")] uint Flags);
 
         [DllImport("setupapi", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("HSPFILELOG")]
-        public static extern IntPtr SetupInitializeFileLogW([NativeTypeName("PCWSTR")] ushort* LogFileName, [NativeTypeName("DWORD")] uint Flags);
+        public static extern HSPFILELOG SetupInitializeFileLogW([NativeTypeName("PCWSTR")] ushort* LogFileName, [NativeTypeName("DWORD")] uint Flags);
 
         [DllImport("setupapi", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupTerminateFileLog([NativeTypeName("HSPFILELOG")] IntPtr FileLogHandle);
+        public static extern BOOL SetupTerminateFileLog(HSPFILELOG FileLogHandle);
 
         [DllImport("setupapi", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupLogFileA([NativeTypeName("HSPFILELOG")] IntPtr FileLogHandle, [NativeTypeName("PCSTR")] sbyte* LogSectionName, [NativeTypeName("PCSTR")] sbyte* SourceFilename, [NativeTypeName("PCSTR")] sbyte* TargetFilename, [NativeTypeName("DWORD")] uint Checksum, [NativeTypeName("PCSTR")] sbyte* DiskTagfile, [NativeTypeName("PCSTR")] sbyte* DiskDescription, [NativeTypeName("PCSTR")] sbyte* OtherInfo, [NativeTypeName("DWORD")] uint Flags);
+        public static extern BOOL SetupLogFileA(HSPFILELOG FileLogHandle, [NativeTypeName("PCSTR")] sbyte* LogSectionName, [NativeTypeName("PCSTR")] sbyte* SourceFilename, [NativeTypeName("PCSTR")] sbyte* TargetFilename, [NativeTypeName("DWORD")] uint Checksum, [NativeTypeName("PCSTR")] sbyte* DiskTagfile, [NativeTypeName("PCSTR")] sbyte* DiskDescription, [NativeTypeName("PCSTR")] sbyte* OtherInfo, [NativeTypeName("DWORD")] uint Flags);
 
         [DllImport("setupapi", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupLogFileW([NativeTypeName("HSPFILELOG")] IntPtr FileLogHandle, [NativeTypeName("PCWSTR")] ushort* LogSectionName, [NativeTypeName("PCWSTR")] ushort* SourceFilename, [NativeTypeName("PCWSTR")] ushort* TargetFilename, [NativeTypeName("DWORD")] uint Checksum, [NativeTypeName("PCWSTR")] ushort* DiskTagfile, [NativeTypeName("PCWSTR")] ushort* DiskDescription, [NativeTypeName("PCWSTR")] ushort* OtherInfo, [NativeTypeName("DWORD")] uint Flags);
+        public static extern BOOL SetupLogFileW(HSPFILELOG FileLogHandle, [NativeTypeName("PCWSTR")] ushort* LogSectionName, [NativeTypeName("PCWSTR")] ushort* SourceFilename, [NativeTypeName("PCWSTR")] ushort* TargetFilename, [NativeTypeName("DWORD")] uint Checksum, [NativeTypeName("PCWSTR")] ushort* DiskTagfile, [NativeTypeName("PCWSTR")] ushort* DiskDescription, [NativeTypeName("PCWSTR")] ushort* OtherInfo, [NativeTypeName("DWORD")] uint Flags);
 
         [DllImport("setupapi", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupRemoveFileLogEntryA([NativeTypeName("HSPFILELOG")] IntPtr FileLogHandle, [NativeTypeName("PCSTR")] sbyte* LogSectionName, [NativeTypeName("PCSTR")] sbyte* TargetFilename);
+        public static extern BOOL SetupRemoveFileLogEntryA(HSPFILELOG FileLogHandle, [NativeTypeName("PCSTR")] sbyte* LogSectionName, [NativeTypeName("PCSTR")] sbyte* TargetFilename);
 
         [DllImport("setupapi", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupRemoveFileLogEntryW([NativeTypeName("HSPFILELOG")] IntPtr FileLogHandle, [NativeTypeName("PCWSTR")] ushort* LogSectionName, [NativeTypeName("PCWSTR")] ushort* TargetFilename);
+        public static extern BOOL SetupRemoveFileLogEntryW(HSPFILELOG FileLogHandle, [NativeTypeName("PCWSTR")] ushort* LogSectionName, [NativeTypeName("PCWSTR")] ushort* TargetFilename);
 
         [DllImport("setupapi", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupQueryFileLogA([NativeTypeName("HSPFILELOG")] IntPtr FileLogHandle, [NativeTypeName("PCSTR")] sbyte* LogSectionName, [NativeTypeName("PCSTR")] sbyte* TargetFilename, SetupFileLogInfo DesiredInfo, [NativeTypeName("PSTR")] sbyte* DataOut, [NativeTypeName("DWORD")] uint ReturnBufferSize, [NativeTypeName("PDWORD")] uint* RequiredSize);
+        public static extern BOOL SetupQueryFileLogA(HSPFILELOG FileLogHandle, [NativeTypeName("PCSTR")] sbyte* LogSectionName, [NativeTypeName("PCSTR")] sbyte* TargetFilename, SetupFileLogInfo DesiredInfo, [NativeTypeName("PSTR")] sbyte* DataOut, [NativeTypeName("DWORD")] uint ReturnBufferSize, [NativeTypeName("PDWORD")] uint* RequiredSize);
 
         [DllImport("setupapi", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupQueryFileLogW([NativeTypeName("HSPFILELOG")] IntPtr FileLogHandle, [NativeTypeName("PCWSTR")] ushort* LogSectionName, [NativeTypeName("PCWSTR")] ushort* TargetFilename, SetupFileLogInfo DesiredInfo, [NativeTypeName("PWSTR")] ushort* DataOut, [NativeTypeName("DWORD")] uint ReturnBufferSize, [NativeTypeName("PDWORD")] uint* RequiredSize);
+        public static extern BOOL SetupQueryFileLogW(HSPFILELOG FileLogHandle, [NativeTypeName("PCWSTR")] ushort* LogSectionName, [NativeTypeName("PCWSTR")] ushort* TargetFilename, SetupFileLogInfo DesiredInfo, [NativeTypeName("PWSTR")] ushort* DataOut, [NativeTypeName("DWORD")] uint ReturnBufferSize, [NativeTypeName("PDWORD")] uint* RequiredSize);
 
         [DllImport("setupapi", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupOpenLog([NativeTypeName("BOOL")] int Erase);
+        public static extern BOOL SetupOpenLog(BOOL Erase);
 
         [DllImport("setupapi", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupLogErrorA([NativeTypeName("LPCSTR")] sbyte* MessageString, [NativeTypeName("DWORD")] uint Severity);
+        public static extern BOOL SetupLogErrorA([NativeTypeName("LPCSTR")] sbyte* MessageString, [NativeTypeName("DWORD")] uint Severity);
 
         [DllImport("setupapi", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupLogErrorW([NativeTypeName("LPCWSTR")] ushort* MessageString, [NativeTypeName("DWORD")] uint Severity);
+        public static extern BOOL SetupLogErrorW([NativeTypeName("LPCWSTR")] ushort* MessageString, [NativeTypeName("DWORD")] uint Severity);
 
         [DllImport("setupapi", ExactSpelling = true)]
         public static extern void SetupCloseLog();
@@ -695,647 +540,487 @@ namespace TerraFX.Interop
         public static extern void SetupWriteTextLogError([NativeTypeName("SP_LOG_TOKEN")] ulong LogToken, [NativeTypeName("DWORD")] uint Category, [NativeTypeName("DWORD")] uint LogFlags, [NativeTypeName("DWORD")] uint Error, [NativeTypeName("PCSTR")] sbyte* MessageStr);
 
         [DllImport("setupapi", ExactSpelling = true)]
-        public static extern void SetupWriteTextLogInfLine([NativeTypeName("SP_LOG_TOKEN")] ulong LogToken, [NativeTypeName("DWORD")] uint Flags, [NativeTypeName("HINF")] IntPtr InfHandle, [NativeTypeName("PINFCONTEXT")] void* Context);
+        public static extern void SetupWriteTextLogInfLine([NativeTypeName("SP_LOG_TOKEN")] ulong LogToken, [NativeTypeName("DWORD")] uint Flags, HINF InfHandle, [NativeTypeName("PINFCONTEXT")] void* Context);
 
         [DllImport("setupapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupGetBackupInformationA([NativeTypeName("HSPFILEQ")] IntPtr QueueHandle, [NativeTypeName("PSP_BACKUP_QUEUE_PARAMS_A")] void* BackupParams);
+        public static extern BOOL SetupGetBackupInformationA(HSPFILEQ QueueHandle, [NativeTypeName("PSP_BACKUP_QUEUE_PARAMS_A")] void* BackupParams);
 
         [DllImport("setupapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupGetBackupInformationW([NativeTypeName("HSPFILEQ")] IntPtr QueueHandle, [NativeTypeName("PSP_BACKUP_QUEUE_PARAMS_W")] void* BackupParams);
+        public static extern BOOL SetupGetBackupInformationW(HSPFILEQ QueueHandle, [NativeTypeName("PSP_BACKUP_QUEUE_PARAMS_W")] void* BackupParams);
 
         [DllImport("setupapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupPrepareQueueForRestoreA([NativeTypeName("HSPFILEQ")] IntPtr QueueHandle, [NativeTypeName("PCSTR")] sbyte* BackupPath, [NativeTypeName("DWORD")] uint RestoreFlags);
+        public static extern BOOL SetupPrepareQueueForRestoreA(HSPFILEQ QueueHandle, [NativeTypeName("PCSTR")] sbyte* BackupPath, [NativeTypeName("DWORD")] uint RestoreFlags);
 
         [DllImport("setupapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupPrepareQueueForRestoreW([NativeTypeName("HSPFILEQ")] IntPtr QueueHandle, [NativeTypeName("PCWSTR")] ushort* BackupPath, [NativeTypeName("DWORD")] uint RestoreFlags);
+        public static extern BOOL SetupPrepareQueueForRestoreW(HSPFILEQ QueueHandle, [NativeTypeName("PCWSTR")] ushort* BackupPath, [NativeTypeName("DWORD")] uint RestoreFlags);
 
         [DllImport("setupapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupSetNonInteractiveMode([NativeTypeName("BOOL")] int NonInteractiveFlag);
+        public static extern BOOL SetupSetNonInteractiveMode(BOOL NonInteractiveFlag);
 
         [DllImport("setupapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupGetNonInteractiveMode();
+        public static extern BOOL SetupGetNonInteractiveMode();
 
         [DllImport("setupapi", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("HDEVINFO")]
-        public static extern IntPtr SetupDiCreateDeviceInfoList([NativeTypeName("const GUID *")] Guid* ClassGuid, [NativeTypeName("HWND")] IntPtr hwndParent);
+        public static extern HDEVINFO SetupDiCreateDeviceInfoList([NativeTypeName("const GUID *")] Guid* ClassGuid, HWND hwndParent);
 
         [DllImport("setupapi", ExactSpelling = true)]
-        [return: NativeTypeName("HDEVINFO")]
-        public static extern IntPtr SetupDiCreateDeviceInfoListExA([NativeTypeName("const GUID *")] Guid* ClassGuid, [NativeTypeName("HWND")] IntPtr hwndParent, [NativeTypeName("PCSTR")] sbyte* MachineName, [NativeTypeName("PVOID")] void* Reserved);
+        public static extern HDEVINFO SetupDiCreateDeviceInfoListExA([NativeTypeName("const GUID *")] Guid* ClassGuid, HWND hwndParent, [NativeTypeName("PCSTR")] sbyte* MachineName, [NativeTypeName("PVOID")] void* Reserved);
 
         [DllImport("setupapi", ExactSpelling = true)]
-        [return: NativeTypeName("HDEVINFO")]
-        public static extern IntPtr SetupDiCreateDeviceInfoListExW([NativeTypeName("const GUID *")] Guid* ClassGuid, [NativeTypeName("HWND")] IntPtr hwndParent, [NativeTypeName("PCWSTR")] ushort* MachineName, [NativeTypeName("PVOID")] void* Reserved);
+        public static extern HDEVINFO SetupDiCreateDeviceInfoListExW([NativeTypeName("const GUID *")] Guid* ClassGuid, HWND hwndParent, [NativeTypeName("PCWSTR")] ushort* MachineName, [NativeTypeName("PVOID")] void* Reserved);
 
         [DllImport("setupapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupDiGetDeviceInfoListClass([NativeTypeName("HDEVINFO")] IntPtr DeviceInfoSet, [NativeTypeName("LPGUID")] Guid* ClassGuid);
+        public static extern BOOL SetupDiGetDeviceInfoListClass(HDEVINFO DeviceInfoSet, [NativeTypeName("LPGUID")] Guid* ClassGuid);
 
         [DllImport("setupapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupDiGetDeviceInfoListDetailA([NativeTypeName("HDEVINFO")] IntPtr DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_LIST_DETAIL_DATA_A")] void* DeviceInfoSetDetailData);
+        public static extern BOOL SetupDiGetDeviceInfoListDetailA(HDEVINFO DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_LIST_DETAIL_DATA_A")] void* DeviceInfoSetDetailData);
 
         [DllImport("setupapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupDiGetDeviceInfoListDetailW([NativeTypeName("HDEVINFO")] IntPtr DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_LIST_DETAIL_DATA_W")] void* DeviceInfoSetDetailData);
+        public static extern BOOL SetupDiGetDeviceInfoListDetailW(HDEVINFO DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_LIST_DETAIL_DATA_W")] void* DeviceInfoSetDetailData);
 
         [DllImport("setupapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupDiCreateDeviceInfoA([NativeTypeName("HDEVINFO")] IntPtr DeviceInfoSet, [NativeTypeName("PCSTR")] sbyte* DeviceName, [NativeTypeName("const GUID *")] Guid* ClassGuid, [NativeTypeName("PCSTR")] sbyte* DeviceDescription, [NativeTypeName("HWND")] IntPtr hwndParent, [NativeTypeName("DWORD")] uint CreationFlags, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData);
+        public static extern BOOL SetupDiCreateDeviceInfoA(HDEVINFO DeviceInfoSet, [NativeTypeName("PCSTR")] sbyte* DeviceName, [NativeTypeName("const GUID *")] Guid* ClassGuid, [NativeTypeName("PCSTR")] sbyte* DeviceDescription, HWND hwndParent, [NativeTypeName("DWORD")] uint CreationFlags, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData);
 
         [DllImport("setupapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupDiCreateDeviceInfoW([NativeTypeName("HDEVINFO")] IntPtr DeviceInfoSet, [NativeTypeName("PCWSTR")] ushort* DeviceName, [NativeTypeName("const GUID *")] Guid* ClassGuid, [NativeTypeName("PCWSTR")] ushort* DeviceDescription, [NativeTypeName("HWND")] IntPtr hwndParent, [NativeTypeName("DWORD")] uint CreationFlags, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData);
+        public static extern BOOL SetupDiCreateDeviceInfoW(HDEVINFO DeviceInfoSet, [NativeTypeName("PCWSTR")] ushort* DeviceName, [NativeTypeName("const GUID *")] Guid* ClassGuid, [NativeTypeName("PCWSTR")] ushort* DeviceDescription, HWND hwndParent, [NativeTypeName("DWORD")] uint CreationFlags, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData);
 
         [DllImport("setupapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupDiOpenDeviceInfoA([NativeTypeName("HDEVINFO")] IntPtr DeviceInfoSet, [NativeTypeName("PCSTR")] sbyte* DeviceInstanceId, [NativeTypeName("HWND")] IntPtr hwndParent, [NativeTypeName("DWORD")] uint OpenFlags, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData);
+        public static extern BOOL SetupDiOpenDeviceInfoA(HDEVINFO DeviceInfoSet, [NativeTypeName("PCSTR")] sbyte* DeviceInstanceId, HWND hwndParent, [NativeTypeName("DWORD")] uint OpenFlags, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData);
 
         [DllImport("setupapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupDiOpenDeviceInfoW([NativeTypeName("HDEVINFO")] IntPtr DeviceInfoSet, [NativeTypeName("PCWSTR")] ushort* DeviceInstanceId, [NativeTypeName("HWND")] IntPtr hwndParent, [NativeTypeName("DWORD")] uint OpenFlags, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData);
+        public static extern BOOL SetupDiOpenDeviceInfoW(HDEVINFO DeviceInfoSet, [NativeTypeName("PCWSTR")] ushort* DeviceInstanceId, HWND hwndParent, [NativeTypeName("DWORD")] uint OpenFlags, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData);
 
         [DllImport("setupapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupDiGetDeviceInstanceIdA([NativeTypeName("HDEVINFO")] IntPtr DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData, [NativeTypeName("PSTR")] sbyte* DeviceInstanceId, [NativeTypeName("DWORD")] uint DeviceInstanceIdSize, [NativeTypeName("PDWORD")] uint* RequiredSize);
+        public static extern BOOL SetupDiGetDeviceInstanceIdA(HDEVINFO DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData, [NativeTypeName("PSTR")] sbyte* DeviceInstanceId, [NativeTypeName("DWORD")] uint DeviceInstanceIdSize, [NativeTypeName("PDWORD")] uint* RequiredSize);
 
         [DllImport("setupapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupDiGetDeviceInstanceIdW([NativeTypeName("HDEVINFO")] IntPtr DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData, [NativeTypeName("PWSTR")] ushort* DeviceInstanceId, [NativeTypeName("DWORD")] uint DeviceInstanceIdSize, [NativeTypeName("PDWORD")] uint* RequiredSize);
+        public static extern BOOL SetupDiGetDeviceInstanceIdW(HDEVINFO DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData, [NativeTypeName("PWSTR")] ushort* DeviceInstanceId, [NativeTypeName("DWORD")] uint DeviceInstanceIdSize, [NativeTypeName("PDWORD")] uint* RequiredSize);
 
         [DllImport("setupapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupDiDeleteDeviceInfo([NativeTypeName("HDEVINFO")] IntPtr DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData);
+        public static extern BOOL SetupDiDeleteDeviceInfo(HDEVINFO DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData);
 
         [DllImport("setupapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupDiEnumDeviceInfo([NativeTypeName("HDEVINFO")] IntPtr DeviceInfoSet, [NativeTypeName("DWORD")] uint MemberIndex, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData);
+        public static extern BOOL SetupDiEnumDeviceInfo(HDEVINFO DeviceInfoSet, [NativeTypeName("DWORD")] uint MemberIndex, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData);
 
         [DllImport("setupapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupDiDestroyDeviceInfoList([NativeTypeName("HDEVINFO")] IntPtr DeviceInfoSet);
+        public static extern BOOL SetupDiDestroyDeviceInfoList(HDEVINFO DeviceInfoSet);
 
         [DllImport("setupapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupDiEnumDeviceInterfaces([NativeTypeName("HDEVINFO")] IntPtr DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData, [NativeTypeName("const GUID *")] Guid* InterfaceClassGuid, [NativeTypeName("DWORD")] uint MemberIndex, [NativeTypeName("PSP_DEVICE_INTERFACE_DATA")] void* DeviceInterfaceData);
+        public static extern BOOL SetupDiEnumDeviceInterfaces(HDEVINFO DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData, [NativeTypeName("const GUID *")] Guid* InterfaceClassGuid, [NativeTypeName("DWORD")] uint MemberIndex, [NativeTypeName("PSP_DEVICE_INTERFACE_DATA")] void* DeviceInterfaceData);
 
         [DllImport("setupapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupDiCreateDeviceInterfaceA([NativeTypeName("HDEVINFO")] IntPtr DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData, [NativeTypeName("const GUID *")] Guid* InterfaceClassGuid, [NativeTypeName("PCSTR")] sbyte* ReferenceString, [NativeTypeName("DWORD")] uint CreationFlags, [NativeTypeName("PSP_DEVICE_INTERFACE_DATA")] void* DeviceInterfaceData);
+        public static extern BOOL SetupDiCreateDeviceInterfaceA(HDEVINFO DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData, [NativeTypeName("const GUID *")] Guid* InterfaceClassGuid, [NativeTypeName("PCSTR")] sbyte* ReferenceString, [NativeTypeName("DWORD")] uint CreationFlags, [NativeTypeName("PSP_DEVICE_INTERFACE_DATA")] void* DeviceInterfaceData);
 
         [DllImport("setupapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupDiCreateDeviceInterfaceW([NativeTypeName("HDEVINFO")] IntPtr DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData, [NativeTypeName("const GUID *")] Guid* InterfaceClassGuid, [NativeTypeName("PCWSTR")] ushort* ReferenceString, [NativeTypeName("DWORD")] uint CreationFlags, [NativeTypeName("PSP_DEVICE_INTERFACE_DATA")] void* DeviceInterfaceData);
+        public static extern BOOL SetupDiCreateDeviceInterfaceW(HDEVINFO DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData, [NativeTypeName("const GUID *")] Guid* InterfaceClassGuid, [NativeTypeName("PCWSTR")] ushort* ReferenceString, [NativeTypeName("DWORD")] uint CreationFlags, [NativeTypeName("PSP_DEVICE_INTERFACE_DATA")] void* DeviceInterfaceData);
 
         [DllImport("setupapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupDiOpenDeviceInterfaceA([NativeTypeName("HDEVINFO")] IntPtr DeviceInfoSet, [NativeTypeName("PCSTR")] sbyte* DevicePath, [NativeTypeName("DWORD")] uint OpenFlags, [NativeTypeName("PSP_DEVICE_INTERFACE_DATA")] void* DeviceInterfaceData);
+        public static extern BOOL SetupDiOpenDeviceInterfaceA(HDEVINFO DeviceInfoSet, [NativeTypeName("PCSTR")] sbyte* DevicePath, [NativeTypeName("DWORD")] uint OpenFlags, [NativeTypeName("PSP_DEVICE_INTERFACE_DATA")] void* DeviceInterfaceData);
 
         [DllImport("setupapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupDiOpenDeviceInterfaceW([NativeTypeName("HDEVINFO")] IntPtr DeviceInfoSet, [NativeTypeName("PCWSTR")] ushort* DevicePath, [NativeTypeName("DWORD")] uint OpenFlags, [NativeTypeName("PSP_DEVICE_INTERFACE_DATA")] void* DeviceInterfaceData);
+        public static extern BOOL SetupDiOpenDeviceInterfaceW(HDEVINFO DeviceInfoSet, [NativeTypeName("PCWSTR")] ushort* DevicePath, [NativeTypeName("DWORD")] uint OpenFlags, [NativeTypeName("PSP_DEVICE_INTERFACE_DATA")] void* DeviceInterfaceData);
 
         [DllImport("setupapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupDiGetDeviceInterfaceAlias([NativeTypeName("HDEVINFO")] IntPtr DeviceInfoSet, [NativeTypeName("PSP_DEVICE_INTERFACE_DATA")] void* DeviceInterfaceData, [NativeTypeName("const GUID *")] Guid* AliasInterfaceClassGuid, [NativeTypeName("PSP_DEVICE_INTERFACE_DATA")] void* AliasDeviceInterfaceData);
+        public static extern BOOL SetupDiGetDeviceInterfaceAlias(HDEVINFO DeviceInfoSet, [NativeTypeName("PSP_DEVICE_INTERFACE_DATA")] void* DeviceInterfaceData, [NativeTypeName("const GUID *")] Guid* AliasInterfaceClassGuid, [NativeTypeName("PSP_DEVICE_INTERFACE_DATA")] void* AliasDeviceInterfaceData);
 
         [DllImport("setupapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupDiDeleteDeviceInterfaceData([NativeTypeName("HDEVINFO")] IntPtr DeviceInfoSet, [NativeTypeName("PSP_DEVICE_INTERFACE_DATA")] void* DeviceInterfaceData);
+        public static extern BOOL SetupDiDeleteDeviceInterfaceData(HDEVINFO DeviceInfoSet, [NativeTypeName("PSP_DEVICE_INTERFACE_DATA")] void* DeviceInterfaceData);
 
         [DllImport("setupapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupDiRemoveDeviceInterface([NativeTypeName("HDEVINFO")] IntPtr DeviceInfoSet, [NativeTypeName("PSP_DEVICE_INTERFACE_DATA")] void* DeviceInterfaceData);
+        public static extern BOOL SetupDiRemoveDeviceInterface(HDEVINFO DeviceInfoSet, [NativeTypeName("PSP_DEVICE_INTERFACE_DATA")] void* DeviceInterfaceData);
 
         [DllImport("setupapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupDiGetDeviceInterfaceDetailA([NativeTypeName("HDEVINFO")] IntPtr DeviceInfoSet, [NativeTypeName("PSP_DEVICE_INTERFACE_DATA")] void* DeviceInterfaceData, [NativeTypeName("PSP_DEVICE_INTERFACE_DETAIL_DATA_A")] void* DeviceInterfaceDetailData, [NativeTypeName("DWORD")] uint DeviceInterfaceDetailDataSize, [NativeTypeName("PDWORD")] uint* RequiredSize, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData);
+        public static extern BOOL SetupDiGetDeviceInterfaceDetailA(HDEVINFO DeviceInfoSet, [NativeTypeName("PSP_DEVICE_INTERFACE_DATA")] void* DeviceInterfaceData, [NativeTypeName("PSP_DEVICE_INTERFACE_DETAIL_DATA_A")] void* DeviceInterfaceDetailData, [NativeTypeName("DWORD")] uint DeviceInterfaceDetailDataSize, [NativeTypeName("PDWORD")] uint* RequiredSize, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData);
 
         [DllImport("setupapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupDiGetDeviceInterfaceDetailW([NativeTypeName("HDEVINFO")] IntPtr DeviceInfoSet, [NativeTypeName("PSP_DEVICE_INTERFACE_DATA")] void* DeviceInterfaceData, [NativeTypeName("PSP_DEVICE_INTERFACE_DETAIL_DATA_W")] void* DeviceInterfaceDetailData, [NativeTypeName("DWORD")] uint DeviceInterfaceDetailDataSize, [NativeTypeName("PDWORD")] uint* RequiredSize, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData);
+        public static extern BOOL SetupDiGetDeviceInterfaceDetailW(HDEVINFO DeviceInfoSet, [NativeTypeName("PSP_DEVICE_INTERFACE_DATA")] void* DeviceInterfaceData, [NativeTypeName("PSP_DEVICE_INTERFACE_DETAIL_DATA_W")] void* DeviceInterfaceDetailData, [NativeTypeName("DWORD")] uint DeviceInterfaceDetailDataSize, [NativeTypeName("PDWORD")] uint* RequiredSize, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData);
 
         [DllImport("setupapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupDiInstallDeviceInterfaces([NativeTypeName("HDEVINFO")] IntPtr DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData);
+        public static extern BOOL SetupDiInstallDeviceInterfaces(HDEVINFO DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData);
 
         [DllImport("setupapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupDiSetDeviceInterfaceDefault([NativeTypeName("HDEVINFO")] IntPtr DeviceInfoSet, [NativeTypeName("PSP_DEVICE_INTERFACE_DATA")] void* DeviceInterfaceData, [NativeTypeName("DWORD")] uint Flags, [NativeTypeName("PVOID")] void* Reserved);
+        public static extern BOOL SetupDiSetDeviceInterfaceDefault(HDEVINFO DeviceInfoSet, [NativeTypeName("PSP_DEVICE_INTERFACE_DATA")] void* DeviceInterfaceData, [NativeTypeName("DWORD")] uint Flags, [NativeTypeName("PVOID")] void* Reserved);
 
         [DllImport("setupapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupDiRegisterDeviceInfo([NativeTypeName("HDEVINFO")] IntPtr DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData, [NativeTypeName("DWORD")] uint Flags, [NativeTypeName("PSP_DETSIG_CMPPROC")] delegate* unmanaged<IntPtr, void*, void*, void*, uint> CompareProc, [NativeTypeName("PVOID")] void* CompareContext, [NativeTypeName("PSP_DEVINFO_DATA")] void* DupDeviceInfoData);
+        public static extern BOOL SetupDiRegisterDeviceInfo(HDEVINFO DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData, [NativeTypeName("DWORD")] uint Flags, [NativeTypeName("PSP_DETSIG_CMPPROC")] delegate* unmanaged<HDEVINFO, void*, void*, void*, uint> CompareProc, [NativeTypeName("PVOID")] void* CompareContext, [NativeTypeName("PSP_DEVINFO_DATA")] void* DupDeviceInfoData);
 
         [DllImport("setupapi", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupDiBuildDriverInfoList([NativeTypeName("HDEVINFO")] IntPtr DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData, [NativeTypeName("DWORD")] uint DriverType);
+        public static extern BOOL SetupDiBuildDriverInfoList(HDEVINFO DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData, [NativeTypeName("DWORD")] uint DriverType);
 
         [DllImport("setupapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupDiCancelDriverInfoSearch([NativeTypeName("HDEVINFO")] IntPtr DeviceInfoSet);
+        public static extern BOOL SetupDiCancelDriverInfoSearch(HDEVINFO DeviceInfoSet);
 
         [DllImport("setupapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupDiEnumDriverInfoA([NativeTypeName("HDEVINFO")] IntPtr DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData, [NativeTypeName("DWORD")] uint DriverType, [NativeTypeName("DWORD")] uint MemberIndex, [NativeTypeName("PSP_DRVINFO_DATA_A")] void* DriverInfoData);
+        public static extern BOOL SetupDiEnumDriverInfoA(HDEVINFO DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData, [NativeTypeName("DWORD")] uint DriverType, [NativeTypeName("DWORD")] uint MemberIndex, [NativeTypeName("PSP_DRVINFO_DATA_A")] void* DriverInfoData);
 
         [DllImport("setupapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupDiEnumDriverInfoW([NativeTypeName("HDEVINFO")] IntPtr DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData, [NativeTypeName("DWORD")] uint DriverType, [NativeTypeName("DWORD")] uint MemberIndex, [NativeTypeName("PSP_DRVINFO_DATA_W")] void* DriverInfoData);
+        public static extern BOOL SetupDiEnumDriverInfoW(HDEVINFO DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData, [NativeTypeName("DWORD")] uint DriverType, [NativeTypeName("DWORD")] uint MemberIndex, [NativeTypeName("PSP_DRVINFO_DATA_W")] void* DriverInfoData);
 
         [DllImport("setupapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupDiGetSelectedDriverA([NativeTypeName("HDEVINFO")] IntPtr DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData, [NativeTypeName("PSP_DRVINFO_DATA_A")] void* DriverInfoData);
+        public static extern BOOL SetupDiGetSelectedDriverA(HDEVINFO DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData, [NativeTypeName("PSP_DRVINFO_DATA_A")] void* DriverInfoData);
 
         [DllImport("setupapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupDiGetSelectedDriverW([NativeTypeName("HDEVINFO")] IntPtr DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData, [NativeTypeName("PSP_DRVINFO_DATA_W")] void* DriverInfoData);
+        public static extern BOOL SetupDiGetSelectedDriverW(HDEVINFO DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData, [NativeTypeName("PSP_DRVINFO_DATA_W")] void* DriverInfoData);
 
         [DllImport("setupapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupDiSetSelectedDriverA([NativeTypeName("HDEVINFO")] IntPtr DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData, [NativeTypeName("PSP_DRVINFO_DATA_A")] void* DriverInfoData);
+        public static extern BOOL SetupDiSetSelectedDriverA(HDEVINFO DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData, [NativeTypeName("PSP_DRVINFO_DATA_A")] void* DriverInfoData);
 
         [DllImport("setupapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupDiSetSelectedDriverW([NativeTypeName("HDEVINFO")] IntPtr DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData, [NativeTypeName("PSP_DRVINFO_DATA_W")] void* DriverInfoData);
+        public static extern BOOL SetupDiSetSelectedDriverW(HDEVINFO DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData, [NativeTypeName("PSP_DRVINFO_DATA_W")] void* DriverInfoData);
 
         [DllImport("setupapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupDiGetDriverInfoDetailA([NativeTypeName("HDEVINFO")] IntPtr DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData, [NativeTypeName("PSP_DRVINFO_DATA_A")] void* DriverInfoData, [NativeTypeName("PSP_DRVINFO_DETAIL_DATA_A")] void* DriverInfoDetailData, [NativeTypeName("DWORD")] uint DriverInfoDetailDataSize, [NativeTypeName("PDWORD")] uint* RequiredSize);
+        public static extern BOOL SetupDiGetDriverInfoDetailA(HDEVINFO DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData, [NativeTypeName("PSP_DRVINFO_DATA_A")] void* DriverInfoData, [NativeTypeName("PSP_DRVINFO_DETAIL_DATA_A")] void* DriverInfoDetailData, [NativeTypeName("DWORD")] uint DriverInfoDetailDataSize, [NativeTypeName("PDWORD")] uint* RequiredSize);
 
         [DllImport("setupapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupDiGetDriverInfoDetailW([NativeTypeName("HDEVINFO")] IntPtr DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData, [NativeTypeName("PSP_DRVINFO_DATA_W")] void* DriverInfoData, [NativeTypeName("PSP_DRVINFO_DETAIL_DATA_W")] void* DriverInfoDetailData, [NativeTypeName("DWORD")] uint DriverInfoDetailDataSize, [NativeTypeName("PDWORD")] uint* RequiredSize);
+        public static extern BOOL SetupDiGetDriverInfoDetailW(HDEVINFO DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData, [NativeTypeName("PSP_DRVINFO_DATA_W")] void* DriverInfoData, [NativeTypeName("PSP_DRVINFO_DETAIL_DATA_W")] void* DriverInfoDetailData, [NativeTypeName("DWORD")] uint DriverInfoDetailDataSize, [NativeTypeName("PDWORD")] uint* RequiredSize);
 
         [DllImport("setupapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupDiDestroyDriverInfoList([NativeTypeName("HDEVINFO")] IntPtr DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData, [NativeTypeName("DWORD")] uint DriverType);
+        public static extern BOOL SetupDiDestroyDriverInfoList(HDEVINFO DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData, [NativeTypeName("DWORD")] uint DriverType);
 
         [DllImport("setupapi", ExactSpelling = true)]
-        [return: NativeTypeName("HDEVINFO")]
-        public static extern IntPtr SetupDiGetClassDevsA([NativeTypeName("const GUID *")] Guid* ClassGuid, [NativeTypeName("PCSTR")] sbyte* Enumerator, [NativeTypeName("HWND")] IntPtr hwndParent, [NativeTypeName("DWORD")] uint Flags);
+        public static extern HDEVINFO SetupDiGetClassDevsA([NativeTypeName("const GUID *")] Guid* ClassGuid, [NativeTypeName("PCSTR")] sbyte* Enumerator, HWND hwndParent, [NativeTypeName("DWORD")] uint Flags);
 
         [DllImport("setupapi", ExactSpelling = true)]
-        [return: NativeTypeName("HDEVINFO")]
-        public static extern IntPtr SetupDiGetClassDevsW([NativeTypeName("const GUID *")] Guid* ClassGuid, [NativeTypeName("PCWSTR")] ushort* Enumerator, [NativeTypeName("HWND")] IntPtr hwndParent, [NativeTypeName("DWORD")] uint Flags);
+        public static extern HDEVINFO SetupDiGetClassDevsW([NativeTypeName("const GUID *")] Guid* ClassGuid, [NativeTypeName("PCWSTR")] ushort* Enumerator, HWND hwndParent, [NativeTypeName("DWORD")] uint Flags);
 
         [DllImport("setupapi", ExactSpelling = true)]
-        [return: NativeTypeName("HDEVINFO")]
-        public static extern IntPtr SetupDiGetClassDevsExA([NativeTypeName("const GUID *")] Guid* ClassGuid, [NativeTypeName("PCSTR")] sbyte* Enumerator, [NativeTypeName("HWND")] IntPtr hwndParent, [NativeTypeName("DWORD")] uint Flags, [NativeTypeName("HDEVINFO")] IntPtr DeviceInfoSet, [NativeTypeName("PCSTR")] sbyte* MachineName, [NativeTypeName("PVOID")] void* Reserved);
+        public static extern HDEVINFO SetupDiGetClassDevsExA([NativeTypeName("const GUID *")] Guid* ClassGuid, [NativeTypeName("PCSTR")] sbyte* Enumerator, HWND hwndParent, [NativeTypeName("DWORD")] uint Flags, HDEVINFO DeviceInfoSet, [NativeTypeName("PCSTR")] sbyte* MachineName, [NativeTypeName("PVOID")] void* Reserved);
 
         [DllImport("setupapi", ExactSpelling = true)]
-        [return: NativeTypeName("HDEVINFO")]
-        public static extern IntPtr SetupDiGetClassDevsExW([NativeTypeName("const GUID *")] Guid* ClassGuid, [NativeTypeName("PCWSTR")] ushort* Enumerator, [NativeTypeName("HWND")] IntPtr hwndParent, [NativeTypeName("DWORD")] uint Flags, [NativeTypeName("HDEVINFO")] IntPtr DeviceInfoSet, [NativeTypeName("PCWSTR")] ushort* MachineName, [NativeTypeName("PVOID")] void* Reserved);
+        public static extern HDEVINFO SetupDiGetClassDevsExW([NativeTypeName("const GUID *")] Guid* ClassGuid, [NativeTypeName("PCWSTR")] ushort* Enumerator, HWND hwndParent, [NativeTypeName("DWORD")] uint Flags, HDEVINFO DeviceInfoSet, [NativeTypeName("PCWSTR")] ushort* MachineName, [NativeTypeName("PVOID")] void* Reserved);
 
         [DllImport("setupapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupDiGetINFClassA([NativeTypeName("PCSTR")] sbyte* InfName, [NativeTypeName("LPGUID")] Guid* ClassGuid, [NativeTypeName("PSTR")] sbyte* ClassName, [NativeTypeName("DWORD")] uint ClassNameSize, [NativeTypeName("PDWORD")] uint* RequiredSize);
+        public static extern BOOL SetupDiGetINFClassA([NativeTypeName("PCSTR")] sbyte* InfName, [NativeTypeName("LPGUID")] Guid* ClassGuid, [NativeTypeName("PSTR")] sbyte* ClassName, [NativeTypeName("DWORD")] uint ClassNameSize, [NativeTypeName("PDWORD")] uint* RequiredSize);
 
         [DllImport("setupapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupDiGetINFClassW([NativeTypeName("PCWSTR")] ushort* InfName, [NativeTypeName("LPGUID")] Guid* ClassGuid, [NativeTypeName("PWSTR")] ushort* ClassName, [NativeTypeName("DWORD")] uint ClassNameSize, [NativeTypeName("PDWORD")] uint* RequiredSize);
+        public static extern BOOL SetupDiGetINFClassW([NativeTypeName("PCWSTR")] ushort* InfName, [NativeTypeName("LPGUID")] Guid* ClassGuid, [NativeTypeName("PWSTR")] ushort* ClassName, [NativeTypeName("DWORD")] uint ClassNameSize, [NativeTypeName("PDWORD")] uint* RequiredSize);
 
         [DllImport("setupapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupDiBuildClassInfoList([NativeTypeName("DWORD")] uint Flags, [NativeTypeName("LPGUID")] Guid* ClassGuidList, [NativeTypeName("DWORD")] uint ClassGuidListSize, [NativeTypeName("PDWORD")] uint* RequiredSize);
+        public static extern BOOL SetupDiBuildClassInfoList([NativeTypeName("DWORD")] uint Flags, [NativeTypeName("LPGUID")] Guid* ClassGuidList, [NativeTypeName("DWORD")] uint ClassGuidListSize, [NativeTypeName("PDWORD")] uint* RequiredSize);
 
         [DllImport("setupapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupDiBuildClassInfoListExA([NativeTypeName("DWORD")] uint Flags, [NativeTypeName("LPGUID")] Guid* ClassGuidList, [NativeTypeName("DWORD")] uint ClassGuidListSize, [NativeTypeName("PDWORD")] uint* RequiredSize, [NativeTypeName("PCSTR")] sbyte* MachineName, [NativeTypeName("PVOID")] void* Reserved);
+        public static extern BOOL SetupDiBuildClassInfoListExA([NativeTypeName("DWORD")] uint Flags, [NativeTypeName("LPGUID")] Guid* ClassGuidList, [NativeTypeName("DWORD")] uint ClassGuidListSize, [NativeTypeName("PDWORD")] uint* RequiredSize, [NativeTypeName("PCSTR")] sbyte* MachineName, [NativeTypeName("PVOID")] void* Reserved);
 
         [DllImport("setupapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupDiBuildClassInfoListExW([NativeTypeName("DWORD")] uint Flags, [NativeTypeName("LPGUID")] Guid* ClassGuidList, [NativeTypeName("DWORD")] uint ClassGuidListSize, [NativeTypeName("PDWORD")] uint* RequiredSize, [NativeTypeName("PCWSTR")] ushort* MachineName, [NativeTypeName("PVOID")] void* Reserved);
+        public static extern BOOL SetupDiBuildClassInfoListExW([NativeTypeName("DWORD")] uint Flags, [NativeTypeName("LPGUID")] Guid* ClassGuidList, [NativeTypeName("DWORD")] uint ClassGuidListSize, [NativeTypeName("PDWORD")] uint* RequiredSize, [NativeTypeName("PCWSTR")] ushort* MachineName, [NativeTypeName("PVOID")] void* Reserved);
 
         [DllImport("setupapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupDiGetClassDescriptionA([NativeTypeName("const GUID *")] Guid* ClassGuid, [NativeTypeName("PSTR")] sbyte* ClassDescription, [NativeTypeName("DWORD")] uint ClassDescriptionSize, [NativeTypeName("PDWORD")] uint* RequiredSize);
+        public static extern BOOL SetupDiGetClassDescriptionA([NativeTypeName("const GUID *")] Guid* ClassGuid, [NativeTypeName("PSTR")] sbyte* ClassDescription, [NativeTypeName("DWORD")] uint ClassDescriptionSize, [NativeTypeName("PDWORD")] uint* RequiredSize);
 
         [DllImport("setupapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupDiGetClassDescriptionW([NativeTypeName("const GUID *")] Guid* ClassGuid, [NativeTypeName("PWSTR")] ushort* ClassDescription, [NativeTypeName("DWORD")] uint ClassDescriptionSize, [NativeTypeName("PDWORD")] uint* RequiredSize);
+        public static extern BOOL SetupDiGetClassDescriptionW([NativeTypeName("const GUID *")] Guid* ClassGuid, [NativeTypeName("PWSTR")] ushort* ClassDescription, [NativeTypeName("DWORD")] uint ClassDescriptionSize, [NativeTypeName("PDWORD")] uint* RequiredSize);
 
         [DllImport("setupapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupDiGetClassDescriptionExA([NativeTypeName("const GUID *")] Guid* ClassGuid, [NativeTypeName("PSTR")] sbyte* ClassDescription, [NativeTypeName("DWORD")] uint ClassDescriptionSize, [NativeTypeName("PDWORD")] uint* RequiredSize, [NativeTypeName("PCSTR")] sbyte* MachineName, [NativeTypeName("PVOID")] void* Reserved);
+        public static extern BOOL SetupDiGetClassDescriptionExA([NativeTypeName("const GUID *")] Guid* ClassGuid, [NativeTypeName("PSTR")] sbyte* ClassDescription, [NativeTypeName("DWORD")] uint ClassDescriptionSize, [NativeTypeName("PDWORD")] uint* RequiredSize, [NativeTypeName("PCSTR")] sbyte* MachineName, [NativeTypeName("PVOID")] void* Reserved);
 
         [DllImport("setupapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupDiGetClassDescriptionExW([NativeTypeName("const GUID *")] Guid* ClassGuid, [NativeTypeName("PWSTR")] ushort* ClassDescription, [NativeTypeName("DWORD")] uint ClassDescriptionSize, [NativeTypeName("PDWORD")] uint* RequiredSize, [NativeTypeName("PCWSTR")] ushort* MachineName, [NativeTypeName("PVOID")] void* Reserved);
+        public static extern BOOL SetupDiGetClassDescriptionExW([NativeTypeName("const GUID *")] Guid* ClassGuid, [NativeTypeName("PWSTR")] ushort* ClassDescription, [NativeTypeName("DWORD")] uint ClassDescriptionSize, [NativeTypeName("PDWORD")] uint* RequiredSize, [NativeTypeName("PCWSTR")] ushort* MachineName, [NativeTypeName("PVOID")] void* Reserved);
 
         [DllImport("setupapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupDiCallClassInstaller([NativeTypeName("DI_FUNCTION")] uint InstallFunction, [NativeTypeName("HDEVINFO")] IntPtr DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData);
+        public static extern BOOL SetupDiCallClassInstaller([NativeTypeName("DI_FUNCTION")] uint InstallFunction, HDEVINFO DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData);
 
         [DllImport("setupapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupDiSelectDevice([NativeTypeName("HDEVINFO")] IntPtr DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData);
+        public static extern BOOL SetupDiSelectDevice(HDEVINFO DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData);
 
         [DllImport("setupapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupDiSelectBestCompatDrv([NativeTypeName("HDEVINFO")] IntPtr DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData);
+        public static extern BOOL SetupDiSelectBestCompatDrv(HDEVINFO DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData);
 
         [DllImport("setupapi", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupDiInstallDevice([NativeTypeName("HDEVINFO")] IntPtr DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData);
+        public static extern BOOL SetupDiInstallDevice(HDEVINFO DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData);
 
         [DllImport("setupapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupDiInstallDriverFiles([NativeTypeName("HDEVINFO")] IntPtr DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData);
+        public static extern BOOL SetupDiInstallDriverFiles(HDEVINFO DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData);
 
         [DllImport("setupapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupDiRegisterCoDeviceInstallers([NativeTypeName("HDEVINFO")] IntPtr DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData);
+        public static extern BOOL SetupDiRegisterCoDeviceInstallers(HDEVINFO DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData);
 
         [DllImport("setupapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupDiRemoveDevice([NativeTypeName("HDEVINFO")] IntPtr DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData);
+        public static extern BOOL SetupDiRemoveDevice(HDEVINFO DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData);
 
         [DllImport("setupapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupDiUnremoveDevice([NativeTypeName("HDEVINFO")] IntPtr DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData);
+        public static extern BOOL SetupDiUnremoveDevice(HDEVINFO DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData);
 
         [DllImport("setupapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupDiRestartDevices([NativeTypeName("HDEVINFO")] IntPtr DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData);
+        public static extern BOOL SetupDiRestartDevices(HDEVINFO DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData);
 
         [DllImport("setupapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupDiChangeState([NativeTypeName("HDEVINFO")] IntPtr DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData);
+        public static extern BOOL SetupDiChangeState(HDEVINFO DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData);
 
         [DllImport("setupapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupDiInstallClassA([NativeTypeName("HWND")] IntPtr hwndParent, [NativeTypeName("PCSTR")] sbyte* InfFileName, [NativeTypeName("DWORD")] uint Flags, [NativeTypeName("HSPFILEQ")] IntPtr FileQueue);
+        public static extern BOOL SetupDiInstallClassA(HWND hwndParent, [NativeTypeName("PCSTR")] sbyte* InfFileName, [NativeTypeName("DWORD")] uint Flags, HSPFILEQ FileQueue);
 
         [DllImport("setupapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupDiInstallClassW([NativeTypeName("HWND")] IntPtr hwndParent, [NativeTypeName("PCWSTR")] ushort* InfFileName, [NativeTypeName("DWORD")] uint Flags, [NativeTypeName("HSPFILEQ")] IntPtr FileQueue);
+        public static extern BOOL SetupDiInstallClassW(HWND hwndParent, [NativeTypeName("PCWSTR")] ushort* InfFileName, [NativeTypeName("DWORD")] uint Flags, HSPFILEQ FileQueue);
 
         [DllImport("setupapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupDiInstallClassExA([NativeTypeName("HWND")] IntPtr hwndParent, [NativeTypeName("PCSTR")] sbyte* InfFileName, [NativeTypeName("DWORD")] uint Flags, [NativeTypeName("HSPFILEQ")] IntPtr FileQueue, [NativeTypeName("const GUID *")] Guid* InterfaceClassGuid, [NativeTypeName("PVOID")] void* Reserved1, [NativeTypeName("PVOID")] void* Reserved2);
+        public static extern BOOL SetupDiInstallClassExA(HWND hwndParent, [NativeTypeName("PCSTR")] sbyte* InfFileName, [NativeTypeName("DWORD")] uint Flags, HSPFILEQ FileQueue, [NativeTypeName("const GUID *")] Guid* InterfaceClassGuid, [NativeTypeName("PVOID")] void* Reserved1, [NativeTypeName("PVOID")] void* Reserved2);
 
         [DllImport("setupapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupDiInstallClassExW([NativeTypeName("HWND")] IntPtr hwndParent, [NativeTypeName("PCWSTR")] ushort* InfFileName, [NativeTypeName("DWORD")] uint Flags, [NativeTypeName("HSPFILEQ")] IntPtr FileQueue, [NativeTypeName("const GUID *")] Guid* InterfaceClassGuid, [NativeTypeName("PVOID")] void* Reserved1, [NativeTypeName("PVOID")] void* Reserved2);
+        public static extern BOOL SetupDiInstallClassExW(HWND hwndParent, [NativeTypeName("PCWSTR")] ushort* InfFileName, [NativeTypeName("DWORD")] uint Flags, HSPFILEQ FileQueue, [NativeTypeName("const GUID *")] Guid* InterfaceClassGuid, [NativeTypeName("PVOID")] void* Reserved1, [NativeTypeName("PVOID")] void* Reserved2);
 
         [DllImport("setupapi", ExactSpelling = true)]
-        [return: NativeTypeName("HKEY")]
-        public static extern IntPtr SetupDiOpenClassRegKey([NativeTypeName("const GUID *")] Guid* ClassGuid, [NativeTypeName("REGSAM")] uint samDesired);
+        public static extern HKEY SetupDiOpenClassRegKey([NativeTypeName("const GUID *")] Guid* ClassGuid, [NativeTypeName("REGSAM")] uint samDesired);
 
         [DllImport("setupapi", ExactSpelling = true)]
-        [return: NativeTypeName("HKEY")]
-        public static extern IntPtr SetupDiOpenClassRegKeyExA([NativeTypeName("const GUID *")] Guid* ClassGuid, [NativeTypeName("REGSAM")] uint samDesired, [NativeTypeName("DWORD")] uint Flags, [NativeTypeName("PCSTR")] sbyte* MachineName, [NativeTypeName("PVOID")] void* Reserved);
+        public static extern HKEY SetupDiOpenClassRegKeyExA([NativeTypeName("const GUID *")] Guid* ClassGuid, [NativeTypeName("REGSAM")] uint samDesired, [NativeTypeName("DWORD")] uint Flags, [NativeTypeName("PCSTR")] sbyte* MachineName, [NativeTypeName("PVOID")] void* Reserved);
 
         [DllImport("setupapi", ExactSpelling = true)]
-        [return: NativeTypeName("HKEY")]
-        public static extern IntPtr SetupDiOpenClassRegKeyExW([NativeTypeName("const GUID *")] Guid* ClassGuid, [NativeTypeName("REGSAM")] uint samDesired, [NativeTypeName("DWORD")] uint Flags, [NativeTypeName("PCWSTR")] ushort* MachineName, [NativeTypeName("PVOID")] void* Reserved);
+        public static extern HKEY SetupDiOpenClassRegKeyExW([NativeTypeName("const GUID *")] Guid* ClassGuid, [NativeTypeName("REGSAM")] uint samDesired, [NativeTypeName("DWORD")] uint Flags, [NativeTypeName("PCWSTR")] ushort* MachineName, [NativeTypeName("PVOID")] void* Reserved);
 
         [DllImport("setupapi", ExactSpelling = true)]
-        [return: NativeTypeName("HKEY")]
-        public static extern IntPtr SetupDiCreateDeviceInterfaceRegKeyA([NativeTypeName("HDEVINFO")] IntPtr DeviceInfoSet, [NativeTypeName("PSP_DEVICE_INTERFACE_DATA")] void* DeviceInterfaceData, [NativeTypeName("DWORD")] uint Reserved, [NativeTypeName("REGSAM")] uint samDesired, [NativeTypeName("HINF")] IntPtr InfHandle, [NativeTypeName("PCSTR")] sbyte* InfSectionName);
+        public static extern HKEY SetupDiCreateDeviceInterfaceRegKeyA(HDEVINFO DeviceInfoSet, [NativeTypeName("PSP_DEVICE_INTERFACE_DATA")] void* DeviceInterfaceData, [NativeTypeName("DWORD")] uint Reserved, [NativeTypeName("REGSAM")] uint samDesired, HINF InfHandle, [NativeTypeName("PCSTR")] sbyte* InfSectionName);
 
         [DllImport("setupapi", ExactSpelling = true)]
-        [return: NativeTypeName("HKEY")]
-        public static extern IntPtr SetupDiCreateDeviceInterfaceRegKeyW([NativeTypeName("HDEVINFO")] IntPtr DeviceInfoSet, [NativeTypeName("PSP_DEVICE_INTERFACE_DATA")] void* DeviceInterfaceData, [NativeTypeName("DWORD")] uint Reserved, [NativeTypeName("REGSAM")] uint samDesired, [NativeTypeName("HINF")] IntPtr InfHandle, [NativeTypeName("PCWSTR")] ushort* InfSectionName);
+        public static extern HKEY SetupDiCreateDeviceInterfaceRegKeyW(HDEVINFO DeviceInfoSet, [NativeTypeName("PSP_DEVICE_INTERFACE_DATA")] void* DeviceInterfaceData, [NativeTypeName("DWORD")] uint Reserved, [NativeTypeName("REGSAM")] uint samDesired, HINF InfHandle, [NativeTypeName("PCWSTR")] ushort* InfSectionName);
 
         [DllImport("setupapi", ExactSpelling = true)]
-        [return: NativeTypeName("HKEY")]
-        public static extern IntPtr SetupDiOpenDeviceInterfaceRegKey([NativeTypeName("HDEVINFO")] IntPtr DeviceInfoSet, [NativeTypeName("PSP_DEVICE_INTERFACE_DATA")] void* DeviceInterfaceData, [NativeTypeName("DWORD")] uint Reserved, [NativeTypeName("REGSAM")] uint samDesired);
+        public static extern HKEY SetupDiOpenDeviceInterfaceRegKey(HDEVINFO DeviceInfoSet, [NativeTypeName("PSP_DEVICE_INTERFACE_DATA")] void* DeviceInterfaceData, [NativeTypeName("DWORD")] uint Reserved, [NativeTypeName("REGSAM")] uint samDesired);
 
         [DllImport("setupapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupDiDeleteDeviceInterfaceRegKey([NativeTypeName("HDEVINFO")] IntPtr DeviceInfoSet, [NativeTypeName("PSP_DEVICE_INTERFACE_DATA")] void* DeviceInterfaceData, [NativeTypeName("DWORD")] uint Reserved);
+        public static extern BOOL SetupDiDeleteDeviceInterfaceRegKey(HDEVINFO DeviceInfoSet, [NativeTypeName("PSP_DEVICE_INTERFACE_DATA")] void* DeviceInterfaceData, [NativeTypeName("DWORD")] uint Reserved);
 
         [DllImport("setupapi", ExactSpelling = true)]
-        [return: NativeTypeName("HKEY")]
-        public static extern IntPtr SetupDiCreateDevRegKeyA([NativeTypeName("HDEVINFO")] IntPtr DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData, [NativeTypeName("DWORD")] uint Scope, [NativeTypeName("DWORD")] uint HwProfile, [NativeTypeName("DWORD")] uint KeyType, [NativeTypeName("HINF")] IntPtr InfHandle, [NativeTypeName("PCSTR")] sbyte* InfSectionName);
+        public static extern HKEY SetupDiCreateDevRegKeyA(HDEVINFO DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData, [NativeTypeName("DWORD")] uint Scope, [NativeTypeName("DWORD")] uint HwProfile, [NativeTypeName("DWORD")] uint KeyType, HINF InfHandle, [NativeTypeName("PCSTR")] sbyte* InfSectionName);
 
         [DllImport("setupapi", ExactSpelling = true)]
-        [return: NativeTypeName("HKEY")]
-        public static extern IntPtr SetupDiCreateDevRegKeyW([NativeTypeName("HDEVINFO")] IntPtr DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData, [NativeTypeName("DWORD")] uint Scope, [NativeTypeName("DWORD")] uint HwProfile, [NativeTypeName("DWORD")] uint KeyType, [NativeTypeName("HINF")] IntPtr InfHandle, [NativeTypeName("PCWSTR")] ushort* InfSectionName);
+        public static extern HKEY SetupDiCreateDevRegKeyW(HDEVINFO DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData, [NativeTypeName("DWORD")] uint Scope, [NativeTypeName("DWORD")] uint HwProfile, [NativeTypeName("DWORD")] uint KeyType, HINF InfHandle, [NativeTypeName("PCWSTR")] ushort* InfSectionName);
 
         [DllImport("setupapi", ExactSpelling = true)]
-        [return: NativeTypeName("HKEY")]
-        public static extern IntPtr SetupDiOpenDevRegKey([NativeTypeName("HDEVINFO")] IntPtr DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData, [NativeTypeName("DWORD")] uint Scope, [NativeTypeName("DWORD")] uint HwProfile, [NativeTypeName("DWORD")] uint KeyType, [NativeTypeName("REGSAM")] uint samDesired);
+        public static extern HKEY SetupDiOpenDevRegKey(HDEVINFO DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData, [NativeTypeName("DWORD")] uint Scope, [NativeTypeName("DWORD")] uint HwProfile, [NativeTypeName("DWORD")] uint KeyType, [NativeTypeName("REGSAM")] uint samDesired);
 
         [DllImport("setupapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupDiDeleteDevRegKey([NativeTypeName("HDEVINFO")] IntPtr DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData, [NativeTypeName("DWORD")] uint Scope, [NativeTypeName("DWORD")] uint HwProfile, [NativeTypeName("DWORD")] uint KeyType);
+        public static extern BOOL SetupDiDeleteDevRegKey(HDEVINFO DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData, [NativeTypeName("DWORD")] uint Scope, [NativeTypeName("DWORD")] uint HwProfile, [NativeTypeName("DWORD")] uint KeyType);
 
         [DllImport("setupapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupDiGetHwProfileList([NativeTypeName("PDWORD")] uint* HwProfileList, [NativeTypeName("DWORD")] uint HwProfileListSize, [NativeTypeName("PDWORD")] uint* RequiredSize, [NativeTypeName("PDWORD")] uint* CurrentlyActiveIndex);
+        public static extern BOOL SetupDiGetHwProfileList([NativeTypeName("PDWORD")] uint* HwProfileList, [NativeTypeName("DWORD")] uint HwProfileListSize, [NativeTypeName("PDWORD")] uint* RequiredSize, [NativeTypeName("PDWORD")] uint* CurrentlyActiveIndex);
 
         [DllImport("setupapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupDiGetHwProfileListExA([NativeTypeName("PDWORD")] uint* HwProfileList, [NativeTypeName("DWORD")] uint HwProfileListSize, [NativeTypeName("PDWORD")] uint* RequiredSize, [NativeTypeName("PDWORD")] uint* CurrentlyActiveIndex, [NativeTypeName("PCSTR")] sbyte* MachineName, [NativeTypeName("PVOID")] void* Reserved);
+        public static extern BOOL SetupDiGetHwProfileListExA([NativeTypeName("PDWORD")] uint* HwProfileList, [NativeTypeName("DWORD")] uint HwProfileListSize, [NativeTypeName("PDWORD")] uint* RequiredSize, [NativeTypeName("PDWORD")] uint* CurrentlyActiveIndex, [NativeTypeName("PCSTR")] sbyte* MachineName, [NativeTypeName("PVOID")] void* Reserved);
 
         [DllImport("setupapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupDiGetHwProfileListExW([NativeTypeName("PDWORD")] uint* HwProfileList, [NativeTypeName("DWORD")] uint HwProfileListSize, [NativeTypeName("PDWORD")] uint* RequiredSize, [NativeTypeName("PDWORD")] uint* CurrentlyActiveIndex, [NativeTypeName("PCWSTR")] ushort* MachineName, [NativeTypeName("PVOID")] void* Reserved);
+        public static extern BOOL SetupDiGetHwProfileListExW([NativeTypeName("PDWORD")] uint* HwProfileList, [NativeTypeName("DWORD")] uint HwProfileListSize, [NativeTypeName("PDWORD")] uint* RequiredSize, [NativeTypeName("PDWORD")] uint* CurrentlyActiveIndex, [NativeTypeName("PCWSTR")] ushort* MachineName, [NativeTypeName("PVOID")] void* Reserved);
 
         [DllImport("setupapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupDiGetDevicePropertyKeys([NativeTypeName("HDEVINFO")] IntPtr DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData, DEVPROPKEY* PropertyKeyArray, [NativeTypeName("DWORD")] uint PropertyKeyCount, [NativeTypeName("PDWORD")] uint* RequiredPropertyKeyCount, [NativeTypeName("DWORD")] uint Flags);
+        public static extern BOOL SetupDiGetDevicePropertyKeys(HDEVINFO DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData, DEVPROPKEY* PropertyKeyArray, [NativeTypeName("DWORD")] uint PropertyKeyCount, [NativeTypeName("PDWORD")] uint* RequiredPropertyKeyCount, [NativeTypeName("DWORD")] uint Flags);
 
         [DllImport("setupapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupDiGetDevicePropertyW([NativeTypeName("HDEVINFO")] IntPtr DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData, [NativeTypeName("const DEVPROPKEY *")] DEVPROPKEY* PropertyKey, [NativeTypeName("DEVPROPTYPE *")] uint* PropertyType, [NativeTypeName("PBYTE")] byte* PropertyBuffer, [NativeTypeName("DWORD")] uint PropertyBufferSize, [NativeTypeName("PDWORD")] uint* RequiredSize, [NativeTypeName("DWORD")] uint Flags);
+        public static extern BOOL SetupDiGetDevicePropertyW(HDEVINFO DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData, [NativeTypeName("const DEVPROPKEY *")] DEVPROPKEY* PropertyKey, [NativeTypeName("DEVPROPTYPE *")] uint* PropertyType, [NativeTypeName("PBYTE")] byte* PropertyBuffer, [NativeTypeName("DWORD")] uint PropertyBufferSize, [NativeTypeName("PDWORD")] uint* RequiredSize, [NativeTypeName("DWORD")] uint Flags);
 
         [DllImport("setupapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupDiSetDevicePropertyW([NativeTypeName("HDEVINFO")] IntPtr DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData, [NativeTypeName("const DEVPROPKEY *")] DEVPROPKEY* PropertyKey, [NativeTypeName("DEVPROPTYPE")] uint PropertyType, [NativeTypeName("const PBYTE")] byte* PropertyBuffer, [NativeTypeName("DWORD")] uint PropertyBufferSize, [NativeTypeName("DWORD")] uint Flags);
+        public static extern BOOL SetupDiSetDevicePropertyW(HDEVINFO DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData, [NativeTypeName("const DEVPROPKEY *")] DEVPROPKEY* PropertyKey, [NativeTypeName("DEVPROPTYPE")] uint PropertyType, [NativeTypeName("const PBYTE")] byte* PropertyBuffer, [NativeTypeName("DWORD")] uint PropertyBufferSize, [NativeTypeName("DWORD")] uint Flags);
 
         [DllImport("setupapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupDiGetDeviceInterfacePropertyKeys([NativeTypeName("HDEVINFO")] IntPtr DeviceInfoSet, [NativeTypeName("PSP_DEVICE_INTERFACE_DATA")] void* DeviceInterfaceData, DEVPROPKEY* PropertyKeyArray, [NativeTypeName("DWORD")] uint PropertyKeyCount, [NativeTypeName("PDWORD")] uint* RequiredPropertyKeyCount, [NativeTypeName("DWORD")] uint Flags);
+        public static extern BOOL SetupDiGetDeviceInterfacePropertyKeys(HDEVINFO DeviceInfoSet, [NativeTypeName("PSP_DEVICE_INTERFACE_DATA")] void* DeviceInterfaceData, DEVPROPKEY* PropertyKeyArray, [NativeTypeName("DWORD")] uint PropertyKeyCount, [NativeTypeName("PDWORD")] uint* RequiredPropertyKeyCount, [NativeTypeName("DWORD")] uint Flags);
 
         [DllImport("setupapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupDiGetDeviceInterfacePropertyW([NativeTypeName("HDEVINFO")] IntPtr DeviceInfoSet, [NativeTypeName("PSP_DEVICE_INTERFACE_DATA")] void* DeviceInterfaceData, [NativeTypeName("const DEVPROPKEY *")] DEVPROPKEY* PropertyKey, [NativeTypeName("DEVPROPTYPE *")] uint* PropertyType, [NativeTypeName("PBYTE")] byte* PropertyBuffer, [NativeTypeName("DWORD")] uint PropertyBufferSize, [NativeTypeName("PDWORD")] uint* RequiredSize, [NativeTypeName("DWORD")] uint Flags);
+        public static extern BOOL SetupDiGetDeviceInterfacePropertyW(HDEVINFO DeviceInfoSet, [NativeTypeName("PSP_DEVICE_INTERFACE_DATA")] void* DeviceInterfaceData, [NativeTypeName("const DEVPROPKEY *")] DEVPROPKEY* PropertyKey, [NativeTypeName("DEVPROPTYPE *")] uint* PropertyType, [NativeTypeName("PBYTE")] byte* PropertyBuffer, [NativeTypeName("DWORD")] uint PropertyBufferSize, [NativeTypeName("PDWORD")] uint* RequiredSize, [NativeTypeName("DWORD")] uint Flags);
 
         [DllImport("setupapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupDiSetDeviceInterfacePropertyW([NativeTypeName("HDEVINFO")] IntPtr DeviceInfoSet, [NativeTypeName("PSP_DEVICE_INTERFACE_DATA")] void* DeviceInterfaceData, [NativeTypeName("const DEVPROPKEY *")] DEVPROPKEY* PropertyKey, [NativeTypeName("DEVPROPTYPE")] uint PropertyType, [NativeTypeName("const PBYTE")] byte* PropertyBuffer, [NativeTypeName("DWORD")] uint PropertyBufferSize, [NativeTypeName("DWORD")] uint Flags);
+        public static extern BOOL SetupDiSetDeviceInterfacePropertyW(HDEVINFO DeviceInfoSet, [NativeTypeName("PSP_DEVICE_INTERFACE_DATA")] void* DeviceInterfaceData, [NativeTypeName("const DEVPROPKEY *")] DEVPROPKEY* PropertyKey, [NativeTypeName("DEVPROPTYPE")] uint PropertyType, [NativeTypeName("const PBYTE")] byte* PropertyBuffer, [NativeTypeName("DWORD")] uint PropertyBufferSize, [NativeTypeName("DWORD")] uint Flags);
 
         [DllImport("setupapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupDiGetClassPropertyKeys([NativeTypeName("const GUID *")] Guid* ClassGuid, DEVPROPKEY* PropertyKeyArray, [NativeTypeName("DWORD")] uint PropertyKeyCount, [NativeTypeName("PDWORD")] uint* RequiredPropertyKeyCount, [NativeTypeName("DWORD")] uint Flags);
+        public static extern BOOL SetupDiGetClassPropertyKeys([NativeTypeName("const GUID *")] Guid* ClassGuid, DEVPROPKEY* PropertyKeyArray, [NativeTypeName("DWORD")] uint PropertyKeyCount, [NativeTypeName("PDWORD")] uint* RequiredPropertyKeyCount, [NativeTypeName("DWORD")] uint Flags);
 
         [DllImport("setupapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupDiGetClassPropertyKeysExW([NativeTypeName("const GUID *")] Guid* ClassGuid, DEVPROPKEY* PropertyKeyArray, [NativeTypeName("DWORD")] uint PropertyKeyCount, [NativeTypeName("PDWORD")] uint* RequiredPropertyKeyCount, [NativeTypeName("DWORD")] uint Flags, [NativeTypeName("PCWSTR")] ushort* MachineName, [NativeTypeName("PVOID")] void* Reserved);
+        public static extern BOOL SetupDiGetClassPropertyKeysExW([NativeTypeName("const GUID *")] Guid* ClassGuid, DEVPROPKEY* PropertyKeyArray, [NativeTypeName("DWORD")] uint PropertyKeyCount, [NativeTypeName("PDWORD")] uint* RequiredPropertyKeyCount, [NativeTypeName("DWORD")] uint Flags, [NativeTypeName("PCWSTR")] ushort* MachineName, [NativeTypeName("PVOID")] void* Reserved);
 
         [DllImport("setupapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupDiGetClassPropertyW([NativeTypeName("const GUID *")] Guid* ClassGuid, [NativeTypeName("const DEVPROPKEY *")] DEVPROPKEY* PropertyKey, [NativeTypeName("DEVPROPTYPE *")] uint* PropertyType, [NativeTypeName("PBYTE")] byte* PropertyBuffer, [NativeTypeName("DWORD")] uint PropertyBufferSize, [NativeTypeName("PDWORD")] uint* RequiredSize, [NativeTypeName("DWORD")] uint Flags);
+        public static extern BOOL SetupDiGetClassPropertyW([NativeTypeName("const GUID *")] Guid* ClassGuid, [NativeTypeName("const DEVPROPKEY *")] DEVPROPKEY* PropertyKey, [NativeTypeName("DEVPROPTYPE *")] uint* PropertyType, [NativeTypeName("PBYTE")] byte* PropertyBuffer, [NativeTypeName("DWORD")] uint PropertyBufferSize, [NativeTypeName("PDWORD")] uint* RequiredSize, [NativeTypeName("DWORD")] uint Flags);
 
         [DllImport("setupapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupDiGetClassPropertyExW([NativeTypeName("const GUID *")] Guid* ClassGuid, [NativeTypeName("const DEVPROPKEY *")] DEVPROPKEY* PropertyKey, [NativeTypeName("DEVPROPTYPE *")] uint* PropertyType, [NativeTypeName("PBYTE")] byte* PropertyBuffer, [NativeTypeName("DWORD")] uint PropertyBufferSize, [NativeTypeName("PDWORD")] uint* RequiredSize, [NativeTypeName("DWORD")] uint Flags, [NativeTypeName("PCWSTR")] ushort* MachineName, [NativeTypeName("PVOID")] void* Reserved);
+        public static extern BOOL SetupDiGetClassPropertyExW([NativeTypeName("const GUID *")] Guid* ClassGuid, [NativeTypeName("const DEVPROPKEY *")] DEVPROPKEY* PropertyKey, [NativeTypeName("DEVPROPTYPE *")] uint* PropertyType, [NativeTypeName("PBYTE")] byte* PropertyBuffer, [NativeTypeName("DWORD")] uint PropertyBufferSize, [NativeTypeName("PDWORD")] uint* RequiredSize, [NativeTypeName("DWORD")] uint Flags, [NativeTypeName("PCWSTR")] ushort* MachineName, [NativeTypeName("PVOID")] void* Reserved);
 
         [DllImport("setupapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupDiSetClassPropertyW([NativeTypeName("const GUID *")] Guid* ClassGuid, [NativeTypeName("const DEVPROPKEY *")] DEVPROPKEY* PropertyKey, [NativeTypeName("DEVPROPTYPE")] uint PropertyType, [NativeTypeName("const PBYTE")] byte* PropertyBuffer, [NativeTypeName("DWORD")] uint PropertyBufferSize, [NativeTypeName("DWORD")] uint Flags);
+        public static extern BOOL SetupDiSetClassPropertyW([NativeTypeName("const GUID *")] Guid* ClassGuid, [NativeTypeName("const DEVPROPKEY *")] DEVPROPKEY* PropertyKey, [NativeTypeName("DEVPROPTYPE")] uint PropertyType, [NativeTypeName("const PBYTE")] byte* PropertyBuffer, [NativeTypeName("DWORD")] uint PropertyBufferSize, [NativeTypeName("DWORD")] uint Flags);
 
         [DllImport("setupapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupDiSetClassPropertyExW([NativeTypeName("const GUID *")] Guid* ClassGuid, [NativeTypeName("const DEVPROPKEY *")] DEVPROPKEY* PropertyKey, [NativeTypeName("DEVPROPTYPE")] uint PropertyType, [NativeTypeName("const PBYTE")] byte* PropertyBuffer, [NativeTypeName("DWORD")] uint PropertyBufferSize, [NativeTypeName("DWORD")] uint Flags, [NativeTypeName("PCWSTR")] ushort* MachineName, [NativeTypeName("PVOID")] void* Reserved);
+        public static extern BOOL SetupDiSetClassPropertyExW([NativeTypeName("const GUID *")] Guid* ClassGuid, [NativeTypeName("const DEVPROPKEY *")] DEVPROPKEY* PropertyKey, [NativeTypeName("DEVPROPTYPE")] uint PropertyType, [NativeTypeName("const PBYTE")] byte* PropertyBuffer, [NativeTypeName("DWORD")] uint PropertyBufferSize, [NativeTypeName("DWORD")] uint Flags, [NativeTypeName("PCWSTR")] ushort* MachineName, [NativeTypeName("PVOID")] void* Reserved);
 
         [DllImport("setupapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupDiGetDeviceRegistryPropertyA([NativeTypeName("HDEVINFO")] IntPtr DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData, [NativeTypeName("DWORD")] uint Property, [NativeTypeName("PDWORD")] uint* PropertyRegDataType, [NativeTypeName("PBYTE")] byte* PropertyBuffer, [NativeTypeName("DWORD")] uint PropertyBufferSize, [NativeTypeName("PDWORD")] uint* RequiredSize);
+        public static extern BOOL SetupDiGetDeviceRegistryPropertyA(HDEVINFO DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData, [NativeTypeName("DWORD")] uint Property, [NativeTypeName("PDWORD")] uint* PropertyRegDataType, [NativeTypeName("PBYTE")] byte* PropertyBuffer, [NativeTypeName("DWORD")] uint PropertyBufferSize, [NativeTypeName("PDWORD")] uint* RequiredSize);
 
         [DllImport("setupapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupDiGetDeviceRegistryPropertyW([NativeTypeName("HDEVINFO")] IntPtr DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData, [NativeTypeName("DWORD")] uint Property, [NativeTypeName("PDWORD")] uint* PropertyRegDataType, [NativeTypeName("PBYTE")] byte* PropertyBuffer, [NativeTypeName("DWORD")] uint PropertyBufferSize, [NativeTypeName("PDWORD")] uint* RequiredSize);
+        public static extern BOOL SetupDiGetDeviceRegistryPropertyW(HDEVINFO DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData, [NativeTypeName("DWORD")] uint Property, [NativeTypeName("PDWORD")] uint* PropertyRegDataType, [NativeTypeName("PBYTE")] byte* PropertyBuffer, [NativeTypeName("DWORD")] uint PropertyBufferSize, [NativeTypeName("PDWORD")] uint* RequiredSize);
 
         [DllImport("setupapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupDiGetClassRegistryPropertyA([NativeTypeName("const GUID *")] Guid* ClassGuid, [NativeTypeName("DWORD")] uint Property, [NativeTypeName("PDWORD")] uint* PropertyRegDataType, [NativeTypeName("PBYTE")] byte* PropertyBuffer, [NativeTypeName("DWORD")] uint PropertyBufferSize, [NativeTypeName("PDWORD")] uint* RequiredSize, [NativeTypeName("PCSTR")] sbyte* MachineName, [NativeTypeName("PVOID")] void* Reserved);
+        public static extern BOOL SetupDiGetClassRegistryPropertyA([NativeTypeName("const GUID *")] Guid* ClassGuid, [NativeTypeName("DWORD")] uint Property, [NativeTypeName("PDWORD")] uint* PropertyRegDataType, [NativeTypeName("PBYTE")] byte* PropertyBuffer, [NativeTypeName("DWORD")] uint PropertyBufferSize, [NativeTypeName("PDWORD")] uint* RequiredSize, [NativeTypeName("PCSTR")] sbyte* MachineName, [NativeTypeName("PVOID")] void* Reserved);
 
         [DllImport("setupapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupDiGetClassRegistryPropertyW([NativeTypeName("const GUID *")] Guid* ClassGuid, [NativeTypeName("DWORD")] uint Property, [NativeTypeName("PDWORD")] uint* PropertyRegDataType, [NativeTypeName("PBYTE")] byte* PropertyBuffer, [NativeTypeName("DWORD")] uint PropertyBufferSize, [NativeTypeName("PDWORD")] uint* RequiredSize, [NativeTypeName("PCWSTR")] ushort* MachineName, [NativeTypeName("PVOID")] void* Reserved);
+        public static extern BOOL SetupDiGetClassRegistryPropertyW([NativeTypeName("const GUID *")] Guid* ClassGuid, [NativeTypeName("DWORD")] uint Property, [NativeTypeName("PDWORD")] uint* PropertyRegDataType, [NativeTypeName("PBYTE")] byte* PropertyBuffer, [NativeTypeName("DWORD")] uint PropertyBufferSize, [NativeTypeName("PDWORD")] uint* RequiredSize, [NativeTypeName("PCWSTR")] ushort* MachineName, [NativeTypeName("PVOID")] void* Reserved);
 
         [DllImport("setupapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupDiSetDeviceRegistryPropertyA([NativeTypeName("HDEVINFO")] IntPtr DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData, [NativeTypeName("DWORD")] uint Property, [NativeTypeName("const BYTE *")] byte* PropertyBuffer, [NativeTypeName("DWORD")] uint PropertyBufferSize);
+        public static extern BOOL SetupDiSetDeviceRegistryPropertyA(HDEVINFO DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData, [NativeTypeName("DWORD")] uint Property, [NativeTypeName("const BYTE *")] byte* PropertyBuffer, [NativeTypeName("DWORD")] uint PropertyBufferSize);
 
         [DllImport("setupapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupDiSetDeviceRegistryPropertyW([NativeTypeName("HDEVINFO")] IntPtr DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData, [NativeTypeName("DWORD")] uint Property, [NativeTypeName("const BYTE *")] byte* PropertyBuffer, [NativeTypeName("DWORD")] uint PropertyBufferSize);
+        public static extern BOOL SetupDiSetDeviceRegistryPropertyW(HDEVINFO DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData, [NativeTypeName("DWORD")] uint Property, [NativeTypeName("const BYTE *")] byte* PropertyBuffer, [NativeTypeName("DWORD")] uint PropertyBufferSize);
 
         [DllImport("setupapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupDiSetClassRegistryPropertyA([NativeTypeName("const GUID *")] Guid* ClassGuid, [NativeTypeName("DWORD")] uint Property, [NativeTypeName("const BYTE *")] byte* PropertyBuffer, [NativeTypeName("DWORD")] uint PropertyBufferSize, [NativeTypeName("PCSTR")] sbyte* MachineName, [NativeTypeName("PVOID")] void* Reserved);
+        public static extern BOOL SetupDiSetClassRegistryPropertyA([NativeTypeName("const GUID *")] Guid* ClassGuid, [NativeTypeName("DWORD")] uint Property, [NativeTypeName("const BYTE *")] byte* PropertyBuffer, [NativeTypeName("DWORD")] uint PropertyBufferSize, [NativeTypeName("PCSTR")] sbyte* MachineName, [NativeTypeName("PVOID")] void* Reserved);
 
         [DllImport("setupapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupDiSetClassRegistryPropertyW([NativeTypeName("const GUID *")] Guid* ClassGuid, [NativeTypeName("DWORD")] uint Property, [NativeTypeName("const BYTE *")] byte* PropertyBuffer, [NativeTypeName("DWORD")] uint PropertyBufferSize, [NativeTypeName("PCWSTR")] ushort* MachineName, [NativeTypeName("PVOID")] void* Reserved);
+        public static extern BOOL SetupDiSetClassRegistryPropertyW([NativeTypeName("const GUID *")] Guid* ClassGuid, [NativeTypeName("DWORD")] uint Property, [NativeTypeName("const BYTE *")] byte* PropertyBuffer, [NativeTypeName("DWORD")] uint PropertyBufferSize, [NativeTypeName("PCWSTR")] ushort* MachineName, [NativeTypeName("PVOID")] void* Reserved);
 
         [DllImport("setupapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupDiGetDeviceInstallParamsA([NativeTypeName("HDEVINFO")] IntPtr DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData, [NativeTypeName("PSP_DEVINSTALL_PARAMS_A")] void* DeviceInstallParams);
+        public static extern BOOL SetupDiGetDeviceInstallParamsA(HDEVINFO DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData, [NativeTypeName("PSP_DEVINSTALL_PARAMS_A")] void* DeviceInstallParams);
 
         [DllImport("setupapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupDiGetDeviceInstallParamsW([NativeTypeName("HDEVINFO")] IntPtr DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData, [NativeTypeName("PSP_DEVINSTALL_PARAMS_W")] void* DeviceInstallParams);
+        public static extern BOOL SetupDiGetDeviceInstallParamsW(HDEVINFO DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData, [NativeTypeName("PSP_DEVINSTALL_PARAMS_W")] void* DeviceInstallParams);
 
         [DllImport("setupapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupDiGetClassInstallParamsA([NativeTypeName("HDEVINFO")] IntPtr DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData, [NativeTypeName("PSP_CLASSINSTALL_HEADER")] void* ClassInstallParams, [NativeTypeName("DWORD")] uint ClassInstallParamsSize, [NativeTypeName("PDWORD")] uint* RequiredSize);
+        public static extern BOOL SetupDiGetClassInstallParamsA(HDEVINFO DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData, [NativeTypeName("PSP_CLASSINSTALL_HEADER")] void* ClassInstallParams, [NativeTypeName("DWORD")] uint ClassInstallParamsSize, [NativeTypeName("PDWORD")] uint* RequiredSize);
 
         [DllImport("setupapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupDiGetClassInstallParamsW([NativeTypeName("HDEVINFO")] IntPtr DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData, [NativeTypeName("PSP_CLASSINSTALL_HEADER")] void* ClassInstallParams, [NativeTypeName("DWORD")] uint ClassInstallParamsSize, [NativeTypeName("PDWORD")] uint* RequiredSize);
+        public static extern BOOL SetupDiGetClassInstallParamsW(HDEVINFO DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData, [NativeTypeName("PSP_CLASSINSTALL_HEADER")] void* ClassInstallParams, [NativeTypeName("DWORD")] uint ClassInstallParamsSize, [NativeTypeName("PDWORD")] uint* RequiredSize);
 
         [DllImport("setupapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupDiSetDeviceInstallParamsA([NativeTypeName("HDEVINFO")] IntPtr DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData, [NativeTypeName("PSP_DEVINSTALL_PARAMS_A")] void* DeviceInstallParams);
+        public static extern BOOL SetupDiSetDeviceInstallParamsA(HDEVINFO DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData, [NativeTypeName("PSP_DEVINSTALL_PARAMS_A")] void* DeviceInstallParams);
 
         [DllImport("setupapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupDiSetDeviceInstallParamsW([NativeTypeName("HDEVINFO")] IntPtr DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData, [NativeTypeName("PSP_DEVINSTALL_PARAMS_W")] void* DeviceInstallParams);
+        public static extern BOOL SetupDiSetDeviceInstallParamsW(HDEVINFO DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData, [NativeTypeName("PSP_DEVINSTALL_PARAMS_W")] void* DeviceInstallParams);
 
         [DllImport("setupapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupDiSetClassInstallParamsA([NativeTypeName("HDEVINFO")] IntPtr DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData, [NativeTypeName("PSP_CLASSINSTALL_HEADER")] void* ClassInstallParams, [NativeTypeName("DWORD")] uint ClassInstallParamsSize);
+        public static extern BOOL SetupDiSetClassInstallParamsA(HDEVINFO DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData, [NativeTypeName("PSP_CLASSINSTALL_HEADER")] void* ClassInstallParams, [NativeTypeName("DWORD")] uint ClassInstallParamsSize);
 
         [DllImport("setupapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupDiSetClassInstallParamsW([NativeTypeName("HDEVINFO")] IntPtr DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData, [NativeTypeName("PSP_CLASSINSTALL_HEADER")] void* ClassInstallParams, [NativeTypeName("DWORD")] uint ClassInstallParamsSize);
+        public static extern BOOL SetupDiSetClassInstallParamsW(HDEVINFO DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData, [NativeTypeName("PSP_CLASSINSTALL_HEADER")] void* ClassInstallParams, [NativeTypeName("DWORD")] uint ClassInstallParamsSize);
 
         [DllImport("setupapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupDiGetDriverInstallParamsA([NativeTypeName("HDEVINFO")] IntPtr DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData, [NativeTypeName("PSP_DRVINFO_DATA_A")] void* DriverInfoData, [NativeTypeName("PSP_DRVINSTALL_PARAMS")] void* DriverInstallParams);
+        public static extern BOOL SetupDiGetDriverInstallParamsA(HDEVINFO DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData, [NativeTypeName("PSP_DRVINFO_DATA_A")] void* DriverInfoData, [NativeTypeName("PSP_DRVINSTALL_PARAMS")] void* DriverInstallParams);
 
         [DllImport("setupapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupDiGetDriverInstallParamsW([NativeTypeName("HDEVINFO")] IntPtr DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData, [NativeTypeName("PSP_DRVINFO_DATA_W")] void* DriverInfoData, [NativeTypeName("PSP_DRVINSTALL_PARAMS")] void* DriverInstallParams);
+        public static extern BOOL SetupDiGetDriverInstallParamsW(HDEVINFO DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData, [NativeTypeName("PSP_DRVINFO_DATA_W")] void* DriverInfoData, [NativeTypeName("PSP_DRVINSTALL_PARAMS")] void* DriverInstallParams);
 
         [DllImport("setupapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupDiSetDriverInstallParamsA([NativeTypeName("HDEVINFO")] IntPtr DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData, [NativeTypeName("PSP_DRVINFO_DATA_A")] void* DriverInfoData, [NativeTypeName("PSP_DRVINSTALL_PARAMS")] void* DriverInstallParams);
+        public static extern BOOL SetupDiSetDriverInstallParamsA(HDEVINFO DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData, [NativeTypeName("PSP_DRVINFO_DATA_A")] void* DriverInfoData, [NativeTypeName("PSP_DRVINSTALL_PARAMS")] void* DriverInstallParams);
 
         [DllImport("setupapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupDiSetDriverInstallParamsW([NativeTypeName("HDEVINFO")] IntPtr DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData, [NativeTypeName("PSP_DRVINFO_DATA_W")] void* DriverInfoData, [NativeTypeName("PSP_DRVINSTALL_PARAMS")] void* DriverInstallParams);
+        public static extern BOOL SetupDiSetDriverInstallParamsW(HDEVINFO DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData, [NativeTypeName("PSP_DRVINFO_DATA_W")] void* DriverInfoData, [NativeTypeName("PSP_DRVINSTALL_PARAMS")] void* DriverInstallParams);
 
         [DllImport("setupapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupDiLoadClassIcon([NativeTypeName("const GUID *")] Guid* ClassGuid, [NativeTypeName("HICON *")] IntPtr* LargeIcon, [NativeTypeName("PINT")] int* MiniIconIndex);
+        public static extern BOOL SetupDiLoadClassIcon([NativeTypeName("const GUID *")] Guid* ClassGuid, HICON* LargeIcon, [NativeTypeName("PINT")] int* MiniIconIndex);
 
         [DllImport("setupapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupDiLoadDeviceIcon([NativeTypeName("HDEVINFO")] IntPtr DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData, [NativeTypeName("UINT")] uint cxIcon, [NativeTypeName("UINT")] uint cyIcon, [NativeTypeName("DWORD")] uint Flags, [NativeTypeName("HICON *")] IntPtr* hIcon);
+        public static extern BOOL SetupDiLoadDeviceIcon(HDEVINFO DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData, uint cxIcon, uint cyIcon, [NativeTypeName("DWORD")] uint Flags, HICON* hIcon);
 
         [DllImport("setupapi", ExactSpelling = true)]
-        [return: NativeTypeName("INT")]
-        public static extern int SetupDiDrawMiniIcon([NativeTypeName("HDC")] IntPtr hdc, RECT rc, [NativeTypeName("INT")] int MiniIconIndex, [NativeTypeName("DWORD")] uint Flags);
+        public static extern int SetupDiDrawMiniIcon(HDC hdc, RECT rc, int MiniIconIndex, [NativeTypeName("DWORD")] uint Flags);
 
         [DllImport("setupapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupDiGetClassBitmapIndex([NativeTypeName("const GUID *")] Guid* ClassGuid, [NativeTypeName("PINT")] int* MiniIconIndex);
+        public static extern BOOL SetupDiGetClassBitmapIndex([NativeTypeName("const GUID *")] Guid* ClassGuid, [NativeTypeName("PINT")] int* MiniIconIndex);
 
         [DllImport("setupapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupDiGetClassImageList([NativeTypeName("PSP_CLASSIMAGELIST_DATA")] void* ClassImageListData);
+        public static extern BOOL SetupDiGetClassImageList([NativeTypeName("PSP_CLASSIMAGELIST_DATA")] void* ClassImageListData);
 
         [DllImport("setupapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupDiGetClassImageListExA([NativeTypeName("PSP_CLASSIMAGELIST_DATA")] void* ClassImageListData, [NativeTypeName("PCSTR")] sbyte* MachineName, [NativeTypeName("PVOID")] void* Reserved);
+        public static extern BOOL SetupDiGetClassImageListExA([NativeTypeName("PSP_CLASSIMAGELIST_DATA")] void* ClassImageListData, [NativeTypeName("PCSTR")] sbyte* MachineName, [NativeTypeName("PVOID")] void* Reserved);
 
         [DllImport("setupapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupDiGetClassImageListExW([NativeTypeName("PSP_CLASSIMAGELIST_DATA")] void* ClassImageListData, [NativeTypeName("PCWSTR")] ushort* MachineName, [NativeTypeName("PVOID")] void* Reserved);
+        public static extern BOOL SetupDiGetClassImageListExW([NativeTypeName("PSP_CLASSIMAGELIST_DATA")] void* ClassImageListData, [NativeTypeName("PCWSTR")] ushort* MachineName, [NativeTypeName("PVOID")] void* Reserved);
 
         [DllImport("setupapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupDiGetClassImageIndex([NativeTypeName("PSP_CLASSIMAGELIST_DATA")] void* ClassImageListData, [NativeTypeName("const GUID *")] Guid* ClassGuid, [NativeTypeName("PINT")] int* ImageIndex);
+        public static extern BOOL SetupDiGetClassImageIndex([NativeTypeName("PSP_CLASSIMAGELIST_DATA")] void* ClassImageListData, [NativeTypeName("const GUID *")] Guid* ClassGuid, [NativeTypeName("PINT")] int* ImageIndex);
 
         [DllImport("setupapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupDiDestroyClassImageList([NativeTypeName("PSP_CLASSIMAGELIST_DATA")] void* ClassImageListData);
+        public static extern BOOL SetupDiDestroyClassImageList([NativeTypeName("PSP_CLASSIMAGELIST_DATA")] void* ClassImageListData);
 
         [DllImport("setupapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupDiGetClassDevPropertySheetsA([NativeTypeName("HDEVINFO")] IntPtr DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData, [NativeTypeName("LPPROPSHEETHEADERA")] PROPSHEETHEADERA_V2* PropertySheetHeader, [NativeTypeName("DWORD")] uint PropertySheetHeaderPageListSize, [NativeTypeName("PDWORD")] uint* RequiredSize, [NativeTypeName("DWORD")] uint PropertySheetType);
+        public static extern BOOL SetupDiGetClassDevPropertySheetsA(HDEVINFO DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData, [NativeTypeName("LPPROPSHEETHEADERA")] PROPSHEETHEADERA_V2* PropertySheetHeader, [NativeTypeName("DWORD")] uint PropertySheetHeaderPageListSize, [NativeTypeName("PDWORD")] uint* RequiredSize, [NativeTypeName("DWORD")] uint PropertySheetType);
 
         [DllImport("setupapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupDiGetClassDevPropertySheetsW([NativeTypeName("HDEVINFO")] IntPtr DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData, [NativeTypeName("LPPROPSHEETHEADERW")] PROPSHEETHEADERW_V2* PropertySheetHeader, [NativeTypeName("DWORD")] uint PropertySheetHeaderPageListSize, [NativeTypeName("PDWORD")] uint* RequiredSize, [NativeTypeName("DWORD")] uint PropertySheetType);
+        public static extern BOOL SetupDiGetClassDevPropertySheetsW(HDEVINFO DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData, [NativeTypeName("LPPROPSHEETHEADERW")] PROPSHEETHEADERW_V2* PropertySheetHeader, [NativeTypeName("DWORD")] uint PropertySheetHeaderPageListSize, [NativeTypeName("PDWORD")] uint* RequiredSize, [NativeTypeName("DWORD")] uint PropertySheetType);
 
         [DllImport("setupapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupDiAskForOEMDisk([NativeTypeName("HDEVINFO")] IntPtr DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData);
+        public static extern BOOL SetupDiAskForOEMDisk(HDEVINFO DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData);
 
         [DllImport("setupapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupDiSelectOEMDrv([NativeTypeName("HWND")] IntPtr hwndParent, [NativeTypeName("HDEVINFO")] IntPtr DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData);
+        public static extern BOOL SetupDiSelectOEMDrv(HWND hwndParent, HDEVINFO DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData);
 
         [DllImport("setupapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupDiClassNameFromGuidA([NativeTypeName("const GUID *")] Guid* ClassGuid, [NativeTypeName("PSTR")] sbyte* ClassName, [NativeTypeName("DWORD")] uint ClassNameSize, [NativeTypeName("PDWORD")] uint* RequiredSize);
+        public static extern BOOL SetupDiClassNameFromGuidA([NativeTypeName("const GUID *")] Guid* ClassGuid, [NativeTypeName("PSTR")] sbyte* ClassName, [NativeTypeName("DWORD")] uint ClassNameSize, [NativeTypeName("PDWORD")] uint* RequiredSize);
 
         [DllImport("setupapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupDiClassNameFromGuidW([NativeTypeName("const GUID *")] Guid* ClassGuid, [NativeTypeName("PWSTR")] ushort* ClassName, [NativeTypeName("DWORD")] uint ClassNameSize, [NativeTypeName("PDWORD")] uint* RequiredSize);
+        public static extern BOOL SetupDiClassNameFromGuidW([NativeTypeName("const GUID *")] Guid* ClassGuid, [NativeTypeName("PWSTR")] ushort* ClassName, [NativeTypeName("DWORD")] uint ClassNameSize, [NativeTypeName("PDWORD")] uint* RequiredSize);
 
         [DllImport("setupapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupDiClassNameFromGuidExA([NativeTypeName("const GUID *")] Guid* ClassGuid, [NativeTypeName("PSTR")] sbyte* ClassName, [NativeTypeName("DWORD")] uint ClassNameSize, [NativeTypeName("PDWORD")] uint* RequiredSize, [NativeTypeName("PCSTR")] sbyte* MachineName, [NativeTypeName("PVOID")] void* Reserved);
+        public static extern BOOL SetupDiClassNameFromGuidExA([NativeTypeName("const GUID *")] Guid* ClassGuid, [NativeTypeName("PSTR")] sbyte* ClassName, [NativeTypeName("DWORD")] uint ClassNameSize, [NativeTypeName("PDWORD")] uint* RequiredSize, [NativeTypeName("PCSTR")] sbyte* MachineName, [NativeTypeName("PVOID")] void* Reserved);
 
         [DllImport("setupapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupDiClassNameFromGuidExW([NativeTypeName("const GUID *")] Guid* ClassGuid, [NativeTypeName("PWSTR")] ushort* ClassName, [NativeTypeName("DWORD")] uint ClassNameSize, [NativeTypeName("PDWORD")] uint* RequiredSize, [NativeTypeName("PCWSTR")] ushort* MachineName, [NativeTypeName("PVOID")] void* Reserved);
+        public static extern BOOL SetupDiClassNameFromGuidExW([NativeTypeName("const GUID *")] Guid* ClassGuid, [NativeTypeName("PWSTR")] ushort* ClassName, [NativeTypeName("DWORD")] uint ClassNameSize, [NativeTypeName("PDWORD")] uint* RequiredSize, [NativeTypeName("PCWSTR")] ushort* MachineName, [NativeTypeName("PVOID")] void* Reserved);
 
         [DllImport("setupapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupDiClassGuidsFromNameA([NativeTypeName("PCSTR")] sbyte* ClassName, [NativeTypeName("LPGUID")] Guid* ClassGuidList, [NativeTypeName("DWORD")] uint ClassGuidListSize, [NativeTypeName("PDWORD")] uint* RequiredSize);
+        public static extern BOOL SetupDiClassGuidsFromNameA([NativeTypeName("PCSTR")] sbyte* ClassName, [NativeTypeName("LPGUID")] Guid* ClassGuidList, [NativeTypeName("DWORD")] uint ClassGuidListSize, [NativeTypeName("PDWORD")] uint* RequiredSize);
 
         [DllImport("setupapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupDiClassGuidsFromNameW([NativeTypeName("PCWSTR")] ushort* ClassName, [NativeTypeName("LPGUID")] Guid* ClassGuidList, [NativeTypeName("DWORD")] uint ClassGuidListSize, [NativeTypeName("PDWORD")] uint* RequiredSize);
+        public static extern BOOL SetupDiClassGuidsFromNameW([NativeTypeName("PCWSTR")] ushort* ClassName, [NativeTypeName("LPGUID")] Guid* ClassGuidList, [NativeTypeName("DWORD")] uint ClassGuidListSize, [NativeTypeName("PDWORD")] uint* RequiredSize);
 
         [DllImport("setupapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupDiClassGuidsFromNameExA([NativeTypeName("PCSTR")] sbyte* ClassName, [NativeTypeName("LPGUID")] Guid* ClassGuidList, [NativeTypeName("DWORD")] uint ClassGuidListSize, [NativeTypeName("PDWORD")] uint* RequiredSize, [NativeTypeName("PCSTR")] sbyte* MachineName, [NativeTypeName("PVOID")] void* Reserved);
+        public static extern BOOL SetupDiClassGuidsFromNameExA([NativeTypeName("PCSTR")] sbyte* ClassName, [NativeTypeName("LPGUID")] Guid* ClassGuidList, [NativeTypeName("DWORD")] uint ClassGuidListSize, [NativeTypeName("PDWORD")] uint* RequiredSize, [NativeTypeName("PCSTR")] sbyte* MachineName, [NativeTypeName("PVOID")] void* Reserved);
 
         [DllImport("setupapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupDiClassGuidsFromNameExW([NativeTypeName("PCWSTR")] ushort* ClassName, [NativeTypeName("LPGUID")] Guid* ClassGuidList, [NativeTypeName("DWORD")] uint ClassGuidListSize, [NativeTypeName("PDWORD")] uint* RequiredSize, [NativeTypeName("PCWSTR")] ushort* MachineName, [NativeTypeName("PVOID")] void* Reserved);
+        public static extern BOOL SetupDiClassGuidsFromNameExW([NativeTypeName("PCWSTR")] ushort* ClassName, [NativeTypeName("LPGUID")] Guid* ClassGuidList, [NativeTypeName("DWORD")] uint ClassGuidListSize, [NativeTypeName("PDWORD")] uint* RequiredSize, [NativeTypeName("PCWSTR")] ushort* MachineName, [NativeTypeName("PVOID")] void* Reserved);
 
         [DllImport("setupapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupDiGetHwProfileFriendlyNameA([NativeTypeName("DWORD")] uint HwProfile, [NativeTypeName("PSTR")] sbyte* FriendlyName, [NativeTypeName("DWORD")] uint FriendlyNameSize, [NativeTypeName("PDWORD")] uint* RequiredSize);
+        public static extern BOOL SetupDiGetHwProfileFriendlyNameA([NativeTypeName("DWORD")] uint HwProfile, [NativeTypeName("PSTR")] sbyte* FriendlyName, [NativeTypeName("DWORD")] uint FriendlyNameSize, [NativeTypeName("PDWORD")] uint* RequiredSize);
 
         [DllImport("setupapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupDiGetHwProfileFriendlyNameW([NativeTypeName("DWORD")] uint HwProfile, [NativeTypeName("PWSTR")] ushort* FriendlyName, [NativeTypeName("DWORD")] uint FriendlyNameSize, [NativeTypeName("PDWORD")] uint* RequiredSize);
+        public static extern BOOL SetupDiGetHwProfileFriendlyNameW([NativeTypeName("DWORD")] uint HwProfile, [NativeTypeName("PWSTR")] ushort* FriendlyName, [NativeTypeName("DWORD")] uint FriendlyNameSize, [NativeTypeName("PDWORD")] uint* RequiredSize);
 
         [DllImport("setupapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupDiGetHwProfileFriendlyNameExA([NativeTypeName("DWORD")] uint HwProfile, [NativeTypeName("PSTR")] sbyte* FriendlyName, [NativeTypeName("DWORD")] uint FriendlyNameSize, [NativeTypeName("PDWORD")] uint* RequiredSize, [NativeTypeName("PCSTR")] sbyte* MachineName, [NativeTypeName("PVOID")] void* Reserved);
+        public static extern BOOL SetupDiGetHwProfileFriendlyNameExA([NativeTypeName("DWORD")] uint HwProfile, [NativeTypeName("PSTR")] sbyte* FriendlyName, [NativeTypeName("DWORD")] uint FriendlyNameSize, [NativeTypeName("PDWORD")] uint* RequiredSize, [NativeTypeName("PCSTR")] sbyte* MachineName, [NativeTypeName("PVOID")] void* Reserved);
 
         [DllImport("setupapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupDiGetHwProfileFriendlyNameExW([NativeTypeName("DWORD")] uint HwProfile, [NativeTypeName("PWSTR")] ushort* FriendlyName, [NativeTypeName("DWORD")] uint FriendlyNameSize, [NativeTypeName("PDWORD")] uint* RequiredSize, [NativeTypeName("PCWSTR")] ushort* MachineName, [NativeTypeName("PVOID")] void* Reserved);
+        public static extern BOOL SetupDiGetHwProfileFriendlyNameExW([NativeTypeName("DWORD")] uint HwProfile, [NativeTypeName("PWSTR")] ushort* FriendlyName, [NativeTypeName("DWORD")] uint FriendlyNameSize, [NativeTypeName("PDWORD")] uint* RequiredSize, [NativeTypeName("PCWSTR")] ushort* MachineName, [NativeTypeName("PVOID")] void* Reserved);
 
         [DllImport("setupapi", ExactSpelling = true)]
-        [return: NativeTypeName("HPROPSHEETPAGE")]
-        public static extern IntPtr SetupDiGetWizardPage([NativeTypeName("HDEVINFO")] IntPtr DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData, [NativeTypeName("PSP_INSTALLWIZARD_DATA")] void* InstallWizardData, [NativeTypeName("DWORD")] uint PageType, [NativeTypeName("DWORD")] uint Flags);
+        public static extern HPROPSHEETPAGE SetupDiGetWizardPage(HDEVINFO DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData, [NativeTypeName("PSP_INSTALLWIZARD_DATA")] void* InstallWizardData, [NativeTypeName("DWORD")] uint PageType, [NativeTypeName("DWORD")] uint Flags);
 
         [DllImport("setupapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupDiGetSelectedDevice([NativeTypeName("HDEVINFO")] IntPtr DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData);
+        public static extern BOOL SetupDiGetSelectedDevice(HDEVINFO DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData);
 
         [DllImport("setupapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupDiSetSelectedDevice([NativeTypeName("HDEVINFO")] IntPtr DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData);
+        public static extern BOOL SetupDiSetSelectedDevice(HDEVINFO DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData);
 
         [DllImport("setupapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupDiGetActualModelsSectionA([NativeTypeName("PINFCONTEXT")] void* Context, [NativeTypeName("PSP_ALTPLATFORM_INFO")] void* AlternatePlatformInfo, [NativeTypeName("PSTR")] sbyte* InfSectionWithExt, [NativeTypeName("DWORD")] uint InfSectionWithExtSize, [NativeTypeName("PDWORD")] uint* RequiredSize, [NativeTypeName("PVOID")] void* Reserved);
+        public static extern BOOL SetupDiGetActualModelsSectionA([NativeTypeName("PINFCONTEXT")] void* Context, [NativeTypeName("PSP_ALTPLATFORM_INFO")] void* AlternatePlatformInfo, [NativeTypeName("PSTR")] sbyte* InfSectionWithExt, [NativeTypeName("DWORD")] uint InfSectionWithExtSize, [NativeTypeName("PDWORD")] uint* RequiredSize, [NativeTypeName("PVOID")] void* Reserved);
 
         [DllImport("setupapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupDiGetActualModelsSectionW([NativeTypeName("PINFCONTEXT")] void* Context, [NativeTypeName("PSP_ALTPLATFORM_INFO")] void* AlternatePlatformInfo, [NativeTypeName("PWSTR")] ushort* InfSectionWithExt, [NativeTypeName("DWORD")] uint InfSectionWithExtSize, [NativeTypeName("PDWORD")] uint* RequiredSize, [NativeTypeName("PVOID")] void* Reserved);
+        public static extern BOOL SetupDiGetActualModelsSectionW([NativeTypeName("PINFCONTEXT")] void* Context, [NativeTypeName("PSP_ALTPLATFORM_INFO")] void* AlternatePlatformInfo, [NativeTypeName("PWSTR")] ushort* InfSectionWithExt, [NativeTypeName("DWORD")] uint InfSectionWithExtSize, [NativeTypeName("PDWORD")] uint* RequiredSize, [NativeTypeName("PVOID")] void* Reserved);
 
         [DllImport("setupapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupDiGetActualSectionToInstallA([NativeTypeName("HINF")] IntPtr InfHandle, [NativeTypeName("PCSTR")] sbyte* InfSectionName, [NativeTypeName("PSTR")] sbyte* InfSectionWithExt, [NativeTypeName("DWORD")] uint InfSectionWithExtSize, [NativeTypeName("PDWORD")] uint* RequiredSize, [NativeTypeName("PSTR *")] sbyte** Extension);
+        public static extern BOOL SetupDiGetActualSectionToInstallA(HINF InfHandle, [NativeTypeName("PCSTR")] sbyte* InfSectionName, [NativeTypeName("PSTR")] sbyte* InfSectionWithExt, [NativeTypeName("DWORD")] uint InfSectionWithExtSize, [NativeTypeName("PDWORD")] uint* RequiredSize, [NativeTypeName("PSTR *")] sbyte** Extension);
 
         [DllImport("setupapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupDiGetActualSectionToInstallW([NativeTypeName("HINF")] IntPtr InfHandle, [NativeTypeName("PCWSTR")] ushort* InfSectionName, [NativeTypeName("PWSTR")] ushort* InfSectionWithExt, [NativeTypeName("DWORD")] uint InfSectionWithExtSize, [NativeTypeName("PDWORD")] uint* RequiredSize, [NativeTypeName("PWSTR *")] ushort** Extension);
+        public static extern BOOL SetupDiGetActualSectionToInstallW(HINF InfHandle, [NativeTypeName("PCWSTR")] ushort* InfSectionName, [NativeTypeName("PWSTR")] ushort* InfSectionWithExt, [NativeTypeName("DWORD")] uint InfSectionWithExtSize, [NativeTypeName("PDWORD")] uint* RequiredSize, [NativeTypeName("PWSTR *")] ushort** Extension);
 
         [DllImport("setupapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupDiGetActualSectionToInstallExA([NativeTypeName("HINF")] IntPtr InfHandle, [NativeTypeName("PCSTR")] sbyte* InfSectionName, [NativeTypeName("PSP_ALTPLATFORM_INFO")] void* AlternatePlatformInfo, [NativeTypeName("PSTR")] sbyte* InfSectionWithExt, [NativeTypeName("DWORD")] uint InfSectionWithExtSize, [NativeTypeName("PDWORD")] uint* RequiredSize, [NativeTypeName("PSTR *")] sbyte** Extension, [NativeTypeName("PVOID")] void* Reserved);
+        public static extern BOOL SetupDiGetActualSectionToInstallExA(HINF InfHandle, [NativeTypeName("PCSTR")] sbyte* InfSectionName, [NativeTypeName("PSP_ALTPLATFORM_INFO")] void* AlternatePlatformInfo, [NativeTypeName("PSTR")] sbyte* InfSectionWithExt, [NativeTypeName("DWORD")] uint InfSectionWithExtSize, [NativeTypeName("PDWORD")] uint* RequiredSize, [NativeTypeName("PSTR *")] sbyte** Extension, [NativeTypeName("PVOID")] void* Reserved);
 
         [DllImport("setupapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupDiGetActualSectionToInstallExW([NativeTypeName("HINF")] IntPtr InfHandle, [NativeTypeName("PCWSTR")] ushort* InfSectionName, [NativeTypeName("PSP_ALTPLATFORM_INFO")] void* AlternatePlatformInfo, [NativeTypeName("PWSTR")] ushort* InfSectionWithExt, [NativeTypeName("DWORD")] uint InfSectionWithExtSize, [NativeTypeName("PDWORD")] uint* RequiredSize, [NativeTypeName("PWSTR *")] ushort** Extension, [NativeTypeName("PVOID")] void* Reserved);
+        public static extern BOOL SetupDiGetActualSectionToInstallExW(HINF InfHandle, [NativeTypeName("PCWSTR")] ushort* InfSectionName, [NativeTypeName("PSP_ALTPLATFORM_INFO")] void* AlternatePlatformInfo, [NativeTypeName("PWSTR")] ushort* InfSectionWithExt, [NativeTypeName("DWORD")] uint InfSectionWithExtSize, [NativeTypeName("PDWORD")] uint* RequiredSize, [NativeTypeName("PWSTR *")] ushort** Extension, [NativeTypeName("PVOID")] void* Reserved);
 
         [DllImport("setupapi", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupEnumInfSectionsA([NativeTypeName("HINF")] IntPtr InfHandle, [NativeTypeName("UINT")] uint Index, [NativeTypeName("PSTR")] sbyte* Buffer, [NativeTypeName("UINT")] uint Size, [NativeTypeName("UINT *")] uint* SizeNeeded);
+        public static extern BOOL SetupEnumInfSectionsA(HINF InfHandle, uint Index, [NativeTypeName("PSTR")] sbyte* Buffer, uint Size, uint* SizeNeeded);
 
         [DllImport("setupapi", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupEnumInfSectionsW([NativeTypeName("HINF")] IntPtr InfHandle, [NativeTypeName("UINT")] uint Index, [NativeTypeName("PWSTR")] ushort* Buffer, [NativeTypeName("UINT")] uint Size, [NativeTypeName("UINT *")] uint* SizeNeeded);
+        public static extern BOOL SetupEnumInfSectionsW(HINF InfHandle, uint Index, [NativeTypeName("PWSTR")] ushort* Buffer, uint Size, uint* SizeNeeded);
 
         [DllImport("setupapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupVerifyInfFileA([NativeTypeName("PCSTR")] sbyte* InfName, [NativeTypeName("PSP_ALTPLATFORM_INFO")] void* AltPlatformInfo, [NativeTypeName("PSP_INF_SIGNER_INFO_A")] void* InfSignerInfo);
+        public static extern BOOL SetupVerifyInfFileA([NativeTypeName("PCSTR")] sbyte* InfName, [NativeTypeName("PSP_ALTPLATFORM_INFO")] void* AltPlatformInfo, [NativeTypeName("PSP_INF_SIGNER_INFO_A")] void* InfSignerInfo);
 
         [DllImport("setupapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupVerifyInfFileW([NativeTypeName("PCWSTR")] ushort* InfName, [NativeTypeName("PSP_ALTPLATFORM_INFO")] void* AltPlatformInfo, [NativeTypeName("PSP_INF_SIGNER_INFO_W")] void* InfSignerInfo);
+        public static extern BOOL SetupVerifyInfFileW([NativeTypeName("PCWSTR")] ushort* InfName, [NativeTypeName("PSP_ALTPLATFORM_INFO")] void* AltPlatformInfo, [NativeTypeName("PSP_INF_SIGNER_INFO_W")] void* InfSignerInfo);
 
         [DllImport("setupapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupDiGetCustomDevicePropertyA([NativeTypeName("HDEVINFO")] IntPtr DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData, [NativeTypeName("PCSTR")] sbyte* CustomPropertyName, [NativeTypeName("DWORD")] uint Flags, [NativeTypeName("PDWORD")] uint* PropertyRegDataType, [NativeTypeName("PBYTE")] byte* PropertyBuffer, [NativeTypeName("DWORD")] uint PropertyBufferSize, [NativeTypeName("PDWORD")] uint* RequiredSize);
+        public static extern BOOL SetupDiGetCustomDevicePropertyA(HDEVINFO DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData, [NativeTypeName("PCSTR")] sbyte* CustomPropertyName, [NativeTypeName("DWORD")] uint Flags, [NativeTypeName("PDWORD")] uint* PropertyRegDataType, [NativeTypeName("PBYTE")] byte* PropertyBuffer, [NativeTypeName("DWORD")] uint PropertyBufferSize, [NativeTypeName("PDWORD")] uint* RequiredSize);
 
         [DllImport("setupapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupDiGetCustomDevicePropertyW([NativeTypeName("HDEVINFO")] IntPtr DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData, [NativeTypeName("PCWSTR")] ushort* CustomPropertyName, [NativeTypeName("DWORD")] uint Flags, [NativeTypeName("PDWORD")] uint* PropertyRegDataType, [NativeTypeName("PBYTE")] byte* PropertyBuffer, [NativeTypeName("DWORD")] uint PropertyBufferSize, [NativeTypeName("PDWORD")] uint* RequiredSize);
+        public static extern BOOL SetupDiGetCustomDevicePropertyW(HDEVINFO DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData, [NativeTypeName("PCWSTR")] ushort* CustomPropertyName, [NativeTypeName("DWORD")] uint Flags, [NativeTypeName("PDWORD")] uint* PropertyRegDataType, [NativeTypeName("PBYTE")] byte* PropertyBuffer, [NativeTypeName("DWORD")] uint PropertyBufferSize, [NativeTypeName("PDWORD")] uint* RequiredSize);
 
         [DllImport("setupapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupConfigureWmiFromInfSectionA([NativeTypeName("HINF")] IntPtr InfHandle, [NativeTypeName("PCSTR")] sbyte* SectionName, [NativeTypeName("DWORD")] uint Flags);
+        public static extern BOOL SetupConfigureWmiFromInfSectionA(HINF InfHandle, [NativeTypeName("PCSTR")] sbyte* SectionName, [NativeTypeName("DWORD")] uint Flags);
 
         [DllImport("setupapi", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetupConfigureWmiFromInfSectionW([NativeTypeName("HINF")] IntPtr InfHandle, [NativeTypeName("PCWSTR")] ushort* SectionName, [NativeTypeName("DWORD")] uint Flags);
+        public static extern BOOL SetupConfigureWmiFromInfSectionW(HINF InfHandle, [NativeTypeName("PCWSTR")] ushort* SectionName, [NativeTypeName("DWORD")] uint Flags);
 
         [NativeTypeName("#define _SETUPAPI_VER _WIN32_WINNT")]
         public const int _SETUPAPI_VER = 0x0A00;
@@ -2577,58 +2262,58 @@ namespace TerraFX.Interop
         public const int INFINFO_INF_PATH_LIST_SEARCH = 5;
 
         [NativeTypeName("#define SetupGetInfInformation SetupGetInfInformationW")]
-        public static delegate*<void*, uint, void*, uint, uint*, int> SetupGetInfInformation => &SetupGetInfInformationW;
+        public static delegate*<void*, uint, void*, uint, uint*, BOOL> SetupGetInfInformation => &SetupGetInfInformationW;
 
         [NativeTypeName("#define SetupQueryInfFileInformation SetupQueryInfFileInformationW")]
-        public static delegate*<void*, uint, ushort*, uint, uint*, int> SetupQueryInfFileInformation => &SetupQueryInfFileInformationW;
+        public static delegate*<void*, uint, ushort*, uint, uint*, BOOL> SetupQueryInfFileInformation => &SetupQueryInfFileInformationW;
 
         [NativeTypeName("#define SetupQueryInfOriginalFileInformation SetupQueryInfOriginalFileInformationW")]
-        public static delegate*<void*, uint, void*, void*, int> SetupQueryInfOriginalFileInformation => &SetupQueryInfOriginalFileInformationW;
+        public static delegate*<void*, uint, void*, void*, BOOL> SetupQueryInfOriginalFileInformation => &SetupQueryInfOriginalFileInformationW;
 
         [NativeTypeName("#define SetupQueryInfVersionInformation SetupQueryInfVersionInformationW")]
-        public static delegate*<void*, uint, ushort*, ushort*, uint, uint*, int> SetupQueryInfVersionInformation => &SetupQueryInfVersionInformationW;
+        public static delegate*<void*, uint, ushort*, ushort*, uint, uint*, BOOL> SetupQueryInfVersionInformation => &SetupQueryInfVersionInformationW;
 
         [NativeTypeName("#define SetupGetInfDriverStoreLocation SetupGetInfDriverStoreLocationW")]
-        public static delegate*<ushort*, void*, ushort*, ushort*, uint, uint*, int> SetupGetInfDriverStoreLocation => &SetupGetInfDriverStoreLocationW;
+        public static delegate*<ushort*, void*, ushort*, ushort*, uint, uint*, BOOL> SetupGetInfDriverStoreLocation => &SetupGetInfDriverStoreLocationW;
 
         [NativeTypeName("#define SetupGetInfPublishedName SetupGetInfPublishedNameW")]
-        public static delegate*<ushort*, ushort*, uint, uint*, int> SetupGetInfPublishedName => &SetupGetInfPublishedNameW;
+        public static delegate*<ushort*, ushort*, uint, uint*, BOOL> SetupGetInfPublishedName => &SetupGetInfPublishedNameW;
 
         [NativeTypeName("#define SetupGetInfFileList SetupGetInfFileListW")]
-        public static delegate*<ushort*, uint, ushort*, uint, uint*, int> SetupGetInfFileList => &SetupGetInfFileListW;
+        public static delegate*<ushort*, uint, ushort*, uint, uint*, BOOL> SetupGetInfFileList => &SetupGetInfFileListW;
 
         [NativeTypeName("#define SetupOpenInfFile SetupOpenInfFileW")]
-        public static delegate*<ushort*, ushort*, uint, uint*, IntPtr> SetupOpenInfFile => &SetupOpenInfFileW;
+        public static delegate*<ushort*, ushort*, uint, uint*, HINF> SetupOpenInfFile => &SetupOpenInfFileW;
 
         [NativeTypeName("#define SetupOpenAppendInfFile SetupOpenAppendInfFileW")]
-        public static delegate*<ushort*, IntPtr, uint*, int> SetupOpenAppendInfFile => &SetupOpenAppendInfFileW;
+        public static delegate*<ushort*, HINF, uint*, BOOL> SetupOpenAppendInfFile => &SetupOpenAppendInfFileW;
 
         [NativeTypeName("#define SetupFindFirstLine SetupFindFirstLineW")]
-        public static delegate*<IntPtr, ushort*, ushort*, void*, int> SetupFindFirstLine => &SetupFindFirstLineW;
+        public static delegate*<HINF, ushort*, ushort*, void*, BOOL> SetupFindFirstLine => &SetupFindFirstLineW;
 
         [NativeTypeName("#define SetupFindNextMatchLine SetupFindNextMatchLineW")]
-        public static delegate*<void*, ushort*, void*, int> SetupFindNextMatchLine => &SetupFindNextMatchLineW;
+        public static delegate*<void*, ushort*, void*, BOOL> SetupFindNextMatchLine => &SetupFindNextMatchLineW;
 
         [NativeTypeName("#define SetupGetLineByIndex SetupGetLineByIndexW")]
-        public static delegate*<IntPtr, ushort*, uint, void*, int> SetupGetLineByIndex => &SetupGetLineByIndexW;
+        public static delegate*<HINF, ushort*, uint, void*, BOOL> SetupGetLineByIndex => &SetupGetLineByIndexW;
 
         [NativeTypeName("#define SetupGetLineCount SetupGetLineCountW")]
-        public static delegate*<IntPtr, ushort*, int> SetupGetLineCount => &SetupGetLineCountW;
+        public static delegate*<HINF, ushort*, int> SetupGetLineCount => &SetupGetLineCountW;
 
         [NativeTypeName("#define SetupGetLineText SetupGetLineTextW")]
-        public static delegate*<void*, IntPtr, ushort*, ushort*, ushort*, uint, uint*, int> SetupGetLineText => &SetupGetLineTextW;
+        public static delegate*<void*, HINF, ushort*, ushort*, ushort*, uint, uint*, BOOL> SetupGetLineText => &SetupGetLineTextW;
 
         [NativeTypeName("#define SetupGetStringField SetupGetStringFieldW")]
-        public static delegate*<void*, uint, ushort*, uint, uint*, int> SetupGetStringField => &SetupGetStringFieldW;
+        public static delegate*<void*, uint, ushort*, uint, uint*, BOOL> SetupGetStringField => &SetupGetStringFieldW;
 
         [NativeTypeName("#define SetupGetMultiSzField SetupGetMultiSzFieldW")]
-        public static delegate*<void*, uint, ushort*, uint, uint*, int> SetupGetMultiSzField => &SetupGetMultiSzFieldW;
+        public static delegate*<void*, uint, ushort*, uint, uint*, BOOL> SetupGetMultiSzField => &SetupGetMultiSzFieldW;
 
         [NativeTypeName("#define SetupGetFileCompressionInfo SetupGetFileCompressionInfoW")]
         public static delegate*<ushort*, ushort**, uint*, uint*, uint*, uint> SetupGetFileCompressionInfo => &SetupGetFileCompressionInfoW;
 
         [NativeTypeName("#define SetupGetFileCompressionInfoEx SetupGetFileCompressionInfoExW")]
-        public static delegate*<ushort*, ushort*, uint, uint*, uint*, uint*, uint*, int> SetupGetFileCompressionInfoEx => &SetupGetFileCompressionInfoExW;
+        public static delegate*<ushort*, ushort*, uint, uint*, uint*, uint*, uint*, BOOL> SetupGetFileCompressionInfoEx => &SetupGetFileCompressionInfoExW;
 
         [NativeTypeName("#define FILE_COMPRESSION_NONE 0")]
         public const int FILE_COMPRESSION_NONE = 0;
@@ -2646,13 +2331,13 @@ namespace TerraFX.Interop
         public static delegate*<ushort*, ushort*, uint*, uint> SetupDecompressOrCopyFile => &SetupDecompressOrCopyFileW;
 
         [NativeTypeName("#define SetupGetSourceFileLocation SetupGetSourceFileLocationW")]
-        public static delegate*<IntPtr, void*, ushort*, uint*, ushort*, uint, uint*, int> SetupGetSourceFileLocation => &SetupGetSourceFileLocationW;
+        public static delegate*<HINF, void*, ushort*, uint*, ushort*, uint, uint*, BOOL> SetupGetSourceFileLocation => &SetupGetSourceFileLocationW;
 
         [NativeTypeName("#define SetupGetSourceFileSize SetupGetSourceFileSizeW")]
-        public static delegate*<IntPtr, void*, ushort*, ushort*, uint*, uint, int> SetupGetSourceFileSize => &SetupGetSourceFileSizeW;
+        public static delegate*<HINF, void*, ushort*, ushort*, uint*, uint, BOOL> SetupGetSourceFileSize => &SetupGetSourceFileSizeW;
 
         [NativeTypeName("#define SetupGetTargetPath SetupGetTargetPathW")]
-        public static delegate*<IntPtr, void*, ushort*, ushort*, uint, uint*, int> SetupGetTargetPath => &SetupGetTargetPathW;
+        public static delegate*<HINF, void*, ushort*, ushort*, uint, uint*, BOOL> SetupGetTargetPath => &SetupGetTargetPathW;
 
         [NativeTypeName("#define SRCLIST_TEMPORARY 0x00000001")]
         public const int SRCLIST_TEMPORARY = 0x00000001;
@@ -2679,34 +2364,34 @@ namespace TerraFX.Interop
         public const int SRCLIST_NOSTRIPPLATFORM = 0x00000400;
 
         [NativeTypeName("#define SetupSetSourceList SetupSetSourceListW")]
-        public static delegate*<uint, ushort**, uint, int> SetupSetSourceList => &SetupSetSourceListW;
+        public static delegate*<uint, ushort**, uint, BOOL> SetupSetSourceList => &SetupSetSourceListW;
 
         [NativeTypeName("#define SetupAddToSourceList SetupAddToSourceListW")]
-        public static delegate*<uint, ushort*, int> SetupAddToSourceList => &SetupAddToSourceListW;
+        public static delegate*<uint, ushort*, BOOL> SetupAddToSourceList => &SetupAddToSourceListW;
 
         [NativeTypeName("#define SetupRemoveFromSourceList SetupRemoveFromSourceListW")]
-        public static delegate*<uint, ushort*, int> SetupRemoveFromSourceList => &SetupRemoveFromSourceListW;
+        public static delegate*<uint, ushort*, BOOL> SetupRemoveFromSourceList => &SetupRemoveFromSourceListW;
 
         [NativeTypeName("#define SetupQuerySourceList SetupQuerySourceListW")]
-        public static delegate*<uint, ushort***, uint*, int> SetupQuerySourceList => &SetupQuerySourceListW;
+        public static delegate*<uint, ushort***, uint*, BOOL> SetupQuerySourceList => &SetupQuerySourceListW;
 
         [NativeTypeName("#define SetupFreeSourceList SetupFreeSourceListW")]
-        public static delegate*<ushort***, uint, int> SetupFreeSourceList => &SetupFreeSourceListW;
+        public static delegate*<ushort***, uint, BOOL> SetupFreeSourceList => &SetupFreeSourceListW;
 
         [NativeTypeName("#define SetupPromptForDisk SetupPromptForDiskW")]
-        public static delegate*<IntPtr, ushort*, ushort*, ushort*, ushort*, ushort*, uint, ushort*, uint, uint*, uint> SetupPromptForDisk => &SetupPromptForDiskW;
+        public static delegate*<HWND, ushort*, ushort*, ushort*, ushort*, ushort*, uint, ushort*, uint, uint*, uint> SetupPromptForDisk => &SetupPromptForDiskW;
 
         [NativeTypeName("#define SetupCopyError SetupCopyErrorW")]
-        public static delegate*<IntPtr, ushort*, ushort*, ushort*, ushort*, ushort*, uint, uint, ushort*, uint, uint*, uint> SetupCopyError => &SetupCopyErrorW;
+        public static delegate*<HWND, ushort*, ushort*, ushort*, ushort*, ushort*, uint, uint, ushort*, uint, uint*, uint> SetupCopyError => &SetupCopyErrorW;
 
         [NativeTypeName("#define SetupRenameError SetupRenameErrorW")]
-        public static delegate*<IntPtr, ushort*, ushort*, ushort*, uint, uint, uint> SetupRenameError => &SetupRenameErrorW;
+        public static delegate*<HWND, ushort*, ushort*, ushort*, uint, uint, uint> SetupRenameError => &SetupRenameErrorW;
 
         [NativeTypeName("#define SetupDeleteError SetupDeleteErrorW")]
-        public static delegate*<IntPtr, ushort*, ushort*, uint, uint, uint> SetupDeleteError => &SetupDeleteErrorW;
+        public static delegate*<HWND, ushort*, ushort*, uint, uint, uint> SetupDeleteError => &SetupDeleteErrorW;
 
         [NativeTypeName("#define SetupBackupError SetupBackupErrorW")]
-        public static delegate*<IntPtr, ushort*, ushort*, ushort*, uint, uint, uint> SetupBackupError => &SetupBackupErrorW;
+        public static delegate*<HWND, ushort*, ushort*, ushort*, uint, uint, uint> SetupBackupError => &SetupBackupErrorW;
 
         [NativeTypeName("#define IDF_NOBROWSE 0x00000001")]
         public const int IDF_NOBROWSE = 0x00000001;
@@ -2757,16 +2442,16 @@ namespace TerraFX.Interop
         public const int DPROMPT_OUTOFMEMORY = 4;
 
         [NativeTypeName("#define SetupSetDirectoryId SetupSetDirectoryIdW")]
-        public static delegate*<IntPtr, uint, ushort*, int> SetupSetDirectoryId => &SetupSetDirectoryIdW;
+        public static delegate*<HINF, uint, ushort*, BOOL> SetupSetDirectoryId => &SetupSetDirectoryIdW;
 
         [NativeTypeName("#define SetupSetDirectoryIdEx SetupSetDirectoryIdExW")]
-        public static delegate*<IntPtr, uint, ushort*, uint, uint, void*, int> SetupSetDirectoryIdEx => &SetupSetDirectoryIdExW;
+        public static delegate*<HINF, uint, ushort*, uint, uint, void*, BOOL> SetupSetDirectoryIdEx => &SetupSetDirectoryIdExW;
 
         [NativeTypeName("#define SETDIRID_NOT_FULL_PATH 0x00000001")]
         public const int SETDIRID_NOT_FULL_PATH = 0x00000001;
 
         [NativeTypeName("#define SetupGetSourceInfo SetupGetSourceInfoW")]
-        public static delegate*<IntPtr, uint, uint, ushort*, uint, uint*, int> SetupGetSourceInfo => &SetupGetSourceInfoW;
+        public static delegate*<HINF, uint, uint, ushort*, uint, uint*, BOOL> SetupGetSourceInfo => &SetupGetSourceInfoW;
 
         [NativeTypeName("#define SRCINFO_PATH 1")]
         public const int SRCINFO_PATH = 1;
@@ -2787,10 +2472,10 @@ namespace TerraFX.Interop
         public const int SRC_FLAGS_CABFILE = (0x0010);
 
         [NativeTypeName("#define SetupInstallFile SetupInstallFileW")]
-        public static delegate*<IntPtr, void*, ushort*, ushort*, ushort*, uint, delegate* unmanaged<void*, uint, nuint, nuint, uint>, void*, int> SetupInstallFile => &SetupInstallFileW;
+        public static delegate*<HINF, void*, ushort*, ushort*, ushort*, uint, delegate* unmanaged<void*, uint, nuint, nuint, uint>, void*, BOOL> SetupInstallFile => &SetupInstallFileW;
 
         [NativeTypeName("#define SetupInstallFileEx SetupInstallFileExW")]
-        public static delegate*<IntPtr, void*, ushort*, ushort*, ushort*, uint, delegate* unmanaged<void*, uint, nuint, nuint, uint>, void*, int*, int> SetupInstallFileEx => &SetupInstallFileExW;
+        public static delegate*<HINF, void*, ushort*, ushort*, ushort*, uint, delegate* unmanaged<void*, uint, nuint, nuint, uint>, void*, BOOL*, BOOL> SetupInstallFileEx => &SetupInstallFileExW;
 
         [NativeTypeName("#define SP_COPY_DELETESOURCE 0x0000001")]
         public const int SP_COPY_DELETESOURCE = 0x0000001;
@@ -2892,40 +2577,40 @@ namespace TerraFX.Interop
         public const int SP_BACKUP_BOOTFILE = 0x00000008;
 
         [NativeTypeName("#define SetupSetFileQueueAlternatePlatform SetupSetFileQueueAlternatePlatformW")]
-        public static delegate*<IntPtr, void*, ushort*, int> SetupSetFileQueueAlternatePlatform => &SetupSetFileQueueAlternatePlatformW;
+        public static delegate*<HSPFILEQ, void*, ushort*, BOOL> SetupSetFileQueueAlternatePlatform => &SetupSetFileQueueAlternatePlatformW;
 
         [NativeTypeName("#define SetupSetPlatformPathOverride SetupSetPlatformPathOverrideW")]
-        public static delegate*<ushort*, int> SetupSetPlatformPathOverride => &SetupSetPlatformPathOverrideW;
+        public static delegate*<ushort*, BOOL> SetupSetPlatformPathOverride => &SetupSetPlatformPathOverrideW;
 
         [NativeTypeName("#define SetupQueueCopy SetupQueueCopyW")]
-        public static delegate*<IntPtr, ushort*, ushort*, ushort*, ushort*, ushort*, ushort*, ushort*, uint, int> SetupQueueCopy => &SetupQueueCopyW;
+        public static delegate*<HSPFILEQ, ushort*, ushort*, ushort*, ushort*, ushort*, ushort*, ushort*, uint, BOOL> SetupQueueCopy => &SetupQueueCopyW;
 
         [NativeTypeName("#define SetupQueueCopyIndirect SetupQueueCopyIndirectW")]
-        public static delegate*<void*, int> SetupQueueCopyIndirect => &SetupQueueCopyIndirectW;
+        public static delegate*<void*, BOOL> SetupQueueCopyIndirect => &SetupQueueCopyIndirectW;
 
         [NativeTypeName("#define SetupQueueDefaultCopy SetupQueueDefaultCopyW")]
-        public static delegate*<IntPtr, IntPtr, ushort*, ushort*, ushort*, uint, int> SetupQueueDefaultCopy => &SetupQueueDefaultCopyW;
+        public static delegate*<HSPFILEQ, HINF, ushort*, ushort*, ushort*, uint, BOOL> SetupQueueDefaultCopy => &SetupQueueDefaultCopyW;
 
         [NativeTypeName("#define SetupQueueCopySection SetupQueueCopySectionW")]
-        public static delegate*<IntPtr, ushort*, IntPtr, IntPtr, ushort*, uint, int> SetupQueueCopySection => &SetupQueueCopySectionW;
+        public static delegate*<HSPFILEQ, ushort*, HINF, HINF, ushort*, uint, BOOL> SetupQueueCopySection => &SetupQueueCopySectionW;
 
         [NativeTypeName("#define SetupQueueDelete SetupQueueDeleteW")]
-        public static delegate*<IntPtr, ushort*, ushort*, int> SetupQueueDelete => &SetupQueueDeleteW;
+        public static delegate*<HSPFILEQ, ushort*, ushort*, BOOL> SetupQueueDelete => &SetupQueueDeleteW;
 
         [NativeTypeName("#define SetupQueueDeleteSection SetupQueueDeleteSectionW")]
-        public static delegate*<IntPtr, IntPtr, IntPtr, ushort*, int> SetupQueueDeleteSection => &SetupQueueDeleteSectionW;
+        public static delegate*<HSPFILEQ, HINF, HINF, ushort*, BOOL> SetupQueueDeleteSection => &SetupQueueDeleteSectionW;
 
         [NativeTypeName("#define SetupQueueRename SetupQueueRenameW")]
-        public static delegate*<IntPtr, ushort*, ushort*, ushort*, ushort*, int> SetupQueueRename => &SetupQueueRenameW;
+        public static delegate*<HSPFILEQ, ushort*, ushort*, ushort*, ushort*, BOOL> SetupQueueRename => &SetupQueueRenameW;
 
         [NativeTypeName("#define SetupQueueRenameSection SetupQueueRenameSectionW")]
-        public static delegate*<IntPtr, IntPtr, IntPtr, ushort*, int> SetupQueueRenameSection => &SetupQueueRenameSectionW;
+        public static delegate*<HSPFILEQ, HINF, HINF, ushort*, BOOL> SetupQueueRenameSection => &SetupQueueRenameSectionW;
 
         [NativeTypeName("#define SetupCommitFileQueue SetupCommitFileQueueW")]
-        public static delegate*<IntPtr, IntPtr, delegate* unmanaged<void*, uint, nuint, nuint, uint>, void*, int> SetupCommitFileQueue => &SetupCommitFileQueueW;
+        public static delegate*<HWND, HSPFILEQ, delegate* unmanaged<void*, uint, nuint, nuint, uint>, void*, BOOL> SetupCommitFileQueue => &SetupCommitFileQueueW;
 
         [NativeTypeName("#define SetupScanFileQueue SetupScanFileQueueW")]
-        public static delegate*<IntPtr, uint, IntPtr, delegate* unmanaged<void*, uint, nuint, nuint, uint>, void*, uint*, int> SetupScanFileQueue => &SetupScanFileQueueW;
+        public static delegate*<HSPFILEQ, uint, HWND, delegate* unmanaged<void*, uint, nuint, nuint, uint>, void*, uint*, BOOL> SetupScanFileQueue => &SetupScanFileQueueW;
 
         [NativeTypeName("#define SPQ_SCAN_FILE_PRESENCE 0x00000001")]
         public const int SPQ_SCAN_FILE_PRESENCE = 0x00000001;
@@ -2991,7 +2676,7 @@ namespace TerraFX.Interop
         public const int SPOST_MAX = 3;
 
         [NativeTypeName("#define SetupCopyOEMInf SetupCopyOEMInfW")]
-        public static delegate*<ushort*, ushort*, uint, uint, ushort*, uint, uint*, ushort**, int> SetupCopyOEMInf => &SetupCopyOEMInfW;
+        public static delegate*<ushort*, ushort*, uint, uint, ushort*, uint, uint*, ushort**, BOOL> SetupCopyOEMInf => &SetupCopyOEMInfW;
 
         [NativeTypeName("#define SUOI_FORCEDELETE 0x00000001")]
         public const int SUOI_FORCEDELETE = 0x00000001;
@@ -3000,10 +2685,10 @@ namespace TerraFX.Interop
         public const int SUOI_INTERNAL1 = 0x00000002;
 
         [NativeTypeName("#define SetupUninstallOEMInf SetupUninstallOEMInfW")]
-        public static delegate*<ushort*, uint, void*, int> SetupUninstallOEMInf => &SetupUninstallOEMInfW;
+        public static delegate*<ushort*, uint, void*, BOOL> SetupUninstallOEMInf => &SetupUninstallOEMInfW;
 
         [NativeTypeName("#define SetupCreateDiskSpaceList SetupCreateDiskSpaceListW")]
-        public static delegate*<void*, uint, uint, IntPtr> SetupCreateDiskSpaceList => &SetupCreateDiskSpaceListW;
+        public static delegate*<void*, uint, uint, HDSKSPC> SetupCreateDiskSpaceList => &SetupCreateDiskSpaceListW;
 
         [NativeTypeName("#define SPDSL_IGNORE_DISK 0x00000001")]
         public const int SPDSL_IGNORE_DISK = 0x00000001;
@@ -3012,37 +2697,37 @@ namespace TerraFX.Interop
         public const int SPDSL_DISALLOW_NEGATIVE_ADJUST = 0x00000002;
 
         [NativeTypeName("#define SetupDuplicateDiskSpaceList SetupDuplicateDiskSpaceListW")]
-        public static delegate*<IntPtr, void*, uint, uint, IntPtr> SetupDuplicateDiskSpaceList => &SetupDuplicateDiskSpaceListW;
+        public static delegate*<HDSKSPC, void*, uint, uint, HDSKSPC> SetupDuplicateDiskSpaceList => &SetupDuplicateDiskSpaceListW;
 
         [NativeTypeName("#define SetupQueryDrivesInDiskSpaceList SetupQueryDrivesInDiskSpaceListW")]
-        public static delegate*<IntPtr, ushort*, uint, uint*, int> SetupQueryDrivesInDiskSpaceList => &SetupQueryDrivesInDiskSpaceListW;
+        public static delegate*<HDSKSPC, ushort*, uint, uint*, BOOL> SetupQueryDrivesInDiskSpaceList => &SetupQueryDrivesInDiskSpaceListW;
 
         [NativeTypeName("#define SetupQuerySpaceRequiredOnDrive SetupQuerySpaceRequiredOnDriveW")]
-        public static delegate*<IntPtr, ushort*, long*, void*, uint, int> SetupQuerySpaceRequiredOnDrive => &SetupQuerySpaceRequiredOnDriveW;
+        public static delegate*<HDSKSPC, ushort*, long*, void*, uint, BOOL> SetupQuerySpaceRequiredOnDrive => &SetupQuerySpaceRequiredOnDriveW;
 
         [NativeTypeName("#define SetupAdjustDiskSpaceList SetupAdjustDiskSpaceListW")]
-        public static delegate*<IntPtr, ushort*, long, void*, uint, int> SetupAdjustDiskSpaceList => &SetupAdjustDiskSpaceListW;
+        public static delegate*<HDSKSPC, ushort*, long, void*, uint, BOOL> SetupAdjustDiskSpaceList => &SetupAdjustDiskSpaceListW;
 
         [NativeTypeName("#define SetupAddToDiskSpaceList SetupAddToDiskSpaceListW")]
-        public static delegate*<IntPtr, ushort*, long, uint, void*, uint, int> SetupAddToDiskSpaceList => &SetupAddToDiskSpaceListW;
+        public static delegate*<HDSKSPC, ushort*, long, uint, void*, uint, BOOL> SetupAddToDiskSpaceList => &SetupAddToDiskSpaceListW;
 
         [NativeTypeName("#define SetupAddSectionToDiskSpaceList SetupAddSectionToDiskSpaceListW")]
-        public static delegate*<IntPtr, IntPtr, IntPtr, ushort*, uint, void*, uint, int> SetupAddSectionToDiskSpaceList => &SetupAddSectionToDiskSpaceListW;
+        public static delegate*<HDSKSPC, HINF, HINF, ushort*, uint, void*, uint, BOOL> SetupAddSectionToDiskSpaceList => &SetupAddSectionToDiskSpaceListW;
 
         [NativeTypeName("#define SetupAddInstallSectionToDiskSpaceList SetupAddInstallSectionToDiskSpaceListW")]
-        public static delegate*<IntPtr, IntPtr, IntPtr, ushort*, void*, uint, int> SetupAddInstallSectionToDiskSpaceList => &SetupAddInstallSectionToDiskSpaceListW;
+        public static delegate*<HDSKSPC, HINF, HINF, ushort*, void*, uint, BOOL> SetupAddInstallSectionToDiskSpaceList => &SetupAddInstallSectionToDiskSpaceListW;
 
         [NativeTypeName("#define SetupRemoveFromDiskSpaceList SetupRemoveFromDiskSpaceListW")]
-        public static delegate*<IntPtr, ushort*, uint, void*, uint, int> SetupRemoveFromDiskSpaceList => &SetupRemoveFromDiskSpaceListW;
+        public static delegate*<HDSKSPC, ushort*, uint, void*, uint, BOOL> SetupRemoveFromDiskSpaceList => &SetupRemoveFromDiskSpaceListW;
 
         [NativeTypeName("#define SetupRemoveSectionFromDiskSpaceList SetupRemoveSectionFromDiskSpaceListW")]
-        public static delegate*<IntPtr, IntPtr, IntPtr, ushort*, uint, void*, uint, int> SetupRemoveSectionFromDiskSpaceList => &SetupRemoveSectionFromDiskSpaceListW;
+        public static delegate*<HDSKSPC, HINF, HINF, ushort*, uint, void*, uint, BOOL> SetupRemoveSectionFromDiskSpaceList => &SetupRemoveSectionFromDiskSpaceListW;
 
         [NativeTypeName("#define SetupRemoveInstallSectionFromDiskSpaceList SetupRemoveInstallSectionFromDiskSpaceListW")]
-        public static delegate*<IntPtr, IntPtr, IntPtr, ushort*, void*, uint, int> SetupRemoveInstallSectionFromDiskSpaceList => &SetupRemoveInstallSectionFromDiskSpaceListW;
+        public static delegate*<HDSKSPC, HINF, HINF, ushort*, void*, uint, BOOL> SetupRemoveInstallSectionFromDiskSpaceList => &SetupRemoveInstallSectionFromDiskSpaceListW;
 
         [NativeTypeName("#define SetupIterateCabinet SetupIterateCabinetW")]
-        public static delegate*<ushort*, uint, delegate* unmanaged<void*, uint, nuint, nuint, uint>, void*, int> SetupIterateCabinet => &SetupIterateCabinetW;
+        public static delegate*<ushort*, uint, delegate* unmanaged<void*, uint, nuint, nuint, uint>, void*, BOOL> SetupIterateCabinet => &SetupIterateCabinetW;
 
         [NativeTypeName("#define SPFILEQ_FILE_IN_USE 0x00000001")]
         public const int SPFILEQ_FILE_IN_USE = 0x00000001;
@@ -3207,7 +2892,7 @@ namespace TerraFX.Interop
         public const int FLG_DELPROPERTY_MULTI_SZ_DELSTRING = (0x00000001);
 
         [NativeTypeName("#define SetupInstallFromInfSection SetupInstallFromInfSectionW")]
-        public static delegate*<IntPtr, IntPtr, ushort*, uint, IntPtr, ushort*, uint, delegate* unmanaged<void*, uint, nuint, nuint, uint>, void*, IntPtr, void*, int> SetupInstallFromInfSection => &SetupInstallFromInfSectionW;
+        public static delegate*<HWND, HINF, ushort*, uint, HKEY, ushort*, uint, delegate* unmanaged<void*, uint, nuint, nuint, uint>, void*, HDEVINFO, void*, BOOL> SetupInstallFromInfSection => &SetupInstallFromInfSectionW;
 
         [NativeTypeName("#define SPINST_LOGCONFIG 0x00000001")]
         public const int SPINST_LOGCONFIG = 0x00000001;
@@ -3261,7 +2946,7 @@ namespace TerraFX.Interop
         public const int SPINST_DEVICEINSTALL = 0x00100000;
 
         [NativeTypeName("#define SetupInstallFilesFromInfSection SetupInstallFilesFromInfSectionW")]
-        public static delegate*<IntPtr, IntPtr, IntPtr, ushort*, ushort*, uint, int> SetupInstallFilesFromInfSection => &SetupInstallFilesFromInfSectionW;
+        public static delegate*<HINF, HINF, HSPFILEQ, ushort*, ushort*, uint, BOOL> SetupInstallFilesFromInfSection => &SetupInstallFilesFromInfSectionW;
 
         [NativeTypeName("#define SPSVCINST_TAGTOFRONT (0x00000001)")]
         public const int SPSVCINST_TAGTOFRONT = (0x00000001);
@@ -3315,16 +3000,16 @@ namespace TerraFX.Interop
         public const int SPSVCINST_UNIQUE_NAME = (0x00010000);
 
         [NativeTypeName("#define SetupInstallServicesFromInfSection SetupInstallServicesFromInfSectionW")]
-        public static delegate*<IntPtr, ushort*, uint, int> SetupInstallServicesFromInfSection => &SetupInstallServicesFromInfSectionW;
+        public static delegate*<HINF, ushort*, uint, BOOL> SetupInstallServicesFromInfSection => &SetupInstallServicesFromInfSectionW;
 
         [NativeTypeName("#define SetupInstallServicesFromInfSectionEx SetupInstallServicesFromInfSectionExW")]
-        public static delegate*<IntPtr, ushort*, uint, IntPtr, void*, void*, void*, int> SetupInstallServicesFromInfSectionEx => &SetupInstallServicesFromInfSectionExW;
+        public static delegate*<HINF, ushort*, uint, HDEVINFO, void*, void*, void*, BOOL> SetupInstallServicesFromInfSectionEx => &SetupInstallServicesFromInfSectionExW;
 
         [NativeTypeName("#define InstallHinfSection InstallHinfSectionW")]
-        public static delegate*<IntPtr, IntPtr, ushort*, int, void> InstallHinfSection => &InstallHinfSectionW;
+        public static delegate*<HWND, HINSTANCE, ushort*, int, void> InstallHinfSection => &InstallHinfSectionW;
 
         [NativeTypeName("#define SetupInitializeFileLog SetupInitializeFileLogW")]
-        public static delegate*<ushort*, uint, IntPtr> SetupInitializeFileLog => &SetupInitializeFileLogW;
+        public static delegate*<ushort*, uint, HSPFILELOG> SetupInitializeFileLog => &SetupInitializeFileLogW;
 
         [NativeTypeName("#define SPFILELOG_SYSTEMLOG 0x00000001")]
         public const int SPFILELOG_SYSTEMLOG = 0x00000001;
@@ -3336,16 +3021,16 @@ namespace TerraFX.Interop
         public const int SPFILELOG_QUERYONLY = 0x00000004;
 
         [NativeTypeName("#define SetupLogFile SetupLogFileW")]
-        public static delegate*<IntPtr, ushort*, ushort*, ushort*, uint, ushort*, ushort*, ushort*, uint, int> SetupLogFile => &SetupLogFileW;
+        public static delegate*<HSPFILELOG, ushort*, ushort*, ushort*, uint, ushort*, ushort*, ushort*, uint, BOOL> SetupLogFile => &SetupLogFileW;
 
         [NativeTypeName("#define SPFILELOG_OEMFILE 0x00000001")]
         public const int SPFILELOG_OEMFILE = 0x00000001;
 
         [NativeTypeName("#define SetupRemoveFileLogEntry SetupRemoveFileLogEntryW")]
-        public static delegate*<IntPtr, ushort*, ushort*, int> SetupRemoveFileLogEntry => &SetupRemoveFileLogEntryW;
+        public static delegate*<HSPFILELOG, ushort*, ushort*, BOOL> SetupRemoveFileLogEntry => &SetupRemoveFileLogEntryW;
 
         [NativeTypeName("#define SetupQueryFileLog SetupQueryFileLogW")]
-        public static delegate*<IntPtr, ushort*, ushort*, SetupFileLogInfo, ushort*, uint, uint*, int> SetupQueryFileLog => &SetupQueryFileLogW;
+        public static delegate*<HSPFILELOG, ushort*, ushort*, SetupFileLogInfo, ushort*, uint, uint*, BOOL> SetupQueryFileLog => &SetupQueryFileLogW;
 
         [NativeTypeName("#define LogSevInformation 0x00000000")]
         public const int LogSevInformation = 0x00000000;
@@ -3363,19 +3048,19 @@ namespace TerraFX.Interop
         public const int LogSevMaximum = 0x00000004;
 
         [NativeTypeName("#define SetupLogError SetupLogErrorW")]
-        public static delegate*<ushort*, uint, int> SetupLogError => &SetupLogErrorW;
+        public static delegate*<ushort*, uint, BOOL> SetupLogError => &SetupLogErrorW;
 
         [NativeTypeName("#define SetupGetBackupInformation SetupGetBackupInformationW")]
-        public static delegate*<IntPtr, void*, int> SetupGetBackupInformation => &SetupGetBackupInformationW;
+        public static delegate*<HSPFILEQ, void*, BOOL> SetupGetBackupInformation => &SetupGetBackupInformationW;
 
         [NativeTypeName("#define SetupPrepareQueueForRestore SetupPrepareQueueForRestoreW")]
-        public static delegate*<IntPtr, ushort*, uint, int> SetupPrepareQueueForRestore => &SetupPrepareQueueForRestoreW;
+        public static delegate*<HSPFILEQ, ushort*, uint, BOOL> SetupPrepareQueueForRestore => &SetupPrepareQueueForRestoreW;
 
         [NativeTypeName("#define SetupDiCreateDeviceInfoListEx SetupDiCreateDeviceInfoListExW")]
-        public static delegate*<Guid*, IntPtr, ushort*, void*, IntPtr> SetupDiCreateDeviceInfoListEx => &SetupDiCreateDeviceInfoListExW;
+        public static delegate*<Guid*, HWND, ushort*, void*, HDEVINFO> SetupDiCreateDeviceInfoListEx => &SetupDiCreateDeviceInfoListExW;
 
         [NativeTypeName("#define SetupDiGetDeviceInfoListDetail SetupDiGetDeviceInfoListDetailW")]
-        public static delegate*<IntPtr, void*, int> SetupDiGetDeviceInfoListDetail => &SetupDiGetDeviceInfoListDetailW;
+        public static delegate*<HDEVINFO, void*, BOOL> SetupDiGetDeviceInfoListDetail => &SetupDiGetDeviceInfoListDetailW;
 
         [NativeTypeName("#define DICD_GENERATE_ID 0x00000001")]
         public const int DICD_GENERATE_ID = 0x00000001;
@@ -3384,7 +3069,7 @@ namespace TerraFX.Interop
         public const int DICD_INHERIT_CLASSDRVS = 0x00000002;
 
         [NativeTypeName("#define SetupDiCreateDeviceInfo SetupDiCreateDeviceInfoW")]
-        public static delegate*<IntPtr, ushort*, Guid*, ushort*, IntPtr, uint, void*, int> SetupDiCreateDeviceInfo => &SetupDiCreateDeviceInfoW;
+        public static delegate*<HDEVINFO, ushort*, Guid*, ushort*, HWND, uint, void*, BOOL> SetupDiCreateDeviceInfo => &SetupDiCreateDeviceInfoW;
 
         [NativeTypeName("#define DIOD_INHERIT_CLASSDRVS 0x00000002")]
         public const int DIOD_INHERIT_CLASSDRVS = 0x00000002;
@@ -3393,64 +3078,64 @@ namespace TerraFX.Interop
         public const int DIOD_CANCEL_REMOVE = 0x00000004;
 
         [NativeTypeName("#define SetupDiOpenDeviceInfo SetupDiOpenDeviceInfoW")]
-        public static delegate*<IntPtr, ushort*, IntPtr, uint, void*, int> SetupDiOpenDeviceInfo => &SetupDiOpenDeviceInfoW;
+        public static delegate*<HDEVINFO, ushort*, HWND, uint, void*, BOOL> SetupDiOpenDeviceInfo => &SetupDiOpenDeviceInfoW;
 
         [NativeTypeName("#define SetupDiGetDeviceInstanceId SetupDiGetDeviceInstanceIdW")]
-        public static delegate*<IntPtr, void*, ushort*, uint, uint*, int> SetupDiGetDeviceInstanceId => &SetupDiGetDeviceInstanceIdW;
+        public static delegate*<HDEVINFO, void*, ushort*, uint, uint*, BOOL> SetupDiGetDeviceInstanceId => &SetupDiGetDeviceInstanceIdW;
 
         [NativeTypeName("#define SetupDiEnumInterfaceDevice SetupDiEnumDeviceInterfaces")]
-        public static delegate*<IntPtr, void*, Guid*, uint, void*, int> SetupDiEnumInterfaceDevice => &SetupDiEnumDeviceInterfaces;
+        public static delegate*<HDEVINFO, void*, Guid*, uint, void*, BOOL> SetupDiEnumInterfaceDevice => &SetupDiEnumDeviceInterfaces;
 
         [NativeTypeName("#define SetupDiCreateDeviceInterface SetupDiCreateDeviceInterfaceW")]
-        public static delegate*<IntPtr, void*, Guid*, ushort*, uint, void*, int> SetupDiCreateDeviceInterface => &SetupDiCreateDeviceInterfaceW;
+        public static delegate*<HDEVINFO, void*, Guid*, ushort*, uint, void*, BOOL> SetupDiCreateDeviceInterface => &SetupDiCreateDeviceInterfaceW;
 
         [NativeTypeName("#define SetupDiCreateInterfaceDeviceW SetupDiCreateDeviceInterfaceW")]
-        public static delegate*<IntPtr, void*, Guid*, ushort*, uint, void*, int> SetupDiCreateInterfaceDeviceW => &SetupDiCreateDeviceInterfaceW;
+        public static delegate*<HDEVINFO, void*, Guid*, ushort*, uint, void*, BOOL> SetupDiCreateInterfaceDeviceW => &SetupDiCreateDeviceInterfaceW;
 
         [NativeTypeName("#define SetupDiCreateInterfaceDeviceA SetupDiCreateDeviceInterfaceA")]
-        public static delegate*<IntPtr, void*, Guid*, sbyte*, uint, void*, int> SetupDiCreateInterfaceDeviceA => &SetupDiCreateDeviceInterfaceA;
+        public static delegate*<HDEVINFO, void*, Guid*, sbyte*, uint, void*, BOOL> SetupDiCreateInterfaceDeviceA => &SetupDiCreateDeviceInterfaceA;
 
         [NativeTypeName("#define SetupDiCreateInterfaceDevice SetupDiCreateDeviceInterfaceW")]
-        public static delegate*<IntPtr, void*, Guid*, ushort*, uint, void*, int> SetupDiCreateInterfaceDevice => &SetupDiCreateDeviceInterfaceW;
+        public static delegate*<HDEVINFO, void*, Guid*, ushort*, uint, void*, BOOL> SetupDiCreateInterfaceDevice => &SetupDiCreateDeviceInterfaceW;
 
         [NativeTypeName("#define DIODI_NO_ADD 0x00000001")]
         public const int DIODI_NO_ADD = 0x00000001;
 
         [NativeTypeName("#define SetupDiOpenDeviceInterface SetupDiOpenDeviceInterfaceW")]
-        public static delegate*<IntPtr, ushort*, uint, void*, int> SetupDiOpenDeviceInterface => &SetupDiOpenDeviceInterfaceW;
+        public static delegate*<HDEVINFO, ushort*, uint, void*, BOOL> SetupDiOpenDeviceInterface => &SetupDiOpenDeviceInterfaceW;
 
         [NativeTypeName("#define SetupDiOpenInterfaceDeviceW SetupDiOpenDeviceInterfaceW")]
-        public static delegate*<IntPtr, ushort*, uint, void*, int> SetupDiOpenInterfaceDeviceW => &SetupDiOpenDeviceInterfaceW;
+        public static delegate*<HDEVINFO, ushort*, uint, void*, BOOL> SetupDiOpenInterfaceDeviceW => &SetupDiOpenDeviceInterfaceW;
 
         [NativeTypeName("#define SetupDiOpenInterfaceDeviceA SetupDiOpenDeviceInterfaceA")]
-        public static delegate*<IntPtr, sbyte*, uint, void*, int> SetupDiOpenInterfaceDeviceA => &SetupDiOpenDeviceInterfaceA;
+        public static delegate*<HDEVINFO, sbyte*, uint, void*, BOOL> SetupDiOpenInterfaceDeviceA => &SetupDiOpenDeviceInterfaceA;
 
         [NativeTypeName("#define SetupDiOpenInterfaceDevice SetupDiOpenDeviceInterfaceW")]
-        public static delegate*<IntPtr, ushort*, uint, void*, int> SetupDiOpenInterfaceDevice => &SetupDiOpenDeviceInterfaceW;
+        public static delegate*<HDEVINFO, ushort*, uint, void*, BOOL> SetupDiOpenInterfaceDevice => &SetupDiOpenDeviceInterfaceW;
 
         [NativeTypeName("#define SetupDiGetInterfaceDeviceAlias SetupDiGetDeviceInterfaceAlias")]
-        public static delegate*<IntPtr, void*, Guid*, void*, int> SetupDiGetInterfaceDeviceAlias => &SetupDiGetDeviceInterfaceAlias;
+        public static delegate*<HDEVINFO, void*, Guid*, void*, BOOL> SetupDiGetInterfaceDeviceAlias => &SetupDiGetDeviceInterfaceAlias;
 
         [NativeTypeName("#define SetupDiDeleteInterfaceDeviceData SetupDiDeleteDeviceInterfaceData")]
-        public static delegate*<IntPtr, void*, int> SetupDiDeleteInterfaceDeviceData => &SetupDiDeleteDeviceInterfaceData;
+        public static delegate*<HDEVINFO, void*, BOOL> SetupDiDeleteInterfaceDeviceData => &SetupDiDeleteDeviceInterfaceData;
 
         [NativeTypeName("#define SetupDiRemoveInterfaceDevice SetupDiRemoveDeviceInterface")]
-        public static delegate*<IntPtr, void*, int> SetupDiRemoveInterfaceDevice => &SetupDiRemoveDeviceInterface;
+        public static delegate*<HDEVINFO, void*, BOOL> SetupDiRemoveInterfaceDevice => &SetupDiRemoveDeviceInterface;
 
         [NativeTypeName("#define SetupDiGetDeviceInterfaceDetail SetupDiGetDeviceInterfaceDetailW")]
-        public static delegate*<IntPtr, void*, void*, uint, uint*, void*, int> SetupDiGetDeviceInterfaceDetail => &SetupDiGetDeviceInterfaceDetailW;
+        public static delegate*<HDEVINFO, void*, void*, uint, uint*, void*, BOOL> SetupDiGetDeviceInterfaceDetail => &SetupDiGetDeviceInterfaceDetailW;
 
         [NativeTypeName("#define SetupDiGetInterfaceDeviceDetailW SetupDiGetDeviceInterfaceDetailW")]
-        public static delegate*<IntPtr, void*, void*, uint, uint*, void*, int> SetupDiGetInterfaceDeviceDetailW => &SetupDiGetDeviceInterfaceDetailW;
+        public static delegate*<HDEVINFO, void*, void*, uint, uint*, void*, BOOL> SetupDiGetInterfaceDeviceDetailW => &SetupDiGetDeviceInterfaceDetailW;
 
         [NativeTypeName("#define SetupDiGetInterfaceDeviceDetailA SetupDiGetDeviceInterfaceDetailA")]
-        public static delegate*<IntPtr, void*, void*, uint, uint*, void*, int> SetupDiGetInterfaceDeviceDetailA => &SetupDiGetDeviceInterfaceDetailA;
+        public static delegate*<HDEVINFO, void*, void*, uint, uint*, void*, BOOL> SetupDiGetInterfaceDeviceDetailA => &SetupDiGetDeviceInterfaceDetailA;
 
         [NativeTypeName("#define SetupDiGetInterfaceDeviceDetail SetupDiGetDeviceInterfaceDetailW")]
-        public static delegate*<IntPtr, void*, void*, uint, uint*, void*, int> SetupDiGetInterfaceDeviceDetail => &SetupDiGetDeviceInterfaceDetailW;
+        public static delegate*<HDEVINFO, void*, void*, uint, uint*, void*, BOOL> SetupDiGetInterfaceDeviceDetail => &SetupDiGetDeviceInterfaceDetailW;
 
         [NativeTypeName("#define SetupDiInstallInterfaceDevices SetupDiInstallDeviceInterfaces")]
-        public static delegate*<IntPtr, void*, int> SetupDiInstallInterfaceDevices => &SetupDiInstallDeviceInterfaces;
+        public static delegate*<HDEVINFO, void*, BOOL> SetupDiInstallInterfaceDevices => &SetupDiInstallDeviceInterfaces;
 
         [NativeTypeName("#define SPRDI_FIND_DUPS 0x00000001")]
         public const int SPRDI_FIND_DUPS = 0x00000001;
@@ -3465,16 +3150,16 @@ namespace TerraFX.Interop
         public const int SPDIT_COMPATDRIVER = 0x00000002;
 
         [NativeTypeName("#define SetupDiEnumDriverInfo SetupDiEnumDriverInfoW")]
-        public static delegate*<IntPtr, void*, uint, uint, void*, int> SetupDiEnumDriverInfo => &SetupDiEnumDriverInfoW;
+        public static delegate*<HDEVINFO, void*, uint, uint, void*, BOOL> SetupDiEnumDriverInfo => &SetupDiEnumDriverInfoW;
 
         [NativeTypeName("#define SetupDiGetSelectedDriver SetupDiGetSelectedDriverW")]
-        public static delegate*<IntPtr, void*, void*, int> SetupDiGetSelectedDriver => &SetupDiGetSelectedDriverW;
+        public static delegate*<HDEVINFO, void*, void*, BOOL> SetupDiGetSelectedDriver => &SetupDiGetSelectedDriverW;
 
         [NativeTypeName("#define SetupDiSetSelectedDriver SetupDiSetSelectedDriverW")]
-        public static delegate*<IntPtr, void*, void*, int> SetupDiSetSelectedDriver => &SetupDiSetSelectedDriverW;
+        public static delegate*<HDEVINFO, void*, void*, BOOL> SetupDiSetSelectedDriver => &SetupDiSetSelectedDriverW;
 
         [NativeTypeName("#define SetupDiGetDriverInfoDetail SetupDiGetDriverInfoDetailW")]
-        public static delegate*<IntPtr, void*, void*, void*, uint, uint*, int> SetupDiGetDriverInfoDetail => &SetupDiGetDriverInfoDetailW;
+        public static delegate*<HDEVINFO, void*, void*, void*, uint, uint*, BOOL> SetupDiGetDriverInfoDetail => &SetupDiGetDriverInfoDetailW;
 
         [NativeTypeName("#define DIGCF_DEFAULT 0x00000001")]
         public const int DIGCF_DEFAULT = 0x00000001;
@@ -3495,13 +3180,13 @@ namespace TerraFX.Interop
         public const int DIGCF_INTERFACEDEVICE = 0x00000010;
 
         [NativeTypeName("#define SetupDiGetClassDevs SetupDiGetClassDevsW")]
-        public static delegate*<Guid*, ushort*, IntPtr, uint, IntPtr> SetupDiGetClassDevs => &SetupDiGetClassDevsW;
+        public static delegate*<Guid*, ushort*, HWND, uint, HDEVINFO> SetupDiGetClassDevs => &SetupDiGetClassDevsW;
 
         [NativeTypeName("#define SetupDiGetClassDevsEx SetupDiGetClassDevsExW")]
-        public static delegate*<Guid*, ushort*, IntPtr, uint, IntPtr, ushort*, void*, IntPtr> SetupDiGetClassDevsEx => &SetupDiGetClassDevsExW;
+        public static delegate*<Guid*, ushort*, HWND, uint, HDEVINFO, ushort*, void*, HDEVINFO> SetupDiGetClassDevsEx => &SetupDiGetClassDevsExW;
 
         [NativeTypeName("#define SetupDiGetINFClass SetupDiGetINFClassW")]
-        public static delegate*<ushort*, Guid*, ushort*, uint, uint*, int> SetupDiGetINFClass => &SetupDiGetINFClassW;
+        public static delegate*<ushort*, Guid*, ushort*, uint, uint*, BOOL> SetupDiGetINFClass => &SetupDiGetINFClassW;
 
         [NativeTypeName("#define DIBCI_NOINSTALLCLASS 0x00000001")]
         public const int DIBCI_NOINSTALLCLASS = 0x00000001;
@@ -3510,19 +3195,19 @@ namespace TerraFX.Interop
         public const int DIBCI_NODISPLAYCLASS = 0x00000002;
 
         [NativeTypeName("#define SetupDiBuildClassInfoListEx SetupDiBuildClassInfoListExW")]
-        public static delegate*<uint, Guid*, uint, uint*, ushort*, void*, int> SetupDiBuildClassInfoListEx => &SetupDiBuildClassInfoListExW;
+        public static delegate*<uint, Guid*, uint, uint*, ushort*, void*, BOOL> SetupDiBuildClassInfoListEx => &SetupDiBuildClassInfoListExW;
 
         [NativeTypeName("#define SetupDiGetClassDescription SetupDiGetClassDescriptionW")]
-        public static delegate*<Guid*, ushort*, uint, uint*, int> SetupDiGetClassDescription => &SetupDiGetClassDescriptionW;
+        public static delegate*<Guid*, ushort*, uint, uint*, BOOL> SetupDiGetClassDescription => &SetupDiGetClassDescriptionW;
 
         [NativeTypeName("#define SetupDiGetClassDescriptionEx SetupDiGetClassDescriptionExW")]
-        public static delegate*<Guid*, ushort*, uint, uint*, ushort*, void*, int> SetupDiGetClassDescriptionEx => &SetupDiGetClassDescriptionExW;
+        public static delegate*<Guid*, ushort*, uint, uint*, ushort*, void*, BOOL> SetupDiGetClassDescriptionEx => &SetupDiGetClassDescriptionExW;
 
         [NativeTypeName("#define SetupDiInstallClass SetupDiInstallClassW")]
-        public static delegate*<IntPtr, ushort*, uint, IntPtr, int> SetupDiInstallClass => &SetupDiInstallClassW;
+        public static delegate*<HWND, ushort*, uint, HSPFILEQ, BOOL> SetupDiInstallClass => &SetupDiInstallClassW;
 
         [NativeTypeName("#define SetupDiInstallClassEx SetupDiInstallClassExW")]
-        public static delegate*<IntPtr, ushort*, uint, IntPtr, Guid*, void*, void*, int> SetupDiInstallClassEx => &SetupDiInstallClassExW;
+        public static delegate*<HWND, ushort*, uint, HSPFILEQ, Guid*, void*, void*, BOOL> SetupDiInstallClassEx => &SetupDiInstallClassExW;
 
         [NativeTypeName("#define DIOCR_INSTALLER 0x00000001")]
         public const int DIOCR_INSTALLER = 0x00000001;
@@ -3531,25 +3216,25 @@ namespace TerraFX.Interop
         public const int DIOCR_INTERFACE = 0x00000002;
 
         [NativeTypeName("#define SetupDiOpenClassRegKeyEx SetupDiOpenClassRegKeyExW")]
-        public static delegate*<Guid*, uint, uint, ushort*, void*, IntPtr> SetupDiOpenClassRegKeyEx => &SetupDiOpenClassRegKeyExW;
+        public static delegate*<Guid*, uint, uint, ushort*, void*, HKEY> SetupDiOpenClassRegKeyEx => &SetupDiOpenClassRegKeyExW;
 
         [NativeTypeName("#define SetupDiCreateDeviceInterfaceRegKey SetupDiCreateDeviceInterfaceRegKeyW")]
-        public static delegate*<IntPtr, void*, uint, uint, IntPtr, ushort*, IntPtr> SetupDiCreateDeviceInterfaceRegKey => &SetupDiCreateDeviceInterfaceRegKeyW;
+        public static delegate*<HDEVINFO, void*, uint, uint, HINF, ushort*, HKEY> SetupDiCreateDeviceInterfaceRegKey => &SetupDiCreateDeviceInterfaceRegKeyW;
 
         [NativeTypeName("#define SetupDiCreateInterfaceDeviceRegKeyW SetupDiCreateDeviceInterfaceRegKeyW")]
-        public static delegate*<IntPtr, void*, uint, uint, IntPtr, ushort*, IntPtr> SetupDiCreateInterfaceDeviceRegKeyW => &SetupDiCreateDeviceInterfaceRegKeyW;
+        public static delegate*<HDEVINFO, void*, uint, uint, HINF, ushort*, HKEY> SetupDiCreateInterfaceDeviceRegKeyW => &SetupDiCreateDeviceInterfaceRegKeyW;
 
         [NativeTypeName("#define SetupDiCreateInterfaceDeviceRegKeyA SetupDiCreateDeviceInterfaceRegKeyA")]
-        public static delegate*<IntPtr, void*, uint, uint, IntPtr, sbyte*, IntPtr> SetupDiCreateInterfaceDeviceRegKeyA => &SetupDiCreateDeviceInterfaceRegKeyA;
+        public static delegate*<HDEVINFO, void*, uint, uint, HINF, sbyte*, HKEY> SetupDiCreateInterfaceDeviceRegKeyA => &SetupDiCreateDeviceInterfaceRegKeyA;
 
         [NativeTypeName("#define SetupDiCreateInterfaceDeviceRegKey SetupDiCreateDeviceInterfaceRegKeyW")]
-        public static delegate*<IntPtr, void*, uint, uint, IntPtr, ushort*, IntPtr> SetupDiCreateInterfaceDeviceRegKey => &SetupDiCreateDeviceInterfaceRegKeyW;
+        public static delegate*<HDEVINFO, void*, uint, uint, HINF, ushort*, HKEY> SetupDiCreateInterfaceDeviceRegKey => &SetupDiCreateDeviceInterfaceRegKeyW;
 
         [NativeTypeName("#define SetupDiOpenInterfaceDeviceRegKey SetupDiOpenDeviceInterfaceRegKey")]
-        public static delegate*<IntPtr, void*, uint, uint, IntPtr> SetupDiOpenInterfaceDeviceRegKey => &SetupDiOpenDeviceInterfaceRegKey;
+        public static delegate*<HDEVINFO, void*, uint, uint, HKEY> SetupDiOpenInterfaceDeviceRegKey => &SetupDiOpenDeviceInterfaceRegKey;
 
         [NativeTypeName("#define SetupDiDeleteInterfaceDeviceRegKey SetupDiDeleteDeviceInterfaceRegKey")]
-        public static delegate*<IntPtr, void*, uint, int> SetupDiDeleteInterfaceDeviceRegKey => &SetupDiDeleteDeviceInterfaceRegKey;
+        public static delegate*<HDEVINFO, void*, uint, BOOL> SetupDiDeleteInterfaceDeviceRegKey => &SetupDiDeleteDeviceInterfaceRegKey;
 
         [NativeTypeName("#define DIREG_DEV 0x00000001")]
         public const int DIREG_DEV = 0x00000001;
@@ -3561,22 +3246,22 @@ namespace TerraFX.Interop
         public const int DIREG_BOTH = 0x00000004;
 
         [NativeTypeName("#define SetupDiCreateDevRegKey SetupDiCreateDevRegKeyW")]
-        public static delegate*<IntPtr, void*, uint, uint, uint, IntPtr, ushort*, IntPtr> SetupDiCreateDevRegKey => &SetupDiCreateDevRegKeyW;
+        public static delegate*<HDEVINFO, void*, uint, uint, uint, HINF, ushort*, HKEY> SetupDiCreateDevRegKey => &SetupDiCreateDevRegKeyW;
 
         [NativeTypeName("#define SetupDiGetHwProfileListEx SetupDiGetHwProfileListExW")]
-        public static delegate*<uint*, uint, uint*, uint*, ushort*, void*, int> SetupDiGetHwProfileListEx => &SetupDiGetHwProfileListExW;
+        public static delegate*<uint*, uint, uint*, uint*, ushort*, void*, BOOL> SetupDiGetHwProfileListEx => &SetupDiGetHwProfileListExW;
 
         [NativeTypeName("#define SetupDiGetDeviceProperty SetupDiGetDevicePropertyW")]
-        public static delegate*<IntPtr, void*, DEVPROPKEY*, uint*, byte*, uint, uint*, uint, int> SetupDiGetDeviceProperty => &SetupDiGetDevicePropertyW;
+        public static delegate*<HDEVINFO, void*, DEVPROPKEY*, uint*, byte*, uint, uint*, uint, BOOL> SetupDiGetDeviceProperty => &SetupDiGetDevicePropertyW;
 
         [NativeTypeName("#define SetupDiSetDeviceProperty SetupDiSetDevicePropertyW")]
-        public static delegate*<IntPtr, void*, DEVPROPKEY*, uint, byte*, uint, uint, int> SetupDiSetDeviceProperty => &SetupDiSetDevicePropertyW;
+        public static delegate*<HDEVINFO, void*, DEVPROPKEY*, uint, byte*, uint, uint, BOOL> SetupDiSetDeviceProperty => &SetupDiSetDevicePropertyW;
 
         [NativeTypeName("#define SetupDiGetDeviceInterfaceProperty SetupDiGetDeviceInterfacePropertyW")]
-        public static delegate*<IntPtr, void*, DEVPROPKEY*, uint*, byte*, uint, uint*, uint, int> SetupDiGetDeviceInterfaceProperty => &SetupDiGetDeviceInterfacePropertyW;
+        public static delegate*<HDEVINFO, void*, DEVPROPKEY*, uint*, byte*, uint, uint*, uint, BOOL> SetupDiGetDeviceInterfaceProperty => &SetupDiGetDeviceInterfacePropertyW;
 
         [NativeTypeName("#define SetupDiSetDeviceInterfaceProperty SetupDiSetDeviceInterfacePropertyW")]
-        public static delegate*<IntPtr, void*, DEVPROPKEY*, uint, byte*, uint, uint, int> SetupDiSetDeviceInterfaceProperty => &SetupDiSetDeviceInterfacePropertyW;
+        public static delegate*<HDEVINFO, void*, DEVPROPKEY*, uint, byte*, uint, uint, BOOL> SetupDiSetDeviceInterfaceProperty => &SetupDiSetDeviceInterfacePropertyW;
 
         [NativeTypeName("#define DICLASSPROP_INSTALLER 0x00000001")]
         public const int DICLASSPROP_INSTALLER = 0x00000001;
@@ -3585,19 +3270,19 @@ namespace TerraFX.Interop
         public const int DICLASSPROP_INTERFACE = 0x00000002;
 
         [NativeTypeName("#define SetupDiGetClassPropertyKeysEx SetupDiGetClassPropertyKeysExW")]
-        public static delegate*<Guid*, DEVPROPKEY*, uint, uint*, uint, ushort*, void*, int> SetupDiGetClassPropertyKeysEx => &SetupDiGetClassPropertyKeysExW;
+        public static delegate*<Guid*, DEVPROPKEY*, uint, uint*, uint, ushort*, void*, BOOL> SetupDiGetClassPropertyKeysEx => &SetupDiGetClassPropertyKeysExW;
 
         [NativeTypeName("#define SetupDiGetClassProperty SetupDiGetClassPropertyW")]
-        public static delegate*<Guid*, DEVPROPKEY*, uint*, byte*, uint, uint*, uint, int> SetupDiGetClassProperty => &SetupDiGetClassPropertyW;
+        public static delegate*<Guid*, DEVPROPKEY*, uint*, byte*, uint, uint*, uint, BOOL> SetupDiGetClassProperty => &SetupDiGetClassPropertyW;
 
         [NativeTypeName("#define SetupDiGetClassPropertyEx SetupDiGetClassPropertyExW")]
-        public static delegate*<Guid*, DEVPROPKEY*, uint*, byte*, uint, uint*, uint, ushort*, void*, int> SetupDiGetClassPropertyEx => &SetupDiGetClassPropertyExW;
+        public static delegate*<Guid*, DEVPROPKEY*, uint*, byte*, uint, uint*, uint, ushort*, void*, BOOL> SetupDiGetClassPropertyEx => &SetupDiGetClassPropertyExW;
 
         [NativeTypeName("#define SetupDiSetClassProperty SetupDiSetClassPropertyW")]
-        public static delegate*<Guid*, DEVPROPKEY*, uint, byte*, uint, uint, int> SetupDiSetClassProperty => &SetupDiSetClassPropertyW;
+        public static delegate*<Guid*, DEVPROPKEY*, uint, byte*, uint, uint, BOOL> SetupDiSetClassProperty => &SetupDiSetClassPropertyW;
 
         [NativeTypeName("#define SetupDiSetClassPropertyEx SetupDiSetClassPropertyExW")]
-        public static delegate*<Guid*, DEVPROPKEY*, uint, byte*, uint, uint, ushort*, void*, int> SetupDiSetClassPropertyEx => &SetupDiSetClassPropertyExW;
+        public static delegate*<Guid*, DEVPROPKEY*, uint, byte*, uint, uint, ushort*, void*, BOOL> SetupDiSetClassPropertyEx => &SetupDiSetClassPropertyExW;
 
         [NativeTypeName("#define SPDRP_DEVICEDESC (0x00000000)")]
         public const int SPDRP_DEVICEDESC = (0x00000000);
@@ -3738,34 +3423,34 @@ namespace TerraFX.Interop
         public const int SPCRP_MAXIMUM_PROPERTY = (0x0000001C);
 
         [NativeTypeName("#define SetupDiGetDeviceRegistryProperty SetupDiGetDeviceRegistryPropertyW")]
-        public static delegate*<IntPtr, void*, uint, uint*, byte*, uint, uint*, int> SetupDiGetDeviceRegistryProperty => &SetupDiGetDeviceRegistryPropertyW;
+        public static delegate*<HDEVINFO, void*, uint, uint*, byte*, uint, uint*, BOOL> SetupDiGetDeviceRegistryProperty => &SetupDiGetDeviceRegistryPropertyW;
 
         [NativeTypeName("#define SetupDiGetClassRegistryProperty SetupDiGetClassRegistryPropertyW")]
-        public static delegate*<Guid*, uint, uint*, byte*, uint, uint*, ushort*, void*, int> SetupDiGetClassRegistryProperty => &SetupDiGetClassRegistryPropertyW;
+        public static delegate*<Guid*, uint, uint*, byte*, uint, uint*, ushort*, void*, BOOL> SetupDiGetClassRegistryProperty => &SetupDiGetClassRegistryPropertyW;
 
         [NativeTypeName("#define SetupDiSetDeviceRegistryProperty SetupDiSetDeviceRegistryPropertyW")]
-        public static delegate*<IntPtr, void*, uint, byte*, uint, int> SetupDiSetDeviceRegistryProperty => &SetupDiSetDeviceRegistryPropertyW;
+        public static delegate*<HDEVINFO, void*, uint, byte*, uint, BOOL> SetupDiSetDeviceRegistryProperty => &SetupDiSetDeviceRegistryPropertyW;
 
         [NativeTypeName("#define SetupDiSetClassRegistryProperty SetupDiSetClassRegistryPropertyW")]
-        public static delegate*<Guid*, uint, byte*, uint, ushort*, void*, int> SetupDiSetClassRegistryProperty => &SetupDiSetClassRegistryPropertyW;
+        public static delegate*<Guid*, uint, byte*, uint, ushort*, void*, BOOL> SetupDiSetClassRegistryProperty => &SetupDiSetClassRegistryPropertyW;
 
         [NativeTypeName("#define SetupDiGetDeviceInstallParams SetupDiGetDeviceInstallParamsW")]
-        public static delegate*<IntPtr, void*, void*, int> SetupDiGetDeviceInstallParams => &SetupDiGetDeviceInstallParamsW;
+        public static delegate*<HDEVINFO, void*, void*, BOOL> SetupDiGetDeviceInstallParams => &SetupDiGetDeviceInstallParamsW;
 
         [NativeTypeName("#define SetupDiGetClassInstallParams SetupDiGetClassInstallParamsW")]
-        public static delegate*<IntPtr, void*, void*, uint, uint*, int> SetupDiGetClassInstallParams => &SetupDiGetClassInstallParamsW;
+        public static delegate*<HDEVINFO, void*, void*, uint, uint*, BOOL> SetupDiGetClassInstallParams => &SetupDiGetClassInstallParamsW;
 
         [NativeTypeName("#define SetupDiSetDeviceInstallParams SetupDiSetDeviceInstallParamsW")]
-        public static delegate*<IntPtr, void*, void*, int> SetupDiSetDeviceInstallParams => &SetupDiSetDeviceInstallParamsW;
+        public static delegate*<HDEVINFO, void*, void*, BOOL> SetupDiSetDeviceInstallParams => &SetupDiSetDeviceInstallParamsW;
 
         [NativeTypeName("#define SetupDiSetClassInstallParams SetupDiSetClassInstallParamsW")]
-        public static delegate*<IntPtr, void*, void*, uint, int> SetupDiSetClassInstallParams => &SetupDiSetClassInstallParamsW;
+        public static delegate*<HDEVINFO, void*, void*, uint, BOOL> SetupDiSetClassInstallParams => &SetupDiSetClassInstallParamsW;
 
         [NativeTypeName("#define SetupDiGetDriverInstallParams SetupDiGetDriverInstallParamsW")]
-        public static delegate*<IntPtr, void*, void*, void*, int> SetupDiGetDriverInstallParams => &SetupDiGetDriverInstallParamsW;
+        public static delegate*<HDEVINFO, void*, void*, void*, BOOL> SetupDiGetDriverInstallParams => &SetupDiGetDriverInstallParamsW;
 
         [NativeTypeName("#define SetupDiSetDriverInstallParams SetupDiSetDriverInstallParamsW")]
-        public static delegate*<IntPtr, void*, void*, void*, int> SetupDiSetDriverInstallParams => &SetupDiSetDriverInstallParamsW;
+        public static delegate*<HDEVINFO, void*, void*, void*, BOOL> SetupDiSetDriverInstallParams => &SetupDiSetDriverInstallParamsW;
 
         [NativeTypeName("#define DMI_MASK 0x00000001")]
         public const int DMI_MASK = 0x00000001;
@@ -3777,7 +3462,7 @@ namespace TerraFX.Interop
         public const int DMI_USERECT = 0x00000004;
 
         [NativeTypeName("#define SetupDiGetClassImageListEx SetupDiGetClassImageListExW")]
-        public static delegate*<void*, ushort*, void*, int> SetupDiGetClassImageListEx => &SetupDiGetClassImageListExW;
+        public static delegate*<void*, ushort*, void*, BOOL> SetupDiGetClassImageListEx => &SetupDiGetClassImageListExW;
 
         [NativeTypeName("#define DIGCDP_FLAG_BASIC 0x00000001")]
         public const int DIGCDP_FLAG_BASIC = 0x00000001;
@@ -3792,7 +3477,7 @@ namespace TerraFX.Interop
         public const int DIGCDP_FLAG_REMOTE_ADVANCED = 0x00000004;
 
         [NativeTypeName("#define SetupDiGetClassDevPropertySheets SetupDiGetClassDevPropertySheetsW")]
-        public static delegate*<IntPtr, void*, PROPSHEETHEADERW_V2*, uint, uint*, uint, int> SetupDiGetClassDevPropertySheets => &SetupDiGetClassDevPropertySheetsW;
+        public static delegate*<HDEVINFO, void*, PROPSHEETHEADERW_V2*, uint, uint*, uint, BOOL> SetupDiGetClassDevPropertySheets => &SetupDiGetClassDevPropertySheetsW;
 
         [NativeTypeName("#define IDI_RESOURCEFIRST 159")]
         public const int IDI_RESOURCEFIRST = 159;
@@ -3828,22 +3513,22 @@ namespace TerraFX.Interop
         public const int IDI_FORCED_OVL = 502;
 
         [NativeTypeName("#define SetupDiClassNameFromGuid SetupDiClassNameFromGuidW")]
-        public static delegate*<Guid*, ushort*, uint, uint*, int> SetupDiClassNameFromGuid => &SetupDiClassNameFromGuidW;
+        public static delegate*<Guid*, ushort*, uint, uint*, BOOL> SetupDiClassNameFromGuid => &SetupDiClassNameFromGuidW;
 
         [NativeTypeName("#define SetupDiClassNameFromGuidEx SetupDiClassNameFromGuidExW")]
-        public static delegate*<Guid*, ushort*, uint, uint*, ushort*, void*, int> SetupDiClassNameFromGuidEx => &SetupDiClassNameFromGuidExW;
+        public static delegate*<Guid*, ushort*, uint, uint*, ushort*, void*, BOOL> SetupDiClassNameFromGuidEx => &SetupDiClassNameFromGuidExW;
 
         [NativeTypeName("#define SetupDiClassGuidsFromName SetupDiClassGuidsFromNameW")]
-        public static delegate*<ushort*, Guid*, uint, uint*, int> SetupDiClassGuidsFromName => &SetupDiClassGuidsFromNameW;
+        public static delegate*<ushort*, Guid*, uint, uint*, BOOL> SetupDiClassGuidsFromName => &SetupDiClassGuidsFromNameW;
 
         [NativeTypeName("#define SetupDiClassGuidsFromNameEx SetupDiClassGuidsFromNameExW")]
-        public static delegate*<ushort*, Guid*, uint, uint*, ushort*, void*, int> SetupDiClassGuidsFromNameEx => &SetupDiClassGuidsFromNameExW;
+        public static delegate*<ushort*, Guid*, uint, uint*, ushort*, void*, BOOL> SetupDiClassGuidsFromNameEx => &SetupDiClassGuidsFromNameExW;
 
         [NativeTypeName("#define SetupDiGetHwProfileFriendlyName SetupDiGetHwProfileFriendlyNameW")]
-        public static delegate*<uint, ushort*, uint, uint*, int> SetupDiGetHwProfileFriendlyName => &SetupDiGetHwProfileFriendlyNameW;
+        public static delegate*<uint, ushort*, uint, uint*, BOOL> SetupDiGetHwProfileFriendlyName => &SetupDiGetHwProfileFriendlyNameW;
 
         [NativeTypeName("#define SetupDiGetHwProfileFriendlyNameEx SetupDiGetHwProfileFriendlyNameExW")]
-        public static delegate*<uint, ushort*, uint, uint*, ushort*, void*, int> SetupDiGetHwProfileFriendlyNameEx => &SetupDiGetHwProfileFriendlyNameExW;
+        public static delegate*<uint, ushort*, uint, uint*, ushort*, void*, BOOL> SetupDiGetHwProfileFriendlyNameEx => &SetupDiGetHwProfileFriendlyNameExW;
 
         [NativeTypeName("#define SPWPT_SELECTDEVICE 0x00000001")]
         public const int SPWPT_SELECTDEVICE = 0x00000001;
@@ -3852,16 +3537,16 @@ namespace TerraFX.Interop
         public const int SPWP_USE_DEVINFO_DATA = 0x00000001;
 
         [NativeTypeName("#define SetupDiGetActualModelsSection SetupDiGetActualModelsSectionW")]
-        public static delegate*<void*, void*, ushort*, uint, uint*, void*, int> SetupDiGetActualModelsSection => &SetupDiGetActualModelsSectionW;
+        public static delegate*<void*, void*, ushort*, uint, uint*, void*, BOOL> SetupDiGetActualModelsSection => &SetupDiGetActualModelsSectionW;
 
         [NativeTypeName("#define SetupDiGetActualSectionToInstall SetupDiGetActualSectionToInstallW")]
-        public static delegate*<IntPtr, ushort*, ushort*, uint, uint*, ushort**, int> SetupDiGetActualSectionToInstall => &SetupDiGetActualSectionToInstallW;
+        public static delegate*<HINF, ushort*, ushort*, uint, uint*, ushort**, BOOL> SetupDiGetActualSectionToInstall => &SetupDiGetActualSectionToInstallW;
 
         [NativeTypeName("#define SetupDiGetActualSectionToInstallEx SetupDiGetActualSectionToInstallExW")]
-        public static delegate*<IntPtr, ushort*, void*, ushort*, uint, uint*, ushort**, void*, int> SetupDiGetActualSectionToInstallEx => &SetupDiGetActualSectionToInstallExW;
+        public static delegate*<HINF, ushort*, void*, ushort*, uint, uint*, ushort**, void*, BOOL> SetupDiGetActualSectionToInstallEx => &SetupDiGetActualSectionToInstallExW;
 
         [NativeTypeName("#define SetupEnumInfSections SetupEnumInfSectionsW")]
-        public static delegate*<IntPtr, uint, ushort*, uint, uint*, int> SetupEnumInfSections => &SetupEnumInfSectionsW;
+        public static delegate*<HINF, uint, ushort*, uint, uint*, BOOL> SetupEnumInfSections => &SetupEnumInfSectionsW;
 
         [NativeTypeName("#define SIGNERSCORE_UNKNOWN 0xFF000000")]
         public const uint SIGNERSCORE_UNKNOWN = 0xFF000000;
@@ -3897,18 +3582,18 @@ namespace TerraFX.Interop
         public const uint SIGNERSCORE_SIGNED_MASK = 0xF0000000;
 
         [NativeTypeName("#define SetupVerifyInfFile SetupVerifyInfFileW")]
-        public static delegate*<ushort*, void*, void*, int> SetupVerifyInfFile => &SetupVerifyInfFileW;
+        public static delegate*<ushort*, void*, void*, BOOL> SetupVerifyInfFile => &SetupVerifyInfFileW;
 
         [NativeTypeName("#define DICUSTOMDEVPROP_MERGE_MULTISZ 0x00000001")]
         public const int DICUSTOMDEVPROP_MERGE_MULTISZ = 0x00000001;
 
         [NativeTypeName("#define SetupDiGetCustomDeviceProperty SetupDiGetCustomDevicePropertyW")]
-        public static delegate*<IntPtr, void*, ushort*, uint, uint*, byte*, uint, uint*, int> SetupDiGetCustomDeviceProperty => &SetupDiGetCustomDevicePropertyW;
+        public static delegate*<HDEVINFO, void*, ushort*, uint, uint*, byte*, uint, uint*, BOOL> SetupDiGetCustomDeviceProperty => &SetupDiGetCustomDevicePropertyW;
 
         [NativeTypeName("#define SCWMI_CLOBBER_SECURITY 0x00000001")]
         public const int SCWMI_CLOBBER_SECURITY = 0x00000001;
 
         [NativeTypeName("#define SetupConfigureWmiFromInfSection SetupConfigureWmiFromInfSectionW")]
-        public static delegate*<IntPtr, ushort*, uint, int> SetupConfigureWmiFromInfSection => &SetupConfigureWmiFromInfSectionW;
+        public static delegate*<HINF, ushort*, uint, BOOL> SetupConfigureWmiFromInfSection => &SetupConfigureWmiFromInfSectionW;
     }
 }

@@ -12,10 +12,8 @@ namespace TerraFX.Interop
         [NativeTypeName("ULONG")]
         public uint PropagationCookie;
 
-        [NativeTypeName("GUID")]
         public Guid UOW;
 
-        [NativeTypeName("GUID")]
         public Guid TmIdentity;
 
         [NativeTypeName("ULONG")]

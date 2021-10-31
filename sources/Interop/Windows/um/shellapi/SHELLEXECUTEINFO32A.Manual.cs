@@ -18,8 +18,7 @@ namespace TerraFX.Interop
         [NativeTypeName("ULONG")]
         public uint fMask;
 
-        [NativeTypeName("HWND")]
-        public IntPtr hwnd;
+        public HWND hwnd;
 
         [NativeTypeName("LPCSTR")]
         public sbyte* lpVerb;
@@ -35,16 +34,14 @@ namespace TerraFX.Interop
 
         public int nShow;
 
-        [NativeTypeName("HINSTANCE")]
-        public IntPtr hInstApp;
+        public HINSTANCE hInstApp;
 
         public void* lpIDList;
 
         [NativeTypeName("LPCSTR")]
         public sbyte* lpClass;
 
-        [NativeTypeName("HKEY")]
-        public IntPtr hkeyClass;
+        public HKEY hkeyClass;
 
         [NativeTypeName("DWORD")]
         public uint dwHotKey;
@@ -52,10 +49,9 @@ namespace TerraFX.Interop
         [NativeTypeName("_SHELLEXECUTEINFOA::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/shellapi.h:460:5)")]
         public _Anonymous_e__Union Anonymous;
 
-        [NativeTypeName("HANDLE")]
-        public IntPtr hProcess;
+        public HANDLE hProcess;
 
-        public ref IntPtr hIcon
+        public ref HANDLE hIcon
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
@@ -64,7 +60,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public ref IntPtr hMonitor
+        public ref HANDLE hMonitor
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
@@ -77,12 +73,10 @@ namespace TerraFX.Interop
         public partial struct _Anonymous_e__Union
         {
             [FieldOffset(0)]
-            [NativeTypeName("HANDLE")]
-            public IntPtr hIcon;
+            public HANDLE hIcon;
 
             [FieldOffset(0)]
-            [NativeTypeName("HANDLE")]
-            public IntPtr hMonitor;
+            public HANDLE hMonitor;
         }
     }
 }

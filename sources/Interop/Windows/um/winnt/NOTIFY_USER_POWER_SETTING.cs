@@ -9,7 +9,6 @@ namespace TerraFX.Interop
 {
     public partial struct NOTIFY_USER_POWER_SETTING
     {
-        [NativeTypeName("GUID")]
         public Guid Guid;
     }
 }

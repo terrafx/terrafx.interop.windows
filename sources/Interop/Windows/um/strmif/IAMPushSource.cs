@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IAMPushSource*, Guid*, void**, int>)(lpVtbl[0]))((IAMPushSource*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,56 +41,49 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetLatency([NativeTypeName("REFERENCE_TIME *")] long* prtLatency)
+        public HRESULT GetLatency([NativeTypeName("REFERENCE_TIME *")] long* prtLatency)
         {
             return ((delegate* unmanaged<IAMPushSource*, long*, int>)(lpVtbl[3]))((IAMPushSource*)Unsafe.AsPointer(ref this), prtLatency);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetPushSourceFlags([NativeTypeName("ULONG *")] uint* pFlags)
+        public HRESULT GetPushSourceFlags([NativeTypeName("ULONG *")] uint* pFlags)
         {
             return ((delegate* unmanaged<IAMPushSource*, uint*, int>)(lpVtbl[4]))((IAMPushSource*)Unsafe.AsPointer(ref this), pFlags);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetPushSourceFlags([NativeTypeName("ULONG")] uint Flags)
+        public HRESULT SetPushSourceFlags([NativeTypeName("ULONG")] uint Flags)
         {
             return ((delegate* unmanaged<IAMPushSource*, uint, int>)(lpVtbl[5]))((IAMPushSource*)Unsafe.AsPointer(ref this), Flags);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetStreamOffset([NativeTypeName("REFERENCE_TIME")] long rtOffset)
+        public HRESULT SetStreamOffset([NativeTypeName("REFERENCE_TIME")] long rtOffset)
         {
             return ((delegate* unmanaged<IAMPushSource*, long, int>)(lpVtbl[6]))((IAMPushSource*)Unsafe.AsPointer(ref this), rtOffset);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetStreamOffset([NativeTypeName("REFERENCE_TIME *")] long* prtOffset)
+        public HRESULT GetStreamOffset([NativeTypeName("REFERENCE_TIME *")] long* prtOffset)
         {
             return ((delegate* unmanaged<IAMPushSource*, long*, int>)(lpVtbl[7]))((IAMPushSource*)Unsafe.AsPointer(ref this), prtOffset);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetMaxStreamOffset([NativeTypeName("REFERENCE_TIME *")] long* prtMaxOffset)
+        public HRESULT GetMaxStreamOffset([NativeTypeName("REFERENCE_TIME *")] long* prtMaxOffset)
         {
             return ((delegate* unmanaged<IAMPushSource*, long*, int>)(lpVtbl[8]))((IAMPushSource*)Unsafe.AsPointer(ref this), prtMaxOffset);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetMaxStreamOffset([NativeTypeName("REFERENCE_TIME")] long rtMaxOffset)
+        public HRESULT SetMaxStreamOffset([NativeTypeName("REFERENCE_TIME")] long rtMaxOffset)
         {
             return ((delegate* unmanaged<IAMPushSource*, long, int>)(lpVtbl[9]))((IAMPushSource*)Unsafe.AsPointer(ref this), rtMaxOffset);
         }

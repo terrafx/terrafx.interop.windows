@@ -7,34 +7,24 @@ namespace TerraFX.Interop
 {
     public partial struct PANOSE
     {
-        [NativeTypeName("BYTE")]
         public byte bFamilyType;
 
-        [NativeTypeName("BYTE")]
         public byte bSerifStyle;
 
-        [NativeTypeName("BYTE")]
         public byte bWeight;
 
-        [NativeTypeName("BYTE")]
         public byte bProportion;
 
-        [NativeTypeName("BYTE")]
         public byte bContrast;
 
-        [NativeTypeName("BYTE")]
         public byte bStrokeVariation;
 
-        [NativeTypeName("BYTE")]
         public byte bArmStyle;
 
-        [NativeTypeName("BYTE")]
         public byte bLetterform;
 
-        [NativeTypeName("BYTE")]
         public byte bMidline;
 
-        [NativeTypeName("BYTE")]
         public byte bXHeight;
     }
 }

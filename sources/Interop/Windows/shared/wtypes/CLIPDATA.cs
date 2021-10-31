@@ -13,7 +13,6 @@ namespace TerraFX.Interop
         [NativeTypeName("LONG")]
         public int ulClipFmt;
 
-        [NativeTypeName("BYTE *")]
         public byte* pClipData;
     }
 }

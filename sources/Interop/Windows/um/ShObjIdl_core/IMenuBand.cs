@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IMenuBand*, Guid*, void**, int>)(lpVtbl[0]))((IMenuBand*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,16 +41,14 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int IsMenuMessage(MSG* pmsg)
+        public HRESULT IsMenuMessage(MSG* pmsg)
         {
             return ((delegate* unmanaged<IMenuBand*, MSG*, int>)(lpVtbl[3]))((IMenuBand*)Unsafe.AsPointer(ref this), pmsg);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int TranslateMenuMessage(MSG* pmsg, [NativeTypeName("LRESULT *")] nint* plRet)
+        public HRESULT TranslateMenuMessage(MSG* pmsg, [NativeTypeName("LRESULT *")] nint* plRet)
         {
             return ((delegate* unmanaged<IMenuBand*, MSG*, nint*, int>)(lpVtbl[4]))((IMenuBand*)Unsafe.AsPointer(ref this), pmsg, plRet);
         }

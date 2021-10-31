@@ -9,10 +9,8 @@ namespace TerraFX.Interop
     {
         public NET_IF_RCV_ADDRESS_TYPE ifRcvAddressType;
 
-        [NativeTypeName("USHORT")]
         public ushort ifRcvAddressLength;
 
-        [NativeTypeName("USHORT")]
         public ushort ifRcvAddressOffset;
     }
 }

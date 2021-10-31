@@ -9,7 +9,6 @@ namespace TerraFX.Interop
 {
     public partial struct DWRITE_CLUSTER_METRICS
     {
-        [NativeTypeName("FLOAT")]
         public float width;
 
         [NativeTypeName("UINT16")]

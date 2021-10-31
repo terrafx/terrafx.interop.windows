@@ -17,10 +17,8 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint Flags;
 
-        [NativeTypeName("GUID")]
         public Guid ObjectType;
 
-        [NativeTypeName("GUID")]
         public Guid InheritedObjectType;
 
         [NativeTypeName("DWORD")]

@@ -10,8 +10,7 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint dwVersion;
 
-        [NativeTypeName("BOOL")]
-        public int fIV;
+        public BOOL fIV;
 
         [NativeTypeName("BYTE [8]")]
         public fixed byte rgbIV[8];

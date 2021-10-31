@@ -13,7 +13,6 @@ namespace TerraFX.Interop
         [NativeTypeName("const DML_TENSOR_DESC *")]
         public DML_TENSOR_DESC* OutputTensor;
 
-        [NativeTypeName("UINT")]
         public uint DimensionCount;
 
         [NativeTypeName("const UINT *")]
@@ -28,7 +27,6 @@ namespace TerraFX.Interop
         [NativeTypeName("const UINT *")]
         public uint* EndPadding;
 
-        [NativeTypeName("BOOL")]
-        public int IncludePadding;
+        public BOOL IncludePadding;
     }
 }

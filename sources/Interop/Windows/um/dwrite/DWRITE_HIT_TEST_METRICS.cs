@@ -13,25 +13,19 @@ namespace TerraFX.Interop
         [NativeTypeName("UINT32")]
         public uint length;
 
-        [NativeTypeName("FLOAT")]
         public float left;
 
-        [NativeTypeName("FLOAT")]
         public float top;
 
-        [NativeTypeName("FLOAT")]
         public float width;
 
-        [NativeTypeName("FLOAT")]
         public float height;
 
         [NativeTypeName("UINT32")]
         public uint bidiLevel;
 
-        [NativeTypeName("BOOL")]
-        public int isText;
+        public BOOL isText;
 
-        [NativeTypeName("BOOL")]
-        public int isTrimmed;
+        public BOOL isTrimmed;
     }
 }

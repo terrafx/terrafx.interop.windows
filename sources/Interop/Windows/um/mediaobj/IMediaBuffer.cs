@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IMediaBuffer*, Guid*, void**, int>)(lpVtbl[0]))((IMediaBuffer*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,24 +41,21 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetLength([NativeTypeName("DWORD")] uint cbLength)
+        public HRESULT SetLength([NativeTypeName("DWORD")] uint cbLength)
         {
             return ((delegate* unmanaged<IMediaBuffer*, uint, int>)(lpVtbl[3]))((IMediaBuffer*)Unsafe.AsPointer(ref this), cbLength);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetMaxLength([NativeTypeName("DWORD *")] uint* pcbMaxLength)
+        public HRESULT GetMaxLength([NativeTypeName("DWORD *")] uint* pcbMaxLength)
         {
             return ((delegate* unmanaged<IMediaBuffer*, uint*, int>)(lpVtbl[4]))((IMediaBuffer*)Unsafe.AsPointer(ref this), pcbMaxLength);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetBufferAndLength([NativeTypeName("BYTE **")] byte** ppBuffer, [NativeTypeName("DWORD *")] uint* pcbLength)
+        public HRESULT GetBufferAndLength(byte** ppBuffer, [NativeTypeName("DWORD *")] uint* pcbLength)
         {
             return ((delegate* unmanaged<IMediaBuffer*, byte**, uint*, int>)(lpVtbl[5]))((IMediaBuffer*)Unsafe.AsPointer(ref this), ppBuffer, pcbLength);
         }

@@ -15,43 +15,30 @@ namespace TerraFX.Interop
         [NativeTypeName("UINT32")]
         public uint ReflectionsDelay;
 
-        [NativeTypeName("BYTE")]
         public byte ReverbDelay;
 
-        [NativeTypeName("BYTE")]
         public byte RearDelay;
 
-        [NativeTypeName("BYTE")]
         public byte SideDelay;
 
-        [NativeTypeName("BYTE")]
         public byte PositionLeft;
 
-        [NativeTypeName("BYTE")]
         public byte PositionRight;
 
-        [NativeTypeName("BYTE")]
         public byte PositionMatrixLeft;
 
-        [NativeTypeName("BYTE")]
         public byte PositionMatrixRight;
 
-        [NativeTypeName("BYTE")]
         public byte EarlyDiffusion;
 
-        [NativeTypeName("BYTE")]
         public byte LateDiffusion;
 
-        [NativeTypeName("BYTE")]
         public byte LowEQGain;
 
-        [NativeTypeName("BYTE")]
         public byte LowEQCutoff;
 
-        [NativeTypeName("BYTE")]
         public byte HighEQGain;
 
-        [NativeTypeName("BYTE")]
         public byte HighEQCutoff;
 
         public float RoomFilterFreq;
@@ -70,7 +57,6 @@ namespace TerraFX.Interop
 
         public float RoomSize;
 
-        [NativeTypeName("BOOL")]
-        public int DisableLateField;
+        public BOOL DisableLateField;
     }
 }

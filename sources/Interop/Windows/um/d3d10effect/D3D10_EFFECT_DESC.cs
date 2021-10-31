@@ -7,22 +7,16 @@ namespace TerraFX.Interop
 {
     public partial struct D3D10_EFFECT_DESC
     {
-        [NativeTypeName("BOOL")]
-        public int IsChildEffect;
+        public BOOL IsChildEffect;
 
-        [NativeTypeName("UINT")]
         public uint ConstantBuffers;
 
-        [NativeTypeName("UINT")]
         public uint SharedConstantBuffers;
 
-        [NativeTypeName("UINT")]
         public uint GlobalVariables;
 
-        [NativeTypeName("UINT")]
         public uint SharedGlobalVariables;
 
-        [NativeTypeName("UINT")]
         public uint Techniques;
     }
 }

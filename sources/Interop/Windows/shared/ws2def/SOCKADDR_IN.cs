@@ -10,7 +10,6 @@ namespace TerraFX.Interop
         [NativeTypeName("ADDRESS_FAMILY")]
         public ushort sin_family;
 
-        [NativeTypeName("USHORT")]
         public ushort sin_port;
 
         public IN_ADDR sin_addr;

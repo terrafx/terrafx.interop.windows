@@ -13,7 +13,7 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct D2D_MATRIX_3X2_F : IEquatable<D2D_MATRIX_3X2_F>
     {
-        public D2D_MATRIX_3X2_F([NativeTypeName("FLOAT")] float m11, [NativeTypeName("FLOAT")] float m12, [NativeTypeName("FLOAT")] float m21, [NativeTypeName("FLOAT")] float m22, [NativeTypeName("FLOAT")] float m31, [NativeTypeName("FLOAT")] float m32)
+        public D2D_MATRIX_3X2_F(float m11, float m12, float m21, float m22, float m31, float m32)
         {
             this = default;
 
@@ -58,7 +58,7 @@ namespace TerraFX.Interop
             return translation;
         }
 
-        public static D2D_MATRIX_3X2_F Translation([NativeTypeName("FLOAT")] float x, [NativeTypeName("FLOAT")] float y)
+        public static D2D_MATRIX_3X2_F Translation(float x, float y)
         {
             return Translation(new D2D_SIZE_F(x, y));
         }
@@ -77,7 +77,7 @@ namespace TerraFX.Interop
             return scale;
         }
 
-        public static D2D_MATRIX_3X2_F Scale([NativeTypeName("FLOAT")] float x, [NativeTypeName("FLOAT")] float y, [NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F center = default)
+        public static D2D_MATRIX_3X2_F Scale(float x, float y, [NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F center = default)
         {
             return Scale(new D2D_SIZE_F(x, y), center);
         }
@@ -102,7 +102,6 @@ namespace TerraFX.Interop
 
         public readonly float Determinant
         {
-            [return: NativeTypeName("FLOAT")]
             get
             {
                 return (Anonymous.Anonymous2._11 * Anonymous.Anonymous2._22) - (Anonymous.Anonymous2._12 * Anonymous.Anonymous2._21);

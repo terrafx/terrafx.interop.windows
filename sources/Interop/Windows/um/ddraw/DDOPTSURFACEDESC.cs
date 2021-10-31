@@ -19,7 +19,6 @@ namespace TerraFX.Interop
 
         public DDOSCAPS ddOSCaps;
 
-        [NativeTypeName("GUID")]
         public Guid guid;
 
         [NativeTypeName("DWORD")]

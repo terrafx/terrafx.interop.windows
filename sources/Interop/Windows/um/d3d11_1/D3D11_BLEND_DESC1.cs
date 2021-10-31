@@ -11,11 +11,9 @@ namespace TerraFX.Interop
 {
     public partial struct D3D11_BLEND_DESC1
     {
-        [NativeTypeName("BOOL")]
-        public int AlphaToCoverageEnable;
+        public BOOL AlphaToCoverageEnable;
 
-        [NativeTypeName("BOOL")]
-        public int IndependentBlendEnable;
+        public BOOL IndependentBlendEnable;
 
         [NativeTypeName("D3D11_RENDER_TARGET_BLEND_DESC1 [8]")]
         public _RenderTarget_e__FixedBuffer RenderTarget;

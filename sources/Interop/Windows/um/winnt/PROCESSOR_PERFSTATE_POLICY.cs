@@ -13,13 +13,10 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint Revision;
 
-        [NativeTypeName("BYTE")]
         public byte MaxThrottle;
 
-        [NativeTypeName("BYTE")]
         public byte MinThrottle;
 
-        [NativeTypeName("BYTE")]
         public byte BusyAdjThreshold;
 
         [NativeTypeName("PROCESSOR_PERFSTATE_POLICY::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winnt.h:17974:5)")]
@@ -62,7 +59,6 @@ namespace TerraFX.Interop
         public partial struct _Anonymous_e__Union
         {
             [FieldOffset(0)]
-            [NativeTypeName("BYTE")]
             public byte Spare;
 
             [FieldOffset(0)]
@@ -73,7 +69,6 @@ namespace TerraFX.Interop
             public partial struct _Flags_e__Union
             {
                 [FieldOffset(0)]
-                [NativeTypeName("BYTE")]
                 public byte AsBYTE;
 
                 [FieldOffset(0)]
@@ -144,7 +139,7 @@ namespace TerraFX.Interop
                 {
                     public byte _bitfield;
 
-                    [NativeTypeName("BYTE : 1")]
+                    [NativeTypeName("byte : 1")]
                     public byte NoDomainAccounting
                     {
                         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -160,7 +155,7 @@ namespace TerraFX.Interop
                         }
                     }
 
-                    [NativeTypeName("BYTE : 2")]
+                    [NativeTypeName("byte : 2")]
                     public byte IncreasePolicy
                     {
                         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -176,7 +171,7 @@ namespace TerraFX.Interop
                         }
                     }
 
-                    [NativeTypeName("BYTE : 2")]
+                    [NativeTypeName("byte : 2")]
                     public byte DecreasePolicy
                     {
                         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -192,7 +187,7 @@ namespace TerraFX.Interop
                         }
                     }
 
-                    [NativeTypeName("BYTE : 3")]
+                    [NativeTypeName("byte : 3")]
                     public byte Reserved
                     {
                         [MethodImpl(MethodImplOptions.AggressiveInlining)]

@@ -3,7 +3,6 @@
 // Ported from um/WinUser.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
 using System.Runtime.CompilerServices;
 
 namespace TerraFX.Interop
@@ -15,16 +14,14 @@ namespace TerraFX.Interop
 
         public RECT rcBar;
 
-        [NativeTypeName("HMENU")]
-        public IntPtr hMenu;
+        public HMENU hMenu;
 
-        [NativeTypeName("HWND")]
-        public IntPtr hwndMenu;
+        public HWND hwndMenu;
 
-        public int _bitfield;
+        public BOOL _bitfield;
 
         [NativeTypeName("BOOL : 1")]
-        public int fBarFocused
+        public BOOL fBarFocused
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
@@ -40,7 +37,7 @@ namespace TerraFX.Interop
         }
 
         [NativeTypeName("BOOL : 1")]
-        public int fFocused
+        public BOOL fFocused
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
@@ -56,7 +53,7 @@ namespace TerraFX.Interop
         }
 
         [NativeTypeName("BOOL : 30")]
-        public int fUnused
+        public BOOL fUnused
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get

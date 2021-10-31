@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<ICredentialProviderUserArray*, Guid*, void**, int>)(lpVtbl[0]))((ICredentialProviderUserArray*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,32 +41,28 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetProviderFilter([NativeTypeName("const GUID &")] Guid* guidProviderToFilterTo)
+        public HRESULT SetProviderFilter([NativeTypeName("const GUID &")] Guid* guidProviderToFilterTo)
         {
             return ((delegate* unmanaged<ICredentialProviderUserArray*, Guid*, int>)(lpVtbl[3]))((ICredentialProviderUserArray*)Unsafe.AsPointer(ref this), guidProviderToFilterTo);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetAccountOptions(CREDENTIAL_PROVIDER_ACCOUNT_OPTIONS* credentialProviderAccountOptions)
+        public HRESULT GetAccountOptions(CREDENTIAL_PROVIDER_ACCOUNT_OPTIONS* credentialProviderAccountOptions)
         {
             return ((delegate* unmanaged<ICredentialProviderUserArray*, CREDENTIAL_PROVIDER_ACCOUNT_OPTIONS*, int>)(lpVtbl[4]))((ICredentialProviderUserArray*)Unsafe.AsPointer(ref this), credentialProviderAccountOptions);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetCount([NativeTypeName("DWORD *")] uint* userCount)
+        public HRESULT GetCount([NativeTypeName("DWORD *")] uint* userCount)
         {
             return ((delegate* unmanaged<ICredentialProviderUserArray*, uint*, int>)(lpVtbl[5]))((ICredentialProviderUserArray*)Unsafe.AsPointer(ref this), userCount);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetAt([NativeTypeName("DWORD")] uint userIndex, ICredentialProviderUser** user)
+        public HRESULT GetAt([NativeTypeName("DWORD")] uint userIndex, ICredentialProviderUser** user)
         {
             return ((delegate* unmanaged<ICredentialProviderUserArray*, uint, ICredentialProviderUser**, int>)(lpVtbl[6]))((ICredentialProviderUserArray*)Unsafe.AsPointer(ref this), userIndex, user);
         }

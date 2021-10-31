@@ -3,8 +3,6 @@
 // Ported from um/CommCtrl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
-
 namespace TerraFX.Interop
 {
     public unsafe partial struct NMTTDISPINFOA
@@ -17,10 +15,8 @@ namespace TerraFX.Interop
         [NativeTypeName("char [80]")]
         public fixed sbyte szText[80];
 
-        [NativeTypeName("HINSTANCE")]
-        public IntPtr hinst;
+        public HINSTANCE hinst;
 
-        [NativeTypeName("UINT")]
         public uint uFlags;
 
         [NativeTypeName("LPARAM")]

@@ -8,7 +8,7 @@ namespace TerraFX.Interop
     public unsafe partial struct WS_HTTP_REDIRECT_CALLBACK_CONTEXT
     {
         [NativeTypeName("WS_HTTP_REDIRECT_CALLBACK")]
-        public delegate* unmanaged<void*, WS_STRING*, WS_STRING*, int> callback;
+        public delegate* unmanaged<void*, WS_STRING*, WS_STRING*, HRESULT> callback;
 
         public void* state;
     }

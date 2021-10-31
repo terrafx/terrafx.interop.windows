@@ -10,11 +10,9 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint cbSize;
 
-        [NativeTypeName("BOOL")]
-        public int fCommercial;
+        public BOOL fCommercial;
 
-        [NativeTypeName("BOOL")]
-        public int fIndividual;
+        public BOOL fIndividual;
 
         [NativeTypeName("LPCWSTR")]
         public ushort* pwszName;

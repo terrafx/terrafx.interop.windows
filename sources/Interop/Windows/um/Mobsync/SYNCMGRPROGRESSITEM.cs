@@ -10,7 +10,6 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint cbSize;
 
-        [NativeTypeName("UINT")]
         public uint mask;
 
         [NativeTypeName("LPCWSTR")]

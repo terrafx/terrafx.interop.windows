@@ -30,8 +30,7 @@ namespace TerraFX.Interop
         [NativeTypeName("LPFILETIME")]
         public FILETIME* pftCacheResync;
 
-        [NativeTypeName("BOOL")]
-        public int fProxyCacheRetrieval;
+        public BOOL fProxyCacheRetrieval;
 
         [NativeTypeName("DWORD")]
         public uint dwHttpStatusCode;

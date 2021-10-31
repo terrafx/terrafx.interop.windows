@@ -13,7 +13,7 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct D3D12_ROOT_SIGNATURE_DESC1 : IEquatable<D3D12_ROOT_SIGNATURE_DESC1>
     {
-        public D3D12_ROOT_SIGNATURE_DESC1([NativeTypeName("UINT")] uint numParameters, [NativeTypeName("const D3D12_ROOT_PARAMETER1 *")] D3D12_ROOT_PARAMETER1* _pParameters, [NativeTypeName("UINT")] uint numStaticSamplers = 0, [NativeTypeName("const D3D12_STATIC_SAMPLER_DESC *")] D3D12_STATIC_SAMPLER_DESC* _pStaticSamplers = null, D3D12_ROOT_SIGNATURE_FLAGS flags = D3D12_ROOT_SIGNATURE_FLAG_NONE)
+        public D3D12_ROOT_SIGNATURE_DESC1(uint numParameters, [NativeTypeName("const D3D12_ROOT_PARAMETER1 *")] D3D12_ROOT_PARAMETER1* _pParameters, uint numStaticSamplers = 0, [NativeTypeName("const D3D12_STATIC_SAMPLER_DESC *")] D3D12_STATIC_SAMPLER_DESC* _pStaticSamplers = null, D3D12_ROOT_SIGNATURE_FLAGS flags = D3D12_ROOT_SIGNATURE_FLAG_NONE)
         {
             Init(out this, numParameters, _pParameters, numStaticSamplers, _pStaticSamplers, flags);
         }
@@ -67,12 +67,12 @@ namespace TerraFX.Interop
             return !(left == right);
         }
 
-        public void Init([NativeTypeName("UINT")] uint numParameters, [NativeTypeName("const D3D12_ROOT_PARAMETER1 *")] D3D12_ROOT_PARAMETER1* _pParameters, [NativeTypeName("UINT")] uint numStaticSamplers = 0, [NativeTypeName("const D3D12_STATIC_SAMPLER_DESC *")] D3D12_STATIC_SAMPLER_DESC* _pStaticSamplers = null, D3D12_ROOT_SIGNATURE_FLAGS flags = D3D12_ROOT_SIGNATURE_FLAG_NONE)
+        public void Init(uint numParameters, [NativeTypeName("const D3D12_ROOT_PARAMETER1 *")] D3D12_ROOT_PARAMETER1* _pParameters, uint numStaticSamplers = 0, [NativeTypeName("const D3D12_STATIC_SAMPLER_DESC *")] D3D12_STATIC_SAMPLER_DESC* _pStaticSamplers = null, D3D12_ROOT_SIGNATURE_FLAGS flags = D3D12_ROOT_SIGNATURE_FLAG_NONE)
         {
             Init(out this, numParameters, _pParameters, numStaticSamplers, _pStaticSamplers, flags);
         }
 
-        public static void Init([NativeTypeName("D3D12_ROOT_SIGNATURE_DESC1 &")] out D3D12_ROOT_SIGNATURE_DESC1 desc, [NativeTypeName("UINT")] uint numParameters, [NativeTypeName("const D3D12_ROOT_PARAMETER1 *")] D3D12_ROOT_PARAMETER1* _pParameters, [NativeTypeName("UINT")] uint numStaticSamplers = 0, [NativeTypeName("const D3D12_STATIC_SAMPLER_DESC *")] D3D12_STATIC_SAMPLER_DESC* _pStaticSamplers = null, D3D12_ROOT_SIGNATURE_FLAGS flags = D3D12_ROOT_SIGNATURE_FLAG_NONE)
+        public static void Init([NativeTypeName("D3D12_ROOT_SIGNATURE_DESC1 &")] out D3D12_ROOT_SIGNATURE_DESC1 desc, uint numParameters, [NativeTypeName("const D3D12_ROOT_PARAMETER1 *")] D3D12_ROOT_PARAMETER1* _pParameters, uint numStaticSamplers = 0, [NativeTypeName("const D3D12_STATIC_SAMPLER_DESC *")] D3D12_STATIC_SAMPLER_DESC* _pStaticSamplers = null, D3D12_ROOT_SIGNATURE_FLAGS flags = D3D12_ROOT_SIGNATURE_FLAG_NONE)
         {
             desc.NumParameters = numParameters;
             desc.pParameters = _pParameters;

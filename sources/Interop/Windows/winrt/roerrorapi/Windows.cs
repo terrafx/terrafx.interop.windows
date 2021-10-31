@@ -3,7 +3,6 @@
 // Ported from winrt/roerrorapi.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
@@ -11,64 +10,51 @@ namespace TerraFX.Interop
     public static unsafe partial class Windows
     {
         [DllImport("combase", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int RoGetErrorReportingFlags([NativeTypeName("UINT32 *")] uint* pflags);
+        public static extern HRESULT RoGetErrorReportingFlags([NativeTypeName("UINT32 *")] uint* pflags);
 
         [DllImport("combase", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int RoSetErrorReportingFlags([NativeTypeName("UINT32")] uint flags);
+        public static extern HRESULT RoSetErrorReportingFlags([NativeTypeName("UINT32")] uint flags);
 
         [DllImport("combase", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int RoResolveRestrictedErrorInfoReference([NativeTypeName("PCWSTR")] ushort* reference, IRestrictedErrorInfo** ppRestrictedErrorInfo);
+        public static extern HRESULT RoResolveRestrictedErrorInfoReference([NativeTypeName("PCWSTR")] ushort* reference, IRestrictedErrorInfo** ppRestrictedErrorInfo);
 
         [DllImport("combase", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int SetRestrictedErrorInfo(IRestrictedErrorInfo* pRestrictedErrorInfo);
+        public static extern HRESULT SetRestrictedErrorInfo(IRestrictedErrorInfo* pRestrictedErrorInfo);
 
         [DllImport("combase", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int GetRestrictedErrorInfo(IRestrictedErrorInfo** ppRestrictedErrorInfo);
+        public static extern HRESULT GetRestrictedErrorInfo(IRestrictedErrorInfo** ppRestrictedErrorInfo);
 
         [DllImport("combase", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int RoOriginateErrorW([NativeTypeName("HRESULT")] int error, [NativeTypeName("UINT")] uint cchMax, [NativeTypeName("PCWSTR")] ushort* message);
+        public static extern BOOL RoOriginateErrorW(HRESULT error, uint cchMax, [NativeTypeName("PCWSTR")] ushort* message);
 
         [DllImport("combase", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int RoOriginateError([NativeTypeName("HRESULT")] int error, [NativeTypeName("HSTRING")] IntPtr message);
+        public static extern BOOL RoOriginateError(HRESULT error, HSTRING message);
 
         [DllImport("combase", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int RoTransformErrorW([NativeTypeName("HRESULT")] int oldError, [NativeTypeName("HRESULT")] int newError, [NativeTypeName("UINT")] uint cchMax, [NativeTypeName("PCWSTR")] ushort* message);
+        public static extern BOOL RoTransformErrorW(HRESULT oldError, HRESULT newError, uint cchMax, [NativeTypeName("PCWSTR")] ushort* message);
 
         [DllImport("combase", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int RoTransformError([NativeTypeName("HRESULT")] int oldError, [NativeTypeName("HRESULT")] int newError, [NativeTypeName("HSTRING")] IntPtr message);
+        public static extern BOOL RoTransformError(HRESULT oldError, HRESULT newError, HSTRING message);
 
         [DllImport("combase", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int RoCaptureErrorContext([NativeTypeName("HRESULT")] int hr);
+        public static extern HRESULT RoCaptureErrorContext(HRESULT hr);
 
         [DllImport("combase", ExactSpelling = true)]
-        public static extern void RoFailFastWithErrorContext([NativeTypeName("HRESULT")] int hrError);
+        public static extern void RoFailFastWithErrorContext(HRESULT hrError);
 
-        [return: NativeTypeName("HRESULT")]
-        public static int GetErrorReportingFlags([NativeTypeName("UINT32 *")] uint* pflags)
+        public static HRESULT GetErrorReportingFlags([NativeTypeName("UINT32 *")] uint* pflags)
         {
             return RoGetErrorReportingFlags(pflags);
         }
 
-        [return: NativeTypeName("HRESULT")]
-        public static int SetErrorReportingFlags([NativeTypeName("UINT32")] uint flags)
+        public static HRESULT SetErrorReportingFlags([NativeTypeName("UINT32")] uint flags)
         {
             return RoSetErrorReportingFlags(flags);
         }
 
-        [return: NativeTypeName("BOOL")]
-        public static int OriginateError([NativeTypeName("HRESULT")] int error, [NativeTypeName("UINT")] uint cchMax, [NativeTypeName("PCWSTR")] ushort* message)
+        public static BOOL OriginateError(HRESULT error, uint cchMax, [NativeTypeName("PCWSTR")] ushort* message)
         {
-            if ((((int)(error)) >= 0))
+            if ((((HRESULT)(error)) >= 0))
             {
                 return 0;
             }
@@ -76,10 +62,9 @@ namespace TerraFX.Interop
             return RoOriginateErrorW(error, cchMax, message);
         }
 
-        [return: NativeTypeName("BOOL")]
-        public static int OriginateError([NativeTypeName("HRESULT")] int error, [NativeTypeName("HSTRING")] IntPtr message)
+        public static BOOL OriginateError(HRESULT error, HSTRING message)
         {
-            if ((((int)(error)) >= 0))
+            if ((((HRESULT)(error)) >= 0))
             {
                 return 0;
             }
@@ -87,10 +72,9 @@ namespace TerraFX.Interop
             return RoOriginateError(error, message);
         }
 
-        [return: NativeTypeName("BOOL")]
-        public static int TransformError([NativeTypeName("HRESULT")] int oldError, [NativeTypeName("HRESULT")] int newError, [NativeTypeName("UINT")] uint cchMax, [NativeTypeName("PCWSTR")] ushort* message)
+        public static BOOL TransformError(HRESULT oldError, HRESULT newError, uint cchMax, [NativeTypeName("PCWSTR")] ushort* message)
         {
-            if ((oldError == newError) || ((((int)(oldError)) >= 0) && (((int)(newError)) >= 0)))
+            if ((oldError == newError) || ((((HRESULT)(oldError)) >= 0) && (((HRESULT)(newError)) >= 0)))
             {
                 return 0;
             }
@@ -98,10 +82,9 @@ namespace TerraFX.Interop
             return RoTransformErrorW(oldError, newError, cchMax, message);
         }
 
-        [return: NativeTypeName("BOOL")]
-        public static int TransformError([NativeTypeName("HRESULT")] int oldError, [NativeTypeName("HRESULT")] int newError, [NativeTypeName("HSTRING")] IntPtr message)
+        public static BOOL TransformError(HRESULT oldError, HRESULT newError, HSTRING message)
         {
-            if ((oldError == newError) || ((((int)(oldError)) >= 0) && (((int)(newError)) >= 0)))
+            if ((oldError == newError) || ((((HRESULT)(oldError)) >= 0) && (((HRESULT)(newError)) >= 0)))
             {
                 return 0;
             }
@@ -110,31 +93,25 @@ namespace TerraFX.Interop
         }
 
         [DllImport("combase", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int RoOriginateLanguageException([NativeTypeName("HRESULT")] int error, [NativeTypeName("HSTRING")] IntPtr message, IUnknown* languageException);
+        public static extern BOOL RoOriginateLanguageException(HRESULT error, HSTRING message, IUnknown* languageException);
 
         [DllImport("combase", ExactSpelling = true)]
         public static extern void RoClearError();
 
         [DllImport("api-ms-win-core-winrt-error-l1-1-1", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int RoReportUnhandledError(IRestrictedErrorInfo* pRestrictedErrorInfo);
+        public static extern HRESULT RoReportUnhandledError(IRestrictedErrorInfo* pRestrictedErrorInfo);
 
         [DllImport("combase", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int RoInspectThreadErrorInfo([NativeTypeName("UINT_PTR")] nuint targetTebAddress, [NativeTypeName("USHORT")] ushort machine, [NativeTypeName("PINSPECT_MEMORY_CALLBACK")] delegate* unmanaged<void*, nuint, uint, byte*, int> readMemoryCallback, [NativeTypeName("PVOID")] void* context, [NativeTypeName("UINT_PTR *")] nuint* targetErrorInfoAddress);
+        public static extern HRESULT RoInspectThreadErrorInfo([NativeTypeName("UINT_PTR")] nuint targetTebAddress, ushort machine, [NativeTypeName("PINSPECT_MEMORY_CALLBACK")] delegate* unmanaged<void*, nuint, uint, byte*, HRESULT> readMemoryCallback, [NativeTypeName("PVOID")] void* context, [NativeTypeName("UINT_PTR *")] nuint* targetErrorInfoAddress);
 
         [DllImport("combase", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int RoInspectCapturedStackBackTrace([NativeTypeName("UINT_PTR")] nuint targetErrorInfoAddress, [NativeTypeName("USHORT")] ushort machine, [NativeTypeName("PINSPECT_MEMORY_CALLBACK")] delegate* unmanaged<void*, nuint, uint, byte*, int> readMemoryCallback, [NativeTypeName("PVOID")] void* context, [NativeTypeName("UINT32 *")] uint* frameCount, [NativeTypeName("UINT_PTR *")] nuint* targetBackTraceAddress);
+        public static extern HRESULT RoInspectCapturedStackBackTrace([NativeTypeName("UINT_PTR")] nuint targetErrorInfoAddress, ushort machine, [NativeTypeName("PINSPECT_MEMORY_CALLBACK")] delegate* unmanaged<void*, nuint, uint, byte*, HRESULT> readMemoryCallback, [NativeTypeName("PVOID")] void* context, [NativeTypeName("UINT32 *")] uint* frameCount, [NativeTypeName("UINT_PTR *")] nuint* targetBackTraceAddress);
 
         [DllImport("combase", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int RoReportFailedDelegate(IUnknown* punkDelegate, IRestrictedErrorInfo* pRestrictedErrorInfo);
+        public static extern HRESULT RoReportFailedDelegate(IUnknown* punkDelegate, IRestrictedErrorInfo* pRestrictedErrorInfo);
 
         [DllImport("combase", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int IsErrorPropagationEnabled();
+        public static extern BOOL IsErrorPropagationEnabled();
 
         [NativeTypeName("#define MAX_ERROR_MESSAGE_CHARS 512")]
         public const int MAX_ERROR_MESSAGE_CHARS = 512;

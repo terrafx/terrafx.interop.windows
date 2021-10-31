@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IAppxBundleManifestPackageInfo2*, Guid*, void**, int>)(lpVtbl[0]))((IAppxBundleManifestPackageInfo2*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,26 +41,23 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetIsPackageReference([NativeTypeName("BOOL *")] int* isPackageReference)
+        public HRESULT GetIsPackageReference(BOOL* isPackageReference)
         {
-            return ((delegate* unmanaged<IAppxBundleManifestPackageInfo2*, int*, int>)(lpVtbl[3]))((IAppxBundleManifestPackageInfo2*)Unsafe.AsPointer(ref this), isPackageReference);
+            return ((delegate* unmanaged<IAppxBundleManifestPackageInfo2*, BOOL*, int>)(lpVtbl[3]))((IAppxBundleManifestPackageInfo2*)Unsafe.AsPointer(ref this), isPackageReference);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetIsNonQualifiedResourcePackage([NativeTypeName("BOOL *")] int* isNonQualifiedResourcePackage)
+        public HRESULT GetIsNonQualifiedResourcePackage(BOOL* isNonQualifiedResourcePackage)
         {
-            return ((delegate* unmanaged<IAppxBundleManifestPackageInfo2*, int*, int>)(lpVtbl[4]))((IAppxBundleManifestPackageInfo2*)Unsafe.AsPointer(ref this), isNonQualifiedResourcePackage);
+            return ((delegate* unmanaged<IAppxBundleManifestPackageInfo2*, BOOL*, int>)(lpVtbl[4]))((IAppxBundleManifestPackageInfo2*)Unsafe.AsPointer(ref this), isNonQualifiedResourcePackage);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetIsDefaultApplicablePackage([NativeTypeName("BOOL *")] int* isDefaultApplicablePackage)
+        public HRESULT GetIsDefaultApplicablePackage(BOOL* isDefaultApplicablePackage)
         {
-            return ((delegate* unmanaged<IAppxBundleManifestPackageInfo2*, int*, int>)(lpVtbl[5]))((IAppxBundleManifestPackageInfo2*)Unsafe.AsPointer(ref this), isDefaultApplicablePackage);
+            return ((delegate* unmanaged<IAppxBundleManifestPackageInfo2*, BOOL*, int>)(lpVtbl[5]))((IAppxBundleManifestPackageInfo2*)Unsafe.AsPointer(ref this), isDefaultApplicablePackage);
         }
     }
 }

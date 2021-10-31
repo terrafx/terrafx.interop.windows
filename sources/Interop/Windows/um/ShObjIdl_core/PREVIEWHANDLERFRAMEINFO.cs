@@ -3,16 +3,12 @@
 // Ported from um/ShObjIdl_core.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
-
 namespace TerraFX.Interop
 {
     public partial struct PREVIEWHANDLERFRAMEINFO
     {
-        [NativeTypeName("HACCEL")]
-        public IntPtr haccel;
+        public HACCEL haccel;
 
-        [NativeTypeName("UINT")]
         public uint cAccelEntries;
     }
 }

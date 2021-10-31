@@ -12,7 +12,6 @@ namespace TerraFX.Interop
 
         public JOB_OBJECT_NET_RATE_CONTROL_FLAGS ControlFlags;
 
-        [NativeTypeName("BYTE")]
         public byte DscpTag;
     }
 }

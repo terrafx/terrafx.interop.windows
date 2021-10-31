@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<ITfFnReconversion*, Guid*, void**, int>)(lpVtbl[0]))((ITfFnReconversion*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,32 +41,28 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetDisplayName([NativeTypeName("BSTR *")] ushort** pbstrName)
+        public HRESULT GetDisplayName([NativeTypeName("BSTR *")] ushort** pbstrName)
         {
             return ((delegate* unmanaged<ITfFnReconversion*, ushort**, int>)(lpVtbl[3]))((ITfFnReconversion*)Unsafe.AsPointer(ref this), pbstrName);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryRange(ITfRange* pRange, ITfRange** ppNewRange, [NativeTypeName("BOOL *")] int* pfConvertable)
+        public HRESULT QueryRange(ITfRange* pRange, ITfRange** ppNewRange, BOOL* pfConvertable)
         {
-            return ((delegate* unmanaged<ITfFnReconversion*, ITfRange*, ITfRange**, int*, int>)(lpVtbl[4]))((ITfFnReconversion*)Unsafe.AsPointer(ref this), pRange, ppNewRange, pfConvertable);
+            return ((delegate* unmanaged<ITfFnReconversion*, ITfRange*, ITfRange**, BOOL*, int>)(lpVtbl[4]))((ITfFnReconversion*)Unsafe.AsPointer(ref this), pRange, ppNewRange, pfConvertable);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetReconversion(ITfRange* pRange, ITfCandidateList** ppCandList)
+        public HRESULT GetReconversion(ITfRange* pRange, ITfCandidateList** ppCandList)
         {
             return ((delegate* unmanaged<ITfFnReconversion*, ITfRange*, ITfCandidateList**, int>)(lpVtbl[5]))((ITfFnReconversion*)Unsafe.AsPointer(ref this), pRange, ppCandList);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int Reconvert(ITfRange* pRange)
+        public HRESULT Reconvert(ITfRange* pRange)
         {
             return ((delegate* unmanaged<ITfFnReconversion*, ITfRange*, int>)(lpVtbl[6]))((ITfFnReconversion*)Unsafe.AsPointer(ref this), pRange);
         }

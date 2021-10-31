@@ -12,7 +12,6 @@ namespace TerraFX.Interop
         [NativeTypeName("WCHAR [256]")]
         public fixed ushort strProfileName[256];
 
-        [NativeTypeName("GUID")]
         public Guid AdapterGUID;
 
         public WCM_MEDIA_TYPE Media;

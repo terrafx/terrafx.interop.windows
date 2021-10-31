@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<ITfLangBarMgr*, Guid*, void**, int>)(lpVtbl[0]))((ITfLangBarMgr*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,72 +41,63 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int AdviseEventSink(ITfLangBarEventSink* pSink, [NativeTypeName("HWND")] IntPtr hwnd, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("DWORD *")] uint* pdwCookie)
+        public HRESULT AdviseEventSink(ITfLangBarEventSink* pSink, HWND hwnd, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("DWORD *")] uint* pdwCookie)
         {
-            return ((delegate* unmanaged<ITfLangBarMgr*, ITfLangBarEventSink*, IntPtr, uint, uint*, int>)(lpVtbl[3]))((ITfLangBarMgr*)Unsafe.AsPointer(ref this), pSink, hwnd, dwFlags, pdwCookie);
+            return ((delegate* unmanaged<ITfLangBarMgr*, ITfLangBarEventSink*, HWND, uint, uint*, int>)(lpVtbl[3]))((ITfLangBarMgr*)Unsafe.AsPointer(ref this), pSink, hwnd, dwFlags, pdwCookie);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int UnadviseEventSink([NativeTypeName("DWORD")] uint dwCookie)
+        public HRESULT UnadviseEventSink([NativeTypeName("DWORD")] uint dwCookie)
         {
             return ((delegate* unmanaged<ITfLangBarMgr*, uint, int>)(lpVtbl[4]))((ITfLangBarMgr*)Unsafe.AsPointer(ref this), dwCookie);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetThreadMarshalInterface([NativeTypeName("DWORD")] uint dwThreadId, [NativeTypeName("DWORD")] uint dwType, [NativeTypeName("const IID &")] Guid* riid, IUnknown** ppunk)
+        public HRESULT GetThreadMarshalInterface([NativeTypeName("DWORD")] uint dwThreadId, [NativeTypeName("DWORD")] uint dwType, [NativeTypeName("const IID &")] Guid* riid, IUnknown** ppunk)
         {
             return ((delegate* unmanaged<ITfLangBarMgr*, uint, uint, Guid*, IUnknown**, int>)(lpVtbl[5]))((ITfLangBarMgr*)Unsafe.AsPointer(ref this), dwThreadId, dwType, riid, ppunk);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetThreadLangBarItemMgr([NativeTypeName("DWORD")] uint dwThreadId, ITfLangBarItemMgr** pplbi, [NativeTypeName("DWORD *")] uint* pdwThreadid)
+        public HRESULT GetThreadLangBarItemMgr([NativeTypeName("DWORD")] uint dwThreadId, ITfLangBarItemMgr** pplbi, [NativeTypeName("DWORD *")] uint* pdwThreadid)
         {
             return ((delegate* unmanaged<ITfLangBarMgr*, uint, ITfLangBarItemMgr**, uint*, int>)(lpVtbl[6]))((ITfLangBarMgr*)Unsafe.AsPointer(ref this), dwThreadId, pplbi, pdwThreadid);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetInputProcessorProfiles([NativeTypeName("DWORD")] uint dwThreadId, ITfInputProcessorProfiles** ppaip, [NativeTypeName("DWORD *")] uint* pdwThreadid)
+        public HRESULT GetInputProcessorProfiles([NativeTypeName("DWORD")] uint dwThreadId, ITfInputProcessorProfiles** ppaip, [NativeTypeName("DWORD *")] uint* pdwThreadid)
         {
             return ((delegate* unmanaged<ITfLangBarMgr*, uint, ITfInputProcessorProfiles**, uint*, int>)(lpVtbl[7]))((ITfLangBarMgr*)Unsafe.AsPointer(ref this), dwThreadId, ppaip, pdwThreadid);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        [return: NativeTypeName("HRESULT")]
-        public int RestoreLastFocus([NativeTypeName("DWORD *")] uint* pdwThreadId, [NativeTypeName("BOOL")] int fPrev)
+        public HRESULT RestoreLastFocus([NativeTypeName("DWORD *")] uint* pdwThreadId, BOOL fPrev)
         {
-            return ((delegate* unmanaged<ITfLangBarMgr*, uint*, int, int>)(lpVtbl[8]))((ITfLangBarMgr*)Unsafe.AsPointer(ref this), pdwThreadId, fPrev);
+            return ((delegate* unmanaged<ITfLangBarMgr*, uint*, BOOL, int>)(lpVtbl[8]))((ITfLangBarMgr*)Unsafe.AsPointer(ref this), pdwThreadId, fPrev);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetModalInput(ITfLangBarEventSink* pSink, [NativeTypeName("DWORD")] uint dwThreadId, [NativeTypeName("DWORD")] uint dwFlags)
+        public HRESULT SetModalInput(ITfLangBarEventSink* pSink, [NativeTypeName("DWORD")] uint dwThreadId, [NativeTypeName("DWORD")] uint dwFlags)
         {
             return ((delegate* unmanaged<ITfLangBarMgr*, ITfLangBarEventSink*, uint, uint, int>)(lpVtbl[9]))((ITfLangBarMgr*)Unsafe.AsPointer(ref this), pSink, dwThreadId, dwFlags);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(10)]
-        [return: NativeTypeName("HRESULT")]
-        public int ShowFloating([NativeTypeName("DWORD")] uint dwFlags)
+        public HRESULT ShowFloating([NativeTypeName("DWORD")] uint dwFlags)
         {
             return ((delegate* unmanaged<ITfLangBarMgr*, uint, int>)(lpVtbl[10]))((ITfLangBarMgr*)Unsafe.AsPointer(ref this), dwFlags);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(11)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetShowFloatingStatus([NativeTypeName("DWORD *")] uint* pdwFlags)
+        public HRESULT GetShowFloatingStatus([NativeTypeName("DWORD *")] uint* pdwFlags)
         {
             return ((delegate* unmanaged<ITfLangBarMgr*, uint*, int>)(lpVtbl[11]))((ITfLangBarMgr*)Unsafe.AsPointer(ref this), pdwFlags);
         }

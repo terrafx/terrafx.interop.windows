@@ -11,16 +11,13 @@ namespace TerraFX.Interop
     public static unsafe partial class Windows
     {
         [DllImport("schannel", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SslEmptyCacheA([NativeTypeName("LPSTR")] sbyte* pszTargetName, [NativeTypeName("DWORD")] uint dwFlags);
+        public static extern BOOL SslEmptyCacheA([NativeTypeName("LPSTR")] sbyte* pszTargetName, [NativeTypeName("DWORD")] uint dwFlags);
 
         [DllImport("schannel", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SslEmptyCacheW([NativeTypeName("LPWSTR")] ushort* pszTargetName, [NativeTypeName("DWORD")] uint dwFlags);
+        public static extern BOOL SslEmptyCacheW([NativeTypeName("LPWSTR")] ushort* pszTargetName, [NativeTypeName("DWORD")] uint dwFlags);
 
         [DllImport("schannel", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SslCrackCertificate([NativeTypeName("PUCHAR")] byte* pbCertificate, [NativeTypeName("DWORD")] uint cbCertificate, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("PX509Certificate *")] X509Certificate** ppCertificate);
+        public static extern BOOL SslCrackCertificate([NativeTypeName("PUCHAR")] byte* pbCertificate, [NativeTypeName("DWORD")] uint cbCertificate, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("PX509Certificate *")] X509Certificate** ppCertificate);
 
         [DllImport("schannel", ExactSpelling = true)]
         public static extern void SslFreeCertificate([NativeTypeName("PX509Certificate")] X509Certificate* pCertificate);
@@ -534,7 +531,7 @@ namespace TerraFX.Interop
         public const int SP_PROT_X_SERVERS = ((0x00000001 | 0x00000004 | 0x00000010 | 0x40000000 | 0x00000040) | (0x00000040 | 0x00000100 | 0x00000400 | 0x00001000) | (0x00010000 | 0x00040000));
 
         [NativeTypeName("#define SslEmptyCache SslEmptyCacheW")]
-        public static delegate*<ushort*, uint, int> SslEmptyCache => &SslEmptyCacheW;
+        public static delegate*<ushort*, uint, BOOL> SslEmptyCache => &SslEmptyCacheW;
 
         [NativeTypeName("#define SCHANNEL_SECRET_TYPE_CAPI 0x00000001")]
         public const int SCHANNEL_SECRET_TYPE_CAPI = 0x00000001;

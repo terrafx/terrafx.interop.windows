@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<ISurfacePresenter*, Guid*, void**, int>)(lpVtbl[0]))((ISurfacePresenter*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,26 +41,23 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int Present([NativeTypeName("UINT")] uint uBuffer, RECT* pDirty)
+        public HRESULT Present(uint uBuffer, RECT* pDirty)
         {
             return ((delegate* unmanaged<ISurfacePresenter*, uint, RECT*, int>)(lpVtbl[3]))((ISurfacePresenter*)Unsafe.AsPointer(ref this), uBuffer, pDirty);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetBuffer([NativeTypeName("UINT")] uint backBufferIndex, [NativeTypeName("const IID &")] Guid* riid, void** ppBuffer)
+        public HRESULT GetBuffer(uint backBufferIndex, [NativeTypeName("const IID &")] Guid* riid, void** ppBuffer)
         {
             return ((delegate* unmanaged<ISurfacePresenter*, uint, Guid*, void**, int>)(lpVtbl[4]))((ISurfacePresenter*)Unsafe.AsPointer(ref this), backBufferIndex, riid, ppBuffer);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int IsCurrent([NativeTypeName("BOOL *")] int* pIsCurrent)
+        public HRESULT IsCurrent(BOOL* pIsCurrent)
         {
-            return ((delegate* unmanaged<ISurfacePresenter*, int*, int>)(lpVtbl[5]))((ISurfacePresenter*)Unsafe.AsPointer(ref this), pIsCurrent);
+            return ((delegate* unmanaged<ISurfacePresenter*, BOOL*, int>)(lpVtbl[5]))((ISurfacePresenter*)Unsafe.AsPointer(ref this), pIsCurrent);
         }
     }
 }

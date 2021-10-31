@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<ITfThreadMgr*, Guid*, void**, int>)(lpVtbl[0]))((ITfThreadMgr*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,88 +41,77 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int Activate([NativeTypeName("TfClientId *")] uint* ptid)
+        public HRESULT Activate([NativeTypeName("TfClientId *")] uint* ptid)
         {
             return ((delegate* unmanaged<ITfThreadMgr*, uint*, int>)(lpVtbl[3]))((ITfThreadMgr*)Unsafe.AsPointer(ref this), ptid);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int Deactivate()
+        public HRESULT Deactivate()
         {
             return ((delegate* unmanaged<ITfThreadMgr*, int>)(lpVtbl[4]))((ITfThreadMgr*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int CreateDocumentMgr(ITfDocumentMgr** ppdim)
+        public HRESULT CreateDocumentMgr(ITfDocumentMgr** ppdim)
         {
             return ((delegate* unmanaged<ITfThreadMgr*, ITfDocumentMgr**, int>)(lpVtbl[5]))((ITfThreadMgr*)Unsafe.AsPointer(ref this), ppdim);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int EnumDocumentMgrs(IEnumTfDocumentMgrs** ppEnum)
+        public HRESULT EnumDocumentMgrs(IEnumTfDocumentMgrs** ppEnum)
         {
             return ((delegate* unmanaged<ITfThreadMgr*, IEnumTfDocumentMgrs**, int>)(lpVtbl[6]))((ITfThreadMgr*)Unsafe.AsPointer(ref this), ppEnum);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetFocus(ITfDocumentMgr** ppdimFocus)
+        public HRESULT GetFocus(ITfDocumentMgr** ppdimFocus)
         {
             return ((delegate* unmanaged<ITfThreadMgr*, ITfDocumentMgr**, int>)(lpVtbl[7]))((ITfThreadMgr*)Unsafe.AsPointer(ref this), ppdimFocus);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetFocus(ITfDocumentMgr* pdimFocus)
+        public HRESULT SetFocus(ITfDocumentMgr* pdimFocus)
         {
             return ((delegate* unmanaged<ITfThreadMgr*, ITfDocumentMgr*, int>)(lpVtbl[8]))((ITfThreadMgr*)Unsafe.AsPointer(ref this), pdimFocus);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        [return: NativeTypeName("HRESULT")]
-        public int AssociateFocus([NativeTypeName("HWND")] IntPtr hwnd, ITfDocumentMgr* pdimNew, ITfDocumentMgr** ppdimPrev)
+        public HRESULT AssociateFocus(HWND hwnd, ITfDocumentMgr* pdimNew, ITfDocumentMgr** ppdimPrev)
         {
-            return ((delegate* unmanaged<ITfThreadMgr*, IntPtr, ITfDocumentMgr*, ITfDocumentMgr**, int>)(lpVtbl[9]))((ITfThreadMgr*)Unsafe.AsPointer(ref this), hwnd, pdimNew, ppdimPrev);
+            return ((delegate* unmanaged<ITfThreadMgr*, HWND, ITfDocumentMgr*, ITfDocumentMgr**, int>)(lpVtbl[9]))((ITfThreadMgr*)Unsafe.AsPointer(ref this), hwnd, pdimNew, ppdimPrev);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(10)]
-        [return: NativeTypeName("HRESULT")]
-        public int IsThreadFocus([NativeTypeName("BOOL *")] int* pfThreadFocus)
+        public HRESULT IsThreadFocus(BOOL* pfThreadFocus)
         {
-            return ((delegate* unmanaged<ITfThreadMgr*, int*, int>)(lpVtbl[10]))((ITfThreadMgr*)Unsafe.AsPointer(ref this), pfThreadFocus);
+            return ((delegate* unmanaged<ITfThreadMgr*, BOOL*, int>)(lpVtbl[10]))((ITfThreadMgr*)Unsafe.AsPointer(ref this), pfThreadFocus);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(11)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetFunctionProvider([NativeTypeName("const IID &")] Guid* clsid, ITfFunctionProvider** ppFuncProv)
+        public HRESULT GetFunctionProvider([NativeTypeName("const IID &")] Guid* clsid, ITfFunctionProvider** ppFuncProv)
         {
             return ((delegate* unmanaged<ITfThreadMgr*, Guid*, ITfFunctionProvider**, int>)(lpVtbl[11]))((ITfThreadMgr*)Unsafe.AsPointer(ref this), clsid, ppFuncProv);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(12)]
-        [return: NativeTypeName("HRESULT")]
-        public int EnumFunctionProviders(IEnumTfFunctionProviders** ppEnum)
+        public HRESULT EnumFunctionProviders(IEnumTfFunctionProviders** ppEnum)
         {
             return ((delegate* unmanaged<ITfThreadMgr*, IEnumTfFunctionProviders**, int>)(lpVtbl[12]))((ITfThreadMgr*)Unsafe.AsPointer(ref this), ppEnum);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(13)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetGlobalCompartment(ITfCompartmentMgr** ppCompMgr)
+        public HRESULT GetGlobalCompartment(ITfCompartmentMgr** ppCompMgr)
         {
             return ((delegate* unmanaged<ITfThreadMgr*, ITfCompartmentMgr**, int>)(lpVtbl[13]))((ITfThreadMgr*)Unsafe.AsPointer(ref this), ppCompMgr);
         }

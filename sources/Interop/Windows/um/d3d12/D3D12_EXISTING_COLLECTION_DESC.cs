@@ -9,7 +9,6 @@ namespace TerraFX.Interop
     {
         public ID3D12StateObject* pExistingCollection;
 
-        [NativeTypeName("UINT")]
         public uint NumExports;
 
         public D3D12_EXPORT_DESC* pExports;

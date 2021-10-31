@@ -21,7 +21,7 @@ namespace TerraFX.Interop
             return !(l == r);
         }
 
-        public D3D12_VIEWPORT([NativeTypeName("FLOAT")] float topLeftX, [NativeTypeName("FLOAT")] float topLeftY, [NativeTypeName("FLOAT")] float width, [NativeTypeName("FLOAT")] float height, [NativeTypeName("FLOAT")] float minDepth = D3D12_MIN_DEPTH, [NativeTypeName("FLOAT")] float maxDepth = D3D12_MAX_DEPTH)
+        public D3D12_VIEWPORT(float topLeftX, float topLeftY, float width, float height, float minDepth = D3D12_MIN_DEPTH, float maxDepth = D3D12_MAX_DEPTH)
         {
             TopLeftX = topLeftX;
             TopLeftY = topLeftY;
@@ -31,7 +31,7 @@ namespace TerraFX.Interop
             MaxDepth = maxDepth;
         }
 
-        public D3D12_VIEWPORT([NativeTypeName("ID3D12Resource *")] ID3D12Resource* pResource, [NativeTypeName("UINT")] uint mipSlice = 0, [NativeTypeName("FLOAT")] float topLeftX = 0.0f, [NativeTypeName("FLOAT")] float topLeftY = 0.0f, [NativeTypeName("FLOAT")] float minDepth = D3D12_MIN_DEPTH, [NativeTypeName("FLOAT")] float maxDepth = D3D12_MAX_DEPTH)
+        public D3D12_VIEWPORT(ID3D12Resource* pResource, uint mipSlice = 0, float topLeftX = 0.0f, float topLeftY = 0.0f, float minDepth = D3D12_MIN_DEPTH, float maxDepth = D3D12_MAX_DEPTH)
         {
             var Desc = pResource->GetDesc();
 

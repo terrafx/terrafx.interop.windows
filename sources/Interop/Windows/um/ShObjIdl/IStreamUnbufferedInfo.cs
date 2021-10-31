@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IStreamUnbufferedInfo*, Guid*, void**, int>)(lpVtbl[0]))((IStreamUnbufferedInfo*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,8 +41,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetSectorSize([NativeTypeName("ULONG *")] uint* pcbSectorSize)
+        public HRESULT GetSectorSize([NativeTypeName("ULONG *")] uint* pcbSectorSize)
         {
             return ((delegate* unmanaged<IStreamUnbufferedInfo*, uint*, int>)(lpVtbl[3]))((IStreamUnbufferedInfo*)Unsafe.AsPointer(ref this), pcbSectorSize);
         }

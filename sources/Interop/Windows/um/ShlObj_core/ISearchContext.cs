@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<ISearchContext*, Guid*, void**, int>)(lpVtbl[0]))((ISearchContext*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,24 +41,21 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetSearchUrl([NativeTypeName("BSTR *")] ushort** pbstrSearchUrl)
+        public HRESULT GetSearchUrl([NativeTypeName("BSTR *")] ushort** pbstrSearchUrl)
         {
             return ((delegate* unmanaged<ISearchContext*, ushort**, int>)(lpVtbl[3]))((ISearchContext*)Unsafe.AsPointer(ref this), pbstrSearchUrl);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetSearchText([NativeTypeName("BSTR *")] ushort** pbstrSearchText)
+        public HRESULT GetSearchText([NativeTypeName("BSTR *")] ushort** pbstrSearchText)
         {
             return ((delegate* unmanaged<ISearchContext*, ushort**, int>)(lpVtbl[4]))((ISearchContext*)Unsafe.AsPointer(ref this), pbstrSearchText);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetSearchStyle([NativeTypeName("DWORD *")] uint* pdwSearchStyle)
+        public HRESULT GetSearchStyle([NativeTypeName("DWORD *")] uint* pdwSearchStyle)
         {
             return ((delegate* unmanaged<ISearchContext*, uint*, int>)(lpVtbl[5]))((ISearchContext*)Unsafe.AsPointer(ref this), pdwSearchStyle);
         }

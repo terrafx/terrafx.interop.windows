@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct COMBOBOXEXITEMA
     {
-        [NativeTypeName("UINT")]
         public uint mask;
 
         [NativeTypeName("INT_PTR")]

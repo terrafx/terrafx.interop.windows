@@ -84,16 +84,12 @@ namespace TerraFX.Interop
             [NativeTypeName("DWORD")]
             public uint CheckSum;
 
-            [NativeTypeName("SHORT")]
             public short Number;
 
-            [NativeTypeName("BYTE")]
             public byte Selection;
 
-            [NativeTypeName("BYTE")]
             public byte bReserved;
 
-            [NativeTypeName("SHORT")]
             public short HighNumber;
 
             [NativeTypeName("BYTE [2]")]

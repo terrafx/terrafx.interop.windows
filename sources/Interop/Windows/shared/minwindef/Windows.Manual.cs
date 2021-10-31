@@ -34,14 +34,12 @@ namespace TerraFX.Interop
         public static ushort HIWORD(nint l) => HIWORD((nuint)(l));
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [return: NativeTypeName("BYTE")]
         public static byte LOBYTE([NativeTypeName("DWORD_PTR")] nuint w) => ((byte)(((nuint)(w)) & 0xff));
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static byte LOBYTE(nint w) => LOBYTE((nuint)(w));
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [return: NativeTypeName("BYTE")]
         public static byte HIBYTE([NativeTypeName("DWORD_PTR")] nuint w) => ((byte)((((nuint)(w)) >> 8) & 0xff));
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

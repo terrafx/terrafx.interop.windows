@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IPropertyPageSite*, Guid*, void**, int>)(lpVtbl[0]))((IPropertyPageSite*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,32 +41,28 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int OnStatusChange([NativeTypeName("DWORD")] uint dwFlags)
+        public HRESULT OnStatusChange([NativeTypeName("DWORD")] uint dwFlags)
         {
             return ((delegate* unmanaged<IPropertyPageSite*, uint, int>)(lpVtbl[3]))((IPropertyPageSite*)Unsafe.AsPointer(ref this), dwFlags);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetLocaleID([NativeTypeName("LCID *")] uint* pLocaleID)
+        public HRESULT GetLocaleID([NativeTypeName("LCID *")] uint* pLocaleID)
         {
             return ((delegate* unmanaged<IPropertyPageSite*, uint*, int>)(lpVtbl[4]))((IPropertyPageSite*)Unsafe.AsPointer(ref this), pLocaleID);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetPageContainer(IUnknown** ppUnk)
+        public HRESULT GetPageContainer(IUnknown** ppUnk)
         {
             return ((delegate* unmanaged<IPropertyPageSite*, IUnknown**, int>)(lpVtbl[5]))((IPropertyPageSite*)Unsafe.AsPointer(ref this), ppUnk);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int TranslateAccelerator(MSG* pMsg)
+        public HRESULT TranslateAccelerator(MSG* pMsg)
         {
             return ((delegate* unmanaged<IPropertyPageSite*, MSG*, int>)(lpVtbl[6]))((IPropertyPageSite*)Unsafe.AsPointer(ref this), pMsg);
         }

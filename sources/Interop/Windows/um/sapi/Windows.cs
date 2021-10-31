@@ -230,15 +230,6 @@ namespace TerraFX.Interop
         [NativeTypeName("#define SP_STREAMPOS_REALTIME ( -1 )")]
         public const int SP_STREAMPOS_REALTIME = (-1);
 
-        [NativeTypeName("#define SPRULETRANS_TEXTBUFFER (SPSTATEHANDLE)(-1)")]
-        public static IntPtr SPRULETRANS_TEXTBUFFER => (nint)(-1);
-
-        [NativeTypeName("#define SPRULETRANS_WILDCARD (SPSTATEHANDLE)(-2)")]
-        public static IntPtr SPRULETRANS_WILDCARD => (nint)(-2);
-
-        [NativeTypeName("#define SPRULETRANS_DICTATION (SPSTATEHANDLE)(-3)")]
-        public static IntPtr SPRULETRANS_DICTATION => (nint)(-3);
-
         [NativeTypeName("#define SPRP_NORMAL 0")]
         public const int SPRP_NORMAL = 0;
 

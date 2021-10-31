@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<ITfSystemDeviceTypeLangBarItem*, Guid*, void**, int>)(lpVtbl[0]))((ITfSystemDeviceTypeLangBarItem*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,16 +41,14 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetIconMode([NativeTypeName("DWORD")] uint dwFlags)
+        public HRESULT SetIconMode([NativeTypeName("DWORD")] uint dwFlags)
         {
             return ((delegate* unmanaged<ITfSystemDeviceTypeLangBarItem*, uint, int>)(lpVtbl[3]))((ITfSystemDeviceTypeLangBarItem*)Unsafe.AsPointer(ref this), dwFlags);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetIconMode([NativeTypeName("DWORD *")] uint* pdwFlags)
+        public HRESULT GetIconMode([NativeTypeName("DWORD *")] uint* pdwFlags)
         {
             return ((delegate* unmanaged<ITfSystemDeviceTypeLangBarItem*, uint*, int>)(lpVtbl[4]))((ITfSystemDeviceTypeLangBarItem*)Unsafe.AsPointer(ref this), pdwFlags);
         }

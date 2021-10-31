@@ -17,8 +17,7 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint dwLastScroll;
 
-        [NativeTypeName("BOOL")]
-        public int bFull;
+        public BOOL bFull;
 
         [NativeTypeName("POINT [3]")]
         public _pts_e__FixedBuffer pts;

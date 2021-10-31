@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IShellItem*, Guid*, void**, int>)(lpVtbl[0]))((IShellItem*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,40 +41,35 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int BindToHandler(IBindCtx* pbc, [NativeTypeName("const GUID &")] Guid* bhid, [NativeTypeName("const IID &")] Guid* riid, void** ppv)
+        public HRESULT BindToHandler(IBindCtx* pbc, [NativeTypeName("const GUID &")] Guid* bhid, [NativeTypeName("const IID &")] Guid* riid, void** ppv)
         {
             return ((delegate* unmanaged<IShellItem*, IBindCtx*, Guid*, Guid*, void**, int>)(lpVtbl[3]))((IShellItem*)Unsafe.AsPointer(ref this), pbc, bhid, riid, ppv);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetParent(IShellItem** ppsi)
+        public HRESULT GetParent(IShellItem** ppsi)
         {
             return ((delegate* unmanaged<IShellItem*, IShellItem**, int>)(lpVtbl[4]))((IShellItem*)Unsafe.AsPointer(ref this), ppsi);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetDisplayName(SIGDN sigdnName, [NativeTypeName("LPWSTR *")] ushort** ppszName)
+        public HRESULT GetDisplayName(SIGDN sigdnName, [NativeTypeName("LPWSTR *")] ushort** ppszName)
         {
             return ((delegate* unmanaged<IShellItem*, SIGDN, ushort**, int>)(lpVtbl[5]))((IShellItem*)Unsafe.AsPointer(ref this), sigdnName, ppszName);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetAttributes([NativeTypeName("SFGAOF")] uint sfgaoMask, [NativeTypeName("SFGAOF *")] uint* psfgaoAttribs)
+        public HRESULT GetAttributes([NativeTypeName("SFGAOF")] uint sfgaoMask, [NativeTypeName("SFGAOF *")] uint* psfgaoAttribs)
         {
             return ((delegate* unmanaged<IShellItem*, uint, uint*, int>)(lpVtbl[6]))((IShellItem*)Unsafe.AsPointer(ref this), sfgaoMask, psfgaoAttribs);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        [return: NativeTypeName("HRESULT")]
-        public int Compare(IShellItem* psi, [NativeTypeName("SICHINTF")] uint hint, int* piOrder)
+        public HRESULT Compare(IShellItem* psi, [NativeTypeName("SICHINTF")] uint hint, int* piOrder)
         {
             return ((delegate* unmanaged<IShellItem*, IShellItem*, uint, int*, int>)(lpVtbl[7]))((IShellItem*)Unsafe.AsPointer(ref this), psi, hint, piOrder);
         }

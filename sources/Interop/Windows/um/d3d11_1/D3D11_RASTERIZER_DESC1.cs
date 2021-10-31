@@ -11,31 +11,22 @@ namespace TerraFX.Interop
 
         public D3D11_CULL_MODE CullMode;
 
-        [NativeTypeName("BOOL")]
-        public int FrontCounterClockwise;
+        public BOOL FrontCounterClockwise;
 
-        [NativeTypeName("INT")]
         public int DepthBias;
 
-        [NativeTypeName("FLOAT")]
         public float DepthBiasClamp;
 
-        [NativeTypeName("FLOAT")]
         public float SlopeScaledDepthBias;
 
-        [NativeTypeName("BOOL")]
-        public int DepthClipEnable;
+        public BOOL DepthClipEnable;
 
-        [NativeTypeName("BOOL")]
-        public int ScissorEnable;
+        public BOOL ScissorEnable;
 
-        [NativeTypeName("BOOL")]
-        public int MultisampleEnable;
+        public BOOL MultisampleEnable;
 
-        [NativeTypeName("BOOL")]
-        public int AntialiasedLineEnable;
+        public BOOL AntialiasedLineEnable;
 
-        [NativeTypeName("UINT")]
         public uint ForcedSampleCount;
     }
 }

@@ -28,7 +28,6 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint DataSet4Length;
 
-        [NativeTypeName("BYTE")]
         public byte StatusDataVersion;
 
         [NativeTypeName("BYTE [3]")]

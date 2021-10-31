@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<ISeekingPassThru*, Guid*, void**, int>)(lpVtbl[0]))((ISeekingPassThru*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,10 +41,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int Init([NativeTypeName("BOOL")] int bSupportRendering, IPin* pPin)
+        public HRESULT Init(BOOL bSupportRendering, IPin* pPin)
         {
-            return ((delegate* unmanaged<ISeekingPassThru*, int, IPin*, int>)(lpVtbl[3]))((ISeekingPassThru*)Unsafe.AsPointer(ref this), bSupportRendering, pPin);
+            return ((delegate* unmanaged<ISeekingPassThru*, BOOL, IPin*, int>)(lpVtbl[3]))((ISeekingPassThru*)Unsafe.AsPointer(ref this), bSupportRendering, pPin);
         }
     }
 }

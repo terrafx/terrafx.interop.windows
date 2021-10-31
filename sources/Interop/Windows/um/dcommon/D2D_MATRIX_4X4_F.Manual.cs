@@ -13,7 +13,7 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct D2D_MATRIX_4X4_F : IEquatable<D2D_MATRIX_4X4_F>
     {
-        public D2D_MATRIX_4X4_F([NativeTypeName("FLOAT")] float m11, [NativeTypeName("FLOAT")] float m12, [NativeTypeName("FLOAT")] float m13, [NativeTypeName("FLOAT")] float m14, [NativeTypeName("FLOAT")] float m21, [NativeTypeName("FLOAT")] float m22, [NativeTypeName("FLOAT")] float m23, [NativeTypeName("FLOAT")] float m24, [NativeTypeName("FLOAT")] float m31, [NativeTypeName("FLOAT")] float m32, [NativeTypeName("FLOAT")] float m33, [NativeTypeName("FLOAT")] float m34, [NativeTypeName("FLOAT")] float m41, [NativeTypeName("FLOAT")] float m42, [NativeTypeName("FLOAT")] float m43, [NativeTypeName("FLOAT")] float m44)
+        public D2D_MATRIX_4X4_F(float m11, float m12, float m13, float m14, float m21, float m22, float m23, float m24, float m31, float m32, float m33, float m34, float m41, float m42, float m43, float m44)
         {
             this = default;
 
@@ -74,7 +74,7 @@ namespace TerraFX.Interop
             return !(l == r);
         }
 
-        public static D2D_MATRIX_4X4_F Translation([NativeTypeName("FLOAT")] float x, [NativeTypeName("FLOAT")] float y, [NativeTypeName("FLOAT")] float z)
+        public static D2D_MATRIX_4X4_F Translation(float x, float y, float z)
         {
             D2D_MATRIX_4X4_F translation = default;
 
@@ -98,7 +98,7 @@ namespace TerraFX.Interop
             return translation;
         }
 
-        public static D2D_MATRIX_4X4_F Scale([NativeTypeName("FLOAT")] float x, [NativeTypeName("FLOAT")] float y, [NativeTypeName("FLOAT")] float z)
+        public static D2D_MATRIX_4X4_F Scale(float x, float y, float z)
         {
             D2D_MATRIX_4X4_F scale = default;
 
@@ -122,7 +122,7 @@ namespace TerraFX.Interop
             return scale;
         }
 
-        public static D2D_MATRIX_4X4_F RotationX([NativeTypeName("FLOAT")] float degreeX)
+        public static D2D_MATRIX_4X4_F RotationX(float degreeX)
         {
             float angleInRadian = degreeX * (MathF.PI / 180.0f);
             float sinAngle = 0.0f;
@@ -135,7 +135,7 @@ namespace TerraFX.Interop
             return rotationX;
         }
 
-        public static D2D_MATRIX_4X4_F RotationY([NativeTypeName("FLOAT")] float degreeY)
+        public static D2D_MATRIX_4X4_F RotationY(float degreeY)
         {
             float angleInRadian = degreeY * (MathF.PI / 180.0f);
             float sinAngle = 0.0f;
@@ -148,7 +148,7 @@ namespace TerraFX.Interop
             return rotationY;
         }
 
-        public static D2D_MATRIX_4X4_F RotationZ([NativeTypeName("FLOAT")] float degreeZ)
+        public static D2D_MATRIX_4X4_F RotationZ(float degreeZ)
         {
             float angleInRadian = degreeZ * (MathF.PI / 180.0f);
             float sinAngle = 0.0f;
@@ -161,7 +161,7 @@ namespace TerraFX.Interop
             return rotationZ;
         }
 
-        public static D2D_MATRIX_4X4_F RotationArbitraryAxis([NativeTypeName("FLOAT")] float x, [NativeTypeName("FLOAT")] float y, [NativeTypeName("FLOAT")] float z, [NativeTypeName("FLOAT")] float degree)
+        public static D2D_MATRIX_4X4_F RotationArbitraryAxis(float x, float y, float z, float degree)
         {
             float magnitude = D2D1Vec3Length(x, y, z);
 
@@ -181,7 +181,7 @@ namespace TerraFX.Interop
             return rotationArb;
         }
 
-        public static D2D_MATRIX_4X4_F SkewX([NativeTypeName("FLOAT")] float degreeX)
+        public static D2D_MATRIX_4X4_F SkewX(float degreeX)
         {
             float angleInRadian = degreeX * (3.141592654f / 180.0f);
             float tanAngle = D2D1Tan(angleInRadian);
@@ -191,7 +191,7 @@ namespace TerraFX.Interop
             return skewX;
         }
 
-        public static D2D_MATRIX_4X4_F SkewY([NativeTypeName("FLOAT")] float degreeY)
+        public static D2D_MATRIX_4X4_F SkewY(float degreeY)
         {
             float angleInRadian = degreeY * (3.141592654f / 180.0f);
             float tanAngle = D2D1Tan(angleInRadian);
@@ -201,7 +201,7 @@ namespace TerraFX.Interop
             return skewY;
         }
 
-        public static D2D_MATRIX_4X4_F PerspectiveProjection([NativeTypeName("FLOAT")] float depth)
+        public static D2D_MATRIX_4X4_F PerspectiveProjection(float depth)
         {
             float proj = 0;
 

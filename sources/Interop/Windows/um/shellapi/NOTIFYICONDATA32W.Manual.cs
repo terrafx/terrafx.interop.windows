@@ -15,20 +15,15 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint cbSize;
 
-        [NativeTypeName("HWND")]
-        public IntPtr hWnd;
+        public HWND hWnd;
 
-        [NativeTypeName("UINT")]
         public uint uID;
 
-        [NativeTypeName("UINT")]
         public uint uFlags;
 
-        [NativeTypeName("UINT")]
         public uint uCallbackMessage;
 
-        [NativeTypeName("HICON")]
-        public IntPtr hIcon;
+        public HICON hIcon;
 
         [NativeTypeName("WCHAR [128]")]
         public fixed ushort szTip[128];
@@ -51,11 +46,9 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint dwInfoFlags;
 
-        [NativeTypeName("GUID")]
         public Guid guidItem;
 
-        [NativeTypeName("HICON")]
-        public IntPtr hBalloonIcon;
+        public HICON hBalloonIcon;
 
         public ref uint uTimeout
         {

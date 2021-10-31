@@ -10,10 +10,8 @@ namespace TerraFX.Interop
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe partial struct DRIVERSTATUS
     {
-        [NativeTypeName("BYTE")]
         public byte bDriverError;
 
-        [NativeTypeName("BYTE")]
         public byte bIDEError;
 
         [NativeTypeName("BYTE [2]")]

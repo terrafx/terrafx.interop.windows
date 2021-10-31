@@ -9,12 +9,10 @@ namespace TerraFX.Interop
     {
         public DXGI_FORMAT Format;
 
-        [NativeTypeName("UINT")]
         public uint SampleCount;
 
         public D3D12_MULTISAMPLE_QUALITY_LEVEL_FLAGS Flags;
 
-        [NativeTypeName("UINT")]
         public uint NumQualityLevels;
     }
 }

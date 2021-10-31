@@ -13,7 +13,6 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint cbBlob;
 
-        [NativeTypeName("BYTE *")]
         public byte* pbBlob;
     }
 }

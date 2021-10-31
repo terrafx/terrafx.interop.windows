@@ -11,10 +11,8 @@ namespace TerraFX.Interop
 
         public EC_SEARCHWEB_ENTRYPOINT entrypoint;
 
-        [NativeTypeName("BOOL")]
-        public int hasQueryText;
+        public BOOL hasQueryText;
 
-        [NativeTypeName("BOOL")]
-        public int invokeSucceeded;
+        public BOOL invokeSucceeded;
     }
 }

@@ -13,7 +13,6 @@ namespace TerraFX.Interop
         [NativeTypeName("const WCHAR *")]
         public ushort* pszDisplay;
 
-        [NativeTypeName("BYTE")]
         public byte bDisplayAttributes;
     }
 }

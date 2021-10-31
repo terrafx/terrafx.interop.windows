@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<ITfSystemLangBarItemSink*, Guid*, void**, int>)(lpVtbl[0]))((ITfSystemLangBarItemSink*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,16 +41,14 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int InitMenu(ITfMenu* pMenu)
+        public HRESULT InitMenu(ITfMenu* pMenu)
         {
             return ((delegate* unmanaged<ITfSystemLangBarItemSink*, ITfMenu*, int>)(lpVtbl[3]))((ITfSystemLangBarItemSink*)Unsafe.AsPointer(ref this), pMenu);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int OnMenuSelect([NativeTypeName("UINT")] uint wID)
+        public HRESULT OnMenuSelect(uint wID)
         {
             return ((delegate* unmanaged<ITfSystemLangBarItemSink*, uint, int>)(lpVtbl[4]))((ITfSystemLangBarItemSink*)Unsafe.AsPointer(ref this), wID);
         }

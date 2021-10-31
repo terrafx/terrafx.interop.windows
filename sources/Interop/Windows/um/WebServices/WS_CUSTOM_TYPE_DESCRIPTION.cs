@@ -16,14 +16,14 @@ namespace TerraFX.Interop
         public uint alignment;
 
         [NativeTypeName("WS_READ_TYPE_CALLBACK")]
-        public delegate* unmanaged<IntPtr, WS_TYPE_MAPPING, void*, IntPtr, void*, uint, IntPtr, int> readCallback;
+        public delegate* unmanaged<IntPtr, WS_TYPE_MAPPING, void*, IntPtr, void*, uint, IntPtr, HRESULT> readCallback;
 
         [NativeTypeName("WS_WRITE_TYPE_CALLBACK")]
-        public delegate* unmanaged<IntPtr, WS_TYPE_MAPPING, void*, void*, uint, IntPtr, int> writeCallback;
+        public delegate* unmanaged<IntPtr, WS_TYPE_MAPPING, void*, void*, uint, IntPtr, HRESULT> writeCallback;
 
         public void* descriptionData;
 
         [NativeTypeName("WS_IS_DEFAULT_VALUE_CALLBACK")]
-        public delegate* unmanaged<void*, void*, void*, uint, int*, IntPtr, int> isDefaultValueCallback;
+        public delegate* unmanaged<void*, void*, void*, uint, BOOL*, IntPtr, HRESULT> isDefaultValueCallback;
     }
 }

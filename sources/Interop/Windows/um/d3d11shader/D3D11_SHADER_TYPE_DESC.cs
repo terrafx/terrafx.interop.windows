@@ -11,19 +11,14 @@ namespace TerraFX.Interop
 
         public D3D_SHADER_VARIABLE_TYPE Type;
 
-        [NativeTypeName("UINT")]
         public uint Rows;
 
-        [NativeTypeName("UINT")]
         public uint Columns;
 
-        [NativeTypeName("UINT")]
         public uint Elements;
 
-        [NativeTypeName("UINT")]
         public uint Members;
 
-        [NativeTypeName("UINT")]
         public uint Offset;
 
         [NativeTypeName("LPCSTR")]

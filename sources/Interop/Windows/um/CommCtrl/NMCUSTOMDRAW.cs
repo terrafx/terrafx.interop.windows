@@ -3,8 +3,6 @@
 // Ported from um/CommCtrl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
-
 namespace TerraFX.Interop
 {
     public partial struct NMCUSTOMDRAW
@@ -14,15 +12,13 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint dwDrawStage;
 
-        [NativeTypeName("HDC")]
-        public IntPtr hdc;
+        public HDC hdc;
 
         public RECT rc;
 
         [NativeTypeName("DWORD_PTR")]
         public nuint dwItemSpec;
 
-        [NativeTypeName("UINT")]
         public uint uItemState;
 
         [NativeTypeName("LPARAM")]

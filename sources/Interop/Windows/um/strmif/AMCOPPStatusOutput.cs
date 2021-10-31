@@ -9,7 +9,6 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct AMCOPPStatusOutput
     {
-        [NativeTypeName("GUID")]
         public Guid macKDI;
 
         [NativeTypeName("DWORD")]

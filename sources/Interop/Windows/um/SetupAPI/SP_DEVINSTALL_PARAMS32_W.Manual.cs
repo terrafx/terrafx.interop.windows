@@ -20,8 +20,7 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint FlagsEx;
 
-        [NativeTypeName("HWND")]
-        public IntPtr hwndParent;
+        public HWND hwndParent;
 
         [NativeTypeName("PSP_FILE_CALLBACK_W")]
         public delegate* unmanaged<void*, uint, nuint, nuint, uint> InstallMsgHandler;
@@ -29,8 +28,7 @@ namespace TerraFX.Interop
         [NativeTypeName("PVOID")]
         public void* InstallMsgHandlerContext;
 
-        [NativeTypeName("HSPFILEQ")]
-        public IntPtr FileQueue;
+        public HSPFILEQ FileQueue;
 
         [NativeTypeName("ULONG_PTR")]
         public nuint ClassInstallReserved;

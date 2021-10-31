@@ -3,8 +3,6 @@
 // Ported from um/WinUser.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
-
 namespace TerraFX.Interop
 {
     public partial struct RAWINPUTHEADER
@@ -15,8 +13,7 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint dwSize;
 
-        [NativeTypeName("HANDLE")]
-        public IntPtr hDevice;
+        public HANDLE hDevice;
 
         [NativeTypeName("WPARAM")]
         public nuint wParam;

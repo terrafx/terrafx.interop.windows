@@ -7,11 +7,9 @@ namespace TerraFX.Interop
 {
     public partial struct DVD_VideoAttributes
     {
-        [NativeTypeName("BOOL")]
-        public int fPanscanPermitted;
+        public BOOL fPanscanPermitted;
 
-        [NativeTypeName("BOOL")]
-        public int fLetterboxPermitted;
+        public BOOL fLetterboxPermitted;
 
         [NativeTypeName("ULONG")]
         public uint ulAspectX;
@@ -27,11 +25,9 @@ namespace TerraFX.Interop
 
         public DVD_VIDEO_COMPRESSION Compression;
 
-        [NativeTypeName("BOOL")]
-        public int fLine21Field1InGOP;
+        public BOOL fLine21Field1InGOP;
 
-        [NativeTypeName("BOOL")]
-        public int fLine21Field2InGOP;
+        public BOOL fLine21Field2InGOP;
 
         [NativeTypeName("ULONG")]
         public uint ulSourceResolutionX;
@@ -39,10 +35,8 @@ namespace TerraFX.Interop
         [NativeTypeName("ULONG")]
         public uint ulSourceResolutionY;
 
-        [NativeTypeName("BOOL")]
-        public int fIsSourceLetterboxed;
+        public BOOL fIsSourceLetterboxed;
 
-        [NativeTypeName("BOOL")]
-        public int fIsFilmMode;
+        public BOOL fIsFilmMode;
     }
 }

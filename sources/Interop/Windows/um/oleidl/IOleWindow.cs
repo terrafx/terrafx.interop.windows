@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IOleWindow*, Guid*, void**, int>)(lpVtbl[0]))((IOleWindow*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,18 +41,16 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetWindow([NativeTypeName("HWND *")] IntPtr* phwnd)
+        public HRESULT GetWindow(HWND* phwnd)
         {
-            return ((delegate* unmanaged<IOleWindow*, IntPtr*, int>)(lpVtbl[3]))((IOleWindow*)Unsafe.AsPointer(ref this), phwnd);
+            return ((delegate* unmanaged<IOleWindow*, HWND*, int>)(lpVtbl[3]))((IOleWindow*)Unsafe.AsPointer(ref this), phwnd);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int ContextSensitiveHelp([NativeTypeName("BOOL")] int fEnterMode)
+        public HRESULT ContextSensitiveHelp(BOOL fEnterMode)
         {
-            return ((delegate* unmanaged<IOleWindow*, int, int>)(lpVtbl[4]))((IOleWindow*)Unsafe.AsPointer(ref this), fEnterMode);
+            return ((delegate* unmanaged<IOleWindow*, BOOL, int>)(lpVtbl[4]))((IOleWindow*)Unsafe.AsPointer(ref this), fEnterMode);
         }
     }
 }

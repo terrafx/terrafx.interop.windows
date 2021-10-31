@@ -10,10 +10,8 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint dwSize;
 
-        [NativeTypeName("UINT")]
         public uint uTitleBitmap;
 
-        [NativeTypeName("UINT")]
         public uint cch;
 
         [NativeTypeName("WCHAR *")]

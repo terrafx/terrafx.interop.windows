@@ -3,8 +3,6 @@
 // Ported from shared/dxgi1_6.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
-
 namespace TerraFX.Interop
 {
     public unsafe partial struct DXGI_OUTPUT_DESC1
@@ -14,15 +12,12 @@ namespace TerraFX.Interop
 
         public RECT DesktopCoordinates;
 
-        [NativeTypeName("BOOL")]
-        public int AttachedToDesktop;
+        public BOOL AttachedToDesktop;
 
         public DXGI_MODE_ROTATION Rotation;
 
-        [NativeTypeName("HMONITOR")]
-        public IntPtr Monitor;
+        public HMONITOR Monitor;
 
-        [NativeTypeName("UINT")]
         public uint BitsPerColor;
 
         public DXGI_COLOR_SPACE_TYPE ColorSpace;
@@ -39,13 +34,10 @@ namespace TerraFX.Interop
         [NativeTypeName("FLOAT [2]")]
         public fixed float WhitePoint[2];
 
-        [NativeTypeName("FLOAT")]
         public float MinLuminance;
 
-        [NativeTypeName("FLOAT")]
         public float MaxLuminance;
 
-        [NativeTypeName("FLOAT")]
         public float MaxFullFrameLuminance;
     }
 }

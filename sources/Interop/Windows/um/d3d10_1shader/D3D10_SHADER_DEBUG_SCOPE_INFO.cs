@@ -9,16 +9,12 @@ namespace TerraFX.Interop
     {
         public D3D10_SHADER_DEBUG_SCOPETYPE ScopeType;
 
-        [NativeTypeName("UINT")]
         public uint Name;
 
-        [NativeTypeName("UINT")]
         public uint uNameLen;
 
-        [NativeTypeName("UINT")]
         public uint uVariables;
 
-        [NativeTypeName("UINT")]
         public uint VariableData;
     }
 }

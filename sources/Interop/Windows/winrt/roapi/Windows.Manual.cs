@@ -9,7 +9,7 @@ namespace TerraFX.Interop
 {
     public static unsafe partial class Windows
     {
-        public static int ActivateInstance<T>(IntPtr activatableClassId, T** instance) 
+        public static int ActivateInstance<T>(HSTRING activatableClassId, T** instance) 
             where T : unmanaged
         {
             *instance = null;
@@ -32,7 +32,7 @@ namespace TerraFX.Interop
             return hr;
         }
         
-        public static int GetActivationFactory<T>(IntPtr activatableClassId, T** factory)
+        public static int GetActivationFactory<T>(HSTRING activatableClassId, T** factory)
             where T : unmanaged
         {
             return RoGetActivationFactory(activatableClassId, __uuidof<T>(), (void**) factory);

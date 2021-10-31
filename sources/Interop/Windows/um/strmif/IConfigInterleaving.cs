@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IConfigInterleaving*, Guid*, void**, int>)(lpVtbl[0]))((IConfigInterleaving*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,32 +41,28 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int put_Mode(InterleavingMode mode)
+        public HRESULT put_Mode(InterleavingMode mode)
         {
             return ((delegate* unmanaged<IConfigInterleaving*, InterleavingMode, int>)(lpVtbl[3]))((IConfigInterleaving*)Unsafe.AsPointer(ref this), mode);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int get_Mode(InterleavingMode* pMode)
+        public HRESULT get_Mode(InterleavingMode* pMode)
         {
             return ((delegate* unmanaged<IConfigInterleaving*, InterleavingMode*, int>)(lpVtbl[4]))((IConfigInterleaving*)Unsafe.AsPointer(ref this), pMode);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int put_Interleaving([NativeTypeName("const REFERENCE_TIME *")] long* prtInterleave, [NativeTypeName("const REFERENCE_TIME *")] long* prtPreroll)
+        public HRESULT put_Interleaving([NativeTypeName("const REFERENCE_TIME *")] long* prtInterleave, [NativeTypeName("const REFERENCE_TIME *")] long* prtPreroll)
         {
             return ((delegate* unmanaged<IConfigInterleaving*, long*, long*, int>)(lpVtbl[5]))((IConfigInterleaving*)Unsafe.AsPointer(ref this), prtInterleave, prtPreroll);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int get_Interleaving([NativeTypeName("REFERENCE_TIME *")] long* prtInterleave, [NativeTypeName("REFERENCE_TIME *")] long* prtPreroll)
+        public HRESULT get_Interleaving([NativeTypeName("REFERENCE_TIME *")] long* prtInterleave, [NativeTypeName("REFERENCE_TIME *")] long* prtPreroll)
         {
             return ((delegate* unmanaged<IConfigInterleaving*, long*, long*, int>)(lpVtbl[6]))((IConfigInterleaving*)Unsafe.AsPointer(ref this), prtInterleave, prtPreroll);
         }

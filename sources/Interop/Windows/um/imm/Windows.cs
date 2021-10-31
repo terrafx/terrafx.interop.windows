@@ -3,7 +3,6 @@
 // Ported from um/imm.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
@@ -11,260 +10,211 @@ namespace TerraFX.Interop
     public static unsafe partial class Windows
     {
         [DllImport("imm32", ExactSpelling = true)]
-        [return: NativeTypeName("HKL")]
-        public static extern IntPtr ImmInstallIMEA([NativeTypeName("LPCSTR")] sbyte* lpszIMEFileName, [NativeTypeName("LPCSTR")] sbyte* lpszLayoutText);
+        public static extern HKL ImmInstallIMEA([NativeTypeName("LPCSTR")] sbyte* lpszIMEFileName, [NativeTypeName("LPCSTR")] sbyte* lpszLayoutText);
 
         [DllImport("imm32", ExactSpelling = true)]
-        [return: NativeTypeName("HKL")]
-        public static extern IntPtr ImmInstallIMEW([NativeTypeName("LPCWSTR")] ushort* lpszIMEFileName, [NativeTypeName("LPCWSTR")] ushort* lpszLayoutText);
+        public static extern HKL ImmInstallIMEW([NativeTypeName("LPCWSTR")] ushort* lpszIMEFileName, [NativeTypeName("LPCWSTR")] ushort* lpszLayoutText);
 
         [DllImport("imm32", ExactSpelling = true)]
-        [return: NativeTypeName("HWND")]
-        public static extern IntPtr ImmGetDefaultIMEWnd([NativeTypeName("HWND")] IntPtr param0);
+        public static extern HWND ImmGetDefaultIMEWnd(HWND param0);
 
         [DllImport("imm32", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
-        public static extern uint ImmGetDescriptionA([NativeTypeName("HKL")] IntPtr param0, [NativeTypeName("LPSTR")] sbyte* lpszDescription, [NativeTypeName("UINT")] uint uBufLen);
+        public static extern uint ImmGetDescriptionA(HKL param0, [NativeTypeName("LPSTR")] sbyte* lpszDescription, uint uBufLen);
 
         [DllImport("imm32", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
-        public static extern uint ImmGetDescriptionW([NativeTypeName("HKL")] IntPtr param0, [NativeTypeName("LPWSTR")] ushort* lpszDescription, [NativeTypeName("UINT")] uint uBufLen);
+        public static extern uint ImmGetDescriptionW(HKL param0, [NativeTypeName("LPWSTR")] ushort* lpszDescription, uint uBufLen);
 
         [DllImport("imm32", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
-        public static extern uint ImmGetIMEFileNameA([NativeTypeName("HKL")] IntPtr param0, [NativeTypeName("LPSTR")] sbyte* lpszFileName, [NativeTypeName("UINT")] uint uBufLen);
+        public static extern uint ImmGetIMEFileNameA(HKL param0, [NativeTypeName("LPSTR")] sbyte* lpszFileName, uint uBufLen);
 
         [DllImport("imm32", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
-        public static extern uint ImmGetIMEFileNameW([NativeTypeName("HKL")] IntPtr param0, [NativeTypeName("LPWSTR")] ushort* lpszFileName, [NativeTypeName("UINT")] uint uBufLen);
+        public static extern uint ImmGetIMEFileNameW(HKL param0, [NativeTypeName("LPWSTR")] ushort* lpszFileName, uint uBufLen);
 
         [DllImport("imm32", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
-        public static extern uint ImmGetProperty([NativeTypeName("HKL")] IntPtr param0, [NativeTypeName("DWORD")] uint param1);
+        public static extern uint ImmGetProperty(HKL param0, [NativeTypeName("DWORD")] uint param1);
 
         [DllImport("imm32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int ImmIsIME([NativeTypeName("HKL")] IntPtr param0);
+        public static extern BOOL ImmIsIME(HKL param0);
 
         [DllImport("imm32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int ImmSimulateHotKey([NativeTypeName("HWND")] IntPtr param0, [NativeTypeName("DWORD")] uint param1);
+        public static extern BOOL ImmSimulateHotKey(HWND param0, [NativeTypeName("DWORD")] uint param1);
 
         [DllImport("imm32", ExactSpelling = true)]
-        [return: NativeTypeName("HIMC")]
-        public static extern IntPtr ImmCreateContext();
+        public static extern HIMC ImmCreateContext();
 
         [DllImport("imm32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int ImmDestroyContext([NativeTypeName("HIMC")] IntPtr param0);
+        public static extern BOOL ImmDestroyContext(HIMC param0);
 
         [DllImport("imm32", ExactSpelling = true)]
-        [return: NativeTypeName("HIMC")]
-        public static extern IntPtr ImmGetContext([NativeTypeName("HWND")] IntPtr param0);
+        public static extern HIMC ImmGetContext(HWND param0);
 
         [DllImport("imm32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int ImmReleaseContext([NativeTypeName("HWND")] IntPtr param0, [NativeTypeName("HIMC")] IntPtr param1);
+        public static extern BOOL ImmReleaseContext(HWND param0, HIMC param1);
 
         [DllImport("imm32", ExactSpelling = true)]
-        [return: NativeTypeName("HIMC")]
-        public static extern IntPtr ImmAssociateContext([NativeTypeName("HWND")] IntPtr param0, [NativeTypeName("HIMC")] IntPtr param1);
+        public static extern HIMC ImmAssociateContext(HWND param0, HIMC param1);
 
         [DllImport("imm32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int ImmAssociateContextEx([NativeTypeName("HWND")] IntPtr param0, [NativeTypeName("HIMC")] IntPtr param1, [NativeTypeName("DWORD")] uint param2);
+        public static extern BOOL ImmAssociateContextEx(HWND param0, HIMC param1, [NativeTypeName("DWORD")] uint param2);
 
         [DllImport("imm32", ExactSpelling = true)]
         [return: NativeTypeName("LONG")]
-        public static extern int ImmGetCompositionStringA([NativeTypeName("HIMC")] IntPtr param0, [NativeTypeName("DWORD")] uint param1, [NativeTypeName("LPVOID")] void* lpBuf, [NativeTypeName("DWORD")] uint dwBufLen);
+        public static extern int ImmGetCompositionStringA(HIMC param0, [NativeTypeName("DWORD")] uint param1, [NativeTypeName("LPVOID")] void* lpBuf, [NativeTypeName("DWORD")] uint dwBufLen);
 
         [DllImport("imm32", ExactSpelling = true)]
         [return: NativeTypeName("LONG")]
-        public static extern int ImmGetCompositionStringW([NativeTypeName("HIMC")] IntPtr param0, [NativeTypeName("DWORD")] uint param1, [NativeTypeName("LPVOID")] void* lpBuf, [NativeTypeName("DWORD")] uint dwBufLen);
+        public static extern int ImmGetCompositionStringW(HIMC param0, [NativeTypeName("DWORD")] uint param1, [NativeTypeName("LPVOID")] void* lpBuf, [NativeTypeName("DWORD")] uint dwBufLen);
 
         [DllImport("imm32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int ImmSetCompositionStringA([NativeTypeName("HIMC")] IntPtr param0, [NativeTypeName("DWORD")] uint dwIndex, [NativeTypeName("LPVOID")] void* lpComp, [NativeTypeName("DWORD")] uint dwCompLen, [NativeTypeName("LPVOID")] void* lpRead, [NativeTypeName("DWORD")] uint dwReadLen);
+        public static extern BOOL ImmSetCompositionStringA(HIMC param0, [NativeTypeName("DWORD")] uint dwIndex, [NativeTypeName("LPVOID")] void* lpComp, [NativeTypeName("DWORD")] uint dwCompLen, [NativeTypeName("LPVOID")] void* lpRead, [NativeTypeName("DWORD")] uint dwReadLen);
 
         [DllImport("imm32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int ImmSetCompositionStringW([NativeTypeName("HIMC")] IntPtr param0, [NativeTypeName("DWORD")] uint dwIndex, [NativeTypeName("LPVOID")] void* lpComp, [NativeTypeName("DWORD")] uint dwCompLen, [NativeTypeName("LPVOID")] void* lpRead, [NativeTypeName("DWORD")] uint dwReadLen);
-
-        [DllImport("imm32", ExactSpelling = true)]
-        [return: NativeTypeName("DWORD")]
-        public static extern uint ImmGetCandidateListCountA([NativeTypeName("HIMC")] IntPtr param0, [NativeTypeName("LPDWORD")] uint* lpdwListCount);
+        public static extern BOOL ImmSetCompositionStringW(HIMC param0, [NativeTypeName("DWORD")] uint dwIndex, [NativeTypeName("LPVOID")] void* lpComp, [NativeTypeName("DWORD")] uint dwCompLen, [NativeTypeName("LPVOID")] void* lpRead, [NativeTypeName("DWORD")] uint dwReadLen);
 
         [DllImport("imm32", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
-        public static extern uint ImmGetCandidateListCountW([NativeTypeName("HIMC")] IntPtr param0, [NativeTypeName("LPDWORD")] uint* lpdwListCount);
+        public static extern uint ImmGetCandidateListCountA(HIMC param0, [NativeTypeName("LPDWORD")] uint* lpdwListCount);
 
         [DllImport("imm32", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
-        public static extern uint ImmGetCandidateListA([NativeTypeName("HIMC")] IntPtr param0, [NativeTypeName("DWORD")] uint deIndex, [NativeTypeName("LPCANDIDATELIST")] CANDIDATELIST* lpCandList, [NativeTypeName("DWORD")] uint dwBufLen);
+        public static extern uint ImmGetCandidateListCountW(HIMC param0, [NativeTypeName("LPDWORD")] uint* lpdwListCount);
 
         [DllImport("imm32", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
-        public static extern uint ImmGetCandidateListW([NativeTypeName("HIMC")] IntPtr param0, [NativeTypeName("DWORD")] uint deIndex, [NativeTypeName("LPCANDIDATELIST")] CANDIDATELIST* lpCandList, [NativeTypeName("DWORD")] uint dwBufLen);
+        public static extern uint ImmGetCandidateListA(HIMC param0, [NativeTypeName("DWORD")] uint deIndex, [NativeTypeName("LPCANDIDATELIST")] CANDIDATELIST* lpCandList, [NativeTypeName("DWORD")] uint dwBufLen);
 
         [DllImport("imm32", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
-        public static extern uint ImmGetGuideLineA([NativeTypeName("HIMC")] IntPtr param0, [NativeTypeName("DWORD")] uint dwIndex, [NativeTypeName("LPSTR")] sbyte* lpBuf, [NativeTypeName("DWORD")] uint dwBufLen);
+        public static extern uint ImmGetCandidateListW(HIMC param0, [NativeTypeName("DWORD")] uint deIndex, [NativeTypeName("LPCANDIDATELIST")] CANDIDATELIST* lpCandList, [NativeTypeName("DWORD")] uint dwBufLen);
 
         [DllImport("imm32", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
-        public static extern uint ImmGetGuideLineW([NativeTypeName("HIMC")] IntPtr param0, [NativeTypeName("DWORD")] uint dwIndex, [NativeTypeName("LPWSTR")] ushort* lpBuf, [NativeTypeName("DWORD")] uint dwBufLen);
+        public static extern uint ImmGetGuideLineA(HIMC param0, [NativeTypeName("DWORD")] uint dwIndex, [NativeTypeName("LPSTR")] sbyte* lpBuf, [NativeTypeName("DWORD")] uint dwBufLen);
 
         [DllImport("imm32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int ImmGetConversionStatus([NativeTypeName("HIMC")] IntPtr param0, [NativeTypeName("LPDWORD")] uint* lpfdwConversion, [NativeTypeName("LPDWORD")] uint* lpfdwSentence);
+        [return: NativeTypeName("DWORD")]
+        public static extern uint ImmGetGuideLineW(HIMC param0, [NativeTypeName("DWORD")] uint dwIndex, [NativeTypeName("LPWSTR")] ushort* lpBuf, [NativeTypeName("DWORD")] uint dwBufLen);
 
         [DllImport("imm32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int ImmSetConversionStatus([NativeTypeName("HIMC")] IntPtr param0, [NativeTypeName("DWORD")] uint param1, [NativeTypeName("DWORD")] uint param2);
+        public static extern BOOL ImmGetConversionStatus(HIMC param0, [NativeTypeName("LPDWORD")] uint* lpfdwConversion, [NativeTypeName("LPDWORD")] uint* lpfdwSentence);
 
         [DllImport("imm32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int ImmGetOpenStatus([NativeTypeName("HIMC")] IntPtr param0);
+        public static extern BOOL ImmSetConversionStatus(HIMC param0, [NativeTypeName("DWORD")] uint param1, [NativeTypeName("DWORD")] uint param2);
 
         [DllImport("imm32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int ImmSetOpenStatus([NativeTypeName("HIMC")] IntPtr param0, [NativeTypeName("BOOL")] int param1);
+        public static extern BOOL ImmGetOpenStatus(HIMC param0);
 
         [DllImport("imm32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int ImmGetCompositionFontA([NativeTypeName("HIMC")] IntPtr param0, [NativeTypeName("LPLOGFONTA")] LOGFONTA* lplf);
+        public static extern BOOL ImmSetOpenStatus(HIMC param0, BOOL param1);
 
         [DllImport("imm32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int ImmGetCompositionFontW([NativeTypeName("HIMC")] IntPtr param0, [NativeTypeName("LPLOGFONTW")] LOGFONTW* lplf);
+        public static extern BOOL ImmGetCompositionFontA(HIMC param0, [NativeTypeName("LPLOGFONTA")] LOGFONTA* lplf);
 
         [DllImport("imm32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int ImmSetCompositionFontA([NativeTypeName("HIMC")] IntPtr param0, [NativeTypeName("LPLOGFONTA")] LOGFONTA* lplf);
+        public static extern BOOL ImmGetCompositionFontW(HIMC param0, [NativeTypeName("LPLOGFONTW")] LOGFONTW* lplf);
 
         [DllImport("imm32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int ImmSetCompositionFontW([NativeTypeName("HIMC")] IntPtr param0, [NativeTypeName("LPLOGFONTW")] LOGFONTW* lplf);
+        public static extern BOOL ImmSetCompositionFontA(HIMC param0, [NativeTypeName("LPLOGFONTA")] LOGFONTA* lplf);
 
         [DllImport("imm32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int ImmConfigureIMEA([NativeTypeName("HKL")] IntPtr param0, [NativeTypeName("HWND")] IntPtr param1, [NativeTypeName("DWORD")] uint param2, [NativeTypeName("LPVOID")] void* param3);
+        public static extern BOOL ImmSetCompositionFontW(HIMC param0, [NativeTypeName("LPLOGFONTW")] LOGFONTW* lplf);
 
         [DllImport("imm32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int ImmConfigureIMEW([NativeTypeName("HKL")] IntPtr param0, [NativeTypeName("HWND")] IntPtr param1, [NativeTypeName("DWORD")] uint param2, [NativeTypeName("LPVOID")] void* param3);
+        public static extern BOOL ImmConfigureIMEA(HKL param0, HWND param1, [NativeTypeName("DWORD")] uint param2, [NativeTypeName("LPVOID")] void* param3);
+
+        [DllImport("imm32", ExactSpelling = true)]
+        public static extern BOOL ImmConfigureIMEW(HKL param0, HWND param1, [NativeTypeName("DWORD")] uint param2, [NativeTypeName("LPVOID")] void* param3);
 
         [DllImport("imm32", ExactSpelling = true)]
         [return: NativeTypeName("LRESULT")]
-        public static extern nint ImmEscapeA([NativeTypeName("HKL")] IntPtr param0, [NativeTypeName("HIMC")] IntPtr param1, [NativeTypeName("UINT")] uint param2, [NativeTypeName("LPVOID")] void* param3);
+        public static extern nint ImmEscapeA(HKL param0, HIMC param1, uint param2, [NativeTypeName("LPVOID")] void* param3);
 
         [DllImport("imm32", ExactSpelling = true)]
         [return: NativeTypeName("LRESULT")]
-        public static extern nint ImmEscapeW([NativeTypeName("HKL")] IntPtr param0, [NativeTypeName("HIMC")] IntPtr param1, [NativeTypeName("UINT")] uint param2, [NativeTypeName("LPVOID")] void* param3);
+        public static extern nint ImmEscapeW(HKL param0, HIMC param1, uint param2, [NativeTypeName("LPVOID")] void* param3);
 
         [DllImport("imm32", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
-        public static extern uint ImmGetConversionListA([NativeTypeName("HKL")] IntPtr param0, [NativeTypeName("HIMC")] IntPtr param1, [NativeTypeName("LPCSTR")] sbyte* lpSrc, [NativeTypeName("LPCANDIDATELIST")] CANDIDATELIST* lpDst, [NativeTypeName("DWORD")] uint dwBufLen, [NativeTypeName("UINT")] uint uFlag);
+        public static extern uint ImmGetConversionListA(HKL param0, HIMC param1, [NativeTypeName("LPCSTR")] sbyte* lpSrc, [NativeTypeName("LPCANDIDATELIST")] CANDIDATELIST* lpDst, [NativeTypeName("DWORD")] uint dwBufLen, uint uFlag);
 
         [DllImport("imm32", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
-        public static extern uint ImmGetConversionListW([NativeTypeName("HKL")] IntPtr param0, [NativeTypeName("HIMC")] IntPtr param1, [NativeTypeName("LPCWSTR")] ushort* lpSrc, [NativeTypeName("LPCANDIDATELIST")] CANDIDATELIST* lpDst, [NativeTypeName("DWORD")] uint dwBufLen, [NativeTypeName("UINT")] uint uFlag);
+        public static extern uint ImmGetConversionListW(HKL param0, HIMC param1, [NativeTypeName("LPCWSTR")] ushort* lpSrc, [NativeTypeName("LPCANDIDATELIST")] CANDIDATELIST* lpDst, [NativeTypeName("DWORD")] uint dwBufLen, uint uFlag);
 
         [DllImport("imm32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int ImmNotifyIME([NativeTypeName("HIMC")] IntPtr param0, [NativeTypeName("DWORD")] uint dwAction, [NativeTypeName("DWORD")] uint dwIndex, [NativeTypeName("DWORD")] uint dwValue);
+        public static extern BOOL ImmNotifyIME(HIMC param0, [NativeTypeName("DWORD")] uint dwAction, [NativeTypeName("DWORD")] uint dwIndex, [NativeTypeName("DWORD")] uint dwValue);
 
         [DllImport("imm32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int ImmGetStatusWindowPos([NativeTypeName("HIMC")] IntPtr param0, [NativeTypeName("LPPOINT")] POINT* lpptPos);
+        public static extern BOOL ImmGetStatusWindowPos(HIMC param0, [NativeTypeName("LPPOINT")] POINT* lpptPos);
 
         [DllImport("imm32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int ImmSetStatusWindowPos([NativeTypeName("HIMC")] IntPtr param0, [NativeTypeName("LPPOINT")] POINT* lpptPos);
+        public static extern BOOL ImmSetStatusWindowPos(HIMC param0, [NativeTypeName("LPPOINT")] POINT* lpptPos);
 
         [DllImport("imm32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int ImmGetCompositionWindow([NativeTypeName("HIMC")] IntPtr param0, [NativeTypeName("LPCOMPOSITIONFORM")] COMPOSITIONFORM* lpCompForm);
+        public static extern BOOL ImmGetCompositionWindow(HIMC param0, [NativeTypeName("LPCOMPOSITIONFORM")] COMPOSITIONFORM* lpCompForm);
 
         [DllImport("imm32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int ImmSetCompositionWindow([NativeTypeName("HIMC")] IntPtr param0, [NativeTypeName("LPCOMPOSITIONFORM")] COMPOSITIONFORM* lpCompForm);
+        public static extern BOOL ImmSetCompositionWindow(HIMC param0, [NativeTypeName("LPCOMPOSITIONFORM")] COMPOSITIONFORM* lpCompForm);
 
         [DllImport("imm32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int ImmGetCandidateWindow([NativeTypeName("HIMC")] IntPtr param0, [NativeTypeName("DWORD")] uint param1, [NativeTypeName("LPCANDIDATEFORM")] CANDIDATEFORM* lpCandidate);
+        public static extern BOOL ImmGetCandidateWindow(HIMC param0, [NativeTypeName("DWORD")] uint param1, [NativeTypeName("LPCANDIDATEFORM")] CANDIDATEFORM* lpCandidate);
 
         [DllImport("imm32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int ImmSetCandidateWindow([NativeTypeName("HIMC")] IntPtr param0, [NativeTypeName("LPCANDIDATEFORM")] CANDIDATEFORM* lpCandidate);
+        public static extern BOOL ImmSetCandidateWindow(HIMC param0, [NativeTypeName("LPCANDIDATEFORM")] CANDIDATEFORM* lpCandidate);
 
         [DllImport("imm32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int ImmIsUIMessageA([NativeTypeName("HWND")] IntPtr param0, [NativeTypeName("UINT")] uint param1, [NativeTypeName("WPARAM")] nuint param2, [NativeTypeName("LPARAM")] nint param3);
+        public static extern BOOL ImmIsUIMessageA(HWND param0, uint param1, [NativeTypeName("WPARAM")] nuint param2, [NativeTypeName("LPARAM")] nint param3);
 
         [DllImport("imm32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int ImmIsUIMessageW([NativeTypeName("HWND")] IntPtr param0, [NativeTypeName("UINT")] uint param1, [NativeTypeName("WPARAM")] nuint param2, [NativeTypeName("LPARAM")] nint param3);
+        public static extern BOOL ImmIsUIMessageW(HWND param0, uint param1, [NativeTypeName("WPARAM")] nuint param2, [NativeTypeName("LPARAM")] nint param3);
 
         [DllImport("imm32", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
-        public static extern uint ImmGetVirtualKey([NativeTypeName("HWND")] IntPtr param0);
+        public static extern uint ImmGetVirtualKey(HWND param0);
 
         [DllImport("imm32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int ImmRegisterWordA([NativeTypeName("HKL")] IntPtr param0, [NativeTypeName("LPCSTR")] sbyte* lpszReading, [NativeTypeName("DWORD")] uint param2, [NativeTypeName("LPCSTR")] sbyte* lpszRegister);
+        public static extern BOOL ImmRegisterWordA(HKL param0, [NativeTypeName("LPCSTR")] sbyte* lpszReading, [NativeTypeName("DWORD")] uint param2, [NativeTypeName("LPCSTR")] sbyte* lpszRegister);
 
         [DllImport("imm32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int ImmRegisterWordW([NativeTypeName("HKL")] IntPtr param0, [NativeTypeName("LPCWSTR")] ushort* lpszReading, [NativeTypeName("DWORD")] uint param2, [NativeTypeName("LPCWSTR")] ushort* lpszRegister);
+        public static extern BOOL ImmRegisterWordW(HKL param0, [NativeTypeName("LPCWSTR")] ushort* lpszReading, [NativeTypeName("DWORD")] uint param2, [NativeTypeName("LPCWSTR")] ushort* lpszRegister);
 
         [DllImport("imm32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int ImmUnregisterWordA([NativeTypeName("HKL")] IntPtr param0, [NativeTypeName("LPCSTR")] sbyte* lpszReading, [NativeTypeName("DWORD")] uint param2, [NativeTypeName("LPCSTR")] sbyte* lpszUnregister);
+        public static extern BOOL ImmUnregisterWordA(HKL param0, [NativeTypeName("LPCSTR")] sbyte* lpszReading, [NativeTypeName("DWORD")] uint param2, [NativeTypeName("LPCSTR")] sbyte* lpszUnregister);
 
         [DllImport("imm32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int ImmUnregisterWordW([NativeTypeName("HKL")] IntPtr param0, [NativeTypeName("LPCWSTR")] ushort* lpszReading, [NativeTypeName("DWORD")] uint param2, [NativeTypeName("LPCWSTR")] ushort* lpszUnregister);
+        public static extern BOOL ImmUnregisterWordW(HKL param0, [NativeTypeName("LPCWSTR")] ushort* lpszReading, [NativeTypeName("DWORD")] uint param2, [NativeTypeName("LPCWSTR")] ushort* lpszUnregister);
 
         [DllImport("imm32", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
-        public static extern uint ImmGetRegisterWordStyleA([NativeTypeName("HKL")] IntPtr param0, [NativeTypeName("UINT")] uint nItem, [NativeTypeName("LPSTYLEBUFA")] STYLEBUFA* lpStyleBuf);
+        public static extern uint ImmGetRegisterWordStyleA(HKL param0, uint nItem, [NativeTypeName("LPSTYLEBUFA")] STYLEBUFA* lpStyleBuf);
 
         [DllImport("imm32", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
-        public static extern uint ImmGetRegisterWordStyleW([NativeTypeName("HKL")] IntPtr param0, [NativeTypeName("UINT")] uint nItem, [NativeTypeName("LPSTYLEBUFW")] STYLEBUFW* lpStyleBuf);
+        public static extern uint ImmGetRegisterWordStyleW(HKL param0, uint nItem, [NativeTypeName("LPSTYLEBUFW")] STYLEBUFW* lpStyleBuf);
 
         [DllImport("imm32", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
-        public static extern uint ImmEnumRegisterWordA([NativeTypeName("HKL")] IntPtr param0, [NativeTypeName("REGISTERWORDENUMPROCA")] delegate* unmanaged<sbyte*, uint, sbyte*, void*, int> param1, [NativeTypeName("LPCSTR")] sbyte* lpszReading, [NativeTypeName("DWORD")] uint param3, [NativeTypeName("LPCSTR")] sbyte* lpszRegister, [NativeTypeName("LPVOID")] void* param5);
+        public static extern uint ImmEnumRegisterWordA(HKL param0, [NativeTypeName("REGISTERWORDENUMPROCA")] delegate* unmanaged<sbyte*, uint, sbyte*, void*, int> param1, [NativeTypeName("LPCSTR")] sbyte* lpszReading, [NativeTypeName("DWORD")] uint param3, [NativeTypeName("LPCSTR")] sbyte* lpszRegister, [NativeTypeName("LPVOID")] void* param5);
 
         [DllImport("imm32", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
-        public static extern uint ImmEnumRegisterWordW([NativeTypeName("HKL")] IntPtr param0, [NativeTypeName("REGISTERWORDENUMPROCW")] delegate* unmanaged<ushort*, uint, ushort*, void*, int> param1, [NativeTypeName("LPCWSTR")] ushort* lpszReading, [NativeTypeName("DWORD")] uint param3, [NativeTypeName("LPCWSTR")] ushort* lpszRegister, [NativeTypeName("LPVOID")] void* param5);
+        public static extern uint ImmEnumRegisterWordW(HKL param0, [NativeTypeName("REGISTERWORDENUMPROCW")] delegate* unmanaged<ushort*, uint, ushort*, void*, int> param1, [NativeTypeName("LPCWSTR")] ushort* lpszReading, [NativeTypeName("DWORD")] uint param3, [NativeTypeName("LPCWSTR")] ushort* lpszRegister, [NativeTypeName("LPVOID")] void* param5);
 
         [DllImport("imm32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int ImmDisableIME([NativeTypeName("DWORD")] uint param0);
+        public static extern BOOL ImmDisableIME([NativeTypeName("DWORD")] uint param0);
 
         [DllImport("imm32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int ImmEnumInputContext([NativeTypeName("DWORD")] uint idThread, [NativeTypeName("IMCENUMPROC")] delegate* unmanaged<IntPtr, nint, int> lpfn, [NativeTypeName("LPARAM")] nint lParam);
+        public static extern BOOL ImmEnumInputContext([NativeTypeName("DWORD")] uint idThread, [NativeTypeName("IMCENUMPROC")] delegate* unmanaged<HIMC, nint, BOOL> lpfn, [NativeTypeName("LPARAM")] nint lParam);
 
         [DllImport("imm32", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
-        public static extern uint ImmGetImeMenuItemsA([NativeTypeName("HIMC")] IntPtr param0, [NativeTypeName("DWORD")] uint param1, [NativeTypeName("DWORD")] uint param2, [NativeTypeName("LPIMEMENUITEMINFOA")] IMEMENUITEMINFOA* lpImeParentMenu, [NativeTypeName("LPIMEMENUITEMINFOA")] IMEMENUITEMINFOA* lpImeMenu, [NativeTypeName("DWORD")] uint dwSize);
+        public static extern uint ImmGetImeMenuItemsA(HIMC param0, [NativeTypeName("DWORD")] uint param1, [NativeTypeName("DWORD")] uint param2, [NativeTypeName("LPIMEMENUITEMINFOA")] IMEMENUITEMINFOA* lpImeParentMenu, [NativeTypeName("LPIMEMENUITEMINFOA")] IMEMENUITEMINFOA* lpImeMenu, [NativeTypeName("DWORD")] uint dwSize);
 
         [DllImport("imm32", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
-        public static extern uint ImmGetImeMenuItemsW([NativeTypeName("HIMC")] IntPtr param0, [NativeTypeName("DWORD")] uint param1, [NativeTypeName("DWORD")] uint param2, [NativeTypeName("LPIMEMENUITEMINFOW")] IMEMENUITEMINFOW* lpImeParentMenu, [NativeTypeName("LPIMEMENUITEMINFOW")] IMEMENUITEMINFOW* lpImeMenu, [NativeTypeName("DWORD")] uint dwSize);
+        public static extern uint ImmGetImeMenuItemsW(HIMC param0, [NativeTypeName("DWORD")] uint param1, [NativeTypeName("DWORD")] uint param2, [NativeTypeName("LPIMEMENUITEMINFOW")] IMEMENUITEMINFOW* lpImeParentMenu, [NativeTypeName("LPIMEMENUITEMINFOW")] IMEMENUITEMINFOW* lpImeMenu, [NativeTypeName("DWORD")] uint dwSize);
 
         [DllImport("imm32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int ImmDisableTextFrameService([NativeTypeName("DWORD")] uint idThread);
+        public static extern BOOL ImmDisableTextFrameService([NativeTypeName("DWORD")] uint idThread);
 
         [DllImport("imm32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int ImmDisableLegacyIME();
+        public static extern BOOL ImmDisableLegacyIME();
 
         [NativeTypeName("#define STYLE_DESCRIPTION_SIZE 32")]
         public const int STYLE_DESCRIPTION_SIZE = 32;
@@ -273,61 +223,61 @@ namespace TerraFX.Interop
         public const int IMEMENUITEM_STRING_SIZE = 80;
 
         [NativeTypeName("#define ImmInstallIME ImmInstallIMEW")]
-        public static delegate*<ushort*, ushort*, IntPtr> ImmInstallIME => &ImmInstallIMEW;
+        public static delegate*<ushort*, ushort*, HKL> ImmInstallIME => &ImmInstallIMEW;
 
         [NativeTypeName("#define ImmGetDescription ImmGetDescriptionW")]
-        public static delegate*<IntPtr, ushort*, uint, uint> ImmGetDescription => &ImmGetDescriptionW;
+        public static delegate*<HKL, ushort*, uint, uint> ImmGetDescription => &ImmGetDescriptionW;
 
         [NativeTypeName("#define ImmGetIMEFileName ImmGetIMEFileNameW")]
-        public static delegate*<IntPtr, ushort*, uint, uint> ImmGetIMEFileName => &ImmGetIMEFileNameW;
+        public static delegate*<HKL, ushort*, uint, uint> ImmGetIMEFileName => &ImmGetIMEFileNameW;
 
         [NativeTypeName("#define ImmGetCompositionString ImmGetCompositionStringW")]
-        public static delegate*<IntPtr, uint, void*, uint, int> ImmGetCompositionString => &ImmGetCompositionStringW;
+        public static delegate*<HIMC, uint, void*, uint, int> ImmGetCompositionString => &ImmGetCompositionStringW;
 
         [NativeTypeName("#define ImmSetCompositionString ImmSetCompositionStringW")]
-        public static delegate*<IntPtr, uint, void*, uint, void*, uint, int> ImmSetCompositionString => &ImmSetCompositionStringW;
+        public static delegate*<HIMC, uint, void*, uint, void*, uint, BOOL> ImmSetCompositionString => &ImmSetCompositionStringW;
 
         [NativeTypeName("#define ImmGetCandidateListCount ImmGetCandidateListCountW")]
-        public static delegate*<IntPtr, uint*, uint> ImmGetCandidateListCount => &ImmGetCandidateListCountW;
+        public static delegate*<HIMC, uint*, uint> ImmGetCandidateListCount => &ImmGetCandidateListCountW;
 
         [NativeTypeName("#define ImmGetCandidateList ImmGetCandidateListW")]
-        public static delegate*<IntPtr, uint, CANDIDATELIST*, uint, uint> ImmGetCandidateList => &ImmGetCandidateListW;
+        public static delegate*<HIMC, uint, CANDIDATELIST*, uint, uint> ImmGetCandidateList => &ImmGetCandidateListW;
 
         [NativeTypeName("#define ImmGetGuideLine ImmGetGuideLineW")]
-        public static delegate*<IntPtr, uint, ushort*, uint, uint> ImmGetGuideLine => &ImmGetGuideLineW;
+        public static delegate*<HIMC, uint, ushort*, uint, uint> ImmGetGuideLine => &ImmGetGuideLineW;
 
         [NativeTypeName("#define ImmGetCompositionFont ImmGetCompositionFontW")]
-        public static delegate*<IntPtr, LOGFONTW*, int> ImmGetCompositionFont => &ImmGetCompositionFontW;
+        public static delegate*<HIMC, LOGFONTW*, BOOL> ImmGetCompositionFont => &ImmGetCompositionFontW;
 
         [NativeTypeName("#define ImmSetCompositionFont ImmSetCompositionFontW")]
-        public static delegate*<IntPtr, LOGFONTW*, int> ImmSetCompositionFont => &ImmSetCompositionFontW;
+        public static delegate*<HIMC, LOGFONTW*, BOOL> ImmSetCompositionFont => &ImmSetCompositionFontW;
 
         [NativeTypeName("#define ImmConfigureIME ImmConfigureIMEW")]
-        public static delegate*<IntPtr, IntPtr, uint, void*, int> ImmConfigureIME => &ImmConfigureIMEW;
+        public static delegate*<HKL, HWND, uint, void*, BOOL> ImmConfigureIME => &ImmConfigureIMEW;
 
         [NativeTypeName("#define ImmEscape ImmEscapeW")]
-        public static delegate*<IntPtr, IntPtr, uint, void*, nint> ImmEscape => &ImmEscapeW;
+        public static delegate*<HKL, HIMC, uint, void*, nint> ImmEscape => &ImmEscapeW;
 
         [NativeTypeName("#define ImmGetConversionList ImmGetConversionListW")]
-        public static delegate*<IntPtr, IntPtr, ushort*, CANDIDATELIST*, uint, uint, uint> ImmGetConversionList => &ImmGetConversionListW;
+        public static delegate*<HKL, HIMC, ushort*, CANDIDATELIST*, uint, uint, uint> ImmGetConversionList => &ImmGetConversionListW;
 
         [NativeTypeName("#define ImmIsUIMessage ImmIsUIMessageW")]
-        public static delegate*<IntPtr, uint, nuint, nint, int> ImmIsUIMessage => &ImmIsUIMessageW;
+        public static delegate*<HWND, uint, nuint, nint, BOOL> ImmIsUIMessage => &ImmIsUIMessageW;
 
         [NativeTypeName("#define ImmRegisterWord ImmRegisterWordW")]
-        public static delegate*<IntPtr, ushort*, uint, ushort*, int> ImmRegisterWord => &ImmRegisterWordW;
+        public static delegate*<HKL, ushort*, uint, ushort*, BOOL> ImmRegisterWord => &ImmRegisterWordW;
 
         [NativeTypeName("#define ImmUnregisterWord ImmUnregisterWordW")]
-        public static delegate*<IntPtr, ushort*, uint, ushort*, int> ImmUnregisterWord => &ImmUnregisterWordW;
+        public static delegate*<HKL, ushort*, uint, ushort*, BOOL> ImmUnregisterWord => &ImmUnregisterWordW;
 
         [NativeTypeName("#define ImmGetRegisterWordStyle ImmGetRegisterWordStyleW")]
-        public static delegate*<IntPtr, uint, STYLEBUFW*, uint> ImmGetRegisterWordStyle => &ImmGetRegisterWordStyleW;
+        public static delegate*<HKL, uint, STYLEBUFW*, uint> ImmGetRegisterWordStyle => &ImmGetRegisterWordStyleW;
 
         [NativeTypeName("#define ImmEnumRegisterWord ImmEnumRegisterWordW")]
-        public static delegate*<IntPtr, delegate* unmanaged<ushort*, uint, ushort*, void*, int>, ushort*, uint, ushort*, void*, uint> ImmEnumRegisterWord => &ImmEnumRegisterWordW;
+        public static delegate*<HKL, delegate* unmanaged<ushort*, uint, ushort*, void*, int>, ushort*, uint, ushort*, void*, uint> ImmEnumRegisterWord => &ImmEnumRegisterWordW;
 
         [NativeTypeName("#define ImmGetImeMenuItems ImmGetImeMenuItemsW")]
-        public static delegate*<IntPtr, uint, uint, IMEMENUITEMINFOW*, IMEMENUITEMINFOW*, uint, uint> ImmGetImeMenuItems => &ImmGetImeMenuItemsW;
+        public static delegate*<HIMC, uint, uint, IMEMENUITEMINFOW*, IMEMENUITEMINFOW*, uint, uint> ImmGetImeMenuItems => &ImmGetImeMenuItemsW;
 
         [NativeTypeName("#define IMC_GETCANDIDATEPOS 0x0007")]
         public const int IMC_GETCANDIDATEPOS = 0x0007;

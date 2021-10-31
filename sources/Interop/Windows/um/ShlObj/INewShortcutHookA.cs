@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<INewShortcutHookA*, Guid*, void**, int>)(lpVtbl[0]))((INewShortcutHookA*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,48 +41,42 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetReferent([NativeTypeName("PCSTR")] sbyte* pcszReferent, [NativeTypeName("HWND")] IntPtr hwnd)
+        public HRESULT SetReferent([NativeTypeName("PCSTR")] sbyte* pcszReferent, HWND hwnd)
         {
-            return ((delegate* unmanaged<INewShortcutHookA*, sbyte*, IntPtr, int>)(lpVtbl[3]))((INewShortcutHookA*)Unsafe.AsPointer(ref this), pcszReferent, hwnd);
+            return ((delegate* unmanaged<INewShortcutHookA*, sbyte*, HWND, int>)(lpVtbl[3]))((INewShortcutHookA*)Unsafe.AsPointer(ref this), pcszReferent, hwnd);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetReferent([NativeTypeName("PSTR")] sbyte* pszReferent, int cchReferent)
+        public HRESULT GetReferent([NativeTypeName("PSTR")] sbyte* pszReferent, int cchReferent)
         {
             return ((delegate* unmanaged<INewShortcutHookA*, sbyte*, int, int>)(lpVtbl[4]))((INewShortcutHookA*)Unsafe.AsPointer(ref this), pszReferent, cchReferent);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetFolder([NativeTypeName("PCSTR")] sbyte* pcszFolder)
+        public HRESULT SetFolder([NativeTypeName("PCSTR")] sbyte* pcszFolder)
         {
             return ((delegate* unmanaged<INewShortcutHookA*, sbyte*, int>)(lpVtbl[5]))((INewShortcutHookA*)Unsafe.AsPointer(ref this), pcszFolder);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetFolder([NativeTypeName("PSTR")] sbyte* pszFolder, int cchFolder)
+        public HRESULT GetFolder([NativeTypeName("PSTR")] sbyte* pszFolder, int cchFolder)
         {
             return ((delegate* unmanaged<INewShortcutHookA*, sbyte*, int, int>)(lpVtbl[6]))((INewShortcutHookA*)Unsafe.AsPointer(ref this), pszFolder, cchFolder);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetName([NativeTypeName("PSTR")] sbyte* pszName, int cchName)
+        public HRESULT GetName([NativeTypeName("PSTR")] sbyte* pszName, int cchName)
         {
             return ((delegate* unmanaged<INewShortcutHookA*, sbyte*, int, int>)(lpVtbl[7]))((INewShortcutHookA*)Unsafe.AsPointer(ref this), pszName, cchName);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetExtension([NativeTypeName("PSTR")] sbyte* pszExtension, int cchExtension)
+        public HRESULT GetExtension([NativeTypeName("PSTR")] sbyte* pszExtension, int cchExtension)
         {
             return ((delegate* unmanaged<INewShortcutHookA*, sbyte*, int, int>)(lpVtbl[8]))((INewShortcutHookA*)Unsafe.AsPointer(ref this), pszExtension, cchExtension);
         }

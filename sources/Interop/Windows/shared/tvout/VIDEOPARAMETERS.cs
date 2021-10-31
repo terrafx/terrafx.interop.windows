@@ -9,7 +9,6 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct VIDEOPARAMETERS
     {
-        [NativeTypeName("GUID")]
         public Guid Guid;
 
         [NativeTypeName("ULONG")]

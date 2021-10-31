@@ -13,7 +13,6 @@ namespace TerraFX.Interop
         [NativeTypeName("ADDRESS_FAMILY")]
         public ushort sin6_family;
 
-        [NativeTypeName("USHORT")]
         public ushort sin6_port;
 
         [NativeTypeName("ULONG")]

@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IElementBehaviorLayout*, Guid*, void**, int>)(lpVtbl[0]))((IElementBehaviorLayout*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,32 +41,28 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetSize([NativeTypeName("LONG")] int dwFlags, SIZE sizeContent, POINT* pptTranslateBy, POINT* pptTopLeft, SIZE* psizeProposed)
+        public HRESULT GetSize([NativeTypeName("LONG")] int dwFlags, SIZE sizeContent, POINT* pptTranslateBy, POINT* pptTopLeft, SIZE* psizeProposed)
         {
             return ((delegate* unmanaged<IElementBehaviorLayout*, int, SIZE, POINT*, POINT*, SIZE*, int>)(lpVtbl[3]))((IElementBehaviorLayout*)Unsafe.AsPointer(ref this), dwFlags, sizeContent, pptTranslateBy, pptTopLeft, psizeProposed);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetLayoutInfo([NativeTypeName("LONG *")] int* plLayoutInfo)
+        public HRESULT GetLayoutInfo([NativeTypeName("LONG *")] int* plLayoutInfo)
         {
             return ((delegate* unmanaged<IElementBehaviorLayout*, int*, int>)(lpVtbl[4]))((IElementBehaviorLayout*)Unsafe.AsPointer(ref this), plLayoutInfo);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetPosition([NativeTypeName("LONG")] int lFlags, POINT* pptTopLeft)
+        public HRESULT GetPosition([NativeTypeName("LONG")] int lFlags, POINT* pptTopLeft)
         {
             return ((delegate* unmanaged<IElementBehaviorLayout*, int, POINT*, int>)(lpVtbl[5]))((IElementBehaviorLayout*)Unsafe.AsPointer(ref this), lFlags, pptTopLeft);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int MapSize(SIZE* psizeIn, RECT* prcOut)
+        public HRESULT MapSize(SIZE* psizeIn, RECT* prcOut)
         {
             return ((delegate* unmanaged<IElementBehaviorLayout*, SIZE*, RECT*, int>)(lpVtbl[6]))((IElementBehaviorLayout*)Unsafe.AsPointer(ref this), psizeIn, prcOut);
         }

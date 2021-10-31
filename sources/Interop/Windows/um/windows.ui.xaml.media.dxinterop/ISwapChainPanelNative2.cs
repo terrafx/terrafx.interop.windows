@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<ISwapChainPanelNative2*, Guid*, void**, int>)(lpVtbl[0]))((ISwapChainPanelNative2*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,18 +41,16 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetSwapChain(IDXGISwapChain* swapChain)
+        public HRESULT SetSwapChain(IDXGISwapChain* swapChain)
         {
             return ((delegate* unmanaged<ISwapChainPanelNative2*, IDXGISwapChain*, int>)(lpVtbl[3]))((ISwapChainPanelNative2*)Unsafe.AsPointer(ref this), swapChain);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetSwapChainHandle([NativeTypeName("HANDLE")] IntPtr swapChainHandle)
+        public HRESULT SetSwapChainHandle(HANDLE swapChainHandle)
         {
-            return ((delegate* unmanaged<ISwapChainPanelNative2*, IntPtr, int>)(lpVtbl[4]))((ISwapChainPanelNative2*)Unsafe.AsPointer(ref this), swapChainHandle);
+            return ((delegate* unmanaged<ISwapChainPanelNative2*, HANDLE, int>)(lpVtbl[4]))((ISwapChainPanelNative2*)Unsafe.AsPointer(ref this), swapChainHandle);
         }
     }
 }

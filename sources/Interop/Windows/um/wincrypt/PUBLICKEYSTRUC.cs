@@ -7,10 +7,8 @@ namespace TerraFX.Interop
 {
     public partial struct PUBLICKEYSTRUC
     {
-        [NativeTypeName("BYTE")]
         public byte bType;
 
-        [NativeTypeName("BYTE")]
         public byte bVersion;
 
         [NativeTypeName("WORD")]

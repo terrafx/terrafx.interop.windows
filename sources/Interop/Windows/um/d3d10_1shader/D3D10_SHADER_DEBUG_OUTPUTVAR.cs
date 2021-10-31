@@ -7,31 +7,22 @@ namespace TerraFX.Interop
 {
     public partial struct D3D10_SHADER_DEBUG_OUTPUTVAR
     {
-        [NativeTypeName("UINT")]
         public uint Var;
 
-        [NativeTypeName("UINT")]
         public uint uValueMin;
 
-        [NativeTypeName("UINT")]
         public uint uValueMax;
 
-        [NativeTypeName("INT")]
         public int iValueMin;
 
-        [NativeTypeName("INT")]
         public int iValueMax;
 
-        [NativeTypeName("FLOAT")]
         public float fValueMin;
 
-        [NativeTypeName("FLOAT")]
         public float fValueMax;
 
-        [NativeTypeName("BOOL")]
-        public int bNaNPossible;
+        public BOOL bNaNPossible;
 
-        [NativeTypeName("BOOL")]
-        public int bInfPossible;
+        public BOOL bInfPossible;
     }
 }

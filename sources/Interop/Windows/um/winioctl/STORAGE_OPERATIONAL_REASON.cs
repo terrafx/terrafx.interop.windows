@@ -37,28 +37,22 @@ namespace TerraFX.Interop
 
             public partial struct _ScsiSenseKey_e__Struct
             {
-                [NativeTypeName("BYTE")]
                 public byte SenseKey;
 
-                [NativeTypeName("BYTE")]
                 public byte ASC;
 
-                [NativeTypeName("BYTE")]
                 public byte ASCQ;
 
-                [NativeTypeName("BYTE")]
                 public byte Reserved;
             }
 
             public unsafe partial struct _NVDIMM_N_e__Struct
             {
-                [NativeTypeName("BYTE")]
                 public byte CriticalHealth;
 
                 [NativeTypeName("BYTE [2]")]
                 public fixed byte ModuleHealth[2];
 
-                [NativeTypeName("BYTE")]
                 public byte ErrorThresholdStatus;
             }
         }

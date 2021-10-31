@@ -7,13 +7,10 @@ namespace TerraFX.Interop
 {
     public partial struct RGBTRIPLE
     {
-        [NativeTypeName("BYTE")]
         public byte rgbtBlue;
 
-        [NativeTypeName("BYTE")]
         public byte rgbtGreen;
 
-        [NativeTypeName("BYTE")]
         public byte rgbtRed;
     }
 }

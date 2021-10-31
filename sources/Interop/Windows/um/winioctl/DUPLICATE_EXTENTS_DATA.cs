@@ -3,14 +3,11 @@
 // Ported from um/winioctl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
-
 namespace TerraFX.Interop
 {
     public partial struct DUPLICATE_EXTENTS_DATA
     {
-        [NativeTypeName("HANDLE")]
-        public IntPtr FileHandle;
+        public HANDLE FileHandle;
 
         public LARGE_INTEGER SourceFileOffset;
 

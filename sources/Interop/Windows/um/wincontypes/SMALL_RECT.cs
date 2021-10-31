@@ -7,16 +7,12 @@ namespace TerraFX.Interop
 {
     public partial struct SMALL_RECT
     {
-        [NativeTypeName("SHORT")]
         public short Left;
 
-        [NativeTypeName("SHORT")]
         public short Top;
 
-        [NativeTypeName("SHORT")]
         public short Right;
 
-        [NativeTypeName("SHORT")]
         public short Bottom;
     }
 }

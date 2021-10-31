@@ -9,7 +9,6 @@ namespace TerraFX.Interop
     {
         public NMCUSTOMDRAW nmcd;
 
-        [NativeTypeName("UINT")]
         public uint uDrawFlags;
     }
 }

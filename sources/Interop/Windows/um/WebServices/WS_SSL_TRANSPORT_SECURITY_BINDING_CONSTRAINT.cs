@@ -14,8 +14,7 @@ namespace TerraFX.Interop
 
         public partial struct _out_e__Struct
         {
-            [NativeTypeName("BOOL")]
-            public int clientCertCredentialRequired;
+            public BOOL clientCertCredentialRequired;
         }
     }
 }

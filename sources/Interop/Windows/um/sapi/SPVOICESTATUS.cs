@@ -13,8 +13,7 @@ namespace TerraFX.Interop
         [NativeTypeName("ULONG")]
         public uint ulLastStreamQueued;
 
-        [NativeTypeName("HRESULT")]
-        public int hrLastResult;
+        public HRESULT hrLastResult;
 
         [NativeTypeName("DWORD")]
         public uint dwRunningState;

@@ -10,7 +10,6 @@ namespace TerraFX.Interop
         [NativeTypeName("LPSOCKADDR")]
         public SOCKADDR* name;
 
-        [NativeTypeName("INT")]
         public int namelen;
 
         [NativeTypeName("LPWSABUF")]

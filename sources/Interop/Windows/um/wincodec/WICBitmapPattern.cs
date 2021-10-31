@@ -12,13 +12,10 @@ namespace TerraFX.Interop
         [NativeTypeName("ULONG")]
         public uint Length;
 
-        [NativeTypeName("BYTE *")]
         public byte* Pattern;
 
-        [NativeTypeName("BYTE *")]
         public byte* Mask;
 
-        [NativeTypeName("BOOL")]
-        public int EndOfStream;
+        public BOOL EndOfStream;
     }
 }

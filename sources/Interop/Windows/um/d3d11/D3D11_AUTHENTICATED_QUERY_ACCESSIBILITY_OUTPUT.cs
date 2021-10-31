@@ -11,10 +11,8 @@ namespace TerraFX.Interop
 
         public D3D11_BUS_TYPE BusType;
 
-        [NativeTypeName("BOOL")]
-        public int AccessibleInContiguousBlocks;
+        public BOOL AccessibleInContiguousBlocks;
 
-        [NativeTypeName("BOOL")]
-        public int AccessibleInNonContiguousBlocks;
+        public BOOL AccessibleInNonContiguousBlocks;
     }
 }

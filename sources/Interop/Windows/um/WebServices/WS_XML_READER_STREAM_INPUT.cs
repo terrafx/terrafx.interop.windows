@@ -12,7 +12,7 @@ namespace TerraFX.Interop
         public WS_XML_READER_INPUT input;
 
         [NativeTypeName("WS_READ_CALLBACK")]
-        public delegate* unmanaged<void*, void*, uint, uint*, WS_ASYNC_CONTEXT*, IntPtr, int> readCallback;
+        public delegate* unmanaged<void*, void*, uint, uint*, WS_ASYNC_CONTEXT*, IntPtr, HRESULT> readCallback;
 
         public void* readCallbackState;
     }

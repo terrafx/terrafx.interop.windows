@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public partial struct D3D12_DEBUG_DEVICE_GPU_BASED_VALIDATION_SETTINGS
     {
-        [NativeTypeName("UINT")]
         public uint MaxMessagesPerCommandList;
 
         public D3D12_GPU_BASED_VALIDATION_SHADER_PATCH_MODE DefaultShaderPatchMode;

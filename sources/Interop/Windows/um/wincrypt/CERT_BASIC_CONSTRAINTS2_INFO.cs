@@ -7,11 +7,9 @@ namespace TerraFX.Interop
 {
     public partial struct CERT_BASIC_CONSTRAINTS2_INFO
     {
-        [NativeTypeName("BOOL")]
-        public int fCA;
+        public BOOL fCA;
 
-        [NativeTypeName("BOOL")]
-        public int fPathLenConstraint;
+        public BOOL fPathLenConstraint;
 
         [NativeTypeName("DWORD")]
         public uint dwPathLenConstraint;

@@ -11,10 +11,8 @@ namespace TerraFX.Interop
 
         public SOCKET_ADDRESS RemoteAddr;
 
-        [NativeTypeName("INT")]
         public int iSocketType;
 
-        [NativeTypeName("INT")]
         public int iProtocol;
     }
 }

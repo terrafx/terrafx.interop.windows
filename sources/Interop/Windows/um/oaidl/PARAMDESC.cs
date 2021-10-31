@@ -10,7 +10,6 @@ namespace TerraFX.Interop
         [NativeTypeName("LPPARAMDESCEX")]
         public PARAMDESCEX* pparamdescex;
 
-        [NativeTypeName("USHORT")]
         public ushort wParamFlags;
     }
 }

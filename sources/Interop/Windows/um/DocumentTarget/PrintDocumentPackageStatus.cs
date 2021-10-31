@@ -21,7 +21,6 @@ namespace TerraFX.Interop
 
         public PrintDocumentPackageCompletion Completion;
 
-        [NativeTypeName("HRESULT")]
-        public int PackageStatus;
+        public HRESULT PackageStatus;
     }
 }

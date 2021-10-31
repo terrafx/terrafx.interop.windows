@@ -14,7 +14,6 @@ namespace TerraFX.Interop
 
         public IUnknown* pItf;
 
-        [NativeTypeName("HRESULT")]
-        public int hr;
+        public HRESULT hr;
     }
 }

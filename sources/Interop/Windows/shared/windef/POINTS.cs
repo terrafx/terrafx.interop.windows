@@ -7,10 +7,8 @@ namespace TerraFX.Interop
 {
     public partial struct POINTS
     {
-        [NativeTypeName("SHORT")]
         public short x;
 
-        [NativeTypeName("SHORT")]
         public short y;
     }
 }

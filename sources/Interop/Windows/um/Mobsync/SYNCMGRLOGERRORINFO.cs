@@ -18,10 +18,8 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint dwSyncMgrErrorFlags;
 
-        [NativeTypeName("GUID")]
         public Guid ErrorID;
 
-        [NativeTypeName("GUID")]
         public Guid ItemID;
     }
 }

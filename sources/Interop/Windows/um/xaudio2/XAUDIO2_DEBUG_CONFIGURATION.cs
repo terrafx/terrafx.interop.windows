@@ -16,16 +16,12 @@ namespace TerraFX.Interop
         [NativeTypeName("UINT32")]
         public uint BreakMask;
 
-        [NativeTypeName("BOOL")]
-        public int LogThreadID;
+        public BOOL LogThreadID;
 
-        [NativeTypeName("BOOL")]
-        public int LogFileline;
+        public BOOL LogFileline;
 
-        [NativeTypeName("BOOL")]
-        public int LogFunctionName;
+        public BOOL LogFunctionName;
 
-        [NativeTypeName("BOOL")]
-        public int LogTiming;
+        public BOOL LogTiming;
     }
 }

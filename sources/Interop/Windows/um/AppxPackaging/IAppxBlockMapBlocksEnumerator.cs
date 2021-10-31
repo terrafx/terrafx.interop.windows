@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IAppxBlockMapBlocksEnumerator*, Guid*, void**, int>)(lpVtbl[0]))((IAppxBlockMapBlocksEnumerator*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,26 +41,23 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetCurrent(IAppxBlockMapBlock** block)
+        public HRESULT GetCurrent(IAppxBlockMapBlock** block)
         {
             return ((delegate* unmanaged<IAppxBlockMapBlocksEnumerator*, IAppxBlockMapBlock**, int>)(lpVtbl[3]))((IAppxBlockMapBlocksEnumerator*)Unsafe.AsPointer(ref this), block);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetHasCurrent([NativeTypeName("BOOL *")] int* hasCurrent)
+        public HRESULT GetHasCurrent(BOOL* hasCurrent)
         {
-            return ((delegate* unmanaged<IAppxBlockMapBlocksEnumerator*, int*, int>)(lpVtbl[4]))((IAppxBlockMapBlocksEnumerator*)Unsafe.AsPointer(ref this), hasCurrent);
+            return ((delegate* unmanaged<IAppxBlockMapBlocksEnumerator*, BOOL*, int>)(lpVtbl[4]))((IAppxBlockMapBlocksEnumerator*)Unsafe.AsPointer(ref this), hasCurrent);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int MoveNext([NativeTypeName("BOOL *")] int* hasNext)
+        public HRESULT MoveNext(BOOL* hasNext)
         {
-            return ((delegate* unmanaged<IAppxBlockMapBlocksEnumerator*, int*, int>)(lpVtbl[5]))((IAppxBlockMapBlocksEnumerator*)Unsafe.AsPointer(ref this), hasNext);
+            return ((delegate* unmanaged<IAppxBlockMapBlocksEnumerator*, BOOL*, int>)(lpVtbl[5]))((IAppxBlockMapBlocksEnumerator*)Unsafe.AsPointer(ref this), hasNext);
         }
     }
 }

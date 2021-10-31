@@ -12,7 +12,6 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint Version;
 
-        [NativeTypeName("GUID")]
         public Guid Source;
     }
 }

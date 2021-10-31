@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public partial struct D3D11_FEATURE_DATA_D3D9_OPTIONS
     {
-        [NativeTypeName("BOOL")]
-        public int FullNonPow2TextureSupport;
+        public BOOL FullNonPow2TextureSupport;
     }
 }

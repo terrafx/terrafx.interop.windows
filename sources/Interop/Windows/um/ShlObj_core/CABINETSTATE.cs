@@ -17,10 +17,10 @@ namespace TerraFX.Interop
         [NativeTypeName("WORD")]
         public ushort nVersion;
 
-        public int _bitfield;
+        public BOOL _bitfield;
 
         [NativeTypeName("BOOL : 1")]
-        public int fFullPathTitle
+        public BOOL fFullPathTitle
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
@@ -36,7 +36,7 @@ namespace TerraFX.Interop
         }
 
         [NativeTypeName("BOOL : 1")]
-        public int fSaveLocalView
+        public BOOL fSaveLocalView
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
@@ -52,7 +52,7 @@ namespace TerraFX.Interop
         }
 
         [NativeTypeName("BOOL : 1")]
-        public int fNotShell
+        public BOOL fNotShell
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
@@ -68,7 +68,7 @@ namespace TerraFX.Interop
         }
 
         [NativeTypeName("BOOL : 1")]
-        public int fSimpleDefault
+        public BOOL fSimpleDefault
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
@@ -84,7 +84,7 @@ namespace TerraFX.Interop
         }
 
         [NativeTypeName("BOOL : 1")]
-        public int fDontShowDescBar
+        public BOOL fDontShowDescBar
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
@@ -100,7 +100,7 @@ namespace TerraFX.Interop
         }
 
         [NativeTypeName("BOOL : 1")]
-        public int fNewWindowMode
+        public BOOL fNewWindowMode
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
@@ -116,7 +116,7 @@ namespace TerraFX.Interop
         }
 
         [NativeTypeName("BOOL : 1")]
-        public int fShowCompColor
+        public BOOL fShowCompColor
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
@@ -132,7 +132,7 @@ namespace TerraFX.Interop
         }
 
         [NativeTypeName("BOOL : 1")]
-        public int fDontPrettyNames
+        public BOOL fDontPrettyNames
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
@@ -148,7 +148,7 @@ namespace TerraFX.Interop
         }
 
         [NativeTypeName("BOOL : 1")]
-        public int fAdminsCreateCommonGroups
+        public BOOL fAdminsCreateCommonGroups
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
@@ -163,7 +163,7 @@ namespace TerraFX.Interop
             }
         }
 
-        [NativeTypeName("UINT : 7")]
+        [NativeTypeName("uint : 7")]
         public uint fUnusedFlags
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -175,11 +175,10 @@ namespace TerraFX.Interop
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             set
             {
-                _bitfield = (_bitfield & ~(0x7F << 9)) | (int)((value & 0x7Fu) << 9);
+                _bitfield = (_bitfield & ~(0x7F << 9)) | (BOOL)((value & 0x7Fu) << 9);
             }
         }
 
-        [NativeTypeName("UINT")]
         public uint fMenuEnumFilter;
     }
 }

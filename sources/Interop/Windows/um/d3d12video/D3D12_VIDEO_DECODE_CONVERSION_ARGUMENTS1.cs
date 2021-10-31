@@ -7,22 +7,18 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct D3D12_VIDEO_DECODE_CONVERSION_ARGUMENTS1
     {
-        [NativeTypeName("BOOL")]
-        public int Enable;
+        public BOOL Enable;
 
         public ID3D12Resource* pReferenceTexture2D;
 
-        [NativeTypeName("UINT")]
         public uint ReferenceSubresource;
 
         public DXGI_COLOR_SPACE_TYPE OutputColorSpace;
 
         public DXGI_COLOR_SPACE_TYPE DecodeColorSpace;
 
-        [NativeTypeName("UINT")]
         public uint OutputWidth;
 
-        [NativeTypeName("UINT")]
         public uint OutputHeight;
     }
 }

@@ -16,8 +16,7 @@ namespace TerraFX.Interop
         public void** lpVtbl;
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
             return ((delegate* unmanaged<IObservableVector<T>*, Guid*, void**, int>)(lpVtbl[0]))((IObservableVector<T>*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -37,36 +36,31 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetIids([NativeTypeName("ULONG *")] uint* iidCount, [NativeTypeName("IID **")] Guid** iids)
+        public HRESULT GetIids([NativeTypeName("ULONG *")] uint* iidCount, [NativeTypeName("IID **")] Guid** iids)
         {
             return ((delegate* unmanaged<IObservableVector<T>*, uint*, Guid**, int>)(lpVtbl[3]))((IObservableVector<T>*)Unsafe.AsPointer(ref this), iidCount, iids);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetRuntimeClassName([NativeTypeName("HSTRING *")] IntPtr* className)
+        public HRESULT GetRuntimeClassName(HSTRING* className)
         {
-            return ((delegate* unmanaged<IObservableVector<T>*, IntPtr*, int>)(lpVtbl[4]))((IObservableVector<T>*)Unsafe.AsPointer(ref this), className);
+            return ((delegate* unmanaged<IObservableVector<T>*, HSTRING*, int>)(lpVtbl[4]))((IObservableVector<T>*)Unsafe.AsPointer(ref this), className);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetTrustLevel([NativeTypeName("TrustLevel *")] TrustLevel* trustLevel)
+        public HRESULT GetTrustLevel([NativeTypeName("TrustLevel *")] TrustLevel* trustLevel)
         {
             return ((delegate* unmanaged<IObservableVector<T>*, TrustLevel*, int>)(lpVtbl[5]))((IObservableVector<T>*)Unsafe.AsPointer(ref this), trustLevel);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [return: NativeTypeName("HRESULT")]
-        public int add_VectorChanged([NativeTypeName("VectorChangedEventHandler<T_logical> *")] VectorChangedEventHandler<T>* handler, [NativeTypeName("EventRegistrationToken *")] EventRegistrationToken* token)
+        public HRESULT add_VectorChanged([NativeTypeName("VectorChangedEventHandler<T_logical> *")] VectorChangedEventHandler<T>* handler, [NativeTypeName("EventRegistrationToken *")] EventRegistrationToken* token)
         {
             return ((delegate* unmanaged<IObservableVector<T>*, VectorChangedEventHandler<T>*, EventRegistrationToken*, int>)(lpVtbl[6]))((IObservableVector<T>*)Unsafe.AsPointer(ref this), handler, token);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [return: NativeTypeName("HRESULT")]
-        public int remove_VectorChanged(EventRegistrationToken token)
+        public HRESULT remove_VectorChanged(EventRegistrationToken token)
         {
             return ((delegate* unmanaged<IObservableVector<T>*, EventRegistrationToken, int>)(lpVtbl[7]))((IObservableVector<T>*)Unsafe.AsPointer(ref this), token);
         }

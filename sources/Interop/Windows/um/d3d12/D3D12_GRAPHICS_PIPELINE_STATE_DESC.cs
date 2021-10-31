@@ -27,7 +27,6 @@ namespace TerraFX.Interop
 
         public D3D12_BLEND_DESC BlendState;
 
-        [NativeTypeName("UINT")]
         public uint SampleMask;
 
         public D3D12_RASTERIZER_DESC RasterizerState;
@@ -40,7 +39,6 @@ namespace TerraFX.Interop
 
         public D3D12_PRIMITIVE_TOPOLOGY_TYPE PrimitiveTopologyType;
 
-        [NativeTypeName("UINT")]
         public uint NumRenderTargets;
 
         [NativeTypeName("DXGI_FORMAT [8]")]
@@ -50,7 +48,6 @@ namespace TerraFX.Interop
 
         public DXGI_SAMPLE_DESC SampleDesc;
 
-        [NativeTypeName("UINT")]
         public uint NodeMask;
 
         public D3D12_CACHED_PIPELINE_STATE CachedPSO;

@@ -17,13 +17,10 @@ namespace TerraFX.Interop
 
         public RECT rcSource;
 
-        [NativeTypeName("BYTE")]
         public byte opacity;
 
-        [NativeTypeName("BOOL")]
-        public int fVisible;
+        public BOOL fVisible;
 
-        [NativeTypeName("BOOL")]
-        public int fSourceClientAreaOnly;
+        public BOOL fSourceClientAreaOnly;
     }
 }

@@ -19,7 +19,6 @@ namespace TerraFX.Interop
         [NativeTypeName("LONG")]
         public int paYExt;
 
-        [NativeTypeName("BYTE")]
         public byte paRGBs;
     }
 }

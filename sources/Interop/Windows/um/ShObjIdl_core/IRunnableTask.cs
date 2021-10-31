@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IRunnableTask*, Guid*, void**, int>)(lpVtbl[0]))((IRunnableTask*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,32 +41,28 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int Run()
+        public HRESULT Run()
         {
             return ((delegate* unmanaged<IRunnableTask*, int>)(lpVtbl[3]))((IRunnableTask*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int Kill([NativeTypeName("BOOL")] int bWait)
+        public HRESULT Kill(BOOL bWait)
         {
-            return ((delegate* unmanaged<IRunnableTask*, int, int>)(lpVtbl[4]))((IRunnableTask*)Unsafe.AsPointer(ref this), bWait);
+            return ((delegate* unmanaged<IRunnableTask*, BOOL, int>)(lpVtbl[4]))((IRunnableTask*)Unsafe.AsPointer(ref this), bWait);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int Suspend()
+        public HRESULT Suspend()
         {
             return ((delegate* unmanaged<IRunnableTask*, int>)(lpVtbl[5]))((IRunnableTask*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int Resume()
+        public HRESULT Resume()
         {
             return ((delegate* unmanaged<IRunnableTask*, int>)(lpVtbl[6]))((IRunnableTask*)Unsafe.AsPointer(ref this));
         }

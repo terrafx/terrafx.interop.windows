@@ -23,7 +23,6 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint TSSessionId;
 
-        [NativeTypeName("BOOL")]
-        public int bRestartable;
+        public BOOL bRestartable;
     }
 }

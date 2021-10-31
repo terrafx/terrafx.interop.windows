@@ -7,10 +7,8 @@ namespace TerraFX.Interop
 {
     public partial struct PROCESS_MEMORY_EXHAUSTION_INFO
     {
-        [NativeTypeName("USHORT")]
         public ushort Version;
 
-        [NativeTypeName("USHORT")]
         public ushort Reserved;
 
         public PROCESS_MEMORY_EXHAUSTION_TYPE Type;

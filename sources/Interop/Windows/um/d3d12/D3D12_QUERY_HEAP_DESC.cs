@@ -9,10 +9,8 @@ namespace TerraFX.Interop
     {
         public D3D12_QUERY_HEAP_TYPE Type;
 
-        [NativeTypeName("UINT")]
         public uint Count;
 
-        [NativeTypeName("UINT")]
         public uint NodeMask;
     }
 }

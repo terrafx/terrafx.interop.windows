@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<ITfFnGetSAPIObject*, Guid*, void**, int>)(lpVtbl[0]))((ITfFnGetSAPIObject*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,16 +41,14 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetDisplayName([NativeTypeName("BSTR *")] ushort** pbstrName)
+        public HRESULT GetDisplayName([NativeTypeName("BSTR *")] ushort** pbstrName)
         {
             return ((delegate* unmanaged<ITfFnGetSAPIObject*, ushort**, int>)(lpVtbl[3]))((ITfFnGetSAPIObject*)Unsafe.AsPointer(ref this), pbstrName);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int Get(TfSapiObject sObj, IUnknown** ppunk)
+        public HRESULT Get(TfSapiObject sObj, IUnknown** ppunk)
         {
             return ((delegate* unmanaged<ITfFnGetSAPIObject*, TfSapiObject, IUnknown**, int>)(lpVtbl[4]))((ITfFnGetSAPIObject*)Unsafe.AsPointer(ref this), sObj, ppunk);
         }

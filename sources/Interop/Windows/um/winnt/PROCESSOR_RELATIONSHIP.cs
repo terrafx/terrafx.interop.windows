@@ -11,10 +11,8 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct PROCESSOR_RELATIONSHIP
     {
-        [NativeTypeName("BYTE")]
         public byte Flags;
 
-        [NativeTypeName("BYTE")]
         public byte EfficiencyClass;
 
         [NativeTypeName("BYTE [20]")]

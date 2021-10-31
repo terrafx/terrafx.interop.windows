@@ -15,15 +15,14 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetDesc(D3D10_SHADER_TYPE_DESC* pDesc)
+        public HRESULT GetDesc(D3D10_SHADER_TYPE_DESC* pDesc)
         {
             return ((delegate* unmanaged<ID3D10ShaderReflectionType*, D3D10_SHADER_TYPE_DESC*, int>)(lpVtbl[0]))((ID3D10ShaderReflectionType*)Unsafe.AsPointer(ref this), pDesc);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(1)]
-        public ID3D10ShaderReflectionType* GetMemberTypeByIndex([NativeTypeName("UINT")] uint Index)
+        public ID3D10ShaderReflectionType* GetMemberTypeByIndex(uint Index)
         {
             return ((delegate* unmanaged<ID3D10ShaderReflectionType*, uint, ID3D10ShaderReflectionType*>)(lpVtbl[1]))((ID3D10ShaderReflectionType*)Unsafe.AsPointer(ref this), Index);
         }
@@ -38,7 +37,7 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
         [return: NativeTypeName("LPCSTR")]
-        public sbyte* GetMemberTypeName([NativeTypeName("UINT")] uint Index)
+        public sbyte* GetMemberTypeName(uint Index)
         {
             return ((delegate* unmanaged<ID3D10ShaderReflectionType*, uint, sbyte*>)(lpVtbl[3]))((ID3D10ShaderReflectionType*)Unsafe.AsPointer(ref this), Index);
         }

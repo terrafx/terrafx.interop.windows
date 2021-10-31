@@ -9,7 +9,6 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct SHELL_ITEM_RESOURCE
     {
-        [NativeTypeName("GUID")]
         public Guid guidType;
 
         [NativeTypeName("WCHAR [260]")]

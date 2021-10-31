@@ -7,13 +7,10 @@ namespace TerraFX.Interop
 {
     public partial struct MF_FLOAT3
     {
-        [NativeTypeName("FLOAT")]
         public float x;
 
-        [NativeTypeName("FLOAT")]
         public float y;
 
-        [NativeTypeName("FLOAT")]
         public float z;
     }
 }

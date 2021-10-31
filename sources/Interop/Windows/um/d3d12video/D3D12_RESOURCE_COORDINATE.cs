@@ -10,13 +10,10 @@ namespace TerraFX.Interop
         [NativeTypeName("UINT64")]
         public ulong X;
 
-        [NativeTypeName("UINT")]
         public uint Y;
 
-        [NativeTypeName("UINT")]
         public uint Z;
 
-        [NativeTypeName("UINT")]
         public uint SubresourceIndex;
     }
 }

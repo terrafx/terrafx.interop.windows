@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IFileDialogEvents*, Guid*, void**, int>)(lpVtbl[0]))((IFileDialogEvents*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,56 +41,49 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int OnFileOk(IFileDialog* pfd)
+        public HRESULT OnFileOk(IFileDialog* pfd)
         {
             return ((delegate* unmanaged<IFileDialogEvents*, IFileDialog*, int>)(lpVtbl[3]))((IFileDialogEvents*)Unsafe.AsPointer(ref this), pfd);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int OnFolderChanging(IFileDialog* pfd, IShellItem* psiFolder)
+        public HRESULT OnFolderChanging(IFileDialog* pfd, IShellItem* psiFolder)
         {
             return ((delegate* unmanaged<IFileDialogEvents*, IFileDialog*, IShellItem*, int>)(lpVtbl[4]))((IFileDialogEvents*)Unsafe.AsPointer(ref this), pfd, psiFolder);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int OnFolderChange(IFileDialog* pfd)
+        public HRESULT OnFolderChange(IFileDialog* pfd)
         {
             return ((delegate* unmanaged<IFileDialogEvents*, IFileDialog*, int>)(lpVtbl[5]))((IFileDialogEvents*)Unsafe.AsPointer(ref this), pfd);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int OnSelectionChange(IFileDialog* pfd)
+        public HRESULT OnSelectionChange(IFileDialog* pfd)
         {
             return ((delegate* unmanaged<IFileDialogEvents*, IFileDialog*, int>)(lpVtbl[6]))((IFileDialogEvents*)Unsafe.AsPointer(ref this), pfd);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        [return: NativeTypeName("HRESULT")]
-        public int OnShareViolation(IFileDialog* pfd, IShellItem* psi, FDE_SHAREVIOLATION_RESPONSE* pResponse)
+        public HRESULT OnShareViolation(IFileDialog* pfd, IShellItem* psi, FDE_SHAREVIOLATION_RESPONSE* pResponse)
         {
             return ((delegate* unmanaged<IFileDialogEvents*, IFileDialog*, IShellItem*, FDE_SHAREVIOLATION_RESPONSE*, int>)(lpVtbl[7]))((IFileDialogEvents*)Unsafe.AsPointer(ref this), pfd, psi, pResponse);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        [return: NativeTypeName("HRESULT")]
-        public int OnTypeChange(IFileDialog* pfd)
+        public HRESULT OnTypeChange(IFileDialog* pfd)
         {
             return ((delegate* unmanaged<IFileDialogEvents*, IFileDialog*, int>)(lpVtbl[8]))((IFileDialogEvents*)Unsafe.AsPointer(ref this), pfd);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        [return: NativeTypeName("HRESULT")]
-        public int OnOverwrite(IFileDialog* pfd, IShellItem* psi, FDE_OVERWRITE_RESPONSE* pResponse)
+        public HRESULT OnOverwrite(IFileDialog* pfd, IShellItem* psi, FDE_OVERWRITE_RESPONSE* pResponse)
         {
             return ((delegate* unmanaged<IFileDialogEvents*, IFileDialog*, IShellItem*, FDE_OVERWRITE_RESPONSE*, int>)(lpVtbl[9]))((IFileDialogEvents*)Unsafe.AsPointer(ref this), pfd, psi, pResponse);
         }

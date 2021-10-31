@@ -82,10 +82,8 @@ namespace TerraFX.Interop
         [NativeTypeName("WORD")]
         public ushort ne_cres;
 
-        [NativeTypeName("BYTE")]
         public byte ne_exetyp;
 
-        [NativeTypeName("BYTE")]
         public byte ne_flagsothers;
 
         [NativeTypeName("WORD")]

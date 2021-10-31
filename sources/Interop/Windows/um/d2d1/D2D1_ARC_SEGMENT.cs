@@ -13,7 +13,6 @@ namespace TerraFX.Interop
         [NativeTypeName("D2D1_SIZE_F")]
         public D2D_SIZE_F size;
 
-        [NativeTypeName("FLOAT")]
         public float rotationAngle;
 
         public D2D1_SWEEP_DIRECTION sweepDirection;

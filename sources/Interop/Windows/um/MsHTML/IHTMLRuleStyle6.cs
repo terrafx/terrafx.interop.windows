@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IHTMLRuleStyle6*, Guid*, void**, int>)(lpVtbl[0]))((IHTMLRuleStyle6*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,288 +41,252 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetTypeInfoCount([NativeTypeName("UINT *")] uint* pctinfo)
+        public HRESULT GetTypeInfoCount(uint* pctinfo)
         {
             return ((delegate* unmanaged<IHTMLRuleStyle6*, uint*, int>)(lpVtbl[3]))((IHTMLRuleStyle6*)Unsafe.AsPointer(ref this), pctinfo);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetTypeInfo([NativeTypeName("UINT")] uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
+        public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
         {
             return ((delegate* unmanaged<IHTMLRuleStyle6*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IHTMLRuleStyle6*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, [NativeTypeName("UINT")] uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+        public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
         {
             return ((delegate* unmanaged<IHTMLRuleStyle6*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLRuleStyle6*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, [NativeTypeName("UINT *")] uint* puArgErr)
+        public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
         {
             return ((delegate* unmanaged<IHTMLRuleStyle6*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IHTMLRuleStyle6*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        [return: NativeTypeName("HRESULT")]
-        public int put_content([NativeTypeName("BSTR")] ushort* v)
+        public HRESULT put_content([NativeTypeName("BSTR")] ushort* v)
         {
             return ((delegate* unmanaged<IHTMLRuleStyle6*, ushort*, int>)(lpVtbl[7]))((IHTMLRuleStyle6*)Unsafe.AsPointer(ref this), v);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        [return: NativeTypeName("HRESULT")]
-        public int get_content([NativeTypeName("BSTR *")] ushort** p)
+        public HRESULT get_content([NativeTypeName("BSTR *")] ushort** p)
         {
             return ((delegate* unmanaged<IHTMLRuleStyle6*, ushort**, int>)(lpVtbl[8]))((IHTMLRuleStyle6*)Unsafe.AsPointer(ref this), p);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        [return: NativeTypeName("HRESULT")]
-        public int put_captionSide([NativeTypeName("BSTR")] ushort* v)
+        public HRESULT put_captionSide([NativeTypeName("BSTR")] ushort* v)
         {
             return ((delegate* unmanaged<IHTMLRuleStyle6*, ushort*, int>)(lpVtbl[9]))((IHTMLRuleStyle6*)Unsafe.AsPointer(ref this), v);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(10)]
-        [return: NativeTypeName("HRESULT")]
-        public int get_captionSide([NativeTypeName("BSTR *")] ushort** p)
+        public HRESULT get_captionSide([NativeTypeName("BSTR *")] ushort** p)
         {
             return ((delegate* unmanaged<IHTMLRuleStyle6*, ushort**, int>)(lpVtbl[10]))((IHTMLRuleStyle6*)Unsafe.AsPointer(ref this), p);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(11)]
-        [return: NativeTypeName("HRESULT")]
-        public int put_counterIncrement([NativeTypeName("BSTR")] ushort* v)
+        public HRESULT put_counterIncrement([NativeTypeName("BSTR")] ushort* v)
         {
             return ((delegate* unmanaged<IHTMLRuleStyle6*, ushort*, int>)(lpVtbl[11]))((IHTMLRuleStyle6*)Unsafe.AsPointer(ref this), v);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(12)]
-        [return: NativeTypeName("HRESULT")]
-        public int get_counterIncrement([NativeTypeName("BSTR *")] ushort** p)
+        public HRESULT get_counterIncrement([NativeTypeName("BSTR *")] ushort** p)
         {
             return ((delegate* unmanaged<IHTMLRuleStyle6*, ushort**, int>)(lpVtbl[12]))((IHTMLRuleStyle6*)Unsafe.AsPointer(ref this), p);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(13)]
-        [return: NativeTypeName("HRESULT")]
-        public int put_counterReset([NativeTypeName("BSTR")] ushort* v)
+        public HRESULT put_counterReset([NativeTypeName("BSTR")] ushort* v)
         {
             return ((delegate* unmanaged<IHTMLRuleStyle6*, ushort*, int>)(lpVtbl[13]))((IHTMLRuleStyle6*)Unsafe.AsPointer(ref this), v);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(14)]
-        [return: NativeTypeName("HRESULT")]
-        public int get_counterReset([NativeTypeName("BSTR *")] ushort** p)
+        public HRESULT get_counterReset([NativeTypeName("BSTR *")] ushort** p)
         {
             return ((delegate* unmanaged<IHTMLRuleStyle6*, ushort**, int>)(lpVtbl[14]))((IHTMLRuleStyle6*)Unsafe.AsPointer(ref this), p);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(15)]
-        [return: NativeTypeName("HRESULT")]
-        public int put_outline([NativeTypeName("BSTR")] ushort* v)
+        public HRESULT put_outline([NativeTypeName("BSTR")] ushort* v)
         {
             return ((delegate* unmanaged<IHTMLRuleStyle6*, ushort*, int>)(lpVtbl[15]))((IHTMLRuleStyle6*)Unsafe.AsPointer(ref this), v);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(16)]
-        [return: NativeTypeName("HRESULT")]
-        public int get_outline([NativeTypeName("BSTR *")] ushort** p)
+        public HRESULT get_outline([NativeTypeName("BSTR *")] ushort** p)
         {
             return ((delegate* unmanaged<IHTMLRuleStyle6*, ushort**, int>)(lpVtbl[16]))((IHTMLRuleStyle6*)Unsafe.AsPointer(ref this), p);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(17)]
-        [return: NativeTypeName("HRESULT")]
-        public int put_outlineWidth(VARIANT v)
+        public HRESULT put_outlineWidth(VARIANT v)
         {
             return ((delegate* unmanaged<IHTMLRuleStyle6*, VARIANT, int>)(lpVtbl[17]))((IHTMLRuleStyle6*)Unsafe.AsPointer(ref this), v);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(18)]
-        [return: NativeTypeName("HRESULT")]
-        public int get_outlineWidth(VARIANT* p)
+        public HRESULT get_outlineWidth(VARIANT* p)
         {
             return ((delegate* unmanaged<IHTMLRuleStyle6*, VARIANT*, int>)(lpVtbl[18]))((IHTMLRuleStyle6*)Unsafe.AsPointer(ref this), p);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(19)]
-        [return: NativeTypeName("HRESULT")]
-        public int put_outlineStyle([NativeTypeName("BSTR")] ushort* v)
+        public HRESULT put_outlineStyle([NativeTypeName("BSTR")] ushort* v)
         {
             return ((delegate* unmanaged<IHTMLRuleStyle6*, ushort*, int>)(lpVtbl[19]))((IHTMLRuleStyle6*)Unsafe.AsPointer(ref this), v);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(20)]
-        [return: NativeTypeName("HRESULT")]
-        public int get_outlineStyle([NativeTypeName("BSTR *")] ushort** p)
+        public HRESULT get_outlineStyle([NativeTypeName("BSTR *")] ushort** p)
         {
             return ((delegate* unmanaged<IHTMLRuleStyle6*, ushort**, int>)(lpVtbl[20]))((IHTMLRuleStyle6*)Unsafe.AsPointer(ref this), p);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(21)]
-        [return: NativeTypeName("HRESULT")]
-        public int put_outlineColor(VARIANT v)
+        public HRESULT put_outlineColor(VARIANT v)
         {
             return ((delegate* unmanaged<IHTMLRuleStyle6*, VARIANT, int>)(lpVtbl[21]))((IHTMLRuleStyle6*)Unsafe.AsPointer(ref this), v);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(22)]
-        [return: NativeTypeName("HRESULT")]
-        public int get_outlineColor(VARIANT* p)
+        public HRESULT get_outlineColor(VARIANT* p)
         {
             return ((delegate* unmanaged<IHTMLRuleStyle6*, VARIANT*, int>)(lpVtbl[22]))((IHTMLRuleStyle6*)Unsafe.AsPointer(ref this), p);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(23)]
-        [return: NativeTypeName("HRESULT")]
-        public int put_boxSizing([NativeTypeName("BSTR")] ushort* v)
+        public HRESULT put_boxSizing([NativeTypeName("BSTR")] ushort* v)
         {
             return ((delegate* unmanaged<IHTMLRuleStyle6*, ushort*, int>)(lpVtbl[23]))((IHTMLRuleStyle6*)Unsafe.AsPointer(ref this), v);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(24)]
-        [return: NativeTypeName("HRESULT")]
-        public int get_boxSizing([NativeTypeName("BSTR *")] ushort** p)
+        public HRESULT get_boxSizing([NativeTypeName("BSTR *")] ushort** p)
         {
             return ((delegate* unmanaged<IHTMLRuleStyle6*, ushort**, int>)(lpVtbl[24]))((IHTMLRuleStyle6*)Unsafe.AsPointer(ref this), p);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(25)]
-        [return: NativeTypeName("HRESULT")]
-        public int put_borderSpacing([NativeTypeName("BSTR")] ushort* v)
+        public HRESULT put_borderSpacing([NativeTypeName("BSTR")] ushort* v)
         {
             return ((delegate* unmanaged<IHTMLRuleStyle6*, ushort*, int>)(lpVtbl[25]))((IHTMLRuleStyle6*)Unsafe.AsPointer(ref this), v);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(26)]
-        [return: NativeTypeName("HRESULT")]
-        public int get_borderSpacing([NativeTypeName("BSTR *")] ushort** p)
+        public HRESULT get_borderSpacing([NativeTypeName("BSTR *")] ushort** p)
         {
             return ((delegate* unmanaged<IHTMLRuleStyle6*, ushort**, int>)(lpVtbl[26]))((IHTMLRuleStyle6*)Unsafe.AsPointer(ref this), p);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(27)]
-        [return: NativeTypeName("HRESULT")]
-        public int put_orphans(VARIANT v)
+        public HRESULT put_orphans(VARIANT v)
         {
             return ((delegate* unmanaged<IHTMLRuleStyle6*, VARIANT, int>)(lpVtbl[27]))((IHTMLRuleStyle6*)Unsafe.AsPointer(ref this), v);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(28)]
-        [return: NativeTypeName("HRESULT")]
-        public int get_orphans(VARIANT* p)
+        public HRESULT get_orphans(VARIANT* p)
         {
             return ((delegate* unmanaged<IHTMLRuleStyle6*, VARIANT*, int>)(lpVtbl[28]))((IHTMLRuleStyle6*)Unsafe.AsPointer(ref this), p);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(29)]
-        [return: NativeTypeName("HRESULT")]
-        public int put_widows(VARIANT v)
+        public HRESULT put_widows(VARIANT v)
         {
             return ((delegate* unmanaged<IHTMLRuleStyle6*, VARIANT, int>)(lpVtbl[29]))((IHTMLRuleStyle6*)Unsafe.AsPointer(ref this), v);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(30)]
-        [return: NativeTypeName("HRESULT")]
-        public int get_widows(VARIANT* p)
+        public HRESULT get_widows(VARIANT* p)
         {
             return ((delegate* unmanaged<IHTMLRuleStyle6*, VARIANT*, int>)(lpVtbl[30]))((IHTMLRuleStyle6*)Unsafe.AsPointer(ref this), p);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(31)]
-        [return: NativeTypeName("HRESULT")]
-        public int put_pageBreakInside([NativeTypeName("BSTR")] ushort* v)
+        public HRESULT put_pageBreakInside([NativeTypeName("BSTR")] ushort* v)
         {
             return ((delegate* unmanaged<IHTMLRuleStyle6*, ushort*, int>)(lpVtbl[31]))((IHTMLRuleStyle6*)Unsafe.AsPointer(ref this), v);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(32)]
-        [return: NativeTypeName("HRESULT")]
-        public int get_pageBreakInside([NativeTypeName("BSTR *")] ushort** p)
+        public HRESULT get_pageBreakInside([NativeTypeName("BSTR *")] ushort** p)
         {
             return ((delegate* unmanaged<IHTMLRuleStyle6*, ushort**, int>)(lpVtbl[32]))((IHTMLRuleStyle6*)Unsafe.AsPointer(ref this), p);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(33)]
-        [return: NativeTypeName("HRESULT")]
-        public int put_emptyCells([NativeTypeName("BSTR")] ushort* v)
+        public HRESULT put_emptyCells([NativeTypeName("BSTR")] ushort* v)
         {
             return ((delegate* unmanaged<IHTMLRuleStyle6*, ushort*, int>)(lpVtbl[33]))((IHTMLRuleStyle6*)Unsafe.AsPointer(ref this), v);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(34)]
-        [return: NativeTypeName("HRESULT")]
-        public int get_emptyCells([NativeTypeName("BSTR *")] ushort** p)
+        public HRESULT get_emptyCells([NativeTypeName("BSTR *")] ushort** p)
         {
             return ((delegate* unmanaged<IHTMLRuleStyle6*, ushort**, int>)(lpVtbl[34]))((IHTMLRuleStyle6*)Unsafe.AsPointer(ref this), p);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(35)]
-        [return: NativeTypeName("HRESULT")]
-        public int put_msBlockProgression([NativeTypeName("BSTR")] ushort* v)
+        public HRESULT put_msBlockProgression([NativeTypeName("BSTR")] ushort* v)
         {
             return ((delegate* unmanaged<IHTMLRuleStyle6*, ushort*, int>)(lpVtbl[35]))((IHTMLRuleStyle6*)Unsafe.AsPointer(ref this), v);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(36)]
-        [return: NativeTypeName("HRESULT")]
-        public int get_msBlockProgression([NativeTypeName("BSTR *")] ushort** p)
+        public HRESULT get_msBlockProgression([NativeTypeName("BSTR *")] ushort** p)
         {
             return ((delegate* unmanaged<IHTMLRuleStyle6*, ushort**, int>)(lpVtbl[36]))((IHTMLRuleStyle6*)Unsafe.AsPointer(ref this), p);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(37)]
-        [return: NativeTypeName("HRESULT")]
-        public int put_quotes([NativeTypeName("BSTR")] ushort* v)
+        public HRESULT put_quotes([NativeTypeName("BSTR")] ushort* v)
         {
             return ((delegate* unmanaged<IHTMLRuleStyle6*, ushort*, int>)(lpVtbl[37]))((IHTMLRuleStyle6*)Unsafe.AsPointer(ref this), v);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(38)]
-        [return: NativeTypeName("HRESULT")]
-        public int get_quotes([NativeTypeName("BSTR *")] ushort** p)
+        public HRESULT get_quotes([NativeTypeName("BSTR *")] ushort** p)
         {
             return ((delegate* unmanaged<IHTMLRuleStyle6*, ushort**, int>)(lpVtbl[38]))((IHTMLRuleStyle6*)Unsafe.AsPointer(ref this), p);
         }

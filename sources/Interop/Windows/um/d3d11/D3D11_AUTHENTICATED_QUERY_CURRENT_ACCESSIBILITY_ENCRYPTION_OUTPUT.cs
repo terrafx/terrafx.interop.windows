@@ -11,7 +11,6 @@ namespace TerraFX.Interop
     {
         public D3D11_AUTHENTICATED_QUERY_OUTPUT Output;
 
-        [NativeTypeName("GUID")]
         public Guid EncryptionGuid;
     }
 }

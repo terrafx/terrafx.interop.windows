@@ -10,22 +10,16 @@ namespace TerraFX.Interop
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public partial struct MilMatrix3x2D
     {
-        [NativeTypeName("DOUBLE")]
         public double S_11;
 
-        [NativeTypeName("DOUBLE")]
         public double S_12;
 
-        [NativeTypeName("DOUBLE")]
         public double S_21;
 
-        [NativeTypeName("DOUBLE")]
         public double S_22;
 
-        [NativeTypeName("DOUBLE")]
         public double DX;
 
-        [NativeTypeName("DOUBLE")]
         public double DY;
     }
 }

@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IAppxManifestReader4*, Guid*, void**, int>)(lpVtbl[0]))((IAppxManifestReader4*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,104 +41,91 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetPackageId(IAppxManifestPackageId** packageId)
+        public HRESULT GetPackageId(IAppxManifestPackageId** packageId)
         {
             return ((delegate* unmanaged<IAppxManifestReader4*, IAppxManifestPackageId**, int>)(lpVtbl[3]))((IAppxManifestReader4*)Unsafe.AsPointer(ref this), packageId);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetProperties(IAppxManifestProperties** packageProperties)
+        public HRESULT GetProperties(IAppxManifestProperties** packageProperties)
         {
             return ((delegate* unmanaged<IAppxManifestReader4*, IAppxManifestProperties**, int>)(lpVtbl[4]))((IAppxManifestReader4*)Unsafe.AsPointer(ref this), packageProperties);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetPackageDependencies(IAppxManifestPackageDependenciesEnumerator** dependencies)
+        public HRESULT GetPackageDependencies(IAppxManifestPackageDependenciesEnumerator** dependencies)
         {
             return ((delegate* unmanaged<IAppxManifestReader4*, IAppxManifestPackageDependenciesEnumerator**, int>)(lpVtbl[5]))((IAppxManifestReader4*)Unsafe.AsPointer(ref this), dependencies);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetCapabilities(APPX_CAPABILITIES* capabilities)
+        public HRESULT GetCapabilities(APPX_CAPABILITIES* capabilities)
         {
             return ((delegate* unmanaged<IAppxManifestReader4*, APPX_CAPABILITIES*, int>)(lpVtbl[6]))((IAppxManifestReader4*)Unsafe.AsPointer(ref this), capabilities);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetResources(IAppxManifestResourcesEnumerator** resources)
+        public HRESULT GetResources(IAppxManifestResourcesEnumerator** resources)
         {
             return ((delegate* unmanaged<IAppxManifestReader4*, IAppxManifestResourcesEnumerator**, int>)(lpVtbl[7]))((IAppxManifestReader4*)Unsafe.AsPointer(ref this), resources);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetDeviceCapabilities(IAppxManifestDeviceCapabilitiesEnumerator** deviceCapabilities)
+        public HRESULT GetDeviceCapabilities(IAppxManifestDeviceCapabilitiesEnumerator** deviceCapabilities)
         {
             return ((delegate* unmanaged<IAppxManifestReader4*, IAppxManifestDeviceCapabilitiesEnumerator**, int>)(lpVtbl[8]))((IAppxManifestReader4*)Unsafe.AsPointer(ref this), deviceCapabilities);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetPrerequisite([NativeTypeName("LPCWSTR")] ushort* name, [NativeTypeName("UINT64 *")] ulong* value)
+        public HRESULT GetPrerequisite([NativeTypeName("LPCWSTR")] ushort* name, [NativeTypeName("UINT64 *")] ulong* value)
         {
             return ((delegate* unmanaged<IAppxManifestReader4*, ushort*, ulong*, int>)(lpVtbl[9]))((IAppxManifestReader4*)Unsafe.AsPointer(ref this), name, value);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(10)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetApplications(IAppxManifestApplicationsEnumerator** applications)
+        public HRESULT GetApplications(IAppxManifestApplicationsEnumerator** applications)
         {
             return ((delegate* unmanaged<IAppxManifestReader4*, IAppxManifestApplicationsEnumerator**, int>)(lpVtbl[10]))((IAppxManifestReader4*)Unsafe.AsPointer(ref this), applications);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(11)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetStream(IStream** manifestStream)
+        public HRESULT GetStream(IStream** manifestStream)
         {
             return ((delegate* unmanaged<IAppxManifestReader4*, IStream**, int>)(lpVtbl[11]))((IAppxManifestReader4*)Unsafe.AsPointer(ref this), manifestStream);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(12)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetQualifiedResources(IAppxManifestQualifiedResourcesEnumerator** resources)
+        public HRESULT GetQualifiedResources(IAppxManifestQualifiedResourcesEnumerator** resources)
         {
             return ((delegate* unmanaged<IAppxManifestReader4*, IAppxManifestQualifiedResourcesEnumerator**, int>)(lpVtbl[12]))((IAppxManifestReader4*)Unsafe.AsPointer(ref this), resources);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(13)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetCapabilitiesByCapabilityClass(APPX_CAPABILITY_CLASS_TYPE capabilityClass, IAppxManifestCapabilitiesEnumerator** capabilities)
+        public HRESULT GetCapabilitiesByCapabilityClass(APPX_CAPABILITY_CLASS_TYPE capabilityClass, IAppxManifestCapabilitiesEnumerator** capabilities)
         {
             return ((delegate* unmanaged<IAppxManifestReader4*, APPX_CAPABILITY_CLASS_TYPE, IAppxManifestCapabilitiesEnumerator**, int>)(lpVtbl[13]))((IAppxManifestReader4*)Unsafe.AsPointer(ref this), capabilityClass, capabilities);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(14)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetTargetDeviceFamilies(IAppxManifestTargetDeviceFamiliesEnumerator** targetDeviceFamilies)
+        public HRESULT GetTargetDeviceFamilies(IAppxManifestTargetDeviceFamiliesEnumerator** targetDeviceFamilies)
         {
             return ((delegate* unmanaged<IAppxManifestReader4*, IAppxManifestTargetDeviceFamiliesEnumerator**, int>)(lpVtbl[14]))((IAppxManifestReader4*)Unsafe.AsPointer(ref this), targetDeviceFamilies);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(15)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetOptionalPackageInfo(IAppxManifestOptionalPackageInfo** optionalPackageInfo)
+        public HRESULT GetOptionalPackageInfo(IAppxManifestOptionalPackageInfo** optionalPackageInfo)
         {
             return ((delegate* unmanaged<IAppxManifestReader4*, IAppxManifestOptionalPackageInfo**, int>)(lpVtbl[15]))((IAppxManifestReader4*)Unsafe.AsPointer(ref this), optionalPackageInfo);
         }

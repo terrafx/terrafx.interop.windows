@@ -7,8 +7,7 @@ namespace TerraFX.Interop
 {
     public partial struct WS_DURATION
     {
-        [NativeTypeName("BOOL")]
-        public int negative;
+        public BOOL negative;
 
         [NativeTypeName("ULONG")]
         public uint years;

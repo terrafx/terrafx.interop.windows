@@ -31,7 +31,6 @@ namespace TerraFX.Interop
         [NativeTypeName("size_t")]
         public nuint ai_bloblen;
 
-        [NativeTypeName("GUID *")]
         public Guid* ai_provider;
 
         [NativeTypeName("struct addrinfoex5 *")]
@@ -44,8 +43,7 @@ namespace TerraFX.Interop
 
         public int ai_interfaceindex;
 
-        [NativeTypeName("HANDLE")]
-        public IntPtr ai_resolutionhandle;
+        public HANDLE ai_resolutionhandle;
 
         [NativeTypeName("unsigned int")]
         public uint ai_ttl;

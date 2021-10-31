@@ -16,8 +16,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<ID3D10Effect*, Guid*, void**, int>)(lpVtbl[0]))((ID3D10Effect*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -40,39 +39,35 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("BOOL")]
-        public int IsValid()
+        public BOOL IsValid()
         {
             return ((delegate* unmanaged<ID3D10Effect*, int>)(lpVtbl[3]))((ID3D10Effect*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("BOOL")]
-        public int IsPool()
+        public BOOL IsPool()
         {
             return ((delegate* unmanaged<ID3D10Effect*, int>)(lpVtbl[4]))((ID3D10Effect*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetDevice(ID3D10Device** ppDevice)
+        public HRESULT GetDevice(ID3D10Device** ppDevice)
         {
             return ((delegate* unmanaged<ID3D10Effect*, ID3D10Device**, int>)(lpVtbl[5]))((ID3D10Effect*)Unsafe.AsPointer(ref this), ppDevice);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetDesc(D3D10_EFFECT_DESC* pDesc)
+        public HRESULT GetDesc(D3D10_EFFECT_DESC* pDesc)
         {
             return ((delegate* unmanaged<ID3D10Effect*, D3D10_EFFECT_DESC*, int>)(lpVtbl[6]))((ID3D10Effect*)Unsafe.AsPointer(ref this), pDesc);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        public ID3D10EffectConstantBuffer* GetConstantBufferByIndex([NativeTypeName("UINT")] uint Index)
+        public ID3D10EffectConstantBuffer* GetConstantBufferByIndex(uint Index)
         {
             return ((delegate* unmanaged<ID3D10Effect*, uint, ID3D10EffectConstantBuffer*>)(lpVtbl[7]))((ID3D10Effect*)Unsafe.AsPointer(ref this), Index);
         }
@@ -86,7 +81,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        public ID3D10EffectVariable* GetVariableByIndex([NativeTypeName("UINT")] uint Index)
+        public ID3D10EffectVariable* GetVariableByIndex(uint Index)
         {
             return ((delegate* unmanaged<ID3D10Effect*, uint, ID3D10EffectVariable*>)(lpVtbl[9]))((ID3D10Effect*)Unsafe.AsPointer(ref this), Index);
         }
@@ -107,7 +102,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(12)]
-        public ID3D10EffectTechnique* GetTechniqueByIndex([NativeTypeName("UINT")] uint Index)
+        public ID3D10EffectTechnique* GetTechniqueByIndex(uint Index)
         {
             return ((delegate* unmanaged<ID3D10Effect*, uint, ID3D10EffectTechnique*>)(lpVtbl[12]))((ID3D10Effect*)Unsafe.AsPointer(ref this), Index);
         }
@@ -121,16 +116,14 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(14)]
-        [return: NativeTypeName("HRESULT")]
-        public int Optimize()
+        public HRESULT Optimize()
         {
             return ((delegate* unmanaged<ID3D10Effect*, int>)(lpVtbl[14]))((ID3D10Effect*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(15)]
-        [return: NativeTypeName("BOOL")]
-        public int IsOptimized()
+        public BOOL IsOptimized()
         {
             return ((delegate* unmanaged<ID3D10Effect*, int>)(lpVtbl[15]))((ID3D10Effect*)Unsafe.AsPointer(ref this));
         }

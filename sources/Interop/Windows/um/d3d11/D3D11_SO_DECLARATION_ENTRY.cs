@@ -7,22 +7,17 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct D3D11_SO_DECLARATION_ENTRY
     {
-        [NativeTypeName("UINT")]
         public uint Stream;
 
         [NativeTypeName("LPCSTR")]
         public sbyte* SemanticName;
 
-        [NativeTypeName("UINT")]
         public uint SemanticIndex;
 
-        [NativeTypeName("BYTE")]
         public byte StartComponent;
 
-        [NativeTypeName("BYTE")]
         public byte ComponentCount;
 
-        [NativeTypeName("BYTE")]
         public byte OutputSlot;
     }
 }

@@ -9,7 +9,6 @@ namespace TerraFX.Interop
     {
         public D3D11_AUTHENTICATED_QUERY_INPUT Input;
 
-        [NativeTypeName("UINT")]
         public uint ProcessIndex;
     }
 }

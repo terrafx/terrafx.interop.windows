@@ -8,23 +8,19 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.NSTCSTYLE2;
-using static TerraFX.Interop.SIGDN;
 
 namespace TerraFX.Interop
 {
     public static unsafe partial class Windows
     {
         [DllImport("shell32", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int SHAddDefaultPropertiesByExt([NativeTypeName("PCWSTR")] ushort* pszExt, IPropertyStore* pPropStore);
+        public static extern HRESULT SHAddDefaultPropertiesByExt([NativeTypeName("PCWSTR")] ushort* pszExt, IPropertyStore* pPropStore);
 
         [DllImport("shell32", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int SHCreateDefaultPropertiesOp(IShellItem* psi, IFileOperation** ppFileOp);
+        public static extern HRESULT SHCreateDefaultPropertiesOp(IShellItem* psi, IFileOperation** ppFileOp);
 
         [DllImport("shell32", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int SHSetDefaultProperties([NativeTypeName("HWND")] IntPtr hwnd, IShellItem* psi, [NativeTypeName("DWORD")] uint dwFileOpFlags, IFileOperationProgressSink* pfops);
+        public static extern HRESULT SHSetDefaultProperties(HWND hwnd, IShellItem* psi, [NativeTypeName("DWORD")] uint dwFileOpFlags, IFileOperationProgressSink* pfops);
 
         [NativeTypeName("const GUID")]
         public static ref readonly Guid SID_SCommandBarState
@@ -49,38 +45,6 @@ namespace TerraFX.Interop
                 Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
                 return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
             }
-        }
-
-        [return: NativeTypeName("HRESULT")]
-        public static int SHResolveFolderPathInLibrary(IShellLibrary* plib, [NativeTypeName("PCWSTR")] ushort* pszFolderPath, [NativeTypeName("DWORD")] uint dwTimeout, [NativeTypeName("PWSTR *")] ushort** ppszResolvedPath)
-        {
-            *ppszResolvedPath = null;
-            ITEMIDLIST* pidlFolder = SHSimpleIDListFromPath(pszFolderPath);
-            int hr = unchecked((pidlFolder) != null ? ((int)(0)) : ((int)(0x80070057)));
-
-            if (((unchecked((int)(hr))) >= 0))
-            {
-                IShellItem* psiFolder;
-
-                hr = SHCreateItemFromIDList(pidlFolder, __uuidof<IShellItem>(), (void**)(&psiFolder));
-                if (((unchecked((int)(hr))) >= 0))
-                {
-                    IShellItem* psiResolved;
-
-                    hr = plib->ResolveFolder(psiFolder, dwTimeout, __uuidof<IShellItem>(), (void**)(&psiResolved));
-                    if (((unchecked((int)(hr))) >= 0))
-                    {
-                        unchecked(hr) = psiResolved->GetDisplayName(SIGDN_DESKTOPABSOLUTEPARSING, ppszResolvedPath);
-                        psiResolved->Release();
-                    }
-
-                    psiFolder->Release();
-                }
-
-                CoTaskMemFree(pidlFolder);
-            }
-
-            return hr;
         }
 
         [NativeTypeName("#define IDD_WIZEXTN_FIRST 0x5000")]

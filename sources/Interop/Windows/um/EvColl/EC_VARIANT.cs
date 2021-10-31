@@ -3,7 +3,6 @@
 // Ported from um/EvColl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -20,7 +19,7 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint Type;
 
-        public ref int BooleanVal
+        public ref BOOL BooleanVal
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
@@ -71,7 +70,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public ref int* BooleanArr
+        public ref BOOL* BooleanArr
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
@@ -107,12 +106,15 @@ namespace TerraFX.Interop
             }
         }
 
-        public ref IntPtr PropertyHandleVal
+        public ref HANDLE PropertyHandleVal
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.PropertyHandleVal, 1));
+                fixed (_Anonymous_e__Union* pField = &Anonymous)
+                {
+                    return ref pField->PropertyHandleVal;
+                }
             }
         }
 
@@ -120,8 +122,7 @@ namespace TerraFX.Interop
         public unsafe partial struct _Anonymous_e__Union
         {
             [FieldOffset(0)]
-            [NativeTypeName("BOOL")]
-            public int BooleanVal;
+            public BOOL BooleanVal;
 
             [FieldOffset(0)]
             [NativeTypeName("UINT32")]
@@ -140,8 +141,7 @@ namespace TerraFX.Interop
             public byte* BinaryVal;
 
             [FieldOffset(0)]
-            [NativeTypeName("BOOL *")]
-            public int* BooleanArr;
+            public BOOL* BooleanArr;
 
             [FieldOffset(0)]
             [NativeTypeName("INT32 *")]
@@ -153,7 +153,7 @@ namespace TerraFX.Interop
 
             [FieldOffset(0)]
             [NativeTypeName("EC_OBJECT_ARRAY_PROPERTY_HANDLE")]
-            public IntPtr PropertyHandleVal;
+            public HANDLE PropertyHandleVal;
         }
     }
 }

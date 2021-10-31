@@ -3,13 +3,10 @@
 // Ported from um/WinUser.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
-
 namespace TerraFX.Interop
 {
     public partial struct GESTUREINFO
     {
-        [NativeTypeName("UINT")]
         public uint cbSize;
 
         [NativeTypeName("DWORD")]
@@ -18,8 +15,7 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint dwID;
 
-        [NativeTypeName("HWND")]
-        public IntPtr hwndTarget;
+        public HWND hwndTarget;
 
         public POINTS ptsLocation;
 
@@ -32,7 +28,6 @@ namespace TerraFX.Interop
         [NativeTypeName("ULONGLONG")]
         public ulong ullArguments;
 
-        [NativeTypeName("UINT")]
         public uint cbExtraArgs;
     }
 }

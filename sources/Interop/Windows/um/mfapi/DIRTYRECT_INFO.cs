@@ -11,10 +11,8 @@ namespace TerraFX.Interop
 {
     public partial struct DIRTYRECT_INFO
     {
-        [NativeTypeName("UINT")]
         public uint FrameNumber;
 
-        [NativeTypeName("UINT")]
         public uint NumDirtyRects;
 
         [NativeTypeName("RECT [1]")]

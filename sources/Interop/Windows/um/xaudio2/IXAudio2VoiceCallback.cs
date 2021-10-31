@@ -55,9 +55,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        public void OnVoiceError(void* pBufferContext, [NativeTypeName("HRESULT")] int Error)
+        public void OnVoiceError(void* pBufferContext, HRESULT Error)
         {
-            ((delegate* unmanaged<IXAudio2VoiceCallback*, void*, int, void>)(lpVtbl[6]))((IXAudio2VoiceCallback*)Unsafe.AsPointer(ref this), pBufferContext, Error);
+            ((delegate* unmanaged<IXAudio2VoiceCallback*, void*, HRESULT, void>)(lpVtbl[6]))((IXAudio2VoiceCallback*)Unsafe.AsPointer(ref this), pBufferContext, Error);
         }
     }
 }

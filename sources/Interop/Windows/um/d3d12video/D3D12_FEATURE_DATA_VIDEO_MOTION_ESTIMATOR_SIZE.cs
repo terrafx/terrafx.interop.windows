@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public partial struct D3D12_FEATURE_DATA_VIDEO_MOTION_ESTIMATOR_SIZE
     {
-        [NativeTypeName("UINT")]
         public uint NodeIndex;
 
         public DXGI_FORMAT InputFormat;
@@ -18,8 +17,7 @@ namespace TerraFX.Interop
 
         public D3D12_VIDEO_SIZE_RANGE SizeRange;
 
-        [NativeTypeName("BOOL")]
-        public int Protected;
+        public BOOL Protected;
 
         [NativeTypeName("UINT64")]
         public ulong MotionVectorHeapMemoryPoolL0Size;

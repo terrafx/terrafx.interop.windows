@@ -28,12 +28,10 @@ namespace TerraFX.Interop
         public const uint DML_MINIMUM_BUFFER_TENSOR_ALIGNMENT = 16;
 
         [DllImport("directml", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int DMLCreateDevice(ID3D12Device* d3d12Device, DML_CREATE_DEVICE_FLAGS flags, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
+        public static extern HRESULT DMLCreateDevice(ID3D12Device* d3d12Device, DML_CREATE_DEVICE_FLAGS flags, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
 
         [DllImport("directml", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int DMLCreateDevice1(ID3D12Device* d3d12Device, DML_CREATE_DEVICE_FLAGS flags, DML_FEATURE_LEVEL minimumFeatureLevel, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
+        public static extern HRESULT DMLCreateDevice1(ID3D12Device* d3d12Device, DML_CREATE_DEVICE_FLAGS flags, DML_FEATURE_LEVEL minimumFeatureLevel, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
 
         [NativeTypeName("#define DML_TARGET_VERSION 0x3000")]
         public const int DML_TARGET_VERSION = 0x3000;

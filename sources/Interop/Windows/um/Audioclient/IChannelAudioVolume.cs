@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IChannelAudioVolume*, Guid*, void**, int>)(lpVtbl[0]))((IChannelAudioVolume*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,40 +41,35 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetChannelCount([NativeTypeName("UINT32 *")] uint* pdwCount)
+        public HRESULT GetChannelCount([NativeTypeName("UINT32 *")] uint* pdwCount)
         {
             return ((delegate* unmanaged<IChannelAudioVolume*, uint*, int>)(lpVtbl[3]))((IChannelAudioVolume*)Unsafe.AsPointer(ref this), pdwCount);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetChannelVolume([NativeTypeName("UINT32")] uint dwIndex, [NativeTypeName("const float")] float fLevel, [NativeTypeName("LPCGUID")] Guid* EventContext)
+        public HRESULT SetChannelVolume([NativeTypeName("UINT32")] uint dwIndex, [NativeTypeName("const float")] float fLevel, [NativeTypeName("LPCGUID")] Guid* EventContext)
         {
             return ((delegate* unmanaged<IChannelAudioVolume*, uint, float, Guid*, int>)(lpVtbl[4]))((IChannelAudioVolume*)Unsafe.AsPointer(ref this), dwIndex, fLevel, EventContext);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetChannelVolume([NativeTypeName("UINT32")] uint dwIndex, float* pfLevel)
+        public HRESULT GetChannelVolume([NativeTypeName("UINT32")] uint dwIndex, float* pfLevel)
         {
             return ((delegate* unmanaged<IChannelAudioVolume*, uint, float*, int>)(lpVtbl[5]))((IChannelAudioVolume*)Unsafe.AsPointer(ref this), dwIndex, pfLevel);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetAllVolumes([NativeTypeName("UINT32")] uint dwCount, [NativeTypeName("const float *")] float* pfVolumes, [NativeTypeName("LPCGUID")] Guid* EventContext)
+        public HRESULT SetAllVolumes([NativeTypeName("UINT32")] uint dwCount, [NativeTypeName("const float *")] float* pfVolumes, [NativeTypeName("LPCGUID")] Guid* EventContext)
         {
             return ((delegate* unmanaged<IChannelAudioVolume*, uint, float*, Guid*, int>)(lpVtbl[6]))((IChannelAudioVolume*)Unsafe.AsPointer(ref this), dwCount, pfVolumes, EventContext);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetAllVolumes([NativeTypeName("UINT32")] uint dwCount, float* pfVolumes)
+        public HRESULT GetAllVolumes([NativeTypeName("UINT32")] uint dwCount, float* pfVolumes)
         {
             return ((delegate* unmanaged<IChannelAudioVolume*, uint, float*, int>)(lpVtbl[7]))((IChannelAudioVolume*)Unsafe.AsPointer(ref this), dwCount, pfVolumes);
         }

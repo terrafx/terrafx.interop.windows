@@ -29,7 +29,6 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint dwRevision;
 
-        [NativeTypeName("GUID")]
         public Guid guidDeviceIdentifier;
 
         [NativeTypeName("DWORD")]

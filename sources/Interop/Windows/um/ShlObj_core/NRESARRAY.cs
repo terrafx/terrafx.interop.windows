@@ -11,7 +11,6 @@ namespace TerraFX.Interop
 {
     public partial struct NRESARRAY
     {
-        [NativeTypeName("UINT")]
         public uint cItems;
 
         [NativeTypeName("NETRESOURCE [1]")]

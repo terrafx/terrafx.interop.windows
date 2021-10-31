@@ -15,10 +15,8 @@ namespace TerraFX.Interop
 
         public D3D11_TEXTURE_ADDRESS_MODE AddressW;
 
-        [NativeTypeName("FLOAT")]
         public float MipLODBias;
 
-        [NativeTypeName("UINT")]
         public uint MaxAnisotropy;
 
         public D3D11_COMPARISON_FUNC ComparisonFunc;
@@ -26,10 +24,8 @@ namespace TerraFX.Interop
         [NativeTypeName("FLOAT [4]")]
         public fixed float BorderColor[4];
 
-        [NativeTypeName("FLOAT")]
         public float MinLOD;
 
-        [NativeTypeName("FLOAT")]
         public float MaxLOD;
     }
 }

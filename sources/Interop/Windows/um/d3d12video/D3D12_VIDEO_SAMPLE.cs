@@ -7,10 +7,8 @@ namespace TerraFX.Interop
 {
     public partial struct D3D12_VIDEO_SAMPLE
     {
-        [NativeTypeName("UINT")]
         public uint Width;
 
-        [NativeTypeName("UINT")]
         public uint Height;
 
         public D3D12_VIDEO_FORMAT Format;

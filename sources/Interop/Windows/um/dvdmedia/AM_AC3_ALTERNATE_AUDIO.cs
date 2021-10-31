@@ -7,8 +7,7 @@ namespace TerraFX.Interop
 {
     public partial struct AM_AC3_ALTERNATE_AUDIO
     {
-        [NativeTypeName("BOOL")]
-        public int fStereo;
+        public BOOL fStereo;
 
         [NativeTypeName("ULONG")]
         public uint DualMode;

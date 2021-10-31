@@ -24,13 +24,11 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint dwRevision;
 
-        [NativeTypeName("GUID")]
         public Guid GpoId;
 
         [NativeTypeName("LPWSTR")]
         public ushort* pszPolicyName;
 
-        [NativeTypeName("GUID")]
         public Guid ProductId;
 
         [NativeTypeName("LANGID")]
@@ -54,7 +52,6 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint dwPathType;
 
-        [NativeTypeName("BOOL")]
-        public int bInstalled;
+        public BOOL bInstalled;
     }
 }

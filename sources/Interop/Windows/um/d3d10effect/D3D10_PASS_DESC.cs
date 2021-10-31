@@ -10,19 +10,15 @@ namespace TerraFX.Interop
         [NativeTypeName("LPCSTR")]
         public sbyte* Name;
 
-        [NativeTypeName("UINT")]
         public uint Annotations;
 
-        [NativeTypeName("BYTE *")]
         public byte* pIAInputSignature;
 
         [NativeTypeName("SIZE_T")]
         public nuint IAInputSignatureSize;
 
-        [NativeTypeName("UINT")]
         public uint StencilRef;
 
-        [NativeTypeName("UINT")]
         public uint SampleMask;
 
         [NativeTypeName("FLOAT [4]")]

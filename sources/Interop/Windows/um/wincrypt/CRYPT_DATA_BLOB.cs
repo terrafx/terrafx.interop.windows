@@ -10,7 +10,6 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint cbData;
 
-        [NativeTypeName("BYTE *")]
         public byte* pbData;
     }
 }

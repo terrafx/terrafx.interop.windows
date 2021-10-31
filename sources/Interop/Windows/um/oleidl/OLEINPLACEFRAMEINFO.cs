@@ -3,25 +3,18 @@
 // Ported from um/oleidl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
-
 namespace TerraFX.Interop
 {
     public partial struct OLEINPLACEFRAMEINFO
     {
-        [NativeTypeName("UINT")]
         public uint cb;
 
-        [NativeTypeName("BOOL")]
-        public int fMDIApp;
+        public BOOL fMDIApp;
 
-        [NativeTypeName("HWND")]
-        public IntPtr hwndFrame;
+        public HWND hwndFrame;
 
-        [NativeTypeName("HACCEL")]
-        public IntPtr haccel;
+        public HACCEL haccel;
 
-        [NativeTypeName("UINT")]
         public uint cAccelEntries;
     }
 }

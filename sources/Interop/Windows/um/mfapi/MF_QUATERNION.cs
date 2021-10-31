@@ -7,16 +7,12 @@ namespace TerraFX.Interop
 {
     public partial struct MF_QUATERNION
     {
-        [NativeTypeName("FLOAT")]
         public float x;
 
-        [NativeTypeName("FLOAT")]
         public float y;
 
-        [NativeTypeName("FLOAT")]
         public float z;
 
-        [NativeTypeName("FLOAT")]
         public float w;
     }
 }

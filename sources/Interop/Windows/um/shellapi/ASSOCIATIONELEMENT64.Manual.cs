@@ -11,8 +11,7 @@ namespace TerraFX.Interop
     {
         public ASSOCCLASS ac;
 
-        [NativeTypeName("HKEY")]
-        public IntPtr hkClass;
+        public HKEY hkClass;
 
         [NativeTypeName("PCWSTR")]
         public ushort* pszClass;

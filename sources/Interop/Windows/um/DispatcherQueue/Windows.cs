@@ -10,7 +10,6 @@ namespace TerraFX.Interop
     public static unsafe partial class Windows
     {
         [DllImport("coremessaging", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int CreateDispatcherQueueController(DispatcherQueueOptions options, [NativeTypeName("ABI::Windows::System::IDispatcherQueueController **")] void** dispatcherQueueController);
+        public static extern HRESULT CreateDispatcherQueueController(DispatcherQueueOptions options, [NativeTypeName("ABI::Windows::System::IDispatcherQueueController **")] void** dispatcherQueueController);
     }
 }

@@ -7,10 +7,8 @@ namespace TerraFX.Interop
 {
     public partial struct GLYPHMETRICS
     {
-        [NativeTypeName("UINT")]
         public uint gmBlackBoxX;
 
-        [NativeTypeName("UINT")]
         public uint gmBlackBoxY;
 
         public POINT gmptGlyphOrigin;

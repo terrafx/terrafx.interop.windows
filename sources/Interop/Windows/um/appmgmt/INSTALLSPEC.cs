@@ -32,13 +32,11 @@ namespace TerraFX.Interop
             [NativeTypeName("WCHAR *")]
             public ushort* Name;
 
-            [NativeTypeName("GUID")]
             public Guid GPOId;
         }
 
         public partial struct _COMClass_e__Struct
         {
-            [NativeTypeName("GUID")]
             public Guid Clsid;
 
             [NativeTypeName("DWORD")]

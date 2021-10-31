@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IShellIconOverlayManager*, Guid*, void**, int>)(lpVtbl[0]))((IShellIconOverlayManager*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,42 +41,37 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetFileOverlayInfo([NativeTypeName("PCWSTR")] ushort* pwszPath, [NativeTypeName("DWORD")] uint dwAttrib, int* pIndex, [NativeTypeName("DWORD")] uint dwflags)
+        public HRESULT GetFileOverlayInfo([NativeTypeName("PCWSTR")] ushort* pwszPath, [NativeTypeName("DWORD")] uint dwAttrib, int* pIndex, [NativeTypeName("DWORD")] uint dwflags)
         {
             return ((delegate* unmanaged<IShellIconOverlayManager*, ushort*, uint, int*, uint, int>)(lpVtbl[3]))((IShellIconOverlayManager*)Unsafe.AsPointer(ref this), pwszPath, dwAttrib, pIndex, dwflags);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetReservedOverlayInfo([NativeTypeName("PCWSTR")] ushort* pwszPath, [NativeTypeName("DWORD")] uint dwAttrib, int* pIndex, [NativeTypeName("DWORD")] uint dwflags, int iReservedID)
+        public HRESULT GetReservedOverlayInfo([NativeTypeName("PCWSTR")] ushort* pwszPath, [NativeTypeName("DWORD")] uint dwAttrib, int* pIndex, [NativeTypeName("DWORD")] uint dwflags, int iReservedID)
         {
             return ((delegate* unmanaged<IShellIconOverlayManager*, ushort*, uint, int*, uint, int, int>)(lpVtbl[4]))((IShellIconOverlayManager*)Unsafe.AsPointer(ref this), pwszPath, dwAttrib, pIndex, dwflags, iReservedID);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int RefreshOverlayImages([NativeTypeName("DWORD")] uint dwFlags)
+        public HRESULT RefreshOverlayImages([NativeTypeName("DWORD")] uint dwFlags)
         {
             return ((delegate* unmanaged<IShellIconOverlayManager*, uint, int>)(lpVtbl[5]))((IShellIconOverlayManager*)Unsafe.AsPointer(ref this), dwFlags);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int LoadNonloadedOverlayIdentifiers()
+        public HRESULT LoadNonloadedOverlayIdentifiers()
         {
             return ((delegate* unmanaged<IShellIconOverlayManager*, int>)(lpVtbl[6]))((IShellIconOverlayManager*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        [return: NativeTypeName("HRESULT")]
-        public int OverlayIndexFromImageIndex(int iImage, int* piIndex, [NativeTypeName("BOOL")] int fAdd)
+        public HRESULT OverlayIndexFromImageIndex(int iImage, int* piIndex, BOOL fAdd)
         {
-            return ((delegate* unmanaged<IShellIconOverlayManager*, int, int*, int, int>)(lpVtbl[7]))((IShellIconOverlayManager*)Unsafe.AsPointer(ref this), iImage, piIndex, fAdd);
+            return ((delegate* unmanaged<IShellIconOverlayManager*, int, int*, BOOL, int>)(lpVtbl[7]))((IShellIconOverlayManager*)Unsafe.AsPointer(ref this), iImage, piIndex, fAdd);
         }
     }
 }

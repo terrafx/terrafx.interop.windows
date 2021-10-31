@@ -10,13 +10,11 @@ namespace TerraFX.Interop
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe partial struct DRAGINFO32A
     {
-        [NativeTypeName("UINT")]
         public uint uSize;
 
         public POINT pt;
 
-        [NativeTypeName("BOOL")]
-        public int fNC;
+        public BOOL fNC;
 
         [NativeTypeName("PZZSTR")]
         public sbyte* lpFileList;

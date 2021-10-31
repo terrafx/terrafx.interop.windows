@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IElementBehaviorSiteRender*, Guid*, void**, int>)(lpVtbl[0]))((IElementBehaviorSiteRender*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,24 +41,21 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int Invalidate(RECT* pRect)
+        public HRESULT Invalidate(RECT* pRect)
         {
             return ((delegate* unmanaged<IElementBehaviorSiteRender*, RECT*, int>)(lpVtbl[3]))((IElementBehaviorSiteRender*)Unsafe.AsPointer(ref this), pRect);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int InvalidateRenderInfo()
+        public HRESULT InvalidateRenderInfo()
         {
             return ((delegate* unmanaged<IElementBehaviorSiteRender*, int>)(lpVtbl[4]))((IElementBehaviorSiteRender*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int InvalidateStyle()
+        public HRESULT InvalidateStyle()
         {
             return ((delegate* unmanaged<IElementBehaviorSiteRender*, int>)(lpVtbl[5]))((IElementBehaviorSiteRender*)Unsafe.AsPointer(ref this));
         }

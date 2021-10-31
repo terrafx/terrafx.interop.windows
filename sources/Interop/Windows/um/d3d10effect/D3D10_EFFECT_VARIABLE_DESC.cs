@@ -13,16 +13,12 @@ namespace TerraFX.Interop
         [NativeTypeName("LPCSTR")]
         public sbyte* Semantic;
 
-        [NativeTypeName("UINT")]
         public uint Flags;
 
-        [NativeTypeName("UINT")]
         public uint Annotations;
 
-        [NativeTypeName("UINT")]
         public uint BufferOffset;
 
-        [NativeTypeName("UINT")]
         public uint ExplicitBindPoint;
     }
 }

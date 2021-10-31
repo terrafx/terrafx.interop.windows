@@ -9,13 +9,10 @@ namespace TerraFX.Interop
 {
     public partial struct DWRITE_JUSTIFICATION_OPPORTUNITY
     {
-        [NativeTypeName("FLOAT")]
         public float expansionMinimum;
 
-        [NativeTypeName("FLOAT")]
         public float expansionMaximum;
 
-        [NativeTypeName("FLOAT")]
         public float compressionMaximum;
 
         public uint _bitfield;

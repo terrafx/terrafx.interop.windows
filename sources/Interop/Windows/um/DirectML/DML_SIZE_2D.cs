@@ -7,10 +7,8 @@ namespace TerraFX.Interop
 {
     public partial struct DML_SIZE_2D
     {
-        [NativeTypeName("UINT")]
         public uint Width;
 
-        [NativeTypeName("UINT")]
         public uint Height;
     }
 }

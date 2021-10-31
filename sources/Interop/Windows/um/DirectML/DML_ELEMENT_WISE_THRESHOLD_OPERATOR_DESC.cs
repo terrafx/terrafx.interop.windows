@@ -16,7 +16,6 @@ namespace TerraFX.Interop
         [NativeTypeName("const DML_SCALE_BIAS *")]
         public DML_SCALE_BIAS* ScaleBias;
 
-        [NativeTypeName("FLOAT")]
         public float Min;
     }
 }

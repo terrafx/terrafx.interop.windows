@@ -21,10 +21,8 @@ namespace TerraFX.Interop
 
         public LARGE_INTEGER UnrecoveredReads;
 
-        [NativeTypeName("BYTE")]
         public byte CompressionRatioReads;
 
-        [NativeTypeName("BYTE")]
         public byte CompressionRatioWrites;
     }
 }

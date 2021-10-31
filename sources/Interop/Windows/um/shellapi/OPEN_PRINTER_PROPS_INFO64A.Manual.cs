@@ -13,13 +13,11 @@ namespace TerraFX.Interop
         [NativeTypeName("LPSTR")]
         public sbyte* pszSheetName;
 
-        [NativeTypeName("UINT")]
         public uint uSheetIndex;
 
         [NativeTypeName("DWORD")]
         public uint dwFlags;
 
-        [NativeTypeName("BOOL")]
-        public int bModal;
+        public BOOL bModal;
     }
 }

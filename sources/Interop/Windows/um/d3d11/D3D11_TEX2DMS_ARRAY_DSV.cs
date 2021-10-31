@@ -7,10 +7,8 @@ namespace TerraFX.Interop
 {
     public partial struct D3D11_TEX2DMS_ARRAY_DSV
     {
-        [NativeTypeName("UINT")]
         public uint FirstArraySlice;
 
-        [NativeTypeName("UINT")]
         public uint ArraySize;
     }
 }

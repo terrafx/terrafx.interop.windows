@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IFsiItem*, Guid*, void**, int>)(lpVtbl[0]))((IFsiItem*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,128 +41,112 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetTypeInfoCount([NativeTypeName("UINT *")] uint* pctinfo)
+        public HRESULT GetTypeInfoCount(uint* pctinfo)
         {
             return ((delegate* unmanaged<IFsiItem*, uint*, int>)(lpVtbl[3]))((IFsiItem*)Unsafe.AsPointer(ref this), pctinfo);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetTypeInfo([NativeTypeName("UINT")] uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
+        public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
         {
             return ((delegate* unmanaged<IFsiItem*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IFsiItem*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, [NativeTypeName("UINT")] uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+        public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
         {
             return ((delegate* unmanaged<IFsiItem*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IFsiItem*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, [NativeTypeName("UINT *")] uint* puArgErr)
+        public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
         {
             return ((delegate* unmanaged<IFsiItem*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IFsiItem*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        [return: NativeTypeName("HRESULT")]
-        public int get_Name([NativeTypeName("BSTR *")] ushort** pVal)
+        public HRESULT get_Name([NativeTypeName("BSTR *")] ushort** pVal)
         {
             return ((delegate* unmanaged<IFsiItem*, ushort**, int>)(lpVtbl[7]))((IFsiItem*)Unsafe.AsPointer(ref this), pVal);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        [return: NativeTypeName("HRESULT")]
-        public int get_FullPath([NativeTypeName("BSTR *")] ushort** pVal)
+        public HRESULT get_FullPath([NativeTypeName("BSTR *")] ushort** pVal)
         {
             return ((delegate* unmanaged<IFsiItem*, ushort**, int>)(lpVtbl[8]))((IFsiItem*)Unsafe.AsPointer(ref this), pVal);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        [return: NativeTypeName("HRESULT")]
-        public int get_CreationTime([NativeTypeName("DATE *")] double* pVal)
+        public HRESULT get_CreationTime([NativeTypeName("DATE *")] double* pVal)
         {
             return ((delegate* unmanaged<IFsiItem*, double*, int>)(lpVtbl[9]))((IFsiItem*)Unsafe.AsPointer(ref this), pVal);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(10)]
-        [return: NativeTypeName("HRESULT")]
-        public int put_CreationTime([NativeTypeName("DATE")] double newVal)
+        public HRESULT put_CreationTime([NativeTypeName("DATE")] double newVal)
         {
             return ((delegate* unmanaged<IFsiItem*, double, int>)(lpVtbl[10]))((IFsiItem*)Unsafe.AsPointer(ref this), newVal);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(11)]
-        [return: NativeTypeName("HRESULT")]
-        public int get_LastAccessedTime([NativeTypeName("DATE *")] double* pVal)
+        public HRESULT get_LastAccessedTime([NativeTypeName("DATE *")] double* pVal)
         {
             return ((delegate* unmanaged<IFsiItem*, double*, int>)(lpVtbl[11]))((IFsiItem*)Unsafe.AsPointer(ref this), pVal);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(12)]
-        [return: NativeTypeName("HRESULT")]
-        public int put_LastAccessedTime([NativeTypeName("DATE")] double newVal)
+        public HRESULT put_LastAccessedTime([NativeTypeName("DATE")] double newVal)
         {
             return ((delegate* unmanaged<IFsiItem*, double, int>)(lpVtbl[12]))((IFsiItem*)Unsafe.AsPointer(ref this), newVal);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(13)]
-        [return: NativeTypeName("HRESULT")]
-        public int get_LastModifiedTime([NativeTypeName("DATE *")] double* pVal)
+        public HRESULT get_LastModifiedTime([NativeTypeName("DATE *")] double* pVal)
         {
             return ((delegate* unmanaged<IFsiItem*, double*, int>)(lpVtbl[13]))((IFsiItem*)Unsafe.AsPointer(ref this), pVal);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(14)]
-        [return: NativeTypeName("HRESULT")]
-        public int put_LastModifiedTime([NativeTypeName("DATE")] double newVal)
+        public HRESULT put_LastModifiedTime([NativeTypeName("DATE")] double newVal)
         {
             return ((delegate* unmanaged<IFsiItem*, double, int>)(lpVtbl[14]))((IFsiItem*)Unsafe.AsPointer(ref this), newVal);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(15)]
-        [return: NativeTypeName("HRESULT")]
-        public int get_IsHidden([NativeTypeName("VARIANT_BOOL *")] short* pVal)
+        public HRESULT get_IsHidden([NativeTypeName("VARIANT_BOOL *")] short* pVal)
         {
             return ((delegate* unmanaged<IFsiItem*, short*, int>)(lpVtbl[15]))((IFsiItem*)Unsafe.AsPointer(ref this), pVal);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(16)]
-        [return: NativeTypeName("HRESULT")]
-        public int put_IsHidden([NativeTypeName("VARIANT_BOOL")] short newVal)
+        public HRESULT put_IsHidden([NativeTypeName("VARIANT_BOOL")] short newVal)
         {
             return ((delegate* unmanaged<IFsiItem*, short, int>)(lpVtbl[16]))((IFsiItem*)Unsafe.AsPointer(ref this), newVal);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(17)]
-        [return: NativeTypeName("HRESULT")]
-        public int FileSystemName(FsiFileSystems fileSystem, [NativeTypeName("BSTR *")] ushort** pVal)
+        public HRESULT FileSystemName(FsiFileSystems fileSystem, [NativeTypeName("BSTR *")] ushort** pVal)
         {
             return ((delegate* unmanaged<IFsiItem*, FsiFileSystems, ushort**, int>)(lpVtbl[17]))((IFsiItem*)Unsafe.AsPointer(ref this), fileSystem, pVal);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(18)]
-        [return: NativeTypeName("HRESULT")]
-        public int FileSystemPath(FsiFileSystems fileSystem, [NativeTypeName("BSTR *")] ushort** pVal)
+        public HRESULT FileSystemPath(FsiFileSystems fileSystem, [NativeTypeName("BSTR *")] ushort** pVal)
         {
             return ((delegate* unmanaged<IFsiItem*, FsiFileSystems, ushort**, int>)(lpVtbl[18]))((IFsiItem*)Unsafe.AsPointer(ref this), fileSystem, pVal);
         }

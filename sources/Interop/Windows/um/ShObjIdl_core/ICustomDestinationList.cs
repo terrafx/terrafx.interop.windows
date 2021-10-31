@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<ICustomDestinationList*, Guid*, void**, int>)(lpVtbl[0]))((ICustomDestinationList*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,72 +41,63 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetAppID([NativeTypeName("LPCWSTR")] ushort* pszAppID)
+        public HRESULT SetAppID([NativeTypeName("LPCWSTR")] ushort* pszAppID)
         {
             return ((delegate* unmanaged<ICustomDestinationList*, ushort*, int>)(lpVtbl[3]))((ICustomDestinationList*)Unsafe.AsPointer(ref this), pszAppID);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int BeginList([NativeTypeName("UINT *")] uint* pcMinSlots, [NativeTypeName("const IID &")] Guid* riid, void** ppv)
+        public HRESULT BeginList(uint* pcMinSlots, [NativeTypeName("const IID &")] Guid* riid, void** ppv)
         {
             return ((delegate* unmanaged<ICustomDestinationList*, uint*, Guid*, void**, int>)(lpVtbl[4]))((ICustomDestinationList*)Unsafe.AsPointer(ref this), pcMinSlots, riid, ppv);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int AppendCategory([NativeTypeName("LPCWSTR")] ushort* pszCategory, IObjectArray* poa)
+        public HRESULT AppendCategory([NativeTypeName("LPCWSTR")] ushort* pszCategory, IObjectArray* poa)
         {
             return ((delegate* unmanaged<ICustomDestinationList*, ushort*, IObjectArray*, int>)(lpVtbl[5]))((ICustomDestinationList*)Unsafe.AsPointer(ref this), pszCategory, poa);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int AppendKnownCategory(KNOWNDESTCATEGORY category)
+        public HRESULT AppendKnownCategory(KNOWNDESTCATEGORY category)
         {
             return ((delegate* unmanaged<ICustomDestinationList*, KNOWNDESTCATEGORY, int>)(lpVtbl[6]))((ICustomDestinationList*)Unsafe.AsPointer(ref this), category);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        [return: NativeTypeName("HRESULT")]
-        public int AddUserTasks(IObjectArray* poa)
+        public HRESULT AddUserTasks(IObjectArray* poa)
         {
             return ((delegate* unmanaged<ICustomDestinationList*, IObjectArray*, int>)(lpVtbl[7]))((ICustomDestinationList*)Unsafe.AsPointer(ref this), poa);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        [return: NativeTypeName("HRESULT")]
-        public int CommitList()
+        public HRESULT CommitList()
         {
             return ((delegate* unmanaged<ICustomDestinationList*, int>)(lpVtbl[8]))((ICustomDestinationList*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetRemovedDestinations([NativeTypeName("const IID &")] Guid* riid, void** ppv)
+        public HRESULT GetRemovedDestinations([NativeTypeName("const IID &")] Guid* riid, void** ppv)
         {
             return ((delegate* unmanaged<ICustomDestinationList*, Guid*, void**, int>)(lpVtbl[9]))((ICustomDestinationList*)Unsafe.AsPointer(ref this), riid, ppv);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(10)]
-        [return: NativeTypeName("HRESULT")]
-        public int DeleteList([NativeTypeName("LPCWSTR")] ushort* pszAppID)
+        public HRESULT DeleteList([NativeTypeName("LPCWSTR")] ushort* pszAppID)
         {
             return ((delegate* unmanaged<ICustomDestinationList*, ushort*, int>)(lpVtbl[10]))((ICustomDestinationList*)Unsafe.AsPointer(ref this), pszAppID);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(11)]
-        [return: NativeTypeName("HRESULT")]
-        public int AbortList()
+        public HRESULT AbortList()
         {
             return ((delegate* unmanaged<ICustomDestinationList*, int>)(lpVtbl[11]))((ICustomDestinationList*)Unsafe.AsPointer(ref this));
         }

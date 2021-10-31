@@ -13,7 +13,6 @@ namespace TerraFX.Interop
         [NativeTypeName("LPWSTR")]
         public ushort* lpOutString;
 
-        [NativeTypeName("UINT *")]
         public uint* lpOrder;
 
         public int* lpDx;
@@ -26,7 +25,6 @@ namespace TerraFX.Interop
         [NativeTypeName("LPWSTR")]
         public ushort* lpGlyphs;
 
-        [NativeTypeName("UINT")]
         public uint nGlyphs;
 
         public int nMaxFit;

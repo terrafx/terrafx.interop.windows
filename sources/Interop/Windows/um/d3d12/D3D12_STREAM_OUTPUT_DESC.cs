@@ -10,16 +10,13 @@ namespace TerraFX.Interop
         [NativeTypeName("const D3D12_SO_DECLARATION_ENTRY *")]
         public D3D12_SO_DECLARATION_ENTRY* pSODeclaration;
 
-        [NativeTypeName("UINT")]
         public uint NumEntries;
 
         [NativeTypeName("const UINT *")]
         public uint* pBufferStrides;
 
-        [NativeTypeName("UINT")]
         public uint NumStrides;
 
-        [NativeTypeName("UINT")]
         public uint RasterizedStream;
     }
 }

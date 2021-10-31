@@ -7,10 +7,8 @@ namespace TerraFX.Interop
 {
     public partial struct COORD
     {
-        [NativeTypeName("SHORT")]
         public short X;
 
-        [NativeTypeName("SHORT")]
         public short Y;
     }
 }

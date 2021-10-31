@@ -38,7 +38,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public D2D1_STROKE_STYLE_PROPERTIES1(D2D1_CAP_STYLE startCap = D2D1_CAP_STYLE_FLAT, D2D1_CAP_STYLE endCap = D2D1_CAP_STYLE_FLAT, D2D1_CAP_STYLE dashCap = D2D1_CAP_STYLE_FLAT, D2D1_LINE_JOIN lineJoin = D2D1_LINE_JOIN_MITER, [NativeTypeName("FLOAT")] float miterLimit = 10.0f, D2D1_DASH_STYLE dashStyle = D2D1_DASH_STYLE_SOLID, [NativeTypeName("FLOAT")] float dashOffset = 0.0f, D2D1_STROKE_TRANSFORM_TYPE transformType = D2D1_STROKE_TRANSFORM_TYPE_NORMAL)
+        public D2D1_STROKE_STYLE_PROPERTIES1(D2D1_CAP_STYLE startCap = D2D1_CAP_STYLE_FLAT, D2D1_CAP_STYLE endCap = D2D1_CAP_STYLE_FLAT, D2D1_CAP_STYLE dashCap = D2D1_CAP_STYLE_FLAT, D2D1_LINE_JOIN lineJoin = D2D1_LINE_JOIN_MITER, float miterLimit = 10.0f, D2D1_DASH_STYLE dashStyle = D2D1_DASH_STYLE_SOLID, float dashOffset = 0.0f, D2D1_STROKE_TRANSFORM_TYPE transformType = D2D1_STROKE_TRANSFORM_TYPE_NORMAL)
         {
             this = StrokeStyleProperties1(startCap, endCap, dashCap, lineJoin, miterLimit, dashStyle, dashOffset, transformType);
         }

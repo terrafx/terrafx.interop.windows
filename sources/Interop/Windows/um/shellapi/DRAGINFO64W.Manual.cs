@@ -7,13 +7,11 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct DRAGINFO64W
     {
-        [NativeTypeName("UINT")]
         public uint uSize;
 
         public POINT pt;
 
-        [NativeTypeName("BOOL")]
-        public int fNC;
+        public BOOL fNC;
 
         [NativeTypeName("PZZWSTR")]
         public ushort* lpFileList;

@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IAppVisibility*, Guid*, void**, int>)(lpVtbl[0]))((IAppVisibility*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,32 +41,28 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetAppVisibilityOnMonitor([NativeTypeName("HMONITOR")] IntPtr hMonitor, MONITOR_APP_VISIBILITY* pMode)
+        public HRESULT GetAppVisibilityOnMonitor(HMONITOR hMonitor, MONITOR_APP_VISIBILITY* pMode)
         {
-            return ((delegate* unmanaged<IAppVisibility*, IntPtr, MONITOR_APP_VISIBILITY*, int>)(lpVtbl[3]))((IAppVisibility*)Unsafe.AsPointer(ref this), hMonitor, pMode);
+            return ((delegate* unmanaged<IAppVisibility*, HMONITOR, MONITOR_APP_VISIBILITY*, int>)(lpVtbl[3]))((IAppVisibility*)Unsafe.AsPointer(ref this), hMonitor, pMode);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int IsLauncherVisible([NativeTypeName("BOOL *")] int* pfVisible)
+        public HRESULT IsLauncherVisible(BOOL* pfVisible)
         {
-            return ((delegate* unmanaged<IAppVisibility*, int*, int>)(lpVtbl[4]))((IAppVisibility*)Unsafe.AsPointer(ref this), pfVisible);
+            return ((delegate* unmanaged<IAppVisibility*, BOOL*, int>)(lpVtbl[4]))((IAppVisibility*)Unsafe.AsPointer(ref this), pfVisible);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int Advise(IAppVisibilityEvents* pCallback, [NativeTypeName("DWORD *")] uint* pdwCookie)
+        public HRESULT Advise(IAppVisibilityEvents* pCallback, [NativeTypeName("DWORD *")] uint* pdwCookie)
         {
             return ((delegate* unmanaged<IAppVisibility*, IAppVisibilityEvents*, uint*, int>)(lpVtbl[5]))((IAppVisibility*)Unsafe.AsPointer(ref this), pCallback, pdwCookie);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int Unadvise([NativeTypeName("DWORD")] uint dwCookie)
+        public HRESULT Unadvise([NativeTypeName("DWORD")] uint dwCookie)
         {
             return ((delegate* unmanaged<IAppVisibility*, uint, int>)(lpVtbl[6]))((IAppVisibility*)Unsafe.AsPointer(ref this), dwCookie);
         }

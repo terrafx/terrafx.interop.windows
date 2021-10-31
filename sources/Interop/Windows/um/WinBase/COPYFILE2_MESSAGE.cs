@@ -3,7 +3,6 @@
 // Ported from um/WinBase.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
@@ -53,11 +52,9 @@ namespace TerraFX.Interop
                 [NativeTypeName("DWORD")]
                 public uint dwReserved;
 
-                [NativeTypeName("HANDLE")]
-                public IntPtr hSourceFile;
+                public HANDLE hSourceFile;
 
-                [NativeTypeName("HANDLE")]
-                public IntPtr hDestinationFile;
+                public HANDLE hDestinationFile;
 
                 public ULARGE_INTEGER uliChunkNumber;
 
@@ -76,11 +73,9 @@ namespace TerraFX.Interop
                 [NativeTypeName("DWORD")]
                 public uint dwFlags;
 
-                [NativeTypeName("HANDLE")]
-                public IntPtr hSourceFile;
+                public HANDLE hSourceFile;
 
-                [NativeTypeName("HANDLE")]
-                public IntPtr hDestinationFile;
+                public HANDLE hDestinationFile;
 
                 public ULARGE_INTEGER uliChunkNumber;
 
@@ -103,11 +98,9 @@ namespace TerraFX.Interop
                 [NativeTypeName("DWORD")]
                 public uint dwReserved;
 
-                [NativeTypeName("HANDLE")]
-                public IntPtr hSourceFile;
+                public HANDLE hSourceFile;
 
-                [NativeTypeName("HANDLE")]
-                public IntPtr hDestinationFile;
+                public HANDLE hDestinationFile;
 
                 public ULARGE_INTEGER uliStreamSize;
 
@@ -122,11 +115,9 @@ namespace TerraFX.Interop
                 [NativeTypeName("DWORD")]
                 public uint dwReserved;
 
-                [NativeTypeName("HANDLE")]
-                public IntPtr hSourceFile;
+                public HANDLE hSourceFile;
 
-                [NativeTypeName("HANDLE")]
-                public IntPtr hDestinationFile;
+                public HANDLE hDestinationFile;
 
                 public ULARGE_INTEGER uliStreamSize;
 
@@ -150,8 +141,7 @@ namespace TerraFX.Interop
                 [NativeTypeName("DWORD")]
                 public uint dwStreamNumber;
 
-                [NativeTypeName("HRESULT")]
-                public int hrFailure;
+                public HRESULT hrFailure;
 
                 [NativeTypeName("DWORD")]
                 public uint dwReserved;

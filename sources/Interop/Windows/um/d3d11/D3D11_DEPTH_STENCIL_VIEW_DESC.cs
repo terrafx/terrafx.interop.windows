@@ -14,7 +14,6 @@ namespace TerraFX.Interop
 
         public D3D11_DSV_DIMENSION ViewDimension;
 
-        [NativeTypeName("UINT")]
         public uint Flags;
 
         [NativeTypeName("D3D11_DEPTH_STENCIL_VIEW_DESC::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/d3d11.h:4427:5)")]

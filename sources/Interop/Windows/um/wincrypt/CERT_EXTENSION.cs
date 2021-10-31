@@ -10,8 +10,7 @@ namespace TerraFX.Interop
         [NativeTypeName("LPSTR")]
         public sbyte* pszObjId;
 
-        [NativeTypeName("BOOL")]
-        public int fCritical;
+        public BOOL fCritical;
 
         [NativeTypeName("CRYPT_OBJID_BLOB")]
         public CRYPT_DATA_BLOB Value;

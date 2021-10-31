@@ -7,13 +7,10 @@ namespace TerraFX.Interop
 {
     public partial struct USAGE_PROPERTIES
     {
-        [NativeTypeName("USHORT")]
         public ushort level;
 
-        [NativeTypeName("USHORT")]
         public ushort page;
 
-        [NativeTypeName("USHORT")]
         public ushort usage;
 
         [NativeTypeName("INT32")]
@@ -22,13 +19,10 @@ namespace TerraFX.Interop
         [NativeTypeName("INT32")]
         public int logicalMaximum;
 
-        [NativeTypeName("USHORT")]
         public ushort unit;
 
-        [NativeTypeName("USHORT")]
         public ushort exponent;
 
-        [NativeTypeName("BYTE")]
         public byte count;
 
         [NativeTypeName("INT32")]

@@ -16,10 +16,8 @@ namespace TerraFX.Interop
         [NativeTypeName("PVOID")]
         public void* CurrentInf;
 
-        [NativeTypeName("UINT")]
         public uint Section;
 
-        [NativeTypeName("UINT")]
         public uint Line;
     }
 }

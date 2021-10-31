@@ -14,7 +14,7 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct D3D12_RESOURCE_DESC : IEquatable<D3D12_RESOURCE_DESC>
     {
-        public D3D12_RESOURCE_DESC(D3D12_RESOURCE_DIMENSION dimension, [NativeTypeName("UINT64")] ulong alignment, [NativeTypeName("UINT64")] ulong width, [NativeTypeName("UINT")] uint height, [NativeTypeName("UINT16")] ushort depthOrArraySize, [NativeTypeName("UINT16")] ushort mipLevels, DXGI_FORMAT format, [NativeTypeName("UINT")] uint sampleCount, [NativeTypeName("UINT")] uint sampleQuality, D3D12_TEXTURE_LAYOUT layout, D3D12_RESOURCE_FLAGS flags)
+        public D3D12_RESOURCE_DESC(D3D12_RESOURCE_DIMENSION dimension, [NativeTypeName("UINT64")] ulong alignment, [NativeTypeName("UINT64")] ulong width, uint height, [NativeTypeName("UINT16")] ushort depthOrArraySize, [NativeTypeName("UINT16")] ushort mipLevels, DXGI_FORMAT format, uint sampleCount, uint sampleQuality, D3D12_TEXTURE_LAYOUT layout, D3D12_RESOURCE_FLAGS flags)
         {
             Dimension = dimension;
             Alignment = alignment;
@@ -44,12 +44,12 @@ namespace TerraFX.Interop
             return new D3D12_RESOURCE_DESC(D3D12_RESOURCE_DIMENSION_TEXTURE1D, alignment, width, 1, arraySize, mipLevels, format, 1, 0, layout, flags);
         }
 
-        public static D3D12_RESOURCE_DESC Tex2D(DXGI_FORMAT format, [NativeTypeName("UINT64")] ulong width, [NativeTypeName("UINT")] uint height, [NativeTypeName("UINT16")] ushort arraySize = 1, [NativeTypeName("UINT16")] ushort mipLevels = 0, [NativeTypeName("UINT")] uint sampleCount = 1, [NativeTypeName("UINT")] uint sampleQuality = 0, D3D12_RESOURCE_FLAGS flags = D3D12_RESOURCE_FLAG_NONE, D3D12_TEXTURE_LAYOUT layout = D3D12_TEXTURE_LAYOUT_UNKNOWN, [NativeTypeName("UINT64")] ulong alignment = 0)
+        public static D3D12_RESOURCE_DESC Tex2D(DXGI_FORMAT format, [NativeTypeName("UINT64")] ulong width, uint height, [NativeTypeName("UINT16")] ushort arraySize = 1, [NativeTypeName("UINT16")] ushort mipLevels = 0, uint sampleCount = 1, uint sampleQuality = 0, D3D12_RESOURCE_FLAGS flags = D3D12_RESOURCE_FLAG_NONE, D3D12_TEXTURE_LAYOUT layout = D3D12_TEXTURE_LAYOUT_UNKNOWN, [NativeTypeName("UINT64")] ulong alignment = 0)
         {
             return new D3D12_RESOURCE_DESC(D3D12_RESOURCE_DIMENSION_TEXTURE2D, alignment, width, height, arraySize, mipLevels, format, sampleCount, sampleQuality, layout, flags);
         }
 
-        public static D3D12_RESOURCE_DESC Tex3D(DXGI_FORMAT format, [NativeTypeName("UINT64")] ulong width, [NativeTypeName("UINT")] uint height, [NativeTypeName("UINT16")] ushort depth, [NativeTypeName("UINT16")] ushort mipLevels = 0, D3D12_RESOURCE_FLAGS flags = D3D12_RESOURCE_FLAG_NONE, D3D12_TEXTURE_LAYOUT layout = D3D12_TEXTURE_LAYOUT_UNKNOWN, [NativeTypeName("UINT64")] ulong alignment = 0)
+        public static D3D12_RESOURCE_DESC Tex3D(DXGI_FORMAT format, [NativeTypeName("UINT64")] ulong width, uint height, [NativeTypeName("UINT16")] ushort depth, [NativeTypeName("UINT16")] ushort mipLevels = 0, D3D12_RESOURCE_FLAGS flags = D3D12_RESOURCE_FLAG_NONE, D3D12_TEXTURE_LAYOUT layout = D3D12_TEXTURE_LAYOUT_UNKNOWN, [NativeTypeName("UINT64")] ulong alignment = 0)
         {
             return new D3D12_RESOURCE_DESC(D3D12_RESOURCE_DIMENSION_TEXTURE3D, alignment, width, height, depth, mipLevels, format, 1, 0, layout, flags);
         }

@@ -7,10 +7,8 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct FSCTL_SET_INTEGRITY_INFORMATION_BUFFER_EX
     {
-        [NativeTypeName("BYTE")]
         public byte EnableIntegrity;
 
-        [NativeTypeName("BYTE")]
         public byte KeepIntegrityStateUnchanged;
 
         [NativeTypeName("WORD")]
@@ -19,7 +17,6 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint Flags;
 
-        [NativeTypeName("BYTE")]
         public byte Version;
 
         [NativeTypeName("BYTE [7]")]

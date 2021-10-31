@@ -3,8 +3,6 @@
 // Ported from um/WinBase.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
-
 namespace TerraFX.Interop
 {
     public unsafe partial struct ACTCTXA
@@ -18,7 +16,6 @@ namespace TerraFX.Interop
         [NativeTypeName("LPCSTR")]
         public sbyte* lpSource;
 
-        [NativeTypeName("USHORT")]
         public ushort wProcessorArchitecture;
 
         [NativeTypeName("LANGID")]
@@ -33,7 +30,6 @@ namespace TerraFX.Interop
         [NativeTypeName("LPCSTR")]
         public sbyte* lpApplicationName;
 
-        [NativeTypeName("HMODULE")]
-        public IntPtr hModule;
+        public HMODULE hModule;
     }
 }

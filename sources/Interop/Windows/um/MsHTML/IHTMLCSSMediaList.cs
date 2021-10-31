@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IHTMLCSSMediaList*, Guid*, void**, int>)(lpVtbl[0]))((IHTMLCSSMediaList*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,80 +41,70 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetTypeInfoCount([NativeTypeName("UINT *")] uint* pctinfo)
+        public HRESULT GetTypeInfoCount(uint* pctinfo)
         {
             return ((delegate* unmanaged<IHTMLCSSMediaList*, uint*, int>)(lpVtbl[3]))((IHTMLCSSMediaList*)Unsafe.AsPointer(ref this), pctinfo);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetTypeInfo([NativeTypeName("UINT")] uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
+        public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
         {
             return ((delegate* unmanaged<IHTMLCSSMediaList*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IHTMLCSSMediaList*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, [NativeTypeName("UINT")] uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+        public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
         {
             return ((delegate* unmanaged<IHTMLCSSMediaList*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLCSSMediaList*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, [NativeTypeName("UINT *")] uint* puArgErr)
+        public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
         {
             return ((delegate* unmanaged<IHTMLCSSMediaList*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IHTMLCSSMediaList*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        [return: NativeTypeName("HRESULT")]
-        public int put_mediaText([NativeTypeName("BSTR")] ushort* v)
+        public HRESULT put_mediaText([NativeTypeName("BSTR")] ushort* v)
         {
             return ((delegate* unmanaged<IHTMLCSSMediaList*, ushort*, int>)(lpVtbl[7]))((IHTMLCSSMediaList*)Unsafe.AsPointer(ref this), v);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        [return: NativeTypeName("HRESULT")]
-        public int get_mediaText([NativeTypeName("BSTR *")] ushort** p)
+        public HRESULT get_mediaText([NativeTypeName("BSTR *")] ushort** p)
         {
             return ((delegate* unmanaged<IHTMLCSSMediaList*, ushort**, int>)(lpVtbl[8]))((IHTMLCSSMediaList*)Unsafe.AsPointer(ref this), p);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        [return: NativeTypeName("HRESULT")]
-        public int get_length([NativeTypeName("long *")] int* p)
+        public HRESULT get_length([NativeTypeName("long *")] int* p)
         {
             return ((delegate* unmanaged<IHTMLCSSMediaList*, int*, int>)(lpVtbl[9]))((IHTMLCSSMediaList*)Unsafe.AsPointer(ref this), p);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(10)]
-        [return: NativeTypeName("HRESULT")]
-        public int item([NativeTypeName("long")] int index, [NativeTypeName("BSTR *")] ushort** pbstrMedium)
+        public HRESULT item([NativeTypeName("long")] int index, [NativeTypeName("BSTR *")] ushort** pbstrMedium)
         {
             return ((delegate* unmanaged<IHTMLCSSMediaList*, int, ushort**, int>)(lpVtbl[10]))((IHTMLCSSMediaList*)Unsafe.AsPointer(ref this), index, pbstrMedium);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(11)]
-        [return: NativeTypeName("HRESULT")]
-        public int appendMedium([NativeTypeName("BSTR")] ushort* bstrMedium)
+        public HRESULT appendMedium([NativeTypeName("BSTR")] ushort* bstrMedium)
         {
             return ((delegate* unmanaged<IHTMLCSSMediaList*, ushort*, int>)(lpVtbl[11]))((IHTMLCSSMediaList*)Unsafe.AsPointer(ref this), bstrMedium);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(12)]
-        [return: NativeTypeName("HRESULT")]
-        public int deleteMedium([NativeTypeName("BSTR")] ushort* bstrMedium)
+        public HRESULT deleteMedium([NativeTypeName("BSTR")] ushort* bstrMedium)
         {
             return ((delegate* unmanaged<IHTMLCSSMediaList*, ushort*, int>)(lpVtbl[12]))((IHTMLCSSMediaList*)Unsafe.AsPointer(ref this), bstrMedium);
         }

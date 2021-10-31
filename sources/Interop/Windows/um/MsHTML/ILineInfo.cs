@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<ILineInfo*, Guid*, void**, int>)(lpVtbl[0]))((ILineInfo*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,40 +41,35 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int get_x([NativeTypeName("long *")] int* p)
+        public HRESULT get_x([NativeTypeName("long *")] int* p)
         {
             return ((delegate* unmanaged<ILineInfo*, int*, int>)(lpVtbl[3]))((ILineInfo*)Unsafe.AsPointer(ref this), p);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int get_baseLine([NativeTypeName("long *")] int* p)
+        public HRESULT get_baseLine([NativeTypeName("long *")] int* p)
         {
             return ((delegate* unmanaged<ILineInfo*, int*, int>)(lpVtbl[4]))((ILineInfo*)Unsafe.AsPointer(ref this), p);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int get_textDescent([NativeTypeName("long *")] int* p)
+        public HRESULT get_textDescent([NativeTypeName("long *")] int* p)
         {
             return ((delegate* unmanaged<ILineInfo*, int*, int>)(lpVtbl[5]))((ILineInfo*)Unsafe.AsPointer(ref this), p);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int get_textHeight([NativeTypeName("long *")] int* p)
+        public HRESULT get_textHeight([NativeTypeName("long *")] int* p)
         {
             return ((delegate* unmanaged<ILineInfo*, int*, int>)(lpVtbl[6]))((ILineInfo*)Unsafe.AsPointer(ref this), p);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        [return: NativeTypeName("HRESULT")]
-        public int get_lineDirection([NativeTypeName("LONG *")] int* p)
+        public HRESULT get_lineDirection([NativeTypeName("LONG *")] int* p)
         {
             return ((delegate* unmanaged<ILineInfo*, int*, int>)(lpVtbl[7]))((ILineInfo*)Unsafe.AsPointer(ref this), p);
         }

@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct D3D10_STATE_BLOCK_MASK
     {
-        [NativeTypeName("BYTE")]
         public byte VS;
 
         [NativeTypeName("BYTE [2]")]
@@ -19,7 +18,6 @@ namespace TerraFX.Interop
         [NativeTypeName("BYTE [2]")]
         public fixed byte VSConstantBuffers[2];
 
-        [NativeTypeName("BYTE")]
         public byte GS;
 
         [NativeTypeName("BYTE [2]")]
@@ -31,7 +29,6 @@ namespace TerraFX.Interop
         [NativeTypeName("BYTE [2]")]
         public fixed byte GSConstantBuffers[2];
 
-        [NativeTypeName("BYTE")]
         public byte PS;
 
         [NativeTypeName("BYTE [2]")]
@@ -46,37 +43,26 @@ namespace TerraFX.Interop
         [NativeTypeName("BYTE [2]")]
         public fixed byte IAVertexBuffers[2];
 
-        [NativeTypeName("BYTE")]
         public byte IAIndexBuffer;
 
-        [NativeTypeName("BYTE")]
         public byte IAInputLayout;
 
-        [NativeTypeName("BYTE")]
         public byte IAPrimitiveTopology;
 
-        [NativeTypeName("BYTE")]
         public byte OMRenderTargets;
 
-        [NativeTypeName("BYTE")]
         public byte OMDepthStencilState;
 
-        [NativeTypeName("BYTE")]
         public byte OMBlendState;
 
-        [NativeTypeName("BYTE")]
         public byte RSViewports;
 
-        [NativeTypeName("BYTE")]
         public byte RSScissorRects;
 
-        [NativeTypeName("BYTE")]
         public byte RSRasterizerState;
 
-        [NativeTypeName("BYTE")]
         public byte SOBuffers;
 
-        [NativeTypeName("BYTE")]
         public byte Predication;
     }
 }

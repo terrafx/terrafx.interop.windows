@@ -11,10 +11,8 @@ namespace TerraFX.Interop
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe partial struct SHFILEOPSTRUCT32W
     {
-        [NativeTypeName("HWND")]
-        public IntPtr hwnd;
+        public HWND hwnd;
 
-        [NativeTypeName("UINT")]
         public uint wFunc;
 
         [NativeTypeName("PCZZWSTR")]
@@ -26,8 +24,7 @@ namespace TerraFX.Interop
         [NativeTypeName("FILEOP_FLAGS")]
         public ushort fFlags;
 
-        [NativeTypeName("BOOL")]
-        public int fAnyOperationsAborted;
+        public BOOL fAnyOperationsAborted;
 
         [NativeTypeName("LPVOID")]
         public void* hNameMappings;

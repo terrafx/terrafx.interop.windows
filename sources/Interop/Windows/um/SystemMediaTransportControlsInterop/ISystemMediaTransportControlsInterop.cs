@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<ISystemMediaTransportControlsInterop*, Guid*, void**, int>)(lpVtbl[0]))((ISystemMediaTransportControlsInterop*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,34 +41,30 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetIids([NativeTypeName("ULONG *")] uint* iidCount, [NativeTypeName("IID **")] Guid** iids)
+        public HRESULT GetIids([NativeTypeName("ULONG *")] uint* iidCount, [NativeTypeName("IID **")] Guid** iids)
         {
             return ((delegate* unmanaged<ISystemMediaTransportControlsInterop*, uint*, Guid**, int>)(lpVtbl[3]))((ISystemMediaTransportControlsInterop*)Unsafe.AsPointer(ref this), iidCount, iids);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetRuntimeClassName([NativeTypeName("HSTRING *")] IntPtr* className)
+        public HRESULT GetRuntimeClassName(HSTRING* className)
         {
-            return ((delegate* unmanaged<ISystemMediaTransportControlsInterop*, IntPtr*, int>)(lpVtbl[4]))((ISystemMediaTransportControlsInterop*)Unsafe.AsPointer(ref this), className);
+            return ((delegate* unmanaged<ISystemMediaTransportControlsInterop*, HSTRING*, int>)(lpVtbl[4]))((ISystemMediaTransportControlsInterop*)Unsafe.AsPointer(ref this), className);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetTrustLevel(TrustLevel* trustLevel)
+        public HRESULT GetTrustLevel(TrustLevel* trustLevel)
         {
             return ((delegate* unmanaged<ISystemMediaTransportControlsInterop*, TrustLevel*, int>)(lpVtbl[5]))((ISystemMediaTransportControlsInterop*)Unsafe.AsPointer(ref this), trustLevel);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetForWindow([NativeTypeName("HWND")] IntPtr appWindow, [NativeTypeName("const IID &")] Guid* riid, void** mediaTransportControl)
+        public HRESULT GetForWindow(HWND appWindow, [NativeTypeName("const IID &")] Guid* riid, void** mediaTransportControl)
         {
-            return ((delegate* unmanaged<ISystemMediaTransportControlsInterop*, IntPtr, Guid*, void**, int>)(lpVtbl[6]))((ISystemMediaTransportControlsInterop*)Unsafe.AsPointer(ref this), appWindow, riid, mediaTransportControl);
+            return ((delegate* unmanaged<ISystemMediaTransportControlsInterop*, HWND, Guid*, void**, int>)(lpVtbl[6]))((ISystemMediaTransportControlsInterop*)Unsafe.AsPointer(ref this), appWindow, riid, mediaTransportControl);
         }
     }
 }

@@ -16,7 +16,6 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint Flags;
 
-        [NativeTypeName("BYTE")]
         public byte Slot;
     }
 }

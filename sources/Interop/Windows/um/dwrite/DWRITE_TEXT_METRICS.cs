@@ -7,25 +7,18 @@ namespace TerraFX.Interop
 {
     public partial struct DWRITE_TEXT_METRICS
     {
-        [NativeTypeName("FLOAT")]
         public float left;
 
-        [NativeTypeName("FLOAT")]
         public float top;
 
-        [NativeTypeName("FLOAT")]
         public float width;
 
-        [NativeTypeName("FLOAT")]
         public float widthIncludingTrailingWhitespace;
 
-        [NativeTypeName("FLOAT")]
         public float height;
 
-        [NativeTypeName("FLOAT")]
         public float layoutWidth;
 
-        [NativeTypeName("FLOAT")]
         public float layoutHeight;
 
         [NativeTypeName("UINT32")]

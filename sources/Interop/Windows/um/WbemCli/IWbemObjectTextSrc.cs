@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IWbemObjectTextSrc*, Guid*, void**, int>)(lpVtbl[0]))((IWbemObjectTextSrc*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,16 +41,14 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetText([NativeTypeName("long")] int lFlags, IWbemClassObject* pObj, [NativeTypeName("ULONG")] uint uObjTextFormat, IWbemContext* pCtx, [NativeTypeName("BSTR *")] ushort** strText)
+        public HRESULT GetText([NativeTypeName("long")] int lFlags, IWbemClassObject* pObj, [NativeTypeName("ULONG")] uint uObjTextFormat, IWbemContext* pCtx, [NativeTypeName("BSTR *")] ushort** strText)
         {
             return ((delegate* unmanaged<IWbemObjectTextSrc*, int, IWbemClassObject*, uint, IWbemContext*, ushort**, int>)(lpVtbl[3]))((IWbemObjectTextSrc*)Unsafe.AsPointer(ref this), lFlags, pObj, uObjTextFormat, pCtx, strText);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int CreateFromText([NativeTypeName("long")] int lFlags, [NativeTypeName("BSTR")] ushort* strText, [NativeTypeName("ULONG")] uint uObjTextFormat, IWbemContext* pCtx, IWbemClassObject** pNewObj)
+        public HRESULT CreateFromText([NativeTypeName("long")] int lFlags, [NativeTypeName("BSTR")] ushort* strText, [NativeTypeName("ULONG")] uint uObjTextFormat, IWbemContext* pCtx, IWbemClassObject** pNewObj)
         {
             return ((delegate* unmanaged<IWbemObjectTextSrc*, int, ushort*, uint, IWbemContext*, IWbemClassObject**, int>)(lpVtbl[4]))((IWbemObjectTextSrc*)Unsafe.AsPointer(ref this), lFlags, strText, uObjTextFormat, pCtx, pNewObj);
         }

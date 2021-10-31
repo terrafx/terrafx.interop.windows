@@ -7,13 +7,10 @@ namespace TerraFX.Interop
 {
     public partial struct D3D11_BUFFER_UAV
     {
-        [NativeTypeName("UINT")]
         public uint FirstElement;
 
-        [NativeTypeName("UINT")]
         public uint NumElements;
 
-        [NativeTypeName("UINT")]
         public uint Flags;
     }
 }

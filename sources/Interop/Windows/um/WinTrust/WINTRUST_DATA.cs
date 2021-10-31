@@ -3,7 +3,6 @@
 // Ported from um/WinTrust.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -35,8 +34,7 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint dwStateAction;
 
-        [NativeTypeName("HANDLE")]
-        public IntPtr hWVTStateData;
+        public HANDLE hWVTStateData;
 
         [NativeTypeName("WCHAR *")]
         public ushort* pwszURLReference;

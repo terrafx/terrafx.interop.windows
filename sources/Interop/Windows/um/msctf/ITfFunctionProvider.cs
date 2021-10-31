@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<ITfFunctionProvider*, Guid*, void**, int>)(lpVtbl[0]))((ITfFunctionProvider*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,24 +41,21 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetType([NativeTypeName("GUID *")] Guid* pguid)
+        public HRESULT GetType(Guid* pguid)
         {
             return ((delegate* unmanaged<ITfFunctionProvider*, Guid*, int>)(lpVtbl[3]))((ITfFunctionProvider*)Unsafe.AsPointer(ref this), pguid);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetDescription([NativeTypeName("BSTR *")] ushort** pbstrDesc)
+        public HRESULT GetDescription([NativeTypeName("BSTR *")] ushort** pbstrDesc)
         {
             return ((delegate* unmanaged<ITfFunctionProvider*, ushort**, int>)(lpVtbl[4]))((ITfFunctionProvider*)Unsafe.AsPointer(ref this), pbstrDesc);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetFunction([NativeTypeName("const GUID &")] Guid* rguid, [NativeTypeName("const IID &")] Guid* riid, IUnknown** ppunk)
+        public HRESULT GetFunction([NativeTypeName("const GUID &")] Guid* rguid, [NativeTypeName("const IID &")] Guid* riid, IUnknown** ppunk)
         {
             return ((delegate* unmanaged<ITfFunctionProvider*, Guid*, Guid*, IUnknown**, int>)(lpVtbl[5]))((ITfFunctionProvider*)Unsafe.AsPointer(ref this), rguid, riid, ppunk);
         }

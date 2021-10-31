@@ -31,7 +31,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public D2D1_PRINT_CONTROL_PROPERTIES(D2D1_PRINT_FONT_SUBSET_MODE fontSubsetMode = D2D1_PRINT_FONT_SUBSET_MODE_DEFAULT, [NativeTypeName("FLOAT")] float rasterDpi = 150.0f, D2D1_COLOR_SPACE colorSpace = D2D1_COLOR_SPACE_SRGB)
+        public D2D1_PRINT_CONTROL_PROPERTIES(D2D1_PRINT_FONT_SUBSET_MODE fontSubsetMode = D2D1_PRINT_FONT_SUBSET_MODE_DEFAULT, float rasterDpi = 150.0f, D2D1_COLOR_SPACE colorSpace = D2D1_COLOR_SPACE_SRGB)
         {
             this = PrintControlProperties(fontSubsetMode, rasterDpi, colorSpace);
         }

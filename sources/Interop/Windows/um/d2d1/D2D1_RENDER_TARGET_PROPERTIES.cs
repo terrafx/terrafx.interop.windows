@@ -11,10 +11,8 @@ namespace TerraFX.Interop
 
         public D2D1_PIXEL_FORMAT pixelFormat;
 
-        [NativeTypeName("FLOAT")]
         public float dpiX;
 
-        [NativeTypeName("FLOAT")]
         public float dpiY;
 
         public D2D1_RENDER_TARGET_USAGE usage;

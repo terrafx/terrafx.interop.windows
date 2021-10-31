@@ -76,10 +76,8 @@ namespace TerraFX.Interop
 
                 public partial struct _Anonymous_e__Struct
                 {
-                    [NativeTypeName("BYTE")]
                     public byte SubMinor;
 
-                    [NativeTypeName("BYTE")]
                     public byte Minor;
                 }
             }

@@ -3,16 +3,13 @@
 // Ported from um/CommCtrl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
-
 namespace TerraFX.Interop
 {
     public unsafe partial struct NMCUSTOMTEXT
     {
         public NMHDR hdr;
 
-        [NativeTypeName("HDC")]
-        public IntPtr hDC;
+        public HDC hDC;
 
         [NativeTypeName("LPCWSTR")]
         public ushort* lpString;
@@ -22,10 +19,8 @@ namespace TerraFX.Interop
         [NativeTypeName("LPRECT")]
         public RECT* lpRect;
 
-        [NativeTypeName("UINT")]
         public uint uFormat;
 
-        [NativeTypeName("BOOL")]
-        public int fLink;
+        public BOOL fLink;
     }
 }

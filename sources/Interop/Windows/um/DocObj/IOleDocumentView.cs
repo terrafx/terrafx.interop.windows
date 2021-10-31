@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IOleDocumentView*, Guid*, void**, int>)(lpVtbl[0]))((IOleDocumentView*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,104 +41,91 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetInPlaceSite(IOleInPlaceSite* pIPSite)
+        public HRESULT SetInPlaceSite(IOleInPlaceSite* pIPSite)
         {
             return ((delegate* unmanaged<IOleDocumentView*, IOleInPlaceSite*, int>)(lpVtbl[3]))((IOleDocumentView*)Unsafe.AsPointer(ref this), pIPSite);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetInPlaceSite(IOleInPlaceSite** ppIPSite)
+        public HRESULT GetInPlaceSite(IOleInPlaceSite** ppIPSite)
         {
             return ((delegate* unmanaged<IOleDocumentView*, IOleInPlaceSite**, int>)(lpVtbl[4]))((IOleDocumentView*)Unsafe.AsPointer(ref this), ppIPSite);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetDocument(IUnknown** ppunk)
+        public HRESULT GetDocument(IUnknown** ppunk)
         {
             return ((delegate* unmanaged<IOleDocumentView*, IUnknown**, int>)(lpVtbl[5]))((IOleDocumentView*)Unsafe.AsPointer(ref this), ppunk);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetRect([NativeTypeName("LPRECT")] RECT* prcView)
+        public HRESULT SetRect([NativeTypeName("LPRECT")] RECT* prcView)
         {
             return ((delegate* unmanaged<IOleDocumentView*, RECT*, int>)(lpVtbl[6]))((IOleDocumentView*)Unsafe.AsPointer(ref this), prcView);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetRect([NativeTypeName("LPRECT")] RECT* prcView)
+        public HRESULT GetRect([NativeTypeName("LPRECT")] RECT* prcView)
         {
             return ((delegate* unmanaged<IOleDocumentView*, RECT*, int>)(lpVtbl[7]))((IOleDocumentView*)Unsafe.AsPointer(ref this), prcView);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetRectComplex([NativeTypeName("LPRECT")] RECT* prcView, [NativeTypeName("LPRECT")] RECT* prcHScroll, [NativeTypeName("LPRECT")] RECT* prcVScroll, [NativeTypeName("LPRECT")] RECT* prcSizeBox)
+        public HRESULT SetRectComplex([NativeTypeName("LPRECT")] RECT* prcView, [NativeTypeName("LPRECT")] RECT* prcHScroll, [NativeTypeName("LPRECT")] RECT* prcVScroll, [NativeTypeName("LPRECT")] RECT* prcSizeBox)
         {
             return ((delegate* unmanaged<IOleDocumentView*, RECT*, RECT*, RECT*, RECT*, int>)(lpVtbl[8]))((IOleDocumentView*)Unsafe.AsPointer(ref this), prcView, prcHScroll, prcVScroll, prcSizeBox);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        [return: NativeTypeName("HRESULT")]
-        public int Show([NativeTypeName("BOOL")] int fShow)
+        public HRESULT Show(BOOL fShow)
         {
-            return ((delegate* unmanaged<IOleDocumentView*, int, int>)(lpVtbl[9]))((IOleDocumentView*)Unsafe.AsPointer(ref this), fShow);
+            return ((delegate* unmanaged<IOleDocumentView*, BOOL, int>)(lpVtbl[9]))((IOleDocumentView*)Unsafe.AsPointer(ref this), fShow);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(10)]
-        [return: NativeTypeName("HRESULT")]
-        public int UIActivate([NativeTypeName("BOOL")] int fUIActivate)
+        public HRESULT UIActivate(BOOL fUIActivate)
         {
-            return ((delegate* unmanaged<IOleDocumentView*, int, int>)(lpVtbl[10]))((IOleDocumentView*)Unsafe.AsPointer(ref this), fUIActivate);
+            return ((delegate* unmanaged<IOleDocumentView*, BOOL, int>)(lpVtbl[10]))((IOleDocumentView*)Unsafe.AsPointer(ref this), fUIActivate);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(11)]
-        [return: NativeTypeName("HRESULT")]
-        public int Open()
+        public HRESULT Open()
         {
             return ((delegate* unmanaged<IOleDocumentView*, int>)(lpVtbl[11]))((IOleDocumentView*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(12)]
-        [return: NativeTypeName("HRESULT")]
-        public int CloseView([NativeTypeName("DWORD")] uint dwReserved)
+        public HRESULT CloseView([NativeTypeName("DWORD")] uint dwReserved)
         {
             return ((delegate* unmanaged<IOleDocumentView*, uint, int>)(lpVtbl[12]))((IOleDocumentView*)Unsafe.AsPointer(ref this), dwReserved);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(13)]
-        [return: NativeTypeName("HRESULT")]
-        public int SaveViewState([NativeTypeName("LPSTREAM")] IStream* pstm)
+        public HRESULT SaveViewState([NativeTypeName("LPSTREAM")] IStream* pstm)
         {
             return ((delegate* unmanaged<IOleDocumentView*, IStream*, int>)(lpVtbl[13]))((IOleDocumentView*)Unsafe.AsPointer(ref this), pstm);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(14)]
-        [return: NativeTypeName("HRESULT")]
-        public int ApplyViewState([NativeTypeName("LPSTREAM")] IStream* pstm)
+        public HRESULT ApplyViewState([NativeTypeName("LPSTREAM")] IStream* pstm)
         {
             return ((delegate* unmanaged<IOleDocumentView*, IStream*, int>)(lpVtbl[14]))((IOleDocumentView*)Unsafe.AsPointer(ref this), pstm);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(15)]
-        [return: NativeTypeName("HRESULT")]
-        public int Clone(IOleInPlaceSite* pIPSiteNew, IOleDocumentView** ppViewNew)
+        public HRESULT Clone(IOleInPlaceSite* pIPSiteNew, IOleDocumentView** ppViewNew)
         {
             return ((delegate* unmanaged<IOleDocumentView*, IOleInPlaceSite*, IOleDocumentView**, int>)(lpVtbl[15]))((IOleDocumentView*)Unsafe.AsPointer(ref this), pIPSiteNew, ppViewNew);
         }

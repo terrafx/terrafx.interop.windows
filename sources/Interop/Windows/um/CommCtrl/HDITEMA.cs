@@ -3,13 +3,10 @@
 // Ported from um/CommCtrl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
-
 namespace TerraFX.Interop
 {
     public unsafe partial struct HDITEMA
     {
-        [NativeTypeName("UINT")]
         public uint mask;
 
         public int cxy;
@@ -17,8 +14,7 @@ namespace TerraFX.Interop
         [NativeTypeName("LPSTR")]
         public sbyte* pszText;
 
-        [NativeTypeName("HBITMAP")]
-        public IntPtr hbm;
+        public HBITMAP hbm;
 
         public int cchTextMax;
 
@@ -31,12 +27,10 @@ namespace TerraFX.Interop
 
         public int iOrder;
 
-        [NativeTypeName("UINT")]
         public uint type;
 
         public void* pvFilter;
 
-        [NativeTypeName("UINT")]
         public uint state;
     }
 }

@@ -9,7 +9,6 @@ namespace TerraFX.Interop
     {
         public EMR emr;
 
-        [NativeTypeName("FLOAT")]
         public float eMiterLimit;
     }
 }

@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IMFImageSharingEngineClassFactory*, Guid*, void**, int>)(lpVtbl[0]))((IMFImageSharingEngineClassFactory*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,8 +41,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int CreateInstanceFromUDN([NativeTypeName("BSTR")] ushort* pUniqueDeviceName, IMFImageSharingEngine** ppEngine)
+        public HRESULT CreateInstanceFromUDN([NativeTypeName("BSTR")] ushort* pUniqueDeviceName, IMFImageSharingEngine** ppEngine)
         {
             return ((delegate* unmanaged<IMFImageSharingEngineClassFactory*, ushort*, IMFImageSharingEngine**, int>)(lpVtbl[3]))((IMFImageSharingEngineClassFactory*)Unsafe.AsPointer(ref this), pUniqueDeviceName, ppEngine);
         }

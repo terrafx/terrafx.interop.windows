@@ -19,13 +19,10 @@ namespace TerraFX.Interop
         [NativeTypeName("const DML_TENSOR_DESC *")]
         public DML_TENSOR_DESC* OutputTensor;
 
-        [NativeTypeName("BOOL")]
-        public int CrossChannel;
+        public BOOL CrossChannel;
 
-        [NativeTypeName("BOOL")]
-        public int NormalizeVariance;
+        public BOOL NormalizeVariance;
 
-        [NativeTypeName("FLOAT")]
         public float Epsilon;
 
         [NativeTypeName("const DML_OPERATOR_DESC *")]

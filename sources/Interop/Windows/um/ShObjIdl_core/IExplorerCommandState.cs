@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IExplorerCommandState*, Guid*, void**, int>)(lpVtbl[0]))((IExplorerCommandState*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,10 +41,9 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetState(IShellItemArray* psiItemArray, [NativeTypeName("BOOL")] int fOkToBeSlow, [NativeTypeName("EXPCMDSTATE *")] uint* pCmdState)
+        public HRESULT GetState(IShellItemArray* psiItemArray, BOOL fOkToBeSlow, [NativeTypeName("EXPCMDSTATE *")] uint* pCmdState)
         {
-            return ((delegate* unmanaged<IExplorerCommandState*, IShellItemArray*, int, uint*, int>)(lpVtbl[3]))((IExplorerCommandState*)Unsafe.AsPointer(ref this), psiItemArray, fOkToBeSlow, pCmdState);
+            return ((delegate* unmanaged<IExplorerCommandState*, IShellItemArray*, BOOL, uint*, int>)(lpVtbl[3]))((IExplorerCommandState*)Unsafe.AsPointer(ref this), psiItemArray, fOkToBeSlow, pCmdState);
         }
     }
 }

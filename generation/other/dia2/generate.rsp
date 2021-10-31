@@ -2,9 +2,9 @@
 @../../remap.rsp
 --exclude
 __MIDL___MIDL_itf_dia2_0000_0000_0001
-__MIDL___MIDL_itf_dia2_0000_0033_0001
+__MIDL___MIDL_itf_dia2_0000_0034_0001
 --include-directory
-C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/DIA SDK/include
+C:/Program Files/Microsoft Visual Studio/2022/Preview/DIA SDK/include
 --file
 other-dia2.h
 --output
@@ -12,4 +12,4 @@ other-dia2.h
 --test-output
 ../../../tests/Interop/Windows/other/dia2
 --traverse
-C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/DIA SDK/include/dia2.h
+C:/Program Files/Microsoft Visual Studio/2022/Preview/DIA SDK/include/dia2.h

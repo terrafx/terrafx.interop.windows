@@ -10,7 +10,6 @@ namespace TerraFX.Interop
         [NativeTypeName("UINT32")]
         public uint pitch;
 
-        [NativeTypeName("BYTE *")]
         public byte* bits;
     }
 }

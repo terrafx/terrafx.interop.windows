@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IQueryInfo*, Guid*, void**, int>)(lpVtbl[0]))((IQueryInfo*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,16 +41,14 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetInfoTip([NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("PWSTR *")] ushort** ppwszTip)
+        public HRESULT GetInfoTip([NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("PWSTR *")] ushort** ppwszTip)
         {
             return ((delegate* unmanaged<IQueryInfo*, uint, ushort**, int>)(lpVtbl[3]))((IQueryInfo*)Unsafe.AsPointer(ref this), dwFlags, ppwszTip);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetInfoFlags([NativeTypeName("DWORD *")] uint* pdwFlags)
+        public HRESULT GetInfoFlags([NativeTypeName("DWORD *")] uint* pdwFlags)
         {
             return ((delegate* unmanaged<IQueryInfo*, uint*, int>)(lpVtbl[4]))((IQueryInfo*)Unsafe.AsPointer(ref this), pdwFlags);
         }

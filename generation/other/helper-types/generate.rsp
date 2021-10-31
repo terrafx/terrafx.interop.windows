@@ -1,0 +1,10 @@
+@../../settings.rsp
+@../../remap.rsp
+--config
+generate-helper-types
+--file
+other-helper-types.h
+--output
+../../../sources/Interop/Windows
+--test-output
+../../../tests/Interop/Windows

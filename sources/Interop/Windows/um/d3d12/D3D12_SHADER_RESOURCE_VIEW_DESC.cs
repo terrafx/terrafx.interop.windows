@@ -14,7 +14,6 @@ namespace TerraFX.Interop
 
         public D3D12_SRV_DIMENSION ViewDimension;
 
-        [NativeTypeName("UINT")]
         public uint Shader4ComponentMapping;
 
         [NativeTypeName("D3D12_SHADER_RESOURCE_VIEW_DESC::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/d3d12.h:3094:5)")]

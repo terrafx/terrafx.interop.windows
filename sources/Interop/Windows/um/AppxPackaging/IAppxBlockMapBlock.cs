@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IAppxBlockMapBlock*, Guid*, void**, int>)(lpVtbl[0]))((IAppxBlockMapBlock*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,16 +41,14 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetHash([NativeTypeName("UINT32 *")] uint* bufferSize, [NativeTypeName("BYTE **")] byte** buffer)
+        public HRESULT GetHash([NativeTypeName("UINT32 *")] uint* bufferSize, byte** buffer)
         {
             return ((delegate* unmanaged<IAppxBlockMapBlock*, uint*, byte**, int>)(lpVtbl[3]))((IAppxBlockMapBlock*)Unsafe.AsPointer(ref this), bufferSize, buffer);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetCompressedSize([NativeTypeName("UINT32 *")] uint* size)
+        public HRESULT GetCompressedSize([NativeTypeName("UINT32 *")] uint* size)
         {
             return ((delegate* unmanaged<IAppxBlockMapBlock*, uint*, int>)(lpVtbl[4]))((IAppxBlockMapBlock*)Unsafe.AsPointer(ref this), size);
         }

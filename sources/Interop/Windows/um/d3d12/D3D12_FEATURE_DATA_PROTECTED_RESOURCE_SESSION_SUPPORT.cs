@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public partial struct D3D12_FEATURE_DATA_PROTECTED_RESOURCE_SESSION_SUPPORT
     {
-        [NativeTypeName("UINT")]
         public uint NodeIndex;
 
         public D3D12_PROTECTED_RESOURCE_SESSION_SUPPORT_FLAGS Support;

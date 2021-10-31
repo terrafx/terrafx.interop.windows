@@ -13,10 +13,8 @@ namespace TerraFX.Interop
         [NativeTypeName("D2D1_POINT_2F")]
         public D2D_POINT_2F gradientOriginOffset;
 
-        [NativeTypeName("FLOAT")]
         public float radiusX;
 
-        [NativeTypeName("FLOAT")]
         public float radiusY;
     }
 }

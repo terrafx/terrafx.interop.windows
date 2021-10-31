@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public partial struct TRANSMSG
     {
-        [NativeTypeName("UINT")]
         public uint message;
 
         [NativeTypeName("WPARAM")]

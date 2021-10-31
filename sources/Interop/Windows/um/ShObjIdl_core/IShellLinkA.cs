@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IShellLinkA*, Guid*, void**, int>)(lpVtbl[0]))((IShellLinkA*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,144 +41,126 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetPath([NativeTypeName("LPSTR")] sbyte* pszFile, int cch, WIN32_FIND_DATAA* pfd, [NativeTypeName("DWORD")] uint fFlags)
+        public HRESULT GetPath([NativeTypeName("LPSTR")] sbyte* pszFile, int cch, WIN32_FIND_DATAA* pfd, [NativeTypeName("DWORD")] uint fFlags)
         {
             return ((delegate* unmanaged<IShellLinkA*, sbyte*, int, WIN32_FIND_DATAA*, uint, int>)(lpVtbl[3]))((IShellLinkA*)Unsafe.AsPointer(ref this), pszFile, cch, pfd, fFlags);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetIDList([NativeTypeName("LPITEMIDLIST *")] ITEMIDLIST** ppidl)
+        public HRESULT GetIDList([NativeTypeName("LPITEMIDLIST *")] ITEMIDLIST** ppidl)
         {
             return ((delegate* unmanaged<IShellLinkA*, ITEMIDLIST**, int>)(lpVtbl[4]))((IShellLinkA*)Unsafe.AsPointer(ref this), ppidl);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetIDList([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl)
+        public HRESULT SetIDList([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl)
         {
             return ((delegate* unmanaged<IShellLinkA*, ITEMIDLIST*, int>)(lpVtbl[5]))((IShellLinkA*)Unsafe.AsPointer(ref this), pidl);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetDescription([NativeTypeName("LPSTR")] sbyte* pszName, int cch)
+        public HRESULT GetDescription([NativeTypeName("LPSTR")] sbyte* pszName, int cch)
         {
             return ((delegate* unmanaged<IShellLinkA*, sbyte*, int, int>)(lpVtbl[6]))((IShellLinkA*)Unsafe.AsPointer(ref this), pszName, cch);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetDescription([NativeTypeName("LPCSTR")] sbyte* pszName)
+        public HRESULT SetDescription([NativeTypeName("LPCSTR")] sbyte* pszName)
         {
             return ((delegate* unmanaged<IShellLinkA*, sbyte*, int>)(lpVtbl[7]))((IShellLinkA*)Unsafe.AsPointer(ref this), pszName);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetWorkingDirectory([NativeTypeName("LPSTR")] sbyte* pszDir, int cch)
+        public HRESULT GetWorkingDirectory([NativeTypeName("LPSTR")] sbyte* pszDir, int cch)
         {
             return ((delegate* unmanaged<IShellLinkA*, sbyte*, int, int>)(lpVtbl[8]))((IShellLinkA*)Unsafe.AsPointer(ref this), pszDir, cch);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetWorkingDirectory([NativeTypeName("LPCSTR")] sbyte* pszDir)
+        public HRESULT SetWorkingDirectory([NativeTypeName("LPCSTR")] sbyte* pszDir)
         {
             return ((delegate* unmanaged<IShellLinkA*, sbyte*, int>)(lpVtbl[9]))((IShellLinkA*)Unsafe.AsPointer(ref this), pszDir);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(10)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetArguments([NativeTypeName("LPSTR")] sbyte* pszArgs, int cch)
+        public HRESULT GetArguments([NativeTypeName("LPSTR")] sbyte* pszArgs, int cch)
         {
             return ((delegate* unmanaged<IShellLinkA*, sbyte*, int, int>)(lpVtbl[10]))((IShellLinkA*)Unsafe.AsPointer(ref this), pszArgs, cch);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(11)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetArguments([NativeTypeName("LPCSTR")] sbyte* pszArgs)
+        public HRESULT SetArguments([NativeTypeName("LPCSTR")] sbyte* pszArgs)
         {
             return ((delegate* unmanaged<IShellLinkA*, sbyte*, int>)(lpVtbl[11]))((IShellLinkA*)Unsafe.AsPointer(ref this), pszArgs);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(12)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetHotkey([NativeTypeName("WORD *")] ushort* pwHotkey)
+        public HRESULT GetHotkey([NativeTypeName("WORD *")] ushort* pwHotkey)
         {
             return ((delegate* unmanaged<IShellLinkA*, ushort*, int>)(lpVtbl[12]))((IShellLinkA*)Unsafe.AsPointer(ref this), pwHotkey);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(13)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetHotkey([NativeTypeName("WORD")] ushort wHotkey)
+        public HRESULT SetHotkey([NativeTypeName("WORD")] ushort wHotkey)
         {
             return ((delegate* unmanaged<IShellLinkA*, ushort, int>)(lpVtbl[13]))((IShellLinkA*)Unsafe.AsPointer(ref this), wHotkey);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(14)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetShowCmd(int* piShowCmd)
+        public HRESULT GetShowCmd(int* piShowCmd)
         {
             return ((delegate* unmanaged<IShellLinkA*, int*, int>)(lpVtbl[14]))((IShellLinkA*)Unsafe.AsPointer(ref this), piShowCmd);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(15)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetShowCmd(int iShowCmd)
+        public HRESULT SetShowCmd(int iShowCmd)
         {
             return ((delegate* unmanaged<IShellLinkA*, int, int>)(lpVtbl[15]))((IShellLinkA*)Unsafe.AsPointer(ref this), iShowCmd);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(16)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetIconLocation([NativeTypeName("LPSTR")] sbyte* pszIconPath, int cch, int* piIcon)
+        public HRESULT GetIconLocation([NativeTypeName("LPSTR")] sbyte* pszIconPath, int cch, int* piIcon)
         {
             return ((delegate* unmanaged<IShellLinkA*, sbyte*, int, int*, int>)(lpVtbl[16]))((IShellLinkA*)Unsafe.AsPointer(ref this), pszIconPath, cch, piIcon);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(17)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetIconLocation([NativeTypeName("LPCSTR")] sbyte* pszIconPath, int iIcon)
+        public HRESULT SetIconLocation([NativeTypeName("LPCSTR")] sbyte* pszIconPath, int iIcon)
         {
             return ((delegate* unmanaged<IShellLinkA*, sbyte*, int, int>)(lpVtbl[17]))((IShellLinkA*)Unsafe.AsPointer(ref this), pszIconPath, iIcon);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(18)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetRelativePath([NativeTypeName("LPCSTR")] sbyte* pszPathRel, [NativeTypeName("DWORD")] uint dwReserved)
+        public HRESULT SetRelativePath([NativeTypeName("LPCSTR")] sbyte* pszPathRel, [NativeTypeName("DWORD")] uint dwReserved)
         {
             return ((delegate* unmanaged<IShellLinkA*, sbyte*, uint, int>)(lpVtbl[18]))((IShellLinkA*)Unsafe.AsPointer(ref this), pszPathRel, dwReserved);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(19)]
-        [return: NativeTypeName("HRESULT")]
-        public int Resolve([NativeTypeName("HWND")] IntPtr hwnd, [NativeTypeName("DWORD")] uint fFlags)
+        public HRESULT Resolve(HWND hwnd, [NativeTypeName("DWORD")] uint fFlags)
         {
-            return ((delegate* unmanaged<IShellLinkA*, IntPtr, uint, int>)(lpVtbl[19]))((IShellLinkA*)Unsafe.AsPointer(ref this), hwnd, fFlags);
+            return ((delegate* unmanaged<IShellLinkA*, HWND, uint, int>)(lpVtbl[19]))((IShellLinkA*)Unsafe.AsPointer(ref this), hwnd, fFlags);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(20)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetPath([NativeTypeName("LPCSTR")] sbyte* pszFile)
+        public HRESULT SetPath([NativeTypeName("LPCSTR")] sbyte* pszFile)
         {
             return ((delegate* unmanaged<IShellLinkA*, sbyte*, int>)(lpVtbl[20]))((IShellLinkA*)Unsafe.AsPointer(ref this), pszFile);
         }

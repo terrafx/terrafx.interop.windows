@@ -3,7 +3,6 @@
 // Ported from um/winioctl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -14,8 +13,7 @@ namespace TerraFX.Interop
         [NativeTypeName("_MARK_HANDLE_INFO::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winioctl.h:11696:5)")]
         public _Anonymous_e__Union Anonymous;
 
-        [NativeTypeName("HANDLE")]
-        public IntPtr VolumeHandle;
+        public HANDLE VolumeHandle;
 
         [NativeTypeName("DWORD")]
         public uint HandleInfo;

@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IItemNameLimits*, Guid*, void**, int>)(lpVtbl[0]))((IItemNameLimits*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,16 +41,14 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetValidCharacters([NativeTypeName("LPWSTR *")] ushort** ppwszValidChars, [NativeTypeName("LPWSTR *")] ushort** ppwszInvalidChars)
+        public HRESULT GetValidCharacters([NativeTypeName("LPWSTR *")] ushort** ppwszValidChars, [NativeTypeName("LPWSTR *")] ushort** ppwszInvalidChars)
         {
             return ((delegate* unmanaged<IItemNameLimits*, ushort**, ushort**, int>)(lpVtbl[3]))((IItemNameLimits*)Unsafe.AsPointer(ref this), ppwszValidChars, ppwszInvalidChars);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetMaxLength([NativeTypeName("LPCWSTR")] ushort* pszName, int* piMaxNameLen)
+        public HRESULT GetMaxLength([NativeTypeName("LPCWSTR")] ushort* pszName, int* piMaxNameLen)
         {
             return ((delegate* unmanaged<IItemNameLimits*, ushort*, int*, int>)(lpVtbl[4]))((IItemNameLimits*)Unsafe.AsPointer(ref this), pszName, piMaxNameLen);
         }

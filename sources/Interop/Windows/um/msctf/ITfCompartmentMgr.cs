@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<ITfCompartmentMgr*, Guid*, void**, int>)(lpVtbl[0]))((ITfCompartmentMgr*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,24 +41,21 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetCompartment([NativeTypeName("const GUID &")] Guid* rguid, ITfCompartment** ppcomp)
+        public HRESULT GetCompartment([NativeTypeName("const GUID &")] Guid* rguid, ITfCompartment** ppcomp)
         {
             return ((delegate* unmanaged<ITfCompartmentMgr*, Guid*, ITfCompartment**, int>)(lpVtbl[3]))((ITfCompartmentMgr*)Unsafe.AsPointer(ref this), rguid, ppcomp);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int ClearCompartment([NativeTypeName("TfClientId")] uint tid, [NativeTypeName("const GUID &")] Guid* rguid)
+        public HRESULT ClearCompartment([NativeTypeName("TfClientId")] uint tid, [NativeTypeName("const GUID &")] Guid* rguid)
         {
             return ((delegate* unmanaged<ITfCompartmentMgr*, uint, Guid*, int>)(lpVtbl[4]))((ITfCompartmentMgr*)Unsafe.AsPointer(ref this), tid, rguid);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int EnumCompartments(IEnumGUID** ppEnum)
+        public HRESULT EnumCompartments(IEnumGUID** ppEnum)
         {
             return ((delegate* unmanaged<ITfCompartmentMgr*, IEnumGUID**, int>)(lpVtbl[5]))((ITfCompartmentMgr*)Unsafe.AsPointer(ref this), ppEnum);
         }

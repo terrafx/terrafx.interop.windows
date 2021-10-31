@@ -10,16 +10,12 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint Length;
 
-        [NativeTypeName("BYTE")]
         public byte _unused;
 
-        [NativeTypeName("BYTE")]
         public byte PathId;
 
-        [NativeTypeName("BYTE")]
         public byte TargetId;
 
-        [NativeTypeName("BYTE")]
         public byte Lun;
     }
 }

@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IMFTimedTextBouten*, Guid*, void**, int>)(lpVtbl[0]))((IMFTimedTextBouten*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,24 +41,21 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetBoutenType(MF_TIMED_TEXT_BOUTEN_TYPE* value)
+        public HRESULT GetBoutenType(MF_TIMED_TEXT_BOUTEN_TYPE* value)
         {
             return ((delegate* unmanaged<IMFTimedTextBouten*, MF_TIMED_TEXT_BOUTEN_TYPE*, int>)(lpVtbl[3]))((IMFTimedTextBouten*)Unsafe.AsPointer(ref this), value);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetBoutenColor(MFARGB* value)
+        public HRESULT GetBoutenColor(MFARGB* value)
         {
             return ((delegate* unmanaged<IMFTimedTextBouten*, MFARGB*, int>)(lpVtbl[4]))((IMFTimedTextBouten*)Unsafe.AsPointer(ref this), value);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetBoutenPosition(MF_TIMED_TEXT_BOUTEN_POSITION* value)
+        public HRESULT GetBoutenPosition(MF_TIMED_TEXT_BOUTEN_POSITION* value)
         {
             return ((delegate* unmanaged<IMFTimedTextBouten*, MF_TIMED_TEXT_BOUTEN_POSITION*, int>)(lpVtbl[5]))((IMFTimedTextBouten*)Unsafe.AsPointer(ref this), value);
         }

@@ -9,7 +9,6 @@ namespace TerraFX.Interop
 {
     public partial struct DRIVE_LAYOUT_INFORMATION_GPT
     {
-        [NativeTypeName("GUID")]
         public Guid DiskId;
 
         public LARGE_INTEGER StartingUsableOffset;

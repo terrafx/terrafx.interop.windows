@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct MCGRIDINFO
     {
-        [NativeTypeName("UINT")]
         public uint cbSize;
 
         [NativeTypeName("DWORD")]
@@ -22,8 +21,7 @@ namespace TerraFX.Interop
 
         public int iCol;
 
-        [NativeTypeName("BOOL")]
-        public int bSelected;
+        public BOOL bSelected;
 
         public SYSTEMTIME stStart;
 

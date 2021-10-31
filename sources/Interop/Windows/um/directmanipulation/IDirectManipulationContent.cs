@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IDirectManipulationContent*, Guid*, void**, int>)(lpVtbl[0]))((IDirectManipulationContent*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,64 +41,56 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetContentRect(RECT* contentSize)
+        public HRESULT GetContentRect(RECT* contentSize)
         {
             return ((delegate* unmanaged<IDirectManipulationContent*, RECT*, int>)(lpVtbl[3]))((IDirectManipulationContent*)Unsafe.AsPointer(ref this), contentSize);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetContentRect([NativeTypeName("const RECT *")] RECT* contentSize)
+        public HRESULT SetContentRect([NativeTypeName("const RECT *")] RECT* contentSize)
         {
             return ((delegate* unmanaged<IDirectManipulationContent*, RECT*, int>)(lpVtbl[4]))((IDirectManipulationContent*)Unsafe.AsPointer(ref this), contentSize);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetViewport([NativeTypeName("const IID &")] Guid* riid, void** @object)
+        public HRESULT GetViewport([NativeTypeName("const IID &")] Guid* riid, void** @object)
         {
             return ((delegate* unmanaged<IDirectManipulationContent*, Guid*, void**, int>)(lpVtbl[5]))((IDirectManipulationContent*)Unsafe.AsPointer(ref this), riid, @object);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetTag([NativeTypeName("const IID &")] Guid* riid, void** @object, [NativeTypeName("UINT32 *")] uint* id)
+        public HRESULT GetTag([NativeTypeName("const IID &")] Guid* riid, void** @object, [NativeTypeName("UINT32 *")] uint* id)
         {
             return ((delegate* unmanaged<IDirectManipulationContent*, Guid*, void**, uint*, int>)(lpVtbl[6]))((IDirectManipulationContent*)Unsafe.AsPointer(ref this), riid, @object, id);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetTag(IUnknown* @object, [NativeTypeName("UINT32")] uint id)
+        public HRESULT SetTag(IUnknown* @object, [NativeTypeName("UINT32")] uint id)
         {
             return ((delegate* unmanaged<IDirectManipulationContent*, IUnknown*, uint, int>)(lpVtbl[7]))((IDirectManipulationContent*)Unsafe.AsPointer(ref this), @object, id);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetOutputTransform(float* matrix, [NativeTypeName("DWORD")] uint pointCount)
+        public HRESULT GetOutputTransform(float* matrix, [NativeTypeName("DWORD")] uint pointCount)
         {
             return ((delegate* unmanaged<IDirectManipulationContent*, float*, uint, int>)(lpVtbl[8]))((IDirectManipulationContent*)Unsafe.AsPointer(ref this), matrix, pointCount);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetContentTransform(float* matrix, [NativeTypeName("DWORD")] uint pointCount)
+        public HRESULT GetContentTransform(float* matrix, [NativeTypeName("DWORD")] uint pointCount)
         {
             return ((delegate* unmanaged<IDirectManipulationContent*, float*, uint, int>)(lpVtbl[9]))((IDirectManipulationContent*)Unsafe.AsPointer(ref this), matrix, pointCount);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(10)]
-        [return: NativeTypeName("HRESULT")]
-        public int SyncContentTransform([NativeTypeName("const float *")] float* matrix, [NativeTypeName("DWORD")] uint pointCount)
+        public HRESULT SyncContentTransform([NativeTypeName("const float *")] float* matrix, [NativeTypeName("DWORD")] uint pointCount)
         {
             return ((delegate* unmanaged<IDirectManipulationContent*, float*, uint, int>)(lpVtbl[10]))((IDirectManipulationContent*)Unsafe.AsPointer(ref this), matrix, pointCount);
         }

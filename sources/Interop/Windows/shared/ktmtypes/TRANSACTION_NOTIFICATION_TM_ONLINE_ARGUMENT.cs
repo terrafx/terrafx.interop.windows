@@ -9,7 +9,6 @@ namespace TerraFX.Interop
 {
     public partial struct TRANSACTION_NOTIFICATION_TM_ONLINE_ARGUMENT
     {
-        [NativeTypeName("GUID")]
         public Guid TmIdentity;
 
         [NativeTypeName("ULONG")]

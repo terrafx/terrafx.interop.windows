@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IScriptEventHandler*, Guid*, void**, int>)(lpVtbl[0]))((IScriptEventHandler*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,40 +41,35 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int FunctionName([NativeTypeName("BSTR *")] ushort** pbstrFunctionName)
+        public HRESULT FunctionName([NativeTypeName("BSTR *")] ushort** pbstrFunctionName)
         {
             return ((delegate* unmanaged<IScriptEventHandler*, ushort**, int>)(lpVtbl[3]))((IScriptEventHandler*)Unsafe.AsPointer(ref this), pbstrFunctionName);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int DebugDocumentContext(IUnknown** ppDebugDocumentContext)
+        public HRESULT DebugDocumentContext(IUnknown** ppDebugDocumentContext)
         {
             return ((delegate* unmanaged<IScriptEventHandler*, IUnknown**, int>)(lpVtbl[4]))((IScriptEventHandler*)Unsafe.AsPointer(ref this), ppDebugDocumentContext);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int EventHandlerDispatch(IDispatch** ppDispHandler)
+        public HRESULT EventHandlerDispatch(IDispatch** ppDispHandler)
         {
             return ((delegate* unmanaged<IScriptEventHandler*, IDispatch**, int>)(lpVtbl[5]))((IScriptEventHandler*)Unsafe.AsPointer(ref this), ppDispHandler);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int UsesCapture([NativeTypeName("BOOL *")] int* pfUsesCapture)
+        public HRESULT UsesCapture(BOOL* pfUsesCapture)
         {
-            return ((delegate* unmanaged<IScriptEventHandler*, int*, int>)(lpVtbl[6]))((IScriptEventHandler*)Unsafe.AsPointer(ref this), pfUsesCapture);
+            return ((delegate* unmanaged<IScriptEventHandler*, BOOL*, int>)(lpVtbl[6]))((IScriptEventHandler*)Unsafe.AsPointer(ref this), pfUsesCapture);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        [return: NativeTypeName("HRESULT")]
-        public int Cookie([NativeTypeName("ULONGLONG *")] ulong* pullCookie)
+        public HRESULT Cookie([NativeTypeName("ULONGLONG *")] ulong* pullCookie)
         {
             return ((delegate* unmanaged<IScriptEventHandler*, ulong*, int>)(lpVtbl[7]))((IScriptEventHandler*)Unsafe.AsPointer(ref this), pullCookie);
         }

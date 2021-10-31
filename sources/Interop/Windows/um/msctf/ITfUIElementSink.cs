@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<ITfUIElementSink*, Guid*, void**, int>)(lpVtbl[0]))((ITfUIElementSink*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,24 +41,21 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int BeginUIElement([NativeTypeName("DWORD")] uint dwUIElementId, [NativeTypeName("BOOL *")] int* pbShow)
+        public HRESULT BeginUIElement([NativeTypeName("DWORD")] uint dwUIElementId, BOOL* pbShow)
         {
-            return ((delegate* unmanaged<ITfUIElementSink*, uint, int*, int>)(lpVtbl[3]))((ITfUIElementSink*)Unsafe.AsPointer(ref this), dwUIElementId, pbShow);
+            return ((delegate* unmanaged<ITfUIElementSink*, uint, BOOL*, int>)(lpVtbl[3]))((ITfUIElementSink*)Unsafe.AsPointer(ref this), dwUIElementId, pbShow);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int UpdateUIElement([NativeTypeName("DWORD")] uint dwUIElementId)
+        public HRESULT UpdateUIElement([NativeTypeName("DWORD")] uint dwUIElementId)
         {
             return ((delegate* unmanaged<ITfUIElementSink*, uint, int>)(lpVtbl[4]))((ITfUIElementSink*)Unsafe.AsPointer(ref this), dwUIElementId);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int EndUIElement([NativeTypeName("DWORD")] uint dwUIElementId)
+        public HRESULT EndUIElement([NativeTypeName("DWORD")] uint dwUIElementId)
         {
             return ((delegate* unmanaged<ITfUIElementSink*, uint, int>)(lpVtbl[5]))((ITfUIElementSink*)Unsafe.AsPointer(ref this), dwUIElementId);
         }

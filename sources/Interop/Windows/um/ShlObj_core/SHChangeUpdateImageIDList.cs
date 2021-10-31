@@ -10,14 +10,12 @@ namespace TerraFX.Interop
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe partial struct SHChangeUpdateImageIDList
     {
-        [NativeTypeName("USHORT")]
         public ushort cb;
 
         public int iIconIndex;
 
         public int iCurIndex;
 
-        [NativeTypeName("UINT")]
         public uint uFlags;
 
         [NativeTypeName("DWORD")]
@@ -26,7 +24,6 @@ namespace TerraFX.Interop
         [NativeTypeName("WCHAR [260]")]
         public fixed ushort szName[260];
 
-        [NativeTypeName("USHORT")]
         public ushort cbZero;
     }
 }

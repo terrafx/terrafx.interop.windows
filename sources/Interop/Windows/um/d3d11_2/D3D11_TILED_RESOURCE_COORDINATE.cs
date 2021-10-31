@@ -7,16 +7,12 @@ namespace TerraFX.Interop
 {
     public partial struct D3D11_TILED_RESOURCE_COORDINATE
     {
-        [NativeTypeName("UINT")]
         public uint X;
 
-        [NativeTypeName("UINT")]
         public uint Y;
 
-        [NativeTypeName("UINT")]
         public uint Z;
 
-        [NativeTypeName("UINT")]
         public uint Subresource;
     }
 }

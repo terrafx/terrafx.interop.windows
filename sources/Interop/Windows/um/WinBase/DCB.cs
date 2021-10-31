@@ -250,13 +250,10 @@ namespace TerraFX.Interop
         [NativeTypeName("WORD")]
         public ushort XoffLim;
 
-        [NativeTypeName("BYTE")]
         public byte ByteSize;
 
-        [NativeTypeName("BYTE")]
         public byte Parity;
 
-        [NativeTypeName("BYTE")]
         public byte StopBits;
 
         [NativeTypeName("char")]

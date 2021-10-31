@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IVMRSurfaceAllocator*, Guid*, void**, int>)(lpVtbl[0]))((IVMRSurfaceAllocator*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,32 +41,28 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int AllocateSurface([NativeTypeName("DWORD_PTR")] nuint dwUserID, VMRALLOCATIONINFO* lpAllocInfo, [NativeTypeName("DWORD *")] uint* lpdwActualBuffers, [NativeTypeName("LPDIRECTDRAWSURFACE7 *")] IDirectDrawSurface7** lplpSurface)
+        public HRESULT AllocateSurface([NativeTypeName("DWORD_PTR")] nuint dwUserID, VMRALLOCATIONINFO* lpAllocInfo, [NativeTypeName("DWORD *")] uint* lpdwActualBuffers, [NativeTypeName("LPDIRECTDRAWSURFACE7 *")] IDirectDrawSurface7** lplpSurface)
         {
             return ((delegate* unmanaged<IVMRSurfaceAllocator*, nuint, VMRALLOCATIONINFO*, uint*, IDirectDrawSurface7**, int>)(lpVtbl[3]))((IVMRSurfaceAllocator*)Unsafe.AsPointer(ref this), dwUserID, lpAllocInfo, lpdwActualBuffers, lplpSurface);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int FreeSurface([NativeTypeName("DWORD_PTR")] nuint dwID)
+        public HRESULT FreeSurface([NativeTypeName("DWORD_PTR")] nuint dwID)
         {
             return ((delegate* unmanaged<IVMRSurfaceAllocator*, nuint, int>)(lpVtbl[4]))((IVMRSurfaceAllocator*)Unsafe.AsPointer(ref this), dwID);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int PrepareSurface([NativeTypeName("DWORD_PTR")] nuint dwUserID, [NativeTypeName("LPDIRECTDRAWSURFACE7")] IDirectDrawSurface7* lpSurface, [NativeTypeName("DWORD")] uint dwSurfaceFlags)
+        public HRESULT PrepareSurface([NativeTypeName("DWORD_PTR")] nuint dwUserID, [NativeTypeName("LPDIRECTDRAWSURFACE7")] IDirectDrawSurface7* lpSurface, [NativeTypeName("DWORD")] uint dwSurfaceFlags)
         {
             return ((delegate* unmanaged<IVMRSurfaceAllocator*, nuint, IDirectDrawSurface7*, uint, int>)(lpVtbl[5]))((IVMRSurfaceAllocator*)Unsafe.AsPointer(ref this), dwUserID, lpSurface, dwSurfaceFlags);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int AdviseNotify(IVMRSurfaceAllocatorNotify* lpIVMRSurfAllocNotify)
+        public HRESULT AdviseNotify(IVMRSurfaceAllocatorNotify* lpIVMRSurfAllocNotify)
         {
             return ((delegate* unmanaged<IVMRSurfaceAllocator*, IVMRSurfaceAllocatorNotify*, int>)(lpVtbl[6]))((IVMRSurfaceAllocator*)Unsafe.AsPointer(ref this), lpIVMRSurfAllocNotify);
         }

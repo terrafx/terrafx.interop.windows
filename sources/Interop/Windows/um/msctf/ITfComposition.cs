@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<ITfComposition*, Guid*, void**, int>)(lpVtbl[0]))((ITfComposition*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,32 +41,28 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetRange(ITfRange** ppRange)
+        public HRESULT GetRange(ITfRange** ppRange)
         {
             return ((delegate* unmanaged<ITfComposition*, ITfRange**, int>)(lpVtbl[3]))((ITfComposition*)Unsafe.AsPointer(ref this), ppRange);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int ShiftStart([NativeTypeName("TfEditCookie")] uint ecWrite, ITfRange* pNewStart)
+        public HRESULT ShiftStart([NativeTypeName("TfEditCookie")] uint ecWrite, ITfRange* pNewStart)
         {
             return ((delegate* unmanaged<ITfComposition*, uint, ITfRange*, int>)(lpVtbl[4]))((ITfComposition*)Unsafe.AsPointer(ref this), ecWrite, pNewStart);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int ShiftEnd([NativeTypeName("TfEditCookie")] uint ecWrite, ITfRange* pNewEnd)
+        public HRESULT ShiftEnd([NativeTypeName("TfEditCookie")] uint ecWrite, ITfRange* pNewEnd)
         {
             return ((delegate* unmanaged<ITfComposition*, uint, ITfRange*, int>)(lpVtbl[5]))((ITfComposition*)Unsafe.AsPointer(ref this), ecWrite, pNewEnd);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int EndComposition([NativeTypeName("TfEditCookie")] uint ecWrite)
+        public HRESULT EndComposition([NativeTypeName("TfEditCookie")] uint ecWrite)
         {
             return ((delegate* unmanaged<ITfComposition*, uint, int>)(lpVtbl[6]))((ITfComposition*)Unsafe.AsPointer(ref this), ecWrite);
         }

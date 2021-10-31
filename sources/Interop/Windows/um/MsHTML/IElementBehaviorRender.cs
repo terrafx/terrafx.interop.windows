@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IElementBehaviorRender*, Guid*, void**, int>)(lpVtbl[0]))((IElementBehaviorRender*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,26 +41,23 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int Draw([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("LONG")] int lLayer, RECT* pRect, IUnknown* pReserved)
+        public HRESULT Draw(HDC hdc, [NativeTypeName("LONG")] int lLayer, RECT* pRect, IUnknown* pReserved)
         {
-            return ((delegate* unmanaged<IElementBehaviorRender*, IntPtr, int, RECT*, IUnknown*, int>)(lpVtbl[3]))((IElementBehaviorRender*)Unsafe.AsPointer(ref this), hdc, lLayer, pRect, pReserved);
+            return ((delegate* unmanaged<IElementBehaviorRender*, HDC, int, RECT*, IUnknown*, int>)(lpVtbl[3]))((IElementBehaviorRender*)Unsafe.AsPointer(ref this), hdc, lLayer, pRect, pReserved);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetRenderInfo([NativeTypeName("LONG *")] int* plRenderInfo)
+        public HRESULT GetRenderInfo([NativeTypeName("LONG *")] int* plRenderInfo)
         {
             return ((delegate* unmanaged<IElementBehaviorRender*, int*, int>)(lpVtbl[4]))((IElementBehaviorRender*)Unsafe.AsPointer(ref this), plRenderInfo);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int HitTestPoint(POINT* pPoint, IUnknown* pReserved, [NativeTypeName("BOOL *")] int* pbHit)
+        public HRESULT HitTestPoint(POINT* pPoint, IUnknown* pReserved, BOOL* pbHit)
         {
-            return ((delegate* unmanaged<IElementBehaviorRender*, POINT*, IUnknown*, int*, int>)(lpVtbl[5]))((IElementBehaviorRender*)Unsafe.AsPointer(ref this), pPoint, pReserved, pbHit);
+            return ((delegate* unmanaged<IElementBehaviorRender*, POINT*, IUnknown*, BOOL*, int>)(lpVtbl[5]))((IElementBehaviorRender*)Unsafe.AsPointer(ref this), pPoint, pReserved, pbHit);
         }
     }
 }

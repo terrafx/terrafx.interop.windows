@@ -7,13 +7,10 @@ namespace TerraFX.Interop
 {
     public partial struct D3D12_ROOT_CONSTANTS
     {
-        [NativeTypeName("UINT")]
         public uint ShaderRegister;
 
-        [NativeTypeName("UINT")]
         public uint RegisterSpace;
 
-        [NativeTypeName("UINT")]
         public uint Num32BitValues;
     }
 }

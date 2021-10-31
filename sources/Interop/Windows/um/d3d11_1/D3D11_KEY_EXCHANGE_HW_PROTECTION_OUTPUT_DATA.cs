@@ -7,13 +7,10 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct D3D11_KEY_EXCHANGE_HW_PROTECTION_OUTPUT_DATA
     {
-        [NativeTypeName("UINT")]
         public uint PrivateDataSize;
 
-        [NativeTypeName("UINT")]
         public uint MaxHWProtectionDataSize;
 
-        [NativeTypeName("UINT")]
         public uint HWProtectionDataSize;
 
         [NativeTypeName("UINT64")]

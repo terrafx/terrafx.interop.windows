@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public partial struct IMAGE_PROLOGUE_DYNAMIC_RELOCATION_HEADER
     {
-        [NativeTypeName("BYTE")]
         public byte PrologueByteCount;
     }
 }

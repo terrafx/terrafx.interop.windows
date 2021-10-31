@@ -7,13 +7,10 @@ namespace TerraFX.Interop
 {
     public partial struct D3D11_TILE_REGION_SIZE
     {
-        [NativeTypeName("UINT")]
         public uint NumTiles;
 
-        [NativeTypeName("BOOL")]
-        public int bUseBox;
+        public BOOL bUseBox;
 
-        [NativeTypeName("UINT")]
         public uint Width;
 
         [NativeTypeName("UINT16")]

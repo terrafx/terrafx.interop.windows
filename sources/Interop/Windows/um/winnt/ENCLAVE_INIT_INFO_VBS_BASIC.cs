@@ -3,7 +3,6 @@
 // Ported from um/winnt.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -29,12 +28,15 @@ namespace TerraFX.Interop
         [NativeTypeName("_ENCLAVE_INIT_INFO_VBS_BASIC::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winnt.h:14295:5)")]
         public _Anonymous_e__Union Anonymous;
 
-        public ref IntPtr SignatureInfoHandle
+        public ref HANDLE SignatureInfoHandle
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.SignatureInfoHandle, 1));
+                fixed (_Anonymous_e__Union* pField = &Anonymous)
+                {
+                    return ref pField->SignatureInfoHandle;
+                }
             }
         }
 
@@ -51,8 +53,7 @@ namespace TerraFX.Interop
         public partial struct _Anonymous_e__Union
         {
             [FieldOffset(0)]
-            [NativeTypeName("HANDLE")]
-            public IntPtr SignatureInfoHandle;
+            public HANDLE SignatureInfoHandle;
 
             [FieldOffset(0)]
             [NativeTypeName("ULONGLONG")]

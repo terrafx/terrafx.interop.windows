@@ -7,26 +7,20 @@ namespace TerraFX.Interop
 {
     public partial struct D3D11_FEATURE_DATA_D3D11_OPTIONS2
     {
-        [NativeTypeName("BOOL")]
-        public int PSSpecifiedStencilRefSupported;
+        public BOOL PSSpecifiedStencilRefSupported;
 
-        [NativeTypeName("BOOL")]
-        public int TypedUAVLoadAdditionalFormats;
+        public BOOL TypedUAVLoadAdditionalFormats;
 
-        [NativeTypeName("BOOL")]
-        public int ROVsSupported;
+        public BOOL ROVsSupported;
 
         public D3D11_CONSERVATIVE_RASTERIZATION_TIER ConservativeRasterizationTier;
 
         public D3D11_TILED_RESOURCES_TIER TiledResourcesTier;
 
-        [NativeTypeName("BOOL")]
-        public int MapOnDefaultTextures;
+        public BOOL MapOnDefaultTextures;
 
-        [NativeTypeName("BOOL")]
-        public int StandardSwizzle;
+        public BOOL StandardSwizzle;
 
-        [NativeTypeName("BOOL")]
-        public int UnifiedMemoryArchitecture;
+        public BOOL UnifiedMemoryArchitecture;
     }
 }

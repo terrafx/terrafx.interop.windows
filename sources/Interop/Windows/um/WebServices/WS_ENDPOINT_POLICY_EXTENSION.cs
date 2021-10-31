@@ -20,7 +20,6 @@ namespace TerraFX.Interop
 
         public partial struct _out_e__Struct
         {
-            [NativeTypeName("WS_XML_BUFFER *")]
             public IntPtr assertionValue;
         }
     }

@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct SERIALKEYSW
     {
-        [NativeTypeName("UINT")]
         public uint cbSize;
 
         [NativeTypeName("DWORD")]
@@ -19,13 +18,10 @@ namespace TerraFX.Interop
         [NativeTypeName("LPWSTR")]
         public ushort* lpszPort;
 
-        [NativeTypeName("UINT")]
         public uint iBaudRate;
 
-        [NativeTypeName("UINT")]
         public uint iPortState;
 
-        [NativeTypeName("UINT")]
         public uint iActive;
     }
 }

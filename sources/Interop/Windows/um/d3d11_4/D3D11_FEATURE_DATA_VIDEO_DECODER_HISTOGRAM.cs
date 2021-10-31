@@ -11,10 +11,8 @@ namespace TerraFX.Interop
 
         public D3D11_VIDEO_DECODER_HISTOGRAM_COMPONENT_FLAGS Components;
 
-        [NativeTypeName("UINT")]
         public uint BinCount;
 
-        [NativeTypeName("UINT")]
         public uint CounterBitDepth;
     }
 }

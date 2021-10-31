@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IFileSinkFilter2*, Guid*, void**, int>)(lpVtbl[0]))((IFileSinkFilter2*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,32 +41,28 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetFileName([NativeTypeName("LPCOLESTR")] ushort* pszFileName, [NativeTypeName("const AM_MEDIA_TYPE *")] AM_MEDIA_TYPE* pmt)
+        public HRESULT SetFileName([NativeTypeName("LPCOLESTR")] ushort* pszFileName, [NativeTypeName("const AM_MEDIA_TYPE *")] AM_MEDIA_TYPE* pmt)
         {
             return ((delegate* unmanaged<IFileSinkFilter2*, ushort*, AM_MEDIA_TYPE*, int>)(lpVtbl[3]))((IFileSinkFilter2*)Unsafe.AsPointer(ref this), pszFileName, pmt);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetCurFile([NativeTypeName("LPOLESTR *")] ushort** ppszFileName, AM_MEDIA_TYPE* pmt)
+        public HRESULT GetCurFile([NativeTypeName("LPOLESTR *")] ushort** ppszFileName, AM_MEDIA_TYPE* pmt)
         {
             return ((delegate* unmanaged<IFileSinkFilter2*, ushort**, AM_MEDIA_TYPE*, int>)(lpVtbl[4]))((IFileSinkFilter2*)Unsafe.AsPointer(ref this), ppszFileName, pmt);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetMode([NativeTypeName("DWORD")] uint dwFlags)
+        public HRESULT SetMode([NativeTypeName("DWORD")] uint dwFlags)
         {
             return ((delegate* unmanaged<IFileSinkFilter2*, uint, int>)(lpVtbl[5]))((IFileSinkFilter2*)Unsafe.AsPointer(ref this), dwFlags);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetMode([NativeTypeName("DWORD *")] uint* pdwFlags)
+        public HRESULT GetMode([NativeTypeName("DWORD *")] uint* pdwFlags)
         {
             return ((delegate* unmanaged<IFileSinkFilter2*, uint*, int>)(lpVtbl[6]))((IFileSinkFilter2*)Unsafe.AsPointer(ref this), pdwFlags);
         }

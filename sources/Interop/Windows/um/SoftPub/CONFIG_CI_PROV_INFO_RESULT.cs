@@ -7,8 +7,7 @@ namespace TerraFX.Interop
 {
     public partial struct CONFIG_CI_PROV_INFO_RESULT
     {
-        [NativeTypeName("HRESULT")]
-        public int hr;
+        public HRESULT hr;
 
         [NativeTypeName("DWORD")]
         public uint dwResult;

@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IAMTimecodeGenerator*, Guid*, void**, int>)(lpVtbl[0]))((IAMTimecodeGenerator*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,48 +41,42 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetTCGMode([NativeTypeName("long")] int Param, [NativeTypeName("long *")] int* pValue)
+        public HRESULT GetTCGMode([NativeTypeName("long")] int Param, [NativeTypeName("long *")] int* pValue)
         {
             return ((delegate* unmanaged<IAMTimecodeGenerator*, int, int*, int>)(lpVtbl[3]))((IAMTimecodeGenerator*)Unsafe.AsPointer(ref this), Param, pValue);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetTCGMode([NativeTypeName("long")] int Param, [NativeTypeName("long")] int Value)
+        public HRESULT SetTCGMode([NativeTypeName("long")] int Param, [NativeTypeName("long")] int Value)
         {
             return ((delegate* unmanaged<IAMTimecodeGenerator*, int, int, int>)(lpVtbl[4]))((IAMTimecodeGenerator*)Unsafe.AsPointer(ref this), Param, Value);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int put_VITCLine([NativeTypeName("long")] int Line)
+        public HRESULT put_VITCLine([NativeTypeName("long")] int Line)
         {
             return ((delegate* unmanaged<IAMTimecodeGenerator*, int, int>)(lpVtbl[5]))((IAMTimecodeGenerator*)Unsafe.AsPointer(ref this), Line);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int get_VITCLine([NativeTypeName("long *")] int* pLine)
+        public HRESULT get_VITCLine([NativeTypeName("long *")] int* pLine)
         {
             return ((delegate* unmanaged<IAMTimecodeGenerator*, int*, int>)(lpVtbl[6]))((IAMTimecodeGenerator*)Unsafe.AsPointer(ref this), pLine);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetTimecode([NativeTypeName("PTIMECODE_SAMPLE")] TIMECODE_SAMPLE* pTimecodeSample)
+        public HRESULT SetTimecode([NativeTypeName("PTIMECODE_SAMPLE")] TIMECODE_SAMPLE* pTimecodeSample)
         {
             return ((delegate* unmanaged<IAMTimecodeGenerator*, TIMECODE_SAMPLE*, int>)(lpVtbl[7]))((IAMTimecodeGenerator*)Unsafe.AsPointer(ref this), pTimecodeSample);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetTimecode([NativeTypeName("PTIMECODE_SAMPLE")] TIMECODE_SAMPLE* pTimecodeSample)
+        public HRESULT GetTimecode([NativeTypeName("PTIMECODE_SAMPLE")] TIMECODE_SAMPLE* pTimecodeSample)
         {
             return ((delegate* unmanaged<IAMTimecodeGenerator*, TIMECODE_SAMPLE*, int>)(lpVtbl[8]))((IAMTimecodeGenerator*)Unsafe.AsPointer(ref this), pTimecodeSample);
         }

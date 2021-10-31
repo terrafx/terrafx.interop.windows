@@ -113,8 +113,7 @@ namespace TerraFX.Interop
         }
 
         [DllImport("dxgidebug", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int DXGIGetDebugInterface([NativeTypeName("const IID &")] Guid* riid, void** ppDebug);
+        public static extern HRESULT DXGIGetDebugInterface([NativeTypeName("const IID &")] Guid* riid, void** ppDebug);
 
         [NativeTypeName("const GUID")]
         public static ref readonly Guid IID_IDXGIInfoQueue

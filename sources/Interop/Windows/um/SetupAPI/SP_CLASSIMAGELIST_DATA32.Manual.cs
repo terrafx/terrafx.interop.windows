@@ -14,8 +14,7 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint cbSize;
 
-        [NativeTypeName("HIMAGELIST")]
-        public IntPtr ImageList;
+        public HIMAGELIST ImageList;
 
         [NativeTypeName("ULONG_PTR")]
         public nuint Reserved;

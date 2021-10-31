@@ -16,10 +16,8 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint StartingElement;
 
-        [NativeTypeName("BYTE")]
         public byte Filter;
 
-        [NativeTypeName("BYTE")]
         public byte ReportType;
 
         [NativeTypeName("BYTE [2]")]

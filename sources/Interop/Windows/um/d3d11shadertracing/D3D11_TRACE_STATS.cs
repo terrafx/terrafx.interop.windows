@@ -15,7 +15,6 @@ namespace TerraFX.Interop
         [NativeTypeName("UINT8")]
         public byte TargetStampIndex;
 
-        [NativeTypeName("UINT")]
         public uint NumTraceSteps;
 
         [NativeTypeName("D3D11_TRACE_COMPONENT_MASK [32]")]
@@ -57,16 +56,13 @@ namespace TerraFX.Interop
         [NativeTypeName("UINT64 [4]")]
         public fixed ulong PixelCoverageMaskAfterA2CSampleMaskDepthStencil[4];
 
-        [NativeTypeName("BOOL")]
-        public int PSOutputsDepth;
+        public BOOL PSOutputsDepth;
 
-        [NativeTypeName("BOOL")]
-        public int PSOutputsMask;
+        public BOOL PSOutputsMask;
 
         public D3D11_TRACE_GS_INPUT_PRIMITIVE GSInputPrimitive;
 
-        [NativeTypeName("BOOL")]
-        public int GSInputsPrimitiveID;
+        public BOOL GSInputsPrimitiveID;
 
         [NativeTypeName("D3D11_TRACE_COMPONENT_MASK [32]")]
         public fixed byte HSOutputPatchConstantMask[32];

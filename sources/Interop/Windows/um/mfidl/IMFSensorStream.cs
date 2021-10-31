@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IMFSensorStream*, Guid*, void**, int>)(lpVtbl[0]))((IMFSensorStream*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,264 +41,231 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetItem([NativeTypeName("const GUID &")] Guid* guidKey, PROPVARIANT* pValue)
+        public HRESULT GetItem([NativeTypeName("const GUID &")] Guid* guidKey, PROPVARIANT* pValue)
         {
             return ((delegate* unmanaged<IMFSensorStream*, Guid*, PROPVARIANT*, int>)(lpVtbl[3]))((IMFSensorStream*)Unsafe.AsPointer(ref this), guidKey, pValue);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetItemType([NativeTypeName("const GUID &")] Guid* guidKey, MF_ATTRIBUTE_TYPE* pType)
+        public HRESULT GetItemType([NativeTypeName("const GUID &")] Guid* guidKey, MF_ATTRIBUTE_TYPE* pType)
         {
             return ((delegate* unmanaged<IMFSensorStream*, Guid*, MF_ATTRIBUTE_TYPE*, int>)(lpVtbl[4]))((IMFSensorStream*)Unsafe.AsPointer(ref this), guidKey, pType);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int CompareItem([NativeTypeName("const GUID &")] Guid* guidKey, [NativeTypeName("const PROPVARIANT &")] PROPVARIANT* Value, [NativeTypeName("BOOL *")] int* pbResult)
+        public HRESULT CompareItem([NativeTypeName("const GUID &")] Guid* guidKey, [NativeTypeName("const PROPVARIANT &")] PROPVARIANT* Value, BOOL* pbResult)
         {
-            return ((delegate* unmanaged<IMFSensorStream*, Guid*, PROPVARIANT*, int*, int>)(lpVtbl[5]))((IMFSensorStream*)Unsafe.AsPointer(ref this), guidKey, Value, pbResult);
+            return ((delegate* unmanaged<IMFSensorStream*, Guid*, PROPVARIANT*, BOOL*, int>)(lpVtbl[5]))((IMFSensorStream*)Unsafe.AsPointer(ref this), guidKey, Value, pbResult);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int Compare(IMFAttributes* pTheirs, MF_ATTRIBUTES_MATCH_TYPE MatchType, [NativeTypeName("BOOL *")] int* pbResult)
+        public HRESULT Compare(IMFAttributes* pTheirs, MF_ATTRIBUTES_MATCH_TYPE MatchType, BOOL* pbResult)
         {
-            return ((delegate* unmanaged<IMFSensorStream*, IMFAttributes*, MF_ATTRIBUTES_MATCH_TYPE, int*, int>)(lpVtbl[6]))((IMFSensorStream*)Unsafe.AsPointer(ref this), pTheirs, MatchType, pbResult);
+            return ((delegate* unmanaged<IMFSensorStream*, IMFAttributes*, MF_ATTRIBUTES_MATCH_TYPE, BOOL*, int>)(lpVtbl[6]))((IMFSensorStream*)Unsafe.AsPointer(ref this), pTheirs, MatchType, pbResult);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetUINT32([NativeTypeName("const GUID &")] Guid* guidKey, [NativeTypeName("UINT32 *")] uint* punValue)
+        public HRESULT GetUINT32([NativeTypeName("const GUID &")] Guid* guidKey, [NativeTypeName("UINT32 *")] uint* punValue)
         {
             return ((delegate* unmanaged<IMFSensorStream*, Guid*, uint*, int>)(lpVtbl[7]))((IMFSensorStream*)Unsafe.AsPointer(ref this), guidKey, punValue);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetUINT64([NativeTypeName("const GUID &")] Guid* guidKey, [NativeTypeName("UINT64 *")] ulong* punValue)
+        public HRESULT GetUINT64([NativeTypeName("const GUID &")] Guid* guidKey, [NativeTypeName("UINT64 *")] ulong* punValue)
         {
             return ((delegate* unmanaged<IMFSensorStream*, Guid*, ulong*, int>)(lpVtbl[8]))((IMFSensorStream*)Unsafe.AsPointer(ref this), guidKey, punValue);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetDouble([NativeTypeName("const GUID &")] Guid* guidKey, double* pfValue)
+        public HRESULT GetDouble([NativeTypeName("const GUID &")] Guid* guidKey, double* pfValue)
         {
             return ((delegate* unmanaged<IMFSensorStream*, Guid*, double*, int>)(lpVtbl[9]))((IMFSensorStream*)Unsafe.AsPointer(ref this), guidKey, pfValue);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(10)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetGUID([NativeTypeName("const GUID &")] Guid* guidKey, [NativeTypeName("GUID *")] Guid* pguidValue)
+        public HRESULT GetGUID([NativeTypeName("const GUID &")] Guid* guidKey, Guid* pguidValue)
         {
             return ((delegate* unmanaged<IMFSensorStream*, Guid*, Guid*, int>)(lpVtbl[10]))((IMFSensorStream*)Unsafe.AsPointer(ref this), guidKey, pguidValue);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(11)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetStringLength([NativeTypeName("const GUID &")] Guid* guidKey, [NativeTypeName("UINT32 *")] uint* pcchLength)
+        public HRESULT GetStringLength([NativeTypeName("const GUID &")] Guid* guidKey, [NativeTypeName("UINT32 *")] uint* pcchLength)
         {
             return ((delegate* unmanaged<IMFSensorStream*, Guid*, uint*, int>)(lpVtbl[11]))((IMFSensorStream*)Unsafe.AsPointer(ref this), guidKey, pcchLength);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(12)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetString([NativeTypeName("const GUID &")] Guid* guidKey, [NativeTypeName("LPWSTR")] ushort* pwszValue, [NativeTypeName("UINT32")] uint cchBufSize, [NativeTypeName("UINT32 *")] uint* pcchLength)
+        public HRESULT GetString([NativeTypeName("const GUID &")] Guid* guidKey, [NativeTypeName("LPWSTR")] ushort* pwszValue, [NativeTypeName("UINT32")] uint cchBufSize, [NativeTypeName("UINT32 *")] uint* pcchLength)
         {
             return ((delegate* unmanaged<IMFSensorStream*, Guid*, ushort*, uint, uint*, int>)(lpVtbl[12]))((IMFSensorStream*)Unsafe.AsPointer(ref this), guidKey, pwszValue, cchBufSize, pcchLength);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(13)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetAllocatedString([NativeTypeName("const GUID &")] Guid* guidKey, [NativeTypeName("LPWSTR *")] ushort** ppwszValue, [NativeTypeName("UINT32 *")] uint* pcchLength)
+        public HRESULT GetAllocatedString([NativeTypeName("const GUID &")] Guid* guidKey, [NativeTypeName("LPWSTR *")] ushort** ppwszValue, [NativeTypeName("UINT32 *")] uint* pcchLength)
         {
             return ((delegate* unmanaged<IMFSensorStream*, Guid*, ushort**, uint*, int>)(lpVtbl[13]))((IMFSensorStream*)Unsafe.AsPointer(ref this), guidKey, ppwszValue, pcchLength);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(14)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetBlobSize([NativeTypeName("const GUID &")] Guid* guidKey, [NativeTypeName("UINT32 *")] uint* pcbBlobSize)
+        public HRESULT GetBlobSize([NativeTypeName("const GUID &")] Guid* guidKey, [NativeTypeName("UINT32 *")] uint* pcbBlobSize)
         {
             return ((delegate* unmanaged<IMFSensorStream*, Guid*, uint*, int>)(lpVtbl[14]))((IMFSensorStream*)Unsafe.AsPointer(ref this), guidKey, pcbBlobSize);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(15)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetBlob([NativeTypeName("const GUID &")] Guid* guidKey, [NativeTypeName("UINT8 *")] byte* pBuf, [NativeTypeName("UINT32")] uint cbBufSize, [NativeTypeName("UINT32 *")] uint* pcbBlobSize)
+        public HRESULT GetBlob([NativeTypeName("const GUID &")] Guid* guidKey, [NativeTypeName("UINT8 *")] byte* pBuf, [NativeTypeName("UINT32")] uint cbBufSize, [NativeTypeName("UINT32 *")] uint* pcbBlobSize)
         {
             return ((delegate* unmanaged<IMFSensorStream*, Guid*, byte*, uint, uint*, int>)(lpVtbl[15]))((IMFSensorStream*)Unsafe.AsPointer(ref this), guidKey, pBuf, cbBufSize, pcbBlobSize);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(16)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetAllocatedBlob([NativeTypeName("const GUID &")] Guid* guidKey, [NativeTypeName("UINT8 **")] byte** ppBuf, [NativeTypeName("UINT32 *")] uint* pcbSize)
+        public HRESULT GetAllocatedBlob([NativeTypeName("const GUID &")] Guid* guidKey, [NativeTypeName("UINT8 **")] byte** ppBuf, [NativeTypeName("UINT32 *")] uint* pcbSize)
         {
             return ((delegate* unmanaged<IMFSensorStream*, Guid*, byte**, uint*, int>)(lpVtbl[16]))((IMFSensorStream*)Unsafe.AsPointer(ref this), guidKey, ppBuf, pcbSize);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(17)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetUnknown([NativeTypeName("const GUID &")] Guid* guidKey, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPVOID *")] void** ppv)
+        public HRESULT GetUnknown([NativeTypeName("const GUID &")] Guid* guidKey, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPVOID *")] void** ppv)
         {
             return ((delegate* unmanaged<IMFSensorStream*, Guid*, Guid*, void**, int>)(lpVtbl[17]))((IMFSensorStream*)Unsafe.AsPointer(ref this), guidKey, riid, ppv);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(18)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetItem([NativeTypeName("const GUID &")] Guid* guidKey, [NativeTypeName("const PROPVARIANT &")] PROPVARIANT* Value)
+        public HRESULT SetItem([NativeTypeName("const GUID &")] Guid* guidKey, [NativeTypeName("const PROPVARIANT &")] PROPVARIANT* Value)
         {
             return ((delegate* unmanaged<IMFSensorStream*, Guid*, PROPVARIANT*, int>)(lpVtbl[18]))((IMFSensorStream*)Unsafe.AsPointer(ref this), guidKey, Value);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(19)]
-        [return: NativeTypeName("HRESULT")]
-        public int DeleteItem([NativeTypeName("const GUID &")] Guid* guidKey)
+        public HRESULT DeleteItem([NativeTypeName("const GUID &")] Guid* guidKey)
         {
             return ((delegate* unmanaged<IMFSensorStream*, Guid*, int>)(lpVtbl[19]))((IMFSensorStream*)Unsafe.AsPointer(ref this), guidKey);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(20)]
-        [return: NativeTypeName("HRESULT")]
-        public int DeleteAllItems()
+        public HRESULT DeleteAllItems()
         {
             return ((delegate* unmanaged<IMFSensorStream*, int>)(lpVtbl[20]))((IMFSensorStream*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(21)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetUINT32([NativeTypeName("const GUID &")] Guid* guidKey, [NativeTypeName("UINT32")] uint unValue)
+        public HRESULT SetUINT32([NativeTypeName("const GUID &")] Guid* guidKey, [NativeTypeName("UINT32")] uint unValue)
         {
             return ((delegate* unmanaged<IMFSensorStream*, Guid*, uint, int>)(lpVtbl[21]))((IMFSensorStream*)Unsafe.AsPointer(ref this), guidKey, unValue);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(22)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetUINT64([NativeTypeName("const GUID &")] Guid* guidKey, [NativeTypeName("UINT64")] ulong unValue)
+        public HRESULT SetUINT64([NativeTypeName("const GUID &")] Guid* guidKey, [NativeTypeName("UINT64")] ulong unValue)
         {
             return ((delegate* unmanaged<IMFSensorStream*, Guid*, ulong, int>)(lpVtbl[22]))((IMFSensorStream*)Unsafe.AsPointer(ref this), guidKey, unValue);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(23)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetDouble([NativeTypeName("const GUID &")] Guid* guidKey, double fValue)
+        public HRESULT SetDouble([NativeTypeName("const GUID &")] Guid* guidKey, double fValue)
         {
             return ((delegate* unmanaged<IMFSensorStream*, Guid*, double, int>)(lpVtbl[23]))((IMFSensorStream*)Unsafe.AsPointer(ref this), guidKey, fValue);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(24)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetGUID([NativeTypeName("const GUID &")] Guid* guidKey, [NativeTypeName("const GUID &")] Guid* guidValue)
+        public HRESULT SetGUID([NativeTypeName("const GUID &")] Guid* guidKey, [NativeTypeName("const GUID &")] Guid* guidValue)
         {
             return ((delegate* unmanaged<IMFSensorStream*, Guid*, Guid*, int>)(lpVtbl[24]))((IMFSensorStream*)Unsafe.AsPointer(ref this), guidKey, guidValue);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(25)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetString([NativeTypeName("const GUID &")] Guid* guidKey, [NativeTypeName("LPCWSTR")] ushort* wszValue)
+        public HRESULT SetString([NativeTypeName("const GUID &")] Guid* guidKey, [NativeTypeName("LPCWSTR")] ushort* wszValue)
         {
             return ((delegate* unmanaged<IMFSensorStream*, Guid*, ushort*, int>)(lpVtbl[25]))((IMFSensorStream*)Unsafe.AsPointer(ref this), guidKey, wszValue);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(26)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetBlob([NativeTypeName("const GUID &")] Guid* guidKey, [NativeTypeName("const UINT8 *")] byte* pBuf, [NativeTypeName("UINT32")] uint cbBufSize)
+        public HRESULT SetBlob([NativeTypeName("const GUID &")] Guid* guidKey, [NativeTypeName("const UINT8 *")] byte* pBuf, [NativeTypeName("UINT32")] uint cbBufSize)
         {
             return ((delegate* unmanaged<IMFSensorStream*, Guid*, byte*, uint, int>)(lpVtbl[26]))((IMFSensorStream*)Unsafe.AsPointer(ref this), guidKey, pBuf, cbBufSize);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(27)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetUnknown([NativeTypeName("const GUID &")] Guid* guidKey, IUnknown* pUnknown)
+        public HRESULT SetUnknown([NativeTypeName("const GUID &")] Guid* guidKey, IUnknown* pUnknown)
         {
             return ((delegate* unmanaged<IMFSensorStream*, Guid*, IUnknown*, int>)(lpVtbl[27]))((IMFSensorStream*)Unsafe.AsPointer(ref this), guidKey, pUnknown);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(28)]
-        [return: NativeTypeName("HRESULT")]
-        public int LockStore()
+        public HRESULT LockStore()
         {
             return ((delegate* unmanaged<IMFSensorStream*, int>)(lpVtbl[28]))((IMFSensorStream*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(29)]
-        [return: NativeTypeName("HRESULT")]
-        public int UnlockStore()
+        public HRESULT UnlockStore()
         {
             return ((delegate* unmanaged<IMFSensorStream*, int>)(lpVtbl[29]))((IMFSensorStream*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(30)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetCount([NativeTypeName("UINT32 *")] uint* pcItems)
+        public HRESULT GetCount([NativeTypeName("UINT32 *")] uint* pcItems)
         {
             return ((delegate* unmanaged<IMFSensorStream*, uint*, int>)(lpVtbl[30]))((IMFSensorStream*)Unsafe.AsPointer(ref this), pcItems);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(31)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetItemByIndex([NativeTypeName("UINT32")] uint unIndex, [NativeTypeName("GUID *")] Guid* pguidKey, PROPVARIANT* pValue)
+        public HRESULT GetItemByIndex([NativeTypeName("UINT32")] uint unIndex, Guid* pguidKey, PROPVARIANT* pValue)
         {
             return ((delegate* unmanaged<IMFSensorStream*, uint, Guid*, PROPVARIANT*, int>)(lpVtbl[31]))((IMFSensorStream*)Unsafe.AsPointer(ref this), unIndex, pguidKey, pValue);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(32)]
-        [return: NativeTypeName("HRESULT")]
-        public int CopyAllItems(IMFAttributes* pDest)
+        public HRESULT CopyAllItems(IMFAttributes* pDest)
         {
             return ((delegate* unmanaged<IMFSensorStream*, IMFAttributes*, int>)(lpVtbl[32]))((IMFSensorStream*)Unsafe.AsPointer(ref this), pDest);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(33)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetMediaTypeCount([NativeTypeName("DWORD *")] uint* pdwCount)
+        public HRESULT GetMediaTypeCount([NativeTypeName("DWORD *")] uint* pdwCount)
         {
             return ((delegate* unmanaged<IMFSensorStream*, uint*, int>)(lpVtbl[33]))((IMFSensorStream*)Unsafe.AsPointer(ref this), pdwCount);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(34)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetMediaType([NativeTypeName("DWORD")] uint dwIndex, IMFMediaType** ppMediaType)
+        public HRESULT GetMediaType([NativeTypeName("DWORD")] uint dwIndex, IMFMediaType** ppMediaType)
         {
             return ((delegate* unmanaged<IMFSensorStream*, uint, IMFMediaType**, int>)(lpVtbl[34]))((IMFSensorStream*)Unsafe.AsPointer(ref this), dwIndex, ppMediaType);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(35)]
-        [return: NativeTypeName("HRESULT")]
-        public int CloneSensorStream(IMFSensorStream** ppStream)
+        public HRESULT CloneSensorStream(IMFSensorStream** ppStream)
         {
             return ((delegate* unmanaged<IMFSensorStream*, IMFSensorStream**, int>)(lpVtbl[35]))((IMFSensorStream*)Unsafe.AsPointer(ref this), ppStream);
         }

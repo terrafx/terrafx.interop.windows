@@ -9,10 +9,8 @@ namespace TerraFX.Interop
     {
         public WS_PARAMETER_TYPE parameterType;
 
-        [NativeTypeName("USHORT")]
         public ushort inputMessageIndex;
 
-        [NativeTypeName("USHORT")]
         public ushort outputMessageIndex;
     }
 }

@@ -9,13 +9,10 @@ namespace TerraFX.Interop
     {
         public DXGI_FORMAT DxgiFormat;
 
-        [NativeTypeName("UINT")]
         public uint BytesPerBlock;
 
-        [NativeTypeName("UINT")]
         public uint BlockWidth;
 
-        [NativeTypeName("UINT")]
         public uint BlockHeight;
     }
 }

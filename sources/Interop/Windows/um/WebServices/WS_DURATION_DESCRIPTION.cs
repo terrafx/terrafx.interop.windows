@@ -14,6 +14,6 @@ namespace TerraFX.Interop
         public WS_DURATION maxValue;
 
         [NativeTypeName("WS_DURATION_COMPARISON_CALLBACK")]
-        public delegate* unmanaged<WS_DURATION*, WS_DURATION*, int*, IntPtr, int> comparer;
+        public delegate* unmanaged<WS_DURATION*, WS_DURATION*, int*, IntPtr, HRESULT> comparer;
     }
 }

@@ -116,8 +116,7 @@ namespace TerraFX.Interop
         }
 
         [DllImport("mf", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int MFCreateEncryptedMediaExtensionsStoreActivate(IMFPMPHostApp* pmpHost, IStream* objectStream, [NativeTypeName("LPCWSTR")] ushort* classId, IMFActivate** activate);
+        public static extern HRESULT MFCreateEncryptedMediaExtensionsStoreActivate(IMFPMPHostApp* pmpHost, IStream* objectStream, [NativeTypeName("LPCWSTR")] ushort* classId, IMFActivate** activate);
 
         public static ref readonly Guid IID_IMFContentDecryptionModuleSession
         {

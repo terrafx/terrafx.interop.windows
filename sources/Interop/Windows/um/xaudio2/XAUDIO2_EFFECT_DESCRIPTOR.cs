@@ -12,8 +12,7 @@ namespace TerraFX.Interop
     {
         public IUnknown* pEffect;
 
-        [NativeTypeName("BOOL")]
-        public int InitialState;
+        public BOOL InitialState;
 
         [NativeTypeName("UINT32")]
         public uint OutputChannels;

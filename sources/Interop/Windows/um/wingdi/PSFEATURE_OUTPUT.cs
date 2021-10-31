@@ -7,10 +7,8 @@ namespace TerraFX.Interop
 {
     public partial struct PSFEATURE_OUTPUT
     {
-        [NativeTypeName("BOOL")]
-        public int bPageIndependent;
+        public BOOL bPageIndependent;
 
-        [NativeTypeName("BOOL")]
-        public int bSetPageDevice;
+        public BOOL bSetPageDevice;
     }
 }

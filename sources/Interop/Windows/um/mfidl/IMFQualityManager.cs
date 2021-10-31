@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IMFQualityManager*, Guid*, void**, int>)(lpVtbl[0]))((IMFQualityManager*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,48 +41,42 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int NotifyTopology(IMFTopology* pTopology)
+        public HRESULT NotifyTopology(IMFTopology* pTopology)
         {
             return ((delegate* unmanaged<IMFQualityManager*, IMFTopology*, int>)(lpVtbl[3]))((IMFQualityManager*)Unsafe.AsPointer(ref this), pTopology);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int NotifyPresentationClock(IMFPresentationClock* pClock)
+        public HRESULT NotifyPresentationClock(IMFPresentationClock* pClock)
         {
             return ((delegate* unmanaged<IMFQualityManager*, IMFPresentationClock*, int>)(lpVtbl[4]))((IMFQualityManager*)Unsafe.AsPointer(ref this), pClock);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int NotifyProcessInput(IMFTopologyNode* pNode, [NativeTypeName("long")] int lInputIndex, IMFSample* pSample)
+        public HRESULT NotifyProcessInput(IMFTopologyNode* pNode, [NativeTypeName("long")] int lInputIndex, IMFSample* pSample)
         {
             return ((delegate* unmanaged<IMFQualityManager*, IMFTopologyNode*, int, IMFSample*, int>)(lpVtbl[5]))((IMFQualityManager*)Unsafe.AsPointer(ref this), pNode, lInputIndex, pSample);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int NotifyProcessOutput(IMFTopologyNode* pNode, [NativeTypeName("long")] int lOutputIndex, IMFSample* pSample)
+        public HRESULT NotifyProcessOutput(IMFTopologyNode* pNode, [NativeTypeName("long")] int lOutputIndex, IMFSample* pSample)
         {
             return ((delegate* unmanaged<IMFQualityManager*, IMFTopologyNode*, int, IMFSample*, int>)(lpVtbl[6]))((IMFQualityManager*)Unsafe.AsPointer(ref this), pNode, lOutputIndex, pSample);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        [return: NativeTypeName("HRESULT")]
-        public int NotifyQualityEvent(IUnknown* pObject, IMFMediaEvent* pEvent)
+        public HRESULT NotifyQualityEvent(IUnknown* pObject, IMFMediaEvent* pEvent)
         {
             return ((delegate* unmanaged<IMFQualityManager*, IUnknown*, IMFMediaEvent*, int>)(lpVtbl[7]))((IMFQualityManager*)Unsafe.AsPointer(ref this), pObject, pEvent);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        [return: NativeTypeName("HRESULT")]
-        public int Shutdown()
+        public HRESULT Shutdown()
         {
             return ((delegate* unmanaged<IMFQualityManager*, int>)(lpVtbl[8]))((IMFQualityManager*)Unsafe.AsPointer(ref this));
         }

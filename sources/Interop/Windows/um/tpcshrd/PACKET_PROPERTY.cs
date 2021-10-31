@@ -9,7 +9,6 @@ namespace TerraFX.Interop
 {
     public partial struct PACKET_PROPERTY
     {
-        [NativeTypeName("GUID")]
         public Guid guid;
 
         public PROPERTY_METRICS PropertyMetrics;

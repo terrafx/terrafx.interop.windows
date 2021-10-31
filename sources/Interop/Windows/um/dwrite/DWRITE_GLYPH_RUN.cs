@@ -9,7 +9,6 @@ namespace TerraFX.Interop
     {
         public IDWriteFontFace* fontFace;
 
-        [NativeTypeName("FLOAT")]
         public float fontEmSize;
 
         [NativeTypeName("UINT32")]
@@ -24,8 +23,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const DWRITE_GLYPH_OFFSET *")]
         public DWRITE_GLYPH_OFFSET* glyphOffsets;
 
-        [NativeTypeName("BOOL")]
-        public int isSideways;
+        public BOOL isSideways;
 
         [NativeTypeName("UINT32")]
         public uint bidiLevel;

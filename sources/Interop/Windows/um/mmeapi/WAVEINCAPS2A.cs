@@ -32,13 +32,10 @@ namespace TerraFX.Interop
         [NativeTypeName("WORD")]
         public ushort wReserved1;
 
-        [NativeTypeName("GUID")]
         public Guid ManufacturerGuid;
 
-        [NativeTypeName("GUID")]
         public Guid ProductGuid;
 
-        [NativeTypeName("GUID")]
         public Guid NameGuid;
     }
 }

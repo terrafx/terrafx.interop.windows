@@ -10,16 +10,12 @@ namespace TerraFX.Interop
         [NativeTypeName("WCHAR [128]")]
         public fixed ushort Description[128];
 
-        [NativeTypeName("UINT")]
         public uint VendorId;
 
-        [NativeTypeName("UINT")]
         public uint DeviceId;
 
-        [NativeTypeName("UINT")]
         public uint SubSysId;
 
-        [NativeTypeName("UINT")]
         public uint Revision;
 
         [NativeTypeName("SIZE_T")]
@@ -33,7 +29,6 @@ namespace TerraFX.Interop
 
         public LUID AdapterLuid;
 
-        [NativeTypeName("UINT")]
         public uint Flags;
     }
 }

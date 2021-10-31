@@ -7,16 +7,12 @@ namespace TerraFX.Interop
 {
     public partial struct D3D12_FEATURE_DATA_ARCHITECTURE
     {
-        [NativeTypeName("UINT")]
         public uint NodeIndex;
 
-        [NativeTypeName("BOOL")]
-        public int TileBasedRenderer;
+        public BOOL TileBasedRenderer;
 
-        [NativeTypeName("BOOL")]
-        public int UMA;
+        public BOOL UMA;
 
-        [NativeTypeName("BOOL")]
-        public int CacheCoherentUMA;
+        public BOOL CacheCoherentUMA;
     }
 }

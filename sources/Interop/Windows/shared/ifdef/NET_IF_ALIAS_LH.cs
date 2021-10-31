@@ -7,10 +7,8 @@ namespace TerraFX.Interop
 {
     public partial struct NET_IF_ALIAS_LH
     {
-        [NativeTypeName("USHORT")]
         public ushort ifAliasLength;
 
-        [NativeTypeName("USHORT")]
         public ushort ifAliasOffset;
     }
 }

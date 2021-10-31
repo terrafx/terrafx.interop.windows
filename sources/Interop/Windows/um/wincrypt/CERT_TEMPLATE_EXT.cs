@@ -13,8 +13,7 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint dwMajorVersion;
 
-        [NativeTypeName("BOOL")]
-        public int fMinorVersion;
+        public BOOL fMinorVersion;
 
         [NativeTypeName("DWORD")]
         public uint dwMinorVersion;

@@ -10,8 +10,7 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORDLONG")]
         public ulong cBytesWritten;
 
-        [NativeTypeName("BOOL")]
-        public int fPAL;
+        public BOOL fPAL;
 
         [NativeTypeName("DWORD")]
         public uint fccVideo;

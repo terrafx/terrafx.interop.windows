@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IScriptErrorList*, Guid*, void**, int>)(lpVtbl[0]))((IScriptErrorList*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,146 +41,128 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetTypeInfoCount([NativeTypeName("UINT *")] uint* pctinfo)
+        public HRESULT GetTypeInfoCount(uint* pctinfo)
         {
             return ((delegate* unmanaged<IScriptErrorList*, uint*, int>)(lpVtbl[3]))((IScriptErrorList*)Unsafe.AsPointer(ref this), pctinfo);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetTypeInfo([NativeTypeName("UINT")] uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
+        public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
         {
             return ((delegate* unmanaged<IScriptErrorList*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IScriptErrorList*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, [NativeTypeName("UINT")] uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+        public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
         {
             return ((delegate* unmanaged<IScriptErrorList*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IScriptErrorList*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, [NativeTypeName("UINT *")] uint* puArgErr)
+        public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
         {
             return ((delegate* unmanaged<IScriptErrorList*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IScriptErrorList*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        [return: NativeTypeName("HRESULT")]
-        public int advanceError()
+        public HRESULT advanceError()
         {
             return ((delegate* unmanaged<IScriptErrorList*, int>)(lpVtbl[7]))((IScriptErrorList*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        [return: NativeTypeName("HRESULT")]
-        public int retreatError()
+        public HRESULT retreatError()
         {
             return ((delegate* unmanaged<IScriptErrorList*, int>)(lpVtbl[8]))((IScriptErrorList*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        [return: NativeTypeName("HRESULT")]
-        public int canAdvanceError([NativeTypeName("BOOL *")] int* pfCanAdvance)
+        public HRESULT canAdvanceError(BOOL* pfCanAdvance)
         {
-            return ((delegate* unmanaged<IScriptErrorList*, int*, int>)(lpVtbl[9]))((IScriptErrorList*)Unsafe.AsPointer(ref this), pfCanAdvance);
+            return ((delegate* unmanaged<IScriptErrorList*, BOOL*, int>)(lpVtbl[9]))((IScriptErrorList*)Unsafe.AsPointer(ref this), pfCanAdvance);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(10)]
-        [return: NativeTypeName("HRESULT")]
-        public int canRetreatError([NativeTypeName("BOOL *")] int* pfCanRetreat)
+        public HRESULT canRetreatError(BOOL* pfCanRetreat)
         {
-            return ((delegate* unmanaged<IScriptErrorList*, int*, int>)(lpVtbl[10]))((IScriptErrorList*)Unsafe.AsPointer(ref this), pfCanRetreat);
+            return ((delegate* unmanaged<IScriptErrorList*, BOOL*, int>)(lpVtbl[10]))((IScriptErrorList*)Unsafe.AsPointer(ref this), pfCanRetreat);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(11)]
-        [return: NativeTypeName("HRESULT")]
-        public int getErrorLine([NativeTypeName("LONG *")] int* plLine)
+        public HRESULT getErrorLine([NativeTypeName("LONG *")] int* plLine)
         {
             return ((delegate* unmanaged<IScriptErrorList*, int*, int>)(lpVtbl[11]))((IScriptErrorList*)Unsafe.AsPointer(ref this), plLine);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(12)]
-        [return: NativeTypeName("HRESULT")]
-        public int getErrorChar([NativeTypeName("LONG *")] int* plChar)
+        public HRESULT getErrorChar([NativeTypeName("LONG *")] int* plChar)
         {
             return ((delegate* unmanaged<IScriptErrorList*, int*, int>)(lpVtbl[12]))((IScriptErrorList*)Unsafe.AsPointer(ref this), plChar);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(13)]
-        [return: NativeTypeName("HRESULT")]
-        public int getErrorCode([NativeTypeName("LONG *")] int* plCode)
+        public HRESULT getErrorCode([NativeTypeName("LONG *")] int* plCode)
         {
             return ((delegate* unmanaged<IScriptErrorList*, int*, int>)(lpVtbl[13]))((IScriptErrorList*)Unsafe.AsPointer(ref this), plCode);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(14)]
-        [return: NativeTypeName("HRESULT")]
-        public int getErrorMsg([NativeTypeName("BSTR *")] ushort** pstr)
+        public HRESULT getErrorMsg([NativeTypeName("BSTR *")] ushort** pstr)
         {
             return ((delegate* unmanaged<IScriptErrorList*, ushort**, int>)(lpVtbl[14]))((IScriptErrorList*)Unsafe.AsPointer(ref this), pstr);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(15)]
-        [return: NativeTypeName("HRESULT")]
-        public int getErrorUrl([NativeTypeName("BSTR *")] ushort** pstr)
+        public HRESULT getErrorUrl([NativeTypeName("BSTR *")] ushort** pstr)
         {
             return ((delegate* unmanaged<IScriptErrorList*, ushort**, int>)(lpVtbl[15]))((IScriptErrorList*)Unsafe.AsPointer(ref this), pstr);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(16)]
-        [return: NativeTypeName("HRESULT")]
-        public int getAlwaysShowLockState([NativeTypeName("BOOL *")] int* pfAlwaysShowLocked)
+        public HRESULT getAlwaysShowLockState(BOOL* pfAlwaysShowLocked)
         {
-            return ((delegate* unmanaged<IScriptErrorList*, int*, int>)(lpVtbl[16]))((IScriptErrorList*)Unsafe.AsPointer(ref this), pfAlwaysShowLocked);
+            return ((delegate* unmanaged<IScriptErrorList*, BOOL*, int>)(lpVtbl[16]))((IScriptErrorList*)Unsafe.AsPointer(ref this), pfAlwaysShowLocked);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(17)]
-        [return: NativeTypeName("HRESULT")]
-        public int getDetailsPaneOpen([NativeTypeName("BOOL *")] int* pfDetailsPaneOpen)
+        public HRESULT getDetailsPaneOpen(BOOL* pfDetailsPaneOpen)
         {
-            return ((delegate* unmanaged<IScriptErrorList*, int*, int>)(lpVtbl[17]))((IScriptErrorList*)Unsafe.AsPointer(ref this), pfDetailsPaneOpen);
+            return ((delegate* unmanaged<IScriptErrorList*, BOOL*, int>)(lpVtbl[17]))((IScriptErrorList*)Unsafe.AsPointer(ref this), pfDetailsPaneOpen);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(18)]
-        [return: NativeTypeName("HRESULT")]
-        public int setDetailsPaneOpen([NativeTypeName("BOOL")] int fDetailsPaneOpen)
+        public HRESULT setDetailsPaneOpen(BOOL fDetailsPaneOpen)
         {
-            return ((delegate* unmanaged<IScriptErrorList*, int, int>)(lpVtbl[18]))((IScriptErrorList*)Unsafe.AsPointer(ref this), fDetailsPaneOpen);
+            return ((delegate* unmanaged<IScriptErrorList*, BOOL, int>)(lpVtbl[18]))((IScriptErrorList*)Unsafe.AsPointer(ref this), fDetailsPaneOpen);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(19)]
-        [return: NativeTypeName("HRESULT")]
-        public int getPerErrorDisplay([NativeTypeName("BOOL *")] int* pfPerErrorDisplay)
+        public HRESULT getPerErrorDisplay(BOOL* pfPerErrorDisplay)
         {
-            return ((delegate* unmanaged<IScriptErrorList*, int*, int>)(lpVtbl[19]))((IScriptErrorList*)Unsafe.AsPointer(ref this), pfPerErrorDisplay);
+            return ((delegate* unmanaged<IScriptErrorList*, BOOL*, int>)(lpVtbl[19]))((IScriptErrorList*)Unsafe.AsPointer(ref this), pfPerErrorDisplay);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(20)]
-        [return: NativeTypeName("HRESULT")]
-        public int setPerErrorDisplay([NativeTypeName("BOOL")] int fPerErrorDisplay)
+        public HRESULT setPerErrorDisplay(BOOL fPerErrorDisplay)
         {
-            return ((delegate* unmanaged<IScriptErrorList*, int, int>)(lpVtbl[20]))((IScriptErrorList*)Unsafe.AsPointer(ref this), fPerErrorDisplay);
+            return ((delegate* unmanaged<IScriptErrorList*, BOOL, int>)(lpVtbl[20]))((IScriptErrorList*)Unsafe.AsPointer(ref this), fPerErrorDisplay);
         }
     }
 }

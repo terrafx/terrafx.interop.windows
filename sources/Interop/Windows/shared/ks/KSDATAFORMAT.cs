@@ -47,13 +47,10 @@ namespace TerraFX.Interop
             [NativeTypeName("ULONG")]
             public uint Reserved;
 
-            [NativeTypeName("GUID")]
             public Guid MajorFormat;
 
-            [NativeTypeName("GUID")]
             public Guid SubFormat;
 
-            [NativeTypeName("GUID")]
             public Guid Specifier;
         }
     }

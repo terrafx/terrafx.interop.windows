@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IXmlReader*, Guid*, void**, int>)(lpVtbl[0]))((IXmlReader*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,184 +41,161 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetInput(IUnknown* pInput)
+        public HRESULT SetInput(IUnknown* pInput)
         {
             return ((delegate* unmanaged<IXmlReader*, IUnknown*, int>)(lpVtbl[3]))((IXmlReader*)Unsafe.AsPointer(ref this), pInput);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetProperty([NativeTypeName("UINT")] uint nProperty, [NativeTypeName("LONG_PTR *")] nint* ppValue)
+        public HRESULT GetProperty(uint nProperty, [NativeTypeName("LONG_PTR *")] nint* ppValue)
         {
             return ((delegate* unmanaged<IXmlReader*, uint, nint*, int>)(lpVtbl[4]))((IXmlReader*)Unsafe.AsPointer(ref this), nProperty, ppValue);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetProperty([NativeTypeName("UINT")] uint nProperty, [NativeTypeName("LONG_PTR")] nint pValue)
+        public HRESULT SetProperty(uint nProperty, [NativeTypeName("LONG_PTR")] nint pValue)
         {
             return ((delegate* unmanaged<IXmlReader*, uint, nint, int>)(lpVtbl[5]))((IXmlReader*)Unsafe.AsPointer(ref this), nProperty, pValue);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int Read(XmlNodeType* pNodeType)
+        public HRESULT Read(XmlNodeType* pNodeType)
         {
             return ((delegate* unmanaged<IXmlReader*, XmlNodeType*, int>)(lpVtbl[6]))((IXmlReader*)Unsafe.AsPointer(ref this), pNodeType);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetNodeType(XmlNodeType* pNodeType)
+        public HRESULT GetNodeType(XmlNodeType* pNodeType)
         {
             return ((delegate* unmanaged<IXmlReader*, XmlNodeType*, int>)(lpVtbl[7]))((IXmlReader*)Unsafe.AsPointer(ref this), pNodeType);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        [return: NativeTypeName("HRESULT")]
-        public int MoveToFirstAttribute()
+        public HRESULT MoveToFirstAttribute()
         {
             return ((delegate* unmanaged<IXmlReader*, int>)(lpVtbl[8]))((IXmlReader*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        [return: NativeTypeName("HRESULT")]
-        public int MoveToNextAttribute()
+        public HRESULT MoveToNextAttribute()
         {
             return ((delegate* unmanaged<IXmlReader*, int>)(lpVtbl[9]))((IXmlReader*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(10)]
-        [return: NativeTypeName("HRESULT")]
-        public int MoveToAttributeByName([NativeTypeName("LPCWSTR")] ushort* pwszLocalName, [NativeTypeName("LPCWSTR")] ushort* pwszNamespaceUri)
+        public HRESULT MoveToAttributeByName([NativeTypeName("LPCWSTR")] ushort* pwszLocalName, [NativeTypeName("LPCWSTR")] ushort* pwszNamespaceUri)
         {
             return ((delegate* unmanaged<IXmlReader*, ushort*, ushort*, int>)(lpVtbl[10]))((IXmlReader*)Unsafe.AsPointer(ref this), pwszLocalName, pwszNamespaceUri);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(11)]
-        [return: NativeTypeName("HRESULT")]
-        public int MoveToElement()
+        public HRESULT MoveToElement()
         {
             return ((delegate* unmanaged<IXmlReader*, int>)(lpVtbl[11]))((IXmlReader*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(12)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetQualifiedName([NativeTypeName("LPCWSTR *")] ushort** ppwszQualifiedName, [NativeTypeName("UINT *")] uint* pcwchQualifiedName)
+        public HRESULT GetQualifiedName([NativeTypeName("LPCWSTR *")] ushort** ppwszQualifiedName, uint* pcwchQualifiedName)
         {
             return ((delegate* unmanaged<IXmlReader*, ushort**, uint*, int>)(lpVtbl[12]))((IXmlReader*)Unsafe.AsPointer(ref this), ppwszQualifiedName, pcwchQualifiedName);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(13)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetNamespaceUri([NativeTypeName("LPCWSTR *")] ushort** ppwszNamespaceUri, [NativeTypeName("UINT *")] uint* pcwchNamespaceUri)
+        public HRESULT GetNamespaceUri([NativeTypeName("LPCWSTR *")] ushort** ppwszNamespaceUri, uint* pcwchNamespaceUri)
         {
             return ((delegate* unmanaged<IXmlReader*, ushort**, uint*, int>)(lpVtbl[13]))((IXmlReader*)Unsafe.AsPointer(ref this), ppwszNamespaceUri, pcwchNamespaceUri);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(14)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetLocalName([NativeTypeName("LPCWSTR *")] ushort** ppwszLocalName, [NativeTypeName("UINT *")] uint* pcwchLocalName)
+        public HRESULT GetLocalName([NativeTypeName("LPCWSTR *")] ushort** ppwszLocalName, uint* pcwchLocalName)
         {
             return ((delegate* unmanaged<IXmlReader*, ushort**, uint*, int>)(lpVtbl[14]))((IXmlReader*)Unsafe.AsPointer(ref this), ppwszLocalName, pcwchLocalName);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(15)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetPrefix([NativeTypeName("LPCWSTR *")] ushort** ppwszPrefix, [NativeTypeName("UINT *")] uint* pcwchPrefix)
+        public HRESULT GetPrefix([NativeTypeName("LPCWSTR *")] ushort** ppwszPrefix, uint* pcwchPrefix)
         {
             return ((delegate* unmanaged<IXmlReader*, ushort**, uint*, int>)(lpVtbl[15]))((IXmlReader*)Unsafe.AsPointer(ref this), ppwszPrefix, pcwchPrefix);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(16)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetValue([NativeTypeName("LPCWSTR *")] ushort** ppwszValue, [NativeTypeName("UINT *")] uint* pcwchValue)
+        public HRESULT GetValue([NativeTypeName("LPCWSTR *")] ushort** ppwszValue, uint* pcwchValue)
         {
             return ((delegate* unmanaged<IXmlReader*, ushort**, uint*, int>)(lpVtbl[16]))((IXmlReader*)Unsafe.AsPointer(ref this), ppwszValue, pcwchValue);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(17)]
-        [return: NativeTypeName("HRESULT")]
-        public int ReadValueChunk([NativeTypeName("WCHAR *")] ushort* pwchBuffer, [NativeTypeName("UINT")] uint cwchChunkSize, [NativeTypeName("UINT *")] uint* pcwchRead)
+        public HRESULT ReadValueChunk([NativeTypeName("WCHAR *")] ushort* pwchBuffer, uint cwchChunkSize, uint* pcwchRead)
         {
             return ((delegate* unmanaged<IXmlReader*, ushort*, uint, uint*, int>)(lpVtbl[17]))((IXmlReader*)Unsafe.AsPointer(ref this), pwchBuffer, cwchChunkSize, pcwchRead);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(18)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetBaseUri([NativeTypeName("LPCWSTR *")] ushort** ppwszBaseUri, [NativeTypeName("UINT *")] uint* pcwchBaseUri)
+        public HRESULT GetBaseUri([NativeTypeName("LPCWSTR *")] ushort** ppwszBaseUri, uint* pcwchBaseUri)
         {
             return ((delegate* unmanaged<IXmlReader*, ushort**, uint*, int>)(lpVtbl[18]))((IXmlReader*)Unsafe.AsPointer(ref this), ppwszBaseUri, pcwchBaseUri);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(19)]
-        [return: NativeTypeName("BOOL")]
-        public int IsDefault()
+        public BOOL IsDefault()
         {
             return ((delegate* unmanaged<IXmlReader*, int>)(lpVtbl[19]))((IXmlReader*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(20)]
-        [return: NativeTypeName("BOOL")]
-        public int IsEmptyElement()
+        public BOOL IsEmptyElement()
         {
             return ((delegate* unmanaged<IXmlReader*, int>)(lpVtbl[20]))((IXmlReader*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(21)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetLineNumber([NativeTypeName("UINT *")] uint* pnLineNumber)
+        public HRESULT GetLineNumber(uint* pnLineNumber)
         {
             return ((delegate* unmanaged<IXmlReader*, uint*, int>)(lpVtbl[21]))((IXmlReader*)Unsafe.AsPointer(ref this), pnLineNumber);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(22)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetLinePosition([NativeTypeName("UINT *")] uint* pnLinePosition)
+        public HRESULT GetLinePosition(uint* pnLinePosition)
         {
             return ((delegate* unmanaged<IXmlReader*, uint*, int>)(lpVtbl[22]))((IXmlReader*)Unsafe.AsPointer(ref this), pnLinePosition);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(23)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetAttributeCount([NativeTypeName("UINT *")] uint* pnAttributeCount)
+        public HRESULT GetAttributeCount(uint* pnAttributeCount)
         {
             return ((delegate* unmanaged<IXmlReader*, uint*, int>)(lpVtbl[23]))((IXmlReader*)Unsafe.AsPointer(ref this), pnAttributeCount);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(24)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetDepth([NativeTypeName("UINT *")] uint* pnDepth)
+        public HRESULT GetDepth(uint* pnDepth)
         {
             return ((delegate* unmanaged<IXmlReader*, uint*, int>)(lpVtbl[24]))((IXmlReader*)Unsafe.AsPointer(ref this), pnDepth);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(25)]
-        [return: NativeTypeName("BOOL")]
-        public int IsEOF()
+        public BOOL IsEOF()
         {
             return ((delegate* unmanaged<IXmlReader*, int>)(lpVtbl[25]))((IXmlReader*)Unsafe.AsPointer(ref this));
         }

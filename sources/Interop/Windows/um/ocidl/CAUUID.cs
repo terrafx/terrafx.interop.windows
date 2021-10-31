@@ -12,7 +12,6 @@ namespace TerraFX.Interop
         [NativeTypeName("ULONG")]
         public uint cElems;
 
-        [NativeTypeName("GUID *")]
         public Guid* pElems;
     }
 }

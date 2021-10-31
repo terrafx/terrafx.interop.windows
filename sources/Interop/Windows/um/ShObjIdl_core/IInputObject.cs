@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IInputObject*, Guid*, void**, int>)(lpVtbl[0]))((IInputObject*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,24 +41,21 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int UIActivateIO([NativeTypeName("BOOL")] int fActivate, MSG* pMsg)
+        public HRESULT UIActivateIO(BOOL fActivate, MSG* pMsg)
         {
-            return ((delegate* unmanaged<IInputObject*, int, MSG*, int>)(lpVtbl[3]))((IInputObject*)Unsafe.AsPointer(ref this), fActivate, pMsg);
+            return ((delegate* unmanaged<IInputObject*, BOOL, MSG*, int>)(lpVtbl[3]))((IInputObject*)Unsafe.AsPointer(ref this), fActivate, pMsg);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int HasFocusIO()
+        public HRESULT HasFocusIO()
         {
             return ((delegate* unmanaged<IInputObject*, int>)(lpVtbl[4]))((IInputObject*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int TranslateAcceleratorIO(MSG* pMsg)
+        public HRESULT TranslateAcceleratorIO(MSG* pMsg)
         {
             return ((delegate* unmanaged<IInputObject*, MSG*, int>)(lpVtbl[5]))((IInputObject*)Unsafe.AsPointer(ref this), pMsg);
         }

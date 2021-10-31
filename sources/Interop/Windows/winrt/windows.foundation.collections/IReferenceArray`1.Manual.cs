@@ -16,8 +16,7 @@ namespace TerraFX.Interop
         public void** lpVtbl;
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
             return ((delegate* unmanaged<IReferenceArray<T>*, Guid*, void**, int>)(lpVtbl[0]))((IReferenceArray<T>*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -37,29 +36,25 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetIids([NativeTypeName("ULONG *")] uint* iidCount, [NativeTypeName("IID **")] Guid** iids)
+        public HRESULT GetIids([NativeTypeName("ULONG *")] uint* iidCount, [NativeTypeName("IID **")] Guid** iids)
         {
             return ((delegate* unmanaged<IReferenceArray<T>*, uint*, Guid**, int>)(lpVtbl[3]))((IReferenceArray<T>*)Unsafe.AsPointer(ref this), iidCount, iids);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetRuntimeClassName([NativeTypeName("HSTRING *")] IntPtr* className)
+        public HRESULT GetRuntimeClassName(HSTRING* className)
         {
-            return ((delegate* unmanaged<IReferenceArray<T>*, IntPtr*, int>)(lpVtbl[4]))((IReferenceArray<T>*)Unsafe.AsPointer(ref this), className);
+            return ((delegate* unmanaged<IReferenceArray<T>*, HSTRING*, int>)(lpVtbl[4]))((IReferenceArray<T>*)Unsafe.AsPointer(ref this), className);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetTrustLevel([NativeTypeName("TrustLevel *")] TrustLevel* trustLevel)
+        public HRESULT GetTrustLevel([NativeTypeName("TrustLevel *")] TrustLevel* trustLevel)
         {
             return ((delegate* unmanaged<IReferenceArray<T>*, TrustLevel*, int>)(lpVtbl[5]))((IReferenceArray<T>*)Unsafe.AsPointer(ref this), trustLevel);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [return: NativeTypeName("HRESULT")]
-        public int get_Value([NativeTypeName("UINT32 *")] uint* length, [NativeTypeName("T_abi **")] T** value)
+        public HRESULT get_Value([NativeTypeName("UINT32 *")] uint* length, [NativeTypeName("T_abi **")] T** value)
         {
             return ((delegate* unmanaged<IReferenceArray<T>*, uint*, T**, int>)(lpVtbl[6]))((IReferenceArray<T>*)Unsafe.AsPointer(ref this), length, value);
         }

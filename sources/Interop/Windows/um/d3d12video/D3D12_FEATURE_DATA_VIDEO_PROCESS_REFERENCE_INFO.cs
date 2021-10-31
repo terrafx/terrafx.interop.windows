@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public partial struct D3D12_FEATURE_DATA_VIDEO_PROCESS_REFERENCE_INFO
     {
-        [NativeTypeName("UINT")]
         public uint NodeIndex;
 
         public D3D12_VIDEO_PROCESS_DEINTERLACE_FLAGS DeinterlaceMode;
@@ -20,13 +19,10 @@ namespace TerraFX.Interop
 
         public DXGI_RATIONAL OutputFrameRate;
 
-        [NativeTypeName("BOOL")]
-        public int EnableAutoProcessing;
+        public BOOL EnableAutoProcessing;
 
-        [NativeTypeName("UINT")]
         public uint PastFrames;
 
-        [NativeTypeName("UINT")]
         public uint FutureFrames;
     }
 }

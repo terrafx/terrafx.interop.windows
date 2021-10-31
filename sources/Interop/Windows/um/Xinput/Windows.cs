@@ -23,15 +23,15 @@ namespace TerraFX.Interop
         public static extern uint XInputGetCapabilities([NativeTypeName("DWORD")] uint dwUserIndex, [NativeTypeName("DWORD")] uint dwFlags, XINPUT_CAPABILITIES* pCapabilities);
 
         [DllImport("xinput1_4", ExactSpelling = true)]
-        public static extern void XInputEnable([NativeTypeName("BOOL")] int enable);
+        public static extern void XInputEnable(BOOL enable);
 
         [DllImport("xinput1_4", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
-        public static extern uint XInputGetAudioDeviceIds([NativeTypeName("DWORD")] uint dwUserIndex, [NativeTypeName("LPWSTR")] ushort* pRenderDeviceId, [NativeTypeName("UINT *")] uint* pRenderCount, [NativeTypeName("LPWSTR")] ushort* pCaptureDeviceId, [NativeTypeName("UINT *")] uint* pCaptureCount);
+        public static extern uint XInputGetAudioDeviceIds([NativeTypeName("DWORD")] uint dwUserIndex, [NativeTypeName("LPWSTR")] ushort* pRenderDeviceId, uint* pRenderCount, [NativeTypeName("LPWSTR")] ushort* pCaptureDeviceId, uint* pCaptureCount);
 
         [DllImport("xinput1_4", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
-        public static extern uint XInputGetBatteryInformation([NativeTypeName("DWORD")] uint dwUserIndex, [NativeTypeName("BYTE")] byte devType, XINPUT_BATTERY_INFORMATION* pBatteryInformation);
+        public static extern uint XInputGetBatteryInformation([NativeTypeName("DWORD")] uint dwUserIndex, byte devType, XINPUT_BATTERY_INFORMATION* pBatteryInformation);
 
         [DllImport("xinput1_4", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]

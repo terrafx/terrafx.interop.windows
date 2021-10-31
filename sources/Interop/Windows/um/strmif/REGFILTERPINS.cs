@@ -12,17 +12,13 @@ namespace TerraFX.Interop
         [NativeTypeName("LPWSTR")]
         public ushort* strName;
 
-        [NativeTypeName("BOOL")]
-        public int bRendered;
+        public BOOL bRendered;
 
-        [NativeTypeName("BOOL")]
-        public int bOutput;
+        public BOOL bOutput;
 
-        [NativeTypeName("BOOL")]
-        public int bZero;
+        public BOOL bZero;
 
-        [NativeTypeName("BOOL")]
-        public int bMany;
+        public BOOL bMany;
 
         [NativeTypeName("const CLSID *")]
         public Guid* clsConnectsToFilter;
@@ -30,7 +26,6 @@ namespace TerraFX.Interop
         [NativeTypeName("const WCHAR *")]
         public ushort* strConnectsToPin;
 
-        [NativeTypeName("UINT")]
         public uint nMediaTypes;
 
         [NativeTypeName("const REGPINTYPES *")]

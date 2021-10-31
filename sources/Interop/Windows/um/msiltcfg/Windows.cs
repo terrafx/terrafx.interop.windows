@@ -10,11 +10,9 @@ namespace TerraFX.Interop
     public static partial class Windows
     {
         [DllImport("msiltcfg", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
         public static extern uint ShutdownMsi([NativeTypeName("DWORD")] uint dwReserved);
 
         [DllImport("msiltcfg", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
         public static extern uint RestartMsi([NativeTypeName("DWORD")] uint dwReserved);
     }
 }

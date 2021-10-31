@@ -3,13 +3,10 @@
 // Ported from um/ShlObj_core.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
-
 namespace TerraFX.Interop
 {
     public unsafe partial struct CSFV
     {
-        [NativeTypeName("UINT")]
         public uint cbSize;
 
         public IShellFolder* pshf;
@@ -23,7 +20,7 @@ namespace TerraFX.Interop
         public int lEvents;
 
         [NativeTypeName("LPFNVIEWCALLBACK")]
-        public delegate* unmanaged<IShellView*, IShellFolder*, IntPtr, uint, nuint, nint, int> pfnCallback;
+        public delegate* unmanaged<IShellView*, IShellFolder*, HWND, uint, nuint, nint, HRESULT> pfnCallback;
 
         public FOLDERVIEWMODE fvm;
     }

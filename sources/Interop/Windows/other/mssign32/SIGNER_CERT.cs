@@ -3,7 +3,6 @@
 // Ported from https://docs.microsoft.com/en-us/windows/win32/appxpkg/how-to-programmatically-sign-a-package
 // Original source is Copyright © Microsoft. All rights reserved. Licensed under the MIT License (MIT).
 
-using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -20,8 +19,7 @@ namespace TerraFX.Interop
         [NativeTypeName("_SIGNER_CERT::(anonymous union at ./mssign32.h:111:9)")]
         public _Anonymous_e__Union Anonymous;
 
-        [NativeTypeName("HWND")]
-        public IntPtr hwnd;
+        public HWND hwnd;
 
         public ref ushort* pwszSpcFile
         {

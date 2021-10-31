@@ -11,7 +11,6 @@ namespace TerraFX.Interop
 
         public WS_STRING host;
 
-        [NativeTypeName("USHORT")]
         public ushort port;
 
         public WS_STRING portAsString;

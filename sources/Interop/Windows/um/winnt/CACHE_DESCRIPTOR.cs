@@ -7,10 +7,8 @@ namespace TerraFX.Interop
 {
     public partial struct CACHE_DESCRIPTOR
     {
-        [NativeTypeName("BYTE")]
         public byte Level;
 
-        [NativeTypeName("BYTE")]
         public byte Associativity;
 
         [NativeTypeName("WORD")]

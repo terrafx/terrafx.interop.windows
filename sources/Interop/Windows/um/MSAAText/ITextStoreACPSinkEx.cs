@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<ITextStoreACPSinkEx*, Guid*, void**, int>)(lpVtbl[0]))((ITextStoreACPSinkEx*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,72 +41,63 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int OnTextChange([NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("const TS_TEXTCHANGE *")] TS_TEXTCHANGE* pChange)
+        public HRESULT OnTextChange([NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("const TS_TEXTCHANGE *")] TS_TEXTCHANGE* pChange)
         {
             return ((delegate* unmanaged<ITextStoreACPSinkEx*, uint, TS_TEXTCHANGE*, int>)(lpVtbl[3]))((ITextStoreACPSinkEx*)Unsafe.AsPointer(ref this), dwFlags, pChange);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int OnSelectionChange()
+        public HRESULT OnSelectionChange()
         {
             return ((delegate* unmanaged<ITextStoreACPSinkEx*, int>)(lpVtbl[4]))((ITextStoreACPSinkEx*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int OnLayoutChange(TsLayoutCode lcode, [NativeTypeName("TsViewCookie")] uint vcView)
+        public HRESULT OnLayoutChange(TsLayoutCode lcode, [NativeTypeName("TsViewCookie")] uint vcView)
         {
             return ((delegate* unmanaged<ITextStoreACPSinkEx*, TsLayoutCode, uint, int>)(lpVtbl[5]))((ITextStoreACPSinkEx*)Unsafe.AsPointer(ref this), lcode, vcView);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int OnStatusChange([NativeTypeName("DWORD")] uint dwFlags)
+        public HRESULT OnStatusChange([NativeTypeName("DWORD")] uint dwFlags)
         {
             return ((delegate* unmanaged<ITextStoreACPSinkEx*, uint, int>)(lpVtbl[6]))((ITextStoreACPSinkEx*)Unsafe.AsPointer(ref this), dwFlags);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        [return: NativeTypeName("HRESULT")]
-        public int OnAttrsChange([NativeTypeName("LONG")] int acpStart, [NativeTypeName("LONG")] int acpEnd, [NativeTypeName("ULONG")] uint cAttrs, [NativeTypeName("const TS_ATTRID *")] Guid* paAttrs)
+        public HRESULT OnAttrsChange([NativeTypeName("LONG")] int acpStart, [NativeTypeName("LONG")] int acpEnd, [NativeTypeName("ULONG")] uint cAttrs, [NativeTypeName("const TS_ATTRID *")] Guid* paAttrs)
         {
             return ((delegate* unmanaged<ITextStoreACPSinkEx*, int, int, uint, Guid*, int>)(lpVtbl[7]))((ITextStoreACPSinkEx*)Unsafe.AsPointer(ref this), acpStart, acpEnd, cAttrs, paAttrs);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        [return: NativeTypeName("HRESULT")]
-        public int OnLockGranted([NativeTypeName("DWORD")] uint dwLockFlags)
+        public HRESULT OnLockGranted([NativeTypeName("DWORD")] uint dwLockFlags)
         {
             return ((delegate* unmanaged<ITextStoreACPSinkEx*, uint, int>)(lpVtbl[8]))((ITextStoreACPSinkEx*)Unsafe.AsPointer(ref this), dwLockFlags);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        [return: NativeTypeName("HRESULT")]
-        public int OnStartEditTransaction()
+        public HRESULT OnStartEditTransaction()
         {
             return ((delegate* unmanaged<ITextStoreACPSinkEx*, int>)(lpVtbl[9]))((ITextStoreACPSinkEx*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(10)]
-        [return: NativeTypeName("HRESULT")]
-        public int OnEndEditTransaction()
+        public HRESULT OnEndEditTransaction()
         {
             return ((delegate* unmanaged<ITextStoreACPSinkEx*, int>)(lpVtbl[10]))((ITextStoreACPSinkEx*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(11)]
-        [return: NativeTypeName("HRESULT")]
-        public int OnDisconnect()
+        public HRESULT OnDisconnect()
         {
             return ((delegate* unmanaged<ITextStoreACPSinkEx*, int>)(lpVtbl[11]))((ITextStoreACPSinkEx*)Unsafe.AsPointer(ref this));
         }

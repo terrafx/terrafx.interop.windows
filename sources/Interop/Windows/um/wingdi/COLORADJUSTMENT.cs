@@ -31,16 +31,12 @@ namespace TerraFX.Interop
         [NativeTypeName("WORD")]
         public ushort caReferenceWhite;
 
-        [NativeTypeName("SHORT")]
         public short caContrast;
 
-        [NativeTypeName("SHORT")]
         public short caBrightness;
 
-        [NativeTypeName("SHORT")]
         public short caColorfulness;
 
-        [NativeTypeName("SHORT")]
         public short caRedGreenTint;
     }
 }

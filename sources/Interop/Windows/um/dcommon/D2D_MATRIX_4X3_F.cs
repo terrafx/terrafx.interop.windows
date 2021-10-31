@@ -144,40 +144,28 @@ namespace TerraFX.Interop
 
             public partial struct _Anonymous_e__Struct
             {
-                [NativeTypeName("FLOAT")]
                 public float _11;
 
-                [NativeTypeName("FLOAT")]
                 public float _12;
 
-                [NativeTypeName("FLOAT")]
                 public float _13;
 
-                [NativeTypeName("FLOAT")]
                 public float _21;
 
-                [NativeTypeName("FLOAT")]
                 public float _22;
 
-                [NativeTypeName("FLOAT")]
                 public float _23;
 
-                [NativeTypeName("FLOAT")]
                 public float _31;
 
-                [NativeTypeName("FLOAT")]
                 public float _32;
 
-                [NativeTypeName("FLOAT")]
                 public float _33;
 
-                [NativeTypeName("FLOAT")]
                 public float _41;
 
-                [NativeTypeName("FLOAT")]
                 public float _42;
 
-                [NativeTypeName("FLOAT")]
                 public float _43;
             }
         }

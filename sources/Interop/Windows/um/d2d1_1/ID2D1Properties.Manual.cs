@@ -7,8 +7,7 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct ID2D1Properties
     {
-        [return: NativeTypeName("HRESULT")]
-        public int GetValueByName<T>([NativeTypeName("PCWSTR")] ushort* propertyName, [NativeTypeName("T *")] T* value)
+        public HRESULT GetValueByName<T>([NativeTypeName("PCWSTR")] ushort* propertyName, [NativeTypeName("T *")] T* value)
             where T : unmanaged
         {
             return GetValueByName(propertyName, (byte*)value, unchecked((uint)sizeof(T)));
@@ -22,22 +21,19 @@ namespace TerraFX.Interop
             return value;
         }
 
-        [return: NativeTypeName("HRESULT")]
-        public int SetValueByName<T>([NativeTypeName("PCWSTR")] ushort* propertyName, [NativeTypeName("const T &")] T* value)
+        public HRESULT SetValueByName<T>([NativeTypeName("PCWSTR")] ushort* propertyName, [NativeTypeName("const T &")] T* value)
             where T : unmanaged
         {
             return SetValueByName(propertyName, (byte*)value, unchecked((uint)sizeof(T)));
         }
 
-        [return: NativeTypeName("HRESULT")]
-        public int GetValue<U>(U index, [NativeTypeName("BYTE *")] byte* data, [NativeTypeName("UINT32")] uint dataSize)
+        public HRESULT GetValue<U>(U index, byte* data, [NativeTypeName("UINT32")] uint dataSize)
             where U : unmanaged
         {
             return GetValue((uint)(object)index, data, dataSize);
         }
 
-        [return: NativeTypeName("HRESULT")]
-        public int GetValue<T, U>(U index, [NativeTypeName("T *")] T* value)
+        public HRESULT GetValue<T, U>(U index, [NativeTypeName("T *")] T* value)
             where T : unmanaged
             where U : unmanaged
         {
@@ -53,23 +49,20 @@ namespace TerraFX.Interop
             return value;
         }
 
-        [return: NativeTypeName("HRESULT")]
-        public int SetValue<U>(U index, [NativeTypeName("const BYTE *")] byte* data, [NativeTypeName("UINT32")] uint dataSize)
+        public HRESULT SetValue<U>(U index, [NativeTypeName("const BYTE *")] byte* data, [NativeTypeName("UINT32")] uint dataSize)
             where U : unmanaged
         {
             return SetValue((uint)(object)index, data, dataSize);
         }
 
-        [return: NativeTypeName("HRESULT")]
-        public int SetValue<T, U>(U index, [NativeTypeName("const T &")] T* value)
+        public HRESULT SetValue<T, U>(U index, [NativeTypeName("const T &")] T* value)
             where T : unmanaged
             where U : unmanaged
         {
             return SetValue((uint)(object)index, (byte*)value, unchecked((uint)sizeof(T)));
         }
 
-        [return: NativeTypeName("HRESULT")]
-        public int GetPropertyName<U>(U index, [NativeTypeName("PWSTR")] ushort* name, [NativeTypeName("UINT32")] uint nameCount)
+        public HRESULT GetPropertyName<U>(U index, [NativeTypeName("PWSTR")] ushort* name, [NativeTypeName("UINT32")] uint nameCount)
             where U : unmanaged
         {
             return GetPropertyName((uint)(object)index, name, nameCount);
@@ -96,8 +89,7 @@ namespace TerraFX.Interop
             return GetValueSize((uint)(object)index);
         }
     
-        [return: NativeTypeName("HRESULT")]
-        public int GetSubProperties<U>(U index, [NativeTypeName("ID2D1Properties **")] ID2D1Properties** subProperties)
+        public HRESULT GetSubProperties<U>(U index, [NativeTypeName("ID2D1Properties **")] ID2D1Properties** subProperties)
             where U : unmanaged
         {
             return GetSubProperties((uint)(object)index, subProperties);

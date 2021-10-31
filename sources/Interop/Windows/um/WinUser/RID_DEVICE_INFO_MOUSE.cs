@@ -16,7 +16,6 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint dwSampleRate;
 
-        [NativeTypeName("BOOL")]
-        public int fHasHorizontalWheel;
+        public BOOL fHasHorizontalWheel;
     }
 }

@@ -9,7 +9,6 @@ namespace TerraFX.Interop
     {
         public D3D11_COUNTER Counter;
 
-        [NativeTypeName("UINT")]
         public uint MiscFlags;
     }
 }

@@ -23,7 +23,6 @@ namespace TerraFX.Interop
 
         public DML_CONVOLUTION_DIRECTION Direction;
 
-        [NativeTypeName("UINT")]
         public uint DimensionCount;
 
         [NativeTypeName("const UINT *")]
@@ -41,7 +40,6 @@ namespace TerraFX.Interop
         [NativeTypeName("const UINT *")]
         public uint* OutputPadding;
 
-        [NativeTypeName("UINT")]
         public uint GroupCount;
 
         [NativeTypeName("const DML_OPERATOR_DESC *")]

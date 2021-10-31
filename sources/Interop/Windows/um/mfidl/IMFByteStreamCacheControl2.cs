@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IMFByteStreamCacheControl2*, Guid*, void**, int>)(lpVtbl[0]))((IMFByteStreamCacheControl2*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,34 +41,30 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int StopBackgroundTransfer()
+        public HRESULT StopBackgroundTransfer()
         {
             return ((delegate* unmanaged<IMFByteStreamCacheControl2*, int>)(lpVtbl[3]))((IMFByteStreamCacheControl2*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetByteRanges([NativeTypeName("DWORD *")] uint* pcRanges, MF_BYTE_STREAM_CACHE_RANGE** ppRanges)
+        public HRESULT GetByteRanges([NativeTypeName("DWORD *")] uint* pcRanges, MF_BYTE_STREAM_CACHE_RANGE** ppRanges)
         {
             return ((delegate* unmanaged<IMFByteStreamCacheControl2*, uint*, MF_BYTE_STREAM_CACHE_RANGE**, int>)(lpVtbl[4]))((IMFByteStreamCacheControl2*)Unsafe.AsPointer(ref this), pcRanges, ppRanges);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetCacheLimit([NativeTypeName("QWORD")] ulong qwBytes)
+        public HRESULT SetCacheLimit([NativeTypeName("QWORD")] ulong qwBytes)
         {
             return ((delegate* unmanaged<IMFByteStreamCacheControl2*, ulong, int>)(lpVtbl[5]))((IMFByteStreamCacheControl2*)Unsafe.AsPointer(ref this), qwBytes);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int IsBackgroundTransferActive([NativeTypeName("BOOL *")] int* pfActive)
+        public HRESULT IsBackgroundTransferActive(BOOL* pfActive)
         {
-            return ((delegate* unmanaged<IMFByteStreamCacheControl2*, int*, int>)(lpVtbl[6]))((IMFByteStreamCacheControl2*)Unsafe.AsPointer(ref this), pfActive);
+            return ((delegate* unmanaged<IMFByteStreamCacheControl2*, BOOL*, int>)(lpVtbl[6]))((IMFByteStreamCacheControl2*)Unsafe.AsPointer(ref this), pfActive);
         }
     }
 }

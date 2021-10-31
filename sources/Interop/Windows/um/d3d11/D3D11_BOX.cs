@@ -7,22 +7,16 @@ namespace TerraFX.Interop
 {
     public partial struct D3D11_BOX
     {
-        [NativeTypeName("UINT")]
         public uint left;
 
-        [NativeTypeName("UINT")]
         public uint top;
 
-        [NativeTypeName("UINT")]
         public uint front;
 
-        [NativeTypeName("UINT")]
         public uint right;
 
-        [NativeTypeName("UINT")]
         public uint bottom;
 
-        [NativeTypeName("UINT")]
         public uint back;
     }
 }

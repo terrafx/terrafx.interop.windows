@@ -9,8 +9,7 @@ namespace TerraFX.Interop
     {
         public CRYPT_BIT_BLOB SubjectType;
 
-        [NativeTypeName("BOOL")]
-        public int fPathLenConstraint;
+        public BOOL fPathLenConstraint;
 
         [NativeTypeName("DWORD")]
         public uint dwPathLenConstraint;

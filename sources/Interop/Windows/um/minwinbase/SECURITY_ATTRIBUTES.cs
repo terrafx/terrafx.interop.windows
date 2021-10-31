@@ -13,7 +13,6 @@ namespace TerraFX.Interop
         [NativeTypeName("LPVOID")]
         public void* lpSecurityDescriptor;
 
-        [NativeTypeName("BOOL")]
-        public int bInheritHandle;
+        public BOOL bInheritHandle;
     }
 }

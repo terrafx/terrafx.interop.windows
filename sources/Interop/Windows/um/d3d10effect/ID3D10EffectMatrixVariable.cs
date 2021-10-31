@@ -15,8 +15,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("BOOL")]
-        public int IsValid()
+        public BOOL IsValid()
         {
             return ((delegate* unmanaged<ID3D10EffectMatrixVariable*, int>)(lpVtbl[0]))((ID3D10EffectMatrixVariable*)Unsafe.AsPointer(ref this));
         }
@@ -30,15 +29,14 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(2)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetDesc(D3D10_EFFECT_VARIABLE_DESC* pDesc)
+        public HRESULT GetDesc(D3D10_EFFECT_VARIABLE_DESC* pDesc)
         {
             return ((delegate* unmanaged<ID3D10EffectMatrixVariable*, D3D10_EFFECT_VARIABLE_DESC*, int>)(lpVtbl[2]))((ID3D10EffectMatrixVariable*)Unsafe.AsPointer(ref this), pDesc);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        public ID3D10EffectVariable* GetAnnotationByIndex([NativeTypeName("UINT")] uint Index)
+        public ID3D10EffectVariable* GetAnnotationByIndex(uint Index)
         {
             return ((delegate* unmanaged<ID3D10EffectMatrixVariable*, uint, ID3D10EffectVariable*>)(lpVtbl[3]))((ID3D10EffectMatrixVariable*)Unsafe.AsPointer(ref this), Index);
         }
@@ -52,7 +50,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        public ID3D10EffectVariable* GetMemberByIndex([NativeTypeName("UINT")] uint Index)
+        public ID3D10EffectVariable* GetMemberByIndex(uint Index)
         {
             return ((delegate* unmanaged<ID3D10EffectMatrixVariable*, uint, ID3D10EffectVariable*>)(lpVtbl[5]))((ID3D10EffectMatrixVariable*)Unsafe.AsPointer(ref this), Index);
         }
@@ -73,7 +71,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        public ID3D10EffectVariable* GetElement([NativeTypeName("UINT")] uint Index)
+        public ID3D10EffectVariable* GetElement(uint Index)
         {
             return ((delegate* unmanaged<ID3D10EffectMatrixVariable*, uint, ID3D10EffectVariable*>)(lpVtbl[8]))((ID3D10EffectMatrixVariable*)Unsafe.AsPointer(ref this), Index);
         }
@@ -178,80 +176,70 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(23)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetRawValue(void* pData, [NativeTypeName("UINT")] uint Offset, [NativeTypeName("UINT")] uint ByteCount)
+        public HRESULT SetRawValue(void* pData, uint Offset, uint ByteCount)
         {
             return ((delegate* unmanaged<ID3D10EffectMatrixVariable*, void*, uint, uint, int>)(lpVtbl[23]))((ID3D10EffectMatrixVariable*)Unsafe.AsPointer(ref this), pData, Offset, ByteCount);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(24)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetRawValue(void* pData, [NativeTypeName("UINT")] uint Offset, [NativeTypeName("UINT")] uint ByteCount)
+        public HRESULT GetRawValue(void* pData, uint Offset, uint ByteCount)
         {
             return ((delegate* unmanaged<ID3D10EffectMatrixVariable*, void*, uint, uint, int>)(lpVtbl[24]))((ID3D10EffectMatrixVariable*)Unsafe.AsPointer(ref this), pData, Offset, ByteCount);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(25)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetMatrix(float* pData)
+        public HRESULT SetMatrix(float* pData)
         {
             return ((delegate* unmanaged<ID3D10EffectMatrixVariable*, float*, int>)(lpVtbl[25]))((ID3D10EffectMatrixVariable*)Unsafe.AsPointer(ref this), pData);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(26)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetMatrix(float* pData)
+        public HRESULT GetMatrix(float* pData)
         {
             return ((delegate* unmanaged<ID3D10EffectMatrixVariable*, float*, int>)(lpVtbl[26]))((ID3D10EffectMatrixVariable*)Unsafe.AsPointer(ref this), pData);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(27)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetMatrixArray(float* pData, [NativeTypeName("UINT")] uint Offset, [NativeTypeName("UINT")] uint Count)
+        public HRESULT SetMatrixArray(float* pData, uint Offset, uint Count)
         {
             return ((delegate* unmanaged<ID3D10EffectMatrixVariable*, float*, uint, uint, int>)(lpVtbl[27]))((ID3D10EffectMatrixVariable*)Unsafe.AsPointer(ref this), pData, Offset, Count);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(28)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetMatrixArray(float* pData, [NativeTypeName("UINT")] uint Offset, [NativeTypeName("UINT")] uint Count)
+        public HRESULT GetMatrixArray(float* pData, uint Offset, uint Count)
         {
             return ((delegate* unmanaged<ID3D10EffectMatrixVariable*, float*, uint, uint, int>)(lpVtbl[28]))((ID3D10EffectMatrixVariable*)Unsafe.AsPointer(ref this), pData, Offset, Count);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(29)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetMatrixTranspose(float* pData)
+        public HRESULT SetMatrixTranspose(float* pData)
         {
             return ((delegate* unmanaged<ID3D10EffectMatrixVariable*, float*, int>)(lpVtbl[29]))((ID3D10EffectMatrixVariable*)Unsafe.AsPointer(ref this), pData);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(30)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetMatrixTranspose(float* pData)
+        public HRESULT GetMatrixTranspose(float* pData)
         {
             return ((delegate* unmanaged<ID3D10EffectMatrixVariable*, float*, int>)(lpVtbl[30]))((ID3D10EffectMatrixVariable*)Unsafe.AsPointer(ref this), pData);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(31)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetMatrixTransposeArray(float* pData, [NativeTypeName("UINT")] uint Offset, [NativeTypeName("UINT")] uint Count)
+        public HRESULT SetMatrixTransposeArray(float* pData, uint Offset, uint Count)
         {
             return ((delegate* unmanaged<ID3D10EffectMatrixVariable*, float*, uint, uint, int>)(lpVtbl[31]))((ID3D10EffectMatrixVariable*)Unsafe.AsPointer(ref this), pData, Offset, Count);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(32)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetMatrixTransposeArray(float* pData, [NativeTypeName("UINT")] uint Offset, [NativeTypeName("UINT")] uint Count)
+        public HRESULT GetMatrixTransposeArray(float* pData, uint Offset, uint Count)
         {
             return ((delegate* unmanaged<ID3D10EffectMatrixVariable*, float*, uint, uint, int>)(lpVtbl[32]))((ID3D10EffectMatrixVariable*)Unsafe.AsPointer(ref this), pData, Offset, Count);
         }

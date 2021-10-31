@@ -13,7 +13,6 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint dwRegPolicySettings;
 
-        [NativeTypeName("BOOL")]
-        public int fCommercial;
+        public BOOL fCommercial;
     }
 }

@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<ICommDlgBrowser*, Guid*, void**, int>)(lpVtbl[0]))((ICommDlgBrowser*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,24 +41,21 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int OnDefaultCommand(IShellView* ppshv)
+        public HRESULT OnDefaultCommand(IShellView* ppshv)
         {
             return ((delegate* unmanaged<ICommDlgBrowser*, IShellView*, int>)(lpVtbl[3]))((ICommDlgBrowser*)Unsafe.AsPointer(ref this), ppshv);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int OnStateChange(IShellView* ppshv, [NativeTypeName("ULONG")] uint uChange)
+        public HRESULT OnStateChange(IShellView* ppshv, [NativeTypeName("ULONG")] uint uChange)
         {
             return ((delegate* unmanaged<ICommDlgBrowser*, IShellView*, uint, int>)(lpVtbl[4]))((ICommDlgBrowser*)Unsafe.AsPointer(ref this), ppshv, uChange);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int IncludeObject(IShellView* ppshv, [NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl)
+        public HRESULT IncludeObject(IShellView* ppshv, [NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl)
         {
             return ((delegate* unmanaged<ICommDlgBrowser*, IShellView*, ITEMIDLIST*, int>)(lpVtbl[5]))((ICommDlgBrowser*)Unsafe.AsPointer(ref this), ppshv, pidl);
         }

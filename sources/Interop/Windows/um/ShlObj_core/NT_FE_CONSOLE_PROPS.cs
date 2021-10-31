@@ -12,7 +12,6 @@ namespace TerraFX.Interop
     {
         public DATABLOCK_HEADER dbh;
 
-        [NativeTypeName("UINT")]
         public uint uCodePage;
     }
 }

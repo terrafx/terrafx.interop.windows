@@ -22,7 +22,6 @@ namespace TerraFX.Interop
         [NativeTypeName("BOOLEAN [3]")]
         public fixed byte Spare1[3];
 
-        [NativeTypeName("BYTE")]
         public byte Tag;
 
         [NativeTypeName("DWORD")]

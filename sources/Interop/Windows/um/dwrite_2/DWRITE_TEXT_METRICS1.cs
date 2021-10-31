@@ -11,7 +11,6 @@ namespace TerraFX.Interop
     {
         public DWRITE_TEXT_METRICS Base;
 
-        [NativeTypeName("FLOAT")]
         public float heightIncludingTrailingWhitespace;
     }
 }

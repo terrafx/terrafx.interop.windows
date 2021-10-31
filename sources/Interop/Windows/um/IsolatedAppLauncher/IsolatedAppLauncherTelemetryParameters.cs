@@ -9,10 +9,8 @@ namespace TerraFX.Interop
 {
     public partial struct IsolatedAppLauncherTelemetryParameters
     {
-        [NativeTypeName("BOOL")]
-        public int EnableForLaunch;
+        public BOOL EnableForLaunch;
 
-        [NativeTypeName("GUID")]
         public Guid CorrelationGUID;
     }
 }

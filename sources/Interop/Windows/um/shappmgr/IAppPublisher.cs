@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IAppPublisher*, Guid*, void**, int>)(lpVtbl[0]))((IAppPublisher*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,32 +41,28 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetNumberOfCategories([NativeTypeName("DWORD *")] uint* pdwCat)
+        public HRESULT GetNumberOfCategories([NativeTypeName("DWORD *")] uint* pdwCat)
         {
             return ((delegate* unmanaged<IAppPublisher*, uint*, int>)(lpVtbl[3]))((IAppPublisher*)Unsafe.AsPointer(ref this), pdwCat);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetCategories(APPCATEGORYINFOLIST* pAppCategoryList)
+        public HRESULT GetCategories(APPCATEGORYINFOLIST* pAppCategoryList)
         {
             return ((delegate* unmanaged<IAppPublisher*, APPCATEGORYINFOLIST*, int>)(lpVtbl[4]))((IAppPublisher*)Unsafe.AsPointer(ref this), pAppCategoryList);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetNumberOfApps([NativeTypeName("DWORD *")] uint* pdwApps)
+        public HRESULT GetNumberOfApps([NativeTypeName("DWORD *")] uint* pdwApps)
         {
             return ((delegate* unmanaged<IAppPublisher*, uint*, int>)(lpVtbl[5]))((IAppPublisher*)Unsafe.AsPointer(ref this), pdwApps);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int EnumApps([NativeTypeName("GUID *")] Guid* pAppCategoryId, IEnumPublishedApps** ppepa)
+        public HRESULT EnumApps(Guid* pAppCategoryId, IEnumPublishedApps** ppepa)
         {
             return ((delegate* unmanaged<IAppPublisher*, Guid*, IEnumPublishedApps**, int>)(lpVtbl[6]))((IAppPublisher*)Unsafe.AsPointer(ref this), pAppCategoryId, ppepa);
         }

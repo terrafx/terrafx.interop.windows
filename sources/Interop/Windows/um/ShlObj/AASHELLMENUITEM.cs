@@ -11,7 +11,6 @@ namespace TerraFX.Interop
 
         public int iReserved;
 
-        [NativeTypeName("UINT")]
         public uint uiReserved;
 
         [NativeTypeName("LPAASHELLMENUFILENAME")]

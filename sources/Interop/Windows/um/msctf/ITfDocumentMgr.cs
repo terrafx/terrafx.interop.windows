@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<ITfDocumentMgr*, Guid*, void**, int>)(lpVtbl[0]))((ITfDocumentMgr*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,48 +41,42 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int CreateContext([NativeTypeName("TfClientId")] uint tidOwner, [NativeTypeName("DWORD")] uint dwFlags, IUnknown* punk, ITfContext** ppic, [NativeTypeName("TfEditCookie *")] uint* pecTextStore)
+        public HRESULT CreateContext([NativeTypeName("TfClientId")] uint tidOwner, [NativeTypeName("DWORD")] uint dwFlags, IUnknown* punk, ITfContext** ppic, [NativeTypeName("TfEditCookie *")] uint* pecTextStore)
         {
             return ((delegate* unmanaged<ITfDocumentMgr*, uint, uint, IUnknown*, ITfContext**, uint*, int>)(lpVtbl[3]))((ITfDocumentMgr*)Unsafe.AsPointer(ref this), tidOwner, dwFlags, punk, ppic, pecTextStore);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int Push(ITfContext* pic)
+        public HRESULT Push(ITfContext* pic)
         {
             return ((delegate* unmanaged<ITfDocumentMgr*, ITfContext*, int>)(lpVtbl[4]))((ITfDocumentMgr*)Unsafe.AsPointer(ref this), pic);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int Pop([NativeTypeName("DWORD")] uint dwFlags)
+        public HRESULT Pop([NativeTypeName("DWORD")] uint dwFlags)
         {
             return ((delegate* unmanaged<ITfDocumentMgr*, uint, int>)(lpVtbl[5]))((ITfDocumentMgr*)Unsafe.AsPointer(ref this), dwFlags);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetTop(ITfContext** ppic)
+        public HRESULT GetTop(ITfContext** ppic)
         {
             return ((delegate* unmanaged<ITfDocumentMgr*, ITfContext**, int>)(lpVtbl[6]))((ITfDocumentMgr*)Unsafe.AsPointer(ref this), ppic);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetBase(ITfContext** ppic)
+        public HRESULT GetBase(ITfContext** ppic)
         {
             return ((delegate* unmanaged<ITfDocumentMgr*, ITfContext**, int>)(lpVtbl[7]))((ITfDocumentMgr*)Unsafe.AsPointer(ref this), ppic);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        [return: NativeTypeName("HRESULT")]
-        public int EnumContexts(IEnumTfContexts** ppEnum)
+        public HRESULT EnumContexts(IEnumTfContexts** ppEnum)
         {
             return ((delegate* unmanaged<ITfDocumentMgr*, IEnumTfContexts**, int>)(lpVtbl[8]))((ITfDocumentMgr*)Unsafe.AsPointer(ref this), ppEnum);
         }

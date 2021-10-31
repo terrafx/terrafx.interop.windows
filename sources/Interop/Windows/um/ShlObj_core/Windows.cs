@@ -14,8 +14,7 @@ namespace TerraFX.Interop
     public static unsafe partial class Windows
     {
         [DllImport("shell32", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int SHGetMalloc(IMalloc** ppMalloc);
+        public static extern HRESULT SHGetMalloc(IMalloc** ppMalloc);
 
         [DllImport("shell32", ExactSpelling = true)]
         public static extern void* SHAlloc([NativeTypeName("SIZE_T")] nuint cb);
@@ -49,7 +48,6 @@ namespace TerraFX.Interop
         public static extern ITEMIDLIST* ILGetNext([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl);
 
         [DllImport("shell32", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
         public static extern uint ILGetSize([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl);
 
         [DllImport("shell32", ExactSpelling = true)]
@@ -61,24 +59,19 @@ namespace TerraFX.Interop
         public static extern ITEMIDLIST* ILFindLastID([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl);
 
         [DllImport("shell32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int ILRemoveLastID([NativeTypeName("LPITEMIDLIST")] ITEMIDLIST* pidl);
+        public static extern BOOL ILRemoveLastID([NativeTypeName("LPITEMIDLIST")] ITEMIDLIST* pidl);
 
         [DllImport("shell32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int ILIsEqual([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl1, [NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl2);
+        public static extern BOOL ILIsEqual([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl1, [NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl2);
 
         [DllImport("shell32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int ILIsParent([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl1, [NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl2, [NativeTypeName("BOOL")] int fImmediate);
+        public static extern BOOL ILIsParent([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl1, [NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl2, BOOL fImmediate);
 
         [DllImport("shell32", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int ILSaveToStream(IStream* pstm, [NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl);
+        public static extern HRESULT ILSaveToStream(IStream* pstm, [NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl);
 
         [DllImport("windows.storage.dll", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int ILLoadFromStreamEx(IStream* pstm, [NativeTypeName("LPITEMIDLIST *")] ITEMIDLIST** pidl);
+        public static extern HRESULT ILLoadFromStreamEx(IStream* pstm, [NativeTypeName("LPITEMIDLIST *")] ITEMIDLIST** pidl);
 
         [DllImport("shell32", ExactSpelling = true)]
         [return: NativeTypeName("LPITEMIDLIST")]
@@ -89,112 +82,91 @@ namespace TerraFX.Interop
         public static extern ITEMIDLIST* ILCreateFromPathW([NativeTypeName("PCWSTR")] ushort* pszPath);
 
         [DllImport("shell32", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int SHILCreateFromPath([NativeTypeName("PCWSTR")] ushort* pszPath, [NativeTypeName("LPITEMIDLIST *")] ITEMIDLIST** ppidl, [NativeTypeName("DWORD *")] uint* rgfInOut);
+        public static extern HRESULT SHILCreateFromPath([NativeTypeName("PCWSTR")] ushort* pszPath, [NativeTypeName("LPITEMIDLIST *")] ITEMIDLIST** ppidl, [NativeTypeName("DWORD *")] uint* rgfInOut);
 
         [DllImport("shell32", ExactSpelling = true)]
         [return: NativeTypeName("LPITEMIDLIST")]
-        public static extern ITEMIDLIST* ILAppendID([NativeTypeName("LPITEMIDLIST")] ITEMIDLIST* pidl, [NativeTypeName("LPCSHITEMID")] SHITEMID* pmkid, [NativeTypeName("BOOL")] int fAppend);
+        public static extern ITEMIDLIST* ILAppendID([NativeTypeName("LPITEMIDLIST")] ITEMIDLIST* pidl, [NativeTypeName("LPCSHITEMID")] SHITEMID* pmkid, BOOL fAppend);
 
         public const int GPFIDL_DEFAULT = 0x0000;
         public const int GPFIDL_ALTNAME = 0x0001;
         public const int GPFIDL_UNCPRINTER = 0x0002;
 
         [DllImport("shell32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SHGetPathFromIDListEx([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl, [NativeTypeName("PWSTR")] ushort* pszPath, [NativeTypeName("DWORD")] uint cchPath, [NativeTypeName("GPFIDL_FLAGS")] int uOpts);
+        public static extern BOOL SHGetPathFromIDListEx([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl, [NativeTypeName("PWSTR")] ushort* pszPath, [NativeTypeName("DWORD")] uint cchPath, [NativeTypeName("GPFIDL_FLAGS")] int uOpts);
 
         [DllImport("shell32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SHGetPathFromIDListA([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl, [NativeTypeName("LPSTR")] sbyte* pszPath);
+        public static extern BOOL SHGetPathFromIDListA([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl, [NativeTypeName("LPSTR")] sbyte* pszPath);
 
         [DllImport("shell32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SHGetPathFromIDListW([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl, [NativeTypeName("LPWSTR")] ushort* pszPath);
+        public static extern BOOL SHGetPathFromIDListW([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl, [NativeTypeName("LPWSTR")] ushort* pszPath);
 
         [DllImport("shell32", ExactSpelling = true)]
-        public static extern int SHCreateDirectory([NativeTypeName("HWND")] IntPtr hwnd, [NativeTypeName("PCWSTR")] ushort* pszPath);
+        public static extern int SHCreateDirectory(HWND hwnd, [NativeTypeName("PCWSTR")] ushort* pszPath);
 
         [DllImport("shell32", ExactSpelling = true)]
-        public static extern int SHCreateDirectoryExA([NativeTypeName("HWND")] IntPtr hwnd, [NativeTypeName("LPCSTR")] sbyte* pszPath, [NativeTypeName("const SECURITY_ATTRIBUTES *")] SECURITY_ATTRIBUTES* psa);
+        public static extern int SHCreateDirectoryExA(HWND hwnd, [NativeTypeName("LPCSTR")] sbyte* pszPath, [NativeTypeName("const SECURITY_ATTRIBUTES *")] SECURITY_ATTRIBUTES* psa);
 
         [DllImport("shell32", ExactSpelling = true)]
-        public static extern int SHCreateDirectoryExW([NativeTypeName("HWND")] IntPtr hwnd, [NativeTypeName("LPCWSTR")] ushort* pszPath, [NativeTypeName("const SECURITY_ATTRIBUTES *")] SECURITY_ATTRIBUTES* psa);
+        public static extern int SHCreateDirectoryExW(HWND hwnd, [NativeTypeName("LPCWSTR")] ushort* pszPath, [NativeTypeName("const SECURITY_ATTRIBUTES *")] SECURITY_ATTRIBUTES* psa);
 
         [DllImport("shell32", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int SHOpenFolderAndSelectItems([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidlFolder, [NativeTypeName("UINT")] uint cidl, [NativeTypeName("LPCITEMIDLIST *")] ITEMIDLIST** apidl, [NativeTypeName("DWORD")] uint dwFlags);
+        public static extern HRESULT SHOpenFolderAndSelectItems([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidlFolder, uint cidl, [NativeTypeName("LPCITEMIDLIST *")] ITEMIDLIST** apidl, [NativeTypeName("DWORD")] uint dwFlags);
 
         [DllImport("shell32", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int SHCreateShellItem([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidlParent, IShellFolder* psfParent, [NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl, IShellItem** ppsi);
+        public static extern HRESULT SHCreateShellItem([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidlParent, IShellFolder* psfParent, [NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl, IShellItem** ppsi);
 
         [DllImport("shell32", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int SHGetSpecialFolderLocation([NativeTypeName("HWND")] IntPtr hwnd, int csidl, [NativeTypeName("LPITEMIDLIST *")] ITEMIDLIST** ppidl);
+        public static extern HRESULT SHGetSpecialFolderLocation(HWND hwnd, int csidl, [NativeTypeName("LPITEMIDLIST *")] ITEMIDLIST** ppidl);
 
         [DllImport("shell32", ExactSpelling = true)]
         [return: NativeTypeName("LPITEMIDLIST")]
-        public static extern ITEMIDLIST* SHCloneSpecialIDList([NativeTypeName("HWND")] IntPtr hwnd, int csidl, [NativeTypeName("BOOL")] int fCreate);
+        public static extern ITEMIDLIST* SHCloneSpecialIDList(HWND hwnd, int csidl, BOOL fCreate);
 
         [DllImport("shell32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SHGetSpecialFolderPathA([NativeTypeName("HWND")] IntPtr hwnd, [NativeTypeName("LPSTR")] sbyte* pszPath, int csidl, [NativeTypeName("BOOL")] int fCreate);
+        public static extern BOOL SHGetSpecialFolderPathA(HWND hwnd, [NativeTypeName("LPSTR")] sbyte* pszPath, int csidl, BOOL fCreate);
 
         [DllImport("shell32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SHGetSpecialFolderPathW([NativeTypeName("HWND")] IntPtr hwnd, [NativeTypeName("LPWSTR")] ushort* pszPath, int csidl, [NativeTypeName("BOOL")] int fCreate);
+        public static extern BOOL SHGetSpecialFolderPathW(HWND hwnd, [NativeTypeName("LPWSTR")] ushort* pszPath, int csidl, BOOL fCreate);
 
         [DllImport("shell32", ExactSpelling = true)]
         public static extern void SHFlushSFCache();
 
         [DllImport("shell32", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int SHGetFolderPathA([NativeTypeName("HWND")] IntPtr hwnd, int csidl, [NativeTypeName("HANDLE")] IntPtr hToken, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LPSTR")] sbyte* pszPath);
+        public static extern HRESULT SHGetFolderPathA(HWND hwnd, int csidl, HANDLE hToken, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LPSTR")] sbyte* pszPath);
 
         [DllImport("shell32", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int SHGetFolderPathW([NativeTypeName("HWND")] IntPtr hwnd, int csidl, [NativeTypeName("HANDLE")] IntPtr hToken, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LPWSTR")] ushort* pszPath);
+        public static extern HRESULT SHGetFolderPathW(HWND hwnd, int csidl, HANDLE hToken, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LPWSTR")] ushort* pszPath);
 
         [DllImport("shell32", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int SHGetFolderLocation([NativeTypeName("HWND")] IntPtr hwnd, int csidl, [NativeTypeName("HANDLE")] IntPtr hToken, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LPITEMIDLIST *")] ITEMIDLIST** ppidl);
+        public static extern HRESULT SHGetFolderLocation(HWND hwnd, int csidl, HANDLE hToken, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LPITEMIDLIST *")] ITEMIDLIST** ppidl);
 
         [DllImport("shell32", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int SHSetFolderPathA(int csidl, [NativeTypeName("HANDLE")] IntPtr hToken, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LPCSTR")] sbyte* pszPath);
+        public static extern HRESULT SHSetFolderPathA(int csidl, HANDLE hToken, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LPCSTR")] sbyte* pszPath);
 
         [DllImport("shell32", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int SHSetFolderPathW(int csidl, [NativeTypeName("HANDLE")] IntPtr hToken, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LPCWSTR")] ushort* pszPath);
+        public static extern HRESULT SHSetFolderPathW(int csidl, HANDLE hToken, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LPCWSTR")] ushort* pszPath);
 
         [DllImport("shell32", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int SHGetFolderPathAndSubDirA([NativeTypeName("HWND")] IntPtr hwnd, int csidl, [NativeTypeName("HANDLE")] IntPtr hToken, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LPCSTR")] sbyte* pszSubDir, [NativeTypeName("LPSTR")] sbyte* pszPath);
+        public static extern HRESULT SHGetFolderPathAndSubDirA(HWND hwnd, int csidl, HANDLE hToken, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LPCSTR")] sbyte* pszSubDir, [NativeTypeName("LPSTR")] sbyte* pszPath);
 
         [DllImport("shell32", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int SHGetFolderPathAndSubDirW([NativeTypeName("HWND")] IntPtr hwnd, int csidl, [NativeTypeName("HANDLE")] IntPtr hToken, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LPCWSTR")] ushort* pszSubDir, [NativeTypeName("LPWSTR")] ushort* pszPath);
+        public static extern HRESULT SHGetFolderPathAndSubDirW(HWND hwnd, int csidl, HANDLE hToken, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LPCWSTR")] ushort* pszSubDir, [NativeTypeName("LPWSTR")] ushort* pszPath);
 
         [DllImport("shell32", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int SHGetKnownFolderIDList([NativeTypeName("const KNOWNFOLDERID &")] Guid* rfid, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("HANDLE")] IntPtr hToken, [NativeTypeName("LPITEMIDLIST *")] ITEMIDLIST** ppidl);
+        public static extern HRESULT SHGetKnownFolderIDList([NativeTypeName("const KNOWNFOLDERID &")] Guid* rfid, [NativeTypeName("DWORD")] uint dwFlags, HANDLE hToken, [NativeTypeName("LPITEMIDLIST *")] ITEMIDLIST** ppidl);
 
         [DllImport("shell32", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int SHSetKnownFolderPath([NativeTypeName("const KNOWNFOLDERID &")] Guid* rfid, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("HANDLE")] IntPtr hToken, [NativeTypeName("PCWSTR")] ushort* pszPath);
+        public static extern HRESULT SHSetKnownFolderPath([NativeTypeName("const KNOWNFOLDERID &")] Guid* rfid, [NativeTypeName("DWORD")] uint dwFlags, HANDLE hToken, [NativeTypeName("PCWSTR")] ushort* pszPath);
 
         [DllImport("shell32", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int SHGetKnownFolderPath([NativeTypeName("const KNOWNFOLDERID &")] Guid* rfid, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("HANDLE")] IntPtr hToken, [NativeTypeName("PWSTR *")] ushort** ppszPath);
+        public static extern HRESULT SHGetKnownFolderPath([NativeTypeName("const KNOWNFOLDERID &")] Guid* rfid, [NativeTypeName("DWORD")] uint dwFlags, HANDLE hToken, [NativeTypeName("PWSTR *")] ushort** ppszPath);
 
         [DllImport("shell32", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int SHGetKnownFolderItem([NativeTypeName("const KNOWNFOLDERID &")] Guid* rfid, KNOWN_FOLDER_FLAG flags, [NativeTypeName("HANDLE")] IntPtr hToken, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
+        public static extern HRESULT SHGetKnownFolderItem([NativeTypeName("const KNOWNFOLDERID &")] Guid* rfid, KNOWN_FOLDER_FLAG flags, HANDLE hToken, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
 
         [DllImport("shell32", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int SHGetSetFolderCustomSettings([NativeTypeName("LPSHFOLDERCUSTOMSETTINGS")] SHFOLDERCUSTOMSETTINGS* pfcs, [NativeTypeName("PCWSTR")] ushort* pszPath, [NativeTypeName("DWORD")] uint dwReadWrite);
+        public static extern HRESULT SHGetSetFolderCustomSettings([NativeTypeName("LPSHFOLDERCUSTOMSETTINGS")] SHFOLDERCUSTOMSETTINGS* pfcs, [NativeTypeName("PCWSTR")] ushort* pszPath, [NativeTypeName("DWORD")] uint dwReadWrite);
 
         [DllImport("shell32", ExactSpelling = true)]
         [return: NativeTypeName("LPITEMIDLIST")]
@@ -205,8 +177,7 @@ namespace TerraFX.Interop
         public static extern ITEMIDLIST* SHBrowseForFolderW([NativeTypeName("LPBROWSEINFOW")] BROWSEINFOW* lpbi);
 
         [DllImport("shell32", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int SHLoadInProc([NativeTypeName("const IID &")] Guid* rclsid);
+        public static extern HRESULT SHLoadInProc([NativeTypeName("const IID &")] Guid* rclsid);
 
         public const int ISHCUTCMDID_DOWNLOADICON = 0;
         public const int ISHCUTCMDID_INTSHORTCUTCREATE = 1;
@@ -214,296 +185,244 @@ namespace TerraFX.Interop
         public const int ISHCUTCMDID_SETUSERAWURL = 3;
 
         [DllImport("shell32", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int SHGetDesktopFolder(IShellFolder** ppshf);
+        public static extern HRESULT SHGetDesktopFolder(IShellFolder** ppshf);
 
         [DllImport("shell32", ExactSpelling = true)]
-        public static extern void SHChangeNotify([NativeTypeName("LONG")] int wEventId, [NativeTypeName("UINT")] uint uFlags, [NativeTypeName("LPCVOID")] void* dwItem1, [NativeTypeName("LPCVOID")] void* dwItem2);
+        public static extern void SHChangeNotify([NativeTypeName("LONG")] int wEventId, uint uFlags, [NativeTypeName("LPCVOID")] void* dwItem1, [NativeTypeName("LPCVOID")] void* dwItem2);
 
         [DllImport("shell32", ExactSpelling = true)]
-        public static extern void SHAddToRecentDocs([NativeTypeName("UINT")] uint uFlags, [NativeTypeName("LPCVOID")] void* pv);
+        public static extern void SHAddToRecentDocs(uint uFlags, [NativeTypeName("LPCVOID")] void* pv);
 
         [DllImport("shell32", ExactSpelling = true)]
         public static extern int SHHandleUpdateImage([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidlExtra);
 
         [DllImport("shell32", ExactSpelling = true)]
-        public static extern void SHUpdateImageA([NativeTypeName("LPCSTR")] sbyte* pszHashItem, int iIndex, [NativeTypeName("UINT")] uint uFlags, int iImageIndex);
+        public static extern void SHUpdateImageA([NativeTypeName("LPCSTR")] sbyte* pszHashItem, int iIndex, uint uFlags, int iImageIndex);
 
         [DllImport("shell32", ExactSpelling = true)]
-        public static extern void SHUpdateImageW([NativeTypeName("LPCWSTR")] ushort* pszHashItem, int iIndex, [NativeTypeName("UINT")] uint uFlags, int iImageIndex);
+        public static extern void SHUpdateImageW([NativeTypeName("LPCWSTR")] ushort* pszHashItem, int iIndex, uint uFlags, int iImageIndex);
 
         [DllImport("shell32", ExactSpelling = true)]
         [return: NativeTypeName("ULONG")]
-        public static extern uint SHChangeNotifyRegister([NativeTypeName("HWND")] IntPtr hwnd, int fSources, [NativeTypeName("LONG")] int fEvents, [NativeTypeName("UINT")] uint wMsg, int cEntries, [NativeTypeName("const SHChangeNotifyEntry *")] SHChangeNotifyEntry* pshcne);
+        public static extern uint SHChangeNotifyRegister(HWND hwnd, int fSources, [NativeTypeName("LONG")] int fEvents, uint wMsg, int cEntries, [NativeTypeName("const SHChangeNotifyEntry *")] SHChangeNotifyEntry* pshcne);
 
         [DllImport("shell32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SHChangeNotifyDeregister([NativeTypeName("ULONG")] uint ulID);
+        public static extern BOOL SHChangeNotifyDeregister([NativeTypeName("ULONG")] uint ulID);
 
         [DllImport("shell32", ExactSpelling = true)]
-        [return: NativeTypeName("HANDLE")]
-        public static extern IntPtr SHChangeNotification_Lock([NativeTypeName("HANDLE")] IntPtr hChange, [NativeTypeName("DWORD")] uint dwProcId, [NativeTypeName("LPITEMIDLIST **")] ITEMIDLIST*** pppidl, [NativeTypeName("LONG *")] int* plEvent);
+        public static extern HANDLE SHChangeNotification_Lock(HANDLE hChange, [NativeTypeName("DWORD")] uint dwProcId, [NativeTypeName("LPITEMIDLIST **")] ITEMIDLIST*** pppidl, [NativeTypeName("LONG *")] int* plEvent);
 
         [DllImport("shell32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SHChangeNotification_Unlock([NativeTypeName("HANDLE")] IntPtr hLock);
+        public static extern BOOL SHChangeNotification_Unlock(HANDLE hLock);
 
         [DllImport("shell32", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int SHGetRealIDL(IShellFolder* psf, [NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidlSimple, [NativeTypeName("LPITEMIDLIST *")] ITEMIDLIST** ppidlReal);
+        public static extern HRESULT SHGetRealIDL(IShellFolder* psf, [NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidlSimple, [NativeTypeName("LPITEMIDLIST *")] ITEMIDLIST** ppidlReal);
 
         [DllImport("shell32", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int SHGetInstanceExplorer(IUnknown** ppunk);
+        public static extern HRESULT SHGetInstanceExplorer(IUnknown** ppunk);
 
         [DllImport("shell32", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int SHGetDataFromIDListA(IShellFolder* psf, [NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl, int nFormat, void* pv, int cb);
+        public static extern HRESULT SHGetDataFromIDListA(IShellFolder* psf, [NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl, int nFormat, void* pv, int cb);
 
         [DllImport("shell32", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int SHGetDataFromIDListW(IShellFolder* psf, [NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl, int nFormat, void* pv, int cb);
+        public static extern HRESULT SHGetDataFromIDListW(IShellFolder* psf, [NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl, int nFormat, void* pv, int cb);
 
         [DllImport("shell32", ExactSpelling = true)]
-        public static extern int RestartDialog([NativeTypeName("HWND")] IntPtr hwnd, [NativeTypeName("PCWSTR")] ushort* pszPrompt, [NativeTypeName("DWORD")] uint dwReturn);
+        public static extern int RestartDialog(HWND hwnd, [NativeTypeName("PCWSTR")] ushort* pszPrompt, [NativeTypeName("DWORD")] uint dwReturn);
 
         [DllImport("shell32", ExactSpelling = true)]
-        public static extern int RestartDialogEx([NativeTypeName("HWND")] IntPtr hwnd, [NativeTypeName("PCWSTR")] ushort* pszPrompt, [NativeTypeName("DWORD")] uint dwReturn, [NativeTypeName("DWORD")] uint dwReasonCode);
+        public static extern int RestartDialogEx(HWND hwnd, [NativeTypeName("PCWSTR")] ushort* pszPrompt, [NativeTypeName("DWORD")] uint dwReturn, [NativeTypeName("DWORD")] uint dwReasonCode);
 
         [DllImport("shell32", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int SHCoCreateInstance([NativeTypeName("PCWSTR")] ushort* pszCLSID, [NativeTypeName("const CLSID *")] Guid* pclsid, IUnknown* pUnkOuter, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
+        public static extern HRESULT SHCoCreateInstance([NativeTypeName("PCWSTR")] ushort* pszCLSID, [NativeTypeName("const CLSID *")] Guid* pclsid, IUnknown* pUnkOuter, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
 
         [DllImport("shell32", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int SHCreateDataObject([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidlFolder, [NativeTypeName("UINT")] uint cidl, [NativeTypeName("LPCITEMIDLIST *")] ITEMIDLIST** apidl, IDataObject* pdtInner, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
+        public static extern HRESULT SHCreateDataObject([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidlFolder, uint cidl, [NativeTypeName("LPCITEMIDLIST *")] ITEMIDLIST** apidl, IDataObject* pdtInner, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
 
         [DllImport("shell32", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int CIDLData_CreateFromIDArray([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidlFolder, [NativeTypeName("UINT")] uint cidl, [NativeTypeName("LPCITEMIDLIST *")] ITEMIDLIST** apidl, IDataObject** ppdtobj);
+        public static extern HRESULT CIDLData_CreateFromIDArray([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidlFolder, uint cidl, [NativeTypeName("LPCITEMIDLIST *")] ITEMIDLIST** apidl, IDataObject** ppdtobj);
 
         [DllImport("shell32", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int SHCreateStdEnumFmtEtc([NativeTypeName("UINT")] uint cfmt, [NativeTypeName("const FORMATETC []")] FORMATETC* afmt, IEnumFORMATETC** ppenumFormatEtc);
+        public static extern HRESULT SHCreateStdEnumFmtEtc(uint cfmt, [NativeTypeName("const FORMATETC []")] FORMATETC* afmt, IEnumFORMATETC** ppenumFormatEtc);
 
         [DllImport("shell32", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int SHDoDragDrop([NativeTypeName("HWND")] IntPtr hwnd, IDataObject* pdata, IDropSource* pdsrc, [NativeTypeName("DWORD")] uint dwEffect, [NativeTypeName("DWORD *")] uint* pdwEffect);
+        public static extern HRESULT SHDoDragDrop(HWND hwnd, IDataObject* pdata, IDropSource* pdsrc, [NativeTypeName("DWORD")] uint dwEffect, [NativeTypeName("DWORD *")] uint* pdwEffect);
 
         [DllImport("shell32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int DAD_SetDragImage([NativeTypeName("HIMAGELIST")] IntPtr him, POINT* pptOffset);
+        public static extern BOOL DAD_SetDragImage(HIMAGELIST him, POINT* pptOffset);
 
         [DllImport("shell32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int DAD_DragEnterEx([NativeTypeName("HWND")] IntPtr hwndTarget, [NativeTypeName("const POINT")] POINT ptStart);
+        public static extern BOOL DAD_DragEnterEx(HWND hwndTarget, [NativeTypeName("const POINT")] POINT ptStart);
 
         [DllImport("shell32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int DAD_DragEnterEx2([NativeTypeName("HWND")] IntPtr hwndTarget, [NativeTypeName("const POINT")] POINT ptStart, IDataObject* pdtObject);
+        public static extern BOOL DAD_DragEnterEx2(HWND hwndTarget, [NativeTypeName("const POINT")] POINT ptStart, IDataObject* pdtObject);
 
         [DllImport("shell32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int DAD_ShowDragImage([NativeTypeName("BOOL")] int fShow);
+        public static extern BOOL DAD_ShowDragImage(BOOL fShow);
 
         [DllImport("shell32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int DAD_DragMove(POINT pt);
+        public static extern BOOL DAD_DragMove(POINT pt);
 
         [DllImport("shell32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int DAD_DragLeave();
+        public static extern BOOL DAD_DragLeave();
 
         [DllImport("shell32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int DAD_AutoScroll([NativeTypeName("HWND")] IntPtr hwnd, AUTO_SCROLL_DATA* pad, [NativeTypeName("const POINT *")] POINT* pptNow);
+        public static extern BOOL DAD_AutoScroll(HWND hwnd, AUTO_SCROLL_DATA* pad, [NativeTypeName("const POINT *")] POINT* pptNow);
 
         [DllImport("shell32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int ReadCabinetState(CABINETSTATE* pcs, int cLength);
+        public static extern BOOL ReadCabinetState(CABINETSTATE* pcs, int cLength);
 
         [DllImport("shell32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int WriteCabinetState(CABINETSTATE* pcs);
+        public static extern BOOL WriteCabinetState(CABINETSTATE* pcs);
 
         [DllImport("shell32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int PathMakeUniqueName([NativeTypeName("PWSTR")] ushort* pszUniqueName, [NativeTypeName("UINT")] uint cchMax, [NativeTypeName("PCWSTR")] ushort* pszTemplate, [NativeTypeName("PCWSTR")] ushort* pszLongPlate, [NativeTypeName("PCWSTR")] ushort* pszDir);
+        public static extern BOOL PathMakeUniqueName([NativeTypeName("PWSTR")] ushort* pszUniqueName, uint cchMax, [NativeTypeName("PCWSTR")] ushort* pszTemplate, [NativeTypeName("PCWSTR")] ushort* pszLongPlate, [NativeTypeName("PCWSTR")] ushort* pszDir);
 
         [DllImport("shell32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int PathIsExe([NativeTypeName("PCWSTR")] ushort* pszPath);
+        public static extern BOOL PathIsExe([NativeTypeName("PCWSTR")] ushort* pszPath);
 
         [DllImport("shell32", ExactSpelling = true)]
         public static extern int PathCleanupSpec([NativeTypeName("PCWSTR")] ushort* pszDir, [NativeTypeName("PWSTR")] ushort* pszSpec);
 
         [DllImport("shell32", ExactSpelling = true, SetLastError = true)]
-        public static extern int PathResolve([NativeTypeName("PWSTR")] ushort* pszPath, [NativeTypeName("PZPCWSTR")] ushort** dirs, [NativeTypeName("UINT")] uint fFlags);
+        public static extern int PathResolve([NativeTypeName("PWSTR")] ushort* pszPath, [NativeTypeName("PZPCWSTR")] ushort** dirs, uint fFlags);
 
         [DllImport("shell32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int GetFileNameFromBrowse([NativeTypeName("HWND")] IntPtr hwnd, [NativeTypeName("PWSTR")] ushort* pszFilePath, [NativeTypeName("UINT")] uint cchFilePath, [NativeTypeName("PCWSTR")] ushort* pszWorkingDir, [NativeTypeName("PCWSTR")] ushort* pszDefExt, [NativeTypeName("PCWSTR")] ushort* pszFilters, [NativeTypeName("PCWSTR")] ushort* pszTitle);
+        public static extern BOOL GetFileNameFromBrowse(HWND hwnd, [NativeTypeName("PWSTR")] ushort* pszFilePath, uint cchFilePath, [NativeTypeName("PCWSTR")] ushort* pszWorkingDir, [NativeTypeName("PCWSTR")] ushort* pszDefExt, [NativeTypeName("PCWSTR")] ushort* pszFilters, [NativeTypeName("PCWSTR")] ushort* pszTitle);
 
         [DllImport("shell32", ExactSpelling = true)]
         public static extern int DriveType(int iDrive);
 
         [DllImport("shell32", ExactSpelling = true)]
-        public static extern int RealDriveType(int iDrive, [NativeTypeName("BOOL")] int fOKToHitNet);
+        public static extern int RealDriveType(int iDrive, BOOL fOKToHitNet);
 
         [DllImport("shell32", ExactSpelling = true)]
         public static extern int IsNetDrive(int iDrive);
 
         [DllImport("shell32", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
-        public static extern uint Shell_MergeMenus([NativeTypeName("HMENU")] IntPtr hmDst, [NativeTypeName("HMENU")] IntPtr hmSrc, [NativeTypeName("UINT")] uint uInsert, [NativeTypeName("UINT")] uint uIDAdjust, [NativeTypeName("UINT")] uint uIDAdjustMax, [NativeTypeName("ULONG")] uint uFlags);
+        public static extern uint Shell_MergeMenus(HMENU hmDst, HMENU hmSrc, uint uInsert, uint uIDAdjust, uint uIDAdjustMax, [NativeTypeName("ULONG")] uint uFlags);
 
         [DllImport("shell32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SHObjectProperties([NativeTypeName("HWND")] IntPtr hwnd, [NativeTypeName("DWORD")] uint shopObjectType, [NativeTypeName("PCWSTR")] ushort* pszObjectName, [NativeTypeName("PCWSTR")] ushort* pszPropertyPage);
+        public static extern BOOL SHObjectProperties(HWND hwnd, [NativeTypeName("DWORD")] uint shopObjectType, [NativeTypeName("PCWSTR")] ushort* pszObjectName, [NativeTypeName("PCWSTR")] ushort* pszPropertyPage);
 
         [DllImport("shell32", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
-        public static extern uint SHFormatDrive([NativeTypeName("HWND")] IntPtr hwnd, [NativeTypeName("UINT")] uint drive, [NativeTypeName("UINT")] uint fmtID, [NativeTypeName("UINT")] uint options);
+        public static extern uint SHFormatDrive(HWND hwnd, uint drive, uint fmtID, uint options);
 
         [DllImport("shell32", ExactSpelling = true)]
-        public static extern void SHDestroyPropSheetExtArray([NativeTypeName("HPSXA")] IntPtr hpsxa);
+        public static extern void SHDestroyPropSheetExtArray(HPSXA hpsxa);
 
         [DllImport("shell32", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
-        public static extern uint SHAddFromPropSheetExtArray([NativeTypeName("HPSXA")] IntPtr hpsxa, [NativeTypeName("LPFNADDPROPSHEETPAGE")] delegate* unmanaged<IntPtr, nint, int> lpfnAddPage, [NativeTypeName("LPARAM")] nint lParam);
+        public static extern uint SHAddFromPropSheetExtArray(HPSXA hpsxa, [NativeTypeName("LPFNADDPROPSHEETPAGE")] delegate* unmanaged<HPROPSHEETPAGE, nint, BOOL> lpfnAddPage, [NativeTypeName("LPARAM")] nint lParam);
 
         [DllImport("shell32", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
-        public static extern uint SHReplaceFromPropSheetExtArray([NativeTypeName("HPSXA")] IntPtr hpsxa, [NativeTypeName("UINT")] uint uPageID, [NativeTypeName("LPFNADDPROPSHEETPAGE")] delegate* unmanaged<IntPtr, nint, int> lpfnReplaceWith, [NativeTypeName("LPARAM")] nint lParam);
+        public static extern uint SHReplaceFromPropSheetExtArray(HPSXA hpsxa, uint uPageID, [NativeTypeName("LPFNADDPROPSHEETPAGE")] delegate* unmanaged<HPROPSHEETPAGE, nint, BOOL> lpfnReplaceWith, [NativeTypeName("LPARAM")] nint lParam);
 
         [DllImport("shell32", ExactSpelling = true)]
-        public static extern IStream* OpenRegStream([NativeTypeName("HKEY")] IntPtr hkey, [NativeTypeName("PCWSTR")] ushort* pszSubkey, [NativeTypeName("PCWSTR")] ushort* pszValue, [NativeTypeName("DWORD")] uint grfMode);
+        public static extern IStream* OpenRegStream(HKEY hkey, [NativeTypeName("PCWSTR")] ushort* pszSubkey, [NativeTypeName("PCWSTR")] ushort* pszValue, [NativeTypeName("DWORD")] uint grfMode);
 
         [DllImport("shell32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SHFindFiles([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidlFolder, [NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidlSaveFile);
+        public static extern BOOL SHFindFiles([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidlFolder, [NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidlSaveFile);
 
         [DllImport("shell32", ExactSpelling = true)]
         public static extern void PathGetShortPath([NativeTypeName("PWSTR")] ushort* pszLongPath);
 
         [DllImport("shell32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int PathYetAnotherMakeUniqueName([NativeTypeName("PWSTR")] ushort* pszUniqueName, [NativeTypeName("PCWSTR")] ushort* pszPath, [NativeTypeName("PCWSTR")] ushort* pszShort, [NativeTypeName("PCWSTR")] ushort* pszFileSpec);
+        public static extern BOOL PathYetAnotherMakeUniqueName([NativeTypeName("PWSTR")] ushort* pszUniqueName, [NativeTypeName("PCWSTR")] ushort* pszPath, [NativeTypeName("PCWSTR")] ushort* pszShort, [NativeTypeName("PCWSTR")] ushort* pszFileSpec);
 
         [DllImport("shell32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int Win32DeleteFile([NativeTypeName("PCWSTR")] ushort* pszPath);
+        public static extern BOOL Win32DeleteFile([NativeTypeName("PCWSTR")] ushort* pszPath);
 
         [DllImport("shell32", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
         public static extern uint SHRestricted(RESTRICTIONS rest);
 
         [DllImport("shell32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SignalFileOpen([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl);
+        public static extern BOOL SignalFileOpen([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl);
 
         [DllImport("shell32", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int AssocGetDetailsOfPropKey(IShellFolder* psf, [NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl, [NativeTypeName("const PROPERTYKEY *")] PROPERTYKEY* pkey, VARIANT* pv, [NativeTypeName("BOOL *")] int* pfFoundPropKey);
+        public static extern HRESULT AssocGetDetailsOfPropKey(IShellFolder* psf, [NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl, [NativeTypeName("const PROPERTYKEY *")] PROPERTYKEY* pkey, VARIANT* pv, BOOL* pfFoundPropKey);
 
         [DllImport("shell32", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int SHStartNetConnectionDialogW([NativeTypeName("HWND")] IntPtr hwnd, [NativeTypeName("LPCWSTR")] ushort* pszRemoteName, [NativeTypeName("DWORD")] uint dwType);
+        public static extern HRESULT SHStartNetConnectionDialogW(HWND hwnd, [NativeTypeName("LPCWSTR")] ushort* pszRemoteName, [NativeTypeName("DWORD")] uint dwType);
 
         [DllImport("shell32", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int SHDefExtractIconA([NativeTypeName("LPCSTR")] sbyte* pszIconFile, int iIndex, [NativeTypeName("UINT")] uint uFlags, [NativeTypeName("HICON *")] IntPtr* phiconLarge, [NativeTypeName("HICON *")] IntPtr* phiconSmall, [NativeTypeName("UINT")] uint nIconSize);
+        public static extern HRESULT SHDefExtractIconA([NativeTypeName("LPCSTR")] sbyte* pszIconFile, int iIndex, uint uFlags, HICON* phiconLarge, HICON* phiconSmall, uint nIconSize);
 
         [DllImport("shell32", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int SHDefExtractIconW([NativeTypeName("LPCWSTR")] ushort* pszIconFile, int iIndex, [NativeTypeName("UINT")] uint uFlags, [NativeTypeName("HICON *")] IntPtr* phiconLarge, [NativeTypeName("HICON *")] IntPtr* phiconSmall, [NativeTypeName("UINT")] uint nIconSize);
+        public static extern HRESULT SHDefExtractIconW([NativeTypeName("LPCWSTR")] ushort* pszIconFile, int iIndex, uint uFlags, HICON* phiconLarge, HICON* phiconSmall, uint nIconSize);
 
         [DllImport("shell32", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int SHOpenWithDialog([NativeTypeName("HWND")] IntPtr hwndParent, [NativeTypeName("const OPENASINFO *")] OPENASINFO* poainfo);
+        public static extern HRESULT SHOpenWithDialog(HWND hwndParent, [NativeTypeName("const OPENASINFO *")] OPENASINFO* poainfo);
 
         [DllImport("shell32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int Shell_GetImageLists([NativeTypeName("HIMAGELIST *")] IntPtr* phiml, [NativeTypeName("HIMAGELIST *")] IntPtr* phimlSmall);
+        public static extern BOOL Shell_GetImageLists(HIMAGELIST* phiml, HIMAGELIST* phimlSmall);
 
         [DllImport("shell32", ExactSpelling = true)]
-        public static extern int Shell_GetCachedImageIndexA([NativeTypeName("LPCSTR")] sbyte* pszIconPath, int iIconIndex, [NativeTypeName("UINT")] uint uIconFlags);
+        public static extern int Shell_GetCachedImageIndexA([NativeTypeName("LPCSTR")] sbyte* pszIconPath, int iIconIndex, uint uIconFlags);
 
         [DllImport("shell32", ExactSpelling = true)]
-        public static extern int Shell_GetCachedImageIndexW([NativeTypeName("LPCWSTR")] ushort* pszIconPath, int iIconIndex, [NativeTypeName("UINT")] uint uIconFlags);
+        public static extern int Shell_GetCachedImageIndexW([NativeTypeName("LPCWSTR")] ushort* pszIconPath, int iIconIndex, uint uIconFlags);
 
         [DllImport("shell32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SHValidateUNC([NativeTypeName("HWND")] IntPtr hwndOwner, [NativeTypeName("PWSTR")] ushort* pszFile, [NativeTypeName("UINT")] uint fConnect);
+        public static extern BOOL SHValidateUNC(HWND hwndOwner, [NativeTypeName("PWSTR")] ushort* pszFile, uint fConnect);
 
         [DllImport("shell32", ExactSpelling = true)]
-        [return: NativeTypeName("HANDLE")]
-        public static extern IntPtr PifMgr_OpenProperties([NativeTypeName("PCWSTR")] ushort* pszApp, [NativeTypeName("PCWSTR")] ushort* pszPIF, [NativeTypeName("UINT")] uint hInf, [NativeTypeName("UINT")] uint flOpt);
+        public static extern HANDLE PifMgr_OpenProperties([NativeTypeName("PCWSTR")] ushort* pszApp, [NativeTypeName("PCWSTR")] ushort* pszPIF, uint hInf, uint flOpt);
 
         [DllImport("shell32", ExactSpelling = true)]
-        public static extern int PifMgr_GetProperties([NativeTypeName("HANDLE")] IntPtr hProps, [NativeTypeName("PCSTR")] sbyte* pszGroup, void* lpProps, int cbProps, [NativeTypeName("UINT")] uint flOpt);
+        public static extern int PifMgr_GetProperties(HANDLE hProps, [NativeTypeName("PCSTR")] sbyte* pszGroup, void* lpProps, int cbProps, uint flOpt);
 
         [DllImport("shell32", ExactSpelling = true)]
-        public static extern int PifMgr_SetProperties([NativeTypeName("HANDLE")] IntPtr hProps, [NativeTypeName("PCSTR")] sbyte* pszGroup, [NativeTypeName("const void *")] void* lpProps, int cbProps, [NativeTypeName("UINT")] uint flOpt);
+        public static extern int PifMgr_SetProperties(HANDLE hProps, [NativeTypeName("PCSTR")] sbyte* pszGroup, [NativeTypeName("const void *")] void* lpProps, int cbProps, uint flOpt);
 
         [DllImport("shell32", ExactSpelling = true)]
-        [return: NativeTypeName("HANDLE")]
-        public static extern IntPtr PifMgr_CloseProperties([NativeTypeName("HANDLE")] IntPtr hProps, [NativeTypeName("UINT")] uint flOpt);
+        public static extern HANDLE PifMgr_CloseProperties(HANDLE hProps, uint flOpt);
 
         [DllImport("shell32", ExactSpelling = true)]
         public static extern void SHSetInstanceExplorer(IUnknown* punk);
 
         [DllImport("shell32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int IsUserAnAdmin();
+        public static extern BOOL IsUserAnAdmin();
 
         [DllImport("shell32", ExactSpelling = true)]
         [return: NativeTypeName("LRESULT")]
-        public static extern nint SHShellFolderView_Message([NativeTypeName("HWND")] IntPtr hwndMain, [NativeTypeName("UINT")] uint uMsg, [NativeTypeName("LPARAM")] nint lParam);
+        public static extern nint SHShellFolderView_Message(HWND hwndMain, uint uMsg, [NativeTypeName("LPARAM")] nint lParam);
 
         [DllImport("shell32", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int SHCreateShellFolderView([NativeTypeName("const SFV_CREATE *")] SFV_CREATE* pcsfv, IShellView** ppsv);
+        public static extern HRESULT SHCreateShellFolderView([NativeTypeName("const SFV_CREATE *")] SFV_CREATE* pcsfv, IShellView** ppsv);
 
         [DllImport("shell32", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int CDefFolderMenu_Create2([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidlFolder, [NativeTypeName("HWND")] IntPtr hwnd, [NativeTypeName("UINT")] uint cidl, [NativeTypeName("LPCITEMIDLIST *")] ITEMIDLIST** apidl, IShellFolder* psf, [NativeTypeName("LPFNDFMCALLBACK")] delegate* unmanaged<IShellFolder*, IntPtr, IDataObject*, uint, nuint, nint, int> pfn, [NativeTypeName("UINT")] uint nKeys, [NativeTypeName("const HKEY *")] IntPtr* ahkeys, IContextMenu** ppcm);
+        public static extern HRESULT CDefFolderMenu_Create2([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidlFolder, HWND hwnd, uint cidl, [NativeTypeName("LPCITEMIDLIST *")] ITEMIDLIST** apidl, IShellFolder* psf, [NativeTypeName("LPFNDFMCALLBACK")] delegate* unmanaged<IShellFolder*, HWND, IDataObject*, uint, nuint, nint, HRESULT> pfn, uint nKeys, [NativeTypeName("const HKEY *")] HKEY* ahkeys, IContextMenu** ppcm);
 
         [DllImport("shell32", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int SHCreateDefaultContextMenu([NativeTypeName("const DEFCONTEXTMENU *")] DEFCONTEXTMENU* pdcm, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
+        public static extern HRESULT SHCreateDefaultContextMenu([NativeTypeName("const DEFCONTEXTMENU *")] DEFCONTEXTMENU* pdcm, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
 
         [DllImport("shell32", ExactSpelling = true)]
-        public static extern IContextMenu* SHFind_InitMenuPopup([NativeTypeName("HMENU")] IntPtr hmenu, [NativeTypeName("HWND")] IntPtr hwndOwner, [NativeTypeName("UINT")] uint idCmdFirst, [NativeTypeName("UINT")] uint idCmdLast);
+        public static extern IContextMenu* SHFind_InitMenuPopup(HMENU hmenu, HWND hwndOwner, uint idCmdFirst, uint idCmdLast);
 
         [DllImport("shell32", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int SHCreateShellFolderViewEx(CSFV* pcsfv, IShellView** ppsv);
+        public static extern HRESULT SHCreateShellFolderViewEx(CSFV* pcsfv, IShellView** ppsv);
 
         [DllImport("shell32", ExactSpelling = true)]
-        public static extern void SHGetSetSettings([NativeTypeName("LPSHELLSTATEW")] SHELLSTATEW* lpss, [NativeTypeName("DWORD")] uint dwMask, [NativeTypeName("BOOL")] int bSet);
+        public static extern void SHGetSetSettings([NativeTypeName("LPSHELLSTATEW")] SHELLSTATEW* lpss, [NativeTypeName("DWORD")] uint dwMask, BOOL bSet);
 
         [DllImport("shell32", ExactSpelling = true)]
         public static extern void SHGetSettings(SHELLFLAGSTATE* psfs, [NativeTypeName("DWORD")] uint dwMask);
 
         [DllImport("shell32", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int SHBindToParent([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl, [NativeTypeName("const IID &")] Guid* riid, void** ppv, [NativeTypeName("LPCITEMIDLIST *")] ITEMIDLIST** ppidlLast);
+        public static extern HRESULT SHBindToParent([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl, [NativeTypeName("const IID &")] Guid* riid, void** ppv, [NativeTypeName("LPCITEMIDLIST *")] ITEMIDLIST** ppidlLast);
 
         [DllImport("shell32", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int SHBindToFolderIDListParent(IShellFolder* psfRoot, [NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl, [NativeTypeName("const IID &")] Guid* riid, void** ppv, [NativeTypeName("LPCITEMIDLIST *")] ITEMIDLIST** ppidlLast);
+        public static extern HRESULT SHBindToFolderIDListParent(IShellFolder* psfRoot, [NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl, [NativeTypeName("const IID &")] Guid* riid, void** ppv, [NativeTypeName("LPCITEMIDLIST *")] ITEMIDLIST** ppidlLast);
 
         [DllImport("shell32", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int SHBindToFolderIDListParentEx(IShellFolder* psfRoot, [NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl, IBindCtx* ppbc, [NativeTypeName("const IID &")] Guid* riid, void** ppv, [NativeTypeName("LPCITEMIDLIST *")] ITEMIDLIST** ppidlLast);
+        public static extern HRESULT SHBindToFolderIDListParentEx(IShellFolder* psfRoot, [NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl, IBindCtx* ppbc, [NativeTypeName("const IID &")] Guid* riid, void** ppv, [NativeTypeName("LPCITEMIDLIST *")] ITEMIDLIST** ppidlLast);
 
         [DllImport("shell32", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int SHBindToObject(IShellFolder* psf, [NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl, IBindCtx* pbc, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
+        public static extern HRESULT SHBindToObject(IShellFolder* psf, [NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl, IBindCtx* pbc, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
 
-        [return: NativeTypeName("BOOL")]
-        public static int IDListContainerIsConsistent([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl, [NativeTypeName("UINT")] uint cbAlloc)
+        public static BOOL IDListContainerIsConsistent([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl, uint cbAlloc)
         {
             uint cbPidl = 2;
 
@@ -517,54 +436,43 @@ namespace TerraFX.Interop
         }
 
         [DllImport("shell32", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int SHParseDisplayName([NativeTypeName("PCWSTR")] ushort* pszName, IBindCtx* pbc, [NativeTypeName("LPITEMIDLIST *")] ITEMIDLIST** ppidl, [NativeTypeName("SFGAOF")] uint sfgaoIn, [NativeTypeName("SFGAOF *")] uint* psfgaoOut);
+        public static extern HRESULT SHParseDisplayName([NativeTypeName("PCWSTR")] ushort* pszName, IBindCtx* pbc, [NativeTypeName("LPITEMIDLIST *")] ITEMIDLIST** ppidl, [NativeTypeName("SFGAOF")] uint sfgaoIn, [NativeTypeName("SFGAOF *")] uint* psfgaoOut);
 
         [DllImport("shell32", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int SHPathPrepareForWriteA([NativeTypeName("HWND")] IntPtr hwnd, IUnknown* punkEnableModless, [NativeTypeName("LPCSTR")] sbyte* pszPath, [NativeTypeName("DWORD")] uint dwFlags);
+        public static extern HRESULT SHPathPrepareForWriteA(HWND hwnd, IUnknown* punkEnableModless, [NativeTypeName("LPCSTR")] sbyte* pszPath, [NativeTypeName("DWORD")] uint dwFlags);
 
         [DllImport("shell32", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int SHPathPrepareForWriteW([NativeTypeName("HWND")] IntPtr hwnd, IUnknown* punkEnableModless, [NativeTypeName("LPCWSTR")] ushort* pszPath, [NativeTypeName("DWORD")] uint dwFlags);
+        public static extern HRESULT SHPathPrepareForWriteW(HWND hwnd, IUnknown* punkEnableModless, [NativeTypeName("LPCWSTR")] ushort* pszPath, [NativeTypeName("DWORD")] uint dwFlags);
 
         [DllImport("shell32", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int SHPropStgCreate(IPropertySetStorage* psstg, [NativeTypeName("const IID &")] Guid* fmtid, [NativeTypeName("const CLSID *")] Guid* pclsid, [NativeTypeName("DWORD")] uint grfFlags, [NativeTypeName("DWORD")] uint grfMode, [NativeTypeName("DWORD")] uint dwDisposition, IPropertyStorage** ppstg, [NativeTypeName("UINT *")] uint* puCodePage);
+        public static extern HRESULT SHPropStgCreate(IPropertySetStorage* psstg, [NativeTypeName("const IID &")] Guid* fmtid, [NativeTypeName("const CLSID *")] Guid* pclsid, [NativeTypeName("DWORD")] uint grfFlags, [NativeTypeName("DWORD")] uint grfMode, [NativeTypeName("DWORD")] uint dwDisposition, IPropertyStorage** ppstg, uint* puCodePage);
 
         [DllImport("shell32", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int SHPropStgReadMultiple(IPropertyStorage* pps, [NativeTypeName("UINT")] uint uCodePage, [NativeTypeName("ULONG")] uint cpspec, [NativeTypeName("const PROPSPEC []")] PROPSPEC* rgpspec, [NativeTypeName("PROPVARIANT []")] PROPVARIANT* rgvar);
+        public static extern HRESULT SHPropStgReadMultiple(IPropertyStorage* pps, uint uCodePage, [NativeTypeName("ULONG")] uint cpspec, [NativeTypeName("const PROPSPEC []")] PROPSPEC* rgpspec, [NativeTypeName("PROPVARIANT []")] PROPVARIANT* rgvar);
 
         [DllImport("shell32", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int SHPropStgWriteMultiple(IPropertyStorage* pps, [NativeTypeName("UINT *")] uint* puCodePage, [NativeTypeName("ULONG")] uint cpspec, [NativeTypeName("const PROPSPEC []")] PROPSPEC* rgpspec, [NativeTypeName("PROPVARIANT []")] PROPVARIANT* rgvar, [NativeTypeName("PROPID")] uint propidNameFirst);
+        public static extern HRESULT SHPropStgWriteMultiple(IPropertyStorage* pps, uint* puCodePage, [NativeTypeName("ULONG")] uint cpspec, [NativeTypeName("const PROPSPEC []")] PROPSPEC* rgpspec, [NativeTypeName("PROPVARIANT []")] PROPVARIANT* rgvar, [NativeTypeName("PROPID")] uint propidNameFirst);
 
         [DllImport("shell32", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int SHCreateFileExtractIconW([NativeTypeName("LPCWSTR")] ushort* pszFile, [NativeTypeName("DWORD")] uint dwFileAttributes, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
+        public static extern HRESULT SHCreateFileExtractIconW([NativeTypeName("LPCWSTR")] ushort* pszFile, [NativeTypeName("DWORD")] uint dwFileAttributes, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
 
         [DllImport("shell32", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int SHLimitInputEdit([NativeTypeName("HWND")] IntPtr hwndEdit, IShellFolder* psf);
+        public static extern HRESULT SHLimitInputEdit(HWND hwndEdit, IShellFolder* psf);
 
         [DllImport("shell32", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int SHGetAttributesFromDataObject(IDataObject* pdo, [NativeTypeName("DWORD")] uint dwAttributeMask, [NativeTypeName("DWORD *")] uint* pdwAttributes, [NativeTypeName("UINT *")] uint* pcItems);
+        public static extern HRESULT SHGetAttributesFromDataObject(IDataObject* pdo, [NativeTypeName("DWORD")] uint dwAttributeMask, [NativeTypeName("DWORD *")] uint* pdwAttributes, uint* pcItems);
 
         [DllImport("shell32", ExactSpelling = true)]
         public static extern int SHMapPIDLToSystemImageListIndex(IShellFolder* pshf, [NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl, int* piIndexSel);
 
         [DllImport("shell32", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int SHCLSIDFromString([NativeTypeName("PCWSTR")] ushort* psz, [NativeTypeName("CLSID *")] Guid* pclsid);
+        public static extern HRESULT SHCLSIDFromString([NativeTypeName("PCWSTR")] ushort* psz, [NativeTypeName("CLSID *")] Guid* pclsid);
 
         [DllImport("shell32", ExactSpelling = true)]
-        public static extern int PickIconDlg([NativeTypeName("HWND")] IntPtr hwnd, [NativeTypeName("PWSTR")] ushort* pszIconPath, [NativeTypeName("UINT")] uint cchIconPath, int* piIconIndex);
+        public static extern int PickIconDlg(HWND hwnd, [NativeTypeName("PWSTR")] ushort* pszIconPath, uint cchIconPath, int* piIconIndex);
 
         [DllImport("shell32", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int StgMakeUniqueName(IStorage* pstgParent, [NativeTypeName("PCWSTR")] ushort* pszFileSpec, [NativeTypeName("DWORD")] uint grfMode, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
+        public static extern HRESULT StgMakeUniqueName(IStorage* pstgParent, [NativeTypeName("PCWSTR")] ushort* pszFileSpec, [NativeTypeName("DWORD")] uint grfMode, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
 
         [NativeTypeName("#define GIL_OPENICON 0x0001")]
         public const int GIL_OPENICON = 0x0001;
@@ -723,10 +631,10 @@ namespace TerraFX.Interop
         public static delegate*<ITEMIDLIST*, ITEMIDLIST*> ILCloneChild => &ILCloneFirst;
 
         [NativeTypeName("#define SHGetPathFromIDList SHGetPathFromIDListW")]
-        public static delegate*<ITEMIDLIST*, ushort*, int> SHGetPathFromIDList => &SHGetPathFromIDListW;
+        public static delegate*<ITEMIDLIST*, ushort*, BOOL> SHGetPathFromIDList => &SHGetPathFromIDListW;
 
         [NativeTypeName("#define SHCreateDirectoryEx SHCreateDirectoryExW")]
-        public static delegate*<IntPtr, ushort*, SECURITY_ATTRIBUTES*, int> SHCreateDirectoryEx => &SHCreateDirectoryExW;
+        public static delegate*<HWND, ushort*, SECURITY_ATTRIBUTES*, int> SHCreateDirectoryEx => &SHCreateDirectoryExW;
 
         [NativeTypeName("#define OFASI_EDIT 0x0001")]
         public const int OFASI_EDIT = 0x0001;
@@ -924,16 +832,16 @@ namespace TerraFX.Interop
         public const int CSIDL_FLAG_MASK = 0xFF00;
 
         [NativeTypeName("#define SHGetSpecialFolderPath SHGetSpecialFolderPathW")]
-        public static delegate*<IntPtr, ushort*, int, int, int> SHGetSpecialFolderPath => &SHGetSpecialFolderPathW;
+        public static delegate*<HWND, ushort*, int, BOOL, BOOL> SHGetSpecialFolderPath => &SHGetSpecialFolderPathW;
 
         [NativeTypeName("#define SHGetFolderPath SHGetFolderPathW")]
-        public static delegate*<IntPtr, int, IntPtr, uint, ushort*, int> SHGetFolderPath => &SHGetFolderPathW;
+        public static delegate*<HWND, int, HANDLE, uint, ushort*, HRESULT> SHGetFolderPath => &SHGetFolderPathW;
 
         [NativeTypeName("#define SHSetFolderPath SHSetFolderPathW")]
-        public static delegate*<int, IntPtr, uint, ushort*, int> SHSetFolderPath => &SHSetFolderPathW;
+        public static delegate*<int, HANDLE, uint, ushort*, HRESULT> SHSetFolderPath => &SHSetFolderPathW;
 
         [NativeTypeName("#define SHGetFolderPathAndSubDir SHGetFolderPathAndSubDirW")]
-        public static delegate*<IntPtr, int, IntPtr, uint, ushort*, ushort*, int> SHGetFolderPathAndSubDir => &SHGetFolderPathAndSubDirW;
+        public static delegate*<HWND, int, HANDLE, uint, ushort*, ushort*, HRESULT> SHGetFolderPathAndSubDir => &SHGetFolderPathAndSubDirW;
 
         [NativeTypeName("#define FCS_READ 0x00000001")]
         public const int FCS_READ = 0x00000001;
@@ -1461,7 +1369,7 @@ namespace TerraFX.Interop
         public const int SHDID_REMOTE_DESKTOP_DRIVE = 22;
 
         [NativeTypeName("#define SHGetDataFromIDList SHGetDataFromIDListW")]
-        public static delegate*<IShellFolder*, ITEMIDLIST*, int, void*, int, int> SHGetDataFromIDList => &SHGetDataFromIDListW;
+        public static delegate*<IShellFolder*, ITEMIDLIST*, int, void*, int, HRESULT> SHGetDataFromIDList => &SHGetDataFromIDListW;
 
         [NativeTypeName("#define PRF_VERIFYEXISTS 0x0001")]
         public const int PRF_VERIFYEXISTS = 0x0001;
@@ -1536,10 +1444,10 @@ namespace TerraFX.Interop
         public const uint SHFMT_NOFORMAT = 0xFFFFFFFD;
 
         [NativeTypeName("#define SHStartNetConnectionDialog SHStartNetConnectionDialogW")]
-        public static delegate*<IntPtr, ushort*, uint, int> SHStartNetConnectionDialog => &SHStartNetConnectionDialogW;
+        public static delegate*<HWND, ushort*, uint, HRESULT> SHStartNetConnectionDialog => &SHStartNetConnectionDialogW;
 
         [NativeTypeName("#define SHDefExtractIcon SHDefExtractIconW")]
-        public static delegate*<ushort*, int, uint, IntPtr*, IntPtr*, uint, int> SHDefExtractIcon => &SHDefExtractIconW;
+        public static delegate*<ushort*, int, uint, HICON*, HICON*, uint, HRESULT> SHDefExtractIcon => &SHDefExtractIconW;
 
         [NativeTypeName("#define Shell_GetCachedImageIndex Shell_GetCachedImageIndexW")]
         public static delegate*<ushort*, int, uint, int> Shell_GetCachedImageIndex => &Shell_GetCachedImageIndexW;
@@ -2028,10 +1936,10 @@ namespace TerraFX.Interop
         public const int SHPPFW_MEDIACHECKONLY = 0x00000010;
 
         [NativeTypeName("#define SHPathPrepareForWrite SHPathPrepareForWriteW")]
-        public static delegate*<IntPtr, IUnknown*, ushort*, uint, int> SHPathPrepareForWrite => &SHPathPrepareForWriteW;
+        public static delegate*<HWND, IUnknown*, ushort*, uint, HRESULT> SHPathPrepareForWrite => &SHPathPrepareForWriteW;
 
         [NativeTypeName("#define SHCreateFileExtractIcon SHCreateFileExtractIconW")]
-        public static delegate*<ushort*, uint, Guid*, void**, int> SHCreateFileExtractIcon => &SHCreateFileExtractIconW;
+        public static delegate*<ushort*, uint, Guid*, void**, HRESULT> SHCreateFileExtractIcon => &SHCreateFileExtractIconW;
 
         public static ref readonly Guid IID_IShellFolderView
         {

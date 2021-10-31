@@ -7,16 +7,12 @@ namespace TerraFX.Interop
 {
     public partial struct DDRGBA
     {
-        [NativeTypeName("BYTE")]
         public byte red;
 
-        [NativeTypeName("BYTE")]
         public byte green;
 
-        [NativeTypeName("BYTE")]
         public byte blue;
 
-        [NativeTypeName("BYTE")]
         public byte alpha;
     }
 }

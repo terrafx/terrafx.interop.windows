@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IActionProgress*, Guid*, void**, int>)(lpVtbl[0]))((IActionProgress*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,48 +41,42 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int Begin(SPACTION action, [NativeTypeName("SPBEGINF")] uint flags)
+        public HRESULT Begin(SPACTION action, [NativeTypeName("SPBEGINF")] uint flags)
         {
             return ((delegate* unmanaged<IActionProgress*, SPACTION, uint, int>)(lpVtbl[3]))((IActionProgress*)Unsafe.AsPointer(ref this), action, flags);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int UpdateProgress([NativeTypeName("ULONGLONG")] ulong ulCompleted, [NativeTypeName("ULONGLONG")] ulong ulTotal)
+        public HRESULT UpdateProgress([NativeTypeName("ULONGLONG")] ulong ulCompleted, [NativeTypeName("ULONGLONG")] ulong ulTotal)
         {
             return ((delegate* unmanaged<IActionProgress*, ulong, ulong, int>)(lpVtbl[4]))((IActionProgress*)Unsafe.AsPointer(ref this), ulCompleted, ulTotal);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int UpdateText(SPTEXT sptext, [NativeTypeName("LPCWSTR")] ushort* pszText, [NativeTypeName("BOOL")] int fMayCompact)
+        public HRESULT UpdateText(SPTEXT sptext, [NativeTypeName("LPCWSTR")] ushort* pszText, BOOL fMayCompact)
         {
-            return ((delegate* unmanaged<IActionProgress*, SPTEXT, ushort*, int, int>)(lpVtbl[5]))((IActionProgress*)Unsafe.AsPointer(ref this), sptext, pszText, fMayCompact);
+            return ((delegate* unmanaged<IActionProgress*, SPTEXT, ushort*, BOOL, int>)(lpVtbl[5]))((IActionProgress*)Unsafe.AsPointer(ref this), sptext, pszText, fMayCompact);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryCancel([NativeTypeName("BOOL *")] int* pfCancelled)
+        public HRESULT QueryCancel(BOOL* pfCancelled)
         {
-            return ((delegate* unmanaged<IActionProgress*, int*, int>)(lpVtbl[6]))((IActionProgress*)Unsafe.AsPointer(ref this), pfCancelled);
+            return ((delegate* unmanaged<IActionProgress*, BOOL*, int>)(lpVtbl[6]))((IActionProgress*)Unsafe.AsPointer(ref this), pfCancelled);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        [return: NativeTypeName("HRESULT")]
-        public int ResetCancel()
+        public HRESULT ResetCancel()
         {
             return ((delegate* unmanaged<IActionProgress*, int>)(lpVtbl[7]))((IActionProgress*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        [return: NativeTypeName("HRESULT")]
-        public int End()
+        public HRESULT End()
         {
             return ((delegate* unmanaged<IActionProgress*, int>)(lpVtbl[8]))((IActionProgress*)Unsafe.AsPointer(ref this));
         }

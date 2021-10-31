@@ -7,28 +7,20 @@ namespace TerraFX.Interop
 {
     public partial struct D3D11_CLASS_INSTANCE_DESC
     {
-        [NativeTypeName("UINT")]
         public uint InstanceId;
 
-        [NativeTypeName("UINT")]
         public uint InstanceIndex;
 
-        [NativeTypeName("UINT")]
         public uint TypeId;
 
-        [NativeTypeName("UINT")]
         public uint ConstantBuffer;
 
-        [NativeTypeName("UINT")]
         public uint BaseConstantBufferOffset;
 
-        [NativeTypeName("UINT")]
         public uint BaseTexture;
 
-        [NativeTypeName("UINT")]
         public uint BaseSampler;
 
-        [NativeTypeName("BOOL")]
-        public int Created;
+        public BOOL Created;
     }
 }

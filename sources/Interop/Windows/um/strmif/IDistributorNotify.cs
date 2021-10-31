@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IDistributorNotify*, Guid*, void**, int>)(lpVtbl[0]))((IDistributorNotify*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,40 +41,35 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int Stop()
+        public HRESULT Stop()
         {
             return ((delegate* unmanaged<IDistributorNotify*, int>)(lpVtbl[3]))((IDistributorNotify*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int Pause()
+        public HRESULT Pause()
         {
             return ((delegate* unmanaged<IDistributorNotify*, int>)(lpVtbl[4]))((IDistributorNotify*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int Run([NativeTypeName("REFERENCE_TIME")] long tStart)
+        public HRESULT Run([NativeTypeName("REFERENCE_TIME")] long tStart)
         {
             return ((delegate* unmanaged<IDistributorNotify*, long, int>)(lpVtbl[5]))((IDistributorNotify*)Unsafe.AsPointer(ref this), tStart);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetSyncSource(IReferenceClock* pClock)
+        public HRESULT SetSyncSource(IReferenceClock* pClock)
         {
             return ((delegate* unmanaged<IDistributorNotify*, IReferenceClock*, int>)(lpVtbl[6]))((IDistributorNotify*)Unsafe.AsPointer(ref this), pClock);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        [return: NativeTypeName("HRESULT")]
-        public int NotifyGraphChange()
+        public HRESULT NotifyGraphChange()
         {
             return ((delegate* unmanaged<IDistributorNotify*, int>)(lpVtbl[7]))((IDistributorNotify*)Unsafe.AsPointer(ref this));
         }

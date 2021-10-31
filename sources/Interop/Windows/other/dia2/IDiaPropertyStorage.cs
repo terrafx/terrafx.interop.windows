@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IDiaPropertyStorage*, Guid*, void**, int>)(lpVtbl[0]))((IDiaPropertyStorage*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,64 +41,56 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int ReadMultiple([NativeTypeName("ULONG")] uint cpspec, [NativeTypeName("const PROPSPEC *")] PROPSPEC* rgpspec, PROPVARIANT* rgvar)
+        public HRESULT ReadMultiple([NativeTypeName("ULONG")] uint cpspec, [NativeTypeName("const PROPSPEC *")] PROPSPEC* rgpspec, PROPVARIANT* rgvar)
         {
             return ((delegate* unmanaged<IDiaPropertyStorage*, uint, PROPSPEC*, PROPVARIANT*, int>)(lpVtbl[3]))((IDiaPropertyStorage*)Unsafe.AsPointer(ref this), cpspec, rgpspec, rgvar);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int ReadPropertyNames([NativeTypeName("ULONG")] uint cpropid, [NativeTypeName("const PROPID *")] uint* rgpropid, [NativeTypeName("BSTR *")] ushort** rglpwstrName)
+        public HRESULT ReadPropertyNames([NativeTypeName("ULONG")] uint cpropid, [NativeTypeName("const PROPID *")] uint* rgpropid, [NativeTypeName("BSTR *")] ushort** rglpwstrName)
         {
             return ((delegate* unmanaged<IDiaPropertyStorage*, uint, uint*, ushort**, int>)(lpVtbl[4]))((IDiaPropertyStorage*)Unsafe.AsPointer(ref this), cpropid, rgpropid, rglpwstrName);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int Enum(IEnumSTATPROPSTG** ppenum)
+        public HRESULT Enum(IEnumSTATPROPSTG** ppenum)
         {
             return ((delegate* unmanaged<IDiaPropertyStorage*, IEnumSTATPROPSTG**, int>)(lpVtbl[5]))((IDiaPropertyStorage*)Unsafe.AsPointer(ref this), ppenum);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int ReadDWORD([NativeTypeName("PROPID")] uint id, [NativeTypeName("DWORD *")] uint* pValue)
+        public HRESULT ReadDWORD([NativeTypeName("PROPID")] uint id, [NativeTypeName("DWORD *")] uint* pValue)
         {
             return ((delegate* unmanaged<IDiaPropertyStorage*, uint, uint*, int>)(lpVtbl[6]))((IDiaPropertyStorage*)Unsafe.AsPointer(ref this), id, pValue);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        [return: NativeTypeName("HRESULT")]
-        public int ReadLONG([NativeTypeName("PROPID")] uint id, [NativeTypeName("LONG *")] int* pValue)
+        public HRESULT ReadLONG([NativeTypeName("PROPID")] uint id, [NativeTypeName("LONG *")] int* pValue)
         {
             return ((delegate* unmanaged<IDiaPropertyStorage*, uint, int*, int>)(lpVtbl[7]))((IDiaPropertyStorage*)Unsafe.AsPointer(ref this), id, pValue);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        [return: NativeTypeName("HRESULT")]
-        public int ReadBOOL([NativeTypeName("PROPID")] uint id, [NativeTypeName("BOOL *")] int* pValue)
+        public HRESULT ReadBOOL([NativeTypeName("PROPID")] uint id, BOOL* pValue)
         {
-            return ((delegate* unmanaged<IDiaPropertyStorage*, uint, int*, int>)(lpVtbl[8]))((IDiaPropertyStorage*)Unsafe.AsPointer(ref this), id, pValue);
+            return ((delegate* unmanaged<IDiaPropertyStorage*, uint, BOOL*, int>)(lpVtbl[8]))((IDiaPropertyStorage*)Unsafe.AsPointer(ref this), id, pValue);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        [return: NativeTypeName("HRESULT")]
-        public int ReadULONGLONG([NativeTypeName("PROPID")] uint id, [NativeTypeName("ULONGLONG *")] ulong* pValue)
+        public HRESULT ReadULONGLONG([NativeTypeName("PROPID")] uint id, [NativeTypeName("ULONGLONG *")] ulong* pValue)
         {
             return ((delegate* unmanaged<IDiaPropertyStorage*, uint, ulong*, int>)(lpVtbl[9]))((IDiaPropertyStorage*)Unsafe.AsPointer(ref this), id, pValue);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(10)]
-        [return: NativeTypeName("HRESULT")]
-        public int ReadBSTR([NativeTypeName("PROPID")] uint id, [NativeTypeName("BSTR *")] ushort** pValue)
+        public HRESULT ReadBSTR([NativeTypeName("PROPID")] uint id, [NativeTypeName("BSTR *")] ushort** pValue)
         {
             return ((delegate* unmanaged<IDiaPropertyStorage*, uint, ushort**, int>)(lpVtbl[10]))((IDiaPropertyStorage*)Unsafe.AsPointer(ref this), id, pValue);
         }

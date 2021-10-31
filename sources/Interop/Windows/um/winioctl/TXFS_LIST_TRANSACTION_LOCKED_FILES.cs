@@ -9,7 +9,6 @@ namespace TerraFX.Interop
 {
     public partial struct TXFS_LIST_TRANSACTION_LOCKED_FILES
     {
-        [NativeTypeName("GUID")]
         public Guid KtmTransaction;
 
         [NativeTypeName("DWORDLONG")]

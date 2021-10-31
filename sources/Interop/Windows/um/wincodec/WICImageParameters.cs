@@ -9,16 +9,12 @@ namespace TerraFX.Interop
     {
         public D2D1_PIXEL_FORMAT PixelFormat;
 
-        [NativeTypeName("FLOAT")]
         public float DpiX;
 
-        [NativeTypeName("FLOAT")]
         public float DpiY;
 
-        [NativeTypeName("FLOAT")]
         public float Top;
 
-        [NativeTypeName("FLOAT")]
         public float Left;
 
         [NativeTypeName("UINT32")]

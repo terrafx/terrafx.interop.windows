@@ -13,10 +13,8 @@ namespace TerraFX.Interop
         [NativeTypeName("WORD")]
         public ushort e32_magic;
 
-        [NativeTypeName("BYTE")]
         public byte e32_border;
 
-        [NativeTypeName("BYTE")]
         public byte e32_worder;
 
         [NativeTypeName("DWORD")]

@@ -3,32 +3,23 @@
 // Ported from um/WinUser.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
-
 namespace TerraFX.Interop
 {
     public partial struct DRAWITEMSTRUCT
     {
-        [NativeTypeName("UINT")]
         public uint CtlType;
 
-        [NativeTypeName("UINT")]
         public uint CtlID;
 
-        [NativeTypeName("UINT")]
         public uint itemID;
 
-        [NativeTypeName("UINT")]
         public uint itemAction;
 
-        [NativeTypeName("UINT")]
         public uint itemState;
 
-        [NativeTypeName("HWND")]
-        public IntPtr hwndItem;
+        public HWND hwndItem;
 
-        [NativeTypeName("HDC")]
-        public IntPtr hDC;
+        public HDC hDC;
 
         public RECT rcItem;
 

@@ -3,15 +3,13 @@
 // Ported from um/ProcessSnapshot.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
 {
     public unsafe partial struct PSS_HANDLE_ENTRY
     {
-        [NativeTypeName("HANDLE")]
-        public IntPtr Handle;
+        public HANDLE Handle;
 
         public PSS_HANDLE_FLAGS Flags;
 
@@ -132,8 +130,7 @@ namespace TerraFX.Interop
                 [NativeTypeName("LONG")]
                 public int CurrentCount;
 
-                [NativeTypeName("BOOL")]
-                public int Abandoned;
+                public BOOL Abandoned;
 
                 [NativeTypeName("DWORD")]
                 public uint OwnerProcessId;
@@ -144,11 +141,9 @@ namespace TerraFX.Interop
 
             public partial struct _Event_e__Struct
             {
-                [NativeTypeName("BOOL")]
-                public int ManualReset;
+                public BOOL ManualReset;
 
-                [NativeTypeName("BOOL")]
-                public int Signaled;
+                public BOOL Signaled;
             }
 
             public unsafe partial struct _Section_e__Struct

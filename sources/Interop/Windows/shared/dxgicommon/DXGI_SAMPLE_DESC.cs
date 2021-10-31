@@ -7,10 +7,8 @@ namespace TerraFX.Interop
 {
     public partial struct DXGI_SAMPLE_DESC
     {
-        [NativeTypeName("UINT")]
         public uint Count;
 
-        [NativeTypeName("UINT")]
         public uint Quality;
     }
 }

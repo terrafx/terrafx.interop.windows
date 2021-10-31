@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IMFMediaError*, Guid*, void**, int>)(lpVtbl[0]))((IMFMediaError*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,7 +41,6 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("USHORT")]
         public ushort GetErrorCode()
         {
             return ((delegate* unmanaged<IMFMediaError*, ushort>)(lpVtbl[3]))((IMFMediaError*)Unsafe.AsPointer(ref this));
@@ -50,26 +48,23 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetExtendedErrorCode()
+        public HRESULT GetExtendedErrorCode()
         {
             return ((delegate* unmanaged<IMFMediaError*, int>)(lpVtbl[4]))((IMFMediaError*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetErrorCode(MF_MEDIA_ENGINE_ERR error)
+        public HRESULT SetErrorCode(MF_MEDIA_ENGINE_ERR error)
         {
             return ((delegate* unmanaged<IMFMediaError*, MF_MEDIA_ENGINE_ERR, int>)(lpVtbl[5]))((IMFMediaError*)Unsafe.AsPointer(ref this), error);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetExtendedErrorCode([NativeTypeName("HRESULT")] int error)
+        public HRESULT SetExtendedErrorCode(HRESULT error)
         {
-            return ((delegate* unmanaged<IMFMediaError*, int, int>)(lpVtbl[6]))((IMFMediaError*)Unsafe.AsPointer(ref this), error);
+            return ((delegate* unmanaged<IMFMediaError*, HRESULT, int>)(lpVtbl[6]))((IMFMediaError*)Unsafe.AsPointer(ref this), error);
         }
     }
 }

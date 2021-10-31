@@ -17,10 +17,8 @@ namespace TerraFX.Interop
 
         public int cbWidth;
 
-        [NativeTypeName("BYTE")]
         public byte Planes;
 
-        [NativeTypeName("BYTE")]
         public byte BitsPixel;
     }
 }

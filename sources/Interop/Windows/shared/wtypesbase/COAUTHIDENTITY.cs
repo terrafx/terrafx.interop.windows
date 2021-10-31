@@ -7,19 +7,16 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct COAUTHIDENTITY
     {
-        [NativeTypeName("USHORT *")]
         public ushort* User;
 
         [NativeTypeName("ULONG")]
         public uint UserLength;
 
-        [NativeTypeName("USHORT *")]
         public ushort* Domain;
 
         [NativeTypeName("ULONG")]
         public uint DomainLength;
 
-        [NativeTypeName("USHORT *")]
         public ushort* Password;
 
         [NativeTypeName("ULONG")]

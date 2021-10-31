@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<ISimpleAudioVolume*, Guid*, void**, int>)(lpVtbl[0]))((ISimpleAudioVolume*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,34 +41,30 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetMasterVolume(float fLevel, [NativeTypeName("LPCGUID")] Guid* EventContext)
+        public HRESULT SetMasterVolume(float fLevel, [NativeTypeName("LPCGUID")] Guid* EventContext)
         {
             return ((delegate* unmanaged<ISimpleAudioVolume*, float, Guid*, int>)(lpVtbl[3]))((ISimpleAudioVolume*)Unsafe.AsPointer(ref this), fLevel, EventContext);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetMasterVolume(float* pfLevel)
+        public HRESULT GetMasterVolume(float* pfLevel)
         {
             return ((delegate* unmanaged<ISimpleAudioVolume*, float*, int>)(lpVtbl[4]))((ISimpleAudioVolume*)Unsafe.AsPointer(ref this), pfLevel);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetMute([NativeTypeName("const BOOL")] int bMute, [NativeTypeName("LPCGUID")] Guid* EventContext)
+        public HRESULT SetMute([NativeTypeName("const BOOL")] BOOL bMute, [NativeTypeName("LPCGUID")] Guid* EventContext)
         {
-            return ((delegate* unmanaged<ISimpleAudioVolume*, int, Guid*, int>)(lpVtbl[5]))((ISimpleAudioVolume*)Unsafe.AsPointer(ref this), bMute, EventContext);
+            return ((delegate* unmanaged<ISimpleAudioVolume*, BOOL, Guid*, int>)(lpVtbl[5]))((ISimpleAudioVolume*)Unsafe.AsPointer(ref this), bMute, EventContext);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetMute([NativeTypeName("BOOL *")] int* pbMute)
+        public HRESULT GetMute(BOOL* pbMute)
         {
-            return ((delegate* unmanaged<ISimpleAudioVolume*, int*, int>)(lpVtbl[6]))((ISimpleAudioVolume*)Unsafe.AsPointer(ref this), pbMute);
+            return ((delegate* unmanaged<ISimpleAudioVolume*, BOOL*, int>)(lpVtbl[6]))((ISimpleAudioVolume*)Unsafe.AsPointer(ref this), pbMute);
         }
     }
 }

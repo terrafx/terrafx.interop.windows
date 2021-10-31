@@ -13,7 +13,7 @@ namespace TerraFX.Interop
         public WS_CONTRACT_DESCRIPTION* contractDescription;
 
         [NativeTypeName("WS_SERVICE_MESSAGE_RECEIVE_CALLBACK")]
-        public delegate* unmanaged<IntPtr, WS_ASYNC_CONTEXT*, IntPtr, int> defaultMessageHandlerCallback;
+        public delegate* unmanaged<IntPtr, WS_ASYNC_CONTEXT*, IntPtr, HRESULT> defaultMessageHandlerCallback;
 
         [NativeTypeName("const void *")]
         public void* methodTable;

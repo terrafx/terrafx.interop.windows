@@ -16,10 +16,8 @@ namespace TerraFX.Interop
         [NativeTypeName("LPARAM")]
         public nint lParam;
 
-        [NativeTypeName("UINT")]
         public uint idCmdFirst;
 
-        [NativeTypeName("UINT")]
         public uint idDefMax;
 
         [NativeTypeName("LPCMINVOKECOMMANDINFO")]

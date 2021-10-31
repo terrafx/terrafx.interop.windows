@@ -9,7 +9,6 @@ namespace TerraFX.Interop
     {
         public DXGI_FORMAT InFormat;
 
-        [NativeTypeName("UINT")]
         public uint OutFormatSupport2;
     }
 }

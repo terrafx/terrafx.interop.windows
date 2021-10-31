@@ -7,7 +7,7 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct D3D12_SUBRESOURCE_TILING
     {
-        public D3D12_SUBRESOURCE_TILING([NativeTypeName("UINT")] uint widthInTiles, [NativeTypeName("UINT16")] ushort heightInTiles, [NativeTypeName("UINT16")] ushort depthInTiles, [NativeTypeName("UINT")] uint startTileIndexInOverallResource)
+        public D3D12_SUBRESOURCE_TILING(uint widthInTiles, [NativeTypeName("UINT16")] ushort heightInTiles, [NativeTypeName("UINT16")] ushort depthInTiles, uint startTileIndexInOverallResource)
         {
             WidthInTiles = widthInTiles;
             HeightInTiles = heightInTiles;

@@ -7,13 +7,10 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct DML_OUTPUT_GRAPH_EDGE_DESC
     {
-        [NativeTypeName("UINT")]
         public uint FromNodeIndex;
 
-        [NativeTypeName("UINT")]
         public uint FromNodeOutputIndex;
 
-        [NativeTypeName("UINT")]
         public uint GraphOutputIndex;
 
         [NativeTypeName("const char *")]

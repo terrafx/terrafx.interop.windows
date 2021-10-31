@@ -24,11 +24,10 @@ namespace TerraFX.Interop
 {
     public static unsafe partial class Windows
     {
-        [NativeTypeName("FLOAT")]
         public const float FloatMax = float.MaxValue;
 
         [return: NativeTypeName("D2D1_POINT_2F")]
-        public static D2D_POINT_2F Point2F([NativeTypeName("FLOAT")] float x = 0.0f, [NativeTypeName("FLOAT")] float y = 0.0f)
+        public static D2D_POINT_2F Point2F(float x = 0.0f, float y = 0.0f)
         {
             D2D_POINT_2F point = new D2D_POINT_2F
             {
@@ -50,7 +49,7 @@ namespace TerraFX.Interop
         }
 
         [return: NativeTypeName("D2D1_SIZE_F")]
-        public static D2D_SIZE_F SizeF([NativeTypeName("FLOAT")] float width = 0.0f, [NativeTypeName("FLOAT")] float height = 0.0f)
+        public static D2D_SIZE_F SizeF(float width = 0.0f, float height = 0.0f)
         {
             D2D_SIZE_F size = new D2D_SIZE_F
             {
@@ -72,7 +71,7 @@ namespace TerraFX.Interop
         }
 
         [return: NativeTypeName("D2D1_RECT_F")]
-        public static D2D_RECT_F RectF([NativeTypeName("FLOAT")] float left = 0.0f, [NativeTypeName("FLOAT")] float top = 0.0f, [NativeTypeName("FLOAT")] float right = 0.0f, [NativeTypeName("FLOAT")] float bottom = 0.0f)
+        public static D2D_RECT_F RectF(float left = 0.0f, float top = 0.0f, float right = 0.0f, float bottom = 0.0f)
         {
             D2D_RECT_F rect = new D2D_RECT_F
             {
@@ -100,7 +99,7 @@ namespace TerraFX.Interop
         [NativeTypeName("D2D1_RECT_F")]
         public static ref readonly D2D_RECT_F InfiniteRect => ref D2D_RECT_F.Infinite;
 
-        public static D2D1_ARC_SEGMENT ArcSegment([NativeTypeName("const D2D1_POINT_2F &")] in D2D_POINT_2F point, [NativeTypeName("const D2D1_SIZE_F &")] in D2D_SIZE_F size, [NativeTypeName("FLOAT")] float rotationAngle, D2D1_SWEEP_DIRECTION sweepDirection, D2D1_ARC_SIZE arcSize)
+        public static D2D1_ARC_SEGMENT ArcSegment([NativeTypeName("const D2D1_POINT_2F &")] in D2D_POINT_2F point, [NativeTypeName("const D2D1_SIZE_F &")] in D2D_SIZE_F size, float rotationAngle, D2D1_SWEEP_DIRECTION sweepDirection, D2D1_ARC_SIZE arcSize)
         {
             D2D1_ARC_SEGMENT arcSegment = new D2D1_ARC_SEGMENT
             {
@@ -124,7 +123,7 @@ namespace TerraFX.Interop
             return bezierSegment;
         }
 
-        public static D2D1_ELLIPSE Ellipse([NativeTypeName("const D2D1_POINT_2F &")] in D2D_POINT_2F center, [NativeTypeName("FLOAT")] float radiusX, [NativeTypeName("FLOAT")] float radiusY)
+        public static D2D1_ELLIPSE Ellipse([NativeTypeName("const D2D1_POINT_2F &")] in D2D_POINT_2F center, float radiusX, float radiusY)
         {
             D2D1_ELLIPSE ellipse;
 
@@ -135,7 +134,7 @@ namespace TerraFX.Interop
             return ellipse;
         }
 
-        public static D2D1_ROUNDED_RECT RoundedRect([NativeTypeName("const D2D1_RECT_F")] in D2D_RECT_F rect, [NativeTypeName("FLOAT")] float radiusX, [NativeTypeName("FLOAT")] float radiusY)
+        public static D2D1_ROUNDED_RECT RoundedRect([NativeTypeName("const D2D1_RECT_F")] in D2D_RECT_F rect, float radiusX, float radiusY)
         {
             D2D1_ROUNDED_RECT roundedRect;
 
@@ -146,12 +145,12 @@ namespace TerraFX.Interop
             return roundedRect;
         }
 
-        public static D2D1_BRUSH_PROPERTIES BrushProperties([NativeTypeName("FLOAT")] float opacity = 1.0f)
+        public static D2D1_BRUSH_PROPERTIES BrushProperties(float opacity = 1.0f)
         {
             return BrushProperties(opacity, IdentityMatrix);
         }
 
-        public static D2D1_BRUSH_PROPERTIES BrushProperties([NativeTypeName("FLOAT"), Optional, DefaultParameterValue(1.0f)] float opacity, [NativeTypeName("const D2D1_MATRIX_3X2_F &")] in D2D_MATRIX_3X2_F transform)
+        public static D2D1_BRUSH_PROPERTIES BrushProperties([Optional, DefaultParameterValue(1.0f)] float opacity, [NativeTypeName("const D2D1_MATRIX_3X2_F &")] in D2D_MATRIX_3X2_F transform)
         {
             D2D1_BRUSH_PROPERTIES brushProperties;
 
@@ -161,7 +160,7 @@ namespace TerraFX.Interop
             return brushProperties;
         }
 
-        public static D2D1_GRADIENT_STOP GradientStop([NativeTypeName("FLOAT")] float position, [NativeTypeName("const D2D1_COLOR_F &")] in DXGI_RGBA color)
+        public static D2D1_GRADIENT_STOP GradientStop(float position, [NativeTypeName("const D2D1_COLOR_F &")] in DXGI_RGBA color)
         {
             D2D1_GRADIENT_STOP gradientStop = new D2D1_GRADIENT_STOP
             {
@@ -181,7 +180,7 @@ namespace TerraFX.Interop
             return quadraticBezier;
         }
 
-        public static D2D1_STROKE_STYLE_PROPERTIES StrokeStyleProperties(D2D1_CAP_STYLE startCap = D2D1_CAP_STYLE_FLAT, D2D1_CAP_STYLE endCap = D2D1_CAP_STYLE_FLAT, D2D1_CAP_STYLE dashCap = D2D1_CAP_STYLE_FLAT, D2D1_LINE_JOIN lineJoin = D2D1_LINE_JOIN_MITER, [NativeTypeName("FLOAT")] float miterLimit = 10.0f, D2D1_DASH_STYLE dashStyle = D2D1_DASH_STYLE_SOLID, [NativeTypeName("FLOAT")] float dashOffset = 0.0f)
+        public static D2D1_STROKE_STYLE_PROPERTIES StrokeStyleProperties(D2D1_CAP_STYLE startCap = D2D1_CAP_STYLE_FLAT, D2D1_CAP_STYLE endCap = D2D1_CAP_STYLE_FLAT, D2D1_CAP_STYLE dashCap = D2D1_CAP_STYLE_FLAT, D2D1_LINE_JOIN lineJoin = D2D1_LINE_JOIN_MITER, float miterLimit = 10.0f, D2D1_DASH_STYLE dashStyle = D2D1_DASH_STYLE_SOLID, float dashOffset = 0.0f)
         {
             D2D1_STROKE_STYLE_PROPERTIES strokeStyleProperties;
 
@@ -217,7 +216,7 @@ namespace TerraFX.Interop
             return linearGradientBrushProperties;
         }
 
-        public static D2D1_RADIAL_GRADIENT_BRUSH_PROPERTIES RadialGradientBrushProperties([NativeTypeName("const D2D1_POINT_2F &")] in D2D_POINT_2F center, [NativeTypeName("const D2D1_POINT_2F &")] in D2D_POINT_2F gradientOriginOffset, [NativeTypeName("FLOAT")] float radiusX, [NativeTypeName("FLOAT")] float radiusY)
+        public static D2D1_RADIAL_GRADIENT_BRUSH_PROPERTIES RadialGradientBrushProperties([NativeTypeName("const D2D1_POINT_2F &")] in D2D_POINT_2F center, [NativeTypeName("const D2D1_POINT_2F &")] in D2D_POINT_2F gradientOriginOffset, float radiusX, float radiusY)
         {
             D2D1_RADIAL_GRADIENT_BRUSH_PROPERTIES radialGradientBrushProperties;
 
@@ -239,7 +238,7 @@ namespace TerraFX.Interop
             return pixelFormat;
         }
 
-        public static D2D1_BITMAP_PROPERTIES BitmapProperties([NativeTypeName("const D2D1_PIXEL_FORMAT &")] in D2D1_PIXEL_FORMAT pixelFormat = default, [NativeTypeName("FLOAT")] float dpiX = 96.0f, [NativeTypeName("FLOAT")] float dpiY = 96.0f)
+        public static D2D1_BITMAP_PROPERTIES BitmapProperties([NativeTypeName("const D2D1_PIXEL_FORMAT &")] in D2D1_PIXEL_FORMAT pixelFormat = default, float dpiX = 96.0f, float dpiY = 96.0f)
         {
             D2D1_BITMAP_PROPERTIES bitmapProperties;
 
@@ -250,7 +249,7 @@ namespace TerraFX.Interop
             return bitmapProperties;
         }
 
-        public static D2D1_RENDER_TARGET_PROPERTIES RenderTargetProperties(D2D1_RENDER_TARGET_TYPE type = D2D1_RENDER_TARGET_TYPE_DEFAULT, [NativeTypeName("const D2D1_PIXEL_FORMAT &")] in D2D1_PIXEL_FORMAT pixelFormat = default, [NativeTypeName("FLOAT")] float dpiX = 0.0f, [NativeTypeName("FLOAT")] float dpiY = 0.0f, D2D1_RENDER_TARGET_USAGE usage = D2D1_RENDER_TARGET_USAGE_NONE, D2D1_FEATURE_LEVEL minLevel = D2D1_FEATURE_LEVEL_DEFAULT)
+        public static D2D1_RENDER_TARGET_PROPERTIES RenderTargetProperties(D2D1_RENDER_TARGET_TYPE type = D2D1_RENDER_TARGET_TYPE_DEFAULT, [NativeTypeName("const D2D1_PIXEL_FORMAT &")] in D2D1_PIXEL_FORMAT pixelFormat = default, float dpiX = 0.0f, float dpiY = 0.0f, D2D1_RENDER_TARGET_USAGE usage = D2D1_RENDER_TARGET_USAGE_NONE, D2D1_FEATURE_LEVEL minLevel = D2D1_FEATURE_LEVEL_DEFAULT)
         {
             D2D1_RENDER_TARGET_PROPERTIES renderTargetProperties;
 
@@ -264,7 +263,7 @@ namespace TerraFX.Interop
             return renderTargetProperties;
         }
 
-        public static D2D1_HWND_RENDER_TARGET_PROPERTIES HwndRenderTargetProperties([NativeTypeName("HWND")] IntPtr hwnd, [NativeTypeName("D2D1_SIZE_U")] D2D_SIZE_U pixelSize = default, D2D1_PRESENT_OPTIONS presentOptions = D2D1_PRESENT_OPTIONS_NONE)
+        public static D2D1_HWND_RENDER_TARGET_PROPERTIES HwndRenderTargetProperties(HWND hwnd, [NativeTypeName("D2D1_SIZE_U")] D2D_SIZE_U pixelSize = default, D2D1_PRESENT_OPTIONS presentOptions = D2D1_PRESENT_OPTIONS_NONE)
         {
             D2D1_HWND_RENDER_TARGET_PROPERTIES hwndRenderTargetProperties;
 
@@ -275,22 +274,22 @@ namespace TerraFX.Interop
             return hwndRenderTargetProperties;
         }
 
-        public static D2D1_LAYER_PARAMETERS LayerParameters([NativeTypeName("ID2D1Geometry *"), Optional] ID2D1Geometry* geometricMask, [Optional] D2D1_ANTIALIAS_MODE maskAntialiasMode, [NativeTypeName("FLOAT")] float opacity = 1.0f, [NativeTypeName("ID2D1Brush *")] ID2D1Brush* opacityBrush = null, D2D1_LAYER_OPTIONS layerOptions = D2D1_LAYER_OPTIONS_NONE)
+        public static D2D1_LAYER_PARAMETERS LayerParameters([NativeTypeName("ID2D1Geometry *"), Optional] ID2D1Geometry* geometricMask, [Optional] D2D1_ANTIALIAS_MODE maskAntialiasMode, float opacity = 1.0f, [NativeTypeName("ID2D1Brush *")] ID2D1Brush* opacityBrush = null, D2D1_LAYER_OPTIONS layerOptions = D2D1_LAYER_OPTIONS_NONE)
         {
             return LayerParameters(InfiniteRect, geometricMask, maskAntialiasMode, IdentityMatrix, opacity, opacityBrush, layerOptions);
         }
 
-        public static D2D1_LAYER_PARAMETERS LayerParameters([NativeTypeName("const D2D1_RECT_F")] in D2D_RECT_F contentBounds, [NativeTypeName("ID2D1Geometry *"), Optional] ID2D1Geometry* geometricMask, [Optional] D2D1_ANTIALIAS_MODE maskAntialiasMode, [NativeTypeName("FLOAT")] float opacity = 1.0f, [NativeTypeName("ID2D1Brush *")] ID2D1Brush* opacityBrush = null, D2D1_LAYER_OPTIONS layerOptions = D2D1_LAYER_OPTIONS_NONE)
+        public static D2D1_LAYER_PARAMETERS LayerParameters([NativeTypeName("const D2D1_RECT_F")] in D2D_RECT_F contentBounds, [NativeTypeName("ID2D1Geometry *"), Optional] ID2D1Geometry* geometricMask, [Optional] D2D1_ANTIALIAS_MODE maskAntialiasMode, float opacity = 1.0f, [NativeTypeName("ID2D1Brush *")] ID2D1Brush* opacityBrush = null, D2D1_LAYER_OPTIONS layerOptions = D2D1_LAYER_OPTIONS_NONE)
         {
             return LayerParameters(contentBounds, geometricMask, maskAntialiasMode, IdentityMatrix, opacity, opacityBrush, layerOptions);
         }
 
-        public static D2D1_LAYER_PARAMETERS LayerParameters([NativeTypeName("ID2D1Geometry *"), Optional] ID2D1Geometry* geometricMask, [Optional] D2D1_ANTIALIAS_MODE maskAntialiasMode, [NativeTypeName("D2D1_MATRIX_3X2_F")] D2D_MATRIX_3X2_F maskTransform, [NativeTypeName("FLOAT")] float opacity = 1.0f, [NativeTypeName("ID2D1Brush *")] ID2D1Brush* opacityBrush = null, D2D1_LAYER_OPTIONS layerOptions = D2D1_LAYER_OPTIONS_NONE)
+        public static D2D1_LAYER_PARAMETERS LayerParameters([NativeTypeName("ID2D1Geometry *"), Optional] ID2D1Geometry* geometricMask, [Optional] D2D1_ANTIALIAS_MODE maskAntialiasMode, [NativeTypeName("D2D1_MATRIX_3X2_F")] D2D_MATRIX_3X2_F maskTransform, float opacity = 1.0f, [NativeTypeName("ID2D1Brush *")] ID2D1Brush* opacityBrush = null, D2D1_LAYER_OPTIONS layerOptions = D2D1_LAYER_OPTIONS_NONE)
         {
             return LayerParameters(InfiniteRect, geometricMask, maskAntialiasMode, maskTransform, opacity, opacityBrush, layerOptions);
         }
 
-        public static D2D1_LAYER_PARAMETERS LayerParameters([NativeTypeName("const D2D1_RECT_F")] in D2D_RECT_F contentBounds, [NativeTypeName("ID2D1Geometry *"), Optional] ID2D1Geometry* geometricMask, [Optional] D2D1_ANTIALIAS_MODE maskAntialiasMode, [NativeTypeName("D2D1_MATRIX_3X2_F")] D2D_MATRIX_3X2_F maskTransform, [NativeTypeName("FLOAT")] float opacity = 1.0f, [NativeTypeName("ID2D1Brush *")] ID2D1Brush *opacityBrush = null, D2D1_LAYER_OPTIONS layerOptions = D2D1_LAYER_OPTIONS_NONE)
+        public static D2D1_LAYER_PARAMETERS LayerParameters([NativeTypeName("const D2D1_RECT_F")] in D2D_RECT_F contentBounds, [NativeTypeName("ID2D1Geometry *"), Optional] ID2D1Geometry* geometricMask, [Optional] D2D1_ANTIALIAS_MODE maskAntialiasMode, [NativeTypeName("D2D1_MATRIX_3X2_F")] D2D_MATRIX_3X2_F maskTransform, float opacity = 1.0f, [NativeTypeName("ID2D1Brush *")] ID2D1Brush *opacityBrush = null, D2D1_LAYER_OPTIONS layerOptions = D2D1_LAYER_OPTIONS_NONE)
         {
             D2D1_LAYER_PARAMETERS layerParameters = default;
 

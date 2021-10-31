@@ -7,10 +7,8 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct PROCESSOR_GROUP_INFO
     {
-        [NativeTypeName("BYTE")]
         public byte MaximumProcessorCount;
 
-        [NativeTypeName("BYTE")]
         public byte ActiveProcessorCount;
 
         [NativeTypeName("BYTE [38]")]

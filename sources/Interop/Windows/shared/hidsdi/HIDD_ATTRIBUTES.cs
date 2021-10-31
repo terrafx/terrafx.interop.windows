@@ -10,13 +10,10 @@ namespace TerraFX.Interop
         [NativeTypeName("ULONG")]
         public uint Size;
 
-        [NativeTypeName("USHORT")]
         public ushort VendorID;
 
-        [NativeTypeName("USHORT")]
         public ushort ProductID;
 
-        [NativeTypeName("USHORT")]
         public ushort VersionNumber;
     }
 }

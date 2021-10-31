@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IMachineGlobalObjectTable*, Guid*, void**, int>)(lpVtbl[0]))((IMachineGlobalObjectTable*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,26 +41,23 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int RegisterObject([NativeTypeName("const IID &")] Guid* clsid, [NativeTypeName("LPCWSTR")] ushort* identifier, IUnknown* @object, [NativeTypeName("MachineGlobalObjectTableRegistrationToken *")] IntPtr* token)
+        public HRESULT RegisterObject([NativeTypeName("const IID &")] Guid* clsid, [NativeTypeName("LPCWSTR")] ushort* identifier, IUnknown* @object, MachineGlobalObjectTableRegistrationToken* token)
         {
-            return ((delegate* unmanaged<IMachineGlobalObjectTable*, Guid*, ushort*, IUnknown*, IntPtr*, int>)(lpVtbl[3]))((IMachineGlobalObjectTable*)Unsafe.AsPointer(ref this), clsid, identifier, @object, token);
+            return ((delegate* unmanaged<IMachineGlobalObjectTable*, Guid*, ushort*, IUnknown*, MachineGlobalObjectTableRegistrationToken*, int>)(lpVtbl[3]))((IMachineGlobalObjectTable*)Unsafe.AsPointer(ref this), clsid, identifier, @object, token);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetObjectW([NativeTypeName("const IID &")] Guid* clsid, [NativeTypeName("LPCWSTR")] ushort* identifier, [NativeTypeName("const IID &")] Guid* riid, void** ppv)
+        public HRESULT GetObjectW([NativeTypeName("const IID &")] Guid* clsid, [NativeTypeName("LPCWSTR")] ushort* identifier, [NativeTypeName("const IID &")] Guid* riid, void** ppv)
         {
             return ((delegate* unmanaged<IMachineGlobalObjectTable*, Guid*, ushort*, Guid*, void**, int>)(lpVtbl[4]))((IMachineGlobalObjectTable*)Unsafe.AsPointer(ref this), clsid, identifier, riid, ppv);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int RevokeObject([NativeTypeName("MachineGlobalObjectTableRegistrationToken")] IntPtr token)
+        public HRESULT RevokeObject(MachineGlobalObjectTableRegistrationToken token)
         {
-            return ((delegate* unmanaged<IMachineGlobalObjectTable*, IntPtr, int>)(lpVtbl[5]))((IMachineGlobalObjectTable*)Unsafe.AsPointer(ref this), token);
+            return ((delegate* unmanaged<IMachineGlobalObjectTable*, MachineGlobalObjectTableRegistrationToken, int>)(lpVtbl[5]))((IMachineGlobalObjectTable*)Unsafe.AsPointer(ref this), token);
         }
     }
 }

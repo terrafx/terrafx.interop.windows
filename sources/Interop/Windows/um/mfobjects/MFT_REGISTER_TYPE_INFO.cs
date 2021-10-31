@@ -9,10 +9,8 @@ namespace TerraFX.Interop
 {
     public partial struct MFT_REGISTER_TYPE_INFO
     {
-        [NativeTypeName("GUID")]
         public Guid guidMajorType;
 
-        [NativeTypeName("GUID")]
         public Guid guidSubtype;
     }
 }

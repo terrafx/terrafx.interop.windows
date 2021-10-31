@@ -15,12 +15,10 @@ namespace TerraFX.Interop
 
         public D2D1_LINE_JOIN lineJoin;
 
-        [NativeTypeName("FLOAT")]
         public float miterLimit;
 
         public D2D1_DASH_STYLE dashStyle;
 
-        [NativeTypeName("FLOAT")]
         public float dashOffset;
     }
 }

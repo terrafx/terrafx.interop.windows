@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IBrowserService3*, Guid*, void**, int>)(lpVtbl[0]))((IBrowserService3*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,168 +41,147 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetParentSite(IOleInPlaceSite** ppipsite)
+        public HRESULT GetParentSite(IOleInPlaceSite** ppipsite)
         {
             return ((delegate* unmanaged<IBrowserService3*, IOleInPlaceSite**, int>)(lpVtbl[3]))((IBrowserService3*)Unsafe.AsPointer(ref this), ppipsite);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetTitle(IShellView* psv, [NativeTypeName("LPCWSTR")] ushort* pszName)
+        public HRESULT SetTitle(IShellView* psv, [NativeTypeName("LPCWSTR")] ushort* pszName)
         {
             return ((delegate* unmanaged<IBrowserService3*, IShellView*, ushort*, int>)(lpVtbl[4]))((IBrowserService3*)Unsafe.AsPointer(ref this), psv, pszName);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetTitle(IShellView* psv, [NativeTypeName("LPWSTR")] ushort* pszName, [NativeTypeName("DWORD")] uint cchName)
+        public HRESULT GetTitle(IShellView* psv, [NativeTypeName("LPWSTR")] ushort* pszName, [NativeTypeName("DWORD")] uint cchName)
         {
             return ((delegate* unmanaged<IBrowserService3*, IShellView*, ushort*, uint, int>)(lpVtbl[5]))((IBrowserService3*)Unsafe.AsPointer(ref this), psv, pszName, cchName);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetOleObject(IOleObject** ppobjv)
+        public HRESULT GetOleObject(IOleObject** ppobjv)
         {
             return ((delegate* unmanaged<IBrowserService3*, IOleObject**, int>)(lpVtbl[6]))((IBrowserService3*)Unsafe.AsPointer(ref this), ppobjv);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetTravelLog(ITravelLog** pptl)
+        public HRESULT GetTravelLog(ITravelLog** pptl)
         {
             return ((delegate* unmanaged<IBrowserService3*, ITravelLog**, int>)(lpVtbl[7]))((IBrowserService3*)Unsafe.AsPointer(ref this), pptl);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        [return: NativeTypeName("HRESULT")]
-        public int ShowControlWindow([NativeTypeName("UINT")] uint id, [NativeTypeName("BOOL")] int fShow)
+        public HRESULT ShowControlWindow(uint id, BOOL fShow)
         {
-            return ((delegate* unmanaged<IBrowserService3*, uint, int, int>)(lpVtbl[8]))((IBrowserService3*)Unsafe.AsPointer(ref this), id, fShow);
+            return ((delegate* unmanaged<IBrowserService3*, uint, BOOL, int>)(lpVtbl[8]))((IBrowserService3*)Unsafe.AsPointer(ref this), id, fShow);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        [return: NativeTypeName("HRESULT")]
-        public int IsControlWindowShown([NativeTypeName("UINT")] uint id, [NativeTypeName("BOOL *")] int* pfShown)
+        public HRESULT IsControlWindowShown(uint id, BOOL* pfShown)
         {
-            return ((delegate* unmanaged<IBrowserService3*, uint, int*, int>)(lpVtbl[9]))((IBrowserService3*)Unsafe.AsPointer(ref this), id, pfShown);
+            return ((delegate* unmanaged<IBrowserService3*, uint, BOOL*, int>)(lpVtbl[9]))((IBrowserService3*)Unsafe.AsPointer(ref this), id, pfShown);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(10)]
-        [return: NativeTypeName("HRESULT")]
-        public int IEGetDisplayName([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl, [NativeTypeName("LPWSTR")] ushort* pwszName, [NativeTypeName("UINT")] uint uFlags)
+        public HRESULT IEGetDisplayName([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl, [NativeTypeName("LPWSTR")] ushort* pwszName, uint uFlags)
         {
             return ((delegate* unmanaged<IBrowserService3*, ITEMIDLIST*, ushort*, uint, int>)(lpVtbl[10]))((IBrowserService3*)Unsafe.AsPointer(ref this), pidl, pwszName, uFlags);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(11)]
-        [return: NativeTypeName("HRESULT")]
-        public int IEParseDisplayName([NativeTypeName("UINT")] uint uiCP, [NativeTypeName("LPCWSTR")] ushort* pwszPath, [NativeTypeName("LPITEMIDLIST *")] ITEMIDLIST** ppidlOut)
+        public HRESULT IEParseDisplayName(uint uiCP, [NativeTypeName("LPCWSTR")] ushort* pwszPath, [NativeTypeName("LPITEMIDLIST *")] ITEMIDLIST** ppidlOut)
         {
             return ((delegate* unmanaged<IBrowserService3*, uint, ushort*, ITEMIDLIST**, int>)(lpVtbl[11]))((IBrowserService3*)Unsafe.AsPointer(ref this), uiCP, pwszPath, ppidlOut);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(12)]
-        [return: NativeTypeName("HRESULT")]
-        public int DisplayParseError([NativeTypeName("HRESULT")] int hres, [NativeTypeName("LPCWSTR")] ushort* pwszPath)
+        public HRESULT DisplayParseError(HRESULT hres, [NativeTypeName("LPCWSTR")] ushort* pwszPath)
         {
-            return ((delegate* unmanaged<IBrowserService3*, int, ushort*, int>)(lpVtbl[12]))((IBrowserService3*)Unsafe.AsPointer(ref this), hres, pwszPath);
+            return ((delegate* unmanaged<IBrowserService3*, HRESULT, ushort*, int>)(lpVtbl[12]))((IBrowserService3*)Unsafe.AsPointer(ref this), hres, pwszPath);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(13)]
-        [return: NativeTypeName("HRESULT")]
-        public int NavigateToPidl([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl, [NativeTypeName("DWORD")] uint grfHLNF)
+        public HRESULT NavigateToPidl([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl, [NativeTypeName("DWORD")] uint grfHLNF)
         {
             return ((delegate* unmanaged<IBrowserService3*, ITEMIDLIST*, uint, int>)(lpVtbl[13]))((IBrowserService3*)Unsafe.AsPointer(ref this), pidl, grfHLNF);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(14)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetNavigateState(BNSTATE bnstate)
+        public HRESULT SetNavigateState(BNSTATE bnstate)
         {
             return ((delegate* unmanaged<IBrowserService3*, BNSTATE, int>)(lpVtbl[14]))((IBrowserService3*)Unsafe.AsPointer(ref this), bnstate);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(15)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetNavigateState(BNSTATE* pbnstate)
+        public HRESULT GetNavigateState(BNSTATE* pbnstate)
         {
             return ((delegate* unmanaged<IBrowserService3*, BNSTATE*, int>)(lpVtbl[15]))((IBrowserService3*)Unsafe.AsPointer(ref this), pbnstate);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(16)]
-        [return: NativeTypeName("HRESULT")]
-        public int NotifyRedirect(IShellView* psv, [NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl, [NativeTypeName("BOOL *")] int* pfDidBrowse)
+        public HRESULT NotifyRedirect(IShellView* psv, [NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl, BOOL* pfDidBrowse)
         {
-            return ((delegate* unmanaged<IBrowserService3*, IShellView*, ITEMIDLIST*, int*, int>)(lpVtbl[16]))((IBrowserService3*)Unsafe.AsPointer(ref this), psv, pidl, pfDidBrowse);
+            return ((delegate* unmanaged<IBrowserService3*, IShellView*, ITEMIDLIST*, BOOL*, int>)(lpVtbl[16]))((IBrowserService3*)Unsafe.AsPointer(ref this), psv, pidl, pfDidBrowse);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(17)]
-        [return: NativeTypeName("HRESULT")]
-        public int UpdateWindowList()
+        public HRESULT UpdateWindowList()
         {
             return ((delegate* unmanaged<IBrowserService3*, int>)(lpVtbl[17]))((IBrowserService3*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(18)]
-        [return: NativeTypeName("HRESULT")]
-        public int UpdateBackForwardState()
+        public HRESULT UpdateBackForwardState()
         {
             return ((delegate* unmanaged<IBrowserService3*, int>)(lpVtbl[18]))((IBrowserService3*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(19)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetFlags([NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("DWORD")] uint dwFlagMask)
+        public HRESULT SetFlags([NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("DWORD")] uint dwFlagMask)
         {
             return ((delegate* unmanaged<IBrowserService3*, uint, uint, int>)(lpVtbl[19]))((IBrowserService3*)Unsafe.AsPointer(ref this), dwFlags, dwFlagMask);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(20)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetFlags([NativeTypeName("DWORD *")] uint* pdwFlags)
+        public HRESULT GetFlags([NativeTypeName("DWORD *")] uint* pdwFlags)
         {
             return ((delegate* unmanaged<IBrowserService3*, uint*, int>)(lpVtbl[20]))((IBrowserService3*)Unsafe.AsPointer(ref this), pdwFlags);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(21)]
-        [return: NativeTypeName("HRESULT")]
-        public int CanNavigateNow()
+        public HRESULT CanNavigateNow()
         {
             return ((delegate* unmanaged<IBrowserService3*, int>)(lpVtbl[21]))((IBrowserService3*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(22)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetPidl([NativeTypeName("LPITEMIDLIST *")] ITEMIDLIST** ppidl)
+        public HRESULT GetPidl([NativeTypeName("LPITEMIDLIST *")] ITEMIDLIST** ppidl)
         {
             return ((delegate* unmanaged<IBrowserService3*, ITEMIDLIST**, int>)(lpVtbl[22]))((IBrowserService3*)Unsafe.AsPointer(ref this), ppidl);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(23)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetReferrer([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl)
+        public HRESULT SetReferrer([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl)
         {
             return ((delegate* unmanaged<IBrowserService3*, ITEMIDLIST*, int>)(lpVtbl[23]))((IBrowserService3*)Unsafe.AsPointer(ref this), pidl);
         }
@@ -218,104 +196,92 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(25)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetBrowserByIndex([NativeTypeName("DWORD")] uint dwID, IUnknown** ppunk)
+        public HRESULT GetBrowserByIndex([NativeTypeName("DWORD")] uint dwID, IUnknown** ppunk)
         {
             return ((delegate* unmanaged<IBrowserService3*, uint, IUnknown**, int>)(lpVtbl[25]))((IBrowserService3*)Unsafe.AsPointer(ref this), dwID, ppunk);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(26)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetHistoryObject(IOleObject** ppole, IStream** pstm, IBindCtx** ppbc)
+        public HRESULT GetHistoryObject(IOleObject** ppole, IStream** pstm, IBindCtx** ppbc)
         {
             return ((delegate* unmanaged<IBrowserService3*, IOleObject**, IStream**, IBindCtx**, int>)(lpVtbl[26]))((IBrowserService3*)Unsafe.AsPointer(ref this), ppole, pstm, ppbc);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(27)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetHistoryObject(IOleObject* pole, [NativeTypeName("BOOL")] int fIsLocalAnchor)
+        public HRESULT SetHistoryObject(IOleObject* pole, BOOL fIsLocalAnchor)
         {
-            return ((delegate* unmanaged<IBrowserService3*, IOleObject*, int, int>)(lpVtbl[27]))((IBrowserService3*)Unsafe.AsPointer(ref this), pole, fIsLocalAnchor);
+            return ((delegate* unmanaged<IBrowserService3*, IOleObject*, BOOL, int>)(lpVtbl[27]))((IBrowserService3*)Unsafe.AsPointer(ref this), pole, fIsLocalAnchor);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(28)]
-        [return: NativeTypeName("HRESULT")]
-        public int CacheOLEServer(IOleObject* pole)
+        public HRESULT CacheOLEServer(IOleObject* pole)
         {
             return ((delegate* unmanaged<IBrowserService3*, IOleObject*, int>)(lpVtbl[28]))((IBrowserService3*)Unsafe.AsPointer(ref this), pole);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(29)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetSetCodePage(VARIANT* pvarIn, VARIANT* pvarOut)
+        public HRESULT GetSetCodePage(VARIANT* pvarIn, VARIANT* pvarOut)
         {
             return ((delegate* unmanaged<IBrowserService3*, VARIANT*, VARIANT*, int>)(lpVtbl[29]))((IBrowserService3*)Unsafe.AsPointer(ref this), pvarIn, pvarOut);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(30)]
-        [return: NativeTypeName("HRESULT")]
-        public int OnHttpEquiv(IShellView* psv, [NativeTypeName("BOOL")] int fDone, VARIANT* pvarargIn, VARIANT* pvarargOut)
+        public HRESULT OnHttpEquiv(IShellView* psv, BOOL fDone, VARIANT* pvarargIn, VARIANT* pvarargOut)
         {
-            return ((delegate* unmanaged<IBrowserService3*, IShellView*, int, VARIANT*, VARIANT*, int>)(lpVtbl[30]))((IBrowserService3*)Unsafe.AsPointer(ref this), psv, fDone, pvarargIn, pvarargOut);
+            return ((delegate* unmanaged<IBrowserService3*, IShellView*, BOOL, VARIANT*, VARIANT*, int>)(lpVtbl[30]))((IBrowserService3*)Unsafe.AsPointer(ref this), psv, fDone, pvarargIn, pvarargOut);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(31)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetPalette([NativeTypeName("HPALETTE *")] IntPtr* hpal)
+        public HRESULT GetPalette(HPALETTE* hpal)
         {
-            return ((delegate* unmanaged<IBrowserService3*, IntPtr*, int>)(lpVtbl[31]))((IBrowserService3*)Unsafe.AsPointer(ref this), hpal);
+            return ((delegate* unmanaged<IBrowserService3*, HPALETTE*, int>)(lpVtbl[31]))((IBrowserService3*)Unsafe.AsPointer(ref this), hpal);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(32)]
-        [return: NativeTypeName("HRESULT")]
-        public int RegisterWindow([NativeTypeName("BOOL")] int fForceRegister, int swc)
+        public HRESULT RegisterWindow(BOOL fForceRegister, int swc)
         {
-            return ((delegate* unmanaged<IBrowserService3*, int, int, int>)(lpVtbl[32]))((IBrowserService3*)Unsafe.AsPointer(ref this), fForceRegister, swc);
+            return ((delegate* unmanaged<IBrowserService3*, BOOL, int, int>)(lpVtbl[32]))((IBrowserService3*)Unsafe.AsPointer(ref this), fForceRegister, swc);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(33)]
         [return: NativeTypeName("LRESULT")]
-        public nint WndProcBS([NativeTypeName("HWND")] IntPtr hwnd, [NativeTypeName("UINT")] uint uMsg, [NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam)
+        public nint WndProcBS(HWND hwnd, uint uMsg, [NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam)
         {
-            return ((delegate* unmanaged<IBrowserService3*, IntPtr, uint, nuint, nint, nint>)(lpVtbl[33]))((IBrowserService3*)Unsafe.AsPointer(ref this), hwnd, uMsg, wParam, lParam);
+            return ((delegate* unmanaged<IBrowserService3*, HWND, uint, nuint, nint, nint>)(lpVtbl[33]))((IBrowserService3*)Unsafe.AsPointer(ref this), hwnd, uMsg, wParam, lParam);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(34)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetAsDefFolderSettings()
+        public HRESULT SetAsDefFolderSettings()
         {
             return ((delegate* unmanaged<IBrowserService3*, int>)(lpVtbl[34]))((IBrowserService3*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(35)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetViewRect(RECT* prc)
+        public HRESULT GetViewRect(RECT* prc)
         {
             return ((delegate* unmanaged<IBrowserService3*, RECT*, int>)(lpVtbl[35]))((IBrowserService3*)Unsafe.AsPointer(ref this), prc);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(36)]
-        [return: NativeTypeName("HRESULT")]
-        public int OnSize([NativeTypeName("WPARAM")] nuint wParam)
+        public HRESULT OnSize([NativeTypeName("WPARAM")] nuint wParam)
         {
             return ((delegate* unmanaged<IBrowserService3*, nuint, int>)(lpVtbl[36]))((IBrowserService3*)Unsafe.AsPointer(ref this), wParam);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(37)]
-        [return: NativeTypeName("HRESULT")]
-        public int OnCreate([NativeTypeName("struct tagCREATESTRUCTW *")] CREATESTRUCTW* pcs)
+        public HRESULT OnCreate([NativeTypeName("struct tagCREATESTRUCTW *")] CREATESTRUCTW* pcs)
         {
             return ((delegate* unmanaged<IBrowserService3*, CREATESTRUCTW*, int>)(lpVtbl[37]))((IBrowserService3*)Unsafe.AsPointer(ref this), pcs);
         }
@@ -330,8 +296,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(39)]
-        [return: NativeTypeName("HRESULT")]
-        public int OnDestroy()
+        public HRESULT OnDestroy()
         {
             return ((delegate* unmanaged<IBrowserService3*, int>)(lpVtbl[39]))((IBrowserService3*)Unsafe.AsPointer(ref this));
         }
@@ -346,64 +311,56 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(41)]
-        [return: NativeTypeName("HRESULT")]
-        public int OnSetFocus()
+        public HRESULT OnSetFocus()
         {
             return ((delegate* unmanaged<IBrowserService3*, int>)(lpVtbl[41]))((IBrowserService3*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(42)]
-        [return: NativeTypeName("HRESULT")]
-        public int OnFrameWindowActivateBS([NativeTypeName("BOOL")] int fActive)
+        public HRESULT OnFrameWindowActivateBS(BOOL fActive)
         {
-            return ((delegate* unmanaged<IBrowserService3*, int, int>)(lpVtbl[42]))((IBrowserService3*)Unsafe.AsPointer(ref this), fActive);
+            return ((delegate* unmanaged<IBrowserService3*, BOOL, int>)(lpVtbl[42]))((IBrowserService3*)Unsafe.AsPointer(ref this), fActive);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(43)]
-        [return: NativeTypeName("HRESULT")]
-        public int ReleaseShellView()
+        public HRESULT ReleaseShellView()
         {
             return ((delegate* unmanaged<IBrowserService3*, int>)(lpVtbl[43]))((IBrowserService3*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(44)]
-        [return: NativeTypeName("HRESULT")]
-        public int ActivatePendingView()
+        public HRESULT ActivatePendingView()
         {
             return ((delegate* unmanaged<IBrowserService3*, int>)(lpVtbl[44]))((IBrowserService3*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(45)]
-        [return: NativeTypeName("HRESULT")]
-        public int CreateViewWindow(IShellView* psvNew, IShellView* psvOld, [NativeTypeName("LPRECT")] RECT* prcView, [NativeTypeName("HWND *")] IntPtr* phwnd)
+        public HRESULT CreateViewWindow(IShellView* psvNew, IShellView* psvOld, [NativeTypeName("LPRECT")] RECT* prcView, HWND* phwnd)
         {
-            return ((delegate* unmanaged<IBrowserService3*, IShellView*, IShellView*, RECT*, IntPtr*, int>)(lpVtbl[45]))((IBrowserService3*)Unsafe.AsPointer(ref this), psvNew, psvOld, prcView, phwnd);
+            return ((delegate* unmanaged<IBrowserService3*, IShellView*, IShellView*, RECT*, HWND*, int>)(lpVtbl[45]))((IBrowserService3*)Unsafe.AsPointer(ref this), psvNew, psvOld, prcView, phwnd);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(46)]
-        [return: NativeTypeName("HRESULT")]
-        public int CreateBrowserPropSheetExt([NativeTypeName("const IID &")] Guid* riid, void** ppv)
+        public HRESULT CreateBrowserPropSheetExt([NativeTypeName("const IID &")] Guid* riid, void** ppv)
         {
             return ((delegate* unmanaged<IBrowserService3*, Guid*, void**, int>)(lpVtbl[46]))((IBrowserService3*)Unsafe.AsPointer(ref this), riid, ppv);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(47)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetViewWindow([NativeTypeName("HWND *")] IntPtr* phwndView)
+        public HRESULT GetViewWindow(HWND* phwndView)
         {
-            return ((delegate* unmanaged<IBrowserService3*, IntPtr*, int>)(lpVtbl[47]))((IBrowserService3*)Unsafe.AsPointer(ref this), phwndView);
+            return ((delegate* unmanaged<IBrowserService3*, HWND*, int>)(lpVtbl[47]))((IBrowserService3*)Unsafe.AsPointer(ref this), phwndView);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(48)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetBaseBrowserData([NativeTypeName("LPCBASEBROWSERDATA *")] BASEBROWSERDATA** pbbd)
+        public HRESULT GetBaseBrowserData([NativeTypeName("LPCBASEBROWSERDATA *")] BASEBROWSERDATA** pbbd)
         {
             return ((delegate* unmanaged<IBrowserService3*, BASEBROWSERDATA**, int>)(lpVtbl[48]))((IBrowserService3*)Unsafe.AsPointer(ref this), pbbd);
         }
@@ -418,183 +375,160 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(50)]
-        [return: NativeTypeName("HRESULT")]
-        public int InitializeTravelLog(ITravelLog* ptl, [NativeTypeName("DWORD")] uint dw)
+        public HRESULT InitializeTravelLog(ITravelLog* ptl, [NativeTypeName("DWORD")] uint dw)
         {
             return ((delegate* unmanaged<IBrowserService3*, ITravelLog*, uint, int>)(lpVtbl[50]))((IBrowserService3*)Unsafe.AsPointer(ref this), ptl, dw);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(51)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetTopBrowser()
+        public HRESULT SetTopBrowser()
         {
             return ((delegate* unmanaged<IBrowserService3*, int>)(lpVtbl[51]))((IBrowserService3*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(52)]
-        [return: NativeTypeName("HRESULT")]
-        public int Offline(int iCmd)
+        public HRESULT Offline(int iCmd)
         {
             return ((delegate* unmanaged<IBrowserService3*, int, int>)(lpVtbl[52]))((IBrowserService3*)Unsafe.AsPointer(ref this), iCmd);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(53)]
-        [return: NativeTypeName("HRESULT")]
-        public int AllowViewResize([NativeTypeName("BOOL")] int f)
+        public HRESULT AllowViewResize(BOOL f)
         {
-            return ((delegate* unmanaged<IBrowserService3*, int, int>)(lpVtbl[53]))((IBrowserService3*)Unsafe.AsPointer(ref this), f);
+            return ((delegate* unmanaged<IBrowserService3*, BOOL, int>)(lpVtbl[53]))((IBrowserService3*)Unsafe.AsPointer(ref this), f);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(54)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetActivateState([NativeTypeName("UINT")] uint u)
+        public HRESULT SetActivateState(uint u)
         {
             return ((delegate* unmanaged<IBrowserService3*, uint, int>)(lpVtbl[54]))((IBrowserService3*)Unsafe.AsPointer(ref this), u);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(55)]
-        [return: NativeTypeName("HRESULT")]
-        public int UpdateSecureLockIcon(int eSecureLock)
+        public HRESULT UpdateSecureLockIcon(int eSecureLock)
         {
             return ((delegate* unmanaged<IBrowserService3*, int, int>)(lpVtbl[55]))((IBrowserService3*)Unsafe.AsPointer(ref this), eSecureLock);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(56)]
-        [return: NativeTypeName("HRESULT")]
-        public int InitializeDownloadManager()
+        public HRESULT InitializeDownloadManager()
         {
             return ((delegate* unmanaged<IBrowserService3*, int>)(lpVtbl[56]))((IBrowserService3*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(57)]
-        [return: NativeTypeName("HRESULT")]
-        public int InitializeTransitionSite()
+        public HRESULT InitializeTransitionSite()
         {
             return ((delegate* unmanaged<IBrowserService3*, int>)(lpVtbl[57]))((IBrowserService3*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(58)]
-        [return: NativeTypeName("HRESULT")]
-        public int _Initialize([NativeTypeName("HWND")] IntPtr hwnd, IUnknown* pauto)
+        public HRESULT _Initialize(HWND hwnd, IUnknown* pauto)
         {
-            return ((delegate* unmanaged<IBrowserService3*, IntPtr, IUnknown*, int>)(lpVtbl[58]))((IBrowserService3*)Unsafe.AsPointer(ref this), hwnd, pauto);
+            return ((delegate* unmanaged<IBrowserService3*, HWND, IUnknown*, int>)(lpVtbl[58]))((IBrowserService3*)Unsafe.AsPointer(ref this), hwnd, pauto);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(59)]
-        [return: NativeTypeName("HRESULT")]
-        public int _CancelPendingNavigationAsync()
+        public HRESULT _CancelPendingNavigationAsync()
         {
             return ((delegate* unmanaged<IBrowserService3*, int>)(lpVtbl[59]))((IBrowserService3*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(60)]
-        [return: NativeTypeName("HRESULT")]
-        public int _CancelPendingView()
+        public HRESULT _CancelPendingView()
         {
             return ((delegate* unmanaged<IBrowserService3*, int>)(lpVtbl[60]))((IBrowserService3*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(61)]
-        [return: NativeTypeName("HRESULT")]
-        public int _MaySaveChanges()
+        public HRESULT _MaySaveChanges()
         {
             return ((delegate* unmanaged<IBrowserService3*, int>)(lpVtbl[61]))((IBrowserService3*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(62)]
-        [return: NativeTypeName("HRESULT")]
-        public int _PauseOrResumeView([NativeTypeName("BOOL")] int fPaused)
+        public HRESULT _PauseOrResumeView(BOOL fPaused)
         {
-            return ((delegate* unmanaged<IBrowserService3*, int, int>)(lpVtbl[62]))((IBrowserService3*)Unsafe.AsPointer(ref this), fPaused);
+            return ((delegate* unmanaged<IBrowserService3*, BOOL, int>)(lpVtbl[62]))((IBrowserService3*)Unsafe.AsPointer(ref this), fPaused);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(63)]
-        [return: NativeTypeName("HRESULT")]
-        public int _DisableModeless()
+        public HRESULT _DisableModeless()
         {
             return ((delegate* unmanaged<IBrowserService3*, int>)(lpVtbl[63]))((IBrowserService3*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(64)]
-        [return: NativeTypeName("HRESULT")]
-        public int _NavigateToPidl([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl, [NativeTypeName("DWORD")] uint grfHLNF, [NativeTypeName("DWORD")] uint dwFlags)
+        public HRESULT _NavigateToPidl([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl, [NativeTypeName("DWORD")] uint grfHLNF, [NativeTypeName("DWORD")] uint dwFlags)
         {
             return ((delegate* unmanaged<IBrowserService3*, ITEMIDLIST*, uint, uint, int>)(lpVtbl[64]))((IBrowserService3*)Unsafe.AsPointer(ref this), pidl, grfHLNF, dwFlags);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(65)]
-        [return: NativeTypeName("HRESULT")]
-        public int _TryShell2Rename(IShellView* psv, [NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidlNew)
+        public HRESULT _TryShell2Rename(IShellView* psv, [NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidlNew)
         {
             return ((delegate* unmanaged<IBrowserService3*, IShellView*, ITEMIDLIST*, int>)(lpVtbl[65]))((IBrowserService3*)Unsafe.AsPointer(ref this), psv, pidlNew);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(66)]
-        [return: NativeTypeName("HRESULT")]
-        public int _SwitchActivationNow()
+        public HRESULT _SwitchActivationNow()
         {
             return ((delegate* unmanaged<IBrowserService3*, int>)(lpVtbl[66]))((IBrowserService3*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(67)]
-        [return: NativeTypeName("HRESULT")]
-        public int _ExecChildren(IUnknown* punkBar, [NativeTypeName("BOOL")] int fBroadcast, [NativeTypeName("const GUID *")] Guid* pguidCmdGroup, [NativeTypeName("DWORD")] uint nCmdID, [NativeTypeName("DWORD")] uint nCmdexecopt, [NativeTypeName("VARIANTARG *")] VARIANT* pvarargIn, [NativeTypeName("VARIANTARG *")] VARIANT* pvarargOut)
+        public HRESULT _ExecChildren(IUnknown* punkBar, BOOL fBroadcast, [NativeTypeName("const GUID *")] Guid* pguidCmdGroup, [NativeTypeName("DWORD")] uint nCmdID, [NativeTypeName("DWORD")] uint nCmdexecopt, [NativeTypeName("VARIANTARG *")] VARIANT* pvarargIn, [NativeTypeName("VARIANTARG *")] VARIANT* pvarargOut)
         {
-            return ((delegate* unmanaged<IBrowserService3*, IUnknown*, int, Guid*, uint, uint, VARIANT*, VARIANT*, int>)(lpVtbl[67]))((IBrowserService3*)Unsafe.AsPointer(ref this), punkBar, fBroadcast, pguidCmdGroup, nCmdID, nCmdexecopt, pvarargIn, pvarargOut);
+            return ((delegate* unmanaged<IBrowserService3*, IUnknown*, BOOL, Guid*, uint, uint, VARIANT*, VARIANT*, int>)(lpVtbl[67]))((IBrowserService3*)Unsafe.AsPointer(ref this), punkBar, fBroadcast, pguidCmdGroup, nCmdID, nCmdexecopt, pvarargIn, pvarargOut);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(68)]
-        [return: NativeTypeName("HRESULT")]
-        public int _SendChildren([NativeTypeName("HWND")] IntPtr hwndBar, [NativeTypeName("BOOL")] int fBroadcast, [NativeTypeName("UINT")] uint uMsg, [NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam)
+        public HRESULT _SendChildren(HWND hwndBar, BOOL fBroadcast, uint uMsg, [NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam)
         {
-            return ((delegate* unmanaged<IBrowserService3*, IntPtr, int, uint, nuint, nint, int>)(lpVtbl[68]))((IBrowserService3*)Unsafe.AsPointer(ref this), hwndBar, fBroadcast, uMsg, wParam, lParam);
+            return ((delegate* unmanaged<IBrowserService3*, HWND, BOOL, uint, nuint, nint, int>)(lpVtbl[68]))((IBrowserService3*)Unsafe.AsPointer(ref this), hwndBar, fBroadcast, uMsg, wParam, lParam);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(69)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetFolderSetData([NativeTypeName("struct tagFolderSetData *")] FOLDERSETDATA* pfsd)
+        public HRESULT GetFolderSetData([NativeTypeName("struct tagFolderSetData *")] FOLDERSETDATA* pfsd)
         {
             return ((delegate* unmanaged<IBrowserService3*, FOLDERSETDATA*, int>)(lpVtbl[69]))((IBrowserService3*)Unsafe.AsPointer(ref this), pfsd);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(70)]
-        [return: NativeTypeName("HRESULT")]
-        public int _OnFocusChange([NativeTypeName("UINT")] uint itb)
+        public HRESULT _OnFocusChange(uint itb)
         {
             return ((delegate* unmanaged<IBrowserService3*, uint, int>)(lpVtbl[70]))((IBrowserService3*)Unsafe.AsPointer(ref this), itb);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(71)]
-        [return: NativeTypeName("HRESULT")]
-        public int v_ShowHideChildWindows([NativeTypeName("BOOL")] int fChildOnly)
+        public HRESULT v_ShowHideChildWindows(BOOL fChildOnly)
         {
-            return ((delegate* unmanaged<IBrowserService3*, int, int>)(lpVtbl[71]))((IBrowserService3*)Unsafe.AsPointer(ref this), fChildOnly);
+            return ((delegate* unmanaged<IBrowserService3*, BOOL, int>)(lpVtbl[71]))((IBrowserService3*)Unsafe.AsPointer(ref this), fChildOnly);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(72)]
-        [return: NativeTypeName("UINT")]
         public uint _get_itbLastFocus()
         {
             return ((delegate* unmanaged<IBrowserService3*, uint>)(lpVtbl[72]))((IBrowserService3*)Unsafe.AsPointer(ref this));
@@ -602,58 +536,51 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(73)]
-        [return: NativeTypeName("HRESULT")]
-        public int _put_itbLastFocus([NativeTypeName("UINT")] uint itbLastFocus)
+        public HRESULT _put_itbLastFocus(uint itbLastFocus)
         {
             return ((delegate* unmanaged<IBrowserService3*, uint, int>)(lpVtbl[73]))((IBrowserService3*)Unsafe.AsPointer(ref this), itbLastFocus);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(74)]
-        [return: NativeTypeName("HRESULT")]
-        public int _UIActivateView([NativeTypeName("UINT")] uint uState)
+        public HRESULT _UIActivateView(uint uState)
         {
             return ((delegate* unmanaged<IBrowserService3*, uint, int>)(lpVtbl[74]))((IBrowserService3*)Unsafe.AsPointer(ref this), uState);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(75)]
-        [return: NativeTypeName("HRESULT")]
-        public int _GetViewBorderRect(RECT* prc)
+        public HRESULT _GetViewBorderRect(RECT* prc)
         {
             return ((delegate* unmanaged<IBrowserService3*, RECT*, int>)(lpVtbl[75]))((IBrowserService3*)Unsafe.AsPointer(ref this), prc);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(76)]
-        [return: NativeTypeName("HRESULT")]
-        public int _UpdateViewRectSize()
+        public HRESULT _UpdateViewRectSize()
         {
             return ((delegate* unmanaged<IBrowserService3*, int>)(lpVtbl[76]))((IBrowserService3*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(77)]
-        [return: NativeTypeName("HRESULT")]
-        public int _ResizeNextBorder([NativeTypeName("UINT")] uint itb)
+        public HRESULT _ResizeNextBorder(uint itb)
         {
             return ((delegate* unmanaged<IBrowserService3*, uint, int>)(lpVtbl[77]))((IBrowserService3*)Unsafe.AsPointer(ref this), itb);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(78)]
-        [return: NativeTypeName("HRESULT")]
-        public int _ResizeView()
+        public HRESULT _ResizeView()
         {
             return ((delegate* unmanaged<IBrowserService3*, int>)(lpVtbl[78]))((IBrowserService3*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(79)]
-        [return: NativeTypeName("HRESULT")]
-        public int _GetEffectiveClientArea([NativeTypeName("LPRECT")] RECT* lprectBorder, [NativeTypeName("HMONITOR")] IntPtr hmon)
+        public HRESULT _GetEffectiveClientArea([NativeTypeName("LPRECT")] RECT* lprectBorder, HMONITOR hmon)
         {
-            return ((delegate* unmanaged<IBrowserService3*, RECT*, IntPtr, int>)(lpVtbl[79]))((IBrowserService3*)Unsafe.AsPointer(ref this), lprectBorder, hmon);
+            return ((delegate* unmanaged<IBrowserService3*, RECT*, HMONITOR, int>)(lpVtbl[79]))((IBrowserService3*)Unsafe.AsPointer(ref this), lprectBorder, hmon);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -666,17 +593,16 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(81)]
         [return: NativeTypeName("LRESULT")]
-        public nint ForwardViewMsg([NativeTypeName("UINT")] uint uMsg, [NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam)
+        public nint ForwardViewMsg(uint uMsg, [NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam)
         {
             return ((delegate* unmanaged<IBrowserService3*, uint, nuint, nint, nint>)(lpVtbl[81]))((IBrowserService3*)Unsafe.AsPointer(ref this), uMsg, wParam, lParam);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(82)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetAcceleratorMenu([NativeTypeName("HACCEL")] IntPtr hacc)
+        public HRESULT SetAcceleratorMenu(HACCEL hacc)
         {
-            return ((delegate* unmanaged<IBrowserService3*, IntPtr, int>)(lpVtbl[82]))((IBrowserService3*)Unsafe.AsPointer(ref this), hacc);
+            return ((delegate* unmanaged<IBrowserService3*, HACCEL, int>)(lpVtbl[82]))((IBrowserService3*)Unsafe.AsPointer(ref this), hacc);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -696,47 +622,41 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(85)]
-        [return: NativeTypeName("HRESULT")]
-        public int _SaveToolbars(IStream* pstm)
+        public HRESULT _SaveToolbars(IStream* pstm)
         {
             return ((delegate* unmanaged<IBrowserService3*, IStream*, int>)(lpVtbl[85]))((IBrowserService3*)Unsafe.AsPointer(ref this), pstm);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(86)]
-        [return: NativeTypeName("HRESULT")]
-        public int _LoadToolbars(IStream* pstm)
+        public HRESULT _LoadToolbars(IStream* pstm)
         {
             return ((delegate* unmanaged<IBrowserService3*, IStream*, int>)(lpVtbl[86]))((IBrowserService3*)Unsafe.AsPointer(ref this), pstm);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(87)]
-        [return: NativeTypeName("HRESULT")]
-        public int _CloseAndReleaseToolbars([NativeTypeName("BOOL")] int fClose)
+        public HRESULT _CloseAndReleaseToolbars(BOOL fClose)
         {
-            return ((delegate* unmanaged<IBrowserService3*, int, int>)(lpVtbl[87]))((IBrowserService3*)Unsafe.AsPointer(ref this), fClose);
+            return ((delegate* unmanaged<IBrowserService3*, BOOL, int>)(lpVtbl[87]))((IBrowserService3*)Unsafe.AsPointer(ref this), fClose);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(88)]
-        [return: NativeTypeName("HRESULT")]
-        public int v_MayGetNextToolbarFocus([NativeTypeName("LPMSG")] MSG* lpMsg, [NativeTypeName("UINT")] uint itbNext, int citb, [NativeTypeName("LPTOOLBARITEM *")] TOOLBARITEM** pptbi, [NativeTypeName("HWND *")] IntPtr* phwnd)
+        public HRESULT v_MayGetNextToolbarFocus([NativeTypeName("LPMSG")] MSG* lpMsg, uint itbNext, int citb, [NativeTypeName("LPTOOLBARITEM *")] TOOLBARITEM** pptbi, HWND* phwnd)
         {
-            return ((delegate* unmanaged<IBrowserService3*, MSG*, uint, int, TOOLBARITEM**, IntPtr*, int>)(lpVtbl[88]))((IBrowserService3*)Unsafe.AsPointer(ref this), lpMsg, itbNext, citb, pptbi, phwnd);
+            return ((delegate* unmanaged<IBrowserService3*, MSG*, uint, int, TOOLBARITEM**, HWND*, int>)(lpVtbl[88]))((IBrowserService3*)Unsafe.AsPointer(ref this), lpMsg, itbNext, citb, pptbi, phwnd);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(89)]
-        [return: NativeTypeName("HRESULT")]
-        public int _ResizeNextBorderHelper([NativeTypeName("UINT")] uint itb, [NativeTypeName("BOOL")] int bUseHmonitor)
+        public HRESULT _ResizeNextBorderHelper(uint itb, BOOL bUseHmonitor)
         {
-            return ((delegate* unmanaged<IBrowserService3*, uint, int, int>)(lpVtbl[89]))((IBrowserService3*)Unsafe.AsPointer(ref this), itb, bUseHmonitor);
+            return ((delegate* unmanaged<IBrowserService3*, uint, BOOL, int>)(lpVtbl[89]))((IBrowserService3*)Unsafe.AsPointer(ref this), itb, bUseHmonitor);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(90)]
-        [return: NativeTypeName("UINT")]
         public uint _FindTBar(IUnknown* punkSrc)
         {
             return ((delegate* unmanaged<IBrowserService3*, IUnknown*, uint>)(lpVtbl[90]))((IBrowserService3*)Unsafe.AsPointer(ref this), punkSrc);
@@ -744,48 +664,42 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(91)]
-        [return: NativeTypeName("HRESULT")]
-        public int _SetFocus([NativeTypeName("LPTOOLBARITEM")] TOOLBARITEM* ptbi, [NativeTypeName("HWND")] IntPtr hwnd, [NativeTypeName("LPMSG")] MSG* lpMsg)
+        public HRESULT _SetFocus([NativeTypeName("LPTOOLBARITEM")] TOOLBARITEM* ptbi, HWND hwnd, [NativeTypeName("LPMSG")] MSG* lpMsg)
         {
-            return ((delegate* unmanaged<IBrowserService3*, TOOLBARITEM*, IntPtr, MSG*, int>)(lpVtbl[91]))((IBrowserService3*)Unsafe.AsPointer(ref this), ptbi, hwnd, lpMsg);
+            return ((delegate* unmanaged<IBrowserService3*, TOOLBARITEM*, HWND, MSG*, int>)(lpVtbl[91]))((IBrowserService3*)Unsafe.AsPointer(ref this), ptbi, hwnd, lpMsg);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(92)]
-        [return: NativeTypeName("HRESULT")]
-        public int v_MayTranslateAccelerator(MSG* pmsg)
+        public HRESULT v_MayTranslateAccelerator(MSG* pmsg)
         {
             return ((delegate* unmanaged<IBrowserService3*, MSG*, int>)(lpVtbl[92]))((IBrowserService3*)Unsafe.AsPointer(ref this), pmsg);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(93)]
-        [return: NativeTypeName("HRESULT")]
-        public int _GetBorderDWHelper(IUnknown* punkSrc, [NativeTypeName("LPRECT")] RECT* lprectBorder, [NativeTypeName("BOOL")] int bUseHmonitor)
+        public HRESULT _GetBorderDWHelper(IUnknown* punkSrc, [NativeTypeName("LPRECT")] RECT* lprectBorder, BOOL bUseHmonitor)
         {
-            return ((delegate* unmanaged<IBrowserService3*, IUnknown*, RECT*, int, int>)(lpVtbl[93]))((IBrowserService3*)Unsafe.AsPointer(ref this), punkSrc, lprectBorder, bUseHmonitor);
+            return ((delegate* unmanaged<IBrowserService3*, IUnknown*, RECT*, BOOL, int>)(lpVtbl[93]))((IBrowserService3*)Unsafe.AsPointer(ref this), punkSrc, lprectBorder, bUseHmonitor);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(94)]
-        [return: NativeTypeName("HRESULT")]
-        public int v_CheckZoneCrossing([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl)
+        public HRESULT v_CheckZoneCrossing([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl)
         {
             return ((delegate* unmanaged<IBrowserService3*, ITEMIDLIST*, int>)(lpVtbl[94]))((IBrowserService3*)Unsafe.AsPointer(ref this), pidl);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(95)]
-        [return: NativeTypeName("HRESULT")]
-        public int _PositionViewWindow([NativeTypeName("HWND")] IntPtr hwnd, [NativeTypeName("LPRECT")] RECT* prc)
+        public HRESULT _PositionViewWindow(HWND hwnd, [NativeTypeName("LPRECT")] RECT* prc)
         {
-            return ((delegate* unmanaged<IBrowserService3*, IntPtr, RECT*, int>)(lpVtbl[95]))((IBrowserService3*)Unsafe.AsPointer(ref this), hwnd, prc);
+            return ((delegate* unmanaged<IBrowserService3*, HWND, RECT*, int>)(lpVtbl[95]))((IBrowserService3*)Unsafe.AsPointer(ref this), hwnd, prc);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(96)]
-        [return: NativeTypeName("HRESULT")]
-        public int IEParseDisplayNameEx([NativeTypeName("UINT")] uint uiCP, [NativeTypeName("LPCWSTR")] ushort* pwszPath, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LPITEMIDLIST *")] ITEMIDLIST** ppidlOut)
+        public HRESULT IEParseDisplayNameEx(uint uiCP, [NativeTypeName("LPCWSTR")] ushort* pwszPath, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LPITEMIDLIST *")] ITEMIDLIST** ppidlOut)
         {
             return ((delegate* unmanaged<IBrowserService3*, uint, ushort*, uint, ITEMIDLIST**, int>)(lpVtbl[96]))((IBrowserService3*)Unsafe.AsPointer(ref this), uiCP, pwszPath, dwFlags, ppidlOut);
         }

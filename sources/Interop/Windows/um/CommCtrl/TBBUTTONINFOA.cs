@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct TBBUTTONINFOA
     {
-        [NativeTypeName("UINT")]
         public uint cbSize;
 
         [NativeTypeName("DWORD")]
@@ -17,10 +16,8 @@ namespace TerraFX.Interop
 
         public int iImage;
 
-        [NativeTypeName("BYTE")]
         public byte fsState;
 
-        [NativeTypeName("BYTE")]
         public byte fsStyle;
 
         [NativeTypeName("WORD")]

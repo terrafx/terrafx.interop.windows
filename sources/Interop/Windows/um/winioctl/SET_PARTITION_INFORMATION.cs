@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public partial struct SET_PARTITION_INFORMATION
     {
-        [NativeTypeName("BYTE")]
         public byte PartitionType;
     }
 }

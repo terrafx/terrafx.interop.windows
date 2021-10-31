@@ -13,12 +13,10 @@ namespace TerraFX.Interop
     public static unsafe partial class Windows
     {
         [DllImport("xaudio2_9", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int CreateAudioVolumeMeter(IUnknown** ppApo);
+        public static extern HRESULT CreateAudioVolumeMeter(IUnknown** ppApo);
 
         [DllImport("xaudio2_9", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int CreateAudioReverb(IUnknown** ppApo);
+        public static extern HRESULT CreateAudioReverb(IUnknown** ppApo);
 
         [NativeTypeName("#define XAUDIO2FX_REVERB_MIN_FRAMERATE 20000")]
         public const int XAUDIO2FX_REVERB_MIN_FRAMERATE = 20000;

@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<ITfInputScope*, Guid*, void**, int>)(lpVtbl[0]))((ITfInputScope*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,40 +41,35 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetInputScopes(InputScope** pprgInputScopes, [NativeTypeName("UINT *")] uint* pcCount)
+        public HRESULT GetInputScopes(InputScope** pprgInputScopes, uint* pcCount)
         {
             return ((delegate* unmanaged<ITfInputScope*, InputScope**, uint*, int>)(lpVtbl[3]))((ITfInputScope*)Unsafe.AsPointer(ref this), pprgInputScopes, pcCount);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetPhrase([NativeTypeName("BSTR **")] ushort*** ppbstrPhrases, [NativeTypeName("UINT *")] uint* pcCount)
+        public HRESULT GetPhrase([NativeTypeName("BSTR **")] ushort*** ppbstrPhrases, uint* pcCount)
         {
             return ((delegate* unmanaged<ITfInputScope*, ushort***, uint*, int>)(lpVtbl[4]))((ITfInputScope*)Unsafe.AsPointer(ref this), ppbstrPhrases, pcCount);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetRegularExpression([NativeTypeName("BSTR *")] ushort** pbstrRegExp)
+        public HRESULT GetRegularExpression([NativeTypeName("BSTR *")] ushort** pbstrRegExp)
         {
             return ((delegate* unmanaged<ITfInputScope*, ushort**, int>)(lpVtbl[5]))((ITfInputScope*)Unsafe.AsPointer(ref this), pbstrRegExp);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetSRGS([NativeTypeName("BSTR *")] ushort** pbstrSRGS)
+        public HRESULT GetSRGS([NativeTypeName("BSTR *")] ushort** pbstrSRGS)
         {
             return ((delegate* unmanaged<ITfInputScope*, ushort**, int>)(lpVtbl[6]))((ITfInputScope*)Unsafe.AsPointer(ref this), pbstrSRGS);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetXML([NativeTypeName("BSTR *")] ushort** pbstrXML)
+        public HRESULT GetXML([NativeTypeName("BSTR *")] ushort** pbstrXML)
         {
             return ((delegate* unmanaged<ITfInputScope*, ushort**, int>)(lpVtbl[7]))((ITfInputScope*)Unsafe.AsPointer(ref this), pbstrXML);
         }

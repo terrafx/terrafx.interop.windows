@@ -10,10 +10,8 @@ namespace TerraFX.Interop
         [NativeTypeName("WORD")]
         public ushort Group;
 
-        [NativeTypeName("BYTE")]
         public byte Number;
 
-        [NativeTypeName("BYTE")]
         public byte Reserved;
     }
 }

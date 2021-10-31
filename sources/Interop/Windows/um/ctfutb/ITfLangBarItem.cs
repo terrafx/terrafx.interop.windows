@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<ITfLangBarItem*, Guid*, void**, int>)(lpVtbl[0]))((ITfLangBarItem*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,32 +41,28 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetInfo(TF_LANGBARITEMINFO* pInfo)
+        public HRESULT GetInfo(TF_LANGBARITEMINFO* pInfo)
         {
             return ((delegate* unmanaged<ITfLangBarItem*, TF_LANGBARITEMINFO*, int>)(lpVtbl[3]))((ITfLangBarItem*)Unsafe.AsPointer(ref this), pInfo);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetStatus([NativeTypeName("DWORD *")] uint* pdwStatus)
+        public HRESULT GetStatus([NativeTypeName("DWORD *")] uint* pdwStatus)
         {
             return ((delegate* unmanaged<ITfLangBarItem*, uint*, int>)(lpVtbl[4]))((ITfLangBarItem*)Unsafe.AsPointer(ref this), pdwStatus);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int Show([NativeTypeName("BOOL")] int fShow)
+        public HRESULT Show(BOOL fShow)
         {
-            return ((delegate* unmanaged<ITfLangBarItem*, int, int>)(lpVtbl[5]))((ITfLangBarItem*)Unsafe.AsPointer(ref this), fShow);
+            return ((delegate* unmanaged<ITfLangBarItem*, BOOL, int>)(lpVtbl[5]))((ITfLangBarItem*)Unsafe.AsPointer(ref this), fShow);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetTooltipString([NativeTypeName("BSTR *")] ushort** pbstrToolTip)
+        public HRESULT GetTooltipString([NativeTypeName("BSTR *")] ushort** pbstrToolTip)
         {
             return ((delegate* unmanaged<ITfLangBarItem*, ushort**, int>)(lpVtbl[6]))((ITfLangBarItem*)Unsafe.AsPointer(ref this), pbstrToolTip);
         }

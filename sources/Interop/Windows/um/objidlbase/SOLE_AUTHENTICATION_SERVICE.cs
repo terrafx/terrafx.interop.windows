@@ -16,7 +16,6 @@ namespace TerraFX.Interop
         [NativeTypeName("OLECHAR *")]
         public ushort* pPrincipalName;
 
-        [NativeTypeName("HRESULT")]
-        public int hr;
+        public HRESULT hr;
     }
 }

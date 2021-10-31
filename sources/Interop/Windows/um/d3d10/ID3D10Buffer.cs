@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<ID3D10Buffer*, Guid*, void**, int>)(lpVtbl[0]))((ID3D10Buffer*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -49,24 +48,21 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetPrivateData([NativeTypeName("const GUID &")] Guid* guid, [NativeTypeName("UINT *")] uint* pDataSize, void* pData)
+        public HRESULT GetPrivateData([NativeTypeName("const GUID &")] Guid* guid, uint* pDataSize, void* pData)
         {
             return ((delegate* unmanaged<ID3D10Buffer*, Guid*, uint*, void*, int>)(lpVtbl[4]))((ID3D10Buffer*)Unsafe.AsPointer(ref this), guid, pDataSize, pData);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetPrivateData([NativeTypeName("const GUID &")] Guid* guid, [NativeTypeName("UINT")] uint DataSize, [NativeTypeName("const void *")] void* pData)
+        public HRESULT SetPrivateData([NativeTypeName("const GUID &")] Guid* guid, uint DataSize, [NativeTypeName("const void *")] void* pData)
         {
             return ((delegate* unmanaged<ID3D10Buffer*, Guid*, uint, void*, int>)(lpVtbl[5]))((ID3D10Buffer*)Unsafe.AsPointer(ref this), guid, DataSize, pData);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetPrivateDataInterface([NativeTypeName("const GUID &")] Guid* guid, [NativeTypeName("const IUnknown *")] IUnknown* pData)
+        public HRESULT SetPrivateDataInterface([NativeTypeName("const GUID &")] Guid* guid, [NativeTypeName("const IUnknown *")] IUnknown* pData)
         {
             return ((delegate* unmanaged<ID3D10Buffer*, Guid*, IUnknown*, int>)(lpVtbl[6]))((ID3D10Buffer*)Unsafe.AsPointer(ref this), guid, pData);
         }
@@ -80,14 +76,13 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        public void SetEvictionPriority([NativeTypeName("UINT")] uint EvictionPriority)
+        public void SetEvictionPriority(uint EvictionPriority)
         {
             ((delegate* unmanaged<ID3D10Buffer*, uint, void>)(lpVtbl[8]))((ID3D10Buffer*)Unsafe.AsPointer(ref this), EvictionPriority);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        [return: NativeTypeName("UINT")]
         public uint GetEvictionPriority()
         {
             return ((delegate* unmanaged<ID3D10Buffer*, uint>)(lpVtbl[9]))((ID3D10Buffer*)Unsafe.AsPointer(ref this));
@@ -95,8 +90,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(10)]
-        [return: NativeTypeName("HRESULT")]
-        public int Map(D3D10_MAP MapType, [NativeTypeName("UINT")] uint MapFlags, void** ppData)
+        public HRESULT Map(D3D10_MAP MapType, uint MapFlags, void** ppData)
         {
             return ((delegate* unmanaged<ID3D10Buffer*, D3D10_MAP, uint, void**, int>)(lpVtbl[10]))((ID3D10Buffer*)Unsafe.AsPointer(ref this), MapType, MapFlags, ppData);
         }

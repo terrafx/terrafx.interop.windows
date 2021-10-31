@@ -7,10 +7,8 @@ namespace TerraFX.Interop
 {
     public partial struct D3D12_VIDEO_PROCESS_INPUT_STREAM_RATE
     {
-        [NativeTypeName("UINT")]
         public uint OutputIndex;
 
-        [NativeTypeName("UINT")]
         public uint InputFrameOrField;
     }
 }

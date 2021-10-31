@@ -16,7 +16,6 @@ namespace TerraFX.Interop
         [NativeTypeName("WCHAR [260]")]
         public fixed ushort FullInfPath[260];
 
-        [NativeTypeName("INT")]
         public int FilenameOffset;
 
         [NativeTypeName("WCHAR [260]")]

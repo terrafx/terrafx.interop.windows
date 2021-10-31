@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public partial struct LOGPEN
     {
-        [NativeTypeName("UINT")]
         public uint lopnStyle;
 
         public POINT lopnWidth;

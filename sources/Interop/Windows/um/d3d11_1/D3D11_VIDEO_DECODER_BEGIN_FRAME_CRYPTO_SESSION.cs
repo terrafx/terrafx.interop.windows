@@ -11,15 +11,12 @@ namespace TerraFX.Interop
     {
         public ID3D11CryptoSession* pCryptoSession;
 
-        [NativeTypeName("UINT")]
         public uint BlobSize;
 
         public void* pBlob;
 
-        [NativeTypeName("GUID *")]
         public Guid* pKeyInfoId;
 
-        [NativeTypeName("UINT")]
         public uint PrivateDataSize;
 
         public void* pPrivateData;

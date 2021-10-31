@@ -3,21 +3,16 @@
 // Ported from um/d3d11.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
-
 namespace TerraFX.Interop
 {
     public partial struct D3D11_AUTHENTICATED_QUERY_OUTPUT_ID_OUTPUT
     {
         public D3D11_AUTHENTICATED_QUERY_OUTPUT Output;
 
-        [NativeTypeName("HANDLE")]
-        public IntPtr DeviceHandle;
+        public HANDLE DeviceHandle;
 
-        [NativeTypeName("HANDLE")]
-        public IntPtr CryptoSessionHandle;
+        public HANDLE CryptoSessionHandle;
 
-        [NativeTypeName("UINT")]
         public uint OutputIDIndex;
 
         [NativeTypeName("UINT64")]

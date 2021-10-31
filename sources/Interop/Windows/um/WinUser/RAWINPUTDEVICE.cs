@@ -3,22 +3,17 @@
 // Ported from um/WinUser.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
-
 namespace TerraFX.Interop
 {
     public partial struct RAWINPUTDEVICE
     {
-        [NativeTypeName("USHORT")]
         public ushort usUsagePage;
 
-        [NativeTypeName("USHORT")]
         public ushort usUsage;
 
         [NativeTypeName("DWORD")]
         public uint dwFlags;
 
-        [NativeTypeName("HWND")]
-        public IntPtr hwndTarget;
+        public HWND hwndTarget;
     }
 }

@@ -7,15 +7,12 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct LITEM
     {
-        [NativeTypeName("UINT")]
         public uint mask;
 
         public int iLink;
 
-        [NativeTypeName("UINT")]
         public uint state;
 
-        [NativeTypeName("UINT")]
         public uint stateMask;
 
         [NativeTypeName("WCHAR [48]")]

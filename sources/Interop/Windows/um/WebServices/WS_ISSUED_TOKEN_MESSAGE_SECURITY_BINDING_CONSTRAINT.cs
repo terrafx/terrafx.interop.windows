@@ -30,7 +30,6 @@ namespace TerraFX.Interop
         {
             public WS_ENDPOINT_ADDRESS* issuerAddress;
 
-            [NativeTypeName("WS_XML_BUFFER *")]
             public IntPtr requestSecurityTokenTemplate;
         }
     }

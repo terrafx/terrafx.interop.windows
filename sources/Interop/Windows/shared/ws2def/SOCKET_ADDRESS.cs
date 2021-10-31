@@ -10,7 +10,6 @@ namespace TerraFX.Interop
         [NativeTypeName("LPSOCKADDR")]
         public SOCKADDR* lpSockaddr;
 
-        [NativeTypeName("INT")]
         public int iSockaddrLength;
     }
 }

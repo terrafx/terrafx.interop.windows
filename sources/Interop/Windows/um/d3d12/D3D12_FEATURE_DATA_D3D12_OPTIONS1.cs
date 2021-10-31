@@ -7,22 +7,16 @@ namespace TerraFX.Interop
 {
     public partial struct D3D12_FEATURE_DATA_D3D12_OPTIONS1
     {
-        [NativeTypeName("BOOL")]
-        public int WaveOps;
+        public BOOL WaveOps;
 
-        [NativeTypeName("UINT")]
         public uint WaveLaneCountMin;
 
-        [NativeTypeName("UINT")]
         public uint WaveLaneCountMax;
 
-        [NativeTypeName("UINT")]
         public uint TotalLaneCount;
 
-        [NativeTypeName("BOOL")]
-        public int ExpandedComputeResourceStates;
+        public BOOL ExpandedComputeResourceStates;
 
-        [NativeTypeName("BOOL")]
-        public int Int64ShaderOps;
+        public BOOL Int64ShaderOps;
     }
 }

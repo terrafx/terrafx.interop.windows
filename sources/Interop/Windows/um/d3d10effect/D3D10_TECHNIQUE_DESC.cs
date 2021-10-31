@@ -10,10 +10,8 @@ namespace TerraFX.Interop
         [NativeTypeName("LPCSTR")]
         public sbyte* Name;
 
-        [NativeTypeName("UINT")]
         public uint Passes;
 
-        [NativeTypeName("UINT")]
         public uint Annotations;
     }
 }

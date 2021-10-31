@@ -12,77 +12,77 @@ namespace TerraFX.Interop
     {
         [DllImport("hid", ExactSpelling = true)]
         [return: NativeTypeName("BOOLEAN")]
-        public static extern byte HidD_GetAttributes([NativeTypeName("HANDLE")] IntPtr HidDeviceObject, [NativeTypeName("PHIDD_ATTRIBUTES")] HIDD_ATTRIBUTES* Attributes);
+        public static extern byte HidD_GetAttributes(HANDLE HidDeviceObject, [NativeTypeName("PHIDD_ATTRIBUTES")] HIDD_ATTRIBUTES* Attributes);
 
         [DllImport("hid", ExactSpelling = true)]
         public static extern void HidD_GetHidGuid([NativeTypeName("LPGUID")] Guid* HidGuid);
 
         [DllImport("hid", ExactSpelling = true)]
         [return: NativeTypeName("BOOLEAN")]
-        public static extern byte HidD_GetPreparsedData([NativeTypeName("HANDLE")] IntPtr HidDeviceObject, [NativeTypeName("PHIDP_PREPARSED_DATA *")] IntPtr* PreparsedData);
+        public static extern byte HidD_GetPreparsedData(HANDLE HidDeviceObject, PHIDP_PREPARSED_DATA* PreparsedData);
 
         [DllImport("hid", ExactSpelling = true)]
         [return: NativeTypeName("BOOLEAN")]
-        public static extern byte HidD_FreePreparsedData([NativeTypeName("PHIDP_PREPARSED_DATA")] IntPtr PreparsedData);
+        public static extern byte HidD_FreePreparsedData(PHIDP_PREPARSED_DATA PreparsedData);
 
         [DllImport("hid", ExactSpelling = true)]
         [return: NativeTypeName("BOOLEAN")]
-        public static extern byte HidD_FlushQueue([NativeTypeName("HANDLE")] IntPtr HidDeviceObject);
+        public static extern byte HidD_FlushQueue(HANDLE HidDeviceObject);
 
         [DllImport("hid", ExactSpelling = true)]
         [return: NativeTypeName("BOOLEAN")]
-        public static extern byte HidD_GetConfiguration([NativeTypeName("HANDLE")] IntPtr HidDeviceObject, [NativeTypeName("PHIDD_CONFIGURATION")] HIDD_CONFIGURATION* Configuration, [NativeTypeName("ULONG")] uint ConfigurationLength);
+        public static extern byte HidD_GetConfiguration(HANDLE HidDeviceObject, [NativeTypeName("PHIDD_CONFIGURATION")] HIDD_CONFIGURATION* Configuration, [NativeTypeName("ULONG")] uint ConfigurationLength);
 
         [DllImport("hid", ExactSpelling = true)]
         [return: NativeTypeName("BOOLEAN")]
-        public static extern byte HidD_SetConfiguration([NativeTypeName("HANDLE")] IntPtr HidDeviceObject, [NativeTypeName("PHIDD_CONFIGURATION")] HIDD_CONFIGURATION* Configuration, [NativeTypeName("ULONG")] uint ConfigurationLength);
+        public static extern byte HidD_SetConfiguration(HANDLE HidDeviceObject, [NativeTypeName("PHIDD_CONFIGURATION")] HIDD_CONFIGURATION* Configuration, [NativeTypeName("ULONG")] uint ConfigurationLength);
 
         [DllImport("hid", ExactSpelling = true)]
         [return: NativeTypeName("BOOLEAN")]
-        public static extern byte HidD_GetFeature([NativeTypeName("HANDLE")] IntPtr HidDeviceObject, [NativeTypeName("PVOID")] void* ReportBuffer, [NativeTypeName("ULONG")] uint ReportBufferLength);
+        public static extern byte HidD_GetFeature(HANDLE HidDeviceObject, [NativeTypeName("PVOID")] void* ReportBuffer, [NativeTypeName("ULONG")] uint ReportBufferLength);
 
         [DllImport("hid", ExactSpelling = true)]
         [return: NativeTypeName("BOOLEAN")]
-        public static extern byte HidD_SetFeature([NativeTypeName("HANDLE")] IntPtr HidDeviceObject, [NativeTypeName("PVOID")] void* ReportBuffer, [NativeTypeName("ULONG")] uint ReportBufferLength);
+        public static extern byte HidD_SetFeature(HANDLE HidDeviceObject, [NativeTypeName("PVOID")] void* ReportBuffer, [NativeTypeName("ULONG")] uint ReportBufferLength);
 
         [DllImport("hid", ExactSpelling = true)]
         [return: NativeTypeName("BOOLEAN")]
-        public static extern byte HidD_GetInputReport([NativeTypeName("HANDLE")] IntPtr HidDeviceObject, [NativeTypeName("PVOID")] void* ReportBuffer, [NativeTypeName("ULONG")] uint ReportBufferLength);
+        public static extern byte HidD_GetInputReport(HANDLE HidDeviceObject, [NativeTypeName("PVOID")] void* ReportBuffer, [NativeTypeName("ULONG")] uint ReportBufferLength);
 
         [DllImport("hid", ExactSpelling = true)]
         [return: NativeTypeName("BOOLEAN")]
-        public static extern byte HidD_SetOutputReport([NativeTypeName("HANDLE")] IntPtr HidDeviceObject, [NativeTypeName("PVOID")] void* ReportBuffer, [NativeTypeName("ULONG")] uint ReportBufferLength);
+        public static extern byte HidD_SetOutputReport(HANDLE HidDeviceObject, [NativeTypeName("PVOID")] void* ReportBuffer, [NativeTypeName("ULONG")] uint ReportBufferLength);
 
         [DllImport("hid", ExactSpelling = true)]
         [return: NativeTypeName("BOOLEAN")]
-        public static extern byte HidD_GetNumInputBuffers([NativeTypeName("HANDLE")] IntPtr HidDeviceObject, [NativeTypeName("PULONG")] uint* NumberBuffers);
+        public static extern byte HidD_GetNumInputBuffers(HANDLE HidDeviceObject, [NativeTypeName("PULONG")] uint* NumberBuffers);
 
         [DllImport("hid", ExactSpelling = true)]
         [return: NativeTypeName("BOOLEAN")]
-        public static extern byte HidD_SetNumInputBuffers([NativeTypeName("HANDLE")] IntPtr HidDeviceObject, [NativeTypeName("ULONG")] uint NumberBuffers);
+        public static extern byte HidD_SetNumInputBuffers(HANDLE HidDeviceObject, [NativeTypeName("ULONG")] uint NumberBuffers);
 
         [DllImport("hid", ExactSpelling = true)]
         [return: NativeTypeName("BOOLEAN")]
-        public static extern byte HidD_GetPhysicalDescriptor([NativeTypeName("HANDLE")] IntPtr HidDeviceObject, [NativeTypeName("PVOID")] void* Buffer, [NativeTypeName("ULONG")] uint BufferLength);
+        public static extern byte HidD_GetPhysicalDescriptor(HANDLE HidDeviceObject, [NativeTypeName("PVOID")] void* Buffer, [NativeTypeName("ULONG")] uint BufferLength);
 
         [DllImport("hid", ExactSpelling = true)]
         [return: NativeTypeName("BOOLEAN")]
-        public static extern byte HidD_GetManufacturerString([NativeTypeName("HANDLE")] IntPtr HidDeviceObject, [NativeTypeName("PVOID")] void* Buffer, [NativeTypeName("ULONG")] uint BufferLength);
+        public static extern byte HidD_GetManufacturerString(HANDLE HidDeviceObject, [NativeTypeName("PVOID")] void* Buffer, [NativeTypeName("ULONG")] uint BufferLength);
 
         [DllImport("hid", ExactSpelling = true)]
         [return: NativeTypeName("BOOLEAN")]
-        public static extern byte HidD_GetProductString([NativeTypeName("HANDLE")] IntPtr HidDeviceObject, [NativeTypeName("PVOID")] void* Buffer, [NativeTypeName("ULONG")] uint BufferLength);
+        public static extern byte HidD_GetProductString(HANDLE HidDeviceObject, [NativeTypeName("PVOID")] void* Buffer, [NativeTypeName("ULONG")] uint BufferLength);
 
         [DllImport("hid", ExactSpelling = true)]
         [return: NativeTypeName("BOOLEAN")]
-        public static extern byte HidD_GetIndexedString([NativeTypeName("HANDLE")] IntPtr HidDeviceObject, [NativeTypeName("ULONG")] uint StringIndex, [NativeTypeName("PVOID")] void* Buffer, [NativeTypeName("ULONG")] uint BufferLength);
+        public static extern byte HidD_GetIndexedString(HANDLE HidDeviceObject, [NativeTypeName("ULONG")] uint StringIndex, [NativeTypeName("PVOID")] void* Buffer, [NativeTypeName("ULONG")] uint BufferLength);
 
         [DllImport("hid", ExactSpelling = true)]
         [return: NativeTypeName("BOOLEAN")]
-        public static extern byte HidD_GetSerialNumberString([NativeTypeName("HANDLE")] IntPtr HidDeviceObject, [NativeTypeName("PVOID")] void* Buffer, [NativeTypeName("ULONG")] uint BufferLength);
+        public static extern byte HidD_GetSerialNumberString(HANDLE HidDeviceObject, [NativeTypeName("PVOID")] void* Buffer, [NativeTypeName("ULONG")] uint BufferLength);
 
         [DllImport("hid", ExactSpelling = true)]
         [return: NativeTypeName("BOOLEAN")]
-        public static extern byte HidD_GetMsGenreDescriptor([NativeTypeName("HANDLE")] IntPtr HidDeviceObject, [NativeTypeName("PVOID")] void* Buffer, [NativeTypeName("ULONG")] uint BufferLength);
+        public static extern byte HidD_GetMsGenreDescriptor(HANDLE HidDeviceObject, [NativeTypeName("PVOID")] void* Buffer, [NativeTypeName("ULONG")] uint BufferLength);
     }
 }

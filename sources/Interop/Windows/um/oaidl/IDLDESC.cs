@@ -10,7 +10,6 @@ namespace TerraFX.Interop
         [NativeTypeName("ULONG_PTR")]
         public nuint dwReserved;
 
-        [NativeTypeName("USHORT")]
         public ushort wIDLFlags;
     }
 }

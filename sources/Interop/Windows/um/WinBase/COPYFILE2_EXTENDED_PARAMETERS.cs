@@ -13,8 +13,7 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint dwCopyFlags;
 
-        [NativeTypeName("BOOL *")]
-        public int* pfCancel;
+        public BOOL* pfCancel;
 
         [NativeTypeName("PCOPYFILE2_PROGRESS_ROUTINE")]
         public delegate* unmanaged<COPYFILE2_MESSAGE*, void*, COPYFILE2_MESSAGE_ACTION> pProgressRoutine;

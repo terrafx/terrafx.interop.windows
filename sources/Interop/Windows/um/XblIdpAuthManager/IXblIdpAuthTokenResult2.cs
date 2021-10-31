@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IXblIdpAuthTokenResult2*, Guid*, void**, int>)(lpVtbl[0]))((IXblIdpAuthTokenResult2*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,24 +41,21 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetModernGamertag([NativeTypeName("LPWSTR *")] ushort** value)
+        public HRESULT GetModernGamertag([NativeTypeName("LPWSTR *")] ushort** value)
         {
             return ((delegate* unmanaged<IXblIdpAuthTokenResult2*, ushort**, int>)(lpVtbl[3]))((IXblIdpAuthTokenResult2*)Unsafe.AsPointer(ref this), value);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetModernGamertagSuffix([NativeTypeName("LPWSTR *")] ushort** value)
+        public HRESULT GetModernGamertagSuffix([NativeTypeName("LPWSTR *")] ushort** value)
         {
             return ((delegate* unmanaged<IXblIdpAuthTokenResult2*, ushort**, int>)(lpVtbl[4]))((IXblIdpAuthTokenResult2*)Unsafe.AsPointer(ref this), value);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetUniqueModernGamertag([NativeTypeName("LPWSTR *")] ushort** value)
+        public HRESULT GetUniqueModernGamertag([NativeTypeName("LPWSTR *")] ushort** value)
         {
             return ((delegate* unmanaged<IXblIdpAuthTokenResult2*, ushort**, int>)(lpVtbl[5]))((IXblIdpAuthTokenResult2*)Unsafe.AsPointer(ref this), value);
         }

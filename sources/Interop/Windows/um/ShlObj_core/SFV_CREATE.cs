@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct SFV_CREATE
     {
-        [NativeTypeName("UINT")]
         public uint cbSize;
 
         public IShellFolder* pshf;

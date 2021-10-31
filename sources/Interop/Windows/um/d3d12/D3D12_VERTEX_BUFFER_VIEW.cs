@@ -10,10 +10,8 @@ namespace TerraFX.Interop
         [NativeTypeName("D3D12_GPU_VIRTUAL_ADDRESS")]
         public ulong BufferLocation;
 
-        [NativeTypeName("UINT")]
         public uint SizeInBytes;
 
-        [NativeTypeName("UINT")]
         public uint StrideInBytes;
     }
 }

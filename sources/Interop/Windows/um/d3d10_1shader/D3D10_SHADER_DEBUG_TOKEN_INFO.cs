@@ -7,19 +7,14 @@ namespace TerraFX.Interop
 {
     public partial struct D3D10_SHADER_DEBUG_TOKEN_INFO
     {
-        [NativeTypeName("UINT")]
         public uint File;
 
-        [NativeTypeName("UINT")]
         public uint Line;
 
-        [NativeTypeName("UINT")]
         public uint Column;
 
-        [NativeTypeName("UINT")]
         public uint TokenLength;
 
-        [NativeTypeName("UINT")]
         public uint TokenId;
     }
 }

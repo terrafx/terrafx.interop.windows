@@ -10,10 +10,8 @@ namespace TerraFX.Interop
 {
     public partial struct HIDP_DATA
     {
-        [NativeTypeName("USHORT")]
         public ushort DataIndex;
 
-        [NativeTypeName("USHORT")]
         public ushort Reserved;
 
         [NativeTypeName("_HIDP_DATA::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/shared/hidpi.h:269:5)")]

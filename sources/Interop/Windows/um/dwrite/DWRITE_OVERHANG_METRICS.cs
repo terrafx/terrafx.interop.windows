@@ -7,16 +7,12 @@ namespace TerraFX.Interop
 {
     public partial struct DWRITE_OVERHANG_METRICS
     {
-        [NativeTypeName("FLOAT")]
         public float left;
 
-        [NativeTypeName("FLOAT")]
         public float top;
 
-        [NativeTypeName("FLOAT")]
         public float right;
 
-        [NativeTypeName("FLOAT")]
         public float bottom;
     }
 }

@@ -13,10 +13,8 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint EpilogueCount;
 
-        [NativeTypeName("BYTE")]
         public byte EpilogueByteCount;
 
-        [NativeTypeName("BYTE")]
         public byte BranchDescriptorElementSize;
 
         [NativeTypeName("WORD")]

@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IPublishingWizard*, Guid*, void**, int>)(lpVtbl[0]))((IPublishingWizard*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,42 +41,37 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int AddPages([NativeTypeName("HPROPSHEETPAGE *")] IntPtr* aPages, [NativeTypeName("UINT")] uint cPages, [NativeTypeName("UINT *")] uint* pnPagesAdded)
+        public HRESULT AddPages(HPROPSHEETPAGE* aPages, uint cPages, uint* pnPagesAdded)
         {
-            return ((delegate* unmanaged<IPublishingWizard*, IntPtr*, uint, uint*, int>)(lpVtbl[3]))((IPublishingWizard*)Unsafe.AsPointer(ref this), aPages, cPages, pnPagesAdded);
+            return ((delegate* unmanaged<IPublishingWizard*, HPROPSHEETPAGE*, uint, uint*, int>)(lpVtbl[3]))((IPublishingWizard*)Unsafe.AsPointer(ref this), aPages, cPages, pnPagesAdded);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetFirstPage([NativeTypeName("HPROPSHEETPAGE *")] IntPtr* phpage)
+        public HRESULT GetFirstPage(HPROPSHEETPAGE* phpage)
         {
-            return ((delegate* unmanaged<IPublishingWizard*, IntPtr*, int>)(lpVtbl[4]))((IPublishingWizard*)Unsafe.AsPointer(ref this), phpage);
+            return ((delegate* unmanaged<IPublishingWizard*, HPROPSHEETPAGE*, int>)(lpVtbl[4]))((IPublishingWizard*)Unsafe.AsPointer(ref this), phpage);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetLastPage([NativeTypeName("HPROPSHEETPAGE *")] IntPtr* phpage)
+        public HRESULT GetLastPage(HPROPSHEETPAGE* phpage)
         {
-            return ((delegate* unmanaged<IPublishingWizard*, IntPtr*, int>)(lpVtbl[5]))((IPublishingWizard*)Unsafe.AsPointer(ref this), phpage);
+            return ((delegate* unmanaged<IPublishingWizard*, HPROPSHEETPAGE*, int>)(lpVtbl[5]))((IPublishingWizard*)Unsafe.AsPointer(ref this), phpage);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int Initialize(IDataObject* pdo, [NativeTypeName("DWORD")] uint dwOptions, [NativeTypeName("LPCWSTR")] ushort* pszServiceScope)
+        public HRESULT Initialize(IDataObject* pdo, [NativeTypeName("DWORD")] uint dwOptions, [NativeTypeName("LPCWSTR")] ushort* pszServiceScope)
         {
             return ((delegate* unmanaged<IPublishingWizard*, IDataObject*, uint, ushort*, int>)(lpVtbl[6]))((IPublishingWizard*)Unsafe.AsPointer(ref this), pdo, dwOptions, pszServiceScope);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetTransferManifest([NativeTypeName("HRESULT *")] int* phrFromTransfer, IXMLDOMDocument** pdocManifest)
+        public HRESULT GetTransferManifest(HRESULT* phrFromTransfer, IXMLDOMDocument** pdocManifest)
         {
-            return ((delegate* unmanaged<IPublishingWizard*, int*, IXMLDOMDocument**, int>)(lpVtbl[7]))((IPublishingWizard*)Unsafe.AsPointer(ref this), phrFromTransfer, pdocManifest);
+            return ((delegate* unmanaged<IPublishingWizard*, HRESULT*, IXMLDOMDocument**, int>)(lpVtbl[7]))((IPublishingWizard*)Unsafe.AsPointer(ref this), phrFromTransfer, pdocManifest);
         }
     }
 }

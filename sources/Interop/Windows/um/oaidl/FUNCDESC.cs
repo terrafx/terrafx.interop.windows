@@ -21,16 +21,12 @@ namespace TerraFX.Interop
 
         public CALLCONV callconv;
 
-        [NativeTypeName("SHORT")]
         public short cParams;
 
-        [NativeTypeName("SHORT")]
         public short cParamsOpt;
 
-        [NativeTypeName("SHORT")]
         public short oVft;
 
-        [NativeTypeName("SHORT")]
         public short cScodes;
 
         public ELEMDESC elemdescFunc;

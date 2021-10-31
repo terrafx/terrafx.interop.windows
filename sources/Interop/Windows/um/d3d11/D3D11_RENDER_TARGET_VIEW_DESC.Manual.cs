@@ -10,7 +10,7 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct D3D11_RENDER_TARGET_VIEW_DESC
     {
-        public D3D11_RENDER_TARGET_VIEW_DESC(D3D11_RTV_DIMENSION viewDimension, DXGI_FORMAT format = DXGI_FORMAT_UNKNOWN, [NativeTypeName("UINT")] uint mipSlice = 0, [NativeTypeName("UINT")] uint firstArraySlice = 0, [NativeTypeName("UINT")] uint arraySize = unchecked((uint)-1))
+        public D3D11_RENDER_TARGET_VIEW_DESC(D3D11_RTV_DIMENSION viewDimension, DXGI_FORMAT format = DXGI_FORMAT_UNKNOWN, uint mipSlice = 0, uint firstArraySlice = 0, uint arraySize = unchecked((uint)-1))
         {
             Format = format;
             ViewDimension = viewDimension;
@@ -80,7 +80,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public D3D11_RENDER_TARGET_VIEW_DESC(ID3D11Buffer* param0, DXGI_FORMAT format, [NativeTypeName("UINT")] uint firstElement, [NativeTypeName("UINT")] uint numElements)
+        public D3D11_RENDER_TARGET_VIEW_DESC(ID3D11Buffer* param0, DXGI_FORMAT format, uint firstElement, uint numElements)
         {
             Format = format;
             ViewDimension = D3D11_RTV_DIMENSION_BUFFER;
@@ -90,7 +90,7 @@ namespace TerraFX.Interop
             Anonymous.Buffer.Anonymous2.NumElements = numElements;
         }
 
-        public D3D11_RENDER_TARGET_VIEW_DESC(ID3D11Texture1D* pTex1D, D3D11_RTV_DIMENSION viewDimension, DXGI_FORMAT format = DXGI_FORMAT_UNKNOWN, [NativeTypeName("UINT")] uint mipSlice = 0, [NativeTypeName("UINT")] uint firstArraySlice = 0, [NativeTypeName("UINT")] uint arraySize = unchecked((uint)-1))
+        public D3D11_RENDER_TARGET_VIEW_DESC(ID3D11Texture1D* pTex1D, D3D11_RTV_DIMENSION viewDimension, DXGI_FORMAT format = DXGI_FORMAT_UNKNOWN, uint mipSlice = 0, uint firstArraySlice = 0, uint arraySize = unchecked((uint)-1))
         {
             ViewDimension = viewDimension;
             if ((DXGI_FORMAT_UNKNOWN == format) || ((unchecked((uint)-1) == arraySize) && (D3D11_RTV_DIMENSION_TEXTURE1DARRAY == viewDimension)))
@@ -134,7 +134,7 @@ namespace TerraFX.Interop
                 }
             }
         }
-        public D3D11_RENDER_TARGET_VIEW_DESC(ID3D11Texture2D* pTex2D, D3D11_RTV_DIMENSION viewDimension, DXGI_FORMAT format = DXGI_FORMAT_UNKNOWN, [NativeTypeName("UINT")] uint mipSlice = 0, [NativeTypeName("UINT")] uint firstArraySlice = 0, [NativeTypeName("UINT")] uint arraySize = unchecked((uint)-1))
+        public D3D11_RENDER_TARGET_VIEW_DESC(ID3D11Texture2D* pTex2D, D3D11_RTV_DIMENSION viewDimension, DXGI_FORMAT format = DXGI_FORMAT_UNKNOWN, uint mipSlice = 0, uint firstArraySlice = 0, uint arraySize = unchecked((uint)-1))
         {
             ViewDimension = viewDimension;
 
@@ -191,7 +191,7 @@ namespace TerraFX.Interop
                 }
             }
         }
-        public D3D11_RENDER_TARGET_VIEW_DESC(ID3D11Texture3D* pTex3D, DXGI_FORMAT format = DXGI_FORMAT_UNKNOWN, [NativeTypeName("UINT")] uint mipSlice = 0, [NativeTypeName("UINT")] uint firstWSlice = 0, [NativeTypeName("UINT")] uint wSize = unchecked((uint)-1))
+        public D3D11_RENDER_TARGET_VIEW_DESC(ID3D11Texture3D* pTex3D, DXGI_FORMAT format = DXGI_FORMAT_UNKNOWN, uint mipSlice = 0, uint firstWSlice = 0, uint wSize = unchecked((uint)-1))
         {
             ViewDimension = D3D11_RTV_DIMENSION_TEXTURE3D;
 

@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<ISegmentList*, Guid*, void**, int>)(lpVtbl[0]))((ISegmentList*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,26 +41,23 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int CreateIterator(ISegmentListIterator** ppIIter)
+        public HRESULT CreateIterator(ISegmentListIterator** ppIIter)
         {
             return ((delegate* unmanaged<ISegmentList*, ISegmentListIterator**, int>)(lpVtbl[3]))((ISegmentList*)Unsafe.AsPointer(ref this), ppIIter);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetType(SELECTION_TYPE* peType)
+        public HRESULT GetType(SELECTION_TYPE* peType)
         {
             return ((delegate* unmanaged<ISegmentList*, SELECTION_TYPE*, int>)(lpVtbl[4]))((ISegmentList*)Unsafe.AsPointer(ref this), peType);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int IsEmpty([NativeTypeName("BOOL *")] int* pfEmpty)
+        public HRESULT IsEmpty(BOOL* pfEmpty)
         {
-            return ((delegate* unmanaged<ISegmentList*, int*, int>)(lpVtbl[5]))((ISegmentList*)Unsafe.AsPointer(ref this), pfEmpty);
+            return ((delegate* unmanaged<ISegmentList*, BOOL*, int>)(lpVtbl[5]))((ISegmentList*)Unsafe.AsPointer(ref this), pfEmpty);
         }
     }
 }

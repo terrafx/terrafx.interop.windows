@@ -17,8 +17,7 @@ namespace TerraFX.Interop
         public void** lpVtbl;
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
             return ((delegate* unmanaged<IKeyValuePair<K, V>*, Guid*, void**, int>)(lpVtbl[0]))((IKeyValuePair<K, V>*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -38,36 +37,31 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetIids([NativeTypeName("ULONG *")] uint* iidCount, [NativeTypeName("IID **")] Guid** iids)
+        public HRESULT GetIids([NativeTypeName("ULONG *")] uint* iidCount, [NativeTypeName("IID **")] Guid** iids)
         {
             return ((delegate* unmanaged<IKeyValuePair<K, V>*, uint*, Guid**, int>)(lpVtbl[3]))((IKeyValuePair<K, V>*)Unsafe.AsPointer(ref this), iidCount, iids);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetRuntimeClassName([NativeTypeName("HSTRING *")] IntPtr* className)
+        public HRESULT GetRuntimeClassName(HSTRING* className)
         {
-            return ((delegate* unmanaged<IKeyValuePair<K, V>*, IntPtr*, int>)(lpVtbl[4]))((IKeyValuePair<K, V>*)Unsafe.AsPointer(ref this), className);
+            return ((delegate* unmanaged<IKeyValuePair<K, V>*, HSTRING*, int>)(lpVtbl[4]))((IKeyValuePair<K, V>*)Unsafe.AsPointer(ref this), className);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetTrustLevel([NativeTypeName("TrustLevel *")] TrustLevel* trustLevel)
+        public HRESULT GetTrustLevel([NativeTypeName("TrustLevel *")] TrustLevel* trustLevel)
         {
             return ((delegate* unmanaged<IKeyValuePair<K, V>*, TrustLevel*, int>)(lpVtbl[5]))((IKeyValuePair<K, V>*)Unsafe.AsPointer(ref this), trustLevel);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [return: NativeTypeName("HRESULT")]
-        public int get_Key([NativeTypeName("K_abi *")] K* key)
+        public HRESULT get_Key([NativeTypeName("K_abi *")] K* key)
         {
             return ((delegate* unmanaged<IKeyValuePair<K, V>*, K*, int>)(lpVtbl[6]))((IKeyValuePair<K, V>*)Unsafe.AsPointer(ref this), key);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [return: NativeTypeName("HRESULT")]
-        public int get_Value([NativeTypeName("V_abi *")] V* value)
+        public HRESULT get_Value([NativeTypeName("V_abi *")] V* value)
         {
             return ((delegate* unmanaged<IKeyValuePair<K, V>*, V*, int>)(lpVtbl[7]))((IKeyValuePair<K, V>*)Unsafe.AsPointer(ref this), value);
         }

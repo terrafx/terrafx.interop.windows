@@ -9,13 +9,10 @@ namespace TerraFX.Interop
 {
     public partial struct D3D11_VIDEO_DECODER_DESC
     {
-        [NativeTypeName("GUID")]
         public Guid Guid;
 
-        [NativeTypeName("UINT")]
         public uint SampleWidth;
 
-        [NativeTypeName("UINT")]
         public uint SampleHeight;
 
         public DXGI_FORMAT OutputFormat;

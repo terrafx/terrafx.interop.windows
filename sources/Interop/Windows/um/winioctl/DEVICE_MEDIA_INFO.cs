@@ -95,10 +95,8 @@ namespace TerraFX.Interop
 
                     public partial struct _ScsiInformation_e__Struct
                     {
-                        [NativeTypeName("BYTE")]
                         public byte MediumType;
 
-                        [NativeTypeName("BYTE")]
                         public byte DensityCode;
                     }
                 }

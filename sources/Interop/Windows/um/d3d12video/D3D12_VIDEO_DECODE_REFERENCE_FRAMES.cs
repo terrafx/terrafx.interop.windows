@@ -7,12 +7,10 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct D3D12_VIDEO_DECODE_REFERENCE_FRAMES
     {
-        [NativeTypeName("UINT")]
         public uint NumTexture2Ds;
 
         public ID3D12Resource** ppTexture2Ds;
 
-        [NativeTypeName("UINT *")]
         public uint* pSubresources;
 
         public ID3D12VideoDecoderHeap** ppHeaps;

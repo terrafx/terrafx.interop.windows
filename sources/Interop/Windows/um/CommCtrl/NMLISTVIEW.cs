@@ -13,13 +13,10 @@ namespace TerraFX.Interop
 
         public int iSubItem;
 
-        [NativeTypeName("UINT")]
         public uint uNewState;
 
-        [NativeTypeName("UINT")]
         public uint uOldState;
 
-        [NativeTypeName("UINT")]
         public uint uChanged;
 
         public POINT ptAction;

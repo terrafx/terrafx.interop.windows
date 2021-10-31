@@ -9,8 +9,7 @@ namespace TerraFX.Interop
     {
         public NMHDR hdr;
 
-        [NativeTypeName("BOOL")]
-        public int fChanged;
+        public BOOL fChanged;
 
         public RECT rcTarget;
 

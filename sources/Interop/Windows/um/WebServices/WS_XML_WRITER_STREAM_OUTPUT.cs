@@ -12,7 +12,7 @@ namespace TerraFX.Interop
         public WS_XML_WRITER_OUTPUT output;
 
         [NativeTypeName("WS_WRITE_CALLBACK")]
-        public delegate* unmanaged<void*, WS_BYTES*, uint, WS_ASYNC_CONTEXT*, IntPtr, int> writeCallback;
+        public delegate* unmanaged<void*, WS_BYTES*, uint, WS_ASYNC_CONTEXT*, IntPtr, HRESULT> writeCallback;
 
         public void* writeCallbackState;
     }

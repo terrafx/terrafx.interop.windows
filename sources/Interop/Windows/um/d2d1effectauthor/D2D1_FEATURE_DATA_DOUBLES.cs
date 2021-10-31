@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public partial struct D2D1_FEATURE_DATA_DOUBLES
     {
-        [NativeTypeName("BOOL")]
-        public int doublePrecisionFloatShaderOps;
+        public BOOL doublePrecisionFloatShaderOps;
     }
 }

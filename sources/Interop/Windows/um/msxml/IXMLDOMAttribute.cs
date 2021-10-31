@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IXMLDOMAttribute*, Guid*, void**, int>)(lpVtbl[0]))((IXMLDOMAttribute*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,344 +41,301 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetTypeInfoCount([NativeTypeName("UINT *")] uint* pctinfo)
+        public HRESULT GetTypeInfoCount(uint* pctinfo)
         {
             return ((delegate* unmanaged<IXMLDOMAttribute*, uint*, int>)(lpVtbl[3]))((IXMLDOMAttribute*)Unsafe.AsPointer(ref this), pctinfo);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetTypeInfo([NativeTypeName("UINT")] uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
+        public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
         {
             return ((delegate* unmanaged<IXMLDOMAttribute*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IXMLDOMAttribute*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, [NativeTypeName("UINT")] uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+        public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
         {
             return ((delegate* unmanaged<IXMLDOMAttribute*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IXMLDOMAttribute*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, [NativeTypeName("UINT *")] uint* puArgErr)
+        public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
         {
             return ((delegate* unmanaged<IXMLDOMAttribute*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IXMLDOMAttribute*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        [return: NativeTypeName("HRESULT")]
-        public int get_nodeName([NativeTypeName("BSTR *")] ushort** name)
+        public HRESULT get_nodeName([NativeTypeName("BSTR *")] ushort** name)
         {
             return ((delegate* unmanaged<IXMLDOMAttribute*, ushort**, int>)(lpVtbl[7]))((IXMLDOMAttribute*)Unsafe.AsPointer(ref this), name);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        [return: NativeTypeName("HRESULT")]
-        public int get_nodeValue(VARIANT* value)
+        public HRESULT get_nodeValue(VARIANT* value)
         {
             return ((delegate* unmanaged<IXMLDOMAttribute*, VARIANT*, int>)(lpVtbl[8]))((IXMLDOMAttribute*)Unsafe.AsPointer(ref this), value);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        [return: NativeTypeName("HRESULT")]
-        public int put_nodeValue(VARIANT value)
+        public HRESULT put_nodeValue(VARIANT value)
         {
             return ((delegate* unmanaged<IXMLDOMAttribute*, VARIANT, int>)(lpVtbl[9]))((IXMLDOMAttribute*)Unsafe.AsPointer(ref this), value);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(10)]
-        [return: NativeTypeName("HRESULT")]
-        public int get_nodeType(DOMNodeType* type)
+        public HRESULT get_nodeType(DOMNodeType* type)
         {
             return ((delegate* unmanaged<IXMLDOMAttribute*, DOMNodeType*, int>)(lpVtbl[10]))((IXMLDOMAttribute*)Unsafe.AsPointer(ref this), type);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(11)]
-        [return: NativeTypeName("HRESULT")]
-        public int get_parentNode(IXMLDOMNode** parent)
+        public HRESULT get_parentNode(IXMLDOMNode** parent)
         {
             return ((delegate* unmanaged<IXMLDOMAttribute*, IXMLDOMNode**, int>)(lpVtbl[11]))((IXMLDOMAttribute*)Unsafe.AsPointer(ref this), parent);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(12)]
-        [return: NativeTypeName("HRESULT")]
-        public int get_childNodes(IXMLDOMNodeList** childList)
+        public HRESULT get_childNodes(IXMLDOMNodeList** childList)
         {
             return ((delegate* unmanaged<IXMLDOMAttribute*, IXMLDOMNodeList**, int>)(lpVtbl[12]))((IXMLDOMAttribute*)Unsafe.AsPointer(ref this), childList);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(13)]
-        [return: NativeTypeName("HRESULT")]
-        public int get_firstChild(IXMLDOMNode** firstChild)
+        public HRESULT get_firstChild(IXMLDOMNode** firstChild)
         {
             return ((delegate* unmanaged<IXMLDOMAttribute*, IXMLDOMNode**, int>)(lpVtbl[13]))((IXMLDOMAttribute*)Unsafe.AsPointer(ref this), firstChild);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(14)]
-        [return: NativeTypeName("HRESULT")]
-        public int get_lastChild(IXMLDOMNode** lastChild)
+        public HRESULT get_lastChild(IXMLDOMNode** lastChild)
         {
             return ((delegate* unmanaged<IXMLDOMAttribute*, IXMLDOMNode**, int>)(lpVtbl[14]))((IXMLDOMAttribute*)Unsafe.AsPointer(ref this), lastChild);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(15)]
-        [return: NativeTypeName("HRESULT")]
-        public int get_previousSibling(IXMLDOMNode** previousSibling)
+        public HRESULT get_previousSibling(IXMLDOMNode** previousSibling)
         {
             return ((delegate* unmanaged<IXMLDOMAttribute*, IXMLDOMNode**, int>)(lpVtbl[15]))((IXMLDOMAttribute*)Unsafe.AsPointer(ref this), previousSibling);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(16)]
-        [return: NativeTypeName("HRESULT")]
-        public int get_nextSibling(IXMLDOMNode** nextSibling)
+        public HRESULT get_nextSibling(IXMLDOMNode** nextSibling)
         {
             return ((delegate* unmanaged<IXMLDOMAttribute*, IXMLDOMNode**, int>)(lpVtbl[16]))((IXMLDOMAttribute*)Unsafe.AsPointer(ref this), nextSibling);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(17)]
-        [return: NativeTypeName("HRESULT")]
-        public int get_attributes(IXMLDOMNamedNodeMap** attributeMap)
+        public HRESULT get_attributes(IXMLDOMNamedNodeMap** attributeMap)
         {
             return ((delegate* unmanaged<IXMLDOMAttribute*, IXMLDOMNamedNodeMap**, int>)(lpVtbl[17]))((IXMLDOMAttribute*)Unsafe.AsPointer(ref this), attributeMap);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(18)]
-        [return: NativeTypeName("HRESULT")]
-        public int insertBefore(IXMLDOMNode* newChild, VARIANT refChild, IXMLDOMNode** outNewChild)
+        public HRESULT insertBefore(IXMLDOMNode* newChild, VARIANT refChild, IXMLDOMNode** outNewChild)
         {
             return ((delegate* unmanaged<IXMLDOMAttribute*, IXMLDOMNode*, VARIANT, IXMLDOMNode**, int>)(lpVtbl[18]))((IXMLDOMAttribute*)Unsafe.AsPointer(ref this), newChild, refChild, outNewChild);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(19)]
-        [return: NativeTypeName("HRESULT")]
-        public int replaceChild(IXMLDOMNode* newChild, IXMLDOMNode* oldChild, IXMLDOMNode** outOldChild)
+        public HRESULT replaceChild(IXMLDOMNode* newChild, IXMLDOMNode* oldChild, IXMLDOMNode** outOldChild)
         {
             return ((delegate* unmanaged<IXMLDOMAttribute*, IXMLDOMNode*, IXMLDOMNode*, IXMLDOMNode**, int>)(lpVtbl[19]))((IXMLDOMAttribute*)Unsafe.AsPointer(ref this), newChild, oldChild, outOldChild);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(20)]
-        [return: NativeTypeName("HRESULT")]
-        public int removeChild(IXMLDOMNode* childNode, IXMLDOMNode** oldChild)
+        public HRESULT removeChild(IXMLDOMNode* childNode, IXMLDOMNode** oldChild)
         {
             return ((delegate* unmanaged<IXMLDOMAttribute*, IXMLDOMNode*, IXMLDOMNode**, int>)(lpVtbl[20]))((IXMLDOMAttribute*)Unsafe.AsPointer(ref this), childNode, oldChild);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(21)]
-        [return: NativeTypeName("HRESULT")]
-        public int appendChild(IXMLDOMNode* newChild, IXMLDOMNode** outNewChild)
+        public HRESULT appendChild(IXMLDOMNode* newChild, IXMLDOMNode** outNewChild)
         {
             return ((delegate* unmanaged<IXMLDOMAttribute*, IXMLDOMNode*, IXMLDOMNode**, int>)(lpVtbl[21]))((IXMLDOMAttribute*)Unsafe.AsPointer(ref this), newChild, outNewChild);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(22)]
-        [return: NativeTypeName("HRESULT")]
-        public int hasChildNodes([NativeTypeName("VARIANT_BOOL *")] short* hasChild)
+        public HRESULT hasChildNodes([NativeTypeName("VARIANT_BOOL *")] short* hasChild)
         {
             return ((delegate* unmanaged<IXMLDOMAttribute*, short*, int>)(lpVtbl[22]))((IXMLDOMAttribute*)Unsafe.AsPointer(ref this), hasChild);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(23)]
-        [return: NativeTypeName("HRESULT")]
-        public int get_ownerDocument(IXMLDOMDocument** XMLDOMDocument)
+        public HRESULT get_ownerDocument(IXMLDOMDocument** XMLDOMDocument)
         {
             return ((delegate* unmanaged<IXMLDOMAttribute*, IXMLDOMDocument**, int>)(lpVtbl[23]))((IXMLDOMAttribute*)Unsafe.AsPointer(ref this), XMLDOMDocument);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(24)]
-        [return: NativeTypeName("HRESULT")]
-        public int cloneNode([NativeTypeName("VARIANT_BOOL")] short deep, IXMLDOMNode** cloneRoot)
+        public HRESULT cloneNode([NativeTypeName("VARIANT_BOOL")] short deep, IXMLDOMNode** cloneRoot)
         {
             return ((delegate* unmanaged<IXMLDOMAttribute*, short, IXMLDOMNode**, int>)(lpVtbl[24]))((IXMLDOMAttribute*)Unsafe.AsPointer(ref this), deep, cloneRoot);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(25)]
-        [return: NativeTypeName("HRESULT")]
-        public int get_nodeTypeString([NativeTypeName("BSTR *")] ushort** nodeType)
+        public HRESULT get_nodeTypeString([NativeTypeName("BSTR *")] ushort** nodeType)
         {
             return ((delegate* unmanaged<IXMLDOMAttribute*, ushort**, int>)(lpVtbl[25]))((IXMLDOMAttribute*)Unsafe.AsPointer(ref this), nodeType);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(26)]
-        [return: NativeTypeName("HRESULT")]
-        public int get_text([NativeTypeName("BSTR *")] ushort** text)
+        public HRESULT get_text([NativeTypeName("BSTR *")] ushort** text)
         {
             return ((delegate* unmanaged<IXMLDOMAttribute*, ushort**, int>)(lpVtbl[26]))((IXMLDOMAttribute*)Unsafe.AsPointer(ref this), text);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(27)]
-        [return: NativeTypeName("HRESULT")]
-        public int put_text([NativeTypeName("BSTR")] ushort* text)
+        public HRESULT put_text([NativeTypeName("BSTR")] ushort* text)
         {
             return ((delegate* unmanaged<IXMLDOMAttribute*, ushort*, int>)(lpVtbl[27]))((IXMLDOMAttribute*)Unsafe.AsPointer(ref this), text);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(28)]
-        [return: NativeTypeName("HRESULT")]
-        public int get_specified([NativeTypeName("VARIANT_BOOL *")] short* isSpecified)
+        public HRESULT get_specified([NativeTypeName("VARIANT_BOOL *")] short* isSpecified)
         {
             return ((delegate* unmanaged<IXMLDOMAttribute*, short*, int>)(lpVtbl[28]))((IXMLDOMAttribute*)Unsafe.AsPointer(ref this), isSpecified);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(29)]
-        [return: NativeTypeName("HRESULT")]
-        public int get_definition(IXMLDOMNode** definitionNode)
+        public HRESULT get_definition(IXMLDOMNode** definitionNode)
         {
             return ((delegate* unmanaged<IXMLDOMAttribute*, IXMLDOMNode**, int>)(lpVtbl[29]))((IXMLDOMAttribute*)Unsafe.AsPointer(ref this), definitionNode);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(30)]
-        [return: NativeTypeName("HRESULT")]
-        public int get_nodeTypedValue(VARIANT* typedValue)
+        public HRESULT get_nodeTypedValue(VARIANT* typedValue)
         {
             return ((delegate* unmanaged<IXMLDOMAttribute*, VARIANT*, int>)(lpVtbl[30]))((IXMLDOMAttribute*)Unsafe.AsPointer(ref this), typedValue);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(31)]
-        [return: NativeTypeName("HRESULT")]
-        public int put_nodeTypedValue(VARIANT typedValue)
+        public HRESULT put_nodeTypedValue(VARIANT typedValue)
         {
             return ((delegate* unmanaged<IXMLDOMAttribute*, VARIANT, int>)(lpVtbl[31]))((IXMLDOMAttribute*)Unsafe.AsPointer(ref this), typedValue);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(32)]
-        [return: NativeTypeName("HRESULT")]
-        public int get_dataType(VARIANT* dataTypeName)
+        public HRESULT get_dataType(VARIANT* dataTypeName)
         {
             return ((delegate* unmanaged<IXMLDOMAttribute*, VARIANT*, int>)(lpVtbl[32]))((IXMLDOMAttribute*)Unsafe.AsPointer(ref this), dataTypeName);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(33)]
-        [return: NativeTypeName("HRESULT")]
-        public int put_dataType([NativeTypeName("BSTR")] ushort* dataTypeName)
+        public HRESULT put_dataType([NativeTypeName("BSTR")] ushort* dataTypeName)
         {
             return ((delegate* unmanaged<IXMLDOMAttribute*, ushort*, int>)(lpVtbl[33]))((IXMLDOMAttribute*)Unsafe.AsPointer(ref this), dataTypeName);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(34)]
-        [return: NativeTypeName("HRESULT")]
-        public int get_xml([NativeTypeName("BSTR *")] ushort** xmlString)
+        public HRESULT get_xml([NativeTypeName("BSTR *")] ushort** xmlString)
         {
             return ((delegate* unmanaged<IXMLDOMAttribute*, ushort**, int>)(lpVtbl[34]))((IXMLDOMAttribute*)Unsafe.AsPointer(ref this), xmlString);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(35)]
-        [return: NativeTypeName("HRESULT")]
-        public int transformNode(IXMLDOMNode* stylesheet, [NativeTypeName("BSTR *")] ushort** xmlString)
+        public HRESULT transformNode(IXMLDOMNode* stylesheet, [NativeTypeName("BSTR *")] ushort** xmlString)
         {
             return ((delegate* unmanaged<IXMLDOMAttribute*, IXMLDOMNode*, ushort**, int>)(lpVtbl[35]))((IXMLDOMAttribute*)Unsafe.AsPointer(ref this), stylesheet, xmlString);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(36)]
-        [return: NativeTypeName("HRESULT")]
-        public int selectNodes([NativeTypeName("BSTR")] ushort* queryString, IXMLDOMNodeList** resultList)
+        public HRESULT selectNodes([NativeTypeName("BSTR")] ushort* queryString, IXMLDOMNodeList** resultList)
         {
             return ((delegate* unmanaged<IXMLDOMAttribute*, ushort*, IXMLDOMNodeList**, int>)(lpVtbl[36]))((IXMLDOMAttribute*)Unsafe.AsPointer(ref this), queryString, resultList);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(37)]
-        [return: NativeTypeName("HRESULT")]
-        public int selectSingleNode([NativeTypeName("BSTR")] ushort* queryString, IXMLDOMNode** resultNode)
+        public HRESULT selectSingleNode([NativeTypeName("BSTR")] ushort* queryString, IXMLDOMNode** resultNode)
         {
             return ((delegate* unmanaged<IXMLDOMAttribute*, ushort*, IXMLDOMNode**, int>)(lpVtbl[37]))((IXMLDOMAttribute*)Unsafe.AsPointer(ref this), queryString, resultNode);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(38)]
-        [return: NativeTypeName("HRESULT")]
-        public int get_parsed([NativeTypeName("VARIANT_BOOL *")] short* isParsed)
+        public HRESULT get_parsed([NativeTypeName("VARIANT_BOOL *")] short* isParsed)
         {
             return ((delegate* unmanaged<IXMLDOMAttribute*, short*, int>)(lpVtbl[38]))((IXMLDOMAttribute*)Unsafe.AsPointer(ref this), isParsed);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(39)]
-        [return: NativeTypeName("HRESULT")]
-        public int get_namespaceURI([NativeTypeName("BSTR *")] ushort** namespaceURI)
+        public HRESULT get_namespaceURI([NativeTypeName("BSTR *")] ushort** namespaceURI)
         {
             return ((delegate* unmanaged<IXMLDOMAttribute*, ushort**, int>)(lpVtbl[39]))((IXMLDOMAttribute*)Unsafe.AsPointer(ref this), namespaceURI);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(40)]
-        [return: NativeTypeName("HRESULT")]
-        public int get_prefix([NativeTypeName("BSTR *")] ushort** prefixString)
+        public HRESULT get_prefix([NativeTypeName("BSTR *")] ushort** prefixString)
         {
             return ((delegate* unmanaged<IXMLDOMAttribute*, ushort**, int>)(lpVtbl[40]))((IXMLDOMAttribute*)Unsafe.AsPointer(ref this), prefixString);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(41)]
-        [return: NativeTypeName("HRESULT")]
-        public int get_baseName([NativeTypeName("BSTR *")] ushort** nameString)
+        public HRESULT get_baseName([NativeTypeName("BSTR *")] ushort** nameString)
         {
             return ((delegate* unmanaged<IXMLDOMAttribute*, ushort**, int>)(lpVtbl[41]))((IXMLDOMAttribute*)Unsafe.AsPointer(ref this), nameString);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(42)]
-        [return: NativeTypeName("HRESULT")]
-        public int transformNodeToObject(IXMLDOMNode* stylesheet, VARIANT outputObject)
+        public HRESULT transformNodeToObject(IXMLDOMNode* stylesheet, VARIANT outputObject)
         {
             return ((delegate* unmanaged<IXMLDOMAttribute*, IXMLDOMNode*, VARIANT, int>)(lpVtbl[42]))((IXMLDOMAttribute*)Unsafe.AsPointer(ref this), stylesheet, outputObject);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(43)]
-        [return: NativeTypeName("HRESULT")]
-        public int get_name([NativeTypeName("BSTR *")] ushort** attributeName)
+        public HRESULT get_name([NativeTypeName("BSTR *")] ushort** attributeName)
         {
             return ((delegate* unmanaged<IXMLDOMAttribute*, ushort**, int>)(lpVtbl[43]))((IXMLDOMAttribute*)Unsafe.AsPointer(ref this), attributeName);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(44)]
-        [return: NativeTypeName("HRESULT")]
-        public int get_value(VARIANT* attributeValue)
+        public HRESULT get_value(VARIANT* attributeValue)
         {
             return ((delegate* unmanaged<IXMLDOMAttribute*, VARIANT*, int>)(lpVtbl[44]))((IXMLDOMAttribute*)Unsafe.AsPointer(ref this), attributeValue);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(45)]
-        [return: NativeTypeName("HRESULT")]
-        public int put_value(VARIANT attributeValue)
+        public HRESULT put_value(VARIANT attributeValue)
         {
             return ((delegate* unmanaged<IXMLDOMAttribute*, VARIANT, int>)(lpVtbl[45]))((IXMLDOMAttribute*)Unsafe.AsPointer(ref this), attributeValue);
         }

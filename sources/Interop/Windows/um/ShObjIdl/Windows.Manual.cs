@@ -6,11 +6,43 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.SIGDN;
 
 namespace TerraFX.Interop
 {
     public static unsafe partial class Windows
     {
+        public static HRESULT SHResolveFolderPathInLibrary(IShellLibrary* plib, [NativeTypeName("PCWSTR")] ushort* pszFolderPath, [NativeTypeName("DWORD")] uint dwTimeout, [NativeTypeName("PWSTR *")] ushort** ppszResolvedPath)
+        {
+            *ppszResolvedPath = null;
+            ITEMIDLIST* pidlFolder = SHSimpleIDListFromPath(pszFolderPath);
+            int hr = unchecked((pidlFolder) != null ? ((int)(0)) : ((int)(0x80070057)));
+
+            if (((unchecked((int)(hr))) >= 0))
+            {
+                IShellItem* psiFolder;
+
+                hr = SHCreateItemFromIDList(pidlFolder, __uuidof<IShellItem>(), (void**)(&psiFolder));
+                if (((unchecked((int)(hr))) >= 0))
+                {
+                    IShellItem* psiResolved;
+
+                    hr = plib->ResolveFolder(psiFolder, dwTimeout, __uuidof<IShellItem>(), (void**)(&psiResolved));
+                    if (((unchecked((int)(hr))) >= 0))
+                    {
+                        unchecked(hr) = psiResolved->GetDisplayName(SIGDN_DESKTOPABSOLUTEPARSING, ppszResolvedPath);
+                        psiResolved->Release();
+                    }
+
+                    psiFolder->Release();
+                }
+
+                CoTaskMemFree(pidlFolder);
+            }
+
+            return hr;
+        }
+
         public static ref readonly Guid CLSID_PublishingWizard
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]

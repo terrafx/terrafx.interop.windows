@@ -16,8 +16,7 @@ namespace TerraFX.Interop
         public void** lpVtbl;
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
             return ((delegate* unmanaged<IEventHandler<T>*, Guid*, void**, int>)(lpVtbl[0]))((IEventHandler<T>*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -37,8 +36,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [return: NativeTypeName("HRESULT")]
-        public int Invoke([NativeTypeName("IInspectable *")] IInspectable* sender, [NativeTypeName("T_abi")] T args)
+        public HRESULT Invoke([NativeTypeName("IInspectable *")] IInspectable* sender, [NativeTypeName("T_abi")] T args)
         {
             return ((delegate* unmanaged<IEventHandler<T>*, IInspectable*, T, int>)(lpVtbl[3]))((IEventHandler<T>*)Unsafe.AsPointer(ref this), sender, args);
         }

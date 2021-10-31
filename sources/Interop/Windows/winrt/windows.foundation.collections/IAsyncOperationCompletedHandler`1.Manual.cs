@@ -16,8 +16,7 @@ namespace TerraFX.Interop
         public void** lpVtbl;
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
             return ((delegate* unmanaged<IAsyncOperationCompletedHandler<TResult>*, Guid*, void**, int>)(lpVtbl[0]))((IAsyncOperationCompletedHandler<TResult>*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -37,8 +36,7 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [return: NativeTypeName("HRESULT")]
-        public int Invoke([NativeTypeName("IAsyncOperation<TResult_logical> *")] IAsyncOperation<TResult>* asyncInfo, [NativeTypeName("Windows::Foundation::AsyncStatus")] AsyncStatus status)
+        public HRESULT Invoke([NativeTypeName("IAsyncOperation<TResult_logical> *")] IAsyncOperation<TResult>* asyncInfo, [NativeTypeName("Windows::Foundation::AsyncStatus")] AsyncStatus status)
         {
             return ((delegate* unmanaged<IAsyncOperationCompletedHandler<TResult>*, IAsyncOperation<TResult>*, AsyncStatus, int>)(lpVtbl[3]))((IAsyncOperationCompletedHandler<TResult>*)Unsafe.AsPointer(ref this), asyncInfo, status);
         }

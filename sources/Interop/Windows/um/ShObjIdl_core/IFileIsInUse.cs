@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IFileIsInUse*, Guid*, void**, int>)(lpVtbl[0]))((IFileIsInUse*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,40 +41,35 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetAppName([NativeTypeName("LPWSTR *")] ushort** ppszName)
+        public HRESULT GetAppName([NativeTypeName("LPWSTR *")] ushort** ppszName)
         {
             return ((delegate* unmanaged<IFileIsInUse*, ushort**, int>)(lpVtbl[3]))((IFileIsInUse*)Unsafe.AsPointer(ref this), ppszName);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetUsage(FILE_USAGE_TYPE* pfut)
+        public HRESULT GetUsage(FILE_USAGE_TYPE* pfut)
         {
             return ((delegate* unmanaged<IFileIsInUse*, FILE_USAGE_TYPE*, int>)(lpVtbl[4]))((IFileIsInUse*)Unsafe.AsPointer(ref this), pfut);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetCapabilities([NativeTypeName("DWORD *")] uint* pdwCapFlags)
+        public HRESULT GetCapabilities([NativeTypeName("DWORD *")] uint* pdwCapFlags)
         {
             return ((delegate* unmanaged<IFileIsInUse*, uint*, int>)(lpVtbl[5]))((IFileIsInUse*)Unsafe.AsPointer(ref this), pdwCapFlags);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetSwitchToHWND([NativeTypeName("HWND *")] IntPtr* phwnd)
+        public HRESULT GetSwitchToHWND(HWND* phwnd)
         {
-            return ((delegate* unmanaged<IFileIsInUse*, IntPtr*, int>)(lpVtbl[6]))((IFileIsInUse*)Unsafe.AsPointer(ref this), phwnd);
+            return ((delegate* unmanaged<IFileIsInUse*, HWND*, int>)(lpVtbl[6]))((IFileIsInUse*)Unsafe.AsPointer(ref this), phwnd);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        [return: NativeTypeName("HRESULT")]
-        public int CloseFile()
+        public HRESULT CloseFile()
         {
             return ((delegate* unmanaged<IFileIsInUse*, int>)(lpVtbl[7]))((IFileIsInUse*)Unsafe.AsPointer(ref this));
         }

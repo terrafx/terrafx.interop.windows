@@ -22,28 +22,20 @@ namespace TerraFX.Interop
         [NativeTypeName("LONG")]
         public int lfWeight;
 
-        [NativeTypeName("BYTE")]
         public byte lfItalic;
 
-        [NativeTypeName("BYTE")]
         public byte lfUnderline;
 
-        [NativeTypeName("BYTE")]
         public byte lfStrikeOut;
 
-        [NativeTypeName("BYTE")]
         public byte lfCharSet;
 
-        [NativeTypeName("BYTE")]
         public byte lfOutPrecision;
 
-        [NativeTypeName("BYTE")]
         public byte lfClipPrecision;
 
-        [NativeTypeName("BYTE")]
         public byte lfQuality;
 
-        [NativeTypeName("BYTE")]
         public byte lfPitchAndFamily;
 
         [NativeTypeName("WCHAR [32]")]

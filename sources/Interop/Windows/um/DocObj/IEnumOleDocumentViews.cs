@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IEnumOleDocumentViews*, Guid*, void**, int>)(lpVtbl[0]))((IEnumOleDocumentViews*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,32 +41,28 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int Next([NativeTypeName("ULONG")] uint cViews, IOleDocumentView** rgpView, [NativeTypeName("ULONG *")] uint* pcFetched)
+        public HRESULT Next([NativeTypeName("ULONG")] uint cViews, IOleDocumentView** rgpView, [NativeTypeName("ULONG *")] uint* pcFetched)
         {
             return ((delegate* unmanaged<IEnumOleDocumentViews*, uint, IOleDocumentView**, uint*, int>)(lpVtbl[3]))((IEnumOleDocumentViews*)Unsafe.AsPointer(ref this), cViews, rgpView, pcFetched);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int Skip([NativeTypeName("ULONG")] uint cViews)
+        public HRESULT Skip([NativeTypeName("ULONG")] uint cViews)
         {
             return ((delegate* unmanaged<IEnumOleDocumentViews*, uint, int>)(lpVtbl[4]))((IEnumOleDocumentViews*)Unsafe.AsPointer(ref this), cViews);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int Reset()
+        public HRESULT Reset()
         {
             return ((delegate* unmanaged<IEnumOleDocumentViews*, int>)(lpVtbl[5]))((IEnumOleDocumentViews*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int Clone(IEnumOleDocumentViews** ppEnum)
+        public HRESULT Clone(IEnumOleDocumentViews** ppEnum)
         {
             return ((delegate* unmanaged<IEnumOleDocumentViews*, IEnumOleDocumentViews**, int>)(lpVtbl[6]))((IEnumOleDocumentViews*)Unsafe.AsPointer(ref this), ppEnum);
         }

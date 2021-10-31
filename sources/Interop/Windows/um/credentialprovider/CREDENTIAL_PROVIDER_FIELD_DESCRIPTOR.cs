@@ -17,7 +17,6 @@ namespace TerraFX.Interop
         [NativeTypeName("LPWSTR")]
         public ushort* pszLabel;
 
-        [NativeTypeName("GUID")]
         public Guid guidFieldType;
     }
 }

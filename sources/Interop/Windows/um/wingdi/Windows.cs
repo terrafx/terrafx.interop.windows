@@ -17,529 +17,439 @@ namespace TerraFX.Interop
         public static extern int AddFontResourceW([NativeTypeName("LPCWSTR")] ushort* param0);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int AnimatePalette([NativeTypeName("HPALETTE")] IntPtr hPal, [NativeTypeName("UINT")] uint iStartIndex, [NativeTypeName("UINT")] uint cEntries, [NativeTypeName("const PALETTEENTRY *")] PALETTEENTRY* ppe);
+        public static extern BOOL AnimatePalette(HPALETTE hPal, uint iStartIndex, uint cEntries, [NativeTypeName("const PALETTEENTRY *")] PALETTEENTRY* ppe);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int Arc([NativeTypeName("HDC")] IntPtr hdc, int x1, int y1, int x2, int y2, int x3, int y3, int x4, int y4);
+        public static extern BOOL Arc(HDC hdc, int x1, int y1, int x2, int y2, int x3, int y3, int x4, int y4);
 
         [DllImport("gdi32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int BitBlt([NativeTypeName("HDC")] IntPtr hdc, int x, int y, int cx, int cy, [NativeTypeName("HDC")] IntPtr hdcSrc, int x1, int y1, [NativeTypeName("DWORD")] uint rop);
+        public static extern BOOL BitBlt(HDC hdc, int x, int y, int cx, int cy, HDC hdcSrc, int x1, int y1, [NativeTypeName("DWORD")] uint rop);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int CancelDC([NativeTypeName("HDC")] IntPtr hdc);
+        public static extern BOOL CancelDC(HDC hdc);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int Chord([NativeTypeName("HDC")] IntPtr hdc, int x1, int y1, int x2, int y2, int x3, int y3, int x4, int y4);
+        public static extern BOOL Chord(HDC hdc, int x1, int y1, int x2, int y2, int x3, int y3, int x4, int y4);
 
         [DllImport("gdi32", ExactSpelling = true, SetLastError = true)]
-        public static extern int ChoosePixelFormat([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("const PIXELFORMATDESCRIPTOR *")] PIXELFORMATDESCRIPTOR* ppfd);
+        public static extern int ChoosePixelFormat(HDC hdc, [NativeTypeName("const PIXELFORMATDESCRIPTOR *")] PIXELFORMATDESCRIPTOR* ppfd);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("HMETAFILE")]
-        public static extern IntPtr CloseMetaFile([NativeTypeName("HDC")] IntPtr hdc);
+        public static extern HMETAFILE CloseMetaFile(HDC hdc);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        public static extern int CombineRgn([NativeTypeName("HRGN")] IntPtr hrgnDst, [NativeTypeName("HRGN")] IntPtr hrgnSrc1, [NativeTypeName("HRGN")] IntPtr hrgnSrc2, int iMode);
+        public static extern int CombineRgn(HRGN hrgnDst, HRGN hrgnSrc1, HRGN hrgnSrc2, int iMode);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("HMETAFILE")]
-        public static extern IntPtr CopyMetaFileA([NativeTypeName("HMETAFILE")] IntPtr param0, [NativeTypeName("LPCSTR")] sbyte* param1);
+        public static extern HMETAFILE CopyMetaFileA(HMETAFILE param0, [NativeTypeName("LPCSTR")] sbyte* param1);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("HMETAFILE")]
-        public static extern IntPtr CopyMetaFileW([NativeTypeName("HMETAFILE")] IntPtr param0, [NativeTypeName("LPCWSTR")] ushort* param1);
+        public static extern HMETAFILE CopyMetaFileW(HMETAFILE param0, [NativeTypeName("LPCWSTR")] ushort* param1);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("HBITMAP")]
-        public static extern IntPtr CreateBitmap(int nWidth, int nHeight, [NativeTypeName("UINT")] uint nPlanes, [NativeTypeName("UINT")] uint nBitCount, [NativeTypeName("const void *")] void* lpBits);
+        public static extern HBITMAP CreateBitmap(int nWidth, int nHeight, uint nPlanes, uint nBitCount, [NativeTypeName("const void *")] void* lpBits);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("HBITMAP")]
-        public static extern IntPtr CreateBitmapIndirect([NativeTypeName("const BITMAP *")] BITMAP* pbm);
+        public static extern HBITMAP CreateBitmapIndirect([NativeTypeName("const BITMAP *")] BITMAP* pbm);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("HBRUSH")]
-        public static extern IntPtr CreateBrushIndirect([NativeTypeName("const LOGBRUSH *")] LOGBRUSH* plbrush);
+        public static extern HBRUSH CreateBrushIndirect([NativeTypeName("const LOGBRUSH *")] LOGBRUSH* plbrush);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("HBITMAP")]
-        public static extern IntPtr CreateCompatibleBitmap([NativeTypeName("HDC")] IntPtr hdc, int cx, int cy);
+        public static extern HBITMAP CreateCompatibleBitmap(HDC hdc, int cx, int cy);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("HBITMAP")]
-        public static extern IntPtr CreateDiscardableBitmap([NativeTypeName("HDC")] IntPtr hdc, int cx, int cy);
+        public static extern HBITMAP CreateDiscardableBitmap(HDC hdc, int cx, int cy);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("HDC")]
-        public static extern IntPtr CreateCompatibleDC([NativeTypeName("HDC")] IntPtr hdc);
+        public static extern HDC CreateCompatibleDC(HDC hdc);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("HDC")]
-        public static extern IntPtr CreateDCA([NativeTypeName("LPCSTR")] sbyte* pwszDriver, [NativeTypeName("LPCSTR")] sbyte* pwszDevice, [NativeTypeName("LPCSTR")] sbyte* pszPort, [NativeTypeName("const DEVMODEA *")] DEVMODEA* pdm);
+        public static extern HDC CreateDCA([NativeTypeName("LPCSTR")] sbyte* pwszDriver, [NativeTypeName("LPCSTR")] sbyte* pwszDevice, [NativeTypeName("LPCSTR")] sbyte* pszPort, [NativeTypeName("const DEVMODEA *")] DEVMODEA* pdm);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("HDC")]
-        public static extern IntPtr CreateDCW([NativeTypeName("LPCWSTR")] ushort* pwszDriver, [NativeTypeName("LPCWSTR")] ushort* pwszDevice, [NativeTypeName("LPCWSTR")] ushort* pszPort, [NativeTypeName("const DEVMODEW *")] DEVMODEW* pdm);
+        public static extern HDC CreateDCW([NativeTypeName("LPCWSTR")] ushort* pwszDriver, [NativeTypeName("LPCWSTR")] ushort* pwszDevice, [NativeTypeName("LPCWSTR")] ushort* pszPort, [NativeTypeName("const DEVMODEW *")] DEVMODEW* pdm);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("HBITMAP")]
-        public static extern IntPtr CreateDIBitmap([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("const BITMAPINFOHEADER *")] BITMAPINFOHEADER* pbmih, [NativeTypeName("DWORD")] uint flInit, [NativeTypeName("const void *")] void* pjBits, [NativeTypeName("const BITMAPINFO *")] BITMAPINFO* pbmi, [NativeTypeName("UINT")] uint iUsage);
+        public static extern HBITMAP CreateDIBitmap(HDC hdc, [NativeTypeName("const BITMAPINFOHEADER *")] BITMAPINFOHEADER* pbmih, [NativeTypeName("DWORD")] uint flInit, [NativeTypeName("const void *")] void* pjBits, [NativeTypeName("const BITMAPINFO *")] BITMAPINFO* pbmi, uint iUsage);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("HBRUSH")]
-        public static extern IntPtr CreateDIBPatternBrush([NativeTypeName("HGLOBAL")] IntPtr h, [NativeTypeName("UINT")] uint iUsage);
+        public static extern HBRUSH CreateDIBPatternBrush([NativeTypeName("HGLOBAL")] HANDLE h, uint iUsage);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("HBRUSH")]
-        public static extern IntPtr CreateDIBPatternBrushPt([NativeTypeName("const void *")] void* lpPackedDIB, [NativeTypeName("UINT")] uint iUsage);
+        public static extern HBRUSH CreateDIBPatternBrushPt([NativeTypeName("const void *")] void* lpPackedDIB, uint iUsage);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("HRGN")]
-        public static extern IntPtr CreateEllipticRgn(int x1, int y1, int x2, int y2);
+        public static extern HRGN CreateEllipticRgn(int x1, int y1, int x2, int y2);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("HRGN")]
-        public static extern IntPtr CreateEllipticRgnIndirect([NativeTypeName("const RECT *")] RECT* lprect);
+        public static extern HRGN CreateEllipticRgnIndirect([NativeTypeName("const RECT *")] RECT* lprect);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("HFONT")]
-        public static extern IntPtr CreateFontIndirectA([NativeTypeName("const LOGFONTA *")] LOGFONTA* lplf);
+        public static extern HFONT CreateFontIndirectA([NativeTypeName("const LOGFONTA *")] LOGFONTA* lplf);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("HFONT")]
-        public static extern IntPtr CreateFontIndirectW([NativeTypeName("const LOGFONTW *")] LOGFONTW* lplf);
+        public static extern HFONT CreateFontIndirectW([NativeTypeName("const LOGFONTW *")] LOGFONTW* lplf);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("HFONT")]
-        public static extern IntPtr CreateFontA(int cHeight, int cWidth, int cEscapement, int cOrientation, int cWeight, [NativeTypeName("DWORD")] uint bItalic, [NativeTypeName("DWORD")] uint bUnderline, [NativeTypeName("DWORD")] uint bStrikeOut, [NativeTypeName("DWORD")] uint iCharSet, [NativeTypeName("DWORD")] uint iOutPrecision, [NativeTypeName("DWORD")] uint iClipPrecision, [NativeTypeName("DWORD")] uint iQuality, [NativeTypeName("DWORD")] uint iPitchAndFamily, [NativeTypeName("LPCSTR")] sbyte* pszFaceName);
+        public static extern HFONT CreateFontA(int cHeight, int cWidth, int cEscapement, int cOrientation, int cWeight, [NativeTypeName("DWORD")] uint bItalic, [NativeTypeName("DWORD")] uint bUnderline, [NativeTypeName("DWORD")] uint bStrikeOut, [NativeTypeName("DWORD")] uint iCharSet, [NativeTypeName("DWORD")] uint iOutPrecision, [NativeTypeName("DWORD")] uint iClipPrecision, [NativeTypeName("DWORD")] uint iQuality, [NativeTypeName("DWORD")] uint iPitchAndFamily, [NativeTypeName("LPCSTR")] sbyte* pszFaceName);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("HFONT")]
-        public static extern IntPtr CreateFontW(int cHeight, int cWidth, int cEscapement, int cOrientation, int cWeight, [NativeTypeName("DWORD")] uint bItalic, [NativeTypeName("DWORD")] uint bUnderline, [NativeTypeName("DWORD")] uint bStrikeOut, [NativeTypeName("DWORD")] uint iCharSet, [NativeTypeName("DWORD")] uint iOutPrecision, [NativeTypeName("DWORD")] uint iClipPrecision, [NativeTypeName("DWORD")] uint iQuality, [NativeTypeName("DWORD")] uint iPitchAndFamily, [NativeTypeName("LPCWSTR")] ushort* pszFaceName);
+        public static extern HFONT CreateFontW(int cHeight, int cWidth, int cEscapement, int cOrientation, int cWeight, [NativeTypeName("DWORD")] uint bItalic, [NativeTypeName("DWORD")] uint bUnderline, [NativeTypeName("DWORD")] uint bStrikeOut, [NativeTypeName("DWORD")] uint iCharSet, [NativeTypeName("DWORD")] uint iOutPrecision, [NativeTypeName("DWORD")] uint iClipPrecision, [NativeTypeName("DWORD")] uint iQuality, [NativeTypeName("DWORD")] uint iPitchAndFamily, [NativeTypeName("LPCWSTR")] ushort* pszFaceName);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("HBRUSH")]
-        public static extern IntPtr CreateHatchBrush(int iHatch, [NativeTypeName("COLORREF")] uint color);
+        public static extern HBRUSH CreateHatchBrush(int iHatch, [NativeTypeName("COLORREF")] uint color);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("HDC")]
-        public static extern IntPtr CreateICA([NativeTypeName("LPCSTR")] sbyte* pszDriver, [NativeTypeName("LPCSTR")] sbyte* pszDevice, [NativeTypeName("LPCSTR")] sbyte* pszPort, [NativeTypeName("const DEVMODEA *")] DEVMODEA* pdm);
+        public static extern HDC CreateICA([NativeTypeName("LPCSTR")] sbyte* pszDriver, [NativeTypeName("LPCSTR")] sbyte* pszDevice, [NativeTypeName("LPCSTR")] sbyte* pszPort, [NativeTypeName("const DEVMODEA *")] DEVMODEA* pdm);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("HDC")]
-        public static extern IntPtr CreateICW([NativeTypeName("LPCWSTR")] ushort* pszDriver, [NativeTypeName("LPCWSTR")] ushort* pszDevice, [NativeTypeName("LPCWSTR")] ushort* pszPort, [NativeTypeName("const DEVMODEW *")] DEVMODEW* pdm);
+        public static extern HDC CreateICW([NativeTypeName("LPCWSTR")] ushort* pszDriver, [NativeTypeName("LPCWSTR")] ushort* pszDevice, [NativeTypeName("LPCWSTR")] ushort* pszPort, [NativeTypeName("const DEVMODEW *")] DEVMODEW* pdm);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("HDC")]
-        public static extern IntPtr CreateMetaFileA([NativeTypeName("LPCSTR")] sbyte* pszFile);
+        public static extern HDC CreateMetaFileA([NativeTypeName("LPCSTR")] sbyte* pszFile);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("HDC")]
-        public static extern IntPtr CreateMetaFileW([NativeTypeName("LPCWSTR")] ushort* pszFile);
+        public static extern HDC CreateMetaFileW([NativeTypeName("LPCWSTR")] ushort* pszFile);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("HPALETTE")]
-        public static extern IntPtr CreatePalette([NativeTypeName("const LOGPALETTE *")] LOGPALETTE* plpal);
+        public static extern HPALETTE CreatePalette([NativeTypeName("const LOGPALETTE *")] LOGPALETTE* plpal);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("HPEN")]
-        public static extern IntPtr CreatePen(int iStyle, int cWidth, [NativeTypeName("COLORREF")] uint color);
+        public static extern HPEN CreatePen(int iStyle, int cWidth, [NativeTypeName("COLORREF")] uint color);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("HPEN")]
-        public static extern IntPtr CreatePenIndirect([NativeTypeName("const LOGPEN *")] LOGPEN* plpen);
+        public static extern HPEN CreatePenIndirect([NativeTypeName("const LOGPEN *")] LOGPEN* plpen);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("HRGN")]
-        public static extern IntPtr CreatePolyPolygonRgn([NativeTypeName("const POINT *")] POINT* pptl, [NativeTypeName("const INT *")] int* pc, int cPoly, int iMode);
+        public static extern HRGN CreatePolyPolygonRgn([NativeTypeName("const POINT *")] POINT* pptl, [NativeTypeName("const INT *")] int* pc, int cPoly, int iMode);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("HBRUSH")]
-        public static extern IntPtr CreatePatternBrush([NativeTypeName("HBITMAP")] IntPtr hbm);
+        public static extern HBRUSH CreatePatternBrush(HBITMAP hbm);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("HRGN")]
-        public static extern IntPtr CreateRectRgn(int x1, int y1, int x2, int y2);
+        public static extern HRGN CreateRectRgn(int x1, int y1, int x2, int y2);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("HRGN")]
-        public static extern IntPtr CreateRectRgnIndirect([NativeTypeName("const RECT *")] RECT* lprect);
+        public static extern HRGN CreateRectRgnIndirect([NativeTypeName("const RECT *")] RECT* lprect);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("HRGN")]
-        public static extern IntPtr CreateRoundRectRgn(int x1, int y1, int x2, int y2, int w, int h);
+        public static extern HRGN CreateRoundRectRgn(int x1, int y1, int x2, int y2, int w, int h);
 
         [DllImport("gdi32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int CreateScalableFontResourceA([NativeTypeName("DWORD")] uint fdwHidden, [NativeTypeName("LPCSTR")] sbyte* lpszFont, [NativeTypeName("LPCSTR")] sbyte* lpszFile, [NativeTypeName("LPCSTR")] sbyte* lpszPath);
+        public static extern BOOL CreateScalableFontResourceA([NativeTypeName("DWORD")] uint fdwHidden, [NativeTypeName("LPCSTR")] sbyte* lpszFont, [NativeTypeName("LPCSTR")] sbyte* lpszFile, [NativeTypeName("LPCSTR")] sbyte* lpszPath);
 
         [DllImport("gdi32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int CreateScalableFontResourceW([NativeTypeName("DWORD")] uint fdwHidden, [NativeTypeName("LPCWSTR")] ushort* lpszFont, [NativeTypeName("LPCWSTR")] ushort* lpszFile, [NativeTypeName("LPCWSTR")] ushort* lpszPath);
+        public static extern BOOL CreateScalableFontResourceW([NativeTypeName("DWORD")] uint fdwHidden, [NativeTypeName("LPCWSTR")] ushort* lpszFont, [NativeTypeName("LPCWSTR")] ushort* lpszFile, [NativeTypeName("LPCWSTR")] ushort* lpszPath);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("HBRUSH")]
-        public static extern IntPtr CreateSolidBrush([NativeTypeName("COLORREF")] uint color);
+        public static extern HBRUSH CreateSolidBrush([NativeTypeName("COLORREF")] uint color);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int DeleteDC([NativeTypeName("HDC")] IntPtr hdc);
+        public static extern BOOL DeleteDC(HDC hdc);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int DeleteMetaFile([NativeTypeName("HMETAFILE")] IntPtr hmf);
+        public static extern BOOL DeleteMetaFile(HMETAFILE hmf);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int DeleteObject([NativeTypeName("HGDIOBJ")] IntPtr ho);
+        public static extern BOOL DeleteObject(HGDIOBJ ho);
 
         [DllImport("gdi32", ExactSpelling = true, SetLastError = true)]
-        public static extern int DescribePixelFormat([NativeTypeName("HDC")] IntPtr hdc, int iPixelFormat, [NativeTypeName("UINT")] uint nBytes, [NativeTypeName("LPPIXELFORMATDESCRIPTOR")] PIXELFORMATDESCRIPTOR* ppfd);
+        public static extern int DescribePixelFormat(HDC hdc, int iPixelFormat, uint nBytes, [NativeTypeName("LPPIXELFORMATDESCRIPTOR")] PIXELFORMATDESCRIPTOR* ppfd);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        public static extern int DrawEscape([NativeTypeName("HDC")] IntPtr hdc, int iEscape, int cjIn, [NativeTypeName("LPCSTR")] sbyte* lpIn);
+        public static extern int DrawEscape(HDC hdc, int iEscape, int cjIn, [NativeTypeName("LPCSTR")] sbyte* lpIn);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int Ellipse([NativeTypeName("HDC")] IntPtr hdc, int left, int top, int right, int bottom);
+        public static extern BOOL Ellipse(HDC hdc, int left, int top, int right, int bottom);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        public static extern int EnumFontFamiliesExA([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("LPLOGFONTA")] LOGFONTA* lpLogfont, [NativeTypeName("FONTENUMPROCA")] delegate* unmanaged<LOGFONTA*, TEXTMETRICA*, uint, nint, int> lpProc, [NativeTypeName("LPARAM")] nint lParam, [NativeTypeName("DWORD")] uint dwFlags);
+        public static extern int EnumFontFamiliesExA(HDC hdc, [NativeTypeName("LPLOGFONTA")] LOGFONTA* lpLogfont, [NativeTypeName("FONTENUMPROCA")] delegate* unmanaged<LOGFONTA*, TEXTMETRICA*, uint, nint, int> lpProc, [NativeTypeName("LPARAM")] nint lParam, [NativeTypeName("DWORD")] uint dwFlags);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        public static extern int EnumFontFamiliesExW([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("LPLOGFONTW")] LOGFONTW* lpLogfont, [NativeTypeName("FONTENUMPROCW")] delegate* unmanaged<LOGFONTW*, TEXTMETRICW*, uint, nint, int> lpProc, [NativeTypeName("LPARAM")] nint lParam, [NativeTypeName("DWORD")] uint dwFlags);
+        public static extern int EnumFontFamiliesExW(HDC hdc, [NativeTypeName("LPLOGFONTW")] LOGFONTW* lpLogfont, [NativeTypeName("FONTENUMPROCW")] delegate* unmanaged<LOGFONTW*, TEXTMETRICW*, uint, nint, int> lpProc, [NativeTypeName("LPARAM")] nint lParam, [NativeTypeName("DWORD")] uint dwFlags);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        public static extern int EnumFontFamiliesA([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("LPCSTR")] sbyte* lpLogfont, [NativeTypeName("FONTENUMPROCA")] delegate* unmanaged<LOGFONTA*, TEXTMETRICA*, uint, nint, int> lpProc, [NativeTypeName("LPARAM")] nint lParam);
+        public static extern int EnumFontFamiliesA(HDC hdc, [NativeTypeName("LPCSTR")] sbyte* lpLogfont, [NativeTypeName("FONTENUMPROCA")] delegate* unmanaged<LOGFONTA*, TEXTMETRICA*, uint, nint, int> lpProc, [NativeTypeName("LPARAM")] nint lParam);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        public static extern int EnumFontFamiliesW([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("LPCWSTR")] ushort* lpLogfont, [NativeTypeName("FONTENUMPROCW")] delegate* unmanaged<LOGFONTW*, TEXTMETRICW*, uint, nint, int> lpProc, [NativeTypeName("LPARAM")] nint lParam);
+        public static extern int EnumFontFamiliesW(HDC hdc, [NativeTypeName("LPCWSTR")] ushort* lpLogfont, [NativeTypeName("FONTENUMPROCW")] delegate* unmanaged<LOGFONTW*, TEXTMETRICW*, uint, nint, int> lpProc, [NativeTypeName("LPARAM")] nint lParam);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        public static extern int EnumFontsA([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("LPCSTR")] sbyte* lpLogfont, [NativeTypeName("FONTENUMPROCA")] delegate* unmanaged<LOGFONTA*, TEXTMETRICA*, uint, nint, int> lpProc, [NativeTypeName("LPARAM")] nint lParam);
+        public static extern int EnumFontsA(HDC hdc, [NativeTypeName("LPCSTR")] sbyte* lpLogfont, [NativeTypeName("FONTENUMPROCA")] delegate* unmanaged<LOGFONTA*, TEXTMETRICA*, uint, nint, int> lpProc, [NativeTypeName("LPARAM")] nint lParam);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        public static extern int EnumFontsW([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("LPCWSTR")] ushort* lpLogfont, [NativeTypeName("FONTENUMPROCW")] delegate* unmanaged<LOGFONTW*, TEXTMETRICW*, uint, nint, int> lpProc, [NativeTypeName("LPARAM")] nint lParam);
+        public static extern int EnumFontsW(HDC hdc, [NativeTypeName("LPCWSTR")] ushort* lpLogfont, [NativeTypeName("FONTENUMPROCW")] delegate* unmanaged<LOGFONTW*, TEXTMETRICW*, uint, nint, int> lpProc, [NativeTypeName("LPARAM")] nint lParam);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        public static extern int EnumObjects([NativeTypeName("HDC")] IntPtr hdc, int nType, [NativeTypeName("GOBJENUMPROC")] delegate* unmanaged<void*, nint, int> lpFunc, [NativeTypeName("LPARAM")] nint lParam);
+        public static extern int EnumObjects(HDC hdc, int nType, [NativeTypeName("GOBJENUMPROC")] delegate* unmanaged<void*, nint, int> lpFunc, [NativeTypeName("LPARAM")] nint lParam);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int EqualRgn([NativeTypeName("HRGN")] IntPtr hrgn1, [NativeTypeName("HRGN")] IntPtr hrgn2);
+        public static extern BOOL EqualRgn(HRGN hrgn1, HRGN hrgn2);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        public static extern int Escape([NativeTypeName("HDC")] IntPtr hdc, int iEscape, int cjIn, [NativeTypeName("LPCSTR")] sbyte* pvIn, [NativeTypeName("LPVOID")] void* pvOut);
+        public static extern int Escape(HDC hdc, int iEscape, int cjIn, [NativeTypeName("LPCSTR")] sbyte* pvIn, [NativeTypeName("LPVOID")] void* pvOut);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        public static extern int ExtEscape([NativeTypeName("HDC")] IntPtr hdc, int iEscape, int cjInput, [NativeTypeName("LPCSTR")] sbyte* lpInData, int cjOutput, [NativeTypeName("LPSTR")] sbyte* lpOutData);
+        public static extern int ExtEscape(HDC hdc, int iEscape, int cjInput, [NativeTypeName("LPCSTR")] sbyte* lpInData, int cjOutput, [NativeTypeName("LPSTR")] sbyte* lpOutData);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        public static extern int ExcludeClipRect([NativeTypeName("HDC")] IntPtr hdc, int left, int top, int right, int bottom);
+        public static extern int ExcludeClipRect(HDC hdc, int left, int top, int right, int bottom);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("HRGN")]
-        public static extern IntPtr ExtCreateRegion([NativeTypeName("const XFORM *")] XFORM* lpx, [NativeTypeName("DWORD")] uint nCount, [NativeTypeName("const RGNDATA *")] RGNDATA* lpData);
+        public static extern HRGN ExtCreateRegion([NativeTypeName("const XFORM *")] XFORM* lpx, [NativeTypeName("DWORD")] uint nCount, [NativeTypeName("const RGNDATA *")] RGNDATA* lpData);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int ExtFloodFill([NativeTypeName("HDC")] IntPtr hdc, int x, int y, [NativeTypeName("COLORREF")] uint color, [NativeTypeName("UINT")] uint type);
+        public static extern BOOL ExtFloodFill(HDC hdc, int x, int y, [NativeTypeName("COLORREF")] uint color, uint type);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int FillRgn([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("HRGN")] IntPtr hrgn, [NativeTypeName("HBRUSH")] IntPtr hbr);
+        public static extern BOOL FillRgn(HDC hdc, HRGN hrgn, HBRUSH hbr);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int FloodFill([NativeTypeName("HDC")] IntPtr hdc, int x, int y, [NativeTypeName("COLORREF")] uint color);
+        public static extern BOOL FloodFill(HDC hdc, int x, int y, [NativeTypeName("COLORREF")] uint color);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int FrameRgn([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("HRGN")] IntPtr hrgn, [NativeTypeName("HBRUSH")] IntPtr hbr, int w, int h);
+        public static extern BOOL FrameRgn(HDC hdc, HRGN hrgn, HBRUSH hbr, int w, int h);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        public static extern int GetROP2([NativeTypeName("HDC")] IntPtr hdc);
+        public static extern int GetROP2(HDC hdc);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int GetAspectRatioFilterEx([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("LPSIZE")] SIZE* lpsize);
+        public static extern BOOL GetAspectRatioFilterEx(HDC hdc, [NativeTypeName("LPSIZE")] SIZE* lpsize);
 
         [DllImport("gdi32", ExactSpelling = true)]
         [return: NativeTypeName("COLORREF")]
-        public static extern uint GetBkColor([NativeTypeName("HDC")] IntPtr hdc);
+        public static extern uint GetBkColor(HDC hdc);
 
         [DllImport("gdi32", ExactSpelling = true)]
         [return: NativeTypeName("COLORREF")]
-        public static extern uint GetDCBrushColor([NativeTypeName("HDC")] IntPtr hdc);
+        public static extern uint GetDCBrushColor(HDC hdc);
 
         [DllImport("gdi32", ExactSpelling = true)]
         [return: NativeTypeName("COLORREF")]
-        public static extern uint GetDCPenColor([NativeTypeName("HDC")] IntPtr hdc);
+        public static extern uint GetDCPenColor(HDC hdc);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        public static extern int GetBkMode([NativeTypeName("HDC")] IntPtr hdc);
+        public static extern int GetBkMode(HDC hdc);
 
         [DllImport("gdi32", ExactSpelling = true)]
         [return: NativeTypeName("LONG")]
-        public static extern int GetBitmapBits([NativeTypeName("HBITMAP")] IntPtr hbit, [NativeTypeName("LONG")] int cb, [NativeTypeName("LPVOID")] void* lpvBits);
+        public static extern int GetBitmapBits(HBITMAP hbit, [NativeTypeName("LONG")] int cb, [NativeTypeName("LPVOID")] void* lpvBits);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int GetBitmapDimensionEx([NativeTypeName("HBITMAP")] IntPtr hbit, [NativeTypeName("LPSIZE")] SIZE* lpsize);
+        public static extern BOOL GetBitmapDimensionEx(HBITMAP hbit, [NativeTypeName("LPSIZE")] SIZE* lpsize);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
-        public static extern uint GetBoundsRect([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("LPRECT")] RECT* lprect, [NativeTypeName("UINT")] uint flags);
+        public static extern uint GetBoundsRect(HDC hdc, [NativeTypeName("LPRECT")] RECT* lprect, uint flags);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int GetBrushOrgEx([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("LPPOINT")] POINT* lppt);
+        public static extern BOOL GetBrushOrgEx(HDC hdc, [NativeTypeName("LPPOINT")] POINT* lppt);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int GetCharWidthA([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("UINT")] uint iFirst, [NativeTypeName("UINT")] uint iLast, [NativeTypeName("LPINT")] int* lpBuffer);
+        public static extern BOOL GetCharWidthA(HDC hdc, uint iFirst, uint iLast, [NativeTypeName("LPINT")] int* lpBuffer);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int GetCharWidthW([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("UINT")] uint iFirst, [NativeTypeName("UINT")] uint iLast, [NativeTypeName("LPINT")] int* lpBuffer);
+        public static extern BOOL GetCharWidthW(HDC hdc, uint iFirst, uint iLast, [NativeTypeName("LPINT")] int* lpBuffer);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int GetCharWidth32A([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("UINT")] uint iFirst, [NativeTypeName("UINT")] uint iLast, [NativeTypeName("LPINT")] int* lpBuffer);
+        public static extern BOOL GetCharWidth32A(HDC hdc, uint iFirst, uint iLast, [NativeTypeName("LPINT")] int* lpBuffer);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int GetCharWidth32W([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("UINT")] uint iFirst, [NativeTypeName("UINT")] uint iLast, [NativeTypeName("LPINT")] int* lpBuffer);
+        public static extern BOOL GetCharWidth32W(HDC hdc, uint iFirst, uint iLast, [NativeTypeName("LPINT")] int* lpBuffer);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int GetCharWidthFloatA([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("UINT")] uint iFirst, [NativeTypeName("UINT")] uint iLast, [NativeTypeName("PFLOAT")] float* lpBuffer);
+        public static extern BOOL GetCharWidthFloatA(HDC hdc, uint iFirst, uint iLast, [NativeTypeName("PFLOAT")] float* lpBuffer);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int GetCharWidthFloatW([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("UINT")] uint iFirst, [NativeTypeName("UINT")] uint iLast, [NativeTypeName("PFLOAT")] float* lpBuffer);
+        public static extern BOOL GetCharWidthFloatW(HDC hdc, uint iFirst, uint iLast, [NativeTypeName("PFLOAT")] float* lpBuffer);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int GetCharABCWidthsA([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("UINT")] uint wFirst, [NativeTypeName("UINT")] uint wLast, [NativeTypeName("LPABC")] ABC* lpABC);
+        public static extern BOOL GetCharABCWidthsA(HDC hdc, uint wFirst, uint wLast, [NativeTypeName("LPABC")] ABC* lpABC);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int GetCharABCWidthsW([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("UINT")] uint wFirst, [NativeTypeName("UINT")] uint wLast, [NativeTypeName("LPABC")] ABC* lpABC);
+        public static extern BOOL GetCharABCWidthsW(HDC hdc, uint wFirst, uint wLast, [NativeTypeName("LPABC")] ABC* lpABC);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int GetCharABCWidthsFloatA([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("UINT")] uint iFirst, [NativeTypeName("UINT")] uint iLast, [NativeTypeName("LPABCFLOAT")] ABCFLOAT* lpABC);
+        public static extern BOOL GetCharABCWidthsFloatA(HDC hdc, uint iFirst, uint iLast, [NativeTypeName("LPABCFLOAT")] ABCFLOAT* lpABC);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int GetCharABCWidthsFloatW([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("UINT")] uint iFirst, [NativeTypeName("UINT")] uint iLast, [NativeTypeName("LPABCFLOAT")] ABCFLOAT* lpABC);
+        public static extern BOOL GetCharABCWidthsFloatW(HDC hdc, uint iFirst, uint iLast, [NativeTypeName("LPABCFLOAT")] ABCFLOAT* lpABC);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        public static extern int GetClipBox([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("LPRECT")] RECT* lprect);
+        public static extern int GetClipBox(HDC hdc, [NativeTypeName("LPRECT")] RECT* lprect);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        public static extern int GetClipRgn([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("HRGN")] IntPtr hrgn);
+        public static extern int GetClipRgn(HDC hdc, HRGN hrgn);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        public static extern int GetMetaRgn([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("HRGN")] IntPtr hrgn);
+        public static extern int GetMetaRgn(HDC hdc, HRGN hrgn);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("HGDIOBJ")]
-        public static extern IntPtr GetCurrentObject([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("UINT")] uint type);
+        public static extern HGDIOBJ GetCurrentObject(HDC hdc, uint type);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int GetCurrentPositionEx([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("LPPOINT")] POINT* lppt);
+        public static extern BOOL GetCurrentPositionEx(HDC hdc, [NativeTypeName("LPPOINT")] POINT* lppt);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        public static extern int GetDeviceCaps([NativeTypeName("HDC")] IntPtr hdc, int index);
+        public static extern int GetDeviceCaps(HDC hdc, int index);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        public static extern int GetDIBits([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("HBITMAP")] IntPtr hbm, [NativeTypeName("UINT")] uint start, [NativeTypeName("UINT")] uint cLines, [NativeTypeName("LPVOID")] void* lpvBits, [NativeTypeName("LPBITMAPINFO")] BITMAPINFO* lpbmi, [NativeTypeName("UINT")] uint usage);
+        public static extern int GetDIBits(HDC hdc, HBITMAP hbm, uint start, uint cLines, [NativeTypeName("LPVOID")] void* lpvBits, [NativeTypeName("LPBITMAPINFO")] BITMAPINFO* lpbmi, uint usage);
 
         [DllImport("gdi32", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
-        public static extern uint GetFontData([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("DWORD")] uint dwTable, [NativeTypeName("DWORD")] uint dwOffset, [NativeTypeName("PVOID")] void* pvBuffer, [NativeTypeName("DWORD")] uint cjBuffer);
+        public static extern uint GetFontData(HDC hdc, [NativeTypeName("DWORD")] uint dwTable, [NativeTypeName("DWORD")] uint dwOffset, [NativeTypeName("PVOID")] void* pvBuffer, [NativeTypeName("DWORD")] uint cjBuffer);
 
         [DllImport("gdi32", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
-        public static extern uint GetGlyphOutlineA([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("UINT")] uint uChar, [NativeTypeName("UINT")] uint fuFormat, [NativeTypeName("LPGLYPHMETRICS")] GLYPHMETRICS* lpgm, [NativeTypeName("DWORD")] uint cjBuffer, [NativeTypeName("LPVOID")] void* pvBuffer, [NativeTypeName("const MAT2 *")] MAT2* lpmat2);
+        public static extern uint GetGlyphOutlineA(HDC hdc, uint uChar, uint fuFormat, [NativeTypeName("LPGLYPHMETRICS")] GLYPHMETRICS* lpgm, [NativeTypeName("DWORD")] uint cjBuffer, [NativeTypeName("LPVOID")] void* pvBuffer, [NativeTypeName("const MAT2 *")] MAT2* lpmat2);
 
         [DllImport("gdi32", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
-        public static extern uint GetGlyphOutlineW([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("UINT")] uint uChar, [NativeTypeName("UINT")] uint fuFormat, [NativeTypeName("LPGLYPHMETRICS")] GLYPHMETRICS* lpgm, [NativeTypeName("DWORD")] uint cjBuffer, [NativeTypeName("LPVOID")] void* pvBuffer, [NativeTypeName("const MAT2 *")] MAT2* lpmat2);
+        public static extern uint GetGlyphOutlineW(HDC hdc, uint uChar, uint fuFormat, [NativeTypeName("LPGLYPHMETRICS")] GLYPHMETRICS* lpgm, [NativeTypeName("DWORD")] uint cjBuffer, [NativeTypeName("LPVOID")] void* pvBuffer, [NativeTypeName("const MAT2 *")] MAT2* lpmat2);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        public static extern int GetGraphicsMode([NativeTypeName("HDC")] IntPtr hdc);
+        public static extern int GetGraphicsMode(HDC hdc);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        public static extern int GetMapMode([NativeTypeName("HDC")] IntPtr hdc);
+        public static extern int GetMapMode(HDC hdc);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
-        public static extern uint GetMetaFileBitsEx([NativeTypeName("HMETAFILE")] IntPtr hMF, [NativeTypeName("UINT")] uint cbBuffer, [NativeTypeName("LPVOID")] void* lpData);
+        public static extern uint GetMetaFileBitsEx(HMETAFILE hMF, uint cbBuffer, [NativeTypeName("LPVOID")] void* lpData);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("HMETAFILE")]
-        public static extern IntPtr GetMetaFileA([NativeTypeName("LPCSTR")] sbyte* lpName);
+        public static extern HMETAFILE GetMetaFileA([NativeTypeName("LPCSTR")] sbyte* lpName);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("HMETAFILE")]
-        public static extern IntPtr GetMetaFileW([NativeTypeName("LPCWSTR")] ushort* lpName);
+        public static extern HMETAFILE GetMetaFileW([NativeTypeName("LPCWSTR")] ushort* lpName);
 
         [DllImport("gdi32", ExactSpelling = true)]
         [return: NativeTypeName("COLORREF")]
-        public static extern uint GetNearestColor([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("COLORREF")] uint color);
+        public static extern uint GetNearestColor(HDC hdc, [NativeTypeName("COLORREF")] uint color);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
-        public static extern uint GetNearestPaletteIndex([NativeTypeName("HPALETTE")] IntPtr h, [NativeTypeName("COLORREF")] uint color);
+        public static extern uint GetNearestPaletteIndex(HPALETTE h, [NativeTypeName("COLORREF")] uint color);
 
         [DllImport("gdi32", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
-        public static extern uint GetObjectType([NativeTypeName("HGDIOBJ")] IntPtr h);
+        public static extern uint GetObjectType(HGDIOBJ h);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
-        public static extern uint GetOutlineTextMetricsA([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("UINT")] uint cjCopy, [NativeTypeName("LPOUTLINETEXTMETRICA")] OUTLINETEXTMETRICA* potm);
+        public static extern uint GetOutlineTextMetricsA(HDC hdc, uint cjCopy, [NativeTypeName("LPOUTLINETEXTMETRICA")] OUTLINETEXTMETRICA* potm);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
-        public static extern uint GetOutlineTextMetricsW([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("UINT")] uint cjCopy, [NativeTypeName("LPOUTLINETEXTMETRICW")] OUTLINETEXTMETRICW* potm);
+        public static extern uint GetOutlineTextMetricsW(HDC hdc, uint cjCopy, [NativeTypeName("LPOUTLINETEXTMETRICW")] OUTLINETEXTMETRICW* potm);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
-        public static extern uint GetPaletteEntries([NativeTypeName("HPALETTE")] IntPtr hpal, [NativeTypeName("UINT")] uint iStart, [NativeTypeName("UINT")] uint cEntries, [NativeTypeName("LPPALETTEENTRY")] PALETTEENTRY* pPalEntries);
+        public static extern uint GetPaletteEntries(HPALETTE hpal, uint iStart, uint cEntries, [NativeTypeName("LPPALETTEENTRY")] PALETTEENTRY* pPalEntries);
 
         [DllImport("gdi32", ExactSpelling = true)]
         [return: NativeTypeName("COLORREF")]
-        public static extern uint GetPixel([NativeTypeName("HDC")] IntPtr hdc, int x, int y);
+        public static extern uint GetPixel(HDC hdc, int x, int y);
 
         [DllImport("gdi32", ExactSpelling = true, SetLastError = true)]
-        public static extern int GetPixelFormat([NativeTypeName("HDC")] IntPtr hdc);
+        public static extern int GetPixelFormat(HDC hdc);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        public static extern int GetPolyFillMode([NativeTypeName("HDC")] IntPtr hdc);
+        public static extern int GetPolyFillMode(HDC hdc);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int GetRasterizerCaps([NativeTypeName("LPRASTERIZER_STATUS")] RASTERIZER_STATUS* lpraststat, [NativeTypeName("UINT")] uint cjBytes);
+        public static extern BOOL GetRasterizerCaps([NativeTypeName("LPRASTERIZER_STATUS")] RASTERIZER_STATUS* lpraststat, uint cjBytes);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        public static extern int GetRandomRgn([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("HRGN")] IntPtr hrgn, [NativeTypeName("INT")] int i);
+        public static extern int GetRandomRgn(HDC hdc, HRGN hrgn, int i);
 
         [DllImport("gdi32", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
-        public static extern uint GetRegionData([NativeTypeName("HRGN")] IntPtr hrgn, [NativeTypeName("DWORD")] uint nCount, [NativeTypeName("LPRGNDATA")] RGNDATA* lpRgnData);
+        public static extern uint GetRegionData(HRGN hrgn, [NativeTypeName("DWORD")] uint nCount, [NativeTypeName("LPRGNDATA")] RGNDATA* lpRgnData);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        public static extern int GetRgnBox([NativeTypeName("HRGN")] IntPtr hrgn, [NativeTypeName("LPRECT")] RECT* lprc);
+        public static extern int GetRgnBox(HRGN hrgn, [NativeTypeName("LPRECT")] RECT* lprc);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("HGDIOBJ")]
-        public static extern IntPtr GetStockObject(int i);
+        public static extern HGDIOBJ GetStockObject(int i);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        public static extern int GetStretchBltMode([NativeTypeName("HDC")] IntPtr hdc);
+        public static extern int GetStretchBltMode(HDC hdc);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
-        public static extern uint GetSystemPaletteEntries([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("UINT")] uint iStart, [NativeTypeName("UINT")] uint cEntries, [NativeTypeName("LPPALETTEENTRY")] PALETTEENTRY* pPalEntries);
+        public static extern uint GetSystemPaletteEntries(HDC hdc, uint iStart, uint cEntries, [NativeTypeName("LPPALETTEENTRY")] PALETTEENTRY* pPalEntries);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
-        public static extern uint GetSystemPaletteUse([NativeTypeName("HDC")] IntPtr hdc);
+        public static extern uint GetSystemPaletteUse(HDC hdc);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        public static extern int GetTextCharacterExtra([NativeTypeName("HDC")] IntPtr hdc);
+        public static extern int GetTextCharacterExtra(HDC hdc);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
-        public static extern uint GetTextAlign([NativeTypeName("HDC")] IntPtr hdc);
+        public static extern uint GetTextAlign(HDC hdc);
 
         [DllImport("gdi32", ExactSpelling = true)]
         [return: NativeTypeName("COLORREF")]
-        public static extern uint GetTextColor([NativeTypeName("HDC")] IntPtr hdc);
+        public static extern uint GetTextColor(HDC hdc);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int GetTextExtentPointA([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("LPCSTR")] sbyte* lpString, int c, [NativeTypeName("LPSIZE")] SIZE* lpsz);
+        public static extern BOOL GetTextExtentPointA(HDC hdc, [NativeTypeName("LPCSTR")] sbyte* lpString, int c, [NativeTypeName("LPSIZE")] SIZE* lpsz);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int GetTextExtentPointW([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("LPCWSTR")] ushort* lpString, int c, [NativeTypeName("LPSIZE")] SIZE* lpsz);
+        public static extern BOOL GetTextExtentPointW(HDC hdc, [NativeTypeName("LPCWSTR")] ushort* lpString, int c, [NativeTypeName("LPSIZE")] SIZE* lpsz);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int GetTextExtentPoint32A([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("LPCSTR")] sbyte* lpString, int c, [NativeTypeName("LPSIZE")] SIZE* psizl);
+        public static extern BOOL GetTextExtentPoint32A(HDC hdc, [NativeTypeName("LPCSTR")] sbyte* lpString, int c, [NativeTypeName("LPSIZE")] SIZE* psizl);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int GetTextExtentPoint32W([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("LPCWSTR")] ushort* lpString, int c, [NativeTypeName("LPSIZE")] SIZE* psizl);
+        public static extern BOOL GetTextExtentPoint32W(HDC hdc, [NativeTypeName("LPCWSTR")] ushort* lpString, int c, [NativeTypeName("LPSIZE")] SIZE* psizl);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int GetTextExtentExPointA([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("LPCSTR")] sbyte* lpszString, int cchString, int nMaxExtent, [NativeTypeName("LPINT")] int* lpnFit, [NativeTypeName("LPINT")] int* lpnDx, [NativeTypeName("LPSIZE")] SIZE* lpSize);
+        public static extern BOOL GetTextExtentExPointA(HDC hdc, [NativeTypeName("LPCSTR")] sbyte* lpszString, int cchString, int nMaxExtent, [NativeTypeName("LPINT")] int* lpnFit, [NativeTypeName("LPINT")] int* lpnDx, [NativeTypeName("LPSIZE")] SIZE* lpSize);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int GetTextExtentExPointW([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("LPCWSTR")] ushort* lpszString, int cchString, int nMaxExtent, [NativeTypeName("LPINT")] int* lpnFit, [NativeTypeName("LPINT")] int* lpnDx, [NativeTypeName("LPSIZE")] SIZE* lpSize);
+        public static extern BOOL GetTextExtentExPointW(HDC hdc, [NativeTypeName("LPCWSTR")] ushort* lpszString, int cchString, int nMaxExtent, [NativeTypeName("LPINT")] int* lpnFit, [NativeTypeName("LPINT")] int* lpnDx, [NativeTypeName("LPSIZE")] SIZE* lpSize);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        public static extern int GetTextCharset([NativeTypeName("HDC")] IntPtr hdc);
+        public static extern int GetTextCharset(HDC hdc);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        public static extern int GetTextCharsetInfo([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("LPFONTSIGNATURE")] FONTSIGNATURE* lpSig, [NativeTypeName("DWORD")] uint dwFlags);
+        public static extern int GetTextCharsetInfo(HDC hdc, [NativeTypeName("LPFONTSIGNATURE")] FONTSIGNATURE* lpSig, [NativeTypeName("DWORD")] uint dwFlags);
 
         [DllImport("gdi32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int TranslateCharsetInfo([NativeTypeName("DWORD *")] uint* lpSrc, [NativeTypeName("LPCHARSETINFO")] CHARSETINFO* lpCs, [NativeTypeName("DWORD")] uint dwFlags);
+        public static extern BOOL TranslateCharsetInfo([NativeTypeName("DWORD *")] uint* lpSrc, [NativeTypeName("LPCHARSETINFO")] CHARSETINFO* lpCs, [NativeTypeName("DWORD")] uint dwFlags);
 
         [DllImport("gdi32", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
-        public static extern uint GetFontLanguageInfo([NativeTypeName("HDC")] IntPtr hdc);
+        public static extern uint GetFontLanguageInfo(HDC hdc);
 
         [DllImport("gdi32", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
-        public static extern uint GetCharacterPlacementA([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("LPCSTR")] sbyte* lpString, int nCount, int nMexExtent, [NativeTypeName("LPGCP_RESULTSA")] GCP_RESULTSA* lpResults, [NativeTypeName("DWORD")] uint dwFlags);
+        public static extern uint GetCharacterPlacementA(HDC hdc, [NativeTypeName("LPCSTR")] sbyte* lpString, int nCount, int nMexExtent, [NativeTypeName("LPGCP_RESULTSA")] GCP_RESULTSA* lpResults, [NativeTypeName("DWORD")] uint dwFlags);
 
         [DllImport("gdi32", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
-        public static extern uint GetCharacterPlacementW([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("LPCWSTR")] ushort* lpString, int nCount, int nMexExtent, [NativeTypeName("LPGCP_RESULTSW")] GCP_RESULTSW* lpResults, [NativeTypeName("DWORD")] uint dwFlags);
+        public static extern uint GetCharacterPlacementW(HDC hdc, [NativeTypeName("LPCWSTR")] ushort* lpString, int nCount, int nMexExtent, [NativeTypeName("LPGCP_RESULTSW")] GCP_RESULTSW* lpResults, [NativeTypeName("DWORD")] uint dwFlags);
 
         [DllImport("gdi32", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
-        public static extern uint GetFontUnicodeRanges([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("LPGLYPHSET")] GLYPHSET* lpgs);
+        public static extern uint GetFontUnicodeRanges(HDC hdc, [NativeTypeName("LPGLYPHSET")] GLYPHSET* lpgs);
 
         [DllImport("gdi32", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
-        public static extern uint GetGlyphIndicesA([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("LPCSTR")] sbyte* lpstr, int c, [NativeTypeName("LPWORD")] ushort* pgi, [NativeTypeName("DWORD")] uint fl);
+        public static extern uint GetGlyphIndicesA(HDC hdc, [NativeTypeName("LPCSTR")] sbyte* lpstr, int c, [NativeTypeName("LPWORD")] ushort* pgi, [NativeTypeName("DWORD")] uint fl);
 
         [DllImport("gdi32", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
-        public static extern uint GetGlyphIndicesW([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("LPCWSTR")] ushort* lpstr, int c, [NativeTypeName("LPWORD")] ushort* pgi, [NativeTypeName("DWORD")] uint fl);
+        public static extern uint GetGlyphIndicesW(HDC hdc, [NativeTypeName("LPCWSTR")] ushort* lpstr, int c, [NativeTypeName("LPWORD")] ushort* pgi, [NativeTypeName("DWORD")] uint fl);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int GetTextExtentPointI([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("LPWORD")] ushort* pgiIn, int cgi, [NativeTypeName("LPSIZE")] SIZE* psize);
+        public static extern BOOL GetTextExtentPointI(HDC hdc, [NativeTypeName("LPWORD")] ushort* pgiIn, int cgi, [NativeTypeName("LPSIZE")] SIZE* psize);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int GetTextExtentExPointI([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("LPWORD")] ushort* lpwszString, int cwchString, int nMaxExtent, [NativeTypeName("LPINT")] int* lpnFit, [NativeTypeName("LPINT")] int* lpnDx, [NativeTypeName("LPSIZE")] SIZE* lpSize);
+        public static extern BOOL GetTextExtentExPointI(HDC hdc, [NativeTypeName("LPWORD")] ushort* lpwszString, int cwchString, int nMaxExtent, [NativeTypeName("LPINT")] int* lpnFit, [NativeTypeName("LPINT")] int* lpnDx, [NativeTypeName("LPSIZE")] SIZE* lpSize);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int GetCharWidthI([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("UINT")] uint giFirst, [NativeTypeName("UINT")] uint cgi, [NativeTypeName("LPWORD")] ushort* pgi, [NativeTypeName("LPINT")] int* piWidths);
+        public static extern BOOL GetCharWidthI(HDC hdc, uint giFirst, uint cgi, [NativeTypeName("LPWORD")] ushort* pgi, [NativeTypeName("LPINT")] int* piWidths);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int GetCharABCWidthsI([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("UINT")] uint giFirst, [NativeTypeName("UINT")] uint cgi, [NativeTypeName("LPWORD")] ushort* pgi, [NativeTypeName("LPABC")] ABC* pabc);
+        public static extern BOOL GetCharABCWidthsI(HDC hdc, uint giFirst, uint cgi, [NativeTypeName("LPWORD")] ushort* pgi, [NativeTypeName("LPABC")] ABC* pabc);
 
         [DllImport("gdi32", ExactSpelling = true)]
         public static extern int AddFontResourceExA([NativeTypeName("LPCSTR")] sbyte* name, [NativeTypeName("DWORD")] uint fl, [NativeTypeName("PVOID")] void* res);
@@ -548,677 +458,543 @@ namespace TerraFX.Interop
         public static extern int AddFontResourceExW([NativeTypeName("LPCWSTR")] ushort* name, [NativeTypeName("DWORD")] uint fl, [NativeTypeName("PVOID")] void* res);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int RemoveFontResourceExA([NativeTypeName("LPCSTR")] sbyte* name, [NativeTypeName("DWORD")] uint fl, [NativeTypeName("PVOID")] void* pdv);
+        public static extern BOOL RemoveFontResourceExA([NativeTypeName("LPCSTR")] sbyte* name, [NativeTypeName("DWORD")] uint fl, [NativeTypeName("PVOID")] void* pdv);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int RemoveFontResourceExW([NativeTypeName("LPCWSTR")] ushort* name, [NativeTypeName("DWORD")] uint fl, [NativeTypeName("PVOID")] void* pdv);
+        public static extern BOOL RemoveFontResourceExW([NativeTypeName("LPCWSTR")] ushort* name, [NativeTypeName("DWORD")] uint fl, [NativeTypeName("PVOID")] void* pdv);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("HANDLE")]
-        public static extern IntPtr AddFontMemResourceEx([NativeTypeName("PVOID")] void* pFileView, [NativeTypeName("DWORD")] uint cjSize, [NativeTypeName("PVOID")] void* pvResrved, [NativeTypeName("DWORD *")] uint* pNumFonts);
+        public static extern HANDLE AddFontMemResourceEx([NativeTypeName("PVOID")] void* pFileView, [NativeTypeName("DWORD")] uint cjSize, [NativeTypeName("PVOID")] void* pvResrved, [NativeTypeName("DWORD *")] uint* pNumFonts);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int RemoveFontMemResourceEx([NativeTypeName("HANDLE")] IntPtr h);
+        public static extern BOOL RemoveFontMemResourceEx(HANDLE h);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("HFONT")]
-        public static extern IntPtr CreateFontIndirectExA([NativeTypeName("const ENUMLOGFONTEXDVA *")] ENUMLOGFONTEXDVA* param0);
+        public static extern HFONT CreateFontIndirectExA([NativeTypeName("const ENUMLOGFONTEXDVA *")] ENUMLOGFONTEXDVA* param0);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("HFONT")]
-        public static extern IntPtr CreateFontIndirectExW([NativeTypeName("const ENUMLOGFONTEXDVW *")] ENUMLOGFONTEXDVW* param0);
+        public static extern HFONT CreateFontIndirectExW([NativeTypeName("const ENUMLOGFONTEXDVW *")] ENUMLOGFONTEXDVW* param0);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int GetViewportExtEx([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("LPSIZE")] SIZE* lpsize);
+        public static extern BOOL GetViewportExtEx(HDC hdc, [NativeTypeName("LPSIZE")] SIZE* lpsize);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int GetViewportOrgEx([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("LPPOINT")] POINT* lppoint);
+        public static extern BOOL GetViewportOrgEx(HDC hdc, [NativeTypeName("LPPOINT")] POINT* lppoint);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int GetWindowExtEx([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("LPSIZE")] SIZE* lpsize);
+        public static extern BOOL GetWindowExtEx(HDC hdc, [NativeTypeName("LPSIZE")] SIZE* lpsize);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int GetWindowOrgEx([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("LPPOINT")] POINT* lppoint);
+        public static extern BOOL GetWindowOrgEx(HDC hdc, [NativeTypeName("LPPOINT")] POINT* lppoint);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        public static extern int IntersectClipRect([NativeTypeName("HDC")] IntPtr hdc, int left, int top, int right, int bottom);
+        public static extern int IntersectClipRect(HDC hdc, int left, int top, int right, int bottom);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int InvertRgn([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("HRGN")] IntPtr hrgn);
+        public static extern BOOL InvertRgn(HDC hdc, HRGN hrgn);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int LineDDA(int xStart, int yStart, int xEnd, int yEnd, [NativeTypeName("LINEDDAPROC")] delegate* unmanaged<int, int, nint, void> lpProc, [NativeTypeName("LPARAM")] nint data);
+        public static extern BOOL LineDDA(int xStart, int yStart, int xEnd, int yEnd, [NativeTypeName("LINEDDAPROC")] delegate* unmanaged<int, int, nint, void> lpProc, [NativeTypeName("LPARAM")] nint data);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int LineTo([NativeTypeName("HDC")] IntPtr hdc, int x, int y);
+        public static extern BOOL LineTo(HDC hdc, int x, int y);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int MaskBlt([NativeTypeName("HDC")] IntPtr hdcDest, int xDest, int yDest, int width, int height, [NativeTypeName("HDC")] IntPtr hdcSrc, int xSrc, int ySrc, [NativeTypeName("HBITMAP")] IntPtr hbmMask, int xMask, int yMask, [NativeTypeName("DWORD")] uint rop);
+        public static extern BOOL MaskBlt(HDC hdcDest, int xDest, int yDest, int width, int height, HDC hdcSrc, int xSrc, int ySrc, HBITMAP hbmMask, int xMask, int yMask, [NativeTypeName("DWORD")] uint rop);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int PlgBlt([NativeTypeName("HDC")] IntPtr hdcDest, [NativeTypeName("const POINT *")] POINT* lpPoint, [NativeTypeName("HDC")] IntPtr hdcSrc, int xSrc, int ySrc, int width, int height, [NativeTypeName("HBITMAP")] IntPtr hbmMask, int xMask, int yMask);
+        public static extern BOOL PlgBlt(HDC hdcDest, [NativeTypeName("const POINT *")] POINT* lpPoint, HDC hdcSrc, int xSrc, int ySrc, int width, int height, HBITMAP hbmMask, int xMask, int yMask);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        public static extern int OffsetClipRgn([NativeTypeName("HDC")] IntPtr hdc, int x, int y);
+        public static extern int OffsetClipRgn(HDC hdc, int x, int y);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        public static extern int OffsetRgn([NativeTypeName("HRGN")] IntPtr hrgn, int x, int y);
+        public static extern int OffsetRgn(HRGN hrgn, int x, int y);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int PatBlt([NativeTypeName("HDC")] IntPtr hdc, int x, int y, int w, int h, [NativeTypeName("DWORD")] uint rop);
+        public static extern BOOL PatBlt(HDC hdc, int x, int y, int w, int h, [NativeTypeName("DWORD")] uint rop);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int Pie([NativeTypeName("HDC")] IntPtr hdc, int left, int top, int right, int bottom, int xr1, int yr1, int xr2, int yr2);
+        public static extern BOOL Pie(HDC hdc, int left, int top, int right, int bottom, int xr1, int yr1, int xr2, int yr2);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int PlayMetaFile([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("HMETAFILE")] IntPtr hmf);
+        public static extern BOOL PlayMetaFile(HDC hdc, HMETAFILE hmf);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int PaintRgn([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("HRGN")] IntPtr hrgn);
+        public static extern BOOL PaintRgn(HDC hdc, HRGN hrgn);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int PolyPolygon([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("const POINT *")] POINT* apt, [NativeTypeName("const INT *")] int* asz, int csz);
+        public static extern BOOL PolyPolygon(HDC hdc, [NativeTypeName("const POINT *")] POINT* apt, [NativeTypeName("const INT *")] int* asz, int csz);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int PtInRegion([NativeTypeName("HRGN")] IntPtr hrgn, int x, int y);
+        public static extern BOOL PtInRegion(HRGN hrgn, int x, int y);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int PtVisible([NativeTypeName("HDC")] IntPtr hdc, int x, int y);
+        public static extern BOOL PtVisible(HDC hdc, int x, int y);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int RectInRegion([NativeTypeName("HRGN")] IntPtr hrgn, [NativeTypeName("const RECT *")] RECT* lprect);
+        public static extern BOOL RectInRegion(HRGN hrgn, [NativeTypeName("const RECT *")] RECT* lprect);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int RectVisible([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("const RECT *")] RECT* lprect);
+        public static extern BOOL RectVisible(HDC hdc, [NativeTypeName("const RECT *")] RECT* lprect);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int Rectangle([NativeTypeName("HDC")] IntPtr hdc, int left, int top, int right, int bottom);
+        public static extern BOOL Rectangle(HDC hdc, int left, int top, int right, int bottom);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int RestoreDC([NativeTypeName("HDC")] IntPtr hdc, int nSavedDC);
+        public static extern BOOL RestoreDC(HDC hdc, int nSavedDC);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("HDC")]
-        public static extern IntPtr ResetDCA([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("const DEVMODEA *")] DEVMODEA* lpdm);
+        public static extern HDC ResetDCA(HDC hdc, [NativeTypeName("const DEVMODEA *")] DEVMODEA* lpdm);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("HDC")]
-        public static extern IntPtr ResetDCW([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("const DEVMODEW *")] DEVMODEW* lpdm);
+        public static extern HDC ResetDCW(HDC hdc, [NativeTypeName("const DEVMODEW *")] DEVMODEW* lpdm);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
-        public static extern uint RealizePalette([NativeTypeName("HDC")] IntPtr hdc);
+        public static extern uint RealizePalette(HDC hdc);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int RemoveFontResourceA([NativeTypeName("LPCSTR")] sbyte* lpFileName);
+        public static extern BOOL RemoveFontResourceA([NativeTypeName("LPCSTR")] sbyte* lpFileName);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int RemoveFontResourceW([NativeTypeName("LPCWSTR")] ushort* lpFileName);
+        public static extern BOOL RemoveFontResourceW([NativeTypeName("LPCWSTR")] ushort* lpFileName);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int RoundRect([NativeTypeName("HDC")] IntPtr hdc, int left, int top, int right, int bottom, int width, int height);
+        public static extern BOOL RoundRect(HDC hdc, int left, int top, int right, int bottom, int width, int height);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int ResizePalette([NativeTypeName("HPALETTE")] IntPtr hpal, [NativeTypeName("UINT")] uint n);
+        public static extern BOOL ResizePalette(HPALETTE hpal, uint n);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        public static extern int SaveDC([NativeTypeName("HDC")] IntPtr hdc);
+        public static extern int SaveDC(HDC hdc);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        public static extern int SelectClipRgn([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("HRGN")] IntPtr hrgn);
+        public static extern int SelectClipRgn(HDC hdc, HRGN hrgn);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        public static extern int ExtSelectClipRgn([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("HRGN")] IntPtr hrgn, int mode);
+        public static extern int ExtSelectClipRgn(HDC hdc, HRGN hrgn, int mode);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        public static extern int SetMetaRgn([NativeTypeName("HDC")] IntPtr hdc);
+        public static extern int SetMetaRgn(HDC hdc);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("HGDIOBJ")]
-        public static extern IntPtr SelectObject([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("HGDIOBJ")] IntPtr h);
+        public static extern HGDIOBJ SelectObject(HDC hdc, HGDIOBJ h);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("HPALETTE")]
-        public static extern IntPtr SelectPalette([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("HPALETTE")] IntPtr hPal, [NativeTypeName("BOOL")] int bForceBkgd);
+        public static extern HPALETTE SelectPalette(HDC hdc, HPALETTE hPal, BOOL bForceBkgd);
 
         [DllImport("gdi32", ExactSpelling = true)]
         [return: NativeTypeName("COLORREF")]
-        public static extern uint SetBkColor([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("COLORREF")] uint color);
+        public static extern uint SetBkColor(HDC hdc, [NativeTypeName("COLORREF")] uint color);
 
         [DllImport("gdi32", ExactSpelling = true)]
         [return: NativeTypeName("COLORREF")]
-        public static extern uint SetDCBrushColor([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("COLORREF")] uint color);
+        public static extern uint SetDCBrushColor(HDC hdc, [NativeTypeName("COLORREF")] uint color);
 
         [DllImport("gdi32", ExactSpelling = true)]
         [return: NativeTypeName("COLORREF")]
-        public static extern uint SetDCPenColor([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("COLORREF")] uint color);
+        public static extern uint SetDCPenColor(HDC hdc, [NativeTypeName("COLORREF")] uint color);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        public static extern int SetBkMode([NativeTypeName("HDC")] IntPtr hdc, int mode);
+        public static extern int SetBkMode(HDC hdc, int mode);
 
         [DllImport("gdi32", ExactSpelling = true)]
         [return: NativeTypeName("LONG")]
-        public static extern int SetBitmapBits([NativeTypeName("HBITMAP")] IntPtr hbm, [NativeTypeName("DWORD")] uint cb, [NativeTypeName("const void *")] void* pvBits);
+        public static extern int SetBitmapBits(HBITMAP hbm, [NativeTypeName("DWORD")] uint cb, [NativeTypeName("const void *")] void* pvBits);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
-        public static extern uint SetBoundsRect([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("const RECT *")] RECT* lprect, [NativeTypeName("UINT")] uint flags);
+        public static extern uint SetBoundsRect(HDC hdc, [NativeTypeName("const RECT *")] RECT* lprect, uint flags);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        public static extern int SetDIBits([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("HBITMAP")] IntPtr hbm, [NativeTypeName("UINT")] uint start, [NativeTypeName("UINT")] uint cLines, [NativeTypeName("const void *")] void* lpBits, [NativeTypeName("const BITMAPINFO *")] BITMAPINFO* lpbmi, [NativeTypeName("UINT")] uint ColorUse);
+        public static extern int SetDIBits(HDC hdc, HBITMAP hbm, uint start, uint cLines, [NativeTypeName("const void *")] void* lpBits, [NativeTypeName("const BITMAPINFO *")] BITMAPINFO* lpbmi, uint ColorUse);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        public static extern int SetDIBitsToDevice([NativeTypeName("HDC")] IntPtr hdc, int xDest, int yDest, [NativeTypeName("DWORD")] uint w, [NativeTypeName("DWORD")] uint h, int xSrc, int ySrc, [NativeTypeName("UINT")] uint StartScan, [NativeTypeName("UINT")] uint cLines, [NativeTypeName("const void *")] void* lpvBits, [NativeTypeName("const BITMAPINFO *")] BITMAPINFO* lpbmi, [NativeTypeName("UINT")] uint ColorUse);
-
-        [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("DWORD")]
-        public static extern uint SetMapperFlags([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("DWORD")] uint flags);
-
-        [DllImport("gdi32", ExactSpelling = true)]
-        public static extern int SetGraphicsMode([NativeTypeName("HDC")] IntPtr hdc, int iMode);
-
-        [DllImport("gdi32", ExactSpelling = true)]
-        public static extern int SetMapMode([NativeTypeName("HDC")] IntPtr hdc, int iMode);
+        public static extern int SetDIBitsToDevice(HDC hdc, int xDest, int yDest, [NativeTypeName("DWORD")] uint w, [NativeTypeName("DWORD")] uint h, int xSrc, int ySrc, uint StartScan, uint cLines, [NativeTypeName("const void *")] void* lpvBits, [NativeTypeName("const BITMAPINFO *")] BITMAPINFO* lpbmi, uint ColorUse);
 
         [DllImport("gdi32", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
-        public static extern uint SetLayout([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("DWORD")] uint l);
+        public static extern uint SetMapperFlags(HDC hdc, [NativeTypeName("DWORD")] uint flags);
+
+        [DllImport("gdi32", ExactSpelling = true)]
+        public static extern int SetGraphicsMode(HDC hdc, int iMode);
+
+        [DllImport("gdi32", ExactSpelling = true)]
+        public static extern int SetMapMode(HDC hdc, int iMode);
+
+        [DllImport("gdi32", ExactSpelling = true)]
+        [return: NativeTypeName("DWORD")]
+        public static extern uint SetLayout(HDC hdc, [NativeTypeName("DWORD")] uint l);
 
         [DllImport("gdi32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("DWORD")]
-        public static extern uint GetLayout([NativeTypeName("HDC")] IntPtr hdc);
+        public static extern uint GetLayout(HDC hdc);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("HMETAFILE")]
-        public static extern IntPtr SetMetaFileBitsEx([NativeTypeName("UINT")] uint cbBuffer, [NativeTypeName("const BYTE *")] byte* lpData);
+        public static extern HMETAFILE SetMetaFileBitsEx(uint cbBuffer, [NativeTypeName("const BYTE *")] byte* lpData);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
-        public static extern uint SetPaletteEntries([NativeTypeName("HPALETTE")] IntPtr hpal, [NativeTypeName("UINT")] uint iStart, [NativeTypeName("UINT")] uint cEntries, [NativeTypeName("const PALETTEENTRY *")] PALETTEENTRY* pPalEntries);
+        public static extern uint SetPaletteEntries(HPALETTE hpal, uint iStart, uint cEntries, [NativeTypeName("const PALETTEENTRY *")] PALETTEENTRY* pPalEntries);
 
         [DllImport("gdi32", ExactSpelling = true)]
         [return: NativeTypeName("COLORREF")]
-        public static extern uint SetPixel([NativeTypeName("HDC")] IntPtr hdc, int x, int y, [NativeTypeName("COLORREF")] uint color);
+        public static extern uint SetPixel(HDC hdc, int x, int y, [NativeTypeName("COLORREF")] uint color);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetPixelV([NativeTypeName("HDC")] IntPtr hdc, int x, int y, [NativeTypeName("COLORREF")] uint color);
+        public static extern BOOL SetPixelV(HDC hdc, int x, int y, [NativeTypeName("COLORREF")] uint color);
 
         [DllImport("gdi32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetPixelFormat([NativeTypeName("HDC")] IntPtr hdc, int format, [NativeTypeName("const PIXELFORMATDESCRIPTOR *")] PIXELFORMATDESCRIPTOR* ppfd);
+        public static extern BOOL SetPixelFormat(HDC hdc, int format, [NativeTypeName("const PIXELFORMATDESCRIPTOR *")] PIXELFORMATDESCRIPTOR* ppfd);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        public static extern int SetPolyFillMode([NativeTypeName("HDC")] IntPtr hdc, int mode);
+        public static extern int SetPolyFillMode(HDC hdc, int mode);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int StretchBlt([NativeTypeName("HDC")] IntPtr hdcDest, int xDest, int yDest, int wDest, int hDest, [NativeTypeName("HDC")] IntPtr hdcSrc, int xSrc, int ySrc, int wSrc, int hSrc, [NativeTypeName("DWORD")] uint rop);
+        public static extern BOOL StretchBlt(HDC hdcDest, int xDest, int yDest, int wDest, int hDest, HDC hdcSrc, int xSrc, int ySrc, int wSrc, int hSrc, [NativeTypeName("DWORD")] uint rop);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetRectRgn([NativeTypeName("HRGN")] IntPtr hrgn, int left, int top, int right, int bottom);
+        public static extern BOOL SetRectRgn(HRGN hrgn, int left, int top, int right, int bottom);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        public static extern int StretchDIBits([NativeTypeName("HDC")] IntPtr hdc, int xDest, int yDest, int DestWidth, int DestHeight, int xSrc, int ySrc, int SrcWidth, int SrcHeight, [NativeTypeName("const void *")] void* lpBits, [NativeTypeName("const BITMAPINFO *")] BITMAPINFO* lpbmi, [NativeTypeName("UINT")] uint iUsage, [NativeTypeName("DWORD")] uint rop);
+        public static extern int StretchDIBits(HDC hdc, int xDest, int yDest, int DestWidth, int DestHeight, int xSrc, int ySrc, int SrcWidth, int SrcHeight, [NativeTypeName("const void *")] void* lpBits, [NativeTypeName("const BITMAPINFO *")] BITMAPINFO* lpbmi, uint iUsage, [NativeTypeName("DWORD")] uint rop);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        public static extern int SetROP2([NativeTypeName("HDC")] IntPtr hdc, int rop2);
+        public static extern int SetROP2(HDC hdc, int rop2);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        public static extern int SetStretchBltMode([NativeTypeName("HDC")] IntPtr hdc, int mode);
+        public static extern int SetStretchBltMode(HDC hdc, int mode);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
-        public static extern uint SetSystemPaletteUse([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("UINT")] uint use);
+        public static extern uint SetSystemPaletteUse(HDC hdc, uint use);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        public static extern int SetTextCharacterExtra([NativeTypeName("HDC")] IntPtr hdc, int extra);
+        public static extern int SetTextCharacterExtra(HDC hdc, int extra);
 
         [DllImport("gdi32", ExactSpelling = true)]
         [return: NativeTypeName("COLORREF")]
-        public static extern uint SetTextColor([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("COLORREF")] uint color);
+        public static extern uint SetTextColor(HDC hdc, [NativeTypeName("COLORREF")] uint color);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
-        public static extern uint SetTextAlign([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("UINT")] uint align);
+        public static extern uint SetTextAlign(HDC hdc, uint align);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetTextJustification([NativeTypeName("HDC")] IntPtr hdc, int extra, int count);
+        public static extern BOOL SetTextJustification(HDC hdc, int extra, int count);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int UpdateColors([NativeTypeName("HDC")] IntPtr hdc);
+        public static extern BOOL UpdateColors(HDC hdc);
 
         [DllImport("msimg32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int AlphaBlend([NativeTypeName("HDC")] IntPtr hdcDest, int xoriginDest, int yoriginDest, int wDest, int hDest, [NativeTypeName("HDC")] IntPtr hdcSrc, int xoriginSrc, int yoriginSrc, int wSrc, int hSrc, BLENDFUNCTION ftn);
+        public static extern BOOL AlphaBlend(HDC hdcDest, int xoriginDest, int yoriginDest, int wDest, int hDest, HDC hdcSrc, int xoriginSrc, int yoriginSrc, int wSrc, int hSrc, BLENDFUNCTION ftn);
 
         [DllImport("msimg32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int TransparentBlt([NativeTypeName("HDC")] IntPtr hdcDest, int xoriginDest, int yoriginDest, int wDest, int hDest, [NativeTypeName("HDC")] IntPtr hdcSrc, int xoriginSrc, int yoriginSrc, int wSrc, int hSrc, [NativeTypeName("UINT")] uint crTransparent);
+        public static extern BOOL TransparentBlt(HDC hdcDest, int xoriginDest, int yoriginDest, int wDest, int hDest, HDC hdcSrc, int xoriginSrc, int yoriginSrc, int wSrc, int hSrc, uint crTransparent);
 
         [DllImport("msimg32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int GradientFill([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("PTRIVERTEX")] TRIVERTEX* pVertex, [NativeTypeName("ULONG")] uint nVertex, [NativeTypeName("PVOID")] void* pMesh, [NativeTypeName("ULONG")] uint nMesh, [NativeTypeName("ULONG")] uint ulMode);
+        public static extern BOOL GradientFill(HDC hdc, [NativeTypeName("PTRIVERTEX")] TRIVERTEX* pVertex, [NativeTypeName("ULONG")] uint nVertex, [NativeTypeName("PVOID")] void* pMesh, [NativeTypeName("ULONG")] uint nMesh, [NativeTypeName("ULONG")] uint ulMode);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int GdiAlphaBlend([NativeTypeName("HDC")] IntPtr hdcDest, int xoriginDest, int yoriginDest, int wDest, int hDest, [NativeTypeName("HDC")] IntPtr hdcSrc, int xoriginSrc, int yoriginSrc, int wSrc, int hSrc, BLENDFUNCTION ftn);
+        public static extern BOOL GdiAlphaBlend(HDC hdcDest, int xoriginDest, int yoriginDest, int wDest, int hDest, HDC hdcSrc, int xoriginSrc, int yoriginSrc, int wSrc, int hSrc, BLENDFUNCTION ftn);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int GdiTransparentBlt([NativeTypeName("HDC")] IntPtr hdcDest, int xoriginDest, int yoriginDest, int wDest, int hDest, [NativeTypeName("HDC")] IntPtr hdcSrc, int xoriginSrc, int yoriginSrc, int wSrc, int hSrc, [NativeTypeName("UINT")] uint crTransparent);
+        public static extern BOOL GdiTransparentBlt(HDC hdcDest, int xoriginDest, int yoriginDest, int wDest, int hDest, HDC hdcSrc, int xoriginSrc, int yoriginSrc, int wSrc, int hSrc, uint crTransparent);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int GdiGradientFill([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("PTRIVERTEX")] TRIVERTEX* pVertex, [NativeTypeName("ULONG")] uint nVertex, [NativeTypeName("PVOID")] void* pMesh, [NativeTypeName("ULONG")] uint nCount, [NativeTypeName("ULONG")] uint ulMode);
+        public static extern BOOL GdiGradientFill(HDC hdc, [NativeTypeName("PTRIVERTEX")] TRIVERTEX* pVertex, [NativeTypeName("ULONG")] uint nVertex, [NativeTypeName("PVOID")] void* pMesh, [NativeTypeName("ULONG")] uint nCount, [NativeTypeName("ULONG")] uint ulMode);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int PlayMetaFileRecord([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("LPHANDLETABLE")] HANDLETABLE* lpHandleTable, [NativeTypeName("LPMETARECORD")] METARECORD* lpMR, [NativeTypeName("UINT")] uint noObjs);
+        public static extern BOOL PlayMetaFileRecord(HDC hdc, [NativeTypeName("LPHANDLETABLE")] HANDLETABLE* lpHandleTable, [NativeTypeName("LPMETARECORD")] METARECORD* lpMR, uint noObjs);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int EnumMetaFile([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("HMETAFILE")] IntPtr hmf, [NativeTypeName("MFENUMPROC")] delegate* unmanaged<IntPtr, HANDLETABLE*, METARECORD*, int, nint, int> proc, [NativeTypeName("LPARAM")] nint param3);
+        public static extern BOOL EnumMetaFile(HDC hdc, HMETAFILE hmf, [NativeTypeName("MFENUMPROC")] delegate* unmanaged<HDC, HANDLETABLE*, METARECORD*, int, nint, int> proc, [NativeTypeName("LPARAM")] nint param3);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("HENHMETAFILE")]
-        public static extern IntPtr CloseEnhMetaFile([NativeTypeName("HDC")] IntPtr hdc);
+        public static extern HENHMETAFILE CloseEnhMetaFile(HDC hdc);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("HENHMETAFILE")]
-        public static extern IntPtr CopyEnhMetaFileA([NativeTypeName("HENHMETAFILE")] IntPtr hEnh, [NativeTypeName("LPCSTR")] sbyte* lpFileName);
+        public static extern HENHMETAFILE CopyEnhMetaFileA(HENHMETAFILE hEnh, [NativeTypeName("LPCSTR")] sbyte* lpFileName);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("HENHMETAFILE")]
-        public static extern IntPtr CopyEnhMetaFileW([NativeTypeName("HENHMETAFILE")] IntPtr hEnh, [NativeTypeName("LPCWSTR")] ushort* lpFileName);
+        public static extern HENHMETAFILE CopyEnhMetaFileW(HENHMETAFILE hEnh, [NativeTypeName("LPCWSTR")] ushort* lpFileName);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("HDC")]
-        public static extern IntPtr CreateEnhMetaFileA([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("LPCSTR")] sbyte* lpFilename, [NativeTypeName("const RECT *")] RECT* lprc, [NativeTypeName("LPCSTR")] sbyte* lpDesc);
+        public static extern HDC CreateEnhMetaFileA(HDC hdc, [NativeTypeName("LPCSTR")] sbyte* lpFilename, [NativeTypeName("const RECT *")] RECT* lprc, [NativeTypeName("LPCSTR")] sbyte* lpDesc);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("HDC")]
-        public static extern IntPtr CreateEnhMetaFileW([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("LPCWSTR")] ushort* lpFilename, [NativeTypeName("const RECT *")] RECT* lprc, [NativeTypeName("LPCWSTR")] ushort* lpDesc);
+        public static extern HDC CreateEnhMetaFileW(HDC hdc, [NativeTypeName("LPCWSTR")] ushort* lpFilename, [NativeTypeName("const RECT *")] RECT* lprc, [NativeTypeName("LPCWSTR")] ushort* lpDesc);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int DeleteEnhMetaFile([NativeTypeName("HENHMETAFILE")] IntPtr hmf);
+        public static extern BOOL DeleteEnhMetaFile(HENHMETAFILE hmf);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int EnumEnhMetaFile([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("HENHMETAFILE")] IntPtr hmf, [NativeTypeName("ENHMFENUMPROC")] delegate* unmanaged<IntPtr, HANDLETABLE*, ENHMETARECORD*, int, nint, int> proc, [NativeTypeName("LPVOID")] void* param3, [NativeTypeName("const RECT *")] RECT* lpRect);
+        public static extern BOOL EnumEnhMetaFile(HDC hdc, HENHMETAFILE hmf, [NativeTypeName("ENHMFENUMPROC")] delegate* unmanaged<HDC, HANDLETABLE*, ENHMETARECORD*, int, nint, int> proc, [NativeTypeName("LPVOID")] void* param3, [NativeTypeName("const RECT *")] RECT* lpRect);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("HENHMETAFILE")]
-        public static extern IntPtr GetEnhMetaFileA([NativeTypeName("LPCSTR")] sbyte* lpName);
+        public static extern HENHMETAFILE GetEnhMetaFileA([NativeTypeName("LPCSTR")] sbyte* lpName);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("HENHMETAFILE")]
-        public static extern IntPtr GetEnhMetaFileW([NativeTypeName("LPCWSTR")] ushort* lpName);
+        public static extern HENHMETAFILE GetEnhMetaFileW([NativeTypeName("LPCWSTR")] ushort* lpName);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
-        public static extern uint GetEnhMetaFileBits([NativeTypeName("HENHMETAFILE")] IntPtr hEMF, [NativeTypeName("UINT")] uint nSize, [NativeTypeName("LPBYTE")] byte* lpData);
+        public static extern uint GetEnhMetaFileBits(HENHMETAFILE hEMF, uint nSize, [NativeTypeName("LPBYTE")] byte* lpData);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
-        public static extern uint GetEnhMetaFileDescriptionA([NativeTypeName("HENHMETAFILE")] IntPtr hemf, [NativeTypeName("UINT")] uint cchBuffer, [NativeTypeName("LPSTR")] sbyte* lpDescription);
+        public static extern uint GetEnhMetaFileDescriptionA(HENHMETAFILE hemf, uint cchBuffer, [NativeTypeName("LPSTR")] sbyte* lpDescription);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
-        public static extern uint GetEnhMetaFileDescriptionW([NativeTypeName("HENHMETAFILE")] IntPtr hemf, [NativeTypeName("UINT")] uint cchBuffer, [NativeTypeName("LPWSTR")] ushort* lpDescription);
+        public static extern uint GetEnhMetaFileDescriptionW(HENHMETAFILE hemf, uint cchBuffer, [NativeTypeName("LPWSTR")] ushort* lpDescription);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
-        public static extern uint GetEnhMetaFileHeader([NativeTypeName("HENHMETAFILE")] IntPtr hemf, [NativeTypeName("UINT")] uint nSize, [NativeTypeName("LPENHMETAHEADER")] ENHMETAHEADER* lpEnhMetaHeader);
+        public static extern uint GetEnhMetaFileHeader(HENHMETAFILE hemf, uint nSize, [NativeTypeName("LPENHMETAHEADER")] ENHMETAHEADER* lpEnhMetaHeader);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
-        public static extern uint GetEnhMetaFilePaletteEntries([NativeTypeName("HENHMETAFILE")] IntPtr hemf, [NativeTypeName("UINT")] uint nNumEntries, [NativeTypeName("LPPALETTEENTRY")] PALETTEENTRY* lpPaletteEntries);
+        public static extern uint GetEnhMetaFilePaletteEntries(HENHMETAFILE hemf, uint nNumEntries, [NativeTypeName("LPPALETTEENTRY")] PALETTEENTRY* lpPaletteEntries);
 
         [DllImport("gdi32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("UINT")]
-        public static extern uint GetEnhMetaFilePixelFormat([NativeTypeName("HENHMETAFILE")] IntPtr hemf, [NativeTypeName("UINT")] uint cbBuffer, PIXELFORMATDESCRIPTOR* ppfd);
+        public static extern uint GetEnhMetaFilePixelFormat(HENHMETAFILE hemf, uint cbBuffer, PIXELFORMATDESCRIPTOR* ppfd);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
-        public static extern uint GetWinMetaFileBits([NativeTypeName("HENHMETAFILE")] IntPtr hemf, [NativeTypeName("UINT")] uint cbData16, [NativeTypeName("LPBYTE")] byte* pData16, [NativeTypeName("INT")] int iMapMode, [NativeTypeName("HDC")] IntPtr hdcRef);
+        public static extern uint GetWinMetaFileBits(HENHMETAFILE hemf, uint cbData16, [NativeTypeName("LPBYTE")] byte* pData16, int iMapMode, HDC hdcRef);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int PlayEnhMetaFile([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("HENHMETAFILE")] IntPtr hmf, [NativeTypeName("const RECT *")] RECT* lprect);
+        public static extern BOOL PlayEnhMetaFile(HDC hdc, HENHMETAFILE hmf, [NativeTypeName("const RECT *")] RECT* lprect);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int PlayEnhMetaFileRecord([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("LPHANDLETABLE")] HANDLETABLE* pht, [NativeTypeName("const ENHMETARECORD *")] ENHMETARECORD* pmr, [NativeTypeName("UINT")] uint cht);
+        public static extern BOOL PlayEnhMetaFileRecord(HDC hdc, [NativeTypeName("LPHANDLETABLE")] HANDLETABLE* pht, [NativeTypeName("const ENHMETARECORD *")] ENHMETARECORD* pmr, uint cht);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("HENHMETAFILE")]
-        public static extern IntPtr SetEnhMetaFileBits([NativeTypeName("UINT")] uint nSize, [NativeTypeName("const BYTE *")] byte* pb);
+        public static extern HENHMETAFILE SetEnhMetaFileBits(uint nSize, [NativeTypeName("const BYTE *")] byte* pb);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("HENHMETAFILE")]
-        public static extern IntPtr SetWinMetaFileBits([NativeTypeName("UINT")] uint nSize, [NativeTypeName("const BYTE *")] byte* lpMeta16Data, [NativeTypeName("HDC")] IntPtr hdcRef, [NativeTypeName("const METAFILEPICT *")] METAFILEPICT* lpMFP);
+        public static extern HENHMETAFILE SetWinMetaFileBits(uint nSize, [NativeTypeName("const BYTE *")] byte* lpMeta16Data, HDC hdcRef, [NativeTypeName("const METAFILEPICT *")] METAFILEPICT* lpMFP);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int GdiComment([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("UINT")] uint nSize, [NativeTypeName("const BYTE *")] byte* lpData);
+        public static extern BOOL GdiComment(HDC hdc, uint nSize, [NativeTypeName("const BYTE *")] byte* lpData);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int GetTextMetricsA([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("LPTEXTMETRICA")] TEXTMETRICA* lptm);
+        public static extern BOOL GetTextMetricsA(HDC hdc, [NativeTypeName("LPTEXTMETRICA")] TEXTMETRICA* lptm);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int GetTextMetricsW([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("LPTEXTMETRICW")] TEXTMETRICW* lptm);
+        public static extern BOOL GetTextMetricsW(HDC hdc, [NativeTypeName("LPTEXTMETRICW")] TEXTMETRICW* lptm);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int AngleArc([NativeTypeName("HDC")] IntPtr hdc, int x, int y, [NativeTypeName("DWORD")] uint r, [NativeTypeName("FLOAT")] float StartAngle, [NativeTypeName("FLOAT")] float SweepAngle);
+        public static extern BOOL AngleArc(HDC hdc, int x, int y, [NativeTypeName("DWORD")] uint r, float StartAngle, float SweepAngle);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int PolyPolyline([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("const POINT *")] POINT* apt, [NativeTypeName("const DWORD *")] uint* asz, [NativeTypeName("DWORD")] uint csz);
+        public static extern BOOL PolyPolyline(HDC hdc, [NativeTypeName("const POINT *")] POINT* apt, [NativeTypeName("const DWORD *")] uint* asz, [NativeTypeName("DWORD")] uint csz);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int GetWorldTransform([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("LPXFORM")] XFORM* lpxf);
+        public static extern BOOL GetWorldTransform(HDC hdc, [NativeTypeName("LPXFORM")] XFORM* lpxf);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetWorldTransform([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("const XFORM *")] XFORM* lpxf);
+        public static extern BOOL SetWorldTransform(HDC hdc, [NativeTypeName("const XFORM *")] XFORM* lpxf);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int ModifyWorldTransform([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("const XFORM *")] XFORM* lpxf, [NativeTypeName("DWORD")] uint mode);
+        public static extern BOOL ModifyWorldTransform(HDC hdc, [NativeTypeName("const XFORM *")] XFORM* lpxf, [NativeTypeName("DWORD")] uint mode);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int CombineTransform([NativeTypeName("LPXFORM")] XFORM* lpxfOut, [NativeTypeName("const XFORM *")] XFORM* lpxf1, [NativeTypeName("const XFORM *")] XFORM* lpxf2);
+        public static extern BOOL CombineTransform([NativeTypeName("LPXFORM")] XFORM* lpxfOut, [NativeTypeName("const XFORM *")] XFORM* lpxf1, [NativeTypeName("const XFORM *")] XFORM* lpxf2);
 
         [DllImport("gdi32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("HBITMAP")]
-        public static extern IntPtr CreateDIBSection([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("const BITMAPINFO *")] BITMAPINFO* pbmi, [NativeTypeName("UINT")] uint usage, void** ppvBits, [NativeTypeName("HANDLE")] IntPtr hSection, [NativeTypeName("DWORD")] uint offset);
+        public static extern HBITMAP CreateDIBSection(HDC hdc, [NativeTypeName("const BITMAPINFO *")] BITMAPINFO* pbmi, uint usage, void** ppvBits, HANDLE hSection, [NativeTypeName("DWORD")] uint offset);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
-        public static extern uint GetDIBColorTable([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("UINT")] uint iStart, [NativeTypeName("UINT")] uint cEntries, RGBQUAD* prgbq);
+        public static extern uint GetDIBColorTable(HDC hdc, uint iStart, uint cEntries, RGBQUAD* prgbq);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("UINT")]
-        public static extern uint SetDIBColorTable([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("UINT")] uint iStart, [NativeTypeName("UINT")] uint cEntries, [NativeTypeName("const RGBQUAD *")] RGBQUAD* prgbq);
+        public static extern uint SetDIBColorTable(HDC hdc, uint iStart, uint cEntries, [NativeTypeName("const RGBQUAD *")] RGBQUAD* prgbq);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetColorAdjustment([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("const COLORADJUSTMENT *")] COLORADJUSTMENT* lpca);
+        public static extern BOOL SetColorAdjustment(HDC hdc, [NativeTypeName("const COLORADJUSTMENT *")] COLORADJUSTMENT* lpca);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int GetColorAdjustment([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("LPCOLORADJUSTMENT")] COLORADJUSTMENT* lpca);
+        public static extern BOOL GetColorAdjustment(HDC hdc, [NativeTypeName("LPCOLORADJUSTMENT")] COLORADJUSTMENT* lpca);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("HPALETTE")]
-        public static extern IntPtr CreateHalftonePalette([NativeTypeName("HDC")] IntPtr hdc);
+        public static extern HPALETTE CreateHalftonePalette(HDC hdc);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        public static extern int StartDocA([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("const DOCINFOA *")] DOCINFOA* lpdi);
+        public static extern int StartDocA(HDC hdc, [NativeTypeName("const DOCINFOA *")] DOCINFOA* lpdi);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        public static extern int StartDocW([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("const DOCINFOW *")] DOCINFOW* lpdi);
+        public static extern int StartDocW(HDC hdc, [NativeTypeName("const DOCINFOW *")] DOCINFOW* lpdi);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        public static extern int EndDoc([NativeTypeName("HDC")] IntPtr hdc);
+        public static extern int EndDoc(HDC hdc);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        public static extern int StartPage([NativeTypeName("HDC")] IntPtr hdc);
+        public static extern int StartPage(HDC hdc);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        public static extern int EndPage([NativeTypeName("HDC")] IntPtr hdc);
+        public static extern int EndPage(HDC hdc);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        public static extern int AbortDoc([NativeTypeName("HDC")] IntPtr hdc);
+        public static extern int AbortDoc(HDC hdc);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        public static extern int SetAbortProc([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("ABORTPROC")] delegate* unmanaged<IntPtr, int, int> proc);
+        public static extern int SetAbortProc(HDC hdc, [NativeTypeName("ABORTPROC")] delegate* unmanaged<HDC, int, BOOL> proc);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int AbortPath([NativeTypeName("HDC")] IntPtr hdc);
+        public static extern BOOL AbortPath(HDC hdc);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int ArcTo([NativeTypeName("HDC")] IntPtr hdc, int left, int top, int right, int bottom, int xr1, int yr1, int xr2, int yr2);
+        public static extern BOOL ArcTo(HDC hdc, int left, int top, int right, int bottom, int xr1, int yr1, int xr2, int yr2);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int BeginPath([NativeTypeName("HDC")] IntPtr hdc);
+        public static extern BOOL BeginPath(HDC hdc);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int CloseFigure([NativeTypeName("HDC")] IntPtr hdc);
+        public static extern BOOL CloseFigure(HDC hdc);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int EndPath([NativeTypeName("HDC")] IntPtr hdc);
+        public static extern BOOL EndPath(HDC hdc);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int FillPath([NativeTypeName("HDC")] IntPtr hdc);
+        public static extern BOOL FillPath(HDC hdc);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int FlattenPath([NativeTypeName("HDC")] IntPtr hdc);
+        public static extern BOOL FlattenPath(HDC hdc);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        public static extern int GetPath([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("LPPOINT")] POINT* apt, [NativeTypeName("LPBYTE")] byte* aj, int cpt);
+        public static extern int GetPath(HDC hdc, [NativeTypeName("LPPOINT")] POINT* apt, [NativeTypeName("LPBYTE")] byte* aj, int cpt);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("HRGN")]
-        public static extern IntPtr PathToRegion([NativeTypeName("HDC")] IntPtr hdc);
+        public static extern HRGN PathToRegion(HDC hdc);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int PolyDraw([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("const POINT *")] POINT* apt, [NativeTypeName("const BYTE *")] byte* aj, int cpt);
+        public static extern BOOL PolyDraw(HDC hdc, [NativeTypeName("const POINT *")] POINT* apt, [NativeTypeName("const BYTE *")] byte* aj, int cpt);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SelectClipPath([NativeTypeName("HDC")] IntPtr hdc, int mode);
+        public static extern BOOL SelectClipPath(HDC hdc, int mode);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        public static extern int SetArcDirection([NativeTypeName("HDC")] IntPtr hdc, int dir);
+        public static extern int SetArcDirection(HDC hdc, int dir);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetMiterLimit([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("FLOAT")] float limit, [NativeTypeName("PFLOAT")] float* old);
+        public static extern BOOL SetMiterLimit(HDC hdc, float limit, [NativeTypeName("PFLOAT")] float* old);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int StrokeAndFillPath([NativeTypeName("HDC")] IntPtr hdc);
+        public static extern BOOL StrokeAndFillPath(HDC hdc);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int StrokePath([NativeTypeName("HDC")] IntPtr hdc);
+        public static extern BOOL StrokePath(HDC hdc);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int WidenPath([NativeTypeName("HDC")] IntPtr hdc);
+        public static extern BOOL WidenPath(HDC hdc);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("HPEN")]
-        public static extern IntPtr ExtCreatePen([NativeTypeName("DWORD")] uint iPenStyle, [NativeTypeName("DWORD")] uint cWidth, [NativeTypeName("const LOGBRUSH *")] LOGBRUSH* plbrush, [NativeTypeName("DWORD")] uint cStyle, [NativeTypeName("const DWORD *")] uint* pstyle);
+        public static extern HPEN ExtCreatePen([NativeTypeName("DWORD")] uint iPenStyle, [NativeTypeName("DWORD")] uint cWidth, [NativeTypeName("const LOGBRUSH *")] LOGBRUSH* plbrush, [NativeTypeName("DWORD")] uint cStyle, [NativeTypeName("const DWORD *")] uint* pstyle);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int GetMiterLimit([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("PFLOAT")] float* plimit);
+        public static extern BOOL GetMiterLimit(HDC hdc, [NativeTypeName("PFLOAT")] float* plimit);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        public static extern int GetArcDirection([NativeTypeName("HDC")] IntPtr hdc);
+        public static extern int GetArcDirection(HDC hdc);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        public static extern int GetObjectA([NativeTypeName("HANDLE")] IntPtr h, int c, [NativeTypeName("LPVOID")] void* pv);
+        public static extern int GetObjectA(HANDLE h, int c, [NativeTypeName("LPVOID")] void* pv);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        public static extern int GetObjectW([NativeTypeName("HANDLE")] IntPtr h, int c, [NativeTypeName("LPVOID")] void* pv);
+        public static extern int GetObjectW(HANDLE h, int c, [NativeTypeName("LPVOID")] void* pv);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int MoveToEx([NativeTypeName("HDC")] IntPtr hdc, int x, int y, [NativeTypeName("LPPOINT")] POINT* lppt);
+        public static extern BOOL MoveToEx(HDC hdc, int x, int y, [NativeTypeName("LPPOINT")] POINT* lppt);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int TextOutA([NativeTypeName("HDC")] IntPtr hdc, int x, int y, [NativeTypeName("LPCSTR")] sbyte* lpString, int c);
+        public static extern BOOL TextOutA(HDC hdc, int x, int y, [NativeTypeName("LPCSTR")] sbyte* lpString, int c);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int TextOutW([NativeTypeName("HDC")] IntPtr hdc, int x, int y, [NativeTypeName("LPCWSTR")] ushort* lpString, int c);
+        public static extern BOOL TextOutW(HDC hdc, int x, int y, [NativeTypeName("LPCWSTR")] ushort* lpString, int c);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int ExtTextOutA([NativeTypeName("HDC")] IntPtr hdc, int x, int y, [NativeTypeName("UINT")] uint options, [NativeTypeName("const RECT *")] RECT* lprect, [NativeTypeName("LPCSTR")] sbyte* lpString, [NativeTypeName("UINT")] uint c, [NativeTypeName("const INT *")] int* lpDx);
+        public static extern BOOL ExtTextOutA(HDC hdc, int x, int y, uint options, [NativeTypeName("const RECT *")] RECT* lprect, [NativeTypeName("LPCSTR")] sbyte* lpString, uint c, [NativeTypeName("const INT *")] int* lpDx);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int ExtTextOutW([NativeTypeName("HDC")] IntPtr hdc, int x, int y, [NativeTypeName("UINT")] uint options, [NativeTypeName("const RECT *")] RECT* lprect, [NativeTypeName("LPCWSTR")] ushort* lpString, [NativeTypeName("UINT")] uint c, [NativeTypeName("const INT *")] int* lpDx);
+        public static extern BOOL ExtTextOutW(HDC hdc, int x, int y, uint options, [NativeTypeName("const RECT *")] RECT* lprect, [NativeTypeName("LPCWSTR")] ushort* lpString, uint c, [NativeTypeName("const INT *")] int* lpDx);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int PolyTextOutA([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("const POLYTEXTA *")] POLYTEXTA* ppt, int nstrings);
+        public static extern BOOL PolyTextOutA(HDC hdc, [NativeTypeName("const POLYTEXTA *")] POLYTEXTA* ppt, int nstrings);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int PolyTextOutW([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("const POLYTEXTW *")] POLYTEXTW* ppt, int nstrings);
+        public static extern BOOL PolyTextOutW(HDC hdc, [NativeTypeName("const POLYTEXTW *")] POLYTEXTW* ppt, int nstrings);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("HRGN")]
-        public static extern IntPtr CreatePolygonRgn([NativeTypeName("const POINT *")] POINT* pptl, int cPoint, int iMode);
+        public static extern HRGN CreatePolygonRgn([NativeTypeName("const POINT *")] POINT* pptl, int cPoint, int iMode);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int DPtoLP([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("LPPOINT")] POINT* lppt, int c);
+        public static extern BOOL DPtoLP(HDC hdc, [NativeTypeName("LPPOINT")] POINT* lppt, int c);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int LPtoDP([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("LPPOINT")] POINT* lppt, int c);
+        public static extern BOOL LPtoDP(HDC hdc, [NativeTypeName("LPPOINT")] POINT* lppt, int c);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int Polygon([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("const POINT *")] POINT* apt, int cpt);
+        public static extern BOOL Polygon(HDC hdc, [NativeTypeName("const POINT *")] POINT* apt, int cpt);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int Polyline([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("const POINT *")] POINT* apt, int cpt);
+        public static extern BOOL Polyline(HDC hdc, [NativeTypeName("const POINT *")] POINT* apt, int cpt);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int PolyBezier([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("const POINT *")] POINT* apt, [NativeTypeName("DWORD")] uint cpt);
+        public static extern BOOL PolyBezier(HDC hdc, [NativeTypeName("const POINT *")] POINT* apt, [NativeTypeName("DWORD")] uint cpt);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int PolyBezierTo([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("const POINT *")] POINT* apt, [NativeTypeName("DWORD")] uint cpt);
+        public static extern BOOL PolyBezierTo(HDC hdc, [NativeTypeName("const POINT *")] POINT* apt, [NativeTypeName("DWORD")] uint cpt);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int PolylineTo([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("const POINT *")] POINT* apt, [NativeTypeName("DWORD")] uint cpt);
+        public static extern BOOL PolylineTo(HDC hdc, [NativeTypeName("const POINT *")] POINT* apt, [NativeTypeName("DWORD")] uint cpt);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetViewportExtEx([NativeTypeName("HDC")] IntPtr hdc, int x, int y, [NativeTypeName("LPSIZE")] SIZE* lpsz);
+        public static extern BOOL SetViewportExtEx(HDC hdc, int x, int y, [NativeTypeName("LPSIZE")] SIZE* lpsz);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetViewportOrgEx([NativeTypeName("HDC")] IntPtr hdc, int x, int y, [NativeTypeName("LPPOINT")] POINT* lppt);
+        public static extern BOOL SetViewportOrgEx(HDC hdc, int x, int y, [NativeTypeName("LPPOINT")] POINT* lppt);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetWindowExtEx([NativeTypeName("HDC")] IntPtr hdc, int x, int y, [NativeTypeName("LPSIZE")] SIZE* lpsz);
+        public static extern BOOL SetWindowExtEx(HDC hdc, int x, int y, [NativeTypeName("LPSIZE")] SIZE* lpsz);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetWindowOrgEx([NativeTypeName("HDC")] IntPtr hdc, int x, int y, [NativeTypeName("LPPOINT")] POINT* lppt);
+        public static extern BOOL SetWindowOrgEx(HDC hdc, int x, int y, [NativeTypeName("LPPOINT")] POINT* lppt);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int OffsetViewportOrgEx([NativeTypeName("HDC")] IntPtr hdc, int x, int y, [NativeTypeName("LPPOINT")] POINT* lppt);
+        public static extern BOOL OffsetViewportOrgEx(HDC hdc, int x, int y, [NativeTypeName("LPPOINT")] POINT* lppt);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int OffsetWindowOrgEx([NativeTypeName("HDC")] IntPtr hdc, int x, int y, [NativeTypeName("LPPOINT")] POINT* lppt);
+        public static extern BOOL OffsetWindowOrgEx(HDC hdc, int x, int y, [NativeTypeName("LPPOINT")] POINT* lppt);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int ScaleViewportExtEx([NativeTypeName("HDC")] IntPtr hdc, int xn, int dx, int yn, int yd, [NativeTypeName("LPSIZE")] SIZE* lpsz);
+        public static extern BOOL ScaleViewportExtEx(HDC hdc, int xn, int dx, int yn, int yd, [NativeTypeName("LPSIZE")] SIZE* lpsz);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int ScaleWindowExtEx([NativeTypeName("HDC")] IntPtr hdc, int xn, int xd, int yn, int yd, [NativeTypeName("LPSIZE")] SIZE* lpsz);
+        public static extern BOOL ScaleWindowExtEx(HDC hdc, int xn, int xd, int yn, int yd, [NativeTypeName("LPSIZE")] SIZE* lpsz);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetBitmapDimensionEx([NativeTypeName("HBITMAP")] IntPtr hbm, int w, int h, [NativeTypeName("LPSIZE")] SIZE* lpsz);
+        public static extern BOOL SetBitmapDimensionEx(HBITMAP hbm, int w, int h, [NativeTypeName("LPSIZE")] SIZE* lpsz);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetBrushOrgEx([NativeTypeName("HDC")] IntPtr hdc, int x, int y, [NativeTypeName("LPPOINT")] POINT* lppt);
+        public static extern BOOL SetBrushOrgEx(HDC hdc, int x, int y, [NativeTypeName("LPPOINT")] POINT* lppt);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        public static extern int GetTextFaceA([NativeTypeName("HDC")] IntPtr hdc, int c, [NativeTypeName("LPSTR")] sbyte* lpName);
+        public static extern int GetTextFaceA(HDC hdc, int c, [NativeTypeName("LPSTR")] sbyte* lpName);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        public static extern int GetTextFaceW([NativeTypeName("HDC")] IntPtr hdc, int c, [NativeTypeName("LPWSTR")] ushort* lpName);
+        public static extern int GetTextFaceW(HDC hdc, int c, [NativeTypeName("LPWSTR")] ushort* lpName);
 
         [DllImport("gdi32", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
-        public static extern uint GetKerningPairsA([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("DWORD")] uint nPairs, [NativeTypeName("LPKERNINGPAIR")] KERNINGPAIR* lpKernPair);
+        public static extern uint GetKerningPairsA(HDC hdc, [NativeTypeName("DWORD")] uint nPairs, [NativeTypeName("LPKERNINGPAIR")] KERNINGPAIR* lpKernPair);
 
         [DllImport("gdi32", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
-        public static extern uint GetKerningPairsW([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("DWORD")] uint nPairs, [NativeTypeName("LPKERNINGPAIR")] KERNINGPAIR* lpKernPair);
+        public static extern uint GetKerningPairsW(HDC hdc, [NativeTypeName("DWORD")] uint nPairs, [NativeTypeName("LPKERNINGPAIR")] KERNINGPAIR* lpKernPair);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int GetDCOrgEx([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("LPPOINT")] POINT* lppt);
+        public static extern BOOL GetDCOrgEx(HDC hdc, [NativeTypeName("LPPOINT")] POINT* lppt);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int FixBrushOrgEx([NativeTypeName("HDC")] IntPtr hdc, int x, int y, [NativeTypeName("LPPOINT")] POINT* ptl);
+        public static extern BOOL FixBrushOrgEx(HDC hdc, int x, int y, [NativeTypeName("LPPOINT")] POINT* ptl);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int UnrealizeObject([NativeTypeName("HGDIOBJ")] IntPtr h);
+        public static extern BOOL UnrealizeObject(HGDIOBJ h);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int GdiFlush();
+        public static extern BOOL GdiFlush();
 
         [DllImport("gdi32", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
@@ -1229,163 +1005,129 @@ namespace TerraFX.Interop
         public static extern uint GdiGetBatchLimit();
 
         [DllImport("gdi32", ExactSpelling = true)]
-        public static extern int SetICMMode([NativeTypeName("HDC")] IntPtr hdc, int mode);
+        public static extern int SetICMMode(HDC hdc, int mode);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int CheckColorsInGamut([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("LPRGBTRIPLE")] RGBTRIPLE* lpRGBTriple, [NativeTypeName("LPVOID")] void* dlpBuffer, [NativeTypeName("DWORD")] uint nCount);
+        public static extern BOOL CheckColorsInGamut(HDC hdc, [NativeTypeName("LPRGBTRIPLE")] RGBTRIPLE* lpRGBTriple, [NativeTypeName("LPVOID")] void* dlpBuffer, [NativeTypeName("DWORD")] uint nCount);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("HCOLORSPACE")]
-        public static extern IntPtr GetColorSpace([NativeTypeName("HDC")] IntPtr hdc);
+        public static extern HCOLORSPACE GetColorSpace(HDC hdc);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int GetLogColorSpaceA([NativeTypeName("HCOLORSPACE")] IntPtr hColorSpace, [NativeTypeName("LPLOGCOLORSPACEA")] LOGCOLORSPACEA* lpBuffer, [NativeTypeName("DWORD")] uint nSize);
+        public static extern BOOL GetLogColorSpaceA(HCOLORSPACE hColorSpace, [NativeTypeName("LPLOGCOLORSPACEA")] LOGCOLORSPACEA* lpBuffer, [NativeTypeName("DWORD")] uint nSize);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int GetLogColorSpaceW([NativeTypeName("HCOLORSPACE")] IntPtr hColorSpace, [NativeTypeName("LPLOGCOLORSPACEW")] LOGCOLORSPACEW* lpBuffer, [NativeTypeName("DWORD")] uint nSize);
+        public static extern BOOL GetLogColorSpaceW(HCOLORSPACE hColorSpace, [NativeTypeName("LPLOGCOLORSPACEW")] LOGCOLORSPACEW* lpBuffer, [NativeTypeName("DWORD")] uint nSize);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("HCOLORSPACE")]
-        public static extern IntPtr CreateColorSpaceA([NativeTypeName("LPLOGCOLORSPACEA")] LOGCOLORSPACEA* lplcs);
+        public static extern HCOLORSPACE CreateColorSpaceA([NativeTypeName("LPLOGCOLORSPACEA")] LOGCOLORSPACEA* lplcs);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("HCOLORSPACE")]
-        public static extern IntPtr CreateColorSpaceW([NativeTypeName("LPLOGCOLORSPACEW")] LOGCOLORSPACEW* lplcs);
+        public static extern HCOLORSPACE CreateColorSpaceW([NativeTypeName("LPLOGCOLORSPACEW")] LOGCOLORSPACEW* lplcs);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("HCOLORSPACE")]
-        public static extern IntPtr SetColorSpace([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("HCOLORSPACE")] IntPtr hcs);
+        public static extern HCOLORSPACE SetColorSpace(HDC hdc, HCOLORSPACE hcs);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int DeleteColorSpace([NativeTypeName("HCOLORSPACE")] IntPtr hcs);
+        public static extern BOOL DeleteColorSpace(HCOLORSPACE hcs);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int GetICMProfileA([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("LPDWORD")] uint* pBufSize, [NativeTypeName("LPSTR")] sbyte* pszFilename);
+        public static extern BOOL GetICMProfileA(HDC hdc, [NativeTypeName("LPDWORD")] uint* pBufSize, [NativeTypeName("LPSTR")] sbyte* pszFilename);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int GetICMProfileW([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("LPDWORD")] uint* pBufSize, [NativeTypeName("LPWSTR")] ushort* pszFilename);
+        public static extern BOOL GetICMProfileW(HDC hdc, [NativeTypeName("LPDWORD")] uint* pBufSize, [NativeTypeName("LPWSTR")] ushort* pszFilename);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetICMProfileA([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("LPSTR")] sbyte* lpFileName);
+        public static extern BOOL SetICMProfileA(HDC hdc, [NativeTypeName("LPSTR")] sbyte* lpFileName);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetICMProfileW([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("LPWSTR")] ushort* lpFileName);
+        public static extern BOOL SetICMProfileW(HDC hdc, [NativeTypeName("LPWSTR")] ushort* lpFileName);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int GetDeviceGammaRamp([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("LPVOID")] void* lpRamp);
+        public static extern BOOL GetDeviceGammaRamp(HDC hdc, [NativeTypeName("LPVOID")] void* lpRamp);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetDeviceGammaRamp([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("LPVOID")] void* lpRamp);
+        public static extern BOOL SetDeviceGammaRamp(HDC hdc, [NativeTypeName("LPVOID")] void* lpRamp);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int ColorMatchToTarget([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("HDC")] IntPtr hdcTarget, [NativeTypeName("DWORD")] uint action);
+        public static extern BOOL ColorMatchToTarget(HDC hdc, HDC hdcTarget, [NativeTypeName("DWORD")] uint action);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        public static extern int EnumICMProfilesA([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("ICMENUMPROCA")] delegate* unmanaged<sbyte*, nint, int> proc, [NativeTypeName("LPARAM")] nint param2);
+        public static extern int EnumICMProfilesA(HDC hdc, [NativeTypeName("ICMENUMPROCA")] delegate* unmanaged<sbyte*, nint, int> proc, [NativeTypeName("LPARAM")] nint param2);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        public static extern int EnumICMProfilesW([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("ICMENUMPROCW")] delegate* unmanaged<ushort*, nint, int> proc, [NativeTypeName("LPARAM")] nint param2);
+        public static extern int EnumICMProfilesW(HDC hdc, [NativeTypeName("ICMENUMPROCW")] delegate* unmanaged<ushort*, nint, int> proc, [NativeTypeName("LPARAM")] nint param2);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int UpdateICMRegKeyA([NativeTypeName("DWORD")] uint reserved, [NativeTypeName("LPSTR")] sbyte* lpszCMID, [NativeTypeName("LPSTR")] sbyte* lpszFileName, [NativeTypeName("UINT")] uint command);
+        public static extern BOOL UpdateICMRegKeyA([NativeTypeName("DWORD")] uint reserved, [NativeTypeName("LPSTR")] sbyte* lpszCMID, [NativeTypeName("LPSTR")] sbyte* lpszFileName, uint command);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int UpdateICMRegKeyW([NativeTypeName("DWORD")] uint reserved, [NativeTypeName("LPWSTR")] ushort* lpszCMID, [NativeTypeName("LPWSTR")] ushort* lpszFileName, [NativeTypeName("UINT")] uint command);
+        public static extern BOOL UpdateICMRegKeyW([NativeTypeName("DWORD")] uint reserved, [NativeTypeName("LPWSTR")] ushort* lpszCMID, [NativeTypeName("LPWSTR")] ushort* lpszFileName, uint command);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int ColorCorrectPalette([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("HPALETTE")] IntPtr hPal, [NativeTypeName("DWORD")] uint deFirst, [NativeTypeName("DWORD")] uint num);
+        public static extern BOOL ColorCorrectPalette(HDC hdc, HPALETTE hPal, [NativeTypeName("DWORD")] uint deFirst, [NativeTypeName("DWORD")] uint num);
 
         [DllImport("opengl32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int wglCopyContext([NativeTypeName("HGLRC")] IntPtr param0, [NativeTypeName("HGLRC")] IntPtr param1, [NativeTypeName("UINT")] uint param2);
+        public static extern BOOL wglCopyContext(HGLRC param0, HGLRC param1, uint param2);
 
         [DllImport("opengl32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("HGLRC")]
-        public static extern IntPtr wglCreateContext([NativeTypeName("HDC")] IntPtr param0);
+        public static extern HGLRC wglCreateContext(HDC param0);
 
         [DllImport("opengl32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("HGLRC")]
-        public static extern IntPtr wglCreateLayerContext([NativeTypeName("HDC")] IntPtr param0, int param1);
+        public static extern HGLRC wglCreateLayerContext(HDC param0, int param1);
 
         [DllImport("opengl32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int wglDeleteContext([NativeTypeName("HGLRC")] IntPtr param0);
+        public static extern BOOL wglDeleteContext(HGLRC param0);
 
         [DllImport("opengl32", ExactSpelling = true)]
-        [return: NativeTypeName("HGLRC")]
-        public static extern IntPtr wglGetCurrentContext();
+        public static extern HGLRC wglGetCurrentContext();
 
         [DllImport("opengl32", ExactSpelling = true)]
-        [return: NativeTypeName("HDC")]
-        public static extern IntPtr wglGetCurrentDC();
+        public static extern HDC wglGetCurrentDC();
 
         [DllImport("opengl32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("PROC")]
         public static extern IntPtr wglGetProcAddress([NativeTypeName("LPCSTR")] sbyte* param0);
 
         [DllImport("opengl32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int wglMakeCurrent([NativeTypeName("HDC")] IntPtr param0, [NativeTypeName("HGLRC")] IntPtr param1);
+        public static extern BOOL wglMakeCurrent(HDC param0, HGLRC param1);
 
         [DllImport("opengl32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int wglShareLists([NativeTypeName("HGLRC")] IntPtr param0, [NativeTypeName("HGLRC")] IntPtr param1);
+        public static extern BOOL wglShareLists(HGLRC param0, HGLRC param1);
 
         [DllImport("opengl32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int wglUseFontBitmapsA([NativeTypeName("HDC")] IntPtr param0, [NativeTypeName("DWORD")] uint param1, [NativeTypeName("DWORD")] uint param2, [NativeTypeName("DWORD")] uint param3);
+        public static extern BOOL wglUseFontBitmapsA(HDC param0, [NativeTypeName("DWORD")] uint param1, [NativeTypeName("DWORD")] uint param2, [NativeTypeName("DWORD")] uint param3);
 
         [DllImport("opengl32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int wglUseFontBitmapsW([NativeTypeName("HDC")] IntPtr param0, [NativeTypeName("DWORD")] uint param1, [NativeTypeName("DWORD")] uint param2, [NativeTypeName("DWORD")] uint param3);
+        public static extern BOOL wglUseFontBitmapsW(HDC param0, [NativeTypeName("DWORD")] uint param1, [NativeTypeName("DWORD")] uint param2, [NativeTypeName("DWORD")] uint param3);
 
         [DllImport("gdi32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SwapBuffers([NativeTypeName("HDC")] IntPtr param0);
+        public static extern BOOL SwapBuffers(HDC param0);
 
         [DllImport("opengl32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int wglUseFontOutlinesA([NativeTypeName("HDC")] IntPtr param0, [NativeTypeName("DWORD")] uint param1, [NativeTypeName("DWORD")] uint param2, [NativeTypeName("DWORD")] uint param3, [NativeTypeName("FLOAT")] float param4, [NativeTypeName("FLOAT")] float param5, int param6, [NativeTypeName("LPGLYPHMETRICSFLOAT")] GLYPHMETRICSFLOAT* param7);
+        public static extern BOOL wglUseFontOutlinesA(HDC param0, [NativeTypeName("DWORD")] uint param1, [NativeTypeName("DWORD")] uint param2, [NativeTypeName("DWORD")] uint param3, float param4, float param5, int param6, [NativeTypeName("LPGLYPHMETRICSFLOAT")] GLYPHMETRICSFLOAT* param7);
 
         [DllImport("opengl32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int wglUseFontOutlinesW([NativeTypeName("HDC")] IntPtr param0, [NativeTypeName("DWORD")] uint param1, [NativeTypeName("DWORD")] uint param2, [NativeTypeName("DWORD")] uint param3, [NativeTypeName("FLOAT")] float param4, [NativeTypeName("FLOAT")] float param5, int param6, [NativeTypeName("LPGLYPHMETRICSFLOAT")] GLYPHMETRICSFLOAT* param7);
+        public static extern BOOL wglUseFontOutlinesW(HDC param0, [NativeTypeName("DWORD")] uint param1, [NativeTypeName("DWORD")] uint param2, [NativeTypeName("DWORD")] uint param3, float param4, float param5, int param6, [NativeTypeName("LPGLYPHMETRICSFLOAT")] GLYPHMETRICSFLOAT* param7);
 
         [DllImport("opengl32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int wglDescribeLayerPlane([NativeTypeName("HDC")] IntPtr param0, int param1, int param2, [NativeTypeName("UINT")] uint param3, [NativeTypeName("LPLAYERPLANEDESCRIPTOR")] LAYERPLANEDESCRIPTOR* param4);
+        public static extern BOOL wglDescribeLayerPlane(HDC param0, int param1, int param2, uint param3, [NativeTypeName("LPLAYERPLANEDESCRIPTOR")] LAYERPLANEDESCRIPTOR* param4);
 
         [DllImport("opengl32", ExactSpelling = true, SetLastError = true)]
-        public static extern int wglSetLayerPaletteEntries([NativeTypeName("HDC")] IntPtr param0, int param1, int param2, int param3, [NativeTypeName("const COLORREF *")] uint* param4);
+        public static extern int wglSetLayerPaletteEntries(HDC param0, int param1, int param2, int param3, [NativeTypeName("const COLORREF *")] uint* param4);
 
         [DllImport("opengl32", ExactSpelling = true, SetLastError = true)]
-        public static extern int wglGetLayerPaletteEntries([NativeTypeName("HDC")] IntPtr param0, int param1, int param2, int param3, [NativeTypeName("COLORREF *")] uint* param4);
+        public static extern int wglGetLayerPaletteEntries(HDC param0, int param1, int param2, int param3, [NativeTypeName("COLORREF *")] uint* param4);
 
         [DllImport("opengl32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int wglRealizeLayerPalette([NativeTypeName("HDC")] IntPtr param0, int param1, [NativeTypeName("BOOL")] int param2);
+        public static extern BOOL wglRealizeLayerPalette(HDC param0, int param1, BOOL param2);
 
         [DllImport("opengl32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int wglSwapLayerBuffers([NativeTypeName("HDC")] IntPtr param0, [NativeTypeName("UINT")] uint param1);
+        public static extern BOOL wglSwapLayerBuffers(HDC param0, uint param1);
 
         [DllImport("opengl32", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
-        public static extern uint wglSwapMultipleBuffers([NativeTypeName("UINT")] uint param0, [NativeTypeName("const WGLSWAP *")] WGLSWAP* param1);
+        public static extern uint wglSwapMultipleBuffers(uint param0, [NativeTypeName("const WGLSWAP *")] WGLSWAP* param1);
 
         [NativeTypeName("#define R2_BLACK 1")]
         public const int R2_BLACK = 1;
@@ -4844,25 +4586,25 @@ namespace TerraFX.Interop
         public static delegate*<ushort*, int> AddFontResource => &AddFontResourceW;
 
         [NativeTypeName("#define CopyMetaFile CopyMetaFileW")]
-        public static delegate*<IntPtr, ushort*, IntPtr> CopyMetaFile => &CopyMetaFileW;
+        public static delegate*<HMETAFILE, ushort*, HMETAFILE> CopyMetaFile => &CopyMetaFileW;
 
         [NativeTypeName("#define CreateDC CreateDCW")]
-        public static delegate*<ushort*, ushort*, ushort*, DEVMODEW*, IntPtr> CreateDC => &CreateDCW;
+        public static delegate*<ushort*, ushort*, ushort*, DEVMODEW*, HDC> CreateDC => &CreateDCW;
 
         [NativeTypeName("#define CreateFontIndirect CreateFontIndirectW")]
-        public static delegate*<LOGFONTW*, IntPtr> CreateFontIndirect => &CreateFontIndirectW;
+        public static delegate*<LOGFONTW*, HFONT> CreateFontIndirect => &CreateFontIndirectW;
 
         [NativeTypeName("#define CreateFont CreateFontW")]
-        public static delegate*<int, int, int, int, int, uint, uint, uint, uint, uint, uint, uint, uint, ushort*, IntPtr> CreateFont => &CreateFontW;
+        public static delegate*<int, int, int, int, int, uint, uint, uint, uint, uint, uint, uint, uint, ushort*, HFONT> CreateFont => &CreateFontW;
 
         [NativeTypeName("#define CreateIC CreateICW")]
-        public static delegate*<ushort*, ushort*, ushort*, DEVMODEW*, IntPtr> CreateIC => &CreateICW;
+        public static delegate*<ushort*, ushort*, ushort*, DEVMODEW*, HDC> CreateIC => &CreateICW;
 
         [NativeTypeName("#define CreateMetaFile CreateMetaFileW")]
-        public static delegate*<ushort*, IntPtr> CreateMetaFile => &CreateMetaFileW;
+        public static delegate*<ushort*, HDC> CreateMetaFile => &CreateMetaFileW;
 
         [NativeTypeName("#define CreateScalableFontResource CreateScalableFontResourceW")]
-        public static delegate*<uint, ushort*, ushort*, ushort*, int> CreateScalableFontResource => &CreateScalableFontResourceW;
+        public static delegate*<uint, ushort*, ushort*, ushort*, BOOL> CreateScalableFontResource => &CreateScalableFontResourceW;
 
         [NativeTypeName("#define DM_UPDATE 1")]
         public const int DM_UPDATE = 1;
@@ -5042,49 +4784,49 @@ namespace TerraFX.Interop
         public const int DCBA_FACEDOWNRIGHT = 0x0103;
 
         [NativeTypeName("#define EnumFontFamiliesEx EnumFontFamiliesExW")]
-        public static delegate*<IntPtr, LOGFONTW*, delegate* unmanaged<LOGFONTW*, TEXTMETRICW*, uint, nint, int>, nint, uint, int> EnumFontFamiliesEx => &EnumFontFamiliesExW;
+        public static delegate*<HDC, LOGFONTW*, delegate* unmanaged<LOGFONTW*, TEXTMETRICW*, uint, nint, int>, nint, uint, int> EnumFontFamiliesEx => &EnumFontFamiliesExW;
 
         [NativeTypeName("#define EnumFontFamilies EnumFontFamiliesW")]
-        public static delegate*<IntPtr, ushort*, delegate* unmanaged<LOGFONTW*, TEXTMETRICW*, uint, nint, int>, nint, int> EnumFontFamilies => &EnumFontFamiliesW;
+        public static delegate*<HDC, ushort*, delegate* unmanaged<LOGFONTW*, TEXTMETRICW*, uint, nint, int>, nint, int> EnumFontFamilies => &EnumFontFamiliesW;
 
         [NativeTypeName("#define EnumFonts EnumFontsW")]
-        public static delegate*<IntPtr, ushort*, delegate* unmanaged<LOGFONTW*, TEXTMETRICW*, uint, nint, int>, nint, int> EnumFonts => &EnumFontsW;
+        public static delegate*<HDC, ushort*, delegate* unmanaged<LOGFONTW*, TEXTMETRICW*, uint, nint, int>, nint, int> EnumFonts => &EnumFontsW;
 
         [NativeTypeName("#define GetCharWidth GetCharWidthW")]
-        public static delegate*<IntPtr, uint, uint, int*, int> GetCharWidth => &GetCharWidthW;
+        public static delegate*<HDC, uint, uint, int*, BOOL> GetCharWidth => &GetCharWidthW;
 
         [NativeTypeName("#define GetCharWidth32 GetCharWidth32W")]
-        public static delegate*<IntPtr, uint, uint, int*, int> GetCharWidth32 => &GetCharWidth32W;
+        public static delegate*<HDC, uint, uint, int*, BOOL> GetCharWidth32 => &GetCharWidth32W;
 
         [NativeTypeName("#define GetCharWidthFloat GetCharWidthFloatW")]
-        public static delegate*<IntPtr, uint, uint, float*, int> GetCharWidthFloat => &GetCharWidthFloatW;
+        public static delegate*<HDC, uint, uint, float*, BOOL> GetCharWidthFloat => &GetCharWidthFloatW;
 
         [NativeTypeName("#define GetCharABCWidths GetCharABCWidthsW")]
-        public static delegate*<IntPtr, uint, uint, ABC*, int> GetCharABCWidths => &GetCharABCWidthsW;
+        public static delegate*<HDC, uint, uint, ABC*, BOOL> GetCharABCWidths => &GetCharABCWidthsW;
 
         [NativeTypeName("#define GetCharABCWidthsFloat GetCharABCWidthsFloatW")]
-        public static delegate*<IntPtr, uint, uint, ABCFLOAT*, int> GetCharABCWidthsFloat => &GetCharABCWidthsFloatW;
+        public static delegate*<HDC, uint, uint, ABCFLOAT*, BOOL> GetCharABCWidthsFloat => &GetCharABCWidthsFloatW;
 
         [NativeTypeName("#define GetGlyphOutline GetGlyphOutlineW")]
-        public static delegate*<IntPtr, uint, uint, GLYPHMETRICS*, uint, void*, MAT2*, uint> GetGlyphOutline => &GetGlyphOutlineW;
+        public static delegate*<HDC, uint, uint, GLYPHMETRICS*, uint, void*, MAT2*, uint> GetGlyphOutline => &GetGlyphOutlineW;
 
         [NativeTypeName("#define GetMetaFile GetMetaFileW")]
-        public static delegate*<ushort*, IntPtr> GetMetaFile => &GetMetaFileW;
+        public static delegate*<ushort*, HMETAFILE> GetMetaFile => &GetMetaFileW;
 
         [NativeTypeName("#define GetOutlineTextMetrics GetOutlineTextMetricsW")]
-        public static delegate*<IntPtr, uint, OUTLINETEXTMETRICW*, uint> GetOutlineTextMetrics => &GetOutlineTextMetricsW;
+        public static delegate*<HDC, uint, OUTLINETEXTMETRICW*, uint> GetOutlineTextMetrics => &GetOutlineTextMetricsW;
 
         [NativeTypeName("#define GetTextExtentPoint GetTextExtentPointW")]
-        public static delegate*<IntPtr, ushort*, int, SIZE*, int> GetTextExtentPoint => &GetTextExtentPointW;
+        public static delegate*<HDC, ushort*, int, SIZE*, BOOL> GetTextExtentPoint => &GetTextExtentPointW;
 
         [NativeTypeName("#define GetTextExtentPoint32 GetTextExtentPoint32W")]
-        public static delegate*<IntPtr, ushort*, int, SIZE*, int> GetTextExtentPoint32 => &GetTextExtentPoint32W;
+        public static delegate*<HDC, ushort*, int, SIZE*, BOOL> GetTextExtentPoint32 => &GetTextExtentPoint32W;
 
         [NativeTypeName("#define GetTextExtentExPoint GetTextExtentExPointW")]
-        public static delegate*<IntPtr, ushort*, int, int, int*, int*, SIZE*, int> GetTextExtentExPoint => &GetTextExtentExPointW;
+        public static delegate*<HDC, ushort*, int, int, int*, int*, SIZE*, BOOL> GetTextExtentExPoint => &GetTextExtentExPointW;
 
         [NativeTypeName("#define GetCharacterPlacement GetCharacterPlacementW")]
-        public static delegate*<IntPtr, ushort*, int, int, GCP_RESULTSW*, uint, uint> GetCharacterPlacement => &GetCharacterPlacementW;
+        public static delegate*<HDC, ushort*, int, int, GCP_RESULTSW*, uint, uint> GetCharacterPlacement => &GetCharacterPlacementW;
 
         [NativeTypeName("#define GS_8BIT_INDICES 0x00000001")]
         public const int GS_8BIT_INDICES = 0x00000001;
@@ -5093,7 +4835,7 @@ namespace TerraFX.Interop
         public const int GGI_MARK_NONEXISTING_GLYPHS = 0X0001;
 
         [NativeTypeName("#define GetGlyphIndices GetGlyphIndicesW")]
-        public static delegate*<IntPtr, ushort*, int, ushort*, uint, uint> GetGlyphIndices => &GetGlyphIndicesW;
+        public static delegate*<HDC, ushort*, int, ushort*, uint, uint> GetGlyphIndices => &GetGlyphIndicesW;
 
         [NativeTypeName("#define STAMP_DESIGNVECTOR (0x8000000 + 'd' + ('v' << 8))")]
         public const int STAMP_DESIGNVECTOR = (0x8000000 + 'd' + ('v' << 8));
@@ -5114,7 +4856,7 @@ namespace TerraFX.Interop
         public static delegate*<ushort*, uint, void*, int> AddFontResourceEx => &AddFontResourceExW;
 
         [NativeTypeName("#define RemoveFontResourceEx RemoveFontResourceExW")]
-        public static delegate*<ushort*, uint, void*, int> RemoveFontResourceEx => &RemoveFontResourceExW;
+        public static delegate*<ushort*, uint, void*, BOOL> RemoveFontResourceEx => &RemoveFontResourceExW;
 
         [NativeTypeName("#define FR_PRIVATE 0x10")]
         public const int FR_PRIVATE = 0x10;
@@ -5126,13 +4868,13 @@ namespace TerraFX.Interop
         public const int MM_MAX_AXES_NAMELEN = 16;
 
         [NativeTypeName("#define CreateFontIndirectEx CreateFontIndirectExW")]
-        public static delegate*<ENUMLOGFONTEXDVW*, IntPtr> CreateFontIndirectEx => &CreateFontIndirectExW;
+        public static delegate*<ENUMLOGFONTEXDVW*, HFONT> CreateFontIndirectEx => &CreateFontIndirectExW;
 
         [NativeTypeName("#define ResetDC ResetDCW")]
-        public static delegate*<IntPtr, DEVMODEW*, IntPtr> ResetDC => &ResetDCW;
+        public static delegate*<HDC, DEVMODEW*, HDC> ResetDC => &ResetDCW;
 
         [NativeTypeName("#define RemoveFontResource RemoveFontResourceW")]
-        public static delegate*<ushort*, int> RemoveFontResource => &RemoveFontResourceW;
+        public static delegate*<ushort*, BOOL> RemoveFontResource => &RemoveFontResourceW;
 
         [NativeTypeName("#define AC_SRC_OVER 0x00")]
         public const int AC_SRC_OVER = 0x00;
@@ -5153,19 +4895,19 @@ namespace TerraFX.Interop
         public const int GRADIENT_FILL_OP_FLAG = 0x000000ff;
 
         [NativeTypeName("#define CopyEnhMetaFile CopyEnhMetaFileW")]
-        public static delegate*<IntPtr, ushort*, IntPtr> CopyEnhMetaFile => &CopyEnhMetaFileW;
+        public static delegate*<HENHMETAFILE, ushort*, HENHMETAFILE> CopyEnhMetaFile => &CopyEnhMetaFileW;
 
         [NativeTypeName("#define CreateEnhMetaFile CreateEnhMetaFileW")]
-        public static delegate*<IntPtr, ushort*, RECT*, ushort*, IntPtr> CreateEnhMetaFile => &CreateEnhMetaFileW;
+        public static delegate*<HDC, ushort*, RECT*, ushort*, HDC> CreateEnhMetaFile => &CreateEnhMetaFileW;
 
         [NativeTypeName("#define GetEnhMetaFile GetEnhMetaFileW")]
-        public static delegate*<ushort*, IntPtr> GetEnhMetaFile => &GetEnhMetaFileW;
+        public static delegate*<ushort*, HENHMETAFILE> GetEnhMetaFile => &GetEnhMetaFileW;
 
         [NativeTypeName("#define GetEnhMetaFileDescription GetEnhMetaFileDescriptionW")]
-        public static delegate*<IntPtr, uint, ushort*, uint> GetEnhMetaFileDescription => &GetEnhMetaFileDescriptionW;
+        public static delegate*<HENHMETAFILE, uint, ushort*, uint> GetEnhMetaFileDescription => &GetEnhMetaFileDescriptionW;
 
         [NativeTypeName("#define GetTextMetrics GetTextMetricsW")]
-        public static delegate*<IntPtr, TEXTMETRICW*, int> GetTextMetrics => &GetTextMetricsW;
+        public static delegate*<HDC, TEXTMETRICW*, BOOL> GetTextMetrics => &GetTextMetricsW;
 
         [NativeTypeName("#define CA_NEGATIVE 0x0001")]
         public const int CA_NEGATIVE = 0x0001;
@@ -5246,28 +4988,28 @@ namespace TerraFX.Interop
         public const int DI_ROPS_READ_DESTINATION = 0x00000002;
 
         [NativeTypeName("#define StartDoc StartDocW")]
-        public static delegate*<IntPtr, DOCINFOW*, int> StartDoc => &StartDocW;
+        public static delegate*<HDC, DOCINFOW*, int> StartDoc => &StartDocW;
 
         [NativeTypeName("#define GetObject GetObjectW")]
-        public static delegate*<IntPtr, int, void*, int> GetObject => &GetObjectW;
+        public static delegate*<HANDLE, int, void*, int> GetObject => &GetObjectW;
 
         [NativeTypeName("#define TextOut TextOutW")]
-        public static delegate*<IntPtr, int, int, ushort*, int, int> TextOut => &TextOutW;
+        public static delegate*<HDC, int, int, ushort*, int, BOOL> TextOut => &TextOutW;
 
         [NativeTypeName("#define ExtTextOut ExtTextOutW")]
-        public static delegate*<IntPtr, int, int, uint, RECT*, ushort*, uint, int*, int> ExtTextOut => &ExtTextOutW;
+        public static delegate*<HDC, int, int, uint, RECT*, ushort*, uint, int*, BOOL> ExtTextOut => &ExtTextOutW;
 
         [NativeTypeName("#define PolyTextOut PolyTextOutW")]
-        public static delegate*<IntPtr, POLYTEXTW*, int, int> PolyTextOut => &PolyTextOutW;
+        public static delegate*<HDC, POLYTEXTW*, int, BOOL> PolyTextOut => &PolyTextOutW;
 
         [NativeTypeName("#define GetTextFace GetTextFaceW")]
-        public static delegate*<IntPtr, int, ushort*, int> GetTextFace => &GetTextFaceW;
+        public static delegate*<HDC, int, ushort*, int> GetTextFace => &GetTextFaceW;
 
         [NativeTypeName("#define FONTMAPPER_MAX 10")]
         public const int FONTMAPPER_MAX = 10;
 
         [NativeTypeName("#define GetKerningPairs GetKerningPairsW")]
-        public static delegate*<IntPtr, uint, KERNINGPAIR*, uint> GetKerningPairs => &GetKerningPairsW;
+        public static delegate*<HDC, uint, KERNINGPAIR*, uint> GetKerningPairs => &GetKerningPairsW;
 
         [NativeTypeName("#define ICM_OFF 1")]
         public const int ICM_OFF = 1;
@@ -5282,22 +5024,22 @@ namespace TerraFX.Interop
         public const int ICM_DONE_OUTSIDEDC = 4;
 
         [NativeTypeName("#define GetLogColorSpace GetLogColorSpaceW")]
-        public static delegate*<IntPtr, LOGCOLORSPACEW*, uint, int> GetLogColorSpace => &GetLogColorSpaceW;
+        public static delegate*<HCOLORSPACE, LOGCOLORSPACEW*, uint, BOOL> GetLogColorSpace => &GetLogColorSpaceW;
 
         [NativeTypeName("#define CreateColorSpace CreateColorSpaceW")]
-        public static delegate*<LOGCOLORSPACEW*, IntPtr> CreateColorSpace => &CreateColorSpaceW;
+        public static delegate*<LOGCOLORSPACEW*, HCOLORSPACE> CreateColorSpace => &CreateColorSpaceW;
 
         [NativeTypeName("#define GetICMProfile GetICMProfileW")]
-        public static delegate*<IntPtr, uint*, ushort*, int> GetICMProfile => &GetICMProfileW;
+        public static delegate*<HDC, uint*, ushort*, BOOL> GetICMProfile => &GetICMProfileW;
 
         [NativeTypeName("#define SetICMProfile SetICMProfileW")]
-        public static delegate*<IntPtr, ushort*, int> SetICMProfile => &SetICMProfileW;
+        public static delegate*<HDC, ushort*, BOOL> SetICMProfile => &SetICMProfileW;
 
         [NativeTypeName("#define EnumICMProfiles EnumICMProfilesW")]
-        public static delegate*<IntPtr, delegate* unmanaged<ushort*, nint, int>, nint, int> EnumICMProfiles => &EnumICMProfilesW;
+        public static delegate*<HDC, delegate* unmanaged<ushort*, nint, int>, nint, int> EnumICMProfiles => &EnumICMProfilesW;
 
         [NativeTypeName("#define UpdateICMRegKey UpdateICMRegKeyW")]
-        public static delegate*<uint, ushort*, ushort*, uint, int> UpdateICMRegKey => &UpdateICMRegKeyW;
+        public static delegate*<uint, ushort*, ushort*, uint, BOOL> UpdateICMRegKey => &UpdateICMRegKeyW;
 
         [NativeTypeName("#define ENHMETA_SIGNATURE 0x464D4520")]
         public const int ENHMETA_SIGNATURE = 0x464D4520;
@@ -5708,7 +5450,7 @@ namespace TerraFX.Interop
         public const int GDICOMMENT_UNICODE_END = 0x00000080;
 
         [NativeTypeName("#define wglUseFontBitmaps wglUseFontBitmapsW")]
-        public static delegate*<IntPtr, uint, uint, uint, int> wglUseFontBitmaps => &wglUseFontBitmapsW;
+        public static delegate*<HDC, uint, uint, uint, BOOL> wglUseFontBitmaps => &wglUseFontBitmapsW;
 
         [NativeTypeName("#define WGL_FONT_LINES 0")]
         public const int WGL_FONT_LINES = 0;
@@ -5717,7 +5459,7 @@ namespace TerraFX.Interop
         public const int WGL_FONT_POLYGONS = 1;
 
         [NativeTypeName("#define wglUseFontOutlines wglUseFontOutlinesW")]
-        public static delegate*<IntPtr, uint, uint, uint, float, float, int, GLYPHMETRICSFLOAT*, int> wglUseFontOutlines => &wglUseFontOutlinesW;
+        public static delegate*<HDC, uint, uint, uint, float, float, int, GLYPHMETRICSFLOAT*, BOOL> wglUseFontOutlines => &wglUseFontOutlinesW;
 
         [NativeTypeName("#define LPD_DOUBLEBUFFER 0x00000001")]
         public const int LPD_DOUBLEBUFFER = 0x00000001;

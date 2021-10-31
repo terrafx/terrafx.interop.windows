@@ -9,10 +9,8 @@ namespace TerraFX.Interop
     {
         public D3D11_AUTHENTICATED_CONFIGURE_INPUT Parameters;
 
-        [NativeTypeName("UINT")]
         public uint StartSequenceQuery;
 
-        [NativeTypeName("UINT")]
         public uint StartSequenceConfigure;
     }
 }

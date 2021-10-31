@@ -7,13 +7,11 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct D3D12_FEATURE_DATA_VIDEO_PROCESSOR_SIZE
     {
-        [NativeTypeName("UINT")]
         public uint NodeMask;
 
         [NativeTypeName("const D3D12_VIDEO_PROCESS_OUTPUT_STREAM_DESC *")]
         public D3D12_VIDEO_PROCESS_OUTPUT_STREAM_DESC* pOutputStreamDesc;
 
-        [NativeTypeName("UINT")]
         public uint NumInputStreamDescs;
 
         [NativeTypeName("const D3D12_VIDEO_PROCESS_INPUT_STREAM_DESC *")]

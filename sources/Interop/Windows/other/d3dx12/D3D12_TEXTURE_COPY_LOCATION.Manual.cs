@@ -9,7 +9,7 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct D3D12_TEXTURE_COPY_LOCATION
     {
-        public D3D12_TEXTURE_COPY_LOCATION([NativeTypeName("ID3D12Resource *")] ID3D12Resource* pRes)
+        public D3D12_TEXTURE_COPY_LOCATION(ID3D12Resource* pRes)
         {
             this = default;
 
@@ -18,7 +18,7 @@ namespace TerraFX.Interop
             Anonymous.PlacedFootprint = new D3D12_PLACED_SUBRESOURCE_FOOTPRINT();
         }
 
-        public D3D12_TEXTURE_COPY_LOCATION([NativeTypeName("ID3D12Resource *")] ID3D12Resource* pRes, [NativeTypeName("D3D12_PLACED_SUBRESOURCE_FOOTPRINT const &")] in D3D12_PLACED_SUBRESOURCE_FOOTPRINT Footprint)
+        public D3D12_TEXTURE_COPY_LOCATION(ID3D12Resource* pRes, [NativeTypeName("D3D12_PLACED_SUBRESOURCE_FOOTPRINT const &")] in D3D12_PLACED_SUBRESOURCE_FOOTPRINT Footprint)
         {
             this = default;
 
@@ -26,7 +26,7 @@ namespace TerraFX.Interop
             Type = D3D12_TEXTURE_COPY_TYPE_PLACED_FOOTPRINT;
             Anonymous.PlacedFootprint = Footprint;
         }
-        public D3D12_TEXTURE_COPY_LOCATION([NativeTypeName("ID3D12Resource *")] ID3D12Resource* pRes, uint Sub)
+        public D3D12_TEXTURE_COPY_LOCATION(ID3D12Resource* pRes, uint Sub)
         {
             this = default;
 

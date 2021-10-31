@@ -7,20 +7,15 @@ namespace TerraFX.Interop
 {
     public partial struct AM_DVD_RENDERSTATUS
     {
-        [NativeTypeName("HRESULT")]
-        public int hrVPEStatus;
+        public HRESULT hrVPEStatus;
 
-        [NativeTypeName("BOOL")]
-        public int bDvdVolInvalid;
+        public BOOL bDvdVolInvalid;
 
-        [NativeTypeName("BOOL")]
-        public int bDvdVolUnknown;
+        public BOOL bDvdVolUnknown;
 
-        [NativeTypeName("BOOL")]
-        public int bNoLine21In;
+        public BOOL bNoLine21In;
 
-        [NativeTypeName("BOOL")]
-        public int bNoLine21Out;
+        public BOOL bNoLine21Out;
 
         public int iNumStreams;
 

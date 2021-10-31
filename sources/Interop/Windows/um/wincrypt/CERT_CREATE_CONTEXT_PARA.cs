@@ -16,7 +16,7 @@ namespace TerraFX.Interop
         public void* pvFree;
 
         [NativeTypeName("PFN_CERT_CREATE_CONTEXT_SORT_FUNC")]
-        public delegate* unmanaged<uint, uint, uint, void*, int> pfnSort;
+        public delegate* unmanaged<uint, uint, uint, void*, BOOL> pfnSort;
 
         public void* pvSort;
     }

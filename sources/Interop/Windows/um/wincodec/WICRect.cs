@@ -7,16 +7,12 @@ namespace TerraFX.Interop
 {
     public partial struct WICRect
     {
-        [NativeTypeName("INT")]
         public int X;
 
-        [NativeTypeName("INT")]
         public int Y;
 
-        [NativeTypeName("INT")]
         public int Width;
 
-        [NativeTypeName("INT")]
         public int Height;
     }
 }

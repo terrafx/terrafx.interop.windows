@@ -11,10 +11,8 @@ namespace TerraFX.Interop
     {
         public DWRITE_LINE_METRICS Base;
 
-        [NativeTypeName("FLOAT")]
         public float leadingBefore;
 
-        [NativeTypeName("FLOAT")]
         public float leadingAfter;
     }
 }

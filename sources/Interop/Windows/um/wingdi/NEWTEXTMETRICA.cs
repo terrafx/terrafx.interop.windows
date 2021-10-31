@@ -40,43 +40,31 @@ namespace TerraFX.Interop
         [NativeTypeName("LONG")]
         public int tmDigitizedAspectY;
 
-        [NativeTypeName("BYTE")]
         public byte tmFirstChar;
 
-        [NativeTypeName("BYTE")]
         public byte tmLastChar;
 
-        [NativeTypeName("BYTE")]
         public byte tmDefaultChar;
 
-        [NativeTypeName("BYTE")]
         public byte tmBreakChar;
 
-        [NativeTypeName("BYTE")]
         public byte tmItalic;
 
-        [NativeTypeName("BYTE")]
         public byte tmUnderlined;
 
-        [NativeTypeName("BYTE")]
         public byte tmStruckOut;
 
-        [NativeTypeName("BYTE")]
         public byte tmPitchAndFamily;
 
-        [NativeTypeName("BYTE")]
         public byte tmCharSet;
 
         [NativeTypeName("DWORD")]
         public uint ntmFlags;
 
-        [NativeTypeName("UINT")]
         public uint ntmSizeEM;
 
-        [NativeTypeName("UINT")]
         public uint ntmCellHeight;
 
-        [NativeTypeName("UINT")]
         public uint ntmAvgWidth;
     }
 }

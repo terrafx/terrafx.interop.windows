@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public partial struct FOCUS_EVENT_RECORD
     {
-        [NativeTypeName("BOOL")]
-        public int bSetFocus;
+        public BOOL bSetFocus;
     }
 }

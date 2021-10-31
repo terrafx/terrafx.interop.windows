@@ -9,7 +9,6 @@ namespace TerraFX.Interop
     {
         public WS_XML_TEXT text;
 
-        [NativeTypeName("BYTE *")]
         public byte* bytes;
 
         [NativeTypeName("ULONG")]

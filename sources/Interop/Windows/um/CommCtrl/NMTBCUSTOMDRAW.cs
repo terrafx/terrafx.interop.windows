@@ -3,22 +3,17 @@
 // Ported from um/CommCtrl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
-
 namespace TerraFX.Interop
 {
     public partial struct NMTBCUSTOMDRAW
     {
         public NMCUSTOMDRAW nmcd;
 
-        [NativeTypeName("HBRUSH")]
-        public IntPtr hbrMonoDither;
+        public HBRUSH hbrMonoDither;
 
-        [NativeTypeName("HBRUSH")]
-        public IntPtr hbrLines;
+        public HBRUSH hbrLines;
 
-        [NativeTypeName("HPEN")]
-        public IntPtr hpenLines;
+        public HPEN hpenLines;
 
         [NativeTypeName("COLORREF")]
         public uint clrText;

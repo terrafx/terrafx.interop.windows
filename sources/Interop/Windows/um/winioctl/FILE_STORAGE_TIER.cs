@@ -9,7 +9,6 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct FILE_STORAGE_TIER
     {
-        [NativeTypeName("GUID")]
         public Guid Id;
 
         [NativeTypeName("WCHAR [256]")]

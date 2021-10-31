@@ -10,8 +10,7 @@ namespace TerraFX.Interop
         [NativeTypeName("UINT32")]
         public uint cbSize;
 
-        [NativeTypeName("BOOL")]
-        public int bIsOffload;
+        public BOOL bIsOffload;
 
         public AUDIO_STREAM_CATEGORY eCategory;
 

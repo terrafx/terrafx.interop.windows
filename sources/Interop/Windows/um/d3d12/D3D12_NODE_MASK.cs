@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public partial struct D3D12_NODE_MASK
     {
-        [NativeTypeName("UINT")]
         public uint NodeMask;
     }
 }

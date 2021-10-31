@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public partial struct ACCEL
     {
-        [NativeTypeName("BYTE")]
         public byte fVirt;
 
         [NativeTypeName("WORD")]

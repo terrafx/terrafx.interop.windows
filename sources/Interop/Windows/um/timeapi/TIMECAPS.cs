@@ -10,10 +10,8 @@ namespace TerraFX.Interop
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public partial struct TIMECAPS
     {
-        [NativeTypeName("UINT")]
         public uint wPeriodMin;
 
-        [NativeTypeName("UINT")]
         public uint wPeriodMax;
     }
 }

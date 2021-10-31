@@ -16,10 +16,8 @@ namespace TerraFX.Interop
         [NativeTypeName("ULONG")]
         public uint RoundTripTime;
 
-        [NativeTypeName("USHORT")]
         public ushort DataSize;
 
-        [NativeTypeName("USHORT")]
         public ushort Reserved;
 
         [NativeTypeName("PVOID")]

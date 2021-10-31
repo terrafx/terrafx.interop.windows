@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<ISyncMgrSynchronizeInvoke*, Guid*, void**, int>)(lpVtbl[0]))((ISyncMgrSynchronizeInvoke*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,16 +41,14 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int UpdateItems([NativeTypeName("DWORD")] uint dwInvokeFlags, [NativeTypeName("const IID &")] Guid* clsid, [NativeTypeName("DWORD")] uint cbCookie, [NativeTypeName("const BYTE *")] byte* pCookie)
+        public HRESULT UpdateItems([NativeTypeName("DWORD")] uint dwInvokeFlags, [NativeTypeName("const IID &")] Guid* clsid, [NativeTypeName("DWORD")] uint cbCookie, [NativeTypeName("const BYTE *")] byte* pCookie)
         {
             return ((delegate* unmanaged<ISyncMgrSynchronizeInvoke*, uint, Guid*, uint, byte*, int>)(lpVtbl[3]))((ISyncMgrSynchronizeInvoke*)Unsafe.AsPointer(ref this), dwInvokeFlags, clsid, cbCookie, pCookie);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int UpdateAll()
+        public HRESULT UpdateAll()
         {
             return ((delegate* unmanaged<ISyncMgrSynchronizeInvoke*, int>)(lpVtbl[4]))((ISyncMgrSynchronizeInvoke*)Unsafe.AsPointer(ref this));
         }

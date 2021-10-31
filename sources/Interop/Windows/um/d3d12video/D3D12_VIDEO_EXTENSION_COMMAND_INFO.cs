@@ -9,7 +9,6 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct D3D12_VIDEO_EXTENSION_COMMAND_INFO
     {
-        [NativeTypeName("GUID")]
         public Guid CommandId;
 
         [NativeTypeName("LPCWSTR")]

@@ -10,8 +10,7 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct BASEBROWSERDATAXP
     {
-        [NativeTypeName("HWND")]
-        public IntPtr _hwnd;
+        public HWND _hwnd;
 
         public ITravelLog* _ptl;
 
@@ -27,7 +26,7 @@ namespace TerraFX.Interop
 
         public uint _bitfield;
 
-        [NativeTypeName("UINT : 1")]
+        [NativeTypeName("uint : 1")]
         public uint _fCreatingViewWindow
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -43,7 +42,6 @@ namespace TerraFX.Interop
             }
         }
 
-        [NativeTypeName("UINT")]
         public uint _uActivateState;
 
         [NativeTypeName("LPCITEMIDLIST")]
@@ -58,8 +56,7 @@ namespace TerraFX.Interop
 
         public IShellFolder* _psf;
 
-        [NativeTypeName("HWND")]
-        public IntPtr _hwndView;
+        public HWND _hwndView;
 
         [NativeTypeName("LPWSTR")]
         public ushort* _pszTitleCur;
@@ -71,17 +68,14 @@ namespace TerraFX.Interop
 
         public IShellFolder* _psfPending;
 
-        [NativeTypeName("HWND")]
-        public IntPtr _hwndViewPending;
+        public HWND _hwndViewPending;
 
         [NativeTypeName("LPWSTR")]
         public ushort* _pszTitlePending;
 
-        [NativeTypeName("BOOL")]
-        public int _fIsViewMSHTML;
+        public BOOL _fIsViewMSHTML;
 
-        [NativeTypeName("BOOL")]
-        public int _fPrivacyImpacted;
+        public BOOL _fPrivacyImpacted;
 
         [NativeTypeName("CLSID")]
         public Guid _clsidView;
@@ -89,7 +83,6 @@ namespace TerraFX.Interop
         [NativeTypeName("CLSID")]
         public Guid _clsidViewPending;
 
-        [NativeTypeName("HWND")]
-        public IntPtr _hwndFrame;
+        public HWND _hwndFrame;
     }
 }

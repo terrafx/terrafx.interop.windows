@@ -14,11 +14,9 @@ namespace TerraFX.Interop
         [NativeTypeName("TP_VERSION")]
         public uint Version;
 
-        [NativeTypeName("PTP_POOL")]
-        public IntPtr Pool;
+        public PTP_POOL Pool;
 
-        [NativeTypeName("PTP_CLEANUP_GROUP")]
-        public IntPtr CleanupGroup;
+        public PTP_CLEANUP_GROUP CleanupGroup;
 
         [NativeTypeName("PTP_CLEANUP_GROUP_CANCEL_CALLBACK")]
         public delegate* unmanaged<void*, void*, void> CleanupGroupCancelCallback;
@@ -30,7 +28,7 @@ namespace TerraFX.Interop
         public IntPtr ActivationContext;
 
         [NativeTypeName("PTP_SIMPLE_CALLBACK")]
-        public delegate* unmanaged<IntPtr, void*, void> FinalizationCallback;
+        public delegate* unmanaged<PTP_CALLBACK_INSTANCE, void*, void> FinalizationCallback;
 
         [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winnt.h:24065:5)")]
         public _u_e__Union u;

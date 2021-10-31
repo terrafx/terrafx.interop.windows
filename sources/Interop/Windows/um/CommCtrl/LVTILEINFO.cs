@@ -7,12 +7,10 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct LVTILEINFO
     {
-        [NativeTypeName("UINT")]
         public uint cbSize;
 
         public int iItem;
 
-        [NativeTypeName("UINT")]
         public uint cColumns;
 
         [NativeTypeName("PUINT")]

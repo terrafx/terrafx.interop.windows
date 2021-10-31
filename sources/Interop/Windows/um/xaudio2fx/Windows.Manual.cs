@@ -761,19 +761,17 @@ namespace TerraFX.Interop
             }
         }
 
-        [return: NativeTypeName("HRESULT")]
-        public static int XAudio2CreateVolumeMeter([NativeTypeName("IUnknown **")] IUnknown** ppApo, [NativeTypeName("UINT32")] uint Flags = 0)
+        public static HRESULT XAudio2CreateVolumeMeter([NativeTypeName("IUnknown **")] IUnknown** ppApo, [NativeTypeName("UINT32")] uint Flags = 0)
         {
             return CreateAudioVolumeMeter(ppApo);
         }
 
-        [return: NativeTypeName("HRESULT")]
-        public static int XAudio2CreateReverb([NativeTypeName("IUnknown **")] IUnknown** ppApo, [NativeTypeName("UINT32")] uint Flags = 0)
+        public static HRESULT XAudio2CreateReverb([NativeTypeName("IUnknown **")] IUnknown** ppApo, [NativeTypeName("UINT32")] uint Flags = 0)
         {
             return CreateAudioReverb(ppApo);
         }
 
-        public static void ReverbConvertI3DL2ToNative([NativeTypeName("const XAUDIO2FX_REVERB_I3DL2_PARAMETERS *")] XAUDIO2FX_REVERB_I3DL2_PARAMETERS* pI3DL2, [NativeTypeName("XAUDIO2FX_REVERB_PARAMETERS *")] XAUDIO2FX_REVERB_PARAMETERS* pNative, [NativeTypeName("BOOL")] int sevenDotOneReverb = 1)
+        public static void ReverbConvertI3DL2ToNative([NativeTypeName("const XAUDIO2FX_REVERB_I3DL2_PARAMETERS *")] XAUDIO2FX_REVERB_I3DL2_PARAMETERS* pI3DL2, [NativeTypeName("XAUDIO2FX_REVERB_PARAMETERS *")] XAUDIO2FX_REVERB_PARAMETERS* pNative, [Optional, DefaultParameterValue(1)] BOOL sevenDotOneReverb)
         {
             float reflectionsDelay;
             float reverbDelay;

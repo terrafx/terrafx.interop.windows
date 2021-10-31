@@ -80,7 +80,6 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORDLONG")]
         public ulong OldestTransactionAge;
 
-        [NativeTypeName("GUID")]
         public Guid RMName;
 
         [NativeTypeName("DWORD")]

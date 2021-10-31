@@ -7,10 +7,8 @@ namespace TerraFX.Interop
 {
     public partial struct XINPUT_CAPABILITIES
     {
-        [NativeTypeName("BYTE")]
         public byte Type;
 
-        [NativeTypeName("BYTE")]
         public byte SubType;
 
         [NativeTypeName("WORD")]

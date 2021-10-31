@@ -7,10 +7,8 @@ namespace TerraFX.Interop
 {
     public partial struct ACE_HEADER
     {
-        [NativeTypeName("BYTE")]
         public byte AceType;
 
-        [NativeTypeName("BYTE")]
         public byte AceFlags;
 
         [NativeTypeName("WORD")]

@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<ITfFnLangProfileUtil*, Guid*, void**, int>)(lpVtbl[0]))((ITfFnLangProfileUtil*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,26 +41,23 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetDisplayName([NativeTypeName("BSTR *")] ushort** pbstrName)
+        public HRESULT GetDisplayName([NativeTypeName("BSTR *")] ushort** pbstrName)
         {
             return ((delegate* unmanaged<ITfFnLangProfileUtil*, ushort**, int>)(lpVtbl[3]))((ITfFnLangProfileUtil*)Unsafe.AsPointer(ref this), pbstrName);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int RegisterActiveProfiles()
+        public HRESULT RegisterActiveProfiles()
         {
             return ((delegate* unmanaged<ITfFnLangProfileUtil*, int>)(lpVtbl[4]))((ITfFnLangProfileUtil*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int IsProfileAvailableForLang([NativeTypeName("LANGID")] ushort langid, [NativeTypeName("BOOL *")] int* pfAvailable)
+        public HRESULT IsProfileAvailableForLang([NativeTypeName("LANGID")] ushort langid, BOOL* pfAvailable)
         {
-            return ((delegate* unmanaged<ITfFnLangProfileUtil*, ushort, int*, int>)(lpVtbl[5]))((ITfFnLangProfileUtil*)Unsafe.AsPointer(ref this), langid, pfAvailable);
+            return ((delegate* unmanaged<ITfFnLangProfileUtil*, ushort, BOOL*, int>)(lpVtbl[5]))((ITfFnLangProfileUtil*)Unsafe.AsPointer(ref this), langid, pfAvailable);
         }
     }
 }

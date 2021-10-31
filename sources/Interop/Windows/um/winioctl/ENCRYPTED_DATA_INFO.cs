@@ -22,16 +22,12 @@ namespace TerraFX.Interop
         [NativeTypeName("WORD")]
         public ushort CompressionFormat;
 
-        [NativeTypeName("BYTE")]
         public byte DataUnitShift;
 
-        [NativeTypeName("BYTE")]
         public byte ChunkShift;
 
-        [NativeTypeName("BYTE")]
         public byte ClusterShift;
 
-        [NativeTypeName("BYTE")]
         public byte EncryptionFormat;
 
         [NativeTypeName("WORD")]

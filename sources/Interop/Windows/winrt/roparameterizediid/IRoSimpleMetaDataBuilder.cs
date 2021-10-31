@@ -14,80 +14,70 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetWinRtInterface([NativeTypeName("GUID")] Guid iid)
+        public HRESULT SetWinRtInterface(Guid iid)
         {
             return ((delegate* unmanaged<IRoSimpleMetaDataBuilder*, Guid, int>)(lpVtbl[0]))((IRoSimpleMetaDataBuilder*)Unsafe.AsPointer(ref this), iid);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(1)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetDelegate([NativeTypeName("GUID")] Guid iid)
+        public HRESULT SetDelegate(Guid iid)
         {
             return ((delegate* unmanaged<IRoSimpleMetaDataBuilder*, Guid, int>)(lpVtbl[1]))((IRoSimpleMetaDataBuilder*)Unsafe.AsPointer(ref this), iid);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(2)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetInterfaceGroupSimpleDefault([NativeTypeName("PCWSTR")] ushort* name, [NativeTypeName("PCWSTR")] ushort* defaultInterfaceName, [NativeTypeName("const GUID *")] Guid* defaultInterfaceIID)
+        public HRESULT SetInterfaceGroupSimpleDefault([NativeTypeName("PCWSTR")] ushort* name, [NativeTypeName("PCWSTR")] ushort* defaultInterfaceName, [NativeTypeName("const GUID *")] Guid* defaultInterfaceIID)
         {
             return ((delegate* unmanaged<IRoSimpleMetaDataBuilder*, ushort*, ushort*, Guid*, int>)(lpVtbl[2]))((IRoSimpleMetaDataBuilder*)Unsafe.AsPointer(ref this), name, defaultInterfaceName, defaultInterfaceIID);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetInterfaceGroupParameterizedDefault([NativeTypeName("PCWSTR")] ushort* name, [NativeTypeName("UINT32")] uint elementCount, [NativeTypeName("PCWSTR *")] ushort** defaultInterfaceNameElements)
+        public HRESULT SetInterfaceGroupParameterizedDefault([NativeTypeName("PCWSTR")] ushort* name, [NativeTypeName("UINT32")] uint elementCount, [NativeTypeName("PCWSTR *")] ushort** defaultInterfaceNameElements)
         {
             return ((delegate* unmanaged<IRoSimpleMetaDataBuilder*, ushort*, uint, ushort**, int>)(lpVtbl[3]))((IRoSimpleMetaDataBuilder*)Unsafe.AsPointer(ref this), name, elementCount, defaultInterfaceNameElements);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetRuntimeClassSimpleDefault([NativeTypeName("PCWSTR")] ushort* name, [NativeTypeName("PCWSTR")] ushort* defaultInterfaceName, [NativeTypeName("const GUID *")] Guid* defaultInterfaceIID)
+        public HRESULT SetRuntimeClassSimpleDefault([NativeTypeName("PCWSTR")] ushort* name, [NativeTypeName("PCWSTR")] ushort* defaultInterfaceName, [NativeTypeName("const GUID *")] Guid* defaultInterfaceIID)
         {
             return ((delegate* unmanaged<IRoSimpleMetaDataBuilder*, ushort*, ushort*, Guid*, int>)(lpVtbl[4]))((IRoSimpleMetaDataBuilder*)Unsafe.AsPointer(ref this), name, defaultInterfaceName, defaultInterfaceIID);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetRuntimeClassParameterizedDefault([NativeTypeName("PCWSTR")] ushort* name, [NativeTypeName("UINT32")] uint elementCount, [NativeTypeName("const PCWSTR *")] ushort** defaultInterfaceNameElements)
+        public HRESULT SetRuntimeClassParameterizedDefault([NativeTypeName("PCWSTR")] ushort* name, [NativeTypeName("UINT32")] uint elementCount, [NativeTypeName("const PCWSTR *")] ushort** defaultInterfaceNameElements)
         {
             return ((delegate* unmanaged<IRoSimpleMetaDataBuilder*, ushort*, uint, ushort**, int>)(lpVtbl[5]))((IRoSimpleMetaDataBuilder*)Unsafe.AsPointer(ref this), name, elementCount, defaultInterfaceNameElements);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetStruct([NativeTypeName("PCWSTR")] ushort* name, [NativeTypeName("UINT32")] uint numFields, [NativeTypeName("const PCWSTR *")] ushort** fieldTypeNames)
+        public HRESULT SetStruct([NativeTypeName("PCWSTR")] ushort* name, [NativeTypeName("UINT32")] uint numFields, [NativeTypeName("const PCWSTR *")] ushort** fieldTypeNames)
         {
             return ((delegate* unmanaged<IRoSimpleMetaDataBuilder*, ushort*, uint, ushort**, int>)(lpVtbl[6]))((IRoSimpleMetaDataBuilder*)Unsafe.AsPointer(ref this), name, numFields, fieldTypeNames);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetEnum([NativeTypeName("PCWSTR")] ushort* name, [NativeTypeName("PCWSTR")] ushort* baseType)
+        public HRESULT SetEnum([NativeTypeName("PCWSTR")] ushort* name, [NativeTypeName("PCWSTR")] ushort* baseType)
         {
             return ((delegate* unmanaged<IRoSimpleMetaDataBuilder*, ushort*, ushort*, int>)(lpVtbl[7]))((IRoSimpleMetaDataBuilder*)Unsafe.AsPointer(ref this), name, baseType);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetParameterizedInterface([NativeTypeName("GUID")] Guid piid, [NativeTypeName("UINT32")] uint numArgs)
+        public HRESULT SetParameterizedInterface(Guid piid, [NativeTypeName("UINT32")] uint numArgs)
         {
             return ((delegate* unmanaged<IRoSimpleMetaDataBuilder*, Guid, uint, int>)(lpVtbl[8]))((IRoSimpleMetaDataBuilder*)Unsafe.AsPointer(ref this), piid, numArgs);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetParameterizedDelegate([NativeTypeName("GUID")] Guid piid, [NativeTypeName("UINT32")] uint numArgs)
+        public HRESULT SetParameterizedDelegate(Guid piid, [NativeTypeName("UINT32")] uint numArgs)
         {
             return ((delegate* unmanaged<IRoSimpleMetaDataBuilder*, Guid, uint, int>)(lpVtbl[9]))((IRoSimpleMetaDataBuilder*)Unsafe.AsPointer(ref this), piid, numArgs);
         }

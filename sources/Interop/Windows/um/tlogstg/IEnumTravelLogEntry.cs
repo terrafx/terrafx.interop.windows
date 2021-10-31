@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IEnumTravelLogEntry*, Guid*, void**, int>)(lpVtbl[0]))((IEnumTravelLogEntry*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,32 +41,28 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int Next([NativeTypeName("ULONG")] uint cElt, ITravelLogEntry** rgElt, [NativeTypeName("ULONG *")] uint* pcEltFetched)
+        public HRESULT Next([NativeTypeName("ULONG")] uint cElt, ITravelLogEntry** rgElt, [NativeTypeName("ULONG *")] uint* pcEltFetched)
         {
             return ((delegate* unmanaged<IEnumTravelLogEntry*, uint, ITravelLogEntry**, uint*, int>)(lpVtbl[3]))((IEnumTravelLogEntry*)Unsafe.AsPointer(ref this), cElt, rgElt, pcEltFetched);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int Skip([NativeTypeName("ULONG")] uint cElt)
+        public HRESULT Skip([NativeTypeName("ULONG")] uint cElt)
         {
             return ((delegate* unmanaged<IEnumTravelLogEntry*, uint, int>)(lpVtbl[4]))((IEnumTravelLogEntry*)Unsafe.AsPointer(ref this), cElt);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int Reset()
+        public HRESULT Reset()
         {
             return ((delegate* unmanaged<IEnumTravelLogEntry*, int>)(lpVtbl[5]))((IEnumTravelLogEntry*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int Clone(IEnumTravelLogEntry** ppEnum)
+        public HRESULT Clone(IEnumTravelLogEntry** ppEnum)
         {
             return ((delegate* unmanaged<IEnumTravelLogEntry*, IEnumTravelLogEntry**, int>)(lpVtbl[6]))((IEnumTravelLogEntry*)Unsafe.AsPointer(ref this), ppEnum);
         }

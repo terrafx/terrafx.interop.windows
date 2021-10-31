@@ -7,10 +7,8 @@ namespace TerraFX.Interop
 {
     public partial struct FOLDERSETTINGS
     {
-        [NativeTypeName("UINT")]
         public uint ViewMode;
 
-        [NativeTypeName("UINT")]
         public uint fFlags;
     }
 }

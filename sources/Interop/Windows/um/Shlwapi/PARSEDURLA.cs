@@ -13,16 +13,13 @@ namespace TerraFX.Interop
         [NativeTypeName("LPCSTR")]
         public sbyte* pszProtocol;
 
-        [NativeTypeName("UINT")]
         public uint cchProtocol;
 
         [NativeTypeName("LPCSTR")]
         public sbyte* pszSuffix;
 
-        [NativeTypeName("UINT")]
         public uint cchSuffix;
 
-        [NativeTypeName("UINT")]
         public uint nScheme;
     }
 }

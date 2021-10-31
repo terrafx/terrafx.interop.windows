@@ -12,7 +12,6 @@ namespace TerraFX.Interop
         [NativeTypeName("CLSID")]
         public Guid clsidService;
 
-        [NativeTypeName("GUID")]
         public Guid guidItem;
 
         [NativeTypeName("DWORD")]

@@ -9,7 +9,6 @@ namespace TerraFX.Interop
     {
         public void* pData;
 
-        [NativeTypeName("UINT")]
         public uint RowPitch;
     }
 }

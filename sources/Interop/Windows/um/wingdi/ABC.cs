@@ -9,7 +9,6 @@ namespace TerraFX.Interop
     {
         public int abcA;
 
-        [NativeTypeName("UINT")]
         public uint abcB;
 
         public int abcC;

@@ -3,8 +3,6 @@
 // Ported from um/TlHelp32.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
-
 namespace TerraFX.Interop
 {
     public partial struct HEAPENTRY32
@@ -12,8 +10,7 @@ namespace TerraFX.Interop
         [NativeTypeName("SIZE_T")]
         public nuint dwSize;
 
-        [NativeTypeName("HANDLE")]
-        public IntPtr hHandle;
+        public HANDLE hHandle;
 
         [NativeTypeName("ULONG_PTR")]
         public nuint dwAddress;

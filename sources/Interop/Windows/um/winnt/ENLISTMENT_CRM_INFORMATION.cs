@@ -9,13 +9,10 @@ namespace TerraFX.Interop
 {
     public partial struct ENLISTMENT_CRM_INFORMATION
     {
-        [NativeTypeName("GUID")]
         public Guid CrmTransactionManagerId;
 
-        [NativeTypeName("GUID")]
         public Guid CrmResourceManagerId;
 
-        [NativeTypeName("GUID")]
         public Guid CrmEnlistmentId;
     }
 }

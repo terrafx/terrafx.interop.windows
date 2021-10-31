@@ -7,19 +7,14 @@ namespace TerraFX.Interop
 {
     public partial struct D3D11_VIDEO_PROCESSOR_RATE_CONVERSION_CAPS
     {
-        [NativeTypeName("UINT")]
         public uint PastFrames;
 
-        [NativeTypeName("UINT")]
         public uint FutureFrames;
 
-        [NativeTypeName("UINT")]
         public uint ProcessorCaps;
 
-        [NativeTypeName("UINT")]
         public uint ITelecineCaps;
 
-        [NativeTypeName("UINT")]
         public uint CustomRateCount;
     }
 }

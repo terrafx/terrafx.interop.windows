@@ -21,8 +21,7 @@ namespace TerraFX.Interop
 
         public D3D12_VIDEO_SIZE_RANGE DestinationSizeRange;
 
-        [NativeTypeName("BOOL")]
-        public int EnableOrientation;
+        public BOOL EnableOrientation;
 
         public D3D12_VIDEO_PROCESS_FILTER_FLAGS FilterFlags;
 
@@ -32,18 +31,14 @@ namespace TerraFX.Interop
 
         public D3D12_VIDEO_PROCESS_DEINTERLACE_FLAGS DeinterlaceMode;
 
-        [NativeTypeName("BOOL")]
-        public int EnableAlphaBlending;
+        public BOOL EnableAlphaBlending;
 
         public D3D12_VIDEO_PROCESS_LUMA_KEY LumaKey;
 
-        [NativeTypeName("UINT")]
         public uint NumPastFrames;
 
-        [NativeTypeName("UINT")]
         public uint NumFutureFrames;
 
-        [NativeTypeName("BOOL")]
-        public int EnableAutoProcessing;
+        public BOOL EnableAutoProcessing;
     }
 }

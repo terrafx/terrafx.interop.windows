@@ -7,10 +7,8 @@ namespace TerraFX.Interop
 {
     public partial struct AM_PROPERTY_SPHLI
     {
-        [NativeTypeName("USHORT")]
         public ushort HLISS;
 
-        [NativeTypeName("USHORT")]
         public ushort Reserved;
 
         [NativeTypeName("ULONG")]
@@ -19,16 +17,12 @@ namespace TerraFX.Interop
         [NativeTypeName("ULONG")]
         public uint EndPTM;
 
-        [NativeTypeName("USHORT")]
         public ushort StartX;
 
-        [NativeTypeName("USHORT")]
         public ushort StartY;
 
-        [NativeTypeName("USHORT")]
         public ushort StopX;
 
-        [NativeTypeName("USHORT")]
         public ushort StopY;
 
         public AM_COLCON ColCon;

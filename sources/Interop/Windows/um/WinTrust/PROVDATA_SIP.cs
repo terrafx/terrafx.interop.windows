@@ -12,7 +12,6 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint cbStruct;
 
-        [NativeTypeName("GUID")]
         public Guid gSubject;
 
         [NativeTypeName("struct SIP_DISPATCH_INFO_ *")]

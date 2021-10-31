@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public partial struct s_RIFFWAVE_inst
     {
-        [NativeTypeName("BYTE")]
         public byte bUnshiftedNote;
 
         [NativeTypeName("char")]
@@ -16,16 +15,12 @@ namespace TerraFX.Interop
         [NativeTypeName("char")]
         public sbyte chGain;
 
-        [NativeTypeName("BYTE")]
         public byte bLowNote;
 
-        [NativeTypeName("BYTE")]
         public byte bHighNote;
 
-        [NativeTypeName("BYTE")]
         public byte bLowVelocity;
 
-        [NativeTypeName("BYTE")]
         public byte bHighVelocity;
     }
 }

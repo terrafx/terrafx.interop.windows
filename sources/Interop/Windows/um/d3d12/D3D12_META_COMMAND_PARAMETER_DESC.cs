@@ -16,7 +16,6 @@ namespace TerraFX.Interop
 
         public D3D12_RESOURCE_STATES RequiredResourceState;
 
-        [NativeTypeName("UINT")]
         public uint StructureOffset;
     }
 }

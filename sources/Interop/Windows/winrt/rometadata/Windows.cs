@@ -11,7 +11,6 @@ namespace TerraFX.Interop
     public static unsafe partial class Windows
     {
         [DllImport("rometadata", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int MetaDataGetDispenser([NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPVOID *")] void** ppv);
+        public static extern HRESULT MetaDataGetDispenser([NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPVOID *")] void** ppv);
     }
 }

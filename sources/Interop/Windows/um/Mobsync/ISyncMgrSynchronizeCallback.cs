@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<ISyncMgrSynchronizeCallback*, Guid*, void**, int>)(lpVtbl[0]))((ISyncMgrSynchronizeCallback*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,72 +41,63 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int ShowPropertiesCompleted([NativeTypeName("HRESULT")] int hr)
+        public HRESULT ShowPropertiesCompleted(HRESULT hr)
         {
-            return ((delegate* unmanaged<ISyncMgrSynchronizeCallback*, int, int>)(lpVtbl[3]))((ISyncMgrSynchronizeCallback*)Unsafe.AsPointer(ref this), hr);
+            return ((delegate* unmanaged<ISyncMgrSynchronizeCallback*, HRESULT, int>)(lpVtbl[3]))((ISyncMgrSynchronizeCallback*)Unsafe.AsPointer(ref this), hr);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int PrepareForSyncCompleted([NativeTypeName("HRESULT")] int hr)
+        public HRESULT PrepareForSyncCompleted(HRESULT hr)
         {
-            return ((delegate* unmanaged<ISyncMgrSynchronizeCallback*, int, int>)(lpVtbl[4]))((ISyncMgrSynchronizeCallback*)Unsafe.AsPointer(ref this), hr);
+            return ((delegate* unmanaged<ISyncMgrSynchronizeCallback*, HRESULT, int>)(lpVtbl[4]))((ISyncMgrSynchronizeCallback*)Unsafe.AsPointer(ref this), hr);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int SynchronizeCompleted([NativeTypeName("HRESULT")] int hr)
+        public HRESULT SynchronizeCompleted(HRESULT hr)
         {
-            return ((delegate* unmanaged<ISyncMgrSynchronizeCallback*, int, int>)(lpVtbl[5]))((ISyncMgrSynchronizeCallback*)Unsafe.AsPointer(ref this), hr);
+            return ((delegate* unmanaged<ISyncMgrSynchronizeCallback*, HRESULT, int>)(lpVtbl[5]))((ISyncMgrSynchronizeCallback*)Unsafe.AsPointer(ref this), hr);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int ShowErrorCompleted([NativeTypeName("HRESULT")] int hr, [NativeTypeName("ULONG")] uint cItems, [NativeTypeName("const GUID *")] Guid* pItemIDs)
+        public HRESULT ShowErrorCompleted(HRESULT hr, [NativeTypeName("ULONG")] uint cItems, [NativeTypeName("const GUID *")] Guid* pItemIDs)
         {
-            return ((delegate* unmanaged<ISyncMgrSynchronizeCallback*, int, uint, Guid*, int>)(lpVtbl[6]))((ISyncMgrSynchronizeCallback*)Unsafe.AsPointer(ref this), hr, cItems, pItemIDs);
+            return ((delegate* unmanaged<ISyncMgrSynchronizeCallback*, HRESULT, uint, Guid*, int>)(lpVtbl[6]))((ISyncMgrSynchronizeCallback*)Unsafe.AsPointer(ref this), hr, cItems, pItemIDs);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        [return: NativeTypeName("HRESULT")]
-        public int EnableModeless([NativeTypeName("BOOL")] int fEnable)
+        public HRESULT EnableModeless(BOOL fEnable)
         {
-            return ((delegate* unmanaged<ISyncMgrSynchronizeCallback*, int, int>)(lpVtbl[7]))((ISyncMgrSynchronizeCallback*)Unsafe.AsPointer(ref this), fEnable);
+            return ((delegate* unmanaged<ISyncMgrSynchronizeCallback*, BOOL, int>)(lpVtbl[7]))((ISyncMgrSynchronizeCallback*)Unsafe.AsPointer(ref this), fEnable);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        [return: NativeTypeName("HRESULT")]
-        public int Progress([NativeTypeName("const GUID &")] Guid* ItemID, [NativeTypeName("const SYNCMGRPROGRESSITEM *")] SYNCMGRPROGRESSITEM* pSyncProgressItem)
+        public HRESULT Progress([NativeTypeName("const GUID &")] Guid* ItemID, [NativeTypeName("const SYNCMGRPROGRESSITEM *")] SYNCMGRPROGRESSITEM* pSyncProgressItem)
         {
             return ((delegate* unmanaged<ISyncMgrSynchronizeCallback*, Guid*, SYNCMGRPROGRESSITEM*, int>)(lpVtbl[8]))((ISyncMgrSynchronizeCallback*)Unsafe.AsPointer(ref this), ItemID, pSyncProgressItem);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        [return: NativeTypeName("HRESULT")]
-        public int LogError([NativeTypeName("DWORD")] uint dwErrorLevel, [NativeTypeName("LPCWSTR")] ushort* pszErrorText, [NativeTypeName("const SYNCMGRLOGERRORINFO *")] SYNCMGRLOGERRORINFO* pSyncLogError)
+        public HRESULT LogError([NativeTypeName("DWORD")] uint dwErrorLevel, [NativeTypeName("LPCWSTR")] ushort* pszErrorText, [NativeTypeName("const SYNCMGRLOGERRORINFO *")] SYNCMGRLOGERRORINFO* pSyncLogError)
         {
             return ((delegate* unmanaged<ISyncMgrSynchronizeCallback*, uint, ushort*, SYNCMGRLOGERRORINFO*, int>)(lpVtbl[9]))((ISyncMgrSynchronizeCallback*)Unsafe.AsPointer(ref this), dwErrorLevel, pszErrorText, pSyncLogError);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(10)]
-        [return: NativeTypeName("HRESULT")]
-        public int DeleteLogError([NativeTypeName("const GUID &")] Guid* ErrorID, [NativeTypeName("DWORD")] uint dwReserved)
+        public HRESULT DeleteLogError([NativeTypeName("const GUID &")] Guid* ErrorID, [NativeTypeName("DWORD")] uint dwReserved)
         {
             return ((delegate* unmanaged<ISyncMgrSynchronizeCallback*, Guid*, uint, int>)(lpVtbl[10]))((ISyncMgrSynchronizeCallback*)Unsafe.AsPointer(ref this), ErrorID, dwReserved);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(11)]
-        [return: NativeTypeName("HRESULT")]
-        public int EstablishConnection([NativeTypeName("LPCWSTR")] ushort* pwszConnection, [NativeTypeName("DWORD")] uint dwReserved)
+        public HRESULT EstablishConnection([NativeTypeName("LPCWSTR")] ushort* pwszConnection, [NativeTypeName("DWORD")] uint dwReserved)
         {
             return ((delegate* unmanaged<ISyncMgrSynchronizeCallback*, ushort*, uint, int>)(lpVtbl[11]))((ISyncMgrSynchronizeCallback*)Unsafe.AsPointer(ref this), pwszConnection, dwReserved);
         }

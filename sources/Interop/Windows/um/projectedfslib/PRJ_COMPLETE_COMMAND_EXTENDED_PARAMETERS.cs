@@ -3,7 +3,6 @@
 // Ported from um/projectedfslib.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -52,8 +51,7 @@ namespace TerraFX.Interop
 
             public partial struct _Enumeration_e__Struct
             {
-                [NativeTypeName("PRJ_DIR_ENTRY_BUFFER_HANDLE")]
-                public IntPtr DirEntryBufferHandle;
+                public PRJ_DIR_ENTRY_BUFFER_HANDLE DirEntryBufferHandle;
             }
         }
     }

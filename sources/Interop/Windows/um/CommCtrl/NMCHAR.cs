@@ -9,7 +9,6 @@ namespace TerraFX.Interop
     {
         public NMHDR hdr;
 
-        [NativeTypeName("UINT")]
         public uint ch;
 
         [NativeTypeName("DWORD")]

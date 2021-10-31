@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct TCITEMA
     {
-        [NativeTypeName("UINT")]
         public uint mask;
 
         [NativeTypeName("DWORD")]

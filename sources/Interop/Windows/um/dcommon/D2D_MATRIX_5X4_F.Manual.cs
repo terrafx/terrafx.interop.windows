@@ -45,7 +45,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public D2D_MATRIX_5X4_F([NativeTypeName("FLOAT")] float m11, [NativeTypeName("FLOAT")] float m12, [NativeTypeName("FLOAT")] float m13, [NativeTypeName("FLOAT")] float m14, [NativeTypeName("FLOAT")] float m21, [NativeTypeName("FLOAT")] float m22, [NativeTypeName("FLOAT")] float m23, [NativeTypeName("FLOAT")] float m24, [NativeTypeName("FLOAT")] float m31, [NativeTypeName("FLOAT")] float m32, [NativeTypeName("FLOAT")] float m33, [NativeTypeName("FLOAT")] float m34, [NativeTypeName("FLOAT")] float m41, [NativeTypeName("FLOAT")] float m42, [NativeTypeName("FLOAT")] float m43, [NativeTypeName("FLOAT")] float m44, [NativeTypeName("FLOAT")] float m51, [NativeTypeName("FLOAT")] float m52, [NativeTypeName("FLOAT")] float m53, [NativeTypeName("FLOAT")] float m54)
+        public D2D_MATRIX_5X4_F(float m11, float m12, float m13, float m14, float m21, float m22, float m23, float m24, float m31, float m32, float m33, float m34, float m41, float m42, float m43, float m44, float m51, float m52, float m53, float m54)
         {
             this = default;
 

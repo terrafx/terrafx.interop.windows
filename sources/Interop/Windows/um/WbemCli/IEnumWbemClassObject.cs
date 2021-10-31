@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IEnumWbemClassObject*, Guid*, void**, int>)(lpVtbl[0]))((IEnumWbemClassObject*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,40 +41,35 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int Reset()
+        public HRESULT Reset()
         {
             return ((delegate* unmanaged<IEnumWbemClassObject*, int>)(lpVtbl[3]))((IEnumWbemClassObject*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int Next([NativeTypeName("long")] int lTimeout, [NativeTypeName("ULONG")] uint uCount, IWbemClassObject** apObjects, [NativeTypeName("ULONG *")] uint* puReturned)
+        public HRESULT Next([NativeTypeName("long")] int lTimeout, [NativeTypeName("ULONG")] uint uCount, IWbemClassObject** apObjects, [NativeTypeName("ULONG *")] uint* puReturned)
         {
             return ((delegate* unmanaged<IEnumWbemClassObject*, int, uint, IWbemClassObject**, uint*, int>)(lpVtbl[4]))((IEnumWbemClassObject*)Unsafe.AsPointer(ref this), lTimeout, uCount, apObjects, puReturned);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int NextAsync([NativeTypeName("ULONG")] uint uCount, IWbemObjectSink* pSink)
+        public HRESULT NextAsync([NativeTypeName("ULONG")] uint uCount, IWbemObjectSink* pSink)
         {
             return ((delegate* unmanaged<IEnumWbemClassObject*, uint, IWbemObjectSink*, int>)(lpVtbl[5]))((IEnumWbemClassObject*)Unsafe.AsPointer(ref this), uCount, pSink);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int Clone(IEnumWbemClassObject** ppEnum)
+        public HRESULT Clone(IEnumWbemClassObject** ppEnum)
         {
             return ((delegate* unmanaged<IEnumWbemClassObject*, IEnumWbemClassObject**, int>)(lpVtbl[6]))((IEnumWbemClassObject*)Unsafe.AsPointer(ref this), ppEnum);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        [return: NativeTypeName("HRESULT")]
-        public int Skip([NativeTypeName("long")] int lTimeout, [NativeTypeName("ULONG")] uint nCount)
+        public HRESULT Skip([NativeTypeName("long")] int lTimeout, [NativeTypeName("ULONG")] uint nCount)
         {
             return ((delegate* unmanaged<IEnumWbemClassObject*, int, uint, int>)(lpVtbl[7]))((IEnumWbemClassObject*)Unsafe.AsPointer(ref this), lTimeout, nCount);
         }

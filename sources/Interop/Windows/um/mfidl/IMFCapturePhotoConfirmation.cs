@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IMFCapturePhotoConfirmation*, Guid*, void**, int>)(lpVtbl[0]))((IMFCapturePhotoConfirmation*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,24 +41,21 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetPhotoConfirmationCallback(IMFAsyncCallback* pNotificationCallback)
+        public HRESULT SetPhotoConfirmationCallback(IMFAsyncCallback* pNotificationCallback)
         {
             return ((delegate* unmanaged<IMFCapturePhotoConfirmation*, IMFAsyncCallback*, int>)(lpVtbl[3]))((IMFCapturePhotoConfirmation*)Unsafe.AsPointer(ref this), pNotificationCallback);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetPixelFormat([NativeTypeName("GUID")] Guid subtype)
+        public HRESULT SetPixelFormat(Guid subtype)
         {
             return ((delegate* unmanaged<IMFCapturePhotoConfirmation*, Guid, int>)(lpVtbl[4]))((IMFCapturePhotoConfirmation*)Unsafe.AsPointer(ref this), subtype);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetPixelFormat([NativeTypeName("GUID *")] Guid* subtype)
+        public HRESULT GetPixelFormat(Guid* subtype)
         {
             return ((delegate* unmanaged<IMFCapturePhotoConfirmation*, Guid*, int>)(lpVtbl[5]))((IMFCapturePhotoConfirmation*)Unsafe.AsPointer(ref this), subtype);
         }

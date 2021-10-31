@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IMFPMPHost*, Guid*, void**, int>)(lpVtbl[0]))((IMFPMPHost*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,24 +41,21 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int LockProcess()
+        public HRESULT LockProcess()
         {
             return ((delegate* unmanaged<IMFPMPHost*, int>)(lpVtbl[3]))((IMFPMPHost*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int UnlockProcess()
+        public HRESULT UnlockProcess()
         {
             return ((delegate* unmanaged<IMFPMPHost*, int>)(lpVtbl[4]))((IMFPMPHost*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int CreateObjectByCLSID([NativeTypeName("const IID &")] Guid* clsid, IStream* pStream, [NativeTypeName("const IID &")] Guid* riid, void** ppv)
+        public HRESULT CreateObjectByCLSID([NativeTypeName("const IID &")] Guid* clsid, IStream* pStream, [NativeTypeName("const IID &")] Guid* riid, void** ppv)
         {
             return ((delegate* unmanaged<IMFPMPHost*, Guid*, IStream*, Guid*, void**, int>)(lpVtbl[5]))((IMFPMPHost*)Unsafe.AsPointer(ref this), clsid, pStream, riid, ppv);
         }

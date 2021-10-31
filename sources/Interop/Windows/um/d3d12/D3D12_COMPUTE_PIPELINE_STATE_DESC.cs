@@ -11,7 +11,6 @@ namespace TerraFX.Interop
 
         public D3D12_SHADER_BYTECODE CS;
 
-        [NativeTypeName("UINT")]
         public uint NodeMask;
 
         public D3D12_CACHED_PIPELINE_STATE CachedPSO;

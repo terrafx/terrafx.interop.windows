@@ -7,16 +7,13 @@ namespace TerraFX.Interop
 {
     public partial struct INPUT_INJECTION_VALUE
     {
-        [NativeTypeName("USHORT")]
         public ushort page;
 
-        [NativeTypeName("USHORT")]
         public ushort usage;
 
         [NativeTypeName("INT32")]
         public int value;
 
-        [NativeTypeName("USHORT")]
         public ushort index;
     }
 }

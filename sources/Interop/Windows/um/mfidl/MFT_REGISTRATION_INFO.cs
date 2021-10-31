@@ -12,7 +12,6 @@ namespace TerraFX.Interop
         [NativeTypeName("CLSID")]
         public Guid clsid;
 
-        [NativeTypeName("GUID")]
         public Guid guidCategory;
 
         [NativeTypeName("UINT32")]

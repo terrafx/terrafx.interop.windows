@@ -7,8 +7,7 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct APPX_PACKAGE_SETTINGS
     {
-        [NativeTypeName("BOOL")]
-        public int forceZip32;
+        public BOOL forceZip32;
 
         public IUri* hashMethod;
     }

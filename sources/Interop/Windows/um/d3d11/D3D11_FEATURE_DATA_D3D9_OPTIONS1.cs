@@ -7,16 +7,12 @@ namespace TerraFX.Interop
 {
     public partial struct D3D11_FEATURE_DATA_D3D9_OPTIONS1
     {
-        [NativeTypeName("BOOL")]
-        public int FullNonPow2TextureSupported;
+        public BOOL FullNonPow2TextureSupported;
 
-        [NativeTypeName("BOOL")]
-        public int DepthAsTextureWithLessEqualComparisonFilterSupported;
+        public BOOL DepthAsTextureWithLessEqualComparisonFilterSupported;
 
-        [NativeTypeName("BOOL")]
-        public int SimpleInstancingSupported;
+        public BOOL SimpleInstancingSupported;
 
-        [NativeTypeName("BOOL")]
-        public int TextureCubeFaceRenderTargetWithNonCubeDepthStencilSupported;
+        public BOOL TextureCubeFaceRenderTargetWithNonCubeDepthStencilSupported;
     }
 }

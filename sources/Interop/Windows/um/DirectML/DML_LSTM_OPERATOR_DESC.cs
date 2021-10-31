@@ -40,7 +40,6 @@ namespace TerraFX.Interop
         [NativeTypeName("const DML_TENSOR_DESC *")]
         public DML_TENSOR_DESC* OutputCellSingleTensor;
 
-        [NativeTypeName("UINT")]
         public uint ActivationDescCount;
 
         [NativeTypeName("const DML_OPERATOR_DESC *")]
@@ -50,10 +49,8 @@ namespace TerraFX.Interop
 
         public float ClipThreshold;
 
-        [NativeTypeName("BOOL")]
-        public int UseClipThreshold;
+        public BOOL UseClipThreshold;
 
-        [NativeTypeName("BOOL")]
-        public int CoupleInputForget;
+        public BOOL CoupleInputForget;
     }
 }

@@ -7,14 +7,12 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct D3D11_KEY_EXCHANGE_HW_PROTECTION_DATA
     {
-        [NativeTypeName("UINT")]
         public uint HWProtectionFunctionID;
 
         public D3D11_KEY_EXCHANGE_HW_PROTECTION_INPUT_DATA* pInputData;
 
         public D3D11_KEY_EXCHANGE_HW_PROTECTION_OUTPUT_DATA* pOutputData;
 
-        [NativeTypeName("HRESULT")]
-        public int Status;
+        public HRESULT Status;
     }
 }

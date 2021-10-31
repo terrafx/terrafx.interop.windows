@@ -10,10 +10,8 @@ namespace TerraFX.Interop
         [NativeTypeName("SIZE_T")]
         public nuint cmsg_len;
 
-        [NativeTypeName("INT")]
         public int cmsg_level;
 
-        [NativeTypeName("INT")]
         public int cmsg_type;
     }
 }

@@ -50,7 +50,6 @@ namespace TerraFX.Interop
         [NativeTypeName("const SPPHRASEREPLACEMENT *")]
         public SPPHRASEREPLACEMENT* pReplacements;
 
-        [NativeTypeName("GUID")]
         public Guid SREngineID;
 
         [NativeTypeName("ULONG")]

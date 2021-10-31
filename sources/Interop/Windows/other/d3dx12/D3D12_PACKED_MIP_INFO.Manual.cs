@@ -7,7 +7,7 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct D3D12_PACKED_MIP_INFO
     {
-        public D3D12_PACKED_MIP_INFO([NativeTypeName("UINT8")] byte numStandardMips, [NativeTypeName("UINT8")] byte numPackedMips, [NativeTypeName("UINT")] uint numTilesForPackedMips, [NativeTypeName("UINT")] uint startTileIndexInOverallResource)
+        public D3D12_PACKED_MIP_INFO([NativeTypeName("UINT8")] byte numStandardMips, [NativeTypeName("UINT8")] byte numPackedMips, uint numTilesForPackedMips, uint startTileIndexInOverallResource)
         {
             NumStandardMips = numStandardMips;
             NumPackedMips = numPackedMips;

@@ -34,7 +34,6 @@ namespace TerraFX.Interop
         [NativeTypeName("BOOLEAN")]
         public byte AcceleratedTransfer;
 
-        [NativeTypeName("BYTE")]
         public byte BusType;
 
         [NativeTypeName("WORD")]
@@ -43,10 +42,8 @@ namespace TerraFX.Interop
         [NativeTypeName("WORD")]
         public ushort BusMinorVersion;
 
-        [NativeTypeName("BYTE")]
         public byte SrbType;
 
-        [NativeTypeName("BYTE")]
         public byte AddressType;
     }
 }

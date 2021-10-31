@@ -20,7 +20,6 @@ namespace TerraFX.Interop
 
         public WS_XML_ATTRIBUTE** attributes;
 
-        [NativeTypeName("BOOL")]
-        public int isEmpty;
+        public BOOL isEmpty;
     }
 }

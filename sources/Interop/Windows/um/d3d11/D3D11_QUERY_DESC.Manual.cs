@@ -7,7 +7,7 @@ namespace TerraFX.Interop
 {
     public partial struct D3D11_QUERY_DESC
     {
-        public D3D11_QUERY_DESC(D3D11_QUERY query, [NativeTypeName("UINT")] uint miscFlags = 0)
+        public D3D11_QUERY_DESC(D3D11_QUERY query, uint miscFlags = 0)
         {
             Query = query;
             MiscFlags = miscFlags;

@@ -9,7 +9,7 @@ namespace TerraFX.Interop
 {
     public partial struct D2D1_ARC_SEGMENT
     {
-        public D2D1_ARC_SEGMENT([NativeTypeName("const D2D1_POINT_2F &")] in D2D_POINT_2F point, [NativeTypeName("const D2D1_SIZE_F &")] in D2D_SIZE_F size, [NativeTypeName("FLOAT")] float rotationAngle, D2D1_SWEEP_DIRECTION sweepDirection, D2D1_ARC_SIZE arcSize)
+        public D2D1_ARC_SEGMENT([NativeTypeName("const D2D1_POINT_2F &")] in D2D_POINT_2F point, [NativeTypeName("const D2D1_SIZE_F &")] in D2D_SIZE_F size, float rotationAngle, D2D1_SWEEP_DIRECTION sweepDirection, D2D1_ARC_SIZE arcSize)
         {
             this = ArcSegment(point, size, rotationAngle, sweepDirection, arcSize);
         }

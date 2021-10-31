@@ -9,7 +9,6 @@ namespace TerraFX.Interop
 {
     public partial struct PARTITION_INFORMATION_MBR
     {
-        [NativeTypeName("BYTE")]
         public byte PartitionType;
 
         [NativeTypeName("BOOLEAN")]
@@ -21,7 +20,6 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint HiddenSectors;
 
-        [NativeTypeName("GUID")]
         public Guid PartitionId;
     }
 }

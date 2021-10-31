@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IKsJackDescription2*, Guid*, void**, int>)(lpVtbl[0]))((IKsJackDescription2*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,16 +41,14 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetJackCount([NativeTypeName("UINT *")] uint* pcJacks)
+        public HRESULT GetJackCount(uint* pcJacks)
         {
             return ((delegate* unmanaged<IKsJackDescription2*, uint*, int>)(lpVtbl[3]))((IKsJackDescription2*)Unsafe.AsPointer(ref this), pcJacks);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetJackDescription2([NativeTypeName("UINT")] uint nJack, KSJACK_DESCRIPTION2* pDescription2)
+        public HRESULT GetJackDescription2(uint nJack, KSJACK_DESCRIPTION2* pDescription2)
         {
             return ((delegate* unmanaged<IKsJackDescription2*, uint, KSJACK_DESCRIPTION2*, int>)(lpVtbl[4]))((IKsJackDescription2*)Unsafe.AsPointer(ref this), nJack, pDescription2);
         }

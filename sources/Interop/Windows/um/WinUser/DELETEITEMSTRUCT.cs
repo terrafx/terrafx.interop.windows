@@ -3,23 +3,17 @@
 // Ported from um/WinUser.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
-
 namespace TerraFX.Interop
 {
     public partial struct DELETEITEMSTRUCT
     {
-        [NativeTypeName("UINT")]
         public uint CtlType;
 
-        [NativeTypeName("UINT")]
         public uint CtlID;
 
-        [NativeTypeName("UINT")]
         public uint itemID;
 
-        [NativeTypeName("HWND")]
-        public IntPtr hwndItem;
+        public HWND hwndItem;
 
         [NativeTypeName("ULONG_PTR")]
         public nuint itemData;

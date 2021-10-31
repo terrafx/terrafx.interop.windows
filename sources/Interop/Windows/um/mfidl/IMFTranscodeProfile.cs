@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IMFTranscodeProfile*, Guid*, void**, int>)(lpVtbl[0]))((IMFTranscodeProfile*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,48 +41,42 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetAudioAttributes(IMFAttributes* pAttrs)
+        public HRESULT SetAudioAttributes(IMFAttributes* pAttrs)
         {
             return ((delegate* unmanaged<IMFTranscodeProfile*, IMFAttributes*, int>)(lpVtbl[3]))((IMFTranscodeProfile*)Unsafe.AsPointer(ref this), pAttrs);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetAudioAttributes(IMFAttributes** ppAttrs)
+        public HRESULT GetAudioAttributes(IMFAttributes** ppAttrs)
         {
             return ((delegate* unmanaged<IMFTranscodeProfile*, IMFAttributes**, int>)(lpVtbl[4]))((IMFTranscodeProfile*)Unsafe.AsPointer(ref this), ppAttrs);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetVideoAttributes(IMFAttributes* pAttrs)
+        public HRESULT SetVideoAttributes(IMFAttributes* pAttrs)
         {
             return ((delegate* unmanaged<IMFTranscodeProfile*, IMFAttributes*, int>)(lpVtbl[5]))((IMFTranscodeProfile*)Unsafe.AsPointer(ref this), pAttrs);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetVideoAttributes(IMFAttributes** ppAttrs)
+        public HRESULT GetVideoAttributes(IMFAttributes** ppAttrs)
         {
             return ((delegate* unmanaged<IMFTranscodeProfile*, IMFAttributes**, int>)(lpVtbl[6]))((IMFTranscodeProfile*)Unsafe.AsPointer(ref this), ppAttrs);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetContainerAttributes(IMFAttributes* pAttrs)
+        public HRESULT SetContainerAttributes(IMFAttributes* pAttrs)
         {
             return ((delegate* unmanaged<IMFTranscodeProfile*, IMFAttributes*, int>)(lpVtbl[7]))((IMFTranscodeProfile*)Unsafe.AsPointer(ref this), pAttrs);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetContainerAttributes(IMFAttributes** ppAttrs)
+        public HRESULT GetContainerAttributes(IMFAttributes** ppAttrs)
         {
             return ((delegate* unmanaged<IMFTranscodeProfile*, IMFAttributes**, int>)(lpVtbl[8]))((IMFTranscodeProfile*)Unsafe.AsPointer(ref this), ppAttrs);
         }

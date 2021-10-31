@@ -7,88 +7,62 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct D3D10_SHADER_DESC
     {
-        [NativeTypeName("UINT")]
         public uint Version;
 
         [NativeTypeName("LPCSTR")]
         public sbyte* Creator;
 
-        [NativeTypeName("UINT")]
         public uint Flags;
 
-        [NativeTypeName("UINT")]
         public uint ConstantBuffers;
 
-        [NativeTypeName("UINT")]
         public uint BoundResources;
 
-        [NativeTypeName("UINT")]
         public uint InputParameters;
 
-        [NativeTypeName("UINT")]
         public uint OutputParameters;
 
-        [NativeTypeName("UINT")]
         public uint InstructionCount;
 
-        [NativeTypeName("UINT")]
         public uint TempRegisterCount;
 
-        [NativeTypeName("UINT")]
         public uint TempArrayCount;
 
-        [NativeTypeName("UINT")]
         public uint DefCount;
 
-        [NativeTypeName("UINT")]
         public uint DclCount;
 
-        [NativeTypeName("UINT")]
         public uint TextureNormalInstructions;
 
-        [NativeTypeName("UINT")]
         public uint TextureLoadInstructions;
 
-        [NativeTypeName("UINT")]
         public uint TextureCompInstructions;
 
-        [NativeTypeName("UINT")]
         public uint TextureBiasInstructions;
 
-        [NativeTypeName("UINT")]
         public uint TextureGradientInstructions;
 
-        [NativeTypeName("UINT")]
         public uint FloatInstructionCount;
 
-        [NativeTypeName("UINT")]
         public uint IntInstructionCount;
 
-        [NativeTypeName("UINT")]
         public uint UintInstructionCount;
 
-        [NativeTypeName("UINT")]
         public uint StaticFlowControlCount;
 
-        [NativeTypeName("UINT")]
         public uint DynamicFlowControlCount;
 
-        [NativeTypeName("UINT")]
         public uint MacroInstructionCount;
 
-        [NativeTypeName("UINT")]
         public uint ArrayInstructionCount;
 
-        [NativeTypeName("UINT")]
         public uint CutInstructionCount;
 
-        [NativeTypeName("UINT")]
         public uint EmitInstructionCount;
 
         [NativeTypeName("D3D10_PRIMITIVE_TOPOLOGY")]
         public D3D_PRIMITIVE_TOPOLOGY GSOutputTopology;
 
-        [NativeTypeName("UINT")]
         public uint GSMaxOutputVertexCount;
     }
 }

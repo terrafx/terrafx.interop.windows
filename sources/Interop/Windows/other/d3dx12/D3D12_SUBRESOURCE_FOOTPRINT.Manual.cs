@@ -9,7 +9,7 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct D3D12_SUBRESOURCE_FOOTPRINT
     {
-        public D3D12_SUBRESOURCE_FOOTPRINT(DXGI_FORMAT format, [NativeTypeName("UINT")] uint width, [NativeTypeName("UINT")] uint height, [NativeTypeName("UINT")] uint depth, [NativeTypeName("UINT")] uint rowPitch)
+        public D3D12_SUBRESOURCE_FOOTPRINT(DXGI_FORMAT format, uint width, uint height, uint depth, uint rowPitch)
         {
             Format = format;
             Width = width;
@@ -18,7 +18,7 @@ namespace TerraFX.Interop
             RowPitch = rowPitch;
         }
 
-        public D3D12_SUBRESOURCE_FOOTPRINT([NativeTypeName("const D3D12_RESOURCE_DESC &")] in D3D12_RESOURCE_DESC resDesc, [NativeTypeName("UINT")] uint rowPitch)
+        public D3D12_SUBRESOURCE_FOOTPRINT([NativeTypeName("const D3D12_RESOURCE_DESC &")] in D3D12_RESOURCE_DESC resDesc, uint rowPitch)
         {
             Format = resDesc.Format;
             Width = (uint)resDesc.Width;

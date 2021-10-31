@@ -17,7 +17,7 @@ namespace TerraFX.Interop
 
         public byte _bitfield1;
 
-        [NativeTypeName("BYTE : 1")]
+        [NativeTypeName("byte : 1")]
         public byte AvailableMappingResourcesValid
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -33,7 +33,7 @@ namespace TerraFX.Interop
             }
         }
 
-        [NativeTypeName("BYTE : 1")]
+        [NativeTypeName("byte : 1")]
         public byte UsedMappingResourcesValid
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -49,7 +49,7 @@ namespace TerraFX.Interop
             }
         }
 
-        [NativeTypeName("BYTE : 6")]
+        [NativeTypeName("byte : 6")]
         public byte Reserved0
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -70,7 +70,7 @@ namespace TerraFX.Interop
 
         public byte _bitfield2;
 
-        [NativeTypeName("BYTE : 2")]
+        [NativeTypeName("byte : 2")]
         public byte AvailableMappingResourcesScope
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -86,7 +86,7 @@ namespace TerraFX.Interop
             }
         }
 
-        [NativeTypeName("BYTE : 2")]
+        [NativeTypeName("byte : 2")]
         public byte UsedMappingResourcesScope
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -102,7 +102,7 @@ namespace TerraFX.Interop
             }
         }
 
-        [NativeTypeName("BYTE : 4")]
+        [NativeTypeName("byte : 4")]
         public byte Reserved2
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]

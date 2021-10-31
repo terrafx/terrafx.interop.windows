@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<ISearchBoxInfo*, Guid*, void**, int>)(lpVtbl[0]))((ISearchBoxInfo*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,16 +41,14 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetCondition([NativeTypeName("const IID &")] Guid* riid, void** ppv)
+        public HRESULT GetCondition([NativeTypeName("const IID &")] Guid* riid, void** ppv)
         {
             return ((delegate* unmanaged<ISearchBoxInfo*, Guid*, void**, int>)(lpVtbl[3]))((ISearchBoxInfo*)Unsafe.AsPointer(ref this), riid, ppv);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetText([NativeTypeName("LPWSTR *")] ushort** ppsz)
+        public HRESULT GetText([NativeTypeName("LPWSTR *")] ushort** ppsz)
         {
             return ((delegate* unmanaged<ISearchBoxInfo*, ushort**, int>)(lpVtbl[4]))((ISearchBoxInfo*)Unsafe.AsPointer(ref this), ppsz);
         }

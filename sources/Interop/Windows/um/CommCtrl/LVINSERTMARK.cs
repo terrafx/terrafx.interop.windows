@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public partial struct LVINSERTMARK
     {
-        [NativeTypeName("UINT")]
         public uint cbSize;
 
         [NativeTypeName("DWORD")]

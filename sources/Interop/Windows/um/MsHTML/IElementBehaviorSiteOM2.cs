@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IElementBehaviorSiteOM2*, Guid*, void**, int>)(lpVtbl[0]))((IElementBehaviorSiteOM2*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,56 +41,49 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int RegisterEvent([NativeTypeName("LPOLESTR")] ushort* pchEvent, [NativeTypeName("LONG")] int lFlags, [NativeTypeName("LONG *")] int* plCookie)
+        public HRESULT RegisterEvent([NativeTypeName("LPOLESTR")] ushort* pchEvent, [NativeTypeName("LONG")] int lFlags, [NativeTypeName("LONG *")] int* plCookie)
         {
             return ((delegate* unmanaged<IElementBehaviorSiteOM2*, ushort*, int, int*, int>)(lpVtbl[3]))((IElementBehaviorSiteOM2*)Unsafe.AsPointer(ref this), pchEvent, lFlags, plCookie);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetEventCookie([NativeTypeName("LPOLESTR")] ushort* pchEvent, [NativeTypeName("LONG *")] int* plCookie)
+        public HRESULT GetEventCookie([NativeTypeName("LPOLESTR")] ushort* pchEvent, [NativeTypeName("LONG *")] int* plCookie)
         {
             return ((delegate* unmanaged<IElementBehaviorSiteOM2*, ushort*, int*, int>)(lpVtbl[4]))((IElementBehaviorSiteOM2*)Unsafe.AsPointer(ref this), pchEvent, plCookie);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int FireEvent([NativeTypeName("LONG")] int lCookie, IHTMLEventObj* pEventObject)
+        public HRESULT FireEvent([NativeTypeName("LONG")] int lCookie, IHTMLEventObj* pEventObject)
         {
             return ((delegate* unmanaged<IElementBehaviorSiteOM2*, int, IHTMLEventObj*, int>)(lpVtbl[5]))((IElementBehaviorSiteOM2*)Unsafe.AsPointer(ref this), lCookie, pEventObject);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int CreateEventObject(IHTMLEventObj** ppEventObject)
+        public HRESULT CreateEventObject(IHTMLEventObj** ppEventObject)
         {
             return ((delegate* unmanaged<IElementBehaviorSiteOM2*, IHTMLEventObj**, int>)(lpVtbl[6]))((IElementBehaviorSiteOM2*)Unsafe.AsPointer(ref this), ppEventObject);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        [return: NativeTypeName("HRESULT")]
-        public int RegisterName([NativeTypeName("LPOLESTR")] ushort* pchName)
+        public HRESULT RegisterName([NativeTypeName("LPOLESTR")] ushort* pchName)
         {
             return ((delegate* unmanaged<IElementBehaviorSiteOM2*, ushort*, int>)(lpVtbl[7]))((IElementBehaviorSiteOM2*)Unsafe.AsPointer(ref this), pchName);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        [return: NativeTypeName("HRESULT")]
-        public int RegisterUrn([NativeTypeName("LPOLESTR")] ushort* pchUrn)
+        public HRESULT RegisterUrn([NativeTypeName("LPOLESTR")] ushort* pchUrn)
         {
             return ((delegate* unmanaged<IElementBehaviorSiteOM2*, ushort*, int>)(lpVtbl[8]))((IElementBehaviorSiteOM2*)Unsafe.AsPointer(ref this), pchUrn);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetDefaults(IHTMLElementDefaults** ppDefaults)
+        public HRESULT GetDefaults(IHTMLElementDefaults** ppDefaults)
         {
             return ((delegate* unmanaged<IElementBehaviorSiteOM2*, IHTMLElementDefaults**, int>)(lpVtbl[9]))((IElementBehaviorSiteOM2*)Unsafe.AsPointer(ref this), ppDefaults);
         }

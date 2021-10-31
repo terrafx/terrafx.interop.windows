@@ -11,7 +11,6 @@ namespace TerraFX.Interop
 
         public DML_TENSOR_FLAGS Flags;
 
-        [NativeTypeName("UINT")]
         public uint DimensionCount;
 
         [NativeTypeName("const UINT *")]
@@ -23,7 +22,6 @@ namespace TerraFX.Interop
         [NativeTypeName("UINT64")]
         public ulong TotalTensorSizeInBytes;
 
-        [NativeTypeName("UINT")]
         public uint GuaranteedBaseOffsetAlignment;
     }
 }

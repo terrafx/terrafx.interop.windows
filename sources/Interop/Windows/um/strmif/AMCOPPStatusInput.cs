@@ -9,10 +9,8 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct AMCOPPStatusInput
     {
-        [NativeTypeName("GUID")]
         public Guid rApp;
 
-        [NativeTypeName("GUID")]
         public Guid guidStatusRequestID;
 
         [NativeTypeName("DWORD")]

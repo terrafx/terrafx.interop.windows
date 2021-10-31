@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public partial struct D2D1_SVG_LENGTH
     {
-        [NativeTypeName("FLOAT")]
         public float value;
 
         public D2D1_SVG_LENGTH_UNITS units;

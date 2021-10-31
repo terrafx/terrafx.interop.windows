@@ -7,10 +7,8 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct LVGROUP
     {
-        [NativeTypeName("UINT")]
         public uint cbSize;
 
-        [NativeTypeName("UINT")]
         public uint mask;
 
         [NativeTypeName("LPWSTR")]
@@ -25,37 +23,30 @@ namespace TerraFX.Interop
 
         public int iGroupId;
 
-        [NativeTypeName("UINT")]
         public uint stateMask;
 
-        [NativeTypeName("UINT")]
         public uint state;
 
-        [NativeTypeName("UINT")]
         public uint uAlign;
 
         [NativeTypeName("LPWSTR")]
         public ushort* pszSubtitle;
 
-        [NativeTypeName("UINT")]
         public uint cchSubtitle;
 
         [NativeTypeName("LPWSTR")]
         public ushort* pszTask;
 
-        [NativeTypeName("UINT")]
         public uint cchTask;
 
         [NativeTypeName("LPWSTR")]
         public ushort* pszDescriptionTop;
 
-        [NativeTypeName("UINT")]
         public uint cchDescriptionTop;
 
         [NativeTypeName("LPWSTR")]
         public ushort* pszDescriptionBottom;
 
-        [NativeTypeName("UINT")]
         public uint cchDescriptionBottom;
 
         public int iTitleImage;
@@ -64,13 +55,11 @@ namespace TerraFX.Interop
 
         public int iFirstItem;
 
-        [NativeTypeName("UINT")]
         public uint cItems;
 
         [NativeTypeName("LPWSTR")]
         public ushort* pszSubsetTitle;
 
-        [NativeTypeName("UINT")]
         public uint cchSubsetTitle;
     }
 }

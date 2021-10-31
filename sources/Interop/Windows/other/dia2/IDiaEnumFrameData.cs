@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IDiaEnumFrameData*, Guid*, void**, int>)(lpVtbl[0]))((IDiaEnumFrameData*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,72 +41,63 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int get__NewEnum(IUnknown** pRetVal)
+        public HRESULT get__NewEnum(IUnknown** pRetVal)
         {
             return ((delegate* unmanaged<IDiaEnumFrameData*, IUnknown**, int>)(lpVtbl[3]))((IDiaEnumFrameData*)Unsafe.AsPointer(ref this), pRetVal);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int get_Count([NativeTypeName("LONG *")] int* pRetVal)
+        public HRESULT get_Count([NativeTypeName("LONG *")] int* pRetVal)
         {
             return ((delegate* unmanaged<IDiaEnumFrameData*, int*, int>)(lpVtbl[4]))((IDiaEnumFrameData*)Unsafe.AsPointer(ref this), pRetVal);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int Item([NativeTypeName("DWORD")] uint index, IDiaFrameData** frame)
+        public HRESULT Item([NativeTypeName("DWORD")] uint index, IDiaFrameData** frame)
         {
             return ((delegate* unmanaged<IDiaEnumFrameData*, uint, IDiaFrameData**, int>)(lpVtbl[5]))((IDiaEnumFrameData*)Unsafe.AsPointer(ref this), index, frame);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int Next([NativeTypeName("ULONG")] uint celt, IDiaFrameData** rgelt, [NativeTypeName("ULONG *")] uint* pceltFetched)
+        public HRESULT Next([NativeTypeName("ULONG")] uint celt, IDiaFrameData** rgelt, [NativeTypeName("ULONG *")] uint* pceltFetched)
         {
             return ((delegate* unmanaged<IDiaEnumFrameData*, uint, IDiaFrameData**, uint*, int>)(lpVtbl[6]))((IDiaEnumFrameData*)Unsafe.AsPointer(ref this), celt, rgelt, pceltFetched);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        [return: NativeTypeName("HRESULT")]
-        public int Skip([NativeTypeName("ULONG")] uint celt)
+        public HRESULT Skip([NativeTypeName("ULONG")] uint celt)
         {
             return ((delegate* unmanaged<IDiaEnumFrameData*, uint, int>)(lpVtbl[7]))((IDiaEnumFrameData*)Unsafe.AsPointer(ref this), celt);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        [return: NativeTypeName("HRESULT")]
-        public int Reset()
+        public HRESULT Reset()
         {
             return ((delegate* unmanaged<IDiaEnumFrameData*, int>)(lpVtbl[8]))((IDiaEnumFrameData*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        [return: NativeTypeName("HRESULT")]
-        public int Clone(IDiaEnumFrameData** ppenum)
+        public HRESULT Clone(IDiaEnumFrameData** ppenum)
         {
             return ((delegate* unmanaged<IDiaEnumFrameData*, IDiaEnumFrameData**, int>)(lpVtbl[9]))((IDiaEnumFrameData*)Unsafe.AsPointer(ref this), ppenum);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(10)]
-        [return: NativeTypeName("HRESULT")]
-        public int frameByRVA([NativeTypeName("DWORD")] uint relativeVirtualAddress, IDiaFrameData** frame)
+        public HRESULT frameByRVA([NativeTypeName("DWORD")] uint relativeVirtualAddress, IDiaFrameData** frame)
         {
             return ((delegate* unmanaged<IDiaEnumFrameData*, uint, IDiaFrameData**, int>)(lpVtbl[10]))((IDiaEnumFrameData*)Unsafe.AsPointer(ref this), relativeVirtualAddress, frame);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(11)]
-        [return: NativeTypeName("HRESULT")]
-        public int frameByVA([NativeTypeName("ULONGLONG")] ulong virtualAddress, IDiaFrameData** frame)
+        public HRESULT frameByVA([NativeTypeName("ULONGLONG")] ulong virtualAddress, IDiaFrameData** frame)
         {
             return ((delegate* unmanaged<IDiaEnumFrameData*, ulong, IDiaFrameData**, int>)(lpVtbl[11]))((IDiaEnumFrameData*)Unsafe.AsPointer(ref this), virtualAddress, frame);
         }

@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<ITranscodeImage*, Guid*, void**, int>)(lpVtbl[0]))((ITranscodeImage*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,8 +41,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int TranscodeImage(IShellItem* pShellItem, [NativeTypeName("UINT")] uint uiMaxWidth, [NativeTypeName("UINT")] uint uiMaxHeight, [NativeTypeName("DWORD")] uint flags, IStream* pvImage, [NativeTypeName("UINT *")] uint* puiWidth, [NativeTypeName("UINT *")] uint* puiHeight)
+        public HRESULT TranscodeImage(IShellItem* pShellItem, uint uiMaxWidth, uint uiMaxHeight, [NativeTypeName("DWORD")] uint flags, IStream* pvImage, uint* puiWidth, uint* puiHeight)
         {
             return ((delegate* unmanaged<ITranscodeImage*, IShellItem*, uint, uint, uint, IStream*, uint*, uint*, int>)(lpVtbl[3]))((ITranscodeImage*)Unsafe.AsPointer(ref this), pShellItem, uiMaxWidth, uiMaxHeight, flags, pvImage, puiWidth, puiHeight);
         }

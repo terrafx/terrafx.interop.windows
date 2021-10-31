@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IAsyncManager*, Guid*, void**, int>)(lpVtbl[0]))((IAsyncManager*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,24 +41,21 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int CompleteCall([NativeTypeName("HRESULT")] int Result)
+        public HRESULT CompleteCall(HRESULT Result)
         {
-            return ((delegate* unmanaged<IAsyncManager*, int, int>)(lpVtbl[3]))((IAsyncManager*)Unsafe.AsPointer(ref this), Result);
+            return ((delegate* unmanaged<IAsyncManager*, HRESULT, int>)(lpVtbl[3]))((IAsyncManager*)Unsafe.AsPointer(ref this), Result);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetCallContext([NativeTypeName("const IID &")] Guid* riid, void** pInterface)
+        public HRESULT GetCallContext([NativeTypeName("const IID &")] Guid* riid, void** pInterface)
         {
             return ((delegate* unmanaged<IAsyncManager*, Guid*, void**, int>)(lpVtbl[4]))((IAsyncManager*)Unsafe.AsPointer(ref this), riid, pInterface);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetState([NativeTypeName("ULONG *")] uint* pulStateFlags)
+        public HRESULT GetState([NativeTypeName("ULONG *")] uint* pulStateFlags)
         {
             return ((delegate* unmanaged<IAsyncManager*, uint*, int>)(lpVtbl[5]))((IAsyncManager*)Unsafe.AsPointer(ref this), pulStateFlags);
         }

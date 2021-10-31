@@ -3,14 +3,11 @@
 // Ported from um/winioctl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
-
 namespace TerraFX.Interop
 {
     public partial struct TXFS_SAVEPOINT_INFORMATION
     {
-        [NativeTypeName("HANDLE")]
-        public IntPtr KtmTransaction;
+        public HANDLE KtmTransaction;
 
         [NativeTypeName("DWORD")]
         public uint ActionCode;

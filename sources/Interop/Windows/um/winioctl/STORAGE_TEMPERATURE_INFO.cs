@@ -10,13 +10,10 @@ namespace TerraFX.Interop
         [NativeTypeName("WORD")]
         public ushort Index;
 
-        [NativeTypeName("SHORT")]
         public short Temperature;
 
-        [NativeTypeName("SHORT")]
         public short OverThreshold;
 
-        [NativeTypeName("SHORT")]
         public short UnderThreshold;
 
         [NativeTypeName("BOOLEAN")]
@@ -28,7 +25,6 @@ namespace TerraFX.Interop
         [NativeTypeName("BOOLEAN")]
         public byte EventGenerated;
 
-        [NativeTypeName("BYTE")]
         public byte Reserved0;
 
         [NativeTypeName("DWORD")]

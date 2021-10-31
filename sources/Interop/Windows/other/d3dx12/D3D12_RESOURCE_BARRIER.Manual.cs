@@ -11,7 +11,7 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct D3D12_RESOURCE_BARRIER
     {
-        public static D3D12_RESOURCE_BARRIER InitTransition([NativeTypeName("ID3D12Resource *")] ID3D12Resource* pResource, D3D12_RESOURCE_STATES stateBefore, D3D12_RESOURCE_STATES stateAfter, [NativeTypeName("UINT")] uint subresource = D3D12_RESOURCE_BARRIER_ALL_SUBRESOURCES, D3D12_RESOURCE_BARRIER_FLAGS flags = D3D12_RESOURCE_BARRIER_FLAG_NONE)
+        public static D3D12_RESOURCE_BARRIER InitTransition(ID3D12Resource* pResource, D3D12_RESOURCE_STATES stateBefore, D3D12_RESOURCE_STATES stateAfter, uint subresource = D3D12_RESOURCE_BARRIER_ALL_SUBRESOURCES, D3D12_RESOURCE_BARRIER_FLAGS flags = D3D12_RESOURCE_BARRIER_FLAG_NONE)
         {
             D3D12_RESOURCE_BARRIER result = default;
             result.Type = D3D12_RESOURCE_BARRIER_TYPE_TRANSITION;
@@ -23,7 +23,7 @@ namespace TerraFX.Interop
             return result;
         }
 
-        public static D3D12_RESOURCE_BARRIER InitAliasing([NativeTypeName("ID3D12Resource *")] ID3D12Resource* pResourceBefore, [NativeTypeName("ID3D12Resource *")] ID3D12Resource* pResourceAfter)
+        public static D3D12_RESOURCE_BARRIER InitAliasing(ID3D12Resource* pResourceBefore, ID3D12Resource* pResourceAfter)
         {
             D3D12_RESOURCE_BARRIER result = default;
             result.Type = D3D12_RESOURCE_BARRIER_TYPE_ALIASING;
@@ -32,7 +32,7 @@ namespace TerraFX.Interop
             return result;
         }
 
-        public static D3D12_RESOURCE_BARRIER InitUAV([NativeTypeName("ID3D12Resource *")] ID3D12Resource* pResource)
+        public static D3D12_RESOURCE_BARRIER InitUAV(ID3D12Resource* pResource)
         {
             D3D12_RESOURCE_BARRIER result = default;
             result.Type = D3D12_RESOURCE_BARRIER_TYPE_UAV;

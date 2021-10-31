@@ -9,7 +9,6 @@ namespace TerraFX.Interop
     {
         public ID3D12Resource* pTexture2D;
 
-        [NativeTypeName("UINT")]
         public uint Subresource;
     }
 }

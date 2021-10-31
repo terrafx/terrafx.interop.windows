@@ -15,7 +15,6 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint Size;
 
-        [NativeTypeName("GUID")]
         public Guid DeviceGuid;
 
         [NativeTypeName("DWORD")]

@@ -7,10 +7,8 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct SID
     {
-        [NativeTypeName("BYTE")]
         public byte Revision;
 
-        [NativeTypeName("BYTE")]
         public byte SubAuthorityCount;
 
         public SID_IDENTIFIER_AUTHORITY IdentifierAuthority;

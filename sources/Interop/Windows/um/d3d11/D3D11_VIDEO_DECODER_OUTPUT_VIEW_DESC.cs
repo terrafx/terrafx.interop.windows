@@ -11,7 +11,6 @@ namespace TerraFX.Interop
 {
     public partial struct D3D11_VIDEO_DECODER_OUTPUT_VIEW_DESC
     {
-        [NativeTypeName("GUID")]
         public Guid DecodeProfile;
 
         public D3D11_VDOV_DIMENSION ViewDimension;

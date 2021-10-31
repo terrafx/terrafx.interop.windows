@@ -22,10 +22,8 @@ namespace TerraFX.Interop
         [NativeTypeName("WORD")]
         public ushort Type;
 
-        [NativeTypeName("BYTE")]
         public byte StorageClass;
 
-        [NativeTypeName("BYTE")]
         public byte NumberOfAuxSymbols;
 
         [StructLayout(LayoutKind.Explicit, Pack = 2)]

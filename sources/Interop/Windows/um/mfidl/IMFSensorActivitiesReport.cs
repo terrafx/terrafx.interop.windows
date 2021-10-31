@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IMFSensorActivitiesReport*, Guid*, void**, int>)(lpVtbl[0]))((IMFSensorActivitiesReport*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,24 +41,21 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetCount([NativeTypeName("ULONG *")] uint* pcCount)
+        public HRESULT GetCount([NativeTypeName("ULONG *")] uint* pcCount)
         {
             return ((delegate* unmanaged<IMFSensorActivitiesReport*, uint*, int>)(lpVtbl[3]))((IMFSensorActivitiesReport*)Unsafe.AsPointer(ref this), pcCount);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetActivityReport([NativeTypeName("ULONG")] uint Index, IMFSensorActivityReport** sensorActivityReport)
+        public HRESULT GetActivityReport([NativeTypeName("ULONG")] uint Index, IMFSensorActivityReport** sensorActivityReport)
         {
             return ((delegate* unmanaged<IMFSensorActivitiesReport*, uint, IMFSensorActivityReport**, int>)(lpVtbl[4]))((IMFSensorActivitiesReport*)Unsafe.AsPointer(ref this), Index, sensorActivityReport);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetActivityReportByDeviceName([NativeTypeName("LPCWSTR")] ushort* SymbolicName, IMFSensorActivityReport** sensorActivityReport)
+        public HRESULT GetActivityReportByDeviceName([NativeTypeName("LPCWSTR")] ushort* SymbolicName, IMFSensorActivityReport** sensorActivityReport)
         {
             return ((delegate* unmanaged<IMFSensorActivitiesReport*, ushort*, IMFSensorActivityReport**, int>)(lpVtbl[5]))((IMFSensorActivitiesReport*)Unsafe.AsPointer(ref this), SymbolicName, sensorActivityReport);
         }

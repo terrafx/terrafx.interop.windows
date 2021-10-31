@@ -13,7 +13,6 @@ namespace TerraFX.Interop
 
         public D3D12_VIDEO_PROCESS_ALPHA_FILL_MODE AlphaFillMode;
 
-        [NativeTypeName("UINT")]
         public uint AlphaFillModeSourceStreamIndex;
 
         [NativeTypeName("FLOAT [4]")]
@@ -21,7 +20,6 @@ namespace TerraFX.Interop
 
         public DXGI_RATIONAL FrameRate;
 
-        [NativeTypeName("BOOL")]
-        public int EnableStereo;
+        public BOOL EnableStereo;
     }
 }

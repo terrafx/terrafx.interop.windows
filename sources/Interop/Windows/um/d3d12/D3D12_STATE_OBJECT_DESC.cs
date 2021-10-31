@@ -9,7 +9,6 @@ namespace TerraFX.Interop
     {
         public D3D12_STATE_OBJECT_TYPE Type;
 
-        [NativeTypeName("UINT")]
         public uint NumSubobjects;
 
         [NativeTypeName("const D3D12_STATE_SUBOBJECT *")]

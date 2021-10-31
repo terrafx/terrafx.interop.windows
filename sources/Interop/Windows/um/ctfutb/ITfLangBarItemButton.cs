@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<ITfLangBarItemButton*, Guid*, void**, int>)(lpVtbl[0]))((ITfLangBarItemButton*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,72 +41,63 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetInfo(TF_LANGBARITEMINFO* pInfo)
+        public HRESULT GetInfo(TF_LANGBARITEMINFO* pInfo)
         {
             return ((delegate* unmanaged<ITfLangBarItemButton*, TF_LANGBARITEMINFO*, int>)(lpVtbl[3]))((ITfLangBarItemButton*)Unsafe.AsPointer(ref this), pInfo);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetStatus([NativeTypeName("DWORD *")] uint* pdwStatus)
+        public HRESULT GetStatus([NativeTypeName("DWORD *")] uint* pdwStatus)
         {
             return ((delegate* unmanaged<ITfLangBarItemButton*, uint*, int>)(lpVtbl[4]))((ITfLangBarItemButton*)Unsafe.AsPointer(ref this), pdwStatus);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int Show([NativeTypeName("BOOL")] int fShow)
+        public HRESULT Show(BOOL fShow)
         {
-            return ((delegate* unmanaged<ITfLangBarItemButton*, int, int>)(lpVtbl[5]))((ITfLangBarItemButton*)Unsafe.AsPointer(ref this), fShow);
+            return ((delegate* unmanaged<ITfLangBarItemButton*, BOOL, int>)(lpVtbl[5]))((ITfLangBarItemButton*)Unsafe.AsPointer(ref this), fShow);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetTooltipString([NativeTypeName("BSTR *")] ushort** pbstrToolTip)
+        public HRESULT GetTooltipString([NativeTypeName("BSTR *")] ushort** pbstrToolTip)
         {
             return ((delegate* unmanaged<ITfLangBarItemButton*, ushort**, int>)(lpVtbl[6]))((ITfLangBarItemButton*)Unsafe.AsPointer(ref this), pbstrToolTip);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        [return: NativeTypeName("HRESULT")]
-        public int OnClick(TfLBIClick click, POINT pt, [NativeTypeName("const RECT *")] RECT* prcArea)
+        public HRESULT OnClick(TfLBIClick click, POINT pt, [NativeTypeName("const RECT *")] RECT* prcArea)
         {
             return ((delegate* unmanaged<ITfLangBarItemButton*, TfLBIClick, POINT, RECT*, int>)(lpVtbl[7]))((ITfLangBarItemButton*)Unsafe.AsPointer(ref this), click, pt, prcArea);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        [return: NativeTypeName("HRESULT")]
-        public int InitMenu(ITfMenu* pMenu)
+        public HRESULT InitMenu(ITfMenu* pMenu)
         {
             return ((delegate* unmanaged<ITfLangBarItemButton*, ITfMenu*, int>)(lpVtbl[8]))((ITfLangBarItemButton*)Unsafe.AsPointer(ref this), pMenu);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        [return: NativeTypeName("HRESULT")]
-        public int OnMenuSelect([NativeTypeName("UINT")] uint wID)
+        public HRESULT OnMenuSelect(uint wID)
         {
             return ((delegate* unmanaged<ITfLangBarItemButton*, uint, int>)(lpVtbl[9]))((ITfLangBarItemButton*)Unsafe.AsPointer(ref this), wID);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(10)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetIcon([NativeTypeName("HICON *")] IntPtr* phIcon)
+        public HRESULT GetIcon(HICON* phIcon)
         {
-            return ((delegate* unmanaged<ITfLangBarItemButton*, IntPtr*, int>)(lpVtbl[10]))((ITfLangBarItemButton*)Unsafe.AsPointer(ref this), phIcon);
+            return ((delegate* unmanaged<ITfLangBarItemButton*, HICON*, int>)(lpVtbl[10]))((ITfLangBarItemButton*)Unsafe.AsPointer(ref this), phIcon);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(11)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetText([NativeTypeName("BSTR *")] ushort** pbstrText)
+        public HRESULT GetText([NativeTypeName("BSTR *")] ushort** pbstrText)
         {
             return ((delegate* unmanaged<ITfLangBarItemButton*, ushort**, int>)(lpVtbl[11]))((ITfLangBarItemButton*)Unsafe.AsPointer(ref this), pbstrText);
         }

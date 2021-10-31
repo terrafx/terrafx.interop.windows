@@ -34,7 +34,6 @@ namespace TerraFX.Interop
 
             public partial struct _Anonymous_e__Struct
             {
-                [NativeTypeName("GUID")]
                 public Guid Set;
 
                 [NativeTypeName("ULONG")]

@@ -7,14 +7,11 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct MFNetCredentialManagerGetParam
     {
-        [NativeTypeName("HRESULT")]
-        public int hrOp;
+        public HRESULT hrOp;
 
-        [NativeTypeName("BOOL")]
-        public int fAllowLoggedOnUser;
+        public BOOL fAllowLoggedOnUser;
 
-        [NativeTypeName("BOOL")]
-        public int fClearTextPackage;
+        public BOOL fClearTextPackage;
 
         [NativeTypeName("LPCWSTR")]
         public ushort* pszUrl;

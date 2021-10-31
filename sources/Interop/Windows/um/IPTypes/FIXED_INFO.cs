@@ -18,19 +18,15 @@ namespace TerraFX.Interop
 
         public IP_ADDR_STRING DnsServerList;
 
-        [NativeTypeName("UINT")]
         public uint NodeType;
 
         [NativeTypeName("char [260]")]
         public fixed sbyte ScopeId[260];
 
-        [NativeTypeName("UINT")]
         public uint EnableRouting;
 
-        [NativeTypeName("UINT")]
         public uint EnableProxy;
 
-        [NativeTypeName("UINT")]
         public uint EnableDns;
     }
 }

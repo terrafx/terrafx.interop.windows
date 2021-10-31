@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<ILaunchUIContext*, Guid*, void**, int>)(lpVtbl[0]))((ILaunchUIContext*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,16 +41,14 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetAssociatedWindow([NativeTypeName("HWND")] IntPtr value)
+        public HRESULT SetAssociatedWindow(HWND value)
         {
-            return ((delegate* unmanaged<ILaunchUIContext*, IntPtr, int>)(lpVtbl[3]))((ILaunchUIContext*)Unsafe.AsPointer(ref this), value);
+            return ((delegate* unmanaged<ILaunchUIContext*, HWND, int>)(lpVtbl[3]))((ILaunchUIContext*)Unsafe.AsPointer(ref this), value);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetTabGroupingPreference([NativeTypeName("DWORD")] uint value)
+        public HRESULT SetTabGroupingPreference([NativeTypeName("DWORD")] uint value)
         {
             return ((delegate* unmanaged<ILaunchUIContext*, uint, int>)(lpVtbl[4]))((ILaunchUIContext*)Unsafe.AsPointer(ref this), value);
         }

@@ -7,14 +7,12 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct DXGI_GAMMA_CONTROL_CAPABILITIES
     {
-        [NativeTypeName("BOOL")]
-        public int ScaleAndOffsetSupported;
+        public BOOL ScaleAndOffsetSupported;
 
         public float MaxConvertedValue;
 
         public float MinConvertedValue;
 
-        [NativeTypeName("UINT")]
         public uint NumGammaControlPoints;
 
         [NativeTypeName("float [1025]")]

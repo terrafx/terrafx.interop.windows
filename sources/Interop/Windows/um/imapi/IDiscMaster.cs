@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IDiscMaster*, Guid*, void**, int>)(lpVtbl[0]))((IDiscMaster*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,96 +41,84 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int Open()
+        public HRESULT Open()
         {
             return ((delegate* unmanaged<IDiscMaster*, int>)(lpVtbl[3]))((IDiscMaster*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int EnumDiscMasterFormats(IEnumDiscMasterFormats** ppEnum)
+        public HRESULT EnumDiscMasterFormats(IEnumDiscMasterFormats** ppEnum)
         {
             return ((delegate* unmanaged<IDiscMaster*, IEnumDiscMasterFormats**, int>)(lpVtbl[4]))((IDiscMaster*)Unsafe.AsPointer(ref this), ppEnum);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetActiveDiscMasterFormat([NativeTypeName("LPIID")] Guid* lpiid)
+        public HRESULT GetActiveDiscMasterFormat([NativeTypeName("LPIID")] Guid* lpiid)
         {
             return ((delegate* unmanaged<IDiscMaster*, Guid*, int>)(lpVtbl[5]))((IDiscMaster*)Unsafe.AsPointer(ref this), lpiid);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetActiveDiscMasterFormat([NativeTypeName("const IID &")] Guid* riid, void** ppUnk)
+        public HRESULT SetActiveDiscMasterFormat([NativeTypeName("const IID &")] Guid* riid, void** ppUnk)
         {
             return ((delegate* unmanaged<IDiscMaster*, Guid*, void**, int>)(lpVtbl[6]))((IDiscMaster*)Unsafe.AsPointer(ref this), riid, ppUnk);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        [return: NativeTypeName("HRESULT")]
-        public int EnumDiscRecorders(IEnumDiscRecorders** ppEnum)
+        public HRESULT EnumDiscRecorders(IEnumDiscRecorders** ppEnum)
         {
             return ((delegate* unmanaged<IDiscMaster*, IEnumDiscRecorders**, int>)(lpVtbl[7]))((IDiscMaster*)Unsafe.AsPointer(ref this), ppEnum);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetActiveDiscRecorder(IDiscRecorder** ppRecorder)
+        public HRESULT GetActiveDiscRecorder(IDiscRecorder** ppRecorder)
         {
             return ((delegate* unmanaged<IDiscMaster*, IDiscRecorder**, int>)(lpVtbl[8]))((IDiscMaster*)Unsafe.AsPointer(ref this), ppRecorder);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetActiveDiscRecorder(IDiscRecorder* pRecorder)
+        public HRESULT SetActiveDiscRecorder(IDiscRecorder* pRecorder)
         {
             return ((delegate* unmanaged<IDiscMaster*, IDiscRecorder*, int>)(lpVtbl[9]))((IDiscMaster*)Unsafe.AsPointer(ref this), pRecorder);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(10)]
-        [return: NativeTypeName("HRESULT")]
-        public int ClearFormatContent()
+        public HRESULT ClearFormatContent()
         {
             return ((delegate* unmanaged<IDiscMaster*, int>)(lpVtbl[10]))((IDiscMaster*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(11)]
-        [return: NativeTypeName("HRESULT")]
-        public int ProgressAdvise(IDiscMasterProgressEvents* pEvents, [NativeTypeName("UINT_PTR *")] nuint* pvCookie)
+        public HRESULT ProgressAdvise(IDiscMasterProgressEvents* pEvents, [NativeTypeName("UINT_PTR *")] nuint* pvCookie)
         {
             return ((delegate* unmanaged<IDiscMaster*, IDiscMasterProgressEvents*, nuint*, int>)(lpVtbl[11]))((IDiscMaster*)Unsafe.AsPointer(ref this), pEvents, pvCookie);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(12)]
-        [return: NativeTypeName("HRESULT")]
-        public int ProgressUnadvise([NativeTypeName("UINT_PTR")] nuint vCookie)
+        public HRESULT ProgressUnadvise([NativeTypeName("UINT_PTR")] nuint vCookie)
         {
             return ((delegate* unmanaged<IDiscMaster*, nuint, int>)(lpVtbl[12]))((IDiscMaster*)Unsafe.AsPointer(ref this), vCookie);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(13)]
-        [return: NativeTypeName("HRESULT")]
-        public int RecordDisc([NativeTypeName("boolean")] byte bSimulate, [NativeTypeName("boolean")] byte bEjectAfterBurn)
+        public HRESULT RecordDisc([NativeTypeName("boolean")] byte bSimulate, [NativeTypeName("boolean")] byte bEjectAfterBurn)
         {
             return ((delegate* unmanaged<IDiscMaster*, byte, byte, int>)(lpVtbl[13]))((IDiscMaster*)Unsafe.AsPointer(ref this), bSimulate, bEjectAfterBurn);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(14)]
-        [return: NativeTypeName("HRESULT")]
-        public int Close()
+        public HRESULT Close()
         {
             return ((delegate* unmanaged<IDiscMaster*, int>)(lpVtbl[14]))((IDiscMaster*)Unsafe.AsPointer(ref this));
         }

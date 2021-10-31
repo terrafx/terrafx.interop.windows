@@ -10,8 +10,7 @@ namespace TerraFX.Interop
         [NativeTypeName("LPCSTR")]
         public sbyte* pszTSAPolicyId;
 
-        [NativeTypeName("BOOL")]
-        public int fRequestCerts;
+        public BOOL fRequestCerts;
 
         [NativeTypeName("CRYPT_INTEGER_BLOB")]
         public CRYPT_DATA_BLOB Nonce;

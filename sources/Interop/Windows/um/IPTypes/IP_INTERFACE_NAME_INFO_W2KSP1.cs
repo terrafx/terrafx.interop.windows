@@ -21,10 +21,8 @@ namespace TerraFX.Interop
         [NativeTypeName("UCHAR")]
         public byte AccessType;
 
-        [NativeTypeName("GUID")]
         public Guid DeviceGuid;
 
-        [NativeTypeName("GUID")]
         public Guid InterfaceGuid;
     }
 }

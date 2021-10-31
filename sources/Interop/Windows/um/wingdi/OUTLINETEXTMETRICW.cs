@@ -7,20 +7,16 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct OUTLINETEXTMETRICW
     {
-        [NativeTypeName("UINT")]
         public uint otmSize;
 
         public TEXTMETRICW otmTextMetrics;
 
-        [NativeTypeName("BYTE")]
         public byte otmFiller;
 
         public PANOSE otmPanoseNumber;
 
-        [NativeTypeName("UINT")]
         public uint otmfsSelection;
 
-        [NativeTypeName("UINT")]
         public uint otmfsType;
 
         public int otmsCharSlopeRise;
@@ -29,20 +25,16 @@ namespace TerraFX.Interop
 
         public int otmItalicAngle;
 
-        [NativeTypeName("UINT")]
         public uint otmEMSquare;
 
         public int otmAscent;
 
         public int otmDescent;
 
-        [NativeTypeName("UINT")]
         public uint otmLineGap;
 
-        [NativeTypeName("UINT")]
         public uint otmsCapEmHeight;
 
-        [NativeTypeName("UINT")]
         public uint otmsXHeight;
 
         public RECT otmrcFontBox;
@@ -51,10 +43,8 @@ namespace TerraFX.Interop
 
         public int otmMacDescent;
 
-        [NativeTypeName("UINT")]
         public uint otmMacLineGap;
 
-        [NativeTypeName("UINT")]
         public uint otmusMinimumPPEM;
 
         public POINT otmptSubscriptSize;
@@ -65,7 +55,6 @@ namespace TerraFX.Interop
 
         public POINT otmptSuperscriptOffset;
 
-        [NativeTypeName("UINT")]
         public uint otmsStrikeoutSize;
 
         public int otmsStrikeoutPosition;

@@ -7,10 +7,8 @@ namespace TerraFX.Interop
 {
     public partial struct POINTF
     {
-        [NativeTypeName("FLOAT")]
         public float x;
 
-        [NativeTypeName("FLOAT")]
         public float y;
     }
 }

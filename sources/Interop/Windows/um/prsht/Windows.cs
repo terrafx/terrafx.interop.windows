@@ -3,7 +3,6 @@
 // Ported from um/prsht.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
@@ -11,16 +10,13 @@ namespace TerraFX.Interop
     public static unsafe partial class Windows
     {
         [DllImport("comctl32", ExactSpelling = true)]
-        [return: NativeTypeName("HPROPSHEETPAGE")]
-        public static extern IntPtr CreatePropertySheetPageA([NativeTypeName("LPCPROPSHEETPAGEA")] PROPSHEETPAGEA* constPropSheetPagePointer);
+        public static extern HPROPSHEETPAGE CreatePropertySheetPageA([NativeTypeName("LPCPROPSHEETPAGEA")] PROPSHEETPAGEA* constPropSheetPagePointer);
 
         [DllImport("comctl32", ExactSpelling = true)]
-        [return: NativeTypeName("HPROPSHEETPAGE")]
-        public static extern IntPtr CreatePropertySheetPageW([NativeTypeName("LPCPROPSHEETPAGEW")] PROPSHEETPAGEW* constPropSheetPagePointer);
+        public static extern HPROPSHEETPAGE CreatePropertySheetPageW([NativeTypeName("LPCPROPSHEETPAGEW")] PROPSHEETPAGEW* constPropSheetPagePointer);
 
         [DllImport("comctl32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int DestroyPropertySheetPage([NativeTypeName("HPROPSHEETPAGE")] IntPtr param0);
+        public static extern BOOL DestroyPropertySheetPage(HPROPSHEETPAGE param0);
 
         [DllImport("comctl32", ExactSpelling = true)]
         [return: NativeTypeName("INT_PTR")]
@@ -31,10 +27,10 @@ namespace TerraFX.Interop
         public static extern nint PropertySheetW([NativeTypeName("LPCPROPSHEETHEADERW")] PROPSHEETHEADERW_V2* param0);
 
         [NativeTypeName("#define SNDMSG ::SendMessage")]
-        public static delegate*<IntPtr, uint, nuint, nint, nint> SNDMSG => &SendMessageW;
+        public static delegate*<HWND, uint, nuint, nint, nint> SNDMSG => &SendMessageW;
 
         [NativeTypeName("#define PSTMSG ::PostMessage")]
-        public static delegate*<IntPtr, uint, nuint, nint, int> PSTMSG => &PostMessageW;
+        public static delegate*<HWND, uint, nuint, nint, BOOL> PSTMSG => &PostMessageW;
 
         [NativeTypeName("#define MAXPROPPAGES 100")]
         public const int MAXPROPPAGES = 100;
@@ -232,7 +228,7 @@ namespace TerraFX.Interop
         public const int PSCB_BUTTONPRESSED = 3;
 
         [NativeTypeName("#define CreatePropertySheetPage CreatePropertySheetPageW")]
-        public static delegate*<PROPSHEETPAGEW*, IntPtr> CreatePropertySheetPage => &CreatePropertySheetPageW;
+        public static delegate*<PROPSHEETPAGEW*, HPROPSHEETPAGE> CreatePropertySheetPage => &CreatePropertySheetPageW;
 
         [NativeTypeName("#define PropertySheet PropertySheetW")]
         public static delegate*<PROPSHEETHEADERW_V2*, nint> PropertySheet => &PropertySheetW;

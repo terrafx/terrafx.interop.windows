@@ -13,7 +13,6 @@ namespace TerraFX.Interop
     {
         public ID3D12Resource* pOutputTexture2D;
 
-        [NativeTypeName("UINT")]
         public uint OutputSubresource;
 
         public D3D12_VIDEO_DECODE_CONVERSION_ARGUMENTS1 ConversionArguments;

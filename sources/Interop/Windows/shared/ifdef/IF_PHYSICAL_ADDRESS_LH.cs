@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct IF_PHYSICAL_ADDRESS_LH
     {
-        [NativeTypeName("USHORT")]
         public ushort Length;
 
         [NativeTypeName("UCHAR [32]")]

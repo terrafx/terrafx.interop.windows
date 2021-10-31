@@ -11,7 +11,7 @@ namespace TerraFX.Interop
 {
     public partial struct D2D1_HWND_RENDER_TARGET_PROPERTIES
     {
-        public D2D1_HWND_RENDER_TARGET_PROPERTIES([NativeTypeName("HWND")] IntPtr hwnd, [NativeTypeName("D2D1_SIZE_U")] D2D_SIZE_U pixelSize = default, D2D1_PRESENT_OPTIONS presentOptions = D2D1_PRESENT_OPTIONS_NONE)
+        public D2D1_HWND_RENDER_TARGET_PROPERTIES(HWND hwnd, [NativeTypeName("D2D1_SIZE_U")] D2D_SIZE_U pixelSize = default, D2D1_PRESENT_OPTIONS presentOptions = D2D1_PRESENT_OPTIONS_NONE)
         {
             this = HwndRenderTargetProperties(hwnd, pixelSize, presentOptions);
         }

@@ -16,8 +16,7 @@ namespace TerraFX.Interop
         public void** lpVtbl;
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
             return ((delegate* unmanaged<IVector<T>*, Guid*, void**, int>)(lpVtbl[0]))((IVector<T>*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -37,106 +36,91 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetIids([NativeTypeName("ULONG *")] uint* iidCount, [NativeTypeName("IID **")] Guid** iids)
+        public HRESULT GetIids([NativeTypeName("ULONG *")] uint* iidCount, [NativeTypeName("IID **")] Guid** iids)
         {
             return ((delegate* unmanaged<IVector<T>*, uint*, Guid**, int>)(lpVtbl[3]))((IVector<T>*)Unsafe.AsPointer(ref this), iidCount, iids);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetRuntimeClassName([NativeTypeName("HSTRING *")] IntPtr* className)
+        public HRESULT GetRuntimeClassName(HSTRING* className)
         {
-            return ((delegate* unmanaged<IVector<T>*, IntPtr*, int>)(lpVtbl[4]))((IVector<T>*)Unsafe.AsPointer(ref this), className);
+            return ((delegate* unmanaged<IVector<T>*, HSTRING*, int>)(lpVtbl[4]))((IVector<T>*)Unsafe.AsPointer(ref this), className);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetTrustLevel([NativeTypeName("TrustLevel *")] TrustLevel* trustLevel)
+        public HRESULT GetTrustLevel([NativeTypeName("TrustLevel *")] TrustLevel* trustLevel)
         {
             return ((delegate* unmanaged<IVector<T>*, TrustLevel*, int>)(lpVtbl[5]))((IVector<T>*)Unsafe.AsPointer(ref this), trustLevel);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetAt([NativeTypeName("unsigned")] uint index, [NativeTypeName("T_abi *")] T* item)
+        public HRESULT GetAt([NativeTypeName("unsigned")] uint index, [NativeTypeName("T_abi *")] T* item)
         {
             return ((delegate* unmanaged<IVector<T>*, uint, T*, int>)(lpVtbl[6]))((IVector<T>*)Unsafe.AsPointer(ref this), index, item);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [return: NativeTypeName("HRESULT")]
-        public int get_Size([NativeTypeName("unsigned *")] uint* size)
+        public HRESULT get_Size([NativeTypeName("unsigned *")] uint* size)
         {
             return ((delegate* unmanaged<IVector<T>*, uint*, int>)(lpVtbl[7]))((IVector<T>*)Unsafe.AsPointer(ref this), size);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetView([NativeTypeName("IVectorView<T_logical> **")] IVectorView<T>** view)
+        public HRESULT GetView([NativeTypeName("IVectorView<T_logical> **")] IVectorView<T>** view)
         {
             return ((delegate* unmanaged<IVector<T>*, IVectorView<T>**, int>)(lpVtbl[8]))((IVector<T>*)Unsafe.AsPointer(ref this), view);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [return: NativeTypeName("HRESULT")]
-        public int IndexOf([NativeTypeName("T_abi")] T value, [NativeTypeName("unsigned *")] uint* index, [NativeTypeName("boolean *")] byte* found)
+        public HRESULT IndexOf([NativeTypeName("T_abi")] T value, [NativeTypeName("unsigned *")] uint* index, [NativeTypeName("boolean *")] byte* found)
         {
             return ((delegate* unmanaged<IVector<T>*, T, uint*, byte*, int>)(lpVtbl[9]))((IVector<T>*)Unsafe.AsPointer(ref this), value, index, found);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetAt([NativeTypeName("unsigned")] uint index, [NativeTypeName("T_abi")] T item)
+        public HRESULT SetAt([NativeTypeName("unsigned")] uint index, [NativeTypeName("T_abi")] T item)
         {
             return ((delegate* unmanaged<IVector<T>*, uint, T, int>)(lpVtbl[10]))((IVector<T>*)Unsafe.AsPointer(ref this), index, item);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [return: NativeTypeName("HRESULT")]
-        public int InsertAt([NativeTypeName("unsigned")] uint index, [NativeTypeName("T_abi")] T item)
+        public HRESULT InsertAt([NativeTypeName("unsigned")] uint index, [NativeTypeName("T_abi")] T item)
         {
             return ((delegate* unmanaged<IVector<T>*, uint, T, int>)(lpVtbl[11]))((IVector<T>*)Unsafe.AsPointer(ref this), index, item);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [return: NativeTypeName("HRESULT")]
-        public int RemoveAt([NativeTypeName("unsigned")] uint index)
+        public HRESULT RemoveAt([NativeTypeName("unsigned")] uint index)
         {
             return ((delegate* unmanaged<IVector<T>*, uint, int>)(lpVtbl[12]))((IVector<T>*)Unsafe.AsPointer(ref this), index);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [return: NativeTypeName("HRESULT")]
-        public int Append([NativeTypeName("T_abi")] T item)
+        public HRESULT Append([NativeTypeName("T_abi")] T item)
         {
             return ((delegate* unmanaged<IVector<T>*, T, int>)(lpVtbl[13]))((IVector<T>*)Unsafe.AsPointer(ref this), item);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [return: NativeTypeName("HRESULT")]
-        public int RemoveAtEnd()
+        public HRESULT RemoveAtEnd()
         {
             return ((delegate* unmanaged<IVector<T>*, int>)(lpVtbl[14]))((IVector<T>*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [return: NativeTypeName("HRESULT")]
-        public int Clear()
+        public HRESULT Clear()
         {
             return ((delegate* unmanaged<IVector<T>*, int>)(lpVtbl[15]))((IVector<T>*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetMany([NativeTypeName("unsigned")] uint startIndex, [NativeTypeName("unsigned")] uint capacity, [NativeTypeName("T_abi *")] T* value, [NativeTypeName("unsigned *")] uint* actual)
+        public HRESULT GetMany([NativeTypeName("unsigned")] uint startIndex, [NativeTypeName("unsigned")] uint capacity, [NativeTypeName("T_abi *")] T* value, [NativeTypeName("unsigned *")] uint* actual)
         {
             return ((delegate* unmanaged<IVector<T>*, uint, uint, T*, uint*, int>)(lpVtbl[16]))((IVector<T>*)Unsafe.AsPointer(ref this), startIndex, capacity, value, actual);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [return: NativeTypeName("HRESULT")]
-        public int ReplaceAll([NativeTypeName("unsigned")] uint count, [NativeTypeName("T_abi *")] T* value)
+        public HRESULT ReplaceAll([NativeTypeName("unsigned")] uint count, [NativeTypeName("T_abi *")] T* value)
         {
             return ((delegate* unmanaged<IVector<T>*, uint, T*, int>)(lpVtbl[17]))((IVector<T>*)Unsafe.AsPointer(ref this), count, value);
         }

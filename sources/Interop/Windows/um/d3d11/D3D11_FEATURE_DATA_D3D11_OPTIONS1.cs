@@ -9,13 +9,10 @@ namespace TerraFX.Interop
     {
         public D3D11_TILED_RESOURCES_TIER TiledResourcesTier;
 
-        [NativeTypeName("BOOL")]
-        public int MinMaxFiltering;
+        public BOOL MinMaxFiltering;
 
-        [NativeTypeName("BOOL")]
-        public int ClearViewAlsoSupportsDepthOnlyFormats;
+        public BOOL ClearViewAlsoSupportsDepthOnlyFormats;
 
-        [NativeTypeName("BOOL")]
-        public int MapOnDefaultBuffers;
+        public BOOL MapOnDefaultBuffers;
     }
 }

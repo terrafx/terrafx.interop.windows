@@ -13,21 +13,17 @@ namespace TerraFX.Interop
         [NativeTypeName("UINT32")]
         public uint cbSize;
 
-        [NativeTypeName("BOOL")]
-        public int fQueue;
+        public BOOL fQueue;
 
         [NativeTypeName("DWM_FRAME_COUNT")]
         public ulong cRefreshStart;
 
-        [NativeTypeName("UINT")]
         public uint cBuffer;
 
-        [NativeTypeName("BOOL")]
-        public int fUseSourceRate;
+        public BOOL fUseSourceRate;
 
         public UNSIGNED_RATIO rateSource;
 
-        [NativeTypeName("UINT")]
         public uint cRefreshesPerFrame;
 
         public DWM_SOURCE_FRAME_SAMPLING eSampling;

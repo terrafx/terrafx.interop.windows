@@ -14,7 +14,6 @@ namespace TerraFX.Interop
         [NativeTypeName("DXGI_FORMAT [8]")]
         public _RTFormats_e__FixedBuffer RTFormats;
 
-        [NativeTypeName("UINT")]
         public uint NumRenderTargets;
 
         public partial struct _RTFormats_e__FixedBuffer

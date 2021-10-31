@@ -20,7 +20,7 @@ namespace TerraFX.Interop
         public WTD_GENERIC_CHAIN_POLICY_CREATE_INFO* pCounterSignerChainInfo;
 
         [NativeTypeName("PFN_WTD_GENERIC_CHAIN_POLICY_CALLBACK")]
-        public delegate* unmanaged<CRYPT_PROVIDER_DATA*, uint, uint, uint, WTD_GENERIC_CHAIN_POLICY_SIGNER_INFO**, void*, int> pfnPolicyCallback;
+        public delegate* unmanaged<CRYPT_PROVIDER_DATA*, uint, uint, uint, WTD_GENERIC_CHAIN_POLICY_SIGNER_INFO**, void*, HRESULT> pfnPolicyCallback;
 
         public void* pvPolicyArg;
 

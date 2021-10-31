@@ -25,8 +25,7 @@ namespace TerraFX.Interop
         [NativeTypeName("BSTR")]
         public ushort* Value;
 
-        [NativeTypeName("BOOL")]
-        public int Overridden;
+        public BOOL Overridden;
 
         [NativeTypeName("long long")]
         public long MetadataBits;

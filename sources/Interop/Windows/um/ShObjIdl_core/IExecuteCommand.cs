@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IExecuteCommand*, Guid*, void**, int>)(lpVtbl[0]))((IExecuteCommand*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,56 +41,49 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetKeyState([NativeTypeName("DWORD")] uint grfKeyState)
+        public HRESULT SetKeyState([NativeTypeName("DWORD")] uint grfKeyState)
         {
             return ((delegate* unmanaged<IExecuteCommand*, uint, int>)(lpVtbl[3]))((IExecuteCommand*)Unsafe.AsPointer(ref this), grfKeyState);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetParameters([NativeTypeName("LPCWSTR")] ushort* pszParameters)
+        public HRESULT SetParameters([NativeTypeName("LPCWSTR")] ushort* pszParameters)
         {
             return ((delegate* unmanaged<IExecuteCommand*, ushort*, int>)(lpVtbl[4]))((IExecuteCommand*)Unsafe.AsPointer(ref this), pszParameters);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetPosition(POINT pt)
+        public HRESULT SetPosition(POINT pt)
         {
             return ((delegate* unmanaged<IExecuteCommand*, POINT, int>)(lpVtbl[5]))((IExecuteCommand*)Unsafe.AsPointer(ref this), pt);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetShowWindow(int nShow)
+        public HRESULT SetShowWindow(int nShow)
         {
             return ((delegate* unmanaged<IExecuteCommand*, int, int>)(lpVtbl[6]))((IExecuteCommand*)Unsafe.AsPointer(ref this), nShow);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetNoShowUI([NativeTypeName("BOOL")] int fNoShowUI)
+        public HRESULT SetNoShowUI(BOOL fNoShowUI)
         {
-            return ((delegate* unmanaged<IExecuteCommand*, int, int>)(lpVtbl[7]))((IExecuteCommand*)Unsafe.AsPointer(ref this), fNoShowUI);
+            return ((delegate* unmanaged<IExecuteCommand*, BOOL, int>)(lpVtbl[7]))((IExecuteCommand*)Unsafe.AsPointer(ref this), fNoShowUI);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetDirectory([NativeTypeName("LPCWSTR")] ushort* pszDirectory)
+        public HRESULT SetDirectory([NativeTypeName("LPCWSTR")] ushort* pszDirectory)
         {
             return ((delegate* unmanaged<IExecuteCommand*, ushort*, int>)(lpVtbl[8]))((IExecuteCommand*)Unsafe.AsPointer(ref this), pszDirectory);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        [return: NativeTypeName("HRESULT")]
-        public int Execute()
+        public HRESULT Execute()
         {
             return ((delegate* unmanaged<IExecuteCommand*, int>)(lpVtbl[9]))((IExecuteCommand*)Unsafe.AsPointer(ref this));
         }

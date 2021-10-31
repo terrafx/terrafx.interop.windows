@@ -11,7 +11,7 @@ namespace TerraFX.Interop
     {
         public uint _bitfield;
 
-        [NativeTypeName("UINT : 1")]
+        [NativeTypeName("uint : 1")]
         public uint Usage
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -27,7 +27,7 @@ namespace TerraFX.Interop
             }
         }
 
-        [NativeTypeName("UINT : 1")]
+        [NativeTypeName("uint : 1")]
         public uint RGB_Range
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -43,7 +43,7 @@ namespace TerraFX.Interop
             }
         }
 
-        [NativeTypeName("UINT : 1")]
+        [NativeTypeName("uint : 1")]
         public uint YCbCr_Matrix
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -59,7 +59,7 @@ namespace TerraFX.Interop
             }
         }
 
-        [NativeTypeName("UINT : 1")]
+        [NativeTypeName("uint : 1")]
         public uint YCbCr_xvYCC
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -75,7 +75,7 @@ namespace TerraFX.Interop
             }
         }
 
-        [NativeTypeName("UINT : 2")]
+        [NativeTypeName("uint : 2")]
         public uint Nominal_Range
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -91,7 +91,7 @@ namespace TerraFX.Interop
             }
         }
 
-        [NativeTypeName("UINT : 26")]
+        [NativeTypeName("uint : 26")]
         public uint Reserved
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]

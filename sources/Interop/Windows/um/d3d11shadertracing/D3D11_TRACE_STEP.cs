@@ -7,11 +7,9 @@ namespace TerraFX.Interop
 {
     public partial struct D3D11_TRACE_STEP
     {
-        [NativeTypeName("UINT")]
         public uint ID;
 
-        [NativeTypeName("BOOL")]
-        public int InstructionActive;
+        public BOOL InstructionActive;
 
         [NativeTypeName("UINT8")]
         public byte NumRegistersWritten;
@@ -22,7 +20,6 @@ namespace TerraFX.Interop
         [NativeTypeName("D3D11_TRACE_MISC_OPERATIONS_MASK")]
         public ushort MiscOperations;
 
-        [NativeTypeName("UINT")]
         public uint OpcodeType;
 
         [NativeTypeName("UINT64")]

@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IDiaDataSource*, Guid*, void**, int>)(lpVtbl[0]))((IDiaDataSource*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,64 +41,56 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int get_lastError([NativeTypeName("BSTR *")] ushort** pRetVal)
+        public HRESULT get_lastError([NativeTypeName("BSTR *")] ushort** pRetVal)
         {
             return ((delegate* unmanaged<IDiaDataSource*, ushort**, int>)(lpVtbl[3]))((IDiaDataSource*)Unsafe.AsPointer(ref this), pRetVal);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int loadDataFromPdb([NativeTypeName("LPCOLESTR")] ushort* pdbPath)
+        public HRESULT loadDataFromPdb([NativeTypeName("LPCOLESTR")] ushort* pdbPath)
         {
             return ((delegate* unmanaged<IDiaDataSource*, ushort*, int>)(lpVtbl[4]))((IDiaDataSource*)Unsafe.AsPointer(ref this), pdbPath);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int loadAndValidateDataFromPdb([NativeTypeName("LPCOLESTR")] ushort* pdbPath, [NativeTypeName("GUID *")] Guid* pcsig70, [NativeTypeName("DWORD")] uint sig, [NativeTypeName("DWORD")] uint age)
+        public HRESULT loadAndValidateDataFromPdb([NativeTypeName("LPCOLESTR")] ushort* pdbPath, Guid* pcsig70, [NativeTypeName("DWORD")] uint sig, [NativeTypeName("DWORD")] uint age)
         {
             return ((delegate* unmanaged<IDiaDataSource*, ushort*, Guid*, uint, uint, int>)(lpVtbl[5]))((IDiaDataSource*)Unsafe.AsPointer(ref this), pdbPath, pcsig70, sig, age);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int loadDataForExe([NativeTypeName("LPCOLESTR")] ushort* executable, [NativeTypeName("LPCOLESTR")] ushort* searchPath, IUnknown* pCallback)
+        public HRESULT loadDataForExe([NativeTypeName("LPCOLESTR")] ushort* executable, [NativeTypeName("LPCOLESTR")] ushort* searchPath, IUnknown* pCallback)
         {
             return ((delegate* unmanaged<IDiaDataSource*, ushort*, ushort*, IUnknown*, int>)(lpVtbl[6]))((IDiaDataSource*)Unsafe.AsPointer(ref this), executable, searchPath, pCallback);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        [return: NativeTypeName("HRESULT")]
-        public int loadDataFromIStream(IStream* pIStream)
+        public HRESULT loadDataFromIStream(IStream* pIStream)
         {
             return ((delegate* unmanaged<IDiaDataSource*, IStream*, int>)(lpVtbl[7]))((IDiaDataSource*)Unsafe.AsPointer(ref this), pIStream);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        [return: NativeTypeName("HRESULT")]
-        public int openSession(IDiaSession** ppSession)
+        public HRESULT openSession(IDiaSession** ppSession)
         {
             return ((delegate* unmanaged<IDiaDataSource*, IDiaSession**, int>)(lpVtbl[8]))((IDiaDataSource*)Unsafe.AsPointer(ref this), ppSession);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        [return: NativeTypeName("HRESULT")]
-        public int loadDataFromCodeViewInfo([NativeTypeName("LPCOLESTR")] ushort* executable, [NativeTypeName("LPCOLESTR")] ushort* searchPath, [NativeTypeName("DWORD")] uint cbCvInfo, [NativeTypeName("BYTE *")] byte* pbCvInfo, IUnknown* pCallback)
+        public HRESULT loadDataFromCodeViewInfo([NativeTypeName("LPCOLESTR")] ushort* executable, [NativeTypeName("LPCOLESTR")] ushort* searchPath, [NativeTypeName("DWORD")] uint cbCvInfo, byte* pbCvInfo, IUnknown* pCallback)
         {
             return ((delegate* unmanaged<IDiaDataSource*, ushort*, ushort*, uint, byte*, IUnknown*, int>)(lpVtbl[9]))((IDiaDataSource*)Unsafe.AsPointer(ref this), executable, searchPath, cbCvInfo, pbCvInfo, pCallback);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(10)]
-        [return: NativeTypeName("HRESULT")]
-        public int loadDataFromMiscInfo([NativeTypeName("LPCOLESTR")] ushort* executable, [NativeTypeName("LPCOLESTR")] ushort* searchPath, [NativeTypeName("DWORD")] uint timeStampExe, [NativeTypeName("DWORD")] uint timeStampDbg, [NativeTypeName("DWORD")] uint sizeOfExe, [NativeTypeName("DWORD")] uint cbMiscInfo, [NativeTypeName("BYTE *")] byte* pbMiscInfo, IUnknown* pCallback)
+        public HRESULT loadDataFromMiscInfo([NativeTypeName("LPCOLESTR")] ushort* executable, [NativeTypeName("LPCOLESTR")] ushort* searchPath, [NativeTypeName("DWORD")] uint timeStampExe, [NativeTypeName("DWORD")] uint timeStampDbg, [NativeTypeName("DWORD")] uint sizeOfExe, [NativeTypeName("DWORD")] uint cbMiscInfo, byte* pbMiscInfo, IUnknown* pCallback)
         {
             return ((delegate* unmanaged<IDiaDataSource*, ushort*, ushort*, uint, uint, uint, uint, byte*, IUnknown*, int>)(lpVtbl[10]))((IDiaDataSource*)Unsafe.AsPointer(ref this), executable, searchPath, timeStampExe, timeStampDbg, sizeOfExe, cbMiscInfo, pbMiscInfo, pCallback);
         }

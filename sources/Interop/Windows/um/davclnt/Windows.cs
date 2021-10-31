@@ -3,7 +3,6 @@
 // Ported from um/davclnt.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
@@ -12,11 +11,11 @@ namespace TerraFX.Interop
     {
         [DllImport("netapi32", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
-        public static extern uint DavAddConnection([NativeTypeName("HANDLE *")] IntPtr* ConnectionHandle, [NativeTypeName("LPCWSTR")] ushort* RemoteName, [NativeTypeName("LPCWSTR")] ushort* UserName, [NativeTypeName("LPCWSTR")] ushort* Password, [NativeTypeName("PBYTE")] byte* ClientCert, [NativeTypeName("DWORD")] uint CertSize);
+        public static extern uint DavAddConnection(HANDLE* ConnectionHandle, [NativeTypeName("LPCWSTR")] ushort* RemoteName, [NativeTypeName("LPCWSTR")] ushort* UserName, [NativeTypeName("LPCWSTR")] ushort* Password, [NativeTypeName("PBYTE")] byte* ClientCert, [NativeTypeName("DWORD")] uint CertSize);
 
         [DllImport("netapi32", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
-        public static extern uint DavDeleteConnection([NativeTypeName("HANDLE")] IntPtr ConnectionHandle);
+        public static extern uint DavDeleteConnection(HANDLE ConnectionHandle);
 
         [DllImport("netapi32", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
@@ -32,11 +31,11 @@ namespace TerraFX.Interop
 
         [DllImport("netapi32", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
-        public static extern uint DavGetExtendedError([NativeTypeName("HANDLE")] IntPtr hFile, [NativeTypeName("DWORD *")] uint* ExtError, [NativeTypeName("LPWSTR")] ushort* ExtErrorString, [NativeTypeName("DWORD *")] uint* cChSize);
+        public static extern uint DavGetExtendedError(HANDLE hFile, [NativeTypeName("DWORD *")] uint* ExtError, [NativeTypeName("LPWSTR")] ushort* ExtErrorString, [NativeTypeName("DWORD *")] uint* cChSize);
 
         [DllImport("netapi32", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
-        public static extern uint DavFlushFile([NativeTypeName("HANDLE")] IntPtr hFile);
+        public static extern uint DavFlushFile(HANDLE hFile);
 
         [DllImport("davclnt", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
@@ -44,7 +43,7 @@ namespace TerraFX.Interop
 
         [DllImport("davclnt", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
-        public static extern uint DavCancelConnectionsToServer([NativeTypeName("LPWSTR")] ushort* lpName, [NativeTypeName("BOOL")] int fForce);
+        public static extern uint DavCancelConnectionsToServer([NativeTypeName("LPWSTR")] ushort* lpName, BOOL fForce);
 
         [DllImport("davclnt", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]

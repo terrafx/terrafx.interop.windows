@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public partial struct DXGI_DECODE_SWAP_CHAIN_DESC
     {
-        [NativeTypeName("UINT")]
         public uint Flags;
     }
 }

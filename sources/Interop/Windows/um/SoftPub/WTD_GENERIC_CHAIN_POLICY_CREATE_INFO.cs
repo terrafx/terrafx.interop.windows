@@ -3,7 +3,6 @@
 // Ported from um/SoftPub.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -15,7 +14,7 @@ namespace TerraFX.Interop
         public _Anonymous_e__Union Anonymous;
 
         [NativeTypeName("HCERTCHAINENGINE")]
-        public IntPtr hChainEngine;
+        public HANDLE hChainEngine;
 
         [NativeTypeName("PCERT_CHAIN_PARA")]
         public CERT_CHAIN_PARA* pChainPara;

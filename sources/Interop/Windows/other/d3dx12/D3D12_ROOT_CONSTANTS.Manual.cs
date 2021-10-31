@@ -7,17 +7,17 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct D3D12_ROOT_CONSTANTS
     {
-        public D3D12_ROOT_CONSTANTS([NativeTypeName("UINT")] uint num32BitValues, [NativeTypeName("UINT")] uint shaderRegister, [NativeTypeName("UINT")] uint registerSpace = 0)
+        public D3D12_ROOT_CONSTANTS(uint num32BitValues, uint shaderRegister, uint registerSpace = 0)
         {
             Init(out this, num32BitValues, shaderRegister, registerSpace);
         }
 
-        public void Init([NativeTypeName("UINT")] uint num32BitValues, [NativeTypeName("UINT")] uint shaderRegister, [NativeTypeName("UINT")] uint registerSpace = 0)
+        public void Init(uint num32BitValues, uint shaderRegister, uint registerSpace = 0)
         {
             Init(out this, num32BitValues, shaderRegister, registerSpace);
         }
 
-        public static void Init([NativeTypeName("D3D12_ROOT_CONSTANTS &")] out D3D12_ROOT_CONSTANTS rootConstants, [NativeTypeName("UINT")] uint num32BitValues, [NativeTypeName("UINT")] uint shaderRegister, [NativeTypeName("UINT")] uint registerSpace = 0)
+        public static void Init([NativeTypeName("D3D12_ROOT_CONSTANTS &")] out D3D12_ROOT_CONSTANTS rootConstants, uint num32BitValues, uint shaderRegister, uint registerSpace = 0)
         {
             rootConstants.Num32BitValues = num32BitValues;
             rootConstants.ShaderRegister = shaderRegister;

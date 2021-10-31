@@ -12,13 +12,10 @@ namespace TerraFX.Interop
 
         public D3D_CBUFFER_TYPE Type;
 
-        [NativeTypeName("UINT")]
         public uint Variables;
 
-        [NativeTypeName("UINT")]
         public uint Size;
 
-        [NativeTypeName("UINT")]
         public uint uFlags;
     }
 }

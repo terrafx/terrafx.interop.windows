@@ -7,16 +7,12 @@ namespace TerraFX.Interop
 {
     public partial struct D2D1_SVG_VIEWBOX
     {
-        [NativeTypeName("FLOAT")]
         public float x;
 
-        [NativeTypeName("FLOAT")]
         public float y;
 
-        [NativeTypeName("FLOAT")]
         public float width;
 
-        [NativeTypeName("FLOAT")]
         public float height;
     }
 }

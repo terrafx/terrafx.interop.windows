@@ -9,8 +9,7 @@ namespace TerraFX.Interop
     {
         public D3D12_VIDEO_DECODER_HEAP_DESC VideoDecoderHeapDesc;
 
-        [NativeTypeName("BOOL")]
-        public int Protected;
+        public BOOL Protected;
 
         [NativeTypeName("UINT64")]
         public ulong MemoryPoolL0Size;

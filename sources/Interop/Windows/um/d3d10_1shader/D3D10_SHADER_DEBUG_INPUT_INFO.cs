@@ -7,21 +7,16 @@ namespace TerraFX.Interop
 {
     public partial struct D3D10_SHADER_DEBUG_INPUT_INFO
     {
-        [NativeTypeName("UINT")]
         public uint Var;
 
         public D3D10_SHADER_DEBUG_REGTYPE InitialRegisterSet;
 
-        [NativeTypeName("UINT")]
         public uint InitialBank;
 
-        [NativeTypeName("UINT")]
         public uint InitialRegister;
 
-        [NativeTypeName("UINT")]
         public uint InitialComponent;
 
-        [NativeTypeName("UINT")]
         public uint InitialValue;
     }
 }

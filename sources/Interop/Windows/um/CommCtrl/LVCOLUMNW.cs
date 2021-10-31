@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct LVCOLUMNW
     {
-        [NativeTypeName("UINT")]
         public uint mask;
 
         public int fmt;

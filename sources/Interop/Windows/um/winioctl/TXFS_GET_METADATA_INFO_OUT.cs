@@ -12,7 +12,6 @@ namespace TerraFX.Interop
         [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winioctl.h:13368:5)")]
         public _TxfFileId_e__Struct TxfFileId;
 
-        [NativeTypeName("GUID")]
         public Guid LockingTransaction;
 
         [NativeTypeName("DWORDLONG")]

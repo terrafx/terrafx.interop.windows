@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IFont*, Guid*, void**, int>)(lpVtbl[0]))((IFont*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,194 +41,170 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int get_Name([NativeTypeName("BSTR *")] ushort** pName)
+        public HRESULT get_Name([NativeTypeName("BSTR *")] ushort** pName)
         {
             return ((delegate* unmanaged<IFont*, ushort**, int>)(lpVtbl[3]))((IFont*)Unsafe.AsPointer(ref this), pName);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int put_Name([NativeTypeName("BSTR")] ushort* name)
+        public HRESULT put_Name([NativeTypeName("BSTR")] ushort* name)
         {
             return ((delegate* unmanaged<IFont*, ushort*, int>)(lpVtbl[4]))((IFont*)Unsafe.AsPointer(ref this), name);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int get_Size(CY* pSize)
+        public HRESULT get_Size(CY* pSize)
         {
             return ((delegate* unmanaged<IFont*, CY*, int>)(lpVtbl[5]))((IFont*)Unsafe.AsPointer(ref this), pSize);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int put_Size(CY size)
+        public HRESULT put_Size(CY size)
         {
             return ((delegate* unmanaged<IFont*, CY, int>)(lpVtbl[6]))((IFont*)Unsafe.AsPointer(ref this), size);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        [return: NativeTypeName("HRESULT")]
-        public int get_Bold([NativeTypeName("BOOL *")] int* pBold)
+        public HRESULT get_Bold(BOOL* pBold)
         {
-            return ((delegate* unmanaged<IFont*, int*, int>)(lpVtbl[7]))((IFont*)Unsafe.AsPointer(ref this), pBold);
+            return ((delegate* unmanaged<IFont*, BOOL*, int>)(lpVtbl[7]))((IFont*)Unsafe.AsPointer(ref this), pBold);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        [return: NativeTypeName("HRESULT")]
-        public int put_Bold([NativeTypeName("BOOL")] int bold)
+        public HRESULT put_Bold(BOOL bold)
         {
-            return ((delegate* unmanaged<IFont*, int, int>)(lpVtbl[8]))((IFont*)Unsafe.AsPointer(ref this), bold);
+            return ((delegate* unmanaged<IFont*, BOOL, int>)(lpVtbl[8]))((IFont*)Unsafe.AsPointer(ref this), bold);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        [return: NativeTypeName("HRESULT")]
-        public int get_Italic([NativeTypeName("BOOL *")] int* pItalic)
+        public HRESULT get_Italic(BOOL* pItalic)
         {
-            return ((delegate* unmanaged<IFont*, int*, int>)(lpVtbl[9]))((IFont*)Unsafe.AsPointer(ref this), pItalic);
+            return ((delegate* unmanaged<IFont*, BOOL*, int>)(lpVtbl[9]))((IFont*)Unsafe.AsPointer(ref this), pItalic);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(10)]
-        [return: NativeTypeName("HRESULT")]
-        public int put_Italic([NativeTypeName("BOOL")] int italic)
+        public HRESULT put_Italic(BOOL italic)
         {
-            return ((delegate* unmanaged<IFont*, int, int>)(lpVtbl[10]))((IFont*)Unsafe.AsPointer(ref this), italic);
+            return ((delegate* unmanaged<IFont*, BOOL, int>)(lpVtbl[10]))((IFont*)Unsafe.AsPointer(ref this), italic);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(11)]
-        [return: NativeTypeName("HRESULT")]
-        public int get_Underline([NativeTypeName("BOOL *")] int* pUnderline)
+        public HRESULT get_Underline(BOOL* pUnderline)
         {
-            return ((delegate* unmanaged<IFont*, int*, int>)(lpVtbl[11]))((IFont*)Unsafe.AsPointer(ref this), pUnderline);
+            return ((delegate* unmanaged<IFont*, BOOL*, int>)(lpVtbl[11]))((IFont*)Unsafe.AsPointer(ref this), pUnderline);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(12)]
-        [return: NativeTypeName("HRESULT")]
-        public int put_Underline([NativeTypeName("BOOL")] int underline)
+        public HRESULT put_Underline(BOOL underline)
         {
-            return ((delegate* unmanaged<IFont*, int, int>)(lpVtbl[12]))((IFont*)Unsafe.AsPointer(ref this), underline);
+            return ((delegate* unmanaged<IFont*, BOOL, int>)(lpVtbl[12]))((IFont*)Unsafe.AsPointer(ref this), underline);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(13)]
-        [return: NativeTypeName("HRESULT")]
-        public int get_Strikethrough([NativeTypeName("BOOL *")] int* pStrikethrough)
+        public HRESULT get_Strikethrough(BOOL* pStrikethrough)
         {
-            return ((delegate* unmanaged<IFont*, int*, int>)(lpVtbl[13]))((IFont*)Unsafe.AsPointer(ref this), pStrikethrough);
+            return ((delegate* unmanaged<IFont*, BOOL*, int>)(lpVtbl[13]))((IFont*)Unsafe.AsPointer(ref this), pStrikethrough);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(14)]
-        [return: NativeTypeName("HRESULT")]
-        public int put_Strikethrough([NativeTypeName("BOOL")] int strikethrough)
+        public HRESULT put_Strikethrough(BOOL strikethrough)
         {
-            return ((delegate* unmanaged<IFont*, int, int>)(lpVtbl[14]))((IFont*)Unsafe.AsPointer(ref this), strikethrough);
+            return ((delegate* unmanaged<IFont*, BOOL, int>)(lpVtbl[14]))((IFont*)Unsafe.AsPointer(ref this), strikethrough);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(15)]
-        [return: NativeTypeName("HRESULT")]
-        public int get_Weight([NativeTypeName("SHORT *")] short* pWeight)
+        public HRESULT get_Weight(short* pWeight)
         {
             return ((delegate* unmanaged<IFont*, short*, int>)(lpVtbl[15]))((IFont*)Unsafe.AsPointer(ref this), pWeight);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(16)]
-        [return: NativeTypeName("HRESULT")]
-        public int put_Weight([NativeTypeName("SHORT")] short weight)
+        public HRESULT put_Weight(short weight)
         {
             return ((delegate* unmanaged<IFont*, short, int>)(lpVtbl[16]))((IFont*)Unsafe.AsPointer(ref this), weight);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(17)]
-        [return: NativeTypeName("HRESULT")]
-        public int get_Charset([NativeTypeName("SHORT *")] short* pCharset)
+        public HRESULT get_Charset(short* pCharset)
         {
             return ((delegate* unmanaged<IFont*, short*, int>)(lpVtbl[17]))((IFont*)Unsafe.AsPointer(ref this), pCharset);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(18)]
-        [return: NativeTypeName("HRESULT")]
-        public int put_Charset([NativeTypeName("SHORT")] short charset)
+        public HRESULT put_Charset(short charset)
         {
             return ((delegate* unmanaged<IFont*, short, int>)(lpVtbl[18]))((IFont*)Unsafe.AsPointer(ref this), charset);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(19)]
-        [return: NativeTypeName("HRESULT")]
-        public int get_hFont([NativeTypeName("HFONT *")] IntPtr* phFont)
+        public HRESULT get_hFont(HFONT* phFont)
         {
-            return ((delegate* unmanaged<IFont*, IntPtr*, int>)(lpVtbl[19]))((IFont*)Unsafe.AsPointer(ref this), phFont);
+            return ((delegate* unmanaged<IFont*, HFONT*, int>)(lpVtbl[19]))((IFont*)Unsafe.AsPointer(ref this), phFont);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(20)]
-        [return: NativeTypeName("HRESULT")]
-        public int Clone(IFont** ppFont)
+        public HRESULT Clone(IFont** ppFont)
         {
             return ((delegate* unmanaged<IFont*, IFont**, int>)(lpVtbl[20]))((IFont*)Unsafe.AsPointer(ref this), ppFont);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(21)]
-        [return: NativeTypeName("HRESULT")]
-        public int IsEqual(IFont* pFontOther)
+        public HRESULT IsEqual(IFont* pFontOther)
         {
             return ((delegate* unmanaged<IFont*, IFont*, int>)(lpVtbl[21]))((IFont*)Unsafe.AsPointer(ref this), pFontOther);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(22)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetRatio([NativeTypeName("LONG")] int cyLogical, [NativeTypeName("LONG")] int cyHimetric)
+        public HRESULT SetRatio([NativeTypeName("LONG")] int cyLogical, [NativeTypeName("LONG")] int cyHimetric)
         {
             return ((delegate* unmanaged<IFont*, int, int, int>)(lpVtbl[22]))((IFont*)Unsafe.AsPointer(ref this), cyLogical, cyHimetric);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(23)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryTextMetrics([NativeTypeName("TEXTMETRICOLE *")] TEXTMETRICW* pTM)
+        public HRESULT QueryTextMetrics([NativeTypeName("TEXTMETRICOLE *")] TEXTMETRICW* pTM)
         {
             return ((delegate* unmanaged<IFont*, TEXTMETRICW*, int>)(lpVtbl[23]))((IFont*)Unsafe.AsPointer(ref this), pTM);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(24)]
-        [return: NativeTypeName("HRESULT")]
-        public int AddRefHfont([NativeTypeName("HFONT")] IntPtr hFont)
+        public HRESULT AddRefHfont(HFONT hFont)
         {
-            return ((delegate* unmanaged<IFont*, IntPtr, int>)(lpVtbl[24]))((IFont*)Unsafe.AsPointer(ref this), hFont);
+            return ((delegate* unmanaged<IFont*, HFONT, int>)(lpVtbl[24]))((IFont*)Unsafe.AsPointer(ref this), hFont);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(25)]
-        [return: NativeTypeName("HRESULT")]
-        public int ReleaseHfont([NativeTypeName("HFONT")] IntPtr hFont)
+        public HRESULT ReleaseHfont(HFONT hFont)
         {
-            return ((delegate* unmanaged<IFont*, IntPtr, int>)(lpVtbl[25]))((IFont*)Unsafe.AsPointer(ref this), hFont);
+            return ((delegate* unmanaged<IFont*, HFONT, int>)(lpVtbl[25]))((IFont*)Unsafe.AsPointer(ref this), hFont);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(26)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetHdc([NativeTypeName("HDC")] IntPtr hDC)
+        public HRESULT SetHdc(HDC hDC)
         {
-            return ((delegate* unmanaged<IFont*, IntPtr, int>)(lpVtbl[26]))((IFont*)Unsafe.AsPointer(ref this), hDC);
+            return ((delegate* unmanaged<IFont*, HDC, int>)(lpVtbl[26]))((IFont*)Unsafe.AsPointer(ref this), hDC);
         }
     }
 }

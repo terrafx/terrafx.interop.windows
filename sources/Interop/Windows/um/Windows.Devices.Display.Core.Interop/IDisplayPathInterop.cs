@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IDisplayPathInterop*, Guid*, void**, int>)(lpVtbl[0]))((IDisplayPathInterop*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,16 +41,14 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int CreateSourcePresentationHandle([NativeTypeName("HANDLE *")] IntPtr* pValue)
+        public HRESULT CreateSourcePresentationHandle(HANDLE* pValue)
         {
-            return ((delegate* unmanaged<IDisplayPathInterop*, IntPtr*, int>)(lpVtbl[3]))((IDisplayPathInterop*)Unsafe.AsPointer(ref this), pValue);
+            return ((delegate* unmanaged<IDisplayPathInterop*, HANDLE*, int>)(lpVtbl[3]))((IDisplayPathInterop*)Unsafe.AsPointer(ref this), pValue);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetSourceId([NativeTypeName("UINT *")] uint* pSourceId)
+        public HRESULT GetSourceId(uint* pSourceId)
         {
             return ((delegate* unmanaged<IDisplayPathInterop*, uint*, int>)(lpVtbl[4]))((IDisplayPathInterop*)Unsafe.AsPointer(ref this), pSourceId);
         }

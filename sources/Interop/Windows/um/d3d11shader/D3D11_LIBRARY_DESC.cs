@@ -10,10 +10,8 @@ namespace TerraFX.Interop
         [NativeTypeName("LPCSTR")]
         public sbyte* Creator;
 
-        [NativeTypeName("UINT")]
         public uint Flags;
 
-        [NativeTypeName("UINT")]
         public uint FunctionCount;
     }
 }

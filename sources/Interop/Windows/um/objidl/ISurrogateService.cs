@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<ISurrogateService*, Guid*, void**, int>)(lpVtbl[0]))((ISurrogateService*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,40 +41,35 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int Init([NativeTypeName("const GUID &")] Guid* rguidProcessID, IProcessLock* pProcessLock, [NativeTypeName("BOOL *")] int* pfApplicationAware)
+        public HRESULT Init([NativeTypeName("const GUID &")] Guid* rguidProcessID, IProcessLock* pProcessLock, BOOL* pfApplicationAware)
         {
-            return ((delegate* unmanaged<ISurrogateService*, Guid*, IProcessLock*, int*, int>)(lpVtbl[3]))((ISurrogateService*)Unsafe.AsPointer(ref this), rguidProcessID, pProcessLock, pfApplicationAware);
+            return ((delegate* unmanaged<ISurrogateService*, Guid*, IProcessLock*, BOOL*, int>)(lpVtbl[3]))((ISurrogateService*)Unsafe.AsPointer(ref this), rguidProcessID, pProcessLock, pfApplicationAware);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int ApplicationLaunch([NativeTypeName("const GUID &")] Guid* rguidApplID, ApplicationType appType)
+        public HRESULT ApplicationLaunch([NativeTypeName("const GUID &")] Guid* rguidApplID, ApplicationType appType)
         {
             return ((delegate* unmanaged<ISurrogateService*, Guid*, ApplicationType, int>)(lpVtbl[4]))((ISurrogateService*)Unsafe.AsPointer(ref this), rguidApplID, appType);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int ApplicationFree([NativeTypeName("const GUID &")] Guid* rguidApplID)
+        public HRESULT ApplicationFree([NativeTypeName("const GUID &")] Guid* rguidApplID)
         {
             return ((delegate* unmanaged<ISurrogateService*, Guid*, int>)(lpVtbl[5]))((ISurrogateService*)Unsafe.AsPointer(ref this), rguidApplID);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int CatalogRefresh([NativeTypeName("ULONG")] uint ulReserved)
+        public HRESULT CatalogRefresh([NativeTypeName("ULONG")] uint ulReserved)
         {
             return ((delegate* unmanaged<ISurrogateService*, uint, int>)(lpVtbl[6]))((ISurrogateService*)Unsafe.AsPointer(ref this), ulReserved);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        [return: NativeTypeName("HRESULT")]
-        public int ProcessShutdown(ShutdownType shutdownType)
+        public HRESULT ProcessShutdown(ShutdownType shutdownType)
         {
             return ((delegate* unmanaged<ISurrogateService*, ShutdownType, int>)(lpVtbl[7]))((ISurrogateService*)Unsafe.AsPointer(ref this), shutdownType);
         }

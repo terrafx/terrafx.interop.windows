@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IAudioRenderClient*, Guid*, void**, int>)(lpVtbl[0]))((IAudioRenderClient*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,16 +41,14 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetBuffer([NativeTypeName("UINT32")] uint NumFramesRequested, [NativeTypeName("BYTE **")] byte** ppData)
+        public HRESULT GetBuffer([NativeTypeName("UINT32")] uint NumFramesRequested, byte** ppData)
         {
             return ((delegate* unmanaged<IAudioRenderClient*, uint, byte**, int>)(lpVtbl[3]))((IAudioRenderClient*)Unsafe.AsPointer(ref this), NumFramesRequested, ppData);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int ReleaseBuffer([NativeTypeName("UINT32")] uint NumFramesWritten, [NativeTypeName("DWORD")] uint dwFlags)
+        public HRESULT ReleaseBuffer([NativeTypeName("UINT32")] uint NumFramesWritten, [NativeTypeName("DWORD")] uint dwFlags)
         {
             return ((delegate* unmanaged<IAudioRenderClient*, uint, uint, int>)(lpVtbl[4]))((IAudioRenderClient*)Unsafe.AsPointer(ref this), NumFramesWritten, dwFlags);
         }

@@ -16,13 +16,10 @@ namespace TerraFX.Interop
         [NativeTypeName("const DML_TENSOR_DESC *")]
         public DML_TENSOR_DESC* OutputTensor;
 
-        [NativeTypeName("UINT")]
         public uint InputDimensionCount;
 
-        [NativeTypeName("UINT")]
         public uint IndicesDimensionCount;
 
-        [NativeTypeName("UINT")]
         public uint BatchDimensionCount;
     }
 }

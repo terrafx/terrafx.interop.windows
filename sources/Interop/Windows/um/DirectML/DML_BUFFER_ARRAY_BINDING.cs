@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct DML_BUFFER_ARRAY_BINDING
     {
-        [NativeTypeName("UINT")]
         public uint BindingCount;
 
         [NativeTypeName("const DML_BUFFER_BINDING *")]

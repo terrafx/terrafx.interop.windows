@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<ITfCompartment*, Guid*, void**, int>)(lpVtbl[0]))((ITfCompartment*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,16 +41,14 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetValue([NativeTypeName("TfClientId")] uint tid, [NativeTypeName("const VARIANT *")] VARIANT* pvarValue)
+        public HRESULT SetValue([NativeTypeName("TfClientId")] uint tid, [NativeTypeName("const VARIANT *")] VARIANT* pvarValue)
         {
             return ((delegate* unmanaged<ITfCompartment*, uint, VARIANT*, int>)(lpVtbl[3]))((ITfCompartment*)Unsafe.AsPointer(ref this), tid, pvarValue);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetValue(VARIANT* pvarValue)
+        public HRESULT GetValue(VARIANT* pvarValue)
         {
             return ((delegate* unmanaged<ITfCompartment*, VARIANT*, int>)(lpVtbl[4]))((ITfCompartment*)Unsafe.AsPointer(ref this), pvarValue);
         }

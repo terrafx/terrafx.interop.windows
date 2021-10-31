@@ -3,8 +3,6 @@
 // Ported from um/mssip.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
-
 namespace TerraFX.Interop
 {
     public unsafe partial struct SIP_DISPATCH_INFO
@@ -12,22 +10,21 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint cbSize;
 
-        [NativeTypeName("HANDLE")]
-        public IntPtr hSIP;
+        public HANDLE hSIP;
 
         [NativeTypeName("pCryptSIPGetSignedDataMsg")]
-        public delegate* unmanaged<SIP_SUBJECTINFO*, uint*, uint, uint*, byte*, int> pfGet;
+        public delegate* unmanaged<SIP_SUBJECTINFO*, uint*, uint, uint*, byte*, BOOL> pfGet;
 
         [NativeTypeName("pCryptSIPPutSignedDataMsg")]
-        public delegate* unmanaged<SIP_SUBJECTINFO*, uint, uint*, uint, byte*, int> pfPut;
+        public delegate* unmanaged<SIP_SUBJECTINFO*, uint, uint*, uint, byte*, BOOL> pfPut;
 
         [NativeTypeName("pCryptSIPCreateIndirectData")]
-        public delegate* unmanaged<SIP_SUBJECTINFO*, uint*, SIP_INDIRECT_DATA*, int> pfCreate;
+        public delegate* unmanaged<SIP_SUBJECTINFO*, uint*, SIP_INDIRECT_DATA*, BOOL> pfCreate;
 
         [NativeTypeName("pCryptSIPVerifyIndirectData")]
-        public delegate* unmanaged<SIP_SUBJECTINFO*, SIP_INDIRECT_DATA*, int> pfVerify;
+        public delegate* unmanaged<SIP_SUBJECTINFO*, SIP_INDIRECT_DATA*, BOOL> pfVerify;
 
         [NativeTypeName("pCryptSIPRemoveSignedDataMsg")]
-        public delegate* unmanaged<SIP_SUBJECTINFO*, uint, int> pfRemove;
+        public delegate* unmanaged<SIP_SUBJECTINFO*, uint, BOOL> pfRemove;
     }
 }

@@ -7,16 +7,13 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct D3D12_COMMAND_SIGNATURE_DESC
     {
-        [NativeTypeName("UINT")]
         public uint ByteStride;
 
-        [NativeTypeName("UINT")]
         public uint NumArgumentDescs;
 
         [NativeTypeName("const D3D12_INDIRECT_ARGUMENT_DESC *")]
         public D3D12_INDIRECT_ARGUMENT_DESC* pArgumentDescs;
 
-        [NativeTypeName("UINT")]
         public uint NodeMask;
     }
 }

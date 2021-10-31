@@ -11,10 +11,8 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct SAFEARRAY
     {
-        [NativeTypeName("USHORT")]
         public ushort cDims;
 
-        [NativeTypeName("USHORT")]
         public ushort fFeatures;
 
         [NativeTypeName("ULONG")]

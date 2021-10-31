@@ -7,10 +7,8 @@ namespace TerraFX.Interop
 {
     public partial struct sockaddr_in6_old
     {
-        [NativeTypeName("SHORT")]
         public short sin6_family;
 
-        [NativeTypeName("USHORT")]
         public ushort sin6_port;
 
         [NativeTypeName("ULONG")]

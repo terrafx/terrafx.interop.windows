@@ -19,10 +19,8 @@ namespace TerraFX.Interop
         [NativeTypeName("UINT16 [2]")]
         public fixed ushort WhitePoint[2];
 
-        [NativeTypeName("UINT")]
         public uint MaxMasteringLuminance;
 
-        [NativeTypeName("UINT")]
         public uint MinMasteringLuminance;
 
         [NativeTypeName("UINT16")]

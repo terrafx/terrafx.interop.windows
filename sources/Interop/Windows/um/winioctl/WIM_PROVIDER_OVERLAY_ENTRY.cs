@@ -14,7 +14,6 @@ namespace TerraFX.Interop
 
         public LARGE_INTEGER DataSourceId;
 
-        [NativeTypeName("GUID")]
         public Guid WimGuid;
 
         [NativeTypeName("DWORD")]

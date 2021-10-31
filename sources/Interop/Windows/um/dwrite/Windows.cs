@@ -13,8 +13,7 @@ namespace TerraFX.Interop
     public static unsafe partial class Windows
     {
         [DllImport("dwrite", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int DWriteCreateFactory(DWRITE_FACTORY_TYPE factoryType, [NativeTypeName("const IID &")] Guid* iid, IUnknown** factory);
+        public static extern HRESULT DWriteCreateFactory(DWRITE_FACTORY_TYPE factoryType, [NativeTypeName("const IID &")] Guid* iid, IUnknown** factory);
 
         [NativeTypeName("#define DWRITE_ALPHA_MAX 255")]
         public const int DWRITE_ALPHA_MAX = 255;

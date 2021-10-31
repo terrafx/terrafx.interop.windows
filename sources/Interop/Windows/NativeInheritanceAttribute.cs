@@ -8,7 +8,7 @@ namespace TerraFX.Interop
     /// <summary>Defines the base type of a struct as it was in the native signature.</summary>
     [AttributeUsage(AttributeTargets.Struct, AllowMultiple = false, Inherited = true)]
     [Conditional("DEBUG")]
-    internal sealed class NativeInheritanceAttribute : Attribute
+    internal sealed partial class NativeInheritanceAttribute : Attribute
     {
         private readonly string _name;
 

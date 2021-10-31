@@ -19,7 +19,6 @@ namespace TerraFX.Interop
         [NativeTypeName("BYTE [32]")]
         public fixed byte SerialNumber[32];
 
-        [NativeTypeName("BYTE")]
         public byte DeviceType;
     }
 }

@@ -13,8 +13,7 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint dwVersion;
 
-        [NativeTypeName("BOOL")]
-        public int isMultiSign;
+        public BOOL isMultiSign;
 
         [NativeTypeName("DWORD")]
         public uint dwReserved;

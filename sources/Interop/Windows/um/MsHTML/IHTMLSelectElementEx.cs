@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IHTMLSelectElementEx*, Guid*, void**, int>)(lpVtbl[0]))((IHTMLSelectElementEx*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,34 +41,30 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int ShowDropdown([NativeTypeName("BOOL")] int fShow)
+        public HRESULT ShowDropdown(BOOL fShow)
         {
-            return ((delegate* unmanaged<IHTMLSelectElementEx*, int, int>)(lpVtbl[3]))((IHTMLSelectElementEx*)Unsafe.AsPointer(ref this), fShow);
+            return ((delegate* unmanaged<IHTMLSelectElementEx*, BOOL, int>)(lpVtbl[3]))((IHTMLSelectElementEx*)Unsafe.AsPointer(ref this), fShow);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetSelectExFlags([NativeTypeName("DWORD")] uint lFlags)
+        public HRESULT SetSelectExFlags([NativeTypeName("DWORD")] uint lFlags)
         {
             return ((delegate* unmanaged<IHTMLSelectElementEx*, uint, int>)(lpVtbl[4]))((IHTMLSelectElementEx*)Unsafe.AsPointer(ref this), lFlags);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetSelectExFlags([NativeTypeName("DWORD *")] uint* pFlags)
+        public HRESULT GetSelectExFlags([NativeTypeName("DWORD *")] uint* pFlags)
         {
             return ((delegate* unmanaged<IHTMLSelectElementEx*, uint*, int>)(lpVtbl[5]))((IHTMLSelectElementEx*)Unsafe.AsPointer(ref this), pFlags);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetDropdownOpen([NativeTypeName("BOOL *")] int* pfOpen)
+        public HRESULT GetDropdownOpen(BOOL* pfOpen)
         {
-            return ((delegate* unmanaged<IHTMLSelectElementEx*, int*, int>)(lpVtbl[6]))((IHTMLSelectElementEx*)Unsafe.AsPointer(ref this), pfOpen);
+            return ((delegate* unmanaged<IHTMLSelectElementEx*, BOOL*, int>)(lpVtbl[6]))((IHTMLSelectElementEx*)Unsafe.AsPointer(ref this), pfOpen);
         }
     }
 }

@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public partial struct D3D12_FEATURE_DATA_VIDEO_DECODE_CONVERSION_SUPPORT
     {
-        [NativeTypeName("UINT")]
         public uint NodeIndex;
 
         public D3D12_VIDEO_DECODE_CONFIGURATION Configuration;
@@ -18,7 +17,6 @@ namespace TerraFX.Interop
 
         public DXGI_RATIONAL FrameRate;
 
-        [NativeTypeName("UINT")]
         public uint BitRate;
 
         public D3D12_VIDEO_DECODE_CONVERSION_SUPPORT_FLAGS SupportFlags;

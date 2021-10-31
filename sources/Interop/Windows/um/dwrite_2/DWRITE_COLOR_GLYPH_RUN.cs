@@ -11,10 +11,8 @@ namespace TerraFX.Interop
 
         public DWRITE_GLYPH_RUN_DESCRIPTION* glyphRunDescription;
 
-        [NativeTypeName("FLOAT")]
         public float baselineOriginX;
 
-        [NativeTypeName("FLOAT")]
         public float baselineOriginY;
 
         [NativeTypeName("DWRITE_COLOR_F")]

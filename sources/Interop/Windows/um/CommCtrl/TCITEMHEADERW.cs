@@ -7,13 +7,10 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct TCITEMHEADERW
     {
-        [NativeTypeName("UINT")]
         public uint mask;
 
-        [NativeTypeName("UINT")]
         public uint lpReserved1;
 
-        [NativeTypeName("UINT")]
         public uint lpReserved2;
 
         [NativeTypeName("LPWSTR")]

@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct LVSETINFOTIP
     {
-        [NativeTypeName("UINT")]
         public uint cbSize;
 
         [NativeTypeName("DWORD")]

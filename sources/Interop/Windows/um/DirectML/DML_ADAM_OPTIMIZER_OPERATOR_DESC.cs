@@ -31,16 +31,12 @@ namespace TerraFX.Interop
         [NativeTypeName("const DML_TENSOR_DESC *")]
         public DML_TENSOR_DESC* OutputSecondMomentTensor;
 
-        [NativeTypeName("FLOAT")]
         public float LearningRate;
 
-        [NativeTypeName("FLOAT")]
         public float Beta1;
 
-        [NativeTypeName("FLOAT")]
         public float Beta2;
 
-        [NativeTypeName("FLOAT")]
         public float Epsilon;
     }
 }

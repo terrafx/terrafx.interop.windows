@@ -15,8 +15,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("BOOL")]
-        public int IsValid()
+        public BOOL IsValid()
         {
             return ((delegate* unmanaged<ID3D10EffectDepthStencilViewVariable*, int>)(lpVtbl[0]))((ID3D10EffectDepthStencilViewVariable*)Unsafe.AsPointer(ref this));
         }
@@ -30,15 +29,14 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(2)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetDesc(D3D10_EFFECT_VARIABLE_DESC* pDesc)
+        public HRESULT GetDesc(D3D10_EFFECT_VARIABLE_DESC* pDesc)
         {
             return ((delegate* unmanaged<ID3D10EffectDepthStencilViewVariable*, D3D10_EFFECT_VARIABLE_DESC*, int>)(lpVtbl[2]))((ID3D10EffectDepthStencilViewVariable*)Unsafe.AsPointer(ref this), pDesc);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        public ID3D10EffectVariable* GetAnnotationByIndex([NativeTypeName("UINT")] uint Index)
+        public ID3D10EffectVariable* GetAnnotationByIndex(uint Index)
         {
             return ((delegate* unmanaged<ID3D10EffectDepthStencilViewVariable*, uint, ID3D10EffectVariable*>)(lpVtbl[3]))((ID3D10EffectDepthStencilViewVariable*)Unsafe.AsPointer(ref this), Index);
         }
@@ -52,7 +50,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        public ID3D10EffectVariable* GetMemberByIndex([NativeTypeName("UINT")] uint Index)
+        public ID3D10EffectVariable* GetMemberByIndex(uint Index)
         {
             return ((delegate* unmanaged<ID3D10EffectDepthStencilViewVariable*, uint, ID3D10EffectVariable*>)(lpVtbl[5]))((ID3D10EffectDepthStencilViewVariable*)Unsafe.AsPointer(ref this), Index);
         }
@@ -73,7 +71,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        public ID3D10EffectVariable* GetElement([NativeTypeName("UINT")] uint Index)
+        public ID3D10EffectVariable* GetElement(uint Index)
         {
             return ((delegate* unmanaged<ID3D10EffectDepthStencilViewVariable*, uint, ID3D10EffectVariable*>)(lpVtbl[8]))((ID3D10EffectDepthStencilViewVariable*)Unsafe.AsPointer(ref this), Index);
         }
@@ -178,48 +176,42 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(23)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetRawValue(void* pData, [NativeTypeName("UINT")] uint Offset, [NativeTypeName("UINT")] uint ByteCount)
+        public HRESULT SetRawValue(void* pData, uint Offset, uint ByteCount)
         {
             return ((delegate* unmanaged<ID3D10EffectDepthStencilViewVariable*, void*, uint, uint, int>)(lpVtbl[23]))((ID3D10EffectDepthStencilViewVariable*)Unsafe.AsPointer(ref this), pData, Offset, ByteCount);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(24)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetRawValue(void* pData, [NativeTypeName("UINT")] uint Offset, [NativeTypeName("UINT")] uint ByteCount)
+        public HRESULT GetRawValue(void* pData, uint Offset, uint ByteCount)
         {
             return ((delegate* unmanaged<ID3D10EffectDepthStencilViewVariable*, void*, uint, uint, int>)(lpVtbl[24]))((ID3D10EffectDepthStencilViewVariable*)Unsafe.AsPointer(ref this), pData, Offset, ByteCount);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(25)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetDepthStencil(ID3D10DepthStencilView* pResource)
+        public HRESULT SetDepthStencil(ID3D10DepthStencilView* pResource)
         {
             return ((delegate* unmanaged<ID3D10EffectDepthStencilViewVariable*, ID3D10DepthStencilView*, int>)(lpVtbl[25]))((ID3D10EffectDepthStencilViewVariable*)Unsafe.AsPointer(ref this), pResource);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(26)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetDepthStencil(ID3D10DepthStencilView** ppResource)
+        public HRESULT GetDepthStencil(ID3D10DepthStencilView** ppResource)
         {
             return ((delegate* unmanaged<ID3D10EffectDepthStencilViewVariable*, ID3D10DepthStencilView**, int>)(lpVtbl[26]))((ID3D10EffectDepthStencilViewVariable*)Unsafe.AsPointer(ref this), ppResource);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(27)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetDepthStencilArray(ID3D10DepthStencilView** ppResources, [NativeTypeName("UINT")] uint Offset, [NativeTypeName("UINT")] uint Count)
+        public HRESULT SetDepthStencilArray(ID3D10DepthStencilView** ppResources, uint Offset, uint Count)
         {
             return ((delegate* unmanaged<ID3D10EffectDepthStencilViewVariable*, ID3D10DepthStencilView**, uint, uint, int>)(lpVtbl[27]))((ID3D10EffectDepthStencilViewVariable*)Unsafe.AsPointer(ref this), ppResources, Offset, Count);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(28)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetDepthStencilArray(ID3D10DepthStencilView** ppResources, [NativeTypeName("UINT")] uint Offset, [NativeTypeName("UINT")] uint Count)
+        public HRESULT GetDepthStencilArray(ID3D10DepthStencilView** ppResources, uint Offset, uint Count)
         {
             return ((delegate* unmanaged<ID3D10EffectDepthStencilViewVariable*, ID3D10DepthStencilView**, uint, uint, int>)(lpVtbl[28]))((ID3D10EffectDepthStencilViewVariable*)Unsafe.AsPointer(ref this), ppResources, Offset, Count);
         }

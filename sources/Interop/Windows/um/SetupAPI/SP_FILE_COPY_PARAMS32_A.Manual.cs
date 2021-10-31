@@ -14,8 +14,7 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint cbSize;
 
-        [NativeTypeName("HSPFILEQ")]
-        public IntPtr QueueHandle;
+        public HSPFILEQ QueueHandle;
 
         [NativeTypeName("PCSTR")]
         public sbyte* SourceRootPath;
@@ -41,8 +40,7 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint CopyStyle;
 
-        [NativeTypeName("HINF")]
-        public IntPtr LayoutInf;
+        public HINF LayoutInf;
 
         [NativeTypeName("PCSTR")]
         public sbyte* SecurityDescriptor;

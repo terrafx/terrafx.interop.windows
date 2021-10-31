@@ -13,16 +13,12 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint Power;
 
-        [NativeTypeName("BYTE")]
         public byte PercentFrequency;
 
-        [NativeTypeName("BYTE")]
         public byte IncreaseLevel;
 
-        [NativeTypeName("BYTE")]
         public byte DecreaseLevel;
 
-        [NativeTypeName("BYTE")]
         public byte Type;
 
         [NativeTypeName("DWORD")]

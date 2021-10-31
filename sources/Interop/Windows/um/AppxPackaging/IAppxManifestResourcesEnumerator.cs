@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IAppxManifestResourcesEnumerator*, Guid*, void**, int>)(lpVtbl[0]))((IAppxManifestResourcesEnumerator*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,26 +41,23 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetCurrent([NativeTypeName("LPWSTR *")] ushort** resource)
+        public HRESULT GetCurrent([NativeTypeName("LPWSTR *")] ushort** resource)
         {
             return ((delegate* unmanaged<IAppxManifestResourcesEnumerator*, ushort**, int>)(lpVtbl[3]))((IAppxManifestResourcesEnumerator*)Unsafe.AsPointer(ref this), resource);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetHasCurrent([NativeTypeName("BOOL *")] int* hasCurrent)
+        public HRESULT GetHasCurrent(BOOL* hasCurrent)
         {
-            return ((delegate* unmanaged<IAppxManifestResourcesEnumerator*, int*, int>)(lpVtbl[4]))((IAppxManifestResourcesEnumerator*)Unsafe.AsPointer(ref this), hasCurrent);
+            return ((delegate* unmanaged<IAppxManifestResourcesEnumerator*, BOOL*, int>)(lpVtbl[4]))((IAppxManifestResourcesEnumerator*)Unsafe.AsPointer(ref this), hasCurrent);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int MoveNext([NativeTypeName("BOOL *")] int* hasNext)
+        public HRESULT MoveNext(BOOL* hasNext)
         {
-            return ((delegate* unmanaged<IAppxManifestResourcesEnumerator*, int*, int>)(lpVtbl[5]))((IAppxManifestResourcesEnumerator*)Unsafe.AsPointer(ref this), hasNext);
+            return ((delegate* unmanaged<IAppxManifestResourcesEnumerator*, BOOL*, int>)(lpVtbl[5]))((IAppxManifestResourcesEnumerator*)Unsafe.AsPointer(ref this), hasNext);
         }
     }
 }

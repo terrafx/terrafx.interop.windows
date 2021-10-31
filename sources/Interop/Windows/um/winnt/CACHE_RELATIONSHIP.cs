@@ -11,10 +11,8 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct CACHE_RELATIONSHIP
     {
-        [NativeTypeName("BYTE")]
         public byte Level;
 
-        [NativeTypeName("BYTE")]
         public byte Associativity;
 
         [NativeTypeName("WORD")]
@@ -40,15 +38,6 @@ namespace TerraFX.Interop
             get
             {
                 return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.GroupMask, 1));
-            }
-        }
-
-        public Span<GROUP_AFFINITY> GroupMasks
-        {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return Anonymous.GroupMasks.AsSpan(GroupCount);
             }
         }
 

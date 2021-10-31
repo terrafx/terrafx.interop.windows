@@ -44,10 +44,8 @@ namespace TerraFX.Interop
 
             public partial struct _S_un_w_e__Struct
             {
-                [NativeTypeName("USHORT")]
                 public ushort s_w1;
 
-                [NativeTypeName("USHORT")]
                 public ushort s_w2;
             }
         }

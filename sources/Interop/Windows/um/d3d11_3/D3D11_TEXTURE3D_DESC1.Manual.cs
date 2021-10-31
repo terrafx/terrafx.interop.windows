@@ -11,7 +11,7 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct D3D11_TEXTURE3D_DESC1
     {
-        public D3D11_TEXTURE3D_DESC1(DXGI_FORMAT format, [NativeTypeName("UINT")] uint width, [NativeTypeName("UINT")] uint height, [NativeTypeName("UINT")] uint depth, [NativeTypeName("UINT")] uint mipLevels = 0, [NativeTypeName("UINT")] uint bindFlags = (uint)D3D11_BIND_SHADER_RESOURCE, D3D11_USAGE usage = D3D11_USAGE_DEFAULT, [NativeTypeName("UINT")] uint cpuaccessFlags = 0, [NativeTypeName("UINT")] uint miscFlags = 0, D3D11_TEXTURE_LAYOUT textureLayout = D3D11_TEXTURE_LAYOUT_UNDEFINED)
+        public D3D11_TEXTURE3D_DESC1(DXGI_FORMAT format, uint width, uint height, uint depth, uint mipLevels = 0, uint bindFlags = (uint)D3D11_BIND_SHADER_RESOURCE, D3D11_USAGE usage = D3D11_USAGE_DEFAULT, uint cpuaccessFlags = 0, uint miscFlags = 0, D3D11_TEXTURE_LAYOUT textureLayout = D3D11_TEXTURE_LAYOUT_UNDEFINED)
         {
             Width = width;
             Height = height;

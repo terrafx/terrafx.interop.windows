@@ -21,10 +21,8 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint NfitHandle;
 
-        [NativeTypeName("GUID")]
         public Guid LogicalDeviceGuid;
 
-        [NativeTypeName("GUID")]
         public Guid AddressRangeType;
 
         [NativeTypeName("DWORD")]

@@ -3,22 +3,17 @@
 // Ported from um/WinUser.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
-
 namespace TerraFX.Interop
 {
     public partial struct FLASHWINFO
     {
-        [NativeTypeName("UINT")]
         public uint cbSize;
 
-        [NativeTypeName("HWND")]
-        public IntPtr hwnd;
+        public HWND hwnd;
 
         [NativeTypeName("DWORD")]
         public uint dwFlags;
 
-        [NativeTypeName("UINT")]
         public uint uCount;
 
         [NativeTypeName("DWORD")]

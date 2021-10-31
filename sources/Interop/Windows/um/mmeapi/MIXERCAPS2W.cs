@@ -29,13 +29,10 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint cDestinations;
 
-        [NativeTypeName("GUID")]
         public Guid ManufacturerGuid;
 
-        [NativeTypeName("GUID")]
         public Guid ProductGuid;
 
-        [NativeTypeName("GUID")]
         public Guid NameGuid;
     }
 }

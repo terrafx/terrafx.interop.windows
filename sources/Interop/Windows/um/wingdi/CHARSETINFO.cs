@@ -7,10 +7,8 @@ namespace TerraFX.Interop
 {
     public partial struct CHARSETINFO
     {
-        [NativeTypeName("UINT")]
         public uint ciCharset;
 
-        [NativeTypeName("UINT")]
         public uint ciACP;
 
         public FONTSIGNATURE fs;

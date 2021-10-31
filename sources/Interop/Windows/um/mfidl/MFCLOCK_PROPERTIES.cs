@@ -12,7 +12,6 @@ namespace TerraFX.Interop
         [NativeTypeName("unsigned long long")]
         public ulong qwCorrelationRate;
 
-        [NativeTypeName("GUID")]
         public Guid guidClockId;
 
         [NativeTypeName("DWORD")]

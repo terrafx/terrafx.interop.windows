@@ -11,11 +11,9 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct INPUTCONTEXT
     {
-        [NativeTypeName("HWND")]
-        public IntPtr hWnd;
+        public HWND hWnd;
 
-        [NativeTypeName("BOOL")]
-        public int fOpen;
+        public BOOL fOpen;
 
         public POINT ptStatusWndPos;
 
@@ -35,23 +33,18 @@ namespace TerraFX.Interop
         [NativeTypeName("CANDIDATEFORM [4]")]
         public _cfCandForm_e__FixedBuffer cfCandForm;
 
-        [NativeTypeName("HIMCC")]
-        public IntPtr hCompStr;
+        public HIMCC hCompStr;
 
-        [NativeTypeName("HIMCC")]
-        public IntPtr hCandInfo;
+        public HIMCC hCandInfo;
 
-        [NativeTypeName("HIMCC")]
-        public IntPtr hGuideLine;
+        public HIMCC hGuideLine;
 
-        [NativeTypeName("HIMCC")]
-        public IntPtr hPrivate;
+        public HIMCC hPrivate;
 
         [NativeTypeName("DWORD")]
         public uint dwNumMsgBuf;
 
-        [NativeTypeName("HIMCC")]
-        public IntPtr hMsgBuf;
+        public HIMCC hMsgBuf;
 
         [NativeTypeName("DWORD")]
         public uint fdwInit;

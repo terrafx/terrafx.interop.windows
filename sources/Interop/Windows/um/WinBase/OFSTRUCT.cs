@@ -7,10 +7,8 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct OFSTRUCT
     {
-        [NativeTypeName("BYTE")]
         public byte cBytes;
 
-        [NativeTypeName("BYTE")]
         public byte fFixedDisk;
 
         [NativeTypeName("WORD")]

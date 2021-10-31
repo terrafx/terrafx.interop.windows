@@ -7,17 +7,14 @@ namespace TerraFX.Interop
 {
     public partial struct SCROLLINFO
     {
-        [NativeTypeName("UINT")]
         public uint cbSize;
 
-        [NativeTypeName("UINT")]
         public uint fMask;
 
         public int nMin;
 
         public int nMax;
 
-        [NativeTypeName("UINT")]
         public uint nPage;
 
         public int nPos;

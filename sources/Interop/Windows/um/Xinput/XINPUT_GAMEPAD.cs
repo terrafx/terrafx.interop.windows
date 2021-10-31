@@ -10,22 +10,16 @@ namespace TerraFX.Interop
         [NativeTypeName("WORD")]
         public ushort wButtons;
 
-        [NativeTypeName("BYTE")]
         public byte bLeftTrigger;
 
-        [NativeTypeName("BYTE")]
         public byte bRightTrigger;
 
-        [NativeTypeName("SHORT")]
         public short sThumbLX;
 
-        [NativeTypeName("SHORT")]
         public short sThumbLY;
 
-        [NativeTypeName("SHORT")]
         public short sThumbRX;
 
-        [NativeTypeName("SHORT")]
         public short sThumbRY;
     }
 }

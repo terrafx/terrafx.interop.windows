@@ -9,13 +9,10 @@ namespace TerraFX.Interop
     {
         public EMR emr;
 
-        [NativeTypeName("INT")]
         public int iEscape;
 
-        [NativeTypeName("INT")]
         public int cbDriver;
 
-        [NativeTypeName("INT")]
         public int cbEscData;
 
         [NativeTypeName("BYTE [1]")]

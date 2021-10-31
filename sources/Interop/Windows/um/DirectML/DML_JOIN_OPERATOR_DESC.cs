@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct DML_JOIN_OPERATOR_DESC
     {
-        [NativeTypeName("UINT")]
         public uint InputCount;
 
         [NativeTypeName("const DML_TENSOR_DESC *")]
@@ -16,7 +15,6 @@ namespace TerraFX.Interop
         [NativeTypeName("const DML_TENSOR_DESC *")]
         public DML_TENSOR_DESC* OutputTensor;
 
-        [NativeTypeName("UINT")]
         public uint Axis;
     }
 }

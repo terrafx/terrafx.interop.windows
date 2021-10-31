@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<ICreateTypeInfo2*, Guid*, void**, int>)(lpVtbl[0]))((ICreateTypeInfo2*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,304 +41,266 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetGuid([NativeTypeName("const GUID &")] Guid* guid)
+        public HRESULT SetGuid([NativeTypeName("const GUID &")] Guid* guid)
         {
             return ((delegate* unmanaged<ICreateTypeInfo2*, Guid*, int>)(lpVtbl[3]))((ICreateTypeInfo2*)Unsafe.AsPointer(ref this), guid);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetTypeFlags([NativeTypeName("UINT")] uint uTypeFlags)
+        public HRESULT SetTypeFlags(uint uTypeFlags)
         {
             return ((delegate* unmanaged<ICreateTypeInfo2*, uint, int>)(lpVtbl[4]))((ICreateTypeInfo2*)Unsafe.AsPointer(ref this), uTypeFlags);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetDocString([NativeTypeName("LPOLESTR")] ushort* pStrDoc)
+        public HRESULT SetDocString([NativeTypeName("LPOLESTR")] ushort* pStrDoc)
         {
             return ((delegate* unmanaged<ICreateTypeInfo2*, ushort*, int>)(lpVtbl[5]))((ICreateTypeInfo2*)Unsafe.AsPointer(ref this), pStrDoc);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetHelpContext([NativeTypeName("DWORD")] uint dwHelpContext)
+        public HRESULT SetHelpContext([NativeTypeName("DWORD")] uint dwHelpContext)
         {
             return ((delegate* unmanaged<ICreateTypeInfo2*, uint, int>)(lpVtbl[6]))((ICreateTypeInfo2*)Unsafe.AsPointer(ref this), dwHelpContext);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetVersion([NativeTypeName("WORD")] ushort wMajorVerNum, [NativeTypeName("WORD")] ushort wMinorVerNum)
+        public HRESULT SetVersion([NativeTypeName("WORD")] ushort wMajorVerNum, [NativeTypeName("WORD")] ushort wMinorVerNum)
         {
             return ((delegate* unmanaged<ICreateTypeInfo2*, ushort, ushort, int>)(lpVtbl[7]))((ICreateTypeInfo2*)Unsafe.AsPointer(ref this), wMajorVerNum, wMinorVerNum);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        [return: NativeTypeName("HRESULT")]
-        public int AddRefTypeInfo(ITypeInfo* pTInfo, [NativeTypeName("HREFTYPE *")] uint* phRefType)
+        public HRESULT AddRefTypeInfo(ITypeInfo* pTInfo, [NativeTypeName("HREFTYPE *")] uint* phRefType)
         {
             return ((delegate* unmanaged<ICreateTypeInfo2*, ITypeInfo*, uint*, int>)(lpVtbl[8]))((ICreateTypeInfo2*)Unsafe.AsPointer(ref this), pTInfo, phRefType);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        [return: NativeTypeName("HRESULT")]
-        public int AddFuncDesc([NativeTypeName("UINT")] uint index, FUNCDESC* pFuncDesc)
+        public HRESULT AddFuncDesc(uint index, FUNCDESC* pFuncDesc)
         {
             return ((delegate* unmanaged<ICreateTypeInfo2*, uint, FUNCDESC*, int>)(lpVtbl[9]))((ICreateTypeInfo2*)Unsafe.AsPointer(ref this), index, pFuncDesc);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(10)]
-        [return: NativeTypeName("HRESULT")]
-        public int AddImplType([NativeTypeName("UINT")] uint index, [NativeTypeName("HREFTYPE")] uint hRefType)
+        public HRESULT AddImplType(uint index, [NativeTypeName("HREFTYPE")] uint hRefType)
         {
             return ((delegate* unmanaged<ICreateTypeInfo2*, uint, uint, int>)(lpVtbl[10]))((ICreateTypeInfo2*)Unsafe.AsPointer(ref this), index, hRefType);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(11)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetImplTypeFlags([NativeTypeName("UINT")] uint index, [NativeTypeName("INT")] int implTypeFlags)
+        public HRESULT SetImplTypeFlags(uint index, int implTypeFlags)
         {
             return ((delegate* unmanaged<ICreateTypeInfo2*, uint, int, int>)(lpVtbl[11]))((ICreateTypeInfo2*)Unsafe.AsPointer(ref this), index, implTypeFlags);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(12)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetAlignment([NativeTypeName("WORD")] ushort cbAlignment)
+        public HRESULT SetAlignment([NativeTypeName("WORD")] ushort cbAlignment)
         {
             return ((delegate* unmanaged<ICreateTypeInfo2*, ushort, int>)(lpVtbl[12]))((ICreateTypeInfo2*)Unsafe.AsPointer(ref this), cbAlignment);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(13)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetSchema([NativeTypeName("LPOLESTR")] ushort* pStrSchema)
+        public HRESULT SetSchema([NativeTypeName("LPOLESTR")] ushort* pStrSchema)
         {
             return ((delegate* unmanaged<ICreateTypeInfo2*, ushort*, int>)(lpVtbl[13]))((ICreateTypeInfo2*)Unsafe.AsPointer(ref this), pStrSchema);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(14)]
-        [return: NativeTypeName("HRESULT")]
-        public int AddVarDesc([NativeTypeName("UINT")] uint index, VARDESC* pVarDesc)
+        public HRESULT AddVarDesc(uint index, VARDESC* pVarDesc)
         {
             return ((delegate* unmanaged<ICreateTypeInfo2*, uint, VARDESC*, int>)(lpVtbl[14]))((ICreateTypeInfo2*)Unsafe.AsPointer(ref this), index, pVarDesc);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(15)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetFuncAndParamNames([NativeTypeName("UINT")] uint index, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, [NativeTypeName("UINT")] uint cNames)
+        public HRESULT SetFuncAndParamNames(uint index, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames)
         {
             return ((delegate* unmanaged<ICreateTypeInfo2*, uint, ushort**, uint, int>)(lpVtbl[15]))((ICreateTypeInfo2*)Unsafe.AsPointer(ref this), index, rgszNames, cNames);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(16)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetVarName([NativeTypeName("UINT")] uint index, [NativeTypeName("LPOLESTR")] ushort* szName)
+        public HRESULT SetVarName(uint index, [NativeTypeName("LPOLESTR")] ushort* szName)
         {
             return ((delegate* unmanaged<ICreateTypeInfo2*, uint, ushort*, int>)(lpVtbl[16]))((ICreateTypeInfo2*)Unsafe.AsPointer(ref this), index, szName);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(17)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetTypeDescAlias(TYPEDESC* pTDescAlias)
+        public HRESULT SetTypeDescAlias(TYPEDESC* pTDescAlias)
         {
             return ((delegate* unmanaged<ICreateTypeInfo2*, TYPEDESC*, int>)(lpVtbl[17]))((ICreateTypeInfo2*)Unsafe.AsPointer(ref this), pTDescAlias);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(18)]
-        [return: NativeTypeName("HRESULT")]
-        public int DefineFuncAsDllEntry([NativeTypeName("UINT")] uint index, [NativeTypeName("LPOLESTR")] ushort* szDllName, [NativeTypeName("LPOLESTR")] ushort* szProcName)
+        public HRESULT DefineFuncAsDllEntry(uint index, [NativeTypeName("LPOLESTR")] ushort* szDllName, [NativeTypeName("LPOLESTR")] ushort* szProcName)
         {
             return ((delegate* unmanaged<ICreateTypeInfo2*, uint, ushort*, ushort*, int>)(lpVtbl[18]))((ICreateTypeInfo2*)Unsafe.AsPointer(ref this), index, szDllName, szProcName);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(19)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetFuncDocString([NativeTypeName("UINT")] uint index, [NativeTypeName("LPOLESTR")] ushort* szDocString)
+        public HRESULT SetFuncDocString(uint index, [NativeTypeName("LPOLESTR")] ushort* szDocString)
         {
             return ((delegate* unmanaged<ICreateTypeInfo2*, uint, ushort*, int>)(lpVtbl[19]))((ICreateTypeInfo2*)Unsafe.AsPointer(ref this), index, szDocString);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(20)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetVarDocString([NativeTypeName("UINT")] uint index, [NativeTypeName("LPOLESTR")] ushort* szDocString)
+        public HRESULT SetVarDocString(uint index, [NativeTypeName("LPOLESTR")] ushort* szDocString)
         {
             return ((delegate* unmanaged<ICreateTypeInfo2*, uint, ushort*, int>)(lpVtbl[20]))((ICreateTypeInfo2*)Unsafe.AsPointer(ref this), index, szDocString);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(21)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetFuncHelpContext([NativeTypeName("UINT")] uint index, [NativeTypeName("DWORD")] uint dwHelpContext)
+        public HRESULT SetFuncHelpContext(uint index, [NativeTypeName("DWORD")] uint dwHelpContext)
         {
             return ((delegate* unmanaged<ICreateTypeInfo2*, uint, uint, int>)(lpVtbl[21]))((ICreateTypeInfo2*)Unsafe.AsPointer(ref this), index, dwHelpContext);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(22)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetVarHelpContext([NativeTypeName("UINT")] uint index, [NativeTypeName("DWORD")] uint dwHelpContext)
+        public HRESULT SetVarHelpContext(uint index, [NativeTypeName("DWORD")] uint dwHelpContext)
         {
             return ((delegate* unmanaged<ICreateTypeInfo2*, uint, uint, int>)(lpVtbl[22]))((ICreateTypeInfo2*)Unsafe.AsPointer(ref this), index, dwHelpContext);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(23)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetMops([NativeTypeName("UINT")] uint index, [NativeTypeName("BSTR")] ushort* bstrMops)
+        public HRESULT SetMops(uint index, [NativeTypeName("BSTR")] ushort* bstrMops)
         {
             return ((delegate* unmanaged<ICreateTypeInfo2*, uint, ushort*, int>)(lpVtbl[23]))((ICreateTypeInfo2*)Unsafe.AsPointer(ref this), index, bstrMops);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(24)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetTypeIdldesc(IDLDESC* pIdlDesc)
+        public HRESULT SetTypeIdldesc(IDLDESC* pIdlDesc)
         {
             return ((delegate* unmanaged<ICreateTypeInfo2*, IDLDESC*, int>)(lpVtbl[24]))((ICreateTypeInfo2*)Unsafe.AsPointer(ref this), pIdlDesc);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(25)]
-        [return: NativeTypeName("HRESULT")]
-        public int LayOut()
+        public HRESULT LayOut()
         {
             return ((delegate* unmanaged<ICreateTypeInfo2*, int>)(lpVtbl[25]))((ICreateTypeInfo2*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(26)]
-        [return: NativeTypeName("HRESULT")]
-        public int DeleteFuncDesc([NativeTypeName("UINT")] uint index)
+        public HRESULT DeleteFuncDesc(uint index)
         {
             return ((delegate* unmanaged<ICreateTypeInfo2*, uint, int>)(lpVtbl[26]))((ICreateTypeInfo2*)Unsafe.AsPointer(ref this), index);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(27)]
-        [return: NativeTypeName("HRESULT")]
-        public int DeleteFuncDescByMemId([NativeTypeName("MEMBERID")] int memid, INVOKEKIND invKind)
+        public HRESULT DeleteFuncDescByMemId([NativeTypeName("MEMBERID")] int memid, INVOKEKIND invKind)
         {
             return ((delegate* unmanaged<ICreateTypeInfo2*, int, INVOKEKIND, int>)(lpVtbl[27]))((ICreateTypeInfo2*)Unsafe.AsPointer(ref this), memid, invKind);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(28)]
-        [return: NativeTypeName("HRESULT")]
-        public int DeleteVarDesc([NativeTypeName("UINT")] uint index)
+        public HRESULT DeleteVarDesc(uint index)
         {
             return ((delegate* unmanaged<ICreateTypeInfo2*, uint, int>)(lpVtbl[28]))((ICreateTypeInfo2*)Unsafe.AsPointer(ref this), index);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(29)]
-        [return: NativeTypeName("HRESULT")]
-        public int DeleteVarDescByMemId([NativeTypeName("MEMBERID")] int memid)
+        public HRESULT DeleteVarDescByMemId([NativeTypeName("MEMBERID")] int memid)
         {
             return ((delegate* unmanaged<ICreateTypeInfo2*, int, int>)(lpVtbl[29]))((ICreateTypeInfo2*)Unsafe.AsPointer(ref this), memid);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(30)]
-        [return: NativeTypeName("HRESULT")]
-        public int DeleteImplType([NativeTypeName("UINT")] uint index)
+        public HRESULT DeleteImplType(uint index)
         {
             return ((delegate* unmanaged<ICreateTypeInfo2*, uint, int>)(lpVtbl[30]))((ICreateTypeInfo2*)Unsafe.AsPointer(ref this), index);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(31)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetCustData([NativeTypeName("const GUID &")] Guid* guid, VARIANT* pVarVal)
+        public HRESULT SetCustData([NativeTypeName("const GUID &")] Guid* guid, VARIANT* pVarVal)
         {
             return ((delegate* unmanaged<ICreateTypeInfo2*, Guid*, VARIANT*, int>)(lpVtbl[31]))((ICreateTypeInfo2*)Unsafe.AsPointer(ref this), guid, pVarVal);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(32)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetFuncCustData([NativeTypeName("UINT")] uint index, [NativeTypeName("const GUID &")] Guid* guid, VARIANT* pVarVal)
+        public HRESULT SetFuncCustData(uint index, [NativeTypeName("const GUID &")] Guid* guid, VARIANT* pVarVal)
         {
             return ((delegate* unmanaged<ICreateTypeInfo2*, uint, Guid*, VARIANT*, int>)(lpVtbl[32]))((ICreateTypeInfo2*)Unsafe.AsPointer(ref this), index, guid, pVarVal);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(33)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetParamCustData([NativeTypeName("UINT")] uint indexFunc, [NativeTypeName("UINT")] uint indexParam, [NativeTypeName("const GUID &")] Guid* guid, VARIANT* pVarVal)
+        public HRESULT SetParamCustData(uint indexFunc, uint indexParam, [NativeTypeName("const GUID &")] Guid* guid, VARIANT* pVarVal)
         {
             return ((delegate* unmanaged<ICreateTypeInfo2*, uint, uint, Guid*, VARIANT*, int>)(lpVtbl[33]))((ICreateTypeInfo2*)Unsafe.AsPointer(ref this), indexFunc, indexParam, guid, pVarVal);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(34)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetVarCustData([NativeTypeName("UINT")] uint index, [NativeTypeName("const GUID &")] Guid* guid, VARIANT* pVarVal)
+        public HRESULT SetVarCustData(uint index, [NativeTypeName("const GUID &")] Guid* guid, VARIANT* pVarVal)
         {
             return ((delegate* unmanaged<ICreateTypeInfo2*, uint, Guid*, VARIANT*, int>)(lpVtbl[34]))((ICreateTypeInfo2*)Unsafe.AsPointer(ref this), index, guid, pVarVal);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(35)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetImplTypeCustData([NativeTypeName("UINT")] uint index, [NativeTypeName("const GUID &")] Guid* guid, VARIANT* pVarVal)
+        public HRESULT SetImplTypeCustData(uint index, [NativeTypeName("const GUID &")] Guid* guid, VARIANT* pVarVal)
         {
             return ((delegate* unmanaged<ICreateTypeInfo2*, uint, Guid*, VARIANT*, int>)(lpVtbl[35]))((ICreateTypeInfo2*)Unsafe.AsPointer(ref this), index, guid, pVarVal);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(36)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetHelpStringContext([NativeTypeName("ULONG")] uint dwHelpStringContext)
+        public HRESULT SetHelpStringContext([NativeTypeName("ULONG")] uint dwHelpStringContext)
         {
             return ((delegate* unmanaged<ICreateTypeInfo2*, uint, int>)(lpVtbl[36]))((ICreateTypeInfo2*)Unsafe.AsPointer(ref this), dwHelpStringContext);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(37)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetFuncHelpStringContext([NativeTypeName("UINT")] uint index, [NativeTypeName("ULONG")] uint dwHelpStringContext)
+        public HRESULT SetFuncHelpStringContext(uint index, [NativeTypeName("ULONG")] uint dwHelpStringContext)
         {
             return ((delegate* unmanaged<ICreateTypeInfo2*, uint, uint, int>)(lpVtbl[37]))((ICreateTypeInfo2*)Unsafe.AsPointer(ref this), index, dwHelpStringContext);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(38)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetVarHelpStringContext([NativeTypeName("UINT")] uint index, [NativeTypeName("ULONG")] uint dwHelpStringContext)
+        public HRESULT SetVarHelpStringContext(uint index, [NativeTypeName("ULONG")] uint dwHelpStringContext)
         {
             return ((delegate* unmanaged<ICreateTypeInfo2*, uint, uint, int>)(lpVtbl[38]))((ICreateTypeInfo2*)Unsafe.AsPointer(ref this), index, dwHelpStringContext);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(39)]
-        [return: NativeTypeName("HRESULT")]
-        public int Invalidate()
+        public HRESULT Invalidate()
         {
             return ((delegate* unmanaged<ICreateTypeInfo2*, int>)(lpVtbl[39]))((ICreateTypeInfo2*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(40)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetName([NativeTypeName("LPOLESTR")] ushort* szName)
+        public HRESULT SetName([NativeTypeName("LPOLESTR")] ushort* szName)
         {
             return ((delegate* unmanaged<ICreateTypeInfo2*, ushort*, int>)(lpVtbl[40]))((ICreateTypeInfo2*)Unsafe.AsPointer(ref this), szName);
         }

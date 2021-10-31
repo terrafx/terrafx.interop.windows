@@ -10,7 +10,6 @@ namespace TerraFX.Interop
         [NativeTypeName("LPWSTR")]
         public ushort* pszText;
 
-        [NativeTypeName("INT")]
         public int cchTextMax;
     }
 }

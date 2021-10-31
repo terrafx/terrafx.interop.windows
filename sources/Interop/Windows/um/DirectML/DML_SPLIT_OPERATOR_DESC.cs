@@ -10,13 +10,11 @@ namespace TerraFX.Interop
         [NativeTypeName("const DML_TENSOR_DESC *")]
         public DML_TENSOR_DESC* InputTensor;
 
-        [NativeTypeName("UINT")]
         public uint OutputCount;
 
         [NativeTypeName("const DML_TENSOR_DESC *")]
         public DML_TENSOR_DESC* OutputTensors;
 
-        [NativeTypeName("UINT")]
         public uint Axis;
     }
 }

@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<ISpeechPhraseProperty*, Guid*, void**, int>)(lpVtbl[0]))((ISpeechPhraseProperty*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,104 +41,91 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetTypeInfoCount([NativeTypeName("UINT *")] uint* pctinfo)
+        public HRESULT GetTypeInfoCount(uint* pctinfo)
         {
             return ((delegate* unmanaged<ISpeechPhraseProperty*, uint*, int>)(lpVtbl[3]))((ISpeechPhraseProperty*)Unsafe.AsPointer(ref this), pctinfo);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetTypeInfo([NativeTypeName("UINT")] uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
+        public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
         {
             return ((delegate* unmanaged<ISpeechPhraseProperty*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((ISpeechPhraseProperty*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, [NativeTypeName("UINT")] uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+        public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
         {
             return ((delegate* unmanaged<ISpeechPhraseProperty*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((ISpeechPhraseProperty*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, [NativeTypeName("UINT *")] uint* puArgErr)
+        public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
         {
             return ((delegate* unmanaged<ISpeechPhraseProperty*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((ISpeechPhraseProperty*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        [return: NativeTypeName("HRESULT")]
-        public int get_Name([NativeTypeName("BSTR *")] ushort** Name)
+        public HRESULT get_Name([NativeTypeName("BSTR *")] ushort** Name)
         {
             return ((delegate* unmanaged<ISpeechPhraseProperty*, ushort**, int>)(lpVtbl[7]))((ISpeechPhraseProperty*)Unsafe.AsPointer(ref this), Name);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        [return: NativeTypeName("HRESULT")]
-        public int get_Id([NativeTypeName("long *")] int* Id)
+        public HRESULT get_Id([NativeTypeName("long *")] int* Id)
         {
             return ((delegate* unmanaged<ISpeechPhraseProperty*, int*, int>)(lpVtbl[8]))((ISpeechPhraseProperty*)Unsafe.AsPointer(ref this), Id);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        [return: NativeTypeName("HRESULT")]
-        public int get_Value(VARIANT* Value)
+        public HRESULT get_Value(VARIANT* Value)
         {
             return ((delegate* unmanaged<ISpeechPhraseProperty*, VARIANT*, int>)(lpVtbl[9]))((ISpeechPhraseProperty*)Unsafe.AsPointer(ref this), Value);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(10)]
-        [return: NativeTypeName("HRESULT")]
-        public int get_FirstElement([NativeTypeName("long *")] int* FirstElement)
+        public HRESULT get_FirstElement([NativeTypeName("long *")] int* FirstElement)
         {
             return ((delegate* unmanaged<ISpeechPhraseProperty*, int*, int>)(lpVtbl[10]))((ISpeechPhraseProperty*)Unsafe.AsPointer(ref this), FirstElement);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(11)]
-        [return: NativeTypeName("HRESULT")]
-        public int get_NumberOfElements([NativeTypeName("long *")] int* NumberOfElements)
+        public HRESULT get_NumberOfElements([NativeTypeName("long *")] int* NumberOfElements)
         {
             return ((delegate* unmanaged<ISpeechPhraseProperty*, int*, int>)(lpVtbl[11]))((ISpeechPhraseProperty*)Unsafe.AsPointer(ref this), NumberOfElements);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(12)]
-        [return: NativeTypeName("HRESULT")]
-        public int get_EngineConfidence(float* Confidence)
+        public HRESULT get_EngineConfidence(float* Confidence)
         {
             return ((delegate* unmanaged<ISpeechPhraseProperty*, float*, int>)(lpVtbl[12]))((ISpeechPhraseProperty*)Unsafe.AsPointer(ref this), Confidence);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(13)]
-        [return: NativeTypeName("HRESULT")]
-        public int get_Confidence(SpeechEngineConfidence* Confidence)
+        public HRESULT get_Confidence(SpeechEngineConfidence* Confidence)
         {
             return ((delegate* unmanaged<ISpeechPhraseProperty*, SpeechEngineConfidence*, int>)(lpVtbl[13]))((ISpeechPhraseProperty*)Unsafe.AsPointer(ref this), Confidence);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(14)]
-        [return: NativeTypeName("HRESULT")]
-        public int get_Parent(ISpeechPhraseProperty** ParentProperty)
+        public HRESULT get_Parent(ISpeechPhraseProperty** ParentProperty)
         {
             return ((delegate* unmanaged<ISpeechPhraseProperty*, ISpeechPhraseProperty**, int>)(lpVtbl[14]))((ISpeechPhraseProperty*)Unsafe.AsPointer(ref this), ParentProperty);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(15)]
-        [return: NativeTypeName("HRESULT")]
-        public int get_Children(ISpeechPhraseProperties** Children)
+        public HRESULT get_Children(ISpeechPhraseProperties** Children)
         {
             return ((delegate* unmanaged<ISpeechPhraseProperty*, ISpeechPhraseProperties**, int>)(lpVtbl[15]))((ISpeechPhraseProperty*)Unsafe.AsPointer(ref this), Children);
         }

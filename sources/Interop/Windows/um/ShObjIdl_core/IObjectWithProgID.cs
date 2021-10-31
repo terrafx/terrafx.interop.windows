@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IObjectWithProgID*, Guid*, void**, int>)(lpVtbl[0]))((IObjectWithProgID*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,16 +41,14 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetProgID([NativeTypeName("LPCWSTR")] ushort* pszProgID)
+        public HRESULT SetProgID([NativeTypeName("LPCWSTR")] ushort* pszProgID)
         {
             return ((delegate* unmanaged<IObjectWithProgID*, ushort*, int>)(lpVtbl[3]))((IObjectWithProgID*)Unsafe.AsPointer(ref this), pszProgID);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetProgID([NativeTypeName("LPWSTR *")] ushort** ppszProgID)
+        public HRESULT GetProgID([NativeTypeName("LPWSTR *")] ushort** ppszProgID)
         {
             return ((delegate* unmanaged<IObjectWithProgID*, ushort**, int>)(lpVtbl[4]))((IObjectWithProgID*)Unsafe.AsPointer(ref this), ppszProgID);
         }

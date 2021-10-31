@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IConfigAviMux*, Guid*, void**, int>)(lpVtbl[0]))((IConfigAviMux*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,34 +41,30 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetMasterStream([NativeTypeName("LONG")] int iStream)
+        public HRESULT SetMasterStream([NativeTypeName("LONG")] int iStream)
         {
             return ((delegate* unmanaged<IConfigAviMux*, int, int>)(lpVtbl[3]))((IConfigAviMux*)Unsafe.AsPointer(ref this), iStream);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetMasterStream([NativeTypeName("LONG *")] int* pStream)
+        public HRESULT GetMasterStream([NativeTypeName("LONG *")] int* pStream)
         {
             return ((delegate* unmanaged<IConfigAviMux*, int*, int>)(lpVtbl[4]))((IConfigAviMux*)Unsafe.AsPointer(ref this), pStream);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetOutputCompatibilityIndex([NativeTypeName("BOOL")] int fOldIndex)
+        public HRESULT SetOutputCompatibilityIndex(BOOL fOldIndex)
         {
-            return ((delegate* unmanaged<IConfigAviMux*, int, int>)(lpVtbl[5]))((IConfigAviMux*)Unsafe.AsPointer(ref this), fOldIndex);
+            return ((delegate* unmanaged<IConfigAviMux*, BOOL, int>)(lpVtbl[5]))((IConfigAviMux*)Unsafe.AsPointer(ref this), fOldIndex);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetOutputCompatibilityIndex([NativeTypeName("BOOL *")] int* pfOldIndex)
+        public HRESULT GetOutputCompatibilityIndex(BOOL* pfOldIndex)
         {
-            return ((delegate* unmanaged<IConfigAviMux*, int*, int>)(lpVtbl[6]))((IConfigAviMux*)Unsafe.AsPointer(ref this), pfOldIndex);
+            return ((delegate* unmanaged<IConfigAviMux*, BOOL*, int>)(lpVtbl[6]))((IConfigAviMux*)Unsafe.AsPointer(ref this), pfOldIndex);
         }
     }
 }

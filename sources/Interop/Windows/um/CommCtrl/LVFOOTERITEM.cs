@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct LVFOOTERITEM
     {
-        [NativeTypeName("UINT")]
         public uint mask;
 
         public int iItem;
@@ -17,10 +16,8 @@ namespace TerraFX.Interop
 
         public int cchTextMax;
 
-        [NativeTypeName("UINT")]
         public uint state;
 
-        [NativeTypeName("UINT")]
         public uint stateMask;
     }
 }

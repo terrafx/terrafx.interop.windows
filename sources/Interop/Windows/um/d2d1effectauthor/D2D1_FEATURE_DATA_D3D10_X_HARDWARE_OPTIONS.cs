@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public partial struct D2D1_FEATURE_DATA_D3D10_X_HARDWARE_OPTIONS
     {
-        [NativeTypeName("BOOL")]
-        public int computeShaders_Plus_RawAndStructuredBuffers_Via_Shader_4_x;
+        public BOOL computeShaders_Plus_RawAndStructuredBuffers_Via_Shader_4_x;
     }
 }

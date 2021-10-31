@@ -3,7 +3,6 @@
 // Ported from um/SpatialAudioClient.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
@@ -24,8 +23,7 @@ namespace TerraFX.Interop
 
         public AUDIO_STREAM_CATEGORY Category;
 
-        [NativeTypeName("HANDLE")]
-        public IntPtr EventHandle;
+        public HANDLE EventHandle;
 
         public ISpatialAudioObjectRenderStreamNotify* NotifyObject;
     }

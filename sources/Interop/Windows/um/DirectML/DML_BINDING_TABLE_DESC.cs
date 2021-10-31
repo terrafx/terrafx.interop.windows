@@ -13,7 +13,6 @@ namespace TerraFX.Interop
 
         public D3D12_GPU_DESCRIPTOR_HANDLE GPUDescriptorHandle;
 
-        [NativeTypeName("UINT")]
         public uint SizeInDescriptors;
     }
 }

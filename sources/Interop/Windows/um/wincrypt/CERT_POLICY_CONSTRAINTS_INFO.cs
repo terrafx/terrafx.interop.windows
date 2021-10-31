@@ -7,14 +7,12 @@ namespace TerraFX.Interop
 {
     public partial struct CERT_POLICY_CONSTRAINTS_INFO
     {
-        [NativeTypeName("BOOL")]
-        public int fRequireExplicitPolicy;
+        public BOOL fRequireExplicitPolicy;
 
         [NativeTypeName("DWORD")]
         public uint dwRequireExplicitPolicySkipCerts;
 
-        [NativeTypeName("BOOL")]
-        public int fInhibitPolicyMapping;
+        public BOOL fInhibitPolicyMapping;
 
         [NativeTypeName("DWORD")]
         public uint dwInhibitPolicyMappingSkipCerts;

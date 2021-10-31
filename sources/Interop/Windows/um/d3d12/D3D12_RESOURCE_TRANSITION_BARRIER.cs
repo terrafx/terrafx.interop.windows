@@ -9,7 +9,6 @@ namespace TerraFX.Interop
     {
         public ID3D12Resource* pResource;
 
-        [NativeTypeName("UINT")]
         public uint Subresource;
 
         public D3D12_RESOURCE_STATES StateBefore;

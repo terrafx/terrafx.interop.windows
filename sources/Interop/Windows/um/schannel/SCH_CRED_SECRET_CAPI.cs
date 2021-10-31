@@ -3,8 +3,6 @@
 // Ported from um/schannel.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
-
 namespace TerraFX.Interop
 {
     public partial struct SCH_CRED_SECRET_CAPI
@@ -12,7 +10,6 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint dwType;
 
-        [NativeTypeName("HCRYPTPROV")]
-        public IntPtr hProv;
+        public HCRYPTPROV hProv;
     }
 }

@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<ISyncMgrSyncItem*, Guid*, void**, int>)(lpVtbl[0]))((ISyncMgrSyncItem*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,64 +41,56 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetItemID([NativeTypeName("LPWSTR *")] ushort** ppszItemID)
+        public HRESULT GetItemID([NativeTypeName("LPWSTR *")] ushort** ppszItemID)
         {
             return ((delegate* unmanaged<ISyncMgrSyncItem*, ushort**, int>)(lpVtbl[3]))((ISyncMgrSyncItem*)Unsafe.AsPointer(ref this), ppszItemID);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetName([NativeTypeName("LPWSTR *")] ushort** ppszName)
+        public HRESULT GetName([NativeTypeName("LPWSTR *")] ushort** ppszName)
         {
             return ((delegate* unmanaged<ISyncMgrSyncItem*, ushort**, int>)(lpVtbl[4]))((ISyncMgrSyncItem*)Unsafe.AsPointer(ref this), ppszName);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetItemInfo(ISyncMgrSyncItemInfo** ppItemInfo)
+        public HRESULT GetItemInfo(ISyncMgrSyncItemInfo** ppItemInfo)
         {
             return ((delegate* unmanaged<ISyncMgrSyncItem*, ISyncMgrSyncItemInfo**, int>)(lpVtbl[5]))((ISyncMgrSyncItem*)Unsafe.AsPointer(ref this), ppItemInfo);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetObjectW([NativeTypeName("const GUID &")] Guid* rguidObjectID, [NativeTypeName("const IID &")] Guid* riid, void** ppv)
+        public HRESULT GetObjectW([NativeTypeName("const GUID &")] Guid* rguidObjectID, [NativeTypeName("const IID &")] Guid* riid, void** ppv)
         {
             return ((delegate* unmanaged<ISyncMgrSyncItem*, Guid*, Guid*, void**, int>)(lpVtbl[6]))((ISyncMgrSyncItem*)Unsafe.AsPointer(ref this), rguidObjectID, riid, ppv);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetCapabilities(SYNCMGR_ITEM_CAPABILITIES* pmCapabilities)
+        public HRESULT GetCapabilities(SYNCMGR_ITEM_CAPABILITIES* pmCapabilities)
         {
             return ((delegate* unmanaged<ISyncMgrSyncItem*, SYNCMGR_ITEM_CAPABILITIES*, int>)(lpVtbl[7]))((ISyncMgrSyncItem*)Unsafe.AsPointer(ref this), pmCapabilities);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetPolicies(SYNCMGR_ITEM_POLICIES* pmPolicies)
+        public HRESULT GetPolicies(SYNCMGR_ITEM_POLICIES* pmPolicies)
         {
             return ((delegate* unmanaged<ISyncMgrSyncItem*, SYNCMGR_ITEM_POLICIES*, int>)(lpVtbl[8]))((ISyncMgrSyncItem*)Unsafe.AsPointer(ref this), pmPolicies);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        [return: NativeTypeName("HRESULT")]
-        public int Enable([NativeTypeName("BOOL")] int fEnable)
+        public HRESULT Enable(BOOL fEnable)
         {
-            return ((delegate* unmanaged<ISyncMgrSyncItem*, int, int>)(lpVtbl[9]))((ISyncMgrSyncItem*)Unsafe.AsPointer(ref this), fEnable);
+            return ((delegate* unmanaged<ISyncMgrSyncItem*, BOOL, int>)(lpVtbl[9]))((ISyncMgrSyncItem*)Unsafe.AsPointer(ref this), fEnable);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(10)]
-        [return: NativeTypeName("HRESULT")]
-        public int Delete()
+        public HRESULT Delete()
         {
             return ((delegate* unmanaged<ISyncMgrSyncItem*, int>)(lpVtbl[10]))((ISyncMgrSyncItem*)Unsafe.AsPointer(ref this));
         }

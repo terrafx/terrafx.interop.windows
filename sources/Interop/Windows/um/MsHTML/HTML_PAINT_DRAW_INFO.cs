@@ -3,16 +3,13 @@
 // Ported from um/MsHTML.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
-
 namespace TerraFX.Interop
 {
     public partial struct HTML_PAINT_DRAW_INFO
     {
         public RECT rcViewport;
 
-        [NativeTypeName("HRGN")]
-        public IntPtr hrgnUpdate;
+        public HRGN hrgnUpdate;
 
         public HTML_PAINT_XFORM xform;
     }

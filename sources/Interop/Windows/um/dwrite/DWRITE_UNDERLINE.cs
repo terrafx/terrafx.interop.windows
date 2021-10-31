@@ -7,16 +7,12 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct DWRITE_UNDERLINE
     {
-        [NativeTypeName("FLOAT")]
         public float width;
 
-        [NativeTypeName("FLOAT")]
         public float thickness;
 
-        [NativeTypeName("FLOAT")]
         public float offset;
 
-        [NativeTypeName("FLOAT")]
         public float runHeight;
 
         public DWRITE_READING_DIRECTION readingDirection;

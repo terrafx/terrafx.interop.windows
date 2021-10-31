@@ -3,8 +3,6 @@
 // Ported from um/wincrypt.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
-
 namespace TerraFX.Interop
 {
     public unsafe partial struct CRYPT_ENCRYPT_MESSAGE_PARA
@@ -15,8 +13,7 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint dwMsgEncodingType;
 
-        [NativeTypeName("HCRYPTPROV_LEGACY")]
-        public IntPtr hCryptProv;
+        public HCRYPTPROV_LEGACY hCryptProv;
 
         public CRYPT_ALGORITHM_IDENTIFIER ContentEncryptionAlgorithm;
 

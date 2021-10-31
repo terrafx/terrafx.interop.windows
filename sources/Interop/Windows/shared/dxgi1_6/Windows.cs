@@ -13,8 +13,7 @@ namespace TerraFX.Interop
     public static partial class Windows
     {
         [DllImport("dxgi", ExactSpelling = true)]
-        [return: NativeTypeName("HRESULT")]
-        public static extern int DXGIDeclareAdapterRemovalSupport();
+        public static extern HRESULT DXGIDeclareAdapterRemovalSupport();
 
         [NativeTypeName("const GUID")]
         public static ref readonly Guid IID_IDXGIAdapter4

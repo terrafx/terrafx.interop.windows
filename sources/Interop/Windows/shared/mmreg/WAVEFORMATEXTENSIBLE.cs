@@ -19,7 +19,6 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint dwChannelMask;
 
-        [NativeTypeName("GUID")]
         public Guid SubFormat;
 
         [StructLayout(LayoutKind.Explicit, Pack = 1)]

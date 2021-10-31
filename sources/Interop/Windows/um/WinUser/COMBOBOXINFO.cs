@@ -3,8 +3,6 @@
 // Ported from um/WinUser.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
-
 namespace TerraFX.Interop
 {
     public partial struct COMBOBOXINFO
@@ -19,13 +17,10 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint stateButton;
 
-        [NativeTypeName("HWND")]
-        public IntPtr hwndCombo;
+        public HWND hwndCombo;
 
-        [NativeTypeName("HWND")]
-        public IntPtr hwndItem;
+        public HWND hwndItem;
 
-        [NativeTypeName("HWND")]
-        public IntPtr hwndList;
+        public HWND hwndList;
     }
 }

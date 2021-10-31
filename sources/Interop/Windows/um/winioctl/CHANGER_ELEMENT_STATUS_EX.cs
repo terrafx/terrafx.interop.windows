@@ -17,10 +17,8 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint ExceptionCode;
 
-        [NativeTypeName("BYTE")]
         public byte TargetId;
 
-        [NativeTypeName("BYTE")]
         public byte Lun;
 
         [NativeTypeName("WORD")]

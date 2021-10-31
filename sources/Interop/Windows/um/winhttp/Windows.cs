@@ -3,7 +3,6 @@
 // Ported from um/winhttp.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
@@ -12,139 +11,114 @@ namespace TerraFX.Interop
     {
         [DllImport("winhttp", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("WINHTTP_STATUS_CALLBACK")]
-        public static extern delegate* unmanaged<IntPtr, nuint, uint, void*, uint, void> WinHttpSetStatusCallback([NativeTypeName("HINTERNET")] IntPtr hInternet, [NativeTypeName("WINHTTP_STATUS_CALLBACK")] delegate* unmanaged<IntPtr, nuint, uint, void*, uint, void> lpfnInternetCallback, [NativeTypeName("DWORD")] uint dwNotificationFlags, [NativeTypeName("DWORD_PTR")] nuint dwReserved);
+        public static extern delegate* unmanaged<HINTERNET, nuint, uint, void*, uint, void> WinHttpSetStatusCallback(HINTERNET hInternet, [NativeTypeName("WINHTTP_STATUS_CALLBACK")] delegate* unmanaged<HINTERNET, nuint, uint, void*, uint, void> lpfnInternetCallback, [NativeTypeName("DWORD")] uint dwNotificationFlags, [NativeTypeName("DWORD_PTR")] nuint dwReserved);
 
         [DllImport("winhttp", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int WinHttpTimeFromSystemTime([NativeTypeName("const SYSTEMTIME *")] SYSTEMTIME* pst, [NativeTypeName("LPWSTR")] ushort* pwszTime);
+        public static extern BOOL WinHttpTimeFromSystemTime([NativeTypeName("const SYSTEMTIME *")] SYSTEMTIME* pst, [NativeTypeName("LPWSTR")] ushort* pwszTime);
 
         [DllImport("winhttp", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int WinHttpTimeToSystemTime([NativeTypeName("LPCWSTR")] ushort* pwszTime, SYSTEMTIME* pst);
+        public static extern BOOL WinHttpTimeToSystemTime([NativeTypeName("LPCWSTR")] ushort* pwszTime, SYSTEMTIME* pst);
 
         [DllImport("winhttp", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int WinHttpCrackUrl([NativeTypeName("LPCWSTR")] ushort* pwszUrl, [NativeTypeName("DWORD")] uint dwUrlLength, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LPURL_COMPONENTS")] URL_COMPONENTS* lpUrlComponents);
+        public static extern BOOL WinHttpCrackUrl([NativeTypeName("LPCWSTR")] ushort* pwszUrl, [NativeTypeName("DWORD")] uint dwUrlLength, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LPURL_COMPONENTS")] URL_COMPONENTS* lpUrlComponents);
 
         [DllImport("winhttp", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int WinHttpCreateUrl([NativeTypeName("LPURL_COMPONENTS")] URL_COMPONENTS* lpUrlComponents, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LPWSTR")] ushort* pwszUrl, [NativeTypeName("LPDWORD")] uint* pdwUrlLength);
+        public static extern BOOL WinHttpCreateUrl([NativeTypeName("LPURL_COMPONENTS")] URL_COMPONENTS* lpUrlComponents, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LPWSTR")] ushort* pwszUrl, [NativeTypeName("LPDWORD")] uint* pdwUrlLength);
 
         [DllImport("winhttp", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int WinHttpCheckPlatform();
+        public static extern BOOL WinHttpCheckPlatform();
 
         [DllImport("winhttp", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int WinHttpGetDefaultProxyConfiguration(WINHTTP_PROXY_INFO* pProxyInfo);
+        public static extern BOOL WinHttpGetDefaultProxyConfiguration(WINHTTP_PROXY_INFO* pProxyInfo);
 
         [DllImport("winhttp", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int WinHttpSetDefaultProxyConfiguration(WINHTTP_PROXY_INFO* pProxyInfo);
+        public static extern BOOL WinHttpSetDefaultProxyConfiguration(WINHTTP_PROXY_INFO* pProxyInfo);
 
         [DllImport("winhttp", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("HINTERNET")]
-        public static extern IntPtr WinHttpOpen([NativeTypeName("LPCWSTR")] ushort* pszAgentW, [NativeTypeName("DWORD")] uint dwAccessType, [NativeTypeName("LPCWSTR")] ushort* pszProxyW, [NativeTypeName("LPCWSTR")] ushort* pszProxyBypassW, [NativeTypeName("DWORD")] uint dwFlags);
+        public static extern HINTERNET WinHttpOpen([NativeTypeName("LPCWSTR")] ushort* pszAgentW, [NativeTypeName("DWORD")] uint dwAccessType, [NativeTypeName("LPCWSTR")] ushort* pszProxyW, [NativeTypeName("LPCWSTR")] ushort* pszProxyBypassW, [NativeTypeName("DWORD")] uint dwFlags);
 
         [DllImport("winhttp", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int WinHttpCloseHandle([NativeTypeName("HINTERNET")] IntPtr hInternet);
+        public static extern BOOL WinHttpCloseHandle(HINTERNET hInternet);
 
         [DllImport("winhttp", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("HINTERNET")]
-        public static extern IntPtr WinHttpConnect([NativeTypeName("HINTERNET")] IntPtr hSession, [NativeTypeName("LPCWSTR")] ushort* pswzServerName, [NativeTypeName("INTERNET_PORT")] ushort nServerPort, [NativeTypeName("DWORD")] uint dwReserved);
+        public static extern HINTERNET WinHttpConnect(HINTERNET hSession, [NativeTypeName("LPCWSTR")] ushort* pswzServerName, [NativeTypeName("INTERNET_PORT")] ushort nServerPort, [NativeTypeName("DWORD")] uint dwReserved);
 
         [DllImport("winhttp", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int WinHttpReadData([NativeTypeName("HINTERNET")] IntPtr hRequest, [NativeTypeName("LPVOID")] void* lpBuffer, [NativeTypeName("DWORD")] uint dwNumberOfBytesToRead, [NativeTypeName("LPDWORD")] uint* lpdwNumberOfBytesRead);
+        public static extern BOOL WinHttpReadData(HINTERNET hRequest, [NativeTypeName("LPVOID")] void* lpBuffer, [NativeTypeName("DWORD")] uint dwNumberOfBytesToRead, [NativeTypeName("LPDWORD")] uint* lpdwNumberOfBytesRead);
 
         [DllImport("winhttp", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
-        public static extern uint WinHttpReadDataEx([NativeTypeName("HINTERNET")] IntPtr hRequest, [NativeTypeName("LPVOID")] void* lpBuffer, [NativeTypeName("DWORD")] uint dwNumberOfBytesToRead, [NativeTypeName("LPDWORD")] uint* lpdwNumberOfBytesRead, [NativeTypeName("ULONGLONG")] ulong ullFlags, [NativeTypeName("DWORD")] uint cbProperty, [NativeTypeName("PVOID")] void* pvProperty);
+        public static extern uint WinHttpReadDataEx(HINTERNET hRequest, [NativeTypeName("LPVOID")] void* lpBuffer, [NativeTypeName("DWORD")] uint dwNumberOfBytesToRead, [NativeTypeName("LPDWORD")] uint* lpdwNumberOfBytesRead, [NativeTypeName("ULONGLONG")] ulong ullFlags, [NativeTypeName("DWORD")] uint cbProperty, [NativeTypeName("PVOID")] void* pvProperty);
 
         [DllImport("winhttp", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int WinHttpWriteData([NativeTypeName("HINTERNET")] IntPtr hRequest, [NativeTypeName("LPCVOID")] void* lpBuffer, [NativeTypeName("DWORD")] uint dwNumberOfBytesToWrite, [NativeTypeName("LPDWORD")] uint* lpdwNumberOfBytesWritten);
+        public static extern BOOL WinHttpWriteData(HINTERNET hRequest, [NativeTypeName("LPCVOID")] void* lpBuffer, [NativeTypeName("DWORD")] uint dwNumberOfBytesToWrite, [NativeTypeName("LPDWORD")] uint* lpdwNumberOfBytesWritten);
 
         [DllImport("winhttp", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int WinHttpQueryDataAvailable([NativeTypeName("HINTERNET")] IntPtr hRequest, [NativeTypeName("LPDWORD")] uint* lpdwNumberOfBytesAvailable);
+        public static extern BOOL WinHttpQueryDataAvailable(HINTERNET hRequest, [NativeTypeName("LPDWORD")] uint* lpdwNumberOfBytesAvailable);
 
         [DllImport("winhttp", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int WinHttpQueryOption([NativeTypeName("HINTERNET")] IntPtr hInternet, [NativeTypeName("DWORD")] uint dwOption, [NativeTypeName("LPVOID")] void* lpBuffer, [NativeTypeName("LPDWORD")] uint* lpdwBufferLength);
+        public static extern BOOL WinHttpQueryOption(HINTERNET hInternet, [NativeTypeName("DWORD")] uint dwOption, [NativeTypeName("LPVOID")] void* lpBuffer, [NativeTypeName("LPDWORD")] uint* lpdwBufferLength);
 
         [DllImport("winhttp", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int WinHttpSetOption([NativeTypeName("HINTERNET")] IntPtr hInternet, [NativeTypeName("DWORD")] uint dwOption, [NativeTypeName("LPVOID")] void* lpBuffer, [NativeTypeName("DWORD")] uint dwBufferLength);
+        public static extern BOOL WinHttpSetOption(HINTERNET hInternet, [NativeTypeName("DWORD")] uint dwOption, [NativeTypeName("LPVOID")] void* lpBuffer, [NativeTypeName("DWORD")] uint dwBufferLength);
 
         [DllImport("winhttp", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int WinHttpSetTimeouts([NativeTypeName("HINTERNET")] IntPtr hInternet, int nResolveTimeout, int nConnectTimeout, int nSendTimeout, int nReceiveTimeout);
+        public static extern BOOL WinHttpSetTimeouts(HINTERNET hInternet, int nResolveTimeout, int nConnectTimeout, int nSendTimeout, int nReceiveTimeout);
 
         [DllImport("winhttp", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("HINTERNET")]
-        public static extern IntPtr WinHttpOpenRequest([NativeTypeName("HINTERNET")] IntPtr hConnect, [NativeTypeName("LPCWSTR")] ushort* pwszVerb, [NativeTypeName("LPCWSTR")] ushort* pwszObjectName, [NativeTypeName("LPCWSTR")] ushort* pwszVersion, [NativeTypeName("LPCWSTR")] ushort* pwszReferrer, [NativeTypeName("LPCWSTR *")] ushort** ppwszAcceptTypes, [NativeTypeName("DWORD")] uint dwFlags);
+        public static extern HINTERNET WinHttpOpenRequest(HINTERNET hConnect, [NativeTypeName("LPCWSTR")] ushort* pwszVerb, [NativeTypeName("LPCWSTR")] ushort* pwszObjectName, [NativeTypeName("LPCWSTR")] ushort* pwszVersion, [NativeTypeName("LPCWSTR")] ushort* pwszReferrer, [NativeTypeName("LPCWSTR *")] ushort** ppwszAcceptTypes, [NativeTypeName("DWORD")] uint dwFlags);
 
         [DllImport("winhttp", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int WinHttpAddRequestHeaders([NativeTypeName("HINTERNET")] IntPtr hRequest, [NativeTypeName("LPCWSTR")] ushort* lpszHeaders, [NativeTypeName("DWORD")] uint dwHeadersLength, [NativeTypeName("DWORD")] uint dwModifiers);
+        public static extern BOOL WinHttpAddRequestHeaders(HINTERNET hRequest, [NativeTypeName("LPCWSTR")] ushort* lpszHeaders, [NativeTypeName("DWORD")] uint dwHeadersLength, [NativeTypeName("DWORD")] uint dwModifiers);
 
         [DllImport("winhttp", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
-        public static extern uint WinHttpAddRequestHeadersEx([NativeTypeName("HINTERNET")] IntPtr hRequest, [NativeTypeName("DWORD")] uint dwModifiers, [NativeTypeName("ULONGLONG")] ulong ullFlags, [NativeTypeName("ULONGLONG")] ulong ullExtra, [NativeTypeName("DWORD")] uint cHeaders, WINHTTP_EXTENDED_HEADER* pHeaders);
+        public static extern uint WinHttpAddRequestHeadersEx(HINTERNET hRequest, [NativeTypeName("DWORD")] uint dwModifiers, [NativeTypeName("ULONGLONG")] ulong ullFlags, [NativeTypeName("ULONGLONG")] ulong ullExtra, [NativeTypeName("DWORD")] uint cHeaders, WINHTTP_EXTENDED_HEADER* pHeaders);
 
         [DllImport("winhttp", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int WinHttpSendRequest([NativeTypeName("HINTERNET")] IntPtr hRequest, [NativeTypeName("LPCWSTR")] ushort* lpszHeaders, [NativeTypeName("DWORD")] uint dwHeadersLength, [NativeTypeName("LPVOID")] void* lpOptional, [NativeTypeName("DWORD")] uint dwOptionalLength, [NativeTypeName("DWORD")] uint dwTotalLength, [NativeTypeName("DWORD_PTR")] nuint dwContext);
+        public static extern BOOL WinHttpSendRequest(HINTERNET hRequest, [NativeTypeName("LPCWSTR")] ushort* lpszHeaders, [NativeTypeName("DWORD")] uint dwHeadersLength, [NativeTypeName("LPVOID")] void* lpOptional, [NativeTypeName("DWORD")] uint dwOptionalLength, [NativeTypeName("DWORD")] uint dwTotalLength, [NativeTypeName("DWORD_PTR")] nuint dwContext);
 
         [DllImport("winhttp", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int WinHttpSetCredentials([NativeTypeName("HINTERNET")] IntPtr hRequest, [NativeTypeName("DWORD")] uint AuthTargets, [NativeTypeName("DWORD")] uint AuthScheme, [NativeTypeName("LPCWSTR")] ushort* pwszUserName, [NativeTypeName("LPCWSTR")] ushort* pwszPassword, [NativeTypeName("LPVOID")] void* pAuthParams);
+        public static extern BOOL WinHttpSetCredentials(HINTERNET hRequest, [NativeTypeName("DWORD")] uint AuthTargets, [NativeTypeName("DWORD")] uint AuthScheme, [NativeTypeName("LPCWSTR")] ushort* pwszUserName, [NativeTypeName("LPCWSTR")] ushort* pwszPassword, [NativeTypeName("LPVOID")] void* pAuthParams);
 
         [DllImport("winhttp", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int WinHttpQueryAuthSchemes([NativeTypeName("HINTERNET")] IntPtr hRequest, [NativeTypeName("LPDWORD")] uint* lpdwSupportedSchemes, [NativeTypeName("LPDWORD")] uint* lpdwFirstScheme, [NativeTypeName("LPDWORD")] uint* pdwAuthTarget);
+        public static extern BOOL WinHttpQueryAuthSchemes(HINTERNET hRequest, [NativeTypeName("LPDWORD")] uint* lpdwSupportedSchemes, [NativeTypeName("LPDWORD")] uint* lpdwFirstScheme, [NativeTypeName("LPDWORD")] uint* pdwAuthTarget);
 
         [DllImport("winhttp", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int WinHttpReceiveResponse([NativeTypeName("HINTERNET")] IntPtr hRequest, [NativeTypeName("LPVOID")] void* lpReserved);
+        public static extern BOOL WinHttpReceiveResponse(HINTERNET hRequest, [NativeTypeName("LPVOID")] void* lpReserved);
 
         [DllImport("winhttp", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int WinHttpQueryHeaders([NativeTypeName("HINTERNET")] IntPtr hRequest, [NativeTypeName("DWORD")] uint dwInfoLevel, [NativeTypeName("LPCWSTR")] ushort* pwszName, [NativeTypeName("LPVOID")] void* lpBuffer, [NativeTypeName("LPDWORD")] uint* lpdwBufferLength, [NativeTypeName("LPDWORD")] uint* lpdwIndex);
+        public static extern BOOL WinHttpQueryHeaders(HINTERNET hRequest, [NativeTypeName("DWORD")] uint dwInfoLevel, [NativeTypeName("LPCWSTR")] ushort* pwszName, [NativeTypeName("LPVOID")] void* lpBuffer, [NativeTypeName("LPDWORD")] uint* lpdwBufferLength, [NativeTypeName("LPDWORD")] uint* lpdwIndex);
 
         [DllImport("winhttp", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
-        public static extern uint WinHttpQueryHeadersEx([NativeTypeName("HINTERNET")] IntPtr hRequest, [NativeTypeName("DWORD")] uint dwInfoLevel, [NativeTypeName("ULONGLONG")] ulong ullFlags, [NativeTypeName("UINT")] uint uiCodePage, [NativeTypeName("PDWORD")] uint* pdwIndex, [NativeTypeName("PWINHTTP_HEADER_NAME")] WINHTTP_HEADER_NAME* pHeaderName, [NativeTypeName("PVOID")] void* pBuffer, [NativeTypeName("PDWORD")] uint* pdwBufferLength, [NativeTypeName("PWINHTTP_EXTENDED_HEADER *")] WINHTTP_EXTENDED_HEADER** ppHeaders, [NativeTypeName("PDWORD")] uint* pdwHeadersCount);
+        public static extern uint WinHttpQueryHeadersEx(HINTERNET hRequest, [NativeTypeName("DWORD")] uint dwInfoLevel, [NativeTypeName("ULONGLONG")] ulong ullFlags, uint uiCodePage, [NativeTypeName("PDWORD")] uint* pdwIndex, [NativeTypeName("PWINHTTP_HEADER_NAME")] WINHTTP_HEADER_NAME* pHeaderName, [NativeTypeName("PVOID")] void* pBuffer, [NativeTypeName("PDWORD")] uint* pdwBufferLength, [NativeTypeName("PWINHTTP_EXTENDED_HEADER *")] WINHTTP_EXTENDED_HEADER** ppHeaders, [NativeTypeName("PDWORD")] uint* pdwHeadersCount);
 
         [DllImport("winhttp", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int WinHttpDetectAutoProxyConfigUrl([NativeTypeName("DWORD")] uint dwAutoDetectFlags, [NativeTypeName("LPWSTR *")] ushort** ppwstrAutoConfigUrl);
+        public static extern BOOL WinHttpDetectAutoProxyConfigUrl([NativeTypeName("DWORD")] uint dwAutoDetectFlags, [NativeTypeName("LPWSTR *")] ushort** ppwstrAutoConfigUrl);
 
         [DllImport("winhttp", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int WinHttpGetProxyForUrl([NativeTypeName("HINTERNET")] IntPtr hSession, [NativeTypeName("LPCWSTR")] ushort* lpcwszUrl, WINHTTP_AUTOPROXY_OPTIONS* pAutoProxyOptions, WINHTTP_PROXY_INFO* pProxyInfo);
+        public static extern BOOL WinHttpGetProxyForUrl(HINTERNET hSession, [NativeTypeName("LPCWSTR")] ushort* lpcwszUrl, WINHTTP_AUTOPROXY_OPTIONS* pAutoProxyOptions, WINHTTP_PROXY_INFO* pProxyInfo);
 
         [DllImport("winhttp", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
-        public static extern uint WinHttpCreateProxyResolver([NativeTypeName("HINTERNET")] IntPtr hSession, [NativeTypeName("HINTERNET *")] IntPtr* phResolver);
+        public static extern uint WinHttpCreateProxyResolver(HINTERNET hSession, HINTERNET* phResolver);
 
         [DllImport("winhttp", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
-        public static extern uint WinHttpGetProxyForUrlEx([NativeTypeName("HINTERNET")] IntPtr hResolver, [NativeTypeName("PCWSTR")] ushort* pcwszUrl, WINHTTP_AUTOPROXY_OPTIONS* pAutoProxyOptions, [NativeTypeName("DWORD_PTR")] nuint pContext);
+        public static extern uint WinHttpGetProxyForUrlEx(HINTERNET hResolver, [NativeTypeName("PCWSTR")] ushort* pcwszUrl, WINHTTP_AUTOPROXY_OPTIONS* pAutoProxyOptions, [NativeTypeName("DWORD_PTR")] nuint pContext);
 
         [DllImport("winhttp", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
-        public static extern uint WinHttpGetProxyForUrlEx2([NativeTypeName("HINTERNET")] IntPtr hResolver, [NativeTypeName("PCWSTR")] ushort* pcwszUrl, WINHTTP_AUTOPROXY_OPTIONS* pAutoProxyOptions, [NativeTypeName("DWORD")] uint cbInterfaceSelectionContext, [NativeTypeName("BYTE *")] byte* pInterfaceSelectionContext, [NativeTypeName("DWORD_PTR")] nuint pContext);
+        public static extern uint WinHttpGetProxyForUrlEx2(HINTERNET hResolver, [NativeTypeName("PCWSTR")] ushort* pcwszUrl, WINHTTP_AUTOPROXY_OPTIONS* pAutoProxyOptions, [NativeTypeName("DWORD")] uint cbInterfaceSelectionContext, byte* pInterfaceSelectionContext, [NativeTypeName("DWORD_PTR")] nuint pContext);
 
         [DllImport("winhttp", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
-        public static extern uint WinHttpGetProxyResult([NativeTypeName("HINTERNET")] IntPtr hResolver, WINHTTP_PROXY_RESULT* pProxyResult);
+        public static extern uint WinHttpGetProxyResult(HINTERNET hResolver, WINHTTP_PROXY_RESULT* pProxyResult);
 
         [DllImport("winhttp", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
-        public static extern uint WinHttpGetProxyResultEx([NativeTypeName("HINTERNET")] IntPtr hResolver, WINHTTP_PROXY_RESULT_EX* pProxyResultEx);
+        public static extern uint WinHttpGetProxyResultEx(HINTERNET hResolver, WINHTTP_PROXY_RESULT_EX* pProxyResultEx);
 
         [DllImport("winhttp", ExactSpelling = true)]
         public static extern void WinHttpFreeProxyResult(WINHTTP_PROXY_RESULT* pProxyResult);
@@ -154,54 +128,52 @@ namespace TerraFX.Interop
 
         [DllImport("winhttp", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
-        public static extern uint WinHttpResetAutoProxy([NativeTypeName("HINTERNET")] IntPtr hSession, [NativeTypeName("DWORD")] uint dwFlags);
+        public static extern uint WinHttpResetAutoProxy(HINTERNET hSession, [NativeTypeName("DWORD")] uint dwFlags);
 
         [DllImport("winhttp", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int WinHttpGetIEProxyConfigForCurrentUser(WINHTTP_CURRENT_USER_IE_PROXY_CONFIG* pProxyConfig);
+        public static extern BOOL WinHttpGetIEProxyConfigForCurrentUser(WINHTTP_CURRENT_USER_IE_PROXY_CONFIG* pProxyConfig);
 
         [DllImport("winhttp", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
-        public static extern uint WinHttpWriteProxySettings([NativeTypeName("HINTERNET")] IntPtr hSession, [NativeTypeName("BOOL")] int fForceUpdate, WINHTTP_PROXY_SETTINGS* pWinHttpProxySettings);
+        public static extern uint WinHttpWriteProxySettings(HINTERNET hSession, BOOL fForceUpdate, WINHTTP_PROXY_SETTINGS* pWinHttpProxySettings);
 
         [DllImport("winhttp", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
-        public static extern uint WinHttpReadProxySettings([NativeTypeName("HINTERNET")] IntPtr hSession, [NativeTypeName("PCWSTR")] ushort* pcwszConnectionName, [NativeTypeName("BOOL")] int fFallBackToDefaultSettings, [NativeTypeName("BOOL")] int fSetAutoDiscoverForDefaultSettings, [NativeTypeName("DWORD *")] uint* pdwSettingsVersion, [NativeTypeName("BOOL *")] int* pfDefaultSettingsAreReturned, WINHTTP_PROXY_SETTINGS* pWinHttpProxySettings);
+        public static extern uint WinHttpReadProxySettings(HINTERNET hSession, [NativeTypeName("PCWSTR")] ushort* pcwszConnectionName, BOOL fFallBackToDefaultSettings, BOOL fSetAutoDiscoverForDefaultSettings, [NativeTypeName("DWORD *")] uint* pdwSettingsVersion, BOOL* pfDefaultSettingsAreReturned, WINHTTP_PROXY_SETTINGS* pWinHttpProxySettings);
 
         [DllImport("winhttp", ExactSpelling = true)]
         public static extern void WinHttpFreeProxySettings(WINHTTP_PROXY_SETTINGS* pWinHttpProxySettings);
 
         [DllImport("winhttp", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
-        public static extern uint WinHttpGetProxySettingsVersion([NativeTypeName("HINTERNET")] IntPtr hSession, [NativeTypeName("DWORD *")] uint* pdwProxySettingsVersion);
+        public static extern uint WinHttpGetProxySettingsVersion(HINTERNET hSession, [NativeTypeName("DWORD *")] uint* pdwProxySettingsVersion);
 
         [DllImport("winhttp", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
-        public static extern uint WinHttpSetProxySettingsPerUser([NativeTypeName("BOOL")] int fProxySettingsPerUser);
+        public static extern uint WinHttpSetProxySettingsPerUser(BOOL fProxySettingsPerUser);
 
         [DllImport("winhttp", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("HINTERNET")]
-        public static extern IntPtr WinHttpWebSocketCompleteUpgrade([NativeTypeName("HINTERNET")] IntPtr hRequest, [NativeTypeName("DWORD_PTR")] nuint pContext);
+        public static extern HINTERNET WinHttpWebSocketCompleteUpgrade(HINTERNET hRequest, [NativeTypeName("DWORD_PTR")] nuint pContext);
 
         [DllImport("winhttp", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
-        public static extern uint WinHttpWebSocketSend([NativeTypeName("HINTERNET")] IntPtr hWebSocket, WINHTTP_WEB_SOCKET_BUFFER_TYPE eBufferType, [NativeTypeName("PVOID")] void* pvBuffer, [NativeTypeName("DWORD")] uint dwBufferLength);
+        public static extern uint WinHttpWebSocketSend(HINTERNET hWebSocket, WINHTTP_WEB_SOCKET_BUFFER_TYPE eBufferType, [NativeTypeName("PVOID")] void* pvBuffer, [NativeTypeName("DWORD")] uint dwBufferLength);
 
         [DllImport("winhttp", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
-        public static extern uint WinHttpWebSocketReceive([NativeTypeName("HINTERNET")] IntPtr hWebSocket, [NativeTypeName("PVOID")] void* pvBuffer, [NativeTypeName("DWORD")] uint dwBufferLength, [NativeTypeName("DWORD *")] uint* pdwBytesRead, WINHTTP_WEB_SOCKET_BUFFER_TYPE* peBufferType);
+        public static extern uint WinHttpWebSocketReceive(HINTERNET hWebSocket, [NativeTypeName("PVOID")] void* pvBuffer, [NativeTypeName("DWORD")] uint dwBufferLength, [NativeTypeName("DWORD *")] uint* pdwBytesRead, WINHTTP_WEB_SOCKET_BUFFER_TYPE* peBufferType);
 
         [DllImport("winhttp", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
-        public static extern uint WinHttpWebSocketShutdown([NativeTypeName("HINTERNET")] IntPtr hWebSocket, [NativeTypeName("USHORT")] ushort usStatus, [NativeTypeName("PVOID")] void* pvReason, [NativeTypeName("DWORD")] uint dwReasonLength);
+        public static extern uint WinHttpWebSocketShutdown(HINTERNET hWebSocket, ushort usStatus, [NativeTypeName("PVOID")] void* pvReason, [NativeTypeName("DWORD")] uint dwReasonLength);
 
         [DllImport("winhttp", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
-        public static extern uint WinHttpWebSocketClose([NativeTypeName("HINTERNET")] IntPtr hWebSocket, [NativeTypeName("USHORT")] ushort usStatus, [NativeTypeName("PVOID")] void* pvReason, [NativeTypeName("DWORD")] uint dwReasonLength);
+        public static extern uint WinHttpWebSocketClose(HINTERNET hWebSocket, ushort usStatus, [NativeTypeName("PVOID")] void* pvReason, [NativeTypeName("DWORD")] uint dwReasonLength);
 
         [DllImport("winhttp", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
-        public static extern uint WinHttpWebSocketQueryCloseStatus([NativeTypeName("HINTERNET")] IntPtr hWebSocket, [NativeTypeName("USHORT *")] ushort* pusStatus, [NativeTypeName("PVOID")] void* pvReason, [NativeTypeName("DWORD")] uint dwReasonLength, [NativeTypeName("DWORD *")] uint* pdwReasonLengthConsumed);
+        public static extern uint WinHttpWebSocketQueryCloseStatus(HINTERNET hWebSocket, ushort* pusStatus, [NativeTypeName("PVOID")] void* pvReason, [NativeTypeName("DWORD")] uint dwReasonLength, [NativeTypeName("DWORD *")] uint* pdwReasonLengthConsumed);
 
         [NativeTypeName("#define INTERNET_DEFAULT_PORT 0")]
         public const int INTERNET_DEFAULT_PORT = 0;

@@ -3,7 +3,6 @@
 // Ported from um/Cpl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
@@ -23,8 +22,7 @@ namespace TerraFX.Interop
         [NativeTypeName("LONG_PTR")]
         public nint lData;
 
-        [NativeTypeName("HICON")]
-        public IntPtr hIcon;
+        public HICON hIcon;
 
         [NativeTypeName("CHAR [32]")]
         public fixed sbyte szName[32];

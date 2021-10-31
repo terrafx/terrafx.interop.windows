@@ -11,7 +11,6 @@ namespace TerraFX.Interop
 
         public ID3D12Resource* pDstResource;
 
-        [NativeTypeName("UINT")]
         public uint SubresourceCount;
 
         [NativeTypeName("const D3D12_RENDER_PASS_ENDING_ACCESS_RESOLVE_SUBRESOURCE_PARAMETERS *")]
@@ -21,7 +20,6 @@ namespace TerraFX.Interop
 
         public D3D12_RESOLVE_MODE ResolveMode;
 
-        [NativeTypeName("BOOL")]
-        public int PreserveResolveSource;
+        public BOOL PreserveResolveSource;
     }
 }

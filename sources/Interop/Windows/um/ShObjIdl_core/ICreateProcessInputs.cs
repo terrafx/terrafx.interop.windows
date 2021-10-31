@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<ICreateProcessInputs*, Guid*, void**, int>)(lpVtbl[0]))((ICreateProcessInputs*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,56 +41,49 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetCreateFlags([NativeTypeName("DWORD *")] uint* pdwCreationFlags)
+        public HRESULT GetCreateFlags([NativeTypeName("DWORD *")] uint* pdwCreationFlags)
         {
             return ((delegate* unmanaged<ICreateProcessInputs*, uint*, int>)(lpVtbl[3]))((ICreateProcessInputs*)Unsafe.AsPointer(ref this), pdwCreationFlags);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetCreateFlags([NativeTypeName("DWORD")] uint dwCreationFlags)
+        public HRESULT SetCreateFlags([NativeTypeName("DWORD")] uint dwCreationFlags)
         {
             return ((delegate* unmanaged<ICreateProcessInputs*, uint, int>)(lpVtbl[4]))((ICreateProcessInputs*)Unsafe.AsPointer(ref this), dwCreationFlags);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int AddCreateFlags([NativeTypeName("DWORD")] uint dwCreationFlags)
+        public HRESULT AddCreateFlags([NativeTypeName("DWORD")] uint dwCreationFlags)
         {
             return ((delegate* unmanaged<ICreateProcessInputs*, uint, int>)(lpVtbl[5]))((ICreateProcessInputs*)Unsafe.AsPointer(ref this), dwCreationFlags);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetHotKey([NativeTypeName("WORD")] ushort wHotKey)
+        public HRESULT SetHotKey([NativeTypeName("WORD")] ushort wHotKey)
         {
             return ((delegate* unmanaged<ICreateProcessInputs*, ushort, int>)(lpVtbl[6]))((ICreateProcessInputs*)Unsafe.AsPointer(ref this), wHotKey);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        [return: NativeTypeName("HRESULT")]
-        public int AddStartupFlags([NativeTypeName("DWORD")] uint dwStartupInfoFlags)
+        public HRESULT AddStartupFlags([NativeTypeName("DWORD")] uint dwStartupInfoFlags)
         {
             return ((delegate* unmanaged<ICreateProcessInputs*, uint, int>)(lpVtbl[7]))((ICreateProcessInputs*)Unsafe.AsPointer(ref this), dwStartupInfoFlags);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetTitle([NativeTypeName("LPCWSTR")] ushort* pszTitle)
+        public HRESULT SetTitle([NativeTypeName("LPCWSTR")] ushort* pszTitle)
         {
             return ((delegate* unmanaged<ICreateProcessInputs*, ushort*, int>)(lpVtbl[8]))((ICreateProcessInputs*)Unsafe.AsPointer(ref this), pszTitle);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetEnvironmentVariableW([NativeTypeName("LPCWSTR")] ushort* pszName, [NativeTypeName("LPCWSTR")] ushort* pszValue)
+        public HRESULT SetEnvironmentVariableW([NativeTypeName("LPCWSTR")] ushort* pszName, [NativeTypeName("LPCWSTR")] ushort* pszValue)
         {
             return ((delegate* unmanaged<ICreateProcessInputs*, ushort*, ushort*, int>)(lpVtbl[9]))((ICreateProcessInputs*)Unsafe.AsPointer(ref this), pszName, pszValue);
         }

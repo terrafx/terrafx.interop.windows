@@ -10,10 +10,8 @@ namespace TerraFX.Interop
     [StructLayout(LayoutKind.Sequential, Pack = 2)]
     public unsafe partial struct IMAGE_AUX_SYMBOL_TOKEN_DEF
     {
-        [NativeTypeName("BYTE")]
         public byte bAuxType;
 
-        [NativeTypeName("BYTE")]
         public byte bReserved;
 
         [NativeTypeName("DWORD")]

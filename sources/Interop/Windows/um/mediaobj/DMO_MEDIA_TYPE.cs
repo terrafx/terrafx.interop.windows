@@ -9,22 +9,17 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct DMO_MEDIA_TYPE
     {
-        [NativeTypeName("GUID")]
         public Guid majortype;
 
-        [NativeTypeName("GUID")]
         public Guid subtype;
 
-        [NativeTypeName("BOOL")]
-        public int bFixedSizeSamples;
+        public BOOL bFixedSizeSamples;
 
-        [NativeTypeName("BOOL")]
-        public int bTemporalCompression;
+        public BOOL bTemporalCompression;
 
         [NativeTypeName("ULONG")]
         public uint lSampleSize;
 
-        [NativeTypeName("GUID")]
         public Guid formattype;
 
         public IUnknown* pUnk;
@@ -32,7 +27,6 @@ namespace TerraFX.Interop
         [NativeTypeName("ULONG")]
         public uint cbFormat;
 
-        [NativeTypeName("BYTE *")]
         public byte* pbFormat;
     }
 }

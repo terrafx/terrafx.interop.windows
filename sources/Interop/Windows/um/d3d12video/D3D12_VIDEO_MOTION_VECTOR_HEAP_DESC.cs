@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public partial struct D3D12_VIDEO_MOTION_VECTOR_HEAP_DESC
     {
-        [NativeTypeName("UINT")]
         public uint NodeMask;
 
         public DXGI_FORMAT InputFormat;

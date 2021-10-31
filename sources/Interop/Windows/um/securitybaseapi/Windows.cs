@@ -11,236 +11,182 @@ namespace TerraFX.Interop
     public static unsafe partial class Windows
     {
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int AccessCheck([NativeTypeName("PSECURITY_DESCRIPTOR")] void* pSecurityDescriptor, [NativeTypeName("HANDLE")] IntPtr ClientToken, [NativeTypeName("DWORD")] uint DesiredAccess, [NativeTypeName("PGENERIC_MAPPING")] GENERIC_MAPPING* GenericMapping, [NativeTypeName("PPRIVILEGE_SET")] PRIVILEGE_SET* PrivilegeSet, [NativeTypeName("LPDWORD")] uint* PrivilegeSetLength, [NativeTypeName("LPDWORD")] uint* GrantedAccess, [NativeTypeName("LPBOOL")] int* AccessStatus);
+        public static extern BOOL AccessCheck([NativeTypeName("PSECURITY_DESCRIPTOR")] void* pSecurityDescriptor, HANDLE ClientToken, [NativeTypeName("DWORD")] uint DesiredAccess, [NativeTypeName("PGENERIC_MAPPING")] GENERIC_MAPPING* GenericMapping, [NativeTypeName("PPRIVILEGE_SET")] PRIVILEGE_SET* PrivilegeSet, [NativeTypeName("LPDWORD")] uint* PrivilegeSetLength, [NativeTypeName("LPDWORD")] uint* GrantedAccess, [NativeTypeName("LPBOOL")] BOOL* AccessStatus);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int AccessCheckAndAuditAlarmW([NativeTypeName("LPCWSTR")] ushort* SubsystemName, [NativeTypeName("LPVOID")] void* HandleId, [NativeTypeName("LPWSTR")] ushort* ObjectTypeName, [NativeTypeName("LPWSTR")] ushort* ObjectName, [NativeTypeName("PSECURITY_DESCRIPTOR")] void* SecurityDescriptor, [NativeTypeName("DWORD")] uint DesiredAccess, [NativeTypeName("PGENERIC_MAPPING")] GENERIC_MAPPING* GenericMapping, [NativeTypeName("BOOL")] int ObjectCreation, [NativeTypeName("LPDWORD")] uint* GrantedAccess, [NativeTypeName("LPBOOL")] int* AccessStatus, [NativeTypeName("LPBOOL")] int* pfGenerateOnClose);
+        public static extern BOOL AccessCheckAndAuditAlarmW([NativeTypeName("LPCWSTR")] ushort* SubsystemName, [NativeTypeName("LPVOID")] void* HandleId, [NativeTypeName("LPWSTR")] ushort* ObjectTypeName, [NativeTypeName("LPWSTR")] ushort* ObjectName, [NativeTypeName("PSECURITY_DESCRIPTOR")] void* SecurityDescriptor, [NativeTypeName("DWORD")] uint DesiredAccess, [NativeTypeName("PGENERIC_MAPPING")] GENERIC_MAPPING* GenericMapping, BOOL ObjectCreation, [NativeTypeName("LPDWORD")] uint* GrantedAccess, [NativeTypeName("LPBOOL")] BOOL* AccessStatus, [NativeTypeName("LPBOOL")] BOOL* pfGenerateOnClose);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int AccessCheckByType([NativeTypeName("PSECURITY_DESCRIPTOR")] void* pSecurityDescriptor, [NativeTypeName("PSID")] void* PrincipalSelfSid, [NativeTypeName("HANDLE")] IntPtr ClientToken, [NativeTypeName("DWORD")] uint DesiredAccess, [NativeTypeName("POBJECT_TYPE_LIST")] OBJECT_TYPE_LIST* ObjectTypeList, [NativeTypeName("DWORD")] uint ObjectTypeListLength, [NativeTypeName("PGENERIC_MAPPING")] GENERIC_MAPPING* GenericMapping, [NativeTypeName("PPRIVILEGE_SET")] PRIVILEGE_SET* PrivilegeSet, [NativeTypeName("LPDWORD")] uint* PrivilegeSetLength, [NativeTypeName("LPDWORD")] uint* GrantedAccess, [NativeTypeName("LPBOOL")] int* AccessStatus);
+        public static extern BOOL AccessCheckByType([NativeTypeName("PSECURITY_DESCRIPTOR")] void* pSecurityDescriptor, [NativeTypeName("PSID")] void* PrincipalSelfSid, HANDLE ClientToken, [NativeTypeName("DWORD")] uint DesiredAccess, [NativeTypeName("POBJECT_TYPE_LIST")] OBJECT_TYPE_LIST* ObjectTypeList, [NativeTypeName("DWORD")] uint ObjectTypeListLength, [NativeTypeName("PGENERIC_MAPPING")] GENERIC_MAPPING* GenericMapping, [NativeTypeName("PPRIVILEGE_SET")] PRIVILEGE_SET* PrivilegeSet, [NativeTypeName("LPDWORD")] uint* PrivilegeSetLength, [NativeTypeName("LPDWORD")] uint* GrantedAccess, [NativeTypeName("LPBOOL")] BOOL* AccessStatus);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int AccessCheckByTypeResultList([NativeTypeName("PSECURITY_DESCRIPTOR")] void* pSecurityDescriptor, [NativeTypeName("PSID")] void* PrincipalSelfSid, [NativeTypeName("HANDLE")] IntPtr ClientToken, [NativeTypeName("DWORD")] uint DesiredAccess, [NativeTypeName("POBJECT_TYPE_LIST")] OBJECT_TYPE_LIST* ObjectTypeList, [NativeTypeName("DWORD")] uint ObjectTypeListLength, [NativeTypeName("PGENERIC_MAPPING")] GENERIC_MAPPING* GenericMapping, [NativeTypeName("PPRIVILEGE_SET")] PRIVILEGE_SET* PrivilegeSet, [NativeTypeName("LPDWORD")] uint* PrivilegeSetLength, [NativeTypeName("LPDWORD")] uint* GrantedAccessList, [NativeTypeName("LPDWORD")] uint* AccessStatusList);
+        public static extern BOOL AccessCheckByTypeResultList([NativeTypeName("PSECURITY_DESCRIPTOR")] void* pSecurityDescriptor, [NativeTypeName("PSID")] void* PrincipalSelfSid, HANDLE ClientToken, [NativeTypeName("DWORD")] uint DesiredAccess, [NativeTypeName("POBJECT_TYPE_LIST")] OBJECT_TYPE_LIST* ObjectTypeList, [NativeTypeName("DWORD")] uint ObjectTypeListLength, [NativeTypeName("PGENERIC_MAPPING")] GENERIC_MAPPING* GenericMapping, [NativeTypeName("PPRIVILEGE_SET")] PRIVILEGE_SET* PrivilegeSet, [NativeTypeName("LPDWORD")] uint* PrivilegeSetLength, [NativeTypeName("LPDWORD")] uint* GrantedAccessList, [NativeTypeName("LPDWORD")] uint* AccessStatusList);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int AccessCheckByTypeAndAuditAlarmW([NativeTypeName("LPCWSTR")] ushort* SubsystemName, [NativeTypeName("LPVOID")] void* HandleId, [NativeTypeName("LPCWSTR")] ushort* ObjectTypeName, [NativeTypeName("LPCWSTR")] ushort* ObjectName, [NativeTypeName("PSECURITY_DESCRIPTOR")] void* SecurityDescriptor, [NativeTypeName("PSID")] void* PrincipalSelfSid, [NativeTypeName("DWORD")] uint DesiredAccess, AUDIT_EVENT_TYPE AuditType, [NativeTypeName("DWORD")] uint Flags, [NativeTypeName("POBJECT_TYPE_LIST")] OBJECT_TYPE_LIST* ObjectTypeList, [NativeTypeName("DWORD")] uint ObjectTypeListLength, [NativeTypeName("PGENERIC_MAPPING")] GENERIC_MAPPING* GenericMapping, [NativeTypeName("BOOL")] int ObjectCreation, [NativeTypeName("LPDWORD")] uint* GrantedAccess, [NativeTypeName("LPBOOL")] int* AccessStatus, [NativeTypeName("LPBOOL")] int* pfGenerateOnClose);
+        public static extern BOOL AccessCheckByTypeAndAuditAlarmW([NativeTypeName("LPCWSTR")] ushort* SubsystemName, [NativeTypeName("LPVOID")] void* HandleId, [NativeTypeName("LPCWSTR")] ushort* ObjectTypeName, [NativeTypeName("LPCWSTR")] ushort* ObjectName, [NativeTypeName("PSECURITY_DESCRIPTOR")] void* SecurityDescriptor, [NativeTypeName("PSID")] void* PrincipalSelfSid, [NativeTypeName("DWORD")] uint DesiredAccess, AUDIT_EVENT_TYPE AuditType, [NativeTypeName("DWORD")] uint Flags, [NativeTypeName("POBJECT_TYPE_LIST")] OBJECT_TYPE_LIST* ObjectTypeList, [NativeTypeName("DWORD")] uint ObjectTypeListLength, [NativeTypeName("PGENERIC_MAPPING")] GENERIC_MAPPING* GenericMapping, BOOL ObjectCreation, [NativeTypeName("LPDWORD")] uint* GrantedAccess, [NativeTypeName("LPBOOL")] BOOL* AccessStatus, [NativeTypeName("LPBOOL")] BOOL* pfGenerateOnClose);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int AccessCheckByTypeResultListAndAuditAlarmW([NativeTypeName("LPCWSTR")] ushort* SubsystemName, [NativeTypeName("LPVOID")] void* HandleId, [NativeTypeName("LPCWSTR")] ushort* ObjectTypeName, [NativeTypeName("LPCWSTR")] ushort* ObjectName, [NativeTypeName("PSECURITY_DESCRIPTOR")] void* SecurityDescriptor, [NativeTypeName("PSID")] void* PrincipalSelfSid, [NativeTypeName("DWORD")] uint DesiredAccess, AUDIT_EVENT_TYPE AuditType, [NativeTypeName("DWORD")] uint Flags, [NativeTypeName("POBJECT_TYPE_LIST")] OBJECT_TYPE_LIST* ObjectTypeList, [NativeTypeName("DWORD")] uint ObjectTypeListLength, [NativeTypeName("PGENERIC_MAPPING")] GENERIC_MAPPING* GenericMapping, [NativeTypeName("BOOL")] int ObjectCreation, [NativeTypeName("LPDWORD")] uint* GrantedAccessList, [NativeTypeName("LPDWORD")] uint* AccessStatusList, [NativeTypeName("LPBOOL")] int* pfGenerateOnClose);
+        public static extern BOOL AccessCheckByTypeResultListAndAuditAlarmW([NativeTypeName("LPCWSTR")] ushort* SubsystemName, [NativeTypeName("LPVOID")] void* HandleId, [NativeTypeName("LPCWSTR")] ushort* ObjectTypeName, [NativeTypeName("LPCWSTR")] ushort* ObjectName, [NativeTypeName("PSECURITY_DESCRIPTOR")] void* SecurityDescriptor, [NativeTypeName("PSID")] void* PrincipalSelfSid, [NativeTypeName("DWORD")] uint DesiredAccess, AUDIT_EVENT_TYPE AuditType, [NativeTypeName("DWORD")] uint Flags, [NativeTypeName("POBJECT_TYPE_LIST")] OBJECT_TYPE_LIST* ObjectTypeList, [NativeTypeName("DWORD")] uint ObjectTypeListLength, [NativeTypeName("PGENERIC_MAPPING")] GENERIC_MAPPING* GenericMapping, BOOL ObjectCreation, [NativeTypeName("LPDWORD")] uint* GrantedAccessList, [NativeTypeName("LPDWORD")] uint* AccessStatusList, [NativeTypeName("LPBOOL")] BOOL* pfGenerateOnClose);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int AccessCheckByTypeResultListAndAuditAlarmByHandleW([NativeTypeName("LPCWSTR")] ushort* SubsystemName, [NativeTypeName("LPVOID")] void* HandleId, [NativeTypeName("HANDLE")] IntPtr ClientToken, [NativeTypeName("LPCWSTR")] ushort* ObjectTypeName, [NativeTypeName("LPCWSTR")] ushort* ObjectName, [NativeTypeName("PSECURITY_DESCRIPTOR")] void* SecurityDescriptor, [NativeTypeName("PSID")] void* PrincipalSelfSid, [NativeTypeName("DWORD")] uint DesiredAccess, AUDIT_EVENT_TYPE AuditType, [NativeTypeName("DWORD")] uint Flags, [NativeTypeName("POBJECT_TYPE_LIST")] OBJECT_TYPE_LIST* ObjectTypeList, [NativeTypeName("DWORD")] uint ObjectTypeListLength, [NativeTypeName("PGENERIC_MAPPING")] GENERIC_MAPPING* GenericMapping, [NativeTypeName("BOOL")] int ObjectCreation, [NativeTypeName("LPDWORD")] uint* GrantedAccessList, [NativeTypeName("LPDWORD")] uint* AccessStatusList, [NativeTypeName("LPBOOL")] int* pfGenerateOnClose);
+        public static extern BOOL AccessCheckByTypeResultListAndAuditAlarmByHandleW([NativeTypeName("LPCWSTR")] ushort* SubsystemName, [NativeTypeName("LPVOID")] void* HandleId, HANDLE ClientToken, [NativeTypeName("LPCWSTR")] ushort* ObjectTypeName, [NativeTypeName("LPCWSTR")] ushort* ObjectName, [NativeTypeName("PSECURITY_DESCRIPTOR")] void* SecurityDescriptor, [NativeTypeName("PSID")] void* PrincipalSelfSid, [NativeTypeName("DWORD")] uint DesiredAccess, AUDIT_EVENT_TYPE AuditType, [NativeTypeName("DWORD")] uint Flags, [NativeTypeName("POBJECT_TYPE_LIST")] OBJECT_TYPE_LIST* ObjectTypeList, [NativeTypeName("DWORD")] uint ObjectTypeListLength, [NativeTypeName("PGENERIC_MAPPING")] GENERIC_MAPPING* GenericMapping, BOOL ObjectCreation, [NativeTypeName("LPDWORD")] uint* GrantedAccessList, [NativeTypeName("LPDWORD")] uint* AccessStatusList, [NativeTypeName("LPBOOL")] BOOL* pfGenerateOnClose);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int AddAccessAllowedAce([NativeTypeName("PACL")] ACL* pAcl, [NativeTypeName("DWORD")] uint dwAceRevision, [NativeTypeName("DWORD")] uint AccessMask, [NativeTypeName("PSID")] void* pSid);
+        public static extern BOOL AddAccessAllowedAce([NativeTypeName("PACL")] ACL* pAcl, [NativeTypeName("DWORD")] uint dwAceRevision, [NativeTypeName("DWORD")] uint AccessMask, [NativeTypeName("PSID")] void* pSid);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int AddAccessAllowedAceEx([NativeTypeName("PACL")] ACL* pAcl, [NativeTypeName("DWORD")] uint dwAceRevision, [NativeTypeName("DWORD")] uint AceFlags, [NativeTypeName("DWORD")] uint AccessMask, [NativeTypeName("PSID")] void* pSid);
+        public static extern BOOL AddAccessAllowedAceEx([NativeTypeName("PACL")] ACL* pAcl, [NativeTypeName("DWORD")] uint dwAceRevision, [NativeTypeName("DWORD")] uint AceFlags, [NativeTypeName("DWORD")] uint AccessMask, [NativeTypeName("PSID")] void* pSid);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int AddAccessAllowedObjectAce([NativeTypeName("PACL")] ACL* pAcl, [NativeTypeName("DWORD")] uint dwAceRevision, [NativeTypeName("DWORD")] uint AceFlags, [NativeTypeName("DWORD")] uint AccessMask, [NativeTypeName("GUID *")] Guid* ObjectTypeGuid, [NativeTypeName("GUID *")] Guid* InheritedObjectTypeGuid, [NativeTypeName("PSID")] void* pSid);
+        public static extern BOOL AddAccessAllowedObjectAce([NativeTypeName("PACL")] ACL* pAcl, [NativeTypeName("DWORD")] uint dwAceRevision, [NativeTypeName("DWORD")] uint AceFlags, [NativeTypeName("DWORD")] uint AccessMask, Guid* ObjectTypeGuid, Guid* InheritedObjectTypeGuid, [NativeTypeName("PSID")] void* pSid);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int AddAccessDeniedAce([NativeTypeName("PACL")] ACL* pAcl, [NativeTypeName("DWORD")] uint dwAceRevision, [NativeTypeName("DWORD")] uint AccessMask, [NativeTypeName("PSID")] void* pSid);
+        public static extern BOOL AddAccessDeniedAce([NativeTypeName("PACL")] ACL* pAcl, [NativeTypeName("DWORD")] uint dwAceRevision, [NativeTypeName("DWORD")] uint AccessMask, [NativeTypeName("PSID")] void* pSid);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int AddAccessDeniedAceEx([NativeTypeName("PACL")] ACL* pAcl, [NativeTypeName("DWORD")] uint dwAceRevision, [NativeTypeName("DWORD")] uint AceFlags, [NativeTypeName("DWORD")] uint AccessMask, [NativeTypeName("PSID")] void* pSid);
+        public static extern BOOL AddAccessDeniedAceEx([NativeTypeName("PACL")] ACL* pAcl, [NativeTypeName("DWORD")] uint dwAceRevision, [NativeTypeName("DWORD")] uint AceFlags, [NativeTypeName("DWORD")] uint AccessMask, [NativeTypeName("PSID")] void* pSid);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int AddAccessDeniedObjectAce([NativeTypeName("PACL")] ACL* pAcl, [NativeTypeName("DWORD")] uint dwAceRevision, [NativeTypeName("DWORD")] uint AceFlags, [NativeTypeName("DWORD")] uint AccessMask, [NativeTypeName("GUID *")] Guid* ObjectTypeGuid, [NativeTypeName("GUID *")] Guid* InheritedObjectTypeGuid, [NativeTypeName("PSID")] void* pSid);
+        public static extern BOOL AddAccessDeniedObjectAce([NativeTypeName("PACL")] ACL* pAcl, [NativeTypeName("DWORD")] uint dwAceRevision, [NativeTypeName("DWORD")] uint AceFlags, [NativeTypeName("DWORD")] uint AccessMask, Guid* ObjectTypeGuid, Guid* InheritedObjectTypeGuid, [NativeTypeName("PSID")] void* pSid);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int AddAce([NativeTypeName("PACL")] ACL* pAcl, [NativeTypeName("DWORD")] uint dwAceRevision, [NativeTypeName("DWORD")] uint dwStartingAceIndex, [NativeTypeName("LPVOID")] void* pAceList, [NativeTypeName("DWORD")] uint nAceListLength);
+        public static extern BOOL AddAce([NativeTypeName("PACL")] ACL* pAcl, [NativeTypeName("DWORD")] uint dwAceRevision, [NativeTypeName("DWORD")] uint dwStartingAceIndex, [NativeTypeName("LPVOID")] void* pAceList, [NativeTypeName("DWORD")] uint nAceListLength);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int AddAuditAccessAce([NativeTypeName("PACL")] ACL* pAcl, [NativeTypeName("DWORD")] uint dwAceRevision, [NativeTypeName("DWORD")] uint dwAccessMask, [NativeTypeName("PSID")] void* pSid, [NativeTypeName("BOOL")] int bAuditSuccess, [NativeTypeName("BOOL")] int bAuditFailure);
+        public static extern BOOL AddAuditAccessAce([NativeTypeName("PACL")] ACL* pAcl, [NativeTypeName("DWORD")] uint dwAceRevision, [NativeTypeName("DWORD")] uint dwAccessMask, [NativeTypeName("PSID")] void* pSid, BOOL bAuditSuccess, BOOL bAuditFailure);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int AddAuditAccessAceEx([NativeTypeName("PACL")] ACL* pAcl, [NativeTypeName("DWORD")] uint dwAceRevision, [NativeTypeName("DWORD")] uint AceFlags, [NativeTypeName("DWORD")] uint dwAccessMask, [NativeTypeName("PSID")] void* pSid, [NativeTypeName("BOOL")] int bAuditSuccess, [NativeTypeName("BOOL")] int bAuditFailure);
+        public static extern BOOL AddAuditAccessAceEx([NativeTypeName("PACL")] ACL* pAcl, [NativeTypeName("DWORD")] uint dwAceRevision, [NativeTypeName("DWORD")] uint AceFlags, [NativeTypeName("DWORD")] uint dwAccessMask, [NativeTypeName("PSID")] void* pSid, BOOL bAuditSuccess, BOOL bAuditFailure);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int AddAuditAccessObjectAce([NativeTypeName("PACL")] ACL* pAcl, [NativeTypeName("DWORD")] uint dwAceRevision, [NativeTypeName("DWORD")] uint AceFlags, [NativeTypeName("DWORD")] uint AccessMask, [NativeTypeName("GUID *")] Guid* ObjectTypeGuid, [NativeTypeName("GUID *")] Guid* InheritedObjectTypeGuid, [NativeTypeName("PSID")] void* pSid, [NativeTypeName("BOOL")] int bAuditSuccess, [NativeTypeName("BOOL")] int bAuditFailure);
+        public static extern BOOL AddAuditAccessObjectAce([NativeTypeName("PACL")] ACL* pAcl, [NativeTypeName("DWORD")] uint dwAceRevision, [NativeTypeName("DWORD")] uint AceFlags, [NativeTypeName("DWORD")] uint AccessMask, Guid* ObjectTypeGuid, Guid* InheritedObjectTypeGuid, [NativeTypeName("PSID")] void* pSid, BOOL bAuditSuccess, BOOL bAuditFailure);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int AddMandatoryAce([NativeTypeName("PACL")] ACL* pAcl, [NativeTypeName("DWORD")] uint dwAceRevision, [NativeTypeName("DWORD")] uint AceFlags, [NativeTypeName("DWORD")] uint MandatoryPolicy, [NativeTypeName("PSID")] void* pLabelSid);
+        public static extern BOOL AddMandatoryAce([NativeTypeName("PACL")] ACL* pAcl, [NativeTypeName("DWORD")] uint dwAceRevision, [NativeTypeName("DWORD")] uint AceFlags, [NativeTypeName("DWORD")] uint MandatoryPolicy, [NativeTypeName("PSID")] void* pLabelSid);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int AddResourceAttributeAce([NativeTypeName("PACL")] ACL* pAcl, [NativeTypeName("DWORD")] uint dwAceRevision, [NativeTypeName("DWORD")] uint AceFlags, [NativeTypeName("DWORD")] uint AccessMask, [NativeTypeName("PSID")] void* pSid, [NativeTypeName("PCLAIM_SECURITY_ATTRIBUTES_INFORMATION")] CLAIM_SECURITY_ATTRIBUTES_INFORMATION* pAttributeInfo, [NativeTypeName("PDWORD")] uint* pReturnLength);
+        public static extern BOOL AddResourceAttributeAce([NativeTypeName("PACL")] ACL* pAcl, [NativeTypeName("DWORD")] uint dwAceRevision, [NativeTypeName("DWORD")] uint AceFlags, [NativeTypeName("DWORD")] uint AccessMask, [NativeTypeName("PSID")] void* pSid, [NativeTypeName("PCLAIM_SECURITY_ATTRIBUTES_INFORMATION")] CLAIM_SECURITY_ATTRIBUTES_INFORMATION* pAttributeInfo, [NativeTypeName("PDWORD")] uint* pReturnLength);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int AddScopedPolicyIDAce([NativeTypeName("PACL")] ACL* pAcl, [NativeTypeName("DWORD")] uint dwAceRevision, [NativeTypeName("DWORD")] uint AceFlags, [NativeTypeName("DWORD")] uint AccessMask, [NativeTypeName("PSID")] void* pSid);
+        public static extern BOOL AddScopedPolicyIDAce([NativeTypeName("PACL")] ACL* pAcl, [NativeTypeName("DWORD")] uint dwAceRevision, [NativeTypeName("DWORD")] uint AceFlags, [NativeTypeName("DWORD")] uint AccessMask, [NativeTypeName("PSID")] void* pSid);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int AdjustTokenGroups([NativeTypeName("HANDLE")] IntPtr TokenHandle, [NativeTypeName("BOOL")] int ResetToDefault, [NativeTypeName("PTOKEN_GROUPS")] TOKEN_GROUPS* NewState, [NativeTypeName("DWORD")] uint BufferLength, [NativeTypeName("PTOKEN_GROUPS")] TOKEN_GROUPS* PreviousState, [NativeTypeName("PDWORD")] uint* ReturnLength);
+        public static extern BOOL AdjustTokenGroups(HANDLE TokenHandle, BOOL ResetToDefault, [NativeTypeName("PTOKEN_GROUPS")] TOKEN_GROUPS* NewState, [NativeTypeName("DWORD")] uint BufferLength, [NativeTypeName("PTOKEN_GROUPS")] TOKEN_GROUPS* PreviousState, [NativeTypeName("PDWORD")] uint* ReturnLength);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int AdjustTokenPrivileges([NativeTypeName("HANDLE")] IntPtr TokenHandle, [NativeTypeName("BOOL")] int DisableAllPrivileges, [NativeTypeName("PTOKEN_PRIVILEGES")] TOKEN_PRIVILEGES* NewState, [NativeTypeName("DWORD")] uint BufferLength, [NativeTypeName("PTOKEN_PRIVILEGES")] TOKEN_PRIVILEGES* PreviousState, [NativeTypeName("PDWORD")] uint* ReturnLength);
+        public static extern BOOL AdjustTokenPrivileges(HANDLE TokenHandle, BOOL DisableAllPrivileges, [NativeTypeName("PTOKEN_PRIVILEGES")] TOKEN_PRIVILEGES* NewState, [NativeTypeName("DWORD")] uint BufferLength, [NativeTypeName("PTOKEN_PRIVILEGES")] TOKEN_PRIVILEGES* PreviousState, [NativeTypeName("PDWORD")] uint* ReturnLength);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int AllocateAndInitializeSid([NativeTypeName("PSID_IDENTIFIER_AUTHORITY")] SID_IDENTIFIER_AUTHORITY* pIdentifierAuthority, [NativeTypeName("BYTE")] byte nSubAuthorityCount, [NativeTypeName("DWORD")] uint nSubAuthority0, [NativeTypeName("DWORD")] uint nSubAuthority1, [NativeTypeName("DWORD")] uint nSubAuthority2, [NativeTypeName("DWORD")] uint nSubAuthority3, [NativeTypeName("DWORD")] uint nSubAuthority4, [NativeTypeName("DWORD")] uint nSubAuthority5, [NativeTypeName("DWORD")] uint nSubAuthority6, [NativeTypeName("DWORD")] uint nSubAuthority7, [NativeTypeName("PSID *")] void** pSid);
+        public static extern BOOL AllocateAndInitializeSid([NativeTypeName("PSID_IDENTIFIER_AUTHORITY")] SID_IDENTIFIER_AUTHORITY* pIdentifierAuthority, byte nSubAuthorityCount, [NativeTypeName("DWORD")] uint nSubAuthority0, [NativeTypeName("DWORD")] uint nSubAuthority1, [NativeTypeName("DWORD")] uint nSubAuthority2, [NativeTypeName("DWORD")] uint nSubAuthority3, [NativeTypeName("DWORD")] uint nSubAuthority4, [NativeTypeName("DWORD")] uint nSubAuthority5, [NativeTypeName("DWORD")] uint nSubAuthority6, [NativeTypeName("DWORD")] uint nSubAuthority7, [NativeTypeName("PSID *")] void** pSid);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int AllocateLocallyUniqueId([NativeTypeName("PLUID")] LUID* Luid);
+        public static extern BOOL AllocateLocallyUniqueId([NativeTypeName("PLUID")] LUID* Luid);
 
         [DllImport("advapi32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int AreAllAccessesGranted([NativeTypeName("DWORD")] uint GrantedAccess, [NativeTypeName("DWORD")] uint DesiredAccess);
+        public static extern BOOL AreAllAccessesGranted([NativeTypeName("DWORD")] uint GrantedAccess, [NativeTypeName("DWORD")] uint DesiredAccess);
 
         [DllImport("advapi32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int AreAnyAccessesGranted([NativeTypeName("DWORD")] uint GrantedAccess, [NativeTypeName("DWORD")] uint DesiredAccess);
+        public static extern BOOL AreAnyAccessesGranted([NativeTypeName("DWORD")] uint GrantedAccess, [NativeTypeName("DWORD")] uint DesiredAccess);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int CheckTokenMembership([NativeTypeName("HANDLE")] IntPtr TokenHandle, [NativeTypeName("PSID")] void* SidToCheck, [NativeTypeName("PBOOL")] int* IsMember);
+        public static extern BOOL CheckTokenMembership(HANDLE TokenHandle, [NativeTypeName("PSID")] void* SidToCheck, [NativeTypeName("PBOOL")] BOOL* IsMember);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int CheckTokenCapability([NativeTypeName("HANDLE")] IntPtr TokenHandle, [NativeTypeName("PSID")] void* CapabilitySidToCheck, [NativeTypeName("PBOOL")] int* HasCapability);
+        public static extern BOOL CheckTokenCapability(HANDLE TokenHandle, [NativeTypeName("PSID")] void* CapabilitySidToCheck, [NativeTypeName("PBOOL")] BOOL* HasCapability);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int CheckTokenMembershipEx([NativeTypeName("HANDLE")] IntPtr TokenHandle, [NativeTypeName("PSID")] void* SidToCheck, [NativeTypeName("DWORD")] uint Flags, [NativeTypeName("PBOOL")] int* IsMember);
+        public static extern BOOL CheckTokenMembershipEx(HANDLE TokenHandle, [NativeTypeName("PSID")] void* SidToCheck, [NativeTypeName("DWORD")] uint Flags, [NativeTypeName("PBOOL")] BOOL* IsMember);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int ConvertToAutoInheritPrivateObjectSecurity([NativeTypeName("PSECURITY_DESCRIPTOR")] void* ParentDescriptor, [NativeTypeName("PSECURITY_DESCRIPTOR")] void* CurrentSecurityDescriptor, [NativeTypeName("PSECURITY_DESCRIPTOR *")] void** NewSecurityDescriptor, [NativeTypeName("GUID *")] Guid* ObjectType, [NativeTypeName("BOOLEAN")] byte IsDirectoryObject, [NativeTypeName("PGENERIC_MAPPING")] GENERIC_MAPPING* GenericMapping);
+        public static extern BOOL ConvertToAutoInheritPrivateObjectSecurity([NativeTypeName("PSECURITY_DESCRIPTOR")] void* ParentDescriptor, [NativeTypeName("PSECURITY_DESCRIPTOR")] void* CurrentSecurityDescriptor, [NativeTypeName("PSECURITY_DESCRIPTOR *")] void** NewSecurityDescriptor, Guid* ObjectType, [NativeTypeName("BOOLEAN")] byte IsDirectoryObject, [NativeTypeName("PGENERIC_MAPPING")] GENERIC_MAPPING* GenericMapping);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int CopySid([NativeTypeName("DWORD")] uint nDestinationSidLength, [NativeTypeName("PSID")] void* pDestinationSid, [NativeTypeName("PSID")] void* pSourceSid);
+        public static extern BOOL CopySid([NativeTypeName("DWORD")] uint nDestinationSidLength, [NativeTypeName("PSID")] void* pDestinationSid, [NativeTypeName("PSID")] void* pSourceSid);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int CreatePrivateObjectSecurity([NativeTypeName("PSECURITY_DESCRIPTOR")] void* ParentDescriptor, [NativeTypeName("PSECURITY_DESCRIPTOR")] void* CreatorDescriptor, [NativeTypeName("PSECURITY_DESCRIPTOR *")] void** NewDescriptor, [NativeTypeName("BOOL")] int IsDirectoryObject, [NativeTypeName("HANDLE")] IntPtr Token, [NativeTypeName("PGENERIC_MAPPING")] GENERIC_MAPPING* GenericMapping);
+        public static extern BOOL CreatePrivateObjectSecurity([NativeTypeName("PSECURITY_DESCRIPTOR")] void* ParentDescriptor, [NativeTypeName("PSECURITY_DESCRIPTOR")] void* CreatorDescriptor, [NativeTypeName("PSECURITY_DESCRIPTOR *")] void** NewDescriptor, BOOL IsDirectoryObject, HANDLE Token, [NativeTypeName("PGENERIC_MAPPING")] GENERIC_MAPPING* GenericMapping);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int CreatePrivateObjectSecurityEx([NativeTypeName("PSECURITY_DESCRIPTOR")] void* ParentDescriptor, [NativeTypeName("PSECURITY_DESCRIPTOR")] void* CreatorDescriptor, [NativeTypeName("PSECURITY_DESCRIPTOR *")] void** NewDescriptor, [NativeTypeName("GUID *")] Guid* ObjectType, [NativeTypeName("BOOL")] int IsContainerObject, [NativeTypeName("ULONG")] uint AutoInheritFlags, [NativeTypeName("HANDLE")] IntPtr Token, [NativeTypeName("PGENERIC_MAPPING")] GENERIC_MAPPING* GenericMapping);
+        public static extern BOOL CreatePrivateObjectSecurityEx([NativeTypeName("PSECURITY_DESCRIPTOR")] void* ParentDescriptor, [NativeTypeName("PSECURITY_DESCRIPTOR")] void* CreatorDescriptor, [NativeTypeName("PSECURITY_DESCRIPTOR *")] void** NewDescriptor, Guid* ObjectType, BOOL IsContainerObject, [NativeTypeName("ULONG")] uint AutoInheritFlags, HANDLE Token, [NativeTypeName("PGENERIC_MAPPING")] GENERIC_MAPPING* GenericMapping);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int CreatePrivateObjectSecurityWithMultipleInheritance([NativeTypeName("PSECURITY_DESCRIPTOR")] void* ParentDescriptor, [NativeTypeName("PSECURITY_DESCRIPTOR")] void* CreatorDescriptor, [NativeTypeName("PSECURITY_DESCRIPTOR *")] void** NewDescriptor, [NativeTypeName("GUID **")] Guid** ObjectTypes, [NativeTypeName("ULONG")] uint GuidCount, [NativeTypeName("BOOL")] int IsContainerObject, [NativeTypeName("ULONG")] uint AutoInheritFlags, [NativeTypeName("HANDLE")] IntPtr Token, [NativeTypeName("PGENERIC_MAPPING")] GENERIC_MAPPING* GenericMapping);
+        public static extern BOOL CreatePrivateObjectSecurityWithMultipleInheritance([NativeTypeName("PSECURITY_DESCRIPTOR")] void* ParentDescriptor, [NativeTypeName("PSECURITY_DESCRIPTOR")] void* CreatorDescriptor, [NativeTypeName("PSECURITY_DESCRIPTOR *")] void** NewDescriptor, Guid** ObjectTypes, [NativeTypeName("ULONG")] uint GuidCount, BOOL IsContainerObject, [NativeTypeName("ULONG")] uint AutoInheritFlags, HANDLE Token, [NativeTypeName("PGENERIC_MAPPING")] GENERIC_MAPPING* GenericMapping);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int CreateRestrictedToken([NativeTypeName("HANDLE")] IntPtr ExistingTokenHandle, [NativeTypeName("DWORD")] uint Flags, [NativeTypeName("DWORD")] uint DisableSidCount, [NativeTypeName("PSID_AND_ATTRIBUTES")] SID_AND_ATTRIBUTES* SidsToDisable, [NativeTypeName("DWORD")] uint DeletePrivilegeCount, [NativeTypeName("PLUID_AND_ATTRIBUTES")] LUID_AND_ATTRIBUTES* PrivilegesToDelete, [NativeTypeName("DWORD")] uint RestrictedSidCount, [NativeTypeName("PSID_AND_ATTRIBUTES")] SID_AND_ATTRIBUTES* SidsToRestrict, [NativeTypeName("PHANDLE")] IntPtr* NewTokenHandle);
+        public static extern BOOL CreateRestrictedToken(HANDLE ExistingTokenHandle, [NativeTypeName("DWORD")] uint Flags, [NativeTypeName("DWORD")] uint DisableSidCount, [NativeTypeName("PSID_AND_ATTRIBUTES")] SID_AND_ATTRIBUTES* SidsToDisable, [NativeTypeName("DWORD")] uint DeletePrivilegeCount, [NativeTypeName("PLUID_AND_ATTRIBUTES")] LUID_AND_ATTRIBUTES* PrivilegesToDelete, [NativeTypeName("DWORD")] uint RestrictedSidCount, [NativeTypeName("PSID_AND_ATTRIBUTES")] SID_AND_ATTRIBUTES* SidsToRestrict, [NativeTypeName("PHANDLE")] HANDLE* NewTokenHandle);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int CreateWellKnownSid(WELL_KNOWN_SID_TYPE WellKnownSidType, [NativeTypeName("PSID")] void* DomainSid, [NativeTypeName("PSID")] void* pSid, [NativeTypeName("DWORD *")] uint* cbSid);
+        public static extern BOOL CreateWellKnownSid(WELL_KNOWN_SID_TYPE WellKnownSidType, [NativeTypeName("PSID")] void* DomainSid, [NativeTypeName("PSID")] void* pSid, [NativeTypeName("DWORD *")] uint* cbSid);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int EqualDomainSid([NativeTypeName("PSID")] void* pSid1, [NativeTypeName("PSID")] void* pSid2, [NativeTypeName("BOOL *")] int* pfEqual);
+        public static extern BOOL EqualDomainSid([NativeTypeName("PSID")] void* pSid1, [NativeTypeName("PSID")] void* pSid2, BOOL* pfEqual);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int DeleteAce([NativeTypeName("PACL")] ACL* pAcl, [NativeTypeName("DWORD")] uint dwAceIndex);
+        public static extern BOOL DeleteAce([NativeTypeName("PACL")] ACL* pAcl, [NativeTypeName("DWORD")] uint dwAceIndex);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int DestroyPrivateObjectSecurity([NativeTypeName("PSECURITY_DESCRIPTOR *")] void** ObjectDescriptor);
+        public static extern BOOL DestroyPrivateObjectSecurity([NativeTypeName("PSECURITY_DESCRIPTOR *")] void** ObjectDescriptor);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int DuplicateToken([NativeTypeName("HANDLE")] IntPtr ExistingTokenHandle, SECURITY_IMPERSONATION_LEVEL ImpersonationLevel, [NativeTypeName("PHANDLE")] IntPtr* DuplicateTokenHandle);
+        public static extern BOOL DuplicateToken(HANDLE ExistingTokenHandle, SECURITY_IMPERSONATION_LEVEL ImpersonationLevel, [NativeTypeName("PHANDLE")] HANDLE* DuplicateTokenHandle);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int DuplicateTokenEx([NativeTypeName("HANDLE")] IntPtr hExistingToken, [NativeTypeName("DWORD")] uint dwDesiredAccess, [NativeTypeName("LPSECURITY_ATTRIBUTES")] SECURITY_ATTRIBUTES* lpTokenAttributes, SECURITY_IMPERSONATION_LEVEL ImpersonationLevel, TOKEN_TYPE TokenType, [NativeTypeName("PHANDLE")] IntPtr* phNewToken);
+        public static extern BOOL DuplicateTokenEx(HANDLE hExistingToken, [NativeTypeName("DWORD")] uint dwDesiredAccess, [NativeTypeName("LPSECURITY_ATTRIBUTES")] SECURITY_ATTRIBUTES* lpTokenAttributes, SECURITY_IMPERSONATION_LEVEL ImpersonationLevel, TOKEN_TYPE TokenType, [NativeTypeName("PHANDLE")] HANDLE* phNewToken);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int EqualPrefixSid([NativeTypeName("PSID")] void* pSid1, [NativeTypeName("PSID")] void* pSid2);
+        public static extern BOOL EqualPrefixSid([NativeTypeName("PSID")] void* pSid1, [NativeTypeName("PSID")] void* pSid2);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int EqualSid([NativeTypeName("PSID")] void* pSid1, [NativeTypeName("PSID")] void* pSid2);
+        public static extern BOOL EqualSid([NativeTypeName("PSID")] void* pSid1, [NativeTypeName("PSID")] void* pSid2);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int FindFirstFreeAce([NativeTypeName("PACL")] ACL* pAcl, [NativeTypeName("LPVOID *")] void** pAce);
+        public static extern BOOL FindFirstFreeAce([NativeTypeName("PACL")] ACL* pAcl, [NativeTypeName("LPVOID *")] void** pAce);
 
         [DllImport("advapi32", ExactSpelling = true)]
         [return: NativeTypeName("PVOID")]
         public static extern void* FreeSid([NativeTypeName("PSID")] void* pSid);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int GetAce([NativeTypeName("PACL")] ACL* pAcl, [NativeTypeName("DWORD")] uint dwAceIndex, [NativeTypeName("LPVOID *")] void** pAce);
+        public static extern BOOL GetAce([NativeTypeName("PACL")] ACL* pAcl, [NativeTypeName("DWORD")] uint dwAceIndex, [NativeTypeName("LPVOID *")] void** pAce);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int GetAclInformation([NativeTypeName("PACL")] ACL* pAcl, [NativeTypeName("LPVOID")] void* pAclInformation, [NativeTypeName("DWORD")] uint nAclInformationLength, ACL_INFORMATION_CLASS dwAclInformationClass);
+        public static extern BOOL GetAclInformation([NativeTypeName("PACL")] ACL* pAcl, [NativeTypeName("LPVOID")] void* pAclInformation, [NativeTypeName("DWORD")] uint nAclInformationLength, ACL_INFORMATION_CLASS dwAclInformationClass);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int GetFileSecurityW([NativeTypeName("LPCWSTR")] ushort* lpFileName, [NativeTypeName("SECURITY_INFORMATION")] uint RequestedInformation, [NativeTypeName("PSECURITY_DESCRIPTOR")] void* pSecurityDescriptor, [NativeTypeName("DWORD")] uint nLength, [NativeTypeName("LPDWORD")] uint* lpnLengthNeeded);
+        public static extern BOOL GetFileSecurityW([NativeTypeName("LPCWSTR")] ushort* lpFileName, [NativeTypeName("SECURITY_INFORMATION")] uint RequestedInformation, [NativeTypeName("PSECURITY_DESCRIPTOR")] void* pSecurityDescriptor, [NativeTypeName("DWORD")] uint nLength, [NativeTypeName("LPDWORD")] uint* lpnLengthNeeded);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int GetKernelObjectSecurity([NativeTypeName("HANDLE")] IntPtr Handle, [NativeTypeName("SECURITY_INFORMATION")] uint RequestedInformation, [NativeTypeName("PSECURITY_DESCRIPTOR")] void* pSecurityDescriptor, [NativeTypeName("DWORD")] uint nLength, [NativeTypeName("LPDWORD")] uint* lpnLengthNeeded);
+        public static extern BOOL GetKernelObjectSecurity(HANDLE Handle, [NativeTypeName("SECURITY_INFORMATION")] uint RequestedInformation, [NativeTypeName("PSECURITY_DESCRIPTOR")] void* pSecurityDescriptor, [NativeTypeName("DWORD")] uint nLength, [NativeTypeName("LPDWORD")] uint* lpnLengthNeeded);
 
         [DllImport("advapi32", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
         public static extern uint GetLengthSid([NativeTypeName("PSID")] void* pSid);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int GetPrivateObjectSecurity([NativeTypeName("PSECURITY_DESCRIPTOR")] void* ObjectDescriptor, [NativeTypeName("SECURITY_INFORMATION")] uint SecurityInformation, [NativeTypeName("PSECURITY_DESCRIPTOR")] void* ResultantDescriptor, [NativeTypeName("DWORD")] uint DescriptorLength, [NativeTypeName("PDWORD")] uint* ReturnLength);
+        public static extern BOOL GetPrivateObjectSecurity([NativeTypeName("PSECURITY_DESCRIPTOR")] void* ObjectDescriptor, [NativeTypeName("SECURITY_INFORMATION")] uint SecurityInformation, [NativeTypeName("PSECURITY_DESCRIPTOR")] void* ResultantDescriptor, [NativeTypeName("DWORD")] uint DescriptorLength, [NativeTypeName("PDWORD")] uint* ReturnLength);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int GetSecurityDescriptorControl([NativeTypeName("PSECURITY_DESCRIPTOR")] void* pSecurityDescriptor, [NativeTypeName("PSECURITY_DESCRIPTOR_CONTROL")] ushort* pControl, [NativeTypeName("LPDWORD")] uint* lpdwRevision);
+        public static extern BOOL GetSecurityDescriptorControl([NativeTypeName("PSECURITY_DESCRIPTOR")] void* pSecurityDescriptor, [NativeTypeName("PSECURITY_DESCRIPTOR_CONTROL")] ushort* pControl, [NativeTypeName("LPDWORD")] uint* lpdwRevision);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int GetSecurityDescriptorDacl([NativeTypeName("PSECURITY_DESCRIPTOR")] void* pSecurityDescriptor, [NativeTypeName("LPBOOL")] int* lpbDaclPresent, [NativeTypeName("PACL *")] ACL** pDacl, [NativeTypeName("LPBOOL")] int* lpbDaclDefaulted);
+        public static extern BOOL GetSecurityDescriptorDacl([NativeTypeName("PSECURITY_DESCRIPTOR")] void* pSecurityDescriptor, [NativeTypeName("LPBOOL")] BOOL* lpbDaclPresent, [NativeTypeName("PACL *")] ACL** pDacl, [NativeTypeName("LPBOOL")] BOOL* lpbDaclDefaulted);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int GetSecurityDescriptorGroup([NativeTypeName("PSECURITY_DESCRIPTOR")] void* pSecurityDescriptor, [NativeTypeName("PSID *")] void** pGroup, [NativeTypeName("LPBOOL")] int* lpbGroupDefaulted);
+        public static extern BOOL GetSecurityDescriptorGroup([NativeTypeName("PSECURITY_DESCRIPTOR")] void* pSecurityDescriptor, [NativeTypeName("PSID *")] void** pGroup, [NativeTypeName("LPBOOL")] BOOL* lpbGroupDefaulted);
 
         [DllImport("advapi32", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
         public static extern uint GetSecurityDescriptorLength([NativeTypeName("PSECURITY_DESCRIPTOR")] void* pSecurityDescriptor);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int GetSecurityDescriptorOwner([NativeTypeName("PSECURITY_DESCRIPTOR")] void* pSecurityDescriptor, [NativeTypeName("PSID *")] void** pOwner, [NativeTypeName("LPBOOL")] int* lpbOwnerDefaulted);
+        public static extern BOOL GetSecurityDescriptorOwner([NativeTypeName("PSECURITY_DESCRIPTOR")] void* pSecurityDescriptor, [NativeTypeName("PSID *")] void** pOwner, [NativeTypeName("LPBOOL")] BOOL* lpbOwnerDefaulted);
 
         [DllImport("advapi32", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
         public static extern uint GetSecurityDescriptorRMControl([NativeTypeName("PSECURITY_DESCRIPTOR")] void* SecurityDescriptor, [NativeTypeName("PUCHAR")] byte* RMControl);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int GetSecurityDescriptorSacl([NativeTypeName("PSECURITY_DESCRIPTOR")] void* pSecurityDescriptor, [NativeTypeName("LPBOOL")] int* lpbSaclPresent, [NativeTypeName("PACL *")] ACL** pSacl, [NativeTypeName("LPBOOL")] int* lpbSaclDefaulted);
+        public static extern BOOL GetSecurityDescriptorSacl([NativeTypeName("PSECURITY_DESCRIPTOR")] void* pSecurityDescriptor, [NativeTypeName("LPBOOL")] BOOL* lpbSaclPresent, [NativeTypeName("PACL *")] ACL** pSacl, [NativeTypeName("LPBOOL")] BOOL* lpbSaclDefaulted);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("PSID_IDENTIFIER_AUTHORITY")]
@@ -259,189 +205,155 @@ namespace TerraFX.Interop
         public static extern byte* GetSidSubAuthorityCount([NativeTypeName("PSID")] void* pSid);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int GetTokenInformation([NativeTypeName("HANDLE")] IntPtr TokenHandle, TOKEN_INFORMATION_CLASS TokenInformationClass, [NativeTypeName("LPVOID")] void* TokenInformation, [NativeTypeName("DWORD")] uint TokenInformationLength, [NativeTypeName("PDWORD")] uint* ReturnLength);
+        public static extern BOOL GetTokenInformation(HANDLE TokenHandle, TOKEN_INFORMATION_CLASS TokenInformationClass, [NativeTypeName("LPVOID")] void* TokenInformation, [NativeTypeName("DWORD")] uint TokenInformationLength, [NativeTypeName("PDWORD")] uint* ReturnLength);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int GetWindowsAccountDomainSid([NativeTypeName("PSID")] void* pSid, [NativeTypeName("PSID")] void* pDomainSid, [NativeTypeName("DWORD *")] uint* cbDomainSid);
+        public static extern BOOL GetWindowsAccountDomainSid([NativeTypeName("PSID")] void* pSid, [NativeTypeName("PSID")] void* pDomainSid, [NativeTypeName("DWORD *")] uint* cbDomainSid);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int ImpersonateAnonymousToken([NativeTypeName("HANDLE")] IntPtr ThreadHandle);
+        public static extern BOOL ImpersonateAnonymousToken(HANDLE ThreadHandle);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int ImpersonateLoggedOnUser([NativeTypeName("HANDLE")] IntPtr hToken);
+        public static extern BOOL ImpersonateLoggedOnUser(HANDLE hToken);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int ImpersonateSelf(SECURITY_IMPERSONATION_LEVEL ImpersonationLevel);
+        public static extern BOOL ImpersonateSelf(SECURITY_IMPERSONATION_LEVEL ImpersonationLevel);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int InitializeAcl([NativeTypeName("PACL")] ACL* pAcl, [NativeTypeName("DWORD")] uint nAclLength, [NativeTypeName("DWORD")] uint dwAclRevision);
+        public static extern BOOL InitializeAcl([NativeTypeName("PACL")] ACL* pAcl, [NativeTypeName("DWORD")] uint nAclLength, [NativeTypeName("DWORD")] uint dwAclRevision);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int InitializeSecurityDescriptor([NativeTypeName("PSECURITY_DESCRIPTOR")] void* pSecurityDescriptor, [NativeTypeName("DWORD")] uint dwRevision);
+        public static extern BOOL InitializeSecurityDescriptor([NativeTypeName("PSECURITY_DESCRIPTOR")] void* pSecurityDescriptor, [NativeTypeName("DWORD")] uint dwRevision);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int InitializeSid([NativeTypeName("PSID")] void* Sid, [NativeTypeName("PSID_IDENTIFIER_AUTHORITY")] SID_IDENTIFIER_AUTHORITY* pIdentifierAuthority, [NativeTypeName("BYTE")] byte nSubAuthorityCount);
+        public static extern BOOL InitializeSid([NativeTypeName("PSID")] void* Sid, [NativeTypeName("PSID_IDENTIFIER_AUTHORITY")] SID_IDENTIFIER_AUTHORITY* pIdentifierAuthority, byte nSubAuthorityCount);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int IsTokenRestricted([NativeTypeName("HANDLE")] IntPtr TokenHandle);
+        public static extern BOOL IsTokenRestricted(HANDLE TokenHandle);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int IsValidAcl([NativeTypeName("PACL")] ACL* pAcl);
+        public static extern BOOL IsValidAcl([NativeTypeName("PACL")] ACL* pAcl);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int IsValidSecurityDescriptor([NativeTypeName("PSECURITY_DESCRIPTOR")] void* pSecurityDescriptor);
+        public static extern BOOL IsValidSecurityDescriptor([NativeTypeName("PSECURITY_DESCRIPTOR")] void* pSecurityDescriptor);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int IsValidSid([NativeTypeName("PSID")] void* pSid);
+        public static extern BOOL IsValidSid([NativeTypeName("PSID")] void* pSid);
 
         [DllImport("advapi32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int IsWellKnownSid([NativeTypeName("PSID")] void* pSid, WELL_KNOWN_SID_TYPE WellKnownSidType);
+        public static extern BOOL IsWellKnownSid([NativeTypeName("PSID")] void* pSid, WELL_KNOWN_SID_TYPE WellKnownSidType);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int MakeAbsoluteSD([NativeTypeName("PSECURITY_DESCRIPTOR")] void* pSelfRelativeSecurityDescriptor, [NativeTypeName("PSECURITY_DESCRIPTOR")] void* pAbsoluteSecurityDescriptor, [NativeTypeName("LPDWORD")] uint* lpdwAbsoluteSecurityDescriptorSize, [NativeTypeName("PACL")] ACL* pDacl, [NativeTypeName("LPDWORD")] uint* lpdwDaclSize, [NativeTypeName("PACL")] ACL* pSacl, [NativeTypeName("LPDWORD")] uint* lpdwSaclSize, [NativeTypeName("PSID")] void* pOwner, [NativeTypeName("LPDWORD")] uint* lpdwOwnerSize, [NativeTypeName("PSID")] void* pPrimaryGroup, [NativeTypeName("LPDWORD")] uint* lpdwPrimaryGroupSize);
+        public static extern BOOL MakeAbsoluteSD([NativeTypeName("PSECURITY_DESCRIPTOR")] void* pSelfRelativeSecurityDescriptor, [NativeTypeName("PSECURITY_DESCRIPTOR")] void* pAbsoluteSecurityDescriptor, [NativeTypeName("LPDWORD")] uint* lpdwAbsoluteSecurityDescriptorSize, [NativeTypeName("PACL")] ACL* pDacl, [NativeTypeName("LPDWORD")] uint* lpdwDaclSize, [NativeTypeName("PACL")] ACL* pSacl, [NativeTypeName("LPDWORD")] uint* lpdwSaclSize, [NativeTypeName("PSID")] void* pOwner, [NativeTypeName("LPDWORD")] uint* lpdwOwnerSize, [NativeTypeName("PSID")] void* pPrimaryGroup, [NativeTypeName("LPDWORD")] uint* lpdwPrimaryGroupSize);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int MakeSelfRelativeSD([NativeTypeName("PSECURITY_DESCRIPTOR")] void* pAbsoluteSecurityDescriptor, [NativeTypeName("PSECURITY_DESCRIPTOR")] void* pSelfRelativeSecurityDescriptor, [NativeTypeName("LPDWORD")] uint* lpdwBufferLength);
+        public static extern BOOL MakeSelfRelativeSD([NativeTypeName("PSECURITY_DESCRIPTOR")] void* pAbsoluteSecurityDescriptor, [NativeTypeName("PSECURITY_DESCRIPTOR")] void* pSelfRelativeSecurityDescriptor, [NativeTypeName("LPDWORD")] uint* lpdwBufferLength);
 
         [DllImport("advapi32", ExactSpelling = true)]
         public static extern void MapGenericMask([NativeTypeName("PDWORD")] uint* AccessMask, [NativeTypeName("PGENERIC_MAPPING")] GENERIC_MAPPING* GenericMapping);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int ObjectCloseAuditAlarmW([NativeTypeName("LPCWSTR")] ushort* SubsystemName, [NativeTypeName("LPVOID")] void* HandleId, [NativeTypeName("BOOL")] int GenerateOnClose);
+        public static extern BOOL ObjectCloseAuditAlarmW([NativeTypeName("LPCWSTR")] ushort* SubsystemName, [NativeTypeName("LPVOID")] void* HandleId, BOOL GenerateOnClose);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int ObjectDeleteAuditAlarmW([NativeTypeName("LPCWSTR")] ushort* SubsystemName, [NativeTypeName("LPVOID")] void* HandleId, [NativeTypeName("BOOL")] int GenerateOnClose);
+        public static extern BOOL ObjectDeleteAuditAlarmW([NativeTypeName("LPCWSTR")] ushort* SubsystemName, [NativeTypeName("LPVOID")] void* HandleId, BOOL GenerateOnClose);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int ObjectOpenAuditAlarmW([NativeTypeName("LPCWSTR")] ushort* SubsystemName, [NativeTypeName("LPVOID")] void* HandleId, [NativeTypeName("LPWSTR")] ushort* ObjectTypeName, [NativeTypeName("LPWSTR")] ushort* ObjectName, [NativeTypeName("PSECURITY_DESCRIPTOR")] void* pSecurityDescriptor, [NativeTypeName("HANDLE")] IntPtr ClientToken, [NativeTypeName("DWORD")] uint DesiredAccess, [NativeTypeName("DWORD")] uint GrantedAccess, [NativeTypeName("PPRIVILEGE_SET")] PRIVILEGE_SET* Privileges, [NativeTypeName("BOOL")] int ObjectCreation, [NativeTypeName("BOOL")] int AccessGranted, [NativeTypeName("LPBOOL")] int* GenerateOnClose);
+        public static extern BOOL ObjectOpenAuditAlarmW([NativeTypeName("LPCWSTR")] ushort* SubsystemName, [NativeTypeName("LPVOID")] void* HandleId, [NativeTypeName("LPWSTR")] ushort* ObjectTypeName, [NativeTypeName("LPWSTR")] ushort* ObjectName, [NativeTypeName("PSECURITY_DESCRIPTOR")] void* pSecurityDescriptor, HANDLE ClientToken, [NativeTypeName("DWORD")] uint DesiredAccess, [NativeTypeName("DWORD")] uint GrantedAccess, [NativeTypeName("PPRIVILEGE_SET")] PRIVILEGE_SET* Privileges, BOOL ObjectCreation, BOOL AccessGranted, [NativeTypeName("LPBOOL")] BOOL* GenerateOnClose);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int ObjectPrivilegeAuditAlarmW([NativeTypeName("LPCWSTR")] ushort* SubsystemName, [NativeTypeName("LPVOID")] void* HandleId, [NativeTypeName("HANDLE")] IntPtr ClientToken, [NativeTypeName("DWORD")] uint DesiredAccess, [NativeTypeName("PPRIVILEGE_SET")] PRIVILEGE_SET* Privileges, [NativeTypeName("BOOL")] int AccessGranted);
+        public static extern BOOL ObjectPrivilegeAuditAlarmW([NativeTypeName("LPCWSTR")] ushort* SubsystemName, [NativeTypeName("LPVOID")] void* HandleId, HANDLE ClientToken, [NativeTypeName("DWORD")] uint DesiredAccess, [NativeTypeName("PPRIVILEGE_SET")] PRIVILEGE_SET* Privileges, BOOL AccessGranted);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int PrivilegeCheck([NativeTypeName("HANDLE")] IntPtr ClientToken, [NativeTypeName("PPRIVILEGE_SET")] PRIVILEGE_SET* RequiredPrivileges, [NativeTypeName("LPBOOL")] int* pfResult);
+        public static extern BOOL PrivilegeCheck(HANDLE ClientToken, [NativeTypeName("PPRIVILEGE_SET")] PRIVILEGE_SET* RequiredPrivileges, [NativeTypeName("LPBOOL")] BOOL* pfResult);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int PrivilegedServiceAuditAlarmW([NativeTypeName("LPCWSTR")] ushort* SubsystemName, [NativeTypeName("LPCWSTR")] ushort* ServiceName, [NativeTypeName("HANDLE")] IntPtr ClientToken, [NativeTypeName("PPRIVILEGE_SET")] PRIVILEGE_SET* Privileges, [NativeTypeName("BOOL")] int AccessGranted);
+        public static extern BOOL PrivilegedServiceAuditAlarmW([NativeTypeName("LPCWSTR")] ushort* SubsystemName, [NativeTypeName("LPCWSTR")] ushort* ServiceName, HANDLE ClientToken, [NativeTypeName("PPRIVILEGE_SET")] PRIVILEGE_SET* Privileges, BOOL AccessGranted);
 
         [DllImport("advapi32", ExactSpelling = true)]
         public static extern void QuerySecurityAccessMask([NativeTypeName("SECURITY_INFORMATION")] uint SecurityInformation, [NativeTypeName("LPDWORD")] uint* DesiredAccess);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int RevertToSelf();
+        public static extern BOOL RevertToSelf();
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetAclInformation([NativeTypeName("PACL")] ACL* pAcl, [NativeTypeName("LPVOID")] void* pAclInformation, [NativeTypeName("DWORD")] uint nAclInformationLength, ACL_INFORMATION_CLASS dwAclInformationClass);
+        public static extern BOOL SetAclInformation([NativeTypeName("PACL")] ACL* pAcl, [NativeTypeName("LPVOID")] void* pAclInformation, [NativeTypeName("DWORD")] uint nAclInformationLength, ACL_INFORMATION_CLASS dwAclInformationClass);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetFileSecurityW([NativeTypeName("LPCWSTR")] ushort* lpFileName, [NativeTypeName("SECURITY_INFORMATION")] uint SecurityInformation, [NativeTypeName("PSECURITY_DESCRIPTOR")] void* pSecurityDescriptor);
+        public static extern BOOL SetFileSecurityW([NativeTypeName("LPCWSTR")] ushort* lpFileName, [NativeTypeName("SECURITY_INFORMATION")] uint SecurityInformation, [NativeTypeName("PSECURITY_DESCRIPTOR")] void* pSecurityDescriptor);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetKernelObjectSecurity([NativeTypeName("HANDLE")] IntPtr Handle, [NativeTypeName("SECURITY_INFORMATION")] uint SecurityInformation, [NativeTypeName("PSECURITY_DESCRIPTOR")] void* SecurityDescriptor);
+        public static extern BOOL SetKernelObjectSecurity(HANDLE Handle, [NativeTypeName("SECURITY_INFORMATION")] uint SecurityInformation, [NativeTypeName("PSECURITY_DESCRIPTOR")] void* SecurityDescriptor);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetPrivateObjectSecurity([NativeTypeName("SECURITY_INFORMATION")] uint SecurityInformation, [NativeTypeName("PSECURITY_DESCRIPTOR")] void* ModificationDescriptor, [NativeTypeName("PSECURITY_DESCRIPTOR *")] void** ObjectsSecurityDescriptor, [NativeTypeName("PGENERIC_MAPPING")] GENERIC_MAPPING* GenericMapping, [NativeTypeName("HANDLE")] IntPtr Token);
+        public static extern BOOL SetPrivateObjectSecurity([NativeTypeName("SECURITY_INFORMATION")] uint SecurityInformation, [NativeTypeName("PSECURITY_DESCRIPTOR")] void* ModificationDescriptor, [NativeTypeName("PSECURITY_DESCRIPTOR *")] void** ObjectsSecurityDescriptor, [NativeTypeName("PGENERIC_MAPPING")] GENERIC_MAPPING* GenericMapping, HANDLE Token);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetPrivateObjectSecurityEx([NativeTypeName("SECURITY_INFORMATION")] uint SecurityInformation, [NativeTypeName("PSECURITY_DESCRIPTOR")] void* ModificationDescriptor, [NativeTypeName("PSECURITY_DESCRIPTOR *")] void** ObjectsSecurityDescriptor, [NativeTypeName("ULONG")] uint AutoInheritFlags, [NativeTypeName("PGENERIC_MAPPING")] GENERIC_MAPPING* GenericMapping, [NativeTypeName("HANDLE")] IntPtr Token);
+        public static extern BOOL SetPrivateObjectSecurityEx([NativeTypeName("SECURITY_INFORMATION")] uint SecurityInformation, [NativeTypeName("PSECURITY_DESCRIPTOR")] void* ModificationDescriptor, [NativeTypeName("PSECURITY_DESCRIPTOR *")] void** ObjectsSecurityDescriptor, [NativeTypeName("ULONG")] uint AutoInheritFlags, [NativeTypeName("PGENERIC_MAPPING")] GENERIC_MAPPING* GenericMapping, HANDLE Token);
 
         [DllImport("advapi32", ExactSpelling = true)]
         public static extern void SetSecurityAccessMask([NativeTypeName("SECURITY_INFORMATION")] uint SecurityInformation, [NativeTypeName("LPDWORD")] uint* DesiredAccess);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetSecurityDescriptorControl([NativeTypeName("PSECURITY_DESCRIPTOR")] void* pSecurityDescriptor, [NativeTypeName("SECURITY_DESCRIPTOR_CONTROL")] ushort ControlBitsOfInterest, [NativeTypeName("SECURITY_DESCRIPTOR_CONTROL")] ushort ControlBitsToSet);
+        public static extern BOOL SetSecurityDescriptorControl([NativeTypeName("PSECURITY_DESCRIPTOR")] void* pSecurityDescriptor, [NativeTypeName("SECURITY_DESCRIPTOR_CONTROL")] ushort ControlBitsOfInterest, [NativeTypeName("SECURITY_DESCRIPTOR_CONTROL")] ushort ControlBitsToSet);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetSecurityDescriptorDacl([NativeTypeName("PSECURITY_DESCRIPTOR")] void* pSecurityDescriptor, [NativeTypeName("BOOL")] int bDaclPresent, [NativeTypeName("PACL")] ACL* pDacl, [NativeTypeName("BOOL")] int bDaclDefaulted);
+        public static extern BOOL SetSecurityDescriptorDacl([NativeTypeName("PSECURITY_DESCRIPTOR")] void* pSecurityDescriptor, BOOL bDaclPresent, [NativeTypeName("PACL")] ACL* pDacl, BOOL bDaclDefaulted);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetSecurityDescriptorGroup([NativeTypeName("PSECURITY_DESCRIPTOR")] void* pSecurityDescriptor, [NativeTypeName("PSID")] void* pGroup, [NativeTypeName("BOOL")] int bGroupDefaulted);
+        public static extern BOOL SetSecurityDescriptorGroup([NativeTypeName("PSECURITY_DESCRIPTOR")] void* pSecurityDescriptor, [NativeTypeName("PSID")] void* pGroup, BOOL bGroupDefaulted);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetSecurityDescriptorOwner([NativeTypeName("PSECURITY_DESCRIPTOR")] void* pSecurityDescriptor, [NativeTypeName("PSID")] void* pOwner, [NativeTypeName("BOOL")] int bOwnerDefaulted);
+        public static extern BOOL SetSecurityDescriptorOwner([NativeTypeName("PSECURITY_DESCRIPTOR")] void* pSecurityDescriptor, [NativeTypeName("PSID")] void* pOwner, BOOL bOwnerDefaulted);
 
         [DllImport("advapi32", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
         public static extern uint SetSecurityDescriptorRMControl([NativeTypeName("PSECURITY_DESCRIPTOR")] void* SecurityDescriptor, [NativeTypeName("PUCHAR")] byte* RMControl);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetSecurityDescriptorSacl([NativeTypeName("PSECURITY_DESCRIPTOR")] void* pSecurityDescriptor, [NativeTypeName("BOOL")] int bSaclPresent, [NativeTypeName("PACL")] ACL* pSacl, [NativeTypeName("BOOL")] int bSaclDefaulted);
+        public static extern BOOL SetSecurityDescriptorSacl([NativeTypeName("PSECURITY_DESCRIPTOR")] void* pSecurityDescriptor, BOOL bSaclPresent, [NativeTypeName("PACL")] ACL* pSacl, BOOL bSaclDefaulted);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int SetTokenInformation([NativeTypeName("HANDLE")] IntPtr TokenHandle, TOKEN_INFORMATION_CLASS TokenInformationClass, [NativeTypeName("LPVOID")] void* TokenInformation, [NativeTypeName("DWORD")] uint TokenInformationLength);
+        public static extern BOOL SetTokenInformation(HANDLE TokenHandle, TOKEN_INFORMATION_CLASS TokenInformationClass, [NativeTypeName("LPVOID")] void* TokenInformation, [NativeTypeName("DWORD")] uint TokenInformationLength);
 
         [DllImport("advapi32", ExactSpelling = true)]
         [return: NativeTypeName("LONG")]
         public static extern int CveEventWrite([NativeTypeName("PCWSTR")] ushort* CveId, [NativeTypeName("PCWSTR")] ushort* AdditionalDetails);
 
         [DllImport("kernelbase", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int DeriveCapabilitySidsFromName([NativeTypeName("LPCWSTR")] ushort* CapName, [NativeTypeName("PSID **")] void*** CapabilityGroupSids, [NativeTypeName("DWORD *")] uint* CapabilityGroupSidCount, [NativeTypeName("PSID **")] void*** CapabilitySids, [NativeTypeName("DWORD *")] uint* CapabilitySidCount);
+        public static extern BOOL DeriveCapabilitySidsFromName([NativeTypeName("LPCWSTR")] ushort* CapName, [NativeTypeName("PSID **")] void*** CapabilityGroupSids, [NativeTypeName("DWORD *")] uint* CapabilityGroupSidCount, [NativeTypeName("PSID **")] void*** CapabilitySids, [NativeTypeName("DWORD *")] uint* CapabilitySidCount);
 
         [NativeTypeName("#define AccessCheckAndAuditAlarm AccessCheckAndAuditAlarmW")]
-        public static delegate*<ushort*, void*, ushort*, ushort*, void*, uint, GENERIC_MAPPING*, int, uint*, int*, int*, int> AccessCheckAndAuditAlarm => &AccessCheckAndAuditAlarmW;
+        public static delegate*<ushort*, void*, ushort*, ushort*, void*, uint, GENERIC_MAPPING*, BOOL, uint*, BOOL*, BOOL*, BOOL> AccessCheckAndAuditAlarm => &AccessCheckAndAuditAlarmW;
 
         [NativeTypeName("#define AccessCheckByTypeAndAuditAlarm AccessCheckByTypeAndAuditAlarmW")]
-        public static delegate*<ushort*, void*, ushort*, ushort*, void*, void*, uint, AUDIT_EVENT_TYPE, uint, OBJECT_TYPE_LIST*, uint, GENERIC_MAPPING*, int, uint*, int*, int*, int> AccessCheckByTypeAndAuditAlarm => &AccessCheckByTypeAndAuditAlarmW;
+        public static delegate*<ushort*, void*, ushort*, ushort*, void*, void*, uint, AUDIT_EVENT_TYPE, uint, OBJECT_TYPE_LIST*, uint, GENERIC_MAPPING*, BOOL, uint*, BOOL*, BOOL*, BOOL> AccessCheckByTypeAndAuditAlarm => &AccessCheckByTypeAndAuditAlarmW;
 
         [NativeTypeName("#define AccessCheckByTypeResultListAndAuditAlarm AccessCheckByTypeResultListAndAuditAlarmW")]
-        public static delegate*<ushort*, void*, ushort*, ushort*, void*, void*, uint, AUDIT_EVENT_TYPE, uint, OBJECT_TYPE_LIST*, uint, GENERIC_MAPPING*, int, uint*, uint*, int*, int> AccessCheckByTypeResultListAndAuditAlarm => &AccessCheckByTypeResultListAndAuditAlarmW;
+        public static delegate*<ushort*, void*, ushort*, ushort*, void*, void*, uint, AUDIT_EVENT_TYPE, uint, OBJECT_TYPE_LIST*, uint, GENERIC_MAPPING*, BOOL, uint*, uint*, BOOL*, BOOL> AccessCheckByTypeResultListAndAuditAlarm => &AccessCheckByTypeResultListAndAuditAlarmW;
 
         [NativeTypeName("#define AccessCheckByTypeResultListAndAuditAlarmByHandle AccessCheckByTypeResultListAndAuditAlarmByHandleW")]
-        public static delegate*<ushort*, void*, IntPtr, ushort*, ushort*, void*, void*, uint, AUDIT_EVENT_TYPE, uint, OBJECT_TYPE_LIST*, uint, GENERIC_MAPPING*, int, uint*, uint*, int*, int> AccessCheckByTypeResultListAndAuditAlarmByHandle => &AccessCheckByTypeResultListAndAuditAlarmByHandleW;
+        public static delegate*<ushort*, void*, HANDLE, ushort*, ushort*, void*, void*, uint, AUDIT_EVENT_TYPE, uint, OBJECT_TYPE_LIST*, uint, GENERIC_MAPPING*, BOOL, uint*, uint*, BOOL*, BOOL> AccessCheckByTypeResultListAndAuditAlarmByHandle => &AccessCheckByTypeResultListAndAuditAlarmByHandleW;
 
         [NativeTypeName("#define GetFileSecurity GetFileSecurityW")]
-        public static delegate*<ushort*, uint, void*, uint, uint*, int> GetFileSecurity => &GetFileSecurityW;
+        public static delegate*<ushort*, uint, void*, uint, uint*, BOOL> GetFileSecurity => &GetFileSecurityW;
 
         [NativeTypeName("#define ObjectCloseAuditAlarm ObjectCloseAuditAlarmW")]
-        public static delegate*<ushort*, void*, int, int> ObjectCloseAuditAlarm => &ObjectCloseAuditAlarmW;
+        public static delegate*<ushort*, void*, BOOL, BOOL> ObjectCloseAuditAlarm => &ObjectCloseAuditAlarmW;
 
         [NativeTypeName("#define ObjectDeleteAuditAlarm ObjectDeleteAuditAlarmW")]
-        public static delegate*<ushort*, void*, int, int> ObjectDeleteAuditAlarm => &ObjectDeleteAuditAlarmW;
+        public static delegate*<ushort*, void*, BOOL, BOOL> ObjectDeleteAuditAlarm => &ObjectDeleteAuditAlarmW;
 
         [NativeTypeName("#define ObjectOpenAuditAlarm ObjectOpenAuditAlarmW")]
-        public static delegate*<ushort*, void*, ushort*, ushort*, void*, IntPtr, uint, uint, PRIVILEGE_SET*, int, int, int*, int> ObjectOpenAuditAlarm => &ObjectOpenAuditAlarmW;
+        public static delegate*<ushort*, void*, ushort*, ushort*, void*, HANDLE, uint, uint, PRIVILEGE_SET*, BOOL, BOOL, BOOL*, BOOL> ObjectOpenAuditAlarm => &ObjectOpenAuditAlarmW;
 
         [NativeTypeName("#define ObjectPrivilegeAuditAlarm ObjectPrivilegeAuditAlarmW")]
-        public static delegate*<ushort*, void*, IntPtr, uint, PRIVILEGE_SET*, int, int> ObjectPrivilegeAuditAlarm => &ObjectPrivilegeAuditAlarmW;
+        public static delegate*<ushort*, void*, HANDLE, uint, PRIVILEGE_SET*, BOOL, BOOL> ObjectPrivilegeAuditAlarm => &ObjectPrivilegeAuditAlarmW;
 
         [NativeTypeName("#define PrivilegedServiceAuditAlarm PrivilegedServiceAuditAlarmW")]
-        public static delegate*<ushort*, ushort*, IntPtr, PRIVILEGE_SET*, int, int> PrivilegedServiceAuditAlarm => &PrivilegedServiceAuditAlarmW;
+        public static delegate*<ushort*, ushort*, HANDLE, PRIVILEGE_SET*, BOOL, BOOL> PrivilegedServiceAuditAlarm => &PrivilegedServiceAuditAlarmW;
 
         [NativeTypeName("#define SetFileSecurity SetFileSecurityW")]
-        public static delegate*<ushort*, uint, void*, int> SetFileSecurity => &SetFileSecurityW;
+        public static delegate*<ushort*, uint, void*, BOOL> SetFileSecurity => &SetFileSecurityW;
     }
 }

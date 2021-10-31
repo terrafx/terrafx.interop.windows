@@ -11,163 +11,128 @@ namespace TerraFX.Interop
     public static unsafe partial class Windows
     {
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int CredWriteW([NativeTypeName("PCREDENTIALW")] CREDENTIALW* Credential, [NativeTypeName("DWORD")] uint Flags);
+        public static extern BOOL CredWriteW([NativeTypeName("PCREDENTIALW")] CREDENTIALW* Credential, [NativeTypeName("DWORD")] uint Flags);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int CredWriteA([NativeTypeName("PCREDENTIALA")] CREDENTIALA* Credential, [NativeTypeName("DWORD")] uint Flags);
+        public static extern BOOL CredWriteA([NativeTypeName("PCREDENTIALA")] CREDENTIALA* Credential, [NativeTypeName("DWORD")] uint Flags);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int CredReadW([NativeTypeName("LPCWSTR")] ushort* TargetName, [NativeTypeName("DWORD")] uint Type, [NativeTypeName("DWORD")] uint Flags, [NativeTypeName("PCREDENTIALW *")] CREDENTIALW** Credential);
+        public static extern BOOL CredReadW([NativeTypeName("LPCWSTR")] ushort* TargetName, [NativeTypeName("DWORD")] uint Type, [NativeTypeName("DWORD")] uint Flags, [NativeTypeName("PCREDENTIALW *")] CREDENTIALW** Credential);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int CredReadA([NativeTypeName("LPCSTR")] sbyte* TargetName, [NativeTypeName("DWORD")] uint Type, [NativeTypeName("DWORD")] uint Flags, [NativeTypeName("PCREDENTIALA *")] CREDENTIALA** Credential);
+        public static extern BOOL CredReadA([NativeTypeName("LPCSTR")] sbyte* TargetName, [NativeTypeName("DWORD")] uint Type, [NativeTypeName("DWORD")] uint Flags, [NativeTypeName("PCREDENTIALA *")] CREDENTIALA** Credential);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int CredEnumerateW([NativeTypeName("LPCWSTR")] ushort* Filter, [NativeTypeName("DWORD")] uint Flags, [NativeTypeName("DWORD *")] uint* Count, [NativeTypeName("PCREDENTIALW **")] CREDENTIALW*** Credential);
+        public static extern BOOL CredEnumerateW([NativeTypeName("LPCWSTR")] ushort* Filter, [NativeTypeName("DWORD")] uint Flags, [NativeTypeName("DWORD *")] uint* Count, [NativeTypeName("PCREDENTIALW **")] CREDENTIALW*** Credential);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int CredEnumerateA([NativeTypeName("LPCSTR")] sbyte* Filter, [NativeTypeName("DWORD")] uint Flags, [NativeTypeName("DWORD *")] uint* Count, [NativeTypeName("PCREDENTIALA **")] CREDENTIALA*** Credential);
+        public static extern BOOL CredEnumerateA([NativeTypeName("LPCSTR")] sbyte* Filter, [NativeTypeName("DWORD")] uint Flags, [NativeTypeName("DWORD *")] uint* Count, [NativeTypeName("PCREDENTIALA **")] CREDENTIALA*** Credential);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int CredWriteDomainCredentialsW([NativeTypeName("PCREDENTIAL_TARGET_INFORMATIONW")] CREDENTIAL_TARGET_INFORMATIONW* TargetInfo, [NativeTypeName("PCREDENTIALW")] CREDENTIALW* Credential, [NativeTypeName("DWORD")] uint Flags);
+        public static extern BOOL CredWriteDomainCredentialsW([NativeTypeName("PCREDENTIAL_TARGET_INFORMATIONW")] CREDENTIAL_TARGET_INFORMATIONW* TargetInfo, [NativeTypeName("PCREDENTIALW")] CREDENTIALW* Credential, [NativeTypeName("DWORD")] uint Flags);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int CredWriteDomainCredentialsA([NativeTypeName("PCREDENTIAL_TARGET_INFORMATIONA")] CREDENTIAL_TARGET_INFORMATIONA* TargetInfo, [NativeTypeName("PCREDENTIALA")] CREDENTIALA* Credential, [NativeTypeName("DWORD")] uint Flags);
+        public static extern BOOL CredWriteDomainCredentialsA([NativeTypeName("PCREDENTIAL_TARGET_INFORMATIONA")] CREDENTIAL_TARGET_INFORMATIONA* TargetInfo, [NativeTypeName("PCREDENTIALA")] CREDENTIALA* Credential, [NativeTypeName("DWORD")] uint Flags);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int CredReadDomainCredentialsW([NativeTypeName("PCREDENTIAL_TARGET_INFORMATIONW")] CREDENTIAL_TARGET_INFORMATIONW* TargetInfo, [NativeTypeName("DWORD")] uint Flags, [NativeTypeName("DWORD *")] uint* Count, [NativeTypeName("PCREDENTIALW **")] CREDENTIALW*** Credential);
+        public static extern BOOL CredReadDomainCredentialsW([NativeTypeName("PCREDENTIAL_TARGET_INFORMATIONW")] CREDENTIAL_TARGET_INFORMATIONW* TargetInfo, [NativeTypeName("DWORD")] uint Flags, [NativeTypeName("DWORD *")] uint* Count, [NativeTypeName("PCREDENTIALW **")] CREDENTIALW*** Credential);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int CredReadDomainCredentialsA([NativeTypeName("PCREDENTIAL_TARGET_INFORMATIONA")] CREDENTIAL_TARGET_INFORMATIONA* TargetInfo, [NativeTypeName("DWORD")] uint Flags, [NativeTypeName("DWORD *")] uint* Count, [NativeTypeName("PCREDENTIALA **")] CREDENTIALA*** Credential);
+        public static extern BOOL CredReadDomainCredentialsA([NativeTypeName("PCREDENTIAL_TARGET_INFORMATIONA")] CREDENTIAL_TARGET_INFORMATIONA* TargetInfo, [NativeTypeName("DWORD")] uint Flags, [NativeTypeName("DWORD *")] uint* Count, [NativeTypeName("PCREDENTIALA **")] CREDENTIALA*** Credential);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int CredDeleteW([NativeTypeName("LPCWSTR")] ushort* TargetName, [NativeTypeName("DWORD")] uint Type, [NativeTypeName("DWORD")] uint Flags);
+        public static extern BOOL CredDeleteW([NativeTypeName("LPCWSTR")] ushort* TargetName, [NativeTypeName("DWORD")] uint Type, [NativeTypeName("DWORD")] uint Flags);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int CredDeleteA([NativeTypeName("LPCSTR")] sbyte* TargetName, [NativeTypeName("DWORD")] uint Type, [NativeTypeName("DWORD")] uint Flags);
+        public static extern BOOL CredDeleteA([NativeTypeName("LPCSTR")] sbyte* TargetName, [NativeTypeName("DWORD")] uint Type, [NativeTypeName("DWORD")] uint Flags);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int CredRenameW([NativeTypeName("LPCWSTR")] ushort* OldTargetName, [NativeTypeName("LPCWSTR")] ushort* NewTargetName, [NativeTypeName("DWORD")] uint Type, [NativeTypeName("DWORD")] uint Flags);
+        public static extern BOOL CredRenameW([NativeTypeName("LPCWSTR")] ushort* OldTargetName, [NativeTypeName("LPCWSTR")] ushort* NewTargetName, [NativeTypeName("DWORD")] uint Type, [NativeTypeName("DWORD")] uint Flags);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int CredRenameA([NativeTypeName("LPCSTR")] sbyte* OldTargetName, [NativeTypeName("LPCSTR")] sbyte* NewTargetName, [NativeTypeName("DWORD")] uint Type, [NativeTypeName("DWORD")] uint Flags);
+        public static extern BOOL CredRenameA([NativeTypeName("LPCSTR")] sbyte* OldTargetName, [NativeTypeName("LPCSTR")] sbyte* NewTargetName, [NativeTypeName("DWORD")] uint Type, [NativeTypeName("DWORD")] uint Flags);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int CredGetTargetInfoW([NativeTypeName("LPCWSTR")] ushort* TargetName, [NativeTypeName("DWORD")] uint Flags, [NativeTypeName("PCREDENTIAL_TARGET_INFORMATIONW *")] CREDENTIAL_TARGET_INFORMATIONW** TargetInfo);
+        public static extern BOOL CredGetTargetInfoW([NativeTypeName("LPCWSTR")] ushort* TargetName, [NativeTypeName("DWORD")] uint Flags, [NativeTypeName("PCREDENTIAL_TARGET_INFORMATIONW *")] CREDENTIAL_TARGET_INFORMATIONW** TargetInfo);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int CredGetTargetInfoA([NativeTypeName("LPCSTR")] sbyte* TargetName, [NativeTypeName("DWORD")] uint Flags, [NativeTypeName("PCREDENTIAL_TARGET_INFORMATIONA *")] CREDENTIAL_TARGET_INFORMATIONA** TargetInfo);
+        public static extern BOOL CredGetTargetInfoA([NativeTypeName("LPCSTR")] sbyte* TargetName, [NativeTypeName("DWORD")] uint Flags, [NativeTypeName("PCREDENTIAL_TARGET_INFORMATIONA *")] CREDENTIAL_TARGET_INFORMATIONA** TargetInfo);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int CredMarshalCredentialW(CRED_MARSHAL_TYPE CredType, [NativeTypeName("PVOID")] void* Credential, [NativeTypeName("LPWSTR *")] ushort** MarshaledCredential);
+        public static extern BOOL CredMarshalCredentialW(CRED_MARSHAL_TYPE CredType, [NativeTypeName("PVOID")] void* Credential, [NativeTypeName("LPWSTR *")] ushort** MarshaledCredential);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int CredMarshalCredentialA(CRED_MARSHAL_TYPE CredType, [NativeTypeName("PVOID")] void* Credential, [NativeTypeName("LPSTR *")] sbyte** MarshaledCredential);
+        public static extern BOOL CredMarshalCredentialA(CRED_MARSHAL_TYPE CredType, [NativeTypeName("PVOID")] void* Credential, [NativeTypeName("LPSTR *")] sbyte** MarshaledCredential);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int CredUnmarshalCredentialW([NativeTypeName("LPCWSTR")] ushort* MarshaledCredential, [NativeTypeName("PCRED_MARSHAL_TYPE")] CRED_MARSHAL_TYPE* CredType, [NativeTypeName("PVOID *")] void** Credential);
+        public static extern BOOL CredUnmarshalCredentialW([NativeTypeName("LPCWSTR")] ushort* MarshaledCredential, [NativeTypeName("PCRED_MARSHAL_TYPE")] CRED_MARSHAL_TYPE* CredType, [NativeTypeName("PVOID *")] void** Credential);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int CredUnmarshalCredentialA([NativeTypeName("LPCSTR")] sbyte* MarshaledCredential, [NativeTypeName("PCRED_MARSHAL_TYPE")] CRED_MARSHAL_TYPE* CredType, [NativeTypeName("PVOID *")] void** Credential);
+        public static extern BOOL CredUnmarshalCredentialA([NativeTypeName("LPCSTR")] sbyte* MarshaledCredential, [NativeTypeName("PCRED_MARSHAL_TYPE")] CRED_MARSHAL_TYPE* CredType, [NativeTypeName("PVOID *")] void** Credential);
 
         [DllImport("advapi32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int CredIsMarshaledCredentialW([NativeTypeName("LPCWSTR")] ushort* MarshaledCredential);
+        public static extern BOOL CredIsMarshaledCredentialW([NativeTypeName("LPCWSTR")] ushort* MarshaledCredential);
 
         [DllImport("advapi32", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int CredIsMarshaledCredentialA([NativeTypeName("LPCSTR")] sbyte* MarshaledCredential);
+        public static extern BOOL CredIsMarshaledCredentialA([NativeTypeName("LPCSTR")] sbyte* MarshaledCredential);
 
         [DllImport("credui", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int CredUnPackAuthenticationBufferW([NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("PVOID")] void* pAuthBuffer, [NativeTypeName("DWORD")] uint cbAuthBuffer, [NativeTypeName("LPWSTR")] ushort* pszUserName, [NativeTypeName("DWORD *")] uint* pcchMaxUserName, [NativeTypeName("LPWSTR")] ushort* pszDomainName, [NativeTypeName("DWORD *")] uint* pcchMaxDomainName, [NativeTypeName("LPWSTR")] ushort* pszPassword, [NativeTypeName("DWORD *")] uint* pcchMaxPassword);
+        public static extern BOOL CredUnPackAuthenticationBufferW([NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("PVOID")] void* pAuthBuffer, [NativeTypeName("DWORD")] uint cbAuthBuffer, [NativeTypeName("LPWSTR")] ushort* pszUserName, [NativeTypeName("DWORD *")] uint* pcchMaxUserName, [NativeTypeName("LPWSTR")] ushort* pszDomainName, [NativeTypeName("DWORD *")] uint* pcchMaxDomainName, [NativeTypeName("LPWSTR")] ushort* pszPassword, [NativeTypeName("DWORD *")] uint* pcchMaxPassword);
 
         [DllImport("credui", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int CredUnPackAuthenticationBufferA([NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("PVOID")] void* pAuthBuffer, [NativeTypeName("DWORD")] uint cbAuthBuffer, [NativeTypeName("LPSTR")] sbyte* pszUserName, [NativeTypeName("DWORD *")] uint* pcchlMaxUserName, [NativeTypeName("LPSTR")] sbyte* pszDomainName, [NativeTypeName("DWORD *")] uint* pcchMaxDomainName, [NativeTypeName("LPSTR")] sbyte* pszPassword, [NativeTypeName("DWORD *")] uint* pcchMaxPassword);
+        public static extern BOOL CredUnPackAuthenticationBufferA([NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("PVOID")] void* pAuthBuffer, [NativeTypeName("DWORD")] uint cbAuthBuffer, [NativeTypeName("LPSTR")] sbyte* pszUserName, [NativeTypeName("DWORD *")] uint* pcchlMaxUserName, [NativeTypeName("LPSTR")] sbyte* pszDomainName, [NativeTypeName("DWORD *")] uint* pcchMaxDomainName, [NativeTypeName("LPSTR")] sbyte* pszPassword, [NativeTypeName("DWORD *")] uint* pcchMaxPassword);
 
         [DllImport("credui", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int CredPackAuthenticationBufferW([NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LPWSTR")] ushort* pszUserName, [NativeTypeName("LPWSTR")] ushort* pszPassword, [NativeTypeName("PBYTE")] byte* pPackedCredentials, [NativeTypeName("DWORD *")] uint* pcbPackedCredentials);
+        public static extern BOOL CredPackAuthenticationBufferW([NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LPWSTR")] ushort* pszUserName, [NativeTypeName("LPWSTR")] ushort* pszPassword, [NativeTypeName("PBYTE")] byte* pPackedCredentials, [NativeTypeName("DWORD *")] uint* pcbPackedCredentials);
 
         [DllImport("credui", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int CredPackAuthenticationBufferA([NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LPSTR")] sbyte* pszUserName, [NativeTypeName("LPSTR")] sbyte* pszPassword, [NativeTypeName("PBYTE")] byte* pPackedCredentials, [NativeTypeName("DWORD *")] uint* pcbPackedCredentials);
+        public static extern BOOL CredPackAuthenticationBufferA([NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LPSTR")] sbyte* pszUserName, [NativeTypeName("LPSTR")] sbyte* pszPassword, [NativeTypeName("PBYTE")] byte* pPackedCredentials, [NativeTypeName("DWORD *")] uint* pcbPackedCredentials);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int CredProtectW([NativeTypeName("BOOL")] int fAsSelf, [NativeTypeName("LPWSTR")] ushort* pszCredentials, [NativeTypeName("DWORD")] uint cchCredentials, [NativeTypeName("LPWSTR")] ushort* pszProtectedCredentials, [NativeTypeName("DWORD *")] uint* pcchMaxChars, CRED_PROTECTION_TYPE* ProtectionType);
+        public static extern BOOL CredProtectW(BOOL fAsSelf, [NativeTypeName("LPWSTR")] ushort* pszCredentials, [NativeTypeName("DWORD")] uint cchCredentials, [NativeTypeName("LPWSTR")] ushort* pszProtectedCredentials, [NativeTypeName("DWORD *")] uint* pcchMaxChars, CRED_PROTECTION_TYPE* ProtectionType);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int CredProtectA([NativeTypeName("BOOL")] int fAsSelf, [NativeTypeName("LPSTR")] sbyte* pszCredentials, [NativeTypeName("DWORD")] uint cchCredentials, [NativeTypeName("LPSTR")] sbyte* pszProtectedCredentials, [NativeTypeName("DWORD *")] uint* pcchMaxChars, CRED_PROTECTION_TYPE* ProtectionType);
+        public static extern BOOL CredProtectA(BOOL fAsSelf, [NativeTypeName("LPSTR")] sbyte* pszCredentials, [NativeTypeName("DWORD")] uint cchCredentials, [NativeTypeName("LPSTR")] sbyte* pszProtectedCredentials, [NativeTypeName("DWORD *")] uint* pcchMaxChars, CRED_PROTECTION_TYPE* ProtectionType);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int CredUnprotectW([NativeTypeName("BOOL")] int fAsSelf, [NativeTypeName("LPWSTR")] ushort* pszProtectedCredentials, [NativeTypeName("DWORD")] uint cchProtectedCredentials, [NativeTypeName("LPWSTR")] ushort* pszCredentials, [NativeTypeName("DWORD *")] uint* pcchMaxChars);
+        public static extern BOOL CredUnprotectW(BOOL fAsSelf, [NativeTypeName("LPWSTR")] ushort* pszProtectedCredentials, [NativeTypeName("DWORD")] uint cchProtectedCredentials, [NativeTypeName("LPWSTR")] ushort* pszCredentials, [NativeTypeName("DWORD *")] uint* pcchMaxChars);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int CredUnprotectA([NativeTypeName("BOOL")] int fAsSelf, [NativeTypeName("LPSTR")] sbyte* pszProtectedCredentials, [NativeTypeName("DWORD")] uint cchProtectedCredentials, [NativeTypeName("LPSTR")] sbyte* pszCredentials, [NativeTypeName("DWORD *")] uint* pcchMaxChars);
+        public static extern BOOL CredUnprotectA(BOOL fAsSelf, [NativeTypeName("LPSTR")] sbyte* pszProtectedCredentials, [NativeTypeName("DWORD")] uint cchProtectedCredentials, [NativeTypeName("LPSTR")] sbyte* pszCredentials, [NativeTypeName("DWORD *")] uint* pcchMaxChars);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int CredIsProtectedW([NativeTypeName("LPWSTR")] ushort* pszProtectedCredentials, CRED_PROTECTION_TYPE* pProtectionType);
+        public static extern BOOL CredIsProtectedW([NativeTypeName("LPWSTR")] ushort* pszProtectedCredentials, CRED_PROTECTION_TYPE* pProtectionType);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int CredIsProtectedA([NativeTypeName("LPSTR")] sbyte* pszProtectedCredentials, CRED_PROTECTION_TYPE* pProtectionType);
+        public static extern BOOL CredIsProtectedA([NativeTypeName("LPSTR")] sbyte* pszProtectedCredentials, CRED_PROTECTION_TYPE* pProtectionType);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int CredFindBestCredentialW([NativeTypeName("LPCWSTR")] ushort* TargetName, [NativeTypeName("DWORD")] uint Type, [NativeTypeName("DWORD")] uint Flags, [NativeTypeName("PCREDENTIALW *")] CREDENTIALW** Credential);
+        public static extern BOOL CredFindBestCredentialW([NativeTypeName("LPCWSTR")] ushort* TargetName, [NativeTypeName("DWORD")] uint Type, [NativeTypeName("DWORD")] uint Flags, [NativeTypeName("PCREDENTIALW *")] CREDENTIALW** Credential);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int CredFindBestCredentialA([NativeTypeName("LPCSTR")] sbyte* TargetName, [NativeTypeName("DWORD")] uint Type, [NativeTypeName("DWORD")] uint Flags, [NativeTypeName("PCREDENTIALA *")] CREDENTIALA** Credential);
+        public static extern BOOL CredFindBestCredentialA([NativeTypeName("LPCSTR")] sbyte* TargetName, [NativeTypeName("DWORD")] uint Type, [NativeTypeName("DWORD")] uint Flags, [NativeTypeName("PCREDENTIALA *")] CREDENTIALA** Credential);
 
         [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
-        [return: NativeTypeName("BOOL")]
-        public static extern int CredGetSessionTypes([NativeTypeName("DWORD")] uint MaximumPersistCount, [NativeTypeName("LPDWORD")] uint* MaximumPersist);
+        public static extern BOOL CredGetSessionTypes([NativeTypeName("DWORD")] uint MaximumPersistCount, [NativeTypeName("LPDWORD")] uint* MaximumPersist);
 
         [DllImport("advapi32", ExactSpelling = true)]
         public static extern void CredFree([NativeTypeName("PVOID")] void* Buffer);
 
         [DllImport("credui", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
-        public static extern uint CredUIPromptForCredentialsW([NativeTypeName("PCREDUI_INFOW")] CREDUI_INFOW* pUiInfo, [NativeTypeName("PCWSTR")] ushort* pszTargetName, [NativeTypeName("PCtxtHandle")] SecHandle* pContext, [NativeTypeName("DWORD")] uint dwAuthError, [NativeTypeName("PWSTR")] ushort* pszUserName, [NativeTypeName("ULONG")] uint ulUserNameBufferSize, [NativeTypeName("PWSTR")] ushort* pszPassword, [NativeTypeName("ULONG")] uint ulPasswordBufferSize, [NativeTypeName("BOOL *")] int* save, [NativeTypeName("DWORD")] uint dwFlags);
+        public static extern uint CredUIPromptForCredentialsW([NativeTypeName("PCREDUI_INFOW")] CREDUI_INFOW* pUiInfo, [NativeTypeName("PCWSTR")] ushort* pszTargetName, [NativeTypeName("PCtxtHandle")] SecHandle* pContext, [NativeTypeName("DWORD")] uint dwAuthError, [NativeTypeName("PWSTR")] ushort* pszUserName, [NativeTypeName("ULONG")] uint ulUserNameBufferSize, [NativeTypeName("PWSTR")] ushort* pszPassword, [NativeTypeName("ULONG")] uint ulPasswordBufferSize, BOOL* save, [NativeTypeName("DWORD")] uint dwFlags);
 
         [DllImport("credui", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
-        public static extern uint CredUIPromptForCredentialsA([NativeTypeName("PCREDUI_INFOA")] CREDUI_INFOA* pUiInfo, [NativeTypeName("PCSTR")] sbyte* pszTargetName, [NativeTypeName("PCtxtHandle")] SecHandle* pContext, [NativeTypeName("DWORD")] uint dwAuthError, [NativeTypeName("PSTR")] sbyte* pszUserName, [NativeTypeName("ULONG")] uint ulUserNameBufferSize, [NativeTypeName("PSTR")] sbyte* pszPassword, [NativeTypeName("ULONG")] uint ulPasswordBufferSize, [NativeTypeName("BOOL *")] int* save, [NativeTypeName("DWORD")] uint dwFlags);
+        public static extern uint CredUIPromptForCredentialsA([NativeTypeName("PCREDUI_INFOA")] CREDUI_INFOA* pUiInfo, [NativeTypeName("PCSTR")] sbyte* pszTargetName, [NativeTypeName("PCtxtHandle")] SecHandle* pContext, [NativeTypeName("DWORD")] uint dwAuthError, [NativeTypeName("PSTR")] sbyte* pszUserName, [NativeTypeName("ULONG")] uint ulUserNameBufferSize, [NativeTypeName("PSTR")] sbyte* pszPassword, [NativeTypeName("ULONG")] uint ulPasswordBufferSize, BOOL* save, [NativeTypeName("DWORD")] uint dwFlags);
 
         [DllImport("credui", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
-        public static extern uint CredUIPromptForWindowsCredentialsW([NativeTypeName("PCREDUI_INFOW")] CREDUI_INFOW* pUiInfo, [NativeTypeName("DWORD")] uint dwAuthError, [NativeTypeName("ULONG *")] uint* pulAuthPackage, [NativeTypeName("LPCVOID")] void* pvInAuthBuffer, [NativeTypeName("ULONG")] uint ulInAuthBufferSize, [NativeTypeName("LPVOID *")] void** ppvOutAuthBuffer, [NativeTypeName("ULONG *")] uint* pulOutAuthBufferSize, [NativeTypeName("BOOL *")] int* pfSave, [NativeTypeName("DWORD")] uint dwFlags);
+        public static extern uint CredUIPromptForWindowsCredentialsW([NativeTypeName("PCREDUI_INFOW")] CREDUI_INFOW* pUiInfo, [NativeTypeName("DWORD")] uint dwAuthError, [NativeTypeName("ULONG *")] uint* pulAuthPackage, [NativeTypeName("LPCVOID")] void* pvInAuthBuffer, [NativeTypeName("ULONG")] uint ulInAuthBufferSize, [NativeTypeName("LPVOID *")] void** ppvOutAuthBuffer, [NativeTypeName("ULONG *")] uint* pulOutAuthBufferSize, BOOL* pfSave, [NativeTypeName("DWORD")] uint dwFlags);
 
         [DllImport("credui", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
-        public static extern uint CredUIPromptForWindowsCredentialsA([NativeTypeName("PCREDUI_INFOA")] CREDUI_INFOA* pUiInfo, [NativeTypeName("DWORD")] uint dwAuthError, [NativeTypeName("ULONG *")] uint* pulAuthPackage, [NativeTypeName("LPCVOID")] void* pvInAuthBuffer, [NativeTypeName("ULONG")] uint ulInAuthBufferSize, [NativeTypeName("LPVOID *")] void** ppvOutAuthBuffer, [NativeTypeName("ULONG *")] uint* pulOutAuthBufferSize, [NativeTypeName("BOOL *")] int* pfSave, [NativeTypeName("DWORD")] uint dwFlags);
+        public static extern uint CredUIPromptForWindowsCredentialsA([NativeTypeName("PCREDUI_INFOA")] CREDUI_INFOA* pUiInfo, [NativeTypeName("DWORD")] uint dwAuthError, [NativeTypeName("ULONG *")] uint* pulAuthPackage, [NativeTypeName("LPCVOID")] void* pvInAuthBuffer, [NativeTypeName("ULONG")] uint ulInAuthBufferSize, [NativeTypeName("LPVOID *")] void** ppvOutAuthBuffer, [NativeTypeName("ULONG *")] uint* pulOutAuthBufferSize, BOOL* pfSave, [NativeTypeName("DWORD")] uint dwFlags);
 
         [DllImport("credui", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
@@ -179,23 +144,23 @@ namespace TerraFX.Interop
 
         [DllImport("credui", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
-        public static extern uint CredUICmdLinePromptForCredentialsW([NativeTypeName("PCWSTR")] ushort* pszTargetName, [NativeTypeName("PCtxtHandle")] SecHandle* pContext, [NativeTypeName("DWORD")] uint dwAuthError, [NativeTypeName("PWSTR")] ushort* UserName, [NativeTypeName("ULONG")] uint ulUserBufferSize, [NativeTypeName("PWSTR")] ushort* pszPassword, [NativeTypeName("ULONG")] uint ulPasswordBufferSize, [NativeTypeName("PBOOL")] int* pfSave, [NativeTypeName("DWORD")] uint dwFlags);
+        public static extern uint CredUICmdLinePromptForCredentialsW([NativeTypeName("PCWSTR")] ushort* pszTargetName, [NativeTypeName("PCtxtHandle")] SecHandle* pContext, [NativeTypeName("DWORD")] uint dwAuthError, [NativeTypeName("PWSTR")] ushort* UserName, [NativeTypeName("ULONG")] uint ulUserBufferSize, [NativeTypeName("PWSTR")] ushort* pszPassword, [NativeTypeName("ULONG")] uint ulPasswordBufferSize, [NativeTypeName("PBOOL")] BOOL* pfSave, [NativeTypeName("DWORD")] uint dwFlags);
 
         [DllImport("credui", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
-        public static extern uint CredUICmdLinePromptForCredentialsA([NativeTypeName("PCSTR")] sbyte* pszTargetName, [NativeTypeName("PCtxtHandle")] SecHandle* pContext, [NativeTypeName("DWORD")] uint dwAuthError, [NativeTypeName("PSTR")] sbyte* UserName, [NativeTypeName("ULONG")] uint ulUserBufferSize, [NativeTypeName("PSTR")] sbyte* pszPassword, [NativeTypeName("ULONG")] uint ulPasswordBufferSize, [NativeTypeName("PBOOL")] int* pfSave, [NativeTypeName("DWORD")] uint dwFlags);
+        public static extern uint CredUICmdLinePromptForCredentialsA([NativeTypeName("PCSTR")] sbyte* pszTargetName, [NativeTypeName("PCtxtHandle")] SecHandle* pContext, [NativeTypeName("DWORD")] uint dwAuthError, [NativeTypeName("PSTR")] sbyte* UserName, [NativeTypeName("ULONG")] uint ulUserBufferSize, [NativeTypeName("PSTR")] sbyte* pszPassword, [NativeTypeName("ULONG")] uint ulPasswordBufferSize, [NativeTypeName("PBOOL")] BOOL* pfSave, [NativeTypeName("DWORD")] uint dwFlags);
 
         [DllImport("credui", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
-        public static extern uint CredUIConfirmCredentialsW([NativeTypeName("PCWSTR")] ushort* pszTargetName, [NativeTypeName("BOOL")] int bConfirm);
+        public static extern uint CredUIConfirmCredentialsW([NativeTypeName("PCWSTR")] ushort* pszTargetName, BOOL bConfirm);
 
         [DllImport("credui", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
-        public static extern uint CredUIConfirmCredentialsA([NativeTypeName("PCSTR")] sbyte* pszTargetName, [NativeTypeName("BOOL")] int bConfirm);
+        public static extern uint CredUIConfirmCredentialsA([NativeTypeName("PCSTR")] sbyte* pszTargetName, BOOL bConfirm);
 
         [DllImport("credui", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
-        public static extern uint CredUIStoreSSOCredW([NativeTypeName("PCWSTR")] ushort* pszRealm, [NativeTypeName("PCWSTR")] ushort* pszUsername, [NativeTypeName("PCWSTR")] ushort* pszPassword, [NativeTypeName("BOOL")] int bPersist);
+        public static extern uint CredUIStoreSSOCredW([NativeTypeName("PCWSTR")] ushort* pszRealm, [NativeTypeName("PCWSTR")] ushort* pszUsername, [NativeTypeName("PCWSTR")] ushort* pszPassword, BOOL bPersist);
 
         [DllImport("credui", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
@@ -613,52 +578,52 @@ namespace TerraFX.Interop
         public const int CRED_PRESERVE_CREDENTIAL_BLOB = 0x1;
 
         [NativeTypeName("#define CredWrite CredWriteW")]
-        public static delegate*<CREDENTIALW*, uint, int> CredWrite => &CredWriteW;
+        public static delegate*<CREDENTIALW*, uint, BOOL> CredWrite => &CredWriteW;
 
         [NativeTypeName("#define CredRead CredReadW")]
-        public static delegate*<ushort*, uint, uint, CREDENTIALW**, int> CredRead => &CredReadW;
+        public static delegate*<ushort*, uint, uint, CREDENTIALW**, BOOL> CredRead => &CredReadW;
 
         [NativeTypeName("#define CRED_ENUMERATE_ALL_CREDENTIALS 0x1")]
         public const int CRED_ENUMERATE_ALL_CREDENTIALS = 0x1;
 
         [NativeTypeName("#define CredEnumerate CredEnumerateW")]
-        public static delegate*<ushort*, uint, uint*, CREDENTIALW***, int> CredEnumerate => &CredEnumerateW;
+        public static delegate*<ushort*, uint, uint*, CREDENTIALW***, BOOL> CredEnumerate => &CredEnumerateW;
 
         [NativeTypeName("#define CredWriteDomainCredentials CredWriteDomainCredentialsW")]
-        public static delegate*<CREDENTIAL_TARGET_INFORMATIONW*, CREDENTIALW*, uint, int> CredWriteDomainCredentials => &CredWriteDomainCredentialsW;
+        public static delegate*<CREDENTIAL_TARGET_INFORMATIONW*, CREDENTIALW*, uint, BOOL> CredWriteDomainCredentials => &CredWriteDomainCredentialsW;
 
         [NativeTypeName("#define CRED_CACHE_TARGET_INFORMATION 0x1")]
         public const int CRED_CACHE_TARGET_INFORMATION = 0x1;
 
         [NativeTypeName("#define CredReadDomainCredentials CredReadDomainCredentialsW")]
-        public static delegate*<CREDENTIAL_TARGET_INFORMATIONW*, uint, uint*, CREDENTIALW***, int> CredReadDomainCredentials => &CredReadDomainCredentialsW;
+        public static delegate*<CREDENTIAL_TARGET_INFORMATIONW*, uint, uint*, CREDENTIALW***, BOOL> CredReadDomainCredentials => &CredReadDomainCredentialsW;
 
         [NativeTypeName("#define CredDelete CredDeleteW")]
-        public static delegate*<ushort*, uint, uint, int> CredDelete => &CredDeleteW;
+        public static delegate*<ushort*, uint, uint, BOOL> CredDelete => &CredDeleteW;
 
         [NativeTypeName("#define CredRename CredRenameW")]
-        public static delegate*<ushort*, ushort*, uint, uint, int> CredRename => &CredRenameW;
+        public static delegate*<ushort*, ushort*, uint, uint, BOOL> CredRename => &CredRenameW;
 
         [NativeTypeName("#define CRED_ALLOW_NAME_RESOLUTION 0x1")]
         public const int CRED_ALLOW_NAME_RESOLUTION = 0x1;
 
         [NativeTypeName("#define CredGetTargetInfo CredGetTargetInfoW")]
-        public static delegate*<ushort*, uint, CREDENTIAL_TARGET_INFORMATIONW**, int> CredGetTargetInfo => &CredGetTargetInfoW;
+        public static delegate*<ushort*, uint, CREDENTIAL_TARGET_INFORMATIONW**, BOOL> CredGetTargetInfo => &CredGetTargetInfoW;
 
         [NativeTypeName("#define CredMarshalCredential CredMarshalCredentialW")]
-        public static delegate*<CRED_MARSHAL_TYPE, void*, ushort**, int> CredMarshalCredential => &CredMarshalCredentialW;
+        public static delegate*<CRED_MARSHAL_TYPE, void*, ushort**, BOOL> CredMarshalCredential => &CredMarshalCredentialW;
 
         [NativeTypeName("#define CredUnmarshalCredential CredUnmarshalCredentialW")]
-        public static delegate*<ushort*, CRED_MARSHAL_TYPE*, void**, int> CredUnmarshalCredential => &CredUnmarshalCredentialW;
+        public static delegate*<ushort*, CRED_MARSHAL_TYPE*, void**, BOOL> CredUnmarshalCredential => &CredUnmarshalCredentialW;
 
         [NativeTypeName("#define CredIsMarshaledCredential CredIsMarshaledCredentialW")]
-        public static delegate*<ushort*, int> CredIsMarshaledCredential => &CredIsMarshaledCredentialW;
+        public static delegate*<ushort*, BOOL> CredIsMarshaledCredential => &CredIsMarshaledCredentialW;
 
         [NativeTypeName("#define CredUnPackAuthenticationBuffer CredUnPackAuthenticationBufferW")]
-        public static delegate*<uint, void*, uint, ushort*, uint*, ushort*, uint*, ushort*, uint*, int> CredUnPackAuthenticationBuffer => &CredUnPackAuthenticationBufferW;
+        public static delegate*<uint, void*, uint, ushort*, uint*, ushort*, uint*, ushort*, uint*, BOOL> CredUnPackAuthenticationBuffer => &CredUnPackAuthenticationBufferW;
 
         [NativeTypeName("#define CredPackAuthenticationBuffer CredPackAuthenticationBufferW")]
-        public static delegate*<uint, ushort*, ushort*, byte*, uint*, int> CredPackAuthenticationBuffer => &CredPackAuthenticationBufferW;
+        public static delegate*<uint, ushort*, ushort*, byte*, uint*, BOOL> CredPackAuthenticationBuffer => &CredPackAuthenticationBufferW;
 
         [NativeTypeName("#define CRED_PROTECT_AS_SELF 0x1")]
         public const int CRED_PROTECT_AS_SELF = 0x1;
@@ -670,7 +635,7 @@ namespace TerraFX.Interop
         public const int CRED_PROTECT_VALID_FLAGS = (0x1 | 0x2);
 
         [NativeTypeName("#define CredProtect CredProtectW")]
-        public static delegate*<int, ushort*, uint, ushort*, uint*, CRED_PROTECTION_TYPE*, int> CredProtect => &CredProtectW;
+        public static delegate*<BOOL, ushort*, uint, ushort*, uint*, CRED_PROTECTION_TYPE*, BOOL> CredProtect => &CredProtectW;
 
         [NativeTypeName("#define CRED_UNPROTECT_AS_SELF 0x1")]
         public const int CRED_UNPROTECT_AS_SELF = 0x1;
@@ -682,27 +647,27 @@ namespace TerraFX.Interop
         public const int CRED_UNPROTECT_VALID_FLAGS = (0x1 | 0x2);
 
         [NativeTypeName("#define CredUnprotect CredUnprotectW")]
-        public static delegate*<int, ushort*, uint, ushort*, uint*, int> CredUnprotect => &CredUnprotectW;
+        public static delegate*<BOOL, ushort*, uint, ushort*, uint*, BOOL> CredUnprotect => &CredUnprotectW;
 
         [NativeTypeName("#define CredIsProtected CredIsProtectedW")]
-        public static delegate*<ushort*, CRED_PROTECTION_TYPE*, int> CredIsProtected => &CredIsProtectedW;
+        public static delegate*<ushort*, CRED_PROTECTION_TYPE*, BOOL> CredIsProtected => &CredIsProtectedW;
 
         [NativeTypeName("#define CredFindBestCredential CredFindBestCredentialW")]
-        public static delegate*<ushort*, uint, uint, CREDENTIALW**, int> CredFindBestCredential => &CredFindBestCredentialW;
+        public static delegate*<ushort*, uint, uint, CREDENTIALW**, BOOL> CredFindBestCredential => &CredFindBestCredentialW;
 
         [NativeTypeName("#define CredUIPromptForCredentials CredUIPromptForCredentialsW")]
-        public static delegate*<CREDUI_INFOW*, ushort*, SecHandle*, uint, ushort*, uint, ushort*, uint, int*, uint, uint> CredUIPromptForCredentials => &CredUIPromptForCredentialsW;
+        public static delegate*<CREDUI_INFOW*, ushort*, SecHandle*, uint, ushort*, uint, ushort*, uint, BOOL*, uint, uint> CredUIPromptForCredentials => &CredUIPromptForCredentialsW;
 
         [NativeTypeName("#define CredUIPromptForWindowsCredentials CredUIPromptForWindowsCredentialsW")]
-        public static delegate*<CREDUI_INFOW*, uint, uint*, void*, uint, void**, uint*, int*, uint, uint> CredUIPromptForWindowsCredentials => &CredUIPromptForWindowsCredentialsW;
+        public static delegate*<CREDUI_INFOW*, uint, uint*, void*, uint, void**, uint*, BOOL*, uint, uint> CredUIPromptForWindowsCredentials => &CredUIPromptForWindowsCredentialsW;
 
         [NativeTypeName("#define CredUIParseUserName CredUIParseUserNameW")]
         public static delegate*<ushort*, ushort*, uint, ushort*, uint, uint> CredUIParseUserName => &CredUIParseUserNameW;
 
         [NativeTypeName("#define CredUICmdLinePromptForCredentials CredUICmdLinePromptForCredentialsW")]
-        public static delegate*<ushort*, SecHandle*, uint, ushort*, uint, ushort*, uint, int*, uint, uint> CredUICmdLinePromptForCredentials => &CredUICmdLinePromptForCredentialsW;
+        public static delegate*<ushort*, SecHandle*, uint, ushort*, uint, ushort*, uint, BOOL*, uint, uint> CredUICmdLinePromptForCredentials => &CredUICmdLinePromptForCredentialsW;
 
         [NativeTypeName("#define CredUIConfirmCredentials CredUIConfirmCredentialsW")]
-        public static delegate*<ushort*, int, uint> CredUIConfirmCredentials => &CredUIConfirmCredentialsW;
+        public static delegate*<ushort*, BOOL, uint> CredUIConfirmCredentials => &CredUIConfirmCredentialsW;
     }
 }

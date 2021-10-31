@@ -3,8 +3,6 @@
 // Ported from um/WinUser.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
-
 namespace TerraFX.Interop
 {
     public unsafe partial struct CBT_CREATEWNDW
@@ -12,7 +10,6 @@ namespace TerraFX.Interop
         [NativeTypeName("struct tagCREATESTRUCTW *")]
         public CREATESTRUCTW* lpcs;
 
-        [NativeTypeName("HWND")]
-        public IntPtr hwndInsertAfter;
+        public HWND hwndInsertAfter;
     }
 }

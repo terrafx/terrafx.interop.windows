@@ -2,6 +2,9 @@
 @../../remap.rsp
 --exclude
 SPFEI
+SPRULETRANS_DICTATION
+SPRULETRANS_TEXTBUFFER
+SPRULETRANS_WILDCARD
 --file
 um-sapi.h
 --output

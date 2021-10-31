@@ -13,7 +13,6 @@ namespace TerraFX.Interop
         [NativeTypeName("LPCITEMIDLIST")]
         public ITEMIDLIST* pidl;
 
-        [NativeTypeName("BOOL")]
-        public int fRecursive;
+        public BOOL fRecursive;
     }
 }

@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<ISpPhraseAlt*, Guid*, void**, int>)(lpVtbl[0]))((ISpPhraseAlt*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,48 +41,42 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetPhrase(SPPHRASE** ppCoMemPhrase)
+        public HRESULT GetPhrase(SPPHRASE** ppCoMemPhrase)
         {
             return ((delegate* unmanaged<ISpPhraseAlt*, SPPHRASE**, int>)(lpVtbl[3]))((ISpPhraseAlt*)Unsafe.AsPointer(ref this), ppCoMemPhrase);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetSerializedPhrase(SPSERIALIZEDPHRASE** ppCoMemPhrase)
+        public HRESULT GetSerializedPhrase(SPSERIALIZEDPHRASE** ppCoMemPhrase)
         {
             return ((delegate* unmanaged<ISpPhraseAlt*, SPSERIALIZEDPHRASE**, int>)(lpVtbl[4]))((ISpPhraseAlt*)Unsafe.AsPointer(ref this), ppCoMemPhrase);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetText([NativeTypeName("ULONG")] uint ulStart, [NativeTypeName("ULONG")] uint ulCount, [NativeTypeName("BOOL")] int fUseTextReplacements, [NativeTypeName("LPWSTR *")] ushort** ppszCoMemText, [NativeTypeName("BYTE *")] byte* pbDisplayAttributes)
+        public HRESULT GetText([NativeTypeName("ULONG")] uint ulStart, [NativeTypeName("ULONG")] uint ulCount, BOOL fUseTextReplacements, [NativeTypeName("LPWSTR *")] ushort** ppszCoMemText, byte* pbDisplayAttributes)
         {
-            return ((delegate* unmanaged<ISpPhraseAlt*, uint, uint, int, ushort**, byte*, int>)(lpVtbl[5]))((ISpPhraseAlt*)Unsafe.AsPointer(ref this), ulStart, ulCount, fUseTextReplacements, ppszCoMemText, pbDisplayAttributes);
+            return ((delegate* unmanaged<ISpPhraseAlt*, uint, uint, BOOL, ushort**, byte*, int>)(lpVtbl[5]))((ISpPhraseAlt*)Unsafe.AsPointer(ref this), ulStart, ulCount, fUseTextReplacements, ppszCoMemText, pbDisplayAttributes);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int Discard([NativeTypeName("DWORD")] uint dwValueTypes)
+        public HRESULT Discard([NativeTypeName("DWORD")] uint dwValueTypes)
         {
             return ((delegate* unmanaged<ISpPhraseAlt*, uint, int>)(lpVtbl[6]))((ISpPhraseAlt*)Unsafe.AsPointer(ref this), dwValueTypes);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetAltInfo(ISpPhrase** ppParent, [NativeTypeName("ULONG *")] uint* pulStartElementInParent, [NativeTypeName("ULONG *")] uint* pcElementsInParent, [NativeTypeName("ULONG *")] uint* pcElementsInAlt)
+        public HRESULT GetAltInfo(ISpPhrase** ppParent, [NativeTypeName("ULONG *")] uint* pulStartElementInParent, [NativeTypeName("ULONG *")] uint* pcElementsInParent, [NativeTypeName("ULONG *")] uint* pcElementsInAlt)
         {
             return ((delegate* unmanaged<ISpPhraseAlt*, ISpPhrase**, uint*, uint*, uint*, int>)(lpVtbl[7]))((ISpPhraseAlt*)Unsafe.AsPointer(ref this), ppParent, pulStartElementInParent, pcElementsInParent, pcElementsInAlt);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        [return: NativeTypeName("HRESULT")]
-        public int Commit()
+        public HRESULT Commit()
         {
             return ((delegate* unmanaged<ISpPhraseAlt*, int>)(lpVtbl[8]))((ISpPhraseAlt*)Unsafe.AsPointer(ref this));
         }

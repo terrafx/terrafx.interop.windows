@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IShellService*, Guid*, void**, int>)(lpVtbl[0]))((IShellService*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,8 +41,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int SetOwner(IUnknown* punkOwner)
+        public HRESULT SetOwner(IUnknown* punkOwner)
         {
             return ((delegate* unmanaged<IShellService*, IUnknown*, int>)(lpVtbl[3]))((IShellService*)Unsafe.AsPointer(ref this), punkOwner);
         }

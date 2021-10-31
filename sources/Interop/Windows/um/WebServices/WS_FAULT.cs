@@ -20,7 +20,6 @@ namespace TerraFX.Interop
 
         public WS_STRING node;
 
-        [NativeTypeName("WS_XML_BUFFER *")]
         public IntPtr detail;
     }
 }

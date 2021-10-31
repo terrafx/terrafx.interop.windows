@@ -18,8 +18,7 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IProtectionPolicyManagerInterop3*, Guid*, void**, int>)(lpVtbl[0]))((IProtectionPolicyManagerInterop3*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
@@ -42,74 +41,65 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetIids([NativeTypeName("ULONG *")] uint* iidCount, [NativeTypeName("IID **")] Guid** iids)
+        public HRESULT GetIids([NativeTypeName("ULONG *")] uint* iidCount, [NativeTypeName("IID **")] Guid** iids)
         {
             return ((delegate* unmanaged<IProtectionPolicyManagerInterop3*, uint*, Guid**, int>)(lpVtbl[3]))((IProtectionPolicyManagerInterop3*)Unsafe.AsPointer(ref this), iidCount, iids);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetRuntimeClassName([NativeTypeName("HSTRING *")] IntPtr* className)
+        public HRESULT GetRuntimeClassName(HSTRING* className)
         {
-            return ((delegate* unmanaged<IProtectionPolicyManagerInterop3*, IntPtr*, int>)(lpVtbl[4]))((IProtectionPolicyManagerInterop3*)Unsafe.AsPointer(ref this), className);
+            return ((delegate* unmanaged<IProtectionPolicyManagerInterop3*, HSTRING*, int>)(lpVtbl[4]))((IProtectionPolicyManagerInterop3*)Unsafe.AsPointer(ref this), className);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetTrustLevel(TrustLevel* trustLevel)
+        public HRESULT GetTrustLevel(TrustLevel* trustLevel)
         {
             return ((delegate* unmanaged<IProtectionPolicyManagerInterop3*, TrustLevel*, int>)(lpVtbl[5]))((IProtectionPolicyManagerInterop3*)Unsafe.AsPointer(ref this), trustLevel);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        [return: NativeTypeName("HRESULT")]
-        public int RequestAccessWithBehaviorForWindowAsync([NativeTypeName("HWND")] IntPtr appWindow, [NativeTypeName("HSTRING")] IntPtr sourceIdentity, [NativeTypeName("HSTRING")] IntPtr targetIdentity, IUnknown* auditInfoUnk, [NativeTypeName("HSTRING")] IntPtr messageFromApp, [NativeTypeName("UINT32")] uint behavior, [NativeTypeName("const IID &")] Guid* riid, void** asyncOperation)
+        public HRESULT RequestAccessWithBehaviorForWindowAsync(HWND appWindow, HSTRING sourceIdentity, HSTRING targetIdentity, IUnknown* auditInfoUnk, HSTRING messageFromApp, [NativeTypeName("UINT32")] uint behavior, [NativeTypeName("const IID &")] Guid* riid, void** asyncOperation)
         {
-            return ((delegate* unmanaged<IProtectionPolicyManagerInterop3*, IntPtr, IntPtr, IntPtr, IUnknown*, IntPtr, uint, Guid*, void**, int>)(lpVtbl[6]))((IProtectionPolicyManagerInterop3*)Unsafe.AsPointer(ref this), appWindow, sourceIdentity, targetIdentity, auditInfoUnk, messageFromApp, behavior, riid, asyncOperation);
+            return ((delegate* unmanaged<IProtectionPolicyManagerInterop3*, HWND, HSTRING, HSTRING, IUnknown*, HSTRING, uint, Guid*, void**, int>)(lpVtbl[6]))((IProtectionPolicyManagerInterop3*)Unsafe.AsPointer(ref this), appWindow, sourceIdentity, targetIdentity, auditInfoUnk, messageFromApp, behavior, riid, asyncOperation);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        [return: NativeTypeName("HRESULT")]
-        public int RequestAccessForAppWithBehaviorForWindowAsync([NativeTypeName("HWND")] IntPtr appWindow, [NativeTypeName("HSTRING")] IntPtr sourceIdentity, [NativeTypeName("HSTRING")] IntPtr appPackageFamilyName, IUnknown* auditInfoUnk, [NativeTypeName("HSTRING")] IntPtr messageFromApp, [NativeTypeName("UINT32")] uint behavior, [NativeTypeName("const IID &")] Guid* riid, void** asyncOperation)
+        public HRESULT RequestAccessForAppWithBehaviorForWindowAsync(HWND appWindow, HSTRING sourceIdentity, HSTRING appPackageFamilyName, IUnknown* auditInfoUnk, HSTRING messageFromApp, [NativeTypeName("UINT32")] uint behavior, [NativeTypeName("const IID &")] Guid* riid, void** asyncOperation)
         {
-            return ((delegate* unmanaged<IProtectionPolicyManagerInterop3*, IntPtr, IntPtr, IntPtr, IUnknown*, IntPtr, uint, Guid*, void**, int>)(lpVtbl[7]))((IProtectionPolicyManagerInterop3*)Unsafe.AsPointer(ref this), appWindow, sourceIdentity, appPackageFamilyName, auditInfoUnk, messageFromApp, behavior, riid, asyncOperation);
+            return ((delegate* unmanaged<IProtectionPolicyManagerInterop3*, HWND, HSTRING, HSTRING, IUnknown*, HSTRING, uint, Guid*, void**, int>)(lpVtbl[7]))((IProtectionPolicyManagerInterop3*)Unsafe.AsPointer(ref this), appWindow, sourceIdentity, appPackageFamilyName, auditInfoUnk, messageFromApp, behavior, riid, asyncOperation);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        [return: NativeTypeName("HRESULT")]
-        public int RequestAccessToFilesForAppForWindowAsync([NativeTypeName("HWND")] IntPtr appWindow, IUnknown* sourceItemListUnk, [NativeTypeName("HSTRING")] IntPtr appPackageFamilyName, IUnknown* auditInfoUnk, [NativeTypeName("const IID &")] Guid* riid, void** asyncOperation)
+        public HRESULT RequestAccessToFilesForAppForWindowAsync(HWND appWindow, IUnknown* sourceItemListUnk, HSTRING appPackageFamilyName, IUnknown* auditInfoUnk, [NativeTypeName("const IID &")] Guid* riid, void** asyncOperation)
         {
-            return ((delegate* unmanaged<IProtectionPolicyManagerInterop3*, IntPtr, IUnknown*, IntPtr, IUnknown*, Guid*, void**, int>)(lpVtbl[8]))((IProtectionPolicyManagerInterop3*)Unsafe.AsPointer(ref this), appWindow, sourceItemListUnk, appPackageFamilyName, auditInfoUnk, riid, asyncOperation);
+            return ((delegate* unmanaged<IProtectionPolicyManagerInterop3*, HWND, IUnknown*, HSTRING, IUnknown*, Guid*, void**, int>)(lpVtbl[8]))((IProtectionPolicyManagerInterop3*)Unsafe.AsPointer(ref this), appWindow, sourceItemListUnk, appPackageFamilyName, auditInfoUnk, riid, asyncOperation);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        [return: NativeTypeName("HRESULT")]
-        public int RequestAccessToFilesForAppWithMessageAndBehaviorForWindowAsync([NativeTypeName("HWND")] IntPtr appWindow, IUnknown* sourceItemListUnk, [NativeTypeName("HSTRING")] IntPtr appPackageFamilyName, IUnknown* auditInfoUnk, [NativeTypeName("HSTRING")] IntPtr messageFromApp, [NativeTypeName("UINT32")] uint behavior, [NativeTypeName("const IID &")] Guid* riid, void** asyncOperation)
+        public HRESULT RequestAccessToFilesForAppWithMessageAndBehaviorForWindowAsync(HWND appWindow, IUnknown* sourceItemListUnk, HSTRING appPackageFamilyName, IUnknown* auditInfoUnk, HSTRING messageFromApp, [NativeTypeName("UINT32")] uint behavior, [NativeTypeName("const IID &")] Guid* riid, void** asyncOperation)
         {
-            return ((delegate* unmanaged<IProtectionPolicyManagerInterop3*, IntPtr, IUnknown*, IntPtr, IUnknown*, IntPtr, uint, Guid*, void**, int>)(lpVtbl[9]))((IProtectionPolicyManagerInterop3*)Unsafe.AsPointer(ref this), appWindow, sourceItemListUnk, appPackageFamilyName, auditInfoUnk, messageFromApp, behavior, riid, asyncOperation);
+            return ((delegate* unmanaged<IProtectionPolicyManagerInterop3*, HWND, IUnknown*, HSTRING, IUnknown*, HSTRING, uint, Guid*, void**, int>)(lpVtbl[9]))((IProtectionPolicyManagerInterop3*)Unsafe.AsPointer(ref this), appWindow, sourceItemListUnk, appPackageFamilyName, auditInfoUnk, messageFromApp, behavior, riid, asyncOperation);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(10)]
-        [return: NativeTypeName("HRESULT")]
-        public int RequestAccessToFilesForProcessForWindowAsync([NativeTypeName("HWND")] IntPtr appWindow, IUnknown* sourceItemListUnk, [NativeTypeName("UINT32")] uint processId, IUnknown* auditInfoUnk, [NativeTypeName("const IID &")] Guid* riid, void** asyncOperation)
+        public HRESULT RequestAccessToFilesForProcessForWindowAsync(HWND appWindow, IUnknown* sourceItemListUnk, [NativeTypeName("UINT32")] uint processId, IUnknown* auditInfoUnk, [NativeTypeName("const IID &")] Guid* riid, void** asyncOperation)
         {
-            return ((delegate* unmanaged<IProtectionPolicyManagerInterop3*, IntPtr, IUnknown*, uint, IUnknown*, Guid*, void**, int>)(lpVtbl[10]))((IProtectionPolicyManagerInterop3*)Unsafe.AsPointer(ref this), appWindow, sourceItemListUnk, processId, auditInfoUnk, riid, asyncOperation);
+            return ((delegate* unmanaged<IProtectionPolicyManagerInterop3*, HWND, IUnknown*, uint, IUnknown*, Guid*, void**, int>)(lpVtbl[10]))((IProtectionPolicyManagerInterop3*)Unsafe.AsPointer(ref this), appWindow, sourceItemListUnk, processId, auditInfoUnk, riid, asyncOperation);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(11)]
-        [return: NativeTypeName("HRESULT")]
-        public int RequestAccessToFilesForProcessWithMessageAndBehaviorForWindowAsync([NativeTypeName("HWND")] IntPtr appWindow, IUnknown* sourceItemListUnk, [NativeTypeName("UINT32")] uint processId, IUnknown* auditInfoUnk, [NativeTypeName("HSTRING")] IntPtr messageFromApp, [NativeTypeName("UINT32")] uint behavior, [NativeTypeName("const IID &")] Guid* riid, void** asyncOperation)
+        public HRESULT RequestAccessToFilesForProcessWithMessageAndBehaviorForWindowAsync(HWND appWindow, IUnknown* sourceItemListUnk, [NativeTypeName("UINT32")] uint processId, IUnknown* auditInfoUnk, HSTRING messageFromApp, [NativeTypeName("UINT32")] uint behavior, [NativeTypeName("const IID &")] Guid* riid, void** asyncOperation)
         {
-            return ((delegate* unmanaged<IProtectionPolicyManagerInterop3*, IntPtr, IUnknown*, uint, IUnknown*, IntPtr, uint, Guid*, void**, int>)(lpVtbl[11]))((IProtectionPolicyManagerInterop3*)Unsafe.AsPointer(ref this), appWindow, sourceItemListUnk, processId, auditInfoUnk, messageFromApp, behavior, riid, asyncOperation);
+            return ((delegate* unmanaged<IProtectionPolicyManagerInterop3*, HWND, IUnknown*, uint, IUnknown*, HSTRING, uint, Guid*, void**, int>)(lpVtbl[11]))((IProtectionPolicyManagerInterop3*)Unsafe.AsPointer(ref this), appWindow, sourceItemListUnk, processId, auditInfoUnk, messageFromApp, behavior, riid, asyncOperation);
         }
     }
 }

@@ -13,47 +13,42 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        [return: NativeTypeName("BOOL")]
-        public int IsValid()
+        public BOOL IsValid()
         {
             return ((delegate* unmanaged<ID3D10EffectPass*, int>)(lpVtbl[0]))((ID3D10EffectPass*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(1)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetDesc(D3D10_PASS_DESC* pDesc)
+        public HRESULT GetDesc(D3D10_PASS_DESC* pDesc)
         {
             return ((delegate* unmanaged<ID3D10EffectPass*, D3D10_PASS_DESC*, int>)(lpVtbl[1]))((ID3D10EffectPass*)Unsafe.AsPointer(ref this), pDesc);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(2)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetVertexShaderDesc(D3D10_PASS_SHADER_DESC* pDesc)
+        public HRESULT GetVertexShaderDesc(D3D10_PASS_SHADER_DESC* pDesc)
         {
             return ((delegate* unmanaged<ID3D10EffectPass*, D3D10_PASS_SHADER_DESC*, int>)(lpVtbl[2]))((ID3D10EffectPass*)Unsafe.AsPointer(ref this), pDesc);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetGeometryShaderDesc(D3D10_PASS_SHADER_DESC* pDesc)
+        public HRESULT GetGeometryShaderDesc(D3D10_PASS_SHADER_DESC* pDesc)
         {
             return ((delegate* unmanaged<ID3D10EffectPass*, D3D10_PASS_SHADER_DESC*, int>)(lpVtbl[3]))((ID3D10EffectPass*)Unsafe.AsPointer(ref this), pDesc);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        [return: NativeTypeName("HRESULT")]
-        public int GetPixelShaderDesc(D3D10_PASS_SHADER_DESC* pDesc)
+        public HRESULT GetPixelShaderDesc(D3D10_PASS_SHADER_DESC* pDesc)
         {
             return ((delegate* unmanaged<ID3D10EffectPass*, D3D10_PASS_SHADER_DESC*, int>)(lpVtbl[4]))((ID3D10EffectPass*)Unsafe.AsPointer(ref this), pDesc);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        public ID3D10EffectVariable* GetAnnotationByIndex([NativeTypeName("UINT")] uint Index)
+        public ID3D10EffectVariable* GetAnnotationByIndex(uint Index)
         {
             return ((delegate* unmanaged<ID3D10EffectPass*, uint, ID3D10EffectVariable*>)(lpVtbl[5]))((ID3D10EffectPass*)Unsafe.AsPointer(ref this), Index);
         }
@@ -67,16 +62,14 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        [return: NativeTypeName("HRESULT")]
-        public int Apply([NativeTypeName("UINT")] uint Flags)
+        public HRESULT Apply(uint Flags)
         {
             return ((delegate* unmanaged<ID3D10EffectPass*, uint, int>)(lpVtbl[7]))((ID3D10EffectPass*)Unsafe.AsPointer(ref this), Flags);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        [return: NativeTypeName("HRESULT")]
-        public int ComputeStateBlockMask(D3D10_STATE_BLOCK_MASK* pStateBlockMask)
+        public HRESULT ComputeStateBlockMask(D3D10_STATE_BLOCK_MASK* pStateBlockMask)
         {
             return ((delegate* unmanaged<ID3D10EffectPass*, D3D10_STATE_BLOCK_MASK*, int>)(lpVtbl[8]))((ID3D10EffectPass*)Unsafe.AsPointer(ref this), pStateBlockMask);
         }
