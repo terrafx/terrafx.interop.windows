@@ -3,10 +3,6 @@
 // Ported from um/winnt.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
-using System.Runtime.CompilerServices;
-using System.Runtime.InteropServices;
-
 namespace TerraFX.Interop
 {
     public unsafe partial struct KNONVOLATILE_CONTEXT_POINTERS_X86

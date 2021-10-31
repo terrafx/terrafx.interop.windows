@@ -91,10 +91,7 @@ namespace TerraFX.Interop
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
-                fixed (_Anonymous1_e__Union* pField = &Anonymous1)
-                {
-                    return ref pField->lpDDSZBufferDest;
-                }
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous1.lpDDSZBufferDest;
             }
         }
 
@@ -112,10 +109,7 @@ namespace TerraFX.Interop
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
-                fixed (_Anonymous2_e__Union* pField = &Anonymous2)
-                {
-                    return ref pField->lpDDSZBufferSrc;
-                }
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous2.lpDDSZBufferSrc;
             }
         }
 
@@ -133,10 +127,7 @@ namespace TerraFX.Interop
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
-                fixed (_Anonymous3_e__Union* pField = &Anonymous3)
-                {
-                    return ref pField->lpDDSAlphaDest;
-                }
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous3.lpDDSAlphaDest;
             }
         }
 
@@ -154,10 +145,7 @@ namespace TerraFX.Interop
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
-                fixed (_Anonymous4_e__Union* pField = &Anonymous4)
-                {
-                    return ref pField->lpDDSAlphaSrc;
-                }
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous4.lpDDSAlphaSrc;
             }
         }
 
@@ -193,10 +181,7 @@ namespace TerraFX.Interop
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
-                fixed (_Anonymous5_e__Union* pField = &Anonymous5)
-                {
-                    return ref pField->lpDDSPattern;
-                }
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous5.lpDDSPattern;
             }
         }
 
